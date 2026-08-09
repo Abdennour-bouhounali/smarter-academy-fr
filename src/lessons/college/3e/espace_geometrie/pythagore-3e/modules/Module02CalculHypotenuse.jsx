@@ -6,8 +6,16 @@ import MathText from '../../../../../common/components/MathText';
 import MathInput from '../../../../../common/components/MathInput';
 import { compareMathExpressions } from '../../../../../common/utils/mathComparison';
 import { motion } from 'framer-motion';
+import { useAdaptiveExercise } from '../../../../../common/hooks/useAdaptiveExercise';
+import { isMissingSquareRoot } from '../../../../../common/utils/errorClassifiers';
+import AdaptiveFeedback from '../../../../../common/components/AdaptiveFeedback';
+import GuidedSolution from '../../../../../common/components/GuidedSolution';
+import { useProgress } from '../../../../../common/hooks/useProgress';
 
 export default function Module02CalculHypotenuse() {
+  const { markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
+  const handleNext = () => markModuleCompleted('L02');
+
   const { prevLink, nextLink } = getNavLinks(2);
 
   // Étape 1 : Identifier, Étape 2 : Formule, Étape 3 : Substitution, Étape 4 : Carrés, Étape 5 : Racine
@@ -16,8 +24,6 @@ export default function Module02CalculHypotenuse() {
 
   const [a, setA] = useState(3);
   const [b, setB] = useState(4);
-  const [userAnswer, setUserAnswer] = useState('');
-  const [feedback, setFeedback] = useState(null);
 
   const scale = 25;
   const ptA = { x: 50, y: 250 };
@@ -27,21 +33,44 @@ export default function Module02CalculHypotenuse() {
   const hypotenuseSquare = a * a + b * b;
   const hypotenuse = Math.sqrt(hypotenuseSquare);
   
-  // Fonction pour vérifier la réponse de l'utilisateur à l'étape finale
-  const checkAnswer = () => {
-    // on accepte la valeur approchée ou l'expression exacte
-    // si l'élève tape "5", compareMathExpressions("5", "5")
-    // on arrondit au centième pour vérifier manuellement si compareMathExpressions échoue car l'élève a tapé un nombre approché
-    const isEquivalent = compareMathExpressions(userAnswer, hypotenuse.toString());
-    const val = parseFloat(userAnswer.replace(',', '.'));
-    const isApprox = !isNaN(val) && Math.abs(val - hypotenuse) < 0.01;
-    
-    if (isEquivalent || isApprox) {
-      setFeedback('correct');
-      setIsCompleted(true);
-    } else {
-      setFeedback('incorrect');
-    }
+  const validateAnswer = (val) => {
+    const isEquivalent = compareMathExpressions(val, hypotenuse.toString());
+    const parsedVal = parseFloat(val.replace(',', '.'));
+    const isApprox = !isNaN(parsedVal) && Math.abs(parsedVal - hypotenuse) < 0.01;
+    return isEquivalent || isApprox;
+  };
+
+  const {
+    value: userAnswer,
+    setValue: setUserAnswer,
+    status: answerStatus,
+    feedback: adaptiveFeedback,
+    currentGuidance,
+    submitAnswer,
+    requestHint,
+    hasMoreHints,
+    isSolutionRevealed,
+    reset: resetAdaptive
+  } = useAdaptiveExercise({
+    validate: validateAnswer,
+    detectError: (val) => isMissingSquareRoot(val, hypotenuse),
+    guidanceSteps: [
+      { level: 1, type: 'encouragement', content: "Vérifiez votre calcul. Avez-vous pensé à la racine carrée ?" },
+      { level: 2, type: 'hint', content: "L'égalité donne $BC^2 = " + hypotenuseSquare + "$. Vous devez trouver $BC$ et non $BC^2$." },
+      { level: 3, type: 'solution', content: "$BC = \\sqrt{" + hypotenuseSquare + "} \\approx " + hypotenuse.toFixed(2) + "$" }
+    ],
+    onSuccess: () => setIsCompleted(true)
+  });
+
+  const checkAnswer = () => submitAnswer(userAnswer);
+
+  const generateNewExercise = () => {
+    const newA = Math.floor(Math.random() * 6) + 3; // 3 to 8
+    const newB = Math.floor(Math.random() * 6) + 3; // 3 to 8
+    setA(newA);
+    setB(newB);
+    setIsCompleted(false);
+    resetAdaptive();
   };
 
   const handleNextStep = () => {
@@ -52,6 +81,7 @@ export default function Module02CalculHypotenuse() {
 
   return (
     <ModuleLayout
+      onNextClick={handleNext}
       {...MODULE_CTX}
       moduleNumber={2}
       moduleTitle="Calculer l'hypoténuse"
@@ -70,11 +100,11 @@ export default function Module02CalculHypotenuse() {
             <div className="mb-4 flex gap-6 w-full justify-center">
               <div className="space-y-1">
                 <label className="text-xs font-bold text-slate-500">Côté AB</label>
-                <input type="range" min="3" max="8" value={a} onChange={(e) => { setA(Number(e.target.value)); setStep(1); setIsCompleted(false); setFeedback(null); setUserAnswer(''); }} className="w-24 accent-blue-600" />
+                <input type="range" min="3" max="8" value={a} onChange={(e) => { setA(Number(e.target.value)); setStep(1); setIsCompleted(false); resetAdaptive(); }} className="w-24 accent-blue-600" />
               </div>
               <div className="space-y-1">
                 <label className="text-xs font-bold text-slate-500">Côté AC</label>
-                <input type="range" min="3" max="8" value={b} onChange={(e) => { setB(Number(e.target.value)); setStep(1); setIsCompleted(false); setFeedback(null); setUserAnswer(''); }} className="w-24 accent-indigo-600" />
+                <input type="range" min="3" max="8" value={b} onChange={(e) => { setB(Number(e.target.value)); setStep(1); setIsCompleted(false); resetAdaptive(); }} className="w-24 accent-indigo-600" />
               </div>
             </div>
 
@@ -157,25 +187,40 @@ export default function Module02CalculHypotenuse() {
                   <div className="flex gap-2">
                     <MathInput 
                       value={userAnswer}
-                      onChange={(val) => { setUserAnswer(val); setFeedback(null); }}
+                      onChange={(val) => { setUserAnswer(val); }}
+                      onCommit={checkAnswer}
                       placeholder="Ex: 5"
-                      disabled={isCompleted}
+                      disabled={isCompleted || isSolutionRevealed}
                     />
-                    {!isCompleted ? (
+                    {!isCompleted && !isSolutionRevealed ? (
                       <button onClick={checkAnswer} className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-lg transition-colors ml-2">
                         Vérifier
                       </button>
-                    ) : (
+                    ) : isCompleted ? (
                       <div className="px-4 py-2 bg-emerald-100 text-emerald-700 font-bold rounded-lg border border-emerald-200 flex items-center justify-center">
                         <Check size={18} />
                       </div>
-                    )}
+                    ) : null}
                   </div>
-                  {feedback === 'incorrect' && (
-                    <p className="text-xs text-red-600 mt-2 font-semibold">C'est incorrect. Essayez de calculer la racine carrée de {hypotenuseSquare}.</p>
-                  )}
-                  {feedback === 'correct' && (
-                    <p className="text-xs text-emerald-600 mt-2 font-semibold">Excellent ! <MathText>{`$BC = \\sqrt{${hypotenuseSquare}} \\approx ${hypotenuse.toFixed(2)}$`}</MathText></p>
+                  
+                  <AdaptiveFeedback 
+                    status={answerStatus} 
+                    feedback={adaptiveFeedback}
+                    currentGuidance={currentGuidance}
+                    onRequestHint={requestHint}
+                    hasMoreHints={hasMoreHints}
+                  />
+
+                  {isSolutionRevealed && (
+                    <GuidedSolution 
+                      steps={[
+                        `On sait que le triangle est rectangle en $A$, donc son hypoténuse est le côté $BC$.`,
+                        `D'après le théorème de Pythagore : $BC^2 = AB^2 + AC^2$`,
+                        `$BC^2 = ${a}^2 + ${b}^2 = ${hypotenuseSquare}$`,
+                        `$BC = \\sqrt{${hypotenuseSquare}} \\approx ${hypotenuse.toFixed(2)}$`
+                      ]}
+                      onRetry={generateNewExercise}
+                    />
                   )}
                 </motion.div>
               )}

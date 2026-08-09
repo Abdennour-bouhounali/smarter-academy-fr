@@ -6,15 +6,21 @@ import MathText from '../../../../../common/components/MathText';
 import MathInput from '../../../../../common/components/MathInput';
 import { compareMathExpressions } from '../../../../../common/utils/mathComparison';
 import { motion } from 'framer-motion';
+import { useAdaptiveExercise } from '../../../../../common/hooks/useAdaptiveExercise';
+import { isMissingSquareRoot } from '../../../../../common/utils/errorClassifiers';
+import AdaptiveFeedback from '../../../../../common/components/AdaptiveFeedback';
+import GuidedSolution from '../../../../../common/components/GuidedSolution';
+import { useProgress } from '../../../../../common/hooks/useProgress';
 
 export default function Module03CalculCote() {
+  const { markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
+  const handleNext = () => markModuleCompleted('L03');
+
   const { prevLink, nextLink } = getNavLinks(3);
 
   const [step, setStep] = useState(2);
   const [isCompleted, setIsCompleted] = useState(false);
   const [selectedSide, setSelectedSide] = useState('AC'); // 'AB' ou 'AC'
-  const [userAnswer, setUserAnswer] = useState('');
-  const [feedback, setFeedback] = useState(null);
 
   // Valeurs fixes pour l'exercice
   const hypotenuse = 13; // BC
@@ -31,21 +37,46 @@ export default function Module03CalculCote() {
     setStep(2);
   };
 
-  const checkAnswer = () => {
-    const isEquivalent = compareMathExpressions(userAnswer, unknownSide.toString());
-    const val = parseFloat(userAnswer.replace(',', '.'));
-    const isApprox = !isNaN(val) && Math.abs(val - unknownSide) < 0.01;
-    
-    if (isEquivalent || isApprox) {
-      setFeedback('correct');
-      setIsCompleted(true);
-    } else {
-      setFeedback('incorrect');
-    }
+  const validateAnswer = (val) => {
+    const isEquivalent = compareMathExpressions(val, unknownSide.toString());
+    const parsedVal = parseFloat(val.replace(',', '.'));
+    const isApprox = !isNaN(parsedVal) && Math.abs(parsedVal - unknownSide) < 0.01;
+    return isEquivalent || isApprox;
+  };
+
+  const {
+    value: userAnswer,
+    setValue: setUserAnswer,
+    status: answerStatus,
+    feedback: adaptiveFeedback,
+    currentGuidance,
+    submitAnswer,
+    requestHint,
+    hasMoreHints,
+    isSolutionRevealed,
+    reset: resetAdaptive
+  } = useAdaptiveExercise({
+    validate: validateAnswer,
+    detectError: (val) => isMissingSquareRoot(val, unknownSide),
+    guidanceSteps: [
+      { level: 1, type: 'encouragement', content: "Vérifiez votre calcul." },
+      { level: 2, type: 'hint', content: `L'égalité donne $${selectedSide}^2 = ${unknownSideSquare}$. N'oubliez pas la racine carrée !` },
+      { level: 3, type: 'solution', content: `$${selectedSide} = \\sqrt{${unknownSideSquare}} = ${unknownSide}$` }
+    ],
+    onSuccess: () => setIsCompleted(true)
+  });
+
+  const checkAnswer = () => submitAnswer(userAnswer);
+
+  const generateNewExercise = () => {
+    // Currently fixed values in this module, we could randomize them but for now just reset
+    setIsCompleted(false);
+    resetAdaptive();
   };
 
   return (
     <ModuleLayout
+      onNextClick={handleNext}
       {...MODULE_CTX}
       moduleNumber={3}
       moduleTitle="Calculer un petit côté"
@@ -163,25 +194,41 @@ export default function Module03CalculCote() {
                   <div className="flex gap-2">
                     <MathInput 
                       value={userAnswer}
-                      onChange={(val) => { setUserAnswer(val); setFeedback(null); }}
+                      onChange={(val) => { setUserAnswer(val); }}
+                      onCommit={checkAnswer}
                       placeholder="Ex: 10"
-                      disabled={isCompleted}
+                      disabled={isCompleted || isSolutionRevealed}
                     />
-                    {!isCompleted ? (
+                    {!isCompleted && !isSolutionRevealed ? (
                       <button onClick={checkAnswer} className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors ml-2">
                         Vérifier
                       </button>
-                    ) : (
+                    ) : isCompleted ? (
                       <div className="px-4 py-2 bg-emerald-100 text-emerald-700 font-bold rounded-lg border border-emerald-200 flex items-center justify-center">
                         <Check size={18} />
                       </div>
-                    )}
+                    ) : null}
                   </div>
-                  {feedback === 'incorrect' && (
-                    <p className="text-xs text-red-600 mt-2 font-semibold">Erreur. Calculez la racine carrée de {unknownSideSquare}.</p>
-                  )}
-                  {feedback === 'correct' && (
-                    <p className="text-xs text-emerald-600 mt-2 font-semibold">Parfait ! <MathText>{`$${selectedSide} = \\sqrt{${unknownSideSquare}} = ${unknownSide}$`}</MathText></p>
+                  
+                  <AdaptiveFeedback 
+                    status={answerStatus} 
+                    feedback={adaptiveFeedback}
+                    currentGuidance={currentGuidance}
+                    onRequestHint={requestHint}
+                    hasMoreHints={hasMoreHints}
+                  />
+
+                  {isSolutionRevealed && (
+                    <GuidedSolution 
+                      steps={[
+                        `Le triangle est rectangle en $A$, l'hypoténuse est $BC = 13$.`,
+                        `D'après le théorème de Pythagore : $BC^2 = AB^2 + AC^2$`,
+                        `$13^2 = 5^2 + AC^2$`,
+                        `$AC^2 = 13^2 - 5^2 = 169 - 25 = 144$`,
+                        `$AC = \\sqrt{144} = 12$`
+                      ]}
+                      onRetry={generateNewExercise}
+                    />
                   )}
                 </motion.div>
               )}

@@ -5,7 +5,7 @@
 
 export const LESSON_CONFIG = {
   // ── Identité ──────────────────────────────────────────────────────────────
-  id: 'MOD-3E-RATIONNELS',
+  id: 'nombres-rationnels',
   slug: 'nombres-rationnels',
   title: 'Nombres rationnels',
   emoji: '➗',

@@ -6,8 +6,12 @@ import MathText from '../../../../../common/components/MathText';
 import MathInput from '../../../../../common/components/MathInput';
 import { compareMathExpressions } from '../../../../../common/utils/mathComparison';
 import { motion } from 'framer-motion';
+import { useProgress } from '../../../../../common/hooks/useProgress';
 
 export default function Module04Reciproque() {
+  const { markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
+  const handleNext = () => markModuleCompleted('L04');
+
   const { prevLink, nextLink } = getNavLinks(4);
 
   // Étape 1 : Choisir le plus grand côté
@@ -65,6 +69,7 @@ export default function Module04Reciproque() {
 
   return (
     <ModuleLayout
+      onNextClick={handleNext}
       {...MODULE_CTX}
       moduleNumber={4}
       moduleTitle="La Réciproque"

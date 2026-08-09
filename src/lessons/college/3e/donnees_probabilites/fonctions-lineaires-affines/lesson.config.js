@@ -13,7 +13,7 @@
 
 export const LESSON_CONFIG = {
   // ── Identité ──────────────────────────────────────────────────────────────
-  id: 'MOD-3E-FONC-V2',          // Clé localStorage (V2 = nouvelle architecture)
+  id: 'fonctions-lineaires-affines',          // Clé localStorage (V2 = nouvelle architecture)
   slug: 'fonctions-lineaires-affines',
   title: 'Fonctions linéaires et affines',
   emoji: '📈',

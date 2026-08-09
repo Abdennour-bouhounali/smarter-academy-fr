@@ -4,8 +4,12 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { Play, Check, ChevronRight, Info } from 'lucide-react';
 import MathText from '../../../../../common/components/MathText';
 import { motion } from 'framer-motion';
+import { useProgress } from '../../../../../common/hooks/useProgress';
 
 export default function Module01Decouverte() {
+  const { markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
+  const handleNext = () => markModuleCompleted('L01');
+
   const { prevLink, nextLink } = getNavLinks(1);
 
   // Étape 1 : Identifier, Étape 2 : Carrés, Étape 3 : Curseur, Étape 4 : Aires, Étape 5 : Formule
@@ -67,6 +71,7 @@ export default function Module01Decouverte() {
 
   return (
     <ModuleLayout
+      onNextClick={handleNext}
       {...MODULE_CTX}
       moduleNumber={1}
       moduleTitle="Découverte de Pythagore"

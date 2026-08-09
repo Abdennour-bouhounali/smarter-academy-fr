@@ -6,8 +6,14 @@ import MathText from '../../../../../common/components/MathText';
 import MathInput from '../../../../../common/components/MathInput';
 import { compareMathExpressions } from '../../../../../common/utils/mathComparison';
 import { motion } from 'framer-motion';
+import { useAdaptiveExercise } from '../../../../../common/hooks/useAdaptiveExercise';
+import AdaptiveFeedback from '../../../../../common/components/AdaptiveFeedback';
+import { useProgress } from '../../../../../common/hooks/useProgress';
 
 export default function Module05Contraposee() {
+  const { markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
+  const handleNext = () => markModuleCompleted('L05');
+
   const { prevLink, nextLink } = getNavLinks(5);
 
   const [step, setStep] = useState(1);
@@ -20,8 +26,36 @@ export default function Module05Contraposee() {
   const c = 9; // Le plus grand côté
   
   const [selectedHypo, setSelectedHypo] = useState(null);
-  const [sqHypo, setSqHypo] = useState('');
-  const [sqSum, setSqSum] = useState('');
+
+  const adaptiveSqHypo = useAdaptiveExercise({
+    validate: (val) => {
+      const isEquivalent = compareMathExpressions(val, (c * c).toString());
+      const num = parseFloat(val.replace(',', '.'));
+      return isEquivalent || (!isNaN(num) && num === c * c);
+    },
+    detectError: (val) => null,
+    guidanceSteps: [
+      { level: 1, type: 'encouragement', content: `Le plus grand côté est $${c}$. Il faut calculer $${c}$ multiplié par lui-même.` },
+      { level: 2, type: 'hint', content: `Pour calculer $${c}^2$, on fait $${c} \\times ${c}$.` },
+      { level: 3, type: 'solution', content: `$${c}^2 = ${c * c}$` }
+    ],
+    onSuccess: () => setStep(3)
+  });
+
+  const adaptiveSqSum = useAdaptiveExercise({
+    validate: (val) => {
+      const isEquivalent = compareMathExpressions(val, (a * a + b * b).toString());
+      const num = parseFloat(val.replace(',', '.'));
+      return isEquivalent || (!isNaN(num) && num === a * a + b * b);
+    },
+    detectError: (val) => null,
+    guidanceSteps: [
+      { level: 1, type: 'encouragement', content: `Prenez le temps de faire les calculs séparément. Combien font $${a}^2$ ? et $${b}^2$ ?` },
+      { level: 2, type: 'hint', content: `Calculez d'abord les carrés : $${a}^2 = ${a * a}$ et $${b}^2 = ${b * b}$. Ensuite, additionnez-les.` },
+      { level: 3, type: 'solution', content: `$${a}^2 + ${b}^2 = ${a * a} + ${b * b} = ${a * a + b * b}$` }
+    ],
+    onSuccess: () => setStep(4)
+  });
 
   const handleSelectHypo = (val) => {
     setSelectedHypo(val);
@@ -34,25 +68,11 @@ export default function Module05Contraposee() {
   };
 
   const checkSqHypo = () => {
-    const isEquivalent = compareMathExpressions(sqHypo, (c * c).toString());
-    const val = parseFloat(sqHypo);
-    if (isEquivalent || (!isNaN(val) && val === c * c)) {
-      setFeedback('sq_correct');
-      setStep(3);
-    } else {
-      setFeedback('sq_incorrect');
-    }
+    adaptiveSqHypo.submitAnswer(adaptiveSqHypo.value);
   };
 
   const checkSqSum = () => {
-    const isEquivalent = compareMathExpressions(sqSum, (a * a + b * b).toString());
-    const val = parseFloat(sqSum);
-    if (isEquivalent || (!isNaN(val) && val === a * a + b * b)) {
-      setFeedback('sum_correct');
-      setStep(4);
-    } else {
-      setFeedback('sum_incorrect');
-    }
+    adaptiveSqSum.submitAnswer(adaptiveSqSum.value);
   };
 
   const handleConclusion = () => {
@@ -61,6 +81,7 @@ export default function Module05Contraposee() {
 
   return (
     <ModuleLayout
+      onNextClick={handleNext}
       {...MODULE_CTX}
       moduleNumber={5}
       moduleTitle="La Contraposée"
@@ -147,10 +168,34 @@ export default function Module05Contraposee() {
                   <p className="font-bold text-slate-700 mb-2">2. "Je sais que..."</p>
                   <p className="mb-3">Calculez son carré :</p>
                   {step === 2 ? (
-                    <div className="flex gap-2">
-                      <span className="py-2"><MathText>{`$9^2 = $`}</MathText></span>
-                      <MathInput value={sqHypo} onChange={(val) => { setSqHypo(val); setFeedback(null); }} onCommit={checkSqHypo} className="w-20" />
-                      <button onClick={checkSqHypo} className="px-3 bg-rose-600 hover:bg-rose-700 text-white rounded font-bold ml-2">OK</button>
+                    <div>
+                      <div className="flex gap-2 items-center">
+                        <span className="py-2"><MathText>{`$9^2 = $`}</MathText></span>
+                        <MathInput 
+                          value={adaptiveSqHypo.value} 
+                          onChange={(val) => { adaptiveSqHypo.setValue(val); }} 
+                          onCommit={checkSqHypo} 
+                          className="w-20" 
+                          disabled={adaptiveSqHypo.isSolutionRevealed}
+                        />
+                        {!adaptiveSqHypo.isSolutionRevealed && (
+                          <button onClick={checkSqHypo} className="px-3 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded font-bold ml-2">OK</button>
+                        )}
+                      </div>
+                      <AdaptiveFeedback 
+                        status={adaptiveSqHypo.status} 
+                        feedback={adaptiveSqHypo.feedback}
+                        currentGuidance={adaptiveSqHypo.currentGuidance}
+                        onRequestHint={adaptiveSqHypo.requestHint}
+                        hasMoreHints={adaptiveSqHypo.hasMoreHints}
+                      />
+                      {adaptiveSqHypo.isSolutionRevealed && (
+                        <div className="mt-4">
+                          <button onClick={() => setStep(3)} className="px-4 py-2 bg-rose-600 text-white rounded-lg font-bold">
+                            Continuer <ChevronRight className="inline" size={18} />
+                          </button>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <p className="text-rose-700 font-bold"><MathText>{`$9^2 = 81$`}</MathText></p>
@@ -164,10 +209,34 @@ export default function Module05Contraposee() {
                   <p className="font-bold text-slate-700 mb-2">3. "Et d'autre part..."</p>
                   <p className="mb-3">Calculez la somme des carrés des autres côtés :</p>
                   {step === 3 ? (
-                    <div className="flex gap-2 flex-wrap items-center">
-                      <span><MathText>{`$5^2 + 7^2 = $`}</MathText></span>
-                      <MathInput value={sqSum} onChange={(val) => { setSqSum(val); setFeedback(null); }} onCommit={checkSqSum} className="w-20" />
-                      <button onClick={checkSqSum} className="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded font-bold ml-2">OK</button>
+                    <div>
+                      <div className="flex gap-2 flex-wrap items-center">
+                        <span><MathText>{`$5^2 + 7^2 = $`}</MathText></span>
+                        <MathInput 
+                          value={adaptiveSqSum.value} 
+                          onChange={(val) => { adaptiveSqSum.setValue(val); }} 
+                          onCommit={checkSqSum} 
+                          className="w-20" 
+                          disabled={adaptiveSqSum.isSolutionRevealed}
+                        />
+                        {!adaptiveSqSum.isSolutionRevealed && (
+                          <button onClick={checkSqSum} className="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded font-bold ml-2">OK</button>
+                        )}
+                      </div>
+                      <AdaptiveFeedback 
+                        status={adaptiveSqSum.status} 
+                        feedback={adaptiveSqSum.feedback}
+                        currentGuidance={adaptiveSqSum.currentGuidance}
+                        onRequestHint={adaptiveSqSum.requestHint}
+                        hasMoreHints={adaptiveSqSum.hasMoreHints}
+                      />
+                      {adaptiveSqSum.isSolutionRevealed && (
+                        <div className="mt-4">
+                          <button onClick={() => setStep(4)} className="px-4 py-2 bg-indigo-600 text-white rounded-lg font-bold">
+                            Continuer <ChevronRight className="inline" size={18} />
+                          </button>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <p className="text-indigo-700 font-bold"><MathText>{`$5^2 + 7^2 = 25 + 49 = 74$`}</MathText></p>

@@ -5,7 +5,7 @@
 
 export const LESSON_CONFIG = {
   // ── Identité ──────────────────────────────────────────────────────────────
-  id: 'MOD-3E-PYTHAGORE',
+  id: 'pythagore-3e',
   slug: 'pythagore-3e',
   title: 'Théorème de Pythagore',
   emoji: '📐',

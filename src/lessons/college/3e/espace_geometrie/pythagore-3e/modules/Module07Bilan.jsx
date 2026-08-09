@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import ModuleLayout from '../../../../../common/components/ModuleLayout';
 import { MODULE_CTX } from '../moduleContext';
-import { Check, X, RotateCcw, Award } from 'lucide-react';
+import { Check, X, RotateCcw, Award, ChevronRight } from 'lucide-react';
 import MathText from '../../../../../common/components/MathText';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useProgress } from '../../../../../common/hooks/useProgress';
 
 const QUESTIONS = [
   {
@@ -69,6 +70,8 @@ const QUESTIONS = [
 ];
 
 export default function Module07Bilan() {
+  const { markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isValidated, setIsValidated] = useState(false);
@@ -96,6 +99,7 @@ export default function Module07Bilan() {
       setIsValidated(false);
     } else {
       setShowResults(true);
+      markModuleCompleted('L07');
     }
   };
 
