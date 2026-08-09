@@ -206,7 +206,19 @@ export const courseLevels = [
             path: "/courses/college/3e/nombres-rationnels",
             isNew: true
           },
-          { id: 'thales-3e', title: 'Théorème de Thalès', description: 'Proportionnalité des longueurs et théorème réciproque.', duration: '30 min', difficulty: 'Moyen', status: 'coming_soon', icon: '📐' },
+          { 
+            id: 'thales-3e', 
+            title: 'Théorème de Thalès', 
+            description: 'Manipulations géométriques, égalité des rapports et démonstrations interactives.', 
+            duration: '70 min', 
+            difficulty: 'Moyen', 
+            status: 'available', 
+            icon: '📐',
+            progress: 0,
+            totalLessons: 7,
+            path: "/courses/college/3e/thales-3e",
+            isNew: true
+          },
           { 
             id: 'fonctions-lineaires-affines', 
             title: 'Fonctions linéaires et affines', 
@@ -220,7 +232,19 @@ export const courseLevels = [
             path: "/courses/college/3e/fonctions-lineaires-affines",
             isNew: true
           },
-          { id: 'equations-produit', title: 'Équations produit nul', description: 'Résoudre (ax + b)(cx + d) = 0 et factorisation.', duration: '25 min', difficulty: 'Moyen', status: 'coming_soon', icon: '⚖️' },
+          { 
+            id: 'equations-produit', 
+            title: 'Équations produit nul', 
+            description: 'Résoudre (ax + b)(cx + d) = 0 et factorisation.', 
+            duration: '25 min', 
+            difficulty: 'Moyen', 
+            status: 'available', 
+            icon: '⚖️',
+            progress: 0,
+            totalLessons: 7,
+            path: "/courses/college/3e/equations-produit",
+            isNew: true
+          },
           { id: 'systemes-equations', title: 'Systèmes d\'équations', description: 'Résolution par substitution et par combinaison.', duration: '30 min', difficulty: 'Avancé', status: 'coming_soon', icon: '🔄' },
           { id: 'trigonometrie-3e', title: 'Trigonométrie', description: 'Cosinus, sinus et tangente dans le triangle rectangle.', duration: '35 min', difficulty: 'Avancé', status: 'coming_soon', icon: '📐' },
           { id: 'probabilites-3e', title: 'Probabilités & Arbres', description: 'Arbres de dénombrement et événements indépendants.', duration: '25 min', difficulty: 'Moyen', status: 'coming_soon', icon: '🎲' },

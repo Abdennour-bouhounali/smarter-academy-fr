@@ -34,8 +34,30 @@ import Module05Priorites              from './lessons/college/3e/nombres-rationn
 import Module06Mission                from './lessons/college/3e/nombres-rationnels/modules/Module06Mission';
 import Module07Bilan                  from './lessons/college/3e/nombres-rationnels/modules/Module07Bilan';
 
+// ── Leçon : Théorème de Thalès (3ème) ──────────────────────────────────────
+import Thales3e                       from './lessons/college/3e/thales-3e';
+import ThalesM01Decouverte            from './lessons/college/3e/thales-3e/modules/Module01Decouverte';
+import ThalesM02Egalite               from './lessons/college/3e/thales-3e/modules/Module02Egalite';
+import ThalesM03Calcul                from './lessons/college/3e/thales-3e/modules/Module03Calcul';
+import ThalesM04Reciproque            from './lessons/college/3e/thales-3e/modules/Module04Reciproque';
+import ThalesM05Papillon              from './lessons/college/3e/thales-3e/modules/Module05Papillon';
+import ThalesM06Mission               from './lessons/college/3e/thales-3e/modules/Module06Mission';
+import ThalesM07Bilan                 from './lessons/college/3e/thales-3e/modules/Module07Bilan';
+
+// ── Leçon : Équations produit nul (3ème) ──────────────────────────────────────
+import EquationsProduit3e             from './lessons/college/3e/equations-produit';
+import EqProdM01RegleZero             from './lessons/college/3e/equations-produit/modules/Module01RegleZero';
+import EqProdM02Rappel                from './lessons/college/3e/equations-produit/modules/Module02Rappel';
+import EqProdM03ProduitNul            from './lessons/college/3e/equations-produit/modules/Module03ProduitNul';
+import EqProdM04FacteurCommun         from './lessons/college/3e/equations-produit/modules/Module04FacteurCommun';
+import EqProdM05Identite              from './lessons/college/3e/equations-produit/modules/Module05Identite';
+import EqProdM06Mission               from './lessons/college/3e/equations-produit/modules/Module06Mission';
+import EqProdM07Bilan                 from './lessons/college/3e/equations-produit/modules/Module07Bilan';
+
 const LESSON_BASE = '/courses/college/3e/fonctions-lineaires-affines';
 const RAT_BASE = '/courses/college/3e/nombres-rationnels';
+const THALES_BASE = '/courses/college/3e/thales-3e';
+const EQPROD_BASE = '/courses/college/3e/equations-produit';
 
 export default function App() {
   return (
@@ -77,6 +99,26 @@ export default function App() {
             <Route path={`${RAT_BASE}/5`}  element={<Module05Priorites />} />
             <Route path={`${RAT_BASE}/6`}  element={<Module06Mission />} />
             <Route path={`${RAT_BASE}/7`}  element={<Module07Bilan />} />
+
+            {/* ── Théorème de Thalès ── */}
+            <Route path={THALES_BASE}      element={<Thales3e />} />
+            <Route path={`${THALES_BASE}/1`}  element={<ThalesM01Decouverte />} />
+            <Route path={`${THALES_BASE}/2`}  element={<ThalesM02Egalite />} />
+            <Route path={`${THALES_BASE}/3`}  element={<ThalesM03Calcul />} />
+            <Route path={`${THALES_BASE}/4`}  element={<ThalesM04Reciproque />} />
+            <Route path={`${THALES_BASE}/5`}  element={<ThalesM05Papillon />} />
+            <Route path={`${THALES_BASE}/6`}  element={<ThalesM06Mission />} />
+            <Route path={`${THALES_BASE}/7`}  element={<ThalesM07Bilan />} />
+
+            {/* ── Équations produit nul ── */}
+            <Route path={EQPROD_BASE}      element={<EquationsProduit3e />} />
+            <Route path={`${EQPROD_BASE}/1`}  element={<EqProdM01RegleZero />} />
+            <Route path={`${EQPROD_BASE}/2`}  element={<EqProdM02Rappel />} />
+            <Route path={`${EQPROD_BASE}/3`}  element={<EqProdM03ProduitNul />} />
+            <Route path={`${EQPROD_BASE}/4`}  element={<EqProdM04FacteurCommun />} />
+            <Route path={`${EQPROD_BASE}/5`}  element={<EqProdM05Identite />} />
+            <Route path={`${EQPROD_BASE}/6`}  element={<EqProdM06Mission />} />
+            <Route path={`${EQPROD_BASE}/7`}  element={<EqProdM07Bilan />} />
 
             <Route path="*" element={<Home />} />
           </Route>
