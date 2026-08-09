@@ -69,8 +69,21 @@ const smaMetadata = {
     path: '/courses/college/3e/donnees_probabilites/fonctions-lineaires-affines'
   },
 
+  '3e_Puissances': {
+    id: 'puissances-3e',
+    title: 'Puissances',
+    description: 'Découverte des puissances, puissances de 10, écriture scientifique et règles de calcul.',
+    duration: '60 min',
+    difficulty: 'Moyen',
+    status: 'available',
+    icon: '🚀',
+    isNew: true,
+    totalModules: 6,
+    path: '/courses/college/3e/nombres_calculs/puissances-3e'
+  },
+  
   // --- 4ème ---
-  'Puissances': { id: 'puissances-4e', description: 'Module complet en 6 micro-leçons : puissances de 10 et notation scientifique.', duration: '35 min total', difficulty: 'Moyen', status: 'coming_soon', icon: '⚡' },
+  '4e_Puissances': { id: 'puissances-4e', description: 'Module complet en 6 micro-leçons : puissances de 10 et notation scientifique.', duration: '35 min total', difficulty: 'Moyen', status: 'coming_soon', icon: '⚡' },
   'Calcul littéral et algébrique': { id: 'calcul-litteral-4e', description: 'Module complet en 6 micro-leçons : distributivité simple, double, réduction et factorisation.', duration: '45 min total', difficulty: 'Moyen', status: 'coming_soon', icon: '🔤' },
   
   // Défauts pour les notions non définies spécifiquement
@@ -95,11 +108,11 @@ function buildChaptersForGrade(gradeId) {
       id: domain.id,
       title: domain.title,
       lessons: domain.official_objects.map(obj => {
-        const meta = smaMetadata[obj] || {};
+        const meta = smaMetadata[`${gradeId}_${obj}`] || smaMetadata[obj] || {};
         return {
           // Données officielles
           officialObject: obj,
-          title: obj, // Le titre affiché sera l'officiel par défaut
+          title: meta.title || obj, // Le titre affiché sera l'officiel par défaut ou surchargé par les métadonnées
           // Métadonnées SMA
           id: meta.id || obj.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, '-'),
           description: meta.description || 'En préparation...',

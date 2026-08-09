@@ -64,11 +64,21 @@ import EqProdM05Identite              from './lessons/college/3e/nombres_calculs
 import EqProdM06Mission               from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module06Mission';
 import EqProdM07Bilan                 from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module07Bilan';
 
+// ── Leçon : Puissances (3ème) ────────────────────────────────────────────────
+import Puissances3e                   from './lessons/college/3e/nombres_calculs/puissances-3e';
+import PuissancesM01Decouverte        from './lessons/college/3e/nombres_calculs/puissances-3e/modules/Module01Decouverte';
+import PuissancesM02Puissances10      from './lessons/college/3e/nombres_calculs/puissances-3e/modules/Module02Puissances10';
+import PuissancesM03ReglesCalcul      from './lessons/college/3e/nombres_calculs/puissances-3e/modules/Module03ReglesCalcul';
+import PuissancesM04Ecriture          from './lessons/college/3e/nombres_calculs/puissances-3e/modules/Module04EcritureScientifique';
+import PuissancesM05Mission           from './lessons/college/3e/nombres_calculs/puissances-3e/modules/Module05Mission';
+import PuissancesM06Bilan             from './lessons/college/3e/nombres_calculs/puissances-3e/modules/Module06Bilan';
+
 const LESSON_BASE = '/courses/college/3e/donnees_probabilites/fonctions-lineaires-affines';
 const RAT_BASE = '/courses/college/3e/nombres_calculs/nombres-rationnels';
 const THALES_BASE = '/courses/college/3e/espace_geometrie/thales-3e';
 const PYTHAGORE_BASE = '/courses/college/3e/espace_geometrie/pythagore-3e';
 const EQPROD_BASE = '/courses/college/3e/nombres_calculs/equations-produit';
+const PUISSANCES_BASE = '/courses/college/3e/nombres_calculs/puissances-3e';
 
 export default function App() {
   return (
@@ -94,6 +104,7 @@ export default function App() {
             <Route path="/courses/college/3e/thales-3e/*" element={<Navigate replace to={`${THALES_BASE}/*`} />} />
             <Route path="/courses/college/3e/pythagore-3e/*" element={<Navigate replace to={`${PYTHAGORE_BASE}/*`} />} />
             <Route path="/courses/college/3e/equations-produit/*" element={<Navigate replace to={`${EQPROD_BASE}/*`} />} />
+            <Route path="/courses/college/3e/puissances-3e/*" element={<Navigate replace to={`${PUISSANCES_BASE}/*`} />} />
 
             {/* ── Fonctions linéaires et affines ── */}
             <Route path={LESSON_BASE}      element={<FonctionsLineairesAffines />} />
@@ -147,6 +158,15 @@ export default function App() {
             <Route path={`${EQPROD_BASE}/5`}  element={<EqProdM05Identite />} />
             <Route path={`${EQPROD_BASE}/6`}  element={<EqProdM06Mission />} />
             <Route path={`${EQPROD_BASE}/7`}  element={<EqProdM07Bilan />} />
+
+            {/* ── Puissances (3ème) ── */}
+            <Route path={PUISSANCES_BASE}      element={<Puissances3e />} />
+            <Route path={`${PUISSANCES_BASE}/1`}  element={<PuissancesM01Decouverte />} />
+            <Route path={`${PUISSANCES_BASE}/2`}  element={<PuissancesM02Puissances10 />} />
+            <Route path={`${PUISSANCES_BASE}/3`}  element={<PuissancesM03ReglesCalcul />} />
+            <Route path={`${PUISSANCES_BASE}/4`}  element={<PuissancesM04Ecriture />} />
+            <Route path={`${PUISSANCES_BASE}/5`}  element={<PuissancesM05Mission />} />
+            <Route path={`${PUISSANCES_BASE}/6`}  element={<PuissancesM06Bilan />} />
 
             <Route path="*" element={<Home />} />
           </Route>
