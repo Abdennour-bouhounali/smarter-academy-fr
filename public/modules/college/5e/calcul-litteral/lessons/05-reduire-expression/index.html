@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05. Réduire des Expressions | Smarter</title>
+  <meta name="description" content="Micro-leçon 5 du module Calcul Littéral : Réduction d'expressions et test d'égalités.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (5ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Calcul Litteral</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Réduire des Expressions</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 5 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-5/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <section class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 text-cyan-700 font-mono text-xs font-semibold">
+        ⏱️ 6 min • Micro-Leçon 5
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        Réduire des Expressions
+      </h1>
+    </section>
+
+    <!-- 1. METHOD -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-cyan-100 text-cyan-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Regrouper les Termes Semblables</h2>
+      </div>
+
+      <p class="text-slate-600 text-sm leading-relaxed">
+        <strong>Réduire</strong> une expression littérale, c'est l'écrire avec le moins de termes possible en regroupant les « familles » identiques (les termes en \(x\), les termes en \(x^2\) et les nombres seuls) !
+      </p>
+
+      <div class="bg-cyan-50 p-4 rounded-xl text-xs text-cyan-900 space-y-2 border border-cyan-200 font-mono">
+        <p>• Exemple : \( 5x + 3 + 2x + 7 \)</p>
+        <p>• On regroupe les \(x\) : \( 5x + 2x = 7x \)</p>
+        <p>• On regroupe les nombres : \( 3 + 7 = 10 \)</p>
+        <p class="font-bold text-sm text-center">Résultat réduit : \( 7x + 10 \)</p>
+      </div>
+    </section>
+
+    <!-- 2. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Test de Réduction</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Réduisez l'expression : <strong>\( 8x + 4 - 3x + 2 \)</strong></p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicroLit5(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">11x + 6</button>
+        <button onclick="checkMicroLit5(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">5x + 6 (Exact)</button>
+        <button onclick="checkMicroLit5(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">11x</button>
+      </div>
+
+      <div id="microFeedbackLit5" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../04-distributivite-simple/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 4
+      </a>
+
+      <a href="../06-mission-finale/index.html" onclick="markLessonCompleted('MOD-5E-002-L5')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        🏆 Mission Finale ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    function checkMicroLit5(ans) {
+      const fb = document.getElementById('microFeedbackLit5');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        playSuccessSound();
+        addXP(60);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> \\( 8x - 3x = 5x \\) et \\( 4 + 2 = 6 \\), soit \\( 5x + 6 \\) ! (+60 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Attention :</strong> Prenez en compte le signe moins devant 3x !`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

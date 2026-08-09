@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module : Équations | 4ème • Smarter</title>
+  <meta name="description" content="Module d'apprentissage complet sur les équations du premier degré en 4ème.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-4xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- BREADCRUMB -->
+    <nav class="flex items-center gap-2 text-xs font-mono text-slate-500">
+      <a href="/" class="hover:text-blue-600">Accueil</a>
+      <span>/</span>
+      <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+      <span>/</span>
+      <span class="text-slate-900 font-semibold">Équations</span>
+    </nav>
+
+    <!-- MODULE HERO CARD -->
+    <section class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-semibold">
+            ⚖️ Module 4ème • 6 Micro-Leçons • 40 min au total
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl font-space font-extrabold text-slate-900 leading-tight">
+            Les Équations du 1er Degré
+          </h1>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+            Découvrez comment trouver la valeur de l'inconnue $x$ en résolvant des équations. De la simple balance à la modélisation de problèmes !
+          </p>
+        </div>
+
+        <div class="w-full md:w-56 bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3 text-center">
+          <div class="text-xs font-mono text-slate-500 font-bold uppercase">Votre Progression</div>
+          <div class="text-3xl font-space font-extrabold text-blue-600" id="moduleProgressPercent">0%</div>
+          
+          <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div id="moduleProgressBar" class="h-full bg-gradient-to-r from-blue-500 to-indigo-600 w-0 transition-all duration-500"></div>
+          </div>
+
+          <p class="text-[11px] font-mono text-slate-400" id="moduleProgressText">0 / 6 leçons complétées</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MICRO-LESSONS ROADMAP -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-space font-bold text-slate-900">🗺️ Parcours des Micro-Leçons</h2>
+
+      <div class="space-y-3">
+        
+        <a href="lessons/01-notion-d-equation/index.html" class="group block bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 font-mono font-bold flex items-center justify-center">01</div>
+              <div>
+                <h3 class="font-space font-bold text-slate-900 group-hover:text-blue-600">La notion d'équation</h3>
+                <p class="text-xs text-slate-500">Comprendre ce qu'est une équation et le principe de l'égalité.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-mono text-xs font-semibold">Commencer ➔</span>
+          </div>
+        </a>
+
+        <a href="lessons/02-tester-une-egalite/index.html" class="group block bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 font-mono font-bold flex items-center justify-center">02</div>
+              <div>
+                <h3 class="font-space font-bold text-slate-900 group-hover:text-blue-600">Tester une égalité</h3>
+                <p class="text-xs text-slate-500">Vérifier si un nombre donné est solution ou non de l'équation.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-semibold">Voir ➔</span>
+          </div>
+        </a>
+
+        <a href="lessons/03-operations-add-sous/index.html" class="group block bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 font-mono font-bold flex items-center justify-center">03</div>
+              <div>
+                <h3 class="font-space font-bold text-slate-900 group-hover:text-blue-600">Addition et Soustraction</h3>
+                <p class="text-xs text-slate-500">Résoudre des équations de type $x + a = b$.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-semibold">Voir ➔</span>
+          </div>
+        </a>
+
+        <a href="lessons/04-operations-mult-div/index.html" class="group block bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 font-mono font-bold flex items-center justify-center">04</div>
+              <div>
+                <h3 class="font-space font-bold text-slate-900 group-hover:text-blue-600">Multiplication et Division</h3>
+                <p class="text-xs text-slate-500">Résoudre des équations de type $ax = b$.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-semibold">Voir ➔</span>
+          </div>
+        </a>
+
+        <a href="lessons/05-equations-complexes/index.html" class="group block bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 font-mono font-bold flex items-center justify-center">05</div>
+              <div>
+                <h3 class="font-space font-bold text-slate-900 group-hover:text-blue-600">Équations complexes</h3>
+                <p class="text-xs text-slate-500">Résoudre des équations de type $ax + b = cx + d$.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-semibold">Voir ➔</span>
+          </div>
+        </a>
+
+        <a href="lessons/06-mise-en-equation/index.html" class="group block bg-gradient-to-r from-amber-50 to-orange-50 p-5 rounded-2xl border border-amber-200 hover:border-amber-300 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-500 text-white font-mono font-bold flex items-center justify-center shadow-xs">🏆</div>
+              <div>
+                <h3 class="font-space font-bold text-amber-900 group-hover:text-amber-700">Mission Finale : Le Détective</h3>
+                <p class="text-xs text-amber-800">Traduire un problème en équation pour le résoudre !</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-amber-500 text-white font-mono text-xs font-bold shadow-xs">Défi Final ➔</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500 mt-12">
+    <p>© 2026 Abdennour BOUHOUNALI — Professeur de Mathématiques</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+      const completed = JSON.parse(localStorage.getItem('smarter_completed_lessons') || '[]');
+      const moduleLessons = ['MOD-4E-003-L1', 'MOD-4E-003-L2', 'MOD-4E-003-L3', 'MOD-4E-003-L4', 'MOD-4E-003-L5', 'MOD-4E-003-L6'];
+      const count = moduleLessons.filter(id => completed.includes(id)).length;
+      const pct = Math.round((count / moduleLessons.length) * 100);
+
+      document.getElementById('moduleProgressPercent').textContent = `${pct}%`;
+      document.getElementById('moduleProgressBar').style.width = `${pct}%`;
+      document.getElementById('moduleProgressText').textContent = `${count} / 6 leçons complétées`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. La Droite Graduée et les Opposés | Smarter</title>
+  <meta name="description" content="Micro-leçon 2 du module Nombres Relatifs : Repérage et opposés.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (5ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Nombres Relatifs</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">La Droite Graduée et les Opposés</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 2 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-2/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <section class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 2
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        La Droite Graduée et les Opposés
+      </h1>
+    </section>
+
+    <!-- 1. INTERACTIVE NUMBER LINE -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Explorateur de Droite Graduée</h2>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 text-center">
+        <canvas id="numLineCanvas" width="400" height="140" class="w-full max-w-[400px] h-auto bg-white rounded-xl border border-slate-200 shadow-inner"></canvas>
+
+        <div class="flex justify-center items-center gap-3 font-mono text-xs">
+          <span class="font-bold text-slate-700">Abscisse \(x\) :</span>
+          <input id="numLineSlider" type="range" min="-6" max="6" value="3" class="w-48 accent-purple-600 cursor-pointer">
+          <span id="numLineVal" class="font-bold text-purple-600 text-base">+3</span>
+        </div>
+
+        <div id="oppositeReadout" class="p-3 bg-white rounded-xl border border-slate-200 font-mono text-xs text-purple-900 font-bold">
+          \( +3 \) et \( -3 \) ont la même distance à zéro (3 unités) : ce sont des **nombres opposés** !
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. DEFINITION -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Définition : Nombres Opposés</h2>
+      </div>
+
+      <div class="bg-purple-50 p-4 rounded-xl text-xs text-purple-900 space-y-2 border border-purple-200 font-mono">
+        <p>• La <strong>distance à zéro</strong> d'un nombre est sa longueur sans son signe (toujours positive).</p>
+        <p>• Deux nombres sont <strong>opposés</strong> s'ils ont des signes différents mais la <strong>même distance à zéro</strong>.</p>
+        <p>• Exemple : L'opposé de \(+7\) est \(-7\). L'opposé de \(-4,2\) est \(+4,2\).</p>
+      </div>
+    </section>
+
+    <!-- 3. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Test d'Opposés</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Quel est l'opposé du nombre <strong>\(-12,5\)</strong> ?</p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicroOpp(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">-12,5</button>
+        <button onclick="checkMicroOpp(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">+12,5 (Opposé)</button>
+        <button onclick="checkMicroOpp(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">0</button>
+      </div>
+
+      <div id="microFeedbackOpp" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../01-origine-et-besoin/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 1
+      </a>
+
+      <a href="../03-comparer-les-relatifs/index.html" onclick="markLessonCompleted('MOD-5E-001-L2')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 3 : Comparer ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const nlCanvas = document.getElementById('numLineCanvas');
+    const nlctx = nlCanvas.getContext('2d');
+    const nlSlider = document.getElementById('numLineSlider');
+
+    function drawNumLine() {
+      const v = parseInt(nlSlider.value);
+      document.getElementById('numLineVal').textContent = (v > 0 ? '+' : '') + v;
+
+      nlctx.clearRect(0, 0, nlCanvas.width, nlCanvas.height);
+      const cy = nlCanvas.height / 2;
+      const cx = nlCanvas.width / 2;
+
+      // Axis line
+      nlctx.strokeStyle = '#64748B'; nlctx.lineWidth = 2;
+      nlctx.beginPath(); nlctx.moveTo(20, cy); nlctx.lineTo(nlCanvas.width - 20, cy); nlctx.stroke();
+
+      // Graduation ticks (-6 to +6)
+      const step = (nlCanvas.width - 60) / 12;
+      for (let i = -6; i <= 6; i++) {
+        const x = cx + i * step;
+        nlctx.strokeStyle = i === 0 ? '#EF4444' : '#CBD5E1';
+        nlctx.lineWidth = i === 0 ? 3 : 1.5;
+        nlctx.beginPath(); nlctx.moveTo(x, cy - 8); nlctx.lineTo(x, cy + 8); nlctx.stroke();
+
+        nlctx.fillStyle = i === 0 ? '#EF4444' : '#64748B';
+        nlctx.font = i === 0 ? 'bold 11px JetBrains Mono' : '10px JetBrains Mono';
+        nlctx.fillText((i > 0 ? '+' : '') + i, x - 8, cy + 24);
+      }
+
+      // Active Point X (Blue)
+      const px = cx + v * step;
+      nlctx.fillStyle = '#2563EB';
+      nlctx.beginPath(); nlctx.arc(px, cy, 7, 0, Math.PI * 2); nlctx.fill();
+
+      // Opposite Point -X (Purple)
+      const opx = cx - v * step;
+      nlctx.fillStyle = '#8B5CF6';
+      nlctx.beginPath(); nlctx.arc(opx, cy, 7, 0, Math.PI * 2); nlctx.fill();
+
+      const readout = document.getElementById('oppositeReadout');
+      readout.innerHTML = `\\( ${(v >= 0 ? '+' : '') + v} \\) et \\( ${(v <= 0 ? '+' : '') + (-v)} \\) sont **opposés** (distance à zéro = ${Math.abs(v)}).`;
+      renderMathInElement(readout);
+    }
+
+    nlSlider.addEventListener('input', drawNumLine);
+
+    function checkMicroOpp(ans) {
+      const fb = document.getElementById('microFeedbackOpp');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        playSuccessSound();
+        addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> L'opposé de \\( -12,5 \\) est \\( +12,5 \\) (même distance à zéro, signe contraire) ! (+50 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Rappel :</strong> L'opposé a le signe contraire !`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      drawNumLine();
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

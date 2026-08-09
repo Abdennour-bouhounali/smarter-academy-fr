@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. La notion de Puissance | Smarter</title>
+  <meta name="description" content="Micro-leçon 1 du module Puissances : Comprendre l'écriture puissance comme une multiplication répétée.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+
+  <style>
+    .math-block {
+      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .pulse-text {
+      animation: pulseColor 0.5s ease-out;
+    }
+    @keyframes pulseColor {
+      0% { color: #3B82F6; transform: scale(1.1); }
+      100% { color: inherit; transform: scale(1); }
+    }
+  </style>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Puissances</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">La notion de Puissance</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 1 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-1/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 1
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        La notion de Puissance
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Découvrez comment les mathématiciens écrivent une multiplication répétée de manière beaucoup plus courte.
+      </p>
+    </header>
+
+    <!-- 1. TOUCH MATH FIRST: LE MULTIPLICATEUR EN CHAÎNE -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🎮 Le Multiplicateur en Chaîne</h2>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-8 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-blue-50/90 rounded-xl border border-blue-200 text-xs text-blue-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-blue-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Cliquez sur le bouton "Multiplier par 2" pour ajouter un maillon à la chaîne.
+          </p>
+          <p class="leading-relaxed text-blue-800">
+            <strong>Objectif :</strong> Observer comment la longue chaîne de multiplications se "compresse" pour former une nouvelle écriture appelée <strong>Puissance</strong>.
+          </p>
+        </div>
+
+        <!-- THE CHAIN -->
+        <div class="space-y-2">
+          <h3 class="text-sm font-bold text-slate-700 font-mono text-left">La chaîne de multiplication :</h3>
+          <div id="chain-container" class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm min-h-[80px] flex flex-wrap items-center justify-center gap-2 text-xl font-mono font-bold text-slate-800">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+
+        <!-- THE COMPRESSION (Power Notation & Result) -->
+        <div class="p-6 bg-slate-900 text-white rounded-xl border-4 border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 relative overflow-hidden">
+          <!-- decorative bg -->
+          <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 50% 50%, white 2px, transparent 2px); background-size: 20px 20px;"></div>
+          
+          <div class="flex flex-col items-center">
+            <span class="text-xs text-slate-400 font-mono font-bold uppercase mb-1">Écriture Puissance</span>
+            <div id="display-power" class="text-5xl font-space font-bold text-blue-400">
+              2<sup class="text-2xl">1</sup>
+            </div>
+          </div>
+
+          <div class="text-3xl text-slate-500 font-mono">=</div>
+
+          <div class="flex flex-col items-center">
+            <span class="text-xs text-slate-400 font-mono font-bold uppercase mb-1">Résultat (Total)</span>
+            <div id="display-result" class="text-5xl font-mono font-bold text-emerald-400">
+              2
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="flex items-center justify-center gap-4">
+          <button id="btn-multiply" onclick="multiplyBy2()" class="btn-gradient px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-mono text-sm font-bold rounded-xl shadow-md transition-all active:scale-95 flex items-center gap-2">
+            <span>×</span> Multiplier par 2
+          </button>
+          
+          <button onclick="resetChain()" class="p-3 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-xl transition-all" title="Recommencer">
+            🔄
+          </button>
+        </div>
+
+        <div id="max-limit-msg" class="hidden text-xs font-mono text-amber-600 font-bold bg-amber-50 p-2 rounded-lg inline-block border border-amber-200">
+          Limite atteinte (L'explosion mathématique guette ! 💥)
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. DEFINITIONS -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Le Vocabulaire</h2>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-700">
+        <p>Une <strong>puissance</strong> est une façon raccourcie d'écrire une multiplication où un même nombre est répété plusieurs fois.</p>
+        
+        <div class="p-4 bg-white rounded-xl border border-slate-200 flex flex-col md:flex-row items-center gap-8 justify-center">
+          <div class="text-4xl font-space font-bold flex items-start">
+            <span class="text-slate-800">5</span>
+            <sup class="text-blue-600 text-2xl">3</sup>
+          </div>
+          
+          <div class="space-y-2 font-mono text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-4 h-4 rounded-full bg-slate-800"></span>
+              <span><strong>5</strong> est la <strong class="text-slate-800">base</strong> (le nombre multiplié).</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-4 h-4 rounded-full bg-blue-600"></span>
+              <span><strong>3</strong> est l'<strong class="text-blue-600">exposant</strong> (le nombre de fois).</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-rose-50 rounded-xl border border-rose-200 text-rose-900 text-xs font-mono">
+          ⚠️ <strong>Erreur Classique :</strong> $5^3$ NE VAUT PAS $5 \times 3$ !<br>
+          $5^3$ veut dire $5 \times 5 \times 5 = 125$.
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Test d'Écriture</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Comment écrit-on <strong>$7 \times 7 \times 7 \times 7$</strong> sous forme de puissance ?</p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicro1(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">$7 \times 4$</button>
+        <button onclick="checkMicro1(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-xl font-bold">$7^4$</button>
+        <button onclick="checkMicro1(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-xl font-bold">$4^7$</button>
+      </div>
+
+      <div id="microFeedback1" class="hidden p-3 rounded-xl text-xs font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../../index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Sommaire
+      </a>
+
+      <a href="../02-puissances-de-10/index.html" onclick="markLessonCompleted('MOD-4E-002-L1')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 2 : Puissances de 10 ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    // State
+    const BASE = 2;
+    let exponent = 1;
+    const MAX_EXPONENT = 8;
+
+    const chainContainer = document.getElementById('chain-container');
+    const displayPower = document.getElementById('display-power');
+    const displayResult = document.getElementById('display-result');
+    const btnMultiply = document.getElementById('btn-multiply');
+    const limitMsg = document.getElementById('max-limit-msg');
+
+    function renderChain() {
+      chainContainer.innerHTML = '';
+      
+      for(let i = 0; i < exponent; i++) {
+        // Create number block
+        const numBlock = document.createElement('div');
+        numBlock.className = 'px-3 py-1 bg-white border-2 border-slate-300 rounded-lg text-slate-900 shadow-sm math-block';
+        numBlock.style.animationDelay = `${i === exponent-1 ? 0 : 0}s`; // only animate the new one if we wanted, but popping all is fine too. Actually let's just animate the last ones.
+        numBlock.textContent = BASE;
+        
+        chainContainer.appendChild(numBlock);
+
+        // Create multiply symbol if not last
+        if(i < exponent - 1) {
+          const symBlock = document.createElement('div');
+          symBlock.className = 'text-slate-400 text-sm font-sans';
+          symBlock.textContent = '×';
+          chainContainer.appendChild(symBlock);
+        }
+      }
+    }
+
+    function updateDisplays() {
+      // Calculate result
+      const result = Math.pow(BASE, exponent);
+      
+      // Update HTML
+      displayPower.innerHTML = `${BASE}<sup class="text-2xl">${exponent}</sup>`;
+      displayResult.textContent = result.toLocaleString('fr-FR');
+
+      // Trigger pulse animations
+      displayPower.classList.remove('pulse-text');
+      displayResult.classList.remove('pulse-text');
+      void displayPower.offsetWidth;
+      displayPower.classList.add('pulse-text');
+      displayResult.classList.add('pulse-text');
+
+      // Audio feedback
+      if(typeof playTone === 'function') {
+        try { playTone(400 + (exponent * 100), 'sine', 0.1); } catch(e){}
+      }
+    }
+
+    function multiplyBy2() {
+      if (exponent >= MAX_EXPONENT) return;
+      
+      exponent++;
+      renderChain();
+      updateDisplays();
+
+      if (exponent >= MAX_EXPONENT) {
+        btnMultiply.disabled = true;
+        btnMultiply.classList.add('opacity-50', 'cursor-not-allowed');
+        limitMsg.classList.remove('hidden');
+      }
+    }
+
+    function resetChain() {
+      exponent = 1;
+      btnMultiply.disabled = false;
+      btnMultiply.classList.remove('opacity-50', 'cursor-not-allowed');
+      limitMsg.classList.add('hidden');
+      
+      renderChain();
+      updateDisplays();
+    }
+
+    function checkMicro1(ans) {
+      const fb = document.getElementById('microFeedback1');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> La base est 7, et on le multiplie 4 fois, donc l'exposant est 4. (+50 XP)`;
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        if (ans === 1) {
+          fb.innerHTML = `❌ <strong>Erreur fatale !</strong> $7 \\times 4$ veut dire $7+7+7+7$. Une puissance est une répétition de MULTIPLICATIONS !`;
+        } else {
+          fb.innerHTML = `❌ <strong>Inversé !</strong> La base (en bas) est le nombre qui est répété ($7$). L'exposant (en haut) est le nombre de fois qu'on le voit ($4$).`;
+        }
+      }
+      if(window.renderMathInElement) renderMathInElement(fb, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      resetChain();
+      if(window.renderMathInElement) renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "abdennour-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:all": "concurrently \"npm run dev\" \"cd api && php artisan serve --port=3000\"",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^11.3.0",
+    "katex": "^0.18.2",
+    "lucide-react": "^0.400.0",
+    "mafs": "^0.21.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
+    "react-katex": "^3.1.0",
+    "react-router-dom": "^7.18.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^10.0.4",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.6",
+    "vite": "^5.3.4"
+  }
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06. Mission Finale : L'Architecte | Smarter</title>
+  <meta name="description" content="Micro-leçon 6 du module Pythagore : Mission finale combinant calcul de longueur et vérification d'équerre.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50 text-slate-800 font-sans">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Pythagore</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Mission Finale : L'Architecte</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 6 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-6/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-mono text-xs font-semibold">
+        ⏱️ 10 min • Mission Finale
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-space font-extrabold text-slate-900 tracking-tight">
+        L'Architecte de Pythagore
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Testez toutes vos connaissances (Théorème et Réciproque) pour construire et valider la structure d'une maison !
+      </p>
+    </header>
+
+    <!-- 1. TOUCH MATH FIRST: INTERACTIVE BUILDER -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🎮 Le Simulateur de Charpente</h2>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-blue-50/90 rounded-xl border border-blue-200 text-xs text-blue-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-blue-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Ajustez les dimensions des murs (base et hauteur) ainsi que la longueur de la poutre diagonale en bois.
+          </p>
+          <p class="leading-relaxed text-blue-800">
+            <strong>Objectif :</strong> Votre mission est de trouver les mesures exactes pour que la charpente soit <strong>parfaitement droite</strong> (angle droit). Utilisez la formule de Pythagore pour trouver les dimensions parfaites !
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-4 text-xs font-mono">
+          <div class="bg-white p-3 rounded-xl border border-slate-200">
+            <span class="font-bold text-slate-700">Base du mur :</span><br>
+            <span id="baseVal" class="font-bold text-blue-600 text-lg">3</span> m
+            <input id="baseSlider" type="range" min="2" max="10" step="1" value="3" class="w-full accent-blue-600 mt-1 cursor-pointer">
+          </div>
+          <div class="bg-white p-3 rounded-xl border border-slate-200">
+            <span class="font-bold text-slate-700">Hauteur :</span><br>
+            <span id="heightVal" class="font-bold text-orange-600 text-lg">4</span> m
+            <input id="heightSlider" type="range" min="2" max="10" step="1" value="4" class="w-full accent-orange-600 mt-1 cursor-pointer">
+          </div>
+          <div class="bg-white p-3 rounded-xl border border-slate-200">
+            <span class="font-bold text-slate-700">Poutre :</span><br>
+            <span id="hypVal" class="font-bold text-indigo-600 text-lg">5</span> m
+            <input id="hypSlider" type="range" min="3" max="15" step="0.5" value="5" class="w-full accent-indigo-600 mt-1 cursor-pointer">
+          </div>
+        </div>
+
+        <!-- HTML/CSS Visual representation of the frame -->
+        <div class="flex justify-center my-6">
+          <div class="relative w-64 h-64 border-b-4 border-l-4 border-slate-800 bg-blue-50/50 flex items-end">
+            <!-- Visual square symbol for right angle (only shows if perfect) -->
+            <div id="rightAngleIcon" class="absolute bottom-0 left-0 w-8 h-8 border-t-2 border-r-2 border-red-500 hidden"></div>
+            
+            <!-- Diagonal beam -->
+            <div id="beam" class="absolute bottom-0 left-0 h-2 bg-indigo-600 origin-bottom-left transition-transform duration-300"></div>
+            
+            <!-- Labels -->
+            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 text-blue-800 font-bold font-mono"><span id="lblBase">3</span>m</div>
+            <div class="absolute top-1/2 left-2 -translate-y-1/2 text-orange-800 font-bold font-mono -rotate-90 origin-left"><span id="lblHeight">4</span>m</div>
+          </div>
+        </div>
+
+        <div id="statusReadout" class="p-3.5 bg-white rounded-xl border-2 font-mono text-sm font-bold transition-colors duration-300">
+          Vérification en cours...
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SYNTHESE -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">💡 Synthèse de Pythagore</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 text-sm">
+          <h3 class="font-bold text-blue-900 mb-2">Le Théorème (Calcul)</h3>
+          <p class="text-blue-800 leading-relaxed">
+            Sert à <strong>calculer une longueur</strong> manquante quand on <strong>sait déjà</strong> que le triangle est rectangle.
+          </p>
+          <div class="mt-2 text-center text-xs font-mono text-blue-700 bg-blue-100/50 p-2 rounded">
+            Hypoténuse² = Côté² + Côté²
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-sm">
+          <h3 class="font-bold text-emerald-900 mb-2">La Réciproque (Vérification)</h3>
+          <p class="text-emerald-800 leading-relaxed">
+            Sert à <strong>vérifier si l'angle est droit</strong> (ou pas), en comparant le carré du plus grand côté avec la somme des carrés des deux autres.
+          </p>
+          <div class="mt-2 text-center text-xs font-mono text-emerald-700 bg-emerald-100/50 p-2 rounded">
+            Si a² = b² + c² → Angle droit !
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FINAL MISSION QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">👑 Mission Finale</h2>
+      </div>
+
+      <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-sm text-amber-900 mb-4">
+        Un maçon a construit un mur de <strong>6 m</strong> de base. La poutre de renfort diagonale (l'hypoténuse) mesure exactement <strong>10 m</strong>. 
+        <br><br>
+        Quelle doit être la hauteur exacte du mur pour que l'angle soit un angle droit (triangle rectangle) ?
+      </div>
+
+      <div class="grid sm:grid-cols-1 gap-3">
+        <button onclick="checkFinalMission(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-left">
+          A) 4 mètres (Car 10 - 6 = 4)
+        </button>
+        <button onclick="checkFinalMission(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-left">
+          B) 8 mètres (Théorème : h² = 10² - 6² = 100 - 36 = 64. Racine de 64 = 8)
+        </button>
+        <button onclick="checkFinalMission(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-left">
+          C) 11,6 mètres (Théorème : h² = 10² + 6² = 136. Racine de 136 ≈ 11,6)
+        </button>
+      </div>
+
+      <div id="finalMissionFeedback" class="hidden p-4 rounded-xl text-sm font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../05-contraposee-et-demonstration/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 5
+      </a>
+
+      <a href="../../index.html" onclick="markLessonCompleted('MOD-4E-001-L6')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Terminer le Module 🎉
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const baseSlider = document.getElementById('baseSlider');
+    const heightSlider = document.getElementById('heightSlider');
+    const hypSlider = document.getElementById('hypSlider');
+    const beam = document.getElementById('beam');
+    const rightAngleIcon = document.getElementById('rightAngleIcon');
+    const statusReadout = document.getElementById('statusReadout');
+
+    function updateSimulation() {
+      const b = parseFloat(baseSlider.value);
+      const h = parseFloat(heightSlider.value);
+      const hyp = parseFloat(hypSlider.value);
+
+      document.getElementById('baseVal').textContent = b;
+      document.getElementById('heightVal').textContent = h;
+      document.getElementById('hypVal').textContent = hyp;
+      
+      document.getElementById('lblBase').textContent = b;
+      document.getElementById('lblHeight').textContent = h;
+
+      // Update Visuals
+      // Scale visual mapping: max 10m maps to 100% of container (256px)
+      const scaleFactor = 256 / 15; // use 15 as max hypothetical bound
+      
+      // Calculate true geometric properties to draw the beam
+      const pixelW = b * scaleFactor;
+      const pixelH = h * scaleFactor;
+      const pixelHyp = hyp * scaleFactor;
+      
+      // True visual angle if the beam were attached to the top corner
+      const angleRad = Math.atan2(pixelH, pixelW);
+      const angleDeg = -(angleRad * 180 / Math.PI); // negative because Y goes down in HTML
+
+      beam.style.width = `${pixelHyp}px`;
+      beam.style.transform = `rotate(${angleDeg}deg)`;
+
+      // Logic Check: Réciproque de Pythagore
+      const calcHypSq = (b * b) + (h * h);
+      const givenHypSq = (hyp * hyp);
+      
+      // Use a small epsilon for floating point issues
+      const isPerfectRightAngle = Math.abs(calcHypSq - givenHypSq) < 0.1;
+
+      if (isPerfectRightAngle) {
+        rightAngleIcon.classList.remove('hidden');
+        statusReadout.className = 'p-3.5 bg-emerald-50 border-emerald-200 text-emerald-800 rounded-xl border-2 font-mono text-sm font-bold transition-colors duration-300';
+        statusReadout.innerHTML = `✅ Structure Parfaite ! (Réciproque vérifiée)<br><span class="text-xs font-normal">(${hyp}² = ${h}² + ${b}² &rarr; ${givenHypSq} = ${calcHypSq})</span>`;
+      } else {
+        rightAngleIcon.classList.add('hidden');
+        statusReadout.className = 'p-3.5 bg-rose-50 border-rose-200 text-rose-800 rounded-xl border-2 font-mono text-sm font-bold transition-colors duration-300';
+        if (givenHypSq > calcHypSq) {
+          statusReadout.innerHTML = `⚠️ Danger ! Poutre trop longue.<br><span class="text-xs font-normal">L'angle est obtus (ouvert) car ${givenHypSq} > ${calcHypSq}</span>`;
+        } else {
+          statusReadout.innerHTML = `⚠️ Danger ! Poutre trop courte.<br><span class="text-xs font-normal">L'angle est aigu (fermé) car ${givenHypSq} < ${calcHypSq}</span>`;
+        }
+      }
+    }
+
+    baseSlider.addEventListener('input', updateSimulation);
+    heightSlider.addEventListener('input', updateSimulation);
+    hypSlider.addEventListener('input', updateSimulation);
+
+    function checkFinalMission(ans) {
+      const fb = document.getElementById('finalMissionFeedback');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      
+      if (ans === 2) {
+        if (typeof playSuccessSound === 'function') playSuccessSound();
+        if (typeof addXP === 'function') addXP(100);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Félicitations, vous avez réussi la mission finale !</strong><br><br>Vous avez parfaitement identifié que pour calculer un <em>côté de l'angle droit</em> (la hauteur), il faut <strong>soustraire</strong> :<br>Hauteur² = 10² - 6² = 100 - 36 = 64.<br>La hauteur est donc bien de <strong>8 m</strong> ! (+100 XP)`;
+      } else {
+        if (typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        if (ans === 1) {
+          fb.innerHTML = `❌ <strong>Attention !</strong> Le théorème de Pythagore utilise les <strong>carrés</strong> des longueurs, pas les longueurs simples.`;
+        } else {
+          fb.innerHTML = `❌ <strong>Presque...</strong> Vous avez additionné les carrés. Mais l'hypoténuse (10) est <em>déjà</em> le plus grand côté ! Pour trouver un autre côté, il faut soustraire.`;
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateSimulation();
+    });
+  </script>
+</body>
+</html>

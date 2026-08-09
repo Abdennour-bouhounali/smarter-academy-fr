@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. Notation Scientifique | Smarter</title>
+  <meta name="description" content="Micro-leçon 4 du module Puissances : Écrire un nombre en notation scientifique.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+
+  <style>
+    .valid-state {
+      animation: pulseGreen 1s infinite alternate;
+    }
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); border-color: #34D399; }
+      100% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); border-color: #10B981; }
+    }
+  </style>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Puissances</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Notation Scientifique</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 4 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-4/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 4
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        La Notation Scientifique
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Le standard international pour écrire les nombres gigantesques (ou minuscules) de l'Univers.
+      </p>
+    </header>
+
+    <!-- 1. TOUCH MATH FIRST: LE VISEUR SCIENTIFIQUE -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+          <h2 class="text-xl font-space font-bold text-slate-900">🎮 Le Viseur Scientifique</h2>
+        </div>
+
+        <!-- Toggle Number Type -->
+        <div class="flex bg-slate-200 p-1 rounded-lg">
+          <button id="btn-large" onclick="setNumberType('large')" class="px-4 py-1.5 text-xs font-bold rounded-md bg-white text-emerald-700 shadow-sm transition-all">Grand Nombre</button>
+          <button id="btn-small" onclick="setNumberType('small')" class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all">Petit Nombre</button>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-8 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-emerald-50/90 rounded-xl border border-emerald-200 text-xs text-emerald-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-emerald-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Déplacez le curseur pour glisser la virgule à travers le nombre de départ.
+          </p>
+          <p class="leading-relaxed text-emerald-800">
+            <strong>Objectif :</strong> Trouver l'unique position de la virgule qui valide la <strong>Règle d'or</strong> : le nombre avant le signe $\times$ doit être compris entre 1 inclus et 10 exclu.
+          </p>
+        </div>
+
+        <!-- The Original Number -->
+        <div class="text-sm font-mono text-slate-500 font-bold">
+          Nombre de départ : <span id="original-num" class="text-slate-800 text-lg">450 000</span>
+        </div>
+
+        <!-- Visualizer Area -->
+        <div id="visualizer-box" class="p-6 bg-white border-4 border-slate-200 rounded-2xl shadow-sm flex flex-col justify-center items-center gap-6 transition-all duration-300">
+          
+          <div class="text-4xl sm:text-5xl font-space font-bold text-slate-800 flex items-center gap-4">
+            <div id="vis-a" class="text-emerald-600">450000</div>
+            <div class="text-slate-400">×</div>
+            <div id="vis-pow">10<sup class="text-3xl text-blue-600">0</sup></div>
+          </div>
+
+          <!-- The Slider -->
+          <input type="range" id="comma-slider" min="0" max="6" value="0" class="w-full max-w-sm accent-emerald-600 cursor-pointer">
+
+        </div>
+
+        <!-- Status Message -->
+        <div id="status-msg" class="p-4 rounded-xl font-mono text-sm font-bold border">
+          <!-- Filled by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. THE RULES -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">La Règle d'Or</h2>
+      </div>
+
+      <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 text-blue-900 space-y-3 font-mono text-sm">
+        <p>Un nombre est écrit en <strong>notation scientifique</strong> s'il est de la forme :</p>
+        
+        <div class="p-4 bg-white rounded-lg border border-blue-100 text-center text-xl font-bold flex justify-center items-center gap-4">
+          <span class="text-emerald-600">a</span> × <span class="text-blue-600">10<sup>n</sup></span>
+        </div>
+
+        <ul class="space-y-2 mt-4 ml-4 list-disc text-xs text-blue-800">
+          <li>Le nombre <strong class="text-emerald-600">a</strong> doit avoir <strong>un seul chiffre non nul</strong> avant la virgule. (Il doit être compris entre 1 et 9,999...).</li>
+          <li>L'exposant <strong class="text-blue-600">n</strong> est un entier (positif ou négatif) qui "compense" le déplacement de la virgule.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Le Détecteur</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Lequel de ces nombres est correctement écrit en notation scientifique ?</p>
+
+      <div class="grid sm:grid-cols-1 gap-3">
+        <button onclick="checkMicro4(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-left">A) $34,5 \times 10^4$</button>
+        <button onclick="checkMicro4(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-left">B) $0,7 \times 10^8$</button>
+        <button onclick="checkMicro4(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-left text-emerald-800 font-bold">C) $2,9 \times 10^{-3}$</button>
+      </div>
+
+      <div id="microFeedback4" class="hidden p-3 rounded-xl text-xs font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../03-multiplication-et-division/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 3
+      </a>
+
+      <a href="../05-infiniment-grand-petit/index.html" onclick="markLessonCompleted('MOD-4E-002-L4')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 5 : Univers ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const slider = document.getElementById('comma-slider');
+    let numType = 'large'; // 'large' or 'small'
+
+    const config = {
+      large: {
+        originalStr: "450 000",
+        digits: "450000",
+        baseExp: 0, // 450000 * 10^0
+        minSlider: 0,
+        maxSlider: 6
+      },
+      small: {
+        originalStr: "0,000 32",
+        digits: "000032",
+        baseExp: -5, // We will offset this. Actually, it's easier to just format directly.
+        minSlider: 0,
+        maxSlider: 5
+      }
+    };
+
+    function setNumberType(type) {
+      numType = type;
+      
+      const btnLarge = document.getElementById('btn-large');
+      const btnSmall = document.getElementById('btn-small');
+      
+      if(type === 'large') {
+        btnLarge.className = 'px-4 py-1.5 text-xs font-bold rounded-md bg-white text-emerald-700 shadow-sm transition-all';
+        btnSmall.className = 'px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all';
+        slider.min = config.large.minSlider;
+        slider.max = config.large.maxSlider;
+        slider.value = 0;
+      } else {
+        btnSmall.className = 'px-4 py-1.5 text-xs font-bold rounded-md bg-white text-emerald-700 shadow-sm transition-all';
+        btnLarge.className = 'px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all';
+        slider.min = config.small.minSlider;
+        slider.max = config.small.maxSlider;
+        slider.value = 0;
+      }
+      
+      document.getElementById('original-num').textContent = config[type].originalStr;
+      updateVisuals();
+    }
+
+    function updateVisuals() {
+      const shift = parseInt(slider.value, 10);
+      const visA = document.getElementById('vis-a');
+      const visPow = document.getElementById('vis-pow');
+      const box = document.getElementById('visualizer-box');
+      const status = document.getElementById('status-msg');
+      
+      let aStr = "";
+      let n = 0;
+      let aVal = 0;
+
+      if (numType === 'large') {
+        // digits: "450000"
+        // shift=0 -> 450000 x 10^0
+        // shift=1 -> 45000,0 x 10^1
+        // shift=5 -> 4,50000 x 10^5
+        n = shift;
+        const d = config.large.digits;
+        const insertIdx = d.length - shift;
+        
+        if (shift === 0) {
+          aStr = d;
+        } else if (shift === 6) {
+          aStr = "0," + d;
+        } else {
+          aStr = d.slice(0, insertIdx) + "," + d.slice(insertIdx);
+        }
+        
+        aVal = parseFloat(aStr.replace(',', '.'));
+      } else {
+        // digits: "000032"
+        // shift=0 -> 0,00032 x 10^0
+        // shift=1 -> 00,0032 x 10^-1
+        // shift=4 -> 00003,2 x 10^-4
+        n = -shift;
+        const d = config.small.digits;
+        const insertIdx = 1 + shift;
+        
+        if (shift === 0) {
+          aStr = "0,00032";
+        } else if (shift === 5) {
+          aStr = "000032"; // effectively 32
+        } else {
+          aStr = d.slice(0, insertIdx) + "," + d.slice(insertIdx);
+        }
+        
+        aVal = parseFloat(aStr.replace(',', '.'));
+      }
+
+      visA.textContent = aStr;
+      visPow.innerHTML = `10<sup class="text-3xl text-blue-600">${n}</sup>`;
+
+      // Check validity (1 <= a < 10)
+      if (aVal >= 1 && aVal < 10) {
+        box.classList.add('valid-state');
+        status.className = 'p-4 rounded-xl font-mono text-sm font-bold border border-emerald-300 bg-emerald-50 text-emerald-800';
+        status.innerHTML = `✅ Parfait ! ${aVal} est bien compris entre 1 et 10. C'est la notation scientifique !`;
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+      } else if (aVal < 1) {
+        box.classList.remove('valid-state');
+        status.className = 'p-4 rounded-xl font-mono text-sm font-bold border border-rose-300 bg-rose-50 text-rose-800';
+        status.innerHTML = `❌ Trop petit ! Le nombre devant doit être d'au moins 1.`;
+      } else {
+        box.classList.remove('valid-state');
+        status.className = 'p-4 rounded-xl font-mono text-sm font-bold border border-amber-300 bg-amber-50 text-amber-800';
+        status.innerHTML = `⚠️ Trop grand ! Le nombre devant doit être strictement inférieur à 10.`;
+      }
+
+      if(typeof playTone === 'function' && !(aVal >= 1 && aVal < 10)) {
+        try { playTone(300 + (shift * 40), 'sine', 0.05); } catch(e){}
+      }
+    }
+
+    slider.addEventListener('input', updateVisuals);
+
+    function checkMicro4(ans) {
+      const fb = document.getElementById('microFeedback4');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 3) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> 2,9 est bien compris entre 1 et 10. Les autres ont "34" (trop grand) et "0" (trop petit) avant la virgule. (+50 XP)`;
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        if (ans === 1) {
+          fb.innerHTML = `❌ <strong>Faux :</strong> 34,5 est plus grand que 10 ! La virgule doit être déplacée d'un rang vers la gauche : $3,45 \\times 10^5$.`;
+        } else {
+          fb.innerHTML = `❌ <strong>Faux :</strong> 0,7 est plus petit que 1 ! Le premier chiffre ne peut pas être un zéro. C'est $7 \\times 10^7$.`;
+        }
+      }
+      if(window.renderMathInElement) renderMathInElement(fb, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setNumberType('large');
+      if(window.renderMathInElement) renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

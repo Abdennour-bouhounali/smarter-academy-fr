@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03. Valeur de position et décomposition | Smarter</title>
+  <meta name="description" content="Micro-leçon 3 du module Nombres Décimaux : Le tableau de numération et la décomposition.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (6ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Nombres Decimaux</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Valeur de position et décomposition</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 3 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-3/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <section class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 text-cyan-700 font-mono text-xs font-semibold">
+        ⏱️ 6 min • Micro-Leçon 3
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        Valeur de position et décomposition
+      </h1>
+    </section>
+
+    <!-- 1. INTERACTIVE TABLEAU DE NUMÉRATION -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-cyan-100 text-cyan-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Le Tableau de Numération Décimal</h2>
+      </div>
+
+      <p class="text-slate-600 text-sm">
+        Chaque rang a un rôle bien précis. Observez la décomposition du nombre <strong>\( 3,485 \)</strong> :
+      </p>
+
+      <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 overflow-x-auto">
+        <table class="w-full text-center font-mono text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-200 text-slate-700">
+              <th colspan="2" class="p-2 border border-slate-300">Partie Entière</th>
+              <th class="p-2 bg-slate-400 text-white font-bold border border-slate-300">,</th>
+              <th colspan="3" class="p-2 border border-slate-300 bg-blue-100 text-blue-900">Partie Décimale</th>
+            </tr>
+            <tr class="bg-slate-100 text-slate-600 text-[10px]">
+              <th class="p-2 border border-slate-200">Dizaines</th>
+              <th class="p-2 border border-slate-200">Unités</th>
+              <th class="p-2 bg-slate-300 border border-slate-200">Virgule</th>
+              <th class="p-2 border border-slate-200 bg-blue-50 text-blue-800">Dixièmes (\(\frac{1}{10}\))</th>
+              <th class="p-2 border border-slate-200 bg-purple-50 text-purple-800">Centièmes (\(\frac{1}{100}\))</th>
+              <th class="p-2 border border-slate-200 bg-cyan-50 text-cyan-800">Millièmes (\(\frac{1}{1000}\))</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-base font-bold text-slate-900 bg-white">
+              <td class="p-3 border border-slate-200 text-slate-300">0</td>
+              <td class="p-3 border border-slate-200 text-slate-900">3</td>
+              <td class="p-3 border border-slate-200 text-rose-600 font-extrabold text-xl">,</td>
+              <td class="p-3 border border-slate-200 text-blue-600 bg-blue-50/50">4</td>
+              <td class="p-3 border border-slate-200 text-purple-600 bg-purple-50/50">8</td>
+              <td class="p-3 border border-slate-200 text-cyan-600 bg-cyan-50/50">5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl border border-slate-200 font-mono text-xs sm:text-sm text-center space-y-1">
+        <p class="text-slate-500 font-sans text-xs">Décomposition sous forme de somme :</p>
+        <p class="font-bold text-blue-900">\[ 3,485 = 3 + \frac{4}{10} + \frac{8}{100} + \frac{5}{1000} \]</p>
+      </div>
+    </section>
+
+    <!-- 2. GUIDED PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Test de Décomposition</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Dans le nombre <strong>7,29</strong>, quel est le chiffre des <strong>centièmes</strong> ?</p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicro3(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">7</button>
+        <button onclick="checkMicro3(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">2</button>
+        <button onclick="checkMicro3(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">9</button>
+      </div>
+
+      <div id="microFeedback3" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../02-lire-ecrire-decimaux/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 2
+      </a>
+
+      <a href="../04-comparer-ranger-decimaux/index.html" onclick="markLessonCompleted('MOD-6E-001-L3')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 4 : Comparer ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    function checkMicro3(ans) {
+      const fb = document.getElementById('microFeedback3');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 3) {
+        playSuccessSound();
+        addXP(60);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> 9 est le 2ème chiffre après la virgule (les centièmes). (+60 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Rappel :</strong> Les centièmes sont au 2ème rang après la virgule !`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

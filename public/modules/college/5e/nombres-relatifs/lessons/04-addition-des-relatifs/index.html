@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. L'Addition des Nombres Relatifs | Smarter</title>
+  <meta name="description" content="Micro-leçon 4 du module Nombres Relatifs : Manipulation des jetons et sauts sur la droite graduée.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50 text-slate-800 font-sans">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (5ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Nombres Relatifs</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">L'Addition des Nombres Relatifs</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 4 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-4/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono text-xs font-semibold">
+        ⏱️ 6 min • Micro-Leçon 4
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-space font-extrabold text-slate-900 tracking-tight">
+        L'Addition des Nombres Relatifs
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Comprenez l'addition en manipulant les jetons de neutralisation et les sauts sur la droite graduée !
+      </p>
+    </header>
+
+    <!-- 1. MANIPULATION 1: SIMULATEUR DE JETONS DE NEUTRALISATION -->
+    <section class="smarter-card p-6 space-y-6" aria-labelledby="chips-heading">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 id="chips-heading" class="text-xl font-space font-bold text-slate-900">Manipulation 1 : Les Jetons de Neutralisation</h2>
+      </div>
+
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Chaque jeton vert représente <strong>\(+1\)</strong> et chaque jeton rouge représente <strong>\(-1\)</strong>.<br>
+        Lorsqu'un jeton \(+1\) rencontre un jeton \(-1\), ils <strong>s'annulent (\(1 + (-1) = 0\))</strong> !
+      </p>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-blue-50/90 rounded-xl border border-blue-200 text-xs text-blue-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-blue-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Choisissez le Nombre A et le Nombre B avec les curseurs, puis cliquez sur <em>⚡ Annuler les pairs (+1 / -1) !</em>
+          </p>
+          <p class="leading-relaxed text-blue-800">
+            <strong>Objectif :</strong> Comprendre visuellement qu'un jeton vert (+1) s'annule avec un jeton rouge (-1) et observer le résultat de l'addition de deux relatifs.
+          </p>
+        </div>
+        
+        <!-- Controls for relative numbers A and B -->
+        <div class="grid sm:grid-cols-2 gap-4 text-xs font-mono">
+          <div class="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+            <span class="font-bold text-slate-700">Nombre A : </span>
+            <span id="numAVal" class="font-bold text-blue-600 text-sm">-3</span>
+            <input id="numASlider" type="range" min="-6" max="6" value="-3" class="w-full accent-blue-600 cursor-pointer">
+          </div>
+
+          <div class="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+            <span class="font-bold text-slate-700">Nombre B : </span>
+            <span id="numBVal" class="font-bold text-emerald-600 text-sm">+5</span>
+            <input id="numBSlider" type="range" min="-6" max="6" value="5" class="w-full accent-emerald-600 cursor-pointer">
+          </div>
+        </div>
+
+        <!-- Chips Animation Canvas Box -->
+        <div class="bg-white p-4 rounded-xl border border-slate-200 flex flex-col items-center justify-center min-h-[140px] space-y-3 shadow-inner">
+          <div id="chipsContainer" class="flex flex-wrap items-center justify-center gap-2 max-w-md"></div>
+          
+          <button onclick="neutralizeChips()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-mono text-xs font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5">
+            ⚡ Annuler les pairs (+1 / -1) !
+          </button>
+        </div>
+
+        <div id="chipsResultReadout" class="p-3 bg-white rounded-xl border border-slate-200 font-mono text-sm font-bold text-emerald-900">
+          \( (-3) + (+5) = +2 \)
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MANIPULATION 2: SAUTS SUR LA DROITE GRADUÉE -->
+    <section class="smarter-card p-6 space-y-6" aria-labelledby="line-heading">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 id="line-heading" class="text-xl font-space font-bold text-slate-900">Manipulation 2 : Les Sauts de Déplacement</h2>
+      </div>
+
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Partons de 0 : le nombre \(A\) effectue le 1er déplacement (arc bleu), puis le nombre \(B\) effectue le 2nd déplacement (arc vert) !
+      </p>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 text-center">
+        <div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-center shadow-inner">
+          <canvas id="addJumpCanvas" width="420" height="180" class="w-full max-w-[420px] h-auto bg-slate-50 border border-slate-100 rounded-lg"></canvas>
+        </div>
+
+        <div id="jumpDescriptionText" class="p-3 bg-white rounded-xl border border-slate-200 font-mono text-xs font-bold text-blue-900">
+          1er saut : De 0 à -3 • 2nd saut : De -3 à +2 (+5 à droite)
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FORMALIZATION -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Les 2 Règles d'Or à Retenir</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4 text-xs font-mono">
+        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-2">
+          <strong class="text-emerald-900 font-bold text-sm">1. Même Signe :</strong>
+          <p class="text-slate-700">On **garde le signe commun** et on **additionne** les distances.</p>
+          <div class="bg-white p-2 rounded-xl border border-emerald-200 font-bold text-emerald-900 text-center">
+            \( (-3) + (-5) = -8 \)
+          </div>
+        </div>
+
+        <div class="p-4 bg-blue-50 rounded-2xl border border-blue-200 space-y-2">
+          <strong class="text-blue-900 font-bold text-sm">2. Signes Contraires :</strong>
+          <p class="text-slate-700">On **prend le signe du plus grand** et on **soustrait** les distances.</p>
+          <div class="bg-white p-2 rounded-xl border border-blue-200 font-bold text-blue-900 text-center">
+            \( (-9) + (+4) = -5 \)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">4</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Test de Calcul</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Calculez : <strong>\( (-7) + (-4) \)</strong></p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicroAdd(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">-11 (Exact)</button>
+        <button onclick="checkMicroAdd(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">-3</button>
+        <button onclick="checkMicroAdd(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">+11</button>
+      </div>
+
+      <div id="microFeedbackAdd" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../03-comparer-les-relatifs/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 3
+      </a>
+
+      <a href="../05-soustraction-des-relatifs/index.html" onclick="markLessonCompleted('MOD-5E-001-L4')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 5 : Soustraction ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const numASlider = document.getElementById('numASlider');
+    const numBSlider = document.getElementById('numBSlider');
+    const jcanvas = document.getElementById('addJumpCanvas');
+    const jctx = jcanvas.getContext('2d');
+
+    function updateAdditionScene() {
+      const a = parseInt(numASlider.value);
+      const b = parseInt(numBSlider.value);
+
+      document.getElementById('numAVal').textContent = (a >= 0 ? '+' : '') + a;
+      document.getElementById('numBVal').textContent = (b >= 0 ? '+' : '') + b;
+
+      // 1. Render Chips
+      renderChips(a, b);
+
+      // 2. Render Jump Line
+      renderJumpLine(a, b);
+
+      // 3. Readout
+      const total = a + b;
+      const readout = document.getElementById('chipsResultReadout');
+      readout.innerHTML = `\\( (${a >= 0 ? '+' : ''}${a}) + (${b >= 0 ? '+' : ''}${b}) = ${total >= 0 ? '+' : ''}${total} \\)`;
+      renderMathInElement(readout);
+    }
+
+    function renderChips(a, b) {
+      const container = document.getElementById('chipsContainer');
+      container.innerHTML = '';
+
+      const countA = Math.abs(a);
+      for (let i = 0; i < countA; i++) {
+        const chip = document.createElement('div');
+        chip.className = `w-8 h-8 rounded-full flex items-center justify-center font-mono font-bold text-xs shadow-xs text-white ${a >= 0 ? 'bg-emerald-500 border-2 border-emerald-600' : 'bg-rose-500 border-2 border-rose-600'}`;
+        chip.textContent = a >= 0 ? '+1' : '-1';
+        container.appendChild(chip);
+      }
+
+      if (countA > 0 && Math.abs(b) > 0) {
+        const sep = document.createElement('div');
+        sep.className = 'font-mono text-sm font-bold text-slate-400 px-1';
+        sep.textContent = '+';
+        container.appendChild(sep);
+      }
+
+      const countB = Math.abs(b);
+      for (let i = 0; i < countB; i++) {
+        const chip = document.createElement('div');
+        chip.className = `w-8 h-8 rounded-full flex items-center justify-center font-mono font-bold text-xs shadow-xs text-white ${b >= 0 ? 'bg-emerald-500 border-2 border-emerald-600' : 'bg-rose-500 border-2 border-rose-600'}`;
+        chip.textContent = b >= 0 ? '+1' : '-1';
+        container.appendChild(chip);
+      }
+    }
+
+    function neutralizeChips() {
+      const container = document.getElementById('chipsContainer');
+      const a = parseInt(numASlider.value);
+      const b = parseInt(numBSlider.value);
+      const total = a + b;
+
+      playSuccessSound();
+      container.innerHTML = '';
+
+      const count = Math.abs(total);
+      for (let i = 0; i < count; i++) {
+        const chip = document.createElement('div');
+        chip.className = `w-9 h-9 rounded-full flex items-center justify-center font-mono font-bold text-xs shadow-md text-white ${total >= 0 ? 'bg-emerald-500 border-2 border-emerald-600 ring-4 ring-emerald-100' : 'bg-rose-500 border-2 border-rose-600 ring-4 ring-rose-100'}`;
+        chip.textContent = total >= 0 ? '+1' : '-1';
+        container.appendChild(chip);
+      }
+    }
+
+    function renderJumpLine(a, b) {
+      jctx.clearRect(0, 0, jcanvas.width, jcanvas.height);
+      const cx = jcanvas.width / 2; // X=0 center
+      const cy = jcanvas.height - 40;
+
+      // Axis Line
+      jctx.strokeStyle = '#64748B'; jctx.lineWidth = 2;
+      jctx.beginPath(); jctx.moveTo(15, cy); jctx.lineTo(jcanvas.width - 15, cy); jctx.stroke();
+
+      const step = (jcanvas.width - 60) / 24; // -12 to +12
+
+      // Ticks
+      for (let i = -12; i <= 12; i++) {
+        const x = cx + i * step;
+        jctx.strokeStyle = i === 0 ? '#EF4444' : '#E2E8F0';
+        jctx.lineWidth = i === 0 ? 2.5 : 1;
+        jctx.beginPath(); jctx.moveTo(x, cy - 6); jctx.lineTo(x, cy + 6); jctx.stroke();
+        if (i % 2 === 0) {
+          jctx.fillStyle = i === 0 ? '#EF4444' : '#64748B';
+          jctx.font = '10px JetBrains Mono';
+          jctx.fillText(i, x - 7, cy + 18);
+        }
+      }
+
+      // Jump 1: 0 -> A (Blue Arc)
+      const xA = cx + a * step;
+      if (a !== 0) {
+        jctx.strokeStyle = '#2563EB'; jctx.lineWidth = 3; jctx.setLineDash([5, 3]);
+        jctx.beginPath();
+        jctx.moveTo(cx, cy);
+        jctx.quadraticCurveTo((cx + xA) / 2, cy - 50, xA, cy);
+        jctx.stroke();
+
+        // Label 1
+        jctx.fillStyle = '#1E40AF'; jctx.font = 'bold 11px Space Grotesk';
+        jctx.fillText((a > 0 ? '+' : '') + a, (cx + xA) / 2 - 8, cy - 55);
+      }
+
+      // Jump 2: A -> A+B (Emerald Arc)
+      const finalVal = a + b;
+      const xFinal = cx + finalVal * step;
+      if (b !== 0) {
+        jctx.strokeStyle = '#059669'; jctx.lineWidth = 3.5; jctx.setLineDash([]);
+        jctx.beginPath();
+        jctx.moveTo(xA, cy);
+        jctx.quadraticCurveTo((xA + xFinal) / 2, cy - 100, xFinal, cy);
+        jctx.stroke();
+
+        // Label 2
+        jctx.fillStyle = '#047857'; jctx.font = 'bold 11px Space Grotesk';
+        jctx.fillText((b > 0 ? '+' : '') + b, (xA + xFinal) / 2 - 8, cy - 105);
+      }
+
+      // Landing Marker (Red Ball)
+      jctx.fillStyle = '#EF4444';
+      jctx.beginPath(); jctx.arc(xFinal, cy, 7, 0, Math.PI * 2); jctx.fill();
+      jctx.strokeStyle = '#FFFFFF'; jctx.lineWidth = 2; jctx.stroke();
+
+      // Description text update
+      const desc = document.getElementById('jumpDescriptionText');
+      desc.innerHTML = `1er saut (bleu) : De 0 à <strong>${a >= 0 ? '+' : ''}${a}</strong> • 2nd saut (vert) : De ${a >= 0 ? '+' : ''}${a} à <strong>${finalVal >= 0 ? '+' : ''}${finalVal}</strong>`;
+    }
+
+    numASlider.addEventListener('input', updateAdditionScene);
+    numBSlider.addEventListener('input', updateAdditionScene);
+
+    function checkMicroAdd(ans) {
+      const fb = document.getElementById('microFeedbackAdd');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 1) {
+        playSuccessSound();
+        addXP(60);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> Même signe : on garde le signe - et on additionne \\( 7 + 4 = 11 \\), donc \\( -11 \\) ! (+60 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Rappel :</strong> Quand deux nombres ont le MÊME signe, on garde ce signe et on additionne leurs distances à zéro.`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateAdditionScene();
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. Calculer une Fréquence | Smarter</title>
+  <meta name="description" content="Micro-leçon 2 du module Statistiques : Comprendre et calculer la fréquence en pourcentage.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (5ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Statistiques</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Calculer une Fréquence</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 2 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-2/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 2
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        Calculer une Fréquence
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Découvrez comment exprimer une "part" de la population globale sous forme de pourcentage !
+      </p>
+    </header>
+
+    <!-- 1. TOUCH MATH FIRST: LE SONDAGE INTERACTIF -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🎮 Le Sondage des Glaces</h2>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-blue-50/90 rounded-xl border border-blue-200 text-xs text-blue-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-blue-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Modifiez les curseurs pour changer le nombre de votes (l'<strong>effectif</strong>) pour chaque parfum de glace.
+          </p>
+          <p class="leading-relaxed text-blue-800">
+            <strong>Objectif :</strong> Observer que la <strong>fréquence</strong> (en %) représente la <em>proportion</em> de ce parfum par rapport au total. La barre de progression totale fait toujours 100% !
+          </p>
+        </div>
+
+        <!-- Sliders (Effectifs) -->
+        <div class="grid sm:grid-cols-3 gap-4 text-xs font-mono">
+          <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm">
+            <div class="font-bold text-amber-700 mb-1 flex justify-between">
+              <span>Chocolat 🍫</span>
+              <span id="eff-choc" class="text-lg">8</span>
+            </div>
+            <input id="slider-choc" type="range" min="1" max="30" value="8" class="w-full accent-amber-600 cursor-pointer">
+          </div>
+          
+          <div class="bg-white p-3 rounded-xl border border-blue-200 shadow-sm">
+            <div class="font-bold text-blue-700 mb-1 flex justify-between">
+              <span>Vanille 🍦</span>
+              <span id="eff-van" class="text-lg">7</span>
+            </div>
+            <input id="slider-van" type="range" min="1" max="30" value="7" class="w-full accent-blue-600 cursor-pointer">
+          </div>
+          
+          <div class="bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
+            <div class="font-bold text-rose-700 mb-1 flex justify-between">
+              <span>Fraise 🍓</span>
+              <span id="eff-fra" class="text-lg">5</span>
+            </div>
+            <input id="slider-fra" type="range" min="1" max="30" value="5" class="w-full accent-rose-600 cursor-pointer">
+          </div>
+        </div>
+
+        <!-- Total -->
+        <div class="inline-flex items-center gap-2 px-6 py-2 bg-slate-800 rounded-full shadow-md text-white font-bold font-mono text-sm border-2 border-slate-700">
+          Effectif Total : <span id="eff-total" class="text-xl">20</span> personnes
+        </div>
+
+        <!-- Frequencies and Visual Bar -->
+        <div class="space-y-4">
+          <!-- Stacked Bar -->
+          <div class="w-full h-8 bg-slate-200 rounded-full overflow-hidden flex shadow-inner border border-slate-300">
+            <div id="bar-choc" class="h-full bg-amber-500 transition-all duration-300 flex items-center justify-center text-white font-bold text-xs" style="width: 40%">40%</div>
+            <div id="bar-van" class="h-full bg-blue-400 transition-all duration-300 flex items-center justify-center text-white font-bold text-xs" style="width: 35%">35%</div>
+            <div id="bar-fra" class="h-full bg-rose-400 transition-all duration-300 flex items-center justify-center text-white font-bold text-xs" style="width: 25%">25%</div>
+          </div>
+          
+          <!-- Readouts -->
+          <div class="grid sm:grid-cols-3 gap-2 text-xs font-mono">
+            <div class="p-2 bg-amber-50 rounded-lg border border-amber-200 text-amber-900">
+              <span id="freq-choc-frac" class="font-bold text-amber-700">8 / 20</span>
+              <br><span id="freq-choc-dec" class="text-amber-600">0.40</span>
+            </div>
+            <div class="p-2 bg-blue-50 rounded-lg border border-blue-200 text-blue-900">
+              <span id="freq-van-frac" class="font-bold text-blue-700">7 / 20</span>
+              <br><span id="freq-van-dec" class="text-blue-600">0.35</span>
+            </div>
+            <div class="p-2 bg-rose-50 rounded-lg border border-rose-200 text-rose-900">
+              <span id="freq-fra-frac" class="font-bold text-rose-700">5 / 20</span>
+              <br><span id="freq-fra-dec" class="text-rose-600">0.25</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. FORMAL DEFINITION -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">💡 Formule de la Fréquence</h2>
+      </div>
+
+      <div class="bg-blue-50 p-4 rounded-xl text-sm text-blue-900 space-y-3 border border-blue-200 font-mono">
+        <p>La fréquence permet de mesurer la part d'une valeur dans la série globale.</p>
+        
+        <div class="bg-white p-3 rounded-lg border border-blue-100 text-center font-bold text-blue-800">
+          Fréquence = Effectif de la valeur ÷ Effectif Total
+        </div>
+
+        <p class="text-xs text-blue-800 mt-2">
+          Elle peut s'écrire sous forme de <strong>fraction</strong> (5/20), de <strong>nombre décimal</strong> (0.25) ou de <strong>pourcentage</strong> (25%).<br>
+          La somme des fréquences de toutes les valeurs est toujours égale à <strong>1</strong> (ou <strong>100%</strong>).
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🧪 Test de Calcul</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Dans un club de sport de <strong>200 membres</strong>, il y a <strong>60 joueurs de tennis</strong>. Quelle est la fréquence (en pourcentage) des joueurs de tennis ?</p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicroStat2(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">60 %</button>
+        <button onclick="checkMicroStat2(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">30 % (Exact)</button>
+        <button onclick="checkMicroStat2(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">0,3 %</button>
+      </div>
+
+      <div id="microFeedbackStat2" class="hidden p-3 rounded-xl text-xs font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../01-donnees-et-effectifs/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 1
+      </a>
+
+      <a href="../03-moyenne-simple/index.html" onclick="markLessonCompleted('MOD-5E-004-L2')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 3 : Moyenne ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const sliderChoc = document.getElementById('slider-choc');
+    const sliderVan = document.getElementById('slider-van');
+    const sliderFra = document.getElementById('slider-fra');
+
+    function updatePoll() {
+      const c = parseInt(sliderChoc.value);
+      const v = parseInt(sliderVan.value);
+      const f = parseInt(sliderFra.value);
+      const total = c + v + f;
+
+      // Update basic effectif displays
+      document.getElementById('eff-choc').textContent = c;
+      document.getElementById('eff-van').textContent = v;
+      document.getElementById('eff-fra').textContent = f;
+      document.getElementById('eff-total').textContent = total;
+
+      // Calculate percentages (rounded to 1 decimal for stability, but we'll show integers where possible)
+      const pctC = (c / total) * 100;
+      const pctV = (v / total) * 100;
+      const pctF = (f / total) * 100;
+
+      // Update stacked bar widths
+      document.getElementById('bar-choc').style.width = `${pctC}%`;
+      document.getElementById('bar-van').style.width = `${pctV}%`;
+      document.getElementById('bar-fra').style.width = `${pctF}%`;
+
+      // Update stacked bar texts
+      document.getElementById('bar-choc').textContent = pctC > 5 ? `${Math.round(pctC)}%` : '';
+      document.getElementById('bar-van').textContent = pctV > 5 ? `${Math.round(pctV)}%` : '';
+      document.getElementById('bar-fra').textContent = pctF > 5 ? `${Math.round(pctF)}%` : '';
+
+      // Update textual readouts (fraction and decimal)
+      document.getElementById('freq-choc-frac').textContent = `${c} / ${total}`;
+      document.getElementById('freq-van-frac').textContent = `${v} / ${total}`;
+      document.getElementById('freq-fra-frac').textContent = `${f} / ${total}`;
+
+      document.getElementById('freq-choc-dec').textContent = (c / total).toFixed(2);
+      document.getElementById('freq-van-dec').textContent = (v / total).toFixed(2);
+      document.getElementById('freq-fra-dec').textContent = (f / total).toFixed(2);
+    }
+
+    sliderChoc.addEventListener('input', updatePoll);
+    sliderVan.addEventListener('input', updatePoll);
+    sliderFra.addEventListener('input', updatePoll);
+
+    function checkMicroStat2(ans) {
+      const fb = document.getElementById('microFeedbackStat2');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> La fraction est 60/200. En divisant 60 par 200, on obtient 0.30, ce qui correspond à <strong>30 %</strong> ! (+50 XP)`;
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        if (ans === 1) {
+          fb.innerHTML = `❌ <strong>Attention !</strong> 60 est l'effectif, mais pour le pourcentage, il faut faire 60 ÷ 200.`;
+        } else {
+          fb.innerHTML = `❌ <strong>Attention aux décimales :</strong> 60 ÷ 200 = 0.30. Pour l'écrire en pourcentage, on décale la virgule de deux rangs (x100), soit 30 %.`;
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updatePoll();
+    });
+  </script>
+</body>
+</html>

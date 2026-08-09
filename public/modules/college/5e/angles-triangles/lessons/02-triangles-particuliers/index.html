@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. Angles des Triangles Particuliers | Smarter</title>
+  <meta name="description" content="Micro-leçon 2 du module Angles et Triangles : Triangles isocèle, équilatéral et rectangle.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50 text-slate-800 font-sans">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (5ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Angles Triangles</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Angles des Triangles Particuliers</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 2 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-2/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 2
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-space font-extrabold text-slate-900 tracking-tight">
+        Angles des Triangles Particuliers
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Chaque famille de triangle possède des propriétés d'angles uniques !
+      </p>
+    </header>
+
+    <!-- 1. CARDS PROPERTIES -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Les 3 Triangles Particuliers</h2>
+      </div>
+
+      <div class="space-y-3 text-xs font-mono">
+        <div class="p-4 bg-blue-50 rounded-2xl border border-blue-200 space-y-1">
+          <strong class="text-blue-900 font-bold text-sm">1. Triangle Isocèle :</strong>
+          <p class="text-slate-700">Il possède <strong>2 angles égaux à la base</strong>.</p>
+          <div class="bg-white p-2 rounded-xl border border-blue-200 font-bold text-blue-900 text-center">
+            Si le sommet principal mesure \(40^\circ\), les angles à la base valent \((180^\circ - 40^\circ)/2 = 70^\circ\).
+          </div>
+        </div>
+
+        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-1">
+          <strong class="text-emerald-900 font-bold text-sm">2. Triangle Équilatéral :</strong>
+          <p class="text-slate-700">Ses <strong>3 angles sont tous égaux et mesurent toujours 60°</strong> !</p>
+          <div class="bg-white p-2 rounded-xl border border-emerald-200 font-bold text-emerald-900 text-center">
+            \( 180^\circ / 3 = 60^\circ \)
+          </div>
+        </div>
+
+        <div class="p-4 bg-purple-50 rounded-2xl border border-purple-200 space-y-1">
+          <strong class="text-purple-900 font-bold text-sm">3. Triangle Rectangle :</strong>
+          <p class="text-slate-700">La somme des deux angles aigus est égale à <strong>90°</strong> (angles complémentaires).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Test de Déduction</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Dans un triangle <strong>isocèle</strong>, l'angle au sommet mesure <strong>\(50^\circ\)</strong>. Combien mesure chacun des deux angles à la base ?</p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicroAng2(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">65° (Exact : 130 / 2)</button>
+        <button onclick="checkMicroAng2(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">50°</button>
+        <button onclick="checkMicroAng2(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">130°</button>
+      </div>
+
+      <div id="microFeedbackAng2" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../01-somme-des-angles/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 1
+      </a>
+
+      <a href="../03-angles-opposes-et-adjacents/index.html" onclick="markLessonCompleted('MOD-5E-003-L2')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 3 : Opposés par le Sommet ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    function checkMicroAng2(ans) {
+      const fb = document.getElementById('microFeedbackAng2');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 1) {
+        playSuccessSound();
+        addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> La somme des deux angles vaut \\( 180^\circ - 50^\circ = 130^\circ \\). Comme ils sont égaux, chacun vaut \\( 130^\circ / 2 = 65^\circ \\) ! (+50 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Rappel :</strong> Les deux angles à la base d'un triangle isocèle sont égaux et se partagent le reste des 180°.`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

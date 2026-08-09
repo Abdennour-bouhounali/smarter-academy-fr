@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06. Mission Finale : L'Astronome | Smarter</title>
+  <meta name="description" content="Mission finale du module Puissances : Appliquer la notation scientifique à des distances spatiales réelles.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+
+  <style>
+    .star-bg {
+      background-color: #0F172A;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 130px 80px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 160px 120px, #ffffff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+  </style>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8 relative">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Puissances</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Mission Finale : L'Astronome</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 6 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-6/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-semibold">
+        🏆 Mission Finale • 100 XP
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        L'Astronome en Chef
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        L'ordinateur de bord est en panne ! Vous devez reprogrammer manuellement les distances en notation scientifique pour voyager.
+      </p>
+    </header>
+
+    <!-- MISSION INTERACTIVE -->
+    <section class="smarter-card p-6 space-y-6 bg-slate-800 border-slate-700 star-bg relative">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🚀</span>
+        <h2 class="text-xl font-space font-bold text-white">Tableau de Bord de Navigation</h2>
+      </div>
+
+      <div class="bg-slate-900/80 backdrop-blur p-6 rounded-2xl border border-slate-700 space-y-6">
+        
+        <p class="text-sm text-slate-300 font-mono">
+          Consigne : Convertissez chaque distance décimale en notation scientifique stricte ($a \times 10^n$ avec $1 \le a \lt 10$). Utilisez un point pour les décimales (ex: 4.5).
+        </p>
+
+        <div class="space-y-4">
+          
+          <!-- MISSION 1: MARS -->
+          <div class="p-4 bg-slate-800 rounded-xl border border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+              <div class="text-rose-400 font-bold font-mono text-sm flex items-center gap-2">
+                <span>🔴</span> Planète Mars
+              </div>
+              <div class="text-white font-mono text-lg">78 000 000 km</div>
+            </div>
+            <div class="flex items-center gap-2 font-space text-lg text-white">
+              <input type="number" step="0.1" id="a-mars" class="w-20 bg-slate-900 border-2 border-slate-600 rounded-lg p-2 text-center text-rose-400 font-bold focus:border-rose-400 focus:outline-none" placeholder="a">
+              <span>× 10</span>
+              <sup class="relative -top-2">
+                <input type="number" id="n-mars" class="w-16 bg-slate-900 border-2 border-slate-600 rounded-lg p-1 text-center text-blue-400 font-bold focus:border-blue-400 focus:outline-none text-sm" placeholder="n">
+              </sup>
+              <span class="text-sm text-slate-500 font-mono ml-2">km</span>
+            </div>
+          </div>
+
+          <!-- MISSION 2: SOLEIL -->
+          <div class="p-4 bg-slate-800 rounded-xl border border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+              <div class="text-amber-400 font-bold font-mono text-sm flex items-center gap-2">
+                <span>☀️</span> Le Soleil
+              </div>
+              <div class="text-white font-mono text-lg">150 000 000 km</div>
+            </div>
+            <div class="flex items-center gap-2 font-space text-lg text-white">
+              <input type="number" step="0.1" id="a-soleil" class="w-20 bg-slate-900 border-2 border-slate-600 rounded-lg p-2 text-center text-amber-400 font-bold focus:border-amber-400 focus:outline-none" placeholder="a">
+              <span>× 10</span>
+              <sup class="relative -top-2">
+                <input type="number" id="n-soleil" class="w-16 bg-slate-900 border-2 border-slate-600 rounded-lg p-1 text-center text-blue-400 font-bold focus:border-blue-400 focus:outline-none text-sm" placeholder="n">
+              </sup>
+              <span class="text-sm text-slate-500 font-mono ml-2">km</span>
+            </div>
+          </div>
+
+          <!-- MISSION 3: PROXIMA -->
+          <div class="p-4 bg-slate-800 rounded-xl border border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+              <div class="text-cyan-400 font-bold font-mono text-sm flex items-center gap-2">
+                <span>🌌</span> Proxima du Centaure
+              </div>
+              <div class="text-white font-mono text-lg">40 000 000 000 000 km</div>
+            </div>
+            <div class="flex items-center gap-2 font-space text-lg text-white">
+              <input type="number" step="0.1" id="a-proxima" class="w-20 bg-slate-900 border-2 border-slate-600 rounded-lg p-2 text-center text-cyan-400 font-bold focus:border-cyan-400 focus:outline-none" placeholder="a">
+              <span>× 10</span>
+              <sup class="relative -top-2">
+                <input type="number" id="n-proxima" class="w-16 bg-slate-900 border-2 border-slate-600 rounded-lg p-1 text-center text-blue-400 font-bold focus:border-blue-400 focus:outline-none text-sm" placeholder="n">
+              </sup>
+              <span class="text-sm text-slate-500 font-mono ml-2">km</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ACTION BUTTON -->
+        <button id="btn-verify" onclick="verifyMission()" class="w-full btn-gradient px-6 py-4 bg-amber-500 hover:bg-amber-600 text-white font-space text-lg font-bold rounded-xl shadow-lg transition-all active:scale-95">
+          Activer les Propulseurs 🚀
+        </button>
+
+        <div id="mission-feedback" class="hidden p-4 rounded-xl font-mono text-sm font-bold border">
+          <!-- Filled by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../05-infiniment-grand-petit/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300 font-mono text-xs font-bold transition-colors">
+        ← Leçon 5
+      </a>
+
+      <a href="../../index.html" id="btn-finish" class="hidden btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Terminer le Module ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    function verifyMission() {
+      // Get values
+      const aMars = parseFloat(document.getElementById('a-mars').value.replace(',','.'));
+      const nMars = parseInt(document.getElementById('n-mars').value);
+      
+      const aSoleil = parseFloat(document.getElementById('a-soleil').value.replace(',','.'));
+      const nSoleil = parseInt(document.getElementById('n-soleil').value);
+      
+      const aProxima = parseFloat(document.getElementById('a-proxima').value.replace(',','.'));
+      const nProxima = parseInt(document.getElementById('n-proxima').value);
+
+      // Check correctness
+      const isMarsCorrect = (aMars === 7.8 && nMars === 7);
+      const isSoleilCorrect = (aSoleil === 1.5 && nSoleil === 8);
+      const isProximaCorrect = (aProxima === 4 || aProxima === 4.0) && (nProxima === 13);
+
+      const feedback = document.getElementById('mission-feedback');
+      feedback.classList.remove('hidden', 'bg-emerald-900/50', 'text-emerald-400', 'border-emerald-500/50', 'bg-rose-900/50', 'text-rose-400', 'border-rose-500/50');
+
+      if (isMarsCorrect && isSoleilCorrect && isProximaCorrect) {
+        // Success
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(100);
+        if(typeof markLessonCompleted === 'function') markLessonCompleted('MOD-4E-002-L6');
+
+        document.getElementById('btn-verify').classList.add('hidden');
+        document.getElementById('btn-finish').classList.remove('hidden');
+
+        feedback.classList.add('bg-emerald-900/50', 'text-emerald-400', 'border-emerald-500/50');
+        feedback.innerHTML = `🎉 <strong>Coordonnées validées !</strong> Moteurs enclenchés. Vous avez parfaitement maîtrisé la notation scientifique ! (+100 XP)`;
+      } else {
+        // Error
+        if(typeof playErrorSound === 'function') playErrorSound();
+        
+        feedback.classList.add('bg-rose-900/50', 'text-rose-400', 'border-rose-500/50');
+        
+        let errors = [];
+        if (!isMarsCorrect) errors.push("Mars");
+        if (!isSoleilCorrect) errors.push("le Soleil");
+        if (!isProximaCorrect) errors.push("Proxima");
+
+        feedback.innerHTML = `❌ <strong>Erreur de calcul !</strong> Revoyez vos coordonnées pour : ${errors.join(', ')}.<br>Rappel : $a$ doit être entre 1 et 10.`;
+        
+        if(window.renderMathInElement) renderMathInElement(feedback, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ]
+        });
+      }
+    }
+  </script>
+</body>
+</html>

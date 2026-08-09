@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. La Distributivité Simple | Smarter</title>
+  <meta name="description" content="Micro-leçon 4 du module Calcul Littéral : La distributivité simple avec modèle des aires.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50 text-slate-800 font-sans">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (5ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Calcul Litteral</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">La Distributivité Simple</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 4 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-4/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono text-xs font-semibold">
+        ⏱️ 6 min • Micro-Leçon 4
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-space font-extrabold text-slate-900 tracking-tight">
+        La Distributivité Simple
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Comprenez la formule \(k(a + b) = ka + kb\) grâce au découpage géométrique d'un rectangle !
+      </p>
+    </header>
+
+    <!-- 1. GEOMETRIC AREA MANIPULATION -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Le Modèle Géométrique des Aires</h2>
+      </div>
+
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Modifiez les dimensions du grand rectangle. L'aire totale peut se calculer de 2 manières différentes : en 1 seul bloc \(k \times (a + b)\) OU en additionnant les 2 sous-rectangles \(k \times a + k \times b\) !
+      </p>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-blue-50/90 rounded-xl border border-blue-200 text-xs text-blue-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-blue-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Faites glisser la hauteur \(k\) et les 2 largeurs \(a\) et \(b\).
+          </p>
+          <p class="leading-relaxed text-blue-800">
+            <strong>Objectif :</strong> Comprendre visuellement la distributivité : l'aire totale \(k \times (a + b)\) est égale à la somme des 2 petits rectangles \(k \times a + k \times b\).
+          </p>
+        </div>
+
+        <!-- Sliders -->
+        <div class="grid sm:grid-cols-3 gap-3 text-xs font-mono">
+          <div class="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+            <span class="font-bold text-slate-700">Hauteur \(k\) : </span>
+            <span id="distKVal" class="font-bold text-emerald-600">4</span>
+            <input id="distKSlider" type="range" min="2" max="6" value="4" class="w-full accent-emerald-600 cursor-pointer">
+          </div>
+
+          <div class="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+            <span class="font-bold text-slate-700">Largeur 1 \(a\) : </span>
+            <span id="distAVal" class="font-bold text-blue-600">5</span>
+            <input id="distASlider" type="range" min="2" max="7" value="5" class="w-full accent-blue-600 cursor-pointer">
+          </div>
+
+          <div class="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+            <span class="font-bold text-slate-700">Largeur 2 \(b\) : </span>
+            <span id="distBVal" class="font-bold text-purple-600">3</span>
+            <input id="distBSlider" type="range" min="2" max="7" value="3" class="w-full accent-purple-600 cursor-pointer">
+          </div>
+        </div>
+
+        <!-- Canvas -->
+        <div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-center shadow-inner">
+          <canvas id="distCanvas" width="400" height="180" class="w-full max-w-[400px] h-auto bg-slate-50 border border-slate-100 rounded-lg"></canvas>
+        </div>
+
+        <div id="distFormulaReadout" class="p-3.5 bg-white rounded-xl border border-slate-200 font-mono text-sm font-bold text-emerald-900">
+          \( 4 \times (5 + 3) = 4 \times 5 + 4 \times 3 = 20 + 12 = 32 \)
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FORMALIZATION -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Règle de Développement</h2>
+      </div>
+
+      <div class="bg-purple-50 p-4 rounded-xl text-xs text-purple-900 space-y-2 border border-purple-200 font-mono">
+        <p>• <strong>Développer</strong>, c'est transformer un produit en une somme :</p>
+        <p class="font-bold text-sm text-center">\[ k(a + b) = ka + kb \]</p>
+        <p class="font-bold text-sm text-center">\[ k(a - b) = ka - kb \]</p>
+        <p>• Exemple : \( 3(x + 4) = 3 \times x + 3 \times 4 = 3x + 12 \)</p>
+      </div>
+    </section>
+
+    <!-- 3. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Test de Développement</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Développez l'expression : <strong>\( 5(x + 3) \)</strong></p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicroDist(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">5x + 3</button>
+        <button onclick="checkMicroDist(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">5x + 15 (Exact)</button>
+        <button onclick="checkMicroDist(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">8x</button>
+      </div>
+
+      <div id="microFeedbackDist" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../../index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Sommaire
+      </a>
+
+      <a href="../05-reduire-expression/index.html" onclick="markLessonCompleted('MOD-5E-002-L4')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 5 : Réduire ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const dCanvas = document.getElementById('distCanvas');
+    const dctx = dCanvas.getContext('2d');
+
+    const kSlider = document.getElementById('distKSlider');
+    const aSlider = document.getElementById('distASlider');
+    const bSlider = document.getElementById('distBSlider');
+
+    function renderDistScene() {
+      const k = parseInt(kSlider.value);
+      const a = parseInt(aSlider.value);
+      const b = parseInt(bSlider.value);
+
+      document.getElementById('distKVal').textContent = k;
+      document.getElementById('distAVal').textContent = a;
+      document.getElementById('distBVal').textContent = b;
+
+      dctx.clearRect(0, 0, dCanvas.width, dCanvas.height);
+
+      const startX = 40;
+      const startY = 30;
+      const scaleX = 22;
+      const scaleY = 22;
+
+      const wA = a * scaleX;
+      const wB = b * scaleX;
+      const hK = k * scaleY;
+
+      // Left Rectangle (Blue: k x a)
+      dctx.fillStyle = 'rgba(59, 130, 246, 0.25)';
+      dctx.strokeStyle = '#2563EB'; dctx.lineWidth = 2;
+      dctx.fillRect(startX, startY, wA, hK);
+      dctx.strokeRect(startX, startY, wA, hK);
+
+      // Label Left Area
+      dctx.fillStyle = '#1E40AF'; dctx.font = 'bold 12px JetBrains Mono';
+      dctx.fillText(`${k} × ${a} = ${k*a}`, startX + wA/2 - 25, startY + hK/2 + 4);
+
+      // Right Rectangle (Purple: k x b)
+      dctx.fillStyle = 'rgba(139, 92, 246, 0.25)';
+      dctx.strokeStyle = '#7C3AED'; dctx.lineWidth = 2;
+      dctx.fillRect(startX + wA, startY, wB, hK);
+      dctx.strokeRect(startX + wA, startY, wB, hK);
+
+      // Label Right Area
+      dctx.fillStyle = '#5B21B6'; dctx.font = 'bold 12px JetBrains Mono';
+      dctx.fillText(`${k} × ${b} = ${k*b}`, startX + wA + wB/2 - 25, startY + hK/2 + 4);
+
+      // Dimension Labels
+      dctx.fillStyle = '#0F172A'; dctx.font = 'bold 11px JetBrains Mono';
+      dctx.fillText(`k = ${k}`, startX - 30, startY + hK/2);
+      dctx.fillText(`a = ${a}`, startX + wA/2 - 10, startY - 8);
+      dctx.fillText(`b = ${b}`, startX + wA + wB/2 - 10, startY - 8);
+
+      // Formula Readout
+      const totalArea = k * (a + b);
+      const readout = document.getElementById('distFormulaReadout');
+      readout.innerHTML = `\\( ${k} \\times (${a} + ${b}) = ${k} \\times ${a} + ${k} \\times ${b} = ${k*a} + ${k*b} = ${totalArea} \\)`;
+      renderMathInElement(readout);
+    }
+
+    kSlider.addEventListener('input', renderDistScene);
+    aSlider.addEventListener('input', renderDistScene);
+    bSlider.addEventListener('input', renderDistScene);
+
+    function checkMicroDist(ans) {
+      const fb = document.getElementById('microFeedbackDist');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        playSuccessSound();
+        addXP(60);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> On distribue le 5 : \\( 5 \\times x + 5 \\times 3 = 5x + 15 \\) ! (+60 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Rappel :</strong> N'oubliez pas de multiplier le 5 par les DEUX termes dans la parenthèse !`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderDistScene();
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

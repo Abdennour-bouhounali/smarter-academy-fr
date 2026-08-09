@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. Opérations : Multiplication & Division | Smarter</title>
+  <meta name="description" content="Micro-leçon 4 du module Équations : Résoudre des équations de type ax = b.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Equations</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Opérations : Multiplication & Division</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 4 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-4/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 4
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        Multiplication et Division
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Découvrez comment isoler $x$ lorsqu'il est multiplié ou divisé par un nombre.
+      </p>
+    </header>
+
+    <!-- 1. DISCOVER -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">✖️ L'opération inverse</h2>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-700">
+        <p>Toujours avec notre règle de la balance, si $x$ est multiplié, on doit <strong>diviser</strong> (des deux côtés). S'il est divisé, on doit <strong>multiplier</strong>.</p>
+        
+        <div class="p-6 bg-slate-50 rounded-xl border border-slate-200 shadow-sm flex flex-col gap-4">
+          <div class="grid grid-cols-3 items-center text-center gap-2 text-lg font-mono">
+            <div class="font-bold text-slate-900">$3x$</div>
+            <div class="font-bold text-slate-500">$=$</div>
+            <div class="font-bold text-slate-900">$12$</div>
+            
+            <!-- Step 1 -->
+            <div class="text-rose-600 text-sm mt-2">$\div 3$</div>
+            <div></div>
+            <div class="text-rose-600 text-sm mt-2">$\div 3$</div>
+
+            <!-- Arrow -->
+            <div class="col-span-3 text-slate-300 text-xl my-2">⬇</div>
+
+            <!-- Result -->
+            <div class="font-bold text-blue-600">$x$</div>
+            <div class="font-bold text-slate-500">$=$</div>
+            <div class="font-bold text-emerald-600">$4$</div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-amber-900 text-xs font-mono">
+          ⚠️ <strong>Rappel :</strong> $3x$ signifie $3 \times x$. L'opération inverse de la multiplication est la division !
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Isoler $x$</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Pour isoler $x$ dans l'équation <strong>$\frac{x}{5} = 2$</strong>, que devez-vous faire ?</p>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        <button onclick="checkMicro4(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-sm font-bold">Diviser par $5$</button>
+        <button onclick="checkMicro4(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-sm font-bold text-blue-600">Multiplier par $5$</button>
+      </div>
+
+      <div id="microFeedback4" class="hidden p-3 rounded-xl text-xs font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../03-operations-add-sous/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Précédent
+      </a>
+
+      <a href="../05-equations-complexes/index.html" onclick="markLessonCompleted('MOD-4E-003-L4')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 5 : Équations complexes ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    function checkMicro4(ans) {
+      const fb = document.getElementById('microFeedback4');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> L'inconnue $x$ est divisée par $5$. L'opération inverse est donc la multiplication par $5$. La solution est $x = 2 \\times 5 = 10$. (+50 XP)`;
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Attention !</strong> Si vous divisez encore par $5$, vous obtiendrez $x / 25$. Il faut faire l'opération INVERSE (la multiplication) !`;
+      }
+      if(window.renderMathInElement) renderMathInElement(fb, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if(window.renderMathInElement) renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

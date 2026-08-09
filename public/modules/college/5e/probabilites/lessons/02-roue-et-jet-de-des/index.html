@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. Simulateur de Roue Aléatoire | Smarter</title>
+  <meta name="description" content="Micro-leçon 2 du module Probabilités : Simulation de la roue de la fortune et loi des grands nombres.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50 text-slate-800 font-sans">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (5ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Probabilites</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Simulateur de Roue Aléatoire</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 2 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-2/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 2
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-space font-extrabold text-slate-900 tracking-tight">
+        Simulateur de Roue Aléatoire
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Lancez la roue de la fortune pour faire des expériences et voir comment la fréquence observée rejoint la probabilité !
+      </p>
+    </header>
+
+    <!-- 1. TOUCH MATH FIRST: INTERACTIVE WHEEL CANVAS -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🎮 Faites tourner la Roue Aléatoire !</h2>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-blue-50/90 rounded-xl border border-blue-200 text-xs text-blue-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-blue-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Cliquez sur <em>🌀 Lancer la Roue !</em> ou <em>⚡ 50 Lancers Express !</em>.
+          </p>
+          <p class="leading-relaxed text-blue-800">
+            <strong>Objectif :</strong> Observer la loi des grands nombres : plus vous effectuez de lancers, plus la fréquence réelle se rapproche de la probabilité théorique (75% Rouge, 25% Bleu).
+          </p>
+        </div>
+
+        <!-- Canvas -->
+        <div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-center shadow-inner relative">
+          <canvas id="wheelCanvas" width="280" height="280" class="w-full max-w-[280px] h-auto bg-slate-50 rounded-full"></canvas>
+        </div>
+
+        <div class="flex justify-center gap-3">
+          <button onclick="spinWheel()" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-mono text-xs font-bold rounded-xl shadow-md transition-all">
+            🌀 Lancer la Roue !
+          </button>
+          <button onclick="spinMulti(50)" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-mono text-xs font-bold rounded-xl shadow-xs transition-all">
+            ⚡ 50 Lancers Express !
+          </button>
+        </div>
+
+        <div id="wheelStatsReadout" class="p-3.5 bg-white rounded-xl border border-slate-200 font-mono text-xs font-bold text-purple-900">
+          Lancers effectués : 0 • Rouge (3/4 = 75%) : 0 (0%) • Bleu (1/4 = 25%) : 0 (0%)
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FORMALIZATION -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">💡 La Loi des Grands Nombres</h2>
+      </div>
+
+      <div class="bg-purple-50 p-4 rounded-xl text-xs text-purple-900 space-y-2 border border-purple-200 font-mono">
+        <p>• Quand on répète une expérience aléatoire un **très grand nombre de fois**, la <strong>fréquence d'un événement se rapproche et se stabilise autour de sa probabilité théorique</strong> !</p>
+      </div>
+    </section>
+
+    <!-- 3. GUIDED QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🧪 Test de Réflexion</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">La roue possède 3 secteurs rouges et 1 secteur bleu. Quelle est la probabilité théorique d'obtenir la couleur <strong>bleue</strong> ?</p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicroProb2(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">1 / 2 (50%)</button>
+        <button onclick="checkMicroProb2(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">1 / 4 (25%) (Exact)</button>
+        <button onclick="checkMicroProb2(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">3 / 4 (75%)</button>
+      </div>
+
+      <div id="microFeedbackProb2" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../01-notion-de-chance/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 1
+      </a>
+
+      <a href="../03-calculer-une-probabilite/index.html" onclick="markLessonCompleted('MOD-5E-005-L2')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 3 : Calculer P ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const wcanvas = document.getElementById('wheelCanvas');
+    const wctx = wcanvas.getContext('2d');
+
+    let currentAngle = 0;
+    let totalSpins = 0;
+    let redCount = 0;
+    let blueCount = 0;
+
+    function drawWheel(angle = 0) {
+      wctx.clearRect(0, 0, wcanvas.width, wcanvas.height);
+      const cx = wcanvas.width / 2;
+      const cy = wcanvas.height / 2;
+      const r = cx - 15;
+
+      // 4 Slices: 3 Red (75%), 1 Blue (25%)
+      const slices = [
+        { color: '#EF4444', label: 'Rouge' },
+        { color: '#EF4444', label: 'Rouge' },
+        { color: '#EF4444', label: 'Rouge' },
+        { color: '#2563EB', label: 'Bleu' }
+      ];
+
+      const sliceAngle = (Math.PI * 2) / 4;
+
+      for (let i = 0; i < 4; i++) {
+        const start = angle + i * sliceAngle;
+        const end = start + sliceAngle;
+
+        wctx.fillStyle = slices[i].color;
+        wctx.beginPath();
+        wctx.moveTo(cx, cy);
+        wctx.arc(cx, cy, r, start, end);
+        wctx.closePath();
+        wctx.fill();
+        wctx.strokeStyle = '#FFFFFF'; wctx.lineWidth = 3; wctx.stroke();
+      }
+
+      // Pointer Arrow (Top center)
+      wctx.fillStyle = '#0F172A';
+      wctx.beginPath();
+      wctx.moveTo(cx - 10, 10);
+      wctx.lineTo(cx + 10, 10);
+      wctx.lineTo(cx, 30);
+      wctx.closePath();
+      wctx.fill();
+    }
+
+    function spinWheel() {
+      const extraAngle = Math.random() * Math.PI * 2 + Math.PI * 8; // 4 full turns + random
+      const target = currentAngle + extraAngle;
+      const duration = 1500;
+      const startTime = performance.now();
+
+      function animate(now) {
+        const elapsed = now - startTime;
+        if (elapsed < duration) {
+          const progress = elapsed / duration;
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          currentAngle = target * easeOut;
+          drawWheel(currentAngle);
+          requestAnimationFrame(animate);
+        } else {
+          currentAngle = target % (Math.PI * 2);
+          drawWheel(currentAngle);
+          recordSpin(currentAngle);
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    function recordSpin(angle) {
+      // Determine slice at top (angle -3PI/2)
+      const normalized = (2 * Math.PI - (angle % (2 * Math.PI))) % (2 * Math.PI);
+      const sliceIdx = Math.floor(normalized / (Math.PI / 2)) % 4;
+
+      totalSpins++;
+      if (sliceIdx === 3) blueCount++; // Index 3 is blue
+      else redCount++;
+
+      updateStats();
+    }
+
+    function spinMulti(n) {
+      for (let i = 0; i < n; i++) {
+        totalSpins++;
+        if (Math.random() < 0.25) blueCount++;
+        else redCount++;
+      }
+      playSuccessSound();
+      updateStats();
+    }
+
+    function updateStats() {
+      const redPct = totalSpins > 0 ? ((redCount / totalSpins) * 100).toFixed(1) : 0;
+      const bluePct = totalSpins > 0 ? ((blueCount / totalSpins) * 100).toFixed(1) : 0;
+
+      const readout = document.getElementById('wheelStatsReadout');
+      readout.innerHTML = `Lancers : **${totalSpins}** • Rouge (Théorique 75%) : **${redCount}** (${redPct}%) • Bleu (Théorique 25%) : **${blueCount}** (${bluePct}%)`;
+      renderMathInElement(readout);
+    }
+
+    function checkMicroProb2(ans) {
+      const fb = document.getElementById('microFeedbackProb2');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        playSuccessSound();
+        addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> Il y a 1 secteur bleu sur 4 secteurs au total : \\( P = \\frac{1}{4} = 0,25 = 25\\% \\) ! (+50 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Rappel :</strong> Diviser le nombre de secteurs bleus (1) par le total (4).`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      drawWheel(0);
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

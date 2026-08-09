@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06. Mise en équation | Smarter</title>
+  <meta name="description" content="Micro-leçon 6 du module Équations : Traduire un problème en équation pour le résoudre.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Equations</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Mise en équation</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 6 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-6/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-700 font-mono text-xs font-semibold">
+        🏆 Mission Finale • Le Détective
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        Mise en équation
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Le vrai pouvoir des équations : traduire un problème de la vie courante en mathématiques pour le résoudre !
+      </p>
+    </header>
+
+    <!-- 1. DISCOVER -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🕵️ Les 4 étapes du détective</h2>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-700">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm relative">
+            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center border-4 border-white">1</div>
+            <div class="font-bold text-slate-800 ml-4 mb-1">Choix de l'inconnue</div>
+            <div class="ml-4 text-xs text-slate-600">On nomme $x$ ce qu'on cherche (souvent dans la question).</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm relative">
+            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-bold flex items-center justify-center border-4 border-white">2</div>
+            <div class="font-bold text-slate-800 ml-4 mb-1">Mise en équation</div>
+            <div class="ml-4 text-xs text-slate-600">On traduit l'énoncé en utilisant $x$.</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm relative">
+            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center border-4 border-white">3</div>
+            <div class="font-bold text-slate-800 ml-4 mb-1">Résolution</div>
+            <div class="ml-4 text-xs text-slate-600">On résout l'équation avec nos règles.</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm relative">
+            <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-rose-100 text-rose-700 font-bold flex items-center justify-center border-4 border-white">4</div>
+            <div class="font-bold text-slate-800 ml-4 mb-1">Conclusion</div>
+            <div class="ml-4 text-xs text-slate-600">On vérifie et on écrit une phrase réponse.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FINAL CHALLENGE -->
+    <section class="smarter-card p-6 space-y-4 border-2 border-amber-200 bg-amber-50/30">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🧩</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Le problème du cinéma</h2>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-sm text-slate-700 italic">
+        "Léo achète 3 places de cinéma et un paquet de pop-corn à 5€. Il paie en tout 26€. Quel est le prix d'une place de cinéma ?"
+      </div>
+      
+      <p class="text-sm font-bold text-slate-800 mt-4">Si on note $x$ le prix d'une place de cinéma, quelle équation traduit ce problème ?</p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicro6(1)" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 font-mono text-sm font-bold">$3x + 5 = 26$</button>
+        <button onclick="checkMicro6(2)" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 font-mono text-sm font-bold">$3(x + 5) = 26$</button>
+        <button onclick="checkMicro6(3)" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 font-mono text-sm font-bold">$x + 3 + 5 = 26$</button>
+      </div>
+
+      <div id="microFeedback6" class="hidden p-4 rounded-xl text-xs font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../05-equations-complexes/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Précédent
+      </a>
+
+      <a href="../../index.html" onclick="markLessonCompleted('MOD-4E-003-L6'); triggerConfetti();" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md bg-gradient-to-r from-amber-500 to-orange-600">
+        Terminer le Module 🏆
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    function checkMicro6(ans) {
+      const fb = document.getElementById('microFeedback6');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 1) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(100);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Félicitations Détective !</strong> Léo a bien acheté 3 places ($3x$) PLUS un pop-corn ($+ 5$), pour un total de $26$. L'équation est $3x + 5 = 26$. En résolvant on trouve $3x = 21$ puis $x = 7$. Une place coûte 7€ ! (+100 XP)`;
+        triggerConfetti();
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        if (ans === 2) {
+          fb.innerHTML = `❌ <strong>Presque...</strong> $3(x + 5)$ voudrait dire que Léo a acheté 3 places ET 3 paquets de pop-corn (tout est multiplié par 3) !`;
+        } else {
+          fb.innerHTML = `❌ <strong>Erreur !</strong> Léo n'a pas acheté "1 place et 3 euros". Il a acheté 3 places, donc on doit multiplier le prix de la place par 3 ($3x$).`;
+        }
+      }
+      if(window.renderMathInElement) renderMathInElement(fb, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    }
+
+    function triggerConfetti() {
+      var duration = 3 * 1000;
+      var end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: ['#f59e0b', '#3b82f6', '#10b981']
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: ['#f59e0b', '#3b82f6', '#10b981']
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if(window.renderMathInElement) renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. La Réciproque de Pythagore | Smarter</title>
+  <meta name="description" content="Micro-leçon 4 du module Pythagore : Démontrer qu'un triangle est rectangle.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50 text-slate-800 font-sans">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Pythagore</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">La Réciproque de Pythagore</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 4 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-4/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono text-xs font-semibold">
+        ⏱️ 6 min • Micro-Leçon 4
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-space font-extrabold text-slate-900 tracking-tight">
+        La Réciproque de Pythagore
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Découvrez comment prouver qu'un triangle possède un angle droit sans utiliser d'équerre !
+      </p>
+    </header>
+
+    <!-- 1. TOUCH MATH FIRST: RECTANGLE TRIANGLE TESTER -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🎮 Le Testeur d'Angle Droit</h2>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-blue-50/90 rounded-xl border border-blue-200 text-xs text-blue-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-blue-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Entrez 3 longueurs de triangle (ex: 3, 4, 5 ou 5, 12, 13).
+          </p>
+          <p class="leading-relaxed text-blue-800">
+            <strong>Objectif :</strong> Comparer d'un côté le carré du plus grand côté (\(c^2\)) et de l'autre la somme des carrés des deux autres (\(a^2 + b^2\)). Si l'égalité est vérifiée, le triangle est rectangle !
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-3 text-xs font-mono">
+          <div class="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+            <span class="font-bold text-slate-700">Côté a : </span>
+            <input id="testAInput" type="number" min="1" max="20" value="3" class="w-full p-1 border border-slate-200 rounded-lg text-center font-bold text-blue-600">
+          </div>
+          <div class="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+            <span class="font-bold text-slate-700">Côté b : </span>
+            <input id="testBInput" type="number" min="1" max="20" value="4" class="w-full p-1 border border-slate-200 rounded-lg text-center font-bold text-emerald-600">
+          </div>
+          <div class="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+            <span class="font-bold text-slate-700">Plus grand c : </span>
+            <input id="testCInput" type="number" min="1" max="25" value="5" class="w-full p-1 border border-slate-200 rounded-lg text-center font-bold text-purple-600">
+          </div>
+        </div>
+
+        <button onclick="testReciprique()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-mono text-xs font-bold rounded-xl shadow-md transition-all">
+          🔍 Tester l'Égalité de Pythagore !
+        </button>
+
+        <div id="recipriqueReadout" class="p-3.5 bg-white rounded-xl border border-slate-200 font-mono text-sm font-bold text-emerald-900">
+          \( c^2 = 5^2 = 25 \quad \text{et} \quad a^2 + b^2 = 3^2 + 4^2 = 9 + 16 = 25 \implies \text{Le triangle est rectangle !} \)
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FORMAL PROPERTY -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">💡 Énoncé de la Réciproque</h2>
+      </div>
+
+      <div class="bg-emerald-50 p-4 rounded-xl text-xs text-emerald-900 space-y-2 border border-emerald-200 font-mono">
+        <p>Dans un triangle, si le carré de la plus grande longueur est égal à la somme des carrés des longueurs des deux autres côtés :</p>
+        <p class="font-bold text-sm text-center">\[ c^2 = a^2 + b^2 \]</p>
+        <p>alors ce triangle est <strong>rectangle</strong> et son hypoténuse est ce plus grand côté.</p>
+      </div>
+    </section>
+
+    <!-- 3. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🧪 Test de Vérification</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Un triangle a des côtés de longueurs <strong>6 cm</strong>, <strong>8 cm</strong> et <strong>10 cm</strong>. Est-il rectangle ?</p>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        <button onclick="checkMicroPyth4(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">Oui (Exact : 100 = 36 + 64)</button>
+        <button onclick="checkMicroPyth4(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">Non</button>
+      </div>
+
+      <div id="microFeedbackPyth4" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../03-calculer-un-cote-d-angle-droit/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 3
+      </a>
+
+      <a href="../05-contraposee-et-demonstration/index.html" onclick="markLessonCompleted('MOD-4E-001-L4')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 5 : Contraposée ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    function testReciprique() {
+      const a = parseFloat(document.getElementById('testAInput').value);
+      const b = parseFloat(document.getElementById('testBInput').value);
+      const c = parseFloat(document.getElementById('testCInput').value);
+
+      const cSq = (c * c).toFixed(2);
+      const sumSq = (a * a + b * b).toFixed(2);
+
+      const readout = document.getElementById('recipriqueReadout');
+
+      if (Math.abs(cSq - sumSq) < 0.01) {
+        readout.className = 'p-3.5 bg-emerald-50 border border-emerald-200 font-mono text-sm font-bold text-emerald-900 rounded-xl';
+        readout.innerHTML = `\\( c^2 = ${c}^2 = ${cSq} \\quad \\text{et} \\quad a^2 + b^2 = ${a}^2 + ${b}^2 = ${sumSq} \\implies c^2 = a^2 + b^2 \\) ! <br>✅ D'après la réciproque du théorème de Pythagore, **le triangle est rectangle** !`;
+      } else {
+        readout.className = 'p-3.5 bg-rose-50 border border-rose-200 font-mono text-sm font-bold text-rose-900 rounded-xl';
+        readout.innerHTML = `\\( c^2 = ${c}^2 = ${cSq} \\quad \\text{et} \\quad a^2 + b^2 = ${a}^2 + ${b}^2 = ${sumSq} \\implies c^2 \\neq a^2 + b^2 \\) ! <br>❌ L'égalité n'est pas vérifiée, **le triangle n'est pas rectangle** !`;
+      }
+      renderMathInElement(readout);
+    }
+
+    function checkMicroPyth4(ans) {
+      const fb = document.getElementById('microFeedbackPyth4');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 1) {
+        playSuccessSound();
+        addXP(60);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> \\( 10^2 = 100 \\) et \\( 6^2 + 8^2 = 36 + 64 = 100 \\). L'égalité est vérifiée, le triangle est rectangle ! (+60 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Rappel :</strong> Vérifier si \\( 10^2 = 6^2 + 8^2 \\) (100 = 36 + 64).`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

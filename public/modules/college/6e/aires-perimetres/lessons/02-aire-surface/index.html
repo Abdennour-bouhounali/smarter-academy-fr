@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. L'Aire : La Surface Intérieure | Smarter</title>
+  <meta name="description" content="Micro-leçon 2 du module Aires et Périmètres : Compter les carreaux de 1 cm².">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (6ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Aires Perimetres</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">L'Aire : La Surface Intérieure</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 2 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-2/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <section class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 2
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        L'Aire : La Surface Intérieure
+      </h1>
+    </section>
+
+    <!-- 1. HOOK -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Peindre ou carreler une pièce</h2>
+      </div>
+      <p class="text-slate-600 text-sm leading-relaxed">
+        Alors que le périmètre mesure le contour, <strong>l'aire</strong> mesure la surface occupée à l'intérieur ! Pour peindre un mur ou poser du carrelage, c'est l'aire qui compte.
+      </p>
+    </section>
+
+    <!-- 2. INTERACTIVE GRID EXPLORER -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Le Pavage de Carreaux de 1 cm²</h2>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 text-center">
+        <div id="gridAreaBox" class="flex flex-wrap justify-center gap-1 max-w-[240px] mx-auto p-3 bg-white rounded-xl border border-slate-300"></div>
+
+        <div class="grid sm:grid-cols-2 gap-4 text-xs font-mono">
+          <div>
+            <span class="font-bold text-slate-700">Lignes (hauteur) : </span>
+            <span id="rowVal" class="text-blue-600 font-bold">3</span>
+            <input id="rowSlider" type="range" min="1" max="5" value="3" class="w-full accent-blue-600 mt-1 cursor-pointer">
+          </div>
+          <div>
+            <span class="font-bold text-slate-700">Colonnes (largeur) : </span>
+            <span id="colVal" class="text-purple-600 font-bold">5</span>
+            <input id="colSlider" type="range" min="1" max="6" value="5" class="w-full accent-purple-600 mt-1 cursor-pointer">
+          </div>
+        </div>
+
+        <div id="areaReadout" class="bg-white p-4 rounded-xl border border-slate-200 font-mono text-base font-bold text-blue-900">
+          \( \text{Aire} = 3 \times 5 = 15 \text{ cm}^2 \)
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FORMAL EXPLANATION -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">L'Unité d'Aire : Le centimètre carré (\(\text{cm}^2\))</h2>
+      </div>
+
+      <div class="bg-blue-50 p-4 rounded-xl text-xs text-blue-900 space-y-2 border border-blue-200 font-mono">
+        <p>• Un <strong>centimètre carré (\(1\text{ cm}^2\))</strong> est l'aire d'un carré de 1 cm de côté.</p>
+        <p>• Ne confondez pas \(\text{cm}\) (longueur) et \(\text{cm}^2\) (surface) !</p>
+      </div>
+    </section>
+
+    <!-- 4. GUIDED PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">4</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Vérifiez votre compréhension</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Pour peindre une porte, quelle grandeur devez-vous calculer ?</p>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        <button onclick="checkMicroA(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">Le périmètre (en cm)</button>
+        <button onclick="checkMicroA(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs">L'aire (en cm² ou m²)</button>
+      </div>
+
+      <div id="microFeedbackA" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../01-perimetre-contour/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 1
+      </a>
+
+      <a href="../03-carre-et-rectangle/index.html" onclick="markLessonCompleted('MOD-6E-005-L2')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 3 : Formules ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const rowSlider = document.getElementById('rowSlider');
+    const colSlider = document.getElementById('colSlider');
+    const gridAreaBox = document.getElementById('gridAreaBox');
+
+    function updateGridArea() {
+      const r = parseInt(rowSlider.value);
+      const c = parseInt(colSlider.value);
+      document.getElementById('rowVal').textContent = r;
+      document.getElementById('colVal').textContent = c;
+
+      gridAreaBox.innerHTML = '';
+      gridAreaBox.style.gridTemplateColumns = `repeat(${c}, minmax(0, 1fr))`;
+      gridAreaBox.className = `grid gap-1 bg-white p-3 rounded-xl border border-slate-300 max-w-[${c * 36}px] mx-auto`;
+
+      const total = r * c;
+      for(let i=0; i<total; i++) {
+        const sq = document.createElement('div');
+        sq.className = 'w-7 h-7 bg-blue-500 text-white rounded-md flex items-center justify-center font-mono text-[9px] font-bold shadow-xs';
+        sq.textContent = '1cm²';
+        gridAreaBox.appendChild(sq);
+      }
+
+      const readout = document.getElementById('areaReadout');
+      readout.innerHTML = `\\( \\text{Aire} = ${r} \\times ${c} = ${total} \\text{ cm}^2 \\)`;
+      renderMathInElement(readout);
+    }
+
+    rowSlider.addEventListener('input', updateGridArea);
+    colSlider.addEventListener('input', updateGridArea);
+
+    function checkMicroA(ans) {
+      const fb = document.getElementById('microFeedbackA');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        playSuccessSound();
+        addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> La peinture recouvre la surface intérieure, c'est donc l'aire ! (+50 XP)`;
+      } else {
+        playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Erreur :</strong> Le périmètre ne mesure que le contour de la porte, pas la surface à peindre !`;
+      }
+      renderMathInElement(fb);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateGridArea();
+      renderMathInElement(document.body);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module : Fonctions Linéaires et Affines | 3ème • Smarter</title>
+  <meta name="description" content="Module d'apprentissage complet sur les fonctions en 3ème.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-4xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- BREADCRUMB -->
+    <nav class="flex items-center gap-2 text-xs font-mono text-slate-500">
+      <a href="/" class="hover:text-blue-600">Accueil</a>
+      <span>/</span>
+      <a href="/courses" class="hover:text-blue-600">Collège (3ème)</a>
+      <span>/</span>
+      <span class="text-slate-900 font-semibold">Fonctions</span>
+    </nav>
+
+    <!-- MODULE HERO CARD -->
+    <section class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-semibold">
+            📈 Module 3ème • 6 Micro-Leçons • 40 min au total
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl font-space font-extrabold text-slate-900 leading-tight">
+            Fonctions linéaires et affines
+          </h1>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+            Découvrez comment relier l'algèbre et la géométrie ! Apprenez à tracer des droites, à calculer un coefficient directeur et maîtrisez l'ordonnée à l'origine avec notre outil interactif "Touch Math".
+          </p>
+        </div>
+
+        <div class="w-full md:w-56 bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3 text-center">
+          <div class="text-xs font-mono text-slate-500 font-bold uppercase">Votre Progression</div>
+          <div class="text-3xl font-space font-extrabold text-blue-600" id="moduleProgressPercent">0%</div>
+          
+          <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div id="progressFill" class="h-full bg-gradient-to-r from-blue-500 to-indigo-600 w-0 transition-all duration-500"></div>
+          </div>
+
+          <span class="text-xs font-mono font-bold text-slate-500" id="progressText">0% (0/7)</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MICRO-LESSONS ROADMAP -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-space font-bold text-slate-900">🗺️ Parcours des Micro-Leçons</h2>
+
+      <div class="space-y-3">
+        
+        <a href="lessons/01-simulateur-graphique/index.html" class="group block bg-white p-5 rounded-2xl border border-slate-200 hover:border-emerald-400 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 font-mono font-bold flex items-center justify-center">01</div>
+              <div>
+                <h3 class="font-space font-bold text-slate-900 group-hover:text-emerald-600">Touch Math : Simulateur Interactif 🎮</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-2">7 micro-leçons • ~55 min</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono text-xs font-semibold">Touch Math ➔</span>
+          </div>
+        </a>
+
+        <a href="lessons/02-introduction/index.html" class="group block bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 font-mono font-bold flex items-center justify-center">02</div>
+              <div>
+                <h3 class="font-space font-bold text-slate-900 group-hover:text-blue-600">Introduction aux fonctions</h3>
+                <p class="text-xs text-slate-500">La machine mathématique : notion d'image et d'antécédent.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-semibold">Voir ➔</span>
+          </div>
+        </a>
+
+        <a href="lessons/03-fonction-lineaire/index.html" class="group block bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 font-mono font-bold flex items-center justify-center">03</div>
+              <div>
+                <h3 class="font-space font-bold text-slate-900 group-hover:text-blue-600">Fonction Linéaire</h3>
+                <p class="text-xs text-slate-500">Modéliser la proportionnalité avec $f(x) = ax$.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-semibold">Voir ➔</span>
+          </div>
+        </a>
+
+        <a href="lessons/04-fonction-affine/index.html" class="block p-4 bg-white border border-slate-200 rounded-2xl hover:border-purple-300 hover:shadow-md transition-all group relative overflow-hidden" id="card-MOD-3E-FONC-L4">
+        <div class="absolute top-0 left-0 w-1 h-full bg-slate-200 group-hover:bg-purple-500 transition-colors" id="status-line-MOD-3E-FONC-L4"></div>
+        <div class="pl-4">
+          <div class="flex justify-between items-start mb-2">
+            <span class="text-xs font-mono text-purple-600 font-bold">04</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full" id="status-badge-MOD-3E-FONC-L4">À FAIRE</span>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-purple-700 transition-colors">Fonction Affine</h3>
+          <p class="text-xs text-slate-500 mt-1">Introduction de l'ordonnée à l'origine (b).</p>
+        </div>
+      </a>
+
+      <!-- Leçon 5 -->
+      <a href="lessons/05-lecture-graphique/index.html" class="block p-4 bg-white border border-slate-200 rounded-2xl hover:border-sky-300 hover:shadow-md transition-all group relative overflow-hidden" id="card-MOD-3E-FONC-L5">
+        <div class="absolute top-0 left-0 w-1 h-full bg-slate-200 group-hover:bg-sky-500 transition-colors" id="status-line-MOD-3E-FONC-L5"></div>
+        <div class="pl-4">
+          <div class="flex justify-between items-start mb-2">
+            <span class="text-xs font-mono text-sky-600 font-bold">05</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full" id="status-badge-MOD-3E-FONC-L5">À FAIRE</span>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-sky-700 transition-colors">Lecture Graphique</h3>
+          <p class="text-xs text-slate-500 mt-1">Trouver a et b directement sur le graphique.</p>
+        </div>
+      </a>
+
+      <!-- Leçon 6 -->
+      <a href="lessons/06-calcul-coefficient/index.html" class="block p-4 bg-white border border-slate-200 rounded-2xl hover:border-blue-300 hover:shadow-md transition-all group relative overflow-hidden" id="card-MOD-3E-FONC-L6">
+        <div class="absolute top-0 left-0 w-1 h-full bg-slate-200 group-hover:bg-blue-500 transition-colors" id="status-line-MOD-3E-FONC-L6"></div>
+        <div class="pl-4">
+          <div class="flex justify-between items-start mb-2">
+            <span class="text-xs font-mono text-blue-600 font-bold">06</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full" id="status-badge-MOD-3E-FONC-L6">À FAIRE</span>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">Calculer le coefficient</h3>
+          <p class="text-xs text-slate-500 mt-1">Formule pour trouver a avec 2 points.</p>
+        </div>
+      </a>
+
+      <!-- Mission Finale (Leçon 7) -->
+      <a href="lessons/07-mission-forfait/index.html" class="block p-4 bg-slate-900 border border-slate-800 rounded-2xl hover:border-amber-400 hover:shadow-lg transition-all group relative overflow-hidden" id="card-MOD-3E-FONC-L7">
+        <div class="absolute top-0 left-0 w-1 h-full bg-slate-700 group-hover:bg-amber-400 transition-colors" id="status-line-MOD-3E-FONC-L7"></div>
+        <div class="pl-4">
+          <div class="flex justify-between items-start mb-2">
+            <span class="text-xs font-mono text-amber-400 font-bold">MISSION FINALE (07)</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded-full" id="status-badge-MOD-3E-FONC-L7">À FAIRE</span>
+          </div>
+          <h3 class="font-bold text-white group-hover:text-amber-300 transition-colors">Le Choix du Forfait</h3>
+          <p class="text-xs text-slate-400 mt-1">Application concrète : quel abonnement téléphonique choisir ?</p>
+        </div>
+      </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500 mt-12">
+    <p>© 2026 Abdennour BOUHOUNALI — Professeur de Mathématiques</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const totalLessons = 7;
+      let completedCount = 0;
+      
+      const savedProgress = JSON.parse(localStorage.getItem('smarter_completed_lessons')) || [];
+      
+      for(let i=1; i<=totalLessons; i++) {
+        const id = `MOD-3E-FONC-L${i}`;
+        const card = document.getElementById(`card-${id}`);
+        const badge = document.getElementById(`status-badge-${id}`);
+        const line = document.getElementById(`status-line-${id}`);
+        
+        if (savedProgress.includes(id)) {
+          completedCount++;
+          if (badge) {
+            badge.textContent = 'TERMINÉ';
+            badge.classList.remove('bg-slate-100', 'text-slate-400', 'bg-slate-800');
+            badge.classList.add('bg-emerald-100', 'text-emerald-700');
+          }
+          if (line) {
+            line.classList.remove('bg-slate-200', 'bg-slate-700');
+            line.classList.add('bg-emerald-500');
+          }
+        }
+      }
+
+      const pct = Math.round((completedCount / totalLessons) * 100);
+      const progressFill = document.getElementById('progressFill');
+      const progressText = document.getElementById('progressText');
+      const moduleProgressPercent = document.getElementById('moduleProgressPercent');
+      
+      if(progressFill) progressFill.style.width = `${pct}%`;
+      if(progressText) progressText.textContent = `${pct}% (${completedCount}/${totalLessons})`;
+      if(moduleProgressPercent) moduleProgressPercent.textContent = `${pct}%`;
+
+      if(window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ]
+        });
+      }
+    });
+  </script>
+</body>
+</html>

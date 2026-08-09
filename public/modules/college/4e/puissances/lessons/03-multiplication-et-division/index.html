@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03. Multiplication et Division | Smarter</title>
+  <meta name="description" content="Micro-leçon 3 du module Puissances : Règles de calcul avec les puissances de 10.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+
+  <style>
+    .crossed-out {
+      position: relative;
+      color: #94A3B8; /* slate-400 */
+    }
+    .crossed-out::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -2px;
+      right: -2px;
+      height: 2px;
+      background-color: #EF4444; /* red-500 */
+      transform: rotate(-15deg);
+    }
+  </style>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Puissances</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Multiplication et Division</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 3 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-3/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 3
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        Multiplication et Division
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Découvrez la magie des exposants : ils transforment de complexes multiplications en de simples additions !
+      </p>
+    </header>
+
+    <!-- 1. TOUCH MATH FIRST: L'ASSEMBLEUR -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+          <h2 class="text-xl font-space font-bold text-slate-900">🎮 L'Assembleur d'Exposants</h2>
+        </div>
+        
+        <!-- Toggle Operation -->
+        <div class="flex bg-slate-200 p-1 rounded-lg">
+          <button id="btn-mult" onclick="setOperation('mult')" class="px-4 py-1.5 text-xs font-bold rounded-md bg-white text-purple-700 shadow-sm transition-all">Multiplication</button>
+          <button id="btn-div" onclick="setOperation('div')" class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all">Division</button>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-8 text-center">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-purple-50/90 rounded-xl border border-purple-200 text-xs text-purple-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-purple-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            <strong>Action :</strong> Ajustez les deux exposants $m$ et $n$ avec les curseurs, et basculez entre Multiplication et Division.
+          </p>
+          <p class="leading-relaxed text-purple-800">
+            <strong>Objectif :</strong> Observer la décomposition du calcul pour comprendre pourquoi <strong>on additionne</strong> les exposants lors d'une multiplication, et pourquoi <strong>on les soustrait</strong> lors d'une division.
+          </p>
+        </div>
+
+        <!-- Sliders -->
+        <div class="grid grid-cols-2 gap-8">
+          <div class="space-y-2">
+            <label class="text-xs font-mono font-bold text-blue-600">Exposant m : <span id="val-m" class="text-lg">3</span></label>
+            <input type="range" id="slider-m" min="1" max="6" value="3" class="w-full accent-blue-600 cursor-pointer">
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-mono font-bold text-rose-600">Exposant n : <span id="val-n" class="text-lg">2</span></label>
+            <input type="range" id="slider-n" min="1" max="6" value="2" class="w-full accent-rose-600 cursor-pointer">
+          </div>
+        </div>
+
+        <!-- Visualizer Area -->
+        <div class="p-6 bg-white border-4 border-slate-200 rounded-2xl shadow-sm min-h-[250px] flex flex-col justify-center items-center gap-6">
+          
+          <!-- Line 1: The Equation -->
+          <div id="vis-equation" class="text-3xl font-space font-bold text-slate-800">
+            <!-- Filled by JS -->
+          </div>
+
+          <!-- Line 2: The Expansion -->
+          <div id="vis-expansion" class="text-lg font-mono text-slate-600 flex flex-col items-center gap-2">
+            <!-- Filled by JS -->
+          </div>
+
+          <!-- Line 3: The Result -->
+          <div id="vis-result" class="text-4xl font-space font-bold text-purple-600 mt-4 bg-purple-50 px-6 py-2 rounded-xl border border-purple-200">
+            <!-- Filled by JS -->
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. THE RULES -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Les Règles de Calcul</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4 text-sm font-mono">
+        <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200 text-emerald-900 space-y-2">
+          <div class="font-bold text-emerald-800 text-lg">Produit (Multiplication)</div>
+          <p>Pour multiplier deux puissances de 10, on <strong>additionne</strong> les exposants.</p>
+          <div class="p-3 bg-white rounded-lg border border-emerald-100 text-center font-bold text-lg">
+            $10^m \times 10^n = 10^{m+n}$
+          </div>
+        </div>
+
+        <div class="p-4 bg-rose-50 rounded-xl border border-rose-200 text-rose-900 space-y-2">
+          <div class="font-bold text-rose-800 text-lg">Quotient (Division)</div>
+          <p>Pour diviser deux puissances de 10, on <strong>soustrait</strong> les exposants.</p>
+          <div class="p-3 bg-white rounded-lg border border-rose-100 text-center font-bold text-lg">
+            $\frac{10^m}{10^n} = 10^{m-n}$
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 font-mono text-sm font-bold flex items-center justify-center">3</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">Défi Rapide</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Calculez et simplifiez l'expression suivante : <strong>$10^8 \times 10^{-3}$</strong></p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicro3(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-xl font-bold">$10^{11}$</button>
+        <button onclick="checkMicro3(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-xl font-bold">$10^{-24}$</button>
+        <button onclick="checkMicro3(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs text-xl font-bold">$10^5$ (Exact)</button>
+      </div>
+
+      <div id="microFeedback3" class="hidden p-3 rounded-xl text-xs font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../02-puissances-de-10/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Leçon 2
+      </a>
+
+      <a href="../04-notation-scientifique/index.html" onclick="markLessonCompleted('MOD-4E-002-L3')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 4 : Notation Scientifique ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    const sliderM = document.getElementById('slider-m');
+    const sliderN = document.getElementById('slider-n');
+    let operation = 'mult'; // 'mult' or 'div'
+
+    function setOperation(op) {
+      operation = op;
+      
+      const btnMult = document.getElementById('btn-mult');
+      const btnDiv = document.getElementById('btn-div');
+      
+      if(op === 'mult') {
+        btnMult.className = 'px-4 py-1.5 text-xs font-bold rounded-md bg-white text-purple-700 shadow-sm transition-all';
+        btnDiv.className = 'px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all';
+      } else {
+        btnDiv.className = 'px-4 py-1.5 text-xs font-bold rounded-md bg-white text-purple-700 shadow-sm transition-all';
+        btnMult.className = 'px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all';
+      }
+      
+      updateVisuals();
+    }
+
+    function generate10s(count, crossedCount = 0) {
+      let html = '';
+      for(let i=0; i<count; i++) {
+        if(i > 0) html += ' × ';
+        if (i >= count - crossedCount) {
+          html += '<span class="crossed-out">10</span>';
+        } else {
+          html += '10';
+        }
+      }
+      return html;
+    }
+
+    function updateVisuals() {
+      const m = parseInt(sliderM.value);
+      const n = parseInt(sliderN.value);
+      
+      document.getElementById('val-m').textContent = m;
+      document.getElementById('val-n').textContent = n;
+      
+      const visEq = document.getElementById('vis-equation');
+      const visExp = document.getElementById('vis-expansion');
+      const visRes = document.getElementById('vis-result');
+
+      if (operation === 'mult') {
+        visEq.innerHTML = `10<sup class="text-blue-600">${m}</sup> × 10<sup class="text-rose-600">${n}</sup>`;
+        
+        visExp.innerHTML = `
+          <div>(<span class="text-blue-600">${generate10s(m)}</span>) × (<span class="text-rose-600">${generate10s(n)}</span>)</div>
+          <div class="text-sm mt-2 text-slate-400">Total : ${m} + ${n} = ${m+n} "dix"</div>
+        `;
+        
+        visRes.innerHTML = `10<sup>${m+n}</sup>`;
+      } else {
+        visEq.innerHTML = `
+          <div class="flex flex-col items-center">
+            <div>10<sup class="text-blue-600">${m}</sup></div>
+            <div class="h-1 w-full bg-slate-800 my-1"></div>
+            <div>10<sup class="text-rose-600">${n}</sup></div>
+          </div>
+        `;
+        
+        // Logic for cross-outs in division
+        const crossedTop = Math.min(m, n);
+        const crossedBottom = Math.min(m, n);
+
+        visExp.innerHTML = `
+          <div class="flex flex-col items-center">
+            <div class="text-blue-600 tracking-widest">${generate10s(m, crossedTop)}</div>
+            <div class="h-0.5 w-full bg-slate-300 my-2"></div>
+            <div class="text-rose-600 tracking-widest">${generate10s(n, crossedBottom)}</div>
+          </div>
+          <div class="text-sm mt-2 text-slate-400">Il reste : ${m} - ${n} = ${m-n} "dix"</div>
+        `;
+        
+        visRes.innerHTML = `10<sup>${m-n}</sup>`;
+      }
+
+      if(typeof playTone === 'function') {
+        try { playTone(500, 'sine', 0.05); } catch(e){}
+      }
+    }
+
+    sliderM.addEventListener('input', updateVisuals);
+    sliderN.addEventListener('input', updateVisuals);
+
+    function checkMicro3(ans) {
+      const fb = document.getElementById('microFeedback3');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 3) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> On additionne les exposants : $8 + (-3) = 8 - 3 = 5$. Donc $10^5$. (+50 XP)`;
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        if (ans === 1) {
+          fb.innerHTML = `❌ <strong>Erreur de signe :</strong> Vous avez fait $8 - (-3) = 11$, ce qui correspond à une division !`;
+        } else {
+          fb.innerHTML = `❌ <strong>Erreur classique :</strong> Ne MULTIPLIEZ PAS les exposants ! Lors d'un produit, on ADDITIONNE les exposants.`;
+        }
+      }
+      if(window.renderMathInElement) renderMathInElement(fb, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateVisuals();
+      if(window.renderMathInElement) renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

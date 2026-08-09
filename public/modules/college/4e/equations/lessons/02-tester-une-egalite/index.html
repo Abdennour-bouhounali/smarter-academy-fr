@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02. Tester une égalité | Smarter</title>
+  <meta name="description" content="Micro-leçon 2 du module Équations : Vérifier si un nombre donné est solution ou non de l'équation.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Equations</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Tester une égalité</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 2 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-2/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 2
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        Tester une égalité
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Apprenez à vérifier si un nombre est la solution d'une équation en remplaçant l'inconnue.
+      </p>
+    </header>
+
+    <!-- 1. DISCOVER -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🔄 La méthode de remplacement</h2>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-700">
+        <p>Pour savoir si un nombre est solution d'une équation, on <strong>remplace la lettre par ce nombre</strong> et on calcule chaque membre séparément.</p>
+        
+        <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col gap-4">
+          <div class="text-center">
+            <span class="text-sm font-bold text-slate-800">L'équation :</span>
+            <div class="text-2xl font-space font-bold mt-2">
+              <span class="text-emerald-600">2x + 3</span> = <span class="text-blue-600">11</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Testons avec $x = 4$</p>
+          </div>
+          
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+              <div class="font-bold text-emerald-800 text-xs mb-2 uppercase">Membre de gauche</div>
+              <div class="font-mono text-sm space-y-1">
+                <div>$2x + 3$</div>
+                <div>$= 2 \times 4 + 3$</div>
+                <div>$= 8 + 3$</div>
+                <div class="font-bold text-emerald-700 text-lg">$= 11$</div>
+              </div>
+            </div>
+
+            <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+              <div class="font-bold text-blue-800 text-xs mb-2 uppercase">Membre de droite</div>
+              <div class="font-mono text-sm space-y-1">
+                <div>$11$</div>
+                <div class="text-transparent">.</div>
+                <div class="text-transparent">.</div>
+                <div class="font-bold text-blue-700 text-lg">$= 11$</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center font-bold text-slate-800">
+            $11 = 11$, donc $4$ est <strong class="text-emerald-600">solution</strong> de l'équation !
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">À vous de tester</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Le nombre <strong>$3$</strong> est-il solution de l'équation $4x - 5 = 6$ ?</p>
+
+      <div class="flex gap-4">
+        <button onclick="checkMicro2(true)" class="flex-1 p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-sm font-bold text-emerald-600">Oui</button>
+        <button onclick="checkMicro2(false)" class="flex-1 p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-sm font-bold text-rose-600">Non</button>
+      </div>
+
+      <div id="microFeedback2" class="hidden p-3 rounded-xl text-xs font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../01-notion-d-equation/index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Précédent
+      </a>
+
+      <a href="../03-operations-add-sous/index.html" onclick="markLessonCompleted('MOD-4E-003-L2')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 3 : Opérations + / - ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    function checkMicro2(ans) {
+      const fb = document.getElementById('microFeedback2');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === false) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> Calculons le membre de gauche : $4 \\times 3 - 5 = 12 - 5 = 7$. Or $7 \\neq 6$, donc $3$ n'est pas solution. (+50 XP)`;
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Faux !</strong> Remplacez $x$ par $3$ : on obtient $4 \\times 3 - 5 = 7$. Ce n'est pas égal à $6$ !`;
+      }
+      if(window.renderMathInElement) renderMathInElement(fb, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if(window.renderMathInElement) renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

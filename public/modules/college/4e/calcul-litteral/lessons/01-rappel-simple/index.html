@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01. Rappel : Distributivité simple | Smarter</title>
+  <meta name="description" content="Micro-leçon 1 du module Calcul littéral : Développer une expression k(a+b).">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+
+    <!-- LESSON HEADER -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      
+      <!-- BREADCRUMB -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (4ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Calcul Litteral</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">Rappel : Distributivité simple</span>
+      </nav>
+
+      <!-- PROGRESS & XP -->
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 1 / 6</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-1/6"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+
+    <!-- HERO TITLE -->
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-mono text-xs font-semibold">
+        ⏱️ 5 min • Micro-Leçon 1
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">
+        Rappel : Distributivité simple
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Développer, c'est transformer un produit en somme (ou en différence) en distribuant un facteur.
+      </p>
+    </header>
+
+    <!-- 1. TOUCH MATH FIRST: L'AIRE RECTANGULAIRE -->
+    <section class="smarter-card p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-mono text-sm font-bold flex items-center justify-center">1</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">🎮 Découpage de Rectangle</h2>
+      </div>
+
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-8 text-center overflow-x-auto">
+        <!-- GUIDANCE BOX -->
+        <div class="p-3.5 bg-blue-50/90 rounded-xl border border-blue-200 text-xs text-blue-950 space-y-1 font-sans text-left">
+          <div class="font-bold flex items-center gap-1.5 text-blue-900">
+            <span>💡</span> <span>Comment utiliser cet outil ?</span>
+          </div>
+          <p class="leading-relaxed">
+            Modifiez la hauteur $k$ et les largeurs $a$ et $b$ avec les boutons.
+          </p>
+          <p class="leading-relaxed text-blue-800">
+            L'aire totale du grand rectangle est égale à la somme des aires des deux petits rectangles ! C'est ça la <strong>distributivité</strong>.
+          </p>
+        </div>
+
+        <!-- VISUAL RECTANGLE -->
+        <div class="flex justify-center items-center gap-4 py-8 min-w-[300px]">
+          
+          <div class="flex flex-col items-center gap-2">
+            <span class="font-mono font-bold text-slate-500">k = <span id="val-k">3</span></span>
+            <div class="flex flex-col gap-1 items-center">
+              <button onclick="changeRect('k', 1)" class="w-6 h-6 bg-slate-200 rounded font-bold hover:bg-slate-300 shadow-sm">+</button>
+              <button onclick="changeRect('k', -1)" class="w-6 h-6 bg-slate-200 rounded font-bold hover:bg-slate-300 shadow-sm">-</button>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2 relative">
+            <div class="flex gap-0 relative items-end" id="rect-container">
+              <!-- Left Rect -->
+              <div id="rect-a" class="bg-blue-100 border border-blue-400 flex items-center justify-center transition-all duration-300 shadow-sm" style="height: 90px; width: 120px;">
+                <span class="font-mono font-bold text-blue-800" id="area-a">3×4</span>
+              </div>
+              <!-- Right Rect -->
+              <div id="rect-b" class="bg-amber-100 border border-l-0 border-amber-400 flex items-center justify-center transition-all duration-300 shadow-sm" style="height: 90px; width: 60px;">
+                <span class="font-mono font-bold text-amber-800" id="area-b">3×2</span>
+              </div>
+            </div>
+
+            <!-- Width labels -->
+            <div class="flex w-full mt-2">
+              <div id="label-a" class="flex flex-col items-center" style="width: 120px; flex: none;">
+                <span class="font-mono font-bold text-blue-600">a = <span id="val-a">4</span></span>
+                <div class="flex gap-1 mt-1">
+                  <button onclick="changeRect('a', -1)" class="w-6 h-6 bg-slate-200 rounded font-bold hover:bg-slate-300 text-xs shadow-sm">-</button>
+                  <button onclick="changeRect('a', 1)" class="w-6 h-6 bg-slate-200 rounded font-bold hover:bg-slate-300 text-xs shadow-sm">+</button>
+                </div>
+              </div>
+              <div id="label-b" class="flex flex-col items-center" style="width: 60px; flex: none;">
+                <span class="font-mono font-bold text-amber-600">b = <span id="val-b">2</span></span>
+                <div class="flex gap-1 mt-1">
+                  <button onclick="changeRect('b', -1)" class="w-6 h-6 bg-slate-200 rounded font-bold hover:bg-slate-300 text-xs shadow-sm">-</button>
+                  <button onclick="changeRect('b', 1)" class="w-6 h-6 bg-slate-200 rounded font-bold hover:bg-slate-300 text-xs shadow-sm">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- EQUATION DISPLAY -->
+        <div class="bg-slate-900 text-white p-6 rounded-xl font-space font-bold text-xl sm:text-3xl flex flex-wrap items-center justify-center gap-2 sm:gap-4 shadow-xl">
+          <span class="text-emerald-400" id="eq-k1">3</span>
+          <span class="text-slate-400">(</span>
+          <span class="text-blue-400" id="eq-a1">4</span>
+          <span class="text-slate-400">+</span>
+          <span class="text-amber-400" id="eq-b1">2</span>
+          <span class="text-slate-400">)</span>
+          
+          <span class="text-slate-500 mx-2">=</span>
+          
+          <span class="text-emerald-400" id="eq-k2">3</span><span class="text-slate-400">×</span><span class="text-blue-400" id="eq-a2">4</span>
+          <span class="text-slate-400">+</span>
+          <span class="text-emerald-400" id="eq-k3">3</span><span class="text-slate-400">×</span><span class="text-amber-400" id="eq-b2">2</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. PRACTICE QUIZ -->
+    <section class="smarter-card p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-mono text-sm font-bold flex items-center justify-center">2</span>
+        <h2 class="text-xl font-space font-bold text-slate-900">À vous de jouer !</h2>
+      </div>
+
+      <p class="text-sm text-slate-700">Que donne le développement de l'expression <strong>$5(2x - 3)$</strong> ?</p>
+
+      <div class="grid sm:grid-cols-3 gap-3">
+        <button onclick="checkMicro1(1)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs font-bold text-lg">$10x - 3$</button>
+        <button onclick="checkMicro1(2)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs font-bold text-lg">$10x - 15$</button>
+        <button onclick="checkMicro1(3)" class="p-3 rounded-xl border border-slate-200 hover:bg-slate-100 font-mono text-xs font-bold text-lg">$7x - 15$</button>
+      </div>
+
+      <div id="microFeedback1" class="hidden p-3 rounded-xl text-xs font-mono mt-4"></div>
+    </section>
+
+    <!-- NAVIGATION BAR AT BOTTOM -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="../../index.html" class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-mono text-xs font-bold">
+        ← Sommaire
+      </a>
+
+      <a href="../02-double-distributivite/index.html" onclick="markLessonCompleted('MOD-4E-001-L1')" class="btn-gradient px-6 py-2.5 rounded-xl text-white font-mono text-xs font-bold shadow-md">
+        Leçon 2 : Double distributivité ➔
+      </a>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    let vK = 3, vA = 4, vB = 2;
+
+    function renderRect() {
+      document.getElementById('val-k').textContent = vK;
+      document.getElementById('val-a').textContent = vA;
+      document.getElementById('val-b').textContent = vB;
+      
+      document.getElementById('eq-k1').textContent = vK;
+      document.getElementById('eq-k2').textContent = vK;
+      document.getElementById('eq-k3').textContent = vK;
+      
+      document.getElementById('eq-a1').textContent = vA;
+      document.getElementById('eq-a2').textContent = vA;
+      
+      document.getElementById('eq-b1').textContent = vB;
+      document.getElementById('eq-b2').textContent = vB;
+      
+      document.getElementById('area-a').textContent = `${vK}×${vA}`;
+      document.getElementById('area-b').textContent = `${vK}×${vB}`;
+      
+      const rectA = document.getElementById('rect-a');
+      const rectB = document.getElementById('rect-b');
+      const labelA = document.getElementById('label-a');
+      const labelB = document.getElementById('label-b');
+      
+      const h = vK * 30; 
+      const wA = vA * 30;
+      const wB = vB * 30;
+      
+      rectA.style.height = h + 'px';
+      rectB.style.height = h + 'px';
+      rectA.style.width = wA + 'px';
+      rectB.style.width = wB + 'px';
+      
+      labelA.style.width = wA + 'px';
+      labelB.style.width = wB + 'px';
+      
+      if(typeof playTone === 'function') {
+        try { playTone(300 + (vK+vA+vB)*10, 'sine', 0.05); } catch(e){}
+      }
+    }
+
+    function changeRect(param, delta) {
+      if(param === 'k') { vK += delta; if(vK < 1) vK = 1; if(vK > 8) vK = 8; }
+      if(param === 'a') { vA += delta; if(vA < 1) vA = 1; if(vA > 8) vA = 8; }
+      if(param === 'b') { vB += delta; if(vB < 1) vB = 1; if(vB > 8) vB = 8; }
+      renderRect();
+    }
+
+    function checkMicro1(ans) {
+      const fb = document.getElementById('microFeedback1');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if(ans === 2) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(50);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Exact !</strong> On multiplie $5 \\times 2x$ (= $10x$) ET on multiplie $5 \\times (-3)$ (= $-15$). Le résultat est $10x - 15$. (+50 XP)`;
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        if (ans === 1) {
+          fb.innerHTML = `❌ <strong>Erreur très courante !</strong> Vous avez multiplié le premier terme ($5 \\times 2x$), mais vous avez oublié de distribuer le $5$ sur le $-3$ !`;
+        } else {
+          fb.innerHTML = `❌ <strong>Attention !</strong> On <strong>multiplie</strong> $5 \\times 2x$, on n'additionne pas ! Cela donne $10x$ et non $7x$.`;
+        }
+      }
+      if(window.renderMathInElement) renderMathInElement(fb, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderRect();
+      if(window.renderMathInElement) renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

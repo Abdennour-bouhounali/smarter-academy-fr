@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07. Mission Finale : Forfaits | Smarter</title>
+  <meta name="description" content="Mission finale : choisir le meilleur forfait à l'aide des fonctions affines et linéaires.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="/smarter-ui/lesson.css">
+  <script src="/smarter-ui/lesson.js" defer></script>
+  <script src="/smarter-ui/global-nav.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+
+  <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+        <a href="/" class="hover:text-blue-600">Accueil</a>
+        <span>/</span>
+        <a href="/courses" class="hover:text-blue-600">Collège (3ème)</a>
+        <span>/</span>
+        <a href="../../index.html" class="hover:text-blue-600">Fonctions</a>
+        <span>/</span>
+        <span class="text-slate-900 font-semibold">07. Mission Finale</span>
+      </nav>
+      <div class="flex items-center gap-4 self-end sm:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 font-bold">Leçon 7 / 7</span>
+          <div class="w-16 sm:w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 w-full"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold shrink-0">
+          <span id="xpCount">0</span> XP
+        </div>
+      </div>
+    </div>
+
+    <header class="space-y-2 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-semibold">
+        ⭐ Mission 7
+      </div>
+      <h1 class="text-3xl font-space font-extrabold text-slate-900">Le Choix du Forfait</h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        Vous êtes consultant pour une famille qui veut choisir le meilleur forfait mobile pour son adolescent. Appliquez vos connaissances !
+      </p>
+    </header>
+
+    <section class="smarter-card border-amber-200 p-6 space-y-6">
+      <h2 class="text-xl font-space font-bold text-slate-900 flex items-center gap-2">
+        <span>📜</span> Le Dossier
+      </h2>
+
+      <div class="bg-amber-50/50 p-5 rounded-2xl border border-amber-100 text-sm text-slate-700 space-y-4 leading-relaxed">
+        <p>Voici les trois forfaits proposés par l'opérateur :</p>
+        <ul class="list-disc pl-5 space-y-2 font-medium">
+          <li><strong>Forfait A (Modèle $f$) :</strong> 10€ par mois, plus 0,10€ par minute d'appel.</li>
+          <li><strong>Forfait B (Modèle $g$) :</strong> 0,30€ par minute d'appel (sans abonnement fixe).</li>
+          <li><strong>Forfait C (Modèle $h$) :</strong> 25€ par mois pour des appels illimités.</li>
+        </ul>
+        <p>Soit $x$ le nombre de minutes d'appel consommées dans un mois.</p>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="font-bold text-slate-800">Mission 1 : Trouver les expressions algébriques</h3>
+        <p class="text-sm text-slate-600 mb-2">Associez chaque forfait à sa fonction :</p>
+        
+        <div class="grid gap-3">
+          <button onclick="checkFinal(1)" class="w-full p-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left flex justify-between items-center transition-all">
+            <span class="font-medium text-sm text-slate-700">A</span>
+            <span class="font-mono font-bold text-slate-900">$f(x) = 10x + 0.1$ ; $g(x) = 25$ ; $h(x) = 0.3x$</span>
+          </button>
+          
+          <button onclick="checkFinal(2)" class="w-full p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-blue-400 text-left flex justify-between items-center transition-all">
+            <span class="font-medium text-sm text-slate-700">B</span>
+            <span class="font-mono font-bold text-slate-900">$f(x) = 0.1x + 10$ ; $g(x) = 0.3x$ ; $h(x) = 25$</span>
+          </button>
+          
+          <button onclick="checkFinal(3)" class="w-full p-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left flex justify-between items-center transition-all">
+            <span class="font-medium text-sm text-slate-700">C</span>
+            <span class="font-mono font-bold text-slate-900">$f(x) = 0.1x$ ; $g(x) = 0.3x + 10$ ; $h(x) = 25x$</span>
+          </button>
+        </div>
+        
+        <div id="finalFeedback" class="hidden p-4 rounded-xl text-sm font-medium mt-4"></div>
+      </div>
+    </section>
+
+    <!-- SUCCESS SCREEN (Hidden by default) -->
+    <div id="successScreen" class="hidden text-center space-y-6 py-8">
+      <div class="w-24 h-24 mx-auto bg-gradient-to-tr from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-xl shadow-amber-500/30 transform hover:scale-110 transition-transform">
+        <span class="text-5xl">🏆</span>
+      </div>
+      <div class="space-y-2">
+        <h2 class="text-3xl font-space font-extrabold text-slate-900">Module Terminé !</h2>
+        <p class="text-slate-600">Vous maîtrisez désormais les fonctions linéaires et affines.</p>
+      </div>
+      <div class="pt-4">
+        <a href="../../index.html" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-slate-900 text-white font-mono font-bold hover:bg-slate-800 transition-colors">
+          Retour au menu du module
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script>
+    function checkFinal(ans) {
+      const fb = document.getElementById('finalFeedback');
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      
+      if(ans === 2) {
+        if(typeof playSuccessSound === 'function') playSuccessSound();
+        if(typeof addXP === 'function') addXP(200);
+        fb.classList.add('bg-emerald-50', 'border', 'border-emerald-200', 'text-emerald-800');
+        fb.innerHTML = `🎉 <strong>Parfait !</strong> $f(x)$ est affine ($ax+b$), $g(x)$ est linéaire ($ax$), et $h(x)$ est constante ($b$). (+200 XP)`;
+        
+        // Show success screen
+        markLessonCompleted('MOD-3E-FONC-L6');
+        setTimeout(() => {
+          document.querySelector('section.smarter-card').style.display = 'none';
+          document.getElementById('successScreen').classList.remove('hidden');
+          if(typeof confetti === 'function') confetti(); // If available
+        }, 1500);
+
+      } else {
+        if(typeof playErrorSound === 'function') playErrorSound();
+        fb.classList.add('bg-rose-50', 'border', 'border-rose-200', 'text-rose-800');
+        fb.innerHTML = `❌ <strong>Erreur !</strong> Relisez bien l'énoncé. Le Forfait A a un fixe de 10€ ($b=10$) et un coût variable de 0,10€ par minute ($a=0.1$).`;
+      }
+      
+      if(window.renderMathInElement) renderMathInElement(fb, { delimiters: [ { left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false } ] });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if(window.renderMathInElement) renderMathInElement(document.body, { delimiters: [ { left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false } ] });
+    });
+  </script>
+</body>
+</html>
