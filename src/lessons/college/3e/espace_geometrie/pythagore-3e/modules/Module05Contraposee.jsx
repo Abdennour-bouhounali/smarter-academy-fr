@@ -3,6 +3,8 @@ import ModuleLayout from '../../../../../common/components/ModuleLayout';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { Check, ChevronRight } from 'lucide-react';
 import MathText from '../../../../../common/components/MathText';
+import MathInput from '../../../../../common/components/MathInput';
+import { compareMathExpressions } from '../../../../../common/utils/mathComparison';
 import { motion } from 'framer-motion';
 
 export default function Module05Contraposee() {
@@ -25,34 +27,29 @@ export default function Module05Contraposee() {
     setSelectedHypo(val);
     if (val === 9) {
       setFeedback('hypo_correct');
-      setTimeout(() => {
-        setFeedback(null);
-        setStep(2);
-      }, 1500);
+      setStep(2);
     } else {
       setFeedback('hypo_incorrect');
     }
   };
 
   const checkSqHypo = () => {
-    if (parseFloat(sqHypo) === c * c) {
+    const isEquivalent = compareMathExpressions(sqHypo, (c * c).toString());
+    const val = parseFloat(sqHypo);
+    if (isEquivalent || (!isNaN(val) && val === c * c)) {
       setFeedback('sq_correct');
-      setTimeout(() => {
-        setFeedback(null);
-        setStep(3);
-      }, 1500);
+      setStep(3);
     } else {
       setFeedback('sq_incorrect');
     }
   };
 
   const checkSqSum = () => {
-    if (parseFloat(sqSum) === a * a + b * b) {
+    const isEquivalent = compareMathExpressions(sqSum, (a * a + b * b).toString());
+    const val = parseFloat(sqSum);
+    if (isEquivalent || (!isNaN(val) && val === a * a + b * b)) {
       setFeedback('sum_correct');
-      setTimeout(() => {
-        setFeedback(null);
-        setStep(4);
-      }, 1500);
+      setStep(4);
     } else {
       setFeedback('sum_incorrect');
     }
@@ -152,8 +149,8 @@ export default function Module05Contraposee() {
                   {step === 2 ? (
                     <div className="flex gap-2">
                       <span className="py-2"><MathText>{`$9^2 = $`}</MathText></span>
-                      <input type="number" value={sqHypo} onChange={(e) => setSqHypo(e.target.value)} className="w-20 p-2 border rounded" />
-                      <button onClick={checkSqHypo} className="px-3 bg-rose-600 text-white rounded font-bold">OK</button>
+                      <MathInput value={sqHypo} onChange={(val) => { setSqHypo(val); setFeedback(null); }} onCommit={checkSqHypo} className="w-20" />
+                      <button onClick={checkSqHypo} className="px-3 bg-rose-600 hover:bg-rose-700 text-white rounded font-bold ml-2">OK</button>
                     </div>
                   ) : (
                     <p className="text-rose-700 font-bold"><MathText>{`$9^2 = 81$`}</MathText></p>
@@ -169,8 +166,8 @@ export default function Module05Contraposee() {
                   {step === 3 ? (
                     <div className="flex gap-2 flex-wrap items-center">
                       <span><MathText>{`$5^2 + 7^2 = $`}</MathText></span>
-                      <input type="number" value={sqSum} onChange={(e) => setSqSum(e.target.value)} className="w-20 p-2 border rounded" />
-                      <button onClick={checkSqSum} className="px-3 py-2 bg-indigo-600 text-white rounded font-bold">OK</button>
+                      <MathInput value={sqSum} onChange={(val) => { setSqSum(val); setFeedback(null); }} onCommit={checkSqSum} className="w-20" />
+                      <button onClick={checkSqSum} className="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded font-bold ml-2">OK</button>
                     </div>
                   ) : (
                     <p className="text-indigo-700 font-bold"><MathText>{`$5^2 + 7^2 = 25 + 49 = 74$`}</MathText></p>

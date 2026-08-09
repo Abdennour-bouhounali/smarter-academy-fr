@@ -3,6 +3,8 @@ import ModuleLayout from '../../../../../common/components/ModuleLayout';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { Check, ChevronRight } from 'lucide-react';
 import MathText from '../../../../../common/components/MathText';
+import MathInput from '../../../../../common/components/MathInput';
+import { compareMathExpressions } from '../../../../../common/utils/mathComparison';
 import { motion } from 'framer-motion';
 
 export default function Module06Mission() {
@@ -26,12 +28,16 @@ export default function Module06Mission() {
   const ladderEndY = groundY - expectedHeight * scale;
 
   const checkAnswer = () => {
-    const val = parseFloat(userAnswer);
-    if (Math.abs(val - expectedHeight) < 0.01) {
+    const isEquivalent = compareMathExpressions(userAnswer, expectedHeight.toString());
+    const val = parseFloat(userAnswer.replace(',', '.'));
+    const isApprox = !isNaN(val) && Math.abs(val - expectedHeight) < 0.01;
+    const forgotSqrt = !isNaN(val) && Math.abs(val - 16) < 0.01;
+
+    if (isEquivalent || isApprox) {
       setFeedback('correct');
-      setTimeout(() => {
-        setIsCompleted(true);
-      }, 1000);
+      setIsCompleted(true);
+    } else if (forgotSqrt) {
+      setFeedback('forgot_sqrt');
     } else {
       setFeedback('incorrect');
     }
@@ -67,32 +73,47 @@ export default function Module06Mission() {
             <div className="absolute bottom-0 w-full h-8 bg-green-500"></div>
             
             <svg width="300" height="300" viewBox="0 0 300 300" className="overflow-visible absolute bottom-8 left-1/2 -translate-x-1/2">
-              {/* Le mur (vertical) */}
-              <line x1={wallX} y1="0" x2={wallX} y2={groundY} stroke="#94A3B8" strokeWidth="8" />
-              {/* Le sol (horizontal) */}
-              <line x1="0" y1={groundY} x2="300" y2={groundY} stroke="#22C55E" strokeWidth="4" />
+              <defs>
+                <linearGradient id="wallGradient" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#CBD5E1"/>
+                  <stop offset="100%" stopColor="#94A3B8"/>
+                </linearGradient>
+                <linearGradient id="groundGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#22C55E"/>
+                  <stop offset="100%" stopColor="#166534"/>
+                </linearGradient>
+              </defs>
+
+              {/* Le mur */}
+              <rect x="0" y="0" width={wallX} height={groundY} fill="url(#wallGradient)" stroke="#64748B" strokeWidth="2" />
+              {/* Le sol */}
+              <rect x="0" y={groundY} width="300" height={300 - groundY} fill="url(#groundGradient)" />
               
               {/* L'angle droit du mur */}
               <polyline points={`${wallX},${groundY-15} ${wallX+15},${groundY-15} ${wallX+15},${groundY}`} fill="none" stroke="#EF4444" strokeWidth="2" />
 
-              {/* L'échelle */}
-              <line x1={ladderEndX} y1={groundY} x2={wallX} y2={ladderEndY} stroke="#B45309" strokeWidth="6" strokeLinecap="round" />
-              {/* Barreaux de l'échelle (décoratif, approximatif) */}
-              {[1,2,3,4,5,6].map(i => {
-                const frac = i / 7;
-                const lx1 = ladderEndX - frac * (ladderEndX - wallX);
-                const ly1 = groundY - frac * (groundY - ladderEndY);
-                return <circle key={i} cx={lx1} cy={ly1} r="3" fill="#78350F" />
-              })}
+              {/* L'échelle (avec deux montants) */}
+              <g stroke="#92400E" strokeLinecap="round">
+                <line x1={ladderEndX + 4} y1={groundY - 3} x2={wallX + 4} y2={ladderEndY - 3} strokeWidth="4" />
+                <line x1={ladderEndX - 4} y1={groundY + 3} x2={wallX - 4} y2={ladderEndY + 3} strokeWidth="4" />
+                {[1,2,3,4,5,6,7,8].map(i => {
+                  const frac = i / 9;
+                  const bx1 = ladderEndX + 4 - frac * (ladderEndX - wallX);
+                  const by1 = groundY - 3 - frac * (groundY - ladderEndY);
+                  const bx2 = ladderEndX - 4 - frac * (ladderEndX - wallX);
+                  const by2 = groundY + 3 - frac * (groundY - ladderEndY);
+                  return <line key={i} x1={bx1} y1={by1} x2={bx2} y2={by2} strokeWidth="3" />
+                })}
+              </g>
 
               {/* Annotations */}
-              <text x={wallX + (distWall*scale)/2} y={groundY + 20} fontSize="14" fontWeight="bold" fill="#15803D" textAnchor="middle">Sol = 3 m</text>
+              <text x={wallX + (distWall*scale)/2} y={groundY + 22} fontSize="14" fontWeight="bold" fill="#065F46" textAnchor="middle">Sol = 3 m</text>
               
-              <text x={wallX + (distWall*scale)/2 + 20} y={groundY - (expectedHeight*scale)/2} fontSize="14" fontWeight="bold" fill="#B45309" textAnchor="middle" transform={`rotate(-53, ${wallX + (distWall*scale)/2}, ${groundY - (expectedHeight*scale)/2})`}>
+              <text x={wallX + (distWall*scale)/2 + 25} y={groundY - (expectedHeight*scale)/2 - 10} fontSize="14" fontWeight="bold" fill="#78350F" textAnchor="middle" transform={`rotate(-53.13, ${wallX + (distWall*scale)/2}, ${groundY - (expectedHeight*scale)/2})`}>
                 Échelle = 5 m
               </text>
 
-              <text x={wallX - 20} y={groundY - (expectedHeight*scale)/2} fontSize="16" fontWeight="bold" fill="#334155" textAnchor="end">
+              <text x={wallX - 15} y={groundY - (expectedHeight*scale)/2} fontSize="16" fontWeight="bold" fill="#1E293B" textAnchor="end">
                 Mur = ?
               </text>
             </svg>
@@ -140,16 +161,15 @@ export default function Module06Mission() {
                   <p className="mb-3 text-emerald-700">Calculez le carré manquant, puis utilisez la racine carrée pour trouver la hauteur exacte en mètres.</p>
                   
                   <div className="flex gap-2">
-                    <input 
-                      type="number" 
+                    <MathInput 
                       value={userAnswer}
-                      onChange={(e) => { setUserAnswer(e.target.value); setFeedback(null); }}
+                      onChange={(val) => { setUserAnswer(val); setFeedback(null); }}
+                      onCommit={checkAnswer}
                       placeholder="Ex: 2.5"
-                      className={`flex-1 p-2 border rounded-lg font-bold text-lg text-center focus:outline-none focus:ring-2 ${feedback === 'incorrect' ? 'border-red-400 focus:ring-red-200' : 'border-emerald-300 focus:ring-emerald-200'}`}
                       disabled={isCompleted}
                     />
                     {!isCompleted ? (
-                      <button onClick={checkAnswer} className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition-colors">
+                      <button onClick={checkAnswer} className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition-colors ml-2">
                         Vérifier
                       </button>
                     ) : (
@@ -161,8 +181,11 @@ export default function Module06Mission() {
                   {feedback === 'incorrect' && (
                     <p className="text-xs text-red-600 mt-2 font-semibold">Erreur. Calculez 25 - 9, puis prenez la racine carrée du résultat.</p>
                   )}
+                  {feedback === 'forgot_sqrt' && (
+                    <p className="text-sm text-amber-600 mt-2 font-bold border border-amber-200 bg-amber-50 p-2 rounded">Vous avez trouvé le carré du mur (16), mais n'oubliez pas d'utiliser la racine carrée pour trouver la hauteur finale !</p>
+                  )}
                   {feedback === 'correct' && (
-                    <p className="text-sm text-emerald-700 mt-3 font-bold">
+                    <p className="text-sm text-emerald-700 mt-3 font-bold border border-emerald-200 bg-emerald-50 p-2 rounded">
                       Bravo ! <br/><MathText>{`$Mur^2 = 25 - 9 = 16$`}</MathText><br/>Donc l'échelle atteint le mur à <MathText>{`$\\sqrt{16} = 4$`}</MathText> mètres de hauteur.
                     </p>
                   )}

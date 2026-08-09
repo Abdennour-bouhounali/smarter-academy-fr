@@ -3,14 +3,16 @@ import ModuleLayout from '../../../../../common/components/ModuleLayout';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { Check, ChevronRight, Info } from 'lucide-react';
 import MathText from '../../../../../common/components/MathText';
+import MathInput from '../../../../../common/components/MathInput';
+import { compareMathExpressions } from '../../../../../common/utils/mathComparison';
 import { motion } from 'framer-motion';
 
 export default function Module03CalculCote() {
   const { prevLink, nextLink } = getNavLinks(3);
 
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [selectedSide, setSelectedSide] = useState(null); // 'AB' ou 'AC'
+  const [selectedSide, setSelectedSide] = useState('AC'); // 'AB' ou 'AC'
   const [userAnswer, setUserAnswer] = useState('');
   const [feedback, setFeedback] = useState(null);
 
@@ -30,8 +32,11 @@ export default function Module03CalculCote() {
   };
 
   const checkAnswer = () => {
-    const val = parseFloat(userAnswer);
-    if (Math.abs(val - unknownSide) < 0.01) {
+    const isEquivalent = compareMathExpressions(userAnswer, unknownSide.toString());
+    const val = parseFloat(userAnswer.replace(',', '.'));
+    const isApprox = !isNaN(val) && Math.abs(val - unknownSide) < 0.01;
+    
+    if (isEquivalent || isApprox) {
       setFeedback('correct');
       setIsCompleted(true);
     } else {
@@ -58,53 +63,52 @@ export default function Module03CalculCote() {
           <div className="flex-1 p-6 flex flex-col items-center justify-center bg-slate-50 min-h-[400px]">
             
             <svg width="350" height="350" viewBox="0 0 350 350" className="overflow-visible">
-              {/* Carrés schématiques (Concept) */}
+              
+              {/* Carré sur BC (Hypoténuse) - Grand Carré */}
               {step >= 2 && (
                 <g className="transition-all duration-500">
-                  <rect x="20" y="20" width="120" height="120" fill="#FCE7F3" stroke="#DB2777" strokeWidth="2" />
-                  <text x="80" y="80" fontSize="14" fill="#BE185D" fontWeight="bold" textAnchor="middle">Grand carré</text>
-                  <text x="80" y="100" fontSize="12" fill="#BE185D" textAnchor="middle"><MathText>{`$${hypotenuse}^2 = ${hypotenuse*hypotenuse}$`}</MathText></text>
-
-                  <text x="160" y="80" fontSize="30" fill="#333" fontWeight="bold" textAnchor="middle">−</text>
-
-                  <rect x="180" y="50" width="60" height="60" fill="#DBEAFE" stroke="#2563EB" strokeWidth="2" />
-                  <text x="210" y="70" fontSize="12" fill="#1D4ED8" fontWeight="bold" textAnchor="middle">Petit carré</text>
-                  <text x="210" y="90" fontSize="10" fill="#1D4ED8" textAnchor="middle"><MathText>{`$${knownSide}^2 = ${knownSide*knownSide}$`}</MathText></text>
-
-                  <text x="260" y="80" fontSize="30" fill="#333" fontWeight="bold" textAnchor="middle">=</text>
-
-                  <rect x="280" y="30" width="100" height="100" fill="#E0E7FF" stroke="#4F46E5" strokeWidth="2" strokeDasharray={step >= 3 ? "" : "4 4"} opacity={step >= 3 ? 1 : 0.5}/>
-                  <text x="330" y="80" fontSize="12" fill="#3730A3" fontWeight="bold" textAnchor="middle">Carré cherché</text>
-                  <text x="330" y="100" fontSize="10" fill="#3730A3" textAnchor="middle">
-                    {step >= 3 ? <MathText>{`$${unknownSideSquare}$`}</MathText> : '?'}
+                  <polygon points="200,250 150,130 270,80 320,200" fill="#FCE7F3" stroke="#DB2777" strokeWidth="2" />
+                  <text x="235" y="165" fontSize="14" fill="#BE185D" fontWeight="bold" textAnchor="middle" transform="rotate(-67.38, 235, 165)">
+                    13² = 169
                   </text>
                 </g>
               )}
 
-              {/* Triangle (en dessous) */}
-              <g transform="translate(100, 180)">
-                <polygon points="0,0 50,0 0,-120" fill="#F8FAFC" stroke="#0F172A" strokeWidth="3" />
-                <polyline points="0,-15 15,-15 15,0" fill="none" stroke="#EF4444" strokeWidth="2" />
-                <text x="-15" y="15" fontSize="14" fontWeight="bold">A</text>
-                
-                {selectedSide === 'AC' ? (
-                  <>
-                    <text x="60" y="15" fontSize="14" fontWeight="bold">B</text>
-                    <text x="-15" y="-130" fontSize="14" fontWeight="bold">C</text>
-                    <text x="25" y="20" fontSize="14" fill="#2563EB" fontWeight="bold" textAnchor="middle">{knownSide}</text>
-                    <text x="-15" y="-60" fontSize="14" fill="#4F46E5" fontWeight="bold">?</text>
-                  </>
-                ) : (
-                  <>
-                    <text x="60" y="15" fontSize="14" fontWeight="bold">C</text>
-                    <text x="-15" y="-130" fontSize="14" fontWeight="bold">B</text>
-                    <text x="25" y="20" fontSize="14" fill="#4F46E5" fontWeight="bold" textAnchor="middle">?</text>
-                    <text x="-15" y="-60" fontSize="14" fill="#2563EB" fontWeight="bold">{knownSide}</text>
-                  </>
-                )}
-                
-                <text x="40" y="-60" fontSize="14" fill="#BE185D" fontWeight="bold">{hypotenuse}</text>
-              </g>
+              {/* Carré sur AB - Petit Carré */}
+              {step >= 2 && (
+                <g className="transition-all duration-500">
+                  <polygon points="150,250 200,250 200,300 150,300" fill="#DBEAFE" stroke="#2563EB" strokeWidth="2" />
+                  <text x="175" y="280" fontSize="12" fill="#1D4ED8" fontWeight="bold" textAnchor="middle">
+                    5² = 25
+                  </text>
+                </g>
+              )}
+
+              {/* Carré sur AC - Carré Cherché */}
+              {step >= 2 && (
+                <g className="transition-all duration-500">
+                  <polygon points="150,250 30,250 30,130 150,130" fill="#E0E7FF" stroke="#4F46E5" strokeWidth="2" strokeDasharray={step >= 3 ? "" : "4 4"} opacity={step >= 3 ? 1 : 0.5} />
+                  <text x="90" y="190" fontSize="14" fill="#3730A3" fontWeight="bold" textAnchor="middle">
+                    {step >= 3 ? '? = 144' : '?'}
+                  </text>
+                </g>
+              )}
+
+              {/* Triangle */}
+              <polygon points="150,250 200,250 150,130" fill="#F8FAFC" stroke="#0F172A" strokeWidth="3" />
+              
+              {/* Angle droit */}
+              <polyline points="150,235 165,235 165,250" fill="none" stroke="#EF4444" strokeWidth="2" />
+              
+              {/* Noms des sommets */}
+              <text x="135" y="265" fontSize="14" fontWeight="bold">A</text>
+              <text x="210" y="265" fontSize="14" fontWeight="bold">B</text>
+              <text x="135" y="125" fontSize="14" fontWeight="bold">C</text>
+
+              {/* Longueurs */}
+              <text x="175" y="240" fontSize="14" fill="#2563EB" fontWeight="bold" textAnchor="middle">5</text>
+              <text x="135" y="190" fontSize="14" fill="#4F46E5" fontWeight="bold" textAnchor="middle">?</text>
+              <text x="185" y="185" fontSize="14" fill="#BE185D" fontWeight="bold" textAnchor="middle">13</text>
 
             </svg>
           </div>
@@ -115,20 +119,7 @@ export default function Module03CalculCote() {
             
             <div className="space-y-4 text-sm text-slate-600 flex-1">
               
-              {step === 1 && (
-                <div className="space-y-4">
-                  <p>Dans un triangle rectangle, si l'on connaît l'hypoténuse et un petit côté, on peut trouver l'autre côté de l'angle droit.</p>
-                  <p className="font-semibold text-slate-700">Quel côté souhaitez-vous calculer en premier ?</p>
-                  <div className="flex gap-4">
-                    <button onClick={() => handleSelectSide('AC')} className="flex-1 py-3 bg-white border-2 border-indigo-200 hover:border-indigo-400 text-indigo-700 font-bold rounded-xl shadow-sm transition-all">
-                      Calculer AC
-                    </button>
-                    <button onClick={() => handleSelectSide('AB')} className="flex-1 py-3 bg-white border-2 border-blue-200 hover:border-blue-400 text-blue-700 font-bold rounded-xl shadow-sm transition-all">
-                      Calculer AB
-                    </button>
-                  </div>
-                </div>
-              )}
+              <p className="mb-4">Dans un triangle rectangle, si l'on connaît l'hypoténuse et un petit côté, on peut trouver l'autre côté de l'angle droit.</p>
 
               {step >= 2 && (
                 <div className="space-y-4">
@@ -170,16 +161,14 @@ export default function Module03CalculCote() {
                   <p className="text-xs text-indigo-700 mb-3">Quelle est la longueur de <MathText>{`$${selectedSide}$`}</MathText> ?</p>
                   
                   <div className="flex gap-2">
-                    <input 
-                      type="number" 
+                    <MathInput 
                       value={userAnswer}
-                      onChange={(e) => { setUserAnswer(e.target.value); setFeedback(null); }}
+                      onChange={(val) => { setUserAnswer(val); setFeedback(null); }}
                       placeholder="Ex: 10"
-                      className={`flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 ${feedback === 'incorrect' ? 'border-red-400 focus:ring-red-200' : 'border-slate-300 focus:ring-indigo-200'}`}
                       disabled={isCompleted}
                     />
                     {!isCompleted ? (
-                      <button onClick={checkAnswer} className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors">
+                      <button onClick={checkAnswer} className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors ml-2">
                         Vérifier
                       </button>
                     ) : (

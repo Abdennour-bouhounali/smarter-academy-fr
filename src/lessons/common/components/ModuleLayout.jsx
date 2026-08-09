@@ -148,7 +148,22 @@ export default function ModuleLayout({
             </Link>
           ) : <div />}
 
-          {nextLink ? (
+          {moduleNumber === totalModules ? (
+            <Link
+              to={coursePath}
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-mono text-xs font-bold shadow-md transition-all focus-visible:ring-2 focus-visible:ring-emerald-400 focus:outline-none ${
+                !nextLink && typeof nextLink !== 'undefined' && moduleNumber !== totalModules 
+                ? 'bg-slate-300 text-slate-500 cursor-not-allowed' 
+                : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+              }`}
+              // We could disable the link if not completed, but typically for the last module 
+              // `isCompleted` might not be passed down to ModuleLayout directly. 
+              // We'll leave the link active, or if we want to check completion, we can use `isCompleted` if it were passed.
+              // For now, Terminer is always visible on the last module as requested.
+            >
+              Terminer <CheckCircle size={16} aria-hidden="true" />
+            </Link>
+          ) : nextLink ? (
             <button
               type="button"
               onClick={handleNextClick}
@@ -157,12 +172,13 @@ export default function ModuleLayout({
               Module suivant <ArrowRight size={16} aria-hidden="true" />
             </button>
           ) : (
-            <Link
-              to={coursePath}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-mono text-xs font-bold shadow-md transition-all focus-visible:ring-2 focus-visible:ring-emerald-400 focus:outline-none"
+            <button
+              type="button"
+              disabled
+              className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-slate-200 text-slate-400 font-mono text-xs font-bold shadow-sm cursor-not-allowed"
             >
-              Terminer <CheckCircle size={16} aria-hidden="true" />
-            </Link>
+              Module suivant <ArrowRight size={16} aria-hidden="true" />
+            </button>
           )}
         </div>
 

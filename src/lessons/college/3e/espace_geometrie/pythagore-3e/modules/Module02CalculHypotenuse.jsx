@@ -3,6 +3,8 @@ import ModuleLayout from '../../../../../common/components/ModuleLayout';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { Check, ChevronRight } from 'lucide-react';
 import MathText from '../../../../../common/components/MathText';
+import MathInput from '../../../../../common/components/MathInput';
+import { compareMathExpressions } from '../../../../../common/utils/mathComparison';
 import { motion } from 'framer-motion';
 
 export default function Module02CalculHypotenuse() {
@@ -27,8 +29,14 @@ export default function Module02CalculHypotenuse() {
   
   // Fonction pour vérifier la réponse de l'utilisateur à l'étape finale
   const checkAnswer = () => {
-    const val = parseFloat(userAnswer);
-    if (Math.abs(val - hypotenuse) < 0.01) {
+    // on accepte la valeur approchée ou l'expression exacte
+    // si l'élève tape "5", compareMathExpressions("5", "5")
+    // on arrondit au centième pour vérifier manuellement si compareMathExpressions échoue car l'élève a tapé un nombre approché
+    const isEquivalent = compareMathExpressions(userAnswer, hypotenuse.toString());
+    const val = parseFloat(userAnswer.replace(',', '.'));
+    const isApprox = !isNaN(val) && Math.abs(val - hypotenuse) < 0.01;
+    
+    if (isEquivalent || isApprox) {
       setFeedback('correct');
       setIsCompleted(true);
     } else {
@@ -147,16 +155,14 @@ export default function Module02CalculHypotenuse() {
                   <p className="text-xs text-pink-700 mb-3">Puisque <MathText>{`$BC^2 = ${hypotenuseSquare}$`}</MathText>, quelle est la valeur de <MathText>{'$BC$'}</MathText> ? (Utilisez la touche racine carrée de votre calculatrice si besoin, arrondissez au centième).</p>
                   
                   <div className="flex gap-2">
-                    <input 
-                      type="number" 
+                    <MathInput 
                       value={userAnswer}
-                      onChange={(e) => { setUserAnswer(e.target.value); setFeedback(null); }}
+                      onChange={(val) => { setUserAnswer(val); setFeedback(null); }}
                       placeholder="Ex: 5"
-                      className={`flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 ${feedback === 'incorrect' ? 'border-red-400 focus:ring-red-200' : 'border-slate-300 focus:ring-pink-200'}`}
                       disabled={isCompleted}
                     />
                     {!isCompleted ? (
-                      <button onClick={checkAnswer} className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-lg transition-colors">
+                      <button onClick={checkAnswer} className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-lg transition-colors ml-2">
                         Vérifier
                       </button>
                     ) : (
