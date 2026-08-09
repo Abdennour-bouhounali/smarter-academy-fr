@@ -44,6 +44,16 @@ import ThalesM05Papillon              from './lessons/college/3e/espace_geometri
 import ThalesM06Mission               from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module06Mission';
 import ThalesM07Bilan                 from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module07Bilan';
 
+// ── Leçon : Théorème de Pythagore (3ème) ───────────────────────────────────
+import Pythagore3e                    from './lessons/college/3e/espace_geometrie/pythagore-3e';
+import PythM01Decouverte              from './lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module01Decouverte';
+import PythM02CalculHypotenuse        from './lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module02CalculHypotenuse';
+import PythM03CalculCote              from './lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module03CalculCote';
+import PythM04Reciproque              from './lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module04Reciproque';
+import PythM05Contraposee             from './lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module05Contraposee';
+import PythM06Mission                 from './lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module06Mission';
+import PythM07Bilan                   from './lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module07Bilan';
+
 // ── Leçon : Équations produit nul (3ème) ──────────────────────────────────────
 import EquationsProduit3e             from './lessons/college/3e/nombres_calculs/equations-produit';
 import EqProdM01RegleZero             from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module01RegleZero';
@@ -57,6 +67,7 @@ import EqProdM07Bilan                 from './lessons/college/3e/nombres_calculs
 const LESSON_BASE = '/courses/college/3e/donnees_probabilites/fonctions-lineaires-affines';
 const RAT_BASE = '/courses/college/3e/nombres_calculs/nombres-rationnels';
 const THALES_BASE = '/courses/college/3e/espace_geometrie/thales-3e';
+const PYTHAGORE_BASE = '/courses/college/3e/espace_geometrie/pythagore-3e';
 const EQPROD_BASE = '/courses/college/3e/nombres_calculs/equations-produit';
 
 export default function App() {
@@ -81,6 +92,7 @@ export default function App() {
             <Route path="/courses/college/3e/fonctions-lineaires-affines/*" element={<Navigate replace to={`${LESSON_BASE}/*`} />} />
             <Route path="/courses/college/3e/nombres-rationnels/*" element={<Navigate replace to={`${RAT_BASE}/*`} />} />
             <Route path="/courses/college/3e/thales-3e/*" element={<Navigate replace to={`${THALES_BASE}/*`} />} />
+            <Route path="/courses/college/3e/pythagore-3e/*" element={<Navigate replace to={`${PYTHAGORE_BASE}/*`} />} />
             <Route path="/courses/college/3e/equations-produit/*" element={<Navigate replace to={`${EQPROD_BASE}/*`} />} />
 
             {/* ── Fonctions linéaires et affines ── */}
@@ -115,6 +127,16 @@ export default function App() {
             <Route path={`${THALES_BASE}/5`}  element={<ThalesM05Papillon />} />
             <Route path={`${THALES_BASE}/6`}  element={<ThalesM06Mission />} />
             <Route path={`${THALES_BASE}/7`}  element={<ThalesM07Bilan />} />
+
+            {/* ── Théorème de Pythagore ── */}
+            <Route path={PYTHAGORE_BASE}      element={<Pythagore3e />} />
+            <Route path={`${PYTHAGORE_BASE}/1`}  element={<PythM01Decouverte />} />
+            <Route path={`${PYTHAGORE_BASE}/2`}  element={<PythM02CalculHypotenuse />} />
+            <Route path={`${PYTHAGORE_BASE}/3`}  element={<PythM03CalculCote />} />
+            <Route path={`${PYTHAGORE_BASE}/4`}  element={<PythM04Reciproque />} />
+            <Route path={`${PYTHAGORE_BASE}/5`}  element={<PythM05Contraposee />} />
+            <Route path={`${PYTHAGORE_BASE}/6`}  element={<PythM06Mission />} />
+            <Route path={`${PYTHAGORE_BASE}/7`}  element={<PythM07Bilan />} />
 
             {/* ── Équations produit nul ── */}
             <Route path={EQPROD_BASE}      element={<EquationsProduit3e />} />

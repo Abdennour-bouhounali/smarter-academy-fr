@@ -73,16 +73,16 @@ export default function Module02Rappel() {
 
         <p className="text-slate-700 leading-relaxed mb-4">
           Avant d'attaquer les équations plus complexes, assurons-nous que vous maîtrisez la base : <strong>isoler x</strong>.
-          <br />Pour résoudre <MathText>3x - 6 = 0</MathText>, vous devez faire les mêmes opérations des deux côtés de la balance.
+          <br />Pour résoudre <MathText>{'$3x - 6 = 0$'}</MathText>, vous devez faire les mêmes opérations des deux côtés de la balance.
         </p>
 
         <div className="bg-amber-50 p-6 md:p-8 rounded-2xl border border-amber-200 text-center">
           
           <div className="flex justify-center items-center gap-8 mb-8 text-2xl font-bold font-mono">
             <div className={`p-4 rounded-xl border-2 transition-all ${balanceStep >= 1 ? 'border-amber-300 bg-amber-100 text-amber-800' : 'border-slate-300 bg-white text-slate-800'}`}>
-              {balanceStep === 0 && '3x - 6'}
-              {balanceStep === 1 && '3x'}
-              {balanceStep === 2 && 'x'}
+              {balanceStep === 0 && <MathText>{'$3x - 6$'}</MathText>}
+              {balanceStep === 1 && <MathText>{'$3x$'}</MathText>}
+              {balanceStep === 2 && <MathText>{'$x$'}</MathText>}
             </div>
             <div className="text-slate-400">=</div>
             <div className={`p-4 rounded-xl border-2 transition-all ${balanceStep >= 1 ? 'border-emerald-300 bg-emerald-100 text-emerald-800' : 'border-slate-300 bg-white text-slate-800'}`}>
@@ -139,7 +139,7 @@ export default function Module02Rappel() {
               </div>
               
               <div className="text-3xl font-mono font-bold text-slate-800 text-center mb-8">
-                <MathText>{exercises[exerciseIndex].eq}</MathText>
+                <MathText>{`$${exercises[exerciseIndex].eq}$`}</MathText>
               </div>
               
               <div className="grid grid-cols-3 gap-4">
@@ -164,7 +164,7 @@ export default function Module02Rappel() {
                       onClick={() => handleExercise(opt)}
                       className={btnClass}
                     >
-                      x = {opt}
+                      <MathText>{`$x = ${opt}$`}</MathText>
                     </button>
                   );
                 })}

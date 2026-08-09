@@ -66,15 +66,15 @@ export default function Module06Mission() {
         <SectionHeader number={1} title="L'énigme des aires" color="amber" />
 
         <p className="text-slate-700 leading-relaxed">
-          On dispose d'un <strong>carré de côté <MathText>x</MathText></strong> et d'un <strong>rectangle de dimensions <MathText>4</MathText> sur <MathText>x</MathText></strong> (en cm).
-          <br/>Pour quelle(s) valeur(s) de <MathText>x</MathText> ces deux figures ont-elles <strong>exactement la même aire</strong> ?
+          On dispose d'un <strong>carré de côté <MathText>{'$x$'}</MathText></strong> et d'un <strong>rectangle de dimensions <MathText>{'$4$'}</MathText> sur <MathText>{'$x$'}</MathText></strong> (en cm).
+          <br/>Pour quelle(s) valeur(s) de <MathText>{'$x$'}</MathText> ces deux figures ont-elles <strong>exactement la même aire</strong> ?
         </p>
 
         <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col items-center">
           
           <div className="w-full max-w-sm mb-8">
             <div className="flex justify-between text-sm font-bold text-slate-500 mb-2">
-              <span>x = {x} cm</span>
+              <span><MathText>{`$x = ${x} \\text{ cm}$`}</MathText></span>
             </div>
             <input 
               type="range" min="0" max="10" step="0.5" 
@@ -90,7 +90,7 @@ export default function Module06Mission() {
                 className={`bg-blue-100 border-2 border-blue-400 flex items-center justify-center transition-all duration-300 ${isEqual ? 'bg-amber-100 border-amber-500' : ''}`}
                 style={{ width: `${x * scale}px`, height: `${x * scale}px` }}
               >
-                {x > 1 && <span className="text-blue-800 font-bold text-sm">x²</span>}
+                {x > 1 && <span className="text-blue-800 font-bold text-sm"><MathText>{'$x^2$'}</MathText></span>}
               </div>
               <span className="mt-2 text-sm font-bold text-slate-600">Carré (côté x)</span>
               <span className="text-lg font-mono font-black text-blue-700">{areaSquare.toFixed(2)} cm²</span>
@@ -102,7 +102,7 @@ export default function Module06Mission() {
                 className={`bg-emerald-100 border-2 border-emerald-400 flex items-center justify-center transition-all duration-300 ${isEqual ? 'bg-amber-100 border-amber-500' : ''}`}
                 style={{ width: `${4 * scale}px`, height: `${x * scale}px` }}
               >
-                {x > 1 && <span className="text-emerald-800 font-bold text-sm">4x</span>}
+                {x > 1 && <span className="text-emerald-800 font-bold text-sm"><MathText>{'$4x$'}</MathText></span>}
               </div>
               <span className="mt-2 text-sm font-bold text-slate-600">Rectangle (4 sur x)</span>
               <span className="text-lg font-mono font-black text-emerald-700">{areaRect.toFixed(2)} cm²</span>
@@ -127,7 +127,7 @@ export default function Module06Mission() {
           </p>
 
           <div className="text-center text-2xl font-mono font-bold text-slate-800 bg-slate-50 p-4 rounded-xl border border-slate-200">
-            x² = 4x
+            <MathText>{'$x^2 = 4x$'}</MathText>
           </div>
 
           <p className="text-slate-700">
@@ -135,10 +135,10 @@ export default function Module06Mission() {
           </p>
 
           <div className="text-center text-xl font-mono font-bold text-slate-800 space-y-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
-            <div>x² - 4x = 0</div>
+            <div><MathText>{'$x^2 - 4x = 0$'}</MathText></div>
             <div className="flex justify-center items-center gap-2">
-              <span className="text-blue-600 bg-blue-100 px-2 rounded">x</span>
-              <span>( x - 4 ) = 0</span>
+              <span className="text-blue-600 bg-blue-100 px-2 rounded"><MathText>{'$x$'}</MathText></span>
+              <span><MathText>{'$(x - 4) = 0$'}</MathText></span>
             </div>
           </div>
 
@@ -161,11 +161,11 @@ export default function Module06Mission() {
               <div className="flex gap-4">
                 <div className="flex-1 bg-white p-4 border-2 border-emerald-400 rounded-xl text-center">
                   <span className="font-mono font-bold text-slate-500">Facteur 1</span><br/>
-                  <span className="font-mono font-black text-xl text-emerald-600">x = 0</span>
+                  <span className="font-mono font-black text-xl text-emerald-600"><MathText>{'$x = 0$'}</MathText></span>
                 </div>
                 <div className="flex-1 bg-white p-4 border-2 border-blue-400 rounded-xl text-center">
                   <span className="font-mono font-bold text-slate-500">Facteur 2</span><br/>
-                  <span className="font-mono font-black text-xl text-blue-600">x = 4</span>
+                  <span className="font-mono font-black text-xl text-blue-600"><MathText>{'$x = 4$'}</MathText></span>
                 </div>
               </div>
 
@@ -177,8 +177,8 @@ export default function Module06Mission() {
                     L'équation nous donne deux solutions mathématiques : 0 et 4. 
                     Cependant, dans la vraie vie, un carré dont le côté mesure 0 cm n'existe pas ! 
                     <br/><br/>
-                    On doit donc rejeter la solution <MathText>x = 0</MathText>. 
-                    La seule solution valable pour notre problème géométrique est <strong><MathText>x = 4 \text{ cm}</MathText></strong>.
+                    On doit donc rejeter la solution <MathText>{'$x = 0$'}</MathText>. 
+                    La seule solution valable pour notre problème géométrique est <strong><MathText>{'$x = 4 \\text{ cm}$'}</MathText></strong>.
                   </p>
                 </div>
               </div>

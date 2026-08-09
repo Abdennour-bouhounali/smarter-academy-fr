@@ -17,9 +17,9 @@ export default function Module07Bilan() {
       id: 1,
       q: "Parmi ces propositions, laquelle est une « Équation Produit Nul » ?",
       options: [
-        { text: "x + (x - 5) = 0", isCorrect: false },
-        { text: "x(x - 5) = 0", isCorrect: true },
-        { text: "x² - 5 = 0", isCorrect: false }
+        { text: "$x + (x - 5) = 0$", isCorrect: false },
+        { text: "$x(x - 5) = 0$", isCorrect: true },
+        { text: "$x^2 - 5 = 0$", isCorrect: false }
       ],
       explanation: "Il faut une MULTIPLICATION de deux facteurs égale à zéro. « x + (x-5) » est une somme, et « x² - 5 » est une différence."
     },
@@ -27,10 +27,10 @@ export default function Module07Bilan() {
       id: 2,
       q: "Quelles sont les solutions de l'équation (x - 7)(2x + 8) = 0 ?",
       options: [
-        { text: "x = -7 ou x = 4", isCorrect: false },
-        { text: "x = 7 ou x = -4", isCorrect: true },
-        { text: "x = 7 ou x = 4", isCorrect: false },
-        { text: "x = -7 ou x = -8", isCorrect: false }
+        { text: "$x = -7$ ou $x = 4$", isCorrect: false },
+        { text: "$x = 7$ ou $x = -4$", isCorrect: true },
+        { text: "$x = 7$ ou $x = 4$", isCorrect: false },
+        { text: "$x = -7$ ou $x = -8$", isCorrect: false }
       ],
       explanation: "D'une part x - 7 = 0 donne x = 7. D'autre part 2x + 8 = 0 donne 2x = -8, soit x = -4."
     },
@@ -38,9 +38,9 @@ export default function Module07Bilan() {
       id: 3,
       q: "Comment factoriser x² - 9 pour pouvoir résoudre x² - 9 = 0 ?",
       options: [
-        { text: "x(x - 9)", isCorrect: false },
-        { text: "(x - 9)(x + 9)", isCorrect: false },
-        { text: "(x - 3)(x + 3)", isCorrect: true }
+        { text: "$x(x - 9)$", isCorrect: false },
+        { text: "$(x - 9)(x + 9)$", isCorrect: false },
+        { text: "$(x - 3)(x + 3)$", isCorrect: true }
       ],
       explanation: "C'est la différence de deux carrés : a² - b² = (a-b)(a+b). Ici, b² = 9 donc b = 3."
     },
@@ -57,9 +57,9 @@ export default function Module07Bilan() {
       id: 5,
       q: "Quelles sont les solutions de 5x(x + 1) = 0 ?",
       options: [
-        { text: "x = -5 ou x = -1", isCorrect: false },
-        { text: "x = 0 ou x = 1", isCorrect: false },
-        { text: "x = 0 ou x = -1", isCorrect: true }
+        { text: "$x = -5$ ou $x = -1$", isCorrect: false },
+        { text: "$x = 0$ ou $x = 1$", isCorrect: false },
+        { text: "$x = 0$ ou $x = -1$", isCorrect: true }
       ],
       explanation: "Le premier facteur est 5x (5x = 0 donne x = 0). Le deuxième est x + 1 (x + 1 = 0 donne x = -1)."
     }

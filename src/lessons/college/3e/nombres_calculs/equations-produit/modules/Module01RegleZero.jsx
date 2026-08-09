@@ -72,7 +72,7 @@ export default function Module01RegleZero() {
         <SectionHeader number={1} title="La machine multiplicatrice" color="blue" />
 
         <p className="text-slate-700 leading-relaxed">
-          Essayez d'obtenir un résultat égal à <strong className="text-indigo-600">0</strong> en modifiant les valeurs de <strong className="text-blue-600">A</strong> et <strong className="text-emerald-600">B</strong> avec les curseurs ci-dessous.
+          Essayez d'obtenir un résultat égal à <strong className="text-indigo-600"><MathText>{'$0$'}</MathText></strong> en modifiant les valeurs de <strong className="text-blue-600"><MathText>{'$A$'}</MathText></strong> et <strong className="text-emerald-600"><MathText>{'$B$'}</MathText></strong> avec les curseurs ci-dessous.
         </p>
 
         <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-200">
@@ -115,13 +115,13 @@ export default function Module01RegleZero() {
             <h3 className="font-bold text-slate-700 mb-2">Mission : Trouver toutes les façons de faire zéro !</h3>
             <div className="flex gap-4">
               <div className={`px-4 py-2 rounded-lg text-sm font-bold border transition-colors ${discoveredA ? 'bg-blue-100 text-blue-700 border-blue-200' : 'bg-slate-100 text-slate-400 border-slate-200'}`}>
-                {discoveredA ? '✅ 0 × B = 0' : '1. Annuler A'}
+                {discoveredA ? <>✅ <MathText>{'$0 \\times B = 0$'}</MathText></> : '1. Annuler A'}
               </div>
               <div className={`px-4 py-2 rounded-lg text-sm font-bold border transition-colors ${discoveredB ? 'bg-emerald-100 text-emerald-700 border-emerald-200' : 'bg-slate-100 text-slate-400 border-slate-200'}`}>
-                {discoveredB ? '✅ A × 0 = 0' : '2. Annuler B'}
+                {discoveredB ? <>✅ <MathText>{'$A \\times 0 = 0$'}</MathText></> : '2. Annuler B'}
               </div>
               <div className={`px-4 py-2 rounded-lg text-sm font-bold border transition-colors ${discoveredBoth ? 'bg-indigo-100 text-indigo-700 border-indigo-200' : 'bg-slate-100 text-slate-400 border-slate-200'}`}>
-                {discoveredBoth ? '✅ 0 × 0 = 0' : '3. Les deux ?'}
+                {discoveredBoth ? <>✅ <MathText>{'$0 \\times 0 = 0$'}</MathText></> : '3. Les deux ?'}
               </div>
             </div>
           </div>
@@ -141,11 +141,11 @@ export default function Module01RegleZero() {
               <span className="text-xl">⚠️</span> Attention au piège
             </h4>
             <p className="text-slate-700 mb-4">
-              Si on vous donne l'équation : <span className="font-mono bg-white px-2 py-1 rounded text-rose-700">x(x - 3) = 0</span>
+              Si on vous donne l'équation : <span className="font-mono bg-white px-2 py-1 rounded text-rose-700"><MathText>{'$x(x - 3) = 0$'}</MathText></span>
             </p>
             <p className="text-slate-700">
-              Il est très fréquent de répondre uniquement <strong className="text-rose-700">x = 3</strong> (car 3 - 3 = 0). 
-              <br />Mais n'oubliez pas le premier facteur ! Si <strong className="text-emerald-700">x = 0</strong>, le produit sera nul aussi : <span className="font-mono opacity-80">0 × (0 - 3) = 0 × (-3) = 0</span>.
+              Il est très fréquent de répondre uniquement <strong className="text-rose-700"><MathText>{'$x = 3$'}</MathText></strong> (car <MathText>{'$3 - 3 = 0$'}</MathText>). 
+              <br />Mais n'oubliez pas le premier facteur ! Si <strong className="text-emerald-700"><MathText>{'$x = 0$'}</MathText></strong>, le produit sera nul aussi : <span className="font-mono opacity-80"><MathText>{'$0 \\times (0 - 3) = 0 \\times (-3) = 0$'}</MathText></span>.
             </p>
           </div>
         </section>

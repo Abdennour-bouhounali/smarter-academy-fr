@@ -4,7 +4,7 @@ import SectionHeader from '../../../../../common/components/SectionHeader';
 import MathText from '../../../../../common/components/MathText';
 import { useProgress } from '../../../../../common/hooks/useProgress';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import { CheckCircle2, ChevronRight, XCircle, Grid } from 'lucide-react';
+import { CheckCircle2, ChevronRight, XCircle, Grid, ArrowRightLeft } from 'lucide-react';
 
 export default function Module05Identite() {
   const { xp, awardXP, markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
@@ -72,8 +72,8 @@ export default function Module05Identite() {
         <SectionHeader number={1} title="Le puzzle géométrique" color="violet" />
 
         <p className="text-slate-700 leading-relaxed">
-          Pour résoudre <span className="font-mono bg-slate-100 px-1 rounded">x² - 16 = 0</span>, il n'y a pas de facteur commun évident. 
-          Mais c'est une <strong>différence de deux carrés</strong> : <span className="font-mono bg-slate-100 px-1 rounded">a² - b²</span>.
+          Pour résoudre <span className="font-mono bg-slate-100 px-1 rounded"><MathText>{'$x^2 - 16 = 0$'}</MathText></span>, il n'y a pas de facteur commun évident. 
+          Mais c'est une <strong>différence de deux carrés</strong> : <span className="font-mono bg-slate-100 px-1 rounded"><MathText>{'$a^2 - b^2$'}</MathText></span>.
         </p>
 
         <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-200 flex flex-col items-center">
@@ -82,10 +82,10 @@ export default function Module05Identite() {
             {/* Visual a^2 - b^2 */}
             <div className="relative w-40 h-40">
               <div className="absolute inset-0 bg-violet-200 border-2 border-violet-500 rounded flex items-center justify-center">
-                 <span className="text-violet-700 font-bold font-mono">x²</span>
+                 <span className="text-violet-700 font-bold font-mono"><MathText>{'$x^2$'}</MathText></span>
               </div>
               <div className="absolute bottom-0 right-0 w-16 h-16 bg-white border-2 border-dashed border-rose-400 flex items-center justify-center">
-                 <span className="text-rose-500 font-bold font-mono">- 4²</span>
+                 <span className="text-rose-500 font-bold font-mono"><MathText>{'$- 4^2$'}</MathText></span>
               </div>
             </div>
 
@@ -95,12 +95,12 @@ export default function Module05Identite() {
 
             {/* Visual (a-b)(a+b) - simplified representation */}
             <div className="w-56 h-24 bg-violet-100 border-2 border-violet-400 rounded flex items-center justify-center">
-               <span className="text-violet-800 font-bold font-mono text-lg">(x - 4)(x + 4)</span>
+               <span className="text-violet-800 font-bold font-mono text-lg"><MathText>{'$(x - 4)(x + 4)$'}</MathText></span>
             </div>
           </div>
 
           <div className="text-center bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-            <MathText className="text-xl text-slate-800">a^2 - b^2 = (a - b)(a + b)</MathText>
+            <MathText className="text-xl text-slate-800">{'$a^2 - b^2 = (a - b)(a + b)$'}</MathText>
           </div>
 
           {step === 0 && (
@@ -145,7 +145,7 @@ export default function Module05Identite() {
                   onClick={() => handleSelectEx(opt.id, opt.isDiff)}
                   className={btnClass}
                 >
-                  <MathText>{opt.eq}</MathText>
+                  <MathText>{`$${opt.eq}$`}</MathText>
                   {isSelected && opt.isDiff && <CheckCircle2 className="inline-block ml-2 text-emerald-600" size={20} />}
                   {isSelected && !opt.isDiff && <XCircle className="inline-block ml-2 text-rose-600" size={20} />}
                 </button>
@@ -155,7 +155,7 @@ export default function Module05Identite() {
 
           {selectedEx['2'] && (
             <div className="bg-rose-50 p-4 rounded-xl border border-rose-200 mt-4 text-rose-800 text-sm animate-in zoom-in">
-              <strong>Attention :</strong> <MathText>x^2 + 16</MathText> est une somme, pas une différence ! On ne peut pas la factoriser avec cette méthode. L'équation <MathText>x^2 + 16 = 0</MathText> n'a d'ailleurs aucune solution.
+              <strong>Attention :</strong> <MathText>{'$x^2 + 16$'}</MathText> est une somme, pas une différence ! On ne peut pas la factoriser avec cette méthode. L'équation <MathText>{'$x^2 + 16 = 0$'}</MathText> n'a d'ailleurs aucune solution.
             </div>
           )}
 
@@ -177,7 +177,7 @@ export default function Module05Identite() {
           <SectionHeader number={3} title="Factoriser et résoudre" color="blue" />
           
           <p className="text-slate-700">
-            Complétez la factorisation pour l'équation <span className="font-mono font-bold">x² - 16 = 0</span> :
+            Complétez la factorisation pour l'équation <span className="font-mono font-bold"><MathText>{'$x^2 - 16 = 0$'}</MathText></span> :
           </p>
 
           <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center">
@@ -218,13 +218,13 @@ export default function Module05Identite() {
                   <p className="text-slate-600 font-bold mb-4">On applique la règle du produit nul :</p>
                   <div className="flex justify-around">
                     <div className="bg-white p-4 border-2 border-slate-200 rounded-xl">
-                      <span className="font-mono font-bold text-slate-500">x - 4 = 0</span><br/>
-                      <span className="font-mono font-black text-xl text-blue-600">x = 4</span>
+                      <span className="font-mono font-bold text-slate-500"><MathText>{'$x - 4 = 0$'}</MathText></span><br/>
+                      <span className="font-mono font-black text-xl text-blue-600"><MathText>{'$x = 4$'}</MathText></span>
                     </div>
                     <div className="font-bold text-slate-300 flex items-center">OU</div>
                     <div className="bg-white p-4 border-2 border-slate-200 rounded-xl">
-                      <span className="font-mono font-bold text-slate-500">x + 4 = 0</span><br/>
-                      <span className="font-mono font-black text-xl text-emerald-600">x = -4</span>
+                      <span className="font-mono font-bold text-slate-500"><MathText>{'$x + 4 = 0$'}</MathText></span><br/>
+                      <span className="font-mono font-black text-xl text-emerald-600"><MathText>{'$x = -4$'}</MathText></span>
                     </div>
                   </div>
                 </div>

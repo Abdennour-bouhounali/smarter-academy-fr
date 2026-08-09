@@ -4,7 +4,7 @@ import SectionHeader from '../../../../../common/components/SectionHeader';
 import MathText from '../../../../../common/components/MathText';
 import { useProgress } from '../../../../../common/hooks/useProgress';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import { Split, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Split, CheckCircle2, AlertCircle, ChevronRight } from 'lucide-react';
 
 export default function Module03ProduitNul() {
   const { xp, awardXP, markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
@@ -42,6 +42,8 @@ export default function Module03ProduitNul() {
   const [exerciseIndex, setExerciseIndex] = useState(0);
   const [exLeftStatus, setExLeftStatus] = useState('pending'); // 'pending', 'wrong', 'correct'
   const [exRightStatus, setExRightStatus] = useState('pending');
+  const [leftValue, setLeftValue] = useState('');
+  const [rightValue, setRightValue] = useState('');
 
   const exercises = [
     { eq: 'x(x + 5) = 0', leftAns: 0, rightAns: -5, leftEq: 'x = 0', rightEq: 'x + 5 = 0' },
@@ -49,27 +51,34 @@ export default function Module03ProduitNul() {
     { eq: '(3x + 9)(2x - 5) = 0', leftAns: -3, rightAns: 2.5, leftEq: '3x + 9 = 0', rightEq: '2x - 5 = 0' }
   ];
 
-  const checkLeft = (val) => {
-    if (parseFloat(val) === exercises[exerciseIndex].leftAns) {
+  const handleVerify = () => {
+    let lCorrect = false;
+    let rCorrect = false;
+
+    if (parseFloat(leftValue) === exercises[exerciseIndex].leftAns) {
       setExLeftStatus('correct');
-      if (exRightStatus === 'correct') awardXP({ moduleId: 'L03', exerciseId: `ex_${exerciseIndex}`, amount: 30 });
+      lCorrect = true;
     } else {
       setExLeftStatus('wrong');
     }
-  };
 
-  const checkRight = (val) => {
-    if (parseFloat(val) === exercises[exerciseIndex].rightAns) {
+    if (parseFloat(rightValue) === exercises[exerciseIndex].rightAns) {
       setExRightStatus('correct');
-      if (exLeftStatus === 'correct') awardXP({ moduleId: 'L03', exerciseId: `ex_${exerciseIndex}`, amount: 30 });
+      rCorrect = true;
     } else {
       setExRightStatus('wrong');
+    }
+
+    if (lCorrect && rCorrect && (exLeftStatus !== 'correct' || exRightStatus !== 'correct')) {
+      awardXP({ moduleId: 'L03', exerciseId: `ex_${exerciseIndex}`, amount: 30 });
     }
   };
 
   const nextExercise = () => {
     setExLeftStatus('pending');
     setExRightStatus('pending');
+    setLeftValue('');
+    setRightValue('');
     setExerciseIndex(idx => idx + 1);
   };
 
@@ -106,7 +115,7 @@ export default function Module03ProduitNul() {
           
           <div className="text-center mb-8">
             <div className="text-3xl font-mono font-bold text-slate-800 bg-white inline-block px-6 py-4 rounded-xl border-2 border-slate-300 shadow-sm">
-              <span className="text-blue-600">(2x + 4)</span> <span className="text-slate-400">×</span> <span className="text-emerald-600">(x - 3)</span> = 0
+              <MathText>{'$\\color{#2563eb}{(2x + 4)} \\times \\color{#059669}{(x - 3)} = 0$'}</MathText>
             </div>
           </div>
 
@@ -122,18 +131,22 @@ export default function Module03ProduitNul() {
           )}
 
           {step !== 'start' && (
-            <div className="relative mt-12 pt-8 flex justify-between md:justify-around gap-4 animate-in slide-in-from-top-4">
+            <div className="animate-in slide-in-from-top-4">
               {/* Splitting lines SVG */}
-              <svg className="absolute top-0 left-0 w-full h-12 pointer-events-none" preserveAspectRatio="none">
-                 <path d="M 50% 0 L 25% 100%" stroke="#94a3b8" strokeWidth="2" fill="none" strokeDasharray="4 4" />
-                 <path d="M 50% 0 L 75% 100%" stroke="#94a3b8" strokeWidth="2" fill="none" strokeDasharray="4 4" />
-                 <text x="50%" y="20" fill="#64748b" fontSize="12" fontWeight="bold" textAnchor="middle" className="bg-white">OU</text>
-              </svg>
+              <div className="relative w-full h-12 -mt-4 mb-4 pointer-events-none">
+                <svg className="w-full h-full" preserveAspectRatio="none">
+                   <line x1="50%" y1="0" x2="25%" y2="100%" stroke="#94a3b8" strokeWidth="2" strokeDasharray="4 4" />
+                   <line x1="50%" y1="0" x2="75%" y2="100%" stroke="#94a3b8" strokeWidth="2" strokeDasharray="4 4" />
+                </svg>
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-slate-50 px-2 text-xs font-bold text-slate-400 uppercase">
+                  OU
+                </div>
+              </div>
 
-              {/* Left Branch */}
+              <div className="flex justify-between md:justify-around gap-4">
               <div className="flex-1 flex flex-col items-center">
                 <div className={`p-4 rounded-xl border-2 mb-4 w-full text-center font-mono font-bold text-xl transition-all ${leftSolved ? 'bg-blue-50 border-blue-300 text-blue-800' : 'bg-white border-blue-400 text-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.2)]'}`}>
-                  2x + 4 = 0
+                  <MathText>{'$2x + 4 = 0$'}</MathText>
                 </div>
                 {!leftSolved ? (
                   <button onClick={handleSolveLeft} className="px-4 py-2 bg-blue-100 text-blue-700 hover:bg-blue-200 font-bold rounded-lg transition-colors text-sm">
@@ -149,7 +162,7 @@ export default function Module03ProduitNul() {
               {/* Right Branch */}
               <div className="flex-1 flex flex-col items-center">
                 <div className={`p-4 rounded-xl border-2 mb-4 w-full text-center font-mono font-bold text-xl transition-all ${rightSolved ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-white border-emerald-400 text-slate-800 shadow-[0_0_15px_rgba(16,185,129,0.2)]'}`}>
-                  x - 3 = 0
+                  <MathText>{'$x - 3 = 0$'}</MathText>
                 </div>
                 {!rightSolved ? (
                   <button onClick={handleSolveRight} className="px-4 py-2 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 font-bold rounded-lg transition-colors text-sm">
@@ -161,6 +174,7 @@ export default function Module03ProduitNul() {
                   </div>
                 )}
               </div>
+            </div>
             </div>
           )}
 
@@ -177,7 +191,7 @@ export default function Module03ProduitNul() {
             <div className="mt-8 p-4 bg-indigo-50 border border-indigo-200 rounded-xl text-center animate-in zoom-in">
               <h4 className="font-bold text-indigo-800 mb-1">Excellent !</h4>
               <p className="text-indigo-700 text-sm">
-                L'équation admet donc <strong>deux solutions</strong> : <span className="font-mono bg-white px-1 rounded">-2</span> et <span className="font-mono bg-white px-1 rounded">3</span>. On note souvent l'ensemble des solutions <MathText>S = \lbrace -2 ; 3 \rbrace</MathText>.
+                L'équation admet donc <strong>deux solutions</strong> : <span className="font-mono bg-white px-1 rounded"><MathText>{'$-2$'}</MathText></span> et <span className="font-mono bg-white px-1 rounded"><MathText>{'$3$'}</MathText></span>. On note souvent l'ensemble des solutions <MathText>{'$S = \\{ -2 ; 3 \\}$'}</MathText>.
               </p>
             </div>
           )}
@@ -200,22 +214,21 @@ export default function Module03ProduitNul() {
               </div>
               
               <div className="text-2xl md:text-3xl font-mono font-bold text-slate-800 text-center mb-8">
-                <MathText>{exercises[exerciseIndex].eq}</MathText>
+                <MathText>{`$${exercises[exerciseIndex].eq}$`}</MathText>
               </div>
               
               <div className="flex justify-between md:justify-center md:gap-16 items-start">
                 
                 {/* Left Eq */}
                 <div className="flex-1 max-w-[200px] flex flex-col items-center">
-                  <span className="font-mono font-bold text-blue-700 mb-2">{exercises[exerciseIndex].leftEq}</span>
+                  <span className="font-mono font-bold text-blue-700 mb-2"><MathText>{`$${exercises[exerciseIndex].leftEq}$`}</MathText></span>
                   <div className="flex items-center gap-2">
                     <span className="font-mono font-bold">x =</span>
                     <input 
                       type="number" step="0.1"
                       disabled={exLeftStatus === 'correct'}
-                      onBlur={(e) => {
-                        if(e.target.value !== '') checkLeft(e.target.value);
-                      }}
+                      value={leftValue}
+                      onChange={(e) => { setLeftValue(e.target.value); setExLeftStatus('pending'); }}
                       className={`w-20 p-2 text-center rounded-lg border-2 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-blue-300 transition-colors ${exLeftStatus === 'correct' ? 'bg-emerald-50 border-emerald-400 text-emerald-800' : exLeftStatus === 'wrong' ? 'bg-rose-50 border-rose-400 text-rose-800' : 'bg-white border-slate-300'}`} 
                     />
                   </div>
@@ -227,15 +240,14 @@ export default function Module03ProduitNul() {
 
                 {/* Right Eq */}
                 <div className="flex-1 max-w-[200px] flex flex-col items-center">
-                  <span className="font-mono font-bold text-emerald-700 mb-2">{exercises[exerciseIndex].rightEq}</span>
+                  <span className="font-mono font-bold text-emerald-700 mb-2"><MathText>{`$${exercises[exerciseIndex].rightEq}$`}</MathText></span>
                   <div className="flex items-center gap-2">
                     <span className="font-mono font-bold">x =</span>
                     <input 
                       type="number" step="0.1"
                       disabled={exRightStatus === 'correct'}
-                      onBlur={(e) => {
-                        if(e.target.value !== '') checkRight(e.target.value);
-                      }}
+                      value={rightValue}
+                      onChange={(e) => { setRightValue(e.target.value); setExRightStatus('pending'); }}
                       className={`w-20 p-2 text-center rounded-lg border-2 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-colors ${exRightStatus === 'correct' ? 'bg-emerald-50 border-emerald-400 text-emerald-800' : exRightStatus === 'wrong' ? 'bg-rose-50 border-rose-400 text-rose-800' : 'bg-white border-slate-300'}`} 
                     />
                   </div>
@@ -244,6 +256,18 @@ export default function Module03ProduitNul() {
                 </div>
 
               </div>
+
+              {!(exLeftStatus === 'correct' && exRightStatus === 'correct') && (
+                <div className="mt-8 flex justify-center animate-in fade-in">
+                  <button 
+                    onClick={handleVerify}
+                    disabled={leftValue === '' || rightValue === ''}
+                    className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Vérifier mes réponses
+                  </button>
+                </div>
+              )}
 
               {exLeftStatus === 'correct' && exRightStatus === 'correct' && (
                 <div className="mt-8 flex justify-end animate-in fade-in">

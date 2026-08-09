@@ -38,6 +38,17 @@ const smaMetadata = {
     totalModules: 7,
     path: '/courses/college/3e/espace_geometrie/thales-3e'
   },
+  'Théorème de Pythagore': {
+    id: 'pythagore-3e',
+    description: 'Observer, calculer des longueurs et démontrer avec Pythagore.',
+    duration: '60 min',
+    difficulty: 'Moyen',
+    status: 'available',
+    icon: '📐',
+    isNew: true,
+    totalModules: 7,
+    path: '/courses/college/3e/espace_geometrie/pythagore-3e'
+  },
   'Fonctions linéaires': {
     id: 'fonctions-lineaires',
     description: 'Notion de fonction linéaire, modélisation et représentation.',
