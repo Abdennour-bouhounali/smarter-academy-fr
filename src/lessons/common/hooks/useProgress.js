@@ -68,6 +68,29 @@ export function useProgress(lessonId) {
     });
   }, [storageKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // ── markModuleVisited ─────────────────────────────────────────────────────
+  const markModuleVisited = useCallback((moduleNumber) => {
+    if (!lessonId) return;
+    
+    // Set global last course
+    try {
+      localStorage.setItem('smarter_last_course', lessonId);
+    } catch {}
+
+    setLessonData(prev => {
+      if (prev.currentModule === moduleNumber && Date.now() - (prev.lastVisitedAt || 0) < 60000) {
+        return prev; // Debounce updates to avoid excessive writes
+      }
+      const next = {
+        ...prev,
+        currentModule: moduleNumber,
+        lastVisitedAt: Date.now()
+      };
+      persistLessonData(next);
+      return next;
+    });
+  }, [lessonId, storageKey]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // ── awardXP (idempotent) ──────────────────────────────────────────────────
   /**
    * Award XP for an exercise. Idempotent: if this exerciseId was already
@@ -112,6 +135,7 @@ export function useProgress(lessonId) {
     xp,
     completedModules: lessonData.completedModules,
     markModuleCompleted,
+    markModuleVisited,
     awardXP,
     isModuleCompleted,
     isExerciseCompleted,

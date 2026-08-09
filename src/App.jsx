@@ -24,7 +24,18 @@ import Module08CoeffDirecteurDeuxPoints from './lessons/college/3e/fonctions-lin
 import Module09MissionForfait         from './lessons/college/3e/fonctions-lineaires-affines/modules/Module09MissionForfait';
 import Module10BilanEvaluation        from './lessons/college/3e/fonctions-lineaires-affines/modules/Module10BilanEvaluation';
 
+// ── Leçon : Nombres rationnels (3ème) ──────────────────────────────────────
+import NombresRationnels              from './lessons/college/3e/nombres-rationnels';
+import Module01NotionRationnel        from './lessons/college/3e/nombres-rationnels/modules/Module01NotionRationnel';
+import Module02Transformer            from './lessons/college/3e/nombres-rationnels/modules/Module02Transformer';
+import Module03AddSous                from './lessons/college/3e/nombres-rationnels/modules/Module03AddSous';
+import Module04MultDiv                from './lessons/college/3e/nombres-rationnels/modules/Module04MultDiv';
+import Module05Priorites              from './lessons/college/3e/nombres-rationnels/modules/Module05Priorites';
+import Module06Mission                from './lessons/college/3e/nombres-rationnels/modules/Module06Mission';
+import Module07Bilan                  from './lessons/college/3e/nombres-rationnels/modules/Module07Bilan';
+
 const LESSON_BASE = '/courses/college/3e/fonctions-lineaires-affines';
+const RAT_BASE = '/courses/college/3e/nombres-rationnels';
 
 export default function App() {
   return (
@@ -56,6 +67,16 @@ export default function App() {
             <Route path={`${LESSON_BASE}/8`}  element={<Module08CoeffDirecteurDeuxPoints />} />
             <Route path={`${LESSON_BASE}/9`}  element={<Module09MissionForfait />} />
             <Route path={`${LESSON_BASE}/10`} element={<Module10BilanEvaluation />} />
+
+            {/* ── Nombres rationnels ── */}
+            <Route path={RAT_BASE}      element={<NombresRationnels />} />
+            <Route path={`${RAT_BASE}/1`}  element={<Module01NotionRationnel />} />
+            <Route path={`${RAT_BASE}/2`}  element={<Module02Transformer />} />
+            <Route path={`${RAT_BASE}/3`}  element={<Module03AddSous />} />
+            <Route path={`${RAT_BASE}/4`}  element={<Module04MultDiv />} />
+            <Route path={`${RAT_BASE}/5`}  element={<Module05Priorites />} />
+            <Route path={`${RAT_BASE}/6`}  element={<Module06Mission />} />
+            <Route path={`${RAT_BASE}/7`}  element={<Module07Bilan />} />
 
             <Route path="*" element={<Home />} />
           </Route>

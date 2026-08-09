@@ -60,6 +60,7 @@ export default function Module05RepresentationLineaire() {
 
   return (
     <ModuleLayout
+      lessonId={MODULE_CTX.lessonId}
       coursePath={MODULE_CTX.coursePath}
       courseTitle={MODULE_CTX.courseTitle}
       levelLabel="Collège"

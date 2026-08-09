@@ -193,6 +193,19 @@ export const courseLevels = [
         id: '3e',
         name: '3ème',
         lessons: [
+          { 
+            id: 'nombres-rationnels', 
+            title: 'Nombres rationnels', 
+            description: 'Fractions, simplification, opérations et priorités.', 
+            duration: '60 min', 
+            difficulty: 'Moyen', 
+            status: 'available', 
+            icon: '➗',
+            progress: 0,
+            totalLessons: 7,
+            path: "/courses/college/3e/nombres-rationnels",
+            isNew: true
+          },
           { id: 'thales-3e', title: 'Théorème de Thalès', description: 'Proportionnalité des longueurs et théorème réciproque.', duration: '30 min', difficulty: 'Moyen', status: 'coming_soon', icon: '📐' },
           { 
             id: 'fonctions-lineaires-affines', 

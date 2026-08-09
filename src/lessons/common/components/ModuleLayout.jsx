@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Home, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useProgress } from '../hooks/useProgress';
 
 /**
  * ModuleLayout — shared layout wrapper for every lesson module.
@@ -20,6 +21,7 @@ import { motion } from 'framer-motion';
  *   prevLink      — URL of previous module (or null)
  *   nextLink      — URL of next module (or null for last module)
  *   onNextClick   — callback fired when the next button is clicked (mark complete)
+ *   lessonId      — ID of the lesson to track progress automatically
  *   children      — module content
  */
 export default function ModuleLayout({
@@ -37,6 +39,7 @@ export default function ModuleLayout({
   prevLink,
   nextLink,
   onNextClick,
+  lessonId,
 }) {
   const navigate = useNavigate();
 
@@ -49,6 +52,14 @@ export default function ModuleLayout({
   };
 
   const breadcrumbLevel = gradeLabel ? `${levelLabel} (${gradeLabel})` : levelLabel;
+
+  const { markModuleVisited } = useProgress(lessonId || 'unknown');
+  
+  useEffect(() => {
+    if (lessonId && moduleNumber) {
+      markModuleVisited(moduleNumber);
+    }
+  }, [lessonId, moduleNumber, markModuleVisited]);
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">

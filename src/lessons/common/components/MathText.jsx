@@ -43,7 +43,7 @@ export default function MathText({ children, className }) {
       return <BlockMath key={index} math={part.slice(2, -2)} />;
     }
     if (part.startsWith('$') && part.endsWith('$') && part.length > 2) {
-      return <InlineMath key={index} math={part.slice(1, -1)} />;
+      return <InlineMath key={index} math={`\\displaystyle ${part.slice(1, -1)}`} />;
     }
     return part ? <span key={index}>{part}</span> : null;
   });

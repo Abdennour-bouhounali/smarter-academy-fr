@@ -94,6 +94,7 @@ export default function Module09MissionForfait() {
 
   return (
     <ModuleLayout
+      lessonId={MODULE_CTX.lessonId}
       coursePath={MODULE_CTX.coursePath}
       courseTitle={MODULE_CTX.courseTitle}
       levelLabel="Collège"
