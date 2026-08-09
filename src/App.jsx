@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -12,52 +12,52 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 
 // ── Leçon : Fonctions linéaires et affines (3ème) ──────────────────────────
-import FonctionsLineairesAffines from './lessons/college/3e/fonctions-lineaires-affines';
-import Module01NotionFonction         from './lessons/college/3e/fonctions-lineaires-affines/modules/Module01NotionFonction';
-import Module02ImageAntecedent        from './lessons/college/3e/fonctions-lineaires-affines/modules/Module02ImageAntecedent';
-import Module03TableauValeurs         from './lessons/college/3e/fonctions-lineaires-affines/modules/Module03TableauValeurs';
-import Module04FonctionLineaire       from './lessons/college/3e/fonctions-lineaires-affines/modules/Module04FonctionLineaire';
-import Module05RepresentationLineaire from './lessons/college/3e/fonctions-lineaires-affines/modules/Module05RepresentationLineaire';
-import Module06FonctionAffine         from './lessons/college/3e/fonctions-lineaires-affines/modules/Module06FonctionAffine';
-import Module07LectureGraphique       from './lessons/college/3e/fonctions-lineaires-affines/modules/Module07LectureGraphique';
-import Module08CoeffDirecteurDeuxPoints from './lessons/college/3e/fonctions-lineaires-affines/modules/Module08CoeffDirecteurDeuxPoints';
-import Module09MissionForfait         from './lessons/college/3e/fonctions-lineaires-affines/modules/Module09MissionForfait';
-import Module10BilanEvaluation        from './lessons/college/3e/fonctions-lineaires-affines/modules/Module10BilanEvaluation';
+import FonctionsLineairesAffines from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines';
+import Module01NotionFonction         from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module01NotionFonction';
+import Module02ImageAntecedent        from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module02ImageAntecedent';
+import Module03TableauValeurs         from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module03TableauValeurs';
+import Module04FonctionLineaire       from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module04FonctionLineaire';
+import Module05RepresentationLineaire from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module05RepresentationLineaire';
+import Module06FonctionAffine         from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module06FonctionAffine';
+import Module07LectureGraphique       from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module07LectureGraphique';
+import Module08CoeffDirecteurDeuxPoints from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module08CoeffDirecteurDeuxPoints';
+import Module09MissionForfait         from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module09MissionForfait';
+import Module10BilanEvaluation        from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module10BilanEvaluation';
 
 // ── Leçon : Nombres rationnels (3ème) ──────────────────────────────────────
-import NombresRationnels              from './lessons/college/3e/nombres-rationnels';
-import Module01NotionRationnel        from './lessons/college/3e/nombres-rationnels/modules/Module01NotionRationnel';
-import Module02Transformer            from './lessons/college/3e/nombres-rationnels/modules/Module02Transformer';
-import Module03AddSous                from './lessons/college/3e/nombres-rationnels/modules/Module03AddSous';
-import Module04MultDiv                from './lessons/college/3e/nombres-rationnels/modules/Module04MultDiv';
-import Module05Priorites              from './lessons/college/3e/nombres-rationnels/modules/Module05Priorites';
-import Module06Mission                from './lessons/college/3e/nombres-rationnels/modules/Module06Mission';
-import Module07Bilan                  from './lessons/college/3e/nombres-rationnels/modules/Module07Bilan';
+import NombresRationnels              from './lessons/college/3e/nombres_calculs/nombres-rationnels';
+import Module01NotionRationnel        from './lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module01NotionRationnel';
+import Module02Transformer            from './lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module02Transformer';
+import Module03AddSous                from './lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module03AddSous';
+import Module04MultDiv                from './lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module04MultDiv';
+import Module05Priorites              from './lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module05Priorites';
+import Module06MissionRat             from './lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module06Mission';
+import Module07BilanRat               from './lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module07Bilan';
 
 // ── Leçon : Théorème de Thalès (3ème) ──────────────────────────────────────
-import Thales3e                       from './lessons/college/3e/thales-3e';
-import ThalesM01Decouverte            from './lessons/college/3e/thales-3e/modules/Module01Decouverte';
-import ThalesM02Egalite               from './lessons/college/3e/thales-3e/modules/Module02Egalite';
-import ThalesM03Calcul                from './lessons/college/3e/thales-3e/modules/Module03Calcul';
-import ThalesM04Reciproque            from './lessons/college/3e/thales-3e/modules/Module04Reciproque';
-import ThalesM05Papillon              from './lessons/college/3e/thales-3e/modules/Module05Papillon';
-import ThalesM06Mission               from './lessons/college/3e/thales-3e/modules/Module06Mission';
-import ThalesM07Bilan                 from './lessons/college/3e/thales-3e/modules/Module07Bilan';
+import Thales3e                       from './lessons/college/3e/espace_geometrie/thales-3e';
+import ThalesM01Decouverte            from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module01Decouverte';
+import ThalesM02Egalite               from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module02Egalite';
+import ThalesM03Calcul                from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module03Calcul';
+import ThalesM04Reciproque            from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module04Reciproque';
+import ThalesM05Papillon              from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module05Papillon';
+import ThalesM06Mission               from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module06Mission';
+import ThalesM07Bilan                 from './lessons/college/3e/espace_geometrie/thales-3e/modules/Module07Bilan';
 
 // ── Leçon : Équations produit nul (3ème) ──────────────────────────────────────
-import EquationsProduit3e             from './lessons/college/3e/equations-produit';
-import EqProdM01RegleZero             from './lessons/college/3e/equations-produit/modules/Module01RegleZero';
-import EqProdM02Rappel                from './lessons/college/3e/equations-produit/modules/Module02Rappel';
-import EqProdM03ProduitNul            from './lessons/college/3e/equations-produit/modules/Module03ProduitNul';
-import EqProdM04FacteurCommun         from './lessons/college/3e/equations-produit/modules/Module04FacteurCommun';
-import EqProdM05Identite              from './lessons/college/3e/equations-produit/modules/Module05Identite';
-import EqProdM06Mission               from './lessons/college/3e/equations-produit/modules/Module06Mission';
-import EqProdM07Bilan                 from './lessons/college/3e/equations-produit/modules/Module07Bilan';
+import EquationsProduit3e             from './lessons/college/3e/nombres_calculs/equations-produit';
+import EqProdM01RegleZero             from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module01RegleZero';
+import EqProdM02Rappel                from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module02Rappel';
+import EqProdM03ProduitNul            from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module03ProduitNul';
+import EqProdM04FacteurCommun         from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module04FacteurCommun';
+import EqProdM05Identite              from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module05Identite';
+import EqProdM06Mission               from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module06Mission';
+import EqProdM07Bilan                 from './lessons/college/3e/nombres_calculs/equations-produit/modules/Module07Bilan';
 
-const LESSON_BASE = '/courses/college/3e/fonctions-lineaires-affines';
-const RAT_BASE = '/courses/college/3e/nombres-rationnels';
-const THALES_BASE = '/courses/college/3e/thales-3e';
-const EQPROD_BASE = '/courses/college/3e/equations-produit';
+const LESSON_BASE = '/courses/college/3e/donnees_probabilites/fonctions-lineaires-affines';
+const RAT_BASE = '/courses/college/3e/nombres_calculs/nombres-rationnels';
+const THALES_BASE = '/courses/college/3e/espace_geometrie/thales-3e';
+const EQPROD_BASE = '/courses/college/3e/nombres_calculs/equations-produit';
 
 export default function App() {
   return (
@@ -76,6 +76,12 @@ export default function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/faq"      element={<FAQ />} />
             <Route path="/contact"  element={<Contact />} />
+
+            {/* ── Redirections de compatibilité ── */}
+            <Route path="/courses/college/3e/fonctions-lineaires-affines/*" element={<Navigate replace to={`${LESSON_BASE}/*`} />} />
+            <Route path="/courses/college/3e/nombres-rationnels/*" element={<Navigate replace to={`${RAT_BASE}/*`} />} />
+            <Route path="/courses/college/3e/thales-3e/*" element={<Navigate replace to={`${THALES_BASE}/*`} />} />
+            <Route path="/courses/college/3e/equations-produit/*" element={<Navigate replace to={`${EQPROD_BASE}/*`} />} />
 
             {/* ── Fonctions linéaires et affines ── */}
             <Route path={LESSON_BASE}      element={<FonctionsLineairesAffines />} />
@@ -97,8 +103,8 @@ export default function App() {
             <Route path={`${RAT_BASE}/3`}  element={<Module03AddSous />} />
             <Route path={`${RAT_BASE}/4`}  element={<Module04MultDiv />} />
             <Route path={`${RAT_BASE}/5`}  element={<Module05Priorites />} />
-            <Route path={`${RAT_BASE}/6`}  element={<Module06Mission />} />
-            <Route path={`${RAT_BASE}/7`}  element={<Module07Bilan />} />
+            <Route path={`${RAT_BASE}/6`}  element={<Module06MissionRat />} />
+            <Route path={`${RAT_BASE}/7`}  element={<Module07BilanRat />} />
 
             {/* ── Théorème de Thalès ── */}
             <Route path={THALES_BASE}      element={<Thales3e />} />

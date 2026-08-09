@@ -100,9 +100,11 @@ export default function LessonIndex({ config, basePath }) {
         <nav className="flex items-center gap-2 text-xs font-mono text-slate-500">
           <Link to="/" className="hover:text-blue-600">Accueil</Link>
           <span>/</span>
-          <Link to="/courses" className="hover:text-blue-600">Collège ({config.grade})</Link>
+          <Link to={`/courses?level=${config.level}&grade=${config.grade}`} className="hover:text-blue-600">Collège ({config.grade})</Link>
           <span>/</span>
-          <span className="text-slate-900 font-semibold">{config.chapter}</span>
+          <Link to={`/courses?level=${config.level}&grade=${config.grade}&chapter=${config.chapter}`} className="hover:text-blue-600">{config.chapterTitle || config.chapter}</Link>
+          <span>/</span>
+          <span className="text-slate-900 font-semibold">{config.title}</span>
         </nav>
 
         {/* HERO CARD */}

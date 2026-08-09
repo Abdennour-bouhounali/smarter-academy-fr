@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Clock, Lock, Play, Search, ArrowRight } from 'lucide-react';
+import { Sparkles, Clock, Lock, Play, Search, ArrowRight, BookOpen } from 'lucide-react';
 import { courseLevels } from '../data/coursesData';
 
 export default function CoursesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   
-  // 1. Determine Initial State & Fallbacks (URL > localStorage > default)
+  // 1. Determine Initial State & Fallbacks
   const urlLevel = searchParams.get('level');
   const urlGrade = searchParams.get('grade');
+  const urlChapter = searchParams.get('chapter');
 
   const lsLevel = localStorage.getItem('smarter_selected_level');
   const lsGrade = localStorage.getItem('smarter_selected_grade');
+  const lsChapter = localStorage.getItem('smarter_selected_chapter');
 
   const [lastFocus, setLastFocus] = useState(Date.now());
   useEffect(() => {
@@ -25,99 +27,107 @@ export default function CoursesPage() {
     };
   }, []);
 
-  // Fallback defaults
+  // Helpers
   const defaultLevelId = 'college';
+  const getValidLevelId = (id) => courseLevels.find(l => l.id === id) ? id : null;
   
-  const getValidLevelId = (id) => {
-    return courseLevels.find(l => l.id === id) ? id : null;
-  };
-
+  const effectiveLevelId = getValidLevelId(urlLevel) || getValidLevelId(lsLevel) || defaultLevelId;
+  const levelData = courseLevels.find(l => l.id === effectiveLevelId);
+  
   const getValidGradeId = (levelId, gradeId) => {
     const level = courseLevels.find(l => l.id === levelId);
     if (!level) return null;
     return level.grades.find(g => g.id === gradeId) ? gradeId : null;
   };
-
-  // Determine effective level
-  const effectiveLevelId = getValidLevelId(urlLevel) || getValidLevelId(lsLevel) || defaultLevelId;
-  const levelData = courseLevels.find(l => l.id === effectiveLevelId);
-  const defaultGradeId = levelData.grades[0].id;
   
-  // Determine effective grade (auto-correct if grade doesn't belong to level)
-  const effectiveGradeId = getValidGradeId(effectiveLevelId, urlGrade) || getValidGradeId(effectiveLevelId, lsGrade) || defaultGradeId;
+  const effectiveGradeId = getValidGradeId(effectiveLevelId, urlGrade) || getValidGradeId(effectiveLevelId, lsGrade) || levelData.grades[levelData.grades.length - 1].id;
   const gradeData = levelData.grades.find(g => g.id === effectiveGradeId);
 
-  // Sync back to URL and localStorage if needed
+  const getValidChapterId = (grade, chapterId) => {
+    if (!grade) return null;
+    if (chapterId === 'all') return 'all';
+    return grade.chapters.find(c => c.id === chapterId) ? chapterId : null;
+  };
+  
+  const effectiveChapterId = getValidChapterId(gradeData, urlChapter) || getValidChapterId(gradeData, lsChapter) || 'all';
+
+  // Sync state
   useEffect(() => {
     let changed = false;
     const newParams = new URLSearchParams(searchParams);
-    if (urlLevel !== effectiveLevelId) {
-      newParams.set('level', effectiveLevelId);
-      changed = true;
-    }
-    if (urlGrade !== effectiveGradeId) {
-      newParams.set('grade', effectiveGradeId);
-      changed = true;
-    }
-    if (changed) {
-      setSearchParams(newParams, { replace: true });
-    }
+    if (urlLevel !== effectiveLevelId) { newParams.set('level', effectiveLevelId); changed = true; }
+    if (urlGrade !== effectiveGradeId) { newParams.set('grade', effectiveGradeId); changed = true; }
+    if (urlChapter !== effectiveChapterId) { newParams.set('chapter', effectiveChapterId); changed = true; }
     
-    // Update local storage
+    if (changed) setSearchParams(newParams, { replace: true });
+    
     if (lsLevel !== effectiveLevelId) localStorage.setItem('smarter_selected_level', effectiveLevelId);
     if (lsGrade !== effectiveGradeId) localStorage.setItem('smarter_selected_grade', effectiveGradeId);
-  }, [effectiveLevelId, effectiveGradeId, urlLevel, urlGrade, lsLevel, lsGrade, searchParams, setSearchParams]);
+    if (lsChapter !== effectiveChapterId) localStorage.setItem('smarter_selected_chapter', effectiveChapterId);
+  }, [effectiveLevelId, effectiveGradeId, effectiveChapterId, urlLevel, urlGrade, urlChapter, lsLevel, lsGrade, lsChapter, searchParams, setSearchParams]);
 
   // Handlers
   const handleLevelChange = (newLevelId) => {
     const newLevel = courseLevels.find(l => l.id === newLevelId);
-    let newGradeId = getValidGradeId(newLevelId, lsGrade); // Preserve grade if IDs match, otherwise reset to first grade of level
-    if (!newGradeId) newGradeId = newLevel.grades[0].id;
-    
-    setSearchParams({ level: newLevelId, grade: newGradeId });
+    let newGradeId = getValidGradeId(newLevelId, lsGrade) || newLevel.grades[newLevel.grades.length - 1].id;
+    setSearchParams({ level: newLevelId, grade: newGradeId, chapter: 'all' });
   };
 
   const handleGradeChange = (newGradeId) => {
-    setSearchParams({ level: effectiveLevelId, grade: newGradeId });
+    setSearchParams({ level: effectiveLevelId, grade: newGradeId, chapter: 'all' });
   };
   
+  const handleChapterChange = (newChapterId) => {
+    setSearchParams({ level: effectiveLevelId, grade: effectiveGradeId, chapter: newChapterId });
+  };
+
   const handleCourseClick = (courseId) => {
     localStorage.setItem('smarter_last_course', courseId);
   };
 
-  // Search State
   const [searchQuery, setSearchQuery] = useState('');
 
   // Course Filtering
   const filteredCourses = useMemo(() => {
     if (!gradeData) return [];
-    if (!searchQuery.trim()) return gradeData.lessons;
+    
+    // Flatten lessons if chapter is 'all', else find specific chapter
+    let targetLessons = [];
+    if (effectiveChapterId === 'all') {
+      targetLessons = gradeData.chapters.flatMap(c => c.lessons);
+    } else {
+      const chapter = gradeData.chapters.find(c => c.id === effectiveChapterId);
+      targetLessons = chapter ? chapter.lessons : [];
+    }
+
+    if (!searchQuery.trim()) return targetLessons;
     
     const query = searchQuery.toLowerCase();
-    return gradeData.lessons.filter(lesson => 
+    // When searching, we search across all chapters of the grade regardless of effectiveChapterId
+    const allLessons = gradeData.chapters.flatMap(c => c.lessons);
+    return allLessons.filter(lesson => 
       lesson.title.toLowerCase().includes(query) || 
       lesson.description.toLowerCase().includes(query)
     );
-  }, [gradeData, searchQuery]);
+  }, [gradeData, effectiveChapterId, searchQuery]);
 
   // "Continuer" logic
   const continueCourse = useMemo(() => {
     const lastCourseId = localStorage.getItem('smarter_last_course');
     if (!lastCourseId) return null;
     
-    let foundCourse = null;
-    let foundLevel = null;
-    let foundGrade = null;
+    let foundCourse = null, foundLevel = null, foundGrade = null, foundChapter = null;
     
     for (const lvl of courseLevels) {
       for (const gr of lvl.grades) {
-        const c = gr.lessons.find(l => l.id === lastCourseId);
-        if (c) {
-          foundCourse = c;
-          foundLevel = lvl;
-          foundGrade = gr;
-          break;
+        for (const ch of gr.chapters) {
+          const c = ch.lessons.find(l => l.id === lastCourseId);
+          if (c) {
+            foundCourse = c; foundLevel = lvl; foundGrade = gr; foundChapter = ch;
+            break;
+          }
         }
+        if (foundCourse) break;
       }
       if (foundCourse) break;
     }
@@ -127,9 +137,7 @@ export default function CoursesPage() {
     let progressObj = null;
     try {
        const saved = localStorage.getItem(`smarter_lesson_${foundCourse.id}`);
-       if (saved) {
-         progressObj = JSON.parse(saved);
-       }
+       if (saved) progressObj = JSON.parse(saved);
     } catch {}
     
     let progressPercent = 0;
@@ -140,25 +148,44 @@ export default function CoursesPage() {
            progressPercent = Math.round((progressObj.completedModules.length / totalCount) * 100);
            if (progressPercent > 100) progressPercent = 100;
        }
-       if (progressObj.currentModule) {
-           currentModule = progressObj.currentModule;
-       }
+       if (progressObj.currentModule) currentModule = progressObj.currentModule;
     }
     
     return {
       course: foundCourse,
       level: foundLevel,
       grade: foundGrade,
+      chapter: foundChapter,
       progress: progressPercent,
       currentModule,
       totalModules: totalCount
     };
-  }, [effectiveLevelId, effectiveGradeId, lastFocus]); // Re-evaluate when navigation changes or focus is regained
+  }, [lastFocus]);
+
+  // Chapter Stats
+  const getChapterProgress = (chapter) => {
+    if (!chapter.lessons || chapter.lessons.length === 0) return 0;
+    const availableLessons = chapter.lessons.filter(l => l.status === 'available');
+    if (availableLessons.length === 0) return 0;
+    
+    let totalPercent = 0;
+    availableLessons.forEach(lesson => {
+       const totalCount = lesson.totalLessons || lesson.totalModules || 7;
+       try {
+         const saved = localStorage.getItem(`smarter_lesson_${lesson.id}`);
+         if (saved) {
+           const parsed = JSON.parse(saved);
+           const pct = Math.round((parsed.completedModules.length / totalCount) * 100);
+           totalPercent += Math.min(pct, 100);
+         }
+       } catch {}
+    });
+    return Math.round(totalPercent / availableLessons.length);
+  };
 
   return (
     <div className="pt-16 min-h-screen bg-slate-50 pb-20">
       
-      {/* HERO SECTION */}
       <section className="bg-white border-b border-slate-200 py-10 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono-jetbrains font-semibold uppercase tracking-wider mb-4 shadow-2xs">
@@ -230,11 +257,16 @@ export default function CoursesPage() {
 
         {/* BREADCRUMB & SEARCH ROW */}
         <section className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-4">
-          <div>
-             <h2 className="font-space font-bold text-2xl text-slate-900 flex items-center gap-2">
-               {levelData.title} <span className="text-slate-300 font-inter">›</span> {gradeData.name}
-             </h2>
-             <p className="font-inter text-slate-500 text-sm mt-1">{gradeData.lessons.length} cours disponibles dans cette classe.</p>
+          <div className="flex items-center gap-2 font-space font-bold text-xl text-slate-900 flex-wrap">
+             <span className="text-slate-500 cursor-pointer hover:text-blue-600" onClick={() => handleChapterChange('all')}>Cours</span>
+             <span className="text-slate-300 font-inter">/</span>
+             <span className="text-slate-500 cursor-pointer hover:text-blue-600" onClick={() => handleChapterChange('all')}>{gradeData.name}</span>
+             {effectiveChapterId !== 'all' && (
+               <>
+                 <span className="text-slate-300 font-inter">/</span>
+                 <span className="text-slate-900">{gradeData.chapters.find(c => c.id === effectiveChapterId)?.title}</span>
+               </>
+             )}
           </div>
           <div className="relative w-full md:w-72">
             <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -247,6 +279,44 @@ export default function CoursesPage() {
             />
           </div>
         </section>
+
+        {/* CHAPTERS SELECTOR (Only if no search active) */}
+        {!searchQuery && (
+          <section>
+            <div className="flex overflow-x-auto gap-3 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              <button
+                onClick={() => handleChapterChange('all')}
+                className={`flex-shrink-0 px-4 py-2 rounded-lg font-inter text-sm font-medium transition-all ${
+                  effectiveChapterId === 'all'
+                    ? 'bg-slate-800 text-white'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+                }`}
+              >
+                Tous les chapitres
+              </button>
+              {gradeData.chapters.map((chapter) => {
+                const isSelected = chapter.id === effectiveChapterId;
+                const progress = getChapterProgress(chapter);
+                return (
+                  <button
+                    key={chapter.id}
+                    onClick={() => handleChapterChange(chapter.id)}
+                    className={`flex-shrink-0 flex flex-col items-start px-4 py-2 rounded-lg font-inter text-sm font-medium transition-all ${
+                      isSelected
+                        ? 'bg-blue-600 text-white shadow-md'
+                        : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'
+                    }`}
+                  >
+                    <span>{chapter.title}</span>
+                    <span className={`text-[10px] mt-0.5 font-bold ${isSelected ? 'text-blue-200' : 'text-slate-400'}`}>
+                      {chapter.lessons.length} leçon{chapter.lessons.length > 1 ? 's' : ''} • {progress}%
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* CONTINUER (Optional - only shows if last course exists, is in current grade, and no search is active) */}
         {continueCourse && continueCourse.grade.id === effectiveGradeId && !searchQuery && (
@@ -273,7 +343,7 @@ export default function CoursesPage() {
                   </div>
                   
                   {continueCourse.progress > 0 && continueCourse.progress < 100 ? (
-                    <p className="font-inter text-slate-500 text-sm mt-1">{continueCourse.grade.name} · Module {continueCourse.currentModule} sur {continueCourse.totalModules}</p>
+                    <p className="font-inter text-slate-500 text-sm mt-1">{continueCourse.chapter.title} · Module {continueCourse.currentModule} sur {continueCourse.totalModules}</p>
                   ) : continueCourse.progress >= 100 ? (
                     <p className="font-inter text-emerald-600 text-sm mt-1 font-semibold flex items-center gap-1">✓ Cours terminé</p>
                   ) : (
@@ -305,7 +375,7 @@ export default function CoursesPage() {
                   className="col-span-full py-12 text-center text-slate-500"
                 >
                   <Search size={32} className="mx-auto mb-3 opacity-20" />
-                  <p>Aucun cours ne correspond à "{searchQuery}".</p>
+                  <p>Aucun cours ne correspond à {searchQuery ? `"${searchQuery}"` : "cette sélection"}.</p>
                 </motion.div>
               ) : (
                 filteredCourses.map((lesson) => {
@@ -338,7 +408,7 @@ export default function CoursesPage() {
                       <Link
                         to={lesson.path}
                         onClick={() => handleCourseClick(lesson.id)}
-                        className="group relative bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between h-full overflow-hidden"
+                        className="group relative bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between h-full overflow-hidden"
                       >
                         <div>
                           <div className="flex items-start justify-between gap-3 mb-4">

@@ -40,6 +40,8 @@ export default function ModuleLayout({
   nextLink,
   onNextClick,
   lessonId,
+  chapter,
+  chapterTitle,
 }) {
   const navigate = useNavigate();
 
@@ -63,7 +65,7 @@ export default function ModuleLayout({
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
-      <main className="max-w-4xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+      <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
 
         {/* Navigation Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
@@ -75,7 +77,13 @@ export default function ModuleLayout({
               <Home size={12} aria-hidden="true" /> Accueil
             </Link>
             <span aria-hidden="true">/</span>
-            <Link to="/courses" className="hover:text-blue-600">{breadcrumbLevel}</Link>
+            <Link to={`/courses?level=college&grade=3e`} className="hover:text-blue-600">{breadcrumbLevel}</Link>
+            {chapter && chapterTitle && (
+              <>
+                <span aria-hidden="true">/</span>
+                <Link to={`/courses?level=college&grade=3e&chapter=${chapter}`} className="hover:text-blue-600">{chapterTitle}</Link>
+              </>
+            )}
             <span aria-hidden="true">/</span>
             <Link to={coursePath} className="hover:text-blue-600">{courseTitle}</Link>
             <span aria-hidden="true">/</span>
