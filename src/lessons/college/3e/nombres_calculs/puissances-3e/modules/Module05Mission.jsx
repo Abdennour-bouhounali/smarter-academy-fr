@@ -5,6 +5,8 @@ import KeyTakeaway from '../../../../../common/components/KeyTakeaway';
 import MathText from '../../../../../common/components/MathText';
 import { useProgress } from '../../../../../common/hooks/useProgress';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import { useAdaptiveExercise } from '../../../../../common/hooks/useAdaptiveExercise';
+import ExerciseValidator from '../../../../../common/components/ExerciseValidator';
 
 export default function Module05Mission() {
   const { xp, awardXP, markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
@@ -13,6 +15,36 @@ export default function Module05Mission() {
   const [zoomLevel, setZoomLevel] = useState(2);
   const [discoveredAll, setDiscoveredAll] = useState(false);
   const [visited, setVisited] = useState(new Set([2]));
+  const [answerCoef, setAnswerCoef] = useState('');
+  const [answerExp, setAnswerExp] = useState('');
+
+  const adaptiveState = useAdaptiveExercise({
+    validate: (values) => {
+      const coef = values.coef.replace(',', '.').trim();
+      const exp = values.exp.trim();
+      
+      const isCoefCorrect = coef === '1.27';
+      const isExpCorrect = exp === '7';
+      
+      let feedback = null;
+      if (!isCoefCorrect && !isExpCorrect) {
+        feedback = "Revois les deux parties. Retrouve la Terre dans l'échelle ci-dessus.";
+      } else if (!isCoefCorrect) {
+        feedback = "Le coefficient est incorrect. N'oublie pas la virgule (1,27).";
+      } else if (!isExpCorrect) {
+        feedback = "L'exposant est incorrect. Vérifie l'exposant de la Terre ci-dessus.";
+      }
+      
+      return { isCorrect: isCoefCorrect && isExpCorrect, feedback };
+    },
+    guidanceSteps: [
+      { type: 'hint', content: "Recherche 'La Terre (Diamètre)' dans le Zoom Cosmique." },
+      { type: 'solution', content: "L'écriture scientifique de la Terre est $1,27 \\times 10^7$. Le coefficient est 1,27 et l'exposant est 7." }
+    ],
+    onSuccess: () => {
+      awardXP({ moduleId: 'L05', exerciseId: 'earth-size', amount: 50 });
+    }
+  });
 
   const handleNext = () => markModuleCompleted('L05');
 
@@ -151,10 +183,57 @@ export default function Module05Mission() {
         </div>
 
         {discoveredAll && (
-          <div className="animate-fade-in mt-8">
+          <div className="animate-fade-in mt-12 space-y-8">
             <KeyTakeaway color="amber">
               Mission accomplie ! L'écriture scientifique est indispensable pour les physiciens, les biologistes et les astronomes car elle permet de lire instantanément l'ordre de grandeur d'une mesure, sans avoir à compter les zéros.
             </KeyTakeaway>
+
+            <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 md:p-8 flex flex-col items-center gap-6 shadow-sm">
+              <h3 className="text-xl font-bold text-amber-900">Vérification finale</h3>
+              <p className="text-amber-800 text-center">
+                D'après ton exploration, quelle est l'écriture scientifique du diamètre de la <strong>Terre</strong> ?
+              </p>
+              
+              <ExerciseValidator
+                adaptiveState={adaptiveState}
+                onSubmit={() => adaptiveState.submitAnswer({ coef: answerCoef, exp: answerExp })}
+                disabled={adaptiveState.status === 'correct'}
+              >
+                <div className="flex items-center gap-4 text-2xl font-bold text-slate-700 justify-center">
+                  <input
+                    type="text"
+                    value={answerCoef}
+                    onChange={(e) => {
+                      setAnswerCoef(e.target.value);
+                      if (adaptiveState.status !== 'idle') adaptiveState.reset();
+                    }}
+                    placeholder="1,27"
+                    className={`w-24 text-center rounded-xl border-2 px-3 py-2 focus:outline-none transition-colors ${
+                      adaptiveState.status === 'correct' ? 'bg-emerald-50 border-emerald-500 text-emerald-700' :
+                      adaptiveState.status === 'error' ? 'bg-rose-50 border-rose-400 text-rose-800' :
+                      'bg-white border-amber-300 focus:border-amber-500'
+                    }`}
+                    disabled={adaptiveState.status === 'correct'}
+                  />
+                  <span>× 10</span>
+                  <input
+                    type="text"
+                    value={answerExp}
+                    onChange={(e) => {
+                      setAnswerExp(e.target.value);
+                      if (adaptiveState.status !== 'idle') adaptiveState.reset();
+                    }}
+                    placeholder="7"
+                    className={`w-16 h-12 text-center rounded-xl border-2 px-2 text-xl focus:outline-none transition-colors -mt-8 ${
+                      adaptiveState.status === 'correct' ? 'bg-emerald-50 border-emerald-500 text-emerald-700' :
+                      adaptiveState.status === 'error' ? 'bg-rose-50 border-rose-400 text-rose-800' :
+                      'bg-white border-amber-300 focus:border-amber-500'
+                    }`}
+                    disabled={adaptiveState.status === 'correct'}
+                  />
+                </div>
+              </ExerciseValidator>
+            </div>
           </div>
         )}
 

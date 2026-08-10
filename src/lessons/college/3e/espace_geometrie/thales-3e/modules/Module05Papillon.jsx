@@ -73,8 +73,18 @@ export default function Module05Papillon() {
                 Regardez bien : le côté qui correspond à <strong className="text-sky-600">AB</strong> est <strong className="text-sky-600">AM</strong> (ils sont sur la même droite sécante).
               </p>
               
-              <div className="bg-white p-4 rounded-lg border border-sky-100 font-mono text-center text-lg">
-                <span className="text-blue-600">AM</span> / <span className="text-blue-800">AB</span> = <span className="text-emerald-600">AN</span> / <span className="text-emerald-800">AC</span>
+              <div className="bg-white p-4 rounded-lg border border-sky-100 font-mono text-center text-xl flex items-center justify-center gap-4">
+                <div className="flex flex-col items-center">
+                  <span className="text-blue-600 h-8 font-bold">AM</span>
+                  <div className="w-12 h-0.5 bg-slate-800 my-1"></div>
+                  <span className="text-blue-800 h-8 font-bold">AB</span>
+                </div>
+                <span className="font-bold text-slate-700">=</span>
+                <div className="flex flex-col items-center">
+                  <span className="text-emerald-600 h-8 font-bold">AN</span>
+                  <div className="w-12 h-0.5 bg-slate-800 my-1"></div>
+                  <span className="text-emerald-800 h-8 font-bold">AC</span>
+                </div>
               </div>
               
               <p className="text-xs text-slate-500 mt-4 italic text-center">

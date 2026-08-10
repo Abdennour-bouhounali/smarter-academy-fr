@@ -4,7 +4,6 @@ import SectionHeader from '../../../../../common/components/SectionHeader';
 import KeyTakeaway from '../../../../../common/components/KeyTakeaway';
 import MathText from '../../../../../common/components/MathText';
 import { useProgress } from '../../../../../common/hooks/useProgress';
-import { useAdaptiveExercise } from '../../../../../common/hooks/useAdaptiveExercise';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 export default function Module06Bilan() {
@@ -28,13 +27,12 @@ export default function Module06Bilan() {
   const q3Correct = 1; // "7^2"
 
   // Adaptive logic for Q4
-  const exerciseId = 'bilan-scientifique';
-  const validateQ4 = (answerObj) => {
+  const validateQ4 = (coef, exp) => {
     let isCorrect = true;
     let hint = "";
 
-    const c = answerObj.coef.replace(',', '.');
-    const e = answerObj.exp;
+    const c = coef.replace(',', '.');
+    const e = exp;
 
     if (c !== '3.8') {
       isCorrect = false;
@@ -54,8 +52,6 @@ export default function Module06Bilan() {
     return { isCorrect, hint };
   };
 
-  const q4Adaptive = useAdaptiveExercise(MODULE_CTX.lessonId, exerciseId, validateQ4);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (showResults) return;
@@ -66,11 +62,9 @@ export default function Module06Bilan() {
     if (q3Answer === q3Correct) newScore++;
 
     // Check Q4
-    const resQ4 = validateQ4({ coef: q4Coef, exp: q4Exp });
+    const resQ4 = validateQ4(q4Coef, q4Exp);
     if (resQ4.isCorrect) {
       newScore++;
-    } else {
-      q4Adaptive.submitAnswer({ coef: q4Coef, exp: q4Exp });
     }
 
     setScore(newScore);
@@ -237,13 +231,13 @@ export default function Module06Bilan() {
               />
             </div>
             
-            {showResults && q4Adaptive.feedback?.message && (
+            {showResults && !validateQ4(q4Coef, q4Exp).isCorrect && (
               <div className="text-rose-600 font-medium mt-2 bg-rose-50 p-3 rounded-lg border border-rose-200">
-                ❌ {q4Adaptive.feedback.message}
+                ❌ {validateQ4(q4Coef, q4Exp).hint}
               </div>
             )}
-            {showResults && (!q4Adaptive.feedback || !q4Adaptive.feedback.message) && q4Coef === '3.8' && q4Exp === '-4' && (
-              <div className="text-emerald-600 font-bold mt-2">
+            {showResults && validateQ4(q4Coef, q4Exp).isCorrect && (
+              <div className="text-emerald-700 font-medium mt-2 bg-emerald-50 p-3 rounded-lg border border-emerald-200">
                 ✅ Correct !
               </div>
             )}

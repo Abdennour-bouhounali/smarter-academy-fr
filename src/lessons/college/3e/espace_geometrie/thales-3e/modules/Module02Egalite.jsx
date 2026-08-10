@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ModuleLayout from '../../../../../common/components/ModuleLayout';
 import SectionHeader from '../../../../../common/components/SectionHeader';
 import KeyTakeaway from '../../../../../common/components/KeyTakeaway';
+import MathText from '../../../../../common/components/MathText';
 import { useProgress } from '../../../../../common/hooks/useProgress';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import InteractiveThales from '../components/InteractiveThales';
@@ -32,6 +33,7 @@ export default function Module02Egalite() {
       setErrorMsg("");
       if (step + 1 === correctSequence.length) {
         setSuccess(true);
+        setStep(step + 1);
         awardXP({ moduleId: 'L02', exerciseId: 'build-ratio', amount: 50 });
       } else {
         setStep(step + 1);
@@ -149,13 +151,22 @@ export default function Module02Egalite() {
       </section>
 
       <KeyTakeaway color="indigo">
-        <li>
-          • L'égalité comporte <strong>3 fractions</strong> qui ont toutes la même structure :<br/>
-          <span className="font-mono bg-white px-2 py-1 rounded">Côté du petit triangle / Côté correspondant du grand triangle</span>
-        </li>
-        <li>
-          • On part toujours du sommet commun (ici <strong>A</strong>) pour écrire les deux premières fractions.
-        </li>
+        <ul className="space-y-4 text-lg">
+          <li>
+            <strong className="text-indigo-800">1. Trois fractions égales :</strong> L'égalité comporte toujours 3 rapports (fractions) qui respectent la même logique :
+            <div className="mt-3 flex justify-center text-xl text-indigo-700 bg-white/50 p-4 rounded-xl border border-indigo-100">
+              <MathText>{`$\\frac{\\text{Côté du petit triangle}}{\\text{Côté correspondant du grand triangle}}$`}</MathText>
+            </div>
+          </li>
+          <li>
+            <strong className="text-indigo-800">2. Le point de départ :</strong> Pour les deux premières fractions, on part <strong className="underline decoration-indigo-300 decoration-2">toujours du sommet commun</strong> (ici <strong>A</strong>) !
+            <div className="mt-3 flex justify-center text-lg">
+               <span className="font-mono bg-white px-3 py-2 rounded-lg shadow-sm text-indigo-800 border border-indigo-100">
+                 <strong className="text-indigo-600">A</strong>M / <strong className="text-indigo-600">A</strong>B = <strong className="text-indigo-600">A</strong>N / <strong className="text-indigo-600">A</strong>C
+               </span>
+            </div>
+          </li>
+        </ul>
       </KeyTakeaway>
     </ModuleLayout>
   );

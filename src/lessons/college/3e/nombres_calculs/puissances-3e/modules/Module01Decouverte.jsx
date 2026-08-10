@@ -13,34 +13,32 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 // --- Composant utilitaire pour les mini-exercices adaptatifs ---
 function MiniExercise({ question, questionLatex, expected, placeholder, hints, onCorrect }) {
+  const [value, setValue] = useState('');
+  
   const normalize = (s) => s.toLowerCase().replace(/\\times/g, '*').replace(/x/g, '*').replace(/\\cdot/g, '*').replace(/\s+/g, '');
   
-  const validate = (val) => {
+  const validate = (valObj) => {
+    const val = valObj.value;
     const normVal = normalize(val);
+    
+    let isCorrect = false;
     if (Array.isArray(expected)) {
-      return expected.some(exp => normalize(exp) === normVal);
+      isCorrect = expected.some(exp => normalize(exp) === normVal);
+    } else {
+      isCorrect = normalize(expected) === normVal;
     }
-    return normalize(expected) === normVal;
+
+    let feedback = null;
+    if (!isCorrect) {
+      if (normVal.includes('+')) feedback = "Attention, on utilise la multiplication (×), pas l'addition (+).";
+      else if (normVal.match(/^[0-9]+$/) && !Array.isArray(expected) && expected.includes('^')) feedback = "N'oublie pas d'utiliser le symbole '^' pour écrire la puissance.";
+    }
+
+    return { isCorrect, fields: { global: isCorrect }, feedback };
   };
 
-  const detectError = (val) => {
-    const normVal = normalize(val);
-    if (normVal.includes('+')) return { message: "Attention, on utilise la multiplication (×), pas l'addition (+)." };
-    if (normVal.match(/^[0-9]+$/) && !Array.isArray(expected) && expected.includes('^')) return { message: "N'oublie pas d'utiliser le symbole '^' pour écrire la puissance." };
-    return null;
-  };
-
-  const {
-    status,
-    attempts,
-    currentStepIndex,
-    feedback,
-    value,
-    submitAnswer,
-    requestHint
-  } = useAdaptiveExercise({
+  const adaptiveState = useAdaptiveExercise({
     validate,
-    detectError,
     guidanceSteps: hints,
     onSuccess: onCorrect
   });
@@ -52,32 +50,28 @@ function MiniExercise({ question, questionLatex, expected, placeholder, hints, o
         {questionLatex && <div className="text-xl text-slate-800"><MathText>{questionLatex}</MathText></div>}
       </div>
       
-      <div className="flex items-center gap-3">
-        <MathInput
-          value={value}
-          onChange={(val) => submitAnswer(val)}
-          className={`flex-1 ${
-            status === 'correct' ? 'border-emerald-500 bg-emerald-50 text-emerald-800' :
-            status === 'error' ? 'border-amber-400 focus:border-amber-500' :
-            'border-slate-300 focus:border-blue-500'
-          }`}
-          disabled={status === 'correct'}
-        />
-        {status === 'correct' && <CheckCircle2 className="text-emerald-500 shrink-0" size={28} />}
-      </div>
-      
-      {status === 'error' && (
-        <div className="mt-4">
-          <AdaptiveFeedback
-            status={status}
-            attempts={attempts}
-            feedback={feedback}
-            currentGuidanceStep={currentStepIndex >= 0 ? hints[currentStepIndex] : null}
-            onRequestHint={requestHint}
-            hasMoreHints={currentStepIndex < hints.length - 1}
+      <ExerciseValidator
+        adaptiveState={adaptiveState}
+        onSubmit={() => adaptiveState.submitAnswer({ value })}
+        disabled={adaptiveState.status === 'correct'}
+      >
+        <div className="flex items-center gap-3">
+          <MathInput
+            value={value}
+            onChange={(val) => {
+              setValue(val);
+              if (adaptiveState.status !== 'idle') adaptiveState.reset();
+            }}
+            className={`flex-1 ${
+              adaptiveState.status === 'correct' ? 'border-emerald-500 bg-emerald-50 text-emerald-800' :
+              adaptiveState.status === 'error' ? 'border-amber-400 focus:border-amber-500' :
+              'border-slate-300 focus:border-blue-500'
+            }`}
+            disabled={adaptiveState.status === 'correct'}
           />
+          {adaptiveState.status === 'correct' && <CheckCircle2 className="text-emerald-500 shrink-0" size={28} />}
         </div>
-      )}
+      </ExerciseValidator>
     </div>
   );
 }
@@ -98,25 +92,65 @@ export default function Module01Decouverte() {
   // Étape 3
   const [inputBase, setInputBase] = useState('');
   const [inputExp, setInputExp] = useState('');
-  const isStep3Correct = inputBase.trim() === '7' && inputExp.trim() === repCount.toString();
+  
+  const step3AdaptiveState = useAdaptiveExercise({
+    validate: (values) => {
+      const b = values.base.trim();
+      const e = values.exp.trim();
+      let isCorrect = true;
+      let fields = { base: true, exp: true };
+      let feedback = null;
 
-  useEffect(() => {
-    if (isStep3Correct && step < 4) {
+      if (b !== '7') {
+        isCorrect = false;
+        fields.base = false;
+        feedback = b === repCount.toString() ? "Attention, tu as inversé la base et l'exposant !" : "Regarde bien le nombre qui se répète dans la multiplication.";
+      }
+      if (e !== repCount.toString()) {
+        isCorrect = false;
+        fields.exp = false;
+        if (!feedback) {
+          feedback = e === '7' ? "Attention, tu as inversé la base et l'exposant !" : `Combien de fois le nombre 7 apparaît-il dans la multiplication au-dessus ? Compte-les.`;
+        }
+      }
+
+      return { isCorrect, fields, feedback };
+    },
+    guidanceSteps: [
+      { type: 'hint', content: "La base est le nombre qui se répète. L'exposant est le nombre de fois qu'il se répète." },
+      { type: 'solution', content: `Le nombre qui se répète est 7 (la base). Il y en a ${repCount} (l'exposant). L'écriture est donc $7^{${repCount}}$.` }
+    ],
+    onSuccess: () => {
       awardXP({ moduleId: 'L01', exerciseId: 'decouverte-base-exp', amount: 50 });
-      setTimeout(() => unlockStep(4), 1500); // Wait for animation
+      setTimeout(() => unlockStep(4), 1500);
     }
-  }, [isStep3Correct, step, awardXP]);
+  });
+
+  const isStep3Correct = step3AdaptiveState.status === 'correct';
 
   // Étape 5
   const [reverseCount, setReverseCount] = useState(1);
-  const isReverseCorrect = reverseCount === 4;
-
-  useEffect(() => {
-    if (isReverseCorrect && step === 5) {
+  
+  const step5AdaptiveState = useAdaptiveExercise({
+    validate: (values) => {
+      const count = values.count;
+      let isCorrect = count === 4;
+      let feedback = null;
+      if (!isCorrect) {
+        if (count < 4) feedback = "Regarde bien l'exposant (4). Il faut plus de facteurs 5.";
+        if (count > 4) feedback = "Tu as mis trop de facteurs 5. Regarde bien l'exposant (4).";
+      }
+      return { isCorrect, feedback };
+    },
+    guidanceSteps: [
+      { type: 'hint', content: "L'exposant t'indique le nombre exact de facteurs qu'il faut afficher." },
+      { type: 'solution', content: "Puisque l'exposant est 4, il faut exactement 4 facteurs 5." }
+    ],
+    onSuccess: () => {
       awardXP({ moduleId: 'L01', exerciseId: 'reverse-pow', amount: 30 });
       setTimeout(() => unlockStep(6), 1000);
     }
-  }, [isReverseCorrect, step, awardXP]);
+  });
 
   // Étape 6 - Entraînement
   const [ex1, setEx1] = useState(false);
@@ -230,35 +264,53 @@ export default function Module01Decouverte() {
                   </span>
                 </p>
 
-                <div className="flex items-center gap-4 text-3xl">
-                  <div className="flex flex-col items-center">
-                    <input 
-                      type="text" 
-                      value={inputBase}
-                      onChange={(e) => { setInputBase(e.target.value); if (step < 3) unlockStep(3); }}
-                      className={`w-16 h-16 text-center rounded-xl border-2 font-bold focus:outline-none transition-colors ${
-                        isStep3Correct ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white border-emerald-300 text-emerald-800 focus:border-emerald-500'
-                      }`}
-                      disabled={isStep3Correct}
-                      placeholder="?"
-                    />
-                    <span className="text-xs text-slate-500 mt-2 font-medium">Base</span>
-                  </div>
+                <ExerciseValidator
+                  adaptiveState={step3AdaptiveState}
+                  onSubmit={() => step3AdaptiveState.submitAnswer({ base: inputBase, exp: inputExp })}
+                  disabled={isStep3Correct}
+                >
+                  <div className="flex items-center gap-4 text-3xl">
+                    <div className="flex flex-col items-center">
+                      <input 
+                        type="text" 
+                        value={inputBase}
+                        onChange={(e) => { 
+                          setInputBase(e.target.value); 
+                          if (step < 3) unlockStep(3);
+                          if (step3AdaptiveState.status !== 'idle') step3AdaptiveState.reset();
+                        }}
+                        className={`w-16 h-16 text-center rounded-xl border-2 font-bold focus:outline-none transition-colors ${
+                          step3AdaptiveState.fieldStatuses?.base === true ? 'bg-emerald-600 text-white border-emerald-600' : 
+                          step3AdaptiveState.fieldStatuses?.base === false ? 'bg-rose-50 border-rose-400 text-rose-800' :
+                          'bg-white border-emerald-300 text-emerald-800 focus:border-emerald-500'
+                        }`}
+                        disabled={isStep3Correct || step3AdaptiveState.status === 'solution_viewed'}
+                        placeholder="?"
+                      />
+                      <span className="text-xs text-slate-500 mt-2 font-medium">Base</span>
+                    </div>
 
-                  <div className="flex flex-col items-center -mt-8">
-                    <input 
-                      type="text" 
-                      value={inputExp}
-                      onChange={(e) => { setInputExp(e.target.value); if (step < 3) unlockStep(3); }}
-                      className={`w-12 h-12 text-center rounded-xl border-2 font-bold text-xl focus:outline-none transition-colors ${
-                        isStep3Correct ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white border-emerald-300 text-emerald-800 focus:border-emerald-500'
-                      }`}
-                      disabled={isStep3Correct}
-                      placeholder="?"
-                    />
-                    <span className="text-xs text-slate-500 mt-1 font-medium">Exposant</span>
+                    <div className="flex flex-col items-center -mt-8">
+                      <input 
+                        type="text" 
+                        value={inputExp}
+                        onChange={(e) => { 
+                          setInputExp(e.target.value); 
+                          if (step < 3) unlockStep(3);
+                          if (step3AdaptiveState.status !== 'idle') step3AdaptiveState.reset();
+                        }}
+                        className={`w-12 h-12 text-center rounded-xl border-2 font-bold text-xl focus:outline-none transition-colors ${
+                          step3AdaptiveState.fieldStatuses?.exp === true ? 'bg-emerald-600 text-white border-emerald-600' : 
+                          step3AdaptiveState.fieldStatuses?.exp === false ? 'bg-rose-50 border-rose-400 text-rose-800' :
+                          'bg-white border-emerald-300 text-emerald-800 focus:border-emerald-500'
+                        }`}
+                        disabled={isStep3Correct || step3AdaptiveState.status === 'solution_viewed'}
+                        placeholder="?"
+                      />
+                      <span className="text-xs text-slate-500 mt-1 font-medium">Exposant</span>
+                    </div>
                   </div>
-                </div>
+                </ExerciseValidator>
 
                 {isStep3Correct && (
                   <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mt-4">
@@ -300,52 +352,63 @@ export default function Module01Decouverte() {
 
             <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 md:p-8 flex flex-col items-center gap-8 min-h-[250px]">
               
-              <div className="flex gap-4">
-                <button 
-                  onClick={() => setReverseCount(Math.max(1, reverseCount - 1))}
-                  className="w-12 h-12 bg-white border-2 border-slate-200 rounded-full text-slate-600 font-bold text-2xl hover:bg-slate-50 flex items-center justify-center shadow-sm disabled:opacity-50"
-                  disabled={reverseCount <= 1 || isReverseCorrect}
-                >
-                  −
-                </button>
-                <div className="px-6 py-3 bg-white border border-slate-200 rounded-xl font-medium text-slate-700 min-w-[120px] text-center shadow-sm">
-                  {reverseCount} facteur{reverseCount > 1 ? 's' : ''}
-                </div>
-                <button 
-                  onClick={() => setReverseCount(Math.min(10, reverseCount + 1))}
-                  className="w-12 h-12 bg-blue-600 border-2 border-blue-700 rounded-full text-white font-bold text-2xl hover:bg-blue-700 flex items-center justify-center shadow-sm disabled:opacity-50"
-                  disabled={reverseCount >= 10 || isReverseCorrect}
-                >
-                  +
-                </button>
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-2 items-center">
-                <AnimatePresence>
-                  {Array(reverseCount).fill(5).map((_, i) => (
-                    <motion.div
-                      key={`rev-${i}`}
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0, opacity: 0 }}
-                      className="flex items-center gap-2"
-                    >
-                      <div className={`border-2 font-bold text-2xl w-12 h-12 flex items-center justify-center rounded-xl shadow-sm transition-colors ${isReverseCorrect ? 'bg-blue-600 border-blue-700 text-white' : 'bg-white border-blue-300 text-blue-700'}`}>
-                        5
-                      </div>
-                      {i < reverseCount - 1 && (
-                        <span className={`font-bold text-xl ${isReverseCorrect ? 'text-blue-600' : 'text-blue-400'}`}>×</span>
-                      )}
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
-
-              {isReverseCorrect && (
-                <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mt-2 text-center space-y-4">
-                  <div className="text-emerald-600 font-bold text-xl flex items-center gap-2 justify-center">
-                    <CheckCircle2 size={24} /> Bravo ! C'est exactement ça.
+              <ExerciseValidator
+                adaptiveState={step5AdaptiveState}
+                onSubmit={() => step5AdaptiveState.submitAnswer({ count: reverseCount })}
+                disabled={step5AdaptiveState.status === 'correct'}
+              >
+                <div className="flex gap-4 justify-center">
+                  <button 
+                    onClick={() => {
+                      setReverseCount(Math.max(1, reverseCount - 1));
+                      if (step5AdaptiveState.status !== 'idle') step5AdaptiveState.reset();
+                    }}
+                    type="button"
+                    className="w-12 h-12 bg-white border-2 border-slate-200 rounded-full text-slate-600 font-bold text-2xl hover:bg-slate-50 flex items-center justify-center shadow-sm disabled:opacity-50"
+                    disabled={reverseCount <= 1 || step5AdaptiveState.status === 'correct'}
+                  >
+                    −
+                  </button>
+                  <div className="px-6 py-3 bg-white border border-slate-200 rounded-xl font-medium text-slate-700 min-w-[120px] text-center shadow-sm">
+                    {reverseCount} facteur{reverseCount > 1 ? 's' : ''}
                   </div>
+                  <button 
+                    onClick={() => {
+                      setReverseCount(Math.min(10, reverseCount + 1));
+                      if (step5AdaptiveState.status !== 'idle') step5AdaptiveState.reset();
+                    }}
+                    type="button"
+                    className="w-12 h-12 bg-blue-600 border-2 border-blue-700 rounded-full text-white font-bold text-2xl hover:bg-blue-700 flex items-center justify-center shadow-sm disabled:opacity-50"
+                    disabled={reverseCount >= 10 || step5AdaptiveState.status === 'correct'}
+                  >
+                    +
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-2 items-center min-h-[60px] mt-6">
+                  <AnimatePresence>
+                    {Array(reverseCount).fill(5).map((_, i) => (
+                      <motion.div
+                        key={`rev-${i}`}
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0, opacity: 0 }}
+                        className="flex items-center gap-2"
+                      >
+                        <div className={`border-2 font-bold text-2xl w-12 h-12 flex items-center justify-center rounded-xl shadow-sm transition-colors ${step5AdaptiveState.status === 'correct' ? 'bg-blue-600 border-blue-700 text-white' : 'bg-white border-blue-300 text-blue-700'}`}>
+                          5
+                        </div>
+                        {i < reverseCount - 1 && (
+                          <span className={`font-bold text-xl ${step5AdaptiveState.status === 'correct' ? 'text-blue-600' : 'text-blue-400'}`}>×</span>
+                        )}
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                </div>
+              </ExerciseValidator>
+
+              {step5AdaptiveState.status === 'correct' && (
+                <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mt-2 text-center space-y-4">
                   <KeyTakeaway color="blue">
                     L'exposant <strong>4</strong> indique bien que le nombre <strong>5</strong> apparaît <strong>4 fois</strong> dans la multiplication.
                   </KeyTakeaway>

@@ -4,6 +4,16 @@ import SectionHeader from '../../../../../common/components/SectionHeader';
 import { useProgress } from '../../../../../common/hooks/useProgress';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import clsx from 'clsx';
+import MathInput from '../../../../../common/components/MathInput';
+import ExerciseValidator from '../../../../../common/components/ExerciseValidator';
+import { useAdaptiveExercise } from '../../../../../common/hooks/useAdaptiveExercise';
+import { ComputeEngine } from '@cortex-js/compute-engine';
+
+const ce = new ComputeEngine();
+
+function gcd(a, b) {
+  return b === 0 ? a : gcd(b, a % b);
+}
 
 export default function Module06Mission() {
   const { xp, awardXP, markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
@@ -26,20 +36,71 @@ export default function Module06Mission() {
   
   const targetH = 146;
   const [userH, setUserH] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  
+  const L_rounded = Math.round(L);
+  const l_rounded = Number(l.toFixed(1));
+  const exactHValue = (2 * L_rounded) / l_rounded;
+  
+  const adaptiveState = useAdaptiveExercise({
+    validate: (values) => {
+      let isCorrect = false;
+      let feedback = null;
+      
+      const latex = values.h || "";
+      let numericValue = null;
+      try {
+        numericValue = ce.parse(latex).N().value;
+      } catch (e) {
+        return { isCorrect: false, feedback: "Expression invalide." };
+      }
 
-  const handleVerify = () => {
-    if (success) return;
-    
-    if (parseInt(userH) === targetH) {
-      setSuccess(true);
-      setErrorMsg("");
+      if (Math.abs(numericValue - exactHValue) > 0.001) {
+        return { 
+          isCorrect: false, 
+          feedback: `Ce n'est pas ça. Revoyez votre calcul avec l = ${l_rounded} m et L = ${L_rounded} m. N'oubliez pas le produit en croix.` 
+        };
+      }
+
+      // Numerically correct! Now check if it is a simplified fraction.
+      const cleanLatex = latex.replace(/\s+/g, '');
+      const fracMatch = cleanLatex.match(/^\\frac{([0-9]+)}{([0-9]+)}$/);
+      const intMatch = cleanLatex.match(/^[0-9]+$/);
+      const decimalMatch = cleanLatex.match(/^[0-9]+[.,][0-9]+$/);
+      
+      if (intMatch) {
+        // Correct and it's an integer. (e.g. if the result happens to be exactly 146)
+        return { isCorrect: true, feedback: null };
+      }
+      
+      if (fracMatch) {
+        const num = parseInt(fracMatch[1]);
+        const den = parseInt(fracMatch[2]);
+        if (gcd(num, den) === 1) {
+          return { isCorrect: true, feedback: null };
+        } else {
+          return { 
+            isCorrect: false, 
+            feedback: "C'est la bonne valeur, mais la fraction n'est pas irréductible. Simplifiez-la au maximum !" 
+          };
+        }
+      }
+      
+      // If it's a decimal or unformatted
+      return { 
+        isCorrect: false, 
+        feedback: "C'est la bonne valeur, mais vous devez écrire la réponse sous forme de fraction irréductible." 
+      };
+    },
+    guidanceSteps: [
+      { type: 'hint', content: `Utilisez l'égalité : 2 / H = ${l_rounded} / ${L_rounded}.` },
+      { type: 'hint', content: `Le produit en croix donne : H = (2 × ${L_rounded}) / ${l_rounded}.` },
+      { type: 'hint', content: "Écrivez le résultat de la division sous forme de fraction, puis simplifiez-la en divisant le numérateur et le dénominateur par un diviseur commun." },
+      { type: 'solution', content: `H = (2 × ${L_rounded}) / ${l_rounded} m.` } // We keep it generic as solution might depend on the slider.
+    ],
+    onSuccess: () => {
       awardXP({ moduleId: 'L06', exerciseId: 'kheops', amount: 200 });
-    } else {
-      setErrorMsg(`Ce n'est pas ça. Revoyez votre calcul avec l = ${l.toFixed(1)} m.`);
     }
-  };
+  });
 
   return (
     <ModuleLayout
@@ -149,7 +210,10 @@ export default function Module06Mission() {
                 <input 
                   type="range" min="0.5" max="2.5" step="0.1" 
                   value={shadowFactor} 
-                  onChange={(e) => {setShadowFactor(Number(e.target.value)); setSuccess(false);}}
+                  onChange={(e) => {
+                    setShadowFactor(Number(e.target.value)); 
+                    if (adaptiveState.status !== 'idle') adaptiveState.reset();
+                  }}
                   className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
                 <p className="text-xs text-slate-500 mt-2 text-center italic">Observez le parallélisme parfait des rayons solaires (lignes pointillées).</p>
@@ -170,58 +234,55 @@ export default function Module06Mission() {
                   <div className="flex items-center justify-center gap-4 text-lg">
                     <div className="flex flex-col items-center">
                       <span>h (bâton)</span>
-                      <div className="w-20 h-px bg-slate-400 my-1"></div>
+                      <div className="w-24 h-px bg-slate-400 my-1"></div>
                       <span>H (pyramide)</span>
                     </div>
                     <span>=</span>
                     <div className="flex flex-col items-center">
-                      <span>ombre bâton</span>
-                      <div className="w-24 h-px bg-slate-400 my-1"></div>
-                      <span>ombre pyramide</span>
+                      <span>l (ombre bâton)</span>
+                      <div className="w-40 h-px bg-slate-400 my-1"></div>
+                      <span>L (ombre pyramide)</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="bg-blue-50 p-4 rounded-xl border border-blue-200 text-sm">
                   <p><strong>Bâton (h)</strong> = 2 m</p>
-                  <p><strong>Ombre du bâton (l)</strong> = {l.toFixed(1)} m</p>
-                  <p><strong>Ombre de la pyramide (L)</strong> = {Math.round(L)} m</p>
+                  <p><strong>Ombre du bâton (l)</strong> = {l_rounded} m</p>
+                  <p><strong>Ombre de la pyramide (L)</strong> = {L_rounded} m</p>
                 </div>
               </div>
 
               <div className="mt-8 space-y-4">
-                <h3 className="font-bold text-slate-800">Calculez la hauteur H de la pyramide :</h3>
-                <div className="flex gap-2">
-                  <input 
-                    type="number" 
-                    value={userH}
-                    onChange={(e) => setUserH(e.target.value)}
-                    placeholder="Hauteur en m"
-                    className="flex-1 bg-white border border-slate-300 rounded-lg px-4 py-2 font-mono focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none"
-                    disabled={success}
-                  />
-                  <button 
-                    onClick={handleVerify}
-                    disabled={success || !userH}
-                    className={clsx(
-                      "px-6 py-2 rounded-lg font-bold transition-colors",
-                      success ? "bg-emerald-500 text-white" : "bg-amber-600 hover:bg-amber-700 text-white disabled:opacity-50"
-                    )}
-                  >
-                    Vérifier
-                  </button>
-                </div>
+                <h3 className="font-bold text-slate-800">Calculez la hauteur exacte H de la pyramide :</h3>
+                <p className="text-sm text-slate-600"><em>(Votre réponse doit être écrite sous la forme d'une <strong>fraction irréductible</strong> la plus simple possible)</em></p>
                 
-                {errorMsg && (
-                  <p className="text-red-600 text-sm font-bold bg-red-50 p-2 rounded">{errorMsg}</p>
-                )}
+                <ExerciseValidator
+                  adaptiveState={adaptiveState}
+                  onSubmit={() => adaptiveState.submitAnswer({ h: userH })}
+                  disabled={adaptiveState.status === 'correct'}
+                >
+                  <div className="flex gap-2">
+                    <div className="flex-1">
+                      <MathInput 
+                        value={userH}
+                        onChange={(val) => {
+                          setUserH(val);
+                          if (adaptiveState.status !== 'idle') adaptiveState.reset();
+                        }}
+                        disabled={adaptiveState.status === 'correct'}
+                        className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 font-mono focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none"
+                      />
+                    </div>
+                  </div>
+                </ExerciseValidator>
                 
-                {success && (
-                  <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-xl shadow-sm">
+                {adaptiveState.status === 'correct' && (
+                  <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-xl shadow-sm animate-fade-in mt-4">
                     🎉 <strong>Mission accomplie ! (+200 XP)</strong><br/><br/>
-                    Grâce au théorème de Thalès, la pyramide mesure exactement <strong>146 mètres</strong> de haut !
+                    Grâce au théorème de Thalès, nous avons pu calculer la hauteur avec la configuration actuelle ! 
                     <br/><br/>
-                    <span className="text-sm"><em>Fait historique : Thalès a attendu que l'ombre de son bâton soit parfaitement égale à sa taille (h = l) pour que l'ombre de la pyramide soit égale à sa hauteur (H = L), simplifiant ainsi son calcul ! Mais avec le produit en croix, vous pouvez calculer la hauteur à n'importe quelle heure de la journée.</em></span>
+                    <span className="text-sm"><em>Fait historique : Thalès a en réalité attendu que l'ombre de son bâton soit parfaitement égale à sa taille (h = l) pour que l'ombre de la pyramide soit égale à sa hauteur (H = L), simplifiant ainsi son calcul pour trouver environ 146 mètres ! Mais avec le produit en croix, vous pouvez calculer la hauteur exacte à n'importe quelle heure de la journée sous forme de fraction.</em></span>
                   </div>
                 )}
               </div>

@@ -4,6 +4,8 @@ import SectionHeader from '../../../../../common/components/SectionHeader';
 import KeyTakeaway from '../../../../../common/components/KeyTakeaway';
 import MathText from '../../../../../common/components/MathText';
 import { useProgress } from '../../../../../common/hooks/useProgress';
+import { useAdaptiveExercise } from '../../../../../common/hooks/useAdaptiveExercise';
+import ExerciseValidator from '../../../../../common/components/ExerciseValidator';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 export default function Module02Puissances10() {
@@ -11,7 +13,27 @@ export default function Module02Puissances10() {
   const { prevLink, nextLink } = getNavLinks(2);
 
   const [exponent, setExponent] = useState(0);
-  const [interacted, setInteracted] = useState(false);
+  
+  const adaptiveState = useAdaptiveExercise({
+    validate: (values) => {
+      const exp = values.exp;
+      const isCorrect = exp === 4;
+      let feedback = null;
+      if (!isCorrect) {
+        if (exp > 4) feedback = "Tu as trop décalé la virgule. Reviens un peu en arrière.";
+        else if (exp > 0) feedback = "Tu es dans la bonne direction, continue vers la droite !";
+        else feedback = "Attention, un exposant négatif décale vers la gauche. On veut agrandir le nombre.";
+      }
+      return { isCorrect, feedback };
+    },
+    guidanceSteps: [
+      { type: 'hint', content: "Pour passer de 3,45 à 34 500, la virgule doit se décaler de 4 rangs vers la droite." },
+      { type: 'solution', content: "Il faut choisir l'exposant 4 pour décaler de 4 rangs vers la droite." }
+    ],
+    onSuccess: () => {
+      awardXP({ moduleId: 'L02', exerciseId: 'shift-comma', amount: 50 });
+    }
+  });
 
   const handleNext = () => markModuleCompleted('L02');
 
@@ -39,10 +61,7 @@ export default function Module02Puissances10() {
 
   const handleSliderChange = (e) => {
     setExponent(Number(e.target.value));
-    if (!interacted) {
-      setInteracted(true);
-      awardXP({ moduleId: 'L02', exerciseId: 'shift-comma', amount: 50 });
-    }
+    if (adaptiveState.status !== 'idle') adaptiveState.reset();
   };
 
   // Helper text to explain the shift
@@ -75,8 +94,8 @@ export default function Module02Puissances10() {
         <SectionHeader number={1} title="Le Décalage de la Virgule" color="indigo" />
 
         <p className="text-slate-700 leading-relaxed text-lg mb-6">
-          Multiplier un nombre par une puissance de 10 revient simplement à déplacer sa virgule. 
-          Déplacez le curseur de l'exposant pour voir comment la virgule réagit !
+          <strong>Défi :</strong> Multiplier un nombre par une puissance de 10 revient simplement à déplacer sa virgule. 
+          Déplace le curseur de l'exposant pour trouver l'écriture correspondante à <strong>34 500</strong>.
         </p>
 
         <div className="bg-indigo-50 rounded-2xl p-6 md:p-10 border border-indigo-100 flex flex-col items-center justify-center gap-8">
@@ -97,23 +116,29 @@ export default function Module02Puissances10() {
           </p>
 
           {/* Slider */}
-          <div className="w-full max-w-lg space-y-4 mt-4">
-            <div className="flex justify-between text-sm font-bold text-slate-500">
-              <span><MathText>{`$10^{-4}$`}</MathText> (dix-millièmes)</span>
-              <span><MathText>{`$10^{0}$`}</MathText> (unité)</span>
-              <span><MathText>{`$10^{4}$`}</MathText> (dizaines de milliers)</span>
+          <ExerciseValidator
+            adaptiveState={adaptiveState}
+            onSubmit={() => adaptiveState.submitAnswer({ exp: exponent })}
+            disabled={adaptiveState.status === 'correct'}
+          >
+            <div className="w-full max-w-lg space-y-4 mt-4">
+              <div className="flex justify-between text-sm font-bold text-slate-500">
+                <span><MathText>{`$10^{-4}$`}</MathText> (dix-millièmes)</span>
+                <span><MathText>{`$10^{0}$`}</MathText> (unité)</span>
+                <span><MathText>{`$10^{4}$`}</MathText> (dizaines de milliers)</span>
+              </div>
+              <input 
+                type="range" min="-4" max="4" step="1" 
+                value={exponent} 
+                onChange={handleSliderChange}
+                disabled={adaptiveState.status === 'correct'}
+                className="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+              />
             </div>
-            <input 
-              type="range" min="-4" max="4" step="1" 
-              value={exponent} 
-              onChange={handleSliderChange}
-              className="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
-            />
-          </div>
-
+          </ExerciseValidator>
         </div>
 
-        {interacted && (
+        {adaptiveState.status === 'correct' && (
           <div className="animate-fade-in space-y-4">
             <KeyTakeaway color="indigo">
               Multiplier par <MathText>{'$10^n$'}</MathText> avec <MathText>{'$n > 0$'}</MathText> décale la virgule vers la <strong>droite</strong>. C'est équivalent à multiplier par 10, 100, 1000...<br/><br/>

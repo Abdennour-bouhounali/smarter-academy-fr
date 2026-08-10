@@ -1,90 +1,91 @@
 import { useState, useCallback } from 'react';
 
 /**
- * useAdaptiveExercise - A hook for managing progressive guidance and error feedback.
+ * useAdaptiveExercise - A hook for managing progressive guidance, specific error feedback, and multiple field validation.
  * 
  * @param {Object} config
- * @param {Function} config.validate - (value) => boolean, returns true if the answer is completely correct.
- * @param {Function} [config.detectError] - (value) => { message: string } | null, returns a specific error message if a known error is detected.
- * @param {Array} config.guidanceSteps - Array of step objects: { level, type, content }. 
- *                                       Types can be 'encouragement', 'hint', 'guided', 'partial', 'solution'.
- * @param {Function} [config.onSuccess] - Callback when the answer is validated as correct.
+ * @param {Function} config.validate - (values) => { isCorrect: boolean, fields?: { [key]: boolean }, feedback?: string }
+ * @param {Array} config.guidanceSteps - Array of step objects: { type: 'hint' | 'solution', content: ReactNode }.
+ * @param {Function} [config.onSuccess] - Callback when the answer is completely correct.
  */
-export function useAdaptiveExercise({ validate, detectError, guidanceSteps, onSuccess }) {
-  const [status, setStatus] = useState('idle'); // 'idle', 'error', 'correct'
+export function useAdaptiveExercise({ validate, guidanceSteps = [], onSuccess }) {
+  const [status, setStatus] = useState('idle'); // 'idle' | 'incorrect' | 'correct' | 'solution_viewed'
   const [attempts, setAttempts] = useState(0);
-  const [currentStepIndex, setCurrentStepIndex] = useState(-1);
-  const [feedback, setFeedback] = useState(null); // specific error feedback or generic
-  const [value, setValue] = useState('');
+  const [hintLevel, setHintLevel] = useState(0); // 0 means no generic hint shown yet
+  const [fieldStatuses, setFieldStatuses] = useState({}); // { fieldName: boolean (true=correct, false=incorrect) }
+  const [specificFeedback, setSpecificFeedback] = useState(null); // specific error message if any
 
-  const submitAnswer = useCallback((val) => {
-    setValue(val);
-    if (validate(val)) {
+  const submitAnswer = useCallback((values) => {
+    const result = validate(values);
+    
+    if (result.fields) {
+      setFieldStatuses(prev => ({
+        ...prev,
+        ...result.fields
+      }));
+    } else {
+      // If no fields object provided, assume single global field
+      setFieldStatuses({ global: result.isCorrect });
+    }
+
+    if (result.isCorrect) {
       setStatus('correct');
-      setFeedback(null);
+      setSpecificFeedback(null);
       if (onSuccess) onSuccess();
       return true;
     }
 
     // Incorrect answer
-    setStatus('error');
-    setAttempts((prev) => prev + 1);
+    setStatus('incorrect');
+    setAttempts(prev => prev + 1);
 
-    // Check for specific detectable errors
-    if (detectError) {
-      const specificError = detectError(val);
-      if (specificError) {
-        setFeedback(specificError.message);
-        return false;
+    if (result.feedback) {
+      setSpecificFeedback(result.feedback);
+    } else {
+      setSpecificFeedback(null);
+      // Auto-advance hint if there is no specific feedback and we are at level 0
+      if (hintLevel === 0 && guidanceSteps.length > 0) {
+        setHintLevel(1);
       }
     }
 
-    // If no specific error, we clear specific feedback so the UI shows the current generic hint or encouragement
-    setFeedback(null);
-    
-    // Automatically advance the hint level if we don't have a specific error,
-    // or just let them use the "Besoin d'aide" button.
-    // According to the prompt: "Pour les plus jeunes, le premier indice peut apparaître automatiquement".
-    if (currentStepIndex === -1 && guidanceSteps && guidanceSteps.length > 0) {
-      setCurrentStepIndex(0);
-    }
-    
     return false;
-  }, [validate, detectError, onSuccess, guidanceSteps, currentStepIndex]);
+  }, [validate, onSuccess, hintLevel, guidanceSteps.length]);
 
   const requestHint = useCallback(() => {
-    if (guidanceSteps && currentStepIndex < guidanceSteps.length - 1) {
-      setCurrentStepIndex((prev) => prev + 1);
+    if (hintLevel < guidanceSteps.length) {
+      setHintLevel(prev => prev + 1);
     }
-  }, [guidanceSteps, currentStepIndex]);
+  }, [hintLevel, guidanceSteps.length]);
+
+  const viewSolution = useCallback(() => {
+    setStatus('solution_viewed');
+    setHintLevel(guidanceSteps.length); // Assuming last step is solution
+  }, [guidanceSteps.length]);
 
   const reset = useCallback(() => {
     setStatus('idle');
     setAttempts(0);
-    setCurrentStepIndex(-1);
-    setFeedback(null);
-    setValue('');
+    setHintLevel(0);
+    setFieldStatuses({});
+    setSpecificFeedback(null);
   }, []);
 
-  const getCurrentGuidance = () => {
-    if (currentStepIndex >= 0 && guidanceSteps && currentStepIndex < guidanceSteps.length) {
-      return guidanceSteps[currentStepIndex];
-    }
-    return null;
-  };
+  const currentGuidance = hintLevel > 0 && hintLevel <= guidanceSteps.length 
+    ? guidanceSteps[hintLevel - 1] 
+    : null;
 
   return {
-    value,
-    setValue,
     status,
     attempts,
-    currentStepIndex,
-    feedback, // specific error message
-    currentGuidance: getCurrentGuidance(), // the current progressive hint
+    fieldStatuses,
+    specificFeedback,
+    currentGuidance,
+    hasMoreHints: hintLevel < guidanceSteps.length && guidanceSteps[hintLevel]?.type !== 'solution',
+    canViewSolution: guidanceSteps.length > 0 && status === 'incorrect' && hintLevel > 0 && guidanceSteps[guidanceSteps.length - 1].type === 'solution' && status !== 'solution_viewed',
     submitAnswer,
     requestHint,
+    viewSolution,
     reset,
-    hasMoreHints: guidanceSteps ? currentStepIndex < guidanceSteps.length - 1 : false,
-    isSolutionRevealed: getCurrentGuidance()?.type === 'solution'
   };
 }
