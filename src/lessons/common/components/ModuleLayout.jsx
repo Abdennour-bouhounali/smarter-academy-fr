@@ -47,21 +47,22 @@ export default function ModuleLayout({
 
   const progressPct = Math.round((moduleNumber / totalModules) * 100);
 
-  const handleNextClick = (e) => {
-    e.preventDefault();
-    if (onNextClick) onNextClick();
-    if (nextLink) navigate(nextLink);
-  };
-
-  const breadcrumbLevel = gradeLabel ? `${levelLabel} (${gradeLabel})` : levelLabel;
-
-  const { markModuleVisited } = useProgress(lessonId || 'unknown');
+  const { markModuleVisited, markModuleCompleted } = useProgress(lessonId || 'unknown');
   
   useEffect(() => {
     if (lessonId && moduleNumber) {
       markModuleVisited(moduleNumber);
     }
   }, [lessonId, moduleNumber, markModuleVisited]);
+
+  const handleNextClick = (e) => {
+    e.preventDefault();
+    if (onNextClick) onNextClick();
+    if (nextLink) navigate(nextLink);
+  };
+
+  const breadcrumbLevel = `${levelLabel} ${gradeLabel || ''}`.trim();
+  const gradeId = gradeLabel ? gradeLabel.replace('ème', 'e') : '3e';
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
@@ -77,11 +78,11 @@ export default function ModuleLayout({
               <Home size={12} aria-hidden="true" /> Accueil
             </Link>
             <span aria-hidden="true">/</span>
-            <Link to={`/courses?level=college&grade=3e`} className="hover:text-blue-600">{breadcrumbLevel}</Link>
+            <Link to={`/courses?level=${levelLabel.toLowerCase()}&grade=${gradeId}`} className="hover:text-blue-600">{breadcrumbLevel}</Link>
             {chapter && chapterTitle && (
               <>
                 <span aria-hidden="true">/</span>
-                <Link to={`/courses?level=college&grade=3e&chapter=${chapter}`} className="hover:text-blue-600">{chapterTitle}</Link>
+                <Link to={`/courses?level=${levelLabel.toLowerCase()}&grade=${gradeId}&chapter=${chapter}`} className="hover:text-blue-600">{chapterTitle}</Link>
               </>
             )}
             <span aria-hidden="true">/</span>
@@ -151,6 +152,11 @@ export default function ModuleLayout({
           {moduleNumber === totalModules ? (
             <Link
               to={coursePath}
+              onClick={() => {
+                if (lessonId && moduleNumber) {
+                  markModuleCompleted(moduleNumber.toString());
+                }
+              }}
               className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-mono text-xs font-bold shadow-md transition-all focus-visible:ring-2 focus-visible:ring-emerald-400 focus:outline-none ${
                 !nextLink && typeof nextLink !== 'undefined' && moduleNumber !== totalModules 
                 ? 'bg-slate-300 text-slate-500 cursor-not-allowed' 

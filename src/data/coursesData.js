@@ -3,6 +3,19 @@ import officialProgram from '../../smarter_academy_programmes_maths_2026.json';
 // --- Métadonnées Smarter Academy ---
 // Ces données enrichissent les objets officiels sans en modifier la liste ou la structure.
 const smaMetadata = {
+  '6e_nombres_entiers': {
+    id: 'nombres-entiers',
+    description: "Comprendre et manipuler les grands nombres, utiliser les classes (unités, milliers, millions, milliards) et les comparer.",
+    prerequisites: ["Numération décimale", "Lecture et écriture des nombres"],
+    pointsToLearn: ["Décomposer et recomposer les nombres entiers", "Comparer et ranger", "Repérer sur une demi-droite graduée", "Résoudre des problèmes"],
+    duration: '45 min',
+    difficulty: 'Facile',
+    status: 'available',
+    icon: '🔢',
+    isNew: true,
+    totalModules: 5,
+    path: '/courses/college/6e/nombres_calculs/nombres-entiers'
+  },
   '3e_nombres_rationnels': {
     id: 'nombres-rationnels',
     description: "Maîtriser les calculs sur les nombres rationnels et les fractions dans des expressions et des problèmes, en mobilisant simplification, comparaison et opérations.",

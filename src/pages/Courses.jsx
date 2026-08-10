@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Clock, Lock, Play, Search, ArrowRight, BookOpen } from 'lucide-react';
 import { courseLevels } from '../data/coursesData';
+import { getResumeLesson } from '../lessons/common/utils/progress/getResumeLesson';
 
 export default function CoursesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -113,53 +114,7 @@ export default function CoursesPage() {
 
   // "Continuer" logic
   const continueCourse = useMemo(() => {
-    const lastCourseId = localStorage.getItem('smarter_last_course');
-    if (!lastCourseId) return null;
-    
-    let foundCourse = null, foundLevel = null, foundGrade = null, foundChapter = null;
-    
-    for (const lvl of courseLevels) {
-      for (const gr of lvl.grades) {
-        for (const ch of gr.chapters) {
-          const c = ch.lessons.find(l => l.id === lastCourseId);
-          if (c) {
-            foundCourse = c; foundLevel = lvl; foundGrade = gr; foundChapter = ch;
-            break;
-          }
-        }
-        if (foundCourse) break;
-      }
-      if (foundCourse) break;
-    }
-    
-    if (!foundCourse || foundCourse.status !== 'available') return null;
-    
-    let progressObj = null;
-    try {
-       const saved = localStorage.getItem(`smarter_lesson_${foundCourse.id}`);
-       if (saved) progressObj = JSON.parse(saved);
-    } catch {}
-    
-    let progressPercent = 0;
-    let currentModule = 1;
-    const totalCount = foundCourse.totalLessons || foundCourse.totalModules || 7;
-    if (progressObj) {
-       if (progressObj.completedModules && totalCount) {
-           progressPercent = Math.round((progressObj.completedModules.length / totalCount) * 100);
-           if (progressPercent > 100) progressPercent = 100;
-       }
-       if (progressObj.currentModule) currentModule = progressObj.currentModule;
-    }
-    
-    return {
-      course: foundCourse,
-      level: foundLevel,
-      grade: foundGrade,
-      chapter: foundChapter,
-      progress: progressPercent,
-      currentModule,
-      totalModules: totalCount
-    };
+    return getResumeLesson(courseLevels);
   }, [lastFocus]);
 
   // Chapter Stats
@@ -318,14 +273,14 @@ export default function CoursesPage() {
           </section>
         )}
 
-        {/* CONTINUER (Optional - only shows if last course exists, is in current grade, and no search is active) */}
-        {continueCourse && continueCourse.grade.id === effectiveGradeId && !searchQuery && (
+        {/* CONTINUER (Optional - only shows if we have a lesson to resume and no search is active) */}
+        {continueCourse && !searchQuery && (
           <section className="mb-8">
             <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4 flex items-center gap-2">
-              <Play size={14} /> {continueCourse.progress >= 100 ? 'Revoir' : 'Reprendre'}
+              <Play size={14} /> Reprendre
             </h3>
             <Link
-              to={continueCourse.progress >= 100 ? continueCourse.course.path : `${continueCourse.course.path}/${continueCourse.currentModule}`}
+              to={`${continueCourse.course.path}/${continueCourse.resumeModule}`}
               className="group block bg-white rounded-2xl border-2 border-blue-200 p-5 shadow-sm hover:shadow-md hover:border-blue-400 transition-all max-w-2xl"
             >
               <div className="flex items-start gap-4">
@@ -335,17 +290,15 @@ export default function CoursesPage() {
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <h4 className="font-space font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">
-                      {continueCourse.course.title}
+                      {continueCourse.course.title} — {continueCourse.grade.name}
                     </h4>
-                    <span className={`text-sm font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform ${continueCourse.progress >= 100 ? 'text-emerald-600' : 'text-blue-600'}`}>
-                      {continueCourse.progress >= 100 ? 'Revoir' : 'Continuer'} <ArrowRight size={14} />
+                    <span className="text-sm font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform text-blue-600">
+                      Continuer <ArrowRight size={14} />
                     </span>
                   </div>
                   
-                  {continueCourse.progress > 0 && continueCourse.progress < 100 ? (
-                    <p className="font-inter text-slate-500 text-sm mt-1">{continueCourse.chapter.title} · Module {continueCourse.currentModule} sur {continueCourse.totalModules}</p>
-                  ) : continueCourse.progress >= 100 ? (
-                    <p className="font-inter text-emerald-600 text-sm mt-1 font-semibold flex items-center gap-1">✓ Cours terminé</p>
+                  {continueCourse.progress > 0 ? (
+                    <p className="font-inter text-slate-500 text-sm mt-1">{continueCourse.chapter.title} · Module {continueCourse.resumeModule} sur {continueCourse.totalModules}</p>
                   ) : (
                     <p className="font-inter text-slate-500 text-sm mt-1 line-clamp-1">{continueCourse.course.description}</p>
                   )}
@@ -354,9 +307,9 @@ export default function CoursesPage() {
                   {continueCourse.progress > 0 && (
                     <div className="mt-4 flex items-center gap-3">
                       <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
-                        <div className={`h-full rounded-full transition-all duration-500 ${continueCourse.progress >= 100 ? 'bg-emerald-500' : 'bg-blue-500'}`} style={{ width: `${continueCourse.progress}%` }} />
+                        <div className="h-full rounded-full transition-all duration-500 bg-blue-500" style={{ width: `${continueCourse.progress}%` }} />
                       </div>
-                      <span className={`text-xs font-mono-jetbrains font-bold ${continueCourse.progress >= 100 ? 'text-emerald-600' : 'text-slate-600'}`}>{continueCourse.progress}%</span>
+                      <span className="text-xs font-mono-jetbrains font-bold text-slate-600">{continueCourse.progress}%</span>
                     </div>
                   )}
                 </div>
@@ -389,7 +342,16 @@ export default function CoursesPage() {
                       const saved = localStorage.getItem(`smarter_lesson_${lesson.id}`);
                       if (saved) {
                         const parsed = JSON.parse(saved);
-                        progressPercent = Math.round((parsed.completedModules.length / totalCount) * 100);
+                        const uniqueModules = new Set();
+                        if (Array.isArray(parsed.completedModules)) {
+                          parsed.completedModules.forEach(m => {
+                            const str = String(m);
+                            // Extract just the module number (e.g. from 'L01-4e' -> 1, or '1' -> 1)
+                            const match = str.match(/(?:L0?|^)(\d+)/); 
+                            if (match) uniqueModules.add(parseInt(match[1], 10));
+                          });
+                        }
+                        progressPercent = Math.round((uniqueModules.size / totalCount) * 100);
                         if (progressPercent > 100) progressPercent = 100;
                       }
                     } catch {}

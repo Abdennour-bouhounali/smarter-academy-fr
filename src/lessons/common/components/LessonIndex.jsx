@@ -173,7 +173,7 @@ export default function LessonIndex({ config, basePath }) {
 
           <div className="space-y-3">
             {config.modules.map((module) => {
-              const isDone = isModuleCompleted(module.id);
+              const isDone = isModuleCompleted(module.id) || isModuleCompleted(module.number?.toString());
               const modulePath = `${basePath}/${module.slug}`;
 
               if (module.style === 'featured') {

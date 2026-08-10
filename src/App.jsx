@@ -11,6 +11,14 @@ import AdminDashboard from './pages/AdminDashboard';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 
+// ── Leçon : Nombres entiers (6ème) ──────────────────────────────────────────
+import NombresEntiers6e             from './lessons/college/6e/nombres_calculs/nombres-entiers';
+import NombresEntiers6eM01          from './lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module01Decouverte';
+import NombresEntiers6eM02          from './lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module02Decomposition';
+import NombresEntiers6eM03          from './lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module03Comparaison';
+import NombresEntiers6eM04          from './lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module04DemiDroite';
+import NombresEntiers6eM05          from './lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module05Bilan';
+
 // ── Leçon : Fonctions linéaires et affines (3ème) ──────────────────────────
 import FonctionsLineairesAffines from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines';
 import Module01NotionFonction         from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module01NotionFonction';
@@ -204,6 +212,14 @@ export default function App() {
             <Route path="/courses/college/4e/nombres_calculs/racines-carrees/3" element={<Racines4eM03CarresParfaits />} />
             <Route path="/courses/college/4e/nombres_calculs/racines-carrees/4" element={<Racines4eM04Encadrement />} />
             <Route path="/courses/college/4e/nombres_calculs/racines-carrees/5" element={<Racines4eM05Bilan />} />
+
+            {/* ── Nombres entiers (6ème) ── */}
+            <Route path="/courses/college/6e/nombres_calculs/nombres-entiers" element={<NombresEntiers6e />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-entiers/1" element={<NombresEntiers6eM01 />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-entiers/2" element={<NombresEntiers6eM02 />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-entiers/3" element={<NombresEntiers6eM03 />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-entiers/4" element={<NombresEntiers6eM04 />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-entiers/5" element={<NombresEntiers6eM05 />} />
 
             <Route path="*" element={<Home />} />
           </Route>
