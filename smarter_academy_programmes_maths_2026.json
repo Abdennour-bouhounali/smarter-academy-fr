@@ -2,7 +2,7 @@
   "metadata": {
     "title": "Référentiel officiel — Mathématiques — France — 2026",
     "version": "2026-08",
-    "purpose": "Référentiel de vérification pour la génération des leçons Smarter Academy",
+    "purpose": "Référentiel de vérification et de génération des leçons Smarter Academy",
     "scope": [
       "6e",
       "5e",
@@ -13,7 +13,8 @@
       "Terminale spécialité mathématiques — voie générale",
       "Terminale mathématiques complémentaires — voie générale"
     ],
-    "important_distinction": "Le ministère publie des programmes, domaines, contenus, connaissances et compétences attendues ; il ne publie pas une liste officielle de 'leçons' au sens de chapitres Smarter Academy. Les lesson_id et titres de la plateforme sont donc éditoriaux et doivent être rattachés à un ou plusieurs objets officiels.",
+    "important_distinction": "Le ministère publie des programmes, domaines, contenus, connaissances et compétences attendues ; il ne publie pas une liste officielle de 'leçons' au sens des chapitres Smarter Academy. Les lesson_id et titres de la plateforme sont éditoriaux et doivent être rattachés à un ou plusieurs objets officiels.",
+    "generation_principle": "Un même objet mathématique peut apparaître à plusieurs niveaux avec des objectifs, des méthodes, des exemples, des prérequis et un niveau de formalisation différents. L'agent doit toujours générer la version correspondant exactement au niveau demandé.",
     "source_priority": [
       "Bulletin officiel du ministère de l'Éducation nationale",
       "Éduscol",
@@ -33,14 +34,16 @@
   "official_sources": [
     {
       "id": "BO-C3-2025",
-      "title": "Programme de mathématiques — cycle 3",
+      "title": "Programmes d'enseignement de français et de mathématiques du cycle de consolidation (cycle 3)",
       "publication": "BO n°16 du 17 avril 2025",
-      "official_url": "https://www.education.gouv.fr/bo/2025/Hebdo16/MENE2503181A"
+      "NOR": "MENE2504620A",
+      "official_url": "https://www.education.gouv.fr/bo/2025/Hebdo16/MENE2504620A"
     },
     {
       "id": "BO-C4-2026",
-      "title": "Programmes d'enseignement de français et de mathématiques — cycle 4",
+      "title": "Programmes d'enseignement de français et de mathématiques du cycle des approfondissements (cycle 4)",
       "publication": "BO n°10 du 5 mars 2026",
+      "NOR": "MENE2602912A",
       "official_url": "https://www.education.gouv.fr/bo/2026/Hebdo10/MENE2602912A"
     },
     {
@@ -68,266 +71,1834 @@
       "id": "BO-TLE-COMP-2026",
       "title": "Programme de l'enseignement optionnel de mathématiques complémentaires de la classe terminale de la voie générale",
       "publication": "BO n°14 du 2 avril 2026",
-      "NOR": "MENE2902920A",
-      "official_url": "https://www.education.gouv.fr/bo/2026/Hebdo14/MENE2902920A"
+      "NOR": "MENE2602920A",
+      "official_url": "https://www.education.gouv.fr/bo/2026/Hebdo14/MENE2602920A"
     }
   ],
   "levels": {
     "6e": {
-      "official_program": "Cycle 3",
+      "official_program": "Nouveau programme de mathématiques du cycle 3 — applicable en 6e depuis 2025-2026",
+      "program_status": "applicable",
       "domains": [
         {
           "id": "nombres_calculs",
-          "title": "Nombres et calculs",
+          "title": "Nombres, calculs et résolution de problèmes",
           "official_objects": [
-            "Nombres entiers",
-            "Nombres décimaux",
-            "Fractions et fractions décimales",
-            "Calcul mental et calcul en ligne",
-            "Addition, soustraction, multiplication et division",
-            "Ordre de grandeur et estimation",
-            "Résolution de problèmes"
+            {
+              "id": "nombres_entiers",
+              "title": "Nombres entiers",
+              "description": "Consolider la compréhension des nombres entiers, leur écriture, leur comparaison, leur représentation et leur utilisation dans des situations de résolution de problèmes.",
+              "prerequisites": [
+                "Numération décimale",
+                "Lecture et écriture des nombres"
+              ],
+              "level_specificity": "La 6e consolide et étend les acquis de l'école primaire ; elle prépare progressivement aux nombres relatifs et aux écritures algébriques du cycle 4.",
+              "teachingScope": {
+                "include": [
+                  "Lire, écrire, décomposer et recomposer les nombres entiers",
+                  "Comparer et ranger",
+                  "Repérer sur une demi-droite graduée",
+                  "Résolution de problèmes"
+                ],
+                "exclude": [
+                  "Nombres relatifs",
+                  "Opérations formelles complexes"
+                ]
+              }
+            },
+            {
+              "id": "nombres_decimaux",
+              "title": "Nombres décimaux",
+              "description": "Comprendre les différentes écritures des nombres décimaux, leur valeur de position, leur comparaison et leur utilisation dans les calculs et les problèmes.",
+              "prerequisites": [
+                "Numération décimale",
+                "Fractions simples"
+              ],
+              "level_specificity": "L'objectif est la consolidation du sens du nombre décimal et de ses différentes représentations.",
+              "teachingScope": {
+                "include": [
+                  "Fractions décimales",
+                  "Écriture à virgule",
+                  "Lien entre écriture décimale et fraction décimale",
+                  "Comparer, ranger, repérer sur une droite",
+                  "Ordre de grandeur"
+                ],
+                "exclude": [
+                  "Fractions non décimales comme nombres (réservé à la 5e)"
+                ]
+              }
+            },
+            {
+              "id": "fractions",
+              "title": "Fractions et fractions décimales",
+              "description": "Construire le sens de la fraction comme nombre et comme résultat d'un partage ou d'une division, puis relier fractions, décimaux et représentations.",
+              "prerequisites": [
+                "Division",
+                "Partage",
+                "Nombres décimaux"
+              ],
+              "level_specificity": "La priorité est le sens et la représentation des fractions avant les techniques algébriques du cycle 4.",
+              "teachingScope": {
+                "include": [
+                  "Fractions simples (demi, tiers, quart, dixième)",
+                  "Fraction partage et quotient dans des cas très simples",
+                  "Placer sur une demi-droite graduée simple"
+                ],
+                "exclude": [
+                  "Opérations sur les fractions",
+                  "Fractions de dénominateurs quelconques"
+                ]
+              }
+            },
+            {
+              "id": "operations",
+              "title": "Addition, soustraction, multiplication et division",
+              "description": "Consolider le sens et la maîtrise des quatre opérations sur les nombres entiers et décimaux, en choisissant des procédures efficaces.",
+              "prerequisites": [
+                "Numération",
+                "Calcul mental"
+              ],
+              "level_specificity": "La 6e cherche surtout l'automatisation et le choix raisonné des procédures.",
+              "teachingScope": {
+                "include": [
+                  "Addition, soustraction, multiplication de décimaux",
+                  "Division euclidienne (entiers)",
+                  "Division décimale exacte par un entier",
+                  "Critères de divisibilité simples (2, 5, 10, 3, 9)"
+                ],
+                "exclude": [
+                  "Division par un nombre décimal (réservé à la 5e)",
+                  "Priorités opératoires avec parenthèses complexes"
+                ]
+              }
+            },
+            {
+              "id": "ordre_grandeur_estimation",
+              "title": "Ordre de grandeur et estimation",
+              "description": "Développer le réflexe d'estimer un résultat avant ou après un calcul afin de détecter les erreurs et contrôler la cohérence.",
+              "prerequisites": [
+                "Nombres entiers",
+                "Nombres décimaux",
+                "Opérations"
+              ],
+              "level_specificity": "Le contrôle du résultat est intégré à la pratique quotidienne du calcul.",
+              "teachingScope": {
+                "include": [
+                  "Estimer un résultat",
+                  "Ordre de grandeur d'une somme, différence, produit"
+                ],
+                "exclude": [
+                  "Inéquations"
+                ]
+              }
+            },
+            {
+              "id": "resolution_problemes",
+              "title": "Résolution de problèmes",
+              "description": "Développer une démarche complète de résolution : comprendre la situation, choisir une stratégie, calculer, vérifier et communiquer la réponse.",
+              "prerequisites": [
+                "Opérations",
+                "Fractions",
+                "Nombres décimaux"
+              ],
+              "level_specificity": "La résolution de problèmes constitue un axe transversal de tout le programme de 6e.",
+              "teachingScope": {
+                "include": [
+                  "Problèmes à une ou plusieurs étapes",
+                  "Extraire les informations utiles",
+                  "Modéliser une situation simple"
+                ],
+                "exclude": [
+                  "Mise en équation formelle"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "grandeurs_mesures",
           "title": "Grandeurs et mesures",
           "official_objects": [
-            "Longueurs",
-            "Masses",
-            "Contenances",
-            "Durées",
-            "Aires",
-            "Périmètres",
-            "Angles"
+            {
+              "id": "longueurs",
+              "title": "Longueurs",
+              "description": "Mesurer, comparer, convertir et calculer des longueurs dans des situations concrètes.",
+              "prerequisites": [
+                "Unités de longueur"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Mesurer des longueurs",
+                  "Conversions d'unités de longueur (km, m, cm, mm)",
+                  "Périmètres de polygones"
+                ],
+                "exclude": [
+                  "Calculs avec Pi (au-delà d'une première approche)"
+                ]
+              }
+            },
+            {
+              "id": "masses",
+              "title": "Masses",
+              "description": "Utiliser les unités de masse, effectuer des conversions et résoudre des problèmes.",
+              "prerequisites": [
+                "Unités de mesure"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Unités de masse (kg, g, mg, tonne)",
+                  "Conversions"
+                ],
+                "exclude": [
+                  "Unités de force"
+                ]
+              }
+            },
+            {
+              "id": "contenances",
+              "title": "Contenances",
+              "description": "Comprendre et utiliser les unités de contenance dans des situations de mesure et de résolution de problèmes.",
+              "prerequisites": [
+                "Conversions d'unités"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Unités de contenance (L, dL, cL, mL)",
+                  "Conversions",
+                  "Lien avec le volume (1L = 1dm³)"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "durees",
+              "title": "Durées",
+              "description": "Calculer et comparer des durées en utilisant les unités usuelles et des représentations adaptées.",
+              "prerequisites": [
+                "Lecture de l'heure"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Unités de durée (h, min, s, jour, année)",
+                  "Conversions de durées",
+                  "Calculs d'horaires et durées"
+                ],
+                "exclude": [
+                  "Vitesses moyennes complexes"
+                ]
+              }
+            },
+            {
+              "id": "aires",
+              "title": "Aires",
+              "description": "Construire le sens de l'aire, utiliser les unités adaptées et calculer l'aire de figures usuelles.",
+              "prerequisites": [
+                "Longueurs",
+                "Multiplication"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Différencier aire et périmètre",
+                  "Aires du carré, rectangle, triangle rectangle",
+                  "Conversions d'unités d'aire (m², cm², hectare)"
+                ],
+                "exclude": [
+                  "Aire de polygones quelconques"
+                ]
+              }
+            },
+            {
+              "id": "perimetres",
+              "title": "Périmètres",
+              "description": "Comprendre le périmètre comme longueur du contour et calculer le périmètre de figures usuelles.",
+              "prerequisites": [
+                "Longueurs",
+                "Addition"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Périmètre de polygones",
+                  "Longueur du cercle (P = pi x D)"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "angles",
+              "title": "Angles",
+              "description": "Identifier, comparer, mesurer et construire des angles à l'aide de représentations et d'instruments.",
+              "prerequisites": [
+                "Figures géométriques"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Notion d'angle",
+                  "Gabarit d'angle",
+                  "Mesurer un angle en degrés avec un rapporteur",
+                  "Tracer un angle de mesure donnée",
+                  "Angles aigus, obtus, droit"
+                ],
+                "exclude": [
+                  "Angles alternes-internes",
+                  "Somme des angles d'un triangle"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "espace_geometrie",
           "title": "Espace et géométrie",
           "official_objects": [
-            "Repérage dans le plan",
-            "Droites et segments",
-            "Parallélisme et perpendicularité",
-            "Figures planes",
-            "Symétrie",
-            "Solides et patrons",
-            "Constructions géométriques"
+            {
+              "id": "reperage_plan",
+              "title": "Repérage dans le plan",
+              "description": "Utiliser des repères et des coordonnées simples pour localiser des points et lire des informations dans le plan.",
+              "prerequisites": [
+                "Nombres entiers",
+                "Nombres décimaux"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Repérage sur une carte ou un plan",
+                  "Quadrillage (cases, noeuds)"
+                ],
+                "exclude": [
+                  "Coordonnées avec abscisse et ordonnée relatives"
+                ]
+              }
+            },
+            {
+              "id": "droites_segments",
+              "title": "Droites et segments",
+              "description": "Reconnaître, construire et utiliser les propriétés fondamentales des droites, segments et demi-droites.",
+              "prerequisites": [
+                "Constructions géométriques"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Droites, demi-droites, segments",
+                  "Alignement de points",
+                  "Milieu d'un segment"
+                ],
+                "exclude": [
+                  "Vecteurs"
+                ]
+              }
+            },
+            {
+              "id": "paralleles_perpendiculaires",
+              "title": "Parallélisme et perpendicularité",
+              "description": "Identifier, construire et vérifier des droites parallèles ou perpendiculaires.",
+              "prerequisites": [
+                "Droites",
+                "Segments"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Reconnaître et tracer des droites parallèles et perpendiculaires avec règle et équerre",
+                  "Distance d'un point à une droite"
+                ],
+                "exclude": [
+                  "Démonstrations avec angles alternes-internes"
+                ]
+              }
+            },
+            {
+              "id": "figures_planes",
+              "title": "Figures planes",
+              "description": "Reconnaître, construire, décrire et caractériser les principales figures planes.",
+              "prerequisites": [
+                "Droites",
+                "Angles"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Vocabulaire des polygones",
+                  "Quadrilatères (rectangle, losange, carré)",
+                  "Triangles (isocèle, équilatéral, rectangle)",
+                  "Cercle (centre, rayon, diamètre, corde)"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "symetrie",
+              "title": "Symétrie",
+              "description": "Comprendre et construire des symétries à partir d'axes et de propriétés géométriques.",
+              "prerequisites": [
+                "Figures planes",
+                "Perpendicularité"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Symétrie axiale",
+                  "Axe de symétrie d'une figure",
+                  "Conservation des longueurs, angles, aires"
+                ],
+                "exclude": [
+                  "Symétrie centrale"
+                ]
+              }
+            },
+            {
+              "id": "solides_patrons",
+              "title": "Solides et patrons",
+              "description": "Reconnaître des solides, les représenter et comprendre le lien entre un solide et son patron.",
+              "prerequisites": [
+                "Figures planes"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Cube, pavé droit, cylindre, prisme droit",
+                  "Vocabulaire (faces, arêtes, sommets)",
+                  "Patrons du cube et du pavé droit"
+                ],
+                "exclude": [
+                  "Patrons de solides de révolution (cône, cylindre complet avec disques)"
+                ]
+              }
+            },
+            {
+              "id": "constructions_geometriques",
+              "title": "Constructions géométriques",
+              "description": "Construire des figures avec les instruments usuels et communiquer une procédure de construction.",
+              "prerequisites": [
+                "Droites",
+                "Angles",
+                "Figures planes"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Construire une figure à partir d'un programme de construction ou d'un croquis",
+                  "Règle, équerre, compas"
+                ],
+                "exclude": [
+                  "Constructions de tangentes à un cercle"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "donnees_proportionnalite",
-          "title": "Organisation et gestion de données",
+          "title": "Organisation et gestion de données et probabilités",
           "official_objects": [
-            "Tableaux",
-            "Graphiques",
-            "Lecture et production de représentations",
-            "Proportionnalité",
-            "Résolution de problèmes de proportionnalité"
+            {
+              "id": "tableaux",
+              "title": "Tableaux",
+              "description": "Lire, compléter et produire des tableaux pour organiser des informations numériques.",
+              "prerequisites": [
+                "Lecture de nombres"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Lire et interpréter un tableau à simple ou double entrée",
+                  "Prélever des données"
+                ],
+                "exclude": [
+                  "Tableaux de fréquences avec classes"
+                ]
+              }
+            },
+            {
+              "id": "graphiques",
+              "title": "Graphiques",
+              "description": "Lire et interpréter des graphiques simples issus de situations concrètes.",
+              "prerequisites": [
+                "Repérage"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Diagrammes en bâtons, circulaires",
+                  "Graphiques cartésiens simples"
+                ],
+                "exclude": [
+                  "Histogrammes à classes inégales"
+                ]
+              }
+            },
+            {
+              "id": "proportionnalite",
+              "title": "Proportionnalité",
+              "description": "Reconnaître et résoudre des situations de proportionnalité à l'aide de tableaux, représentations et procédures adaptées.",
+              "prerequisites": [
+                "Multiplication",
+                "Division",
+                "Fractions simples"
+              ],
+              "level_specificity": "La 6e construit le sens de la proportionnalité avant les techniques plus formelles du cycle 4.",
+              "teachingScope": {
+                "include": [
+                  "Reconnaître une situation de proportionnalité",
+                  "Procédures simples (linéarité additive et multiplicative)",
+                  "Passage à l'unité",
+                  "Pourcentages très simples"
+                ],
+                "exclude": [
+                  "Produit en croix",
+                  "Représentation graphique de la proportionnalité",
+                  "Coefficient multiplicateur complexe"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "algorithmique",
-          "title": "Algorithmique et programmation",
+          "title": "Initiation à la pensée informatique",
           "official_objects": [
-            "Instructions",
-            "Séquences d'instructions",
-            "Algorithmes simples",
-            "Programmation par blocs"
+            {
+              "id": "algorithmique_programmation",
+              "title": "Algorithmique et programmation",
+              "description": "Découvrir les principes fondamentaux d'un algorithme et les traduire dans des programmes simples.",
+              "prerequisites": [
+                "Raisonnement logique"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Déplacements, séquences d'instructions",
+                  "Boucles simples (répéter)"
+                ],
+                "exclude": [
+                  "Variables, conditions complexes"
+                ]
+              }
+            }
           ]
         }
       ]
     },
     "5e": {
-      "official_program": "Cycle 4 — nouveau programme 2026",
+      "official_program": "Nouveau programme de mathématiques du cycle 4 — application à la 5e à partir de 2026-2027",
+      "program_status": "applicable_2026_2027",
       "domains": [
         {
           "id": "nombres_calculs",
           "title": "Nombres et calculs",
           "official_objects": [
-            "Opérations",
-            "Nombres relatifs",
-            "Nombres rationnels",
-            "Puissances",
-            "Calcul littéral et algébrique"
+            {
+              "id": "operations",
+              "title": "Opérations",
+              "description": "Consolider les techniques de calcul sur les nombres étudiés au cycle 4 et développer l'efficacité du calcul mental, en ligne et posé.",
+              "prerequisites": [
+                "Nombres entiers",
+                "Nombres décimaux",
+                "Fractions"
+              ],
+              "level_specificity": "En 5e, les techniques sont consolidées et étendues aux nouveaux nombres et situations du cycle 4.",
+              "teachingScope": {
+                "include": [
+                  "Calcul mental et en ligne sur décimaux",
+                  "Division par un nombre décimal",
+                  "Priorités opératoires avec parenthèses",
+                  "Enchaînement d'opérations",
+                  "Notion de multiple et diviseur"
+                ],
+                "exclude": [
+                  "Nombres relatifs dans les enchaînements complexes",
+                  "Fractions dans les priorités opératoires"
+                ]
+              }
+            },
+            {
+              "id": "nombres_relatifs",
+              "title": "Nombres relatifs",
+              "description": "Construire le sens des nombres positifs et négatifs, les représenter sur une droite graduée, les comparer et effectuer les opérations attendues au niveau.",
+              "prerequisites": [
+                "Nombres entiers",
+                "Droite graduée"
+              ],
+              "level_specificity": "La priorité est la compréhension du sens et la maîtrise des opérations de base sur les nombres relatifs.",
+              "teachingScope": {
+                "include": [
+                  "Définir nombres positifs/négatifs, opposé, valeur absolue",
+                  "Lire/placer sur droite graduée",
+                  "Comparer des relatifs",
+                  "Additionner et soustraire des relatifs"
+                ],
+                "exclude": [
+                  "Multiplier et diviser des nombres relatifs (réservé à la 4e)",
+                  "Priorités opératoires avec relatifs"
+                ]
+              }
+            },
+            {
+              "id": "nombres_rationnels",
+              "title": "Nombres rationnels",
+              "description": "Approfondir les fractions comme nombres et développer les premiers calculs avec des nombres rationnels dans les situations prévues par le programme de 5e.",
+              "prerequisites": [
+                "Fractions",
+                "Division",
+                "Nombres relatifs"
+              ],
+              "level_specificity": "La 5e construit les bases des nombres rationnels ; elle ne doit pas anticiper les techniques et formalismes de 3e.",
+              "teachingScope": {
+                "include": [
+                  "Fraction comme nombre",
+                  "Fractions égales",
+                  "Comparer des fractions (même dénominateur ou multiple)",
+                  "Addition/soustraction de fractions simples (dénominateurs multiples)",
+                  "Prendre une fraction d'une quantité"
+                ],
+                "exclude": [
+                  "Addition de fractions de dénominateurs quelconques",
+                  "Multiplication/division de fractions",
+                  "Nombres rationnels relatifs"
+                ]
+              }
+            },
+            {
+              "id": "puissances",
+              "title": "Puissances",
+              "description": "Introduire et consolider la notation puissance comme écriture compacte d'un produit de facteurs identiques et développer son utilisation dans les calculs et les situations numériques.",
+              "prerequisites": [
+                "Multiplication",
+                "Produit de facteurs identiques"
+              ],
+              "level_specificity": "En 5e, la priorité est la construction du sens de la notation puissance et son utilisation numérique. Ne pas transformer cette leçon en cours avancé sur les règles algébriques des puissances.",
+              "teachingScope": {
+                "include": [
+                  "Découvrir la notion de puissance d'un nombre (carré, cube)",
+                  "Carrés parfaits de 0 à 12",
+                  "Puissances de 10 (exposant positif)",
+                  "Calculs simples avec puissances"
+                ],
+                "exclude": [
+                  "Exposants négatifs",
+                  "Écriture scientifique (réservée à la 4e)",
+                  "Règles algébriques des puissances"
+                ]
+              }
+            },
+            {
+              "id": "calcul_litteral",
+              "title": "Calcul littéral et algébrique",
+              "description": "Introduire progressivement l'utilisation des lettres pour représenter des nombres, produire des expressions et effectuer les transformations algébriques prévues au niveau.",
+              "prerequisites": [
+                "Opérations",
+                "Priorités opératoires"
+              ],
+              "level_specificity": "La 5e doit construire le langage algébrique avant les transformations plus avancées des niveaux supérieurs.",
+              "teachingScope": {
+                "include": [
+                  "Utiliser une lettre comme inconnue ou variable",
+                  "Calculer la valeur d'une expression par substitution",
+                  "Développer avec la distributivité simple (numérique)",
+                  "Produire une formule"
+                ],
+                "exclude": [
+                  "Réduction d'expressions complexes",
+                  "Factorisation formelle",
+                  "Double distributivité",
+                  "Résolution formelle d'équations"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "espace_geometrie",
           "title": "Espace et géométrie",
           "official_objects": [
-            "Repérage sur une droite et dans le plan",
-            "Représentation de l'espace",
-            "Transformations",
-            "Angles",
-            "Triangles",
-            "Parallélogrammes"
+            {
+              "id": "reperage",
+              "title": "Repérage sur une droite et dans le plan",
+              "description": "Utiliser les coordonnées et les repères pour localiser des points et raisonner dans le plan.",
+              "prerequisites": [
+                "Repérage en 6e",
+                "Nombres relatifs"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Abscisse d'un point (relatifs)",
+                  "Coordonnées dans le plan (repère orthogonal avec positifs et négatifs)"
+                ],
+                "exclude": [
+                  "Coordonnées dans l'espace"
+                ]
+              }
+            },
+            {
+              "id": "representations_espace",
+              "title": "Représentation de l'espace",
+              "description": "Développer la capacité à représenter, lire et raisonner sur des objets de l'espace.",
+              "prerequisites": [
+                "Solides",
+                "Patrons"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Vues (dessus, face, côté)",
+                  "Perspective cavalière de prismes et cylindres",
+                  "Patrons du prisme droit et du cylindre de révolution"
+                ],
+                "exclude": [
+                  "Sphère"
+                ]
+              }
+            },
+            {
+              "id": "transformations",
+              "title": "Transformations",
+              "description": "Reconnaître et utiliser les transformations géométriques et leurs propriétés dans des configurations simples.",
+              "prerequisites": [
+                "Symétrie",
+                "Figures planes"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Symétrie centrale (demi-tour)",
+                  "Construire un symétrique",
+                  "Propriétés de la symétrie centrale"
+                ],
+                "exclude": [
+                  "Translation",
+                  "Homothétie",
+                  "Rotation"
+                ]
+              }
+            },
+            {
+              "id": "angles",
+              "title": "Angles",
+              "description": "Approfondir les relations entre angles et les utiliser dans des configurations géométriques.",
+              "prerequisites": [
+                "Angles de 6e",
+                "Droites parallèles et perpendiculaires"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Angles alternes-internes et correspondants",
+                  "Caractériser le parallélisme par les angles"
+                ],
+                "exclude": [
+                  "Lignes trigonométriques",
+                  "Angles inscrits"
+                ]
+              }
+            },
+            {
+              "id": "triangles",
+              "title": "Triangles",
+              "description": "Construire, reconnaître et raisonner sur les propriétés des triangles étudiées au niveau 5e.",
+              "prerequisites": [
+                "Figures planes",
+                "Angles"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Somme des angles (180°)",
+                  "Inégalité triangulaire",
+                  "Construction à partir de données",
+                  "Médiatrices et cercle circonscrit",
+                  "Hauteurs et médianes (découverte)"
+                ],
+                "exclude": [
+                  "Théorème de Pythagore",
+                  "Théorème de Thalès",
+                  "Trigonométrie"
+                ]
+              }
+            },
+            {
+              "id": "parallelogrammes",
+              "title": "Parallélogrammes",
+              "description": "Construire et caractériser les parallélogrammes à partir de leurs propriétés géométriques.",
+              "prerequisites": [
+                "Parallélisme",
+                "Quadrilatères"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Définition et construction du parallélogramme",
+                  "Propriétés (côtés opposés, diagonales)",
+                  "Parallélogrammes particuliers (rectangle, losange, carré)"
+                ],
+                "exclude": [
+                  "Vecteurs"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "donnees_probabilites",
           "title": "Organisation et gestion de données et probabilités",
           "official_objects": [
-            "Statistiques",
-            "Probabilités"
+            {
+              "id": "statistiques",
+              "title": "Statistiques",
+              "description": "Organiser, représenter et interpréter des données statistiques dans des situations adaptées au niveau.",
+              "prerequisites": [
+                "Tableaux",
+                "Graphiques"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Recueillir/organiser des données",
+                  "Calculer effectifs et fréquences",
+                  "Représentations (tableaux, barres, circulaires)",
+                  "Moyenne simple"
+                ],
+                "exclude": [
+                  "Médiane",
+                  "Étendue",
+                  "Moyenne pondérée (réservées à la 4e)"
+                ]
+              }
+            },
+            {
+              "id": "probabilites",
+              "title": "Probabilités",
+              "description": "Introduire et consolider le vocabulaire et le raisonnement probabiliste à partir d'expériences aléatoires simples.",
+              "prerequisites": [
+                "Fractions",
+                "Proportionnalité"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Notion de hasard et d'expérience aléatoire",
+                  "Vocabulaire (issue, événement)",
+                  "Équiprobabilité simple",
+                  "Échelle de probabilité (0 à 1)"
+                ],
+                "exclude": [
+                  "Arbres de probabilité",
+                  "Événement contraire",
+                  "Réunion/intersection"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "proportionnalite_fonctions",
           "title": "Proportionnalité et fonctions",
           "official_objects": [
-            "Proportionnalité",
-            "Fonctions"
+            {
+              "id": "proportionnalite",
+              "title": "Proportionnalité",
+              "description": "Approfondir les situations de proportionnalité et développer des méthodes de résolution efficaces.",
+              "prerequisites": [
+                "Proportionnalité de 6e",
+                "Fractions"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Utiliser un coefficient de proportionnalité",
+                  "Échelles, pourcentages, vitesse moyenne",
+                  "Représentation graphique (alignement de points)"
+                ],
+                "exclude": [
+                  "Produit en croix formel",
+                  "Fonctions linéaires"
+                ]
+              }
+            },
+            {
+              "id": "fonctions",
+              "title": "Fonctions",
+              "description": "Introduire la notion de fonction comme relation entre une valeur d'entrée et une valeur de sortie à partir de tableaux, formules et représentations.",
+              "prerequisites": [
+                "Repérage",
+                "Calcul littéral"
+              ],
+              "level_specificity": "La 5e construit l'intuition fonctionnelle avant la formalisation plus poussée des fonctions affines et linéaires.",
+              "teachingScope": {
+                "include": [
+                  "Expression 'en fonction de'",
+                  "Tableau de valeurs",
+                  "Lecture d'un graphique cartésien"
+                ],
+                "exclude": [
+                  "Notations f(x)",
+                  "Antécédent",
+                  "Image"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "pensee_informatique",
           "title": "Pensée informatique",
           "official_objects": [
-            "Algorithmique et programmation"
+            {
+              "id": "algorithmique_programmation",
+              "title": "Algorithmique et programmation",
+              "description": "Développer la capacité à décrire une procédure, manipuler des variables et construire des programmes simples.",
+              "prerequisites": [
+                "Raisonnement logique"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Définir et utiliser des variables (lecture)",
+                  "Boucles inconditionnelles (répéter n fois)",
+                  "Tracer des figures simples"
+                ],
+                "exclude": [
+                  "Conditions composées"
+                ]
+              }
+            }
           ]
         }
       ]
     },
     "4e": {
-      "official_program": "Cycle 4 — nouveau programme 2026",
+      "official_program": "Programme de mathématiques du cycle 4 — nouveau programme applicable à la 4e à partir de 2027-2028",
+      "program_status": "future_2027_2028",
       "domains": [
         {
           "id": "nombres_calculs",
           "title": "Nombres et calculs",
           "official_objects": [
-            "Opérations sur les nombres relatifs",
-            "Nombres rationnels",
-            "Puissances",
-            "Racine carrée",
-            "Calcul littéral et algébrique"
+            {
+              "id": "nombres_relatifs",
+              "title": "Opérations sur les nombres relatifs",
+              "description": "Approfondir les opérations sur les nombres relatifs et développer une maîtrise plus automatisée des règles de calcul.",
+              "prerequisites": [
+                "Nombres relatifs de 5e"
+              ],
+              "level_specificity": "La 4e vise une maîtrise plus systématique des règles de calcul et leur mobilisation dans des expressions.",
+              "teachingScope": {
+                "include": [
+                  "Multiplication et division de nombres relatifs",
+                  "Règle des signes",
+                  "Enchaînement des 4 opérations sur les relatifs"
+                ],
+                "exclude": [
+                  "Racines carrées de nombres négatifs"
+                ]
+              }
+            },
+            {
+              "id": "nombres_rationnels",
+              "title": "Nombres rationnels",
+              "description": "Approfondir les calculs sur les nombres rationnels, notamment les opérations sur les fractions et leur utilisation dans des expressions et problèmes.",
+              "prerequisites": [
+                "Fractions de 5e",
+                "Nombres relatifs"
+              ],
+              "level_specificity": "La 4e augmente la complexité des calculs rationnels et prépare aux manipulations algébriques du niveau 3e.",
+              "teachingScope": {
+                "include": [
+                  "Notion formelle de nombre rationnel",
+                  "Égalité des produits en croix",
+                  "Addition/soustraction de fractions de dénominateurs quelconques",
+                  "Multiplication/division de fractions",
+                  "Inverse d'un nombre"
+                ],
+                "exclude": [
+                  "Identités remarquables avec fractions"
+                ]
+              }
+            },
+            {
+              "id": "puissances",
+              "title": "Puissances",
+              "description": "Approfondir l'utilisation des puissances et développer les règles de calcul nécessaires à la transformation d'expressions numériques et algébriques.",
+              "prerequisites": [
+                "Puissances de 5e",
+                "Calcul littéral"
+              ],
+              "level_specificity": "La 4e doit aller au-delà de la simple définition étudiée en 5e et renforcer les règles de calcul.",
+              "teachingScope": {
+                "include": [
+                  "Puissances d'exposant négatif",
+                  "Notation scientifique",
+                  "Calculs avec des puissances de 10",
+                  "Ordres de grandeur",
+                  "Règles opératoires de base sur les exposants entiers"
+                ],
+                "exclude": [
+                  "Puissances littérales complexes",
+                  "Exponentielles"
+                ]
+              }
+            },
+            {
+              "id": "racine_carree",
+              "title": "Racine carrée",
+              "description": "Construire la notion de racine carrée à partir du problème inverse du carré et l'utiliser dans les calculs et problèmes correspondant au niveau.",
+              "prerequisites": [
+                "Carrés",
+                "Puissances",
+                "Aires"
+              ],
+              "level_specificity": "La notion doit être construite à partir de son sens avant l'utilisation de propriétés plus avancées.",
+              "teachingScope": {
+                "include": [
+                  "Définition de la racine carrée d'un positif",
+                  "Encadrement entre deux entiers",
+                  "Résolution de x² = a (parfois introduit)"
+                ],
+                "exclude": [
+                  "Opérations sur les racines (produit, quotient)",
+                  "Simplification de racine (ex: sqrt(12) = 2sqrt(3))"
+                ]
+              }
+            },
+            {
+              "id": "calcul_litteral",
+              "title": "Calcul littéral et algébrique",
+              "description": "Approfondir la transformation d'expressions littérales, la distributivité, la réduction et la factorisation selon les objectifs du niveau.",
+              "prerequisites": [
+                "Calcul littéral de 5e",
+                "Nombres relatifs"
+              ],
+              "level_specificity": "La 4e développe le langage algébrique nécessaire à la résolution d'équations et aux identités remarquables étudiées ensuite.",
+              "teachingScope": {
+                "include": [
+                  "Distributivité simple et double (initiation)",
+                  "Réduire des expressions formelles",
+                  "Factoriser avec un facteur commun évident",
+                  "Tester une égalité",
+                  "Résolution d'équations du premier degré ax+b=c"
+                ],
+                "exclude": [
+                  "Identités remarquables",
+                  "Inéquations",
+                  "Équations produit nul"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "espace_geometrie",
           "title": "Espace et géométrie",
           "official_objects": [
-            "Transformations",
-            "Repérage sur une droite et dans le plan",
-            "Représentation de l'espace",
-            "Parallélogrammes et translations",
-            "Triangles"
+            {
+              "id": "transformations",
+              "title": "Transformations",
+              "description": "Approfondir les transformations du plan et utiliser leurs propriétés pour construire et démontrer.",
+              "prerequisites": [
+                "Transformations de 5e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Translation",
+                  "Lien avec le parallélogramme",
+                  "Propriétés de conservation des translations"
+                ],
+                "exclude": [
+                  "Vecteurs formels (relation de Chasles)",
+                  "Homothéties (réservées à la 3e)"
+                ]
+              }
+            },
+            {
+              "id": "reperage",
+              "title": "Repérage sur une droite et dans le plan",
+              "description": "Approfondir l'utilisation des coordonnées et du repérage pour résoudre des problèmes géométriques.",
+              "prerequisites": [
+                "Repérage de 5e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Repérage dans le plan",
+                  "Lecture de coordonnées complexes"
+                ],
+                "exclude": [
+                  "Coordonnées dans l'espace"
+                ]
+              }
+            },
+            {
+              "id": "representations_espace",
+              "title": "Représentation de l'espace",
+              "description": "Développer la capacité à représenter et raisonner sur des configurations spatiales.",
+              "prerequisites": [
+                "Solides",
+                "Représentations de 5e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Pyramide, cône de révolution",
+                  "Reconnaître base, hauteur",
+                  "Volume de la pyramide et du cône"
+                ],
+                "exclude": [
+                  "Sections de solides (boule, plan)"
+                ]
+              }
+            },
+            {
+              "id": "parallelogrammes_translations",
+              "title": "Parallélogrammes et translations",
+              "description": "Relier les propriétés des parallélogrammes aux translations et utiliser ces propriétés dans des constructions et démonstrations.",
+              "prerequisites": [
+                "Parallélogrammes de 5e",
+                "Transformations"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Lien entre translation et parallélogramme"
+                ],
+                "exclude": [
+                  "Vecteurs"
+                ]
+              }
+            },
+            {
+              "id": "triangles",
+              "title": "Triangles",
+              "description": "Approfondir les propriétés des triangles et développer la démonstration géométrique.",
+              "prerequisites": [
+                "Triangles de 5e",
+                "Angles"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Théorème de Pythagore (direct, réciproque, contraposée)",
+                  "Caractériser le triangle rectangle par le cercle circonscrit",
+                  "Droite des milieux"
+                ],
+                "exclude": [
+                  "Théorème de Thalès (complet)",
+                  "Trigonométrie (cos, sin, tan)"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "donnees_probabilites",
           "title": "Organisation et gestion de données et probabilités",
           "official_objects": [
-            "Statistiques",
-            "Probabilités"
+            {
+              "id": "statistiques",
+              "title": "Statistiques",
+              "description": "Approfondir l'analyse de séries de données et l'utilisation d'indicateurs statistiques.",
+              "prerequisites": [
+                "Statistiques de 5e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Moyenne pondérée",
+                  "Médiane",
+                  "Étendue",
+                  "Comparaison de séries statistiques"
+                ],
+                "exclude": [
+                  "Quartiles",
+                  "Boîte à moustaches (réservées à la 3e)"
+                ]
+              }
+            },
+            {
+              "id": "probabilites",
+              "title": "Probabilités",
+              "description": "Approfondir le calcul et l'interprétation des probabilités dans des expériences aléatoires plus variées.",
+              "prerequisites": [
+                "Probabilités de 5e",
+                "Fractions"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Événements et notations ensemblistes (intersection, réunion)",
+                  "Événement contraire",
+                  "Événement impossible/certain",
+                  "Fluctuation des fréquences"
+                ],
+                "exclude": [
+                  "Arbres pondérés complexes",
+                  "Probabilités conditionnelles"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "proportionnalite_fonctions",
           "title": "Proportionnalité et fonctions",
           "official_objects": [
-            "Proportionnalité",
-            "Fonctions"
+            {
+              "id": "proportionnalite",
+              "title": "Proportionnalité",
+              "description": "Résoudre des situations de proportionnalité plus complexes et relier proportionnalité, représentations et fonctions.",
+              "prerequisites": [
+                "Proportionnalité de 5e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Quatrième proportionnelle (produit en croix)",
+                  "Calcul avec des pourcentages (augmentation, diminution)",
+                  "Coefficient multiplicateur"
+                ],
+                "exclude": [
+                  "Fonctions affines"
+                ]
+              }
+            },
+            {
+              "id": "fonctions",
+              "title": "Fonctions",
+              "description": "Approfondir la notion de fonction et utiliser différentes représentations pour modéliser des situations.",
+              "prerequisites": [
+                "Fonctions de 5e",
+                "Calcul littéral"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Dépendance entre deux grandeurs",
+                  "Programme de calcul",
+                  "Produire une formule",
+                  "Représenter graphiquement"
+                ],
+                "exclude": [
+                  "Notions formelles d'image et antécédent",
+                  "Fonctions linéaires"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "pensee_informatique",
           "title": "Pensée informatique",
           "official_objects": [
-            "Algorithmique et programmation"
+            {
+              "id": "algorithmique_programmation",
+              "title": "Algorithmique et programmation",
+              "description": "Concevoir, lire, modifier et tester des programmes en mobilisant les structures algorithmiques adaptées.",
+              "prerequisites": [
+                "Algorithmique de 5e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Conditions (si... alors... sinon)",
+                  "Manipulation de variables informatiques simples",
+                  "Modification d'un programme existant"
+                ],
+                "exclude": [
+                  "Boucles 'Tant que' complexes"
+                ]
+              }
+            }
           ]
         }
       ]
     },
     "3e": {
-      "official_program": "Programme 2016 actuellement applicable en 2026 ; nouveau programme 2026 prévu pour application en 2028-2029",
+      "official_program": "Programme de mathématiques actuellement applicable en 2026 ; nouveau programme de cycle 4 publié en 2026 et applicable à la 3e à partir de 2028-2029",
+      "program_status": "current_program_2016_in_2026",
+      "next_program_application": "2028-2029",
       "domains": [
         {
           "id": "nombres_calculs",
           "title": "Nombres et calculs",
           "official_objects": [
-            "Nombres rationnels",
-            "Puissances",
-            "Racine carrée",
-            "Multiples et diviseurs",
-            "Calcul littéral et algébrique",
-            "Équations et inéquations du premier degré",
-            "Résolution de problèmes"
+            {
+              "id": "nombres_rationnels",
+              "title": "Nombres rationnels",
+              "description": "Maîtriser les calculs sur les nombres rationnels et les fractions dans des expressions et des problèmes, en mobilisant simplification, comparaison et opérations.",
+              "prerequisites": [
+                "Fractions",
+                "Nombres relatifs",
+                "Opérations",
+                "Priorités opératoires"
+              ],
+              "level_specificity": "En 3e, les fractions sont utilisées comme nombres rationnels dans des calculs plus complexes et dans la résolution de problèmes. La leçon doit consolider les techniques antérieures sans se limiter à une simple introduction aux fractions.",
+              "teachingScope": {
+                "include": [
+                  "Fractions irréductibles",
+                  "Nombres premiers entre eux",
+                  "Résolution de problèmes complexes avec fractions"
+                ],
+                "exclude": [
+                  "Calcul littéral avancé avec fractions"
+                ]
+              }
+            },
+            {
+              "id": "puissances",
+              "title": "Puissances",
+              "description": "Maîtriser les puissances et leurs règles de calcul, notamment dans les calculs numériques, l'écriture scientifique et les situations impliquant des ordres de grandeur.",
+              "prerequisites": [
+                "Puissances de 5e et 4e",
+                "Calcul littéral",
+                "Multiplication et division"
+              ],
+              "level_specificity": "La version 3e doit être une consolidation et une extension des puissances étudiées précédemment. Elle doit privilégier les règles de calcul, l'écriture scientifique, les ordres de grandeur et la résolution de problèmes plutôt qu'une simple découverte de la notation.",
+              "teachingScope": {
+                "include": [
+                  "Opérations complètes sur les puissances (multiplication, division)",
+                  "Notation scientifique maîtrisée",
+                  "Résolution de problèmes avec la notation scientifique"
+                ],
+                "exclude": [
+                  "Exponentielle"
+                ]
+              }
+            },
+            {
+              "id": "racine_carree",
+              "title": "Racine carrée",
+              "description": "Comprendre et utiliser la racine carrée comme opération inverse du carré, calculer des racines exactes et utiliser les propriétés nécessaires aux problèmes de niveau 3e.",
+              "prerequisites": [
+                "Carrés parfaits",
+                "Puissances",
+                "Calcul littéral"
+              ],
+              "level_specificity": "La 3e doit aller au-delà de la simple reconnaissance de carrés parfaits et utiliser la racine carrée comme outil de calcul et de résolution de problèmes.",
+              "teachingScope": {
+                "include": [
+                  "Résoudre x²=a algébriquement et graphiquement",
+                  "Utilisation de la racine dans Pythagore et les problèmes spatiaux",
+                  "Algorithmes d'extraction"
+                ],
+                "exclude": [
+                  "Fonction racine carrée au sens de l'analyse lycéenne"
+                ]
+              }
+            },
+            {
+              "id": "multiples_diviseurs",
+              "title": "Multiples et diviseurs",
+              "description": "Utiliser les notions de divisibilité, multiples, diviseurs et nombres premiers pour résoudre des problèmes numériques.",
+              "prerequisites": [
+                "Nombres entiers",
+                "Division euclidienne"
+              ],
+              "level_specificity": "Les techniques de divisibilité doivent être utilisées comme outils de raisonnement et de simplification.",
+              "teachingScope": {
+                "include": [
+                  "Décomposition en produit de facteurs premiers",
+                  "Simplification de fraction avec décomposition"
+                ],
+                "exclude": [
+                  "PGCD, Algorithme d'Euclide (si hors programme officiel restreint)",
+                  "Congruences"
+                ]
+              }
+            },
+            {
+              "id": "calcul_litteral",
+              "title": "Calcul littéral et algébrique",
+              "description": "Maîtriser les transformations d'expressions littérales nécessaires aux équations, factorisations, identités remarquables et problèmes.",
+              "prerequisites": [
+                "Calcul littéral de 4e",
+                "Distributivité",
+                "Nombres relatifs"
+              ],
+              "level_specificity": "La 3e doit rendre l'élève autonome dans les transformations algébriques et leur choix stratégique.",
+              "teachingScope": {
+                "include": [
+                  "Double distributivité maîtrisée",
+                  "Identités remarquables (a+b)², (a-b)², (a-b)(a+b)",
+                  "Équation produit nul",
+                  "Inéquations du 1er degré"
+                ],
+                "exclude": [
+                  "Polynômes du second degré généraux",
+                  "Tableaux de signes"
+                ]
+              }
+            },
+            {
+              "id": "equations_inequations",
+              "title": "Équations et inéquations du premier degré",
+              "description": "Résoudre des équations et inéquations du premier degré en mobilisant des transformations équivalentes et interpréter les solutions.",
+              "prerequisites": [
+                "Calcul littéral",
+                "Distributivité",
+                "Nombres relatifs"
+              ],
+              "level_specificity": "La priorité est le raisonnement par transformations équivalentes et la modélisation de problèmes.",
+              "teachingScope": {
+                "include": [
+                  "Équations du type ax+b=cx+d",
+                  "Équations produit nul",
+                  "Inéquations du 1er degré et représentation sur une droite"
+                ],
+                "exclude": [
+                  "Tableaux de signes de produits/quotients complexes"
+                ]
+              }
+            },
+            {
+              "id": "resolution_problemes",
+              "title": "Résolution de problèmes",
+              "description": "Mobiliser les nombres, calculs, expressions, équations et raisonnements pour modéliser et résoudre des problèmes complexes.",
+              "prerequisites": [
+                "Ensemble des notions numériques et algébriques précédentes"
+              ],
+              "level_specificity": "La résolution de problèmes doit mobiliser plusieurs connaissances plutôt que reproduire une procédure isolée.",
+              "teachingScope": {
+                "include": [
+                  "Modéliser un problème par une équation ou un système d'équations (rare mais possible)",
+                  "Résolution de problèmes complexes (multi-étapes)"
+                ],
+                "exclude": [
+                  "Systèmes de 3 équations"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "espace_geometrie",
           "title": "Espace et géométrie",
           "official_objects": [
-            "Repérage sur une droite et dans le plan",
-            "Représentation de l'espace",
-            "Triangles",
-            "Translations et vecteurs",
-            "Théorème de Thalès",
-            "Théorème de Pythagore",
-            "Trigonométrie dans le triangle rectangle"
+            {
+              "id": "reperage",
+              "title": "Repérage sur une droite et dans le plan",
+              "description": "Utiliser les coordonnées et les représentations dans le plan pour résoudre des problèmes géométriques et interpréter des situations.",
+              "prerequisites": [
+                "Repérage",
+                "Nombres relatifs"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Repérage sur la sphère (latitude, longitude)"
+                ],
+                "exclude": [
+                  "Coordonnées cartésiennes 3D complètes"
+                ]
+              }
+            },
+            {
+              "id": "representations_espace",
+              "title": "Représentation de l'espace",
+              "description": "Lire et produire des représentations de solides et raisonner sur les configurations de l'espace.",
+              "prerequisites": [
+                "Solides",
+                "Repérage"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Boule, sphère",
+                  "Rayon, diamètre, grand cercle",
+                  "Volume de la boule",
+                  "Sections de solides par un plan",
+                  "Agrandissement/réduction des volumes"
+                ],
+                "exclude": [
+                  "Plans paramétriques"
+                ]
+              }
+            },
+            {
+              "id": "triangles",
+              "title": "Triangles",
+              "description": "Mobiliser les propriétés des triangles pour construire, calculer, démontrer et résoudre des problèmes géométriques.",
+              "prerequisites": [
+                "Triangles de 4e",
+                "Angles",
+                "Parallélisme"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Théorème de Thalès (direct, réciproque)",
+                  "Trigonométrie dans le triangle rectangle (cos, sin, tan)"
+                ],
+                "exclude": [
+                  "Relations trigonométriques dans le triangle quelconque",
+                  "Loi des sinus"
+                ]
+              }
+            },
+            {
+              "id": "translations_vecteurs",
+              "title": "Translations et vecteurs",
+              "description": "Utiliser les translations et les vecteurs pour décrire des déplacements et résoudre des problèmes géométriques.",
+              "prerequisites": [
+                "Transformations",
+                "Repérage"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Définition du vecteur",
+                  "Vecteurs égaux, vecteur nul",
+                  "Addition de vecteurs (relation de Chasles)"
+                ],
+                "exclude": [
+                  "Coordonnées de vecteurs",
+                  "Colinéoarité",
+                  "Produit scalaire"
+                ]
+              }
+            },
+            {
+              "id": "thales",
+              "title": "Théorème de Thalès",
+              "description": "Reconnaître les configurations de Thalès, utiliser le théorème pour calculer des longueurs et mobiliser sa réciproque ou sa contraposée dans des démonstrations.",
+              "prerequisites": [
+                "Proportionnalité",
+                "Triangles",
+                "Parallélisme"
+              ],
+              "level_specificity": "La notion doit être enseignée comme un outil de proportionnalité et de démonstration géométrique, avec une attention particulière à la rédaction.",
+              "teachingScope": {
+                "include": [
+                  "Théorème de Thalès direct",
+                  "Réciproque et contraposée",
+                  "Agrandissement et réduction"
+                ],
+                "exclude": [
+                  "Homothéties formelles (souvent déplacées ou simplifiées)"
+                ]
+              }
+            },
+            {
+              "id": "pythagore",
+              "title": "Théorème de Pythagore",
+              "description": "Utiliser le théorème de Pythagore pour calculer une longueur dans un triangle rectangle et sa réciproque pour démontrer qu'un triangle est rectangle.",
+              "prerequisites": [
+                "Triangles",
+                "Carrés",
+                "Racine carrée"
+              ],
+              "level_specificity": "L'élève doit savoir choisir la relation adaptée, rédiger les étapes et interpréter le résultat.",
+              "teachingScope": {
+                "include": [
+                  "Rappels théorème direct, réciproque",
+                  "Application à des calculs complexes et géométrie dans l'espace"
+                ],
+                "exclude": [
+                  "Géométrie hyperbolique"
+                ]
+              }
+            },
+            {
+              "id": "trigonometrie",
+              "title": "Trigonométrie dans le triangle rectangle",
+              "description": "Utiliser sinus, cosinus et tangente dans un triangle rectangle pour calculer une longueur ou un angle.",
+              "prerequisites": [
+                "Triangle rectangle",
+                "Pythagore",
+                "Angles"
+              ],
+              "level_specificity": "La priorité est le choix de la relation trigonométrique adaptée à la configuration.",
+              "teachingScope": {
+                "include": [
+                  "Cosinus, sinus, tangente dans le triangle rectangle",
+                  "Calcul de longueurs et d'angles",
+                  "Arccos, arcsin, arctan à la calculatrice"
+                ],
+                "exclude": [
+                  "Trigonométrie dans le triangle quelconque",
+                  "Cercle trigonométrique"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "donnees_probabilites",
           "title": "Organisation et gestion de données, fonctions",
           "official_objects": [
-            "Statistiques",
-            "Probabilités",
-            "Proportionnalité",
-            "Fonctions",
-            "Fonctions linéaires",
-            "Fonctions affines",
-            "Représentation graphique",
-            "Lecture graphique",
-            "Modélisation"
+            {
+              "id": "statistiques",
+              "title": "Statistiques",
+              "description": "Analyser des séries statistiques et utiliser les indicateurs adaptés pour interpréter des données.",
+              "prerequisites": [
+                "Statistiques de 4e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Quartiles",
+                  "Boîtes à moustaches",
+                  "Analyse complète de séries"
+                ],
+                "exclude": [
+                  "Écart-type",
+                  "Variance"
+                ]
+              }
+            },
+            {
+              "id": "probabilites",
+              "title": "Probabilités",
+              "description": "Modéliser des expériences aléatoires et calculer ou interpréter des probabilités dans des situations adaptées.",
+              "prerequisites": [
+                "Probabilités",
+                "Fractions"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Formule P(A U B) + P(A ∩ B) = P(A) + P(B)",
+                  "Expériences à deux épreuves",
+                  "Arbres de probabilité"
+                ],
+                "exclude": [
+                  "Variables aléatoires",
+                  "Espérance mathématique"
+                ]
+              }
+            },
+            {
+              "id": "proportionnalite",
+              "title": "Proportionnalité",
+              "description": "Mobiliser la proportionnalité dans des problèmes numériques, géométriques et scientifiques.",
+              "prerequisites": [
+                "Proportionnalité de 4e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Agrandissement / Réduction (impact sur longueurs, aires, volumes)",
+                  "Lien direct avec le théorème de Thalès"
+                ],
+                "exclude": [
+                  "Fonction logarithme"
+                ]
+              }
+            },
+            {
+              "id": "fonctions",
+              "title": "Fonctions",
+              "description": "Maîtriser les différentes représentations d'une fonction et les utiliser pour résoudre des problèmes.",
+              "prerequisites": [
+                "Fonctions de 4e",
+                "Calcul littéral"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Vocabulaire image, antécédent, f(x)",
+                  "Fonctions linéaires et affines (f(x)=ax+b)",
+                  "Représentation graphique (droites)"
+                ],
+                "exclude": [
+                  "Fonctions de référence avancées (inverse, cube)",
+                  "Dérivée"
+                ]
+              }
+            },
+            {
+              "id": "fonctions_lineaires",
+              "title": "Fonctions linéaires",
+              "description": "Étudier les fonctions linéaires, leur expression, leur représentation graphique et leur lien avec la proportionnalité.",
+              "prerequisites": [
+                "Fonctions",
+                "Proportionnalité"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Définition x -> ax",
+                  "Proportionnalité",
+                  "Représentation graphique (droite passant par l'origine)",
+                  "Calcul d'image et d'antécédent"
+                ],
+                "exclude": [
+                  "Dérivation"
+                ]
+              }
+            },
+            {
+              "id": "fonctions_affines",
+              "title": "Fonctions affines",
+              "description": "Étudier les fonctions affines, leur expression et leur représentation graphique et les utiliser pour modéliser des situations.",
+              "prerequisites": [
+                "Fonctions linéaires",
+                "Calcul littéral"
+              ],
+              "level_specificity": "La 3e doit permettre de relier expression algébrique, tableau et représentation graphique.",
+              "teachingScope": {
+                "include": [
+                  "Définition x -> ax+b",
+                  "Représentation graphique",
+                  "Détermination algébrique de a et b",
+                  "Calcul d'image et d'antécédent"
+                ],
+                "exclude": [
+                  "Variations formelles via dérivation"
+                ]
+              }
+            },
+            {
+              "id": "representation_graphique",
+              "title": "Représentation graphique",
+              "description": "Lire, construire et interpréter des représentations graphiques de fonctions et de données.",
+              "prerequisites": [
+                "Repérage",
+                "Fonctions"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Tracer la courbe représentative d'une fonction donnée (tableau de valeurs)",
+                  "Graphiques cartésiens",
+                  "Interprétation"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "lecture_graphique",
+              "title": "Lecture graphique",
+              "description": "Utiliser efficacement une représentation graphique pour répondre à des questions sur les variations, images, antécédents et intersections.",
+              "prerequisites": [
+                "Fonctions",
+                "Repérage"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Lire l'image, lire un antécédent",
+                  "Résoudre graphiquement f(x)=k"
+                ],
+                "exclude": [
+                  "Résolution f(x)=g(x) complexe"
+                ]
+              }
+            },
+            {
+              "id": "modelisation",
+              "title": "Modélisation",
+              "description": "Traduire une situation réelle ou mathématique en modèle numérique, algébrique, fonctionnel ou géométrique puis interpréter le résultat.",
+              "prerequisites": [
+                "Fonctions",
+                "Proportionnalité",
+                "Calcul littéral"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Modéliser une situation par une fonction",
+                  "Étude d'une situation de dépendance entre grandeurs"
+                ],
+                "exclude": [
+                  "Modélisation probabiliste continue"
+                ]
+              }
+            }
           ]
         },
         {
           "id": "algorithmique",
           "title": "Algorithmique et programmation",
           "official_objects": [
-            "Algorithmique",
-            "Programmation"
+            {
+              "id": "algorithmique_programmation",
+              "title": "Algorithmique et programmation",
+              "description": "Concevoir, comprendre, modifier et tester des algorithmes et programmes pour résoudre des problèmes mathématiques.",
+              "prerequisites": [
+                "Algorithmique de 4e"
+              ],
+              "teachingScope": {
+                "include": [
+                  "Variables approfondies",
+                  "Conditions composées (ET, OU)",
+                  "Boucles conditionnelles (Tant que)",
+                  "Création de blocs/fonctions",
+                  "Résolution de problèmes par la programmation"
+                ],
+                "exclude": [
+                  "Structures de données complexes (listes, graphes)"
+                ]
+              }
+            }
           ]
         }
       ]
     },
     "seconde": {
-      "official_program": "Nouveau programme — application 2026-2027",
+      "official_program": "Nouveau programme de mathématiques — applicable à partir de 2026-2027",
+      "program_status": "applicable_2026_2027",
       "domains": [
-        "Nombres et calculs",
-        "Géométrie",
-        "Fonctions",
-        "Statistiques et probabilités",
-        "Algorithmique et programmation"
+        {
+          "id": "nombres_calculs",
+          "title": "Nombres et calculs",
+          "description": "Approfondir les outils numériques et algébriques nécessaires à l'entrée au lycée et à la poursuite des mathématiques."
+        },
+        {
+          "id": "geometrie",
+          "title": "Géométrie",
+          "description": "Utiliser les coordonnées, vecteurs et configurations géométriques pour modéliser et démontrer."
+        },
+        {
+          "id": "fonctions",
+          "title": "Fonctions",
+          "description": "Construire une compréhension fonctionnelle solide à partir des représentations graphiques, numériques et algébriques."
+        },
+        {
+          "id": "statistiques_probabilites",
+          "title": "Statistiques et probabilités",
+          "description": "Analyser des données et modéliser des phénomènes aléatoires à l'aide des outils statistiques et probabilistes du programme."
+        },
+        {
+          "id": "algorithmique_programmation",
+          "title": "Algorithmique et programmation",
+          "description": "Utiliser l'algorithmique et la programmation comme outils de résolution, de simulation et d'exploration mathématique."
+        }
       ]
     },
     "premiere_specialite": {
-      "official_program": "Nouveau programme — application 2026-2027",
+      "official_program": "Nouveau programme de spécialité mathématiques — applicable à partir de 2026-2027",
+      "program_status": "applicable_2026_2027",
       "domains": [
-        "Algèbre",
-        "Analyse",
-        "Géométrie",
-        "Probabilités",
-        "Algorithmique et programmation"
+        {
+          "id": "algebre",
+          "title": "Algèbre",
+          "description": "Développer les outils algébriques nécessaires à l'étude des suites, fonctions, équations et structures du programme de spécialité."
+        },
+        {
+          "id": "analyse",
+          "title": "Analyse",
+          "description": "Étudier les fonctions, leurs variations, dérivées et comportements à travers des modèles et problèmes."
+        },
+        {
+          "id": "geometrie",
+          "title": "Géométrie",
+          "description": "Utiliser les vecteurs, coordonnées et outils géométriques pour résoudre et démontrer."
+        },
+        {
+          "id": "probabilites",
+          "title": "Probabilités",
+          "description": "Construire et analyser des modèles probabilistes et utiliser les outils de calcul adaptés."
+        },
+        {
+          "id": "algorithmique_programmation",
+          "title": "Algorithmique et programmation",
+          "description": "Utiliser la programmation pour explorer, simuler, conjecturer et résoudre des problèmes mathématiques."
+        }
       ]
     },
     "terminale_specialite": {
-      "official_program": "Nouveau programme — application 2027-2028",
+      "official_program": "Nouveau programme de spécialité mathématiques — applicable à partir de 2027-2028",
+      "program_status": "future_2027_2028",
       "domains": [
-        "Algèbre et géométrie",
-        "Analyse",
-        "Probabilités",
-        "Algorithmique et programmation"
+        {
+          "id": "algebre_geometrie",
+          "title": "Algèbre et géométrie",
+          "description": "Mobiliser les outils algébriques et géométriques du programme de terminale pour démontrer, calculer et modéliser."
+        },
+        {
+          "id": "analyse",
+          "title": "Analyse",
+          "description": "Étudier les fonctions, suites, intégrales et équations différentielles dans les cadres prévus par le programme."
+        },
+        {
+          "id": "probabilites",
+          "title": "Probabilités",
+          "description": "Approfondir les modèles probabilistes et les outils statistiques nécessaires aux situations du programme."
+        },
+        {
+          "id": "algorithmique_programmation",
+          "title": "Algorithmique et programmation",
+          "description": "Utiliser la programmation pour expérimenter, simuler et résoudre des problèmes mathématiques."
+        }
       ]
     },
     "terminale_complementaires": {
-      "official_program": "Nouveau programme — application 2027-2028",
+      "official_program": "Nouveau programme de mathématiques complémentaires — applicable à partir de 2027-2028",
+      "program_status": "future_2027_2028",
       "domains": [
-        "Analyse",
-        "Probabilités et statistique",
-        "Modélisation"
+        {
+          "id": "analyse",
+          "title": "Analyse",
+          "description": "Mobiliser les fonctions et outils d'analyse nécessaires aux applications prévues dans l'enseignement de mathématiques complémentaires."
+        },
+        {
+          "id": "probabilites_statistique",
+          "title": "Probabilités et statistique",
+          "description": "Utiliser les probabilités et statistiques pour analyser et modéliser des situations concrètes."
+        },
+        {
+          "id": "modelisation",
+          "title": "Modélisation",
+          "description": "Construire et exploiter des modèles mathématiques adaptés à des situations issues de différents domaines."
+        }
       ]
     }
   },
@@ -337,7 +1908,23 @@
     "lesson_must_map_to_official_objects": true,
     "prerequisites_must_be_checked": true,
     "avoid_duplicate_lessons": true,
-    "if_platform_topic_is_broader_than_program": "Split into multiple lessons or mark it as a platform synthesis module.",
-    "if_topic_is_not_in_official_program": "Do not generate it as an official curriculum lesson; either remove it or explicitly mark it as enrichment."
+    "level_specificity_required": true,
+    "lesson_description_is_authoritative_for_generation": true,
+    "same_topic_different_level_rule": "When the same mathematical topic appears at several levels, treat each occurrence as a distinct pedagogical scope. Never copy the lesson content from another level simply because the title is identical.",
+    "progressive_depth_rule": "A higher-level lesson may consolidate and extend knowledge from previous levels, but it must not simply repeat the lower-level lesson. A lower-level lesson must not anticipate advanced concepts reserved for later levels unless explicitly marked as enrichment.",
+    "prerequisite_rule": "Before generating a lesson, identify the knowledge expected from previous levels and use the prerequisite field to determine the starting point.",
+    "scope_rule": "The lesson must teach the concepts, methods and problem types explicitly included in the target level's teaching_scope.",
+    "do_not_teach_yet_rule": "Concepts listed in do_not_teach_yet must not become core objectives of the lesson. They may only appear as optional enrichment when clearly labelled as such.",
+    "official_program_status_rule": "When generating a course for a specific school year, use the program that is actually applicable to that class during that year, not merely the newest published program.",
+    "official_vs_editorial_rule": "official_objects describe the official curriculum scope. Smarter Academy lesson titles, lesson_id, module names and pedagogical sequencing remain editorial.",
+    "first_lesson_pedagogy_rule": "When pedagogically relevant, the first lesson or discovery activity should answer the question 'Pourquoi avons-nous besoin de cette notion ?' by presenting the concrete or mathematical problem that motivates the concept before introducing its formal definition.",
+    "manipulation_rule": "Whenever a mathematical concept benefits from visual or dynamic representation, the generated lesson should include manipulation, simulation, interactive visualization or a concrete model before or alongside formalization.",
+    "problem_solving_rule": "Problem solving must not be reduced to applying a memorized formula. Students should identify information, choose a strategy, calculate or reason, verify the result and communicate the conclusion.",
+    "adaptive_guidance_rule": "Every interactive exercise must provide explicit validation and targeted feedback. An incorrect answer must trigger a useful hint, progressive guidance or a complete guided solution so that the student is never permanently blocked.",
+    "input_rule": "Use the simplest appropriate input type. Use numeric inputs for simple numerical answers, MathLive for structured mathematical expressions such as fractions, powers, roots and equations, sliders for continuous manipulation, and multiple-choice controls for conceptual selections.",
+    "if_platform_topic_is_broader_than_program": "Split into multiple lessons or mark it explicitly as a platform synthesis module.",
+    "if_topic_is_not_in_official_program": "Do not generate it as an official curriculum lesson; either remove it or explicitly mark it as enrichment.",
+    "source_verification_rule": "When a curriculum scope is uncertain, verify it against the latest applicable Bulletin officiel and Éduscol resources before generating the lesson.",
+    "no_curriculum_leakage": "Do not introduce concepts from another grade merely because they are mathematically related. Every lesson must remain aligned with the target level's official scope and progression."
   }
 }
