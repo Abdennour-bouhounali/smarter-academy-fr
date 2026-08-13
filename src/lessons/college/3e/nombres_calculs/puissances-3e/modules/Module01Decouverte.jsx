@@ -9,6 +9,7 @@ import { useAdaptiveExercise } from '../../../../../common/hooks/useAdaptiveExer
 import AdaptiveFeedback from '../../../../../common/components/AdaptiveFeedback';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MathInput from '../../../../../common/components/MathInput';
+import ExerciseValidator from '../../../../../common/components/ExerciseValidator';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 // --- Composant utilitaire pour les mini-exercices adaptatifs ---

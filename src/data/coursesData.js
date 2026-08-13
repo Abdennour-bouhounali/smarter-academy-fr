@@ -16,6 +16,32 @@ const smaMetadata = {
     totalModules: 5,
     path: '/courses/college/6e/nombres_calculs/nombres-entiers'
   },
+  '6e_fractions': {
+    id: 'fractions',
+    description: "Découvrir le sens de la fraction comme partage, l'utiliser pour décrire un quotient et la repérer sur une droite graduée.",
+    prerequisites: ["Division", "Partage"],
+    pointsToLearn: ["Sens du partage", "Numérateur et dénominateur", "Fraction comme quotient", "Repérage sur un axe"],
+    duration: '50 min',
+    difficulty: 'Facile',
+    status: 'available',
+    icon: '🍕',
+    isNew: true,
+    totalModules: 5,
+    path: '/courses/college/6e/nombres_calculs/fractions'
+  },
+  '6e_nombres_decimaux': {
+    id: 'nombres-decimaux',
+    description: "Comprendre les fractions décimales, maîtriser l'écriture à virgule et utiliser le tableau de numération étendu.",
+    prerequisites: ["Numération décimale", "Fractions simples"],
+    pointsToLearn: ["Lien fraction/décimal", "Repérage sur un axe", "Tableau de numération (dixièmes, centièmes...)", "Ordre de grandeur"],
+    duration: '50 min',
+    difficulty: 'Moyen',
+    status: 'available',
+    icon: '🎯',
+    isNew: true,
+    totalModules: 5,
+    path: '/courses/college/6e/nombres_calculs/nombres-decimaux'
+  },
   '3e_nombres_rationnels': {
     id: 'nombres-rationnels',
     description: "Maîtriser les calculs sur les nombres rationnels et les fractions dans des expressions et des problèmes, en mobilisant simplification, comparaison et opérations.",

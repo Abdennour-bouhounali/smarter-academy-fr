@@ -46,7 +46,7 @@ export default function ExerciseValidator({
       </div>
 
       {/* Action button */}
-      {!isCorrect && !isSolutionViewed && (
+      {!isCorrect && (
         <div className="pt-2 flex justify-start">
           <button
             type="button"

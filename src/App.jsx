@@ -19,6 +19,22 @@ import NombresEntiers6eM03          from './lessons/college/6e/nombres_calculs/n
 import NombresEntiers6eM04          from './lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module04DemiDroite';
 import NombresEntiers6eM05          from './lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module05Bilan';
 
+// ── Leçon : Fractions (6ème) ──────────────────────────────────────────
+import Fractions6e            from './lessons/college/6e/nombres_calculs/fractions';
+import Fractions6eM01         from './lessons/college/6e/nombres_calculs/fractions/modules/Module01Partage';
+import Fractions6eM02         from './lessons/college/6e/nombres_calculs/fractions/modules/Module02Vocabulaire';
+import Fractions6eM03         from './lessons/college/6e/nombres_calculs/fractions/modules/Module03Quotient';
+import Fractions6eM04         from './lessons/college/6e/nombres_calculs/fractions/modules/Module04Axe';
+import Fractions6eM05         from './lessons/college/6e/nombres_calculs/fractions/modules/Module05Bilan';
+
+// ── Leçon : Nombres décimaux (6ème) ──────────────────────────────────────────
+import NombresDecimaux6e            from './lessons/college/6e/nombres_calculs/nombres-decimaux';
+import NombresDecimaux6eM01         from './lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module01Fractions';
+import NombresDecimaux6eM02         from './lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module02Tableau';
+import NombresDecimaux6eM03         from './lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module03Axe';
+import NombresDecimaux6eM04         from './lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module04Comparaison';
+import NombresDecimaux6eM05         from './lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module05Bilan';
+
 // ── Leçon : Fonctions linéaires et affines (3ème) ──────────────────────────
 import FonctionsLineairesAffines from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines';
 import Module01NotionFonction         from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/modules/Module01NotionFonction';
@@ -220,6 +236,21 @@ export default function App() {
             <Route path="/courses/college/6e/nombres_calculs/nombres-entiers/3" element={<NombresEntiers6eM03 />} />
             <Route path="/courses/college/6e/nombres_calculs/nombres-entiers/4" element={<NombresEntiers6eM04 />} />
             <Route path="/courses/college/6e/nombres_calculs/nombres-entiers/5" element={<NombresEntiers6eM05 />} />
+
+            <Route path="/courses/college/6e/nombres_calculs/fractions" element={<Fractions6e />} />
+            <Route path="/courses/college/6e/nombres_calculs/fractions/1" element={<Fractions6eM01 />} />
+            <Route path="/courses/college/6e/nombres_calculs/fractions/2" element={<Fractions6eM02 />} />
+            <Route path="/courses/college/6e/nombres_calculs/fractions/3" element={<Fractions6eM03 />} />
+            <Route path="/courses/college/6e/nombres_calculs/fractions/4" element={<Fractions6eM04 />} />
+            <Route path="/courses/college/6e/nombres_calculs/fractions/5" element={<Fractions6eM05 />} />
+
+            {/* ── Nombres décimaux (6ème) ── */}
+            <Route path="/courses/college/6e/nombres_calculs/nombres-decimaux" element={<NombresDecimaux6e />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-decimaux/1" element={<NombresDecimaux6eM01 />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-decimaux/2" element={<NombresDecimaux6eM02 />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-decimaux/3" element={<NombresDecimaux6eM03 />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-decimaux/4" element={<NombresDecimaux6eM04 />} />
+            <Route path="/courses/college/6e/nombres_calculs/nombres-decimaux/5" element={<NombresDecimaux6eM05 />} />
 
             <Route path="*" element={<Home />} />
           </Route>

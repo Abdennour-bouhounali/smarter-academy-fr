@@ -5,7 +5,7 @@ import KeyTakeaway from '../../../../../common/components/KeyTakeaway';
 import { useProgress } from '../../../../../common/hooks/useProgress';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { Play } from 'lucide-react';
-
+import MathText from '../../../../../common/components/MathText';
 export default function Module01RegleZero() {
   const { xp, awardXP, markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
   const { prevLink, nextLink } = getNavLinks(1);

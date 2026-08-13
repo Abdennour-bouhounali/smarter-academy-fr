@@ -42,6 +42,7 @@ export default function ModuleLayout({
   lessonId,
   chapter,
   chapterTitle,
+  isCompleted,
 }) {
   const navigate = useNavigate();
 
@@ -55,8 +56,17 @@ export default function ModuleLayout({
     }
   }, [lessonId, moduleNumber, markModuleVisited]);
 
+  useEffect(() => {
+    if (lessonId && moduleNumber && isCompleted) {
+      markModuleCompleted(moduleNumber.toString());
+    }
+  }, [lessonId, moduleNumber, isCompleted, markModuleCompleted]);
+
   const handleNextClick = (e) => {
     e.preventDefault();
+    if (lessonId && moduleNumber) {
+      markModuleCompleted(moduleNumber.toString());
+    }
     if (onNextClick) onNextClick();
     if (nextLink) navigate(nextLink);
   };
