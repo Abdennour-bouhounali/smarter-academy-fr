@@ -18,14 +18,18 @@ class CreateAdmin extends Command
         $firstName = $this->argument('firstname');
         $lastName = $this->argument('lastname');
 
-        $user = User::create([
-            'first_name' => $firstName,
-            'last_name' => $lastName,
-            'email' => $email,
-            'password' => Hash::make($password),
-            'role' => 'admin',
-        ]);
+        $user = User::updateOrCreate(
+            ['email' => $email],
+            [
+                'first_name' => $firstName,
+                'last_name' => $lastName,
+                'password' => Hash::make($password),
+                'role' => 'admin',
+            ]
+        );
 
-        $this->info("Admin user created: {$user->email}");
+        $user->tokens()->delete();
+
+        $this->info("Admin user created/updated: {$user->email} (existing tokens revoked)");
     }
 }
