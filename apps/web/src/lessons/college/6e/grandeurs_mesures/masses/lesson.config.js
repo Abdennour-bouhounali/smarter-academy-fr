@@ -1,0 +1,53 @@
+export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/masses';
+
+export const LESSON_CONFIG = {
+  id: 'masses',
+  sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  title: 'Masses',
+  description:
+    'Comparer, mesurer, choisir la bonne unité et convertir des masses dans des situations concrètes : du sac mystère au ravitaillement de l’école.',
+  level: 'college',
+  grade: '6e',
+  chapter: 'grandeurs_mesures',
+  chapterTitle: 'Grandeurs et mesures',
+  totalModules: 7,
+  passingScore: 6,
+  masteryThreshold: 0.8,
+  emoji: '⚖️',
+  estimatedDurationMin: 75,
+  skills: [
+    'Comparer des masses à l’aide d’une balance',
+    'Choisir une unité de masse adaptée à une situation',
+    'Lire une masse sur une balance à affichage',
+    'Comprendre les relations entre mg, g, kg et t',
+    'Convertir une masse en comprenant pourquoi la valeur change',
+    'Estimer et résoudre des problèmes de masse',
+  ],
+  teachingScope: {
+    include: ['Unités de masse (kg, g, mg, tonne)', 'Conversions'],
+    exclude: ['Unités de force', 'Newtons', 'Densité', 'Relation masse-volume'],
+  },
+  modules: [
+    { id: 'L01-ms', number: 1, slug: '1', path: `${LESSON_BASE_PATH}/1`,
+      title: 'Mission : le sac mystère', desc: 'Un crayon, une pomme, un cartable, un vélo : lequel est le plus lourd ?',
+      color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 1, actionText: 'Démarrer' },
+    { id: 'L02-ms', number: 2, slug: '2', path: `${LESSON_BASE_PATH}/2`,
+      title: 'Choisir la bonne unité', desc: 'mg, g, kg, t : quatre unités pour quatre échelles de masse.',
+      color: 'sky', style: 'featured', estimatedMin: 9, difficulty: 1, actionText: 'Choisir' },
+    { id: 'L03-ms', number: 3, slug: '3', path: `${LESSON_BASE_PATH}/3`,
+      title: 'Comparer et mesurer', desc: 'La balance à deux plateaux, puis la balance à affichage.',
+      color: 'emerald', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Peser' },
+    { id: 'L04-ms', number: 4, slug: '4', path: `${LESSON_BASE_PATH}/4`,
+      title: 'Construire les relations', desc: 'Empiler des blocs de 100 g jusqu’à former 1 kg.',
+      color: 'violet', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Construire' },
+    { id: 'L05-ms', number: 5, slug: '5', path: `${LESSON_BASE_PATH}/5`,
+      title: 'Convertir les masses', desc: 'Passer d’une unité à l’autre en comprenant pourquoi le nombre change.',
+      color: 'rose', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Convertir' },
+    { id: 'L06-ms', number: 6, slug: '6', path: `${LESSON_BASE_PATH}/6`,
+      title: 'Estimer et résoudre', desc: 'Ordre de grandeur, pièges à unité et problèmes concrets.',
+      color: 'amber', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Résoudre' },
+    { id: 'L07-ms', number: 7, slug: '7', path: `${LESSON_BASE_PATH}/7`,
+      title: '🏆 Mission finale : le ravitaillement', desc: 'Prépare le goûter de l’école : mobilise tout ce que tu as appris.',
+      color: 'amber', style: 'boss', estimatedMin: 16, difficulty: 4, actionText: 'Relever le défi' },
+  ],
+};

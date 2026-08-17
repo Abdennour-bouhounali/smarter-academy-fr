@@ -1,27 +1,18 @@
 {
-  "name": "abdennour-portfolio",
+  "name": "smarter-academy",
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "apps/web",
+    "packages/core"
+  ],
   "scripts": {
-    "dev": "vite",
-    "dev:all": "concurrently \"npm run dev\" \"cd api && php artisan serve --port=3000\"",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@cortex-js/compute-engine": "^0.102.0",
-    "clsx": "^2.1.1",
-    "framer-motion": "^11.3.0",
-    "katex": "^0.18.2",
-    "lucide-react": "^0.400.0",
-    "mafs": "^0.21.0",
-    "mathlive": "^0.110.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1",
-    "react-katex": "^3.1.0",
-    "react-router-dom": "^7.18.2"
+    "dev": "npm run dev --workspace=apps/web",
+    "dev:all": "concurrently \"npm run dev\" \"cd apps/api && php artisan serve --port=3000\"",
+    "build": "npm run build --workspace=apps/web",
+    "preview": "npm run preview --workspace=apps/web",
+    "test": "npm run test --workspace=packages/core && npm run test --workspace=apps/web"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -31,6 +22,7 @@
     "concurrently": "^10.0.4",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.6",
-    "vite": "^5.3.4"
+    "vite": "^5.3.4",
+    "vitest": "^4.1.10"
   }
 }

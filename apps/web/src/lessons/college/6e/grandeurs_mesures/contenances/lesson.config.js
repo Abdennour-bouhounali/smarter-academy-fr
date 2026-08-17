@@ -1,0 +1,53 @@
+export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/contenances';
+
+export const LESSON_CONFIG = {
+  id: 'contenances',
+  sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  title: 'Contenances',
+  description:
+    'Comparer, mesurer, choisir la bonne unité et convertir des contenances dans des situations concrètes : du verre au bar à jus.',
+  level: 'college',
+  grade: '6e',
+  chapter: 'grandeurs_mesures',
+  chapterTitle: 'Grandeurs et mesures',
+  totalModules: 7,
+  passingScore: 6,
+  masteryThreshold: 0.8,
+  emoji: '💧',
+  estimatedDurationMin: 75,
+  skills: [
+    'Comparer des contenances en transvasant un liquide',
+    'Mesurer une contenance à l’aide d’un récipient gradué',
+    'Choisir une unité de contenance adaptée à une situation',
+    'Comprendre les relations entre L, dL, cL et mL',
+    'Convertir une contenance en comprenant pourquoi la valeur change',
+    'Relier 1 L à 1 dm³ et résoudre des problèmes concrets',
+  ],
+  teachingScope: {
+    include: ['Unités de contenance (L, dL, cL, mL)', 'Conversions', 'Lien avec le volume (1 L = 1 dm³)'],
+    exclude: ['Calculs de volume de solides quelconques', 'Densité', 'Relation masse-volume'],
+  },
+  modules: [
+    { id: 'L01-ct', number: 1, slug: '1', path: `${LESSON_BASE_PATH}/1`,
+      title: 'Mission : lequel contient le plus ?', desc: 'Une bouteille, une cruche : laquelle contient le plus d’eau ?',
+      color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 1, actionText: 'Démarrer' },
+    { id: 'L02-ct', number: 2, slug: '2', path: `${LESSON_BASE_PATH}/2`,
+      title: 'Mesurer une contenance', desc: 'Le litre comme repère : remplir, lire, comparer.',
+      color: 'sky', style: 'featured', estimatedMin: 9, difficulty: 1, actionText: 'Mesurer' },
+    { id: 'L03-ct', number: 3, slug: '3', path: `${LESSON_BASE_PATH}/3`,
+      title: 'Les unités L, dL, cL, mL', desc: 'Quatre unités pour quatre échelles de contenance.',
+      color: 'emerald', style: 'featured', estimatedMin: 9, difficulty: 1, actionText: 'Choisir' },
+    { id: 'L04-ct', number: 4, slug: '4', path: `${LESSON_BASE_PATH}/4`,
+      title: 'Construire les relations', desc: 'Partager 1 L en 10 dL, en 100 cL, en 1000 mL.',
+      color: 'violet', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Construire' },
+    { id: 'L05-ct', number: 5, slug: '5', path: `${LESSON_BASE_PATH}/5`,
+      title: 'Convertir les contenances', desc: 'Passer d’une unité à l’autre en comprenant pourquoi le nombre change.',
+      color: 'rose', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Convertir' },
+    { id: 'L06-ct', number: 6, slug: '6', path: `${LESSON_BASE_PATH}/6`,
+      title: 'Problèmes et choix d’unité', desc: 'Jus, arrosage, piscine : mobilise tes réflexes de mesure.',
+      color: 'amber', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Résoudre' },
+    { id: 'L07-ct', number: 7, slug: '7', path: `${LESSON_BASE_PATH}/7`,
+      title: '🏆 1 L = 1 dm³ + Mission finale', desc: 'Le lien avec le volume, puis le bar à jus de l’école.',
+      color: 'amber', style: 'boss', estimatedMin: 16, difficulty: 4, actionText: 'Relever le défi' },
+  ],
+};

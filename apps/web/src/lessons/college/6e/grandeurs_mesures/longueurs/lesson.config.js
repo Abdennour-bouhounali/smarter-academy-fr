@@ -1,0 +1,57 @@
+export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/longueurs';
+
+export const LESSON_CONFIG = {
+  id: 'longueurs',
+  sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  title: 'Longueurs',
+  description:
+    'Mesurer, comparer, convertir et calculer des longueurs dans des situations concrètes : du mètre ruban au plan du quartier.',
+  level: 'college',
+  grade: '6e',
+  chapter: 'grandeurs_mesures',
+  chapterTitle: 'Grandeurs et mesures',
+  totalModules: 7,
+  passingScore: 6,
+  masteryThreshold: 0.8,
+  emoji: '📏',
+  estimatedDurationMin: 75,
+  skills: [
+    'Choisir une unité de longueur adaptée à une situation',
+    'Mesurer une longueur avec une règle, sans se laisser piéger par le zéro',
+    'Comprendre les relations entre km, m, cm et mm',
+    'Convertir une longueur en comprenant pourquoi la valeur change',
+    'Estimer un ordre de grandeur avant de mesurer ou de calculer',
+    'Calculer le périmètre d’un polygone',
+  ],
+  teachingScope: {
+    include: [
+      'Mesurer des longueurs',
+      "Conversions d'unités de longueur (km, m, cm, mm)",
+      'Périmètres de polygones',
+    ],
+    exclude: ['Calculs avec Pi (au-delà d’une première approche)', 'Aires', 'Masses', 'Contenances', 'Durées', 'Angles'],
+  },
+  modules: [
+    { id: 'L01-lg', number: 1, slug: '1', path: `${LESSON_BASE_PATH}/1`,
+      title: 'Mission : quelle unité ?', desc: 'La largeur d’un cahier, la distance Paris–Lyon : une seule unité pour tout mesurer ?',
+      color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 1, actionText: 'Démarrer' },
+    { id: 'L02-lg', number: 2, slug: '2', path: `${LESSON_BASE_PATH}/2`,
+      title: 'Mesurer et comparer', desc: 'La règle ne commence pas toujours où l’objet commence : attention au piège du zéro.',
+      color: 'emerald', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Mesurer' },
+    { id: 'L03-lg', number: 3, slug: '3', path: `${LESSON_BASE_PATH}/3`,
+      title: 'Construire les unités', desc: 'Km, m, cm, mm : une même longueur, plusieurs façons de l’écrire.',
+      color: 'sky', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Construire' },
+    { id: 'L04-lg', number: 4, slug: '4', path: `${LESSON_BASE_PATH}/4`,
+      title: 'Convertir', desc: 'Passer d’une unité à l’autre en comprenant pourquoi le nombre change.',
+      color: 'violet', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Convertir' },
+    { id: 'L05-lg', number: 5, slug: '5', path: `${LESSON_BASE_PATH}/5`,
+      title: 'Choisir et estimer', desc: 'Quelle unité choisir ? Quel ordre de grandeur attendre avant de mesurer ?',
+      color: 'amber', style: 'featured', estimatedMin: 9, difficulty: 2, actionText: 'Estimer' },
+    { id: 'L06-lg', number: 6, slug: '6', path: `${LESSON_BASE_PATH}/6`,
+      title: 'Périmètres', desc: 'Le périmètre, c’est la longueur du contour : en faire le tour, puis calculer.',
+      color: 'rose', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Calculer' },
+    { id: 'L07-lg', number: 7, slug: '7', path: `${LESSON_BASE_PATH}/7`,
+      title: '🏆 Mission finale : le parcours', desc: 'Un parcours sportif de 25 m sur 12 m : mobilise tout ce que tu as appris.',
+      color: 'amber', style: 'boss', estimatedMin: 16, difficulty: 4, actionText: 'Relever le défi' },
+  ],
+};

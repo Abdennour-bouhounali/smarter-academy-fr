@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Console\Commands;
+
+use App\Models\User;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Hash;
+
+class CreateAdmin extends Command
+{
+    protected $signature = 'make:admin {email} {password} {firstname} {lastname}';
+
+    protected $description = 'Create an admin user';
+
+    public function handle()
+    {
+        $email = $this->argument('email');
+        $password = $this->argument('password');
+        $firstName = $this->argument('firstname');
+        $lastName = $this->argument('lastname');
+
+        $user = User::updateOrCreate(
+            ['email' => $email],
+            [
+                'first_name' => $firstName,
+                'last_name' => $lastName,
+                'password' => Hash::make($password),
+                'role' => 'admin',
+            ]
+        );
+
+        $user->tokens()->delete();
+
+        $this->info("Admin user created/updated: {$user->email} (existing tokens revoked)");
+    }
+}
