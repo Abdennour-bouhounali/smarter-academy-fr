@@ -18,14 +18,14 @@ Not every concept below has a backend representation yet — that's the point of
 | **Module** | `LESSON_CONFIG.modules[]` entries, each backed by one React component | `<lesson>/lesson.config.js`, `<lesson>/modules/Module*.jsx` |
 | **Activity** | Not modeled as a distinct layer — a module's internal steps/interactions are undifferentiated JSX. See `LESSON_CONTRACT.md` §Module for the decision on whether to introduce this now (we don't). | — |
 | **Exercise** | An interaction widget within a module (`useAdaptiveExercise`-backed, `QuizQuestion`, or bespoke) | See `EXERCISE_CONTRACT.md` |
-| **Attempt** | Not modeled. `useAdaptiveExercise` tracks an in-memory `attempts` counter that's never read or persisted. | See `EXERCISE_CONTRACT.md` §Attempt |
-| **Answer** | Component-local `useState`, never persisted independent of the pass/fail outcome | — |
+| **Attempt** | Not modeled *for lessons* — `useAdaptiveExercise` still only tracks an in-memory counter, never persisted. A real, backend-persisted equivalent exists, but scoped to the diagnostic only: `diagnostic_responses`, one row per answered question. | See `EXERCISE_CONTRACT.md` §Attempt (lessons); `DIAGNOSTIC_6E.md` §8 (diagnostic) |
+| **Answer** | Component-local `useState`, never persisted independent of the pass/fail outcome — *for lessons*. The diagnostic persists the raw structured answer (`diagnostic_responses.answer`, JSON). | — (lessons); `DIAGNOSTIC_6E.md` §8 (diagnostic) |
 | **Feedback** | A rendered message (`AdaptiveFeedback`/`FeedbackBox`/inline JSX), never persisted | — |
-| **Skill / Competency** | `LESSON_CONFIG.skills[]` (free-text strings) and the official curriculum JSON's `prerequisites`/`teaching_scope` fields — descriptive metadata, not a queryable graph | `lesson.config.js`, curriculum JSON |
-| **Progress** | `localStorage['smarter_lesson_{id}']` (`completedModules[]`, `completedExercises[]`) | `useProgress.js` |
-| **Mastery** | A binary proxy (`getModuleMastery` → 100 or 0) conflated in naming with "completion" — see `PROGRESS_MODEL.md` §Completion vs. Mastery | `lessonAccess.js` |
+| **Skill / Competency** | For lessons: `LESSON_CONFIG.skills[]` (free-text strings) and the curriculum JSON's `prerequisites`/`teaching_scope` — descriptive metadata, not a queryable graph. The diagnostic has a real one: a 13-node, 4-tier dependency graph for 6e, with explicit `prerequisites` between skill ids (not free text) — the first such graph in the codebase. | `lesson.config.js`, curriculum JSON (lessons); `DIAGNOSTIC_6E.md` §2 (diagnostic) |
+| **Progress** | `localStorage['smarter_lesson_{id}']` (`completedModules[]`, `completedExercises[]`) — unchanged, lesson progress is still entirely client-side | `useProgress.js` |
+| **Mastery** | For lessons: still a binary proxy (`getModuleMastery` → 100 or 0) conflated with "completion" — see `PROGRESS_MODEL.md` §Completion vs. Mastery, unchanged by the diagnostic. The diagnostic has a real, non-binary one: a 0–1 confidence estimate per skill per session, updated per response, mapped to 🟢/🟠/🔴. The two are intentionally separate systems — the diagnostic's mastery estimate isn't wired into `lessonAccess.js`'s module-unlock gating, and doesn't change how lesson progress is computed or displayed. | `lessonAccess.js` (lessons); `DIAGNOSTIC_6E.md` §5 (diagnostic) |
 
-**What this table means today (updated in Phase 4):** Student *identity* now exists (self-registration, login, session). Attempt, Answer-as-a-record, real Skill/Competency, and real Mastery still have no backend home, and nothing yet links a Student to any of them — no progress/attempt data is stored server-side or tied to a user ID. Building that link is explicitly future work (deliberately out of scope for Phase 4: no student dashboard, no progress system, no mastery engine). What Phase 3 and Phase 4 together did is define contracts and identity precisely enough that building that link later is additive, not another rewrite.
+**What this table means today:** Student *identity* now exists (self-registration, login, session), as does a *diagnostic* subsystem with real, backend-persisted Attempt/Answer/Skill-graph/Mastery — but only for the 6e diagnostic, and only as its own self-contained system. It is deliberately not (yet) the general answer to "Attempt"/"Mastery" for the lesson/exercise system as a whole, which still works exactly as `EXERCISE_CONTRACT.md`/`PROGRESS_MODEL.md` describe. Extending real attempt/mastery tracking to ordinary lesson exercises (not just the diagnostic) remains future work — what this phase proves is that the *shape* of that future system (skill-scoped evidence, a confidence estimate, not a binary flag) works end-to-end, in the one place it was actually asked for.
 
 ## 2. Frontend architecture
 
@@ -88,12 +88,13 @@ Nothing in this chain talks to the backend today. The backend is a separate, par
 
 | Belongs to frontend (today, and staying there) | Belongs to backend (today) | Will eventually move to backend |
 |---|---|---|
-| UI state, animations, interaction state | User identity, admin and student (`User`, `role` column) | Durable student progress |
-| Immediate exercise feedback | Contact-form messages | Attempts, mastery |
-| Current-exercise in-progress answer | Sanctum tokens (bearer, `Authorization` header) | Analytics events |
-| Local "resume where I left off" | Role-based authorization (`Gate::define('admin', ...)`) | Cross-device sync |
+| UI state, animations, interaction state | User identity, admin and student (`User`, `role` column) | Durable student progress (lessons) |
+| Immediate exercise feedback (lessons) | Contact-form messages | Attempts, mastery (lessons) |
+| Current-exercise in-progress answer (lessons) | Sanctum tokens (bearer, `Authorization` header) | Analytics events |
+| Local "resume where I left off" (lessons) | Role-based authorization (`Gate::define('admin', ...)`) | Cross-device sync |
+| — | Diagnostic sessions, responses, skill assessments (`DIAGNOSTIC_6E.md`) — durable, per-student, server-authoritative | — |
 
-This boundary is not new — it's already how the app behaves. Documenting it here is what makes the eventual backend build additive rather than a redesign of the frontend.
+This boundary is not new — it's already how the app behaves. Documenting it here is what makes the eventual backend build additive rather than a redesign of the frontend. The diagnostic is the first *durable student data* to live on the backend at all — everything in the right-hand "will eventually move" column is still true for ordinary lesson progress, unaffected by this.
 
 ## 7. Future mobile strategy (not built now)
 
@@ -105,18 +106,20 @@ The pure-logic layer now has a real home: `packages/core` (an npm workspace, imp
 
 Full list with reasons in `ARCHITECTURE_FOUNDATION_REPORT.md` §20. In one line: no dashboards, no mastery algorithm, no backend tables, no state library, no mobile app, no mass migration of the 3e lesson family or the 13-site validation duplication flagged in the cleanup phase.
 
-## 9. Authentication & identity (Phase 4)
+## 9. Authentication & identity (Phase 4, registration simplified in the Frictionless Registration phase)
 
-One `users` table serves both roles — no separate Student table. `role` (`'admin'` | `'student'`) is set server-side only; client-supplied `role` on registration is always ignored.
+One `users` table serves both roles — no separate Student table. `role` (`'admin'` | `'student'`) is set server-side only; client-supplied `role` on registration is always ignored. `role` is a free-text string column, not an enum, specifically so future account types are additive: today only "Élève" (`role='student'`) self-registers; "Famille" and "Enseignant" are future account types this schema doesn't need to change to support — see §11.
 
 ```
-POST /auth/register  (public, throttled)     → creates a User with role forced to 'student', returns {token, user}
+POST /auth/register  (public, throttled)     → creates a User with role forced to 'student' from {email, password} only, returns {token, user}
 POST /auth/login      (public, throttled)     → validates credentials, returns {token, user} for admin or student
 GET  /auth/me         (auth:sanctum)          → the current user
 POST /auth/logout     (auth:sanctum)          → revokes only the calling request's token
+PATCH /auth/grade      (auth:sanctum)          → sets/changes the current user's grade (see §10)
 GET  /contact         (auth:sanctum + can:admin) → admin-only; the one real cross-role authorization boundary today
 ```
 
+- **Registration collects only email + password.** No name, no grade, no password confirmation. `first_name`/`last_name`/`grade` stay nullable on `users` and are simply `null` on a freshly-created account — nothing else is asked at signup, matching the product decision to make account creation as frictionless as possible (inspired by platforms like SchoolMouv). Everything else is collected progressively after the account exists: grade via the onboarding step below, and any further profile data later, if and when a real need for it shows up.
 - **Session mechanism:** Sanctum bearer tokens (personal access tokens), stored in the frontend's `localStorage`, sent as `Authorization: Bearer <token>`. Not Sanctum's SPA cookie mode — the frontend has no cookie/CSRF-cookie flow, and this wasn't changed in Phase 4 (see `docs/reports/ARCHITECTURE_FOUNDATION_AUDIT.md`/`docs/reports/AUTHENTICATION_FOUNDATION_REPORT.md` for why bearer tokens were kept rather than migrated).
 - **Expiration:** tokens now expire (`SANCTUM_TOKEN_EXPIRATION` env var, default 30 days) — previously `null` (never expired).
 - **Authorization boundary:** a single Laravel Gate, `Gate::define('admin', fn (User $user) => $user->role === 'admin')` in `AppServiceProvider::boot()`, applied via the `can:admin` route middleware. This is the only role check on the backend today; it exists because `GET /contact` (contact-form leads) must not be readable by a self-registered student.
@@ -125,15 +128,21 @@ GET  /contact         (auth:sanctum + can:admin) → admin-only; the one real cr
 
 ## 10. Student grade & personalized learning context
 
-A student's grade is profile data, not a hard content restriction. Single source of truth for *which grades exist*: `packages/core/curriculum/coursesData.js`'s `getAllGrades()`, which flattens `courseLevels[].grades[]` (already the catalogue's own source of truth — nothing new was introduced, `grade` values are exactly `courseLevels[].grades[].id`: `6e`/`5e`/`4e`/`3e`/`seconde`/`premiere_specialite`/`terminale_specialite`/`terminale_complementaires`). Single source of truth for *a given student's current grade*: the `grade` column on `users`, nullable (admins don't have one), server-validated only for shape (`string|max:50`, not an exact enum — the frontend catalogue is what defines valid values, avoiding a duplicated grade list on the backend).
+A student's grade is profile data, not a hard content restriction, and — since the Frictionless Registration phase — not collected at registration either. Single source of truth for *which grades exist*: `packages/core/curriculum/coursesData.js`'s `getAllGrades()`, which flattens `courseLevels[].grades[]` (already the catalogue's own source of truth — nothing new was introduced, `grade` values are exactly `courseLevels[].grades[].id`: `6e`/`5e`/`4e`/`3e`/`seconde`/`premiere_specialite`/`terminale_specialite`/`terminale_complementaires`). Single source of truth for *a given student's current grade*: the `grade` column on `users`, nullable (admins don't have one, and neither does a freshly-registered student until onboarding sets it), server-validated only for shape (`string|max:50`, not an exact enum — the frontend catalogue is what defines valid values, avoiding a duplicated grade list on the backend).
 
 ```
-POST /auth/register   → grade now required, stored verbatim on the new User
-PATCH /auth/grade      (auth:sanctum) → the only way to change it; scoped to $request->user(), body {grade}
+POST /auth/register    → grade is not accepted here; every new User's grade is null
+PATCH /auth/grade      (auth:sanctum) → the only way to set/change it; scoped to $request->user(), body {grade}
 ```
 
-**Default-context resolution** (`Courses.jsx`): explicit URL params (deep links, the existing grade-browsing buttons) still win first — browsing another grade never touches the profile. A logged-in student's `user.grade` is the next priority, ahead of the pre-existing anonymous-visitor `localStorage` fallback (which now only applies to logged-out visitors or students with no grade set — behavior for them is byte-for-byte unchanged from before this phase). The homepage (`StudentHomeBanner`, rendered only for `role==='student'`) and the navbar (`GradeSwitcher`) read `user.grade` the same way, so there's exactly one place (`AuthContext`) a component needs to consult.
+**Onboarding (`ChooseGrade.jsx`, `/espace/bienvenue`):** the one step between account creation and the student space. `Register.jsx` navigates here right after a successful registration; `StudentLayout` also redirects here for *any* student it renders with `user.grade === null` (not just right after signup — e.g. a student who closed the tab mid-onboarding lands back here on their next visit), so the guard lives in one place rather than being repeated per page. Picking a grade calls the same `PATCH /auth/grade` used by the profile page and navbar switcher below — onboarding isn't a special-cased write path.
+
+**Default-context resolution** (`Courses.jsx`): explicit URL params (deep links, the existing grade-browsing buttons) still win first — browsing another grade never touches the profile. A logged-in student's `user.grade` is the next priority, ahead of the pre-existing anonymous-visitor `localStorage` fallback (which applies to logged-out visitors and to students with no grade set — the same fallback a student now also sees for the brief window before onboarding, unchanged from before this phase). The homepage (`StudentHomeBanner`, rendered only for `role==='student'`) and the navbar (`GradeSwitcher`) read `user.grade` the same way, so there's exactly one place (`AuthContext`) a component needs to consult.
 
 **Why switching grades can't lose progress:** progress is keyed by lesson ID (`localStorage['smarter_lesson_{lessonId}']`), never by grade, and every lesson ID across all populated grades is already unique (verified: e.g. 3e's `racines-carrees` vs 4e's `racines-carrees-4e`) — changing `user.grade` only changes which grade's catalogue is the *default view*; no key involving grade is ever written or read, so there is nothing for a grade change to delete.
 
 **Not built:** grade-scoped mastery/recommendations, parent/family accounts, an admin-facing grade-management UI. `getResumeLesson` (the "continue learning" pick) still searches recency across *all* grades, unchanged — a deliberate choice, not an oversight: it already satisfies "no hard restriction," and scoping it to only the current grade would be a new restriction the brief explicitly warns against.
+
+## 11. Future account types (not built)
+
+The product direction names three account types: **Élève** (implemented — every self-registered `User` today), **Famille**, and **Enseignant** (both future, deliberately not built now). Nothing speculative was added for the latter two — no `family_id`/`teacher_id` columns, no linking table, no parent/child relationship. The only accommodation made is that `role` is a free-text string rather than a database-level enum (see §9), so adding `'famille'` or `'enseignant'` as a value later is additive. What either account type actually needs (a family linking multiple student accounts? a teacher owning a roster?) is unknown until that phase is scoped — building the relationship now would be exactly the kind of speculative database architecture this codebase's conventions warn against (see `ARCHITECTURE_FOUNDATION_AUDIT.md`).

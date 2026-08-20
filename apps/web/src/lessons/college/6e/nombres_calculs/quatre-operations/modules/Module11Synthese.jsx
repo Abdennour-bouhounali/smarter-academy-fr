@@ -78,14 +78,20 @@ function SynthesisSheet() {
 }
 
 /* ─── Flash Quiz ──────────────────────────────────────────────── */
+// Assessment metadata (docs/architecture/AI_LESSON_CONTRACT.md) — this
+// 5-question flash quiz is part of the lesson's evaluation-stage checkpoint
+// (alongside Module10BossFinal.jsx's PHASES).
 const FLASH_QUESTIONS = [
   {
+    id: 'quatre-operations-flash-01',
     q: 'Dans 45 ÷ 8 = 5 reste 5, quel est le quotient ?',
     options: ['45', '8', '5', '0'],
     correct: 2,
     explain: 'Le quotient est le résultat entier de la division : 5. (Le reste est aussi 5, mais ce sont deux valeurs différentes.)',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_quatre-operations_P5'] },
   },
   {
+    id: 'quatre-operations-flash-02',
     q: 'Laquelle de ces situations correspond à une multiplication ?',
     options: [
       "Taille d'une classe : 28 élèves. On en retire 5.",
@@ -95,24 +101,31 @@ const FLASH_QUESTIONS = [
     ],
     correct: 1,
     explain: '6 rangées × 7 chaises = groupes égaux → multiplication.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_quatre-operations_P1'] },
   },
   {
+    id: 'quatre-operations-flash-03',
     q: '17 pizzas = 5 × q + r. Si 5 × 3 = 15 et 17 − 15 = 2, que vaut q ?',
     options: ['17', '5', '3', '2'],
     correct: 2,
     explain: 'q est le quotient : 17 ÷ 5 = 3 reste 2.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_quatre-operations_P5'] },
   },
   {
+    id: 'quatre-operations-flash-04',
     q: 'Pour 7 + 9, quelle stratégie de calcul mental est la plus rapide ?',
     options: ['Poser le calcul', '7 + 10 − 1 = 16', 'Estimer à 15', 'Calculer 7 + 9 = 7 + 7 + 2'],
     correct: 1,
     explain: '+9 = +10 − 1 → 7 + 10 − 1 = 16. Très rapide !',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_quatre-operations_P3', '6e_quatre-operations_P4'] },
   },
   {
+    id: 'quatre-operations-flash-05',
     q: '31 enfants dans 5 groupes. Quel est le nombre de groupes complets ?',
     options: ['31', '5', '6', '1'],
     correct: 2,
     explain: '31 ÷ 5 = 6 reste 1 → 6 groupes complets (et 1 enfant en plus).',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_quatre-operations_P5', '6e_quatre-operations_P6'] },
   },
 ];
 

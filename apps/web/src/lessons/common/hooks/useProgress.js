@@ -1,5 +1,7 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useContext } from 'react';
 import { storage } from '../../../utils/storage';
+import { AuthContext } from '../../../context/AuthContext';
+import { scheduleProgressSync } from '../progressQueue';
 
 /**
  * useProgress — Smarter Academy progression system.
@@ -12,6 +14,12 @@ import { storage } from '../../../utils/storage';
  * Module completion and exercise completion are SCOPED to each lesson.
  * awardXP is IDEMPOTENT: each exerciseId can only reward XP once, ever.
  *
+ * Storage is the synchronous read path and offline cache; for authenticated
+ * students every module write also schedules a debounced push to the
+ * cross-device lesson-progress API (see progressQueue.js — union merge on
+ * the server makes replays and multi-device races safe). Anonymous visitors
+ * stay purely local.
+ *
  * Reads/writes go through `storage` (utils/storage.js), not `localStorage`
  * directly — see that file for why.
  *
@@ -19,6 +27,7 @@ import { storage } from '../../../utils/storage';
  */
 export function useProgress(lessonId) {
   const storageKey = `smarter_lesson_${lessonId}`;
+  const { token } = useContext(AuthContext);
 
   // ── Read initial state from storage ──────────────────────────────────────
   const readLessonData = () => {
@@ -58,9 +67,10 @@ export function useProgress(lessonId) {
         completedModules: [...prev.completedModules, moduleId],
       };
       persistLessonData(next);
+      scheduleProgressSync(token, lessonId);
       return next;
     });
-  }, [storageKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [storageKey, token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── markModuleVisited ─────────────────────────────────────────────────────
   const markModuleVisited = useCallback((moduleNumber) => {
@@ -79,9 +89,10 @@ export function useProgress(lessonId) {
         lastVisitedAt: Date.now()
       };
       persistLessonData(next);
+      scheduleProgressSync(token, lessonId);
       return next;
     });
-  }, [lessonId, storageKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [lessonId, storageKey, token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── awardXP (idempotent) ──────────────────────────────────────────────────
   /**

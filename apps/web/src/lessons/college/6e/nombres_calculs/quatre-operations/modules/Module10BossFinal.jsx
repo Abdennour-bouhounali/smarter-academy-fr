@@ -15,6 +15,9 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 const TOTAL_BUDGET = 500;
 
+// Assessment metadata (docs/architecture/AI_LESSON_CONTRACT.md) — each
+// multi-step phase below is a real posed calculation embedded in a problem,
+// certifying this evaluation-stage module's learning points.
 const PHASES = [
   {
     id: 'balloons',
@@ -52,6 +55,7 @@ const PHASES = [
     ],
     category: 'Multi-étapes',
     success: 'Excellent ! 6 + 17 = 23 pizzas au total. Tu as bien interprété le reste !',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_quatre-operations_P6'] },
   },
   {
     id: 'budget',
@@ -65,6 +69,7 @@ const PHASES = [
     ],
     category: 'Multi-étapes',
     success: 'Superbe ! Budget restant = 166 €. Mission accomplie !',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_quatre-operations_P2'] },
   },
 ];
 

@@ -3,11 +3,15 @@
  * Source de vérité unique pour la leçon : Racine carrée (3ème)
  */
 
+export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/racines-carrees';
+
 export const LESSON_CONFIG = {
   // ── Identité ──────────────────────────────────────────────────────────────
-  id: 'racines-carrees',
+  id: 'racines-carrees-3e',
   slug: 'racines-carrees',
+  sequentialUnlock: true,
   title: 'Racine carrée',
+  description: "Comprendre la racine carrée comme opération inverse du carré, reconnaître les carrés parfaits et calculer des racines exactes, puis utiliser ses propriétés, simplifier certaines racines et les mobiliser dans les problèmes de niveau 3e.",
   emoji: '√',
   level: 'college',
   grade: '3e',
@@ -16,7 +20,8 @@ export const LESSON_CONFIG = {
   officialObjects: ['racine_carree'],
 
   // ── Méta-pédagogique ──────────────────────────────────────────────────────
-  estimatedDurationMin: 60,     
+  estimatedDurationMin: 75,
+  passingScore: 0.8,
   difficulty: 3,                 // 1 = très facile … 5 = très difficile
   masteryThreshold: 0.8,         // 80 % des modules complétés = leçon maîtrisée
 
@@ -48,8 +53,11 @@ export const LESSON_CONFIG = {
       id: 'L01',
       number: 1,
       slug: '1',
+      path: `${LESSON_BASE_PATH}/1`,
       title: 'Découverte et Aire',
       desc: "Pourquoi a-t-on créé la racine carrée ? Lien Aire → Côté → √.",
+      stage: 'trigger',
+      teachesLearningPointIds: ['3e_racines-carrees-3e_P1'],
       color: 'emerald',
       style: 'featured',
       estimatedMin: 10,
@@ -62,8 +70,11 @@ export const LESSON_CONFIG = {
       id: 'L02',
       number: 2,
       slug: '2',
+      path: `${LESSON_BASE_PATH}/2`,
       title: 'Carrés Parfaits et Repérage',
       desc: "Visualiser les carrés parfaits et encadrer des racines.",
+      stage: 'discovery',
+      teachesLearningPointIds: ['3e_racines-carrees-3e_P2'],
       color: 'indigo',
       style: 'featured',
       estimatedMin: 10,
@@ -76,8 +87,11 @@ export const LESSON_CONFIG = {
       id: 'L03',
       number: 3,
       slug: '3',
+      path: `${LESSON_BASE_PATH}/3`,
       title: 'Produit et Quotient',
       desc: "Découvrir que √(a×b) = √a × √b.",
+      stage: 'manipulation',
+      teachesLearningPointIds: ['3e_racines-carrees-3e_P3', '3e_racines-carrees-3e_P4'],
       color: 'blue',
       style: 'featured',
       estimatedMin: 12,
@@ -90,8 +104,11 @@ export const LESSON_CONFIG = {
       id: 'L04',
       number: 4,
       slug: '4',
+      path: `${LESSON_BASE_PATH}/4`,
       title: 'Le Piège de l\'Addition',
       desc: "Démontrer que √(a+b) n'est pas égal à √a + √b.",
+      stage: 'manipulation',
+      teachesLearningPointIds: ['3e_racines-carrees-3e_P4'],
       color: 'rose',
       style: 'featured',
       estimatedMin: 8,
@@ -104,8 +121,11 @@ export const LESSON_CONFIG = {
       id: 'L05',
       number: 5,
       slug: '5',
+      path: `${LESSON_BASE_PATH}/5`,
       title: 'Simplification (Extraction)',
       desc: "Apprendre à écrire sous la forme a√b.",
+      stage: 'formalization',
+      teachesLearningPointIds: ['3e_racines-carrees-3e_P5'],
       color: 'purple',
       style: 'featured',
       estimatedMin: 15,
@@ -118,8 +138,11 @@ export const LESSON_CONFIG = {
       id: 'L06',
       number: 6,
       slug: '6',
+      path: `${LESSON_BASE_PATH}/6`,
       title: 'Équations x² = a',
       desc: "Distinction entre √25 et x² = 25.",
+      stage: 'practice_lab',
+      teachesLearningPointIds: ['3e_racines-carrees-3e_P6'],
       color: 'sky',
       style: 'featured',
       estimatedMin: 10,
@@ -132,8 +155,10 @@ export const LESSON_CONFIG = {
       id: 'L07',
       number: 7,
       slug: '7',
+      path: `${LESSON_BASE_PATH}/7`,
       title: 'Bilan Final',
       desc: "Quiz global pour valider l'acquisition de toutes les compétences.",
+      stage: 'evaluation',
       color: 'slate',
       style: 'assessment',
       estimatedMin: 10,
@@ -149,8 +174,7 @@ export const LESSON_CONFIG = {
 
 export const TOTAL_MODULES = LESSON_CONFIG.modules.length;
 
-export const LESSON_BASE_PATH =
-  `/courses/${LESSON_CONFIG.level}/${LESSON_CONFIG.grade}/${LESSON_CONFIG.chapter}/${LESSON_CONFIG.slug}`;
+
 
 /** Retourne le module précédent et suivant d'un module donné par son numéro */
 export function getModuleNav(moduleNumber) {

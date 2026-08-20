@@ -14,17 +14,18 @@ export default function Module07Bilan() {
 
   const questions = [
     {
-      id: 1,
+      id: 'eval-01',
       q: "Parmi ces propositions, laquelle est une « Équation Produit Nul » ?",
       options: [
         { text: "$x + (x - 5) = 0$", isCorrect: false },
         { text: "$x(x - 5) = 0$", isCorrect: true },
         { text: "$x^2 - 5 = 0$", isCorrect: false }
       ],
-      explanation: "Il faut une MULTIPLICATION de deux facteurs égale à zéro. « x + (x-5) » est une somme, et « x² - 5 » est une différence."
+      explanation: "Il faut une MULTIPLICATION de deux facteurs égale à zéro. « x + (x-5) » est une somme, et « x² - 5 » est une différence.",
+      assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_equations-produit_P4'] }
     },
     {
-      id: 2,
+      id: 'eval-02',
       q: "Quelles sont les solutions de l'équation (x - 7)(2x + 8) = 0 ?",
       options: [
         { text: "$x = -7$ ou $x = 4$", isCorrect: false },
@@ -32,36 +33,40 @@ export default function Module07Bilan() {
         { text: "$x = 7$ ou $x = 4$", isCorrect: false },
         { text: "$x = -7$ ou $x = -8$", isCorrect: false }
       ],
-      explanation: "D'une part x - 7 = 0 donne x = 7. D'autre part 2x + 8 = 0 donne 2x = -8, soit x = -4."
+      explanation: "D'une part x - 7 = 0 donne x = 7. D'autre part 2x + 8 = 0 donne 2x = -8, soit x = -4.",
+      assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_equations-produit_P1'] }
     },
     {
-      id: 3,
+      id: 'eval-03',
       q: "Comment factoriser x² - 9 pour pouvoir résoudre x² - 9 = 0 ?",
       options: [
         { text: "$x(x - 9)$", isCorrect: false },
         { text: "$(x - 9)(x + 9)$", isCorrect: false },
         { text: "$(x - 3)(x + 3)$", isCorrect: true }
       ],
-      explanation: "C'est la différence de deux carrés : a² - b² = (a-b)(a+b). Ici, b² = 9 donc b = 3."
+      explanation: "C'est la différence de deux carrés : a² - b² = (a-b)(a+b). Ici, b² = 9 donc b = 3.",
+      assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_equations-produit_P3'] }
     },
     {
-      id: 4,
+      id: 'eval-04',
       q: "Vrai ou Faux ? « Si A × B = 0, alors A = 0 ET B = 0 obligatoirement. »",
       options: [
         { text: "Vrai", isCorrect: false },
         { text: "Faux", isCorrect: true }
       ],
-      explanation: "Faux ! C'est A = 0 OU B = 0. Il suffit qu'un SEUL des facteurs soit nul pour que le produit soit nul."
+      explanation: "Faux ! C'est A = 0 OU B = 0. Il suffit qu'un SEUL des facteurs soit nul pour que le produit soit nul.",
+      assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_equations-produit_P2'] }
     },
     {
-      id: 5,
+      id: 'eval-05',
       q: "Quelles sont les solutions de 5x(x + 1) = 0 ?",
       options: [
         { text: "$x = -5$ ou $x = -1$", isCorrect: false },
         { text: "$x = 0$ ou $x = 1$", isCorrect: false },
         { text: "$x = 0$ ou $x = -1$", isCorrect: true }
       ],
-      explanation: "Le premier facteur est 5x (5x = 0 donne x = 0). Le deuxième est x + 1 (x + 1 = 0 donne x = -1)."
+      explanation: "Le premier facteur est 5x (5x = 0 donne x = 0). Le deuxième est x + 1 (x + 1 = 0 donne x = -1).",
+      assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_equations-produit_P5'] }
     }
   ];
 

@@ -189,6 +189,7 @@ function ProblemesPhase({ onAllDone }) {
 const EPREUVES = [
   {
     id: 'e1', skill: 'construire', title: 'Épreuve 1',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P1'] },
     render: ({ solved, onSolved }) => {
       const [cells, setCells] = useState([]);
       const target = 3, den = 5;
@@ -223,6 +224,7 @@ const EPREUVES = [
   },
   {
     id: 'e3', skill: 'vocabulaire', title: 'Épreuve 3',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P2'] },
     render: ({ solved, onSolved }) => {
       const [pick, setPick] = useState(null);
       const [revealed, setRevealed] = useState(false);
@@ -241,6 +243,7 @@ const EPREUVES = [
   },
   {
     id: 'e4', skill: 'quantite', title: 'Épreuve 4',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P3'] },
     render: ({ solved, onSolved }) => {
       const [sel, setSel] = useState([]);
       const ok = sel.length === 2;
@@ -273,6 +276,7 @@ const EPREUVES = [
   },
   {
     id: 'e6', skill: 'droite', title: 'Épreuve 6',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P4'] },
     render: ({ solved, onSolved }) => {
       const [pos, setPos] = useState(0);
       const [checked, setChecked] = useState(false);
@@ -536,17 +540,24 @@ function Synthese() {
 }
 
 /* ═══ FLASH RETOUR ══════════════════════════════════════════════════ */
+// Assessment metadata (docs/architecture/AI_LESSON_CONTRACT.md) — this
+// 5-question flash quiz is the lesson's evaluation-stage checkpoint.
 const FLASH = [
-  { q: 'Cette figure a 5 parts égales, 2 sont coloriées. Quelle fraction ?', shape: { shape: 'bar', parts: 5, shaded: 2, tone: 'sky' },
-    options: ['2/5', '5/2', '3/5'], correct: 0, explain: '2 parts coloriées sur 5 : 2/5.' },
-  { q: 'Dans 5/8, que représente le 5 ?', options: ['Le nombre de parts prises (numérateur)', 'Le nombre total de parts (dénominateur)'], correct: 0,
-    explain: 'Le 5 est le numérateur : les parts prises.' },
-  { q: 'Dans 5/8, que représente le 8 ?', options: ['Le nombre de parts prises (numérateur)', 'Le nombre total de parts égales (dénominateur)'], correct: 1,
-    explain: 'Le 8 est le dénominateur : le partage total.' },
-  { q: 'Que vaut 3 ÷ 4, sous forme de fraction ?', options: ['3/4', '4/3', '3 × 4'], correct: 0,
-    explain: 'Partager 3 par 4 donne 3/4.' },
-  { q: 'Quelle écriture décimale correspond à 1/2 ?', options: ['0,5', '0,2', '1,2'], correct: 0,
-    explain: '1/2 = 5/10 = 0,5.' },
+  { id: 'fractions-flash-01', q: 'Cette figure a 5 parts égales, 2 sont coloriées. Quelle fraction ?', shape: { shape: 'bar', parts: 5, shaded: 2, tone: 'sky' },
+    options: ['2/5', '5/2', '3/5'], correct: 0, explain: '2 parts coloriées sur 5 : 2/5.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P1'] } },
+  { id: 'fractions-flash-02', q: 'Dans 5/8, que représente le 5 ?', options: ['Le nombre de parts prises (numérateur)', 'Le nombre total de parts (dénominateur)'], correct: 0,
+    explain: 'Le 5 est le numérateur : les parts prises.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P2'] } },
+  { id: 'fractions-flash-03', q: 'Dans 5/8, que représente le 8 ?', options: ['Le nombre de parts prises (numérateur)', 'Le nombre total de parts égales (dénominateur)'], correct: 1,
+    explain: 'Le 8 est le dénominateur : le partage total.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P2'] } },
+  { id: 'fractions-flash-04', q: 'Que vaut 3 ÷ 4, sous forme de fraction ?', options: ['3/4', '4/3', '3 × 4'], correct: 0,
+    explain: 'Partager 3 par 4 donne 3/4.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P1'] } },
+  { id: 'fractions-flash-05', q: 'Quelle écriture décimale correspond à 1/2 ?', options: ['0,5', '0,2', '1,2'], correct: 0,
+    explain: '1/2 = 5/10 = 0,5.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P3'] } },
 ];
 
 function FlashRetour({ onDone, score, setScore }) {

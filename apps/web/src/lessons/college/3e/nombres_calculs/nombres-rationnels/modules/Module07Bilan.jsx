@@ -18,39 +18,63 @@ export default function Module07Bilan() {
 
   const questions = [
     {
+      id: 'eval-01',
       q: "Laquelle de ces fractions est irréductible ?",
       options: [
         { label: "$\\frac{15}{20}$", correct: false },
         { label: "$\\frac{14}{21}$", correct: false },
         { label: "$\\frac{16}{25}$", correct: true }
       ],
-      feedback: "16 et 25 n'ont aucun diviseur commun. (16 = 2x2x2x2 et 25 = 5x5)."
+      feedback: "16 et 25 n'ont aucun diviseur commun. (16 = 2x2x2x2 et 25 = 5x5).",
+      assessment: {
+        enabled: true,
+        type: 'assessment',
+        learningPointIds: ['3e_nombres-rationnels_P1', '3e_nombres-rationnels_P2', '3e_nombres-rationnels_P3'],
+      },
     },
     {
+      id: 'eval-02',
       q: "Calculez : $\\frac{1}{3} + \\frac{1}{6}$",
       options: [
         { label: "$\\frac{2}{9}$", correct: false },
         { label: "$\\frac{1}{2}$", correct: true },
         { label: "$\\frac{2}{6}$", correct: false }
       ],
-      feedback: "1/3 = 2/6. Donc 2/6 + 1/6 = 3/6, qui se simplifie en 1/2."
+      feedback: "1/3 = 2/6. Donc 2/6 + 1/6 = 3/6, qui se simplifie en 1/2.",
+      assessment: {
+        enabled: true,
+        type: 'assessment',
+        learningPointIds: ['3e_nombres-rationnels_P4'],
+      },
     },
     {
+      id: 'eval-03',
       q: "Par quelle opération remplace-t-on le calcul : $\\frac{4}{5} \\div \\frac{3}{7}$ ?",
       options: [
         { label: "$\\frac{5}{4} \\times \\frac{3}{7}$", correct: false },
         { label: "$\\frac{4}{5} \\times \\frac{7}{3}$", correct: true },
         { label: "$\\frac{5}{4} \\times \\frac{7}{3}$", correct: false }
       ],
-      feedback: "On multiplie par l'inverse de la deuxième fraction."
+      feedback: "On multiplie par l'inverse de la deuxième fraction.",
+      assessment: {
+        enabled: true,
+        type: 'assessment',
+        learningPointIds: ['3e_nombres-rationnels_P5'],
+      },
     },
     {
+      id: 'eval-04',
       q: "Quel calcul effectue-t-on en premier dans : $2 - \\frac{1}{3} \\times \\frac{4}{5}$ ?",
       options: [
         { label: "La soustraction : $2 - \\frac{1}{3}$", correct: false },
         { label: "La multiplication : $\\frac{1}{3} \\times \\frac{4}{5}$", correct: true }
       ],
-      feedback: "La multiplication est toujours prioritaire sur la soustraction (s'il n'y a pas de parenthèses)."
+      feedback: "La multiplication est toujours prioritaire sur la soustraction (s'il n'y a pas de parenthèses).",
+      assessment: {
+        enabled: true,
+        type: 'assessment',
+        learningPointIds: ['3e_nombres-rationnels_P6'],
+      },
     }
   ];
 

@@ -1,5 +1,6 @@
 import { getLessonProgress } from './getLessonProgress';
 import { getNextIncompleteModule, getFlatAvailableLessons } from '@smarter-academy/core';
+import { getTotalModules } from '../../../registry';
 
 /**
  * Determines the single best lesson for the student to resume.
@@ -25,7 +26,10 @@ export function getResumeLesson(courseLevels) {
   const startedLessons = [];
 
   flatLessons.forEach(item => {
-    const totalCount = item.lesson.totalModules || 7;
+    // A lesson without a built config has no real module count — it is not
+    // resumable, and we never fabricate one.
+    const totalCount = getTotalModules(item.lesson.id);
+    if (!totalCount) return;
     const progress = getLessonProgress(item.lesson.id, totalCount);
     
     lessonProgressMap.set(item.lesson.id, {
@@ -66,8 +70,8 @@ export function getResumeLesson(courseLevels) {
     for (let i = currentIndex + 1; i < flatLessons.length; i++) {
       const nextItem = flatLessons[i];
       const nextProgress = lessonProgressMap.get(nextItem.lesson.id);
-      
-      if (nextProgress.progressPercent < 100) {
+
+      if (nextProgress && nextProgress.progressPercent < 100) {
         return {
           course: nextItem.lesson,
           level: nextItem.level,

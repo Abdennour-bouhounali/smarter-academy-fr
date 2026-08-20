@@ -107,7 +107,7 @@ export default function LessonIndex({ config, basePath }) {
 
         {/* BREADCRUMB */}
         <nav className="flex items-center gap-2 text-xs font-mono text-slate-500">
-          <Link to="/" className="hover:text-blue-600">Accueil</Link>
+          <Link to="/courses" className="hover:text-blue-600">Accueil</Link>
           <span>/</span>
           <Link to={`/courses?level=${config.level}&grade=${config.grade}`} className="hover:text-blue-600">Collège ({config.grade})</Link>
           <span>/</span>
@@ -186,7 +186,10 @@ export default function LessonIndex({ config, basePath }) {
               const modulePath = `${basePath}/${module.slug}`;
 
               const status = config.sequentialUnlock
-                ? getModuleStatus({ isModuleCompleted, moduleNumber: module.number, currentModule })
+                // Passing `module` makes evaluation-stage modules always
+                // accessible (the "Je pense déjà maîtriser" path) and applies
+                // any requiresLearningPointIds mastery gate.
+                ? getModuleStatus({ isModuleCompleted, moduleNumber: module.number, currentModule, module })
                 : isDone ? 'mastered' : 'unlocked';
 
               // Un module verrouillé reste VISIBLE (l'élève voit tout le

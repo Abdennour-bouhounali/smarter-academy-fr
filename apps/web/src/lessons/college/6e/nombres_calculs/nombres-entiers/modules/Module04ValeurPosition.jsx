@@ -63,7 +63,7 @@ function DigitHunt({ chasse, solved, onSolved }) {
         />
       </div>
 
-      {!located && (
+      {!clicked && (
         <div className="flex items-start gap-2 text-sm text-slate-600 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
           <MousePointerClick className="w-4 h-4 mt-0.5 shrink-0 text-blue-500" aria-hidden="true" />
           <span>
@@ -75,12 +75,13 @@ function DigitHunt({ chasse, solved, onSolved }) {
       {clicked && !located && (
         <Feedback tone="hint">
           Ce n'est pas le bon chiffre : tu as sélectionné un{' '}
-          <strong className="font-mono">{Math.floor(GRAND / (PLACE_VALUE[clicked] || 1)) % 10}</strong>. Cherche
-          le chiffre <strong className="font-mono">{chasse.digit}</strong>.
+          <strong className="font-mono">{Math.floor(GRAND / (PLACE_VALUE[clicked] || 1)) % 10}</strong>. Le chiffre{' '}
+          <strong className="font-mono">{chasse.digit}</strong> demandé est à la position des {chasse.place} —
+          clique dessus, ou continue directement avec la question ci-dessous.
         </Feedback>
       )}
 
-      {located && (
+      {clicked && (
         <>
           <p className="text-sm font-semibold text-slate-700">
             Que représente le chiffre <span className="font-mono text-base">{chasse.digit}</span> dans{' '}
@@ -98,7 +99,7 @@ function DigitHunt({ chasse, solved, onSolved }) {
             <ValidateButton
               onClick={() => {
                 setRevealed(true);
-                if (pick === chasse.correct) onSolved?.();
+                onSolved?.();
               }}
               disabled={pick === null}
             >
@@ -107,22 +108,12 @@ function DigitHunt({ chasse, solved, onSolved }) {
           )}
           {revealed && (
             <Feedback tone={pick === chasse.correct ? 'ok' : 'ko'}>
-              {chasse.explain}
               {pick !== chasse.correct && (
                 <>
-                  {' '}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setRevealed(false);
-                      setPick(null);
-                    }}
-                    className="underline font-semibold"
-                  >
-                    Réessayer
-                  </button>
+                  Bonne réponse : <strong>{chasse.options[chasse.correct]}</strong>. {' '}
                 </>
               )}
+              {chasse.explain}
             </Feedback>
           )}
         </>
@@ -148,16 +139,14 @@ function CinqCinqCinqCinq({ done, onStepDone }) {
 
   const validate = () => {
     setRevealed(true);
-    if (pick === current.correct) {
-      onStepDone(idx);
-      setTimeout(() => {
-        if (idx < CINQS.length - 1) {
-          setIdx((i) => i + 1);
-          setPick(null);
-          setRevealed(false);
-        }
-      }, 1400);
-    }
+    onStepDone(idx);
+    setTimeout(() => {
+      if (idx < CINQS.length - 1) {
+        setIdx((i) => i + 1);
+        setPick(null);
+        setRevealed(false);
+      }
+    }, 1400);
   };
 
   return (
@@ -215,18 +204,9 @@ function CinqCinqCinqCinq({ done, onStepDone }) {
                 </>
               ) : (
                 <>
-                  Regarde la colonne surlignée : c'est celle des {current.label}. Un 5 placé là vaut 5{' '}
-                  {PLACE_SINGULAR[current.key]}s.{' '}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setRevealed(false);
-                      setPick(null);
-                    }}
-                    className="underline font-semibold"
-                  >
-                    Réessayer
-                  </button>
+                  Regarde la colonne surlignée : c'est celle des {current.label}. Un 5 placé là vaut{' '}
+                  <strong className="font-mono">{formatFr(current.value)}</strong>, soit 5{' '}
+                  {PLACE_SINGULAR[current.key]}s.
                 </>
               )}
             </Feedback>
@@ -402,7 +382,7 @@ function MiniQuestion({ item, solved, onSolved }) {
         <ValidateButton
           onClick={() => {
             setRevealed(true);
-            if (pick === item.correct) onSolved?.();
+            onSolved?.();
           }}
           disabled={pick === null}
         >
@@ -411,22 +391,12 @@ function MiniQuestion({ item, solved, onSolved }) {
       )}
       {revealed && (
         <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
-          {item.explain}
-          {!solved && pick !== item.correct && (
+          {pick !== item.correct && (
             <>
-              {' '}
-              <button
-                type="button"
-                onClick={() => {
-                  setRevealed(false);
-                  setPick(null);
-                }}
-                className="underline font-semibold"
-              >
-                Réessayer
-              </button>
+              Bonne réponse : <strong>{item.options[item.correct]}</strong>. {' '}
             </>
           )}
+          {item.explain}
         </Feedback>
       )}
     </div>

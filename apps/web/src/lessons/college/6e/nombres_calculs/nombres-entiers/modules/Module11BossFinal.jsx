@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Trophy, Target, BookMarked, Zap, ArrowRight } from 'lucide-react';
+import { Trophy, Target, BookMarked, Zap, ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 import ModuleLayout from '../../../../../common/components/ModuleLayout';
 import MathText from '../../../../../common/components/MathText';
 import { useProgress } from '../../../../../common/hooks/useProgress';
+import { useEvidenceSubmission } from '../../../../../common/hooks/useEvidenceSubmission';
+import { useCountdownTimer } from '../../../../../common/hooks/useCountdownTimer';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import PlaceValueTable from '../components/PlaceValueTable';
 import NumberLine from '../../../../../common/components/NumberLine';
-import OrderingGame from '../../../../../common/components/OrderingGame';
-import { Feedback, ChoiceGrid, ValidateButton, MissionBrief } from '../../../../../common/components/LessonUI';
+import { Feedback, ChoiceGrid, ValidateButton, MissionBrief, TimerToggle, TimerDisplay } from '../../../../../common/components/LessonUI';
 import { formatFr, texFr, decompose } from '../components/numberUtils';
+
+const BOSS_TIMER_SECONDS = 10 * 60;
 
 /* ═══ LE REGISTRE — les nombres de la mission ═══════════════════════ */
 const REGISTRE = [
@@ -38,7 +41,7 @@ const SKILLS = {
 /* ═══ LES 7 ÉPREUVES DU BOSS ═══════════════════════════════════════ */
 const EPREUVES = [
   {
-    id: 'e1',
+    id: 'nombres-entiers-boss-e1',
     skill: 'lecture',
     title: 'Épreuve 1',
     prompt: (
@@ -52,9 +55,10 @@ const EPREUVES = [
     correct: 1,
     explain:
       "« quarante-huit mille » → 48 dans la classe des mille ; « deux cent soixante-quinze » → 275 dans la classe des unités. Donc 48 275.",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P2'] },
   },
   {
-    id: 'e2',
+    id: 'nombres-entiers-boss-e2',
     skill: 'position',
     title: 'Épreuve 2',
     prompt: (
@@ -69,9 +73,10 @@ const EPREUVES = [
     explain:
       '105 300 se lit 105 | 300. Le 5 occupe la colonne des milliers : il représente 5 milliers, soit 5 000.',
     table: 105300,
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P3'] },
   },
   {
-    id: 'e3',
+    id: 'nombres-entiers-boss-e3',
     skill: 'decomposition',
     title: 'Épreuve 3',
     prompt: (
@@ -85,9 +90,13 @@ const EPREUVES = [
     correct: 0,
     explain:
       '6 307 = 6 milliers + 3 centaines + 0 dizaine + 7 unités, soit 6 000 + 300 + 7. La dizaine vide ne s\'écrit pas dans la somme, mais le 0 reste indispensable dans le nombre.',
+    // Recomposing 6 307 from its place-value parts is the written analogue
+    // of building it with base-10 blocks (module 1's manipulation) — this
+    // question also certifies 6e_nombres-entiers_P1.
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P4', '6e_nombres-entiers_P1'] },
   },
   {
-    id: 'e4',
+    id: 'nombres-entiers-boss-e4',
     skill: 'comparaison',
     title: 'Épreuve 4',
     prompt: (
@@ -102,38 +111,46 @@ const EPREUVES = [
     cols: 3,
     explain:
       'Les deux nombres ont 6 chiffres et commencent pareil : 1, 0, 5. La première différence est à la position des centaines : 3 contre 0. Donc 105 300 > 105 030.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P5'] },
   },
   {
-    id: 'e5',
+    id: 'nombres-entiers-boss-e5',
     skill: 'rangement',
     title: 'Épreuve 5',
-    prompt: <>Range quatre fiches du registre dans l'ordre croissant.</>,
-    type: 'order',
-    items: [2450, 6307, 8099, 12450].map((v) => ({ id: `b${v}`, value: v })),
+    prompt: <>Range quatre fiches du registre dans l'ordre croissant : 8 099 ; 2 450 ; 12 450 ; 6 307.</>,
+    type: 'mcq',
+    cols: 1,
+    options: [
+      '2 450 < 6 307 < 8 099 < 12 450',
+      '12 450 < 8 099 < 6 307 < 2 450',
+      '2 450 < 8 099 < 6 307 < 12 450',
+      '6 307 < 2 450 < 12 450 < 8 099',
+    ],
+    correct: 0,
     explain:
       "2 450 < 6 307 < 8 099 < 12 450. Seul 12 450 a 5 chiffres : il est forcément le plus grand. Les trois autres se départagent par le chiffre des milliers.",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P5'] },
   },
   {
-    id: 'e6',
+    id: 'nombres-entiers-boss-e6',
     skill: 'droite',
     title: 'Épreuve 6',
     prompt: (
       <>
-        Place le stock de cahiers, <strong className="font-mono">6 307</strong>, sur la demi-droite graduée.
+        Sur une demi-droite graduée de 6 000 à 7 000 avec un pas de 100, sur quelle graduation se place
+        pratiquement le stock de cahiers, <strong className="font-mono">6 307</strong> ?
       </>
     ),
-    type: 'place',
-    min: 6000,
-    max: 7000,
-    step: 100,
-    labelEvery: 5,
-    target: 6300,
-    tolerance: 0,
+    type: 'mcq',
+    options: ['6 000', '6 300', '6 700', '7 000'],
+    correct: 1,
+    table: 6307,
     explain:
       "Avec un pas de 100, 6 307 se place pratiquement sur la graduation 6 300 (il n'en est qu'à 7 unités). On lit d'abord le pas, puis on compte les graduations.",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P6'] },
   },
   {
-    id: 'e7',
+    id: 'nombres-entiers-boss-e7',
     skill: 'problemes',
     title: 'Épreuve 7',
     prompt: (
@@ -152,37 +169,17 @@ const EPREUVES = [
     correct: 1,
     explain:
       '105 300 > 100 000 : la ville a bien dépassé les 100 000 habitants. En revanche 105 030 < 105 300 : le musée a accueilli MOINS de visiteurs que la ville ne compte d\'habitants. La seconde affirmation est donc fausse.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P7'] },
   },
 ];
 
-/* ═══ Une épreuve ══════════════════════════════════════════════════ */
-function Epreuve({ epreuve, index, solved, onSolved, onMiss }) {
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-  const [pos, setPos] = useState(epreuve.type === 'place' ? epreuve.min : null);
-  const [checked, setChecked] = useState(false);
-
-  const placeOk = epreuve.type === 'place' && Math.abs(pos - epreuve.target) <= (epreuve.tolerance ?? 0);
-
-  const validateMcq = () => {
-    setRevealed(true);
-    if (pick === epreuve.correct) onSolved();
-    else onMiss();
-  };
-
-  const validatePlace = () => {
-    setChecked(true);
-    if (placeOk) onSolved();
-    else onMiss();
-  };
-
+/* ═══ Une épreuve — QCM silencieux : on répond, on passe, aucune réaction ═══ */
+function Epreuve({ epreuve, index, pick, onPick }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`border-2 rounded-2xl p-5 space-y-4 ${
-        solved ? 'border-emerald-300 bg-emerald-50/30' : 'border-amber-200 bg-amber-50/20'
-      }`}
+      className="border-2 border-slate-200 bg-white rounded-2xl p-5 space-y-4"
     >
       <div className="flex items-center justify-between gap-2 flex-wrap">
         <h3 className="font-space font-bold text-slate-800">{epreuve.title}</h3>
@@ -199,84 +196,82 @@ function Epreuve({ epreuve, index, solved, onSolved, onMiss }) {
         </div>
       )}
 
-      {epreuve.type === 'mcq' && (
-        <>
-          <ChoiceGrid
-            options={epreuve.options}
-            selected={pick}
-            onSelect={setPick}
-            revealed={revealed}
-            correctIndex={epreuve.correct}
-            cols={epreuve.cols || 2}
-          />
-          {!revealed && (
-            <ValidateButton onClick={validateMcq} disabled={pick === null} tone="amber">
-              Valider
-            </ValidateButton>
-          )}
-          {revealed && (
-            <Feedback tone={pick === epreuve.correct ? 'ok' : 'ko'}>
-              {epreuve.explain}
-              {pick !== epreuve.correct && (
-                <>
-                  {' '}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setRevealed(false);
-                      setPick(null);
-                    }}
-                    className="underline font-semibold"
-                  >
-                    Réessayer
-                  </button>
-                </>
-              )}
-            </Feedback>
-          )}
-        </>
-      )}
-
-      {epreuve.type === 'order' && (
-        <OrderingGame items={epreuve.items} direction="asc" solved={solved} onSolved={onSolved} onError={onMiss} />
-      )}
-
-      {epreuve.type === 'place' && (
-        <>
-          <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
-            <NumberLine
-              min={epreuve.min}
-              max={epreuve.max}
-              step={epreuve.step}
-              labelEvery={epreuve.labelEvery}
-              height={190}
-              mode="place"
-              value={pos}
-              onChange={(v) => {
-                if (solved) return;
-                setPos(v);
-                setChecked(false);
-              }}
-              snap={epreuve.step}
-              revealValue={solved || checked}
-              disabled={solved}
-              ghost={solved || checked ? { value: epreuve.target, label: formatFr(6307) } : null}
-              ariaLabel="Place 6 307 sur la demi-droite graduée"
-            />
-          </div>
-          {!solved && (
-            <ValidateButton onClick={validatePlace} tone="amber">
-              Valider ma position
-            </ValidateButton>
-          )}
-          {checked && (
-            <Feedback tone={placeOk ? 'ok' : 'ko'}>
-              {placeOk ? epreuve.explain : <>Tu as placé le curseur sur {formatFr(pos)}. {epreuve.explain}</>}
-            </Feedback>
-          )}
-        </>
-      )}
+      <ChoiceGrid
+        options={epreuve.options}
+        selected={pick}
+        onSelect={onPick}
+        cols={epreuve.cols || 2}
+      />
     </motion.div>
+  );
+}
+
+/* ═══ Écran de correction — score, chaque question, bonne réponse et réponse donnée ═══ */
+function BossReview({ answers, onContinue }) {
+  const correctCount = EPREUVES.filter((ep) => answers[ep.id] === ep.correct).length;
+
+  return (
+    <div className="space-y-6">
+      <div className="bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-2xl p-6 text-center space-y-2">
+        <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Résultat du défi</div>
+        <div className="text-3xl font-space font-extrabold">
+          {correctCount} / {EPREUVES.length}
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        {EPREUVES.map((ep, i) => {
+          const pick = answers[ep.id];
+          const isCorrect = pick === ep.correct;
+          return (
+            <div
+              key={ep.id}
+              className={`border-2 rounded-2xl p-5 space-y-3 ${
+                isCorrect ? 'border-emerald-300 bg-emerald-50/30' : 'border-rose-300 bg-rose-50/30'
+              }`}
+            >
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <h3 className="font-space font-bold text-slate-800 flex items-center gap-2">
+                  {isCorrect ? (
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
+                  ) : (
+                    <XCircle className="w-4 h-4 text-rose-600 shrink-0" aria-hidden="true" />
+                  )}
+                  {ep.title}
+                </h3>
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-slate-800 text-white">
+                  {i + 1} / {EPREUVES.length}
+                </span>
+              </div>
+
+              <p className="text-sm text-slate-700 leading-relaxed">{ep.prompt}</p>
+
+              <div className="text-sm space-y-1">
+                <div className={isCorrect ? 'text-emerald-700' : 'text-rose-700'}>
+                  <strong>Ta réponse :</strong>{' '}
+                  {pick == null ? '(sans réponse)' : ep.options[pick]}
+                </div>
+                {!isCorrect && (
+                  <div className="text-emerald-700">
+                    <strong>Bonne réponse :</strong> {ep.options[ep.correct]}
+                  </div>
+                )}
+              </div>
+
+              <Feedback tone={isCorrect ? 'ok' : 'ko'}>{ep.explain}</Feedback>
+            </div>
+          );
+        })}
+      </div>
+
+      <button
+        type="button"
+        onClick={onContinue}
+        className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl min-h-[48px]"
+      >
+        Voir mon profil de maîtrise <ArrowRight className="inline w-4 h-4" aria-hidden="true" />
+      </button>
+    </div>
   );
 }
 
@@ -544,26 +539,41 @@ const PHASES = [
 export default function Module11BossFinal() {
   const navLinks = getNavLinks(11);
   const { xp, awardXP } = useProgress(MODULE_CTX.lessonId);
+  const { submitEvidence } = useEvidenceSubmission(MODULE_CTX.lessonId);
+  const timer = useCountdownTimer(BOSS_TIMER_SECONDS, {
+    onExpire: () => submitBoss(),
+  });
 
   const [phase, setPhase] = useState('boss');
-  const [done, setDone] = useState([]); // ids d'épreuves réussies
-  const [misses, setMisses] = useState({}); // skill -> nb d'erreurs
+  const [bossAnswers, setBossAnswers] = useState({}); // épreuve id -> option index picked
+  const [bossSubmitted, setBossSubmitted] = useState(false);
+  const [misses, setMisses] = useState({}); // skill -> nb d'erreurs (calculé à la correction)
   const [flashScore, setFlashScore] = useState(0);
   const [flashDone, setFlashDone] = useState(false);
 
-  const bossDone = done.length === EPREUVES.length;
+  const bossDone = bossSubmitted;
   const allDone = bossDone && flashDone;
+  const allAnswered = EPREUVES.every((ep) => bossAnswers[ep.id] != null);
 
-  const solveEpreuve = (ep) => {
-    if (done.includes(ep.id)) return;
-    setDone((d) => (d.includes(ep.id) ? d : [...d, ep.id]));
-    // awardXP est idempotent : un même exerciseId ne rapporte qu'une seule fois.
-    awardXP({ moduleId: '11', exerciseId: ep.id, amount: 20 });
-  };
+  function submitBoss() {
+    setBossSubmitted((already) => {
+      if (already) return already;
 
-  const missEpreuve = (ep) => {
-    setMisses((m) => ({ ...m, [ep.skill]: (m[ep.skill] || 0) + 1 }));
-  };
+      const nextMisses = {};
+      EPREUVES.forEach((ep) => {
+        const isCorrect = bossAnswers[ep.id] === ep.correct;
+        submitEvidence(ep, isCorrect, { picked: bossAnswers[ep.id] ?? null });
+        if (isCorrect) {
+          awardXP({ moduleId: '11', exerciseId: ep.id, amount: 20 });
+        } else {
+          nextMisses[ep.skill] = (nextMisses[ep.skill] || 0) + 1;
+        }
+      });
+      setMisses(nextMisses);
+      timer.stop();
+      return true;
+    });
+  }
 
   const badgesGagnes = BADGES.filter((b) => b.test(misses));
   const masterBadge = bossDone && flashDone && badgesGagnes.length === BADGES.length && flashScore === FLASH.length;
@@ -579,6 +589,7 @@ export default function Module11BossFinal() {
       moduleTitle="🏆 Le Grand Défi des Nombres"
       moduleSubtitle="Sept épreuves, un profil de maîtrise, une synthèse et cinq questions de réactivation."
       moduleNumber={11}
+      stage="evaluation"
       estimatedTime="18 min"
       xp={xp}
       prevLink={navLinks.prevLink}
@@ -613,7 +624,7 @@ export default function Module11BossFinal() {
 
         <AnimatePresence mode="wait">
           {/* ── PHASE 1 : BOSS ── */}
-          {phase === 'boss' && (
+          {phase === 'boss' && !bossSubmitted && (
             <motion.div key="boss" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
               <MissionBrief
                 tag="🏆 Boss final"
@@ -623,9 +634,22 @@ export default function Module11BossFinal() {
                 <p>
                   Sept fiches, sept épreuves. À toi de décider, à chaque fois, ce qu'il faut faire : lire,
                   décomposer, comparer, ranger, repérer ou interpréter. Personne ne te dira quelle compétence
-                  utiliser.
+                  utiliser. Réponds à toutes les épreuves, puis valide pour découvrir ta correction.
                 </p>
               </MissionBrief>
+
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <TimerToggle
+                  enabled={timer.enabled}
+                  onChange={(next) => {
+                    timer.setEnabled(next);
+                    if (next) timer.start();
+                  }}
+                  durationLabel="10 min"
+                  disabled={Object.keys(bossAnswers).length > 0}
+                />
+                {timer.enabled && <TimerDisplay label={timer.label} urgent={timer.remaining <= 60} />}
+              </div>
 
               {/* Le registre */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -646,48 +670,33 @@ export default function Module11BossFinal() {
                   <span
                     key={e.id}
                     className={`w-8 h-8 rounded-lg font-mono text-xs font-bold flex items-center justify-center ${
-                      done.includes(e.id) ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-400'
+                      bossAnswers[e.id] != null ? 'bg-slate-800 text-white' : 'bg-slate-200 text-slate-400'
                     }`}
                   >
-                    {done.includes(e.id) ? '✓' : i + 1}
+                    {bossAnswers[e.id] != null ? '✓' : i + 1}
                   </span>
                 ))}
               </div>
 
-              {EPREUVES.map((ep, i) =>
-                i === 0 || done.includes(EPREUVES[i - 1].id) ? (
-                  <Epreuve
-                    key={ep.id}
-                    epreuve={ep}
-                    index={i}
-                    solved={done.includes(ep.id)}
-                    onSolved={() => solveEpreuve(ep)}
-                    onMiss={() => missEpreuve(ep)}
-                  />
-                ) : null
-              )}
+              {EPREUVES.map((ep, i) => (
+                <Epreuve
+                  key={ep.id}
+                  epreuve={ep}
+                  index={i}
+                  pick={bossAnswers[ep.id] ?? null}
+                  onPick={(idx) => setBossAnswers((a) => ({ ...a, [ep.id]: idx }))}
+                />
+              ))}
 
-              {bossDone && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-gradient-to-br from-amber-400 to-orange-500 text-white rounded-2xl p-6 text-center space-y-3"
-                >
-                  <div className="text-5xl" aria-hidden="true">🏆</div>
-                  <div className="text-2xl font-space font-extrabold">Registre reconstitué !</div>
-                  <p className="text-amber-50 text-sm">
-                    Tu as mobilisé sept compétences différentes sans qu'on te dise lesquelles. Découvre maintenant
-                    ton profil de maîtrise.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setPhase('profil')}
-                    className="px-5 py-2.5 rounded-xl bg-white text-amber-700 font-mono text-xs font-bold min-h-[44px]"
-                  >
-                    Voir mon profil <ArrowRight className="inline w-3.5 h-3.5" aria-hidden="true" />
-                  </button>
-                </motion.div>
-              )}
+              <ValidateButton onClick={submitBoss} disabled={!allAnswered} tone="amber">
+                Valider mes 7 réponses
+              </ValidateButton>
+            </motion.div>
+          )}
+
+          {phase === 'boss' && bossSubmitted && (
+            <motion.div key="boss-review" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              <BossReview answers={bossAnswers} onContinue={() => setPhase('profil')} />
             </motion.div>
           )}
 

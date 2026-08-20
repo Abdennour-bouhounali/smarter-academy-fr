@@ -2,6 +2,62 @@
 
 The cleanup phase unified *how* completion percentage is calculated (one pure function, `calculateCompletionPercentage`, replacing four divergent formulas). This document defines *what* completion means at each level, and draws the line between completion and mastery that the codebase currently blurs.
 
+## The two progressions (and their two tables)
+
+The pedagogical vision distinguishes **lesson progression** (where the student
+is within a lesson's journey) from **knowledge progression** (what they have
+demonstrated per Learning Point). These are two separate server-side tables,
+never merged:
+
+| | Lesson progression | Knowledge progression |
+|---|---|---|
+| Table | `student_lesson_progress` | `student_learning_point_progress` |
+| Granularity | lesson (status, current module, completed modules) | learning point (confidence 0–1, mastered/reinforce/gap) |
+| Written by | `PUT /api/v1/lessons/{code}/progress` (`LessonProgressService`) | `POST /api/v1/lessons/{code}/evidence` (`ProgressEngine`) |
+| Read by | `GET /api/v1/students/me/lesson-progress` | `GET /api/v1/students/me/learning-profile` |
+| Fed from | `useProgress` → `progressQueue.js` (debounced snapshots) | `useEvidenceSubmission` (evaluation questions only) |
+
+**Completion is not mastery** — a student can complete every module without
+mastering a Learning Point, and vice versa.
+
+### Cross-device merge semantics (`LessonProgressService::upsert`)
+
+- `completed_modules` → **union**: merging never removes a completion, which
+  makes offline-queue replays and multi-device races safe.
+- `current_module` + `last_activity_at` → **latest wins**: only a snapshot
+  whose `lastActivityAt` is at or after the stored one may move the position.
+- `status` → **monotonic**: `in_progress → completed` only; `completed_at` is
+  set once and never cleared.
+- `completion_mode` → recorded once with `completed_at`: `'path'` (the
+  student followed the journey to the final evaluation — the default) or
+  `'mastery'` (the always-open final evaluation demonstrated mastery
+  directly, the "Je pense déjà maîtriser" path). Later snapshots cannot
+  rewrite it. Mastery-path completion is client-asserted today, consistent
+  with the documented client-trust boundary for lesson correctness;
+  server-side verification against `student_learning_point_progress` is a
+  future hardening step.
+
+### localStorage is a cache, not the source of truth
+
+`smarter_lesson_{id}` remains the synchronous read path and the offline
+cache. For authenticated students, every module write schedules a debounced
+push (`progressQueue.js`, last-snapshot-wins per lesson) and the server's
+merged answer is folded back into storage; on login,
+`useLessonProgressSync` hydrates storage from
+`GET /students/me/lesson-progress` before any lesson page opens. Anonymous
+visitors stay purely local.
+
+**Known follow-up:** XP (`smarter_global_xp`) is still client-side only — it
+has no server table yet and is lost across devices.
+
+### Module counts come from the lesson registry
+
+`apps/web/src/lessons/registry.js` derives a lesson's module count from its
+`LESSON_CONFIG.modules.length`. Nothing may fabricate a module count: a
+catalogue lesson without a built config is not resumable and contributes no
+completion percentage (the old `totalModules || 7` fallbacks are gone, as is
+`LESSON_CONFIG.totalModules` itself).
+
 ## Completion levels
 
 ### Module completion

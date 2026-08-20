@@ -6,7 +6,9 @@ import { Eye, EyeOff } from 'lucide-react';
 import { login as loginRequest } from '../services/authService';
 
 function postLoginPath(user) {
-  return user.role === 'admin' ? '/admin' : '/';
+  if (user.role === 'admin') return '/admin';
+  if (user.role === 'student') return '/espace';
+  return '/';
 }
 
 export default function Login() {

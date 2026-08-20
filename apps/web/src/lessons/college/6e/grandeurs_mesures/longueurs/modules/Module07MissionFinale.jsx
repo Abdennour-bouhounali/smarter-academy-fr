@@ -18,6 +18,33 @@ const UNIT_Q = {
   explain: 'Un terrain de sport se mesure naturellement en mètres : ni en km (beaucoup trop grand), ni en mm (beaucoup trop petit).',
 };
 
+// Assessment metadata (docs/architecture/AI_LESSON_CONTRACT.md) — each
+// StepCard checkpoint below certifies one learning point from this
+// evaluation-stage module.
+const EVAL_UNIT_CHOICE = {
+  id: 'longueurs-eval-unit-choice',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_longueurs_P1'] },
+};
+// Placing a plot every 5 m along a measured 25 m side re-exercises reading a
+// length correctly (the ruler/zero-trap skill from module 2) without
+// re-litigating the physical-ruler UI.
+const EVAL_PLOTS = {
+  id: 'longueurs-eval-plots',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_longueurs_P2', '6e_longueurs_P3'] },
+};
+const EVAL_CONVERT_CM = {
+  id: 'longueurs-eval-convert-cm',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_longueurs_P4'] },
+};
+const EVAL_PERIMETER = {
+  id: 'longueurs-eval-perimeter',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_longueurs_P6'] },
+};
+const EVAL_ESTIMATION = {
+  id: 'longueurs-eval-estimation',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_longueurs_P5'] },
+};
+
 /* ─── Étape 4 : le tour du terrain ───────────────────────────────── */
 function TraceField({ done, onSolved }) {
   const [tapped, setTapped] = useState([]);

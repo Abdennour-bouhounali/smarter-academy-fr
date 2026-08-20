@@ -3,6 +3,8 @@
  * Source de vérité unique pour la leçon : Théorème de Thalès (3ème)
  */
 
+export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/thales-3e';
+
 export const LESSON_CONFIG = {
   // ── Identité ──────────────────────────────────────────────────────────────
   id: 'thales-3e',          // Clé localStorage
@@ -16,7 +18,7 @@ export const LESSON_CONFIG = {
   officialObjects: ['Théorème de Thalès'],
 
   // ── Méta-pédagogique ──────────────────────────────────────────────────────
-  estimatedDurationMin: 70,     
+  estimatedDurationMin: 77,
   difficulty: 3,                 // 1 = très facile … 5 = très difficile
   masteryThreshold: 0.8,         // 80 % des modules complétés = leçon maîtrisée
 
@@ -46,11 +48,14 @@ export const LESSON_CONFIG = {
     {
       id: 'L01',
       number: 1,
-      slug: '1',
+      slug: 'decouverte-configurations',
+      path: `${LESSON_BASE_PATH}/decouverte-configurations`,
       title: 'Découverte des Configurations',
       desc: "Identifier visuellement les droites parallèles et les triangles emboîtés ou en papillon.",
       color: 'emerald',
       style: 'featured',
+      stage: 'trigger',
+      teachesLearningPointIds: ['3e_thales-3e_P1'],
       estimatedMin: 8,
       difficulty: 1,
       xpReward: 50,
@@ -60,11 +65,14 @@ export const LESSON_CONFIG = {
     {
       id: 'L02',
       number: 2,
-      slug: '2',
+      slug: 'egalite-thales',
+      path: `${LESSON_BASE_PATH}/egalite-thales`,
       title: "Écrire l'égalité de Thalès",
       desc: "Apprendre à poser les 3 rapports égaux sans se tromper (Petit triangle / Grand triangle).",
       color: 'indigo',
       style: 'featured',
+      stage: 'discovery',
+      teachesLearningPointIds: ['3e_thales-3e_P2'],
       estimatedMin: 10,
       difficulty: 2,
       xpReward: 50,
@@ -74,11 +82,14 @@ export const LESSON_CONFIG = {
     {
       id: 'L03',
       number: 3,
-      slug: '3',
+      slug: 'calcul-longueur',
+      path: `${LESSON_BASE_PATH}/calcul-longueur`,
       title: 'Calculer une longueur avec Thalès',
       desc: 'Utiliser l\'égalité et le produit en croix pour trouver une longueur.',
       color: 'blue',
       style: 'featured',
+      stage: 'manipulation',
+      teachesLearningPointIds: ['3e_thales-3e_P3'],
       estimatedMin: 12,
       difficulty: 3,
       xpReward: 75,
@@ -88,11 +99,14 @@ export const LESSON_CONFIG = {
     {
       id: 'L04',
       number: 4,
-      slug: '4',
+      slug: 'reciproque-contraposee',
+      path: `${LESSON_BASE_PATH}/reciproque-contraposee`,
       title: 'La Réciproque et la Contraposée',
       desc: 'Prouver si deux droites sont parallèles ou non.',
       color: 'purple',
       style: 'featured',
+      stage: 'formalization',
+      teachesLearningPointIds: ['3e_thales-3e_P4', '3e_thales-3e_P5'],
       estimatedMin: 12,
       difficulty: 3,
       xpReward: 75,
@@ -102,11 +116,14 @@ export const LESSON_CONFIG = {
     {
       id: 'L05',
       number: 5,
-      slug: '5',
+      slug: 'configuration-papillon',
+      path: `${LESSON_BASE_PATH}/configuration-papillon`,
       title: 'Configurations "Papillon"',
       desc: 'S\'exercer spécifiquement sur la configuration croisée qui pose souvent problème.',
       color: 'sky',
       style: 'featured',
+      stage: 'practice_lab',
+      teachesLearningPointIds: ['3e_thales-3e_P6'],
       estimatedMin: 10,
       difficulty: 4,
       xpReward: 75,
@@ -116,11 +133,14 @@ export const LESSON_CONFIG = {
     {
       id: 'L06',
       number: 6,
-      slug: '6',
+      slug: 'mission-pyramide',
+      path: `${LESSON_BASE_PATH}/mission-pyramide`,
       title: 'Mission : L\'ombre de la Pyramide',
       desc: 'Comment Thalès a-t-il calculé la hauteur de la pyramide de Khéops ?',
       color: 'amber',
       style: 'boss',
+      stage: 'practice_lab',
+      teachesLearningPointIds: ['3e_thales-3e_P6'],
       estimatedMin: 15,
       difficulty: 4,
       xpReward: 200,
@@ -130,11 +150,13 @@ export const LESSON_CONFIG = {
     {
       id: 'L07',
       number: 7,
-      slug: '7',
+      slug: 'bilan-final',
+      path: `${LESSON_BASE_PATH}/bilan-final`,
       title: 'Bilan Final',
       desc: 'Évaluation finale pour valider la maîtrise de la leçon.',
       color: 'slate',
       style: 'assessment',
+      stage: 'evaluation',
       estimatedMin: 10,
       difficulty: 3,
       xpReward: 150,
@@ -148,8 +170,7 @@ export const LESSON_CONFIG = {
 
 export const TOTAL_MODULES = LESSON_CONFIG.modules.length;
 
-export const LESSON_BASE_PATH =
-  `/courses/${LESSON_CONFIG.level}/${LESSON_CONFIG.grade}/${LESSON_CONFIG.chapter}/${LESSON_CONFIG.slug}`;
+
 
 /** Retourne le module précédent et suivant d'un module donné par son numéro */
 export function getModuleNav(moduleNumber) {

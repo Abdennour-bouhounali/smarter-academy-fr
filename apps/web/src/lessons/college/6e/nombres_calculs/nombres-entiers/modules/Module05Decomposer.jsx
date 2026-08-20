@@ -86,7 +86,7 @@ function DecompositionTiles({ target, onSolved, solved }) {
           <ValidateButton
             onClick={() => {
               setChecked(true);
-              if (isRight) onSolved?.();
+              onSolved?.();
             }}
             disabled={picked.length === 0}
           >
@@ -107,20 +107,20 @@ function DecompositionTiles({ target, onSolved, solved }) {
         </div>
       )}
 
-      {checked && !isRight && (
-        <Feedback tone="hint">
+      {checked && !isRight && !solved && (
+        <Feedback tone="ko">
           {sum !== target ? (
             <>
               Ta somme vaut <strong className="font-mono">{formatFr(sum)}</strong> au lieu de{' '}
-              <strong className="font-mono">{formatFr(target)}</strong>. Reprends position par position : combien
-              de milliers ? de centaines ? de dizaines ? d'unités ?
+              <strong className="font-mono">{formatFr(target)}</strong>.
             </>
           ) : (
             <>
               La somme est bonne, mais on cherche la décomposition <strong>par positions</strong> : une seule
               tuile par colonne du tableau de numération, soit {attendu.length} tuiles.
             </>
-          )}
+          )}{' '}
+          La bonne décomposition est <strong className="font-mono">{attendu.map((v) => formatFr(v)).join(' + ')}</strong>.
         </Feedback>
       )}
 
@@ -227,7 +227,7 @@ function MultiDecomposition({ onSolved, solved }) {
         <ValidateButton
           onClick={() => {
             setChecked(true);
-            if (allRight) onSolved?.();
+            onSolved?.();
           }}
           disabled={!allAnswered}
         >
@@ -235,9 +235,10 @@ function MultiDecomposition({ onSolved, solved }) {
         </ValidateButton>
       )}
 
-      {checked && !allRight && (
+      {solved && !allRight && (
         <Feedback tone="ko">
-          Certaines réponses sont à revoir : calcule chaque somme position par position avant de trancher.
+          Certaines réponses étaient à revoir — regarde les corrections affichées ci-dessus (calcule chaque somme
+          position par position).
         </Feedback>
       )}
 
@@ -268,10 +269,10 @@ function RecomposeItem({ item, solved, onSolved }) {
     const n = parseFr(val);
     if (n === item.answer) {
       setFb('ok');
-      onSolved?.();
     } else {
       setFb(n === parseFr(item.trap || '') ? 'trap' : 'ko');
     }
+    onSolved?.();
   };
 
   const missing = digitCells(item.answer).filter((c) => c.digit === 0);
@@ -361,7 +362,7 @@ function ZeroHunt({ n, solved, onSolved }) {
           <ValidateButton
             onClick={() => {
               setChecked(true);
-              if (isRight) onSolved?.();
+              onSolved?.();
             }}
             disabled={clicked.length === 0}
           >
@@ -369,7 +370,7 @@ function ZeroHunt({ n, solved, onSolved }) {
           </ValidateButton>
         </>
       )}
-      {checked && !isRight && (
+      {checked && !isRight && !solved && (
         <Feedback tone="hint">
           Une position est « vide » lorsqu'elle contient un <strong className="font-mono">0</strong> :
           il n'y a aucune unité de cet ordre.
@@ -418,12 +419,7 @@ export default function Module05Decomposer() {
   const [errRevealed, setErrRevealed] = useState(false);
 
   const s3 = recompDone.length === RECOMPOSITIONS.length;
-  const s4 =
-    zerosDone.length === ZEROS.length &&
-    zeroRevealed &&
-    zeroPick === ZERO_QUESTION.correct &&
-    errRevealed &&
-    errPick === ERREUR_ZERO.correct;
+  const s4 = zerosDone.length === ZEROS.length && zeroRevealed && errRevealed;
   const allDone = s1 && s2 && s3 && s4;
 
   return (
@@ -515,26 +511,16 @@ export default function Module05Decomposer() {
                 )}
                 {zeroRevealed && (
                   <Feedback tone={zeroPick === ZERO_QUESTION.correct ? 'ok' : 'ko'}>
-                    {ZERO_QUESTION.explain}
                     {zeroPick !== ZERO_QUESTION.correct && (
                       <>
-                        {' '}
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setZeroRevealed(false);
-                            setZeroPick(null);
-                          }}
-                          className="underline font-semibold"
-                        >
-                          Réessayer
-                        </button>
+                        Bonne réponse : <strong>{ZERO_QUESTION.options[ZERO_QUESTION.correct]}</strong>. {' '}
                       </>
                     )}
+                    {ZERO_QUESTION.explain}
                   </Feedback>
                 )}
 
-                {zeroRevealed && zeroPick === ZERO_QUESTION.correct && (
+                {zeroRevealed && (
                   <div className="space-y-3 border-t border-slate-100 pt-4">
                     <p className="text-sm font-semibold text-slate-700">{ERREUR_ZERO.q}</p>
                     <ChoiceGrid
@@ -552,22 +538,12 @@ export default function Module05Decomposer() {
                     )}
                     {errRevealed && (
                       <Feedback tone={errPick === ERREUR_ZERO.correct ? 'ok' : 'ko'}>
-                        {ERREUR_ZERO.explain}
                         {errPick !== ERREUR_ZERO.correct && (
                           <>
-                            {' '}
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setErrRevealed(false);
-                                setErrPick(null);
-                              }}
-                              className="underline font-semibold"
-                            >
-                              Réessayer
-                            </button>
+                            Bonne réponse : <strong>{ERREUR_ZERO.options[ERREUR_ZERO.correct]}</strong>. {' '}
                           </>
                         )}
+                        {ERREUR_ZERO.explain}
                       </Feedback>
                     )}
                   </div>

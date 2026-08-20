@@ -5,10 +5,13 @@ import { storage } from '../../../../utils/storage';
  * Retrieves and parses the progression state of a specific lesson from storage.
  *
  * @param {string} lessonId - The unique ID of the lesson.
- * @param {number} totalModules - The total number of modules in the lesson.
+ * @param {number|null} totalModules - The lesson's real module count (from
+ *        the lesson registry's getTotalModules — never a fabricated default).
+ *        Null/0 keeps progressPercent at 0: an unbuilt lesson has no
+ *        completion to report.
  * @returns {Object} Progress details including percentage and last visited timestamp.
  */
-export function getLessonProgress(lessonId, totalModules = 7) {
+export function getLessonProgress(lessonId, totalModules) {
   let progressPercent = 0;
   let currentModule = 1;
   let lastVisitedAt = 0;
@@ -29,7 +32,9 @@ export function getLessonProgress(lessonId, totalModules = 7) {
         });
       }
 
-      progressPercent = calculateCompletionPercentage(parsed.completedModules, totalModules);
+      progressPercent = totalModules
+        ? calculateCompletionPercentage(parsed.completedModules, totalModules)
+        : 0;
       currentModule = parsed.currentModule || 1;
       lastVisitedAt = parsed.lastVisitedAt || 0;
     }

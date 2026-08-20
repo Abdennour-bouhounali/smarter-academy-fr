@@ -18,6 +18,34 @@ const INFO_ITEMS = [
   { id: 'distance', text: 'L’école se trouve à 2 km du site.', useful: false },
 ];
 
+// Assessment metadata (docs/architecture/AI_LESSON_CONTRACT.md) — each
+// checkpoint descriptor below certifies one or more learning points from
+// this evaluation-stage module (StepCards 1-4 rendered further down). They
+// are evidence-tagging metadata only, not consumed by the render logic.
+const EVAL_INFO_SORTER = {
+  id: 'masses-eval-info-sorter',
+  title: 'StepCard 1 — Les informations utiles',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P6'] },
+};
+// Preparing the order requires reading each item's stated mass (150 g,
+// 200 g...) and using it correctly — the same reading-a-displayed-mass
+// skill module 3 introduces on a physical balance.
+const EVAL_BUILD_ORDER = {
+  id: 'masses-eval-build-order',
+  title: 'StepCard 2 — Préparer la commande',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P3', '6e_masses_P4'] },
+};
+const EVAL_TOTAL_MASS_G = {
+  id: 'masses-eval-total-mass-g',
+  title: 'StepCard 3a — La masse totale (en g)',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P4'] },
+};
+const EVAL_TOTAL_MASS_KG = {
+  id: 'masses-eval-total-mass-kg',
+  title: 'StepCard 3b — La masse totale (conversion en kg, pour l’annoncer simplement)',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P5', '6e_masses_P2'] },
+};
+
 const BISCUIT_BOX_TARGET = 4; // boîtes de 6 sachets de 150 g
 const BISCUIT_BOX_MASS = 6 * 150; // 900 g / boîte
 const JUS_BOX_TARGET = 6; // boîtes de 4 briques de 200 g
@@ -107,6 +135,7 @@ function TotalMass({ done, onSolved }) {
 }
 
 const ESTIM_Q = {
+  id: 'masses-eval-estimation',
   q: 'Une commande de 8,4 kg pour 24 élèves : cela te semble-t-il cohérent ?',
   options: [
     'Oui : cela fait environ 350 g par élève, un goûter raisonnable',
@@ -114,6 +143,7 @@ const ESTIM_Q = {
   ],
   correct: 0,
   explain: '8,4 kg ÷ 24 élèves ≈ 350 g par élève — un sachet de biscuits et une brique de jus par personne, tout à fait cohérent.',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P6', '6e_masses_P1'] },
 };
 
 const RECAP = [

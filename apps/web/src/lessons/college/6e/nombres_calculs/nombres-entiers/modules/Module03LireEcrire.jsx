@@ -43,7 +43,7 @@ function NumberBuilder({ target, hint, onSolved, solved }) {
 
   const check = () => {
     setChecked(true);
-    if (isRight) onSolved?.();
+    onSolved?.();
   };
 
   return (
@@ -96,11 +96,16 @@ function NumberBuilder({ target, hint, onSolved, solved }) {
 
       {!solved && <ValidateButton onClick={check}>Vérifier</ValidateButton>}
 
-      {checked && !isRight && <Feedback tone="hint">{hint}</Feedback>}
-      {solved && (
+      {solved && isRight && (
         <Feedback tone="ok">
           <span className="font-mono font-bold">{formatFr(target)}</span> — chaque groupe de mots correspond à une
           colonne du nombre.
+        </Feedback>
+      )}
+      {solved && !isRight && (
+        <Feedback tone="ko">
+          Ta réponse : <span className="font-mono font-bold">{formatFr(total)}</span>. La bonne réponse était{' '}
+          <span className="font-mono font-bold">{formatFr(target)}</span>. {hint}
         </Feedback>
       )}
     </div>
@@ -257,7 +262,7 @@ function BigNumberReader({ item, onSolved, solved }) {
             <ValidateButton
               onClick={() => {
                 setRevealed(true);
-                if (pick === item.correct) onSolved?.();
+                onSolved?.();
               }}
               disabled={pick === null}
             >
@@ -268,21 +273,6 @@ function BigNumberReader({ item, onSolved, solved }) {
             <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
               {formatFr(item.n)} se lit <strong>« {spellFr(item.n)} »</strong>. On lit chaque groupe de trois
               chiffres, puis on annonce sa classe : {groups.length === 3 ? 'millions, puis mille, puis les unités' : 'mille, puis les unités'}.
-              {pick !== item.correct && (
-                <>
-                  {' '}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setRevealed(false);
-                      setPick(null);
-                    }}
-                    className="underline font-semibold"
-                  >
-                    Réessayer
-                  </button>
-                </>
-              )}
             </Feedback>
           )}
         </>
@@ -307,7 +297,7 @@ export default function Module03LireEcrire() {
 
   const s1 = lettresDone.length === EN_LETTRES.length;
   const s2 = chiffresDone.length === EN_CHIFFRES.length;
-  const s3 = grandsDone.length === GRANDS.length && formatRevealed && formatPick === FORMAT_Q.correct;
+  const s3 = grandsDone.length === GRANDS.length && formatRevealed;
   const allDone = s1 && s2 && s3;
 
   const mark = (setter, list, i) => setter(list.includes(i) ? list : [...list, i]);
@@ -417,21 +407,6 @@ export default function Module03LireEcrire() {
                     En français, on sépare les classes par une <strong>espace</strong> :{' '}
                     <span className="font-mono font-bold">2 350 700</span>. La virgule est réservée aux nombres
                     décimaux, et tout coller rend le nombre illisible.
-                    {formatPick !== FORMAT_Q.correct && (
-                      <>
-                        {' '}
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setFormatRevealed(false);
-                            setFormatPick(null);
-                          }}
-                          className="underline font-semibold"
-                        >
-                          Réessayer
-                        </button>
-                      </>
-                    )}
                   </Feedback>
                 )}
               </div>
@@ -468,7 +443,7 @@ function ReverseItem({ item, solved, onSolved }) {
         <ValidateButton
           onClick={() => {
             setRevealed(true);
-            if (pick === item.correct) onSolved?.();
+            onSolved?.();
           }}
           disabled={pick === null}
         >
@@ -477,22 +452,12 @@ function ReverseItem({ item, solved, onSolved }) {
       )}
       {revealed && (
         <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
-          {item.explain}
-          {!solved && pick !== item.correct && (
+          {pick !== item.correct && (
             <>
-              {' '}
-              <button
-                type="button"
-                onClick={() => {
-                  setRevealed(false);
-                  setPick(null);
-                }}
-                className="underline font-semibold"
-              >
-                Réessayer
-              </button>
+              Bonne réponse : <strong>{item.options[item.correct]}</strong>. {' '}
             </>
           )}
+          {item.explain}
         </Feedback>
       )}
     </div>

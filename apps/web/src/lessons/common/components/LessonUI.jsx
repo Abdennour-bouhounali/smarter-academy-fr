@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, XCircle, Lightbulb, Info } from 'lucide-react';
+import { CheckCircle2, XCircle, Lightbulb, Info, Timer as TimerIcon } from 'lucide-react';
 
 /**
  * Briques d'interface partagées par les leçons Smarter Academy.
@@ -126,6 +126,8 @@ export function ValidateButton({ onClick, disabled, children = 'Valider', tone =
     emerald: 'bg-emerald-600 hover:bg-emerald-700',
     amber: 'bg-amber-600 hover:bg-amber-700',
     slate: 'bg-slate-800 hover:bg-slate-900',
+    cyan: 'bg-cyan-600 hover:bg-cyan-700',
+    teal: 'bg-teal-600 hover:bg-teal-700',
   };
   return (
     <button
@@ -251,5 +253,55 @@ export function QuantityCard({ emoji, label, value, unit, selected, onClick, dis
       </div>
       {footer && <div className="mt-2 text-xs text-slate-500">{footer}</div>}
     </Wrapper>
+  );
+}
+
+/* ── Chronomètre d'évaluation (activable/désactivable) ───────────────── */
+/**
+ * Bandeau de contrôle du chronomètre, à afficher avant que le test démarre.
+ * L'élève choisit d'activer ou non le temps limité — indépendant du reste
+ * du test, qui se déroule à l'identique dans les deux cas.
+ */
+export function TimerToggle({ enabled, onChange, durationLabel, disabled = false }) {
+  return (
+    <div className="flex items-center justify-between gap-3 rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3">
+      <div className="flex items-center gap-2.5 text-sm text-slate-700">
+        <TimerIcon className="w-4 h-4 shrink-0" aria-hidden="true" />
+        <span>
+          Chronomètre ({durationLabel}) <span className="text-slate-400">— facultatif</span>
+        </span>
+      </div>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={enabled}
+        disabled={disabled}
+        onClick={() => onChange(!enabled)}
+        className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 ${
+          enabled ? 'bg-blue-600' : 'bg-slate-300'
+        } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+      >
+        <span
+          className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform shadow ${
+            enabled ? 'translate-x-6' : 'translate-x-1'
+          }`}
+        />
+      </button>
+    </div>
+  );
+}
+
+/** Chrono affiché pendant le test — sobre, jamais alarmiste avant la fin. */
+export function TimerDisplay({ label, urgent = false }) {
+  return (
+    <div
+      role="timer"
+      className={`inline-flex items-center gap-2 rounded-xl border-2 px-3.5 py-2 font-mono text-sm font-bold tabular-nums ${
+        urgent ? 'border-rose-300 bg-rose-50 text-rose-700' : 'border-slate-200 bg-white text-slate-700'
+      }`}
+    >
+      <TimerIcon className="w-4 h-4 shrink-0" aria-hidden="true" />
+      {label}
+    </div>
   );
 }

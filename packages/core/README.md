@@ -19,7 +19,7 @@ Pure functions and static data: `input → output`, no side effects, no framewor
 | `api/` | `errors.js` — `ApiError`, `classifyStatus`. The `fetch` call itself stays in `apps/web` (needs `import.meta.env`) |
 | `validation/` | Canonical exercise validators (`{isCorrect}` result contract — see `docs/architecture/EXERCISE_CONTRACT.md`): `validateChoiceAnswer`, `validateNumericAnswer`, `validateScientificNotation` |
 | `progress/` | `calculateCompletionPercentage` (pure completion-% math), `getNextIncompleteModule`, `getNextLesson` (pure curriculum navigation) |
-| `curriculum/` | `coursesData.js` — the catalogue (`courseLevels`), the official curriculum JSON it's built from, and `getAllGrades()` (the flattened grade list — the single source of truth for what a student's `grade` profile field can be) |
+| `curriculum/` | `coursesData.js` — the catalogue (`courseLevels`), the official curriculum JSON it's built from, and `getAllGrades()` (the flattened grade list — the single source of truth for what a student's `grade` profile field can be); `lessonStages.js` — the canonical learning-journey stage vocabulary (`LESSON_STAGES`, `REQUIRED_STAGES`) and the 45-minute lesson cap (`MAX_LESSON_MINUTES`), shared by the lesson validator and the web app |
 
 See `docs/architecture/MOBILE_READINESS.md` for the investigation behind what's here (and, as importantly, what was deliberately left out).
 

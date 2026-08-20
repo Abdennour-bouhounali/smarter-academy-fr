@@ -4,35 +4,65 @@ import { ChevronDown, HelpCircle, CheckCircle2 } from 'lucide-react';
 
 const faqs = [
   {
-    id: 'process',
-    question: "Comment se déroule un cours ?",
-    answer: "Un cours s'articules en 5 étapes clés : diagnostic rapide des difficultés, explications claires des notions mal comprises avec des méthodes visuelles, exercices d'application guidés, mise en autonomie sur des sujets d'examen, et bilan final avec exercices à faire pour la séance suivante."
+    id: 'levels',
+    question: 'À partir de quel niveau puis-je utiliser Smarter Academy ?',
+    answer: "Smarter Academy couvre le programme officiel français, du Collège (6e à 3e) au Lycée (2nde à Terminale). La 6e est aujourd'hui le niveau le plus complet ; les autres niveaux s'enrichissent progressivement.",
   },
   {
-    id: 'online',
-    question: "Proposez-vous des cours en ligne ?",
-    answer: "Oui, absolument ! Les cours en ligne se déroulent en visioconférence HD avec un tableau blanc interactif virtuel partagé en temps réel (GeoGebra, écriture d'équations). À la fin de chaque séance, l'élève reçoit le support complet de cours annoté au format PDF."
+    id: 'curriculum',
+    question: 'Le contenu suit-il vraiment le programme français ?',
+    answer: "Oui. Chaque leçon est construite à partir du programme officiel de l'Éducation nationale, domaine par domaine — rien n'est inventé à côté du programme.",
   },
   {
-    id: 'bac-brevet',
-    question: "Préparez-vous au Brevet et au Baccalauréat ?",
-    answer: "Oui, la préparation aux examens officiels est l'une de mes spécialités principales. J'accompagne les élèves de 3ème pour le Brevet (DNB) ainsi que les lycéens de Première et Terminale (Spécialité Maths & Maths Expertes) pour le Baccalauréat avec des sujets d'annales corrigés et une méthode de rédaction rigoureuse."
+    id: 'how-lessons-work',
+    question: 'Comment se déroule une leçon ?',
+    answer: "Une situation concrète, de la manipulation, une découverte guidée, puis de la pratique avec feedback immédiat. Le détail complet est sur la page Notre méthode.",
   },
   {
-    id: 'travel',
-    question: "Vous déplacez-vous à domicile ?",
-    answer: "Oui, je me déplace à domicile à Toulouse et dans son agglomération proche tout au long de l'année. Je me déplace également à Paris pour des stages intensifs de révision pendant les vacances scolaires."
+    id: 'parent-supervision',
+    question: 'Mon enfant doit-il être accompagné pour utiliser la plateforme ?',
+    answer: "Non. Chaque leçon se suit en autonomie, avec des consignes claires et un feedback immédiat. Un parent peut suivre la progression, mais sa présence n'est pas nécessaire pour avancer.",
   },
   {
-    id: 'duration',
-    question: "Quelle est la durée d'un cours ?",
-    answer: "La durée recommandée est de 1h30 par séance pour les collégiens et de 1h30 à 2h00 pour les lycéens. Cette durée permet de revoir la théorie sans précipitation, de réaliser des exercices d'application et de valider les acquis."
+    id: 'every-level',
+    question: 'Est-ce adapté si mon enfant est en difficulté — ou au contraire à l\'aise ?',
+    answer: "Les deux. Un élève en difficulté avance à son rythme, sans jugement — l'erreur fait partie du chemin. Un élève à l'aise gagne en profondeur : comprendre plutôt que réciter construit des bases plus solides, quel que soit le niveau de départ.",
+  },
+  {
+    id: 'whats-free',
+    question: 'Qu\'est-ce qui est réellement gratuit ?',
+    answer: "2 leçons complètes par niveau, avec un compte gratuit — sans limite de temps : leçons interactives, exercices, correction et suivi de progression inclus.",
+  },
+  {
+    id: 'card-required',
+    question: 'Faut-il une carte bancaire pour créer un compte gratuit ?',
+    answer: "Non, jamais. Créer un compte gratuit ne demande aucune information de paiement.",
+  },
+  {
+    id: 'locked-lessons',
+    question: 'Pourquoi certaines leçons sont-elles verrouillées ?',
+    answer: "Elles font partie de l'offre Premium et se débloquent avec l'abonnement. Elles restent visibles dans le catalogue pour que tu saches ce qui t'attend.",
   },
   {
     id: 'pricing',
-    question: "Quels sont les tarifs et modalités ?",
-    answer: "Les tarifs sont adaptés au niveau de l'élève (Collège, Lycée, Supérieur) et au format choisi (à domicile ou en ligne). N'hésite pas à me contacter par téléphone ou via le formulaire pour obtenir un tarif exact et échanger sur les besoins de votre enfant."
-  }
+    question: 'Pourquoi 35€ par an, et qu\'est-ce que le mois offert ?',
+    answer: "35€/an débloque l'accès complet et illimité au programme, du Collège au Lycée — pensé pour rester accessible, pas pour être un luxe. Le premier mois est offert, pour juger sereinement avant de s'engager.",
+  },
+  {
+    id: 'progress-tracking',
+    question: 'Comment fonctionne le suivi de progression ?',
+    answer: "Chaque module complété est enregistré sur ton compte : tu peux voir où tu en es, reprendre là où tu t'es arrêté, et suivre ta progression dans le temps.",
+  },
+  {
+    id: 'devices',
+    question: 'Sur quels appareils puis-je utiliser Smarter Academy ?',
+    answer: "Dans le navigateur, sur ordinateur, tablette ou smartphone — aucune installation requise. Une application mobile dédiée est envisagée pour plus tard.",
+  },
+  {
+    id: 'replaces-teacher',
+    question: 'Est-ce que Smarter Academy remplace un professeur ?',
+    answer: "Non. C'est un complément puissant pour comprendre et pratiquer en autonomie — rien ne remplace un enseignant en classe pour guider et adapter son enseignement à chaque élève.",
+  },
 ];
 
 export default function FAQSection() {
@@ -43,10 +73,8 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="section-wrapper">
+    <section id="faq" className="section-wrapper pt-0">
       <div className="max-w-4xl mx-auto">
-
-
         {/* Accordion List */}
         <div className="space-y-4">
           {faqs.map((faq, i) => (
@@ -55,12 +83,13 @@ export default function FAQSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
+              transition={{ delay: Math.min(i, 6) * 0.05 }}
               className="glass-card overflow-hidden transition-all duration-200"
             >
               <button
                 onClick={() => toggle(i)}
-                className="w-full p-6 text-left flex items-center justify-between gap-4 font-space font-bold text-slate-800 text-base sm:text-lg hover:text-blue-600 transition-colors"
+                aria-expanded={openIndex === i}
+                className="w-full p-6 text-left flex items-center justify-between gap-4 font-space font-bold text-slate-800 text-base sm:text-lg hover:text-blue-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-inset rounded-t-[20px]"
               >
                 <span className="flex items-center gap-3">
                   <HelpCircle size={20} className={`flex-shrink-0 transition-colors ${openIndex === i ? 'text-blue-600' : 'text-blue-500'}`} />

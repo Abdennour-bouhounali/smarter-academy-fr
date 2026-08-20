@@ -1,25 +1,20 @@
 import { apiRequest, ApiError, classifyStatus } from './apiClient';
 
 /**
- * Registers a new student account and returns an authenticated session,
- * exactly like login() does. Self-registration always produces a student —
- * the backend ignores any role sent by the client.
+ * Registers a new student account from email + password alone and returns
+ * an authenticated session, exactly like login() does. Self-registration
+ * always produces a student — the backend ignores any role sent by the
+ * client. Grade and any other profile data are collected afterwards
+ * (see updateGrade()), not at registration.
  * @returns {Promise<{success: boolean, token: string, user: object}>}
  * @throws {ApiError} On network failure or a non-2xx response (e.g. a
  *   duplicate email or a weak password come back as 422).
  */
-export async function register({ firstName, lastName, email, password, passwordConfirmation, grade }) {
+export async function register({ email, password }) {
   const { ok, status, data } = await apiRequest('/auth/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      first_name: firstName,
-      last_name: lastName,
-      email,
-      password,
-      password_confirmation: passwordConfirmation,
-      grade,
-    }),
+    body: JSON.stringify({ email, password }),
   });
 
   if (!ok) {

@@ -306,7 +306,7 @@ export default function Module06Comparer() {
   const [labosDone, setLabosDone] = useState([]);
   const [erreursDone, setErreursDone] = useState([]);
 
-  const s1 = visuelRevealed && visuelPick === 0;
+  const s1 = visuelRevealed;
   const s2 = duelsDone.length === DUELS_CHIFFRES.length;
   const s3 = labosDone.length === LABOS.length;
   const s4 = erreursDone.length === ERREURS.length;

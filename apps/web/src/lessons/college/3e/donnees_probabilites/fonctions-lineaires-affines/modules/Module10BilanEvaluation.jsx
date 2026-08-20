@@ -15,6 +15,7 @@ const QUESTIONS = [
     text: "Soit $f(x) = 5x - 2$. Quelle est l'image de $3$ par $f$ ?",
     choices: ['13', '17', '7', '11'],
     answer: '13',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-affines_P1'] },
   },
   {
     id: 'q2',
@@ -22,6 +23,7 @@ const QUESTIONS = [
     text: "Soit $g(x) = 3x + 1$. Quel est l'antécédent de $10$ ?",
     choices: ['3', '4', '7', '31'],
     answer: '3',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-affines_P2'] },
   },
   {
     id: 'q3',
@@ -29,6 +31,7 @@ const QUESTIONS = [
     text: "Pour $h(x) = -2x + 4$, quelle est la valeur $h(-1)$ ?",
     choices: ['6', '2', '-6', '-2'],
     answer: '6',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-affines_P3'] },
   },
   {
     id: 'q4',
@@ -36,6 +39,7 @@ const QUESTIONS = [
     text: "Laquelle de ces fonctions est linéaire ?",
     choices: ['$f(x) = 3x + 1$', '$g(x) = -2x$', '$h(x) = x^2$', '$k(x) = 5$'],
     answer: '$g(x) = -2x$',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-affines_P4'] },
   },
   {
     id: 'q5',
@@ -43,6 +47,7 @@ const QUESTIONS = [
     text: "Pour $f(x) = -4x + 7$, quelles sont les valeurs de $a$ et $b$ ?",
     choices: ['$a=4$, $b=7$', '$a=-4$, $b=7$', '$a=7$, $b=-4$', '$a=-4x$, $b=7$'],
     answer: '$a=-4$, $b=7$',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-affines_P5'] },
   },
   {
     id: 'q6',
@@ -50,6 +55,7 @@ const QUESTIONS = [
     text: "Une droite coupe l'axe des $y$ en $2$ et passe par $(1, 5)$. Quelle est son expression ?",
     choices: ['$f(x) = 2x + 3$', '$f(x) = 3x + 2$', '$f(x) = 5x + 2$', '$f(x) = 3x - 2$'],
     answer: '$f(x) = 3x + 2$',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-affines_P6'] },
   },
   {
     id: 'q7',
@@ -57,6 +63,7 @@ const QUESTIONS = [
     text: "Deux points $A(0, 3)$ et $B(2, 9)$. Quel est le coefficient directeur ?",
     choices: ['3', '6', '2', '4'],
     answer: '3',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-affines_P7'] },
   },
   {
     id: 'q8',
@@ -64,6 +71,7 @@ const QUESTIONS = [
     text: "Avec $A(1, 4)$ et $B(3, 10)$ (et $a = 3$), quelle est l'expression complète de $f$ ?",
     choices: ['$f(x) = 3x + 1$', '$f(x) = 3x + 4$', '$f(x) = 3x - 1$', '$f(x) = 3x + 3$'],
     answer: '$f(x) = 3x + 1$',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-affines_P8'] },
   },
 ];
 

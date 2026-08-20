@@ -1,57 +1,35 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle } from 'lucide-react';
+import { Mail, Send, CheckCircle, Clock } from 'lucide-react';
 import { submitContactRequest } from '../../services/contactService';
 
 const contactInfo = [
   {
-    icon: Phone,
-    label: 'Téléphone / WhatsApp',
-    value: '+33 7 58 10 30 86',
-    href: 'tel:+33758103086',
-    color: 'from-emerald-400 to-teal-500',
-    bg: 'bg-emerald-50'
-  },
-  {
     icon: Mail,
-    label: 'Email direct',
+    label: 'Email',
     value: 'abdennour.bouhounali@gmail.com',
     href: 'mailto:abdennour.bouhounali@gmail.com',
     color: 'from-blue-500 to-cyan-500',
-    bg: 'bg-blue-50'
   },
   {
-    icon: MapPin,
-    label: 'Lieux d\'intervention',
-    value: 'Toulouse, Paris & En Ligne (France)',
-    href: null,
-    color: 'from-red-400 to-pink-500',
-    bg: 'bg-red-50'
-  },
-  {
-    icon: MessageCircle,
-    label: 'Réponse rapide',
-    value: 'Sous 24h ouvrées',
+    icon: Clock,
+    label: 'Délai de réponse',
+    value: 'Sous 48h ouvrées',
     href: null,
     color: 'from-purple-500 to-indigo-500',
-    bg: 'bg-purple-50'
-  }
+  },
 ];
 
 export default function ContactSection() {
   const [form, setForm] = useState({
     name: '',
-    classe: 'Terminale Spé Maths',
-    ville: 'Toulouse (À domicile)',
-    objectif: 'Préparation Bac / Brevet',
-    phone: '',
     email: '',
-    message: ''
+    objectif: 'Question générale',
+    message: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleChange = (e) => {
@@ -66,17 +44,8 @@ export default function ContactSection() {
     try {
       await submitContactRequest(form);
       setSubmitted(true);
-      setForm({
-        name: '',
-        classe: 'Terminale Spé Maths',
-        ville: 'Toulouse (À domicile)',
-        objectif: 'Préparation Bac / Brevet',
-        phone: '',
-        email: '',
-        message: ''
-      });
+      setForm({ name: '', email: '', objectif: 'Question générale', message: '' });
     } catch (err) {
-      // Fallback si le backend n'est pas joignable ou renvoie une erreur
       setErrorMsg(err.message);
     } finally {
       setSubmitting(false);
@@ -85,11 +54,9 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="section-wrapper">
-      <div className="max-w-6xl mx-auto">
-
-
+      <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Left — Contact info cards */}
+          {/* Left — Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -97,7 +64,10 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <h3 className="font-space font-bold text-xl text-slate-800 mb-6">Contactez-moi directement</h3>
+            <h3 className="font-space font-bold text-xl text-slate-800 mb-2">Une question ? Écris-nous</h3>
+            <p className="font-inter text-slate-500 text-sm leading-relaxed mb-6">
+              Pour toute question sur la plateforme, les tarifs ou un problème technique — nous répondons personnellement à chaque message.
+            </p>
 
             {contactInfo.map((item, i) => (
               <motion.div
@@ -117,7 +87,7 @@ export default function ContactSection() {
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="font-inter text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors break-words font-space font-semibold"
+                      className="font-inter text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors break-words"
                     >
                       {item.value}
                     </a>
@@ -127,27 +97,9 @@ export default function ContactSection() {
                 </div>
               </motion.div>
             ))}
-
-            {/* Availability card */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="mt-6 p-5 rounded-2xl"
-              style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08))', border: '1px solid rgba(59,130,246,0.15)' }}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-                <span className="font-space font-bold text-slate-800 text-sm">Disponibilité pour le semestre</span>
-              </div>
-              <p className="font-inter text-slate-600 text-xs leading-relaxed">
-                Des créneaux sont actuellement ouverts pour du suivi hebdomadaire et des cours particuliers à Toulouse, Paris et en visioconférence.
-              </p>
-            </motion.div>
           </motion.div>
 
-          {/* Right — Lead Contact form */}
+          {/* Right — Contact form */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -155,8 +107,6 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="glass-card p-6 sm:p-8">
-              <h3 className="font-space font-bold text-xl text-slate-800 mb-6">Formulaire de demande de cours</h3>
-
               <AnimatePresence mode="wait">
                 {submitted ? (
                   <motion.div
@@ -172,15 +122,15 @@ export default function ContactSection() {
                     >
                       <CheckCircle size={56} className="text-green-500 mb-4" />
                     </motion.div>
-                    <h4 className="font-space font-bold text-slate-800 text-lg mb-2">Demande bien reçue !</h4>
+                    <h4 className="font-space font-bold text-slate-800 text-lg mb-2">Message bien reçu !</h4>
                     <p className="font-inter text-slate-600 text-sm mb-6">
-                      Merci pour votre message. Je vous recontacterai sous 24 heures pour échanger et convenir d'un premier rendez-vous.
+                      Merci pour votre message. Nous vous répondrons sous 48h ouvrées.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
                       className="btn-secondary text-sm"
                     >
-                      Envoyer une autre demande
+                      Envoyer un autre message
                     </button>
                   </motion.div>
                 ) : (
@@ -198,7 +148,7 @@ export default function ContactSection() {
                     )}
                     <div>
                       <label htmlFor="contact-name" className="block font-inter text-sm font-medium text-slate-700 mb-1">
-                        Nom & Prénom (Parent / Élève) *
+                        Nom *
                       </label>
                       <input
                         id="contact-name"
@@ -207,88 +157,48 @@ export default function ContactSection() {
                         required
                         value={form.name}
                         onChange={handleChange}
-                        placeholder="Ex: Marie Dupont"
+                        placeholder="Ton nom"
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white/80 font-inter text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all"
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="contact-classe" className="block font-inter text-sm font-medium text-slate-700 mb-1">
-                          Classe de l'élève *
-                        </label>
-                        <select
-                          id="contact-classe"
-                          name="classe"
-                          value={form.classe}
-                          onChange={handleChange}
-                          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white font-inter text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all"
-                        >
-                          <option value="Collège (6e - 4e)">Collège (6ème - 4ème)</option>
-                          <option value="3ème (Brevet DNB)">Troisième (3ème - Brevet)</option>
-                          <option value="Seconde (2nde)">Seconde (2nde)</option>
-                          <option value="1ère Spé Maths">Première Spécialité Maths</option>
-                          <option value="Terminale Spé Maths">Terminale Spécialité Maths</option>
-                          <option value="Terminale Maths Expertes">Terminale Maths Expertes</option>
-                          <option value="Supérieur / Autre">Supérieur / Autre</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label htmlFor="contact-ville" className="block font-inter text-sm font-medium text-slate-700 mb-1">
-                          Lieu / Format souhaité *
-                        </label>
-                        <select
-                          id="contact-ville"
-                          name="ville"
-                          value={form.ville}
-                          onChange={handleChange}
-                          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white font-inter text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all"
-                        >
-                          <option value="Toulouse (À domicile)">Toulouse (À domicile)</option>
-                          <option value="Paris (À domicile)">Paris (À domicile)</option>
-                          <option value="En Ligne (Visioconférence)">En Ligne (Visioconférence HD)</option>
-                        </select>
-                      </div>
+                    <div>
+                      <label htmlFor="contact-email" className="block font-inter text-sm font-medium text-slate-700 mb-1">
+                        Email *
+                      </label>
+                      <input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="ton@email.com"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white/80 font-inter text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all"
+                      />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="contact-email" className="block font-inter text-sm font-medium text-slate-700 mb-1">
-                          Email *
-                        </label>
-                        <input
-                          id="contact-email"
-                          name="email"
-                          type="email"
-                          required
-                          value={form.email}
-                          onChange={handleChange}
-                          placeholder="votre@email.com"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white/80 font-inter text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="contact-phone" className="block font-inter text-sm font-medium text-slate-700 mb-1">
-                          Téléphone *
-                        </label>
-                        <input
-                          id="contact-phone"
-                          name="phone"
-                          type="tel"
-                          required
-                          value={form.phone}
-                          onChange={handleChange}
-                          placeholder="07 58 10 30 86"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white/80 font-inter text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all"
-                        />
-                      </div>
+                    <div>
+                      <label htmlFor="contact-objectif" className="block font-inter text-sm font-medium text-slate-700 mb-1">
+                        Sujet
+                      </label>
+                      <select
+                        id="contact-objectif"
+                        name="objectif"
+                        value={form.objectif}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white font-inter text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all"
+                      >
+                        <option value="Question générale">Question générale</option>
+                        <option value="Tarifs et abonnement Premium">Tarifs et abonnement Premium</option>
+                        <option value="Problème technique">Problème technique</option>
+                        <option value="Autre">Autre</option>
+                      </select>
                     </div>
 
                     <div>
                       <label htmlFor="contact-message" className="block font-inter text-sm font-medium text-slate-700 mb-1">
-                        Objectifs & Précisions *
+                        Message *
                       </label>
                       <textarea
                         id="contact-message"
@@ -297,7 +207,7 @@ export default function ContactSection() {
                         rows={4}
                         value={form.message}
                         onChange={handleChange}
-                        placeholder="Décrivez les objectifs (remise à niveau, prépa Bac, révision d'un chapitre particulier...)"
+                        placeholder="Ta question ou ton message..."
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white/80 font-inter text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all resize-none"
                       />
                     </div>
@@ -313,12 +223,12 @@ export default function ContactSection() {
                       {submitting ? (
                         <>
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          Envoi de la demande...
+                          Envoi en cours...
                         </>
                       ) : (
                         <>
                           <Send size={15} />
-                          Envoyer ma demande de cours ➔
+                          Envoyer le message
                         </>
                       )}
                     </motion.button>

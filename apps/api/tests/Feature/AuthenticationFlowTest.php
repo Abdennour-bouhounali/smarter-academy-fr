@@ -10,53 +10,44 @@ class AuthenticationFlowTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_a_visitor_can_register_and_receives_a_token_and_student_role(): void
+    public function test_a_visitor_can_register_with_only_email_and_password_and_receives_a_token_and_student_role(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
-            'first_name' => 'Alice',
-            'last_name' => 'Martin',
             'email' => 'alice@example.com',
             'password' => 'password123',
-            'password_confirmation' => 'password123',
-            'grade' => '6e',
         ]);
 
         $response->assertStatus(201)
             ->assertJsonPath('success', true)
             ->assertJsonPath('user.role', 'student')
             ->assertJsonPath('user.email', 'alice@example.com')
-            ->assertJsonPath('user.grade', '6e')
+            ->assertJsonPath('user.grade', null)
+            ->assertJsonPath('user.firstName', null)
+            ->assertJsonPath('user.lastName', null)
             ->assertJsonStructure(['token']);
 
         $this->assertDatabaseHas('users', [
             'email' => 'alice@example.com',
             'role' => 'student',
-            'grade' => '6e',
+            'grade' => null,
         ]);
     }
 
-    public function test_registration_requires_a_grade(): void
+    public function test_registration_does_not_require_a_password_confirmation(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
-            'first_name' => 'Grady',
-            'last_name' => 'NoGrade',
-            'email' => 'grady@example.com',
+            'email' => 'noconfirm@example.com',
             'password' => 'password123',
-            'password_confirmation' => 'password123',
         ]);
 
-        $response->assertStatus(422)->assertJsonValidationErrors('grade');
+        $response->assertStatus(201);
     }
 
     public function test_registration_cannot_be_used_to_self_assign_the_admin_role(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
-            'first_name' => 'Eve',
-            'last_name' => 'Hacker',
             'email' => 'eve@example.com',
             'password' => 'password123',
-            'password_confirmation' => 'password123',
-            'grade' => '5e',
             'role' => 'admin',
         ]);
 
@@ -68,17 +59,26 @@ class AuthenticationFlowTest extends TestCase
         ]);
     }
 
+    public function test_registration_ignores_a_client_supplied_grade_until_onboarding_sets_it(): void
+    {
+        $response = $this->postJson('/api/v1/auth/register', [
+            'email' => 'grady@example.com',
+            'password' => 'password123',
+            'grade' => '6e',
+        ]);
+
+        // Grade is only ever set via PATCH /auth/grade after account creation —
+        // registration doesn't accept it, even if the client sends one.
+        $response->assertStatus(201)->assertJsonPath('user.grade', null);
+    }
+
     public function test_registration_rejects_a_duplicate_email(): void
     {
         User::factory()->create(['email' => 'taken@example.com']);
 
         $response = $this->postJson('/api/v1/auth/register', [
-            'first_name' => 'Bob',
-            'last_name' => 'Dupont',
             'email' => 'taken@example.com',
             'password' => 'password123',
-            'password_confirmation' => 'password123',
-            'grade' => '4e',
         ]);
 
         $response->assertStatus(422)->assertJsonValidationErrors('email');
@@ -87,12 +87,8 @@ class AuthenticationFlowTest extends TestCase
     public function test_registration_rejects_a_weak_password(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
-            'first_name' => 'Bob',
-            'last_name' => 'Dupont',
             'email' => 'bob@example.com',
             'password' => 'short',
-            'password_confirmation' => 'short',
-            'grade' => '4e',
         ]);
 
         $response->assertStatus(422)->assertJsonValidationErrors('password');
@@ -173,6 +169,21 @@ class AuthenticationFlowTest extends TestCase
             ->assertJsonPath('user.grade', '5e');
 
         $this->assertDatabaseHas('users', ['id' => $user->id, 'grade' => '5e']);
+    }
+
+    public function test_a_newly_registered_student_can_set_their_grade_via_onboarding(): void
+    {
+        $register = $this->postJson('/api/v1/auth/register', [
+            'email' => 'onboarding@example.com',
+            'password' => 'password123',
+        ]);
+        $register->assertJsonPath('user.grade', null);
+        $token = $register->json('token');
+
+        $response = $this->withHeader('Authorization', "Bearer {$token}")
+            ->patchJson('/api/v1/auth/grade', ['grade' => '6e']);
+
+        $response->assertStatus(200)->assertJsonPath('user.grade', '6e');
     }
 
     public function test_changing_grade_requires_authentication(): void

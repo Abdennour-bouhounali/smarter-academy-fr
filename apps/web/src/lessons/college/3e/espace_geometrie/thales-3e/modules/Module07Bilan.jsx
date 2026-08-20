@@ -9,8 +9,9 @@ import { motion } from 'framer-motion';
 
 const QUESTIONS = [
   {
-    id: 1,
+    id: 'eval-01',
     text: "Quelles sont les conditions nécessaires pour appliquer le théorème de Thalès ?",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_thales-3e_P1'] },
     options: [
       { text: "Deux droites perpendiculaires et un triangle", isCorrect: false },
       { text: "Deux droites parallèles coupées par deux droites sécantes", isCorrect: true },
@@ -18,8 +19,9 @@ const QUESTIONS = [
     ]
   },
   {
-    id: 2,
+    id: 'eval-02',
     text: "Quelle fraction est TOUJOURS incorrecte dans l'égalité de Thalès ?",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_thales-3e_P2'] },
     options: [
       { text: "Petit côté / Grand côté", isCorrect: false },
       { text: "Morceau de côté / Grand côté entier", isCorrect: true },
@@ -27,8 +29,9 @@ const QUESTIONS = [
     ]
   },
   {
-    id: 3,
+    id: 'eval-03',
     text: "Si les rapports AM/AB et AN/AC sont différents, que conclut-on ?",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_thales-3e_P4', '3e_thales-3e_P5'] },
     options: [
       { text: "Les droites (MN) et (BC) sont parallèles", isCorrect: false },
       { text: "Les droites (MN) et (BC) ne sont pas parallèles", isCorrect: true },
@@ -36,8 +39,9 @@ const QUESTIONS = [
     ]
   },
   {
-    id: 4,
+    id: 'eval-04',
     text: "Dans la configuration 'Papillon', où se trouve le sommet commun ?",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_thales-3e_P6'] },
     options: [
       { text: "À l'extérieur des deux triangles", isCorrect: false },
       { text: "Au milieu, entre les deux droites parallèles", isCorrect: true },
@@ -45,8 +49,9 @@ const QUESTIONS = [
     ]
   },
   {
-    id: 5,
+    id: 'eval-05',
     text: "À quoi sert principalement le théorème de Thalès classique ?",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_thales-3e_P3'] },
     options: [
       { text: "À calculer une longueur manquante", isCorrect: true },
       { text: "À prouver qu'un triangle est rectangle", isCorrect: false },

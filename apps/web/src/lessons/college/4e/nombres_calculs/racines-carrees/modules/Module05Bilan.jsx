@@ -15,6 +15,22 @@ export default function Module05Bilan() {
   const navigate = useNavigate();
   const { markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
 
+  // Evaluation-stage assessment metadata (docs/architecture/AI_LESSON_CONTRACT.md):
+  // each question below is tagged with the learning point(s) it certifies so
+  // this module's answers generate server-side mastery evidence.
+  const q1Meta = {
+    id: 'racines-carrees-4e-eval-01',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['4e_racines-carrees-4e_P1'] },
+  };
+  const q2Meta = {
+    id: 'racines-carrees-4e-eval-02',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['4e_racines-carrees-4e_P2', '4e_racines-carrees-4e_P3'] },
+  };
+  const q3Meta = {
+    id: 'racines-carrees-4e-eval-03',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['4e_racines-carrees-4e_P4'] },
+  };
+
   const q1 = useAdaptiveExercise({
     validator: (val) => {
       const cleanVal = val.replace(/\s+/g, '');
@@ -68,7 +84,7 @@ export default function Module05Bilan() {
 
           <div className="space-y-6">
             
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200" data-question-id={q1Meta.id}>
               <h3 className="font-bold text-lg mb-4 text-slate-800">1. Symbole et notation</h3>
               <p className="mb-4 text-slate-600">Le nombre positif dont le carré est 100 se note :</p>
               <ExerciseValidator adaptiveState={q1} onSubmit={() => q1.submitAnswer()}>
@@ -81,7 +97,7 @@ export default function Module05Bilan() {
               </ExerciseValidator>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200" data-question-id={q2Meta.id}>
               <h3 className="font-bold text-lg mb-4 text-slate-800">2. Calcul d'un carré parfait</h3>
               <p className="mb-4 text-slate-600">Calcule :</p>
               <ExerciseValidator adaptiveState={q2} onSubmit={() => q2.submitAnswer()}>
@@ -98,7 +114,7 @@ export default function Module05Bilan() {
               </ExerciseValidator>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200" data-question-id={q3Meta.id}>
               <h3 className="font-bold text-lg mb-4 text-slate-800">3. Encadrement</h3>
               <p className="mb-4 text-slate-600">Donne l'entier directement inférieur à <MathText>{"$\\sqrt{30}$"}</MathText> :</p>
               <ExerciseValidator adaptiveState={q3} onSubmit={() => q3.submitAnswer()}>

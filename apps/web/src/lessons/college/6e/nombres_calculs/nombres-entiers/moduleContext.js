@@ -9,7 +9,7 @@ export const MODULE_CTX = {
   chapterTitle: LESSON_CONFIG.chapterTitle,
   levelLabel: 'Collège',
   gradeLabel: '6ème',
-  totalModules: LESSON_CONFIG.totalModules,
+  totalModules: LESSON_CONFIG.modules.length,
   sequentialUnlock: LESSON_CONFIG.sequentialUnlock,
 };
 

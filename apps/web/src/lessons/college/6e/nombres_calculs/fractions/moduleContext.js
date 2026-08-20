@@ -1,6 +1,6 @@
 import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
 
-/** Contexte commun passé à <ModuleLayout> par chacun des 10 modules. */
+/** Shared <ModuleLayout> props every module in this lesson spreads in. */
 export const MODULE_CTX = {
   lessonId: LESSON_CONFIG.id,
   coursePath: LESSON_BASE_PATH,
@@ -9,17 +9,17 @@ export const MODULE_CTX = {
   chapterTitle: LESSON_CONFIG.chapterTitle,
   levelLabel: 'Collège',
   gradeLabel: '6ème',
-  totalModules: LESSON_CONFIG.totalModules,
+  totalModules: LESSON_CONFIG.modules.length,
   sequentialUnlock: LESSON_CONFIG.sequentialUnlock,
 };
 
-/** Liens précédent / suivant à partir du numéro du module courant. */
-export const getNavLinks = (currentModuleNumber) => {
-  const idx = LESSON_CONFIG.modules.findIndex((m) => m.number === currentModuleNumber);
-  if (idx === -1) return { prevLink: null, nextLink: null };
-
+/** @param {number} currentModuleNumber 1-indexed */
+export function getNavLinks(currentModuleNumber) {
+  const modules = LESSON_CONFIG.modules;
+  const prev = modules.find((m) => m.number === currentModuleNumber - 1);
+  const next = modules.find((m) => m.number === currentModuleNumber + 1);
   return {
-    prevLink: idx > 0 ? LESSON_CONFIG.modules[idx - 1].path : LESSON_BASE_PATH,
-    nextLink: idx < LESSON_CONFIG.modules.length - 1 ? LESSON_CONFIG.modules[idx + 1].path : null,
+    prevLink: prev ? prev.path : LESSON_BASE_PATH,
+    nextLink: next ? next.path : null,
   };
-};
+}

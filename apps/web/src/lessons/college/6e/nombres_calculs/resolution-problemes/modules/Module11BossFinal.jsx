@@ -337,11 +337,16 @@ function Synthese() {
 
 /* ═══ FLASH RETOUR ══════════════════════════════════════════════════ */
 const FLASH = [
-  { q: '« Il reste 12 places. » Cette phrase implique-t-elle forcément une soustraction ?', options: ['Oui, toujours', 'Non : il faut comprendre toute la situation pour le savoir'], correct: 1, explain: 'Aucun mot isolé ne détermine une opération : c\'est la situation complète qui compte.' },
-  { q: '« Une classe possède plusieurs boîtes de crayons. Combien en a-t-elle ? » Que répondre ?', options: ['Inventer un nombre plausible', 'Il manque une information'], correct: 1, explain: 'Sans le nombre de boîtes et de crayons par boîte, aucun calcul n\'est possible.' },
-  { q: 'Un élève écrit seulement « 157 » comme réponse finale. Est-ce suffisant ?', options: ['Oui', 'Non : il faut le résultat, l\'unité, et une phrase'], correct: 1, explain: 'Une réponse complète répond clairement à la question posée.' },
-  { q: 'Léa dessine pour résoudre un problème, Nathan calcule directement. Qui a raison ?', options: ['Seulement Léa', 'Seulement Nathan', 'Les deux peuvent avoir raison'], correct: 2, explain: 'Plusieurs stratégies peuvent être valables pour un même problème.' },
-  { q: 'Avant un calcul, à quoi sert une estimation ?', options: ['À remplacer le calcul exact', 'À prévoir un ordre de grandeur, puis à contrôler le résultat'], correct: 1, explain: 'Estimer prépare et contrôle, mais ne remplace jamais le calcul exact.' },
+  { id: 'rp-flash-01', q: '« Il reste 12 places. » Cette phrase implique-t-elle forcément une soustraction ?', options: ['Oui, toujours', 'Non : il faut comprendre toute la situation pour le savoir'], correct: 1, explain: 'Aucun mot isolé ne détermine une opération : c\'est la situation complète qui compte.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_resolution-problemes_P1'] } },
+  { id: 'rp-flash-02', q: '« Une classe possède plusieurs boîtes de crayons. Combien en a-t-elle ? » Que répondre ?', options: ['Inventer un nombre plausible', 'Il manque une information'], correct: 1, explain: 'Sans le nombre de boîtes et de crayons par boîte, aucun calcul n\'est possible.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_resolution-problemes_P2'] } },
+  { id: 'rp-flash-03', q: 'Un élève écrit seulement « 157 » comme réponse finale. Est-ce suffisant ?', options: ['Oui', 'Non : il faut le résultat, l\'unité, et une phrase'], correct: 1, explain: 'Une réponse complète répond clairement à la question posée.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_resolution-problemes_P6'] } },
+  { id: 'rp-flash-04', q: 'Léa dessine pour résoudre un problème, Nathan calcule directement. Qui a raison ?', options: ['Seulement Léa', 'Seulement Nathan', 'Les deux peuvent avoir raison'], correct: 2, explain: 'Plusieurs stratégies peuvent être valables pour un même problème.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_resolution-problemes_P3', '6e_resolution-problemes_P4'] } },
+  { id: 'rp-flash-05', q: 'Avant un calcul, à quoi sert une estimation ?', options: ['À remplacer le calcul exact', 'À prévoir un ordre de grandeur, puis à contrôler le résultat'], correct: 1, explain: 'Estimer prépare et contrôle, mais ne remplace jamais le calcul exact.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_resolution-problemes_P5', '6e_resolution-problemes_P6'] } },
 ];
 
 function FlashRetour({ onDone, score, setScore }) {

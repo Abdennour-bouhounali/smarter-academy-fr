@@ -12,9 +12,12 @@
     "dev:all": "concurrently \"npm run dev\" \"cd apps/api && php artisan serve --port=3000\"",
     "build": "npm run build --workspace=apps/web",
     "preview": "npm run preview --workspace=apps/web",
-    "test": "npm run test --workspace=packages/core && npm run test --workspace=apps/web"
+    "test": "npm run test --workspace=packages/core && npm run test --workspace=apps/web",
+    "validate:lessons": "node scripts/validate-lessons.mjs"
   },
   "devDependencies": {
+    "@babel/parser": "^7.29.0",
+    "@babel/traverse": "^7.28.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",

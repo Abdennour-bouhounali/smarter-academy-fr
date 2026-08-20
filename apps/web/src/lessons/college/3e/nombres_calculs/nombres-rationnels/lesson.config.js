@@ -3,6 +3,8 @@
  * Source de vérité unique pour la leçon : Nombres rationnels (3ème)
  */
 
+export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/nombres-rationnels';
+
 export const LESSON_CONFIG = {
   // ── Identité ──────────────────────────────────────────────────────────────
   id: 'nombres-rationnels',
@@ -16,7 +18,7 @@ export const LESSON_CONFIG = {
   officialObjects: ['Nombres rationnels'],
 
   // ── Méta-pédagogique ──────────────────────────────────────────────────────
-  estimatedDurationMin: 60,
+  estimatedDurationMin: 71,
   difficulty: 2,
   masteryThreshold: 0.8, // 80 % des modules complétés = leçon maîtrisée
 
@@ -45,13 +47,16 @@ export const LESSON_CONFIG = {
   // ── Modules ───────────────────────────────────────────────────────────────
   modules: [
     {
-      id: 'L01',
+      id: '01',
       number: 1,
-      slug: '1',
+      slug: 'notion-rationnel',
+      path: `${LESSON_BASE_PATH}/notion-rationnel`,
       title: 'Notion de nombre rationnel',
       desc: "Comprendre le lien entre fraction, quotient et nombre rationnel.",
       color: 'emerald',
       style: 'featured',
+      stage: 'trigger',
+      teachesLearningPointIds: ['3e_nombres-rationnels_P1'],
       estimatedMin: 8,
       difficulty: 1,
       xpReward: 50,
@@ -59,88 +64,105 @@ export const LESSON_CONFIG = {
       prerequisites: [],
     },
     {
-      id: 'L02',
+      id: '02',
       number: 2,
-      slug: '2',
+      slug: 'fractions-irreductibles',
+      path: `${LESSON_BASE_PATH}/fractions-irreductibles`,
       title: 'Fractions irréductibles',
-      desc: "Rendre une fraction irréductible en utilisant les diviseurs communs.",
+      desc: "Rendre une fraction irréductible en utilisant les diviseurs communs, et comparer des rationnels.",
       color: 'indigo',
       style: 'featured',
+      stage: 'discovery',
+      teachesLearningPointIds: ['3e_nombres-rationnels_P2', '3e_nombres-rationnels_P3'],
       estimatedMin: 8,
       difficulty: 2,
       xpReward: 50,
       actionText: 'Voir ➔',
-      prerequisites: ['L01'],
+      prerequisites: ['01'],
     },
     {
-      id: 'L03',
+      id: '03',
       number: 3,
-      slug: '3',
+      slug: 'addition-soustraction',
+      path: `${LESSON_BASE_PATH}/addition-soustraction`,
       title: 'Addition et Soustraction',
       desc: "Trouver le dénominateur commun pour additionner ou soustraire.",
       color: 'violet',
       style: 'featured',
+      stage: 'manipulation',
+      teachesLearningPointIds: ['3e_nombres-rationnels_P4'],
       estimatedMin: 10,
       difficulty: 2,
       xpReward: 50,
       actionText: 'Voir ➔',
-      prerequisites: ['L02'],
+      prerequisites: ['02'],
     },
     {
-      id: 'L04',
+      id: '04',
       number: 4,
-      slug: '4',
+      slug: 'multiplication-division',
+      path: `${LESSON_BASE_PATH}/multiplication-division`,
       title: 'Multiplication et Division',
       desc: "Multiplier en simplifiant et diviser en utilisant l'inverse.",
       color: 'blue',
       style: 'featured',
+      stage: 'manipulation',
+      teachesLearningPointIds: ['3e_nombres-rationnels_P5'],
       estimatedMin: 10,
       difficulty: 2,
       xpReward: 50,
       actionText: 'Voir ➔',
-      prerequisites: ['L03'],
+      prerequisites: ['03'],
     },
     {
-      id: 'L05',
+      id: '05',
       number: 5,
-      slug: '5',
+      slug: 'priorites-operatoires',
+      path: `${LESSON_BASE_PATH}/priorites-operatoires`,
       title: 'Priorités opératoires',
       desc: "Gérer les calculs complexes avec plusieurs opérations.",
       color: 'rose',
       style: 'featured',
+      stage: 'formalization',
+      teachesLearningPointIds: ['3e_nombres-rationnels_P5'],
       estimatedMin: 10,
       difficulty: 3,
       xpReward: 75,
       actionText: 'Voir ➔',
-      prerequisites: ['L04'],
+      prerequisites: ['04'],
     },
     {
-      id: 'L06',
+      id: '06',
       number: 6,
-      slug: '6',
+      slug: 'mission-budget',
+      path: `${LESSON_BASE_PATH}/mission-budget`,
       title: 'Mission : Le Budget',
       desc: "Résoudre un problème concret nécessitant plusieurs opérations.",
       color: 'amber',
       style: 'boss',
+      stage: 'practice_lab',
+      teachesLearningPointIds: ['3e_nombres-rationnels_P6'],
       estimatedMin: 15,
       difficulty: 3,
       xpReward: 150,
       actionText: 'Mission ➔',
-      prerequisites: ['L05'],
+      prerequisites: ['05'],
     },
     {
-      id: 'L07',
+      id: '07',
       number: 7,
-      slug: '7',
+      slug: 'bilan-final',
+      path: `${LESSON_BASE_PATH}/bilan-final`,
       title: 'Bilan Final',
       desc: "Évaluation pour valider la maîtrise de la leçon.",
       color: 'slate',
       style: 'assessment',
+      stage: 'evaluation',
       estimatedMin: 10,
       difficulty: 3,
       xpReward: 100,
       actionText: 'Évaluation ➔',
-      prerequisites: ['L06'],
+      prerequisites: ['06'],
     }
   ]
 };
@@ -148,8 +170,6 @@ export const LESSON_CONFIG = {
 // ── Helpers dérivés ─────────────────────────────────────────────────────────
 
 export const TOTAL_MODULES = LESSON_CONFIG.modules.length;
-
-export const LESSON_BASE_PATH = `/courses/${LESSON_CONFIG.level}/${LESSON_CONFIG.grade}/${LESSON_CONFIG.chapter}/${LESSON_CONFIG.slug}`;
 
 export function getModuleNav(moduleNumber) {
   const modules = LESSON_CONFIG.modules;

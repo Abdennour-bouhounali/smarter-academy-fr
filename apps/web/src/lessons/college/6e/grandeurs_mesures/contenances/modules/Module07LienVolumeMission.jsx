@@ -9,6 +9,16 @@ import LiquidContainer from '../components/LiquidContainer';
 import { parseDec, formatCapacity } from '../components/capacityUtils';
 
 /* ─── Étape 1 : le cube et le litre ──────────────────────────────── */
+// Question-level assessment metadata (docs/architecture/AI_LESSON_CONTRACT.md):
+// this evaluation module's checkpoints are hand-built step components rather
+// than a single data-driven array, so each checkpoint's graded question is
+// tagged here, adjacent to the logic it certifies.
+const CUBE_LITRE_QUESTION = {
+  id: 'eval-01-cube-litre',
+  prompt: '1 dm³ = 1 L ?',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_contenances_P6'] },
+};
+
 function CubeLitre({ done, onSolved }) {
   const [filled, setFilled] = useState(false);
   const [pick, setPick] = useState(null);
@@ -62,6 +72,12 @@ const BOTTLE_L = 1;
 const VERRE_CL = 20;
 const CUVE_CAP_CL = 500;
 
+const TOTAL_JUS_QUESTION = {
+  id: 'eval-02-total-jus',
+  prompt: 'Quantité totale de jus, puis conversion en cL.',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_contenances_P1', '6e_contenances_P5'] },
+};
+
 function TotalJus({ done, onSolved }) {
   const [lVal, setLVal] = useState('');
   const [lChecked, setLChecked] = useState(false);
@@ -109,6 +125,12 @@ function TotalJus({ done, onSolved }) {
   );
 }
 
+const VERRES_QUESTION = {
+  id: 'eval-03-verres',
+  prompt: 'Combien de verres peut-on servir avec la contenance totale ?',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_contenances_P4'] },
+};
+
 function VerresProblem({ done, onSolved }) {
   const totalCl = N_BOTTLES * BOTTLE_L * 100;
   const [val, setVal] = useState('');
@@ -131,6 +153,12 @@ function VerresProblem({ done, onSolved }) {
     </div>
   );
 }
+
+const CUVE_QUESTION = {
+  id: 'eval-04-cuve',
+  prompt: 'Tout le jus tient-il dans la cuve graduée ?',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_contenances_P2', '6e_contenances_P3'] },
+};
 
 function CuveCheck({ done, onSolved }) {
   const totalCl = N_BOTTLES * BOTTLE_L * 100;

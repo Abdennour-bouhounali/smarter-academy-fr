@@ -28,8 +28,6 @@ const REFLEXION = {
   correct: 0,
   explain:
     "Le nombre de chiffres donne l'ordre de grandeur : un nombre à 6 chiffres est forcément plus grand qu'un nombre à 4 chiffres. Le premier chiffre seul ne suffit pas : 9 commence par 9 et pourtant 9 < 12.",
-  wrongHint:
-    "Attention : 9 commence par le chiffre 9, et 12 commence par le chiffre 1. Pourtant 12 est plus grand. Un seul chiffre ne suffit donc pas à décider.",
 };
 
 /* ─── Étape 3 : le piège qui crée le besoin ──────────────────────── */
@@ -50,7 +48,7 @@ export default function Module01Mission() {
   const [piegePick, setPiegePick] = useState(null);
   const [piegeRevealed, setPiegeRevealed] = useState(false);
 
-  const step2Done = reflexionRevealed && reflexionPick === REFLEXION.correct;
+  const step2Done = reflexionRevealed;
   const step3Done = piegeRevealed;
   const allDone = step1Done && step2Done && step3Done;
 
@@ -121,30 +119,24 @@ export default function Module01Mission() {
             options={REFLEXION.options}
             selected={reflexionPick}
             onSelect={setReflexionPick}
-            revealed={reflexionRevealed && reflexionPick === REFLEXION.correct}
+            revealed={reflexionRevealed}
             correctIndex={REFLEXION.correct}
           />
-          {!step2Done && (
+          {!reflexionRevealed && (
             <ValidateButton onClick={() => setReflexionRevealed(true)} disabled={reflexionPick === null}>
               Valider
             </ValidateButton>
           )}
-          {reflexionRevealed && reflexionPick !== REFLEXION.correct && (
-            <Feedback tone="hint">
-              {REFLEXION.wrongHint}{' '}
-              <button
-                type="button"
-                onClick={() => {
-                  setReflexionRevealed(false);
-                  setReflexionPick(null);
-                }}
-                className="underline font-semibold"
-              >
-                Réessayer
-              </button>
+          {reflexionRevealed && (
+            <Feedback tone={reflexionPick === REFLEXION.correct ? 'ok' : 'ko'}>
+              {reflexionPick !== REFLEXION.correct && (
+                <>
+                  Bonne réponse : <strong>{REFLEXION.options[REFLEXION.correct]}</strong>. {' '}
+                </>
+              )}
+              {REFLEXION.explain}
             </Feedback>
           )}
-          {step2Done && <Feedback tone="ok">{REFLEXION.explain}</Feedback>}
         </StepCard>
 
         {/* Étape 3 — le piège */}

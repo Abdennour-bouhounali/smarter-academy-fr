@@ -4,10 +4,32 @@ import SectionHeader from '../../../../../common/components/SectionHeader';
 import KeyTakeaway from '../../../../../common/components/KeyTakeaway';
 import MathText from '../../../../../common/components/MathText';
 import { useProgress } from '../../../../../common/hooks/useProgress';
+import { useEvidenceSubmission } from '../../../../../common/hooks/useEvidenceSubmission';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
+
+// Evaluation questions — final-evaluation stage, one entry per graded
+// question in this Bilan. `learningPointIds` maps each question to the
+// competency it certifies (docs/architecture/AI_LESSON_CONTRACT.md).
+const Q1_META = {
+  id: 'puissances-3e-bilan-q1',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_puissances-3e_P1'] },
+};
+const Q2_META = {
+  id: 'puissances-3e-bilan-q2',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_puissances-3e_P2', '3e_puissances-3e_P3'] },
+};
+const Q3_META = {
+  id: 'puissances-3e-bilan-q3',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_puissances-3e_P2'] },
+};
+const Q4_META = {
+  id: 'puissances-3e-bilan-q4',
+  assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_puissances-3e_P4', '3e_puissances-3e_P5', '3e_puissances-3e_P6'] },
+};
 
 export default function Module06Bilan() {
   const { xp, awardXP, markModuleCompleted } = useProgress(MODULE_CTX.lessonId);
+  const { submitEvidence } = useEvidenceSubmission(MODULE_CTX.lessonId);
   const { prevLink, nextLink } = getNavLinks(6);
 
   // States for the quiz
@@ -57,15 +79,23 @@ export default function Module06Bilan() {
     if (showResults) return;
 
     let newScore = 0;
-    if (q1Answer === q1Correct) newScore++;
-    if (q2Answer === q2Correct) newScore++;
-    if (q3Answer === q3Correct) newScore++;
+    const isQ1Correct = q1Answer === q1Correct;
+    const isQ2Correct = q2Answer === q2Correct;
+    const isQ3Correct = q3Answer === q3Correct;
+    if (isQ1Correct) newScore++;
+    if (isQ2Correct) newScore++;
+    if (isQ3Correct) newScore++;
 
     // Check Q4
     const resQ4 = validateQ4(q4Coef, q4Exp);
     if (resQ4.isCorrect) {
       newScore++;
     }
+
+    submitEvidence(Q1_META, isQ1Correct, { picked: q1Answer });
+    submitEvidence(Q2_META, isQ2Correct, { picked: q2Answer });
+    submitEvidence(Q3_META, isQ3Correct, { picked: q3Answer });
+    submitEvidence(Q4_META, resQ4.isCorrect, { coef: q4Coef, exp: q4Exp });
 
     setScore(newScore);
     setShowResults(true);

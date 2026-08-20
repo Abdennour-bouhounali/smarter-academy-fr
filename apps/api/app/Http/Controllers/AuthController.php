@@ -12,30 +12,26 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validated = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()],
-            'grade' => 'required|string|max:50',
+            'password' => ['required', Password::min(8)->letters()->numbers()],
         ], [
             'email.unique' => 'Un compte existe déjà avec cet email.',
             'email.email' => 'Format email invalide.',
-            'password.confirmed' => 'Les mots de passe ne correspondent pas.',
             'password.min' => 'Le mot de passe doit faire au moins 8 caractères.',
             'password.letters' => 'Le mot de passe doit contenir au moins une lettre.',
             'password.numbers' => 'Le mot de passe doit contenir au moins un chiffre.',
-            'grade.required' => 'Merci de sélectionner votre classe.',
         ]);
 
-        // role is never taken from client input: every self-registration is a student.
-        // The only way to provision an admin is the CreateAdmin CLI command.
+        // role is never taken from client input: every self-registration is a student
+        // (the only account type this phase implements — see User model note on future
+        // 'famille'/'enseignant' values). The only way to provision an admin is the
+        // CreateAdmin CLI command. first_name/last_name/grade are intentionally not
+        // collected here — the account is created from email+password alone, and
+        // grade is set afterwards via PATCH /auth/grade during onboarding.
         $user = User::create([
-            'first_name' => $validated['first_name'],
-            'last_name' => $validated['last_name'],
             'email' => $validated['email'],
             'password' => $validated['password'],
             'role' => 'student',
-            'grade' => $validated['grade'],
         ]);
 
         $token = $user->createToken('student-token')->plainTextToken;

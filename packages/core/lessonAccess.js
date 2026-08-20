@@ -41,21 +41,62 @@ export function getModuleMastery(isModuleCompleted, moduleNumber) {
  * Algorithme générique par INDEX : fonctionne pour 5, 10, 11 ou 12 modules
  * sans qu'il soit nécessaire de coder une règle par module.
  *
+ * Exception voulue : un module d'étape `evaluation` est TOUJOURS accessible,
+ * dès le début de la leçon. Le défi final est un chemin alternatif ("Je pense
+ * déjà maîtriser") — un élève qui connaît déjà le contenu doit pouvoir le
+ * démontrer sans traverser chaque module (voir LESSON_CONTRACT.md).
+ *
  * @param {(key: string) => boolean} isModuleCompleted
  * @param {number|string} moduleNumber  numéro 1-indexé du module
+ * @param {{stage?: string}} [module]   le module du lesson.config (optionnel,
+ *        rétro-compatible) — seul `stage` est lu ici.
  */
-export function isModuleUnlocked(isModuleCompleted, moduleNumber) {
+export function isModuleUnlocked(isModuleCompleted, moduleNumber, { stage } = {}) {
+  if (stage === 'evaluation') return true;
   const n = Number(moduleNumber);
   if (!Number.isFinite(n) || n <= 1) return true;
   return getModuleMastery(isModuleCompleted, n - 1) >= MASTERY_UNLOCK_THRESHOLD;
 }
 
 /**
+ * Porte de maîtrise (mastery gate) : certains modules déclarent
+ * `requiresLearningPointIds` — des identifiants de Learning Points (jamais
+ * des scores) dont l'élève doit avoir démontré la maîtrise. La donnée de
+ * maîtrise vient du profil serveur (GET /students/me/learning-profile,
+ * `currentMastery`), passée ici en paramètre : ce module reste pur et ne lit
+ * aucun stockage.
+ *
+ * Politique d'ouverture : sans donnée de maîtrise (élève anonyme, profil pas
+ * encore chargé, aucune évidence), la porte NE bloque PAS — un gate ne doit
+ * jamais enfermer l'élève hors de son propre parcours ; il complète le
+ * déverrouillage séquentiel, il ne le remplace pas.
+ *
+ * @param {string[]|undefined} requiresLearningPointIds
+ * @param {Record<string, string>|undefined} masteryStatusById  lpId → statut
+ *        ('mastered' | 'reinforce' | 'gap' | 'unassessed')
+ * @returns {boolean}
+ */
+export function isMasteryGateSatisfied(requiresLearningPointIds, masteryStatusById) {
+  if (!requiresLearningPointIds?.length) return true;
+  if (!masteryStatusById) return true;
+
+  return requiresLearningPointIds.every((lpId) => {
+    const status = masteryStatusById[lpId];
+    return status === undefined || status !== 'gap';
+  });
+}
+
+/**
  * Statut d'affichage d'un module dans la feuille de route de la leçon.
+ * `module` (optionnel) est l'objet du lesson.config — `stage` ouvre les
+ * modules d'évaluation, `requiresLearningPointIds` + `masteryStatusById`
+ * appliquent les portes de maîtrise.
  * @returns {'locked'|'mastered'|'in_progress'|'unlocked'}
  */
-export function getModuleStatus({ isModuleCompleted, moduleNumber, currentModule }) {
-  if (!isModuleUnlocked(isModuleCompleted, moduleNumber)) return 'locked';
+export function getModuleStatus({ isModuleCompleted, moduleNumber, currentModule, module, masteryStatusById }) {
+  const unlocked = isModuleUnlocked(isModuleCompleted, moduleNumber, module)
+    && isMasteryGateSatisfied(module?.requiresLearningPointIds, masteryStatusById);
+  if (!unlocked) return 'locked';
   if (getModuleMastery(isModuleCompleted, moduleNumber) >= MASTERY_UNLOCK_THRESHOLD) return 'mastered';
   if (currentModule != null && Number(currentModule) === Number(moduleNumber)) return 'in_progress';
   return 'unlocked';
@@ -65,4 +106,20 @@ export function getModuleStatus({ isModuleCompleted, moduleNumber, currentModule
 export function lockedReason(moduleNumber) {
   const prev = Number(moduleNumber) - 1;
   return `Termine le module ${String(prev).padStart(2, '0')} à ${MASTERY_UNLOCK_THRESHOLD} % pour débloquer ce module.`;
+}
+
+/**
+ * Content-tier gate — distinct from the sequential module-unlock above.
+ * A lesson tagged `tier: 'free'` in coursesData.js is open to anyone
+ * (visitor or free account). A `tier: 'premium'` lesson is not, today,
+ * because there is no subscription/entitlement system yet — `isPremiumUser`
+ * always resolves false until one exists. The parameter is kept so callers
+ * don't need to change once real entitlements are added; only this function
+ * does.
+ *
+ * @param {{ tier?: 'free' | 'premium' }} lesson
+ * @param {{ isPremiumUser?: boolean }} [ctx]
+ */
+export function isLessonUnlocked(lesson, { isPremiumUser = false } = {}) {
+  return lesson?.tier !== 'premium' || isPremiumUser;
 }

@@ -58,23 +58,27 @@ function DetectiveMini({ calc, proposed, estimate, solved, onSolved }) {
 
 const EPREUVES = [
   {
-    id: 'e1', skill: 'arrondir', title: 'Épreuve 1',
+    id: 'eval-01', skill: 'arrondir', title: 'Épreuve 1',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_ordre-grandeur-estimation_P2'] },
     render: ({ solved, onSolved }) => <RoundPicker value={286} step={10} solved={solved} onSolved={onSolved} />,
   },
   {
-    id: 'e2', skill: 'somme', title: 'Épreuve 2', prompt: <>Estime <strong className="font-mono">412 + 289</strong>.</>,
+    id: 'eval-02', skill: 'somme', title: 'Épreuve 2', prompt: <>Estime <strong className="font-mono">412 + 289</strong>.</>,
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_ordre-grandeur-estimation_P3'] },
     render: ({ solved, onSolved }) => (
       <EstimateInput acceptMin={650} acceptMax={750} exact={701} solved={solved} onSolved={onSolved} hint="412 ≈ 400 ou 410, 289 ≈ 300 ou 290 : le total tourne autour de 700." />
     ),
   },
   {
-    id: 'e3', skill: 'difference', title: 'Épreuve 3', prompt: <>Estime <strong className="font-mono">905 − 396</strong>.</>,
+    id: 'eval-03', skill: 'difference', title: 'Épreuve 3', prompt: <>Estime <strong className="font-mono">905 − 396</strong>.</>,
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_ordre-grandeur-estimation_P3'] },
     render: ({ solved, onSolved }) => (
       <EstimateInput acceptMin={450} acceptMax={550} exact={509} solved={solved} onSolved={onSolved} hint="900 − 400 = 500." />
     ),
   },
   {
-    id: 'e4', skill: 'produit', title: 'Épreuve 4', prompt: <>Estime <strong className="font-mono">31 × 39</strong>, en imaginant le rectangle.</>,
+    id: 'eval-04', skill: 'produit', title: 'Épreuve 4', prompt: <>Estime <strong className="font-mono">31 × 39</strong>, en imaginant le rectangle.</>,
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_ordre-grandeur-estimation_P3'] },
     render: ({ solved, onSolved }) => (
       <div className="space-y-3">
         <ArrayGrid rows={30} cols={40} tone="amber" caption="30 × 40 = 1 200" />
@@ -83,11 +87,13 @@ const EPREUVES = [
     ),
   },
   {
-    id: 'e5', skill: 'detective', title: 'Épreuve 5',
+    id: 'eval-05', skill: 'detective', title: 'Épreuve 5',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_ordre-grandeur-estimation_P4'] },
     render: ({ solved, onSolved }) => <DetectiveMini calc="298 + 512" proposed={1810} estimate={800} solved={solved} onSolved={onSolved} />,
   },
   {
-    id: 'e6', skill: 'precision', title: 'Épreuve 6',
+    id: 'eval-06', skill: 'precision', title: 'Épreuve 6',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_ordre-grandeur-estimation_P5'] },
     render: ({ solved, onSolved }) => {
       const [pick, setPick] = useState(null);
       const [revealed, setRevealed] = useState(false);
@@ -103,7 +109,8 @@ const EPREUVES = [
     },
   },
   {
-    id: 'e7', skill: 'problemes', title: 'Épreuve 7 — Problème final',
+    id: 'eval-07', skill: 'problemes', title: 'Épreuve 7 — Problème final',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_ordre-grandeur-estimation_P1'] },
     prompt: <>Une salle vend <strong className="font-mono">197 billets</strong> à <strong className="font-mono">15 €</strong>. La caisse annonce un total de <strong className="font-mono">2 955 €</strong>.</>,
     render: ({ solved, onSolved }) => {
       const [est, setEst] = useState('');

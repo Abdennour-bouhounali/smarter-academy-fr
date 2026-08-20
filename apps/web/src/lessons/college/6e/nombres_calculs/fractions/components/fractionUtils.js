@@ -1,70 +1,121 @@
-// Les primitives décimales (formatage à virgule) sont mutualisées dans
-// @smarter-academy/core — on ne les reproduit pas ici, on les réexporte.
-import { formatDec, texDec } from '@smarter-academy/core';
+// Geometry and formatting helpers shared by every Fraction Lab component.
+// The pizza is a mathematical object first: for N equal slices, each slice
+// spans exactly 360/N degrees, and every visual (cuts, selection, labels,
+// hit-testing) is derived from the same angle math — nothing is eyeballed.
 
-export { formatDec, texDec };
+export const PIZZA_CX = 100;
+export const PIZZA_CY = 100;
+export const PIZZA_R = 88;
 
-/**
- * fractionUtils — outils du sens de la fraction (6e).
- *
- * Périmètre strict du programme : fractions simples (demi, tiers, quart,
- * dixième), fraction-partage, fraction-quotient dans des cas très simples,
- * repérage sur une demi-droite graduée, lien avec les fractions décimales
- * déjà étudiées.
- *
- * HORS PÉRIMÈTRE : addition/soustraction/multiplication/division de
- * fractions, dénominateur commun, algorithme de simplification, fractions à
- * dénominateur quelconque. Aucun outil ici ne les produit — les fractions
- * équivalentes utilisées dans la leçon sont des cas visuels choisis à la
- * main (1/2 = 2/4, 1/2 = 5/10), jamais un simplificateur générique.
- */
-
-/** Code LaTeX d'une fraction, pour <MathText>. */
-export function texFrac(n, d) {
-  return `\\frac{${n}}{${d}}`;
+/** Angle 0 = 12 o'clock, increasing clockwise (matches how a clock face is read). */
+export function polarToCartesian(cx, cy, r, angleDeg) {
+  const rad = ((angleDeg - 90) * Math.PI) / 180;
+  return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
 }
 
-/** Valeur numérique d'une fraction. */
-export function fracValue(n, d) {
-  return n / d;
+/** Full pie-wedge path (center → arc → back to center) for one slice. */
+export function slicePath(cx, cy, r, startAngle, endAngle) {
+  const start = polarToCartesian(cx, cy, r, startAngle);
+  const end = polarToCartesian(cx, cy, r, endAngle);
+  const largeArc = endAngle - startAngle > 180 ? 1 : 0;
+  return `M ${cx} ${cy} L ${start.x} ${start.y} A ${r} ${r} 0 ${largeArc} 1 ${end.x} ${end.y} Z`;
 }
 
-/** Partie entière + reste d'une fraction : 5/4 → { whole: 1, remNum: 1, den: 4 }. */
-export function wholeAndRemainder(n, d) {
-  const whole = Math.floor(n / d);
-  const remNum = n - whole * d;
-  return { whole, remNum, den: d };
+/** Just the rim arc (no straight edges) — used to draw the crust ring per slice. */
+export function arcPath(cx, cy, r, startAngle, endAngle) {
+  const start = polarToCartesian(cx, cy, r, startAngle);
+  const end = polarToCartesian(cx, cy, r, endAngle);
+  const largeArc = endAngle - startAngle > 180 ? 1 : 0;
+  return `M ${start.x} ${start.y} A ${r} ${r} 0 ${largeArc} 1 ${end.x} ${end.y}`;
 }
 
-/** Noms des fractions unitaires usuelles du programme de 6e. */
-export const PART_NAME = {
-  2: { s: 'demi', p: 'demis', article: 'un demi' },
-  3: { s: 'tiers', p: 'tiers', article: 'un tiers' },
-  4: { s: 'quart', p: 'quarts', article: 'un quart' },
-  5: { s: 'cinquième', p: 'cinquièmes', article: 'un cinquième' },
-  6: { s: 'sixième', p: 'sixièmes', article: 'un sixième' },
-  8: { s: 'huitième', p: 'huitièmes', article: 'un huitième' },
-  10: { s: 'dixième', p: 'dixièmes', article: 'un dixième' },
-  100: { s: 'centième', p: 'centièmes', article: 'un centième' },
+export function bisector(startAngle, endAngle) {
+  return (startAngle + endAngle) / 2;
+}
+
+/** Inverse of polarToCartesian: a point offset (dx,dy) from the pizza center → its angle in [0,360). */
+export function angleFromPoint(dx, dy) {
+  let deg = (Math.atan2(dy, dx) * 180) / Math.PI + 90;
+  if (deg < 0) deg += 360;
+  return deg;
+}
+
+/** N equal boundaries starting at 0°, e.g. equalAngles(4) → [{start:0,end:90}, ...]. */
+export function equalAngles(n) {
+  const step = 360 / n;
+  return Array.from({ length: n }, (_, i) => ({ start: i * step, end: (i + 1) * step }));
+}
+
+/** Deterministic pseudo-random in [0,1) — stable topping layout across re-renders. */
+export function seededRandom(seed) {
+  let s = seed % 2147483647;
+  if (s <= 0) s += 2147483646;
+  return () => {
+    s = (s * 16807) % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+
+export function normalizeAngle(a) {
+  return ((a % 360) + 360) % 360;
+}
+
+/** The representation of `angle` (mod 360) nearest to `ref` — for smooth incremental dragging. */
+export function unwrapNear(angle, ref) {
+  let a = angle;
+  while (a - ref > 180) a -= 360;
+  while (a - ref < -180) a += 360;
+  return a;
+}
+
+/** The representation of `angle` (mod 360) in [ref - 360, ref) — "just before ref". */
+export function unwrapBelow(angle, ref) {
+  const a = normalizeAngle(angle - ref);
+  return ref + (a - 360);
+}
+
+/** The representation of `angle` (mod 360) in [ref, ref + 360) — "just after ref". */
+export function unwrapAbove(angle, ref) {
+  const a = normalizeAngle(angle - ref);
+  return ref + a;
+}
+
+export function angleSpan(a) {
+  return a.end - a.start;
+}
+
+export function isPartitionEqual(angles, toleranceDeg = 0.5) {
+  if (angles.length < 2) return true;
+  const spans = angles.map(angleSpan);
+  const ref = spans[0];
+  return spans.every((s) => Math.abs(s - ref) <= toleranceDeg);
+}
+
+const FRACTION_WORDS = {
+  2: 'demi', 3: 'tiers', 4: 'quart', 5: 'cinquième',
+  6: 'sixième', 7: 'septième', 8: 'huitième', 9: 'neuvième',
+  10: 'dixième', 12: 'douzième',
 };
 
-/** « 3 quarts », « 1 demi », etc. */
-export function partName(n, d) {
-  const meta = PART_NAME[d];
-  if (!meta) return `${n}/${d}`;
-  return n === 1 ? meta.article : `${n} ${meta.p}`;
+export function partName(n, plural = false) {
+  const word = FRACTION_WORDS[n] || `${n}-ième`;
+  if (!plural) return word;
+  return word === 'demi' || word.endsWith('s') ? `${word}s` : `${word}s`;
 }
 
-/** Position d'une fraction n/d en toutes lettres pour les aria-labels. */
-export function fracAriaLabel(n, d) {
-  return `${n} ${d === 1 ? 'unité' : 'sur ' + d}`;
+/** LaTeX fraction, e.g. texFrac(3,4) → "$\\dfrac{3}{4}$" for <MathText>. */
+export function texFrac(n, d) {
+  return `$\\dfrac{${n}}{${d}}$`;
+}
+
+export function formatFraction(n, d) {
+  return `${n}/${d}`;
 }
 
 /**
- * Formateur de graduation pour <NumberLine format={...}> : affiche les
- * entiers (0, 1, 2…) en toutes lettres et les valeurs intermédiaires en
- * fraction « n/d ». Texte brut (pas de KaTeX) : c'est un usage d'étiquette
- * d'axe, comme formatFr/formatDec ailleurs dans l'application.
+ * Tick-label formatter for <NumberLine format={...}>: a graduation at value
+ * v on a line divided into `den`-ths reads as a whole number when it lands
+ * exactly on one ("1" not "4/4"), else as "n/den".
  */
 export function fracLineFormat(den) {
   return (v) => {

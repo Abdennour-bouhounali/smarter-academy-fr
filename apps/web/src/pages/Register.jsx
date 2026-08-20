@@ -3,21 +3,11 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff } from 'lucide-react';
-import { getAllGrades } from '@smarter-academy/core';
 import { register as registerRequest } from '../services/authService';
 
-const GRADES_BY_LEVEL = getAllGrades().reduce((groups, grade) => {
-  (groups[grade.levelTitle] ??= []).push(grade);
-  return groups;
-}, {});
-
 export default function Register() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  const [grade, setGrade] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
@@ -28,31 +18,20 @@ export default function Register() {
   // Redirect if already logged in
   useEffect(() => {
     if (user) {
-      navigate(user.role === 'admin' ? '/admin' : '/');
+      navigate(user.role === 'admin' ? '/admin' : user.role === 'student' ? '/espace' : '/');
     }
   }, [user, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg('');
-
-    if (password !== passwordConfirmation) {
-      setErrorMsg('Les mots de passe ne correspondent pas.');
-      return;
-    }
-
     setLoading(true);
     try {
-      const data = await registerRequest({
-        firstName,
-        lastName,
-        email,
-        password,
-        passwordConfirmation,
-        grade,
-      });
+      const data = await registerRequest({ email, password });
       login(data.user, data.token);
-      navigate('/');
+      // A freshly-created account has no grade yet — onboarding picks it
+      // next, before the student reaches their space.
+      navigate('/espace/bienvenue');
     } catch (err) {
       setErrorMsg(err.message);
     } finally {
@@ -75,7 +54,7 @@ export default function Register() {
           Smarter Academy
         </h2>
         <p className="mt-2 text-center text-sm text-slate-600">
-          Créez votre compte élève
+          Créez votre compte gratuit en 30 secondes
         </p>
       </motion.div>
 
@@ -93,68 +72,6 @@ export default function Register() {
               </div>
             )}
 
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-slate-700">
-                  Prénom
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="firstName"
-                    name="firstName"
-                    type="text"
-                    required
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    className="block w-full appearance-none rounded-xl border border-slate-300 px-4 py-3 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm bg-white/50 backdrop-blur-sm"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-slate-700">
-                  Nom
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="lastName"
-                    name="lastName"
-                    type="text"
-                    required
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    className="block w-full appearance-none rounded-xl border border-slate-300 px-4 py-3 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm bg-white/50 backdrop-blur-sm"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="grade" className="block text-sm font-medium text-slate-700">
-                Ma classe
-              </label>
-              <div className="mt-1">
-                <select
-                  id="grade"
-                  name="grade"
-                  required
-                  value={grade}
-                  onChange={(e) => setGrade(e.target.value)}
-                  className="block w-full appearance-none rounded-xl border border-slate-300 px-4 py-3 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm bg-white/50 backdrop-blur-sm"
-                >
-                  <option value="" disabled>Sélectionnez votre classe</option>
-                  {Object.entries(GRADES_BY_LEVEL).map(([levelTitle, grades]) => (
-                    <optgroup key={levelTitle} label={levelTitle}>
-                      {grades.map((g) => (
-                        <option key={g.id} value={g.id}>{g.name}</option>
-                      ))}
-                    </optgroup>
-                  ))}
-                </select>
-              </div>
-              <p className="mt-1 text-xs text-slate-500">Votre classe actuelle deviendra votre parcours par défaut — vous pourrez en changer à tout moment.</p>
-            </div>
-
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-slate-700">
                 Adresse Email
@@ -165,6 +82,7 @@ export default function Register() {
                   name="email"
                   type="email"
                   required
+                  autoFocus
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="block w-full appearance-none rounded-xl border border-slate-300 px-4 py-3 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm bg-white/50 backdrop-blur-sm"
@@ -183,6 +101,7 @@ export default function Register() {
                   type={showPassword ? "text" : "password"}
                   required
                   minLength={8}
+                  autoComplete="new-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="block w-full appearance-none rounded-xl border border-slate-300 px-4 py-3 pr-12 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm bg-white/50 backdrop-blur-sm"
@@ -203,29 +122,12 @@ export default function Register() {
             </div>
 
             <div>
-              <label htmlFor="passwordConfirmation" className="block text-sm font-medium text-slate-700">
-                Confirmer le mot de passe
-              </label>
-              <div className="mt-1">
-                <input
-                  id="passwordConfirmation"
-                  name="passwordConfirmation"
-                  type={showPassword ? "text" : "password"}
-                  required
-                  value={passwordConfirmation}
-                  onChange={(e) => setPasswordConfirmation(e.target.value)}
-                  className="block w-full appearance-none rounded-xl border border-slate-300 px-4 py-3 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm bg-white/50 backdrop-blur-sm"
-                />
-              </div>
-            </div>
-
-            <div>
               <button
                 type="submit"
                 disabled={loading}
                 className="flex w-full justify-center rounded-xl border border-transparent bg-blue-600 py-3 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-70"
               >
-                {loading ? 'Création du compte...' : "S'inscrire"}
+                {loading ? 'Création du compte...' : "Créer mon compte"}
               </button>
             </div>
           </form>

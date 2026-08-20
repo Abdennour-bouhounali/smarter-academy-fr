@@ -19,3 +19,5 @@ export * from './progress/getNextLesson.js';
 export * from './exercise/adaptiveExerciseState.js';
 export * from './api/errors.js';
 export * from './curriculum/coursesData.js';
+export * from './curriculum/lessonStages.js';
+export * from './curriculum/moduleRecommendations.js';

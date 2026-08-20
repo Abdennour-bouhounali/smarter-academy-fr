@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getModuleMastery, isModuleUnlocked, getModuleStatus, lockedReason, MASTERY_UNLOCK_THRESHOLD } from './lessonAccess';
+import { getModuleMastery, isModuleUnlocked, isMasteryGateSatisfied, getModuleStatus, lockedReason, MASTERY_UNLOCK_THRESHOLD } from './lessonAccess';
 
 describe('getModuleMastery', () => {
   it('returns 100 when the module is completed', () => {
@@ -38,6 +38,56 @@ describe('getModuleStatus', () => {
   it('is unlocked when reachable but not the current module and not mastered', () => {
     const status = getModuleStatus({ isModuleCompleted: (k) => k === '1', moduleNumber: 2, currentModule: 5 });
     expect(status).toBe('unlocked');
+  });
+});
+
+describe('evaluation stage is always accessible (the mastery-bypass path)', () => {
+  it('unlocks an evaluation module even when nothing is completed', () => {
+    expect(isModuleUnlocked(() => false, 7, { stage: 'evaluation' })).toBe(true);
+  });
+
+  it('getModuleStatus never reports an evaluation module as locked', () => {
+    const status = getModuleStatus({
+      isModuleCompleted: () => false,
+      moduleNumber: 7,
+      currentModule: 1,
+      module: { stage: 'evaluation' },
+    });
+    expect(status).toBe('unlocked');
+  });
+
+  it('other stages keep the sequential rule', () => {
+    expect(isModuleUnlocked(() => false, 3, { stage: 'discovery' })).toBe(false);
+  });
+});
+
+describe('isMasteryGateSatisfied', () => {
+  it('passes when the module declares no gate', () => {
+    expect(isMasteryGateSatisfied(undefined, { a: 'gap' })).toBe(true);
+    expect(isMasteryGateSatisfied([], { a: 'gap' })).toBe(true);
+  });
+
+  it('passes when no mastery data is available — a gate never strands the student', () => {
+    expect(isMasteryGateSatisfied(['6e_x_P1'], undefined)).toBe(true);
+    expect(isMasteryGateSatisfied(['6e_x_P1'], {})).toBe(true);
+  });
+
+  it('blocks only on a demonstrated gap', () => {
+    expect(isMasteryGateSatisfied(['6e_x_P1'], { '6e_x_P1': 'gap' })).toBe(false);
+    expect(isMasteryGateSatisfied(['6e_x_P1'], { '6e_x_P1': 'reinforce' })).toBe(true);
+    expect(isMasteryGateSatisfied(['6e_x_P1'], { '6e_x_P1': 'mastered' })).toBe(true);
+    expect(isMasteryGateSatisfied(['6e_x_P1'], { '6e_x_P1': 'unassessed' })).toBe(true);
+  });
+
+  it('locks the module through getModuleStatus when a gap is demonstrated', () => {
+    const status = getModuleStatus({
+      isModuleCompleted: (k) => k === '1',
+      moduleNumber: 2,
+      currentModule: 2,
+      module: { stage: 'practice_lab', requiresLearningPointIds: ['6e_x_P1'] },
+      masteryStatusById: { '6e_x_P1': 'gap' },
+    });
+    expect(status).toBe('locked');
   });
 });
 

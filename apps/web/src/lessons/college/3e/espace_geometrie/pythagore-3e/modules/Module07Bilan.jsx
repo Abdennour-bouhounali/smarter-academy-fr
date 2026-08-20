@@ -8,7 +8,7 @@ import { useProgress } from '../../../../../common/hooks/useProgress';
 
 const QUESTIONS = [
   {
-    id: 1,
+    id: 'eval-01',
     title: "Identifier l'hypoténuse",
     question: "Dans le triangle DEF rectangle en E, quel est le côté qui représente l'hypoténuse ?",
     options: [
@@ -17,10 +17,11 @@ const QUESTIONS = [
       { id: 'c', text: "Le côté EF" }
     ],
     correctId: 'b',
-    explanation: "L'hypoténuse est le côté opposé à l'angle droit (ici E), c'est donc DF."
+    explanation: "L'hypoténuse est le côté opposé à l'angle droit (ici E), c'est donc DF.",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_pythagore-3e_P1'] }
   },
   {
-    id: 2,
+    id: 'eval-02',
     title: "L'égalité de Pythagore",
     question: "Quelle égalité est vraie pour le triangle DEF rectangle en E ?",
     options: [
@@ -29,10 +30,11 @@ const QUESTIONS = [
       { id: 'c', text: <MathText>{'$DE + EF = DF$'}</MathText> }
     ],
     correctId: 'a',
-    explanation: "La somme des carrés des petits côtés est égale au carré de l'hypoténuse."
+    explanation: "La somme des carrés des petits côtés est égale au carré de l'hypoténuse.",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_pythagore-3e_P2'] }
   },
   {
-    id: 3,
+    id: 'eval-03',
     title: "Calcul de l'hypoténuse",
     question: "Si DE = 3 et EF = 4 (triangle rectangle en E), combien vaut DF ?",
     options: [
@@ -41,10 +43,11 @@ const QUESTIONS = [
       { id: 'c', text: "25" }
     ],
     correctId: 'b',
-    explanation: "3² + 4² = 9 + 16 = 25. Et √25 = 5."
+    explanation: "3² + 4² = 9 + 16 = 25. Et √25 = 5.",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_pythagore-3e_P3'] }
   },
   {
-    id: 4,
+    id: 'eval-04',
     title: "Soustraction des carrés",
     question: "Un triangle GHI est rectangle en G. L'hypoténuse HI mesure 13 et GH mesure 12. Quelle est la valeur de GI² ?",
     options: [
@@ -53,10 +56,11 @@ const QUESTIONS = [
       { id: 'c', text: "13 - 12 = 1" }
     ],
     correctId: 'b',
-    explanation: "Pour trouver un petit côté, on soustrait le carré connu au carré de l'hypoténuse."
+    explanation: "Pour trouver un petit côté, on soustrait le carré connu au carré de l'hypoténuse.",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_pythagore-3e_P4'] }
   },
   {
-    id: 5,
+    id: 'eval-05',
     title: "Réciproque ou Contraposée ?",
     question: "On a un triangle JKL. On calcule le carré du plus grand côté et on trouve qu'il N'EST PAS ÉGAL à la somme des carrés des deux autres côtés. Que conclut-on ?",
     options: [
@@ -65,7 +69,8 @@ const QUESTIONS = [
       { id: 'c', text: "On ne peut pas savoir" }
     ],
     correctId: 'b',
-    explanation: "Puisque l'égalité de Pythagore n'est pas vérifiée, c'est la contraposée qui prouve qu'il n'est pas rectangle."
+    explanation: "Puisque l'égalité de Pythagore n'est pas vérifiée, c'est la contraposée qui prouve qu'il n'est pas rectangle.",
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_pythagore-3e_P5', '3e_pythagore-3e_P6'] }
   }
 ];
 

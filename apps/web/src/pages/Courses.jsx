@@ -1,13 +1,22 @@
 import React, { useState, useContext, useEffect, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Clock, Lock, Play, Search, ArrowRight, BookOpen } from 'lucide-react';
-import { courseLevels, calculateCompletionPercentage } from '@smarter-academy/core';
+import { Sparkles, Lock, Crown, Play, Search, ArrowRight } from 'lucide-react';
+import { courseLevels } from '@smarter-academy/core';
 import { getResumeLesson } from '../lessons/common/utils/progress/getResumeLesson';
+import { getLessonProgress } from '../lessons/common/utils/progress/getLessonProgress';
+import { getTotalModules } from '../lessons/registry';
 import { storage } from '../utils/storage';
 import { AuthContext } from '../context/AuthContext';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import LessonCard from '../components/student/LessonCard';
 
 export default function CoursesPage() {
+  useDocumentMeta(
+    'Cours',
+    "Explore le programme de mathématiques du Collège au Lycée — 6e, 5e, 4e, 3e, 2nde, 1ère, Terminale. La 6e est l'expérience la plus complète aujourd'hui."
+  );
+
   const [searchParams, setSearchParams] = useSearchParams();
   const { user, loading: authLoading } = useContext(AuthContext);
 
@@ -137,40 +146,57 @@ export default function CoursesPage() {
     if (!chapter.lessons || chapter.lessons.length === 0) return 0;
     const availableLessons = chapter.lessons.filter(l => l.status === 'available');
     if (availableLessons.length === 0) return 0;
-    
-    let totalPercent = 0;
-    availableLessons.forEach(lesson => {
-       const totalCount = lesson.totalModules || 7;
-       try {
-         const saved = storage.getItem(`smarter_lesson_${lesson.id}`);
-         if (saved) {
-           const parsed = JSON.parse(saved);
-           totalPercent += calculateCompletionPercentage(parsed.completedModules, totalCount);
-         }
-       } catch {}
-    });
+
+    const totalPercent = availableLessons.reduce(
+      (sum, lesson) => sum + getLessonProgress(lesson.id, getTotalModules(lesson.id)).progressPercent,
+      0
+    );
     return Math.round(totalPercent / availableLessons.length);
   };
 
   return (
-    <div className="pt-16 min-h-screen bg-slate-50 pb-20">
+    <div className={`min-h-screen bg-slate-50 pb-20 ${user ? 'pt-6 lg:pt-10' : 'pt-16'}`}>
       
-      <section className="bg-white border-b border-slate-200 py-10 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono-jetbrains font-semibold uppercase tracking-wider mb-4 shadow-2xs">
-            <Sparkles size={14} className="text-blue-600 animate-pulse" />
-            Catalogue Interactif
+      {!user ? (
+        <section className="bg-white border-b border-slate-200 py-10 px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono-jetbrains font-semibold uppercase tracking-wider mb-4 shadow-2xs">
+              <Sparkles size={14} className="text-blue-600 animate-pulse" />
+              Programme complet — 6e à Terminale
+            </div>
+            <h1 className="font-space font-bold text-3xl sm:text-4xl text-slate-900 mb-2">
+              Cours de Mathématiques
+            </h1>
+            <p className="font-inter text-slate-500 text-sm sm:text-base max-w-xl mx-auto mb-5">
+              2 leçons complètes offertes par niveau. La 6e est aujourd'hui la plus complète.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
+                <span className="w-2 h-2 rounded-full bg-emerald-500" /> Gratuit
+              </span>
+              <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
+                <Crown size={12} className="text-amber-500" /> Premium
+              </span>
+              <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
+                <Lock size={12} className="text-slate-400" /> Bientôt disponible
+              </span>
+            </div>
           </div>
-          <h1 className="font-space font-bold text-3xl sm:text-4xl text-slate-900 mb-2">
-            Cours de Mathématiques
-          </h1>
-          <p className="font-inter text-slate-500 text-sm sm:text-base max-w-xl mx-auto">
-            Trouvez rapidement votre cours et reprenez là où vous en étiez.
-          </p>
+        </section>
+      ) : (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
+            <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2">
+              Catalogue
+            </p>
+            <h1 className="font-space font-bold text-2xl sm:text-3xl text-slate-900">
+              Explorer les cours
+            </h1>
+          </motion.div>
         </div>
-      </section>
+      )}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8">
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 ${user ? '' : 'mt-8'}`}>
         
         {/* LEVEL SELECTOR */}
         <section>
@@ -345,116 +371,9 @@ export default function CoursesPage() {
                   <p>Aucun cours ne correspond à {searchQuery ? `"${searchQuery}"` : "cette sélection"}.</p>
                 </motion.div>
               ) : (
-                filteredCourses.map((lesson) => {
-                  const isAvailable = lesson.status === 'available';
-
-                  // Calculate local progress for this specific course if available
-                  let progressPercent = 0;
-                  const totalCount = lesson.totalModules || 7;
-                  if (isAvailable && totalCount) {
-                    try {
-                      const saved = storage.getItem(`smarter_lesson_${lesson.id}`);
-                      if (saved) {
-                        const parsed = JSON.parse(saved);
-                        progressPercent = calculateCompletionPercentage(parsed.completedModules, totalCount);
-                      }
-                    } catch {}
-                  }
-
-                  return isAvailable ? (
-                    <motion.div
-                      layout
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                      key={lesson.id}
-                      className="h-full"
-                    >
-                      <Link
-                        to={lesson.path}
-                        onClick={() => handleCourseClick(lesson.id)}
-                        className="group relative bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between h-full overflow-hidden"
-                      >
-                        <div>
-                          <div className="flex items-start justify-between gap-3 mb-4">
-                            <span className="text-3xl group-hover:scale-110 transition-transform origin-bottom-left">
-                              {lesson.icon}
-                            </span>
-                            {progressPercent > 0 ? (
-                               <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono-jetbrains text-[10px] font-bold ${progressPercent >= 100 ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}`}>
-                                 {progressPercent >= 100 ? '✓ ' : ''}{progressPercent}%
-                               </span>
-                            ) : lesson.isNew ? (
-                              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono-jetbrains text-[10px] font-bold">
-                                NOUVEAU
-                              </span>
-                            ) : null}
-                          </div>
-
-                          <h4 className="font-space font-bold text-slate-900 text-lg mb-2 group-hover:text-blue-600 transition-colors">
-                            {lesson.title}
-                          </h4>
-
-                          <p className="font-inter text-slate-500 text-sm leading-relaxed line-clamp-3 mb-4">
-                            {lesson.description}
-                          </p>
-                        </div>
-
-                        <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
-                          <div className="flex items-center gap-3 text-xs font-mono-jetbrains text-slate-500">
-                            <span className="flex items-center gap-1"><Clock size={14} /> {lesson.duration}</span>
-                          </div>
-                          <span className={`font-bold text-sm group-hover:translate-x-1 transition-transform flex items-center gap-1 ${progressPercent >= 100 ? 'text-emerald-600' : 'text-blue-600'}`}>
-                            {progressPercent >= 100 ? 'Terminé' : progressPercent > 0 ? 'Continuer' : 'Commencer'} <ArrowRight size={14} />
-                          </span>
-                        </div>
-                        
-                        {/* Subtle progress bar at bottom of card */}
-                        {progressPercent > 0 && (
-                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-100">
-                            <div className={`h-full ${progressPercent >= 100 ? 'bg-emerald-500' : 'bg-blue-500'}`} style={{ width: `${progressPercent}%` }} />
-                          </div>
-                        )}
-                      </Link>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      layout
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                      key={lesson.id}
-                      className="bg-slate-50/50 rounded-2xl border border-slate-200/50 p-5 flex flex-col justify-between opacity-75 h-full"
-                    >
-                      <div>
-                        <div className="flex items-start justify-between gap-3 mb-4">
-                          <span className="text-3xl grayscale opacity-50">
-                            {lesson.icon}
-                          </span>
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-200/50 text-slate-500 font-mono-jetbrains text-[10px] font-semibold">
-                            <Lock size={10} />
-                            Bientôt
-                          </span>
-                        </div>
-
-                        <h4 className="font-space font-bold text-slate-700 text-lg mb-2">
-                          {lesson.title}
-                        </h4>
-
-                        <p className="font-inter text-slate-400 text-sm leading-relaxed line-clamp-2 mb-4">
-                          {lesson.description}
-                        </p>
-                      </div>
-
-                      <div className="pt-4 border-t border-slate-200/50 flex items-center justify-between text-xs font-mono-jetbrains text-slate-400 mt-auto">
-                        <span className="flex items-center gap-1"><Clock size={14} /> {lesson.duration}</span>
-                        <span className="font-medium">En préparation</span>
-                      </div>
-                    </motion.div>
-                  );
-                })
+                filteredCourses.map((lesson) => (
+                  <LessonCard key={lesson.id} lesson={lesson} onClick={() => handleCourseClick(lesson.id)} />
+                ))
               )}
             </AnimatePresence>
           </div>

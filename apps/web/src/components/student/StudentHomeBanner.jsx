@@ -5,6 +5,7 @@ import { ArrowRight, Play } from 'lucide-react';
 import { courseLevels, getAllGrades } from '@smarter-academy/core';
 import { AuthContext } from '../../context/AuthContext';
 import { getResumeLesson } from '../../lessons/common/utils/progress/getResumeLesson';
+import { getDisplayName } from '../../utils/userDisplay';
 
 /**
  * The homepage's grade-aware entry point for a logged-in student — their
@@ -25,7 +26,9 @@ export default function StudentHomeBanner() {
 
   const grade = getAllGrades().find((g) => g.id === user.grade);
   const level = grade && courseLevels.find((l) => l.id === grade.levelId);
-  const gradeCatalogueLink = grade ? `/courses?level=${grade.levelId}&grade=${grade.id}` : '/courses';
+  const gradeCatalogueLink = grade
+    ? `/courses?level=${grade.levelId}&grade=${grade.id}`
+    : '/espace/bienvenue';
 
   return (
     <section className="pt-6 pb-2 px-4">
@@ -37,7 +40,7 @@ export default function StudentHomeBanner() {
         >
           <div>
             <p className="font-inter text-sm text-slate-500">
-              Bonjour {user.firstName} — {grade ? `${level?.title} ${grade.name}` : 'choisissez votre classe'}
+              Bonjour {getDisplayName(user)} — {grade ? `${level?.title} ${grade.name}` : 'choisissez votre classe'}
             </p>
             <h2 className="font-space font-bold text-lg sm:text-xl text-slate-900 mt-0.5">
               {continueCourse
@@ -51,7 +54,7 @@ export default function StudentHomeBanner() {
             className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-space font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap"
           >
             {continueCourse ? <Play size={16} /> : null}
-            {continueCourse ? 'Continuer' : 'Voir mes cours'}
+            {continueCourse ? 'Continuer' : grade ? 'Voir mes cours' : 'Choisir ma classe'}
             <ArrowRight size={16} />
           </Link>
         </motion.div>

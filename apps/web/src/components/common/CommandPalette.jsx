@@ -1,18 +1,18 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, ArrowUp, ArrowDown, CornerDownLeft, X, Download, Calendar, BookOpen, Briefcase, HelpCircle, Mail, Phone, FileText } from 'lucide-react';
+import { Search, ArrowUp, ArrowDown, CornerDownLeft, X, Sparkles, LogIn, Compass, GraduationCap, Tag, HelpCircle, Mail, Users } from 'lucide-react';
 
 const commands = [
-  { id: 'contact', label: 'Réserver un cours d\'essai', path: '/contact', icon: Calendar, group: 'Actions Principales' },
-  { id: 'home', label: 'Accueil', path: '/', icon: BookOpen, group: 'Navigation' },
-  { id: 'about', label: 'Présentation & Parcours', path: '/about', icon: BookOpen, group: 'Navigation' },
-  { id: 'courses', label: 'Cours de Maths', path: '/courses', icon: Briefcase, group: 'Navigation' },
-  { id: 'resources', label: 'Ressources Gratuites', path: '/resources', icon: FileText, group: 'Navigation' },
+  { id: 'register', label: 'Commencer gratuitement', path: '/register', icon: Sparkles, group: 'Actions principales' },
+  { id: 'login', label: 'Se connecter', path: '/login', icon: LogIn, group: 'Actions principales' },
+  { id: 'home', label: 'Accueil', path: '/', icon: Compass, group: 'Navigation' },
+  { id: 'methode', label: 'Notre méthode', path: '/methode', icon: GraduationCap, group: 'Navigation' },
+  { id: 'courses', label: 'Cours', path: '/courses', icon: GraduationCap, group: 'Navigation' },
+  { id: 'tarifs', label: 'Tarifs', path: '/tarifs', icon: Tag, group: 'Navigation' },
+  { id: 'about', label: 'Notre mission / À propos', path: '/about', icon: Users, group: 'Navigation' },
   { id: 'faq', label: 'Foire Aux Questions (FAQ)', path: '/faq', icon: HelpCircle, group: 'Navigation' },
-  { id: 'download-cv', label: 'Télécharger le CV Enseignant (PDF)', href: '/CV.pdf', download: true, icon: Download, group: 'Actions Principales' },
-  { id: 'email', label: 'Envoyer un Email', href: 'mailto:abdennour.bouhounali@gmail.com', external: true, icon: Mail, group: 'Contact Direct' },
-  { id: 'phone', label: 'Appeler (+33 7 58 10 30 86)', href: 'tel:+33758103086', external: true, icon: Phone, group: 'Contact Direct' },
+  { id: 'email', label: 'Envoyer un email', href: 'mailto:abdennour.bouhounali@gmail.com', external: true, icon: Mail, group: 'Contact' },
 ];
 
 export default function CommandPalette() {
@@ -62,11 +62,6 @@ export default function CommandPalette() {
 
     if (cmd.path) {
       navigate(cmd.path);
-    } else if (cmd.download) {
-      const a = document.createElement('a');
-      a.href = cmd.href;
-      a.download = 'CV_Abdennour_BOUHOUNALI_Prof_Maths.pdf';
-      a.click();
     } else if (cmd.external) {
       window.open(cmd.href, cmd.href.startsWith('mailto:') || cmd.href.startsWith('tel:') ? '_self' : '_blank');
     }

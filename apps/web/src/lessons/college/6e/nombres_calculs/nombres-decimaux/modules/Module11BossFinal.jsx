@@ -53,6 +53,11 @@ const EPREUVES = [
     correct: 1,
     explain:
       '75 centièmes, cela ne fait pas une unité entière : 0 unité, 7 dixièmes et 5 centièmes → 0,75 kg.',
+    assessment: {
+      enabled: true,
+      type: 'assessment',
+      learningPointIds: ['6e_nombres-decimaux_P1'],
+    },
   },
   {
     id: 'e2',
@@ -69,6 +74,11 @@ const EPREUVES = [
     fractionOptions: true,
     explain:
       '3,08 = 3 unités (300 centièmes) + 0 dixième + 8 centièmes = 308 centièmes, soit 308/100. Le zéro des dixièmes compte !',
+    assessment: {
+      enabled: true,
+      type: 'assessment',
+      learningPointIds: ['6e_nombres-decimaux_P2'],
+    },
   },
   {
     id: 'e3',
@@ -85,6 +95,11 @@ const EPREUVES = [
     correct: 2,
     table: 1.25,
     explain: 'Le 5 est à la deuxième position après la virgule : les centièmes. Il vaut 5 centièmes, soit 0,05.',
+    assessment: {
+      enabled: true,
+      type: 'assessment',
+      learningPointIds: ['6e_nombres-decimaux_P3'],
+    },
   },
   {
     id: 'e4',
@@ -102,6 +117,11 @@ const EPREUVES = [
     cols: 3,
     explain:
       "On aligne : 0,70 et 0,68. Or 70 centièmes > 68 centièmes, donc 0,7 > 0,68. Avoir plus de chiffres ne rend pas un nombre plus grand.",
+    assessment: {
+      enabled: true,
+      type: 'assessment',
+      learningPointIds: ['6e_nombres-decimaux_P5'],
+    },
   },
   {
     id: 'e5',
@@ -116,6 +136,11 @@ const EPREUVES = [
       { id: 'o4', value: 0.75, text: '0,75' },
     ],
     explain: '0,05 < 0,25 < 0,5 < 0,75. En alignant : 0,05 / 0,25 / 0,50 / 0,75.',
+    assessment: {
+      enabled: true,
+      type: 'assessment',
+      learningPointIds: ['6e_nombres-decimaux_P4'],
+    },
   },
   {
     id: 'e6',
@@ -133,6 +158,11 @@ const EPREUVES = [
     labelEvery: 2,
     target: 1.25,
     explain: "Le pas vaut 0,05. Depuis 1, il faut avancer de 5 graduations : 1 + 0,25 = 1,25.",
+    assessment: {
+      enabled: true,
+      type: 'assessment',
+      learningPointIds: ['6e_nombres-decimaux_P6'],
+    },
   },
   {
     id: 'e7',
@@ -147,6 +177,11 @@ const EPREUVES = [
     options: ['Environ 2 kg', 'Environ 3 kg', 'Environ 2,5 kg', 'Environ 30 kg'],
     correct: 1,
     explain: "2,96 n'est qu'à 0,04 de 3 : l'ordre de grandeur est 3 kg.",
+    assessment: {
+      enabled: true,
+      type: 'assessment',
+      learningPointIds: ['6e_nombres-decimaux_P7'],
+    },
   },
   {
     id: 'e8',

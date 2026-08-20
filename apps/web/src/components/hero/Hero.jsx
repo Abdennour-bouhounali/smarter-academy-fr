@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowDown, BookOpen, Calculator, PenTool, BrainCircuit } from 'lucide-react';
+import { ArrowDown, ArrowRight, Calculator, PenTool, BrainCircuit, Sparkles, Lightbulb } from 'lucide-react';
 import MafsGraph from './MafsGraph';
 
 const floatingIcons = [
   { Icon: Calculator, color: 'text-blue-500', bg: 'bg-blue-50', position: 'top-[15%] left-[10%]', delay: 0 },
-  { Icon: BookOpen, color: 'text-purple-500', bg: 'bg-purple-50', position: 'top-[20%] right-[12%]', delay: 0.2 },
+  { Icon: Lightbulb, color: 'text-purple-500', bg: 'bg-purple-50', position: 'top-[20%] right-[12%]', delay: 0.2 },
   { Icon: BrainCircuit, color: 'text-indigo-500', bg: 'bg-indigo-50', position: 'bottom-[30%] left-[15%]', delay: 0.4 },
   { Icon: PenTool, color: 'text-emerald-500', bg: 'bg-emerald-50', position: 'bottom-[25%] right-[15%]', delay: 0.6 },
 ];
@@ -50,41 +50,51 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-8 shadow-sm"
             >
-              <span className="text-lg">🚀</span>
-              100% Gratuit et en accès libre
+              <Sparkles size={15} />
+              Essaie ci-dessous, sans compte
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="font-space font-bold text-4xl sm:text-5xl lg:text-7xl text-slate-900 mb-6 leading-tight tracking-tight"
+              className="font-space font-bold text-3xl sm:text-4xl lg:text-6xl text-slate-900 mb-6 leading-[1.15] tracking-tight max-w-4xl text-balance"
             >
-              Smarter <span className="gradient-text mt-2">Academy</span>
+              Les mathématiques ne sont pas faites pour être récitées.<br className="hidden sm:block" />{' '}
+              Elles sont faites pour être <span className="gradient-text">comprises</span>.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="font-inter text-slate-600 text-lg sm:text-xl font-medium max-w-xl leading-relaxed mb-10"
+              className="font-mono-jetbrains text-slate-500 text-sm sm:text-base font-semibold tracking-[0.15em] uppercase mb-10 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1"
             >
-              Apprenez, pratiquez et maîtrisez les mathématiques gratuitement. Une plateforme éducative interactive pour les élèves du Collège au Lycée.
+              <span>Manipule</span><span className="text-blue-300">→</span>
+              <span>Découvre</span><span className="text-blue-300">→</span>
+              <span>Comprends</span><span className="text-blue-300">→</span>
+              <span className="text-slate-800">Maîtrise</span>
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-wrap gap-4 justify-center"
+              className="flex flex-wrap gap-4 justify-center items-center"
             >
               <Link
-                to="/courses"
+                to="/register"
                 className="px-8 py-4 rounded-xl text-base font-semibold text-white transition-all duration-300 hover:-translate-y-1 flex items-center gap-2 shadow-lg hover:shadow-blue-500/30"
                 style={{ background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)' }}
               >
-                <BookOpen size={20} />
-                Commencer à apprendre
+                Commencer gratuitement
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                to="/methode"
+                className="px-6 py-4 rounded-xl text-base font-semibold text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-2"
+              >
+                Découvrir la méthode
               </Link>
             </motion.div>
           </div>
@@ -103,7 +113,7 @@ export default function Hero() {
 
               {/* Badge */}
               <div className="absolute top-0 right-0 bg-emerald-100 text-emerald-700 text-[10px] font-bold px-3 py-1.5 rounded-bl-2xl font-mono tracking-wider z-10">
-                NOUVEAU
+                SANS COMPTE
               </div>
 
               {/* Loader Banner */}

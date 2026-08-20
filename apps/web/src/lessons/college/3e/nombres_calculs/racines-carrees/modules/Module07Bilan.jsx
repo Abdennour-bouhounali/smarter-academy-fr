@@ -14,7 +14,8 @@ export default function Module07Bilan() {
 
   // Q1: Définition et carrés parfaits
   const q1Exercise = useAdaptiveExercise({
-    id: 'racine-bilan-1',
+    id: 'eval-01',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_racines-carrees-3e_P3'] },
     validator: (ans) => {
       const isOk = ans === '9';
       if (isOk) setScore(s => Math.max(s, 1));
@@ -25,7 +26,8 @@ export default function Module07Bilan() {
 
   // Q2: Piège de l'addition
   const q2Exercise = useAdaptiveExercise({
-    id: 'racine-bilan-2',
+    id: 'eval-02',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_racines-carrees-3e_P1'] },
     validator: (ans) => {
       const isOk = ans === '10';
       if (isOk) setScore(s => Math.max(s, 2));
@@ -36,7 +38,8 @@ export default function Module07Bilan() {
 
   // Q3: Produit
   const q3Exercise = useAdaptiveExercise({
-    id: 'racine-bilan-3',
+    id: 'eval-03',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_racines-carrees-3e_P4'] },
     validator: (ans) => {
       const isOk = ans === '6';
       if (isOk) setScore(s => Math.max(s, 3));
@@ -47,7 +50,8 @@ export default function Module07Bilan() {
 
   // Q4: Simplification
   const q4Exercise = useAdaptiveExercise({
-    id: 'racine-bilan-4',
+    id: 'eval-04',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_racines-carrees-3e_P5'] },
     validator: (ans) => {
       const txt = ans.replace(/\s+/g, '');
       const isOk = txt === '3\\sqrt{2}' || txt === '3\\sqrt2';
@@ -59,7 +63,8 @@ export default function Module07Bilan() {
 
   // Q5: Équation
   const q5Exercise = useAdaptiveExercise({
-    id: 'racine-bilan-5',
+    id: 'eval-05',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_racines-carrees-3e_P2', '3e_racines-carrees-3e_P6'] },
     validator: (ans) => {
       const txt = ans.replace(/\s+/g, '');
       const isOk = txt === '4,-4' || txt === '-4,4';
