@@ -3,11 +3,28 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 // In-memory stand-in for the localStorage-backed storage seam — the queue's
 // behavior is what's under test, not the browser API.
 const memory = new Map();
+/**
+ * Le module testé importe `scopedStorage` (clés préfixées par utilisateur),
+ * pas `storage`. Le mock doit donc exposer les DEUX exports : n'en fournir
+ * qu'un faisait échouer les cinq tests avec « No "scopedStorage" export is
+ * defined on the mock ».
+ *
+ * Le faux `scopedStorage` reproduit le vrai : mêmes trois méthodes, appliquées
+ * à une clé préfixée. Le préfixe est celui de l'utilisateur anonyme, le seul
+ * cas que cette suite exerce.
+ */
+const fakeStorage = {
+  getItem: (key) => (memory.has(key) ? memory.get(key) : null),
+  setItem: (key, value) => memory.set(key, value),
+  removeItem: (key) => memory.delete(key),
+};
+
 vi.mock('../../utils/storage', () => ({
-  storage: {
-    getItem: (key) => (memory.has(key) ? memory.get(key) : null),
-    setItem: (key, value) => memory.set(key, value),
-    removeItem: (key) => memory.delete(key),
+  storage: fakeStorage,
+  scopedStorage: {
+    getItem: (key) => fakeStorage.getItem(`u_anon_${key}`),
+    setItem: (key, value) => fakeStorage.setItem(`u_anon_${key}`, value),
+    removeItem: (key) => fakeStorage.removeItem(`u_anon_${key}`),
   },
 }));
 
