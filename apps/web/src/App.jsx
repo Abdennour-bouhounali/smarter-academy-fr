@@ -29,6 +29,8 @@ import quatreOperationsRoutes from './lessons/college/6e/nombres_calculs/quatre-
 import nombresEntiersRoutes from './lessons/college/6e/nombres_calculs/nombres-entiers/routes';
 import racinesCarrees4eRoutes from './lessons/college/4e/nombres_calculs/racines-carrees/routes';
 import racinesCarrees3eRoutes from './lessons/college/3e/nombres_calculs/racines-carrees/routes';
+import reperageDroitePlan3eRoutes from './lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/routes';
+import triangles3eRoutes from './lessons/college/3e/espace_geometrie/triangles-3e/routes';
 import thales3eRoutes from './lessons/college/3e/espace_geometrie/thales-3e/routes';
 import fonctionsLineairesAffinesRoutes from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/routes';
 import pythagore3eRoutes from './lessons/college/3e/espace_geometrie/pythagore-3e/routes';
@@ -36,11 +38,29 @@ import resolutionProblemesRoutes from './lessons/college/6e/nombres_calculs/reso
 import equationsProduitRoutes from './lessons/college/3e/nombres_calculs/equations-produit/routes';
 import nombresRationnelsRoutes from './lessons/college/3e/nombres_calculs/nombres-rationnels/routes';
 import puissances3eRoutes from './lessons/college/3e/nombres_calculs/puissances-3e/routes';
+import multiplesDiviseursRoutes from './lessons/college/3e/nombres_calculs/multiples-diviseurs/routes';
+import calculLitteralAlgebriqueRoutes from './lessons/college/3e/nombres_calculs/calcul-litteral-algebrique/routes';
+import resolutionProblemes3eRoutes from './lessons/college/3e/nombres_calculs/resolution-problemes-3e/routes';
 import contenancesRoutes from './lessons/college/6e/grandeurs_mesures/contenances/routes';
 import longueursRoutes from './lessons/college/6e/grandeurs_mesures/longueurs/routes';
 import massesRoutes from './lessons/college/6e/grandeurs_mesures/masses/routes';
+import perimetresRoutes from './lessons/college/6e/grandeurs_mesures/perimetres/routes';
+import airesRoutes from './lessons/college/6e/grandeurs_mesures/aires/routes';
+import dureesRoutes from './lessons/college/6e/grandeurs_mesures/durees/routes';
+import anglesRoutes from './lessons/college/6e/grandeurs_mesures/angles/routes';
 import nombresDecimauxRoutes from './lessons/college/6e/nombres_calculs/nombres-decimaux/routes';
 import ordreGrandeurEstimationRoutes from './lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/routes';
+import reperagePlanRoutes from './lessons/college/6e/espace_geometrie/reperage-plan/routes';
+import droitesSegmentsRoutes from './lessons/college/6e/espace_geometrie/droites-segments/routes';
+import parallelismePerpendiculariteRoutes from './lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/routes';
+import figuresPlanesRoutes from './lessons/college/6e/espace_geometrie/figures-planes/routes';
+import symetrieRoutes from './lessons/college/6e/espace_geometrie/symetrie/routes';
+import solidesPatronsRoutes from './lessons/college/6e/espace_geometrie/solides-patrons/routes';
+import tableauxRoutes from './lessons/college/6e/donnees_proportionnalite/tableaux/routes';
+import graphiquesRoutes from './lessons/college/6e/donnees_proportionnalite/graphiques/routes';
+import proportionnaliteRoutes from './lessons/college/6e/donnees_proportionnalite/proportionnalite/routes';
+import constructionsGeometriquesRoutes from './lessons/college/6e/espace_geometrie/constructions-geometriques/routes';
+import algorithmiqueProgrammationRoutes from './lessons/college/6e/algorithmique/algorithmique-programmation/routes';
 
 // Hydrates local lesson progress from the server on login and flushes the
 // offline queue — must live inside AuthProvider, hence this null component.
@@ -96,6 +116,8 @@ export default function App() {
             {nombresEntiersRoutes()}
             {racinesCarrees4eRoutes()}
             {racinesCarrees3eRoutes()}
+            {reperageDroitePlan3eRoutes()}
+            {triangles3eRoutes()}
             {thales3eRoutes()}
             {fonctionsLineairesAffinesRoutes()}
             {pythagore3eRoutes()}
@@ -103,11 +125,29 @@ export default function App() {
             {equationsProduitRoutes()}
             {nombresRationnelsRoutes()}
             {puissances3eRoutes()}
+            {multiplesDiviseursRoutes()}
+            {calculLitteralAlgebriqueRoutes()}
+            {resolutionProblemes3eRoutes()}
             {contenancesRoutes()}
             {longueursRoutes()}
             {massesRoutes()}
+            {perimetresRoutes()}
+            {airesRoutes()}
+            {dureesRoutes()}
+            {anglesRoutes()}
             {nombresDecimauxRoutes()}
             {ordreGrandeurEstimationRoutes()}
+            {reperagePlanRoutes()}
+            {droitesSegmentsRoutes()}
+            {parallelismePerpendiculariteRoutes()}
+            {figuresPlanesRoutes()}
+            {symetrieRoutes()}
+            {solidesPatronsRoutes()}
+            {tableauxRoutes()}
+            {graphiquesRoutes()}
+            {proportionnaliteRoutes()}
+            {constructionsGeometriquesRoutes()}
+            {algorithmiqueProgrammationRoutes()}
           </Route>
         </Routes>
       </Router>
