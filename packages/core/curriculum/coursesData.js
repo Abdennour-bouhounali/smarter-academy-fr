@@ -735,7 +735,7 @@ const smaMetadata = {
       "Résoudre des problèmes concrets à l'aide du théorème de Pythagore",
     ],
     // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 82,
+    durationMinutes: 87,
     difficulty: 'Difficile',
     status: 'available',
     icon: '📐',
