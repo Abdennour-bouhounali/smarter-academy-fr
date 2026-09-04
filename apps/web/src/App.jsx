@@ -31,6 +31,7 @@ import racinesCarrees4eRoutes from './lessons/college/4e/nombres_calculs/racines
 import racinesCarrees3eRoutes from './lessons/college/3e/nombres_calculs/racines-carrees/routes';
 import reperageDroitePlan3eRoutes from './lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/routes';
 import triangles3eRoutes from './lessons/college/3e/espace_geometrie/triangles-3e/routes';
+import translationsVecteurs3eRoutes from './lessons/college/3e/espace_geometrie/translations-vecteurs-3e/routes';
 import thales3eRoutes from './lessons/college/3e/espace_geometrie/thales-3e/routes';
 import fonctionsLineairesAffinesRoutes from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/routes';
 import pythagore3eRoutes from './lessons/college/3e/espace_geometrie/pythagore-3e/routes';
@@ -118,6 +119,7 @@ export default function App() {
             {racinesCarrees3eRoutes()}
             {reperageDroitePlan3eRoutes()}
             {triangles3eRoutes()}
+            {translationsVecteurs3eRoutes()}
             {thales3eRoutes()}
             {fonctionsLineairesAffinesRoutes()}
             {pythagore3eRoutes()}

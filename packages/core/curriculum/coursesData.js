@@ -687,7 +687,7 @@ const smaMetadata = {
     // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
     durationMinutes: 83,
     difficulty: 'Difficile',
-    status: 'coming_soon',
+    status: 'available',
     icon: '➡️',
     tier: 'free',
   },
