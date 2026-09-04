@@ -1,185 +1,153 @@
 /**
- * lesson.config.js
- * Source de vérité unique pour la leçon : Théorème de Thalès (3ème)
+ * Théorème de Thalès — 3e.
+ *
+ * NOTE VALIDATEUR (scripts/validate-lessons.mjs) : les Learning Point ids
+ * référencés par `teachesLearningPointIds` et par les métadonnées
+ * `assessment` doivent rester des LITTÉRAUX, et les objets `assessment`
+ * doivent être écrits en toutes lettres (un helper les rendrait invisibles).
+ * Les 12 LPs de cette leçon (clé catalogue '3e_thales') :
+ *
+ *   3e_thales-3e_P1   Reconnaître une configuration de Thalès
+ *   3e_thales-3e_P2   Identifier les droites parallèles dans une configuration
+ *   3e_thales-3e_P3   Identifier les longueurs correspondantes
+ *   3e_thales-3e_P4   Comprendre le lien entre parallélisme et proportionnalité
+ *   3e_thales-3e_P5   Écrire correctement les rapports de longueurs
+ *   3e_thales-3e_P6   Utiliser le théorème de Thalès pour calculer une longueur
+ *   3e_thales-3e_P7   Choisir les rapports adaptés à une configuration donnée
+ *   3e_thales-3e_P8   Vérifier la cohérence d'un calcul utilisant le théorème
+ *   3e_thales-3e_P9   Utiliser la réciproque du théorème de Thalès
+ *   3e_thales-3e_P10  Utiliser la contraposée du théorème de Thalès
+ *   3e_thales-3e_P11  Rédiger une démonstration utilisant Thalès
+ *   3e_thales-3e_P12  Résoudre des problèmes concrets faisant intervenir Thalès
+ *
+ * L'IDÉE CENTRALE : les rapports ne bougent pas. La version pré-kit faisait
+ * glisser une figure sans JAMAIS afficher un seul rapport — l'invariant que la
+ * leçon prétend enseigner n'était donc jamais constaté. Ici, les trois
+ * rapports sont calculés et affichés en permanence, et le module 3 les fait
+ * tamponner position après position.
+ *
+ * REFONTE (2026-09-04) : leçon portée sur le lesson kit.
+ *  - `sequentialUnlock` était absent : rien n'était jamais verrouillé.
+ *  - Le Bilan affichait « + XP » sans nombre (`assessment.xpReward` inexistant)
+ *    et surlignait les options par leur justesse, sans montrer le choix fait.
+ *  - Le module « Calculer une longueur » calculait À LA PLACE de l'élève : un
+ *    curseur, aucune saisie, et l'XP tombait au premier mouvement.
+ *  - La contraposée n'était jamais pratiquée. Elle a désormais son atelier.
+ *  - `InteractiveThales` relançait son effet à chaque rendu (callback non
+ *    stable) et affichait des longueurs en PIXELS comme si c'étaient des
+ *    mesures. Le composant est remplacé par `ThalesLab`.
+ * Git conserve l'archive des anciens modules.
+ *
+ * Fil narratif unique : « mesurer l'inaccessible », du piquet au soleil
+ * jusqu'à la pyramide de Khéops, repris figé dans la synthèse du boss.
  */
-
 export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/thales-3e';
 
 export const LESSON_CONFIG = {
-  // ── Identité ──────────────────────────────────────────────────────────────
-  id: 'thales-3e',          // Clé localStorage
-  slug: 'thales-3e',
+  id: 'thales-3e',
+  sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Théorème de Thalès',
-  emoji: '📐',
+  description:
+    "Découvrir au soleil qu'un rapport de longueurs peut refuser de changer, voir les trois rapports d'une configuration rester égaux quoi qu'on déplace, puis calculer une longueur, démontrer un parallélisme et mesurer une pyramide.",
   level: 'college',
   grade: '3e',
   chapter: 'espace_geometrie',
   chapterTitle: 'Espace et géométrie',
-  officialObjects: ['Théorème de Thalès'],
-
-  // ── Méta-pédagogique ──────────────────────────────────────────────────────
-  estimatedDurationMin: 77,
-  difficulty: 3,                 // 1 = très facile … 5 = très difficile
-  masteryThreshold: 0.8,         // 80 % des modules complétés = leçon maîtrisée
-
-  prerequisites: [
-    { id: 'PRE-FRAC',  label: 'Fractions (égalités de quotients)' },
-    { id: 'PRE-PROP',  label: 'Proportionnalité et quatrième proportionnelle' },
-    { id: 'PRE-DROI',  label: 'Droites parallèles et sécantes' },
-  ],
-
+  passingScore: 6,
+  masteryThreshold: 0.8,
+  emoji: '📐',
+  estimatedDurationMin: 85,
   skills: [
-    "Reconnaître les configurations de Thalès (triangles emboîtés et configuration croisée)",
-    "Écrire l'égalité des trois rapports",
-    "Appliquer le théorème de Thalès pour calculer une longueur manquante",
-    "Utiliser la réciproque du théorème de Thalès pour prouver que deux droites sont parallèles",
-    "Utiliser la contraposée du théorème de Thalès pour prouver que deux droites ne sont pas parallèles"
+    'Reconnaître une configuration de Thalès',
+    'Identifier les droites parallèles dans une configuration',
+    'Identifier les longueurs correspondantes',
+    'Comprendre le lien entre parallélisme et proportionnalité',
+    'Écrire correctement les rapports de longueurs',
+    'Utiliser le théorème de Thalès pour calculer une longueur',
+    'Choisir les rapports adaptés à une configuration donnée',
+    "Vérifier la cohérence d'un calcul utilisant le théorème de Thalès",
+    'Utiliser la réciproque du théorème de Thalès',
+    'Utiliser la contraposée du théorème de Thalès',
+    'Rédiger une démonstration utilisant Thalès',
+    'Résoudre des problèmes concrets faisant intervenir le théorème de Thalès',
   ],
-
-  // ── Évaluation finale ─────────────────────────────────────────────────────
-  assessment: {
-    moduleId: 'L07',
-    totalQuestions: 5,
-    masteryScore: 4,             // 4/5 = leçon validée
+  teachingScope: {
+    include: [
+      'Configuration triangle et configuration papillon',
+      'Égalité des trois rapports quand les droites sont parallèles',
+      'Calcul d’une longueur par produit en croix, et contrôle de cohérence',
+      'Réciproque et contraposée, avec la condition d’ordre des points',
+      'Rédaction d’une démonstration',
+      'Problèmes concrets : hauteur inaccessible, largeur d’une rivière',
+    ],
+    exclude: [
+      'Homothéties formelles',
+      'Agrandissement et réduction des aires et des volumes',
+      'Triangles semblables et cas de similitude',
+      'Trigonométrie (leçon dédiée du même chapitre)',
+    ],
   },
-
-  // ── Modules ───────────────────────────────────────────────────────────────
   modules: [
     {
-      id: 'L01',
-      number: 1,
-      slug: 'decouverte-configurations',
-      path: `${LESSON_BASE_PATH}/decouverte-configurations`,
-      title: 'Découverte des Configurations',
-      desc: "Identifier visuellement les droites parallèles et les triangles emboîtés ou en papillon.",
-      color: 'emerald',
-      style: 'featured',
+      id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`,
+      title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — pour savoir par où bien commencer.',
+      stage: 'prerequisite_check',
+      color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases',
+    },
+    {
+      id: '01', number: 1, slug: 'lombre-au-soleil', path: `${LESSON_BASE_PATH}/lombre-au-soleil`,
+      title: 'L’ombre au soleil', desc: 'La hauteur change, l’ombre change — et un rapport refuse de bouger.',
       stage: 'trigger',
-      teachesLearningPointIds: ['3e_thales-3e_P1'],
-      estimatedMin: 8,
-      difficulty: 1,
-      xpReward: 50,
-      actionText: 'Démarrer ➔',
-      prerequisites: [],
+      teachesLearningPointIds: ['3e_thales-3e_P4'],
+      color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 2, actionText: 'Observer',
     },
     {
-      id: 'L02',
-      number: 2,
-      slug: 'egalite-thales',
-      path: `${LESSON_BASE_PATH}/egalite-thales`,
-      title: "Écrire l'égalité de Thalès",
-      desc: "Apprendre à poser les 3 rapports égaux sans se tromper (Petit triangle / Grand triangle).",
-      color: 'indigo',
-      style: 'featured',
+      id: '02', number: 2, slug: 'reconnaitre-la-configuration', path: `${LESSON_BASE_PATH}/reconnaitre-la-configuration`,
+      title: 'Reconnaître la configuration', desc: 'Deux conditions, jamais une seule — et le papillon compte aussi.',
       stage: 'discovery',
-      teachesLearningPointIds: ['3e_thales-3e_P2'],
-      estimatedMin: 10,
-      difficulty: 2,
-      xpReward: 50,
-      actionText: 'Voir ➔',
-      prerequisites: ['L01'],
+      teachesLearningPointIds: ['3e_thales-3e_P1', '3e_thales-3e_P2'],
+      color: 'sky', style: 'featured', estimatedMin: 9, difficulty: 2, actionText: 'Trier',
     },
     {
-      id: 'L03',
-      number: 3,
-      slug: 'calcul-longueur',
-      path: `${LESSON_BASE_PATH}/calcul-longueur`,
-      title: 'Calculer une longueur avec Thalès',
-      desc: 'Utiliser l\'égalité et le produit en croix pour trouver une longueur.',
-      color: 'blue',
-      style: 'featured',
+      id: '03', number: 3, slug: 'les-rapports-qui-ne-bougent-pas', path: `${LESSON_BASE_PATH}/les-rapports-qui-ne-bougent-pas`,
+      title: 'Les rapports qui ne bougent pas', desc: 'Trois relevés : les longueurs changent, les rapports non.',
+      stage: 'discovery',
+      teachesLearningPointIds: ['3e_thales-3e_P3', '3e_thales-3e_P4', '3e_thales-3e_P5'],
+      color: 'emerald', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Relever',
+    },
+    {
+      id: '04', number: 4, slug: 'calculer-une-longueur', path: `${LESSON_BASE_PATH}/calculer-une-longueur`,
+      title: 'Calculer une longueur', desc: 'Choisir la paire utile, puis le produit en croix.',
       stage: 'manipulation',
-      teachesLearningPointIds: ['3e_thales-3e_P3'],
-      estimatedMin: 12,
-      difficulty: 3,
-      xpReward: 75,
-      actionText: 'Voir ➔',
-      prerequisites: ['L02'],
+      teachesLearningPointIds: ['3e_thales-3e_P6', '3e_thales-3e_P7', '3e_thales-3e_P8'],
+      color: 'violet', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Calculer',
     },
     {
-      id: 'L04',
-      number: 4,
-      slug: 'reciproque-contraposee',
-      path: `${LESSON_BASE_PATH}/reciproque-contraposee`,
-      title: 'La Réciproque et la Contraposée',
-      desc: 'Prouver si deux droites sont parallèles ou non.',
-      color: 'purple',
-      style: 'featured',
+      id: '05', number: 5, slug: 'et-si-ce-nest-pas-parallele', path: `${LESSON_BASE_PATH}/et-si-ce-nest-pas-parallele`,
+      title: 'Et si ce n’est pas parallèle ?', desc: 'N devient libre : les rapports et le parallélisme vont toujours ensemble.',
+      stage: 'manipulation',
+      teachesLearningPointIds: ['3e_thales-3e_P9', '3e_thales-3e_P10'],
+      color: 'purple', style: 'featured', estimatedMin: 10, difficulty: 3, actionText: 'Explorer',
+    },
+    {
+      id: '06', number: 6, slug: 'rediger', path: `${LESSON_BASE_PATH}/rediger`,
+      title: 'Rédiger', desc: 'Le bon énoncé au bon moment : théorème, réciproque ou contraposée.',
       stage: 'formalization',
-      teachesLearningPointIds: ['3e_thales-3e_P4', '3e_thales-3e_P5'],
-      estimatedMin: 12,
-      difficulty: 3,
-      xpReward: 75,
-      actionText: 'Voir ➔',
-      prerequisites: ['L03'],
+      teachesLearningPointIds: ['3e_thales-3e_P11', '3e_thales-3e_P9'],
+      color: 'blue', style: 'featured', estimatedMin: 9, difficulty: 3, actionText: 'Rédiger',
     },
     {
-      id: 'L05',
-      number: 5,
-      slug: 'configuration-papillon',
-      path: `${LESSON_BASE_PATH}/configuration-papillon`,
-      title: 'Configurations "Papillon"',
-      desc: 'S\'exercer spécifiquement sur la configuration croisée qui pose souvent problème.',
-      color: 'sky',
-      style: 'featured',
+      id: '07', number: 7, slug: 'de-kheops-au-chantier', path: `${LESSON_BASE_PATH}/de-kheops-au-chantier`,
+      title: 'De Khéops au chantier', desc: 'Mesurer l’inaccessible, vérifier l’invisible.',
       stage: 'practice_lab',
-      teachesLearningPointIds: ['3e_thales-3e_P6'],
-      estimatedMin: 10,
-      difficulty: 4,
-      xpReward: 75,
-      actionText: 'Voir ➔',
-      prerequisites: ['L04'],
+      teachesLearningPointIds: ['3e_thales-3e_P12', '3e_thales-3e_P8'],
+      color: 'rose', style: 'featured', estimatedMin: 8, difficulty: 3, actionText: 'Résoudre',
     },
     {
-      id: 'L06',
-      number: 6,
-      slug: 'mission-pyramide',
-      path: `${LESSON_BASE_PATH}/mission-pyramide`,
-      title: 'Mission : L\'ombre de la Pyramide',
-      desc: 'Comment Thalès a-t-il calculé la hauteur de la pyramide de Khéops ?',
-      color: 'amber',
-      style: 'boss',
-      stage: 'practice_lab',
-      teachesLearningPointIds: ['3e_thales-3e_P6'],
-      estimatedMin: 15,
-      difficulty: 4,
-      xpReward: 200,
-      actionText: 'Mission ➔',
-      prerequisites: ['L05'],
-    },
-    {
-      id: 'L07',
-      number: 7,
-      slug: 'bilan-final',
-      path: `${LESSON_BASE_PATH}/bilan-final`,
-      title: 'Bilan Final',
-      desc: 'Évaluation finale pour valider la maîtrise de la leçon.',
-      color: 'slate',
-      style: 'assessment',
+      id: '08', number: 8, slug: 'mission-finale-larpenteur', path: `${LESSON_BASE_PATH}/mission-finale-larpenteur`,
+      title: '🏆 Mission finale : l’arpenteur', desc: 'Dix épreuves pour prouver que tu maîtrises Thalès.',
       stage: 'evaluation',
-      estimatedMin: 10,
-      difficulty: 3,
-      xpReward: 150,
-      actionText: 'Évaluation ➔',
-      prerequisites: ['L06'],
+      color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi',
     },
   ],
 };
-
-// ── Helpers dérivés (calculés une seule fois) ────────────────────────────────
-
-export const TOTAL_MODULES = LESSON_CONFIG.modules.length;
-
-
-
-/** Retourne le module précédent et suivant d'un module donné par son numéro */
-export function getModuleNav(moduleNumber) {
-  const modules = LESSON_CONFIG.modules;
-  const idx = modules.findIndex((m) => m.number === moduleNumber);
-  const prev = idx > 0 ? modules[idx - 1] : null;
-  const next = idx < modules.length - 1 ? modules[idx + 1] : null;
-  return {
-    prevLink: prev ? `${LESSON_BASE_PATH}/${prev.slug}` : null,
-    nextLink: next ? `${LESSON_BASE_PATH}/${next.slug}` : null,
-  };
-}

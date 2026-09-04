@@ -4,17 +4,16 @@ import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
-// Module<NN><Descriptor>.jsx — the restored pre-reset naming convention
-// (docs/architecture/LESSON_CONTRACT.md). Keyed by module `number`, not slug.
-const MODULE_COMPONENTS = {
-  1: lazy(() => import('./modules/Module01Decouverte.jsx')),
-  2: lazy(() => import('./modules/Module02Egalite.jsx')),
-  3: lazy(() => import('./modules/Module03Calcul.jsx')),
-  4: lazy(() => import('./modules/Module04Reciproque.jsx')),
-  5: lazy(() => import('./modules/Module05Papillon.jsx')),
-  6: lazy(() => import('./modules/Module06Mission.jsx')),
-  7: lazy(() => import('./modules/Module07Bilan.jsx')),
-};
+// Les modules sont découverts par glob : un module encore absent (leçon en
+// cours de construction) fait disparaître SA route, au lieu de casser le
+// chargement de toute l'application — App.jsx importe ce fichier au démarrage.
+// Le nom de fichier doit commencer par Module<NN> (LESSON_CONTRACT.md).
+const MODULE_FILES = import.meta.glob('./modules/Module*.jsx');
+const MODULE_COMPONENTS = Object.entries(MODULE_FILES).reduce((acc, [path, loader]) => {
+  const match = path.match(/Module(\d+)/);
+  if (match) acc[Number(match[1])] = lazy(loader);
+  return acc;
+}, {});
 
 function withSuspense(Component) {
   return (
