@@ -72,35 +72,54 @@ const CURVE_TONES = {
 const toneOf = (t) => CURVE_TONES[t] ?? t ?? CURVE_TONES.indigo;
 
 /** Fabrique le transformateur coordonnées ⇄ SVG pour une étendue donnée. */
-export function planeGeometry(range, unit = 34, pad = PAD) {
+export function planeGeometry(range, unit = 34, pad = PAD, unitY = null) {
   const { xMin, xMax, yMin, yMax } = range;
+  // Une unité verticale distincte est indispensable dès que les deux axes
+  // portent des grandeurs d'ordres différents (24 h contre 1 200 m, 12 min
+  // contre 240 L) : avec un seul `unit`, le cadre ferait des milliers de
+  // pixels de haut. Par défaut elle vaut `unit`, donc rien ne change pour les
+  // repères géométriques où une unité est une unité dans les deux sens.
+  const uy = unitY ?? unit;
   // `pad` peut être un nombre (les quatre côtés, comportement historique) ou
   // {left, right, top, bottom} quand les étiquettes demandent plus de place.
   const p = typeof pad === 'number'
     ? { left: pad, right: pad, top: pad, bottom: pad }
     : { left: PAD, right: PAD, top: PAD, bottom: PAD, ...pad };
   const width = (xMax - xMin) * unit + p.left + p.right;
-  const height = (yMax - yMin) * unit + p.top + p.bottom;
+  const height = (yMax - yMin) * uy + p.top + p.bottom;
   const toSvg = (x, y) => ({
     x: p.left + (x - xMin) * unit,
-    y: p.top + (yMax - y) * unit,
+    y: p.top + (yMax - y) * uy,
   });
   const toCoord = (sx, sy) => ({
     x: (sx - p.left) / unit + xMin,
-    y: yMax - (sy - p.top) / unit,
+    y: yMax - (sy - p.top) / uy,
   });
-  return { width, height, unit, toSvg, toCoord, range, pad: p };
+  return { width, height, unit, unitY: uy, toSvg, toCoord, range, pad: p };
 }
 
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 /** Arrondi au pas, en neutralisant les artefacts de flottants (0,1 + 0,2). */
 const roundStep = (v, st) => Math.round((v / st) + Number.EPSILON) * st;
 
-/** Arrondit au pas de la grille et borne au cadre. */
+/**
+ * Arrondit au pas de la grille et borne au cadre.
+ *
+ * `step` accepte un nombre (même pas sur les deux axes) OU un couple
+ * `{ x, y }` quand les deux axes n'ont pas la même graduation. C'est le cas
+ * dès que l'échelle verticale diffère de l'horizontale : une série
+ * hebdomadaire (x entier) dont les hauteurs tombent entre deux graduations
+ * (y au demi). Avec un pas unique de 2,5 imposé aux DEUX axes, les abscisses
+ * 1, 2, 3 et 4 devenaient inatteignables — seuls 0, 2,5 et 5 existaient, et
+ * l'élève ne pouvait poser presque aucun point (défaut signalé sur
+ * `representation-graphique-3e`, module « Entre deux graduations »).
+ */
 export function snapCoord(p, range, step = 1) {
+  const sx = typeof step === 'object' && step !== null ? step.x : step;
+  const sy = typeof step === 'object' && step !== null ? step.y : step;
   return {
-    x: clamp(Math.round(p.x / step) * step, range.xMin, range.xMax),
-    y: clamp(Math.round(p.y / step) * step, range.yMin, range.yMax),
+    x: clamp(roundStep(p.x, sx), range.xMin, range.xMax),
+    y: clamp(roundStep(p.y, sy), range.yMin, range.yMax),
   };
 }
 
@@ -113,9 +132,23 @@ function formatTick(v) {
 }
 
 /** Écriture française d'un couple de coordonnées : (3 ; −2). */
+/**
+ * Écriture française d'un couple : (3 ; −2), (1 ; 2,5).
+ *
+ * `decimals` est un MAXIMUM, pas une largeur fixe : les zéros inutiles sont
+ * retirés. Un axe des semaines entières affiche donc « 1 » et non « 1,0 »,
+ * pendant que l'axe des hauteurs affiche « 2,5 ». Arrondir à l'entier ferait
+ * lire « 3 » sous un point réellement posé en 2,5.
+ */
 export function formatCoords(p, decimals = 0) {
   const fmt = (v) => {
-    const r = decimals > 0 ? v.toFixed(decimals).replace('.', ',') : String(Math.round(v));
+    let r;
+    if (decimals > 0) {
+      r = v.toFixed(decimals).replace(/\.?0+$/, '').replace('.', ',');
+      if (r === '' || r === '-') r = '0';
+    } else {
+      r = String(Math.round(v));
+    }
     return r.replace('-', '−'); // moins typographique
   };
   return `(${fmt(p.x)} ; ${fmt(p.y)})`;
@@ -124,7 +157,14 @@ export function formatCoords(p, decimals = 0) {
 export default function CoordPlane({
   range = { xMin: -5, xMax: 5, yMin: -5, yMax: 5 },
   unit = 34,
-  step = 1,
+  unitY = null,        // pixels par unité verticale ; par défaut = unit
+  /**
+   * Pas d'aimantation du point déplacé. Par défaut, l'aimantation suit la
+   * GRADUATION DE CHAQUE AXE (`xStep` / `yStep`), de sorte qu'un point puisse
+   * toujours se poser sur une intersection réellement dessinée. Un module qui
+   * veut un pas plus fin passe un nombre (les deux axes) ou `{ x, y }`.
+   */
+  step = null,
   points = [],
   onPointChange,
   draggableId = null,
@@ -183,14 +223,19 @@ export default function CoordPlane({
   const halfFirstX = tickXs.length ? textWidth(formatTick(tickXs[0])) / 2 : 0;
   const halfLastX = tickXs.length ? textWidth(formatTick(tickXs[tickXs.length - 1])) / 2 : 0;
 
+  // Le nom de l'axe des abscisses est posé APRÈS la flèche : sa largeur entre
+  // donc dans la marge droite. Sans cela, « semaine » sort du cadre là où « x »
+  // tenait (règle §17bis : tout état valide doit avoir un affichage valide).
+  const xNameW = textWidth(axisLabels?.x ?? '', 13);
+  const yNameW = textWidth(axisLabels?.y ?? '', 13);
   const padding = {
-    left: Math.max(PAD, widestY + 12, halfFirstX + 6),
-    right: Math.max(PAD, halfLastX + 6),
+    left: Math.max(PAD, widestY + 12, halfFirstX + 6, yNameW / 2 + 6),
+    right: Math.max(PAD, halfLastX + 6, xNameW + 18),
     top: PAD,
     bottom: PAD,
   };
 
-  const geo = planeGeometry(range, unit, padding);
+  const geo = planeGeometry(range, unit, padding, unitY);
   const { toSvg, toCoord, width, height } = geo;
   const locked = disabled || frozen;
   const dragsPoint = !locked && !!draggableId && typeof onPointChange === 'function';
@@ -220,10 +265,32 @@ export default function CoordPlane({
       const raw = toCoord(sx, sy);
       // Un point se pose sur la grille des points ; une sonde suit son propre
       // pas d'axe — c'est `commit` qui l'arrondit, pas ici.
-      return dragsPoint ? snapCoord(raw, range, step) : raw;
+      // Pas effectif : celui demandé, sinon la graduation propre à chaque axe.
+      const snapStep = step ?? { x: xStep, y: yStep };
+      return dragsPoint ? snapCoord(raw, range, snapStep) : raw;
     },
-    [width, height, toCoord, range, step, dragsPoint]
+    [width, height, toCoord, range, step, xStep, yStep, dragsPoint]
   );
+
+  /**
+   * Nombre de décimales à AFFICHER pour un point : celui qu'exige le pas
+   * d'aimantation. Avec un pas de 2,5, un point posé en 2,5 s'affichait « 3 »
+   * — l'élève lisait une valeur que la figure ne portait pas, et croyait son
+   * point mal placé alors qu'il était juste (défaut signalé sur
+   * `representation-graphique-3e`).
+   */
+  const pointDecimals = (() => {
+    const st = step ?? { x: xStep, y: yStep };
+    const vals = typeof st === 'object' && st !== null ? [st.x, st.y] : [st];
+    let d = 0;
+    for (const v of vals) {
+      if (!Number.isFinite(v)) continue;
+      const s2 = String(v);
+      const dot = s2.indexOf('.');
+      if (dot >= 0) d = Math.max(d, s2.length - dot - 1);
+    }
+    return Math.min(d, 3);
+  })();
 
   const commit = (p) => {
     if (!p || !interactive) return;
@@ -285,11 +352,18 @@ export default function CoordPlane({
     }
 
     if (!active) return;
+    // Chaque flèche avance d'UN pas de SON axe : une flèche horizontale sur la
+    // graduation des x, une verticale sur celle des y. Un pas unique appliqué
+    // aux deux axes rendait certaines abscisses inatteignables au clavier
+    // comme à la souris.
+    const snapStep = step ?? { x: xStep, y: yStep };
+    const sx = typeof snapStep === 'object' && snapStep !== null ? snapStep.x : snapStep;
+    const sy = typeof snapStep === 'object' && snapStep !== null ? snapStep.y : snapStep;
     const moves = {
-      ArrowRight: { x: active.x + step, y: active.y },
-      ArrowLeft: { x: active.x - step, y: active.y },
-      ArrowUp: { x: active.x, y: active.y + step },
-      ArrowDown: { x: active.x, y: active.y - step },
+      ArrowRight: { x: active.x + sx, y: active.y },
+      ArrowLeft: { x: active.x - sx, y: active.y },
+      ArrowUp: { x: active.x, y: active.y + sy },
+      ArrowDown: { x: active.x, y: active.y - sy },
       Home: { x: range.xMin, y: active.y },
       End: { x: range.xMax, y: active.y },
       PageUp: { x: active.x, y: range.yMax },
@@ -298,7 +372,7 @@ export default function CoordPlane({
     const next = moves[e.key];
     if (!next) return;
     e.preventDefault();
-    commit(snapCoord(next, range, step));
+    commit(snapCoord(next, range, snapStep));
   };
 
   // La grille suit le pas demandé : « l'échelle qui change tout » a besoin de
@@ -351,7 +425,7 @@ export default function CoordPlane({
   // La lecture vocale décrit CE QUI EST PILOTÉ : un point, une sonde, un guide.
   let label = 'aucun élément mobile';
   if (dragsPoint && active) {
-    label = `${active.name ?? 'point'} en ${formatCoords(active)}`;
+    label = `${active.name ?? 'point'} en ${formatCoords(active, pointDecimals)}`;
   } else if (dragsCursor) {
     const readings = allCurves
       .map((c) => {
@@ -820,7 +894,7 @@ export default function CoordPlane({
       {/* La couleur n'est jamais seule porteuse d'information. */}
       {caption && interactive && dragsPoint && active && (
         <p className="text-sm font-mono font-semibold text-slate-700 tabular-nums" aria-live="polite">
-          {active.name ? `${active.name} ` : ''}{formatCoords(active)}
+          {active.name ? `${active.name} ` : ''}{formatCoords(active, pointDecimals)}
         </p>
       )}
       {caption && interactive && !dragsPoint && (
