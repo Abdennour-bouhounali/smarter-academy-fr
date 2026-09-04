@@ -33,8 +33,9 @@ import reperageDroitePlan3eRoutes from './lessons/college/3e/espace_geometrie/re
 import triangles3eRoutes from './lessons/college/3e/espace_geometrie/triangles-3e/routes';
 import translationsVecteurs3eRoutes from './lessons/college/3e/espace_geometrie/translations-vecteurs-3e/routes';
 import trigo3eRoutes from './lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/routes';
+import representationEspace3eRoutes from './lessons/college/3e/espace_geometrie/representation-espace-3e/routes';
 import thales3eRoutes from './lessons/college/3e/espace_geometrie/thales-3e/routes';
-import fonctionsLineairesAffinesRoutes from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-affines/routes';
+import fonctions3eRoutes from './lessons/college/3e/donnees_probabilites/fonctions-3e/routes';
 import pythagore3eRoutes from './lessons/college/3e/espace_geometrie/pythagore-3e/routes';
 import resolutionProblemesRoutes from './lessons/college/6e/nombres_calculs/resolution-problemes/routes';
 import equationsProduitRoutes from './lessons/college/3e/nombres_calculs/equations-produit/routes';
@@ -122,8 +123,9 @@ export default function App() {
             {triangles3eRoutes()}
             {translationsVecteurs3eRoutes()}
             {trigo3eRoutes()}
+            {representationEspace3eRoutes()}
             {thales3eRoutes()}
-            {fonctionsLineairesAffinesRoutes()}
+            {fonctions3eRoutes()}
             {pythagore3eRoutes()}
             {resolutionProblemesRoutes()}
             {equationsProduitRoutes()}

@@ -90,7 +90,9 @@ export default function RatioLab({
             const t = trianglePoints(alpha, g);
             all.push(t.A, t.B, t.C);
           }
-          const pad = 34;
+          // La marge tient compte de l'étiquette d'angle posée à l'extérieur
+          // (30 px) et de son texte.
+          const pad = 62;
           const x0 = Math.min(...all.map((p) => p.x)) - pad;
           const x1 = Math.max(...all.map((p) => p.x)) + pad;
           const y0 = Math.min(...all.map((p) => p.y)) - pad;
@@ -141,41 +143,68 @@ export default function RatioLab({
               <g>
                 <path d={`M ${st.x} ${st.y} A ${rr} ${rr} 0 0 ${d > 0 ? 1 : 0} ${en.x} ${en.y}`}
                   fill="none" stroke="#0f172a" strokeWidth="2" />
-                <text x={P.x + (rr + 16) * Math.cos(mid)} y={P.y + (rr + 16) * Math.sin(mid) + 4}
-                  textAnchor="middle" fontSize="13" className="font-mono font-bold" fill="#0f172a">
+                {/* La mesure de l'angle est posée À L'EXTÉRIEUR du sommet,
+                    dans le prolongement de la bissectrice. Placée à
+                    l'intérieur, elle venait heurter l'étiquette du côté le
+                    plus proche dès que l'angle était petit ou le triangle
+                    court (mesuré : 4 px de dégagement au pire). Vers
+                    l'extérieur, le dégagement minimal sur toute la plage
+                    passe à 36 px. */}
+                <text
+                  x={P.x + 30 * Math.cos(mid + Math.PI)}
+                  y={P.y + 30 * Math.sin(mid + Math.PI) + 4}
+                  textAnchor="middle" fontSize="13" className="font-mono font-bold"
+                  fill="#0f172a" stroke="#ffffff" strokeWidth="3" paintOrder="stroke"
+                >
                   {alpha}°
                 </text>
               </g>
             );
           })()}
 
-          {/* Longueurs, au milieu de chaque côté */}
+          {/* Longueurs des côtés.
+              PLACEMENT SÛR : l'étiquette est posée au milieu du côté puis
+              DÉCALÉE LE LONG de ce côté, en s'éloignant du sommet A. À angle
+              faible ou côté court, une étiquette laissée au milieu venait se
+              superposer à celle de l'angle (mesuré : 6 px de distance à 35°
+              sur une hypoténuse de 70). On garde en plus un halo blanc pour
+              rester lisible si un trait passe dessous. */}
           {showLengths && [
             [A, B, s.adj, 'AB'], [B, C, s.opp, 'BC'], [A, C, s.hyp, 'AC'],
           ].map(([P, Q, v, name]) => {
             const role = sideOf(name);
-            const mx = (P.x + Q.x) / 2;
-            const my = (P.y + Q.y) / 2;
             const dx = Q.x - P.x;
             const dy = Q.y - P.y;
             const n = Math.hypot(dx, dy) || 1;
+            // Fraction du côté à laquelle on pose l'étiquette : plus loin de A
+            // quand le côté part de A (donc quand l'arc d'angle est proche).
+            const t = name === 'BC' ? 0.5 : 0.66;
+            const mx = P.x + dx * t;
+            const my = P.y + dy * t;
             return (
-              <text key={name} x={mx - (dy / n) * 16} y={my + (dx / n) * 16 + 4}
+              <text key={name} x={mx - (dy / n) * 15} y={my + (dx / n) * 15 + 4}
                 textAnchor="middle" fontSize="12" className="font-mono font-semibold"
-                fill={COLOR[role]}>{len(v)}</text>
+                fill={COLOR[role]} stroke="#ffffff" strokeWidth="3" paintOrder="stroke">
+                {len(v)}
+              </text>
             );
           })}
 
+          {/* Les noms de sommets sont poussés vers l'extérieur. Le sommet
+              étudié reçoit un décalage plus grand : c'est là que se trouve
+              aussi l'étiquette de l'angle, posée à l'extérieur elle aussi. */}
           {[[A, 'A'], [B, 'B'], [C, 'C']].map(([p, name]) => {
             const cx = (A.x + B.x + C.x) / 3;
             const cy = (A.y + B.y + C.y) / 3;
             const dx = p.x - cx;
             const dy = p.y - cy;
             const n = Math.hypot(dx, dy) || 1;
+            const out = name === vertex ? 52 : 17;
             return (
-              <text key={name} x={p.x + (dx / n) * 16} y={p.y + (dy / n) * 16 + 5}
+              <text key={name} x={p.x + (dx / n) * out} y={p.y + (dy / n) * out + 5}
                 textAnchor="middle" fontSize="15" fontWeight="700"
-                className="font-space" fill="#0f172a">{name}</text>
+                className="font-space" fill="#0f172a"
+                stroke="#ffffff" strokeWidth="3" paintOrder="stroke">{name}</text>
             );
           })}
         </g>

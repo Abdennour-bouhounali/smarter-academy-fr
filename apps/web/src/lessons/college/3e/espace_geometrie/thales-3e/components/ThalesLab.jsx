@@ -157,14 +157,32 @@ export default function ThalesLab({
       >
         <g style={{ pointerEvents: 'none' }}>
           {/* Les deux droites support, prolongées au-delà de A pour rendre le
-              papillon possible et visible. */}
+              papillon visible — mais DÉCOUPÉES sur le cadre. Des multiples
+              fixes (×0,85 et ×1,08) sortaient du viewBox selon la forme du
+              triangle ; on calcule donc le paramètre maximal qui garde le
+              trait à l'intérieur. */}
           {[[B, 'ab'], [C, 'ac']].map(([P, key]) => {
             const dx = P.x - A.x;
             const dy = P.y - A.y;
+            // Plus grand |t| tel que A + t·(P − A) reste dans la boîte.
+            const span = (o, d, lo, hi) => {
+              if (Math.abs(d) < 1e-9) return Infinity;
+              return Math.max((lo - o) / d, (hi - o) / d);
+            };
+            const tPos = Math.min(
+              span(A.x, dx, BOX.xMin + 2, BOX.xMax - 2),
+              span(A.y, dy, BOX.yMin + 2, BOX.yMax - 2),
+              1.12,
+            );
+            const tNeg = Math.min(
+              span(A.x, -dx, BOX.xMin + 2, BOX.xMax - 2),
+              span(A.y, -dy, BOX.yMin + 2, BOX.yMax - 2),
+              0.9,
+            );
             return (
               <line key={key}
-                x1={A.x - dx * 0.85} y1={A.y - dy * 0.85}
-                x2={A.x + dx * 1.08} y2={A.y + dy * 1.08}
+                x1={A.x - dx * tNeg} y1={A.y - dy * tNeg}
+                x2={A.x + dx * tPos} y2={A.y + dy * tPos}
                 stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />
             );
           })}
