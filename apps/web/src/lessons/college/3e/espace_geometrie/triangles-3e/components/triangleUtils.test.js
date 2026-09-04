@@ -17,9 +17,22 @@ describe('tolérances', () => {
     expect(TOL.absMax).toBeLessThanOrEqual(1.5);
   });
 
-  it('compare les angles au degré près', () => {
-    expect(sameAngle(90, 91)).toBe(true);
+  it('l’AFFICHAGE ne peut pas contredire le verdict d’angle droit', () => {
+    // Les angles sont affichés arrondis à l'entier. Tout angle accepté comme
+    // droit doit donc s'afficher « 90° » : sinon l'élève lit « 89° » sous une
+    // figure annoncée rectangle (défaut signalé sur le module 2).
+    for (let a = 85; a <= 95; a += 0.1) {
+      if (sameAngle(a, 90)) {
+        expect(Math.round(a), `${a}° accepté mais affiché ${Math.round(a)}°`).toBe(90);
+      }
+    }
+  });
+
+  it('et réciproquement, un angle visiblement faux est refusé', () => {
+    expect(sameAngle(90, 91)).toBe(false);
+    expect(sameAngle(90, 89)).toBe(false);
     expect(sameAngle(90, 95)).toBe(false);
+    expect(sameAngle(90, 90.3)).toBe(true);
   });
 });
 

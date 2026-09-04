@@ -33,7 +33,20 @@ import {
 export const TOL = {
   lengthRatio: 0.04,
   absMax: 1.5,   // en pixels — l'affichage entier ne peut pas contredire le verdict
-  angleDeg: 1.5,
+  /**
+   * 0,5° et pas davantage : LA TOLÉRANCE DOIT RESPECTER L'AFFICHAGE.
+   *
+   * Les angles sont affichés arrondis à l'entier. Avec 1,5°, un angle de 88,6°
+   * ou 91,4° était accepté comme droit et l'écran affichait « 89° » ou « 91° »
+   * à côté d'une figure annoncée rectangle — le dessin contredisait le verdict
+   * (défaut signalé sur le module 2). À 0,5°, tout angle accepté s'affiche
+   * forcément « 90° ».
+   *
+   * Ce resserrement ne coûte rien à l'élève : `snapRightAngle` projette le
+   * sommet sur le cercle de diamètre opposé, donc l'angle obtenu est exact
+   * (erreur mesurée < 0,05° sur les 212 positions de la zone d'aimantation).
+   */
+  angleDeg: 0.5,
 };
 
 /** Deux longueurs sont-elles égales, au sens de ce que l'écran affiche ? */
