@@ -10,9 +10,15 @@ import { CheckCircle2, XCircle } from 'lucide-react';
  * fragile sur mobile.
  *
  * @param {{id, text, useful}[]} items
- * @param {(id:string)=>void} [onAssign] callback optionnelle à chaque tri
+ * @param {boolean} [formative] quand true (modules de contenu, politique
+ *   formative) : `onSolved` est appelé dès la première vérification, même si
+ *   le tri est faux — la correction reste affichée (icônes + liste des
+ *   données utiles), jamais de boucle « réessaie ». Défaut false : l'ancien
+ *   comportement (onSolved seulement sur un tri juste) est conservé.
+ * @param {(allRight:boolean)=>void} [onCheck] appelé à chaque vérification
+ *   (ex. pour brancher le son/la série du lesson kit : `onCheck={kit.react}`).
  */
-export default function InfoSorter({ items, onSolved, solved }) {
+export default function InfoSorter({ items, onSolved, solved, formative = false, onCheck }) {
   const [assign, setAssign] = useState({}); // id -> 'utile' | 'inutile'
   const [selected, setSelected] = useState(null);
   const [checked, setChecked] = useState(false);
@@ -131,7 +137,8 @@ export default function InfoSorter({ items, onSolved, solved }) {
             type="button"
             onClick={() => {
               setChecked(true);
-              if (allRight) onSolved?.();
+              onCheck?.(allRight);
+              if (allRight || formative) onSolved?.();
             }}
             className="px-5 py-2.5 rounded-xl font-mono text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-sm min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
@@ -140,9 +147,20 @@ export default function InfoSorter({ items, onSolved, solved }) {
         </div>
       )}
 
-      {checked && !allRight && !solved && (
+      {checked && !allRight && !formative && !solved && (
         <p className="text-sm text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-3">
           Certaines cartes sont mal placées (voir les icônes). Touche-les pour les réassigner.
+        </p>
+      )}
+
+      {/* Mode formatif : on ne bloque pas, on montre le bon tri. (Pas de
+          `!solved` ici : onSolved vient d'être appelé, solved est déjà vrai.) */}
+      {checked && !allRight && formative && (
+        <p className="text-sm text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-3">
+          Certaines cartes sont mal placées (voir les icônes ✗). Les <strong>données utiles</strong> sont celles
+          qui servent au calcul :{' '}
+          <strong>{items.filter((it) => it.useful).map((it) => it.text).join(' ')}</strong> Le reste ne change
+          pas le résultat.
         </p>
       )}
     </div>

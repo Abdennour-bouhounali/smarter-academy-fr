@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { Move } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import NumberLine from '../../../../../common/components/NumberLine';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief, NumberField } from '../../../../../common/components/LessonUI';
-import { formatFr, parseFr } from '../components/numberUtils';
+import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
+import { formatFr } from '../components/numberUtils';
 
-/* ─── Étape 1 : lire une position ────────────────────────────────── */
+/**
+ * Module 8 V2 — reconstruit sur le lesson kit. Le placement au curseur reste
+ * une manipulation maison ; lire une position devient une NumericQuestion
+ * (avec la droite graduée en visuel), trouver le pas et l'écart deviennent
+ * des TapQuestion.
+ */
+
 const LECTURES = [
   {
     min: 0,
@@ -27,69 +33,6 @@ const LECTURES = [
   },
 ];
 
-function LirePosition({ item, solved, onSolved }) {
-  const [val, setVal] = useState('');
-  const [fb, setFb] = useState(null);
-
-  const check = () => {
-    const n = parseFr(val);
-    if (n === item.target) {
-      setFb('ok');
-      onSolved?.();
-    } else {
-      setFb('ko');
-    }
-  };
-
-  return (
-    <div className="space-y-3">
-      <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
-        <NumberLine
-          min={item.min}
-          max={item.max}
-          step={item.step}
-          labelEvery={item.labelEvery}
-          markers={[{ value: item.target, label: solved ? formatFr(item.target) : '?', color: '#dc2626' }]}
-          ariaLabel={`Demi-droite graduée de ${formatFr(item.min)} à ${formatFr(item.max)} avec un point à identifier`}
-        />
-      </div>
-
-      {solved ? (
-        <Feedback tone="ok">
-          Le point repère <strong className="font-mono">{formatFr(item.target)}</strong>. {item.explain}
-        </Feedback>
-      ) : (
-        <>
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-sm font-semibold text-slate-700">Quel nombre est repéré par le point rouge ?</span>
-            <NumberField
-              value={val}
-              onChange={(v) => {
-                setVal(v);
-                setFb(null);
-              }}
-              onEnter={check}
-              ariaLabel="Nombre repéré par le point"
-              width="w-32"
-              size="sm"
-            />
-            <ValidateButton onClick={check} disabled={!val}>
-              OK
-            </ValidateButton>
-          </div>
-          {fb === 'ko' && (
-            <Feedback tone="hint">
-              Repère d'abord ce que vaut <strong>une graduation</strong> : entre deux nombres écrits, compte les
-              intervalles. Ici, chaque graduation vaut {formatFr(item.step)}.
-            </Feedback>
-          )}
-        </>
-      )}
-    </div>
-  );
-}
-
-/* ─── Étape 2 : trouver le pas ───────────────────────────────────── */
 const PAS = [
   {
     min: 0,
@@ -112,67 +55,6 @@ const PAS = [
   },
 ];
 
-function TrouverLePas({ item, solved, onSolved }) {
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-
-  return (
-    <div className="space-y-3">
-      <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
-        <NumberLine
-          min={item.min}
-          max={item.max}
-          step={item.step}
-          labelEvery={item.labelEvery}
-          height={140}
-          ariaLabel={`Demi-droite graduée de ${formatFr(item.min)} à ${formatFr(item.max)}`}
-        />
-      </div>
-      <p className="text-sm font-semibold text-slate-700">Combien vaut une graduation (le « pas ») ?</p>
-      <ChoiceGrid
-        options={item.options}
-        selected={pick}
-        onSelect={setPick}
-        revealed={revealed}
-        correctIndex={item.correct}
-        cols={2}
-      />
-      {!revealed && (
-        <ValidateButton
-          onClick={() => {
-            setRevealed(true);
-            if (pick === item.correct) onSolved?.();
-          }}
-          disabled={pick === null}
-        >
-          Valider
-        </ValidateButton>
-      )}
-      {revealed && (
-        <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
-          {item.explain}
-          {pick !== item.correct && (
-            <>
-              {' '}
-              <button
-                type="button"
-                onClick={() => {
-                  setRevealed(false);
-                  setPick(null);
-                }}
-                className="underline font-semibold"
-              >
-                Réessayer
-              </button>
-            </>
-          )}
-        </Feedback>
-      )}
-    </div>
-  );
-}
-
-/* ─── Étape 3 : placer un nombre ─────────────────────────────────── */
 const PLACEMENTS = [
   {
     min: 300,
@@ -194,7 +76,7 @@ const PLACEMENTS = [
   },
 ];
 
-function PlacerNombre({ item, solved, onSolved }) {
+function PlacerNombre({ item, solved, onSolved, react }) {
   const [pos, setPos] = useState(Math.round((item.min + item.max) / 2 / item.step) * item.step);
   const [checked, setChecked] = useState(false);
 
@@ -237,7 +119,8 @@ function PlacerNombre({ item, solved, onSolved }) {
         <ValidateButton
           onClick={() => {
             setChecked(true);
-            if (isRight) onSolved?.();
+            react(isRight);
+            onSolved?.();
           }}
           tone="indigo"
         >
@@ -245,14 +128,14 @@ function PlacerNombre({ item, solved, onSolved }) {
         </ValidateButton>
       )}
 
-      {checked && !isRight && (
+      {(checked || solved) && !isRight && (
         <Feedback tone="ko">
           Tu as placé le curseur sur <strong className="font-mono">{formatFr(pos)}</strong>, soit un écart de{' '}
           <strong className="font-mono">{formatFr(ecart)}</strong> avec la cible (repère vert). {item.explain}
         </Feedback>
       )}
 
-      {solved && (
+      {(checked || solved) && isRight && (
         <Feedback tone="ok">
           Position exacte ! {item.explain}
         </Feedback>
@@ -261,7 +144,6 @@ function PlacerNombre({ item, solved, onSolved }) {
   );
 }
 
-/* ─── Étape 4 : l'écart entre deux points ────────────────────────── */
 const ECART = {
   min: 0,
   max: 5000,
@@ -276,157 +158,166 @@ const ECART = {
 };
 
 export default function Module08DroiteGraduee() {
-  const navLinks = getNavLinks(8);
   const [lecturesDone, setLecturesDone] = useState([]);
   const [pasDone, setPasDone] = useState([]);
   const [placementsDone, setPlacementsDone] = useState([]);
-  const [ecartPick, setEcartPick] = useState(null);
   const [ecartRevealed, setEcartRevealed] = useState(false);
 
   const s1 = lecturesDone.length === LECTURES.length;
   const s2 = pasDone.length === PAS.length;
   const s3 = placementsDone.length === PLACEMENTS.length;
-  const s4 = ecartRevealed && ecartPick === ECART.correct;
-  const allDone = s1 && s2 && s3 && s4;
+  const s4 = ecartRevealed;
 
   const mark = (setter, i) => setter((d) => (d.includes(i) ? d : [...d, i]));
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(8)}
+      moduleNumber={8}
       moduleTitle="La demi-droite graduée"
       moduleSubtitle="Chaque nombre a UNE place sur la droite. Plus on va à droite, plus le nombre est grand."
-      moduleNumber={8}
       estimatedTime="12 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="📏 Repérage" title="Un nombre, une position. Une position, un nombre.">
+      brief={{
+        tag: '📏 Repérage',
+        title: 'Un nombre, une position. Une position, un nombre.',
+        body: (
           <p>
-            Sur une demi-droite graduée, on part de 0 et on avance toujours du même pas. Savoir lire ce pas, c'est
-            savoir lire n'importe quelle position.
+            Sur une demi-droite graduée, on part de 0 et on avance toujours du même pas. Savoir lire ce pas,
+            c'est savoir lire n'importe quelle position.
           </p>
-        </MissionBrief>
-
-        <StepCard num={1} title="Lire la position d'un point" done={s1}>
-          <div className="space-y-8">
-            {LECTURES.map((item, i) =>
-              i === 0 || lecturesDone.includes(i - 1) ? (
-                <LirePosition
-                  key={item.target}
-                  item={item}
-                  solved={lecturesDone.includes(i)}
-                  onSolved={() => mark(setLecturesDone, i)}
-                />
-              ) : null
-            )}
-          </div>
-        </StepCard>
-
-        <StepCard
-          num={2}
-          title="Trouver le pas de la graduation"
-          subtitle="Le pas, c'est la valeur d'un intervalle entre deux graduations voisines."
-          done={s2}
-          locked={!s1}
-        >
-          <div className="space-y-8">
-            {PAS.map((item, i) =>
-              i === 0 || pasDone.includes(i - 1) ? (
-                <TrouverLePas
-                  key={`${item.min}-${item.max}`}
-                  item={item}
-                  solved={pasDone.includes(i)}
-                  onSolved={() => mark(setPasDone, i)}
-                />
-              ) : null
-            )}
-          </div>
-        </StepCard>
-
-        <StepCard
-          num={3}
-          title="Place le nombre au bon endroit"
-          subtitle="Ici, il ne s'agit plus de lire : il faut estimer une grandeur."
-          done={s3}
-          locked={!s2}
-        >
-          <div className="space-y-8">
-            {PLACEMENTS.map((item, i) =>
-              i === 0 || placementsDone.includes(i - 1) ? (
-                <PlacerNombre
-                  key={item.target}
-                  item={item}
-                  solved={placementsDone.includes(i)}
-                  onSolved={() => mark(setPlacementsDone, i)}
-                />
-              ) : null
-            )}
-          </div>
-        </StepCard>
-
-        <StepCard num={4} title="Quel écart sépare les deux points ?" done={s4} locked={!s3}>
-          <div className="space-y-3">
-            <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
-              <NumberLine
-                min={ECART.min}
-                max={ECART.max}
-                step={ECART.step}
-                labelEvery={ECART.labelEvery}
-                markers={[
-                  { value: ECART.a, label: 'A', color: '#dc2626' },
-                  { value: ECART.b, label: 'B', color: '#2563eb' },
-                ]}
-                ariaLabel="Deux points A et B sur une demi-droite graduée"
-              />
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: "Lire la position d'un point",
+          done: s1,
+          content: (
+            <div className="space-y-8">
+              {LECTURES.map((item, i) =>
+                i === 0 || lecturesDone.includes(i - 1) ? (
+                  <NumericQuestion
+                    key={item.target}
+                    prompt="Quel nombre est repéré par le point rouge ?"
+                    above={(revealed) => (
+                      <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
+                        <NumberLine
+                          min={item.min}
+                          max={item.max}
+                          step={item.step}
+                          labelEvery={item.labelEvery}
+                          markers={[{ value: item.target, label: revealed ? formatFr(item.target) : '?', color: '#dc2626' }]}
+                          ariaLabel={`Demi-droite graduée de ${formatFr(item.min)} à ${formatFr(item.max)} avec un point à identifier`}
+                        />
+                      </div>
+                    )}
+                    expected={item.target}
+                    explain={item.explain}
+                    solved={lecturesDone.includes(i)}
+                    onAnswered={() => mark(setLecturesDone, i)}
+                  />
+                ) : null
+              )}
             </div>
-            <p className="text-sm font-semibold text-slate-700">
-              Combien de graduations séparent A et B, et quel écart cela représente-t-il ?
-            </p>
-            <ChoiceGrid
-              options={ECART.options}
-              selected={ecartPick}
-              onSelect={setEcartPick}
-              revealed={ecartRevealed}
-              correctIndex={ECART.correct}
-              cols={2}
-            />
-            {!ecartRevealed && (
-              <ValidateButton onClick={() => setEcartRevealed(true)} disabled={ecartPick === null}>
-                Valider
-              </ValidateButton>
-            )}
-            {ecartRevealed && (
-              <Feedback tone={ecartPick === ECART.correct ? 'ok' : 'ko'}>
-                {ECART.explain}
-                {ecartPick !== ECART.correct && (
-                  <>
-                    {' '}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setEcartRevealed(false);
-                        setEcartPick(null);
-                      }}
-                      className="underline font-semibold"
-                    >
-                      Réessayer
-                    </button>
-                  </>
-                )}
-              </Feedback>
-            )}
-            {s4 && (
-              <Feedback tone="info">
-                Retiens : sur la droite graduée, <strong>plus on va vers la droite, plus le nombre est grand</strong>.
-                Comparer deux nombres, c'est regarder lequel est le plus à droite.
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-      </div>
-    </ModuleLayout>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Trouver le pas de la graduation',
+          subtitle: "Le pas, c'est la valeur d'un intervalle entre deux graduations voisines.",
+          done: s2,
+          content: (
+            <div className="space-y-8">
+              {PAS.map((item, i) =>
+                i === 0 || pasDone.includes(i - 1) ? (
+                  <TapQuestion
+                    key={`${item.min}-${item.max}`}
+                    prompt="Combien vaut une graduation (le « pas ») ?"
+                    above={
+                      <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
+                        <NumberLine
+                          min={item.min}
+                          max={item.max}
+                          step={item.step}
+                          labelEvery={item.labelEvery}
+                          height={140}
+                          ariaLabel={`Demi-droite graduée de ${formatFr(item.min)} à ${formatFr(item.max)}`}
+                        />
+                      </div>
+                    }
+                    options={item.options}
+                    correct={item.correct}
+                    cols={2}
+                    explain={item.explain}
+                    solved={pasDone.includes(i)}
+                    onAnswered={() => mark(setPasDone, i)}
+                  />
+                ) : null
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
+          title: 'Place le nombre au bon endroit',
+          subtitle: "Ici, il ne s'agit plus de lire : il faut estimer une grandeur.",
+          done: s3,
+          content: (kit) => (
+            <div className="space-y-8">
+              {PLACEMENTS.map((item, i) =>
+                i === 0 || placementsDone.includes(i - 1) ? (
+                  <PlacerNombre
+                    key={item.target}
+                    item={item}
+                    solved={placementsDone.includes(i)}
+                    onSolved={() => mark(setPlacementsDone, i)}
+                    react={kit.react}
+                  />
+                ) : null
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 4,
+          title: 'Quel écart sépare les deux points ?',
+          done: s4,
+          content: (
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Combien de graduations séparent A et B, et quel écart cela représente-t-il ?"
+                above={
+                  <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
+                    <NumberLine
+                      min={ECART.min}
+                      max={ECART.max}
+                      step={ECART.step}
+                      labelEvery={ECART.labelEvery}
+                      markers={[
+                        { value: ECART.a, label: 'A', color: '#dc2626' },
+                        { value: ECART.b, label: 'B', color: '#2563eb' },
+                      ]}
+                      ariaLabel="Deux points A et B sur une demi-droite graduée"
+                    />
+                  </div>
+                }
+                options={ECART.options}
+                correct={ECART.correct}
+                cols={2}
+                explain={ECART.explain}
+                onAnswered={() => setEcartRevealed(true)}
+              />
+              {s4 && (
+                <Feedback tone="info">
+                  Retiens : sur la droite graduée, <strong>plus on va vers la droite, plus le nombre est
+                  grand</strong>. Comparer deux nombres, c'est regarder lequel est le plus à droite.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+      ]}
+    />
   );
 }

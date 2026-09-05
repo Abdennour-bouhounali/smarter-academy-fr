@@ -1,6 +1,6 @@
 import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
 
-/** Contexte commun passé à <ModuleLayout> par chacun des 11 modules. */
+/** Contexte commun passé à <ModuleLayout> par chacun des modules. */
 export const MODULE_CTX = {
   lessonId: LESSON_CONFIG.id,
   coursePath: LESSON_BASE_PATH,
@@ -9,7 +9,10 @@ export const MODULE_CTX = {
   chapterTitle: LESSON_CONFIG.chapterTitle,
   levelLabel: 'Collège',
   gradeLabel: '6ème',
-  totalModules: LESSON_CONFIG.totalModules,
+  totalModules: LESSON_CONFIG.modules.length,
+  // Avec un module 0, modules.length ≠ numéro du dernier module — le bouton
+  // « Terminer » de ModuleLayout a besoin du vrai dernier numéro.
+  lastModuleNumber: LESSON_CONFIG.modules[LESSON_CONFIG.modules.length - 1].number,
   sequentialUnlock: LESSON_CONFIG.sequentialUnlock,
 };
 

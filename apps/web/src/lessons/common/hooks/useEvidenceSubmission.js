@@ -20,20 +20,22 @@ import { enqueueEvidence, flushEvidenceQueue } from '../evidenceQueue';
  * tracking is an account-level concept.
  */
 export function useEvidenceSubmission(lessonCode) {
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
 
   // Flush anything a previous offline session left behind — on mount (which
   // includes login, since the lesson tree remounts with a token) and whenever
-  // connectivity returns.
+  // connectivity returns. Gated on `user`, not just `token`: the offline
+  // queue is per-student scoped storage, which needs the current user id
+  // resolved (see AuthContext/authUserId.js) before it can be read safely.
   useEffect(() => {
-    if (!token) return undefined;
+    if (!token || !user) return undefined;
 
     flushEvidenceQueue(token);
     const onOnline = () => flushEvidenceQueue(token);
     window.addEventListener('online', onOnline);
 
     return () => window.removeEventListener('online', onOnline);
-  }, [token]);
+  }, [token, user]);
 
   /**
    * @param {{id: string, assessment?: {enabled: boolean, type: string, learningPointIds: string[]}}} question

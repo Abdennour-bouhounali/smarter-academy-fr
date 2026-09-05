@@ -55,6 +55,20 @@ export const LESSON_CONFIG = {
   },
   modules: [
     {
+      id: '00',
+      number: 0,
+      slug: 'mission-de-depart',
+      path: `${LESSON_BASE_PATH}/mission-de-depart`,
+      title: 'Mission de départ',
+      desc: 'Un petit diagnostic pour savoir par où commencer — jamais un examen.',
+      color: 'teal',
+      style: 'diagnostic',
+      stage: 'prerequisite_check',
+      estimatedMin: 4,
+      difficulty: 1,
+      actionText: 'Vérifier mes bases',
+    },
+    {
       id: '01',
       number: 1,
       slug: 'partage-impossible',

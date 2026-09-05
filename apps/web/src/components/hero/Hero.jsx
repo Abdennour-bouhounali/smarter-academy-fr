@@ -232,7 +232,7 @@ export default function Hero() {
               {/* CTA */}
               <div className="px-5 sm:px-7 pb-5 sm:pb-7">
                 <Link
-                  to="/courses/college/3e/donnees_probabilites/fonctions-lineaires-affines"
+                  to="/courses/college/3e/donnees_probabilites/fonctions-3e"
                   className="flex items-center justify-center gap-2 w-full py-3.5 sm:py-4 rounded-xl text-white font-mono text-sm sm:text-base font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-md hover:shadow-emerald-500/30"
                   style={{ background: 'linear-gradient(135deg, #10b981, #0ea5e9)' }}
                 >

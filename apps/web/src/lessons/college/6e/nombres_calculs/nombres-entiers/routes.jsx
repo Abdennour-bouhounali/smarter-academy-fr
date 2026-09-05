@@ -6,7 +6,11 @@ const LessonHome = lazy(() => import('./index.jsx'));
 
 // Module<NN><Descriptor>.jsx — the restored pre-reset naming convention
 // (docs/architecture/LESSON_CONTRACT.md). Keyed by module `number`, not slug.
+// Rebuilt on the shared lesson kit (src/lessons/common/kit), validated
+// 2026-08-22. The pre-kit originals are archived in ./modules/_archive_original/
+// (not routed, kept for reference only).
 const MODULE_COMPONENTS = {
+  0: lazy(() => import('./modules/Module00Diagnostic.jsx')),
   1: lazy(() => import('./modules/Module01Mission.jsx')),
   2: lazy(() => import('./modules/Module02Construire.jsx')),
   3: lazy(() => import('./modules/Module03LireEcrire.jsx')),

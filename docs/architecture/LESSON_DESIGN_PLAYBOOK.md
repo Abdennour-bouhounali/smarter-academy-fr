@@ -103,6 +103,21 @@ lesson's central idea, defined with: name, purpose, concept, student action, vis
 feedback, discovery, mastery challenge, and why it is memorable. It anchors the trigger or the
 core manipulation module and returns in the boss's Synthèse.
 
+**Every lesson OPENS on a signature manipulation** (`INTERACTION_PEDAGOGY.md` §6bis — normative).
+Module 1 is a laboratory, not an introduction: real situation → curiosity → prediction →
+manipulation → observation → discovery → mathematical question, and only then does the next
+module explain. The manipulation is designed from the lesson's mathematics (what phenomenon must
+the student be able to make happen?), never from a widget list; it is specific to the concept
+(no generic graph-plus-slider reused across lessons); it exposes only meaningful variables, shows
+cause and effect immediately, reveals representations progressively, contains an « aha » the copy
+does not state first, is replayable to its extremes, and leaves each later module its own
+discovery. The layout invariant (§10.6b) and the scope rule (§16b) apply to it with full force.
+The five 3e function lessons (machine mystérieuse, balance du marchand, compteur du taxi,
+graphique de la batterie, sonde de la montgolfière) are the precedent; the three « données » lessons
+(laboratoire du dé, recette pour 7, laboratoire de modélisation) added the operational rules of
+`INTERACTION_PEDAGOGY.md` §6ter (per-session seeded randomness, DOM tracks over SVG text, the
+`disabled`-freezes-the-action bug class, prediction without verdict).
+
 Proven signature interactions (the precedent bank — reuse the *pattern*, not blindly the
 component):
 
@@ -116,6 +131,16 @@ component):
 | durées | `ClockFace` — one full minute-hand turn moves the hour hand | 1 h = 60 min constaté on the mechanism |
 | angles | `Protractor` double graduation with the « 50° ou 130° ? » picker bubble | the classic wrong-scale error becomes the student's own decision |
 | fractions | `PartitionShape` construction — fraction appears as conclusion of taking parts | fraction = equal-parts relation, not two numbers |
+| fonctions-3e (M1) | `FunctionMachine` + `RuleTester` — feed any number, replay a candidate rule on every recorded couple, predict a never-tried input | a function is one rule for all x; same input, same output |
+| fonctions-lineaires-3e (M1) | `ScalingLab` — slide the mass, cherries and coins grow together, couples align through O, a 1 € tray breaks it | proportionality = one multiplier; 0 → 0 |
+| fonctions-affines-3e (M1) | `TaxiMeter` — drive, the meter starts above zero; switch company: start moves or climb changes | two numbers, two different jobs |
+| representation-graphique-3e (M1) | battery graph built row by row on `CoordPlane`, then joined and extended to 0 % | each row is a point; the picture predicts |
+| lecture-graphique-3e (M1) | `GraphProbe` challenges — bring the probe to 3 h, then find an hour at 400 m | the curve answers; one hour → one altitude, one altitude → several hours |
+| probabilites-3e (M1) | `DiceLab` — predict, throw 1 / 10 / 100 / 1 000, six DOM tracks even out, « three 6 then the next throw » ×300, load a face | one throw is unpredictable, a thousand are not; 1/6 comes from the model, not the throws |
+| proportionnalite-3e (M1) | `RecipeLab` — slide the guests 1…12, every ingredient stretches, 7 breaks « doubling », the ÷ personnes column never moves, the cooking time never moves | proportionality = one multiplier; a fixed quantity is not proportional |
+| modelisation-3e (M1) | `ModelTester` + `ModelViews` — sort the app's data, pick the two quantities, replay four models on three tickets, predict 35 min, meet the 8 € cap | a model must agree with all the data; then it predicts, within its domain |
+| vecteurs-2nde (M1) | `DisplacementLab` — pilot the warehouse robot to the station, give the same recipe to a robot that starts elsewhere, chain two orders, drive it back | a displacement is described independently of where it starts; two orders make one direct trip; the return is the opposite |
+| colinearite-alignement-2nde (M1) | `VectorPlane` « le rail » — u and its dashed support line are fixed, the student drags v's tip; three lamps (direction / sens / longueur) recompute | « même direction » ignores length and sense; a vector can leave the rail while both coordinates grow |
 
 ---
 
@@ -213,7 +238,7 @@ mathematics decides):
 | # | Role | Stage | ~min |
 |---|---|---|---|
 | 0 | Mission de départ (diagnostic) | prerequisite_check | 4 |
-| 1 | Trigger / conflict cognitif | trigger | 7–8 |
+| 1 | Trigger = the **signature opening manipulation** (INTERACTION_PEDAGOGY §6bis) | trigger | 7–8 |
 | 2–3 | Core discoveries | discovery | 8–10 each |
 | 4 | Signature manipulation | manipulation | 10–11 |
 | 5 | Formalization (« À retenir » built from the gestures) | formalization | 9–10 |

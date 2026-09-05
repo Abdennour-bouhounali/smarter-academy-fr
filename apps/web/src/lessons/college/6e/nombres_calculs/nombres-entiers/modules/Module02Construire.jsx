@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Repeat, Scissors } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { ContentModule } from '../../../../../common/kit';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Base10Blocks from '../components/Base10Blocks';
-import { Feedback, StepCard, MissionBrief } from '../../../../../common/components/LessonUI';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { formatFr, decompose } from '../components/numberUtils';
 
-/* ─── Le matériel disponible ─────────────────────────────────────── */
+/**
+ * Module 2 V2 — reconstruit sur le lesson kit. La manipulation BlockWorkshop
+ * (matériel base 10) est le cœur pédagogique et reste un composant maison ;
+ * le shell vient du kit, et `react(true)` (son/série) est branché via le
+ * slot-fonction `content(kit)`.
+ */
+
 const MATERIEL = [
   { key: 'UM', name: 'millier', plural: 'milliers', value: 1000, tone: 'text-amber-700 border-amber-300 bg-amber-50' },
   { key: 'C', name: 'centaine', plural: 'centaines', value: 100, tone: 'text-violet-700 border-violet-300 bg-violet-50' },
@@ -17,7 +23,6 @@ const MATERIEL = [
 
 const totalOf = (c) => (c.UM || 0) * 1000 + (c.C || 0) * 100 + (c.D || 0) * 10 + (c.U || 0);
 
-/** Écriture canonique : le moins de blocs possible. */
 const canonical = (n) => ({
   UM: Math.floor(n / 1000),
   C: Math.floor((n % 1000) / 100),
@@ -32,7 +37,6 @@ const isCanonical = (c) => {
 
 const countBlocks = (c) => (c.UM || 0) + (c.C || 0) + (c.D || 0) + (c.U || 0);
 
-/* ─── Atelier de construction ────────────────────────────────────── */
 function BlockWorkshop({
   target,
   start = { UM: 0, C: 0, D: 0, U: 0 },
@@ -59,7 +63,6 @@ function BlockWorkshop({
   const bump = (key, delta) =>
     setCounts((c) => ({ ...c, [key]: Math.max(0, (c[key] || 0) + delta) }));
 
-  /* Échanges : 10 petits blocs → 1 grand bloc. Le regroupement par 10 devient visible. */
   const EXCHANGES = [
     { from: 'U', to: 'D', label: '10 unités = 1 dizaine' },
     { from: 'D', to: 'C', label: '10 dizaines = 1 centaine' },
@@ -82,7 +85,6 @@ function BlockWorkshop({
 
   return (
     <div className="space-y-4">
-      {/* Palette */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {MATERIEL.filter((m) => available.includes(m.key)).map((m) => (
           <div key={m.key} className={`rounded-xl border-2 p-3 space-y-2 ${m.tone}`}>
@@ -116,7 +118,6 @@ function BlockWorkshop({
         ))}
       </div>
 
-      {/* Échanges et découpages */}
       <AnimatePresence>
         {(EXCHANGES.length > 0 || SPLITS.length > 0) && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
@@ -148,12 +149,10 @@ function BlockWorkshop({
         )}
       </AnimatePresence>
 
-      {/* Le matériel construit */}
       <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
         <Base10Blocks counts={counts} max={maxRender} />
       </div>
 
-      {/* Compteur : la représentation visuelle et l'écriture chiffrée avancent ensemble */}
       <div
         className={`rounded-2xl border-2 p-4 flex items-center justify-between gap-4 flex-wrap transition-colors ${
           solved ? 'border-emerald-300 bg-emerald-50' : 'border-slate-200 bg-white'
@@ -197,7 +196,6 @@ function BlockWorkshop({
   );
 }
 
-/* ─── Révélation : du matériel à l'écriture symbolique ───────────── */
 function Reveal({ n }) {
   const parts = decompose(n);
   return (
@@ -219,169 +217,182 @@ function Reveal({ n }) {
 }
 
 export default function Module02Construire() {
-  const navLinks = getNavLinks(2);
   const [s1, setS1] = useState(false);
   const [s2, setS2] = useState(false);
   const [s3a, setS3a] = useState(false);
   const [s3b, setS3b] = useState(false);
 
-  const allDone = s1 && s2 && s3a && s3b;
-
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(2)}
+      moduleNumber={2}
       moduleTitle="Construire les nombres"
       moduleSubtitle="Fabrique les nombres avec du matériel base 10 : le groupement par 10 devient visible."
-      moduleNumber={2}
       estimatedTime="12 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="🧱 Atelier" title="Avant d'écrire un nombre, on va le fabriquer.">
-          <p>
-            Tu disposes de quatre sortes de matériel. Regarde bien : chaque forme est faite de dix formes plus
-            petites.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
-            {[
-              ['🟩', '1 cube', '= 1 unité'],
-              ['🟦', '1 barre', '= 10 cubes'],
-              ['🟪', '1 plaque', '= 10 barres'],
-              ['🟧', '1 bloc', '= 10 plaques'],
-            ].map(([e, t, s]) => (
-              <div key={t} className="bg-white/10 rounded-xl p-2.5 text-center">
-                <div className="text-xl" aria-hidden="true">{e}</div>
-                <div className="text-xs font-bold text-white">{t}</div>
-                <div className="text-[10px] font-mono text-slate-300">{s}</div>
-              </div>
-            ))}
-          </div>
-        </MissionBrief>
-
-        {/* Étape 1 */}
-        <StepCard
-          num={1}
-          title="Construis le nombre 347"
-          subtitle="Plusieurs assemblages sont possibles… mais un seul utilise le minimum de blocs."
-          done={s1}
-        >
-          <BlockWorkshop
-            target={347}
-            available={['C', 'D', 'U']}
-            requireCanonical
-            maxRender={12}
-            onReach={() => setS1(true)}
-            successNote={
-              <>
-                Parfait : <strong>3 plaques</strong>, <strong>4 barres</strong> et <strong>7 cubes</strong>.
-              </>
-            }
-          />
-          {s1 && (
-            <div className="space-y-3">
-              <Reveal n={347} />
-              <Feedback tone="info">
-                3 centaines, 4 dizaines et 7 unités. On écrit ce nombre <strong className="font-mono">347</strong> :
-                les chiffres se rangent dans l'ordre des paquets, du plus gros au plus petit.
-              </Feedback>
-            </div>
-          )}
-        </StepCard>
-
-        {/* Étape 2 */}
-        <StepCard
-          num={2}
-          title="Construis maintenant 1 205"
-          subtitle="Attention : une position va rester vide."
-          done={s2}
-          locked={!s1}
-        >
-          <BlockWorkshop
-            target={1205}
-            requireCanonical
-            maxRender={12}
-            onReach={() => setS2(true)}
-            successNote={<>1 bloc, 2 plaques, aucune barre et 5 cubes.</>}
-          />
-          {s2 && (
-            <div className="space-y-3">
-              <Reveal n={1205} />
-              <Feedback tone="info">
-                Tu n'as posé <strong>aucune barre</strong> : il n'y a pas de dizaine dans 1 205. Pourtant on ne
-                peut pas écrire « 125 » ! Le <strong className="font-mono text-lg">0</strong> occupe la place des
-                dizaines pour que le 2 reste bien à la place des centaines. On y reviendra au module 5.
-              </Feedback>
-            </div>
-          )}
-        </StepCard>
-
-        {/* Étape 3 */}
-        <StepCard
-          num={3}
-          title="Atelier d'échange : de 37 à 50"
-          subtitle="Ajoute 1 dizaine, puis 3 unités. Observe ce qui se passe quand les unités s'accumulent."
-          done={s3a && s3b}
-          locked={!s2}
-        >
-          <div className="space-y-4">
-            <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900">
-              <strong>Objectif 1 :</strong> partir de 37 et atteindre exactement 50, en utilisant l'échange
-              « 10 unités = 1 dizaine ».
-            </div>
-
-            <BlockWorkshop
-              target={50}
-              start={{ UM: 0, C: 0, D: 3, U: 7 }}
-              available={['D', 'U']}
-              requireCanonical
-              allowSplit
-              maxRender={50}
-              onReach={() => setS3a(true)}
-              successNote={<>50 atteint, et rangé au plus court : <strong>5 dizaines</strong>.</>}
-            />
-
-            {s3a && (
-              <>
-                <Feedback tone="ok">
-                  Tu as vu la transformation : 37 <span className="font-mono">+ 10</span> = 47, puis 47{' '}
-                  <span className="font-mono">+ 3</span> = 50. En arrivant à 10 unités, elles se sont regroupées
-                  en 1 dizaine. <strong>50 = 5 dizaines.</strong>
-                </Feedback>
-
-                <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900">
-                  <strong>Objectif 2 :</strong> montre le même nombre 50 avec <strong>uniquement des unités</strong>.
-                  Utilise les boutons <em>Casser</em>.
+      brief={{
+        tag: '🧱 Atelier',
+        title: "Avant d'écrire un nombre, on va le fabriquer.",
+        body: (
+          <>
+            <p>
+              Tu disposes de quatre sortes de matériel. Regarde bien : chaque forme est faite de dix formes plus
+              petites.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+              {[
+                ['🟩', '1 cube', '= 1 unité'],
+                ['🟦', '1 barre', '= 10 cubes'],
+                ['🟪', '1 plaque', '= 10 barres'],
+                ['🟧', '1 bloc', '= 10 plaques'],
+              ].map(([e, t, s]) => (
+                <div key={t} className="bg-white/10 rounded-xl p-2.5 text-center">
+                  <div className="text-xl" aria-hidden="true">{e}</div>
+                  <div className="text-xs font-bold text-white">{t}</div>
+                  <div className="text-[10px] font-mono text-slate-300">{s}</div>
                 </div>
+              ))}
+            </div>
+          </>
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: 'Construis le nombre 347',
+          subtitle: 'Plusieurs assemblages sont possibles… mais un seul utilise le minimum de blocs.',
+          done: s1,
+          content: (kit) => (
+            <>
+              <BlockWorkshop
+                target={347}
+                available={['C', 'D', 'U']}
+                requireCanonical
+                maxRender={12}
+                onReach={() => {
+                  if (!s1) kit.react(true);
+                  setS1(true);
+                }}
+                successNote={
+                  <>
+                    Parfait : <strong>3 plaques</strong>, <strong>4 barres</strong> et <strong>7 cubes</strong>.
+                  </>
+                }
+              />
+              {s1 && (
+                <div className="space-y-3 mt-4">
+                  <Reveal n={347} />
+                  <Feedback tone="info">
+                    3 centaines, 4 dizaines et 7 unités. On écrit ce nombre{' '}
+                    <strong className="font-mono">347</strong> : les chiffres se rangent dans l'ordre des
+                    paquets, du plus gros au plus petit.
+                  </Feedback>
+                </div>
+              )}
+            </>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Construis maintenant 1 205',
+          subtitle: 'Attention : une position va rester vide.',
+          done: s2,
+          content: (kit) => (
+            <>
+              <BlockWorkshop
+                target={1205}
+                requireCanonical
+                maxRender={12}
+                onReach={() => {
+                  if (!s2) kit.react(true);
+                  setS2(true);
+                }}
+                successNote={<>1 bloc, 2 plaques, aucune barre et 5 cubes.</>}
+              />
+              {s2 && (
+                <div className="space-y-3 mt-4">
+                  <Reveal n={1205} />
+                  <Feedback tone="info">
+                    Tu n'as posé <strong>aucune barre</strong> : il n'y a pas de dizaine dans 1 205. Pourtant on
+                    ne peut pas écrire « 125 » ! Le <strong className="font-mono text-lg">0</strong> occupe la
+                    place des dizaines pour que le 2 reste bien à la place des centaines. On y reviendra au
+                    module 5.
+                  </Feedback>
+                </div>
+              )}
+            </>
+          ),
+        },
+        {
+          num: 3,
+          title: "Atelier d'échange : de 37 à 50",
+          subtitle: "Ajoute 1 dizaine, puis 3 unités. Observe ce qui se passe quand les unités s'accumulent.",
+          done: s3a && s3b,
+          content: (kit) => (
+            <div className="space-y-4">
+              <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900">
+                <strong>Objectif 1 :</strong> partir de 37 et atteindre exactement 50, en utilisant l'échange
+                « 10 unités = 1 dizaine ».
+              </div>
 
-                <BlockWorkshop
-                  target={50}
-                  start={{ UM: 0, C: 0, D: 5, U: 0 }}
-                  available={['D', 'U']}
-                  allowSplit
-                  maxRender={50}
-                  goalCheck={(c) => (c.U || 0) === 50 && (c.D || 0) === 0}
-                  onReach={() => setS3b(true)}
-                  successNote={
-                    <>
-                      <strong>50 = 50 unités = 5 dizaines.</strong> Deux représentations, un seul nombre.
-                    </>
-                  }
-                />
-              </>
-            )}
+              <BlockWorkshop
+                target={50}
+                start={{ UM: 0, C: 0, D: 3, U: 7 }}
+                available={['D', 'U']}
+                requireCanonical
+                allowSplit
+                maxRender={50}
+                onReach={() => {
+                  if (!s3a) kit.react(true);
+                  setS3a(true);
+                }}
+                successNote={<>50 atteint, et rangé au plus court : <strong>5 dizaines</strong>.</>}
+              />
 
-            {s3b && (
-              <Feedback tone="info">
-                Voilà pourquoi on regroupe : <strong>50 unités</strong> et <strong>5 dizaines</strong>, c'est la
-                même quantité, mais l'une se lit d'un coup d'œil et l'autre non. Les positions servent à écrire
-                les grandes quantités sans tout compter.
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-      </div>
-    </ModuleLayout>
+              {s3a && (
+                <>
+                  <Feedback tone="ok">
+                    Tu as vu la transformation : 37 <span className="font-mono">+ 10</span> = 47, puis 47{' '}
+                    <span className="font-mono">+ 3</span> = 50. En arrivant à 10 unités, elles se sont
+                    regroupées en 1 dizaine. <strong>50 = 5 dizaines.</strong>
+                  </Feedback>
+
+                  <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900">
+                    <strong>Objectif 2 :</strong> montre le même nombre 50 avec{' '}
+                    <strong>uniquement des unités</strong>. Utilise les boutons <em>Casser</em>.
+                  </div>
+
+                  <BlockWorkshop
+                    target={50}
+                    start={{ UM: 0, C: 0, D: 5, U: 0 }}
+                    available={['D', 'U']}
+                    allowSplit
+                    maxRender={50}
+                    goalCheck={(c) => (c.U || 0) === 50 && (c.D || 0) === 0}
+                    onReach={() => {
+                      if (!s3b) kit.react(true);
+                      setS3b(true);
+                    }}
+                    successNote={
+                      <>
+                        <strong>50 = 50 unités = 5 dizaines.</strong> Deux représentations, un seul nombre.
+                      </>
+                    }
+                  />
+                </>
+              )}
+
+              {s3b && (
+                <Feedback tone="info">
+                  Voilà pourquoi on regroupe : <strong>50 unités</strong> et <strong>5 dizaines</strong>, c'est
+                  la même quantité, mais l'une se lit d'un coup d'œil et l'autre non. Les positions servent à
+                  écrire les grandes quantités sans tout compter.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+      ]}
+    />
   );
 }

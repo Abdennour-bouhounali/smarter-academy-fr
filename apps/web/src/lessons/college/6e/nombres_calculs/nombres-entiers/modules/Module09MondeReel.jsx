@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Eye } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { ContentModule, TapQuestion } from '../../../../../common/kit';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief, QuantityCard } from '../../../../../common/components/LessonUI';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { formatFr, spellFr } from '../components/numberUtils';
 
-/* ─── Étape 1 : six quantités réelles ────────────────────────────── */
+/**
+ * Module 9 V2 — reconstruit sur le lesson kit. Les six quantités du monde
+ * réel deviennent les options riches d'une TapQuestion (renderOption) ;
+ * estimations et nombre manquant passent aussi en TapQuestion.
+ */
+
 const CARTES = [
   { id: 'ville', emoji: '🏙️', label: "Habitants d'une ville", value: 105300, unit: 'habitants' },
   { id: 'lune', emoji: '🌙', label: 'Distance Terre – Lune', value: 384400, unit: 'km' },
@@ -16,9 +20,8 @@ const CARTES = [
   { id: 'musee', emoji: '🏛️', label: 'Visiteurs du musée en un an', value: 305000, unit: 'visiteurs' },
 ];
 
-const PLUS_GRAND = 'lune';
+const PLUS_GRAND_INDEX = CARTES.findIndex((c) => c.id === 'lune');
 
-/* ─── Étape 2 : estimer avant de lire ────────────────────────────── */
 const ESTIMATIONS = [
   {
     situation: "Le nombre d'élèves d'un collège",
@@ -45,7 +48,6 @@ const ESTIMATIONS = [
   },
 ];
 
-/* ─── Étape 3 : le nombre manquant ───────────────────────────────── */
 const MANQUANT = {
   low: 2450,
   high: 18700,
@@ -56,249 +58,160 @@ const MANQUANT = {
 };
 
 export default function Module09MondeReel() {
-  const navLinks = getNavLinks(9);
-  const [pickCarte, setPickCarte] = useState(null);
-  const [carteRevealed, setCarteRevealed] = useState(false);
+  const [carteDone, setCarteDone] = useState(false);
   const [estimDone, setEstimDone] = useState([]);
-  const [manqPick, setManqPick] = useState(null);
-  const [manqRevealed, setManqRevealed] = useState(false);
+  const [manqDone, setManqDone] = useState(false);
 
-  const s1 = carteRevealed && pickCarte === PLUS_GRAND;
+  const s1 = carteDone;
   const s2 = estimDone.length === ESTIMATIONS.length;
-  const s3 = manqRevealed && manqPick === MANQUANT.correct;
-  const allDone = s1 && s2 && s3;
+  const s3 = manqDone;
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(9)}
+      moduleNumber={9}
       moduleTitle="Les nombres dans le monde réel"
       moduleSubtitle="Habitants, distances, spectateurs : à quoi sert vraiment de savoir lire un grand nombre ?"
-      moduleNumber={9}
       estimatedTime="8 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="🌍 Contexte" title="Les grands nombres racontent le monde.">
+      brief={{
+        tag: '🌍 Contexte',
+        title: 'Les grands nombres racontent le monde.',
+        body: (
           <p>
             Une population, une distance, un prix, un nombre de visiteurs : dans chaque cas, le nombre porte une
             information. Savoir le lire, c'est comprendre de quoi on parle.
           </p>
-        </MissionBrief>
-
-        {/* Étape 1 */}
-        <StepCard num={1} title="Quel nombre représente la plus grande quantité ?" done={s1}>
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {CARTES.map((c, i) => (
-                <motion.div
-                  key={c.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <QuantityCard
-                    emoji={c.emoji}
-                    label={c.label}
-                    value={formatFr(c.value)}
-                    unit={c.unit}
-                    selected={pickCarte === c.id}
-                    disabled={carteRevealed && s1}
-                    onClick={() => {
-                      if (s1) return;
-                      setPickCarte(c.id);
-                      setCarteRevealed(false);
-                    }}
-                    footer={
-                      s1 ? (
-                        <span className="font-mono">
-                          {String(c.value).length} chiffres — {spellFr(c.value)}
-                        </span>
-                      ) : null
-                    }
-                  />
-                </motion.div>
-              ))}
-            </div>
-
-            {!s1 && (
-              <ValidateButton onClick={() => setCarteRevealed(true)} disabled={!pickCarte}>
-                Valider ma réponse
-              </ValidateButton>
-            )}
-
-            {carteRevealed && (
-              <Feedback tone={s1 ? 'ok' : 'ko'}>
-                {s1 ? (
-                  <>
-                    Exact : la distance Terre – Lune, <strong className="font-mono">384 400 km</strong>, est la
-                    plus grande quantité. Avec 105 300 et 305 000, elle fait partie des trois nombres à 6
-                    chiffres. Face à 305 000, les centaines de milliers sont égales (3 = 3) : tout se joue aux
-                    dizaines de milliers, <strong className="font-mono">8 contre 0</strong>.
-                  </>
-                ) : (
-                  <>
-                    Pas encore. Commence par repérer les nombres qui ont <strong>le plus de chiffres</strong> :
-                    105 300, 384 400 et 305 000 en ont 6. Ensuite, compare-les position par position.
-                  </>
-                )}
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-
-        {/* Étape 2 */}
-        <StepCard
-          num={2}
-          title="Estime avant de lire la valeur exacte"
-          subtitle="Dans la vie, on a souvent besoin d'un ordre de grandeur plutôt que du nombre exact."
-          done={s2}
-          locked={!s1}
-        >
-          <div className="space-y-5">
-            {ESTIMATIONS.map((e, i) => (
-              <EstimationItem
-                key={e.situation}
-                item={e}
-                solved={estimDone.includes(i)}
-                onSolved={() => setEstimDone((d) => (d.includes(i) ? d : [...d, i]))}
-              />
-            ))}
-            {s2 && (
-              <Feedback tone="info">
-                Estimer, c'est choisir le bon <strong>ordre de grandeur</strong> : des dizaines, des centaines,
-                des milliers ou des centaines de milliers. C'est exactement ce que t'indique le nombre de
-                chiffres.
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-
-        {/* Étape 3 */}
-        <StepCard num={3} title="Quel nombre manque ?" done={s3} locked={!s2}>
-          <div className="space-y-4">
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Trois villages sont classés du moins peuplé au plus peuplé. Le tableau du milieu a été effacé.
-            </p>
-
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                { label: 'Village A', value: formatFr(MANQUANT.low) },
-                { label: 'Village B', value: s3 ? formatFr(MANQUANT.options[MANQUANT.correct]) : '?' },
-                { label: 'Village C', value: formatFr(MANQUANT.high) },
-              ].map((v) => (
-                <div
-                  key={v.label}
-                  className={`rounded-2xl border-2 p-3 text-center ${
-                    v.value === '?' ? 'border-dashed border-amber-400 bg-amber-50' : 'border-slate-200 bg-white'
-                  }`}
-                >
-                  <div className="text-[10px] font-mono text-slate-500 uppercase">{v.label}</div>
-                  <div className="font-mono font-extrabold text-base sm:text-xl text-slate-800 tabular-nums">
-                    {v.value}
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: 'Quel nombre représente la plus grande quantité ?',
+          done: s1,
+          content: (
+            <TapQuestion
+              options={CARTES}
+              correct={PLUS_GRAND_INDEX}
+              cols={2}
+              renderOption={(c) => (
+                <span className="flex items-center gap-3 w-full">
+                  <span className="text-2xl shrink-0" aria-hidden="true">{c.emoji}</span>
+                  <span className="min-w-0">
+                    <span className="block text-[11px] font-mono text-slate-500 uppercase tracking-wide truncate">
+                      {c.label}
+                    </span>
+                    <span className="block font-mono font-extrabold text-lg tabular-nums">
+                      {formatFr(c.value)}{' '}
+                      <span className="text-xs font-semibold text-slate-500">{c.unit}</span>
+                    </span>
+                    {carteDone && (
+                      <span className="block text-[10px] font-mono text-slate-400">
+                        {String(c.value).length} chiffres — {spellFr(c.value)}
+                      </span>
+                    )}
+                  </span>
+                </span>
+              )}
+              correctionLabel="la distance Terre – Lune (384 400 km)"
+              explain={
+                <>
+                  La distance Terre – Lune, <strong className="font-mono">384 400 km</strong>, est la plus
+                  grande quantité. Avec 105 300 et 305 000, elle fait partie des trois nombres à 6 chiffres.
+                  Face à 305 000, les centaines de milliers sont égales (3 = 3) : tout se joue aux dizaines de
+                  milliers, <strong className="font-mono">8 contre 0</strong>.
+                </>
+              }
+              explainWrong={
+                <>
+                  Commence par repérer les nombres qui ont <strong>le plus de chiffres</strong> : 105 300,
+                  384 400 et 305 000 en ont 6. Ensuite, compare-les position par position — tout se joue aux
+                  dizaines de milliers, <strong className="font-mono">8 contre 0</strong>.
+                </>
+              }
+              onAnswered={() => setCarteDone(true)}
+            />
+          ),
+        },
+        {
+          num: 2,
+          title: 'Estime avant de lire la valeur exacte',
+          subtitle: "Dans la vie, on a souvent besoin d'un ordre de grandeur plutôt que du nombre exact.",
+          done: s2,
+          content: (
+            <div className="space-y-5">
+              {ESTIMATIONS.map((e, i) => (
+                <div key={e.situation} className="border-2 border-slate-200 rounded-2xl p-4 space-y-3 bg-white">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl" aria-hidden="true">{e.emoji}</span>
+                    <span className="text-sm font-semibold text-slate-800">{e.situation}</span>
                   </div>
-                  <div className="text-[10px] font-mono text-slate-400">habitants</div>
+                  <p className="text-xs text-slate-500 flex items-center gap-1.5">
+                    <Eye className="w-3.5 h-3.5" aria-hidden="true" /> Quel ordre de grandeur te paraît réaliste ?
+                  </p>
+                  <TapQuestion
+                    options={e.options}
+                    correct={e.correct}
+                    cols={3}
+                    explain={e.explain}
+                    solved={estimDone.includes(i)}
+                    onAnswered={() => setEstimDone((d) => (d.includes(i) ? d : [...d, i]))}
+                  />
                 </div>
               ))}
+              {s2 && (
+                <Feedback tone="info">
+                  Estimer, c'est choisir le bon <strong>ordre de grandeur</strong> : des dizaines, des centaines,
+                  des milliers ou des centaines de milliers. C'est exactement ce que t'indique le nombre de
+                  chiffres.
+                </Feedback>
+              )}
             </div>
+          ),
+        },
+        {
+          num: 3,
+          title: 'Quel nombre manque ?',
+          done: s3,
+          content: (
+            <div className="space-y-4">
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Trois villages sont classés du moins peuplé au plus peuplé. Le tableau du milieu a été effacé.
+              </p>
 
-            <p className="text-sm font-semibold text-slate-700">
-              Quel nombre peut convenir pour le village B ?
-            </p>
-            <ChoiceGrid
-              options={MANQUANT.options.map((o) => formatFr(o))}
-              selected={manqPick}
-              onSelect={setManqPick}
-              revealed={manqRevealed}
-              correctIndex={MANQUANT.correct}
-              cols={2}
-            />
-            {!manqRevealed && (
-              <ValidateButton onClick={() => setManqRevealed(true)} disabled={manqPick === null}>
-                Valider
-              </ValidateButton>
-            )}
-            {manqRevealed && (
-              <Feedback tone={s3 ? 'ok' : 'ko'}>
-                {MANQUANT.explain}
-                {!s3 && (
-                  <>
-                    {' '}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setManqRevealed(false);
-                        setManqPick(null);
-                      }}
-                      className="underline font-semibold"
-                    >
-                      Réessayer
-                    </button>
-                  </>
-                )}
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-      </div>
-    </ModuleLayout>
-  );
-}
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { label: 'Village A', value: formatFr(MANQUANT.low) },
+                  { label: 'Village B', value: s3 ? formatFr(MANQUANT.options[MANQUANT.correct]) : '?' },
+                  { label: 'Village C', value: formatFr(MANQUANT.high) },
+                ].map((v) => (
+                  <div
+                    key={v.label}
+                    className={`rounded-2xl border-2 p-3 text-center ${
+                      v.value === '?' ? 'border-dashed border-amber-400 bg-amber-50' : 'border-slate-200 bg-white'
+                    }`}
+                  >
+                    <div className="text-[10px] font-mono text-slate-500 uppercase">{v.label}</div>
+                    <div className="font-mono font-extrabold text-base sm:text-xl text-slate-800 tabular-nums">
+                      {v.value}
+                    </div>
+                    <div className="text-[10px] font-mono text-slate-400">habitants</div>
+                  </div>
+                ))}
+              </div>
 
-/* ─── Item d'estimation ──────────────────────────────────────────── */
-function EstimationItem({ item, solved, onSolved }) {
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-
-  return (
-    <div className="border-2 border-slate-200 rounded-2xl p-4 space-y-3 bg-white">
-      <div className="flex items-center gap-2">
-        <span className="text-xl" aria-hidden="true">{item.emoji}</span>
-        <span className="text-sm font-semibold text-slate-800">{item.situation}</span>
-      </div>
-      <p className="text-xs text-slate-500 flex items-center gap-1.5">
-        <Eye className="w-3.5 h-3.5" aria-hidden="true" /> Quel ordre de grandeur te paraît réaliste ?
-      </p>
-      <ChoiceGrid
-        options={item.options}
-        selected={pick}
-        onSelect={setPick}
-        revealed={revealed}
-        correctIndex={item.correct}
-        cols={3}
-      />
-      {!revealed && (
-        <ValidateButton
-          onClick={() => {
-            setRevealed(true);
-            if (pick === item.correct) onSolved?.();
-          }}
-          disabled={pick === null}
-        >
-          Valider
-        </ValidateButton>
-      )}
-      {revealed && (
-        <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
-          {item.explain}
-          {!solved && pick !== item.correct && (
-            <>
-              {' '}
-              <button
-                type="button"
-                onClick={() => {
-                  setRevealed(false);
-                  setPick(null);
-                }}
-                className="underline font-semibold"
-              >
-                Réessayer
-              </button>
-            </>
-          )}
-        </Feedback>
-      )}
-    </div>
+              <TapQuestion
+                prompt="Quel nombre peut convenir pour le village B ?"
+                options={MANQUANT.options.map((o) => formatFr(o))}
+                correct={MANQUANT.correct}
+                cols={2}
+                explain={MANQUANT.explain}
+                onAnswered={() => setManqDone(true)}
+              />
+            </div>
+          ),
+        },
+      ]}
+    />
   );
 }

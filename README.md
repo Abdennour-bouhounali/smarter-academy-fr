@@ -55,4 +55,5 @@ Backend tests: `cd apps/api && php artisan test`. Backend formatting: `cd apps/a
 - [`packages/core/README.md`](./packages/core/README.md) — what belongs in the shared logic package, and why
 - [`CONTRIBUTING.md`](./CONTRIBUTING.md) — naming and code conventions
 - [`.agents/AGENTS.md`](./.agents/AGENTS.md) — the mandatory pedagogical loop every lesson module must follow
+- [`docs/architecture/INTERACTION_PEDAGOGY.md`](./docs/architecture/INTERACTION_PEDAGOGY.md) — how a concept becomes manipulable: the interaction & pedagogy contract for lesson authors and AI agents
 - [`apps/web/src/lessons/common/components/README.md`](./apps/web/src/lessons/common/components/README.md) — `MathText`/`MathInput` usage

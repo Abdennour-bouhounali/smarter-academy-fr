@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DiagnosticController;
 use App\Http\Controllers\LearningEvidenceController;
 use App\Http\Controllers\LearningProfileController;
+use App\Http\Controllers\LessonFinalTestAttemptController;
 use App\Http\Controllers\LessonProgressController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,9 @@ Route::prefix('v1')->group(function () {
 
         Route::post('/lessons/{lessonCode}/evidence', [LearningEvidenceController::class, 'store']);
         Route::put('/lessons/{lessonCode}/progress', [LessonProgressController::class, 'upsert']);
+        Route::get('/lessons/{lessonCode}/final-test-attempt', [LessonFinalTestAttemptController::class, 'show']);
+        Route::put('/lessons/{lessonCode}/final-test-attempt', [LessonFinalTestAttemptController::class, 'store']);
+        Route::delete('/lessons/{lessonCode}/final-test-attempt', [LessonFinalTestAttemptController::class, 'destroy']);
         Route::get('/students/me/learning-profile', [LearningProfileController::class, 'show']);
         Route::get('/students/me/lesson-progress', [LessonProgressController::class, 'index']);
     });

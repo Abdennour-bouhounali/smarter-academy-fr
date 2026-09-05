@@ -10,6 +10,9 @@ export const MODULE_CTX = {
   levelLabel: 'Collège',
   gradeLabel: '6ème',
   totalModules: LESSON_CONFIG.modules.length,
+  // With a module 0, modules.length ≠ last module number — the "Terminer"
+  // button (ModuleLayout) needs the real last number.
+  lastModuleNumber: LESSON_CONFIG.modules[LESSON_CONFIG.modules.length - 1].number,
   sequentialUnlock: LESSON_CONFIG.sequentialUnlock,
 };
 

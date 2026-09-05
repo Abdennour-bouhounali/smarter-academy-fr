@@ -3,6 +3,8 @@
 // spans exactly 360/N degrees, and every visual (cuts, selection, labels,
 // hit-testing) is derived from the same angle math — nothing is eyeballed.
 
+export { formatDec } from '@smarter-academy/core';
+
 export const PIZZA_CX = 100;
 export const PIZZA_CY = 100;
 export const PIZZA_R = 88;

@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MousePointerClick } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { ContentModule, TapQuestion } from '../../../../../common/kit';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PlaceValueTable from '../components/PlaceValueTable';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief } from '../../../../../common/components/LessonUI';
+import { Feedback, ChoiceGrid, XPBurst } from '../../../../../common/components/LessonUI';
 import { formatFr, PLACE_SINGULAR } from '../components/numberUtils';
+
+/**
+ * Module 4 V2 — reconstruit sur le lesson kit. La chasse au chiffre (clic
+ * dans le tableau de numération) et le quiz séquentiel 5 555 restent des
+ * interactions maison ; les QCM passent en TapQuestion.
+ */
 
 const GRAND = 4582307;
 
 const PLACE_VALUE = { M: 1000000, CM: 100000, DM: 10000, UM: 1000, C: 100, D: 10, U: 1 };
 
-/* ─── Étape 1 : chasse au chiffre ────────────────────────────────── */
 const CHASSES = [
   {
     digit: 8,
@@ -43,8 +48,6 @@ const CHASSES = [
 
 function DigitHunt({ chasse, solved, onSolved }) {
   const [clicked, setClicked] = useState(null);
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
 
   const located = clicked === chasse.key;
 
@@ -57,8 +60,6 @@ function DigitHunt({ chasse, solved, onSolved }) {
           onDigitClick={(cell) => {
             if (solved) return;
             setClicked(cell.key);
-            setPick(null);
-            setRevealed(false);
           }}
         />
       </div>
@@ -82,47 +83,25 @@ function DigitHunt({ chasse, solved, onSolved }) {
       )}
 
       {clicked && (
-        <>
-          <p className="text-sm font-semibold text-slate-700">
-            Que représente le chiffre <span className="font-mono text-base">{chasse.digit}</span> dans{' '}
-            <span className="font-mono">{formatFr(GRAND)}</span> ?
-          </p>
-          <ChoiceGrid
-            options={chasse.options}
-            selected={pick}
-            onSelect={setPick}
-            revealed={revealed}
-            correctIndex={chasse.correct}
-            cols={2}
-          />
-          {!revealed && (
-            <ValidateButton
-              onClick={() => {
-                setRevealed(true);
-                onSolved?.();
-              }}
-              disabled={pick === null}
-            >
-              Valider
-            </ValidateButton>
-          )}
-          {revealed && (
-            <Feedback tone={pick === chasse.correct ? 'ok' : 'ko'}>
-              {pick !== chasse.correct && (
-                <>
-                  Bonne réponse : <strong>{chasse.options[chasse.correct]}</strong>. {' '}
-                </>
-              )}
-              {chasse.explain}
-            </Feedback>
-          )}
-        </>
+        <TapQuestion
+          prompt={
+            <>
+              Que représente le chiffre <span className="font-mono text-base">{chasse.digit}</span> dans{' '}
+              <span className="font-mono">{formatFr(GRAND)}</span> ?
+            </>
+          }
+          options={chasse.options}
+          correct={chasse.correct}
+          cols={2}
+          explain={chasse.explain}
+          solved={solved}
+          onAnswered={() => onSolved?.()}
+        />
       )}
     </div>
   );
 }
 
-/* ─── Étape 2 : le nombre 5 555 ──────────────────────────────────── */
 const CINQS = [
   { key: 'UM', label: 'milliers', options: ['5', '50', '500', '5 000'], correct: 3, value: 5000 },
   { key: 'C', label: 'centaines', options: ['5', '50', '500', '5 000'], correct: 2, value: 500 },
@@ -130,19 +109,24 @@ const CINQS = [
   { key: 'U', label: 'unités', options: ['5', '50', '500', '5 000'], correct: 0, value: 5 },
 ];
 
-function CinqCinqCinqCinq({ done, onStepDone }) {
+function CinqCinqCinqCinq({ done, onStepDone, react }) {
   const [idx, setIdx] = useState(0);
   const [pick, setPick] = useState(null);
   const [revealed, setRevealed] = useState(false);
+  const [burst, setBurst] = useState(0);
   const current = CINQS[idx];
   const finished = done.length === CINQS.length;
 
-  const validate = () => {
+  const validate = (i) => {
+    setPick(i);
     setRevealed(true);
+    const isCorrect = i === current.correct;
+    const id = react(isCorrect);
+    if (isCorrect) setBurst(id);
     onStepDone(idx);
     setTimeout(() => {
       if (idx < CINQS.length - 1) {
-        setIdx((i) => i + 1);
+        setIdx((i2) => i2 + 1);
         setPick(null);
         setRevealed(false);
       }
@@ -182,25 +166,23 @@ function CinqCinqCinqCinq({ done, onStepDone }) {
           <p className="text-sm font-semibold text-slate-700">
             Le 5 surligné est à la position des <strong>{current.label}</strong>. Que représente-t-il ?
           </p>
-          <ChoiceGrid
-            options={current.options}
-            selected={pick}
-            onSelect={setPick}
-            revealed={revealed}
-            correctIndex={current.correct}
-            cols={2}
-          />
-          {!revealed && (
-            <ValidateButton onClick={validate} disabled={pick === null}>
-              Valider
-            </ValidateButton>
-          )}
+          <div className="relative">
+            <ChoiceGrid
+              options={current.options}
+              selected={pick}
+              onSelect={validate}
+              revealed={revealed}
+              correctIndex={current.correct}
+              cols={2}
+            />
+            <XPBurst amount={10} tick={burst} />
+          </div>
           {revealed && (
             <Feedback tone={pick === current.correct ? 'ok' : 'ko'}>
               {pick === current.correct ? (
                 <>
-                  Oui : ce 5 vaut <strong className="font-mono">{formatFr(current.value)}</strong> car il occupe la
-                  position des {current.label}.
+                  Oui : ce 5 vaut <strong className="font-mono">{formatFr(current.value)}</strong> car il occupe
+                  la position des {current.label}.
                 </>
               ) : (
                 <>
@@ -237,7 +219,6 @@ function CinqCinqCinqCinq({ done, onStepDone }) {
   );
 }
 
-/* ─── Étape 3 : chiffre des milliers ≠ nombre de milliers ────────── */
 const DISTINCTION = [
   {
     q: 'Quel est le CHIFFRE des milliers de 12 450 ?',
@@ -256,7 +237,6 @@ const DISTINCTION = [
 ];
 
 export default function Module04ValeurPosition() {
-  const navLinks = getNavLinks(4);
   const [chassesDone, setChassesDone] = useState([]);
   const [cinqsDone, setCinqsDone] = useState([]);
   const [distDone, setDistDone] = useState([]);
@@ -264,141 +244,98 @@ export default function Module04ValeurPosition() {
   const s1 = chassesDone.length === CHASSES.length;
   const s2 = cinqsDone.length === CINQS.length;
   const s3 = distDone.length === DISTINCTION.length;
-  const allDone = s1 && s2 && s3;
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(4)}
+      moduleNumber={4}
       moduleTitle="La valeur de chaque chiffre"
       moduleSubtitle="Le même chiffre peut valoir 5, 50, 500 ou 5 000. Sa position décide de tout."
-      moduleNumber={4}
       estimatedTime="12 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief
-          tag="🎯 Cœur de la leçon"
-          title="Un chiffre seul ne dit rien. Un chiffre placé dit tout."
-          tone="indigo"
-        >
+      brief={{
+        tag: '🎯 Cœur de la leçon',
+        title: 'Un chiffre seul ne dit rien. Un chiffre placé dit tout.',
+        tone: 'indigo',
+        body: (
           <p>
             Dans ce module, tu vas manipuler le <strong>tableau de numération</strong> pour découvrir ce que
             représente vraiment chaque chiffre d'un grand nombre.
           </p>
-        </MissionBrief>
-
-        {/* Étape 1 */}
-        <StepCard
-          num={1}
-          title={`Chasse au chiffre dans ${formatFr(GRAND)}`}
-          subtitle="Localise le chiffre demandé, puis dis ce qu'il représente."
-          done={s1}
-        >
-          <div className="space-y-8">
-            {CHASSES.map((chasse, i) =>
-              i === 0 || chassesDone.includes(i - 1) ? (
-                <div key={chasse.digit} className="space-y-3">
-                  <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
-                    Chasse {i + 1} / {CHASSES.length}
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: `Chasse au chiffre dans ${formatFr(GRAND)}`,
+          subtitle: "Localise le chiffre demandé, puis dis ce qu'il représente.",
+          done: s1,
+          content: (
+            <div className="space-y-8">
+              {CHASSES.map((chasse, i) =>
+                i === 0 || chassesDone.includes(i - 1) ? (
+                  <div key={chasse.digit} className="space-y-3">
+                    <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                      Chasse {i + 1} / {CHASSES.length}
+                    </div>
+                    <DigitHunt
+                      chasse={chasse}
+                      solved={chassesDone.includes(i)}
+                      onSolved={() => setChassesDone((d) => (d.includes(i) ? d : [...d, i]))}
+                    />
                   </div>
-                  <DigitHunt
-                    chasse={chasse}
-                    solved={chassesDone.includes(i)}
-                    onSolved={() => setChassesDone((d) => (d.includes(i) ? d : [...d, i]))}
+                ) : null
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Le nombre 5 555 : quatre chiffres identiques',
+          subtitle: 'Quatre fois le chiffre 5 — mais représentent-ils la même chose ?',
+          done: s2,
+          content: (kit) => (
+            <CinqCinqCinqCinq
+              done={cinqsDone}
+              onStepDone={(i) => setCinqsDone((d) => (d.includes(i) ? d : [...d, i]))}
+              react={kit.react}
+            />
+          ),
+        },
+        {
+          num: 3,
+          title: 'Attention au piège : chiffre des milliers ≠ nombre de milliers',
+          subtitle: 'Deux questions qui se ressemblent, deux réponses différentes.',
+          done: s3,
+          content: (
+            <div className="space-y-4">
+              <div className="bg-white border-2 border-slate-200 rounded-2xl p-3 sm:p-4">
+                <PlaceValueTable value={12450} showValues />
+              </div>
+              {DISTINCTION.map((d, i) => (
+                <div key={d.q} className="border-t border-slate-100 pt-4">
+                  <TapQuestion
+                    prompt={d.q}
+                    options={d.options}
+                    correct={d.correct}
+                    cols={2}
+                    explain={d.explain}
+                    solved={distDone.includes(i)}
+                    onAnswered={() => setDistDone((prev) => (prev.includes(i) ? prev : [...prev, i]))}
                   />
                 </div>
-              ) : null
-            )}
-          </div>
-        </StepCard>
-
-        {/* Étape 2 */}
-        <StepCard
-          num={2}
-          title="Le nombre 5 555 : quatre chiffres identiques"
-          subtitle="Quatre fois le chiffre 5 — mais représentent-ils la même chose ?"
-          done={s2}
-          locked={!s1}
-        >
-          <CinqCinqCinqCinq
-            done={cinqsDone}
-            onStepDone={(i) => setCinqsDone((d) => (d.includes(i) ? d : [...d, i]))}
-          />
-        </StepCard>
-
-        {/* Étape 3 */}
-        <StepCard
-          num={3}
-          title="Attention au piège : chiffre des milliers ≠ nombre de milliers"
-          subtitle="Deux questions qui se ressemblent, deux réponses différentes."
-          done={s3}
-          locked={!s2}
-        >
-          <div className="space-y-4">
-            <div className="bg-white border-2 border-slate-200 rounded-2xl p-3 sm:p-4">
-              <PlaceValueTable value={12450} showValues />
+              ))}
+              {s3 && (
+                <Feedback tone="info">
+                  Retiens la nuance : le <strong>chiffre</strong> des milliers se lit dans une seule colonne (2),
+                  alors que le <strong>nombre</strong> de milliers compte tous les milliers du nombre (12). Cette
+                  distinction te servira dans les problèmes.
+                </Feedback>
+              )}
             </div>
-            {DISTINCTION.map((d, i) => (
-              <MiniQuestion
-                key={d.q}
-                item={d}
-                solved={distDone.includes(i)}
-                onSolved={() => setDistDone((prev) => (prev.includes(i) ? prev : [...prev, i]))}
-              />
-            ))}
-            {s3 && (
-              <Feedback tone="info">
-                Retiens la nuance : le <strong>chiffre</strong> des milliers se lit dans une seule colonne (2),
-                alors que le <strong>nombre</strong> de milliers compte tous les milliers du nombre (12). Cette
-                distinction te servira dans les problèmes.
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-      </div>
-    </ModuleLayout>
-  );
-}
-
-/* ─── Petite question à choix ────────────────────────────────────── */
-function MiniQuestion({ item, solved, onSolved }) {
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-
-  return (
-    <div className="space-y-3 border-t border-slate-100 pt-4">
-      <p className="text-sm font-semibold text-slate-700">{item.q}</p>
-      <ChoiceGrid
-        options={item.options}
-        selected={pick}
-        onSelect={setPick}
-        revealed={revealed}
-        correctIndex={item.correct}
-        cols={2}
-      />
-      {!revealed && (
-        <ValidateButton
-          onClick={() => {
-            setRevealed(true);
-            onSolved?.();
-          }}
-          disabled={pick === null}
-        >
-          Valider
-        </ValidateButton>
-      )}
-      {revealed && (
-        <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
-          {pick !== item.correct && (
-            <>
-              Bonne réponse : <strong>{item.options[item.correct]}</strong>. {' '}
-            </>
-          )}
-          {item.explain}
-        </Feedback>
-      )}
-    </div>
+          ),
+        },
+      ]}
+    />
   );
 }

@@ -4,9 +4,17 @@ import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
-// Module<NN><Descriptor>.jsx — the restored pre-reset naming convention
-// (docs/architecture/LESSON_CONTRACT.md). Keyed by module `number`, not slug.
+// Module<NN><Descriptor>.jsx — rebuilt on the shared lesson kit (src/lessons/
+// common/kit), see docs/architecture/LESSON_INTEGRATION_GUIDE.md §11.
+// Validated 2026-08-23. The pre-kit originals are archived in
+// ./modules/_archive_original/ (not routed, kept for reference only).
+// Module 0 (prerequisite diagnostic) is new: it has no pre-kit original.
+// Module 10 merges the two former evaluation modules (Module10BossFinal.jsx
+// "Mission Fête" + Module11Synthese.jsx "Synthèse & Flash Quiz") into the
+// single canonical Boss Final the guide's §7 requires — the old Module11 is
+// retired, archived alongside the rest, and not routed.
 const MODULE_COMPONENTS = {
+  0: lazy(() => import('./modules/Module00Diagnostic.jsx')),
   1: lazy(() => import('./modules/Module01Mission.jsx')),
   2: lazy(() => import('./modules/Module02Addition.jsx')),
   3: lazy(() => import('./modules/Module03Soustraction.jsx')),
@@ -17,7 +25,6 @@ const MODULE_COMPONENTS = {
   8: lazy(() => import('./modules/Module08ChoisirOperation.jsx')),
   9: lazy(() => import('./modules/Module09Problemes.jsx')),
   10: lazy(() => import('./modules/Module10BossFinal.jsx')),
-  11: lazy(() => import('./modules/Module11Synthese.jsx')),
 };
 
 function withSuspense(Component) {

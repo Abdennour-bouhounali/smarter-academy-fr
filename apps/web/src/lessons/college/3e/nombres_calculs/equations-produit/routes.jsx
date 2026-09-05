@@ -4,16 +4,19 @@ import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
-// Module<NN><Descriptor>.jsx — the restored pre-reset naming convention
-// (docs/architecture/LESSON_CONTRACT.md). Keyed by module `number`, not slug.
+// Module<NN><Descriptor>.jsx (docs/architecture/LESSON_CONTRACT.md), keyed by
+// module `number`, not slug. Leçon reconstruite sur le lesson kit
+// (common/kit) — les modules pré-kit ont été remplacés, git en garde
+// l'archive.
 const MODULE_COMPONENTS = {
-  1: lazy(() => import('./modules/Module01RegleZero.jsx')),
-  2: lazy(() => import('./modules/Module02Rappel.jsx')),
-  3: lazy(() => import('./modules/Module03ProduitNul.jsx')),
-  4: lazy(() => import('./modules/Module04FacteurCommun.jsx')),
-  5: lazy(() => import('./modules/Module05Identite.jsx')),
-  6: lazy(() => import('./modules/Module06Mission.jsx')),
-  7: lazy(() => import('./modules/Module07Bilan.jsx')),
+  0: lazy(() => import('./modules/Module00Diagnostic.jsx')),
+  1: lazy(() => import('./modules/Module01ZeroOuPas.jsx')),
+  2: lazy(() => import('./modules/Module02EgaliteInconnue.jsx')),
+  3: lazy(() => import('./modules/Module03Balance.jsx')),
+  4: lazy(() => import('./modules/Module04Scanner.jsx')),
+  5: lazy(() => import('./modules/Module05VerifierInterpreter.jsx')),
+  6: lazy(() => import('./modules/Module06CarreRectangle.jsx')),
+  7: lazy(() => import('./modules/Module07MissionFinale.jsx')),
 };
 
 function withSuspense(Component) {

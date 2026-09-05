@@ -72,8 +72,12 @@ export default function Balance({
   );
 
   return (
-    <div className="relative w-full max-w-md mx-auto" role="img" aria-label={ariaLabel}>
-      <svg viewBox="0 0 400 220" className="w-full select-none">
+    // `role="img"` irait sur le wrapper, mais il masquerait aux lecteurs
+    // d'écran les vrais <button> des objets posés (reprendre un objet) :
+    // on le pose sur le seul SVG décoratif, et on décrit l'ensemble via
+    // un groupe étiqueté.
+    <div className="relative w-full max-w-md mx-auto" role="group" aria-label={ariaLabel}>
+      <svg viewBox="0 0 400 220" className="w-full select-none" role="img" aria-label={ariaLabel}>
         {/* Pied */}
         <line x1="200" y1="200" x2="200" y2="90" stroke="#334155" strokeWidth="6" strokeLinecap="round" />
         <line x1="150" y1="204" x2="250" y2="204" stroke="#334155" strokeWidth="6" strokeLinecap="round" />

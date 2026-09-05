@@ -1,0 +1,104 @@
+import React, { useState } from 'react';
+import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { Feedback } from '../../../../../common/components/LessonUI';
+import RealLine from '../../../../../common/components/RealLine';
+import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import SignFlipLine from '../components/SignFlipLine';
+import EquationSteps from '../components/EquationSteps';
+import { lin, applyBothSides, applyOneSide, isSolvedForm } from '../components/eqUtils';
+
+/**
+ * Module 3 — DISCOVERY : « Le signe qui se retourne ».
+ * Activity: multiplier 2 < 5 par −1, 2, −2, 3 sur la droite ; résoudre
+ *   −3x + 4 ≤ 10 pas à pas ; représenter les solutions ; traduire en série.
+ * Mathematical objective: multiplier/diviser par un négatif retourne le sens ;
+ *   les solutions d'une inéquation forment un intervalle, représenté sur la
+ *   droite.
+ * Expected observation: −2 est à droite de −5 (symétrie par 0) ; ÷ (−3)
+ *   transforme ≤ en ≥ ; x ≥ −2 se colorie vers +∞ avec −2 inclus.
+ */
+const OPS = [
+  { id: 'm4', label: '− 4 des deux côtés', op: { type: 'add', k: -4 } },
+  { id: 'dm3', label: '÷ (−3) des deux côtés', op: { type: 'div', k: -3 } },
+  { id: 'd3', label: '÷ 3 des deux côtés', op: { type: 'div', k: 3 } },
+  { id: 'xm1', label: '× (−1) des deux côtés', op: { type: 'mul', k: -1 } },
+  { id: 'm4L', label: '− 4 à gauche seulement', op: { type: 'add', k: -4 }, side: 'L' },
+];
+const START = { L: lin(-3, 4), R: lin(0, 10) };
+
+export default function Module03SigneQuiSeRetourne() {
+  const [k, setK] = useState(1);
+  const [tried, setTried] = useState(() => new Set());
+  const [flipDone, setFlipDone] = useState(false);
+  const [history, setHistory] = useState([START]);
+  const [count, setCount] = useState(0);
+  const [lineDone, setLineDone] = useState(false);
+  const [batchDone, setBatchDone] = useState(false);
+  const last = history[history.length - 1];
+  const solved = isSolvedForm(last) && history.every((h) => !h.op || h.both);
+
+  const apply = (o) => { const next = o.side ? applyOneSide(last, o.op, o.side) : applyBothSides(last, o.op); setHistory([...history, { ...next, op: o.op, both: !o.side, label: o.label }]); setCount(count + 1); };
+  const reveal = () => { let cur = START; const h = [START]; for (const o of [OPS[0], OPS[1]]) { cur = applyBothSides(cur, o.op); h.push({ ...cur, op: o.op, both: true, label: o.label }); } setHistory(h); };
+
+  return (
+    <ContentModule
+      ctx={MODULE_CTX} navLinks={getNavLinks(3)} moduleNumber={3}
+      moduleTitle="Le signe qui se retourne"
+      moduleSubtitle="2 < 5. Multiplie par −1 : −2 et −5 changent de côté du zéro… et d’ordre. Puis résous −3x + 4 ≤ 10."
+      estimatedTime="11 min"
+      brief={{ tag: '🔁 Mission 03', title: 'Pour une inéquation, une seule règle change. Trouve laquelle.', tone: 'indigo', body: <p>Commence par deux nombres et un multiplicateur. Puis résous comme au module 2 — en surveillant le signe.</p> }}
+      steps={[
+        {
+          num: 1, title: 'Multiplie 2 < 5', subtitle: 'Essaie × (−1) et × 2 au moins. Regarde l’ordre des deux points.', done: tried.has(-1) && tried.has(2) && flipDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              <SignFlipLine k={k} onK={(c) => { setK(c); const s = new Set(tried); s.add(c); setTried(s); if (c === -1 && !tried.has(-1)) kit.react(true); }} />
+              {tried.has(-1) && tried.has(2) && (
+                <TapQuestion prompt="Que se passe-t-il quand on multiplie les deux membres d’une inégalité par un nombre négatif ?" options={['Le sens de l’inégalité se retourne', 'Rien, comme pour une égalité', 'L’inégalité devient fausse']} cols={1} correct={0}
+                  explain="Multiplier par −1, c’est prendre le symétrique par rapport à 0 : le plus petit devient le plus grand. 2 < 5 devient −2 > −5. Par un positif, l’ordre est conservé."
+                  explainWrong="Regarde la droite : après × (−1), −2 est à DROITE de −5, donc −2 > −5. Le sens s’est retourné. C’est la seule différence avec les équations."
+                  solved={flipDone} onAnswered={() => setFlipDone(true)} />
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2, title: 'Résous −3x + 4 ≤ 10', subtitle: 'Comme au module 2 — mais attention au coefficient de x.', done: solved,
+          content: (kit) => (
+            <div className="space-y-3">
+              <EquationSteps history={history} ops={OPS} onApply={(o) => { apply(o); if (!o.side) { const n = applyBothSides(last, o.op); if (isSolvedForm(n)) kit.react(true); } }} onUndo={() => setHistory(history.slice(0, -1))} onReset={() => setHistory([START])} ineq="≤" />
+              {count >= 5 && !solved && <button type="button" onClick={reveal} className="min-h-[44px] px-4 rounded-xl border-2 border-slate-300 bg-white text-sm font-bold text-slate-600 hover:border-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Je ne trouve pas — montre-moi</button>}
+              {solved && <Feedback tone="ok">− 4 des deux côtés : −3x ≤ 6. Puis ÷ (−3) : on divise par un NÉGATIF, le sens se retourne : x ≥ −2. (Diviser par 3 donne −x ≤ 2, puis × (−1) retourne aussi : x ≥ −2.)</Feedback>}
+            </div>
+          ),
+        },
+        {
+          num: 3, title: 'Représente les solutions', done: lineDone,
+          content: (
+            <TapQuestion prompt="L’ensemble des solutions de −3x + 4 ≤ 10 est :"
+              above={(revealed) => revealed && <div className="rounded-2xl border-2 border-slate-200 bg-white p-2"><RealLine min={-6} max={6} step={1} intervals={[{ id: 'S', from: -2, to: Infinity, tone: 'emerald', label: '[−2 ; +∞[' }]} ariaLabel="Solutions : de −2 inclus vers plus l’infini" /></div>}
+              options={['[−2 ; +∞[', ']−∞ ; −2]', ']−2 ; +∞[', '[2 ; +∞[']} cols={2} correct={0}
+              explain="x ≥ −2 : −2 inclus (crochet fermé) et tout ce qui est plus grand, vers +∞. Sur la droite, on colorie à partir de −2 vers la droite."
+              explainWrong="x ≥ −2 se lit « x plus grand ou égal à −2 » : on colorie vers +∞ à partir de −2, et −2 est inclus (≥, crochet fermé) : [−2 ; +∞[."
+              solved={lineDone} onAnswered={() => setLineDone(true)} />
+          ),
+        },
+        {
+          num: 4, title: 'En série', done: batchDone,
+          content: (
+            <BatchChoiceQuestion intro={<p className="text-sm text-slate-600">L’ensemble des solutions de chaque inéquation :</p>}
+              rows={[
+                { id: 'r1', label: '2x > 6', options: [']3 ; +∞[', '[3 ; +∞[', ']−∞ ; 3['], correct: 0 },
+                { id: 'r2', label: '−x ≤ 5', options: [']−∞ ; −5]', '[−5 ; +∞[', ']−∞ ; 5]'], correct: 1, correction: '× (−1) retourne : x ≥ −5.' },
+                { id: 'r3', label: '4 − x < 1', options: [']3 ; +∞[', ']−∞ ; 3[', ']−3 ; +∞['], correct: 0, correction: '−x < −3 puis × (−1) : x > 3.' },
+                { id: 'r4', label: '5x ≥ 5x + 1', options: ['ℝ', '∅', '[1 ; +∞['], correct: 1, correction: '0 ≥ 1 est faux : aucune solution.' },
+              ]}
+              feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} / ${total}.`} Diviser par un positif : le sens reste. Par un négatif : il se retourne. Et une inéquation peut n’avoir aucune solution — ou toutes.</Feedback>}
+              solved={batchDone} onAnswered={() => setBatchDone(true)} />
+          ),
+        },
+      ]}
+      footer={<Feedback tone="ok">Une inéquation se résout comme une équation, avec UNE règle de plus : multiplier ou diviser par un négatif retourne le sens. Ses solutions forment un intervalle, à représenter sur la droite. Reste le cas où x apparaît dans un produit.</Feedback>}
+    />
+  );
+}

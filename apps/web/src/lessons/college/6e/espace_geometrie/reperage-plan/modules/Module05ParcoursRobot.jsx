@@ -1,0 +1,169 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Bot } from 'lucide-react';
+import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Feedback } from '../../../../../common/components/LessonUI';
+import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import RobotPath from '../components/RobotPath';
+import {
+  makeGrid, formatCoords, samePoint, displacement, describeDisplacement,
+} from '../components/reperageUtils';
+
+/**
+ * Module 5 — MANIPULATION : se déplacer dans un quadrillage (P6).
+ *
+ * Objectif : relier un DÉPLACEMENT (« 4 pas à droite puis 3 vers le haut »)
+ * et un COUPLE de nombres. Ce sont deux façons de dire la même chose.
+ *
+ * Aha : le programme le plus court a exactement autant de pas que la SOMME
+ * des deux écarts — jamais leur produit.
+ *
+ * Misconception visée : « 2 pas et 3 pas, ça fait 6 » (multiplication), et
+ * l'oubli d'une des deux composantes.
+ */
+const GRID = makeGrid({ cols: 7, rows: 6, step: 38 });
+
+const RUNS = [
+  {
+    id: 'run1',
+    start: { col: 0, row: 0 },
+    flag: { col: 4, row: 3 },
+    allowedSteps: ['R', 'U'],
+    brief: 'Le robot part de l’origine. Deux touches seulement : → et ↑.',
+  },
+  {
+    id: 'run2',
+    start: { col: 6, row: 5 },
+    flag: { col: 2, row: 2 },
+    allowedSteps: ['R', 'U', 'L', 'D'],
+    brief: 'Cette fois il faut redescendre et revenir vers la gauche.',
+  },
+];
+
+/** Une mission robot : programme, lancement, verdict sur l'objectif réel. */
+function RobotMission({ run, done, onDone, react }) {
+  const [program, setProgram] = useState([]);
+  const [landed, setLanded] = useState(null);
+
+  const d = displacement(run.start, run.flag);
+
+  return (
+    <div className="space-y-3">
+      <p className="text-sm text-slate-600">{run.brief}</p>
+
+      <RobotPath
+        grid={GRID}
+        start={run.start}
+        flag={run.flag}
+        program={program}
+        onProgramChange={(p) => {
+          setProgram(p);
+          setLanded(null);
+        }}
+        onRunComplete={(node) => {
+          // Appelé depuis un effet du composant, jamais depuis un updater.
+          setLanded(node);
+          const ok = samePoint(node, run.flag);
+          react(ok);
+          if (ok) onDone();
+        }}
+        allowedSteps={run.allowedSteps}
+        solved={done}
+        disabled={done}
+      />
+
+      {done && (
+        <Feedback tone="ok">
+          Le robot atteint le drapeau en <strong className="font-mono">{d.total} pas</strong> au minimum :{' '}
+          {describeDisplacement(run.start, run.flag)}. C’est la <strong>somme</strong> des deux écarts —{' '}
+          {d.horizontal} + {d.vertical} = {d.total}.
+        </Feedback>
+      )}
+
+      {!done && landed && !samePoint(landed, run.flag) && (
+        <Feedback tone="ko">
+          Le robot s’est arrêté en <strong className="font-mono">{formatCoords(landed)}</strong>, pas sur le
+          drapeau. Modifie ton programme et relance — le robot ne se casse pas.
+        </Feedback>
+      )}
+    </div>
+  );
+}
+
+export default function Module05ParcoursRobot() {
+  const [runsDone, setRunsDone] = useState([]);
+  const [countDone, setCountDone] = useState(false);
+  const mark = (id) => setRunsDone((r) => (r.includes(id) ? r : [...r, id]));
+
+  return (
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(5)}
+      moduleNumber={5}
+      moduleTitle="Le parcours du robot"
+      moduleSubtitle="Combien de pas à droite, combien vers le haut ?"
+      estimatedTime="10 min"
+      brief={{
+        tag: '📋 Mission 05',
+        title: 'Programme le robot pour qu’il atteigne le drapeau.',
+        body: (
+          <p>
+            Empile des pas, puis lance le robot. S’il rate, il s’arrête là où ton programme le mène : tu vois
+            aussitôt ce qu’il manque.
+          </p>
+        ),
+      }}
+      steps={[
+        ...RUNS.map((r, i) => ({
+          num: i + 1,
+          title: `Mission ${i + 1} — du départ ${formatCoords(r.start)} au drapeau ${formatCoords(r.flag)}`,
+          done: runsDone.includes(r.id),
+          content: (kit) => (
+            <RobotMission
+              run={r}
+              done={runsDone.includes(r.id)}
+              onDone={() => mark(r.id)}
+              react={kit.react}
+            />
+          ),
+        })),
+        {
+          num: RUNS.length + 1,
+          title: 'Combien de pas au total ?',
+          done: countDone,
+          content: (
+            <TapQuestion
+              prompt={
+                <>
+                  Un robot part de <span className="font-mono">(0 ; 0)</span> et doit rejoindre{' '}
+                  <span className="font-mono">(2 ; 3)</span>. Combien de pas lui faut-il, au minimum ?
+                </>
+              }
+              options={['5 pas', '6 pas', '3 pas']}
+              correct={0}
+              cols={3}
+              explain="2 pas horizontalement + 3 pas verticalement = 5 pas. On ADDITIONNE les deux écarts."
+              explainWrong="Attention : 6 pas, ce serait 2 × 3 — on multiplie au lieu d’additionner. Et 3 pas, ce serait n’oublier qu’un seul des deux déplacements."
+              solved={countDone}
+              onAnswered={() => setCountDone(true)}
+            />
+          ),
+        },
+      ]}
+      footer={
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
+        >
+          <Bot className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
+          <p className="text-sm text-slate-300">
+            Un déplacement et un couple de nombres, c’est la même information :{' '}
+            <span className="font-mono text-white">(4 ; 3)</span> se lit aussi « 4 pas à droite, 3 pas vers
+            le haut ».
+          </p>
+        </motion.div>
+      }
+    />
+  );
+}

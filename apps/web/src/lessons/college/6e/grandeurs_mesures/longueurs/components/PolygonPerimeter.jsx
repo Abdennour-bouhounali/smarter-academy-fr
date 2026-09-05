@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 
 /**
  * PolygonPerimeter — polygone schématique (pas à l'échelle, comme les
@@ -6,6 +7,10 @@ import React from 'react';
  * dans l'ordre du contour, pour construire le périmètre côté après côté
  * avant de voir apparaître une formule. Aucun glisser-déposer : on reste
  * sur le pattern tap-based déjà utilisé partout ailleurs (mobile-safe).
+ *
+ * `showRunningTotal` anime le tracé du côté (pathLength, comme dans
+ * LiquidContainer) et affiche le total parcouru jusqu'ici, calculé en
+ * interne à partir de sideLengths/tappedIndices.
  */
 
 const SHAPES = {
@@ -29,13 +34,17 @@ export default function PolygonPerimeter({
   onTapSide,
   ariaLabelPrefix = 'Côté',
   disabled = false,
+  showRunningTotal = false,
 }) {
+  const reduced = useReducedMotion();
   const def = SHAPES[shape] || SHAPES.triangle;
   const { vertices, viewBox } = def;
   const n = vertices.length;
   const [cx, cy] = centroidOf(vertices);
 
   const points = vertices.map((v) => v.join(',')).join(' ');
+  const runningTotal = tappedIndices.reduce((s, i) => s + sideLengths[i], 0);
+  const lastTappedIdx = tappedIndices.length ? tappedIndices[tappedIndices.length - 1] : null;
 
   const edges = vertices.map((v, i) => {
     const [x1, y1] = v;
@@ -57,14 +66,28 @@ export default function PolygonPerimeter({
         const isTapped = tappedIndices.includes(i);
         return (
           <g key={i}>
-            <line
-              x1={e.x1} y1={e.y1} x2={e.x2} y2={e.y2}
-              stroke={isTapped ? '#059669' : '#1e293b'}
-              strokeWidth={isTapped ? 6 : 3}
-              strokeLinecap="round"
-              style={{ cursor: disabled ? 'default' : 'pointer', transition: 'stroke 0.2s, stroke-width 0.2s' }}
-              onClick={() => !disabled && onTapSide?.(i)}
-            />
+            {showRunningTotal ? (
+              <motion.line
+                x1={e.x1} y1={e.y1} x2={e.x2} y2={e.y2}
+                stroke={isTapped ? '#059669' : '#1e293b'}
+                strokeWidth={isTapped ? 6 : 3}
+                strokeLinecap="round"
+                style={{ cursor: disabled ? 'default' : 'pointer' }}
+                onClick={() => !disabled && onTapSide?.(i)}
+                initial={false}
+                animate={{ pathLength: disabled || isTapped ? 1 : 0 }}
+                transition={disabled ? { duration: 0 } : { duration: reduced ? 0.1 : 0.35 }}
+              />
+            ) : (
+              <line
+                x1={e.x1} y1={e.y1} x2={e.x2} y2={e.y2}
+                stroke={isTapped ? '#059669' : '#1e293b'}
+                strokeWidth={isTapped ? 6 : 3}
+                strokeLinecap="round"
+                style={{ cursor: disabled ? 'default' : 'pointer', transition: 'stroke 0.2s, stroke-width 0.2s' }}
+                onClick={() => !disabled && onTapSide?.(i)}
+              />
+            )}
             {/* zone tactile élargie, invisible, pour un tap confortable */}
             <line
               x1={e.x1} y1={e.y1} x2={e.x2} y2={e.y2}
@@ -89,6 +112,21 @@ export default function PolygonPerimeter({
           </g>
         );
       })}
+      {showRunningTotal && lastTappedIdx !== null && !disabled && (
+        <g>
+          <rect
+            x={edges[lastTappedIdx].lx - 34} y={edges[lastTappedIdx].ly + 10}
+            width="68" height="22" rx="6" fill="#059669"
+          />
+          <text
+            x={edges[lastTappedIdx].lx} y={edges[lastTappedIdx].ly + 25}
+            textAnchor="middle" className="fill-white"
+            style={{ fontSize: 13, fontFamily: 'monospace', fontWeight: 700 }}
+          >
+            {runningTotal} {unit}
+          </text>
+        </g>
+      )}
     </svg>
   );
 }

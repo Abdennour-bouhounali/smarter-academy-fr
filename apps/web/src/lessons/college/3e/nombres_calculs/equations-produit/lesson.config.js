@@ -1,218 +1,138 @@
-// Équations produit nul — 3e — "equations-produit": maîtriser la règle du
-// produit nul pour résoudre des équations qui ne sont pas du premier degré
-// simple. De la machine multiplicatrice au problème d'aires en passant par
-// le facteur commun et la différence de deux carrés. See
-// docs/architecture/LESSON_CONTRACT.md.
-
+/**
+ * Équations produit nul — 3e.
+ *
+ * NOTE VALIDATEUR (scripts/validate-lessons.mjs) : les Learning Point ids
+ * référencés par `teachesLearningPointIds` et par les métadonnées
+ * `assessment` doivent rester des LITTÉRAUX. Les 10 LPs de cette leçon
+ * (dérivés de `pointsToLearn` de la clé catalogue '3e_equations_inequations',
+ * append-only) :
+ *
+ *   3e_equations-produit_P1   Comprendre une équation comme une égalité contenant une inconnue
+ *   3e_equations-produit_P2   Comprendre la notion de solution d'une équation
+ *   3e_equations-produit_P3   Transformer une équation en conservant les mêmes solutions
+ *   3e_equations-produit_P4   Résoudre une équation du premier degré
+ *   3e_equations-produit_P5   Utiliser la distributivité dans une équation
+ *   3e_equations-produit_P6   Comprendre la propriété du produit nul
+ *   3e_equations-produit_P7   Résoudre une équation produit nul
+ *   3e_equations-produit_P8   Vérifier une solution
+ *   3e_equations-produit_P9   Interpréter une solution dans une situation concrète
+ *   3e_equations-produit_P10  Résoudre des problèmes à l'aide d'équations
+ *
+ * L'IDÉE CENTRALE, jamais énoncée avant d'avoir été vécue : un produit ne
+ * vaut zéro que si l'un de ses facteurs vaut zéro. La leçon ne commence donc
+ * pas par « A × B = 0 équivaut à… » mais par deux molettes que l'élève
+ * tourne (ProductDial) jusqu'à ce que le produit tombe à 0 — et il constate
+ * qu'il n'y a que trois façons d'y arriver, toutes avec un zéro dedans.
+ *
+ * PÉRIMÈTRE (teachingScope, contraignant) : la description catalogue parle
+ * d'inéquations, mais AUCUN `pointsToLearn` n'en contient — la leçon n'en
+ * enseigne donc pas. Sont également exclus le discriminant, les identités
+ * (a + b)² / (a − b)² pour elles-mêmes (seule a² − b² apparaît, comme
+ * CHEMIN vers un produit), et la factorisation à coefficients littéraux.
+ *
+ * Fil narratif unique : « le zéro qui gagne » — la molette du module 1, le
+ * scanner de produit du module 4, puis le duel carré contre rectangle du
+ * module 6, repris figé dans la synthèse du boss.
+ */
 export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/equations-produit';
-
-// Learning Point ids are derived by coursesData.js from the ordered
-// `pointsToLearn` list authored for '3e_equations_inequations' (catalogue
-// key) whose id is 'equations-produit' — never invent one here. The
-// validator parses this file statically, so ids below must be literal
-// strings (not identifier references):
-//   3e_equations-produit_P1 — Résoudre une équation du premier degré
-//   3e_equations-produit_P2 — Résoudre une inéquation
-//   3e_equations-produit_P3 — Vérifier une solution
-//   3e_equations-produit_P4 — Représenter un ensemble de solutions
-//   3e_equations-produit_P5 — Modéliser un problème
-//
-// NOTE: this lesson's actual content (7 modules, restored 1:1 from the old
-// system) is entirely about the "produit nul" method — it never teaches
-// inequality solving (P2). P2 is mapped to Module 2 (isolating x with the
-// balance method) as the closest kin available in the real content — see
-// the porting report for this caveat; the catalogue's pointsToLearn list
-// was authored for a broader "équations et inéquations" scope than what
-// this lesson actually builds.
 
 export const LESSON_CONFIG = {
   id: 'equations-produit',
-  sequentialUnlock: true,
-  slug: 'equations-produit',
+  sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Équations produit nul',
   description:
-    "Découvrez la Règle du Zéro avec la machine multiplicatrice, consolidez la résolution d'une équation du premier degré, puis apprenez à séparer une équation produit en deux équations simples, à factoriser par un facteur commun et à reconnaître une différence de deux carrés — jusqu'à résoudre un vrai problème d'aires et valider vos acquis dans le bilan final.",
+    "Tourner deux molettes jusqu'à faire tomber un produit à zéro, puis apprendre à lire une équation comme une balance, à scanner un produit pour y trouver ses zéros, et à ramener un problème d'aires à « quelque chose × quelque chose = 0 ».",
   level: 'college',
   grade: '3e',
   chapter: 'nombres_calculs',
   chapterTitle: 'Nombres et calculs',
-  officialObjects: ['Équations et inéquations du premier degré'],
-  passingScore: 4,
+  passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '⚖️',
-
-  // ── Méta-pédagogique ──────────────────────────────────────────────────────
-  estimatedDurationMin: 83,
-  difficulty: 3,
-
-  prerequisites: [
-    { id: 'PRE-CALC',  label: 'Calcul littéral (développement)' },
-    { id: 'PRE-EQ1',   label: 'Équations du premier degré' }
-  ],
-
+  estimatedDurationMin: 77,
   skills: [
-    "Appliquer la règle du produit nul",
-    "Résoudre une équation du type (ax+b)(cx+d) = 0",
-    "Factoriser par un facteur commun simple",
-    "Factoriser à l'aide de l'identité remarquable a²-b²",
-    "Résoudre un problème se ramenant à une équation produit"
+    'Comprendre une équation comme une égalité contenant une inconnue',
+    "Comprendre la notion de solution d'une équation",
+    'Transformer une équation en conservant les mêmes solutions',
+    'Résoudre une équation du premier degré',
+    'Utiliser la distributivité dans une équation',
+    'Comprendre la propriété du produit nul',
+    'Résoudre une équation produit nul',
+    'Vérifier une solution',
+    'Interpréter une solution dans une situation concrète',
+    "Résoudre des problèmes à l'aide d'équations",
   ],
-
   teachingScope: {
     include: [
-      'La règle du produit nul (A × B = 0 ⟺ A = 0 ou B = 0)',
-      'Résolution d\'une équation du premier degré ax + b = 0',
-      'Résolution d\'une équation produit (ax+b)(cx+d) = 0',
-      'Factorisation par un facteur commun simple',
-      'Factorisation avec l\'identité remarquable a² - b²',
-      'Modélisation d\'un problème géométrique par une équation produit',
+      'Équation, inconnue, solution, ensemble de solutions',
+      'Transformations qui conservent les solutions (balance)',
+      'Résolution de ax + b = c et de k(ax + b) = c',
+      'Propriété du produit nul et équations produit',
+      'Vérification et interprétation concrète des solutions',
+      "Factorisation par facteur commun et a² − b² comme chemins vers un produit",
     ],
     exclude: [
-      'Résolution d\'inéquations',
-      'Les identités remarquables (a+b)² et (a-b)²',
+      'Inéquations (aucun point du catalogue ne les demande)',
       'Équations du second degré générales (discriminant)',
+      "Les identités (a + b)² et (a − b)² étudiées pour elles-mêmes",
+      'Factorisation à coefficients littéraux',
     ],
   },
-
-  // ── Évaluation finale ─────────────────────────────────────────────────────
-  assessment: {
-    moduleId: 'L07',
-    totalQuestions: 5,
-    masteryScore: 4,
-  },
-
-  // ── Modules ───────────────────────────────────────────────────────────────
   modules: [
     {
-      id: '01',
-      number: 1,
-      slug: 'regle-du-zero',
-      path: `${LESSON_BASE_PATH}/regle-du-zero`,
-      title: 'La Règle du Zéro',
-      desc: "Découvrez le secret d'une multiplication qui donne zéro avec la machine multiplicatrice.",
-      stage: 'trigger',
-      teachesLearningPointIds: ['3e_equations-produit_P3'],
-      color: 'blue',
-      style: 'featured',
-      estimatedMin: 8,
-      difficulty: 1,
-      xpReward: 50,
-      actionText: 'Démarrer ➔',
-      prerequisites: [],
+      id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`,
+      title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — pour savoir par où bien commencer.',
+      stage: 'prerequisite_check',
+      color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases',
     },
     {
-      id: '02',
-      number: 2,
-      slug: 'rappel-premier-degre',
-      path: `${LESSON_BASE_PATH}/rappel-premier-degre`,
-      title: 'Rappel : 1er Degré',
-      desc: "S'entraîner à résoudre ax + b = 0 avec la balance interactive.",
+      id: '01', number: 1, slug: 'zero-ou-pas', path: `${LESSON_BASE_PATH}/zero-ou-pas`,
+      title: 'Zéro ou pas zéro ?', desc: 'Deux molettes, un produit. Trouve toutes les façons de le faire tomber à 0.',
+      stage: 'trigger', teachesLearningPointIds: ['3e_equations-produit_P6'],
+      color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 1, actionText: 'Tourner les molettes',
+    },
+    {
+      id: '02', number: 2, slug: 'une-egalite-a-inconnue', path: `${LESSON_BASE_PATH}/une-egalite-a-inconnue`,
+      title: 'Une égalité à trou', desc: 'Teste des valeurs de x : certaines rendent l’égalité vraie, les autres non.',
       stage: 'discovery',
       teachesLearningPointIds: ['3e_equations-produit_P1', '3e_equations-produit_P2'],
-      color: 'amber',
-      style: 'featured',
-      estimatedMin: 10,
-      difficulty: 2,
-      xpReward: 50,
-      actionText: 'Voir ➔',
-      prerequisites: ['01'],
+      color: 'sky', style: 'featured', estimatedMin: 9, difficulty: 2, actionText: 'Tester des valeurs',
     },
     {
-      id: '03',
-      number: 3,
-      slug: 'separer-pour-regner',
-      path: `${LESSON_BASE_PATH}/separer-pour-regner`,
-      title: 'Séparer pour régner',
-      desc: "Appliquez la règle du zéro pour résoudre des équations produit.",
+      id: '03', number: 3, slug: 'la-balance', path: `${LESSON_BASE_PATH}/la-balance`,
+      title: 'La balance', desc: 'Enlève la même chose des deux côtés — sinon le plateau penche.',
       stage: 'manipulation',
-      teachesLearningPointIds: ['3e_equations-produit_P4'],
-      color: 'indigo',
-      style: 'featured',
-      estimatedMin: 15,
-      difficulty: 3,
-      xpReward: 75,
-      actionText: 'Voir ➔',
-      prerequisites: ['02'],
+      teachesLearningPointIds: ['3e_equations-produit_P3', '3e_equations-produit_P4', '3e_equations-produit_P5'],
+      color: 'emerald', style: 'featured', estimatedMin: 11, difficulty: 2, actionText: 'Équilibrer',
     },
     {
-      id: '04',
-      number: 4,
-      slug: 'facteur-commun',
-      path: `${LESSON_BASE_PATH}/facteur-commun`,
-      title: 'Le Facteur Commun',
-      desc: "Apprenez à factoriser x² + 5x = 0 en extrayant le facteur commun.",
+      id: '04', number: 4, slug: 'le-scanner-de-produit', path: `${LESSON_BASE_PATH}/le-scanner-de-produit`,
+      title: 'Le scanner de produit', desc: 'Balaye la bande des x et repère les endroits où le produit tombe à 0.',
+      stage: 'manipulation',
+      teachesLearningPointIds: ['3e_equations-produit_P6', '3e_equations-produit_P7'],
+      color: 'violet', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Scanner',
+    },
+    {
+      id: '05', number: 5, slug: 'verifier-et-interpreter', path: `${LESSON_BASE_PATH}/verifier-et-interpreter`,
+      title: 'Vérifier et interpréter', desc: 'Remets tes solutions dans l’équation, puis regarde si elles ont un sens.',
       stage: 'formalization',
-      teachesLearningPointIds: ['3e_equations-produit_P3'],
-      color: 'sky',
-      style: 'featured',
-      estimatedMin: 10,
-      difficulty: 3,
-      xpReward: 75,
-      actionText: 'Voir ➔',
-      prerequisites: ['03'],
+      teachesLearningPointIds: ['3e_equations-produit_P8', '3e_equations-produit_P9'],
+      color: 'blue', style: 'featured', estimatedMin: 9, difficulty: 3, actionText: 'Vérifier',
     },
     {
-      id: '05',
-      number: 5,
-      slug: 'difference-de-carres',
-      path: `${LESSON_BASE_PATH}/difference-de-carres`,
-      title: 'La différence de carrés',
-      desc: "Le puzzle géométrique pour comprendre et utiliser a² - b² = (a-b)(a+b).",
+      id: '06', number: 6, slug: 'carre-contre-rectangle', path: `${LESSON_BASE_PATH}/carre-contre-rectangle`,
+      title: 'Carré contre rectangle', desc: 'Un carré et un rectangle de même aire : trouve x, puis prouve-le.',
       stage: 'practice_lab',
-      teachesLearningPointIds: ['3e_equations-produit_P3'],
-      color: 'violet',
-      style: 'featured',
-      estimatedMin: 15,
-      difficulty: 4,
-      xpReward: 75,
-      actionText: 'Voir ➔',
-      prerequisites: ['04'],
+      teachesLearningPointIds: [
+        '3e_equations-produit_P10', '3e_equations-produit_P5', '3e_equations-produit_P7',
+      ],
+      color: 'rose', style: 'featured', estimatedMin: 10, difficulty: 3, actionText: 'Résoudre',
     },
     {
-      id: '06',
-      number: 6,
-      slug: 'carre-contre-rectangle',
-      path: `${LESSON_BASE_PATH}/carre-contre-rectangle`,
-      title: 'Mission : Carré contre Rectangle',
-      desc: "Utilisez les équations produit pour modéliser et résoudre un problème d'aires.",
-      stage: 'practice_lab',
-      teachesLearningPointIds: ['3e_equations-produit_P5'],
-      color: 'amber',
-      style: 'boss',
-      estimatedMin: 15,
-      difficulty: 4,
-      xpReward: 200,
-      actionText: 'Mission ➔',
-      prerequisites: ['05'],
-    },
-    {
-      id: '07',
-      number: 7,
-      slug: 'bilan-final',
-      path: `${LESSON_BASE_PATH}/bilan-final`,
-      title: 'Bilan Final',
-      desc: "Évaluation finale pour valider la maîtrise des équations produit nul.",
+      id: '07', number: 7, slug: 'mission-finale', path: `${LESSON_BASE_PATH}/mission-finale`,
+      title: '🏆 Mission finale : le zéro qui gagne', desc: 'Dix épreuves pour prouver qu’aucun produit nul ne te résiste.',
       stage: 'evaluation',
-      color: 'slate',
-      style: 'assessment',
-      estimatedMin: 10,
-      difficulty: 3,
-      xpReward: 150,
-      actionText: 'Évaluation ➔',
-      prerequisites: ['06'],
-    }
-  ]
+      color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi',
+    },
+  ],
 };
-
-export const TOTAL_MODULES = LESSON_CONFIG.modules.length;
-
-export function getModuleNav(moduleNumber) {
-  const modules = LESSON_CONFIG.modules;
-  const idx = modules.findIndex((m) => m.number === moduleNumber);
-  const prev = idx > 0 ? modules[idx - 1] : null;
-  const next = idx < modules.length - 1 ? modules[idx + 1] : null;
-  return {
-    prevLink: prev ? `${LESSON_BASE_PATH}/${prev.slug}` : null,
-    nextLink: next ? `${LESSON_BASE_PATH}/${next.slug}` : null,
-  };
-}

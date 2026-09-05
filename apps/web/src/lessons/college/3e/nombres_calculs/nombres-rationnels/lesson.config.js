@@ -1,183 +1,148 @@
 /**
- * lesson.config.js
- * Source de vérité unique pour la leçon : Nombres rationnels (3ème)
+ * Nombres rationnels — 3e.
+ *
+ * NOTE VALIDATEUR (scripts/validate-lessons.mjs) : les Learning Point ids
+ * référencés par `teachesLearningPointIds` et par les métadonnées
+ * `assessment` doivent rester des LITTÉRAUX. Les 10 LPs de cette leçon
+ * (dérivés de `pointsToLearn` de la clé catalogue '3e_nombres_rationnels',
+ * append-only) :
+ *
+ *   3e_nombres-rationnels_P1   Comprendre les nombres rationnels comme des nombres pouvant s'écrire sous forme de quotient de deux entiers avec un dénominateur non nul
+ *   3e_nombres-rationnels_P2   Reconnaître différentes écritures d'un même nombre rationnel
+ *   3e_nombres-rationnels_P3   Rendre une fraction irréductible
+ *   3e_nombres-rationnels_P4   Comparer deux nombres rationnels
+ *   3e_nombres-rationnels_P5   Additionner et soustraire des nombres rationnels
+ *   3e_nombres-rationnels_P6   Multiplier des nombres rationnels
+ *   3e_nombres-rationnels_P7   Diviser des nombres rationnels
+ *   3e_nombres-rationnels_P8   Choisir et enchaîner les opérations adaptées dans une expression
+ *   3e_nombres-rationnels_P9   Respecter les priorités de calcul dans une expression contenant des rationnels
+ *   3e_nombres-rationnels_P10  Résoudre des problèmes faisant intervenir des nombres rationnels
+ *
+ * L'IDÉE CENTRALE, jamais énoncée avant d'avoir été vécue : un rationnel est
+ * un POINT, et toutes ses écritures ne sont que des façons de le découper.
+ * La leçon ne commence donc pas par « un rationnel est un quotient de deux
+ * entiers » mais par une barre que l'élève re-découpe (RationalBar) — la
+ * longueur coloriée et le marqueur sur la droite ne bougent JAMAIS pendant
+ * que les chiffres changent. L'équivalence est cette invariance de position ;
+ * le vocabulaire arrive après le geste.
+ *
+ * PÉRIMÈTRE (teachingScope, contraignant) : la leçon travaille les rationnels
+ * en écriture fractionnaire, positifs ET négatifs, avec les quatre opérations,
+ * les priorités et les problèmes. Sont exclus : les puissances de rationnels,
+ * les racines, le calcul littéral sur les fractions (a/b avec des lettres),
+ * la démonstration de l'irrationalité, et les écritures décimales illimitées
+ * périodiques comme objet d'étude.
+ *
+ * Fil narratif unique : « deux noms, un seul nombre » — la barre élastique du
+ * module 1, la même découpe du module 4, jusqu'au budget du club, reprise
+ * figée dans la synthèse du boss.
  */
-
 export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/nombres-rationnels';
 
 export const LESSON_CONFIG = {
-  // ── Identité ──────────────────────────────────────────────────────────────
   id: 'nombres-rationnels',
-  slug: 'nombres-rationnels',
+  sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Nombres rationnels',
-  emoji: '➗',
+  description:
+    "Re-découper une barre sans jamais déplacer le point qu'elle marque, pour découvrir qu'un rationnel a mille écritures et une seule valeur — puis les rendre irréductibles, les comparer, les additionner à la même découpe, les multiplier, les diviser et les enchaîner dans de vrais problèmes.",
   level: 'college',
   grade: '3e',
   chapter: 'nombres_calculs',
   chapterTitle: 'Nombres et calculs',
-  officialObjects: ['Nombres rationnels'],
-
-  // ── Méta-pédagogique ──────────────────────────────────────────────────────
-  estimatedDurationMin: 71,
-  difficulty: 2,
-  masteryThreshold: 0.8, // 80 % des modules complétés = leçon maîtrisée
-
-  prerequisites: [
-    { id: 'PRE-FRAC-4E', label: 'Opérations de base sur les fractions (4ème)' },
-    { id: 'PRE-DIV', label: 'Notion de diviseur et de multiple' }
-  ],
-
+  passingScore: 6,
+  masteryThreshold: 0.8,
+  emoji: '➗',
+  estimatedDurationMin: 85,
   skills: [
-    "Distinguer un nombre rationnel d'un nombre décimal",
-    "Rendre une fraction irréductible",
-    "Additionner et soustraire des fractions en choisissant un dénominateur commun",
-    "Multiplier des fractions en simplifiant avant le calcul",
-    "Diviser par une fraction en utilisant son inverse",
-    "Respecter les priorités opératoires dans un calcul fractionnaire",
-    "Résoudre un problème modélisable par un calcul sur les fractions"
+    "Comprendre les nombres rationnels comme des nombres pouvant s'écrire sous forme de quotient de deux entiers avec un dénominateur non nul",
+    "Reconnaître différentes écritures d'un même nombre rationnel",
+    'Rendre une fraction irréductible',
+    'Comparer deux nombres rationnels',
+    'Additionner et soustraire des nombres rationnels',
+    'Multiplier des nombres rationnels',
+    'Diviser des nombres rationnels',
+    'Choisir et enchaîner les opérations adaptées dans une expression',
+    'Respecter les priorités de calcul dans une expression contenant des rationnels',
+    'Résoudre des problèmes faisant intervenir des nombres rationnels',
   ],
-
-  // ── Évaluation finale ─────────────────────────────────────────────────────
-  assessment: {
-    moduleId: 'L07',
-    totalQuestions: 6,
-    masteryScore: 5,
+  teachingScope: {
+    include: [
+      'Rationnel = quotient de deux entiers, dénominateur non nul',
+      "Écritures multiples d'un même rationnel (fraction, décimal, signe déplacé)",
+      'Fraction irréductible et PGCD',
+      'Comparaison de rationnels, y compris négatifs',
+      'Somme, différence, produit et quotient de rationnels',
+      "Priorités de calcul et enchaînement d'opérations sur les rationnels",
+      'Problèmes de partage, de parts et de budget',
+    ],
+    exclude: [
+      'Puissances de rationnels (traitées dans « Puissances »)',
+      'Racines carrées et nombres irrationnels',
+      'Calcul littéral sur les fractions (quotients de lettres)',
+      "Développement décimal illimité périodique comme objet d'étude",
+    ],
   },
-
-  // ── Modules ───────────────────────────────────────────────────────────────
   modules: [
     {
-      id: '01',
-      number: 1,
-      slug: 'notion-rationnel',
-      path: `${LESSON_BASE_PATH}/notion-rationnel`,
-      title: 'Notion de nombre rationnel',
-      desc: "Comprendre le lien entre fraction, quotient et nombre rationnel.",
-      color: 'emerald',
-      style: 'featured',
+      id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`,
+      title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — pour savoir par où bien commencer.',
+      stage: 'prerequisite_check',
+      color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases',
+    },
+    {
+      id: '01', number: 1, slug: 'deux-noms-un-nombre', path: `${LESSON_BASE_PATH}/deux-noms-un-nombre`,
+      title: 'Deux noms, un seul nombre', desc: 'Re-découpe la barre : les chiffres changent, le point ne bouge pas.',
       stage: 'trigger',
-      teachesLearningPointIds: ['3e_nombres-rationnels_P1'],
-      estimatedMin: 8,
-      difficulty: 1,
-      xpReward: 50,
-      actionText: 'Démarrer ➔',
-      prerequisites: [],
+      teachesLearningPointIds: ['3e_nombres-rationnels_P1', '3e_nombres-rationnels_P2'],
+      color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 1, actionText: 'Re-découper la barre',
     },
     {
-      id: '02',
-      number: 2,
-      slug: 'fractions-irreductibles',
-      path: `${LESSON_BASE_PATH}/fractions-irreductibles`,
-      title: 'Fractions irréductibles',
-      desc: "Rendre une fraction irréductible en utilisant les diviseurs communs, et comparer des rationnels.",
-      color: 'indigo',
-      style: 'featured',
+      id: '02', number: 2, slug: 'rendre-irreductible', path: `${LESSON_BASE_PATH}/rendre-irreductible`,
+      title: 'Rendre irréductible', desc: 'Regroupe les parts jusqu’à ce qu’aucun diviseur commun ne reste.',
       stage: 'discovery',
-      teachesLearningPointIds: ['3e_nombres-rationnels_P2', '3e_nombres-rationnels_P3'],
-      estimatedMin: 8,
-      difficulty: 2,
-      xpReward: 50,
-      actionText: 'Voir ➔',
-      prerequisites: ['01'],
+      teachesLearningPointIds: ['3e_nombres-rationnels_P3'],
+      color: 'sky', style: 'featured', estimatedMin: 9, difficulty: 2, actionText: 'Simplifier',
     },
     {
-      id: '03',
-      number: 3,
-      slug: 'addition-soustraction',
-      path: `${LESSON_BASE_PATH}/addition-soustraction`,
-      title: 'Addition et Soustraction',
-      desc: "Trouver le dénominateur commun pour additionner ou soustraire.",
-      color: 'violet',
-      style: 'featured',
-      stage: 'manipulation',
+      id: '03', number: 3, slug: 'comparer', path: `${LESSON_BASE_PATH}/comparer`,
+      title: 'Comparer', desc: 'Place deux rationnels sur la droite — celui de droite est le plus grand.',
+      stage: 'discovery',
       teachesLearningPointIds: ['3e_nombres-rationnels_P4'],
-      estimatedMin: 10,
-      difficulty: 2,
-      xpReward: 50,
-      actionText: 'Voir ➔',
-      prerequisites: ['02'],
+      color: 'cyan', style: 'featured', estimatedMin: 9, difficulty: 2, actionText: 'Placer et comparer',
     },
     {
-      id: '04',
-      number: 4,
-      slug: 'multiplication-division',
-      path: `${LESSON_BASE_PATH}/multiplication-division`,
-      title: 'Multiplication et Division',
-      desc: "Multiplier en simplifiant et diviser en utilisant l'inverse.",
-      color: 'blue',
-      style: 'featured',
+      id: '04', number: 4, slug: 'la-meme-decoupe', path: `${LESSON_BASE_PATH}/la-meme-decoupe`,
+      title: 'La même découpe', desc: 'Un demi et un tiers ne s’emboîtent pas — jusqu’à ce que tu recoupes tout en sixièmes.',
       stage: 'manipulation',
       teachesLearningPointIds: ['3e_nombres-rationnels_P5'],
-      estimatedMin: 10,
-      difficulty: 2,
-      xpReward: 50,
-      actionText: 'Voir ➔',
-      prerequisites: ['03'],
+      color: 'violet', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Recouper les barres',
     },
     {
-      id: '05',
-      number: 5,
-      slug: 'priorites-operatoires',
-      path: `${LESSON_BASE_PATH}/priorites-operatoires`,
-      title: 'Priorités opératoires',
-      desc: "Gérer les calculs complexes avec plusieurs opérations.",
-      color: 'rose',
-      style: 'featured',
+      id: '05', number: 5, slug: 'fraction-de-fraction', path: `${LESSON_BASE_PATH}/fraction-de-fraction`,
+      title: 'Une fraction d’une fraction', desc: 'Peins les deux tiers d’un quadrillage déjà aux trois quarts peint.',
+      stage: 'manipulation',
+      teachesLearningPointIds: ['3e_nombres-rationnels_P6', '3e_nombres-rationnels_P7'],
+      color: 'emerald', style: 'featured', estimatedMin: 10, difficulty: 3, actionText: 'Peindre la grille',
+    },
+    {
+      id: '06', number: 6, slug: 'dans-quel-ordre', path: `${LESSON_BASE_PATH}/dans-quel-ordre`,
+      title: 'Dans quel ordre ?', desc: 'Choisis la prochaine opération autorisée — la chaîne de calcul se construit.',
       stage: 'formalization',
-      teachesLearningPointIds: ['3e_nombres-rationnels_P5'],
-      estimatedMin: 10,
-      difficulty: 3,
-      xpReward: 75,
-      actionText: 'Voir ➔',
-      prerequisites: ['04'],
+      teachesLearningPointIds: ['3e_nombres-rationnels_P8', '3e_nombres-rationnels_P9'],
+      color: 'blue', style: 'featured', estimatedMin: 9, difficulty: 3, actionText: 'Choisir l’étape',
     },
     {
-      id: '06',
-      number: 6,
-      slug: 'mission-budget',
-      path: `${LESSON_BASE_PATH}/mission-budget`,
-      title: 'Mission : Le Budget',
-      desc: "Résoudre un problème concret nécessitant plusieurs opérations.",
-      color: 'amber',
-      style: 'boss',
+      id: '07', number: 7, slug: 'le-budget-du-club', path: `${LESSON_BASE_PATH}/le-budget-du-club`,
+      title: 'Le budget du club', desc: 'Des parts de budget en barres : combien reste-t-il, et pour combien de maillots ?',
       stage: 'practice_lab',
-      teachesLearningPointIds: ['3e_nombres-rationnels_P6'],
-      estimatedMin: 15,
-      difficulty: 3,
-      xpReward: 150,
-      actionText: 'Mission ➔',
-      prerequisites: ['05'],
+      teachesLearningPointIds: ['3e_nombres-rationnels_P10', '3e_nombres-rationnels_P8'],
+      color: 'rose', style: 'featured', estimatedMin: 10, difficulty: 3, actionText: 'Ouvrir le budget',
     },
     {
-      id: '07',
-      number: 7,
-      slug: 'bilan-final',
-      path: `${LESSON_BASE_PATH}/bilan-final`,
-      title: 'Bilan Final',
-      desc: "Évaluation pour valider la maîtrise de la leçon.",
-      color: 'slate',
-      style: 'assessment',
+      id: '08', number: 8, slug: 'mission-finale', path: `${LESSON_BASE_PATH}/mission-finale`,
+      title: '🏆 Mission finale : deux noms, un seul nombre', desc: 'Dix épreuves pour prouver qu’aucune écriture ne te trompe.',
       stage: 'evaluation',
-      estimatedMin: 10,
-      difficulty: 3,
-      xpReward: 100,
-      actionText: 'Évaluation ➔',
-      prerequisites: ['06'],
-    }
-  ]
+      color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi',
+    },
+  ],
 };
-
-// ── Helpers dérivés ─────────────────────────────────────────────────────────
-
-export const TOTAL_MODULES = LESSON_CONFIG.modules.length;
-
-export function getModuleNav(moduleNumber) {
-  const modules = LESSON_CONFIG.modules;
-  const idx = modules.findIndex((m) => m.number === moduleNumber);
-  const prev = idx > 0 ? modules[idx - 1] : null;
-  const next = idx < modules.length - 1 ? modules[idx + 1] : null;
-  return {
-    prevLink: prev ? `${LESSON_BASE_PATH}/${prev.slug}` : null,
-    nextLink: next ? `${LESSON_BASE_PATH}/${next.slug}` : null,
-  };
-}

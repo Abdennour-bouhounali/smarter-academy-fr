@@ -1,15 +1,28 @@
-import { createContext } from 'react';
-import { LESSON_CONFIG, getModuleNav, LESSON_BASE_PATH } from './lesson.config';
+import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
 
+/** Contexte commun passé à <ModuleLayout> par chacun des modules. */
 export const MODULE_CTX = {
   lessonId: LESSON_CONFIG.id,
   coursePath: LESSON_BASE_PATH,
   courseTitle: LESSON_CONFIG.title,
   chapter: LESSON_CONFIG.chapter,
   chapterTitle: LESSON_CONFIG.chapterTitle,
+  levelLabel: 'Collège',
+  gradeLabel: '3ème',
   totalModules: LESSON_CONFIG.modules.length,
+  // Avec un module 0, modules.length ≠ numéro du dernier module — le bouton
+  // « Terminer » de ModuleLayout a besoin du vrai dernier numéro.
+  lastModuleNumber: LESSON_CONFIG.modules[LESSON_CONFIG.modules.length - 1].number,
+  sequentialUnlock: LESSON_CONFIG.sequentialUnlock,
 };
 
-export const LessonContext = createContext(MODULE_CTX);
+/** Liens précédent / suivant à partir du numéro du module courant. */
+export const getNavLinks = (currentModuleNumber) => {
+  const idx = LESSON_CONFIG.modules.findIndex((m) => m.number === currentModuleNumber);
+  if (idx === -1) return { prevLink: null, nextLink: null };
 
-export { getModuleNav as getNavLinks };
+  return {
+    prevLink: idx > 0 ? LESSON_CONFIG.modules[idx - 1].path : LESSON_BASE_PATH,
+    nextLink: idx < LESSON_CONFIG.modules.length - 1 ? LESSON_CONFIG.modules[idx + 1].path : null,
+  };
+};

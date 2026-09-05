@@ -7,6 +7,7 @@ export * from './mathComparison.js';
 export * from './numberFormat.js';
 export * from './geometry.js';
 export * from './algebra.js';
+export * from './random.js';
 export * from './lessonAccess.js';
 export * from './errorClassifiers.js';
 export * from './auth.js';

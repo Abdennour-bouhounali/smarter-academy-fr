@@ -1,31 +1,462 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowLeftRight } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief, NumberField } from '../../../../../common/components/LessonUI';
+import { ArrowLeftRight, Check, AlertTriangle, ArrowRight, Lightbulb, Search, Star } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ContentModule, NumericQuestion } from '../../../../../common/kit';
+import { ValidateButton, Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import { convert, parseDec, formatCapacity, roundTo } from '../components/capacityUtils';
+import { convert, parseDec, formatCapacity, factorBetween, roundTo } from '../components/capacityUtils';
+
+/**
+ * Module 5 V2 — reconstruit sur le lesson kit.
+ * UX améliorée via des composants visuels inline (Smarter Academy UI).
+ */
+
+const UNITS = ['L', 'dL', 'cL', 'mL'];
+
+/* ── COMPOSANTS VISUELS ──────────────────────────────────────────── */
+
+function CapacityLadder({ fromUnit, toUnit, active = false }) {
+  const startIndex = UNITS.indexOf(fromUnit);
+  const endIndex = UNITS.indexOf(toUnit);
+  const isGrowing = startIndex < endIndex; // e.g. L -> cL (number grows)
+  const minIdx = Math.min(startIndex, endIndex);
+  const maxIdx = Math.max(startIndex, endIndex);
+
+  return (
+    <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-6 pt-2 px-2 -mx-2 snap-x">
+      {UNITS.map((u, i) => {
+        const isActive = active && i >= minIdx && i <= maxIdx;
+        const isFrom = u === fromUnit;
+        const isTo = u === toUnit;
+
+        let colorClass = "bg-white text-slate-400 border-slate-200";
+        if (isActive) {
+          if (isGrowing) colorClass = "bg-blue-50 text-blue-800 border-blue-400 shadow-sm";
+          else colorClass = "bg-orange-50 text-orange-800 border-orange-400 shadow-sm";
+        }
+
+        return (
+          <React.Fragment key={u}>
+            <div className="relative flex flex-col items-center shrink-0 snap-center">
+              <div className={`flex items-center justify-center w-14 h-14 rounded-2xl border-2 font-mono font-extrabold text-xl transition-colors ${colorClass}`}>
+                {u}
+              </div>
+              {active && isFrom && <div className="absolute -bottom-6 text-[10px] text-slate-500 font-bold uppercase tracking-wider">Départ</div>}
+              {active && isTo && <div className="absolute -bottom-6 text-[10px] text-slate-500 font-bold uppercase tracking-wider">Arrivée</div>}
+            </div>
+
+            {i < UNITS.length - 1 && (
+              <div className="relative flex flex-col items-center justify-center w-8 sm:w-12 h-14 shrink-0">
+                <div className={`h-1 w-full rounded-full ${active && i >= minIdx && i < maxIdx ? (isGrowing ? 'bg-blue-300' : 'bg-orange-300') : 'bg-slate-200'}`} />
+                {active && i >= minIdx && i < maxIdx && (
+                  <div
+                    className={`absolute -top-2 px-1.5 py-0.5 rounded-md font-mono text-[11px] font-bold text-white shadow-sm ${isGrowing ? 'bg-blue-500' : 'bg-orange-500'
+                      }`}
+                  >
+                    {isGrowing ? '×10' : '÷10'}
+                  </div>
+                )}
+                {/* Arrow head indicator */}
+                {active && i >= minIdx && i < maxIdx && (
+                  <div className={`absolute top-1/2 -translate-y-1/2 font-bold ${isGrowing ? 'text-blue-500 right-0 translate-x-1/2' : 'text-orange-500 left-0 -translate-x-1/2'}`}>
+                    {isGrowing ? '▸' : '◂'}
+                  </div>
+                )}
+              </div>
+            )}
+          </React.Fragment>
+        );
+      })}
+    </div>
+  );
+}
 
 function WorkedExample({ done, onSolved }) {
+  const [step, setStep] = useState(0);
+
   return (
-    <div className="space-y-4">
-      <p className="text-sm text-slate-600">Avant de t’entraîner, regarde d’où vient chaque chiffre.</p>
-      <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-4 space-y-2 text-center">
-        <div className="font-mono text-lg font-bold text-slate-800">1,5 L = ? cL</div>
-        <div className="text-sm text-slate-600 space-y-1">
-          <div>1 L = 100 cL</div>
-          <div>0,5 L = 50 cL</div>
-          <div className="font-bold text-slate-800">1 L + 0,5 L = 100 cL + 50 cL = <span className="text-blue-700">150 cL</span></div>
+    <div className="space-y-6">
+      <div className="bg-slate-50 border border-slate-200 rounded-3xl p-5 sm:p-8 relative overflow-hidden shadow-sm">
+        {/* Background grid texture */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+
+        <div className="relative z-10 space-y-8">
+          {/* Header */}
+          <div className="text-center space-y-2">
+            <div className="inline-flex items-center gap-2 rounded-full bg-slate-200/50 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500">
+              <Search className="w-3 h-3" /> Exemple détaillé
+            </div>
+            <div className="font-mono text-3xl font-extrabold text-slate-800">1,5 L = ? cL</div>
+          </div>
+
+          {/* Steps */}
+          <div className="space-y-4 max-w-sm mx-auto">
+            <AnimatePresence>
+              {step >= 1 && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex justify-between items-center bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+                  <div className="font-mono font-bold text-slate-600">1 L</div>
+                  <div className="text-slate-300 font-bold">→</div>
+                  <div className="font-mono font-bold text-slate-800">100 cL</div>
+                </motion.div>
+              )}
+              {step >= 2 && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex justify-between items-center bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+                  <div className="font-mono font-bold text-slate-600">0,5 L</div>
+                  <div className="text-slate-300 font-bold">→</div>
+                  <div className="font-mono font-bold text-slate-800">50 cL</div>
+                </motion.div>
+              )}
+              {step >= 3 && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="pt-2 text-center">
+                  <div className="font-mono font-bold text-slate-500 mb-2">100 cL + 50 cL</div>
+                  <div className="text-slate-300 font-bold mb-2">↓</div>
+                  <div className="font-mono text-4xl font-extrabold text-blue-600 bg-blue-50 inline-block px-6 py-3 rounded-3xl border-2 border-blue-200 shadow-sm">150 cL</div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Controls / Why */}
+          {!done ? (
+            <div className="text-center pt-4">
+              {step < 3 ? (
+                <ValidateButton onClick={() => setStep(s => s + 1)}>Étape suivante</ValidateButton>
+              ) : (
+                <ValidateButton onClick={() => onSolved?.()}>J’ai compris, à moi de jouer</ValidateButton>
+              )}
+            </div>
+          ) : (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-6 bg-amber-50 border-2 border-amber-200 rounded-2xl p-4">
+              <div className="flex items-center gap-2 font-bold text-amber-800 mb-2">
+                <Lightbulb className="w-5 h-5" /> Pourquoi ?
+              </div>
+              <p className="text-sm text-amber-900 leading-relaxed">
+                Le <strong>cL</strong> est une unité plus petite que le <strong>L</strong>. Il faut donc <strong>davantage</strong> de cL pour représenter la même quantité ! Le nombre devient plus grand.
+              </p>
+            </motion.div>
+          )}
         </div>
       </div>
-      {!done && (
+    </div>
+  );
+}
+
+// Custom TapQuestion replacement to allow rich visual cards
+function DirectionChoice({ round, done, onDirChosen }) {
+  const [selected, setSelected] = useState(null);
+  const [hasValidated, setHasValidated] = useState(done);
+  const isGrowing = round.grow;
+
+  const handleSelect = (choice) => {
+    if (hasValidated) return;
+    setSelected(choice);
+  };
+
+  const handleValidate = () => {
+    if (selected === null || hasValidated) return;
+    setHasValidated(true);
+    if (selected === isGrowing) {
+      onDirChosen?.();
+    }
+  };
+
+  const isCorrect = selected === isGrowing;
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row gap-4">
+        <button
+          className={`flex-1 flex flex-col items-center justify-center gap-2 p-5 rounded-3xl border-4 transition-all text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 ${selected === true
+              ? 'border-blue-500 bg-blue-50 scale-[1.02] shadow-md'
+              : hasValidated
+                ? 'border-slate-200 bg-slate-50 opacity-50'
+                : 'border-slate-200 bg-white hover:border-blue-300 hover:bg-blue-50/50'
+            }`}
+          onClick={() => handleSelect(true)}
+          disabled={hasValidated}
+        >
+          <div className="font-mono text-xl font-extrabold text-blue-700">PLUS GRAND</div>
+          <div className="text-sm font-bold text-blue-600/70">Unité plus petite</div>
+        </button>
+
+        <button
+          className={`flex-1 flex flex-col items-center justify-center gap-2 p-5 rounded-3xl border-4 transition-all text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300 ${selected === false
+              ? 'border-orange-500 bg-orange-50 scale-[1.02] shadow-md'
+              : hasValidated
+                ? 'border-slate-200 bg-slate-50 opacity-50'
+                : 'border-slate-200 bg-white hover:border-orange-300 hover:bg-orange-50/50'
+            }`}
+          onClick={() => handleSelect(false)}
+          disabled={hasValidated}
+        >
+          <div className="font-mono text-xl font-extrabold text-orange-700">PLUS PETIT</div>
+          <div className="text-sm font-bold text-orange-600/70">Unité plus grande</div>
+        </button>
+      </div>
+
+      {!hasValidated && selected !== null && (
         <div className="text-center">
-          <ValidateButton onClick={() => onSolved?.()}>J’ai compris, continuer</ValidateButton>
+          <ValidateButton onClick={handleValidate}>Valider</ValidateButton>
         </div>
+      )}
+
+      {hasValidated && (
+        <AnimatePresence>
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <Feedback tone={isCorrect ? 'ok' : 'ko'}>
+              {isCorrect ? (
+                <>
+                  <div className="font-bold flex items-center gap-2 mb-1">
+                    <Check className="w-5 h-5" /> Bien joué !
+                  </div>
+                  On exprime la même contenance avec une unité <strong>{isGrowing ? 'plus petite' : 'plus grande'}</strong> : il en faut donc {isGrowing ? 'davantage' : 'moins'}, le nombre {isGrowing ? 'augmente' : 'diminue'}.
+                </>
+              ) : (
+                <>
+                  <div className="font-bold flex items-center gap-2 mb-1">
+                    <AlertTriangle className="w-5 h-5" /> Pas tout à fait
+                  </div>
+                  Regarde bien l'échelle. Tu vas vers une unité <strong>{isGrowing ? 'plus petite' : 'plus grande'}</strong>, donc le nombre doit devenir {isGrowing ? 'plus grand' : 'plus petit'}. Recommence !
+                </>
+              )}
+            </Feedback>
+
+            {!isCorrect && (
+              <div className="text-center mt-4">
+                <button
+                  onClick={() => { setSelected(null); setHasValidated(false); }}
+                  className="px-4 py-2 font-bold text-slate-600 bg-slate-200 hover:bg-slate-300 rounded-xl transition"
+                >
+                  Réessayer
+                </button>
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
       )}
     </div>
   );
 }
+
+function ConversionRound({ round, index, total, done, onSolved }) {
+  const [dirDone, setDirDone] = useState(false);
+  const expected = convert(round.value, round.from, round.to);
+  const factor = factorBetween(round.from, round.to);
+  const rule = round.grow ? `× ${factor}` : `÷ ${1 / factor}`;
+
+  return (
+    <div className="bg-white border border-slate-200 rounded-3xl p-5 sm:p-8 shadow-sm">
+      <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-violet-500 mb-6 text-center">
+        Conversion {index + 1}/{total}
+      </div>
+
+      <div className="text-center font-mono text-3xl sm:text-4xl font-extrabold text-slate-800 mb-8">
+        {formatCapacity(round.value, round.from)} = <span className="text-slate-300">?</span> {round.to}
+      </div>
+
+      <div className="mb-8">
+        <CapacityLadder fromUnit={round.from} toUnit={round.to} active={true} />
+      </div>
+
+      <div className="space-y-6">
+        <div className="text-center font-bold text-slate-700">Dans quelle direction va le nombre ?</div>
+        <DirectionChoice
+          round={round}
+          done={done || dirDone}
+          onDirChosen={() => setDirDone(true)}
+        />
+
+        {(dirDone || done) && (
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="pt-4 border-t-2 border-slate-100 overflow-hidden">
+            <div className="flex items-center justify-center gap-4 font-mono font-bold text-lg mb-6">
+              <div className="text-slate-600">{formatCapacity(round.value, round.from)}</div>
+              <div className={`px-3 py-1 rounded-xl text-white ${round.grow ? 'bg-blue-500' : 'bg-orange-500'}`}>{rule}</div>
+              <div className="text-slate-600">...</div>
+            </div>
+
+            <NumericQuestion
+              prompt="Calcule maintenant la valeur exacte :"
+              suffix={round.to}
+              parse={parseDec}
+              expected={(n) => !Number.isNaN(n) && Math.abs(roundTo(n, 4) - roundTo(expected, 4)) < 1e-6}
+              display={formatCapacity(expected, round.to)}
+              explain={null} // Keep it clean, the visual path explains it
+              solved={done}
+              onAnswered={() => onSolved?.()}
+            />
+          </motion.div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function DetectiveCard({ item, done, onSolved }) {
+  const [selected, setSelected] = useState(null);
+  const [hasValidated, setHasValidated] = useState(done);
+
+  const handleSelect = (idx) => {
+    if (hasValidated) return;
+    setSelected(idx);
+  };
+
+  const handleValidate = () => {
+    if (selected === null || hasValidated) return;
+    setHasValidated(true);
+    if (selected === item.correct) {
+      onSolved?.();
+    }
+  };
+
+  const isCorrect = selected === item.correct;
+
+  return (
+    <div className="bg-yellow-50/50 border-2 border-yellow-200 rounded-3xl p-5 sm:p-8 shadow-sm">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 rounded-full bg-yellow-400 text-white flex items-center justify-center shrink-0">
+          <Search className="w-5 h-5" />
+        </div>
+        <div>
+          <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-yellow-600">Détective des conversions</div>
+          <div className="font-bold text-slate-800">Trouve l'erreur avant qu'elle ne passe !</div>
+        </div>
+      </div>
+
+      <div className="bg-white border-2 border-slate-200 p-6 rounded-2xl text-center mb-6 shadow-inner relative overflow-hidden">
+        {/* Notebook lines */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'linear-gradient(transparent 95%, #94a3b8 95%)', backgroundSize: '100% 24px' }} />
+        <div className="relative font-mono text-2xl font-bold text-slate-700">
+          {item.qDisplay}
+        </div>
+      </div>
+
+      <div className="space-y-3 mb-6">
+        {item.options.map((opt, idx) => (
+          <button
+            key={idx}
+            className={`w-full text-left p-4 rounded-2xl border-2 font-bold transition-all ${selected === idx
+                ? 'border-violet-500 bg-violet-50 text-violet-900 shadow-sm scale-[1.01]'
+                : hasValidated
+                  ? 'border-slate-200 bg-white text-slate-400 opacity-60'
+                  : 'border-slate-200 bg-white text-slate-700 hover:border-violet-300'
+              }`}
+            onClick={() => handleSelect(idx)}
+            disabled={hasValidated}
+          >
+            {opt}
+          </button>
+        ))}
+      </div>
+
+      {!hasValidated && selected !== null && (
+        <div className="text-center">
+          <ValidateButton onClick={handleValidate}>Confirmer l'analyse</ValidateButton>
+        </div>
+      )}
+
+      {hasValidated && (
+        <AnimatePresence>
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <Feedback tone={isCorrect ? 'ok' : 'ko'}>
+              {isCorrect ? (
+                <>
+                  <div className="font-bold flex items-center gap-2 mb-2">
+                    <Check className="w-5 h-5" /> Analyse parfaite
+                  </div>
+                  {item.explain}
+                </>
+              ) : (
+                <>
+                  <div className="font-bold flex items-center gap-2 mb-2">
+                    <AlertTriangle className="w-5 h-5" /> Reprends ta loupe
+                  </div>
+                  L'analyse n'est pas la bonne. Regarde bien la relation entre les unités !
+                </>
+              )}
+            </Feedback>
+
+            {/* Visual Repair if correct and if it was an error */}
+            {isCorrect && item.repair && (
+              <div className="mt-4 pt-4 border-t-2 border-emerald-200/50 text-center font-mono font-bold">
+                <div className="text-slate-400 line-through decoration-rose-400 decoration-2 mb-2">{item.qDisplay}</div>
+                <div className="text-emerald-700 text-xl">{item.repair}</div>
+              </div>
+            )}
+
+            {!isCorrect && (
+              <div className="text-center mt-4">
+                <button
+                  onClick={() => { setSelected(null); setHasValidated(false); }}
+                  className="px-4 py-2 font-bold text-slate-600 bg-slate-200 hover:bg-slate-300 rounded-xl transition"
+                >
+                  Poursuivre l'enquête
+                </button>
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+      )}
+    </div>
+  );
+}
+
+function KeyRuleCard() {
+  return (
+    <div className="bg-pink-50 border-4 border-pink-200 rounded-3xl p-6 sm:p-8 overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-pink-300 rounded-bl-[100px] opacity-20 pointer-events-none" />
+
+      <h2 className="text-pink-800 font-extrabold text-2xl mb-6 tracking-tight">À RETENIR</h2>
+
+      <div className="grid md:grid-cols-2 gap-6 mb-6 relative z-10">
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-pink-100 flex flex-col items-center text-center">
+          <div className="font-bold text-slate-800 mb-4">Unité <span className="text-blue-600">plus petite</span><br />→ nombre <span className="text-blue-600">plus grand</span></div>
+          <div className="flex items-center gap-3 font-mono font-bold text-xl bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
+            L <span className="text-blue-500 text-sm">×100</span> cL
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-pink-100 flex flex-col items-center text-center">
+          <div className="font-bold text-slate-800 mb-4">Unité <span className="text-orange-600">plus grande</span><br />→ nombre <span className="text-orange-600">plus petit</span></div>
+          <div className="flex items-center gap-3 font-mono font-bold text-xl bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
+            cL <span className="text-orange-500 text-sm">÷100</span> L
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-pink-600 text-white font-bold p-4 rounded-xl text-center shadow-md relative z-10">
+        Ne déplace jamais la virgule au hasard : commence par regarder la taille des unités.
+      </div>
+    </div>
+  );
+}
+
+function ModuleCompletionCard() {
+  return (
+    <div className="bg-emerald-50 border-4 border-emerald-200 rounded-3xl p-8 text-center space-y-6">
+      <div className="flex justify-center gap-2 text-yellow-400 mb-2">
+        <Star className="w-8 h-8 fill-yellow-400" />
+        <Star className="w-10 h-10 fill-yellow-400 -mt-2" />
+        <Star className="w-8 h-8 fill-yellow-400" />
+      </div>
+
+      <div className="space-y-1">
+        <h2 className="font-extrabold text-3xl text-emerald-800">Mission accomplie !</h2>
+        <p className="text-emerald-700 font-bold">Tu as maîtrisé les conversions de contenances.</p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 text-left max-w-sm mx-auto shadow-sm border border-emerald-100">
+        <div className="font-bold text-slate-500 uppercase tracking-widest text-xs mb-4">Tu sais maintenant :</div>
+        <ul className="space-y-3 font-bold text-slate-700">
+          <li className="flex items-center gap-3"><Check className="w-5 h-5 text-emerald-500" /> comparer la taille des unités</li>
+          <li className="flex items-center gap-3"><Check className="w-5 h-5 text-emerald-500" /> prévoir si le nombre augmente</li>
+          <li className="flex items-center gap-3"><Check className="w-5 h-5 text-emerald-500" /> convertir L, dL, cL et mL</li>
+          <li className="flex items-center gap-3"><Check className="w-5 h-5 text-emerald-500" /> détecter une erreur</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+/* ── DONNÉES PÉDAGOGIQUES ────────────────────────────────────────── */
 
 const ROUNDS = [
   { id: 'r1', value: 2, from: 'L', to: 'cL', grow: true },
@@ -34,181 +465,113 @@ const ROUNDS = [
   { id: 'r4', value: 320, from: 'cL', to: 'L', grow: false },
 ];
 
-const DIRECTION_OPTIONS = ['Le nombre va devenir PLUS GRAND', 'Le nombre va devenir PLUS PETIT'];
-
-function ConversionRound({ round, done, onSolved }) {
-  const [dirPick, setDirPick] = useState(null);
-  const [dirChecked, setDirChecked] = useState(false);
-  const dirOk = dirChecked && ((dirPick === 0) === round.grow);
-
-  const [val, setVal] = useState('');
-  const [valChecked, setValChecked] = useState(false);
-  const expected = convert(round.value, round.from, round.to);
-  const parsed = parseDec(val);
-  const valOk = valChecked && !Number.isNaN(parsed) && Math.abs(roundTo(parsed, 4) - roundTo(expected, 4)) < 1e-6;
-
-  const smaller = round.grow ? round.to : round.from;
-  const bigger = round.grow ? round.from : round.to;
-
-  return (
-    <div className="space-y-4">
-      <div className="text-center font-mono text-lg font-bold text-slate-800">
-        {formatCapacity(round.value, round.from)} = ? {round.to}
-      </div>
-
-      <div className="space-y-2">
-        <p className="text-sm font-semibold text-slate-700">
-          Le {smaller} est plus petit que le {bigger}. Avant de calculer : le nombre va-t-il changer comment ?
-        </p>
-        <ChoiceGrid
-          options={DIRECTION_OPTIONS}
-          selected={dirPick}
-          onSelect={(i) => { setDirChecked(false); setDirPick(i); }}
-          revealed={dirChecked}
-          correctIndex={round.grow ? 0 : 1}
-          cols={1}
-          disabled={done}
-        />
-        {!done && !dirOk && (
-          <div className="text-center">
-            <ValidateButton onClick={() => setDirChecked(true)} disabled={dirPick === null}>Valider</ValidateButton>
-          </div>
-        )}
-        {dirChecked && !dirOk && (
-          <Feedback tone="hint">
-            On exprime la même contenance avec une unité {round.grow ? 'plus petite' : 'plus grande'} : il en faut
-            donc {round.grow ? 'davantage' : 'moins'}, le nombre {round.grow ? 'augmente' : 'diminue'}.
-          </Feedback>
-        )}
-      </div>
-
-      {(dirOk || done) && (
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-slate-700">Calcule maintenant la valeur exacte, en {round.to}.</p>
-          <div className="flex items-center justify-center gap-2">
-            <NumberField value={val} onChange={(v) => { setValChecked(false); setVal(v); }} ariaLabel={`Résultat en ${round.to}`} width="w-32" />
-            <span className="font-mono text-sm text-slate-500">{round.to}</span>
-          </div>
-          {!done && (
-            <div className="text-center">
-              <ValidateButton onClick={() => { setValChecked(true); if (!Number.isNaN(parseDec(val)) && Math.abs(roundTo(parseDec(val), 4) - roundTo(expected, 4)) < 1e-6) onSolved?.(); }} disabled={val === ''}>
-                Valider
-              </ValidateButton>
-            </div>
-          )}
-          {valChecked && !valOk && (
-            <Feedback tone="hint">
-              Pense à l'échelle entre {round.from} et {round.to} (×10, ×100 ou ×1000 selon les unités) et applique-la à {formatCapacity(round.value, round.from)}.
-            </Feedback>
-          )}
-          {(valOk || done) && (
-            <Feedback tone="ok">{formatCapacity(round.value, round.from)} = <strong>{formatCapacity(expected, round.to)}</strong></Feedback>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
 const DETECTIVE_ITEMS = [
   {
-    q: 'Un élève écrit : « 2 L = 20 mL ». Où est l’erreur ?',
-    options: ['Il n’y a pas d’erreur, 2 L = 20 mL', 'Il s’est trompé d’échelle : 1 L = 1000 mL, donc 2 L = 2000 mL'],
+    qDisplay: '2 L = 20 mL',
+    options: ['Il n’y a pas d’erreur, 2 L = 20 mL', 'Il s’est trompé d’échelle : 1 L = 1000 mL'],
     correct: 1,
-    explain: '1 L contient 1000 mL (pas 10). Donc 2 L = 2 × 1000 = 2000 mL, et non 20 mL.',
+    explain: '1 L contient 1000 mL (pas 10).',
+    repair: '2 L = 2000 mL'
   },
   {
-    q: 'Un élève écrit : « 3,2 L = 320 cL ». A-t-il raison ?',
+    qDisplay: '3,2 L = 320 cL',
     options: ['Oui : 1 L = 100 cL, donc 3,2 L = 320 cL', 'Non, il a dû se tromper quelque part'],
     correct: 0,
-    explain: 'C’est correct ! 1 L = 100 cL, donc 3,2 × 100 = 320 cL. Toutes les affirmations à vérifier ne sont pas fausses.',
+    explain: 'C’est correct ! 1 L = 100 cL, donc 3,2 × 100 = 320 cL. Toutes les affirmations ne sont pas fausses.',
+    repair: null
   },
 ];
 
-function DetectiveMCQ({ item, done, onSolved }) {
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-  return (
-    <div className="space-y-3">
-      <p className="text-sm font-semibold text-slate-700">{item.q}</p>
-      <ChoiceGrid options={item.options} selected={pick} onSelect={setPick} revealed={revealed} correctIndex={item.correct} cols={1} disabled={done} />
-      {!done && !revealed && (
-        <div className="text-center">
-          <ValidateButton onClick={() => { setRevealed(true); if (pick === item.correct) onSolved?.(); }} disabled={pick === null}>Valider</ValidateButton>
-        </div>
-      )}
-      {revealed && (
-        <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
-          {item.explain}
-          {pick !== item.correct && (
-            <>
-              {' '}
-              <button type="button" onClick={() => { setRevealed(false); setPick(null); }} className="underline font-semibold">Réessayer</button>
-            </>
-          )}
-        </Feedback>
-      )}
-    </div>
-  );
-}
+/* ── MODULE PRINCIPAL ────────────────────────────────────────────── */
 
 export default function Module05Conversions() {
-  const navLinks = getNavLinks(5);
   const [exampleDone, setExampleDone] = useState(false);
-  const [done, setDone] = useState({});
-  const allRoundsDone = ROUNDS.every((r) => done[r.id]);
-
-  const [det1Done, setDet1Done] = useState(false);
-  const [det2Done, setDet2Done] = useState(false);
-  const allDone = exampleDone && allRoundsDone && det1Done && det2Done;
+  const [roundsDone, setRoundsDone] = useState([]);
+  const [detDone, setDetDone] = useState([]);
+  const allRoundsDone = roundsDone.length === ROUNDS.length;
+  const allDetDone = detDone.length === DETECTIVE_ITEMS.length;
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
-      moduleTitle="Convertir les contenances"
-      moduleSubtitle="Passer d’une unité à l’autre en comprenant pourquoi le nombre change."
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(5)}
       moduleNumber={5}
+      moduleTitle="Convertir les contenances"
+      moduleSubtitle="Passer d’une unité à l’autre."
       estimatedTime="11 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="📋 Mission 05" title="Convertir, ce n'est pas « déplacer la virgule au hasard ».">
-          <p>Avant de calculer, demande-toi toujours : cette nouvelle unité est-elle plus grande ou plus petite ?</p>
-        </MissionBrief>
-
-        <StepCard num={1} title="D’où vient le chiffre ?" done={exampleDone}>
-          <WorkedExample done={exampleDone} onSolved={() => setExampleDone(true)} />
-        </StepCard>
-
-        <StepCard num={2} title="Quatre conversions, une seule logique" done={allRoundsDone} locked={!exampleDone}>
-          <div className="space-y-8">
-            {ROUNDS.map((r, i) => (
-              (i === 0 || done[ROUNDS[i - 1].id]) && (
-                <ConversionRound key={r.id} round={r} done={!!done[r.id]} onSolved={() => setDone((d) => ({ ...d, [r.id]: true }))} />
-              )
-            ))}
+      brief={{
+        tag: '📋 Mission 05',
+        title: "Convertir, ce n'est pas déplacer la virgule au hasard.",
+        body: (
+          <div className="mt-4">
+            <p className="mb-4">Avant de calculer, demande-toi toujours : cette nouvelle unité est-elle plus grande ou plus petite ?</p>
+            <div className="flex items-center gap-2 sm:gap-4 font-mono text-xs sm:text-sm font-bold text-blue-600 bg-blue-50 p-3 rounded-xl border border-blue-200 w-fit">
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-200 text-blue-800">1</span> Comprendre
+              <ArrowRight className="w-4 h-4 text-blue-300" />
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-200 text-blue-800">2</span> Convertir
+              <ArrowRight className="w-4 h-4 text-blue-300" />
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-200 text-blue-800">3</span> Détecter
+            </div>
           </div>
-        </StepCard>
-
-        <StepCard num={3} title="Détective des erreurs" done={det1Done && det2Done} locked={!allRoundsDone}>
-          <div className="space-y-6">
-            <DetectiveMCQ item={DETECTIVE_ITEMS[0]} done={det1Done} onSolved={() => setDet1Done(true)} />
-            {det1Done && <DetectiveMCQ item={DETECTIVE_ITEMS[1]} done={det2Done} onSolved={() => setDet2Done(true)} />}
-          </div>
-        </StepCard>
-
-        {allDone && (
-          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-            <ArrowLeftRight className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-            <p className="text-sm text-slate-300">
-              Avant de « déplacer la virgule », demande-toi toujours pourquoi elle bouge : c'est ce raisonnement qui
-              évite les erreurs.
-            </p>
-          </motion.div>
-        )}
-      </div>
-    </ModuleLayout>
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: 'D’où vient le chiffre ?',
+          done: exampleDone,
+          content: <WorkedExample done={exampleDone} onSolved={() => setExampleDone(true)} />,
+        },
+        {
+          num: 2,
+          title: 'Quatre conversions, une seule logique',
+          done: allRoundsDone,
+          content: (
+            <div className="space-y-8">
+              {ROUNDS.map((r, i) =>
+                i === 0 || roundsDone.includes(i - 1) ? (
+                  <ConversionRound
+                    key={r.id}
+                    round={r}
+                    index={i}
+                    total={ROUNDS.length}
+                    done={roundsDone.includes(i)}
+                    onSolved={() => setRoundsDone((d) => (d.includes(i) ? d : [...d, i]))}
+                  />
+                ) : null
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
+          title: 'Détecter les erreurs',
+          done: allDetDone,
+          content: (
+            <div className="space-y-8">
+              {DETECTIVE_ITEMS.map((item, i) =>
+                i === 0 || detDone.includes(i - 1) ? (
+                  <DetectiveCard
+                    key={i}
+                    item={item}
+                    done={detDone.includes(i)}
+                    onSolved={() => setDetDone((d) => (d.includes(i) ? d : [...d, i]))}
+                  />
+                ) : null
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 4,
+          title: 'La règle d’or',
+          done: allDetDone, // Displays immediately after detective is done
+          content: <KeyRuleCard />,
+        }
+      ]}
+      footer={
+        allDetDone ? <ModuleCompletionCard /> : <div /> // Hide footer until completed, or show a simple placeholder
+      }
+    />
   );
 }

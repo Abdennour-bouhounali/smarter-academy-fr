@@ -1,5 +1,5 @@
 import { useState, useCallback, useContext } from 'react';
-import { storage } from '../../../utils/storage';
+import { scopedStorage as storage } from '../../../utils/storage';
 import { AuthContext } from '../../../context/AuthContext';
 import { scheduleProgressSync } from '../progressQueue';
 
@@ -58,40 +58,48 @@ export function useProgress(lessonId) {
     storage.setItem('smarter_global_xp', String(next));
   };
 
+  // NOTE : plusieurs instances de useProgress coexistent sur une même page
+  // (ModuleLayout + le module lui-même). Chaque écriture doit donc partir du
+  // STOCKAGE (source de vérité), jamais de l'état React de l'instance :
+  // persister depuis un état d'instance périmé écraserait les clés écrites
+  // entre-temps par une autre instance (ex. markModuleCompleted du layout
+  // qui effaçait les completedExercises tout juste posés par awardXP).
+
   // ── markModuleCompleted ───────────────────────────────────────────────────
   const markModuleCompleted = useCallback((moduleId) => {
-    setLessonData(prev => {
-      if (prev.completedModules.includes(moduleId)) return prev;
-      const next = {
-        ...prev,
-        completedModules: [...prev.completedModules, moduleId],
-      };
-      persistLessonData(next);
-      scheduleProgressSync(token, lessonId);
-      return next;
-    });
+    const saved = readLessonData();
+    if (saved.completedModules.includes(moduleId)) {
+      setLessonData(saved);
+      return;
+    }
+    const next = {
+      ...saved,
+      completedModules: [...saved.completedModules, moduleId],
+    };
+    persistLessonData(next);
+    setLessonData(next);
+    scheduleProgressSync(token, lessonId);
   }, [storageKey, token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── markModuleVisited ─────────────────────────────────────────────────────
   const markModuleVisited = useCallback((moduleNumber) => {
     if (!lessonId) return;
-    
+
     // Set global last course
     storage.setItem('smarter_last_course', lessonId);
 
-    setLessonData(prev => {
-      if (prev.currentModule === moduleNumber && Date.now() - (prev.lastVisitedAt || 0) < 60000) {
-        return prev; // Debounce updates to avoid excessive writes
-      }
-      const next = {
-        ...prev,
-        currentModule: moduleNumber,
-        lastVisitedAt: Date.now()
-      };
-      persistLessonData(next);
-      scheduleProgressSync(token, lessonId);
-      return next;
-    });
+    const saved = readLessonData();
+    if (saved.currentModule === moduleNumber && Date.now() - (saved.lastVisitedAt || 0) < 60000) {
+      return; // Debounce updates to avoid excessive writes
+    }
+    const next = {
+      ...saved,
+      currentModule: moduleNumber,
+      lastVisitedAt: Date.now()
+    };
+    persistLessonData(next);
+    setLessonData(next);
+    scheduleProgressSync(token, lessonId);
   }, [lessonId, storageKey, token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── awardXP (idempotent) ──────────────────────────────────────────────────
@@ -103,23 +111,23 @@ export function useProgress(lessonId) {
    */
   const awardXP = useCallback(({ moduleId, exerciseId, amount }) => {
     const key = `${lessonId}:${moduleId}:${exerciseId}`;
-    setLessonData(prev => {
-      if (prev.completedExercises.includes(key)) return prev; // already awarded
-      const next = {
-        ...prev,
-        completedExercises: [...prev.completedExercises, key],
-      };
-      persistLessonData(next);
+    // Dedup contre le stockage (source de vérité synchrone), PAS dans un
+    // updater React : un updater doit rester pur, et StrictMode l'exécute
+    // deux fois en dev — le setXp imbriqué partait alors en double et l'XP
+    // était comptée (et persistée) deux fois par exercice.
+    const saved = readLessonData();
+    if (saved.completedExercises.includes(key)) return; // already awarded
+    const next = {
+      ...saved,
+      completedExercises: [...saved.completedExercises, key],
+    };
+    persistLessonData(next);
+    setLessonData(next);
 
-      // Award global XP
-      setXp(prevXp => {
-        const nextXp = prevXp + amount;
-        persistXP(nextXp);
-        return nextXp;
-      });
-
-      return next;
-    });
+    // Award global XP
+    const nextXp = readGlobalXP() + amount;
+    persistXP(nextXp);
+    setXp(nextXp);
   }, [lessonId, storageKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Derived values ────────────────────────────────────────────────────────

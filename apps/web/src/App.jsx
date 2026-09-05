@@ -36,6 +36,14 @@ import trigo3eRoutes from './lessons/college/3e/espace_geometrie/trigonometrie-t
 import representationEspace3eRoutes from './lessons/college/3e/espace_geometrie/representation-espace-3e/routes';
 import thales3eRoutes from './lessons/college/3e/espace_geometrie/thales-3e/routes';
 import fonctions3eRoutes from './lessons/college/3e/donnees_probabilites/fonctions-3e/routes';
+import fonctionsLineaires3eRoutes from './lessons/college/3e/donnees_probabilites/fonctions-lineaires-3e/routes';
+import fonctionsAffines3eRoutes from './lessons/college/3e/donnees_probabilites/fonctions-affines-3e/routes';
+import representationGraphique3eRoutes from './lessons/college/3e/donnees_probabilites/representation-graphique-3e/routes';
+import lectureGraphique3eRoutes from './lessons/college/3e/donnees_probabilites/lecture-graphique-3e/routes';
+import statistiques3eRoutes from './lessons/college/3e/donnees_probabilites/statistiques-3e/routes';
+import probabilites3eRoutes from './lessons/college/3e/donnees_probabilites/probabilites-3e/routes';
+import proportionnalite3eRoutes from './lessons/college/3e/donnees_probabilites/proportionnalite-3e/routes';
+import modelisation3eRoutes from './lessons/college/3e/donnees_probabilites/modelisation-3e/routes';
 import pythagore3eRoutes from './lessons/college/3e/espace_geometrie/pythagore-3e/routes';
 import resolutionProblemesRoutes from './lessons/college/6e/nombres_calculs/resolution-problemes/routes';
 import equationsProduitRoutes from './lessons/college/3e/nombres_calculs/equations-produit/routes';
@@ -64,6 +72,16 @@ import graphiquesRoutes from './lessons/college/6e/donnees_proportionnalite/grap
 import proportionnaliteRoutes from './lessons/college/6e/donnees_proportionnalite/proportionnalite/routes';
 import constructionsGeometriquesRoutes from './lessons/college/6e/espace_geometrie/constructions-geometriques/routes';
 import algorithmiqueProgrammationRoutes from './lessons/college/6e/algorithmique/algorithmique-programmation/routes';
+import ensemblesIntervalles2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/routes';
+import nombresReels2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/routes';
+import valeurAbsolue2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/routes';
+import equationsInequations2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/routes';
+import calculLitteral2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/routes';
+import arithmetique2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/routes';
+import logique2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/routes';
+import vecteurs2ndeRoutes from './lessons/lycee/seconde/geometrie/vecteurs-2nde/routes';
+import colinearite2ndeRoutes from './lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/routes';
+import equationsDroites2ndeRoutes from './lessons/lycee/seconde/geometrie/equations-de-droites-2nde/routes';
 
 // Hydrates local lesson progress from the server on login and flushes the
 // offline queue — must live inside AuthProvider, hence this null component.
@@ -126,6 +144,14 @@ export default function App() {
             {representationEspace3eRoutes()}
             {thales3eRoutes()}
             {fonctions3eRoutes()}
+            {fonctionsLineaires3eRoutes()}
+            {fonctionsAffines3eRoutes()}
+            {representationGraphique3eRoutes()}
+            {lectureGraphique3eRoutes()}
+            {statistiques3eRoutes()}
+            {probabilites3eRoutes()}
+            {proportionnalite3eRoutes()}
+            {modelisation3eRoutes()}
             {pythagore3eRoutes()}
             {resolutionProblemesRoutes()}
             {equationsProduitRoutes()}
@@ -154,6 +180,16 @@ export default function App() {
             {proportionnaliteRoutes()}
             {constructionsGeometriquesRoutes()}
             {algorithmiqueProgrammationRoutes()}
+            {ensemblesIntervalles2ndeRoutes()}
+            {nombresReels2ndeRoutes()}
+            {valeurAbsolue2ndeRoutes()}
+            {equationsInequations2ndeRoutes()}
+            {calculLitteral2ndeRoutes()}
+            {arithmetique2ndeRoutes()}
+            {logique2ndeRoutes()}
+            {vecteurs2ndeRoutes()}
+            {colinearite2ndeRoutes()}
+            {equationsDroites2ndeRoutes()}
           </Route>
         </Routes>
       </Router>

@@ -6,7 +6,7 @@ import { courseLevels } from '@smarter-academy/core';
 import { getResumeLesson } from '../lessons/common/utils/progress/getResumeLesson';
 import { getLessonProgress } from '../lessons/common/utils/progress/getLessonProgress';
 import { getTotalModules } from '../lessons/registry';
-import { storage } from '../utils/storage';
+import { storage, scopedStorage } from '../utils/storage';
 import { AuthContext } from '../context/AuthContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import LessonCard from '../components/student/LessonCard';
@@ -107,7 +107,7 @@ export default function CoursesPage() {
   };
 
   const handleCourseClick = (courseId) => {
-    storage.setItem('smarter_last_course', courseId);
+    scopedStorage.setItem('smarter_last_course', courseId);
   };
 
   const [searchQuery, setSearchQuery] = useState('');

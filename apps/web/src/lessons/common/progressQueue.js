@@ -1,5 +1,5 @@
 import { calculateCompletionPercentage } from '@smarter-academy/core';
-import { storage } from '../../utils/storage';
+import { scopedStorage as storage } from '../../utils/storage';
 import { putLessonProgress } from '../../services/lessonProgressService';
 import { getTotalModules } from '../registry';
 

@@ -21,6 +21,20 @@ const PAD_L = 46;
 const PAD_R = 56;
 const AXIS_W = W - PAD_L - PAD_R;
 
+/** Demi-largeur de la bulle de valeur du curseur (rect de 80 centré sur 0). */
+const BADGE_HALF = 41; // 40 + 1 pour le stroke
+
+/**
+ * Décalage horizontal à appliquer à la bulle pour qu'elle reste dans le viewBox
+ * (§17bis : aucun état valide ne doit rogner un nombre). Renvoie 0 dès que la
+ * bulle tient telle quelle — le rendu existant est donc inchangé partout ailleurs.
+ */
+function badgeShift(cx) {
+  if (cx - BADGE_HALF < 0) return BADGE_HALF - cx;
+  if (cx + BADGE_HALF > W) return W - BADGE_HALF - cx;
+  return 0;
+}
+
 export default function NumberLine({
   min,
   max,
@@ -72,7 +86,9 @@ export default function NumberLine({
   const handlePointerDown = (e) => {
     if (disabled || mode !== 'place') return;
     dragging.current = true;
-    e.currentTarget.setPointerCapture?.(e.pointerId);
+    // Capture facultative : elle lève NotFoundError pour un pointeur
+    // synthétique ou déjà relâché — ne jamais casser le geste pour ça.
+    try { e.currentTarget.setPointerCapture?.(e.pointerId); } catch { /* ignore */ }
     onChange?.(valueFromClientX(e.clientX));
   };
 
@@ -83,7 +99,7 @@ export default function NumberLine({
 
   const endDrag = (e) => {
     dragging.current = false;
-    e.currentTarget.releasePointerCapture?.(e.pointerId);
+    try { e.currentTarget.releasePointerCapture?.(e.pointerId); } catch { /* ignore */ }
   };
 
   const handleKeyDown = (e) => {
@@ -111,21 +127,19 @@ export default function NumberLine({
         role="img"
         aria-label={ariaLabel}
         style={{ touchAction: mode === 'place' ? 'none' : 'auto' }}
+        // Les gestes sont écoutés sur le <svg> lui-même : ils remontent depuis
+        // n'importe quel enfant (curseur, axe, graduations). Avec les handlers
+        // posés sur le seul rect transparent du fond, tout ce qui était peint
+        // par-dessus — le curseur en premier — avalait le pointerdown : on ne
+        // pouvait pas saisir la poignée, à la souris comme au doigt.
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={endDrag}
+        onPointerCancel={endDrag}
       >
         {/* Zone de capture des gestes (mode « placer ») */}
         {mode === 'place' && !disabled && (
-          <rect
-            x="0"
-            y="0"
-            width={W}
-            height={height}
-            fill="transparent"
-            className="cursor-pointer"
-            onPointerDown={handlePointerDown}
-            onPointerMove={handlePointerMove}
-            onPointerUp={endDrag}
-            onPointerCancel={endDrag}
-          />
+          <rect x="0" y="0" width={W} height={height} fill="transparent" className="cursor-pointer" />
         )}
 
         {/* Axe + flèche : la demi-droite continue vers les grands nombres */}
@@ -154,6 +168,10 @@ export default function NumberLine({
                   aria-label={`Graduation ${format(v)}`}
                 />
               )}
+              {/* pointer-events:none — sans ça, la ligne décorative d'une graduation
+                  voisine peut passer AU-DESSUS du rect transparent cliquable d'une autre
+                  graduation (les zones de capture se chevauchent quand tickCount est
+                  grand) et intercepter le clic destiné à onTickClick. */}
               <line
                 x1={x}
                 y1={axisY - (labelled ? 14 : 7)}
@@ -161,6 +179,7 @@ export default function NumberLine({
                 y2={axisY + (labelled ? 14 : 7)}
                 stroke={isSelected ? '#2563eb' : '#64748b'}
                 strokeWidth={isSelected ? 5 : labelled ? 3 : 2}
+                style={{ pointerEvents: 'none' }}
               />
               {/* label : uniquement si labelled ET (pas edgesOnly OU c'est le premier/dernier tick) */}
               {labelled && (!edgesOnly || i === 0 || i === ticks.length - 1) && (
@@ -172,6 +191,7 @@ export default function NumberLine({
                   fontWeight={isSelected ? '800' : '600'}
                   fill={isSelected ? '#2563eb' : '#475569'}
                   fontFamily="'JetBrains Mono', monospace"
+                  style={{ pointerEvents: 'none' }}
                 >
                   {format(v)}
                 </text>
@@ -254,18 +274,25 @@ export default function NumberLine({
               stroke="#b45309"
               strokeWidth="2"
             />
-            <rect x="-40" y={axisY - 74} width="80" height="40" rx="10" fill="#f59e0b" stroke="#b45309" strokeWidth="2" />
-            <text
-              x="0"
-              y={axisY - 47}
-              textAnchor="middle"
-              fontSize="24"
-              fontWeight="800"
-              fill="#fff"
-              fontFamily="'JetBrains Mono', monospace"
-            >
-              {revealValue ? format(value) : '?'}
-            </text>
+            {/* §17bis (layout safety) : la bulle fait 80 de large et est centrée sur la
+                valeur. Aux extrémités (value = min ou max) elle déborderait du viewBox et
+                le nombre serait rogné. On DÉCALE la bulle vers l'intérieur — la pointe du
+                curseur, elle, reste sur la valeur exacte : la lecture mathématique
+                (« le curseur est ICI ») n'est pas modifiée, seule l'étiquette se replie. */}
+            <g transform={`translate(${badgeShift(toX(value))}, 0)`}>
+              <rect x="-40" y={axisY - 74} width="80" height="40" rx="10" fill="#f59e0b" stroke="#b45309" strokeWidth="2" />
+              <text
+                x="0"
+                y={axisY - 47}
+                textAnchor="middle"
+                fontSize="24"
+                fontWeight="800"
+                fill="#fff"
+                fontFamily="'JetBrains Mono', monospace"
+              >
+                {revealValue ? format(value) : '?'}
+              </text>
+            </g>
           </g>
         )}
       </svg>

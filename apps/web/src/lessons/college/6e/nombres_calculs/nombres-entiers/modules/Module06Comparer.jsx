@@ -1,35 +1,38 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { ContentModule, TapQuestion, useKit } from '../../../../../common/kit';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Base10Blocks from '../components/Base10Blocks';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief } from '../../../../../common/components/LessonUI';
+import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { formatFr, digitCells, highestPlaceValue } from '../components/numberUtils';
 
-/* ─── Étape 1 : comparer avec les yeux ───────────────────────────── */
+/**
+ * Module 6 V2 — reconstruit sur le lesson kit. Le laboratoire de
+ * comparaison position par position (avec tap sur le symbole) reste une
+ * interaction maison ; les QCM et les duels passent en TapQuestion.
+ */
+
 const VISUEL = { a: 4500, b: 3900 };
 
-/* ─── Étape 2 : le nombre de chiffres ────────────────────────────── */
 const DUELS_CHIFFRES = [
   { a: 845, b: 1200, correct: 'b' },
   { a: 9999, b: 10000, correct: 'b' },
   { a: 100000, b: 99999, correct: 'a' },
 ];
 
-/* ─── Étape 3 : laboratoire de comparaison ───────────────────────── */
 const LABOS = [
   { a: 4582, b: 4527 },
   { a: 7348, b: 7352 },
 ];
 
 function CompareLab({ a, b, solved, onSolved }) {
+  const { react } = useKit();
   const top = Math.max(highestPlaceValue(a), highestPlaceValue(b));
   const cellsA = digitCells(a, top);
   const cellsB = digitCells(b, top);
   const firstDiff = cellsA.findIndex((c, i) => c.digit !== cellsB[i].digit);
 
-  const [revealed, setRevealed] = useState(0); // nb de colonnes comparées
+  const [revealed, setRevealed] = useState(0);
   const [pick, setPick] = useState(null);
   const [checked, setChecked] = useState(false);
 
@@ -39,7 +42,6 @@ function CompareLab({ a, b, solved, onSolved }) {
 
   return (
     <div className="space-y-4">
-      {/* Tableau de comparaison */}
       <div className="overflow-x-auto">
         <table className="mx-auto border-separate border-spacing-1 min-w-max">
           <thead>
@@ -72,15 +74,13 @@ function CompareLab({ a, b, solved, onSolved }) {
                       return (
                         <td key={c.key} className="text-center">
                           {isCompared && (
-                            <motion.span
-                              initial={{ opacity: 0, scale: 0.6 }}
-                              animate={{ opacity: 1, scale: 1 }}
+                            <span
                               className={`inline-block font-mono font-extrabold text-lg ${
                                 isDecisive ? 'text-rose-600' : equal ? 'text-slate-400' : 'text-slate-300'
                               }`}
                             >
                               {equal ? '=' : cellsA[i].digit > cellsB[i].digit ? '>' : '<'}
-                            </motion.span>
+                            </span>
                           )}
                         </td>
                       );
@@ -117,7 +117,6 @@ function CompareLab({ a, b, solved, onSolved }) {
         </table>
       </div>
 
-      {/* Progression de la comparaison */}
       {!stopped && !solved && (
         <div className="text-center space-y-2">
           <ValidateButton onClick={() => setRevealed((r) => r + 1)} tone="indigo">
@@ -159,10 +158,12 @@ function CompareLab({ a, b, solved, onSolved }) {
                 <button
                   key={sym}
                   type="button"
-                  disabled={solved}
+                  disabled={solved || checked}
                   onClick={() => {
                     setPick(sym);
-                    setChecked(false);
+                    setChecked(true);
+                    react(sym === correctSymbol);
+                    onSolved?.();
                   }}
                   aria-label={`Signe ${sym}`}
                   className={`w-12 h-12 rounded-xl border-2 font-mono font-extrabold text-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
@@ -178,28 +179,15 @@ function CompareLab({ a, b, solved, onSolved }) {
             <span className="font-mono font-extrabold text-2xl text-slate-800 tabular-nums">{formatFr(b)}</span>
           </div>
 
-          {!solved && (
-            <div className="text-center">
-              <ValidateButton
-                onClick={() => {
-                  setChecked(true);
-                  if (pick === correctSymbol) onSolved?.();
-                }}
-                disabled={!pick}
-              >
-                Valider
-              </ValidateButton>
-            </div>
-          )}
-
           {checked && pick !== correctSymbol && (
             <Feedback tone="ko">
-              Reprends la première différence : {cellsA[firstDiff].digit} contre {cellsB[firstDiff].digit} à la
-              position des {cellsA[firstDiff].label.toLowerCase()}.
+              Bonne réponse : <strong className="font-mono">{correctSymbol}</strong>. Reprends la première
+              différence : {cellsA[firstDiff].digit} contre {cellsB[firstDiff].digit} à la position des{' '}
+              {cellsA[firstDiff].label.toLowerCase()}.
             </Feedback>
           )}
 
-          {solved && (
+          {(checked || solved) && pick === correctSymbol && (
             <Feedback tone="ok">
               <span className="font-mono font-bold">
                 {formatFr(a)} {correctSymbol} {formatFr(b)}
@@ -213,7 +201,6 @@ function CompareLab({ a, b, solved, onSolved }) {
   );
 }
 
-/* ─── Étape 4 : raisonnements à corriger ─────────────────────────── */
 const ERREURS = [
   {
     claim: '« 3 900 > 12 000 parce que 900 est plus grand que 12 »',
@@ -243,306 +230,195 @@ const ERREURS = [
   },
 ];
 
-function ErreurCard({ item, solved, onSolved }) {
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-
-  return (
-    <div className="space-y-3 border-2 border-amber-200 bg-amber-50/50 rounded-2xl p-4">
-      <div className="text-[11px] font-mono font-bold text-amber-600 uppercase tracking-wider">
-        Raisonnement d'élève à examiner
-      </div>
-      <p className="text-base font-semibold text-slate-800 italic">{item.claim}</p>
-      <p className="text-sm font-semibold text-slate-600">Qu'est-ce qui ne va pas dans ce raisonnement ?</p>
-      <ChoiceGrid
-        options={item.options}
-        selected={pick}
-        onSelect={setPick}
-        revealed={revealed}
-        correctIndex={item.correct}
-        cols={1}
-      />
-      {!revealed && (
-        <ValidateButton
-          onClick={() => {
-            setRevealed(true);
-            if (pick === item.correct) onSolved?.();
-          }}
-          disabled={pick === null}
-          tone="amber"
-        >
-          Valider
-        </ValidateButton>
-      )}
-      {revealed && (
-        <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
-          La bonne comparaison est <strong className="font-mono">{item.truth}</strong>. {item.detail}
-          {!solved && pick !== item.correct && (
-            <>
-              {' '}
-              <button
-                type="button"
-                onClick={() => {
-                  setRevealed(false);
-                  setPick(null);
-                }}
-                className="underline font-semibold"
-              >
-                Réessayer
-              </button>
-            </>
-          )}
-        </Feedback>
-      )}
-    </div>
-  );
-}
-
 export default function Module06Comparer() {
-  const navLinks = getNavLinks(6);
-  const [visuelPick, setVisuelPick] = useState(null);
-  const [visuelRevealed, setVisuelRevealed] = useState(false);
+  const [visuelDone, setVisuelDone] = useState(false);
   const [duelsDone, setDuelsDone] = useState([]);
   const [labosDone, setLabosDone] = useState([]);
   const [erreursDone, setErreursDone] = useState([]);
 
-  const s1 = visuelRevealed;
+  const s1 = visuelDone;
   const s2 = duelsDone.length === DUELS_CHIFFRES.length;
   const s3 = labosDone.length === LABOS.length;
   const s4 = erreursDone.length === ERREURS.length;
-  const allDone = s1 && s2 && s3 && s4;
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(6)}
+      moduleNumber={6}
       moduleTitle="Comparer les nombres"
       moduleSubtitle="D'abord avec les yeux, puis avec une méthode sûre : on commence par la plus grande position."
-      moduleNumber={6}
       estimatedTime="12 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="⚖️ Comparaison" title="Comparer, ce n'est pas deviner : c'est regarder au bon endroit.">
+      brief={{
+        tag: '⚖️ Comparaison',
+        title: "Comparer, ce n'est pas deviner : c'est regarder au bon endroit.",
+        body: (
           <p>
             Tu vas construire la méthode toi-même, en trois temps : avec les yeux, puis avec le nombre de
             chiffres, puis position par position.
           </p>
-        </MissionBrief>
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: 'Compare avec les yeux',
+          subtitle: 'Deux quantités représentées par du matériel.',
+          done: s1,
+          content: (
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { n: VISUEL.a, counts: { UM: 4, C: 5 }, label: 'Quantité A' },
+                  { n: VISUEL.b, counts: { UM: 3, C: 9 }, label: 'Quantité B' },
+                ].map((q) => (
+                  <div key={q.n} className="border-2 border-slate-200 rounded-2xl p-3 bg-white space-y-2">
+                    <div className="text-[11px] font-mono font-bold text-slate-400 uppercase">{q.label}</div>
+                    <Base10Blocks counts={q.counts} compact max={9} />
+                    {s1 && (
+                      <div className="font-mono font-extrabold text-xl text-slate-800 text-center tabular-nums">
+                        {formatFr(q.n)}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
 
-        {/* Étape 1 */}
-        <StepCard num={1} title="Compare avec les yeux" subtitle="Deux quantités représentées par du matériel." done={s1}>
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[
-                { n: VISUEL.a, counts: { UM: 4, C: 5 }, label: 'Quantité A' },
-                { n: VISUEL.b, counts: { UM: 3, C: 9 }, label: 'Quantité B' },
-              ].map((q) => (
-                <div key={q.n} className="border-2 border-slate-200 rounded-2xl p-3 bg-white space-y-2">
-                  <div className="text-[11px] font-mono font-bold text-slate-400 uppercase">{q.label}</div>
-                  <Base10Blocks counts={q.counts} compact max={9} />
-                  {s1 && (
-                    <div className="font-mono font-extrabold text-xl text-slate-800 text-center tabular-nums">
-                      {formatFr(q.n)}
+              <TapQuestion
+                prompt="Quelle quantité est la plus grande ?"
+                options={['La quantité A', 'La quantité B', 'Impossible à dire sans calculer']}
+                correct={0}
+                cols={3}
+                explain={
+                  <>
+                    A contient <strong>4 blocs de mille</strong>, B seulement <strong>3</strong>. Même si B a
+                    beaucoup plus de plaques (9 contre 5), cela ne rattrape jamais un millier entier :{' '}
+                    <strong className="font-mono">4 500 &gt; 3 900</strong>. Les grosses positions décident
+                    avant les petites.
+                  </>
+                }
+                onAnswered={() => setVisuelDone(true)}
+              />
+            </div>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Premier réflexe : compter les chiffres',
+          subtitle: 'Trois duels éclair. Réponds sans calculer.',
+          done: s2,
+          content: (
+            <div className="space-y-4">
+              {DUELS_CHIFFRES.map((d, i) => {
+                const correctIndex = d.correct === 'a' ? 0 : 1;
+                return (
+                  <div key={`${d.a}-${d.b}`} className="border-2 border-slate-200 rounded-2xl p-4 bg-white">
+                    <TapQuestion
+                      prompt="Lequel est le plus grand ?"
+                      options={[d.a, d.b]}
+                      correct={correctIndex}
+                      cols={2}
+                      renderOption={(n) => (
+                        <span className="block text-center w-full">
+                          <span className="block font-mono font-extrabold text-2xl text-slate-800 tabular-nums">
+                            {formatFr(n)}
+                          </span>
+                          <span className="block text-[10px] font-mono text-slate-400">
+                            {String(n).length} chiffres
+                          </span>
+                        </span>
+                      )}
+                      correctionLabel={formatFr(d.correct === 'a' ? d.a : d.b)}
+                      explain={
+                        <>
+                          <span className="font-mono font-bold">
+                            {formatFr(d.a)} {d.a > d.b ? '>' : '<'} {formatFr(d.b)}
+                          </span>{' '}
+                          : {String(d.a).length === String(d.b).length
+                            ? 'même nombre de chiffres, il faut comparer position par position.'
+                            : `${String(Math.max(d.a, d.b)).length} chiffres contre ${String(Math.min(d.a, d.b)).length} — le plus long l'emporte.`}
+                        </>
+                      }
+                      solved={duelsDone.includes(i)}
+                      onAnswered={() => setDuelsDone((x) => (x.includes(i) ? x : [...x, i]))}
+                    />
+                  </div>
+                );
+              })}
+              {s2 && (
+                <Feedback tone="info">
+                  Règle 1 : <strong>si les deux nombres n'ont pas le même nombre de chiffres, le plus long est
+                  le plus grand</strong> (à condition de ne pas écrire de zéro inutile devant). Mais que faire
+                  quand ils ont le même nombre de chiffres ?
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
+          title: 'Laboratoire : même nombre de chiffres',
+          subtitle: 'Compare position par position, en partant de la gauche, et arrête-toi à la première différence.',
+          done: s3,
+          content: (
+            <div className="space-y-8">
+              {LABOS.map((l, i) =>
+                i === 0 || labosDone.includes(i - 1) ? (
+                  <div key={`${l.a}-${l.b}`} className="space-y-3">
+                    <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                      Duel {i + 1} / {LABOS.length}
                     </div>
-                  )}
+                    <CompareLab
+                      a={l.a}
+                      b={l.b}
+                      solved={labosDone.includes(i)}
+                      onSolved={() => setLabosDone((x) => (x.includes(i) ? x : [...x, i]))}
+                    />
+                  </div>
+                ) : null
+              )}
+              {s3 && (
+                <Feedback tone="info">
+                  Règle 2 : <strong>à nombre de chiffres égal, on compare position par position en partant de la
+                  gauche, et on s'arrête à la première différence.</strong> Les positions suivantes ne peuvent
+                  plus rien changer.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 4,
+          title: 'Chasse aux raisonnements faux',
+          subtitle: 'Deux élèves se sont trompés. À toi de dire pourquoi.',
+          done: s4,
+          content: (
+            <div className="space-y-4">
+              {ERREURS.map((e, i) => (
+                <div key={e.claim} className="space-y-3 border-2 border-amber-200 bg-amber-50/50 rounded-2xl p-4">
+                  <div className="text-[11px] font-mono font-bold text-amber-600 uppercase tracking-wider">
+                    Raisonnement d'élève à examiner
+                  </div>
+                  <p className="text-base font-semibold text-slate-800 italic">{e.claim}</p>
+                  <TapQuestion
+                    prompt="Qu'est-ce qui ne va pas dans ce raisonnement ?"
+                    options={e.options}
+                    correct={e.correct}
+                    cols={1}
+                    explain={
+                      <>
+                        La bonne comparaison est <strong className="font-mono">{e.truth}</strong>. {e.detail}
+                      </>
+                    }
+                    solved={erreursDone.includes(i)}
+                    onAnswered={() => setErreursDone((x) => (x.includes(i) ? x : [...x, i]))}
+                  />
                 </div>
               ))}
             </div>
-
-            <p className="text-sm font-semibold text-slate-700">Quelle quantité est la plus grande ?</p>
-            <ChoiceGrid
-              options={['La quantité A', 'La quantité B', 'Impossible à dire sans calculer']}
-              selected={visuelPick}
-              onSelect={setVisuelPick}
-              revealed={visuelRevealed}
-              correctIndex={0}
-              cols={3}
-            />
-            {!visuelRevealed && (
-              <ValidateButton onClick={() => setVisuelRevealed(true)} disabled={visuelPick === null}>
-                Valider
-              </ValidateButton>
-            )}
-            {visuelRevealed && (
-              <Feedback tone={visuelPick === 0 ? 'ok' : 'ko'}>
-                A contient <strong>4 blocs de mille</strong>, B seulement <strong>3</strong>. Même si B a beaucoup
-                plus de plaques (9 contre 5), cela ne rattrape jamais un millier entier :{' '}
-                <strong className="font-mono">4 500 &gt; 3 900</strong>. Les grosses positions décident avant les
-                petites.
-                {visuelPick !== 0 && (
-                  <>
-                    {' '}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setVisuelRevealed(false);
-                        setVisuelPick(null);
-                      }}
-                      className="underline font-semibold"
-                    >
-                      Réessayer
-                    </button>
-                  </>
-                )}
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-
-        {/* Étape 2 */}
-        <StepCard
-          num={2}
-          title="Premier réflexe : compter les chiffres"
-          subtitle="Trois duels éclair. Réponds sans calculer."
-          done={s2}
-          locked={!s1}
-        >
-          <div className="space-y-4">
-            {DUELS_CHIFFRES.map((d, i) => (
-              <DuelChiffres
-                key={`${d.a}-${d.b}`}
-                duel={d}
-                solved={duelsDone.includes(i)}
-                onSolved={() => setDuelsDone((x) => (x.includes(i) ? x : [...x, i]))}
-              />
-            ))}
-            {s2 && (
-              <Feedback tone="info">
-                Règle 1 : <strong>si les deux nombres n'ont pas le même nombre de chiffres, le plus long est le
-                plus grand</strong> (à condition de ne pas écrire de zéro inutile devant). Mais que faire quand ils
-                ont le même nombre de chiffres ?
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-
-        {/* Étape 3 */}
-        <StepCard
-          num={3}
-          title="Laboratoire : même nombre de chiffres"
-          subtitle="Compare position par position, en partant de la gauche, et arrête-toi à la première différence."
-          done={s3}
-          locked={!s2}
-        >
-          <div className="space-y-8">
-            {LABOS.map((l, i) =>
-              i === 0 || labosDone.includes(i - 1) ? (
-                <div key={`${l.a}-${l.b}`} className="space-y-3">
-                  <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
-                    Duel {i + 1} / {LABOS.length}
-                  </div>
-                  <CompareLab
-                    a={l.a}
-                    b={l.b}
-                    solved={labosDone.includes(i)}
-                    onSolved={() => setLabosDone((x) => (x.includes(i) ? x : [...x, i]))}
-                  />
-                </div>
-              ) : null
-            )}
-            {s3 && (
-              <Feedback tone="info">
-                Règle 2 : <strong>à nombre de chiffres égal, on compare position par position en partant de la
-                gauche, et on s'arrête à la première différence.</strong> Les positions suivantes ne peuvent plus
-                rien changer.
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-
-        {/* Étape 4 */}
-        <StepCard
-          num={4}
-          title="Chasse aux raisonnements faux"
-          subtitle="Deux élèves se sont trompés. À toi de dire pourquoi."
-          done={s4}
-          locked={!s3}
-        >
-          <div className="space-y-4">
-            {ERREURS.map((e, i) => (
-              <ErreurCard
-                key={e.claim}
-                item={e}
-                solved={erreursDone.includes(i)}
-                onSolved={() => setErreursDone((x) => (x.includes(i) ? x : [...x, i]))}
-              />
-            ))}
-          </div>
-        </StepCard>
-      </div>
-    </ModuleLayout>
-  );
-}
-
-/* ─── Duel « nombre de chiffres » ────────────────────────────────── */
-function DuelChiffres({ duel, solved, onSolved }) {
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-  const correctIndex = duel.correct === 'a' ? 0 : 1;
-
-  return (
-    <div className="border-2 border-slate-200 rounded-2xl p-4 space-y-3 bg-white">
-      <div className="grid grid-cols-2 gap-2">
-        {[duel.a, duel.b].map((n, i) => (
-          <button
-            key={n}
-            type="button"
-            disabled={revealed || solved}
-            onClick={() => setPick(i)}
-            className={`rounded-xl border-2 p-3 text-center transition-all min-h-[72px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
-              revealed && i === correctIndex
-                ? 'border-emerald-400 bg-emerald-50'
-                : revealed && pick === i
-                ? 'border-rose-400 bg-rose-50'
-                : pick === i
-                ? 'border-blue-500 bg-blue-50'
-                : 'border-slate-200 bg-white hover:border-slate-400'
-            }`}
-          >
-            <div className="font-mono font-extrabold text-2xl text-slate-800 tabular-nums">{formatFr(n)}</div>
-            <div className="text-[10px] font-mono text-slate-400">{String(n).length} chiffres</div>
-          </button>
-        ))}
-      </div>
-      <p className="text-sm font-semibold text-slate-600">Lequel est le plus grand ?</p>
-      {!revealed && (
-        <ValidateButton
-          onClick={() => {
-            setRevealed(true);
-            if (pick === correctIndex) onSolved?.();
-          }}
-          disabled={pick === null}
-        >
-          Valider
-        </ValidateButton>
-      )}
-      {revealed && (
-        <Feedback tone={pick === correctIndex ? 'ok' : 'ko'}>
-          <span className="font-mono font-bold">
-            {formatFr(duel.a)} {duel.a > duel.b ? '>' : '<'} {formatFr(duel.b)}
-          </span>{' '}
-          : {String(duel.a).length === String(duel.b).length
-            ? 'même nombre de chiffres, il faut comparer position par position.'
-            : `${String(Math.max(duel.a, duel.b)).length} chiffres contre ${String(Math.min(duel.a, duel.b)).length} — le plus long l'emporte.`}
-          {pick !== correctIndex && (
-            <>
-              {' '}
-              <button
-                type="button"
-                onClick={() => {
-                  setRevealed(false);
-                  setPick(null);
-                }}
-                className="underline font-semibold"
-              >
-                Réessayer
-              </button>
-            </>
-          )}
-        </Feedback>
-      )}
-    </div>
+          ),
+        },
+      ]}
+    />
   );
 }

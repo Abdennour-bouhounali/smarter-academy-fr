@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Target } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief, QuantityCard } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import NumberLine from '../../../../../common/components/NumberLine';
+import ReferenceRuler from '../components/ReferenceRuler';
 
+/**
+ * Module 5 — practice lab, reconstruit sur le lesson kit.
+ *
+ * Estimer avant de mesurer : choisir un ordre de grandeur plausible (unité
+ * ET valeur ensemble), puis situer une longueur sur une droite graduée.
+ */
 const SCENARIOS = [
   { id: 'porte', emoji: '🚪', label: 'La hauteur d’une porte', options: [{ v: 20, u: 'cm' }, { v: 2, u: 'm' }, { v: 20, u: 'm' }], correct: 1 },
   { id: 'foot', emoji: '⚽', label: 'La longueur d’un terrain de foot', options: [{ v: 10, u: 'm' }, { v: 100, u: 'm' }, { v: 1000, u: 'm' }], correct: 1 },
@@ -13,140 +20,163 @@ const SCENARIOS = [
   { id: 'trajet', emoji: '🚗', label: 'Le trajet Paris–Marseille', options: [{ v: 8, u: 'km' }, { v: 80, u: 'km' }, { v: 800, u: 'km' }], correct: 2 },
 ];
 
-function EstimateScenario({ scenario, done, onSolved }) {
-  const [pick, setPick] = useState(null);
-  const [checked, setChecked] = useState(false);
-  const isRight = checked && pick === scenario.correct;
-
-  return (
-    <div className="space-y-3">
-      <div className="flex items-center gap-2.5">
-        <span className="text-2xl" aria-hidden="true">{scenario.emoji}</span>
-        <span className="text-sm font-semibold text-slate-700">{scenario.label}</span>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-        {scenario.options.map((o, i) => (
-          <QuantityCard
-            key={i}
-            label="Proposition"
-            value={o.v}
-            unit={o.u}
-            selected={pick === i}
-            onClick={done ? undefined : () => { setChecked(false); setPick(i); }}
-            disabled={done}
-          />
-        ))}
-      </div>
-      {!done && (
-        <div className="text-center">
-          <ValidateButton onClick={() => { setChecked(true); if (pick === scenario.correct) onSolved?.(); }} disabled={pick === null}>
-            Valider
-          </ValidateButton>
-        </div>
-      )}
-      {checked && !isRight && (
-        <Feedback tone="hint">
-          Compare à des repères connus, puis{' '}
-          <button type="button" onClick={() => { setChecked(false); setPick(null); }} className="underline font-semibold">réessaie</button>.
-        </Feedback>
-      )}
-      {checked && isRight && (
-        <Feedback tone="ok">
-          {scenario.options[scenario.correct].v} {scenario.options[scenario.correct].u} : le bon ordre de grandeur.
-        </Feedback>
-      )}
-    </div>
-  );
-}
-
-const NL_OPTIONS = ['A (proche de 0)', 'B (proche du milieu)', 'C (proche de la fin)'];
-
 export default function Module05ChoisirEstimer() {
-  const navLinks = getNavLinks(5);
-  const [done, setDone] = useState({});
-  const allScenariosDone = SCENARIOS.every((s) => done[s.id]);
+  const [scenarioDone, setScenarioDone] = useState([]);
+  const allScenariosDone = scenarioDone.length === SCENARIOS.length;
 
-  const [nlPick, setNlPick] = useState(null);
+  const [nlValue, setNlValue] = useState(2.5);
   const [nlChecked, setNlChecked] = useState(false);
-  const nlOk = nlChecked && nlPick === 1;
+  const [nlDone, setNlDone] = useState(false);
 
-  const allDone = allScenariosDone && nlOk;
+  const [refPos, setRefPos] = useState(550);
+  const [refDone, setRefDone] = useState(false);
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(5)}
+      moduleNumber={5}
       moduleTitle="Choisir et estimer"
       moduleSubtitle="Quelle unité choisir ? Quel ordre de grandeur attendre avant de mesurer ?"
-      moduleNumber={5}
-      estimatedTime="9 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="📋 Mission 05" title="Avant de sortir la règle, essaie de deviner.">
-          <p>Pour chaque objet, choisis la proposition la plus réaliste — unité ET valeur en même temps.</p>
-        </MissionBrief>
-
-        <StepCard num={1} title="Le bon ordre de grandeur" done={allScenariosDone}>
-          <div className="space-y-8">
-            {SCENARIOS.map((s, i) => (
-              (i === 0 || done[SCENARIOS[i - 1].id]) && (
-                <div key={s.id} className="border-t border-slate-100 pt-5 first:border-0 first:pt-0">
-                  <EstimateScenario scenario={s} done={!!done[s.id]} onSolved={() => setDone((d) => ({ ...d, [s.id]: true }))} />
-                </div>
-              )
-            ))}
-          </div>
-        </StepCard>
-
-        <StepCard num={2} title="Vois-le sur une droite graduée" done={nlOk} locked={!allScenariosDone}>
-          <div className="space-y-4">
-            <p className="text-sm text-slate-600">
-              Cette droite va de 0 à 5 m. La hauteur d’une porte est d’environ 2 m : parmi ces trois repères, lequel
-              correspond le mieux ?
-            </p>
-            <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
-              <NumberLine
-                min={0}
-                max={5}
-                step={1}
-                labelEvery={1}
-                height={150}
-                markers={[
-                  { value: 0.4, label: 'A', color: '#dc2626' },
-                  { value: 2.1, label: 'B', color: '#2563eb' },
-                  { value: 4.3, label: 'C', color: '#059669' },
-                ]}
-                ariaLabel="Droite graduée de 0 à 5 mètres avec trois repères A, B, C"
-              />
+      estimatedTime="11 min"
+      brief={{
+        tag: '📋 Mission 05',
+        title: 'Avant de sortir la règle, essaie de deviner.',
+        body: <p>Pour chaque objet, choisis la proposition la plus réaliste — unité ET valeur en même temps.</p>,
+      }}
+      steps={[
+        {
+          num: 1,
+          title: 'Le bon ordre de grandeur',
+          done: allScenariosDone,
+          content: (
+            <div className="space-y-8">
+              {SCENARIOS.map((s, i) =>
+                i === 0 || scenarioDone.includes(i - 1) ? (
+                  <div key={s.id} className="border-t border-slate-100 pt-5 first:border-0 first:pt-0">
+                    <TapQuestion
+                      prompt={
+                        <span className="flex items-center gap-2.5">
+                          <span className="text-2xl" aria-hidden="true">{s.emoji}</span>
+                          <span>{s.label}</span>
+                        </span>
+                      }
+                      options={s.options}
+                      correct={s.correct}
+                      cols={3}
+                      renderOption={(o) => (
+                        <span className="font-mono font-extrabold text-base">
+                          {o.v} <span className="text-xs font-semibold text-slate-500">{o.u}</span>
+                        </span>
+                      )}
+                      correctionLabel={`${s.options[s.correct].v} ${s.options[s.correct].u}`}
+                      explain={`${s.options[s.correct].v} ${s.options[s.correct].u} : le bon ordre de grandeur.`}
+                      solved={scenarioDone.includes(i)}
+                      onAnswered={() => setScenarioDone((d) => (d.includes(i) ? d : [...d, i]))}
+                    />
+                  </div>
+                ) : null
+              )}
             </div>
-            <ChoiceGrid options={NL_OPTIONS} selected={nlPick} onSelect={(i) => { setNlChecked(false); setNlPick(i); }} revealed={nlChecked} correctIndex={1} cols={1} disabled={nlOk} />
-            {!nlOk && (
-              <div className="text-center">
-                <ValidateButton onClick={() => setNlChecked(true)} disabled={nlPick === null}>Valider</ValidateButton>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Place ton estimation sur la droite',
+          done: nlDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Cette droite va de 0 à 5 m. Fais glisser le curseur là où tu penses que se trouve la hauteur d'une
+                porte (environ 2 m) — le nombre reste caché tant que tu n'as pas validé.
+              </p>
+              <div className="bg-white border-2 border-slate-200 rounded-2xl p-2">
+                <NumberLine
+                  min={0}
+                  max={5}
+                  step={0.1}
+                  labelEvery={10}
+                  height={150}
+                  mode="place"
+                  value={nlValue}
+                  onChange={setNlValue}
+                  revealValue={nlChecked}
+                  ghost={nlChecked ? { value: 2, label: '2 m (hauteur réelle)' } : null}
+                  disabled={nlChecked}
+                  ariaLabel="Droite graduée de 0 à 5 mètres, curseur à placer"
+                />
               </div>
-            )}
-            {nlChecked && nlPick !== 1 && (
-              <Feedback tone="hint">2 m, c'est un peu moins de la moitié de 5 m : cherche le repère le plus proche du milieu.{' '}
-                <button type="button" onClick={() => { setNlChecked(false); setNlPick(null); }} className="underline font-semibold">Réessayer</button>
-              </Feedback>
-            )}
-            {nlPick === 1 && nlChecked && (
-              <Feedback tone="ok">B est bien proche de 2 m : c’est le repère qui correspond à la hauteur d’une porte.</Feedback>
-            )}
-          </div>
-        </StepCard>
-
-        {allDone && (
-          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-            <Target className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-            <p className="text-sm text-slate-300">
-              Estimer avant de mesurer permet de repérer tout de suite un résultat impossible.
-            </p>
-          </motion.div>
-        )}
-      </div>
-    </ModuleLayout>
+              {!nlChecked ? (
+                <div className="text-center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setNlChecked(true);
+                      const ok = Math.abs(nlValue - 2) <= 0.3;
+                      kit.react(ok);
+                      setNlDone(true);
+                    }}
+                    className="px-4 py-2 rounded-xl bg-slate-800 text-white font-semibold text-sm hover:bg-slate-700"
+                  >
+                    Valider mon estimation
+                  </button>
+                </div>
+              ) : (
+                <Feedback tone={Math.abs(nlValue - 2) <= 0.3 ? 'ok' : 'ko'}>
+                  Tu avais placé le curseur vers {nlValue.toFixed(1)} m ; la hauteur réelle d'une porte est d'environ
+                  2 m.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
+          title: 'Compare avec une référence connue',
+          done: refDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              <ReferenceRuler
+                targetLabel="La porte"
+                targetHeightM={2}
+                referenceLengthM={1}
+                referenceLabel="1 m"
+                position={refPos}
+                onPositionChange={setRefPos}
+                disabled={refDone}
+              />
+              {!refDone && (
+                <div className="text-center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      kit.react(true);
+                      setRefDone(true);
+                    }}
+                    className="px-4 py-2 rounded-xl bg-slate-800 text-white font-semibold text-sm hover:bg-slate-700"
+                  >
+                    J'ai comparé
+                  </button>
+                </div>
+              )}
+              {refDone && (
+                <Feedback tone="ok">
+                  Une référence connue (ici, 1 m) permet d'estimer une longueur sans instrument : la porte fait
+                  environ deux fois la référence, soit environ 2 m.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+      ]}
+      footer={
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+          <Target className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
+          <p className="text-sm text-slate-300">
+            Estimer avant de mesurer permet de repérer tout de suite un résultat impossible.
+          </p>
+        </motion.div>
+      }
+    />
   );
 }

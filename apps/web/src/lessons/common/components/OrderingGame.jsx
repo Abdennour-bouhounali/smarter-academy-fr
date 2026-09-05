@@ -13,6 +13,15 @@ import { Feedback, ValidateButton } from './LessonUI';
  *
  * Tactile : on tape une carte pour l'ajouter, on tape une carte placée pour
  * la retirer (pas de glisser-déposer, inutilisable au doigt sur petit écran).
+ *
+ * `formative` (déf. false) : quand true, `onSolved` est appelé dès la
+ * première vérification, MÊME en cas d'ordre faux — l'exercice sert alors à
+ * l'apprentissage (jamais à bloquer la progression), pas à une évaluation.
+ * En cas d'erreur, le rangement correct est affiché explicitement en plus du
+ * message « l'ordre casse à... » déjà présent. Ne change rien pour les
+ * appelants existants (boss finals, modules d'évaluation) qui laissent
+ * `formative` à false : `onError` continue d'y compter les échecs sans
+ * jamais appeler `onSolved` avant un rangement réellement correct.
  */
 export default function OrderingGame({
   items,
@@ -22,22 +31,25 @@ export default function OrderingGame({
   solved = false,
   instruction,
   format = formatFr,
+  formative = false,
 }) {
   const [placed, setPlaced] = useState([]);
   const [error, setError] = useState(null);
   const [ok, setOk] = useState(solved);
+  const [revealed, setRevealed] = useState(false);
 
   const remaining = items.filter((it) => !placed.includes(it.id));
   const byId = (id) => items.find((it) => it.id === id);
+  const sorted = [...items].sort((a, b) => (direction === 'asc' ? a.value - b.value : b.value - a.value));
 
   const place = (id) => {
-    if (ok) return;
+    if (ok || revealed) return;
     setError(null);
     setPlaced((p) => [...p, id]);
   };
 
   const remove = (id) => {
-    if (ok) return;
+    if (ok || revealed) return;
     setError(null);
     setPlaced((p) => p.filter((x) => x !== id));
   };
@@ -55,6 +67,10 @@ export default function OrderingGame({
       if (broken) {
         setError({ index: i, a, b });
         onError?.();
+        if (formative) {
+          setRevealed(true);
+          onSolved?.();
+        }
         return;
       }
     }
@@ -147,6 +163,22 @@ export default function OrderingGame({
             {format(error.a)} {error.a > error.b ? '>' : '<'} {format(error.b)}
           </span>
           . Compare ces deux nombres position par position, en commençant par la gauche.
+          {revealed && (
+            <>
+              {' '}
+              Le bon rangement était :{' '}
+              <span className="font-mono font-bold">
+                {sorted
+                  .map((cur, i) => {
+                    const prev = i > 0 ? sorted[i - 1] : null;
+                    const sign = !prev ? '' : prev.value === cur.value ? ' = ' : direction === 'asc' ? ' < ' : ' > ';
+                    return `${sign}${cur.text ?? format(cur.value)}`;
+                  })
+                  .join('')}
+              </span>
+              .
+            </>
+          )}
         </Feedback>
       )}
 
@@ -166,7 +198,7 @@ export default function OrderingGame({
         </Feedback>
       )}
 
-      {!ok && (
+      {!ok && !revealed && (
         <div className="flex gap-2 flex-wrap">
           <ValidateButton onClick={check} disabled={placed.length !== items.length}>
             Vérifier mon rangement <ArrowRight className="inline w-3.5 h-3.5" aria-hidden="true" />

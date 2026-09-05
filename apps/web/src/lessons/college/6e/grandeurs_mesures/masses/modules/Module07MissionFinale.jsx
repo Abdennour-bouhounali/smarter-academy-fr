@@ -1,236 +1,275 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Trophy } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
-import { useProgress } from '../../../../../common/hooks/useProgress';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief, NumberField } from '../../../../../common/components/LessonUI';
+import React from 'react';
+import { BossFinal } from '../../../../../common/kit';
+import { Feedback } from '../../../../../common/components/LessonUI';
+import UnitLadder from '../components/UnitLadder';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import InfoSorter from '../../../../../common/components/InfoSorter';
-import GroupBuilder from '../../../../../common/components/GroupBuilder';
-import { parseDec, roundTo, formatMass } from '../components/massUtils';
+import { LESSON_CONFIG } from '../lesson.config';
 
-const INFO_ITEMS = [
-  { id: 'eleves', text: '24 élèves participent à la sortie.', useful: true },
-  { id: 'sachet', text: 'Chaque sachet de biscuits pèse 150 g.', useful: true },
-  { id: 'heure', text: 'Le bus part à 8h30.', useful: false },
-  { id: 'sac_prof', text: 'Le sac à dos du professeur pèse 3 kg.', useful: false },
-  { id: 'prix', text: 'Un sachet de biscuits coûte 1,20 €.', useful: false },
-  { id: 'distance', text: 'L’école se trouve à 2 km du site.', useful: false },
+/**
+ * Module 7 — Boss Final sur le moteur du kit partagé (QCM uniquement).
+ *
+ * Voir docs/architecture/LESSON_INTEGRATION_GUIDE.md §7 : ce fichier est un
+ * fichier de DONNÉES — épreuves, compétences, badges, synthèse — zéro
+ * logique recopiée. Le moteur `BossFinal` applique par construction la
+ * forme obligatoire (silencieux jusqu'au submit global, correction, profil
+ * de maîtrise, synthèse) et branche l'evidence (useEvidenceSubmission) +
+ * la persistance de la tentative (useFinalTestAttempt).
+ *
+ * Même histoire que la version précédente : le ravitaillement du goûter de
+ * l'école pour 24 élèves. Les métadonnées `assessment` reprennent la
+ * correspondance déjà déclarée — mais jamais branchée — dans l'ancienne
+ * version pré-kit (EVAL_INFO_SORTER, EVAL_BUILD_ORDER, EVAL_TOTAL_MASS_G,
+ * EVAL_TOTAL_MASS_KG, ESTIM_Q.assessment), complétée pour couvrir les 6 LPs.
+ */
+const SACHET_G = 150;
+const BRIQUE_G = 200;
+const BOITE_BISCUITS = 6 * SACHET_G; // 900 g
+const BOITE_JUS = 4 * BRIQUE_G; // 800 g
+const TOTAL_G = 4 * BOITE_BISCUITS + 6 * BOITE_JUS; // 8400 g
+
+const REGISTRE = [
+  { id: 'eleves', emoji: '🎒', label: 'Élèves', value: '24' },
+  { id: 'sachet', emoji: '🍪', label: 'Sachet', value: '150 g' },
+  { id: 'brique', emoji: '🧃', label: 'Brique', value: '200 g' },
+  { id: 'total', emoji: '📦', label: 'Commande', value: '4 + 6 boîtes' },
 ];
 
-// Assessment metadata (docs/architecture/AI_LESSON_CONTRACT.md) — each
-// checkpoint descriptor below certifies one or more learning points from
-// this evaluation-stage module (StepCards 1-4 rendered further down). They
-// are evidence-tagging metadata only, not consumed by the render logic.
-const EVAL_INFO_SORTER = {
-  id: 'masses-eval-info-sorter',
-  title: 'StepCard 1 — Les informations utiles',
-  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P6'] },
-};
-// Preparing the order requires reading each item's stated mass (150 g,
-// 200 g...) and using it correctly — the same reading-a-displayed-mass
-// skill module 3 introduces on a physical balance.
-const EVAL_BUILD_ORDER = {
-  id: 'masses-eval-build-order',
-  title: 'StepCard 2 — Préparer la commande',
-  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P3', '6e_masses_P4'] },
-};
-const EVAL_TOTAL_MASS_G = {
-  id: 'masses-eval-total-mass-g',
-  title: 'StepCard 3a — La masse totale (en g)',
-  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P4'] },
-};
-const EVAL_TOTAL_MASS_KG = {
-  id: 'masses-eval-total-mass-kg',
-  title: 'StepCard 3b — La masse totale (conversion en kg, pour l’annoncer simplement)',
-  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P5', '6e_masses_P2'] },
+const SKILLS = {
+  comparer: { label: 'Comparer des masses', module: 1 },
+  unite: { label: 'Choisir une unité', module: 2 },
+  lire: { label: 'Lire une balance', module: 3 },
+  relations: { label: 'Relations entre unités', module: 4 },
+  convertir: { label: 'Convertir', module: 5 },
+  estimer: { label: 'Estimer et résoudre', module: 6 },
 };
 
-const BISCUIT_BOX_TARGET = 4; // boîtes de 6 sachets de 150 g
-const BISCUIT_BOX_MASS = 6 * 150; // 900 g / boîte
-const JUS_BOX_TARGET = 6; // boîtes de 4 briques de 200 g
-const JUS_BOX_MASS = 4 * 200; // 800 g / boîte
-const TOTAL_G = BISCUIT_BOX_TARGET * BISCUIT_BOX_MASS + JUS_BOX_TARGET * JUS_BOX_MASS; // 8400 g
+const EPREUVES = [
+  {
+    id: 'ms-e1',
+    skill: 'estimer',
+    title: 'Épreuve 1',
+    prompt: 'Pour préparer la commande, quelles informations te sont vraiment utiles ?',
+    options: [
+      'Le nombre d’élèves et la masse d’un sachet',
+      'L’heure de départ du bus et le prix d’un sachet',
+      'La distance jusqu’au site et la masse du sac du professeur',
+    ],
+    cols: 1,
+    correct: 0,
+    explain:
+      'Pour calculer une masse totale, seules comptent les données de masse et de quantité : 24 élèves, 150 g par sachet. L’heure, le prix et la distance ne servent à rien ici.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P6'] },
+  },
+  {
+    id: 'ms-e2',
+    skill: 'unite',
+    title: 'Épreuve 2',
+    prompt: 'Sur le bon de commande, on doit indiquer la masse d’un sachet de biscuits. Quelle unité choisir ?',
+    options: ['mg', 'g', 't'],
+    cols: 3,
+    correct: 1,
+    explain: 'Un sachet de biscuits se pèse en grammes : le mg conviendrait à un comprimé, la tonne à un camion.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P2'] },
+  },
+  {
+    id: 'ms-e3',
+    skill: 'lire',
+    title: 'Épreuve 3',
+    prompt: 'Sur la balance de la cantine, la barre s’arrête juste sur la graduation 900 g. Que pèse la boîte de biscuits ?',
+    options: ['90 g', '900 g', '9 kg'],
+    cols: 3,
+    correct: 1,
+    explain: 'On lit la graduation atteinte par le remplissage : 900 g. Une boîte de 6 sachets de 150 g pèse bien 6 × 150 = 900 g.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P3'] },
+  },
+  {
+    id: 'ms-e4',
+    skill: 'relations',
+    title: 'Épreuve 4',
+    prompt: 'Une boîte de jus contient 4 briques de 200 g. Quelle est la masse de la boîte ?',
+    options: [`${BOITE_JUS} g`, '600 g', '1 000 g'],
+    cols: 3,
+    correct: 0,
+    explain: `4 × 200 g = ${BOITE_JUS} g. C’est un peu moins qu’un kilogramme.`,
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P4'] },
+  },
+  {
+    id: 'ms-e5',
+    skill: 'relations',
+    title: 'Épreuve 5',
+    prompt: 'La commande complète : 4 boîtes de biscuits (900 g) et 6 boîtes de jus (800 g). Quelle masse totale ?',
+    options: [`${TOTAL_G} g`, '1 700 g', '5 400 g'],
+    cols: 3,
+    correct: 0,
+    explain: `4 × 900 g = 3 600 g et 6 × 800 g = 4 800 g. Total : 3 600 + 4 800 = ${TOTAL_G} g.`,
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P3', '6e_masses_P4'] },
+  },
+  {
+    id: 'ms-e6',
+    skill: 'convertir',
+    title: 'Épreuve 6',
+    prompt: `Pour l’annoncer simplement, convertis ${TOTAL_G} g en kilogrammes.`,
+    options: ['0,84 kg', '8,4 kg', '84 kg'],
+    cols: 3,
+    correct: 1,
+    explain: `1 kg = 1 000 g, donc ${TOTAL_G} g = ${TOTAL_G} ÷ 1 000 = 8,4 kg.`,
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P5', '6e_masses_P2'] },
+  },
+  {
+    id: 'ms-e7',
+    skill: 'convertir',
+    title: 'Épreuve 7',
+    prompt: 'Un élève écrit que la commande pèse « 8 400 kg ». Que penses-tu de son écriture ?',
+    options: [
+      'C’est juste, 8 400 g et 8 400 kg c’est pareil',
+      'Non : il a gardé le nombre des grammes en écrivant kg — 8 400 kg, ce serait plus de 8 tonnes',
+    ],
+    cols: 1,
+    correct: 1,
+    explain:
+      'Changer d’unité change le nombre. 8 400 g = 8,4 kg. Écrire 8 400 kg reviendrait à annoncer 8,4 tonnes de goûter !',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P5'] },
+  },
+  {
+    id: 'ms-e8',
+    skill: 'estimer',
+    title: 'Épreuve 8',
+    prompt: '8,4 kg de goûter pour 24 élèves : est-ce cohérent ?',
+    options: [
+      'Oui : cela fait environ 350 g par élève, un goûter raisonnable',
+      'Non : c’est beaucoup trop lourd pour un simple goûter',
+    ],
+    cols: 1,
+    correct: 0,
+    explain:
+      '8,4 kg ÷ 24 élèves ≈ 350 g par élève — un sachet de biscuits et une brique de jus par personne, tout à fait cohérent.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P6', '6e_masses_P1'] },
+  },
+  {
+    id: 'ms-e9',
+    skill: 'comparer',
+    title: 'Épreuve 9',
+    prompt: 'Sur la balance à deux plateaux, une boîte de biscuits (900 g) fait descendre son plateau face à une boîte de jus (800 g). Pourquoi ?',
+    options: [
+      'Parce que le plateau qui descend porte la masse la plus lourde',
+      'Parce que le plateau qui descend porte la masse la plus légère',
+      'Parce que les deux boîtes ont la même masse',
+    ],
+    cols: 1,
+    correct: 0,
+    explain: 'La balance penche toujours du côté le plus lourd : 900 g > 800 g, donc le plateau des biscuits descend.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P1'] },
+  },
+  {
+    id: 'ms-e10',
+    skill: 'estimer',
+    title: 'Épreuve 10',
+    prompt: 'Le professeur ajoute son sac de 3 kg au chargement. Quelle est la masse totale à transporter ?',
+    options: ['8,7 kg', '11,4 kg', '38,4 kg'],
+    cols: 3,
+    correct: 1,
+    explain: '8,4 kg + 3 kg = 11,4 kg. Les deux masses étaient déjà dans la même unité : on peut additionner directement.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P6', '6e_masses_P5'] },
+  },
+];
 
-function BuildOrder({ done, onSolved }) {
-  const [biscuitBoxes, setBiscuitBoxes] = useState(0);
-  const [jusBoxes, setJusBoxes] = useState(0);
-  const reached = biscuitBoxes === BISCUIT_BOX_TARGET && jusBoxes === JUS_BOX_TARGET;
-  const totalSoFar = biscuitBoxes * BISCUIT_BOX_MASS + jusBoxes * JUS_BOX_MASS;
+const BADGES = [
+  { id: 'comparateur', emoji: '🏅', label: 'Comparateur sûr', test: (s) => (s.comparer ?? 0) === 0 },
+  { id: 'unites', emoji: '🏅', label: 'Expert des unités', test: (s) => (s.unite ?? 0) === 0 },
+  { id: 'lecteur', emoji: '🏅', label: 'Lecteur de balance', test: (s) => (s.lire ?? 0) === 0 },
+  { id: 'convertisseur', emoji: '🏅', label: 'Virtuose des conversions', test: (s) => (s.relations ?? 0) === 0 && (s.convertir ?? 0) === 0 },
+  { id: 'estimateur', emoji: '🏅', label: 'Estimateur malin', test: (s) => (s.estimer ?? 0) === 0 },
+  { id: 'parfait', emoji: '💎', label: 'Chef du ravitaillement', test: (s) => Object.values(s).every((v) => v === 0) },
+];
 
+const PIEGES = [
+  { wrong: '8 400 g = 8 400 kg', right: '8 400 g = 8,4 kg — changer d’unité change le nombre' },
+  { wrong: '1 kg = 100 g', right: '1 kg = 1 000 g — chaque marche vaut 1 000' },
+  { wrong: '3,2 kg − 400 g = 2,8 kg', right: 'Convertis d’abord : 3 200 g − 400 g = 2 800 g' },
+];
+
+function Synthese() {
   return (
-    <div className="space-y-5">
-      <p className="text-sm text-slate-600">
-        Prépare la commande : <strong>{BISCUIT_BOX_TARGET} boîtes</strong> de biscuits (6 sachets de 150 g par boîte)
-        et <strong>{JUS_BOX_TARGET} boîtes</strong> de jus (4 briques de 200 g par boîte).
-      </p>
-      <div className="space-y-1.5">
-        <div className="text-xs font-mono font-bold text-slate-500 uppercase">🍪 Boîtes de biscuits</div>
-        <GroupBuilder perGroup={BISCUIT_BOX_MASS} groups={done ? BISCUIT_BOX_TARGET : biscuitBoxes} onChange={setBiscuitBoxes} max={BISCUIT_BOX_TARGET} tone="amber" unit=" g" disabled={done} />
+    <div className="space-y-4">
+      <div className="bg-slate-900 text-white rounded-2xl p-5 sm:p-6 space-y-3 text-center">
+        <div className="text-2xl" aria-hidden="true">⚖️</div>
+        <p className="text-sm text-slate-300 leading-relaxed max-w-xl mx-auto">
+          Une masse ne change pas quand on change d’unité — seul le nombre qui la décrit change. Comparer, lire,
+          convertir et estimer sont quatre façons de regarder la même grandeur.
+        </p>
       </div>
-      <div className="space-y-1.5">
-        <div className="text-xs font-mono font-bold text-slate-500 uppercase">🧃 Boîtes de jus</div>
-        <GroupBuilder perGroup={JUS_BOX_MASS} groups={done ? JUS_BOX_TARGET : jusBoxes} onChange={setJusBoxes} max={JUS_BOX_TARGET} tone="sky" unit=" g" disabled={done} />
+
+      <div className="bg-white border-2 border-slate-200 rounded-2xl p-5 space-y-3">
+        <p className="text-sm font-semibold text-slate-700 text-center">L’échelle des masses</p>
+        <UnitLadder />
       </div>
-      <div className="text-center font-mono text-lg font-bold text-slate-800">
-        Total en cours : {done ? TOTAL_G : totalSoFar} g
+
+      <div className="bg-gradient-to-br from-violet-500 to-indigo-600 text-white rounded-2xl p-5 text-center space-y-1">
+        <p className="text-xs uppercase tracking-wide text-violet-100 font-mono font-bold">À retenir</p>
+        <p className="font-mono font-extrabold text-lg">1 t = 1 000 kg = 1 000 000 g</p>
+        <p className="text-violet-100 text-sm">Trois marches, toutes de 1 000.</p>
       </div>
-      {(reached || done) && (
-        <div className="text-center">
-          {!done && <ValidateButton onClick={() => onSolved?.()}>La commande est prête</ValidateButton>}
-          {done && <Feedback tone="ok">Commande complète : {TOTAL_G} g au total.</Feedback>}
-        </div>
-      )}
+
+      <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 space-y-2.5">
+        <p className="text-sm font-bold text-amber-900">Les pièges à éviter</p>
+        {PIEGES.map((p) => (
+          <div key={p.wrong} className="text-sm space-y-0.5">
+            <div className="text-rose-700">❌ {p.wrong}</div>
+            <div className="text-emerald-700">✅ {p.right}</div>
+          </div>
+        ))}
+      </div>
+
+      <Feedback tone="info">
+        Avant d’additionner ou de soustraire deux masses, vérifie toujours qu’elles sont écrites dans la même unité :
+        c’est l’erreur la plus fréquente, et la plus facile à éviter.
+      </Feedback>
     </div>
   );
 }
-
-function TotalMass({ done, onSolved }) {
-  const [gVal, setGVal] = useState('');
-  const [gChecked, setGChecked] = useState(false);
-  const gOk = gChecked && parseDec(gVal) === TOTAL_G;
-
-  const [kgVal, setKgVal] = useState('');
-  const [kgChecked, setKgChecked] = useState(false);
-  const kgExpected = TOTAL_G / 1000;
-  const kgOk = kgChecked && !Number.isNaN(parseDec(kgVal)) && roundTo(parseDec(kgVal), 3) === kgExpected;
-
-  return (
-    <div className="space-y-5">
-      <div className="space-y-2">
-        <p className="text-sm font-semibold text-slate-700">Quelle est la masse totale de la commande, en grammes ?</p>
-        <div className="flex items-center justify-center gap-2">
-          <NumberField value={gVal} onChange={(v) => { setGChecked(false); setGVal(v); }} ariaLabel="Masse totale en grammes" width="w-32" />
-          <span className="font-mono text-sm text-slate-500">g</span>
-        </div>
-        {!gOk && (
-          <div className="text-center">
-            <ValidateButton onClick={() => setGChecked(true)} disabled={gVal === ''}>Valider</ValidateButton>
-          </div>
-        )}
-        {gChecked && !gOk && <Feedback tone="hint">{BISCUIT_BOX_TARGET} × {BISCUIT_BOX_MASS} g + {JUS_BOX_TARGET} × {JUS_BOX_MASS} g = ?</Feedback>}
-        {gOk && <Feedback tone="ok">{BISCUIT_BOX_TARGET} × {BISCUIT_BOX_MASS} + {JUS_BOX_TARGET} × {JUS_BOX_MASS} = <strong>{TOTAL_G} g</strong>.</Feedback>}
-      </div>
-
-      {gOk && (
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-slate-700">Et en kg, pour l’annoncer simplement ?</p>
-          <div className="flex items-center justify-center gap-2">
-            <NumberField value={kgVal} onChange={(v) => { setKgChecked(false); setKgVal(v); }} ariaLabel="Masse totale en kg" width="w-32" />
-            <span className="font-mono text-sm text-slate-500">kg</span>
-          </div>
-          {!done && (
-            <div className="text-center">
-              <ValidateButton onClick={() => { setKgChecked(true); if (!Number.isNaN(parseDec(kgVal)) && roundTo(parseDec(kgVal), 3) === kgExpected) onSolved?.(); }} disabled={kgVal === ''}>
-                Valider
-              </ValidateButton>
-            </div>
-          )}
-          {kgChecked && !kgOk && <Feedback tone="hint">1000 g = 1 kg.</Feedback>}
-          {(kgOk || done) && <Feedback tone="ok">{TOTAL_G} g = <strong>{formatMass(kgExpected, 'kg')}</strong>.</Feedback>}
-        </div>
-      )}
-    </div>
-  );
-}
-
-const ESTIM_Q = {
-  id: 'masses-eval-estimation',
-  q: 'Une commande de 8,4 kg pour 24 élèves : cela te semble-t-il cohérent ?',
-  options: [
-    'Oui : cela fait environ 350 g par élève, un goûter raisonnable',
-    'Non : c’est beaucoup trop lourd pour un simple goûter',
-  ],
-  correct: 0,
-  explain: '8,4 kg ÷ 24 élèves ≈ 350 g par élève — un sachet de biscuits et une brique de jus par personne, tout à fait cohérent.',
-  assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_masses_P6', '6e_masses_P1'] },
-};
-
-const RECAP = [
-  { emoji: '⚖️', label: 'Comparer' },
-  { emoji: '📟', label: 'Mesurer' },
-  { emoji: '🎯', label: 'Choisir l’unité' },
-  { emoji: '🧱', label: 'Relations d’unités' },
-  { emoji: '🔁', label: 'Convertir' },
-];
 
 export default function Module07MissionFinale() {
-  const navLinks = getNavLinks(7);
-  const { xp } = useProgress(MODULE_CTX.lessonId);
-
-  const [infoDone, setInfoDone] = useState(false);
-  const [orderDone, setOrderDone] = useState(false);
-  const [totalDone, setTotalDone] = useState(false);
-  const [estimPick, setEstimPick] = useState(null);
-  const [estimRevealed, setEstimRevealed] = useState(false);
-  const s4 = estimRevealed && estimPick === ESTIM_Q.correct;
-
-  const allDone = infoDone && orderDone && totalDone && s4;
-
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
-      moduleTitle="🏆 Mission finale : le ravitaillement"
-      moduleSubtitle="Prépare le goûter de l’école : mobilise tout ce que tu as appris."
+    <BossFinal
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(7)}
       moduleNumber={7}
+      moduleTitle="🏆 Mission finale : le ravitaillement"
+      moduleSubtitle="Dix épreuves pour préparer le goûter de toute l’école."
       estimatedTime="16 min"
-      xp={xp}
-      prevLink={navLinks.prevLink}
-      nextLink={navLinks.nextLink}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="🏆 Mission finale" title="L’école prépare une sortie et doit commander le goûter pour 24 élèves." tone="amber">
-          <p>Toutes les informations ne sont pas utiles. À toi de trier, construire, calculer et vérifier.</p>
-        </MissionBrief>
-
-        <StepCard num={1} title="Les informations utiles" done={infoDone}>
-          <InfoSorter items={INFO_ITEMS} solved={infoDone} onSolved={() => setInfoDone(true)} />
-        </StepCard>
-
-        <StepCard num={2} title="Préparer la commande" done={orderDone} locked={!infoDone}>
-          <BuildOrder done={orderDone} onSolved={() => setOrderDone(true)} />
-        </StepCard>
-
-        <StepCard num={3} title="La masse totale" done={totalDone} locked={!orderDone}>
-          <TotalMass done={totalDone} onSolved={() => setTotalDone(true)} />
-        </StepCard>
-
-        <StepCard num={4} title="Est-ce cohérent ?" done={s4} locked={!totalDone}>
-          <div className="space-y-4">
-            <p className="text-sm font-semibold text-slate-700">{ESTIM_Q.q}</p>
-            <ChoiceGrid options={ESTIM_Q.options} selected={estimPick} onSelect={setEstimPick} revealed={estimRevealed} correctIndex={ESTIM_Q.correct} cols={1} />
-            {!estimRevealed && (
-              <div className="text-center"><ValidateButton onClick={() => setEstimRevealed(true)} disabled={estimPick === null}>Valider</ValidateButton></div>
-            )}
-            {estimRevealed && (
-              <Feedback tone={s4 ? 'ok' : 'ko'}>
-                {ESTIM_Q.explain}
-                {!s4 && <> <button type="button" onClick={() => { setEstimRevealed(false); setEstimPick(null); }} className="underline font-semibold">Réessayer</button></>}
-              </Feedback>
-            )}
-          </div>
-        </StepCard>
-
-        {allDone && (
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="bg-gradient-to-br from-amber-400 to-orange-500 text-white rounded-2xl p-8 text-center space-y-4">
-            <Trophy className="w-10 h-10 mx-auto" aria-hidden="true" />
-            <div className="text-2xl font-space font-extrabold">Mission accomplie !</div>
-            <p className="text-amber-50 text-sm leading-relaxed max-w-lg mx-auto">
-              Du tri des informations à la vérification finale, tu as comparé, mesuré, choisi une unité, construit
-              les relations entre unités, converti et estimé — sur une seule et même situation.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 pt-2">
-              {RECAP.map((r) => (
-                <div key={r.label} className="bg-white/15 rounded-xl py-2.5 px-1 text-xs font-bold flex flex-col items-center gap-1">
-                  <span className="text-lg" aria-hidden="true">{r.emoji}</span>
-                  {r.label}
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </div>
-    </ModuleLayout>
+      lessonConfig={LESSON_CONFIG}
+      timerSeconds={10 * 60}
+      timerLabel="10 min"
+      brief={{
+        tag: '🏆 Boss final',
+        title: 'L’école part en sortie : 24 élèves, un goûter à préparer.',
+        tone: 'amber',
+        body: (
+          <p>
+            Du tri des informations jusqu’à la vérification finale : comparer, lire une balance, choisir une unité,
+            convertir et estimer. Réponds à toutes les épreuves, puis valide pour découvrir ta correction et tes
+            badges de maîtrise.
+          </p>
+        ),
+      }}
+      registre={REGISTRE}
+      skills={SKILLS}
+      epreuves={EPREUVES}
+      badges={BADGES}
+      synthese={<Synthese />}
+      completion={{
+        masterTitle: 'Chef du ravitaillement !',
+        title: 'Mission accomplie !',
+        message: (
+          <>
+            Du tri des informations à la vérification finale, tu as comparé, mesuré, choisi une unité, construit les
+            relations entre unités, converti et estimé — sur une seule et même situation.
+          </>
+        ),
+        verbs: ['Comparer', 'Mesurer', 'Convertir', 'Estimer'],
+        masterBadgeLabel: 'Badge « Chef du ravitaillement » débloqué',
+      }}
+      xpPerCorrect={10}
+    />
   );
 }

@@ -7,6 +7,7 @@ Conventions actually followed in this codebase — documenting what's already co
 - One folder per lesson under `apps/web/src/lessons/college/<grade>/<domain>/<lesson-slug>/`, with `index.jsx`, `lesson.config.js`, `moduleContext.js`, and a `modules/` folder.
 - Module files are named `ModuleNN<Descriptor>.jsx` — two-digit zero-padded number + PascalCase description (e.g. `Module03Comparaison.jsx`). Followed with zero exceptions across all 141 existing modules — keep it that way.
 - Every module should honor the 8-step pedagogical loop defined in [`.agents/AGENTS.md`](./.agents/AGENTS.md) (découvre → manipule → comprends → formule la règle → entraîne → détecte l'erreur → réutilise → maîtrise). Not every module needs every step — see AGENTS.md's "Règle Organique."
+- What the student manipulates, what they must notice, how feedback is worded, and how scaffolding disappears follow [`docs/architecture/INTERACTION_PEDAGOGY.md`](./docs/architecture/INTERACTION_PEDAGOGY.md) — authoritative on interaction pedagogy; check any new manipulation against its §18 questions and §29 checklist.
 - Reach for the shared toolkit in `apps/web/src/lessons/common/components/` (`LessonUI.jsx`'s `StepCard`/`ChoiceGrid`/`ValidateButton`, plus `NumberLine`, `OrderingGame`, `GroupBuilder`, `BarModel`, `CalcChain`, `InfoSorter`, `AnswerBuilder`) before writing a new interaction pattern from scratch.
 - Lesson/module IDs, URLs, and module ordering are load-bearing (progress is keyed on them in `localStorage`) — don't change them casually.
 

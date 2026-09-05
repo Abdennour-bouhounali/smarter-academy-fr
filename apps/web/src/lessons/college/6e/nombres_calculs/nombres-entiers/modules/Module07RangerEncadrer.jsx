@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ZoomIn } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { ContentModule, TapQuestion } from '../../../../../common/kit';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import OrderingGame from '../../../../../common/components/OrderingGame';
 import NumberLine from '../../../../../common/components/NumberLine';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief, NumberField } from '../../../../../common/components/LessonUI';
+import { Feedback, ValidateButton, NumberField } from '../../../../../common/components/LessonUI';
 import { formatFr, texFr, parseFr, frame } from '../components/numberUtils';
+
+/**
+ * Module 7 V2 — reconstruit sur le lesson kit. Les rangements utilisent
+ * OrderingGame en mode `formative` (jamais bloquant, bon ordre révélé) ;
+ * l'encadrement à deux bornes reste une interaction maison ; le QCM de
+ * consolidation passe en TapQuestion.
+ */
 
 const A_RANGER = [4502, 4250, 5020, 3999, 4999].map((v) => ({ id: `n${v}`, value: v }));
 
-/* ─── Encadrer : de plus en plus précis ──────────────────────────── */
 const CIBLE = 4582;
 
 const NIVEAUX = [
@@ -38,7 +44,7 @@ const NIVEAUX = [
   },
 ];
 
-function EncadrementStep({ niveau, solved, onSolved }) {
+function EncadrementStep({ niveau, solved, onSolved, react }) {
   const [low, setLow] = useState('');
   const [high, setHigh] = useState('');
   const [checked, setChecked] = useState(false);
@@ -91,7 +97,8 @@ function EncadrementStep({ niveau, solved, onSolved }) {
           <ValidateButton
             onClick={() => {
               setChecked(true);
-              if (isRight) onSolved?.();
+              react(isRight);
+              onSolved?.();
             }}
             disabled={!low || !high}
           >
@@ -100,7 +107,18 @@ function EncadrementStep({ niveau, solved, onSolved }) {
         </div>
       )}
 
-      {checked && !isRight && <Feedback tone="hint">{niveau.hint}</Feedback>}
+      {/* Pas de `!solved` : onSolved est inconditionnel, le retour d'erreur
+          doit rester visible à côté de la correction. */}
+      {checked && !isRight && (
+        <Feedback tone="hint">
+          Ta réponse : <span className="font-mono">{low || '—'} &lt; {formatFr(CIBLE)} &lt; {high || '—'}</span>.{' '}
+          {niveau.hint} La bonne réponse :{' '}
+          <span className="font-mono font-bold">
+            {formatFr(expected0)} &lt; {formatFr(CIBLE)} &lt; {formatFr(expected1)}
+          </span>
+          .
+        </Feedback>
+      )}
 
       {solved && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-2">
@@ -126,7 +144,6 @@ function EncadrementStep({ niveau, solved, onSolved }) {
   );
 }
 
-/* ─── Consolidation ──────────────────────────────────────────────── */
 const CONSO = {
   q: 'Entre quels milliers se trouve 9 875 ?',
   options: ['8 000 et 9 000', '9 000 et 10 000', '9 800 et 9 900', '900 et 1 000'],
@@ -136,137 +153,118 @@ const CONSO = {
 };
 
 export default function Module07RangerEncadrer() {
-  const navLinks = getNavLinks(7);
   const [ascDone, setAscDone] = useState(false);
   const [descDone, setDescDone] = useState(false);
   const [niveauxDone, setNiveauxDone] = useState([]);
-  const [consoPick, setConsoPick] = useState(null);
   const [consoRevealed, setConsoRevealed] = useState(false);
 
-  const s3 =
-    niveauxDone.length === NIVEAUX.length && consoRevealed && consoPick === CONSO.correct;
-  const allDone = ascDone && descDone && s3;
+  const s3 = niveauxDone.length === NIVEAUX.length && consoRevealed;
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(7)}
+      moduleNumber={7}
       moduleTitle="Ranger et encadrer"
       moduleSubtitle="Mettre les nombres en ordre, puis les coincer entre deux repères de plus en plus proches."
-      moduleNumber={7}
       estimatedTime="12 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="📊 Ordre" title="Cinq nombres, deux rangements, un encadrement.">
+      brief={{
+        tag: '📊 Ordre',
+        title: 'Cinq nombres, deux rangements, un encadrement.',
+        body: (
           <p>
             Ranger, c'est comparer plusieurs fois de suite. Encadrer, c'est dire entre quels repères ronds se
             situe un nombre — de plus en plus précisément.
           </p>
-        </MissionBrief>
-
-        <StepCard num={1} title="Range dans l'ordre croissant" done={ascDone}>
-          <OrderingGame
-            items={A_RANGER}
-            direction="asc"
-            solved={ascDone}
-            onSolved={() => setAscDone(true)}
-            instruction="Du plus petit au plus grand. Si tu te trompes, on te dira exactement où l'ordre casse."
-          />
-        </StepCard>
-
-        <StepCard num={2} title="Maintenant dans l'ordre décroissant" done={descDone} locked={!ascDone}>
-          <OrderingGame
-            items={A_RANGER}
-            direction="desc"
-            solved={descDone}
-            onSolved={() => setDescDone(true)}
-            instruction="Du plus grand au plus petit. Ce n'est pas seulement la liste à l'envers : vérifie chaque comparaison."
-          />
-        </StepCard>
-
-        <StepCard
-          num={3}
-          title="Encadrer 4 582 : de plus en plus précis"
-          subtitle="D'abord entre deux milliers, puis deux centaines, puis deux dizaines."
-          done={s3}
-          locked={!descDone}
-        >
-          <div className="space-y-8">
-            {NIVEAUX.map((niveau, i) =>
-              i === 0 || niveauxDone.includes(i - 1) ? (
-                <div key={niveau.unit} className="space-y-3 border-t border-slate-100 pt-5 first:border-0 first:pt-0">
-                  <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
-                    Précision {i + 1} / {NIVEAUX.length}
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: "Range dans l'ordre croissant",
+          done: ascDone,
+          content: (
+            <OrderingGame
+              items={A_RANGER}
+              direction="asc"
+              solved={ascDone}
+              onSolved={() => setAscDone(true)}
+              instruction="Du plus petit au plus grand. Si tu te trompes, on te dira exactement où l'ordre casse."
+              formative
+            />
+          ),
+        },
+        {
+          num: 2,
+          title: "Maintenant dans l'ordre décroissant",
+          done: descDone,
+          content: (
+            <OrderingGame
+              items={A_RANGER}
+              direction="desc"
+              solved={descDone}
+              onSolved={() => setDescDone(true)}
+              instruction="Du plus grand au plus petit. Ce n'est pas seulement la liste à l'envers : vérifie chaque comparaison."
+              formative
+            />
+          ),
+        },
+        {
+          num: 3,
+          title: 'Encadrer 4 582 : de plus en plus précis',
+          subtitle: "D'abord entre deux milliers, puis deux centaines, puis deux dizaines.",
+          done: s3,
+          content: (kit) => (
+            <div className="space-y-8">
+              {NIVEAUX.map((niveau, i) =>
+                i === 0 || niveauxDone.includes(i - 1) ? (
+                  <div key={niveau.unit} className="space-y-3 border-t border-slate-100 pt-5 first:border-0 first:pt-0">
+                    <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                      Précision {i + 1} / {NIVEAUX.length}
+                    </div>
+                    <EncadrementStep
+                      niveau={niveau}
+                      solved={niveauxDone.includes(i)}
+                      onSolved={() => setNiveauxDone((d) => (d.includes(i) ? d : [...d, i]))}
+                      react={kit.react}
+                    />
                   </div>
-                  <EncadrementStep
-                    niveau={niveau}
-                    solved={niveauxDone.includes(i)}
-                    onSolved={() => setNiveauxDone((d) => (d.includes(i) ? d : [...d, i]))}
+                ) : null
+              )}
+
+              {niveauxDone.length === NIVEAUX.length && (
+                <div className="space-y-4 border-t border-slate-200 pt-5">
+                  <div className="bg-slate-900 text-white rounded-2xl p-5 space-y-2 text-center">
+                    <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">
+                      Trois encadrements du même nombre
+                    </div>
+                    {NIVEAUX.map((n) => {
+                      const [lo, hi] = frame(CIBLE, n.unit);
+                      return (
+                        <div key={n.unit} className="font-mono text-base sm:text-lg font-bold text-amber-300">
+                          <MathText>{`$${texFr(lo)} < ${texFr(CIBLE)} < ${texFr(hi)}$`}</MathText>
+                        </div>
+                      );
+                    })}
+                    <p className="text-xs text-slate-400 pt-1">
+                      Plus l'intervalle est petit, plus on sait précisément où se trouve le nombre.
+                    </p>
+                  </div>
+
+                  <TapQuestion
+                    prompt={CONSO.q}
+                    options={CONSO.options}
+                    correct={CONSO.correct}
+                    cols={2}
+                    explain={CONSO.explain}
+                    onAnswered={() => setConsoRevealed(true)}
                   />
                 </div>
-              ) : null
-            )}
-
-            {niveauxDone.length === NIVEAUX.length && (
-              <div className="space-y-4 border-t border-slate-200 pt-5">
-                <div className="bg-slate-900 text-white rounded-2xl p-5 space-y-2 text-center">
-                  <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">
-                    Trois encadrements du même nombre
-                  </div>
-                  {NIVEAUX.map((n) => {
-                    const [lo, hi] = frame(CIBLE, n.unit);
-                    return (
-                      <div key={n.unit} className="font-mono text-base sm:text-lg font-bold text-amber-300">
-                        <MathText>{`$${texFr(lo)} < ${texFr(CIBLE)} < ${texFr(hi)}$`}</MathText>
-                      </div>
-                    );
-                  })}
-                  <p className="text-xs text-slate-400 pt-1">
-                    Plus l'intervalle est petit, plus on sait précisément où se trouve le nombre.
-                  </p>
-                </div>
-
-                <p className="text-sm font-semibold text-slate-700">{CONSO.q}</p>
-                <ChoiceGrid
-                  options={CONSO.options}
-                  selected={consoPick}
-                  onSelect={setConsoPick}
-                  revealed={consoRevealed}
-                  correctIndex={CONSO.correct}
-                  cols={2}
-                />
-                {!consoRevealed && (
-                  <ValidateButton onClick={() => setConsoRevealed(true)} disabled={consoPick === null}>
-                    Valider
-                  </ValidateButton>
-                )}
-                {consoRevealed && (
-                  <Feedback tone={consoPick === CONSO.correct ? 'ok' : 'ko'}>
-                    {CONSO.explain}
-                    {consoPick !== CONSO.correct && (
-                      <>
-                        {' '}
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setConsoRevealed(false);
-                            setConsoPick(null);
-                          }}
-                          className="underline font-semibold"
-                        >
-                          Réessayer
-                        </button>
-                      </>
-                    )}
-                  </Feedback>
-                )}
-              </div>
-            )}
-          </div>
-        </StepCard>
-      </div>
-    </ModuleLayout>
+              )}
+            </div>
+          ),
+        },
+      ]}
+    />
   );
 }

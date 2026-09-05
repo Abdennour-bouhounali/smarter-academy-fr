@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle2, XCircle, Lightbulb, Info, Timer as TimerIcon } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle2, XCircle, Lightbulb, Info, Timer as TimerIcon, Volume2, VolumeX, Flame } from 'lucide-react';
 
 /**
  * Briques d'interface partagées par les leçons Smarter Academy.
@@ -153,9 +153,13 @@ export function StepCard({ num, title, subtitle, done, locked, children, tone = 
     ? 'bg-amber-500 text-white'
     : 'bg-slate-800 text-white';
 
+  // Stable anchor so ModuleLayout's "what's left" hint can scroll straight
+  // to this step when the "Module suivant" button is disabled.
+  const anchorId = `step-${num}`;
+
   if (locked) {
     return (
-      <div className="border-2 border-dashed border-slate-200 rounded-2xl p-5 flex items-center gap-3 opacity-70">
+      <div id={anchorId} className="border-2 border-dashed border-slate-200 rounded-2xl p-5 flex items-center gap-3 opacity-70">
         <span className={`w-8 h-8 rounded-lg ${badgeTone} font-mono font-bold text-xs flex items-center justify-center shrink-0`}>
           {num}
         </span>
@@ -168,9 +172,10 @@ export function StepCard({ num, title, subtitle, done, locked, children, tone = 
 
   return (
     <motion.section
+      id={anchorId}
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`border-2 rounded-2xl p-5 sm:p-6 space-y-4 ${
+      className={`border-2 rounded-2xl p-5 sm:p-6 space-y-4 scroll-mt-24 ${
         done ? 'border-emerald-300 bg-emerald-50/40' : 'border-slate-200 bg-white'
       }`}
     >
@@ -302,6 +307,139 @@ export function TimerDisplay({ label, urgent = false }) {
     >
       <TimerIcon className="w-4 h-4 shrink-0" aria-hidden="true" />
       {label}
+    </div>
+  );
+}
+
+/* ── Micro-célébration : gain d'XP flottant ───────────────────────── */
+/**
+ * Petit "+N XP" qui monte et s'efface, à monter juste à côté d'une réponse
+ * correcte. `tick` doit être une valeur qui change UNE FOIS par réponse
+ * correcte de CETTE question précise (ex. un compteur local incrémenté dans
+ * le handler onSelect) — jamais un compteur partagé entre plusieurs
+ * questions, qui ferait rejouer l'animation au mauvais endroit.
+ */
+export function XPBurst({ amount, tick }) {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    if (!tick) return;
+    setShow(true);
+    const t = setTimeout(() => setShow(false), 900);
+    return () => clearTimeout(t);
+  }, [tick]);
+
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          initial={{ opacity: 0, y: 4, scale: 0.85 }}
+          animate={{ opacity: 1, y: -22, scale: 1 }}
+          exit={{ opacity: 0, y: -34 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="pointer-events-none absolute -top-1 right-3 font-mono font-extrabold text-sm text-emerald-500 drop-shadow-sm"
+          aria-hidden="true"
+        >
+          +{amount} XP
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+/* ── Bandeau de progression compact d'un module ───────────────────── */
+/**
+ * ●●○ — reflète les mêmes étapes que `incompleteSteps`/StepCard, en lecture
+ * seule. `doneCount`/`total` : nombre d'étapes terminées sur le total.
+ */
+export function StepProgressBar({ doneCount, total }) {
+  if (!total) return null;
+  const pct = Math.round((doneCount / total) * 100);
+  return (
+    <div className="sticky top-16 z-10 -mx-4 px-4 py-2 bg-slate-50/90 backdrop-blur-sm border-b border-slate-200 sm:rounded-xl sm:border sm:mx-0">
+      <div className="flex items-center gap-2.5">
+        <div className="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+          <motion.div
+            className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full"
+            animate={{ width: `${pct}%` }}
+            transition={{ duration: 0.4 }}
+          />
+        </div>
+        <span className="text-[10px] font-mono font-bold text-slate-400 tabular-nums shrink-0">
+          {doneCount} / {total}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* ── Chip de série de bonnes réponses (session, non persistée) ───── */
+export function StreakChip({ count }) {
+  if (count < 2) return null;
+  return (
+    <motion.div
+      key={count}
+      initial={{ opacity: 0, scale: 0.7, y: -4 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-mono text-xs font-bold"
+    >
+      <Flame className="w-3.5 h-3.5" aria-hidden="true" />
+      {count} d’affilée
+    </motion.div>
+  );
+}
+
+/* ── Interrupteur son + vibrations (préférence appareil) ──────────── */
+export function EffectsToggle({ enabled, onToggle }) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-pressed={enabled}
+      aria-label={enabled ? 'Désactiver les effets sonores' : 'Activer les effets sonores'}
+      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border-2 border-slate-200 bg-white text-slate-500 hover:border-slate-400 transition-colors text-xs font-mono font-bold min-h-[40px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+    >
+      {enabled ? <Volume2 className="w-3.5 h-3.5" aria-hidden="true" /> : <VolumeX className="w-3.5 h-3.5" aria-hidden="true" />}
+      <span className="hidden sm:inline">{enabled ? 'Sons activés' : 'Sons coupés'}</span>
+    </button>
+  );
+}
+
+/* ── Redirection automatique vers le module suivant ───────────────── */
+/**
+ * Compte à rebours annulable affiché sur l'écran de fin de module. `onGo`
+ * doit naviguer immédiatement ; le composant appelle `onGo()` seul une fois
+ * les `seconds` écoulées, sauf annulation.
+ */
+export function AutoAdvance({ seconds = 5, label = 'Module suivant', onGo }) {
+  const [remaining, setRemaining] = useState(seconds);
+  const [cancelled, setCancelled] = useState(false);
+
+  useEffect(() => {
+    if (cancelled) return undefined;
+    if (remaining <= 0) {
+      onGo();
+      return undefined;
+    }
+    const t = setTimeout(() => setRemaining((r) => r - 1), 1000);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [remaining, cancelled]);
+
+  if (cancelled) return null;
+
+  return (
+    <div className="flex items-center justify-center gap-3 text-xs font-mono text-slate-400">
+      <span>
+        {label} dans {remaining}s…
+      </span>
+      <button
+        type="button"
+        onClick={() => setCancelled(true)}
+        className="underline font-semibold text-slate-500 hover:text-slate-700"
+      >
+        Rester ici
+      </button>
     </div>
   );
 }

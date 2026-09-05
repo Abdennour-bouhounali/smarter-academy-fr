@@ -14,7 +14,7 @@ import { Plus, Minus } from 'lucide-react';
  * @param {(n:number)=>void} onChange
  * @param {number} [max]      nombre maximal de groupes autorisés
  */
-export default function GroupBuilder({ perGroup, groups, onChange, max = 12, tone = 'violet', unit = '', disabled = false }) {
+export default function GroupBuilder({ perGroup, groups, onChange, max = 12, tone = 'violet', unit = '', disabled = false, icon = null }) {
   const TONE = {
     violet: { bg: 'bg-violet-50', border: 'border-violet-200', dot: 'bg-violet-400', text: 'text-violet-700' },
     sky: { bg: 'bg-sky-50', border: 'border-sky-200', dot: 'bg-sky-400', text: 'text-sky-700' },
@@ -31,14 +31,18 @@ export default function GroupBuilder({ perGroup, groups, onChange, max = 12, ton
             key={gi}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className={`flex flex-col items-center gap-1 ${t.bg} border-2 ${t.border} rounded-xl p-2`}
+            className={`flex flex-col items-center gap-1 ${t.bg} border-2 ${t.border} rounded-xl p-2 min-w-[3rem]`}
           >
-            <div className="flex flex-wrap gap-0.5 max-w-[72px]">
+            <div className="flex flex-wrap justify-center gap-0.5 max-w-[72px]">
               {Array.from({ length: Math.min(perGroup, 12) }, (_, oi) => (
-                <span key={oi} className={`w-2.5 h-2.5 rounded-full ${t.dot}`} />
+                icon ? (
+                  <span key={oi} className="text-xl leading-none" aria-hidden="true">{icon}</span>
+                ) : (
+                  <span key={oi} className={`w-2.5 h-2.5 rounded-full ${t.dot}`} />
+                )
               ))}
             </div>
-            <span className={`text-[9px] font-mono font-bold ${t.text}`}>{perGroup}</span>
+            <span className={`text-[10px] font-mono font-bold ${t.text}`}>{perGroup}{unit.trim() ? ` ${unit.trim()}` : ''}</span>
           </motion.div>
         ))}
         {groups === 0 && <span className="text-xs text-slate-400 italic self-center">Ajoute un premier groupe.</span>}

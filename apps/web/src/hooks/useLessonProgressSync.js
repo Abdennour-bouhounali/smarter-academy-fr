@@ -14,10 +14,15 @@ import { mergeServerRowIntoStorage, flushProgressQueue } from '../lessons/common
  * dashboard.
  */
 export function useLessonProgressSync() {
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
 
   useEffect(() => {
-    if (!token) return undefined;
+    // Wait for `user` to resolve too, not just `token` — storage.js's
+    // per-student scoping reads the current user id synchronously
+    // (authUserId.js), which AuthContext only sets once fetchUser()/login()
+    // resolves. Firing on `token` alone would read/write under the wrong
+    // (anon) scope for the instant before that resolves.
+    if (!token || !user) return undefined;
 
     let cancelled = false;
     (async () => {
@@ -40,5 +45,5 @@ export function useLessonProgressSync() {
       cancelled = true;
       window.removeEventListener('online', onOnline);
     };
-  }, [token]);
+  }, [token, user]);
 }

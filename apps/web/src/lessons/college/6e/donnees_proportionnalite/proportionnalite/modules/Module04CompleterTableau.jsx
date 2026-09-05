@@ -1,0 +1,176 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Table2 } from 'lucide-react';
+import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { Feedback } from '../../../../../common/components/LessonUI';
+import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import ProportionTable from '../components/ProportionTable';
+import { CREPES } from '../components/kermesseData';
+import { applyRule, ratioAt, parseDec, formatDec } from '../components/proportionUtils';
+
+/**
+ * Module 4 — MANIPULATION : compléter un tableau, case par case.
+ *
+ * L'élève remplit un tableau de proportionnalité dont les cases sont
+ * volontairement choisies pour appeler des chemins DIFFÉRENTS :
+ *
+ *   x = 1  → passage par l'unité (division)  ← la case clé, demandée en 1er
+ *   x = 6  → multiplication depuis 3 (×2) ou depuis l'unité
+ *   x = 10 → multiplication depuis l'unité (le plus rapide)
+ *   x = 9  → linéarité additive : 9 = 6 + 3, donc y(9) = y(6) + y(3)
+ *
+ * Aucune méthode n'est imposée : après chaque case, le module MONTRE les
+ * chemins possibles, et la dernière étape fait remarquer qu'ils donnent tous
+ * la même réponse. C'est ce qui prépare le module 5 (choisir), sans encore
+ * demander de choisir.
+ */
+const K = ratioAt(CREPES.rule, 1); // 3
+const Y = (x) => applyRule(CREPES.rule, x);
+
+const CELLS = [
+  { x: 1, hint: "Une seule crêpe : on DIVISE le prix de 3 crêpes par 3. C'est le passage par l'unité." },
+  { x: 6, hint: '6 crêpes, c’est 2 fois 3 crêpes : on double le prix de 3 crêpes.' },
+  { x: 10, hint: 'Une fois l’unité connue, 10 crêpes coûtent 10 fois le prix d’une seule.' },
+  { x: 9, hint: '9 = 6 + 3 : on peut additionner deux prix déjà trouvés.' },
+];
+
+export default function Module04CompleterTableau() {
+  const [found, setFound] = useState([]);
+  const [chemDone, setChemDone] = useState(false);
+
+  const step = found.length;
+  const current = CELLS[Math.min(step, CELLS.length - 1)];
+  const allFound = found.length === CELLS.length;
+
+  const columns = [
+    { x: 3, y: Y(3) },
+    ...CELLS.map((c) => ({ x: c.x, y: found.includes(c.x) ? Y(c.x) : null })),
+  ].sort((a, b) => a.x - b.x);
+
+  return (
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(4)}
+      moduleNumber={4}
+      moduleTitle="Compléter le tableau"
+      moduleSubtitle="Quatre cases vides, plusieurs chemins pour les remplir."
+      estimatedTime="13 min"
+      brief={{
+        tag: '⚖️ Mission 04',
+        title: 'Le tarif du stand est affiché… en partie.',
+        body: (
+          <p>
+            Une seule colonne est connue : 3 crêpes coûtent {Y(3)} €. Complète les autres — et remarque qu'il
+            y a souvent plus d'un chemin pour y arriver.
+          </p>
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: `Complète les cases (${found.length}/${CELLS.length})`,
+          done: allFound,
+          content: (kit) => (
+            <div className="space-y-3">
+              <ProportionTable
+                xLabel="Crêpes"
+                yLabel="Prix"
+                unit="€"
+                columns={columns}
+                solvedIndexes={columns.map((c, i) => (found.includes(c.x) ? i : -1)).filter((i) => i >= 0)}
+                caption="Tarif du stand de crêpes"
+              />
+              {!allFound ? (
+                <NumericQuestion
+                  key={current.x}
+                  prompt={`Combien coûtent ${current.x} crêpe${current.x > 1 ? 's' : ''} ?`}
+                  suffix="€"
+                  expected={Y(current.x)}
+                  parse={parseDec}
+                  display={formatDec(Y(current.x))}
+                  explain={
+                    <>
+                      {current.x} × {K} = <strong>{formatDec(Y(current.x))} €</strong>. {current.hint}
+                    </>
+                  }
+                  explainFor={(n) =>
+                    n === current.x + Y(3)
+                      ? `Tu as additionné au lieu de multiplier. Chaque crêpe coûte ${K} € : ${current.x} × ${K} = ${formatDec(Y(current.x))} €.`
+                      : `${current.hint} Le calcul : ${current.x} × ${K} = ${formatDec(Y(current.x))} €.`
+                  }
+                  solved={false}
+                  onAnswered={() => {
+                    setFound((f) => [...f, current.x]);
+                    kit.react(true);
+                  }}
+                />
+              ) : (
+                <Feedback tone="ok">
+                  Tableau complet. Chaque case pouvait s'obtenir de plusieurs façons — et toutes donnent le
+                  même prix.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Plusieurs chemins, une seule réponse',
+          done: chemDone,
+          content: (
+            <div className="space-y-3">
+              <div className="bg-white border-2 border-slate-200 rounded-2xl p-4 space-y-2.5">
+                <p className="text-sm font-semibold text-slate-700 text-center">
+                  Trois façons de trouver le prix de 9 crêpes
+                </p>
+                {[
+                  { id: 'unite', label: "Par l'unité", calc: `1 crêpe → ${K} €, donc 9 × ${K} = ${formatDec(Y(9))} €` },
+                  { id: 'mult', label: 'Par multiplication', calc: `9 = 3 × 3, donc ${Y(3)} × 3 = ${formatDec(Y(9))} €` },
+                  { id: 'add', label: 'Par addition', calc: `9 = 6 + 3, donc ${Y(6)} + ${Y(3)} = ${formatDec(Y(9))} €` },
+                ].map((s) => (
+                  <div key={s.id} className="rounded-xl border-2 border-slate-200 bg-slate-50 p-2.5">
+                    <p className="text-xs font-bold text-slate-600">{s.label}</p>
+                    <p className="font-mono text-sm text-slate-800">{s.calc}</p>
+                  </div>
+                ))}
+              </div>
+              <TapQuestion
+                prompt="Que remarques-tu à propos de ces trois chemins ?"
+                options={[
+                  'Ils donnent le même résultat : on peut choisir celui qu’on préfère',
+                  'Seul le passage par l’unité est correct',
+                  'Ils donnent des résultats différents selon la méthode',
+                ]}
+                correct={0}
+                cols={1}
+                explain={`Les trois donnent ${formatDec(Y(9))} €. Dans une situation proportionnelle, il n’y a pas UNE bonne méthode : il y a celle qui va le plus vite avec les nombres qu’on a.`}
+                solved={chemDone}
+                onAnswered={() => setChemDone(true)}
+              />
+              {chemDone && (
+                <ProportionTable
+                  xLabel="Crêpes"
+                  yLabel="Prix"
+                  unit="€"
+                  columns={[1, 3, 6, 9, 10].map((x) => ({ x, y: Y(x) }))}
+                  coefficient={K}
+                  horizontalHint={{ from: 3, to: 6, factor: 2 }}
+                  caption="Le tableau complet, avec ses deux lectures"
+                />
+              )}
+            </div>
+          ),
+        },
+      ]}
+      footer={
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+          <Table2 className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
+          <p className="text-sm text-slate-300">
+            Un tableau de proportionnalité se lit dans deux sens : vers le bas avec le coefficient, sur le
+            côté avec des ×2, ÷3, +… Au prochain module, tu choisis le chemin le plus rapide.
+          </p>
+        </motion.div>
+      }
+    />
+  );
+}

@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Search, CheckCircle2 } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
+ * Module 10 — practice lab, reconstruit sur le lesson kit.
+ *
  * DetectiveTimeline — trouver la PREMIÈRE étape où un raisonnement dérape.
  * On ne demande jamais « est-ce juste ou faux ? » globalement : on demande
  * « à quel moment ça commence à se tromper ? », ce qui force à lire chaque
- * étape au lieu de juger seulement le résultat final.
+ * étape au lieu de juger seulement le résultat final. Le pick initial révèle
+ * la correction sans bouton Valider séparé ; seule la réparation (repair)
+ * utilise TapQuestion.
  */
-function DetectiveTimeline({ problem, steps, badIndex, repair, solved, onSolved }) {
+function DetectiveTimeline({ react, problem, steps, badIndex, repair, solved, onSolved }) {
   const [pick, setPick] = useState(null);
-  const [checked, setChecked] = useState(false);
-  const [repairPick, setRepairPick] = useState(null);
-  const [repairRevealed, setRepairRevealed] = useState(false);
-  const foundBad = checked && pick === badIndex;
+  const [repairDone, setRepairDone] = useState(false);
+  const foundBad = pick === badIndex;
+
+  const choose = (i) => {
+    if (solved || pick !== null) return;
+    setPick(i);
+    react(i === badIndex);
+  };
 
   return (
     <div className="space-y-4">
@@ -31,15 +38,15 @@ function DetectiveTimeline({ problem, steps, badIndex, repair, solved, onSolved 
 
       <div className="space-y-1.5">
         {steps.map((s, i) => {
-          const isSel = pick === i;
-          const isBad = checked && i === badIndex;
-          const isSelWrong = checked && isSel && i !== badIndex;
+          const isSel = (solved ? badIndex : pick) === i;
+          const isBad = (pick !== null || solved) && i === badIndex;
+          const isSelWrong = pick !== null && !solved && isSel && i !== badIndex;
           return (
             <button
               key={i}
               type="button"
-              disabled={solved}
-              onClick={() => { setPick(i); setChecked(false); }}
+              disabled={solved || pick !== null}
+              onClick={() => choose(i)}
               className={`w-full text-left flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 text-sm transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                 isBad ? 'border-rose-400 bg-rose-50 text-rose-800' : isSelWrong ? 'border-amber-300 bg-amber-50 text-amber-700' : isSel ? 'border-blue-500 bg-blue-50 text-blue-900' : 'border-slate-200 bg-white text-slate-700 hover:border-slate-400'
               }`}
@@ -51,42 +58,28 @@ function DetectiveTimeline({ problem, steps, badIndex, repair, solved, onSolved 
         })}
       </div>
 
-      {!solved && (
-        <div className="text-center">
-          <ValidateButton onClick={() => { setChecked(true); if (pick === badIndex) onSolved?.(); }} disabled={pick === null} tone="amber">
-            Valider ma réponse
-          </ValidateButton>
-        </div>
-      )}
-
-      {checked && !foundBad && (
-        <Feedback tone="hint">
-          Regarde chaque étape dans l'ordre : à partir de quel moment le raisonnement ne colle plus à la
-          situation ?
+      {pick !== null && !foundBad && !solved && (
+        <Feedback tone="ko">
+          L'étape fautive est en réalité l'étape {badIndex + 1}. Regarde chaque étape dans l'ordre : à partir de
+          quel moment le raisonnement ne colle plus à la situation ?
         </Feedback>
       )}
 
-      {foundBad && !solved && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-3 border-t border-slate-100 pt-4">
-          <p className="text-sm font-semibold text-slate-700">{repair.q}</p>
-          <ChoiceGrid options={repair.options} selected={repairPick} onSelect={setRepairPick} revealed={repairRevealed} correctIndex={repair.correct} cols={1} />
-          {!repairRevealed && (
-            <div className="text-center">
-              <ValidateButton onClick={() => setRepairRevealed(true)} disabled={repairPick === null} tone="amber">Valider</ValidateButton>
-            </div>
-          )}
-          {repairRevealed && (
-            <Feedback tone={repairPick === repair.correct ? 'ok' : 'ko'}>
-              {repair.explain}
-              {repairPick !== repair.correct && (
-                <>
-                  {' '}
-                  <button type="button" onClick={() => { setRepairRevealed(false); setRepairPick(null); }} className="underline font-semibold">Réessayer</button>
-                </>
-              )}
-            </Feedback>
-          )}
-        </motion.div>
+      {(foundBad || solved) && !repairDone && !solved && (
+        <div className="space-y-3 border-t border-slate-100 pt-4">
+          <TapQuestion
+            prompt={repair.q}
+            options={repair.options}
+            correct={repair.correct}
+            cols={1}
+            explain={repair.explain}
+            solved={repairDone}
+            onAnswered={() => {
+              setRepairDone(true);
+              onSolved?.();
+            }}
+          />
+        </div>
       )}
 
       {solved && (
@@ -101,7 +94,7 @@ function DetectiveTimeline({ problem, steps, badIndex, repair, solved, onSolved 
 
 const CASES = [
   {
-    problem: "Une boutique vend des stylos à 3 €. Le vendeur travaille 6 h par jour. Un client achète 5 stylos. Combien paie-t-il ?",
+    problem: 'Une boutique vend des stylos à 3 €. Le vendeur travaille 6 h par jour. Un client achète 5 stylos. Combien paie-t-il ?',
     steps: ['Je note : prix = 3 €, durée de travail = 6 h, stylos achetés = 5.', 'Je calcule 6 × 5 = 30.', 'Le client paie 30 €.'],
     badIndex: 1,
     repair: {
@@ -112,7 +105,7 @@ const CASES = [
     },
   },
   {
-    problem: '9 boîtes contiennent 7 œufs chacune. Combien y a-t-il d\'œufs en tout ?',
+    problem: "9 boîtes contiennent 7 œufs chacune. Combien y a-t-il d'œufs en tout ?",
     steps: ['Je dois calculer 9 × 7, car ce sont des groupes égaux.', '9 × 7 = 54.', 'Il y a 54 œufs.'],
     badIndex: 1,
     repair: {
@@ -127,7 +120,7 @@ const CASES = [
     steps: ['45 − 12 = 33.', 'La réponse est 33 bus.'],
     badIndex: 1,
     repair: {
-      q: "Quelle est la bonne façon de répondre ?",
+      q: 'Quelle est la bonne façon de répondre ?',
       options: ['Il reste 33 bus.', 'Il reste 33 passagers.', 'Il reste 33 arrêts.'],
       correct: 1,
       explain: "Le calcul (45 − 12 = 33) était juste. Mais l'unité était fausse : on compte des PASSAGERS, pas des bus.",
@@ -136,41 +129,38 @@ const CASES = [
 ];
 
 export default function Module10Detective() {
-  const navLinks = getNavLinks(10);
   const [done, setDone] = useState([]);
   const allDone = done.length === CASES.length;
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(10)}
+      moduleNumber={10}
       moduleTitle="Détective des erreurs"
       moduleSubtitle="Repère la PREMIÈRE erreur dans le raisonnement d'un élève, pas seulement le résultat final."
-      moduleNumber={10}
-      estimatedTime="10 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="🕵️ Enquête" title="Un raisonnement se lit étape par étape.">
-          <p>Ne dis jamais « tout est faux ». Trouve exactement où ça commence à déraper — c'est ça, déboguer un raisonnement.</p>
-        </MissionBrief>
-
-        {CASES.map((c, i) =>
-          i === 0 || done.includes(i - 1) ? (
-            <StepCard key={c.problem} num={i + 1} title={`Enquête ${i + 1}`} done={done.includes(i)} locked={false}>
-              <DetectiveTimeline
-                problem={c.problem}
-                steps={c.steps}
-                badIndex={c.badIndex}
-                repair={c.repair}
-                solved={done.includes(i)}
-                onSolved={() => setDone((d) => (d.includes(i) ? d : [...d, i]))}
-              />
-            </StepCard>
-          ) : null
-        )}
-      </div>
-    </ModuleLayout>
+      estimatedTime="8 min"
+      brief={{
+        tag: '🕵️ Enquête',
+        title: 'Un raisonnement se lit étape par étape.',
+        body: <p>Ne dis jamais « tout est faux ». Trouve exactement où ça commence à déraper — c'est ça, déboguer un raisonnement.</p>,
+      }}
+      steps={CASES.map((c, i) => ({
+        num: i + 1,
+        title: `Enquête ${i + 1}`,
+        done: done.includes(i),
+        content: (kit) => (
+          <DetectiveTimeline
+            react={kit.react}
+            problem={c.problem}
+            steps={c.steps}
+            badIndex={c.badIndex}
+            repair={c.repair}
+            solved={done.includes(i)}
+            onSolved={() => setDone((d) => (d.includes(i) ? d : [...d, i]))}
+          />
+        ),
+      }))}
+    />
   );
 }

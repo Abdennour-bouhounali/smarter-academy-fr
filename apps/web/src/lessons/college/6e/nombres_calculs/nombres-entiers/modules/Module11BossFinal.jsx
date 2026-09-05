@@ -1,33 +1,31 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Trophy, Target, BookMarked, Zap, ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import React from 'react';
+import { BossFinal } from '../../../../../common/kit';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
-import { useProgress } from '../../../../../common/hooks/useProgress';
-import { useEvidenceSubmission } from '../../../../../common/hooks/useEvidenceSubmission';
-import { useCountdownTimer } from '../../../../../common/hooks/useCountdownTimer';
+import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import PlaceValueTable from '../components/PlaceValueTable';
-import NumberLine from '../../../../../common/components/NumberLine';
-import { Feedback, ChoiceGrid, ValidateButton, MissionBrief, TimerToggle, TimerDisplay } from '../../../../../common/components/LessonUI';
 import { formatFr, texFr, decompose } from '../components/numberUtils';
 
-const BOSS_TIMER_SECONDS = 10 * 60;
+/**
+ * Module 11 V2 — même Grand Défi que Module11BossFinal.jsx, reconstruit sur
+ * le lesson kit : ce fichier ne contient plus que les DONNÉES (épreuves,
+ * compétences, badges) et la synthèse visuelle propre à la leçon. Le moteur
+ * (QCM silencieux, submit unique, correction, profil, persistance,
+ * evidence, timer, XP) vit dans common/kit/BossFinal.jsx.
+ */
 
-/* ═══ LE REGISTRE — les nombres de la mission ═══════════════════════ */
 const REGISTRE = [
-  { id: 'ville', emoji: '🏙️', label: 'Habitants de la ville', value: 105300 },
-  { id: 'visiteurs', emoji: '🎟️', label: 'Visiteurs du musée', value: 105030 },
-  { id: 'score', emoji: '🎮', label: 'Meilleur score du tournoi', value: 48275 },
-  { id: 'distance', emoji: '🚴', label: 'Distance du raid (km)', value: 2450 },
-  { id: 'livres', emoji: '📚', label: 'Livres de la médiathèque', value: 12450 },
-  { id: 'prix', emoji: '💶', label: 'Budget du matériel (€)', value: 8099 },
-  { id: 'cahiers', emoji: '📒', label: 'Cahiers en stock', value: 6307 },
+  { id: 'ville', emoji: '🏙️', label: 'Habitants de la ville', value: formatFr(105300) },
+  { id: 'visiteurs', emoji: '🎟️', label: 'Visiteurs du musée', value: formatFr(105030) },
+  { id: 'score', emoji: '🎮', label: 'Meilleur score du tournoi', value: formatFr(48275) },
+  { id: 'distance', emoji: '🚴', label: 'Distance du raid (km)', value: formatFr(2450) },
+  { id: 'livres', emoji: '📚', label: 'Livres de la médiathèque', value: formatFr(12450) },
+  { id: 'prix', emoji: '💶', label: 'Budget du matériel (€)', value: formatFr(8099) },
+  { id: 'cahiers', emoji: '📒', label: 'Cahiers en stock', value: formatFr(6307) },
 ];
 
-/* ═══ LES COMPÉTENCES SUIVIES ══════════════════════════════════════ */
 const SKILLS = {
   lecture: { label: 'Lecture et écriture', module: 3 },
   position: { label: 'Valeur de position', module: 4 },
@@ -38,19 +36,16 @@ const SKILLS = {
   problemes: { label: 'Problèmes', module: 10 },
 };
 
-/* ═══ LES 7 ÉPREUVES DU BOSS ═══════════════════════════════════════ */
 const EPREUVES = [
   {
     id: 'nombres-entiers-boss-e1',
     skill: 'lecture',
-    title: 'Épreuve 1',
     prompt: (
       <>
         Une fiche du registre porte la mention manuscrite{' '}
         <em>« quarante-huit mille deux cent soixante-quinze »</em>. De quelle fiche s'agit-il ?
       </>
     ),
-    type: 'mcq',
     options: ['105 300', '48 275', '12 450', '8 099'],
     correct: 1,
     explain:
@@ -60,52 +55,45 @@ const EPREUVES = [
   {
     id: 'nombres-entiers-boss-e2',
     skill: 'position',
-    title: 'Épreuve 2',
     prompt: (
       <>
         Dans le nombre d'habitants <strong className="font-mono">105 300</strong>, que représente le chiffre{' '}
         <strong className="font-mono">5</strong> ?
       </>
     ),
-    type: 'mcq',
     options: ['5', '500', '5 000', '50 000'],
     correct: 2,
     explain:
       '105 300 se lit 105 | 300. Le 5 occupe la colonne des milliers : il représente 5 milliers, soit 5 000.',
-    table: 105300,
+    extra: <PlaceValueTable value={105300} compact />,
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P3'] },
   },
   {
     id: 'nombres-entiers-boss-e3',
     skill: 'decomposition',
-    title: 'Épreuve 3',
     prompt: (
       <>
         Quelle est la décomposition correcte du stock de cahiers,{' '}
         <strong className="font-mono">6 307</strong> ?
       </>
     ),
-    type: 'mcq',
     options: ['6 000 + 300 + 7', '6 000 + 30 + 7', '600 + 30 + 7', '6 000 + 300 + 70'],
     correct: 0,
     explain:
       '6 307 = 6 milliers + 3 centaines + 0 dizaine + 7 unités, soit 6 000 + 300 + 7. La dizaine vide ne s\'écrit pas dans la somme, mais le 0 reste indispensable dans le nombre.',
-    // Recomposing 6 307 from its place-value parts is the written analogue
-    // of building it with base-10 blocks (module 1's manipulation) — this
-    // question also certifies 6e_nombres-entiers_P1.
+    // Recomposer 6 307 à partir de ses valeurs de position certifie aussi P1
+    // (la manipulation base 10 du module 1, sous forme écrite).
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P4', '6e_nombres-entiers_P1'] },
   },
   {
     id: 'nombres-entiers-boss-e4',
     skill: 'comparaison',
-    title: 'Épreuve 4',
     prompt: (
       <>
         Deux fiches se ressemblent : <strong className="font-mono">105 300</strong> habitants et{' '}
         <strong className="font-mono">105 030</strong> visiteurs. Quelle comparaison est correcte ?
       </>
     ),
-    type: 'mcq',
     options: ['105 300 < 105 030', '105 300 = 105 030', '105 300 > 105 030'],
     correct: 2,
     cols: 3,
@@ -116,9 +104,7 @@ const EPREUVES = [
   {
     id: 'nombres-entiers-boss-e5',
     skill: 'rangement',
-    title: 'Épreuve 5',
     prompt: <>Range quatre fiches du registre dans l'ordre croissant : 8 099 ; 2 450 ; 12 450 ; 6 307.</>,
-    type: 'mcq',
     cols: 1,
     options: [
       '2 450 < 6 307 < 8 099 < 12 450',
@@ -134,17 +120,15 @@ const EPREUVES = [
   {
     id: 'nombres-entiers-boss-e6',
     skill: 'droite',
-    title: 'Épreuve 6',
     prompt: (
       <>
         Sur une demi-droite graduée de 6 000 à 7 000 avec un pas de 100, sur quelle graduation se place
         pratiquement le stock de cahiers, <strong className="font-mono">6 307</strong> ?
       </>
     ),
-    type: 'mcq',
     options: ['6 000', '6 300', '6 700', '7 000'],
     correct: 1,
-    table: 6307,
+    extra: <PlaceValueTable value={6307} compact />,
     explain:
       "Avec un pas de 100, 6 307 se place pratiquement sur la graduation 6 300 (il n'en est qu'à 7 unités). On lit d'abord le pas, puis on compte les graduations.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P6'] },
@@ -152,14 +136,12 @@ const EPREUVES = [
   {
     id: 'nombres-entiers-boss-e7',
     skill: 'problemes',
-    title: 'Épreuve 7',
     prompt: (
       <>
         Le maire déclare : <em>« Notre ville a dépassé les 100 000 habitants, et le musée a accueilli plus de
         visiteurs que nous n'avons d'habitants. »</em> Que dit le registre ?
       </>
     ),
-    type: 'mcq',
     options: [
       'Les deux affirmations sont vraies',
       'La première est vraie, la seconde est fausse',
@@ -173,151 +155,20 @@ const EPREUVES = [
   },
 ];
 
-/* ═══ Une épreuve — QCM silencieux : on répond, on passe, aucune réaction ═══ */
-function Epreuve({ epreuve, index, pick, onPick }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="border-2 border-slate-200 bg-white rounded-2xl p-5 space-y-4"
-    >
-      <div className="flex items-center justify-between gap-2 flex-wrap">
-        <h3 className="font-space font-bold text-slate-800">{epreuve.title}</h3>
-        <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-slate-800 text-white">
-          {index + 1} / {EPREUVES.length}
-        </span>
-      </div>
+const BADGES = [
+  { id: 'decodeur', emoji: '🏅', label: 'Décodeur des nombres', test: (s) => (s.lecture ?? 0) === 0 },
+  { id: 'position', emoji: '🏅', label: 'Maître de la valeur de position', test: (s) => (s.position ?? 0) === 0 },
+  { id: 'architecte', emoji: '🏅', label: 'Architecte des nombres', test: (s) => (s.decomposition ?? 0) === 0 },
+  {
+    id: 'detective',
+    emoji: '🏅',
+    label: 'Détective des comparaisons',
+    test: (s) => (s.comparaison ?? 0) === 0 && (s.rangement ?? 0) === 0,
+  },
+  { id: 'explorateur', emoji: '🏅', label: 'Explorateur de la droite graduée', test: (s) => (s.droite ?? 0) === 0 },
+];
 
-      <p className="text-sm text-slate-700 leading-relaxed">{epreuve.prompt}</p>
-
-      {epreuve.table && (
-        <div className="bg-white border border-slate-200 rounded-xl p-2">
-          <PlaceValueTable value={epreuve.table} compact />
-        </div>
-      )}
-
-      <ChoiceGrid
-        options={epreuve.options}
-        selected={pick}
-        onSelect={onPick}
-        cols={epreuve.cols || 2}
-      />
-    </motion.div>
-  );
-}
-
-/* ═══ Écran de correction — score, chaque question, bonne réponse et réponse donnée ═══ */
-function BossReview({ answers, onContinue }) {
-  const correctCount = EPREUVES.filter((ep) => answers[ep.id] === ep.correct).length;
-
-  return (
-    <div className="space-y-6">
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-2xl p-6 text-center space-y-2">
-        <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Résultat du défi</div>
-        <div className="text-3xl font-space font-extrabold">
-          {correctCount} / {EPREUVES.length}
-        </div>
-      </div>
-
-      <div className="space-y-4">
-        {EPREUVES.map((ep, i) => {
-          const pick = answers[ep.id];
-          const isCorrect = pick === ep.correct;
-          return (
-            <div
-              key={ep.id}
-              className={`border-2 rounded-2xl p-5 space-y-3 ${
-                isCorrect ? 'border-emerald-300 bg-emerald-50/30' : 'border-rose-300 bg-rose-50/30'
-              }`}
-            >
-              <div className="flex items-center justify-between gap-2 flex-wrap">
-                <h3 className="font-space font-bold text-slate-800 flex items-center gap-2">
-                  {isCorrect ? (
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                  ) : (
-                    <XCircle className="w-4 h-4 text-rose-600 shrink-0" aria-hidden="true" />
-                  )}
-                  {ep.title}
-                </h3>
-                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-slate-800 text-white">
-                  {i + 1} / {EPREUVES.length}
-                </span>
-              </div>
-
-              <p className="text-sm text-slate-700 leading-relaxed">{ep.prompt}</p>
-
-              <div className="text-sm space-y-1">
-                <div className={isCorrect ? 'text-emerald-700' : 'text-rose-700'}>
-                  <strong>Ta réponse :</strong>{' '}
-                  {pick == null ? '(sans réponse)' : ep.options[pick]}
-                </div>
-                {!isCorrect && (
-                  <div className="text-emerald-700">
-                    <strong>Bonne réponse :</strong> {ep.options[ep.correct]}
-                  </div>
-                )}
-              </div>
-
-              <Feedback tone={isCorrect ? 'ok' : 'ko'}>{ep.explain}</Feedback>
-            </div>
-          );
-        })}
-      </div>
-
-      <button
-        type="button"
-        onClick={onContinue}
-        className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl min-h-[48px]"
-      >
-        Voir mon profil de maîtrise <ArrowRight className="inline w-4 h-4" aria-hidden="true" />
-      </button>
-    </div>
-  );
-}
-
-/* ═══ PHASE 2 — Profil de maîtrise ═════════════════════════════════ */
-function ProfilMaitrise({ scores }) {
-  const levelOf = (misses) => (misses === 0 ? 'ok' : misses === 1 ? 'mid' : 'low');
-
-  const META = {
-    ok: { dot: '🟢', label: 'Très bien maîtrisé', tone: 'border-emerald-200 bg-emerald-50' },
-    mid: { dot: '🟡', label: 'Encore quelques erreurs', tone: 'border-amber-200 bg-amber-50' },
-    low: { dot: '🔴', label: 'À retravailler', tone: 'border-rose-200 bg-rose-50' },
-  };
-
-  return (
-    <div className="space-y-3">
-      {Object.entries(SKILLS).map(([key, skill]) => {
-        const misses = scores[key] ?? 0;
-        const lvl = levelOf(misses);
-        const meta = META[lvl];
-        const target = LESSON_CONFIG.modules.find((m) => m.number === skill.module);
-
-        return (
-          <div key={key} className={`flex items-center justify-between gap-3 rounded-xl border-2 px-4 py-3 flex-wrap ${meta.tone}`}>
-            <div className="flex items-center gap-3">
-              <span className="text-lg" aria-hidden="true">{meta.dot}</span>
-              <div>
-                <div className="font-space font-bold text-slate-800 text-sm">{skill.label}</div>
-                <div className="text-xs text-slate-600">{meta.label}</div>
-              </div>
-            </div>
-            {lvl !== 'ok' && target && (
-              <Link
-                to={target.path}
-                className="text-xs font-mono font-bold px-3 py-2 rounded-lg bg-white border-2 border-slate-300 text-slate-700 hover:border-slate-500 transition-colors"
-              >
-                Revoir le module {skill.module} <ArrowRight className="inline w-3 h-3" aria-hidden="true" />
-              </Link>
-            )}
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-/* ═══ PHASE 3 — Synthèse visuelle ══════════════════════════════════ */
+/* ── Synthèse visuelle (propre à la leçon) ─────────────────────────── */
 const CAPACITES = [
   { verbe: 'LIRE', ex: '4 582 → « quatre mille cinq cent quatre-vingt-deux »', tone: 'bg-blue-50 border-blue-200 text-blue-800' },
   { verbe: 'ÉCRIRE', ex: '« trois mille quatre cent sept » → 3 407', tone: 'bg-indigo-50 border-indigo-200 text-indigo-800' },
@@ -331,7 +182,6 @@ const CAPACITES = [
 function Synthese() {
   return (
     <div className="space-y-5">
-      {/* Le concept central */}
       <div className="bg-slate-900 text-white rounded-2xl p-6 text-center space-y-3">
         <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Le concept central</div>
         <div className="text-2xl sm:text-3xl font-space font-extrabold">UN NOMBRE ENTIER</div>
@@ -342,7 +192,6 @@ function Synthese() {
         </p>
       </div>
 
-      {/* Les 7 capacités */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {CAPACITES.map((c) => (
           <div key={c.verbe} className={`rounded-xl border-2 px-4 py-3 ${c.tone}`}>
@@ -352,7 +201,6 @@ function Synthese() {
         ))}
       </div>
 
-      {/* Le tableau de numération */}
       <div className="bg-white border-2 border-slate-200 rounded-2xl p-4 space-y-3">
         <h3 className="font-space font-bold text-slate-800 text-sm">Le tableau de numération — 4 582</h3>
         <PlaceValueTable value={4582} showValues />
@@ -374,7 +222,6 @@ function Synthese() {
         </div>
       </div>
 
-      {/* Les deux règles à retenir */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-2">
           <div className="font-space font-bold text-amber-900 text-sm">⚖️ Comparer</div>
@@ -401,411 +248,44 @@ function Synthese() {
   );
 }
 
-/* ═══ PHASE 4 — Flash retour ═══════════════════════════════════════ */
-const FLASH = [
-  {
-    q: 'Comment se lit le nombre 30 006 ?',
-    options: ['trois mille six', 'trente mille six', 'trente mille soixante', 'trois cent six'],
-    correct: 1,
-    explain: '30 006 = 30 | 006 → « trente mille six ».',
-  },
-  {
-    q: 'Dans 4 582 307, que représente le chiffre 8 ?',
-    options: ['8', '800', '8 000', '80 000'],
-    correct: 3,
-    explain: 'Le 8 occupe la colonne des dizaines de milliers : il vaut 80 000.',
-  },
-  {
-    q: 'Quelle est la décomposition de 6 025 ?',
-    options: ['6 000 + 20 + 5', '600 + 20 + 5', '6 000 + 200 + 5', '6 000 + 250'],
-    correct: 0,
-    explain:
-      '6 025 = 6 milliers + 0 centaine + 2 dizaines + 5 unités, soit 6 000 + 20 + 5. La centaine vide ne s\'écrit pas dans la somme.',
-  },
-  {
-    q: 'Quelle comparaison est vraie ?',
-    options: ['5 000 < 499', '5 000 > 499', '5 000 = 499'],
-    correct: 1,
-    cols: 3,
-    explain:
-      '5 000 a 4 chiffres, 499 en a 3 : 5 000 > 499. Le nombre de chiffres suffit à décider.',
-  },
-  {
-    q: 'Sur une droite graduée de 0 à 1 000 partagée en 10 intervalles égaux, que vaut une graduation ?',
-    options: ['1', '10', '100', '1 000'],
-    correct: 2,
-    explain: '1 000 partagé en 10 intervalles : chaque graduation vaut 100.',
-  },
-];
-
-function FlashRetour({ onDone, score, setScore }) {
-  const [idx, setIdx] = useState(0);
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-  const [finished, setFinished] = useState(false);
-
-  const q = FLASH[idx];
-
-  const next = () => {
-    if (idx < FLASH.length - 1) {
-      setIdx((i) => i + 1);
-      setPick(null);
-      setRevealed(false);
-    } else {
-      setFinished(true);
-      onDone();
-    }
-  };
-
-  if (finished) {
-    return (
-      <div className="text-center space-y-3 py-4">
-        <div className="text-5xl" aria-hidden="true">{score === 5 ? '🏆' : score >= 4 ? '🥈' : '📚'}</div>
-        <div className="text-2xl font-space font-extrabold text-slate-800">{score} / {FLASH.length}</div>
-        <p className="text-sm text-slate-500 max-w-md mx-auto">
-          {score === FLASH.length
-            ? 'Score parfait ! Les cinq compétences de réactivation sont acquises.'
-            : `${FLASH.length - score} question(s) à revoir — reprends le module correspondant dans ton profil ci-dessus.`}
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="space-y-4">
-      <div className="flex justify-between text-xs font-mono text-slate-400">
-        <span>Question {idx + 1} / {FLASH.length}</span>
-        <span className="text-emerald-600 font-bold">{score} ✓</span>
-      </div>
-      <div className="bg-slate-800 text-white rounded-xl p-5 text-sm font-semibold leading-relaxed">{q.q}</div>
-      <ChoiceGrid
-        options={q.options}
-        selected={pick}
-        onSelect={setPick}
-        revealed={revealed}
-        correctIndex={q.correct}
-        cols={q.cols || 2}
-      />
-      {!revealed && (
-        <ValidateButton
-          onClick={() => {
-            setRevealed(true);
-            if (pick === q.correct) setScore((s) => s + 1);
-          }}
-          disabled={pick === null}
-          tone="slate"
-        >
-          Valider
-        </ValidateButton>
-      )}
-      {revealed && (
-        <>
-          <Feedback tone={pick === q.correct ? 'ok' : 'ko'}>{q.explain}</Feedback>
-          <button
-            type="button"
-            onClick={next}
-            className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm min-h-[48px]"
-          >
-            {idx < FLASH.length - 1 ? 'Question suivante →' : 'Voir mon score →'}
-          </button>
-        </>
-      )}
-    </div>
-  );
-}
-
-/* ═══ BADGES ═══════════════════════════════════════════════════════ */
-const BADGES = [
-  { id: 'decodeur', emoji: '🏅', label: 'Décodeur des nombres', test: (s) => (s.lecture ?? 0) === 0 },
-  { id: 'position', emoji: '🏅', label: 'Maître de la valeur de position', test: (s) => (s.position ?? 0) === 0 },
-  { id: 'architecte', emoji: '🏅', label: 'Architecte des nombres', test: (s) => (s.decomposition ?? 0) === 0 },
-  {
-    id: 'detective',
-    emoji: '🏅',
-    label: 'Détective des comparaisons',
-    test: (s) => (s.comparaison ?? 0) === 0 && (s.rangement ?? 0) === 0,
-  },
-  { id: 'explorateur', emoji: '🏅', label: 'Explorateur de la droite graduée', test: (s) => (s.droite ?? 0) === 0 },
-];
-
-/* ═══ MODULE ═══════════════════════════════════════════════════════ */
-const PHASES = [
-  { key: 'boss', label: 'Boss final', Icon: Trophy },
-  { key: 'profil', label: 'Mon profil', Icon: Target },
-  { key: 'synthese', label: 'Synthèse', Icon: BookMarked },
-  { key: 'flash', label: 'Flash retour', Icon: Zap },
-];
-
 export default function Module11BossFinal() {
-  const navLinks = getNavLinks(11);
-  const { xp, awardXP } = useProgress(MODULE_CTX.lessonId);
-  const { submitEvidence } = useEvidenceSubmission(MODULE_CTX.lessonId);
-  const timer = useCountdownTimer(BOSS_TIMER_SECONDS, {
-    onExpire: () => submitBoss(),
-  });
-
-  const [phase, setPhase] = useState('boss');
-  const [bossAnswers, setBossAnswers] = useState({}); // épreuve id -> option index picked
-  const [bossSubmitted, setBossSubmitted] = useState(false);
-  const [misses, setMisses] = useState({}); // skill -> nb d'erreurs (calculé à la correction)
-  const [flashScore, setFlashScore] = useState(0);
-  const [flashDone, setFlashDone] = useState(false);
-
-  const bossDone = bossSubmitted;
-  const allDone = bossDone && flashDone;
-  const allAnswered = EPREUVES.every((ep) => bossAnswers[ep.id] != null);
-
-  function submitBoss() {
-    setBossSubmitted((already) => {
-      if (already) return already;
-
-      const nextMisses = {};
-      EPREUVES.forEach((ep) => {
-        const isCorrect = bossAnswers[ep.id] === ep.correct;
-        submitEvidence(ep, isCorrect, { picked: bossAnswers[ep.id] ?? null });
-        if (isCorrect) {
-          awardXP({ moduleId: '11', exerciseId: ep.id, amount: 20 });
-        } else {
-          nextMisses[ep.skill] = (nextMisses[ep.skill] || 0) + 1;
-        }
-      });
-      setMisses(nextMisses);
-      timer.stop();
-      return true;
-    });
-  }
-
-  const badgesGagnes = BADGES.filter((b) => b.test(misses));
-  const masterBadge = bossDone && flashDone && badgesGagnes.length === BADGES.length && flashScore === FLASH.length;
-
-  const phaseUnlocked = (key) => {
-    if (key === 'boss') return true;
-    return bossDone;
-  };
-
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
-      moduleTitle="🏆 Le Grand Défi des Nombres"
-      moduleSubtitle="Sept épreuves, un profil de maîtrise, une synthèse et cinq questions de réactivation."
+    <BossFinal
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(11)}
       moduleNumber={11}
-      stage="evaluation"
-      estimatedTime="18 min"
-      xp={xp}
-      prevLink={navLinks.prevLink}
-      nextLink={navLinks.nextLink}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        {/* Navigation des phases */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-          {PHASES.map(({ key, label, Icon }) => {
-            const unlocked = phaseUnlocked(key);
-            return (
-              <button
-                key={key}
-                type="button"
-                disabled={!unlocked}
-                onClick={() => setPhase(key)}
-                className={`px-3 py-2.5 rounded-xl font-mono text-xs font-bold transition-all min-h-[48px] flex items-center justify-center gap-1.5 ${
-                  phase === key
-                    ? 'bg-slate-900 text-white'
-                    : unlocked
-                    ? 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                    : 'bg-slate-50 text-slate-300 cursor-not-allowed'
-                }`}
-              >
-                <Icon className="w-3.5 h-3.5" aria-hidden="true" />
-                {label}
-              </button>
-            );
-          })}
-        </div>
-
-        <AnimatePresence mode="wait">
-          {/* ── PHASE 1 : BOSS ── */}
-          {phase === 'boss' && !bossSubmitted && (
-            <motion.div key="boss" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
-              <MissionBrief
-                tag="🏆 Boss final"
-                title="Le registre de fin d'année du collège vient d'être retrouvé."
-                tone="amber"
-              >
-                <p>
-                  Sept fiches, sept épreuves. À toi de décider, à chaque fois, ce qu'il faut faire : lire,
-                  décomposer, comparer, ranger, repérer ou interpréter. Personne ne te dira quelle compétence
-                  utiliser. Réponds à toutes les épreuves, puis valide pour découvrir ta correction.
-                </p>
-              </MissionBrief>
-
-              <div className="flex items-center justify-between gap-3 flex-wrap">
-                <TimerToggle
-                  enabled={timer.enabled}
-                  onChange={(next) => {
-                    timer.setEnabled(next);
-                    if (next) timer.start();
-                  }}
-                  durationLabel="10 min"
-                  disabled={Object.keys(bossAnswers).length > 0}
-                />
-                {timer.enabled && <TimerDisplay label={timer.label} urgent={timer.remaining <= 60} />}
-              </div>
-
-              {/* Le registre */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {REGISTRE.map((r) => (
-                  <div key={r.id} className="rounded-xl border-2 border-slate-200 bg-white p-2.5 text-center">
-                    <div className="text-lg" aria-hidden="true">{r.emoji}</div>
-                    <div className="text-[9px] font-mono text-slate-500 uppercase leading-tight">{r.label}</div>
-                    <div className="font-mono font-extrabold text-sm text-slate-800 tabular-nums">
-                      {formatFr(r.value)}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Progression */}
-              <div className="flex items-center gap-2 flex-wrap">
-                {EPREUVES.map((e, i) => (
-                  <span
-                    key={e.id}
-                    className={`w-8 h-8 rounded-lg font-mono text-xs font-bold flex items-center justify-center ${
-                      bossAnswers[e.id] != null ? 'bg-slate-800 text-white' : 'bg-slate-200 text-slate-400'
-                    }`}
-                  >
-                    {bossAnswers[e.id] != null ? '✓' : i + 1}
-                  </span>
-                ))}
-              </div>
-
-              {EPREUVES.map((ep, i) => (
-                <Epreuve
-                  key={ep.id}
-                  epreuve={ep}
-                  index={i}
-                  pick={bossAnswers[ep.id] ?? null}
-                  onPick={(idx) => setBossAnswers((a) => ({ ...a, [ep.id]: idx }))}
-                />
-              ))}
-
-              <ValidateButton onClick={submitBoss} disabled={!allAnswered} tone="amber">
-                Valider mes 7 réponses
-              </ValidateButton>
-            </motion.div>
-          )}
-
-          {phase === 'boss' && bossSubmitted && (
-            <motion.div key="boss-review" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <BossReview answers={bossAnswers} onContinue={() => setPhase('profil')} />
-            </motion.div>
-          )}
-
-          {/* ── PHASE 2 : PROFIL ── */}
-          {phase === 'profil' && (
-            <motion.div key="profil" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-5">
-              <div className="text-center space-y-1">
-                <h2 className="text-xl font-space font-extrabold text-slate-900">Ton profil de maîtrise</h2>
-                <p className="text-sm text-slate-500">
-                  Pas seulement un score : ce que tu maîtrises, et ce qui mérite encore un passage.
-                </p>
-              </div>
-
-              <ProfilMaitrise scores={misses} />
-
-              {badgesGagnes.length > 0 && (
-                <div className="space-y-3">
-                  <h3 className="font-space font-bold text-slate-800 text-sm">Badges débloqués</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {badgesGagnes.map((b) => (
-                      <motion.div
-                        key={b.id}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="flex items-center gap-3 rounded-xl border-2 border-amber-200 bg-amber-50 px-4 py-3"
-                      >
-                        <span className="text-xl" aria-hidden="true">{b.emoji}</span>
-                        <span className="text-sm font-bold text-amber-900">{b.label}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <p className="text-xs text-slate-400">
-                    Les badges récompensent la compréhension et la justesse du raisonnement — jamais la vitesse.
-                  </p>
-                </div>
-              )}
-
-              <button
-                type="button"
-                onClick={() => setPhase('synthese')}
-                className="w-full py-3 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl min-h-[48px]"
-              >
-                Passer à la synthèse →
-              </button>
-            </motion.div>
-          )}
-
-          {/* ── PHASE 3 : SYNTHÈSE ── */}
-          {phase === 'synthese' && (
-            <motion.div key="synthese" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-5">
-              <Synthese />
-              <button
-                type="button"
-                onClick={() => setPhase('flash')}
-                className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl min-h-[48px]"
-              >
-                Je passe au Flash retour →
-              </button>
-            </motion.div>
-          )}
-
-          {/* ── PHASE 4 : FLASH ── */}
-          {phase === 'flash' && (
-            <motion.div key="flash" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-5">
-              <div className="bg-white border-2 border-slate-200 rounded-2xl p-5 space-y-4">
-                <h2 className="text-lg font-space font-bold text-slate-800">⚡ Flash retour — 5 questions</h2>
-                <FlashRetour
-                  score={flashScore}
-                  setScore={setFlashScore}
-                  onDone={() => {
-                    setFlashDone(true);
-                    awardXP({ moduleId: '11', exerciseId: 'flash', amount: 30 });
-                  }}
-                />
-              </div>
-
-              {flashDone && (
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-gradient-to-br from-indigo-600 to-violet-600 text-white rounded-2xl p-8 text-center space-y-3"
-                >
-                  <div className="text-5xl" aria-hidden="true">{masterBadge ? '🏆' : '🎓'}</div>
-                  <div className="text-2xl font-space font-extrabold">
-                    {masterBadge ? 'Maître des nombres entiers !' : 'Leçon terminée !'}
-                  </div>
-                  <p className="text-indigo-100 text-sm leading-relaxed max-w-lg mx-auto">
-                    Un grand nombre n'est plus une suite de chiffres pour toi. Tu sais ce que représente chaque
-                    chiffre, tu peux construire un nombre, le décomposer, le comparer, le ranger, le placer — et
-                    t'en servir pour comprendre le monde.
-                  </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2">
-                    {['Lire', 'Décomposer', 'Comparer', 'Repérer'].map((v) => (
-                      <div key={v} className="bg-white/15 rounded-xl py-2 text-sm font-bold">
-                        ✓ {v}
-                      </div>
-                    ))}
-                  </div>
-                  {masterBadge && (
-                    <div className="inline-flex items-center gap-2 bg-amber-400 text-amber-950 font-bold text-sm px-4 py-2 rounded-full mt-2">
-                      🏆 Badge « Maître des nombres entiers » débloqué
-                    </div>
-                  )}
-                </motion.div>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </ModuleLayout>
+      moduleTitle="🏆 Le Grand Défi des Nombres"
+      moduleSubtitle="Sept épreuves, un profil de maîtrise et une synthèse."
+      estimatedTime="15 min"
+      lessonConfig={LESSON_CONFIG}
+      timerSeconds={10 * 60}
+      timerLabel="10 min"
+      brief={{
+        tag: '🏆 Boss final',
+        title: "Le registre de fin d'année du collège vient d'être retrouvé.",
+        tone: 'amber',
+        body: (
+          <p>
+            Sept fiches, sept épreuves. À toi de décider, à chaque fois, ce qu'il faut faire : lire,
+            décomposer, comparer, ranger, repérer ou interpréter. Personne ne te dira quelle compétence
+            utiliser. Réponds à toutes les épreuves, puis valide pour découvrir ta correction.
+          </p>
+        ),
+      }}
+      registre={REGISTRE}
+      skills={SKILLS}
+      epreuves={EPREUVES}
+      badges={BADGES}
+      synthese={<Synthese />}
+      completion={{
+        masterTitle: 'Maître des nombres entiers !',
+        title: 'Leçon terminée !',
+        message:
+          "Un grand nombre n'est plus une suite de chiffres pour toi. Tu sais ce que représente chaque chiffre, tu peux construire un nombre, le décomposer, le comparer, le ranger, le placer — et t'en servir pour comprendre le monde.",
+        verbs: ['Lire', 'Décomposer', 'Comparer', 'Repérer'],
+        masterBadgeLabel: 'Badge « Maître des nombres entiers » débloqué',
+      }}
+      xpPerCorrect={20}
+    />
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Lock } from 'lucide-react';
+import { Lock, Compass } from 'lucide-react';
 import { useProgress } from '../hooks/useProgress';
 import { getModuleStatus, lockedReason } from '@smarter-academy/core';
 import { calculateCompletionPercentage } from '@smarter-academy/core';
@@ -109,7 +109,7 @@ export default function LessonIndex({ config, basePath }) {
         <nav className="flex items-center gap-2 text-xs font-mono text-slate-500">
           <Link to="/courses" className="hover:text-blue-600">Accueil</Link>
           <span>/</span>
-          <Link to={`/courses?level=${config.level}&grade=${config.grade}`} className="hover:text-blue-600">Collège ({config.grade})</Link>
+          <Link to={`/courses?level=${config.level}&grade=${config.grade}`} className="hover:text-blue-600">{config.level === 'lycee' ? 'Lycée' : 'Collège'} ({config.grade})</Link>
           <span>/</span>
           <Link to={`/courses?level=${config.level}&grade=${config.grade}&chapter=${config.chapter}`} className="hover:text-blue-600">{config.chapterTitle || config.chapter}</Link>
           <span>/</span>
@@ -226,6 +226,48 @@ export default function LessonIndex({ config, basePath }) {
                   En cours
                 </span>
               );
+
+              if (module.style === 'diagnostic') {
+                return (
+                  <Link
+                    key={module.id}
+                    to={modulePath}
+                    className={`group block p-5 rounded-2xl border-2 border-dashed transition-all relative overflow-hidden
+                      ${isDone
+                        ? 'border-teal-300 bg-teal-50/40'
+                        : 'border-teal-300 bg-teal-50/60 hover:border-teal-400 hover:shadow-md'}`}
+                  >
+                    {isDone && (
+                      <div className="absolute top-0 right-0 p-2 text-teal-700 text-[10px] font-bold bg-teal-100 rounded-bl-xl font-mono">
+                        FAIT ✓
+                      </div>
+                    )}
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0">
+                          <Compass className="w-5 h-5" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-[10px] font-mono font-bold text-teal-700 bg-teal-100 px-2 py-0.5 rounded-full uppercase tracking-wide">
+                              Mission de départ
+                            </span>
+                            <span className="text-[10px] font-mono text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">
+                              ~{module.estimatedMin} min
+                            </span>
+                            {inProgressBadge}
+                          </div>
+                          <h3 className="font-space font-bold text-slate-900 mt-0.5">{module.title}</h3>
+                          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">{module.desc}</p>
+                        </div>
+                      </div>
+                      <span className="px-3 py-1 rounded-full bg-teal-100 text-teal-700 font-mono text-xs font-semibold hidden sm:inline-block shrink-0">
+                        {isDone ? 'Revoir ➔' : module.actionText}
+                      </span>
+                    </div>
+                  </Link>
+                );
+              }
 
               if (module.style === 'featured') {
                 return (

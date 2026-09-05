@@ -1,6 +1,6 @@
 import { getLessonProgress } from './getLessonProgress';
 import { getFlatAvailableLessons } from '@smarter-academy/core';
-import { storage } from '../../../../utils/storage';
+import { scopedStorage as storage } from '../../../../utils/storage';
 import { getTotalModules } from '../../../registry';
 
 /**

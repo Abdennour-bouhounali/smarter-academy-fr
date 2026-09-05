@@ -1,3 +1,18 @@
+/**
+ * Masses — 6e.
+ *
+ * NOTE VALIDATEUR (scripts/validate-lessons.mjs) : les Learning Point ids
+ * référencés par `teachesLearningPointIds` et par les métadonnées
+ * `assessment` des modules doivent rester des LITTÉRAUX. Les 6 LPs de
+ * cette leçon (dérivés de `pointsToLearn` dans coursesData.js, append-only) :
+ *
+ *   6e_masses_P1  Comparer des masses à l'aide d'une balance
+ *   6e_masses_P2  Choisir une unité de masse adaptée à une situation
+ *   6e_masses_P3  Lire une masse sur une balance à affichage
+ *   6e_masses_P4  Comprendre les relations entre mg, g, kg et t
+ *   6e_masses_P5  Convertir une masse en comprenant pourquoi la valeur change
+ *   6e_masses_P6  Estimer et résoudre des problèmes de masse
+ */
 export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/masses';
 
 export const LESSON_CONFIG = {
@@ -10,11 +25,10 @@ export const LESSON_CONFIG = {
   grade: '6e',
   chapter: 'grandeurs_mesures',
   chapterTitle: 'Grandeurs et mesures',
-  totalModules: 7,
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '⚖️',
-  estimatedDurationMin: 75,
+  estimatedDurationMin: 85,
   skills: [
     'Comparer des masses à l’aide d’une balance',
     'Choisir une unité de masse adaptée à une situation',
@@ -28,29 +42,33 @@ export const LESSON_CONFIG = {
     exclude: ['Unités de force', 'Newtons', 'Densité', 'Relation masse-volume'],
   },
   modules: [
+    { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`,
+      title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — pour savoir par où bien commencer.',
+      stage: 'prerequisite_check',
+      color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
     { id: '01', number: 1, slug: 'sac-mystere', path: `${LESSON_BASE_PATH}/sac-mystere`,
       title: 'Mission : le sac mystère', desc: 'Un crayon, une pomme, un cartable, un vélo : lequel est le plus lourd ?',
-      color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 1, actionText: 'Démarrer',
+      color: 'indigo', style: 'featured', estimatedMin: 9, difficulty: 1, actionText: 'Démarrer',
       stage: 'trigger', teachesLearningPointIds: ['6e_masses_P1'] },
     { id: '02', number: 2, slug: 'choisir-unite', path: `${LESSON_BASE_PATH}/choisir-unite`,
       title: 'Choisir la bonne unité', desc: 'mg, g, kg, t : quatre unités pour quatre échelles de masse.',
-      color: 'sky', style: 'featured', estimatedMin: 9, difficulty: 1, actionText: 'Choisir',
+      color: 'sky', style: 'featured', estimatedMin: 10, difficulty: 1, actionText: 'Choisir',
       stage: 'discovery', teachesLearningPointIds: ['6e_masses_P2'] },
     { id: '03', number: 3, slug: 'comparer-mesurer', path: `${LESSON_BASE_PATH}/comparer-mesurer`,
       title: 'Comparer et mesurer', desc: 'La balance à deux plateaux, puis la balance à affichage.',
-      color: 'emerald', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Peser',
+      color: 'emerald', style: 'featured', estimatedMin: 11, difficulty: 2, actionText: 'Peser',
       stage: 'manipulation', teachesLearningPointIds: ['6e_masses_P1', '6e_masses_P3'] },
     { id: '04', number: 4, slug: 'relations-unites', path: `${LESSON_BASE_PATH}/relations-unites`,
       title: 'Construire les relations', desc: 'Empiler des blocs de 100 g jusqu’à former 1 kg.',
-      color: 'violet', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Construire',
+      color: 'violet', style: 'featured', estimatedMin: 11, difficulty: 2, actionText: 'Construire',
       stage: 'manipulation', teachesLearningPointIds: ['6e_masses_P4'] },
     { id: '05', number: 5, slug: 'conversions', path: `${LESSON_BASE_PATH}/conversions`,
       title: 'Convertir les masses', desc: 'Passer d’une unité à l’autre en comprenant pourquoi le nombre change.',
-      color: 'rose', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Convertir',
+      color: 'rose', style: 'featured', estimatedMin: 12, difficulty: 3, actionText: 'Convertir',
       stage: 'formalization', teachesLearningPointIds: ['6e_masses_P5'] },
     { id: '06', number: 6, slug: 'estimation-problemes', path: `${LESSON_BASE_PATH}/estimation-problemes`,
       title: 'Estimer et résoudre', desc: 'Ordre de grandeur, pièges à unité et problèmes concrets.',
-      color: 'amber', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Résoudre',
+      color: 'amber', style: 'featured', estimatedMin: 12, difficulty: 3, actionText: 'Résoudre',
       stage: 'practice_lab', teachesLearningPointIds: ['6e_masses_P6'] },
     { id: '07', number: 7, slug: 'mission-finale', path: `${LESSON_BASE_PATH}/mission-finale`,
       title: '🏆 Mission finale : le ravitaillement', desc: 'Prépare le goûter de l’école : mobilise tout ce que tu as appris.',

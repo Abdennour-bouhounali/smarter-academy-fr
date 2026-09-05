@@ -1,5 +1,5 @@
 import { calculateCompletionPercentage } from '@smarter-academy/core';
-import { storage } from '../../../../utils/storage';
+import { scopedStorage as storage } from '../../../../utils/storage';
 
 /**
  * Retrieves and parses the progression state of a specific lesson from storage.

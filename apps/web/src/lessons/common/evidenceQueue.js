@@ -1,4 +1,4 @@
-import { storage } from '../../utils/storage';
+import { scopedStorage as storage } from '../../utils/storage';
 import { submitLearningEvidence } from '../../services/learningEvidenceService';
 
 /**

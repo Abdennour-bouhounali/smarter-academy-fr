@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Minus, Sparkles } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { ContentModule, TapQuestion } from '../../../../../common/kit';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief } from '../../../../../common/components/LessonUI';
+import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { formatFr, spellFr, groupsOfThree } from '../components/numberUtils';
 
-/* ─── Étape 1 : des mots vers les chiffres ───────────────────────── */
+/**
+ * Module 3 V2 — reconstruit sur le lesson kit. NumberBuilder (compteurs de
+ * chiffres par colonne) et le groupement par 3 restent des manipulations
+ * maison ; les QCM passent en TapQuestion.
+ */
+
 const EN_LETTRES = [
   {
     words: 'deux mille quatre cent trente-six',
@@ -27,8 +32,7 @@ const COLUMNS = [
   { key: 'U', label: 'Unités', value: 1, tone: 'bg-emerald-50 border-emerald-300 text-emerald-800' },
 ];
 
-/** Constructeur de nombre : un compteur 0-9 par position. */
-function NumberBuilder({ target, hint, onSolved, solved }) {
+function NumberBuilder({ target, hint, onSolved, solved, react }) {
   const [d, setD] = useState({ UM: 0, C: 0, D: 0, U: 0 });
   const [checked, setChecked] = useState(false);
 
@@ -43,6 +47,7 @@ function NumberBuilder({ target, hint, onSolved, solved }) {
 
   const check = () => {
     setChecked(true);
+    react(isRight);
     onSolved?.();
   };
 
@@ -112,7 +117,6 @@ function NumberBuilder({ target, hint, onSolved, solved }) {
   );
 }
 
-/* ─── Étape 2 : des chiffres vers les mots ───────────────────────── */
 const EN_CHIFFRES = [
   {
     n: 7205,
@@ -140,7 +144,6 @@ const EN_CHIFFRES = [
   },
 ];
 
-/* ─── Étape 3 : lire les grands nombres ──────────────────────────── */
 const GRANDS = [
   {
     n: 3482,
@@ -186,17 +189,13 @@ const GRANDS = [
 
 const CLASS_NAMES = ['unités', 'mille', 'millions'];
 
-/** Lecteur : on groupe par trois à partir de la droite, puis on lit classe par classe. */
 function BigNumberReader({ item, onSolved, solved }) {
   const [grouped, setGrouped] = useState(false);
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
   const groups = groupsOfThree(item.n);
   const raw = String(item.n);
 
   return (
     <div className="space-y-4">
-      {/* Chiffres bruts → groupés */}
       <div className="bg-slate-900 rounded-2xl p-5 text-center">
         {!grouped ? (
           <div className="font-mono font-extrabold text-3xl sm:text-4xl text-white tracking-tight tabular-nums">
@@ -248,218 +247,162 @@ function BigNumberReader({ item, onSolved, solved }) {
       )}
 
       {grouped && (
-        <>
-          <p className="text-sm font-semibold text-slate-700">Comment se lit ce nombre ?</p>
-          <ChoiceGrid
-            options={item.options}
-            selected={pick}
-            onSelect={setPick}
-            revealed={revealed}
-            correctIndex={item.correct}
-            cols={1}
-          />
-          {!revealed && (
-            <ValidateButton
-              onClick={() => {
-                setRevealed(true);
-                onSolved?.();
-              }}
-              disabled={pick === null}
-            >
-              Valider
-            </ValidateButton>
-          )}
-          {revealed && (
-            <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
+        <TapQuestion
+          prompt="Comment se lit ce nombre ?"
+          options={item.options}
+          correct={item.correct}
+          cols={1}
+          solved={solved}
+          explain={
+            <>
               {formatFr(item.n)} se lit <strong>« {spellFr(item.n)} »</strong>. On lit chaque groupe de trois
-              chiffres, puis on annonce sa classe : {groups.length === 3 ? 'millions, puis mille, puis les unités' : 'mille, puis les unités'}.
-            </Feedback>
-          )}
-        </>
+              chiffres, puis on annonce sa classe :{' '}
+              {groups.length === 3 ? 'millions, puis mille, puis les unités' : 'mille, puis les unités'}.
+            </>
+          }
+          onAnswered={() => onSolved?.()}
+        />
       )}
     </div>
   );
 }
 
-/* ─── Mini-contrôle : l'écriture française ───────────────────────── */
 const FORMAT_Q = {
   options: ['2,350,700', '2350700', '2 350 700'],
   correct: 2,
 };
 
 export default function Module03LireEcrire() {
-  const navLinks = getNavLinks(3);
   const [lettresDone, setLettresDone] = useState([]);
   const [chiffresDone, setChiffresDone] = useState([]);
   const [grandsDone, setGrandsDone] = useState([]);
-  const [formatPick, setFormatPick] = useState(null);
   const [formatRevealed, setFormatRevealed] = useState(false);
 
   const s1 = lettresDone.length === EN_LETTRES.length;
   const s2 = chiffresDone.length === EN_CHIFFRES.length;
   const s3 = grandsDone.length === GRANDS.length && formatRevealed;
-  const allDone = s1 && s2 && s3;
 
   const mark = (setter, list, i) => setter(list.includes(i) ? list : [...list, i]);
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(3)}
+      moduleNumber={3}
       moduleTitle="Lire et écrire les nombres"
       moduleSubtitle="Passer des mots aux chiffres, des chiffres aux mots — et apprivoiser les grands nombres."
-      moduleNumber={3}
       estimatedTime="12 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="🔤 Traduction" title="Un même nombre, deux langues : les chiffres et les mots.">
+      brief={{
+        tag: '🔤 Traduction',
+        title: 'Un même nombre, deux langues : les chiffres et les mots.',
+        body: (
           <p>
             Écrire un nombre, c'est traduire. Chaque groupe de mots correspond à une position, et chaque
             position correspond à un chiffre. Tu vas faire la traduction dans les deux sens.
           </p>
-        </MissionBrief>
-
-        {/* Étape 1 */}
-        <StepCard num={1} title="Des mots vers les chiffres" done={s1}>
-          <div className="space-y-6">
-            {EN_LETTRES.map((item, i) => (
-              <div key={item.target} className="space-y-3">
-                <div className="bg-blue-50 border-2 border-blue-200 rounded-xl px-4 py-3 text-center">
-                  <div className="text-[11px] font-mono text-blue-500 uppercase tracking-wider">
-                    Nombre {i + 1} à écrire en chiffres
+        ),
+      }}
+      steps={[
+        {
+          num: 1,
+          title: 'Des mots vers les chiffres',
+          done: s1,
+          content: (kit) => (
+            <div className="space-y-6">
+              {EN_LETTRES.map((item, i) => (
+                <div key={item.target} className="space-y-3">
+                  <div className="bg-blue-50 border-2 border-blue-200 rounded-xl px-4 py-3 text-center">
+                    <div className="text-[11px] font-mono text-blue-500 uppercase tracking-wider">
+                      Nombre {i + 1} à écrire en chiffres
+                    </div>
+                    <div className="text-base sm:text-lg font-semibold text-blue-900 italic">« {item.words} »</div>
                   </div>
-                  <div className="text-base sm:text-lg font-semibold text-blue-900 italic">« {item.words} »</div>
+                  <NumberBuilder
+                    target={item.target}
+                    hint={item.hint}
+                    solved={lettresDone.includes(i)}
+                    onSolved={() => mark(setLettresDone, lettresDone, i)}
+                    react={kit.react}
+                  />
                 </div>
-                <NumberBuilder
-                  target={item.target}
-                  hint={item.hint}
-                  solved={lettresDone.includes(i)}
-                  onSolved={() => mark(setLettresDone, lettresDone, i)}
-                />
-              </div>
-            ))}
-          </div>
-        </StepCard>
-
-        {/* Étape 2 */}
-        <StepCard num={2} title="Des chiffres vers les mots" done={s2} locked={!s1}>
-          <div className="space-y-6">
-            {EN_CHIFFRES.map((item, i) => (
-              <ReverseItem
-                key={item.n}
-                item={item}
-                solved={chiffresDone.includes(i)}
-                onSolved={() => mark(setChiffresDone, chiffresDone, i)}
-              />
-            ))}
-          </div>
-        </StepCard>
-
-        {/* Étape 3 */}
-        <StepCard
-          num={3}
-          title="Lire les grands nombres"
-          subtitle="Les chiffres se lisent par groupes de trois, en partant de la droite."
-          done={s3}
-          locked={!s2}
-        >
-          <div className="space-y-8">
-            {GRANDS.map((item, i) => (
-              <div key={item.n} className="space-y-3">
-                <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
-                  Nombre {i + 1} / {GRANDS.length} — {String(item.n).length} chiffres
+              ))}
+            </div>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Des chiffres vers les mots',
+          done: s2,
+          content: (
+            <div className="space-y-6">
+              {EN_CHIFFRES.map((item, i) => (
+                <div key={item.n} className="space-y-3">
+                  <div className="bg-slate-900 rounded-xl px-4 py-4 text-center">
+                    <div className="font-mono font-extrabold text-3xl sm:text-4xl text-white tabular-nums">
+                      {formatFr(item.n)}
+                    </div>
+                  </div>
+                  <TapQuestion
+                    prompt="Comment écrit-on ce nombre en lettres ?"
+                    options={item.options}
+                    correct={item.correct}
+                    cols={1}
+                    explain={item.explain}
+                    solved={chiffresDone.includes(i)}
+                    onAnswered={() => mark(setChiffresDone, chiffresDone, i)}
+                  />
                 </div>
-                <BigNumberReader
-                  item={item}
-                  solved={grandsDone.includes(i)}
-                  onSolved={() => mark(setGrandsDone, grandsDone, i)}
-                />
-              </div>
-            ))}
+              ))}
+            </div>
+          ),
+        },
+        {
+          num: 3,
+          title: 'Lire les grands nombres',
+          subtitle: 'Les chiffres se lisent par groupes de trois, en partant de la droite.',
+          done: s3,
+          content: (
+            <div className="space-y-8">
+              {GRANDS.map((item, i) => (
+                <div key={item.n} className="space-y-3">
+                  <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                    Nombre {i + 1} / {GRANDS.length} — {String(item.n).length} chiffres
+                  </div>
+                  <BigNumberReader
+                    item={item}
+                    solved={grandsDone.includes(i)}
+                    onSolved={() => mark(setGrandsDone, grandsDone, i)}
+                  />
+                </div>
+              ))}
 
-            {grandsDone.length === GRANDS.length && (
-              <div className="space-y-3 border-t border-slate-200 pt-5">
-                <Feedback tone="info">
-                  Les groupes de trois chiffres ne sont pas décoratifs : ils correspondent aux{' '}
-                  <strong>classes</strong> (unités, mille, millions). C'est ce découpage qui rend un nombre de 7
-                  chiffres lisible d'un seul coup d'œil.
-                </Feedback>
-                <p className="text-sm font-semibold text-slate-700">
-                  Quelle est l'écriture correcte de ce nombre en français ?
-                </p>
-                <ChoiceGrid
-                  options={FORMAT_Q.options}
-                  selected={formatPick}
-                  onSelect={setFormatPick}
-                  revealed={formatRevealed}
-                  correctIndex={FORMAT_Q.correct}
-                  cols={3}
-                />
-                {!formatRevealed && (
-                  <ValidateButton onClick={() => setFormatRevealed(true)} disabled={formatPick === null}>
-                    Valider
-                  </ValidateButton>
-                )}
-                {formatRevealed && (
-                  <Feedback tone={formatPick === FORMAT_Q.correct ? 'ok' : 'ko'}>
-                    En français, on sépare les classes par une <strong>espace</strong> :{' '}
-                    <span className="font-mono font-bold">2 350 700</span>. La virgule est réservée aux nombres
-                    décimaux, et tout coller rend le nombre illisible.
+              {grandsDone.length === GRANDS.length && (
+                <div className="space-y-3 border-t border-slate-200 pt-5">
+                  <Feedback tone="info">
+                    Les groupes de trois chiffres ne sont pas décoratifs : ils correspondent aux{' '}
+                    <strong>classes</strong> (unités, mille, millions). C'est ce découpage qui rend un nombre de
+                    7 chiffres lisible d'un seul coup d'œil.
                   </Feedback>
-                )}
-              </div>
-            )}
-          </div>
-        </StepCard>
-      </div>
-    </ModuleLayout>
-  );
-}
-
-/* ─── Item « chiffres → mots » ───────────────────────────────────── */
-function ReverseItem({ item, solved, onSolved }) {
-  const [pick, setPick] = useState(null);
-  const [revealed, setRevealed] = useState(false);
-
-  return (
-    <div className="space-y-3">
-      <div className="bg-slate-900 rounded-xl px-4 py-4 text-center">
-        <div className="font-mono font-extrabold text-3xl sm:text-4xl text-white tabular-nums">
-          {formatFr(item.n)}
-        </div>
-      </div>
-      <p className="text-sm font-semibold text-slate-700">Comment écrit-on ce nombre en lettres ?</p>
-      <ChoiceGrid
-        options={item.options}
-        selected={pick}
-        onSelect={setPick}
-        revealed={revealed}
-        correctIndex={item.correct}
-        cols={1}
-      />
-      {!revealed && (
-        <ValidateButton
-          onClick={() => {
-            setRevealed(true);
-            onSolved?.();
-          }}
-          disabled={pick === null}
-        >
-          Valider
-        </ValidateButton>
-      )}
-      {revealed && (
-        <Feedback tone={pick === item.correct ? 'ok' : 'ko'}>
-          {pick !== item.correct && (
-            <>
-              Bonne réponse : <strong>{item.options[item.correct]}</strong>. {' '}
-            </>
-          )}
-          {item.explain}
-        </Feedback>
-      )}
-    </div>
+                  <TapQuestion
+                    prompt="Quelle est l'écriture correcte de ce nombre en français ?"
+                    options={FORMAT_Q.options}
+                    correct={FORMAT_Q.correct}
+                    cols={3}
+                    explain={
+                      <>
+                        En français, on sépare les classes par une <strong>espace</strong> :{' '}
+                        <span className="font-mono font-bold">2 350 700</span>. La virgule est réservée aux
+                        nombres décimaux, et tout coller rend le nombre illisible.
+                      </>
+                    }
+                    onAnswered={() => setFormatRevealed(true)}
+                  />
+                </div>
+              )}
+            </div>
+          ),
+        },
+      ]}
+    />
   );
 }

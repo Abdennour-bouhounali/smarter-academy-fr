@@ -1,12 +1,22 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Scale } from 'lucide-react';
-import ModuleLayout from '../../../../../common/components/ModuleLayout';
-import { Feedback, ChoiceGrid, ValidateButton, StepCard, MissionBrief } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Balance from '../components/Balance';
 import ItemBank from '../components/ItemBank';
 import OrderingGame from '../../../../../common/components/OrderingGame';
+
+/**
+ * Module 1 — déclencheur, reconstruit sur le lesson kit.
+ *
+ * La balance à deux plateaux reste une manipulation maison : poser un objet
+ * est un geste, pas un choix parmi des réponses. Elle ne peut pas produire
+ * d'« état faux » — on pose, la balance penche, on observe. Le verdict, lui,
+ * passe par TapQuestion : correction toujours révélée, jamais de
+ * « Réessayer » qui efface la réponse (contrairement à la version pré-kit).
+ */
 
 /** Zone (gauche/droite/aucune) dont le rectangle contient le point (x, y). */
 function zoneAt(x, y, leftZoneRef, rightZoneRef) {
@@ -26,26 +36,21 @@ const BANK = [
 
 const VERDICT_OPTIONS = ['Le plateau gauche est plus lourd', 'Le plateau droit est plus lourd', 'Les deux plateaux sont en équilibre'];
 
-function BalanceDiscovery({ solved, onSolved }) {
+function BalanceDiscovery({ solved, onAnswered }) {
   const [placement, setPlacement] = useState({});
   const [dragging, setDragging] = useState(false);
-  const [pick, setPick] = useState(null);
-  const [checked, setChecked] = useState(false);
   const leftZoneRef = useRef(null);
   const rightZoneRef = useRef(null);
 
-  const handleRelease = (id, x, y) => {
-    const zone = zoneAt(x, y, leftZoneRef, rightZoneRef);
-    if (!zone) return;
-    setChecked(false);
-    setPick(null);
+  const place = (id, zone) => {
+    if (solved || !zone) return;
     setPlacement((p) => ({ ...p, [id]: zone }));
   };
 
+  const handleRelease = (id, x, y) => place(id, zoneAt(x, y, leftZoneRef, rightZoneRef));
+
   const takeBack = (id) => {
     if (solved) return;
-    setChecked(false);
-    setPick(null);
     setPlacement((p) => {
       const n = { ...p };
       delete n[id];
@@ -57,16 +62,22 @@ function BalanceDiscovery({ solved, onSolved }) {
   const right = BANK.filter((it) => placement[it.id] === 'right');
   const totalLeft = left.reduce((s, it) => s + it.mass, 0);
   const totalRight = right.reduce((s, it) => s + it.mass, 0);
-  const canValidate = left.length > 0 && right.length > 0;
+  const canAnswer = left.length > 0 && right.length > 0;
   const correctIndex = totalLeft === totalRight ? 2 : totalLeft > totalRight ? 0 : 1;
-  const isRight = checked && pick === correctIndex;
 
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-600">
-        Fais glisser un objet sur un plateau. Touche un objet déjà posé pour le reprendre.
+        Pose des objets sur les deux plateaux. Touche un objet déjà posé pour le reprendre.
       </p>
-      <ItemBank items={BANK} placement={placement} onDragRelease={handleRelease} onDraggingChange={setDragging} disabled={solved} />
+      <ItemBank
+        items={BANK}
+        placement={placement}
+        onDragRelease={handleRelease}
+        onDraggingChange={setDragging}
+        onPlace={place}
+        disabled={solved}
+      />
       <Balance
         left={left}
         right={right}
@@ -77,27 +88,21 @@ function BalanceDiscovery({ solved, onSolved }) {
         onItemTap={solved ? undefined : takeBack}
         ariaLabel="Balance à deux plateaux"
       />
-      {canValidate && (
-        <div className="space-y-3">
-          <p className="text-sm font-semibold text-slate-700">D’après la balance, que peux-tu dire ?</p>
-          <ChoiceGrid options={VERDICT_OPTIONS} selected={pick} onSelect={(i) => { setChecked(false); setPick(i); }} revealed={checked} correctIndex={correctIndex} cols={1} disabled={solved} />
-          {!solved && (
-            <div className="text-center">
-              <ValidateButton onClick={() => { setChecked(true); if (pick === correctIndex) onSolved?.(); }} disabled={pick === null}>Valider</ValidateButton>
-            </div>
-          )}
-          {checked && (
-            <Feedback tone={isRight ? 'ok' : 'ko'}>
-              {isRight ? 'Exactement : la balance penche du côté le plus lourd.' : 'Regarde bien de quel côté le plateau descend — c’est le côté le plus lourd.'}
-              {!isRight && (
-                <>
-                  {' '}
-                  <button type="button" onClick={() => { setChecked(false); setPick(null); }} className="underline font-semibold">Réessayer</button>
-                </>
-              )}
-            </Feedback>
-          )}
-        </div>
+      {canAnswer && (
+        <TapQuestion
+          prompt="D’après la balance, que peux-tu dire ?"
+          options={VERDICT_OPTIONS}
+          correct={correctIndex}
+          cols={1}
+          explain="La balance penche toujours du côté le plus lourd : le plateau qui descend porte la plus grande masse."
+          solved={solved}
+          onAnswered={onAnswered}
+        />
+      )}
+      {!canAnswer && (
+        <p className="text-center text-xs text-slate-400 italic">
+          Pose au moins un objet de chaque côté pour comparer.
+        </p>
       )}
     </div>
   );
@@ -111,51 +116,55 @@ function BalanceDiscovery({ solved, onSolved }) {
 const RANK_ITEMS = BANK.map((it) => ({ id: it.id, value: it.mass, text: `${it.emoji} ${it.label}` }));
 
 export default function Module01Mission() {
-  const navLinks = getNavLinks(1);
   const [balanceDone, setBalanceDone] = useState(false);
   const [rankDone, setRankDone] = useState(false);
-  const allDone = balanceDone && rankDone;
 
   return (
-    <ModuleLayout
-      {...MODULE_CTX}
+    <ContentModule
+      ctx={MODULE_CTX}
+      navLinks={getNavLinks(1)}
+      moduleNumber={1}
       moduleTitle="Mission : le sac mystère"
       moduleSubtitle="Un crayon, une pomme, un cartable, un vélo : lequel est le plus lourd ?"
-      moduleNumber={1}
-      estimatedTime="8 min"
-      prevLink={navLinks.prevLink}
-      nextLink={allDone ? navLinks.nextLink : undefined}
-      isCompleted={allDone}
-    >
-      <div className="max-w-3xl mx-auto space-y-6">
-        <MissionBrief tag="📋 Mission 01" title="Avant toute définition, regarde et compare.">
-          <p>Une masse décrit la quantité de matière d’un objet. Découvre-le en comparant, pas en apprenant une règle.</p>
-        </MissionBrief>
-
-        <StepCard num={1} title="La balance ne ment pas" done={balanceDone}>
-          <BalanceDiscovery solved={balanceDone} onSolved={() => setBalanceDone(true)} />
-        </StepCard>
-
-        <StepCard num={2} title="Classe-les tous" done={rankDone} locked={!balanceDone}>
-          <OrderingGame
-            items={RANK_ITEMS}
-            direction="asc"
-            instruction="Range maintenant les quatre objets, du plus léger au plus lourd — à l’œil, comme tu viens de le faire avec la balance."
-            solved={rankDone}
-            onSolved={() => setRankDone(true)}
-          />
-        </StepCard>
-
-        {allDone && (
-          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-            <Scale className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-            <p className="text-sm text-slate-300">
-              Tu sais déjà comparer des masses. Prochaine étape : apprendre à les mesurer et à les exprimer avec des
-              unités précises.
-            </p>
-          </motion.div>
-        )}
-      </div>
-    </ModuleLayout>
+      estimatedTime="9 min"
+      brief={{
+        tag: '📋 Mission 01',
+        title: 'Avant toute définition, regarde et compare.',
+        body: <p>Une masse décrit la quantité de matière d’un objet. Découvre-le en comparant, pas en apprenant une règle.</p>,
+      }}
+      steps={[
+        {
+          num: 1,
+          title: 'La balance ne ment pas',
+          done: balanceDone,
+          content: <BalanceDiscovery solved={balanceDone} onAnswered={() => setBalanceDone(true)} />,
+        },
+        {
+          num: 2,
+          title: 'Classe-les tous',
+          done: rankDone,
+          content: (kit) => (
+            <OrderingGame
+              items={RANK_ITEMS}
+              direction="asc"
+              instruction="Range maintenant les quatre objets, du plus léger au plus lourd — à l’œil, comme tu viens de le faire avec la balance."
+              solved={rankDone}
+              formative
+              onError={() => kit.react(false)}
+              onSolved={() => setRankDone(true)}
+            />
+          ),
+        },
+      ]}
+      footer={
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+          <Scale className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
+          <p className="text-sm text-slate-300">
+            Tu sais déjà comparer des masses. Prochaine étape : apprendre à les mesurer et à les exprimer avec des
+            unités précises.
+          </p>
+        </motion.div>
+      }
+    />
   );
 }
