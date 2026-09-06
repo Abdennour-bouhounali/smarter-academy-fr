@@ -25,6 +25,7 @@ const EPREUVES = [
   {
     id: 're-e1',
     skill: 'solides',
+    requires: ['polyedre', 'face-solide', 'arete', 'sommet-solide'],
     title: 'Reconnaître un solide',
     prompt: 'Un solide a 5 faces : deux triangles et trois rectangles. De quoi s’agit-il ?',
     options: [
@@ -40,6 +41,7 @@ const EPREUVES = [
   {
     id: 're-e2',
     skill: 'compter',
+    requires: ['relation-euler', 'polyedre', 'compter-le-cache'],
     title: 'Compter sans oublier',
     prompt: 'Combien un cube a-t-il de sommets ?',
     options: ['8', '7', '6', '12'],
@@ -50,6 +52,7 @@ const EPREUVES = [
   {
     id: 're-e3',
     skill: 'compter',
+    requires: ['relation-euler', 'polyedre', 'compter-le-cache'],
     title: 'La relation d’Euler',
     prompt: 'Pour un polyèdre convexe, que vaut faces + sommets − arêtes ?',
     options: ['2', '0', '1', 'Cela dépend du solide'],
@@ -60,6 +63,7 @@ const EPREUVES = [
   {
     id: 're-e4',
     skill: 'perspective',
+    requires: ['perspective-cavaliere', 'dessin-projection', 'mem-angles-deformes'],
     title: 'Les traits en pointillé',
     extra: (
       <div className="my-2">
@@ -81,6 +85,7 @@ const EPREUVES = [
   {
     id: 're-e5',
     skill: 'pointdevue',
+    requires: ['cache-depend-du-point-de-vue', 'arete-cachee'],
     title: 'Visible ou caché ?',
     prompt: 'Une arête est dessinée en pointillé. Que se passe-t-il si on tourne le solide ?',
     options: [
@@ -96,6 +101,7 @@ const EPREUVES = [
   {
     id: 're-e6',
     skill: 'pointdevue',
+    requires: ['cache-depend-du-point-de-vue', 'arete-cachee'],
     title: 'Identifier en tournant',
     prompt: 'Un dessin est ambigu : on ne sait pas quel solide il représente. Quelle est la meilleure méthode ?',
     options: [
@@ -111,6 +117,7 @@ const EPREUVES = [
   {
     id: 're-e7',
     skill: 'vues',
+    requires: ['trois-vues', 'methode-identifier'],
     title: 'Les trois vues',
     extra: (
       <div className="my-2">
@@ -131,6 +138,7 @@ const EPREUVES = [
   {
     id: 're-e8',
     skill: 'perspective',
+    requires: ['perspective-cavaliere', 'dessin-projection', 'mem-angles-deformes'],
     title: 'Les règles de la cavalière',
     prompt: 'Dans un cube dessiné en perspective cavalière, quelle affirmation est VRAIE ?',
     options: [
@@ -146,6 +154,7 @@ const EPREUVES = [
   {
     id: 're-e9',
     skill: 'espace',
+    requires: ['non-coplanaires', 'droites-paralleles'],
     title: 'Le troisième cas',
     prompt: 'Dans l’espace, deux droites qui ne se coupent jamais sont-elles forcément parallèles ?',
     options: [
@@ -161,6 +170,7 @@ const EPREUVES = [
   {
     id: 're-e10',
     skill: 'espace',
+    requires: ['non-coplanaires', 'droites-paralleles'],
     title: 'Dans le cube',
     extra: (
       <div className="my-2">

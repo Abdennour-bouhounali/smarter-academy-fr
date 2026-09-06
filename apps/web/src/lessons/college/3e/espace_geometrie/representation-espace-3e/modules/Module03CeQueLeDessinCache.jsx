@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { EyeOff, RefreshCw } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidTurner from '../components/SolidTurner';
 import { SOLIDS, rotateSolid, visibleEdges, edgeName } from '../components/espaceUtils';
@@ -123,10 +124,27 @@ export default function Module03CeQueLeDessinCache() {
             cols={1}
             explain="Une arête n’est visible que si au moins une des faces qui la portent est tournée vers nous. De face, une seule face est visible : ses 4 arêtes le sont, les 8 autres non. De trois quarts, trois faces sont visibles, et il ne reste que 3 arêtes derrière. Le cube, lui, a toujours ses 12 arêtes."
             explainWrong="Aucune arête ne disparaît jamais : les compteurs sous les dessins affichent 12 dans les deux cas. Ce qui change, c’est le nombre de faces tournées vers nous."
+            requires={['arete-cachee', 'dessin-projection']}
+            requires={['arete-cachee', 'dessin-projection']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
-        </div>
+        {q2 && (
+          <KnowledgeBrick
+            id="cache-depend-du-point-de-vue"
+            variant="new"
+            compact
+            lead="« Caché » n’est pas une propriété de l’arête : tu viens de le voir."
+          />
+        )}
+            {q2 && (
+              <KnowledgeBrick
+                id="cache-depend-du-point-de-vue"
+                variant="new"
+                compact
+                lead="« Caché » n’est pas une propriété de l’arête : tu viens de le voir."
+              />
+            )}        </div>
       ),
     },
   ];
@@ -165,13 +183,12 @@ export default function Module03CeQueLeDessinCache() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> « Arête cachée » n’est pas une propriété de l’arête : c’est une
-          propriété du <strong>point de vue</strong>. Le solide, lui, garde toujours le même nombre
-          de faces, d’arêtes et de sommets.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Le point de vue décide de ce qu’on voit. Tournons l’objet
+          pour en avoir le cœur net.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

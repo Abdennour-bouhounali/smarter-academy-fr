@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { LayoutGrid } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidTurner from '../components/SolidTurner';
 import ViewsPanel from '../components/ViewsPanel';
@@ -71,10 +72,27 @@ export default function Module05LesTroisVues() {
             correct={0}
             cols={1}
             explain="Une projection ne garde que deux des trois dimensions. De face on voit largeur et hauteur ; de dessus, largeur et profondeur. C’est pourquoi il faut plusieurs vues pour décrire complètement un objet."
+            requires={['dessin-projection']}
+            requires={['dessin-projection']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
-        </div>
+        {q1 && (
+          <KnowledgeBrick
+            id="trois-vues"
+            variant="new"
+            compact
+            lead="Ces trois dessins ont chacun perdu une dimension — mais pas la même."
+          />
+        )}
+            {q1 && (
+              <KnowledgeBrick
+                id="trois-vues"
+                variant="new"
+                compact
+                lead="Ces trois dessins ont chacun perdu une dimension — mais pas la même."
+              />
+            )}        </div>
       ),
     },
     {
@@ -141,6 +159,8 @@ export default function Module05LesTroisVues() {
                 : `${nCorrect} sur ${total}. Pour chaque vue, demande-toi quelle dimension est écrasée.`}
             </Feedback>
           )}
+          requires={['trois-vues']}
+          requires={['trois-vues']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
@@ -178,12 +198,12 @@ export default function Module05LesTroisVues() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Chaque vue perd une dimension. Une seule ne suffit pas à
-          identifier un solide ; trois vues orthogonales, si.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Trois vues suffisent à identifier un solide. Reste à savoir
+          dessiner en perspective.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

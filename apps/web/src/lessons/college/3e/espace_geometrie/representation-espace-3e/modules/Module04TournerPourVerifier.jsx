@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Search, Compass } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidTurner from '../components/SolidTurner';
 import { SOLIDS, countsOf } from '../components/espaceUtils';
@@ -59,10 +60,27 @@ export default function Module04TournerPourVerifier() {
             cols={1}
             explain={`Ses comptes le trahissent : ${countsOf(MYSTERE).faces} faces, ${countsOf(MYSTERE).aretes} arêtes, ${countsOf(MYSTERE).sommets} sommets. Une pyramide à base carrée aurait 5 faces mais seulement 5 sommets, et un cube en aurait 6, 12 et 8. En tournant, on voit apparaître les deux triangles opposés.`}
             explainWrong="Ne te fie pas à une seule vue : compte plutôt. Les faces, les arêtes et les sommets identifient un solide sans ambiguïté."
+            requires={['cache-depend-du-point-de-vue', 'relation-euler']}
+            requires={['cache-depend-du-point-de-vue', 'relation-euler']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
-          {tourne && q2 && (
+        {q2 && (
+          <KnowledgeBrick
+            id="methode-identifier"
+            variant="new"
+            compact
+            lead="Face à un dessin ambigu, voici la marche à suivre."
+          />
+        )}
+            {q2 && (
+              <KnowledgeBrick
+                id="methode-identifier"
+                variant="new"
+                compact
+                lead="Face à un dessin ambigu, voici la marche à suivre."
+              />
+            )}          {tourne && q2 && (
             <Feedback tone="ok">
               Tourner a permis de voir les deux <strong>faces triangulaires</strong> opposées, que
               la vue de face écrasait. C’est la méthode : quand une vue ne suffit pas, on change de
@@ -137,13 +155,12 @@ export default function Module04TournerPourVerifier() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Méthode.</strong> Face à un dessin ambigu : tourner l’objet, compter faces,
-          arêtes et sommets, et comparer aux solides connus. Une vue unique peut être trompeuse ;
-          les comptes, jamais.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Une vue unique peut tromper ; les comptes, jamais. Voyons ce
+          que trois vues apportent.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

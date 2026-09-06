@@ -49,7 +49,19 @@ export const LESSON_CONFIG = {
   // vocabulaire « face / arête / sommet » vient de la 6e (solides et patrons) ;
   // le repérage du plan vient de la leçon voisine. « polyèdre », en revanche,
   // n'y est pas : la 6e ne le nomme pas, et une brique le pose au module 2.
-  priorKnowledge: ['face-solide', 'arete', 'sommet-solide', 'coordonnees', 'abscisse', 'ordonnee'],
+  priorKnowledge: ['face-solide', 'arete', 'sommet-solide', 'coordonnees', 'abscisse', 'ordonnee',
+    'droites-paralleles', 'angle-droit', 'origine-repere'],
+  knowledgeAudit: {
+    ignore: [
+      // La question de l'étape 2 demande ce que l'élève VOIT (« les traits en
+      // pointillé »), avant que la brique ne dise ce que c'est et pourquoi on
+      // les trace ainsi : c'est la découverte, pas une exigence prématurée.
+      { term: 'arete-cachee', reason: 'question de découverte ; la brique suit immédiatement' },
+      // « point de fuite » n'apparaît que comme mauvaise réponse : c'est la
+      // perspective CONIQUE, que le programme de 3e n'étudie pas.
+      { term: 'point-de-fuite', reason: 'distracteur ; perspective conique, hors programme' },
+    ],
+  },
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Représentation de l’espace',
   description:

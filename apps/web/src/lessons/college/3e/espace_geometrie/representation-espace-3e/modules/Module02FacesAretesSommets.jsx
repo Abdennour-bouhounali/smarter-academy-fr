@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Boxes, Sigma } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidTurner from '../components/SolidTurner';
 import { SOLIDS, SOLIDES_COURBES, countsOf, eulerCheck } from '../components/espaceUtils';
@@ -77,6 +78,14 @@ export default function Module02FacesAretesSommets() {
               lui-même, pas du dessin.
             </Feedback>
           )}
+          {done1 && (
+            <KnowledgeBrick
+              id="polyedre"
+              variant="new"
+              compact
+              lead="Les solides que tu viens de compter portent un nom commun."
+            />
+          )}
         </div>
       ),
     },
@@ -86,60 +95,71 @@ export default function Module02FacesAretesSommets() {
       subtitle: 'Compte sans oublier ce qui est derrière.',
       done: batch,
       content: (
-        <BatchChoiceQuestion
-          intro={
-            <div className="space-y-2">
-              <div className="grid sm:grid-cols-4 gap-2">
-                {POLYEDRES.map((s) => (
-                  <div key={s.id} className="space-y-1">
-                    <p className="text-xs font-semibold text-slate-600 text-center">{s.nom}</p>
-                    <SolidTurner solid={s} yaw={30} pitch={20}
-                      ariaLabel={`${s.nom} vu de trois quarts`} />
-                  </div>
-                ))}
+        <div className="space-y-3">
+          <BatchChoiceQuestion
+            intro={
+              <div className="space-y-2">
+                <div className="grid sm:grid-cols-4 gap-2">
+                  {POLYEDRES.map((s) => (
+                    <div key={s.id} className="space-y-1">
+                      <p className="text-xs font-semibold text-slate-600 text-center">{s.nom}</p>
+                      <SolidTurner solid={s} yaw={30} pitch={20}
+                        ariaLabel={`${s.nom} vu de trois quarts`} />
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          }
-          rows={[
-            {
-              id: 'cube', label: 'Le cube a combien d’arêtes ?',
-              options: ['12', '8', '6'],
-              correct: 0,
-              correction: '12 arêtes : 4 sur la face avant, 4 sur la face arrière, et 4 qui les relient. Le cube a 8 sommets et 6 faces.',
-            },
-            {
-              id: 'prisme', label: 'Le prisme à base triangulaire a combien de faces ?',
-              options: ['5', '6', '3'],
-              correct: 0,
-              correction: '5 faces : les 2 triangles (avant et arrière) et les 3 rectangles qui les relient.',
-            },
-            {
-              id: 'pyramide', label: 'La pyramide à base carrée a combien de sommets ?',
-              options: ['5', '4', '8'],
-              correct: 0,
-              correction: '5 sommets : les 4 de la base carrée, plus la pointe.',
-            },
-            {
-              id: 'pave', label: 'Le pavé droit a-t-il les mêmes comptes que le cube ?',
-              options: [
-                'Oui : 6 faces, 12 arêtes, 8 sommets — seules les dimensions diffèrent',
-                'Non, il a plus de faces',
-                'Non, il a moins d’arêtes',
-              ],
-              correct: 0,
-              correction: 'Un cube est un pavé droit particulier, dont toutes les arêtes sont égales. Les comptes sont donc identiques ; ce sont les longueurs qui changent.',
-            },
-          ]}
-          feedback={({ allRight, nCorrect, total }) => (
-            <Feedback tone={allRight ? 'ok' : 'info'}>
-              {allRight
-                ? 'Tu comptes bien tout, y compris ce que le dessin cache.'
-                : `${nCorrect} sur ${total}. Astuce : compte par familles (face avant, face arrière, puis les arêtes qui les relient).`}
-            </Feedback>
+            }
+            rows={[
+              {
+                id: 'cube', label: 'Le cube a combien d’arêtes ?',
+                options: ['12', '8', '6'],
+                correct: 0,
+                correction: '12 arêtes : 4 sur la face avant, 4 sur la face arrière, et 4 qui les relient. Le cube a 8 sommets et 6 faces.',
+              },
+              {
+                id: 'prisme', label: 'Le prisme à base triangulaire a combien de faces ?',
+                options: ['5', '6', '3'],
+                correct: 0,
+                correction: '5 faces : les 2 triangles (avant et arrière) et les 3 rectangles qui les relient.',
+              },
+              {
+                id: 'pyramide', label: 'La pyramide à base carrée a combien de sommets ?',
+                options: ['5', '4', '8'],
+                correct: 0,
+                correction: '5 sommets : les 4 de la base carrée, plus la pointe.',
+              },
+              {
+                id: 'pave', label: 'Le pavé droit a-t-il les mêmes comptes que le cube ?',
+                options: [
+                  'Oui : 6 faces, 12 arêtes, 8 sommets — seules les dimensions diffèrent',
+                  'Non, il a plus de faces',
+                  'Non, il a moins d’arêtes',
+                ],
+                correct: 0,
+                correction: 'Un cube est un pavé droit particulier, dont toutes les arêtes sont égales. Les comptes sont donc identiques ; ce sont les longueurs qui changent.',
+              },
+            ]}
+            feedback={({ allRight, nCorrect, total }) => (
+              <Feedback tone={allRight ? 'ok' : 'info'}>
+                {allRight
+                  ? 'Tu comptes bien tout, y compris ce que le dessin cache.'
+                  : `${nCorrect} sur ${total}. Astuce : compte par familles (face avant, face arrière, puis les arêtes qui les relient).`}
+              </Feedback>
+            )}
+            requires={['polyedre', 'face-solide', 'arete', 'sommet-solide']}
+            solved={batch}
+            onAnswered={() => setBatch(true)}
+          />
+          {batch && (
+            <KnowledgeBrick
+              id="relation-euler"
+              variant="new"
+              compact
+              lead="Ce que tes comptes viennent de vérifier est une relation générale."
+            />
           )}
-          solved={batch}
-          onAnswered={() => setBatch(true)}
-        />
+        </div>
       ),
     },
     {
@@ -177,9 +197,18 @@ export default function Module02FacesAretesSommets() {
             cols={1}
             explain="La relation F + S − A = 2 est celle d’Euler, et elle concerne les POLYÈDRES : des solides dont toutes les faces sont planes. Une boule n’a qu’une surface courbe, sans arête ni sommet — elle sort du cadre."
             explainWrong="Les quatre solides du haut sont tous des polyèdres (faces planes). Une boule, un cylindre ou un cône ont une surface courbe : la relation ne leur est pas destinée."
+            requires={['relation-euler', 'polyedre']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
+        {q3 && (
+          <KnowledgeBrick
+            id="compter-le-cache"
+            variant="new"
+            compact
+            lead="Compter ce qu’on ne voit pas : la méthode que tu viens d’appliquer."
+          />
+        )}
         </div>
       ),
     },
@@ -219,13 +248,12 @@ export default function Module02FacesAretesSommets() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Relation d’Euler.</strong> Pour tout polyèdre convexe,
-          faces + sommets − arêtes = 2. Elle ne s’applique pas aux solides à surface courbe
-          (cylindre, cône, boule).
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Les comptes ne mentent pas. Mais que voit-on vraiment sur un
+          dessin ?
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { PencilRuler } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { SOLIDS, projectCavaliere, visibleEdges, CAVALIERE_ANGLES, CAVALIERE_K } from '../components/espaceUtils';
 
@@ -125,48 +126,67 @@ export default function Module06PerspectiveCavaliere() {
       title: 'Les règles du dessin',
       done: batch,
       content: (
-        <BatchChoiceQuestion
-          intro={
-            <p className="text-sm text-slate-700">
-              Dans un cube dessiné en perspective cavalière, vrai ou faux ?
-            </p>
-          }
-          rows={[
-            {
-              id: 'r1', label: 'La face avant est dessinée en vraie grandeur',
-              options: ['Vrai', 'Faux'],
-              correct: 0,
-              correction: 'C’est la règle de base : la face parallèle au plan du dessin garde ses longueurs et ses angles droits.',
-            },
-            {
-              id: 'r2', label: 'Les fuyantes sont toutes parallèles entre elles',
-              options: ['Vrai', 'Faux'],
-              correct: 0,
-              correction: 'Toutes les arêtes qui s’enfoncent sont dessinées parallèles, avec le même angle et le même raccourcissement.',
-            },
-            {
-              id: 'r3', label: 'Les angles droits du solide restent droits sur le dessin',
-              options: ['Faux', 'Vrai'],
-              correct: 0,
-              correction: 'Seuls ceux de la face avant le restent. Les autres sont déformés — c’est le prix à payer pour représenter du volume sur une feuille.',
-            },
-            {
-              id: 'r4', label: 'Les fuyantes sont dessinées plus courtes qu’en réalité',
-              options: ['Vrai', 'Faux'],
-              correct: 0,
-              correction: 'Elles sont réduites par le coefficient (souvent 0,5). Sans cette réduction, le dessin paraîtrait démesurément profond.',
-            },
-          ]}
-          feedback={({ allRight, nCorrect, total }) => (
-            <Feedback tone={allRight ? 'ok' : 'info'}>
-              {allRight
-                ? 'Les quatre règles sont acquises — y compris celle qu’on oublie : les angles droits ne sont pas conservés.'
-                : `${nCorrect} sur ${total}. Souviens-toi de ce que tu viens de manipuler : seule la face avant est intacte.`}
-            </Feedback>
+        <div className="space-y-3">
+          <BatchChoiceQuestion
+            intro={
+              <p className="text-sm text-slate-700">
+                Dans un cube dessiné en perspective cavalière, vrai ou faux ?
+              </p>
+            }
+            rows={[
+              {
+                id: 'r1', label: 'La face avant est dessinée en vraie grandeur',
+                options: ['Vrai', 'Faux'],
+                correct: 0,
+                correction: 'C’est la règle de base : la face parallèle au plan du dessin garde ses longueurs et ses angles droits.',
+              },
+              {
+                id: 'r2', label: 'Les fuyantes sont toutes parallèles entre elles',
+                options: ['Vrai', 'Faux'],
+                correct: 0,
+                correction: 'Toutes les arêtes qui s’enfoncent sont dessinées parallèles, avec le même angle et le même raccourcissement.',
+              },
+              {
+                id: 'r3', label: 'Les angles droits du solide restent droits sur le dessin',
+                options: ['Faux', 'Vrai'],
+                correct: 0,
+                correction: 'Seuls ceux de la face avant le restent. Les autres sont déformés — c’est le prix à payer pour représenter du volume sur une feuille.',
+              },
+              {
+                id: 'r4', label: 'Les fuyantes sont dessinées plus courtes qu’en réalité',
+                options: ['Vrai', 'Faux'],
+                correct: 0,
+                correction: 'Elles sont réduites par le coefficient (souvent 0,5). Sans cette réduction, le dessin paraîtrait démesurément profond.',
+              },
+            ]}
+            feedback={({ allRight, nCorrect, total }) => (
+              <Feedback tone={allRight ? 'ok' : 'info'}>
+                {allRight
+                  ? 'Les quatre règles sont acquises — y compris celle qu’on oublie : les angles droits ne sont pas conservés.'
+                  : `${nCorrect} sur ${total}. Souviens-toi de ce que tu viens de manipuler : seule la face avant est intacte.`}
+              </Feedback>
+            )}
+            requires={['dessin-projection', 'arete-cachee']}
+            solved={batch}
+            onAnswered={() => setBatch(true)}
+          />
+        {batch && (
+          <KnowledgeBrick
+            id="mem-angles-deformes"
+            variant="new"
+            compact
+            lead="Et ce qu’il faut accepter d’un dessin en perspective."
+          />
+        )}
+          {batch && (
+            <KnowledgeBrick
+              id="perspective-cavaliere"
+              variant="new"
+              compact
+              lead="Les règles du dessin que tu viens de manipuler."
+            />
           )}
-          solved={batch}
-          onAnswered={() => setBatch(true)}
-        />
+        </div>
       ),
     },
   ];
@@ -208,13 +228,12 @@ export default function Module06PerspectiveCavaliere() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Ce qu’il faut accepter.</strong> Un dessin en perspective déforme : les angles
-          droits du solide ne sont pas tous droits sur la feuille, et les fuyantes sont raccourcies.
-          C’est une représentation, pas une photographie.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Un dessin déforme, et c’est assumé. Terminons par les droites
+          de l’espace.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

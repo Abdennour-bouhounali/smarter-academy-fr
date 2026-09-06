@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Eye, RotateCw } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidTurner from '../components/SolidTurner';
 import { SOLIDS, hiddenCount } from '../components/espaceUtils';
@@ -82,7 +83,7 @@ export default function Module01TroisDessins() {
     },
     {
       num: 2,
-      title: 'Les traits en pointillé',
+      title: 'Ces traits plus fins, au fond du dessin',
       done: q2,
       content: (
         <div className="space-y-3">
@@ -100,9 +101,26 @@ export default function Module01TroisDessins() {
             cols={1}
             explain="Le pointillé est la convention du dessin technique : il montre les arêtes situées derrière le solide. Elles font partie de l’objet — c’est le dessin, et non l’objet, qui les cache."
             explainWrong="Un cube a toujours 12 arêtes, où qu’on le regarde. Le pointillé sert justement à ne pas les oublier quand elles passent derrière."
+            requires={['face-solide', 'arete']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
+        {q2 && (
+          <KnowledgeBrick
+            id="arete-cachee"
+            variant="new"
+            compact
+            lead="Ce que tu viens d’identifier a un nom, et une convention de tracé."
+          />
+        )}
+        {q2 && (
+          <KnowledgeBrick
+            id="dessin-projection"
+            variant="new"
+            compact
+            lead="Ce que les trois dessins ont perdu porte un nom."
+          />
+        )}
         </div>
       ),
     },
@@ -111,21 +129,24 @@ export default function Module01TroisDessins() {
       title: 'Ce que le dessin ne change pas',
       done: q3,
       content: (
-        <TapQuestion
-          prompt="Quand on tourne un cube, qu’est-ce qui change et qu’est-ce qui reste ?"
-          options={[
-            'Les arêtes cachées changent, mais le cube a toujours 12 arêtes',
-            'Le nombre d’arêtes change selon l’angle',
-            'Rien ne change, le dessin est toujours identique',
-            'Le nombre de faces augmente quand on le penche',
-          ]}
-          correct={0}
-          cols={1}
-          explain="Tourner ne modifie pas l’objet : ses 6 faces, 12 arêtes et 8 sommets restent. Seul change ce qu’on en voit — c’est-à-dire quelles arêtes passent derrière."
-          explainWrong="Regarde les trois compteurs sous le dessin : ils n’ont pas bougé pendant que tu tournais. Ce sont des propriétés de l’objet, pas du dessin."
-          solved={q3}
-          onAnswered={() => setQ3(true)}
-        />
+        <div className="space-y-3">
+          <TapQuestion
+            prompt="Quand on tourne un cube, qu’est-ce qui change et qu’est-ce qui reste ?"
+            options={[
+              'Les arêtes cachées changent, mais le cube a toujours 12 arêtes',
+              'Le nombre d’arêtes change selon l’angle',
+              'Rien ne change, le dessin est toujours identique',
+              'Le nombre de faces augmente quand on le penche',
+            ]}
+            correct={0}
+            cols={1}
+            explain="Tourner ne modifie pas l’objet : ses 6 faces, 12 arêtes et 8 sommets restent. Seul change ce qu’on en voit — c’est-à-dire quelles arêtes passent derrière."
+            explainWrong="Regarde les trois compteurs sous le dessin : ils n’ont pas bougé pendant que tu tournais. Ce sont des propriétés de l’objet, pas du dessin."
+            requires={['dessin-projection']}
+            solved={q3}
+            onAnswered={() => setQ3(true)}
+          />
+        </div>
       ),
     },
   ];
@@ -164,13 +185,12 @@ export default function Module01TroisDessins() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Un dessin en perspective est une <strong>projection</strong> du
-          solide : il perd de l’information. Les arêtes qu’on ne voit pas se dessinent en{' '}
-          <strong>pointillé</strong> — elles existent, mais elles passent derrière.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Un dessin perd de l’information. Reste à compter ce que le
+          solide, lui, possède vraiment.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

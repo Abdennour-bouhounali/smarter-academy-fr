@@ -21,6 +21,7 @@ const QUESTIONS = [
   {
     id: 're-d1-carre',
     skill: 'planes',
+    requires: ['angle-droit', 'droites-paralleles'],
     points: 2,
     prompt: 'Un quadrilatère qui a quatre côtés égaux et quatre angles droits est…',
     options: ['un carré', 'un losange quelconque', 'un trapèze'],
@@ -31,6 +32,7 @@ const QUESTIONS = [
   {
     id: 're-d2-cube',
     skill: 'solides',
+    requires: ['face-solide', 'arete', 'sommet-solide'],
     points: 2,
     prompt: 'De quelle forme sont les faces d’un cube ?',
     options: ['Six carrés identiques', 'Six rectangles différents', 'Quatre triangles'],
@@ -41,6 +43,7 @@ const QUESTIONS = [
   {
     id: 're-d3-vocabulaire',
     skill: 'solides',
+    requires: ['face-solide', 'arete', 'sommet-solide'],
     points: 2,
     prompt: 'Comment appelle-t-on le segment où deux faces d’un solide se rencontrent ?',
     options: ['Une arête', 'Un sommet', 'Une diagonale'],
@@ -51,6 +54,7 @@ const QUESTIONS = [
   {
     id: 're-d4-pave',
     skill: 'solides',
+    requires: ['face-solide', 'arete', 'sommet-solide'],
     points: 2,
     prompt: 'Combien un pavé droit a-t-il de faces ?',
     options: ['6', '8', '12'],
@@ -61,6 +65,7 @@ const QUESTIONS = [
   {
     id: 're-d5-coordonnees',
     skill: 'repere',
+    requires: ['coordonnees', 'abscisse', 'ordonnee', 'origine-repere'],
     points: 2,
     prompt: 'Dans un repère du plan, le couple (3 ; −2) désigne un point situé…',
     options: [

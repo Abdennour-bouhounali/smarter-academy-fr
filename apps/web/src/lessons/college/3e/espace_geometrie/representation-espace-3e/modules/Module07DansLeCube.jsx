@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Box, GitBranch } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidTurner from '../components/SolidTurner';
 import {
@@ -87,44 +88,55 @@ export default function Module07DansLeCube() {
       subtitle: 'Parallèles, sécantes, ou ni l’un ni l’autre ?',
       done: batch,
       content: (
-        <BatchChoiceQuestion
-          intro={
-            <div className="space-y-2">
-              <SolidTurner solid={SOLIDS.cube} yaw={30} pitch={20} showNames
-                ariaLabel="Cube ABCDEFGH vu de trois quarts, sommets nommés" />
-              <p className="text-xs text-slate-600 text-center">
-                ABCD est la face avant, EFGH la face arrière (E derrière A).
-              </p>
-            </div>
-          }
-          rows={PAIRES_CUBE.map((p) => {
-            const pos = positionOf(p);
-            const options = ['Parallèles', 'Sécantes', 'Ni parallèles ni sécantes'];
-            const idx = pos === 'paralleles' ? 0 : pos === 'secantes' ? 1 : 2;
-            return {
-              id: p.id,
-              label: `Les droites ${p.question}`,
-              options,
-              correct: idx,
-              correction: `Elles sont ${POSITION_LABEL[pos]}.${
-                pos === 'non-coplanaires'
-                  ? ' Elles n’appartiennent à aucun plan commun : c’est le cas propre à l’espace.'
-                  : pos === 'paralleles'
-                    ? ' Elles ont la même direction et restent à écart constant.'
-                    : ' Elles se rencontrent en un sommet du cube.'
-              }`,
-            };
-          })}
-          feedback={({ allRight, nCorrect, total }) => (
-            <Feedback tone={allRight ? 'ok' : 'info'}>
-              {allRight
-                ? 'Tu distingues les trois cas — y compris celui qui n’existe pas dans le plan.'
-                : `${nCorrect} sur ${total}. Demande-toi d’abord : ces deux droites sont-elles dans un même plan ? Si non, elles ne sont ni parallèles ni sécantes.`}
-            </Feedback>
+        <div className="space-y-3">
+          <BatchChoiceQuestion
+            intro={
+              <div className="space-y-2">
+                <SolidTurner solid={SOLIDS.cube} yaw={30} pitch={20} showNames
+                  ariaLabel="Cube ABCDEFGH vu de trois quarts, sommets nommés" />
+                <p className="text-xs text-slate-600 text-center">
+                  ABCD est la face avant, EFGH la face arrière (E derrière A).
+                </p>
+              </div>
+            }
+            rows={PAIRES_CUBE.map((p) => {
+              const pos = positionOf(p);
+              const options = ['Parallèles', 'Sécantes', 'Ni parallèles ni sécantes'];
+              const idx = pos === 'paralleles' ? 0 : pos === 'secantes' ? 1 : 2;
+              return {
+                id: p.id,
+                label: `Les droites ${p.question}`,
+                options,
+                correct: idx,
+                correction: `Elles sont ${POSITION_LABEL[pos]}.${
+                  pos === 'non-coplanaires'
+                    ? ' Elles n’appartiennent à aucun plan commun : c’est le cas propre à l’espace.'
+                    : pos === 'paralleles'
+                      ? ' Elles ont la même direction et restent à écart constant.'
+                      : ' Elles se rencontrent en un sommet du cube.'
+                }`,
+              };
+            })}
+            feedback={({ allRight, nCorrect, total }) => (
+              <Feedback tone={allRight ? 'ok' : 'info'}>
+                {allRight
+                  ? 'Tu distingues les trois cas — y compris celui qui n’existe pas dans le plan.'
+                  : `${nCorrect} sur ${total}. Demande-toi d’abord : ces deux droites sont-elles dans un même plan ? Si non, elles ne sont ni parallèles ni sécantes.`}
+              </Feedback>
+            )}
+            requires={['perspective-cavaliere', 'droites-paralleles']}
+            solved={batch}
+            onAnswered={() => setBatch(true)}
+          />
+          {batch && (
+            <KnowledgeBrick
+              id="non-coplanaires"
+              variant="new"
+              compact
+              lead="Deux droites qui ne se croisent jamais sans être parallèles : le cas de l’espace."
+            />
           )}
-          solved={batch}
-          onAnswered={() => setBatch(true)}
-        />
+        </div>
       ),
     },
     {
@@ -144,6 +156,7 @@ export default function Module07DansLeCube() {
           cols={1}
           explain="C’est la grande nouveauté de la géométrie dans l’espace. Deux droites peuvent ne jamais se rencontrer sans être parallèles : il leur suffit de ne pas appartenir à un même plan. Un cube en offre de nombreux exemples."
           explainWrong="Tu viens d’en manipuler un contre-exemple : deux arêtes du cube qui ne se croisent jamais et n’ont pourtant pas la même direction."
+          requires={['non-coplanaires']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
@@ -185,13 +198,11 @@ export default function Module07DansLeCube() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Dans l’espace, deux droites sont soit <strong>sécantes</strong>,
-          soit <strong>parallèles</strong>, soit <strong>non coplanaires</strong> — c’est-à-dire
-          qu’elles ne se rencontrent jamais sans pour autant avoir la même direction.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Il ne reste qu’à tout mettre à l’épreuve.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }
