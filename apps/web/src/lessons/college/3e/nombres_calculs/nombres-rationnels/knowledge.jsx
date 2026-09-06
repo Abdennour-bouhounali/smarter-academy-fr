@@ -311,6 +311,25 @@ export const LESSON_KNOWLEDGE = {
     /* M6 — L'ordre des opérations. */
     6: [
       {
+        id: 'mem-ordre-change-le-nombre',
+        type: 'memoriser',
+        title: '⭐ Changer l’ordre change le résultat',
+        summary: 'Mêmes nombres, ordre différent, nombre différent : 1/2 + 2/3 × 3/4 = 1, mais (1/2 + 2/3) × 3/4 = 7/8.',
+        body: (
+          <div className="space-y-3">
+            <div className="rounded-xl bg-rose-50 border-2 border-rose-200 p-4 space-y-2 text-center">
+              <MathText>{'$\\frac{1}{2} + \\frac{2}{3} \\times \\frac{3}{4} = 1$'}</MathText>
+              <div className="text-xs font-bold text-rose-700">mais</div>
+              <MathText>{'$\\left(\\frac{1}{2} + \\frac{2}{3}\\right) \\times \\frac{3}{4} = \\frac{7}{8}$'}</MathText>
+            </div>
+            <p>Les mêmes trois nombres, les mêmes deux opérations — et deux résultats différents.
+            C’est la parenthèse, et elle seule, qui a décidé.</p>
+            <p className="text-xs text-slate-500">D’où le réflexe : avant de calculer, on repère
+            l’opération prioritaire. Pas après.</p>
+          </div>
+        ),
+      },
+      {
         id: 'priorites-calcul',
         type: 'memoriser',
         title: '⭐ L’ordre des opérations',

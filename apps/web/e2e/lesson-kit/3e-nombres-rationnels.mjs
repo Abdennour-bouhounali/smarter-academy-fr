@@ -446,37 +446,58 @@ async function run() {
     await ctx.close();
   }
 
-  /* ── 8. M6 — StepPicker refuses the left-to-right order ───────────── */
+  /* ── 8. M6 — l'expression se replie sous les doigts de l'élève ────── */
   {
     const { ctx, page } = await open(browser, `${LESSON}/dans-quel-ordre`, ['0', '1', '2', '3', '4', '5'], { tag: 'm6' });
     const head = await body(page);
     check('M6: header shows module 6 of 9', /Module\s*6\s*\/\s*9/i.test(head));
     check('M6: no NaN', !/NaN/.test(head));
 
-    // Wrong on purpose: the left-to-right card must be refused with its reason.
-    const ltr = page.locator('button[aria-label="Additionner 1/2 et 2/3 (de gauche à droite)"]').first();
-    check('M6: step cards rendered', await ltr.isVisible());
-    await ltr.click();
-    await page.waitForTimeout(500);
+    const expr = page.locator('[data-expr]').first();
+    check('M6: the expression itself is the manipulation',
+      (await expr.getAttribute('data-expr')) === '1/2 + 2/3 × 3/4',
+      await expr.getAttribute('data-expr'));
+
+    // Wrong on purpose: the + must be REFUSED with its reason, and the
+    // expression must be left strictly untouched.
+    await page.locator('[data-expr-op="n-add"]').first().click();
+    await page.waitForTimeout(400);
     const refused = await body(page);
-    check('M6: the left-to-right card is refused with its reason', /Pas encore/i.test(refused) && /passe AVANT/i.test(refused), refused.slice(0, 500));
+    check('M6: tapping the + first is refused with the priority rule',
+      /Pas encore/i.test(refused) && /passe AVANT/i.test(refused), refused.slice(0, 500));
+    check('M6: a refused operator leaves the expression untouched',
+      (await expr.getAttribute('data-expr')) === '1/2 + 2/3 × 3/4');
 
-    await page.locator('button[aria-label="Multiplier 2/3 par 3/4"]').first().click();
-    await page.waitForTimeout(700);
+    // The × collapses in place, and the chain is BUILT from that pick.
+    await page.locator('[data-expr-op="n-mul"]').first().click();
+    await page.waitForTimeout(600);
+    check('M6: executing the product folds it into its value',
+      (await expr.getAttribute('data-expr')) === '1/2 + 1/2',
+      await expr.getAttribute('data-expr'));
     const s1 = await body(page);
-    check('M6: choosing the product builds the calc chain', /Le produit, prioritaire/i.test(s1), s1.slice(0, 500));
-    check('M6: the alternative order is shown to give another number', /7/.test(s1));
-    await page.screenshot({ path: `${SHOT_DIR}nr-m6-steppicker.png` });
+    check('M6: the calc chain is built from the student’s own pick',
+      /Le produit, prioritaire/i.test(s1), s1.slice(0, 500));
 
-    // Step 2: parentheses first.
-    const paren = page.locator('button[aria-label="Calculer ce qui est entre parenthèses"]').first();
-    if (await paren.isVisible().catch(() => false)) {
-      await paren.click();
-      await page.waitForTimeout(700);
-      const s2 = await body(page);
-      check('M6: parentheses scenario completes', /La parenthèse d’abord|La parenthèse d'abord/i.test(s2), s2.slice(0, 400));
+    await page.locator('[data-expr-op="n-add"]').first().click();
+    await page.waitForTimeout(600);
+    check('M6: the expression reduces to a single number',
+      (await expr.getAttribute('data-expr-done')) === 'true' && (await expr.getAttribute('data-expr')) === '1',
+      await expr.getAttribute('data-expr'));
+    await page.screenshot({ path: `${SHOT_DIR}nr-m6-reducer.png` });
+
+    // Étape 2 : l'élève FABRIQUE l'erreur — l'addition d'abord donne 7/8.
+    const free = page.locator('[data-expr]').nth(1);
+    if (await free.isVisible().catch(() => false)) {
+      await page.locator('[data-expr]').nth(1).locator('[data-expr-op="n-add"]').click();
+      await page.waitForTimeout(500);
+      await page.locator('[data-expr]').nth(1).locator('[data-expr-op]').first().click();
+      await page.waitForTimeout(600);
+      check('M6: forcing the addition first produces 7/8 — the student makes the error',
+        (await free.getAttribute('data-expr')) === '7/8', await free.getAttribute('data-expr'));
+      check('M6: the two orders are contrasted as an ORDER problem, not a calculation slip',
+        /C’est l’ORDRE qui était faux|c'est l'ORDRE qui était faux/i.test(await body(page)));
     } else {
-      check('M6: parentheses scenario reachable', false, 'card not visible');
+      check('M6: free-order step reachable', false, 'expression not visible');
     }
     await ctx.close();
   }
