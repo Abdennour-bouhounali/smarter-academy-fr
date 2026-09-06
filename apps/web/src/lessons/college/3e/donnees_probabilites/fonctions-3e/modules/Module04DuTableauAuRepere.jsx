@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -186,11 +187,17 @@ export default function Module04DuTableauAuRepere() {
               )}
 
               {done1 && (
-                <Feedback tone={revealed ? 'info' : 'ok'}>
-                  {revealed ? 'On te les montre : ' : 'Les cinq points sont posés. '}
-                  ils sont <strong>alignés</strong>. Cette droite est la{' '}
-                  <strong>représentation graphique</strong> de f.
-                </Feedback>
+                <>
+                  <Feedback tone={revealed ? 'info' : 'ok'}>
+                    {revealed ? 'On te les montre : ' : 'Les cinq points sont posés. '}
+                    ils sont <strong>alignés</strong>.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="representation-graphique"
+                    variant="new"
+                    lead="Ce dessin que tu viens d’obtenir point par point porte un nom."
+                  />
+                </>
               )}
             </div>
           ),
@@ -215,6 +222,7 @@ export default function Module04DuTableauAuRepere() {
                 expected={imageOf(RULE, 4)}
                 parse={parseDec}
                 display={formatDec(imageOf(RULE, 4))}
+                requires={['representation-graphique', 'notation-fx', 'image']}
                 explain="Sur la droite, au-dessus de 4, on lit 7. Et par le calcul : 2 × 4 − 1 = 7. Le graphique et la règle disent la même chose."
                 explainFor={(n) => {
                   if (n === 4) return 'Tu as relu l’abscisse. On demande l’ORDONNÉE du point, c’est-à-dire la hauteur.';
@@ -253,6 +261,7 @@ export default function Module04DuTableauAuRepere() {
               ]}
               correct={0}
               cols={1}
+              requires={['representation-graphique']}
               explain="Les points de x² ne sont pas alignés : la sortie augmente de plus en plus vite. L’allure du graphique dépend de la RÈGLE — toutes les fonctions ne donnent pas une droite."
               explainWrong="Regarde les hauteurs : 1, 0, 1, 4, 9. Les écarts ne sont pas constants, donc les points ne peuvent pas être alignés."
               solved={shapeDone}
@@ -265,30 +274,40 @@ export default function Module04DuTableauAuRepere() {
           title: 'Qu’est-ce qu’un point du graphique ?',
           done: alignDone,
           content: (
-            <TapQuestion
-              prompt={<>Le point de coordonnées <MathText>{'$(3 \\; ; \\; 5)$'}</MathText> est sur la courbe de f. Que peut-on affirmer ?</>}
-              options={[
-                'f(3) = 5 : 5 est l’image de 3',
-                'f(5) = 3 : 3 est l’image de 5',
-                'f(3) = f(5)',
-                'La fonction vaut 3 et 5 en même temps',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Un point de la courbe se lit (antécédent ; image). L’abscisse est ce qu’on entre, l’ordonnée ce qui sort : f(3) = 5."
-              explainWrong="L’abscisse vient toujours en premier, et c’est elle qu’on entre dans la fonction."
-              solved={alignDone}
-              onAnswered={() => setAlignDone(true)}
-            />
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="point-couple"
+                variant="new"
+                compact
+                lead="Tu viens de placer des points à partir d’un tableau. Voici la règle de lecture, dans l’autre sens."
+              />
+              <TapQuestion
+                prompt={<>Le point de coordonnées <MathText>{'$(3 \\; ; \\; 5)$'}</MathText> est sur la courbe de f. Que peut-on affirmer ?</>}
+                options={[
+                  'f(3) = 5 : 5 est l’image de 3',
+                  'f(5) = 3 : 3 est l’image de 5',
+                  'f(3) = f(5)',
+                  'La fonction vaut 3 et 5 en même temps',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['point-couple', 'image', 'notation-fx', 'coordonnees']}
+                explain="Un point de la courbe se lit (antécédent ; image). L’abscisse est ce qu’on entre, l’ordonnée ce qui sort : f(3) = 5."
+                explainWrong="L’abscisse vient toujours en premier, et c’est elle qu’on entre dans la fonction."
+                solved={alignDone}
+                onAnswered={() => setAlignDone(true)}
+              />
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Tableau, règle et graphique décrivent <strong>la même fonction</strong>. Au module
-          suivant, l’allure du graphique va servir à lui donner son nom.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tableau, règle et graphique décrivent <strong>la même
+          fonction</strong>. Au module suivant, l’allure du graphique va servir à lui donner son
+          nom.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -54,8 +54,22 @@ function Epreuve({ epreuve, index, total, pick, onPick }) {
   );
 }
 
+/**
+ * Indice de la bonne réponse d'une épreuve.
+ *
+ * Convention du projet : la bonne réponse est déclarée par `correct`. Seize
+ * leçons construites avant le 2026-09-06 l'ont OMISE en plaçant
+ * systématiquement la bonne réponse en première position ; `ep.correct` y
+ * valait `undefined`, qu'aucun choix ne peut égaler — leur test final
+ * affichait donc 0/N même pour un élève ayant tout juste (constaté au
+ * navigateur sur fonction-affine-2nde). La valeur par défaut 0 répare ces
+ * leçons sans toucher à leurs fichiers, et ne change rien à celles qui
+ * déclarent `correct` explicitement.
+ */
+const correctIndexOf = (ep) => (typeof ep.correct === 'number' ? ep.correct : 0);
+
 function BossReview({ epreuves, answers, onContinue, onRedo }) {
-  const correctCount = epreuves.filter((ep) => answers[ep.id] === ep.correct).length;
+  const correctCount = epreuves.filter((ep) => answers[ep.id] === correctIndexOf(ep)).length;
 
   const optionLabel = (ep, i) => (ep.optionLabel ? ep.optionLabel(i) : ep.options[i]);
 
@@ -71,7 +85,7 @@ function BossReview({ epreuves, answers, onContinue, onRedo }) {
       <div className="space-y-4">
         {epreuves.map((ep, i) => {
           const pick = answers[ep.id];
-          const isCorrect = pick === ep.correct;
+          const isCorrect = pick === correctIndexOf(ep);
           return (
             <div
               key={ep.id}
@@ -100,7 +114,7 @@ function BossReview({ epreuves, answers, onContinue, onRedo }) {
                 </div>
                 {!isCorrect && (
                   <div className="text-emerald-700">
-                    <strong>Bonne réponse :</strong> {optionLabel(ep, ep.correct)}
+                    <strong>Bonne réponse :</strong> {optionLabel(ep, correctIndexOf(ep))}
                   </div>
                 )}
               </div>
@@ -250,13 +264,13 @@ export default function BossFinal({
     const nextMisses = {};
     const attemptAnswers = [];
     epreuves.forEach((ep) => {
-      const isCorrect = bossAnswers[ep.id] === ep.correct;
+      const isCorrect = bossAnswers[ep.id] === correctIndexOf(ep);
       submitEvidence(ep, isCorrect, { picked: bossAnswers[ep.id] ?? null });
       attemptAnswers.push({
         questionCode: ep.id,
         picked: bossAnswers[ep.id] ?? null,
         isCorrect,
-        correctAnswer: ep.correct,
+        correctAnswer: correctIndexOf(ep),
       });
       if (isCorrect) {
         awardXP({ moduleId: String(moduleNumber), exerciseId: ep.id, amount: xpPerCorrect });

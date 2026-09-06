@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -79,6 +80,13 @@ export default function Module07DansLaVraieVie() {
           </p>
         ),
       }}
+      intro={(
+        <KnowledgeBrick
+          id="modeliser"
+          variant="new"
+          lead="Jusqu’ici la machine avalait des nombres nus. Voici comment elle s’applique à une situation réelle."
+        />
+      )}
       steps={[
         {
           num: 1,
@@ -87,6 +95,7 @@ export default function Module07DansLaVraieVie() {
           content: (
             <TapQuestion
               prompt="Quelle fonction donne le prix d’une course de x kilomètres ?"
+              requires={['modeliser', 'fonction-affine', 'notation-fx']}
               options={[
                 'f(x) = 1,5x + 2',
                 'f(x) = 2x + 1,5',
@@ -122,6 +131,7 @@ export default function Module07DansLaVraieVie() {
               />
               <NumericQuestion
                 prompt="Combien coûte une course de 6 km ?"
+                requires={['modeliser', 'image', 'notation-fx']}
                 expected={imageOf(TAXI, 6)}
                 parse={parseDec}
                 display={formatDec(imageOf(TAXI, 6))}
@@ -146,6 +156,7 @@ export default function Module07DansLaVraieVie() {
           content: (kit) => (
             <NumericQuestion
               prompt="Avec 14 €, quelle distance peux-tu parcourir ?"
+              requires={['modeliser', 'antecedent']}
               expected={antecedentsOf(TAXI, 14)[0]}
               parse={parseDec}
               display={formatDec(antecedentsOf(TAXI, 14)[0])}
@@ -210,6 +221,7 @@ export default function Module07DansLaVraieVie() {
               )}
               <NumericQuestion
                 prompt="À combien de minutes les deux forfaits coûtent-ils exactement pareil ?"
+                requires={['modeliser', 'representation-graphique']}
                 expected={CROSS.x}
                 parse={parseDec}
                 display={formatDec(CROSS.x)}
@@ -233,6 +245,7 @@ export default function Module07DansLaVraieVie() {
           content: (
             <TapQuestion
               prompt="Léa téléphone environ 40 minutes par mois. Que lui conseilles-tu ?"
+              requires={['modeliser', 'representation-graphique']}
               options={[
                 'Le forfait A : avant 60 min, il est moins cher',
                 'Le forfait B : il a un abonnement, donc il est plus avantageux',
@@ -248,13 +261,13 @@ export default function Module07DansLaVraieVie() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Dans une situation réelle, <strong>a</strong> est un taux (par km, par minute) et{' '}
-          <strong>b</strong> ce qu’on paie même sans rien consommer. Répondre, c’est calculer
-          une image ou chercher un antécédent — puis revenir à la question posée.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Dans une situation réelle, <strong>a</strong> est un taux
+          (par km, par minute) et <strong>b</strong> ce qu’on paie même sans rien consommer. Il
+          ne reste qu’à mettre tout cela à l’épreuve.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

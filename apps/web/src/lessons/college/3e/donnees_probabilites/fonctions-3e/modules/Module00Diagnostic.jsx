@@ -11,6 +11,11 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * fonction linéaire ou affine. Aucune question ne porte de métadonnée
  * `assessment` : un diagnostic n'est pas une évaluation et ne produit aucune
  * preuve d'apprentissage.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique.
+ * Ces ids sont exactement ceux du `priorKnowledge` de la leçon : un module 0
+ * n'interroge QUE des connaissances antérieures, jamais la matière de la leçon
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 
 const SKILLS = {
@@ -24,6 +29,7 @@ const QUESTIONS = [
     id: 'fo-d1',
     skill: 'repere',
     points: 2,
+    requires: ['coordonnees', 'abscisse', 'ordonnee', 'origine-repere'],
     prompt: 'Dans un repère, quelles sont les coordonnées d’un point situé 3 unités à droite et 2 unités en dessous de l’origine ?',
     options: ['(3 ; −2)', '(−2 ; 3)', '(2 ; −3)', '(−3 ; 2)'],
     cols: 2,
@@ -34,6 +40,7 @@ const QUESTIONS = [
     id: 'fo-d2',
     skill: 'repere',
     points: 2,
+    requires: ['ordonnee', 'abscisse'],
     prompt: 'Un point a pour ordonnée 0. Où se trouve-t-il ?',
     options: ["Sur l'axe des abscisses", "Sur l'axe des ordonnées", "À l'origine", 'Impossible à dire'],
     cols: 2,
@@ -44,6 +51,7 @@ const QUESTIONS = [
     id: 'fo-d3',
     skill: 'litteral',
     points: 2,
+    requires: ['calcul-litteral'],
     prompt: 'Que vaut 3x + 5 quand x = −2 ?',
     options: ['−1', '11', '1', '−11'],
     cols: 2,
@@ -54,6 +62,7 @@ const QUESTIONS = [
     id: 'fo-d4',
     skill: 'litteral',
     points: 2,
+    requires: ['calcul-litteral'],
     prompt: 'Quelle valeur de x vérifie 2x + 1 = 9 ?',
     options: ['4', '5', '3', '4,5'],
     cols: 2,
@@ -64,6 +73,7 @@ const QUESTIONS = [
     id: 'fo-d5',
     skill: 'proportion',
     points: 2,
+    requires: ['proportionnalite'],
     prompt: '4 cahiers coûtent 6 €. Combien coûtent 10 cahiers au même prix unitaire ?',
     options: ['15 €', '12 €', '18 €', '24 €'],
     cols: 2,

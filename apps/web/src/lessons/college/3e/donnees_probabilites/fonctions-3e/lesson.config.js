@@ -33,6 +33,13 @@ export const LESSON_BASE_PATH = '/courses/college/3e/donnees_probabilites/foncti
 export const LESSON_CONFIG = {
   id: 'fonctions-3e',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (états A du contrat « connaissances avant
+  // la demande ») : elles viennent des années précédentes et le module 0 les
+  // diagnostique. Tout le reste doit être établi dans la leçon même.
+  priorKnowledge: ['abscisse', 'ordonnee', 'coordonnees', 'origine-repere', 'calcul-litteral', 'proportionnalite'],
   title: 'Fonctions',
   description:
     "Nourrir une machine à nombres jusqu'à ce que « image », « antécédent » et f(x) deviennent des mots pour ce qu'on vient de faire, puis lire la même fonction dans un tableau, dans un repère et dans une situation réelle.",

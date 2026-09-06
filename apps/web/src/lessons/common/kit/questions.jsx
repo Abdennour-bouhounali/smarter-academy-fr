@@ -14,6 +14,12 @@ import { useKit } from './ContentModule';
  *  - en cas d'erreur : sa réponse, la bonne réponse, et le rappel de la
  *    règle (explain) sont affichés — pas de boucle « Réessayer » ;
  *  - son/série/burst branchés via useKit(), sans câblage par module.
+ *
+ * `requires` — le CONTRAT de dépendance de la question : les ids des
+ * connaissances qu'elle suppose acquises. Sans effet à l'exécution ; il est lu
+ * par scripts/audit-knowledge-dependencies.mjs, qui vérifie que chacune a bien
+ * été établie AVANT elle (une <KnowledgeBrick> plus haut, ou le
+ * `priorKnowledge` de la leçon). Voir docs/architecture/KNOWLEDGE_DEPENDENCY.md.
  */
 
 /* ── QCM à un choix : le tap EST la réponse ───────────────────────── */
@@ -27,6 +33,7 @@ export function TapQuestion({
   correctionLabel, // libellé de la bonne réponse si options[correct] n'est pas affichable tel quel
   explain,         // rappel de la règle, affiché juste ou faux
   explainWrong,    // remplace `explain` en cas d'erreur (optionnel)
+  requires,        // string[] — connaissances supposées acquises (contrat d'audit, sans effet runtime)
   xp = 10,
   solved = false,  // revisite : grille figée, pas de re-réponse
   onAnswered,      // (isCorrect, index) => void — inconditionnel
@@ -86,6 +93,7 @@ export function BatchChoiceQuestion({
   intro,          // ReactNode au-dessus des lignes
   rows,           // [{ id, label, options: [ReactNode], correct, correction? }]
   feedback,       // ({ allRight, nCorrect, total }) => ReactNode — un seul bloc de feedback
+  requires,       // string[] — connaissances supposées acquises (contrat d'audit, sans effet runtime)
   xp = 10,
   solved = false,
   onAnswered,     // (allRight) => void — inconditionnel
@@ -184,6 +192,7 @@ export function NumericQuestion({
   display,         // affichage de la bonne réponse (déf. formatFr(expected))
   explain,         // rappel de règle, juste ou faux
   explainFor,      // (n) => ReactNode — feedback ciblé selon l'erreur (pièges)
+  requires,        // string[] — connaissances supposées acquises (contrat d'audit, sans effet runtime)
   width = 'w-32',
   size = 'sm',
   solved = false,

@@ -4,7 +4,7 @@
 
 ## 1. Identity & curriculum contract
 
-- Key `seconde_vecteurs` · id `vecteurs-2nde` (pre-authored in the catalogue as `coming_soon`; kept) · ➡️ · Difficile · free · 90 min.
+- Key `seconde_vecteurs` · id `vecteurs-2nde` (pre-authored in the catalogue as `coming_soon`; kept) · ➡️ · Difficile · free · 84 min (90 before the « À retenir » module was folded into the Knowledge Map, 2026-09-05).
 - Directory `apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/`, route `/courses/lycee/seconde/geometrie/vecteurs-2nde`.
 - 14 LPs (`seconde_vecteurs-2nde_P1…P14`, append-only): P1 égalité · P2 vecteur nul · P3 représentant · P4 addition · P5 produit par un réel · P6 colinéaires · P7 base orthonormée · P8 lire les coordonnées · P9 calculer les coordonnées · P10 norme · P11 coordonnées de AB · P12 distance · P13 milieu · P14 résoudre un problème.
 - Prerequisites (catalogue): Repérage dans le plan, Translations, Coordonnées — the 3e lesson `translations-vecteurs-3e` is the natural predecessor; Pythagore is assumed for the norm.
@@ -31,7 +31,7 @@ Concrete situation: a warehouse robot on a tiled floor must reach a station. Con
 
 The whole lesson reuses the plane: `VectorLab` (move / build), `SumLab`, `ScaleLab`, `NormLab`, each exposing exactly the concept's own variable. Every arrow label and point name is placed by `labelLayout.placeLabels` (collision-aware, frame-clamped) — never at a fixed offset.
 
-## 4. Module architecture (10 · 90 min)
+## 4. Module architecture (9 · 84 min)
 
 | # | Slug | Stage | LPs | min | Responsibility | Interaction |
 |---|---|---|---|---|---|---|
@@ -42,9 +42,8 @@ The whole lesson reuses the plane: `VectorLab` (move / build), `SumLab`, `ScaleL
 | 4 | enchainer-les-deplacements | manipulation | P4 P2 P9 | 10 | tip-to-tail sum, coordinates add, Chasles, u + (−u) = 0 | `SumLab` |
 | 5 | etirer-inverser | manipulation | P5 P6 P9 | 9 | k·u : sens and length, k = 0, colinéarité | `ScaleLab` |
 | 6 | mesurer-un-vecteur | manipulation | P10 P12 P13 P7 | 9 | norm from the staircase (Pythagore), distance AB, milieu | `NormLab` |
-| 7 | a-retenir | formalization | P1 P2 P4 P5 P6 P8 P9 P10 P11 P12 P13 | 6 | the card + checks | kit |
-| 8 | problemes-de-geometrie | practice_lab | P14 P3 P11 P13 P6 | 10 | parallélogramme, missing displacement, alignement | `VectorLab` + kit |
-| 9 | mission-finale-le-depot | evaluation | — | 15 | 10 QCM covering P1–P14 | kit `BossFinal` |
+| 7 | problemes-de-geometrie | practice_lab | P14 P3 P11 P13 P6 | 10 | parallélogramme, missing displacement, alignement | `VectorLab` + kit |
+| 8 | mission-finale-le-depot | evaluation | — | 15 | 10 QCM covering P1–P14 ; synthèse = the complete Knowledge Map | kit `BossFinal` |
 
 ## 5. Model — `components/vecteurUtils.js` (tested)
 
@@ -63,3 +62,14 @@ RANGE is −6…6 on both axes (13 ticks, every label drawn). Every control clam
 ## Shipped state (2026-09-05)
 
 `available`, module sum 90 = catalogue duration, validator `14/14 learning points covered` with the repo total unchanged at its 6-error baseline, `vitest` 27/27 for the lesson (label sweeps included), `npm run build` green, e2e `2nde-vecteurs.mjs` 72/72 (desktop + mobile, zero console errors), `smarter:import-curriculum` run (one lesson row updated, learning points already present).
+
+## Knowledge Map (2026-09-05)
+
+The lesson is the reference integration of the Knowledge Map: `knowledge.jsx` declares what each
+module contributes, `components/knowledgeState.js` cumulates it over the completed modules,
+`components/KnowledgeProvider.jsx` (mounted by `routes.jsx`) feeds both the drawer « Ma carte »
+and the end-of-module « À retenir » (`components/KnowledgeSnapshot.jsx`). Consequences on the
+architecture above: the former module 7 « À retenir » no longer exists (every module's À retenir
+IS the current map, so `lesson.config.js` declares `knowledgeMap: true` in place of a
+`formalization` module), modules were renumbered 7 = problèmes, 8 = mission finale, and the boss's
+synthèse renders the complete map. E2E: `2nde-vecteurs-carte.mjs`.

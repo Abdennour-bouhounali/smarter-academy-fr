@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
@@ -48,6 +49,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'fo-e1',
+    requires: ['fonction-machine', 'mem-une-entree-une-sortie'],
     skill: 'notion',
     title: 'Épreuve 1',
     prompt: "Une machine transforme chaque nombre selon une règle fixe. On lui donne 4 une deuxième fois. Que renvoie-t-elle ?",
@@ -64,6 +66,7 @@ const EPREUVES = [
   },
   {
     id: 'fo-e2',
+    requires: ['image', 'notation-fx'],
     skill: 'vocabulaire',
     title: 'Épreuve 2',
     prompt: 'On sait que f(5) = 12. Quelle phrase est exacte ?',
@@ -80,6 +83,7 @@ const EPREUVES = [
   },
   {
     id: 'fo-e3',
+    requires: ['antecedent', 'notation-fx'],
     skill: 'vocabulaire',
     title: 'Épreuve 3',
     prompt: 'Soit f(x) = 4x + 3. Que vaut f(−2) ?',
@@ -91,6 +95,7 @@ const EPREUVES = [
   },
   {
     id: 'fo-e4',
+    requires: ['antecedent', 'image'],
     skill: 'vocabulaire',
     title: 'Épreuve 4',
     prompt: 'Soit g(x) = x². Combien le nombre 9 a-t-il d’antécédents par g ?',
@@ -102,6 +107,7 @@ const EPREUVES = [
   },
   {
     id: 'fo-e5',
+    requires: ['tableau-de-valeurs', 'notation-fx'],
     skill: 'tableau',
     title: 'Épreuve 5',
     prompt: 'Un tableau de valeurs de f donne les images de −2, −1, 0, 1 et 2. Peut-on en déduire f(7) ?',
@@ -123,9 +129,10 @@ const EPREUVES = [
   },
   {
     id: 'fo-e6',
+    requires: ['point-couple', 'representation-graphique', 'notation-fx'],
     skill: 'graphique',
     title: 'Épreuve 6',
-    prompt: 'Le point de coordonnées (2 ; 7) appartient à la courbe de f. Qu’en déduit-on ?',
+    prompt: 'Le point de coordonnées (2 ; 7) est sur la courbe de f. Qu’en déduit-on ?',
     options: ['f(2) = 7', 'f(7) = 2', 'f(2) = f(7)', 'f(2) + f(7) = 9'],
     cols: 2,
     correct: 0,
@@ -134,6 +141,7 @@ const EPREUVES = [
   },
   {
     id: 'fo-e7',
+    requires: ['representation-graphique', 'image', 'antecedent'],
     skill: 'graphique',
     title: 'Épreuve 7',
     prompt: 'On place les points d’un tableau dans un repère et ils ne sont PAS alignés. Que peut-on conclure ?',
@@ -150,6 +158,7 @@ const EPREUVES = [
   },
   {
     id: 'fo-e8',
+    requires: ['fonction-affine', 'fonction-lineaire'],
     skill: 'familles',
     title: 'Épreuve 8',
     prompt: 'Parmi ces fonctions, laquelle est linéaire ?',
@@ -161,6 +170,7 @@ const EPREUVES = [
   },
   {
     id: 'fo-e9',
+    requires: ['methode-retrouver-a-b', 'ordonnee-origine', 'fonction-affine'],
     skill: 'expression',
     title: 'Épreuve 9',
     prompt: 'Une droite coupe l’axe des ordonnées en −4 et, quand x avance de 1, elle monte de 3. Quelle est son expression ?',
@@ -172,6 +182,7 @@ const EPREUVES = [
   },
   {
     id: 'fo-e10',
+    requires: ['modeliser', 'fonction-affine'],
     skill: 'modele',
     title: 'Épreuve 10',
     prompt: 'Un plombier facture 40 € de déplacement puis 35 € par heure. Quelle fonction donne le prix pour x heures de travail ?',
@@ -237,17 +248,6 @@ function Synthese() {
         />
       </div>
 
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-4 space-y-2">
-        <p className="font-bold text-slate-800">Les mots, dans l’ordre où ils sont venus</p>
-        <ul className="text-sm text-slate-700 space-y-1 list-disc list-inside">
-          <li><strong>Fonction</strong> : un procédé qui associe à chaque nombre UNE sortie.</li>
-          <li><strong>Image</strong> de x : le résultat, noté <MathText>{'$f(x)$'}</MathText>.</li>
-          <li><strong>Antécédent</strong> de y : un nombre dont l’image est y — il peut y en avoir plusieurs.</li>
-          <li><strong>Affine</strong> : <MathText>{'$f(x) = ax + b$'}</MathText>, représentée par une droite.</li>
-          <li><strong>Linéaire</strong> : le cas <MathText>{'$b = 0$'}</MathText>, la droite passe par l’origine.</li>
-        </ul>
-      </div>
-
       <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4">
         <p className="font-bold text-rose-800 mb-2">Les pièges déjoués</p>
         <ul className="space-y-1.5 text-sm">
@@ -266,6 +266,9 @@ function Synthese() {
         deux sens, la ranger en tableau, la dessiner, la nommer et la reconnaître dans une
         facture de taxi.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

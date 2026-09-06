@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -107,6 +108,7 @@ export default function Module05LineaireAffine() {
                 ]}
                 correct={0}
                 cols={1}
+                requires={['representation-graphique']}
                 explain="f et g sont représentées par des DROITES. h, la fonction carré, donne une courbe. C’est l’allure qui sépare les deux familles."
                 explainWrong="Regarde g : elle coupe l’axe des ordonnées en 3, donc elle ne passe pas par l’origine — et pourtant c’est bien une droite."
                 solved={shapeDone}
@@ -120,21 +122,32 @@ export default function Module05LineaireAffine() {
           title: 'Et entre f et g ?',
           done: originDone,
           content: (
-            <TapQuestion
-              prompt="Les deux sont des droites. Qu’est-ce qui les sépare ?"
-              options={[
-                'f passe par l’origine, pas g',
-                'f est plus inclinée que g',
-                'g est plus longue',
-                'Rien du tout',
-              ]}
-              correct={0}
-              cols={1}
-              explain="f(x) = 2x passe par l’origine : f(0) = 0. g(x) = 2x + 3 coupe l’axe des ordonnées en 3. Le « + 3 » est exactement ce décalage vers le haut."
-              explainWrong="Les deux droites ont la même inclinaison (le même 2 devant x). Ce qui change, c’est leur point de départ sur l’axe vertical."
-              solved={originDone}
-              onAnswered={() => setOriginDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Les deux sont des droites. Qu’est-ce qui les sépare ?"
+                options={[
+                  'f passe par l’origine, pas g',
+                  'f est plus inclinée que g',
+                  'g est plus longue',
+                  'Rien du tout',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['representation-graphique', 'origine-repere']}
+                explain="f(x) = 2x passe par l’origine : f(0) = 0. g(x) = 2x + 3 coupe l’axe des ordonnées en 3. Le « + 3 » est exactement ce décalage vers le haut."
+                explainWrong="Les deux droites ont la même inclinaison (le même 2 devant x). Ce qui change, c’est leur point de départ sur l’axe vertical."
+                solved={originDone}
+                onAnswered={() => setOriginDone(true)}
+              />
+              {originDone && (
+                <KnowledgeBrick
+                  id="ordonnee-origine"
+                  variant="new"
+                  lead="La hauteur à laquelle g coupe l’axe vertical — ce 3 que tu viens de repérer — porte un nom."
+                  compact
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -143,21 +156,10 @@ export default function Module05LineaireAffine() {
           done: sortDone,
           content: (
             <div className="space-y-3">
-              <div className="rounded-xl border-2 border-slate-900 bg-slate-900 text-white p-4 space-y-2">
-                <p className="font-bold">🔑 À retenir</p>
-                <p>
-                  Une fonction <strong>affine</strong> s’écrit{' '}
-                  <MathText>{'$f(x) = ax + b$'}</MathText> : sa représentation est une droite.
-                </p>
-                <p>
-                  Une fonction <strong>linéaire</strong> est le cas où{' '}
-                  <MathText>{'$b = 0$'}</MathText>, donc{' '}
-                  <MathText>{'$f(x) = ax$'}</MathText> : sa droite passe par l’origine.
-                </p>
-                <p className="text-slate-300 text-sm">
-                  Toute fonction linéaire est donc affine — mais l’inverse est faux.
-                </p>
-              </div>
+              <KnowledgeBrick id="fonction-affine" variant="new" compact
+                lead="Les deux droites que tu viens de comparer appartiennent à une même famille, qui porte un nom." />
+              <KnowledgeBrick id="fonction-lineaire" variant="new" compact
+                lead="Celle qui passe par l’origine en est un cas particulier." />
               <BatchChoiceQuestion
                 intro={<p className="text-sm text-slate-600">Classe chaque écriture.</p>}
                 rows={[
@@ -170,6 +172,7 @@ export default function Module05LineaireAffine() {
                   { id: 'r4', label: 'f(x) = 7', options: ['linéaire', 'affine non linéaire', 'ni l’une ni l’autre'], correct: 1,
                     correction: 'C’est 0 × x + 7 : affine (constante), pas linéaire car b ≠ 0.' },
                 ]}
+                requires={['fonction-affine', 'fonction-lineaire']}
                 feedback={({ allRight, nCorrect, total }) =>
                   allRight
                     ? <>Les quatre sont justes. Le test est toujours le même : peut-on l’écrire <MathText>{'$ax + b$'}</MathText> ?</>
@@ -186,7 +189,8 @@ export default function Module05LineaireAffine() {
           title: 'Le piège classique',
           done: bothDone,
           content: (
-            <TapQuestion
+            <div className="space-y-3">
+              <TapQuestion
               prompt={<>La fonction <MathText>{'$f(x) = 4x$'}</MathText> est-elle affine ?</>}
               options={[
                 'Oui : c’est le cas b = 0, elle est linéaire ET affine',
@@ -195,21 +199,31 @@ export default function Module05LineaireAffine() {
               ]}
               correct={0}
               cols={1}
+              requires={['fonction-affine', 'fonction-lineaire']}
               explain="4x s’écrit 4x + 0 : elle est bien de la forme ax + b. Les linéaires forment une famille À L’INTÉRIEUR des affines, comme les carrés parmi les rectangles."
               explainWrong="« Linéaire » ne s’oppose pas à « affine » : c’est un cas particulier d’affine, celui où la droite passe par l’origine."
-              solved={bothDone}
-              onAnswered={() => setBothDone(true)}
-            />
+                solved={bothDone}
+                onAnswered={() => setBothDone(true)}
+              />
+              {bothDone && (
+                <KnowledgeBrick
+                  id="mem-lineaire-est-affine"
+                  variant="new"
+                  compact
+                  lead="Retiens l’emboîtement que ce piège vient de mettre en évidence."
+                />
+              )}
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Tu sais reconnaître une famille à son graphique et à son écriture. Reste à faire
-          l’inverse : retrouver <MathText>{'$a$'}</MathText> et <MathText>{'$b$'}</MathText> à
-          partir de ce qu’on te donne.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais reconnaître une famille à son graphique et à son
+          écriture. Reste à faire l’inverse : retrouver <MathText>{'$a$'}</MathText> et{' '}
+          <MathText>{'$b$'}</MathText> à partir de ce qu’on te donne.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

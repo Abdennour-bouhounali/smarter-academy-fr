@@ -61,20 +61,23 @@ map grid — will the paths cross? Where? Can they cross twice?
 The same plane returns in M2 (only v moves), M3/M4 (lines driven by m₂/p₂ with `ParamSlider`), M6 (frozen)
 and the boss's Synthèse (frozen, three configurations).
 
-## 4. Module architecture (8 · 70 min)
+## 4. Module architecture (7 · 70 min) — shipped 2026-09-06
+
+No dedicated « À retenir » module: the lesson declares `knowledgeMap: true` and formalises continuously
+through the cumulative Knowledge Map (`knowledge.jsx`, shared implementation `lessons/common/knowledge`).
+Every content module ends on `<KnowledgeSnapshot moduleNumber={n}>`; the boss synthèse is the complete map.
 
 | # | Slug | Stage | LPs | min | Responsibility | Interaction |
 |---|---|---|---|---|---|---|
 | 0 | mission-de-depart | prerequisite_check | — | 4 | m and p, slope, vector coords, det, one equation | kit |
-| 1 | le-laboratoire-des-deux-droites | trigger | P1 P2 | 9 | produce sécantes → parallèles → confondues; direction vs position | `TwoLinesPlane` + `HandlePad` + `PredictionChips` |
-| 2 | la-direction | discovery | P3 P1 | 9 | det(u, v) = 0 ⇔ parallèles; pente = v_y / v_x; vertical trap | `TwoLinesPlane` (v only) |
-| 3 | les-equations | discovery | P4 P1 P2 | 9 | m₁ = m₂ ⇔ parallèles; p decides confondues; cartesian ⇔ reduced | `ParamSlider` m₂/p₂ |
-| 4 | le-point-dintersection | manipulation | P5 P6 P7 | 11 | I moves with (d₂); I leaves the frame; solve the system; interpret 0/1/∞ solutions | `ParamSlider` + zoom chips + `NumericQuestion` |
-| 5 | a-retenir | formalization | P1–P7 | 7 | the decision procedure as one card, built from the gestures | kit |
-| 6 | deux-trajectoires | practice_lab | P8 P5 P6 P7 | 8 | crossing paths, parallel roads, parallel through a point, (AB) ∥ (CD) — visual support removed step by step | frozen plane, then none |
-| 7 | mission-finale-le-croisement | evaluation | — | 13 | 10 QCM | kit `BossFinal` |
+| 1 | le-laboratoire-des-deux-droites | trigger | P1 P2 | 9 | produce parallèles (v only) → confondues (B only) → all three; direction vs position | `TwoLinesPlane` + `HandlePad` + `PredictionChips` |
+| 2 | la-direction | discovery | P3 P1 P2 | 9 | det(u, v) = 0 ⇔ parallèles; pente = v_y / v_x; vertical trap | `TwoLinesPlane` (v only), live det / slopes in the DOM |
+| 3 | les-equations | discovery | P4 P1 P2 | 10 | m₂ = m₁ ⇔ parallèles for any p₂; p₂ = p₁ ⇔ confondues; cartesian ⇔ reduced | `ReducedLab` (`ParamSlider` m₂ / p₂, one locked at a time) |
+| 4 | le-point-d-intersection | manipulation | P5 P6 P7 | 12 | I leaves the ±6 frame and is found at ±15 / ±40; solve the system; 0 / 1 / ∞ | `ReducedLab` + zoom chips + `NumericQuestion` traps |
+| 5 | deux-trajectoires | practice_lab | P8 P5 P6 P7 P4 | 11 | crossing drones, parallel through a point, (AB) ∥ (CD), 0 = 0 — support removed step by step | frozen planes, then none |
+| 6 | mission-finale-le-croisement | evaluation | — | 15 | 10 QCM, synthèse = complete Knowledge Map | kit `BossFinal` |
 
-Stages are non-decreasing; every LP is taught by a non-evaluation module and assessed by the boss.
+Knowledge Map contributions: M1 4 · M2 4 · M3 4 · M4 6 · M5 3 = 21 items. Module 0 and the boss contribute nothing.
 
 ## 5. Mathematical model — `components/droitesUtils.js`
 
@@ -112,6 +115,12 @@ is free; the e2e suites sweep the handles and sliders with the CTM-aware `layout
   prediction without verdict + escape hatch, M2 det, M3 sliders, M4 zoom + far intersection + trap values,
   M5/M6 wrong-on-purpose, boss silent → score → profil → synthèse → reload, mobile M1/M4 pass, zero errors.
 
-## Shipped state
+## Shipped state (2026-09-06)
 
-See the end of the file once the gate chain has run.
+- Files: `lesson.config.js`, `moduleContext.js`, `index.jsx`, `routes.jsx`, `knowledge.jsx`,
+  `components/{droitesUtils,labelLayout}.js` (+ tests, sweep test now counts only VISIBLE chords —
+  a line through a single corner of the frame has nothing to name), `TwoLinesPlane.jsx`, `HandlePad.jsx`,
+  `LineReadouts.jsx`, `ReducedLab.jsx`, `PredictionChips.jsx`, `Stepper.jsx`, `learningPoints.js`,
+  `modules/Module00…06`.
+- Knowledge Map: imported from `apps/web/src/lessons/common/knowledge/` (first lesson to do so).
+- Validation: `validate:lessons` 8/8 LPs, zero new errors; vitest 16/16; e2e `2nde-positions-relatives.mjs` (vite :5241).

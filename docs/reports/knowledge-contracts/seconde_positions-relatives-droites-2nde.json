@@ -1,0 +1,758 @@
+{
+  "lesson": "positions-relatives-droites-2nde",
+  "grade": "seconde",
+  "lexiconVersion": 1,
+  "prerequisites": [],
+  "conceptsIntroduced": [
+    {
+      "id": "positions-trois-cas",
+      "type": "concepts",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "regle-direction-position",
+      "type": "regles",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "critere-vecteurs-directeurs",
+      "type": "regles",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "critere-pentes",
+      "type": "regles",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "formule-det-directions",
+      "type": "formules",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "critere-equations-reduites",
+      "type": "regles",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "critere-equations-cartesiennes",
+      "type": "regles",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "point-intersection-systeme",
+      "type": "concepts",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "regle-nombre-solutions",
+      "type": "regles",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "formule-abscisse-intersection",
+      "type": "formules",
+      "module": 4,
+      "brick": null
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "vocab-secantes-paralleles-confondues",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": null
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "methode-comparer-directions",
+      "type": "methodes",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "methode-ramener-meme-ecriture",
+      "type": "methodes",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "methode-resoudre-systeme",
+      "type": "methodes",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "methode-interpretation-graphique",
+      "type": "methodes",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "methode-parallele-par-un-point",
+      "type": "methodes",
+      "module": 5,
+      "brick": null
+    },
+    {
+      "id": "methode-ab-cd",
+      "type": "methodes",
+      "module": 5,
+      "brick": null
+    },
+    {
+      "id": "methode-trajectoires",
+      "type": "methodes",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-trois-comptes",
+      "type": "memoriser",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "mem-m-decide-p-departage",
+      "type": "memoriser",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "mem-intersection-systeme",
+      "type": "memoriser",
+      "module": 4,
+      "brick": null
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "pr-d1-lire-mp",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
+      "line": 21,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-d2-pente",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
+      "line": 31,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-d3-vecteur",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
+      "line": 41,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-d4-det",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
+      "line": 51,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [
+        "colineaire"
+      ],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-d5-equation",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
+      "line": 61,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q1",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module01LeLaboratoireDesDeuxDroites.jsx",
+      "line": 236,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q1",
+      "module": 2,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module02LaDirection.jsx",
+      "line": 138,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q2",
+      "module": 2,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module02LaDirection.jsx",
+      "line": 158,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q1",
+      "module": 3,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module03LesEquations.jsx",
+      "line": 93,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q2",
+      "module": 3,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module03LesEquations.jsx",
+      "line": 116,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module04LePointDIntersection.jsx",
+      "line": 100,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q2",
+      "module": 4,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module04LePointDIntersection.jsx",
+      "line": 115,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q3",
+      "module": 4,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module04LePointDIntersection.jsx",
+      "line": 136,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q4",
+      "module": 4,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module04LePointDIntersection.jsx",
+      "line": 159,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S1-Q1",
+      "module": 5,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module05DeuxTrajectoires.jsx",
+      "line": 48,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S1-Q2",
+      "module": 5,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module05DeuxTrajectoires.jsx",
+      "line": 62,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q3",
+      "module": 5,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module05DeuxTrajectoires.jsx",
+      "line": 89,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q4",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module05DeuxTrajectoires.jsx",
+      "line": 111,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q5",
+      "module": 5,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module05DeuxTrajectoires.jsx",
+      "line": 137,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e1",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 26,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e2",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 41,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e3",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 51,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e4",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 61,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e5",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 76,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e6",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 86,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e7",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 96,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e8",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 106,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e9",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 116,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pr-e10",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module06MissionFinale.jsx",
+      "line": 126,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "M_TAUGHT_TOO_LATE",
+      "severity": "medium",
+      "message": "« colinéaire » first appears at diag.option (module 0), before its teaching position at apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module02LaDirection.jsx:96",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
+      "line": 56,
+      "module": 0,
+      "step": null,
+      "term": "colineaire",
+      "questionId": "pr-d4-det",
+      "position": 17
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'positions-trois-cas' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 36,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-direction-position' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 55,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vocab-secantes-paralleles-confondues' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 73,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-trois-comptes' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 88,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'critere-vecteurs-directeurs' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 108,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'critere-pentes' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 128,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-comparer-directions' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 141,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-det-directions' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 155,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'critere-equations-reduites' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 171,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'critere-equations-cartesiennes' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 188,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-ramener-meme-ecriture' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 201,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-m-decide-p-departage' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 215,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'point-intersection-systeme' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 231,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-resoudre-systeme' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 248,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-nombre-solutions' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 269,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-interpretation-graphique' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 283,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-abscisse-intersection' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 295,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-intersection-systeme' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 307,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-parallele-par-un-point' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 323,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-ab-cd' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 339,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-trajectoires' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/knowledge.jsx",
+      "line": 355,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    }
+  ]
+}

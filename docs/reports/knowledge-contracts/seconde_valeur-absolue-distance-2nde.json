@@ -1,0 +1,621 @@
+{
+  "lesson": "valeur-absolue-distance-2nde",
+  "grade": "seconde",
+  "lexiconVersion": 1,
+  "prerequisites": [],
+  "conceptsIntroduced": [
+    {
+      "id": "valeur-absolue-distance-zero",
+      "type": "concepts",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "regle-opposes-meme-distance",
+      "type": "regles",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "regle-calcul-valeur-absolue",
+      "type": "regles",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "distance-deux-nombres",
+      "type": "concepts",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "regle-distance-invariante",
+      "type": "regles",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "faisceau-intervalle",
+      "type": "regles",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "equation-distance-egale",
+      "type": "regles",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "regle-deux-positions",
+      "type": "regles",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "vocabularyIntroduced": [],
+  "proceduresIntroduced": [
+    {
+      "id": "methode-calculer-expression-absolue",
+      "type": "methodes",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "methode-centre-rayon",
+      "type": "methodes",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "methode-tolerance",
+      "type": "methodes",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-valeur-absolue-positive",
+      "type": "memoriser",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "mem-distance",
+      "type": "memoriser",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "mem-faisceau",
+      "type": "memoriser",
+      "module": 4,
+      "brick": null
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "q1-oppose",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
+      "line": 16,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "q2-lire",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
+      "line": 17,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "q3-soustraire",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
+      "line": 18,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "q4-appartient",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
+      "line": 19,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [
+        "appartient"
+      ],
+      "pedagogicallyValid": false
+    },
+    {
+      "questionId": "q5-notation",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
+      "line": 20,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [
+        "intervalle-crochets"
+      ],
+      "pedagogicallyValid": false
+    },
+    {
+      "questionId": "M01-S3-Q1",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module01DeuxBateaux.jsx",
+      "line": 89,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q1",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module02CalculerValeurAbsolue.jsx",
+      "line": 52,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module02CalculerValeurAbsolue.jsx",
+      "line": 63,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module03DistanceEntreDeuxNombres.jsx",
+      "line": 61,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module03DistanceEntreDeuxNombres.jsx",
+      "line": 72,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S1-Q1",
+      "module": 4,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module04LeFaisceau.jsx",
+      "line": 52,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module04LeFaisceau.jsx",
+      "line": 85,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S1-Q1",
+      "module": 5,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module05Situations.jsx",
+      "line": 35,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S1-Q2",
+      "module": 5,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module05Situations.jsx",
+      "line": 40,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q3",
+      "module": 5,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module05Situations.jsx",
+      "line": 51,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q4",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module05Situations.jsx",
+      "line": 60,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q5",
+      "module": 5,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module05Situations.jsx",
+      "line": 69,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e1",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 31,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e2",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 32,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e3",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 33,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e4",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 34,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e5",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 35,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e6",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 36,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e7",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 37,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e8",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 38,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e9",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 39,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-e10",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module06MissionFinale.jsx",
+      "line": 40,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
+      "severity": "critical",
+      "message": "« symbole ∈ » is a target concept of this lesson but its first appearance is diag.prompt (module 0) and it is never taught in a teaching position",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
+      "line": 19,
+      "module": 0,
+      "step": null,
+      "term": "appartient",
+      "questionId": "q4-appartient",
+      "position": 16
+    },
+    {
+      "code": "H_NEVER_TAUGHT",
+      "severity": "high",
+      "message": "« crochets d'intervalle » first appears at diag.explain (module 0) and is never established in a teaching position in this lesson",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
+      "line": 20,
+      "module": 0,
+      "step": null,
+      "term": "intervalle-crochets",
+      "questionId": "q5-notation",
+      "position": 24
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'valeur-absolue-distance-zero' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 36,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-opposes-meme-distance' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 68,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-valeur-absolue-positive' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 86,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-calcul-valeur-absolue' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 104,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-calculer-expression-absolue' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 123,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'distance-deux-nombres' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 147,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-distance-invariante' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 176,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-distance' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 197,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'faisceau-intervalle' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 216,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'equation-distance-egale' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 245,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-centre-rayon' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 263,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-faisceau' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 282,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-tolerance' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 304,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-deux-positions' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/knowledge.jsx",
+      "line": 327,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    }
+  ]
+}

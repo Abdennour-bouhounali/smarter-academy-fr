@@ -234,6 +234,47 @@ Even then: explain in one short block, then immediately give the student somethi
 
 ---
 
+## 6quinquies. Knowledge before demand
+
+> **The counterpart of §6.** §6 says: do not explain what the student can discover. This says: do
+> not *demand* what has not been established. The two are the same discipline seen from both ends —
+> name the concept after the gesture, but before the question that uses it.
+
+Full contract, declarations and audit: `KNOWLEDGE_DEPENDENCY.md`.
+
+The FORMALIZE step (§3.7) has a position, and that position is **inside the module, at the moment
+the gesture has just given the word its meaning** — carried by a `<KnowledgeBrick>` followed
+immediately by a small application. It is not the `explain` of the question that uses the word, and
+not the `footer`:
+
+```text
+ENSEIGNENT                        RENFORCENT (jamais une première fois)
+  brief, intro                      explain · explainWrong
+  titre / sous-titre d'étape        correction · explainFor · feedback
+  contenu d'étape                   footer
+  révélation après manipulation
+  <KnowledgeBrick>
+```
+
+`ContentModule` renders `footer` only once every step is done, so a word defined there arrived too
+late for every question of that module. `explain` is read after answering. Both may *reinforce* a
+word; neither may introduce one that a demand relies on. The gated reveal — `{done && <Feedback>}`
+after a manipulation — stays exactly as encouraged in §6: it teaches.
+
+This does not weaken §6's five exceptions (conventions, pure labels, twice-failed manipulation,
+surfaced prerequisite gap, `formalization` stage or later). It constrains *where* the explanation
+goes, not whether it is allowed: even a convention stated outright must be stated before the
+question that needs it.
+
+Option text obeys the rule too. A word met for the first time in a wrong answer is still a first
+encounter — and one that teaches nothing, since the student who picks it learns only that it was
+wrong.
+
+Module 0 measures prerequisites (`priorKnowledge`) and never the lesson's own material. The final
+challenge consolidates and transfers; it introduces nothing.
+
+---
+
 ## 6bis. Every lesson opens with a signature manipulation
 
 > **Module 1 of every lesson is a mathematical laboratory, not an introduction.** The student
@@ -1252,6 +1293,8 @@ Run before declaring a lesson complete. Every answer must be **yes**.
 - Is the mathematical consequence visible without a validation click?
 - Is there an invariant the student is meant to notice, written down (§7)?
 - Does the symbol emerge from the experience (§14)?
+- Does every question `require` only knowledge established EARLIER — a `<KnowledgeBrick>` above it, or a `priorKnowledge` id diagnosed by Module 0 (§6quinquies)? Is no required word first met in an `explain`, a `correction`, a distractor or the `footer`?
+- Does `npm run audit:knowledge` report no critical or high finding for this lesson?
 - Does scaffolding progressively disappear (§15)?
 
 ### Interaction

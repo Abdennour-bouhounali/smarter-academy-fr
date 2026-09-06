@@ -12,8 +12,12 @@
     "dev:all": "concurrently \"npm run dev\" \"cd apps/api && php artisan serve --port=8000\"",
     "build": "npm run build --workspace=apps/web",
     "preview": "npm run preview --workspace=apps/web",
-    "test": "npm run test --workspace=packages/core && npm run test --workspace=apps/web",
-    "validate:lessons": "node scripts/validate-lessons.mjs"
+    "test": "npm run test --workspace=packages/core && npm run test --workspace=apps/web && npm run test:scripts",
+    "validate:lessons": "node scripts/validate-lessons.mjs",
+    "audit:knowledge": "node scripts/audit-knowledge-dependencies.mjs --report",
+    "audit:knowledge:gate": "node scripts/audit-knowledge-dependencies.mjs --gate",
+    "check:lessons": "npm run validate:lessons && npm run audit:knowledge:gate",
+    "test:scripts": "vitest run --dir scripts"
   },
   "devDependencies": {
     "@babel/parser": "^7.29.0",

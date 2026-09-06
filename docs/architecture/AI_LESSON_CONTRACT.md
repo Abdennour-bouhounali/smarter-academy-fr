@@ -122,8 +122,13 @@ next one.
 
 Appropriate for the grade and lesson; aligned with the learning point;
 mathematically correct and unambiguous; solvable with the knowledge expected
-at that point; able to distinguish understanding from guessing (distractors
-encode real misconceptions); consistent with the lesson's existing UX and
+at that point — every term and notation in `prompt` or `options`, distractors
+included, is either established by an earlier `<KnowledgeBrick>` in the lesson
+or listed in `priorKnowledge` and diagnosed by Module 0, declared with
+`requires={[...]}`; a definition sitting in `explain`, `correction` or the
+`footer` arrives after the demand and does not count (`KNOWLEDGE_DEPENDENCY.md`);
+able to distinguish understanding from guessing (distractors encode real
+misconceptions); consistent with the lesson's existing UX and
 components. For each learning point, be able to answer: what competency, which
 question, what success looks like, why the question measures it, and what
 misconception a wrong answer reveals (the §26 audit — recorded per lesson in

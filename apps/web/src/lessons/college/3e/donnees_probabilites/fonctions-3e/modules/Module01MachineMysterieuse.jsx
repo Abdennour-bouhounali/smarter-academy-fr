@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import FunctionMachine from '../components/FunctionMachine';
@@ -135,10 +136,18 @@ export default function Module01MachineMysterieuse() {
                 </Feedback>
               )}
               {done1 && (
-                <Feedback tone="ok">
-                  Regarde la ligne du bas du journal : que faut-il faire au nombre du haut pour
-                  obtenir celui du bas ? Continue d’essayer si tu veux, puis teste ta règle.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Regarde la ligne du bas du journal : que faut-il faire au nombre du haut pour
+                    obtenir celui du bas ? Continue d’essayer si tu veux, puis teste ta règle.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="entree-sortie"
+                    variant="new"
+                    compact
+                    lead="Avant d’aller plus loin, deux mots pour désigner ce que tu manipules."
+                  />
+                </>
               )}
             </div>
           ),
@@ -197,6 +206,7 @@ export default function Module01MachineMysterieuse() {
                 if (n === imageOf(affine(2, 1), PREDICT_X)) return 'C’est la règle « × 2 puis + 1 » — le testeur l’avait écartée.';
                 return null;
               }}
+              requires={['entree-sortie']}
               solved={done3}
               onAnswered={(ok) => { setPredicted(true); }}
             />
@@ -227,13 +237,20 @@ export default function Module01MachineMysterieuse() {
                   <>
                     Tu avais obtenu <strong>{formatDec(rerun.y)}</strong> pour{' '}
                     {formatDec(rerun.x)} ; la machine redonne <strong>{formatDec(rerun.y)}</strong>.
-                    Une entrée, <strong>une</strong> sortie — toujours la même. Relance autant
-                    de fois que tu veux : rien ne bougera.
+                    Relance autant de fois que tu veux : rien ne bougera.
                   </>
                 ) : (
                   <>À ton avis : la machine va-t-elle redonner la même sortie, ou une autre ? Lance pour le savoir.</>
                 )}
               </Feedback>
+              {done4 && (
+                <KnowledgeBrick
+                  id="mem-une-entree-une-sortie"
+                  variant="new"
+                  compact
+                  lead="Ce que tu viens de vérifier est la propriété qui fait d’une machine une fonction."
+                />
+              )}
             </div>
           ),
         },
@@ -333,16 +350,24 @@ export default function Module01MachineMysterieuse() {
                   <>Ouvre les trois vues. Que remarques-tu sur les points du repère ?</>
                 )}
               </Feedback>
+              {done5 && (
+                <KnowledgeBrick
+                  id="fonction-machine"
+                  variant="new"
+                  lead="Ce que tu viens d’explorer sous trois habits porte, en mathématiques, un seul nom."
+                />
+              )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Tu viens d’utiliser une <strong>fonction</strong> sans le mot. Au module suivant,
-          on donne un nom à l’entrée, à la sortie — et à la machine elle-même.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais ce qu’est une fonction et tu sais la faire tourner.
+          Au module suivant, on nomme précisément ce qui entre et ce qui sort — et on apprend à
+          l’écrire en une ligne.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

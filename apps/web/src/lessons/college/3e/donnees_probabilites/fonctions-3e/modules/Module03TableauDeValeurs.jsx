@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -93,10 +94,11 @@ export default function Module03TableauDeValeurs() {
                 </Feedback>
               )}
               {done1 && (
-                <Feedback tone="ok">
-                  Voilà un <strong>tableau de valeurs</strong> : en haut les antécédents,
-                  en bas leurs images.
-                </Feedback>
+                <KnowledgeBrick
+                  id="tableau-de-valeurs"
+                  variant="new"
+                  lead="Ce que tu viens de construire, colonne après colonne, a un nom."
+                />
               )}
             </div>
           ),
@@ -106,21 +108,32 @@ export default function Module03TableauDeValeurs() {
           title: 'Ce que le tableau laisse voir',
           done: gapDone,
           content: (
-            <TapQuestion
-              prompt="Regarde deux colonnes voisines, de gauche à droite. Que fait la sortie quand l’entrée augmente de 1 ?"
-              options={[
-                'Elle augmente toujours de 3',
-                'Elle augmente de plus en plus',
-                'Elle double',
-                'Elle augmente de 1',
-              ]}
-              correct={0}
-              cols={1}
-              explain="De −1 à 0, la sortie passe de −4 à −1 : +3. De 0 à 1, de −1 à 2 : encore +3. Le pas est constant, et c’est le nombre qui multiplie x dans la règle."
-              explainWrong="Compare deux colonnes voisines et fais la soustraction : tu obtiens le même écart à chaque fois."
-              solved={gapDone}
-              onAnswered={() => setGapDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Regarde deux colonnes voisines, de gauche à droite. Que fait la sortie quand l’entrée augmente de 1 ?"
+                options={[
+                  'Elle augmente toujours de 3',
+                  'Elle augmente de plus en plus',
+                  'Elle double',
+                  'Elle augmente de 1',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['tableau-de-valeurs', 'entree-sortie']}
+                explain="De −1 à 0, la sortie passe de −4 à −1 : +3. De 0 à 1, de −1 à 2 : encore +3. Le pas est constant, et c’est le nombre qui multiplie x dans la règle."
+                explainWrong="Compare deux colonnes voisines et fais la soustraction : tu obtiens le même écart à chaque fois."
+                solved={gapDone}
+                onAnswered={() => setGapDone(true)}
+              />
+              {gapDone && (
+                <KnowledgeBrick
+                  id="pas-constant"
+                  variant="new"
+                  compact
+                  lead="Cette régularité que tu viens de repérer porte un nom, et elle resservira."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -133,6 +146,7 @@ export default function Module03TableauDeValeurs() {
               expected={imageOf(F, 10)}
               parse={parseDec}
               display={formatDec(imageOf(F, 10))}
+              requires={['tableau-de-valeurs', 'notation-fx', 'image']}
               explain="f(10) = 3 × 10 − 1 = 29. Le tableau ne montre que quelques couples : la fonction, elle, en a une infinité. C’est la RÈGLE qui répond, pas le tableau."
               explainFor={(n) => {
                 if (n === 30) return 'Tu as multiplié par 3 mais oublié le « − 1 » : 30 − 1 = 29.';
@@ -159,6 +173,7 @@ export default function Module03TableauDeValeurs() {
               ]}
               correct={0}
               cols={1}
+              requires={['tableau-de-valeurs']}
               explain="Un tableau de valeurs est un extrait : pratique pour tracer, insuffisant pour tout savoir. La règle, elle, répond pour n’importe quel nombre."
               solved={roleDone}
               onAnswered={() => setRoleDone(true)}
@@ -166,12 +181,12 @@ export default function Module03TableauDeValeurs() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Un tableau de valeurs, c’est une fonction vue par le petit bout. Au module suivant,
-          chacune de ses colonnes va devenir un <strong>point</strong>.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Un tableau de valeurs, c’est une fonction vue par le petit
+          bout. Au module suivant, chacune de ses colonnes va devenir un <strong>point</strong>.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

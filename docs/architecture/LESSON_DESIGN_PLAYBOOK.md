@@ -74,6 +74,44 @@ clicks or watch-time).
 
 ---
 
+## 2bis. Knowledge before demand — the blocking rule
+
+> **Before any demand, everything required to understand it must already be available to the
+> student.** Full contract: `KNOWLEDGE_DEPENDENCY.md`.
+
+A demand is any question, MCQ, numeric input, drag/drop, manipulation target, « complète /
+détermine / calcule / place / lis / interprète », diagnostic item, boss épreuve — **and the text of
+the options**, distractors included. Before each one, every concept, word, notation, representation
+and procedure it needs is in one of four states:
+
+| State | Meaning | Declared as |
+| --- | --- | --- |
+| A mastered | prior learning, diagnosed by Module 0 | `priorKnowledge: [...]` in `lesson.config.js` |
+| B just taught | established in teaching position before the demand | `<KnowledgeBrick id variant="new">` |
+| C just-in-time | shown right before because the demand needs it | `<KnowledgeBrick variant="rappel">` |
+| D enrichment | labelled optional, never required | `<KnowledgeBrick variant="enrichment">` |
+
+`explain`, `explainWrong`, `correction`, `feedback` and `footer` **reinforce** a notion; they never
+introduce one — the student reads them after answering, or after finishing every step. A reveal
+gated on a manipulation (`{done && …}`) *is* a teaching position: it is the consequence of the
+gesture, and it precedes what follows.
+
+A brick renders one item of `knowledge.jsx` — the single source — as **meaning → representation →
+example and connection → immediate try-it**, and puts that knowledge on the student's map at that
+very moment. Keep it short: the repair is not "add theory", it is *the right knowledge at the right
+moment*. Distribute the bricks through the module; never collect them into a block at the end.
+
+Declare the dependency on every question: `requires={['image', 'notation-fx']}`. It has no runtime
+effect and is the contract the audit checks.
+
+**Repairs**, smallest correct one first: teach before (a brick) · replace the question · split the
+demand into a ladder · disclose progressively. Never a generic "Rappel", a theory dump, a
+post-answer definition, or a lost interaction.
+
+Reference implementation: `fonctions-3e` module 2.
+
+---
+
 ## 3. The design question that governs everything
 
 > **Do not ask: "Where can I add a drag-and-drop?"

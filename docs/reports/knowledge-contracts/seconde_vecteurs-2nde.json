@@ -1,0 +1,888 @@
+{
+  "lesson": "vecteurs-2nde",
+  "grade": "seconde",
+  "lexiconVersion": 1,
+  "prerequisites": [],
+  "conceptsIntroduced": [
+    {
+      "id": "vecteur-deplacement",
+      "type": "concepts",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "egalite-vecteurs",
+      "type": "concepts",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "vecteur-nul",
+      "type": "concepts",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "regle-vecteur-oppose",
+      "type": "regles",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "coordonnees-vecteur",
+      "type": "concepts",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "regle-coordonnees",
+      "type": "regles",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "regle-egalite-coordonnees",
+      "type": "regles",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "formule-coordonnees",
+      "type": "formules",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "regle-somme",
+      "type": "regles",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "formule-somme",
+      "type": "formules",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "formule-chasles",
+      "type": "formules",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "regle-produit-reel",
+      "type": "regles",
+      "module": 5,
+      "brick": null
+    },
+    {
+      "id": "regle-colineaire",
+      "type": "regles",
+      "module": 5,
+      "brick": null
+    },
+    {
+      "id": "formule-norme",
+      "type": "formules",
+      "module": 6,
+      "brick": null
+    },
+    {
+      "id": "formule-milieu",
+      "type": "formules",
+      "module": 6,
+      "brick": null
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "vocab-representant",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "vocab-base-orthonormee",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "vocab-relation-chasles",
+      "type": "vocabulaire",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "vocab-norme",
+      "type": "vocabulaire",
+      "module": 6,
+      "brick": null
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "methode-calcul-coordonnees",
+      "type": "methodes",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "methode-calcul-norme",
+      "type": "methodes",
+      "module": 6,
+      "brick": null
+    },
+    {
+      "id": "methode-milieu",
+      "type": "methodes",
+      "module": 6,
+      "brick": null
+    },
+    {
+      "id": "methode-parallelogramme",
+      "type": "methodes",
+      "module": 7,
+      "brick": null
+    },
+    {
+      "id": "methode-deplacement-manquant",
+      "type": "methodes",
+      "module": 7,
+      "brick": null
+    },
+    {
+      "id": "methode-alignement",
+      "type": "methodes",
+      "module": 7,
+      "brick": null
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-deplacement",
+      "type": "memoriser",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "mem-arrivee-moins-depart",
+      "type": "memoriser",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "mem-oppose",
+      "type": "memoriser",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "mem-chasles",
+      "type": "memoriser",
+      "module": 4,
+      "brick": null
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "vec-d1-lire",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module00Diagnostic.jsx",
+      "line": 22,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-d2-ordre",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module00Diagnostic.jsx",
+      "line": 32,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-d3-relatifs",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module00Diagnostic.jsx",
+      "line": 42,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-d4-translation",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module00Diagnostic.jsx",
+      "line": 52,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-d5-pythagore",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module00Diagnostic.jsx",
+      "line": 62,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S5-Q1",
+      "module": 1,
+      "step": 5,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module01LeRobotDuDepot.jsx",
+      "line": 241,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q1",
+      "module": 2,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module02LeMemeVecteur.jsx",
+      "line": 184,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q1",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module03DeuxNombresSuffisent.jsx",
+      "line": 154,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module03DeuxNombresSuffisent.jsx",
+      "line": 168,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q3",
+      "module": 3,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module03DeuxNombresSuffisent.jsx",
+      "line": 192,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q1",
+      "module": 4,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module04EnchainerLesDeplacements.jsx",
+      "line": 148,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q2",
+      "module": 4,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module04EnchainerLesDeplacements.jsx",
+      "line": 171,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module05EtirerInverser.jsx",
+      "line": 95,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q2",
+      "module": 5,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module05EtirerInverser.jsx",
+      "line": 160,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q1",
+      "module": 6,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module06MesurerUnVecteur.jsx",
+      "line": 102,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S4-Q2",
+      "module": 6,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module06MesurerUnVecteur.jsx",
+      "line": 143,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S2-Q1",
+      "module": 7,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module07ProblemesDeGeometrie.jsx",
+      "line": 140,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S2-Q2",
+      "module": 7,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module07ProblemesDeGeometrie.jsx",
+      "line": 154,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S3-Q3",
+      "module": 7,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module07ProblemesDeGeometrie.jsx",
+      "line": 189,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e1",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 26,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e2",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 41,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e3",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 51,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e4",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 61,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e5",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 71,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e6",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 86,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e7",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 96,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e8",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 106,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e9",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 116,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "vec-e10",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/modules/Module08MissionFinale.jsx",
+      "line": 126,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vecteur-deplacement' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 30,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-deplacement' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 64,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'egalite-vecteurs' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 88,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vecteur-nul' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 122,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-vecteur-oppose' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 136,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vocab-representant' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 167,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'coordonnees-vecteur' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 187,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-coordonnees' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 220,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-egalite-coordonnees' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 244,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-calcul-coordonnees' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 266,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vocab-base-orthonormee' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 299,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-arrivee-moins-depart' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 320,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-oppose' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 346,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-coordonnees' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 364,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-somme' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 382,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vocab-relation-chasles' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 423,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-chasles' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 449,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-somme' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 467,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-chasles' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 485,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-produit-reel' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 506,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-colineaire' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 538,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-calcul-norme' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 563,
+      "module": 6,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-milieu' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 596,
+      "module": 6,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vocab-norme' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 618,
+      "module": 6,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-norme' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 635,
+      "module": 6,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-milieu' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 656,
+      "module": 6,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-parallelogramme' (module 7) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 678,
+      "module": 7,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-deplacement-manquant' (module 7) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 701,
+      "module": 7,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-alignement' (module 7) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/knowledge.jsx",
+      "line": 724,
+      "module": 7,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    }
+  ]
+}

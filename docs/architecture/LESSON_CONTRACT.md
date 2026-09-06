@@ -12,7 +12,11 @@ system requires:
   may share a stage). `trigger`, `discovery`, `formalization`, `practice_lab`
   and `evaluation` are required for an `available` lesson;
   `prerequisite_check` and `manipulation` are used when the mathematics calls
-  for them. There is no `results` stage — the results / learning-profile
+  for them. Exception: a lesson declaring `knowledgeMap: true` formalises
+  continuously through its cumulative Knowledge Map (every module's « À
+  retenir » is the current map, the final synthèse is the complete map) and
+  needs no `formalization` module — reference: `vecteurs-2nde`, see
+  `KNOWLEDGE_MAP.md`. There is no `results` stage — the results / learning-profile
   screen is the completion view of the `evaluation` module.
 - **A built lesson's modules fit in 90 minutes** (`MAX_LESSON_MINUTES`,
   enforced by `validate-lessons.mjs` on the sum of module `estimatedMin`, and
@@ -45,6 +49,13 @@ system requires:
   with `completion_mode: 'mastery'`; weak Learning Points map back to the
   modules that teach them (`recommendModulesForLearningPoints`) instead of
   "restart the lesson".
+- **Lessons and questions declare their knowledge dependencies.** `priorKnowledge: string[]` on
+  `LESSON_CONFIG` lists the concept ids the lesson assumes and its Module 0 diagnoses; each question
+  declares `requires: string[]`, and a `<KnowledgeBrick id>` establishes an id at the point it is
+  taught. Nothing here affects the runtime: it is the contract
+  `scripts/audit-knowledge-dependencies.mjs` checks, so that no demand precedes what it needs
+  (`KNOWLEDGE_DEPENDENCY.md`).
+
 - **Modules declare their Learning-Point wiring**: `teachesLearningPointIds`
   (which LPs a learning module teaches — powers post-evaluation
   recommendations; every LP must be taught by ≥ 1 module, and evaluation

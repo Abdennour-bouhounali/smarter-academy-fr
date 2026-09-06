@@ -1,0 +1,704 @@
+{
+  "lesson": "logique-et-raisonnement-2nde",
+  "grade": "seconde",
+  "lexiconVersion": 1,
+  "prerequisites": [],
+  "conceptsIntroduced": [
+    {
+      "id": "proposition",
+      "type": "concepts",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "contre-exemple",
+      "type": "concepts",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "regle-refuter-prouver",
+      "type": "regles",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "connecteurs",
+      "type": "concepts",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "regle-ou-inclusif",
+      "type": "regles",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "implication",
+      "type": "concepts",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "reciproque",
+      "type": "concepts",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "contraposee",
+      "type": "regles",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "equivalence",
+      "type": "concepts",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "regle-equivalence-carre",
+      "type": "regles",
+      "module": 4,
+      "brick": null
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "vocab-quatre-outils",
+      "type": "vocabulaire",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "methode-negation",
+      "type": "methodes",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "methode-choisir-symbole",
+      "type": "methodes",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "raisonnement-absurde",
+      "type": "methodes",
+      "module": 5,
+      "brick": null
+    },
+    {
+      "id": "disjonction-cas",
+      "type": "methodes",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-contre-exemple",
+      "type": "memoriser",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "mem-negation-limite",
+      "type": "memoriser",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "mem-cas-interdit",
+      "type": "memoriser",
+      "module": 3,
+      "brick": null
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "q1-appartient",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
+      "line": 9,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [
+        "appartient"
+      ],
+      "pedagogicallyValid": false
+    },
+    {
+      "questionId": "q2-inter",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
+      "line": 10,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "q3-valeur",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
+      "line": 11,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "q4-carre",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
+      "line": 12,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "q5-premier",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
+      "line": 13,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S1-Q1",
+      "module": 1,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module01LaFormuleQuiTombe.jsx",
+      "line": 54,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S2-Q2",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module01LaFormuleQuiTombe.jsx",
+      "line": 70,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q3",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module01LaFormuleQuiTombe.jsx",
+      "line": 80,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S1-Q1",
+      "module": 2,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module02EtOuNon.jsx",
+      "line": 42,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q2",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module02EtOuNon.jsx",
+      "line": 53,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q3",
+      "module": 2,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module02EtOuNon.jsx",
+      "line": 62,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S1-Q1",
+      "module": 3,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module03Implication.jsx",
+      "line": 53,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q2",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module03Implication.jsx",
+      "line": 67,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q3",
+      "module": 3,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module03Implication.jsx",
+      "line": 78,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S1-Q1",
+      "module": 4,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module04Equivalence.jsx",
+      "line": 51,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q2",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module04Equivalence.jsx",
+      "line": 65,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q3",
+      "module": 4,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module04Equivalence.jsx",
+      "line": 76,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S1-Q1",
+      "module": 5,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module05Labsurde.jsx",
+      "line": 45,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module05Labsurde.jsx",
+      "line": 57,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e1",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 33,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e2",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 34,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e3",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 35,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e4",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 36,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e5",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 37,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e6",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 38,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e7",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 39,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e8",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 40,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e9",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 41,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lg-e10",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 42,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "H_NEVER_TAUGHT",
+      "severity": "high",
+      "message": "« symbole ∈ » first appears at diag.option (module 0) and is never established in a teaching position in this lesson",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
+      "line": 9,
+      "module": 0,
+      "step": null,
+      "term": "appartient",
+      "questionId": "q1-appartient",
+      "position": 2
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'proposition' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 27,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'contre-exemple' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 52,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-refuter-prouver' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 71,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-contre-exemple' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 97,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'connecteurs' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 117,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-ou-inclusif' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 142,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-negation' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 160,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-negation-limite' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 180,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'implication' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 199,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'reciproque' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 222,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'contraposee' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 241,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-cas-interdit' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 260,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'equivalence' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 279,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'regle-equivalence-carre' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 297,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-choisir-symbole' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 315,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'raisonnement-absurde' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 340,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'disjonction-cas' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 364,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vocab-quatre-outils' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/knowledge.jsx",
+      "line": 383,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    }
+  ]
+}

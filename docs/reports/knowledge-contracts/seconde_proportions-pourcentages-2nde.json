@@ -1,0 +1,696 @@
+{
+  "lesson": "proportions-pourcentages-2nde",
+  "grade": "seconde",
+  "lexiconVersion": 1,
+  "prerequisites": [],
+  "conceptsIntroduced": [
+    {
+      "id": "proportion-reference",
+      "type": "concepts",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "formule-proportion",
+      "type": "formules",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "proportion-de-proportion",
+      "type": "regles",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "etat-vs-variation",
+      "type": "concepts",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "point-vs-pourcent",
+      "type": "regles",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "formule-taux-evolution",
+      "type": "formules",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "coefficient-multiplicateur",
+      "type": "concepts",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "vocab-part-tout",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "vocab-pourcentage",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": null
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "trois-ecritures",
+      "type": "methodes",
+      "module": 2,
+      "brick": null
+    },
+    {
+      "id": "methode-remises-successives",
+      "type": "methodes",
+      "module": 3,
+      "brick": null
+    },
+    {
+      "id": "methode-coefficient-taux",
+      "type": "methodes",
+      "module": 5,
+      "brick": null
+    },
+    {
+      "id": "methode-lire-enonce",
+      "type": "methodes",
+      "module": 6,
+      "brick": null
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-de-quoi",
+      "type": "memoriser",
+      "module": 1,
+      "brick": null
+    },
+    {
+      "id": "mem-k-1-plus-t",
+      "type": "memoriser",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "pp-d1",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
+      "line": 11,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-d2",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
+      "line": 12,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-d3",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
+      "line": 13,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-d4",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
+      "line": 14,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-d5",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
+      "line": 15,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S2-Q1",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module01LeLyceeDe800Eleves.jsx",
+      "line": 134,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q2",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module01LeLyceeDe800Eleves.jsx",
+      "line": 198,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q1",
+      "module": 2,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
+      "line": 64,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
+      "line": 87,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q3",
+      "module": 2,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
+      "line": 108,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module03UnPourcentageDePourcentage.jsx",
+      "line": 83,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module03UnPourcentageDePourcentage.jsx",
+      "line": 106,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
+      "line": 72,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
+      "line": 93,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q3",
+      "module": 4,
+      "step": 4,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
+      "line": 120,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
+      "line": 75,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
+      "line": 104,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q3",
+      "module": 5,
+      "step": 4,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
+      "line": 119,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S1-Q1",
+      "module": 6,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
+      "line": 38,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S1-Q2",
+      "module": 6,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
+      "line": 47,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q3",
+      "module": 6,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
+      "line": 69,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q4",
+      "module": 6,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
+      "line": 78,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q5",
+      "module": 6,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
+      "line": 100,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q6",
+      "module": 6,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
+      "line": 114,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e1",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 15,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e2",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 16,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e3",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 17,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e4",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 18,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e5",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 19,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e6",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 20,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e7",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 21,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e8",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 22,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e9",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 23,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pp-e10",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
+      "line": 24,
+      "requires": null,
+      "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'proportion-reference' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 36,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vocab-part-tout' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 55,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-de-quoi' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 67,
+      "module": 1,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-proportion' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 81,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'trois-ecritures' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 98,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'vocab-pourcentage' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 115,
+      "module": 2,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'proportion-de-proportion' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 128,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-remises-successives' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 151,
+      "module": 3,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'etat-vs-variation' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 165,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'point-vs-pourcent' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 185,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'formule-taux-evolution' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 199,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'coefficient-multiplicateur' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 215,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-coefficient-taux' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 237,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-k-1-plus-t' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 249,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'methode-lire-enonce' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
+      "line": 263,
+      "module": 6,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    }
+  ]
+}

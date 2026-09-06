@@ -21,22 +21,30 @@
 //
 // Usage: node scripts/validate-lessons.mjs [--strict]
 
-import { readdirSync, readFileSync, statSync } from 'node:fs';
-import { join, dirname, resolve, relative, sep } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { parse } from '@babel/parser';
-import traverseModule from '@babel/traverse';
-import { courseLevels } from '../packages/core/curriculum/coursesData.js';
+import { readFileSync } from 'node:fs';
+import { relative } from 'node:path';
 import {
   LESSON_STAGES,
   STAGE_ORDER,
   REQUIRED_STAGES,
   MAX_LESSON_MINUTES,
 } from '../packages/core/curriculum/lessonStages.js';
+// Shared AST plumbing (also used by scripts/audit-knowledge-dependencies.mjs).
+import {
+  traverse,
+  repoRoot,
+  lessonsRoot,
+  parseFile,
+  literalValue,
+  propOf,
+  gradeOf,
+  findLessonDirs,
+  listSourceFiles,
+  moduleOfFile,
+  buildLessonIndex,
+  parseLessonConfig,
+} from './lib/lessonAst.mjs';
 
-const traverse = traverseModule.default || traverseModule;
-const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const lessonsRoot = join(repoRoot, 'apps/web/src/lessons');
 const strict = process.argv.includes('--strict');
 
 const VALID_TYPES = new Set(['discovery', 'practice', 'assessment']);
@@ -46,112 +54,14 @@ const VALID_STAGES = new Set(LESSON_STAGES);
 // enforces it), but the index stays keyed `${gradeId}:${lessonId}` so a
 // mis-placed lesson directory is caught too — the grade comes from the
 // lesson directory's path (apps/web/src/lessons/<level>/<grade>/...).
-const lessonIndex = new Map();
-for (const level of courseLevels) {
-  for (const grade of level.grades) {
-    for (const chapter of grade.chapters) {
-      for (const lesson of chapter.lessons) {
-        lessonIndex.set(`${grade.id}:${lesson.id}`, {
-          learningPointIds: new Set(lesson.learningPoints.map((lp) => lp.id)),
-          status: lesson.status,
-          title: lesson.title,
-          durationMinutes: lesson.durationMinutes,
-        });
-      }
-    }
-  }
-}
-
-function gradeOf(lessonDir) {
-  return relative(lessonsRoot, lessonDir).split('/')[1] ?? null;
-}
-
-/** Finds every directory under apps/web/src/lessons containing a lesson.config.js. */
-function findLessonDirs(dir, acc = []) {
-  for (const name of readdirSync(dir)) {
-    const full = join(dir, name);
-    if (!statSync(full).isDirectory()) continue;
-    try {
-      statSync(join(full, 'lesson.config.js'));
-      acc.push(full);
-    } catch {
-      findLessonDirs(full, acc);
-    }
-  }
-
-  return acc;
-}
-
-/**
- * Parses lesson.config.js into {id, modules} where each module is
- * {line, stage, estimatedMin, slug}. Values must be static literals —
- * computed metadata is reported as missing.
- */
-function parseLessonConfig(lessonDir) {
-  const source = readFileSync(join(lessonDir, 'lesson.config.js'), 'utf-8');
-  const ast = parse(source, { sourceType: 'module', plugins: ['jsx'] });
-
-  let configNode = null;
-  traverse(ast, {
-    VariableDeclarator(path) {
-      if (path.node.id.type === 'Identifier' && path.node.id.name === 'LESSON_CONFIG'
-        && path.node.init?.type === 'ObjectExpression') {
-        configNode = path.node.init;
-      }
-    },
-  });
-  if (!configNode) return { id: null, modules: null };
-
-  const id = literalValue(propOf(configNode, 'id'));
-  const modulesNode = propOf(configNode, 'modules');
-  const modules = modulesNode?.type === 'ArrayExpression'
-    ? modulesNode.elements
-        .filter((el) => el?.type === 'ObjectExpression')
-        .map((el) => ({
-          line: el.loc?.start.line,
-          number: literalValue(propOf(el, 'number')),
-          stage: literalValue(propOf(el, 'stage')),
-          estimatedMin: literalValue(propOf(el, 'estimatedMin')),
-          slug: literalValue(propOf(el, 'slug')),
-          teachesLearningPointIds: literalValue(propOf(el, 'teachesLearningPointIds')),
-          requiresLearningPointIds: literalValue(propOf(el, 'requiresLearningPointIds')),
-        }))
-    : null;
-
-  return { id: typeof id === 'string' ? id : null, modules };
-}
-
-function listSourceFiles(dir, acc = []) {
-  for (const name of readdirSync(dir)) {
-    const full = join(dir, name);
-    if (statSync(full).isDirectory()) listSourceFiles(full, acc);
-    else if (/\.(jsx?|mjs)$/.test(name)) acc.push(full);
-  }
-
-  return acc;
-}
-
-/** Literal-or-null extraction: metadata must be static, not computed. */
-function literalValue(node) {
-  if (!node) return undefined;
-  if (node.type === 'StringLiteral' || node.type === 'BooleanLiteral' || node.type === 'NumericLiteral') return node.value;
-  if (node.type === 'ArrayExpression') return node.elements.map((el) => literalValue(el));
-
-  return undefined;
-}
-
-function propOf(objectExpression, name) {
-  return objectExpression.properties.find(
-    (p) => p.type === 'ObjectProperty' && !p.computed && (p.key.name === name || p.key.value === name)
-  )?.value;
-}
+const lessonIndex = buildLessonIndex();
 
 /** Extracts every object literal carrying an `assessment` property from one file. */
 function extractQuestions(file) {
   const source = readFileSync(file, 'utf-8');
   if (!source.includes('assessment')) return [];
 
-  const ast = parse(source, { sourceType: 'module', plugins: ['jsx'] });
+  const ast = parseFile(file);
   const questions = [];
 
   traverse(ast, {
@@ -181,32 +91,8 @@ const errors = [];
 const warnings = [];
 const migratedCoverage = new Map(); // lesson code -> Set of covered LP ids
 
-/**
- * Maps a source file to the module owning it. Two conventions are supported:
- *  - flat (preferred): `<lessonDir>/modules/Module<NN><Descriptor>.jsx` —
- *    one file per module, the `Module<NN>` number prefix identifies it
- *    against the module's `number` field in lesson.config.js.
- *  - legacy: `<lessonDir>/modules/<slug>/<file>` — one directory per module,
- *    for the rare module that genuinely needs several files.
- * Returns the module entry or null when the file sits outside `modules/` or
- * matches no declared module.
- */
-function moduleOfFile(lessonDir, modules, file) {
-  const rel = relative(lessonDir, file).split(sep);
-  if (rel[0] !== 'modules' || rel.length < 2) return null;
-
-  if (rel.length === 2) {
-    const match = rel[1].match(/^Module(\d+)/);
-    if (!match) return null;
-    const number = Number(match[1]);
-    return modules?.find((m) => m.number === number) ?? null;
-  }
-
-  return modules?.find((m) => m.slug === rel[1]) ?? null;
-}
-
 for (const lessonDir of findLessonDirs(lessonsRoot)) {
-  const { id: code, modules } = parseLessonConfig(lessonDir);
+  const { id: code, modules, knowledgeMap, priorKnowledge } = parseLessonConfig(lessonDir);
   const rel = relative(repoRoot, lessonDir);
   if (!code) {
     errors.push(`${rel}: lesson.config.js has no parseable literal LESSON_CONFIG.id`);
@@ -221,8 +107,17 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
     continue;
   }
 
-  // ── Stage contract ────────────────────────────────────────────────────────
+  // ── Knowledge-dependency metadata ─────────────────────────────────────────
+  // `priorKnowledge` lists the concept ids a lesson assumes (and its Module 0
+  // diagnoses). Like every other lesson metadata field it must be a static
+  // literal so the tooling can read it — see
+  // docs/architecture/KNOWLEDGE_DEPENDENCY.md.
   const configPath = `${rel}/lesson.config.js`;
+  if (priorKnowledge === 'INVALID') {
+    errors.push(`${configPath}: priorKnowledge must be a literal array of concept id strings`);
+  }
+
+  // ── Stage contract ────────────────────────────────────────────────────────
   if (!modules || modules.length === 0) {
     errors.push(`${configPath}: LESSON_CONFIG.modules must be a non-empty array of module objects`);
   } else {
@@ -309,6 +204,9 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
     }
     if (strict || catalogEntry.status === 'available') {
       for (const required of REQUIRED_STAGES) {
+        // A lesson driven by the Knowledge Map formalises continuously: no
+        // « À retenir » module is expected (see LESSON_CONTRACT.md).
+        if (required === 'formalization' && knowledgeMap) continue;
         if (!presentStages.has(required)) {
           errors.push(`${configPath}: missing required stage '${required}'`);
         }
