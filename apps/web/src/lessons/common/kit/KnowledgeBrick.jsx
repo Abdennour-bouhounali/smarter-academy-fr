@@ -66,70 +66,109 @@ export default function KnowledgeBrick({
   const category = CATEGORIES.find((c) => c.id === item.type);
   const titleId = `kb-${id}-title`;
 
+  const accent = ACCENT[category?.color] ?? ACCENT.indigo;
+
   return (
     <section
       data-knowledge-brick={id}
       data-knowledge-item={id}
       data-knowledge-variant={variant}
       aria-labelledby={titleId}
-      className={`rounded-2xl p-4 space-y-3 ${style.box}`}
+      className={`relative overflow-hidden rounded-2xl ${style.box}`}
     >
-      <p className={`text-xs font-mono font-bold uppercase tracking-widest ${style.tag}`}>
-        <span aria-hidden="true">{style.emoji}</span> {style.label}
-        {category && <span className="opacity-70"> · {category.label}</span>}
-      </p>
+      {/* Le liseré de catégorie : la seule couleur de la carte. */}
+      {style.accent && <span aria-hidden="true" className={`absolute inset-y-0 left-0 w-[3px] ${accent}`} />}
 
-      {lead && <p className={`text-sm ${style.lead}`}>{lead}</p>}
+      <div className={`p-5 space-y-3 ${style.accent ? 'pl-6' : ''}`}>
+        <p className={`text-[11px] font-mono font-bold uppercase tracking-[0.14em] ${style.tag}`}>
+          <span aria-hidden="true">{style.emoji}</span> {style.label}
+          {category && <span> · {category.label}</span>}
+        </p>
 
-      <h4 id={titleId} className={`font-space font-bold text-base ${style.title}`}>{item.title}</h4>
-      {item.summary && <p className="text-sm leading-relaxed">{item.summary}</p>}
+        {lead && <p className={`text-sm leading-relaxed ${style.lead}`}>{lead}</p>}
 
-      {!compact && item.visual && (
-        <div className="flex justify-center rounded-xl bg-white p-2 overflow-x-auto">{item.visual}</div>
-      )}
-
-      <div className={style.body}>{item.body}</div>
-
-      {children && (
-        <div data-knowledge-brick-tryit className={`rounded-xl p-3 ${style.tryit}`}>
-          {children}
+        <div className="space-y-1.5">
+          <h4 id={titleId} className={`font-space font-bold text-lg leading-snug ${style.title}`}>{item.title}</h4>
+          {item.summary && <p className="text-sm leading-relaxed text-slate-600">{item.summary}</p>}
         </div>
-      )}
+
+        {!compact && item.visual && (
+          <div className="flex justify-center rounded-xl border border-slate-100 bg-slate-50/60 p-2 overflow-x-auto">
+            {item.visual}
+          </div>
+        )}
+
+        <div className={style.body}>{item.body}</div>
+
+        {children && (
+          <div data-knowledge-brick-tryit className={`rounded-xl p-3.5 ${style.tryit}`}>
+            {children}
+          </div>
+        )}
+      </div>
     </section>
   );
 }
 
 /**
- * Trois lectures, trois rôles : une connaissance neuve s'impose (fond sombre,
- * comme les « 🔑 À retenir » déjà en place), un rappel se fait discret, un
- * enrichissement s'annonce comme facultatif — l'élève doit voir du premier
- * coup d'œil ce qu'il DOIT savoir et ce qui est en plus.
+ * Trois lectures, trois rôles — obtenues par la HIÉRARCHIE, pas par le poids.
+ *
+ * La brique « Nouveau » était un pavé sombre portant deux encarts blancs : le
+ * bloc le plus lourd de la page, alors que tout ce qui l'entoure (Feedback,
+ * StepCard, cartes de MathText) est clair. Elle attirait l'œil par contraste
+ * brut et empilait trois niveaux d'encadrés.
+ *
+ * Elle est maintenant claire comme le reste. Ce qui la distingue :
+ *  - un LISERÉ vertical à la couleur de la catégorie (concepts, règles,
+ *    méthodes…), seule touche colorée de la carte ;
+ *  - une étiquette « 🔑 Nouveau » discrète ;
+ *  - un titre en neutre sombre, jamais coloré ;
+ *  - un corps posé à même la carte, sans encadré blanc supplémentaire — seul
+ *    l'essai immédiat garde un fond propre, parce qu'il change de registre
+ *    (on ne lit plus, on répond).
+ *
+ * `rappel` est plus discret encore, `enrichment` s'annonce en pointillés.
  */
 const VARIANTS = {
   new: {
     emoji: '🔑', label: 'Nouveau',
-    box: 'border-2 border-slate-900 bg-slate-900 text-white',
-    tag: 'text-slate-300', lead: 'text-slate-300',
-    // !text-white : la règle globale h1..h6 de index.css impose sinon un titre
-    // sombre, invisible ici.
-    title: '!text-white',
-    body: 'rounded-xl bg-white text-slate-800 p-3 text-sm space-y-2',
-    tryit: 'bg-white/95 text-slate-800',
+    box: 'border border-slate-200 bg-white shadow-sm',
+    tag: 'text-slate-400', lead: 'text-slate-500',
+    title: 'text-slate-900',
+    body: 'text-slate-700 text-sm space-y-2',
+    tryit: 'bg-slate-50 border border-slate-200 text-slate-800',
+    accent: true,
   },
   rappel: {
     emoji: '↺', label: 'Rappel',
-    box: 'border-2 border-slate-300 bg-slate-50 text-slate-800',
-    tag: 'text-slate-500', lead: 'text-slate-600',
-    title: 'text-slate-900',
-    body: 'rounded-xl bg-white border border-slate-200 p-3 text-sm space-y-2',
-    tryit: 'bg-white border border-slate-200',
+    box: 'border border-slate-200 bg-slate-50/70',
+    tag: 'text-slate-400', lead: 'text-slate-500',
+    title: 'text-slate-800',
+    body: 'text-slate-700 text-sm space-y-2',
+    tryit: 'bg-white border border-slate-200 text-slate-800',
+    accent: false,
   },
   enrichment: {
     emoji: '✦', label: 'Pour aller plus loin',
-    box: 'border-2 border-dashed border-violet-300 bg-violet-50 text-slate-800',
-    tag: 'text-violet-600', lead: 'text-violet-800',
-    title: 'text-violet-900',
-    body: 'rounded-xl bg-white border border-violet-200 p-3 text-sm space-y-2',
-    tryit: 'bg-white border border-violet-200',
+    box: 'border border-dashed border-violet-200 bg-violet-50/40',
+    tag: 'text-violet-400', lead: 'text-violet-700',
+    title: 'text-slate-900',
+    body: 'text-slate-700 text-sm space-y-2',
+    tryit: 'bg-white border border-violet-200 text-slate-800',
+    accent: false,
   },
+};
+
+/**
+ * Le liseré de catégorie — la couleur ne décore pas, elle DIT de quelle sorte
+ * de connaissance il s'agit. Mêmes familles que CATEGORIES et que la carte, en
+ * version calme : une barre de 3 px, et rien d'autre.
+ */
+const ACCENT = {
+  blue: 'bg-blue-400',
+  orange: 'bg-amber-400',
+  green: 'bg-emerald-400',
+  purple: 'bg-violet-400',
+  red: 'bg-rose-400',
+  indigo: 'bg-indigo-400',
 };
