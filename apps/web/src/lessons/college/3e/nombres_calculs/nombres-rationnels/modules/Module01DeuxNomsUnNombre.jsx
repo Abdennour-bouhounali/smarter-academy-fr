@@ -6,7 +6,7 @@ import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RationalBar from '../components/RationalBar';
 import {
-  equivalent, formatDec, formatFrac, formatRaw, rat, toDecimal,
+  formatDec, formatFrac, formatRaw, rat, toDecimal,
 } from '../components/rationalUtils';
 
 /**
@@ -244,8 +244,8 @@ export default function Module01DeuxNomsUnNombre() {
                   <>
                     Regarde la barre : elle part de 0 vers la gauche et s’arrête à{' '}
                     {formatDec(toDecimal(rat(-3, 4), 4))}. Déplacer le signe du bas vers le haut, ou
-                    devant la fraction, ne déplace pas le point —{' '}
-                    {equivalent(rat(-3, 4), rat(3, -4)) ? 'les trois écritures sont équivalentes' : ''}.
+                    devant la fraction, ne déplace pas le point : les trois écritures sont
+                    équivalentes.
                   </>
                 }
                 requires={['nombre-rationnel', 'ecritures-equivalentes', 'nombres-relatifs']}

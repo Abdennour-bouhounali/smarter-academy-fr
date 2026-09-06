@@ -6,7 +6,7 @@ import MathText from '../../../../../common/components/MathText';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import {
-  compare, expandTo, formatDec, formatFrac, rat, roundTo, toDecimal,
+  expandTo, formatDec, formatFrac, rat, roundTo, toDecimal,
 } from '../components/rationalUtils';
 
 /**
@@ -320,8 +320,7 @@ export default function Module03Comparer() {
                     Sur la droite, <MathText>{'$-\\frac{1}{2}$'}</MathText> (
                     {fmt(-0.5)}) est à DROITE de <MathText>{'$-\\frac{3}{4}$'}</MathText> (
                     {fmt(-0.75)}). Chez les négatifs, la plus grosse part est la PLUS PETITE : on
-                    s’enfonce plus loin à gauche.{' '}
-                    {compare(rat(-1, 2), rat(-3, 4)) === 1 ? '' : ''}
+                    s’enfonce plus loin à gauche.
                   </>
                 }
                 explainWrong={

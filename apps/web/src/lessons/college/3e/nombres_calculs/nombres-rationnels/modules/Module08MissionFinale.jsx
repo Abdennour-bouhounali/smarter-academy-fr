@@ -43,7 +43,7 @@ const SKILLS = {
   ecritures: { label: 'Écritures d’un même rationnel', module: 1 },
   irreductible: { label: 'Rendre irréductible', module: 2 },
   comparer: { label: 'Comparer deux rationnels', module: 3 },
-  operations: { label: 'Additionner, soustraire, multiplier, diviser', module: 4 },
+  operations: { label: 'Additionner, soustraire, multiplier, diviser', module: 5 },
   ordre: { label: 'Choisir et enchaîner les opérations', module: 6 },
   problemes: { label: 'Résoudre un problème', module: 7 },
 };

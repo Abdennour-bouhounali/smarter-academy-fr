@@ -169,8 +169,8 @@ export default function Module04MemeDecoupe() {
           content: (kit) => (
             <div className="space-y-3">
               <CommonDenominatorPicker
-                a={A0}
-                b={B0}
+                a={a}
+                b={b}
                 candidates={[5, 6, 7, 12, 24]}
                 picked={picked}
                 onPick={(d, ok) => {

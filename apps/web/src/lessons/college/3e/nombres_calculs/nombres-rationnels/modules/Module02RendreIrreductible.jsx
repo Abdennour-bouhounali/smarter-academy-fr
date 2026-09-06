@@ -6,7 +6,7 @@ import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Simplifier from '../components/Simplifier';
 import RationalBar from '../components/RationalBar';
-import { gcd, isIrreducible, rat, simplify } from '../components/rationalUtils';
+import { gcd, isIrreducible, rat } from '../components/rationalUtils';
 
 /**
  * Module 2 — DÉCOUVERTE : « Rendre irréductible ».
@@ -35,7 +35,6 @@ import { gcd, isIrreducible, rat, simplify } from '../components/rationalUtils';
  * Transfer: étape 4, reconnaître une fraction déjà irréductible (15/22).
  */
 const START = rat(24, 36);
-const GOAL = simplify(START); // 2/3
 
 export default function Module02RendreIrreductible() {
   const [v, setV] = useState(START);
