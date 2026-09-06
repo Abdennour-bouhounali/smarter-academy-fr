@@ -3,7 +3,7 @@ import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
-import BarModel from '../../../../../common/components/BarModel';
+import BudgetBar from '../components/BudgetBar';
 import CalcChain from '../../../../../common/components/CalcChain';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import {
@@ -50,14 +50,27 @@ const CAPTEURS = rat(1, 4);
 const MATERIEL = add(MOTEURS, CAPTEURS); // 7/12
 const TOURNOI = sub(rat(1, 1), MATERIEL); // 5/12
 const TOURNOI_EUROS = toDecimal(mul(TOURNOI, rat(BUDGET, 1))); // 300
-const PRIX_MAILLOT = rat(25, 2); // 12,50 €
-const MAILLOTS = toDecimal(div(mul(TOURNOI, rat(BUDGET, 1)), PRIX_MAILLOT)); // 24
+const PRIX_MAILLOT = rat(65, 2); // 32,50 €
+// Le quotient exact — 9,23… — n'est PAS la réponse : on n'achète pas 0,23
+// maillot, et on ne peut pas dépasser le budget. Tout est calculé, jamais écrit
+// en dur, et un test unitaire vérifie que ce quotient n'est pas entier : sans
+// quoi l'énoncé « on ne coupe pas un maillot en deux » redeviendrait un mensonge.
+const MAILLOTS_EXACT = toDecimal(div(mul(TOURNOI, rat(BUDGET, 1)), PRIX_MAILLOT)); // 9,2307…
+const MAILLOTS = Math.floor(MAILLOTS_EXACT); // 9
+const RESTE_EUROS = TOURNOI_EUROS - MAILLOTS * toDecimal(PRIX_MAILLOT); // 7,50 €
 
 export default function Module07BudgetDuClub() {
   const [q1, setQ1] = useState(false);
   const [q2, setQ2] = useState(false);
   const [q3, setQ3] = useState(false);
   const [q4, setQ4] = useState(false);
+  const [q4b, setQ4b] = useState(false);
+  // Étape 1 : le budget se COMPOSE, il ne se lit pas.
+  const [seg, setSeg] = useState([
+    { id: 'moteurs', label: 'moteurs', tone: 'sky', parts: 0 },
+    { id: 'capteurs', label: 'capteurs', tone: 'amber', parts: 0 },
+  ]);
+  const composed = seg[0].parts === 4 && seg[1].parts === 3;
 
   return (
     <ContentModule
@@ -79,31 +92,44 @@ export default function Module07BudgetDuClub() {
           </p>
         ),
       }}
-      intro={
-        <div className="rounded-2xl border-2 border-rose-200 bg-rose-50/60 p-4 space-y-3">
-          <p className="text-sm font-semibold text-rose-900">Le budget, en barres</p>
-          <BarModel
-            bars={[
-              {
-                label: 'Budget total (12 douzièmes)',
-                segments: [
-                  { value: 4, tone: 'sky', text: 'moteurs 4/12' },
-                  { value: 3, tone: 'amber', text: 'capteurs 3/12' },
-                  { value: 5, tone: 'slate', unknown: true },
-                ],
-              },
-            ]}
-            maxValue={12}
-          />
-          <p className="text-xs text-slate-600">
-            Les douzièmes sont la découpe commune de <MathText>{`$${formatFrac(MOTEURS)}$`}</MathText>{' '}
-            et <MathText>{`$${formatFrac(CAPTEURS)}$`}</MathText>. Le bloc « ? » est la part du tournoi.
-          </p>
-        </div>
-      }
       steps={[
         {
           num: 1,
+          title: 'Compose le budget du club',
+          subtitle: 'Tire les frontières : un tiers pour les moteurs, un quart pour les capteurs.',
+          done: composed,
+          content: (
+            <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Le budget est découpé en <strong>douzièmes</strong> — la découpe commune de{' '}
+                <MathText>{`$${formatFrac(MOTEURS)}$`}</MathText> et{' '}
+                <MathText>{`$${formatFrac(CAPTEURS)}$`}</MathText>. Donne à chaque poste sa part, et
+                regarde ce qu’il reste.
+              </p>
+              <BudgetBar
+                den={12}
+                segments={seg}
+                onResize={(id, parts) => setSeg((cur) => cur.map((x) => (x.id === id ? { ...x, parts } : x)))}
+                total={BUDGET}
+                unknownLabel="? (tournoi)"
+              />
+              {!composed ? (
+                <Feedback tone="info">
+                  Un tiers de 12 parts, c’est <strong>4</strong> douzièmes ; un quart, c’est{' '}
+                  <strong>3</strong> douzièmes. Tu es à {seg[0].parts} et {seg[1].parts}.
+                </Feedback>
+              ) : (
+                <Feedback tone="ok">
+                  4 douzièmes + 3 douzièmes = <strong>7 douzièmes</strong> de matériel, et il reste{' '}
+                  <strong>5 douzièmes</strong> pour le tournoi. Tu viens de faire l’addition sans
+                  l’écrire — reste à savoir la nommer.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
           title: 'Quelle opération pour le matériel ?',
           subtitle: 'Décider avant de calculer.',
           done: q1,
@@ -151,7 +177,7 @@ export default function Module07BudgetDuClub() {
           ),
         },
         {
-          num: 2,
+          num: 3,
           title: 'Ce qui reste pour le tournoi',
           done: q2,
           content: (
@@ -187,7 +213,7 @@ export default function Module07BudgetDuClub() {
           ),
         },
         {
-          num: 3,
+          num: 4,
           title: 'De la part aux euros',
           subtitle: `Le budget total est de ${formatDec(BUDGET)} €.`,
           done: q3,
@@ -225,47 +251,93 @@ export default function Module07BudgetDuClub() {
           ),
         },
         {
-          num: 4,
+          num: 5,
           title: 'Combien de maillots ?',
-          subtitle: 'Un maillot coûte 12,50 € — et on ne coupe pas un maillot en deux.',
-          done: q4,
+          subtitle: `Un maillot coûte ${formatDec(toDecimal(PRIX_MAILLOT))} € — et on ne coupe pas un maillot en deux.`,
+          done: q4 && q4b,
           content: (
             <div className="space-y-3">
+              <KnowledgeBrick
+                id="interpreter-le-quotient"
+                variant="new"
+                lead="Cette fois la division ne va pas tomber juste. Ce que la calculatrice affiche n’est pas encore une réponse."
+              />
               <NumericQuestion
                 prompt={
                   <>
                     Avec les {formatDec(TOURNOI_EUROS)} € du tournoi, combien de maillots à{' '}
-                    {formatDec(12.5)} € le club peut-il acheter ?
+                    {formatDec(toDecimal(PRIX_MAILLOT))} € le club peut-il acheter ?
                   </>
                 }
                 expected={MAILLOTS}
                 parse={parseDec}
                 display={formatDec(MAILLOTS)}
                 suffix="maillots"
-                explain={`${formatDec(TOURNOI_EUROS)} ÷ ${formatDec(12.5)} = ${formatDec(MAILLOTS)}. Diviser par 12,50, c'est multiplier par 2/25 — et le résultat tombe juste.`}
-                explainFor={(n) =>
-                  n > MAILLOTS
-                    ? `Attention : chaque maillot coûte ${formatDec(12.5)} €, pas 1 €. ${formatDec(TOURNOI_EUROS)} ÷ ${formatDec(12.5)} = ${formatDec(MAILLOTS)}.`
-                    : `${formatDec(TOURNOI_EUROS)} ÷ ${formatDec(12.5)} = ${formatDec(MAILLOTS)} maillots exactement.`
+                explain={
+                  <>
+                    {formatDec(TOURNOI_EUROS)} ÷ {formatDec(toDecimal(PRIX_MAILLOT))} ={' '}
+                    <strong>{formatDec(MAILLOTS_EXACT, 2)}</strong> — et ça, ce n’est pas une réponse :
+                    on n’achète pas {formatDec(MAILLOTS_EXACT - MAILLOTS, 2)} maillot. Le club peut en
+                    prendre <strong>{formatDec(MAILLOTS)}</strong>, et il lui restera{' '}
+                    {formatDec(RESTE_EUROS)} €.
+                  </>
                 }
-                requires={['choisir-operation', 'quotient-rationnels']}
+                explainFor={(n) =>
+                  (n === MAILLOTS + 1
+                    ? `${formatDec(MAILLOTS + 1)} maillots coûteraient ${formatDec((MAILLOTS + 1) * toDecimal(PRIX_MAILLOT))} € — plus que les ${formatDec(TOURNOI_EUROS)} € disponibles. Le club ne peut pas dépasser son budget.`
+                    : Math.abs(n - MAILLOTS_EXACT) < 0.5 && n !== MAILLOTS
+                      ? `${formatDec(n)} est le résultat du calcul, pas la réponse : on n'achète pas de fraction de maillot. Il faut arrondir — et ici, vers le bas.`
+                      : `${formatDec(TOURNOI_EUROS)} ÷ ${formatDec(toDecimal(PRIX_MAILLOT))} = ${formatDec(MAILLOTS_EXACT, 2)}, donc ${formatDec(MAILLOTS)} maillots.`)
+                }
+                requires={['choisir-operation', 'quotient-rationnels', 'interpreter-le-quotient']}
                 solved={q4}
                 onAnswered={() => setQ4(true)}
               />
               {q4 && (
+                <TapQuestion
+                  prompt="Pourquoi arrondit-on VERS LE BAS ici, alors qu’on arrondirait vers le haut pour savoir combien de cars réserver ?"
+                  options={[
+                    'Parce qu’on ne peut pas dépasser le budget : un maillot de plus coûterait trop cher',
+                    'Parce qu’on arrondit toujours un quotient vers le bas',
+                    'Parce que 9,23 est plus proche de 9 que de 10',
+                  ]}
+                  cols={1}
+                  correct={0}
+                  explain={
+                    <>
+                      C’est la SITUATION qui tranche, jamais le calcul. Ici dépasser est interdit — le
+                      club n’a que {formatDec(TOURNOI_EUROS)} € — donc on descend. Pour des cars, il
+                      faut transporter tout le monde : rester en dessous laisserait des élèves à
+                      quai, donc on monte. Même quotient, conclusion opposée.
+                    </>
+                  }
+                  explainWrong={
+                    <>
+                      Ce n’est ni une règle d’arrondi automatique, ni une question de proximité :
+                      9,9 maillots se serait quand même arrondi à 9, parce que 10 maillots coûteraient
+                      plus que le budget. C’est la contrainte de l’énoncé qui décide du sens.
+                    </>
+                  }
+                  requires={['interpreter-le-quotient', 'choisir-operation']}
+                  solved={q4b}
+                  onAnswered={() => setQ4b(true)}
+                />
+              )}
+              {q4 && q4b && (
                 <div className="space-y-3">
                   <CalcChain
                     steps={[
-                      { label: 'Matériel', expr: '1/3 + 1/4', value: '7/12 du budget' },
-                      { label: 'Tournoi', expr: '1 − 7/12', value: '5/12 du budget' },
+                      { label: 'Matériel', expr: '1/3 + 1/4', value: `${formatFrac(MATERIEL)} du budget` },
+                      { label: 'Tournoi', expr: '1 − 7/12', value: `${formatFrac(TOURNOI)} du budget` },
                       { label: 'En euros', expr: `5/12 × ${formatDec(BUDGET)}`, value: `${formatDec(TOURNOI_EUROS)} €` },
-                      { label: 'En maillots', expr: `${formatDec(TOURNOI_EUROS)} ÷ ${formatDec(12.5)}`, value: `${formatDec(MAILLOTS)} maillots` },
+                      { label: 'Le calcul', expr: `${formatDec(TOURNOI_EUROS)} ÷ ${formatDec(toDecimal(PRIX_MAILLOT))}`, value: `${formatDec(MAILLOTS_EXACT, 2)}` },
+                      { label: 'La réponse', expr: 'on ne dépasse pas le budget', value: `${formatDec(MAILLOTS)} maillots` },
                     ]}
                   />
                   <Feedback tone="ok">
-                    Quatre étapes, quatre opérations différentes — et chacune choisie pour ce qu’elle
-                    veut dire dans l’histoire : additionner des dépenses, retirer du tout, prendre une
-                    part d’une somme, faire des paquets.
+                    Cinq étapes, cinq gestes différents — additionner des dépenses, retirer du tout,
+                    prendre une part d’une somme, faire des paquets, puis <strong>interpréter</strong>.
+                    Et il reste {formatDec(RESTE_EUROS)} € dans la caisse.
                   </Feedback>
                 </div>
               )}

@@ -148,3 +148,34 @@ describe('formatFrac / formatRaw / plainFrac', () => {
     expect(plainFrac(rat(4, 1))).toBe('4');
   });
 });
+
+/**
+ * GARDE-FOU DU MODULE 7. L'énoncé promet « on ne coupe pas un maillot en deux ».
+ * Cette promesse n'a de sens que si le quotient N'EST PAS entier : avec un prix
+ * de 12,50 € il tombait sur 24 pile, et l'élève n'avait rien à interpréter —
+ * l'énoncé se contredisait. Ces tests empêchent le mensonge de revenir.
+ */
+describe('module 7 — le quotient DOIT demander une interprétation', () => {
+  const BUDGET = 720;
+  const TOURNOI = sub(rat(1, 1), add(rat(1, 3), rat(1, 4))); // 5/12
+  const PRIX_MAILLOT = rat(65, 2); // 32,50 €
+  const exact = toDecimal(div(mul(TOURNOI, rat(BUDGET, 1)), PRIX_MAILLOT));
+
+  it('la part du tournoi vaut 5/12, soit 300 €', () => {
+    expect(plainFrac(TOURNOI)).toBe('5/12');
+    expect(toDecimal(mul(TOURNOI, rat(BUDGET, 1)))).toBe(300);
+  });
+
+  it('le quotient n’est PAS entier — sinon il n’y a rien à interpréter', () => {
+    expect(Number.isInteger(exact)).toBe(false);
+  });
+
+  it('la réponse est 9 maillots, et il reste 7,50 €', () => {
+    expect(Math.floor(exact)).toBe(9);
+    expect(300 - 9 * toDecimal(PRIX_MAILLOT)).toBeCloseTo(7.5, 6);
+  });
+
+  it('dix maillots dépasseraient le budget — c’est ce qui impose d’arrondir vers le BAS', () => {
+    expect(10 * toDecimal(PRIX_MAILLOT)).toBeGreaterThan(300);
+  });
+});

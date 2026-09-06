@@ -508,7 +508,23 @@ async function run() {
     const head = await body(page);
     check('M7: header shows module 7 of 9', /Module\s*7\s*\/\s*9/i.test(head));
     check('M7: no NaN', !/NaN/.test(head));
-    check('M7: budget bars rendered', /Budget total/i.test(head));
+    // Étape 1 : le budget se COMPOSE, il ne se lit plus sur une image figée.
+    const bar = page.locator('[data-budget-used]').first();
+    check('M7: the budget bar is composed by the student, not displayed',
+      await bar.isVisible().catch(() => false));
+    check('M7: it starts EMPTY — there is something to do',
+      (await bar.getAttribute('data-budget-used')) === '0');
+    const handles = page.locator('[role="separator"]');
+    check('M7: each budget line has a draggable boundary', (await handles.count()) === 2);
+    await handles.nth(0).focus();
+    for (let i = 0; i < 4; i += 1) { await page.keyboard.press('ArrowRight'); await page.waitForTimeout(110); }
+    await handles.nth(1).focus();
+    for (let i = 0; i < 3; i += 1) { await page.keyboard.press('ArrowRight'); await page.waitForTimeout(110); }
+    check('M7: composing 1/3 + 1/4 leaves exactly 5 twelfths for the tournament',
+      (await bar.getAttribute('data-budget-used')) === '7' && (await bar.getAttribute('data-budget-left')) === '5',
+      `used ${await bar.getAttribute('data-budget-used')}, left ${await bar.getAttribute('data-budget-left')}`);
+    check('M7: the sum is named only AFTER the gesture produced it',
+      /7 douzièmes/i.test(await body(page)));
 
     // Step 1: the modelling QCM (KaTeX options → match on the aria/plain label).
     const addCard = page.locator('div[role="group"] button').first();
@@ -529,6 +545,33 @@ async function run() {
       check('M7: remaining-part question reachable', false, 'field not visible');
     }
     await page.screenshot({ path: `${SHOT_DIR}nr-m7-budget.png` });
+    await ctx.close();
+  }
+
+  /* ── 9bis. M7 — le quotient qui ne tombe PAS juste ────────────────── */
+  {
+    // Le module promettait « on ne coupe pas un maillot en deux » alors que
+    // 300 ÷ 12,50 = 24 pile : rien à interpréter. À 32,50 €, 300 ÷ 32,50 =
+    // 9,23… et la promesse devient vraie.
+    const { ctx, page } = await open(browser, `${LESSON}/le-budget-du-club`, ['0', '1', '2', '3', '4', '5', '6', '7'], { tag: 'm7b' });
+    const t = await body(page);
+    check('M7: the jersey price makes the division genuinely non-exact', /32,50/.test(t), t.slice(0, 300));
+
+    const jersey = page.locator('input[type="text"], input[type="number"]').last();
+    if (await jersey.isVisible().catch(() => false)) {
+      // 10 dépasse le budget — la correction doit le dire en euros.
+      await jersey.fill('10');
+      await page.locator('button:has-text("OK")').last().click();
+      await page.waitForTimeout(700);
+      const over = await body(page);
+      check('M7: over-buying is refused in euros, not by decree',
+        /325/.test(over) && /budget/i.test(over), over.slice(0, 400));
+      check('M7: the exact quotient is shown as a CALCULATION, not as the answer',
+        /9,23/.test(over), over.slice(0, 400));
+      check('M7: the leftover money is named', /7,50/.test(over), over.slice(0, 400));
+    } else {
+      check('M7: jersey question reachable', false, 'field not visible');
+    }
     await ctx.close();
   }
 

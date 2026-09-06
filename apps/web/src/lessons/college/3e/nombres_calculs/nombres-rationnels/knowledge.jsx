@@ -356,6 +356,27 @@ export const LESSON_KNOWLEDGE = {
     /* M7 — Choisir l'opération que raconte l'énoncé. */
     7: [
       {
+        id: 'interpreter-le-quotient',
+        type: 'methodes',
+        title: 'Interpréter un quotient',
+        summary: 'Un quotient non entier n’est pas la réponse : le contexte décide dans quel sens arrondir.',
+        body: (
+          <div className="space-y-3">
+            <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-center space-y-1">
+              <p className="text-sm">300 ÷ 32,50 = 9,23…</p>
+              <p className="text-xs text-slate-500">→ 9 maillots, et il reste 7,50 €</p>
+            </div>
+            <p>La calculatrice donne un nombre ; l’énoncé dit ce qu’on a le droit d’en faire. Ici on
+            ne peut pas dépasser le budget : l’<strong>arrondi</strong> se fait donc{' '}
+            <strong>vers le bas</strong>.</p>
+            <p className="text-xs text-slate-500">Ailleurs, c’est l’inverse : s’il faut assez de cars
+            pour transporter tout le monde, 3,2 cars en demande 4. Le calcul est le même, la
+            conclusion opposée — c’est la situation qui tranche.</p>
+            <Souvenir>les 9,23 maillots impossibles à acheter.</Souvenir>
+          </div>
+        ),
+      },
+      {
         id: 'choisir-operation',
         type: 'methodes',
         title: 'Choisir l’opération que raconte l’énoncé',
