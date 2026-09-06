@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { AlertTriangle } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Ruler from '../components/Ruler';
@@ -172,22 +171,42 @@ export default function Module02MesurerComparer() {
           title: 'Le piège du zéro',
           done: constatDone,
           content: (
-            <TapQuestion
-              above={<Ruler {...PIEGE} mode="display" ariaLabel="Règle avec un crayon qui ne commence pas à zéro" />}
-              prompt={PIEGE_Q.q}
-              options={PIEGE_Q.options}
-              correct={PIEGE_Q.correct}
-              cols={1}
-              explain={PIEGE_Q.explain}
-              solved={constatDone}
-              onAnswered={() => setConstatDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                above={<Ruler {...PIEGE} mode="display" ariaLabel="Règle avec un crayon qui ne commence pas à zéro" />}
+                requires={['longueur-invariante']}
+                prompt={PIEGE_Q.q}
+                options={PIEGE_Q.options}
+                correct={PIEGE_Q.correct}
+                cols={1}
+                explain={PIEGE_Q.explain}
+                solved={constatDone}
+                onAnswered={() => setConstatDone(true)}
+              />
+              {/* Le constat vient d'être fait sur un cas concret : la méthode
+                  générale se pose ici, AVANT les trois mesures de l'étape 2
+                  (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}
+              {constatDone && (
+                <KnowledgeBrick
+                  id="mesurer-difference"
+                  variant="new"
+                  lead="Tu viens de voir pourquoi lire la fin ne suffit pas. Voici le geste complet."
+                />
+              )}
+              {constatDone && (
+                <KnowledgeBrick
+                  id="mem-piege-du-zero"
+                  variant="new"
+                  lead="Un seul réflexe à garder de ce module."
+                />
+              )}
+            </div>
           ),
         },
         {
           num: 2,
           title: 'À toi de mesurer',
-          subtitle: 'Longueur = position de fin − position de début',
+          subtitle: 'Trois objets posés sur la règle, à toi de jouer.',
           done: allRoundsDone,
           content: (kit) => (
             <div className="space-y-8">
@@ -210,13 +229,10 @@ export default function Module02MesurerComparer() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <AlertTriangle className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Retiens ce réflexe : sur une règle, une longueur se lit toujours comme une DIFFÉRENCE entre deux
-            positions, pas comme un seul nombre.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais lire une longueur en centimètres. Au module suivant, la
+          même règle porte deux rangées de graduations — et la longueur ne change pas.
+        </KnowledgeSnapshot>
       }
     />
   );

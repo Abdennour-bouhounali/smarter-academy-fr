@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { PencilRuler } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { INSTRUMENTS, INSTRUMENTS_LIST, TACHES, instrumentFor } from '../components/constructionsUtils';
@@ -53,32 +52,49 @@ export default function Module01CroquisRate() {
           title: 'Pourquoi utiliser des instruments ?',
           done: pourquoiDone,
           content: (
-            <TapQuestion
-              above={
-                <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4 space-y-2">
-                  <p className="text-xs font-mono uppercase tracking-wide text-rose-500">
-                    Le croquis à main levée
-                  </p>
-                  <ul className="text-sm text-rose-900 space-y-1.5">
-                    {CROQUIS.map((c, i) => (
-                      <li key={i}>✗ {c.defaut}</li>
-                    ))}
-                  </ul>
-                </div>
-              }
-              prompt="À quoi servent les instruments de géométrie ?"
-              options={[
-                'À GARANTIR une propriété : une longueur, un angle droit, une égalité',
-                'À dessiner plus joliment',
-                'À aller plus vite',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Un instrument n’embellit pas : il garantit. La règle garantit la longueur, l’équerre l’angle droit, le compas l’égalité des distances."
-              explainWrong="Ce n’est pas une question d’esthétique ni de vitesse : sans instrument, aucune propriété n’est exacte — et une figure fausse ne prouve rien."
-              solved={pourquoiDone}
-              onAnswered={() => setPourquoiDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                above={
+                  <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4 space-y-2">
+                    <p className="text-xs font-mono uppercase tracking-wide text-rose-500">
+                      Le croquis à main levée
+                    </p>
+                    <ul className="text-sm text-rose-900 space-y-1.5">
+                      {CROQUIS.map((c, i) => (
+                        <li key={i}>✗ {c.defaut}</li>
+                      ))}
+                    </ul>
+                  </div>
+                }
+                prompt="À quoi servent les instruments de géométrie ?"
+                options={[
+                  'À GARANTIR une propriété : une longueur, un angle droit, une égalité',
+                  'À dessiner plus joliment',
+                  'À aller plus vite',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['figures-planes-usuelles', 'angle-droit']}
+                explain="Un instrument n’embellit pas : il garantit. La règle garantit la longueur, l’équerre l’angle droit, le compas l’égalité des distances."
+                explainWrong="Ce n’est pas une question d’esthétique ni de vitesse : sans instrument, aucune propriété n’est exacte — et une figure fausse ne prouve rien."
+                solved={pourquoiDone}
+                onAnswered={() => setPourquoiDone(true)}
+              />
+
+              {/* Les trois défauts du croquis viennent d'être reliés à trois
+                  causes distinctes : l'idée fondatrice de la leçon se pose
+                  ici, avant l'association tâche/instrument de l'étape 2. */}
+              {pourquoiDone && (
+                <>
+                  <KnowledgeBrick
+                    id="instrument-garantit"
+                    variant="new"
+                    lead="Chacun des trois défauts venait d’une propriété qui n’était pas assurée."
+                  />
+                  <KnowledgeBrick id="mem-trois-garanties" variant="new" />
+                </>
+              )}
+            </div>
           ),
         },
         {
@@ -87,6 +103,7 @@ export default function Module01CroquisRate() {
           done: assocDone,
           content: (
             <BatchChoiceQuestion
+              requires={['instrument-garantit', 'mem-trois-garanties', 'angle-droit']}
               intro={
                 <div className="space-y-3">
                   <div className="grid sm:grid-cols-3 gap-2">
@@ -140,6 +157,7 @@ export default function Module01CroquisRate() {
               ]}
               correct={0}
               cols={1}
+              requires={['instrument-garantit', 'mem-trois-garanties']}
               explain="Le compas conserve un écartement : c’est ce qui permet de REPORTER une longueur sans jamais la lire. Il ne sert donc pas qu’aux cercles."
               explainWrong="La règle oblige à lire un nombre — donc à arrondir. Le compas, lui, transporte la longueur exacte, même inconnue."
               solved={regleDone}
@@ -149,21 +167,10 @@ export default function Module01CroquisRate() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <PencilRuler className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <div className="grid sm:grid-cols-3 gap-2 text-sm">
-            {INSTRUMENTS_LIST.map((i) => (
-              <div key={i.id} className="bg-white/10 rounded-xl p-3 text-center">
-                <div className="font-bold text-white mb-1 capitalize">{i.nom}</div>
-                <div className="text-slate-300 text-xs">{i.garantit}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais ce que chaque instrument garantit. Reste à savoir s’en
+          servir : le module suivant commence par la règle graduée, et son piège.
+        </KnowledgeSnapshot>
       }
     />
   );

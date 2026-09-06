@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RoundPicker from '../components/RoundPicker';
 
@@ -88,6 +89,7 @@ function EstimVsExact({ solved, onAnswered }) {
         </div>
       }
       prompt={DISTINCT_Q.q}
+      requires={['nombre-ami']}
       options={DISTINCT_Q.options}
       correct={DISTINCT_Q.correct}
       cols={1}
@@ -126,7 +128,18 @@ export default function Module02Estimer() {
           num: 1,
           title: 'Estime 197 + 302, étape par étape',
           done: s1,
-          content: <Laboratoire r1={r1} r2={r2} onR1={() => setR1(true)} onR2={() => setR2(true)} />,
+          content: (
+            <div className="space-y-5">
+              <Laboratoire r1={r1} r2={r2} onR1={() => setR1(true)} onR2={() => setR2(true)} />
+              {s1 && (
+                <KnowledgeBrick
+                  id="nombre-ami"
+                  variant="new"
+                  lead="Les deux nombres ronds que tu viens de choisir sur la droite graduée."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -135,6 +148,7 @@ export default function Module02Estimer() {
           content: (
             <TapQuestion
               prompt={FORMULE_Q.q}
+              requires={['nombre-ami']}
               options={FORMULE_Q.options}
               correct={FORMULE_Q.correct}
               cols={1}
@@ -148,9 +162,26 @@ export default function Module02Estimer() {
           num: 3,
           title: 'Estimation et calcul exact : pas la même chose',
           done: s3,
-          content: <EstimVsExact solved={distinctDone} onAnswered={() => setDistinctDone(true)} />,
+          content: (
+            <div className="space-y-5">
+              <EstimVsExact solved={distinctDone} onAnswered={() => setDistinctDone(true)} />
+              {s3 && (
+                <KnowledgeBrick
+                  id="estimation-approchee"
+                  variant="new"
+                  lead="Les 5 d'écart du cas B : ils ne rendent pas l'estimation fausse."
+                />
+              )}
+            </div>
+          ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Choisir le nombre ami « à l'œil » a ses limites. On va
+          apprendre à le faire à coup sûr, et à lui donner son nom.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

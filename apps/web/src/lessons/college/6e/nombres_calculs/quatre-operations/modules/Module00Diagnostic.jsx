@@ -23,6 +23,9 @@ const QUESTIONS = [
     id: 'q1-valeur-position',
     skill: 'numeration',
     points: 2,
+    // Module 0 MESURE des prérequis : ses requires ne citent que des ids de
+    // priorKnowledge (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['valeur-position'],
     prompt: (
       <>
         Dans le nombre <strong className="font-mono">4 582</strong>, que représente le chiffre{' '}
@@ -38,6 +41,7 @@ const QUESTIONS = [
     id: 'q2-comparaison',
     skill: 'numeration',
     points: 2,
+    requires: ['valeur-position', 'calcul-numerique'],
     prompt: (
       <>
         Entre <strong className="font-mono">2 987</strong> et <strong className="font-mono">2 879</strong>,
@@ -53,6 +57,7 @@ const QUESTIONS = [
     id: 'q3-lecture-nombre',
     skill: 'numeration',
     points: 2,
+    requires: ['valeur-position'],
     prompt: (
       <>
         Comment s'écrit en chiffres le nombre <strong>« douze mille trois cent six »</strong> ?
@@ -67,6 +72,7 @@ const QUESTIONS = [
     id: 'q4-table-7x8',
     skill: 'tables',
     points: 2,
+    requires: ['tables-multiplication'],
     prompt: <>Combien font <strong className="font-mono">7 × 8</strong> ?</>,
     options: ['54', '56', '64'],
     cols: 3,
@@ -77,6 +83,7 @@ const QUESTIONS = [
     id: 'q5-table-6x9',
     skill: 'tables',
     points: 2,
+    requires: ['tables-multiplication'],
     prompt: <>Combien font <strong className="font-mono">6 × 9</strong> ?</>,
     options: ['45', '54', '56'],
     cols: 3,

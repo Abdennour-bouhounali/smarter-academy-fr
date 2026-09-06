@@ -2,11 +2,195 @@
   "lesson": "figures-planes",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "angle-droit",
+    "angle-aigu-obtus",
+    "droites-paralleles",
+    "droites-perpendiculaires"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "propriete-decide",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module01FauxCarre.jsx",
+        "line": 133,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "rectangle",
+      "type": "concepts",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module03LaboQuadrilateres.jsx",
+        "line": 310,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "losange",
+      "type": "concepts",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module03LaboQuadrilateres.jsx",
+        "line": 315,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "carre",
+      "type": "concepts",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module03LaboQuadrilateres.jsx",
+        "line": 320,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "famille-quadrilateres",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module03LaboQuadrilateres.jsx",
+        "line": 350,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "triangle-isocele",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module04FamilleTriangles.jsx",
+        "line": 195,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "triangle-equilateral",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module04FamilleTriangles.jsx",
+        "line": 200,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "triangle-rectangle",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module04FamilleTriangles.jsx",
+        "line": 223,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "caracteres-cumulables",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module04FamilleTriangles.jsx",
+        "line": 281,
+        "step": 4,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "cote",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module02CotesSommetsAngles.jsx",
+        "line": 70,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "sommet",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module02CotesSommetsAngles.jsx",
+        "line": 128,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "angle",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module02CotesSommetsAngles.jsx",
+        "line": 166,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "polygone",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module02CotesSommetsAngles.jsx",
+        "line": 113,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "carte-identite",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module05CarteIdentite.jsx",
+        "line": 97,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "construire-contraintes",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module07ConstruireContraintes.jsx",
+        "line": 279,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-eliminer",
+      "type": "memoriser",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module06EnqueteGeometrique.jsx",
+        "line": 155,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-segment",
@@ -15,7 +199,7 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module00Diagnostic.jsx",
       "line": 19,
-      "requires": null,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -26,9 +210,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module00Diagnostic.jsx",
-      "line": 29,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 31,
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +226,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module00Diagnostic.jsx",
-      "line": 39,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 43,
+      "requires": [
+        "angle-droit",
+        "angle-aigu-obtus"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior",
+        "angle-aigu-obtus": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +244,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module00Diagnostic.jsx",
-      "line": 49,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 55,
+      "requires": [
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +260,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module00Diagnostic.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 71,
+      "requires": [
+        "droites-perpendiculaires",
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "prior",
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,8 +278,8 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module01FauxCarre.jsx",
-      "line": 66,
-      "requires": null,
+      "line": 65,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -86,9 +290,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module01FauxCarre.jsx",
-      "line": 149,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 157,
+      "requires": [
+        "propriete-decide"
+      ],
+      "prerequisiteStatus": {
+        "propriete-decide": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +306,13 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module02CotesSommetsAngles.jsx",
-      "line": 70,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 78,
+      "requires": [
+        "cote"
+      ],
+      "prerequisiteStatus": {
+        "cote": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,9 +322,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module02CotesSommetsAngles.jsx",
-      "line": 111,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 133,
+      "requires": [
+        "sommet",
+        "cote"
+      ],
+      "prerequisiteStatus": {
+        "sommet": "established@M2",
+        "cote": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -122,20 +340,35 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module02CotesSommetsAngles.jsx",
-      "line": 141,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 171,
+      "requires": [
+        "angle",
+        "sommet"
+      ],
+      "prerequisiteStatus": {
+        "angle": "established@M2",
+        "sommet": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M03-S0-Q1",
+      "questionId": "M03-S3-Q1",
       "module": 3,
+      "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module03LaboQuadrilateres.jsx",
-      "line": 302,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 355,
+      "requires": [
+        "famille-quadrilateres",
+        "carre",
+        "rectangle"
+      ],
+      "prerequisiteStatus": {
+        "famille-quadrilateres": "established@M3",
+        "carre": "established@M3",
+        "rectangle": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -145,9 +378,17 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module04FamilleTriangles.jsx",
-      "line": 191,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 239,
+      "requires": [
+        "triangle-isocele",
+        "triangle-rectangle",
+        "polygone"
+      ],
+      "prerequisiteStatus": {
+        "triangle-isocele": "established@M4",
+        "triangle-rectangle": "established@M4",
+        "polygone": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -157,9 +398,19 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module04FamilleTriangles.jsx",
-      "line": 231,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 286,
+      "requires": [
+        "caracteres-cumulables",
+        "triangle-isocele",
+        "triangle-rectangle",
+        "triangle-equilateral"
+      ],
+      "prerequisiteStatus": {
+        "caracteres-cumulables": "established@M4",
+        "triangle-isocele": "established@M4",
+        "triangle-rectangle": "established@M4",
+        "triangle-equilateral": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -169,13 +420,19 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module05CarteIdentite.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "cote-oppose"
+      "line": 102,
+      "requires": [
+        "carte-identite",
+        "carre",
+        "rectangle"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "carte-identite": "established@M5",
+        "carre": "established@M3",
+        "rectangle": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M05-S2-Q2",
@@ -183,9 +440,19 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module05CarteIdentite.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 127,
+      "requires": [
+        "carte-identite",
+        "carre",
+        "rectangle",
+        "losange"
+      ],
+      "prerequisiteStatus": {
+        "carte-identite": "established@M5",
+        "carre": "established@M3",
+        "rectangle": "established@M3",
+        "losange": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -195,9 +462,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module05CarteIdentite.jsx",
-      "line": 150,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 160,
+      "requires": [
+        "carte-identite",
+        "losange",
+        "polygone",
+        "propriete-decide"
+      ],
+      "prerequisiteStatus": {
+        "carte-identite": "established@M5",
+        "losange": "established@M3",
+        "polygone": "established@M2",
+        "propriete-decide": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -206,9 +483,17 @@
       "module": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module06EnqueteGeometrique.jsx",
-      "line": 153,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 160,
+      "requires": [
+        "mem-eliminer",
+        "carre",
+        "losange"
+      ],
+      "prerequisiteStatus": {
+        "mem-eliminer": "established@M6",
+        "carre": "established@M3",
+        "losange": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -218,9 +503,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 54,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 56,
+      "requires": [
+        "propriete-decide",
+        "carre",
+        "cote"
+      ],
+      "prerequisiteStatus": {
+        "propriete-decide": "established@M1",
+        "carre": "established@M3",
+        "cote": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +523,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "cote",
+        "sommet",
+        "polygone"
+      ],
+      "prerequisiteStatus": {
+        "cote": "established@M2",
+        "sommet": "established@M2",
+        "polygone": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,9 +543,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 88,
+      "requires": [
+        "angle"
+      ],
+      "prerequisiteStatus": {
+        "angle": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -254,9 +559,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 101,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 106,
+      "requires": [
+        "carre",
+        "rectangle",
+        "losange",
+        "polygone"
+      ],
+      "prerequisiteStatus": {
+        "carre": "established@M3",
+        "rectangle": "established@M3",
+        "losange": "established@M3",
+        "polygone": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -266,9 +581,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 124,
+      "requires": [
+        "famille-quadrilateres",
+        "carre",
+        "rectangle"
+      ],
+      "prerequisiteStatus": {
+        "famille-quadrilateres": "established@M3",
+        "carre": "established@M3",
+        "rectangle": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -278,9 +601,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 135,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 142,
+      "requires": [
+        "caracteres-cumulables",
+        "triangle-isocele",
+        "triangle-rectangle",
+        "triangle-equilateral"
+      ],
+      "prerequisiteStatus": {
+        "caracteres-cumulables": "established@M4",
+        "triangle-isocele": "established@M4",
+        "triangle-rectangle": "established@M4",
+        "triangle-equilateral": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -290,9 +623,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 152,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 160,
+      "requires": [
+        "carte-identite",
+        "losange",
+        "polygone"
+      ],
+      "prerequisiteStatus": {
+        "carte-identite": "established@M5",
+        "losange": "established@M3",
+        "polygone": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -302,9 +643,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 169,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 178,
+      "requires": [
+        "carte-identite",
+        "rectangle",
+        "losange"
+      ],
+      "prerequisiteStatus": {
+        "carte-identite": "established@M5",
+        "rectangle": "established@M3",
+        "losange": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -314,9 +663,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 185,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 195,
+      "requires": [
+        "mem-eliminer",
+        "carre",
+        "losange",
+        "rectangle"
+      ],
+      "prerequisiteStatus": {
+        "mem-eliminer": "established@M6",
+        "carre": "established@M3",
+        "losange": "established@M3",
+        "rectangle": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -326,25 +685,22 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module08MissionFinale.jsx",
-      "line": 198,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 209,
+      "requires": [
+        "construire-contraintes",
+        "rectangle",
+        "carre",
+        "polygone"
+      ],
+      "prerequisiteStatus": {
+        "construire-contraintes": "established@M7",
+        "rectangle": "established@M3",
+        "carre": "established@M3",
+        "polygone": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« côté opposé » first appears at q.option (module 5, étape 1) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/figures-planes/modules/Module05CarteIdentite.jsx",
-      "line": 100,
-      "module": 5,
-      "step": 1,
-      "term": "cote-oppose",
-      "questionId": "M05-S1-Q1",
-      "position": 94
-    }
-  ]
+  "findings": []
 }

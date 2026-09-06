@@ -2,55 +2,118 @@
   "lesson": "fonctions-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "abscisse",
+    "ordonnee",
+    "coordonnees",
+    "origine-repere",
+    "perimetre",
+    "aire",
+    "calcul-litteral",
+    "developper",
+    "distributivite",
+    "equation-premier-degre",
+    "carre-nombre",
+    "encadrer-nombre",
+    "fonction",
+    "image",
+    "antecedent",
+    "notation-fx",
+    "tableau-de-valeurs",
+    "representation-graphique",
+    "intervalle",
+    "intervalle-crochets",
+    "ensemble-reels",
+    "appartient"
+  ],
   "conceptsIntroduced": [
     {
       "id": "fonction-dependance",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module01LaBoite.jsx",
+        "line": 77,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "image-antecedent",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
+        "line": 60,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "ensemble-definition",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
+        "line": 121,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "tableau-valeurs",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module03LeTableauDeValeurs.jsx",
+        "line": 111,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-antecedent-equation",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module03LeTableauDeValeurs.jsx",
+        "line": 151,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "courbe-representative",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module04DuTableauALaCourbe.jsx",
+        "line": 72,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "quatre-registres",
       "type": "concepts",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
+        "line": 55,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "reunion-intervalles",
       "type": "concepts",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module06UneFonctionEnMorceaux.jsx",
+        "line": 63,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -58,19 +121,45 @@
       "id": "vocab-variable",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module01LaBoite.jsx",
+        "line": 122,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "rappel-intervalle",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
+        "line": 115,
+        "step": 3,
+        "variant": "rappel"
+      }
     },
     {
       "id": "vocab-notation-fx",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
+        "line": 96,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "vocab-union-intervalles",
       "type": "vocabulaire",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module06UneFonctionEnMorceaux.jsx",
+        "line": 68,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -78,55 +167,100 @@
       "id": "methode-lire-image-graphique",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
+        "line": 65,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-lire-antecedents-graphique",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
+        "line": 88,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-calculer-image",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module03LeTableauDeValeurs.jsx",
+        "line": 81,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-tracer-courbe",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module04DuTableauALaCourbe.jsx",
+        "line": 66,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-tester-point",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module04DuTableauALaCourbe.jsx",
+        "line": 88,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-choisir-registre",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
+        "line": 123,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-modeliser",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
+        "line": 94,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-fonction-par-morceaux",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module06UneFonctionEnMorceaux.jsx",
+        "line": 103,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-verifier-modele",
       "type": "methodes",
       "module": 7,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module07AtelierModeliser.jsx",
+        "line": 39,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -134,13 +268,23 @@
       "id": "mem-un-x-une-valeur",
       "type": "memoriser",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module01LaBoite.jsx",
+        "line": 98,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-point-sur-courbe",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module04DuTableauALaCourbe.jsx",
+        "line": 127,
+        "step": 4,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -150,9 +294,19 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 32,
+      "requires": [
+        "fonction",
+        "notation-fx",
+        "image",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "notation-fx": "prior",
+        "image": "prior",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,9 +316,37 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 33,
+      "requires": [
+        "fonction",
+        "image",
+        "tableau-de-valeurs"
+      ],
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "image": "prior",
+        "tableau-de-valeurs": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fo-d2bis-antecedent",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
+      "line": 34,
+      "requires": [
+        "fonction",
+        "antecedent",
+        "tableau-de-valeurs"
+      ],
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "antecedent": "prior",
+        "tableau-de-valeurs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +356,39 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 35,
+      "requires": [
+        "coordonnees",
+        "abscisse",
+        "ordonnee",
+        "origine-repere"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior",
+        "origine-repere": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fo-d3bis-courbe",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
+      "line": 36,
+      "requires": [
+        "representation-graphique",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "representation-graphique": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +398,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 37,
+      "requires": [
+        "calcul-litteral",
+        "carre-nombre"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "carre-nombre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +416,89 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 24,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 38,
+      "requires": [
+        "developper",
+        "distributivite"
+      ],
+      "prerequisiteStatus": {
+        "developper": "prior",
+        "distributivite": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fo-d6-equation",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
+      "line": 39,
+      "requires": [
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "equation-premier-degre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fo-d7-intervalle",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
+      "line": 40,
+      "requires": [
+        "intervalle",
+        "intervalle-crochets",
+        "encadrer-nombre"
+      ],
+      "prerequisiteStatus": {
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "encadrer-nombre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fo-d8-appartient",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
+      "line": 41,
+      "requires": [
+        "appartient",
+        "intervalle",
+        "ensemble-reels"
+      ],
+      "prerequisiteStatus": {
+        "appartient": "prior",
+        "intervalle": "prior",
+        "ensemble-reels": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fo-d9-grandeurs",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module00Diagnostic.jsx",
+      "line": 42,
+      "requires": [
+        "perimetre",
+        "aire"
+      ],
+      "prerequisiteStatus": {
+        "perimetre": "prior",
+        "aire": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +508,19 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module01LaBoite.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 139,
+      "requires": [
+        "fonction-dependance",
+        "vocab-variable",
+        "intervalle",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "fonction-dependance": "established@M1",
+        "vocab-variable": "established@M1",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,14 +530,23 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
+      "line": 126,
+      "requires": [
+        "ensemble-definition",
+        "fonction-dependance",
         "intervalle",
-        "intervalle-crochets"
+        "intervalle-crochets",
+        "ensemble-reels"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "ensemble-definition": "established@M2",
+        "fonction-dependance": "established@M1",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "ensemble-reels": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M02-S4-Q2",
@@ -237,9 +554,19 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 145,
+      "requires": [
+        "image-antecedent",
+        "vocab-notation-fx",
+        "ensemble-definition",
+        "appartient"
+      ],
+      "prerequisiteStatus": {
+        "image-antecedent": "established@M2",
+        "vocab-notation-fx": "established@M2",
+        "ensemble-definition": "established@M2",
+        "appartient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -249,9 +576,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module03LeTableauDeValeurs.jsx",
-      "line": 49,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 60,
+      "requires": [
+        "fonction-dependance",
+        "calcul-litteral",
+        "carre-nombre"
+      ],
+      "prerequisiteStatus": {
+        "fonction-dependance": "established@M1",
+        "calcul-litteral": "prior",
+        "carre-nombre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -261,9 +596,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module03LeTableauDeValeurs.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 86,
+      "requires": [
+        "methode-calculer-image",
+        "vocab-notation-fx",
+        "carre-nombre",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "methode-calculer-image": "established@M3",
+        "vocab-notation-fx": "established@M2",
+        "carre-nombre": "prior",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -273,9 +618,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module03LeTableauDeValeurs.jsx",
-      "line": 76,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 94,
+      "requires": [
+        "methode-calculer-image",
+        "vocab-notation-fx",
+        "carre-nombre",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "methode-calculer-image": "established@M3",
+        "vocab-notation-fx": "established@M2",
+        "carre-nombre": "prior",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -285,9 +640,19 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module03LeTableauDeValeurs.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 118,
+      "requires": [
+        "tableau-valeurs",
+        "vocab-notation-fx",
+        "image-antecedent",
+        "ensemble-definition"
+      ],
+      "prerequisiteStatus": {
+        "tableau-valeurs": "established@M3",
+        "vocab-notation-fx": "established@M2",
+        "image-antecedent": "established@M2",
+        "ensemble-definition": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -297,9 +662,19 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module03LeTableauDeValeurs.jsx",
-      "line": 123,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 156,
+      "requires": [
+        "regle-antecedent-equation",
+        "image-antecedent",
+        "vocab-notation-fx",
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "regle-antecedent-equation": "established@M3",
+        "image-antecedent": "established@M2",
+        "vocab-notation-fx": "established@M2",
+        "equation-premier-degre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -309,9 +684,21 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module04DuTableauALaCourbe.jsx",
-      "line": 62,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 93,
+      "requires": [
+        "methode-tester-point",
+        "courbe-representative",
+        "methode-calculer-image",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "methode-tester-point": "established@M4",
+        "courbe-representative": "established@M4",
+        "methode-calculer-image": "established@M3",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -321,9 +708,21 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module04DuTableauALaCourbe.jsx",
-      "line": 77,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "methode-tester-point",
+        "courbe-representative",
+        "coordonnees",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "methode-tester-point": "established@M4",
+        "courbe-representative": "established@M4",
+        "coordonnees": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -333,9 +732,21 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module04DuTableauALaCourbe.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "mem-point-sur-courbe",
+        "courbe-representative",
+        "image-antecedent",
+        "methode-lire-image-graphique",
+        "methode-lire-antecedents-graphique"
+      ],
+      "prerequisiteStatus": {
+        "mem-point-sur-courbe": "established@M4",
+        "courbe-representative": "established@M4",
+        "image-antecedent": "established@M2",
+        "methode-lire-image-graphique": "established@M2",
+        "methode-lire-antecedents-graphique": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -345,12 +756,20 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
-      "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "extremum"
+      "line": 62,
+      "requires": [
+        "quatre-registres",
+        "courbe-representative",
+        "methode-calculer-image",
+        "methode-tester-point"
       ],
+      "prerequisiteStatus": {
+        "quatre-registres": "established@M5",
+        "courbe-representative": "established@M4",
+        "methode-calculer-image": "established@M3",
+        "methode-tester-point": "established@M4"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -359,9 +778,21 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 99,
+      "requires": [
+        "methode-modeliser",
+        "vocab-variable",
+        "vocab-notation-fx",
+        "perimetre",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser": "established@M5",
+        "vocab-variable": "established@M1",
+        "vocab-notation-fx": "established@M2",
+        "perimetre": "prior",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -371,9 +802,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
-      "line": 80,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 108,
+      "requires": [
+        "regle-antecedent-equation",
+        "methode-modeliser",
+        "image-antecedent",
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "regle-antecedent-equation": "established@M3",
+        "methode-modeliser": "established@M5",
+        "image-antecedent": "established@M2",
+        "equation-premier-degre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -383,9 +824,21 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
-      "line": 94,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 129,
+      "requires": [
+        "methode-choisir-registre",
+        "quatre-registres",
+        "tableau-valeurs",
+        "courbe-representative",
+        "image-antecedent"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-registre": "established@M5",
+        "quatre-registres": "established@M5",
+        "tableau-valeurs": "established@M3",
+        "courbe-representative": "established@M4",
+        "image-antecedent": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -395,9 +848,21 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
-      "line": 122,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 159,
+      "requires": [
+        "quatre-registres",
+        "tableau-valeurs",
+        "methode-calculer-image",
+        "developper",
+        "distributivite"
+      ],
+      "prerequisiteStatus": {
+        "quatre-registres": "established@M5",
+        "tableau-valeurs": "established@M3",
+        "methode-calculer-image": "established@M3",
+        "developper": "prior",
+        "distributivite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -407,9 +872,21 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module06UneFonctionEnMorceaux.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 86,
+      "requires": [
+        "reunion-intervalles",
+        "vocab-union-intervalles",
+        "ensemble-definition",
+        "intervalle",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "reunion-intervalles": "established@M6",
+        "vocab-union-intervalles": "established@M6",
+        "ensemble-definition": "established@M2",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -419,12 +896,24 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module06UneFonctionEnMorceaux.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "appartient"
+      "line": 109,
+      "requires": [
+        "methode-fonction-par-morceaux",
+        "reunion-intervalles",
+        "vocab-union-intervalles",
+        "ensemble-definition",
+        "appartient",
+        "intervalle-crochets"
       ],
+      "prerequisiteStatus": {
+        "methode-fonction-par-morceaux": "established@M6",
+        "reunion-intervalles": "established@M6",
+        "vocab-union-intervalles": "established@M6",
+        "ensemble-definition": "established@M2",
+        "appartient": "prior",
+        "intervalle-crochets": "prior"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -433,9 +922,21 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module07AtelierModeliser.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 44,
+      "requires": [
+        "methode-verifier-modele",
+        "methode-modeliser",
+        "vocab-variable",
+        "vocab-notation-fx",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "methode-verifier-modele": "established@M7",
+        "methode-modeliser": "established@M5",
+        "vocab-variable": "established@M1",
+        "vocab-notation-fx": "established@M2",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -445,9 +946,19 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module07AtelierModeliser.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 52,
+      "requires": [
+        "methode-calculer-image",
+        "methode-verifier-modele",
+        "vocab-notation-fx",
+        "carre-nombre"
+      ],
+      "prerequisiteStatus": {
+        "methode-calculer-image": "established@M3",
+        "methode-verifier-modele": "established@M7",
+        "vocab-notation-fx": "established@M2",
+        "carre-nombre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -457,9 +968,23 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module07AtelierModeliser.jsx",
-      "line": 53,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 68,
+      "requires": [
+        "methode-fonction-par-morceaux",
+        "ensemble-definition",
+        "regle-antecedent-equation",
+        "image-antecedent",
+        "appartient",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "methode-fonction-par-morceaux": "established@M6",
+        "ensemble-definition": "established@M2",
+        "regle-antecedent-equation": "established@M3",
+        "image-antecedent": "established@M2",
+        "appartient": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -469,9 +994,21 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module07AtelierModeliser.jsx",
-      "line": 76,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "methode-lire-image-graphique",
+        "methode-lire-antecedents-graphique",
+        "methode-tester-point",
+        "courbe-representative",
+        "methode-calculer-image"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-image-graphique": "established@M2",
+        "methode-lire-antecedents-graphique": "established@M2",
+        "methode-tester-point": "established@M4",
+        "courbe-representative": "established@M4",
+        "methode-calculer-image": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -596,318 +1133,5 @@
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« intervalle » is a target concept of this lesson but its first appearance is q.prompt (module 2, étape 3); it is only taught later at apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx:145",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
-      "line": 79,
-      "module": 2,
-      "step": 3,
-      "term": "intervalle",
-      "questionId": "M02-S3-Q1",
-      "position": 53
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« crochets d'intervalle » first appears at q.option (module 2, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module02ImageAntecedentDomaine.jsx",
-      "line": 81,
-      "module": 2,
-      "step": 3,
-      "term": "intervalle-crochets",
-      "questionId": "M02-S3-Q1",
-      "position": 54
-    },
-    {
-      "code": "M_TAUGHT_TOO_LATE",
-      "severity": "medium",
-      "message": "« extremum / maximum / minimum » first appears at q.correction (module 5, étape 1), before its teaching position at apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module07AtelierModeliser.jsx:49",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module05QuatreRegistres.jsx",
-      "line": 52,
-      "module": 5,
-      "step": 1,
-      "term": "extremum",
-      "questionId": "M05-S1-Q1",
-      "position": 181
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'fonction-dependance' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 23,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-variable' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 41,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-un-x-une-valeur' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 54,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'image-antecedent' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 70,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'ensemble-definition' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 90,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-notation-fx' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 103,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-lire-image-graphique' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 116,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-lire-antecedents-graphique' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 129,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-calculer-image' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 146,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'tableau-valeurs' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 159,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-antecedent-equation' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 172,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'courbe-representative' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 188,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-tracer-courbe' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 207,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-tester-point' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 220,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-point-sur-courbe' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 232,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'quatre-registres' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 248,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-choisir-registre' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 265,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-modeliser' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 279,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'reunion-intervalles' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 299,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-union-intervalles' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 321,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-fonction-par-morceaux' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 333,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-verifier-modele' (module 7) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/knowledge.jsx",
-      "line": 349,
-      "module": 7,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "I_FIRST_IN_JIT",
-      "severity": "info",
-      "message": "« symbole ∈ » first appears in a just-in-time slot (q.intro)",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-2nde/modules/Module06UneFonctionEnMorceaux.jsx",
-      "line": 79,
-      "module": 6,
-      "step": 3,
-      "term": "appartient",
-      "questionId": "M06-S3-Q2",
-      "position": 253
-    }
-  ]
+  "findings": []
 }

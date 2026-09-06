@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Route } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PolygonPerimeter from '../components/PolygonPerimeter';
@@ -31,15 +30,15 @@ function TraceRound({ react, shape, sideLengths, unit, solved, onSolved }) {
 
   return (
     <div className="space-y-3">
-      <p className="text-sm text-slate-600">Tape chaque côté, dans l'ordre du contour, pour construire le périmètre.</p>
+      <p className="text-sm text-slate-600">Tape chaque côté, dans l'ordre, pour faire tout le tour de la figure.</p>
       <PolygonPerimeter shape={shape} sideLengths={sideLengths} unit={unit} tappedIndices={tapped} onTapSide={handleTap} disabled={solved} showRunningTotal />
       <div className="text-center font-mono text-lg text-slate-800">
-        Périmètre parcouru : <strong>{total} {unit}</strong> {tapped.length > 0 && `(${tapped.length}/${sideLengths.length} côtés)`}
+        Tour parcouru : <strong>{total} {unit}</strong> {tapped.length > 0 && `(${tapped.length}/${sideLengths.length} côtés)`}
       </div>
       {isDone && (
         <Feedback tone="ok">
-          Tu as fait le tour complet : périmètre = {sideLengths.join(' + ')} ={' '}
-          <strong>{perimeter(sideLengths)} {unit}</strong>. Le périmètre, c'est la longueur totale du contour.
+          Tu as fait le tour complet : {sideLengths.join(' + ')} ={' '}
+          <strong>{perimeter(sideLengths)} {unit}</strong>.
         </Feedback>
       )}
     </div>
@@ -96,7 +95,7 @@ export default function Module06Perimetres() {
       brief={{
         tag: '📋 Mission 06',
         title: 'Fais le tour de la figure, un côté à la fois.',
-        body: <p>Avant toute formule, le périmètre, c'est simplement la longueur totale du contour.</p>,
+        body: <p>Avant toute formule, fais le tour de la figure côté par côté — et regarde le total grandir.</p>,
       }}
       steps={[
         {
@@ -107,6 +106,15 @@ export default function Module06Perimetres() {
             <div className="space-y-8">
               <TraceRound react={kit.react} shape="triangle" sideLengths={[4, 5, 3]} unit="m" solved={triDone} onSolved={() => setTriDone(true)} />
               {triDone && <TraceRound react={kit.react} shape="rectangle" sideLengths={[6, 4, 6, 4]} unit="m" solved={rectDone} onSolved={() => setRectDone(true)} />}
+              {/* Deux tours complets viennent d'être faits à la main : le mot
+                  arrive maintenant, sur un geste qui a déjà du sens. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="perimetre-contour"
+                  variant="new"
+                  lead="Cette longueur totale que tu viens de parcourir deux fois porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -115,15 +123,25 @@ export default function Module06Perimetres() {
           title: 'Une formule pour aller plus vite',
           done: formuleDone,
           content: (
-            <TapQuestion
-              prompt={FORMULE_Q.q}
-              options={FORMULE_Q.options}
-              correct={FORMULE_Q.correct}
-              cols={1}
-              explain={FORMULE_Q.explain}
-              solved={formuleDone}
-              onAnswered={() => setFormuleDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                requires={['perimetre-contour']}
+                prompt={FORMULE_Q.q}
+                options={FORMULE_Q.options}
+                correct={FORMULE_Q.correct}
+                cols={1}
+                explain={FORMULE_Q.explain}
+                solved={formuleDone}
+                onAnswered={() => setFormuleDone(true)}
+              />
+              {formuleDone && (
+                <KnowledgeBrick
+                  id="perimetre-rectangle"
+                  variant="new"
+                  lead="Tu viens de justifier le raccourci : voici son écriture."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -133,6 +151,7 @@ export default function Module06Perimetres() {
           content: (
             <div className="space-y-6">
               <TapQuestion
+                requires={['perimetre-contour']}
                 prompt={COTE_Q.q}
                 options={COTE_Q.options}
                 correct={COTE_Q.correct}
@@ -144,6 +163,7 @@ export default function Module06Perimetres() {
               {coteDone && (
                 <div className="border-t border-slate-100 pt-4">
                   <TapQuestion
+                    requires={['perimetre-contour', 'unite-adaptee']}
                     prompt={UNITE_Q.q}
                     options={UNITE_Q.options}
                     correct={UNITE_Q.correct}
@@ -153,6 +173,13 @@ export default function Module06Perimetres() {
                     onAnswered={() => setUniteDone(true)}
                   />
                 </div>
+              )}
+              {s3 && (
+                <KnowledgeBrick
+                  id="perimetre-unite"
+                  variant="new"
+                  lead="Les deux pièges viennent d'être écartés. Voici ce qu'il faut en garder."
+                />
               )}
             </div>
           ),
@@ -165,6 +192,7 @@ export default function Module06Perimetres() {
             <div className="space-y-4">
               <PolygonPerimeter shape="quad" sideLengths={CALC_SIDES} unit={CALC_UNIT} tappedIndices={[0, 1, 2, 3]} disabled />
               <NumericQuestion
+                requires={['perimetre-contour', 'perimetre-unite']}
                 prompt="Quel est le périmètre de ce terrain ?"
                 suffix={CALC_UNIT}
                 expected={perimeter(CALC_SIDES)}
@@ -178,13 +206,10 @@ export default function Module06Perimetres() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Route className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Périmètre = somme de tous les côtés = longueur du contour. La formule 2 × (L + l) n'est qu'un
-            raccourci pour le rectangle.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ta carte est complète. Le city-stade t'attend : dix épreuves
+          où personne ne te dira quelle connaissance sortir.
+        </KnowledgeSnapshot>
       }
     />
   );

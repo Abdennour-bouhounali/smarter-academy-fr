@@ -1,5 +1,6 @@
 import React from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { parseDec } from '@smarter-academy/core';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -85,41 +86,38 @@ export default function Module08ChoisirOperation() {
   const [toolPicks, setToolPicks] = React.useState({});
   const [answerDone, setAnswerDone] = React.useState({});
 
-  const steps = CHALLENGES.map((ch, i) => {
+  const challengeContent = (i) => {
+    const ch = CHALLENGES[i];
     const toolDone = toolPicks[i] != null;
     const done = !!answerDone[i];
-    return {
-      num: i + 1,
-      title: ch.q + ' = ?',
-      subtitle: ch.category,
-      done,
-      content: () => (
-        <div className="space-y-5">
-          <TapQuestion
-            prompt="Quel outil choisis-tu pour ce calcul ?"
-            options={ch.tools}
-            correct={ch.bestIndex}
-            cols={2}
-            explain={ch.bestExplain}
-            explainWrong={ch.otherExplains.find((t) => t) || ch.bestExplain}
-            solved={toolDone}
-            onAnswered={() => setToolPicks((p) => ({ ...p, [i]: true }))}
+    return (
+      <div className="space-y-5">
+        <TapQuestion
+          prompt="Quel outil choisis-tu pour ce calcul ?"
+          requires={['choisir-outil']}
+          options={ch.tools}
+          correct={ch.bestIndex}
+          cols={2}
+          explain={ch.bestExplain}
+          explainWrong={ch.otherExplains.find((t) => t) || ch.bestExplain}
+          solved={toolDone}
+          onAnswered={() => setToolPicks((p) => ({ ...p, [i]: true }))}
+        />
+        {toolDone && (
+          <NumericQuestion
+            prompt="Calcule le résultat :"
+            requires={['choisir-outil']}
+            expected={ch.answer}
+            display={ch.displayAnswer ?? String(ch.answer)}
+            parse={parseDec}
+            explain={`${ch.tools[ch.bestIndex]} est l'outil le plus adapté ici.`}
+            solved={done}
+            onAnswered={() => setAnswerDone((p) => ({ ...p, [i]: true }))}
           />
-          {toolDone && (
-            <NumericQuestion
-              prompt="Calcule le résultat :"
-              expected={ch.answer}
-              display={ch.displayAnswer ?? String(ch.answer)}
-              parse={parseDec}
-              explain={`${ch.tools[ch.bestIndex]} est l'outil le plus adapté ici.`}
-              solved={done}
-              onAnswered={() => setAnswerDone((p) => ({ ...p, [i]: true }))}
-            />
-          )}
-        </div>
-      ),
-    };
-  });
+        )}
+      </div>
+    );
+  };
 
   return (
     <ContentModule
@@ -128,7 +126,7 @@ export default function Module08ChoisirOperation() {
       moduleNumber={8}
       moduleTitle="Choisir l'outil de calcul"
       moduleSubtitle="Pour chaque calcul : mental, en ligne, posé ou estimation ? La stratégie compte autant que le résultat !"
-      estimatedTime="8 min"
+      estimatedTime="9 min"
       brief={{
         tag: '🧭 Stratège',
         title: 'Quel outil pour quel calcul ?',
@@ -149,13 +147,62 @@ export default function Module08ChoisirOperation() {
           </div>
         ),
       }}
-      steps={steps}
+      steps={[
+        {
+          num: 1,
+          title: `${CHALLENGES[0].q} = ?`,
+          subtitle: CHALLENGES[0].category,
+          done: !!answerDone[0],
+          content: (
+            <div className="space-y-5">
+              {/* La règle est posée dès le premier défi, une fois l'outil
+                  choisi et le calcul fait : l'élève vient de sentir ce que
+                  « le bon outil » veut dire, on lui donne le critère. */}
+              {challengeContent(0)}
+              {!!answerDone[0] && (
+                <KnowledgeBrick
+                  id="choisir-outil"
+                  variant="new"
+                  lead="Pour +100, tu n'as posé aucune colonne — et c'était la bonne décision."
+                />
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
+          title: `${CHALLENGES[1].q} = ?`,
+          subtitle: CHALLENGES[1].category,
+          done: !!answerDone[1],
+          content: challengeContent(1),
+        },
+        {
+          num: 3,
+          title: `${CHALLENGES[2].q} = ?`,
+          subtitle: CHALLENGES[2].category,
+          done: !!answerDone[2],
+          content: challengeContent(2),
+        },
+        {
+          num: 4,
+          title: `${CHALLENGES[3].q} = ?`,
+          subtitle: CHALLENGES[3].category,
+          done: !!answerDone[3],
+          content: challengeContent(3),
+        },
+        {
+          num: 5,
+          title: `${CHALLENGES[4].q} = ?`,
+          subtitle: CHALLENGES[4].category,
+          done: !!answerDone[4],
+          content: challengeContent(4),
+        },
+      ]}
       footer={
-        <div className="bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-2xl p-6 text-center space-y-2">
-          <div className="text-3xl">🏅 Stratège du calcul</div>
-          <div className="text-xl font-space font-bold">Tu sais choisir le bon outil !</div>
-          <p className="text-pink-100 text-sm">Mental, en ligne, posé, estimation — chaque outil à sa place.</p>
-        </div>
+        <KnowledgeSnapshot moduleNumber={8}>
+          <strong>La suite.</strong> Dernier module avant le défi : mettre tout cela au service
+          d'un problème, où personne ne te dira quelle opération choisir.
+        </KnowledgeSnapshot>
       }
     />
   );

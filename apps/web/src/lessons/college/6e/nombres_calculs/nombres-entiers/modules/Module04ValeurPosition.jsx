@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MousePointerClick } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PlaceValueTable from '../components/PlaceValueTable';
 import { Feedback, ChoiceGrid, XPBurst } from '../../../../../common/components/LessonUI';
@@ -295,11 +296,25 @@ export default function Module04ValeurPosition() {
           subtitle: 'Quatre fois le chiffre 5 — mais représentent-ils la même chose ?',
           done: s2,
           content: (kit) => (
-            <CinqCinqCinqCinq
-              done={cinqsDone}
-              onStepDone={(i) => setCinqsDone((d) => (d.includes(i) ? d : [...d, i]))}
-              react={kit.react}
-            />
+            <div className="space-y-5">
+              <CinqCinqCinqCinq
+                done={cinqsDone}
+                onStepDone={(i) => setCinqsDone((d) => (d.includes(i) ? d : [...d, i]))}
+                react={kit.react}
+              />
+              {/* Quatre 5, quatre valeurs : le constat vient d'être fait
+                  colonne après colonne. C'est ici qu'on le nomme. */}
+              {s2 && (
+                <>
+                  <KnowledgeBrick
+                    id="valeur-position"
+                    variant="new"
+                    lead="Tu viens de donner quatre réponses différentes pour un seul et même chiffre."
+                  />
+                  <KnowledgeBrick id="mem-position-decide" variant="new" />
+                </>
+              )}
+            </div>
           ),
         },
         {
@@ -312,6 +327,13 @@ export default function Module04ValeurPosition() {
               <div className="bg-white border-2 border-slate-200 rounded-2xl p-3 sm:p-4">
                 <PlaceValueTable value={12450} showValues />
               </div>
+              {/* Deux questions vont se ressembler à un mot près : la
+                  distinction doit être posée AVANT, jamais dans l'explain. */}
+              <KnowledgeBrick
+                id="chiffre-vs-nombre"
+                variant="new"
+                lead="Regarde la colonne des milliers du tableau, puis le nombre entier : ce ne sont pas les mêmes 12."
+              />
               {DISTINCTION.map((d, i) => (
                 <div key={d.q} className="border-t border-slate-100 pt-4">
                   <TapQuestion
@@ -319,6 +341,7 @@ export default function Module04ValeurPosition() {
                     options={d.options}
                     correct={d.correct}
                     cols={2}
+                    requires={['valeur-position', 'chiffre-vs-nombre']}
                     explain={d.explain}
                     solved={distDone.includes(i)}
                     onAnswered={() => setDistDone((prev) => (prev.includes(i) ? prev : [...prev, i]))}
@@ -327,15 +350,19 @@ export default function Module04ValeurPosition() {
               ))}
               {s3 && (
                 <Feedback tone="info">
-                  Retiens la nuance : le <strong>chiffre</strong> des milliers se lit dans une seule colonne (2),
-                  alors que le <strong>nombre</strong> de milliers compte tous les milliers du nombre (12). Cette
-                  distinction te servira dans les problèmes.
+                  Cette distinction reviendra dans les problèmes du module 10 : elle est sur ta carte.
                 </Feedback>
               )}
             </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais ce que vaut chaque chiffre. Au module suivant, tu
+          démontes le nombre en morceaux — puis tu le remontes.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

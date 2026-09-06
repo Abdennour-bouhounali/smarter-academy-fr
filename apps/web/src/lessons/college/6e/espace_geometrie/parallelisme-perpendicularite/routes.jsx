@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
+import { LESSON_KNOWLEDGE } from './knowledge';
+import { LessonKnowledgeProvider } from '../../../../common/knowledge';
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
@@ -19,10 +21,20 @@ const MODULE_COMPONENTS = {
   9: lazy(() => import('./modules/Module09MissionFinale.jsx')),
 };
 
+// Provider de la carte des connaissances : il cumule les apports des modules
+// validés et accueille les <KnowledgeBrick> posées au fil des étapes
+// (docs/architecture/KNOWLEDGE_MAP.md).
 function withSuspense(Component) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
-      <Component />
+      <LessonKnowledgeProvider
+        lessonId={LESSON_CONFIG.id}
+        knowledge={LESSON_KNOWLEDGE}
+        printTitle="PARALLÈLES ET PERPENDICULAIRES"
+        printSubject="Mathématiques · 6e"
+      >
+        <Component />
+      </LessonKnowledgeProvider>
     </Suspense>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import { Shuffle, Play } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProgramLab from '../components/ProgramLab';
@@ -222,7 +223,16 @@ export default function Module04OrdreChangeTout() {
           subtitle: 'Lance-les côte à côte.',
           done: compareDone,
           content: (kit) => (
-            <SideBySide solved={compareDone} onSolved={() => setCompareDone(true)} react={kit.react} />
+            <div className="space-y-4">
+              <SideBySide solved={compareDone} onSolved={() => setCompareDone(true)} react={kit.react} />
+              {compareDone && (
+                <KnowledgeBrick
+                  id="ordre-compte"
+                  variant="new"
+                  lead="Mêmes cartes, deux arrivées différentes : ce n’est pas un bug, c’est une règle."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -242,6 +252,7 @@ export default function Module04OrdreChangeTout() {
               solved={quizDone}
               explain="🎯 Oui. Un programme n'est pas un SAC d'instructions, c'est une SUITE : elles s'exécutent l'une après l'autre, et chacune part de l'état laissé par la précédente."
               explainWrong="Tu viens pourtant de le voir : les mêmes cartes, dans deux ordres différents, ont mené ROBI à deux cases différentes. L'ordre fait partie du programme."
+              requires={['ordre-compte', 'sequence-algorithme', 'effet-instruction']}
               onAnswered={() => setQuizDone(true)}
             />
           ),
@@ -257,12 +268,17 @@ export default function Module04OrdreChangeTout() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Shuffle className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            <strong className="text-white">L’ordre fait partie du programme.</strong> Prochaine étape :
-            que faire quand la même instruction doit être répétée dix fois ?
-          </p>
+        <div className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={4}>
+            <strong>La suite.</strong> L'ordre fait partie du programme. Prochaine étape : que faire
+            quand la même instruction doit revenir dix fois de suite ?
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Shuffle className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Un programme est une SUITE, jamais un sac.
+            </p>
+          </div>
         </div>
       }
     />

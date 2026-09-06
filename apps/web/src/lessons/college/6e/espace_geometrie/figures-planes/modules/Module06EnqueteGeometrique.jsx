@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Search } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { SHAPE_LABEL } from '../components/figuresUtils';
@@ -95,6 +94,7 @@ function Enquete({ enquete, done, onDone, react }) {
 
       {allShown ? (
         <TapQuestion
+          requires={['carte-identite', 'carre', 'rectangle', 'losange', 'triangle-isocele', 'triangle-rectangle', 'triangle-equilateral']}
           prompt="De quelle figure s’agit-il ?"
           options={enquete.options.map((o) => SHAPE_LABEL[o])}
           correct={enquete.correct}
@@ -147,11 +147,19 @@ export default function Module06EnqueteGeometrique() {
         })),
         {
           num: ENQUETES.length + 1,
-          title: 'Un seul indice suffit-il ?',
+          // Titre neutre : il ne doit pas déjà souffler la réponse « non ».
+          title: 'Le nombre d’indices nécessaires',
           done: prudenceDone,
           content: (
-            <TapQuestion
-              prompt="On te dit seulement : « cette figure a 4 côtés égaux ». Peux-tu conclure que c’est un carré ?"
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="mem-eliminer"
+                variant="new"
+                lead="Dans chacune des trois enquêtes, c’est le DERNIER indice qui a permis de trancher."
+              />
+              <TapQuestion
+                requires={['mem-eliminer', 'carre', 'losange']}
+                prompt="On te dit seulement : « cette figure a 4 côtés égaux ». Peux-tu conclure que c’est un carré ?"
               options={[
                 'Non : ce peut être un carré ou un losange',
                 'Oui : 4 côtés égaux, c’est la définition du carré',
@@ -160,25 +168,19 @@ export default function Module06EnqueteGeometrique() {
               correct={0}
               cols={1}
               explain="Le losange a lui aussi 4 côtés égaux. Pour trancher, il faut un indice sur les ANGLES. Un seul indice laisse souvent plusieurs figures possibles."
-              explainWrong="Le carré n’est pas la seule figure à 4 côtés égaux : le losange aussi. Il manque une information sur les angles."
-              solved={prudenceDone}
-              onAnswered={() => setPrudenceDone(true)}
-            />
+                explainWrong="Le carré n’est pas la seule figure à 4 côtés égaux : le losange aussi. Il manque une information sur les angles."
+                solved={prudenceDone}
+                onAnswered={() => setPrudenceDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Search className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Identifier une figure, c’est <strong className="text-white">éliminer</strong> celles qui ne
-            vérifient pas les indices. Et tant qu’il en reste plusieurs, on ne conclut pas.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tu sais retrouver une figure à partir de sa liste. Reste à la
+          fabriquer.
+        </KnowledgeSnapshot>
       }
     />
   );

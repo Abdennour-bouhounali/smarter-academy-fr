@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Minus, ArrowRight } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -147,6 +148,7 @@ export default function Module04EcritureVirgule() {
                     options={e.options}
                     correct={e.correct}
                     cols={4}
+                    requires={['dixieme', 'fraction-decimale']}
                     explain={e.explain}
                     solved={etapes.includes(i)}
                     onAnswered={() => setEtapes((d) => (d.includes(i) ? d : [...d, i]))}
@@ -168,8 +170,16 @@ export default function Module04EcritureVirgule() {
                   <div className="text-lg sm:text-xl font-mono text-emerald-300"><MathText>{'$\\frac{37}{10}$'}</MathText></div>
                   <div className="text-slate-500" aria-hidden="true">=</div>
                   <div className="font-mono font-extrabold text-4xl text-amber-300">3,7</div>
-                  <p className="text-xs text-slate-400 pt-1">La virgule sépare les unités entières (à gauche) des parts d'unité (à droite).</p>
                 </motion.div>
+              )}
+              {/* Les trois écritures viennent d'être mises côte à côte : la
+                  virgule peut maintenant être expliquée, pas avant. */}
+              {revele && (
+                <KnowledgeBrick
+                  id="ecriture-virgule"
+                  variant="new"
+                  lead="Cette troisième écriture, celle du bas, obéit à une règle très simple."
+                />
               )}
             </div>
           ),
@@ -185,17 +195,20 @@ export default function Module04EcritureVirgule() {
                 <DecimalPlaceTable value={4.582} intPlaces={1} decPlaces={3} showValues />
               </div>
 
-              <Feedback tone="info">
-                Comme pour les entiers, chaque colonne vaut <strong>10 fois moins</strong> que celle de gauche :
-                unités, puis dixièmes, puis centièmes, puis millièmes. La virgule marque simplement l'endroit où
-                l'on passe des unités entières aux parts d'unité.
-              </Feedback>
+              {/* Le tableau est sous les yeux : la règle des colonnes se
+                  pose ici, avant la question qui l'exige. */}
+              <KnowledgeBrick
+                id="colonnes-decimales"
+                variant="new"
+                lead="Regarde le tableau ci-dessus : il ne s'arrête pas à la virgule."
+              />
 
               <TapQuestion
                 prompt={TABLE_Q.q}
                 options={TABLE_Q.options}
                 correct={TABLE_Q.correct}
                 cols={2}
+                requires={['colonnes-decimales', 'ecriture-virgule']}
                 explain={TABLE_Q.explain}
                 solved={s2}
                 onAnswered={() => setS2(true)}
@@ -240,6 +253,13 @@ export default function Module04EcritureVirgule() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais traduire une fraction décimale en écriture à
+          virgule. Au module suivant, on regarde de près ce que vaut chaque chiffre — zéros
+          compris.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

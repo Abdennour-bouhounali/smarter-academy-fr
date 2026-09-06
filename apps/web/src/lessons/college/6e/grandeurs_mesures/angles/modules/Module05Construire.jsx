@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { PenTool } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Protractor from '../components/Protractor';
@@ -98,15 +97,27 @@ export default function Module05Construire() {
           title: 'La méthode en quatre temps',
           done: methodeDone,
           content: (
-            <TapQuestion
-              prompt={METHODE_Q.q}
-              options={METHODE_Q.options}
-              correct={METHODE_Q.correct}
-              cols={1}
-              explain={METHODE_Q.explain}
-              solved={methodeDone}
-              onAnswered={() => setMethodeDone(true)}
-            />
+            <div className="space-y-5">
+              {/* L'élève RECONSTITUE l'ordre à partir du rituel de mesure
+                  déjà acquis au module 3 : rien de neuf n'est demandé. */}
+              <TapQuestion
+                prompt={METHODE_Q.q}
+                options={METHODE_Q.options}
+                correct={METHODE_Q.correct}
+                cols={1}
+                explain={METHODE_Q.explain}
+                requires={['rapporteur', 'rituel-placement', 'demi-droite']}
+                solved={methodeDone}
+                onAnswered={() => setMethodeDone(true)}
+              />
+              {methodeDone && (
+                <KnowledgeBrick
+                  id="construire-angle"
+                  variant="new"
+                  lead="Tu viens de remettre les quatre temps dans l’ordre. Les voici fixés sur ta carte."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -149,13 +160,10 @@ export default function Module05Construire() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <PenTool className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Demi-droite → centre sur l'origine → zéro sur le côté → marquer la graduation → tracer. Et toujours
-            vérifier la classe de l'angle obtenu.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Mesurer et construire sont acquis. Le module suivant les
+          emmène sur le terrain — et referme le piège du tout premier module.
+        </KnowledgeSnapshot>
       }
     />
   );

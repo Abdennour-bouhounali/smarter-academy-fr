@@ -359,7 +359,10 @@ if (opts.report) {
     writeFileSync(join(outDir, `${r.grade}_${r.id}.json`), `${JSON.stringify(r.contract, null, 2)}\n`);
   }
 
-  const inScope = (r) => r.grade === '3e' || r.grade === 'seconde';
+  // Le périmètre traité s'étend désormais à la 6e (chantier de refonte
+  // pédagogique 2026-09-07) : elle rejoint la 3e et la 2nde dans le tableau
+  // principal. Seule la 4e reste relevée hors périmètre.
+  const inScope = (r) => r.grade === '6e' || r.grade === '3e' || r.grade === 'seconde';
   const sum = (rs, sev) => rs.reduce((n, r) => n + count(r, sev), 0);
   const scoped = results.filter(inScope);
   const other = results.filter((r) => !inScope(r));
@@ -387,7 +390,7 @@ if (opts.report) {
 >
 > Le lexique est un **détecteur**, pas le juge : il signale les candidats à l'audit manuel.
 
-## Périmètre courant — 3e et 2nde
+## Périmètre courant — 6e, 3e et 2nde
 
 ${scoped.length} leçon(s) · critiques ${sum(scoped, 'critical')} · hautes ${sum(scoped, 'high')} · moyennes ${sum(scoped, 'medium')} · basses ${sum(scoped, 'low')}
 
@@ -395,10 +398,9 @@ ${table(scoped)}
 
 ${details(scoped)}
 
-## Hors périmètre — 6e et 4e (relevé, non réparé)
+## Hors périmètre — 4e (relevé, non réparé)
 
-Ces niveaux ne sont pas traités par le chantier en cours. Les constats sont enregistrés ici pour
-mémoire ; **aucune leçon 6e/4e ne doit être modifiée**.
+Ce niveau n'est pas encore traité. Les constats sont enregistrés ici pour mémoire.
 
 ${other.length} leçon(s) · critiques ${sum(other, 'critical')} · hautes ${sum(other, 'high')} · moyennes ${sum(other, 'medium')} · basses ${sum(other, 'low')}
 

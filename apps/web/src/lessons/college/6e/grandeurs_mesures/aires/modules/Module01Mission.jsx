@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Trees } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AreaGrid from '../components/AreaGrid';
@@ -22,11 +21,26 @@ const SENS_Q = {
   options: [
     'Plus long dans un sens',
     'Plus de clôture autour',
-    'Plus de surface de pelouse à recouvrir',
+    'Plus de surface à recouvrir de pelouse',
   ],
   correct: 2,
   explain:
-    'Pour la pelouse, ce qui compte est la quantité de SURFACE. Cette grandeur s’appelle l’AIRE — et elle se mesure en recouvrant, pas en regardant la forme.',
+    'Pour la pelouse, ce qui compte est la quantité de surface à recouvrir — exactement ce que ton pavage vient de compter. Ni la longueur d’un seul côté, ni la clôture ne répondent à la question.',
+};
+
+// Étape 3 : la question du TOUR se pose en langage courant (« la clôture »),
+// avant que la brique ne lui donne son nom. Cf. KNOWLEDGE_DEPENDENCY.md :
+// on ne demande pas un mot qu'on n'a pas encore posé.
+const TOUR_Q = {
+  q: 'Le voisin commande maintenant sa CLÔTURE. Que doit-il mesurer pour savoir combien en acheter ?',
+  options: [
+    'Le nombre de carreaux de pelouse à l’intérieur',
+    'La longueur totale du bord, en faisant tout le tour du jardin',
+    'La longueur du plus grand côté seulement',
+  ],
+  correct: 1,
+  explain:
+    'La clôture longe le BORD : sa longueur est celle du tour complet. Les carreaux du dedans ne servent qu’à la pelouse, et un seul côté ne fait pas le tour.',
 };
 
 const VOCAB_ROWS = [
@@ -90,6 +104,7 @@ function JardinPaver({ react, solved, onSolved }) {
 export default function Module01Mission() {
   const [paverDone, setPaverDone] = useState(false);
   const [sensDone, setSensDone] = useState(false);
+  const [tourDone, setTourDone] = useState(false);
   const [vocabDone, setVocabDone] = useState(false);
 
   return (
@@ -119,23 +134,65 @@ export default function Module01Mission() {
           title: 'Ce qu’on vient de mesurer',
           done: sensDone,
           content: (
-            <TapQuestion
-              prompt={SENS_Q.q}
-              options={SENS_Q.options}
-              correct={SENS_Q.correct}
-              cols={1}
-              explain={SENS_Q.explain}
-              solved={sensDone}
-              onAnswered={() => setSensDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={SENS_Q.q}
+                options={SENS_Q.options}
+                correct={SENS_Q.correct}
+                cols={1}
+                explain={SENS_Q.explain}
+                requires={[]}
+                solved={sensDone}
+                onAnswered={() => setSensDone(true)}
+              />
+              {/* Le geste (recouvrir puis compter) vient de désigner la
+                  grandeur : c'est ICI, et pas dans un explain, que le mot
+                  « aire » existe. */}
+              {sensDone && (
+                <KnowledgeBrick
+                  id="aire"
+                  variant="new"
+                  lead="Cette quantité de surface que tu viens de compter en carreaux porte un nom."
+                />
+              )}
+            </div>
           ),
         },
         {
           num: 3,
+          title: 'Et pour commander la clôture ?',
+          done: tourDone,
+          content: (
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={TOUR_Q.q}
+                options={TOUR_Q.options}
+                correct={TOUR_Q.correct}
+                cols={1}
+                explain={TOUR_Q.explain}
+                requires={['aire']}
+                solved={tourDone}
+                onAnswered={() => setTourDone(true)}
+              />
+              {/* Le second geste — suivre le bord — est ce qui sépare cette
+                  grandeur de la précédente. Le mot arrive après lui. */}
+              {tourDone && (
+                <KnowledgeBrick
+                  id="perimetre"
+                  variant="new"
+                  lead="Le tour que tu viens de décrire porte lui aussi un nom — et ce n’est pas le même que le dedans."
+                />
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 4,
           title: 'Trois grandeurs, trois noms',
           done: vocabDone,
           content: (
             <BatchChoiceQuestion
+              requires={['aire', 'perimetre']}
               intro={
                 <p className="text-sm text-slate-600">
                   Dans le même jardin, trois choses différentes se mesurent. Associe chacune à sa grandeur.
@@ -171,13 +228,10 @@ export default function Module01Mission() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Trees className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            L'aire mesure la quantité de surface. On la découvre en recouvrant — jamais en jugeant à l'œil la
-            forme du contour.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais nommer le dedans et le tour. Reste à savoir si l'un
+          permet de deviner l'autre — c'est l'expérience du module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

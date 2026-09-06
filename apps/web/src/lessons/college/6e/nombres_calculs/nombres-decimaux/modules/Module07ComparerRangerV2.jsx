@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import NumberLine from '../../../../../common/components/NumberLine';
 import OrderingGame from '../../../../../common/components/OrderingGame';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
@@ -260,6 +261,7 @@ export default function Module07ComparerRanger() {
                 options={['2,7', '2,4', 'Ils sont égaux']}
                 correct={0}
                 cols={3}
+                requires={['colonnes-decimales', 'dixieme']}
                 explain={
                   <>
                     2,7 est plus à droite sur la droite graduée : <strong className="font-mono">2,7 &gt; 2,4</strong>.
@@ -292,6 +294,7 @@ export default function Module07ComparerRanger() {
                 options={CRITIQUE_Q.options}
                 correct={CRITIQUE_Q.correct}
                 cols={3}
+                requires={['valeur-position-decimale', 'dixieme', 'centieme']}
                 explain={CRITIQUE_Q.explain}
                 solved={critOk}
                 onAnswered={() => setCritOk(true)}
@@ -304,6 +307,7 @@ export default function Module07ComparerRanger() {
                     options={ALIGN_Q.options}
                     correct={ALIGN_Q.correct}
                     cols={2}
+                    requires={['deux-zeros', 'ecritures-equivalentes']}
                     explain={ALIGN_Q.explain}
                     solved={s2}
                     onAnswered={() => setS2(true)}
@@ -347,12 +351,11 @@ export default function Module07ComparerRanger() {
             <>
               <DecCompareLab a={LABO.a} b={LABO.b} solved={laboDone} onSolved={() => setLaboDone(true)} react={kit.react} />
               {s3 && (
-                <Feedback tone="info">
-                  La méthode complète : <strong>1.</strong> comparer les parties entières ; <strong>2.</strong> en
-                  cas d'égalité, comparer les décimales de gauche à droite ; <strong>3.</strong> s'arrêter à la
-                  première différence. (On peut aussi aligner avec des zéros, comme à l'étape 2 : les deux méthodes
-                  donnent le même résultat.)
-                </Feedback>
+                <KnowledgeBrick
+                  id="comparer-decimaux"
+                  variant="new"
+                  lead="Tu as dévoilé les colonnes jusqu'à la première différence : c'est toute la méthode."
+                />
               )}
             </>
           ),
@@ -376,6 +379,7 @@ export default function Module07ComparerRanger() {
                       options={e.options}
                       correct={e.correct}
                       cols={1}
+                      requires={['comparer-decimaux', 'deux-zeros', 'valeur-position-decimale']}
                       explain={
                         <>
                           La bonne réponse est <strong className="font-mono">{e.truth}</strong>. {e.detail}
@@ -392,8 +396,8 @@ export default function Module07ComparerRanger() {
         },
         {
           num: 5,
-          title: 'Range dans l\'ordre croissant',
-          subtitle: 'Attention : deux cartes cachent le même nombre.',
+          title: 'Mets les cinq cartes en file',
+          subtitle: 'Du plus petit au plus grand. Attention : deux cartes cachent le même nombre.',
           done: s5,
           content: (
             <>
@@ -407,15 +411,22 @@ export default function Module07ComparerRanger() {
                 formative
               />
               {s5 && (
-                <Feedback tone="info">
-                  2,05 &lt; 2,15 &lt; 2,5 = 2,50 &lt; 2,55. Les cartes <strong>2,5</strong> et <strong>2,50</strong>{' '}
-                  représentent la même quantité : leur ordre entre elles n'a pas d'importance.
-                </Feedback>
+                <KnowledgeBrick
+                  id="ranger-decimaux"
+                  variant="new"
+                  lead="La file que tu viens de construire, et celle que tu obtiendrais à l'envers, portent chacune un nom."
+                />
               )}
             </>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Tu sais départager et ranger des décimaux. Au module
+          suivant, chacun reçoit une place précise sur une droite — que l'on peut zoomer.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

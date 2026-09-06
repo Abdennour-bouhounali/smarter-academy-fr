@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Boxes } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SortingBoard from '../components/SortingBoard';
@@ -59,15 +60,26 @@ export default function Module03RangerDesordre() {
           title: 'Range les huit résultats',
           done: rangeDone,
           content: (kit) => (
-            <SortingBoard
-              initialTable={TOURNOI_DEBUT}
-              facts={FAITS_DEBUT}
-              react={kit.react}
-              solved={rangeDone}
-              onSolved={() => setRangeDone(true)}
-              tone="emerald"
-              caption="Course et relais — range chaque résultat à son croisement"
-            />
+            <div className="space-y-4">
+              <SortingBoard
+                initialTable={TOURNOI_DEBUT}
+                facts={FAITS_DEBUT}
+                react={kit.react}
+                solved={rangeDone}
+                onSolved={() => setRangeDone(true)}
+                tone="emerald"
+                caption="Course et relais — range chaque résultat à son croisement"
+              />
+              {/* Posée APRÈS les huit dépôts : c'est le geste de choisir la
+                  case qui donne son sens à « la position porte le sens ». */}
+              {rangeDone && (
+                <KnowledgeBrick
+                  id="position-porte-sens"
+                  variant="new"
+                  lead="Pour chaque résultat, tu n’as pas choisi un nombre : tu as choisi une case."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -93,6 +105,7 @@ export default function Module03RangerDesordre() {
                 cols={3}
                 explain="Les boissons ont rapporté 18 € le matin, et 9 € de plus l’après-midi : 18 + 9 = 27 €. La case vide se remplit en croisant la ligne « Boissons » et la colonne « Après-midi »."
                 explainWrong="9 €, c’est l’écart entre les deux moments, pas la recette. 31 €, c’est la case des crêpes l’après-midi : mauvaise ligne."
+                requires={['cellule-croisement', 'entete', 'calcul-numerique']}
                 solved={completeDone}
                 onAnswered={(ok) => { setCompleteDone(true); if (!ok) kit.react(false); }}
               />
@@ -119,6 +132,7 @@ export default function Module03RangerDesordre() {
                 correct={1}
                 cols={1}
                 explain="Déplacer un nombre change ce qu’il AFFIRME. Dans un tableau, la position est une information à part entière : ligne + colonne = sens."
+                requires={['position-porte-sens', 'ligne-colonne']}
                 solved={senseDone}
                 onAnswered={() => setSenseDone(true)}
               />
@@ -130,12 +144,17 @@ export default function Module03RangerDesordre() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Boxes className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Ranger une information, c'est choisir son croisement. Un nombre bien rangé se lit tout seul ; mal
-            rangé, il ment.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={3}>
+            <strong>La suite.</strong> Tu sais poser une information à son croisement. Le module suivant
+            fait le chemin inverse — et te donne la marche à suivre pour ne jamais lire la mauvaise case.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Boxes className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Un nombre bien rangé se lit tout seul ; mal rangé, il ment.
+            </p>
+          </div>
         </motion.div>
       }
     />

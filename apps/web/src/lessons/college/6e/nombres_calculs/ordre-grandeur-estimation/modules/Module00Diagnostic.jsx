@@ -23,6 +23,9 @@ const QUESTIONS = [
     id: 'q1-valeur-chiffre',
     skill: 'valeurPosition',
     points: 2,
+    // Module 0 MESURE des prérequis : ses requires ne citent que des ids de
+    // priorKnowledge (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['valeur-position'],
     prompt: (
       <>
         Dans le nombre <strong className="font-mono">3 472</strong>, que vaut le chiffre{' '}
@@ -38,6 +41,7 @@ const QUESTIONS = [
     id: 'q2-nombre-proche',
     skill: 'valeurPosition',
     points: 2,
+    requires: ['valeur-position', 'calcul-numerique'],
     prompt: (
       <>
         Quel nombre rond est le plus proche de <strong className="font-mono">297</strong> ?
@@ -52,6 +56,7 @@ const QUESTIONS = [
     id: 'q3-somme-ronde',
     skill: 'calculMental',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: <>Combien font <strong className="font-mono">200 + 300</strong> ?</>,
     options: ['500', '600', '2 300'],
     cols: 3,
@@ -62,6 +67,7 @@ const QUESTIONS = [
     id: 'q4-produit-rond',
     skill: 'calculMental',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: <>Combien font <strong className="font-mono">50 × 20</strong> ?</>,
     options: ['100', '1 000', '10 000'],
     cols: 3,
@@ -72,6 +78,7 @@ const QUESTIONS = [
     id: 'q5-difference-ronde',
     skill: 'calculMental',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: <>Combien font <strong className="font-mono">800 − 300</strong> ?</>,
     options: ['500', '300', '1 100'],
     cols: 3,

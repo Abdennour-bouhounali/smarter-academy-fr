@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { HardHat } from 'lucide-react';
 import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AnswerBuilder from '../../../../../common/components/AnswerBuilder';
@@ -106,6 +105,7 @@ export default function Module06Ateliers() {
                     ? 'Tu as calculé L + l = 65, un seul « aller ». Le tour complet double cette somme : 2 × 65.'
                     : 'Utilise la formule du rectangle : P = 2 × (L + l).'
                 }
+                requires={['perimetre', 'formules-polygones']}
                 solved={pisteCalcDone}
                 onAnswered={() => setPisteCalcDone(true)}
               />
@@ -117,6 +117,7 @@ export default function Module06Ateliers() {
                     correct={TOURS_Q.correct}
                     cols={1}
                     explain={TOURS_Q.explain}
+                    requires={['perimetre', 'formules-polygones']}
                     solved={toursDone}
                     onAnswered={() => setToursDone(true)}
                   />
@@ -139,6 +140,7 @@ export default function Module06Ateliers() {
                 display={formatDec(FONTAINE_P)}
                 explain={<>P ≈ 3,14 × 4 ≈ <strong>{formatDec(FONTAINE_P)} m</strong>.</>}
                 explainFor={() => 'P ≈ π × D : multiplie 3,14 par le diamètre (4 m).'}
+                requires={['perimetre', 'pi', 'perimetre-cercle']}
                 solved={fontaineCalcDone}
                 onAnswered={() => setFontaineCalcDone(true)}
               />
@@ -150,6 +152,7 @@ export default function Module06Ateliers() {
                     correct={BARRES_Q.correct}
                     cols={1}
                     explain={BARRES_Q.explain}
+                    requires={['perimetre', 'perimetre-cercle', 'perimetre-est-longueur']}
                     solved={barresDone}
                     onAnswered={() => setBarresDone(true)}
                   />
@@ -166,13 +169,10 @@ export default function Module06Ateliers() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <HardHat className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un périmètre juste, dans la bonne unité, annoncé dans une phrase complète : c'est ça, une réponse de
-            géomètre.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tout ce que la mission finale va te demander tient sur cette
+          carte — rien de neuf ne t'y attend.
+        </KnowledgeSnapshot>
       }
     />
   );

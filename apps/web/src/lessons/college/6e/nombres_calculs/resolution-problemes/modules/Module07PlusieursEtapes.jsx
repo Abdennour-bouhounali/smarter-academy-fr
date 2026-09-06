@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CalcChain from '../../../../../common/components/CalcChain';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -29,6 +30,7 @@ function ChaineGuidee({ solved, onSolved }) {
 
       <NumericQuestion
         prompt="Première chose à trouver : combien de crayons ont été achetés en tout ?"
+        requires={['structures-de-problemes']}
         expected={192}
         explain="8 × 24 = 192 crayons achetés."
         explainFor={() => 'Multiplie le nombre de boîtes par le nombre de crayons par boîte.'}
@@ -40,6 +42,7 @@ function ChaineGuidee({ solved, onSolved }) {
         <div className="border-t border-slate-100 pt-4">
           <TapQuestion
             prompt="Que représente ce nombre, 192 ?"
+            requires={['structures-de-problemes']}
             options={['Le nombre total de crayons achetés', 'Le nombre de crayons distribués', 'Le nombre de boîtes']}
             correct={0}
             cols={1}
@@ -54,6 +57,7 @@ function ChaineGuidee({ solved, onSolved }) {
         <div className="border-t border-slate-100 pt-4">
           <NumericQuestion
             prompt="Maintenant, utilise ce résultat : combien de crayons reste-t-il après la distribution ?"
+            requires={['structures-de-problemes']}
             expected={157}
             explain="192 − 35 = 157 crayons restants."
             explainFor={() => 'Retire les 35 crayons distribués du total acheté (192).'}
@@ -93,6 +97,7 @@ function ChaineAutonome({ solved, onSolved }) {
       <p className="text-xs text-slate-500">Trouve d'abord un résultat intermédiaire, puis la réponse finale — sans aide cette fois.</p>
 
       <NumericQuestion
+        requires={['resultat-intermediaire']}
         expected={180}
         explain="12 × 15 = 180 sièges au total."
         explainFor={() => 'Multiplie le nombre de rangées par le nombre de sièges par rangée.'}
@@ -103,6 +108,7 @@ function ChaineAutonome({ solved, onSolved }) {
       {(step1Ok || solved) && (
         <div className="border-t border-slate-100 pt-4">
           <NumericQuestion
+            requires={['resultat-intermediaire']}
             expected={42}
             explain="180 − 138 = 42 sièges libres."
             explainFor={() => 'Retire les 138 sièges occupés du total (180).'}
@@ -251,7 +257,20 @@ export default function Module07PlusieursEtapes() {
           num: 1,
           title: 'Construis la chaîne, étape par étape',
           done: s1,
-          content: <ChaineGuidee solved={s1} onSolved={() => setS1(true)} />,
+          content: (
+            <div className="space-y-5">
+              <ChaineGuidee solved={s1} onSolved={() => setS1(true)} />
+              {/* Le 192 vient d'être trouvé, nommé, puis utilisé : c'est
+                  exactement l'instant où le mot prend son sens. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="resultat-intermediaire"
+                  variant="new"
+                  lead="Le 192 que tu as dû trouver — et qui n'était pas la réponse."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -263,9 +282,26 @@ export default function Module07PlusieursEtapes() {
           num: 3,
           title: 'Remets les étapes dans l\'ordre',
           done: s3,
-          content: (kit) => <RemettreOrdre react={kit.react} solved={s3} onSolved={() => setS3(true)} />,
+          content: (kit) => (
+            <div className="space-y-5">
+              <RemettreOrdre react={kit.react} solved={s3} onSolved={() => setS3(true)} />
+              {s3 && (
+                <KnowledgeBrick
+                  id="chaine-de-calcul"
+                  variant="new"
+                  lead="L'ordre que tu viens de reconstituer, maillon par maillon."
+                />
+              )}
+            </div>
+          ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Une chaîne de calcul peut dérailler sans qu'on s'en aperçoive.
+          On va apprendre à s'en rendre compte tout seul.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3 } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import BarChart from '../components/BarChart';
@@ -76,10 +77,19 @@ export default function Module04LireComparer() {
                 tone="violet"
               />
               {maxDone && (
-                <Feedback tone="ok">
-                  Le mardi, avec <strong>{CDI.values[I_MAX]} élèves</strong> : c'est la barre la plus haute. Le
-                  maximum se repère sans lire un seul nombre.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Le mardi, avec <strong>{CDI.values[I_MAX]} élèves</strong> : c'est la barre la plus haute,
+                    et tu l'as désignée sans lire un seul nombre.
+                  </Feedback>
+                  {/* Les deux mots arrivent APRÈS la désignation : l'élève sait
+                      déjà faire ce qu'ils nomment. */}
+                  <KnowledgeBrick
+                    id="maximum-minimum"
+                    variant="new"
+                    lead="La plus haute et la plus courte : ces deux barres ont chacune un nom en mathématiques."
+                  />
+                </>
               )}
             </div>
           ),
@@ -122,6 +132,13 @@ export default function Module04LireComparer() {
           content: (
             <div className="space-y-3">
               <BarChart series={CDI} step={10} highlightMax highlightMin title="Élèves au CDI cette semaine" axisLabel="élèves" tone="violet" />
+              {/* Voir « c'est plus haut » ne suffit pas : la méthode qui
+                  transforme l'impression en nombre est posée avant la demande. */}
+              <KnowledgeBrick
+                id="ecart-chiffre"
+                variant="new"
+                lead="Les deux barres extrêmes sont éclairées. Reste à dire de combien elles diffèrent."
+              />
               <NumericQuestion
                 prompt="Combien d’élèves de plus le mardi que le mercredi ?"
                 suffix="élèves"
@@ -136,6 +153,7 @@ export default function Module04LireComparer() {
                     ? 'Tu as donné une des deux valeurs, pas leur différence : 45 − 15.'
                     : 'Soustrais la plus petite valeur de la plus grande : 45 − 15.'
                 }
+                requires={['ecart-chiffre', 'maximum-minimum', 'lire-hauteur']}
                 solved={ecartDone}
                 onAnswered={() => setEcartDone(true)}
               />
@@ -158,6 +176,7 @@ export default function Module04LireComparer() {
                 cols={1}
                 explain="Le double de 15 est 30, et 40 dépasse 30 : la barre du jeudi est bien plus de deux fois plus haute. Sur un graphique qui part de zéro, les hauteurs se comparent comme les nombres."
                 explainWrong="Le double de 15 vaut 30. Comme 40 > 30, la barre du jeudi est bien plus de deux fois plus haute. Attention : ce raisonnement ne marche QUE si l’axe part de zéro."
+                requires={['lire-hauteur', 'echelle-axe', 'comparer-entiers']}
                 solved={doubleDone}
                 onAnswered={() => setDoubleDone(true)}
               />
@@ -192,23 +211,33 @@ export default function Module04LireComparer() {
                 title="Activité choisie par les 24 élèves du club"
               />
               {camembertDone && (
-                <Feedback tone="ok">
-                  Le foot occupe <strong>exactement la moitié</strong> du disque : 12 élèves sur 24. Un
-                  diagramme circulaire ne compare pas des quantités entre elles — il montre quelle{' '}
-                  <strong>part du tout</strong> chacune représente.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Le foot occupe <strong>exactement la moitié</strong> du disque : 12 élèves sur 24.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="diagramme-circulaire"
+                    variant="new"
+                    lead="Cette forme-là ne répond pas à la même question que les barres."
+                  />
+                </>
               )}
             </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <BarChart3 className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Bâtons pour comparer des quantités, camembert pour montrer des parts d'un tout. Dans les deux cas,
-            l'œil repère — puis on revient au nombre pour être précis.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={4}>
+            <strong>La suite.</strong> Tu repères les extrêmes et tu chiffres un écart. Au prochain module,
+            on relie les points : apparaît alors ce qu’aucune barre isolée ne montre — le mouvement.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <BarChart3 className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              L'œil repère — puis on revient au nombre pour être précis.
+            </p>
+          </div>
         </motion.div>
       }
     />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -206,6 +207,15 @@ export default function Module07Simples() {
                   }}
                 />
               ))}
+              {s1 && (
+                <div className="sm:col-span-2">
+                  <KnowledgeBrick
+                    id="fractions-usuelles"
+                    variant="new"
+                    lead="Ces quatre-là reviennent si souvent qu’elles ont chacune un nom courant."
+                  />
+                </div>
+              )}
             </div>
           ),
         },
@@ -225,6 +235,12 @@ export default function Module07Simples() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Tu reconnais ces fractions. Reste à leur donner une place
+          précise sur la droite des nombres.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

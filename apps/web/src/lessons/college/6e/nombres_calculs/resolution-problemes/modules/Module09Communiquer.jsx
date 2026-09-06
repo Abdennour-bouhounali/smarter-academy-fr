@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import AnswerBuilder from '../../../../../common/components/AnswerBuilder';
-import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -29,6 +29,7 @@ function DetectionUnite({ done, setDone, solved, onAnswered }) {
             <p className="text-base font-semibold text-slate-800 italic">{e.claim}</p>
             <TapQuestion
               prompt="Quel est le problème avec cette réponse ?"
+              requires={['reponse-complete']}
               options={['Le résultat numérique est faux', "L'unité ne correspond pas à ce que demande la question", 'La phrase est mal écrite']}
               correct={1}
               cols={1}
@@ -98,11 +99,14 @@ export default function Module09Communiquer() {
                 onSolved={() => setS1(true)}
                 hint="La question porte sur des crayons : vérifie le nombre ET l'unité."
               />
+              {/* La réponse complète vient d'être construite pièce par
+                  pièce : le mot arrive sur ce qui est déjà à l'écran. */}
               {s1 && (
-                <Feedback tone="info">
-                  « 157 » seul n'est pas une réponse complète : il faut le RÉSULTAT, l'UNITÉ, et une PHRASE qui
-                  répond vraiment à la question posée.
-                </Feedback>
+                <KnowledgeBrick
+                  id="reponse-complete"
+                  variant="new"
+                  lead="Les trois morceaux que tu viens d'assembler : le nombre, l'unité, la phrase."
+                />
               )}
             </div>
           ),
@@ -120,6 +124,7 @@ export default function Module09Communiquer() {
           content: (
             <TapQuestion
               prompt={VRAIE_Q_Q.q}
+              requires={['reponse-complete']}
               options={VRAIE_Q_Q.options}
               correct={VRAIE_Q_Q.correct}
               cols={1}
@@ -130,6 +135,12 @@ export default function Module09Communiquer() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={9}>
+          <strong>La suite.</strong> Dernier entraînement : lire la solution de quelqu'un d'autre
+          et trouver exactement où elle dérape.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

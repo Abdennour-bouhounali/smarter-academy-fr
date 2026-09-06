@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Ruler } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import EcartGauge from '../components/EcartGauge';
@@ -56,8 +55,7 @@ export default function Module02EcartConstant() {
         body: (
           <p>
             Fais glisser le point <strong>P</strong> le long de la première droite et note plusieurs mesures.
-            Le trait de mesure est toujours <strong>perpendiculaire</strong> — c’est ainsi qu’on mesure une
-            distance à une droite.
+            Regarde bien comment le trait de mesure rejoint l’autre droite : toujours de la même façon.
           </p>
         ),
       }}
@@ -88,11 +86,24 @@ export default function Module02EcartConstant() {
                 ariaLabel="Première paire : fais glisser P le long de d₁"
               />
               {parDone && (
-                <Feedback tone="ok">
-                  Trois mesures, trois fois le même nombre. Ces deux droites gardent le{' '}
-                  <strong>même écart partout</strong> : elles sont parallèles, et elles ne se couperont
-                  jamais.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Trois mesures, trois fois le même nombre. Ces deux droites gardent le{' '}
+                    <strong>même écart partout</strong>.
+                  </Feedback>
+                  {/* Le geste vient d'établir le critère : on le pose ici, avec
+                      la manière de mesurer qui l'accompagne. */}
+                  <KnowledgeBrick
+                    id="ecart-constant"
+                    variant="new"
+                    lead="Le nombre n’a pas bougé d’une mesure à l’autre : c’est exactement ce qu’on cherchait à vérifier."
+                  />
+                  <KnowledgeBrick
+                    id="mesurer-ecart"
+                    variant="new"
+                    lead="Et le trait de mesure, lui, a toujours rejoint l’autre droite en formant un coin parfait."
+                  />
+                </>
               )}
             </div>
           ),
@@ -145,6 +156,7 @@ export default function Module02EcartConstant() {
               ]}
               correct={0}
               cols={1}
+              requires={['ecart-constant', 'droites-paralleles', 'mesurer-ecart']}
               explain="Écart constant ⟺ parallèles. C’est le critère qu’on peut vraiment vérifier, et c’est celui qu’on utilisera avec la règle et l’équerre."
               explainWrong="Une droite n’a pas de longueur (elle est infinie), et « ne pas se toucher sur le dessin » ne prouve rien — c’était exactement le piège du module 1."
               solved={ruleDone}
@@ -154,17 +166,10 @@ export default function Module02EcartConstant() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Ruler className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Deux droites parallèles restent à <strong className="text-white">écart constant</strong>. Et cet
-            écart se mesure toujours perpendiculairement — souviens-t’en, il reviendra au dernier module.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Le coin parfait du trait de mesure revient sans arrêt. Il est
+          temps de s’en occuper pour lui-même.
+        </KnowledgeSnapshot>
       }
     />
   );

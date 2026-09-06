@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import ProportionTable from '../components/ProportionTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -43,6 +44,7 @@ const BARQUE_ROWS = buildRows(BARQUE.rule, [1, 2, 3]);
 const EPREUVES = [
   {
     id: 'pr-e1',
+    requires: ['proportionnalite', 'coefficient-proportionnalite'],
     skill: 'reconnaitre',
     title: 'Épreuve 1',
     prompt: 'Au stand, 1 crêpe coûte 3 €, 2 crêpes 6 €, 5 crêpes 15 €. Comment reconnaît-on une situation de proportionnalité ?',
@@ -58,6 +60,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e2',
+    requires: ['coefficient-proportionnalite', 'proportionnalite'],
     skill: 'multiplicatif',
     title: 'Épreuve 2',
     prompt: 'Dans ce tableau, quel est le coefficient qui mène des crêpes au prix ?',
@@ -70,6 +73,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e3',
+    requires: ['deux-grandeurs', 'part-fixe'],
     skill: 'reconnaitre',
     title: 'Épreuve 3',
     prompt: 'Dans « un taxi facture 4 € de prise en charge puis 2 € par kilomètre », quelles sont les deux grandeurs qui varient ensemble ?',
@@ -85,6 +89,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e4',
+    requires: ['coefficient-proportionnalite', 'passage-unite'],
     skill: 'tableau',
     title: 'Épreuve 4',
     prompt: 'Le tableau du stand est proportionnel. Combien coûtent 7 crêpes ?',
@@ -97,6 +102,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e5',
+    requires: ['passage-unite'],
     skill: 'strategie',
     title: 'Épreuve 5',
     prompt: '6 ballons coûtent 24 €. Quel est le prix d’UN ballon ?',
@@ -108,6 +114,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e6',
+    requires: ['passage-unite', 'choisir-strategie'],
     skill: 'strategie',
     title: 'Épreuve 6',
     prompt: 'Un ballon coûte 4 €. Combien coûtent 15 ballons ?',
@@ -119,6 +126,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e7',
+    requires: ['double-triple-moitie'],
     skill: 'strategie',
     title: 'Épreuve 7',
     prompt: '10 crêpes coûtent 30 €. Combien coûtent 5 crêpes ?',
@@ -130,6 +138,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e8',
+    requires: ['part-fixe', 'proportionnalite'],
     skill: 'comparer',
     title: 'Épreuve 8',
     prompt: 'La barque coûte 5 € de location plus 2 € par personne. Cette situation est-elle proportionnelle ?',
@@ -146,6 +155,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e9',
+    requires: ['choisir-strategie', 'double-triple-moitie', 'passage-unite'],
     skill: 'strategie',
     title: 'Épreuve 9',
     prompt: '8 badges coûtent 32 €. Pour trouver le prix de 16 badges, quelle est la stratégie la plus RAPIDE ?',
@@ -161,6 +171,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e10',
+    requires: ['verifier-coherence', 'passage-unite'],
     skill: 'problemes',
     title: 'Épreuve 10',
     prompt: 'Un élève calcule : « 5 tickets coûtent 15 €, donc 8 tickets coûtent 18 € ». Que faut-il en penser ?',
@@ -183,13 +194,6 @@ const BADGES = [
   { id: 'strategie', emoji: '🏅', label: 'Stratège', test: (s) => (s.strategie ?? 0) === 0 },
   { id: 'verif', emoji: '🏅', label: 'Vérificateur', test: (s) => (s.problemes ?? 0) === 0 },
   { id: 'parfait', emoji: '💎', label: 'Patron de la kermesse', test: (s) => Object.values(s).every((v) => v === 0) },
-];
-
-const PIEGES = [
-  { wrong: 'Ajouter au lieu de multiplier (5 → 15 donc 7 → 17)', right: 'Passer par l’unité : 3 € le ticket, donc 21 €' },
-  { wrong: 'Croire proportionnelle une situation à part fixe', right: 'Une location payée une fois ne double jamais' },
-  { wrong: 'Croire proportionnel tout ce qui augmente ensemble', right: 'L’âge et la taille augmentent ensemble sans l’être' },
-  { wrong: 'Additionner des grandeurs différentes (4 € + 15 ballons)', right: 'On multiplie la valeur unitaire par la quantité' },
 ];
 
 function Synthese() {
@@ -234,22 +238,10 @@ function Synthese() {
         </p>
       </div>
 
-      <div className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl p-5 text-center space-y-1">
-        <p className="text-xs uppercase tracking-wide text-emerald-100 font-mono font-bold">À retenir</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Toujours × le même nombre</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Multiple ? multiplie · Diviseur ? divise · Sinon, passe par 1</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Teste avant d’appliquer, vérifie après</p>
-      </div>
-
-      <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 space-y-2.5">
-        <p className="text-sm font-bold text-amber-900">Les pièges à éviter</p>
-        {PIEGES.map((p) => (
-          <div key={p.wrong} className="text-sm space-y-0.5">
-            <div className="text-rose-700">❌ {p.wrong}</div>
-            <div className="text-emerald-700">✅ {p.right}</div>
-          </div>
-        ))}
-      </div>
+      {/* La carte complète REMPLACE les deux bandeaux recopiés à la main
+          (« À retenir » et « les pièges à éviter ») : une leçon n'a qu'une
+          source de connaissances (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot complete variant="complete" />
 
       <Feedback tone="info">
         Prix, distances, recettes, recettes de cuisine : la proportionnalité est partout. Le réflexe à garder

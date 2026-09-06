@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -47,6 +48,7 @@ const REGISTRE = [
 const EPREUVES = [
   {
     id: 'oge-e1',
+    requires: ['arrondi'],
     skill: 'arrondir',
     title: 'Épreuve 1',
     prompt: <>Arrondi à la dizaine, <strong className="font-mono">286</strong> devient…</>,
@@ -70,6 +72,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e2',
+    requires: ['arrondi', 'convention-milieu'],
     skill: 'arrondir',
     title: 'Épreuve 2',
     prompt: <>Arrondi à la centaine, <strong className="font-mono">750</strong> devient…</>,
@@ -81,6 +84,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e3',
+    requires: ['arrondi', 'plusieurs-arrondis', 'ordre-de-grandeur'],
     skill: 'somme',
     title: 'Épreuve 3',
     prompt: <>Estime <strong className="font-mono">412 + 289</strong>.</>,
@@ -92,6 +96,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e4',
+    requires: ['arrondi', 'difference-distance'],
     skill: 'difference',
     title: 'Épreuve 4',
     prompt: <>Estime <strong className="font-mono">905 − 396</strong>.</>,
@@ -103,6 +108,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e5',
+    requires: ['arrondi', 'produit-rectangle'],
     skill: 'produit',
     title: 'Épreuve 5',
     prompt: <>Estime <strong className="font-mono">31 × 39</strong>, en imaginant le rectangle.</>,
@@ -115,6 +121,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e6',
+    requires: ['ordre-de-grandeur', 'plausible-suspect-impossible'],
     skill: 'detective',
     title: 'Épreuve 6',
     prompt: (
@@ -131,6 +138,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e7',
+    requires: ['produit-rectangle', 'plausible-suspect-impossible'],
     skill: 'detective',
     title: 'Épreuve 7',
     prompt: (
@@ -147,6 +155,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e8',
+    requires: ['nombre-ami', 'ordre-de-grandeur'],
     skill: 'estimer',
     title: 'Épreuve 8',
     prompt: (
@@ -166,6 +175,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e9',
+    requires: ['demarche-estimation', 'plausible-suspect-impossible'],
     skill: 'problemes',
     title: 'Épreuve 9 — Problème final',
     prompt: (
@@ -187,6 +197,7 @@ const EPREUVES = [
   },
   {
     id: 'oge-e10',
+    requires: ['niveau-de-precision'],
     skill: 'precision',
     title: 'Épreuve 10',
     prompt: 'Dans laquelle de ces situations faut-il absolument une valeur EXACTE ?',
@@ -226,39 +237,16 @@ const BADGES = [
   { id: 'parfait', emoji: '💎', label: 'Contrôleur de résultats', test: (s) => Object.values(s).every((v) => v === 0) },
 ];
 
-/* ═══ SYNTHÈSE ══════════════════════════════════════════════════════ */
+/* ═══ SYNTHÈSE — la carte des connaissances, dans son état complet.
+   Rien n'est recopié : l'élève retrouve exactement les briques qu'il a
+   débloquées module après module (docs/architecture/KNOWLEDGE_MAP.md). ══ */
 function Synthese() {
-  const STEPS = [
-    { label: 'Nombre compliqué', v: '198 + 302' },
-    { label: 'Je simplifie', v: '198 → 200, 302 → 300' },
-    { label: "J'estime", v: '200 + 300 ≈ 500' },
-    { label: 'Je calcule', v: '198 + 302 = 500' },
-    { label: 'Je contrôle', v: '500 est cohérent avec 500 ✓' },
-  ];
   return (
     <div className="space-y-5">
-      <div className="bg-slate-900 text-white rounded-2xl p-6 text-center space-y-3">
-        <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Le réflexe à automatiser</div>
-        <div className="text-2xl sm:text-3xl font-space font-extrabold">ESTIMER → CALCULER → VÉRIFIER</div>
-      </div>
-
-      <div className="space-y-2">
-        {STEPS.map((s, i) => (
-          <div key={s.label} className="flex items-center gap-3 bg-white border-2 border-slate-200 rounded-xl px-4 py-3">
-            <span className="w-7 h-7 rounded-full bg-slate-800 text-white font-mono font-bold text-xs flex items-center justify-center shrink-0">
-              {i + 1}
-            </span>
-            <div>
-              <div className="text-[10px] font-mono font-bold text-slate-400 uppercase">{s.label}</div>
-              <div className="font-mono font-bold text-slate-800">{s.v}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-
+      <KnowledgeSnapshot complete variant="complete" />
       <Feedback tone="info">
-        Une estimation n'est jamais une preuve d'exactitude — c'est un CONTRÔLE. Elle permet de repérer les
-        erreurs grossières avant même de vérifier le détail du calcul.
+        Une estimation n'est jamais une preuve d'exactitude — c'est un CONTRÔLE. Elle permet de
+        repérer les erreurs grossières avant même de vérifier le détail du calcul.
       </Feedback>
     </div>
   );

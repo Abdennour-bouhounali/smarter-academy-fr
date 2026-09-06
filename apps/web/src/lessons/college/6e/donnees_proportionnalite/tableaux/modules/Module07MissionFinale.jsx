@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import DataTable from '../components/DataTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -62,6 +63,7 @@ const LIBRAIRIE = makeTable({
 const EPREUVES = [
   {
     id: 'tb-e1',
+    requires: ['tableau-outil'],
     skill: 'interet',
     title: 'Épreuve 1',
     prompt: 'Le professeur a noté les 16 résultats du tournoi dans un paragraphe. Pourquoi les recopier dans un tableau ?',
@@ -77,6 +79,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e2',
+    requires: ['ligne-colonne', 'entete'],
     skill: 'anatomie',
     title: 'Épreuve 2',
     prompt: 'Dans le tableau du tournoi, que contient la colonne « Relais » ?',
@@ -93,6 +96,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e3',
+    requires: ['lire-un-croisement'],
     skill: 'lire',
     title: 'Épreuve 3',
     prompt: 'Combien Hugo a-t-il marqué en précision ?',
@@ -105,6 +109,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e4',
+    requires: ['lecture-inverse', 'entete'],
     skill: 'lire',
     title: 'Épreuve 4',
     prompt: 'Qui a marqué 6 points au saut ?',
@@ -117,6 +122,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e5',
+    requires: ['position-porte-sens', 'cellule-croisement', 'ligne-colonne'],
     skill: 'ranger',
     title: 'Épreuve 5',
     prompt: 'La cantine a servi 44 desserts le jeudi, mais la case est vide. Où faut-il écrire 44 ?',
@@ -133,6 +139,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e6',
+    requires: ['choisir-structure'],
     skill: 'ranger',
     title: 'Épreuve 6',
     prompt: 'On relève la taille de 5 élèves au début et à la fin de l’année. Comment organiser ces 10 mesures ?',
@@ -148,6 +155,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e7',
+    requires: ['entete', 'choisir-structure'],
     skill: 'construire',
     title: 'Épreuve 7',
     prompt: 'Pour un tableau des prix de 4 fruits dans 3 magasins, que doivent dire les en-têtes ?',
@@ -163,6 +171,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e8',
+    requires: ['total-decide', 'comparer-entiers'],
     skill: 'comparer',
     title: 'Épreuve 8',
     prompt: `Tom détient la plus grosse case du tableau (15 au relais). Qui remporte le tournoi au total ?`,
@@ -175,6 +184,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e9',
+    requires: ['total-decide', 'position-porte-sens', 'calcul-numerique'],
     skill: 'comparer',
     title: 'Épreuve 9',
     prompt: `On corrige une erreur : le saut d’Hugo passe de 5 à 12 points. Que devient son total ?`,
@@ -187,6 +197,7 @@ const EPREUVES = [
   },
   {
     id: 'tb-e10',
+    requires: ['lire-un-croisement', 'comparer-sens-lecture', 'calcul-numerique'],
     skill: 'construire',
     title: 'Épreuve 10',
     prompt: 'Dernière commande : combien coûtent les cahiers en tout ?',
@@ -208,13 +219,6 @@ const BADGES = [
   { id: 'parfait', emoji: '💎', label: 'Maître des données', test: (s) => Object.values(s).every((v) => v === 0) },
 ];
 
-const PIEGES = [
-  { wrong: 'Lire une case en glissant d’une ligne', right: 'Un doigt sur la ligne, un doigt sur la colonne' },
-  { wrong: 'Sacrer celui qui a la plus grosse case', right: 'C’est le TOTAL de la ligne qui classe' },
-  { wrong: 'Additionner 27 élèves et 8 €', right: 'Deux grandeurs différentes : ici on multiplie' },
-  { wrong: 'Garder les nombres sans en-têtes', right: 'Sans en-tête, un nombre ne veut plus rien dire' },
-];
-
 function Synthese() {
   return (
     <div className="space-y-4">
@@ -234,22 +238,11 @@ function Synthese() {
         </p>
       </div>
 
-      <div className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl p-5 text-center space-y-1">
-        <p className="text-xs uppercase tracking-wide text-emerald-100 font-mono font-bold">À retenir</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Ligne × colonne = cellule</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Les en-têtes donnent le sens</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Le total décide</p>
-      </div>
-
-      <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 space-y-2.5">
-        <p className="text-sm font-bold text-amber-900">Les pièges à éviter</p>
-        {PIEGES.map((p) => (
-          <div key={p.wrong} className="text-sm space-y-0.5">
-            <div className="text-rose-700">❌ {p.wrong}</div>
-            <div className="text-emerald-700">✅ {p.right}</div>
-          </div>
-        ))}
-      </div>
+      {/* La carte complète REMPLACE les deux bandeaux recopiés à la main
+          (« À retenir » et « les pièges à éviter ») : une leçon n'a qu'une
+          source de connaissances (docs/architecture/KNOWLEDGE_MAP.md). Les
+          pièges y vivent déjà, dans les items qui les portent. */}
+      <KnowledgeSnapshot complete variant="complete" />
 
       <Feedback tone="info">
         Scores, horaires, températures, commandes : dès que deux familles d'information se croisent, le

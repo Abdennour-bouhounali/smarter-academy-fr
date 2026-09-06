@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Scissors, Plus, Minus } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -169,16 +170,20 @@ export default function Module02DecouperUnite() {
               <AnimatePresence>
                 {parts10 && (
                   <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
-                    <Feedback tone="info">
-                      L'unité est maintenant partagée en <strong>10 parts égales</strong>. Chaque part s'appelle un{' '}
-                      <strong>dixième</strong> et s'écrit <MathText>{'$\\frac{1}{10}$'}</MathText>.
-                    </Feedback>
+                    {/* La coupe vient d'être faite : le mot « dixième »
+                        désigne maintenant une part que l'élève voit. */}
+                    <KnowledgeBrick
+                      id="dixieme"
+                      variant="new"
+                      lead="Les dix parts que tu viens de créer portent un nom."
+                    />
 
                     <TapQuestion
                       prompt={Q_DIXIEMES.q}
                       options={Q_DIXIEMES.options}
                       correct={Q_DIXIEMES.correct}
                       cols={4}
+                      requires={['dixieme']}
                       explain={Q_DIXIEMES.explain}
                       solved={qDix}
                       onAnswered={() => setQDix(true)}
@@ -207,9 +212,8 @@ export default function Module02DecouperUnite() {
               />
               {s2 && (
                 <Feedback tone="info">
-                  3 parts sur 10, c'est <strong>3 dixièmes</strong>, que l'on écrit{' '}
-                  <MathText>{'$\\frac{3}{10}$'}</MathText>. Le dénominateur 10 rappelle en combien de parts l'unité a
-                  été partagée ; le numérateur 3 compte les parts prises.
+                  3 parts sur 10 : <MathText>{'$\\frac{3}{10}$'}</MathText>. Ces deux nombres portent
+                  chacun un nom — tu les découvriras au module suivant.
                 </Feedback>
               )}
             </>
@@ -235,17 +239,20 @@ export default function Module02DecouperUnite() {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
                   <UnitGrid parts={100} shaded={0} tone="violet" label="1 unité partagée en 100" showCount={false} />
 
-                  <Feedback tone="info">
-                    10 dixièmes × 10 = <strong>100 parts</strong>. Chaque petite case est un <strong>centième</strong>,
-                    soit <MathText>{'$\\frac{1}{100}$'}</MathText>. Remarque bien :{' '}
-                    <strong>une ligne entière de la grille = 1 dixième</strong>.
-                  </Feedback>
+                  {/* La seconde découpe vient d'avoir lieu : la case et la
+                      ligne sont visibles, on peut les nommer. */}
+                  <KnowledgeBrick
+                    id="centieme"
+                    variant="new"
+                    lead="Chacune des 100 petites cases que tu vois maintenant porte un nom."
+                  />
 
                   <TapQuestion
                     prompt={Q_CENTIEMES.q}
                     options={Q_CENTIEMES.options}
                     correct={Q_CENTIEMES.correct}
                     cols={2}
+                    requires={['centieme', 'dixieme']}
                     explain={Q_CENTIEMES.explain}
                     solved={qCent}
                     onAnswered={() => setQCent(true)}
@@ -278,6 +285,7 @@ export default function Module02DecouperUnite() {
                   options={Q_DECOMP.options}
                   correct={Q_DECOMP.correct}
                   cols={2}
+                  requires={['dixieme', 'centieme']}
                   explain={Q_DECOMP.explain}
                   solved={qDec}
                   onAnswered={() => setQDec(true)}
@@ -288,16 +296,10 @@ export default function Module02DecouperUnite() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">À retenir</div>
-          <div className="text-lg sm:text-xl font-space font-extrabold">
-            1 unité = 10 dixièmes = 100 centièmes
-          </div>
-          <p className="text-sm text-slate-300">
-            Plus on découpe finement, plus on peut décrire précisément une quantité — sans jamais changer la
-            taille de l'unité de départ.
-          </p>
-        </div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais découper l'unité et nommer les parts. Au module
+          suivant, tu écris ces quantités sous forme de fraction.
+        </KnowledgeSnapshot>
       }
     />
   );

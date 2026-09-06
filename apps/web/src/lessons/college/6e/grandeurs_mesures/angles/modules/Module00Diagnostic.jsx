@@ -23,6 +23,7 @@ const QUESTIONS = [
     options: ['Un segment', 'Une demi-droite', 'Une droite'],
     cols: 3,
     correct: 1,
+    requires: ['demi-droite'],
     explain: 'Une demi-droite a une origine et file à l’infini d’un seul côté. Le segment a deux extrémités, la droite n’en a aucune.',
   },
   {
@@ -33,6 +34,7 @@ const QUESTIONS = [
     options: ['Le sommet', 'Le milieu', 'La base'],
     cols: 3,
     correct: 0,
+    requires: ['demi-droite'],
     explain: 'C’est le sommet — le mot reviendra sans arrêt dans cette leçon.',
   },
   {
@@ -43,6 +45,7 @@ const QUESTIONS = [
     options: ['2', '4', '0'],
     cols: 3,
     correct: 1,
+    requires: ['angle-droit'],
     explain: 'Les quatre coins d’un rectangle sont des angles droits.',
   },
   {
@@ -53,17 +56,19 @@ const QUESTIONS = [
     options: ['Un angle droit', 'Un angle très ouvert', 'Aucun angle'],
     cols: 1,
     correct: 0,
-    explain: 'Perpendiculaires = qui se coupent à angle droit. C’est l’angle de référence de toute la leçon.',
+    requires: ['angle-droit', 'droites-perpendiculaires'],
+    explain: 'Perpendiculaires = qui se coupent à angle droit — c’est bien ce que tu as vu avec les figures.',
   },
   {
     id: 'q5-graduation',
     skill: 'figuresBase',
     points: 2,
-    prompt: <>Sur une règle graduée en centimètres, entre les traits 4 et 5, on trouve :</>,
-    options: ['Rien du tout', 'Des graduations plus petites (les millimètres)', 'Le trait du 6'],
+    prompt: <>Sur une règle graduée en centimètres, que trouve-t-on entre les traits 4 et 5 ?</>,
+    options: ['Rien du tout', 'Des traits plus petits (les millimètres)', 'Le trait du 6'],
     cols: 1,
     correct: 1,
-    explain: 'Entre deux graduations principales, il y a des graduations plus fines. Lire entre les traits servira aussi sur le rapporteur.',
+    requires: ['demi-droite'],
+    explain: 'Entre deux traits principaux, il y a des traits plus fins — les millimètres. Savoir lire entre les traits d’une règle te servira dans cette leçon.',
   },
 ];
 
@@ -77,8 +82,8 @@ export default function Module00Diagnostic() {
         body: (
           <p>
             Vérifions ensemble la petite base dont tu auras besoin pour explorer les angles : le vocabulaire des
-            figures et la lecture d'une graduation. Ce test nous aide à savoir comment t'aider — ce n'est pas un
-            examen, et tu pourras toujours continuer vers le Module 1, quel que soit ton score.
+            figures déjà rencontré, et la lecture d'une règle. Ce test nous aide à savoir comment t'aider — ce
+            n'est pas un examen, et tu pourras toujours continuer vers le Module 1, quel que soit ton score.
           </p>
         ),
       }}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { BookMarked } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RelationFigure from '../components/RelationFigure';
@@ -97,8 +96,18 @@ export default function Module06LesDeuxRelations() {
           title: 'Classe les trois figures',
           done: sortDone,
           content: (
-            <BatchChoiceQuestion
-              intro={
+            <div className="space-y-5">
+              {/* Le troisième cas — deux droites qui se coupent SANS angle
+                  droit — est une option de la question : il doit être posé
+                  avant qu'on demande de le reconnaître. */}
+              <KnowledgeBrick
+                id="secantes"
+                variant="new"
+                lead="Il reste un cas que tu as croisé sans le nommer : deux droites qui se coupent, mais pas à angle droit."
+              />
+              <BatchChoiceQuestion
+                requires={['secantes', 'droites-paralleles', 'droites-perpendiculaires']}
+                intro={
                 <div className="space-y-3">
                   {CASES.map((c, i) => (
                     <div key={c.id} className="rounded-xl border-2 border-slate-200 bg-white p-2">
@@ -115,40 +124,29 @@ export default function Module06LesDeuxRelations() {
                 correct: SORT_OPTIONS.indexOf(relationOf(c.droites[0], c.droites[1])),
                 correction: <>{RELATION_LABEL[relationOf(c.droites[0], c.droites[1])]}</>,
               }))}
-              solved={sortDone}
-              onAnswered={() => setSortDone(true)}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {!allRight && (
-                    <>
-                      {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
-                    </>
-                  )}
-                  Deux droites qui se coupent sont <strong>sécantes</strong>. Si l’angle vaut exactement 90°,
-                  elles sont en plus <strong>perpendiculaires</strong> : la perpendicularité est un cas
-                  particulier de sécance.
-                </Feedback>
-              )}
-            />
+                solved={sortDone}
+                onAnswered={() => setSortDone(true)}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {!allRight && (
+                      <>
+                        {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
+                      </>
+                    )}
+                    Une seule des trois figures porte le petit carré : c’est la seule paire
+                    perpendiculaire.
+                  </Feedback>
+                )}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <BookMarked className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-400">
-            Le cas qu’on rencontre rarement
-          </p>
-          <p className="text-sm text-slate-300 text-center">
-            Deux droites <strong className="text-white">confondues</strong> sont en réalité la même droite :
-            elles ont tous leurs points en commun. Elles ne comptent ni comme sécantes ni comme deux
-            parallèles distinctes — c’est un cas à part, qu’on se contente de savoir nommer.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tu sais reconnaître et vérifier. À l’atelier, c’est toi qui
+          traces.
+        </KnowledgeSnapshot>
       }
     />
   );

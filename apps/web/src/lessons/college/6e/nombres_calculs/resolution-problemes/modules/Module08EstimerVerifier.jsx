@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -14,7 +15,7 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  */
 
 /* ─── Étape 1 : avant / après, sur le problème des crayons ───────── */
-function AvantApres({ solved, onAnswered }) {
+function AvantApres({ solved, onAnswered, onEstimated }) {
   const [estOk, setEstOk] = useState(false);
 
   return (
@@ -26,20 +27,26 @@ function AvantApres({ solved, onAnswered }) {
 
       <NumericQuestion
         prompt="AVANT de calculer, à peu près combien devrait-on trouver ? (8 ≈ 8, 24 ≈ 25, 35 ≈ 35…)"
+        requires={['chaine-de-calcul']}
         prefix="≈"
         expected={(n) => Number.isFinite(n) && n >= 140 && n <= 190}
         display="une valeur entre 140 et 190"
         explain="8 × 25 = 200, puis 200 − 35 ≈ 165. C'est bien l'ordre de grandeur attendu."
         explainFor={() => '8 × 25 = 200, puis 200 − 35 ≈ 165.'}
         solved={estOk || solved}
-        onAnswered={() => setEstOk(true)}
+        onAnswered={() => {
+          setEstOk(true);
+          onEstimated?.();
+        }}
       />
 
       {(estOk || solved) && (
         <div className="border-t border-slate-100 pt-4 space-y-2">
           <Feedback tone="ok">Bonne estimation : ≈ 165 crayons.</Feedback>
+
           <TapQuestion
             prompt="APRÈS le calcul : 157 est-il cohérent avec cette estimation ?"
+            requires={['estimer-puis-controler']}
             options={['Oui, 157 est proche de 165 : le résultat est cohérent', "Non, l'écart est trop grand, il faut recompter"]}
             correct={0}
             cols={1}
@@ -66,6 +73,7 @@ function ToiDeJouer({ solved, onAnswered }) {
 
       <NumericQuestion
         prompt="Estime d'abord, avant tout calcul exact."
+        requires={['estimer-puis-controler']}
         prefix="≈"
         expected={(n) => Number.isFinite(n) && n >= 70 && n <= 110}
         display="une valeur entre 70 et 110"
@@ -81,6 +89,7 @@ function ToiDeJouer({ solved, onAnswered }) {
           <div className="pt-2">
             <NumericQuestion
               prompt="Calcule maintenant le résultat exact."
+            requires={['chaine-de-calcul']}
               expected={85}
               explain="29 × 6 = 174 canettes livrées, puis 174 − 89 = 85 canettes restantes."
               explainFor={() => 'Calcule le total livré (29 × 6), puis retire les 89 distribuées.'}
@@ -95,6 +104,7 @@ function ToiDeJouer({ solved, onAnswered }) {
         <div className="border-t border-slate-100 pt-4">
           <TapQuestion
             prompt="85 est-il cohérent avec ton estimation ?"
+            requires={['estimer-puis-controler']}
             options={['Oui, cohérent', 'Non, incohérent']}
             correct={0}
             cols={2}
@@ -121,6 +131,7 @@ const WHY_Q = {
 };
 
 export default function Module08EstimerVerifier() {
+  const [estimated, setEstimated] = useState(false);
   const [s1, setS1] = useState(false);
   const [s2, setS2] = useState(false);
   const [s3, setS3] = useState(false);
@@ -136,14 +147,38 @@ export default function Module08EstimerVerifier() {
       brief={{
         tag: '🔎 Contrôle',
         title: 'Le réflexe que tu as déjà : estimer, puis contrôler.',
-        body: <p>Tu l'as déjà appris dans la leçon « Ordre de grandeur et estimation ». Ici, on l'intègre simplement à la démarche complète de résolution.</p>,
+        body: (
+          <p>
+            Deux réflexes encadrent chaque calcul : prévoir à peu près où l'on va, puis vérifier
+            qu'on y est bien arrivé.
+          </p>
+        ),
       }}
       steps={[
         {
           num: 1,
           title: 'Avant / après, sur un exemple connu',
           done: s1,
-          content: <AvantApres solved={s1} onAnswered={() => setS1(true)} />,
+          content: (
+            <div className="space-y-5">
+              <AvantApres
+                solved={s1}
+                onEstimated={() => setEstimated(true)}
+                onAnswered={() => setS1(true)}
+              />
+              {/* La brique vit dans le littéral `steps` — seule position que
+                  l'audit lit, donc la seule qui rende la connaissance
+                  contractuelle (RECIPE §5). Elle paraît dès que l'estimation
+                  est donnée, avant le contrôle qui en est la seconde moitié. */}
+              {(estimated || s1) && (
+                <KnowledgeBrick
+                  id="estimer-puis-controler"
+                  variant="new"
+                  lead="Tu viens d'annoncer un ordre de grandeur sans poser le calcul. Voilà à quoi il va servir."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -158,6 +193,7 @@ export default function Module08EstimerVerifier() {
           content: (
             <TapQuestion
               prompt={WHY_Q.q}
+              requires={['estimer-puis-controler']}
               options={WHY_Q.options}
               correct={WHY_Q.correct}
               cols={1}
@@ -168,6 +204,12 @@ export default function Module08EstimerVerifier() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={8}>
+          <strong>La suite.</strong> Le bon nombre est trouvé et contrôlé. Reste à le dire
+          correctement — ce n'est pas la même chose.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Users } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -186,7 +187,18 @@ export default function Module06Quotient() {
           title: '3 pizzas pour 4 personnes',
           done: s1,
           content: (kit) => (
-            <PartageQuotient solved={s1} onSolved={() => setS1(true)} react={kit.react} />
+            <div className="space-y-5">
+              <PartageQuotient solved={s1} onSolved={() => setS1(true)} react={kit.react} />
+              {/* Le partage vient d'être effectué part par part : c'est
+                  l'instant où « 3 ÷ 4 » et « 3/4 » deviennent le même objet. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="fraction-quotient"
+                  variant="new"
+                  lead="Tu viens de distribuer 3 pizzas à 4 convives — et chacun est reparti avec la même fraction."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -213,6 +225,7 @@ export default function Module06Quotient() {
                 cols={4}
                 renderOption={renderFractionOption}
                 explain={MOTIF_Q.explain}
+                requires={['fraction-quotient']}
                 solved={s2}
                 onAnswered={() => setS2(true)}
               />
@@ -244,6 +257,7 @@ export default function Module06Quotient() {
                   lui, ne produit jamais de fraction : on compte des paquets entiers.
                 </Feedback>
               )}
+              requires={['fraction-quotient', 'part-egale']}
               solved={s3}
               onAnswered={() => setS3(true)}
             />
@@ -264,6 +278,7 @@ export default function Module06Quotient() {
                 correct={ERREUR.correct}
                 cols={1}
                 explain={ERREUR.explain}
+                requires={['fraction-quotient', 'numerateur', 'denominateur']}
                 solved={s4}
                 onAnswered={() => setS4(true)}
               />
@@ -271,6 +286,12 @@ export default function Module06Quotient() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tu connais les deux sens d’une fraction. On va maintenant
+          reconnaître celles qu’on croise tous les jours.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

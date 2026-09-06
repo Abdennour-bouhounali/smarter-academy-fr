@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MousePointerClick } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -81,7 +82,7 @@ function HighlightExplorer({ item, solved, onSolved }) {
           }`}
           style={highlight === 'numerator' ? { background: NUM_COLOR, borderColor: NUM_COLOR } : {}}
         >
-          Voir le NUMÉRATEUR ({item.num})
+          Voir le nombre du HAUT ({item.num})
         </button>
         <button
           type="button"
@@ -96,7 +97,7 @@ function HighlightExplorer({ item, solved, onSolved }) {
           }`}
           style={highlight === 'denominator' ? { background: DEN_COLOR, borderColor: DEN_COLOR } : {}}
         >
-          Voir le DÉNOMINATEUR ({item.den})
+          Voir le nombre du BAS ({item.den})
         </button>
       </div>
 
@@ -109,7 +110,7 @@ function HighlightExplorer({ item, solved, onSolved }) {
             exit={{ opacity: 0 }}
           >
             <Feedback tone="info">
-              Le <strong style={{ color: NUM_COLOR }}>numérateur {item.num}</strong> = les{' '}
+              Le <strong style={{ color: NUM_COLOR }}>nombre du haut ({item.num})</strong> = les{' '}
               <strong>{item.num} part{item.num > 1 ? 's' : ''} coloriée{item.num > 1 ? 's' : ''}</strong> (en haut de la fraction, en jaune sur le dessin).
             </Feedback>
           </motion.div>
@@ -122,7 +123,7 @@ function HighlightExplorer({ item, solved, onSolved }) {
             exit={{ opacity: 0 }}
           >
             <Feedback tone="info">
-              Le <strong style={{ color: DEN_COLOR }}>dénominateur {item.den}</strong> = les{' '}
+              Le <strong style={{ color: DEN_COLOR }}>nombre du bas ({item.den})</strong> = les{' '}
               <strong>{item.den} parts au total</strong> (en bas de la fraction, en indigo sur le dessin — chaque part est numérotée).
             </Feedback>
           </motion.div>
@@ -155,6 +156,7 @@ function LectureItem({ item, solved, onSolved }) {
       <PartitionShape shape={item.shape} parts={item.den} shaded={item.num} tone={item.tone} size="md" />
 
       <BatchChoiceQuestion
+        requires={['numerateur', 'denominateur']}
         rows={[
           { id: 'num', label: 'Combien de parts sont prises (numérateur) ?', options: numOptions, correct: numCorrect },
           { id: 'den', label: 'En combien de parts égales (dénominateur) ?', options: denOptions, correct: denCorrect },
@@ -215,6 +217,7 @@ function PiegeQuiz({ solved, onSolved }) {
         correct={PIEGE.correct}
         cols={1}
         explain={PIEGE.explain}
+        requires={['denominateur', 'role-du-bas']}
         solved={solved}
         onAnswered={() => onSolved?.()}
       />
@@ -283,10 +286,23 @@ export default function Module03Vocabulaire() {
               )}
 
               {s1 && (
-                <Feedback tone="ok">
-                  <strong>Numérateur</strong> = parts prises. <strong>Dénominateur</strong> = nombre total de parts
-                  égales. Ce n'est pas « le nombre du haut / le nombre du bas » : c'est le sens qui compte.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Tu as vu les deux rôles : l’un <strong>compte</strong> les parts prises, l’autre
+                    <strong> nomme</strong> leur taille. Ces deux rôles ont chacun un nom.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="numerateur"
+                    variant="new"
+                    lead="Le nombre du haut, celui qui grossissait quand tu prenais une part de plus."
+                  />
+                  <KnowledgeBrick
+                    id="denominateur"
+                    variant="new"
+                    lead="Le nombre du bas, celui qui commandait les traits de découpe."
+                  />
+                  <KnowledgeBrick id="mem-haut-bas" variant="new" />
+                </>
               )}
             </div>
           ),
@@ -312,11 +328,17 @@ export default function Module03Vocabulaire() {
         },
         {
           num: 3,
-          title: "Piège : le dénominateur n'est pas juste un nombre",
+          title: 'Le piège du plus grand nombre',
           done: s3,
           content: <PiegeQuiz solved={piegeDone} onSolved={() => setPiegeDone(true)} />,
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Les deux mots sont posés. On va maintenant lire et dessiner des
+          fractions dans les deux sens.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

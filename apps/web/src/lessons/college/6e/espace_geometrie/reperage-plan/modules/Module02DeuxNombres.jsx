@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowLeftRight } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SwapLab from '../components/SwapLab';
@@ -109,10 +108,19 @@ export default function Module02DeuxNombres() {
                 )}
               </div>
               {swapDone && (
-                <Feedback tone="ok">
-                  À chaque fois, A′ est le reflet de A de l’autre côté de la diagonale. Les deux nombres ne
-                  sont pas interchangeables : chacun commande une direction.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    À chaque fois, A′ est le reflet de A de l’autre côté de la diagonale. Les deux
+                    nombres ne sont pas interchangeables : chacun commande une direction.
+                  </Feedback>
+                  {/* Le geste vient de le prouver sur trois points : la règle
+                      se pose ici, avant la question de l'étape 2. */}
+                  <KnowledgeBrick
+                    id="ordre-du-couple"
+                    variant="new"
+                    lead="Trois fois de suite, échanger les deux nombres a déplacé le point."
+                  />
+                </>
               )}
             </div>
           ),
@@ -122,36 +130,58 @@ export default function Module02DeuxNombres() {
           title: 'Qui commande quoi ?',
           done: roleDone,
           content: (
-            <TapQuestion
-              above={
-                <CoordGrid
-                  grid={GRID}
-                  mode="display"
-                  labelledNodes={[{ col: A.col, row: A.row, name: 'A' }]}
-                  ghost={{ ...swapNode(A), label: `A′ ${formatCoords(swapNode(A))}` }}
-                  highlightDiagonal
-                  showCoordsBadge={false}
-                  ariaLabel={`Point A en ${formatCoords(A)} et son échange A prime en ${formatCoords(swapNode(A))}`}
-                />
-              }
-              prompt={
+            <div className="space-y-5">
+              <TapQuestion
+                above={
+                  <CoordGrid
+                    grid={GRID}
+                    mode="display"
+                    labelledNodes={[{ col: A.col, row: A.row, name: 'A' }]}
+                    ghost={{ ...swapNode(A), label: `A′ ${formatCoords(swapNode(A))}` }}
+                    highlightDiagonal
+                    showCoordsBadge={false}
+                    ariaLabel={`Point A en ${formatCoords(A)} et son échange A prime en ${formatCoords(swapNode(A))}`}
+                  />
+                }
+                prompt={
+                  <>
+                    Le point A est en <span className="font-mono font-bold">{formatCoords(A)}</span>. Que
+                    commande le <strong>premier</strong> nombre, le 2 ?
+                  </>
+                }
+                options={[
+                  'De combien on se déplace horizontalement',
+                  'De combien on monte',
+                  'La taille du point',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['deux-nombres', 'ordre-du-couple']}
+                explain="Le premier nombre se lit sur l’axe horizontal : il dit de combien on avance vers la droite. Le second se lit sur l’axe vertical : il dit de combien on monte."
+                explainWrong="C’est le SECOND nombre qui commande la montée. Regarde A′ : en échangeant, le point est monté beaucoup plus haut — parce que le 5 est passé en seconde position."
+                solved={roleDone}
+                onAnswered={() => setRoleDone(true)}
+              />
+
+              {/* Les deux rôles viennent d'être distingués par l'élève : ils
+                  ont chacun un nom, et c'est seulement maintenant qu'on peut
+                  le poser sans le plaquer sur du vide. */}
+              {roleDone && (
                 <>
-                  Le point A est en <span className="font-mono font-bold">{formatCoords(A)}</span>. Que
-                  commande le <strong>premier</strong> nombre, le 2 ?
+                  <KnowledgeBrick
+                    id="abscisse"
+                    variant="new"
+                    lead="Le premier nombre, celui qui commande le déplacement horizontal, porte un nom."
+                  />
+                  <KnowledgeBrick
+                    id="ordonnee"
+                    variant="new"
+                    lead="Et le second, celui qui commande la montée, en porte un autre."
+                  />
+                  <KnowledgeBrick id="mem-ordre" variant="new" />
                 </>
-              }
-              options={[
-                'De combien on se déplace horizontalement',
-                'De combien on monte',
-                'La taille du point',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Le premier nombre se lit sur l’axe horizontal : il dit de combien on avance vers la droite. Le second se lit sur l’axe vertical : il dit de combien on monte."
-              explainWrong="C’est le SECOND nombre qui commande la montée. Regarde A′ : en échangeant, le point est monté beaucoup plus haut — parce que le 5 est passé en seconde position."
-              solved={roleDone}
-              onAnswered={() => setRoleDone(true)}
-            />
+              )}
+            </div>
           ),
         },
         {
@@ -161,6 +191,7 @@ export default function Module02DeuxNombres() {
           done: pairsDone,
           content: (
             <BatchChoiceQuestion
+              requires={['ordre-du-couple', 'abscisse', 'ordonnee']}
               intro={
                 <p className="text-sm text-slate-600">
                   Pour chaque paire, décide si les deux écritures désignent le <strong>même</strong> point du
@@ -202,18 +233,10 @@ export default function Module02DeuxNombres() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <ArrowLeftRight className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            L’ordre compte : le <strong className="text-white">premier</strong> nombre pour l’horizontale, le{' '}
-            <strong className="text-white">second</strong> pour la verticale. On les écrit entre parenthèses,
-            séparés par un point-virgule : <span className="font-mono text-white">(2 ; 5)</span>.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais nommer chacun des deux nombres. On va maintenant les
+          lire sur un point déjà posé, sans avoir à les deviner.
+        </KnowledgeSnapshot>
       }
     />
   );

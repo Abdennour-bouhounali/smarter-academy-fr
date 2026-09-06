@@ -24,6 +24,18 @@ export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/angles';
 export const LESSON_CONFIG = {
   id: 'angles',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques au point de besoin et se termine sur l'état
+  // courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances
+  // avant la demande »), diagnostiquées une à une par le module 0 : le
+  // vocabulaire des figures rencontré au cycle 3 (demi-droite, sommet,
+  // angle droit du rectangle, droites perpendiculaires) et la lecture d'une
+  // règle graduée. Ce qui est la MATIÈRE de la leçon — l'angle comme
+  // ouverture, les classes aigu/obtus/plat, le rapporteur, la mesure et la
+  // construction — n'y figure pas : ce sont des briques qui le posent.
+  priorKnowledge: ['demi-droite', 'angle-droit', 'droites-perpendiculaires'],
   title: 'Angles',
   description:
     'L’angle comme ouverture : ouvrir, comparer, classer, puis mesurer et construire au rapporteur — jusqu’au brevet de pilote.',

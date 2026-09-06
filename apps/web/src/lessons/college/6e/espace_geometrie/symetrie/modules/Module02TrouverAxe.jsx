@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Search } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import FoldCard from '../components/FoldCard';
@@ -67,8 +66,10 @@ export default function Module02TrouverAxe() {
       steps={[
         {
           num: 1,
-          title: 'La diagonale d’un rectangle est-elle un axe ?',
-          subtitle: 'Beaucoup le croient. Vérifions en pliant.',
+          // Titre neutre : StepCard l'affiche AVANT l'ouverture de l'étape, et
+          // il ne doit ni nommer le pli à tester ni annoncer le verdict.
+          title: 'Deux plis à tester sur un rectangle',
+          subtitle: 'Beaucoup se trompent ici. Vérifions en pliant.',
           done: diagDone,
           content: (kit) => (
             <div className="space-y-3">
@@ -94,9 +95,16 @@ export default function Module02TrouverAxe() {
               {foldedDiag && (
                 <Feedback tone={diagDone ? 'ok' : 'info'}>
                   Le pli du milieu fonctionne. La <strong>diagonale, non</strong> : en pliant, les coins ne
-                  tombent pas l’un sur l’autre. C’est l’erreur la plus fréquente du chapitre — un rectangle
-                  n’a que <strong>2</strong> axes, ses deux médianes.
+                  tombent pas l’un sur l’autre.
                 </Feedback>
+              )}
+
+              {diagDone && (
+                <KnowledgeBrick
+                  id="nombre-axes"
+                  variant="new"
+                  lead="Tu viens de rejeter un pli qui semblait plausible : les axes se testent, ils ne se supposent pas."
+                />
               )}
             </div>
           ),
@@ -119,6 +127,7 @@ export default function Module02TrouverAxe() {
                   </p>
                 </div>
               }
+              requires={['nombre-axes', 'axe-symetrie', 'symetrie-pliage']}
               rows={A_COMPTER.map((f) => ({
                 id: f.id,
                 label: <span className="font-semibold">{f.label}</span>,
@@ -139,9 +148,9 @@ export default function Module02TrouverAxe() {
                       {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
                     </>
                   )}
-                  Le carré en a <strong>4</strong> (2 médianes + 2 diagonales), le rectangle{' '}
-                  <strong>2</strong> (ses médianes seulement), le triangle équilatéral <strong>3</strong>, et
-                  une figure quelconque <strong>aucun</strong>.
+                  Le carré en a <strong>4</strong> (les deux plis du milieu, et ses deux diagonales), le
+                  rectangle <strong>2</strong> (ses deux plis du milieu seulement), le triangle
+                  équilatéral <strong>3</strong>, et une figure quelconque <strong>aucun</strong>.
                 </Feedback>
               )}
             />
@@ -149,7 +158,7 @@ export default function Module02TrouverAxe() {
         },
         {
           num: 3,
-          title: 'Pourquoi le carré en a-t-il plus que le rectangle ?',
+          title: 'D’où vient la différence ?',
           done: ruleDone,
           content: (
             <TapQuestion
@@ -161,6 +170,7 @@ export default function Module02TrouverAxe() {
               ]}
               correct={0}
               cols={1}
+              requires={['nombre-axes', 'axe-symetrie']}
               explain="Plus une figure a de propriétés, plus elle a d’axes. L’égalité des côtés du carré rend ses diagonales pliables — ce qui est faux pour le rectangle."
               explainWrong="Ni la taille ni l’orientation n’ont d’effet sur la symétrie. C’est l’égalité des côtés qui donne au carré ses deux axes supplémentaires."
               solved={ruleDone}
@@ -170,24 +180,10 @@ export default function Module02TrouverAxe() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Search className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
-            {A_COMPTER.map((f) => (
-              <div key={f.id} className="bg-white/10 rounded-xl p-3 text-center">
-                <div className="font-mono font-extrabold text-white text-lg">{countSymmetryAxes(f.pts)}</div>
-                <div className="text-slate-300 text-[11px] leading-tight">{f.label}</div>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-xs text-slate-400">
-            Le nombre d’axes est une propriété de la figure — il se compte, il ne se devine pas.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> On sait où plier. Voyons maintenant, point par point, ce que le
+          pli fait exactement.
+        </KnowledgeSnapshot>
       }
     />
   );

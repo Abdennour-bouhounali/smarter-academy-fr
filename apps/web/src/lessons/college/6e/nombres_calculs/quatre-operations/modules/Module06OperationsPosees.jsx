@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import ConceptCard from '../../../../../common/components/ConceptCard';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /* ─── Tableau de valeur de position (revue pas à pas, non interactif) ── */
@@ -226,7 +227,7 @@ export default function Module06OperationsPosees() {
       moduleNumber={6}
       moduleTitle="Les opérations posées"
       moduleSubtitle="Tableau de valeur de position, retenues et échanges expliqués pas à pas."
-      estimatedTime="10 min"
+      estimatedTime="6 min"
       brief={{
         tag: '🗂️ Valeur de position',
         title: 'Poser une opération : aligner les rangs pour ne jamais se tromper.',
@@ -255,8 +256,19 @@ export default function Module06OperationsPosees() {
           subtitle: 'Retenue au fil des colonnes, étape par étape.',
           done: s1,
           content: (
-            <div className="bg-white border border-slate-200 rounded-2xl p-6">
-              <PlaceValueBoard operation={OPERATIONS[0]} onComplete={() => setAdditionDone(true)} done={s1} />
+            <div className="space-y-5">
+              <div className="bg-white border border-slate-200 rounded-2xl p-6">
+                <PlaceValueBoard operation={OPERATIONS[0]} onComplete={() => setAdditionDone(true)} done={s1} />
+              </div>
+              {/* La méthode est nommée quand l'élève vient de la pratiquer
+                  colonne par colonne — pas dans le brief qui l'annonce. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="aligner-les-rangs"
+                  variant="new"
+                  lead="Les colonnes que tu viens de remplir : chacune ne contient qu'un seul rang."
+                />
+              )}
             </div>
           ),
         },
@@ -283,6 +295,7 @@ export default function Module06OperationsPosees() {
                   <NumericQuestion
                     key={ex.q}
                     prompt={`${ex.q} = ?`}
+                    requires={['aligner-les-rangs', 'retenue', 'echange-emprunt']}
                     expected={ex.expected}
                     explain={ex.hint}
                     solved={i < practiceIdx || (i === practiceIdx && allDone)}
@@ -300,11 +313,10 @@ export default function Module06OperationsPosees() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-gradient-to-r from-sky-500 to-blue-500 text-white rounded-2xl p-6 text-center space-y-2">
-          <div className="text-3xl">🏅</div>
-          <div className="text-xl font-space font-bold">Opérations posées maîtrisées !</div>
-          <p className="text-sky-100 text-sm">Retenues et échanges n'ont plus de secrets pour toi.</p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Poser un calcul est sûr, mais lent. On va voir quand on peut
+          s'en passer — et comment aller vite sans se tromper.
+        </KnowledgeSnapshot>
       }
     />
   );

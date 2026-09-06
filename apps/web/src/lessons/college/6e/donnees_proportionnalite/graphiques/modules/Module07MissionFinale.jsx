@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import BarChart from '../components/BarChart';
 import LineChart from '../components/LineChart';
@@ -60,6 +61,7 @@ const TRUQUE = makeSeries({
 const EPREUVES = [
   {
     id: 'gr-e1',
+    requires: ['graphique-outil'],
     skill: 'interet',
     title: 'Épreuve 1',
     prompt: 'Le bulletin météo du collège doit montrer l’allure de la semaine. Qu’apporte un graphique qu’un tableau apporte moins bien ?',
@@ -75,6 +77,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e2',
+    requires: ['axe-gradue'],
     skill: 'anatomie',
     title: 'Épreuve 2',
     prompt: 'On te montre des barres sans axe gradué ni unité. Que peux-tu en faire ?',
@@ -90,6 +93,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e3',
+    requires: ['lire-hauteur', 'echelle-axe'],
     skill: 'anatomie',
     title: 'Épreuve 3',
     prompt: 'Quelle température a-t-on relevée le mercredi ?',
@@ -102,6 +106,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e4',
+    requires: ['hauteur-est-nombre'],
     skill: 'lien',
     title: 'Épreuve 4',
     prompt: 'Un tableau annonce « Mardi : 45 élèves » mais la barre du mardi s’arrête à 25. Que faut-il en conclure ?',
@@ -117,6 +122,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e5',
+    requires: ['hauteur-est-nombre', 'lire-hauteur', 'echelle-axe'],
     skill: 'lien',
     title: 'Épreuve 5',
     prompt: 'Tu construis le diagramme du tournoi à partir du tableau : Lun 20, Mar 35, Mer 30, Jeu 45. Jusqu’où monte la barre du mercredi ?',
@@ -129,6 +135,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e6',
+    requires: ['ecart-chiffre', 'lire-hauteur'],
     skill: 'comparer',
     title: 'Épreuve 6',
     prompt: 'Combien d’élèves de plus au CDI le mardi que le mercredi ?',
@@ -141,6 +148,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e7',
+    requires: ['maximum-minimum'],
     skill: 'comparer',
     title: 'Épreuve 7',
     prompt: 'Quel jour a-t-il fait le plus froid ?',
@@ -153,6 +161,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e8',
+    requires: ['evolution-hausse-baisse', 'ecart-chiffre'],
     skill: 'evolution',
     title: 'Épreuve 8',
     prompt: 'Du jeudi au vendredi, la température passe de 24 °C à 20 °C. Comment décrire ce passage ?',
@@ -169,6 +178,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e9',
+    requires: ['hauteur-vs-pente', 'maximum-minimum', 'evolution-hausse-baisse'],
     skill: 'evolution',
     title: 'Épreuve 9',
     prompt: 'Le jeudi est le jour le plus chaud. Est-ce aussi là qu’a eu lieu la plus forte hausse ?',
@@ -185,6 +195,7 @@ const EPREUVES = [
   },
   {
     id: 'gr-e10',
+    requires: ['axe-tronque', 'echelle-axe', 'mem-verifier-graphique'],
     skill: 'critique',
     title: 'Épreuve 10',
     prompt: 'Une affiche compare deux collèges (82 % et 84 % de réussite) sur un axe qui démarre à 80. Que faut-il en penser ?',
@@ -212,13 +223,6 @@ const BADGES = [
   { id: 'parfait', emoji: '💎', label: 'Météorologue en chef', test: (s) => Object.values(s).every((v) => v === 0) },
 ];
 
-const PIEGES = [
-  { wrong: 'Comparer des hauteurs sans regarder le bas de l’axe', right: 'Un axe doit partir de zéro pour que les hauteurs se comparent' },
-  { wrong: 'Additionner deux valeurs pour trouver un écart', right: 'Un écart se calcule en soustrayant' },
-  { wrong: 'Confondre valeur la plus haute et plus forte hausse', right: 'La hauteur d’un point, la pente d’un segment : deux lectures' },
-  { wrong: 'Faire dire au graphique ce qui n’y est pas mesuré', right: 'Un graphique montre les relevés, jamais leur cause' },
-];
-
 function Synthese() {
   return (
     <div className="space-y-4">
@@ -243,22 +247,10 @@ function Synthese() {
         <PieChart series={SONDAGE} title="Et pour des parts d’un tout : le camembert" />
       </div>
 
-      <div className="bg-gradient-to-br from-sky-500 to-blue-600 text-white rounded-2xl p-5 text-center space-y-1">
-        <p className="text-xs uppercase tracking-wide text-sky-100 font-mono font-bold">À retenir</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">La hauteur EST le nombre</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">L’axe doit partir de 0, régulièrement gradué</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Bâtons : comparer · Courbe : évoluer · Camembert : des parts</p>
-      </div>
-
-      <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 space-y-2.5">
-        <p className="text-sm font-bold text-amber-900">Les pièges à éviter</p>
-        {PIEGES.map((p) => (
-          <div key={p.wrong} className="text-sm space-y-0.5">
-            <div className="text-rose-700">❌ {p.wrong}</div>
-            <div className="text-emerald-700">✅ {p.right}</div>
-          </div>
-        ))}
-      </div>
+      {/* La carte complète REMPLACE les deux bandeaux recopiés à la main
+          (« À retenir » et « les pièges à éviter ») : une leçon n'a qu'une
+          source de connaissances (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot complete variant="complete" />
 
       <Feedback tone="info">
         Tu sais lire une image de données — et repérer celles qui mentent. Prochaine étape : quand deux

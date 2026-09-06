@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Grid3x3 } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DataTable from '../components/DataTable';
@@ -96,6 +97,28 @@ export default function Module02Anatomie() {
                   {visited.length}/4 explorées — touche les cartes restantes.
                 </p>
               )}
+              {/* Les trois briques ne paraissent qu'une fois les quatre parties
+                  explorées : elles NOMMENT ce que l'élève vient de voir bouger,
+                  et elles arrivent avant la première demande de désignation. */}
+              {allVisited && (
+                <div className="space-y-3">
+                  <KnowledgeBrick
+                    id="ligne-colonne"
+                    variant="new"
+                    lead="Tu viens d’explorer deux façons de balayer le tableau : à l’horizontale et à la verticale."
+                  />
+                  <KnowledgeBrick
+                    id="entete"
+                    variant="new"
+                    lead="Et tu as vu que la bande du haut et celle de gauche ne contiennent aucun résultat."
+                  />
+                  <KnowledgeBrick
+                    id="cellule-croisement"
+                    variant="new"
+                    lead="Reste la case elle-même, prise entre les deux."
+                  />
+                </div>
+              )}
             </div>
           ),
         },
@@ -157,6 +180,7 @@ export default function Module02Anatomie() {
                   chaque nombre vit dans une <strong>cellule</strong>.
                 </Feedback>
               )}
+              requires={['ligne-colonne', 'entete', 'cellule-croisement']}
               solved={rolesDone}
               onAnswered={() => setRolesDone(true)}
             />
@@ -177,6 +201,7 @@ export default function Module02Anatomie() {
               correct={1}
               cols={1}
               explain="Un nombre ne devient une information qu’au croisement d’une ligne et d’une colonne NOMMÉES. Sans en-têtes, 15 pourrait être des points, des euros ou des kilomètres — on ne peut rien en dire."
+              requires={['entete', 'cellule-croisement']}
               solved={seulDone}
               onAnswered={() => setSeulDone(true)}
             />
@@ -184,12 +209,17 @@ export default function Module02Anatomie() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Grid3x3 className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Ligne × colonne = cellule, et les en-têtes donnent le sens. Au prochain module, c'est toi qui
-            rangeras l'information à son croisement.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={2}>
+            <strong>La suite.</strong> Tu sais nommer chaque partie du tableau. Au prochain module, c'est
+            toi qui rangeras l'information à son croisement.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Grid3x3 className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Quatre mots, et le tableau devient descriptible à voix haute.
+            </p>
+          </div>
         </motion.div>
       }
     />

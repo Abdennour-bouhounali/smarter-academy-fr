@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeftRight, Check, AlertTriangle, ArrowRight, Lightbulb, Search, Star } from 'lucide-react';
+import { Check, AlertTriangle, ArrowRight, Lightbulb, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { ValidateButton, Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { convert, parseDec, formatCapacity, factorBetween, roundTo } from '../components/capacityUtils';
@@ -275,6 +276,7 @@ function ConversionRound({ round, index, total, done, onSolved }) {
             </div>
 
             <NumericQuestion
+              requires={['convertir-contenance-methode', 'escalier-contenances']}
               prompt="Calcule maintenant la valeur exacte :"
               suffix={round.to}
               parse={parseDec}
@@ -400,61 +402,7 @@ function DetectiveCard({ item, done, onSolved }) {
   );
 }
 
-function KeyRuleCard() {
-  return (
-    <div className="bg-pink-50 border-4 border-pink-200 rounded-3xl p-6 sm:p-8 overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-pink-300 rounded-bl-[100px] opacity-20 pointer-events-none" />
 
-      <h2 className="text-pink-800 font-extrabold text-2xl mb-6 tracking-tight">À RETENIR</h2>
-
-      <div className="grid md:grid-cols-2 gap-6 mb-6 relative z-10">
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-pink-100 flex flex-col items-center text-center">
-          <div className="font-bold text-slate-800 mb-4">Unité <span className="text-blue-600">plus petite</span><br />→ nombre <span className="text-blue-600">plus grand</span></div>
-          <div className="flex items-center gap-3 font-mono font-bold text-xl bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
-            L <span className="text-blue-500 text-sm">×100</span> cL
-          </div>
-        </div>
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-pink-100 flex flex-col items-center text-center">
-          <div className="font-bold text-slate-800 mb-4">Unité <span className="text-orange-600">plus grande</span><br />→ nombre <span className="text-orange-600">plus petit</span></div>
-          <div className="flex items-center gap-3 font-mono font-bold text-xl bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
-            cL <span className="text-orange-500 text-sm">÷100</span> L
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-pink-600 text-white font-bold p-4 rounded-xl text-center shadow-md relative z-10">
-        Ne déplace jamais la virgule au hasard : commence par regarder la taille des unités.
-      </div>
-    </div>
-  );
-}
-
-function ModuleCompletionCard() {
-  return (
-    <div className="bg-emerald-50 border-4 border-emerald-200 rounded-3xl p-8 text-center space-y-6">
-      <div className="flex justify-center gap-2 text-yellow-400 mb-2">
-        <Star className="w-8 h-8 fill-yellow-400" />
-        <Star className="w-10 h-10 fill-yellow-400 -mt-2" />
-        <Star className="w-8 h-8 fill-yellow-400" />
-      </div>
-
-      <div className="space-y-1">
-        <h2 className="font-extrabold text-3xl text-emerald-800">Mission accomplie !</h2>
-        <p className="text-emerald-700 font-bold">Tu as maîtrisé les conversions de contenances.</p>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 text-left max-w-sm mx-auto shadow-sm border border-emerald-100">
-        <div className="font-bold text-slate-500 uppercase tracking-widest text-xs mb-4">Tu sais maintenant :</div>
-        <ul className="space-y-3 font-bold text-slate-700">
-          <li className="flex items-center gap-3"><Check className="w-5 h-5 text-emerald-500" /> comparer la taille des unités</li>
-          <li className="flex items-center gap-3"><Check className="w-5 h-5 text-emerald-500" /> prévoir si le nombre augmente</li>
-          <li className="flex items-center gap-3"><Check className="w-5 h-5 text-emerald-500" /> convertir L, dL, cL et mL</li>
-          <li className="flex items-center gap-3"><Check className="w-5 h-5 text-emerald-500" /> détecter une erreur</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
 
 /* ── DONNÉES PÉDAGOGIQUES ────────────────────────────────────────── */
 
@@ -520,7 +468,27 @@ export default function Module05Conversions() {
           num: 1,
           title: 'D’où vient le chiffre ?',
           done: exampleDone,
-          content: <WorkedExample done={exampleDone} onSolved={() => setExampleDone(true)} />,
+          content: (
+            <div className="space-y-5">
+              <WorkedExample done={exampleDone} onSolved={() => setExampleDone(true)} />
+              {/* Le calcul vient d'être déplié pas à pas : la méthode et le
+                  réflexe de sens sont posés AVANT les quatre conversions. */}
+              {exampleDone && (
+                <KnowledgeBrick
+                  id="convertir-contenance-methode"
+                  variant="new"
+                  lead="Tu viens de voir d’où sortent les 150 cL. Voici la recette, en deux temps."
+                />
+              )}
+              {exampleDone && (
+                <KnowledgeBrick
+                  id="mem-sens-conversion-contenance"
+                  variant="new"
+                  lead="Le seul réflexe à retenir pour ne jamais convertir à l’envers."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -562,15 +530,12 @@ export default function Module05Conversions() {
             </div>
           ),
         },
-        {
-          num: 4,
-          title: 'La règle d’or',
-          done: allDetDone, // Displays immediately after detective is done
-          content: <KeyRuleCard />,
-        }
       ]}
       footer={
-        allDetDone ? <ModuleCompletionCard /> : <div /> // Hide footer until completed, or show a simple placeholder
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu convertis juste. Au dernier module d’entraînement, le litre
+          va prendre une forme — et les commandes du bar vont mélanger les unités.
+        </KnowledgeSnapshot>
       }
     />
   );

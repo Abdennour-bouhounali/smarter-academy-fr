@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Package } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidView from '../components/SolidView';
@@ -44,7 +43,16 @@ export default function Module06Problemes() {
           </p>
         ),
       }}
-      intro={<SolidView solide="cube" ariaLabel="Une caisse cubique" />}
+      intro={
+        <div className="space-y-4">
+          <SolidView solide="cube" ariaLabel="Une caisse cubique" />
+          <KnowledgeBrick
+            id="choisir-le-compte"
+            variant="new"
+            lead="Rien de neuf ici : c’est le mot de l’énoncé qui décide lequel de tes trois comptes s’applique."
+          />
+        </div>
+      }
       steps={[
         {
           num: 1,
@@ -60,6 +68,7 @@ export default function Module06Problemes() {
               }
               suffix="faces"
               expected={CUBE.faces}
+              requires={['choisir-le-compte', 'face-solide', 'mem-cube-fas']}
               explain={`Peindre concerne les FACES : un cube en a ${CUBE.faces}, y compris le dessous.`}
               explainFor={(n) =>
                 n === CUBE.aretes
@@ -89,6 +98,7 @@ export default function Module06Problemes() {
               }
               suffix="arêtes"
               expected={CUBE.aretes}
+              requires={['choisir-le-compte', 'arete', 'mem-cube-fas']}
               explain={`Les arêtes sont les segments où deux faces se rencontrent : un cube en a ${CUBE.aretes}.`}
               explainFor={(n) =>
                 n === CUBE.faces
@@ -121,6 +131,7 @@ export default function Module06Problemes() {
               ]}
               correct={0}
               cols={1}
+              requires={['choisir-le-compte', 'sommet-solide', 'arete', 'mem-cube-fas']}
               explain={`Un « coin » est un SOMMET : le point où trois arêtes se rejoignent. Un cube en a ${CUBE.sommets}.`}
               explainWrong={`Un coin est un point, pas un segment ni une surface. Ce sont les sommets — un cube en a ${CUBE.sommets}.`}
               solved={choixDone}
@@ -130,27 +141,10 @@ export default function Module06Problemes() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Package className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <div className="grid sm:grid-cols-3 gap-2 text-sm">
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Peindre, recouvrir</div>
-              <div className="text-slate-300 text-xs">→ les faces ({CUBE.faces})</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Coller, border</div>
-              <div className="text-slate-300 text-xs">→ les arêtes ({CUBE.aretes})</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Protéger les coins</div>
-              <div className="text-slate-300 text-xs">→ les sommets ({CUBE.sommets})</div>
-            </div>
-          </div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ta carte est complète. La mission finale ne demandera rien de
+          neuf : dix épreuves sur exactement ce que tu viens de construire.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Droplet } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MeasureFillMission from '../../../../../common/components/MeasureFillMission';
@@ -84,7 +84,7 @@ export default function Module04RelationsUnites() {
       moduleNumber={4}
       moduleTitle="Construire les relations"
       moduleSubtitle="Partager 1 L en 10 dL, en 100 cL, en 1000 mL — en versant, pas en récitant."
-      estimatedTime="15 min"
+      estimatedTime="10 min"
       brief={{
         tag: '📋 Mission 04',
         title: 'Construis toi-même les unités, une mesure à la fois.',
@@ -133,7 +133,19 @@ export default function Module04RelationsUnites() {
           done: ladderDone,
           content: (
             <BatchChoiceQuestion
-              intro={<p className="text-sm text-slate-600">Combien faut-il de la petite unité pour former la grande ?</p>}
+              requires={['escalier-contenances', 'litre-repere']}
+              intro={
+                <div className="space-y-4">
+                  {/* Trois réservoirs viennent d'être remplis dix fois : la
+                      règle se dit ici, une fois qu'elle a été vécue. */}
+                  <KnowledgeBrick
+                    id="escalier-contenances"
+                    variant="new"
+                    lead="Trois fois de suite, il t’a fallu exactement dix mesures. Voilà toute l’échelle."
+                  />
+                  <p className="text-sm text-slate-600">Combien faut-il de la petite unité pour former la grande ?</p>
+                </div>
+              }
               rows={LADDER.map((s) => ({
                 id: s.id,
                 label: <span className="font-mono">1 {s.to} = … {s.from}</span>,
@@ -154,13 +166,10 @@ export default function Module04RelationsUnites() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Droplet className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            1 L = 10 dL = 100 cL = 1 000 mL : une seule contenance, plusieurs écritures — et plusieurs façons de la
-            construire. C’est la clé pour convertir sans se tromper.
-          </p>
-        </div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu as l’escalier complet. Au module suivant, tu t’en sers pour
+          convertir sans jamais te tromper de sens.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Balance from '../components/Balance';
@@ -229,16 +228,36 @@ export default function Module03ComparerMesurer() {
           title: 'Trouve l’équilibre',
           done: equivDone,
           content: (kit) => (
-            <EquivalenceBalance react={kit.react} solved={equivDone} onSolved={() => setEquivDone(true)} />
+            <div className="space-y-5">
+              <EquivalenceBalance react={kit.react} solved={equivDone} onSolved={() => setEquivDone(true)} />
+              {/* La balance vient de se remettre à l'horizontale : c'est
+                  l'instant où « équilibre » veut dire « même total ». */}
+              {equivDone && (
+                <KnowledgeBrick
+                  id="equilibre-egalite"
+                  variant="new"
+                  lead="Trois poids d'un côté, un seul de l'autre, et pourtant la balance ne penche plus."
+                />
+              )}
+            </div>
           ),
         },
         {
           num: 2,
           title: 'Lis le cadran',
-          subtitle: 'La barre s’arrête sur une graduation : laquelle ?',
+          subtitle: 'Trois pesées à lire, une par une.',
           done: allGaugesDone,
           content: (kit) => (
             <div className="space-y-8">
+              {/* La méthode de lecture est posée AVANT la première pesée : le
+                  mot « graduation » et le geste arrivent ensemble
+                  (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}
+              <KnowledgeBrick
+                id="lire-graduation"
+                establishes={['lire-graduation', 'echelle-axe']}
+                variant="new"
+                lead="Cette balance-ci ne penche pas : elle affiche. Voici comment on lit son cadran."
+              />
               {GAUGE_ROUNDS.map((round, i) =>
                 i === 0 || gaugeDone.includes(i - 1) ? (
                   <GaugeReadRound
@@ -256,13 +275,10 @@ export default function Module03ComparerMesurer() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <CheckCircle2 className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            La balance à plateaux compare, la balance à affichage mesure. Dans les deux cas, c’est la même grandeur
-            qu’on observe : la masse.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais lire une masse en grammes. Reste à comprendre d'où
+          vient le 1 000 des conversions : au module suivant, tu le fabriques toi-même.
+        </KnowledgeSnapshot>
       }
     />
   );

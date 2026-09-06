@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Move } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import NumberLine from '../../../../../common/components/NumberLine';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
@@ -269,6 +270,11 @@ export default function Module08Droite() {
                     <MathText>{'$\\frac{4}{4}$'}</MathText> tombe exactement sur 1 : quand on a pris TOUTES les
                     parts, on a repris l'unité entière. C'est pour cela que <MathText>{'$\\frac{4}{4} = 1$'}</MathText>.
                   </Feedback>
+                  <KnowledgeBrick
+                    id="comparer-a-un"
+                    variant="new"
+                    lead="La 4ᵉ graduation est tombée pile sur 1 : voilà comment situer n’importe quelle fraction."
+                  />
                 </motion.div>
               )}
             </div>
@@ -306,6 +312,13 @@ export default function Module08Droite() {
                   </p>
                 </div>
               )}
+              {improperDone && (
+                <KnowledgeBrick
+                  id="fraction-nombre-droite"
+                  variant="new"
+                  lead="Tu as placé des demis, des tiers, des quarts — et même au-delà de 1. Le procédé est toujours le même."
+                />
+              )}
             </div>
           ),
         },
@@ -337,11 +350,18 @@ export default function Module08Droite() {
               correct={PIEGE_Q.correct}
               cols={1}
               explain={PIEGE_Q.explain}
+              requires={['fraction-nombre-droite', 'comparer-a-un']}
               onAnswered={() => setPiegeDone(true)}
             />
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={8}>
+          <strong>La suite.</strong> Une fraction est un nombre comme les autres. Dernier pont :
+          celles qui s’écrivent aussi avec une virgule.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

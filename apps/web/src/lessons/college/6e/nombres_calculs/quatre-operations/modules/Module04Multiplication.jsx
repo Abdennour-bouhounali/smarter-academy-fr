@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
-import ConceptCard from '../../../../../common/components/ConceptCard';
-import MathText from '../../../../../common/components/MathText';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -378,29 +377,6 @@ function PosedMultiplication({ onSolved, solved, react }) {
   );
 }
 
-/* ─── ConceptCard "La multiplication" ───────────────────────────────── */
-function MultiplicationConcept() {
-  return (
-    <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-      <ConceptCard label="La multiplication" emoji="✖️" color="violet">
-        <p>
-          Dans <MathText>{'$a \\times b = p$'}</MathText>, on appelle <strong className="text-violet-700">a</strong> et{' '}
-          <strong className="text-violet-700">b</strong> les <strong>facteurs</strong> et{' '}
-          <strong className="text-violet-700">p</strong> le <strong>produit</strong>.
-        </p>
-        <div className="mt-2 grid grid-cols-3 gap-2 text-center text-xs">
-          <div className="bg-white rounded-lg border border-violet-100 p-2"><div className="font-bold text-violet-700">a</div><div className="text-slate-500">nombre de groupes</div></div>
-          <div className="bg-white rounded-lg border border-violet-100 p-2"><div className="font-bold text-violet-700">b</div><div className="text-slate-500">taille de chaque groupe</div></div>
-          <div className="bg-white rounded-lg border border-violet-100 p-2"><div className="font-bold text-violet-700">p</div><div className="text-slate-500">total</div></div>
-        </div>
-        <p className="mt-2 text-sm text-slate-600">
-          💡 <strong>Propriété pratique :</strong> <MathText>{'$a \\times b = b \\times a$'}</MathText> (on peut inverser les facteurs)
-        </p>
-      </ConceptCard>
-    </motion.div>
-  );
-}
-
 /* ─── Pratique — 3 exercices, NumericQuestion séquentielles ─────────── */
 const EXERCISES = [
   { q: '6 × 7', expected: 42 },
@@ -413,6 +389,7 @@ function MultPractice({ q1, setQ1, q2, setQ2, q3, setQ3 }) {
     <div className="space-y-6">
       <NumericQuestion
         prompt={`Exercice 1/3 — ${EXERCISES[0].q} = ?`}
+        requires={['facteurs-produit']}
         expected={EXERCISES[0].expected}
         explain="6 × 7 = 42."
         solved={q1}
@@ -421,6 +398,7 @@ function MultPractice({ q1, setQ1, q2, setQ2, q3, setQ3 }) {
       {q1 && (
         <NumericQuestion
           prompt={`Exercice 2/3 — ${EXERCISES[1].q} = ?`}
+          requires={['facteurs-produit', 'decomposer-produit']}
           expected={EXERCISES[1].expected}
           explain="8 × 9 = 72."
           explainFor={EXERCISES[1].explainFor}
@@ -431,6 +409,7 @@ function MultPractice({ q1, setQ1, q2, setQ2, q3, setQ3 }) {
       {q2 && (
         <NumericQuestion
           prompt={`Exercice 3/3 — ${EXERCISES[2].q} = ?`}
+          requires={['facteurs-produit', 'decomposer-produit']}
           expected={EXERCISES[2].expected}
           explain="4 × 25 = 100."
           explainFor={EXERCISES[2].explainFor}
@@ -465,7 +444,7 @@ export default function Module04Multiplication() {
       moduleNumber={4}
       moduleTitle="Multiplier : construire des groupes"
       moduleSubtitle="Groupes égaux, grille interactive, décomposition et multiplication posée."
-      estimatedTime="12 min"
+      estimatedTime="9 min"
       brief={{
         tag: '✖️ Mission 04',
         title: 'Des groupes de même taille',
@@ -493,7 +472,15 @@ export default function Module04Multiplication() {
           content: (kit) => (
             <div className="space-y-6">
               <GridManip solved={s2} onSolved={() => setGridDone(true)} react={kit.react} />
-              {s2 && <MultiplicationConcept />}
+              {/* La grille vient d'être remplie : lignes, colonnes et total
+                  sont sous les yeux quand les trois mots arrivent. */}
+              {s2 && (
+                <KnowledgeBrick
+                  id="facteurs-produit"
+                  variant="new"
+                  lead="Les lignes, les colonnes et le nombre de cases que tu viens de compter."
+                />
+              )}
             </div>
           ),
         },
@@ -502,7 +489,17 @@ export default function Module04Multiplication() {
           title: 'Décomposer pour calculer',
           done: s3,
           content: (kit) => (
-            <DecompositionManip solved={s3} onSolved={() => setDecompDone(true)} react={kit.react} />
+            <div className="space-y-5">
+              <DecompositionManip solved={s3} onSolved={() => setDecompDone(true)} react={kit.react} />
+              {/* La méthode est nommée une fois que l'élève l'a exécutée. */}
+              {s3 && (
+                <KnowledgeBrick
+                  id="decomposer-produit"
+                  variant="new"
+                  lead="Le 23 que tu viens de couper en 20 et 3 pour t'en sortir de tête."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -523,11 +520,10 @@ export default function Module04Multiplication() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-2xl p-6 text-center space-y-2">
-          <div className="text-3xl">🏅</div>
-          <div className="text-xl font-space font-bold">Multiplication maîtrisée !</div>
-          <p className="text-violet-100 text-sm">Groupes égaux, grille, décomposition — tu as tout compris.</p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Trois opérations posées sur la carte. La quatrième, elle,
+          laisse parfois quelque chose de côté — et c'est tout son intérêt.
+        </KnowledgeSnapshot>
       }
     />
   );

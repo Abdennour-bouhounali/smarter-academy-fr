@@ -18,6 +18,8 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-coords',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['coordonnees'],
     skill: 'reperage',
     points: 2,
     prompt: (
@@ -33,6 +35,8 @@ const QUESTIONS = [
   },
   {
     id: 'q2-distance',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['abscisse'],
     skill: 'reperage',
     points: 2,
     prompt: (
@@ -48,6 +52,8 @@ const QUESTIONS = [
   },
   {
     id: 'q3-carre',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['angle-droit'],
     skill: 'figures',
     points: 2,
     prompt: <>Un carré possède…</>,
@@ -62,6 +68,8 @@ const QUESTIONS = [
   },
   {
     id: 'q4-perp',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['droites-perpendiculaires', 'angle-droit'],
     skill: 'perpendicularite',
     points: 2,
     prompt: <>Deux droites perpendiculaires forment un angle de…</>,
@@ -72,18 +80,20 @@ const QUESTIONS = [
   },
   {
     id: 'q5-distance-droite',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['droites-perpendiculaires'],
     skill: 'perpendicularite',
     points: 2,
     prompt: <>Pour mesurer la distance d’un point à une droite, on mesure…</>,
     options: [
       'Perpendiculairement à la droite',
-      'En diagonale, au plus court à l’œil',
+      'En biais, au plus court à l’œil',
       'Le long de la droite',
     ],
     cols: 1,
     correct: 0,
     explain:
-      'La distance d’un point à une droite se mesure toujours perpendiculairement : c’est le plus court chemin.',
+      'La distance d’un point à une droite se mesure toujours perpendiculairement : c’est le plus court chemin. Un trajet en biais est toujours plus long.',
   },
 ];
 

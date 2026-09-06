@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Boxes, Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ShapeLab from '../components/ShapeLab';
 import {
-  classifyQuad, shapeName, propertiesOf, sideLengths, interiorAngles, SHAPE_LABEL,
+  classifyQuad, shapeName, sideLengths, interiorAngles,
 } from '../components/figuresUtils';
 
 /**
@@ -51,7 +51,9 @@ const MISSIONS = [
     // Un rectangle doit être franchement allongé : au moins 25 px d'écart
     // entre un côté et son voisin, bien au-delà de la tolérance de 4 %.
     minGap: 25,
-    label: 'Transforme ce carré en RECTANGLE (qui ne soit plus un carré).',
+    // Consigne formulée en geste : le nom « rectangle » est ce que la
+    // manipulation va faire APPARAÎTRE, il ne peut pas être la consigne.
+    label: 'Allonge cette figure : garde ses quatre coins droits, mais fais que ses côtés ne soient plus tous égaux.',
     hint: 'Les sommets ne coulissent qu’horizontalement : tire A ou D vers la gauche pour allonger la figure.',
   },
   {
@@ -66,7 +68,7 @@ const MISSIONS = [
     // d'écart avec l'angle droit, soit une déformation visible à l'œil.
     minAngleBreak: 20,
     showAngles: true,
-    label: 'Casse maintenant les angles droits : obtiens un quadrilatère quelconque.',
+    label: 'Casse maintenant les coins droits : plus aucun angle ne doit valoir 90°.',
     hint: 'Prends le sommet C ou D et tire-le franchement en diagonale : regarde les angles s’éloigner de 90°.',
   },
 ];
@@ -286,21 +288,73 @@ export default function Module03LaboQuadrilateres() {
         ),
       }}
       steps={[
-        ...MISSIONS.map((m, i) => ({
-          num: i + 1,
-          title: `Mission ${i + 1} — obtiens un ${SHAPE_LABEL[m.target]}`,
-          done: done.includes(m.id),
-          content: (kit) => (
-            <Mission mission={m} done={done.includes(m.id)} onDone={() => mark(m.id)} react={kit.react} />
-          ),
-        })),
+        // ÉTAPES LITTÉRALES (et non un .map) : l'audit des dépendances de
+        // connaissances ne lit que le tableau `steps` littéral, si bien qu'une
+        // brique posée dans un callback lui serait invisible — donc non
+        // contractuelle (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
         {
-          num: MISSIONS.length + 1,
-          title: 'Un carré est-il un rectangle ?',
+          num: 1,
+          // Titre neutre : le nom obtenu est ce que la manipulation révèle.
+          title: 'Mission 1 — allonge la figure',
+          done: done.includes(MISSIONS[0].id),
+          content: (kit) => (
+            <div className="space-y-5">
+              <Mission
+                mission={MISSIONS[0]}
+                done={done.includes(MISSIONS[0].id)}
+                onDone={() => mark(MISSIONS[0].id)}
+                react={kit.react}
+              />
+              {done.includes(MISSIONS[0].id) && (
+                <>
+                  <KnowledgeBrick
+                    id="rectangle"
+                    variant="new"
+                    lead="Les quatre coins sont restés droits pendant que tu allongeais : la figure obtenue a un nom."
+                  />
+                  <KnowledgeBrick
+                    id="losange"
+                    variant="new"
+                    lead="En égalisant les quatre côtés au lieu de les différencier, tu aurais obtenu l’autre figure remarquable."
+                  />
+                  <KnowledgeBrick
+                    id="carre"
+                    variant="new"
+                    lead="Et la figure de départ, elle, cochait les deux voyants à la fois."
+                  />
+                </>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Mission 2 — casse les coins droits',
+          done: done.includes(MISSIONS[1].id),
+          content: (kit) => (
+            <Mission
+              mission={MISSIONS[1]}
+              done={done.includes(MISSIONS[1].id)}
+              onDone={() => mark(MISSIONS[1].id)}
+              react={kit.react}
+            />
+          ),
+        },
+        {
+          num: 3,
+          // Titre neutre : il ne doit pas suggérer la réponse avant l'ouverture.
+          title: 'Deux noms pour une même figure ?',
           done: famDone,
           content: (
-            <TapQuestion
-              above={
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="famille-quadrilateres"
+                variant="new"
+                lead="En cassant une propriété, tu as fait remonter la figure d’un cran dans sa famille. L’inverse se lit aussi."
+              />
+              <TapQuestion
+                requires={['famille-quadrilateres', 'carre', 'rectangle']}
+                above={
                 <ShapeLab
                   points={CARRE} box={BOX} draggable={false}
                   ariaLabel="Un carré, avec ses quatre propriétés vérifiées"
@@ -315,38 +369,19 @@ export default function Module03LaboQuadrilateres() {
               correct={0}
               cols={1}
               explain="Le carré vérifie toutes les propriétés du rectangle, et une de plus. C’est donc un rectangle particulier — et aussi un losange particulier."
-              explainWrong="Regarde les voyants : le carré coche « 4 angles droits », qui est LA propriété du rectangle. Il la vérifie, donc c’en est un — avec une propriété supplémentaire."
-              solved={famDone}
-              onAnswered={() => setFamDone(true)}
-            />
+                explainWrong="Regarde les voyants : le carré coche « 4 angles droits », qui est LA propriété du rectangle. Il la vérifie, donc c’en est un — avec une propriété supplémentaire."
+                solved={famDone}
+                onAnswered={() => setFamDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Boxes className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-400">
-            La famille des quadrilatères
-          </p>
-          <div className="grid sm:grid-cols-3 gap-2 text-sm">
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Rectangle</div>
-              <div className="text-slate-300 text-xs">4 angles droits</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Losange</div>
-              <div className="text-slate-300 text-xs">4 côtés égaux</div>
-            </div>
-            <div className="bg-amber-400/20 border border-amber-400/40 rounded-xl p-3 text-center">
-              <div className="font-bold text-amber-200 mb-1">Carré</div>
-              <div className="text-amber-100 text-xs">les deux à la fois</div>
-            </div>
-          </div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Même méthode, trois côtés au lieu de quatre : la famille des
+          triangles.
+        </KnowledgeSnapshot>
       }
     />
   );

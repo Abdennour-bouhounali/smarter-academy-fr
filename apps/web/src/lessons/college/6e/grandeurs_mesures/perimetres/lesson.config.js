@@ -25,6 +25,18 @@ export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/perimetre
 export const LESSON_CONFIG = {
   id: 'perimetres',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques au point de besoin et se termine sur l'état
+  // courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances
+  // avant la demande »), et diagnostiquées une à une par le module 0 :
+  // lire une règle graduée, additionner et convertir des longueurs, et
+  // savoir de quels instruments on dispose (le rapporteur n'est cité que
+  // comme mauvais outil — il mesure des angles, pas des longueurs).
+  // « périmètre » n'y figure PAS : c'est la matière de la leçon, posée par
+  // une brique au Module 1.
+  priorKnowledge: ['calcul-numerique', 'rapporteur'],
   title: 'Périmètres',
   description:
     'Le périmètre comme longueur du contour : le parcourir, le mesurer, le calculer avec les bonnes formules — du polygone quelconque jusqu’au tour du cercle.',

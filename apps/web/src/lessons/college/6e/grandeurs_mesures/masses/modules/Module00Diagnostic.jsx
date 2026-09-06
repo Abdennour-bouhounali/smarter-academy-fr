@@ -14,12 +14,15 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * Module 1.
  */
 const SKILLS = {
-  ordresGrandeur: { label: 'Ordres de grandeur', emoji: '⚖️' },
+  ordresGrandeur: { label: 'Unités et paquets de 1 000', emoji: '⚖️' },
 };
 
 const QUESTIONS = [
   {
     id: 'q1-kg-g',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['calcul-numerique'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: <>Combien y a-t-il de grammes dans <strong className="font-mono">1 kilogramme</strong> ?</>,
@@ -30,6 +33,9 @@ const QUESTIONS = [
   },
   {
     id: 'q2-plus-lourd',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['calcul-numerique'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: <>Lequel est le plus lourd : <strong className="font-mono">1 kg</strong> ou <strong className="font-mono">1 000 g</strong> ?</>,
@@ -40,6 +46,9 @@ const QUESTIONS = [
   },
   {
     id: 'q3-sens',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['calcul-numerique'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: (
@@ -54,20 +63,27 @@ const QUESTIONS = [
   },
   {
     id: 'q4-comparer',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['calcul-numerique'],
     skill: 'ordresGrandeur',
     points: 2,
-    prompt: <>Sur une balance à deux plateaux, le plateau de gauche descend. Qu'est-ce que cela signifie ?</>,
-    options: [
-      'Le contenu de gauche est plus lourd',
-      'Le contenu de droite est plus lourd',
-      'Les deux contenus ont la même masse',
-    ],
+    prompt: (
+      <>
+        Range du plus petit au plus grand : <strong className="font-mono">1 200</strong>,{' '}
+        <strong className="font-mono">980</strong>, <strong className="font-mono">1 020</strong>.
+      </>
+    ),
+    options: ['980 · 1 020 · 1 200', '980 · 1 200 · 1 020', '1 020 · 980 · 1 200'],
     cols: 1,
     correct: 0,
-    explain: 'Le plateau qui descend porte la masse la plus lourde : ici, celui de gauche.',
+    explain: '980 n’a que trois chiffres : c’est le plus petit. Puis 1 020 vient avant 1 200.',
   },
   {
     id: 'q5-mille',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['multiplication-repetee'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: <>Combien font <strong className="font-mono">2 × 1 000</strong> ?</>,

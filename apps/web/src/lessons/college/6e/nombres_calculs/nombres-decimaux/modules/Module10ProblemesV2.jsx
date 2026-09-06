@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Ruler, Timer } from 'lucide-react';
 import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import OrderingGame from '../../../../../common/components/OrderingGame';
 import { Feedback } from '../../../../../common/components/LessonUI';
@@ -48,13 +49,22 @@ function StepQuestion({ item, solved, onSolved }) {
         {item.q}
       </p>
       {item.type === 'mcq' ? (
-        <TapQuestion options={item.options} correct={item.correct} cols={item.cols || 2} explain={item.explain} solved={solved} onAnswered={() => onSolved?.()} />
+        <TapQuestion
+          options={item.options}
+          correct={item.correct}
+          cols={item.cols || 2}
+          requires={['comparer-decimaux', 'ordre-grandeur-decimal', 'encadrer-decimal', 'deux-zeros']}
+          explain={item.explain}
+          solved={solved}
+          onAnswered={() => onSolved?.()}
+        />
       ) : (
         <NumericQuestion
           prefix={undefined}
           suffix={item.unit}
           expected={item.answer}
           parse={parseDec}
+          requires={['colonnes-decimales', 'deux-zeros', 'ordre-grandeur-decimal']}
           explain={item.explain}
           explainFor={() => item.hint}
           solved={solved}
@@ -252,6 +262,12 @@ export default function Module10Problemes() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={10}>
+          <strong>La suite.</strong> Aucune connaissance nouvelle ici : tu as choisi toi-même
+          quoi sortir de ta carte. Le Laboratoire des Décimaux t'attend.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

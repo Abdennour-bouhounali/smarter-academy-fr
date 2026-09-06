@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Route } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { strategiesFor, parseDec, formatDec } from '../components/proportionUtils';
@@ -10,8 +11,11 @@ import { strategiesFor, parseDec, formatDec } from '../components/proportionUtil
  * Module 5 — FORMALISATION : choisir, et savoir POURQUOI.
  *
  * Les stratégies existent depuis le module 4 ; ici l'élève apprend à
- * sélectionner la plus économique selon les nombres en présence. Le « À
- * retenir » de la leçon se construit à partir de ce tri.
+ * sélectionner la plus économique selon les nombres en présence. C'est une
+ * institutionnalisation de MÉTHODES : les deux briques posées sont de type
+ * `methodes`, et elles remplacent le bandeau « À retenir » qui recopiait la
+ * même chose en fin de module (une leçon n'a qu'une source de connaissances,
+ * docs/architecture/KNOWLEDGE_MAP.md).
  *
  * Les trois cas travaillés sont choisis pour que la réponse « la plus
  * rapide » soit indiscutable :
@@ -107,6 +111,13 @@ export default function Module05ChoisirStrategie() {
                   ))}
                 </div>
               )}
+              {/* La règle de sélection est posée avant le premier cas : sans
+                  elle, « la plus rapide » n'est qu'une intuition. */}
+              <KnowledgeBrick
+                id="choisir-strategie"
+                variant="new"
+                lead="Tous les chemins mènent au bon résultat. Voici comment repérer le plus court avant de calculer."
+              />
               {!allDone && (
                 <div className="space-y-3">
                   <div className="bg-white border-2 border-slate-200 rounded-2xl p-3">
@@ -125,6 +136,7 @@ export default function Module05ChoisirStrategie() {
                       </>
                     }
                     explainFor={() => cas.why}
+                    requires={['choisir-strategie', 'passage-unite', 'double-triple-moitie']}
                     solved={false}
                     onAnswered={() => {
                       setDone((d) => [...d, cas.id]);
@@ -162,6 +174,11 @@ export default function Module05ChoisirStrategie() {
                   <strong>17 €</strong> ».
                 </p>
               </div>
+              <KnowledgeBrick
+                id="verifier-coherence"
+                variant="new"
+                lead="Avant de dire si c’est faux, voici le contrôle qui tient en une opération."
+              />
               <TapQuestion
                 prompt="Comment repérer, sans refaire tout le calcul, que ce résultat est faux ?"
                 options={[
@@ -173,6 +190,7 @@ export default function Module05ChoisirStrategie() {
                 cols={1}
                 explain="Un ticket coûte 15 ÷ 5 = 3 €. Sept tickets doivent donc coûter 7 × 3 = 21 €, pas 17 €. L’élève a ajouté 2 (la différence 7 − 5) au lieu de multiplier : c’est l’erreur classique. Vérifier revient à contrôler que le coefficient est resté le même."
                 explainWrong="La parité n’a rien à voir. La vérification utile : un ticket coûte 3 €, donc 7 tickets coûtent 21 €. L’élève a ajouté 2 € au lieu d’appliquer le coefficient."
+                requires={['verifier-coherence', 'passage-unite', 'coefficient-proportionnalite']}
                 solved={verifDone}
                 onAnswered={() => setVerifDone(true)}
               />
@@ -189,6 +207,7 @@ export default function Module05ChoisirStrategie() {
                       ? 'C’est justement la réponse fausse : on ne passe pas de 5 à 7 en ajoutant 2 au prix. On multiplie le prix unitaire par 7.'
                       : 'Passe par l’unité : 15 ÷ 5 = 3 €, puis 3 × 7.'
                   }
+                  requires={['passage-unite', 'verifier-coherence']}
                   solved={false}
                   onAnswered={() => {}}
                 />
@@ -199,12 +218,10 @@ export default function Module05ChoisirStrategie() {
       ]}
       footer={
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
-          <div className="bg-gradient-to-br from-amber-500 to-orange-600 text-white rounded-2xl p-5 text-center space-y-1">
-            <p className="text-xs uppercase tracking-wide text-amber-100 font-mono font-bold">À retenir</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">Un multiple ? → multiplie</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">Un diviseur ? → divise</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">Ni l’un ni l’autre ? → passe par 1</p>
-          </div>
+          <KnowledgeSnapshot moduleNumber={5}>
+            <strong>La suite.</strong> Tu choisis ton chemin et tu contrôles ton résultat. Au dernier
+            atelier, trois problèmes réels — dont un où aucune de ces méthodes n'a le droit de servir.
+          </KnowledgeSnapshot>
           <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
             <Route className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
             <p className="text-sm text-slate-300">

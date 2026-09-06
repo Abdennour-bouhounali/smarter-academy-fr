@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link2 } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LinkedTableChart from '../components/LinkedTableChart';
@@ -119,10 +120,17 @@ export default function Module03TableauGraphique() {
                 </Feedback>
               )}
               {guidedDone && (
-                <Feedback tone="ok">
-                  La barre est montée ET la case du tableau affiche 24 °C. Tu n'as pourtant touché qu'une seule
-                  chose : c'est bien <strong>la même donnée</strong>, montrée de deux façons.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    La barre est montée ET la case du tableau affiche 24 °C. Tu n'as pourtant touché qu'une seule
+                    chose.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="hauteur-est-nombre"
+                    variant="new"
+                    lead="Un seul geste, deux choses qui bougent : ce n’est pas une coïncidence."
+                  />
+                </>
               )}
             </div>
           ),
@@ -196,8 +204,9 @@ export default function Module03TableauGraphique() {
                 ]}
                 correct={1}
                 cols={1}
-                explain="Modifier une donnée modifie sa barre — et seulement la sienne. Ici, mardi passe de 11 à 19 °C : ce n’est plus lui le minimum, c’est désormais le lundi avec 16 °C."
-                explainWrong="Le graphique n’est pas un dessin indépendant : il lit le tableau. Une seule case modifiée fait bouger une seule barre — mais cela peut changer qui est le plus grand ou le plus petit."
+                explain="Modifier une donnée modifie sa barre — et seulement la sienne. Ici, mardi passe de 11 à 19 °C : sa barre n’est plus la plus courte, c’est désormais celle du lundi avec 16 °C."
+                explainWrong="Le graphique n’est pas un dessin indépendant : il lit le tableau. Une seule case modifiée fait bouger une seule barre — mais cela peut changer quelle barre est la plus haute ou la plus courte."
+                requires={['hauteur-est-nombre']}
                 solved={inverseDone}
                 onAnswered={() => setInverseDone(true)}
               />
@@ -206,12 +215,17 @@ export default function Module03TableauGraphique() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Link2 className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Tableau et graphique sont attachés l'un à l'autre : la hauteur EST le nombre. Change l'un, l'autre
-            suit — toujours.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={3}>
+            <strong>La suite.</strong> Tu sais traduire un tableau en hauteurs, et l'inverse. Au prochain
+            module, on ne construit plus : on compare, et on repère les extrêmes.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Link2 className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Change l'un, l'autre suit — toujours.
+            </p>
+          </div>
         </motion.div>
       }
     />

@@ -26,6 +26,7 @@ const QUESTIONS = [
     options: ['9 cm', '7 cm', '11 cm'],
     cols: 3,
     correct: 1,
+    requires: ['calcul-numerique'],
     explain: 'La longueur se lit comme une différence : 9 − 2 = 7 cm. Le bout du crayon ne suffit pas.',
   },
   {
@@ -36,6 +37,7 @@ const QUESTIONS = [
     options: ['25 cm', '35 cm', '45 cm'],
     cols: 3,
     correct: 1,
+    requires: ['calcul-numerique'],
     explain: '12 + 8 + 15 = 35 cm : on additionne les longueurs mises bout à bout.',
   },
   {
@@ -46,6 +48,7 @@ const QUESTIONS = [
     options: ['2,5 m', '25 m', '0,25 m'],
     cols: 3,
     correct: 0,
+    requires: ['calcul-numerique'],
     explain: '1 m = 100 cm, donc 250 cm = 250 ÷ 100 = 2,5 m.',
   },
   {
@@ -56,6 +59,7 @@ const QUESTIONS = [
     options: ['1,2 m', '118 cm', 'Ils sont égaux'],
     cols: 3,
     correct: 0,
+    requires: ['calcul-numerique'],
     explain: '1,2 m = 120 cm, et 120 cm > 118 cm. Pour comparer, on met tout dans la même unité.',
   },
   {
@@ -66,6 +70,7 @@ const QUESTIONS = [
     options: ['Une règle de 20 cm', 'Un mètre-ruban ou une roue de mesure', 'Un rapporteur'],
     cols: 1,
     correct: 1,
+    requires: ['calcul-numerique', 'rapporteur'],
     explain: 'Pour de grandes longueurs, la petite règle est impraticable et le rapporteur mesure des angles — le mètre-ruban (ou la roue) est fait pour ça.',
   },
 ];

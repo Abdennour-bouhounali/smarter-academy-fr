@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import BarChart from '../components/BarChart';
@@ -91,6 +92,7 @@ export default function Module01DouzeNombres() {
                 cols={1}
                 explain="16 → 11 → 17 → 24 → 20 : ça baisse, ça remonte fort, puis ça retombe un peu. Pour le voir, il a fallu comparer les nombres deux à deux — un vrai effort."
                 explainWrong="Il fallait suivre les cinq nombres dans l’ordre : 16, puis 11 (ça baisse), puis 17 et 24 (ça remonte), puis 20 (ça redescend). Un tableau range bien, mais il ne montre pas la FORME."
+                requires={['lire-tableau', 'comparer-entiers']}
                 solved={tableDone}
                 onAnswered={() => setTableDone(true)}
               />
@@ -114,14 +116,22 @@ export default function Module01DouzeNombres() {
                 correct={HOT}
                 cols={5}
                 explain="Le jeudi — et tu l’as vu sans lire un seul nombre : c’est simplement la barre la plus haute."
+                requires={['comparer-entiers']}
                 solved={chartDone}
                 onAnswered={() => setChartDone(true)}
               />
               {chartDone && (
-                <Feedback tone="info">
-                  Aucun nombre n'a changé. Ce qui a changé, c'est que la <strong>hauteur</strong> se compare
-                  d'un regard, alors que des nombres se comparent un par un.
-                </Feedback>
+                <>
+                  <Feedback tone="info">
+                    Aucun nombre n'a changé. Ce qui a changé, c'est que la <strong>hauteur</strong> se compare
+                    d'un regard, alors que des nombres se comparent un par un.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="graphique-outil"
+                    variant="new"
+                    lead="Tu as comparé cinq nombres un par un, puis tu as répondu sans en lire aucun."
+                  />
+                </>
               )}
             </div>
           ),
@@ -141,6 +151,7 @@ export default function Module01DouzeNombres() {
               correct={1}
               cols={1}
               explain="Le graphique ne remplace pas le tableau et ne rend rien plus précis — au contraire, on lit un nombre moins exactement sur un dessin. Ce qu’il apporte, c’est la comparaison immédiate et la forme générale."
+              requires={['graphique-outil']}
               solved={verdictDone}
               onAnswered={() => setVerdictDone(true)}
             />
@@ -148,12 +159,17 @@ export default function Module01DouzeNombres() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Eye className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Tableau et graphique disent la même chose de deux façons : l'un se lit, l'autre se regarde. Reste
-            à savoir de quoi une barre est faite.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={1}>
+            <strong>La suite.</strong> Tu sais ce qu'apporte un graphique. Reste à savoir de quoi une barre
+            est faite — et pourquoi, sans son axe, elle ne dit rien.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Eye className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              L'un se lit, l'autre se regarde — et ce sont les mêmes nombres.
+            </p>
+          </div>
         </motion.div>
       }
     />

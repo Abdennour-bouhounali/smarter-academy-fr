@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import EstimateInput from '../components/EstimateInput';
 
@@ -68,15 +69,25 @@ export default function Module04Somme() {
           title: 'Deux stratégies, un même résultat',
           done: s1,
           content: (
-            <TapQuestion
-              prompt={STRATEGIES_Q.q}
-              options={STRATEGIES_Q.options}
-              correct={STRATEGIES_Q.correct}
-              cols={1}
-              explain={STRATEGIES_Q.explain}
-              solved={stratDone}
-              onAnswered={() => setStratDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={STRATEGIES_Q.q}
+                requires={['arrondi', 'pas-arrondi']}
+                options={STRATEGIES_Q.options}
+                correct={STRATEGIES_Q.correct}
+                cols={1}
+                explain={STRATEGIES_Q.explain}
+                solved={stratDone}
+                onAnswered={() => setStratDone(true)}
+              />
+              {s1 && (
+                <KnowledgeBrick
+                  id="plusieurs-arrondis"
+                  variant="new"
+                  lead="Deux élèves, deux façons d'arrondir, et le même 600 au bout."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -117,6 +128,7 @@ export default function Module04Somme() {
                   <div key={item.q} className="border-t border-slate-100 pt-4 first:border-0 first:pt-0">
                     <TapQuestion
                       prompt={<span className="font-mono">{item.q}</span>}
+                      requires={['plusieurs-arrondis', 'ordre-de-grandeur']}
                       options={item.options}
                       correct={item.correct}
                       cols={3}
@@ -131,6 +143,12 @@ export default function Module04Somme() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Même travail sur la soustraction — et là, une image
+          particulièrement parlante t'attend.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

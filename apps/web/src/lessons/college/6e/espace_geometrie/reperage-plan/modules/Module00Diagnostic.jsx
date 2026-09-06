@@ -23,6 +23,7 @@ const QUESTIONS = [
     id: 'q1-compter',
     skill: 'entiers',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: <>Sur une file de cases numérotées à partir de 0, quelle case vient juste après la case 6 ?</>,
     options: ['5', '7', '60'],
     cols: 3,
@@ -33,10 +34,11 @@ const QUESTIONS = [
     id: 'q2-zero',
     skill: 'entiers',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: (
       <>
-        Une graduation commence à <strong className="font-mono">0</strong>. Combien d’intervalles
-        sépare le 0 du nombre <strong className="font-mono">4</strong> ?
+        Une graduation commence à <strong className="font-mono">0</strong>. Combien d’intervalles (de
+        sauts d’une graduation à la suivante) séparent le 0 du nombre <strong className="font-mono">4</strong> ?
       </>
     ),
     options: ['3 intervalles', '4 intervalles', '5 intervalles'],
@@ -48,12 +50,13 @@ const QUESTIONS = [
     id: 'q3-lignes-colonnes',
     skill: 'quadrillage',
     points: 2,
+    requires: ['lecture-quadrillage'],
     prompt: (
       <>
         Dans un quadrillage, une <strong>colonne</strong> se lit dans quel sens ?
       </>
     ),
-    options: ['De haut en bas (verticale)', 'De gauche à droite (horizontale)', 'En diagonale'],
+    options: ['De haut en bas (verticale)', 'De gauche à droite (horizontale)', 'En biais, de coin à coin'],
     cols: 1,
     correct: 0,
     explain: 'Une colonne est verticale ; une ligne, elle, est horizontale.',
@@ -62,6 +65,7 @@ const QUESTIONS = [
     id: 'q4-case',
     skill: 'quadrillage',
     points: 2,
+    requires: ['lecture-quadrillage', 'calcul-numerique'],
     prompt: (
       <>
         Un quadrillage a <strong className="font-mono">4</strong> colonnes et{' '}
@@ -77,6 +81,7 @@ const QUESTIONS = [
     id: 'q5-croisement',
     skill: 'quadrillage',
     points: 2,
+    requires: ['lecture-quadrillage'],
     prompt: (
       <>
         Sur un quadrillage, l’endroit où un trait vertical croise un trait horizontal s’appelle…

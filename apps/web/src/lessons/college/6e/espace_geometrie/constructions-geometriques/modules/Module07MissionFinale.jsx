@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import {
@@ -34,6 +35,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'cg-e1',
+    requires: ['mesurer-difference', 'instrument-garantit'],
     skill: 'regle',
     title: 'Épreuve 1 — Le piège du zéro',
     prompt:
@@ -47,22 +49,24 @@ const EPREUVES = [
   },
   {
     id: 'cg-e2',
+    requires: ['tracer-longueur', 'notation-segment'],
     skill: 'regle',
     title: 'Épreuve 2 — Tracer une longueur',
     prompt: 'Pour tracer un segment [AB] de 7 cm, quelle est la bonne marche à suivre ?',
     options: [
-      'Placer A sur la graduation 0, marquer un point au 7, puis relier',
+      'Aligner A avec le trait du 0, marquer un point au 7, puis relier',
       'Tracer un trait puis le raccourcir jusqu’à 7 cm',
       'Tracer un trait d’environ 7 cm',
     ],
     cols: 1,
     correct: 0,
     explain:
-      'On repère les deux points aux bonnes graduations, PUIS on trace. Retoucher un trait fait perdre l’exactitude à chaque essai.',
+      'On repère les deux points aux bons nombres de la règle, PUIS on trace. Retoucher un trait fait perdre l’exactitude à chaque essai.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_constructions-geometriques_P4'] },
   },
   {
     id: 'cg-e3',
+    requires: ['reporter-au-compas', 'mem-trois-garanties', 'instrument-garantit'],
     skill: 'compas',
     title: 'Épreuve 3 — À quoi sert le compas ?',
     prompt: 'Que garantit le compas, que ni la règle ni l’équerre ne garantissent ?',
@@ -79,6 +83,7 @@ const EPREUVES = [
   },
   {
     id: 'cg-e4',
+    requires: ['reporter-au-compas'],
     skill: 'compas',
     title: 'Épreuve 4 — Reporter une longueur',
     prompt:
@@ -96,6 +101,7 @@ const EPREUVES = [
   },
   {
     id: 'cg-e5',
+    requires: ['construire-perpendiculaire', 'angle-droit', 'droites-perpendiculaires'],
     skill: 'equerre',
     title: 'Épreuve 5 — Le rituel de l’équerre',
     prompt:
@@ -117,12 +123,13 @@ const EPREUVES = [
   },
   {
     id: 'cg-e6',
+    requires: ['construire-parallele', 'construire-perpendiculaire', 'droites-paralleles'],
     skill: 'equerre',
     title: 'Épreuve 6 — Construire une parallèle',
     prompt: 'Quelle méthode garantit une droite parallèle à (d) passant par un point B ?',
     options: [
       'Utiliser l’équerre : deux perpendiculaires à une même droite sont parallèles',
-      'Tracer un trait à l’œil, en gardant la même pente',
+      'Tracer un trait à l’œil, en gardant la même inclinaison',
       'Mesurer la même longueur des deux côtés',
     ],
     cols: 1,
@@ -133,6 +140,7 @@ const EPREUVES = [
   },
   {
     id: 'cg-e7',
+    requires: ['mem-trois-garanties', 'reporter-au-compas', 'instrument-garantit'],
     skill: 'choisir',
     title: 'Épreuve 7 — Le bon instrument',
     prompt: 'On veut s’assurer que deux côtés d’une figure ont exactement la même longueur. Quel instrument ?',
@@ -144,11 +152,12 @@ const EPREUVES = [
     cols: 1,
     correct: 0,
     explain:
-      'Le compas compare deux longueurs directement, sans passer par un nombre — donc sans arrondi. La règle marche aussi, mais elle oblige à lire.',
+      'Le compas compare deux longueurs directement, sans passer par un nombre — donc sans rien approcher. La règle marche aussi, mais elle oblige à lire.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_constructions-geometriques_P8'] },
   },
   {
     id: 'cg-e8',
+    requires: ['ordre-dependances', 'programme-construction', 'notation-segment'],
     skill: 'programme',
     title: 'Épreuve 8 — L’ordre des étapes',
     prompt:
@@ -170,6 +179,7 @@ const EPREUVES = [
   },
   {
     id: 'cg-e9',
+    requires: ['verifier-figure', 'mem-trois-garanties', 'angle-droit'],
     skill: 'verifier',
     title: 'Épreuve 9 — Diagnostiquer une erreur',
     prompt:
@@ -183,6 +193,7 @@ const EPREUVES = [
   },
   {
     id: 'cg-e10',
+    requires: ['verifier-figure', 'presque-nest-pas-juste', 'figures-planes-usuelles'],
     skill: 'verifier',
     title: 'Épreuve 10 — Vérifier une figure',
     prompt: 'Comment vérifie-t-on qu’une figure construite est bien un carré ?',
@@ -246,15 +257,10 @@ function Synthese() {
         </p>
       </div>
 
-      <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-2">
-        <h3 className="font-space font-bold text-amber-900 text-sm">Les pièges à éviter</h3>
-        <ul className="text-sm text-amber-900 space-y-1.5">
-          <li>❌ lire la graduation d’arrivée &nbsp;→&nbsp; ✅ une longueur est une différence</li>
-          <li>❌ mesurer pour reporter &nbsp;→&nbsp; ✅ le compas conserve l’écartement</li>
-          <li>❌ l’équerre posée « à peu près » &nbsp;→&nbsp; ✅ un côté sur la droite, le sommet sur le point</li>
-          <li>❌ « presque un carré » &nbsp;→&nbsp; ✅ une propriété est vérifiée, ou ne l’est pas</li>
-        </ul>
-      </div>
+      {/* Les pièges et les connaissances ne sont pas recopiés ici : la carte
+          construite au fil des six modules EST la fiche de révision
+          (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

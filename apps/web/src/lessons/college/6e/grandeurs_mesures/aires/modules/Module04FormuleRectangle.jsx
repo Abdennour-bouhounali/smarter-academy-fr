@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Rows3 } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AreaGrid from '../components/AreaGrid';
@@ -127,7 +126,18 @@ export default function Module04FormuleRectangle() {
           title: 'Ligne par ligne',
           done: lignesDone,
           content: (kit) => (
-            <LigneParLigne react={kit.react} solved={lignesDone} onSolved={() => setLignesDone(true)} />
+            <div className="space-y-5">
+              <LigneParLigne react={kit.react} solved={lignesDone} onSolved={() => setLignesDone(true)} />
+              {/* La multiplication s'est écrite toute seule pendant le
+                  coloriage : la formule ne fait que la fixer. */}
+              {lignesDone && (
+                <KnowledgeBrick
+                  id="aire-rectangle"
+                  variant="new"
+                  lead="Tu as compté 7, 14, 21, 28 : ces additions répétées ont un nom plus court."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -148,6 +158,7 @@ export default function Module04FormuleRectangle() {
                     ? 'Tu as calculé 2 × (6 + 3,5) = 19 : c’est le PÉRIMÈTRE (le tour), pas l’aire. L’aire se calcule en multipliant : L × l.'
                     : 'Applique A = L × l : multiplie 6 par 3,5.'
                 }
+                requires={['aire', 'aire-rectangle', 'perimetre']}
                 solved={rectCalcDone}
                 onAnswered={() => setRectCalcDone(true)}
               />
@@ -165,6 +176,7 @@ export default function Module04FormuleRectangle() {
                         ? '20, c’est 4 × 5 : le périmètre du carré. Son aire vaut c × c = 5 × 5.'
                         : 'Le carré est un rectangle particulier : A = c × c.'
                     }
+                    requires={['aire', 'aire-rectangle', 'perimetre']}
                     solved={carreCalcDone}
                     onAnswered={() => setCarreCalcDone(true)}
                   />
@@ -178,15 +190,28 @@ export default function Module04FormuleRectangle() {
           title: 'Découper pour calculer',
           done: decompDone,
           content: (
-            <TapQuestion
-              prompt={DECOMP_Q.q}
-              options={DECOMP_Q.options}
-              correct={DECOMP_Q.correct}
-              cols={3}
-              explain={DECOMP_Q.explain}
-              solved={decompDone}
-              onAnswered={() => setDecompDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={DECOMP_Q.q}
+                options={DECOMP_Q.options}
+                correct={DECOMP_Q.correct}
+                cols={3}
+                explain={DECOMP_Q.explain}
+                requires={['aire', 'aire-rectangle', 'aire-conservee']}
+                solved={decompDone}
+                onAnswered={() => setDecompDone(true)}
+              />
+              {/* Découper puis additionner vient d'être fait sur la salle
+                  en L : la méthode est posée avant la question qui, elle,
+                  demande de RETRANCHER. */}
+              {decompDone && (
+                <KnowledgeBrick
+                  id="aire-composee"
+                  variant="new"
+                  lead="Ce découpage marche aussi dans l’autre sens : on peut enlever un morceau au lieu d’en ajouter un."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -200,6 +225,7 @@ export default function Module04FormuleRectangle() {
               correct={SOUSTRACTION_Q.correct}
               cols={1}
               explain={SOUSTRACTION_Q.explain}
+              requires={['aire', 'aire-rectangle', 'aire-composee']}
               solved={soustractionDone}
               onAnswered={() => setSoustractionDone(true)}
             />
@@ -207,13 +233,10 @@ export default function Module04FormuleRectangle() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Rows3 className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            A = L × l pour le rectangle, A = c × c pour le carré — et pour les figures composées : découper,
-            calculer, additionner (ou retrancher).
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais calculer une aire. Reste à la convertir — et là,
+          une surprise t'attend : les marches ne valent pas ×10.
+        </KnowledgeSnapshot>
       }
     />
   );

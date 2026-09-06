@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ListRestart } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DataTable from '../components/DataTable';
@@ -67,6 +68,7 @@ export default function Module01MessageEnVrac() {
                 cols={3}
                 explain="Hugo a marqué 7 points au relais. Pour le trouver, il fallait retenir « Hugo » ET « relais » en balayant tout le texte — l’information est là, mais elle se cache."
                 explainWrong="5, c’est le saut d’Hugo ; 10, sa course. Trois nombres pour un même élève, éparpillés dans trois phrases différentes : voilà le problème."
+                requires={['lecture-information']}
                 solved={vracDone}
                 onAnswered={() => setVracDone(true)}
               />
@@ -88,15 +90,26 @@ export default function Module01MessageEnVrac() {
                 options={['5 points', `${HUGO_RELAIS} points`, '10 points']}
                 correct={1}
                 cols={3}
-                explain="Même réponse, même information — mais tu l’as trouvée du regard. Suivre la ligne d’Hugo jusqu’à la colonne du relais suffit."
+                explain="Même réponse, même information — mais tu l’as trouvée du regard. Il a suffi de partir du nom d’Hugo, à gauche, et de glisser jusqu’à la bande du relais."
+                requires={['lecture-information']}
                 solved={rangeDone}
                 onAnswered={() => setRangeDone(true)}
               />
               {rangeDone && (
-                <Feedback tone="info">
-                  Les deux questions étaient identiques. Ce qui a changé, ce n'est ni toi ni les nombres :
-                  c'est leur <strong>rangement</strong>.
-                </Feedback>
+                <>
+                  <Feedback tone="info">
+                    Les deux questions étaient identiques. Ce qui a changé, ce n'est ni toi ni les nombres :
+                    c'est leur <strong>rangement</strong>.
+                  </Feedback>
+                  {/* La brique arrive ICI, après que l'élève a ressenti l'écart
+                      d'effort entre les deux présentations : elle nomme ce
+                      qu'il vient de vivre, elle ne l'annonce pas. */}
+                  <KnowledgeBrick
+                    id="tableau-outil"
+                    variant="new"
+                    lead="Tu as cherché longtemps la première fois, et vu tout de suite la seconde. C'est cela qu'on appelle ranger."
+                  />
+                </>
               )}
             </div>
           ),
@@ -116,6 +129,7 @@ export default function Module01MessageEnVrac() {
               correct={1}
               cols={1}
               explain="Un tableau ne change aucun nombre : il les range, pour qu’on retrouve chaque information d’un coup d’œil au lieu de fouiller."
+              requires={['tableau-outil']}
               solved={verdictDone}
               onAnswered={() => setVerdictDone(true)}
             />
@@ -123,12 +137,17 @@ export default function Module01MessageEnVrac() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <ListRestart className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Même information, deux présentations, deux efforts très différents. Reste à comprendre COMMENT le
-            tableau y arrive — c'est le prochain module.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={1}>
+            <strong>La suite.</strong> Tu sais à quoi sert un tableau. Reste à comprendre COMMENT il y
+            arrive — le prochain module donne un nom à chacune de ses parties.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <ListRestart className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Même information, deux présentations, deux efforts très différents.
+            </p>
+          </div>
         </motion.div>
       }
     />

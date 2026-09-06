@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Ruler } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -83,22 +82,36 @@ export default function Module02RegleGraduee() {
           subtitle: 'Regarde bien où il commence.',
           done: zeroDone,
           content: (
-            <NumericQuestion
-              above={(revealed) => <RulerStrip from={1} to={8} highlight={revealed} />}
-              prompt="Le segment va de la graduation 1 à la graduation 8. Quelle est sa longueur ?"
-              suffix="unités"
-              expected={7}
-              explain="8 − 1 = 7. La longueur est la DIFFÉRENCE entre les deux graduations."
-              explainFor={(n) =>
-                n === 8
-                  ? 'Tu as lu la graduation d’arrivée. Mais le segment ne commence pas à 0 : il faut faire 8 − 1 = 7.'
-                  : n === 9
-                    ? 'On soustrait, on n’additionne pas : 8 − 1 = 7.'
-                    : 'La longueur est la différence des graduations : 8 − 1 = 7.'
-              }
-              solved={zeroDone}
-              onAnswered={() => setZeroDone(true)}
-            />
+            <div className="space-y-5">
+              <NumericQuestion
+                above={(revealed) => <RulerStrip from={1} to={8} highlight={revealed} />}
+                prompt="Le segment va de la graduation 1 à la graduation 8. Quelle est sa longueur ?"
+                suffix="unités"
+                expected={7}
+                requires={['instrument-garantit']}
+                explain="8 − 1 = 7. La longueur est la DIFFÉRENCE entre les deux graduations."
+                explainFor={(n) =>
+                  n === 8
+                    ? 'Tu as lu la graduation d’arrivée. Mais le segment ne commence pas à 0 : il faut faire 8 − 1 = 7.'
+                    : n === 9
+                      ? 'On soustrait, on n’additionne pas : 8 − 1 = 7.'
+                      : 'La longueur est la différence des graduations : 8 − 1 = 7.'
+                }
+                solved={zeroDone}
+                onAnswered={() => setZeroDone(true)}
+              />
+
+              {/* L'élève vient de buter (ou non) sur le piège du zéro : la
+                  règle se pose sur ce constat, avant les deux étapes
+                  suivantes qui la mobilisent. */}
+              {zeroDone && (
+                <KnowledgeBrick
+                  id="mesurer-difference"
+                  variant="new"
+                  lead="Le segment ne partait pas de 0 : c’est ce décalage qui change tout."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -110,12 +123,13 @@ export default function Module02RegleGraduee() {
               above={<RulerStrip from={0} to={6} highlight />}
               prompt="Quelle est la façon la plus sûre de mesurer un segment avec une règle graduée ?"
               options={[
-                'Aligner une extrémité sur la graduation 0, puis lire l’autre',
-                'Poser la règle n’importe où et lire la graduation d’arrivée',
+                'Aligner une extrémité avec le trait du 0, puis lire l’autre',
+                'Poser la règle n’importe où et lire le nombre d’arrivée',
                 'Poser le bord de la règle sur le segment',
               ]}
               correct={0}
               cols={1}
+              requires={['mesurer-difference']}
               explain="Aligner sur 0 permet de lire directement la longueur, sans soustraction — donc sans erreur. Sinon, il faut penser à soustraire."
               explainWrong="Le bord de la règle n’est pas la graduation 0 : c’est exactement le piège. Aligne toujours sur le 0, ou pense à soustraire."
               solved={mesureDone}
@@ -128,35 +142,39 @@ export default function Module02RegleGraduee() {
           title: 'Tracer une longueur donnée',
           done: tracerDone,
           content: (
-            <TapQuestion
-              prompt="On demande de tracer un segment [AB] de 7 cm. Quelle est la bonne marche à suivre ?"
-              options={[
-                'Placer A sur le 0, marquer un point au 7, puis relier à la règle',
-                'Tracer un trait « à peu près » de 7 cm',
-                'Tracer un trait, puis le mesurer et l’ajuster',
-              ]}
-              correct={0}
-              cols={1}
-              explain="On place d’abord les deux points aux bonnes graduations, puis on trace. Le tracé vient APRÈS la mesure — jamais l’inverse."
-              explainWrong="Tracer puis ajuster fait perdre l’exactitude à chaque retouche. On repère les points d’abord, on relie ensuite."
-              solved={tracerDone}
-              onAnswered={() => setTracerDone(true)}
-            />
+            <div className="space-y-5">
+              {/* Mesurer et tracer ne sont pas le même geste : la marche à
+                  suivre se pose avant qu'on demande de la reconnaître — elle
+                  ne vivait auparavant que dans l'`explain`. */}
+              <KnowledgeBrick
+                id="tracer-longueur"
+                variant="new"
+                lead="Tu sais lire une longueur. En voici l’inverse : la produire."
+              />
+              <TapQuestion
+                prompt="On demande de tracer un segment [AB] de 7 cm. Quelle est la bonne marche à suivre ?"
+                options={[
+                  'Placer A sur le 0, marquer un point au 7, puis relier à la règle',
+                  'Tracer un trait « à peu près » de 7 cm',
+                  'Tracer un trait, puis le mesurer et l’ajuster',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['tracer-longueur', 'mesurer-difference', 'notation-segment']}
+                explain="On place d’abord les deux points aux bonnes graduations, puis on trace. Le tracé vient APRÈS la mesure — jamais l’inverse."
+                explainWrong="Tracer puis ajuster fait perdre l’exactitude à chaque retouche. On repère les points d’abord, on relie ensuite."
+                solved={tracerDone}
+                onAnswered={() => setTracerDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Ruler className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Une longueur est une <strong className="text-white">différence de graduations</strong>. Aligne
-            sur le 0 quand tu peux — et souviens-toi que le bord de la règle n’est pas le zéro.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> La règle sait mesurer et tracer. Mais comment transporter une
+          longueur qu’on ne connaît même pas ? C’est le travail du compas.
+        </KnowledgeSnapshot>
       }
     />
   );

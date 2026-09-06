@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Puzzle, Eye } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MirrorLab from '../components/MirrorLab';
@@ -88,6 +88,13 @@ export default function Module06CompleterFigure() {
           done: allDone,
           content: (kit) => (
             <div className="space-y-3">
+              {/* La méthode est posée AVANT le chantier : la consigne demande
+                  de placer des sommets, il faut savoir pourquoi c'est suffisant. */}
+              <KnowledgeBrick
+                id="symetrique-figure"
+                variant="new"
+                lead="Une figure n’est qu’une poignée de sommets reliés : chacun suit la règle du module 3."
+              />
               <MirrorLab
                 axis={AXE}
                 points={shown}
@@ -165,18 +172,10 @@ export default function Module06CompleterFigure() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Puzzle className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Le symétrique d’une figure se construit{' '}
-            <strong className="text-white">sommet par sommet</strong>. Chaque sommet suit exactement la même
-            règle que le point isolé du module 3.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Dernière étape : se servir de tout cela pour répondre sans rien
+          mesurer.
+        </KnowledgeSnapshot>
       }
     />
   );

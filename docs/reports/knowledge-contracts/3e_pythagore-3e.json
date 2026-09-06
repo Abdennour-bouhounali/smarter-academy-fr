@@ -2,11 +2,131 @@
   "lesson": "pythagore-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "triangle-rectangle",
+    "aire",
+    "puissance",
+    "racine-carree",
+    "arrondi"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "egalite-des-aires",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module02LesTroisCarres.jsx",
+        "line": 100,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "equivalence-angle-droit",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module03QuandCeNestPlusDroit.jsx",
+        "line": 62,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "theoreme-pythagore",
+      "type": "formules",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module04EcrirePuisCalculer.jsx",
+        "line": 42,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "pythagore-dans-le-reel",
+      "type": "concepts",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module07EchellesEtDiagonales.jsx",
+        "line": 42,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "hypotenuse",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module01AngleDroitEtHypotenuse.jsx",
+        "line": 70,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "methode-ecrire-puis-calculer",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module04EcrirePuisCalculer.jsx",
+        "line": 47,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "calculer-un-cote-de-langle-droit",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module05LeCoteManquant.jsx",
+        "line": 38,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "reciproque-pythagore",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module06DirectEtReciproque.jsx",
+        "line": 56,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "choisir-direct-ou-reciproque",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module06DirectEtReciproque.jsx",
+        "line": 132,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-controle-hypotenuse",
+      "type": "memoriser",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module05LeCoteManquant.jsx",
+        "line": 120,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "py-d1-angle-droit",
@@ -15,8 +135,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module00Diagnostic.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "triangle-rectangle"
+      ],
+      "prerequisiteStatus": {
+        "triangle-rectangle": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +150,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module00Diagnostic.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 32,
+      "requires": [
+        "puissance",
+        "aire"
+      ],
+      "prerequisiteStatus": {
+        "puissance": "prior",
+        "aire": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +168,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 43,
+      "requires": [
+        "puissance",
+        "aire"
+      ],
+      "prerequisiteStatus": {
+        "puissance": "prior",
+        "aire": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +186,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module00Diagnostic.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 54,
+      "requires": [
+        "racine-carree",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "racine-carree": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +204,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module00Diagnostic.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 65,
+      "requires": [
+        "racine-carree",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "racine-carree": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +222,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module01AngleDroitEtHypotenuse.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "triangle-rectangle"
+      ],
+      "prerequisiteStatus": {
+        "triangle-rectangle": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,9 +238,13 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module01AngleDroitEtHypotenuse.jsx",
-      "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 87,
+      "requires": [
+        "hypotenuse"
+      ],
+      "prerequisiteStatus": {
+        "hypotenuse": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +254,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module01AngleDroitEtHypotenuse.jsx",
-      "line": 130,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 140,
+      "requires": [
+        "hypotenuse"
+      ],
+      "prerequisiteStatus": {
+        "hypotenuse": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,9 +270,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module02LesTroisCarres.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 120,
+      "requires": [
+        "egalite-des-aires",
+        "aire",
+        "hypotenuse"
+      ],
+      "prerequisiteStatus": {
+        "egalite-des-aires": "established@M2",
+        "aire": "prior",
+        "hypotenuse": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -123,8 +291,14 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module03QuandCeNestPlusDroit.jsx",
       "line": 96,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "equivalence-angle-droit",
+        "egalite-des-aires"
+      ],
+      "prerequisiteStatus": {
+        "equivalence-angle-droit": "established@M3",
+        "egalite-des-aires": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +308,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module04EcrirePuisCalculer.jsx",
-      "line": 46,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "theoreme-pythagore",
+        "hypotenuse"
+      ],
+      "prerequisiteStatus": {
+        "theoreme-pythagore": "established@M4",
+        "hypotenuse": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +326,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module04EcrirePuisCalculer.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 85,
+      "requires": [
+        "methode-ecrire-puis-calculer"
+      ],
+      "prerequisiteStatus": {
+        "methode-ecrire-puis-calculer": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +342,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module04EcrirePuisCalculer.jsx",
-      "line": 101,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "methode-ecrire-puis-calculer",
+        "racine-carree"
+      ],
+      "prerequisiteStatus": {
+        "methode-ecrire-puis-calculer": "established@M4",
+        "racine-carree": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,9 +360,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module05LeCoteManquant.jsx",
-      "line": 43,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 49,
+      "requires": [
+        "calculer-un-cote-de-langle-droit",
+        "theoreme-pythagore"
+      ],
+      "prerequisiteStatus": {
+        "calculer-un-cote-de-langle-droit": "established@M5",
+        "theoreme-pythagore": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -182,9 +378,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module05LeCoteManquant.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "calculer-un-cote-de-langle-droit"
+      ],
+      "prerequisiteStatus": {
+        "calculer-un-cote-de-langle-droit": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -194,9 +394,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module05LeCoteManquant.jsx",
-      "line": 96,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 104,
+      "requires": [
+        "calculer-un-cote-de-langle-droit"
+      ],
+      "prerequisiteStatus": {
+        "calculer-un-cote-de-langle-droit": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -206,9 +410,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module06DirectEtReciproque.jsx",
-      "line": 108,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "reciproque-pythagore",
+        "theoreme-pythagore"
+      ],
+      "prerequisiteStatus": {
+        "reciproque-pythagore": "established@M6",
+        "theoreme-pythagore": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -218,9 +428,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module07EchellesEtDiagonales.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 66,
+      "requires": [
+        "pythagore-dans-le-reel",
+        "methode-ecrire-puis-calculer"
+      ],
+      "prerequisiteStatus": {
+        "pythagore-dans-le-reel": "established@M7",
+        "methode-ecrire-puis-calculer": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +446,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module07EchellesEtDiagonales.jsx",
-      "line": 91,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 98,
+      "requires": [
+        "pythagore-dans-le-reel",
+        "calculer-un-cote-de-langle-droit"
+      ],
+      "prerequisiteStatus": {
+        "pythagore-dans-le-reel": "established@M7",
+        "calculer-un-cote-de-langle-droit": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,9 +464,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module07EchellesEtDiagonales.jsx",
-      "line": 122,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 130,
+      "requires": [
+        "pythagore-dans-le-reel",
+        "reciproque-pythagore"
+      ],
+      "prerequisiteStatus": {
+        "pythagore-dans-le-reel": "established@M7",
+        "reciproque-pythagore": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -254,9 +482,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 29,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 30,
+      "requires": [
+        "hypotenuse",
+        "triangle-rectangle"
+      ],
+      "prerequisiteStatus": {
+        "hypotenuse": "established@M1",
+        "triangle-rectangle": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -266,9 +500,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 39,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 41,
+      "requires": [
+        "hypotenuse",
+        "triangle-rectangle"
+      ],
+      "prerequisiteStatus": {
+        "hypotenuse": "established@M1",
+        "triangle-rectangle": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -278,9 +518,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 54,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "egalite-des-aires",
+        "aire"
+      ],
+      "prerequisiteStatus": {
+        "egalite-des-aires": "established@M2",
+        "aire": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -290,9 +536,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 70,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "theoreme-pythagore",
+        "methode-ecrire-puis-calculer"
+      ],
+      "prerequisiteStatus": {
+        "theoreme-pythagore": "established@M4",
+        "methode-ecrire-puis-calculer": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -302,9 +554,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 82,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 87,
+      "requires": [
+        "methode-ecrire-puis-calculer",
+        "calculer-un-cote-de-langle-droit"
+      ],
+      "prerequisiteStatus": {
+        "methode-ecrire-puis-calculer": "established@M4",
+        "calculer-un-cote-de-langle-droit": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -314,9 +572,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 98,
+      "requires": [
+        "methode-ecrire-puis-calculer",
+        "calculer-un-cote-de-langle-droit"
+      ],
+      "prerequisiteStatus": {
+        "methode-ecrire-puis-calculer": "established@M4",
+        "calculer-un-cote-de-langle-droit": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -326,9 +590,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 109,
+      "requires": [
+        "mem-controle-hypotenuse"
+      ],
+      "prerequisiteStatus": {
+        "mem-controle-hypotenuse": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -338,9 +606,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 125,
+      "requires": [
+        "reciproque-pythagore",
+        "choisir-direct-ou-reciproque"
+      ],
+      "prerequisiteStatus": {
+        "reciproque-pythagore": "established@M6",
+        "choisir-direct-ou-reciproque": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -350,9 +624,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 132,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 141,
+      "requires": [
+        "reciproque-pythagore",
+        "choisir-direct-ou-reciproque"
+      ],
+      "prerequisiteStatus": {
+        "reciproque-pythagore": "established@M6",
+        "choisir-direct-ou-reciproque": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -362,9 +642,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module08MissionFinale.jsx",
-      "line": 147,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 157,
+      "requires": [
+        "pythagore-dans-le-reel",
+        "methode-ecrire-puis-calculer"
+      ],
+      "prerequisiteStatus": {
+        "pythagore-dans-le-reel": "established@M7",
+        "methode-ecrire-puis-calculer": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }

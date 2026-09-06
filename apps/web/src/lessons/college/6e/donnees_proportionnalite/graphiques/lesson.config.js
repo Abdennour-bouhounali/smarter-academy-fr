@@ -35,6 +35,17 @@ export const LESSON_BASE_PATH = '/courses/college/6e/donnees_proportionnalite/gr
 export const LESSON_CONFIG = {
   id: 'graphiques',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A) : lire un croisement dans un
+  // tableau (acquis de la leçon précédente), comparer des entiers, encadrer un
+  // nombre entre deux graduations et calculer un petit écart. Ce sont
+  // exactement les quatre choses que les cinq questions du module 0 mesurent.
+  // Tout le reste — l'axe gradué, l'échelle, la lecture d'une hauteur, le
+  // maximum, l'évolution, l'axe tronqué — est établi dans la leçon même.
+  priorKnowledge: ['lire-tableau', 'comparer-entiers', 'encadrement', 'calcul-numerique'],
   title: 'Graphiques',
   description:
     'Transformer des nombres en image et savoir la relire : hauteurs, axes, échelle, maximum, évolution — et repérer les graphiques qui mentent.',

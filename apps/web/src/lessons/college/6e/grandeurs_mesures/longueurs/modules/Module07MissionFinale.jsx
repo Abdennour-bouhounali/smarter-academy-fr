@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import PolygonPerimeter from '../components/PolygonPerimeter';
 import UnitLadder from '../components/UnitLadder';
@@ -37,13 +38,14 @@ const SKILLS = {
   mesurer: { label: 'Mesurer sans le piège du zéro', module: 2 },
   relations: { label: 'Relations entre unités', module: 3 },
   convertir: { label: 'Convertir', module: 4 },
-  estimer: { label: 'Estimer un ordre de grandeur', module: 5 },
+  estimer: { label: 'Estimer une longueur', module: 5 },
   perimetre: { label: 'Calculer un périmètre', module: 6 },
 };
 
 const EPREUVES = [
   {
     id: 'lg-e1',
+    requires: ['unite-adaptee'],
     skill: 'unite',
     title: 'Épreuve 1',
     prompt: 'Sur le plan du city-stade, on doit indiquer les dimensions 25 et 12. Quelle unité choisir ?',
@@ -55,6 +57,7 @@ const EPREUVES = [
   },
   {
     id: 'lg-e2',
+    requires: ['estimation-plausible', 'reference-connue'],
     skill: 'estimer',
     title: 'Épreuve 2',
     prompt: 'Une bouteille d’eau, un stylo, un cahier : lequel mesure environ 20 cm ?',
@@ -66,6 +69,7 @@ const EPREUVES = [
   },
   {
     id: 'lg-e3',
+    requires: ['mesurer-difference', 'mem-piege-du-zero'],
     skill: 'mesurer',
     title: 'Épreuve 3',
     prompt: 'Un objet est posé sur une règle : il commence à la graduation 4 et se termine à la graduation 11. Quelle est sa longueur ?',
@@ -77,6 +81,7 @@ const EPREUVES = [
   },
   {
     id: 'lg-e4',
+    requires: ['escalier-longueurs'],
     skill: 'relations',
     title: 'Épreuve 4',
     prompt: 'Combien de centimètres dans 1 mètre ?',
@@ -88,17 +93,19 @@ const EPREUVES = [
   },
   {
     id: 'lg-e5',
+    requires: ['escalier-longueurs'],
     skill: 'relations',
     title: 'Épreuve 5',
-    prompt: 'On pose un plot tous les 5 m, le long du grand côté du terrain (25 m). Combien d’intervalles de 5 m contient ce côté ?',
+    prompt: 'On pose un plot tous les 5 m, le long du grand côté du terrain (25 m). Combien de tronçons de 5 m ce côté contient-il ?',
     options: ['4', '5', '20'],
     cols: 3,
     correct: 1,
-    explain: '25 m divisé en tronçons de 5 m : 25 ÷ 5 = 5 intervalles.',
+    explain: '25 m découpé en tronçons de 5 m : 25 ÷ 5 = 5 tronçons.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_longueurs_P3'] },
   },
   {
     id: 'lg-e6',
+    requires: ['convertir-methode', 'mem-sens-conversion', 'escalier-longueurs'],
     skill: 'convertir',
     title: 'Épreuve 6',
     prompt: 'Pour l’imprimeur, il faut convertir la largeur du terrain (12 m) en centimètres. Quelle est cette longueur en cm ?',
@@ -110,6 +117,7 @@ const EPREUVES = [
   },
   {
     id: 'lg-e7',
+    requires: ['convertir-methode', 'mem-sens-conversion', 'escalier-longueurs'],
     skill: 'convertir',
     title: 'Épreuve 7',
     prompt: 'Un élève écrit : « 3 m = 30 cm ». Où est l’erreur ?',
@@ -121,6 +129,7 @@ const EPREUVES = [
   },
   {
     id: 'lg-e8',
+    requires: ['perimetre-contour'],
     skill: 'perimetre',
     title: 'Épreuve 8',
     prompt: 'Ce terrain a 4 côtés : 25 m, 12 m, 25 m, 12 m. Quel est son périmètre ?',
@@ -133,6 +142,7 @@ const EPREUVES = [
   },
   {
     id: 'lg-e9',
+    requires: ['perimetre-unite'],
     skill: 'perimetre',
     title: 'Épreuve 9',
     prompt: 'Le périmètre du city-stade se mesure en…',
@@ -144,13 +154,14 @@ const EPREUVES = [
   },
   {
     id: 'lg-e10',
+    requires: ['perimetre-contour', 'estimation-plausible'],
     skill: 'estimer',
     title: 'Épreuve 10 — Le jour de la course',
     prompt: `Une coureuse fait 3 tours complets du city-stade (périmètre ${perimeter(FIELD_SIDES)} m). Sans calcul exact, quelle distance totale est la plus plausible ?`,
     options: ['≈ 22 m', '≈ 220 m', '≈ 2 200 m'],
     cols: 3,
     correct: 1,
-    explain: `3 tours de ${perimeter(FIELD_SIDES)} m, c'est un peu plus de 3 × 70 = 210 m : ≈ 220 m est le bon ordre de grandeur.`,
+    explain: `3 tours de ${perimeter(FIELD_SIDES)} m, c'est un peu plus de 3 × 70 = 210 m : ≈ 220 m est la seule estimation réaliste.`,
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_longueurs_P5'] },
   },
 ];
@@ -235,6 +246,9 @@ function Synthese() {
         📏 Une longueur se mesure, se compare et se convertit. Pour le périmètre, je fais toujours le tour complet
         de la figure.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

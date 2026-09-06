@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Shapes } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import KindMorph from '../components/KindMorph';
 import GeoFigure from '../components/GeoFigure';
-import { KINDS, KIND_LABEL, extentSentence } from '../components/droitesUtils';
+import { KINDS, KIND_LABEL } from '../components/droitesUtils';
 
 /**
  * Module 3 — DÉCOUVERTE : les trois objets côte à côte, une seule variable.
@@ -94,10 +93,22 @@ export default function Module03TriDesTraits() {
                 )}
               </div>
               {morphDone && (
-                <Feedback tone="ok">
-                  A et B n’ont jamais bougé. Seule l’étendue a changé — et avec elle, les flèches et les
-                  points d’extrémité.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    A et B n’ont jamais bougé. Seule l’étendue a changé — et avec elle, les flèches et les
+                    points d’extrémité.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="deux-points-ne-suffisent-pas"
+                    variant="new"
+                    lead="Trois objets sortis des deux mêmes points : la conclusion est là."
+                  />
+                  <KnowledgeBrick
+                    id="mem-compter-bouts"
+                    variant="new"
+                    lead="La question à se poser à chaque figure, avant toute autre."
+                  />
+                </>
               )}
             </div>
           ),
@@ -127,6 +138,7 @@ export default function Module03TriDesTraits() {
                   </p>
                 </div>
               }
+              requires={['mem-compter-bouts', 'segment', 'droite', 'demi-droite']}
               rows={IDENT.map((f, i) => ({
                 id: f.id,
                 label: <span className="font-semibold">Figure {i + 1}</span>,
@@ -163,6 +175,7 @@ export default function Module03TriDesTraits() {
               ]}
               correct={0}
               cols={1}
+              requires={['mem-compter-bouts', 'etendue']}
               explain="Le nombre d’extrémités décide de tout : 2 → segment, 1 → demi-droite, 0 → droite. La longueur dessinée ne prouve rien, puisqu’on ne voit qu’un morceau de la feuille."
               explainWrong="La longueur et l’inclinaison ne prouvent rien : sur un dessin, une droite paraît courte parce que la feuille s’arrête. Ce sont les extrémités qui comptent."
               solved={ruleDone}
@@ -172,21 +185,10 @@ export default function Module03TriDesTraits() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Shapes className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <div className="grid sm:grid-cols-3 gap-2 text-sm">
-            {KINDS.map((k) => (
-              <div key={k} className="bg-white/10 rounded-xl p-3 text-center">
-                <div className="font-bold text-white capitalize mb-1">{KIND_LABEL[k]}</div>
-                <div className="text-slate-300 text-xs">{extentSentence(k)}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais trier les traits. On va maintenant s’occuper des points
+          qui vivent dessus — et apprendre à écrire tout cela en trois caractères.
+        </KnowledgeSnapshot>
       }
     />
   );

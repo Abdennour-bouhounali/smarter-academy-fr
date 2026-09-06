@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Ruler } from 'lucide-react';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Protractor from '../components/Protractor';
@@ -141,7 +140,26 @@ export default function Module03Rapporteur() {
           title: 'Le rituel de placement',
           done: ritualDone,
           content: (kit) => (
-            <PlacementRitual react={kit.react} solved={ritualDone} onSolved={() => setRitualDone(true)} />
+            <div className="space-y-5">
+              {/* L'instrument est manipulé dès la première seconde : la
+                  brique qui le nomme accompagne le geste, elle ne le
+                  précède pas d'un cours. */}
+              <PlacementRitual react={kit.react} solved={ritualDone} onSolved={() => setRitualDone(true)} />
+              {ritualDone && (
+                <>
+                  <KnowledgeBrick
+                    id="rapporteur"
+                    variant="new"
+                    lead="L’outil que tu viens de poser a un nom, et une unité de mesure bien à lui."
+                  />
+                  <KnowledgeBrick
+                    id="rituel-placement"
+                    variant="new"
+                    lead="Les deux gestes que tu as faits dans l’ordre forment un rituel : il ne change jamais."
+                  />
+                </>
+              )}
+            </div>
           ),
         },
         {
@@ -172,6 +190,7 @@ export default function Module03Rapporteur() {
               display={formatDec(90)}
               explain={<>Un angle droit mesure <strong>90°</strong> — c'est le repère qui sépare les angles aigus des obtus.</>}
               explainFor={() => 'C’est l’angle du coin d’une feuille, celui de l’équerre.'}
+              requires={['angle-droit', 'classes-angles', 'rapporteur']}
               solved={ecrireDone}
               onAnswered={() => setEcrireDone(true)}
             />
@@ -179,13 +198,10 @@ export default function Module03Rapporteur() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Ruler className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Centre sur le sommet, zéro sur un côté, puis on lit la graduation où sort l'autre côté. La mesure
-            s'écrit avec le symbole ° (degrés).
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais poser l'instrument et lire. Mais chaque graduation
+          porte DEUX nombres — le module suivant démonte ce piège pour de bon.
+        </KnowledgeSnapshot>
       }
     />
   );

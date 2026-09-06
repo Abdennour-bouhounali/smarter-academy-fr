@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import MirrorLab from '../components/MirrorLab';
@@ -44,6 +45,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'sy-e1',
+    requires: ['symetrie-pliage', 'axe-symetrie'],
     skill: 'principe',
     title: 'Épreuve 1 — Le critère',
     prompt: 'Une figure est symétrique par rapport à une droite quand…',
@@ -61,6 +63,7 @@ const EPREUVES = [
   },
   {
     id: 'sy-e2',
+    requires: ['nombre-axes', 'axe-symetrie'],
     skill: 'axes',
     title: 'Épreuve 2 — La diagonale du rectangle',
     prompt: 'La diagonale d’un rectangle est-elle un axe de symétrie ?',
@@ -73,11 +76,12 @@ const EPREUVES = [
     cols: 1,
     correct: 0,
     explain:
-      'Deux triangles de même aire ne se superposent pas forcément par pliage. Un rectangle n’a que 2 axes : ses médianes.',
+      'Deux triangles de même aire ne se superposent pas forcément par pliage. Un rectangle n’a que 2 axes : ses deux plis du milieu.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_symetrie_P2'] },
   },
   {
     id: 'sy-e3',
+    requires: ['nombre-axes', 'axe-symetrie'],
     skill: 'axes',
     title: 'Épreuve 3 — Combien d’axes ?',
     prompt: 'Combien d’axes de symétrie possède un carré ?',
@@ -86,11 +90,12 @@ const EPREUVES = [
     cols: 3,
     correct: 0,
     explain:
-      'Le carré en a 4 : ses deux médianes et ses deux diagonales. C’est l’égalité de ses côtés qui rend les diagonales pliables — ce qui est faux pour le rectangle.',
+      'Le carré en a 4 : ses deux plis du milieu et ses deux diagonales. C’est l’égalité de ses côtés qui rend les diagonales pliables — ce qui est faux pour le rectangle.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_symetrie_P3'] },
   },
   {
     id: 'sy-e4',
+    requires: ['symetrique-point'],
     skill: 'relation',
     title: 'Épreuve 4 — La distance',
     prompt: 'Un point M est à 6 cm de l’axe. À quelle distance de l’axe se trouve son symétrique M′ ?',
@@ -103,6 +108,7 @@ const EPREUVES = [
   },
   {
     id: 'sy-e5',
+    requires: ['symetrique-point', 'axe-symetrie'],
     skill: 'construire',
     title: 'Épreuve 5 — Construire',
     prompt: 'Pour construire le symétrique d’un point M par rapport à une droite (d), que faut-il faire ?',
@@ -119,6 +125,7 @@ const EPREUVES = [
   },
   {
     id: 'sy-e6',
+    requires: ['symetrique-figure', 'symetrique-point'],
     skill: 'construire',
     title: 'Épreuve 6 — Le symétrique d’une figure',
     prompt: 'Comment construit-on le symétrique d’un triangle ABC ?',
@@ -135,9 +142,10 @@ const EPREUVES = [
   },
   {
     id: 'sy-e7',
+    requires: ['symetrique-point', 'axe-symetrie'],
     skill: 'relation',
     title: 'Épreuve 7 — L’angle du trait',
-    prompt: 'Quel angle le segment [MM′] forme-t-il avec l’axe de symétrie ?',
+    prompt: 'Quel angle le trait qui joint un point M à son image M′ forme-t-il avec l’axe de symétrie ?',
     extra: (
       <MirrorLab
         axis={AXE_V}
@@ -157,6 +165,7 @@ const EPREUVES = [
   },
   {
     id: 'sy-e8',
+    requires: ['symetrique-point', 'axe-oblique'],
     skill: 'relation',
     title: 'Épreuve 8 — Une seule condition ?',
     prompt:
@@ -174,6 +183,7 @@ const EPREUVES = [
   },
   {
     id: 'sy-e9',
+    requires: ['conservation'],
     skill: 'conserve',
     title: 'Épreuve 9 — Ce qui ne change pas',
     prompt: 'Parmi ces propositions, qu’est-ce que la symétrie axiale NE conserve PAS ?',
@@ -190,6 +200,7 @@ const EPREUVES = [
   },
   {
     id: 'sy-e10',
+    requires: ['mem-deduire', 'conservation', 'axe-symetrie'],
     skill: 'resoudre',
     title: 'Épreuve 10 — Le logo',
     prompt:
@@ -257,11 +268,14 @@ function Synthese() {
         </div>
       </div>
 
+      {/* La synthèse PRÉSENTE la carte complète, elle ne la réécrit pas. */}
+      <KnowledgeSnapshot complete variant="complete" />
+
       <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-2">
         <h3 className="font-space font-bold text-amber-900 text-sm">Les pièges à éviter</h3>
         <ul className="text-sm text-amber-900 space-y-1.5">
           <li>❌ juger la symétrie à l’œil &nbsp;→&nbsp; ✅ le pliage doit être exact</li>
-          <li>❌ la diagonale d’un rectangle est un axe &nbsp;→&nbsp; ✅ il n’en a que 2, ses médianes</li>
+          <li>❌ la diagonale d’un rectangle est un axe &nbsp;→&nbsp; ✅ il n’en a que 2, ses plis du milieu</li>
           <li>❌ la bonne distance suffit &nbsp;→&nbsp; ✅ il faut AUSSI la perpendiculaire</li>
           <li>❌ la symétrie agrandit ou réduit &nbsp;→&nbsp; ✅ elle conserve tout, elle déplace</li>
         </ul>

@@ -2,11 +2,106 @@
   "lesson": "proportionnalite-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
+  "prerequisites": [
+    "quotient",
+    "pourcentage",
+    "tableau-de-valeurs"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "situation-proportionnelle",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
+        "line": 166,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "droite-par-origine",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
+        "line": 171,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "coefficient-proportionnalite",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module02NombreCache.jsx",
+        "line": 78,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "agrandissement-reduction",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx",
+        "line": 113,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "grandeurs-quotient",
+      "type": "concepts",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
+        "line": 75,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "proceduresIntroduced": [
+    {
+      "id": "quatre-chemins",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module03QuatreChemins.jsx",
+        "line": 87,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "coefficient-multiplicateur",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module05Pourcentages.jsx",
+        "line": 90,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-aires-volumes",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx",
+        "line": 158,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "pr-d1",
@@ -15,8 +110,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module00Diagnostic.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -27,8 +126,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module00Diagnostic.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -39,8 +142,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module00Diagnostic.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -51,8 +158,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module00Diagnostic.jsx",
       "line": 24,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tableau-de-valeurs",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-valeurs": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -63,8 +176,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module00Diagnostic.jsx",
       "line": 25,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +191,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 104,
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,9 +207,13 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
-      "line": 122,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 124,
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,12 +223,14 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
-      "line": 150,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "extremum"
+      "line": 153,
+      "requires": [
+        "quotient"
       ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -112,9 +239,15 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
-      "line": 169,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 188,
+      "requires": [
+        "droite-par-origine",
+        "situation-proportionnelle"
+      ],
+      "prerequisiteStatus": {
+        "droite-par-origine": "established@M1",
+        "situation-proportionnelle": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +257,13 @@
       "step": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
-      "line": 197,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 217,
+      "requires": [
+        "situation-proportionnelle"
+      ],
+      "prerequisiteStatus": {
+        "situation-proportionnelle": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +273,15 @@
       "step": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
-      "line": 208,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 229,
+      "requires": [
+        "situation-proportionnelle",
+        "droite-par-origine"
+      ],
+      "prerequisiteStatus": {
+        "situation-proportionnelle": "established@M1",
+        "droite-par-origine": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,9 +291,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module02NombreCache.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 99,
+      "requires": [
+        "situation-proportionnelle",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "situation-proportionnelle": "established@M1",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -160,9 +309,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module02NombreCache.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -172,9 +325,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module02NombreCache.jsx",
-      "line": 132,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 141,
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -184,9 +341,13 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module02NombreCache.jsx",
-      "line": 152,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 162,
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -196,9 +357,13 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module03QuatreChemins.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 93,
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -208,9 +373,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module03QuatreChemins.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 127,
+      "requires": [
+        "quatre-chemins"
+      ],
+      "prerequisiteStatus": {
+        "quatre-chemins": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -220,9 +389,13 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module03QuatreChemins.jsx",
-      "line": 145,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 155,
+      "requires": [
+        "quatre-chemins"
+      ],
+      "prerequisiteStatus": {
+        "quatre-chemins": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -232,9 +405,15 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module03QuatreChemins.jsx",
-      "line": 170,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 181,
+      "requires": [
+        "quatre-chemins",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "quatre-chemins": "established@M3",
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -244,9 +423,15 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module03QuatreChemins.jsx",
-      "line": 194,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 206,
+      "requires": [
+        "quatre-chemins",
+        "situation-proportionnelle"
+      ],
+      "prerequisiteStatus": {
+        "quatre-chemins": "established@M3",
+        "situation-proportionnelle": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -256,9 +441,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 84,
+      "requires": [
+        "situation-proportionnelle"
+      ],
+      "prerequisiteStatus": {
+        "situation-proportionnelle": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -268,9 +457,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx",
-      "line": 112,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 120,
+      "requires": [
+        "agrandissement-reduction"
+      ],
+      "prerequisiteStatus": {
+        "agrandissement-reduction": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -280,9 +473,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx",
-      "line": 136,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 146,
+      "requires": [
+        "agrandissement-reduction"
+      ],
+      "prerequisiteStatus": {
+        "agrandissement-reduction": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -292,13 +489,15 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx",
-      "line": 158,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "theoreme-thales"
+      "line": 178,
+      "requires": [
+        "agrandissement-reduction"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "agrandissement-reduction": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M04-S5-Q5",
@@ -306,9 +505,15 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx",
-      "line": 182,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 203,
+      "requires": [
+        "mem-aires-volumes",
+        "agrandissement-reduction"
+      ],
+      "prerequisiteStatus": {
+        "mem-aires-volumes": "established@M4",
+        "agrandissement-reduction": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -318,9 +523,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module05Pourcentages.jsx",
-      "line": 76,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "pourcentage",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -330,9 +541,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module05Pourcentages.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 108,
+      "requires": [
+        "coefficient-multiplicateur"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-multiplicateur": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -342,9 +557,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module05Pourcentages.jsx",
-      "line": 126,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 136,
+      "requires": [
+        "coefficient-multiplicateur"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-multiplicateur": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -354,9 +573,15 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module05Pourcentages.jsx",
-      "line": 162,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 173,
+      "requires": [
+        "coefficient-multiplicateur",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-multiplicateur": "established@M5",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -366,9 +591,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 85,
+      "requires": [
+        "grandeurs-quotient",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6",
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -378,9 +609,13 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 96,
+      "requires": [
+        "grandeurs-quotient"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -390,9 +625,13 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "grandeurs-quotient"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -402,9 +641,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
-      "line": 128,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 137,
+      "requires": [
+        "grandeurs-quotient",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6",
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -414,9 +659,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
-      "line": 140,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 150,
+      "requires": [
+        "grandeurs-quotient",
+        "droite-par-origine"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6",
+        "droite-par-origine": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -426,9 +677,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
-      "line": 164,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 175,
+      "requires": [
+        "grandeurs-quotient",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6",
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -438,9 +695,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
-      "line": 189,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 201,
+      "requires": [
+        "grandeurs-quotient"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -450,9 +711,13 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module06LaboSciences.jsx",
-      "line": 200,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 213,
+      "requires": [
+        "grandeurs-quotient"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -463,8 +728,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "situation-proportionnelle",
+        "droite-par-origine"
+      ],
+      "prerequisiteStatus": {
+        "situation-proportionnelle": "established@M1",
+        "droite-par-origine": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -475,8 +746,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 56,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -487,8 +762,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 64,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -499,12 +778,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "fonction"
+      "requires": [
+        "situation-proportionnelle",
+        "droite-par-origine"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "situation-proportionnelle": "established@M1",
+        "droite-par-origine": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "pr-e5",
@@ -513,8 +796,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 80,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quatre-chemins"
+      ],
+      "prerequisiteStatus": {
+        "quatre-chemins": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -525,8 +812,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 88,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quatre-chemins"
+      ],
+      "prerequisiteStatus": {
+        "quatre-chemins": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -537,8 +828,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 96,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-multiplicateur",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-multiplicateur": "established@M5",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -549,8 +846,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "agrandissement-reduction",
+        "mem-aires-volumes"
+      ],
+      "prerequisiteStatus": {
+        "agrandissement-reduction": "established@M4",
+        "mem-aires-volumes": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -561,8 +864,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 112,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "grandeurs-quotient"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -573,48 +880,15 @@
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
       "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "grandeurs-quotient"
+      ],
+      "prerequisiteStatus": {
+        "grandeurs-quotient": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« théorème de Thalès » is a target concept of this lesson but its first appearance is q.explain (module 4, étape 4); it is only taught later at apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx:195",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module04Agrandir.jsx",
-      "line": 164,
-      "module": 4,
-      "step": 4,
-      "term": "theoreme-thales",
-      "questionId": "M04-S4-Q4",
-      "position": 202
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« fonction » first appears at boss.prompt (module 7) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module07MissionFinale.jsx",
-      "line": 71,
-      "module": 7,
-      "step": null,
-      "term": "fonction",
-      "questionId": "pr-e4",
-      "position": 348
-    },
-    {
-      "code": "L_DISTRACTOR_ONLY",
-      "severity": "low",
-      "message": "« extremum / maximum / minimum » appears only as a wrong answer, first at q.option (module 1, étape 4) — a distractor still creates a first exposure",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/proportionnalite-3e/modules/Module01Recette.jsx",
-      "line": 152,
-      "module": 1,
-      "step": 4,
-      "term": "extremum",
-      "questionId": "M01-S4-Q3",
-      "position": 53
-    }
-  ]
+  "findings": []
 }

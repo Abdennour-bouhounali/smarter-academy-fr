@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Box } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidView from '../components/SolidView';
 import { SOLIDES } from '../components/solidesUtils';
@@ -47,15 +45,16 @@ export default function Module01BoiteMysterieuse() {
       steps={[
         {
           num: 1,
-          title: 'Combien de faces VOIS-tu ?',
+          title: 'Combien de surfaces plates VOIS-tu ?',
           done: visiblesDone,
           content: (
             <TapQuestion
               above={<SolidView solide="cube" ariaLabel="Un cube dessiné en perspective" />}
-              prompt="Sur ce dessin, combien de faces du cube peux-tu réellement voir ?"
-              options={['3 faces', '6 faces', '4 faces']}
+              prompt="Sur ce dessin, combien de surfaces plates du cube peux-tu réellement voir ?"
+              options={['3 surfaces', '6 surfaces', '4 surfaces']}
               correct={0}
               cols={3}
+              requires={['figures-planes-usuelles']}
               explain="On n’en voit que 3 : le dessus, le devant et un côté. Les trois autres sont derrière."
               explainWrong="Compte celles qui sont face à toi : le dessus, le devant, un côté. Les trois autres sont cachées derrière."
               solved={visiblesDone}
@@ -68,17 +67,30 @@ export default function Module01BoiteMysterieuse() {
           title: 'Et combien en a-t-il vraiment ?',
           done: totalDone,
           content: (
-            <TapQuestion
-              above={<SolidView solide="cube" highlight="faces" ariaLabel="Le même cube, avec ses arêtes cachées en pointillé" />}
-              prompt="Un cube, en tant qu’objet, possède combien de faces au total ?"
-              options={[`${SOLIDES.cube.faces} faces`, '3 faces', '4 faces']}
-              correct={0}
-              cols={3}
-              explain="6 faces : les 3 visibles, et les 3 cachées derrière. Elles existent même si le dessin ne les montre pas."
-              explainWrong="Le dessin n’en montre que 3, mais l’objet en a 6 — une boîte a bien un fond et un arrière."
-              solved={totalDone}
-              onAnswered={() => setTotalDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                above={<SolidView solide="cube" highlight="faces" ariaLabel="Le même cube, avec ses bords cachés en pointillé" />}
+                prompt="Un cube, en tant qu’objet, possède combien de surfaces plates au total ?"
+                options={[`${SOLIDES.cube.faces} surfaces`, '3 surfaces', '4 surfaces']}
+                correct={0}
+                cols={3}
+                requires={['figures-planes-usuelles']}
+                explain="6 surfaces : les 3 visibles, et les 3 cachées derrière. Elles existent même si le dessin ne les montre pas."
+                explainWrong="Le dessin n’en montre que 3, mais l’objet en a 6 — une boîte a bien un fond et un arrière."
+                solved={totalDone}
+                onAnswered={() => setTotalDone(true)}
+              />
+
+              {/* L'écart entre ce qu'on voit (3) et ce que l'objet a (6) vient
+                  d'être constaté : c'est le moment de le poser comme idée. */}
+              {totalDone && (
+                <KnowledgeBrick
+                  id="dessin-et-objet"
+                  variant="new"
+                  lead="Tu as compté 3 sur le dessin, et 6 sur l’objet : l’écart n’est pas une erreur, c’est le dessin qui est plat."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -86,36 +98,40 @@ export default function Module01BoiteMysterieuse() {
           title: 'À quoi servent les pointillés ?',
           done: pointilleDone,
           content: (
-            <TapQuestion
-              above={<SolidView solide="cube" highlight="aretes" ariaLabel="Cube avec les arêtes cachées en pointillé" />}
-              prompt="Sur ce dessin, certaines arêtes sont en pointillé. Pourquoi ?"
-              options={[
-                'Ce sont les arêtes cachées : elles existent, mais on ne les verrait pas',
-                'Ce sont des arêtes plus courtes',
-                'C’est une décoration',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Le pointillé est la convention du dessin technique : il signale ce qui est derrière. L’objet possède ces arêtes, le dessin doit donc les indiquer."
-              explainWrong="Toutes les arêtes d’un cube ont la même longueur. Le pointillé n’indique pas une taille mais une position : derrière."
-              solved={pointilleDone}
-              onAnswered={() => setPointilleDone(true)}
-            />
+            <div className="space-y-5">
+              {/* La convention du dessin technique ne se devine pas : elle
+                  s'apprend. On la pose donc AVANT de la demander — l'ancienne
+                  version ne la donnait que dans l'`explain`, après coup. */}
+              <KnowledgeBrick
+                id="arete-cachee"
+                variant="new"
+                lead="Sur le dessin ci-dessous, certains traits sont pleins et d’autres en pointillé."
+              />
+              <TapQuestion
+                above={<SolidView solide="cube" highlight="aretes" ariaLabel="Cube avec ses bords cachés en pointillé" />}
+                prompt="Sur ce dessin, certains traits sont en pointillé. Que signalent-ils ?"
+                options={[
+                  'Les bords cachés : ils existent, mais on ne les verrait pas de face',
+                  'Des bords plus courts que les autres',
+                  'C’est une décoration',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['arete-cachee', 'dessin-et-objet']}
+                explain="Le pointillé signale ce qui est derrière. L’objet possède bien ces bords : le dessin doit donc les indiquer."
+                explainWrong="Tous les bords d’un cube ont la même longueur. Le pointillé n’indique pas une taille mais une position : derrière."
+                solved={pointilleDone}
+                onAnswered={() => setPointilleDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Box className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un dessin est <strong className="text-white">plat</strong> ; le solide, lui, a un derrière. Pour
-            le compter correctement, il faut raisonner — pas seulement regarder.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais qu’un solide a un derrière. Il te manque les trois mots
+          justes pour dire ce que tu comptes : c’est le module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

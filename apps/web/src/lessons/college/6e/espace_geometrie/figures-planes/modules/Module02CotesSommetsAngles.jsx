@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Ruler } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ShapeLab from '../components/ShapeLab';
@@ -54,19 +53,28 @@ export default function Module02CotesSommetsAngles() {
         title: 'Avant de nommer, il faut savoir quoi regarder.',
         body: (
           <p>
-            Un <strong>côté</strong> est un segment, un <strong>sommet</strong> est un point où deux côtés se
-            rejoignent, un <strong>angle</strong> mesure l’ouverture à ce sommet.
+            Sur une figure, il n’y a que trois choses à observer. Tu vas les découvrir une par une,
+            en les comptant et en les comparant.
           </p>
         ),
       }}
       steps={[
         {
           num: 1,
-          title: 'Compte les côtés de chaque figure',
+          title: 'Compte les traits du contour de chaque figure',
           done: countDone,
           content: (
-            <BatchChoiceQuestion
-              intro={
+            <div className="space-y-5">
+              {/* Le mot est posé AVANT qu'on demande d'en compter : sinon la
+                  consigne emploie un terme que l'élève n'a pas encore. */}
+              <KnowledgeBrick
+                id="cote"
+                variant="new"
+                lead="Le contour de chaque figure ci-dessous est fait de traits mis bout à bout."
+              />
+              <BatchChoiceQuestion
+                requires={['cote']}
+                intro={
                 <div className="space-y-3">
                   {FIGURES.map((f, i) => (
                     <div key={f.id} className="rounded-xl border-2 border-slate-200 bg-white p-2">
@@ -87,29 +95,44 @@ export default function Module02CotesSommetsAngles() {
                 correct: f.pts.length - 3,
                 correction: <>{f.pts.length} côtés — un {POLYGON_BY_SIDES[f.pts.length]}</>,
               }))}
-              solved={countDone}
-              onAnswered={() => setCountDone(true)}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {!allRight && (
-                    <>
-                      {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
-                    </>
-                  )}
-                  3 côtés : un triangle. 4 : un quadrilatère. 5 : un pentagone. Le nom d’un polygone vient
-                  d’abord de son nombre de côtés.
-                </Feedback>
+                solved={countDone}
+                onAnswered={() => setCountDone(true)}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {!allRight && (
+                      <>
+                        {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
+                      </>
+                    )}
+                    Le nombre de traits du contour n’est pas le même d’une figure à l’autre — et il
+                    suffit déjà à leur donner un premier nom.
+                  </Feedback>
+                )}
+              />
+              {countDone && (
+                <KnowledgeBrick
+                  id="polygone"
+                  variant="new"
+                  lead="3, 4, 5 : ce premier comptage donne déjà un nom à chaque figure."
+                />
               )}
-            />
+            </div>
           ),
         },
         {
           num: 2,
-          title: 'Côtés et sommets : combien de chaque ?',
+          title: 'Les coins de la figure',
           done: relDone,
           content: (
-            <TapQuestion
-              above={
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="sommet"
+                variant="new"
+                lead="Là où deux côtés se rejoignent, la figure fait un coin. Ce coin a un nom."
+              />
+              <TapQuestion
+                requires={['sommet', 'cote']}
+                above={
                 <ShapeLab
                   points={FIGURES[1].pts} box={BOX} draggable={false}
                   showName={false} showProperties={false}
@@ -126,20 +149,28 @@ export default function Module02CotesSommetsAngles() {
               correct={1}
               cols={3}
               explain="Autant de sommets que de côtés : la figure est fermée, donc le dernier côté ramène au premier sommet. C’est vrai pour tout polygone."
-              explainWrong="Attention à ne pas compter un sommet de plus : le dernier côté revient au point de départ, il ne crée pas de nouveau sommet."
-              solved={relDone}
-              onAnswered={() => setRelDone(true)}
-            />
+                explainWrong="Attention à ne pas compter un sommet de plus : le dernier côté revient au point de départ, il ne crée pas de nouveau sommet."
+                solved={relDone}
+                onAnswered={() => setRelDone(true)}
+              />
+            </div>
           ),
         },
         {
           num: 3,
-          title: 'Compare les angles',
+          title: 'Compare l’ouverture des coins',
           subtitle: 'Les mesures sont affichées : sers-t’en.',
           done: angleDone,
           content: (
-            <TapQuestion
-              above={
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="angle"
+                variant="new"
+                lead="À chaque sommet, les deux côtés s’écartent plus ou moins : cet écartement se mesure."
+              />
+              <TapQuestion
+                requires={['angle', 'sommet']}
+                above={
                 <ShapeLab
                   points={ANGLE_FIG} box={BOX} draggable={false}
                   showName={false} showProperties={false} showAngles
@@ -151,35 +182,19 @@ export default function Module02CotesSommetsAngles() {
               correct={widest}
               cols={4}
               explain={`L’angle le plus ouvert est celui qui mesure le plus de degrés : ${Math.round(Math.max(...A))}° au sommet ${'ABCD'[widest]}. Un angle se compare par sa mesure, pas par la longueur des côtés qui le forment.`}
-              explainWrong="Ne te fie pas à la longueur des côtés : un angle ne dépend que de l’écartement, pas de la taille des traits qui le dessinent."
-              solved={angleDone}
-              onAnswered={() => setAngleDone(true)}
-            />
+                explainWrong="Ne te fie pas à la longueur des côtés : un angle ne dépend que de l’écartement, pas de la taille des traits qui le dessinent."
+                solved={angleDone}
+                onAnswered={() => setAngleDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Ruler className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <div className="grid sm:grid-cols-3 gap-2 text-sm">
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Côté</div>
-              <div className="text-slate-300 text-xs">un segment du contour</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Sommet</div>
-              <div className="text-slate-300 text-xs">un point où deux côtés se rejoignent</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Angle</div>
-              <div className="text-slate-300 text-xs">l’ouverture à un sommet</div>
-            </div>
-          </div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais quoi observer. Au laboratoire, on va casser ces mesures
+          une à une et regarder le nom de la figure changer tout seul.
+        </KnowledgeSnapshot>
       }
     />
   );

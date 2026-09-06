@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PartyPopper } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProportionTable from '../components/ProportionTable';
@@ -78,6 +79,7 @@ export default function Module06Kermesse() {
                     ? 'Tu as doublé 24 €, ce qui correspondrait à 16 crêpes, pas 20. Passe par l’unité : 3 € la crêpe, puis × 20.'
                     : 'Cherche d’abord le prix d’UNE crêpe : 24 ÷ 8 = 3 €. Puis multiplie par 20.'
                 }
+                requires={['passage-unite', 'choisir-strategie', 'proportionnalite']}
                 solved={recetteDone}
                 onAnswered={() => setRecetteDone(true)}
               />
@@ -113,6 +115,7 @@ export default function Module06Kermesse() {
                     ? 'Tu as ajouté 5 aux 12 km : les heures et les kilomètres ne s’additionnent pas. Chaque heure APPORTE 12 km, donc on multiplie.'
                     : 'Chaque heure apporte 12 km : multiplie 12 par le nombre d’heures.'
                 }
+                requires={['coefficient-proportionnalite', 'proportionnalite', 'tables-multiplication']}
                 solved={distanceDone}
                 onAnswered={() => setDistanceDone(true)}
               />
@@ -132,12 +135,17 @@ export default function Module06Kermesse() {
                 onTested={() => setTailleDone(true)}
               />
               {tailleDone && (
-                <Feedback tone="info">
-                  Si la taille était proportionnelle à l'âge, un enfant de 2 ans mesurant 86 cm en mesurerait{' '}
-                  <strong>430 cm à 10 ans</strong> — plus de quatre mètres. L'absurdité du résultat est le
-                  meilleur signal d'alarme : toutes les grandeurs qui augmentent ensemble ne sont pas
-                  proportionnelles.
-                </Feedback>
+                <>
+                  <Feedback tone="info">
+                    Si la taille suivait la même règle que le prix des crêpes, un enfant de 2 ans mesurant
+                    86 cm en mesurerait <strong>430 cm à 10 ans</strong> — plus de quatre mètres.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="augmenter-nest-pas-proportionnel"
+                    variant="new"
+                    lead="C’est l’absurdité du résultat qui t’a alerté. Elle vise une idée fausse très répandue."
+                  />
+                </>
               )}
             </div>
           ),
@@ -147,6 +155,12 @@ export default function Module06Kermesse() {
           title: 'Le réflexe de vérification',
           done: verifDone,
           content: (
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="mem-tester-avant"
+                variant="new"
+                lead="Six modules, une seule habitude à garder pour de bon."
+              />
             <TapQuestion
               prompt="Avant de rendre un résultat de proportionnalité, quel contrôle rapide faire ?"
               options={[
@@ -157,19 +171,26 @@ export default function Module06Kermesse() {
               correct={1}
               cols={1}
               explain="Deux contrôles suffisent : le sens (plus de crêpes → plus cher) et le rapport (le prix par crêpe doit rester le même). Un résultat peut très bien être décimal, et il peut être plus petit si la quantité diminue."
+              requires={['verifier-coherence', 'mem-tester-avant', 'augmenter-nest-pas-proportionnel']}
               solved={verifDone}
               onAnswered={() => setVerifDone(true)}
             />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <PartyPopper className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Reconnaître, choisir, calculer, vérifier : la boucle complète. Il ne reste qu'à tenir le stand
-            pour de bon.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={6}>
+            <strong>La suite.</strong> Ta carte est complète : il ne reste qu'à la mettre à l'épreuve sur
+            dix questions, dont aucune n'apportera de notion nouvelle.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <PartyPopper className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Reconnaître, choisir, calculer, vérifier : la boucle complète.
+            </p>
+          </div>
         </motion.div>
       }
     />

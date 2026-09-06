@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -78,11 +79,11 @@ export default function Module06EcrituresEquivalentes() {
                 </ValidateButton>
               )}
               {s1 && (
-                <Feedback tone="info">
-                  Retiens le chemin :{' '}
-                  <MathText>{'$2 + \\frac{4}{10} = \\frac{24}{10} = 2{,}4$'}</MathText> — et sur la droite graduée,
-                  c'est la 4<sup>e</sup> graduation après 2.
-                </Feedback>
+                <KnowledgeBrick
+                  id="ecritures-equivalentes"
+                  variant="new"
+                  lead="Les cinq panneaux que tu viens d'observer montrent tous le même nombre."
+                />
               )}
             </div>
           ),
@@ -108,6 +109,7 @@ export default function Module06EcrituresEquivalentes() {
                       options={item.options}
                       correct={item.correct}
                       cols={4}
+                      requires={['ecritures-equivalentes', 'colonnes-decimales', 'fraction-decimale']}
                       renderOption={renderFraction}
                       explain={item.explain}
                       solved={trads.includes(i)}
@@ -159,6 +161,7 @@ export default function Module06EcrituresEquivalentes() {
                   correction: c.why,
                 }))}
                 solved={zeroDone}
+                requires={['ecritures-equivalentes', 'deux-zeros']}
                 onAnswered={() => setZeroDone(true)}
                 feedback={({ allRight, nCorrect, total }) => (
                   <Feedback tone={allRight ? 'ok' : 'ko'}>
@@ -174,6 +177,12 @@ export default function Module06EcrituresEquivalentes() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tu reconnais un nombre sous toutes ses formes. Au module
+          suivant, il va falloir les départager.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

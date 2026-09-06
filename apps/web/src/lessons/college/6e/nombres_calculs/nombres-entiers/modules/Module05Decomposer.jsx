@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, RotateCcw, X } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PlaceValueTable from '../components/PlaceValueTable';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
@@ -285,7 +286,18 @@ export default function Module05Decomposer() {
           subtitle: 'Choisis les bonnes tuiles — attention aux pièges.',
           done: s1,
           content: (kit) => (
-            <DecompositionTiles target={CIBLE} solved={s1} onSolved={() => setS1(true)} react={kit.react} />
+            <div className="space-y-5">
+              <DecompositionTiles target={CIBLE} solved={s1} onSolved={() => setS1(true)} react={kit.react} />
+              {/* Les tuiles viennent d'être posées une par colonne : le mot
+                  « décomposer » désigne maintenant un geste connu. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="decomposer"
+                  variant="new"
+                  lead="La somme que tu viens de construire porte un nom."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -315,6 +327,7 @@ export default function Module05Decomposer() {
                 ),
               }))}
               solved={s2}
+              requires={['decomposer', 'valeur-position']}
               onAnswered={() => setS2(true)}
               feedback={({ allRight }) => (
                 <div className="space-y-3">
@@ -343,13 +356,21 @@ export default function Module05Decomposer() {
           done: s3,
           content: (
             <div className="space-y-6">
+              {/* Le chemin inverse a son piège propre (la colonne vide) : la
+                  méthode se pose ICI, avant les trois saisies. */}
+              <KnowledgeBrick
+                id="recomposer"
+                variant="new"
+                lead="Tu viens de démonter 4 582 ; on va maintenant faire le chemin dans l'autre sens."
+              />
               {RECOMPOSITIONS.map((item, i) => (
                 <div key={item.expr} className="border-t border-slate-100 pt-4 first:border-0 first:pt-0">
                   <NumericQuestion
                     prompt={<span className="font-mono font-bold text-lg tabular-nums">{item.expr} =</span>}
                     expected={item.answer}
                     parse={parseFr}
-                    explain="chaque terme de la somme occupe une colonne différente du tableau de numération."
+                    requires={['recomposer', 'zero-place']}
+                    explain="chaque morceau de la somme occupe une colonne différente du tableau de numération."
                     explainFor={(n) =>
                       item.trap && n === parseFr(item.trap) ? (
                         <>
@@ -358,7 +379,7 @@ export default function Module05Decomposer() {
                           les autres chiffres restent à leur place.
                         </>
                       ) : (
-                        'additionne les morceaux en respectant les positions : chaque terme occupe une colonne différente.'
+                        'additionne les morceaux en respectant les positions : chacun occupe une colonne différente.'
                       )
                     }
                     solved={recompDone.includes(i)}
@@ -395,6 +416,7 @@ export default function Module05Decomposer() {
                     options={ZERO_QUESTION.options}
                     correct={ZERO_QUESTION.correct}
                     cols={1}
+                    requires={['zero-place', 'valeur-position']}
                     explain={ZERO_QUESTION.explain}
                     onAnswered={() => setZeroRevealed(true)}
                   />
@@ -406,6 +428,7 @@ export default function Module05Decomposer() {
                         options={ERREUR_ZERO.options}
                         correct={ERREUR_ZERO.correct}
                         cols={1}
+                        requires={['zero-place', 'valeur-position']}
                         explain={ERREUR_ZERO.explain}
                         onAnswered={() => setErrRevealed(true)}
                       />
@@ -417,6 +440,12 @@ export default function Module05Decomposer() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais démonter et remonter un nombre. Au module suivant, tu
+          te sers des colonnes pour décider lequel de deux nombres est le plus grand.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

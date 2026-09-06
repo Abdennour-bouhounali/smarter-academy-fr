@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -213,6 +214,7 @@ function ComparaisonMemeQuantite({ solved, onSolved }) {
             correct={COMPARAISON_Q.correct}
             cols={1}
             explain={COMPARAISON_Q.explain}
+            requires={['fraction-quantite', 'numerateur', 'denominateur']}
             solved={solved}
             onAnswered={() => onSolved?.()}
           />
@@ -268,10 +270,17 @@ export default function Module05Quantite() {
                 ) : null
               )}
               {s1 && (
-                <Feedback tone="info">
-                  Remarque : en passant de 1/3 à 2/3, on prend deux fois plus de groupes — et deux fois plus de
-                  ballons (4 puis 8). La fraction et la quantité avancent ensemble.
-                </Feedback>
+                <>
+                  <Feedback tone="info">
+                    Remarque : en passant de 1/3 à 2/3, on prend deux fois plus de groupes — et deux fois plus de
+                    ballons (4 puis 8). La fraction et la quantité avancent ensemble.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="fraction-quantite"
+                    variant="new"
+                    lead="Les deux gestes que tu viens d’enchaîner — faire les groupes, puis en emporter — forment une méthode."
+                  />
+                </>
               )}
             </div>
           ),
@@ -283,6 +292,12 @@ export default function Module05Quantite() {
           content: <ComparaisonMemeQuantite solved={compDone} onSolved={() => setCompDone(true)} />,
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Une fraction dit quelle part on prend. Elle peut aussi être le
+          RÉSULTAT d’un partage — c’est le module suivant.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

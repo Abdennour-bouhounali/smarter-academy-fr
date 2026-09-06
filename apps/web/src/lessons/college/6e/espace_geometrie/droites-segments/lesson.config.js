@@ -24,6 +24,16 @@ export const LESSON_BASE_PATH = '/courses/college/6e/espace_geometrie/droites-se
 export const LESSON_CONFIG = {
   id: 'droites-segments',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat) : le repérage dans
+  // le plan et le vocabulaire des figures — exactement ce que les cinq
+  // questions du module 0 mesurent, et rien d'autre. L'étendue, le segment,
+  // la droite, la demi-droite, la notation, l'alignement et le milieu sont
+  // tous établis dans la leçon même.
+  priorKnowledge: ['coordonnees', 'abscisse'],
   title: 'Droites et segments',
   description:
     'Distinguer droite, segment et demi-droite par leur étendue, identifier les extrémités, noter correctement et construire les objets demandés.',

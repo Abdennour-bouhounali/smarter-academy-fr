@@ -26,6 +26,20 @@ export const LESSON_BASE_PATH = '/courses/college/6e/espace_geometrie/symetrie';
 export const LESSON_CONFIG = {
   id: 'symetrie',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // Formalisation continue par la carte : chaque module pose ses briques et se
+  // termine sur l'état courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A) : exactement ce que les cinq
+  // questions du module 0 mesurent — se repérer par des coordonnées, calculer
+  // une distance sur une graduation, connaître le carré, et savoir qu'une
+  // distance à une droite se mesure perpendiculairement. La symétrie
+  // elle-même est entièrement établie par les briques de la leçon.
+  priorKnowledge: [
+    'coordonnees',
+    'abscisse',
+    'angle-droit',
+    'droites-perpendiculaires',
+  ],
   title: 'Symétrie',
   description:
     'Découvrir la symétrie axiale comme un pliage : construire le symétrique d’un point puis d’une figure, et comprendre ce qui se conserve.',

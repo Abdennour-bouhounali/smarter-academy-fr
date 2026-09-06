@@ -24,6 +24,17 @@ export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/durees';
 export const LESSON_CONFIG = {
   id: 'durees',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques au point de besoin et se termine sur l'état
+  // courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances
+  // avant la demande »), diagnostiquées une à une par le module 0 : le
+  // calcul avec les entiers (compléments à 60, soustraction avec retenue,
+  // multiples) et le rangement de nombres. La base 60 elle-même n'y figure
+  // PAS : c'est le concept central de la leçon, posé par une brique au
+  // Module 3 après le tour complet de la grande aiguille.
+  priorKnowledge: ['calcul-numerique', 'tables-multiplication', 'ordre-nombres'],
   title: 'Durées',
   description:
     'Lire l’heure, compter en base 60, convertir, comparer et calculer des durées entre deux instants — jusqu’à organiser une vraie journée de voyage.',

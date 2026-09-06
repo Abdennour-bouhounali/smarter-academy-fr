@@ -14,12 +14,15 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * Module 1.
  */
 const SKILLS = {
-  ordresGrandeur: { label: 'Ordres de grandeur', emoji: '📐' },
+  ordresGrandeur: { label: 'Unités et paquets de 10', emoji: '📐' },
 };
 
 const QUESTIONS = [
   {
     id: 'q1-m-cm',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['calcul-numerique'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: <>Combien y a-t-il de centimètres dans <strong className="font-mono">1 mètre</strong> ?</>,
@@ -30,6 +33,9 @@ const QUESTIONS = [
   },
   {
     id: 'q2-plus-grand',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['calcul-numerique'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: <>Lequel est le plus grand : <strong className="font-mono">1 km</strong> ou <strong className="font-mono">1 000 m</strong> ?</>,
@@ -40,6 +46,9 @@ const QUESTIONS = [
   },
   {
     id: 'q3-sens',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['calcul-numerique'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: (
@@ -54,6 +63,9 @@ const QUESTIONS = [
   },
   {
     id: 'q4-graduation',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['calcul-numerique'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: (
@@ -69,6 +81,9 @@ const QUESTIONS = [
   },
   {
     id: 'q5-dix',
+    // Ce que la question MESURE — jamais ce que la leçon enseigne
+    // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['multiplication-repetee'],
     skill: 'ordresGrandeur',
     points: 2,
     prompt: <>Combien de fois 10 faut-il pour obtenir 1 000 ?</>,

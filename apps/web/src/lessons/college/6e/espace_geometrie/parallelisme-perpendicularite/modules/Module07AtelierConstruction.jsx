@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Compass } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VirtualEquerre from '../components/VirtualEquerre';
@@ -102,15 +101,24 @@ export default function Module07AtelierConstruction() {
           subtitle: 'A est sur la droite d.',
           done: perpDone,
           content: (kit) => (
-            <Construction
-              target="perpendiculaire"
-              point={A}
-              done={perpDone}
-              onDone={() => setPerpDone(true)}
-              react={kit.react}
-              hint="Pose un côté de l’équerre le long de d, et amène son sommet sur A. Le bouton Tracer s’activera."
-              ariaLabel="Construis la perpendiculaire à d passant par A"
-            />
+            <div className="space-y-5">
+              <Construction
+                target="perpendiculaire"
+                point={A}
+                done={perpDone}
+                onDone={() => setPerpDone(true)}
+                react={kit.react}
+                hint="Pose un côté de l’équerre le long de d, et amène son sommet sur A. Le bouton Tracer s’activera."
+                ariaLabel="Construis la perpendiculaire à d passant par A"
+              />
+              {perpDone && (
+                <KnowledgeBrick
+                  id="unicite-perpendiculaire"
+                  variant="new"
+                  lead="Une fois l’équerre bien posée, il n’y avait qu’un seul trait possible."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -119,15 +127,24 @@ export default function Module07AtelierConstruction() {
           subtitle: 'B n’est pas sur la droite d.',
           done: parDone,
           content: (kit) => (
-            <Construction
-              target="parallele"
-              point={B}
-              done={parDone}
-              onDone={() => setParDone(true)}
-              react={kit.react}
-              hint="Même rituel : un côté le long de d, le sommet amené sous B. L’équerre garde l’inclinaison de d."
-              ariaLabel="Construis la parallèle à d passant par B"
-            />
+            <div className="space-y-5">
+              <Construction
+                target="parallele"
+                point={B}
+                done={parDone}
+                onDone={() => setParDone(true)}
+                react={kit.react}
+                hint="Même rituel : un côté le long de d, le sommet amené sous B. L’équerre garde l’inclinaison de d."
+                ariaLabel="Construis la parallèle à d passant par B"
+              />
+              {parDone && (
+                <KnowledgeBrick
+                  id="construire-parallele"
+                  variant="new"
+                  lead="Tu n’as pas visé « la même pente » à l’œil : c’est l’angle droit de l’équerre qui a fait le travail."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -144,6 +161,7 @@ export default function Module07AtelierConstruction() {
               ]}
               correct={0}
               cols={1}
+              requires={['construire-parallele', 'mem-deux-perp', 'droites-perpendiculaires', 'droites-paralleles']}
               explain="C’est la propriété rencontrée au module 4 : si d′ ⊥ c et d ⊥ c, alors d′ // d. Deux angles droits sur la même droite forcent la même inclinaison."
               explainWrong="Une perpendiculaire n’est jamais parallèle à la droite qu’elle croise. La bonne raison est la propriété du module 4 : perpendiculaires à une MÊME troisième droite ⇒ parallèles entre elles."
               solved={methodDone}
@@ -153,18 +171,10 @@ export default function Module07AtelierConstruction() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Compass className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Construire, ce n’est pas dessiner à l’œil : c’est poser un instrument qui{' '}
-            <strong className="text-white">garantit</strong> la propriété voulue. L’angle droit de l’équerre
-            fait tout le travail.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Une dernière question : à quoi sert vraiment une perpendiculaire,
+          dans la vie ?
+        </KnowledgeSnapshot>
       }
     />
   );

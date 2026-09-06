@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LineChart from '../components/LineChart';
@@ -80,9 +81,17 @@ export default function Module05Evolution() {
                 correct={1}
                 cols={1}
                 explain="Les deux graphiques contiennent exactement les mêmes nombres. Mais relier les points dessine le MOUVEMENT : on voit la chute du lundi au mardi, puis la remontée."
+                requires={['hauteur-est-nombre', 'graphique-outil']}
                 solved={relierDone}
                 onAnswered={() => setRelierDone(true)}
               />
+              {relierDone && (
+                <KnowledgeBrick
+                  id="evolution-hausse-baisse"
+                  variant="new"
+                  lead="Ce mouvement que la ligne rend visible se décrit avec deux mots."
+                />
+              )}
             </div>
           ),
         },
@@ -112,6 +121,7 @@ export default function Module05Evolution() {
                   <strong>baisse</strong> — on compare toujours à la valeur PRÉCÉDENTE.
                 </Feedback>
               )}
+              requires={['evolution-hausse-baisse', 'comparer-entiers']}
               solved={sensDone}
               onAnswered={() => setSensDone(true)}
             />
@@ -130,6 +140,14 @@ export default function Module05Evolution() {
                 colorByVariation
                 highlightIndex={hausseDone ? 3 : null}
               />
+              {/* La distinction est posée AVANT la question : sans elle, l'élève
+                  peut confondre « le jour le plus chaud » et « la plus forte
+                  montée », qui coïncident ici et le tromperaient ailleurs. */}
+              <KnowledgeBrick
+                id="hauteur-vs-pente"
+                variant="new"
+                lead="Sur cette ligne, deux choses se lisent — et ce ne sont pas les mêmes."
+              />
               <TapQuestion
                 prompt="Entre quels jours la température a-t-elle le plus augmenté ?"
                 options={['Mardi → Mercredi (+6)', 'Mercredi → Jeudi (+7)', 'Jeudi → Vendredi']}
@@ -137,6 +155,7 @@ export default function Module05Evolution() {
                 cols={1}
                 explain={`De mercredi à jeudi : +${VARS[BIGGEST_RISE].delta} °C, c’est le segment le plus raide. Remarque bien : le jeudi est le jour le plus CHAUD, et c’est aussi là qu’arrive la plus forte hausse — mais ce sont deux questions différentes.`}
                 explainWrong={`Mardi → mercredi monte de ${VARS[1].delta} °C, mercredi → jeudi de ${VARS[BIGGEST_RISE].delta} °C : c’est ce second saut le plus grand. Jeudi → vendredi descend, ce n’est pas une hausse du tout.`}
+                requires={['hauteur-vs-pente', 'evolution-hausse-baisse', 'ecart-chiffre']}
                 solved={hausseDone}
                 onAnswered={() => setHausseDone(true)}
               />
@@ -159,6 +178,11 @@ export default function Module05Evolution() {
                 On a mesuré chaque semaine la hauteur d'un plant de haricot.
               </p>
               <LineChart series={CROISSANTE} title="Hauteur du plant (cm)" axisLabel="cm" colorByVariation />
+              <KnowledgeBrick
+                id="interpreter-sans-inventer"
+                variant="new"
+                lead="Avant de répondre, une limite qu’on oublie souvent."
+              />
               <TapQuestion
                 prompt="Que peut-on affirmer À COUP SÛR d’après ce graphique ?"
                 options={[
@@ -170,6 +194,7 @@ export default function Module05Evolution() {
                 cols={1}
                 explain="La ligne monte à chaque étape : la croissance est certaine, elle est mesurée. En revanche l’arrosage n’est pas dans les données, et l’avenir n’y est pas non plus — un graphique dit ce qui a été relevé, pas la cause ni la suite."
                 explainWrong="Un graphique ne montre que ce qui a été MESURÉ. L’arrosage n’a pas été relevé, et la semaine prochaine n’existe pas encore sur le dessin. Seule la croissance semaine après semaine est lisible."
+                requires={['interpreter-sans-inventer', 'evolution-hausse-baisse']}
                 solved={interpDone}
                 onAnswered={() => setInterpDone(true)}
               />
@@ -179,12 +204,10 @@ export default function Module05Evolution() {
       ]}
       footer={
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
-          <div className="bg-gradient-to-br from-amber-500 to-orange-600 text-white rounded-2xl p-5 text-center space-y-1">
-            <p className="text-xs uppercase tracking-wide text-amber-100 font-mono font-bold">À retenir</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">La HAUTEUR d’un point = la valeur</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">La PENTE d’un segment = la variation</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">Ça monte / ça descend se lit d’un trait</p>
-          </div>
+          <KnowledgeSnapshot moduleNumber={5}>
+            <strong>La suite.</strong> Tu sais faire parler une ligne — et t'arrêter là où les données
+            s'arrêtent. Au prochain module, trois graphiques essaieront de te mentir.
+          </KnowledgeSnapshot>
           <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
             <TrendingUp className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
             <p className="text-sm text-slate-300">

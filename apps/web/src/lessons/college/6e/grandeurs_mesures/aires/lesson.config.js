@@ -23,6 +23,16 @@ export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/aires';
 export const LESSON_CONFIG = {
   id: 'aires',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques au point de besoin et se termine sur l'état
+  // courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances
+  // avant la demande ») : exactement ce que les cinq questions du module 0
+  // mesurent — les unités de longueur et la multiplication. Les deux mots de
+  // la leçon (aire, périmètre) n'y figurent PAS : ils sont de niveau 6e, donc
+  // matière de l'élève, et ce sont des briques qui les posent au Module 1.
+  priorKnowledge: ['calcul-numerique', 'tables-multiplication'],
   title: 'Aires',
   description:
     'Construire le sens de l’aire à partir du geste : recouvrir, découper, recomposer — puis compter, calculer et convertir des surfaces dans des situations concrètes.',

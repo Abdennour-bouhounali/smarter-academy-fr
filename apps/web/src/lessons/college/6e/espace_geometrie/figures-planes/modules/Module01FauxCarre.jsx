@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ScanSearch } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ShapeLab from '../components/ShapeLab';
@@ -87,6 +86,7 @@ export default function Module01FauxCarre() {
               cols={3}
               explain="C’est la figure A. La B a un côté plus long de 8 : sur un dessin, ça ne se voit pas — mais ça suffit à ce qu’elle ne soit pas un carré."
               explainWrong="Impossible de trancher à l’œil : c’est exactement le piège. Affichons les mesures à l’étape suivante."
+              requires={[]}
               solved={predictDone}
               onAnswered={() => setPredictDone(true)}
             />
@@ -129,6 +129,14 @@ export default function Module01FauxCarre() {
                 </button>
               )}
 
+              {measureDone && (
+                <KnowledgeBrick
+                  id="propriete-decide"
+                  variant="new"
+                  lead="Deux figures identiques à l’œil, et un seul verdict après mesure."
+                />
+              )}
+
               {revealed && (
                 <Feedback tone={measureDone ? 'ok' : 'info'}>
                   La figure A a ses quatre côtés égaux et ses quatre angles droits : c’est un{' '}
@@ -155,6 +163,7 @@ export default function Module01FauxCarre() {
               ]}
               correct={0}
               cols={1}
+              requires={['propriete-decide']}
               explain="Une figure porte un nom parce qu’elle vérifie des propriétés précises — jamais parce qu’elle « fait penser à ». C’est tout le programme de cette leçon."
               explainWrong="La figure B ressemblait parfaitement à un carré, et n’en était pas un. L’allure ne prouve rien : seules les mesures décident."
               solved={ruleDone}
@@ -164,17 +173,10 @@ export default function Module01FauxCarre() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <ScanSearch className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Une figure n’est pas un carré parce qu’elle en a l’air : elle l’est parce qu’elle{' '}
-            <strong className="text-white">vérifie des propriétés</strong>. Reste à savoir lesquelles.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Reste à savoir <em>quelles</em> mesures regarder — et comment on
+          les appelle.
+        </KnowledgeSnapshot>
       }
     />
   );

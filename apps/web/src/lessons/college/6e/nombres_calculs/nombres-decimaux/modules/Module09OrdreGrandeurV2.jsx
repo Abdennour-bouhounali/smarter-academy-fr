@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -42,6 +43,7 @@ function ArrondiItem({ item, index, total, solved, onSolved }) {
         options={[String(low), String(high)]}
         correct={correct}
         cols={2}
+        requires={['encadrer-decimal', 'comparer-decimaux']}
         explain={item.explain}
         solved={solved}
         onAnswered={() => onSolved?.()}
@@ -74,6 +76,7 @@ function EstimationItem({ item, index, total, estimDone, onEstim, solved, onSolv
           options={item.estimOptions}
           correct={item.estimCorrect}
           cols={4}
+          requires={['arrondi-entier']}
           explain={item.explainEstim}
           solved={estimDone}
           onAnswered={() => onEstim?.()}
@@ -89,6 +92,7 @@ function EstimationItem({ item, index, total, estimDone, onEstim, solved, onSolv
           <NumericQuestion
             expected={item.exact}
             parse={parseDec}
+            requires={['colonnes-decimales', 'deux-zeros']}
             explain={item.explainExact}
             explainFor={() => (
               <>Aligne les virgules et additionne colonne par colonne. Ton résultat doit rester proche de <strong>{item.estimation}</strong> — sinon, c'est qu'il y a une erreur.</>
@@ -150,10 +154,11 @@ export default function Module09OrdreGrandeur() {
                 ) : null
               )}
               {s1 && (
-                <Feedback tone="info">
-                  Le repère utile : la <strong>moitié de l'intervalle</strong>. Au-dessus, on est plus proche de
-                  l'entier du haut ; en dessous, de celui du bas.
-                </Feedback>
+                <KnowledgeBrick
+                  id="arrondi-entier"
+                  variant="new"
+                  lead="Quatre fois, tu as choisi l'entier le plus proche : ce choix porte un nom, et il a un repère."
+                />
               )}
             </div>
           ),
@@ -179,6 +184,15 @@ export default function Module09OrdreGrandeur() {
                   />
                 ) : null
               )}
+              {/* L'élève vient d'estimer puis de calculer deux fois : le mot
+                  désigne maintenant un geste qu'il a réellement fait. */}
+              {s2 && (
+                <KnowledgeBrick
+                  id="ordre-grandeur-decimal"
+                  variant="new"
+                  lead="Ce que tu as annoncé avant de calculer, deux fois de suite, porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -196,6 +210,7 @@ export default function Module09OrdreGrandeur() {
                     options={item.options}
                     correct={item.correct}
                     cols={2}
+                    requires={['ordre-grandeur-decimal', 'arrondi-entier']}
                     explain={item.explain}
                     solved={raisons.includes(i)}
                     onAnswered={() => setRaisons((d) => (d.includes(i) ? d : [...d, i]))}
@@ -212,6 +227,12 @@ export default function Module09OrdreGrandeur() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={9}>
+          <strong>La suite.</strong> Ta carte est complète. Au module suivant, tu ne rencontres
+          plus rien de neuf : tu choisis toi-même quoi en sortir, problème par problème.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

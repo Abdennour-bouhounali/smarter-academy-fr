@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import GroupBuilder from '../../../../../common/components/GroupBuilder';
 import BarModel from '../../../../../common/components/BarModel';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
@@ -107,6 +108,7 @@ export default function Module04Modeliser() {
           content: (
             <NumericQuestion
               prompt="Luc possède 35 €. Il dépense 12 €. Que représente le schéma ?"
+              requires={['construire-avant-calculer']}
               above={
                 <BarModel
                   bars={[{ label: 'Argent de Luc', segments: [{ value: 12, tone: 'rose', text: '−12 €', removed: true }, { value: 23, tone: 'sky', text: '?' }] }]}
@@ -128,7 +130,9 @@ export default function Module04Modeliser() {
           title: 'Choisir la bonne représentation',
           done: s3,
           content: (
+            <div className="space-y-5">
             <BatchChoiceQuestion
+              requires={['construire-avant-calculer']}
               intro={
                 <p className="text-sm font-semibold text-slate-700">
                   Pour chaque situation, quelle représentation choisirais-tu ?
@@ -145,9 +149,23 @@ export default function Module04Modeliser() {
               solved={s3}
               onAnswered={() => setS3(true)}
             />
+              {s3 && (
+                <KnowledgeBrick
+                  id="choisir-un-modele"
+                  variant="new"
+                  lead="Trois situations, trois dessins différents : à chaque fois, celui qui rendait la relation visible."
+                />
+              )}
+            </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Un modèle ne dicte pas un chemin unique : plusieurs façons
+          de chercher peuvent être bonnes.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

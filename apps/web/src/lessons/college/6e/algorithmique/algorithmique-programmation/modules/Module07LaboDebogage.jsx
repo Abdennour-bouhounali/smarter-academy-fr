@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Bug, FlaskConical } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProgramLab from '../components/ProgramLab';
@@ -215,6 +216,11 @@ export default function Module07LaboDebogage() {
                   À toi de traduire cette phrase en programme.
                 </p>
               </div>
+              <KnowledgeBrick
+                id="traduire-strategie"
+                variant="new"
+                lead="Une page blanche et cinq lignes de français : voilà comment on passe de l’un à l’autre."
+              />
               <Investigation
                 world={W3}
                 initial={[]}
@@ -246,12 +252,18 @@ export default function Module07LaboDebogage() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <FlaskConical className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Tu sais tester, observer, corriger et traduire une stratégie.{' '}
-            <strong className="text-white">Tu es prêt pour la mission finale.</strong>
-          </p>
+        <div className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={7}>
+            <strong>La suite.</strong> Ta carte est complète : il ne reste qu'à la mettre à l'épreuve
+            sur dix questions, dont aucune n'apportera de notion nouvelle.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <FlaskConical className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Tu sais tester, observer, corriger et traduire une stratégie.{' '}
+              <strong className="text-white">Tu es prêt pour la mission finale.</strong>
+            </p>
+          </div>
         </div>
       }
     />

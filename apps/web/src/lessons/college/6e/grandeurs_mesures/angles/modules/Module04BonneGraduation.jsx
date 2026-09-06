@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { AlertTriangle } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Protractor from '../components/Protractor';
@@ -101,15 +100,27 @@ export default function Module04BonneGraduation() {
           title: 'Le piège en direct',
           done: trapDone,
           content: (kit) => (
-            <TrapRound
-              react={kit.react}
-              angle={TRAP}
-              zeroSide="right"
-              index={1}
-              intro="Le second côté sort sur une graduation qui affiche 50 ET 130. Tape-la, puis choisis le nombre que tu penses être le bon."
-              solved={trapDone}
-              onSolved={() => setTrapDone(true)}
-            />
+            <div className="space-y-5">
+              {/* L'erreur est VÉCUE avant d'être expliquée : c'est le
+                  moment d'erreur pédagogique de la leçon. La règle n'arrive
+                  qu'après, quand l'élève a vu les deux nombres de ses yeux. */}
+              <TrapRound
+                react={kit.react}
+                angle={TRAP}
+                zeroSide="right"
+                index={1}
+                intro="Le second côté sort sur une graduation qui affiche 50 ET 130. Tape-la, puis choisis le nombre que tu penses être le bon."
+                solved={trapDone}
+                onSolved={() => setTrapDone(true)}
+              />
+              {trapDone && (
+                <KnowledgeBrick
+                  id="deux-graduations"
+                  variant="new"
+                  lead="Ces deux nombres sur une même graduation ne sont pas une erreur de fabrication : ils ont une raison d’être."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -117,15 +128,28 @@ export default function Module04BonneGraduation() {
           title: 'Le réflexe qui sauve',
           done: reflexeDone,
           content: (
-            <TapQuestion
-              prompt={REFLEXE_Q.q}
-              options={REFLEXE_Q.options}
-              correct={REFLEXE_Q.correct}
-              cols={1}
-              explain={REFLEXE_Q.explain}
-              solved={reflexeDone}
-              onAnswered={() => setReflexeDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={REFLEXE_Q.q}
+                options={REFLEXE_Q.options}
+                correct={REFLEXE_Q.correct}
+                cols={1}
+                explain={REFLEXE_Q.explain}
+                requires={['angle-droit', 'classes-angles', 'deux-graduations']}
+                solved={reflexeDone}
+                onAnswered={() => setReflexeDone(true)}
+              />
+              {/* Le raisonnement vient d'être exécuté une fois : la brique
+                  en fait une procédure réutilisable, et c'est elle que les
+                  modules 5, 6 et 7 exigeront. */}
+              {reflexeDone && (
+                <KnowledgeBrick
+                  id="reflexe-classer"
+                  variant="new"
+                  lead="Ce raisonnement en trois temps élimine la mauvaise graduation à tous les coups."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -167,13 +191,10 @@ export default function Module04BonneGraduation() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <AlertTriangle className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Deux graduations, une seule bonne : celle qui part du zéro posé sur le côté. En cas de doute, classe
-            d'abord (aigu &lt; 90° &lt; obtus) — la mauvaise réponse s'élimine toute seule.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais mesurer sans te faire piéger. Reste le chemin
+          inverse : partir d'une mesure et tracer l'angle.
+        </KnowledgeSnapshot>
       }
     />
   );

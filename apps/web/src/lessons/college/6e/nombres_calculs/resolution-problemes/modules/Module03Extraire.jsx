@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, useKit } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick, useKit } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import InfoSorter from '../../../../../common/components/InfoSorter';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -57,6 +58,7 @@ function TriFeuilles({ react, sorted, setSorted, solved, onAnswered }) {
         <div className="border-t border-slate-100 pt-4">
           <NumericQuestion
             prompt="Maintenant, calcule le nombre de feuilles."
+            requires={['trier-les-donnees']}
             expected={84}
             explain="28 × 3 = 84 feuilles."
             explainFor={() => 'Utilise seulement les deux informations utiles : 28 élèves, 3 feuilles chacun.'}
@@ -115,7 +117,20 @@ export default function Module03Extraire() {
           num: 1,
           title: 'Trie les informations : les cahiers',
           done: s1,
-          content: <Step1 solved={s1} onSolved={() => setS1(true)} />,
+          content: (
+            <div className="space-y-5">
+              <Step1 solved={s1} onSolved={() => setS1(true)} />
+              {/* La méthode est nommée quand le tri vient d'être fait : les
+                  cartes utiles et inutiles sont encore triées à l'écran. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="trier-les-donnees"
+                  variant="new"
+                  lead="Les 12 classes étaient vraies, et pourtant tu les as mises de côté : c'est la question qui a décidé."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -128,18 +143,34 @@ export default function Module03Extraire() {
           title: 'Et si une information manque ?',
           done: s3,
           content: (
-            <TapQuestion
-              prompt={MANQUE_Q.q}
-              options={MANQUE_Q.options}
-              correct={MANQUE_Q.correct}
-              cols={1}
-              explain={MANQUE_Q.explain}
-              solved={s3}
-              onAnswered={() => setS3(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={MANQUE_Q.q}
+                requires={['trier-les-donnees']}
+                options={MANQUE_Q.options}
+                correct={MANQUE_Q.correct}
+                cols={1}
+                explain={MANQUE_Q.explain}
+                solved={s3}
+                onAnswered={() => setS3(true)}
+              />
+              {s3 && (
+                <KnowledgeBrick
+                  id="information-manquante"
+                  variant="new"
+                  lead="Aucun calcul ne pouvait sauver cet énoncé — et le dire était la bonne réponse."
+                />
+              )}
+            </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Les bonnes données sont en main. On va apprendre à les
+          dessiner pour voir la relation qui les lie.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import { Target } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RobotWorld, { WorldReadout } from '../components/RobotWorld';
@@ -315,7 +316,16 @@ export default function Module02UneInstruction() {
           subtitle: 'Attention au piège.',
           done: turnDone,
           content: (kit) => (
-            <TurnLab solved={turnDone} onSolved={() => setTurnDone(true)} react={kit.react} />
+            <div className="space-y-4">
+              <TurnLab solved={turnDone} onSolved={() => setTurnDone(true)} react={kit.react} />
+              {turnDone && (
+                <KnowledgeBrick
+                  id="effet-instruction"
+                  variant="new"
+                  lead="Deux prédictions vérifiées, deux effets bien distincts."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -335,6 +345,7 @@ export default function Module02UneInstruction() {
               solved={quizDone}
               explain="🎯 Oui ! TOURNER ne déplace jamais ROBI. Deux TOURNER → le font faire un demi-tour sur place : même case, direction opposée."
               explainWrong="Attention : TOURNER ne fait que pivoter ROBI sur sa case. Aucun déplacement. Seul AVANCER change la case — c'est la confusion la plus fréquente."
+              requires={['effet-instruction', 'instruction', 'reperage-quadrillage']}
               onAnswered={() => setQuizDone(true)}
             />
           ),
@@ -350,12 +361,11 @@ export default function Module02UneInstruction() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <p className="text-sm text-slate-300">
-            Tu connais maintenant l’effet de chaque instruction.{' '}
-            <strong className="text-white">AVANCER change la case, TOURNER change la direction.</strong>{' '}
-            Prochaine étape : les enchaîner pour aller plus loin.
-          </p>
+        <div className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={2}>
+            <strong>La suite.</strong> Tu connais l'effet de chaque instruction. Prochaine étape : les
+            enchaîner pour aller plus loin qu'une seule case.
+          </KnowledgeSnapshot>
         </div>
       }
     />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Bus } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import EstimateInput from '../components/EstimateInput';
 
@@ -59,6 +60,7 @@ function Probleme({ icone: Icone, enonce, etapes, flags, setFlag }) {
 
       <TapQuestion
         prompt={<><EtapeTag n={1} />{etapes.operation.q}</>}
+        requires={['demarche-estimation']}
         options={etapes.operation.options}
         correct={etapes.operation.correct}
         cols={3}
@@ -85,6 +87,7 @@ function Probleme({ icone: Icone, enonce, etapes, flags, setFlag }) {
       {s2 && (
         <div className="border-t border-slate-100 pt-4">
           <NumericQuestion
+            requires={['demarche-estimation']}
             prompt={<><EtapeTag n={3} />{etapes.exact.q}</>}
             suffix={etapes.exact.unit}
             expected={etapes.exact.answer}
@@ -99,6 +102,7 @@ function Probleme({ icone: Icone, enonce, etapes, flags, setFlag }) {
         <div className="border-t border-slate-100 pt-4">
           <TapQuestion
             prompt={<><EtapeTag n={4} />{etapes.verdict.q}</>}
+            requires={['plausible-suspect-impossible']}
             options={etapes.verdict.options}
             correct={etapes.verdict.correct}
             cols={1}
@@ -185,7 +189,19 @@ export default function Module08Problemes() {
           num: 1,
           title: "Problème 1 — Les cahiers de l'école",
           done: p1Done,
-          content: <Probleme icone={ShoppingCart} enonce={CAHIERS.enonce} etapes={CAHIERS} flags={p1Flags} setFlag={setFlag(setP1Flags)} />,
+          content: (
+            <div className="space-y-5">
+              {/* Le bandeau montrait les quatre temps sans jamais dire
+                  pourquoi ils sont dans cet ordre. La brique le dit, avant
+                  que l'élève ne les enchaîne. */}
+              <KnowledgeBrick
+                id="demarche-estimation"
+                variant="new"
+                lead="Tous tes réflexes vont servir d'un coup. Voici l'ordre dans lequel les employer."
+              />
+              <Probleme icone={ShoppingCart} enonce={CAHIERS.enonce} etapes={CAHIERS} flags={p1Flags} setFlag={setFlag(setP1Flags)} />
+            </div>
+          ),
         },
         {
           num: 2,
@@ -194,6 +210,12 @@ export default function Module08Problemes() {
           content: <Probleme icone={Bus} enonce={BUS.enonce} etapes={BUS} flags={p2Flags} setFlag={setFlag(setP2Flags)} />,
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={8}>
+          <strong>La suite.</strong> Dernière question, et pas la plus simple : jusqu'où faut-il
+          être précis ?
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

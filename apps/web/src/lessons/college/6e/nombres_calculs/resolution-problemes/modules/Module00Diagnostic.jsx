@@ -23,6 +23,9 @@ const QUESTIONS = [
     id: 'q1-division',
     skill: 'operations',
     points: 2,
+    // Module 0 MESURE des prérequis : ses requires ne citent que des ids de
+    // priorKnowledge (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['tables-multiplication'],
     prompt: <>Combien font <strong className="font-mono">24 ÷ 6</strong> ?</>,
     options: ['3', '4', '6'],
     cols: 3,
@@ -33,6 +36,7 @@ const QUESTIONS = [
     id: 'q2-multiplication',
     skill: 'operations',
     points: 2,
+    requires: ['tables-multiplication'],
     prompt: <>Combien font <strong className="font-mono">7 × 8</strong> ?</>,
     options: ['54', '56', '64'],
     cols: 3,
@@ -43,6 +47,7 @@ const QUESTIONS = [
     id: 'q3-decimal',
     skill: 'operations',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: <>Combien font <strong className="font-mono">3 × 4,50</strong> ?</>,
     options: ['12', '13,50', '14'],
     cols: 3,
@@ -53,6 +58,7 @@ const QUESTIONS = [
     id: 'q4-question',
     skill: 'lecture',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: (
       <>
         « Un panier contient 14 pommes et 9 poires. Combien de fruits contient-il en tout ? » Que cherche-t-on
@@ -68,6 +74,7 @@ const QUESTIONS = [
     id: 'q5-info-utile',
     skill: 'lecture',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: (
       <>
         « Léo a 15 cartes. Il est né en juillet. Zoé a 9 cartes. Combien de cartes ont-ils en tout ? » Quelle

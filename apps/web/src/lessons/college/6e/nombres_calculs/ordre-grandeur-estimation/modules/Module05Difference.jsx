@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import EstimateInput from '../components/EstimateInput';
@@ -62,6 +63,7 @@ export default function Module05Difference() {
           title: 'Vois la distance',
           done: s1,
           content: (
+            <div className="space-y-5">
             <TapQuestion
               above={
                 <div className="space-y-3">
@@ -86,6 +88,7 @@ export default function Module05Difference() {
                 </div>
               }
               prompt={DISTANCE_Q.q}
+              requires={['arrondi', 'ordre-de-grandeur']}
               options={DISTANCE_Q.options}
               correct={DISTANCE_Q.correct}
               cols={3}
@@ -93,6 +96,16 @@ export default function Module05Difference() {
               solved={distDone}
               onAnswered={() => setDistDone(true)}
             />
+              {/* L'écart vient d'être lu à l'œil sur la droite graduée :
+                  c'est l'instant où « différence = distance » a un sens. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="difference-distance"
+                  variant="new"
+                  lead="Les 500 que tu as lus entre les deux repères, sans poser la soustraction."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -129,6 +142,7 @@ export default function Module05Difference() {
           content: (
             <TapQuestion
               prompt={CHOIX_Q.q}
+              requires={['difference-distance']}
               options={CHOIX_Q.options}
               correct={CHOIX_Q.correct}
               cols={2}
@@ -139,6 +153,12 @@ export default function Module05Difference() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Reste la multiplication — celle où une erreur d'un seul zéro
+          coûte le plus cher.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

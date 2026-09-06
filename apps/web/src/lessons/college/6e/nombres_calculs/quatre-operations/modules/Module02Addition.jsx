@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import { parseDec } from '@smarter-academy/core';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
-import ConceptCard from '../../../../../common/components/ConceptCard';
-import MathText from '../../../../../common/components/MathText';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -450,7 +449,7 @@ export default function Module02Addition() {
       moduleNumber={2}
       moduleTitle="Additionner : réunir et augmenter"
       moduleSubtitle="Manipuler des objets, avancer sur la droite graduée, maîtriser les retenues."
-      estimatedTime="12 min"
+      estimatedTime="8 min"
       brief={{
         tag: '➕ Découverte',
         title: "Qu'est-ce qu'additionner ?",
@@ -471,13 +470,24 @@ export default function Module02Addition() {
           subtitle: 'Transfère les billes bleues une par une pour réunir les deux groupes.',
           done: manipObjectsDone,
           content: (kit) => (
-            <ManipObjects
-              done={manipObjectsDone}
-              onSolved={() => {
-                kit.react(true);
-                setManipObjectsDone(true);
-              }}
-            />
+            <div className="space-y-5">
+              <ManipObjects
+                done={manipObjectsDone}
+                onSolved={() => {
+                  kit.react(true);
+                  setManipObjectsDone(true);
+                }}
+              />
+              {/* Les deux mots arrivent quand les deux tas n'en font plus qu'un :
+                  le geste vient de leur donner un sens. */}
+              {manipObjectsDone && (
+                <KnowledgeBrick
+                  id="termes-somme"
+                  variant="new"
+                  lead="Les deux tas que tu as réunis, et le tas final : chacun porte un nom."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -509,26 +519,14 @@ export default function Module02Addition() {
                   setPlaceValueDone(true);
                 }}
               />
+              {/* La retenue vient d'être manipulée colonne par colonne :
+                  c'est ici, et pas dans un encadré de fin, qu'on la nomme. */}
               {placeValueDone && (
-                <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-                  <ConceptCard label="L'addition" emoji="➕" color="emerald">
-                    <p>
-                      Dans une addition <MathText>{'$a + b = s$'}</MathText>, on appelle{' '}
-                      <strong className="text-emerald-700">a</strong> et{' '}
-                      <strong className="text-emerald-700">b</strong> les <strong>termes</strong>, et{' '}
-                      <strong className="text-emerald-700">s</strong> la <strong>somme</strong>.
-                    </p>
-                    <p className="mt-2">
-                      Pour poser une addition : <em>aligner les chiffres de même rang</em> (virgules sous les
-                      virgules), puis additionner colonne par colonne en gérant les échanges (10 unités = 1
-                      dizaine).
-                    </p>
-                    <div className="mt-3 bg-white rounded-xl border border-emerald-100 p-3 text-sm">
-                      <strong>À retenir :</strong> Avant de calculer, estime l'ordre de grandeur.
-                      38,4 + 7,25 ≈ 38 + 7 = 45 → le résultat 45,65 est cohérent ✓
-                    </div>
-                  </ConceptCard>
-                </motion.div>
+                <KnowledgeBrick
+                  id="retenue"
+                  variant="new"
+                  lead="La colonne des unités a débordé, et tu as vu où partait le trop-plein."
+                />
               )}
             </div>
           ),
@@ -545,6 +543,7 @@ export default function Module02Addition() {
                   <NumericQuestion
                     key={ex.expr}
                     prompt={`${ex.expr} = ?`}
+                    requires={['termes-somme', 'retenue']}
                     expected={ex.answer}
                     parse={parseDec}
                     explain={ex.hint}
@@ -558,17 +557,10 @@ export default function Module02Addition() {
         },
       ]}
       footer={
-        <AnimatePresence>
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-2xl p-6 text-center space-y-2"
-          >
-            <div className="text-3xl">🏅</div>
-            <div className="text-xl font-space font-bold">Addition maîtrisée !</div>
-            <p className="text-emerald-100 text-sm">Tu peux maintenant passer à la soustraction.</p>
-          </motion.div>
-        </AnimatePresence>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Réunir est fait. On passe à l'opération qui va dans l'autre
+          sens — et qui, elle, raconte trois histoires différentes.
+        </KnowledgeSnapshot>
       }
     />
   );

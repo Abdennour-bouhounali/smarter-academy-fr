@@ -2,11 +2,129 @@
   "lesson": "triangles-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "angle-droit",
+    "notation-segment",
+    "droites-paralleles"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "inegalite-triangulaire",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module01TroisPoutres.jsx",
+        "line": 73,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "somme-des-angles",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module03SommeDesAngles.jsx",
+        "line": 77,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "triangle-determine",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module04ConstruireSousContrainte.jsx",
+        "line": 89,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mediatrice-sommet-isocele",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module04ConstruireSousContrainte.jsx",
+        "line": 114,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "droite-des-milieux",
+      "type": "formules",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module07ConjecturerProuver.jsx",
+        "line": 108,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "conjecturer-puis-prouver",
+      "type": "concepts",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module07ConjecturerProuver.jsx",
+        "line": 177,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "triangles-particuliers",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module02ChangeDeNom.jsx",
+        "line": 84,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "methode-calculer-angle",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module05CalculerSansMesurer.jsx",
+        "line": 40,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "justifier",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module06Justifier.jsx",
+        "line": 79,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-consequences-180",
+      "type": "memoriser",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module03SommeDesAngles.jsx",
+        "line": 119,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "tr-d1-angle-droit",
@@ -15,8 +133,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module00Diagnostic.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +148,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module00Diagnostic.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 32,
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +164,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 43,
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,13 +180,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module00Diagnostic.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "intervalle-crochets"
+      "line": 54,
+      "requires": [
+        "notation-segment"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "notation-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "tr-d5-paralleles",
@@ -64,9 +196,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module00Diagnostic.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 65,
+      "requires": [
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -76,9 +212,13 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module01TroisPoutres.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 101,
+      "requires": [
+        "inegalite-triangulaire"
+      ],
+      "prerequisiteStatus": {
+        "inegalite-triangulaire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -88,9 +228,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module01TroisPoutres.jsx",
-      "line": 141,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 150,
+      "requires": [
+        "inegalite-triangulaire"
+      ],
+      "prerequisiteStatus": {
+        "inegalite-triangulaire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -100,9 +244,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module02ChangeDeNom.jsx",
-      "line": 168,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 177,
+      "requires": [
+        "triangles-particuliers"
+      ],
+      "prerequisiteStatus": {
+        "triangles-particuliers": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -112,9 +260,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module03SommeDesAngles.jsx",
-      "line": 97,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "somme-des-angles"
+      ],
+      "prerequisiteStatus": {
+        "somme-des-angles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +276,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module03SommeDesAngles.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "somme-des-angles",
+        "mem-consequences-180"
+      ],
+      "prerequisiteStatus": {
+        "somme-des-angles": "established@M3",
+        "mem-consequences-180": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +294,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module04ConstruireSousContrainte.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 164,
+      "requires": [
+        "triangle-determine",
+        "mediatrice-sommet-isocele"
+      ],
+      "prerequisiteStatus": {
+        "triangle-determine": "established@M4",
+        "mediatrice-sommet-isocele": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,9 +312,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module05CalculerSansMesurer.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 56,
+      "requires": [
+        "somme-des-angles",
+        "mem-consequences-180"
+      ],
+      "prerequisiteStatus": {
+        "somme-des-angles": "established@M3",
+        "mem-consequences-180": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -160,9 +330,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module05CalculerSansMesurer.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 91,
+      "requires": [
+        "methode-calculer-angle",
+        "triangles-particuliers"
+      ],
+      "prerequisiteStatus": {
+        "methode-calculer-angle": "established@M5",
+        "triangles-particuliers": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -172,9 +348,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module05CalculerSansMesurer.jsx",
-      "line": 107,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "methode-calculer-angle",
+        "mem-consequences-180"
+      ],
+      "prerequisiteStatus": {
+        "methode-calculer-angle": "established@M5",
+        "mem-consequences-180": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -184,9 +366,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module06Justifier.jsx",
-      "line": 124,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 127,
+      "requires": [
+        "justifier",
+        "somme-des-angles"
+      ],
+      "prerequisiteStatus": {
+        "justifier": "established@M6",
+        "somme-des-angles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -196,9 +384,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module07ConjecturerProuver.jsx",
-      "line": 122,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 130,
+      "requires": [
+        "droite-des-milieux"
+      ],
+      "prerequisiteStatus": {
+        "droite-des-milieux": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -208,9 +400,13 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module07ConjecturerProuver.jsx",
-      "line": 152,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 161,
+      "requires": [
+        "droite-des-milieux"
+      ],
+      "prerequisiteStatus": {
+        "droite-des-milieux": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -220,9 +416,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 29,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 30,
+      "requires": [
+        "inegalite-triangulaire"
+      ],
+      "prerequisiteStatus": {
+        "inegalite-triangulaire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -232,9 +432,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 44,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "triangles-particuliers"
+      ],
+      "prerequisiteStatus": {
+        "triangles-particuliers": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -244,9 +448,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 54,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "triangles-particuliers"
+      ],
+      "prerequisiteStatus": {
+        "triangles-particuliers": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -256,9 +464,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 73,
+      "requires": [
+        "somme-des-angles",
+        "mem-consequences-180"
+      ],
+      "prerequisiteStatus": {
+        "somme-des-angles": "established@M3",
+        "mem-consequences-180": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -268,9 +482,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 84,
+      "requires": [
+        "somme-des-angles",
+        "mem-consequences-180"
+      ],
+      "prerequisiteStatus": {
+        "somme-des-angles": "established@M3",
+        "mem-consequences-180": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -280,9 +500,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "triangles-particuliers",
+        "mem-consequences-180"
+      ],
+      "prerequisiteStatus": {
+        "triangles-particuliers": "established@M2",
+        "mem-consequences-180": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -292,9 +518,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 106,
+      "requires": [
+        "triangle-determine",
+        "mediatrice-sommet-isocele"
+      ],
+      "prerequisiteStatus": {
+        "triangle-determine": "established@M4",
+        "mediatrice-sommet-isocele": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -304,9 +536,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 114,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "justifier"
+      ],
+      "prerequisiteStatus": {
+        "justifier": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -316,9 +552,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 129,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 138,
+      "requires": [
+        "droite-des-milieux"
+      ],
+      "prerequisiteStatus": {
+        "droite-des-milieux": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -328,25 +568,16 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module08MissionFinale.jsx",
-      "line": 139,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 149,
+      "requires": [
+        "droite-des-milieux"
+      ],
+      "prerequisiteStatus": {
+        "droite-des-milieux": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« crochets d'intervalle » first appears at diag.explain (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/espace_geometrie/triangles-3e/modules/Module00Diagnostic.jsx",
-      "line": 59,
-      "module": 0,
-      "step": null,
-      "term": "intervalle-crochets",
-      "questionId": "tr-d4-segment",
-      "position": 20
-    }
-  ]
+  "findings": []
 }

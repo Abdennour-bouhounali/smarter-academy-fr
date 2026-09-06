@@ -18,6 +18,18 @@ export const LESSON_BASE_PATH = '/courses/college/6e/nombres_calculs/fractions';
 export const LESSON_CONFIG = {
   id: 'fractions',
   sequentialUnlock: true,
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : le partage équitable au sens courant et les faits de
+  // division simples — exactement les deux choses que les cinq questions du
+  // module 0 mesurent, et rien d'autre. Tout le reste (part égale au sens
+  // mathématique, numérateur, dénominateur, fraction d'une quantité,
+  // quotient, placement sur la demi-droite, fraction décimale) est établi
+  // dans la leçon même.
+  priorKnowledge: ['calcul-numerique', 'tables-multiplication'],
   title: 'Fractions — Construire le sens de la fraction',
   description:
     "Entre dans la Fraction Factory : partage, coupe, sélectionne, découvre la fraction comme quotient, reconnais les fractions simples du quotidien, place-les sur la demi-droite graduée et relie-les aux nombres décimaux déjà connus — pour construire toi-même le sens complet de la fraction.",
@@ -28,7 +40,7 @@ export const LESSON_CONFIG = {
   passingScore: 4,
   masteryThreshold: 0.8,
   emoji: '🍕',
-  estimatedDurationMin: 104,
+  estimatedDurationMin: 88,
   skills: [
     'Partager une pizza en parts rigoureusement égales',
     'Construire une fraction en sélectionnant des parts égales',
@@ -79,7 +91,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P1'],
       color: 'violet',
       style: 'featured',
-      estimatedMin: 8,
+      estimatedMin: 7,
       difficulty: 1,
       actionText: 'Entrer dans la Factory',
     },
@@ -94,7 +106,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P1'],
       color: 'sky',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 11,
       difficulty: 2,
       actionText: 'Construire',
     },
@@ -109,7 +121,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P2'],
       color: 'indigo',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 7,
       difficulty: 2,
       actionText: 'Décoder',
     },
@@ -124,7 +136,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P1', '6e_fractions_P2'],
       color: 'violet',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 7,
       difficulty: 2,
       actionText: 'Construire',
     },
@@ -139,7 +151,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P3'],
       color: 'emerald',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Répartir',
     },
@@ -154,7 +166,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P1'],
       color: 'rose',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 9,
       difficulty: 3,
       actionText: 'Partager',
     },
@@ -169,7 +181,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P1', '6e_fractions_P2'],
       color: 'amber',
       style: 'featured',
-      estimatedMin: 8,
+      estimatedMin: 5,
       difficulty: 2,
       actionText: 'Reconnaître',
     },
@@ -184,7 +196,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P4'],
       color: 'blue',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 9,
       difficulty: 3,
       actionText: 'Placer',
     },
@@ -199,7 +211,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_fractions_P1'],
       color: 'purple',
       style: 'featured',
-      estimatedMin: 8,
+      estimatedMin: 7,
       difficulty: 2,
       actionText: 'Relier',
     },
@@ -213,7 +225,7 @@ export const LESSON_CONFIG = {
       stage: 'evaluation',
       color: 'slate',
       style: 'assessment',
-      estimatedMin: 20,
+      estimatedMin: 16,
       difficulty: 4,
       actionText: 'Relever le défi',
     },

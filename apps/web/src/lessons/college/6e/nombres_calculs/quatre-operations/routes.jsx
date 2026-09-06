@@ -1,13 +1,14 @@
 import { lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
+import { LESSON_KNOWLEDGE } from './knowledge';
+import { LessonKnowledgeProvider } from '../../../../common/knowledge';
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
 // Module<NN><Descriptor>.jsx — rebuilt on the shared lesson kit (src/lessons/
 // common/kit), see docs/architecture/LESSON_INTEGRATION_GUIDE.md §11.
-// Validated 2026-08-23. The pre-kit originals are archived in
-// ./modules/_archive_original/ (not routed, kept for reference only).
+// Validated 2026-08-23. The pre-kit originals live in git history.
 // Module 0 (prerequisite diagnostic) is new: it has no pre-kit original.
 // Module 10 merges the two former evaluation modules (Module10BossFinal.jsx
 // "Mission Fête" + Module11Synthese.jsx "Synthèse & Flash Quiz") into the
@@ -27,10 +28,22 @@ const MODULE_COMPONENTS = {
   10: lazy(() => import('./modules/Module10BossFinal.jsx')),
 };
 
+// Chaque page de la leçon (index + modules) est enveloppée dans le provider
+// de la carte des connaissances : il lit la progression, cumule les apports
+// des modules validés, accueille les connaissances posées par les
+// <KnowledgeBrick> au fil des étapes, et monte le tiroir « Ma carte »
+// (docs/architecture/KNOWLEDGE_MAP.md).
 function withSuspense(Component) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
-      <Component />
+      <LessonKnowledgeProvider
+        lessonId={LESSON_CONFIG.id}
+        knowledge={LESSON_KNOWLEDGE}
+        printTitle="LES QUATRE OPÉRATIONS"
+        printSubject="Mathématiques · 6e"
+      >
+        <Component />
+      </LessonKnowledgeProvider>
     </Suspense>
   );
 }

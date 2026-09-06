@@ -2,11 +2,129 @@
   "lesson": "durees",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "calcul-numerique",
+    "tables-multiplication",
+    "ordre-nombres"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "base-60",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module03SecretDu60.jsx",
+        "line": 116,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "piege-decimal",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module03SecretDu60.jsx",
+        "line": 185,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "comparer-durees",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module04ConvertirComparer.jsx",
+        "line": 154,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "unites-temps",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module01Mission.jsx",
+        "line": 100,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "notation-24h",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module02LireHeure.jsx",
+        "line": 160,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "ordre-de-grandeur",
+      "type": "methodes",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module01Mission.jsx",
+        "line": 150,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "lire-cadran",
+      "type": "methodes",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module02LireHeure.jsx",
+        "line": 125,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "convertir-durees",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module04ConvertirComparer.jsx",
+        "line": 109,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "methode-sauts",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module05MethodeSauts.jsx",
+        "line": 135,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-retenue-60",
+      "type": "memoriser",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module05MethodeSauts.jsx",
+        "line": 187,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-complement-60",
@@ -15,8 +133,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module00Diagnostic.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +148,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module00Diagnostic.jsx",
-      "line": 28,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 29,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +164,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module00Diagnostic.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 40,
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +180,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module00Diagnostic.jsx",
-      "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 51,
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +196,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module00Diagnostic.jsx",
-      "line": 58,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 62,
+      "requires": [
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,8 +212,8 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module01Mission.jsx",
-      "line": 66,
-      "requires": null,
+      "line": 67,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -86,9 +224,13 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module01Mission.jsx",
-      "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 120,
+      "requires": [
+        "unites-temps"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +240,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module01Mission.jsx",
-      "line": 137,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 164,
+      "requires": [
+        "unites-temps",
+        "ordre-de-grandeur"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "ordre-de-grandeur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,9 +258,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module02LireHeure.jsx",
-      "line": 111,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "unites-temps"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -122,9 +274,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module02LireHeure.jsx",
-      "line": 123,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 133,
+      "requires": [
+        "unites-temps",
+        "lire-cadran"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "lire-cadran": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +292,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module02LireHeure.jsx",
-      "line": 153,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 176,
+      "requires": [
+        "lire-cadran",
+        "notation-24h"
+      ],
+      "prerequisiteStatus": {
+        "lire-cadran": "established@M2",
+        "notation-24h": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +310,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module03SecretDu60.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 131,
+      "requires": [
+        "unites-temps",
+        "base-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +328,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module03SecretDu60.jsx",
-      "line": 136,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 149,
+      "requires": [
+        "unites-temps",
+        "base-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,9 +346,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module03SecretDu60.jsx",
-      "line": 157,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 172,
+      "requires": [
+        "unites-temps",
+        "base-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -182,9 +364,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module04ConvertirComparer.jsx",
-      "line": 59,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "unites-temps",
+        "base-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -195,8 +383,14 @@
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module04ConvertirComparer.jsx",
       "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "unites-temps",
+        "base-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -206,9 +400,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module04ConvertirComparer.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 90,
+      "requires": [
+        "unites-temps",
+        "base-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -218,9 +418,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module04ConvertirComparer.jsx",
-      "line": 128,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 141,
+      "requires": [
+        "unites-temps",
+        "base-60",
+        "convertir-durees"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3",
+        "convertir-durees": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +438,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module05MethodeSauts.jsx",
-      "line": 143,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 154,
+      "requires": [
+        "unites-temps",
+        "methode-sauts"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "methode-sauts": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,9 +456,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module05MethodeSauts.jsx",
-      "line": 154,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 166,
+      "requires": [
+        "unites-temps",
+        "methode-sauts",
+        "base-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "methode-sauts": "established@M5",
+        "base-60": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -254,9 +476,17 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module05MethodeSauts.jsx",
-      "line": 180,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 202,
+      "requires": [
+        "unites-temps",
+        "lire-cadran",
+        "methode-sauts"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "lire-cadran": "established@M2",
+        "methode-sauts": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -266,9 +496,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module06MissionsHoraires.jsx",
-      "line": 59,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "unites-temps",
+        "methode-sauts"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "methode-sauts": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -279,8 +515,14 @@
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module06MissionsHoraires.jsx",
       "line": 70,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "unites-temps",
+        "methode-sauts"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "methode-sauts": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -290,9 +532,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module06MissionsHoraires.jsx",
-      "line": 90,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 91,
+      "requires": [
+        "unites-temps",
+        "base-60",
+        "methode-sauts",
+        "mem-retenue-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3",
+        "methode-sauts": "established@M5",
+        "mem-retenue-60": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -302,9 +554,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module06MissionsHoraires.jsx",
-      "line": 113,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "unites-temps",
+        "convertir-durees",
+        "comparer-durees"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "convertir-durees": "established@M4",
+        "comparer-durees": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -314,9 +574,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 44,
+      "requires": [
+        "unites-temps",
+        "ordre-de-grandeur"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "ordre-de-grandeur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -326,9 +592,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 60,
+      "requires": [
+        "lire-cadran"
+      ],
+      "prerequisiteStatus": {
+        "lire-cadran": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -338,9 +608,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 68,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 72,
+      "requires": [
+        "lire-cadran",
+        "notation-24h"
+      ],
+      "prerequisiteStatus": {
+        "lire-cadran": "established@M2",
+        "notation-24h": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -350,9 +626,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 84,
+      "requires": [
+        "unites-temps",
+        "base-60"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -362,9 +644,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 90,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 96,
+      "requires": [
+        "unites-temps",
+        "base-60",
+        "convertir-durees"
+      ],
+      "prerequisiteStatus": {
+        "unites-temps": "established@M1",
+        "base-60": "established@M3",
+        "convertir-durees": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -374,9 +664,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 101,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 108,
+      "requires": [
+        "convertir-durees",
+        "comparer-durees"
+      ],
+      "prerequisiteStatus": {
+        "convertir-durees": "established@M4",
+        "comparer-durees": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -386,9 +682,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 112,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 120,
+      "requires": [
+        "base-60",
+        "piege-decimal"
+      ],
+      "prerequisiteStatus": {
+        "base-60": "established@M3",
+        "piege-decimal": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -398,9 +700,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 123,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 132,
+      "requires": [
+        "lire-cadran",
+        "methode-sauts"
+      ],
+      "prerequisiteStatus": {
+        "lire-cadran": "established@M2",
+        "methode-sauts": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -410,9 +718,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 134,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 144,
+      "requires": [
+        "lire-cadran",
+        "methode-sauts"
+      ],
+      "prerequisiteStatus": {
+        "lire-cadran": "established@M2",
+        "methode-sauts": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -422,9 +736,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/durees/modules/Module07MissionFinale.jsx",
-      "line": 145,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 156,
+      "requires": [
+        "base-60",
+        "convertir-durees",
+        "mem-retenue-60"
+      ],
+      "prerequisiteStatus": {
+        "base-60": "established@M3",
+        "convertir-durees": "established@M4",
+        "mem-retenue-60": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }

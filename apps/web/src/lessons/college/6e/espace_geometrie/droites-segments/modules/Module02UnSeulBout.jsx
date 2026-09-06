@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MoveRight } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ExtentPuller from '../components/ExtentPuller';
@@ -74,18 +73,33 @@ export default function Module02UnSeulBout() {
                 ariaLabel="Trait dont le bout A est fixé : tire sur l’autre bout"
               />
               {rayDone && (
-                <Feedback tone="ok">
-                  Un seul bout, et de l’autre côté ça continue sans fin. Ce n’est ni un segment (il lui
-                  manque un bout), ni une droite (il en a un). C’est une <strong>demi-droite</strong>, et son
-                  unique bout s’appelle son <strong>origine</strong>.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Un seul bout, et de l’autre côté ça continue sans fin. Ce n’est ni un segment (il lui
+                    manque un bout), ni une droite (il en a un).
+                  </Feedback>
+                  {/* Deux briques, dans l'ordre du geste : l'objet d'abord,
+                      puis le nom de son unique bout — mot qu'exige l'étape 2. */}
+                  <KnowledgeBrick
+                    id="demi-droite"
+                    variant="new"
+                    lead="Le trait que tu viens d’obtenir : bloqué d’un côté, infini de l’autre."
+                  />
+                  <KnowledgeBrick
+                    id="origine"
+                    variant="new"
+                    lead="Ce bout unique, le point A que tu n’as pas pu déplacer, porte un nom."
+                  />
+                </>
               )}
             </div>
           ),
         },
         {
           num: 2,
-          title: 'Où est l’origine ?',
+          // Titre neutre : StepCard l'affiche avant l'ouverture de l'étape, et
+          // il ne doit donc pas vendre la réponse.
+          title: 'Repère le bout unique',
           done: originDone,
           content: (
             <TapQuestion
@@ -104,6 +118,7 @@ export default function Module02UnSeulBout() {
               ]}
               correct={0}
               cols={1}
+              requires={['demi-droite', 'origine']}
               explain="L’origine est l’unique extrémité : le point où la demi-droite commence, et au-delà duquel elle n’existe pas. Ici, c’est A."
               explainWrong="B n’est pas une extrémité : de ce côté, la demi-droite continue sans fin. Le seul bout, c’est A."
               solved={originDone}
@@ -122,6 +137,7 @@ export default function Module02UnSeulBout() {
                   Pour chaque objet, combien de bouts (d’extrémités) possède-t-il ?
                 </p>
               }
+              requires={['segment', 'droite', 'demi-droite', 'origine']}
               rows={COUNT_ROWS.map((r) => ({
                 id: r.id,
                 label: <span className="font-semibold">{KIND_LABEL[r.kind]}</span>,
@@ -151,17 +167,10 @@ export default function Module02UnSeulBout() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <MoveRight className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Une demi-droite n’est pas « une moitié de droite » : elle est aussi infinie qu’une droite, mais
-            d’un seul côté. Ce qui la définit, c’est son <strong className="text-white">origine</strong>.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Les trois objets existent. On va maintenant les mettre côte à
+          côte pour trouver la question qui permet de les trier à coup sûr.
+        </KnowledgeSnapshot>
       }
     />
   );

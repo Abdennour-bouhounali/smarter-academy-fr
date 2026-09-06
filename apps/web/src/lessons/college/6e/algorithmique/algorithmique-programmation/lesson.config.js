@@ -31,6 +31,20 @@ export const LESSON_BASE_PATH = '/courses/college/6e/algorithmique/algorithmique
 export const LESSON_CONFIG = {
   id: 'algorithmique-programmation',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A) : compter des pas sur une piste
+  // (ajouter, soustraire) et se repérer dans un quadrillage par colonne et
+  // ligne. Ce sont exactement les deux choses que les cinq questions du
+  // module 0 mesurent. Instruction, séquence, ordre, boucle et bug sont tous
+  // établis dans la leçon même, jamais supposés.
+  // `suite-etapes-quotidien` = l'intuition ordinaire d'une recette dont les
+  // étapes se suivent (casser les œufs AVANT de mettre au four). C'est bien un
+  // acquis de la vie courante, mesuré par la question 5 ; la règle
+  // « l'ordre fait partie du programme », elle, est enseignée au module 4.
+  priorKnowledge: ['calcul-numerique', 'reperage-quadrillage', 'suite-etapes-quotidien'],
   title: 'Algorithmique et programmation',
   description:
     "Programmer ROBI, le robot du potager : construire une suite d'instructions, l'exécuter, comprendre pourquoi l'ordre compte, répéter sans tout réécrire, puis repérer et corriger les erreurs d'un programme.",

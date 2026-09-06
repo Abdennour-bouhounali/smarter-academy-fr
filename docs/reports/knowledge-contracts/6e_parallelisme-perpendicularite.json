@@ -2,11 +2,152 @@
   "lesson": "parallelisme-perpendicularite",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "notation-segment",
+    "demi-droite",
+    "angle-droit",
+    "angle-aigu-obtus"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "droites-paralleles",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module01LesRails.jsx",
+        "line": 142,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ecart-constant",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module02EcartConstant.jsx",
+        "line": 96,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "droites-perpendiculaires",
+      "type": "concepts",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module03AngleDroit.jsx",
+        "line": 87,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "orientation-sans-importance",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module03AngleDroit.jsx",
+        "line": 126,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "relation-binaire",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module04ChasseurRelations.jsx",
+        "line": 118,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "unicite-perpendiculaire",
+      "type": "regles",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module07AtelierConstruction.jsx",
+        "line": 115,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "distance-point-droite",
+      "type": "concepts",
+      "module": 8,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module08CheminPlusCourt.jsx",
+        "line": 89,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "secantes",
+      "type": "vocabulaire",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module06LesDeuxRelations.jsx",
+        "line": 103,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "mesurer-ecart",
+      "type": "methodes",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module02EcartConstant.jsx",
+        "line": 101,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "rituel-equerre",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module05PoserEquerre.jsx",
+        "line": 96,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "construire-parallele",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module07AtelierConstruction.jsx",
+        "line": 141,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-deux-perp",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module04ChasseurRelations.jsx",
+        "line": 147,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-droite",
@@ -15,7 +156,7 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module00Diagnostic.jsx",
       "line": 18,
-      "requires": null,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -26,9 +167,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module00Diagnostic.jsx",
-      "line": 28,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 30,
+      "requires": [
+        "notation-segment",
+        "demi-droite"
+      ],
+      "prerequisiteStatus": {
+        "notation-segment": "prior",
+        "demi-droite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +185,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module00Diagnostic.jsx",
-      "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +201,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module00Diagnostic.jsx",
-      "line": 52,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "angle-droit",
+        "angle-aigu-obtus"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior",
+        "angle-aigu-obtus": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +219,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module00Diagnostic.jsx",
-      "line": 62,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,8 +235,8 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module01LesRails.jsx",
-      "line": 81,
-      "requires": null,
+      "line": 80,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -86,9 +247,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module01LesRails.jsx",
-      "line": 149,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 156,
+      "requires": [
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +263,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module02EcartConstant.jsx",
-      "line": 139,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 150,
+      "requires": [
+        "ecart-constant",
+        "droites-paralleles",
+        "mesurer-ecart"
+      ],
+      "prerequisiteStatus": {
+        "ecart-constant": "established@M2",
+        "droites-paralleles": "established@M1",
+        "mesurer-ecart": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,9 +283,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module03AngleDroit.jsx",
-      "line": 94,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 102,
+      "requires": [
+        "droites-perpendiculaires",
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "established@M3",
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -122,9 +301,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module03AngleDroit.jsx",
-      "line": 115,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 131,
+      "requires": [
+        "orientation-sans-importance",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "orientation-sans-importance": "established@M3",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +319,17 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module04ChasseurRelations.jsx",
-      "line": 75,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "droites-paralleles",
+        "droites-perpendiculaires",
+        "ecart-constant"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "established@M1",
+        "droites-perpendiculaires": "established@M3",
+        "ecart-constant": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +339,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module04ChasseurRelations.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "relation-binaire"
+      ],
+      "prerequisiteStatus": {
+        "relation-binaire": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +355,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module04ChasseurRelations.jsx",
-      "line": 138,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 152,
+      "requires": [
+        "mem-deux-perp",
+        "droites-paralleles",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "mem-deux-perp": "established@M4",
+        "droites-paralleles": "established@M1",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,9 +375,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module05PoserEquerre.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "rituel-equerre",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "rituel-equerre": "established@M5",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -182,9 +393,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module05PoserEquerre.jsx",
-      "line": 138,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 144,
+      "requires": [
+        "ecart-constant",
+        "mesurer-ecart",
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "ecart-constant": "established@M2",
+        "mesurer-ecart": "established@M2",
+        "droites-paralleles": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -194,9 +413,17 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module06LesDeuxRelations.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 111,
+      "requires": [
+        "secantes",
+        "droites-paralleles",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "secantes": "established@M6",
+        "droites-paralleles": "established@M1",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -206,9 +433,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module07AtelierConstruction.jsx",
-      "line": 138,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 155,
+      "requires": [
+        "construire-parallele",
+        "mem-deux-perp",
+        "droites-perpendiculaires",
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "construire-parallele": "established@M7",
+        "mem-deux-perp": "established@M4",
+        "droites-perpendiculaires": "established@M3",
+        "droites-paralleles": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -218,9 +455,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module08CheminPlusCourt.jsx",
-      "line": 98,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 104,
+      "requires": [
+        "distance-point-droite",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "distance-point-droite": "established@M8",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +473,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module08CheminPlusCourt.jsx",
-      "line": 128,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 135,
+      "requires": [
+        "distance-point-droite",
+        "ecart-constant",
+        "droites-paralleles",
+        "mesurer-ecart"
+      ],
+      "prerequisiteStatus": {
+        "distance-point-droite": "established@M8",
+        "ecart-constant": "established@M2",
+        "droites-paralleles": "established@M1",
+        "mesurer-ecart": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,9 +495,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 50,
+      "requires": [
+        "droites-paralleles",
+        "ecart-constant",
+        "mesurer-ecart"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "established@M1",
+        "ecart-constant": "established@M2",
+        "mesurer-ecart": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -254,9 +515,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 66,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "droites-paralleles",
+        "ecart-constant"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "established@M1",
+        "ecart-constant": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -266,9 +533,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 87,
+      "requires": [
+        "droites-perpendiculaires",
+        "orientation-sans-importance"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "established@M3",
+        "orientation-sans-importance": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -278,9 +551,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 100,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "droites-perpendiculaires",
+        "secantes"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "established@M3",
+        "secantes": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -290,9 +569,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 116,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "relation-binaire",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "relation-binaire": "established@M4",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -302,9 +587,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 132,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 139,
+      "requires": [
+        "ecart-constant",
+        "mesurer-ecart",
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "ecart-constant": "established@M2",
+        "mesurer-ecart": "established@M2",
+        "droites-paralleles": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -314,9 +607,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 148,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 156,
+      "requires": [
+        "rituel-equerre",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "rituel-equerre": "established@M5",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -326,9 +625,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 165,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 174,
+      "requires": [
+        "construire-parallele",
+        "mem-deux-perp",
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "construire-parallele": "established@M7",
+        "mem-deux-perp": "established@M4",
+        "droites-paralleles": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -338,9 +645,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 181,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 191,
+      "requires": [
+        "unicite-perpendiculaire",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "unicite-perpendiculaire": "established@M7",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -350,9 +663,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/parallelisme-perpendicularite/modules/Module09MissionFinale.jsx",
-      "line": 197,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 208,
+      "requires": [
+        "distance-point-droite",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "distance-point-droite": "established@M8",
+        "droites-perpendiculaires": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }

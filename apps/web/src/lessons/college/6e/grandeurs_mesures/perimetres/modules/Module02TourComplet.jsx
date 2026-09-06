@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ListChecks } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PolygonPerimeter from '../components/PolygonPerimeter';
@@ -119,15 +118,27 @@ export default function Module02TourComplet() {
           subtitle: 'Cinq côtés, tous différents : seule la méthode compte.',
           done: pentaDone,
           content: (kit) => (
-            <TraceRound
-              react={kit.react}
-              vertices={PENTA_VERTICES}
-              sideLengths={PENTA_SIDES}
-              unit="m"
-              intro="L'enclos réel du parc n'est ni un carré ni un rectangle. Fais le tour en tapant les cinq côtés."
-              solved={pentaDone}
-              onSolved={() => setPentaDone(true)}
-            />
+            <div className="space-y-5">
+              <TraceRound
+                react={kit.react}
+                vertices={PENTA_VERTICES}
+                sideLengths={PENTA_SIDES}
+                unit="m"
+                intro="L'enclos réel du parc n'est ni un carré ni un rectangle. Fais le tour en tapant les cinq côtés."
+                solved={pentaDone}
+                onSolved={() => setPentaDone(true)}
+              />
+              {/* Le tour vient d'être fait sur une figure sans aucune
+                  régularité : la méthode générale peut être écrite, elle ne
+                  fait que décrire ce geste. */}
+              {pentaDone && (
+                <KnowledgeBrick
+                  id="tour-complet"
+                  variant="new"
+                  lead="Aucune formule ici — et pourtant tu as trouvé le tour. Voilà ce que tu viens d’appliquer."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -150,6 +161,7 @@ export default function Module02TourComplet() {
               correct={SAMI_Q.correct}
               cols={1}
               explain={SAMI_Q.explain}
+              requires={['perimetre', 'tour-complet']}
               solved={samiDone}
               onAnswered={() => setSamiDone(true)}
             />
@@ -172,6 +184,7 @@ export default function Module02TourComplet() {
                   ? 'C’est le calcul de Sami — il manque le côté de 6,5 m. Reprends la liste : chaque côté, une seule fois.'
                   : 'Liste les cinq côtés (10,5 ; 6 ; 7,5 ; 6,5 ; 9) puis additionne-les tous.'
               }
+              requires={['perimetre', 'tour-complet']}
               solved={calcDone}
               onAnswered={() => setCalcDone(true)}
             />
@@ -179,13 +192,10 @@ export default function Module02TourComplet() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <ListChecks className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Pour une figure quelconque : relever chaque côté UNE fois, puis tout additionner. La check-list vaut
-            mieux que la mémoire.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Cette méthode marche partout, mais elle est longue. Certaines
+          figures cachent une régularité qui va la raccourcir.
+        </KnowledgeSnapshot>
       }
     />
   );

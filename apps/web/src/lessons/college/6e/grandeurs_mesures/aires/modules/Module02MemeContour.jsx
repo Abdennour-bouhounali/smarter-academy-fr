@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Scissors } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ShapeComposer from '../components/ShapeComposer';
@@ -121,7 +120,19 @@ export default function Module02MemeContour() {
           title: 'Découpe et recolle',
           done: recomposeDone,
           content: (kit) => (
-            <Recomposer react={kit.react} solved={recomposeDone} onSolved={() => setRecomposeDone(true)} />
+            <div className="space-y-5">
+              <Recomposer react={kit.react} solved={recomposeDone} onSolved={() => setRecomposeDone(true)} />
+              {/* La figure vient de changer de forme sous les doigts sans
+                  perdre un carreau : c'est l'instant où la conservation de
+                  l'aire est une observation, pas une affirmation. */}
+              {recomposeDone && (
+                <KnowledgeBrick
+                  id="aire-conservee"
+                  variant="new"
+                  lead="Tu n’as rien ajouté, rien enlevé — seulement déplacé. Voilà ce que cela garantit."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -129,6 +140,7 @@ export default function Module02MemeContour() {
           title: 'Même périmètre… même aire ?',
           done: perimDone,
           content: (
+            <div className="space-y-5">
             <TapQuestion
               above={
                 <div className="grid grid-cols-2 gap-6" aria-hidden="true">
@@ -147,9 +159,20 @@ export default function Module02MemeContour() {
               correct={PERIM_Q.correct}
               cols={1}
               explain={PERIM_Q.explain}
+              requires={['aire', 'perimetre']}
               solved={perimDone}
               onAnswered={() => setPerimDone(true)}
             />
+            {/* Le contre-exemple vient d'être constaté sur deux figures
+                concrètes : la règle peut maintenant être posée. */}
+            {perimDone && (
+              <KnowledgeBrick
+                id="aire-perimetre-independants"
+                variant="new"
+                lead="Deux tours identiques, deux comptes de carreaux différents : la conclusion se généralise."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -158,6 +181,7 @@ export default function Module02MemeContour() {
           done: vfDone,
           content: (
             <BatchChoiceQuestion
+              requires={['aire', 'perimetre', 'aire-conservee', 'aire-perimetre-independants']}
               intro={<p className="text-sm text-slate-600">Trois affirmations à trancher, avec ce que tu viens de voir.</p>}
               rows={VF_ROWS.map((it) => ({
                 id: it.id,
@@ -184,13 +208,10 @@ export default function Module02MemeContour() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Scissors className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            L'aire se conserve au découpage-recollage, et le périmètre ne la prédit pas. Pour comparer des
-            surfaces : recouvrir et compter, jamais juger à l'œil.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Comparer, c'est fait. Reste à mettre un nombre exact sur une
+          surface : c'est l'atelier de pavage du module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

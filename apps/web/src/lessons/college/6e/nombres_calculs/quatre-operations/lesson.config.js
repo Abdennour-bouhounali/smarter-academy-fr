@@ -21,6 +21,18 @@ export const LESSON_BASE_PATH = '/courses/college/6e/nombres_calculs/quatre-oper
 export const LESSON_CONFIG = {
   id: 'quatre-operations',
   sequentialUnlock: true,
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : lire un nombre en sachant ce que vaut chaque chiffre
+  // selon sa position, et les tables de multiplication — exactement les deux
+  // choses que les cinq questions du module 0 mesurent, et rien d'autre. Le
+  // sens des quatre opérations, le vocabulaire (somme, différence, produit,
+  // quotient, reste), les retenues et échanges, les stratégies mentales et la
+  // démarche de résolution sont tous établis dans la leçon même.
+  priorKnowledge: ['calcul-numerique', 'valeur-position', 'tables-multiplication'],
   title: 'Les quatre opérations',
   description:
     "Maîtriser l'addition, la soustraction, la multiplication et la division : comprendre le sens de chaque opération, poser un calcul avec retenues et échanges, choisir la bonne stratégie mentale, réaliser une division euclidienne et résoudre des problèmes concrets — jusqu'au défi final.",
@@ -31,7 +43,7 @@ export const LESSON_CONFIG = {
   passingScore: 5,
   masteryThreshold: 0.8,
   emoji: '🧮',
-  estimatedDurationMin: 119,
+  estimatedDurationMin: 90,
   skills: [
     'Comprendre et utiliser les quatre opérations selon la situation',
     'Poser une addition et une soustraction avec retenues et échanges',
@@ -81,7 +93,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P1'],
       color: 'indigo',
       style: 'featured',
-      estimatedMin: 5,
+      estimatedMin: 8,
       difficulty: 1,
       actionText: 'Démarrer',
     },
@@ -96,7 +108,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P1', '6e_quatre-operations_P2'],
       color: 'emerald',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 8,
       difficulty: 1,
       actionText: 'Démarrer',
     },
@@ -111,7 +123,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P1', '6e_quatre-operations_P2'],
       color: 'blue',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 8,
       difficulty: 2,
       actionText: 'Démarrer',
     },
@@ -126,7 +138,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P1'],
       color: 'violet',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 9,
       difficulty: 2,
       actionText: 'Démarrer',
     },
@@ -141,7 +153,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P1', '6e_quatre-operations_P5'],
       color: 'amber',
       style: 'featured',
-      estimatedMin: 15,
+      estimatedMin: 8,
       difficulty: 2,
       actionText: 'Démarrer',
     },
@@ -156,7 +168,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P2'],
       color: 'teal',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Démarrer',
     },
@@ -171,7 +183,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P3'],
       color: 'cyan',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 11,
       difficulty: 2,
       actionText: 'Démarrer',
     },
@@ -186,7 +198,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P4'],
       color: 'rose',
       style: 'featured',
-      estimatedMin: 8,
+      estimatedMin: 9,
       difficulty: 2,
       actionText: 'Jouer',
     },
@@ -201,7 +213,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_quatre-operations_P5', '6e_quatre-operations_P6'],
       color: 'purple',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 3,
       actionText: 'Démarrer',
     },
@@ -215,7 +227,7 @@ export const LESSON_CONFIG = {
       stage: 'evaluation',
       color: 'amber',
       style: 'assessment',
-      estimatedMin: 18,
+      estimatedMin: 13,
       difficulty: 4,
       actionText: 'Relever le défi',
     },

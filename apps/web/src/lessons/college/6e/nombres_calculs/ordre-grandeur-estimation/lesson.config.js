@@ -17,6 +17,18 @@ export const LESSON_BASE_PATH = '/courses/college/6e/nombres_calculs/ordre-grand
 export const LESSON_CONFIG = {
   id: 'ordre-grandeur-estimation',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : savoir ce que vaut un chiffre selon sa position, et
+  // calculer de tête sur des nombres ronds — exactement les deux choses que
+  // les cinq questions du module 0 mesurent, et rien d'autre. L'estimation,
+  // l'arrondi, l'ordre de grandeur d'une somme, d'une différence, d'un
+  // produit, le jugement de plausibilité et le choix de la précision sont
+  // tous établis dans la leçon même.
+  priorKnowledge: ['valeur-position', 'calcul-numerique'],
   title: 'Ordre de grandeur et estimation',
   description:
     "Développer le réflexe d'estimer un résultat avant ou après un calcul afin de détecter les erreurs et contrôler la cohérence.",

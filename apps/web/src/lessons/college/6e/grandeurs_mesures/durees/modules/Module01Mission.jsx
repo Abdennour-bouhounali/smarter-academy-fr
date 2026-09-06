@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Timer } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -61,7 +60,9 @@ export default function Module01Mission() {
           title: 'À chaque durée, son unité',
           done: unitsDone,
           content: (
+            <div className="space-y-5">
             <BatchChoiceQuestion
+              requires={[]}
               intro={
                 <p className="text-sm text-slate-600">
                   Seconde, minute, heure, jour : choisis l'unité la plus naturelle pour chaque durée.
@@ -93,14 +94,29 @@ export default function Module01Mission() {
                 </Feedback>
               )}
             />
+            {/* Le tri vient d'être fait à l'intuition : la brique fixe les
+                quatre unités et leurs échelles. */}
+            {unitsDone && (
+              <KnowledgeBrick
+                id="unites-temps"
+                variant="new"
+                lead="Ces quatre unités sont celles de toute la leçon — voici l’échelle de chacune."
+              />
+            )}
+            </div>
           ),
         },
         {
+          // Le titre était « Le bon ordre de grandeur » : StepCard l'affiche
+          // AVANT que l'étape ne s'ouvre, si bien que le mot arrivait avant
+          // que rien ne l'ait posé. Titre neutre, mot posé par la brique.
           num: 2,
-          title: 'Le bon ordre de grandeur',
+          title: 'Réaliste, ou pas du tout ?',
           done: estimDone,
           content: (
+            <div className="space-y-5">
             <BatchChoiceQuestion
+              requires={['unites-temps']}
               intro={<p className="text-sm text-slate-600">Estime chaque durée : une seule proposition est réaliste.</p>}
               rows={ESTIM_ROWS.map((it) => ({
                 id: it.id,
@@ -123,10 +139,21 @@ export default function Module01Mission() {
                       {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
                     </>
                   )}
-                  Avoir un ordre de grandeur en tête permet de repérer immédiatement une durée absurde.
+                  Chacune des propositions écartées était absurde : quelques secondes pour se brosser
+                  les dents, une heure pour cligner des yeux.
                 </Feedback>
               )}
             />
+            {/* Le jugement rapide vient d'être exercé trois fois : la brique
+                le nomme et en fait un réflexe réutilisable. */}
+            {estimDone && (
+              <KnowledgeBrick
+                id="ordre-de-grandeur"
+                variant="new"
+                lead="Ce que tu viens de faire trois fois — juger « à peu près combien » — porte un nom."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -140,6 +167,7 @@ export default function Module01Mission() {
               correct={TRAP_Q.correct}
               cols={1}
               explain={TRAP_Q.explain}
+              requires={['unites-temps', 'ordre-de-grandeur']}
               solved={trapDone}
               onAnswered={() => setTrapDone(true)}
             />
@@ -147,13 +175,10 @@ export default function Module01Mission() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Timer className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Jour, heure, minute, seconde : les unités du temps. Et une règle du jeu unique : ici, tout marche par
-            60 — jamais par 10.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Une question reste ouverte : pourquoi une demi-minute
+          fait-elle 30 s et non 50 ? La réponse se cache dans le mécanisme d'une horloge.
+        </KnowledgeSnapshot>
       }
     />
   );

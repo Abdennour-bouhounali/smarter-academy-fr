@@ -2,11 +2,138 @@
   "lesson": "masses",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
+  "prerequisites": [
+    "calcul-numerique",
+    "multiplication-repetee"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "masse-comparable",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module01Mission.jsx",
+        "line": 147,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "masse-invariante",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module02ChoisirUnite.jsx",
+        "line": 89,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "unite-masse-adaptee",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module02ChoisirUnite.jsx",
+        "line": 164,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "equilibre-egalite",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module03ComparerMesurer.jsx",
+        "line": 236,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "escalier-masses",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module04RelationsUnites.jsx",
+        "line": 123,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "estimation-masse",
+      "type": "concepts",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module06EstimationProblemes.jsx",
+        "line": 86,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "proceduresIntroduced": [
+    {
+      "id": "balance-plateaux",
+      "type": "methodes",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module01Mission.jsx",
+        "line": 154,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "lire-graduation",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module03ComparerMesurer.jsx",
+        "line": 255,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "convertir-masse-methode",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module05Conversions.jsx",
+        "line": 138,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-sens-conversion-masse",
+      "type": "memoriser",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module05Conversions.jsx",
+        "line": 145,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-meme-unite",
+      "type": "memoriser",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module06EstimationProblemes.jsx",
+        "line": 165,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-kg-g",
@@ -15,8 +142,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module00Diagnostic.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +157,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module00Diagnostic.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 34,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +173,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 47,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +189,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module00Diagnostic.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 64,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +205,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module00Diagnostic.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 82,
+      "requires": [
+        "multiplication-repetee"
+      ],
+      "prerequisiteStatus": {
+        "multiplication-repetee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +221,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module02ChoisirUnite.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 103,
+      "requires": [
+        "masse-invariante",
+        "masse-comparable"
+      ],
+      "prerequisiteStatus": {
+        "masse-invariante": "established@M2",
+        "masse-comparable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,13 +239,17 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module02ChoisirUnite.jsx",
-      "line": 113,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "fonction"
+      "line": 124,
+      "requires": [
+        "masse-invariante",
+        "masse-comparable"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "masse-invariante": "established@M2",
+        "masse-comparable": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M02-S4-Q3",
@@ -100,9 +257,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module02ChoisirUnite.jsx",
-      "line": 157,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 178,
+      "requires": [
+        "unite-masse-adaptee",
+        "masse-invariante"
+      ],
+      "prerequisiteStatus": {
+        "unite-masse-adaptee": "established@M2",
+        "masse-invariante": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -112,9 +275,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module04RelationsUnites.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "escalier-masses",
+        "masse-invariante"
+      ],
+      "prerequisiteStatus": {
+        "escalier-masses": "established@M4",
+        "masse-invariante": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +293,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module05Conversions.jsx",
-      "line": 158,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 176,
+      "requires": [
+        "convertir-masse-methode",
+        "mem-sens-conversion-masse",
+        "escalier-masses",
+        "unite-masse-adaptee"
+      ],
+      "prerequisiteStatus": {
+        "convertir-masse-methode": "established@M5",
+        "mem-sens-conversion-masse": "established@M5",
+        "escalier-masses": "established@M4",
+        "unite-masse-adaptee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +315,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module06EstimationProblemes.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 59,
+      "requires": [
+        "unite-masse-adaptee",
+        "escalier-masses"
+      ],
+      "prerequisiteStatus": {
+        "unite-masse-adaptee": "established@M2",
+        "escalier-masses": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,9 +333,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module06EstimationProblemes.jsx",
-      "line": 97,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 106,
+      "requires": [
+        "masse-comparable"
+      ],
+      "prerequisiteStatus": {
+        "masse-comparable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -160,9 +349,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module06EstimationProblemes.jsx",
-      "line": 111,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 121,
+      "requires": [
+        "convertir-masse-methode",
+        "escalier-masses"
+      ],
+      "prerequisiteStatus": {
+        "convertir-masse-methode": "established@M5",
+        "escalier-masses": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -172,9 +367,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module06EstimationProblemes.jsx",
-      "line": 127,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 138,
+      "requires": [
+        "estimation-masse",
+        "unite-masse-adaptee"
+      ],
+      "prerequisiteStatus": {
+        "estimation-masse": "established@M6",
+        "unite-masse-adaptee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -184,9 +385,17 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module06EstimationProblemes.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 170,
+      "requires": [
+        "mem-meme-unite",
+        "convertir-masse-methode",
+        "escalier-masses"
+      ],
+      "prerequisiteStatus": {
+        "mem-meme-unite": "established@M6",
+        "convertir-masse-methode": "established@M5",
+        "escalier-masses": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -196,9 +405,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 52,
+      "requires": [
+        "masse-comparable",
+        "estimation-masse"
+      ],
+      "prerequisiteStatus": {
+        "masse-comparable": "established@M1",
+        "estimation-masse": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -208,9 +423,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 66,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "unite-masse-adaptee"
+      ],
+      "prerequisiteStatus": {
+        "unite-masse-adaptee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -220,9 +439,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 77,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 81,
+      "requires": [
+        "lire-graduation"
+      ],
+      "prerequisiteStatus": {
+        "lire-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -232,9 +455,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 88,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 93,
+      "requires": [
+        "equilibre-egalite",
+        "escalier-masses"
+      ],
+      "prerequisiteStatus": {
+        "equilibre-egalite": "established@M3",
+        "escalier-masses": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -244,9 +473,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "equilibre-egalite",
+        "mem-meme-unite"
+      ],
+      "prerequisiteStatus": {
+        "equilibre-egalite": "established@M3",
+        "mem-meme-unite": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -256,9 +491,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 110,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 117,
+      "requires": [
+        "convertir-masse-methode",
+        "escalier-masses",
+        "mem-sens-conversion-masse"
+      ],
+      "prerequisiteStatus": {
+        "convertir-masse-methode": "established@M5",
+        "escalier-masses": "established@M4",
+        "mem-sens-conversion-masse": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -268,9 +511,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 121,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 129,
+      "requires": [
+        "mem-sens-conversion-masse",
+        "masse-invariante",
+        "escalier-masses"
+      ],
+      "prerequisiteStatus": {
+        "mem-sens-conversion-masse": "established@M5",
+        "masse-invariante": "established@M2",
+        "escalier-masses": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -280,9 +531,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 136,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 145,
+      "requires": [
+        "estimation-masse",
+        "unite-masse-adaptee"
+      ],
+      "prerequisiteStatus": {
+        "estimation-masse": "established@M6",
+        "unite-masse-adaptee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -292,9 +549,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 161,
+      "requires": [
+        "balance-plateaux",
+        "masse-comparable"
+      ],
+      "prerequisiteStatus": {
+        "balance-plateaux": "established@M1",
+        "masse-comparable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -304,25 +567,18 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module07MissionFinale.jsx",
-      "line": 166,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 177,
+      "requires": [
+        "mem-meme-unite",
+        "estimation-masse"
+      ],
+      "prerequisiteStatus": {
+        "mem-meme-unite": "established@M6",
+        "estimation-masse": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« fonction » first appears at q.feedback (module 2, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/masses/modules/Module02ChoisirUnite.jsx",
-      "line": 138,
-      "module": 2,
-      "step": 3,
-      "term": "fonction",
-      "questionId": "M02-S3-Q2",
-      "position": 38
-    }
-  ]
+  "findings": []
 }

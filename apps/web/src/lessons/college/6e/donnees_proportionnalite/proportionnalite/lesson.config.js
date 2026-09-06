@@ -39,6 +39,32 @@ export const LESSON_BASE_PATH = '/courses/college/6e/donnees_proportionnalite/pr
 export const LESSON_CONFIG = {
   id: 'proportionnalite',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A) : les tables, la division
+  // exacte, les relations double/moitié sur des NOMBRES, et la lecture d'un
+  // petit tableau. Ce sont exactement les trois choses que les cinq questions
+  // du module 0 mesurent. La proportionnalité elle-même et son coefficient
+  // sont établis dans la leçon, jamais supposés.
+  priorKnowledge: ['tables-multiplication', 'calcul-numerique', 'lire-tableau'],
+  // FAUX POSITIF DOCUMENTÉ. `coefficient-lineaire` est l'entrée du lexique
+  // pour le mot « coefficient » employé SEUL au sens de la 3e (fonction
+  // linéaire). En 6e, ce mot est toujours ici le raccourci de « coefficient
+  // de proportionnalité » — une connaissance que la leçon pose elle-même,
+  // par une brique, au module 2 étape 2, AVANT tout emploi abrégé. Le
+  // détecteur ne peut pas distinguer les deux sens ; le contrat, lui, est
+  // respecté (docs/architecture/KNOWLEDGE_DEPENDENCY.md, contrôle 2).
+  knowledgeAudit: {
+    ignore: [
+      {
+        term: 'coefficient-lineaire',
+        reason:
+          "En 6e « le coefficient » abrège toujours « le coefficient de proportionnalité », posé par une brique au module 2 avant tout emploi ; le sens 3e (coefficient d'une fonction linéaire) n'apparaît nulle part dans cette leçon.",
+      },
+    ],
+  },
   title: 'Proportionnalité',
   description:
     "Manipuler deux grandeurs qui varient ensemble jusqu'à voir apparaître la relation multiplicative, puis choisir la stratégie la plus efficace pour trouver une valeur manquante.",

@@ -26,6 +26,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-digit',
+    requires: ['numeration-entiere'],
     skill: 'numerationEntiere',
     points: 2,
     type: 'custom',
@@ -50,6 +51,7 @@ const QUESTIONS = [
   },
   {
     id: 'q2-value',
+    requires: ['numeration-entiere'],
     skill: 'numerationEntiere',
     points: 2,
     prompt: (
@@ -64,6 +66,7 @@ const QUESTIONS = [
   },
   {
     id: 'q3-compare',
+    requires: ['numeration-entiere'],
     skill: 'numerationEntiere',
     points: 2,
     prompt: <>Quel est le plus grand des deux nombres : <strong className="font-mono">308</strong> ou <strong className="font-mono">85</strong> ?</>,
@@ -74,27 +77,29 @@ const QUESTIONS = [
   },
   {
     id: 'q4-fraction-lecture',
+    requires: ['lecture-fraction-simple'],
     skill: 'fractionsSimples',
     points: 2,
     prompt: <>Sur ce gâteau partagé en 4 parts égales, on en a mangé 3. Comment note-t-on cette quantité ?</>,
     options: ['4/3', '3/4', '3 + 4', '1/4'],
     cols: 2,
     correct: 1,
-    explain: 'Le dénominateur (en bas) compte le nombre total de parts égales ; le numérateur (en haut) compte les parts prises : 3 parts sur 4, soit 3/4.',
+    explain: 'Le nombre du bas compte le nombre total de parts égales ; celui du haut compte les parts prises : 3 parts sur 4, soit 3/4.',
   },
   {
     id: 'q5-fraction-sens',
+    requires: ['lecture-fraction-simple'],
     skill: 'fractionsSimples',
     points: 2,
     prompt: <>Dans la fraction <strong className="font-mono">5/8</strong>, que représente le nombre 8 ?</>,
     options: [
       'Le nombre de parts prises',
       'Le nombre total de parts égales dans le partage',
-      'Le résultat de 5 ÷ 8 arrondi',
+      'Le résultat de 5 ÷ 8',
     ],
     cols: 1,
     correct: 1,
-    explain: 'Le dénominateur (8) dit en combien de parts égales on a partagé le tout ; le numérateur (5) dit combien de ces parts on prend.',
+    explain: 'Le nombre du bas (8) dit en combien de parts égales on a partagé le tout ; celui du haut (5) dit combien de ces parts on prend.',
   },
 ];
 

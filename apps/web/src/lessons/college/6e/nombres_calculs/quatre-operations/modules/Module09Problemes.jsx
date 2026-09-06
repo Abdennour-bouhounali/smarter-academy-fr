@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { CheckCircle2, XCircle } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -224,6 +224,7 @@ function SingleChoiceStep({ step, solved, onAnswered }) {
     <div className="space-y-2">
       {step.question && <p className="text-sm text-slate-700">{step.question}</p>}
       <TapQuestion
+        requires={['quatre-situations', 'demarche-probleme']}
         options={step.options}
         correct={step.correctIndex}
         cols={step.type === 'operation' ? 4 : 1}
@@ -239,6 +240,7 @@ function SingleChoiceStep({ step, solved, onAnswered }) {
 function CalcStep({ step, solved, onAnswered }) {
   return (
     <NumericQuestion
+      requires={['choisir-outil']}
       prefix={`${step.expression} =`}
       expected={step.expected}
       display={step.displayExpected ?? String(step.expected)}
@@ -328,17 +330,14 @@ export default function Module09Problemes() {
       moduleNumber={9}
       moduleTitle="Résoudre des problèmes"
       moduleSubtitle="Comprendre → Identifier → Choisir → Calculer → Vérifier → Répondre"
-      estimatedTime="12 min"
+      estimatedTime="6 min"
       intro={
         <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-5 space-y-2">
-          <div className="font-bold text-indigo-800">🧩 La démarche en 5 étapes</div>
-          <ol className="list-decimal list-inside space-y-1 text-sm text-indigo-700">
-            <li><strong>Comprends</strong> la situation</li>
-            <li><strong>Identifie</strong> les données utiles</li>
-            <li><strong>Choisis</strong> l'opération</li>
-            <li><strong>Calcule</strong></li>
-            <li><strong>Vérifie</strong> et réponds clairement</li>
-          </ol>
+          <div className="font-bold text-indigo-800">🧩 Trois problèmes, de plus en plus longs</div>
+          <p className="text-sm text-indigo-700">
+            Personne ne te dira quelle opération employer : c'est la situation qui décide. Prends
+            le temps de la relire avant de toucher au moindre nombre.
+          </p>
         </div>
       }
       steps={[
@@ -348,11 +347,22 @@ export default function Module09Problemes() {
           subtitle: `Niveau ${'★'.repeat(PROBLEMS[0].difficulty)}`,
           done: s1,
           content: (
-            <ProblemBlock
-              prob={PROBLEMS[0]}
-              stepsDone={doneSteps.p1}
-              onStepAnswered={(si) => markStep('p1', si)}
-            />
+            <div className="space-y-5">
+              <ProblemBlock
+                prob={PROBLEMS[0]}
+                stepsDone={doneSteps.p1}
+                onStepAnswered={(si) => markStep('p1', si)}
+              />
+              {/* La démarche est nommée une fois qu'elle a été parcourue en
+                  entier — trier, choisir, calculer, répondre. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="demarche-probleme"
+                  variant="new"
+                  lead="Les quatre gestes que tu viens d'enchaîner sur les minibus, dans cet ordre."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -383,15 +393,10 @@ export default function Module09Problemes() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-2xl p-6 text-center space-y-2"
-        >
-          <div className="text-3xl">🏅</div>
-          <div className="text-xl font-space font-bold">Problèmes résolus !</div>
-          <p className="text-purple-100 text-sm">Tu sais identifier, choisir et calculer. Tu es prêt pour le boss !</p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={9}>
+          <strong>La suite.</strong> Ta carte est complète. Le défi final ne te demandera rien
+          d'autre que ce qui s'y trouve — mais sans te dire quoi utiliser.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -18,6 +18,17 @@ export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/longueurs
 export const LESSON_CONFIG = {
   id: 'longueurs',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques au point de besoin et se termine sur l'état
+  // courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : lire une graduation régulière et enchaîner des
+  // multiplications par 10 — exactement ce que mesurent les cinq questions du
+  // module 0, et rien d'autre. Tout le reste (mesurer sans le piège du zéro,
+  // l'escalier km/m/cm/mm, convertir, estimer, le périmètre) est établi dans
+  // la leçon même (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+  priorKnowledge: ['calcul-numerique', 'multiplication-repetee'],
   title: 'Longueurs',
   description:
     'Mesurer, comparer, convertir et calculer des longueurs dans des situations concrètes : du mètre ruban au plan du quartier.',
@@ -67,7 +78,7 @@ export const LESSON_CONFIG = {
       stage: 'formalization', teachesLearningPointIds: ['6e_longueurs_P4'],
       color: 'violet', style: 'featured', estimatedMin: 12, difficulty: 3, actionText: 'Convertir' },
     { id: '05', number: 5, slug: 'choisir-estimer', path: `${LESSON_BASE_PATH}/choisir-estimer`,
-      title: 'Choisir et estimer', desc: 'Quelle unité choisir ? Quel ordre de grandeur attendre avant de mesurer ?',
+      title: 'Choisir et estimer', desc: 'Quelle unité choisir ? Quelle valeur attendre avant même de mesurer ?',
       stage: 'practice_lab', teachesLearningPointIds: ['6e_longueurs_P5'],
       color: 'amber', style: 'featured', estimatedMin: 11, difficulty: 2, actionText: 'Estimer' },
     { id: '06', number: 6, slug: 'perimetres', path: `${LESSON_BASE_PATH}/perimetres`,

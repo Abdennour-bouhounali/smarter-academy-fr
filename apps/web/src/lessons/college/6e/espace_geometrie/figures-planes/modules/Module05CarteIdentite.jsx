@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ClipboardList } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ShapeLab from '../components/ShapeLab';
@@ -92,8 +91,17 @@ export default function Module05CarteIdentite() {
           title: 'Ce qui distingue le carré du rectangle',
           done: readDone,
           content: (
-            <TapQuestion
-              prompt="En comparant les deux fiches, quelle est la SEULE propriété que le carré a en plus du rectangle ?"
+            <div className="space-y-5">
+              {/* Institutionnalisation : rien de neuf, on nomme la MÉTHODE de
+                  lecture des fiches, qui est ce que les étapes exigent. */}
+              <KnowledgeBrick
+                id="carte-identite"
+                variant="new"
+                lead="Les trois fiches ci-dessus rassemblent tout ce que tu as fait apparaître au laboratoire."
+              />
+              <TapQuestion
+                requires={['carte-identite', 'carre', 'rectangle']}
+                prompt="En comparant les deux fiches, quelle est la SEULE propriété que le carré a en plus du rectangle ?"
               options={[
                 'Ses quatre côtés sont égaux',
                 'Ses angles sont droits',
@@ -102,10 +110,11 @@ export default function Module05CarteIdentite() {
               correct={0}
               cols={1}
               explain="Les deux ont 4 angles droits et des côtés opposés parallèles. Seule l’égalité des QUATRE côtés sépare le carré du rectangle."
-              explainWrong="Regarde les deux fiches côte à côte : les lignes « angles droits » et « côtés opposés parallèles » sont cochées des deux côtés. La seule différence est l’égalité des quatre côtés."
-              solved={readDone}
-              onAnswered={() => setReadDone(true)}
-            />
+                explainWrong="Regarde les deux fiches côte à côte : les lignes « angles droits » et « côtés opposés parallèles » sont cochées des deux côtés. La seule différence est l’égalité des quatre côtés."
+                solved={readDone}
+                onAnswered={() => setReadDone(true)}
+              />
+            </div>
           ),
         },
         {
@@ -119,6 +128,7 @@ export default function Module05CarteIdentite() {
                   Réponds en lisant les fiches ci-dessus — pas en te fiant à l’allure des dessins.
                 </p>
               }
+              requires={['carte-identite', 'carre', 'rectangle', 'losange']}
               rows={COMPARE_ROWS.map((r) => ({
                 id: r.id,
                 label: <span className="text-sm">{r.label}</span>,
@@ -156,6 +166,7 @@ export default function Module05CarteIdentite() {
               ]}
               correct={0}
               cols={1}
+              requires={['carte-identite', 'losange', 'polygone', 'propriete-decide']}
               explain="Une description doit énoncer des PROPRIÉTÉS vérifiables. « Penché » ou « sur la pointe » décrivent une position sur la feuille, pas la figure."
               explainWrong="Attention : tourner un carré ne change pas sa nature — il reste un carré. Une description valable ne parle jamais de l’orientation, seulement des côtés et des angles."
               solved={describeDone}
@@ -165,18 +176,10 @@ export default function Module05CarteIdentite() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <ClipboardList className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-400">À retenir</p>
-          <p className="text-sm text-slate-300 text-center">
-            Décrire une figure, c’est donner la <strong className="text-white">liste des propriétés</strong>{' '}
-            qu’elle vérifie. Comparer deux figures, c’est comparer leurs deux listes — jamais leurs dessins.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais lire une fiche. On va maintenant te donner la fiche sans
+          le dessin : à toi de retrouver la figure.
+        </KnowledgeSnapshot>
       }
     />
   );

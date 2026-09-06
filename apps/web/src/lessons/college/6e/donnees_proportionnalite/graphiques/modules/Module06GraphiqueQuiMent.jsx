@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldAlert } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import BarChart from '../components/BarChart';
@@ -100,9 +101,17 @@ export default function Module06GraphiqueQuiMent() {
                 cols={1}
                 explain="Les deux nombres sont exacts. Mais en démarrant l’axe à 95, on ne dessine plus que les 5 derniers pour-cent : la barre de B paraît des fois plus grande que celle de A, alors que l’écart réel est de 4 points sur 100. Un axe qui ne part pas de zéro interdit de comparer les hauteurs."
                 explainWrong="Regarde le bas de l’axe : il commence à 95, pas à 0. Du coup on n’affiche qu’une toute petite tranche, et un écart de 4 points paraît gigantesque. Les nombres, eux, sont justes."
+                requires={['echelle-axe', 'lire-hauteur', 'comparer-entiers']}
                 solved={tronqueDone}
                 onAnswered={() => setTronqueDone(true)}
               />
+              {tronqueDone && (
+                <KnowledgeBrick
+                  id="axe-tronque"
+                  variant="new"
+                  lead="Tu viens de démasquer le trucage le plus courant. Il porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -154,6 +163,7 @@ export default function Module06GraphiqueQuiMent() {
                 cols={3}
                 explain="Le tableau dit 11 élèves : la barre doit s’arrêter à 11, entre les graduations 10 et 15."
                 explainWrong="Le tableau annonce 11 élèves pour le mercredi. 8 est la valeur du lundi, et 20 est justement la hauteur fausse."
+                requires={['hauteur-est-nombre', 'lire-hauteur', 'echelle-axe']}
                 solved={correctionDone}
                 onAnswered={() => setCorrectionDone(true)}
               />
@@ -203,27 +213,41 @@ export default function Module06GraphiqueQuiMent() {
                 cols={1}
                 explain="Sur un axe correct, une même distance représente toujours le même écart. Ici, monter d’un cran vaut tantôt 5, tantôt 50 : deux barres de hauteur double ne représentent plus des valeurs doubles. L’axe doit être RÉGULIER."
                 explainWrong="Le nombre de graduations n’est pas le souci. Le problème est leur régularité : passer de 10 à 50 occupe autant de place que passer de 0 à 5, alors que l’écart est huit fois plus grand."
+                requires={['echelle-axe', 'axe-tronque']}
                 solved={gradDone}
                 onAnswered={() => setGradDone(true)}
               />
               {gradDone && (
-                <Feedback tone="info">
-                  Trois vérifications, désormais, devant n'importe quel graphique : l'axe part-il de{' '}
-                  <strong>zéro</strong> ? Les graduations sont-elles <strong>régulières</strong> ? Les
-                  hauteurs correspondent-elles aux <strong>données</strong> ?
-                </Feedback>
+                <>
+                  <KnowledgeBrick
+                    id="graduations-regulieres"
+                    variant="new"
+                    lead="Troisième trucage, et il attaque exactement ce qui rendait les hauteurs comparables."
+                  />
+                  <KnowledgeBrick
+                    id="mem-verifier-graphique"
+                    variant="new"
+                    lead="Trois trucages démasqués : voici les trois questions qui les attrapent tous."
+                  />
+                </>
               )}
             </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <ShieldAlert className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un graphique n'est pas une preuve : c'est un dessin. Regarde toujours son axe avant de croire ce
-            qu'il montre.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={6}>
+            <strong>La suite.</strong> Ta carte est complète : il ne reste qu'à la mettre à l'épreuve sur
+            dix questions, dont aucune n'apportera de notion nouvelle.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <ShieldAlert className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Un graphique n'est pas une preuve : c'est un dessin. Regarde toujours son axe avant de croire ce
+              qu'il montre.
+            </p>
+          </div>
         </motion.div>
       }
     />

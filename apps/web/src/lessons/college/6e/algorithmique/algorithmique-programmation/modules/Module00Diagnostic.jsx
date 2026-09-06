@@ -22,6 +22,7 @@ const QUESTIONS = [
   {
     id: 'q1-compter-cases',
     skill: 'entiers',
+    requires: ['calcul-numerique'],
     points: 2,
     prompt: (
       <>
@@ -37,6 +38,7 @@ const QUESTIONS = [
   {
     id: 'q2-combien-de-pas',
     skill: 'entiers',
+    requires: ['calcul-numerique'],
     points: 2,
     prompt: (
       <>
@@ -52,6 +54,7 @@ const QUESTIONS = [
   {
     id: 'q3-ligne-colonne',
     skill: 'reperage',
+    requires: ['reperage-quadrillage'],
     points: 2,
     prompt: (
       <>
@@ -72,6 +75,7 @@ const QUESTIONS = [
   {
     id: 'q4-direction',
     skill: 'reperage',
+    requires: ['reperage-quadrillage', 'calcul-numerique'],
     points: 2,
     prompt: (
       <>
@@ -87,6 +91,7 @@ const QUESTIONS = [
   {
     id: 'q5-ordre-etapes',
     skill: 'entiers',
+    requires: ['suite-etapes-quotidien'],
     points: 2,
     prompt: (
       <>

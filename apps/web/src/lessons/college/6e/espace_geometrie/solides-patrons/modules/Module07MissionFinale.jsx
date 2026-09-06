@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import SolidView from '../components/SolidView';
@@ -38,6 +39,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'sp-e1',
+    requires: ['pave-droit', 'nature-des-faces', 'face-solide'],
     skill: 'reconnaitre',
     title: 'Épreuve 1 — Reconnaître le solide',
     prompt: 'Un solide a 6 faces rectangulaires, égales deux à deux. De quel solide s’agit-il ?',
@@ -51,6 +53,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e2',
+    requires: ['face-solide', 'dessin-et-objet', 'mem-cube-fas'],
     skill: 'compter',
     title: 'Épreuve 2 — Les faces',
     prompt: 'Combien de faces possède un cube ?',
@@ -64,6 +67,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e3',
+    requires: ['arete', 'mem-cube-fas'],
     skill: 'compter',
     title: 'Épreuve 3 — Les arêtes',
     prompt: 'Combien d’arêtes possède un cube ?',
@@ -76,6 +80,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e4',
+    requires: ['sommet-solide', 'arete', 'mem-cube-fas'],
     skill: 'compter',
     title: 'Épreuve 4 — Les sommets',
     prompt: 'Combien de sommets possède un cube ?',
@@ -88,6 +93,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e5',
+    requires: ['arete-cachee', 'dessin-et-objet'],
     skill: 'representer',
     title: 'Épreuve 5 — Les pointillés',
     prompt: 'Sur un dessin de cube en perspective, que représentent les traits en pointillé ?',
@@ -105,6 +111,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e6',
+    requires: ['patron-solide', 'face-solide'],
     skill: 'patron',
     title: 'Épreuve 6 — Le patron du cube',
     prompt: 'Ce patron se replie-t-il en cube ?',
@@ -118,6 +125,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e7',
+    requires: ['onze-patrons', 'patron-solide'],
     skill: 'patron',
     title: 'Épreuve 7 — Combien de patrons ?',
     prompt: 'Combien de patrons différents un cube possède-t-il ?',
@@ -130,6 +138,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e8',
+    requires: ['patron-impossible', 'patron-solide', 'face-solide'],
     skill: 'plier',
     title: 'Épreuve 8 — Plier mentalement',
     prompt: 'Ce patron de 6 cases se replie-t-il en cube ?',
@@ -147,6 +156,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e9',
+    requires: ['patron-impossible', 'face-solide'],
     skill: 'plier',
     title: 'Épreuve 9 — Le patron impossible',
     prompt: 'Qu’est-ce qui rend un patron de 6 cases impossible à replier en cube ?',
@@ -163,6 +173,7 @@ const EPREUVES = [
   },
   {
     id: 'sp-e10',
+    requires: ['choisir-le-compte', 'arete', 'face-solide', 'sommet-solide'],
     skill: 'resoudre',
     title: 'Épreuve 10 — L’atelier d’emballage',
     prompt:
@@ -208,7 +219,7 @@ function Synthese() {
             ))}
           </div>
           <p className="text-[11px] font-mono text-center text-emerald-700">
-            {CUBE.faces} + {CUBE.sommets} − {CUBE.aretes} = {eulerCheck(CUBE)} (tout polyèdre)
+            {CUBE.faces} + {CUBE.sommets} − {CUBE.aretes} = {eulerCheck(CUBE)} (tout solide à faces planes)
           </p>
         </div>
         <div className="rounded-2xl border-2 border-slate-200 bg-white p-3 space-y-2">
@@ -220,15 +231,10 @@ function Synthese() {
         </div>
       </div>
 
-      <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-2">
-        <h3 className="font-space font-bold text-amber-900 text-sm">Les pièges à éviter</h3>
-        <ul className="text-sm text-amber-900 space-y-1.5">
-          <li>❌ compter les 3 faces visibles &nbsp;→&nbsp; ✅ le cube en a 6</li>
-          <li>❌ confondre arête (segment) et sommet (point) &nbsp;→&nbsp; ✅ 12 et 8</li>
-          <li>❌ « 6 cases collées = un patron » &nbsp;→&nbsp; ✅ elles doivent couvrir 6 faces différentes</li>
-          <li>❌ un seul patron du cube &nbsp;→&nbsp; ✅ il y en a onze</li>
-        </ul>
-      </div>
+      {/* Les pièges et les connaissances ne sont pas recopiés ici : la carte
+          construite au fil des six modules EST la fiche de révision
+          (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

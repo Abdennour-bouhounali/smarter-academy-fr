@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
@@ -40,6 +41,7 @@ const EPREUVES = [
   // ── Issues de "Mission Fête" (saisie libre → QCM à distracteurs plausibles) ──
   {
     id: 'boss-ballons',
+    requires: ['facteurs-produit', 'decomposer-produit'],
     skill: 'multiplication',
     title: '🎈 Les ballons',
     prompt: 'Tu commandes 40 paquets de ballons à 3,25 € chacun. Quel est le coût total ?',
@@ -51,6 +53,7 @@ const EPREUVES = [
   },
   {
     id: 'boss-gobelets',
+    requires: ['partage-groupement', 'quotient'],
     skill: 'division',
     title: '🥤 Les gobelets',
     prompt: 'Il y a 120 gobelets à répartir équitablement sur 8 tables. Combien de gobelets par table ?',
@@ -62,6 +65,7 @@ const EPREUVES = [
   },
   {
     id: 'boss-pizzas-1',
+    requires: ['facteurs-produit'],
     skill: 'multiplication',
     title: '🍕 Les pizzas (1/2)',
     prompt: '180 élèves viennent à la fête. On a déjà commandé 6 pizzas de 8 parts chacune. Combien de parts cela fait-il ?',
@@ -72,6 +76,7 @@ const EPREUVES = [
   },
   {
     id: 'boss-pizzas-2',
+    requires: ['quotient', 'sens-du-reste'],
     skill: 'problemes',
     title: '🍕 Les pizzas (2/2)',
     prompt: 'Avec 48 parts disponibles pour 180 élèves, il manque 180 − 48 = 132 parts. Sachant que 132 ÷ 8 = 16 reste 4, combien de pizzas supplémentaires faut-il commander ?',
@@ -88,6 +93,7 @@ const EPREUVES = [
   },
   {
     id: 'boss-budget-1',
+    requires: ['facteurs-produit', 'decomposer-produit'],
     skill: 'multiplication',
     title: '💰 Le bilan (1/2)',
     prompt: 'Les 17 pizzas supplémentaires coûtent 12 € chacune. Quel est leur coût total ?',
@@ -98,6 +104,7 @@ const EPREUVES = [
   },
   {
     id: 'boss-budget-2',
+    requires: ['difference', 'echange-emprunt'],
     skill: 'soustraction',
     title: '💰 Le bilan (2/2)',
     prompt: 'Dépenses totales : 130 € (ballons) + 204 € (pizzas) = 334 €. Le budget de départ est 500 €. Quel est le budget restant ?',
@@ -110,6 +117,7 @@ const EPREUVES = [
   // ── Reprises du Flash Quiz (déjà QCM) ──
   {
     id: 'quatre-operations-flash-01',
+    requires: ['quotient'],
     skill: 'division',
     prompt: 'Dans 45 ÷ 8 = 5 reste 5, quel est le quotient ?',
     options: ['45', '8', '5', '0'],
@@ -120,6 +128,7 @@ const EPREUVES = [
   },
   {
     id: 'quatre-operations-flash-02',
+    requires: ['quatre-situations', 'facteurs-produit'],
     skill: 'addition',
     prompt: 'Laquelle de ces situations correspond à une multiplication ?',
     options: [
@@ -135,6 +144,7 @@ const EPREUVES = [
   },
   {
     id: 'quatre-operations-flash-03',
+    requires: ['quotient', 'egalite-euclidienne'],
     skill: 'division',
     prompt: '17 pizzas = 5 × q + r. Si 5 × 3 = 15 et 17 − 15 = 2, que vaut q ?',
     options: ['17', '5', '3', '2'],
@@ -145,6 +155,7 @@ const EPREUVES = [
   },
   {
     id: 'quatre-operations-flash-04',
+    requires: ['strategies-mentales'],
     skill: 'calculMental',
     prompt: 'Pour 7 + 9, quelle stratégie de calcul mental est la plus rapide ?',
     options: ['Poser le calcul', '7 + 10 − 1 = 16', 'Estimer à 15', 'Calculer 7 + 9 = 7 + 7 + 2'],
@@ -155,6 +166,7 @@ const EPREUVES = [
   },
   {
     id: 'quatre-operations-flash-05',
+    requires: ['quotient', 'sens-du-reste'],
     skill: 'problemes',
     prompt: '31 enfants dans 5 groupes. Quel est le nombre de groupes complets ?',
     options: ['31', '5', '6', '1'],
@@ -166,6 +178,7 @@ const EPREUVES = [
   // ── Couverture supplémentaire : opérations posées / choix de l'outil ──
   {
     id: 'boss-posees',
+    requires: ['aligner-les-rangs', 'retenue'],
     skill: 'posees',
     prompt: '247 + 158, posé en colonnes. Aux unités, 7 + 8 = 15. Que fait-on ?',
     options: [
@@ -180,6 +193,7 @@ const EPREUVES = [
   },
   {
     id: 'boss-outil',
+    requires: ['choisir-outil'],
     skill: 'choisirOutil',
     prompt: 'Pour calculer 398 + 487 (grands nombres, retenues multiples), quel outil est le plus sûr ?',
     options: ['Calcul mental', 'Calcul posé', 'Estimation seule', 'Deviner'],
@@ -199,107 +213,16 @@ const BADGES = [
   { id: 'parfait', emoji: '💎', label: 'Organisateur parfait', test: (s) => Object.values(s).every((v) => v === 0) },
 ];
 
-/* ── Fiche de synthèse (adaptée de Module11Synthese.jsx) ──
-   Correctif : les classes Tailwind par couleur sont écrites en toutes
-   lettres (pas d'interpolation `${color}`) pour rester détectables au
-   build JIT — un patron déjà suivi ailleurs dans la codebase. */
-const OP_CARDS = [
-  {
-    op: '+', name: 'Addition',
-    card: 'bg-emerald-50 border-2 border-emerald-200',
-    badge: 'bg-emerald-500',
-    term: 'text-emerald-700',
-    formule: 'bg-emerald-100 text-emerald-700',
-    vocab: [['terme', 'a ou b'], ['somme', 'a + b']],
-    sens: ['Réunir deux quantités', "Augmenter d'une valeur"],
-    attention: 'Aligner les rangs avant de poser',
-    formuleText: 'a + b = b + a',
-  },
-  {
-    op: '−', name: 'Soustraction',
-    card: 'bg-blue-50 border-2 border-blue-200',
-    badge: 'bg-blue-500',
-    term: 'text-blue-700',
-    formule: 'bg-blue-100 text-blue-700',
-    vocab: [['1er terme', 'a'], ['2e terme', 'b'], ['différence', 'a − b']],
-    sens: ['Retirer', 'Comparer', 'Compléter'],
-    attention: 'Attention aux échanges ! 3 − 7 impossible → emprunter',
-    formuleText: 'Vérif : (a−b)+b=a',
-  },
-  {
-    op: '×', name: 'Multiplication',
-    card: 'bg-violet-50 border-2 border-violet-200',
-    badge: 'bg-violet-500',
-    term: 'text-violet-700',
-    formule: 'bg-violet-100 text-violet-700',
-    vocab: [['facteur', 'a ou b'], ['produit', 'a × b']],
-    sens: ['Groupes égaux', 'Grille rectangulaire', "Mise à l'échelle"],
-    attention: 'a × b = b × a (commutativité)',
-    formuleText: 'a × (b+c) = a×b + a×c',
-  },
-  {
-    op: '÷', name: 'Division',
-    card: 'bg-amber-50 border-2 border-amber-200',
-    badge: 'bg-amber-500',
-    term: 'text-amber-700',
-    formule: 'bg-amber-100 text-amber-700',
-    vocab: [['dividende', 'a'], ['diviseur', 'b'], ['quotient', 'q'], ['reste', 'r']],
-    sens: ['Partage équitable', 'Groupement'],
-    attention: 'Le reste doit être < diviseur. Interpréter le reste dans les problèmes !',
-    formuleText: 'a = b × q + r',
-  },
-];
-
+/* ── La synthèse EST la carte des connaissances, dans son état complet :
+   rien n'est recopié, l'élève retrouve exactement les briques qu'il a
+   débloquées module après module (docs/architecture/KNOWLEDGE_MAP.md). ── */
 function Synthese() {
   return (
     <div className="space-y-4">
-      <div className="bg-slate-900 text-white rounded-2xl p-5 sm:p-6 text-center space-y-2">
-        <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Les quatre opérations</div>
-        <p className="text-sm text-slate-300 max-w-sm mx-auto">
-          Quatre outils, un même objectif : décrire ce qui se passe quand on réunit, retire, groupe ou partage.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {OP_CARDS.map(({ op, name, card, badge, term, formule, vocab, sens, attention, formuleText }) => (
-          <div key={op} className={`${card} rounded-2xl p-4 space-y-3`}>
-            <div className="flex items-center gap-3">
-              <div className={`${badge} text-white text-2xl font-bold w-12 h-12 rounded-xl flex items-center justify-center`}>{op}</div>
-              <div className="font-space font-bold text-lg text-slate-800">{name}</div>
-            </div>
-
-            <div>
-              <div className="text-xs font-mono font-bold text-slate-400 uppercase mb-1">Vocabulaire</div>
-              <div className="flex flex-wrap gap-2">
-                {vocab.map(([t, def]) => (
-                  <div key={t} className="bg-white border border-slate-200 rounded-lg px-2 py-1 text-xs">
-                    <span className={`font-bold ${term}`}>{t}</span>
-                    <span className="text-slate-400 ml-1">= {def}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <div className="text-xs font-mono font-bold text-slate-400 uppercase mb-1">Situations</div>
-              <ul className="list-disc list-inside text-xs text-slate-600 space-y-0.5">
-                {sens.map((s) => <li key={s}>{s}</li>)}
-              </ul>
-            </div>
-
-            <div className="bg-white border border-amber-100 rounded-xl px-3 py-2 text-xs text-slate-600">
-              ⚠️ {attention}
-            </div>
-
-            <div className={`${formule} rounded-xl px-3 py-2 text-center font-mono font-bold text-sm`}>
-              {formuleText}
-            </div>
-          </div>
-        ))}
-      </div>
-
+      <KnowledgeSnapshot complete variant="complete" />
       <Feedback tone="info">
-        🧮 Quatre opérations, un seul réflexe : comprendre la situation avant de choisir l'opération et l'outil de calcul.
+        🧮 Quatre opérations, un seul réflexe : comprendre la situation avant de choisir
+        l'opération et l'outil de calcul.
       </Feedback>
     </div>
   );
@@ -313,7 +236,7 @@ export default function Module10BossFinal() {
       moduleNumber={10}
       moduleTitle="🏆 Boss Final : Mission Fête"
       moduleSubtitle="Organise l'événement scolaire en mobilisant les quatre opérations."
-      estimatedTime="15 min"
+      estimatedTime="13 min"
       lessonConfig={LESSON_CONFIG}
       timerSeconds={12 * 60}
       timerLabel="12 min"

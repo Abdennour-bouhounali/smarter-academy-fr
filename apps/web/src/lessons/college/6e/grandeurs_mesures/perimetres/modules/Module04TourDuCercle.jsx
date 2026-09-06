@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { CircleDot } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CircleUnroller from '../components/CircleUnroller';
@@ -128,7 +127,18 @@ export default function Module04TourDuCercle() {
           title: 'Prédis, puis fais rouler',
           done: unrollDone,
           content: (kit) => (
-            <UnrollExperiment react={kit.react} solved={unrollDone} onSolved={() => setUnrollDone(true)} />
+            <div className="space-y-5">
+              <UnrollExperiment react={kit.react} solved={unrollDone} onSolved={() => setUnrollDone(true)} />
+              {/* Le sol vient d'afficher « 3 diamètres et un petit reste » :
+                  le nombre peut être nommé, il est déjà mesuré. */}
+              {unrollDone && (
+                <KnowledgeBrick
+                  id="pi"
+                  variant="new"
+                  lead="Ce « un peu plus de 3 » que la roue a écrit sur le sol est un nombre célèbre."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -136,15 +146,27 @@ export default function Module04TourDuCercle() {
           title: 'Rayon ou diamètre ?',
           done: vocabDone,
           content: (
-            <TapQuestion
-              prompt={VOCAB_Q.q}
-              options={VOCAB_Q.options}
-              correct={VOCAB_Q.correct}
-              cols={3}
-              explain={VOCAB_Q.explain}
-              solved={vocabDone}
-              onAnswered={() => setVocabDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={VOCAB_Q.q}
+                options={VOCAB_Q.options}
+                correct={VOCAB_Q.correct}
+                cols={3}
+                explain={VOCAB_Q.explain}
+                requires={['perimetre', 'pi']}
+                solved={vocabDone}
+                onAnswered={() => setVocabDone(true)}
+              />
+              {/* π mesuré, diamètre distingué du rayon : la formule peut
+                  s'écrire — elle n'apporte plus rien de neuf, elle assemble. */}
+              {vocabDone && (
+                <KnowledgeBrick
+                  id="perimetre-cercle"
+                  variant="new"
+                  lead="Tu as le nombre et tu as la bonne longueur à multiplier : la formule s’écrit toute seule."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -161,6 +183,7 @@ export default function Module04TourDuCercle() {
                 display={formatDec(P50)}
                 explain={<>P ≈ 3,14 × 50 ≈ <strong>{formatDec(P50)} cm</strong> — un résultat toujours APPROCHÉ (signe ≈), jamais exact.</>}
                 explainFor={() => 'Multiplie 3,14 par le diamètre (50 cm).'}
+                requires={['perimetre', 'pi', 'perimetre-cercle']}
                 solved={calc1Done}
                 onAnswered={() => setCalc1Done(true)}
               />
@@ -178,6 +201,7 @@ export default function Module04TourDuCercle() {
                         ? 'Tu as multiplié π par le RAYON (3 m). La formule utilise le diamètre : D = 2 × 3 = 6 m.'
                         : 'Attention : on te donne le rayon. Calcule d’abord D = 2 × r, puis P ≈ 3,14 × D.'
                     }
+                    requires={['perimetre', 'pi', 'perimetre-cercle']}
                     solved={calc2Done}
                     onAnswered={() => setCalc2Done(true)}
                   />
@@ -188,13 +212,10 @@ export default function Module04TourDuCercle() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <CircleDot className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            P ≈ π × D, avec π ≈ 3,14 : le tour d'un cercle vaut « trois diamètres et un petit peu ». Si on te donne
-            le rayon, double-le d'abord.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu as maintenant tous les tours. Le module suivant ajoute les
+          deux réflexes qui précèdent le calcul et évitent presque toutes les erreurs.
+        </KnowledgeSnapshot>
       }
     />
   );

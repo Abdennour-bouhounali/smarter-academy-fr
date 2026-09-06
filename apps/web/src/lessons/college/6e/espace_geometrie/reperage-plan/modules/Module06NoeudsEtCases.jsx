@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Grid3x3 } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoordGrid from '../components/CoordGrid';
@@ -106,12 +105,23 @@ export default function Module06NoeudsEtCases() {
               )}
 
               {exploreDone && (
-                <Feedback tone="ok">
-                  La case <strong className="font-mono">{formatCell(cell.colonne, cell.ligne)}</strong> est une{' '}
-                  <strong>surface</strong> ; le nœud{' '}
-                  <strong className="font-mono">{formatCoords(node)}</strong> est un <strong>point</strong>,
-                  sans épaisseur, à l’intersection de deux traits.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    La case <strong className="font-mono">{formatCell(cell.colonne, cell.ligne)}</strong> est une{' '}
+                    <strong>surface</strong> ; le nœud{' '}
+                    <strong className="font-mono">{formatCoords(node)}</strong> est un <strong>point</strong>,
+                    sans épaisseur, à l’intersection de deux traits.
+                  </Feedback>
+                  {/* Les deux repérages viennent d'être essayés côte à côte :
+                      la distinction se pose maintenant, avant les deux
+                      questions qui la mettent à l'épreuve. */}
+                  <KnowledgeBrick
+                    id="noeud-vs-case"
+                    variant="new"
+                    lead="Tu as cliqué une surface d’un côté, un croisement de l’autre : ce ne sont pas les mêmes objets."
+                  />
+                  <KnowledgeBrick id="mem-noeud-case" variant="new" />
+                </>
               )}
             </div>
           ),
@@ -134,6 +144,7 @@ export default function Module06NoeudsEtCases() {
               options={['12 nœuds', '20 nœuds', '7 nœuds']}
               correct={1}
               cols={3}
+              requires={['noeud-vs-case', 'lecture-quadrillage']}
               explain="5 traits verticaux × 4 traits horizontaux = 20 nœuds. Il y a toujours un trait de plus que d’intervalles : 4 cases de large, mais 5 traits."
               explainWrong="12, ce serait le nombre de CASES (4 × 3). Les nœuds se comptent sur les traits : 5 × 4 = 20."
               solved={countDone}
@@ -147,6 +158,7 @@ export default function Module06NoeudsEtCases() {
           done: sortDone,
           content: (
             <BatchChoiceQuestion
+              requires={['noeud-vs-case', 'coordonnees']}
               intro={
                 <p className="text-sm text-slate-600">
                   Chaque écriture désigne-t-elle un nœud (un point) ou une case (une surface) ?
@@ -178,29 +190,10 @@ export default function Module06NoeudsEtCases() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Grid3x3 className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-400">À retenir</p>
-          <div className="grid sm:grid-cols-2 gap-2 text-sm">
-            <div className="bg-white/10 rounded-xl p-3">
-              <div className="font-bold text-white mb-1">Un nœud — un point</div>
-              <div className="text-slate-300">
-                <span className="font-mono">(3 ; 5)</span> : horizontale d’abord, verticale ensuite, séparées
-                par un point-virgule.
-              </div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3">
-              <div className="font-bold text-white mb-1">Une case — une surface</div>
-              <div className="text-slate-300">
-                <span className="font-mono">B3</span> : la colonne par sa lettre, la ligne par son numéro.
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Plus rien de nouveau à apprendre : au module suivant, les
+          coordonnées deviennent un outil pour résoudre de vrais problèmes de plan.
+        </KnowledgeSnapshot>
       }
     />
   );

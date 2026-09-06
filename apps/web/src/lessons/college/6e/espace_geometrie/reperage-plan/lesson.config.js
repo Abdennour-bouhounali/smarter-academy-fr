@@ -24,6 +24,27 @@ export const LESSON_BASE_PATH = '/courses/college/6e/espace_geometrie/reperage-p
 export const LESSON_CONFIG = {
   id: 'reperage-plan',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : compter avec des entiers, et lire un quadrillage (lignes,
+  // colonnes, cases, croisements) — exactement ce que mesurent les cinq
+  // questions du module 0, et rien d'autre. Tout le reste (l'ordre du couple,
+  // abscisse, ordonnée, coordonnées, origine, nœud contre case) est établi
+  // dans la leçon même.
+  priorKnowledge: ['calcul-numerique', 'lecture-quadrillage'],
+  // « intervalle » et « minimum » relèvent du lexique de seconde mais sont ici
+  // employés dans leur sens courant de l'école élémentaire (l'écart entre deux
+  // graduations, le trajet le plus court) : ce ne sont pas les notions de
+  // seconde, et aucune question n'en dépend.
+  knowledgeAudit: {
+    ignore: [
+      { term: 'intervalle', reason: "sens élémentaire « écart entre deux graduations », prérequis d'école, jamais la notion de seconde" },
+      { term: 'extremum', reason: "« au minimum » au sens courant du trajet le plus court, jamais l'extremum d'une fonction" },
+    ],
+  },
   title: 'Repérage dans le plan',
   description:
     'Décrire une position sans ambiguïté, lire et placer des points dans un repère, se déplacer dans un quadrillage et résoudre des problèmes de plan.',

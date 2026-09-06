@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Compass } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { rectanglePerimeter, formatDec, parseDec } from '../components/perimUtils';
@@ -87,6 +86,7 @@ export default function Module05BonsReflexes() {
                   raisonnable à lire.
                 </p>
               }
+              requires={['perimetre', 'perimetre-est-longueur']}
               rows={UNIT_ROWS.map((it) => ({
                 id: it.id,
                 label: (
@@ -120,15 +120,27 @@ export default function Module05BonsReflexes() {
           title: 'Le piège des unités mélangées',
           done: unitTrapDone,
           content: (
-            <TapQuestion
-              prompt={UNIT_TRAP_Q.q}
-              options={UNIT_TRAP_Q.options}
-              correct={UNIT_TRAP_Q.correct}
-              cols={1}
-              explain={UNIT_TRAP_Q.explain}
-              solved={unitTrapDone}
-              onAnswered={() => setUnitTrapDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={UNIT_TRAP_Q.q}
+                options={UNIT_TRAP_Q.options}
+                correct={UNIT_TRAP_Q.correct}
+                cols={1}
+                explain={UNIT_TRAP_Q.explain}
+                requires={['perimetre', 'perimetre-est-longueur', 'tour-complet']}
+                solved={unitTrapDone}
+                onAnswered={() => setUnitTrapDone(true)}
+              />
+              {/* Le calcul de Lina vient d'être démonté : la règle se pose
+                  sur ce constat, et servira à chaque atelier du module 6. */}
+              {unitTrapDone && (
+                <KnowledgeBrick
+                  id="meme-unite"
+                  variant="new"
+                  lead="Ce que Lina a manqué vaut pour toutes les additions de longueurs."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -146,11 +158,22 @@ export default function Module05BonsReflexes() {
                       correct={item.correct}
                       cols={3}
                       explain={item.explain}
+                      requires={['perimetre', 'perimetre-est-longueur', 'formules-polygones', 'perimetre-cercle']}
                       solved={estimDone.includes(i)}
                       onAnswered={() => setEstimDone((d) => (d.includes(i) ? d : [...d, i]))}
                     />
                   </div>
                 ) : null
+              )}
+              {/* Deux estimations viennent d'être faites de tête. La brique
+                  nomme ce geste — y compris l'arrondi des côtés — AVANT
+                  l'étape 4, dont la consigne l'emploie. */}
+              {allEstimDone && (
+                <KnowledgeBrick
+                  id="estimer-avant"
+                  variant="new"
+                  lead="Tu viens de deviner deux tours sans poser une seule opération. Voilà à quoi cela sert."
+                />
               )}
             </div>
           ),
@@ -167,6 +190,7 @@ export default function Module05BonsReflexes() {
                 correct={1}
                 cols={3}
                 explain="8,7 ≈ 9 et 6,2 ≈ 6 : P ≈ 2 × (9 + 6) = 30 m. Cette estimation va nous servir de garde-fou."
+                requires={['perimetre', 'formules-polygones', 'estimer-avant']}
                 solved={ritEstimDone}
                 onAnswered={() => setRitEstimDone(true)}
               />
@@ -180,14 +204,24 @@ export default function Module05BonsReflexes() {
                     display={formatDec(RITUEL_EXACT)}
                     explain={<>P = 2 × 14,9 = <strong>{formatDec(RITUEL_EXACT)} m</strong> — tout proche de l'estimation (30 m) : le calcul est cohérent ✓.</>}
                     explainFor={() => 'P = 2 × (L + l). Additionne 8,7 + 6,2, puis double.'}
+                    requires={['perimetre', 'formules-polygones', 'estimer-avant']}
                     solved={ritCalcDone}
                     onAnswered={() => setRitCalcDone(true)}
                   />
                   {ritCalcDone && (
-                    <Feedback tone="info">
-                      Le rituel du géomètre : <strong>estimer → calculer → écrire avec l'unité</strong>. Si le
-                      calcul s'éloigne beaucoup de l'estimation, c'est qu'une erreur s'est glissée quelque part.
-                    </Feedback>
+                    <>
+                      <Feedback tone="info">
+                        Le rituel du géomètre : <strong>estimer → calculer → écrire avec l'unité</strong>. Si le
+                        calcul s'éloigne beaucoup de l'estimation, c'est qu'une erreur s'est glissée quelque part.
+                      </Feedback>
+                      {/* Les quatre tours ont tous été construits par un
+                          geste : le repère de mémorisation les rassemble. */}
+                      <KnowledgeBrick
+                        id="mem-perimetres"
+                        variant="new"
+                        lead="Ta carte contient maintenant les quatre façons de faire un tour. Les voici en une seule vue."
+                      />
+                    </>
                   )}
                 </div>
               )}
@@ -196,13 +230,10 @@ export default function Module05BonsReflexes() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Compass className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Polygone : somme des côtés · Rectangle : 2 × (L + l) · Carré : 4 × c · Cercle : ≈ π × D. Et toujours :
-            même unité partout, estimation en tête.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Ta carte est complète. Le module suivant n'ajoute rien : il
+          fait travailler tout cela sur trois vrais bons de commande.
+        </KnowledgeSnapshot>
       }
     />
   );

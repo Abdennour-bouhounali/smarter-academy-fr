@@ -18,6 +18,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-digit',
+    requires: ['numeration-cycle3'],
     skill: 'numerationDecimale',
     points: 2,
     type: 'custom',
@@ -45,6 +46,7 @@ const QUESTIONS = [
   },
   {
     id: 'q2-value',
+    requires: ['numeration-cycle3'],
     skill: 'numerationDecimale',
     points: 2,
     prompt: (
@@ -59,6 +61,7 @@ const QUESTIONS = [
   },
   {
     id: 'q3-position',
+    requires: ['numeration-cycle3'],
     skill: 'numerationDecimale',
     points: 1,
     prompt: (
@@ -73,6 +76,7 @@ const QUESTIONS = [
   },
   {
     id: 'q4-mots-vers-chiffres',
+    requires: ['lecture-ecriture-cycle3'],
     skill: 'lectureEcriture',
     points: 2,
     prompt: <>Quelle écriture correspond à <em>« quatre mille vingt-six »</em> ?</>,
@@ -83,6 +87,7 @@ const QUESTIONS = [
   },
   {
     id: 'q5-chiffres-vers-mots',
+    requires: ['lecture-ecriture-cycle3'],
     skill: 'lectureEcriture',
     points: 2,
     prompt: <>Comment lit-on <strong className="font-mono">8 405</strong> ?</>,
@@ -98,6 +103,7 @@ const QUESTIONS = [
   },
   {
     id: 'q6-mots-vers-chiffres-2',
+    requires: ['lecture-ecriture-cycle3'],
     skill: 'lectureEcriture',
     points: 1,
     prompt: <>Quelle écriture correspond à <em>« douze mille cinquante »</em> ?</>,

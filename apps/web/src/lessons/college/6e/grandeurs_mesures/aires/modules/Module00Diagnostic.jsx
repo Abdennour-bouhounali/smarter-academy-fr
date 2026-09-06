@@ -26,6 +26,7 @@ const QUESTIONS = [
     options: ['10', '100', '1 000'],
     cols: 3,
     correct: 1,
+    requires: ['calcul-numerique'],
     explain: '1 m = 100 cm.',
   },
   {
@@ -36,6 +37,7 @@ const QUESTIONS = [
     options: ['24', '28', '32'],
     cols: 3,
     correct: 1,
+    requires: ['tables-multiplication'],
     explain: '4 × 7 = 28 — cette table servira beaucoup pour les aires !',
   },
   {
@@ -46,6 +48,7 @@ const QUESTIONS = [
     options: ['km', 'cm', 'mm'],
     cols: 3,
     correct: 1,
+    requires: ['calcul-numerique'],
     explain: 'Un cahier fait une vingtaine de centimètres de large : le cm est l’unité adaptée.',
   },
   {
@@ -56,6 +59,7 @@ const QUESTIONS = [
     options: ['8', '10', '12'],
     cols: 3,
     correct: 1,
+    requires: ['tables-multiplication'],
     explain: '4 × 2,5 = 10 : quatre moitiés de 5.',
   },
   {
@@ -66,6 +70,7 @@ const QUESTIONS = [
     options: ['Ils sont tous différents', 'Ils sont égaux deux à deux', 'Ils sont tous égaux'],
     cols: 1,
     correct: 2,
+    requires: ['calcul-numerique'],
     explain: 'Dans un carré, les quatre côtés ont exactement la même longueur.',
   },
 ];

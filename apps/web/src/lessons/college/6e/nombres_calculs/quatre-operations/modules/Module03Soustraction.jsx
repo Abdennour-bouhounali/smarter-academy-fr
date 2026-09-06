@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
-import ConceptCard from '../../../../../common/components/ConceptCard';
-import MathText from '../../../../../common/components/MathText';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -100,6 +99,7 @@ function MeaningComparer({ done, onAnswered }) {
 
       <NumericQuestion
         prompt="Groupe A : 13 billes. Groupe B : 8 billes. De combien le groupe A a-t-il plus de billes que le groupe B ?"
+        requires={['calcul-numerique']}
         above={
           <div className="space-y-2 bg-white rounded-xl border border-blue-100 p-4">
             <div className="flex items-center gap-2">
@@ -143,6 +143,7 @@ function MeaningCompleter({ done, onAnswered }) {
 
       <NumericQuestion
         prompt="Tu as 8 €. Tu veux acheter quelque chose qui coûte 13 €. Combien d'euros te manque-t-il ?"
+        requires={['calcul-numerique']}
         above={
           <div className="bg-white rounded-xl border border-violet-100 p-4 space-y-2">
             <div className="flex justify-between text-xs font-mono text-slate-500">
@@ -352,7 +353,7 @@ function SubtractionPosed({ onSolved, done }) {
 const ERROR_OPTIONS = [
   "L'élève a oublié l'échange (1 dizaine → 10 unités) dans la colonne des unités.",
   "L'élève a mal aligné les chiffres dans le tableau.",
-  "L'élève a confondu dividende et diviseur.",
+  "L'élève a écrit le résultat de droite à gauche.",
 ];
 
 /* ─── Module principal ────────────────────────────────────────────── */
@@ -373,7 +374,7 @@ export default function Module03Soustraction() {
       moduleNumber={3}
       moduleTitle="Soustraire : retirer, comparer, compléter"
       moduleSubtitle="Découvrir les trois sens de la soustraction et maîtriser les échanges."
-      estimatedTime="12 min"
+      estimatedTime="8 min"
       brief={{
         tag: '➖ Découverte',
         title: 'La soustraction a trois visages',
@@ -407,27 +408,22 @@ export default function Module03Soustraction() {
                 <MeaningCompleter done={completerDone} onAnswered={() => setCompleterDone(true)} />
               )}
 
+              {/* Les trois sens ont été VÉCUS l'un après l'autre : on peut
+                  maintenant dire qu'ils sont la même opération, et nommer
+                  son résultat. */}
               {sensDone && (
-                <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-                  <ConceptCard label="La soustraction" emoji="➖" color="blue">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-1">
-                      {[
-                        { emoji: '🗑️', title: 'Retirer', ex: '13 − 5' },
-                        { emoji: '⚖️', title: 'Comparer', ex: '13 − 8' },
-                        { emoji: '🧩', title: 'Compléter', ex: '13 − 8' },
-                      ].map(({ emoji, title, ex }) => (
-                        <div key={title} className="bg-white rounded-xl border border-blue-100 p-3 text-center">
-                          <div className="text-lg">{emoji}</div>
-                          <div className="font-bold text-blue-700 text-sm">{title}</div>
-                          <div className="text-xs text-slate-500">{ex}</div>
-                        </div>
-                      ))}
-                    </div>
-                    <p className="mt-2 text-sm">
-                      Dans <MathText>{'$a - b = d$'}</MathText>, <strong>a</strong> est le <strong>premier terme</strong>, <strong>b</strong> le <strong>second terme</strong>, et <strong>d</strong> la <strong>différence</strong>.
-                    </p>
-                  </ConceptCard>
-                </motion.div>
+                <>
+                  <KnowledgeBrick
+                    id="trois-sens-soustraction"
+                    variant="new"
+                    lead="Trois situations très différentes, et pourtant le même calcul à chaque fois."
+                  />
+                  <KnowledgeBrick
+                    id="difference"
+                    variant="new"
+                    lead="Ce que tu as trouvé trois fois — l'écart, le manque, le reste après avoir enlevé — porte un nom."
+                  />
+                </>
               )}
             </div>
           ),
@@ -453,13 +449,24 @@ export default function Module03Soustraction() {
           subtitle: 'Aligner, soustraire colonne par colonne, gérer les échanges.',
           done: posedDone,
           content: (kit) => (
-            <SubtractionPosed
-              done={posedDone}
-              onSolved={() => {
-                kit.react(true);
-                setPosedDone(true);
-              }}
-            />
+            <div className="space-y-5">
+              <SubtractionPosed
+                done={posedDone}
+                onSolved={() => {
+                  kit.react(true);
+                  setPosedDone(true);
+                }}
+              />
+              {/* L'échange du module 2 rejoué à l'envers : on le nomme au
+                  moment où l'élève vient de casser la dizaine lui-même. */}
+              {posedDone && (
+                <KnowledgeBrick
+                  id="echange-emprunt"
+                  variant="new"
+                  lead="Tu viens de casser une dizaine pour rendre 3 − 7 possible."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -491,6 +498,7 @@ export default function Module03Soustraction() {
                 </div>
               }
               options={ERROR_OPTIONS}
+              requires={['echange-emprunt']}
               correct={0}
               cols={1}
               explain="Exact ! 3 − 7 est impossible sans échange. Il fallait emprunter 1 dizaine → 13 − 7 = 6. Résultat correct : 36."
@@ -502,11 +510,10 @@ export default function Module03Soustraction() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-2xl p-6 text-center space-y-2">
-          <div className="text-3xl">🏅</div>
-          <div className="text-xl font-space font-bold">Soustraction maîtrisée !</div>
-          <p className="text-blue-100 text-sm">Tu connais les 3 sens et tu sais gérer les échanges.</p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Réunir et retirer sont là. On attaque maintenant l'opération
+          qui compte vite des paquets identiques.
+        </KnowledgeSnapshot>
       }
     />
   );

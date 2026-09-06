@@ -19,6 +19,7 @@ const QUESTIONS = [
   {
     id: 'q1-table',
     skill: 'calcul',
+    requires: ['tables-multiplication'],
     points: 2,
     prompt: <>Combien font <strong className="font-mono">7 × 4</strong> ?</>,
     options: ['24', '28', '32'],
@@ -29,6 +30,7 @@ const QUESTIONS = [
   {
     id: 'q2-division',
     skill: 'calcul',
+    requires: ['calcul-numerique', 'tables-multiplication'],
     points: 2,
     prompt: <>Combien font <strong className="font-mono">36 ÷ 3</strong> ?</>,
     options: ['9', '12', '18'],
@@ -39,6 +41,7 @@ const QUESTIONS = [
   {
     id: 'q3-double',
     skill: 'calcul',
+    requires: ['tables-multiplication'],
     points: 2,
     prompt: <>Quel est le <strong>double</strong> de 15 ?</>,
     options: ['7,5', '30', '17'],
@@ -49,6 +52,7 @@ const QUESTIONS = [
   {
     id: 'q4-moitie',
     skill: 'calcul',
+    requires: ['calcul-numerique'],
     points: 2,
     prompt: <>Quelle est la <strong>moitié</strong> de 18 ?</>,
     options: ['9', '36', '6'],
@@ -59,6 +63,7 @@ const QUESTIONS = [
   {
     id: 'q5-tableau',
     skill: 'tableau',
+    requires: ['lire-tableau', 'calcul-numerique'],
     points: 2,
     prompt: (
       <>

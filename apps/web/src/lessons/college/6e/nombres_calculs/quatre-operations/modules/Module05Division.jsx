@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
-import ConceptCard from '../../../../../common/components/ConceptCard';
-import MathText from '../../../../../common/components/MathText';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -170,13 +169,9 @@ function GroupingManip({ onComplete, done }) {
 function EuclideanDivision({ onComplete, done }) {
   const dividend = 17;
   const divisor = 5;
-  const quotient = Math.floor(dividend / divisor);
-  const remainder = dividend % divisor;
-
   const [groups, setGroups] = useState(0);
   const placed = groups * divisor;
   const remaining = dividend - placed;
-  const finished = groups === quotient && remaining === remainder;
 
   return (
     <div className="space-y-5">
@@ -226,8 +221,8 @@ function EuclideanDivision({ onComplete, done }) {
       <div className="bg-slate-800 text-white rounded-xl p-4 text-center space-y-1">
         <div className="text-xs font-mono text-slate-400">{dividend} ÷ {divisor}</div>
         <div className="font-space font-bold text-xl">
-          Quotient : <span className="text-amber-400">{groups}</span>
-          {' · '}Reste : <span className="text-rose-400">{remaining}</span>
+          Groupes complets : <span className="text-amber-400">{groups}</span>
+          {' · '}Billes de côté : <span className="text-rose-400">{remaining}</span>
         </div>
         <div className="text-sm font-mono text-slate-300">{dividend} = {divisor} × {groups} + {remaining}</div>
       </div>
@@ -238,7 +233,8 @@ function EuclideanDivision({ onComplete, done }) {
             <div className="text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3 text-sm">
               <CheckCircle2 className="inline w-4 h-4 mr-1" />
               <strong>{dividend} = {divisor} × {groups} + {remaining}</strong><br />
-              Quotient = <strong>{groups}</strong>, Reste = <strong>{remaining}</strong> (reste &lt; {divisor} ✓)
+              {groups} groupes complets de {divisor}, et {remaining} billes qui ne peuvent plus en
+              former un ({remaining} &lt; {divisor} ✓)
             </div>
             <button onClick={onComplete} className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl">
               Continuer →
@@ -247,32 +243,6 @@ function EuclideanDivision({ onComplete, done }) {
         )}
       </AnimatePresence>
 
-      {finished && (
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-          <ConceptCard label="La division euclidienne" emoji="➗" color="amber">
-            <div className="space-y-3">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
-                {[
-                  { name: 'dividende', role: 'la quantité à diviser', color: 'text-amber-700' },
-                  { name: 'diviseur', role: 'taille ou nombre de groupes', color: 'text-slate-700' },
-                  { name: 'quotient', role: 'résultat entier', color: 'text-indigo-700' },
-                  { name: 'reste', role: 'ce qui ne rentre pas', color: 'text-rose-700' },
-                ].map(({ name, role, color }) => (
-                  <div key={name} className="bg-white rounded-lg border border-amber-100 p-2">
-                    <div className={`font-bold ${color} text-sm`}>{name}</div>
-                    <div className="text-slate-500 text-[10px]">{role}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-white border border-amber-100 rounded-xl p-3 text-center">
-                <MathText>{'$$\\text{dividende} = \\text{diviseur} \\times \\text{quotient} + \\text{reste}$$'}</MathText>
-                <div className="text-xs text-slate-500 mt-1">avec <strong>reste &lt; diviseur</strong></div>
-              </div>
-              <p className="text-sm text-slate-600">💡 Pour vérifier : multiplie le diviseur par le quotient, ajoute le reste — tu dois retrouver le dividende.</p>
-            </div>
-          </ConceptCard>
-        </motion.div>
-      )}
     </div>
   );
 }
@@ -304,25 +274,65 @@ export default function Module05Division() {
       moduleNumber={5}
       moduleTitle="Diviser : partager et regrouper"
       moduleSubtitle="Partage équitable, groupement, division euclidienne et sens du reste."
-      estimatedTime="15 min"
+      estimatedTime="8 min"
       steps={[
         {
           num: 1,
           title: 'Partager équitablement',
           done: s1,
-          content: (kit) => <SharingManip onComplete={() => { kit.react(true); setS1(true); }} done={s1} />,
+          content: (kit) => (
+            <div className="space-y-5">
+              <SharingManip onComplete={() => { kit.react(true); setS1(true); }} done={s1} />
+            </div>
+          ),
         },
         {
           num: 2,
           title: 'Former des groupes',
           done: s2,
-          content: (kit) => <GroupingManip onComplete={() => { kit.react(true); setS2(true); }} done={s2} />,
+          content: (kit) => (
+            <div className="space-y-5">
+              <GroupingManip onComplete={() => { kit.react(true); setS2(true); }} done={s2} />
+              {/* L'élève vient de faire les deux gestes — distribuer, puis
+                  regrouper — et de tomber deux fois sur 4. C'est le moment
+                  de dire que c'est la même opération. */}
+              {s2 && (
+                <KnowledgeBrick
+                  id="partage-groupement"
+                  variant="new"
+                  lead="Deux gestes différents, le même 24 ÷ 6 = 4 au bout."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 3,
           title: 'La division euclidienne (avec reste)',
           done: s3,
-          content: (kit) => <EuclideanDivision onComplete={() => { kit.react(true); setS3(true); }} done={s3} />,
+          content: (kit) => (
+            <div className="space-y-5">
+              <EuclideanDivision onComplete={() => { kit.react(true); setS3(true); }} done={s3} />
+              {/* RÉPARATION : « quotient » n'était jusqu'ici nommé nulle part
+                  dans la leçon — il surgissait dans une OPTION du test final.
+                  Il est posé ICI, après que l'élève a formé ses groupes et vu
+                  ce qui restait sur la table. */}
+              {s3 && (
+                <>
+                  <KnowledgeBrick
+                    id="quotient"
+                    variant="new"
+                    lead="Les 3 paquets que tu as formés, et les 2 billes restées seules : chacun a son nom."
+                  />
+                  <KnowledgeBrick
+                    id="egalite-euclidienne"
+                    variant="new"
+                    lead="La ligne 17 = 5 × 3 + 2 qui s'écrivait sous tes yeux à chaque groupe formé."
+                  />
+                </>
+              )}
+            </div>
+          ),
         },
         {
           num: 4,
@@ -347,6 +357,7 @@ export default function Module05Division() {
 
               <TapQuestion
                 prompt="Mais dans la réalité, combien de bus commande-t-on ?"
+                requires={['quotient', 'egalite-euclidienne']}
                 options={REMAINDER_OPTIONS}
                 correct={1}
                 cols={3}
@@ -355,16 +366,27 @@ export default function Module05Division() {
                 solved={s4}
                 onAnswered={() => setS4(true)}
               />
+              {/* La règle est tirée de l'épreuve qui vient d'être vécue —
+                  pas récitée avant elle. */}
+              {s4 && (
+                <>
+                  <KnowledgeBrick
+                    id="sens-du-reste"
+                    variant="new"
+                    lead="Les 2 enfants qui seraient restés à pied si on s'était arrêté au calcul."
+                  />
+                  <KnowledgeBrick id="mem-quatre-mots" variant="new" />
+                </>
+              )}
             </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-2xl p-6 text-center space-y-2">
-          <div className="text-3xl">🏅</div>
-          <div className="text-xl font-space font-bold">Division maîtrisée !</div>
-          <p className="text-amber-100 text-sm">Partage, groupement, division euclidienne et sens du reste — tout est clair !</p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Les quatre opérations sont nommées. On va maintenant les
+          poser proprement, en colonnes, pour ne plus rien perdre en route.
+        </KnowledgeSnapshot>
       }
     />
   );

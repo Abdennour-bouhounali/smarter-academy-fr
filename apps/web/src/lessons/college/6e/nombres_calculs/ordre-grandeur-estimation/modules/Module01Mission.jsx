@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { formatFr, calcText } from '../components/estimationUtils';
 
@@ -59,6 +59,7 @@ function EstimationRapide({ answered, onAnswered }) {
           <div key={q.id} className="border-t border-slate-100 pt-4 first:border-0 first:pt-0">
             <TapQuestion
               prompt={q.intro}
+              requires={['valeur-position']}
               options={q.options}
               correct={q.correct}
               cols={3}
@@ -137,6 +138,7 @@ export default function Module01Mission() {
           content: (
             <TapQuestion
               prompt={CONSTAT_Q.q}
+              requires={['calcul-numerique']}
               options={CONSTAT_Q.options}
               correct={CONSTAT_Q.correct}
               cols={1}
@@ -165,6 +167,7 @@ export default function Module01Mission() {
             <div className="space-y-4">
               <TapQuestion
                 prompt={CONCLUSION_Q.q}
+                requires={['calcul-numerique']}
                 options={CONCLUSION_Q.options}
                 correct={CONCLUSION_Q.correct}
                 cols={1}
@@ -172,23 +175,25 @@ export default function Module01Mission() {
                 solved={concDone}
                 onAnswered={() => setConcDone(true)}
               />
+              {/* La notion est nommée après que l'élève s'en est servi :
+                  il vient de rejeter un résultat sans le recalculer. */}
               {s3 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-                >
-                  <AlertTriangle className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-                  <p className="text-sm text-slate-300">
-                    Tu viens de contrôler un résultat <strong className="text-white">sans le recalculer</strong>{' '}
-                    — juste en estimant. C'est exactement le réflexe que cette leçon va développer.
-                  </p>
-                </motion.div>
+                <KnowledgeBrick
+                  id="ordre-de-grandeur"
+                  variant="new"
+                  lead="Tu viens de juger un résultat sans reposer l'addition. Voici ce que tu as utilisé."
+                />
               )}
             </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Le réflexe est là. On va maintenant le rendre fiable, en
+          apprenant à choisir les nombres qui remplacent les vrais.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

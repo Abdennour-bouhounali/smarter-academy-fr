@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import UnitLadder from '../components/UnitLadder';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -46,6 +47,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'ms-e1',
+    requires: ['masse-comparable', 'estimation-masse'],
     skill: 'estimer',
     title: 'Épreuve 1',
     prompt: 'Pour préparer la commande, quelles informations te sont vraiment utiles ?',
@@ -62,6 +64,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e2',
+    requires: ['unite-masse-adaptee'],
     skill: 'unite',
     title: 'Épreuve 2',
     prompt: 'Sur le bon de commande, on doit indiquer la masse d’un sachet de biscuits. Quelle unité choisir ?',
@@ -73,6 +76,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e3',
+    requires: ['lire-graduation'],
     skill: 'lire',
     title: 'Épreuve 3',
     prompt: 'Sur la balance de la cantine, la barre s’arrête juste sur la graduation 900 g. Que pèse la boîte de biscuits ?',
@@ -84,6 +88,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e4',
+    requires: ['equilibre-egalite', 'escalier-masses'],
     skill: 'relations',
     title: 'Épreuve 4',
     prompt: 'Une boîte de jus contient 4 briques de 200 g. Quelle est la masse de la boîte ?',
@@ -95,6 +100,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e5',
+    requires: ['equilibre-egalite', 'mem-meme-unite'],
     skill: 'relations',
     title: 'Épreuve 5',
     prompt: 'La commande complète : 4 boîtes de biscuits (900 g) et 6 boîtes de jus (800 g). Quelle masse totale ?',
@@ -106,6 +112,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e6',
+    requires: ['convertir-masse-methode', 'escalier-masses', 'mem-sens-conversion-masse'],
     skill: 'convertir',
     title: 'Épreuve 6',
     prompt: `Pour l’annoncer simplement, convertis ${TOTAL_G} g en kilogrammes.`,
@@ -117,6 +124,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e7',
+    requires: ['mem-sens-conversion-masse', 'masse-invariante', 'escalier-masses'],
     skill: 'convertir',
     title: 'Épreuve 7',
     prompt: 'Un élève écrit que la commande pèse « 8 400 kg ». Que penses-tu de son écriture ?',
@@ -132,6 +140,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e8',
+    requires: ['estimation-masse', 'unite-masse-adaptee'],
     skill: 'estimer',
     title: 'Épreuve 8',
     prompt: '8,4 kg de goûter pour 24 élèves : est-ce cohérent ?',
@@ -147,6 +156,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e9',
+    requires: ['balance-plateaux', 'masse-comparable'],
     skill: 'comparer',
     title: 'Épreuve 9',
     prompt: 'Sur la balance à deux plateaux, une boîte de biscuits (900 g) fait descendre son plateau face à une boîte de jus (800 g). Pourquoi ?',
@@ -162,6 +172,7 @@ const EPREUVES = [
   },
   {
     id: 'ms-e10',
+    requires: ['mem-meme-unite', 'estimation-masse'],
     skill: 'estimer',
     title: 'Épreuve 10',
     prompt: 'Le professeur ajoute son sac de 3 kg au chargement. Quelle est la masse totale à transporter ?',
@@ -224,6 +235,9 @@ function Synthese() {
         Avant d’additionner ou de soustraire deux masses, vérifie toujours qu’elles sont écrites dans la même unité :
         c’est l’erreur la plus fréquente, et la plus facile à éviter.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

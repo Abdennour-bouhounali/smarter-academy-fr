@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Dot, Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PointsOnLine from '../components/PointsOnLine';
@@ -60,7 +60,7 @@ function Task({ mode, target, done, onDone, react, hint }) {
         mode={mode}
         box={BOX}
         disabled={done || revealed}
-        ariaLabel={mode === 'midpoint' ? 'Place M au milieu de A et B' : 'Place M sur la droite (AB)'}
+        ariaLabel={mode === 'midpoint' ? 'Place M à égale distance de A et de B, sur le trait' : 'Place M exactement sur le trait qui passe par A et B'}
       />
 
       {!done && !revealed && !reached && (
@@ -86,8 +86,8 @@ function Task({ mode, target, done, onDone, react, hint }) {
           {revealed && <>Pas grave, on te le montre. </>}
           {mode === 'midpoint' ? (
             <>
-              Le milieu de [AB] est le point de <strong>[AB]</strong> tel que{' '}
-              <strong className="font-mono">AM = MB</strong>. Être « à peu près au centre » ne suffit pas.
+              Tes deux longueurs affichent le même nombre, et M est bien posé sur le trait. Être
+              « à peu près au centre » n’aurait pas suffi.
             </>
           ) : (
             <>
@@ -138,32 +138,65 @@ export default function Module04PointsSurLaDroite() {
       steps={[
         {
           num: 1,
-          title: 'Pose M exactement sur la droite (AB)',
+          // Titre en langage courant : la notation (AB) n'est pas encore posée,
+          // et un titre d'étape est lu AVANT que l'étape ne s'ouvre.
+          title: 'Pose M exactement sur le trait qui passe par A et B',
           subtitle: 'La jauge doit tomber à 0.',
           done: alignDone,
           content: (kit) => (
-            <Task
-              mode="align"
-              done={alignDone}
-              onDone={() => setAlignDone(true)}
-              react={kit.react}
-              hint="Rapproche M du trait bleu : la jauge diminue quand tu t’en approches."
-            />
+            <div className="space-y-5">
+              <Task
+                mode="align"
+                done={alignDone}
+                onDone={() => setAlignDone(true)}
+                react={kit.react}
+                hint="Rapproche M du trait bleu : la jauge diminue quand tu t’en approches."
+              />
+              {alignDone && (
+                <>
+                  <KnowledgeBrick
+                    id="appartenance"
+                    variant="new"
+                    lead="La jauge à 0 : voilà ce que veut dire « être sur la droite »."
+                  />
+                  {/* RÉPARATION. Parler du milieu (étape 2) et des affirmations
+                      de figure oblige à écrire les objets. La notation est donc
+                      posée ICI, au premier endroit où elle devient nécessaire ;
+                      le module 5 en expliquera ensuite la logique. */}
+                  <KnowledgeBrick
+                    id="notation-objets"
+                    variant="new"
+                    lead="Pour parler de ce trait sans faire une phrase entière, les mathématiciens l’écrivent en trois caractères."
+                  />
+                </>
+              )}
+            </div>
           ),
         },
         {
           num: 2,
+          // [AB] est désormais posé par la brique de l'étape 1 : le titre peut
+          // l'employer.
           title: 'Place M au milieu de [AB]',
           subtitle: 'AM et MB doivent afficher le même nombre.',
           done: midDone,
           content: (kit) => (
-            <Task
-              mode="midpoint"
-              done={midDone}
-              onDone={() => setMidDone(true)}
-              react={kit.react}
-              hint="Reste sur le trait, puis équilibre : si AM est plus petit que MB, avance vers B."
-            />
+            <div className="space-y-5">
+              <Task
+                mode="midpoint"
+                done={midDone}
+                onDone={() => setMidDone(true)}
+                react={kit.react}
+                hint="Reste sur le trait, puis équilibre : si AM est plus petit que MB, avance vers B."
+              />
+              {midDone && (
+                <KnowledgeBrick
+                  id="milieu"
+                  variant="new"
+                  lead="Tu as dû satisfaire deux exigences à la fois : rester sur le trait, et équilibrer les deux longueurs."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -180,6 +213,7 @@ export default function Module04PointsSurLaDroite() {
               ]}
               correct={0}
               cols={1}
+              requires={['milieu', 'appartenance', 'notation-objets']}
               explain="Deux conditions, pas une : M doit appartenir au segment ET les deux longueurs doivent être égales. Un point hors de la droite peut être à égale distance de A et de B sans être le milieu."
               explainWrong="Attention : l’égalité AM = MB ne suffit pas. Un point situé au-dessus de la droite peut être à égale distance de A et de B — il n’est pas pour autant le milieu de [AB]."
               solved={ruleDone}
@@ -189,17 +223,10 @@ export default function Module04PointsSurLaDroite() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Dot className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un point <strong className="text-white">appartient</strong> à une droite, ou il n’y appartient
-            pas — il n’y a pas d’« à peu près ». Et le milieu se définit par une égalité de longueurs.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu écris maintenant les objets. Reste à comprendre{' '}
+          <em>pourquoi</em> ce sont ces signes-là — et pas d’autres.
+        </KnowledgeSnapshot>
       }
     />
   );

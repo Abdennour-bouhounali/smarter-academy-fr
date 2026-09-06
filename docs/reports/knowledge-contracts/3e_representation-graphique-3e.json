@@ -2,11 +2,192 @@
   "lesson": "representation-graphique-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "fonction",
+    "notation-fx",
+    "image",
+    "tableau-de-valeurs",
+    "fonction-affine",
+    "coefficient-lineaire",
+    "ordonnee-origine",
+    "abscisse",
+    "ordonnee",
+    "coordonnees",
+    "origine-repere"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "ligne-devient-point",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module01UneImage.jsx",
+        "line": 226,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "tendance",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module01UneImage.jsx",
+        "line": 283,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "choix-des-axes",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module01UneImage.jsx",
+        "line": 344,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "echelle-axe",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module02Echelle.jsx",
+        "line": 124,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "axe-tronque",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module02Echelle.jsx",
+        "line": 180,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "relier-ou-non",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module04Atelier.jsx",
+        "line": 233,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "echelle-qui-aplatit",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module06AReparer.jsx",
+        "line": 229,
+        "step": 4,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "forme-de-la-courbe",
+      "type": "vocabulaire",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
+        "line": 116,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "placer-entre-graduations",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module03EntreDeuxGraduations.jsx",
+        "line": 184,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "choisir-une-echelle",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module04Atelier.jsx",
+        "line": 157,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "forme-et-situation",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
+        "line": 143,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "forme-et-expression",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
+        "line": 178,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "verifier-un-graphique",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module06AReparer.jsx",
+        "line": 256,
+        "step": 5,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-lire-les-graduations",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module02Echelle.jsx",
+        "line": 202,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-quatre-decisions",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module04Atelier.jsx",
+        "line": 264,
+        "step": 5,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "rg-d1",
@@ -14,9 +195,19 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 34,
+      "requires": [
+        "coordonnees",
+        "abscisse",
+        "ordonnee",
+        "origine-repere"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior",
+        "origine-repere": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +217,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 45,
+      "requires": [
+        "fonction-affine",
+        "ordonnee-origine"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine": "prior",
+        "ordonnee-origine": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,13 +235,19 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "notation-fx"
+      "line": 56,
+      "requires": [
+        "fonction",
+        "notation-fx",
+        "image"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "notation-fx": "prior",
+        "image": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "rg-d4",
@@ -52,9 +255,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "tableau-de-valeurs"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-valeurs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -64,9 +271,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 78,
+      "requires": [
+        "fonction-affine",
+        "coefficient-lineaire"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine": "prior",
+        "coefficient-lineaire": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -76,57 +289,141 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module01UneImage.jsx",
-      "line": 134,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 146,
+      "requires": [
+        "tableau-de-valeurs"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-valeurs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S3-Q2",
+      "questionId": "M01-S2-Q2",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module01UneImage.jsx",
+      "line": 233,
+      "requires": [
+        "ligne-devient-point",
+        "coordonnees",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "ligne-devient-point": "established@M1",
+        "coordonnees": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q3",
       "module": 1,
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module01UneImage.jsx",
-      "line": 256,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 288,
+      "requires": [
+        "tendance",
+        "ligne-devient-point"
+      ],
+      "prerequisiteStatus": {
+        "tendance": "established@M1",
+        "ligne-devient-point": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S4-Q3",
+      "questionId": "M01-S4-Q4",
       "module": 1,
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module01UneImage.jsx",
-      "line": 291,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 327,
+      "requires": [
+        "ligne-devient-point",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "ligne-devient-point": "established@M1",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M02-S2-Q1",
+      "questionId": "M01-S4-Q5",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module01UneImage.jsx",
+      "line": 349,
+      "requires": [
+        "choix-des-axes",
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "choix-des-axes": "established@M1",
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S1-Q1",
+      "module": 2,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module02Echelle.jsx",
+      "line": 135,
+      "requires": [
+        "echelle-axe"
+      ],
+      "prerequisiteStatus": {
+        "echelle-axe": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q2",
       "module": 2,
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module02Echelle.jsx",
-      "line": 127,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 156,
+      "requires": [
+        "echelle-axe"
+      ],
+      "prerequisiteStatus": {
+        "echelle-axe": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M02-S3-Q2",
+      "questionId": "M02-S3-Q3",
       "module": 2,
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module02Echelle.jsx",
-      "line": 149,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 185,
+      "requires": [
+        "axe-tronque",
+        "echelle-axe"
+      ],
+      "prerequisiteStatus": {
+        "axe-tronque": "established@M2",
+        "echelle-axe": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +433,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module03EntreDeuxGraduations.jsx",
-      "line": 191,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 200,
+      "requires": [
+        "placer-entre-graduations",
+        "echelle-axe"
+      ],
+      "prerequisiteStatus": {
+        "placer-entre-graduations": "established@M3",
+        "echelle-axe": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,9 +451,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module04Atelier.jsx",
-      "line": 107,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 116,
+      "requires": [
+        "choix-des-axes",
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "choix-des-axes": "established@M1",
+        "abscisse": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -160,9 +469,13 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module04Atelier.jsx",
-      "line": 230,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 248,
+      "requires": [
+        "relier-ou-non"
+      ],
+      "prerequisiteStatus": {
+        "relier-ou-non": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -172,35 +485,71 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "variations"
+      "line": 104,
+      "requires": [
+        "ligne-devient-point"
       ],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M05-S2-Q2",
-      "module": 5,
-      "step": 2,
-      "component": "BatchChoiceQuestion",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
-      "line": 111,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "prerequisiteStatus": {
+        "ligne-devient-point": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M05-S3-Q3",
+      "questionId": "M05-S1-Q2",
+      "module": 5,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
+      "line": 121,
+      "requires": [
+        "forme-de-la-courbe"
+      ],
+      "prerequisiteStatus": {
+        "forme-de-la-courbe": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q3",
+      "module": 5,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
+      "line": 149,
+      "requires": [
+        "forme-et-situation",
+        "forme-de-la-courbe"
+      ],
+      "prerequisiteStatus": {
+        "forme-et-situation": "established@M5",
+        "forme-de-la-courbe": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q4",
       "module": 5,
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
-      "line": 137,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 183,
+      "requires": [
+        "forme-et-expression",
+        "forme-de-la-courbe",
+        "fonction-affine",
+        "coefficient-lineaire",
+        "ordonnee-origine"
+      ],
+      "prerequisiteStatus": {
+        "forme-et-expression": "established@M5",
+        "forme-de-la-courbe": "established@M5",
+        "fonction-affine": "prior",
+        "coefficient-lineaire": "prior",
+        "ordonnee-origine": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +559,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module06AReparer.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 102,
+      "requires": [
+        "axe-tronque",
+        "echelle-axe"
+      ],
+      "prerequisiteStatus": {
+        "axe-tronque": "established@M2",
+        "echelle-axe": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,9 +577,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module06AReparer.jsx",
-      "line": 129,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 139,
+      "requires": [
+        "choix-des-axes",
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "choix-des-axes": "established@M1",
+        "abscisse": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +595,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module06AReparer.jsx",
-      "line": 166,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 177,
+      "requires": [
+        "ligne-devient-point",
+        "placer-entre-graduations"
+      ],
+      "prerequisiteStatus": {
+        "ligne-devient-point": "established@M1",
+        "placer-entre-graduations": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,21 +613,59 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module06AReparer.jsx",
-      "line": 200,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 212,
+      "requires": [
+        "echelle-axe",
+        "axe-tronque",
+        "choisir-une-echelle"
+      ],
+      "prerequisiteStatus": {
+        "echelle-axe": "established@M2",
+        "axe-tronque": "established@M2",
+        "choisir-une-echelle": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M06-S5-Q5",
+      "questionId": "M06-S4-Q5",
+      "module": 6,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module06AReparer.jsx",
+      "line": 234,
+      "requires": [
+        "echelle-qui-aplatit",
+        "choisir-une-echelle"
+      ],
+      "prerequisiteStatus": {
+        "echelle-qui-aplatit": "established@M6",
+        "choisir-une-echelle": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S5-Q6",
       "module": 6,
       "step": 5,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module06AReparer.jsx",
-      "line": 224,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 262,
+      "requires": [
+        "verifier-un-graphique",
+        "axe-tronque",
+        "choix-des-axes",
+        "ligne-devient-point",
+        "echelle-qui-aplatit"
+      ],
+      "prerequisiteStatus": {
+        "verifier-un-graphique": "established@M6",
+        "axe-tronque": "established@M2",
+        "choix-des-axes": "established@M1",
+        "ligne-devient-point": "established@M1",
+        "echelle-qui-aplatit": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -270,13 +675,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "fonction"
+      "line": 59,
+      "requires": [
+        "choix-des-axes",
+        "abscisse"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "choix-des-axes": "established@M1",
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "rg-e2",
@@ -284,9 +693,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 62,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 71,
+      "requires": [
+        "choisir-une-echelle",
+        "echelle-axe"
+      ],
+      "prerequisiteStatus": {
+        "choisir-une-echelle": "established@M4",
+        "echelle-axe": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -296,9 +711,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 88,
+      "requires": [
+        "echelle-axe",
+        "placer-entre-graduations"
+      ],
+      "prerequisiteStatus": {
+        "echelle-axe": "established@M2",
+        "placer-entre-graduations": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -308,9 +729,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 100,
+      "requires": [
+        "placer-entre-graduations",
+        "echelle-axe"
+      ],
+      "prerequisiteStatus": {
+        "placer-entre-graduations": "established@M3",
+        "echelle-axe": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -320,9 +747,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 105,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 117,
+      "requires": [
+        "choisir-une-echelle",
+        "echelle-qui-aplatit"
+      ],
+      "prerequisiteStatus": {
+        "choisir-une-echelle": "established@M4",
+        "echelle-qui-aplatit": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -332,9 +765,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 116,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 129,
+      "requires": [
+        "forme-de-la-courbe",
+        "forme-et-situation"
+      ],
+      "prerequisiteStatus": {
+        "forme-de-la-courbe": "established@M5",
+        "forme-et-situation": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -344,9 +783,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 132,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 146,
+      "requires": [
+        "ligne-devient-point",
+        "verifier-un-graphique"
+      ],
+      "prerequisiteStatus": {
+        "ligne-devient-point": "established@M1",
+        "verifier-un-graphique": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -356,9 +801,21 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 148,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 163,
+      "requires": [
+        "forme-et-expression",
+        "forme-de-la-courbe",
+        "fonction-affine",
+        "coefficient-lineaire",
+        "ordonnee-origine"
+      ],
+      "prerequisiteStatus": {
+        "forme-et-expression": "established@M5",
+        "forme-de-la-courbe": "established@M5",
+        "fonction-affine": "prior",
+        "coefficient-lineaire": "prior",
+        "ordonnee-origine": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -368,9 +825,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 159,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 175,
+      "requires": [
+        "axe-tronque",
+        "echelle-axe",
+        "verifier-un-graphique"
+      ],
+      "prerequisiteStatus": {
+        "axe-tronque": "established@M2",
+        "echelle-axe": "established@M2",
+        "verifier-un-graphique": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -380,49 +845,20 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 175,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 192,
+      "requires": [
+        "echelle-qui-aplatit",
+        "choisir-une-echelle",
+        "verifier-un-graphique"
+      ],
+      "prerequisiteStatus": {
+        "echelle-qui-aplatit": "established@M6",
+        "choisir-une-echelle": "established@M4",
+        "verifier-un-graphique": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« fonction » is a target concept of this lesson but its first appearance is boss.prompt (module 7) and it is never taught in a teaching position",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 48,
-      "module": 7,
-      "step": null,
-      "term": "fonction",
-      "questionId": "rg-e1",
-      "position": 224
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« notation f(x) » first appears at diag.prompt (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "module": 0,
-      "step": null,
-      "term": "notation-fx",
-      "questionId": "rg-d3",
-      "position": 13
-    },
-    {
-      "code": "M_TAUGHT_TOO_LATE",
-      "severity": "medium",
-      "message": "« variations / croissante / décroissante » first appears at q.explain (module 5, étape 1), before its teaching position at apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx:151",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/representation-graphique-3e/modules/Module05QuatreHistoires.jsx",
-      "line": 98,
-      "module": 5,
-      "step": 1,
-      "term": "variations",
-      "questionId": "M05-S1-Q1",
-      "position": 125
-    }
-  ]
+  "findings": []
 }

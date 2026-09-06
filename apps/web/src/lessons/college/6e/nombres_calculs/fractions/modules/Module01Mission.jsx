@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -184,6 +185,7 @@ function NotationStep({ notationDone, setNotationDone }) {
         correct={NOTATION_Q.correct}
         cols={1}
         explain={NOTATION_Q.explain}
+        requires={['part-egale']}
         solved={notationDone}
         onAnswered={() => setNotationDone(true)}
       />
@@ -269,14 +271,7 @@ function NotationReveal({ revealed, onReveal }) {
             </div>
           </div>
 
-          {/* Closing insight */}
-          <Feedback tone="info">
-            <span className="text-base leading-7 font-sans">
-              C'est une <strong>fraction</strong> — une écriture qui garde les deux informations :
-              les <strong>parts prises</strong> et le <strong>nombre total de parts égales</strong>.
-              Dans les modules suivants, tu vas construire, nommer et utiliser ces nombres.
-            </span>
-          </Feedback>
+
         </motion.div>
       )}
     </div>
@@ -321,7 +316,19 @@ export default function Module01Mission() {
           subtitle: 'Sélectionne les 3 parts que tu manges.',
           done: s1,
           content: (kit) => (
-            <PartageAtelier react={kit.react} solved={partageDone} onSolved={() => setPartageDone(true)} />
+            <div className="space-y-5">
+              <PartageAtelier react={kit.react} solved={partageDone} onSolved={() => setPartageDone(true)} />
+              {/* Le partage vient d'être fait : c'est l'instant où « part
+                  égale » veut dire quelque chose de précis, et non plus
+                  « morceau ». */}
+              {partageDone && (
+                <KnowledgeBrick
+                  id="part-egale"
+                  variant="new"
+                  lead="Si les 4 parts n’avaient pas été identiques, « 3 parts » n’aurait rien voulu dire."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -338,9 +345,29 @@ export default function Module01Mission() {
           title: 'La notation mathématique',
           subtitle: 'Découvre comment les mathématiciens écrivent cette quantité.',
           done: s3,
-          content: <NotationReveal revealed={revealed} onReveal={() => setRevealed(true)} />,
+          content: (
+            <div className="space-y-5">
+              <NotationReveal revealed={revealed} onReveal={() => setRevealed(true)} />
+              {/* La connaissance est POSÉE ici, à l'instant où le geste vient
+                  de lui donner un sens — et elle entre dans la carte au même
+                  moment (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}
+              {revealed && (
+                <KnowledgeBrick
+                  id="fraction-ecriture"
+                  variant="new"
+                  lead="Cette écriture que tu viens de voir apparaître porte un nom."
+                />
+              )}
+            </div>
+          ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais écrire une prise de parts. Reste à comprendre ce que
+          commande le nombre du bas — c’est l’atelier du module suivant.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

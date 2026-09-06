@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Move } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
@@ -213,6 +214,7 @@ export default function Module08DroiteGraduee() {
                       </div>
                     )}
                     expected={item.target}
+                    requires={['position-chiffre', 'ranger-ordre']}
                     explain={item.explain}
                     solved={lecturesDone.includes(i)}
                     onAnswered={() => mark(setLecturesDone, i)}
@@ -225,10 +227,18 @@ export default function Module08DroiteGraduee() {
         {
           num: 2,
           title: 'Trouver le pas de la graduation',
-          subtitle: "Le pas, c'est la valeur d'un intervalle entre deux graduations voisines.",
+          subtitle: 'Combien vaut un seul trait ? Toute la lecture en dépend.',
           done: s2,
           content: (
             <div className="space-y-8">
+              {/* Les deux questions qui suivent emploient le mot « pas » :
+                  il est donc posé ici, avec le geste de comptage des traits,
+                  et non dans le sous-titre lu avant l'ouverture de l'étape. */}
+              <KnowledgeBrick
+                id="pas-graduation"
+                variant="new"
+                lead="Sur la droite que tu viens de lire, tous les traits étaient également espacés."
+              />
               {PAS.map((item, i) =>
                 i === 0 || pasDone.includes(i - 1) ? (
                   <TapQuestion
@@ -249,6 +259,7 @@ export default function Module08DroiteGraduee() {
                     options={item.options}
                     correct={item.correct}
                     cols={2}
+                    requires={['pas-graduation']}
                     explain={item.explain}
                     solved={pasDone.includes(i)}
                     onAnswered={() => mark(setPasDone, i)}
@@ -275,6 +286,15 @@ export default function Module08DroiteGraduee() {
                     react={kit.react}
                   />
                 ) : null
+              )}
+              {/* Le curseur a été placé deux fois à l'estime : la méthode
+                  peut maintenant être écrite, elle décrit un geste connu. */}
+              {s3 && (
+                <KnowledgeBrick
+                  id="placer-sur-droite"
+                  variant="new"
+                  lead="Voilà ce que tu viens de faire deux fois, sans voir la valeur du curseur."
+                />
               )}
             </div>
           ),
@@ -305,19 +325,27 @@ export default function Module08DroiteGraduee() {
                 options={ECART.options}
                 correct={ECART.correct}
                 cols={2}
+                requires={['pas-graduation', 'placer-sur-droite']}
                 explain={ECART.explain}
                 onAnswered={() => setEcartRevealed(true)}
               />
               {s4 && (
-                <Feedback tone="info">
-                  Retiens : sur la droite graduée, <strong>plus on va vers la droite, plus le nombre est
-                  grand</strong>. Comparer deux nombres, c'est regarder lequel est le plus à droite.
-                </Feedback>
+                <KnowledgeBrick
+                  id="droite-ordonne"
+                  variant="new"
+                  lead="Tu viens de mesurer un écart en comptant les traits — regarde aussi de quel côté chaque point se trouve."
+                />
               )}
             </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={8}>
+          <strong>La suite.</strong> Tu sais lire et placer un nombre sur la droite. Au module
+          suivant, on quitte les exercices : les grands nombres racontent le monde réel.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

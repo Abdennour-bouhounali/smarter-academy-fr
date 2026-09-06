@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { PackageOpen, Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidView from '../components/SolidView';
@@ -68,8 +68,8 @@ export default function Module03DeplierCube() {
       steps={[
         {
           num: 1,
-          title: 'Dessine un patron qui marche',
-          subtitle: '6 cases, qui se replient sans se superposer.',
+          title: 'Aplatis le cube sur la table',
+          subtitle: 'Coche 6 cases qui, une fois repliées, refermeraient la boîte.',
           done: libreDone,
           content: (kit) => (
             <div className="space-y-3">
@@ -84,11 +84,20 @@ export default function Module03DeplierCube() {
               </div>
 
               {(libreDone || revealed) && (
-                <Feedback tone={revealed ? 'info' : 'ok'}>
-                  {revealed && <strong>Pas grave, on te le montre — voici le patron « en croix ». </strong>}
-                  Ce patron se replie bien en cube : les 6 cases deviennent les 6 faces, sans qu’aucune ne se
-                  superpose.
-                </Feedback>
+                <>
+                  <Feedback tone={revealed ? 'info' : 'ok'}>
+                    {revealed && <strong>Pas grave, on te le montre — voici la forme « en croix ». </strong>}
+                    Ces 6 cases se replient bien en cube : elles deviennent les 6 faces, sans qu’aucune
+                    ne se superpose.
+                  </Feedback>
+                  {/* Le dépliage vient d'être réussi : c'est l'instant exact
+                      où le mot « patron » a du sens, et pas avant. */}
+                  <KnowledgeBrick
+                    id="patron-solide"
+                    variant="new"
+                    lead="Ce que tu viens de dessiner a un nom."
+                  />
+                </>
               )}
 
               {!libreDone && !revealed && (
@@ -102,8 +111,8 @@ export default function Module03DeplierCube() {
               )}
               {tries >= 1 && !libreDone && !revealed && (
                 <Feedback tone="info">
-                  Essaie une ligne de 4 cases, avec une case au-dessus et une en dessous : la forme « en
-                  croix ».
+                  Essaie une ligne de 4 cases, avec une case au-dessus et une en dessous : la forme
+                  d’une croix.
                 </Feedback>
               )}
 
@@ -122,46 +131,52 @@ export default function Module03DeplierCube() {
         },
         {
           num: 2,
-          title: 'Y a-t-il un seul patron possible ?',
+          title: 'Y en a-t-il un seul possible ?',
           done: nbDone,
           content: (
-            <TapQuestion
-              above={
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <p className="text-xs font-mono text-center text-slate-500">Patron en croix</p>
-                    <PatronGrid grid={PATRON_CROIX} readOnly showVerdict={false} cellSize={34} />
+            <div className="space-y-5">
+              <TapQuestion
+                above={
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <p className="text-xs font-mono text-center text-slate-500">Patron en croix</p>
+                      <PatronGrid grid={PATRON_CROIX} readOnly showVerdict={false} cellSize={34} />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-xs font-mono text-center text-slate-500">Patron en escalier</p>
+                      <PatronGrid grid={PATRON_ESCALIER} readOnly showVerdict={false} cellSize={34} />
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-mono text-center text-slate-500">Patron en escalier</p>
-                    <PatronGrid grid={PATRON_ESCALIER} readOnly showVerdict={false} cellSize={34} />
-                  </div>
-                </div>
-              }
-              prompt="Ces deux patrons se replient tous les deux en cube. Combien un cube a-t-il de patrons différents ?"
-              options={['Onze', 'Un seul', 'Deux']}
-              correct={0}
-              cols={3}
-              explain="Le cube a 11 patrons différents. Ce qui compte n’est donc pas la forme du patron, mais le fait qu’il se replie sans superposition."
-              explainWrong="Il y en a bien plus qu’un : le cube en a onze. C’est pourquoi on ne les apprend pas par cœur — on vérifie le pliage."
-              solved={nbDone}
-              onAnswered={() => setNbDone(true)}
-            />
+                }
+                prompt="Ces deux patrons se replient tous les deux en cube. Combien un cube a-t-il de patrons différents ?"
+                options={['Onze', 'Un seul', 'Deux']}
+                correct={0}
+                cols={3}
+                requires={['patron-solide', 'face-solide']}
+                explain="Le cube a 11 patrons différents. Ce qui compte n’est donc pas la forme du patron, mais le fait qu’il se replie sans superposition."
+                explainWrong="Il y en a bien plus qu’un : le cube en a onze. C’est pourquoi on ne les apprend pas par cœur — on vérifie le pliage."
+                solved={nbDone}
+                onAnswered={() => setNbDone(true)}
+              />
+
+              {/* Deux formes différentes acceptées par le simulateur : la
+                  généralisation se pose ici, adossée au constat. */}
+              {nbDone && (
+                <KnowledgeBrick
+                  id="onze-patrons"
+                  variant="new"
+                  lead="Les deux formes ci-dessus se replient toutes les deux : elles ne sont pas les seules."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <PackageOpen className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un patron est un <strong className="text-white">dépliage</strong> du solide : 6 faces à plat,
-            reliées par les arêtes du pliage. Le cube en a onze — leur forme varie, le pliage non.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais déplier. Au module suivant, tu feras l’inverse — et sans
+          simulateur : plier dans ta tête, avant de vérifier.
+        </KnowledgeSnapshot>
       }
     />
   );

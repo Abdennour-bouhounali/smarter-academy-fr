@@ -2,11 +2,149 @@
   "lesson": "longueurs",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
+  "prerequisites": [
+    "calcul-numerique",
+    "multiplication-repetee"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "longueur-invariante",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module01Mission.jsx",
+        "line": 95,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "unite-adaptee",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module01Mission.jsx",
+        "line": 171,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "escalier-longueurs",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module03ConstruireUnites.jsx",
+        "line": 98,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "estimation-plausible",
+      "type": "concepts",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module05ChoisirEstimer.jsx",
+        "line": 84,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "perimetre-contour",
+      "type": "concepts",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module06Perimetres.jsx",
+        "line": 112,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "perimetre-rectangle",
+      "type": "formules",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module06Perimetres.jsx",
+        "line": 138,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "perimetre-unite",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module06Perimetres.jsx",
+        "line": 178,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
   "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "proceduresIntroduced": [
+    {
+      "id": "mesurer-difference",
+      "type": "methodes",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module02MesurerComparer.jsx",
+        "line": 190,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "convertir-methode",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module04Conversions.jsx",
+        "line": 131,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "reference-connue",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module05ChoisirEstimer.jsx",
+        "line": 178,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-piege-du-zero",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module02MesurerComparer.jsx",
+        "line": 197,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-sens-conversion",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module04Conversions.jsx",
+        "line": 138,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-m-cm",
@@ -15,8 +153,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module00Diagnostic.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +168,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module00Diagnostic.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 34,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +184,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 47,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +200,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module00Diagnostic.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 64,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +216,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module00Diagnostic.jsx",
-      "line": 70,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 82,
+      "requires": [
+        "multiplication-repetee"
+      ],
+      "prerequisiteStatus": {
+        "multiplication-repetee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +232,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module01Mission.jsx",
-      "line": 100,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 109,
+      "requires": [
+        "longueur-invariante"
+      ],
+      "prerequisiteStatus": {
+        "longueur-invariante": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,13 +248,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module01Mission.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "fonction"
+      "line": 129,
+      "requires": [
+        "longueur-invariante"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "longueur-invariante": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M02-S1-Q1",
@@ -101,8 +265,12 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module02MesurerComparer.jsx",
       "line": 175,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "longueur-invariante"
+      ],
+      "prerequisiteStatus": {
+        "longueur-invariante": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -112,9 +280,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module03ConstruireUnites.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 54,
+      "requires": [
+        "longueur-invariante"
+      ],
+      "prerequisiteStatus": {
+        "longueur-invariante": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +296,15 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module03ConstruireUnites.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 90,
+      "requires": [
+        "escalier-longueurs",
+        "longueur-invariante"
+      ],
+      "prerequisiteStatus": {
+        "escalier-longueurs": "established@M3",
+        "longueur-invariante": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +314,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module04Conversions.jsx",
-      "line": 147,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 165,
+      "requires": [
+        "convertir-methode",
+        "mem-sens-conversion",
+        "escalier-longueurs"
+      ],
+      "prerequisiteStatus": {
+        "convertir-methode": "established@M4",
+        "mem-sens-conversion": "established@M4",
+        "escalier-longueurs": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,9 +334,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module05ChoisirEstimer.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 56,
+      "requires": [
+        "unite-adaptee",
+        "escalier-longueurs"
+      ],
+      "prerequisiteStatus": {
+        "unite-adaptee": "established@M1",
+        "escalier-longueurs": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -160,9 +352,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module06Perimetres.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 127,
+      "requires": [
+        "perimetre-contour"
+      ],
+      "prerequisiteStatus": {
+        "perimetre-contour": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -172,9 +368,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module06Perimetres.jsx",
-      "line": 135,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 153,
+      "requires": [
+        "perimetre-contour"
+      ],
+      "prerequisiteStatus": {
+        "perimetre-contour": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -184,9 +384,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module06Perimetres.jsx",
-      "line": 146,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 165,
+      "requires": [
+        "perimetre-contour",
+        "unite-adaptee"
+      ],
+      "prerequisiteStatus": {
+        "perimetre-contour": "established@M6",
+        "unite-adaptee": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -196,9 +402,15 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module06Perimetres.jsx",
-      "line": 167,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 194,
+      "requires": [
+        "perimetre-contour",
+        "perimetre-unite"
+      ],
+      "prerequisiteStatus": {
+        "perimetre-contour": "established@M6",
+        "perimetre-unite": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -208,9 +420,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 50,
+      "requires": [
+        "unite-adaptee"
+      ],
+      "prerequisiteStatus": {
+        "unite-adaptee": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -220,9 +436,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 59,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 62,
+      "requires": [
+        "estimation-plausible",
+        "reference-connue"
+      ],
+      "prerequisiteStatus": {
+        "estimation-plausible": "established@M5",
+        "reference-connue": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -232,9 +454,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 70,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "mesurer-difference",
+        "mem-piege-du-zero"
+      ],
+      "prerequisiteStatus": {
+        "mesurer-difference": "established@M2",
+        "mem-piege-du-zero": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -244,9 +472,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 81,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 86,
+      "requires": [
+        "escalier-longueurs"
+      ],
+      "prerequisiteStatus": {
+        "escalier-longueurs": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -256,13 +488,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "intervalle"
+      "line": 98,
+      "requires": [
+        "escalier-longueurs"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "escalier-longueurs": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "lg-e6",
@@ -270,9 +504,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "convertir-methode",
+        "mem-sens-conversion",
+        "escalier-longueurs"
+      ],
+      "prerequisiteStatus": {
+        "convertir-methode": "established@M4",
+        "mem-sens-conversion": "established@M4",
+        "escalier-longueurs": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -282,9 +524,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 114,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "convertir-methode",
+        "mem-sens-conversion",
+        "escalier-longueurs"
+      ],
+      "prerequisiteStatus": {
+        "convertir-methode": "established@M4",
+        "mem-sens-conversion": "established@M4",
+        "escalier-longueurs": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -294,9 +544,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 125,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "perimetre-contour"
+      ],
+      "prerequisiteStatus": {
+        "perimetre-contour": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -306,9 +560,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 137,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 147,
+      "requires": [
+        "perimetre-unite"
+      ],
+      "prerequisiteStatus": {
+        "perimetre-unite": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -318,37 +576,18 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 148,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 159,
+      "requires": [
+        "perimetre-contour",
+        "estimation-plausible"
+      ],
+      "prerequisiteStatus": {
+        "perimetre-contour": "established@M6",
+        "estimation-plausible": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« fonction » first appears at q.feedback (module 1, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module01Mission.jsx",
-      "line": 143,
-      "module": 1,
-      "step": 3,
-      "term": "fonction",
-      "questionId": "M01-S3-Q2",
-      "position": 34
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« intervalle » first appears at boss.prompt (module 7) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/longueurs/modules/Module07MissionFinale.jsx",
-      "line": 89,
-      "module": 7,
-      "step": null,
-      "term": "intervalle",
-      "questionId": "lg-e5",
-      "position": 103
-    }
-  ]
+  "findings": []
 }

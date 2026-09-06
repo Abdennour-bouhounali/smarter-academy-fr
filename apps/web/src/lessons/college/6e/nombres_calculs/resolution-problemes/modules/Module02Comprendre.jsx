@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import BarModel from '../../../../../common/components/BarModel';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -120,6 +121,7 @@ export default function Module02Comprendre() {
           content: (
             <NumericQuestion
               prompt="Léo a 15 cartes. Zoé en a 9. Combien de cartes Léo a-t-il de plus que Zoé ?"
+              requires={['construire-avant-calculer']}
               above={
                 <BarModel
                   bars={[
@@ -142,18 +144,36 @@ export default function Module02Comprendre() {
           title: 'Ce que ces deux situations t\'apprennent',
           done: s3,
           content: (
-            <TapQuestion
-              prompt={REFLEX_Q.q}
-              options={REFLEX_Q.options}
-              correct={REFLEX_Q.correct}
-              cols={1}
-              explain={REFLEX_Q.explain}
-              solved={s3}
-              onAnswered={() => setS3(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={REFLEX_Q.q}
+                requires={['construire-avant-calculer']}
+                options={REFLEX_Q.options}
+                correct={REFLEX_Q.correct}
+                cols={1}
+                explain={REFLEX_Q.explain}
+                solved={s3}
+                onAnswered={() => setS3(true)}
+              />
+              {/* La règle n'existait que dans un explain, donc lue après
+                  coup ; elle est désormais posée, et rejoint la carte. */}
+              {s3 && (
+                <KnowledgeBrick
+                  id="situation-avant-mots"
+                  variant="new"
+                  lead="Ana perdait des billes, Léo n'en perdait aucune — et pourtant le même 18 − 7, le même 15 − 9."
+                />
+              )}
+            </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Reste un obstacle avant de calculer : tous les nombres d'un
+          énoncé ne servent pas.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

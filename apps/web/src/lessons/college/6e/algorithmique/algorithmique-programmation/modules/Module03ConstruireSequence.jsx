@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { ListOrdered } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
-import ConceptCard from '../../../../../common/components/ConceptCard';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProgramLab from '../components/ProgramLab';
 import { makeWorld, instr } from '../components/algoUtils';
@@ -164,13 +163,11 @@ export default function Module03ConstruireSequence() {
           done: wordDone,
           content: (
             <div className="space-y-3">
-              <ConceptCard label="Le mot juste" emoji="📘" color="emerald">
-                <p className="text-sm">
-                  La suite d’instructions que tu viens d’écrire pour résoudre le problème s’appelle un{' '}
-                  <strong>algorithme</strong>. Quand on l’écrit pour qu’une machine l’exécute, on parle
-                  d’un <strong>programme</strong>.
-                </p>
-              </ConceptCard>
+              <KnowledgeBrick
+                id="sequence-algorithme"
+                variant="new"
+                lead="La suite de cartes que tu viens d’écrire pour résoudre le problème porte un nom."
+              />
               <TapQuestion
                 prompt="Parmi ces trois propositions, laquelle est un algorithme ?"
                 options={[
@@ -182,6 +179,7 @@ export default function Module03ConstruireSequence() {
                 cols={1}
                 solved={wordDone}
                 explain="🎯 Oui : un algorithme est une SUITE D'INSTRUCTIONS ordonnées. Les deux autres décrivent une situation ou un but — mais ne disent pas quoi faire, étape par étape."
+                requires={['sequence-algorithme', 'instruction', 'objectif-nest-pas-programme']}
                 explainWrong="Un algorithme, ce n'est ni une description de la situation, ni l'objectif : c'est la suite précise des instructions à exécuter, dans l'ordre."
                 onAnswered={() => setWordDone(true)}
               />
@@ -194,21 +192,27 @@ export default function Module03ConstruireSequence() {
           subtitle: 'Un vrai problème à décomposer.',
           done: longDone,
           content: (kit) => (
-            <LongRoute solved={longDone} onSolved={() => setLongDone(true)} react={kit.react} />
+            <div className="space-y-4">
+              <KnowledgeBrick
+                id="decomposer"
+                variant="new"
+                lead="Ce trajet-ci ne se devine pas d’un coup d’œil. Voilà comment les programmeurs s’y prennent."
+              />
+              <LongRoute solved={longDone} onSolved={() => setLongDone(true)} react={kit.react} />
+            </div>
           ),
         },
       ]}
       footer={
         <div className="space-y-3">
-          <Feedback tone="info">
-            💡 Astuce de programmeur : avant d’écrire, regarde le trajet et compte —{' '}
-            « combien de cases tout droit ? où est le virage ? ». C’est ça, décomposer un problème.
-          </Feedback>
+          <KnowledgeSnapshot moduleNumber={3}>
+            <strong>La suite.</strong> Tu sais écrire un algorithme. Mais l'ordre des instructions
+            compte-t-il vraiment ? C'est la question du prochain module.
+          </KnowledgeSnapshot>
           <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
             <ListOrdered className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
             <p className="text-sm text-slate-300">
-              Tu sais écrire un algorithme. Mais est-ce que l’<strong className="text-white">ordre</strong>{' '}
-              des instructions compte vraiment ? C’est la question du prochain module.
+              Découper d'abord, écrire ensuite : ROBI ne s'est pas cogné une seule fois.
             </p>
           </div>
         </div>

@@ -2,11 +2,154 @@
   "lesson": "trigonometrie-triangle-rectangle-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "angle-droit",
+    "triangle-rectangle",
+    "hypotenuse",
+    "somme-angles-triangle",
+    "quotient",
+    "arrondi"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "pente-quotient",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module01DeuxRampes.jsx",
+        "line": 129,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "rapport-depend-angle",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module03LeRapportNeDependQueDeLangle.jsx",
+        "line": 157,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "sinus-cosinus-tangente",
+      "type": "formules",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module04TroisRapportsTroisNoms.jsx",
+        "line": 50,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "pente-pourcentage",
+      "type": "concepts",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module07AnglesEtPentes.jsx",
+        "line": 42,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "hypotenuse",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module02NommerLesCotes.jsx",
+        "line": 91,
+        "step": 1,
+        "variant": "rappel"
+      }
+    },
+    {
+      "id": "cote-oppose",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module02NommerLesCotes.jsx",
+        "line": 97,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "cote-adjacent",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module02NommerLesCotes.jsx",
+        "line": 103,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "calculatrice-degres",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module04TroisRapportsTroisNoms.jsx",
+        "line": 127,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "methode-choisir-rapport",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module05CalculerUneLongueur.jsx",
+        "line": 71,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "retrouver-angle",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module06ChoisirPuisResoudre.jsx",
+        "line": 63,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-roles-relatifs",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module02NommerLesCotes.jsx",
+        "line": 109,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-sinus-inferieur-1",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module04TroisRapportsTroisNoms.jsx",
+        "line": 103,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "tg-d1-hypotenuse",
@@ -15,8 +158,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module00Diagnostic.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "triangle-rectangle",
+        "hypotenuse",
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "triangle-rectangle": "prior",
+        "hypotenuse": "prior",
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +177,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module00Diagnostic.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 32,
+      "requires": [
+        "somme-angles-triangle"
+      ],
+      "prerequisiteStatus": {
+        "somme-angles-triangle": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +193,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 43,
+      "requires": [
+        "triangle-rectangle"
+      ],
+      "prerequisiteStatus": {
+        "triangle-rectangle": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +209,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module00Diagnostic.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 54,
+      "requires": [
+        "quotient",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +227,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module00Diagnostic.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 65,
+      "requires": [
+        "quotient",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +245,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module01DeuxRampes.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 51,
+      "requires": [
+        "triangle-rectangle"
+      ],
+      "prerequisiteStatus": {
+        "triangle-rectangle": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,9 +261,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module01DeuxRampes.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 85,
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +277,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module01DeuxRampes.jsx",
-      "line": 109,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 112,
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,13 +293,21 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module02NommerLesCotes.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "cote-oppose"
+      "line": 133,
+      "requires": [
+        "hypotenuse",
+        "cote-oppose",
+        "cote-adjacent",
+        "mem-roles-relatifs"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "hypotenuse": "prior",
+        "cote-oppose": "established@M2",
+        "cote-adjacent": "established@M2",
+        "mem-roles-relatifs": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M02-S3-Q2",
@@ -124,9 +315,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module02NommerLesCotes.jsx",
-      "line": 148,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 183,
+      "requires": [
+        "hypotenuse",
+        "mem-roles-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "hypotenuse": "prior",
+        "mem-roles-relatifs": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,13 +333,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module03LeRapportNeDependQueDeLangle.jsx",
-      "line": 138,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "fonction"
+      "line": 140,
+      "requires": [
+        "cote-oppose",
+        "hypotenuse"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "cote-oppose": "established@M2",
+        "hypotenuse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M04-S1-Q1",
@@ -151,12 +352,20 @@
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module04TroisRapportsTroisNoms.jsx",
       "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "tangente"
+      "requires": [
+        "sinus-cosinus-tangente",
+        "cote-oppose",
+        "cote-adjacent",
+        "hypotenuse"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "sinus-cosinus-tangente": "established@M4",
+        "cote-oppose": "established@M2",
+        "cote-adjacent": "established@M2",
+        "hypotenuse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M04-S2-Q2",
@@ -164,9 +373,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module04TroisRapportsTroisNoms.jsx",
-      "line": 109,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 133,
+      "requires": [
+        "sinus-cosinus-tangente",
+        "calculatrice-degres"
+      ],
+      "prerequisiteStatus": {
+        "sinus-cosinus-tangente": "established@M4",
+        "calculatrice-degres": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -176,9 +391,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module05CalculerUneLongueur.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 97,
+      "requires": [
+        "methode-choisir-rapport",
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-rapport": "established@M5",
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -188,9 +409,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module05CalculerUneLongueur.jsx",
-      "line": 121,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 130,
+      "requires": [
+        "methode-choisir-rapport",
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-rapport": "established@M5",
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -200,9 +427,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module06ChoisirPuisResoudre.jsx",
-      "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 43,
+      "requires": [
+        "methode-choisir-rapport",
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-rapport": "established@M5",
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -212,9 +445,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module06ChoisirPuisResoudre.jsx",
-      "line": 64,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 72,
+      "requires": [
+        "retrouver-angle",
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-angle": "established@M6",
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -224,9 +463,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module06ChoisirPuisResoudre.jsx",
-      "line": 88,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 97,
+      "requires": [
+        "mem-sinus-inferieur-1",
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "mem-sinus-inferieur-1": "established@M4",
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -236,9 +481,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module07AnglesEtPentes.jsx",
-      "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 47,
+      "requires": [
+        "pente-pourcentage",
+        "retrouver-angle"
+      ],
+      "prerequisiteStatus": {
+        "pente-pourcentage": "established@M7",
+        "retrouver-angle": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -249,8 +500,14 @@
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module07AnglesEtPentes.jsx",
       "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "retrouver-angle",
+        "methode-choisir-rapport"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-angle": "established@M6",
+        "methode-choisir-rapport": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -260,9 +517,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module07AnglesEtPentes.jsx",
-      "line": 109,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "methode-choisir-rapport",
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-rapport": "established@M5",
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -272,9 +535,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 28,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 29,
+      "requires": [
+        "cote-oppose",
+        "cote-adjacent",
+        "hypotenuse",
+        "mem-roles-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "cote-oppose": "established@M2",
+        "cote-adjacent": "established@M2",
+        "hypotenuse": "prior",
+        "mem-roles-relatifs": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -284,9 +557,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 40,
+      "requires": [
+        "cote-oppose",
+        "cote-adjacent",
+        "hypotenuse",
+        "mem-roles-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "cote-oppose": "established@M2",
+        "cote-adjacent": "established@M2",
+        "hypotenuse": "prior",
+        "mem-roles-relatifs": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -296,9 +579,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 51,
+      "requires": [
+        "cote-oppose",
+        "cote-adjacent",
+        "hypotenuse",
+        "mem-roles-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "cote-oppose": "established@M2",
+        "cote-adjacent": "established@M2",
+        "hypotenuse": "prior",
+        "mem-roles-relatifs": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -308,9 +601,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "rapport-depend-angle"
+      ],
+      "prerequisiteStatus": {
+        "rapport-depend-angle": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -320,9 +617,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 83,
+      "requires": [
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -332,9 +633,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 101,
+      "requires": [
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -344,9 +649,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 110,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 117,
+      "requires": [
+        "methode-choisir-rapport",
+        "sinus-cosinus-tangente"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-rapport": "established@M5",
+        "sinus-cosinus-tangente": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -356,9 +667,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 128,
+      "requires": [
+        "methode-choisir-rapport",
+        "calculatrice-degres"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-rapport": "established@M5",
+        "calculatrice-degres": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -368,9 +685,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 130,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 139,
+      "requires": [
+        "retrouver-angle"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-angle": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -380,49 +701,31 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module08MissionFinale.jsx",
-      "line": 145,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 155,
+      "requires": [
+        "methode-choisir-rapport",
+        "pente-pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-rapport": "established@M5",
+        "pente-pourcentage": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
   "findings": [
     {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« côté opposé » is a target concept of this lesson but its first appearance is q.correction (module 2, étape 2); it is only taught later at apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module02NommerLesCotes.jsx:203",
+      "code": "W_PRIOR_REESTABLISHED",
+      "severity": "info",
+      "message": "'hypotenuse' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module02NommerLesCotes.jsx",
-      "line": 110,
+      "line": 91,
       "module": 2,
-      "step": 2,
-      "term": "cote-oppose",
-      "questionId": "M02-S2-Q1",
-      "position": 64
-    },
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« tangente » is a target concept of this lesson but its first appearance is q.rowOption (module 4, étape 1); it is only taught later at apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module04TroisRapportsTroisNoms.jsx:161",
-      "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module04TroisRapportsTroisNoms.jsx",
-      "line": 53,
-      "module": 4,
       "step": 1,
-      "term": "tangente",
-      "questionId": "M04-S1-Q1",
-      "position": 114
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« fonction » first appears at q.explain (module 3, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/espace_geometrie/trigonometrie-triangle-rectangle-3e/modules/Module03LeRapportNeDependQueDeLangle.jsx",
-      "line": 148,
-      "module": 3,
-      "step": 3,
-      "term": "fonction",
-      "questionId": "M03-S3-Q1",
-      "position": 103
+      "term": null,
+      "questionId": null,
+      "position": 61
     }
   ]
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import NumberLine from '../../../../../common/components/NumberLine';
 import PartitionShape from '../components/PartitionShape';
@@ -49,6 +49,7 @@ const REGISTRE = [
 const EPREUVES = [
   {
     id: 'e1',
+    requires: ['part-egale', 'fraction-ecriture'],
     skill: 'construire',
     title: 'Épreuve 1',
     prompt: (
@@ -66,6 +67,7 @@ const EPREUVES = [
   },
   {
     id: 'e2',
+    requires: ['fraction-ecriture', 'meme-quantite-deux-dessins'],
     skill: 'lire',
     title: 'Épreuve 2',
     prompt: 'Quelle fraction ce disque représente-t-il ?',
@@ -79,6 +81,7 @@ const EPREUVES = [
   },
   {
     id: 'e3',
+    requires: ['numerateur', 'denominateur'],
     skill: 'vocabulaire',
     title: 'Épreuve 3',
     prompt: (
@@ -94,6 +97,7 @@ const EPREUVES = [
   },
   {
     id: 'e4',
+    requires: ['denominateur', 'role-du-bas'],
     skill: 'vocabulaire',
     title: 'Épreuve 4',
     prompt: (
@@ -109,6 +113,7 @@ const EPREUVES = [
   },
   {
     id: 'e5',
+    requires: ['fraction-quantite'],
     skill: 'quantite',
     title: 'Épreuve 5',
     prompt: (
@@ -126,6 +131,7 @@ const EPREUVES = [
   },
   {
     id: 'e6',
+    requires: ['fraction-quotient'],
     skill: 'quotient',
     title: 'Épreuve 6',
     prompt: '3 gâteaux identiques sont partagés entre 5 personnes. Quelle part reçoit chacune ?',
@@ -138,6 +144,7 @@ const EPREUVES = [
   },
   {
     id: 'e7',
+    requires: ['fraction-nombre-droite'],
     skill: 'droite',
     title: 'Épreuve 7',
     prompt: (
@@ -167,6 +174,7 @@ const EPREUVES = [
   },
   {
     id: 'e8',
+    requires: ['fraction-nombre-droite', 'comparer-a-un'],
     skill: 'equivalence',
     title: 'Épreuve 8',
     prompt: 'Ces deux figures représentent-elles la même quantité ?',
@@ -184,6 +192,7 @@ const EPREUVES = [
   },
   {
     id: 'e9',
+    requires: ['fraction-decimale', 'denominateur'],
     skill: 'decimales',
     title: 'Épreuve 9',
     prompt: (
@@ -194,11 +203,12 @@ const EPREUVES = [
     options: ['75/10', '7/100', '75/100', '750/100'],
     cols: 2,
     correct: 2,
-    explain: '0,75 se lit « 75 centièmes » : numérateur 75, dénominateur 100 (une puissance de 10).',
-    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P3'] },
+    explain: '0,75 se lit « 75 centièmes » : 75 parts sur une unité coupée en 100, donc 75/100. Deux chiffres après la virgule, un dénominateur de 100.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P1'] },
   },
   {
     id: 'e10',
+    requires: ['fraction-quantite'],
     skill: 'problemes',
     title: 'Épreuve 10',
     prompt: (
@@ -215,6 +225,7 @@ const EPREUVES = [
   },
   {
     id: 'e11',
+    requires: ['fraction-quantite', 'fractions-usuelles'],
     skill: 'problemes',
     title: 'Épreuve 11',
     prompt: (
@@ -231,6 +242,7 @@ const EPREUVES = [
   },
   {
     id: 'e12',
+    requires: ['fraction-quotient', 'comparer-a-un'],
     skill: 'problemes',
     title: 'Épreuve 12',
     prompt: '5 barres de céréales identiques sont partagées équitablement entre 4 amis. Quelle fraction de barre chacun reçoit-il ?',
@@ -239,7 +251,7 @@ const EPREUVES = [
     correct: 0,
     renderOption: renderFrac,
     explain: '5 barres partagées entre 4 amis : chacun reçoit 5 ÷ 4 = 5/4 de barre, soit plus d\'une barre entière.',
-    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P2'] },
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_fractions_P1'] },
   },
 ];
 
@@ -254,35 +266,16 @@ const BADGES = [
   { id: 'parfait', emoji: '💎', label: 'Maître des fractions', test: (s) => Object.values(s).every((v) => v === 0) },
 ];
 
-/* ═══ SYNTHÈSE ══════════════════════════════════════════════════════ */
+/* ═══ SYNTHÈSE ══════════════════════════════════════════════════════
+   La leçon a UNE source de connaissances : knowledge.jsx. La synthèse ne la
+   réécrit donc pas — elle PRÉSENTE la carte complète, celle que l'élève a vue
+   grandir module après module (docs/architecture/KNOWLEDGE_MAP.md).
+   `complete` déverrouille toute la carte : le parcours est terminé.
+   La figure de rappel, elle, reste : c'est le fil narratif de la leçon, pas
+   une deuxième définition. */
 function Synthese() {
-  const BRANCHES = [
-    { title: 'PARTAGE', body: <><MathText>{'$\\frac{3}{4}$'}</MathText> = 3 parts parmi 4 parts égales</>, tone: 'bg-blue-50 border-blue-200' },
-    { title: 'ÉCRITURE', body: <MathText>{'$\\frac{3}{4}$'}</MathText>, tone: 'bg-indigo-50 border-indigo-200' },
-    { title: 'VOCABULAIRE', body: '3 = numérateur, 4 = dénominateur', tone: 'bg-sky-50 border-sky-200' },
-    { title: 'NOMBRE', body: '3/4 a une position, comme tout nombre', tone: 'bg-violet-50 border-violet-200' },
-    { title: 'QUOTIENT', body: <><MathText>{'$\\frac{3}{4} = 3 \\div 4$'}</MathText></>, tone: 'bg-amber-50 border-amber-200' },
-    { title: 'DROITE GRADUÉE', body: '3/4 est entre 0 et 1', tone: 'bg-rose-50 border-rose-200' },
-    { title: 'FRACTION DÉCIMALE', body: <><MathText>{'$\\frac{3}{10} = 0{,}3$'}</MathText></>, tone: 'bg-emerald-50 border-emerald-200' },
-  ];
-
   return (
     <div className="space-y-5">
-      <div className="bg-slate-900 text-white rounded-2xl p-6 text-center space-y-3">
-        <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Le concept central</div>
-        <div className="text-4xl font-space font-extrabold">FRACTION</div>
-        <p className="text-sm text-slate-300">une quantité née d'un partage, qui peut se lire de sept façons.</p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {BRANCHES.map((b) => (
-          <div key={b.title} className={`rounded-xl border-2 px-4 py-3 ${b.tone}`}>
-            <div className="font-mono font-extrabold text-xs tracking-wider text-slate-700">{b.title}</div>
-            <div className="text-sm mt-1 text-slate-800">{b.body}</div>
-          </div>
-        ))}
-      </div>
-
       <div className="bg-white border-2 border-slate-200 rounded-2xl p-4 space-y-3">
         <h3 className="font-space font-bold text-slate-800 text-sm">3/4, sous tous ses angles</h3>
         <PartitionShape shape="bar" parts={4} shaded={3} tone="amber" size="md" />
@@ -291,10 +284,7 @@ function Synthese() {
         </div>
       </div>
 
-      <Feedback tone="info">
-        Rappel du lien avec les décimaux (vu au module 9) : dès que le dénominateur est 10, 100 ou 1 000, la
-        fraction s'écrit directement avec une virgule.
-      </Feedback>
+      <KnowledgeSnapshot complete variant="complete" />
     </div>
   );
 }

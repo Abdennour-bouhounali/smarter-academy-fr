@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Target } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import NumberLine from '../../../../../common/components/NumberLine';
@@ -10,7 +9,7 @@ import ReferenceRuler from '../components/ReferenceRuler';
 /**
  * Module 5 — practice lab, reconstruit sur le lesson kit.
  *
- * Estimer avant de mesurer : choisir un ordre de grandeur plausible (unité
+ * Estimer avant de mesurer : choisir une valeur plausible (unité
  * ET valeur ensemble), puis situer une longueur sur une droite graduée.
  */
 const SCENARIOS = [
@@ -37,7 +36,7 @@ export default function Module05ChoisirEstimer() {
       navLinks={getNavLinks(5)}
       moduleNumber={5}
       moduleTitle="Choisir et estimer"
-      moduleSubtitle="Quelle unité choisir ? Quel ordre de grandeur attendre avant de mesurer ?"
+      moduleSubtitle="Quelle unité choisir ? Quelle valeur attendre avant même de mesurer ?"
       estimatedTime="11 min"
       brief={{
         tag: '📋 Mission 05',
@@ -47,7 +46,7 @@ export default function Module05ChoisirEstimer() {
       steps={[
         {
           num: 1,
-          title: 'Le bon ordre de grandeur',
+          title: 'La proposition la plus réaliste',
           done: allScenariosDone,
           content: (
             <div className="space-y-8">
@@ -55,6 +54,7 @@ export default function Module05ChoisirEstimer() {
                 i === 0 || scenarioDone.includes(i - 1) ? (
                   <div key={s.id} className="border-t border-slate-100 pt-5 first:border-0 first:pt-0">
                     <TapQuestion
+                      requires={['unite-adaptee', 'escalier-longueurs']}
                       prompt={
                         <span className="flex items-center gap-2.5">
                           <span className="text-2xl" aria-hidden="true">{s.emoji}</span>
@@ -70,12 +70,22 @@ export default function Module05ChoisirEstimer() {
                         </span>
                       )}
                       correctionLabel={`${s.options[s.correct].v} ${s.options[s.correct].u}`}
-                      explain={`${s.options[s.correct].v} ${s.options[s.correct].u} : le bon ordre de grandeur.`}
+                      explain={`${s.options[s.correct].v} ${s.options[s.correct].u} : c'est la seule proposition réaliste — les deux autres sont ridiculement petite ou grande.`}
                       solved={scenarioDone.includes(i)}
                       onAnswered={() => setScenarioDone((d) => (d.includes(i) ? d : [...d, i]))}
                     />
                   </div>
                 ) : null
+              )}
+              {/* Quatre jugements viennent d'être portés sans instrument :
+                  c'est ici, et pas dans le titre d'étape, que le mot
+                  « estimer » prend son sens. */}
+              {allScenariosDone && (
+                <KnowledgeBrick
+                  id="estimation-plausible"
+                  variant="new"
+                  lead="Tu viens d'éliminer quatre fois l'impossible sans rien mesurer. Ce geste a un nom."
+                />
               )}
             </div>
           ),
@@ -161,21 +171,25 @@ export default function Module05ChoisirEstimer() {
               )}
               {refDone && (
                 <Feedback tone="ok">
-                  Une référence connue (ici, 1 m) permet d'estimer une longueur sans instrument : la porte fait
-                  environ deux fois la référence, soit environ 2 m.
+                  La porte fait environ deux fois la règle de 1 m que tu viens de faire glisser : environ 2 m.
                 </Feedback>
+              )}
+              {refDone && (
+                <KnowledgeBrick
+                  id="reference-connue"
+                  variant="new"
+                  lead="Tu viens de mesurer une porte sans mètre ruban, juste en comparant."
+                />
               )}
             </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Target className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Estimer avant de mesurer permet de repérer tout de suite un résultat impossible.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais estimer une longueur seule. Au dernier module de
+          contenu, il faudra en additionner plusieurs : le tour complet d'une figure.
+        </KnowledgeSnapshot>
       }
     />
   );

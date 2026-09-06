@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Rabbit } from 'lucide-react';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DurationLine from '../components/DurationLine';
@@ -127,7 +126,19 @@ export default function Module05MethodeSauts() {
           title: 'Construis les sauts',
           done: sautsDone,
           content: (kit) => (
-            <SautsBuilder react={kit.react} solved={sautsDone} onSolved={() => setSautsDone(true)} />
+            <div className="space-y-5">
+              <SautsBuilder react={kit.react} solved={sautsDone} onSolved={() => setSautsDone(true)} />
+              {/* Les trois sauts viennent d'être posés dans l'ordre sur la
+                  ligne du temps : la méthode se fixe sur ce geste, avant
+                  qu'on demande d'additionner. */}
+              {sautsDone && (
+                <KnowledgeBrick
+                  id="methode-sauts"
+                  variant="new"
+                  lead="Les trois sauts que tu viens de placer forment une méthode complète — celle des professionnels du rail."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -148,6 +159,7 @@ export default function Module05MethodeSauts() {
                   display={formatDec(2)}
                   explain={<>Le seul saut en heures : <strong>2 h</strong>.</>}
                   explainFor={() => 'Un seul saut compte des heures entières.'}
+                  requires={['unites-temps', 'methode-sauts']}
                   solved={totalHDone}
                   onAnswered={() => setTotalHDone(true)}
                 />
@@ -159,15 +171,25 @@ export default function Module05MethodeSauts() {
                   display={formatDec(28)}
                   explain={<>13 + 15 = <strong>28 min</strong> : le trajet dure 2 h 28 min.</>}
                   explainFor={() => 'Additionne les deux sauts en minutes : 13 + 15.'}
+                  requires={['unites-temps', 'methode-sauts', 'base-60']}
                   solved={totalMinDone}
                   onAnswered={() => setTotalMinDone(true)}
                 />
               </div>
               {totalHDone && totalMinDone && (
-                <Feedback tone="ok">
-                  Durée du trajet : <strong>2 h 28 min</strong>. (La soustraction posée aurait donné « 2 h 68 » ou
-                  pire — les sauts, eux, ne trahissent jamais.)
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Durée du trajet : <strong>2 h 28 min</strong>. (La soustraction posée aurait donné « 2 h 68 » ou
+                    pire — les sauts, eux, ne trahissent jamais.)
+                  </Feedback>
+                  {/* « 2 h 68 » vient d'être évoqué : c'est le moment de
+                      poser la règle de retenue, exigée par le boss final. */}
+                  <KnowledgeBrick
+                    id="mem-retenue-60"
+                    variant="new"
+                    lead="Pourquoi « 2 h 68 min » n’est jamais une réponse finie."
+                  />
+                </>
               )}
             </div>
           ),
@@ -185,6 +207,7 @@ export default function Module05MethodeSauts() {
               display={formatDec(40)}
               explain={<>En arrière depuis 21 h 30 : − 1 h → 20 h 30, puis − 30 min → 20 h 00, puis − 20 min → <strong>19 h 40</strong>. Les sauts marchent dans les deux sens.</>}
               explainFor={() => 'Recule par sauts : enlève d’abord 1 h (→ 20 h 30), puis 30 min (→ 20 h), puis les 20 min restantes.'}
+              requires={['unites-temps', 'lire-cadran', 'methode-sauts']}
               solved={reverseDone}
               onAnswered={() => setReverseDone(true)}
             />
@@ -192,13 +215,10 @@ export default function Module05MethodeSauts() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Rabbit className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Durée entre deux instants = des sauts : jusqu'à l'heure ronde, puis les heures entières, puis le
-            reste. Dans un sens comme dans l'autre.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Ta carte est complète. Le module suivant n'ajoute rien : il
+          envoie tout cela sur de vrais horaires.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -32,6 +32,25 @@ export const LESSON_BASE_PATH = '/courses/college/6e/espace_geometrie/constructi
 export const LESSON_CONFIG = {
   id: 'constructions-geometriques',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : ce que les trois leçons précédentes du chapitre ont
+  // établi — la notation des segments et le milieu, l'angle droit et les deux
+  // relations entre droites, les figures planes usuelles. Ce sont exactement
+  // les cinq questions du module 0, et rien d'autre : les GESTES (tracer,
+  // reporter, construire, vérifier) sont, eux, établis dans la leçon.
+  priorKnowledge: [
+    'notation-segment',
+    'demi-droite',
+    'milieu-segment',
+    'angle-droit',
+    'droites-perpendiculaires',
+    'droites-paralleles',
+    'figures-planes-usuelles',
+  ],
   title: 'Constructions géométriques',
   description:
     'Maîtriser la règle, l’équerre et le compas : tracer, reporter, construire une figure à partir d’un programme et vérifier le résultat.',

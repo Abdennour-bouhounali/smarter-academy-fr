@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Repeat, ArrowRight } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
-import ConceptCard from '../../../../../common/components/ConceptCard';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProgramLab from '../components/ProgramLab';
 import { makeWorld, instr, makeRepeat, runProgram, countSteps } from '../components/algoUtils';
@@ -282,17 +282,20 @@ export default function Module05Repeter() {
         },
         {
           num: 3,
-          title: 'Ça porte un nom : la boucle',
+          title: 'Ça porte un nom',
           done: quizDone,
           content: (
             <div className="space-y-3">
-              <ConceptCard label="Le mot juste" emoji="🔁" color="violet">
-                <p className="text-sm">
-                  Une instruction <strong>RÉPÉTER</strong> s’appelle une <strong>boucle</strong>. Elle
-                  ne change pas le comportement du robot — elle raccourcit l’<strong>écriture</strong>{' '}
-                  du programme. Le robot, lui, fait toujours autant d’actions.
-                </p>
-              </ConceptCard>
+              <KnowledgeBrick
+                id="boucle"
+                variant="new"
+                lead="La carte que tu viens d’utiliser à la place des huit autres porte un nom."
+              />
+              <KnowledgeBrick
+                id="ecrire-vs-executer"
+                variant="new"
+                lead="Et le programme a beau être plus court, ROBI n’a pas fait un pas de moins."
+              />
               <TapQuestion
                 prompt="Le programme « RÉPÉTER 5 FOIS (AVANCER) » — combien ROBI fait-il d’actions ?"
                 options={['1 action', '5 actions', '6 actions']}
@@ -301,6 +304,7 @@ export default function Module05Repeter() {
                 solved={quizDone}
                 explain="🎯 Oui : 1 carte ÉCRITE, mais 5 actions EXÉCUTÉES. C'est toute la différence entre ce qu'on écrit et ce que le robot fait."
                 explainWrong="Attention à ne pas confondre : la carte RÉPÉTER 5 FOIS est écrite une seule fois, mais le robot exécute bien 5 AVANCER — donc il avance de 5 cases."
+                requires={['boucle', 'ecrire-vs-executer']}
                 onAnswered={() => setQuizDone(true)}
               />
             </div>
@@ -308,7 +312,7 @@ export default function Module05Repeter() {
         },
         {
           num: 4,
-          title: '🎯 Deux cartes maximum',
+          title: '🎯 Deux cartes, pas une de plus',
           subtitle: 'Cette fois, la boucle est obligatoire.',
           done: loopDone,
           content: (kit) => (
@@ -317,12 +321,17 @@ export default function Module05Repeter() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Repeat className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            <strong className="text-white">Répéter d’actions → boucle.</strong> Tu écris moins, le robot
-            fait autant. Prochaine étape : que faire quand un programme ne marche pas ?
-          </p>
+        <div className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={5}>
+            <strong>La suite.</strong> Tu écris moins, ROBI fait autant. Prochaine étape : que faire
+            quand un programme, lui, ne fait pas du tout ce qu'on voulait ?
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Repeat className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Une carte écrite, plusieurs actions exécutées.
+            </p>
+          </div>
         </div>
       }
     />

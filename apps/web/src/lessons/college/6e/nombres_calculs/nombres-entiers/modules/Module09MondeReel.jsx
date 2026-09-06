@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { formatFr, spellFr } from '../components/numberUtils';
@@ -94,6 +95,7 @@ export default function Module09MondeReel() {
               options={CARTES}
               correct={PLUS_GRAND_INDEX}
               cols={2}
+              requires={['comparer-methode', 'longueur-ecriture']}
               renderOption={(c) => (
                 <span className="flex items-center gap-3 w-full">
                   <span className="text-2xl shrink-0" aria-hidden="true">{c.emoji}</span>
@@ -136,7 +138,7 @@ export default function Module09MondeReel() {
         {
           num: 2,
           title: 'Estime avant de lire la valeur exacte',
-          subtitle: "Dans la vie, on a souvent besoin d'un ordre de grandeur plutôt que du nombre exact.",
+          subtitle: 'Dans la vie, on a souvent besoin de la taille du nombre, pas de sa valeur exacte.',
           done: s2,
           content: (
             <div className="space-y-5">
@@ -147,12 +149,13 @@ export default function Module09MondeReel() {
                     <span className="text-sm font-semibold text-slate-800">{e.situation}</span>
                   </div>
                   <p className="text-xs text-slate-500 flex items-center gap-1.5">
-                    <Eye className="w-3.5 h-3.5" aria-hidden="true" /> Quel ordre de grandeur te paraît réaliste ?
+                    <Eye className="w-3.5 h-3.5" aria-hidden="true" /> Laquelle de ces trois tailles te paraît réaliste ?
                   </p>
                   <TapQuestion
                     options={e.options}
                     correct={e.correct}
                     cols={3}
+                    requires={['longueur-ecriture', 'position-chiffre']}
                     explain={e.explain}
                     solved={estimDone.includes(i)}
                     onAnswered={() => setEstimDone((d) => (d.includes(i) ? d : [...d, i]))}
@@ -160,11 +163,11 @@ export default function Module09MondeReel() {
                 </div>
               ))}
               {s2 && (
-                <Feedback tone="info">
-                  Estimer, c'est choisir le bon <strong>ordre de grandeur</strong> : des dizaines, des centaines,
-                  des milliers ou des centaines de milliers. C'est exactement ce que t'indique le nombre de
-                  chiffres.
-                </Feedback>
+                <KnowledgeBrick
+                  id="ordre-grandeur"
+                  variant="new"
+                  lead="Trois fois, tu as choisi une taille sans calculer : ce choix porte un nom."
+                />
               )}
             </div>
           ),
@@ -205,6 +208,7 @@ export default function Module09MondeReel() {
                 options={MANQUANT.options.map((o) => formatFr(o))}
                 correct={MANQUANT.correct}
                 cols={2}
+                requires={['encadrer', 'comparer-methode']}
                 explain={MANQUANT.explain}
                 onAnswered={() => setManqDone(true)}
               />
@@ -212,6 +216,12 @@ export default function Module09MondeReel() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={9}>
+          <strong>La suite.</strong> Ta carte est complète. Au module suivant, tu ne rencontres
+          plus rien de neuf : tu choisis toi-même quel outil sortir, problème par problème.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

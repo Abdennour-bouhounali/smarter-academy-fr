@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Search, CheckCircle2 } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
-import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -69,6 +70,7 @@ function DetectiveTimeline({ react, problem, steps, badIndex, repair, solved, on
         <div className="space-y-3 border-t border-slate-100 pt-4">
           <TapQuestion
             prompt={repair.q}
+            requires={['premiere-erreur']}
             options={repair.options}
             correct={repair.correct}
             cols={1}
@@ -130,7 +132,6 @@ const CASES = [
 
 export default function Module10Detective() {
   const [done, setDone] = useState([]);
-  const allDone = done.length === CASES.length;
 
   return (
     <ContentModule
@@ -145,22 +146,73 @@ export default function Module10Detective() {
         title: 'Un raisonnement se lit étape par étape.',
         body: <p>Ne dis jamais « tout est faux ». Trouve exactement où ça commence à déraper — c'est ça, déboguer un raisonnement.</p>,
       }}
-      steps={CASES.map((c, i) => ({
-        num: i + 1,
-        title: `Enquête ${i + 1}`,
-        done: done.includes(i),
-        content: (kit) => (
-          <DetectiveTimeline
-            react={kit.react}
-            problem={c.problem}
-            steps={c.steps}
-            badIndex={c.badIndex}
-            repair={c.repair}
-            solved={done.includes(i)}
-            onSolved={() => setDone((d) => (d.includes(i) ? d : [...d, i]))}
-          />
-        ),
-      }))}
+      steps={[
+        {
+          num: 1,
+          title: 'Enquête 1',
+          done: done.includes(0),
+          content: (kit) => (
+            <div className="space-y-5">
+              {/* La méthode est posée AVANT la première enquête : sans elle,
+                  « la première erreur » n'est qu'une consigne de plus. Elle
+                  vient de la manipulation qui suit immédiatement, dans la
+                  même étape — l'élève lit la règle puis l'applique. */}
+              <KnowledgeBrick
+                id="premiere-erreur"
+                variant="new"
+                lead="Une solution fausse est presque toujours juste au début. C'est le point de bascule qu'on cherche."
+              />
+              <DetectiveTimeline
+                react={kit.react}
+                problem={CASES[0].problem}
+                steps={CASES[0].steps}
+                badIndex={CASES[0].badIndex}
+                repair={CASES[0].repair}
+                solved={done.includes(0)}
+                onSolved={() => setDone((d) => (d.includes(0) ? d : [...d, 0]))}
+              />
+            </div>
+          ),
+        },
+        {
+          num: 2,
+          title: 'Enquête 2',
+          done: done.includes(1),
+          content: (kit) => (
+            <DetectiveTimeline
+              react={kit.react}
+              problem={CASES[1].problem}
+              steps={CASES[1].steps}
+              badIndex={CASES[1].badIndex}
+              repair={CASES[1].repair}
+              solved={done.includes(1)}
+              onSolved={() => setDone((d) => (d.includes(1) ? d : [...d, 1]))}
+            />
+          ),
+        },
+        {
+          num: 3,
+          title: 'Enquête 3',
+          done: done.includes(2),
+          content: (kit) => (
+            <DetectiveTimeline
+              react={kit.react}
+              problem={CASES[2].problem}
+              steps={CASES[2].steps}
+              badIndex={CASES[2].badIndex}
+              repair={CASES[2].repair}
+              solved={done.includes(2)}
+              onSolved={() => setDone((d) => (d.includes(2) ? d : [...d, 2]))}
+            />
+          ),
+        },
+      ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={10}>
+          <strong>La suite.</strong> Ta carte est complète. La Grande Mission ne te demandera rien
+          d'autre que ce qui s'y trouve.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

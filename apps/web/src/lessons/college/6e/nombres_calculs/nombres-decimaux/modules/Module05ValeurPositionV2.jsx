@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MousePointerClick } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -153,6 +154,13 @@ export default function Module05ValeurPosition() {
                   <div className="bg-white border-2 border-slate-200 rounded-2xl p-3">
                     <DecimalPlaceTable value={LABO} intPlaces={1} decPlaces={3} showValues dimZeros />
                   </div>
+                  {/* Trois chiffres examinés colonne après colonne : le
+                      constat peut maintenant être nommé. */}
+                  <KnowledgeBrick
+                    id="valeur-position-decimale"
+                    variant="new"
+                    lead="Le 5 valait moins que le 3, alors que 5 est plus grand que 3 : voilà pourquoi."
+                  />
                 </motion.div>
               )}
             </div>
@@ -184,6 +192,7 @@ export default function Module05ValeurPosition() {
                 options={ZERO_Q.options}
                 correct={ZERO_Q.correct}
                 cols={1}
+                requires={['valeur-position-decimale', 'centieme', 'dixieme']}
                 explain={ZERO_Q.explain}
                 solved={s2}
                 onAnswered={() => setS2(true)}
@@ -218,25 +227,29 @@ export default function Module05ValeurPosition() {
                 options={ZERO_FINAL_Q.options}
                 correct={ZERO_FINAL_Q.correct}
                 cols={1}
+                requires={['valeur-position-decimale', 'centieme', 'dixieme']}
                 explain={ZERO_FINAL_Q.explain}
                 solved={s3}
                 onAnswered={() => setS3(true)}
               />
 
               {s3 && (
-                <div className="bg-gradient-to-br from-violet-600 to-indigo-600 text-white rounded-2xl p-5 text-center space-y-1">
-                  <div className="text-xs font-mono uppercase tracking-widest text-violet-200">La règle à ne jamais oublier</div>
-                  <div className="text-lg sm:text-xl font-space font-extrabold">4,5 = 4,50 mais 4,5 ≠ 4,05</div>
-                  <p className="text-sm text-violet-100">
-                    Un zéro <strong>à la fin</strong> ne change rien. Un zéro <strong>juste après la virgule</strong>{' '}
-                    décale tout.
-                  </p>
-                </div>
+                <KnowledgeBrick
+                  id="deux-zeros"
+                  variant="new"
+                  lead="Tu viens de voir les deux cas côte à côte : c'est la règle la plus rentable de toute la leçon."
+                />
               )}
             </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais ce que vaut chaque chiffre après la virgule. Au
+          module suivant, tu reconnais un même nombre sous plusieurs habits.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

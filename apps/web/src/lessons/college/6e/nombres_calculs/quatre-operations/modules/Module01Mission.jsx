@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { motion } from 'framer-motion';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -165,6 +166,7 @@ function SituationCard({ sit, index, answered, onAnswered }) {
           </div>
         }
         prompt={sit.question}
+        requires={['calcul-numerique']}
         options={sit.choices}
         correct={sit.correctIndex}
         cols={2}
@@ -213,7 +215,7 @@ export default function Module01Mission() {
       moduleNumber={1}
       moduleTitle="Mission : Le calculateur malin"
       moduleSubtitle="Découvrir les quatre familles d'opérations à travers des situations réelles."
-      estimatedTime="5 min"
+      estimatedTime="8 min"
       brief={{
         tag: '📋 Mission',
         title: 'Tu es responsable de la réserve de matériel du collège.',
@@ -243,46 +245,25 @@ export default function Module01Mission() {
                   onAnswered={handleAnswered}
                 />
               ))}
+
+              {/* La brique arrive APRÈS les quatre tris : l'élève a d'abord
+                  décidé de l'action, on lui donne ensuite le nom du signe. */}
+              {allDone && (
+                <KnowledgeBrick
+                  id="quatre-situations"
+                  variant="new"
+                  lead="Tu viens de trier quatre situations sans poser un seul calcul : c'est l'action qui commande le signe."
+                />
+              )}
             </div>
           ),
         },
       ]}
       footer={
-        <AnimatePresence>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-gradient-to-br from-indigo-600 to-violet-600 text-white rounded-2xl p-6 space-y-4"
-          >
-            <div className="text-2xl font-space font-extrabold">
-              🎉 Tu as découvert les quatre opérations !
-            </div>
-            <p className="text-indigo-100 text-sm leading-relaxed">
-              Chaque opération traduit une <strong className="text-white">famille de situations</strong> différente :
-            </p>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { sym: '+', label: 'Addition', desc: 'Réunir / augmenter', bg: 'bg-emerald-500' },
-                { sym: '−', label: 'Soustraction', desc: 'Retirer / comparer', bg: 'bg-blue-500' },
-                { sym: '×', label: 'Multiplication', desc: 'Groupes égaux', bg: 'bg-violet-500' },
-                { sym: '÷', label: 'Division', desc: 'Partager / grouper', bg: 'bg-amber-500' },
-              ].map(({ sym, label, desc, bg }) => (
-                <div key={sym} className="bg-white/10 rounded-xl p-3 flex items-center gap-3">
-                  <span className={`${bg} text-white font-bold text-xl w-10 h-10 rounded-lg flex items-center justify-center shrink-0`}>
-                    {sym}
-                  </span>
-                  <div>
-                    <div className="text-sm font-bold">{label}</div>
-                    <div className="text-xs text-indigo-200">{desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-indigo-200">
-              Dans les modules suivants, tu vas explorer chaque opération en profondeur — en manipulant, en visualisant, en comprenant.
-            </p>
-          </motion.div>
-        </AnimatePresence>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais reconnaître l'action ; on va maintenant regarder
+          chaque opération de près, en commençant par réunir deux quantités.
+        </KnowledgeSnapshot>
       }
     />
   );

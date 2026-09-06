@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import NumberLine from '../../../../../common/components/NumberLine';
@@ -39,6 +40,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'nombres-entiers-boss-e1',
+    requires: ['classe-trois', 'position-chiffre', 'zero-place'],
     skill: 'lecture',
     prompt: (
       <>
@@ -54,6 +56,7 @@ const EPREUVES = [
   },
   {
     id: 'nombres-entiers-boss-e2',
+    requires: ['valeur-position', 'classe-trois'],
     skill: 'position',
     prompt: (
       <>
@@ -70,6 +73,7 @@ const EPREUVES = [
   },
   {
     id: 'nombres-entiers-boss-e3',
+    requires: ['decomposer', 'zero-place'],
     skill: 'decomposition',
     prompt: (
       <>
@@ -87,6 +91,7 @@ const EPREUVES = [
   },
   {
     id: 'nombres-entiers-boss-e4',
+    requires: ['comparer-methode', 'signes-comparaison'],
     skill: 'comparaison',
     prompt: (
       <>
@@ -103,6 +108,7 @@ const EPREUVES = [
   },
   {
     id: 'nombres-entiers-boss-e5',
+    requires: ['ranger-ordre', 'comparer-methode'],
     skill: 'rangement',
     prompt: <>Range quatre fiches du registre dans l'ordre croissant : 8 099 ; 2 450 ; 12 450 ; 6 307.</>,
     cols: 1,
@@ -119,6 +125,7 @@ const EPREUVES = [
   },
   {
     id: 'nombres-entiers-boss-e6',
+    requires: ['pas-graduation', 'placer-sur-droite'],
     skill: 'droite',
     prompt: (
       <>
@@ -130,11 +137,12 @@ const EPREUVES = [
     correct: 1,
     extra: <PlaceValueTable value={6307} compact />,
     explain:
-      "Avec un pas de 100, 6 307 se place pratiquement sur la graduation 6 300 (il n'en est qu'à 7 unités). On lit d'abord le pas, puis on compte les graduations.",
+      "Le pas vaut 100. Depuis 6 000, il faut avancer de 3 traits pour atteindre 6 300 : 6 307 tombe pratiquement là, à 7 unités près.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['6e_nombres-entiers_P6'] },
   },
   {
     id: 'nombres-entiers-boss-e7',
+    requires: ['comparer-methode', 'longueur-ecriture'],
     skill: 'problemes',
     prompt: (
       <>
@@ -244,6 +252,9 @@ function Synthese() {
       <Feedback tone="info">
         Et le zéro ? Il ne se dit pas, mais il <strong>tient une place</strong> : sans lui, 4 005 deviendrait 45.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

@@ -2,11 +2,161 @@
   "lesson": "solides-patrons",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "figures-planes-usuelles",
+    "perimetre",
+    "unites-longueur"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "dessin-et-objet",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module01BoiteMysterieuse.jsx",
+        "line": 87,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "arete-cachee",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module01BoiteMysterieuse.jsx",
+        "line": 105,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "controle-euler",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module02FacesAretesSommets.jsx",
+        "line": 227,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "onze-patrons",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module03DeplierCube.jsx",
+        "line": 165,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "patron-impossible",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module04PlierDansSaTete.jsx",
+        "line": 131,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "nature-des-faces",
+      "type": "concepts",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module05FicheSolides.jsx",
+        "line": 74,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "face-solide",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module02FacesAretesSommets.jsx",
+        "line": 113,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "arete",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module02FacesAretesSommets.jsx",
+        "line": 118,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "sommet-solide",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module02FacesAretesSommets.jsx",
+        "line": 123,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "pave-droit",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module02FacesAretesSommets.jsx",
+        "line": 190,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "patron-solide",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module03DeplierCube.jsx",
+        "line": 95,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "choisir-le-compte",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module06Problemes.jsx",
+        "line": 49,
+        "step": null,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-cube-fas",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module02FacesAretesSommets.jsx",
+        "line": 128,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-carre",
@@ -15,8 +165,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module00Diagnostic.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "figures-planes-usuelles"
+      ],
+      "prerequisiteStatus": {
+        "figures-planes-usuelles": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +180,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module00Diagnostic.jsx",
-      "line": 28,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 29,
+      "requires": [
+        "figures-planes-usuelles"
+      ],
+      "prerequisiteStatus": {
+        "figures-planes-usuelles": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +196,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module00Diagnostic.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 40,
+      "requires": [
+        "figures-planes-usuelles"
+      ],
+      "prerequisiteStatus": {
+        "figures-planes-usuelles": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,14 +212,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module00Diagnostic.jsx",
-      "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
+      "line": 51,
+      "requires": [
         "perimetre",
-        "aire"
+        "figures-planes-usuelles"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "perimetre": "prior",
+        "figures-planes-usuelles": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "q5-unites",
@@ -65,9 +230,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module00Diagnostic.jsx",
-      "line": 62,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 66,
+      "requires": [
+        "unites-longueur"
+      ],
+      "prerequisiteStatus": {
+        "unites-longueur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -77,9 +246,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module01BoiteMysterieuse.jsx",
-      "line": 53,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 51,
+      "requires": [
+        "figures-planes-usuelles"
+      ],
+      "prerequisiteStatus": {
+        "figures-planes-usuelles": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -90,8 +263,12 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module01BoiteMysterieuse.jsx",
       "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "figures-planes-usuelles"
+      ],
+      "prerequisiteStatus": {
+        "figures-planes-usuelles": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -101,9 +278,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module01BoiteMysterieuse.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "arete-cachee",
+        "dessin-et-objet"
+      ],
+      "prerequisiteStatus": {
+        "arete-cachee": "established@M1",
+        "dessin-et-objet": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -113,9 +296,15 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module02FacesAretesSommets.jsx",
-      "line": 122,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 142,
+      "requires": [
+        "face-solide",
+        "dessin-et-objet"
+      ],
+      "prerequisiteStatus": {
+        "face-solide": "established@M2",
+        "dessin-et-objet": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -125,9 +314,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module02FacesAretesSommets.jsx",
-      "line": 169,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 197,
+      "requires": [
+        "face-solide",
+        "arete",
+        "sommet-solide",
+        "pave-droit"
+      ],
+      "prerequisiteStatus": {
+        "face-solide": "established@M2",
+        "arete": "established@M2",
+        "sommet-solide": "established@M2",
+        "pave-droit": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -137,9 +336,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module03DeplierCube.jsx",
-      "line": 130,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 140,
+      "requires": [
+        "patron-solide",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "patron-solide": "established@M3",
+        "face-solide": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,9 +353,17 @@
       "module": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module04PlierDansSaTete.jsx",
-      "line": 127,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 136,
+      "requires": [
+        "patron-impossible",
+        "patron-solide",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "patron-impossible": "established@M4",
+        "patron-solide": "established@M3",
+        "face-solide": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -160,13 +373,21 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module05FicheSolides.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "cote-oppose"
+      "line": 82,
+      "requires": [
+        "nature-des-faces",
+        "face-solide",
+        "pave-droit",
+        "sommet-solide"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "nature-des-faces": "established@M5",
+        "face-solide": "established@M2",
+        "pave-droit": "established@M2",
+        "sommet-solide": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M06-S1-Q1",
@@ -174,9 +395,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module06Problemes.jsx",
-      "line": 54,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 62,
+      "requires": [
+        "choisir-le-compte",
+        "face-solide",
+        "mem-cube-fas"
+      ],
+      "prerequisiteStatus": {
+        "choisir-le-compte": "established@M6",
+        "face-solide": "established@M2",
+        "mem-cube-fas": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +415,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module06Problemes.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "choisir-le-compte",
+        "arete",
+        "mem-cube-fas"
+      ],
+      "prerequisiteStatus": {
+        "choisir-le-compte": "established@M6",
+        "arete": "established@M2",
+        "mem-cube-fas": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +435,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module06Problemes.jsx",
-      "line": 110,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 120,
+      "requires": [
+        "choisir-le-compte",
+        "sommet-solide",
+        "arete",
+        "mem-cube-fas"
+      ],
+      "prerequisiteStatus": {
+        "choisir-le-compte": "established@M6",
+        "sommet-solide": "established@M2",
+        "arete": "established@M2",
+        "mem-cube-fas": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +457,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 44,
+      "requires": [
+        "pave-droit",
+        "nature-des-faces",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "pave-droit": "established@M2",
+        "nature-des-faces": "established@M5",
+        "face-solide": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,9 +477,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "face-solide",
+        "dessin-et-objet",
+        "mem-cube-fas"
+      ],
+      "prerequisiteStatus": {
+        "face-solide": "established@M2",
+        "dessin-et-objet": "established@M1",
+        "mem-cube-fas": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +497,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 68,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 72,
+      "requires": [
+        "arete",
+        "mem-cube-fas"
+      ],
+      "prerequisiteStatus": {
+        "arete": "established@M2",
+        "mem-cube-fas": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,9 +515,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 80,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 85,
+      "requires": [
+        "sommet-solide",
+        "arete",
+        "mem-cube-fas"
+      ],
+      "prerequisiteStatus": {
+        "sommet-solide": "established@M2",
+        "arete": "established@M2",
+        "mem-cube-fas": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -258,9 +535,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 98,
+      "requires": [
+        "arete-cachee",
+        "dessin-et-objet"
+      ],
+      "prerequisiteStatus": {
+        "arete-cachee": "established@M1",
+        "dessin-et-objet": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -270,9 +553,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 109,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 116,
+      "requires": [
+        "patron-solide",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "patron-solide": "established@M3",
+        "face-solide": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -282,9 +571,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 122,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 130,
+      "requires": [
+        "onze-patrons",
+        "patron-solide"
+      ],
+      "prerequisiteStatus": {
+        "onze-patrons": "established@M3",
+        "patron-solide": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -294,9 +589,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 134,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 143,
+      "requires": [
+        "patron-impossible",
+        "patron-solide",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "patron-impossible": "established@M4",
+        "patron-solide": "established@M3",
+        "face-solide": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -306,9 +609,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 161,
+      "requires": [
+        "patron-impossible",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "patron-impossible": "established@M4",
+        "face-solide": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -318,49 +627,22 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module07MissionFinale.jsx",
-      "line": 167,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 178,
+      "requires": [
+        "choisir-le-compte",
+        "arete",
+        "face-solide",
+        "sommet-solide"
+      ],
+      "prerequisiteStatus": {
+        "choisir-le-compte": "established@M6",
+        "arete": "established@M2",
+        "face-solide": "established@M2",
+        "sommet-solide": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« périmètre » first appears at diag.prompt (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module00Diagnostic.jsx",
-      "line": 48,
-      "module": 0,
-      "step": null,
-      "term": "perimetre",
-      "questionId": "q4-perimetre",
-      "position": 16
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« aire » first appears at diag.explain (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module00Diagnostic.jsx",
-      "line": 60,
-      "module": 0,
-      "step": null,
-      "term": "aire",
-      "questionId": "q4-perimetre",
-      "position": 20
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« côté opposé » first appears at q.rowLabel (module 5, étape 1) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/solides-patrons/modules/Module05FicheSolides.jsx",
-      "line": 86,
-      "module": 5,
-      "step": 1,
-      "term": "cote-oppose",
-      "questionId": "M05-S1-Q1",
-      "position": 98
-    }
-  ]
+  "findings": []
 }

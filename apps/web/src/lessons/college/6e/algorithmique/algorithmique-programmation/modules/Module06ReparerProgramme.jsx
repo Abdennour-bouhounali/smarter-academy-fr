@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Wrench, Bug } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
-import KeyTakeaway from '../../../../../common/components/KeyTakeaway';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProgramLab from '../components/ProgramLab';
 import { makeWorld, instr, makeRepeat } from '../components/algoUtils';
@@ -187,11 +186,29 @@ export default function Module06ReparerProgramme() {
         },
         {
           num: 2,
-          title: '🐛 Le programme qui bugue',
+          title: '🐛 Le programme qui n’arrive pas au bon endroit',
           subtitle: 'Lance, observe, trouve, corrige.',
           done: debugDone,
           content: (kit) => (
-            <DebugMission solved={debugDone} onSolved={() => setDebugDone(true)} react={kit.react} />
+            <div className="space-y-4">
+              <DebugMission solved={debugDone} onSolved={() => setDebugDone(true)} react={kit.react} />
+              {/* Le mot arrive après l'enquête, sur une erreur que l'élève a
+                  effectivement cherchée puis corrigée. */}
+              {debugDone && (
+                <>
+                  <KnowledgeBrick
+                    id="bug-debogage"
+                    variant="new"
+                    lead="Ce programme n’était pas cassé : il faisait exactement ce qui était écrit. Cette sorte d’erreur a un nom."
+                  />
+                  <KnowledgeBrick
+                    id="methode-debogage"
+                    variant="new"
+                    lead="Et ce que tu viens de faire pour la trouver est une méthode, pas un coup de chance."
+                  />
+                </>
+              )}
+            </div>
           ),
         },
         {
@@ -212,41 +229,31 @@ export default function Module06ReparerProgramme() {
                 solved={quizDone}
                 explain="🎯 Exactement. On EXÉCUTE pour OBSERVER : l'endroit où le robot dévie désigne l'instruction fautive. C'est plus rapide et plus sûr que de tout réécrire ou de tâtonner au hasard."
                 explainWrong="Tout effacer fait perdre le travail déjà juste, et le hasard ne t'apprend rien. La bonne méthode : lancer, regarder OÙ ça dérape, puis corriger cette instruction-là."
+                requires={['methode-debogage', 'bug-debogage']}
                 onAnswered={() => setQuizDone(true)}
               />
-              <KeyTakeaway color="blue">
-                <li>
-                  Un <strong>algorithme</strong> est une suite d’<strong>instructions</strong> dans un{' '}
-                  <strong>ordre</strong> précis : changer l’ordre change le résultat.
-                </li>
-                <li>
-                  <strong>AVANCER</strong> change la case, <strong>TOURNER</strong> change la
-                  direction — jamais les deux.
-                </li>
-                <li>
-                  <strong>RÉPÉTER n FOIS</strong> raccourcit l’écriture, pas le travail du robot :
-                  1 carte, n actions.
-                </li>
-                <li>
-                  Une erreur dans un programme s’appelle un <strong>bug</strong>. Pour la trouver :{' '}
-                  <strong>lancer, observer où ça dérape, corriger, relancer</strong>.
-                </li>
-              </KeyTakeaway>
+              {quizDone && (
+                <KnowledgeBrick
+                  id="mem-quatre-reflexes"
+                  variant="new"
+                  lead="Six modules, une seule boucle de travail à garder pour de bon."
+                />
+              )}
             </div>
           ),
         },
       ]}
       footer={
         <div className="space-y-3">
-          <Feedback tone="info">
-            💡 Le bouton <strong>Pas à pas</strong> est l’outil du déboguage : il exécute une seule
-            instruction à la fois, pour voir exactement ce que fait chacune.
-          </Feedback>
+          <KnowledgeSnapshot moduleNumber={6}>
+            <strong>La suite.</strong> Tu sais modifier et réparer. Prochaine étape : le labo, où tu
+            mènes l'enquête tout seul, sans le moindre indice.
+          </KnowledgeSnapshot>
           <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
             <Wrench className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
             <p className="text-sm text-slate-300">
-              Tu sais modifier et réparer. Prochaine étape : le{' '}
-              <strong className="text-white">labo de débogage</strong>, où tu mènes l’enquête tout seul.
+              Le bouton <strong className="text-white">Pas à pas</strong> exécute une seule instruction
+              à la fois : c'est ton meilleur outil d'enquête.
             </p>
           </div>
         </div>

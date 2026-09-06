@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Route } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ShortestPath from '../components/ShortestPath';
@@ -81,11 +80,18 @@ export default function Module08CheminPlusCourt() {
                 ariaLabel="Route et maison M : choisis le point d’arrivée H"
               />
               {foundDone && (
-                <Feedback tone="ok">
-                  Le trajet le plus court mesure <strong>{Math.round(best ?? MIN)}</strong>, et il arrive{' '}
-                  <strong>perpendiculairement</strong> à la route — le carré d’angle droit est apparu tout
-                  seul. C’est ce qu’on appelle la <strong>distance du point M à la droite</strong>.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Le trajet le plus court mesure <strong>{Math.round(best ?? MIN)}</strong>, et il arrive{' '}
+                    <strong>perpendiculairement</strong> à la route — le carré d’angle droit est apparu tout
+                    seul, sans que tu l’aies cherché.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="distance-point-droite"
+                    variant="new"
+                    lead="Ce minimum que tu viens d’atteindre porte un nom, et il n’est pas un hasard."
+                  />
+                </>
               )}
             </div>
           ),
@@ -113,6 +119,7 @@ export default function Module08CheminPlusCourt() {
               ]}
               correct={0}
               cols={1}
+              requires={['distance-point-droite', 'droites-perpendiculaires']}
               explain="C’est une propriété générale : la distance d’un point à une droite se mesure toujours perpendiculairement. Tous les autres trajets sont plus longs — tu l’as vérifié en déplaçant H."
               explainWrong="Ce n’est pas une question de direction sur la page : une route penchée se rejoint par un trajet penché lui aussi. Ce qui compte, c’est l’angle droit à l’arrivée."
               solved={whyDone}
@@ -138,6 +145,7 @@ export default function Module08CheminPlusCourt() {
               ]}
               correct={0}
               cols={1}
+              requires={['distance-point-droite', 'ecart-constant', 'droites-paralleles', 'mesurer-ecart']}
               explain="La largeur, c’est la distance entre les deux droites : elle se mesure perpendiculairement. Une mesure en diagonale donnerait un nombre plus grand que la largeur réelle."
               explainWrong="Attention : c’est la mesure PERPENDICULAIRE qui est la même partout entre deux parallèles (module 2). Une diagonale, elle, sera toujours plus longue."
               solved={transferDone}
@@ -147,18 +155,10 @@ export default function Module08CheminPlusCourt() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Route className="w-6 h-6 mx-auto text-cyan-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            La <strong className="text-white">distance d’un point à une droite</strong> se mesure
-            perpendiculairement : c’est le plus court chemin. C’est aussi ainsi qu’on mesure l’écart entre
-            deux parallèles.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={8}>
+          <strong>La suite.</strong> Ta carte est complète. Le plan du quartier va la mettre à
+          l’épreuve.
+        </KnowledgeSnapshot>
       }
     />
   );

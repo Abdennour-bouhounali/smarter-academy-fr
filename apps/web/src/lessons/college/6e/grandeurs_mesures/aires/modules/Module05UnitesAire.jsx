@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Layers } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { convert, parseDec, formatDec } from '../components/areaUtils';
@@ -144,7 +143,18 @@ export default function Module05UnitesAire() {
           title: 'Prédis, puis quadrille',
           done: dmDone,
           content: (kit) => (
-            <DmDiscovery react={kit.react} solved={dmDone} onSolved={() => setDmDone(true)} />
+            <div className="space-y-5">
+              <DmDiscovery react={kit.react} solved={dmDone} onSolved={() => setDmDone(true)} />
+              {/* Le quadrillage vient de compter 100 carreaux à l'écran :
+                  la règle se pose sur ce constat, avant toute conversion. */}
+              {dmDone && (
+                <KnowledgeBrick
+                  id="marche-x100"
+                  variant="new"
+                  lead="Ces 100 carreaux ne sont pas un hasard : ils s’expliquent, et ils valent pour toutes les unités d’aire."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -166,6 +176,7 @@ export default function Module05UnitesAire() {
                     ? 'Tu as multiplié par 10, comme pour des longueurs. Les aires sautent par ×100 : 10 × 10.'
                     : 'Deux marches de ×100 : 3 m² → 300 dm² → 30 000 cm².'
               }
+              requires={['aire', 'marche-x100']}
               solved={convDone}
               onAnswered={() => setConvDone(true)}
             />
@@ -176,26 +187,36 @@ export default function Module05UnitesAire() {
           title: 'La bonne unité pour chaque surface',
           done: choixDone,
           content: (
-            <TapQuestion
-              prompt={CHOIX_Q.q}
-              options={CHOIX_Q.options}
-              correct={CHOIX_Q.correct}
-              cols={1}
-              explain={CHOIX_Q.explain}
-              solved={choixDone}
-              onAnswered={() => setChoixDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={CHOIX_Q.q}
+                options={CHOIX_Q.options}
+                correct={CHOIX_Q.correct}
+                cols={1}
+                explain={CHOIX_Q.explain}
+                requires={['aire', 'choisir-unite-aire', 'marche-x100']}
+                solved={choixDone}
+                onAnswered={() => setChoixDone(true)}
+              />
+              {/* Aire et périmètre se côtoient depuis le module 1 ; le
+                  repère à mémoriser se pose ici, une fois les deux calculs
+                  et les deux unités rencontrés. */}
+              {choixDone && (
+                <KnowledgeBrick
+                  id="mem-aire-vs-perimetre"
+                  variant="new"
+                  lead="Un dernier repère, celui qui évite la confusion la plus coûteuse de toute la leçon."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Layers className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            km² → m² → dm² → cm² → mm² : chaque marche vaut × 100 (car 10 × 10). Les longueurs sautent d'un zéro,
-            les aires de deux.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Ta carte est complète. Le module suivant n'apporte plus rien
+          de neuf : il met tout au travail sur un vrai chantier.
+        </KnowledgeSnapshot>
       }
     />
   );

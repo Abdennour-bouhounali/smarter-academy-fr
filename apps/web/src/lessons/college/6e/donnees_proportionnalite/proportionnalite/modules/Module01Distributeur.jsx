@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Coins } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import QuantityMachine from '../components/QuantityMachine';
@@ -19,8 +20,14 @@ import { applyRule } from '../components/proportionUtils';
  *     souvent sautée, alors que ne pas savoir « ce qui varie avec quoi »
  *     bloque tout le reste ;
  *  2. faire naître le constat « quand l'une double, l'autre double » sans
- *     encore le nommer (LP P1). Le mot « proportionnel » n'apparaît qu'à la
- *     toute fin, comme le NOM d'une chose déjà observée.
+ *     encore le nommer (LP P1).
+ *
+ * RÉPARATION (contrat « connaissances avant la demande ») : ce module ne
+ * nomme PLUS la proportionnalité. Le mot y apparaissait en option d'un QCM
+ * — donc en position de DEMANDE — alors qu'aucune brique ne l'avait posé et
+ * que le nombre constant qui lui donne son sens n'est trouvé qu'au module 2.
+ * Le mot est désormais posé là-bas, après le geste qui le fait apparaître ;
+ * ici l'élève consolide le COMPORTEMENT, avec ses mots à lui.
  *
  * Interdit ici (playbook §2) : expliquer le coefficient, c'est le module 2
  * qui existe pour le faire découvrir.
@@ -84,10 +91,17 @@ export default function Module01Distributeur() {
                 {explored.length}/4 quantités essayées
               </p>
               {enough && (
-                <Feedback tone="ok">
-                  Tu as vu les deux tas grandir ensemble : plus il y a de jetons, plus il y a de crêpes — et
-                  jamais n'importe comment.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Tu as vu les deux tas grandir ensemble : plus il y a de jetons, plus il y a de crêpes — et
+                    jamais n'importe comment.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="deux-grandeurs"
+                    variant="new"
+                    lead="Deux choses bougeaient sur cet écran, et pas trois."
+                  />
+                </>
               )}
             </div>
           ),
@@ -107,6 +121,7 @@ export default function Module01Distributeur() {
               correct={0}
               cols={1}
               explain="Deux grandeurs varient ensemble : les jetons qu’on donne et les crêpes qu’on reçoit. Repérer CE QUI varie avec QUOI est toujours la première chose à faire."
+              requires={['deux-grandeurs']}
               solved={grandeursDone}
               onAnswered={() => setGrandeursDone(true)}
             />
@@ -128,31 +143,47 @@ export default function Module01Distributeur() {
                 cols={3}
                 explain={`${PRIX(4)} crêpes : en doublant les jetons, on double les crêpes (${PRIX(2)} × 2 = ${PRIX(4)}). C’est ça, le comportement de cette machine.`}
                 explainWrong={`Ajouter 2 jetons n’ajoute pas 2 crêpes. Avec 2 jetons on a ${PRIX(2)} crêpes ; en doublant la mise, on obtient le double : ${PRIX(4)}.`}
+                requires={['deux-grandeurs', 'tables-multiplication']}
                 solved={doubleDone}
                 onAnswered={() => setDoubleDone(true)}
               />
+              {/* La prédiction vient d'être vérifiée par la machine : le
+                  comportement peut être posé comme une règle observée. */}
+              {doubleDone && (
+                <KnowledgeBrick
+                  id="double-double"
+                  variant="new"
+                  lead="Ta prédiction s’est vérifiée — et elle se vérifierait pour n’importe quelle quantité."
+                />
+              )}
             </div>
           ),
         },
         {
           num: 4,
-          title: 'Ça porte un nom',
+          title: 'Jusqu’où va cette régularité ?',
           done: nomDone,
           content: (
             <div className="space-y-3">
+              <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-3 text-center font-mono text-sm text-slate-700 space-y-0.5">
+                <p>2 jetons → {PRIX(2)} crêpes</p>
+                <p>4 jetons → {PRIX(4)} crêpes</p>
+              </div>
               <TapQuestion
-                prompt="Deux grandeurs qui varient ainsi — double d’un côté, double de l’autre — forment une situation qu’on appelle…"
-                options={['une situation de proportionnalité', 'une situation d’addition', 'une situation de comparaison']}
+                prompt="Et si on prenait la MOITIÉ des jetons — 1 au lieu de 2 ?"
+                options={[`${PRIX(1)} crêpes, la moitié de ${PRIX(2)}`, `${PRIX(2) - 1} crêpes, une de moins`, `${PRIX(2)} crêpes, comme avant`]}
                 correct={0}
                 cols={1}
-                explain="On dit que la situation est PROPORTIONNELLE. Tu viens de la reconnaître par le comportement de la machine, pas par une définition apprise."
+                explain={`${PRIX(1)} crêpes : la machine suit dans les deux sens. Moitié de jetons, moitié de crêpes — exactement comme double donnait double.`}
+                explainWrong={`Enlever un jeton n’enlève pas une crêpe. Passer de 2 jetons à 1, c’est prendre la moitié : on obtient la moitié des crêpes, soit ${PRIX(1)}.`}
+                requires={['double-double', 'deux-grandeurs']}
                 solved={nomDone}
                 onAnswered={() => setNomDone(true)}
               />
               {nomDone && (
                 <Feedback tone="info">
-                  Retiens le geste, pas le mot : on double d'un côté, ça double de l'autre. Il reste à
-                  découvrir <strong>comment</strong> la machine calcule.
+                  Dans les deux sens, la machine suit exactement. Il reste à découvrir <strong>comment</strong>{' '}
+                  elle calcule — et ce qu’on trouvera là mérite un nom.
                 </Feedback>
               )}
             </div>
@@ -160,12 +191,17 @@ export default function Module01Distributeur() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Coins className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Deux grandeurs, une machine, et un comportement régulier. Au prochain module, tu perces son
-            secret.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={1}>
+            <strong>La suite.</strong> Tu connais le comportement de la machine. Au prochain module, tu
+            trouves l'opération exacte qui le produit — et elle porte un nom.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Coins className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Deux grandeurs, une machine, et un comportement régulier.
+            </p>
+          </div>
         </motion.div>
       }
     />

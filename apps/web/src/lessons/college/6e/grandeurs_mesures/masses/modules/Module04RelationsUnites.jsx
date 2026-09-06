@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Boxes } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import GroupBuilder from '../../../../../common/components/GroupBuilder';
@@ -114,12 +113,21 @@ export default function Module04RelationsUnites() {
           done: ladderDone,
           content: (
             <BatchChoiceQuestion
+              requires={['escalier-masses', 'masse-invariante']}
               intro={
                 <div className="space-y-4">
                   <UnitLadder />
+                  {/* L'escalier est sous les yeux et les deux empilements
+                      viennent d'être faits : la brique fixe la relation AVANT
+                      les trois lignes à compléter, jamais après. */}
+                  <KnowledgeBrick
+                    id="escalier-masses"
+                    variant="new"
+                    lead="Tu viens d'empiler dix blocs pour faire 1 kg, puis dix pour faire 1 g. Voilà la règle entière."
+                  />
                   <p className="text-sm text-slate-600">
-                    Combien faut-il de la petite unité pour former la grande ? (Aide-toi de l’échelle que tu viens
-                    d’explorer, et de ce que tu viens d’empiler.)
+                    Combien faut-il de la petite unité pour former la grande ? Aide-toi de l’escalier
+                    ci-dessus et de ce que tu viens d’empiler.
                   </p>
                 </div>
               }
@@ -147,13 +155,10 @@ export default function Module04RelationsUnites() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Boxes className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            mg → g → kg → t : trois marches, toutes de 1 000. C’est cette échelle qui rend les conversions
-            prévisibles.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu as l'escalier complet. Au module suivant, tu t'en sers pour
+          convertir sans jamais te tromper de sens.
+        </KnowledgeSnapshot>
       }
     />
   );

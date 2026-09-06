@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ArrayGrid from '../components/ArrayGrid';
@@ -42,6 +43,7 @@ function RectangleReveal({ shown, onShow, solved, onAnswered }) {
           <ArrayGrid rows={50} cols={20} tone="indigo" caption="50 × 20 = ?" />
           <TapQuestion
             prompt={RECT_Q.q}
+            requires={['arrondi', 'ordre-de-grandeur']}
             options={RECT_Q.options}
             correct={RECT_Q.correct}
             cols={3}
@@ -102,12 +104,21 @@ export default function Module06Produit() {
           title: 'Le rectangle 50 × 20',
           done: s1,
           content: (
-            <RectangleReveal
-              shown={rectShown}
-              onShow={() => setRectShown(true)}
-              solved={rectDone}
-              onAnswered={() => setRectDone(true)}
-            />
+            <div className="space-y-5">
+              <RectangleReveal
+                shown={rectShown}
+                onShow={() => setRectShown(true)}
+                solved={rectDone}
+                onAnswered={() => setRectDone(true)}
+              />
+              {s1 && (
+                <KnowledgeBrick
+                  id="produit-rectangle"
+                  variant="new"
+                  lead="Les 1 000 cases que tu viens de lire d'un coup d'œil, sans poser la multiplication."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -122,6 +133,7 @@ export default function Module06Produit() {
                 </div>
               }
               prompt={FAUX_Q.q}
+              requires={['produit-rectangle']}
               options={FAUX_Q.options}
               correct={FAUX_Q.correct}
               cols={1}
@@ -159,6 +171,12 @@ export default function Module06Produit() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Les trois opérations sont couvertes. Il reste à rendre le
+          verdict : ce résultat tient-il debout, oui ou non ?
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

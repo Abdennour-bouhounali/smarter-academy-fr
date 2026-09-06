@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import RelationFigure from '../components/RelationFigure';
@@ -44,6 +45,7 @@ const PERP = [
 const EPREUVES = [
   {
     id: 'pp-e1',
+    requires: ['droites-paralleles', 'ecart-constant', 'mesurer-ecart'],
     skill: 'reconnaitre',
     title: 'Épreuve 1 — Deux rues',
     prompt:
@@ -62,6 +64,7 @@ const EPREUVES = [
   },
   {
     id: 'pp-e2',
+    requires: ['droites-paralleles', 'ecart-constant'],
     skill: 'reconnaitre',
     title: 'Épreuve 2 — Le piège du dessin',
     prompt:
@@ -79,6 +82,7 @@ const EPREUVES = [
   },
   {
     id: 'pp-e3',
+    requires: ['droites-perpendiculaires', 'orientation-sans-importance'],
     skill: 'angleDroit',
     title: 'Épreuve 3 — Deux droites obliques',
     prompt: 'Ces deux droites sont toutes deux inclinées et se coupent en formant un angle droit. Sont-elles perpendiculaires ?',
@@ -96,6 +100,7 @@ const EPREUVES = [
   },
   {
     id: 'pp-e4',
+    requires: ['droites-perpendiculaires', 'secantes'],
     skill: 'angleDroit',
     title: 'Épreuve 4 — Presque droit',
     prompt: 'Deux droites se coupent en formant un angle de 88°. Sont-elles perpendiculaires ?',
@@ -112,6 +117,7 @@ const EPREUVES = [
   },
   {
     id: 'pp-e5',
+    requires: ['relation-binaire', 'droites-perpendiculaires'],
     skill: 'situations',
     title: 'Épreuve 5 — Une phrase incomplète',
     prompt: 'Un élève écrit : « la rue des Lilas est perpendiculaire ». Que manque-t-il ?',
@@ -128,6 +134,7 @@ const EPREUVES = [
   },
   {
     id: 'pp-e6',
+    requires: ['ecart-constant', 'mesurer-ecart', 'droites-paralleles'],
     skill: 'verifier',
     title: 'Épreuve 6 — Vérifier un parallélisme',
     prompt: 'Avec une règle graduée, comment vérifier que deux droites tracées sont bien parallèles ?',
@@ -144,6 +151,7 @@ const EPREUVES = [
   },
   {
     id: 'pp-e7',
+    requires: ['rituel-equerre', 'droites-perpendiculaires'],
     skill: 'verifier',
     title: 'Épreuve 7 — L’équerre à moitié posée',
     prompt:
@@ -161,12 +169,13 @@ const EPREUVES = [
   },
   {
     id: 'pp-e8',
+    requires: ['construire-parallele', 'mem-deux-perp', 'droites-paralleles'],
     skill: 'construire',
     title: 'Épreuve 8 — Tracer une parallèle',
     prompt: 'Quelle méthode garantit de tracer une droite parallèle à d passant par un point B ?',
     options: [
       'Tracer deux perpendiculaires successives, avec l’équerre',
-      'Tracer à l’œil un trait qui semble garder la même pente',
+      'Tracer à l’œil un trait qui semble ne jamais rejoindre d',
       'Tracer un trait qui ne touche pas d sur la feuille',
     ],
     cols: 1,
@@ -177,6 +186,7 @@ const EPREUVES = [
   },
   {
     id: 'pp-e9',
+    requires: ['unicite-perpendiculaire', 'droites-perpendiculaires'],
     skill: 'construire',
     title: 'Épreuve 9 — Combien de perpendiculaires ?',
     prompt: 'Par un point A donné, combien peut-on tracer de droites perpendiculaires à une droite d ?',
@@ -193,6 +203,7 @@ const EPREUVES = [
   },
   {
     id: 'pp-e10',
+    requires: ['distance-point-droite', 'droites-perpendiculaires'],
     skill: 'distance',
     title: 'Épreuve 10 — Rejoindre la route',
     prompt:
@@ -267,6 +278,9 @@ function Synthese() {
           <strong>perpendiculairement</strong>. C’est le plus court chemin.
         </p>
       </div>
+
+      {/* La synthèse PRÉSENTE la carte complète, elle ne la réécrit pas. */}
+      <KnowledgeSnapshot complete variant="complete" />
 
       <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-2">
         <h3 className="font-space font-bold text-amber-900 text-sm">Les pièges à éviter</h3>

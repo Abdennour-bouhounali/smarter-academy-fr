@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Sigma } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PolygonPerimeter from '../components/PolygonPerimeter';
@@ -192,6 +191,7 @@ export default function Module03Formules() {
                   correct={EGAUX_Q.correct}
                   cols={1}
                   explain={EGAUX_Q.explain}
+                  requires={['perimetre', 'tour-complet']}
                   solved={egauxDone}
                   onAnswered={() => setEgauxDone(true)}
                 />
@@ -259,6 +259,15 @@ export default function Module03Formules() {
                 solved={sqFormulaDone}
                 onSolved={() => setSqFormulaDone(true)}
               />
+              {/* Les deux formules viennent d'être assemblées à la main :
+                  la brique les fixe, elle ne les révèle pas. */}
+              {sqFormulaDone && (
+                <KnowledgeBrick
+                  id="formules-polygones"
+                  variant="new"
+                  lead="Tu as construit les deux raccourcis toi-même. Les voici côte à côte, pour ta carte."
+                />
+              )}
             </div>
           ),
         },
@@ -279,6 +288,7 @@ export default function Module03Formules() {
                   ? 'Tu as fait 2 × 7,5 : ça ne compte que deux côtés. Un carré en a quatre.'
                   : 'Applique P = 4 × c avec c = 7,5 cm.'
               }
+              requires={['perimetre', 'formules-polygones']}
               solved={calcDone}
               onAnswered={() => setCalcDone(true)}
             />
@@ -286,13 +296,10 @@ export default function Module03Formules() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Sigma className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Rectangle : P = 2 × (L + l). Carré : P = 4 × c. Une formule n'est qu'un tour complet écrit
-            intelligemment.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Ces formules supposent des côtés droits. Le module suivant
+          s'attaque à une figure qui n'en a aucun : le cercle.
+        </KnowledgeSnapshot>
       }
     />
   );

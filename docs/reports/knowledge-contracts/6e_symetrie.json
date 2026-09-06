@@ -2,11 +2,119 @@
   "lesson": "symetrie",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "coordonnees",
+    "abscisse",
+    "angle-droit",
+    "droites-perpendiculaires"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "symetrie-pliage",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module01Pliage.jsx",
+        "line": 122,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "nombre-axes",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module02TrouverAxe.jsx",
+        "line": 103,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "symetrique-point",
+      "type": "concepts",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module03PointEtImage.jsx",
+        "line": 104,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "point-sur-axe",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module03PointEtImage.jsx",
+        "line": 147,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "axe-oblique",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module04ConstruireSymetrique.jsx",
+        "line": 190,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "conservation",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module05RegleDuMiroir.jsx",
+        "line": 86,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "axe-symetrie",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module01Pliage.jsx",
+        "line": 127,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "symetrique-figure",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module06CompleterFigure.jsx",
+        "line": 93,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-deduire",
+      "type": "memoriser",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module07Problemes.jsx",
+        "line": 70,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-coords",
@@ -15,12 +123,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module00Diagnostic.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
+      "requires": [
         "coordonnees"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "coordonnees": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "q2-distance",
@@ -28,13 +138,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module00Diagnostic.jsx",
-      "line": 34,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
+      "line": 36,
+      "requires": [
         "abscisse"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "q3-carre",
@@ -42,9 +154,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module00Diagnostic.jsx",
-      "line": 49,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 53,
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -54,9 +170,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module00Diagnostic.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "droites-perpendiculaires",
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "prior",
+        "angle-droit": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -66,9 +188,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module00Diagnostic.jsx",
-      "line": 73,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 81,
+      "requires": [
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -78,8 +204,8 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module01Pliage.jsx",
-      "line": 67,
-      "requires": null,
+      "line": 66,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -90,9 +216,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module01Pliage.jsx",
-      "line": 125,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 142,
+      "requires": [
+        "symetrie-pliage",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "symetrie-pliage": "established@M1",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -102,9 +234,17 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module02TrouverAxe.jsx",
-      "line": 111,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 119,
+      "requires": [
+        "nombre-axes",
+        "axe-symetrie",
+        "symetrie-pliage"
+      ],
+      "prerequisiteStatus": {
+        "nombre-axes": "established@M2",
+        "axe-symetrie": "established@M1",
+        "symetrie-pliage": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -114,9 +254,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module02TrouverAxe.jsx",
-      "line": 155,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 164,
+      "requires": [
+        "nombre-axes",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "nombre-axes": "established@M2",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -126,12 +272,14 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module03PointEtImage.jsx",
-      "line": 112,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "image"
+      "line": 119,
+      "requires": [
+        "symetrique-point"
       ],
+      "prerequisiteStatus": {
+        "symetrique-point": "established@M3"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -140,9 +288,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module03PointEtImage.jsx",
-      "line": 138,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 152,
+      "requires": [
+        "point-sur-axe",
+        "symetrique-point"
+      ],
+      "prerequisiteStatus": {
+        "point-sur-axe": "established@M3",
+        "symetrique-point": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -152,14 +306,19 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module05RegleDuMiroir.jsx",
-      "line": 86,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "perimetre",
-        "aire"
+      "line": 94,
+      "requires": [
+        "conservation",
+        "symetrique-point",
+        "symetrie-pliage"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "conservation": "established@M5",
+        "symetrique-point": "established@M3",
+        "symetrie-pliage": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M05-S2-Q2",
@@ -167,9 +326,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module05RegleDuMiroir.jsx",
-      "line": 131,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 140,
+      "requires": [
+        "symetrique-point",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "symetrique-point": "established@M3",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -179,9 +344,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module07Problemes.jsx",
-      "line": 68,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 75,
+      "requires": [
+        "mem-deduire",
+        "conservation",
+        "symetrique-figure"
+      ],
+      "prerequisiteStatus": {
+        "mem-deduire": "established@M7",
+        "conservation": "established@M5",
+        "symetrique-figure": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -191,9 +364,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module07Problemes.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 104,
+      "requires": [
+        "mem-deduire",
+        "conservation"
+      ],
+      "prerequisiteStatus": {
+        "mem-deduire": "established@M7",
+        "conservation": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -203,9 +382,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module07Problemes.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 129,
+      "requires": [
+        "mem-deduire",
+        "conservation",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "mem-deduire": "established@M7",
+        "conservation": "established@M5",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -215,9 +402,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 50,
+      "requires": [
+        "symetrie-pliage",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "symetrie-pliage": "established@M1",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -227,9 +420,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 65,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 68,
+      "requires": [
+        "nombre-axes",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "nombre-axes": "established@M2",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -239,9 +438,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 82,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 86,
+      "requires": [
+        "nombre-axes",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "nombre-axes": "established@M2",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -251,9 +456,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 100,
+      "requires": [
+        "symetrique-point"
+      ],
+      "prerequisiteStatus": {
+        "symetrique-point": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -263,9 +472,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 107,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 113,
+      "requires": [
+        "symetrique-point",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "symetrique-point": "established@M3",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -275,9 +490,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 123,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 130,
+      "requires": [
+        "symetrique-figure",
+        "symetrique-point"
+      ],
+      "prerequisiteStatus": {
+        "symetrique-figure": "established@M6",
+        "symetrique-point": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -287,9 +508,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 139,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 147,
+      "requires": [
+        "symetrique-point",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "symetrique-point": "established@M3",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -299,9 +526,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 161,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 170,
+      "requires": [
+        "symetrique-point",
+        "axe-oblique"
+      ],
+      "prerequisiteStatus": {
+        "symetrique-point": "established@M3",
+        "axe-oblique": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -311,9 +544,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 178,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 188,
+      "requires": [
+        "conservation"
+      ],
+      "prerequisiteStatus": {
+        "conservation": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -323,73 +560,20 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module08MissionFinale.jsx",
-      "line": 194,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 205,
+      "requires": [
+        "mem-deduire",
+        "conservation",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "mem-deduire": "established@M7",
+        "conservation": "established@M5",
+        "axe-symetrie": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« aire » is a target concept of this lesson but its first appearance is q.feedback (module 5, étape 1); it is only taught later at apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module05RegleDuMiroir.jsx:149",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module05RegleDuMiroir.jsx",
-      "line": 110,
-      "module": 5,
-      "step": 1,
-      "term": "aire",
-      "questionId": "M05-S1-Q1",
-      "position": 89
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« coordonnées » first appears at diag.prompt (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module00Diagnostic.jsx",
-      "line": 19,
-      "module": 0,
-      "step": null,
-      "term": "coordonnees",
-      "questionId": "q1-coords",
-      "position": 1
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« abscisse » first appears at diag.prompt (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module00Diagnostic.jsx",
-      "line": 34,
-      "module": 0,
-      "step": null,
-      "term": "abscisse",
-      "questionId": "q2-distance",
-      "position": 6
-    },
-    {
-      "code": "M_TAUGHT_TOO_LATE",
-      "severity": "medium",
-      "message": "« image (d'un nombre par une fonction) » first appears at q.prompt (module 3, étape 2), before its teaching position at apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module06CompleterFigure.jsx:90",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module03PointEtImage.jsx",
-      "line": 112,
-      "module": 3,
-      "step": 2,
-      "term": "image",
-      "questionId": "M03-S2-Q1",
-      "position": 66
-    },
-    {
-      "code": "M_TAUGHT_TOO_LATE",
-      "severity": "medium",
-      "message": "« périmètre » first appears at q.feedback (module 5, étape 1), before its teaching position at apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module05RegleDuMiroir.jsx:149",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/symetrie/modules/Module05RegleDuMiroir.jsx",
-      "line": 110,
-      "module": 5,
-      "step": 1,
-      "term": "perimetre",
-      "questionId": "M05-S1-Q1",
-      "position": 89
-    }
-  ]
+  "findings": []
 }

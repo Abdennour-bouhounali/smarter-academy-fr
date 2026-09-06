@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { BookMarked } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MirrorLab from '../components/MirrorLab';
@@ -81,8 +80,17 @@ export default function Module05RegleDuMiroir() {
           title: 'Qu’est-ce que la symétrie conserve ?',
           done: consDone,
           content: (
-            <BatchChoiceQuestion
-              intro={
+            <div className="space-y-5">
+              {/* Les lignes à classer nomment le périmètre et l'aire : ces mots
+                  doivent exister AVANT la question, pas dans son feedback. */}
+              <KnowledgeBrick
+                id="conservation"
+                variant="new"
+                lead="Compare la figure bleue et son image verte : rien n’a été étiré ni rétréci."
+              />
+              <BatchChoiceQuestion
+                requires={['conservation', 'symetrique-point', 'symetrie-pliage']}
+                intro={
                 <div className="space-y-2">
                   <MirrorLab
                     axis={AXE}
@@ -105,27 +113,28 @@ export default function Module05RegleDuMiroir() {
                 correct: r.correct,
                 correction: <>{r.correct === 0 ? 'conservé' : 'changé'}</>,
               }))}
-              solved={consDone}
-              onAnswered={() => setConsDone(true)}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {!allRight && (
-                    <>
-                      {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
-                    </>
-                  )}
-                  La symétrie <strong>déplace</strong> la figure sans la déformer : longueurs, angles,
-                  périmètre et aire sont identiques (
-                  {Math.round(polygonArea(FIG))} = {Math.round(polygonArea(RAPPORT.image))} pour l’aire).
-                  Seuls la position et le sens de lecture changent.
-                </Feedback>
-              )}
-            />
+                solved={consDone}
+                onAnswered={() => setConsDone(true)}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {!allRight && (
+                      <>
+                        {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
+                      </>
+                    )}
+                    Le calcul le confirme sur cette figure :{' '}
+                    <span className="font-mono">{Math.round(polygonArea(FIG))}</span> ={' '}
+                    <span className="font-mono">{Math.round(polygonArea(RAPPORT.image))}</span> — la
+                    place occupée est rigoureusement la même.
+                  </Feedback>
+                )}
+              />
+            </div>
           ),
         },
         {
           num: 2,
-          title: 'Une seule condition suffit-elle ?',
+          title: 'Le point placé à la bonne distance',
           done: ruleDone,
           content: (
             <TapQuestion
@@ -137,7 +146,8 @@ export default function Module05RegleDuMiroir() {
               ]}
               correct={0}
               cols={1}
-              explain="Tous les points à la même distance de l’axe forment deux droites parallèles — il y en a une infinité. C’est la perpendicularité qui en désigne un seul."
+              requires={['symetrique-point', 'axe-symetrie']}
+              explain="À cette distance de l’axe, il existe une infinité de points possibles, tout le long de l’axe. C’est l’angle droit qui en désigne un seul."
               explainWrong="À distance égale de l’axe, il existe une infinité de points. Seule la perpendicularité de [MM′] en sélectionne un — celui-là précisément."
               solved={ruleDone}
               onAnswered={() => setRuleDone(true)}
@@ -146,23 +156,10 @@ export default function Module05RegleDuMiroir() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <BookMarked className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <div className="grid sm:grid-cols-2 gap-2 text-sm">
-            <div className="bg-emerald-400/15 border border-emerald-400/30 rounded-xl p-3">
-              <div className="font-bold text-emerald-200 mb-1">Conservé</div>
-              <div className="text-slate-300 text-xs">longueurs · angles · périmètre · aire</div>
-            </div>
-            <div className="bg-rose-400/15 border border-rose-400/30 rounded-xl p-3">
-              <div className="font-bold text-rose-200 mb-1">Changé</div>
-              <div className="text-slate-300 text-xs">la position · le sens de lecture</div>
-            </div>
-          </div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais construire l’image d’un point. Une figure entière n’est
+          rien d’autre qu’une poignée de points.
+        </KnowledgeSnapshot>
       }
     />
   );

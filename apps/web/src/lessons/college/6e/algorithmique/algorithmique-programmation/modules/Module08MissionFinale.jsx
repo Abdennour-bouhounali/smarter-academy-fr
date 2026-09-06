@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import RobotWorld from '../components/RobotWorld';
 import ProgramStrip from '../components/ProgramStrip';
@@ -62,6 +63,7 @@ function MiniScene({ world, program = [], showProgram = true }) {
 const EPREUVES = [
   {
     id: 'algo-e1',
+    requires: ['objectif-nest-pas-programme', 'instruction'],
     skill: 'algorithme',
     prompt: (
       <>
@@ -82,6 +84,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e2',
+    requires: ['effet-instruction', 'instruction'],
     skill: 'instruction',
     prompt: (
       <>
@@ -104,6 +107,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e3',
+    requires: ['sequence-algorithme', 'decomposer', 'effet-instruction'],
     skill: 'sequence',
     prompt: (
       <>
@@ -130,6 +134,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e4',
+    requires: ['effet-instruction', 'reperage-quadrillage'],
     skill: 'instruction',
     extra: <MiniScene world={W_SMALL} program={[instr('AVANCER'), instr('AVANCER'), instr('GAUCHE'), instr('AVANCER')]} />,
     prompt: (
@@ -152,6 +157,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e5',
+    requires: ['ordre-compte', 'sequence-algorithme'],
     skill: 'ordre',
     prompt: (
       <>
@@ -173,6 +179,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e6',
+    requires: ['boucle', 'ecrire-vs-executer'],
     skill: 'boucle',
     prompt: (
       <>
@@ -189,6 +196,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e7',
+    requires: ['boucle', 'ecrire-vs-executer'],
     skill: 'boucle',
     prompt: (
       <>
@@ -210,6 +218,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e8',
+    requires: ['bug-debogage', 'methode-debogage'],
     skill: 'reparer',
     prompt: (
       <>
@@ -231,6 +240,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e9',
+    requires: ['methode-debogage', 'bug-debogage', 'effet-instruction'],
     skill: 'reparer',
     prompt: (
       <>
@@ -260,6 +270,7 @@ const EPREUVES = [
   },
   {
     id: 'algo-e10',
+    requires: ['traduire-strategie', 'decomposer', 'sequence-algorithme'],
     skill: 'strategie',
     prompt: (
       <>
@@ -337,37 +348,9 @@ function Synthese() {
         </div>
       </div>
 
-      {/* LES PIÈGES */}
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-3 space-y-1.5">
-        {[
-          { wrong: 'Je dis à ROBI où aller.', right: 'Je traduis l’objectif en instructions.' },
-          { wrong: 'TOURNER fait aussi avancer.', right: 'TOURNER change la direction, pas la case.' },
-          { wrong: 'L’ordre des cartes n’a pas d’importance.', right: 'Changer l’ordre change le résultat.' },
-          { wrong: 'RÉPÉTER 5 FOIS = 1 seule action.', right: '1 carte écrite, 5 actions exécutées.' },
-          { wrong: 'Ça bugue : je réécris tout.', right: 'Je regarde où ça dérape et je corrige là.' },
-        ].map((t) => (
-          <div key={t.wrong} className="text-xs sm:text-sm space-y-0.5">
-            <div className="text-rose-700">❌ {t.wrong}</div>
-            <div className="text-emerald-700">✅ {t.right}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* LES 4 RÉFLEXES */}
-      <div className="grid grid-cols-2 gap-2">
-        {[
-          { emoji: '🧩', title: 'Je découpe', body: 'Le trajet en étapes simples.' },
-          { emoji: '🎴', title: "J'écris", body: 'Les instructions, dans l’ordre.' },
-          { emoji: '▶️', title: 'Je lance', body: 'Et je regarde ce qui se passe.' },
-          { emoji: '🔧', title: 'Je corrige', body: 'Là où ROBI a dévié.' },
-        ].map((r) => (
-          <div key={r.title} className="rounded-2xl border-2 border-slate-200 bg-white p-3 space-y-1">
-            <div className="text-xl" aria-hidden="true">{r.emoji}</div>
-            <div className="font-space font-bold text-slate-800 text-xs">{r.title}</div>
-            <div className="text-[11px] text-slate-500 leading-snug">{r.body}</div>
-          </div>
-        ))}
-      </div>
+      {/* La carte complète REMPLACE les blocs « pièges » et « 4 réflexes »
+          recopiés à la main : ils vivent déjà dans les items de la carte. */}
+      <KnowledgeSnapshot complete variant="complete" />
 
       <Feedback tone="info">
         🤖 Un algorithme, c’est une suite d’instructions dans un ordre précis. Je l’écris, je

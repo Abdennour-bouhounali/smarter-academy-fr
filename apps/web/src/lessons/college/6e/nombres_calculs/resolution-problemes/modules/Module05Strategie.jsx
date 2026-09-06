@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -118,6 +119,7 @@ function DeuxMethodes({ solved, onAllAnswered }) {
     <div className="space-y-5">
       <TapQuestion
         prompt={BOTH_Q.q}
+        requires={['choisir-un-modele']}
         options={BOTH_Q.options}
         correct={BOTH_Q.correct}
         cols={1}
@@ -130,6 +132,7 @@ function DeuxMethodes({ solved, onAllAnswered }) {
         <div className="border-t border-slate-100 pt-4">
           <TapQuestion
             prompt={COMPARE_Q.q}
+            requires={['choisir-un-modele']}
             options={COMPARE_Q.options}
             correct={COMPARE_Q.correct}
             cols={1}
@@ -166,7 +169,20 @@ export default function Module05Strategie() {
           num: 1,
           title: 'Deux élèves, deux méthodes',
           done: s1,
-          content: <DeuxMethodes solved={s1} onAllAnswered={() => setS1(true)} />,
+          content: (
+            <div className="space-y-5">
+              <DeuxMethodes solved={s1} onAllAnswered={() => setS1(true)} />
+              {/* Les deux méthodes viennent d'être comparées sur un petit
+                  nombre puis sur un grand : le critère est maintenant clair. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="plusieurs-strategies"
+                  variant="new"
+                  lead="Léa dessinait, Nathan calculait — et pour 4 827 élèves, l'un des deux a lâché."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -181,6 +197,7 @@ export default function Module05Strategie() {
           content: (
             <TapQuestion
               prompt={WHY_Q.q}
+              requires={['plusieurs-strategies']}
               options={WHY_Q.options}
               correct={WHY_Q.correct}
               cols={1}
@@ -191,6 +208,12 @@ export default function Module05Strategie() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Assez d'entraînement à vide : six problèmes, sans étiquette,
+          sans indication d'opération.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

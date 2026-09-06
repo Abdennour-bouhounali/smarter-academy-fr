@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RoundPicker from '../components/RoundPicker';
 
@@ -57,23 +57,23 @@ export default function Module03Arrondir() {
       ctx={MODULE_CTX}
       navLinks={getNavLinks(3)}
       moduleNumber={3}
-      moduleTitle="Arrondir pour estimer"
-      moduleSubtitle="Choisir le nombre ami le plus proche, facile à calculer de tête."
+      moduleTitle="Choisir le bon nombre ami"
+      moduleSubtitle="Sur la droite graduée, repérer lequel des deux voisins ronds est le plus proche."
       estimatedTime="9 min"
       brief={{
-        tag: '🎯 Arrondir',
-        title: "Un « nombre ami », c'est un nombre facile à calculer.",
+        tag: '🎯 Nombres amis',
+        title: 'Entre deux voisins ronds, lequel choisir ?',
         body: (
           <p>
-            Arrondir à la dizaine, à la centaine ou au millier : le but est toujours le même — simplifier sans
-            trop s'éloigner du nombre de départ.
+            À la dizaine, à la centaine ou au millier, le geste est toujours le même : simplifier
+            le nombre sans trop s'en éloigner. La droite graduée le rend évident.
           </p>
         ),
       }}
       steps={[
         {
           num: 1,
-          title: 'Arrondis à la dizaine',
+          title: 'Le voisin rond le plus proche',
           done: s1,
           content: (
             <div className="space-y-6">
@@ -88,12 +88,20 @@ export default function Module03Arrondir() {
                   />
                 ) : null
               )}
+              {/* Le geste a été fait quatre fois : il a maintenant un nom. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="arrondi"
+                  variant="new"
+                  lead="Ce que tu viens de faire quatre fois — choisir le voisin rond le plus proche — porte un nom."
+                />
+              )}
             </div>
           ),
         },
         {
           num: 2,
-          title: 'Et pour de plus grands nombres : la centaine',
+          title: 'Et pour de plus grands nombres',
           done: s2,
           content: (
             <div className="space-y-6">
@@ -116,25 +124,36 @@ export default function Module03Arrondir() {
           title: 'Un cas particulier : pile au milieu',
           done: s3,
           content: (
-            <TapQuestion
-              prompt={MILIEU_Q.q}
-              options={MILIEU_Q.options}
-              correct={MILIEU_Q.correct}
-              cols={1}
-              explain={MILIEU_Q.explain}
-              solved={milieuDone}
-              onAnswered={() => setMilieuDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={MILIEU_Q.q}
+                requires={['arrondi']}
+                options={MILIEU_Q.options}
+                correct={MILIEU_Q.correct}
+                cols={1}
+                explain={MILIEU_Q.explain}
+                solved={milieuDone}
+                onAnswered={() => setMilieuDone(true)}
+              />
+              {s3 && (
+                <KnowledgeBrick
+                  id="convention-milieu"
+                  variant="new"
+                  lead="Le 750 que rien ne départageait : ce n'est pas la droite graduée qui tranche, c'est un accord."
+                />
+              )}
+            </div>
           ),
         },
         {
           num: 4,
-          title: "Choisir le bon pas d'arrondi",
+          title: 'À quel rang faut-il remplacer ?',
           done: s4,
           content: (
             <div className="space-y-4">
               <TapQuestion
                 prompt={PAS_Q.q}
+                requires={['arrondi']}
                 options={PAS_Q.options}
                 correct={PAS_Q.correct}
                 cols={1}
@@ -143,16 +162,22 @@ export default function Module03Arrondir() {
                 onAnswered={() => setPasDone(true)}
               />
               {s4 && (
-                <Feedback tone="info">
-                  Retiens l'idée, pas une règle rigide :{' '}
-                  <strong>plus le nombre est grand, plus on peut arrondir large</strong> — l'objectif reste
-                  toujours d'obtenir un calcul simple.
-                </Feedback>
+                <KnowledgeBrick
+                  id="pas-arrondi"
+                  variant="new"
+                  lead="Pour 4 128 tu as choisi le millier, pas la dizaine : le rang se choisit selon le nombre."
+                />
               )}
             </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Le geste est nommé et fiable. On va s'en servir sur les trois
+          opérations, en commençant par la somme.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

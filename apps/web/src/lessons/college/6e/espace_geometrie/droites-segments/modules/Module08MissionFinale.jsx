@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import GeoFigure from '../components/GeoFigure';
@@ -46,6 +47,7 @@ const fig = (kind, ariaLabel) => (
 const EPREUVES = [
   {
     id: 'ds-e1',
+    requires: ['droite', 'segment', 'mem-compter-bouts'],
     skill: 'reconnaitre',
     title: 'Épreuve 1 — Qu’est-ce que c’est ?',
     prompt: 'Cette figure ne s’arrête d’aucun côté : les deux bouts portent une flèche. De quel objet s’agit-il ?',
@@ -59,6 +61,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e2',
+    requires: ['segment', 'mem-compter-bouts'],
     skill: 'reconnaitre',
     title: 'Épreuve 2 — Deux bouts',
     prompt: 'Cette figure s’arrête des deux côtés, sur deux points bien marqués. De quel objet s’agit-il ?',
@@ -71,6 +74,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e3',
+    requires: ['demi-droite', 'origine', 'mem-compter-bouts'],
     skill: 'reconnaitre',
     title: 'Épreuve 3 — Un seul bout',
     prompt: 'Cette figure part d’un point A et continue sans fin de l’autre côté. De quel objet s’agit-il ?',
@@ -84,6 +88,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e4',
+    requires: ['etendue', 'deux-points-ne-suffisent-pas'],
     skill: 'reconnaitre',
     title: 'Épreuve 4 — La vraie différence',
     prompt: 'Trois objets passent par les mêmes points A et B. Qu’est-ce qui les distingue ?',
@@ -100,6 +105,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e5',
+    requires: ['droite', 'etendue'],
     skill: 'reconnaitre',
     title: 'Épreuve 5 — Sur le dessin',
     prompt:
@@ -117,6 +123,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e6',
+    requires: ['demi-droite', 'origine', 'mem-compter-bouts'],
     skill: 'extremites',
     title: 'Épreuve 6 — Compter les extrémités',
     prompt: 'Combien d’extrémités possède une demi-droite ?',
@@ -129,6 +136,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e7',
+    requires: ['appartenance', 'notation-objets'],
     skill: 'points',
     title: 'Épreuve 7 — Presque aligné',
     prompt:
@@ -146,6 +154,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e8',
+    requires: ['milieu', 'appartenance', 'notation-objets'],
     skill: 'points',
     title: 'Épreuve 8 — Le milieu',
     prompt: 'Un point M vérifie AM = MB, mais il est situé au-dessus de la droite (AB). Est-ce le milieu de [AB] ?',
@@ -162,6 +171,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e9',
+    requires: ['lire-la-notation', 'notation-objets', 'demi-droite', 'origine'],
     skill: 'notation',
     title: 'Épreuve 9 — Lire une écriture',
     prompt: 'Dans une description de figure, que désigne l’écriture [AB) ?',
@@ -182,6 +192,7 @@ const EPREUVES = [
   },
   {
     id: 'ds-e10',
+    requires: ['ordre-des-points', 'lire-la-notation', 'origine'],
     skill: 'construire',
     title: 'Épreuve 10 — Deux demi-droites',
     prompt: 'Les écritures [AB) et [BA) désignent-elles le même objet ?',
@@ -238,6 +249,10 @@ function Synthese() {
           </div>
         ))}
       </div>
+
+      {/* La synthèse PRÉSENTE la carte complète : elle ne réécrit pas les
+          connaissances (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot complete variant="complete" />
 
       <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-2">
         <h3 className="font-space font-bold text-amber-900 text-sm">Les pièges à éviter</h3>

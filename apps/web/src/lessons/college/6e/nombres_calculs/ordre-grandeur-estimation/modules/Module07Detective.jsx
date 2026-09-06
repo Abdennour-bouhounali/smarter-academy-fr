@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PlausibilityQuestion from '../components/PlausibilityQuestion';
 
@@ -58,6 +59,14 @@ export default function Module07Detective() {
           done: s1,
           content: (
             <div className="space-y-6">
+              {/* Les trois verdicts étaient jusqu'ici découverts dans les
+                  boutons de la première enquête. Ils sont posés d'abord :
+                  on ne peut pas juger avec une échelle qu'on ne connaît pas. */}
+              <KnowledgeBrick
+                id="plausible-suspect-impossible"
+                variant="new"
+                lead="Ton estimation te donne un repère. Voici les trois verdicts qu'elle permet de rendre."
+              />
               {CASES.map((item, i) =>
                 i === 0 || done.includes(i - 1) ? (
                   <div
@@ -82,18 +91,28 @@ export default function Module07Detective() {
           title: 'Plausible ne veut pas dire prouvé',
           done: s2,
           content: (
-            <TapQuestion
-              prompt={PROOF_Q.q}
-              options={PROOF_Q.options}
-              correct={PROOF_Q.correct}
-              cols={1}
-              explain={PROOF_Q.explain}
-              solved={proofDone}
-              onAnswered={() => setProofDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={PROOF_Q.q}
+                requires={['plausible-suspect-impossible', 'estimation-approchee']}
+                options={PROOF_Q.options}
+                correct={PROOF_Q.correct}
+                cols={1}
+                explain={PROOF_Q.explain}
+                solved={proofDone}
+                onAnswered={() => setProofDone(true)}
+              />
+              {s2 && <KnowledgeBrick id="mem-estimer-toujours" variant="new" />}
+            </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Tu sais juger un calcul isolé. On va maintenant intégrer ce
+          réflexe à un vrai problème, du début à la fin.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Search } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RelationFigure from '../components/RelationFigure';
@@ -86,6 +85,7 @@ export default function Module04ChasseurRelations() {
                   </p>
                 </div>
               }
+              requires={['droites-paralleles', 'droites-perpendiculaires', 'ecart-constant']}
               rows={PAIRS.map((p) => ({
                 id: p.id,
                 label: <span className="font-semibold">{p.label}</span>,
@@ -111,11 +111,18 @@ export default function Module04ChasseurRelations() {
         },
         {
           num: 2,
-          title: 'Parallèle… à quoi ?',
+          title: 'Une même rue, deux relations',
           done: binaryDone,
           content: (
-            <TapQuestion
-              prompt="Un élève dit : « la rue A est parallèle ». Qu’est-ce qui cloche dans cette phrase ?"
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="relation-binaire"
+                variant="new"
+                lead="Tu viens de dire trois fois « parallèles » ou « perpendiculaires » — mais jamais pour une rue toute seule."
+              />
+              <TapQuestion
+                requires={['relation-binaire']}
+                prompt="Un élève dit : « la rue A est parallèle ». Qu’est-ce qui cloche dans cette phrase ?"
               options={[
                 'Il manque à quoi : une droite est parallèle à une autre droite',
                 'Rien, la phrase est correcte',
@@ -124,10 +131,11 @@ export default function Module04ChasseurRelations() {
               correct={0}
               cols={1}
               explain="Parallèle et perpendiculaire sont des RELATIONS : elles lient deux droites. Une droite seule n’est ni parallèle ni perpendiculaire — il faut toujours préciser à quoi."
-              explainWrong="Ce n’est pas une question de vocabulaire mais de logique : « parallèle » relie forcément deux objets. La rue A est parallèle à la rue B, et perpendiculaire à la rue C."
-              solved={binaryDone}
-              onAnswered={() => setBinaryDone(true)}
-            />
+                explainWrong="Ce n’est pas une question de vocabulaire mais de logique : « parallèle » relie forcément deux objets. La rue A est parallèle à la rue B, et perpendiculaire à la rue C."
+                solved={binaryDone}
+                onAnswered={() => setBinaryDone(true)}
+              />
+            </div>
           ),
         },
         {
@@ -135,8 +143,15 @@ export default function Module04ChasseurRelations() {
           title: 'Déduis sans mesurer',
           done: deduceDone,
           content: (
-            <TapQuestion
-              prompt={
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="mem-deux-perp"
+                variant="new"
+                lead="Sur ton plan, la rue C coupe A et B à angle droit — et A et B, elles, sont parallèles. Ce n’est pas un hasard."
+              />
+              <TapQuestion
+                requires={['mem-deux-perp', 'droites-paralleles', 'droites-perpendiculaires']}
+                prompt={
                 <>
                   La rue C est perpendiculaire à la rue A <em>et</em> à la rue B. Que peut-on en déduire sur
                   les rues A et B ?
@@ -150,26 +165,19 @@ export default function Module04ChasseurRelations() {
               correct={0}
               cols={1}
               explain="Deux droites perpendiculaires à une même troisième sont parallèles entre elles. C’est une propriété très utile : elle permet de tracer une parallèle en traçant deux perpendiculaires."
-              explainWrong="Si A et B faisaient toutes les deux un angle droit avec C, elles auraient forcément la même inclinaison — donc elles sont parallèles. C’est ce que montre le plan."
-              solved={deduceDone}
-              onAnswered={() => setDeduceDone(true)}
-            />
+                explainWrong="Si A et B faisaient toutes les deux un angle droit avec C, elles auraient forcément la même inclinaison — donc elles sont parallèles. C’est ce que montre le plan."
+                solved={deduceDone}
+                onAnswered={() => setDeduceDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Search className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Parallèle et perpendiculaire sont des <strong className="text-white">relations entre deux
-            droites</strong>. Et deux perpendiculaires à une même droite sont parallèles entre elles — tu
-            t’en serviras pour construire.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais reconnaître. Reste à <em>vérifier</em> — avec un
+          instrument, et un geste précis.
+        </KnowledgeSnapshot>
       }
     />
   );

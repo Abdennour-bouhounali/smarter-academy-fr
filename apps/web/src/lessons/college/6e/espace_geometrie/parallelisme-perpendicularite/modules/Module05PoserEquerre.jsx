@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Triangle, Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VirtualEquerre from '../components/VirtualEquerre';
@@ -88,12 +88,17 @@ export default function Module05PoserEquerre() {
               />
 
               {(placeDone || revealed) && (
-                <Feedback tone={revealed ? 'info' : 'ok'}>
-                  {revealed && <strong>Pas grave, on te le montre. </strong>}
-                  Le rituel est complet : un <strong>côté de l’angle droit posé le long de la droite</strong>,
-                  et le <strong>sommet exactement sur le point</strong>. Le second côté indique alors la
-                  perpendiculaire.
-                </Feedback>
+                <>
+                  <Feedback tone={revealed ? 'info' : 'ok'}>
+                    {revealed && <strong>Pas grave, on te le montre. </strong>}
+                    Les deux voyants sont allumés en même temps : l’équerre est bien posée.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="rituel-equerre"
+                    variant="new"
+                    lead="Ce que tu viens de régler, ce sont exactement les deux exigences du geste."
+                  />
+                </>
               )}
 
               {!placeDone && !revealed && moves >= MAX_TRIES && (
@@ -123,6 +128,7 @@ export default function Module05PoserEquerre() {
               ]}
               correct={0}
               cols={1}
+              requires={['rituel-equerre', 'droites-perpendiculaires']}
               explain="L’équerre matérialise un angle droit EN SON SOMMET. Si le sommet n’est pas sur A, l’angle droit est ailleurs — la perpendiculaire tracée ne passerait pas par A."
               explainWrong="C’est précisément ce que montrent les deux voyants : orientation et position sont deux exigences distinctes, et il faut les deux."
               solved={whyDone}
@@ -144,6 +150,7 @@ export default function Module05PoserEquerre() {
               ]}
               correct={0}
               cols={1}
+              requires={['ecart-constant', 'mesurer-ecart', 'droites-paralleles']}
               explain="On mesure l’écart perpendiculairement en deux endroits éloignés : s’il est le même, les droites sont parallèles. C’est le critère du module 2, appliqué avec les instruments."
               explainWrong="« Ne pas se couper sur la feuille » ne prouve rien (module 1). Le seul contrôle fiable est la mesure de l’écart, prise perpendiculairement en deux endroits."
               solved={checkDone}
@@ -153,18 +160,10 @@ export default function Module05PoserEquerre() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Triangle className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Le rituel de l’équerre, toujours le même :{' '}
-            <strong className="text-white">un côté sur la droite, le sommet sur le point</strong>. Il sert à
-            vérifier — et, au module suivant, à construire.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Un temps d’arrêt : on range côte à côte tout ce que tu as
+          manipulé depuis le début.
+        </KnowledgeSnapshot>
       }
     />
   );

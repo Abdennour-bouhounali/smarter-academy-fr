@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Clock } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ClockFace from '../components/ClockFace';
@@ -115,9 +114,20 @@ export default function Module02LireHeure() {
                 correct={READ1.correct}
                 cols={3}
                 explain={READ1.explain}
+                requires={['unites-temps']}
                 solved={read1Done}
                 onAnswered={() => setRead1Done(true)}
               />
+              {/* La première lecture est franche : les deux aiguilles
+                  tombent sur des traits. La brique pose ce qu'il faut pour
+                  la SECONDE, où l'aiguille se place entre deux traits. */}
+              {read1Done && (
+                <KnowledgeBrick
+                  id="lire-cadran"
+                  variant="new"
+                  lead="Tu as lu 9 h 15 alors que la grande aiguille pointait le 3. Voici pourquoi, et comment lire entre les traits."
+                />
+              )}
               {read1Done && (
                 <div className="border-t border-slate-100 pt-4">
                   <TapQuestion
@@ -127,6 +137,7 @@ export default function Module02LireHeure() {
                     correct={READ2.correct}
                     cols={3}
                     explain={READ2.explain}
+                    requires={['unites-temps', 'lire-cadran']}
                     solved={read2Done}
                     onAnswered={() => setRead2Done(true)}
                   />
@@ -140,7 +151,19 @@ export default function Module02LireHeure() {
           title: 'Règle l’horloge de la gare',
           done: setDone,
           content: (kit) => (
-            <SetChallenge react={kit.react} solved={setDone} onSolved={() => setSetDone(true)} />
+            <div className="space-y-5">
+              <SetChallenge react={kit.react} solved={setDone} onSolved={() => setSetDone(true)} />
+              {/* L'horloge vient d'être réglée sur 16 h 30 alors que le
+                  cadran n'affiche que 12 chiffres : c'est le moment où la
+                  notation 24 h répond à un besoin réel. */}
+              {setDone && (
+                <KnowledgeBrick
+                  id="notation-24h"
+                  variant="new"
+                  lead="Le cadran n’affiche pas « 16 » — et pourtant l’horloge est juste. Voilà la convention qui lève l’ambiguïté."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -170,6 +193,7 @@ export default function Module02LireHeure() {
               correct={TABLEAU_Q.correct}
               cols={3}
               explain={TABLEAU_Q.explain}
+              requires={['lire-cadran', 'notation-24h']}
               solved={tableauDone}
               onAnswered={() => setTableauDone(true)}
             />
@@ -177,13 +201,10 @@ export default function Module02LireHeure() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Clock className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Petite aiguille = heures, grande = minutes (chaque graduation-chiffre vaut 5 min). Après midi, on
-            ajoute 12 : 4 h 30 de l'après-midi = 16 h 30.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu lis un instant. Le module suivant ouvre le mécanisme et
+          révèle pourquoi le temps ne se compte pas comme les longueurs.
+        </KnowledgeSnapshot>
       }
     />
   );

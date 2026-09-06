@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Triangle, Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VirtualEquerre from '../../parallelisme-perpendicularite/components/VirtualEquerre';
@@ -95,15 +94,27 @@ export default function Module04Equerre() {
           title: 'Construis la perpendiculaire à (d) passant par A',
           done: perpDone,
           content: (kit) => (
-            <Construction
-              target="perpendiculaire"
-              point={A}
-              done={perpDone}
-              onDone={() => setPerpDone(true)}
-              react={kit.react}
-              hint="Pose un côté de l’équerre le long de (d), amène son sommet sur A, puis trace."
-              ariaLabel="Construis la perpendiculaire à d passant par A"
-            />
+            <div className="space-y-5">
+              <Construction
+                target="perpendiculaire"
+                point={A}
+                done={perpDone}
+                onDone={() => setPerpDone(true)}
+                react={kit.react}
+                hint="Pose un côté de l’équerre le long de (d), amène son sommet sur A, puis trace."
+                ariaLabel="Construis la perpendiculaire à d passant par A"
+              />
+
+              {/* Le rituel vient d'être exécuté à la main : on le fixe en
+                  méthode, avant la construction de la parallèle. */}
+              {perpDone && (
+                <KnowledgeBrick
+                  id="construire-perpendiculaire"
+                  variant="new"
+                  lead="Les deux conditions que tu viens de réunir — côté sur (d), sommet sur A — sont la méthode entière."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -111,15 +122,28 @@ export default function Module04Equerre() {
           title: 'Construis la parallèle à (d) passant par B',
           done: parDone,
           content: (kit) => (
-            <Construction
-              target="parallele"
-              point={B}
-              done={parDone}
-              onDone={() => setParDone(true)}
-              react={kit.react}
-              hint="Même rituel, mais on suit l’autre côté de l’équerre : celui qui reste parallèle à (d)."
-              ariaLabel="Construis la parallèle à d passant par B"
-            />
+            <div className="space-y-5">
+              <Construction
+                target="parallele"
+                point={B}
+                done={parDone}
+                onDone={() => setParDone(true)}
+                react={kit.react}
+                hint="Même rituel, mais on suit l’autre côté de l’équerre : celui qui reste parallèle à (d)."
+                ariaLabel="Construis la parallèle à d passant par B"
+              />
+
+              {/* Le même instrument vient de donner un résultat différent :
+                  la seconde méthode se pose ici, avant la question qui
+                  demande d'expliquer pourquoi une seule équerre suffit. */}
+              {parDone && (
+                <KnowledgeBrick
+                  id="construire-parallele"
+                  variant="new"
+                  lead="Même équerre, autre côté suivi — et cette fois la droite ne coupe jamais (d)."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -136,6 +160,7 @@ export default function Module04Equerre() {
               ]}
               correct={0}
               cols={1}
+              requires={['construire-perpendiculaire', 'construire-parallele', 'angle-droit', 'droites-paralleles']}
               explain="L’angle droit de l’équerre relie les deux constructions : suivre un côté donne la perpendiculaire, suivre l’autre donne la parallèle. C’est aussi pourquoi deux perpendiculaires à une même droite sont parallèles entre elles."
               explainWrong="Une seule équerre suffit : son angle droit porte les deux directions à la fois. Rien n’est tracé à l’œil."
               solved={memeDone}
@@ -145,17 +170,10 @@ export default function Module04Equerre() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Triangle className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Le même rituel, deux résultats. L’équerre garantit l’angle droit —{' '}
-            <strong className="text-white">et l’angle droit garantit tout le reste</strong>.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu possèdes les trois gestes. Le module suivant les enchaîne :
+          une figure entière, étape par étape.
+        </KnowledgeSnapshot>
       }
     />
   );

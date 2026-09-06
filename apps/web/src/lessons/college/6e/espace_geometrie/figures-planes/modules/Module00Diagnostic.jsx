@@ -18,6 +18,8 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-segment',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: [],
     skill: 'droites',
     points: 2,
     prompt: <>Combien d’extrémités possède un <strong>segment</strong> ?</>,
@@ -28,6 +30,8 @@ const QUESTIONS = [
   },
   {
     id: 'q2-angle-droit',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['angle-droit'],
     skill: 'angles',
     points: 2,
     prompt: <>Un <strong>angle droit</strong> mesure…</>,
@@ -38,6 +42,8 @@ const QUESTIONS = [
   },
   {
     id: 'q3-comparer-angles',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['angle-droit', 'angle-aigu-obtus'],
     skill: 'angles',
     points: 2,
     prompt: <>Un angle de <strong className="font-mono">120°</strong> est…</>,
@@ -48,6 +54,8 @@ const QUESTIONS = [
   },
   {
     id: 'q4-paralleles',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['droites-paralleles'],
     skill: 'relations',
     points: 2,
     prompt: <>Deux droites <strong>parallèles</strong>…</>,
@@ -62,6 +70,8 @@ const QUESTIONS = [
   },
   {
     id: 'q5-perpendiculaires',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['droites-perpendiculaires', 'angle-droit'],
     skill: 'relations',
     points: 2,
     prompt: <>Deux droites <strong>perpendiculaires</strong> se coupent en formant…</>,

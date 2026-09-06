@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Hammer, Eye } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ShapeLab from '../components/ShapeLab';
@@ -272,21 +272,24 @@ export default function Module07ConstruireContraintes() {
         title: `Chantier ${i + 1}`,
         done: done.includes(c.id),
         content: (kit) => (
-          <Chantier chantier={c} done={done.includes(c.id)} onDone={() => mark(c.id)} react={kit.react} />
+          <div className="space-y-5">
+            {/* La méthode est posée AVANT le premier chantier : la consigne
+                donne une liste de contraintes, il faut savoir ce qu'on en fait. */}
+            {i === 0 && (
+              <KnowledgeBrick
+                id="construire-contraintes"
+                variant="new"
+                lead="On ne te donne plus la figure, mais la liste de ce qu’elle doit vérifier."
+              />
+            )}
+            <Chantier chantier={c} done={done.includes(c.id)} onDone={() => mark(c.id)} react={kit.react} />
+          </div>
         ),
       }))}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Hammer className="w-6 h-6 mx-auto text-cyan-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Construire une figure, c’est satisfaire <strong className="text-white">toutes</strong> ses
-            propriétés à la fois. Une seule contrainte oubliée, et ce n’est plus la bonne figure.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Ta carte est complète. Le vitrail va la mettre à l’épreuve.
+        </KnowledgeSnapshot>
       }
     />
   );

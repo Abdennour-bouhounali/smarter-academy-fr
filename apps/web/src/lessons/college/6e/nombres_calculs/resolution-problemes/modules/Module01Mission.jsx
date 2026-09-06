@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import GroupBuilder from '../../../../../common/components/GroupBuilder';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -84,7 +85,7 @@ export default function Module01Mission() {
         body: (
           <>
             <p>
-              6 classes participent, chacune avec 24 élèves. Le bus peut accueillir 50 personnes.{' '}
+              6 classes participent, chacune avec 24 élèves. Un bus a 50 places.{' '}
               <strong className="text-white">Combien de personnes doivent être transportées ?</strong>
             </p>
             <p className="text-xs">Ne cherche pas encore une opération : construis d'abord la situation.</p>
@@ -96,7 +97,20 @@ export default function Module01Mission() {
           num: 1,
           title: 'Construis les 6 classes',
           done: s1,
-          content: (kit) => <ConstructionGroupes react={kit.react} solved={s1} onSolved={() => setS1(true)} />,
+          content: (kit) => (
+            <div className="space-y-5">
+              <ConstructionGroupes react={kit.react} solved={s1} onSolved={() => setS1(true)} />
+              {/* La méthode est nommée à l'instant où elle vient d'être
+                  employée — les 6 groupes sont encore à l'écran. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="construire-avant-calculer"
+                  variant="new"
+                  lead="Tu n'as cherché aucune opération : tu as posé la situation, et elle s'est montrée toute seule."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -105,6 +119,7 @@ export default function Module01Mission() {
           content: (
             <TapQuestion
               prompt={OP_Q.q}
+              requires={['construire-avant-calculer']}
               options={OP_Q.options}
               correct={OP_Q.correct}
               cols={2}
@@ -121,9 +136,10 @@ export default function Module01Mission() {
           content: (
             <div className="space-y-4">
               <NumericQuestion
-                prompt="Chaque bus accueille au maximum 50 personnes. Combien de bus faut-il prévoir pour les 144 personnes ?"
+                prompt="Chaque bus a 50 places. Combien de bus faut-il prévoir pour les 144 personnes ?"
                 suffix="bus"
                 expected={3}
+                requires={['construire-avant-calculer']}
                 explain="144 ÷ 50 = 2 reste 44 : deux bus ne suffisent pas (2 × 50 = 100 < 144), il en faut un troisième pour les 44 personnes restantes — même s'il n'est pas rempli."
                 explainFor={(n) =>
                   n === 2 || n === 2.88
@@ -134,18 +150,22 @@ export default function Module01Mission() {
                 onAnswered={() => setS3(true)}
               />
               {s3 && (
-                <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-1">
-                  <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Ce que tu retiens</div>
-                  <p className="text-sm text-slate-300">
-                    Une situation, une fois modélisée, ne se résume pas toujours à UN SEUL calcul : il faut parfois{' '}
-                    <strong className="text-white">interpréter</strong> le résultat pour répondre à la vraie question.
-                  </p>
-                </motion.div>
+                <KnowledgeBrick
+                  id="interpreter-le-resultat"
+                  variant="new"
+                  lead="Le calcul disait 2 et il en fallait 3 : c'est la situation qui a tranché."
+                />
               )}
             </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais construire une situation. On va voir maintenant
+          pourquoi deux histoires très différentes peuvent donner le même calcul.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

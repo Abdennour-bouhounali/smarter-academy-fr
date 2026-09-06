@@ -27,6 +27,34 @@ export const LESSON_BASE_PATH = '/courses/college/6e/espace_geometrie/figures-pl
 export const LESSON_CONFIG = {
   id: 'figures-planes',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // Formalisation continue par la carte : chaque module pose ses briques et se
+  // termine sur l'état courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A) : ce que le module 0 mesure
+  // vraiment — le segment et ses extrémités, l'angle droit, la comparaison
+  // d'angles, le parallélisme et la perpendicularité. Tout le reste (côté,
+  // sommet, angle, polygone, quadrilatères et triangles remarquables) est
+  // établi par la leçon elle-même.
+  priorKnowledge: [
+    'angle-droit',
+    'angle-aigu-obtus',
+    'droites-paralleles',
+    'droites-perpendiculaires',
+  ],
+  // FAUX POSITIF DOCUMENTÉ du détecteur lexical (docs/architecture/
+  // KNOWLEDGE_DEPENDENCY.md, contrôle 2). Le motif de « sommet d'un solide »
+  // capture « 4 sommets », qui désigne ici les sommets d'un POLYGONE — notion
+  // plane, posée par la brique `sommet` du module 2, juste avant la question.
+  // Cette leçon ne parle d'aucun solide.
+  knowledgeAudit: {
+    ignore: [
+      {
+        term: 'sommet-solide',
+        reason:
+          "« 4 sommets » désigne ici les sommets d'un polygone (figure plane), établis par la brique `sommet` au module 2 — la leçon ne traite aucun solide.",
+      },
+    ],
+  },
   title: 'Figures planes',
   description:
     'Caractériser les figures par leurs propriétés — côtés, sommets, angles — plutôt que par leur allure, puis les identifier et les construire.',

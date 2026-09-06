@@ -2,11 +2,232 @@
   "lesson": "modelisation-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "proportionnalite",
+    "fonction",
+    "notation-fx",
+    "image",
+    "fonction-lineaire",
+    "calcul-litteral",
+    "equation-premier-degre"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "modeliser",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
+        "line": 156,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "familles-modeles",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
+        "line": 149,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "modele-choisi-par-donnees",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module04QuelModele.jsx",
+        "line": 134,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "aucun-modele-simple",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module04QuelModele.jsx",
+        "line": 166,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "expression-du-modele",
+      "type": "formules",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module05Traduire.jsx",
+        "line": 104,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "sens-des-parametres",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module05Traduire.jsx",
+        "line": 120,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "domaine-de-validite",
+      "type": "concepts",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
+        "line": 98,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "variable-modele",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module02GrandeursRepresentations.jsx",
+        "line": 82,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "sens-de-variation",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
+        "line": 154,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "extrapolation",
+      "type": "vocabulaire",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
+        "line": 133,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "informations-utiles",
+      "type": "methodes",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
+        "line": 97,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "choisir-representation",
+      "type": "methodes",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module02GrandeursRepresentations.jsx",
+        "line": 148,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "tableau-de-valeurs",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
+        "line": 88,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "representation-graphique",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
+        "line": 117,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "cycle-modelisation",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module05Traduire.jsx",
+        "line": 176,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "interpreter-resultat",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
+        "line": 184,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "seuil-deux-modeles",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module07GrandProjet.jsx",
+        "line": 138,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-toutes-les-donnees",
+      "type": "memoriser",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
+        "line": 161,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-douter",
+      "type": "memoriser",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
+        "line": 243,
+        "step": 4,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "mo-d1",
@@ -14,9 +235,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module00Diagnostic.jsx",
-      "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,13 +251,19 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module00Diagnostic.jsx",
-      "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "notation-fx"
+      "line": 25,
+      "requires": [
+        "fonction",
+        "notation-fx",
+        "image"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "notation-fx": "prior",
+        "image": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "mo-d3",
@@ -40,9 +271,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module00Diagnostic.jsx",
-      "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 26,
+      "requires": [
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -52,9 +287,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module00Diagnostic.jsx",
-      "line": 24,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 27,
+      "requires": [
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "equation-premier-degre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -64,45 +303,63 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module00Diagnostic.jsx",
-      "line": 25,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 28,
+      "requires": [
+        "fonction-lineaire",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "fonction-lineaire": "prior",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S4-Q1",
+      "questionId": "M01-S3-Q1",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
+      "line": 167,
+      "requires": [
+        "mem-toutes-les-donnees"
+      ],
+      "prerequisiteStatus": {
+        "mem-toutes-les-donnees": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q2",
       "module": 1,
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
-      "line": 162,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 189,
+      "requires": [
+        "modeliser"
+      ],
+      "prerequisiteStatus": {
+        "modeliser": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S5-Q2",
+      "questionId": "M01-S5-Q3",
       "module": 1,
       "step": 5,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
-      "line": 180,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M01-S6-Q3",
-      "module": 1,
-      "step": 6,
-      "component": "TapQuestion",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
-      "line": 205,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 208,
+      "requires": [
+        "modeliser"
+      ],
+      "prerequisiteStatus": {
+        "modeliser": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -112,9 +369,31 @@
       "step": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
-      "line": 215,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 234,
+      "requires": [
+        "modeliser"
+      ],
+      "prerequisiteStatus": {
+        "modeliser": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S6-Q5",
+      "module": 1,
+      "step": 6,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module01LaboModelisation.jsx",
+      "line": 245,
+      "requires": [
+        "modeliser",
+        "mem-toutes-les-donnees"
+      ],
+      "prerequisiteStatus": {
+        "modeliser": "established@M1",
+        "mem-toutes-les-donnees": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +403,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module02GrandeursRepresentations.jsx",
-      "line": 86,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "informations-utiles",
+        "variable-modele"
+      ],
+      "prerequisiteStatus": {
+        "informations-utiles": "established@M1",
+        "variable-modele": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,13 +421,15 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module02GrandeursRepresentations.jsx",
-      "line": 111,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "extremum"
+      "line": 131,
+      "requires": [
+        "variable-modele"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "variable-modele": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M02-S4-Q3",
@@ -150,9 +437,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module02GrandeursRepresentations.jsx",
-      "line": 127,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 155,
+      "requires": [
+        "choisir-representation",
+        "variable-modele"
+      ],
+      "prerequisiteStatus": {
+        "choisir-representation": "established@M2",
+        "variable-modele": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,14 +455,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "fonction-affine",
-        "variations"
+      "line": 133,
+      "requires": [
+        "representation-graphique"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "representation-graphique": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M03-S3-Q2",
@@ -177,9 +471,33 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
-      "line": 130,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 160,
+      "requires": [
+        "familles-modeles",
+        "sens-de-variation"
+      ],
+      "prerequisiteStatus": {
+        "familles-modeles": "established@M3",
+        "sens-de-variation": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q3",
+      "module": 3,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
+      "line": 178,
+      "requires": [
+        "representation-graphique",
+        "tableau-de-valeurs"
+      ],
+      "prerequisiteStatus": {
+        "representation-graphique": "established@M3",
+        "tableau-de-valeurs": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -189,9 +507,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module04QuelModele.jsx",
-      "line": 121,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "familles-modeles"
+      ],
+      "prerequisiteStatus": {
+        "familles-modeles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -201,9 +523,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module04QuelModele.jsx",
-      "line": 145,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 154,
+      "requires": [
+        "modele-choisi-par-donnees",
+        "familles-modeles",
+        "mem-toutes-les-donnees"
+      ],
+      "prerequisiteStatus": {
+        "modele-choisi-par-donnees": "established@M4",
+        "familles-modeles": "established@M3",
+        "mem-toutes-les-donnees": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -213,12 +543,18 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module05Traduire.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "fonction-lineaire"
+      "line": 127,
+      "requires": [
+        "sens-des-parametres",
+        "expression-du-modele",
+        "variable-modele"
       ],
+      "prerequisiteStatus": {
+        "sens-des-parametres": "established@M5",
+        "expression-du-modele": "established@M5",
+        "variable-modele": "established@M2"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -227,13 +563,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module05Traduire.jsx",
-      "line": 145,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "antecedent"
+      "line": 155,
+      "requires": [
+        "expression-du-modele",
+        "notation-fx",
+        "image"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "expression-du-modele": "established@M5",
+        "notation-fx": "prior",
+        "image": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M05-S4-Q3",
@@ -241,9 +583,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module05Traduire.jsx",
-      "line": 177,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 181,
+      "requires": [
+        "cycle-modelisation"
+      ],
+      "prerequisiteStatus": {
+        "cycle-modelisation": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -253,9 +599,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 86,
+      "requires": [
+        "expression-du-modele",
+        "modeliser"
+      ],
+      "prerequisiteStatus": {
+        "expression-du-modele": "established@M5",
+        "modeliser": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -265,21 +617,33 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
-      "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "domaine-de-validite",
+        "representation-graphique"
+      ],
+      "prerequisiteStatus": {
+        "domaine-de-validite": "established@M6",
+        "representation-graphique": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M06-S3-Q3",
+      "questionId": "M06-S2-Q3",
       "module": 6,
-      "step": 3,
-      "component": "NumericQuestion",
+      "step": 2,
+      "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
-      "line": 129,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 138,
+      "requires": [
+        "extrapolation",
+        "domaine-de-validite"
+      ],
+      "prerequisiteStatus": {
+        "extrapolation": "established@M6",
+        "domaine-de-validite": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -287,23 +651,33 @@
       "questionId": "M06-S3-Q4",
       "module": 6,
       "step": 3,
-      "component": "TapQuestion",
+      "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
-      "line": 140,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 160,
+      "requires": [
+        "expression-du-modele",
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "expression-du-modele": "established@M5",
+        "equation-premier-degre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M06-S4-Q5",
+      "questionId": "M06-S3-Q5",
       "module": 6,
-      "step": 4,
+      "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
-      "line": 160,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 172,
+      "requires": [
+        "cycle-modelisation"
+      ],
+      "prerequisiteStatus": {
+        "cycle-modelisation": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -313,9 +687,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
-      "line": 170,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 200,
+      "requires": [
+        "domaine-de-validite",
+        "interpreter-resultat"
+      ],
+      "prerequisiteStatus": {
+        "domaine-de-validite": "established@M6",
+        "interpreter-resultat": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -323,11 +703,37 @@
       "questionId": "M06-S4-Q7",
       "module": 6,
       "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
+      "line": 211,
+      "requires": [
+        "extrapolation",
+        "domaine-de-validite"
+      ],
+      "prerequisiteStatus": {
+        "extrapolation": "established@M6",
+        "domaine-de-validite": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S4-Q8",
+      "module": 6,
+      "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module06PrevoirDouter.jsx",
-      "line": 182,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 225,
+      "requires": [
+        "domaine-de-validite",
+        "interpreter-resultat",
+        "expression-du-modele"
+      ],
+      "prerequisiteStatus": {
+        "domaine-de-validite": "established@M6",
+        "interpreter-resultat": "established@M6",
+        "expression-du-modele": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -337,9 +743,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module07GrandProjet.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 84,
+      "requires": [
+        "expression-du-modele",
+        "sens-des-parametres",
+        "familles-modeles"
+      ],
+      "prerequisiteStatus": {
+        "expression-du-modele": "established@M5",
+        "sens-des-parametres": "established@M5",
+        "familles-modeles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -349,9 +763,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module07GrandProjet.jsx",
-      "line": 98,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 100,
+      "requires": [
+        "choisir-representation"
+      ],
+      "prerequisiteStatus": {
+        "choisir-representation": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -361,9 +779,17 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module07GrandProjet.jsx",
-      "line": 123,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 126,
+      "requires": [
+        "expression-du-modele",
+        "equation-premier-degre",
+        "representation-graphique"
+      ],
+      "prerequisiteStatus": {
+        "expression-du-modele": "established@M5",
+        "equation-premier-degre": "prior",
+        "representation-graphique": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -373,9 +799,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module07GrandProjet.jsx",
-      "line": 143,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 154,
+      "requires": [
+        "seuil-deux-modeles",
+        "expression-du-modele"
+      ],
+      "prerequisiteStatus": {
+        "seuil-deux-modeles": "established@M7",
+        "expression-du-modele": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -385,13 +817,19 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module07GrandProjet.jsx",
-      "line": 157,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "ensemble-reels"
+      "line": 169,
+      "requires": [
+        "seuil-deux-modeles",
+        "mem-douter",
+        "interpreter-resultat"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "seuil-deux-modeles": "established@M7",
+        "mem-douter": "established@M6",
+        "interpreter-resultat": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "mo-e1",
@@ -399,9 +837,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 52,
+      "requires": [
+        "informations-utiles"
+      ],
+      "prerequisiteStatus": {
+        "informations-utiles": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -411,9 +853,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 61,
+      "requires": [
+        "variable-modele"
+      ],
+      "prerequisiteStatus": {
+        "variable-modele": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -423,9 +869,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "choisir-representation",
+        "seuil-deux-modeles"
+      ],
+      "prerequisiteStatus": {
+        "choisir-representation": "established@M2",
+        "seuil-deux-modeles": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -435,9 +887,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 79,
+      "requires": [
+        "expression-du-modele",
+        "sens-des-parametres"
+      ],
+      "prerequisiteStatus": {
+        "expression-du-modele": "established@M5",
+        "sens-des-parametres": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -447,9 +905,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 88,
+      "requires": [
+        "tableau-de-valeurs",
+        "expression-du-modele"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-valeurs": "established@M3",
+        "expression-du-modele": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -459,9 +923,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 97,
+      "requires": [
+        "representation-graphique",
+        "familles-modeles"
+      ],
+      "prerequisiteStatus": {
+        "representation-graphique": "established@M3",
+        "familles-modeles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -471,9 +941,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 106,
+      "requires": [
+        "sens-des-parametres"
+      ],
+      "prerequisiteStatus": {
+        "sens-des-parametres": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -483,9 +957,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "modele-choisi-par-donnees",
+        "familles-modeles",
+        "mem-toutes-les-donnees",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "modele-choisi-par-donnees": "established@M4",
+        "familles-modeles": "established@M3",
+        "mem-toutes-les-donnees": "established@M1",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -495,9 +979,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 111,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 124,
+      "requires": [
+        "expression-du-modele",
+        "modeliser"
+      ],
+      "prerequisiteStatus": {
+        "expression-du-modele": "established@M5",
+        "modeliser": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -507,97 +997,20 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module08MissionFinale.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 133,
+      "requires": [
+        "domaine-de-validite",
+        "extrapolation",
+        "interpreter-resultat"
+      ],
+      "prerequisiteStatus": {
+        "domaine-de-validite": "established@M6",
+        "extrapolation": "established@M6",
+        "interpreter-resultat": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« fonction affine » is a target concept of this lesson but its first appearance is q.option (module 3, étape 3); it is only taught later at apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module04QuelModele.jsx:134",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
-      "line": 122,
-      "module": 3,
-      "step": 3,
-      "term": "fonction-affine",
-      "questionId": "M03-S3-Q1",
-      "position": 128
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« notation f(x) » first appears at diag.prompt (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module00Diagnostic.jsx",
-      "line": 22,
-      "module": 0,
-      "step": null,
-      "term": "notation-fx",
-      "questionId": "mo-d2",
-      "position": 7
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« extremum / maximum / minimum » first appears at q.feedback (module 2, étape 4) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module02GrandeursRepresentations.jsx",
-      "line": 117,
-      "module": 2,
-      "step": 4,
-      "term": "extremum",
-      "questionId": "M02-S4-Q2",
-      "position": 110
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« variations / croissante / décroissante » first appears at q.option (module 3, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module03TableauGraphique.jsx",
-      "line": 122,
-      "module": 3,
-      "step": 3,
-      "term": "variations",
-      "questionId": "M03-S3-Q1",
-      "position": 128
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« antécédent » first appears at q.explain (module 5, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module05Traduire.jsx",
-      "line": 150,
-      "module": 5,
-      "step": 3,
-      "term": "antecedent",
-      "questionId": "M05-S3-Q2",
-      "position": 204
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« ensemble ℝ » first appears at q.option (module 7, étape 4) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module07GrandProjet.jsx",
-      "line": 159,
-      "module": 7,
-      "step": 4,
-      "term": "ensemble-reels",
-      "questionId": "M07-S4-Q5",
-      "position": 298
-    },
-    {
-      "code": "L_DISTRACTOR_ONLY",
-      "severity": "low",
-      "message": "« fonction linéaire » appears only as a wrong answer, first at q.rowOption (module 5, étape 2) — a distractor still creates a first exposure",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/modelisation-3e/modules/Module05Traduire.jsx",
-      "line": 123,
-      "module": 5,
-      "step": 2,
-      "term": "fonction-lineaire",
-      "questionId": "M05-S2-Q1",
-      "position": 185
-    }
-  ]
+  "findings": []
 }

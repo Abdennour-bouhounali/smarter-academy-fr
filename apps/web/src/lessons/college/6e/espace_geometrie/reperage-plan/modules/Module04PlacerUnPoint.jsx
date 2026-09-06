@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Target, Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoordGrid from '../components/CoordGrid';
@@ -146,8 +146,46 @@ export default function Module04PlacerUnPoint() {
         ),
       }}
       steps={[
-        ...TARGETS.map((t, i) => ({
-          num: i + 1,
+        // La PREMIÈRE cible est une étape littérale : c'est elle qui porte les
+        // deux briques du module, et l'audit du contrat « connaissances avant
+        // la demande » ne lit que le tableau `steps` littéral
+        // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+        {
+          num: 1,
+          title: `Pose le point ${formatCoords(TARGETS[0].node)}`,
+          done: placed.includes(TARGETS[0].id),
+          content: (kit) => (
+            <div className="space-y-5">
+              <PlaceMission
+                target={TARGETS[0]}
+                done={placed.includes(TARGETS[0].id)}
+                onDone={() => mark(TARGETS[0].id)}
+                react={kit.react}
+              />
+
+              {/* Le placement réussi donne son sens au coin (0 ; 0) d'où
+                  l'élève vient de compter : on nomme ce point, puis on fige le
+                  geste en méthode. Les deux briques précèdent les cibles
+                  suivantes et la question de la dernière étape. */}
+              {placed.includes(TARGETS[0].id) && (
+                <>
+                  <KnowledgeBrick
+                    id="origine-repere"
+                    variant="new"
+                    lead="Tu viens de compter tes pas à partir du coin en bas à gauche. Ce point-là a un nom."
+                  />
+                  <KnowledgeBrick
+                    id="placer-un-point"
+                    variant="new"
+                    lead="Et l’enchaînement que tu viens de faire — avancer, puis monter — est la méthode."
+                  />
+                </>
+              )}
+            </div>
+          ),
+        },
+        ...TARGETS.slice(1).map((t, i) => ({
+          num: i + 2,
           title: `Pose le point ${formatCoords(t.node)}`,
           done: placed.includes(t.id),
           content: (kit) => (
@@ -173,6 +211,7 @@ export default function Module04PlacerUnPoint() {
               ]}
               correct={0}
               cols={1}
+              requires={['placer-un-point', 'origine-repere', 'abscisse', 'ordonnee']}
               explain="Le premier nombre est toujours le déplacement horizontal, le second la montée : 3 vers la droite, puis 5 vers le haut."
               explainWrong="Les deux autres enchaînements utilisent les nombres dans le mauvais rôle — ils mènent à un autre point du quadrillage."
               solved={orderDone}
@@ -182,17 +221,10 @@ export default function Module04PlacerUnPoint() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Target className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Lire et placer sont deux gestes inverses, mais ils suivent le même ordre :{' '}
-            <strong className="text-white">horizontale d’abord, verticale ensuite</strong>.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Lire et placer sont deux gestes inverses, et ils suivent le même
+          ordre. Au module suivant, ces deux nombres deviennent un déplacement à programmer.
+        </KnowledgeSnapshot>
       }
     />
   );

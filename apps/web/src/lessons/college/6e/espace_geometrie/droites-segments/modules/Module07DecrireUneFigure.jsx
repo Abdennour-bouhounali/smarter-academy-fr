@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MessageSquare } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import GeoFigure from '../components/GeoFigure';
@@ -71,7 +70,15 @@ export default function Module07DecrireUneFigure() {
           title: 'Quelle description est exacte ?',
           done: descDone,
           content: (
-            <TapQuestion
+            <div className="space-y-5">
+              {/* Le critère de réussite doit exister AVANT qu'on demande de
+                  choisir la bonne description. */}
+              <KnowledgeBrick
+                id="decrire-figure"
+                variant="new"
+                lead="Ton camarade ne voit pas la figure : ta phrase doit lui suffire pour la retracer."
+              />
+              <TapQuestion
               above={
                 <GeoFigure
                   objects={FIGURE}
@@ -91,9 +98,11 @@ export default function Module07DecrireUneFigure() {
               cols={1}
               explain="Il faut nommer chaque objet AVEC son type : deux segments, une droite. Les notations [AB], [BC] et (AC) disent tout — par où ça passe et jusqu’où ça va."
               explainWrong="« Trois traits penchés » ne dit pas où ils s’arrêtent. Et parler de trois droites serait faux : deux de ces traits s’arrêtent à leurs extrémités, ce sont des segments."
-              solved={descDone}
-              onAnswered={() => setDescDone(true)}
-            />
+                solved={descDone}
+                onAnswered={() => setDescDone(true)}
+                requires={['decrire-figure', 'notation-objets', 'lire-la-notation']}
+              />
+            </div>
           ),
         },
         {
@@ -117,6 +126,7 @@ export default function Module07DecrireUneFigure() {
                   </p>
                 </div>
               }
+              requires={['notation-objets', 'appartenance', 'milieu']}
               rows={CLAIMS.map((c) => ({
                 id: c.id,
                 label: <span className="text-sm">{c.text}</span>,
@@ -159,6 +169,7 @@ export default function Module07DecrireUneFigure() {
               ]}
               correct={0}
               cols={1}
+              requires={['decrire-figure', 'etendue', 'notation-objets']}
               explain="« Un trait entre A et B » peut désigner le segment [AB], la demi-droite [AB), ou la droite (AB). Sans le type, on ne sait pas jusqu’où le tracer."
               explainWrong="La couleur n’est pas une information géométrique. Ce qui manque, c’est l’étendue : où le trait s’arrête-t-il ?"
               solved={precisionDone}
@@ -168,17 +179,9 @@ export default function Module07DecrireUneFigure() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <MessageSquare className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Décrire une figure, c’est nommer chaque objet avec son <strong className="text-white">type</strong>{' '}
-            et ses <strong className="text-white">points</strong>. C’est exactement ce que fait la notation.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Ta carte est complète. Le skatepark va la mettre à l’épreuve.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProportionTable from '../components/ProportionTable';
@@ -18,10 +19,16 @@ import { applyRule, buildRows, ratioAt, parseDec, formatDec } from '../component
  * et en voyant apparaître une colonne de nombres identiques — la régularité
  * n'est pas affirmée, elle se constate.
  *
- * Le mot « coefficient » est introduit comme un raccourci de langage pour
- * « le nombre par lequel on multiplie » (le programme de 6e ne demande pas
- * plus), et immédiatement réutilisé sur un second exemple à coefficient
- * décimal (0,5) pour qu'il ne reste pas collé au cas k = 3.
+ * DEUX CONNAISSANCES, DANS CET ORDRE (contrat « connaissances avant la
+ * demande ») : d'abord « proportionnalité » — le nom du comportement, posé
+ * une fois le × constant TROUVÉ à l'étape 1 —, ensuite seulement
+ * « coefficient de proportionnalité », le nombre qui le réalise. Les deux
+ * étaient auparavant demandés par un QCM dont l'option portait le mot pour
+ * la première fois ; le QCM de l'étape 2 porte désormais sur ce que l'élève
+ * vient de constater, et les mots arrivent par des briques.
+ *
+ * Le coefficient est immédiatement réutilisé sur un second exemple à
+ * coefficient décimal (0,5) pour qu'il ne reste pas collé au cas k = 3.
  */
 const ROWS = buildRows(CREPES.rule, [1, 2, 3, 5]);
 const K = ratioAt(CREPES.rule, 1); // 3
@@ -134,12 +141,28 @@ export default function Module02MemeNombre() {
                 coefficient={K}
                 caption="Le même × 3 sur chaque colonne"
               />
+              {/* Le nombre constant est sous les yeux : c'est ICI, et pas au
+                  module 1, que le mot a de quoi s'appuyer. */}
+              <KnowledgeBrick
+                id="proportionnalite"
+                variant="new"
+                lead="Ce même × 3, ligne après ligne, décrit une famille entière de situations. Elle a un nom."
+              />
+              {/* Le nombre lui-même est une SECONDE connaissance, distincte du
+                  comportement : elle vient après, et seulement après. */}
+              <KnowledgeBrick
+                id="coefficient-proportionnalite"
+                variant="new"
+                lead="Et ce 3, celui qui ne change jamais, en a un aussi."
+              />
               <TapQuestion
-                prompt="Comment appelle-t-on ce nombre par lequel on multiplie toujours ?"
-                options={['Le total', 'Le coefficient de proportionnalité', 'La différence']}
+                prompt="Dans cette situation, quelle opération mène des jetons aux crêpes ?"
+                options={['On ajoute 2', `On multiplie par ${K}`, 'On ajoute un nombre qui change à chaque ligne']}
                 correct={1}
                 cols={1}
-                explain="On l’appelle le COEFFICIENT de proportionnalité : le nombre par lequel on multiplie la première grandeur pour obtenir la seconde. Ici, il vaut 3."
+                explain={`On multiplie par ${K}, et ce nombre est le même sur les quatre colonnes. C’est lui, le coefficient de proportionnalité de cette situation.`}
+                explainWrong={`« + 2 » ne marche que sur la première colonne : ensuite il faudrait « + 4 », puis « + 6 ». La multiplication par ${K}, elle, tient partout.`}
+                requires={['proportionnalite', 'coefficient-proportionnalite']}
                 solved={coefDone}
                 onAnswered={() => setCoefDone(true)}
               />
@@ -165,6 +188,7 @@ export default function Module02MemeNombre() {
                   ? 'Tu as divisé par 3 : cela répondrait à « combien de jetons pour 12 crêpes ». Ici on va des jetons vers les crêpes, donc on multiplie.'
                   : `Multiplie la quantité de jetons par le coefficient : 12 × ${K}.`
               }
+              requires={['coefficient-proportionnalite', 'tables-multiplication']}
               solved={predireDone}
               onAnswered={() => setPredireDone(true)}
             />
@@ -199,6 +223,7 @@ export default function Module02MemeNombre() {
                 cols={3}
                 explain="On multiplie le nombre de litres par 0,5 : 4 L → 2 €, 10 L → 5 €. Un coefficient peut être plus petit que 1 — le prix est alors plus petit que la quantité."
                 explainWrong="Regarde 4 litres → 2 € : on n’a pas multiplié par 2 (ce serait 8), on a pris la moitié. Le coefficient vaut 0,5."
+                requires={['coefficient-proportionnalite', 'calcul-numerique']}
                 solved={jusDone}
                 onAnswered={(ok) => { setJusDone(true); if (!ok) kit.react(false); }}
               />
@@ -207,12 +232,17 @@ export default function Module02MemeNombre() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <X className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Dans une situation proportionnelle, on passe d'une grandeur à l'autre en multipliant TOUJOURS par
-            le même nombre. Mais toutes les situations font-elles ça ?
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={2}>
+            <strong>La suite.</strong> Tu sais reconnaître ce comportement et le nommer. Mais toutes les
+            situations le font-elles ? Le prochain module en met trois au banc d'essai.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <X className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Un seul nombre, et toute la machine s'explique.
+            </p>
+          </div>
         </motion.div>
       }
     />

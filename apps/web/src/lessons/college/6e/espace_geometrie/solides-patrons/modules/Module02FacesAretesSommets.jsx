@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Grid3x3 } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidView from '../components/SolidView';
@@ -13,7 +12,7 @@ import { SOLIDES, SOLIDES_LIST, isPolyhedron, eulerCheck } from '../components/s
  * Objectif : nommer les trois éléments et apprendre à les compter SANS se
  * fier au dessin — en raisonnant sur la structure.
  *
- * Aha : les trois nombres ne sont pas indépendants. Sur un polyèdre,
+ * Aha : les trois nombres ne sont pas indépendants. Sur un solide à faces planes,
  * F + S − A = 2 toujours (relation d'Euler). L'élève ne l'apprend pas comme
  * une formule : il la CONSTATE sur trois solides différents.
  *
@@ -103,11 +102,31 @@ export default function Module02FacesAretesSommets() {
                 </button>
               )}
               {exploreDone && (
-                <Feedback tone="ok">
-                  Une <strong>face</strong> est une surface, une <strong>arête</strong> un segment, un{' '}
-                  <strong>sommet</strong> un point. Trois objets de nature différente — d’où trois comptes
-                  différents.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Tu viens de voir trois choses de nature différente : des surfaces, des segments,
+                    des points. Chacune porte un nom.
+                  </Feedback>
+                  {/* C'est ICI que les trois mots existent — le module 1 n'en
+                      employait aucun, et les briques les posent avant toute
+                      question qui les demande. */}
+                  <KnowledgeBrick
+                    id="face-solide"
+                    variant="new"
+                    lead="Les surfaces que tu as allumées en premier."
+                  />
+                  <KnowledgeBrick
+                    id="arete"
+                    variant="new"
+                    lead="Les segments, là où deux de ces surfaces se rencontrent."
+                  />
+                  <KnowledgeBrick
+                    id="sommet-solide"
+                    variant="new"
+                    lead="Et les points, là où ces segments se rejoignent."
+                  />
+                  <KnowledgeBrick id="mem-cube-fas" variant="new" />
+                </>
               )}
             </div>
           ),
@@ -118,6 +137,7 @@ export default function Module02FacesAretesSommets() {
           done: countDone,
           content: (
             <BatchChoiceQuestion
+              requires={['face-solide', 'dessin-et-objet']}
               intro={
                 <div className="space-y-3">
                   <div className="grid sm:grid-cols-3 gap-3">
@@ -164,54 +184,61 @@ export default function Module02FacesAretesSommets() {
           subtitle: 'Vérifie-le toi-même sur le cube.',
           done: eulerDone,
           content: (
-            <TapQuestion
-              above={
-                <div className="rounded-xl border-2 border-slate-200 bg-white p-4 space-y-2">
-                  <p className="text-sm text-slate-600 text-center">Pour le cube :</p>
-                  <div className="grid grid-cols-3 gap-2 text-center">
-                    {HIGHLIGHTS.map((h) => (
-                      <div key={h.id} className="rounded-xl bg-slate-50 border border-slate-200 p-2">
-                        <div className="font-mono font-extrabold text-lg text-slate-800">{cube[h.key]}</div>
-                        <div className="text-[11px] text-slate-500">{h.label}</div>
-                      </div>
-                    ))}
+            <div className="space-y-5">
+              {/* La question de cette étape porte sur le pavé droit : le mot
+                  doit exister avant d'être employé dans l'énoncé. */}
+              <KnowledgeBrick
+                id="pave-droit"
+                variant="new"
+                lead="Tu viens de compter le deuxième solide de la rangée : celui aux faces rectangulaires."
+              />
+              <TapQuestion
+                above={
+                  <div className="rounded-xl border-2 border-slate-200 bg-white p-4 space-y-2">
+                    <p className="text-sm text-slate-600 text-center">Pour le cube :</p>
+                    <div className="grid grid-cols-3 gap-2 text-center">
+                      {HIGHLIGHTS.map((h) => (
+                        <div key={h.id} className="rounded-xl bg-slate-50 border border-slate-200 p-2">
+                          <div className="font-mono font-extrabold text-lg text-slate-800">{cube[h.key]}</div>
+                          <div className="text-[11px] text-slate-500">{h.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-center font-mono text-sm text-slate-700">
+                      {cube.faces} + {cube.sommets} − {cube.aretes} = {eulerCheck(cube)}
+                    </p>
                   </div>
-                  <p className="text-center font-mono text-sm text-slate-700">
-                    {cube.faces} + {cube.sommets} − {cube.aretes} = {eulerCheck(cube)}
-                  </p>
-                </div>
-              }
-              prompt="Fais le même calcul pour le pavé droit (6 faces, 8 sommets, 12 arêtes). Que trouves-tu ?"
-              options={['2 — le même résultat', '0', 'Un résultat différent']}
-              correct={0}
-              cols={3}
-              explain="Toujours 2 ! Pour tout polyèdre, faces + sommets − arêtes = 2. C’est une propriété générale, pas une coïncidence — elle sert à vérifier qu’on n’a rien oublié."
-              explainWrong="6 + 8 − 12 = 2, exactement comme pour le cube. Cette égalité vaut pour tous les polyèdres, et c’est un bon moyen de contrôler ses comptes."
-              solved={eulerDone}
-              onAnswered={() => setEulerDone(true)}
-            />
+                }
+                prompt="Fais le même calcul pour le pavé droit (6 faces, 8 sommets, 12 arêtes). Que trouves-tu ?"
+                options={['2 — le même résultat', '0', 'Un résultat différent']}
+                correct={0}
+                cols={3}
+                requires={['face-solide', 'arete', 'sommet-solide', 'pave-droit']}
+                explain="Toujours 2 ! Pour tout solide à faces planes, faces + sommets − arêtes = 2. C’est une propriété générale, pas une coïncidence — elle sert à vérifier qu’on n’a rien oublié."
+                explainWrong="6 + 8 − 12 = 2, exactement comme pour le cube. Cette égalité vaut pour tous les solides à faces planes, et c’est un bon moyen de contrôler ses comptes."
+                solved={eulerDone}
+                onAnswered={() => setEulerDone(true)}
+              />
+
+              {/* Le calcul vient d'être refait par l'élève sur deux solides :
+                  la régularité constatée devient un outil de contrôle. Elle
+                  n'existait auparavant que dans l'`explain`, donc trop tard. */}
+              {eulerDone && (
+                <KnowledgeBrick
+                  id="controle-euler"
+                  variant="new"
+                  lead="Deux solides, deux fois le même résultat : ce n’est pas un hasard."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Grid3x3 className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <div className="grid sm:grid-cols-3 gap-2 text-sm">
-            {HIGHLIGHTS.map((h) => (
-              <div key={h.id} className="bg-white/10 rounded-xl p-3 text-center">
-                <div className="font-bold text-white mb-1">{h.label}</div>
-                <div className="text-slate-300 text-xs">{h.desc}</div>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-xs text-slate-400 font-mono">
-            faces + sommets − arêtes = 2, pour tout polyèdre
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais nommer et compter les trois éléments d’un solide. Au
+          module suivant, on ouvre la boîte et on l’étale sur la table.
+        </KnowledgeSnapshot>
       }
     />
   );

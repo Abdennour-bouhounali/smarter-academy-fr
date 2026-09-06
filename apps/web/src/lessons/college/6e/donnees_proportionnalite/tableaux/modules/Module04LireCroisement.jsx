@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Crosshair } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DataTable from '../components/DataTable';
@@ -75,6 +76,15 @@ export default function Module04LireCroisement() {
                 highlightCol={3}
                 highlight={guideDone ? [{ r: 0, c: 3 }] : []}
               />
+              {/* La procédure est POSÉE ici, pendant que les deux bandes
+                  éclairées la rendent évidente — et avant la première
+                  demande de lecture. Elle ne vivait jusqu'ici que dans des
+                  `explainFor`, c'est-à-dire après la réponse. */}
+              <KnowledgeBrick
+                id="lire-un-croisement"
+                variant="new"
+                lead="Regarde les deux bandes éclairées : elles ne se rencontrent qu’en un seul endroit."
+              />
               <NumericQuestion
                 prompt="Combien Léa a-t-elle marqué en précision ?"
                 suffix="pts"
@@ -89,6 +99,7 @@ export default function Module04LireCroisement() {
                     ? '9, c’est le relais de Léa : bonne ligne, mais une colonne trop à gauche.'
                     : 'Suis la ligne de Léa jusqu’à la dernière colonne, celle de la précision.'
                 }
+                requires={['lire-un-croisement', 'ligne-colonne', 'entete']}
                 solved={guideDone}
                 onAnswered={() => setGuideDone(true)}
               />
@@ -109,6 +120,7 @@ export default function Module04LireCroisement() {
                 cols={3}
                 explain={`Ligne Inès, colonne Saut : ${INES_SAUT} points.`}
                 explainWrong="8, c’est le saut de Léa (une ligne au-dessus) ; 6, celui de Tom. Ces deux erreurs viennent du même geste : glisser de ligne."
+                requires={['lire-un-croisement']}
                 solved={libreDone}
                 onAnswered={() => setLibreDone(true)}
               />
@@ -127,6 +139,13 @@ export default function Module04LireCroisement() {
                     Cette fois on te donne le nombre : à toi de dire de <strong>qui</strong> il s'agit.
                   </p>
                   <DataTable table={TOURNOI} caption="Tournoi de la 6e B" tone="violet" />
+                  {/* Le sens inverse est une méthode à part : elle est posée
+                      au-dessus de la question, pas expliquée après coup. */}
+                  <KnowledgeBrick
+                    id="lecture-inverse"
+                    variant="new"
+                    lead="Le croisement se parcourt aussi à l’envers : d’une case vers les mots qui l’encadrent."
+                  />
                 </div>
               }
               rows={[
@@ -140,6 +159,7 @@ export default function Module04LireCroisement() {
                   relit son en-tête de ligne : c'est le même croisement, parcouru à l'envers.
                 </Feedback>
               )}
+              requires={['lecture-inverse', 'entete']}
               solved={inverseDone}
               onAnswered={() => setInverseDone(true)}
             />
@@ -151,8 +171,16 @@ export default function Module04LireCroisement() {
           done: busDone,
           content: (
             <div className="space-y-3">
+              {/* Le nom de la famille de tableaux est posé AVANT le transfert :
+                  l'élève a croisé quatre fois, il peut recevoir le mot. */}
+              <KnowledgeBrick
+                id="mem-double-entree"
+                variant="new"
+                lead="Tu viens de croiser quatre fois, dans les deux sens. Ce que tu sais faire porte un nom."
+              />
               <p className="text-sm text-slate-600">
-                Un tableau à double entrée d'un tout autre monde — mais le geste est identique.
+                En voici un d'un tout autre monde — les lignes sont des lieux, les colonnes des bus. Le geste,
+                lui, ne change pas.
               </p>
               <DataTable table={BUS} caption="Horaires : heure de passage à chaque arrêt" tone="violet" />
               <TapQuestion
@@ -162,13 +190,13 @@ export default function Module04LireCroisement() {
                 cols={3}
                 explain="Ligne Marché, colonne Bus 2 : 14 h. Ici les lignes sont des lieux et les colonnes des bus — mais on croise exactement de la même façon."
                 explainWrong="12 h, c’est le Bus 1 au Marché (colonne d’à côté) ; 17 h, le Bus 3. La ligne était bonne, pas la colonne."
+                requires={['lire-un-croisement', 'mem-double-entree']}
                 solved={busDone}
                 onAnswered={() => setBusDone(true)}
               />
               {busDone && (
                 <Feedback tone="info">
-                  Scores, horaires, prix, températures : dès qu'il y a deux entrées, on lit toujours pareil —
-                  une ligne, une colonne, un croisement.
+                  Des scores, puis des horaires : le geste n'a pas changé d'un pouce en changeant de monde.
                 </Feedback>
               )}
             </div>
@@ -176,12 +204,17 @@ export default function Module04LireCroisement() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Crosshair className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un doigt sur la ligne, un doigt sur la colonne : là où ils se rejoignent, c'est la réponse — et
-            nulle part ailleurs.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={4}>
+            <strong>La suite.</strong> Tu lis une case sans te tromper. Le module suivant ne cherche plus
+            un nombre : il les compare, et fait apparaître un gagnant.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Crosshair className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Quatre lectures, quatre réussites — et pas une seule ligne de décalage.
+            </p>
+          </div>
         </motion.div>
       }
     />

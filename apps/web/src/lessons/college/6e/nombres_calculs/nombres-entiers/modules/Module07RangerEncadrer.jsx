@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ZoomIn } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import OrderingGame from '../../../../../common/components/OrderingGame';
@@ -181,22 +182,36 @@ export default function Module07RangerEncadrer() {
       steps={[
         {
           num: 1,
-          title: "Range dans l'ordre croissant",
+          title: 'Du plus petit au plus grand',
+          subtitle: 'Cinq nombres à mettre en file, en te servant de la méthode du module précédent.',
           done: ascDone,
           content: (
-            <OrderingGame
-              items={A_RANGER}
-              direction="asc"
-              solved={ascDone}
-              onSolved={() => setAscDone(true)}
-              instruction="Du plus petit au plus grand. Si tu te trompes, on te dira exactement où l'ordre casse."
-              formative
-            />
+            <div className="space-y-5">
+              <OrderingGame
+                items={A_RANGER}
+                direction="asc"
+                solved={ascDone}
+                onSolved={() => setAscDone(true)}
+                instruction="Du plus petit au plus grand. Si tu te trompes, on te dira exactement où la file casse."
+                formative
+              />
+              {/* Le geste vient d'être fait dans un sens ; l'étape 2 le
+                  refera dans l'autre. Les deux mots se posent ICI, entre les
+                  deux — jamais dans un titre lu avant la manipulation. */}
+              {ascDone && (
+                <KnowledgeBrick
+                  id="ranger-ordre"
+                  variant="new"
+                  lead="La file que tu viens de construire, et celle que tu vas construire à l'envers, portent chacune un nom."
+                />
+              )}
+            </div>
           ),
         },
         {
           num: 2,
-          title: "Maintenant dans l'ordre décroissant",
+          title: 'Et maintenant, dans l’autre sens',
+          subtitle: 'La même file, du plus grand au plus petit.',
           done: descDone,
           content: (
             <OrderingGame
@@ -216,6 +231,13 @@ export default function Module07RangerEncadrer() {
           done: s3,
           content: (kit) => (
             <div className="space-y-8">
+              {/* Trois saisies vont demander deux bornes rondes : la méthode
+                  et le mot doivent être posés AVANT, pas dans un feedback. */}
+              <KnowledgeBrick
+                id="encadrer"
+                variant="new"
+                lead="Coincer un nombre entre deux repères ronds a un nom, et une manière de faire."
+              />
               {NIVEAUX.map((niveau, i) =>
                 i === 0 || niveauxDone.includes(i - 1) ? (
                   <div key={niveau.unit} className="space-y-3 border-t border-slate-100 pt-5 first:border-0 first:pt-0">
@@ -256,6 +278,7 @@ export default function Module07RangerEncadrer() {
                     options={CONSO.options}
                     correct={CONSO.correct}
                     cols={2}
+                    requires={['encadrer', 'position-chiffre']}
                     explain={CONSO.explain}
                     onAnswered={() => setConsoRevealed(true)}
                   />
@@ -265,6 +288,12 @@ export default function Module07RangerEncadrer() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Tu sais mettre les nombres en file et les coincer entre deux
+          repères. Au module suivant, chaque nombre reçoit une place précise sur une droite.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

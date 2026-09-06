@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import OrderingGame from '../../../../../common/components/OrderingGame';
 import { Feedback, QuantityCard } from '../../../../../common/components/LessonUI';
@@ -137,13 +138,29 @@ export default function Module01Mission() {
           subtitle: "Range d'abord les cartes, puis reviens expliquer ta stratégie.",
           done: step2Done,
           content: (
-            <TapQuestion
-              prompt={REFLEXION.question}
-              options={REFLEXION.options}
-              correct={REFLEXION.correct}
-              explain={REFLEXION.explain}
-              onAnswered={() => setStep2Done(true)}
-            />
+            <div className="space-y-5">
+              {/* Module déclencheur : cette question ne s'appuie sur RIEN de
+                  la leçon — elle demande à l'élève de formuler la stratégie
+                  qu'il vient d'employer, avec ses seuls acquis du cycle 3. */}
+              <TapQuestion
+                prompt={REFLEXION.question}
+                options={REFLEXION.options}
+                correct={REFLEXION.correct}
+                requires={['numeration-cycle3']}
+                explain={REFLEXION.explain}
+                onAnswered={() => setStep2Done(true)}
+              />
+              {/* Le rangement vient d'être fait, la stratégie vient d'être
+                  nommée par l'élève : c'est l'instant où « compter les
+                  chiffres » cesse d'être une astuce et devient une règle. */}
+              {step2Done && (
+                <KnowledgeBrick
+                  id="longueur-ecriture"
+                  variant="new"
+                  lead="Ce que tu viens de repérer à l'œil se dit en une règle."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -172,6 +189,7 @@ export default function Module01Mission() {
                 options={PIEGE.options}
                 correct={PIEGE.correct}
                 cols={3}
+                requires={['longueur-ecriture']}
                 explain={
                   <>
                     Exact : 12 000 est le plus grand. Il a 5 chiffres, contre 4 pour 3 900.{' '}
@@ -205,6 +223,12 @@ export default function Module01Mission() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais repérer le plus grand d'un coup d'œil. Reste à
+          comprendre pourquoi : au module suivant, tu fabriques les nombres de tes mains.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

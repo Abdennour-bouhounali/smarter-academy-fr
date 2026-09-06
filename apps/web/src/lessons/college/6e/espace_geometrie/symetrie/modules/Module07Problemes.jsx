@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Lightbulb } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MirrorLab from '../components/MirrorLab';
@@ -65,7 +64,16 @@ export default function Module07Problemes() {
           title: 'Une longueur, sans mesurer',
           done: longDone,
           content: (
-            <NumericQuestion
+            <div className="space-y-5">
+              {/* La conservation devient un OUTIL de déduction : on le pose
+                  avant la première déduction demandée. */}
+              <KnowledgeBrick
+                id="mem-deduire"
+                variant="new"
+                lead="Puisque rien n’est déformé, connaître la figure suffit à connaître son image."
+              />
+              <NumericQuestion
+                requires={['mem-deduire', 'conservation', 'symetrique-figure']}
               prompt={
                 <>
                   Dans le triangle ci-dessus, <span className="font-mono">AB = 7 cm</span>. Combien mesure{' '}
@@ -82,14 +90,15 @@ export default function Module07Problemes() {
                     ? 'Elle ne divise rien non plus. L’image est une copie exacte : A′B′ = 7 cm.'
                     : 'La symétrie conserve les longueurs : l’image d’un segment de 7 cm mesure 7 cm.'
               }
-              solved={longDone}
-              onAnswered={() => setLongDone(true)}
-            />
+                solved={longDone}
+                onAnswered={() => setLongDone(true)}
+              />
+            </div>
           ),
         },
         {
           num: 2,
-          title: 'Un angle, sans rapporteur',
+          title: 'Un angle, sans le mesurer',
           done: angleDone,
           content: (
             <TapQuestion
@@ -103,8 +112,9 @@ export default function Module07Problemes() {
               options={['55°', '125°', 'On ne peut pas savoir']}
               correct={0}
               cols={3}
+              requires={['mem-deduire', 'conservation']}
               explain="La symétrie conserve les angles : l’angle en B′ mesure exactement 55°, comme celui en B."
-              explainWrong="Pas besoin de rapporteur : la symétrie conserve les angles. 125° serait le supplémentaire — la symétrie ne fait rien de tel."
+              explainWrong="Aucun instrument n’est nécessaire : la symétrie conserve les angles. 125° serait l’angle qui le complète jusqu’à 180° — la symétrie ne fait rien de tel."
               solved={angleDone}
               onAnswered={() => setAngleDone(true)}
             />
@@ -127,6 +137,7 @@ export default function Module07Problemes() {
               options={['48 cm²', '24 cm²', '12 cm²']}
               correct={0}
               cols={3}
+              requires={['mem-deduire', 'conservation', 'axe-symetrie']}
               explain="L’image a la même aire que le motif (24 cm²), et les deux moitiés ne se chevauchent pas : 24 + 24 = 48 cm²."
               explainWrong="La symétrie conserve l’aire : la moitié droite fait aussi 24 cm². Le logo entier en fait donc le double, soit 48 cm²."
               solved={aireDone}
@@ -136,17 +147,9 @@ export default function Module07Problemes() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Lightbulb className="w-6 h-6 mx-auto text-cyan-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Reconnaître une symétrie, c’est <strong className="text-white">gagner des informations
-            gratuitement</strong> : toutes les longueurs et tous les angles de l’image sont déjà connus.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Ta carte est complète. Le papillon va la mettre à l’épreuve.
+        </KnowledgeSnapshot>
       }
     />
   );

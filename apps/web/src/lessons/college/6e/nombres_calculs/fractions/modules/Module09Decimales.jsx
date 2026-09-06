@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -27,7 +28,7 @@ function BridgeUnDemi({ solved, onSolved, react }) {
       <PartitionShape shape="bar" parts={10} shaded={5} tone="sky" size="md" />
 
       <p className="text-sm font-semibold text-slate-700">
-        Écris cette même quantité sous forme de fraction décimale (dénominateur 10).
+        Écris cette même quantité en fraction, sur une unité coupée en 10 parts.
       </p>
       <FractionBuilder
         targetNum={5}
@@ -157,15 +158,15 @@ function BridgeVingtCinqCentiemes({ solved, onSolved, react }) {
 
 /* ─── Étape 3 : la règle générale, en une phrase ─────────────────── */
 const REGLE_Q = {
-  q: "Quelle phrase résume ce que tu viens d'observer ?",
+  q: 'Parmi ces trois fractions, laquelle N’EST PAS une fraction décimale ?',
   options: [
-    'Une fraction décimale est une fraction dont le dénominateur est 10, 100, 1 000…, et elle correspond directement à une écriture à virgule',
-    'Toutes les fractions peuvent devenir des nombres décimaux',
-    'Une fraction décimale est toujours plus petite que 1',
+    <>Un tiers — <MathText>{'$\\frac{1}{3}$'}</MathText></>,
+    <>Sept dixièmes — <MathText>{'$\\frac{7}{10}$'}</MathText></>,
+    <>Douze centièmes — <MathText>{'$\\frac{12}{100}$'}</MathText></>,
   ],
   correct: 0,
   explain:
-    "Exactement : dès que le dénominateur est une puissance de 10 (10, 100, 1 000…), la fraction s'écrit directement avec une virgule. C'est le lien entre les deux notations que tu connais maintenant.",
+    "3 n'est ni 10, ni 100, ni 1 000 : 1/3 n'est donc pas une fraction décimale, et elle ne se traduit pas en une écriture à virgule qui s'arrête. Les deux autres, si : 7/10 = 0,7 et 12/100 = 0,12.",
 };
 
 const FLASH = [
@@ -215,6 +216,11 @@ export default function Module09Decimales() {
           done: s3,
           content: (
             <div className="space-y-4">
+              <KnowledgeBrick
+                id="fraction-decimale"
+                variant="new"
+                lead="Deux fois de suite, un dénominateur 10 ou 100 t’a donné une écriture à virgule. Ces fractions-là portent un nom."
+              />
               <div className="grid grid-cols-2 gap-3">
                 {FLASH.map((f) => (
                   <div key={f.d} className="border-2 border-slate-200 rounded-2xl p-3 bg-white text-center space-y-1">
@@ -231,6 +237,7 @@ export default function Module09Decimales() {
                 correct={REGLE_Q.correct}
                 cols={1}
                 explain={REGLE_Q.explain}
+                requires={['fraction-decimale', 'denominateur']}
                 solved={s3}
                 onAnswered={() => setS3(true)}
               />
@@ -238,6 +245,12 @@ export default function Module09Decimales() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={9}>
+          <strong>La suite.</strong> Ta carte est complète. Le test final n’introduit rien de
+          neuf : il vérifie ce que tu viens de construire.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { PaintRoller } from 'lucide-react';
 import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AnswerBuilder from '../../../../../common/components/AnswerBuilder';
@@ -104,6 +103,7 @@ export default function Module06Chantiers() {
                     ? 'C’est l’aire du mur entier — mais on ne peint pas la fenêtre ! Retranche son aire (1,5 × 1).'
                     : 'Calcule l’aire de la fenêtre (1,5 × 1), puis retranche-la des 10 m² du mur.'
                 }
+                requires={['aire', 'aire-rectangle', 'aire-composee']}
                 solved={fenetreDone}
                 onAnswered={() => setFenetreDone(true)}
               />
@@ -115,6 +115,7 @@ export default function Module06Chantiers() {
                     correct={POTS_Q.correct}
                     cols={3}
                     explain={POTS_Q.explain}
+                    requires={['aire', 'mesurer-par-pavage']}
                     solved={potsDone}
                     onAnswered={() => setPotsDone(true)}
                   />
@@ -135,6 +136,7 @@ export default function Module06Chantiers() {
                 correct={TAPIS_Q.correct}
                 cols={1}
                 explain={TAPIS_Q.explain}
+                requires={['aire', 'perimetre', 'aire-rectangle', 'aire-perimetre-independants', 'mem-aire-vs-perimetre']}
                 solved={tapisDone}
                 onAnswered={() => setTapisDone(true)}
               />
@@ -149,13 +151,10 @@ export default function Module06Chantiers() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <PaintRoller className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Sur un chantier, une aire se calcule, se retranche et s'achète — toujours en m², et jamais en se fiant
-            au périmètre.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tout ce que tu vois ici est ce que la mission finale va te
+          demander de mobiliser — rien de plus.
+        </KnowledgeSnapshot>
       }
     />
   );

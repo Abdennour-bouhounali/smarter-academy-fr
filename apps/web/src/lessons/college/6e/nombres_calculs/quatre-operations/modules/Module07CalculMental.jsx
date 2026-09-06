@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import ConceptCard from '../../../../../common/components/ConceptCard';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -101,6 +102,7 @@ function StrategyExample({ strat, solved, onAnswered }) {
       {atLastStep && (
         <NumericQuestion
           prompt={`À toi : ${strat.quiz.q}`}
+          requires={['strategies-mentales']}
           expected={strat.quiz.ans}
           explain={strat.quiz.hint}
           solved={solved}
@@ -144,6 +146,7 @@ function ChallengeBlock({ ch, index, stratSolved, onStratAnswered, numSolved, on
 
       <TapQuestion
         prompt="Quelle stratégie choisis-tu ?"
+        requires={['strategies-mentales']}
         options={ch.opts.map((o) => o.label)}
         correct={correctIdx}
         cols={1}
@@ -156,6 +159,7 @@ function ChallengeBlock({ ch, index, stratSolved, onStratAnswered, numSolved, on
         <div className="border-t border-slate-100 pt-4">
           <NumericQuestion
             prompt="Maintenant calcule le résultat :"
+            requires={['strategies-mentales']}
             expected={ch.expectedAnswer}
             explain={`${ch.q} = ${ch.expectedAnswer}`}
             solved={numSolved}
@@ -181,42 +185,6 @@ export default function Module07CalculMental() {
   const stepsDone = STRATEGIES.map((s) => masteredIds.includes(s.id));
   const s6done = numAnswered[0] && numAnswered[1];
 
-  const steps = [
-    ...STRATEGIES.map((strat, i) => ({
-      num: i + 1,
-      title: strat.title,
-      done: stepsDone[i],
-      content: (
-        <StrategyExample
-          strat={strat}
-          solved={stepsDone[i]}
-          onAnswered={() => markMastered(strat.id)}
-        />
-      ),
-    })),
-    {
-      num: STRATEGIES.length + 1,
-      title: 'Défi stratège',
-      subtitle: 'Choisis ta stratégie, puis calcule. La stratégie compte autant que le résultat !',
-      done: s6done,
-      content: (
-        <div className="space-y-6">
-          {CHALLENGES.map((ch, i) => (
-            <ChallengeBlock
-              key={ch.q}
-              ch={ch}
-              index={i}
-              stratSolved={stratPicked[i]}
-              onStratAnswered={() => markStrat(i)}
-              numSolved={numAnswered[i]}
-              onNumAnswered={() => markNum(i)}
-            />
-          ))}
-        </div>
-      ),
-    },
-  ];
-
   return (
     <ContentModule
       ctx={MODULE_CTX}
@@ -224,7 +192,7 @@ export default function Module07CalculMental() {
       moduleNumber={7}
       moduleTitle="Le laboratoire du calcul malin"
       moduleSubtitle="Apprendre des stratégies de calcul mental et choisir la plus efficace."
-      estimatedTime="10 min"
+      estimatedTime="11 min"
       intro={
         <ConceptCard label="Principe du calcul malin" emoji="🧠" color="cyan">
           <p className="text-sm">
@@ -233,16 +201,104 @@ export default function Module07CalculMental() {
           </p>
         </ConceptCard>
       }
-      steps={steps}
+      steps={[
+        {
+          num: 1,
+          title: STRATEGIES[0].title,
+          done: stepsDone[0],
+          content: (
+            <div className="space-y-5">
+              <StrategyExample
+                strat={STRATEGIES[0]}
+                solved={stepsDone[0]}
+                onAnswered={() => markMastered(STRATEGIES[0].id)}
+              />
+              {/* La brique est posée dès que l'exemple animé a montré le
+                  détour « +10 puis −1 » : le principe est le même pour les
+                  quatre stratégies qui suivent. */}
+              <KnowledgeBrick
+                id="strategies-mentales"
+                variant="new"
+                lead="Le détour que tu viens de suivre : passer par un nombre facile, puis corriger."
+              />
+            </div>
+          ),
+        },
+        {
+          num: 2,
+          title: STRATEGIES[1].title,
+          done: stepsDone[1],
+          content: (
+            <StrategyExample
+              strat={STRATEGIES[1]}
+              solved={stepsDone[1]}
+              onAnswered={() => markMastered(STRATEGIES[1].id)}
+            />
+          ),
+        },
+        {
+          num: 3,
+          title: STRATEGIES[2].title,
+          done: stepsDone[2],
+          content: (
+            <StrategyExample
+              strat={STRATEGIES[2]}
+              solved={stepsDone[2]}
+              onAnswered={() => markMastered(STRATEGIES[2].id)}
+            />
+          ),
+        },
+        {
+          num: 4,
+          title: STRATEGIES[3].title,
+          done: stepsDone[3],
+          content: (
+            <StrategyExample
+              strat={STRATEGIES[3]}
+              solved={stepsDone[3]}
+              onAnswered={() => markMastered(STRATEGIES[3].id)}
+            />
+          ),
+        },
+        {
+          num: 5,
+          title: STRATEGIES[4].title,
+          done: stepsDone[4],
+          content: (
+            <StrategyExample
+              strat={STRATEGIES[4]}
+              solved={stepsDone[4]}
+              onAnswered={() => markMastered(STRATEGIES[4].id)}
+            />
+          ),
+        },
+        {
+          num: 6,
+          title: 'Défi stratège',
+          subtitle: 'Choisis ta stratégie, puis calcule. La stratégie compte autant que le résultat !',
+          done: s6done,
+          content: (
+            <div className="space-y-6">
+              {CHALLENGES.map((ch, i) => (
+                <ChallengeBlock
+                  key={ch.q}
+                  ch={ch}
+                  index={i}
+                  stratSolved={stratPicked[i]}
+                  onStratAnswered={() => markStrat(i)}
+                  numSolved={numAnswered[i]}
+                  onNumAnswered={() => markNum(i)}
+                />
+              ))}
+            </div>
+          ),
+        },
+      ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-2xl p-6 text-center space-y-2"
-        >
-          <div className="text-3xl">🏅 Stratège du calcul</div>
-          <div className="text-xl font-space font-bold">Tu penses avant de calculer !</div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Tu as des stratégies rapides. Reste à savoir quand les
+          employer — et quand poser le calcul sans discuter.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowLeftRight } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { convert, formatLength, formatDec, parseDec } from '../components/lengthUtils';
 import ConservedSegment from '../components/ConservedSegment';
@@ -42,6 +41,7 @@ function ConversionRound({ round, dirDone, setDirDone, solved, onAnswered, showS
       </div>
 
       <TapQuestion
+        requires={['escalier-longueurs', 'longueur-invariante']}
         prompt={`Le ${smaller} est plus petit que le ${bigger}. Avant de calculer : le nombre va-t-il changer comment ?`}
         options={DIRECTION_OPTIONS}
         correct={round.grow ? 0 : 1}
@@ -57,6 +57,7 @@ function ConversionRound({ round, dirDone, setDirDone, solved, onAnswered, showS
       {(dirDone || solved) && (
         <div className="border-t border-slate-100 pt-4">
           <NumericQuestion
+            requires={['convertir-methode', 'escalier-longueurs']}
             prompt={`Calcule maintenant la valeur exacte, en ${round.to}.`}
             suffix={round.to}
             expected={expected}
@@ -123,6 +124,23 @@ export default function Module04Conversions() {
           done: allRoundsDone,
           content: (
             <div className="space-y-8">
+              {/* La méthode est posée AVANT le premier calcul exact : la
+                  première manche fait choisir le sens (le geste), la brique le
+                  nomme, et seulement ensuite on chiffre. */}
+              {dirDone.r1 && (
+                <KnowledgeBrick
+                  id="convertir-methode"
+                  variant="new"
+                  lead="Tu viens de décider dans quel sens le nombre part. C'est la première moitié du travail."
+                />
+              )}
+              {dirDone.r1 && (
+                <KnowledgeBrick
+                  id="mem-sens-conversion"
+                  variant="new"
+                  lead="Le seul réflexe à retenir pour ne jamais convertir à l'envers."
+                />
+              )}
               {ROUNDS.map((r, i) =>
                 i === 0 || roundsDone[ROUNDS[i - 1].id] ? (
                   <ConversionRound
@@ -145,6 +163,7 @@ export default function Module04Conversions() {
           done: detDone,
           content: (
             <TapQuestion
+              requires={['convertir-methode', 'mem-sens-conversion', 'escalier-longueurs']}
               prompt={DETECTIVE_Q.q}
               options={DETECTIVE_Q.options}
               correct={DETECTIVE_Q.correct}
@@ -157,13 +176,10 @@ export default function Module04Conversions() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <ArrowLeftRight className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Avant de « déplacer la virgule », demande-toi toujours pourquoi elle bouge : c'est ce raisonnement qui
-            évite les erreurs.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu convertis juste. Reste à savoir, avant même de calculer,
+          quel résultat est plausible — c'est l'entraînement du module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

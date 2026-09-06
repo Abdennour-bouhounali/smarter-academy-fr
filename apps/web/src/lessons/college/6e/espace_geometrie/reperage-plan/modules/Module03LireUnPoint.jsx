@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Crosshair } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoordGrid from '../components/CoordGrid';
@@ -101,19 +100,35 @@ export default function Module03LireUnPoint() {
                 </p>
               )}
               {guideDone && (
-                <Feedback tone="ok">
-                  Les guides se croisent sur T. Le guide vertical part de{' '}
-                  <strong className="font-mono">{T.col}</strong> sur l’axe horizontal, le guide horizontal de{' '}
-                  <strong className="font-mono">{T.row}</strong> sur l’axe vertical : T ={' '}
-                  <strong className="font-mono">{formatCoords(T)}</strong>.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Les guides se croisent sur T. Le guide vertical part de{' '}
+                    <strong className="font-mono">{T.col}</strong> sur l’axe horizontal — c’est
+                    l’abscisse ; le guide horizontal part de{' '}
+                    <strong className="font-mono">{T.row}</strong> sur l’axe vertical — c’est
+                    l’ordonnée.
+                  </Feedback>
+                  {/* Les deux nombres sont maintenant lus : on peut nommer et
+                      écrire le couple, PUIS fixer le geste en méthode. Les
+                      deux briques précèdent toute demande de l'étape 2. */}
+                  <KnowledgeBrick
+                    id="coordonnees"
+                    variant="new"
+                    lead="Les deux nombres que tes guides viennent de désigner s’écrivent ensemble, et ce couple a un nom."
+                  />
+                  <KnowledgeBrick
+                    id="lire-un-point"
+                    variant="new"
+                    lead="Ce que tu as fait avec les guides est une méthode : on peut la refaire sans eux."
+                  />
+                </>
               )}
             </div>
           ),
         },
         {
           num: 2,
-          title: 'Écris les coordonnées de T',
+          title: 'Écris le nom du point T',
           done: readDone,
           content: (
             <TapQuestion
@@ -131,6 +146,7 @@ export default function Module03LireUnPoint() {
               options={readOptions(T)}
               correct={0}
               cols={3}
+              requires={['coordonnees', 'lire-un-point', 'abscisse', 'ordonnee']}
               explain="On lit d’abord l’horizontale (4), puis la verticale (2) : T = (4 ; 2)."
               explainWrong="Attention à l’ordre et au comptage : le premier nombre se lit sur l’axe horizontal en partant de 0, le second sur l’axe vertical."
               solved={readDone}
@@ -145,6 +161,7 @@ export default function Module03LireUnPoint() {
           done: batchDone,
           content: (
             <BatchChoiceQuestion
+              requires={['coordonnees', 'lire-un-point', 'ordre-du-couple']}
               intro={
                 <div className="space-y-3">
                   <CoordGrid
@@ -159,7 +176,7 @@ export default function Module03LireUnPoint() {
                     ariaLabel="Quadrillage portant les points M, N et P"
                   />
                   <p className="text-sm text-slate-600">
-                    Lis les coordonnées de chaque point. Souviens-toi : horizontale d’abord.
+                    Lis les coordonnées de chaque point. Souviens-toi : l’abscisse d’abord.
                   </p>
                 </div>
               }
@@ -188,17 +205,10 @@ export default function Module03LireUnPoint() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Crosshair className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Lire un point, c’est croiser deux informations : une sur l’axe horizontal, une sur l’axe
-            vertical. Le point est exactement à leur intersection.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais lire un point déjà posé. Au module suivant, on fait le
+          geste inverse : on te donne les deux nombres, et c’est toi qui poses le point.
+        </KnowledgeSnapshot>
       }
     />
   );

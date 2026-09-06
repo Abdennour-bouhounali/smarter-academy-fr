@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Droplets, FlaskConical, Sparkles } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { FlaskConical, Sparkles } from 'lucide-react';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { ChoiceGrid } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LiquidContainer, { containerLip } from '../components/LiquidContainer';
@@ -452,6 +453,7 @@ function CompareLab({ solved, onSolved, react }) {
       {allDone && (
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: reduced ? 0 : 0.6 }} className="space-y-4">
           <TapQuestion
+            requires={[]}
             prompt="Alors, lequel contient le plus ?"
             options={['🍶 A', '🫗 B', '⚖️ Pareil']}
             correct={0}
@@ -505,24 +507,48 @@ export default function Module01Mission() {
           title: 'Qui contient le plus ?',
           subtitle: 'Ton œil peut-il trouver la réponse ?',
           done: pourDone,
-          content: (kit) => <PourExperiment solved={pourDone} onSolved={() => setPourDone(true)} react={kit.react} />,
+          content: (kit) => (
+            <div className="space-y-5">
+              <PourExperiment solved={pourDone} onSolved={() => setPourDone(true)} react={kit.react} />
+              {/* Le transvasement vient de contredire l'œil : c'est l'instant
+                  où le mot « contenance » désigne quelque chose de précis, et
+                  non plus « la taille du récipient ». */}
+              {pourDone && (
+                <KnowledgeBrick
+                  id="contenance"
+                  variant="new"
+                  lead="Ta bouteille a débordé la cruche alors qu’elle paraissait plus fine. Ce que tu viens de comparer porte un nom."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
           title: '🕵️ À toi de trouver !',
           subtitle: 'Deux récipients inconnus. Trouve une méthode pour les comparer.',
           done: freeDone,
-          content: (kit) => <CompareLab solved={freeDone} onSolved={() => setFreeDone(true)} react={kit.react} />,
+          content: (kit) => (
+            <div className="space-y-5">
+              <CompareLab solved={freeDone} onSolved={() => setFreeDone(true)} react={kit.react} />
+              {/* La méthode vient d'être TROUVÉE par l'élève, pas donnée : la
+                  brique ne fait que la fixer pour la suite de la leçon. */}
+              {freeDone && (
+                <KnowledgeBrick
+                  id="meme-recipient-mesure"
+                  variant="new"
+                  lead="Tu as trouvé toi-même l’astuce : toujours le même verre des deux côtés."
+                />
+              )}
+            </div>
+          ),
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Droplets className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Tu sais comparer des contenances : en transvasant, ou en comptant des verres identiques. Prochaine étape :
-            donner un nom à cette unité, et la mesurer vraiment.
-          </p>
-        </div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Compter en « verres » ne marche qu’entre vous. Au module
+          suivant, tu découvres l’unité que tout le monde partage.
+        </KnowledgeSnapshot>
       }
     />
   );

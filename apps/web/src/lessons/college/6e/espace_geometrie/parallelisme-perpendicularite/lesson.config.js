@@ -29,6 +29,14 @@ export const LESSON_BASE_PATH = '/courses/college/6e/espace_geometrie/parallelis
 export const LESSON_CONFIG = {
   id: 'parallelisme-perpendicularite',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // Formalisation continue par la carte : chaque module pose ses briques et se
+  // termine sur l'état courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A) : exactement ce que les cinq
+  // questions du module 0 mesurent — la droite et sa notation, l'angle droit
+  // et sa mesure. Le parallélisme et la perpendicularité, eux, sont l'objet
+  // même de la leçon et sont établis par ses briques.
+  priorKnowledge: ['notation-segment', 'demi-droite', 'angle-droit', 'angle-aigu-obtus'],
   title: 'Parallélisme et perpendicularité',
   description:
     'Reconnaître, vérifier et construire des droites parallèles et perpendiculaires, avec la règle et l’équerre, jusqu’au plus court chemin d’un point à une droite.',

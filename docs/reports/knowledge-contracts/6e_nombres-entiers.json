@@ -2,11 +2,227 @@
   "lesson": "nombres-entiers",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "numeration-cycle3",
+    "lecture-ecriture-cycle3"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "longueur-ecriture",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module01Mission.jsx",
+        "line": 157,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "position-chiffre",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module02Construire.jsx",
+        "line": 288,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "zero-place",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module02Construire.jsx",
+        "line": 320,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "groupement-dix",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module02Construire.jsx",
+        "line": 397,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ecriture-francaise",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module03LireEcrire.jsx",
+        "line": 390,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "valeur-position",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module04ValeurPosition.jsx",
+        "line": 309,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "chiffre-vs-nombre",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module04ValeurPosition.jsx",
+        "line": 332,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "pas-graduation",
+      "type": "concepts",
+      "module": 8,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module08DroiteGraduee.jsx",
+        "line": 237,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "droite-ordonne",
+      "type": "regles",
+      "module": 8,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module08DroiteGraduee.jsx",
+        "line": 333,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ordre-grandeur",
+      "type": "concepts",
+      "module": 9,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module09MondeReel.jsx",
+        "line": 166,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "classe-trois",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module03LireEcrire.jsx",
+        "line": 385,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "signes-comparaison",
+      "type": "vocabulaire",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module06Comparer.jsx",
+        "line": 391,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ranger-ordre",
+      "type": "vocabulaire",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module07RangerEncadrer.jsx",
+        "line": 202,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "decomposer",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module05Decomposer.jsx",
+        "line": 294,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "recomposer",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module05Decomposer.jsx",
+        "line": 361,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "comparer-methode",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module06Comparer.jsx",
+        "line": 386,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "encadrer",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module07RangerEncadrer.jsx",
+        "line": 236,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "placer-sur-droite",
+      "type": "methodes",
+      "module": 8,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module08DroiteGraduee.jsx",
+        "line": 293,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-position-decide",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module04ValeurPosition.jsx",
+        "line": 314,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-digit",
@@ -15,8 +231,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module00Diagnostic.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "numeration-cycle3"
+      ],
+      "prerequisiteStatus": {
+        "numeration-cycle3": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +246,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module00Diagnostic.jsx",
-      "line": 46,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 47,
+      "requires": [
+        "numeration-cycle3"
+      ],
+      "prerequisiteStatus": {
+        "numeration-cycle3": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +262,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module00Diagnostic.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 62,
+      "requires": [
+        "numeration-cycle3"
+      ],
+      "prerequisiteStatus": {
+        "numeration-cycle3": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +278,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module00Diagnostic.jsx",
-      "line": 74,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "lecture-ecriture-cycle3"
+      ],
+      "prerequisiteStatus": {
+        "lecture-ecriture-cycle3": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +294,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module00Diagnostic.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 88,
+      "requires": [
+        "lecture-ecriture-cycle3"
+      ],
+      "prerequisiteStatus": {
+        "lecture-ecriture-cycle3": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,21 +310,45 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module00Diagnostic.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 104,
+      "requires": [
+        "lecture-ecriture-cycle3"
+      ],
+      "prerequisiteStatus": {
+        "lecture-ecriture-cycle3": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S3-Q1",
+      "questionId": "M01-S2-Q1",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module01Mission.jsx",
+      "line": 145,
+      "requires": [
+        "numeration-cycle3"
+      ],
+      "prerequisiteStatus": {
+        "numeration-cycle3": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q2",
       "module": 1,
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module01Mission.jsx",
-      "line": 480,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 187,
+      "requires": [
+        "longueur-ecriture"
+      ],
+      "prerequisiteStatus": {
+        "longueur-ecriture": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +358,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module03LireEcrire.jsx",
-      "line": 414,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 346,
+      "requires": [
+        "position-chiffre",
+        "zero-place"
+      ],
+      "prerequisiteStatus": {
+        "position-chiffre": "established@M2",
+        "zero-place": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,21 +376,33 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module03LireEcrire.jsx",
-      "line": 455,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 395,
+      "requires": [
+        "classe-trois",
+        "ecriture-francaise"
+      ],
+      "prerequisiteStatus": {
+        "classe-trois": "established@M3",
+        "ecriture-francaise": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M04-S4-Q1",
+      "questionId": "M04-S3-Q1",
       "module": 4,
-      "step": 4,
+      "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module04ValeurPosition.jsx",
-      "line": 329,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 339,
+      "requires": [
+        "valeur-position",
+        "chiffre-vs-nombre"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position": "established@M4",
+        "chiffre-vs-nombre": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +412,15 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module05Decomposer.jsx",
-      "line": 299,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 311,
+      "requires": [
+        "decomposer",
+        "valeur-position"
+      ],
+      "prerequisiteStatus": {
+        "decomposer": "established@M5",
+        "valeur-position": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +430,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module05Decomposer.jsx",
-      "line": 348,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 368,
+      "requires": [
+        "recomposer",
+        "zero-place"
+      ],
+      "prerequisiteStatus": {
+        "recomposer": "established@M5",
+        "zero-place": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +448,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module05Decomposer.jsx",
-      "line": 393,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 414,
+      "requires": [
+        "zero-place",
+        "valeur-position"
+      ],
+      "prerequisiteStatus": {
+        "zero-place": "established@M2",
+        "valeur-position": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,9 +466,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module05Decomposer.jsx",
-      "line": 404,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 426,
+      "requires": [
+        "zero-place",
+        "valeur-position"
+      ],
+      "prerequisiteStatus": {
+        "zero-place": "established@M2",
+        "valeur-position": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -182,9 +484,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module06Comparer.jsx",
-      "line": 327,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 288,
+      "requires": [
+        "groupement-dix",
+        "position-chiffre"
+      ],
+      "prerequisiteStatus": {
+        "groupement-dix": "established@M2",
+        "position-chiffre": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -194,9 +502,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module06Comparer.jsx",
-      "line": 356,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 318,
+      "requires": [
+        "longueur-ecriture"
+      ],
+      "prerequisiteStatus": {
+        "longueur-ecriture": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -206,9 +518,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module06Comparer.jsx",
-      "line": 443,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 414,
+      "requires": [
+        "comparer-methode",
+        "valeur-position"
+      ],
+      "prerequisiteStatus": {
+        "comparer-methode": "established@M6",
+        "valeur-position": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -218,9 +536,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module07RangerEncadrer.jsx",
-      "line": 254,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 276,
+      "requires": [
+        "encadrer",
+        "position-chiffre"
+      ],
+      "prerequisiteStatus": {
+        "encadrer": "established@M7",
+        "position-chiffre": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +554,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module08DroiteGraduee.jsx",
-      "line": 200,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 201,
+      "requires": [
+        "position-chiffre",
+        "ranger-ordre"
+      ],
+      "prerequisiteStatus": {
+        "position-chiffre": "established@M2",
+        "ranger-ordre": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,9 +572,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module08DroiteGraduee.jsx",
-      "line": 234,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 244,
+      "requires": [
+        "pas-graduation"
+      ],
+      "prerequisiteStatus": {
+        "pas-graduation": "established@M8"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -254,9 +588,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module08DroiteGraduee.jsx",
-      "line": 288,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 308,
+      "requires": [
+        "pas-graduation",
+        "placer-sur-droite"
+      ],
+      "prerequisiteStatus": {
+        "pas-graduation": "established@M8",
+        "placer-sur-droite": "established@M8"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -266,9 +606,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module09MondeReel.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 94,
+      "requires": [
+        "comparer-methode",
+        "longueur-ecriture"
+      ],
+      "prerequisiteStatus": {
+        "comparer-methode": "established@M6",
+        "longueur-ecriture": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -278,9 +624,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module09MondeReel.jsx",
-      "line": 152,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 154,
+      "requires": [
+        "longueur-ecriture",
+        "position-chiffre"
+      ],
+      "prerequisiteStatus": {
+        "longueur-ecriture": "established@M1",
+        "position-chiffre": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -290,9 +642,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module09MondeReel.jsx",
-      "line": 203,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 206,
+      "requires": [
+        "encadrer",
+        "comparer-methode"
+      ],
+      "prerequisiteStatus": {
+        "encadrer": "established@M7",
+        "comparer-methode": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -302,9 +660,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module10Problemes.jsx",
-      "line": 414,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 417,
+      "requires": [
+        "encadrer",
+        "position-chiffre"
+      ],
+      "prerequisiteStatus": {
+        "encadrer": "established@M7",
+        "position-chiffre": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -314,9 +678,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module11BossFinal.jsx",
-      "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 41,
+      "requires": [
+        "classe-trois",
+        "position-chiffre",
+        "zero-place"
+      ],
+      "prerequisiteStatus": {
+        "classe-trois": "established@M3",
+        "position-chiffre": "established@M2",
+        "zero-place": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -326,9 +698,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module11BossFinal.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "valeur-position",
+        "classe-trois"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position": "established@M4",
+        "classe-trois": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -338,9 +716,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module11BossFinal.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "decomposer",
+        "zero-place"
+      ],
+      "prerequisiteStatus": {
+        "decomposer": "established@M5",
+        "zero-place": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -350,9 +734,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module11BossFinal.jsx",
-      "line": 88,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "comparer-methode",
+        "signes-comparaison"
+      ],
+      "prerequisiteStatus": {
+        "comparer-methode": "established@M6",
+        "signes-comparaison": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -362,9 +752,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module11BossFinal.jsx",
-      "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 109,
+      "requires": [
+        "ranger-ordre",
+        "comparer-methode"
+      ],
+      "prerequisiteStatus": {
+        "ranger-ordre": "established@M7",
+        "comparer-methode": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -374,9 +770,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module11BossFinal.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 126,
+      "requires": [
+        "pas-graduation",
+        "placer-sur-droite"
+      ],
+      "prerequisiteStatus": {
+        "pas-graduation": "established@M8",
+        "placer-sur-droite": "established@M8"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -386,9 +788,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/modules/Module11BossFinal.jsx",
-      "line": 136,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 143,
+      "requires": [
+        "comparer-methode",
+        "longueur-ecriture"
+      ],
+      "prerequisiteStatus": {
+        "comparer-methode": "established@M6",
+        "longueur-ecriture": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }

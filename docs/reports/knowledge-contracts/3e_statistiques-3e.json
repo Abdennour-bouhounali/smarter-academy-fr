@@ -2,11 +2,241 @@
   "lesson": "statistiques-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "calcul-numerique",
+    "nombres-relatifs",
+    "ordre-nombres",
+    "proportionnalite",
+    "pourcentage"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "serie-statistique",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
+        "line": 312,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "frequence",
+      "type": "formules",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
+        "line": 366,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "stabilisation",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
+        "line": 516,
+        "step": 5,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "probabilite",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
+        "line": 613,
+        "step": 7,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "moyenne",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module02PointDequilibre.jsx",
+        "line": 114,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "calcul-moyenne",
+      "type": "formules",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module02PointDequilibre.jsx",
+        "line": 144,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mediane",
+      "type": "concepts",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx",
+        "line": 111,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "etendue",
+      "type": "formules",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx",
+        "line": 184,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "influence-valeur",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module04SerieElastique.jsx",
+        "line": 193,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "comparer-series",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module06DeuxClasses.jsx",
+        "line": 159,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "experience-aleatoire",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
+        "line": 278,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "valeur-extreme",
+      "type": "vocabulaire",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module04SerieElastique.jsx",
+        "line": 200,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "indicateur",
+      "type": "vocabulaire",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module05TroisIndicateurs.jsx",
+        "line": 81,
+        "step": null,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "mediane-effectif-pair",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx",
+        "line": 159,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "moyenne-ponderee",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module05TroisIndicateurs.jsx",
+        "line": 123,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "choisir-indicateur",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module05TroisIndicateurs.jsx",
+        "line": 196,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "viser-une-moyenne",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module07LaboDonnees.jsx",
+        "line": 154,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-frequence-vs-probabilite",
+      "type": "memoriser",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
+        "line": 663,
+        "step": 8,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-ce-que-la-moyenne-ne-dit-pas",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module02PointDequilibre.jsx",
+        "line": 196,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-lire-un-chiffre-publie",
+      "type": "memoriser",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module07LaboDonnees.jsx",
+        "line": 186,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "st-d1",
@@ -14,9 +244,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module00Diagnostic.jsx",
-      "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 26,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +260,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module00Diagnostic.jsx",
-      "line": 30,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 37,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +276,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module00Diagnostic.jsx",
-      "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 48,
+      "requires": [
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,13 +292,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module00Diagnostic.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "variations"
+      "line": 59,
+      "requires": [
+        "ordre-nombres"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "ordre-nombres": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "st-d5",
@@ -64,9 +308,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module00Diagnostic.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "proportionnalite",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -76,9 +326,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 305,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 324,
+      "requires": [
+        "serie-statistique",
+        "experience-aleatoire"
+      ],
+      "prerequisiteStatus": {
+        "serie-statistique": "established@M1",
+        "experience-aleatoire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -88,12 +344,18 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 348,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "frequence"
+      "line": 376,
+      "requires": [
+        "frequence",
+        "serie-statistique",
+        "pourcentage"
       ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1",
+        "serie-statistique": "established@M1",
+        "pourcentage": "prior"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -102,9 +364,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 417,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 446,
+      "requires": [
+        "frequence",
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1",
+        "serie-statistique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -114,9 +382,13 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 458,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 488,
+      "requires": [
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -126,9 +398,15 @@
       "step": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 496,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 535,
+      "requires": [
+        "frequence",
+        "stabilisation"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1",
+        "stabilisation": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -138,9 +416,15 @@
       "step": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 519,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 558,
+      "requires": [
+        "experience-aleatoire",
+        "stabilisation"
+      ],
+      "prerequisiteStatus": {
+        "experience-aleatoire": "established@M1",
+        "stabilisation": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,9 +434,15 @@
       "step": 7,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 555,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 597,
+      "requires": [
+        "frequence",
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1",
+        "serie-statistique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,9 +452,15 @@
       "step": 8,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 582,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 633,
+      "requires": [
+        "frequence",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1",
+        "probabilite": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +470,15 @@
       "step": 9,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 633,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 691,
+      "requires": [
+        "probabilite",
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "established@M1",
+        "frequence": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +488,13 @@
       "step": 10,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 665,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 724,
+      "requires": [
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +504,17 @@
       "step": 10,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 677,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 737,
+      "requires": [
+        "mem-frequence-vs-probabilite",
+        "frequence",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "mem-frequence-vs-probabilite": "established@M1",
+        "frequence": "established@M1",
+        "probabilite": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +524,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module02PointDequilibre.jsx",
-      "line": 135,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 152,
+      "requires": [
+        "calcul-moyenne",
+        "moyenne",
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-moyenne": "established@M2",
+        "moyenne": "established@M2",
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,13 +544,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module02PointDequilibre.jsx",
-      "line": 159,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "mediane-stat"
+      "line": 179,
+      "requires": [
+        "moyenne",
+        "calcul-moyenne"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "moyenne": "established@M2",
+        "calcul-moyenne": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M03-S2-Q1",
@@ -236,13 +562,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx",
-      "line": 130,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "appartient"
+      "line": 142,
+      "requires": [
+        "mediane",
+        "serie-statistique"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "mediane": "established@M3",
+        "serie-statistique": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M03-S3-Q2",
@@ -250,12 +580,16 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx",
-      "line": 162,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "extremum"
+      "line": 195,
+      "requires": [
+        "etendue",
+        "serie-statistique"
       ],
+      "prerequisiteStatus": {
+        "etendue": "established@M3",
+        "serie-statistique": "established@M1"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -264,9 +598,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx",
-      "line": 185,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 220,
+      "requires": [
+        "etendue",
+        "moyenne"
+      ],
+      "prerequisiteStatus": {
+        "etendue": "established@M3",
+        "moyenne": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -276,9 +616,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module04SerieElastique.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "moyenne",
+        "mediane"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M2",
+        "mediane": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -288,9 +634,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module04SerieElastique.jsx",
-      "line": 171,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 176,
+      "requires": [
+        "mediane",
+        "moyenne"
+      ],
+      "prerequisiteStatus": {
+        "mediane": "established@M3",
+        "moyenne": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -300,9 +652,19 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module04SerieElastique.jsx",
-      "line": 193,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 215,
+      "requires": [
+        "influence-valeur",
+        "moyenne",
+        "mediane",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "influence-valeur": "established@M4",
+        "moyenne": "established@M2",
+        "mediane": "established@M3",
+        "etendue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -313,8 +675,18 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module05TroisIndicateurs.jsx",
       "line": 100,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "moyenne",
+        "mediane",
+        "valeur-extreme",
+        "indicateur"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M2",
+        "mediane": "established@M3",
+        "valeur-extreme": "established@M4",
+        "indicateur": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -324,9 +696,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module05TroisIndicateurs.jsx",
-      "line": 125,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 132,
+      "requires": [
+        "moyenne-ponderee",
+        "calcul-moyenne",
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "moyenne-ponderee": "established@M5",
+        "calcul-moyenne": "established@M2",
+        "serie-statistique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -336,9 +716,21 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module05TroisIndicateurs.jsx",
-      "line": 162,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 171,
+      "requires": [
+        "indicateur",
+        "moyenne",
+        "mediane",
+        "etendue",
+        "valeur-extreme"
+      ],
+      "prerequisiteStatus": {
+        "indicateur": "established@M5",
+        "moyenne": "established@M2",
+        "mediane": "established@M3",
+        "etendue": "established@M3",
+        "valeur-extreme": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -348,9 +740,19 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module06DeuxClasses.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "moyenne",
+        "mediane",
+        "etendue",
+        "indicateur"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M2",
+        "mediane": "established@M3",
+        "etendue": "established@M3",
+        "indicateur": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -360,9 +762,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module06DeuxClasses.jsx",
-      "line": 115,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 118,
+      "requires": [
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "etendue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -372,9 +778,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module06DeuxClasses.jsx",
-      "line": 137,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 142,
+      "requires": [
+        "etendue",
+        "moyenne",
+        "valeur-extreme",
+        "choisir-indicateur"
+      ],
+      "prerequisiteStatus": {
+        "etendue": "established@M3",
+        "moyenne": "established@M2",
+        "valeur-extreme": "established@M4",
+        "choisir-indicateur": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -384,9 +800,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module07LaboDonnees.jsx",
-      "line": 133,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 137,
+      "requires": [
+        "moyenne",
+        "calcul-moyenne"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M2",
+        "calcul-moyenne": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -396,9 +818,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module07LaboDonnees.jsx",
-      "line": 155,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 169,
+      "requires": [
+        "moyenne",
+        "mem-ce-que-la-moyenne-ne-dit-pas",
+        "comparer-series",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M2",
+        "mem-ce-que-la-moyenne-ne-dit-pas": "established@M2",
+        "comparer-series": "established@M6",
+        "etendue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -408,9 +840,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 63,
+      "requires": [
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "serie-statistique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -420,9 +856,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 66,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 75,
+      "requires": [
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "serie-statistique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -432,9 +872,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 77,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 87,
+      "requires": [
+        "moyenne-ponderee",
+        "calcul-moyenne",
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "moyenne-ponderee": "established@M5",
+        "calcul-moyenne": "established@M2",
+        "serie-statistique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -444,9 +892,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 88,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 99,
+      "requires": [
+        "mediane"
+      ],
+      "prerequisiteStatus": {
+        "mediane": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -456,9 +908,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 111,
+      "requires": [
+        "mediane",
+        "mediane-effectif-pair"
+      ],
+      "prerequisiteStatus": {
+        "mediane": "established@M3",
+        "mediane-effectif-pair": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -468,9 +926,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 110,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "etendue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -480,9 +942,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 121,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 135,
+      "requires": [
+        "influence-valeur",
+        "moyenne",
+        "mediane"
+      ],
+      "prerequisiteStatus": {
+        "influence-valeur": "established@M4",
+        "moyenne": "established@M2",
+        "mediane": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -492,9 +962,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 137,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 152,
+      "requires": [
+        "influence-valeur",
+        "calcul-moyenne"
+      ],
+      "prerequisiteStatus": {
+        "influence-valeur": "established@M4",
+        "calcul-moyenne": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -504,9 +980,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 148,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 164,
+      "requires": [
+        "comparer-series",
+        "moyenne",
+        "mediane",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "comparer-series": "established@M6",
+        "moyenne": "established@M2",
+        "mediane": "established@M3",
+        "etendue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -516,73 +1002,20 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module08MissionFinale.jsx",
-      "line": 164,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 181,
+      "requires": [
+        "mem-lire-un-chiffre-publie",
+        "moyenne",
+        "mem-ce-que-la-moyenne-ne-dit-pas"
+      ],
+      "prerequisiteStatus": {
+        "mem-lire-un-chiffre-publie": "established@M7",
+        "moyenne": "established@M2",
+        "mem-ce-que-la-moyenne-ne-dit-pas": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« médiane (statistique) » is a target concept of this lesson but its first appearance is q.explainWrong (module 2, étape 3); it is only taught later at apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx:85",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module02PointDequilibre.jsx",
-      "line": 170,
-      "module": 2,
-      "step": 3,
-      "term": "mediane-stat",
-      "questionId": "M02-S3-Q2",
-      "position": 141
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« variations / croissante / décroissante » first appears at diag.explain (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module00Diagnostic.jsx",
-      "line": 58,
-      "module": 0,
-      "step": null,
-      "term": "variations",
-      "questionId": "st-d4",
-      "position": 24
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« symbole ∈ » first appears at q.explain (module 3, étape 2) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx",
-      "line": 140,
-      "module": 3,
-      "step": 2,
-      "term": "appartient",
-      "questionId": "M03-S2-Q1",
-      "position": 153
-    },
-    {
-      "code": "M_TAUGHT_IN_FEEDBACK_THEN_DEMANDED",
-      "severity": "medium",
-      "message": "« fréquence » is introduced in feedback (apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx:355) and then demanded before any teaching position",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module01LancerLeDe.jsx",
-      "line": 355,
-      "module": 1,
-      "step": 3,
-      "term": "frequence",
-      "questionId": "M01-S3-Q2",
-      "position": 49
-    },
-    {
-      "code": "M_TAUGHT_TOO_LATE",
-      "severity": "medium",
-      "message": "« extremum / maximum / minimum » first appears at q.explainFor (module 3, étape 3), before its teaching position at apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module05TroisIndicateurs.jsx:63",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/statistiques-3e/modules/Module03ValeurDuMilieu.jsx",
-      "line": 169,
-      "module": 3,
-      "step": 3,
-      "term": "extremum",
-      "questionId": "M03-S3-Q2",
-      "position": 158
-    }
-  ]
+  "findings": []
 }

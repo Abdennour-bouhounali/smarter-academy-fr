@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowLeftRight } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { convert, formatMass, formatDec, parseDec } from '../components/massUtils';
 import ConservedMass from '../components/ConservedMass';
@@ -41,6 +40,7 @@ function ConversionRound({ round, dirDone, setDirDone, solved, onAnswered, showM
       </div>
 
       <TapQuestion
+        requires={['escalier-masses', 'masse-invariante']}
         prompt={`Le ${smaller} est plus petit que le ${bigger}. Avant de calculer : le nombre va-t-il changer comment ?`}
         options={DIRECTION_OPTIONS}
         correct={round.grow ? 0 : 1}
@@ -56,6 +56,7 @@ function ConversionRound({ round, dirDone, setDirDone, solved, onAnswered, showM
       {(dirDone || solved) && (
         <div className="border-t border-slate-100 pt-4">
           <NumericQuestion
+            requires={['convertir-masse-methode', 'escalier-masses']}
             prompt={`Calcule maintenant la valeur exacte, en ${round.to}.`}
             suffix={round.to}
             expected={expected}
@@ -130,6 +131,23 @@ export default function Module05Conversions() {
           done: allRoundsDone,
           content: (
             <div className="space-y-8">
+              {/* La méthode est posée AVANT le premier calcul exact : la
+                  première manche fait choisir le sens (le geste), les briques
+                  le nomment, et seulement ensuite on chiffre. */}
+              {dirDone.r1 && (
+                <KnowledgeBrick
+                  id="convertir-masse-methode"
+                  variant="new"
+                  lead="Tu viens de décider dans quel sens le nombre part. C'est la première moitié du travail."
+                />
+              )}
+              {dirDone.r1 && (
+                <KnowledgeBrick
+                  id="mem-sens-conversion-masse"
+                  variant="new"
+                  lead="Le seul réflexe à retenir pour ne jamais convertir à l'envers."
+                />
+              )}
               {ROUNDS.map((r, i) =>
                 i === 0 || roundsDone[ROUNDS[i - 1].id] ? (
                   <ConversionRound
@@ -156,6 +174,7 @@ export default function Module05Conversions() {
                 i === 0 || detDone[DETECTIVE_ITEMS[i - 1].id] ? (
                   <div key={item.id} className="border-t border-slate-100 pt-4 first:border-0 first:pt-0">
                     <TapQuestion
+                      requires={['convertir-masse-methode', 'mem-sens-conversion-masse', 'escalier-masses', 'unite-masse-adaptee']}
                       prompt={item.q}
                       options={item.options}
                       correct={item.correct}
@@ -172,13 +191,10 @@ export default function Module05Conversions() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <ArrowLeftRight className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Avant de « déplacer la virgule », demande-toi toujours pourquoi elle bouge : c’est ce raisonnement qui
-            évite les erreurs.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu convertis juste. Reste à savoir, avant même de calculer,
+          quel résultat est plausible — et à ne jamais mélanger deux unités.
+        </KnowledgeSnapshot>
       }
     />
   );

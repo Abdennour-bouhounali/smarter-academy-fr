@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Trophy } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DataTable from '../components/DataTable';
@@ -68,12 +69,21 @@ export default function Module05ComparerDecider() {
           content: (
             <div className="space-y-3">
               <DataTable table={TOURNOI} caption="Tournoi de la 6e B" tone="amber" highlightRow={1} />
+              {/* Le sens de lecture décide de la question posée : c'est une
+                  règle, et elle est posée avant les deux comparaisons qui
+                  l'exercent (étapes 1 et 2). */}
+              <KnowledgeBrick
+                id="comparer-sens-lecture"
+                variant="new"
+                lead="La bande éclairée ne montre qu’un seul élève — c’est déjà un choix de question."
+              />
               <TapQuestion
                 prompt="En suivant la ligne de Tom : dans quelle épreuve est-il le meilleur ?"
                 options={EPREUVES}
                 correct={2}
                 cols={4}
                 explain="Sur sa ligne, Tom a 7, 6, 15 et 6. Son meilleur résultat est le relais avec 15 points. Lire une LIGNE, c’est comparer un même élève d’une épreuve à l’autre."
+                requires={['comparer-sens-lecture', 'comparer-entiers']}
                 solved={ligneDone}
                 onAnswered={() => setLigneDone(true)}
               />
@@ -93,6 +103,7 @@ export default function Module05ComparerDecider() {
                 correct={2}
                 cols={4}
                 explain="La colonne Saut contient 8, 6, 10 et 5 : le meilleur est 10, celui d’Inès. Lire une COLONNE, c’est comparer tout le monde sur une même épreuve."
+                requires={['comparer-sens-lecture', 'comparer-entiers']}
                 solved={colonneDone}
                 onAnswered={() => setColonneDone(true)}
               />
@@ -109,6 +120,14 @@ export default function Module05ComparerDecider() {
                 Ajoutons une colonne de totaux : chaque total est la somme d'une ligne entière.
               </p>
               <DataTable table={TOURNOI} caption="Tournoi de la 6e B, avec les totaux par élève" tone="amber" showRowTotals />
+              {/* La colonne des totaux vient d'apparaître : on nomme ce qu'elle
+                  fait, et le piège « meilleure case ≠ meilleure ligne » est
+                  posé AVANT l'étape 4 qui l'attaque. */}
+              <KnowledgeBrick
+                id="total-decide"
+                variant="new"
+                lead="Une colonne de plus vient d’apparaître à droite — elle ne contient aucun résultat d’épreuve."
+              />
               <NumericQuestion
                 prompt="Quel est le total de points d’Inès sur les quatre épreuves ?"
                 suffix="pts"
@@ -121,6 +140,7 @@ export default function Module05ComparerDecider() {
                     ? `${TOTALS[0]}, c’est le total de Léa : une ligne trop haut.`
                     : 'Additionne les quatre nombres de la ligne d’Inès : 9 + 10 + 8 + 10.'
                 }
+                requires={['total-decide', 'calcul-numerique']}
                 solved={totalDone}
                 onAnswered={() => setTotalDone(true)}
               />
@@ -141,6 +161,7 @@ export default function Module05ComparerDecider() {
                 correctionLabel={WINNER}
                 explain={`${WINNER} gagne avec ${TOTALS[2]} points, alors qu’elle n’a remporté aucune épreuve. Tom, malgré son 15, ne totalise que ${TOTALS[1]} points. Une seule grosse case ne fait pas un classement : c’est le TOTAL de la ligne qui décide.`}
                 explainWrong={`Tom a bien la plus grosse cellule du tableau, mais ses autres résultats sont faibles : ${TOTALS[1]} points au total. ${WINNER} l’emporte avec ${TOTALS[2]} points sans jamais gagner d’épreuve.`}
+                requires={['total-decide', 'comparer-entiers']}
                 solved={pieceDone}
                 onAnswered={() => setPieceDone(true)}
               />
@@ -177,6 +198,7 @@ export default function Module05ComparerDecider() {
                 cols={4}
                 explain={`Hugo passe à ${HUGO_NEW_TOTAL} points et prend la tête devant ${WINNER} (${TOTALS[2]}). Modifier UNE cellule peut changer tout un classement : c’est pour ça qu’une donnée fausse dans un tableau est si dangereuse.`}
                 explainWrong={`${WINNER} menait avec ${TOTALS[2]} points, mais Hugo atteint désormais ${HUGO_NEW_TOTAL}. Une seule case modifiée a suffi à renverser le classement.`}
+                requires={['total-decide', 'position-porte-sens', 'comparer-entiers']}
                 solved={modifDone}
                 onAnswered={() => setModifDone(true)}
               />
@@ -186,12 +208,10 @@ export default function Module05ComparerDecider() {
       ]}
       footer={
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
-          <div className="bg-gradient-to-br from-amber-500 to-orange-600 text-white rounded-2xl p-5 text-center space-y-1">
-            <p className="text-xs uppercase tracking-wide text-amber-100 font-mono font-bold">À retenir</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">Une LIGNE compare un même sujet</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">Une COLONNE compare une même catégorie</p>
-            <p className="font-mono font-extrabold text-sm sm:text-base">Un TOTAL décide du classement</p>
-          </div>
+          <KnowledgeSnapshot moduleNumber={5}>
+            <strong>La suite.</strong> Le tableau t'a servi à décider. Au dernier atelier, la grille ne
+            te sera plus donnée : c'est toi qui la choisiras.
+          </KnowledgeSnapshot>
           <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
             <Trophy className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
             <p className="text-sm text-slate-300">

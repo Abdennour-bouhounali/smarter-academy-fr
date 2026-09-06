@@ -1084,6 +1084,178 @@
         "(?<![\\p{L}\\p{N}_])vues?\\s+de\\s+(?:face|dessus|c[ôo]t[ée])(?![\\p{L}\\p{N}_])"
       ],
       "_comment": "Les vues de face / de dessus / de côté d'un solide. « Trois vues » seul est du français courant (« trois vues de la même machine ») : on exige les vues nommées."
+    },
+    {
+      "id": "numerateur",
+      "label": "numérateur",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])num[ée]rateurs?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "denominateur",
+      "label": "dénominateur",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])d[ée]nominateurs?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "valeur-position",
+      "label": "valeur de position (chiffre / nombre)",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])valeurs?\\s+de\\s+position(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])chiffre\\s+des\\s+(?:unit[ée]s|dizaines|centaines|milliers|dixi[èe]mes|centi[èe]mes)(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "encadrement",
+      "label": "encadrer un nombre",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])encadr(?:er|ement|e|ements)(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "contenance",
+      "label": "contenance",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])contenances?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "rapporteur",
+      "label": "rapporteur",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])rapporteurs?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "angle-aigu-obtus",
+      "label": "angle aigu / obtus",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])angles?\\s+aigus?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])angles?\\s+obtus(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])angles?\\s+plats?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "demi-droite",
+      "label": "demi-droite",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])demi[- ]droites?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "milieu-segment",
+      "label": "milieu d’un segment",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])milieux?\\s+(?:du|d[’']un|de\\s+la)\\s+segment(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "droites-perpendiculaires",
+      "label": "droites perpendiculaires",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])perpendiculaires?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "axe-symetrie",
+      "label": "axe de symétrie",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])axes?\\s+de\\s+sym[ée]trie(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])sym[ée]triques?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "quadrilatere",
+      "label": "quadrilatère",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])quadrilat[èe]res?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "losange",
+      "label": "losange",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])losanges?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "parallelogramme",
+      "label": "parallélogramme",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])parall[ée]logrammes?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "diagonale",
+      "label": "diagonale",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])diagonales?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "patron-solide",
+      "label": "patron d’un solide",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])patrons?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "pave-droit",
+      "label": "pavé droit",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])pav[ée]s?\\s+droits?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "coefficient-proportionnalite",
+      "label": "coefficient de proportionnalité",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])coefficients?\\s+de\\s+proportionnalit[ée](?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "tableau-double-entree",
+      "label": "tableau à double entrée",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])tableaux?\\s+[àa]\\s+double\\s+entr[ée]e(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "instruction-programme",
+      "label": "instruction (programme)",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])instructions?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "boucle",
+      "label": "boucle",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])boucles?(?![\\p{L}\\p{N}_])"
+      ]
     }
   ],
   "_boundaryNote": "Les motifs utilisent des bornes Unicode explicites (?<![\\p{L}\\p{N}_]) … (?![\\p{L}\\p{N}_]) et jamais \\b : en JavaScript \\b reste ASCII même sous le drapeau /u, si bien qu'une lettre accentuée crée une frontière au milieu d'un mot — « aire » se déclenchait dans « linéaire ». Conserver cette convention."

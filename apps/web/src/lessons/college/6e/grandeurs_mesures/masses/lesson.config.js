@@ -18,6 +18,17 @@ export const LESSON_BASE_PATH = '/courses/college/6e/grandeurs_mesures/masses';
 export const LESSON_CONFIG = {
   id: 'masses',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques au point de besoin et se termine sur l'état
+  // courant de la carte (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : lire une comparaison simple et enchaîner des
+  // multiplications par 1 000 — exactement ce que mesurent les cinq questions
+  // du module 0, et rien d'autre. Tout le reste (la balance, le choix
+  // d'unité, l'escalier mg/g/kg/t, la conversion, l'estimation) est établi
+  // dans la leçon même (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+  priorKnowledge: ['calcul-numerique', 'multiplication-repetee'],
   title: 'Masses',
   description:
     'Comparer, mesurer, choisir la bonne unité et convertir des masses dans des situations concrètes : du sac mystère au ravitaillement de l’école.',

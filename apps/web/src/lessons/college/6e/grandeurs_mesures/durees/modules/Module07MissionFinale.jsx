@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import DurationLine from '../components/DurationLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -38,6 +39,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'du-e1',
+    requires: ['unites-temps', 'ordre-de-grandeur'],
     skill: 'unites',
     title: 'Épreuve 1',
     prompt: 'Sur le carnet de voyage, quelle unité choisir pour noter la durée du trajet complet Paris → Marseille ? Et celle de l’attente sur le quai ?',
@@ -53,6 +55,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e2',
+    requires: ['lire-cadran'],
     skill: 'lecture',
     title: 'Épreuve 2',
     prompt: 'L’horloge de la gare : petite aiguille entre 8 et 9, grande aiguille juste avant le 11 (à 52 minutes). Quelle heure est-il ?',
@@ -64,6 +67,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e3',
+    requires: ['lire-cadran', 'notation-24h'],
     skill: 'lecture',
     title: 'Épreuve 3',
     prompt: 'Le billet du retour indique « départ 17 h 05 ». C’est-à-dire…',
@@ -75,6 +79,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e4',
+    requires: ['unites-temps', 'base-60'],
     skill: 'relations',
     title: 'Épreuve 4',
     prompt: 'Le contrôleur annonce « environ 2 heures de trajet ». Combien de minutes ?',
@@ -86,6 +91,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e5',
+    requires: ['unites-temps', 'base-60', 'convertir-durees'],
     skill: 'convertir',
     title: 'Épreuve 5',
     prompt: 'La visite du musée dure 150 min. En heures et minutes ?',
@@ -97,6 +103,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e6',
+    requires: ['convertir-durees', 'comparer-durees'],
     skill: 'convertir',
     title: 'Épreuve 6',
     prompt: 'Pour rentrer : TGV direct 3 h 05 min, ou avion 1 h 10 min + 2 h d’attente à l’aéroport. Le plus rapide ?',
@@ -108,6 +115,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e7',
+    requires: ['base-60', 'piege-decimal'],
     skill: 'relations',
     title: 'Épreuve 7',
     prompt: 'L’appli du bus affiche « 1,5 h de trajet ». Qu’est-ce que cela signifie ?',
@@ -119,6 +127,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e8',
+    requires: ['lire-cadran', 'methode-sauts'],
     skill: 'sauts',
     title: 'Épreuve 8',
     prompt: 'Le train part à 9 h 47 et arrive à 12 h 15. Durée du trajet, par la méthode des sauts ?',
@@ -130,6 +139,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e9',
+    requires: ['lire-cadran', 'methode-sauts'],
     skill: 'sauts',
     title: 'Épreuve 9',
     prompt: 'Le retour dure 3 h 20 min et il faut arriver à 19 h 00 pile. Heure de départ au plus tard ?',
@@ -141,6 +151,7 @@ const EPREUVES = [
   },
   {
     id: 'du-e10',
+    requires: ['base-60', 'convertir-durees', 'mem-retenue-60'],
     skill: 'problemes',
     title: 'Épreuve 10',
     prompt: 'Bilan de la journée : 2 h 28 min de train + 2 h 30 min de visite + 3 h 20 min de retour. Durée totale des activités ?',
@@ -212,6 +223,11 @@ function Synthese() {
         Avant tout calcul de durée : tout mettre dans la même unité, et se rappeler que la retenue se fait à 60.
         L'horloge n'est pas une calculatrice décimale.
       </Feedback>
+
+      {/* La carte complète : l'« À retenir » de la leçon n'est pas un second
+          résumé écrit à la main, c'est la carte elle-même
+          (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot complete variant="complete" />
     </div>
   );
 }

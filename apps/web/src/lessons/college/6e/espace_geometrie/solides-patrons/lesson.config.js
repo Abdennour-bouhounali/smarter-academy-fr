@@ -26,6 +26,16 @@ export const LESSON_BASE_PATH = '/courses/college/6e/espace_geometrie/solides-pa
 export const LESSON_CONFIG = {
   id: 'solides-patrons',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : les figures planes de l'école élémentaire (carré,
+  // rectangle, triangle) et les longueurs (périmètre, unités) — exactement ce
+  // que mesurent les cinq questions du module 0, et rien d'autre. Tout le
+  // reste (face, arête, sommet, pavé droit, patron) est établi dans la leçon.
+  priorKnowledge: ['figures-planes-usuelles', 'perimetre', 'unites-longueur'],
   title: 'Solides et patrons',
   description:
     'Passer de l’objet en trois dimensions à sa représentation plane : compter faces, arêtes et sommets, puis plier et déplier des patrons.',

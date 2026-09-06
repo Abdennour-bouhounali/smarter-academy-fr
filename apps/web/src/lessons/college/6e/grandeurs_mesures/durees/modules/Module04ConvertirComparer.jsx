@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowUpDown } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import OrderingGame from '../../../../../common/components/OrderingGame';
 import { parseDec, formatDec } from '../components/durationUtils';
@@ -68,6 +67,7 @@ export default function Module04ConvertirComparer() {
                     ? '« 215 », c’est recopier 2 et 15 côte à côte. Il faut convertir : 2 h = 2 × 60 = 120 min, puis + 15.'
                     : 'Convertis d’abord les heures (2 × 60), puis ajoute les 15 minutes.'
                 }
+                requires={['unites-temps', 'base-60']}
                 solved={conv1Done}
                 onAnswered={() => setConv1Done(true)}
               />
@@ -83,6 +83,7 @@ export default function Module04ConvertirComparer() {
                       display={formatDec(3)}
                       explain={<>200 ÷ 60 → 3 paquets entiers de 60 s : <strong>3 min</strong>.</>}
                       explainFor={() => 'Combien de paquets ENTIERS de 60 secondes dans 200 s ?'}
+                      requires={['unites-temps', 'base-60']}
                       solved={conv2aDone}
                       onAnswered={() => setConv2aDone(true)}
                     />
@@ -94,11 +95,22 @@ export default function Module04ConvertirComparer() {
                       display={formatDec(20)}
                       explain={<>200 − 180 = <strong>20 s</strong> : 200 s = 3 min 20 s.</>}
                       explainFor={() => '3 min = 180 s. Que reste-t-il de 200 s ?'}
+                      requires={['unites-temps', 'base-60']}
                       solved={conv2bDone}
                       onAnswered={() => setConv2bDone(true)}
                     />
                   </div>
                 </div>
+              )}
+              {/* Les deux sens de la conversion viennent d'être exécutés :
+                  la méthode est posée AVANT l'atelier de rangement, qui ne
+                  peut se faire qu'en convertissant. */}
+              {conv1Done && conv2aDone && conv2bDone && (
+                <KnowledgeBrick
+                  id="convertir-durees"
+                  variant="new"
+                  lead="Ces deux calculs, dans un sens puis dans l’autre, sont toute la conversion des durées."
+                />
               )}
             </div>
           ),
@@ -125,26 +137,35 @@ export default function Module04ConvertirComparer() {
           title: 'Le duel des écritures',
           done: egaliteDone,
           content: (
-            <TapQuestion
-              prompt={EGALITE_Q.q}
-              options={EGALITE_Q.options}
-              correct={EGALITE_Q.correct}
-              cols={3}
-              explain={EGALITE_Q.explain}
-              solved={egaliteDone}
-              onAnswered={() => setEgaliteDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={EGALITE_Q.q}
+                options={EGALITE_Q.options}
+                correct={EGALITE_Q.correct}
+                cols={3}
+                explain={EGALITE_Q.explain}
+                requires={['unites-temps', 'base-60', 'convertir-durees']}
+                solved={egaliteDone}
+                onAnswered={() => setEgaliteDone(true)}
+              />
+              {/* Le rangement puis le duel viennent de montrer qu'un nombre
+                  seul ne tranche rien : la règle de comparaison se pose ici. */}
+              {egaliteDone && (
+                <KnowledgeBrick
+                  id="comparer-durees"
+                  variant="new"
+                  lead="Deux écritures, une seule durée : voilà ce qu’il faut faire avant toute comparaison."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <ArrowUpDown className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Pour comparer ou ranger des durées : tout convertir dans la MÊME unité (souvent la plus petite), puis
-            comparer les nombres.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Il reste la question la plus utile de toutes : combien de
+          temps s'écoule entre deux instants ? Et surtout, comment le calculer sans se tromper.
+        </KnowledgeSnapshot>
       }
     />
   );

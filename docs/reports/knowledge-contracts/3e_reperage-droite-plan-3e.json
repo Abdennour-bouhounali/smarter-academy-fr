@@ -2,11 +2,196 @@
   "lesson": "reperage-droite-plan-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "nombres-relatifs",
+    "ordre-nombres",
+    "calcul-numerique",
+    "moyenne"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "abscisse-non-entiere",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module01AlleeDuParc.jsx",
+        "line": 146,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "repere-plan",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module02UnSeulCurseur.jsx",
+        "line": 110,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "origine-et-axes",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module03LireUnPoint.jsx",
+        "line": 121,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "deplacement-coordonnees",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module04PlacerEtEchanger.jsx",
+        "line": 156,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "longueur-axe",
+      "type": "formules",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module05LongueursSansRegle.jsx",
+        "line": 93,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "milieu-moyenne",
+      "type": "formules",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module05LongueursSansRegle.jsx",
+        "line": 143,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "signe-et-cote",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module06ARetenir.jsx",
+        "line": 102,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "symetrique-axe",
+      "type": "regles",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module07FiguresDansLeRepere.jsx",
+        "line": 212,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "abscisse-droite",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module01AlleeDuParc.jsx",
+        "line": 107,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "abscisse-ordonnee",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module02UnSeulCurseur.jsx",
+        "line": 144,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "quadrant",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module02UnSeulCurseur.jsx",
+        "line": 185,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "lire-par-projection",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module03LireUnPoint.jsx",
+        "line": 65,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "placer-un-point",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module04PlacerEtEchanger.jsx",
+        "line": 73,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "prouver-par-coordonnees",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module07FiguresDansLeRepere.jsx",
+        "line": 167,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "ordre-du-couple",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module02UnSeulCurseur.jsx",
+        "line": 216,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "limite-oblique",
+      "type": "memoriser",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module05LongueursSansRegle.jsx",
+        "line": 187,
+        "step": 4,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "rd-d1-comparer",
@@ -15,8 +200,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module00Diagnostic.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "nombres-relatifs",
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior",
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +217,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module00Diagnostic.jsx",
-      "line": 33,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 34,
+      "requires": [
+        "nombres-relatifs",
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior",
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +235,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module00Diagnostic.jsx",
-      "line": 43,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 45,
+      "requires": [
+        "nombres-relatifs",
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior",
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +253,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module00Diagnostic.jsx",
-      "line": 53,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 56,
+      "requires": [
+        "ordre-nombres",
+        "moyenne"
+      ],
+      "prerequisiteStatus": {
+        "ordre-nombres": "prior",
+        "moyenne": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +271,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module00Diagnostic.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "moyenne",
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "prior",
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +289,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module01AlleeDuParc.jsx",
-      "line": 56,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,9 +305,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module01AlleeDuParc.jsx",
-      "line": 128,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 131,
+      "requires": [
+        "abscisse-droite",
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "abscisse-droite": "established@M1",
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +323,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module01AlleeDuParc.jsx",
-      "line": 155,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 167,
+      "requires": [
+        "abscisse-droite"
+      ],
+      "prerequisiteStatus": {
+        "abscisse-droite": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,9 +339,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module02UnSeulCurseur.jsx",
-      "line": 183,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 199,
+      "requires": [
+        "abscisse-ordonnee",
+        "repere-plan"
+      ],
+      "prerequisiteStatus": {
+        "abscisse-ordonnee": "established@M2",
+        "repere-plan": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -123,8 +358,16 @@
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module03LireUnPoint.jsx",
       "line": 114,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "lire-par-projection",
+        "abscisse-ordonnee",
+        "origine-et-axes"
+      ],
+      "prerequisiteStatus": {
+        "lire-par-projection": "established@M3",
+        "abscisse-ordonnee": "established@M2",
+        "origine-et-axes": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +377,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module04PlacerEtEchanger.jsx",
-      "line": 172,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 175,
+      "requires": [
+        "deplacement-coordonnees",
+        "abscisse-ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "deplacement-coordonnees": "established@M4",
+        "abscisse-ordonnee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +395,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module05LongueursSansRegle.jsx",
-      "line": 109,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 111,
+      "requires": [
+        "longueur-axe",
+        "abscisse-ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "longueur-axe": "established@M5",
+        "abscisse-ordonnee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +413,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module05LongueursSansRegle.jsx",
-      "line": 140,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 149,
+      "requires": [
+        "milieu-moyenne",
+        "moyenne"
+      ],
+      "prerequisiteStatus": {
+        "milieu-moyenne": "established@M5",
+        "moyenne": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,13 +431,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module05LongueursSansRegle.jsx",
-      "line": 159,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "notation-fx"
+      "line": 170,
+      "requires": [
+        "longueur-axe"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "longueur-axe": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M06-S1-Q1",
@@ -184,9 +447,19 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module06ARetenir.jsx",
-      "line": 36,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 37,
+      "requires": [
+        "abscisse-ordonnee",
+        "ordre-du-couple",
+        "lire-par-projection",
+        "longueur-axe"
+      ],
+      "prerequisiteStatus": {
+        "abscisse-ordonnee": "established@M2",
+        "ordre-du-couple": "established@M2",
+        "lire-par-projection": "established@M3",
+        "longueur-axe": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -196,9 +469,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module06ARetenir.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 108,
+      "requires": [
+        "origine-et-axes",
+        "signe-et-cote"
+      ],
+      "prerequisiteStatus": {
+        "origine-et-axes": "established@M3",
+        "signe-et-cote": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -209,8 +488,14 @@
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module07FiguresDansLeRepere.jsx",
       "line": 141,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "longueur-axe",
+        "abscisse-ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "longueur-axe": "established@M5",
+        "abscisse-ordonnee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -220,9 +505,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module07FiguresDansLeRepere.jsx",
-      "line": 149,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 150,
+      "requires": [
+        "longueur-axe",
+        "abscisse-ordonnee",
+        "milieu-moyenne"
+      ],
+      "prerequisiteStatus": {
+        "longueur-axe": "established@M5",
+        "abscisse-ordonnee": "established@M2",
+        "milieu-moyenne": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -232,9 +525,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 42,
+      "requires": [
+        "abscisse-droite",
+        "abscisse-non-entiere"
+      ],
+      "prerequisiteStatus": {
+        "abscisse-droite": "established@M1",
+        "abscisse-non-entiere": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -244,9 +543,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 53,
+      "requires": [
+        "abscisse-ordonnee",
+        "ordre-du-couple",
+        "repere-plan"
+      ],
+      "prerequisiteStatus": {
+        "abscisse-ordonnee": "established@M2",
+        "ordre-du-couple": "established@M2",
+        "repere-plan": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -256,9 +563,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 66,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "lire-par-projection",
+        "origine-et-axes"
+      ],
+      "prerequisiteStatus": {
+        "lire-par-projection": "established@M3",
+        "origine-et-axes": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -268,9 +581,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 82,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 86,
+      "requires": [
+        "lire-par-projection",
+        "origine-et-axes"
+      ],
+      "prerequisiteStatus": {
+        "lire-par-projection": "established@M3",
+        "origine-et-axes": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -280,9 +599,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 97,
+      "requires": [
+        "placer-un-point",
+        "abscisse-ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "placer-un-point": "established@M4",
+        "abscisse-ordonnee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -292,9 +617,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 107,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 113,
+      "requires": [
+        "deplacement-coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "deplacement-coordonnees": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -304,9 +633,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 124,
+      "requires": [
+        "longueur-axe",
+        "milieu-moyenne",
+        "limite-oblique"
+      ],
+      "prerequisiteStatus": {
+        "longueur-axe": "established@M5",
+        "milieu-moyenne": "established@M5",
+        "limite-oblique": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -316,9 +653,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 127,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 135,
+      "requires": [
+        "longueur-axe",
+        "milieu-moyenne",
+        "limite-oblique"
+      ],
+      "prerequisiteStatus": {
+        "longueur-axe": "established@M5",
+        "milieu-moyenne": "established@M5",
+        "limite-oblique": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -328,9 +673,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 142,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 151,
+      "requires": [
+        "prouver-par-coordonnees",
+        "symetrique-axe",
+        "signe-et-cote"
+      ],
+      "prerequisiteStatus": {
+        "prouver-par-coordonnees": "established@M7",
+        "symetrique-axe": "established@M7",
+        "signe-et-cote": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -340,25 +693,20 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module08MissionFinale.jsx",
-      "line": 166,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 176,
+      "requires": [
+        "prouver-par-coordonnees",
+        "symetrique-axe",
+        "signe-et-cote"
+      ],
+      "prerequisiteStatus": {
+        "prouver-par-coordonnees": "established@M7",
+        "symetrique-axe": "established@M7",
+        "signe-et-cote": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« notation f(x) » first appears at q.prompt (module 5, étape 4) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/modules/Module05LongueursSansRegle.jsx",
-      "line": 159,
-      "module": 5,
-      "step": 4,
-      "term": "notation-fx",
-      "questionId": "M05-S4-Q3",
-      "position": 145
-    }
-  ]
+  "findings": []
 }

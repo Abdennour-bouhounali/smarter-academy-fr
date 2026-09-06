@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Bot } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RobotPath from '../components/RobotPath';
@@ -114,9 +113,37 @@ export default function Module05ParcoursRobot() {
         ),
       }}
       steps={[
-        ...RUNS.map((r, i) => ({
-          num: i + 1,
-          title: `Mission ${i + 1} — du départ ${formatCoords(r.start)} au drapeau ${formatCoords(r.flag)}`,
+        // La PREMIÈRE mission est une étape littérale : elle porte la brique du
+        // module, que l'audit ne voit que dans un `steps` littéral.
+        {
+          num: 1,
+          title: `Mission 1 — du départ ${formatCoords(RUNS[0].start)} au drapeau ${formatCoords(RUNS[0].flag)}`,
+          done: runsDone.includes(RUNS[0].id),
+          content: (kit) => (
+            <div className="space-y-5">
+              <RobotMission
+                run={RUNS[0]}
+                done={runsDone.includes(RUNS[0].id)}
+                onDone={() => mark(RUNS[0].id)}
+                react={kit.react}
+              />
+
+              {/* Le robot vient d'atteindre le drapeau : le nombre de pas qu'il
+                  a fallu se compte sous les yeux de l'élève. La règle se pose
+                  là, avant la question de la dernière étape. */}
+              {runsDone.includes(RUNS[0].id) && (
+                <KnowledgeBrick
+                  id="deplacement-somme"
+                  variant="new"
+                  lead="Compte les pas de ton programme : ce sont les deux écarts, mis bout à bout."
+                />
+              )}
+            </div>
+          ),
+        },
+        ...RUNS.slice(1).map((r, i) => ({
+          num: i + 2,
+          title: `Mission ${i + 2} — du départ ${formatCoords(r.start)} au drapeau ${formatCoords(r.flag)}`,
           done: runsDone.includes(r.id),
           content: (kit) => (
             <RobotMission
@@ -142,6 +169,7 @@ export default function Module05ParcoursRobot() {
               options={['5 pas', '6 pas', '3 pas']}
               correct={0}
               cols={3}
+              requires={['deplacement-somme', 'coordonnees']}
               explain="2 pas horizontalement + 3 pas verticalement = 5 pas. On ADDITIONNE les deux écarts."
               explainWrong="Attention : 6 pas, ce serait 2 × 3 — on multiplie au lieu d’additionner. Et 3 pas, ce serait n’oublier qu’un seul des deux déplacements."
               solved={countDone}
@@ -151,18 +179,10 @@ export default function Module05ParcoursRobot() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Bot className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un déplacement et un couple de nombres, c’est la même information :{' '}
-            <span className="font-mono text-white">(4 ; 3)</span> se lit aussi « 4 pas à droite, 3 pas vers
-            le haut ».
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Un déplacement et un couple de nombres disent la même chose. Il
+          reste une confusion à lever : celle du nœud et de la case.
+        </KnowledgeSnapshot>
       }
     />
   );

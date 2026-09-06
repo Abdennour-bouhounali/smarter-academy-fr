@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Brain } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PatronGrid from '../components/PatronGrid';
@@ -72,6 +71,7 @@ function Prediction({ patron, done, onDone }) {
         options={['Oui, il se replie en cube', 'Non, il est impossible']}
         correct={result.ok ? 0 : 1}
         cols={2}
+        requires={['patron-solide', 'face-solide', 'onze-patrons']}
         explain={
           result.ok
             ? 'Ce patron se replie bien : les 6 cases deviennent les 6 faces, sans superposition.'
@@ -121,38 +121,42 @@ export default function Module04PlierDansSaTete() {
         })),
         {
           num: PATRONS.length + 1,
-          title: 'Comment repérer un patron impossible ?',
+          title: 'Comment repérer un pliage qui échoue ?',
           done: ruleDone,
           content: (
-            <TapQuestion
-              prompt="Qu’est-ce qui rend un patron de 6 cases impossible à replier en cube ?"
-              options={[
-                'Deux cases tomberaient sur la même face, en laissant une autre à découvert',
-                'Il a trop de cases',
-                'Sa forme n’est pas une croix',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Un cube a exactement 6 faces : il faut donc que les 6 cases occupent 6 faces DIFFÉRENTES. Deux cases sur la même face, et il en manque forcément une ailleurs."
-              explainWrong="Le nombre de cases est bon (6), et la croix n’est qu’un patron parmi onze. Le vrai critère est la superposition au pliage."
-              solved={ruleDone}
-              onAnswered={() => setRuleDone(true)}
-            />
+            <div className="space-y-5">
+              {/* Les quatre prédictions viennent d'être vérifiées par le
+                  simulateur : le critère se pose ici, avant qu'on le demande
+                  — il ne vivait auparavant que dans l'`explain`. */}
+              <KnowledgeBrick
+                id="patron-impossible"
+                variant="new"
+                lead="Regarde ce qu’avaient en commun les patrons que le simulateur a refusés."
+              />
+              <TapQuestion
+                prompt="Qu’est-ce qui rend un patron de 6 cases impossible à replier en cube ?"
+                options={[
+                  'Deux cases tomberaient sur la même face, en laissant une autre à découvert',
+                  'Il a trop de cases',
+                  'Sa forme n’est pas une croix',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['patron-impossible', 'patron-solide', 'face-solide']}
+                explain="Un cube a exactement 6 faces : il faut donc que les 6 cases occupent 6 faces DIFFÉRENTES. Deux cases sur la même face, et il en manque forcément une ailleurs."
+                explainWrong="Le nombre de cases est bon (6), et la croix n’est qu’un patron parmi onze. Le vrai critère est la superposition au pliage."
+                solved={ruleDone}
+                onAnswered={() => setRuleDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Brain className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Six cases collées ne suffisent pas. Il faut qu’elles se replient sur{' '}
-            <strong className="text-white">six faces différentes</strong> — sinon une face resterait ouverte.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais déplier, plier, et refuser un pliage impossible. Le
+          module suivant rassemble tes comptes en une fiche.
+        </KnowledgeSnapshot>
       }
     />
   );

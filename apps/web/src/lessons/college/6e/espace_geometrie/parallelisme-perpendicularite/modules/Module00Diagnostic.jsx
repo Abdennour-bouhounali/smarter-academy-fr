@@ -17,6 +17,8 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-droite',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: [],
     skill: 'droites',
     points: 2,
     prompt: <>Combien d’extrémités possède une <strong>droite</strong> ?</>,
@@ -27,6 +29,8 @@ const QUESTIONS = [
   },
   {
     id: 'q2-notation',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['notation-segment', 'demi-droite'],
     skill: 'droites',
     points: 2,
     prompt: (
@@ -41,6 +45,8 @@ const QUESTIONS = [
   },
   {
     id: 'q3-angle-droit',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['angle-droit'],
     skill: 'angles',
     points: 2,
     prompt: <>Combien mesure un <strong>angle droit</strong> ?</>,
@@ -51,6 +57,8 @@ const QUESTIONS = [
   },
   {
     id: 'q4-comparer',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['angle-droit', 'angle-aigu-obtus'],
     skill: 'angles',
     points: 2,
     prompt: <>Un angle de <strong className="font-mono">70°</strong> est…</>,
@@ -61,6 +69,8 @@ const QUESTIONS = [
   },
   {
     id: 'q5-equerre',
+    // Module 0 : uniquement des ids de priorKnowledge.
+    requires: ['angle-droit'],
     skill: 'angles',
     points: 2,
     prompt: <>Quel instrument sert à vérifier qu’un angle est bien droit ?</>,

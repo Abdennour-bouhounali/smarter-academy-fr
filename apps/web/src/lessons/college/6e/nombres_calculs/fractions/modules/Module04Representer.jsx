@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -203,6 +204,13 @@ export default function Module04Representer() {
                   />
                 ) : null
               )}
+              {s2 && (
+                <KnowledgeBrick
+                  id="meme-quantite-deux-dessins"
+                  variant="new"
+                  lead="Barre ou disque, tu viens de lire la même fraction sur deux figures différentes."
+                />
+              )}
             </div>
           ),
         },
@@ -210,9 +218,28 @@ export default function Module04Representer() {
           num: 3,
           title: 'Bonus : la même quantité peut avoir deux noms',
           done: s3,
-          content: <EquivalenceBonus solved={bonusDone} onSolved={() => setBonusDone(true)} />,
+          content: (
+            <div className="space-y-5">
+              <EquivalenceBonus solved={bonusDone} onSolved={() => setBonusDone(true)} />
+              {/* Enrichissement assumé : hors programme de 6e, jamais exigé
+                  par une question du parcours principal (état D du contrat). */}
+              {bonusDone && (
+                <KnowledgeBrick
+                  id="equivalence-decoupe"
+                  variant="enrichment"
+                  lead="Ce que tu viens de voir a un nom, et te servira dans les classes suivantes."
+                />
+              )}
+            </div>
+          ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu lis et tu dessines des fractions. On va maintenant s’en
+          servir sur une vraie quantité d’objets.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

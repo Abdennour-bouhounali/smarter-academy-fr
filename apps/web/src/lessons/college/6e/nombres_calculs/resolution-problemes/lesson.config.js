@@ -18,6 +18,17 @@ export const LESSON_BASE_PATH = '/courses/college/6e/nombres_calculs/resolution-
 export const LESSON_CONFIG = {
   id: 'resolution-problemes',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : la fluidité des quatre opérations (y compris sur un
+  // décimal simple) et la lecture attentive d'un énoncé court — exactement
+  // ce que les cinq questions du module 0 mesurent, et rien d'autre. La
+  // démarche elle-même (trier, modéliser, choisir, enchaîner, contrôler,
+  // rédiger) est établie dans la leçon même.
+  priorKnowledge: ['calcul-numerique', 'tables-multiplication'],
   title: 'Résolution de problèmes',
   description:
     'Développer une démarche complète de résolution : comprendre la situation, choisir une stratégie, calculer, vérifier et communiquer la réponse.',

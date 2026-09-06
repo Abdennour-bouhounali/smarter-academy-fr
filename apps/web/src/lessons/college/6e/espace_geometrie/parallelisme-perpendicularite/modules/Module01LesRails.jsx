@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { TrainFront } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RelationFigure from '../components/RelationFigure';
@@ -95,6 +94,7 @@ export default function Module01LesRails() {
               cols={3}
               explain="C’est la paire B : ses deux droites n’ont pas la même inclinaison (10° et 0°). De près, l’écart est invisible."
               explainWrong="À cette échelle, impossible de trancher à l’œil — c’est justement le piège. Prolongeons pour vérifier."
+              requires={[]}
               solved={predicted}
               onAnswered={() => setPredicted(true)}
             />
@@ -134,9 +134,16 @@ export default function Module01LesRails() {
               {zoomed && (
                 <Feedback tone={zoomDone ? 'ok' : 'info'}>
                   La paire B <strong>se coupe</strong> : le point d’intersection est apparu. La paire A, elle,
-                  garde le même écart aussi loin qu’on aille — ses droites ne se rencontreront jamais. On dit
-                  qu’elles sont <strong>parallèles</strong>.
+                  garde le même écart aussi loin qu’on aille — ses droites ne se rencontreront jamais.
                 </Feedback>
+              )}
+
+              {zoomDone && (
+                <KnowledgeBrick
+                  id="droites-paralleles"
+                  variant="new"
+                  lead="La paire A, elle, a continué sans jamais se rencontrer : cette relation porte un nom."
+                />
               )}
             </div>
           ),
@@ -155,6 +162,7 @@ export default function Module01LesRails() {
               ]}
               correct={0}
               cols={1}
+              requires={['droites-paralleles']}
               explain="C’est la définition : deux droites parallèles n’ont aucun point commun, quelle que soit la distance sur laquelle on les prolonge."
               explainWrong="« Avoir l’air » ne suffit pas — la paire B en est la preuve. Et « penchées dans le même sens » reste vague : il faut EXACTEMENT la même inclinaison."
               solved={ruleDone}
@@ -164,17 +172,10 @@ export default function Module01LesRails() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <TrainFront className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Deux droites <strong className="text-white">parallèles</strong> ne se coupent jamais. Mais
-            comment le vérifier sans prolonger à l’infini&nbsp;? Il existe un autre moyen : mesurer l’écart.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> On ne peut pas prolonger à l’infini sur une feuille. Il faut donc
+          un critère qui se vérifie ici et maintenant.
+        </KnowledgeSnapshot>
       }
     />
   );

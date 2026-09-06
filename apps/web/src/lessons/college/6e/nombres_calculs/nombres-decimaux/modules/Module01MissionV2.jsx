@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Sparkles, Search, Lightbulb } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback, ValidateButton, ChoiceGrid } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -25,7 +26,7 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * Progression (6 scènes) — INCHANGÉE par le redesign visuel ci-dessous :
  *   1. Situation réelle — une mesure entre 3 et 4
  *   2. Les entiers ne suffisent pas — 3 trop court, 4 trop long
- *   3. L'intervalle se divise — moment AHA, apparition de 3,7
+ *   3. L'espace entre 3 et 4 se découpe — moment AHA, apparition de 3,7
  *   4. Exemples réels — longueur, contenance, prix
  *   5. Première rencontre — le nombre 3,7 présenté seul
  *   6. Mission suivante — curiosité vers le module 2
@@ -688,7 +689,7 @@ function Scene2Integers({ solved, onSolved, react }) {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   SCÈNE 3 — L'intervalle se divise (moment AHA)
+   SCÈNE 3 — L'espace entre 3 et 4 se découpe (moment AHA)
    ══════════════════════════════════════════════════════════════════════ */
 function Scene3AHA({ solved, onSolved, react }) {
   const [picked, setPicked] = useState(null);
@@ -709,7 +710,7 @@ function Scene3AHA({ solved, onSolved, react }) {
   return (
     <div className="space-y-6">
       <SceneIntro>
-        Et si on <strong>découpait l'intervalle</strong> entre 3 et 4 en petites parts égales ?
+        Et si on <strong>découpait l'espace</strong> entre 3 et 4 en petites parts égales ?
         Regarde l'animation ci-dessous.
       </SceneIntro>
 
@@ -740,7 +741,7 @@ function Scene3AHA({ solved, onSolved, react }) {
             <div className="text-base leading-7 space-y-1">
               {(picked ?? CORRECT) !== CORRECT && <p>Bonne réponse : <strong>10 parts</strong>.</p>}
               <p>
-                L'intervalle entre 3 et 4 a été découpé en <strong>10 parts égales</strong>. Le point de mesure
+                L'espace entre 3 et 4 a été découpé en <strong>10 parts égales</strong>. Le point de mesure
                 se trouve à la <strong>7ᵉ</strong> graduation.
               </p>
             </div>
@@ -1136,7 +1137,7 @@ export default function Module01Mission() {
         },
         {
           num: 3,
-          title: 'L\'intervalle se divise',
+          title: 'Ce qui se passe entre 3 et 4',
           subtitle: 'Découverte du nombre décimal',
           done: s3,
           content: (kit) => <Scene3AHA solved={s3} onSolved={() => setS3(true)} react={kit.react} />,
@@ -1144,7 +1145,7 @@ export default function Module01Mission() {
         {
           num: 4,
           title: 'Dans la vraie vie',
-          subtitle: 'Longueur, contenance, prix',
+          subtitle: 'Une planche, une bouteille, une étiquette de prix',
           done: s4,
           content: (kit) => <Scene4RealLife solved={s4} onSolved={() => setS4(true)} react={kit.react} />,
         },
@@ -1153,7 +1154,20 @@ export default function Module01Mission() {
           title: 'Première rencontre',
           subtitle: 'Le nombre 3,7',
           done: s5,
-          content: (kit) => <Scene5FirstMeeting solved={s5} onSolved={() => setS5(true)} react={kit.react} />,
+          content: (kit) => (
+            <div className="space-y-6">
+              <Scene5FirstMeeting solved={s5} onSolved={() => setS5(true)} react={kit.react} />
+              {/* L'élève vient de rencontrer 3,7 et de dire pourquoi ce n'est
+                  pas 37 : la connaissance du module se pose ici. */}
+              {s5 && (
+                <KnowledgeBrick
+                  id="entre-deux-entiers"
+                  variant="new"
+                  lead="Voilà ce que tu viens de découvrir, en une phrase."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 6,
@@ -1164,31 +1178,10 @@ export default function Module01Mission() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 sm:p-6 space-y-5">
-          <div className="flex items-center gap-2 font-space font-bold text-base">
-            <Sparkles className="w-5 h-5 text-amber-300" aria-hidden="true" />
-            Ce que tu viens de découvrir
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
-            {[
-              ['Problème', 'Une quantité entre deux entiers'],
-              ['Limite', 'Les entiers ne suffisent pas'],
-              ['Solution', 'Le nombre décimal'],
-            ].map(([title, desc]) => (
-              <div key={title} className="rounded-xl bg-white/10 p-4 space-y-1.5">
-                <div className="text-amber-300 font-space font-bold uppercase tracking-wider text-xs">
-                  {title}
-                </div>
-                <div className="text-slate-200 text-sm leading-6">{desc}</div>
-              </div>
-            ))}
-          </div>
-          <p className="text-base leading-7 text-slate-300 text-center">
-            Tu sais maintenant <strong className="text-white">pourquoi</strong> nous avons besoin des nombres
-            décimaux. Dans le prochain module, tu vas découvrir{' '}
-            <strong className="text-white">ce qui se cache derrière la virgule</strong>.
-          </p>
-        </div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais pourquoi les nombres décimaux existent. Au module
+          suivant, tu prends les ciseaux et tu ouvres l'unité toi-même.
+        </KnowledgeSnapshot>
       }
     />
   );

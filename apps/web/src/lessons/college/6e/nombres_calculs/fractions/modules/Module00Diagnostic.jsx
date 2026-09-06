@@ -21,6 +21,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-partage-simple',
+    requires: ['calcul-numerique'],
     skill: 'partageDivision',
     points: 2,
     prompt: (
@@ -36,6 +37,7 @@ const QUESTIONS = [
   },
   {
     id: 'q2-tombe-juste',
+    requires: ['calcul-numerique'],
     skill: 'partageDivision',
     points: 2,
     prompt: (
@@ -51,6 +53,7 @@ const QUESTIONS = [
   },
   {
     id: 'q3-division-fait',
+    requires: ['tables-multiplication'],
     skill: 'partageDivision',
     points: 2,
     prompt: <>Combien font <strong className="font-mono">20 ÷ 5</strong> ?</>,
@@ -61,6 +64,7 @@ const QUESTIONS = [
   },
   {
     id: 'q4-vocabulaire',
+    requires: ['calcul-numerique'],
     skill: 'partageDivision',
     points: 2,
     prompt: <>Que veut dire « partager équitablement » un gâteau entre plusieurs personnes ?</>,
@@ -75,6 +79,7 @@ const QUESTIONS = [
   },
   {
     id: 'q5-groupes-egaux',
+    requires: ['tables-multiplication'],
     skill: 'partageDivision',
     points: 2,
     prompt: (

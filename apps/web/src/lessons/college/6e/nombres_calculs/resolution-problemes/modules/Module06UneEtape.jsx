@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -87,6 +87,7 @@ export default function Module06UneEtape() {
                     </div>
                     <p className="text-sm text-slate-800 leading-relaxed bg-white border-2 border-slate-200 rounded-xl p-3">{item.text}</p>
                     <NumericQuestion
+                      requires={['situation-avant-mots', 'choisir-un-modele']}
                       suffix={item.unit}
                       expected={item.answer}
                       explain={item.explain}
@@ -99,16 +100,25 @@ export default function Module06UneEtape() {
               )}
 
               {allDone && (
-                <Feedback tone="info">
-                  Remarque : les problèmes 2 et 3 utilisent tous les deux une soustraction, comme les problèmes 5
-                  et 6 utilisent tous les deux une division. <strong>Même opération, sens différent.</strong>{' '}
-                  C'est la situation qui donne le sens, jamais un mot isolé.
-                </Feedback>
+                <>
+                  <KnowledgeBrick
+                    id="structures-de-problemes"
+                    variant="new"
+                    lead="Les six situations que tu viens de traiter : deux soustractions pour deux raisons différentes, deux divisions pour deux questions différentes."
+                  />
+                  <KnowledgeBrick id="mem-comprendre-avant" variant="new" />
+                </>
               )}
             </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Un problème n'a pas toujours une seule étape : il faut
+          parfois trouver un nombre pour pouvoir en trouver un autre.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

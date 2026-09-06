@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, Building2, Search } from 'lucide-react';
 import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import NumberLine from '../../../../../common/components/NumberLine';
@@ -116,6 +117,7 @@ function ProblemQuestion({ item, index, total, solved, onSolved }) {
           options={item.options}
           correct={item.correct}
           cols={item.cols || 1}
+          requires={['comparer-methode', 'valeur-position', 'chiffre-vs-nombre', 'encadrer']}
           explain={item.explain}
           solved={solved}
           onAnswered={() => onSolved?.()}
@@ -126,6 +128,7 @@ function ProblemQuestion({ item, index, total, solved, onSolved }) {
           prefix={item.prefix}
           expected={item.answer}
           parse={parseFr}
+          requires={['valeur-position', 'chiffre-vs-nombre', 'recomposer']}
           explain={item.explain}
           explainFor={item.wrongHint}
           solved={solved}
@@ -416,6 +419,7 @@ export default function Module10Problemes() {
                     options={MYSTERE_SUITE.options}
                     correct={MYSTERE_SUITE.correct}
                     cols={MYSTERE_SUITE.cols}
+                    requires={['encadrer', 'position-chiffre']}
                     explain={MYSTERE_SUITE.explain}
                     solved={suiteDone}
                     onAnswered={() => setSuiteDone(true)}
@@ -426,6 +430,12 @@ export default function Module10Problemes() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={10}>
+          <strong>La suite.</strong> Aucune connaissance nouvelle ici : tu as choisi toi-même
+          quoi sortir de ta carte. Le Grand Défi t'attend.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

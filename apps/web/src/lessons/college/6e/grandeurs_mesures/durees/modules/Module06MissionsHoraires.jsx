@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { TrainFront } from 'lucide-react';
 import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { parseDec, formatDec } from '../components/durationUtils';
@@ -64,6 +63,7 @@ export default function Module06MissionsHoraires() {
                   display={formatDec(2)}
                   explain={<>Le saut central : <strong>2 h</strong>.</>}
                   explainFor={() => 'De 9 h à 11 h : combien d’heures entières ?'}
+                  requires={['unites-temps', 'methode-sauts']}
                   solved={trainHDone}
                   onAnswered={() => setTrainHDone(true)}
                 />
@@ -75,6 +75,7 @@ export default function Module06MissionsHoraires() {
                   display={formatDec(13)}
                   explain={<>8 + 5 = <strong>13 min</strong> : le trajet dure 2 h 13 min.</>}
                   explainFor={() => 'Additionne le saut de départ (8 min) et celui d’arrivée (5 min).'}
+                  requires={['unites-temps', 'methode-sauts']}
                   solved={trainMinDone}
                   onAnswered={() => setTrainMinDone(true)}
                 />
@@ -99,6 +100,7 @@ export default function Module06MissionsHoraires() {
                   ? '17 h 50, c’est reculer de seulement 40 min. Additionne D’ABORD les trois durées (25 + 40 + 15), puis recule d’un bloc.'
                   : 'Étape 1 : additionne les trois durées. Étape 2 : recule de ce total depuis 18 h 30, par sauts.'
               }
+              requires={['unites-temps', 'base-60', 'methode-sauts', 'mem-retenue-60']}
               solved={entrainementDone}
               onAnswered={() => setEntrainementDone(true)}
             />
@@ -116,6 +118,7 @@ export default function Module06MissionsHoraires() {
                 correct={COMPARE_Q.correct}
                 cols={1}
                 explain={COMPARE_Q.explain}
+                requires={['unites-temps', 'convertir-durees', 'comparer-durees']}
                 solved={compareDone}
                 onAnswered={() => setCompareDone(true)}
               />
@@ -130,13 +133,10 @@ export default function Module06MissionsHoraires() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <TrainFront className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un problème d'horaires se résout toujours pareil : même unité partout, sauts d'heure ronde en heure
-            ronde, et une vérification de bon sens à la fin.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Le grand voyage Paris–Marseille ne te demandera rien qui ne
+          figure déjà sur cette carte.
+        </KnowledgeSnapshot>
       }
     />
   );

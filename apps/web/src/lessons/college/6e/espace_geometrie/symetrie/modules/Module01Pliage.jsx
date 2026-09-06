@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FlipHorizontal } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import FoldCard from '../components/FoldCard';
@@ -77,6 +76,7 @@ export default function Module01Pliage() {
               cols={3}
               explain="C’est la figure A. La B a un sommet décalé de quelques millimètres : invisible à l’œil, mais suffisant pour que le pliage rate."
               explainWrong="Impossible de trancher à l’œil — c’est le piège. Plions pour voir."
+              requires={[]}
               solved={predictDone}
               onAnswered={() => setPredictDone(true)}
             />
@@ -109,17 +109,34 @@ export default function Module01Pliage() {
 
               {folded && (
                 <Feedback tone={foldDone ? 'ok' : 'info'}>
-                  La figure A se superpose <strong>exactement</strong> : le pli est un{' '}
-                  <strong>axe de symétrie</strong>. La figure B déborde — elle n’est pas symétrique par
-                  rapport à ce pli, même si elle en avait l’air.
+                  La figure A se superpose <strong>exactement</strong>. La figure B déborde — même si
+                  elle en avait tout l’air.
                 </Feedback>
+              )}
+
+              {foldDone && (
+                <>
+                  {/* Le pliage vient d'être fait : c'est ici, et pas avant, que
+                      les deux mots existent (docs/architecture/
+                      KNOWLEDGE_DEPENDENCY.md). */}
+                  <KnowledgeBrick
+                    id="symetrie-pliage"
+                    variant="new"
+                    lead="Ce que tu viens de faire — plier et voir les deux moitiés coïncider — porte un nom."
+                  />
+                  <KnowledgeBrick
+                    id="axe-symetrie"
+                    variant="new"
+                    lead="Et le trait pointillé, celui le long duquel tu as plié, en porte un autre."
+                  />
+                </>
               )}
             </div>
           ),
         },
         {
           num: 3,
-          title: 'Qu’est-ce que ça veut dire, « symétrique » ?',
+          title: 'Le critère, en une phrase',
           done: ruleDone,
           content: (
             <TapQuestion
@@ -131,6 +148,7 @@ export default function Module01Pliage() {
               ]}
               correct={0}
               cols={1}
+              requires={['symetrie-pliage', 'axe-symetrie']}
               explain="La superposition doit être EXACTE, point par point. « Se ressembler » ou « être équilibré » ne sont pas des critères géométriques."
               explainWrong="La figure B se ressemblait beaucoup de part et d’autre, et pourtant elle ne se superposait pas. Le critère est la superposition exacte."
               solved={ruleDone}
@@ -140,17 +158,10 @@ export default function Module01Pliage() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <FlipHorizontal className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            La symétrie axiale, c’est un <strong className="text-white">pliage</strong> : le long de l’axe,
-            les deux moitiés coïncident exactement. Reste à savoir où passe ce pli.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Reste à savoir où passe ce pli — et combien il peut y en avoir
+          sur une même figure.
+        </KnowledgeSnapshot>
       }
     />
   );

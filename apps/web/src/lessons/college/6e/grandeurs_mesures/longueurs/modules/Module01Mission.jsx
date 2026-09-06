@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Ruler as RulerIcon } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import UnitSwitcher from '../components/UnitSwitcher';
@@ -89,6 +88,16 @@ export default function Module01Mission() {
                   nombre s'adapte en conséquence.
                 </Feedback>
               )}
+              {/* Le geste vient d'être fait : la route n'a pas bougé alors que
+                  le nombre changeait. C'est l'instant où l'invariance de la
+                  longueur veut dire quelque chose de précis. */}
+              {switchDone && (
+                <KnowledgeBrick
+                  id="longueur-invariante"
+                  variant="new"
+                  lead="Tu viens de changer quatre fois d'unité sans jamais changer de trajet."
+                />
+              )}
             </div>
           ),
         },
@@ -98,6 +107,7 @@ export default function Module01Mission() {
           done: constatDone,
           content: (
             <TapQuestion
+              requires={['longueur-invariante']}
               prompt={CONSTAT_Q.q}
               options={CONSTAT_Q.options}
               correct={CONSTAT_Q.correct}
@@ -113,57 +123,66 @@ export default function Module01Mission() {
           title: 'À chaque situation, son unité',
           done: matchDone,
           content: (
-            <BatchChoiceQuestion
-              intro={
-                <p className="text-sm text-slate-600">
-                  Pour chaque situation, choisis l'unité la plus adaptée. Il n'y a pas de piège caché : demande-toi
-                  simplement « à peu près quelle taille est-ce que je mesure ? »
-                </p>
-              }
-              rows={ITEMS.map((it) => ({
-                id: it.id,
-                label: (
-                  <>
-                    <span className="text-2xl" aria-hidden="true">{it.emoji}</span>
-                    <span>{it.label}</span>
-                  </>
-                ),
-                options: UNITS,
-                correct: UNITS.indexOf(it.correct),
-                correction: (
-                  <>
-                    → {it.correct} — en {it.badUnit}, ça ferait{' '}
-                    <span className="font-mono">{formatLength(convert(it.valueInCorrect, it.correct, it.badUnit), it.badUnit)}</span> :
-                    peu pratique.
-                  </>
-                ),
-              }))}
-              solved={matchDone}
-              onAnswered={() => setMatchDone(true)}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {!allRight && (
+            <div className="space-y-5">
+              <BatchChoiceQuestion
+                intro={
+                  <p className="text-sm text-slate-600">
+                    Pour chaque situation, choisis l'unité la plus adaptée. Il n'y a pas de piège caché : demande-toi
+                    simplement « à peu près quelle taille est-ce que je mesure ? »
+                  </p>
+                }
+                rows={ITEMS.map((it) => ({
+                  id: it.id,
+                  label: (
                     <>
-                      {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
+                      <span className="text-2xl" aria-hidden="true">{it.emoji}</span>
+                      <span>{it.label}</span>
                     </>
-                  )}
-                  On choisit l'unité en fonction de la taille de ce qu'on mesure, pas au hasard : un stylo se
-                  mesure comme un cahier (cm), une pièce est très fine (mm), une porte est plus grande que toi
-                  (m), une distance entre villes se compte en km.
-                </Feedback>
+                  ),
+                  options: UNITS,
+                  correct: UNITS.indexOf(it.correct),
+                  correction: (
+                    <>
+                      → {it.correct} — en {it.badUnit}, ça ferait{' '}
+                      <span className="font-mono">{formatLength(convert(it.valueInCorrect, it.correct, it.badUnit), it.badUnit)}</span> :
+                      peu pratique.
+                    </>
+                  ),
+                }))}
+                requires={['longueur-invariante']}
+                solved={matchDone}
+                onAnswered={() => setMatchDone(true)}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {!allRight && (
+                      <>
+                        {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
+                      </>
+                    )}
+                    On choisit l'unité selon la taille de ce qu'on mesure, pas au hasard : un stylo se
+                    mesure comme un cahier (cm), une pièce est très fine (mm), une porte est plus grande que toi
+                    (m), une distance entre villes se compte en km.
+                  </Feedback>
+                )}
+              />
+              {/* Cinq objets viennent d'être appariés à leur unité : la règle
+                  du choix se dit maintenant sans rien annoncer d'avance. */}
+              {matchDone && (
+                <KnowledgeBrick
+                  id="unite-adaptee"
+                  variant="new"
+                  lead="Tu viens de choisir cinq fois : à chaque fois, la taille de l'objet a décidé."
+                />
               )}
-            />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <RulerIcon className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Km, m, cm, mm : quatre unités pour quatre échelles différentes. Dans cette leçon, tu vas apprendre à
-            les mesurer, à passer de l'une à l'autre, et à calculer un périmètre.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais choisir une unité. Reste à s'en servir pour de vrai :
+          au module suivant, tu poses un objet sur une règle — et la règle te tend un piège.
+        </KnowledgeSnapshot>
       }
     />
   );

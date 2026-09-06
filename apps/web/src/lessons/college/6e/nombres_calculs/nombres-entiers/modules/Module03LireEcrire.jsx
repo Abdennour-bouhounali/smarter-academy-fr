@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Minus, Sparkles } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { formatFr, spellFr, groupsOfThree } from '../components/numberUtils';
@@ -347,6 +348,7 @@ export default function Module03LireEcrire() {
                     options={item.options}
                     correct={item.correct}
                     cols={1}
+                    requires={['position-chiffre', 'zero-place']}
                     explain={item.explain}
                     solved={chiffresDone.includes(i)}
                     onAnswered={() => mark(setChiffresDone, chiffresDone, i)}
@@ -377,17 +379,25 @@ export default function Module03LireEcrire() {
               ))}
 
               {grandsDone.length === GRANDS.length && (
-                <div className="space-y-3 border-t border-slate-200 pt-5">
-                  <Feedback tone="info">
-                    Les groupes de trois chiffres ne sont pas décoratifs : ils correspondent aux{' '}
-                    <strong>classes</strong> (unités, mille, millions). C'est ce découpage qui rend un nombre de
-                    7 chiffres lisible d'un seul coup d'œil.
-                  </Feedback>
+                <div className="space-y-5 border-t border-slate-200 pt-5">
+                  {/* Le groupement par 3 vient d'être fait à la main sur quatre
+                      nombres : le mot « classe » se pose ici, pas plus tôt. */}
+                  <KnowledgeBrick
+                    id="classe-trois"
+                    variant="new"
+                    lead="Les paquets de trois chiffres que tu viens de former portent un nom."
+                  />
+                  <KnowledgeBrick
+                    id="ecriture-francaise"
+                    variant="new"
+                    lead="Reste à savoir ce qu'on écrit entre ces paquets."
+                  />
                   <TapQuestion
                     prompt="Quelle est l'écriture correcte de ce nombre en français ?"
                     options={FORMAT_Q.options}
                     correct={FORMAT_Q.correct}
                     cols={3}
+                    requires={['classe-trois', 'ecriture-francaise']}
                     explain={
                       <>
                         En français, on sépare les classes par une <strong>espace</strong> :{' '}
@@ -403,6 +413,12 @@ export default function Module03LireEcrire() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais lire et écrire un grand nombre. Au module suivant, on
+          regarde de plus près ce que vaut vraiment chacun de ses chiffres.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

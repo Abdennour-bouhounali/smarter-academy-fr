@@ -2,11 +2,161 @@
   "lesson": "ordre-grandeur-estimation",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "valeur-position",
+    "calcul-numerique"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "ordre-de-grandeur",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module01Mission.jsx",
+        "line": 181,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "estimation-approchee",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module02Estimer.jsx",
+        "line": 169,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "convention-milieu",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module03Arrondir.jsx",
+        "line": 139,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "plusieurs-arrondis",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module04Somme.jsx",
+        "line": 84,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "difference-distance",
+      "type": "concepts",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module05Difference.jsx",
+        "line": 102,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "niveau-de-precision",
+      "type": "regles",
+      "module": 9,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module09Precision.jsx",
+        "line": 99,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "nombre-ami",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module02Estimer.jsx",
+        "line": 135,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "arrondi",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module03Arrondir.jsx",
+        "line": 93,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "pas-arrondi",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module03Arrondir.jsx",
+        "line": 165,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "produit-rectangle",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module06Produit.jsx",
+        "line": 115,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "plausible-suspect-impossible",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module07Detective.jsx",
+        "line": 65,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "demarche-estimation",
+      "type": "methodes",
+      "module": 8,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module08Problemes.jsx",
+        "line": 197,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-estimer-toujours",
+      "type": "memoriser",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module07Detective.jsx",
+        "line": 105,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-valeur-chiffre",
@@ -15,8 +165,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module00Diagnostic.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "valeur-position"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +180,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module00Diagnostic.jsx",
-      "line": 37,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 40,
+      "requires": [
+        "valeur-position",
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position": "prior",
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +198,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module00Diagnostic.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 55,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +214,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module00Diagnostic.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 66,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +230,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module00Diagnostic.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +246,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module01Mission.jsx",
-      "line": 138,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 139,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,9 +262,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module01Mission.jsx",
-      "line": 166,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 168,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +278,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module02Estimer.jsx",
-      "line": 136,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 149,
+      "requires": [
+        "nombre-ami"
+      ],
+      "prerequisiteStatus": {
+        "nombre-ami": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,9 +294,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module03Arrondir.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 128,
+      "requires": [
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -122,9 +310,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module03Arrondir.jsx",
-      "line": 136,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 154,
+      "requires": [
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +326,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module04Somme.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 73,
+      "requires": [
+        "arrondi",
+        "pas-arrondi"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3",
+        "pas-arrondi": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +344,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module04Somme.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 129,
+      "requires": [
+        "plusieurs-arrondis",
+        "ordre-de-grandeur"
+      ],
+      "prerequisiteStatus": {
+        "plusieurs-arrondis": "established@M4",
+        "ordre-de-grandeur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +362,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module05Difference.jsx",
-      "line": 67,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "arrondi",
+        "ordre-de-grandeur"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3",
+        "ordre-de-grandeur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,9 +380,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module05Difference.jsx",
-      "line": 130,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 143,
+      "requires": [
+        "difference-distance"
+      ],
+      "prerequisiteStatus": {
+        "difference-distance": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -182,9 +396,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module06Produit.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 131,
+      "requires": [
+        "produit-rectangle"
+      ],
+      "prerequisiteStatus": {
+        "produit-rectangle": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -194,9 +412,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module07Detective.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "plausible-suspect-impossible",
+        "estimation-approchee"
+      ],
+      "prerequisiteStatus": {
+        "plausible-suspect-impossible": "established@M7",
+        "estimation-approchee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -206,9 +430,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module09Precision.jsx",
-      "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 79,
+      "requires": [
+        "ordre-de-grandeur",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "ordre-de-grandeur": "established@M1",
+        "arrondi": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -218,9 +448,13 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module09Precision.jsx",
-      "line": 96,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 107,
+      "requires": [
+        "niveau-de-precision"
+      ],
+      "prerequisiteStatus": {
+        "niveau-de-precision": "established@M9"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +464,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 53,
+      "requires": [
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,9 +480,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 74,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "arrondi",
+        "convention-milieu"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3",
+        "convention-milieu": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -254,9 +498,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 89,
+      "requires": [
+        "arrondi",
+        "plusieurs-arrondis",
+        "ordre-de-grandeur"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3",
+        "plusieurs-arrondis": "established@M4",
+        "ordre-de-grandeur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -266,9 +518,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 96,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 101,
+      "requires": [
+        "arrondi",
+        "difference-distance"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3",
+        "difference-distance": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -278,9 +536,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 107,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 113,
+      "requires": [
+        "arrondi",
+        "produit-rectangle"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "established@M3",
+        "produit-rectangle": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -290,9 +554,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 126,
+      "requires": [
+        "ordre-de-grandeur",
+        "plausible-suspect-impossible"
+      ],
+      "prerequisiteStatus": {
+        "ordre-de-grandeur": "established@M1",
+        "plausible-suspect-impossible": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -302,9 +572,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 135,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 143,
+      "requires": [
+        "produit-rectangle",
+        "plausible-suspect-impossible"
+      ],
+      "prerequisiteStatus": {
+        "produit-rectangle": "established@M6",
+        "plausible-suspect-impossible": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -314,9 +590,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 160,
+      "requires": [
+        "nombre-ami",
+        "ordre-de-grandeur"
+      ],
+      "prerequisiteStatus": {
+        "nombre-ami": "established@M2",
+        "ordre-de-grandeur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -326,9 +608,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 170,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 180,
+      "requires": [
+        "demarche-estimation",
+        "plausible-suspect-impossible"
+      ],
+      "prerequisiteStatus": {
+        "demarche-estimation": "established@M8",
+        "plausible-suspect-impossible": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -338,9 +626,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/ordre-grandeur-estimation/modules/Module10BossFinal.jsx",
-      "line": 191,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 202,
+      "requires": [
+        "niveau-de-precision"
+      ],
+      "prerequisiteStatus": {
+        "niveau-de-precision": "established@M9"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }

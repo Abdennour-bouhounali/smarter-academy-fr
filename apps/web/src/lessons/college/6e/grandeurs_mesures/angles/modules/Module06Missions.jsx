@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Target } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Protractor from '../components/Protractor';
@@ -113,6 +112,7 @@ export default function Module06Missions() {
                     correct={CLASSE_Q.correct}
                     cols={3}
                     explain={CLASSE_Q.explain}
+                    requires={['classes-angles', 'rapporteur', 'reflexe-classer']}
                     solved={classeDone}
                     onAnswered={() => setClasseDone(true)}
                   />
@@ -126,12 +126,18 @@ export default function Module06Missions() {
           title: 'Mission 2 · Le gâteau du vainqueur',
           done: gateauDone,
           content: (
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-4 text-sm text-slate-700">
-                Le gâteau du tournoi est partagé en parts égales. Chaque part forme un angle de{' '}
-                <strong>45°</strong> au centre. Sachant qu'un tour complet vaut <strong>360°</strong>, combien y
-                a-t-il de parts ?
+                Le gâteau du tournoi est partagé en parts égales, toutes de même ouverture. Chaque part
+                forme un angle de <strong>45°</strong> au centre du gâteau.
               </div>
+              {/* La valeur du tour complet est une connaissance neuve :
+                  elle est POSÉE ici, pas glissée dans l'énoncé. */}
+              <KnowledgeBrick
+                id="tour-360"
+                variant="new"
+                lead="Toutes ces parts se partagent le même sommet et remplissent tout le tour : il faut donc savoir combien vaut un tour."
+              />
               <NumericQuestion
                 prompt="Nombre de parts :"
                 suffix="parts"
@@ -144,6 +150,7 @@ export default function Module06Missions() {
                     ? '45, c’est la mesure d’UNE part. La question demande COMBIEN de parts : divise le tour complet (360°) par 45°.'
                     : 'Combien de fois 45° tiennent-ils dans un tour complet de 360° ?'
                 }
+                requires={['angle-ouverture', 'tour-360']}
                 solved={gateauDone}
                 onAnswered={() => setGateauDone(true)}
               />
@@ -174,6 +181,7 @@ export default function Module06Missions() {
                 correct={FANFARON_Q.correct}
                 cols={1}
                 explain={FANFARON_Q.explain}
+                requires={['angle-ouverture', 'longueur-cotes-sans-effet']}
                 solved={fanfaronDone}
                 onAnswered={() => setFanfaronDone(true)}
               />
@@ -188,13 +196,10 @@ export default function Module06Missions() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Target className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Autour d'un point, les angles font 360°. Et quelle que soit la longueur des côtés, seule l'ouverture
-            compte.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ta carte est complète : le brevet de pilote ne te demandera
+          rien qui n'y figure déjà.
+        </KnowledgeSnapshot>
       }
     />
   );

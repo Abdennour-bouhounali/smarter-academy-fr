@@ -2,11 +2,272 @@
   "lesson": "probabilites-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "quotient",
+    "pourcentage",
+    "calcul-numerique"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "frequence",
+      "type": "formules",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
+        "line": 393,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "stabilisation",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
+        "line": 539,
+        "step": 5,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "probabilite",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
+        "line": 646,
+        "step": 7,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "equiprobable",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
+        "line": 617,
+        "step": 7,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "evenement",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module02IssuesEvenements.jsx",
+        "line": 143,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "probabilite-mesure-chance",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module02IssuesEvenements.jsx",
+        "line": 249,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "formule-probabilite",
+      "type": "formules",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module03SacDeBilles.jsx",
+        "line": 140,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "fractions-egales-meme-probabilite",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module03SacDeBilles.jsx",
+        "line": 183,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "somme-des-probabilites",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module03SacDeBilles.jsx",
+        "line": 258,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "deux-epreuves-couples",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module04DeuxDes.jsx",
+        "line": 205,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "echelle-probabilites",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module05Langage.jsx",
+        "line": 99,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "evenement-contraire",
+      "type": "formules",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module05Langage.jsx",
+        "line": 116,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "le-modele-suit-la-situation",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module06LaboSituations.jsx",
+        "line": 221,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "experience-aleatoire",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
+        "line": 306,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "effectif",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
+        "line": 340,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "evenement-impossible-certain",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module02IssuesEvenements.jsx",
+        "line": 222,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "effectif-attendu",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module03SacDeBilles.jsx",
+        "line": 205,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "evenement-sur-la-grille",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module04DeuxDes.jsx",
+        "line": 215,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "interpreter-une-probabilite",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module05Langage.jsx",
+        "line": 150,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "estimer-par-la-frequence",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module06LaboSituations.jsx",
+        "line": 145,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-sans-memoire",
+      "type": "memoriser",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
+        "line": 601,
+        "step": 6,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-frequence-vs-probabilite",
+      "type": "memoriser",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
+        "line": 697,
+        "step": 8,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-piege-des-sommes",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module04DeuxDes.jsx",
+        "line": 305,
+        "step": 5,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "pb-d1",
@@ -14,9 +275,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module00Diagnostic.jsx",
-      "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 26,
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +291,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module00Diagnostic.jsx",
-      "line": 30,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 37,
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +307,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module00Diagnostic.jsx",
-      "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 48,
+      "requires": [
+        "pourcentage",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +325,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module00Diagnostic.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 59,
+      "requires": [
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +341,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module00Diagnostic.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +357,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 332,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 352,
+      "requires": [
+        "effectif",
+        "experience-aleatoire"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "established@M1",
+        "experience-aleatoire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,13 +375,19 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 372,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "frequence"
+      "line": 403,
+      "requires": [
+        "frequence",
+        "effectif",
+        "pourcentage"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "frequence": "established@M1",
+        "effectif": "established@M1",
+        "pourcentage": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M01-S4-Q3",
@@ -100,9 +395,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 440,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 473,
+      "requires": [
+        "frequence",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1",
+        "effectif": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -112,9 +413,13 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 477,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 511,
+      "requires": [
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +429,17 @@
       "step": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 536,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 578,
+      "requires": [
+        "experience-aleatoire",
+        "frequence",
+        "stabilisation"
+      ],
+      "prerequisiteStatus": {
+        "experience-aleatoire": "established@M1",
+        "frequence": "established@M1",
+        "stabilisation": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +449,15 @@
       "step": 7,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 573,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 630,
+      "requires": [
+        "equiprobable",
+        "experience-aleatoire"
+      ],
+      "prerequisiteStatus": {
+        "equiprobable": "established@M1",
+        "experience-aleatoire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,9 +467,17 @@
       "step": 8,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 600,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 666,
+      "requires": [
+        "frequence",
+        "probabilite",
+        "equiprobable"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M1",
+        "probabilite": "established@M1",
+        "equiprobable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -160,9 +487,17 @@
       "step": 9,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 651,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 725,
+      "requires": [
+        "probabilite",
+        "equiprobable",
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "established@M1",
+        "equiprobable": "established@M1",
+        "frequence": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -172,9 +507,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module02IssuesEvenements.jsx",
-      "line": 160,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 166,
+      "requires": [
+        "evenement",
+        "frequence",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "evenement": "established@M2",
+        "frequence": "established@M1",
+        "probabilite": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -184,9 +527,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module02IssuesEvenements.jsx",
-      "line": 196,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 204,
+      "requires": [
+        "evenement",
+        "equiprobable"
+      ],
+      "prerequisiteStatus": {
+        "evenement": "established@M2",
+        "equiprobable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -196,9 +545,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module02IssuesEvenements.jsx",
-      "line": 222,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 238,
+      "requires": [
+        "evenement",
+        "equiprobable"
+      ],
+      "prerequisiteStatus": {
+        "evenement": "established@M2",
+        "equiprobable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -208,9 +563,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module02IssuesEvenements.jsx",
-      "line": 232,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 254,
+      "requires": [
+        "probabilite-mesure-chance",
+        "evenement-impossible-certain"
+      ],
+      "prerequisiteStatus": {
+        "probabilite-mesure-chance": "established@M2",
+        "evenement-impossible-certain": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -220,9 +581,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module03SacDeBilles.jsx",
-      "line": 152,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 162,
+      "requires": [
+        "formule-probabilite",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "formule-probabilite": "established@M3",
+        "probabilite": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -232,9 +599,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module03SacDeBilles.jsx",
-      "line": 188,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 210,
+      "requires": [
+        "effectif-attendu",
+        "formule-probabilite"
+      ],
+      "prerequisiteStatus": {
+        "effectif-attendu": "established@M3",
+        "formule-probabilite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -244,9 +617,15 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module03SacDeBilles.jsx",
-      "line": 249,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 279,
+      "requires": [
+        "formule-probabilite",
+        "fractions-egales-meme-probabilite"
+      ],
+      "prerequisiteStatus": {
+        "formule-probabilite": "established@M3",
+        "fractions-egales-meme-probabilite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -256,9 +635,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module04DeuxDes.jsx",
-      "line": 215,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 238,
+      "requires": [
+        "deux-epreuves-couples",
+        "evenement-sur-la-grille",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "deux-epreuves-couples": "established@M4",
+        "evenement-sur-la-grille": "established@M4",
+        "probabilite": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -268,9 +655,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module04DeuxDes.jsx",
-      "line": 238,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 262,
+      "requires": [
+        "evenement-sur-la-grille",
+        "deux-epreuves-couples",
+        "evenement"
+      ],
+      "prerequisiteStatus": {
+        "evenement-sur-la-grille": "established@M4",
+        "deux-epreuves-couples": "established@M4",
+        "evenement": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -280,9 +675,17 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module04DeuxDes.jsx",
-      "line": 259,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 285,
+      "requires": [
+        "deux-epreuves-couples",
+        "equiprobable",
+        "evenement"
+      ],
+      "prerequisiteStatus": {
+        "deux-epreuves-couples": "established@M4",
+        "equiprobable": "established@M1",
+        "evenement": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -292,9 +695,19 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module05Langage.jsx",
-      "line": 115,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "evenement-contraire",
+        "echelle-probabilites",
+        "mem-frequence-vs-probabilite",
+        "stabilisation"
+      ],
+      "prerequisiteStatus": {
+        "evenement-contraire": "established@M5",
+        "echelle-probabilites": "established@M5",
+        "mem-frequence-vs-probabilite": "established@M1",
+        "stabilisation": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -304,9 +717,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module05Langage.jsx",
-      "line": 141,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 155,
+      "requires": [
+        "interpreter-une-probabilite",
+        "echelle-probabilites"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-une-probabilite": "established@M5",
+        "echelle-probabilites": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -316,9 +735,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module05Langage.jsx",
-      "line": 156,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 171,
+      "requires": [
+        "interpreter-une-probabilite",
+        "effectif-attendu"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-une-probabilite": "established@M5",
+        "effectif-attendu": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -328,9 +753,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module06LaboSituations.jsx",
-      "line": 140,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 150,
+      "requires": [
+        "estimer-par-la-frequence",
+        "frequence",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "estimer-par-la-frequence": "established@M6",
+        "frequence": "established@M1",
+        "effectif": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -340,9 +773,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module06LaboSituations.jsx",
-      "line": 157,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 168,
+      "requires": [
+        "estimer-par-la-frequence",
+        "effectif-attendu"
+      ],
+      "prerequisiteStatus": {
+        "estimer-par-la-frequence": "established@M6",
+        "effectif-attendu": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -352,9 +791,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module06LaboSituations.jsx",
-      "line": 182,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 194,
+      "requires": [
+        "formule-probabilite",
+        "equiprobable"
+      ],
+      "prerequisiteStatus": {
+        "formule-probabilite": "established@M3",
+        "equiprobable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -364,9 +809,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module06LaboSituations.jsx",
-      "line": 194,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 207,
+      "requires": [
+        "formule-probabilite",
+        "mem-sans-memoire"
+      ],
+      "prerequisiteStatus": {
+        "formule-probabilite": "established@M3",
+        "mem-sans-memoire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -376,9 +827,19 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module06LaboSituations.jsx",
-      "line": 215,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 236,
+      "requires": [
+        "interpreter-une-probabilite",
+        "equiprobable",
+        "stabilisation",
+        "effectif-attendu"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-une-probabilite": "established@M5",
+        "equiprobable": "established@M1",
+        "stabilisation": "established@M1",
+        "effectif-attendu": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -388,9 +849,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 65,
+      "requires": [
+        "experience-aleatoire"
+      ],
+      "prerequisiteStatus": {
+        "experience-aleatoire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -400,9 +865,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 68,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "experience-aleatoire"
+      ],
+      "prerequisiteStatus": {
+        "experience-aleatoire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -412,9 +881,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 89,
+      "requires": [
+        "evenement",
+        "experience-aleatoire"
+      ],
+      "prerequisiteStatus": {
+        "evenement": "established@M2",
+        "experience-aleatoire": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -424,9 +899,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 90,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 101,
+      "requires": [
+        "formule-probabilite",
+        "evenement",
+        "equiprobable"
+      ],
+      "prerequisiteStatus": {
+        "formule-probabilite": "established@M3",
+        "evenement": "established@M2",
+        "equiprobable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -436,9 +919,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "formule-probabilite",
+        "fractions-egales-meme-probabilite"
+      ],
+      "prerequisiteStatus": {
+        "formule-probabilite": "established@M3",
+        "fractions-egales-meme-probabilite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -448,9 +937,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 116,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 129,
+      "requires": [
+        "mem-frequence-vs-probabilite",
+        "frequence",
+        "probabilite",
+        "equiprobable"
+      ],
+      "prerequisiteStatus": {
+        "mem-frequence-vs-probabilite": "established@M1",
+        "frequence": "established@M1",
+        "probabilite": "established@M1",
+        "equiprobable": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -460,9 +959,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 132,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 146,
+      "requires": [
+        "stabilisation",
+        "frequence",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "stabilisation": "established@M1",
+        "frequence": "established@M1",
+        "probabilite": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -472,9 +979,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 148,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 163,
+      "requires": [
+        "deux-epreuves-couples",
+        "evenement-sur-la-grille",
+        "mem-piege-des-sommes"
+      ],
+      "prerequisiteStatus": {
+        "deux-epreuves-couples": "established@M4",
+        "evenement-sur-la-grille": "established@M4",
+        "mem-piege-des-sommes": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -484,9 +999,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 161,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 177,
+      "requires": [
+        "interpreter-une-probabilite",
+        "echelle-probabilites",
+        "probabilite-mesure-chance"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-une-probabilite": "established@M5",
+        "echelle-probabilites": "established@M5",
+        "probabilite-mesure-chance": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -496,25 +1019,18 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module07MissionFinale.jsx",
-      "line": 177,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 194,
+      "requires": [
+        "interpreter-une-probabilite",
+        "effectif-attendu"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-une-probabilite": "established@M5",
+        "effectif-attendu": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« fréquence » is a target concept of this lesson but its first appearance is q.explain (module 1, étape 3); it is only taught later at apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx:466",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/probabilites-3e/modules/Module01LaboratoireDuDe.jsx",
-      "line": 379,
-      "module": 1,
-      "step": 3,
-      "term": "frequence",
-      "questionId": "M01-S3-Q2",
-      "position": 49
-    }
-  ]
+  "findings": []
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import ShapeLab from '../components/ShapeLab';
@@ -50,6 +51,7 @@ const fig = (pts, label) => (
 const EPREUVES = [
   {
     id: 'fp-e1',
+    requires: ['propriete-decide', 'carre', 'cote'],
     skill: 'reconnaitre',
     title: 'Épreuve 1 — Sur quoi se fonder ?',
     prompt:
@@ -67,6 +69,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e2',
+    requires: ['cote', 'sommet', 'polygone'],
     skill: 'vocabulaire',
     title: 'Épreuve 2 — Côtés et sommets',
     prompt: 'Ce polygone a 5 côtés. Combien a-t-il de sommets ?',
@@ -80,6 +83,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e3',
+    requires: ['angle'],
     skill: 'vocabulaire',
     title: 'Épreuve 3 — Comparer deux angles',
     prompt:
@@ -97,6 +101,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e4',
+    requires: ['carre', 'rectangle', 'losange', 'polygone'],
     skill: 'quadrilateres',
     title: 'Épreuve 4 — Caractériser le carré',
     prompt: 'Quelles propriétés faut-il vérifier, ensemble, pour affirmer qu’un quadrilatère est un carré ?',
@@ -114,6 +119,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e5',
+    requires: ['famille-quadrilateres', 'carre', 'rectangle'],
     skill: 'quadrilateres',
     title: 'Épreuve 5 — Carré et rectangle',
     prompt: 'Un carré est-il un rectangle ?',
@@ -131,6 +137,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e6',
+    requires: ['caracteres-cumulables', 'triangle-isocele', 'triangle-rectangle', 'triangle-equilateral'],
     skill: 'triangles',
     title: 'Épreuve 6 — Deux caractères à la fois',
     prompt: 'Ce triangle a deux côtés égaux et un angle droit. Comment l’appelle-t-on ?',
@@ -148,6 +155,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e7',
+    requires: ['carte-identite', 'losange', 'polygone'],
     skill: 'decrire',
     title: 'Épreuve 7 — Une description valable',
     prompt: 'Laquelle de ces descriptions désigne un losange sans ambiguïté ?',
@@ -165,6 +173,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e8',
+    requires: ['carte-identite', 'rectangle', 'losange'],
     skill: 'decrire',
     title: 'Épreuve 8 — Comparer deux figures',
     prompt: 'Quelle propriété le rectangle possède-t-il, que le losange ne possède pas en général ?',
@@ -181,6 +190,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e9',
+    requires: ['mem-eliminer', 'carre', 'losange', 'rectangle'],
     skill: 'identifier',
     title: 'Épreuve 9 — L’enquête',
     prompt:
@@ -194,6 +204,7 @@ const EPREUVES = [
   },
   {
     id: 'fp-e10',
+    requires: ['construire-contraintes', 'rectangle', 'carre', 'polygone'],
     skill: 'construire',
     title: 'Épreuve 10 — Construire',
     prompt:
@@ -261,6 +272,9 @@ function Synthese() {
           );
         })}
       </div>
+
+      {/* La synthèse PRÉSENTE la carte complète, elle ne la réécrit pas. */}
+      <KnowledgeSnapshot complete variant="complete" />
 
       <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-2">
         <h3 className="font-space font-bold text-amber-900 text-sm">Les pièges à éviter</h3>

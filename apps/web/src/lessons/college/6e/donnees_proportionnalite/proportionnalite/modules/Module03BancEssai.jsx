@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FlaskConical } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TestBench from '../components/TestBench';
@@ -119,9 +120,17 @@ export default function Module03BancEssai() {
                 cols={1}
                 explain={`Les 2 € par personne, eux, doublent bien. Mais les 5 € de location sont fixes : on ne les paie qu’une fois. C’est cette part FIXE qui casse la proportionnalité — ${applyRule(BARQUE.rule, 2)} € au lieu des ${2 * applyRule(BARQUE.rule, 1)} € qu’il faudrait pour un doublement.`}
                 explainWrong={`Le prix par personne ne change pas : c’est bien 2 € à chaque fois. Ce qui coince, c’est le forfait de 5 € payé une seule fois — il ne double jamais.`}
+                requires={['proportionnalite', 'double-double', 'calcul-numerique']}
                 solved={pourquoiDone}
                 onAnswered={() => setPourquoiDone(true)}
               />
+              {pourquoiDone && (
+                <KnowledgeBrick
+                  id="part-fixe"
+                  variant="new"
+                  lead="Tu as mis le doigt sur le coupable : ces 5 € qu’on ne paie qu’une fois."
+                />
+              )}
             </div>
           ),
         },
@@ -134,6 +143,13 @@ export default function Module03BancEssai() {
               <div className="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-3 text-center">
                 <p className="font-mono text-sm text-slate-700">Au stand de crêpes : 4 crêpes → 12 €</p>
               </div>
+              {/* Le raccourci est POSÉ avant qu'on demande de l'appliquer : il
+                  ne vivait auparavant que dans l'explication d'après-réponse. */}
+              <KnowledgeBrick
+                id="double-triple-moitie"
+                variant="new"
+                lead="Le banc d’essai vient de garantir que cette situation-ci est proportionnelle. Voilà ce que cela autorise."
+              />
               <TapQuestion
                 prompt="Combien coûtent 12 crêpes (le triple de 4) ?"
                 options={['20 €', '36 €', '15 €']}
@@ -141,6 +157,7 @@ export default function Module03BancEssai() {
                 cols={3}
                 explain="12 crêpes, c’est 3 fois 4 crêpes : le prix est donc 3 fois 12 €, soit 36 €. Dans une situation proportionnelle, triple d’un côté = triple de l’autre."
                 explainWrong="On triple la quantité, donc on triple le prix : 12 × 3 = 36 €. (Ajouter 8 € ou 3 € ne marche que si la situation n’était PAS proportionnelle.)"
+                requires={['double-triple-moitie', 'tables-multiplication']}
                 solved={tripleDone}
                 onAnswered={() => setTripleDone(true)}
               />
@@ -155,12 +172,17 @@ export default function Module03BancEssai() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <FlaskConical className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Avant d'appliquer une recette, teste la situation : double la quantité et regarde si l'autre
-            grandeur double. Si oui, tous les raccourcis deviennent permis.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={3}>
+            <strong>La suite.</strong> Tu sais distinguer les situations et utiliser les raccourcis quand
+            ils sont permis. Au prochain module, un tableau à compléter case par case.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <FlaskConical className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Teste d'abord, calcule ensuite.
+            </p>
+          </div>
         </motion.div>
       }
     />

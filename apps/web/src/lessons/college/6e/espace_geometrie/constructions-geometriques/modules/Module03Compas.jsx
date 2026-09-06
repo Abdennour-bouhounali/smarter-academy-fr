@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Circle } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CompasTool from '../components/CompasTool';
@@ -104,10 +103,19 @@ export default function Module03Compas() {
                 </>
               )}
               {reglageDone && (
-                <Feedback tone="ok">
-                  Le compas est réglé sur la longueur du segment. Tu n’as pas eu besoin de lire un nombre :
-                  l’<strong>écartement</strong> porte la longueur.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Le compas est réglé sur la longueur du segment. Tu n’as pas eu besoin de lire un
+                    nombre : l’<strong>écartement</strong> porte la longueur.
+                  </Feedback>
+                  {/* L'écartement vient d'être ajusté à la main : le geste du
+                      report se pose ici, avant les deux étapes qui l'exigent. */}
+                  <KnowledgeBrick
+                    id="reporter-au-compas"
+                    variant="new"
+                    lead="Ce réglage que tu viens de faire est la première moitié d’un geste complet."
+                  />
+                </>
               )}
             </div>
           ),
@@ -135,6 +143,7 @@ export default function Module03Compas() {
               ]}
               correct={0}
               cols={1}
+              requires={['reporter-au-compas', 'instrument-garantit']}
               explain="C’est tout l’intérêt du compas : tant qu’on n’y touche pas, l’écartement est conservé. La longueur reportée est exactement la même."
               explainWrong="Le compas ne se déforme pas en se déplaçant. C’est ce qui en fait l’instrument du REPORT — plus fiable que la lecture d’une graduation."
               solved={reporterDone}
@@ -147,42 +156,48 @@ export default function Module03Compas() {
           title: 'Pourquoi le cercle, alors ?',
           done: cercleDone,
           content: (
-            <TapQuestion
-              above={
-                <CompasTool
-                  centre={{ x: 160, y: 105 }}
-                  rayon={70}
-                  ariaLabel="Un cercle tracé au compas"
+            <div className="space-y-5">
+              <TapQuestion
+                above={
+                  <CompasTool
+                    centre={{ x: 160, y: 105 }}
+                    rayon={70}
+                    ariaLabel="Un cercle tracé au compas"
+                  />
+                }
+                prompt="Pourquoi le compas trace-t-il naturellement un cercle ?"
+                options={[
+                  'Parce que tous les points tracés sont à la même distance du centre',
+                  'Parce qu’il tourne',
+                  'Parce que la mine est ronde',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['reporter-au-compas']}
+                explain="Le cercle EST l’ensemble des points à une même distance du centre. Le compas, qui conserve l’écartement, le dessine donc par construction."
+                explainWrong="Ce n’est pas la rotation en elle-même : c’est le fait que l’écartement — donc la distance au centre — ne change jamais."
+                solved={cercleDone}
+                onAnswered={() => setCercleDone(true)}
+              />
+
+              {/* Le lien entre report et cercle vient d'être formulé par
+                  l'élève : on le fixe sur la carte. */}
+              {cercleDone && (
+                <KnowledgeBrick
+                  id="cercle-au-compas"
+                  variant="new"
+                  lead="Tracer un cercle et reporter une longueur sont donc le même geste."
                 />
-              }
-              prompt="Pourquoi le compas trace-t-il naturellement un cercle ?"
-              options={[
-                'Parce que tous les points tracés sont à la même distance du centre',
-                'Parce qu’il tourne',
-                'Parce que la mine est ronde',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Le cercle EST l’ensemble des points à une même distance du centre. Le compas, qui conserve l’écartement, le dessine donc par construction."
-              explainWrong="Ce n’est pas la rotation en elle-même : c’est le fait que l’écartement — donc la distance au centre — ne change jamais."
-              solved={cercleDone}
-              onAnswered={() => setCercleDone(true)}
-            />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Circle className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Le compas ne mesure pas : il <strong className="text-white">conserve</strong>. C’est ce qui
-            permet de reporter une longueur sans jamais lire un nombre — et de tracer un cercle.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Longueurs exactes, longueurs reportées : il te manque encore
+          l’angle droit. C’est l’équerre, au module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

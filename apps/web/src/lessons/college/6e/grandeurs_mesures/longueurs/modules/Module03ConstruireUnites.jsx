@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Layers } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Ruler from '../components/Ruler';
@@ -72,6 +71,7 @@ export default function Module03ConstruireUnites() {
                   )}
                 </div>
               }
+              requires={['longueur-invariante']}
               prompt={READ_Q.q}
               options={READ_Q.options}
               correct={READ_Q.options.indexOf(READ_Q.correctLabel)}
@@ -88,12 +88,21 @@ export default function Module03ConstruireUnites() {
           done: ladderDone,
           content: (
             <BatchChoiceQuestion
+              requires={['escalier-longueurs', 'longueur-invariante']}
               intro={
                 <div className="space-y-4">
                   <UnitLadder />
+                  {/* L'escalier est là, sous les yeux : la brique le nomme et
+                      le fixe AVANT la demande qui suit — jamais après
+                      (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}
+                  <KnowledgeBrick
+                    id="escalier-longueurs"
+                    variant="new"
+                    lead="Sur la règle, 3 cm et 30 mm tombaient au même endroit. Voilà toute l'échelle."
+                  />
                   <p className="text-sm text-slate-600">
-                    Combien faut-il de la petite unité pour former la grande ? (Aide-toi de la règle ci-dessus pour
-                    cm → mm, et de l'échelle que tu viens d'explorer.)
+                    Combien faut-il de la petite unité pour former la grande ? Aide-toi de l'escalier
+                    ci-dessus.
                   </p>
                 </div>
               }
@@ -121,13 +130,10 @@ export default function Module03ConstruireUnites() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Layers className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Une longueur ne change jamais quand on change d'unité — seule son écriture change. C'est cette idée
-            qui va te permettre de convertir sans te tromper.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu as l'escalier complet. Au module suivant, tu t'en sers pour
+          passer d'une unité à l'autre sans jamais te tromper de sens.
+        </KnowledgeSnapshot>
       }
     />
   );

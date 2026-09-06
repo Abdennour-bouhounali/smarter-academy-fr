@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Repeat, Scissors } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Base10Blocks from '../components/Base10Blocks';
 import { Feedback } from '../../../../../common/components/LessonUI';
@@ -260,7 +261,7 @@ export default function Module02Construire() {
         {
           num: 1,
           title: 'Construis le nombre 347',
-          subtitle: 'Plusieurs assemblages sont possibles… mais un seul utilise le minimum de blocs.',
+          subtitle: 'Plusieurs assemblages sont possibles… mais un seul utilise le moins de blocs possible.',
           done: s1,
           content: (kit) => (
             <>
@@ -282,11 +283,13 @@ export default function Module02Construire() {
               {s1 && (
                 <div className="space-y-3 mt-4">
                   <Reveal n={347} />
-                  <Feedback tone="info">
-                    3 centaines, 4 dizaines et 7 unités. On écrit ce nombre{' '}
-                    <strong className="font-mono">347</strong> : les chiffres se rangent dans l'ordre des
-                    paquets, du plus gros au plus petit.
-                  </Feedback>
+                  {/* Le nombre vient d'être fabriqué : c'est ici, et pas
+                      avant, que « position » veut dire quelque chose. */}
+                  <KnowledgeBrick
+                    id="position-chiffre"
+                    variant="new"
+                    lead="Tes 3 plaques, 4 barres et 7 cubes se sont rangés dans cet ordre-là, et pas dans un autre."
+                  />
                 </div>
               )}
             </>
@@ -312,12 +315,13 @@ export default function Module02Construire() {
               {s2 && (
                 <div className="space-y-3 mt-4">
                   <Reveal n={1205} />
-                  <Feedback tone="info">
-                    Tu n'as posé <strong>aucune barre</strong> : il n'y a pas de dizaine dans 1 205. Pourtant on
-                    ne peut pas écrire « 125 » ! Le <strong className="font-mono text-lg">0</strong> occupe la
-                    place des dizaines pour que le 2 reste bien à la place des centaines. On y reviendra au
-                    module 5.
-                  </Feedback>
+                  {/* La position vide vient d'apparaître dans la manipulation :
+                      le zéro se nomme maintenant, pas dans un explain. */}
+                  <KnowledgeBrick
+                    id="zero-place"
+                    variant="new"
+                    lead="Tu n'as posé aucune barre — et pourtant il a bien fallu écrire quelque chose à cette place."
+                  />
                 </div>
               )}
             </>
@@ -383,16 +387,30 @@ export default function Module02Construire() {
               )}
 
               {s3b && (
-                <Feedback tone="info">
-                  Voilà pourquoi on regroupe : <strong>50 unités</strong> et <strong>5 dizaines</strong>, c'est
-                  la même quantité, mais l'une se lit d'un coup d'œil et l'autre non. Les positions servent à
-                  écrire les grandes quantités sans tout compter.
-                </Feedback>
+                <>
+                  <Feedback tone="info">
+                    <strong>50 unités</strong> et <strong>5 dizaines</strong>, c'est la même quantité — mais
+                    l'une se lit d'un coup d'œil et l'autre non.
+                  </Feedback>
+                  {/* Le geste d'échange (10 → 1) vient d'être fait dans les
+                      deux sens : c'est le moment de le nommer. */}
+                  <KnowledgeBrick
+                    id="groupement-dix"
+                    variant="new"
+                    lead="C'est cet échange que tu viens de faire, puis de défaire."
+                  />
+                </>
               )}
             </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais fabriquer un nombre et le ranger par paquets. Au
+          module suivant, tu apprends à le lire — même quand il est très long.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

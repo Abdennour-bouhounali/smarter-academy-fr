@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import AngleFigure from '../components/AngleFigure';
 import Protractor from '../components/Protractor';
@@ -36,6 +37,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'an-e1',
+    requires: ['angle-ouverture', 'longueur-cotes-sans-effet'],
     skill: 'ouverture',
     title: 'Épreuve 1',
     prompt: 'Sur le plan de vol, qu’est-ce qui détermine la « grandeur » d’un angle de virage ?',
@@ -51,6 +53,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e2',
+    requires: ['angle-ouverture', 'orientation-sans-effet'],
     skill: 'comparer',
     title: 'Épreuve 2',
     prompt: 'Deux plans de virage sont dessinés dans des orientations différentes. Comment les comparer sûrement ?',
@@ -66,6 +69,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e3',
+    requires: ['angle-droit', 'classes-angles'],
     skill: 'comparer',
     title: 'Épreuve 3',
     prompt: 'Le cap affiché forme un angle nettement plus ouvert que l’équerre du navigateur. C’est un angle…',
@@ -78,6 +82,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e4',
+    requires: ['angle-ouverture', 'longueur-cotes-sans-effet'],
     skill: 'ouverture',
     title: 'Épreuve 4',
     prompt: 'Deux trajectoires ont la même ouverture, mais l’une est tracée avec des traits deux fois plus longs. Que peut-on dire de leurs angles ?',
@@ -93,6 +98,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e5',
+    requires: ['rapporteur', 'rituel-placement', 'deux-graduations'],
     skill: 'mesurer',
     title: 'Épreuve 5',
     prompt: 'Le rapporteur est correctement posé sur l’angle de montée et le second côté sort sur la graduation 30 (échelle partant du zéro posé sur le côté). Quelle est la mesure ?',
@@ -104,6 +110,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e6',
+    requires: ['rapporteur', 'rituel-placement'],
     skill: 'mesurer',
     title: 'Épreuve 6',
     prompt: 'Le copilote a posé le rapporteur mais sa lecture est fausse. Quelle erreur a-t-il commise ?',
@@ -120,6 +127,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e7',
+    requires: ['classes-angles', 'deux-graduations', 'reflexe-classer'],
     skill: 'graduation',
     title: 'Épreuve 7',
     prompt: 'L’instrument affiche « 40 » et « 140 » sur la même graduation. L’angle de descente est visiblement AIGU. Quelle est sa mesure ?',
@@ -131,6 +139,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e8',
+    requires: ['rapporteur', 'construire-angle', 'reflexe-classer'],
     skill: 'construire',
     title: 'Épreuve 8',
     prompt: 'Pour tracer un virage de 115° à partir d’une demi-droite, quelle graduation faut-il marquer ?',
@@ -146,6 +155,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e9',
+    requires: ['angle-droit', 'tour-360'],
     skill: 'problemes',
     title: 'Épreuve 9',
     prompt: 'Le circuit d’attente est un carré : l’avion effectue 4 virages égaux pour revenir à son cap de départ (un tour complet). Combien mesure chaque virage ?',
@@ -157,6 +167,7 @@ const EPREUVES = [
   },
   {
     id: 'an-e10',
+    requires: ['classes-angles', 'deux-graduations', 'reflexe-classer'],
     skill: 'problemes',
     title: 'Épreuve 10',
     prompt: 'Approche finale : le manuel impose un angle piste-trajectoire AIGU de 30°. Le copilote lit 150° sur l’instrument. Que faut-il en conclure ?',
@@ -229,6 +240,11 @@ function Synthese() {
         <strong>classer → lire (ou marquer) → vérifier</strong>. La classe de l'angle élimine toujours la mauvaise
         graduation.
       </Feedback>
+
+      {/* La carte complète : l'« À retenir » de la leçon n'est pas un second
+          résumé écrit à la main, c'est la carte elle-même
+          (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot complete variant="complete" />
     </div>
   );
 }

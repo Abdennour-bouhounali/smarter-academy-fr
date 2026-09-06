@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Bot, MessageSquare } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProgramLab from '../components/ProgramLab';
@@ -18,9 +19,15 @@ import { makeWorld, instr, runProgram } from '../components/algoUtils';
  *
  *      OBJECTIF ≠ PROGRAMME
  *
- * Le mot « instruction » est introduit ICI, après le geste. Le mot
- * « algorithme » ne l'est PAS : c'est le module 3 qui existe pour le faire
- * découvrir (playbook §2 — ne pas expliquer en M1 ce que M3 doit révéler).
+ * Le mot « instruction » est introduit ICI, après le geste, par une
+ * <KnowledgeBrick> posée DANS le tableau `steps` — et non plus seulement
+ * dans le Feedback de TalkToRobot, invisible au contrat comme à la carte
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md). C'est ce qui rend légitime
+ * l'étape 2, dont une option employait « instruction » pour la première
+ * fois, en position de DEMANDE.
+ *
+ * Le mot « algorithme » n'est PAS introduit ici : c'est le module 3 qui
+ * existe pour le faire découvrir (playbook §2).
  */
 
 /* ══ Étape 1 — dire ne suffit pas ═════════════════════════════════════ */
@@ -222,7 +229,25 @@ export default function Module01RobotDesobeit() {
           subtitle: 'Parle-lui. Regarde ce qu’il fait.',
           done: talkDone,
           content: (kit) => (
-            <TalkToRobot solved={talkDone} onSolved={() => setTalkDone(true)} react={kit.react} />
+            <div className="space-y-4">
+              <TalkToRobot solved={talkDone} onSolved={() => setTalkDone(true)} react={kit.react} />
+              {/* Le mot arrive quand ROBI a effectivement bougé : trois phrases
+                  n'ont rien produit, deux ordres précis ont tout fait. */}
+              {talkDone && (
+                <>
+                  <KnowledgeBrick
+                    id="instruction"
+                    variant="new"
+                    lead="Ce que tu lui as donné à la fin n’était plus une phrase, mais un ordre qu’il connaît."
+                  />
+                  <KnowledgeBrick
+                    id="objectif-nest-pas-programme"
+                    variant="new"
+                    lead="Et ce que tu lui disais au début — « va au drapeau » — n’était pas du même genre."
+                  />
+                </>
+              )}
+            </div>
           ),
         },
         {
@@ -242,6 +267,7 @@ export default function Module01RobotDesobeit() {
               solved={quizDone}
               explain="🎯 Exactement. « Va au drapeau », c'est un OBJECTIF. ROBI, lui, n'exécute que des INSTRUCTIONS précises comme AVANCER. À toi de traduire l'objectif en instructions."
               explainWrong="ROBI n'est pas cassé, et la distance n'y change rien : il a très bien avancé dès que tu lui as donné l'instruction AVANCER. Un objectif n'est pas une instruction — c'est à toi de faire la traduction."
+              requires={['instruction', 'objectif-nest-pas-programme']}
               onAnswered={() => setQuizDone(true)}
             />
           ),
@@ -261,12 +287,18 @@ export default function Module01RobotDesobeit() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Bot className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Tu as découvert le plus important : <strong className="text-white">un objectif n’est pas
-            un programme</strong>. Prochaine étape : regarder de près ce que fait chaque instruction.
-          </p>
+        <div className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={1}>
+            <strong>La suite.</strong> Tu sais que ROBI n'obéit qu'à des ordres précis. Le prochain
+            module regarde de près ce que fait chacun d'eux.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Bot className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Tu as découvert le plus important : <strong className="text-white">un objectif n’est pas
+              un programme</strong>.
+            </p>
+          </div>
         </div>
       }
     />

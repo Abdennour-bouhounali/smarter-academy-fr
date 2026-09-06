@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Ruler } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LiquidContainer from '../components/LiquidContainer';
@@ -28,8 +28,9 @@ function LitreReference({ solved, onSolved, react }) {
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-600">
-        Voici un repère à connaître : <strong>1 litre (1 L)</strong>. Utilise les boutons pour faire monter ou
-        descendre le niveau, et observe où se trouve 1 L.
+        Ce verre porte des traits régulièrement espacés. Utilise les boutons pour amener le niveau
+        exactement sur le <strong>deuxième trait en partant du bas</strong> — celui qui est marqué
+        <strong className="font-mono"> 1 L</strong>.
       </p>
       <div className="flex justify-center">
         <LiquidContainer shape="glass" fillPct={(solved ? 1 : value) / MAX_L} graduations={GRADS} color="#0ea5e9" ariaLabel="Verre gradué de référence" />
@@ -76,7 +77,7 @@ function LitreReference({ solved, onSolved, react }) {
           </ValidateButton>
         </div>
       )}
-      {solved && <Feedback tone="ok">1 L, c’est le repère : une bouteille d’eau classique en contient à peu près autant.</Feedback>}
+      {solved && <Feedback tone="ok">Une bouteille d’eau classique contient à peu près autant.</Feedback>}
     </div>
   );
 }
@@ -112,7 +113,20 @@ export default function Module02Mesurer() {
           num: 1,
           title: '1 litre, un repère à connaître',
           done: refDone,
-          content: (kit) => <LitreReference solved={refDone} onSolved={() => setRefDone(true)} react={kit.react} />,
+          content: (kit) => (
+            <div className="space-y-5">
+              <LitreReference solved={refDone} onSolved={() => setRefDone(true)} react={kit.react} />
+              {/* Le niveau vient d'être amené sur le repère : le mot arrive
+                  après le geste, jamais avant. */}
+              {refDone && (
+                <KnowledgeBrick
+                  id="litre-repere"
+                  variant="new"
+                  lead="Ce niveau que tu viens de viser est l’unité que tout le monde partage."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -120,6 +134,14 @@ export default function Module02Mesurer() {
           done: allReadDone,
           content: (
             <div className="space-y-8">
+              {/* Les étiquettes disparaissent : la méthode de lecture est
+                  posée AVANT la première question, sinon c'est une devinette
+                  (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}
+              <KnowledgeBrick
+                id="lire-recipient-gradue"
+                variant="new"
+                lead="Cette fois, les traits ne portent plus d’étiquette. Voici comment on s’y prend."
+              />
               {READ_ROUNDS.map((round, i) =>
                 i === 0 || readDone.includes(i - 1) ? (
                   <div key={round.value} className="border-t border-slate-100 pt-5 first:border-0 first:pt-0">
@@ -129,6 +151,7 @@ export default function Module02Mesurer() {
                           <LiquidContainer shape="glass" fillPct={round.value / MAX_L} graduations={UNLABELED_GRADS} color="#0ea5e9" ariaLabel="Verre gradué, niveau à lire" height={190} />
                         </div>
                       }
+                      requires={['lire-recipient-gradue', 'litre-repere', 'contenance']}
                       prompt="Combien ce verre contient-il ?"
                       options={round.options}
                       correct={round.correct}
@@ -149,13 +172,10 @@ export default function Module02Mesurer() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Ruler className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Le litre n’est qu’un premier repère. D’autres unités existent pour les quantités plus petites ou plus
-            grandes.
-          </p>
-        </div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Le litre n’est qu’un premier repère. Au module suivant, tu
+          découvres les trois autres unités — celles des petites quantités.
+        </KnowledgeSnapshot>
       }
     />
   );

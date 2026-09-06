@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Hammer } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DataTable from '../components/DataTable';
@@ -97,9 +98,17 @@ export default function Module06ConstruireTableau() {
                 correct={0}
                 cols={1}
                 explain="Les deux « familles » d’information sont les villes et les jours : l’une fait les lignes, l’autre les colonnes, et chaque relevé trouve son croisement. Six lignes ou six colonnes redonneraient une simple liste — exactement le désordre du module 1."
+                requires={['ligne-colonne', 'cellule-croisement', 'position-porte-sens']}
                 solved={structureDone}
                 onAnswered={() => setStructureDone(true)}
               />
+              {structureDone && (
+                <KnowledgeBrick
+                  id="choisir-structure"
+                  variant="new"
+                  lead="Tu viens de trancher : les villes d’un côté, les jours de l’autre. C’est la première décision de tout tableau."
+                />
+              )}
             </div>
           ),
         },
@@ -138,6 +147,7 @@ export default function Module06ConstruireTableau() {
                   ? '5, c’est l’écart de Nice (22 → 24, soit 2) ou une autre ligne : reste sur la ligne de Brest.'
                   : 'Compare les deux cases de la ligne Brest : 14 puis 12.'
               }
+              requires={['choisir-structure', 'comparer-sens-lecture', 'calcul-numerique']}
               solved={ecartDone}
               onAnswered={() => setEcartDone(true)}
             />
@@ -167,6 +177,7 @@ export default function Module06ConstruireTableau() {
                     ? `${TOTAL_ELEVES}, c’est le nombre total d’élèves des trois classes — mauvaise question, et mauvaise ligne.`
                     : 'Prends la ligne 6e B : 27 élèves, 8 € chacun.'
                 }
+                requires={['lire-un-croisement', 'comparer-sens-lecture', 'calcul-numerique']}
                 solved={sortieDone}
                 onAnswered={() => setSortieDone(true)}
               />
@@ -181,12 +192,17 @@ export default function Module06ConstruireTableau() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Hammer className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Repérer les deux familles d'information, en faire les lignes et les colonnes, remplir, puis lire :
-            tu sais construire un tableau de bout en bout.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={6}>
+            <strong>La suite.</strong> Ta carte est complète : il ne reste qu'à la mettre à l'épreuve sur
+            dix questions, dont aucune n'apportera de notion nouvelle.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Hammer className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Choisir, remplir, lire, décider : tu sais construire un tableau de bout en bout.
+            </p>
+          </div>
         </motion.div>
       }
     />

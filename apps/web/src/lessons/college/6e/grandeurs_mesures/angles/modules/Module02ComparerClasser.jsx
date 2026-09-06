@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Shapes } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AngleFigure from '../components/AngleFigure';
@@ -24,8 +23,23 @@ const SUPER_Q = {
     'Superposés, le violet dépasse : il est plus ouvert. L’orientation dans laquelle un angle est dessiné ne change JAMAIS sa mesure — seule compte l’ouverture.',
 };
 
+// Le TÉMOIN, avant tout vocabulaire : l'élève compare à l'équerre en langage
+// courant (« plus fermé », « plus ouvert »). Les quatre noms viennent après,
+// par la brique — jamais dans les options d'une question qui les teste.
+const TEMOIN_Q = {
+  q: 'On pose l’équerre sur l’angle bleu. Que constates-tu ?',
+  options: [
+    'L’angle bleu est plus FERMÉ que l’équerre',
+    'L’angle bleu est plus OUVERT que l’équerre',
+    'Ils ont exactement la même ouverture',
+  ],
+  correct: 0,
+  explain:
+    'L’angle bleu tient largement à l’intérieur de l’équerre : il est plus fermé qu’elle. On n’a eu besoin d’aucun nombre — seulement d’un témoin à poser dessus.',
+};
+
 const EQUERRE_Q = {
-  q: 'On pose l’équerre (angle droit) sur cet angle : il est visiblement plus FERMÉ que l’équerre. Comment l’appelle-t-on ?',
+  q: 'Cet angle est plus fermé que l’angle droit de l’équerre. Comment l’appelle-t-on ?',
   options: ['Un angle aigu', 'Un angle obtus', 'Un angle plat'],
   correct: 0,
   explain: 'Plus fermé que l’angle droit (90°) → angle AIGU. Plus ouvert → obtus. Et quand les deux côtés sont alignés (180°) → angle plat.',
@@ -45,6 +59,7 @@ const CLASSES = ['aigu', 'droit', 'obtus', 'plat'];
 export default function Module02ComparerClasser() {
   const [superposed, setSuperposed] = useState(false);
   const [superDone, setSuperDone] = useState(false);
+  const [temoinDone, setTemoinDone] = useState(false);
   const [equerreDone, setEquerreDone] = useState(false);
   const [triDone, setTriDone] = useState(false);
 
@@ -114,8 +129,18 @@ export default function Module02ComparerClasser() {
                   correct={SUPER_Q.correct}
                   cols={1}
                   explain={SUPER_Q.explain}
+                  requires={['angle-ouverture']}
                   solved={superDone}
                   onAnswered={() => setSuperDone(true)}
+                />
+              )}
+              {/* La superposition vient de neutraliser l'orientation :
+                  la règle se pose sur ce geste. */}
+              {superDone && (
+                <KnowledgeBrick
+                  id="orientation-sans-effet"
+                  variant="new"
+                  lead="Le geste que tu viens de faire est LA façon de comparer deux angles."
                 />
               )}
             </div>
@@ -124,29 +149,57 @@ export default function Module02ComparerClasser() {
         {
           num: 2,
           title: 'L’équerre-témoin',
-          done: equerreDone,
+          done: temoinDone && equerreDone,
           content: (
-            <TapQuestion
-              above={
-                <div className="grid grid-cols-2 gap-4" aria-hidden="true">
-                  <div className="space-y-1">
-                    <AngleFigure deg={90} rayLengths={[80, 80]} arcLabel="90°" tone="emerald" size={180} />
-                    <p className="text-center text-xs text-slate-500">L’équerre (angle droit)</p>
+            <div className="space-y-5">
+              {/* ① Le constat, en langage courant : « plus fermé », « plus
+                  ouvert ». Aucun des quatre noms n'est encore employé. */}
+              <TapQuestion
+                above={
+                  <div className="grid grid-cols-2 gap-4" aria-hidden="true">
+                    <div className="space-y-1">
+                      <AngleFigure deg={90} rayLengths={[80, 80]} arcLabel="90°" tone="emerald" size={180} />
+                      <p className="text-center text-xs text-slate-500">L’équerre</p>
+                    </div>
+                    <div className="space-y-1">
+                      <AngleFigure deg={42} rayLengths={[80, 80]} arcLabel="?" tone="sky" size={180} />
+                      <p className="text-center text-xs text-slate-500">L’angle bleu</p>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <AngleFigure deg={42} rayLengths={[80, 80]} arcLabel="?" tone="sky" size={180} />
-                    <p className="text-center text-xs text-slate-500">L’angle à classer</p>
-                  </div>
-                </div>
-              }
-              prompt={EQUERRE_Q.q}
-              options={EQUERRE_Q.options}
-              correct={EQUERRE_Q.correct}
-              cols={3}
-              explain={EQUERRE_Q.explain}
-              solved={equerreDone}
-              onAnswered={() => setEquerreDone(true)}
-            />
+                }
+                prompt={TEMOIN_Q.q}
+                options={TEMOIN_Q.options}
+                correct={TEMOIN_Q.correct}
+                cols={1}
+                explain={TEMOIN_Q.explain}
+                requires={['angle-ouverture', 'orientation-sans-effet', 'angle-droit']}
+                solved={temoinDone}
+                onAnswered={() => setTemoinDone(true)}
+              />
+              {/* ② Le témoin a servi : les quatre noms peuvent être posés.
+                  C'est la position d'enseignement — pas l'explain de la
+                  question qui, elle, les EXIGE juste après. */}
+              {temoinDone && (
+                <KnowledgeBrick
+                  id="classes-angles"
+                  variant="new"
+                  lead="« Plus fermé », « plus ouvert » : les mathématiciens ont un mot pour chacun de ces cas."
+                />
+              )}
+              {/* ③ Le nommage, désormais légitime. */}
+              {temoinDone && (
+                <TapQuestion
+                  prompt={EQUERRE_Q.q}
+                  options={EQUERRE_Q.options}
+                  correct={EQUERRE_Q.correct}
+                  cols={3}
+                  explain={EQUERRE_Q.explain}
+                  requires={['angle-droit', 'classes-angles']}
+                  solved={equerreDone}
+                  onAnswered={() => setEquerreDone(true)}
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -155,6 +208,7 @@ export default function Module02ComparerClasser() {
           done: triDone,
           content: (
             <BatchChoiceQuestion
+              requires={['angle-ouverture', 'longueur-cotes-sans-effet', 'orientation-sans-effet', 'classes-angles']}
               intro={
                 <p className="text-sm text-slate-600">
                   Six angles, dessinés dans tous les sens et avec des côtés de longueurs très différentes. Classe
@@ -195,13 +249,10 @@ export default function Module02ComparerClasser() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Shapes className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Aigu (&lt; 90°) · Droit (= 90°) · Obtus (&gt; 90°) · Plat (= 180°). L'orientation du dessin et la
-            longueur des côtés ne changent jamais la classe.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais comparer et classer. Reste à obtenir un NOMBRE — avec
+          l'instrument fait pour ça.
+        </KnowledgeSnapshot>
       }
     />
   );

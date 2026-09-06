@@ -20,6 +20,7 @@ const QUESTIONS = [
   {
     id: 'q1-comparer',
     skill: 'nombres',
+    requires: ['comparer-entiers'],
     points: 2,
     prompt: <>Quel est le plus grand de ces trois nombres ?</>,
     options: ['108', '87', '99'],
@@ -30,6 +31,7 @@ const QUESTIONS = [
   {
     id: 'q2-addition',
     skill: 'nombres',
+    requires: ['calcul-numerique'],
     points: 2,
     prompt: <>Combien font <strong className="font-mono">12 + 8 + 9</strong> ?</>,
     options: ['27', '29', '31'],
@@ -40,6 +42,7 @@ const QUESTIONS = [
   {
     id: 'q3-prelever',
     skill: 'info',
+    requires: ['lecture-information'],
     points: 2,
     prompt: (
       <>
@@ -55,6 +58,7 @@ const QUESTIONS = [
   {
     id: 'q4-ordre',
     skill: 'nombres',
+    requires: ['comparer-entiers'],
     points: 2,
     prompt: <>Range mentalement 15, 6 et 11. Lequel est au milieu ?</>,
     options: ['15', '11', '6'],
@@ -65,6 +69,7 @@ const QUESTIONS = [
   {
     id: 'q5-deux-infos',
     skill: 'info',
+    requires: ['lecture-information', 'calcul-numerique'],
     points: 2,
     prompt: (
       <>

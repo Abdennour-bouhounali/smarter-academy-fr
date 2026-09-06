@@ -2,118 +2,231 @@
   "lesson": "equations-et-inequations-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "calcul-litteral",
+    "developper",
+    "nombres-relatifs",
+    "ordre-nombres",
+    "intervalle",
+    "intervalle-crochets",
+    "ensemble-reels",
+    "appartient",
+    "aire",
+    "perimetre"
+  ],
   "conceptsIntroduced": [
     {
       "id": "equation-solution",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module01ScannerDeSolutions.jsx",
+        "line": 61,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-nombre-de-solutions",
       "type": "regles",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module01ScannerDeSolutions.jsx",
+        "line": 103,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "inequation-infinite",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module01ScannerDeSolutions.jsx",
+        "line": 81,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-deux-membres",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module02IsolerX.jsx",
+        "line": 83,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-solution-exacte",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module02IsolerX.jsx",
+        "line": 124,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-signe-retourne",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module03SigneQuiSeRetourne.jsx",
+        "line": 64,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "produit-nul",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
+        "line": 64,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-piege-produit-non-nul",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
+        "line": 105,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "valeur-interdite",
       "type": "concepts",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module05QuotientEtValeurInterdite.jsx",
+        "line": 42,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "quotient-nul",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module05QuotientEtValeurInterdite.jsx",
+        "line": 61,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-interpreter-solution",
       "type": "regles",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
+        "line": 100,
+        "step": 4,
+        "variant": "new"
+      }
     }
   ],
-  "vocabularyIntroduced": [],
+  "vocabularyIntroduced": [
+    {
+      "id": "vocab-facteur",
+      "type": "vocabulaire",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
+        "line": 51,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
   "proceduresIntroduced": [
     {
       "id": "methode-verifier-solution",
       "type": "methodes",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module01ScannerDeSolutions.jsx",
+        "line": 123,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-premier-degre",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module02IsolerX.jsx",
+        "line": 100,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-resoudre-inequation",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module03SigneQuiSeRetourne.jsx",
+        "line": 82,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-equation-produit",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
+        "line": 86,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-choisir-methode",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module05QuotientEtValeurInterdite.jsx",
+        "line": 80,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-modeliser",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
+        "line": 51,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-traduire-vitesse",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
+        "line": 36,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -121,13 +234,23 @@
       "id": "mem-signe-negatif",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module03SigneQuiSeRetourne.jsx",
+        "line": 87,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-produit-nul",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
+        "line": 125,
+        "step": 5,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -138,8 +261,20 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module00Diagnostic.jsx",
       "line": 9,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-litteral",
+        "developper",
+        "nombres-relatifs",
+        "aire",
+        "perimetre"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "developper": "prior",
+        "nombres-relatifs": "prior",
+        "aire": "prior",
+        "perimetre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,8 +285,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module00Diagnostic.jsx",
       "line": 10,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-litteral",
+        "developper",
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "developper": "prior",
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,8 +305,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-litteral",
+        "developper",
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "developper": "prior",
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,8 +325,20 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "ordre-nombres",
+        "intervalle",
+        "intervalle-crochets",
+        "ensemble-reels",
+        "appartient"
+      ],
+      "prerequisiteStatus": {
+        "ordre-nombres": "prior",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "ensemble-reels": "prior",
+        "appartient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,12 +349,22 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module00Diagnostic.jsx",
       "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "intervalle-crochets"
+      "requires": [
+        "ordre-nombres",
+        "intervalle",
+        "intervalle-crochets",
+        "ensemble-reels",
+        "appartient"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "ordre-nombres": "prior",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "ensemble-reels": "prior",
+        "appartient": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M01-S2-Q1",
@@ -199,13 +372,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module01ScannerDeSolutions.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "inclus"
+      "line": 75,
+      "requires": [
+        "equation-solution",
+        "intervalle",
+        "intervalle-crochets"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "equation-solution": "established@M1",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M01-S3-Q2",
@@ -213,9 +392,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module01ScannerDeSolutions.jsx",
-      "line": 82,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 96,
+      "requires": [
+        "equation-solution"
+      ],
+      "prerequisiteStatus": {
+        "equation-solution": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -225,9 +408,15 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module01ScannerDeSolutions.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 117,
+      "requires": [
+        "equation-solution",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "equation-solution": "established@M1",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -237,9 +426,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module02IsolerX.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 116,
+      "requires": [
+        "methode-verifier-solution",
+        "methode-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "methode-verifier-solution": "established@M1",
+        "methode-premier-degre": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -249,9 +444,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module03SigneQuiSeRetourne.jsx",
-      "line": 58,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "nombres-relatifs",
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior",
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -261,9 +462,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module03SigneQuiSeRetourne.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 101,
+      "requires": [
+        "methode-resoudre-inequation",
+        "inequation-infinite",
+        "intervalle",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-inequation": "established@M3",
+        "inequation-infinite": "established@M1",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -273,9 +484,23 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module03SigneQuiSeRetourne.jsx",
-      "line": 90,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 113,
+      "requires": [
+        "methode-resoudre-inequation",
+        "regle-signe-retourne",
+        "regle-nombre-de-solutions",
+        "intervalle",
+        "intervalle-crochets",
+        "ensemble-reels"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-inequation": "established@M3",
+        "regle-signe-retourne": "established@M3",
+        "regle-nombre-de-solutions": "established@M1",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "ensemble-reels": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -285,9 +510,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "vocab-facteur"
+      ],
+      "prerequisiteStatus": {
+        "vocab-facteur": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -297,9 +526,19 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "produit-nul",
+        "vocab-facteur",
+        "methode-premier-degre",
+        "regle-nombre-de-solutions"
+      ],
+      "prerequisiteStatus": {
+        "produit-nul": "established@M4",
+        "vocab-facteur": "established@M4",
+        "methode-premier-degre": "established@M2",
+        "regle-nombre-de-solutions": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -309,9 +548,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 99,
+      "requires": [
+        "produit-nul",
+        "vocab-facteur"
+      ],
+      "prerequisiteStatus": {
+        "produit-nul": "established@M4",
+        "vocab-facteur": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -321,9 +566,17 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module04ProduitNul.jsx",
-      "line": 81,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 119,
+      "requires": [
+        "methode-equation-produit",
+        "produit-nul",
+        "regle-nombre-de-solutions"
+      ],
+      "prerequisiteStatus": {
+        "methode-equation-produit": "established@M4",
+        "produit-nul": "established@M4",
+        "regle-nombre-de-solutions": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -333,9 +586,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module05QuotientEtValeurInterdite.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 55,
+      "requires": [
+        "valeur-interdite",
+        "equation-solution",
+        "regle-nombre-de-solutions"
+      ],
+      "prerequisiteStatus": {
+        "valeur-interdite": "established@M5",
+        "equation-solution": "established@M1",
+        "regle-nombre-de-solutions": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -345,9 +606,39 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module05QuotientEtValeurInterdite.jsx",
-      "line": 56,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "quotient-nul",
+        "valeur-interdite",
+        "regle-nombre-de-solutions",
+        "ensemble-reels"
+      ],
+      "prerequisiteStatus": {
+        "quotient-nul": "established@M5",
+        "valeur-interdite": "established@M5",
+        "regle-nombre-de-solutions": "established@M1",
+        "ensemble-reels": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q3",
+      "module": 5,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module05QuotientEtValeurInterdite.jsx",
+      "line": 99,
+      "requires": [
+        "methode-choisir-methode",
+        "produit-nul",
+        "quotient-nul"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-methode": "established@M5",
+        "produit-nul": "established@M4",
+        "quotient-nul": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -358,8 +649,14 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
       "line": 30,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-litteral",
+        "equation-solution"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "equation-solution": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -369,9 +666,19 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
-      "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 44,
+      "requires": [
+        "methode-premier-degre",
+        "methode-traduire-vitesse",
+        "developper",
+        "methode-verifier-solution"
+      ],
+      "prerequisiteStatus": {
+        "methode-premier-degre": "established@M2",
+        "methode-traduire-vitesse": "established@M6",
+        "developper": "prior",
+        "methode-verifier-solution": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -381,14 +688,25 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
-      "line": 46,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
+      "line": 63,
+      "requires": [
+        "methode-modeliser",
+        "methode-resoudre-inequation",
+        "inequation-infinite",
         "appartient",
-        "extremum"
+        "intervalle",
+        "intervalle-crochets"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "methode-modeliser": "established@M6",
+        "methode-resoudre-inequation": "established@M3",
+        "inequation-infinite": "established@M1",
+        "appartient": "prior",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M06-S3-Q4",
@@ -396,9 +714,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
-      "line": 56,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "methode-traduire-vitesse",
+        "methode-modeliser"
+      ],
+      "prerequisiteStatus": {
+        "methode-traduire-vitesse": "established@M6",
+        "methode-modeliser": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -408,9 +732,17 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 80,
+      "requires": [
+        "methode-premier-degre",
+        "developper",
+        "methode-verifier-solution"
+      ],
+      "prerequisiteStatus": {
+        "methode-premier-degre": "established@M2",
+        "developper": "prior",
+        "methode-verifier-solution": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -420,9 +752,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 93,
+      "requires": [
+        "methode-modeliser",
+        "equation-solution",
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser": "established@M6",
+        "equation-solution": "established@M1",
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -433,8 +773,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 32,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "equation-solution",
+        "inequation-infinite",
+        "methode-verifier-solution"
+      ],
+      "prerequisiteStatus": {
+        "equation-solution": "established@M1",
+        "inequation-infinite": "established@M1",
+        "methode-verifier-solution": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -445,8 +793,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 33,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "equation-solution",
+        "inequation-infinite",
+        "methode-verifier-solution"
+      ],
+      "prerequisiteStatus": {
+        "equation-solution": "established@M1",
+        "inequation-infinite": "established@M1",
+        "methode-verifier-solution": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -457,8 +813,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 34,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-premier-degre",
+        "regle-deux-membres"
+      ],
+      "prerequisiteStatus": {
+        "methode-premier-degre": "established@M2",
+        "regle-deux-membres": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -469,8 +831,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-premier-degre",
+        "regle-deux-membres"
+      ],
+      "prerequisiteStatus": {
+        "methode-premier-degre": "established@M2",
+        "regle-deux-membres": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -481,8 +849,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 36,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-resoudre-inequation",
+        "mem-signe-negatif"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-inequation": "established@M3",
+        "mem-signe-negatif": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -493,8 +867,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 37,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-resoudre-inequation",
+        "mem-signe-negatif"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-inequation": "established@M3",
+        "mem-signe-negatif": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -505,8 +885,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "produit-nul",
+        "methode-equation-produit",
+        "regle-piege-produit-non-nul"
+      ],
+      "prerequisiteStatus": {
+        "produit-nul": "established@M4",
+        "methode-equation-produit": "established@M4",
+        "regle-piege-produit-non-nul": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -517,8 +905,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 39,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "produit-nul",
+        "methode-equation-produit",
+        "regle-piege-produit-non-nul"
+      ],
+      "prerequisiteStatus": {
+        "produit-nul": "established@M4",
+        "methode-equation-produit": "established@M4",
+        "regle-piege-produit-non-nul": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -529,8 +925,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient-nul",
+        "valeur-interdite"
+      ],
+      "prerequisiteStatus": {
+        "quotient-nul": "established@M5",
+        "valeur-interdite": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -541,300 +943,17 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module07MissionFinale.jsx",
       "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-modeliser",
+        "regle-interpreter-solution"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser": "established@M6",
+        "regle-interpreter-solution": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« crochets d'intervalle » first appears at diag.option (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module00Diagnostic.jsx",
-      "line": 13,
-      "module": 0,
-      "step": null,
-      "term": "intervalle-crochets",
-      "questionId": "q5-intervalle",
-      "position": 22
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« symbole ⊂ » first appears at q.explain (module 1, étape 2) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module01ScannerDeSolutions.jsx",
-      "line": 70,
-      "module": 1,
-      "step": 2,
-      "term": "inclus",
-      "questionId": "M01-S2-Q1",
-      "position": 37
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« symbole ∈ » first appears at q.option (module 6, étape 2) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
-      "line": 46,
-      "module": 6,
-      "step": 2,
-      "term": "appartient",
-      "questionId": "M06-S2-Q3",
-      "position": 191
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« extremum / maximum / minimum » first appears at q.explainWrong (module 6, étape 2) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/modules/Module06Modeliser.jsx",
-      "line": 48,
-      "module": 6,
-      "step": 2,
-      "term": "extremum",
-      "questionId": "M06-S2-Q3",
-      "position": 196
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'equation-solution' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 37,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-nombre-de-solutions' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 55,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-verifier-solution' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 72,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'inequation-infinite' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 90,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-deux-membres' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 118,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-premier-degre' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 137,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-solution-exacte' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 159,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-signe-retourne' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 181,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-resoudre-inequation' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 199,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-signe-negatif' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 223,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'produit-nul' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 241,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-equation-produit' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 259,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-piege-produit-non-nul' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 282,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-produit-nul' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 302,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'valeur-interdite' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 320,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'quotient-nul' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 340,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-choisir-methode' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 363,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-modeliser' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 395,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-interpreter-solution' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 418,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-traduire-vitesse' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/knowledge.jsx",
-      "line": 436,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

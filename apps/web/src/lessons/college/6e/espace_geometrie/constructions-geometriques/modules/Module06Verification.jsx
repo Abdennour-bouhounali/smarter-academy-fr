@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { SearchCheck } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { ERREURS, INSTRUMENTS, INSTRUMENTS_LIST } from '../components/constructionsUtils';
@@ -47,6 +46,7 @@ export default function Module06Verification() {
           done: diagDone,
           content: (
             <BatchChoiceQuestion
+              requires={['instrument-garantit', 'mem-trois-garanties', 'angle-droit']}
               intro={
                 <div className="space-y-2">
                   {ERREURS.map((e, i) => (
@@ -88,20 +88,30 @@ export default function Module06Verification() {
           title: 'Comment vérifier une construction ?',
           done: verifDone,
           content: (
-            <TapQuestion
-              prompt="On te demande de vérifier qu’une figure est bien un rectangle. Que fais-tu ?"
-              options={[
-                'Je contrôle ses 4 angles droits à l’équerre et l’égalité des côtés opposés à la règle',
-                'Je regarde si elle ressemble à un rectangle',
-                'Je remesure un seul côté',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Vérifier, c’est reprendre CHAQUE propriété de la définition, avec l’instrument qui la garantit. Un seul contrôle ne suffit jamais."
-              explainWrong="L’allure ne prouve rien — c’est ce que la leçon « Figures planes » a montré. Et un seul côté mesuré laisse trois côtés et quatre angles non vérifiés."
-              solved={verifDone}
-              onAnswered={() => setVerifDone(true)}
-            />
+            <div className="space-y-5">
+              {/* Le diagnostic vient d'être fait figure par figure : on en
+                  tire la méthode générale, avant de la demander. */}
+              <KnowledgeBrick
+                id="verifier-figure"
+                variant="new"
+                lead="Tu viens de faire, pour trois figures, ce qu’on appelle vérifier."
+              />
+              <TapQuestion
+                prompt="On te demande de vérifier qu’une figure est bien un rectangle. Que fais-tu ?"
+                options={[
+                  'Je contrôle ses 4 angles droits à l’équerre et l’égalité des côtés opposés à la règle',
+                  'Je regarde si elle ressemble à un rectangle',
+                  'Je remesure un seul côté',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['verifier-figure', 'figures-planes-usuelles', 'angle-droit']}
+                explain="Vérifier, c’est reprendre CHAQUE propriété de la définition, avec l’instrument qui la garantit. Un seul contrôle ne suffit jamais."
+                explainWrong="L’allure ne prouve rien — c’est ce que la leçon « Figures planes » a montré. Et un seul côté mesuré laisse trois côtés et quatre angles non vérifiés."
+                solved={verifDone}
+                onAnswered={() => setVerifDone(true)}
+              />
+            </div>
           ),
         },
         {
@@ -109,35 +119,38 @@ export default function Module06Verification() {
           title: 'Une figure « presque juste »',
           done: presqueDone,
           content: (
-            <TapQuestion
-              prompt="Un élève rend un « carré » dont les côtés mesurent 5 cm, 5 cm, 5 cm et 5,3 cm. Que faut-il dire ?"
-              options={[
-                'Ce n’est pas un carré : la propriété « 4 côtés égaux » n’est pas vérifiée',
-                'C’est un carré, l’écart est minime',
-                'C’est un carré si les angles sont droits',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Une propriété est vérifiée ou ne l’est pas. 5,3 ≠ 5 : ce quadrilatère a bien 4 angles droits, c’est donc un rectangle — mais pas un carré."
-              explainWrong="En géométrie, « presque » n’existe pas. Avec 4 angles droits mais des côtés inégaux, la figure est un rectangle, pas un carré."
-              solved={presqueDone}
-              onAnswered={() => setPresqueDone(true)}
-            />
+            <div className="space-y-5">
+              {/* La règle du « tout ou rien » ne vivait que dans l'`explain` :
+                  on la pose avant la question qu'elle sert à trancher. */}
+              <KnowledgeBrick
+                id="presque-nest-pas-juste"
+                variant="new"
+                lead="Une dernière chose avant de trancher le cas suivant."
+              />
+              <TapQuestion
+                prompt="Un élève rend un « carré » dont les côtés mesurent 5 cm, 5 cm, 5 cm et 5,3 cm. Que faut-il dire ?"
+                options={[
+                  'Ce n’est pas un carré : la propriété « 4 côtés égaux » n’est pas vérifiée',
+                  'C’est un carré, l’écart est minime',
+                  'C’est un carré si les angles sont droits',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['presque-nest-pas-juste', 'verifier-figure', 'figures-planes-usuelles']}
+                explain="Une propriété est vérifiée ou ne l’est pas. 5,3 ≠ 5 : cette figure a bien 4 angles droits, c’est donc un rectangle — mais pas un carré."
+                explainWrong="En géométrie, « presque » n’existe pas. Avec 4 angles droits mais des côtés inégaux, la figure est un rectangle, pas un carré."
+                solved={presqueDone}
+                onAnswered={() => setPresqueDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <SearchCheck className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Vérifier, c’est reprendre <strong className="text-white">chaque propriété</strong> de la
-            définition, avec l’instrument qui la garantit. Et corriger, c’est reconstruire — pas retoucher.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ta carte est complète. La mission finale ne demandera rien de
+          neuf : dix épreuves sur exactement ce que tu viens de construire.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Fence } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PolygonPerimeter from '../components/PolygonPerimeter';
@@ -103,7 +102,19 @@ export default function Module01Mission() {
           title: 'Fais le tour de l’enclos',
           done: traceDone,
           content: (kit) => (
-            <TraceEnclos react={kit.react} solved={traceDone} onSolved={() => setTraceDone(true)} />
+            <div className="space-y-5">
+              <TraceEnclos react={kit.react} solved={traceDone} onSolved={() => setTraceDone(true)} />
+              {/* Le tour vient d'être parcouru côté par côté : c'est ICI que
+                  le mot existe, et pas dans un explain
+                  (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}
+              {traceDone && (
+                <KnowledgeBrick
+                  id="perimetre"
+                  variant="new"
+                  lead="La longueur que tu viens de parcourir en suivant le bord porte un nom."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -111,6 +122,14 @@ export default function Module01Mission() {
           title: 'Le piège du « plus grand »',
           done: trapDone,
           content: (
+            <div className="space-y-5">
+            {/* Sans ce repère, la question qui suit demanderait à l'élève de
+                distinguer deux grandeurs dont une seule a été nommée. */}
+            <KnowledgeBrick
+              id="perimetre-vs-aire"
+              variant="new"
+              lead="Avant de comparer deux enclos, il faut savoir ce qu’on compare : le tour, ou le dedans ?"
+            />
             <TapQuestion
               above={
                 <div className="grid grid-cols-2 gap-3" aria-hidden="true">
@@ -129,9 +148,11 @@ export default function Module01Mission() {
               correct={TRAP_Q.correct}
               cols={1}
               explain={TRAP_Q.explain}
+              requires={['perimetre', 'perimetre-vs-aire']}
               solved={trapDone}
               onAnswered={() => setTrapDone(true)}
             />
+            </div>
           ),
         },
         {
@@ -139,26 +160,35 @@ export default function Module01Mission() {
           title: 'L’unité de la commande',
           done: uniteDone,
           content: (
-            <TapQuestion
-              prompt={UNITE_Q.q}
-              options={UNITE_Q.options}
-              correct={UNITE_Q.correct}
-              cols={1}
-              explain={UNITE_Q.explain}
-              solved={uniteDone}
-              onAnswered={() => setUniteDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={UNITE_Q.q}
+                options={UNITE_Q.options}
+                correct={UNITE_Q.correct}
+                cols={1}
+                explain={UNITE_Q.explain}
+                requires={['perimetre', 'perimetre-vs-aire']}
+                solved={uniteDone}
+                onAnswered={() => setUniteDone(true)}
+              />
+              {/* Le choix de l'unité vient d'être fait sur un bon de
+                  commande réel : la règle se pose sur ce constat. */}
+              {uniteDone && (
+                <KnowledgeBrick
+                  id="perimetre-est-longueur"
+                  variant="new"
+                  lead="Ce choix d’unité n’est pas une convention arbitraire : il découle de ce qu’est un contour."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Fence className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Le périmètre, c'est la longueur du contour — la distance parcourue quand on fait le tour complet.
-            C'est une longueur : elle se mesure en m, cm ou km.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais ce qu'est un tour. Reste à le mesurer sans jamais
+          oublier un côté — c'est la méthode du module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

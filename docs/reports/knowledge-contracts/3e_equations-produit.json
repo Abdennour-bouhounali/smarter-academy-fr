@@ -2,11 +2,166 @@
   "lesson": "equations-produit",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "calcul-litteral",
+    "nombres-relatifs",
+    "distributivite",
+    "reduire-expression",
+    "terme-algebrique",
+    "developper",
+    "facteur"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "produit-nul-constat",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module01ZeroOuPas.jsx",
+        "line": 157,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ensemble-solutions",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module02EgaliteInconnue.jsx",
+        "line": 205,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "equation-equivalente",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module03Balance.jsx",
+        "line": 134,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "interpreter-solution",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module05VerifierInterpreter.jsx",
+        "line": 196,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "difference-deux-carres",
+      "type": "formules",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module06CarreRectangle.jsx",
+        "line": 171,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "equation",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module02EgaliteInconnue.jsx",
+        "line": 123,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "solution",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module02EgaliteInconnue.jsx",
+        "line": 129,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "equation-premier-degre",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module03Balance.jsx",
+        "line": 180,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "methode-branches",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module04Scanner.jsx",
+        "line": 206,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "verifier-solution",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module05VerifierInterpreter.jsx",
+        "line": 143,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "factoriser-vers-produit",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module06CarreRectangle.jsx",
+        "line": 119,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "regle-produit-nul",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module04Scanner.jsx",
+        "line": 190,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-methode-complete",
+      "type": "memoriser",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module06CarreRectangle.jsx",
+        "line": 243,
+        "step": 4,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-substituer",
@@ -14,9 +169,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module00Diagnostic.jsx",
-      "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 27,
+      "requires": [
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +185,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module00Diagnostic.jsx",
-      "line": 36,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 42,
+      "requires": [
+        "reduire-expression",
+        "terme-algebrique",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "reduire-expression": "prior",
+        "terme-algebrique": "prior",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +205,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module00Diagnostic.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +221,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module00Diagnostic.jsx",
-      "line": 64,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 72,
+      "requires": [
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +237,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module00Diagnostic.jsx",
-      "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 87,
+      "requires": [
+        "distributivite",
+        "developper",
+        "facteur"
+      ],
+      "prerequisiteStatus": {
+        "distributivite": "prior",
+        "developper": "prior",
+        "facteur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,13 +257,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module01ZeroOuPas.jsx",
-      "line": 161,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "cote-oppose"
+      "line": 172,
+      "requires": [
+        "produit-nul-constat",
+        "nombres-relatifs"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "produit-nul-constat": "established@M1",
+        "nombres-relatifs": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M02-S3-Q1",
@@ -88,9 +275,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module02EgaliteInconnue.jsx",
-      "line": 207,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 226,
+      "requires": [
+        "solution",
+        "equation",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "solution": "established@M2",
+        "equation": "established@M2",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -100,9 +295,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module03Balance.jsx",
-      "line": 189,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 200,
+      "requires": [
+        "equation-equivalente",
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "equation-equivalente": "established@M3",
+        "equation-premier-degre": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -112,9 +313,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module04Scanner.jsx",
-      "line": 157,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 162,
+      "requires": [
+        "produit-nul-constat"
+      ],
+      "prerequisiteStatus": {
+        "produit-nul-constat": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +329,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module04Scanner.jsx",
-      "line": 207,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 220,
+      "requires": [
+        "methode-branches",
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "methode-branches": "established@M4",
+        "equation-premier-degre": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +347,17 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module04Scanner.jsx",
-      "line": 221,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 235,
+      "requires": [
+        "methode-branches",
+        "equation-premier-degre",
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "methode-branches": "established@M4",
+        "equation-premier-degre": "established@M3",
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,9 +367,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module04Scanner.jsx",
-      "line": 252,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 267,
+      "requires": [
+        "methode-branches",
+        "regle-produit-nul",
+        "ensemble-solutions"
+      ],
+      "prerequisiteStatus": {
+        "methode-branches": "established@M4",
+        "regle-produit-nul": "established@M4",
+        "ensemble-solutions": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -160,9 +387,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module05VerifierInterpreter.jsx",
-      "line": 145,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 158,
+      "requires": [
+        "verifier-solution",
+        "ensemble-solutions",
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "verifier-solution": "established@M5",
+        "ensemble-solutions": "established@M2",
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -172,9 +407,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module06CarreRectangle.jsx",
-      "line": 118,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 124,
+      "requires": [
+        "factoriser-vers-produit",
+        "equation-equivalente",
+        "methode-branches"
+      ],
+      "prerequisiteStatus": {
+        "factoriser-vers-produit": "established@M6",
+        "equation-equivalente": "established@M3",
+        "methode-branches": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -184,9 +427,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module06CarreRectangle.jsx",
-      "line": 169,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 176,
+      "requires": [
+        "difference-deux-carres",
+        "factoriser-vers-produit"
+      ],
+      "prerequisiteStatus": {
+        "difference-deux-carres": "established@M6",
+        "factoriser-vers-produit": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -196,9 +445,17 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module06CarreRectangle.jsx",
-      "line": 218,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 226,
+      "requires": [
+        "methode-branches",
+        "interpreter-solution",
+        "factoriser-vers-produit"
+      ],
+      "prerequisiteStatus": {
+        "methode-branches": "established@M4",
+        "interpreter-solution": "established@M5",
+        "factoriser-vers-produit": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -208,9 +465,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 53,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 60,
+      "requires": [
+        "equation"
+      ],
+      "prerequisiteStatus": {
+        "equation": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -220,9 +481,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 80,
+      "requires": [
+        "ensemble-solutions",
+        "solution"
+      ],
+      "prerequisiteStatus": {
+        "ensemble-solutions": "established@M2",
+        "solution": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -232,9 +499,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 93,
+      "requires": [
+        "equation-equivalente"
+      ],
+      "prerequisiteStatus": {
+        "equation-equivalente": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -244,9 +515,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 100,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "equation-premier-degre",
+        "equation-equivalente"
+      ],
+      "prerequisiteStatus": {
+        "equation-premier-degre": "established@M3",
+        "equation-equivalente": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -256,9 +533,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 115,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 126,
+      "requires": [
+        "equation-premier-degre",
+        "distributivite"
+      ],
+      "prerequisiteStatus": {
+        "equation-premier-degre": "established@M3",
+        "distributivite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -268,9 +551,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 131,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 143,
+      "requires": [
+        "regle-produit-nul",
+        "produit-nul-constat"
+      ],
+      "prerequisiteStatus": {
+        "regle-produit-nul": "established@M4",
+        "produit-nul-constat": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -280,9 +569,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 147,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 160,
+      "requires": [
+        "methode-branches",
+        "ensemble-solutions",
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "methode-branches": "established@M4",
+        "ensemble-solutions": "established@M2",
+        "equation-premier-degre": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -292,9 +589,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 166,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 180,
+      "requires": [
+        "verifier-solution",
+        "methode-branches"
+      ],
+      "prerequisiteStatus": {
+        "verifier-solution": "established@M5",
+        "methode-branches": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -304,9 +607,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 182,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 197,
+      "requires": [
+        "interpreter-solution",
+        "methode-branches"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-solution": "established@M5",
+        "methode-branches": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -316,25 +625,20 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module07MissionFinale.jsx",
-      "line": 199,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 215,
+      "requires": [
+        "factoriser-vers-produit",
+        "methode-branches",
+        "mem-methode-complete"
+      ],
+      "prerequisiteStatus": {
+        "factoriser-vers-produit": "established@M6",
+        "methode-branches": "established@M4",
+        "mem-methode-complete": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« côté opposé » first appears at q.option (module 1, étape 2) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/nombres_calculs/equations-produit/modules/Module01ZeroOuPas.jsx",
-      "line": 166,
-      "module": 1,
-      "step": 2,
-      "term": "cote-oppose",
-      "questionId": "M01-S2-Q1",
-      "position": 34
-    }
-  ]
+  "findings": []
 }

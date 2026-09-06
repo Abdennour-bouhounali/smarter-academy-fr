@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ListOrdered, Eye } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { PROGRAMME_RECTANGLE, checkOrder, INSTRUMENTS } from '../components/constructionsUtils';
@@ -128,10 +127,26 @@ export default function Module05Programme() {
               )}
 
               {ordreDone && (
-                <Feedback tone="ok">
-                  Le programme est complet et cohérent. Chaque étape s’appuie sur les précédentes — c’est ce
-                  qui rend la construction <strong>reproductible</strong> par quelqu’un d’autre.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Le programme est complet et cohérent. Chaque étape s’appuie sur les précédentes —
+                    c’est ce qui rend la construction <strong>reproductible</strong> par quelqu’un
+                    d’autre.
+                  </Feedback>
+                  {/* L'élève vient de buter sur des étapes « trop tôt » : la
+                      règle de l'ordre se pose sur ce constat, puis la
+                      méthode d'écriture — avant la question de l'étape 2. */}
+                  <KnowledgeBrick
+                    id="ordre-dependances"
+                    variant="new"
+                    lead="Les étapes refusées ne l’étaient pas par goût : il leur manquait ce sur quoi elles s’appuient."
+                  />
+                  <KnowledgeBrick
+                    id="programme-construction"
+                    variant="new"
+                    lead="La suite d’étapes que tu viens de reconstituer porte un nom, et un mode d’emploi."
+                  />
+                </>
               )}
             </div>
           ),
@@ -150,6 +165,7 @@ export default function Module05Programme() {
               ]}
               correct={0}
               cols={1}
+              requires={['programme-construction', 'ordre-dependances', 'instrument-garantit']}
               explain="Un programme se suit sans voir la figure : il faut donc l’ordre, les mesures exactes et les propriétés à respecter. Un dessin ne dit pas COMMENT on l’a obtenu."
               explainWrong="Un dessin montre le résultat, pas la méthode ; une liste d’instruments ne dit pas quoi en faire. C’est la suite ordonnée d’actions précises qui compte."
               solved={instrumentDone}
@@ -159,18 +175,10 @@ export default function Module05Programme() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <ListOrdered className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un programme de construction est une <strong className="text-white">recette exacte</strong> :
-            des étapes ordonnées, des mesures, et l’instrument de chacune. Quelqu’un d’autre doit pouvoir la
-            suivre sans te poser de question.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais construire et écrire une construction. Reste le regard du
+          contrôleur : au module suivant, on cherche l’erreur.
+        </KnowledgeSnapshot>
       }
     />
   );

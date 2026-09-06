@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Layers } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import UnitSwitcher from '../components/UnitSwitcher';
@@ -84,6 +83,15 @@ export default function Module02ChoisirUnite() {
                   nombre s’adapte. En mg, il faudrait douze milliards — personne ne lit un nombre pareil.
                 </Feedback>
               )}
+              {/* Le geste vient d'être fait : la masse est restée la même
+                  pendant que le nombre devenait illisible. */}
+              {switchDone && (
+                <KnowledgeBrick
+                  id="masse-invariante"
+                  variant="new"
+                  lead="Tu viens de peser quatre fois le même camion sans jamais l'alléger."
+                />
+              )}
             </div>
           ),
         },
@@ -93,6 +101,7 @@ export default function Module02ChoisirUnite() {
           done: introDone,
           content: (
             <TapQuestion
+              requires={['masse-invariante', 'masse-comparable']}
               prompt={INTRO_Q.q}
               options={INTRO_Q.options}
               correct={INTRO_Q.correct}
@@ -108,45 +117,57 @@ export default function Module02ChoisirUnite() {
           title: 'À chaque objet, son unité',
           done: matchDone,
           content: (
-            <BatchChoiceQuestion
-              intro={
-                <p className="text-sm text-slate-600">
-                  Choisis, parmi les quatre unités, celle qui convient à chaque objet. Demande-toi simplement :
-                  « à peu près quelle masse est-ce que je pèse ? »
-                </p>
-              }
-              rows={MATCH_ITEMS.map((it) => ({
-                id: it.id,
-                label: (
-                  <>
-                    <span className="text-2xl" aria-hidden="true">{it.emoji}</span>
-                    <span>{it.label}</span>
-                  </>
-                ),
-                options: UNIT_OPTIONS,
-                correct: UNIT_OPTIONS.indexOf(it.correct),
-                correction: (
-                  <>
-                    → {it.correct} — en {it.badUnit}, ça ferait{' '}
-                    <span className="font-mono">{formatMass(convert(it.valueInCorrect, it.correct, it.badUnit), it.badUnit)}</span> :
-                    peu pratique.
-                  </>
-                ),
-              }))}
-              solved={matchDone}
-              onAnswered={() => setMatchDone(true)}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {!allRight && (
+            <div className="space-y-5">
+              <BatchChoiceQuestion
+                requires={['masse-invariante', 'masse-comparable']}
+                intro={
+                  <p className="text-sm text-slate-600">
+                    Choisis, parmi les quatre unités, celle qui convient à chaque objet. Demande-toi simplement :
+                    « à peu près quelle masse est-ce que je pèse ? »
+                  </p>
+                }
+                rows={MATCH_ITEMS.map((it) => ({
+                  id: it.id,
+                  label: (
                     <>
-                      {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
+                      <span className="text-2xl" aria-hidden="true">{it.emoji}</span>
+                      <span>{it.label}</span>
                     </>
-                  )}
-                  On choisit l’unité en fonction de la masse à peser : un comprimé se compte en mg, une pièce en g,
-                  un sac en kg, un camion en tonnes.
-                </Feedback>
+                  ),
+                  options: UNIT_OPTIONS,
+                  correct: UNIT_OPTIONS.indexOf(it.correct),
+                  correction: (
+                    <>
+                      → {it.correct} — en {it.badUnit}, ça ferait{' '}
+                      <span className="font-mono">{formatMass(convert(it.valueInCorrect, it.correct, it.badUnit), it.badUnit)}</span> :
+                      peu pratique.
+                    </>
+                  ),
+                }))}
+                solved={matchDone}
+                onAnswered={() => setMatchDone(true)}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {!allRight && (
+                      <>
+                        {nCorrect} / {total} corrects — les bonnes réponses sont en vert.{' '}
+                      </>
+                    )}
+                    On choisit l’unité selon la masse à peser : un comprimé se compte en mg, une pièce en g,
+                    un sac en kg, un camion en tonnes.
+                  </Feedback>
+                )}
+              />
+              {/* Quatre objets viennent d'être appariés : la règle du choix se
+                  dit maintenant, sans rien avoir annoncé d'avance. */}
+              {matchDone && (
+                <KnowledgeBrick
+                  id="unite-masse-adaptee"
+                  variant="new"
+                  lead="Tu viens de choisir quatre fois : à chaque fois, la masse de l'objet a décidé."
+                />
               )}
-            />
+            </div>
           ),
         },
         {
@@ -155,6 +176,7 @@ export default function Module02ChoisirUnite() {
           done: plausibleDone,
           content: (
             <TapQuestion
+              requires={['unite-masse-adaptee', 'masse-invariante']}
               prompt={PLAUSIBLE_Q.q}
               options={PLAUSIBLE_Q.options}
               correct={PLAUSIBLE_Q.correct}
@@ -167,13 +189,10 @@ export default function Module02ChoisirUnite() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Layers className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            mg, g, kg, t : quatre unités pour quatre échelles. Choisir la bonne, c’est déjà éviter la moitié des
-            erreurs.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais choisir l'unité. Au module suivant, deux balances vont
+          te donner de vrais nombres : l'une compare, l'autre affiche.
+        </KnowledgeSnapshot>
       }
     />
   );

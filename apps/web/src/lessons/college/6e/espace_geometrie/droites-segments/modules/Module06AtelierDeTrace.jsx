@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { PenTool } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TraceWorkshop from '../components/TraceWorkshop';
 
@@ -79,29 +78,32 @@ export default function Module06AtelierDeTrace() {
         title: `Construction ${i + 1}`,
         done: done.includes(s.id),
         content: (kit) => (
-          <TraceWorkshop
-            spec={s}
-            points={POINTS}
-            box={BOX}
-            done={done.includes(s.id)}
-            onSolved={() => mark(s.id)}
-            react={kit.react}
-          />
+          <div className="space-y-5">
+            <TraceWorkshop
+              spec={s}
+              points={POINTS}
+              box={BOX}
+              done={done.includes(s.id)}
+              onSolved={() => mark(s.id)}
+              react={kit.react}
+            />
+            {/* La troisième construction est la seule où l'ordre des points
+                change l'objet : la brique arrive juste après ce geste-là. */}
+            {s.kind === 'demi-droite' && done.includes(s.id) && (
+              <KnowledgeBrick
+                id="ordre-des-points"
+                variant="new"
+                lead="Tu viens de devoir choisir quel point serait l’origine : ce choix change l’objet."
+              />
+            )}
+          </div>
         ),
       }))}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <PenTool className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            <span className="font-mono text-white">[AC)</span> et{' '}
-            <span className="font-mono text-white">[CA)</span> ne sont pas le même objet : même droite
-            support, mais des origines — et donc des sens — opposés.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tu sais produire les objets. Reste à les dire — assez
+          précisément pour qu’un camarade redessine ta figure.
+        </KnowledgeSnapshot>
       }
     />
   );

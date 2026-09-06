@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Triangle, Eye } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ShapeLab from '../components/ShapeLab';
-import { classifyTriangle, triangleTraits, shapeName, SHAPE_LABEL } from '../components/figuresUtils';
+import { triangleTraits, shapeName } from '../components/figuresUtils';
 
 /**
  * Module 4 — MANIPULATION : la famille des triangles (P6).
@@ -38,14 +38,15 @@ const MISSIONS = [
     // fait.
     lockedIndices: [0, 1],
     equalPair: ['AC', 'BC'],
-    label: 'Rends ce triangle ISOCÈLE : les côtés [AC] et [BC] doivent avoir la même longueur.',
+    // Consigne en geste : la longueur à égaliser, pas le nom à découvrir.
+    label: 'Déplace C jusqu’à ce que les côtés [AC] et [BC] aient exactement la même longueur.',
     hint: 'Seul le sommet C bouge. Déplace-le jusqu’à ce que les deux longueurs affichées de part et d’autre soient identiques.',
   },
   {
     id: 't2',
     target: 'triangle-rectangle',
     lockedIndices: [0, 1],
-    label: 'Rends-le maintenant RECTANGLE : un angle doit valoir 90°.',
+    label: 'Déplace maintenant C jusqu’à ce que l’un des angles vaille exactement 90°.',
     hint: 'Seul C bouge. La marque d’angle droit apparaîtra d’elle-même quand l’angle sera exact.',
   },
 ];
@@ -167,20 +168,67 @@ export default function Module04FamilleTriangles() {
         title: 'Les côtés d’un côté, les angles de l’autre.',
         body: (
           <p>
-            Un triangle se décrit par ses <strong>côtés</strong> (isocèle, équilatéral) ou par ses{' '}
-            <strong>angles</strong> (rectangle). Deux critères indépendants.
+            Un triangle se décrit par ses <strong>côtés</strong> ou par ses <strong>angles</strong>.
+            Déplace le sommet mobile et regarde apparaître les figures remarquables.
           </p>
         ),
       }}
       steps={[
-        ...MISSIONS.map((m, i) => ({
-          num: i + 1,
-          title: `Mission ${i + 1} — ${SHAPE_LABEL[m.target]}`,
-          done: done.includes(m.id),
+        // ÉTAPES LITTÉRALES : l'audit ne lit que le tableau `steps` littéral,
+        // une brique posée dans un callback de .map lui serait invisible
+        // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+        {
+          num: 1,
+          // Titre neutre : le nom du triangle est la CONSÉQUENCE du geste.
+          title: 'Mission 1 — égalise deux longueurs',
+          done: done.includes(MISSIONS[0].id),
           content: (kit) => (
-            <Mission mission={m} done={done.includes(m.id)} onDone={() => mark(m.id)} react={kit.react} />
+            <div className="space-y-5">
+              <Mission
+                mission={MISSIONS[0]}
+                done={done.includes(MISSIONS[0].id)}
+                onDone={() => mark(MISSIONS[0].id)}
+                react={kit.react}
+              />
+              {done.includes(MISSIONS[0].id) && (
+                <>
+                  <KnowledgeBrick
+                    id="triangle-isocele"
+                    variant="new"
+                    lead="Deux côtés de même longueur : la figure que tu viens d’obtenir a un nom."
+                  />
+                  <KnowledgeBrick
+                    id="triangle-equilateral"
+                    variant="new"
+                    lead="Et si les TROIS côtés étaient égaux, ce serait encore un autre nom."
+                  />
+                </>
+              )}
+            </div>
           ),
-        })),
+        },
+        {
+          num: 2,
+          title: 'Mission 2 — règle un angle à 90°',
+          done: done.includes(MISSIONS[1].id),
+          content: (kit) => (
+            <div className="space-y-5">
+              <Mission
+                mission={MISSIONS[1]}
+                done={done.includes(MISSIONS[1].id)}
+                onDone={() => mark(MISSIONS[1].id)}
+                react={kit.react}
+              />
+              {done.includes(MISSIONS[1].id) && (
+                <KnowledgeBrick
+                  id="triangle-rectangle"
+                  variant="new"
+                  lead="Cette fois, ce n’est pas une longueur que tu as réglée, c’est un angle."
+                />
+              )}
+            </div>
+          ),
+        },
         {
           num: 3,
           title: 'Classe ces trois triangles',
@@ -201,6 +249,7 @@ export default function Module04FamilleTriangles() {
                   ))}
                 </div>
               }
+              requires={['triangle-isocele', 'triangle-rectangle', 'polygone']}
               rows={A_CLASSER.map((f, i) => ({
                 id: f.id,
                 label: <span className="font-semibold">Triangle {i + 1}</span>,
@@ -225,11 +274,18 @@ export default function Module04FamilleTriangles() {
         },
         {
           num: 4,
-          title: 'Peut-on être les deux à la fois ?',
+          title: 'Deux caractères sur la même figure',
           done: cumulDone,
           content: (
-            <TapQuestion
-              above={
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="caracteres-cumulables"
+                variant="new"
+                lead="Tu as réglé une longueur, puis un angle. Rien n’empêche de faire les deux sur la même figure."
+              />
+              <TapQuestion
+                requires={['caracteres-cumulables', 'triangle-isocele', 'triangle-rectangle', 'triangle-equilateral']}
+                above={
                 <ShapeLab
                   points={[{ x: 70, y: 180 }, { x: 200, y: 180 }, { x: 70, y: 50 }]}
                   box={BOX} draggable={false} showLengths showProperties={false}
@@ -245,38 +301,19 @@ export default function Module04FamilleTriangles() {
               correct={0}
               cols={1}
               explain="« Isocèle » décrit les côtés, « rectangle » décrit un angle : rien n’empêche les deux d’être vrais ensemble. On dit un triangle isocèle rectangle."
-              explainWrong="Aucun des deux ne « l’emporte » : ce sont deux critères indépendants — l’un sur les longueurs, l’autre sur un angle. Un triangle peut donc cumuler les deux."
-              solved={cumulDone}
-              onAnswered={() => setCumulDone(true)}
-            />
+                explainWrong="Aucun des deux ne « l’emporte » : ce sont deux critères indépendants — l’un sur les longueurs, l’autre sur un angle. Un triangle peut donc cumuler les deux."
+                solved={cumulDone}
+                onAnswered={() => setCumulDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Triangle className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
-          <div className="grid sm:grid-cols-3 gap-2 text-sm">
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Isocèle</div>
-              <div className="text-slate-300 text-xs">2 côtés égaux</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Équilatéral</div>
-              <div className="text-slate-300 text-xs">3 côtés égaux</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="font-bold text-white mb-1">Rectangle</div>
-              <div className="text-slate-300 text-xs">un angle droit</div>
-            </div>
-          </div>
-          <p className="text-center text-xs text-slate-400">
-            Côtés d’un côté, angles de l’autre — c’est pourquoi les caractères se cumulent.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Toutes les figures sont là. On va maintenant les ranger sur des
+          fiches, pour pouvoir les comparer sans les regarder.
+        </KnowledgeSnapshot>
       }
     />
   );

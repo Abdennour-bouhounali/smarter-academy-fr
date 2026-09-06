@@ -2,11 +2,130 @@
   "lesson": "resolution-problemes-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
+  "prerequisites": [
+    "calcul-litteral",
+    "developper",
+    "nombres-relatifs",
+    "proportionnalite",
+    "equation-premier-degre"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "pourquoi-une-equation",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module01ForfaitMystere.jsx",
+        "line": 265,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "declarer-linconnue",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module03ChoisirInconnue.jsx",
+        "line": 301,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "interpreter-le-resultat",
+      "type": "regles",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module07LaboModelisation.jsx",
+        "line": 378,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "proceduresIntroduced": [
+    {
+      "id": "lire-un-enonce",
+      "type": "methodes",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module02LireDetective.jsx",
+        "line": 134,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "choisir-linconnue",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module03ChoisirInconnue.jsx",
+        "line": 184,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "traduire-en-equation",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module04Traducteur.jsx",
+        "line": 418,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "choisir-la-strategie",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module05DeuxStrategies.jsx",
+        "line": 308,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "resoudre-etape-par-etape",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module06ResoudreVerifier.jsx",
+        "line": 211,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "phrase-de-reponse",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module07LaboModelisation.jsx",
+        "line": 471,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-verifier-dans-lhistoire",
+      "type": "memoriser",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module06ResoudreVerifier.jsx",
+        "line": 323,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-priorites",
@@ -15,8 +134,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module00Diagnostic.jsx",
       "line": 34,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +149,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module00Diagnostic.jsx",
-      "line": 49,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 50,
+      "requires": [
+        "calcul-litteral",
+        "developper"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "developper": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +167,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module00Diagnostic.jsx",
-      "line": 64,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 66,
+      "requires": [
+        "calcul-litteral",
+        "developper"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "developper": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +185,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module00Diagnostic.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 82,
+      "requires": [
+        "equation-premier-degre",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "equation-premier-degre": "prior",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +203,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module00Diagnostic.jsx",
-      "line": 94,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 98,
+      "requires": [
+        "proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +219,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module01ForfaitMystere.jsx",
-      "line": 88,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 89,
+      "requires": [
+        "proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,9 +235,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module01ForfaitMystere.jsx",
-      "line": 187,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 189,
+      "requires": [
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +251,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module01ForfaitMystere.jsx",
-      "line": 226,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 230,
+      "requires": [
+        "equation-premier-degre"
+      ],
+      "prerequisiteStatus": {
+        "equation-premier-degre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,9 +267,13 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module02LireDetective.jsx",
-      "line": 144,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 154,
+      "requires": [
+        "lire-un-enonce"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-enonce": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -122,9 +283,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module02LireDetective.jsx",
-      "line": 192,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 204,
+      "requires": [
+        "lire-un-enonce"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-enonce": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +299,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module03ChoisirInconnue.jsx",
-      "line": 129,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 131,
+      "requires": [
+        "lire-un-enonce",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-enonce": "established@M2",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +317,13 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module03ChoisirInconnue.jsx",
-      "line": 240,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 253,
+      "requires": [
+        "choisir-linconnue"
+      ],
+      "prerequisiteStatus": {
+        "choisir-linconnue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +333,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module04Traducteur.jsx",
-      "line": 385,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 386,
+      "requires": [
+        "choisir-linconnue",
+        "declarer-linconnue"
+      ],
+      "prerequisiteStatus": {
+        "choisir-linconnue": "established@M3",
+        "declarer-linconnue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,9 +351,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module05DeuxStrategies.jsx",
-      "line": 166,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 167,
+      "requires": [
+        "proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -182,9 +367,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module05DeuxStrategies.jsx",
-      "line": 277,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 279,
+      "requires": [
+        "pourquoi-une-equation",
+        "traduire-en-equation"
+      ],
+      "prerequisiteStatus": {
+        "pourquoi-une-equation": "established@M1",
+        "traduire-en-equation": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -194,9 +385,15 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module05DeuxStrategies.jsx",
-      "line": 328,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 339,
+      "requires": [
+        "choisir-la-strategie",
+        "traduire-en-equation"
+      ],
+      "prerequisiteStatus": {
+        "choisir-la-strategie": "established@M5",
+        "traduire-en-equation": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -206,9 +403,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module06ResoudreVerifier.jsx",
-      "line": 257,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 267,
+      "requires": [
+        "resoudre-etape-par-etape",
+        "traduire-en-equation"
+      ],
+      "prerequisiteStatus": {
+        "resoudre-etape-par-etape": "established@M6",
+        "traduire-en-equation": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -218,9 +421,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module07LaboModelisation.jsx",
-      "line": 264,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 265,
+      "requires": [
+        "traduire-en-equation",
+        "resoudre-etape-par-etape"
+      ],
+      "prerequisiteStatus": {
+        "traduire-en-equation": "established@M4",
+        "resoudre-etape-par-etape": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +439,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module07LaboModelisation.jsx",
-      "line": 340,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 342,
+      "requires": [
+        "resoudre-etape-par-etape"
+      ],
+      "prerequisiteStatus": {
+        "resoudre-etape-par-etape": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,9 +455,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module07LaboModelisation.jsx",
-      "line": 385,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 396,
+      "requires": [
+        "mem-verifier-dans-lhistoire",
+        "interpreter-le-resultat"
+      ],
+      "prerequisiteStatus": {
+        "mem-verifier-dans-lhistoire": "established@M6",
+        "interpreter-le-resultat": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -254,9 +473,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 68,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "lire-un-enonce"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-enonce": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -266,9 +489,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 87,
+      "requires": [
+        "lire-un-enonce",
+        "declarer-linconnue"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-enonce": "established@M2",
+        "declarer-linconnue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -278,9 +507,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "choisir-la-strategie",
+        "lire-un-enonce"
+      ],
+      "prerequisiteStatus": {
+        "choisir-la-strategie": "established@M5",
+        "lire-un-enonce": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -290,9 +525,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "choisir-linconnue",
+        "declarer-linconnue"
+      ],
+      "prerequisiteStatus": {
+        "choisir-linconnue": "established@M3",
+        "declarer-linconnue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -302,9 +543,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 139,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 144,
+      "requires": [
+        "choisir-la-strategie"
+      ],
+      "prerequisiteStatus": {
+        "choisir-la-strategie": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -314,9 +559,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 157,
+      "requires": [
+        "traduire-en-equation"
+      ],
+      "prerequisiteStatus": {
+        "traduire-en-equation": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -326,9 +575,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 167,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 174,
+      "requires": [
+        "traduire-en-equation",
+        "choisir-linconnue"
+      ],
+      "prerequisiteStatus": {
+        "traduire-en-equation": "established@M4",
+        "choisir-linconnue": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -338,9 +593,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 187,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 195,
+      "requires": [
+        "resoudre-etape-par-etape"
+      ],
+      "prerequisiteStatus": {
+        "resoudre-etape-par-etape": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -350,9 +609,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 203,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 212,
+      "requires": [
+        "mem-verifier-dans-lhistoire",
+        "resoudre-etape-par-etape"
+      ],
+      "prerequisiteStatus": {
+        "mem-verifier-dans-lhistoire": "established@M6",
+        "resoudre-etape-par-etape": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -362,9 +627,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/resolution-problemes-3e/modules/Module08MissionFinale.jsx",
-      "line": 220,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 230,
+      "requires": [
+        "interpreter-le-resultat",
+        "phrase-de-reponse"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-le-resultat": "established@M7",
+        "phrase-de-reponse": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }

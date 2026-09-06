@@ -2,11 +2,172 @@
   "lesson": "reperage-plan",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "calcul-numerique",
+    "lecture-quadrillage"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "deux-nombres",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module01TresorPerdu.jsx",
+        "line": 146,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ordre-du-couple",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module02DeuxNombres.jsx",
+        "line": 118,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "deplacement-somme",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module05ParcoursRobot.jsx",
+        "line": 135,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "noeud-vs-case",
+      "type": "concepts",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module06NoeudsEtCases.jsx",
+        "line": 118,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "coordonnee-commune",
+      "type": "regles",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module07MissionsReperage.jsx",
+        "line": 142,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "abscisse",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module02DeuxNombres.jsx",
+        "line": 171,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ordonnee",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module02DeuxNombres.jsx",
+        "line": 176,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "coordonnees",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module03LireUnPoint.jsx",
+        "line": 114,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "origine-repere",
+      "type": "vocabulaire",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module04PlacerUnPoint.jsx",
+        "line": 172,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "lire-un-point",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module03LireUnPoint.jsx",
+        "line": 119,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "placer-un-point",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module04PlacerUnPoint.jsx",
+        "line": 177,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "croiser-deux-indices",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module07MissionsReperage.jsx",
+        "line": 112,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-ordre",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module02DeuxNombres.jsx",
+        "line": 181,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-noeud-case",
+      "type": "memoriser",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module06NoeudsEtCases.jsx",
+        "line": 123,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-compter",
@@ -15,8 +176,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module00Diagnostic.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,13 +191,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module00Diagnostic.jsx",
-      "line": 32,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "intervalle"
+      "line": 33,
+      "requires": [
+        "calcul-numerique"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "q3-lignes-colonnes",
@@ -40,9 +207,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module00Diagnostic.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 49,
+      "requires": [
+        "lecture-quadrillage"
+      ],
+      "prerequisiteStatus": {
+        "lecture-quadrillage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -52,9 +223,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module00Diagnostic.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 64,
+      "requires": [
+        "lecture-quadrillage",
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "lecture-quadrillage": "prior",
+        "calcul-numerique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -64,9 +241,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module00Diagnostic.jsx",
-      "line": 76,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 80,
+      "requires": [
+        "lecture-quadrillage"
+      ],
+      "prerequisiteStatus": {
+        "lecture-quadrillage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -76,9 +257,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module01TresorPerdu.jsx",
-      "line": 114,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 113,
+      "requires": [
+        "lecture-quadrillage"
+      ],
+      "prerequisiteStatus": {
+        "lecture-quadrillage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -88,9 +273,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module01TresorPerdu.jsx",
-      "line": 148,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 161,
+      "requires": [
+        "deux-nombres"
+      ],
+      "prerequisiteStatus": {
+        "deux-nombres": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -100,9 +289,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module02DeuxNombres.jsx",
-      "line": 125,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "deux-nombres",
+        "ordre-du-couple"
+      ],
+      "prerequisiteStatus": {
+        "deux-nombres": "established@M1",
+        "ordre-du-couple": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -112,9 +307,17 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module02DeuxNombres.jsx",
-      "line": 165,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 196,
+      "requires": [
+        "ordre-du-couple",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "ordre-du-couple": "established@M2",
+        "abscisse": "established@M2",
+        "ordonnee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +327,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module03LireUnPoint.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "coordonnees",
+        "lire-un-point",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "established@M3",
+        "lire-un-point": "established@M3",
+        "abscisse": "established@M2",
+        "ordonnee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +349,17 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module03LireUnPoint.jsx",
-      "line": 149,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 166,
+      "requires": [
+        "coordonnees",
+        "lire-un-point",
+        "ordre-du-couple"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "established@M3",
+        "lire-un-point": "established@M3",
+        "ordre-du-couple": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -147,26 +368,38 @@
       "module": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module04PlacerUnPoint.jsx",
-      "line": 167,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "origine-repere"
+      "line": 205,
+      "requires": [
+        "placer-un-point",
+        "origine-repere",
+        "abscisse",
+        "ordonnee"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "placer-un-point": "established@M4",
+        "origine-repere": "established@M4",
+        "abscisse": "established@M2",
+        "ordonnee": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M05-S0-Q1",
       "module": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module05ParcoursRobot.jsx",
-      "line": 135,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "extremum"
+      "line": 162,
+      "requires": [
+        "deplacement-somme",
+        "coordonnees"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "deplacement-somme": "established@M5",
+        "coordonnees": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M06-S2-Q1",
@@ -174,9 +407,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module06NoeudsEtCases.jsx",
-      "line": 124,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "noeud-vs-case",
+        "lecture-quadrillage"
+      ],
+      "prerequisiteStatus": {
+        "noeud-vs-case": "established@M6",
+        "lecture-quadrillage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +425,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module06NoeudsEtCases.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 163,
+      "requires": [
+        "noeud-vs-case",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "noeud-vs-case": "established@M6",
+        "coordonnees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +443,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module07MissionsReperage.jsx",
-      "line": 129,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 147,
+      "requires": [
+        "coordonnee-commune",
+        "ordonnee",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "coordonnee-commune": "established@M7",
+        "ordonnee": "established@M2",
+        "coordonnees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +463,17 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module07MissionsReperage.jsx",
-      "line": 170,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 190,
+      "requires": [
+        "deplacement-somme",
+        "coordonnees",
+        "origine-repere"
+      ],
+      "prerequisiteStatus": {
+        "deplacement-somme": "established@M5",
+        "coordonnees": "established@M3",
+        "origine-repere": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,9 +483,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 56,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "deux-nombres"
+      ],
+      "prerequisiteStatus": {
+        "deux-nombres": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +499,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 73,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 76,
+      "requires": [
+        "abscisse",
+        "ordonnee",
+        "ordre-du-couple"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "established@M2",
+        "ordonnee": "established@M2",
+        "ordre-du-couple": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,9 +519,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 93,
+      "requires": [
+        "ordre-du-couple",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "ordre-du-couple": "established@M2",
+        "coordonnees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -258,9 +537,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 105,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "lire-un-point",
+        "coordonnees",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-point": "established@M3",
+        "coordonnees": "established@M3",
+        "abscisse": "established@M2",
+        "ordonnee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -270,9 +559,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 126,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 132,
+      "requires": [
+        "coordonnee-commune",
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "coordonnee-commune": "established@M7",
+        "abscisse": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -282,9 +577,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 143,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 150,
+      "requires": [
+        "placer-un-point",
+        "coordonnees",
+        "ordre-du-couple"
+      ],
+      "prerequisiteStatus": {
+        "placer-un-point": "established@M4",
+        "coordonnees": "established@M3",
+        "ordre-du-couple": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -294,9 +597,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 169,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 177,
+      "requires": [
+        "deplacement-somme",
+        "origine-repere",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "deplacement-somme": "established@M5",
+        "origine-repere": "established@M4",
+        "coordonnees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -306,9 +617,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 182,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 191,
+      "requires": [
+        "deplacement-somme",
+        "ordonnee",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "deplacement-somme": "established@M5",
+        "ordonnee": "established@M2",
+        "coordonnees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -318,9 +637,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 194,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 204,
+      "requires": [
+        "noeud-vs-case",
+        "mem-noeud-case"
+      ],
+      "prerequisiteStatus": {
+        "noeud-vs-case": "established@M6",
+        "mem-noeud-case": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -330,49 +655,18 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module08MissionFinale.jsx",
-      "line": 210,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 221,
+      "requires": [
+        "coordonnee-commune",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "coordonnee-commune": "established@M7",
+        "ordonnee": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« intervalle » first appears at diag.prompt (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module00Diagnostic.jsx",
-      "line": 32,
-      "module": 0,
-      "step": null,
-      "term": "intervalle",
-      "questionId": "q2-zero",
-      "position": 6
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« origine du repère » first appears at q.prompt (module 4) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module04PlacerUnPoint.jsx",
-      "line": 167,
-      "module": 4,
-      "step": null,
-      "term": "origine-repere",
-      "questionId": "M04-S0-Q1",
-      "position": 73
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« extremum / maximum / minimum » first appears at q.prompt (module 5) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/reperage-plan/modules/Module05ParcoursRobot.jsx",
-      "line": 135,
-      "module": 5,
-      "step": null,
-      "term": "extremum",
-      "questionId": "M05-S0-Q1",
-      "position": 82
-    }
-  ]
+  "findings": []
 }

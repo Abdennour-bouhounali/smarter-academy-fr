@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Layers } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -75,6 +75,7 @@ export default function Module03Unites() {
                 ))}
               </div>
               <TapQuestion
+                requires={['contenance', 'litre-repere']}
                 prompt={INTRO_Q.q}
                 options={INTRO_Q.options}
                 correct={INTRO_Q.correct}
@@ -91,34 +92,46 @@ export default function Module03Unites() {
           title: 'À chaque situation, son unité',
           done: matchDone,
           content: (
-            <BatchChoiceQuestion
-              intro={<p className="text-sm text-slate-600">Choisis, parmi les quatre unités, celle qui convient à chaque situation.</p>}
-              rows={MATCH_ITEMS.map((it) => ({
-                id: it.id,
-                label: (
-                  <>
-                    <span className="text-2xl" aria-hidden="true">{it.emoji}</span>
-                    <span>{it.label}</span>
-                  </>
-                ),
-                options: UNIT_OPTIONS,
-                correct: UNIT_OPTIONS.indexOf(it.correct),
-                correction: <>→ {it.correct}</>,
-              }))}
-              solved={matchDone}
-              onAnswered={() => setMatchDone(true)}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {!allRight && (
+            <div className="space-y-5">
+              <BatchChoiceQuestion
+                requires={['contenance', 'litre-repere']}
+                intro={<p className="text-sm text-slate-600">Choisis, parmi les quatre unités, celle qui convient à chaque situation.</p>}
+                rows={MATCH_ITEMS.map((it) => ({
+                  id: it.id,
+                  label: (
                     <>
-                      {nCorrect} / {total} corrects — les bonnes associations sont en vert.{' '}
+                      <span className="text-2xl" aria-hidden="true">{it.emoji}</span>
+                      <span>{it.label}</span>
                     </>
-                  )}
-                  mL pour la dose de sirop, cL pour le petit verre, dL pour le bol, L pour la bouteille : l’unité suit
-                  toujours la taille de ce qu’on mesure.
-                </Feedback>
+                  ),
+                  options: UNIT_OPTIONS,
+                  correct: UNIT_OPTIONS.indexOf(it.correct),
+                  correction: <>→ {it.correct}</>,
+                }))}
+                solved={matchDone}
+                onAnswered={() => setMatchDone(true)}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {!allRight && (
+                      <>
+                        {nCorrect} / {total} corrects — les bonnes associations sont en vert.{' '}
+                      </>
+                    )}
+                    mL pour la dose de sirop, cL pour le petit verre, dL pour le bol, L pour la bouteille : l’unité suit
+                    toujours la taille de ce qu’on mesure.
+                  </Feedback>
+                )}
+              />
+              {/* Quatre situations viennent d'être appariées : la règle du
+                  choix se dit maintenant, sans rien annoncer d'avance. */}
+              {matchDone && (
+                <KnowledgeBrick
+                  id="unite-contenance-adaptee"
+                  variant="new"
+                  lead="Tu viens de choisir quatre fois : à chaque fois, la quantité à mesurer a décidé."
+                />
               )}
-            />
+            </div>
           ),
         },
         {
@@ -127,6 +140,7 @@ export default function Module03Unites() {
           done: plausibleDone,
           content: (
             <TapQuestion
+              requires={['unite-contenance-adaptee', 'litre-repere']}
               prompt={PLAUSIBLE_Q.q}
               options={PLAUSIBLE_Q.options}
               correct={PLAUSIBLE_Q.correct}
@@ -139,13 +153,10 @@ export default function Module03Unites() {
         },
       ]}
       footer={
-        <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Layers className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            mL, cL, dL, L : à chaque saut, l’unité correspond à des quantités bien plus grandes. C’est cette
-            intuition qui te permettra de repérer une contenance impossible.
-          </p>
-        </div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais choisir l’unité. Reste à savoir combien de mL font
+          un L : au module suivant, tu le construis en versant.
+        </KnowledgeSnapshot>
       }
     />
   );

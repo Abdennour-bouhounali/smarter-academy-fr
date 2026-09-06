@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Compass } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoordGrid from '../components/CoordGrid';
@@ -101,11 +100,21 @@ export default function Module07MissionsReperage() {
               />
 
               {cacheDone && (
-                <Feedback tone="ok">
-                  La cache est en <strong className="font-mono">{formatCoords(CACHE)}</strong>. Le tir à
-                  l’arc est en <span className="font-mono">(2 ; 3)</span> : 3 pas à droite donnent 2 + 3 = 5,
-                  et 2 pas plus bas donnent 3 − 2 = 1.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    La cache est en <strong className="font-mono">{formatCoords(CACHE)}</strong>. Le tir à
+                    l’arc est en <span className="font-mono">(2 ; 3)</span> : 3 pas à droite donnent 2 + 3 = 5,
+                    et 2 pas plus bas donnent 3 − 2 = 1.
+                  </Feedback>
+                  {/* Le raisonnement vient d'être fait en acte : chaque indice
+                      n'a touché qu'une seule des deux coordonnées. On en fait
+                      une méthode réutilisable. */}
+                  <KnowledgeBrick
+                    id="croiser-deux-indices"
+                    variant="new"
+                    lead="Tu n’as pas deviné : chaque indice t’a donné un seul des deux nombres."
+                  />
+                </>
               )}
 
               {!cacheDone && wrongGuess && (
@@ -126,40 +135,51 @@ export default function Module07MissionsReperage() {
           title: 'Les trois stands',
           done: alignDone,
           content: (
-            <TapQuestion
-              above={
-                <CoordGrid
-                  grid={GRID}
-                  mode="display"
-                  labelledNodes={STANDS.map((s, i) => ({
-                    col: s.col,
-                    row: s.row,
-                    name: ['S₁', 'S₂', 'S₃'][i],
-                    color: '#0891b2',
-                  }))}
-                  showCoordsBadge={false}
-                  ariaLabel="Trois stands placés sur le plan"
-                />
-              }
-              prompt={
-                <>
-                  Trois stands sont en <span className="font-mono">(1 ; 2)</span>,{' '}
-                  <span className="font-mono">(4 ; 2)</span> et <span className="font-mono">(7 ; 2)</span>.
-                  Que peut-on affirmer avec certitude ?
-                </>
-              }
-              options={[
-                'Ils sont alignés sur une même ligne horizontale',
-                'Ils forment un triangle',
-                'Ils sont alignés sur une même ligne verticale',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Les trois ont la MÊME seconde coordonnée (2) : ils sont donc tous à la même hauteur, alignés sur une horizontale. Leur première coordonnée, elle, change."
-              explainWrong="Regarde ce qui est commun : la seconde coordonnée vaut 2 pour les trois. C’est elle qui commande la hauteur — donc même hauteur, donc alignés horizontalement."
-              solved={alignDone}
-              onAnswered={() => setAlignDone(true)}
-            />
+            <div className="space-y-5">
+              {/* La règle se lit sur la figure de l'étape : les trois stands
+                  partagent le même second nombre. On la pose avant de la
+                  demander, jamais dans l'explication d'après-coup. */}
+              <KnowledgeBrick
+                id="coordonnee-commune"
+                variant="new"
+                lead="Regarde les trois stands du plan : leur second nombre est le même."
+              />
+              <TapQuestion
+                above={
+                  <CoordGrid
+                    grid={GRID}
+                    mode="display"
+                    labelledNodes={STANDS.map((s, i) => ({
+                      col: s.col,
+                      row: s.row,
+                      name: ['S₁', 'S₂', 'S₃'][i],
+                      color: '#0891b2',
+                    }))}
+                    showCoordsBadge={false}
+                    ariaLabel="Trois stands placés sur le plan"
+                  />
+                }
+                prompt={
+                  <>
+                    Trois stands sont en <span className="font-mono">(1 ; 2)</span>,{' '}
+                    <span className="font-mono">(4 ; 2)</span> et <span className="font-mono">(7 ; 2)</span>.
+                    Que peut-on affirmer avec certitude ?
+                  </>
+                }
+                options={[
+                  'Ils sont alignés sur une même ligne horizontale',
+                  'Ils forment un triangle',
+                  'Ils sont alignés sur une même ligne verticale',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['coordonnee-commune', 'ordonnee', 'coordonnees']}
+                explain="Les trois ont la MÊME seconde coordonnée (2) : ils sont donc tous à la même hauteur, alignés sur une horizontale. Leur première coordonnée, elle, change."
+                explainWrong="Regarde ce qui est commun : la seconde coordonnée vaut 2 pour les trois. C’est elle qui commande la hauteur — donc même hauteur, donc alignés horizontalement."
+                solved={alignDone}
+                onAnswered={() => setAlignDone(true)}
+              />
+            </div>
           ),
         },
         {
@@ -191,6 +211,7 @@ export default function Module07MissionsReperage() {
               }
               suffix="pas"
               expected={9}
+              requires={['deplacement-somme', 'coordonnees', 'origine-repere']}
               explain="6 pas horizontalement + 3 pas verticalement = 9 pas. On additionne les deux écarts."
               explainFor={(n) =>
                 n === 18
@@ -206,18 +227,10 @@ export default function Module07MissionsReperage() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Compass className="w-6 h-6 mx-auto text-rose-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Les coordonnées ne servent pas qu’à nommer un point : elles permettent de{' '}
-            <strong className="text-white">raisonner</strong> — croiser des indices, comparer des positions,
-            calculer un trajet, sans jamais mesurer à l’œil.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Ta carte est complète. La mission finale ne demandera rien de
+          neuf : dix épreuves sur exactement ce que tu viens de construire.
+        </KnowledgeSnapshot>
       }
     />
   );

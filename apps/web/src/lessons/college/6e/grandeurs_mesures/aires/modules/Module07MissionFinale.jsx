@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import AreaGrid from '../components/AreaGrid';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -39,6 +40,7 @@ const MOSAIQUE_HALVES = [{ index: 2, corner: 'bl' }, { index: 6, corner: 'tl' }]
 const EPREUVES = [
   {
     id: 'ai-e1',
+    requires: ['aire', 'perimetre', 'mem-aire-vs-perimetre'],
     skill: 'notion',
     title: 'Épreuve 1',
     prompt: 'Sur le plan, on commande la pelouse de la cour. Que mesure-t-on pour savoir COMBIEN de pelouse acheter ?',
@@ -50,6 +52,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e2',
+    requires: ['aire', 'aire-conservee'],
     skill: 'comparer',
     title: 'Épreuve 2',
     prompt: 'Deux dalles sont découpées différemment à partir de la même plaque de 8 carreaux, sans perte. Que peut-on dire de leurs aires ?',
@@ -65,6 +68,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e3',
+    requires: ['aire', 'perimetre', 'aire-perimetre-independants'],
     skill: 'comparer',
     title: 'Épreuve 3',
     prompt: 'Deux bacs à fleurs ont exactement le même périmètre. Contiennent-ils forcément la même surface de terre ?',
@@ -79,6 +83,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e4',
+    requires: ['aire', 'mesurer-par-pavage'],
     skill: 'paver',
     title: 'Épreuve 4',
     prompt: 'La mosaïque du préau couvre 6 carreaux entiers et 2 demi-carreaux. Quelle est son aire ?',
@@ -91,6 +96,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e5',
+    requires: ['aire', 'choisir-unite-aire'],
     skill: 'paver',
     title: 'Épreuve 5',
     prompt: 'Pour mesurer l’aire du préau entier, quel carreau-unité choisir ?',
@@ -102,6 +108,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e6',
+    requires: ['aire', 'perimetre', 'aire-rectangle'],
     skill: 'formule',
     title: 'Épreuve 6',
     prompt: 'Le mur à peindre mesure 5 m sur 2,5 m. Son aire ?',
@@ -113,6 +120,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e7',
+    requires: ['aire', 'perimetre', 'aire-rectangle'],
     skill: 'formule',
     title: 'Épreuve 7',
     prompt: 'Chaque dalle du carrelage est un carré de 30 cm de côté. L’aire d’une dalle ?',
@@ -124,6 +132,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e8',
+    requires: ['aire', 'aire-rectangle', 'aire-composee'],
     skill: 'formule',
     title: 'Épreuve 8',
     prompt: 'La salle d’arts en L se découpe en un rectangle 6 m × 4 m et un carré de 2 m de côté. Aire totale ?',
@@ -135,6 +144,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e9',
+    requires: ['aire', 'marche-x100'],
     skill: 'unites',
     title: 'Épreuve 9',
     prompt: 'Le devis du carreleur est en cm², le plan en m². Combien vaut 2 m² en cm² ?',
@@ -146,6 +156,7 @@ const EPREUVES = [
   },
   {
     id: 'ai-e10',
+    requires: ['aire', 'aire-rectangle', 'aire-composee', 'mesurer-par-pavage'],
     skill: 'problemes',
     title: 'Épreuve 10',
     prompt: 'Dernier chantier : le mur du fond fait 4 m × 3 m, percé d’une porte de 1 m × 2 m. Un pot de peinture couvre 5 m². Combien de pots ?',
@@ -220,6 +231,11 @@ function Synthese() {
         Aire et périmètre vivent sur la même figure mais ne se parlent pas : l'un mesure le dedans, l'autre le
         tour. Toujours vérifier QUELLE grandeur le problème demande.
       </Feedback>
+
+      {/* La carte complète : l'« À retenir » de la leçon n'est pas un second
+          résumé écrit à la main, c'est la carte elle-même
+          (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot complete variant="complete" />
     </div>
   );
 }

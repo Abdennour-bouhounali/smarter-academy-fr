@@ -3,6 +3,19 @@ export const LESSON_BASE_PATH = '/courses/college/6e/nombres_calculs/nombres-dec
 export const LESSON_CONFIG = {
   id: 'nombres-decimaux',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : la numération entière (valeur d'un chiffre, comparaison
+  // d'entiers) et la lecture d'une fraction simple « a parts sur b » —
+  // exactement les deux compétences que les cinq questions du module 0
+  // mesurent, et rien d'autre. Tout le reste (dixième, centième, fraction
+  // décimale, écriture à virgule, valeur de position décimale, écritures
+  // équivalentes, comparaison, encadrement, ordre de grandeur) est établi
+  // dans la leçon même.
+  priorKnowledge: ['numeration-entiere', 'lecture-fraction-simple'],
   title: 'Nombres décimaux',
   description:
     "Comprendre qu'un nombre décimal représente une quantité, et savoir passer d'une écriture à l'autre : fraction décimale, écriture à virgule, valeur de position, droite graduée.",
@@ -14,7 +27,7 @@ export const LESSON_CONFIG = {
   passingScore: 8,
   masteryThreshold: 0.8,
   emoji: '🎯',
-  estimatedDurationMin: 138,
+  estimatedDurationMin: 89,
   skills: [
     "Partager l'unité en dixièmes, centièmes et millièmes",
     'Relier fraction décimale et écriture à virgule',
@@ -45,7 +58,7 @@ export const LESSON_CONFIG = {
       color: 'teal',
       style: 'diagnostic',
       stage: 'prerequisite_check',
-      estimatedMin: 5,
+      estimatedMin: 4,
       difficulty: 1,
       actionText: 'Vérifier mes bases',
     },
@@ -58,7 +71,7 @@ export const LESSON_CONFIG = {
       desc: "Quand les entiers ne suffisent plus : comment dire ce qu'il y a entre 3 et 4 ?",
       color: 'indigo',
       style: 'featured',
-      estimatedMin: 8,
+      estimatedMin: 11,
       difficulty: 1,
       actionText: 'Démarrer',
       stage: 'trigger',
@@ -73,7 +86,7 @@ export const LESSON_CONFIG = {
       desc: 'Partage une unité en 10, puis en 100 : les dixièmes et les centièmes.',
       color: 'emerald',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 8,
       difficulty: 1,
       actionText: 'Manipuler',
       stage: 'discovery',
@@ -85,10 +98,10 @@ export const LESSON_CONFIG = {
       slug: 'fractions-decimales',
       path: `${LESSON_BASE_PATH}/fractions-decimales`,
       title: 'Les fractions décimales',
-      desc: 'Écrire une quantité avec un dénominateur 10, 100 ou 1 000.',
+      desc: "Écrire une quantité coloriée sous forme de fraction.",
       color: 'sky',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Démarrer',
       stage: 'discovery',
@@ -103,7 +116,7 @@ export const LESSON_CONFIG = {
       desc: 'La grande traduction : 37/10 devient 3,7. Et la virgule prend son sens.',
       color: 'blue',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Traduire',
       stage: 'manipulation',
@@ -118,7 +131,7 @@ export const LESSON_CONFIG = {
       desc: 'Laboratoire de valeur : que vaut vraiment chaque chiffre après la virgule ?',
       color: 'violet',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Explorer',
       stage: 'manipulation',
@@ -133,7 +146,7 @@ export const LESSON_CONFIG = {
       desc: 'La machine à traduire + le mystère des zéros inutiles : 3,5 = 3,50 ≠ 3,05.',
       color: 'cyan',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 3,
       actionText: 'Démarrer',
       stage: 'formalization',
@@ -148,7 +161,7 @@ export const LESSON_CONFIG = {
       desc: "Pourquoi 2,4 > 2,37 ? Laboratoire de comparaison et chasse aux erreurs.",
       color: 'amber',
       style: 'featured',
-      estimatedMin: 14,
+      estimatedMin: 9,
       difficulty: 3,
       actionText: 'Comparer',
       stage: 'formalization',
@@ -163,7 +176,7 @@ export const LESSON_CONFIG = {
       desc: 'Zoom après zoom : de 0—1 à 0,3—0,4, place les décimaux et encadre-les.',
       color: 'rose',
       style: 'featured',
-      estimatedMin: 14,
+      estimatedMin: 6,
       difficulty: 3,
       actionText: 'Zoomer',
       stage: 'practice_lab',
@@ -178,7 +191,7 @@ export const LESSON_CONFIG = {
       desc: '1,98 L, est-ce plutôt 1 L ou 2 L ? Estimer avant de calculer.',
       color: 'purple',
       style: 'featured',
-      estimatedMin: 10,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Estimer',
       stage: 'practice_lab',
@@ -193,7 +206,7 @@ export const LESSON_CONFIG = {
       desc: 'Des décimaux dans la vraie vie : comprendre, estimer, calculer, vérifier.',
       color: 'slate',
       style: 'featured',
-      estimatedMin: 14,
+      estimatedMin: 6,
       difficulty: 4,
       actionText: 'Résoudre',
       stage: 'practice_lab',
@@ -208,7 +221,7 @@ export const LESSON_CONFIG = {
       desc: 'Boss final, profil de maîtrise et synthèse visuelle.',
       color: 'amber',
       style: 'assessment',
-      estimatedMin: 18,
+      estimatedMin: 15,
       difficulty: 4,
       actionText: 'Relever le défi',
       stage: 'evaluation',

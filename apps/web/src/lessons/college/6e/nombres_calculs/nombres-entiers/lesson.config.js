@@ -5,6 +5,18 @@ export const LESSON_CONFIG = {
   // progression (smarter_lesson_<id>) et qui pilote la reprise de cours.
   id: 'nombres-entiers',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : la numération du cycle 3 (valeur d'un chiffre dans un
+  // nombre de quatre ou cinq chiffres) et la lecture / écriture en lettres —
+  // exactement les deux compétences que les six questions du module 0
+  // mesurent, et rien d'autre. Tout le reste (groupement par dix, classes,
+  // décomposition, méthode de comparaison, rangement, encadrement, demi-droite
+  // graduée, ordre de grandeur) est établi dans la leçon même.
+  priorKnowledge: ['numeration-cycle3', 'lecture-ecriture-cycle3'],
   title: 'Nombres entiers',
   description:
     "Comprendre ce qu'est vraiment un grand nombre : construire, lire, écrire, décomposer, comparer, ranger et repérer les entiers.",
@@ -15,7 +27,7 @@ export const LESSON_CONFIG = {
   passingScore: 8,
   masteryThreshold: 0.8,
   emoji: '🔢',
-  estimatedDurationMin: 129,
+  estimatedDurationMin: 83,
   skills: [
     'Lire, écrire, décomposer et recomposer les nombres entiers',
     'Comprendre la valeur de position de chaque chiffre',
@@ -43,7 +55,7 @@ export const LESSON_CONFIG = {
       stage: 'prerequisite_check',
       color: 'teal',
       style: 'diagnostic',
-      estimatedMin: 5,
+      estimatedMin: 4,
       difficulty: 1,
       actionText: 'Vérifier mes bases',
     },
@@ -57,7 +69,7 @@ export const LESSON_CONFIG = {
       stage: 'trigger',
       color: 'indigo',
       style: 'featured',
-      estimatedMin: 7,
+      estimatedMin: 6,
       difficulty: 1,
       actionText: 'Démarrer',
     },
@@ -72,7 +84,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P1'],
       color: 'emerald',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 1,
       actionText: 'Manipuler',
     },
@@ -87,7 +99,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P2'],
       color: 'blue',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Démarrer',
     },
@@ -102,7 +114,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P3'],
       color: 'violet',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Explorer',
     },
@@ -117,7 +129,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P4'],
       color: 'sky',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 8,
       difficulty: 2,
       actionText: 'Démarrer',
     },
@@ -132,7 +144,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P5'],
       color: 'amber',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 8,
       difficulty: 3,
       actionText: 'Comparer',
     },
@@ -147,7 +159,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P5'],
       color: 'rose',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 3,
       actionText: 'Jouer',
     },
@@ -162,7 +174,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P6'],
       color: 'cyan',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 8,
       difficulty: 3,
       actionText: 'Démarrer',
     },
@@ -177,7 +189,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P7'],
       color: 'purple',
       style: 'featured',
-      estimatedMin: 8,
+      estimatedMin: 6,
       difficulty: 2,
       actionText: 'Explorer',
     },
@@ -192,7 +204,7 @@ export const LESSON_CONFIG = {
       teachesLearningPointIds: ['6e_nombres-entiers_P7'],
       color: 'slate',
       style: 'featured',
-      estimatedMin: 12,
+      estimatedMin: 6,
       difficulty: 4,
       actionText: 'Résoudre',
     },
@@ -206,7 +218,7 @@ export const LESSON_CONFIG = {
       stage: 'evaluation',
       color: 'amber',
       style: 'assessment',
-      estimatedMin: 18,
+      estimatedMin: 13,
       difficulty: 4,
       actionText: 'Relever le défi',
     },

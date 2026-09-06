@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Square } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RotateToRight from '../components/RotateToRight';
@@ -78,10 +77,19 @@ export default function Module03AngleDroit() {
                 ariaLabel="Deux droites : fais tourner la seconde"
               />
               {rotDone && (
-                <Feedback tone="ok">
-                  Le petit carré est apparu à l’intersection : c’est la marque de l’<strong>angle droit</strong>
-                  . Les deux droites sont <strong>perpendiculaires</strong>. On note d₁ ⊥ d₂.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Le petit carré est apparu à l’intersection : c’est la marque de l’
+                    <strong>angle droit</strong>, et il n’est apparu qu’à cet angle-là.
+                  </Feedback>
+                  {/* La relation se définit ICI, après le geste qui l'a fait
+                      surgir — et séparément du parallélisme. */}
+                  <KnowledgeBrick
+                    id="droites-perpendiculaires"
+                    variant="new"
+                    lead="Ce déclic à 90° pile, c’est la seconde grande relation entre deux droites."
+                  />
+                </>
               )}
             </div>
           ),
@@ -100,6 +108,7 @@ export default function Module03AngleDroit() {
               ]}
               correct={0}
               cols={1}
+              requires={['droites-perpendiculaires', 'angle-droit']}
               explain="La perpendicularité est exacte : 90°, ni 89 ni 91. C’est pour cela que la marque n’apparaît pas tant que l’angle n’est pas juste — tu l’as constaté en tournant."
               explainWrong="« Presque » n’existe pas ici. Tu as vu le carré refuser d’apparaître à 85° : la marque signale une égalité exacte, pas une approximation."
               solved={exactDone}
@@ -109,11 +118,19 @@ export default function Module03AngleDroit() {
         },
         {
           num: 3,
-          title: 'Faut-il être vertical et horizontal ?',
+          // Titre neutre : il ne doit pas déjà répondre.
+          title: 'Deux droites penchées',
           done: obliqueDone,
           content: (
-            <TapQuestion
-              above={
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="orientation-sans-importance"
+                variant="new"
+                lead="Tu as fait tourner d₂ sans jamais bouger d₁ : c’est bien l’angle ENTRE elles qui décidait."
+              />
+              <TapQuestion
+                requires={['orientation-sans-importance', 'droites-perpendiculaires']}
+                above={
                 <RelationFigure
                   droites={OBLIQUE}
                   box={BOX}
@@ -129,26 +146,19 @@ export default function Module03AngleDroit() {
               correct={0}
               cols={1}
               explain="La perpendicularité concerne l’ANGLE ENTRE les droites, pas leur orientation sur la page. Deux droites obliques peuvent parfaitement être perpendiculaires — la marque le confirme."
-              explainWrong="Regarde la marque d’angle droit sur la figure : elle n’apparaît que si l’angle vaut 90°. Ces deux droites obliques le vérifient (35° et 125° : leur différence fait 90°)."
-              solved={obliqueDone}
-              onAnswered={() => setObliqueDone(true)}
-            />
+                explainWrong="Regarde la marque d’angle droit sur la figure : elle n’apparaît que si l’angle vaut 90°. Ces deux droites obliques le vérifient (35° et 125° : leur différence fait 90°)."
+                solved={obliqueDone}
+                onAnswered={() => setObliqueDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Square className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Deux droites sont <strong className="text-white">perpendiculaires</strong> quand elles forment un
-            angle droit — exactement 90°, quelle que soit leur inclinaison sur la page. On note{' '}
-            <span className="font-mono text-white">d₁ ⊥ d₂</span>.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Les deux relations sont posées. On va maintenant les traquer
+          partout — dans la ville, sur un plan.
+        </KnowledgeSnapshot>
       }
     />
   );

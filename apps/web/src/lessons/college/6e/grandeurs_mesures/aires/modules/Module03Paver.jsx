@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Grid3x3 } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AreaGrid from '../components/AreaGrid';
@@ -120,7 +119,18 @@ export default function Module03Paver() {
           title: 'Pave la terrasse',
           done: paverDone,
           content: (kit) => (
-            <TerrassePaver react={kit.react} solved={paverDone} onSolved={() => setPaverDone(true)} />
+            <div className="space-y-5">
+              <TerrassePaver react={kit.react} solved={paverDone} onSolved={() => setPaverDone(true)} />
+              {/* Le pavage vient d'être exécuté à la main : la MÉTHODE peut
+                  être écrite, elle ne fait que nommer ce qui a été fait. */}
+              {paverDone && (
+                <KnowledgeBrick
+                  id="mesurer-par-pavage"
+                  variant="new"
+                  lead="Ce que tu viens de faire — recouvrir puis compter — est exactement la façon dont on mesure une aire."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -136,6 +146,7 @@ export default function Module03Paver() {
               display={formatDec(TERRASSE.length)}
               explain={<>{TERRASSE.length} carreaux de 1 m² → <strong>{TERRASSE.length} m²</strong>. L'aire s'écrit toujours avec une unité de SURFACE (m², cm²…), jamais en m.</>}
               explainFor={() => 'Reprends ton pavage : chaque carreau vaut 1 m², il suffit de les compter.'}
+              requires={['aire', 'mesurer-par-pavage']}
               solved={ecrireDone}
               onAnswered={() => setEcrireDone(true)}
             />
@@ -164,6 +175,7 @@ export default function Module03Paver() {
               correct={HALF_Q.correct}
               cols={3}
               explain={HALF_Q.explain}
+              requires={['aire', 'mesurer-par-pavage']}
               solved={halfDone}
               onAnswered={() => setHalfDone(true)}
             />
@@ -174,26 +186,35 @@ export default function Module03Paver() {
           title: 'Choisis ton carreau-unité',
           done: unitDone,
           content: (
-            <TapQuestion
-              prompt={UNIT_Q.q}
-              options={UNIT_Q.options}
-              correct={UNIT_Q.correct}
-              cols={1}
-              explain={UNIT_Q.explain}
-              solved={unitDone}
-              onAnswered={() => setUnitDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={UNIT_Q.q}
+                options={UNIT_Q.options}
+                correct={UNIT_Q.correct}
+                cols={1}
+                explain={UNIT_Q.explain}
+                requires={['aire', 'mesurer-par-pavage']}
+                solved={unitDone}
+                onAnswered={() => setUnitDone(true)}
+              />
+              {/* Le choix vient d'être fait sur un cas concret : la règle
+                  générale se pose ici, pas dans le footer. */}
+              {unitDone && (
+                <KnowledgeBrick
+                  id="choisir-unite-aire"
+                  variant="new"
+                  lead="Tu viens d’écarter deux unités absurdes. Voilà le critère qui a tranché."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Grid3x3 className="w-6 h-6 mx-auto text-emerald-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Une aire se mesure en carreaux-unités : on recouvre, on compte (les demi-carreaux s'assemblent), et on
-            écrit le résultat en m², cm²… selon la taille de la surface.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Compter 28 carreaux un par un est long. Le module suivant
+          fait apparaître le raccourci sous tes doigts.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Move, ZoomIn } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { Feedback, ValidateButton, NumberField } from '../../../../../common/components/LessonUI';
@@ -263,15 +264,11 @@ export default function Module08DroiteGraduee() {
                   )}
 
                   {s2 && (
-                    <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-                      <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Ce que le zoom t'apprend</div>
-                      <p className="text-sm text-slate-300">
-                        Chaque fois qu'on partage un intervalle en 10, on gagne{' '}
-                        <strong className="text-white">une décimale de plus</strong> : les dixièmes, puis les
-                        centièmes, puis les millièmes. C'est pour cela qu'un nombre décimal peut désigner une
-                        position aussi précise que l'on veut.
-                      </p>
-                    </div>
+                    <KnowledgeBrick
+                      id="zoom-droite"
+                      variant="new"
+                      lead="Tu viens de placer deux nombres là où il n'y avait, tout à l'heure, qu'un seul trait."
+                    />
                   )}
                 </motion.div>
               )}
@@ -280,11 +277,18 @@ export default function Module08DroiteGraduee() {
         },
         {
           num: 3,
-          title: 'Encadrer 4,37',
-          subtitle: "D'abord entre deux entiers, puis entre deux dixièmes : de plus en plus précis.",
+          title: 'Entre quels repères se trouve 4,37 ?',
+          subtitle: "D'abord deux entiers, puis deux repères plus serrés : de plus en plus précis.",
           done: s3,
           content: (kit) => (
             <div className="space-y-8">
+              {/* Deux saisies vont demander deux bornes : la méthode et le mot
+                  sont posés avant, jamais dans le feedback qui suit. */}
+              <KnowledgeBrick
+                id="encadrer-decimal"
+                variant="new"
+                lead="Coincer un nombre entre deux repères a un nom, et une manière de faire."
+              />
               {NIVEAUX.map((niveau, i) =>
                 i === 0 || niveaux.includes(i - 1) ? (
                   <div key={niveau.unit} className="space-y-3 border-t border-slate-100 pt-5 first:border-0 first:pt-0">
@@ -316,6 +320,13 @@ export default function Module08DroiteGraduee() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={8}>
+          <strong>La suite.</strong> Tu sais placer et encadrer un décimal. Au module suivant, tu
+          n'as plus besoin de la valeur exacte : savoir « à peu près » suffit, et protège des
+          erreurs.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

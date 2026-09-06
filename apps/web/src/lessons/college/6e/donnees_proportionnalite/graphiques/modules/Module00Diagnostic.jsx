@@ -19,6 +19,7 @@ const QUESTIONS = [
   {
     id: 'q1-lire-tableau',
     skill: 'tableau',
+    requires: ['lire-tableau'],
     points: 2,
     // Formulé en toutes lettres plutôt qu'avec un vrai <table> : le moteur
     // du kit rend `prompt` à l'intérieur d'un <p>, où un tableau est un
@@ -41,6 +42,7 @@ const QUESTIONS = [
   {
     id: 'q2-plus-grand',
     skill: 'nombres',
+    requires: ['comparer-entiers'],
     points: 2,
     prompt: <>Quel est le plus grand de ces nombres ?</>,
     options: ['18', '24', '20'],
@@ -51,6 +53,7 @@ const QUESTIONS = [
   {
     id: 'q3-plus-petit',
     skill: 'nombres',
+    requires: ['comparer-entiers'],
     points: 2,
     prompt: <>Et le plus petit de ceux-ci ?</>,
     options: ['15', '9', '12'],
@@ -61,6 +64,7 @@ const QUESTIONS = [
   {
     id: 'q4-encadrer',
     skill: 'nombres',
+    requires: ['encadrement'],
     points: 2,
     prompt: <>Entre quelles graduations se situe le nombre <strong className="font-mono">17</strong> ?</>,
     options: ['Entre 10 et 15', 'Entre 15 et 20', 'Entre 20 et 25'],
@@ -71,6 +75,7 @@ const QUESTIONS = [
   {
     id: 'q5-ecart',
     skill: 'nombres',
+    requires: ['calcul-numerique'],
     points: 2,
     prompt: <>De combien de degrés passe-t-on de <strong className="font-mono">11 °C</strong> à <strong className="font-mono">17 °C</strong> ?</>,
     options: ['6 °C de plus', '6 °C de moins', '28 °C de plus'],

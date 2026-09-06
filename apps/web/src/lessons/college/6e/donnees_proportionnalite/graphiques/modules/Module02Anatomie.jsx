@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Ruler } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import BarChart from '../components/BarChart';
@@ -85,10 +86,21 @@ export default function Module02Anatomie() {
                 correct={1}
                 cols={1}
                 explain="Sans axe gradué, on peut seulement comparer les hauteurs entre elles — jamais lire une valeur. Un graphique sans graduations n’est qu’un dessin."
-                explainWrong="On voit bien que cette barre est la plus courte, mais AUCUN nombre n’est lisible : il n’y a ni axe gradué ni unité. Comparer, oui ; mesurer, non."
+                explainWrong="On voit bien que cette barre est la plus courte, mais AUCUN nombre n’est lisible : il manque ce qui donnerait une valeur aux hauteurs. Comparer, oui ; mesurer, non."
+                requires={['graphique-outil']}
                 solved={sansDone}
                 onAnswered={() => setSansDone(true)}
               />
+              {/* Le manque a été ressenti : on peut maintenant nommer ce qui
+                  manquait. La brique arrive avant toute demande qui emploie le
+                  mot « axe gradué » ou « graduation ». */}
+              {sansDone && (
+                <KnowledgeBrick
+                  id="axe-gradue"
+                  variant="new"
+                  lead="Ce qui manquait à ce dessin porte un nom — et sans lui, il n’y a pas de graphique."
+                />
+              )}
             </div>
           ),
         },
@@ -114,6 +126,7 @@ export default function Module02Anatomie() {
                     chaque barre (étiquettes).
                   </Feedback>
                 )}
+                requires={['axe-gradue']}
                 solved={elementsDone}
                 onAnswered={() => setElementsDone(true)}
               />
@@ -126,6 +139,11 @@ export default function Module02Anatomie() {
           done: lireDone,
           content: (kit) => (
             <div className="space-y-3">
+              <KnowledgeBrick
+                id="lire-hauteur"
+                variant="new"
+                lead="L’axe est là ; voici comment s’en servir."
+              />
               <p className="text-sm text-slate-600">
                 Touche la barre du <strong>mercredi</strong>, puis lis sa hauteur sur l'axe.
               </p>
@@ -162,6 +180,13 @@ export default function Module02Anatomie() {
                 milieu entre 20 et 30.
               </p>
               <BarChart series={LECTURE} title="Prix des articles (€)" axisLabel="€" tone="sky" />
+              {/* L'écart constant entre graduations est sous les yeux : c'est le
+                  moment de le nommer, et il servira encore au module 6. */}
+              <KnowledgeBrick
+                id="echelle-axe"
+                variant="new"
+                lead="Regarde l’axe de ce graphique : d’un cran au suivant, l’écart ne change jamais."
+              />
               <NumericQuestion
                 prompt="Combien coûte l’article B ?"
                 suffix="€"
@@ -174,6 +199,7 @@ export default function Module02Anatomie() {
                     ? 'Regarde bien : le sommet ne s’arrête ni sur 20 ni sur 30, mais sur la graduation qui se trouve entre les deux — 25.'
                     : 'Suis le sommet de la barre B horizontalement jusqu’à l’axe : il tombe sur une graduation précise.'
                 }
+                requires={['lire-hauteur', 'echelle-axe', 'encadrement']}
                 solved={entreDone}
                 onAnswered={() => setEntreDone(true)}
               />
@@ -182,12 +208,18 @@ export default function Module02Anatomie() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Ruler className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Titre, unité, axe gradué, étiquettes : quatre repères sans lesquels une barre n'est qu'un
-            rectangle. Au prochain module, tu fabriques les barres toi-même.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={2}>
+            <strong>La suite.</strong> Tu sais lire une hauteur. Au prochain module, tu fabriques les barres
+            toi-même — et tu vois le tableau bouger en même temps.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Ruler className="w-6 h-6 mx-auto text-sky-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Titre, unité, axe gradué, étiquettes : quatre repères sans lesquels une barre n'est qu'un
+              rectangle.
+            </p>
+          </div>
         </motion.div>
       }
     />

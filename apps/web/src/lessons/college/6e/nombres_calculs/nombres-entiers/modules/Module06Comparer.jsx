@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowDown } from 'lucide-react';
-import { ContentModule, TapQuestion, useKit } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, useKit, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Base10Blocks from '../components/Base10Blocks';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
@@ -289,6 +290,7 @@ export default function Module06Comparer() {
                 options={['La quantité A', 'La quantité B', 'Impossible à dire sans calculer']}
                 correct={0}
                 cols={3}
+                requires={['groupement-dix', 'position-chiffre']}
                 explain={
                   <>
                     A contient <strong>4 blocs de mille</strong>, B seulement <strong>3</strong>. Même si B a
@@ -329,6 +331,7 @@ export default function Module06Comparer() {
                         </span>
                       )}
                       correctionLabel={formatFr(d.correct === 'a' ? d.a : d.b)}
+                      requires={['longueur-ecriture']}
                       explain={
                         <>
                           <span className="font-mono font-bold">
@@ -347,9 +350,8 @@ export default function Module06Comparer() {
               })}
               {s2 && (
                 <Feedback tone="info">
-                  Règle 1 : <strong>si les deux nombres n'ont pas le même nombre de chiffres, le plus long est
-                  le plus grand</strong> (à condition de ne pas écrire de zéro inutile devant). Mais que faire
-                  quand ils ont le même nombre de chiffres ?
+                  Trois duels réglés sans calculer. Mais que faire quand les deux nombres ont
+                  exactement le même nombre de chiffres ?
                 </Feedback>
               )}
             </div>
@@ -378,11 +380,20 @@ export default function Module06Comparer() {
                 ) : null
               )}
               {s3 && (
-                <Feedback tone="info">
-                  Règle 2 : <strong>à nombre de chiffres égal, on compare position par position en partant de la
-                  gauche, et on s'arrête à la première différence.</strong> Les positions suivantes ne peuvent
-                  plus rien changer.
-                </Feedback>
+                <>
+                  {/* Les deux temps de la méthode viennent d'être vécus : le
+                      comptage de chiffres, puis la colonne décisive. */}
+                  <KnowledgeBrick
+                    id="comparer-methode"
+                    variant="new"
+                    lead="Tu as dévoilé les colonnes une à une jusqu'à la première différence : c'est toute la méthode."
+                  />
+                  <KnowledgeBrick
+                    id="signes-comparaison"
+                    variant="new"
+                    lead="Les trois boutons que tu viens d'utiliser ont chacun un sens précis."
+                  />
+                </>
               )}
             </div>
           ),
@@ -405,6 +416,7 @@ export default function Module06Comparer() {
                     options={e.options}
                     correct={e.correct}
                     cols={1}
+                    requires={['comparer-methode', 'valeur-position']}
                     explain={
                       <>
                         La bonne comparaison est <strong className="font-mono">{e.truth}</strong>. {e.detail}
@@ -419,6 +431,12 @@ export default function Module06Comparer() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tu sais départager deux nombres. Au module suivant, tu en
+          ranges cinq d'un coup, puis tu apprends à coincer un nombre entre deux repères.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

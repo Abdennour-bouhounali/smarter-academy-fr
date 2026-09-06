@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MapPin } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoordGrid from '../components/CoordGrid';
 import { makeGrid, formatCoords, samePoint } from '../components/reperageUtils';
@@ -111,32 +109,47 @@ export default function Module01TresorPerdu() {
           subtitle: 'Un seul de ces messages conduit tout le monde au même endroit.',
           done: msgDone,
           content: (
-            <TapQuestion
-              above={(revealed) =>
-                revealed && pick !== null ? (
-                  <SearchResult pick={pick} />
-                ) : (
-                  <CoordGrid
-                    grid={GRID}
-                    mode="display"
-                    overlay={[{ col: TREASURE.col, row: TREASURE.row, emoji: '💎', label: 'le trésor' }]}
-                    showCoordsBadge={false}
-                    ariaLabel="Quadrillage avec le trésor visible, en haut à droite"
-                  />
-                )
-              }
-              prompt="Quel message envoies-tu ?"
-              options={MESSAGES.map((m) => m.label)}
-              correct={CORRECT}
-              cols={1}
-              explain="Deux nombres, dans un ordre fixé, désignent un seul endroit. Les autres messages laissent le choix entre plusieurs cases : ils ne suffisent pas."
-              explainWrong="Trois chercheurs ont suivi ton message… et ils sont arrivés à trois endroits différents. Il manque une information."
-              solved={msgDone}
-              onAnswered={(_, i) => {
-                setPick(i);
-                setMsgDone(true);
-              }}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                above={(revealed) =>
+                  revealed && pick !== null ? (
+                    <SearchResult pick={pick} />
+                  ) : (
+                    <CoordGrid
+                      grid={GRID}
+                      mode="display"
+                      overlay={[{ col: TREASURE.col, row: TREASURE.row, emoji: '💎', label: 'le trésor' }]}
+                      showCoordsBadge={false}
+                      ariaLabel="Quadrillage avec le trésor visible, en haut à droite"
+                    />
+                  )
+                }
+                prompt="Quel message envoies-tu ?"
+                options={MESSAGES.map((m) => m.label)}
+                correct={CORRECT}
+                cols={1}
+                explain="Deux nombres, dans un ordre fixé, désignent un seul endroit. Les autres messages laissent le choix entre plusieurs cases : ils ne suffisent pas."
+                explainWrong="Trois chercheurs ont suivi ton message… et ils sont arrivés à trois endroits différents. Il manque une information."
+                requires={['lecture-quadrillage']}
+                solved={msgDone}
+                onAnswered={(_, i) => {
+                  setPick(i);
+                  setMsgDone(true);
+                }}
+              />
+
+              {/* Le constat vient d'être fait à l'écran : les chercheurs se
+                  rejoignent seulement quand le message porte deux nombres.
+                  C'est ICI que la connaissance se pose, avant la question
+                  de l'étape 2 qui la demande. */}
+              {msgDone && (
+                <KnowledgeBrick
+                  id="deux-nombres"
+                  variant="new"
+                  lead="Tu viens de le voir : seul le message qui donne deux nombres fait converger les trois chercheurs."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -150,6 +163,7 @@ export default function Module01TresorPerdu() {
               options={['Un seul nombre', 'Deux nombres', 'Trois nombres']}
               correct={1}
               cols={3}
+              requires={['deux-nombres']}
               explain="Deux nombres : un pour se déplacer horizontalement, un pour se déplacer verticalement. Avec un seul, il reste toute une ligne de possibilités — c’est ce qui est arrivé au message « à 5 »."
               solved={countDone}
               onAnswered={() => setCountDone(true)}
@@ -158,17 +172,11 @@ export default function Module01TresorPerdu() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <MapPin className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Le trésor était en <span className="font-mono font-bold text-white">{formatCoords(TREASURE)}</span>.
-            Deux nombres suffisent — mais dans quel ordre&nbsp;? C’est toute la question du module suivant.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Le trésor était en{' '}
+          <span className="font-mono">{formatCoords(TREASURE)}</span>. Deux nombres suffisent — mais
+          dans quel ordre ? C’est toute la question du module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

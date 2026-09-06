@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import CoordGrid from '../components/CoordGrid';
@@ -52,6 +53,7 @@ const CANDIDATES = [
 const EPREUVES = [
   {
     id: 'rp-e1',
+    requires: ['deux-nombres'],
     skill: 'besoin',
     title: 'Épreuve 1 — Le message du gardien',
     prompt:
@@ -69,6 +71,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e2',
+    requires: ['abscisse', 'ordonnee', 'ordre-du-couple'],
     skill: 'ordre',
     title: 'Épreuve 2 — Le rôle du premier nombre',
     prompt: 'La grande roue est en (6 ; 3). Que commande le 6 ?',
@@ -85,6 +88,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e3',
+    requires: ['ordre-du-couple', 'coordonnees'],
     skill: 'ordre',
     title: 'Épreuve 3 — Deux écritures',
     prompt: 'Les écritures (2 ; 5) et (5 ; 2) désignent-elles le même endroit du plan ?',
@@ -101,6 +105,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e4',
+    requires: ['lire-un-point', 'coordonnees', 'abscisse', 'ordonnee'],
     skill: 'lire',
     title: 'Épreuve 4 — Lire le point T',
     prompt: 'Quelles sont les coordonnées du point T ?',
@@ -122,6 +127,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e5',
+    requires: ['coordonnee-commune', 'abscisse'],
     skill: 'lire',
     title: 'Épreuve 5 — Une coordonnée commune',
     prompt:
@@ -139,6 +145,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e6',
+    requires: ['placer-un-point', 'coordonnees', 'ordre-du-couple'],
     skill: 'placer',
     title: 'Épreuve 6 — Où est (3 ; 5) ?',
     prompt: 'Parmi les trois points marqués, lequel se trouve en (3 ; 5) ?',
@@ -165,6 +172,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e7',
+    requires: ['deplacement-somme', 'origine-repere', 'coordonnees'],
     skill: 'deplacer',
     title: 'Épreuve 7 — Le nombre de pas',
     prompt:
@@ -178,6 +186,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e8',
+    requires: ['deplacement-somme', 'ordonnee', 'coordonnees'],
     skill: 'deplacer',
     title: 'Épreuve 8 — Dans quel sens ?',
     prompt: 'On part du kiosque (2 ; 5) pour rejoindre la grande roue (6 ; 3). Le déplacement vertical, c’est…',
@@ -190,6 +199,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e9',
+    requires: ['noeud-vs-case', 'mem-noeud-case'],
     skill: 'resoudre',
     title: 'Épreuve 9 — Case ou nœud ?',
     prompt: 'Sur le plan du parc, laquelle de ces deux affirmations est correctement écrite ?',
@@ -206,6 +216,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e10',
+    requires: ['coordonnee-commune', 'ordonnee'],
     skill: 'resoudre',
     title: 'Épreuve 10 — Trois stands',
     prompt:
@@ -267,15 +278,10 @@ function Synthese() {
         </p>
       </div>
 
-      <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-2">
-        <h3 className="font-space font-bold text-amber-900 text-sm">Les pièges à éviter</h3>
-        <ul className="text-sm text-amber-900 space-y-1.5">
-          <li>❌ (2 ; 5) = (5 ; 2) &nbsp;→&nbsp; ✅ l’ordre change le point</li>
-          <li>❌ compter les graduations à partir de 1 &nbsp;→&nbsp; ✅ elles commencent à 0</li>
-          <li>❌ confondre la case B3 et le nœud (1 ; 2) &nbsp;→&nbsp; ✅ une surface n’est pas un point</li>
-          <li>❌ 2 et 3 pas font 6 &nbsp;→&nbsp; ✅ 2 + 3 = 5 pas</li>
-        </ul>
-      </div>
+      {/* Les pièges et les connaissances ne sont pas recopiés ici : la carte
+          construite au fil des sept modules EST la fiche de révision
+          (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

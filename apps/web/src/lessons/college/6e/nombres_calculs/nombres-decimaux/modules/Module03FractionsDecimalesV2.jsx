@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -32,14 +33,14 @@ function FractionBuilder({ target, den: targetDen, onSolved, solved, hint, react
       <div className="flex items-center justify-center gap-6 flex-wrap">
         <div className="text-center space-y-1">
           <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
-            Numérateur
+            Nombre du haut
           </div>
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={() => bump(-1)}
               disabled={solved}
-              aria-label="Diminuer le numérateur"
+              aria-label="Diminuer le nombre du haut"
               className="w-9 h-9 rounded-lg bg-white border-2 border-slate-200 flex items-center justify-center hover:border-slate-400 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               <Minus className="w-4 h-4" aria-hidden="true" />
@@ -51,7 +52,7 @@ function FractionBuilder({ target, den: targetDen, onSolved, solved, hint, react
               type="button"
               onClick={() => bump(1)}
               disabled={solved}
-              aria-label="Augmenter le numérateur"
+              aria-label="Augmenter le nombre du haut"
               className="w-9 h-9 rounded-lg bg-white border-2 border-slate-200 flex items-center justify-center hover:border-slate-400 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               <Plus className="w-4 h-4" aria-hidden="true" />
@@ -65,7 +66,7 @@ function FractionBuilder({ target, den: targetDen, onSolved, solved, hint, react
 
         <div className="text-center space-y-1">
           <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
-            Dénominateur
+            Nombre du bas
           </div>
           <div className="flex gap-1.5">
             {[10, 100, 1000].map((d) => (
@@ -116,8 +117,8 @@ function FractionBuilder({ target, den: targetDen, onSolved, solved, hint, react
           Ta réponse : <strong className="font-mono">{num}/{den ?? '?'}</strong>. Bonne réponse :{' '}
           <strong className="font-mono">{target}/{targetDen}</strong>. {' '}
           {den !== targetDen
-            ? "Regarde en combien de parts égales l'unité est partagée : c'est ce nombre qui donne le dénominateur."
-            : hint || "Compte à nouveau les parts coloriées : c'est le numérateur."}
+            ? "Regarde en combien de parts égales l'unité est partagée : c'est ce nombre qui va en bas."
+            : hint || "Compte à nouveau les parts coloriées : c'est le nombre du haut."}
         </Feedback>
       )}
 
@@ -175,16 +176,16 @@ export default function Module03FractionsDecimales() {
       navLinks={getNavLinks(3)}
       moduleNumber={3}
       moduleTitle="Les fractions décimales"
-      moduleSubtitle="Écrire une quantité avec un dénominateur 10, 100 ou 1 000."
+      moduleSubtitle="Écrire une quantité avec un découpage en 10, 100 ou 1 000 parts."
       estimatedTime="12 min"
       brief={{
         tag: '➗ Écriture',
         title: 'Une fraction décimale raconte le découpage.',
         body: (
           <p>
-            Le <strong className="text-white">dénominateur</strong> dit en combien de parts égales l'unité a été
-            partagée : 10, 100 ou 1 000. Le <strong className="text-white">numérateur</strong> dit combien de parts
-            on prend.
+            Tu vas lire trois dessins et écrire, pour chacun, la fraction qui lui correspond : le
+            nombre du <strong className="text-white">bas</strong> pour le découpage, celui du{' '}
+            <strong className="text-white">haut</strong> pour les parts prises.
           </p>
         ),
       }}
@@ -218,13 +219,22 @@ export default function Module03FractionsDecimales() {
                   </div>
                 ) : null
               )}
+              {/* Trois fractions viennent d'être construites à la main : les
+                  deux mots savants et le nom de la famille se posent ici. */}
+              {s1 && (
+                <KnowledgeBrick
+                  id="fraction-decimale"
+                  variant="new"
+                  lead="Les trois écritures que tu viens de construire appartiennent à la même famille."
+                />
+              )}
             </div>
           ),
         },
         {
           num: 2,
           title: "Et si la fraction dépasse l'unité ?",
-          subtitle: "Une fraction décimale peut représenter plus d'une unité entière.",
+          subtitle: "Une même écriture peut représenter plus d'une unité entière.",
           done: s2,
           content: (
             <div className="space-y-4">
@@ -236,6 +246,7 @@ export default function Module03FractionsDecimales() {
                 options={PLUS_DE_UN.options}
                 correct={PLUS_DE_UN.correct}
                 cols={1}
+                requires={['fraction-decimale', 'centieme']}
                 explain={PLUS_DE_UN.explain}
                 solved={s2}
                 onAnswered={() => setS2(true)}
@@ -260,6 +271,7 @@ export default function Module03FractionsDecimales() {
                 options={DECOMP.options}
                 correct={DECOMP.correct}
                 cols={2}
+                requires={['fraction-decimale', 'dixieme', 'centieme']}
                 renderOption={renderFractionOption}
                 explain={DECOMP.explain}
                 solved={s3}
@@ -275,6 +287,12 @@ export default function Module03FractionsDecimales() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais écrire une quantité en fraction. Au module suivant,
+          tu découvres la troisième écriture — celle avec une virgule.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

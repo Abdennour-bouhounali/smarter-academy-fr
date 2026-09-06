@@ -2,11 +2,179 @@
   "lesson": "lecture-graphique-3e",
   "grade": "3e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "fonction",
+    "image",
+    "antecedent",
+    "notation-fx",
+    "representation-graphique",
+    "abscisse",
+    "ordonnee",
+    "coordonnees",
+    "echelle-axe"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "point-de-la-courbe",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module01Montgolfiere.jsx",
+        "line": 159,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "echelle-graduation",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module03EchelleImposee.jsx",
+        "line": 90,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "lecture-entre-graduations",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module03EchelleImposee.jsx",
+        "line": 131,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "maximum-minimum",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module04CurseurSonde.jsx",
+        "line": 122,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "point-intersection",
+      "type": "concepts",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module05DeuxBallons.jsx",
+        "line": 125,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "image",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module01Montgolfiere.jsx",
+        "line": 148,
+        "step": 1,
+        "variant": "rappel"
+      }
+    },
+    {
+      "id": "antecedent",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module02ImageOuAntecedent.jsx",
+        "line": 162,
+        "step": 3,
+        "variant": "rappel"
+      }
+    },
+    {
+      "id": "intervalle-variation",
+      "type": "vocabulaire",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module04CurseurSonde.jsx",
+        "line": 202,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "lecture-image-graphique",
+      "type": "methodes",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module01Montgolfiere.jsx",
+        "line": 154,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "tous-les-antecedents",
+      "type": "methodes",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module02ImageOuAntecedent.jsx",
+        "line": 168,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "resolution-graphique",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module05DeuxBallons.jsx",
+        "line": 201,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "methode-question-en-lecture",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module06LaboLecture.jsx",
+        "line": 123,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-un-sens-pas-lautre",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module02ImageOuAntecedent.jsx",
+        "line": 211,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-valeur-ou-moment",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module04CurseurSonde.jsx",
+        "line": 263,
+        "step": 4,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "lg-d1",
@@ -14,13 +182,19 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "notation-fx"
+      "line": 33,
+      "requires": [
+        "fonction",
+        "notation-fx",
+        "image"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "notation-fx": "prior",
+        "image": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "lg-d2",
@@ -28,9 +202,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 44,
+      "requires": [
+        "notation-fx",
+        "image",
+        "antecedent"
+      ],
+      "prerequisiteStatus": {
+        "notation-fx": "prior",
+        "image": "prior",
+        "antecedent": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -40,9 +222,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 55,
+      "requires": [
+        "coordonnees",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -52,9 +242,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 66,
+      "requires": [
+        "echelle-axe"
+      ],
+      "prerequisiteStatus": {
+        "echelle-axe": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -64,45 +258,95 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "representation-graphique",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "representation-graphique": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S3-Q1",
+      "questionId": "M01-S1-Q1",
+      "module": 1,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module01Montgolfiere.jsx",
+      "line": 164,
+      "requires": [
+        "point-de-la-courbe",
+        "coordonnees",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "point-de-la-courbe": "established@M1",
+        "coordonnees": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q2",
       "module": 1,
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module01Montgolfiere.jsx",
-      "line": 172,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 227,
+      "requires": [
+        "lecture-image-graphique"
+      ],
+      "prerequisiteStatus": {
+        "lecture-image-graphique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S5-Q2",
+      "questionId": "M01-S5-Q3",
       "module": 1,
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module01Montgolfiere.jsx",
-      "line": 233,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 289,
+      "requires": [
+        "point-de-la-courbe",
+        "coordonnees",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "point-de-la-courbe": "established@M1",
+        "coordonnees": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S6-Q3",
+      "questionId": "M01-S6-Q4",
       "module": 1,
       "step": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module01Montgolfiere.jsx",
-      "line": 255,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 312,
+      "requires": [
+        "lecture-image-graphique",
+        "point-de-la-courbe"
+      ],
+      "prerequisiteStatus": {
+        "lecture-image-graphique": "established@M1",
+        "point-de-la-courbe": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -112,9 +356,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module02ImageOuAntecedent.jsx",
-      "line": 124,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 137,
+      "requires": [
+        "lecture-image-graphique"
+      ],
+      "prerequisiteStatus": {
+        "lecture-image-graphique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,13 +372,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module02ImageOuAntecedent.jsx",
-      "line": 146,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "antecedent"
+      "line": 173,
+      "requires": [
+        "tous-les-antecedents"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "tous-les-antecedents": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M02-S4-Q3",
@@ -138,9 +388,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module02ImageOuAntecedent.jsx",
-      "line": 168,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 199,
+      "requires": [
+        "tous-les-antecedents"
+      ],
+      "prerequisiteStatus": {
+        "tous-les-antecedents": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,9 +404,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module03EchelleImposee.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "echelle-graduation",
+        "lecture-image-graphique"
+      ],
+      "prerequisiteStatus": {
+        "echelle-graduation": "established@M3",
+        "lecture-image-graphique": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,9 +422,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module03EchelleImposee.jsx",
-      "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 136,
+      "requires": [
+        "lecture-entre-graduations",
+        "echelle-graduation"
+      ],
+      "prerequisiteStatus": {
+        "lecture-entre-graduations": "established@M3",
+        "echelle-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +440,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module03EchelleImposee.jsx",
-      "line": 126,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 161,
+      "requires": [
+        "echelle-graduation"
+      ],
+      "prerequisiteStatus": {
+        "echelle-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,25 +456,53 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module04CurseurSonde.jsx",
-      "line": 124,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 142,
+      "requires": [
+        "maximum-minimum",
+        "echelle-graduation"
+      ],
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "echelle-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M04-S4-Q2",
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module04CurseurSonde.jsx",
+      "line": 214,
+      "requires": [
+        "intervalle-variation"
+      ],
+      "prerequisiteStatus": {
+        "intervalle-variation": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q3",
       "module": 4,
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module04CurseurSonde.jsx",
-      "line": 199,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "intervalle"
+      "line": 242,
+      "requires": [
+        "maximum-minimum",
+        "intervalle-variation",
+        "tous-les-antecedents"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "intervalle-variation": "established@M4",
+        "tous-les-antecedents": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M05-S2-Q1",
@@ -212,9 +510,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module05DeuxBallons.jsx",
-      "line": 129,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 139,
+      "requires": [
+        "point-intersection",
+        "point-de-la-courbe"
+      ],
+      "prerequisiteStatus": {
+        "point-intersection": "established@M5",
+        "point-de-la-courbe": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -224,9 +528,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module05DeuxBallons.jsx",
-      "line": 150,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 161,
+      "requires": [
+        "point-intersection",
+        "echelle-graduation"
+      ],
+      "prerequisiteStatus": {
+        "point-intersection": "established@M5",
+        "echelle-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -236,9 +546,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module05DeuxBallons.jsx",
-      "line": 171,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 184,
+      "requires": [
+        "point-intersection"
+      ],
+      "prerequisiteStatus": {
+        "point-intersection": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -248,9 +562,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module06LaboLecture.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 100,
+      "requires": [
+        "maximum-minimum",
+        "echelle-graduation"
+      ],
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "echelle-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -260,9 +580,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module06LaboLecture.jsx",
-      "line": 105,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 128,
+      "requires": [
+        "methode-question-en-lecture",
+        "tous-les-antecedents",
+        "intervalle-variation"
+      ],
+      "prerequisiteStatus": {
+        "methode-question-en-lecture": "established@M6",
+        "tous-les-antecedents": "established@M2",
+        "intervalle-variation": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -272,9 +600,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module06LaboLecture.jsx",
-      "line": 127,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 153,
+      "requires": [
+        "tous-les-antecedents",
+        "echelle-graduation"
+      ],
+      "prerequisiteStatus": {
+        "tous-les-antecedents": "established@M2",
+        "echelle-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -284,9 +618,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module06LaboLecture.jsx",
-      "line": 149,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 176,
+      "requires": [
+        "methode-question-en-lecture",
+        "intervalle-variation",
+        "mem-valeur-ou-moment"
+      ],
+      "prerequisiteStatus": {
+        "methode-question-en-lecture": "established@M6",
+        "intervalle-variation": "established@M4",
+        "mem-valeur-ou-moment": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -296,9 +638,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 64,
+      "requires": [
+        "point-de-la-courbe",
+        "coordonnees",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "point-de-la-courbe": "established@M1",
+        "coordonnees": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -308,9 +660,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 81,
+      "requires": [
+        "tous-les-antecedents",
+        "mem-un-sens-pas-lautre"
+      ],
+      "prerequisiteStatus": {
+        "tous-les-antecedents": "established@M2",
+        "mem-un-sens-pas-lautre": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -320,9 +678,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 98,
+      "requires": [
+        "tous-les-antecedents",
+        "mem-un-sens-pas-lautre",
+        "maximum-minimum"
+      ],
+      "prerequisiteStatus": {
+        "tous-les-antecedents": "established@M2",
+        "mem-un-sens-pas-lautre": "established@M2",
+        "maximum-minimum": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -332,9 +698,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 98,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "echelle-graduation"
+      ],
+      "prerequisiteStatus": {
+        "echelle-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -344,9 +714,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 109,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "lecture-entre-graduations",
+        "echelle-graduation"
+      ],
+      "prerequisiteStatus": {
+        "lecture-entre-graduations": "established@M3",
+        "echelle-graduation": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -356,9 +732,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "maximum-minimum",
+        "mem-valeur-ou-moment"
+      ],
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "mem-valeur-ou-moment": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -368,9 +750,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 131,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 146,
+      "requires": [
+        "intervalle-variation",
+        "mem-valeur-ou-moment"
+      ],
+      "prerequisiteStatus": {
+        "intervalle-variation": "established@M4",
+        "mem-valeur-ou-moment": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -380,9 +768,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 147,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 163,
+      "requires": [
+        "point-intersection",
+        "point-de-la-courbe"
+      ],
+      "prerequisiteStatus": {
+        "point-intersection": "established@M5",
+        "point-de-la-courbe": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -392,9 +786,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 158,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 175,
+      "requires": [
+        "point-intersection",
+        "resolution-graphique"
+      ],
+      "prerequisiteStatus": {
+        "point-intersection": "established@M5",
+        "resolution-graphique": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -404,49 +804,43 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module07MissionFinale.jsx",
-      "line": 174,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 192,
+      "requires": [
+        "methode-question-en-lecture",
+        "mem-valeur-ou-moment"
+      ],
+      "prerequisiteStatus": {
+        "methode-question-en-lecture": "established@M6",
+        "mem-valeur-ou-moment": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
   "findings": [
     {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« antécédent » is a target concept of this lesson but its first appearance is q.option (module 2, étape 3); it is only taught later at apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module02ImageOuAntecedent.jsx:182",
+      "code": "W_PRIOR_REESTABLISHED",
+      "severity": "info",
+      "message": "'image' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
+      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module01Montgolfiere.jsx",
+      "line": 148,
+      "module": 1,
+      "step": 1,
+      "term": null,
+      "questionId": null,
+      "position": 33
+    },
+    {
+      "code": "W_PRIOR_REESTABLISHED",
+      "severity": "info",
+      "message": "'antecedent' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
       "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module02ImageOuAntecedent.jsx",
-      "line": 149,
+      "line": 162,
       "module": 2,
       "step": 3,
-      "term": "antecedent",
-      "questionId": "M02-S3-Q2",
-      "position": 73
-    },
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« intervalle » is a target concept of this lesson but its first appearance is q.correction (module 4, étape 4); it is only taught later at apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module04CurseurSonde.jsx:222",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module04CurseurSonde.jsx",
-      "line": 206,
-      "module": 4,
-      "step": 4,
-      "term": "intervalle",
-      "questionId": "M04-S4-Q2",
-      "position": 137
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« notation f(x) » first appears at diag.prompt (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/college/3e/donnees_probabilites/lecture-graphique-3e/modules/Module00Diagnostic.jsx",
-      "line": 21,
-      "module": 0,
-      "step": null,
-      "term": "notation-fx",
-      "questionId": "lg-d1",
-      "position": 1
+      "term": null,
+      "questionId": null,
+      "position": 87
     }
   ]
 }

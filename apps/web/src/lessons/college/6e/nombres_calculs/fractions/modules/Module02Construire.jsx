@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -550,6 +551,7 @@ export default function Module02Construire() {
                 cols={1}
                 explain={CONFLICT_Q.explain}
                 explainWrong={CONFLICT_Q.explainWrong}
+                requires={['part-egale', 'fraction-ecriture']}
                 solved={conflictDone}
                 onAnswered={() => setConflictDone(true)}
               />
@@ -562,11 +564,23 @@ export default function Module02Construire() {
           subtitle: 'Choisis la découpe, prends des parts, observe la fraction.',
           done: s2,
           content: (kit) => (
-            <AtelierStep
-              done={buildDone}
-              setDone={setBuildDone}
-              react={kit.react}
-            />
+            <div className="space-y-5">
+              <AtelierStep
+                done={buildDone}
+                setDone={setBuildDone}
+                react={kit.react}
+              />
+              {/* Trois découpes viennent d'être faites sur la MÊME unité :
+                  l'élève a vu les parts rétrécir à mesure que le nombre du
+                  bas grandissait. On nomme ce qu'il vient de voir. */}
+              {buildDone && (
+                <KnowledgeBrick
+                  id="role-du-bas"
+                  variant="new"
+                  lead="Tu as coupé la même unité en 2, en 4, puis en 10 — et les parts n’ont fait que rétrécir."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -582,6 +596,12 @@ export default function Module02Construire() {
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais ce que fait chacun des deux nombres. Il est temps
+          qu’ils portent leur nom — c’est le module suivant.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

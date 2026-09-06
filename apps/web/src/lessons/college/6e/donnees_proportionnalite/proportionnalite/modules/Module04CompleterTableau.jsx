@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Table2 } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProportionTable from '../components/ProportionTable';
@@ -80,6 +81,14 @@ export default function Module04CompleterTableau() {
                 solvedIndexes={columns.map((c, i) => (found.includes(c.x) ? i : -1)).filter((i) => i >= 0)}
                 caption="Tarif du stand de crêpes"
               />
+              {/* Le passage par l'unité est la première case demandée : la
+                  méthode est posée avant la demande, pas dans un `hint`
+                  d'après-réponse. */}
+              <KnowledgeBrick
+                id="passage-unite"
+                variant="new"
+                lead="Une seule colonne est connue. Il existe un chemin qui ouvre toutes les autres."
+              />
               {!allFound ? (
                 <NumericQuestion
                   key={current.x}
@@ -98,6 +107,7 @@ export default function Module04CompleterTableau() {
                       ? `Tu as additionné au lieu de multiplier. Chaque crêpe coûte ${K} € : ${current.x} × ${K} = ${formatDec(Y(current.x))} €.`
                       : `${current.hint} Le calcul : ${current.x} × ${K} = ${formatDec(Y(current.x))} €.`
                   }
+                  requires={['passage-unite', 'coefficient-proportionnalite', 'tables-multiplication']}
                   solved={false}
                   onAnswered={() => {
                     setFound((f) => [...f, current.x]);
@@ -144,9 +154,17 @@ export default function Module04CompleterTableau() {
                 correct={0}
                 cols={1}
                 explain={`Les trois donnent ${formatDec(Y(9))} €. Dans une situation proportionnelle, il n’y a pas UNE bonne méthode : il y a celle qui va le plus vite avec les nombres qu’on a.`}
+                requires={['passage-unite', 'double-triple-moitie']}
                 solved={chemDone}
                 onAnswered={() => setChemDone(true)}
               />
+              {chemDone && (
+                <KnowledgeBrick
+                  id="chemins-equivalents"
+                  variant="new"
+                  lead="Trois calculs différents, un seul prix : ce n’est pas un hasard."
+                />
+              )}
               {chemDone && (
                 <ProportionTable
                   xLabel="Crêpes"
@@ -163,12 +181,17 @@ export default function Module04CompleterTableau() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Table2 className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un tableau de proportionnalité se lit dans deux sens : vers le bas avec le coefficient, sur le
-            côté avec des ×2, ÷3, +… Au prochain module, tu choisis le chemin le plus rapide.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+          <KnowledgeSnapshot moduleNumber={4}>
+            <strong>La suite.</strong> Tu disposes de plusieurs chemins. Au prochain module, tu apprends à
+            reconnaître d'un coup d'œil lequel sera le plus court.
+          </KnowledgeSnapshot>
+          <div className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
+            <Table2 className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
+            <p className="text-sm text-slate-300">
+              Un tableau se lit dans deux sens : vers le bas, et sur le côté.
+            </p>
+          </div>
         </motion.div>
       }
     />

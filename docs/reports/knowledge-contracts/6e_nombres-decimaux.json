@@ -2,11 +2,183 @@
   "lesson": "nombres-decimaux",
   "grade": "6e",
   "lexiconVersion": 1,
-  "prerequisites": [],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
+  "prerequisites": [
+    "numeration-entiere",
+    "lecture-fraction-simple"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "entre-deux-entiers",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module01MissionV2.jsx",
+        "line": 1163,
+        "step": 5,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ecriture-virgule",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module04EcritureVirguleV2.jsx",
+        "line": 178,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "colonnes-decimales",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module04EcritureVirguleV2.jsx",
+        "line": 200,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "valeur-position-decimale",
+      "type": "concepts",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module05ValeurPositionV2.jsx",
+        "line": 159,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ecritures-equivalentes",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module06EcrituresEquivalentesV2.jsx",
+        "line": 82,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "zoom-droite",
+      "type": "concepts",
+      "module": 8,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module08DroiteGradueeV2.jsx",
+        "line": 267,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ordre-grandeur-decimal",
+      "type": "concepts",
+      "module": 9,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module09OrdreGrandeurV2.jsx",
+        "line": 190,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "dixieme",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module02DecouperUniteV2.jsx",
+        "line": 175,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "centieme",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module02DecouperUniteV2.jsx",
+        "line": 244,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "fraction-decimale",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module03FractionsDecimalesV2.jsx",
+        "line": 225,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ranger-decimaux",
+      "type": "vocabulaire",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module07ComparerRangerV2.jsx",
+        "line": 414,
+        "step": 5,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "comparer-decimaux",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module07ComparerRangerV2.jsx",
+        "line": 354,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "encadrer-decimal",
+      "type": "methodes",
+      "module": 8,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module08DroiteGradueeV2.jsx",
+        "line": 287,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "arrondi-entier",
+      "type": "methodes",
+      "module": 9,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module09OrdreGrandeurV2.jsx",
+        "line": 157,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "deux-zeros",
+      "type": "memoriser",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module05ValeurPositionV2.jsx",
+        "line": 237,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
   "questions": [
     {
       "questionId": "q1-digit",
@@ -15,8 +187,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module00DiagnosticV2.jsx",
       "line": 27,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "numeration-entiere"
+      ],
+      "prerequisiteStatus": {
+        "numeration-entiere": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -26,9 +202,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module00DiagnosticV2.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 52,
+      "requires": [
+        "numeration-entiere"
+      ],
+      "prerequisiteStatus": {
+        "numeration-entiere": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -38,9 +218,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module00DiagnosticV2.jsx",
-      "line": 65,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "numeration-entiere"
+      ],
+      "prerequisiteStatus": {
+        "numeration-entiere": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -50,9 +234,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module00DiagnosticV2.jsx",
-      "line": 75,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 78,
+      "requires": [
+        "lecture-fraction-simple"
+      ],
+      "prerequisiteStatus": {
+        "lecture-fraction-simple": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -62,9 +250,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module00DiagnosticV2.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 89,
+      "requires": [
+        "lecture-fraction-simple"
+      ],
+      "prerequisiteStatus": {
+        "lecture-fraction-simple": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -74,9 +266,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module02DecouperUniteV2.jsx",
-      "line": 177,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 181,
+      "requires": [
+        "dixieme"
+      ],
+      "prerequisiteStatus": {
+        "dixieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -86,9 +282,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module02DecouperUniteV2.jsx",
-      "line": 244,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 250,
+      "requires": [
+        "centieme",
+        "dixieme"
+      ],
+      "prerequisiteStatus": {
+        "centieme": "established@M2",
+        "dixieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -98,9 +300,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module02DecouperUniteV2.jsx",
-      "line": 276,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 283,
+      "requires": [
+        "dixieme",
+        "centieme"
+      ],
+      "prerequisiteStatus": {
+        "dixieme": "established@M2",
+        "centieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -110,9 +318,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module03FractionsDecimalesV2.jsx",
-      "line": 234,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 244,
+      "requires": [
+        "fraction-decimale",
+        "centieme"
+      ],
+      "prerequisiteStatus": {
+        "fraction-decimale": "established@M3",
+        "centieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -122,9 +336,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module03FractionsDecimalesV2.jsx",
-      "line": 258,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 269,
+      "requires": [
+        "fraction-decimale",
+        "dixieme",
+        "centieme"
+      ],
+      "prerequisiteStatus": {
+        "fraction-decimale": "established@M3",
+        "dixieme": "established@M2",
+        "centieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +356,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module04EcritureVirguleV2.jsx",
-      "line": 144,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 145,
+      "requires": [
+        "dixieme",
+        "fraction-decimale"
+      ],
+      "prerequisiteStatus": {
+        "dixieme": "established@M2",
+        "fraction-decimale": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +374,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module04EcritureVirguleV2.jsx",
-      "line": 194,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 206,
+      "requires": [
+        "colonnes-decimales",
+        "ecriture-virgule"
+      ],
+      "prerequisiteStatus": {
+        "colonnes-decimales": "established@M4",
+        "ecriture-virgule": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +392,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module05ValeurPositionV2.jsx",
-      "line": 182,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 190,
+      "requires": [
+        "valeur-position-decimale",
+        "centieme",
+        "dixieme"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position-decimale": "established@M5",
+        "centieme": "established@M2",
+        "dixieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,9 +412,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module05ValeurPositionV2.jsx",
-      "line": 216,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 225,
+      "requires": [
+        "valeur-position-decimale",
+        "centieme",
+        "dixieme"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position-decimale": "established@M5",
+        "centieme": "established@M2",
+        "dixieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -182,9 +432,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module06EcrituresEquivalentesV2.jsx",
-      "line": 106,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 107,
+      "requires": [
+        "ecritures-equivalentes",
+        "colonnes-decimales",
+        "fraction-decimale"
+      ],
+      "prerequisiteStatus": {
+        "ecritures-equivalentes": "established@M6",
+        "colonnes-decimales": "established@M4",
+        "fraction-decimale": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -194,9 +452,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module06EcrituresEquivalentesV2.jsx",
-      "line": 149,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 151,
+      "requires": [
+        "ecritures-equivalentes",
+        "deux-zeros"
+      ],
+      "prerequisiteStatus": {
+        "ecritures-equivalentes": "established@M6",
+        "deux-zeros": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -206,9 +470,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module07ComparerRangerV2.jsx",
-      "line": 258,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 259,
+      "requires": [
+        "colonnes-decimales",
+        "dixieme"
+      ],
+      "prerequisiteStatus": {
+        "colonnes-decimales": "established@M4",
+        "dixieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -218,9 +488,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module07ComparerRangerV2.jsx",
-      "line": 290,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 292,
+      "requires": [
+        "valeur-position-decimale",
+        "dixieme",
+        "centieme"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position-decimale": "established@M5",
+        "dixieme": "established@M2",
+        "centieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +508,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module07ComparerRangerV2.jsx",
-      "line": 302,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 305,
+      "requires": [
+        "deux-zeros",
+        "ecritures-equivalentes"
+      ],
+      "prerequisiteStatus": {
+        "deux-zeros": "established@M5",
+        "ecritures-equivalentes": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,9 +526,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module07ComparerRangerV2.jsx",
-      "line": 374,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 377,
+      "requires": [
+        "comparer-decimaux",
+        "deux-zeros",
+        "valeur-position-decimale"
+      ],
+      "prerequisiteStatus": {
+        "comparer-decimaux": "established@M7",
+        "deux-zeros": "established@M5",
+        "valeur-position-decimale": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -254,9 +546,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module09OrdreGrandeurV2.jsx",
-      "line": 195,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 209,
+      "requires": [
+        "ordre-grandeur-decimal",
+        "arrondi-entier"
+      ],
+      "prerequisiteStatus": {
+        "ordre-grandeur-decimal": "established@M9",
+        "arrondi-entier": "established@M9"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -266,9 +564,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module11BossFinalV2.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "fraction-decimale",
+        "ecriture-virgule",
+        "centieme"
+      ],
+      "prerequisiteStatus": {
+        "fraction-decimale": "established@M3",
+        "ecriture-virgule": "established@M4",
+        "centieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -278,9 +584,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module11BossFinalV2.jsx",
-      "line": 70,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 73,
+      "requires": [
+        "ecritures-equivalentes",
+        "colonnes-decimales",
+        "deux-zeros"
+      ],
+      "prerequisiteStatus": {
+        "ecritures-equivalentes": "established@M6",
+        "colonnes-decimales": "established@M4",
+        "deux-zeros": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -290,9 +604,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module11BossFinalV2.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 91,
+      "requires": [
+        "valeur-position-decimale",
+        "centieme"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position-decimale": "established@M5",
+        "centieme": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -302,9 +622,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module11BossFinalV2.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 108,
+      "requires": [
+        "comparer-decimaux",
+        "deux-zeros"
+      ],
+      "prerequisiteStatus": {
+        "comparer-decimaux": "established@M7",
+        "deux-zeros": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -314,9 +640,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module11BossFinalV2.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 126,
+      "requires": [
+        "ranger-decimaux",
+        "comparer-decimaux"
+      ],
+      "prerequisiteStatus": {
+        "ranger-decimaux": "established@M7",
+        "comparer-decimaux": "established@M7"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -326,9 +658,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module11BossFinalV2.jsx",
-      "line": 136,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 143,
+      "requires": [
+        "zoom-droite",
+        "encadrer-decimal"
+      ],
+      "prerequisiteStatus": {
+        "zoom-droite": "established@M8",
+        "encadrer-decimal": "established@M8"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -338,9 +676,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module11BossFinalV2.jsx",
-      "line": 162,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 170,
+      "requires": [
+        "ordre-grandeur-decimal",
+        "arrondi-entier"
+      ],
+      "prerequisiteStatus": {
+        "ordre-grandeur-decimal": "established@M9",
+        "arrondi-entier": "established@M9"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -350,9 +694,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/6e/nombres_calculs/nombres-decimaux/modules/Module11BossFinalV2.jsx",
-      "line": 176,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 185,
+      "requires": [
+        "ordre-grandeur-decimal",
+        "centieme",
+        "colonnes-decimales"
+      ],
+      "prerequisiteStatus": {
+        "ordre-grandeur-decimal": "established@M9",
+        "centieme": "established@M2",
+        "colonnes-decimales": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }

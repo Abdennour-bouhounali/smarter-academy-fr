@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import PolygonPerimeter from '../components/PolygonPerimeter';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -47,6 +48,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'pe-e1',
+    requires: ['perimetre', 'perimetre-vs-aire', 'perimetre-est-longueur'],
     skill: 'notion',
     title: 'Épreuve 1',
     prompt: 'Pour commander la clôture de l’enclos, que doit-on mesurer exactement ?',
@@ -62,6 +64,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e2',
+    requires: ['perimetre', 'tour-complet'],
     skill: 'mesurer',
     title: 'Épreuve 2',
     prompt: 'Sur le plan du massif à 5 côtés, l’apprenti n’a relevé que 4 mesures. Que faut-il faire avant de calculer ?',
@@ -77,6 +80,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e3',
+    requires: ['perimetre', 'tour-complet'],
     skill: 'mesurer',
     title: 'Épreuve 3',
     prompt: 'Les 5 côtés du massif mesurent 10,5 m, 6 m, 7,5 m, 6,5 m et 9 m. Quel est son périmètre ?',
@@ -89,6 +93,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e4',
+    requires: ['perimetre', 'formules-polygones'],
     skill: 'formules',
     title: 'Épreuve 4',
     prompt: 'Le terrain de pétanque est un rectangle de 15 m sur 4 m. Son périmètre ?',
@@ -100,6 +105,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e5',
+    requires: ['perimetre', 'formules-polygones'],
     skill: 'formules',
     title: 'Épreuve 5',
     prompt: 'Le bac à sable est un carré de 3,5 m de côté. Son périmètre ?',
@@ -111,6 +117,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e6',
+    requires: ['perimetre', 'pi', 'perimetre-cercle'],
     skill: 'cercle',
     title: 'Épreuve 6',
     prompt: 'La bordure de la fontaine ronde (diamètre 4 m) mesure environ… (π ≈ 3,14)',
@@ -122,6 +129,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e7',
+    requires: ['perimetre', 'pi', 'perimetre-cercle'],
     skill: 'cercle',
     title: 'Épreuve 7',
     prompt: 'Le manège circulaire a un RAYON de 5 m. Quel nombre entre dans la formule P ≈ π × D ?',
@@ -133,6 +141,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e8',
+    requires: ['perimetre', 'perimetre-est-longueur', 'meme-unite'],
     skill: 'reflexes',
     title: 'Épreuve 8',
     prompt: 'Le tour complet du parc mesure 1 250 m. Pour l’annoncer aux visiteurs, quelle écriture est la plus parlante ?',
@@ -144,6 +153,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e9',
+    requires: ['perimetre', 'tour-complet', 'estimer-avant'],
     skill: 'reflexes',
     title: 'Épreuve 9',
     prompt: 'Avant de calculer le tour du kiosque (côtés 4,1 m ; 3,9 m ; 4,2 m ; 3,8 m), quelle estimation rapide est la bonne ?',
@@ -155,6 +165,7 @@ const EPREUVES = [
   },
   {
     id: 'pe-e10',
+    requires: ['perimetre', 'formules-polygones', 'mem-perimetres'],
     skill: 'problemes',
     title: 'Épreuve 10',
     prompt: 'Dernière commande : courir au moins 500 m sur la piste rectangulaire de 40 m × 25 m. Combien de tours complets ?',
@@ -227,6 +238,11 @@ function Synthese() {
         Le rituel du géomètre : estimer → calculer → écrire avec l'unité. L'estimation en tête détecte presque
         toutes les erreurs de calcul.
       </Feedback>
+
+      {/* La carte complète : l'« À retenir » de la leçon n'est pas un second
+          résumé écrit à la main, c'est la carte elle-même
+          (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot complete variant="complete" />
     </div>
   );
 }

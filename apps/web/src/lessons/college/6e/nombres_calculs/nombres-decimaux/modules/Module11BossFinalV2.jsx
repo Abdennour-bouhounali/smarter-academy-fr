@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import NumberLine from '../../../../../common/components/NumberLine';
 import MathText from '../../../../../common/components/MathText';
@@ -51,6 +52,7 @@ const renderFraction = (o) => {
 const EPREUVES = [
   {
     id: 'e1',
+    requires: ['fraction-decimale', 'ecriture-virgule', 'centieme'],
     skill: 'fractions',
     title: 'Épreuve 1',
     prompt: (
@@ -66,6 +68,7 @@ const EPREUVES = [
   },
   {
     id: 'e2',
+    requires: ['ecritures-equivalentes', 'colonnes-decimales', 'deux-zeros'],
     skill: 'virgule',
     title: 'Épreuve 2',
     prompt: (
@@ -83,6 +86,7 @@ const EPREUVES = [
   },
   {
     id: 'e3',
+    requires: ['valeur-position-decimale', 'centieme'],
     skill: 'position',
     title: 'Épreuve 3',
     prompt: (
@@ -99,6 +103,7 @@ const EPREUVES = [
   },
   {
     id: 'e4',
+    requires: ['comparer-decimaux', 'deux-zeros'],
     skill: 'comparaison',
     title: 'Épreuve 4',
     prompt: (
@@ -116,6 +121,7 @@ const EPREUVES = [
   },
   {
     id: 'e5',
+    requires: ['ranger-decimaux', 'comparer-decimaux'],
     skill: 'rangement',
     title: 'Épreuve 5',
     prompt: <>Quatre relevés : 0,05 / 0,5 / 0,25 / 0,75. Quel rangement du plus petit au plus grand est correct ?</>,
@@ -132,6 +138,7 @@ const EPREUVES = [
   },
   {
     id: 'e6',
+    requires: ['zoom-droite', 'encadrer-decimal'],
     skill: 'droite',
     title: 'Épreuve 6',
     prompt: (
@@ -158,6 +165,7 @@ const EPREUVES = [
   },
   {
     id: 'e7',
+    requires: ['ordre-grandeur-decimal', 'arrondi-entier'],
     skill: 'grandeur',
     title: 'Épreuve 7',
     prompt: (
@@ -172,6 +180,7 @@ const EPREUVES = [
   },
   {
     id: 'e8',
+    requires: ['ordre-grandeur-decimal', 'centieme', 'colonnes-decimales'],
     skill: 'problemes',
     title: 'Épreuve 8',
     prompt: (
@@ -267,6 +276,9 @@ function Synthese() {
         Et les zéros ? <strong>3,5 = 3,50 = 3,500</strong> (zéros ajoutés à la fin), mais <strong>3,5 ≠ 3,05</strong> :
         un zéro juste après la virgule décale tous les chiffres.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

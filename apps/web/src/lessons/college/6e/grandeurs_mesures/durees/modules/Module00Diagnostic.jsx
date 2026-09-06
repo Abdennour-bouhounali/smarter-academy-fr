@@ -23,6 +23,7 @@ const QUESTIONS = [
     options: ['13', '17', '23'],
     cols: 3,
     correct: 0,
+    requires: ['calcul-numerique'],
     explain: '47 + 13 = 60. Les compléments à 60 vont beaucoup servir dans cette leçon…',
   },
   {
@@ -33,6 +34,7 @@ const QUESTIONS = [
     options: ['238', '248', '262'],
     cols: 3,
     correct: 0,
+    requires: ['calcul-numerique'],
     explain: '425 − 187 = 238 (une soustraction avec retenue).',
   },
   {
@@ -43,6 +45,7 @@ const QUESTIONS = [
     options: ['120', '180', '360'],
     cols: 3,
     correct: 1,
+    requires: ['tables-multiplication'],
     explain: '3 × 60 = 180.',
   },
   {
@@ -53,6 +56,7 @@ const QUESTIONS = [
     options: ['36', '48', '54'],
     cols: 3,
     correct: 1,
+    requires: ['tables-multiplication'],
     explain: '48 = 2 × 24. (36 et 54 sont des multiples de 6, pas de 24.)',
   },
   {
@@ -63,6 +67,7 @@ const QUESTIONS = [
     options: ['59 < 89 < 95 < 105', '59 < 95 < 89 < 105', '89 < 59 < 95 < 105'],
     cols: 1,
     correct: 0,
+    requires: ['ordre-nombres'],
     explain: '59 < 89 < 95 < 105 : on compare d’abord le nombre de chiffres, puis chiffre à chiffre.',
   },
 ];

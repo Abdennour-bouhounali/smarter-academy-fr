@@ -1,8 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Scale } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Balance from '../components/Balance';
 import ItemBank from '../components/ItemBank';
@@ -90,6 +88,7 @@ function BalanceDiscovery({ solved, onAnswered }) {
       />
       {canAnswer && (
         <TapQuestion
+          requires={[]}
           prompt="D’après la balance, que peux-tu dire ?"
           options={VERDICT_OPTIONS}
           correct={correctIndex}
@@ -130,14 +129,36 @@ export default function Module01Mission() {
       brief={{
         tag: '📋 Mission 01',
         title: 'Avant toute définition, regarde et compare.',
-        body: <p>Une masse décrit la quantité de matière d’un objet. Découvre-le en comparant, pas en apprenant une règle.</p>,
+        body: <p>Quatre objets, aucune étiquette, aucun chiffre. Comment savoir lequel est le plus lourd ? Pose-les sur la balance et regarde ce qui se passe.</p>,
       }}
       steps={[
         {
           num: 1,
           title: 'La balance ne ment pas',
           done: balanceDone,
-          content: <BalanceDiscovery solved={balanceDone} onAnswered={() => setBalanceDone(true)} />,
+          content: (
+            <div className="space-y-5">
+              <BalanceDiscovery solved={balanceDone} onAnswered={() => setBalanceDone(true)} />
+              {/* La balance vient de pencher sous les yeux de l'élève : c'est
+                  ici, et pas dans le brief, que « masse » et « lire la
+                  balance » ont un sens. Ces deux briques servent de socle au
+                  classement de l'étape 2 et au test final. */}
+              {balanceDone && (
+                <KnowledgeBrick
+                  id="masse-comparable"
+                  variant="new"
+                  lead="Ce que la balance vient de comparer, sans afficher le moindre nombre, porte un nom."
+                />
+              )}
+              {balanceDone && (
+                <KnowledgeBrick
+                  id="balance-plateaux"
+                  variant="new"
+                  lead="Et voilà comment se lit l'instrument que tu viens d'utiliser."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 2,
@@ -157,13 +178,10 @@ export default function Module01Mission() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Scale className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Tu sais déjà comparer des masses. Prochaine étape : apprendre à les mesurer et à les exprimer avec des
-            unités précises.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais comparer sans chiffres. Reste à mettre des nombres
+          dessus — et à découvrir qu'une seule unité ne peut pas tout peser.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { DoorOpen } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AngleFigure from '../components/AngleFigure';
@@ -106,7 +105,19 @@ export default function Module01Ouverture() {
           title: 'Ouvre la porte',
           done: porteDone,
           content: (kit) => (
-            <PorteOuvrante react={kit.react} solved={porteDone} onSolved={() => setPorteDone(true)} />
+            <div className="space-y-5">
+              <PorteOuvrante react={kit.react} solved={porteDone} onSolved={() => setPorteDone(true)} />
+              {/* Le battant vient d'être ouvert sans jamais s'allonger :
+                  c'est ICI que le mot « angle » a un sens, pas dans un
+                  explain (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}
+              {porteDone && (
+                <KnowledgeBrick
+                  id="angle-ouverture"
+                  variant="new"
+                  lead="Ce qui a grandi pendant que tu ouvrais la porte porte un nom."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -114,6 +125,7 @@ export default function Module01Ouverture() {
           title: 'Le piège des côtés longs',
           done: rayonsDone,
           content: (
+            <div className="space-y-5">
             <TapQuestion
               above={
                 <div className="grid grid-cols-2 gap-4" aria-hidden="true">
@@ -132,9 +144,20 @@ export default function Module01Ouverture() {
               correct={RAYONS_Q.correct}
               cols={1}
               explain={RAYONS_Q.explain}
+              requires={['angle-ouverture']}
               solved={rayonsDone}
               onAnswered={() => setRayonsDone(true)}
             />
+            {/* La comparaison vient d'être tranchée sur deux figures
+                concrètes : la règle se pose sur ce constat. */}
+            {rayonsDone && (
+              <KnowledgeBrick
+                id="longueur-cotes-sans-effet"
+                variant="new"
+                lead="Ce que tu viens de constater sur ces deux figures vaut pour tous les angles."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -142,27 +165,36 @@ export default function Module01Ouverture() {
           title: 'Comment on écrit un angle',
           done: notationDone,
           content: (
-            <TapQuestion
-              above={<AngleFigure deg={55} rayLengths={[90, 90]} labels={['A', 'B', 'C']} tone="emerald" />}
-              prompt={NOTATION_Q.q}
-              options={NOTATION_Q.options}
-              correct={NOTATION_Q.correct}
-              cols={1}
-              explain={NOTATION_Q.explain}
-              solved={notationDone}
-              onAnswered={() => setNotationDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                above={<AngleFigure deg={55} rayLengths={[90, 90]} labels={['A', 'B', 'C']} tone="emerald" />}
+                prompt={NOTATION_Q.q}
+                options={NOTATION_Q.options}
+                correct={NOTATION_Q.correct}
+                cols={1}
+                explain={NOTATION_Q.explain}
+                requires={['angle-ouverture', 'demi-droite']}
+                solved={notationDone}
+                onAnswered={() => setNotationDone(true)}
+              />
+              {/* La lettre du milieu vient d'être identifiée sur la figure :
+                  la convention d'écriture peut être fixée. */}
+              {notationDone && (
+                <KnowledgeBrick
+                  id="notation-angle"
+                  variant="new"
+                  lead="Tu as repéré le sommet dans ÂBC. Voilà la convention complète."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <DoorOpen className="w-6 h-6 mx-auto text-indigo-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Un angle est l'ouverture entre deux demi-droites de même origine. La longueur des côtés n'y change
-            RIEN — souviens-t'en, c'est le piège n° 1.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais ce qu'est un angle. Reste à comparer deux angles
+          dessinés dans tous les sens — et à leur donner un nom.
+        </KnowledgeSnapshot>
       }
     />
   );

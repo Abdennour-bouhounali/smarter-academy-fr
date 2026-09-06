@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Move } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MirrorLab from '../components/MirrorLab';
@@ -95,11 +94,19 @@ export default function Module03PointEtImage() {
                 )}
               </div>
               {moveDone && (
-                <Feedback tone="ok">
-                  Où que tu ailles, les deux distances restent <strong>égales</strong>, et le trait [MM′] est
-                  toujours <strong>perpendiculaire</strong> à l’axe. Ces deux faits ne sont pas des
-                  coïncidences : ce sont les deux conditions de la symétrie.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Où que tu ailles, les deux distances restent <strong>égales</strong>, et le trait
+                    [MM′] rejoint toujours l’axe <strong>à angle droit</strong>.
+                  </Feedback>
+                  {/* La manipulation point/image vient d'avoir lieu : c'est ici
+                      que « symétrique d'un point » se pose. */}
+                  <KnowledgeBrick
+                    id="symetrique-point"
+                    variant="new"
+                    lead="Ces deux faits ne sont pas des coïncidences : ce sont exactement les deux conditions du miroir."
+                  />
+                </>
               )}
             </div>
           ),
@@ -123,6 +130,7 @@ export default function Module03PointEtImage() {
               options={['90 — la même', '45 — la moitié', '180 — le double']}
               correct={0}
               cols={3}
+              requires={['symetrique-point']}
               explain="Le symétrique est TOUJOURS à la même distance de l’axe, de l’autre côté. C’est ce que le pliage fait : la distance ne change pas, seul le côté change."
               explainWrong="Regarde les deux jauges de l’étape 1 : elles affichent toujours le même nombre, quelle que soit la position de M."
               solved={distDone}
@@ -132,11 +140,18 @@ export default function Module03PointEtImage() {
         },
         {
           num: 3,
-          title: 'Et si M est SUR l’axe ?',
+          title: 'Un cas limite',
           done: axeDone,
           content: (
-            <TapQuestion
-              above={
+            <div className="space-y-5">
+              <KnowledgeBrick
+                id="point-sur-axe"
+                variant="new"
+                lead="Applique ta règle à un point posé pile sur le pli : sa distance à l’axe vaut 0."
+              />
+              <TapQuestion
+                requires={['point-sur-axe', 'symetrique-point']}
+                above={
                 <MirrorLab
                   axis={AXE}
                   points={[{ x: 160, y: 110 }]}
@@ -155,26 +170,19 @@ export default function Module03PointEtImage() {
               correct={0}
               cols={1}
               explain="Sa distance à l’axe vaut 0 ; son image est donc aussi à 0 de l’axe, du « même côté » : c’est le point lui-même. En pliant, il reste sur le pli."
-              explainWrong="Applique la règle : le symétrique est à la même distance de l’axe. Ici cette distance vaut 0 — l’image ne peut donc être que le point lui-même."
-              solved={axeDone}
-              onAnswered={() => setAxeDone(true)}
-            />
+                explainWrong="Applique la règle : le symétrique est à la même distance de l’axe. Ici cette distance vaut 0 — l’image ne peut donc être que le point lui-même."
+                solved={axeDone}
+                onAnswered={() => setAxeDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Move className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            M et M′ sont à <strong className="text-white">égale distance</strong> de l’axe, et le trait qui
-            les relie lui est <strong className="text-white">perpendiculaire</strong>. Deux conditions — à
-            toi de t’en servir pour construire.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu connais la règle. À toi, maintenant, de placer l’image sans
+          qu’on te la montre.
+        </KnowledgeSnapshot>
       }
     />
   );

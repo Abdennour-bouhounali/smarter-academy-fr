@@ -33,6 +33,17 @@ export const LESSON_BASE_PATH = '/courses/college/6e/donnees_proportionnalite/ta
 export const LESSON_CONFIG = {
   id: 'tableaux',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : comparer et ranger des entiers, poser une petite somme, et
+  // prélever une information dans une phrase. Ce sont exactement les trois
+  // choses que les cinq questions du module 0 mesurent, et rien d'autre. Tout
+  // le reste — le tableau, ses lignes, ses colonnes, ses en-têtes, le
+  // croisement, le total — est établi dans la leçon même.
+  priorKnowledge: ['comparer-entiers', 'calcul-numerique', 'lecture-information'],
   title: 'Tableaux',
   description:
     "Organiser l'information jusqu'à ce qu'elle devienne lisible : ranger des données en vrac dans un tableau, lire un croisement ligne × colonne, compléter, comparer et décider.",

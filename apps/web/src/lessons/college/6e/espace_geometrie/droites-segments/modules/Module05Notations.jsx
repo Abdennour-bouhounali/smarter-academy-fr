@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Brackets } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import GeoFigure from '../components/GeoFigure';
@@ -110,10 +109,16 @@ export default function Module05Notations() {
                 </button>
               )}
               {exploreDone && (
-                <Feedback tone="ok">
-                  Le symbole suit l’étendue : crochet là où ça s’arrête, parenthèse là où ça continue. Il n’y
-                  a rien de plus à retenir.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Le symbole suit l’étendue : il n’y a rien de plus à retenir.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="lire-la-notation"
+                    variant="new"
+                    lead="Tu as vu les symboles bouger en même temps que les bouts du trait : voilà la règle."
+                  />
+                </>
               )}
             </div>
           ),
@@ -129,6 +134,7 @@ export default function Module05Notations() {
                   Pour chaque objet passant par A et B, choisis la bonne écriture.
                 </p>
               }
+              requires={['lire-la-notation', 'notation-objets', 'mem-compter-bouts']}
               rows={MATCH.map((r) => ({
                 id: r.id,
                 label: <span className="font-semibold capitalize">{KIND_LABEL[r.kind]}</span>,
@@ -178,6 +184,7 @@ export default function Module05Notations() {
               ]}
               correct={0}
               cols={1}
+              requires={['lire-la-notation', 'demi-droite', 'origine']}
               explain="Le crochet devant A dit « extrémité ici » ; la parenthèse après B dit « ça continue ». C’est la demi-droite d’origine A passant par B."
               explainWrong="Relis symbole par symbole : [ ferme du côté de A, ) ouvre du côté de B. Deux crochets auraient donné le segment [AB], deux parenthèses la droite (AB)."
               solved={readDone}
@@ -187,24 +194,10 @@ export default function Module05Notations() {
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 space-y-3"
-        >
-          <Brackets className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-400">À retenir</p>
-          <div className="grid sm:grid-cols-3 gap-2 text-sm">
-            {KINDS.map((k) => (
-              <div key={k} className="bg-white/10 rounded-xl p-3 text-center">
-                <div className="font-mono font-extrabold text-white text-lg">
-                  {notationOf({ kind: k }, 'A', 'B')}
-                </div>
-                <div className="text-slate-300 text-xs capitalize">{KIND_LABEL[k]}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu lis les écritures. À l’atelier suivant, c’est toi qui traces
+          l’objet demandé.
+        </KnowledgeSnapshot>
       }
     />
   );

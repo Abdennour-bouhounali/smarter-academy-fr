@@ -20,6 +20,9 @@ const QUESTIONS = [
     id: 'q1-coords',
     skill: 'reperage',
     points: 2,
+    // Le module 0 MESURE des prérequis : ses `requires` ne citent que des ids
+    // de priorKnowledge (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+    requires: ['coordonnees', 'abscisse'],
     prompt: (
       <>
         Dans l’écriture <strong className="font-mono">(4 ; 2)</strong>, que commande le premier nombre ?
@@ -34,6 +37,7 @@ const QUESTIONS = [
     id: 'q2-alignes',
     skill: 'reperage',
     points: 2,
+    requires: ['coordonnees'],
     prompt: (
       <>
         Trois points sont en <span className="font-mono">(1 ; 3)</span>,{' '}
@@ -49,6 +53,7 @@ const QUESTIONS = [
     id: 'q3-cotes',
     skill: 'figures',
     points: 2,
+    requires: [],
     prompt: <>Combien de côtés a un triangle ?</>,
     options: ['3 côtés', '4 côtés', 'Cela dépend du triangle'],
     cols: 3,
@@ -59,6 +64,7 @@ const QUESTIONS = [
     id: 'q4-sommet',
     skill: 'figures',
     points: 2,
+    requires: [],
     prompt: <>Dans une figure, un <strong>sommet</strong> est…</>,
     options: [
       'Un point où deux côtés se rejoignent',
@@ -73,11 +79,14 @@ const QUESTIONS = [
     id: 'q5-trait',
     skill: 'figures',
     points: 2,
+    requires: [],
     prompt: <>Pour tracer un trait bien droit entre deux points, quel instrument utilises-tu ?</>,
-    options: ['La règle', 'Le compas', 'Le rapporteur'],
-    cols: 3,
+    // Le rapporteur est un instrument de 6e que cette leçon n'enseigne pas :
+    // l'employer, fût-ce comme distracteur, serait une première exposition.
+    options: ['La règle', 'Le compas', 'Le crayon à main levée'],
+    cols: 1,
     correct: 0,
-    explain: 'La règle sert à tracer des traits droits ; le compas trace des cercles, le rapporteur mesure des angles.',
+    explain: 'La règle sert à tracer des traits droits ; le compas trace des cercles, et la main levée ne garantit rien.',
   },
 ];
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -77,6 +78,7 @@ export default function Module09Precision() {
           content: (
             <TapQuestion
               prompt={ORDRE_Q.q}
+              requires={['ordre-de-grandeur', 'arrondi']}
               options={ORDRE_Q.options}
               correct={ORDRE_Q.correct}
               cols={3}
@@ -91,7 +93,16 @@ export default function Module09Precision() {
           title: 'Estimation ou valeur exacte ?',
           done: s2,
           content: (
+            <div className="space-y-5">
+              {/* La règle est posée AVANT le classement : sans critère,
+                  classer « ≈ suffit / exact » n'est qu'une intuition. */}
+              <KnowledgeBrick
+                id="niveau-de-precision"
+                variant="new"
+                lead="Avant de trancher quatre situations, le critère qui permet de trancher."
+              />
             <BatchChoiceQuestion
+              requires={['niveau-de-precision']}
               intro={
                 <p className="text-sm font-semibold text-slate-700">
                   Pour chaque situation, choisis : un ordre de grandeur suffit, ou il faut la valeur exacte ?
@@ -118,9 +129,16 @@ export default function Module09Precision() {
               solved={sitDone}
               onAnswered={() => setSitDone(true)}
             />
+            </div>
           ),
         },
       ]}
+      footer={
+        <KnowledgeSnapshot moduleNumber={9}>
+          <strong>La suite.</strong> Ta carte est complète. Le défi final ne te demandera rien
+          d'autre que ce qui s'y trouve.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

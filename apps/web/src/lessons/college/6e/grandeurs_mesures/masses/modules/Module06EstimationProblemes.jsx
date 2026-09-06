@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Target } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { formatMass, formatDec, parseDec } from '../components/massUtils';
 
@@ -40,17 +39,17 @@ export default function Module06EstimationProblemes() {
       navLinks={getNavLinks(6)}
       moduleNumber={6}
       moduleTitle="Estimer et résoudre"
-      moduleSubtitle="Ordre de grandeur, pièges à unité et problèmes concrets."
+      moduleSubtitle="Estimer d’abord, calculer ensuite — et deux problèmes concrets."
       estimatedTime="12 min"
       brief={{
         tag: '📋 Mission 06',
         title: 'Avant de calculer, estime — pour repérer tout de suite un résultat impossible.',
-        body: <p>Un bon ordre de grandeur en tête, et une erreur d’unité se voit immédiatement.</p>,
+        body: <p>Une valeur plausible en tête, et une erreur d’unité se voit immédiatement.</p>,
       }}
       steps={[
         {
           num: 1,
-          title: 'Le bon ordre de grandeur',
+          title: 'La proposition la plus réaliste',
           done: allScenariosDone,
           content: (
             <div className="space-y-8">
@@ -58,6 +57,7 @@ export default function Module06EstimationProblemes() {
                 i === 0 || scenarioDone.includes(i - 1) ? (
                   <div key={s.id} className="border-t border-slate-100 pt-5 first:border-0 first:pt-0">
                     <TapQuestion
+                      requires={['unite-masse-adaptee', 'escalier-masses']}
                       prompt={
                         <span className="flex items-center gap-2.5">
                           <span className="text-2xl" aria-hidden="true">{s.emoji}</span>
@@ -73,12 +73,21 @@ export default function Module06EstimationProblemes() {
                         </span>
                       )}
                       correctionLabel={`${s.options[s.correct].v} ${s.options[s.correct].u}`}
-                      explain={`${s.options[s.correct].v} ${s.options[s.correct].u} : le bon ordre de grandeur.`}
+                      explain={`${s.options[s.correct].v} ${s.options[s.correct].u} : c'est la seule proposition réaliste — les deux autres sont ridiculement légère ou lourde.`}
                       solved={scenarioDone.includes(i)}
                       onAnswered={() => setScenarioDone((d) => (d.includes(i) ? d : [...d, i]))}
                     />
                   </div>
                 ) : null
+              )}
+              {/* Quatre jugements viennent d'être portés sans balance : c'est
+                  ici, et pas dans le titre d'étape, que « estimer » a un sens. */}
+              {allScenariosDone && (
+                <KnowledgeBrick
+                  id="estimation-masse"
+                  variant="new"
+                  lead="Tu viens d'éliminer quatre fois l'impossible sans rien peser. Ce geste a un nom."
+                />
               )}
             </div>
           ),
@@ -95,6 +104,7 @@ export default function Module06EstimationProblemes() {
               </div>
 
               <NumericQuestion
+                requires={['masse-comparable']}
                 prompt="Masse totale, en grammes :"
                 suffix="g"
                 expected={2000}
@@ -109,6 +119,7 @@ export default function Module06EstimationProblemes() {
               {craiesG && (
                 <div className="border-t border-slate-100 pt-4">
                   <NumericQuestion
+                    requires={['convertir-masse-methode', 'escalier-masses']}
                     prompt="Exprime aussi ce résultat en kg."
                     suffix="kg"
                     expected={2}
@@ -125,6 +136,7 @@ export default function Module06EstimationProblemes() {
               {craiesKg && (
                 <div className="border-t border-slate-100 pt-4">
                   <TapQuestion
+                    requires={['estimation-masse', 'unite-masse-adaptee']}
                     prompt="2 kg de craies pour toute une classe : cela te semble-t-il raisonnable ?"
                     options={PLAUSIBLE_OPTIONS}
                     correct={0}
@@ -148,7 +160,15 @@ export default function Module06EstimationProblemes() {
                 Un colis plein pèse <strong>3,2 kg</strong>. Le colis vide (sans son contenu) pèse{' '}
                 <strong>400 g</strong>. Quelle est la masse du contenu seul, en grammes ?
               </div>
+              {/* Deux unités dans le même énoncé : le réflexe est posé AVANT
+                  la soustraction, sinon la question se répond au hasard. */}
+              <KnowledgeBrick
+                id="mem-meme-unite"
+                variant="new"
+                lead="Regarde bien l'énoncé : il y a des kg ET des g. Avant de soustraire, il faut choisir."
+              />
               <NumericQuestion
+                requires={['mem-meme-unite', 'convertir-masse-methode', 'escalier-masses']}
                 prompt="Masse du contenu, en grammes :"
                 suffix="g"
                 expected={2800}
@@ -164,12 +184,10 @@ export default function Module06EstimationProblemes() {
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <Target className="w-6 h-6 mx-auto text-amber-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Avant de soustraire ou d’additionner des masses, vérifie toujours qu’elles sont dans la même unité.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ta carte est complète. Le ravitaillement du goûter t'attend :
+          dix épreuves où personne ne te dira quelle connaissance sortir.
+        </KnowledgeSnapshot>
       }
     />
   );

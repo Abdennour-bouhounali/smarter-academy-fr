@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import CalcChain from '../../../../../common/components/CalcChain';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -75,6 +76,7 @@ const REGISTRE = [
 const EPREUVES = [
   {
     id: 'rp-e1',
+    requires: ['trier-les-donnees'],
     skill: 'extraire',
     title: 'Épreuve 1',
     prompt: 'Question : quel est le coût total des billets d\'entrée pour tous les élèves ? Quelles informations te servent VRAIMENT à répondre ?',
@@ -91,6 +93,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e2',
+    requires: ['construire-avant-calculer', 'structures-de-problemes'],
     skill: 'comprendre',
     title: 'Épreuve 2',
     prompt: '6 classes de 24 élèves chacune. Combien d\'élèves participent en tout ?',
@@ -102,6 +105,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e3',
+    requires: ['structures-de-problemes'],
     skill: 'uneEtape',
     title: 'Épreuve 3',
     prompt: '144 élèves, billet à 4,50 € chacun. Quel est le coût total des billets ?',
@@ -113,6 +117,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e4',
+    requires: ['choisir-un-modele', 'structures-de-problemes'],
     skill: 'modeliser',
     title: 'Épreuve 4',
     prompt: '1/4 des 144 élèves choisissent une option photo. Quel modèle représente le mieux « 1/4 de 144 » ?',
@@ -128,6 +133,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e5',
+    requires: ['estimer-puis-controler'],
     skill: 'estimerVerifier',
     title: 'Épreuve 5',
     prompt: (
@@ -144,6 +150,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e6',
+    requires: ['resultat-intermediaire', 'chaine-de-calcul'],
     skill: 'plusieursEtapes',
     title: 'Épreuve 6',
     prompt: 'Billets : 648 €. Option photo : 72 €. Quel est le budget total de la sortie ?',
@@ -163,6 +170,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e7',
+    requires: ['plusieurs-strategies'],
     skill: 'strategie',
     title: 'Épreuve 7',
     prompt: 'Pour vérifier 144 × 4,50 sans reposer toute la multiplication, quelle stratégie est la plus efficace ?',
@@ -178,6 +186,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e8',
+    requires: ['reponse-complete'],
     skill: 'communiquer',
     title: 'Épreuve 8',
     prompt: 'Le budget total calculé est 720. Quelle est la réponse la plus complète à la question « Quel est le budget total de la sortie ? » ?',
@@ -193,6 +202,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e9',
+    requires: ['trier-les-donnees', 'interpreter-le-resultat'],
     skill: 'extraire',
     title: 'Épreuve 9 — Le rebondissement',
     prompt: (
@@ -209,6 +219,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e10',
+    requires: ['premiere-erreur', 'reponse-complete'],
     skill: 'detective',
     title: 'Épreuve 10',
     prompt: (
@@ -238,42 +249,16 @@ const BADGES = [
   { id: 'parfait', emoji: '💎', label: 'Problem Solver', test: (s) => Object.values(s).every((v) => v === 0) },
 ];
 
-/* ═══ SYNTHÈSE ══════════════════════════════════════════════════════ */
+/* ═══ SYNTHÈSE — la carte des connaissances, dans son état complet.
+   Rien n'est recopié : l'élève retrouve exactement les briques qu'il a
+   débloquées module après module (docs/architecture/KNOWLEDGE_MAP.md). ══ */
 function Synthese() {
-  const STEPS = [
-    { label: 'JE COMPRENDS', v: "Qu'est-ce qui se passe dans cette situation ?" },
-    { label: 'JE REPÈRE LES DONNÉES', v: 'Quelles informations sont utiles ? Lesquelles sont inutiles ?' },
-    { label: 'JE MODÉLISE', v: 'Groupes, schéma en barres, tableau, droite graduée…' },
-    { label: 'JE CHOISIS UNE STRATÉGIE', v: 'Calcul direct, dessin, manipulation — plusieurs chemins valables.' },
-    { label: 'JE CALCULE', v: 'Chaque résultat intermédiaire doit être nommé.' },
-    { label: "J'ESTIME", v: 'À peu près combien devrait-on trouver ?' },
-    { label: 'JE VÉRIFIE', v: "Le résultat exact est-il cohérent avec l'estimation ?" },
-    { label: 'JE COMMUNIQUE', v: 'Résultat + unité + phrase qui répond à la question.' },
-  ];
   return (
     <div className="space-y-5">
-      <div className="bg-slate-900 text-white rounded-2xl p-6 text-center space-y-2">
-        <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400">La méthode Smarter Academy</div>
-        <div className="text-xl sm:text-2xl font-space font-extrabold">PROBLÈME → JE MAÎTRISE</div>
-      </div>
-
-      <div className="space-y-2">
-        {STEPS.map((s, i) => (
-          <div key={s.label} className="flex items-center gap-3 bg-white border-2 border-slate-200 rounded-xl px-4 py-3">
-            <span className="w-7 h-7 rounded-full bg-slate-800 text-white font-mono font-bold text-xs flex items-center justify-center shrink-0">
-              {i + 1}
-            </span>
-            <div>
-              <div className="text-[10px] font-mono font-bold text-slate-400 uppercase">{s.label}</div>
-              <div className="text-sm text-slate-700">{s.v}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-
+      <KnowledgeSnapshot complete variant="complete" />
       <Feedback tone="info">
-        Le point de départ n'est jamais « quelle opération ? ». C'est toujours « qu'est-ce qui se passe dans
-        cette situation ? ».
+        Le point de départ n'est jamais « quelle opération ? ». C'est toujours « qu'est-ce qui se
+        passe dans cette situation ? ».
       </Feedback>
     </div>
   );

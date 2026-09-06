@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Crosshair, Eye } from 'lucide-react';
-import { ContentModule } from '../../../../../common/kit';
+import { Eye } from 'lucide-react';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MirrorLab from '../components/MirrorLab';
@@ -157,26 +157,51 @@ export default function Module04ConstruireSymetrique() {
           </p>
         ),
       }}
-      steps={CHANTIERS.map((c, i) => ({
-        num: i + 1,
-        title: i === 0 ? 'Axe vertical' : 'Axe oblique',
-        done: done.includes(c.id),
-        content: (kit) => (
-          <Chantier chantier={c} done={done.includes(c.id)} onDone={() => mark(c.id)} react={kit.react} />
-        ),
-      }))}
+      // ÉTAPES LITTÉRALES : l'audit ne lit que le tableau `steps` littéral,
+      // une brique posée dans un callback de .map lui serait invisible
+      // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+      steps={[
+        {
+          num: 1,
+          title: 'Axe vertical',
+          done: done.includes(CHANTIERS[0].id),
+          content: (kit) => (
+            <Chantier
+              chantier={CHANTIERS[0]}
+              done={done.includes(CHANTIERS[0].id)}
+              onDone={() => mark(CHANTIERS[0].id)}
+              react={kit.react}
+            />
+          ),
+        },
+        {
+          num: 2,
+          title: 'Axe oblique',
+          done: done.includes(CHANTIERS[1].id),
+          content: (kit) => (
+            <div className="space-y-5">
+              <Chantier
+                chantier={CHANTIERS[1]}
+                done={done.includes(CHANTIERS[1].id)}
+                onDone={() => mark(CHANTIERS[1].id)}
+                react={kit.react}
+              />
+              {done.includes(CHANTIERS[1].id) && (
+                <KnowledgeBrick
+                  id="axe-oblique"
+                  variant="new"
+                  lead="L’axe était penché, et pourtant tu as allumé les deux mêmes voyants."
+                />
+              )}
+            </div>
+          ),
+        },
+      ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <Crosshair className="w-6 h-6 mx-auto text-purple-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            L’axe peut être vertical, horizontal ou penché : la règle ne change jamais.{' '}
-            <strong className="text-white">Perpendiculaire à l’axe, à égale distance de l’axe.</strong>
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Un temps d’arrêt : que devient une figure entière quand on la
+          fait passer dans le miroir&nbsp;?
+        </KnowledgeSnapshot>
       }
     />
   );

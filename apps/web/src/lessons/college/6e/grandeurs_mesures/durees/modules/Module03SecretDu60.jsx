@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { RefreshCw } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ClockFace from '../components/ClockFace';
@@ -107,7 +106,20 @@ export default function Module03SecretDu60() {
           title: 'Le tour complet',
           done: tourDone,
           content: (kit) => (
-            <TourComplet react={kit.react} solved={tourDone} onSolved={() => setTourDone(true)} />
+            <div className="space-y-5">
+              <TourComplet react={kit.react} solved={tourDone} onSolved={() => setTourDone(true)} />
+              {/* Le mécanisme vient de faire la démonstration : 60 minutes
+                  de grande aiguille = 1 heure de petite. LE concept de la
+                  leçon est posé ici, sur ce constat — c'est une RÈGLE, pas
+                  un mot de vocabulaire. */}
+              {tourDone && (
+                <KnowledgeBrick
+                  id="base-60"
+                  variant="new"
+                  lead="Ce que l’engrenage vient de te montrer est la règle du jeu de toute la leçon."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -128,6 +140,7 @@ export default function Module03SecretDu60() {
                     ? 'Tu as multiplié par 100, comme pour des longueurs. Le temps marche par 60 : 2 × 60.'
                     : '1 h = 60 min, donc 2 h = 2 × 60 min.'
                 }
+                requires={['unites-temps', 'base-60']}
                 solved={conv1Done}
                 onAnswered={() => setConv1Done(true)}
               />
@@ -141,6 +154,7 @@ export default function Module03SecretDu60() {
                     display={formatDec(3)}
                     explain={<>180 ÷ 60 = <strong>3 min</strong> : vers l'unité plus grande, on divise par 60.</>}
                     explainFor={() => '1 min = 60 s : combien de paquets de 60 dans 180 ?'}
+                    requires={['unites-temps', 'base-60']}
                     solved={conv2Done}
                     onAnswered={() => setConv2Done(true)}
                   />
@@ -154,26 +168,35 @@ export default function Module03SecretDu60() {
           title: 'Le grand piège décimal',
           done: decimalDone,
           content: (
-            <TapQuestion
-              prompt={DECIMAL_Q.q}
-              options={DECIMAL_Q.options}
-              correct={DECIMAL_Q.correct}
-              cols={1}
-              explain={DECIMAL_Q.explain}
-              solved={decimalDone}
-              onAnswered={() => setDecimalDone(true)}
-            />
+            <div className="space-y-5">
+              <TapQuestion
+                prompt={DECIMAL_Q.q}
+                options={DECIMAL_Q.options}
+                correct={DECIMAL_Q.correct}
+                cols={1}
+                explain={DECIMAL_Q.explain}
+                requires={['unites-temps', 'base-60']}
+                solved={decimalDone}
+                onAnswered={() => setDecimalDone(true)}
+              />
+              {/* Le piège de la virgule est une CONSÉQUENCE du 60 : la
+                  brique arrive après que l'élève l'a tranché lui-même. */}
+              {decimalDone && (
+                <KnowledgeBrick
+                  id="piege-decimal"
+                  variant="new"
+                  lead="Cette erreur d’écriture revient sans arrêt — voici comment ne plus jamais la faire."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2">
-          <RefreshCw className="w-6 h-6 mx-auto text-violet-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            1 jour = 24 h · 1 h = 60 min · 1 min = 60 s. Vers le petit : × 60. Vers le grand : ÷ 60. Et jamais de
-            virgule entre heures et minutes.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Le secret est éventé. Reste à s'en servir : convertir des
+          durées composées, et comparer des chronos écrits n'importe comment.
+        </KnowledgeSnapshot>
       }
     />
   );

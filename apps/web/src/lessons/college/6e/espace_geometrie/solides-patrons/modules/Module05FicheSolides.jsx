@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { BookMarked } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidView from '../components/SolidView';
@@ -67,7 +66,18 @@ export default function Module05FicheSolides() {
           title: 'Reconnais chaque solide à sa description',
           done: reconnaitreDone,
           content: (
+            <div className="space-y-5">
+              {/* La fiche du haut vient d'être lue : quatre solides, mais des
+                  comptes qui se répètent. L'idée qui les sépare se pose avant
+                  qu'on demande de les reconnaître — elle ne vivait auparavant
+                  que dans le `feedback`, donc après la réponse. */}
+              <KnowledgeBrick
+                id="nature-des-faces"
+                variant="new"
+                lead="Compare les fiches ci-dessus : le cube et le pavé droit portent exactement les mêmes trois nombres."
+              />
             <BatchChoiceQuestion
+              requires={['nature-des-faces', 'face-solide', 'pave-droit', 'sommet-solide']}
               intro={
                 <p className="text-sm text-slate-600">
                   Sers-toi des fiches ci-dessus : chaque description ne correspond qu’à un seul solide.
@@ -118,21 +128,15 @@ export default function Module05FicheSolides() {
                 </Feedback>
               )}
             />
+            </div>
           ),
         },
       ]}
       footer={
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-slate-900 text-white rounded-2xl p-5 text-center space-y-2"
-        >
-          <BookMarked className="w-6 h-6 mx-auto text-blue-400" aria-hidden="true" />
-          <p className="text-sm text-slate-300">
-            Compter faces, arêtes et sommets ne suffit pas toujours à distinguer deux solides : il faut aussi
-            regarder <strong className="text-white">la nature des faces</strong>.
-          </p>
-        </motion.div>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Ta fiche est complète. Il reste à t’en servir : au module
+          suivant, chaque problème réclame un compte, et un seul.
+        </KnowledgeSnapshot>
       }
     />
   );
