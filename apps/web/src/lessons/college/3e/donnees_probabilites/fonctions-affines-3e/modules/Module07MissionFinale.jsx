@@ -1,6 +1,7 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -24,6 +25,16 @@ import SlopeFromTwoPoints from '../components/SlopeFromTwoPoints';
  *
  * Couverture des Learning Points : P1 (e1), P2 (e1), P7 (e2), P5 (e3),
  * P9 (e3), P4 (e4), P6 (e5), P3 (e6), P10 (e6, e7), P8 (e7), P11 (e8).
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le test final CONSOLIDE : il n'introduit rien — ni concept, ni mot, ni
+ *   notation. Chaque épreuve déclare ses `requires`, et tous sont établis par
+ *   une <KnowledgeBrick> des modules 1 à 6. La synthèse ne recopie plus les
+ *   définitions (« les quatre lectures d'une fonction affine » était une liste
+ *   de définitions dupliquée) : elle rend la carte complète, source unique,
+ *   par <KnowledgeSnapshot variant="complete" complete />. Les deux repères et
+ *   les pièges déjoués restent : ce sont des visuels et des contre-exemples,
+ *   pas des définitions.
  */
 
 const REGISTRE = [
@@ -51,6 +62,7 @@ const EPREUVES = [
     options: ['160 €', '200 €', '120 €', '140 €'],
     cols: 2,
     correct: 0,
+    requires: ['part-fixe-part-variable', 'mem-affine-vs-lineaire', 'forme-ax-b'],
     explain: "6 × 20 + 40 = 160 €. Doubler le nombre de personnes ne double PAS le prix : les 40 € de location ne se paient qu'une fois. C'est ce qui distingue une fonction affine d'une fonction linéaire.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-affines-3e_P1', '3e_fonctions-affines-3e_P2'] },
   },
@@ -62,6 +74,7 @@ const EPREUVES = [
     options: ['13', '9', '15', '3'],
     cols: 2,
     correct: 0,
+    requires: ['forme-ax-b', 'coefficient-directeur', 'ordonnee-origine'],
     explain: "5 × 3 = 15, puis 15 − 2 = 13. On multiplie par a d'abord, on applique b ensuite — jamais l'inverse.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-affines-3e_P7'] },
   },
@@ -78,6 +91,7 @@ const EPREUVES = [
     ],
     cols: 1,
     correct: 0,
+    requires: ['coefficient-directeur', 'role-de-a'],
     explain: "a commande l'inclinaison. Le point (0 ; b) ne dépend que de b : il reste immobile pendant que la droite pivote autour de lui.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-affines-3e_P5', '3e_fonctions-affines-3e_P9'] },
   },
@@ -89,6 +103,7 @@ const EPREUVES = [
     options: ['−5', '1', '2', '3'],
     cols: 2,
     correct: 0,
+    requires: ['ordonnee-origine', 'mem-f0-egale-b'],
     explain: "b est l'image de 0, c'est-à-dire l'ordonnée du point d'abscisse 0 : ici −5. Le point (2 ; 1) sert à trouver a, pas b.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-affines-3e_P4'] },
   },
@@ -105,6 +120,7 @@ const EPREUVES = [
     ],
     cols: 1,
     correct: 0,
+    requires: ['droites-paralleles', 'coefficient-directeur'],
     explain: "Deux fonctions affines de même a sont parallèles quels que soient leurs b. Un b différent les décale verticalement : elles ne se rencontrent jamais.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-affines-3e_P6'] },
   },
@@ -116,6 +132,7 @@ const EPREUVES = [
     options: ['3', '12', '4', '0,33'],
     cols: 2,
     correct: 0,
+    requires: ['pente-deux-points', 'coefficient-directeur'],
     explain: "Δy = 19 − 7 = 12 et Δx = 6 − 2 = 4, donc a = 12 ÷ 4 = 3. Le coefficient est la montée DIVISÉE par l'avancée, jamais l'inverse.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-affines-3e_P3', '3e_fonctions-affines-3e_P10'] },
   },
@@ -127,6 +144,7 @@ const EPREUVES = [
     options: ['f(x) = 4x + 3', 'f(x) = 4x + 11', 'f(x) = 4x − 3', 'f(x) = 11x + 4'],
     cols: 2,
     correct: 0,
+    requires: ['methode-retrouver-a-b', 'ordonnee-origine', 'forme-ax-b'],
     explain: "4 × 2 + b = 11 donne b = 3. Le nombre 11 est une IMAGE, pas l'ordonnée à l'origine : il faut remonter en retirant a × x.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-affines-3e_P10', '3e_fonctions-affines-3e_P8'] },
   },
@@ -143,6 +161,7 @@ const EPREUVES = [
     ],
     cols: 1,
     correct: 0,
+    requires: ['modeliser-tarif', 'role-de-b', 'part-fixe-part-variable'],
     explain: "0,3x = 0,1x + 9 donne x = 45 min. Avant, A est moins cher ; après, B. Aucun tarif à part fixe n'est meilleur en toutes circonstances — c'est l'usage qui décide.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-affines-3e_P11'] },
   },
@@ -206,15 +225,10 @@ function Synthese() {
         </div>
       </div>
 
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-4 space-y-2">
-        <p className="font-bold text-slate-800">Les quatre lectures d’une fonction affine</p>
-        <ul className="text-sm text-slate-700 space-y-1 list-disc list-inside">
-          <li><strong>Expression</strong> : <MathText>{'$ax + b$'}</MathText>, a devant x, b tout seul.</li>
-          <li><strong>Tableau</strong> : la colonne x = 0 donne b ; l’écart d’une colonne à l’autre donne a.</li>
-          <li><strong>Graphique</strong> : b se lit sur l’axe vertical, a sur l’escalier.</li>
-          <li><strong>Situation</strong> : b est ce qu’on paie pour zéro, a le prix de chaque unité.</li>
-        </ul>
-      </div>
+      {/* Les définitions ne sont pas recopiées ici : la carte des connaissances
+          en est la source unique, et elle est rendue complète, avec ses visuels
+          et ses formules (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot variant="complete" complete />
 
       <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4">
         <p className="font-bold text-rose-800 mb-2">Les pièges déjoués</p>

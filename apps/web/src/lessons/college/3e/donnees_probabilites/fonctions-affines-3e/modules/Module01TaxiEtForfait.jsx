@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TaxiMeter from '../components/TaxiMeter';
@@ -30,9 +31,22 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Misconception targeted: appliquer la proportionnalité malgré la part fixe.
  * Feedback: compteur et facture ; explainFor cible l'oubli de la prise en
  *   charge et l'inversion des deux rôles.
- * Formalization: le mot « affine » et l'écriture ax + b arrivent en pied de
- *   module, après l'expérience. Les noms de a et b sont le travail des
- *   modules 2 et 3, qui isolent chacun avec un curseur continu.
+ * Formalization: le mot « affine » et l'écriture ax + b sont posés par des
+ *   <KnowledgeBrick>, à l'instant du geste qui leur donne sens — jamais en pied
+ *   de module. Les noms de a et b restent le travail des modules 2 et 3, qui
+ *   isolent chacun des deux avec un curseur continu.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Ce module posait autrefois « fonction affine » et ax + b dans son SEUL
+ *   footer, c'est-à-dire après ses cinq étapes — donc après les questions qui
+ *   raisonnaient déjà sur la part fixe, et avant que le module 2 n'ouvre en
+ *   parlant de « a » et « b » comme de choses connues. L'ordre est maintenant :
+ *     étape 1  rouler jusqu'à 0 km  → brique `part-fixe-part-variable`
+ *     étape 3  deux factures        → brique `mem-affine-vs-lineaire`
+ *     étape 4  les deux réglages    → briques `fonction-affine` puis `forme-ax-b`
+ *   Les lettres a et b ne sont prononcées qu'à l'étape 4, une fois les deux
+ *   réglages manipulés — avant, on dit « prise en charge » et « prix du
+ *   kilomètre ».
  * Scaffolding: distance seule → prédictions → tarifs par pastilles → tri.
  * Transfer: les modules 2 et 3 isolent chacun des deux nombres.
  */
@@ -50,8 +64,10 @@ export default function Module01TaxiEtForfait() {
   const [b, setB] = useState(B);
   const [seenA, setSeenA] = useState(() => new Set([A]));
   const [seenB, setSeenB] = useState(() => new Set([B]));
+  const [fixedPartDone, setFixedPartDone] = useState(false);
   const [predictDone, setPredictDone] = useState(false);
   const [propDone, setPropDone] = useState(false);
+  const [formDone, setFormDone] = useState(false);
   const [sortDone, setSortDone] = useState(false);
 
   const done1 = visited.has(0) && visited.size >= 3;
@@ -107,7 +123,7 @@ export default function Module01TaxiEtForfait() {
           num: 1,
           title: 'Roule',
           subtitle: 'Avance, recule — et reviens jusqu’à 0 km.',
-          done: done1,
+          done: done1 && fixedPartDone,
           content: (kit) => (
             <div className="space-y-3">
               <TaxiMeter a={a} b={b} km={km} onKmChange={(v) => drive(v, kit)} kmMax={KM_MAX} yMax={Y_MAX} />
@@ -126,6 +142,26 @@ export default function Module01TaxiEtForfait() {
                   </>
                 )}
               </Feedback>
+
+              {done1 && (
+                <KnowledgeBrick
+                  id="part-fixe-part-variable"
+                  variant="new"
+                  lead="Tu viens de voir le compteur non nul à 0 km, puis grimper. Ces deux morceaux du prix ont un nom."
+                >
+                  <TapQuestion
+                    prompt="Une salle se loue 40 € plus 6 € par personne. Quelle est la part fixe ?"
+                    options={['40 €, la location', '6 €, par personne', '46 €, les deux ensemble']}
+                    correct={0}
+                    cols={1}
+                    requires={['part-fixe-part-variable']}
+                    explain="Les 40 € sont dus même sans personne : c’est la part fixe. Les 6 € par personne forment la part variable."
+                    explainWrong="Demande-toi ce qu’on paie pour ZÉRO personne : il reste 40 €."
+                    solved={fixedPartDone}
+                    onAnswered={(ok) => { setFixedPartDone(true); kit.react(ok); }}
+                  />
+                </KnowledgeBrick>
+              )}
             </div>
           ),
         },
@@ -141,6 +177,7 @@ export default function Module01TaxiEtForfait() {
               parse={parseDec}
               display={formatDec(image(A, B, KM_MAX))}
               suffix="€"
+              requires={['part-fixe-part-variable']}
               above={(revealed) => revealed && bill(KM_MAX)}
               explain={`1,50 × ${KM_MAX} = ${formatDec(A * KM_MAX)} €, plus les 2 € de prise en charge : ${formatDec(image(A, B, KM_MAX))} €. Deux parts, deux rôles.`}
               explainFor={(n) => {
@@ -159,30 +196,41 @@ export default function Module01TaxiEtForfait() {
           title: 'Deux fois plus loin, deux fois plus cher ?',
           done: propDone,
           content: (
-            <TapQuestion
-              prompt="Une course de 2 km coûte 5 €. Une course de 4 km coûte-t-elle 10 € ?"
-              above={(revealed) => revealed && (
-                <div className="grid grid-cols-2 gap-2">{bill(2)}{bill(4)}</div>
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Une course de 2 km coûte 5 €. Une course de 4 km coûte-t-elle 10 € ?"
+                above={(revealed) => revealed && (
+                  <div className="grid grid-cols-2 gap-2">{bill(2)}{bill(4)}</div>
+                )}
+                options={[
+                  'Non : elle coûte 8 €, car les 2 € ne doublent pas',
+                  'Oui : deux fois plus loin, deux fois plus cher',
+                  'Non : elle coûte 11 €',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['part-fixe-part-variable']}
+                explain="2 km : 3 + 2 = 5 €. 4 km : 6 + 2 = 8 €. Les kilomètres doublent, la prise en charge non — donc le prix ne double pas. Ce n’est pas une situation de proportionnalité."
+                explainWrong="Compare les deux factures : la ligne des kilomètres double (3 € → 6 €), la prise en charge reste à 2 €. Le total passe de 5 € à 8 €, pas à 10 €."
+                solved={propDone}
+                onAnswered={() => setPropDone(true)}
+              />
+              {propDone && (
+                <KnowledgeBrick
+                  id="mem-affine-vs-lineaire"
+                  variant="new"
+                  compact
+                  lead="Les deux factures côte à côte l’ont montré. C’est ce qui sépare ce tarif d’un tarif proportionnel."
+                />
               )}
-              options={[
-                'Non : elle coûte 8 €, car les 2 € ne doublent pas',
-                'Oui : deux fois plus loin, deux fois plus cher',
-                'Non : elle coûte 11 €',
-              ]}
-              correct={0}
-              cols={1}
-              explain="2 km : 3 + 2 = 5 €. 4 km : 6 + 2 = 8 €. Les kilomètres doublent, la prise en charge non — donc le prix ne double pas. Ce n’est pas une situation de proportionnalité."
-              explainWrong="Compare les deux factures : la ligne des kilomètres double (3 € → 6 €), la prise en charge reste à 2 €. Le total passe de 5 € à 8 €, pas à 10 €."
-              solved={propDone}
-              onAnswered={() => setPropDone(true)}
-            />
+            </div>
           ),
         },
         {
           num: 4,
           title: 'Change de taxi',
           subtitle: 'Essaie une autre prise en charge, puis un autre prix du kilomètre. Roule à chaque fois.',
-          done: done4,
+          done: done4 && formDone,
           content: (kit) => (
             <div className="space-y-3">
               <TaxiMeter
@@ -208,6 +256,39 @@ export default function Module01TaxiEtForfait() {
                   </>
                 )}
               </Feedback>
+
+              {done4 && (
+                <>
+                  <KnowledgeBrick
+                    id="fonction-affine"
+                    variant="new"
+                    lead="Le prix que tu viens de régler dans les deux sens porte un nom en mathématiques."
+                  />
+                  <KnowledgeBrick
+                    id="forme-ax-b"
+                    variant="new"
+                    lead="Et pour ne plus écrire « prise en charge » et « prix du kilomètre » à chaque fois, on leur donne deux lettres."
+                  >
+                    <NumericQuestion
+                      prompt={<>Un taxi facture <MathText>{'$f(x) = 2x + 3$'}</MathText>, où x est la distance. Combien coûte une course de 5 km ?</>}
+                      expected={image(2, 3, 5)}
+                      parse={parseDec}
+                      display={formatDec(image(2, 3, 5))}
+                      suffix="€"
+                      requires={['forme-ax-b', 'part-fixe-part-variable']}
+                      explain="2 × 5 = 10 pour les kilomètres, plus les 3 € de prise en charge : 13 €. On multiplie par a d’abord, on ajoute b ensuite."
+                      explainFor={(n) => {
+                        if (n === 10) return 'Tu as compté les kilomètres et oublié le « + 3 », la part fixe.';
+                        if (n === 16) return 'Tu as ajouté 3 à 5 avant de multiplier : c’est 2 × 5 puis + 3, pas 2 × (5 + 3).';
+                        if (n === 8) return 'Tu as échangé les rôles : c’est 2 qui multiplie la distance, 3 qui s’ajoute une seule fois.';
+                        return null;
+                      }}
+                      solved={formDone}
+                      onAnswered={(ok) => { setFormDone(true); kit.react(ok); }}
+                    />
+                  </KnowledgeBrick>
+                </>
+              )}
             </div>
           ),
         },
@@ -218,6 +299,7 @@ export default function Module01TaxiEtForfait() {
           content: (
             <BatchChoiceQuestion
               intro={<p className="text-sm text-slate-600">Chaque situation a-t-elle une part fixe, payée même pour zéro ?</p>}
+              requires={['part-fixe-part-variable', 'mem-affine-vs-lineaire']}
               rows={[
                 { id: 's1', label: 'Cinéma : 6 € la place', options: ['part fixe', 'aucune part fixe'], correct: 1,
                   correction: 'Zéro place coûte 0 € : proportionnel, donc fonction linéaire.' },
@@ -239,14 +321,14 @@ export default function Module01TaxiEtForfait() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> Une <strong>fonction affine</strong> s’écrit{' '}
-          <MathText>{'$f(x) = ax + b$'}</MathText> : <MathText>{'$a$'}</MathText> multiplie la
-          quantité (le prix du kilomètre), <MathText>{'$b$'}</MathText> est la part payée même pour
-          zéro (la prise en charge). Le premier taxi : <MathText>{`$${formatAffine(A, B)}$`}</MathText>.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Le premier taxi s’écrit{' '}
+          <MathText>{`$${formatAffine(A, B)}$`}</MathText>. Deux réglages, deux effets — mais
+          lequel fait quoi, exactement ? Au module suivant, on en bloque un pour ne regarder
+          que l’autre.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -11,6 +11,7 @@ import { auditLesson } from '../audit-knowledge-dependencies.mjs';
 import { readKnowledge } from '../lib/knowledgeData.mjs';
 import { buildModuleStream } from '../lib/exposureStream.mjs';
 import { splitMath } from '../lib/collectText.mjs';
+import { readFileSync } from 'node:fs';
 
 const FIX = new URL('./__fixtures__/', import.meta.url).pathname;
 const CATALOGUE = { pointsToLearn: ['Identifier un antécédent et son image', 'Utiliser la notation f(x)'] };
@@ -134,5 +135,34 @@ describe('leçon réparée — aucun blocage', () => {
     const strict = audit('lesson-broken', { strict: true });
     expect(codesOf(strict)).toContain('E_QUESTION_WITHOUT_REQUIRES');
     expect(codesOf(audit('lesson-fixed', { strict: true }))).not.toContain('E_QUESTION_WITHOUT_REQUIRES');
+  });
+});
+
+describe('lexique — conventions', () => {
+  const LEXICON = JSON.parse(readFileSync(new URL('./lexicon.json', import.meta.url), 'utf-8'));
+  const allPatterns = LEXICON.terms.flatMap((t) => [
+    ...(t.patterns ?? []), ...(t.notationPatterns ?? []), ...(t.targetPatterns ?? []),
+  ]);
+
+  it('aucun motif n’utilise \\b : en JavaScript il reste ASCII même sous /u', () => {
+    // « aire » se déclenchait dans « lin-éaire » : le é n’étant pas un caractère
+    // de mot ASCII, \b y voyait une frontière. Bornes Unicode explicites only.
+    const withB = allPatterns.filter((p) => p.includes('\\b'));
+    expect(withB).toEqual([]);
+  });
+
+  it('tous les motifs compilent en unicode', () => {
+    for (const p of allPatterns) expect(() => new RegExp(p, 'iu')).not.toThrow();
+  });
+
+  it('un terme ne se déclenche pas à l’intérieur d’un mot accentué', () => {
+    const aire = LEXICON.terms.find((t) => t.id === 'aire');
+    const re = new RegExp(aire.patterns[0], 'iu');
+    expect(re.test('une fonction linéaire')).toBe(false);
+    expect(re.test('quelle est l’aire du rectangle ?')).toBe(true);
+  });
+
+  it('chaque terme déclare un niveau connu', () => {
+    for (const t of LEXICON.terms) expect(LEXICON.gradeOrder).toContain(t.grade);
   });
 });

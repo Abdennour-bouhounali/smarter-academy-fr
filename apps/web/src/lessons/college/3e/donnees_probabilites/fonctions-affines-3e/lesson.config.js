@@ -37,6 +37,20 @@ export const LESSON_BASE_PATH = '/courses/college/3e/donnees_probabilites/foncti
 export const LESSON_CONFIG = {
   id: 'fonctions-affines-3e',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (états A du contrat « connaissances avant
+  // la demande ») : le vocabulaire des fonctions vient de `fonctions-3e`, le
+  // repérage de 6e et le calcul littéral de 4e. Le module 0 les diagnostique —
+  // et rien d'autre. Tout le reste (a, b, leurs noms, leurs rôles) est établi
+  // dans la leçon même, par des <KnowledgeBrick>.
+  priorKnowledge: [
+    'fonction', 'notation-fx', 'image', 'fonction-lineaire',
+    'tableau-de-valeurs', 'representation-graphique',
+    'calcul-litteral', 'abscisse', 'ordonnee', 'coordonnees', 'origine-repere',
+    'proportionnalite', 'coefficient-lineaire',
+  ],
   title: 'Fonctions affines',
   description:
     "Comprendre que dans f(x) = ax + b le coefficient a commande l'inclinaison et b le point de départ, en verrouillant l'un pour observer l'autre, puis retrouver l'expression à partir de deux points et s'en servir pour comparer deux tarifs.",

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import AffineExplorer from '../../../../../common/components/AffineExplorer';
 import ValueTable from '../../../../../common/components/ValueTable';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { image, formatAffine } from '../components/affineUtils';
-import { formatDec } from '@smarter-academy/core';
+import { parseDec, formatDec } from '@smarter-academy/core';
 
 /**
  * Module 4 — MANIPULATION SIGNATURE : « Les deux boutons ».
@@ -29,10 +30,20 @@ import { formatDec } from '@smarter-academy/core';
  *   ordonnée plutôt que comme une montée.
  * Feedback: l'écart restant est quantifié paramètre par paramètre ; échappée
  *   après 4 essais infructueux.
- * Formalization: aucune ici — les noms sont posés, on les met au travail.
+ * Formalization: les noms de a et b sont acquis ; ce module pose les deux
+ *   MÉTHODES de lecture (dans un tableau, sur un graphique) et le raccourci
+ *   f(0) = b, chacune par une <KnowledgeBrick> après le geste correspondant.
  * Scaffolding: cible affichée (TRY) → tableau (EXPLORE) → lecture muette
  *   (CHALLENGE).
  * Transfer: le module 5 remonte à l'expression sans aucun réglage.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   L'étape 3 (« lis une droite muette ») demandait a ET b d'un seul coup,
+ *   sans que la lecture graphique n'ait jamais été décrite : le tableau de
+ *   l'étape 2 ne le préparait que par une phrase de `Feedback`. Désormais :
+ *     étape 2  remplir le tableau      → brique `tableau-affine` + essai
+ *     étape 3  brique `lire-a-et-b-graphique` avant la droite muette
+ *     étape 4  brique `mem-f0-egale-b` : le raccourci, retenu tel quel
  */
 
 const TARGET = { a: -1.5, b: 3 };
@@ -47,6 +58,7 @@ export default function Module04DeuxBoutons() {
   const [revealed, setRevealed] = useState(false);
 
   const [tested, setTested] = useState(() => new Set());
+  const [tableDone, setTableDone] = useState(false);
   const [readDone, setReadDone] = useState(false);
   const [zeroDone, setZeroDone] = useState(false);
 
@@ -144,7 +156,7 @@ export default function Module04DeuxBoutons() {
           num: 2,
           title: 'Le tableau de cette droite',
           subtitle: 'Touche au moins quatre valeurs de x.',
-          done: done2,
+          done: done2 && tableDone,
           content: (kit) => (
             <div className="space-y-3">
               <ValueTable
@@ -168,6 +180,31 @@ export default function Module04DeuxBoutons() {
                   <MathText>{'$a$'}</MathText>.
                 </Feedback>
               )}
+
+              {done2 && (
+                <KnowledgeBrick
+                  id="tableau-affine"
+                  variant="new"
+                  lead="Les deux nombres que tu règles au curseur se lisent aussi dans le tableau, à deux endroits précis."
+                >
+                  <NumericQuestion
+                    prompt={<>Dans un tableau, on lit <MathText>{'$f(0) = 5$'}</MathText> et <MathText>{'$f(1) = 9$'}</MathText>. Que vaut <MathText>{'$a$'}</MathText> ?</>}
+                    expected={4}
+                    parse={parseDec}
+                    display="4"
+                    requires={['tableau-affine', 'coefficient-directeur']}
+                    explain="Entre x = 0 et x = 1, x avance de 1 et f passe de 5 à 9 : il monte de 4. Donc a = 4 (et b = 5, la colonne x = 0)."
+                    explainFor={(n) => {
+                      if (n === 5) return 'Tu as donné la colonne x = 0 : c’est b, pas a. a est l’ÉCART d’une colonne à la suivante.';
+                      if (n === 9) return 'Tu as donné la seconde image. a est l’écart entre les deux : 9 − 5.';
+                      if (n === 14) return 'Tu as additionné les deux images. a est leur écart quand x avance de 1 : 9 − 5.';
+                      return null;
+                    }}
+                    solved={tableDone}
+                    onAnswered={(ok) => { setTableDone(true); kit.react(ok); }}
+                  />
+                </KnowledgeBrick>
+              )}
             </div>
           ),
         },
@@ -187,16 +224,23 @@ export default function Module04DeuxBoutons() {
                 ariaLabel="Repère : une droite dont il faut lire a et b"
                 caption={false}
               />
-              <TapQuestion
-                prompt="Quelle est l’expression de cette droite ?"
-                options={['f(x) = 2x − 3', 'f(x) = −3x + 2', 'f(x) = 2x + 3', 'f(x) = 3x − 2']}
-                correct={0}
-                cols={2}
-                explain="La droite coupe l’axe vertical en −3, donc b = −3. L’escalier avance de 1 et monte de 2, donc a = 2. D’où f(x) = 2x − 3."
-                explainWrong="Ne confonds pas les deux rôles : le nombre lu sur l’axe vertical est b, celui de l’escalier est a."
-                solved={readDone}
-                onAnswered={(ok) => { setReadDone(true); kit.react(ok); }}
-              />
+              <KnowledgeBrick
+                id="lire-a-et-b-graphique"
+                variant="new"
+                lead="Aucune expression affichée : tout est sur le dessin. Voici dans quel ordre le lire."
+              >
+                <TapQuestion
+                  prompt="Quelle est l’expression de cette droite ?"
+                  options={['f(x) = 2x − 3', 'f(x) = −3x + 2', 'f(x) = 2x + 3', 'f(x) = 3x − 2']}
+                  correct={0}
+                  cols={2}
+                  requires={['lire-a-et-b-graphique', 'coefficient-directeur', 'ordonnee-origine']}
+                  explain="La droite coupe l’axe vertical en −3, donc b = −3. L’escalier avance de 1 et monte de 2, donc a = 2. D’où f(x) = 2x − 3."
+                  explainWrong="Ne confonds pas les deux rôles : le nombre lu sur l’axe vertical est b, celui de l’escalier est a."
+                  solved={readDone}
+                  onAnswered={(ok) => { setReadDone(true); kit.react(ok); }}
+                />
+              </KnowledgeBrick>
             </div>
           ),
         },
@@ -204,27 +248,36 @@ export default function Module04DeuxBoutons() {
           num: 4,
           title: 'Le raccourci qui marche toujours',
           done: zeroDone,
-          content: (
-            <TapQuestion
-              prompt={<>Sans tracer : que vaut <MathText>{'$f(0)$'}</MathText> pour <MathText>{'$f(x) = -4x + 7$'}</MathText> ?</>}
-              options={['7', '0', '−4', '3']}
-              correct={0}
-              cols={2}
-              explain="f(0) = −4 × 0 + 7 = 7. L’image de 0 est toujours b : c’est le raccourci le plus utile de la leçon."
-              explainWrong="Remplace x par 0 : le terme en x disparaît et il ne reste que b."
-              solved={zeroDone}
-              onAnswered={() => setZeroDone(true)}
-            />
+          content: (kit) => (
+            <KnowledgeBrick
+              id="mem-f0-egale-b"
+              variant="new"
+              compact
+              lead="Tu viens de le lire deux fois de suite : dans le tableau sous x = 0, et sur le graphique à l’axe vertical. C’est toujours le même nombre."
+            >
+              <TapQuestion
+                prompt={<>Sans tracer : que vaut <MathText>{'$f(0)$'}</MathText> pour <MathText>{'$f(x) = -4x + 7$'}</MathText> ?</>}
+                options={['7', '0', '−4', '3']}
+                correct={0}
+                cols={2}
+                requires={['mem-f0-egale-b', 'ordonnee-origine']}
+                explain="f(0) = −4 × 0 + 7 = 7. L’image de 0 est toujours b : c’est le raccourci le plus utile de la leçon."
+                explainWrong="Remplace x par 0 : le terme en x disparaît et il ne reste que b."
+                solved={zeroDone}
+                onAnswered={(ok) => { setZeroDone(true); kit.react(ok); }}
+              />
+            </KnowledgeBrick>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Expression, tableau et graphique décrivent la <strong>même</strong> fonction
-          affine. Reste à faire le chemin inverse : partir de deux points et retrouver{' '}
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Expression, tableau et graphique décrivent la{' '}
+          <strong>même</strong> fonction affine. Reste à faire le chemin inverse : partir de
+          deux points seulement, sans droite tracée, et retrouver{' '}
           <MathText>{'$a$'}</MathText> et <MathText>{'$b$'}</MathText>.
-        </Feedback>
-      }
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

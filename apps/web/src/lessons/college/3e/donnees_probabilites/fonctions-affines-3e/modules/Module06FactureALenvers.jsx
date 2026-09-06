@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import AffineExplorer from '../../../../../common/components/AffineExplorer';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -27,9 +28,17 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Misconception targeted: croire qu'un tarif est meilleur en toutes
  *   circonstances ; et lire un prix comme un coefficient.
  * Feedback: explainFor cible la confusion entre le prix affiché et a.
- * Formalization: aucune ; c'est l'atelier de transfert.
+ * Formalization: une seule brique, `modeliser-tarif`, posée à l'étape 3 quand
+ *   l'abonnement négocié vient de faire bouger le point de bascule.
  * Scaffolding: expressions guidées → réglage libre → interprétation.
  * Transfer: c'est le module de transfert de la leçon.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Ce module n'introduit aucun mot neuf : il met au travail la méthode du
+ *   module 5 (a par le rapport des écarts, b en remontant) sur des factures.
+ *   Chaque question déclare donc ce qu'elle exige, et la seule connaissance
+ *   NOUVELLE — b comme levier commercial — est posée après le geste qui la
+ *   montre, avant la question d'interprétation qui en dépend.
  *
  * NOTE DE CONCEPTION — la comparaison de deux forfaits au curseur existe déjà
  * dans `fonctions-3e` (module 7). Ce module ne la refait pas : on part ici de
@@ -85,6 +94,7 @@ export default function Module06FactureALenvers() {
               parse={parseDec}
               display={formatDec(affineFromTwoPoints({ x: 20, y: 5 }, { x: 60, y: 15 }).a)}
               suffix="€/min"
+              requires={['pente-deux-points', 'methode-retrouver-a-b']}
               explain="Δy = 15 − 5 = 10 € pour Δx = 40 min, donc a = 10 ÷ 40 = 0,25 €/min. Et b = 5 − 0,25 × 20 = 0 : pas d’abonnement chez A."
               explainFor={(n) => {
                 if (n === 5) return 'Tu as repris un prix de facture. Le prix à la minute est un rapport : 10 € ÷ 40 min.';
@@ -112,6 +122,7 @@ export default function Module06FactureALenvers() {
               ]}
               correct={0}
               cols={1}
+              requires={['methode-retrouver-a-b', 'ordonnee-origine', 'forme-ax-b']}
               explain="0,25 × 20 = 5, exactement le montant facturé : rien ne s’ajoute. Donc b = 0 et A(x) = 0,25x — une fonction linéaire, cas particulier des affines."
               explainWrong="Remplace dans 0,25 × 20 + b = 5 : il vient b = 0. Une facture n’est pas un b."
               solved={bDone}
@@ -168,6 +179,15 @@ export default function Module06FactureALenvers() {
                   <>À 40 min, B coûte {formatDec(image(planB.a, bValue, SEUIL) - image(PLAN_A.a, PLAN_A.b, SEUIL))} € de trop. Baisse l’abonnement.</>
                 )}
               </Feedback>
+
+              {goalReached && (
+                <KnowledgeBrick
+                  id="modeliser-tarif"
+                  variant="new"
+                  compact
+                  lead="Tu viens de déplacer le point de bascule sans toucher au prix à la minute. C’est ce que fait b dans une situation réelle."
+                />
+              )}
             </div>
           ),
         },
@@ -186,6 +206,7 @@ export default function Module06FactureALenvers() {
               ]}
               correct={0}
               cols={1}
+              requires={['modeliser-tarif', 'role-de-b', 'droites-paralleles']}
               explain="Baisser b translate la droite de B vers le bas : elle croise celle de A plus tôt. Le prix à la minute (a) est inchangé, donc la pente aussi. Aucun tarif n’est meilleur partout — c’est l’usage qui décide."
               explainWrong="a n’a pas changé, donc la pente non plus. Ce qui bouge, c’est la hauteur de départ, et donc le point de croisement."
               solved={interpDone}
@@ -194,14 +215,12 @@ export default function Module06FactureALenvers() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Deux factures suffisent à retrouver un tarif : <MathText>{'$a$'}</MathText> par le
-          rapport des écarts, <MathText>{'$b$'}</MathText> en remontant depuis un point. Et
-          <MathText>{'$b$'}</MathText> est le levier : il décide de <em>quand</em> un tarif
-          devient le bon.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ta carte est complète : deux nombres, deux métiers, et
+          quatre façons de les lire. La mission finale les mélange en huit épreuves.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

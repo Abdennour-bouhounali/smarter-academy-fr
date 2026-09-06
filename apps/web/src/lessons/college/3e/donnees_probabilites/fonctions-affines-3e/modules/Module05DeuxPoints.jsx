@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SlopeFromTwoPoints from '../components/SlopeFromTwoPoints';
@@ -25,9 +26,20 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Misconception targeted: inverser le rapport (Δx/Δy) ; croire que b se lit
  *   sur n'importe quel point plutôt qu'en x = 0.
  * Feedback: explainFor cible l'inversion et l'oubli du retour à x = 0.
- * Formalization: la méthode en deux temps est nommée en pied de module.
- * Scaffolding: triangle guidé → objectif imposé → calcul sans dessin.
+ * Formalization: le rapport Δy/Δx et la méthode en deux temps sont posés par
+ *   des <KnowledgeBrick>, chacune après le geste qui la rend lisible.
+ * Scaffolding: triangle guidé → nom du rapport + essai → méthode complète.
  * Transfer: le module 6 l'applique à des factures réelles.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   `SlopeFromTwoPoints` écrit Δx, Δy et a = Δy/Δx SOUS le triangle, en
+ *   conséquence directe du déplacement d'un point : c'est bien une position
+ *   d'enseignement (révélation conditionnée par le geste). Mais rien ne NOMMAIT
+ *   ce rapport, et la méthode complète n'existait qu'en pied de module — après
+ *   les deux questions qui l'exigeaient. Désormais :
+ *     étape 1  fabriquer une pente de 2  → brique `pente-deux-points` + essai
+ *              (la question d'origine de l'étape 2, désormais légitime)
+ *     étape 2  brique `methode-retrouver-a-b` avant de remonter jusqu'à b
  */
 
 const TARGET_A = 2;   // objectif d'inclinaison à atteindre à l'étape 2
@@ -72,7 +84,7 @@ export default function Module05DeuxPoints() {
           num: 1,
           title: 'Fabrique une pente de 2',
           subtitle: 'Déplace A ou B jusqu’à ce que le coefficient vaille 2.',
-          done: hitSlope || ratioDone,
+          done: (hitSlope || ratioDone) && bDone,
           content: (kit) => (
             <div className="space-y-3">
               <SlopeFromTwoPoints
@@ -102,56 +114,66 @@ export default function Module05DeuxPoints() {
                   </>
                 )}
               </Feedback>
+
+              {(hitSlope || ratioDone) && (
+                <KnowledgeBrick
+                  id="pente-deux-points"
+                  variant="new"
+                  lead="Les deux côtés du triangle que tu viens de redessiner portent des noms, et leur rapport donne le coefficient directeur."
+                >
+                  <NumericQuestion
+                    prompt={<>Une droite passe par <MathText>{'$(1 \\; ; \\; 5)$'}</MathText> et <MathText>{'$(4 \\; ; \\; 11)$'}</MathText>. Que vaut <MathText>{'$a$'}</MathText> ?</>}
+                    expected={affineFromTwoPoints({ x: 1, y: 5 }, { x: 4, y: 11 }).a}
+                    parse={parseDec}
+                    display={formatDec(affineFromTwoPoints({ x: 1, y: 5 }, { x: 4, y: 11 }).a)}
+                    requires={['pente-deux-points', 'coefficient-directeur']}
+                    explain="Δy = 11 − 5 = 6, Δx = 4 − 1 = 3, donc a = 6 ÷ 3 = 2."
+                    explainFor={(n) => {
+                      if (Math.abs(n - 0.5) < 0.01) return 'Tu as divisé Δx par Δy. Le coefficient est la montée DIVISÉE par l’avancée : 6 ÷ 3.';
+                      if (n === 6) return 'Tu as donné Δy seul. Il faut le diviser par Δx = 3.';
+                      if (n === 3) return 'Tu as donné Δx. Le coefficient est Δy ÷ Δx.';
+                      return null;
+                    }}
+                    solved={bDone}
+                    onAnswered={(ok) => { setBDone(true); kit.react(ok); }}
+                  />
+                </KnowledgeBrick>
+              )}
             </div>
           ),
         },
         {
           num: 2,
-          title: 'Le coefficient, sans dessin',
-          done: bDone,
-          content: (kit) => (
-            <NumericQuestion
-              prompt={<>Une droite passe par <MathText>{'$(1 \\; ; \\; 5)$'}</MathText> et <MathText>{'$(4 \\; ; \\; 11)$'}</MathText>. Que vaut <MathText>{'$a$'}</MathText> ?</>}
-              expected={affineFromTwoPoints({ x: 1, y: 5 }, { x: 4, y: 11 }).a}
-              parse={parseDec}
-              display={formatDec(affineFromTwoPoints({ x: 1, y: 5 }, { x: 4, y: 11 }).a)}
-              explain="Δy = 11 − 5 = 6, Δx = 4 − 1 = 3, donc a = 6 ÷ 3 = 2."
-              explainFor={(n) => {
-                if (Math.abs(n - 0.5) < 0.01) return 'Tu as divisé Δx par Δy. Le coefficient est la montée DIVISÉE par l’avancée : 6 ÷ 3.';
-                if (n === 6) return 'Tu as donné Δy seul. Il faut le diviser par Δx = 3.';
-                if (n === 3) return 'Tu as donné Δx. Le coefficient est Δy ÷ Δx.';
-                return null;
-              }}
-              solved={bDone}
-              onAnswered={(ok) => { setBDone(true); kit.react(ok); }}
-            />
-          ),
-        },
-        {
-          num: 3,
           title: 'Et l’ordonnée à l’origine',
+          subtitle: 'Tu as a. Il reste b — et il ne se lit sur aucun des deux points.',
           done: fullDone,
-          content: (
-            <TapQuestion
-              prompt={<>Même droite : <MathText>{'$a = 2$'}</MathText> et elle passe par <MathText>{'$(1 \\; ; \\; 5)$'}</MathText>. Quelle est son expression ?</>}
-              options={['f(x) = 2x + 3', 'f(x) = 2x + 5', 'f(x) = 2x − 3', 'f(x) = 5x + 2']}
-              correct={0}
-              cols={2}
-              explain="On sait que f(1) = 5, donc 2 × 1 + b = 5, d’où b = 3. Vérification sur l’autre point : 2 × 4 + 3 = 11. ✓"
-              explainWrong="Le 5 est une image, pas b. b est l’image de 0 : remonte depuis le point connu en retirant a × x."
-              solved={fullDone}
-              onAnswered={() => setFullDone(true)}
-            />
+          content: (kit) => (
+            <KnowledgeBrick
+              id="methode-retrouver-a-b"
+              variant="new"
+              lead="Le triangle donne a. Pour b, il faut redescendre depuis un point connu jusqu’à x = 0 : voici la méthode entière."
+            >
+              <TapQuestion
+                prompt={<>À toi, sur une AUTRE droite : elle a pour coefficient <MathText>{'$a = 3$'}</MathText> et passe par <MathText>{'$(2 \\; ; \\; 4)$'}</MathText>. Quelle est son expression ?</>}
+                options={['f(x) = 3x − 2', 'f(x) = 3x + 4', 'f(x) = 3x + 2', 'f(x) = 4x + 2']}
+                correct={0}
+                cols={2}
+                requires={['methode-retrouver-a-b', 'pente-deux-points', 'ordonnee-origine', 'forme-ax-b']}
+                explain="On sait que f(2) = 4, donc 3 × 2 + b = 4, c’est-à-dire 6 + b = 4 : b = −2. Vérification : 3 × 2 − 2 = 4. ✓"
+                explainWrong="Le 4 est une image, pas b : b est l’image de 0. Remplace dans 3 × 2 + b = 4 et cherche ce qui manque pour tomber sur 4 — il faut RETIRER 2."
+                solved={fullDone}
+                onAnswered={(ok) => { setFullDone(true); kit.react(ok); }}
+              />
+            </KnowledgeBrick>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>La méthode.</strong> D’abord <MathText>{'$a = \\dfrac{\\Delta y}{\\Delta x}$'}</MathText>{' '}
-          entre deux points. Ensuite <MathText>{'$b$'}</MathText> en remplaçant x et f(x) par
-          un point connu. Et toujours une vérification sur l’autre point.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Deux points suffisent, et ils n’ont même pas besoin
+          d’être dessinés. Au module suivant, ces deux points seront deux lignes de facture.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }
