@@ -45,6 +45,17 @@ export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/thales-3e'
 
 export const LESSON_CONFIG = {
   id: 'thales-3e',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
+  priorKnowledge: ['proportionnalite', 'quotient', 'droites-paralleles', 'arrondi'],
+  knowledgeAudit: {
+    ignore: [
+      // « aire » n'apparaît que comme mauvaise réponse dans le test final. Notion
+      // de 6e, jamais manipulée ici : l'élève n'a qu'à écarter une dépendance.
+      { term: 'aire', reason: 'distracteur ; notion de 6e, non manipulée' },
+    ],
+  },
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Théorème de Thalès',
   description:

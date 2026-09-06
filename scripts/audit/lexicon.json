@@ -16,7 +16,7 @@
       "label": "abscisse",
       "grade": "6e",
       "patterns": [
-        "\\babscisses?\\b"
+        "(?<![\\p{L}\\p{N}_])abscisses?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -24,7 +24,7 @@
       "label": "ordonnée",
       "grade": "6e",
       "patterns": [
-        "\\bordonn[ée]es?\\b(?!\\s+[àa]\\s+l)"
+        "(?<![\\p{L}\\p{N}_])ordonn[ée]es?(?<![\\p{L}\\p{N}_])(?!\\s+[àa]\\s+l)"
       ]
     },
     {
@@ -32,7 +32,7 @@
       "label": "coordonnées",
       "grade": "6e",
       "patterns": [
-        "\\bcoordonn[ée]es\\b"
+        "(?<![\\p{L}\\p{N}_])coordonn[ée]es(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -40,7 +40,7 @@
       "label": "origine du repère",
       "grade": "6e",
       "patterns": [
-        "\\bl['’]origine\\b"
+        "(?<![\\p{L}\\p{N}_])l['’]origine(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -48,7 +48,7 @@
       "label": "quotient",
       "grade": "6e",
       "patterns": [
-        "\\bquotients?\\b"
+        "(?<![\\p{L}\\p{N}_])quotients?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -56,8 +56,8 @@
       "label": "proportionnalité",
       "grade": "6e",
       "patterns": [
-        "\\bproportionnalit[ée]\\b",
-        "\\bcoefficient de proportionnalit[ée]\\b"
+        "(?<![\\p{L}\\p{N}_])proportionnalit[ée](?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])coefficient de proportionnalit[ée](?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -65,15 +65,24 @@
       "label": "périmètre",
       "grade": "6e",
       "patterns": [
-        "\\bp[ée]rim[èe]tres?\\b"
+        "(?<![\\p{L}\\p{N}_])p[ée]rim[èe]tres?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
       "id": "aire",
       "label": "aire",
       "grade": "6e",
+      "_comment": "Bornes Unicode explicites, et non \\b : en JavaScript \\b reste ASCII même sous le drapeau /u, si bien que \\baires?\\b se déclenchait à l'intérieur de « lin-éaire » (le é n'étant pas un caractère de mot ASCII, il crée une frontière). Toute leçon parlant de fonctions linéaires était signalée pour « aire ».",
       "patterns": [
-        "\\baires?\\b"
+        "(?<![\\p{L}\\p{N}_])aires?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "droites-paralleles",
+      "label": "droites parallèles",
+      "grade": "6e",
+      "patterns": [
+        "droites? parall[èe]les?"
       ]
     },
     {
@@ -81,7 +90,7 @@
       "label": "médiatrice",
       "grade": "6e",
       "patterns": [
-        "\\bm[ée]diatrices?\\b"
+        "(?<![\\p{L}\\p{N}_])m[ée]diatrices?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -89,7 +98,7 @@
       "label": "bissectrice",
       "grade": "6e",
       "patterns": [
-        "\\bbissectrices?\\b"
+        "(?<![\\p{L}\\p{N}_])bissectrices?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -98,7 +107,7 @@
       "grade": "4e",
       "patterns": [
         "calcul litt[ée]ral",
-        "\\bexpression litt[ée]rale\\b"
+        "(?<![\\p{L}\\p{N}_])expression litt[ée]rale(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -122,8 +131,8 @@
       "label": "arrondi",
       "grade": "6e",
       "patterns": [
-        "\\barrondis?\\b",
-        "\\barrondie?\\b"
+        "(?<![\\p{L}\\p{N}_])arrondis?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])arrondie?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -131,7 +140,7 @@
       "label": "hypoténuse",
       "grade": "4e",
       "patterns": [
-        "\\bhypot[ée]nuse\\b"
+        "(?<![\\p{L}\\p{N}_])hypot[ée]nuse(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -139,7 +148,7 @@
       "label": "puissance",
       "grade": "4e",
       "patterns": [
-        "\\bpuissances?\\b"
+        "(?<![\\p{L}\\p{N}_])puissances?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -147,7 +156,7 @@
       "label": "racine carrée",
       "grade": "4e",
       "patterns": [
-        "\\bracines? carr[ée]es?\\b"
+        "(?<![\\p{L}\\p{N}_])racines? carr[ée]es?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -155,10 +164,10 @@
       "label": "image (d'un nombre par une fonction)",
       "grade": "3e",
       "patterns": [
-        "\\bimages?\\b(?!\\s+(vaut|d['’]un tableau))"
+        "(?<![\\p{L}\\p{N}_])images?(?<![\\p{L}\\p{N}_])(?!\\s+(vaut|d['’]un tableau))"
       ],
       "targetPatterns": [
-        "\\bimage\\b"
+        "(?<![\\p{L}\\p{N}_])image(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -166,10 +175,10 @@
       "label": "antécédent",
       "grade": "3e",
       "patterns": [
-        "\\bant[ée]c[ée]dents?\\b"
+        "(?<![\\p{L}\\p{N}_])ant[ée]c[ée]dents?(?![\\p{L}\\p{N}_])"
       ],
       "targetPatterns": [
-        "\\bant[ée]c[ée]dent\\b"
+        "(?<![\\p{L}\\p{N}_])ant[ée]c[ée]dent(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -177,14 +186,14 @@
       "label": "notation f(x)",
       "grade": "3e",
       "patterns": [
-        "\\bf\\s*\\(\\s*-?[0-9a-z]"
+        "(?<![\\p{L}\\p{N}_])f\\s*\\(\\s*-?[0-9a-z]"
       ],
       "notationPatterns": [
-        "\\b[fgh]\\s*\\(\\s*[^)]*\\)"
+        "(?<![\\p{L}\\p{N}_])[fgh]\\s*\\(\\s*[^)]*\\)"
       ],
       "targetPatterns": [
         "notation f\\(x\\)",
-        "\\bf\\(x\\)"
+        "(?<![\\p{L}\\p{N}_])f\\(x\\)"
       ]
     },
     {
@@ -192,10 +201,10 @@
       "label": "fonction",
       "grade": "3e",
       "patterns": [
-        "\\bfonctions?\\b"
+        "(?<![\\p{L}\\p{N}_])fonctions?(?![\\p{L}\\p{N}_])"
       ],
       "targetPatterns": [
-        "\\bfonction\\b"
+        "(?<![\\p{L}\\p{N}_])fonction(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -207,12 +216,25 @@
       ]
     },
     {
+      "id": "echelle-axe",
+      "label": "échelle d'un axe gradué",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])carreaux?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])graduations?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])[ée]chelles?(?![\\p{L}\\p{N}_])\\s+(de l['’]axe|du rep[èe]re|verticale|horizontale)"
+      ],
+      "targetPatterns": [
+        "(?<![\\p{L}\\p{N}_])[ée]chelle(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
       "id": "representation-graphique",
       "label": "représentation graphique",
       "grade": "3e",
       "patterns": [
         "repr[ée]sentation graphique",
-        "\\bcourbe repr[ée]sentative\\b"
+        "(?<![\\p{L}\\p{N}_])courbe repr[ée]sentative(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -220,7 +242,7 @@
       "label": "fonction linéaire",
       "grade": "3e",
       "patterns": [
-        "\\blin[ée]aires?\\b"
+        "(?<![\\p{L}\\p{N}_])lin[ée]aires?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -228,7 +250,7 @@
       "label": "fonction affine",
       "grade": "3e",
       "patterns": [
-        "\\baffines?\\b"
+        "(?<![\\p{L}\\p{N}_])affines?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -237,6 +259,22 @@
       "grade": "3e",
       "patterns": [
         "coefficient directeur"
+      ]
+    },
+    {
+      "id": "coefficient-lineaire",
+      "label": "coefficient (d'une fonction linéaire)",
+      "grade": "3e",
+      "patterns": [
+        "\\bcoefficients?\\b(?!\\s+(de proportionnalit[ée]|directeur))"
+      ]
+    },
+    {
+      "id": "pente",
+      "label": "pente",
+      "grade": "3e",
+      "patterns": [
+        "\\bpentes?\\b"
       ]
     },
     {
@@ -252,7 +290,7 @@
       "label": "droites sécantes",
       "grade": "3e",
       "patterns": [
-        "\\bs[ée]cantes?\\b"
+        "(?<![\\p{L}\\p{N}_])s[ée]cantes?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -260,9 +298,9 @@
       "label": "côté opposé",
       "grade": "3e",
       "patterns": [
-        "c[ôo]t[ée] oppos[ée]",
-        "\\bl['’]oppos[ée]\\b",
-        "\\bOPPOS[ÉE]\\b"
+        "c[ôo]t[ée]s? oppos[ée]s?",
+        "(?<![\\p{L}\\p{N}_])l['’]oppos[ée](?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])OPPOS[ÉE](?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -270,8 +308,8 @@
       "label": "côté adjacent",
       "grade": "3e",
       "patterns": [
-        "\\badjacents?\\b",
-        "\\bADJACENT\\b"
+        "(?<![\\p{L}\\p{N}_])adjacents?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ADJACENT(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -279,8 +317,8 @@
       "label": "cosinus",
       "grade": "3e",
       "patterns": [
-        "\\bcosinus\\b",
-        "\\bcos\\b"
+        "(?<![\\p{L}\\p{N}_])cosinus(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])cos(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -288,8 +326,8 @@
       "label": "sinus",
       "grade": "3e",
       "patterns": [
-        "\\bsinus\\b",
-        "\\bsin\\b"
+        "(?<![\\p{L}\\p{N}_])sinus(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])sin(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -297,8 +335,8 @@
       "label": "tangente",
       "grade": "3e",
       "patterns": [
-        "\\btangente\\b",
-        "\\btan\\b"
+        "(?<![\\p{L}\\p{N}_])tangente(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tan(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -314,7 +352,7 @@
       "label": "vecteur",
       "grade": "3e",
       "patterns": [
-        "\\bvecteurs?\\b"
+        "(?<![\\p{L}\\p{N}_])vecteurs?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -322,7 +360,7 @@
       "label": "translation",
       "grade": "3e",
       "patterns": [
-        "\\btranslations?\\b"
+        "(?<![\\p{L}\\p{N}_])translations?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -330,7 +368,7 @@
       "label": "homothétie",
       "grade": "3e",
       "patterns": [
-        "\\bhomoth[ée]ties?\\b"
+        "(?<![\\p{L}\\p{N}_])homoth[ée]ties?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -338,7 +376,7 @@
       "label": "PGCD",
       "grade": "3e",
       "patterns": [
-        "\\bPGCD\\b"
+        "(?<![\\p{L}\\p{N}_])PGCD(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -346,7 +384,7 @@
       "label": "nombre premier",
       "grade": "3e",
       "patterns": [
-        "\\bnombres? premiers?\\b"
+        "(?<![\\p{L}\\p{N}_])nombres? premiers?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -370,7 +408,7 @@
       "label": "médiane (statistique)",
       "grade": "3e",
       "patterns": [
-        "\\bm[ée]dianes?\\b"
+        "(?<![\\p{L}\\p{N}_])m[ée]dianes?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -378,7 +416,7 @@
       "label": "étendue",
       "grade": "3e",
       "patterns": [
-        "\\b[ée]tendue\\b"
+        "(?<![\\p{L}\\p{N}_])[ée]tendue(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -386,7 +424,7 @@
       "label": "fréquence",
       "grade": "3e",
       "patterns": [
-        "\\bfr[ée]quences?\\b"
+        "(?<![\\p{L}\\p{N}_])fr[ée]quences?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -394,7 +432,7 @@
       "label": "probabilité",
       "grade": "3e",
       "patterns": [
-        "\\bprobabilit[ée]s?\\b"
+        "(?<![\\p{L}\\p{N}_])probabilit[ée]s?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -402,8 +440,8 @@
       "label": "issue / événement",
       "grade": "3e",
       "patterns": [
-        "\\bissues?\\b",
-        "\\b[ée]v[ée]nements?\\b"
+        "(?<![\\p{L}\\p{N}_])issues?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])[ée]v[ée]nements?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -411,7 +449,7 @@
       "label": "intervalle",
       "grade": "seconde",
       "patterns": [
-        "\\bintervalles?\\b"
+        "(?<![\\p{L}\\p{N}_])intervalles?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -420,7 +458,7 @@
       "grade": "seconde",
       "patterns": [
         "\\]\\s*-?[0-9∞]+\\s*;",
-        "\\bcrochets?\\b"
+        "(?<![\\p{L}\\p{N}_])crochets?(?![\\p{L}\\p{N}_])"
       ],
       "notationPatterns": [
         "[\\[\\]]\\s*[^;\\[\\]]+\\s*;\\s*[^;\\[\\]]+\\s*[\\[\\]]"
@@ -431,8 +469,8 @@
       "label": "ensemble ℝ",
       "grade": "seconde",
       "patterns": [
-        "\\bℝ\\b",
-        "\\bnombres? r[ée]els?\\b"
+        "(?<![\\p{L}\\p{N}_])ℝ(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])nombres? r[ée]els?(?![\\p{L}\\p{N}_])"
       ],
       "notationPatterns": [
         "\\\\mathbb\\{R\\}",
@@ -444,11 +482,11 @@
       "label": "symbole ∈",
       "grade": "seconde",
       "patterns": [
-        "\\bappartient\\b",
+        "(?<![\\p{L}\\p{N}_])appartient(?![\\p{L}\\p{N}_])",
         "∈"
       ],
       "notationPatterns": [
-        "\\\\in\\b",
+        "\\\\in(?![\\p{L}\\p{N}_])",
         "∈"
       ]
     },
@@ -457,11 +495,11 @@
       "label": "symbole ⊂",
       "grade": "seconde",
       "patterns": [
-        "\\binclus\\b",
+        "(?<![\\p{L}\\p{N}_])inclus(?![\\p{L}\\p{N}_])",
         "⊂"
       ],
       "notationPatterns": [
-        "\\\\subset\\b",
+        "\\\\subset(?![\\p{L}\\p{N}_])",
         "⊂"
       ]
     },
@@ -470,7 +508,7 @@
       "label": "colinéaire",
       "grade": "seconde",
       "patterns": [
-        "\\bcolin[ée]aires?\\b"
+        "(?<![\\p{L}\\p{N}_])colin[ée]aires?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -494,8 +532,8 @@
       "label": "variations / croissante / décroissante",
       "grade": "seconde",
       "patterns": [
-        "\\bcroissante?\\b",
-        "\\bd[ée]croissante?\\b",
+        "(?<![\\p{L}\\p{N}_])croissante?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])d[ée]croissante?(?![\\p{L}\\p{N}_])",
         "tableau de variations?"
       ]
     },
@@ -504,9 +542,9 @@
       "label": "extremum / maximum / minimum",
       "grade": "seconde",
       "patterns": [
-        "\\bextremums?\\b",
-        "\\bmaximum\\b",
-        "\\bminimum\\b"
+        "(?<![\\p{L}\\p{N}_])extremums?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])maximum(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])minimum(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -514,9 +552,9 @@
       "label": "quartile",
       "grade": "seconde",
       "patterns": [
-        "\\bquartiles?\\b",
-        "\\bQ1\\b",
-        "\\bQ3\\b"
+        "(?<![\\p{L}\\p{N}_])quartiles?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Q1(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Q3(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -533,7 +571,7 @@
       "grade": "seconde",
       "patterns": [
         "fr[ée]quence conditionnelle",
-        "\\bconditionnelles?\\b"
+        "(?<![\\p{L}\\p{N}_])conditionnelles?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -541,8 +579,43 @@
       "label": "échantillon",
       "grade": "seconde",
       "patterns": [
-        "\\b[ée]chantillons?\\b"
+        "(?<![\\p{L}\\p{N}_])[ée]chantillons?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "equation-premier-degre",
+      "label": "équation du premier degré",
+      "grade": "4e",
+      "patterns": [
+        "[ée]quation du premier degr[ée]",
+        "R[ée]soudre\\s+[^.]{0,30}="
+      ]
+    },
+    {
+      "id": "modele",
+      "label": "modèle",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])mod[èe]les?(?<![\\p{L}\\p{N}_])(?!\\s+[A-Z])",
+        "(?<![\\p{L}\\p{N}_])mod[ée]lis(?:er|ez|ation|ations)(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "domaine-validite",
+      "label": "domaine de validité",
+      "grade": "3e",
+      "patterns": [
+        "domaine de validit[ée]"
+      ]
+    },
+    {
+      "id": "extrapolation",
+      "label": "extrapolation",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])extrapol\\w*"
       ]
     }
-  ]
+  ],
+  "_boundaryNote": "Les motifs utilisent des bornes Unicode explicites (?<![\\p{L}\\p{N}_]) … (?![\\p{L}\\p{N}_]) et jamais \\b : en JavaScript \\b reste ASCII même sous le drapeau /u, si bien qu'une lettre accentuée crée une frontière au milieu d'un mot — « aire » se déclenchait dans « linéaire ». Conserver cette convention."
 }

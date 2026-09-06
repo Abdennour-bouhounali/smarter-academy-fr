@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ScrollText } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProofStrip from '../components/ProofStrip';
@@ -127,6 +128,7 @@ export default function Module06Rediger() {
           cols={1}
           explain="Le théorème direct PART du parallélisme ; ici on veut y arriver. C’est donc la réciproque. Si les rapports s’avéraient différents, on conclurait par la contraposée — mais on ne le sait qu’après avoir calculé."
           explainWrong="Le théorème direct suppose le parallélisme connu. L’utiliser ici reviendrait à supposer ce qu’on cherche justement à démontrer."
+          requires={['choisir-enonce', 'reciproque-thales', 'theoreme-thales']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
@@ -154,6 +156,7 @@ export default function Module06Rediger() {
         ),
       }}
       intro={
+        <div className="space-y-3">
         <div className="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 space-y-2">
           <div className="flex gap-2 items-center">
             <ScrollText className="w-5 h-5 text-blue-700" aria-hidden="true" />
@@ -175,15 +178,20 @@ export default function Module06Rediger() {
             </li>
           </ul>
         </div>
+        <KnowledgeBrick
+          id="choisir-enonce"
+          variant="new"
+          lead="Avant de rédiger, une question à se poser à chaque fois."
+        />
+        </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Le réflexe.</strong> Demande-toi toujours : le parallélisme est-il une{' '}
-          <em>donnée</em> (alors c’est le théorème) ou la <em>question</em> (alors c’est la
-          réciproque) ?
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tu sais rédiger. Voyons ce que Thalès permet de mesurer
+          dans le monde réel.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

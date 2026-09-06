@@ -20,6 +20,7 @@ const QUESTIONS = [
   {
     id: 'th-d1-croix',
     skill: 'proportion',
+    requires: ['proportionnalite'],
     points: 2,
     prompt: 'Si 3/6 = x/10, combien vaut x ?',
     options: ['5', '7', '20'],
@@ -30,6 +31,7 @@ const QUESTIONS = [
   {
     id: 'th-d2-comparer',
     skill: 'fractions',
+    requires: ['quotient'],
     points: 2,
     prompt: 'Les quotients 4/10 et 6/15 sont-ils égaux ?',
     options: ['Oui, ils valent tous les deux 0,4', 'Non', 'On ne peut pas comparer'],
@@ -40,6 +42,7 @@ const QUESTIONS = [
   {
     id: 'th-d3-simplifier',
     skill: 'fractions',
+    requires: ['quotient', 'arrondi'],
     points: 2,
     prompt: 'Sous quelle forme simplifiée s’écrit 12/18 ?',
     options: ['2/3', '6/9', '1/6'],
@@ -50,6 +53,7 @@ const QUESTIONS = [
   {
     id: 'th-d4-paralleles',
     skill: 'geometrie',
+    requires: ['droites-paralleles'],
     points: 2,
     prompt: 'Deux droites parallèles, ce sont deux droites qui…',
     options: [
@@ -64,6 +68,7 @@ const QUESTIONS = [
   {
     id: 'th-d5-echelle',
     skill: 'proportion',
+    requires: ['proportionnalite'],
     points: 2,
     prompt: 'Une maquette est à l’échelle 1/50. Une longueur de 3 cm sur la maquette correspond à…',
     options: ['150 cm en réalité', '53 cm en réalité', '0,06 cm en réalité'],

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ScanSearch } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ThalesLab from '../components/ThalesLab';
 import { FIGURES } from '../components/thalesUtils';
@@ -50,6 +51,17 @@ export default function Module02Reconnaitre() {
                 ariaLabel="Configuration papillon : M au-delà de A" />
             </div>
           </div>
+          <KnowledgeBrick
+            id="droites-secantes"
+            variant="new"
+            compact
+            lead="Un mot d’abord, pour décrire ce que tu vois : les deux droites qui partent de A."
+          />
+          <KnowledgeBrick
+            id="configuration-thales"
+            variant="new"
+            lead="Ces deux figures ont la même structure. La voici."
+          />
           <TapQuestion
             prompt="Qu’ont en commun ces deux figures ?"
             options={[
@@ -62,8 +74,15 @@ export default function Module02Reconnaitre() {
             cols={1}
             explain="Dans les deux cas : deux droites se coupent en A, et deux droites parallèles ((MN) et (BC)) viennent les couper. Que M soit entre A et B ou de l’autre côté ne change rien — le papillon est une configuration de Thalès à part entière."
             explainWrong="Le « petit triangle dans le grand » ne décrit que le premier cas. Dans le papillon, les deux triangles sont opposés par le sommet A, et pourtant Thalès s’applique."
+            requires={['droites-secantes', 'configuration-thales', 'droites-paralleles']}
             solved={q2}
             onAnswered={() => setQ2(true)}
+          />
+          <KnowledgeBrick
+            id="triangle-papillon"
+            variant="new"
+            compact
+            lead="Et les deux formes que tu viens de comparer portent chacune un nom."
           />
         </div>
       ),
@@ -117,6 +136,7 @@ export default function Module02Reconnaitre() {
                 : `${nCorrect} sur ${total}. Pose-toi toujours les deux questions : les droites se coupent-elles en un même point ? Y a-t-il bien deux parallèles ?`}
             </Feedback>
           )}
+          requires={['configuration-thales', 'triangle-papillon', 'droites-paralleles']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
@@ -154,14 +174,12 @@ export default function Module02Reconnaitre() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Une configuration de Thalès, c’est deux droites sécantes en un
-          point A, coupées par deux droites parallèles. Elle prend deux formes : le{' '}
-          <strong>triangle</strong> et le <strong>papillon</strong>. Les deux se traitent de la même
-          façon.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu reconnais la configuration. Au module suivant, on
+          regarde ce que ses rapports ont de remarquable.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

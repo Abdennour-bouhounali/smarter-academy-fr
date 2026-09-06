@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Pyramid, Waves } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { fourthProportional, roundTenth, twoRatiosAgree } from '../components/thalesUtils';
 
@@ -57,6 +58,7 @@ export default function Module07DeKheopsAuParking() {
             explainFor={(n) => (Math.abs(n - (2 * 187.4) / 1.5) < 1
               ? 'Produit en croix inversé. Le bâton est plus PETIT que son ombre (1,5 < 2), donc la pyramide doit être plus petite que son ombre de 187,4 m.'
               : null)}
+            requires={['mesurer-inaccessible', 'methode-calculer-longueur']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -88,6 +90,7 @@ export default function Module07DeKheopsAuParking() {
             explainFor={(n) => (Math.abs(n - 3.2) < 0.2
               ? 'Produit en croix inversé : tu obtiens une longueur plus petite que MN, alors que BC est le grand segment.'
               : null)}
+            requires={['mesurer-inaccessible', 'methode-calculer-longueur']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -120,6 +123,7 @@ export default function Module07DeKheopsAuParking() {
             cols={1}
             explain="On calcule les deux rapports : 45 ÷ 120 = 0,375 et 60 ÷ 160 = 0,375. Ils sont égaux, et les points sont alignés dans le même ordre : d’après la réciproque du théorème de Thalès, la poutre est bien parallèle à la base."
             explainWrong="Ce sont les RAPPORTS qu’il faut comparer, pas les longueurs ni leurs différences. Ici les deux quotients valent 0,375."
+            requires={['reciproque-thales', 'contraposee-thales']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -148,6 +152,7 @@ export default function Module07DeKheopsAuParking() {
         ),
       }}
       intro={
+        <div className="space-y-3">
         <div className="grid sm:grid-cols-2 gap-3">
           {[
             { icon: Pyramid, t: 'Mesurer', d: 'Une hauteur qu’on ne peut pas atteindre.', c: 'text-amber-600' },
@@ -160,15 +165,19 @@ export default function Module07DeKheopsAuParking() {
             </div>
           ))}
         </div>
+        <KnowledgeBrick
+          id="mesurer-inaccessible"
+          variant="new"
+          lead="Voici à quoi tout cela sert, depuis vingt-six siècles."
+        />
+        </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Ce que Thalès permet.</strong> Mesurer ce qu’on ne peut pas atteindre, et
-          démontrer un parallélisme sans jamais poser d’équerre — à condition d’avoir reconnu la
-          configuration.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Il ne reste qu’à tout mettre à l’épreuve.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

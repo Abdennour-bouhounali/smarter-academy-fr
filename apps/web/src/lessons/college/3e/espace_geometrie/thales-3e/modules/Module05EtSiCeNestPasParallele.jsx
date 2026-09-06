@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { GitCompareArrows, XCircle } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ThalesLab from '../components/ThalesLab';
 import {
@@ -94,6 +95,12 @@ export default function Module05EtSiCeNestPasParallele() {
       subtitle: 'Ici, aucune figure : seulement des nombres.',
       done: batch,
       content: (
+        <div className="space-y-3">
+        <KnowledgeBrick
+          id="reciproque-thales"
+          variant="new"
+          lead="Jusqu’ici le parallélisme était donné. Cette fois, c’est lui qu’on cherche à prouver."
+        />
         <BatchChoiceQuestion
           intro={
             <p className="text-sm text-slate-700">
@@ -138,9 +145,19 @@ export default function Module05EtSiCeNestPasParallele() {
                 : `${nCorrect} sur ${total}. Calcule toujours les deux quotients, puis compare-les — des longueurs égales ne suffisent pas.`}
             </Feedback>
           )}
+          requires={['reciproque-thales', 'theoreme-thales', 'quotient']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
+        {batch && (
+          <KnowledgeBrick
+            id="contraposee-thales"
+            variant="new"
+            compact
+            lead="Les cas « non parallèles » que tu viens de trancher ont eux aussi leur énoncé."
+          />
+        )}
+        </div>
       ),
     },
     {
@@ -160,6 +177,7 @@ export default function Module05EtSiCeNestPasParallele() {
           cols={1}
           explain="Si les points ne se correspondent pas dans le même ordre (l’un du côté de A, l’autre au-delà), les rapports peuvent être égaux sans que les droites soient parallèles. L’énoncé complet de la réciproque exige donc cette condition d’ordre."
           explainWrong="L’égalité des rapports ne suffit pas à elle seule : il faut aussi que les points soient disposés dans le même ordre sur les deux droites."
+          requires={['reciproque-thales']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
@@ -201,13 +219,12 @@ export default function Module05EtSiCeNestPasParallele() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> <em>Réciproque</em> : si les points sont alignés dans le même
-          ordre et que AM/AB = AN/AC, alors (MN) ∥ (BC). <em>Contraposée</em> : si ces rapports sont
-          différents, alors (MN) et (BC) ne sont pas parallèles.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Deux énoncés, deux usages. Reste à choisir le bon au bon
+          moment.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

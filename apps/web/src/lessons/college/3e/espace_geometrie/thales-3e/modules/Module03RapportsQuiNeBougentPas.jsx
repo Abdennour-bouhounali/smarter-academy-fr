@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Stamp, Move } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ThalesLab from '../components/ThalesLab';
@@ -121,9 +122,17 @@ export default function Module03RapportsQuiNeBougentPas() {
             cols={1}
             explain="Chaque rapport compare un petit segment à son grand correspondant, TOUJOURS dans le même ordre : le petit au-dessus, le grand en dessous, et les deux partant du même sommet A. La troisième fraction compare les deux segments parallèles."
             explainWrong="Attention à l’ordre : si tu écris AC/AN, tu inverses une des fractions et l’égalité devient fausse. Chaque rapport se lit « petit sur grand », en partant toujours de A."
+            requires={['configuration-thales', 'quotient']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
+            {q2 && (
+              <KnowledgeBrick
+                id="theoreme-thales"
+                variant="new"
+                lead="Ce que tu viens d’écrire porte un nom, et c’est le cœur de la leçon."
+              />
+            )}
         </div>
       ),
     },
@@ -163,13 +172,12 @@ export default function Module03RapportsQuiNeBougentPas() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Théorème de Thalès.</strong> Si (MN) est parallèle à (BC), alors{' '}
-          <MathText>{'$\\frac{AM}{AB} = \\frac{AN}{AC} = \\frac{MN}{BC}$'}</MathText>. Les longueurs
-          changent, ces trois rapports restent égaux.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Le théorème est posé. Il ne reste qu’à s’en servir pour
+          calculer.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

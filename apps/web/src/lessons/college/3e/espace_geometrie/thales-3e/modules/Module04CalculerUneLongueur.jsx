@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Calculator } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ThalesLab from '../components/ThalesLab';
@@ -59,6 +60,7 @@ export default function Module04CalculerUneLongueur() {
             cols={2}
             explain="Cette paire contient AM, AB et BC — trois longueurs connues — et MN, l’inconnue. Les deux autres paires font intervenir AN et AC, dont on ne sait rien : elles ne permettent aucun calcul."
             explainWrong="Vérifie ce que contient chaque paire : il faut TROIS longueurs connues et une seule inconnue. AN et AC ne sont pas données ici."
+            requires={['theoreme-thales', 'configuration-thales']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -71,6 +73,12 @@ export default function Module04CalculerUneLongueur() {
       done: q2,
       content: (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="methode-calculer-longueur"
+            variant="new"
+            compact
+            lead="Tu viens de choisir la bonne égalité. Voici la marche complète, une fois pour toutes."
+          />
           <div className="rounded-xl bg-slate-50 border-2 border-slate-200 p-3 text-center">
             <MathText>{'$\\frac{3}{9} = \\frac{MN}{12}$'}</MathText>
           </div>
@@ -85,6 +93,7 @@ export default function Module04CalculerUneLongueur() {
             explainFor={(n) => (n === 36
               ? 'Tu as inversé le produit en croix : (9 × 12) ÷ 3 = 36 cm, soit plus LONG que BC alors que MN est le petit segment. Le contrôle de cohérence rattrape cette erreur.'
               : n === 9 ? 'Tu as soustrait 12 − 3. Thalès porte sur des rapports, pas sur des différences.' : null)}
+            requires={['methode-calculer-longueur', 'theoreme-thales']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -119,9 +128,18 @@ export default function Module04CalculerUneLongueur() {
             explainFor={(n) => (n === 37.5
               ? 'Produit en croix inversé : (10 × 15) ÷ 4 = 37,5 cm, bien plus long que BC. Le rapport vaut 0,4 : MN doit être plus COURT que BC.'
               : null)}
+            requires={['methode-calculer-longueur', 'theoreme-thales']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
+            {q3 && (
+              <KnowledgeBrick
+                id="mem-controle-rapport"
+                variant="new"
+                compact
+                lead="Un réflexe de relecture, qui rattrape l’erreur la plus fréquente."
+              />
+            )}
         </div>
       ),
     },
@@ -156,13 +174,12 @@ export default function Module04CalculerUneLongueur() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Le contrôle qui sauve.</strong> Si le rapport est inférieur à 1, la longueur
-          cherchée doit être plus COURTE que sa correspondante. Un résultat plus grand signale un
-          produit en croix inversé.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais calculer une longueur. Et si le parallélisme était
+          justement la question ?
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

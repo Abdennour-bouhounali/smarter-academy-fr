@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Sun, Ruler } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { roundTenth } from '../components/thalesUtils';
 
@@ -179,6 +180,7 @@ export default function Module01LombreAuSoleil() {
       title: 'Rapport ou différence ?',
       done: q2,
       content: (
+        <div className="space-y-3">
         <TapQuestion
           prompt="Regarde tes trois relevés : la hauteur change, l’ombre change. Qu’est-ce qui, lui, ne change pas ?"
           options={[
@@ -191,9 +193,18 @@ export default function Module01LombreAuSoleil() {
           cols={1}
           explain="Tes trois relevés donnent le même quotient. La différence, elle, change : elle dépend de la hauteur. C’est le RAPPORT qui est l’invariant — et c’est ce qui va permettre de calculer des longueurs inaccessibles."
           explainWrong="Reprends tes relevés : les différences entre ombre et hauteur ne sont pas les mêmes, alors que les quotients, si."
+          requires={['quotient']}
           solved={q2}
           onAnswered={() => setQ2(true)}
         />
+          {q2 && (
+            <KnowledgeBrick
+              id="agrandissement-rapports"
+              variant="new"
+              lead="Ce qui résiste au changement de taille mérite d’être retenu."
+            />
+          )}
+        </div>
       ),
     },
     {
@@ -220,6 +231,7 @@ export default function Module01LombreAuSoleil() {
             explainFor={(n) => (n === 9
               ? 'Tu as multiplié 6 par 1,5. Le rapport est ombre ÷ hauteur : pour retrouver la hauteur, il faut DIVISER l’ombre par ce rapport.'
               : null)}
+            requires={['agrandissement-rapports', 'quotient']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -262,13 +274,12 @@ export default function Module01LombreAuSoleil() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Ce que tu viens d’observer.</strong> Quand une configuration est conservée
-          (ici les rayons du lampadaire), les rapports de longueurs correspondants restent égaux.
-          C’est ce phénomène qui va nous occuper toute la leçon.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Les rapports résistent à l’agrandissement. Reste à
+          reconnaître les figures où cette propriété s’applique.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

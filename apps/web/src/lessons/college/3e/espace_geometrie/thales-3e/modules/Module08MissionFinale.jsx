@@ -26,6 +26,7 @@ const EPREUVES = [
   {
     id: 'th-e1',
     skill: 'config',
+    requires: ['configuration-thales', 'triangle-papillon', 'droites-secantes'],
     title: 'Reconnaître',
     prompt: 'Quelles conditions définissent une configuration de Thalès ?',
     options: [
@@ -41,6 +42,7 @@ const EPREUVES = [
   {
     id: 'th-e2',
     skill: 'config',
+    requires: ['configuration-thales', 'triangle-papillon', 'droites-secantes'],
     title: 'La condition indispensable',
     prompt: 'Dans une configuration où les droites (MN) et (BC) ne sont PAS parallèles, peut-on appliquer le théorème de Thalès ?',
     options: [
@@ -56,6 +58,7 @@ const EPREUVES = [
   {
     id: 'th-e3',
     skill: 'rapports',
+    requires: ['theoreme-thales'],
     title: 'Écrire les rapports',
     prompt: 'ABC est un triangle, M sur [AB] et N sur [AC], avec (MN) ∥ (BC). Quelle égalité est correcte ?',
     options: [
@@ -78,6 +81,7 @@ const EPREUVES = [
   {
     id: 'th-e4',
     skill: 'rapports',
+    requires: ['theoreme-thales'],
     title: 'Ce qui se conserve',
     prompt: 'Quand on déplace M sur (AB) en gardant (MN) ∥ (BC), qu’est-ce qui reste constant ?',
     options: [
@@ -93,6 +97,7 @@ const EPREUVES = [
   {
     id: 'th-e5',
     skill: 'calculer',
+    requires: ['methode-calculer-longueur', 'theoreme-thales'],
     title: 'Choisir la bonne paire',
     prompt: 'On connaît AM = 4, AB = 12 et BC = 18, et on cherche MN. Quelle égalité utiliser ?',
     options: [
@@ -110,6 +115,7 @@ const EPREUVES = [
   {
     id: 'th-e6',
     skill: 'calculer',
+    requires: ['methode-calculer-longueur', 'theoreme-thales'],
     title: 'Le calcul',
     prompt: 'Avec AM = 4, AB = 12 et BC = 18, combien mesure MN ?',
     options: ['6', '54', '10', '14'],
@@ -120,6 +126,7 @@ const EPREUVES = [
   {
     id: 'th-e7',
     skill: 'coherence',
+    requires: ['mem-controle-rapport'],
     title: 'Un résultat suspect',
     prompt: 'Dans une configuration où AM/AB = 0,25, un élève trouve MN = 40 alors que BC = 16. Que peut-on dire ?',
     options: [
@@ -135,6 +142,7 @@ const EPREUVES = [
   {
     id: 'th-e8',
     skill: 'reciproque',
+    requires: ['reciproque-thales', 'contraposee-thales'],
     title: 'Démontrer un parallélisme',
     prompt: 'A, M, B alignés dans cet ordre et A, N, C aussi. AM = 3, AB = 12, AN = 5, AC = 20. Les droites (MN) et (BC) sont-elles parallèles ?',
     options: [
@@ -150,6 +158,7 @@ const EPREUVES = [
   {
     id: 'th-e9',
     skill: 'reciproque',
+    requires: ['reciproque-thales', 'contraposee-thales'],
     title: 'La contraposée',
     prompt: 'AM = 4, AB = 9, AN = 6, AC = 14. On calcule 4/9 ≈ 0,444 et 6/14 ≈ 0,429. Que conclut-on ?',
     options: [
@@ -165,6 +174,7 @@ const EPREUVES = [
   {
     id: 'th-e10',
     skill: 'rediger',
+    requires: ['choisir-enonce'],
     title: 'Khéops',
     prompt: 'Un bâton de 1,5 m projette une ombre de 2 m ; au même instant l’ombre de la pyramide mesure 187,4 m. Quelle est sa hauteur, au dixième ?',
     options: ['140,6 m', '249,9 m', '124,9 m', '281,1 m'],
