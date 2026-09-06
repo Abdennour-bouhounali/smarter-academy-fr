@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProductScanner from '../components/ProductScanner';
@@ -29,8 +30,11 @@ import {
  *   la deuxième branche).
  * Feedback: hors zéro, le produit exact est affiché avec les deux valeurs de
  *   facteurs — l'écart à 0 est visible, jamais un « faux » nu.
- * Formalization: étape 3, la règle du produit nul, puis chaque branche
- *   résolue comme une équation du premier degré.
+ * Formalization: la règle du produit nul et la méthode des branches vivent
+ *   dans `knowledge.jsx`. La règle est posée par une <KnowledgeBrick> APRÈS
+ *   la question de l'étape 2 — c'est cette question qui la fait DÉCOUVRIR,
+ *   elle ne peut donc pas l'exiger ; la méthode est posée avant les deux
+ *   branches à résoudre (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 balayages sans zéro trouvé, « Je ne trouve pas —
  *   montre-moi » place le curseur sur un zéro et le tamponne.
  * Transfer: étape 4 réinvestit sur x(x − 4) — le facteur nu vaut zéro aussi.
@@ -154,6 +158,7 @@ export default function Module04Scanner() {
           title: 'Pourquoi ces deux-là, et pas d’autres ?',
           done: ruleDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="Sur toute la bande, qu’est-ce qui se passait à CHAQUE fois que le produit valait 0 ?"
               options={[
@@ -177,9 +182,18 @@ export default function Module04Scanner() {
                   suffit qu’UN facteur soit nul. Et un produit « petit » (par exemple −0,5) n’est pas nul.
                 </>
               }
+              requires={['produit-nul-constat']}
               solved={ruleDone}
               onAnswered={() => setRuleDone(true)}
             />
+            {ruleDone && (
+              <KnowledgeBrick
+                id="regle-produit-nul"
+                variant="new"
+                lead="Le même constat qu’au module 1, mais A et B ne sont plus des nombres : ce sont des expressions en x. La règle, elle, ne bouge pas."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -189,15 +203,14 @@ export default function Module04Scanner() {
           done: branchesDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 text-center space-y-2">
-                <p className="text-sm font-semibold text-violet-900">La règle, maintenant qu’elle est vue :</p>
-                <MathText className="text-lg text-slate-800">
-                  {'$A \\times B = 0 \\iff A = 0 \\text{ ou } B = 0$'}
-                </MathText>
-              </div>
+              <KnowledgeBrick
+                id="methode-branches"
+                variant="new"
+                lead="Puisqu’il suffit d’un facteur nul, la question « où le produit s’annule-t-il ? » se coupe en autant de questions qu’il y a de facteurs."
+              />
               <p className="text-sm text-slate-600">
-                Donc <MathText>{`$${formatProduct(F1, F2)} = 0$`}</MathText> se coupe en deux équations du
-                premier degré. Résous-les.
+                À toi : <MathText>{`$${formatProduct(F1, F2)} = 0$`}</MathText> se coupe en deux
+                équations du premier degré. Résous-les avec la balance du module 3.
               </p>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-2xl border-2 border-slate-200 bg-white p-4 space-y-2">
@@ -210,6 +223,7 @@ export default function Module04Scanner() {
                     parse={parseDec}
                     display={formatDec(solveLinear({ left: F1, right: lin(0, 0) }).x)}
                     explain="On ajoute 3 des deux côtés : x = 3."
+                    requires={['methode-branches', 'equation-premier-degre']}
                     solved={branch1}
                     onAnswered={() => setBranch1(true)}
                   />
@@ -229,6 +243,7 @@ export default function Module04Scanner() {
                         ? 'Attention au signe : 2x = −4 donne x = −2, pas 2.'
                         : 'On retire 4 des deux côtés (2x = −4), puis on partage en 2 : x = −2.'
                     }
+                    requires={['methode-branches', 'equation-premier-degre', 'nombres-relatifs']}
                     solved={branch2}
                     onAnswered={() => setBranch2(true)}
                   />
@@ -275,18 +290,19 @@ export default function Module04Scanner() {
                   <MathText>{'$0 \\times (0 - 4) = 0$'}</MathText>.
                 </>
               }
+              requires={['methode-branches', 'regle-produit-nul', 'ensemble-solutions']}
               solved={transferDone}
               onAnswered={() => setTransferDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Tu as scanné, trouvé les zéros, puis coupé le produit en deux équations simples. C’est la méthode
-          entière : <strong>ramener à un produit nul, puis annuler chaque facteur</strong>.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais trouver les solutions. Reste à prouver qu’elles en sont —
+          et à décider lesquelles ont un sens quand l’équation vient d’un vrai problème.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

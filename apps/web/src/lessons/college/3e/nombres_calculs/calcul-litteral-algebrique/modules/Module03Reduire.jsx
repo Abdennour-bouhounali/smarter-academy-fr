@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -31,8 +32,12 @@ import { term, mergeTerms, isReduced, formatTerms } from '../components/litteral
  *   « si ça marche pour x = 1, c'est égal » (#6), « −(x − 4) = −x − 4 » (#8).
  * Feedback: le refus d'empilement est formulé en tuiles ; le tableau colore
  *   la ligne qui tue l'égalité — la conclusion se LIT.
- * Formalization: le mot « réduire » est nommé après l'étape 1, la règle
- *   « une valeur ne suffit pas » après l'étape 3.
+ * Formalization: « réduire », la règle du testeur et le signe devant une
+ *   parenthèse vivent dans `knowledge.jsx` ; des <KnowledgeBrick> les posent
+ *   après l'étape 1, après l'étape 3 et après le verdict de l'étape 4. La
+ *   dernière question reste une DÉCOUVERTE : elle ne peut donc pas exiger ce
+ *   qu'elle fait trouver, et le test x = 0 la met à portée de l'élève
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 refus, « Je ne trouve pas — montre-moi » regroupe une
  *   bonne paire et signale la révélation ; les cartes restent actives.
  * Transfer: étape 4, le facteur −1 devant une parenthèse — le même refus,
@@ -188,14 +193,11 @@ export default function Module03Reduire() {
                     classique serait <MathText>{'$3x + 5$'}</MathText> — le −8 aurait perdu son signe.
                     {b1.revealed && ' (Les piles t’ont été montrées — refais le geste à l’étape suivante.)'}
                   </Feedback>
-                  <div className="rounded-2xl border-2 border-cyan-200 bg-cyan-50 p-4 space-y-1.5">
-                    <p className="text-sm font-semibold text-cyan-900">Le mot :</p>
-                    <p className="text-sm text-cyan-900 leading-relaxed">
-                      <strong>Réduire</strong> une expression, c’est empiler tous les termes semblables
-                      jusqu’à ce qu’il n’en reste plus qu’un par forme de tuile. On n’ajoute rien, on
-                      n’enlève rien : la quantité est la même pour <strong>toute</strong> valeur de x.
-                    </p>
-                  </div>
+                  <KnowledgeBrick
+                    id="reduire"
+                    variant="new"
+                    lead="Quatre cartes, deux piles, et pas une tuile perdue en route. Ce rangement porte un nom."
+                  />
                 </>
               )}
             </div>
@@ -279,6 +281,7 @@ export default function Module03Reduire() {
                     ci-dessous va trancher : teste plusieurs valeurs de x.
                   </>
                 }
+                requires={['termes-semblables', 'reduire']}
                 solved={predicted}
                 onAnswered={() => setPredicted(true)}
               />
@@ -321,15 +324,11 @@ export default function Module03Reduire() {
                     Pour <MathText>{'$x = 2$'}</MathText> : 8 d’un côté, 10 de l’autre. Une seule ligne
                     rose et c’est fini : <MathText>{'$3x + 2 \\neq 5x$'}</MathText>.
                   </Feedback>
-                  <div className="rounded-2xl border-2 border-cyan-200 bg-cyan-50 p-4 space-y-1.5">
-                    <p className="text-sm font-semibold text-cyan-900">La règle du testeur :</p>
-                    <p className="text-sm text-cyan-900 leading-relaxed">
-                      Une valeur qui s’accorde ne <strong>prouve</strong> rien — deux machines
-                      différentes peuvent se croiser en un point. En revanche, une seule valeur qui
-                      diffère <strong>réfute</strong> l’égalité pour de bon. Le tableau ne sert donc pas
-                      à confirmer : il sert à <strong>attraper les fausses écritures</strong>.
-                    </p>
-                  </div>
+                  <KnowledgeBrick
+                    id="regle-testeur"
+                    variant="new"
+                    lead="La ligne x = 1 était verte, et pourtant l’égalité était fausse. Voilà ce que le tableau prouve — et ce qu’il ne prouve pas."
+                  />
                 </>
               )}
             </div>
@@ -338,50 +337,67 @@ export default function Module03Reduire() {
         {
           num: 4,
           title: 'Le moins devant la parenthèse',
+          subtitle: 'Personne ne te l’a encore dit : sers-toi du testeur pour trancher.',
           done: done4,
           content: (
-            <TapQuestion
-              prompt={
-                <>
-                  Que vaut <MathText>{'$-(x - 4)$'}</MathText> une fois la parenthèse retirée ?
-                </>
-              }
-              options={['$-x - 4$', '$-x + 4$', '$x - 4$', '$x + 4$']}
-              renderOption={(o) => <MathText>{o}</MathText>}
-              optionLabel={(i) => ['−x − 4', '−x + 4', 'x − 4', 'x + 4'][i]}
-              correctionLabel="−x + 4"
-              cols={2}
-              correct={1}
-              explain={
-                <>
-                  Le signe − devant la parenthèse est un facteur{' '}
-                  <MathText>{'$-1$'}</MathText> qui touche <strong>les deux</strong> termes :{' '}
-                  <MathText>{'$-1 \\times x = -x$'}</MathText> et{' '}
-                  <MathText>{'$-1 \\times (-4) = +4$'}</MathText>. Test rapide avec x = 0 :{' '}
-                  <MathText>{'$-(0 - 4) = 4$'}</MathText> — c’est bien +4.
-                </>
-              }
-              explainWrong={
-                <>
-                  <MathText>{'$-x - 4$'}</MathText> est l’erreur la plus fréquente : le moins n’a touché
-                  que le premier terme. Mets <MathText>{'$x = 0$'}</MathText> :{' '}
-                  <MathText>{'$-(0 - 4) = -(-4) = 4$'}</MathText>, alors que{' '}
-                  <MathText>{'$-0 - 4 = -4$'}</MathText>. Deux nombres opposés — l’écriture est fausse.
-                </>
-              }
-              solved={done4}
-              onAnswered={() => setSignDone(true)}
-            />
+            <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Tu sais que <MathText>{'$5 - (-2) = 7$'}</MathText>. Alors pose{' '}
+                <MathText>{'$x = 0$'}</MathText> dans les quatre écritures proposées et regarde
+                laquelle donne la même chose que <MathText>{'$-(0 - 4)$'}</MathText>. C’est
+                exactement le geste du testeur, appliqué à une parenthèse.
+              </p>
+              <TapQuestion
+                prompt={
+                  <>
+                    Que vaut <MathText>{'$-(x - 4)$'}</MathText> une fois la parenthèse retirée ?
+                  </>
+                }
+                options={['$-x - 4$', '$-x + 4$', '$x - 4$', '$x + 4$']}
+                renderOption={(o) => <MathText>{o}</MathText>}
+                optionLabel={(i) => ['−x − 4', '−x + 4', 'x − 4', 'x + 4'][i]}
+                correctionLabel="−x + 4"
+                cols={2}
+                correct={1}
+                explain={
+                  <>
+                    Le signe − devant la parenthèse est un facteur{' '}
+                    <MathText>{'$-1$'}</MathText> qui touche <strong>les deux</strong> termes :{' '}
+                    <MathText>{'$-1 \\times x = -x$'}</MathText> et{' '}
+                    <MathText>{'$-1 \\times (-4) = +4$'}</MathText>. Test rapide avec x = 0 :{' '}
+                    <MathText>{'$-(0 - 4) = 4$'}</MathText> — c’est bien +4.
+                  </>
+                }
+                explainWrong={
+                  <>
+                    <MathText>{'$-x - 4$'}</MathText> est l’erreur la plus fréquente : le moins n’a touché
+                    que le premier terme. Mets <MathText>{'$x = 0$'}</MathText> :{' '}
+                    <MathText>{'$-(0 - 4) = -(-4) = 4$'}</MathText>, alors que{' '}
+                    <MathText>{'$-0 - 4 = -4$'}</MathText>. Deux nombres opposés — l’écriture est fausse.
+                  </>
+                }
+                requires={['regle-testeur', 'nombres-relatifs']}
+                solved={done4}
+                onAnswered={() => setSignDone(true)}
+              />
+              {done4 && (
+                <KnowledgeBrick
+                  id="signe-parenthese"
+                  variant="new"
+                  lead="Le testeur a tranché : c’est bien +4 qui sort. Voilà pourquoi, et ce qu’il faut en retenir."
+                />
+              )}
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Réduire ne change jamais la quantité : c’est un <strong>rangement</strong>, pas un calcul. Et
-          quand une écriture te paraît douteuse, tu as maintenant un outil imparable — le{' '}
-          <strong>tableau de valeurs</strong>, avec au moins deux lignes.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais ranger une somme et démasquer une écriture fausse. Au
+          module suivant, on part dans l’autre sens : d’un produit vers une somme, en découpant un
+          rectangle.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareVsRectangle from '../components/SquareVsRectangle';
@@ -24,8 +25,12 @@ import { formatDec, parseDec } from '../components/equationUtils';
  *   x sans se demander s'il est nul, ce qui perd la solution 0), et
  *   « x² et 4x, c'est la même chose ».
  * Feedback: l'écart d'aire quantifié à chaque réglage.
- * Formalization: x² − 4x = 0 → x(x − 4) = 0, puis a² − b² comme second
- *   chemin vers un produit.
+ * Formalization: « factoriser pour obtenir un produit nul » et la différence
+ *   de deux carrés vivent dans `knowledge.jsx` ; des <KnowledgeBrick> les
+ *   posent au début des étapes 2 et 3 — donc AVANT les questions qui les
+ *   mobilisent, puisque ces questions demandent de JUGER une méthode, pas de
+ *   la découvrir. La méthode complète est posée à la fin
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: puces incluant 4 ; après 3 réglages, une indication de sens.
  * Transfer: étape 4, un problème rédigé de bout en bout.
  */
@@ -65,7 +70,7 @@ export default function Module06CarreRectangle() {
       steps={[
         {
           num: 1,
-          title: 'Égalise les deux aires',
+          title: 'Égalise les deux surfaces',
           subtitle: 'Regarde l’écart, il te dit de quel côté aller.',
           done: found,
           content: (kit) => (
@@ -102,19 +107,20 @@ export default function Module06CarreRectangle() {
         },
         {
           num: 2,
-          title: 'La preuve : un facteur commun',
+          title: 'La preuve, maintenant',
           done: factorDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-slate-200 bg-slate-50 p-4 text-center space-y-2">
-                <MathText className="text-lg text-slate-800">{'$x^{2} = 4x$'}</MathText>
-                <p className="text-xs text-slate-500">On ramène tout d’un côté pour viser un produit nul :</p>
-                <MathText className="text-lg text-slate-800">{'$x^{2} - 4x = 0$'}</MathText>
-                <p className="text-xs text-slate-500">
-                  Les deux termes contiennent <MathText>{'$x$'}</MathText> : on le met en facteur.
-                </p>
-                <MathText className="text-lg text-slate-800">{'$x(x - 4) = 0$'}</MathText>
-              </div>
+              <p className="text-sm text-slate-600">
+                Le tâtonnement a donné deux valeurs, mais il ne prouve rien. L’équation qui décrit
+                l’égalité des surfaces est <MathText>{'$x^{2} = 4x$'}</MathText> : aucun produit égal
+                à 0 là-dedans. Il faut donc en fabriquer un.
+              </p>
+              <KnowledgeBrick
+                id="factoriser-vers-produit"
+                variant="new"
+                lead="Deux gestes suffisent, et tu connais déjà les deux : tout ramener d’un côté, puis sortir ce qui est commun."
+              />
               <TapQuestion
                 prompt={
                   <>
@@ -145,6 +151,7 @@ export default function Module06CarreRectangle() {
                     <MathText>{'$x(x - 4) = 0$'}</MathText>.
                   </>
                 }
+                requires={['factoriser-vers-produit', 'equation-equivalente', 'methode-branches']}
                 solved={factorDone}
                 onAnswered={() => setFactorDone(true)}
               />
@@ -153,19 +160,19 @@ export default function Module06CarreRectangle() {
         },
         {
           num: 3,
-          title: 'L’autre chemin vers un produit : a² − b²',
+          title: 'L’autre chemin vers un produit',
           done: identityDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 text-center space-y-1.5">
-                <p className="text-sm text-slate-700">
-                  Quand il n’y a pas de facteur commun, une différence de deux carrés en fournit un :
-                </p>
-                <MathText className="text-lg text-slate-800">{'$a^{2} - b^{2} = (a - b)(a + b)$'}</MathText>
-                <p className="text-xs text-slate-500">
-                  Exemple : <MathText>{'$x^{2} - 16 = x^{2} - 4^{2} = (x - 4)(x + 4)$'}</MathText>
-                </p>
-              </div>
+              <p className="text-sm text-slate-600">
+                Le facteur commun n’existe pas toujours. Il reste une seconde porte de sortie, et
+                elle ne s’ouvre que devant une forme bien précise.
+              </p>
+              <KnowledgeBrick
+                id="difference-deux-carres"
+                variant="new"
+                lead="Regarde la forme avant de calculer : deux carrés, et un signe moins entre eux."
+              />
               <TapQuestion
                 prompt="Laquelle de ces expressions peut se transformer en produit par cette identité ?"
                 options={['$x^{2} + 16$', '$x^{2} - 25$', '$x^{2} + 5x$']}
@@ -190,6 +197,7 @@ export default function Module06CarreRectangle() {
                     <MathText>{'$\\;a^{2} - b^{2}$'}</MathText>.
                   </>
                 }
+                requires={['difference-deux-carres', 'factoriser-vers-produit']}
                 solved={identityDone}
                 onAnswered={() => setIdentityDone(true)}
               />
@@ -227,19 +235,28 @@ export default function Module06CarreRectangle() {
                     ? '−3 est bien une solution de l’équation, mais une longueur négative n’existe pas : on la rejette. Réponse : 4 m.'
                     : 'L’équation (x + 3)(x − 4) = 0 donne x = −3 ou x = 4 ; seule la valeur positive convient à une longueur : 4 m.'
                 }
+                requires={['methode-branches', 'interpreter-solution', 'factoriser-vers-produit']}
                 solved={problemDone}
                 onAnswered={() => setProblemDone(true)}
               />
+              {problemDone && (
+                <KnowledgeBrick
+                  id="mem-methode-complete"
+                  variant="new"
+                  lead="Tu viens de faire les quatre gestes d’affilée, sans en sauter un. Les voici en un bloc."
+                />
+              )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Modéliser, factoriser, annuler chaque facteur, puis trier ce qui a un sens : tu viens de faire le
-          parcours complet. Il ne reste plus qu’à le prouver dans la mission finale.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ta carte est complète : modéliser, factoriser, annuler chaque
+          facteur, puis trier ce qui a un sens. Il ne reste plus qu’à le prouver dans la mission
+          finale.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

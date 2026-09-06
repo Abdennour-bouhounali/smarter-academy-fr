@@ -12,6 +12,11 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * somme de relatifs, les priorités opératoires, et la distributivité
  * NUMÉRIQUE (7 × 103 découpé en 7 × 100 + 7 × 3) — jamais le calcul
  * littéral lui-même, qui est le contenu de la leçon.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique.
+ * Ces ids sont exactement ceux du `priorKnowledge` de la leçon : un module 0
+ * MESURE des acquis antérieurs, il n'enseigne jamais la matière de la leçon
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 const SKILLS = {
   relatifs: { label: 'Nombres relatifs', emoji: '±' },
@@ -24,6 +29,7 @@ const QUESTIONS = [
     id: 'q1-produit-relatifs',
     skill: 'relatifs',
     points: 2,
+    requires: ['nombres-relatifs'],
     prompt: (
       <>
         Quel est le signe de <MathText>{'$(-4) \\times 7$'}</MathText> ?
@@ -39,6 +45,7 @@ const QUESTIONS = [
     id: 'q2-somme-relatifs',
     skill: 'relatifs',
     points: 2,
+    requires: ['nombres-relatifs'],
     prompt: (
       <>
         Combien font <MathText>{'$-3 + 8$'}</MathText> ?
@@ -54,6 +61,7 @@ const QUESTIONS = [
     id: 'q3-soustraire-relatif',
     skill: 'relatifs',
     points: 2,
+    requires: ['nombres-relatifs'],
     prompt: (
       <>
         Combien font <MathText>{'$5 - (-2)$'}</MathText> ?
@@ -69,6 +77,7 @@ const QUESTIONS = [
     id: 'q4-priorites',
     skill: 'numerique',
     points: 2,
+    requires: ['calcul-numerique'],
     prompt: (
       <>
         Combien font <MathText>{'$2 + 3 \\times 4$'}</MathText> ?
@@ -84,6 +93,7 @@ const QUESTIONS = [
     id: 'q5-distributivite-numerique',
     skill: 'distri',
     points: 2,
+    requires: ['distributivite', 'calcul-numerique'],
     prompt: (
       <>
         Pour calculer <MathText>{'$7 \\times 103$'}</MathText> de tête, on découpe 103 en 100 + 3. Quel

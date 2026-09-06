@@ -21,6 +21,7 @@ const QUESTIONS = [
   {
     id: 'tr-d1-angle-droit',
     skill: 'angles',
+    requires: ['angle-droit'],
     points: 2,
     prompt: 'Combien mesure un angle droit ?',
     options: ['90°', '180°', '45°'],
@@ -31,6 +32,7 @@ const QUESTIONS = [
   {
     id: 'tr-d2-angle-plat',
     skill: 'angles',
+    requires: ['angle-droit'],
     points: 2,
     prompt: 'Un angle plat mesure 180°. Quel angle vaut la moitié d’un angle plat ?',
     options: ['Un angle droit', 'Un angle nul', 'Un angle de 45°'],
@@ -41,6 +43,7 @@ const QUESTIONS = [
   {
     id: 'tr-d3-aigu',
     skill: 'angles',
+    requires: ['angle-droit'],
     points: 2,
     prompt: 'Un angle qui mesure 52° est…',
     options: ['aigu (plus petit qu’un angle droit)', 'obtus (plus grand qu’un angle droit)', 'plat'],
@@ -51,6 +54,7 @@ const QUESTIONS = [
   {
     id: 'tr-d4-segment',
     skill: 'traits',
+    requires: ['notation-segment'],
     points: 2,
     prompt: 'Comment note-t-on la LONGUEUR du segment reliant A et B ?',
     options: ['AB', '[AB]', '(AB)'],
@@ -61,6 +65,7 @@ const QUESTIONS = [
   {
     id: 'tr-d5-paralleles',
     skill: 'relations',
+    requires: ['droites-paralleles'],
     points: 2,
     prompt: 'Deux droites parallèles, c’est…',
     options: [

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import CoordPlane from '../../../../../common/components/CoordPlane';
@@ -20,10 +21,17 @@ import { RANGE, DRONES, FIGURES, translatePoint, translatePolygon } from '../com
  *
  * Les objets `assessment` sont écrits en toutes lettres : un helper les
  * rendrait invisibles au validateur.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le test final CONSOLIDE : il peut exiger tout ce que la leçon a enseigné,
+ *   et n'introduit rien de neuf. Chaque épreuve déclare donc ce qu'elle
+ *   exige, et tous ces ids sont posés par une brique dans les modules 1 à 7.
+ *   La synthèse ne recopie plus de définitions : elle rend la carte complète.
  */
 const EPREUVES = [
   {
     id: 'tv-e1',
+    requires: ['deplacement', 'direction-sens-longueur'],
     skill: 'trajet',
     title: 'Le même trajet',
     prompt: 'Deux drones font le même déplacement mais partent d’endroits différents. Que peut-on dire de leurs points d’arrivée ?',
@@ -39,6 +47,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e2',
+    requires: ['direction-sens-longueur', 'direction-nest-pas-sens', 'deplacement-oppose'],
     skill: 'attributs',
     title: 'Direction ou sens ?',
     prompt: 'Les déplacements (4 ; 3) et (−4 ; −3) : qu’ont-ils en commun, et qu’est-ce qui les distingue ?',
@@ -54,6 +63,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e3',
+    requires: ['composante', 'composantes-ordonnees', 'vecteurs-egaux'],
     skill: 'attributs',
     title: 'Composantes échangées',
     prompt: 'Les déplacements (2 ; 5) et (5 ; 2) sont-ils égaux ?',
@@ -69,6 +79,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e4',
+    requires: ['translation-de-vecteur', 'image-point', 'composante'],
     skill: 'image',
     title: 'L’image d’un point',
     prompt: 'Quelle est l’image du point M (−2 ; 5) par la translation de vecteur (3 ; −4) ?',
@@ -79,6 +90,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e5',
+    requires: ['translation', 'image-point'],
     skill: 'image',
     title: 'Ce que conserve une translation',
     prompt: 'On translate un triangle. Que devient-il ?',
@@ -94,6 +106,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e6',
+    requires: ['vecteur', 'vecteurs-egaux', 'mem-vecteur-nest-pas-position'],
     skill: 'egaux',
     title: 'La flèche déplacée',
     prompt: 'On dessine la même flèche à un autre endroit de la feuille, sans changer sa longueur ni son inclinaison. Est-ce le même vecteur ?',
@@ -109,6 +122,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e7',
+    requires: ['coordonnees-vecteur', 'mem-arrivee-moins-depart', 'composante'],
     skill: 'coordonnees',
     title: 'Coordonnées d’un vecteur',
     prompt: 'A est en (−1 ; 4) et B en (3 ; 1). Quelles sont les coordonnées du vecteur qui mène de A à B ?',
@@ -119,6 +133,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e8',
+    requires: ['coordonnees-vecteur', 'vecteurs-egaux'],
     skill: 'egaux',
     title: 'Deux flèches, un vecteur ?',
     prompt: 'Une flèche va de (0 ; 2) à (4 ; 0). Une autre va de (−3 ; 1) à (1 ; −1). Représentent-elles le même vecteur ?',
@@ -134,6 +149,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e9',
+    requires: ['construire-quatrieme-point', 'parallelogramme-vecteurs', 'coordonnees-vecteur'],
     skill: 'probleme',
     title: 'Fermer un parallélogramme',
     prompt: 'A (0 ; 0), B (3 ; 1) et C (−1 ; 2). Où placer D pour que le déplacement de C vers D soit le même que celui de A vers B ?',
@@ -144,6 +160,7 @@ const EPREUVES = [
   },
   {
     id: 'tv-e10',
+    requires: ['repeter-enchainer', 'composante', 'image-point'],
     skill: 'probleme',
     title: 'Enchaîner deux trajets',
     prompt: 'Un drone part de (1 ; −2), effectue le déplacement (−4 ; 3), puis le déplacement (2 ; 1). Où arrive-t-il ?',
@@ -173,7 +190,23 @@ const BADGES = [
   { id: 'b-parfait', emoji: '💎', label: 'Chorégraphe de l’escadrille', test: (m) => Object.keys(m).length === 0 },
 ];
 
-/** La synthèse : l'escadrille, figée, et les trois idées de la leçon. */
+/** Les erreurs vraiment rencontrées dans la leçon, remises côte à côte. */
+const PIEGES = [
+  { wrong: 'Viser la même case d’arrivée que le drone modèle.',
+    right: 'Reproduire le même déplacement : les arrivées diffèrent si les départs diffèrent.' },
+  { wrong: '« Sens contraire » veut dire « autre direction ».',
+    right: 'La direction est la droite suivie : un demi-tour la conserve et change le sens.' },
+  { wrong: 'Croire qu’une translation fait tourner ou agrandir la figure.',
+    right: 'Elle fait glisser : l’image est superposable à la figure de départ.' },
+  { wrong: 'Croire que déplacer la flèche change le vecteur.',
+    right: 'Seules les deux composantes comptent ; l’endroit n’en fait pas partie.' },
+  { wrong: 'Calculer départ − arrivée.',
+    right: 'Toujours arrivée − départ, séparément sur chaque coordonnée.' },
+  { wrong: 'Échanger les deux composantes : (2 ; 3) pour (3 ; 2).',
+    right: 'La première commande l’horizontal, la seconde le vertical.' },
+];
+
+/** La synthèse : l'escadrille figée, les pièges, puis la carte complète. */
 function Synthese() {
   const V = DRONES.mouvement;
   const image = translatePolygon(FIGURES.drone, V);
@@ -194,18 +227,21 @@ function Synthese() {
         caption={false}
         ariaLabel="Quatre drones effectuant le même déplacement, et une figure translatée"
       />
-      <div className="grid sm:grid-cols-3 gap-2 text-sm">
-        {[
-          { t: 'Un déplacement', d: 'Direction, sens et longueur — pas de point de départ.' },
-          { t: 'Le même partout', d: 'Quatre flèches identiques, un seul et même vecteur.' },
-          { t: 'Deux nombres', d: 'Arrivée moins départ, sur chaque coordonnée.' },
-        ].map(({ t, d }) => (
-          <div key={t} className="rounded-xl border-2 border-slate-200 bg-white p-3">
-            <p className="font-semibold text-slate-800">{t}</p>
-            <p className="text-xs text-slate-600">{d}</p>
-          </div>
-        ))}
+      <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4">
+        <p className="font-bold text-rose-800 mb-2">Les pièges déjoués</p>
+        <ul className="space-y-1.5 text-sm">
+          {PIEGES.map((p) => (
+            <li key={p.wrong} className="text-slate-700">
+              <span className="text-rose-600">❌ {p.wrong}</span>
+              <br />
+              <span className="text-emerald-700">✅ {p.right}</span>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

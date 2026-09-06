@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Sigma } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TriangleLab from '../components/TriangleLab';
 import { FIGURES, triangleTraits, angleSum, thirdAngle } from '../components/triangleUtils';
@@ -68,10 +69,17 @@ export default function Module03SommeDesAngles() {
             ariaLabel="Triangle libre : observe la somme de ses angles"
           />
           {done1 ? (
+            <>
             <Feedback tone="ok">
               Trois formes très différentes, et toujours <strong>{somme}°</strong>. Les angles se
               partagent un total fixe : quand l’un augmente, les autres diminuent d’autant.
             </Feedback>
+              <KnowledgeBrick
+                id="somme-des-angles"
+                variant="new"
+                lead="Ce total qui ne bouge jamais est la propriété la plus utile du chapitre."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               Formes explorées : {visited.size} sur 3. Total actuel : {somme}°.
@@ -103,9 +111,18 @@ export default function Module03SommeDesAngles() {
             explainFor={(n) => (n === 113
               ? 'Tu as calculé 52 + 61 = 113, la somme des deux angles connus. Il faut ensuite la retrancher à 180.'
               : null)}
+            requires={['somme-des-angles']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
+          {q2 && (
+            <KnowledgeBrick
+              id="mem-consequences-180"
+              variant="new"
+              compact
+              lead="Trois cas reviennent si souvent qu’il vaut mieux les connaître d’avance."
+            />
+          )}
         </div>
       ),
     },
@@ -120,6 +137,7 @@ export default function Module03SommeDesAngles() {
           correct={0}
           explain="L’angle droit occupe déjà 90° du total de 180°. Il reste donc exactement 90° à partager entre les deux autres angles — quel que soit le triangle rectangle."
           explainWrong="La somme des TROIS angles vaut 180°. Si l’un vaut 90°, les deux autres se partagent ce qui reste, c’est-à-dire 90°."
+          requires={['somme-des-angles', 'mem-consequences-180']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
@@ -156,13 +174,11 @@ export default function Module03SommeDesAngles() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Dans TOUT triangle, la somme des trois angles vaut 180°.
-          On en déduit : le troisième angle quand deux sont connus ; que les angles aigus d’un
-          triangle rectangle somment 90° ; qu’un triangle équilatéral a trois angles de 60°.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> 180°, toujours. Passons de l’observation à la construction.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

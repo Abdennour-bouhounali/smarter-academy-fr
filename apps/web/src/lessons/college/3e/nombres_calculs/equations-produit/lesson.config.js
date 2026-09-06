@@ -39,6 +39,16 @@ export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/equations-p
 export const LESSON_CONFIG = {
   id: 'equations-produit',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : calcul littéral (substituer, réduire), nombres relatifs et
+  // distributivité — exactement ce que le module 0 diagnostique. Factoriser,
+  // en revanche, est une CIBLE de cette leçon (teachingScope) : elle
+  // l'établit elle-même, au module 6.
+  priorKnowledge: ['calcul-litteral', 'nombres-relatifs', 'distributivite', 'reduire-expression'],
   title: 'Équations produit nul',
   description:
     "Tourner deux molettes jusqu'à faire tomber un produit à zéro, puis apprendre à lire une équation comme une balance, à scanner un produit pour y trouver ses zéros, et à ramener un problème d'aires à « quelque chose × quelque chose = 0 ».",

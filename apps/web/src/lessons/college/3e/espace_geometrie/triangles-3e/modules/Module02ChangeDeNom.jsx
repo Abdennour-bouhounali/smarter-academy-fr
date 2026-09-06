@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Move3d, Tags } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TriangleLab from '../components/TriangleLab';
 import { FIGURES, triangleKind, triangleTraits, VERTEX_NAMES } from '../components/triangleUtils';
@@ -75,10 +76,18 @@ export default function Module02ChangeDeNom() {
             ariaLabel="Triangle à rendre isocèle en déplaçant un sommet"
           />
           {done1 ? (
+            <>
             <Feedback tone="ok">
               {k1.label}. Les deux barrettes sur les côtés égaux sont apparues toutes seules :
               elles marquent une égalité <strong>constatée</strong>, pas décidée.
             </Feedback>
+              <KnowledgeBrick
+                id="triangles-particuliers"
+                establishes={['triangle-rectangle']}
+                variant="new"
+                lead="Les noms qui viennent d’apparaître sur la figure décrivent chacun une propriété."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               Écart le plus faible entre deux côtés : {Math.round(gap1)} px. Rapproche-les — la
@@ -127,7 +136,7 @@ export default function Module02ChangeDeNom() {
     {
       num: 3,
       title: 'Les deux à la fois',
-      subtitle: 'Obtiens un triangle rectangle — et regarde s’il peut être aussi isocèle.',
+      subtitle: 'Obtiens un angle droit — et regarde si les côtés peuvent aussi être égaux.',
       done: done3,
       content: (kit) => (
         <div className="space-y-3">
@@ -177,6 +186,7 @@ export default function Module02ChangeDeNom() {
           cols={1}
           explain="Isocèle = deux côtés de même longueur. C’est une condition vérifiable par la mesure, et c’est elle qui entraîne toutes les autres propriétés (notamment l’égalité des angles à la base)."
           explainWrong="L’allure ne définit rien : tu viens de voir un triangle perdre son nom sans changer beaucoup d’aspect. Seule l’égalité des longueurs compte."
+          requires={['triangles-particuliers']}
           solved={q4}
           onAnswered={() => setQ4(true)}
         />
@@ -218,13 +228,12 @@ export default function Module02ChangeDeNom() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Un triangle <strong>isocèle</strong> a deux côtés de même
-          longueur ; un <strong>équilatéral</strong> les trois ; un <strong>rectangle</strong> a un
-          angle droit. Ces propriétés ne s’excluent pas : un triangle peut être rectangle et isocèle.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Chaque nom dit une propriété. Voyons maintenant ce que TOUS
+          les triangles ont en commun.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

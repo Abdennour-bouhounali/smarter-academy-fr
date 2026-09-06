@@ -42,6 +42,15 @@ export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/calcul-litt
 export const LESSON_CONFIG = {
   id: 'calcul-litteral-algebrique',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : elles viennent des années précédentes et le module 0 les
+  // diagnostique — nombres relatifs, priorités opératoires, distributivité
+  // numérique. Tout le reste doit être établi dans la leçon même.
+  priorKnowledge: ['nombres-relatifs', 'calcul-numerique', 'distributivite'],
   title: 'Calcul littéral et algébrique',
   description:
     "Compter une bordure de dalles de trois façons différentes, découper un rectangle dont les côtés s'écrivent avec x, empiler des tuiles semblables, puis retrouver les côtés à partir des morceaux : développer, réduire et factoriser ne changent que l'écriture, jamais la quantité.",

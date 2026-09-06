@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ScrollText, Lightbulb } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProofStrip from '../components/ProofStrip';
 import TriangleLab from '../components/TriangleLab';
@@ -75,11 +76,13 @@ export default function Module06Justifier() {
             revealed={done1}
           />
           {done1 && (
-            <Feedback tone="ok">
-              {revealed
-                ? 'Rédaction révélée. Retiens la charpente : on part de la donnée, on invoque une propriété du cours, puis on conclut par un calcul.'
-                : 'Rédaction correcte. Chaque ligne a un rôle : la donnée, les deux propriétés invoquées, puis la conclusion chiffrée.'}
-            </Feedback>
+            <KnowledgeBrick
+              id="justifier"
+              variant="new"
+              lead={revealed
+                ? 'Rédaction révélée. Voici la charpente à retenir.'
+                : 'Rédaction correcte. Chaque ligne avait un rôle — voici lequel.'}
+            />
           )}
           {complete && !result.ok && !done1 && (
             <div className="space-y-2">
@@ -133,6 +136,7 @@ export default function Module06Justifier() {
             cols={1}
             explain="Une démonstration relie la donnée à la conclusion PAR des propriétés nommées. Sans elles, on affirme un résultat sans dire d’où il vient — et le lecteur ne peut pas vérifier."
             explainWrong="Trouver le bon nombre ne suffit pas en géométrie : ce qui est évalué, c’est la chaîne de raisonnement qui permet d’y arriver."
+            requires={['justifier', 'somme-des-angles']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -174,18 +178,12 @@ export default function Module06Justifier() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <div className="flex gap-2 items-start">
-            <Lightbulb className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-            <span>
-              <strong>Retenons.</strong> En géométrie, une réponse sans justification est
-              incomplète. La formule est toujours la même : « puisque… (donnée), or… (propriété),
-              donc… (conclusion) ».
-            </span>
-          </div>
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Tu sais rédiger une justification. Voyons une propriété que
+          tu vas d’abord deviner, puis prouver.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

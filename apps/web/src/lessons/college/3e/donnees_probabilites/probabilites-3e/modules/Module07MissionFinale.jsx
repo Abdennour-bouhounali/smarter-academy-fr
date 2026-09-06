@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -27,6 +28,12 @@ import { ZERO, rollMany, sumCells, cellKey } from '../components/probaUtils';
  *
  * Couverture des Learning Points : P1 (e1), P2 (e2), P3 (e3), P4 (e9), P5 (e4, e8),
  * P6 (e4, e5), P7 (e6), P8 (e6), P9 (e7), P10 (e5, e8), P11 (e9, e10), P12 (e10).
+ *
+ * LE BOSS N'INTRODUIT RIEN — ni concept, ni mot, ni notation
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md). `requires` nomme, pour chaque
+ * épreuve, ce que la leçon lui a déjà enseigné ; la synthèse ne recopie plus
+ * de définitions : elle rend la carte complète (<KnowledgeSnapshot complete>),
+ * source unique, et garde ses visuels et ses pièges.
  */
 
 const SERIES = rollMany(ZERO, 1000, makeRng(20260905 + 7)).counts;
@@ -53,6 +60,7 @@ const tex = (o) => <MathText>{o}</MathText>;
 const EPREUVES = [
   {
     id: 'pb-e1',
+    requires: ['experience-aleatoire'],
     skill: 'hasard',
     title: 'Épreuve 1',
     prompt: 'Laquelle de ces situations est une expérience aléatoire ?',
@@ -64,6 +72,7 @@ const EPREUVES = [
   },
   {
     id: 'pb-e2',
+    requires: ['experience-aleatoire'],
     skill: 'hasard',
     title: 'Épreuve 2',
     prompt: 'On lance une pièce de monnaie. Combien y a-t-il d’issues possibles ?',
@@ -75,6 +84,7 @@ const EPREUVES = [
   },
   {
     id: 'pb-e3',
+    requires: ['evenement', 'experience-aleatoire'],
     skill: 'evenements',
     title: 'Épreuve 3',
     prompt: 'On lance un dé à six faces. Quelles issues réalisent l’événement « obtenir au moins 5 » ?',
@@ -86,6 +96,7 @@ const EPREUVES = [
   },
   {
     id: 'pb-e4',
+    requires: ['formule-probabilite', 'evenement', 'equiprobable'],
     skill: 'calcul',
     title: 'Épreuve 4',
     prompt: 'On lance un dé équilibré. Quelle est la probabilité d’obtenir un nombre pair ?',
@@ -99,6 +110,7 @@ const EPREUVES = [
   },
   {
     id: 'pb-e5',
+    requires: ['formule-probabilite', 'fractions-egales-meme-probabilite'],
     skill: 'calcul',
     title: 'Épreuve 5',
     prompt: 'Un sac contient 5 billes rouges, 3 bleues et 2 vertes. On tire une bille au hasard. Quelle est la probabilité qu’elle soit bleue ?',
@@ -112,6 +124,7 @@ const EPREUVES = [
   },
   {
     id: 'pb-e6',
+    requires: ['mem-frequence-vs-probabilite', 'frequence', 'probabilite', 'equiprobable'],
     skill: 'frequence',
     title: 'Épreuve 6',
     prompt: 'On lance 100 fois un dé équilibré et on obtient 22 fois le 4. Que peut-on dire ?',
@@ -128,6 +141,7 @@ const EPREUVES = [
   },
   {
     id: 'pb-e7',
+    requires: ['stabilisation', 'frequence', 'probabilite'],
     skill: 'frequence',
     title: 'Épreuve 7',
     prompt: 'Quand on augmente le nombre de lancers d’un dé équilibré, les fréquences des six faces…',
@@ -144,6 +158,7 @@ const EPREUVES = [
   },
   {
     id: 'pb-e8',
+    requires: ['deux-epreuves-couples', 'evenement-sur-la-grille', 'mem-piege-des-sommes'],
     skill: 'deuxdes',
     title: 'Épreuve 8',
     prompt: 'On lance deux dés équilibrés et on additionne. Quelle est la probabilité d’obtenir 7 ?',
@@ -157,6 +172,7 @@ const EPREUVES = [
   },
   {
     id: 'pb-e9',
+    requires: ['interpreter-une-probabilite', 'echelle-probabilites', 'probabilite-mesure-chance'],
     skill: 'interpreter',
     title: 'Épreuve 9',
     prompt: '« La probabilité que le bus soit à l’heure est 0,9, donc il sera à l’heure. » Cette phrase est-elle correcte ?',
@@ -173,13 +189,14 @@ const EPREUVES = [
   },
   {
     id: 'pb-e10',
+    requires: ['interpreter-une-probabilite', 'effectif-attendu'],
     skill: 'interpreter',
     title: 'Épreuve 10',
     prompt: 'Dans une loterie, chaque ticket a une probabilité de 2 % de gagner. On vend 500 tickets. Combien de gagnants peut-on prévoir, environ ?',
     options: ['10', '2', '100', '25'],
     cols: 2,
     correct: 0,
-    explain: '2 % de 500 = 500 × 2/100 = 10 gagnants environ. La probabilité sert à prévoir une tendance sur beaucoup de tickets — pas le résultat d’un ticket.',
+    explain: '2 % de 500 = 500 × 2/100 = 10 gagnants environ. La probabilité sert à prévoir ce que donneront beaucoup de tickets — jamais le résultat d’un ticket.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_probabilites-3e_P11', '3e_probabilites-3e_P12'] },
   },
 ];
@@ -218,16 +235,6 @@ function Synthese() {
 
       <OutcomeGrid selected={GRID7} onToggle={() => {}} frozen caption="Les 36 issues de deux dés — la somme 7 : 6 cases sur 36" />
 
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-4 space-y-2">
-        <p className="font-bold text-slate-800">Le langage</p>
-        <ul className="text-sm text-slate-700 space-y-1 list-disc list-inside">
-          <li><strong>Expérience aléatoire</strong> : issues connues, résultat imprévisible.</li>
-          <li><strong>Événement</strong> : un ensemble d’issues ; impossible (0) ou certain (1).</li>
-          <li><strong>Probabilité</strong> : <MathText>{'$P(A) = \\dfrac{\\text{favorables}}{\\text{possibles}}$'}</MathText> quand les issues ont la même chance ; <MathText>{'$P(\\text{non } A) = 1 - P(A)$'}</MathText>.</li>
-          <li><strong>Fréquence</strong> : effectif ÷ essais ; elle se stabilise vers P quand les essais se multiplient.</li>
-        </ul>
-      </div>
-
       <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4">
         <p className="font-bold text-rose-800 mb-2">Les pièges déjoués</p>
         <ul className="space-y-1.5 text-sm">
@@ -244,6 +251,9 @@ function Synthese() {
       <Feedback tone="info">
         On ne prévoit jamais un lancer ; on prévoit mille lancers. C’est toute la puissance — et la limite — d’une probabilité.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

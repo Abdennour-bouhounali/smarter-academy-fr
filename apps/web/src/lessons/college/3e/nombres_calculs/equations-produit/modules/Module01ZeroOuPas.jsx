@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProductDial from '../components/ProductDial';
@@ -24,8 +25,11 @@ import ProductDial from '../components/ProductDial';
  *   somme/produit) et « un très petit produit, c'est presque 0 ».
  * Feedback: le nombre de façons restant à trouver est affiché en continu ;
  *   l'échappatoire après 3 essais montre une combinaison manquante.
- * Formalization: aucune ici — le mot « produit nul » n'est pas encore
- *   prononcé comme règle ; il arrive au module 4.
+ * Formalization: le CONSTAT sur deux nombres est posé par une
+ *   <KnowledgeBrick> une fois les trois façons trouvées ; le mot « produit
+ *   nul » comme RÈGLE, lui, n'est prononcé qu'au module 4, sur des
+ *   expressions en x. Le texte vit dans `knowledge.jsx`
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: 7 puces par molette dont le 0, stepper, curseur d'appoint.
  * Transfer: au module 4, les facteurs deviennent des expressions en x.
  */
@@ -145,10 +149,17 @@ export default function Module01ZeroOuPas() {
               )}
 
               {allFound && (
-                <Feedback tone="ok">
-                  Trois façons, et à chaque fois un <strong>0</strong> parmi les facteurs. Aucun autre
-                  réglage de A et B ne donne 0 : essaie encore, tu ne trouveras rien.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Trois façons, et à chaque fois un <strong>0</strong> parmi les facteurs. Aucun autre
+                    réglage de A et B ne donne 0 : essaie encore, tu ne trouveras rien.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="produit-nul-constat"
+                    variant="new"
+                    lead="Tu as balayé les molettes et trouvé les trois seules façons. Voilà ce que ce balayage prouve — et ce qu’il écarte."
+                  />
+                </>
               )}
             </div>
           ),
@@ -180,18 +191,20 @@ export default function Module01ZeroOuPas() {
                   pas nécessaire que les deux facteurs soient nuls — un seul suffit.
                 </>
               }
+              requires={['produit-nul-constat', 'nombres-relatifs']}
               solved={pieegeDone}
               onAnswered={() => setPiegeDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Garde ce constat au chaud : bientôt, A et B ne seront plus des nombres mais des expressions en{' '}
-          <MathText>{'$x$'}</MathText>. La façon de les annuler ne changera pas.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Bientôt, A et B ne seront plus des nombres mais des écritures
+          avec <MathText>{'$x$'}</MathText>. Avant cela, il faut savoir ce que veut dire chercher un{' '}
+          <MathText>{'$x$'}</MathText> dans une égalité.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

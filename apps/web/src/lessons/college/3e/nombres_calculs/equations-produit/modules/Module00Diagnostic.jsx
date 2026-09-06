@@ -11,6 +11,11 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * donc substituer une valeur dans une expression, réduire, multiplier des
  * relatifs et développer k(a + b) — jamais les équations produit
  * elles-mêmes, qui sont le contenu de la leçon.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique.
+ * Ces ids sont exactement ceux du `priorKnowledge` de la leçon : un module 0
+ * MESURE des acquis antérieurs, il n'enseigne jamais la matière de la leçon
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 const SKILLS = {
   litteral: { label: 'Calcul littéral', emoji: '🔤' },
@@ -23,6 +28,7 @@ const QUESTIONS = [
     id: 'q1-substituer',
     skill: 'litteral',
     points: 2,
+    requires: ['calcul-litteral'],
     prompt: (
       <>
         Que vaut <MathText>{'$3x - 6$'}</MathText> quand <MathText>{'$x = 5$'}</MathText> ?
@@ -37,6 +43,7 @@ const QUESTIONS = [
     id: 'q2-reduire',
     skill: 'litteral',
     points: 2,
+    requires: ['reduire-expression', 'calcul-litteral'],
     prompt: (
       <>
         Réduis <MathText>{'$2x + 3 + x$'}</MathText>.
@@ -51,6 +58,7 @@ const QUESTIONS = [
     id: 'q3-produit-relatifs',
     skill: 'relatifs',
     points: 2,
+    requires: ['nombres-relatifs'],
     prompt: (
       <>
         Combien font <MathText>{'$(-3) \\times 4$'}</MathText> ?
@@ -65,6 +73,7 @@ const QUESTIONS = [
     id: 'q4-somme-relatifs',
     skill: 'relatifs',
     points: 2,
+    requires: ['nombres-relatifs'],
     prompt: (
       <>
         Quelle valeur de <MathText>{'$x$'}</MathText> vérifie <MathText>{'$x + 4 = 0$'}</MathText> ?
@@ -79,6 +88,7 @@ const QUESTIONS = [
     id: 'q5-distributivite',
     skill: 'distri',
     points: 2,
+    requires: ['distributivite'],
     prompt: (
       <>
         Développe <MathText>{'$3(x + 2)$'}</MathText>.

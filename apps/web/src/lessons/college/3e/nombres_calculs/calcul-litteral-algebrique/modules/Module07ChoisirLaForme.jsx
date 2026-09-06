@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { parseDec, formatDec } from '@smarter-academy/core';
@@ -32,8 +33,12 @@ import { term } from '../components/litteralUtils';
  *   toujours factoriser » ; « deux écritures égales en un point sont égales ».
  * Feedback: les deux formes sont comparées en nombre d'opérations, puis
  *   confirmées au tableau de valeurs.
- * Formalization: la phrase « la question décide de l'écriture » est dite à
- *   la fin, une fois les trois buts joués.
+ * Formalization: la règle du produit nul est posée par une <KnowledgeBrick>
+ *   AVANT la question de l'étape 2 — cette question demande de CHOISIR une
+ *   écriture au vu de ce principe, elle ne le fait pas découvrir. La règle de
+ *   choix, elle, arrive à la fin, une fois les trois buts joués. Les deux
+ *   textes vivent dans `knowledge.jsx`
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: les deux formes sont toujours écrites côte à côte ; le
  *   NumericQuestion accepte le décimal via parseDec et révèle la valeur.
  * Transfer: l'étape 2 renvoie explicitement à « Équations produit nul » —
@@ -132,6 +137,7 @@ export default function Module07ChoisirLaForme() {
                     puis −9. C’est le choix de l’écriture qui rend le calcul faisable de tête.
                   </>
                 }
+                requires={['meme-expression', 'carre-somme']}
                 solved={formPicked}
                 onAnswered={() => setFormPicked(true)}
               />
@@ -154,6 +160,7 @@ export default function Module07ChoisirLaForme() {
                       ? '9 409, c’est 97² — mais le carré porte sur x + 3, soit 100, pas sur x. Réponse : 10 000 − 9 = 9 991.'
                       : 'On calcule (97 + 3)² − 9 = 100² − 9 = 10 000 − 9 = 9 991.'
                   }
+                  requires={['expression-litterale', 'carre-somme']}
                   solved={computed}
                   onAnswered={() => setComputed(true)}
                 />
@@ -174,6 +181,11 @@ export default function Module07ChoisirLaForme() {
           done: done2,
           content: (
             <div className="space-y-3">
+              <KnowledgeBrick
+                id="produit-nul-forme"
+                variant="new"
+                lead="Nouveau but : ne plus calculer une valeur, mais chercher celles qui ANNULENT l’expression. Un produit a pour cela une propriété que la somme n’a pas."
+              />
               <TapQuestion
                 prompt={
                   <>
@@ -208,6 +220,7 @@ export default function Module07ChoisirLaForme() {
                     <strong>factorise</strong>, ou on garde la forme factorisée qu’on a déjà.
                   </>
                 }
+                requires={['produit-nul-forme', 'factoriser', 'developper']}
                 solved={done2}
                 onAnswered={() => setZeroDone(true)}
               />
@@ -215,10 +228,8 @@ export default function Module07ChoisirLaForme() {
                 <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4 space-y-2.5">
                   <p className="text-sm font-semibold text-rose-900">Attention — ce n’est pas ici qu’on résout.</p>
                   <p className="text-sm text-rose-900 leading-relaxed">
-                    Cette leçon te donne la <strong>bonne écriture</strong> ; trouver les valeurs de x
-                    et rédiger la résolution, c’est le sujet entier d’une autre leçon. Le principe qui
-                    s’y démontre : si <MathText>{'$A \\times B = 0$'}</MathText>, alors{' '}
-                    <MathText>{'$A = 0$'}</MathText> ou <MathText>{'$B = 0$'}</MathText>.
+                    Tu viens de choisir la bonne écriture. Trouver les valeurs de x et rédiger la
+                    résolution est le sujet entier d’une autre leçon — celle-ci s’arrête à la forme.
                   </p>
                   <Link
                     to={EQUATIONS_PATH}
@@ -288,6 +299,7 @@ export default function Module07ChoisirLaForme() {
                     <MathText>{'$4x + 4x + 16 = 8x + 16$'}</MathText>.
                   </>
                 }
+                requires={['carre-somme', 'reduire', 'developper']}
                 solved={done3}
                 onAnswered={() => setFrameDone(true)}
               />
@@ -336,29 +348,23 @@ export default function Module07ChoisirLaForme() {
                     La colonne <MathText>{'$16$'}</MathText>, elle, ne survit qu’à{' '}
                     <MathText>{'$x = 0$'}</MathText>.
                   </Feedback>
-                  <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4 space-y-1.5">
-                    <p className="text-sm font-semibold text-rose-900">La règle de choix :</p>
-                    <p className="text-sm text-rose-900 leading-relaxed">
-                      <strong>Calculer une valeur</strong> → la forme la plus simple à évaluer, souvent
-                      la <strong>développée</strong> (surtout si un nombre rond apparaît).{' '}
-                      <strong>Annuler une expression</strong> → la <strong>factorisée</strong>, parce
-                      qu’un produit est nul dès qu’un facteur l’est. <strong>Comparer ou lire une
-                      aire</strong> → la <strong>réduite</strong>. La question décide, pas l’habitude.
-                    </p>
-                  </div>
+                  <KnowledgeBrick
+                    id="choisir-la-forme"
+                    variant="new"
+                    lead="Trois buts, trois écritures gagnantes — et jamais la même. Voilà ce que ces trois étapes viennent de te faire vivre."
+                  />
                 </>
               )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Développer, réduire, factoriser sont des <strong>outils</strong>. La bonne écriture dépend de
-          la question : calculer → développée ; <MathText>{'$= 0$'}</MathText> → factorisée. Et dans
-          tous les cas, le tableau de valeurs reste juge.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Ta carte est complète : il ne reste plus qu’à la mettre à
+          l’épreuve. Dix écritures t’attendent au jardin de Maya.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

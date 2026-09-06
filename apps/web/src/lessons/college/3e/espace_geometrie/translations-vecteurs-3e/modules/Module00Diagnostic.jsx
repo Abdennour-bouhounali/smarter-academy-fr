@@ -10,6 +10,11 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * donc lire un couple, calculer un écart de coordonnées et reconnaître un
  * parallélogramme — jamais les vecteurs eux-mêmes, qui sont le contenu de la
  * leçon.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique.
+ * Ces ids sont exactement ceux du `priorKnowledge` de lesson.config.js : un
+ * diagnostic MESURE des acquis antérieurs, il n'enseigne rien de la leçon
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 const SKILLS = {
   repere: { label: 'Repérage', emoji: '🗺️' },
@@ -20,6 +25,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'tv-d1-lire',
+    requires: ['coordonnees', 'abscisse', 'ordonnee', 'origine-repere'],
     skill: 'repere',
     points: 2,
     prompt: 'Un point est à 3 graduations à gauche de l’origine et 2 au-dessus. Quelles sont ses coordonnées ?',
@@ -30,6 +36,7 @@ const QUESTIONS = [
   },
   {
     id: 'tv-d2-ordre',
+    requires: ['coordonnees', 'abscisse', 'ordonnee'],
     skill: 'repere',
     points: 2,
     prompt: 'Les points (2 ; 5) et (5 ; 2) sont-ils le même point ?',
@@ -40,6 +47,7 @@ const QUESTIONS = [
   },
   {
     id: 'tv-d3-ecart',
+    requires: ['nombres-relatifs'],
     skill: 'calcul',
     points: 2,
     prompt: 'Combien font 4 − (−3) ?',
@@ -50,6 +58,7 @@ const QUESTIONS = [
   },
   {
     id: 'tv-d4-somme',
+    requires: ['nombres-relatifs'],
     skill: 'calcul',
     points: 2,
     prompt: 'Combien font (−5) + 2 ?',
@@ -60,6 +69,7 @@ const QUESTIONS = [
   },
   {
     id: 'tv-d5-parallelogramme',
+    requires: ['droites-paralleles'],
     skill: 'figures',
     points: 2,
     prompt: 'Dans un parallélogramme, les côtés opposés sont…',

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Navigation, Repeat2 } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
 import {
@@ -24,6 +25,14 @@ import {
  * Feedback              direction / sens / longueur, jamais « faux ».
  * Formalization         le mot « vecteur » n'est PAS prononcé dans ce module.
  * Transfer              module 4 : le même vecteur posé en quatre endroits.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   L'étape 2 demandait « direction, sens, longueur » alors que ces trois mots
+ *   n'apparaissaient nulle part avant elle — sauf dans ses propres options.
+ *   L'ordre est maintenant : reproduire le trajet → brique `deplacement` (ce
+ *   qu'on vient de constater : même trajet, arrivées différentes) → brique
+ *   `direction-sens-longueur`, qui porte la question d'origine en essai
+ *   immédiat. Le mot « vecteur », lui, attend le module 4.
  */
 const MODELE = { origin: { x: -5, y: -3 }, vector: { dx: 4, dy: 2 } };
 const DEPART_2 = { x: -1, y: 1 };
@@ -63,11 +72,17 @@ export default function Module01LeMemeTrajet() {
             ariaLabel="Règle le déplacement de ton drone pour qu’il soit identique au modèle"
           />
           {done1 ? (
-            <Feedback tone="ok">
-              Les deux trajets sont identiques : {describeVec(MODELE.vector)}. Et pourtant les deux
-              drones ne sont <strong>pas arrivés au même endroit</strong> — c’est le déplacement qui
-              est le même, pas la destination.
-            </Feedback>
+            <KnowledgeBrick
+              id="deplacement"
+              variant="new"
+              lead={(
+                <>
+                  Les deux trajets sont identiques — {describeVec(MODELE.vector)} — et pourtant les
+                  deux drones ne sont <strong>pas arrivés au même endroit</strong>. Ce que tu viens
+                  de reproduire porte un nom.
+                </>
+              )}
+            />
           ) : (
             <Feedback tone="info">{DIAGNOSIS_TEXT[raison] ?? 'Continue de régler le trajet.'}</Feedback>
           )}
@@ -79,21 +94,30 @@ export default function Module01LeMemeTrajet() {
       title: 'Ce qui définit un trajet',
       done: q2,
       content: (
-        <TapQuestion
-          prompt="Pour dire que deux drones ont fait le MÊME trajet, que faut-il vérifier ?"
-          options={[
-            'Qu’ils se sont déplacés dans la même direction, dans le même sens, et de la même longueur.',
-            'Qu’ils sont arrivés au même endroit.',
-            'Qu’ils sont partis du même endroit.',
-            'Qu’ils ont mis le même temps.',
-          ]}
-          correct={0}
-          cols={1}
-          explain="Un trajet se décrit par trois choses : la direction (la droite suivie), le sens (de quel côté on la parcourt) et la longueur. Le point de départ n’en fait pas partie — c’est pour cela que deux drones partis d’endroits différents peuvent faire le même trajet."
-          explainWrong="Tes deux drones sont justement partis d’endroits différents et sont arrivés à des endroits différents, alors que leur trajet était identique."
-          solved={q2}
-          onAnswered={() => setQ2(true)}
-        />
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="direction-sens-longueur"
+            variant="new"
+            lead="Pour régler ton drone, tu as agi sur trois choses sans les nommer : la droite suivie, le côté vers lequel il part, et la distance parcourue."
+          >
+            <TapQuestion
+              prompt="Pour dire que deux drones ont fait le MÊME trajet, que faut-il vérifier ?"
+              options={[
+                'Qu’ils se sont déplacés dans la même direction, dans le même sens, et de la même longueur.',
+                'Qu’ils sont arrivés au même endroit.',
+                'Qu’ils sont partis du même endroit.',
+                'Qu’ils ont mis le même temps.',
+              ]}
+              correct={0}
+              cols={1}
+              requires={['deplacement', 'direction-sens-longueur']}
+              explain="Un trajet se décrit par trois choses : la direction, le sens et la longueur. Le point de départ n’en fait pas partie — c’est pour cela que deux drones partis d’endroits différents peuvent faire le même trajet."
+              explainWrong="Tes deux drones sont justement partis d’endroits différents et sont arrivés à des endroits différents, alors que leur trajet était identique."
+              solved={q2}
+              onAnswered={() => setQ2(true)}
+            />
+          </KnowledgeBrick>
+        </div>
       ),
     },
   ];
@@ -133,11 +157,10 @@ export default function Module01LeMemeTrajet() {
       }
       steps={steps}
       footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Un déplacement se décrit par une <strong>direction</strong>,
-          un <strong>sens</strong> et une <strong>longueur</strong>. Deux déplacements ayant ces
-          trois attributs en commun sont le même, où qu’ils commencent.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Trois attributs, donc trois choses à comparer. Au module
+          suivant, on les sépare pour de bon — et l’un d’eux réserve une surprise.
+        </KnowledgeSnapshot>
       }
     />
   );

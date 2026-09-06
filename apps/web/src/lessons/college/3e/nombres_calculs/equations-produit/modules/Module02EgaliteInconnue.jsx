@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -28,8 +29,12 @@ import {
  *   qu'une équation peut avoir 0, 1 ou une infinité de solutions ; et « le
  *   membre de gauche est le calcul, celui de droite le résultat ».
  * Feedback: le nombre de lignes vertes est annoncé, avec la valeur qui marche.
- * Formalization: le vocabulaire (inconnue, solution, ensemble de solutions)
- *   est nommé à l'étape 3, après les tableaux.
+ * Formalization: le vocabulaire vit dans `knowledge.jsx`. « Équation » et
+ *   « solution » sont posés par des <KnowledgeBrick> dès que la première ligne
+ *   verte est apparue (étape 1) — donc avant que le titre de l'étape 2 ne
+ *   parle d'« équations » — et « ensemble des solutions » après les deux
+ *   tableaux bizarres. L'étape 3 ne recopie plus rien : elle vérifie
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: puces de valeurs proposées, pas de saisie libre.
  * Transfer: étape 2, deux équations bizarres — sans solution et toujours vraie.
  */
@@ -110,10 +115,24 @@ export default function Module02EgaliteInconnue() {
                 </Feedback>
               )}
               {mainDone && (
-                <Feedback tone="ok">
-                  Une seule ligne verte : <MathText>{`$x = ${formatDec(EQ_SOL)}$`}</MathText>. Pour toutes
-                  les autres valeurs, la colonne de gauche ne donne pas 0 — l’égalité est fausse.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Une seule ligne verte : <MathText>{`$x = ${formatDec(EQ_SOL)}$`}</MathText>. Pour toutes
+                    les autres valeurs, la colonne de gauche ne donne pas 0 — l’égalité est fausse.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="equation"
+                    variant="new"
+                    compact
+                    lead="Cette égalité à trou que tu viens de tester porte un nom, et la lettre qu’elle contient aussi."
+                  />
+                  <KnowledgeBrick
+                    id="solution"
+                    variant="new"
+                    compact
+                    lead="Et la valeur qui a fait verdir la ligne en porte un autre."
+                  />
+                </>
               )}
             </div>
           ),
@@ -176,34 +195,34 @@ export default function Module02EgaliteInconnue() {
                 </Feedback>
               )}
               {strangeDone && (
-                <Feedback tone="ok">
-                  La première n’a <strong>aucune</strong> solution : un nombre ne peut pas valoir son
-                  successeur. La seconde est vraie pour <strong>toutes</strong> les valeurs : les deux
-                  écritures sont la même, développée ou non. Une équation n’a donc pas toujours
-                  exactement une solution.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    La première n’a <strong>aucune</strong> solution : un nombre ne peut pas valoir son
+                    successeur. La seconde est vraie pour <strong>toutes</strong> les valeurs : les deux
+                    écritures sont la même, développée ou non. Une équation n’a donc pas toujours
+                    exactement une solution.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="ensemble-solutions"
+                    variant="new"
+                    lead="Un tableau tout rose, un tableau tout vert : voilà comment on écrit ce que tu viens de voir."
+                  />
+                </>
               )}
             </div>
           ),
         },
         {
           num: 3,
-          title: 'Les mots justes',
+          title: 'Tester une valeur, sans résoudre',
           done: vocabDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 space-y-2 text-sm text-slate-700">
-                <p>
-                  <strong>Équation</strong> : une égalité contenant une lettre inconnue.{' '}
-                  <strong>Solution</strong> : une valeur de cette lettre qui rend l’égalité vraie.{' '}
-                  <strong>Résoudre</strong> : trouver toutes les solutions, et seulement celles-là.
-                </p>
-                <p>
-                  On note l’ensemble des solutions{' '}
-                  <MathText>{`$S = \\{\\,${formatDec(EQ_SOL)}\\,\\}$`}</MathText> pour la première, et{' '}
-                  <MathText>{'$S = \\emptyset$'}</MathText> quand il n’y en a aucune.
-                </p>
-              </div>
+              <p className="text-sm text-slate-600">
+                Une dernière chose, et c’est la plus économique de toute la leçon : pour savoir si une
+                valeur est solution, on n’a pas besoin de résoudre. Il suffit de la remettre à la place
+                de <MathText>{'$x$'}</MathText> et de calculer les deux côtés.
+              </p>
               <TapQuestion
                 prompt={
                   <>
@@ -231,6 +250,7 @@ export default function Module02EgaliteInconnue() {
                     solution se teste toujours en remplaçant, même sans savoir résoudre.
                   </>
                 }
+                requires={['solution', 'equation', 'calcul-litteral']}
                 solved={vocabDone}
                 onAnswered={() => setVocabDone(true)}
               />
@@ -238,12 +258,12 @@ export default function Module02EgaliteInconnue() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Tester une à une, ça marche… tant que la solution est dans la liste. Au module suivant, tu vas
-          la faire apparaître sans deviner.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tester une à une, ça marche… tant que la solution est dans la
+          liste. Au module suivant, tu vas la faire apparaître sans deviner.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

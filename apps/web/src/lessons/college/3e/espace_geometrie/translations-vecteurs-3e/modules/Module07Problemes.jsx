@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Boxes, Layers } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import VectorLab from '../components/VectorLab';
@@ -26,6 +27,14 @@ import {
  *                       nomme explicitement les côtés opposés.
  * Transfer              la frise montre qu'un vecteur se réutilise autant de
  *                       fois qu'on veut.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Les deux méthodes de ce module — construire un point par un vecteur, puis
+ *   répéter et enchaîner — ne vivaient que dans le `footer`, donc après les
+ *   trois problèmes qui s'en servent. Chacune est maintenant posée par une
+ *   brique à l'instant où le geste vient de l'établir : la construction du
+ *   quatrième sommet à l'étape 1, la répétition et l'enchaînement à l'étape 3,
+ *   qui porte le calcul en essai immédiat.
  */
 const A = { x: -5, y: -1 };
 const B = { x: -2, y: 1 };
@@ -102,11 +111,16 @@ export default function Module07Problemes() {
             ))}
           </div>
           {done1 ? (
-            <Feedback tone="ok">
-              D {`(${D_CIBLE.x} ; ${D_CIBLE.y})`}. Les deux flèches sont identiques, donc ABDC est
-              un parallélogramme : ses côtés opposés [AB] et [CD] sont parallèles et de même
-              longueur. On l’a obtenu par un <strong>calcul</strong>, pas à la règle.
-            </Feedback>
+            <KnowledgeBrick
+              id="construire-quatrieme-point"
+              variant="new"
+              lead={(
+                <>
+                  D {`(${D_CIBLE.x} ; ${D_CIBLE.y})`}. Les deux flèches sont identiques, donc ABDC
+                  est un parallélogramme. Tu ne l’as pas trouvé à la règle : tu l’as calculé.
+                </>
+              )}
+            />
           ) : (
             <Feedback tone="info">
               Déplacement de C à D actuellement : {formatVec(vecFromPoints(C, d))}. Il doit valoir{' '}
@@ -171,19 +185,26 @@ export default function Module07Problemes() {
               déplacement (1 ; 5).
             </p>
           </div>
-          <NumericQuestion
-            prompt="Quelle est l’ordonnée de son point d’arrivée ?"
-            expected={2}
-            parse={(s) => Number(String(s).replace(',', '.').replace('−', '-'))}
-            display="2"
-            width="w-24"
-            explain="On additionne les déplacements verticaux : 1 − 4 + 5 = 2. Enchaîner deux déplacements revient à ajouter leurs composantes."
-            explainFor={(n) => (n === 1
-              ? 'Tu as gardé l’ordonnée de départ : le drone a bel et bien bougé verticalement, deux fois.'
-              : n === -3 ? 'Tu n’as appliqué que le premier déplacement : il y en a deux à enchaîner.' : null)}
-            solved={q3}
-            onAnswered={() => setQ3(true)}
-          />
+          <KnowledgeBrick
+            id="repeter-enchainer"
+            variant="new"
+            lead="La frise que tu viens de régler applique le même vecteur encore et encore. Ici, ce sont deux vecteurs DIFFÉRENTS qui se suivent — et cela se calcule de la même façon."
+          >
+            <NumericQuestion
+              prompt="Quelle est l’ordonnée de son point d’arrivée ?"
+              expected={2}
+              parse={(s) => Number(String(s).replace(',', '.').replace('−', '-'))}
+              display="2"
+              width="w-24"
+              requires={['repeter-enchainer', 'composante', 'ordonnee']}
+              explain="On additionne les déplacements verticaux : 1 − 4 + 5 = 2. Enchaîner deux déplacements revient à ajouter leurs composantes."
+              explainFor={(n) => (n === 1
+                ? 'Tu as gardé l’ordonnée de départ : le drone a bel et bien bougé verticalement, deux fois.'
+                : n === -3 ? 'Tu n’as appliqué que le premier déplacement : il y en a deux à enchaîner.' : null)}
+              solved={q3}
+              onAnswered={() => setQ3(true)}
+            />
+          </KnowledgeBrick>
         </div>
       ),
     },
@@ -224,11 +245,10 @@ export default function Module07Problemes() {
       }
       steps={steps}
       footer={
-        <Feedback tone="ok">
-          <strong>Ce que tu viens de faire.</strong> L’égalité de deux vecteurs sert à construire un
-          point ; la répétition d’un vecteur engendre une frise ; l’enchaînement de deux
-          déplacements s’obtient en ajoutant leurs coordonnées.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Ta carte est complète. Il ne reste qu’à tout mettre à
+          l’épreuve, en dix questions.
+        </KnowledgeSnapshot>
       }
     />
   );

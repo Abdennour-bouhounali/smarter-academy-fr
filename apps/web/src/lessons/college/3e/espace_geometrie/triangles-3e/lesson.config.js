@@ -38,6 +38,10 @@ export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/triangles-
 
 export const LESSON_CONFIG = {
   id: 'triangles-3e',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
+  priorKnowledge: ['angle-droit', 'notation-segment', 'droites-paralleles'],
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Triangles',
   description:

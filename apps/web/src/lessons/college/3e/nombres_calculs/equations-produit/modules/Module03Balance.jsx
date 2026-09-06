@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import EquationBalance from '../components/EquationBalance';
@@ -27,7 +28,11 @@ import {
  * Misconception targeted: « faire passer de l'autre côté » sans opération
  *   symétrique ; et manipuler 3(x + 2) terme à terme sans développer.
  * Feedback: l'inclinaison + un Feedback qui dit quelle solution a été perdue.
- * Formalization: étape 3, la propriété nommée après le geste.
+ * Formalization: la propriété des transformations et le nom « équation du
+ *   premier degré » vivent dans `knowledge.jsx` ; des <KnowledgeBrick> les
+ *   posent dès que chaque balance est résolue — donc avant la question de
+ *   l'étape 3, qui les met à l'épreuve
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: bouton « ↺ Recommencer » à tout moment ; après 3 actions
  *   inutiles, une action correcte est suggérée.
  * Transfer: chaque branche d'une équation produit se résout ainsi (module 4).
@@ -119,12 +124,19 @@ export default function Module03Balance() {
                 </Feedback>
               )}
               {done1 && (
-                <Feedback tone="ok">
-                  <MathText>{`$${formatEquation(eq1)}$`}</MathText> : x est isolé, et la solution est la
-                  même qu’au départ. Vérifie :{' '}
-                  <MathText>{`$2 \\times ${formatDec(sol1)} + 3 = ${formatDec(2 * sol1 + 3)}$`}</MathText>{' '}
-                  et <MathText>{`$${formatDec(sol1)} + 7 = ${formatDec(sol1 + 7)}$`}</MathText>.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    <MathText>{`$${formatEquation(eq1)}$`}</MathText> : x est isolé, et la solution est la
+                    même qu’au départ. Vérifie :{' '}
+                    <MathText>{`$2 \\times ${formatDec(sol1)} + 3 = ${formatDec(2 * sol1 + 3)}$`}</MathText>{' '}
+                    et <MathText>{`$${formatDec(sol1)} + 7 = ${formatDec(sol1 + 7)}$`}</MathText>.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="equation-equivalente"
+                    variant="new"
+                    lead="Le fléau n’a plié que quand tu as touché un seul plateau. Voilà ce que la balance t’a appris — mot pour mot."
+                  />
+                </>
               )}
             </div>
           ),
@@ -159,11 +171,18 @@ export default function Module03Balance() {
                 </Feedback>
               )}
               {done2 && (
-                <Feedback tone="ok">
-                  <MathText>{`$${formatEquation(eq2)}$`}</MathText>. Développer, c’est la distributivité :{' '}
-                  <MathText>{'$3(x + 2) = 3 \\times x + 3 \\times 2 = 3x + 6$'}</MathText>. Vérifie :{' '}
-                  <MathText>{`$3(${formatDec(sol2)} + 2) = 3 \\times ${formatDec(sol2 + 2)} = 15$`}</MathText>.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    <MathText>{`$${formatEquation(eq2)}$`}</MathText>. Développer, c’est la distributivité :{' '}
+                    <MathText>{'$3(x + 2) = 3 \\times x + 3 \\times 2 = 3x + 6$'}</MathText>. Vérifie :{' '}
+                    <MathText>{`$3(${formatDec(sol2)} + 2) = 3 \\times ${formatDec(sol2 + 2)} = 15$`}</MathText>.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="equation-premier-degre"
+                    variant="new"
+                    lead="Deux balances, deux fois la même suite de gestes. Ces équations-là forment une famille, et elle a un nom."
+                  />
+                </>
               )}
             </div>
           ),
@@ -174,18 +193,10 @@ export default function Module03Balance() {
           done: ruleDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4 text-sm text-slate-700 space-y-2">
-                <p>
-                  <strong>Transformer sans changer les solutions</strong> : ajouter ou retrancher le même
-                  nombre (ou la même expression) aux deux membres ; multiplier ou diviser les deux membres
-                  par un même nombre <strong>non nul</strong>.
-                </p>
-                <p>
-                  <strong>Développer</strong> ne change rien non plus :{' '}
-                  <MathText>{'$k(a + b) = ka + kb$'}</MathText> est une réécriture, pas une opération sur
-                  la balance.
-                </p>
-              </div>
+              <p className="text-sm text-slate-600">
+                Trois transformations te sont proposées sur une équation que tu n’as pas manipulée.
+                Une seule laisse la balance droite.
+              </p>
               <TapQuestion
                 prompt={
                   <>
@@ -214,6 +225,7 @@ export default function Module03Balance() {
                     l’autre.
                   </>
                 }
+                requires={['equation-equivalente', 'equation-premier-degre']}
                 solved={ruleDone}
                 onAnswered={() => setRuleDone(true)}
               />
@@ -221,13 +233,16 @@ export default function Module03Balance() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone={broke1 ? 'info' : 'ok'}>
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong>{' '}
           {broke1
-            ? 'Tu as vu la balance pencher : c’est le meilleur souvenir à garder. Une opération d’un seul côté fabrique une autre équation.'
-            : 'Deux équations résolues sans jamais casser l’équilibre. Cette technique va servir sur CHAQUE branche d’une équation produit.'}
-        </Feedback>
-      }
+            ? 'Tu as vu la balance pencher : c’est le meilleur souvenir à garder. '
+            : 'Deux équations résolues sans jamais casser l’équilibre. '}
+          Cette technique va servir sur <strong>chaque branche</strong> de ce qui t’attend au module
+          suivant : le retour du produit du module 1, cette fois avec des x.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

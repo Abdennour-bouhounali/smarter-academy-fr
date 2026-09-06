@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useReducedMotion } from 'framer-motion';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -27,6 +28,10 @@ import { drawIndex, formatPct, fracLatex, sessionSeed } from '../components/prob
  *   sur 120 tours tourne autour de 40 ».
  * Misconception targeted: « deux issues ⇒ 1/2 chacune » ; « 0,9 ⇒ certain » ;
  *   « une fréquence sur 10 essais prouve un truquage ».
+ * Formalization: deux <KnowledgeBrick> seulement — tout le reste est du
+ *   transfert de ce qui est déjà su. « Estimer une probabilité par une
+ *   fréquence » ouvre le contrôle qualité ; « le modèle suit la situation »
+ *   arrive quand le tirage sans remise vient de changer le décompte.
  */
 
 const SEED = 20260905 + 6;
@@ -137,13 +142,19 @@ export default function Module06LaboSituations() {
           done: qc1 && qc2,
           content: (
             <div className="space-y-4">
+              <KnowledgeBrick
+                id="estimer-par-la-frequence"
+                variant="new"
+                lead="La roue, le dé, le sac : tu connaissais le modèle, donc tu calculais P. Ici personne ne le connaît — et pourtant il faut un nombre."
+              />
               <NumericQuestion
                 prompt="Une usine contrôle 500 pièces : 15 sont défectueuses. Quelle est la fréquence de pièces défectueuses, en pourcentage ?"
+                requires={['estimer-par-la-frequence', 'frequence', 'effectif']}
                 suffix="%"
                 expected={3}
                 parse={parseDec}
                 display="3 %"
-                explain="15 ÷ 500 = 0,03 = 3 %. Comme on ne connaît pas la « vraie » probabilité qu’une pièce soit défectueuse, on l’ESTIME par cette fréquence : P ≈ 0,03."
+                explain="15 ÷ 500 = 0,03 = 3 %. C’est cette fréquence qui tiendra lieu de probabilité : P ≈ 0,03."
                 explainFor={(n) => {
                   if (n === 15) return '15 est l’effectif. La fréquence, c’est 15 sur 500 = 3 %.';
                   if (n === 0.03) return '0,03 est la fréquence en écriture décimale ; en pourcentage, 3 %.';
@@ -156,6 +167,7 @@ export default function Module06LaboSituations() {
               {qc1 && (
                 <NumericQuestion
                   prompt="En prenant P ≈ 0,03, combien de pièces défectueuses faut-il prévoir dans une production de 3 000 pièces ?"
+                  requires={['estimer-par-la-frequence', 'effectif-attendu']}
                   expected={90}
                   parse={parseDec}
                   display="90"
@@ -181,6 +193,7 @@ export default function Module06LaboSituations() {
             <div className="space-y-4">
               <TapQuestion
                 prompt="Quelle est la probabilité que ce soit une fille ?"
+                requires={['formule-probabilite', 'equiprobable']}
                 options={['$\\frac{10}{25} = \\frac{2}{5}$', '$\\frac{10}{15}$', '$\\frac{1}{2}$', '$\\frac{1}{10}$']}
                 renderOption={(o) => <MathText>{o}</MathText>}
                 correctionLabel="10/25 = 2/5"
@@ -193,14 +206,22 @@ export default function Module06LaboSituations() {
               {classDone && (
                 <TapQuestion
                   prompt="La première élève tirée est une fille ; elle ne rejoue pas. On tire un second nom. Quelle est maintenant la probabilité de tirer une fille ?"
+                  requires={['formule-probabilite', 'mem-sans-memoire']}
                   options={['$\\frac{9}{24} = \\frac{3}{8}$', '$\\frac{10}{25}$', '$\\frac{10}{24}$', '$\\frac{9}{25}$']}
                   renderOption={(o) => <MathText>{o}</MathText>}
                   correctionLabel="9/24 = 3/8"
                   correct={0}
                   cols={2}
-                  explain="Il reste 9 filles parmi 24 élèves : P = 9/24 = 3/8. Le MODÈLE a changé (une élève de moins), donc la probabilité aussi — contrairement au dé, qui repart à zéro à chaque lancer."
+                  explain="Il reste 9 filles parmi 24 élèves : P = 9/24 = 3/8. Une élève de moins, un décompte de moins — contrairement au dé, qui repart identique à chaque lancer."
                   solved={class2Done}
                   onAnswered={() => setClass2Done(true)}
+                />
+              )}
+              {class2Done && (
+                <KnowledgeBrick
+                  id="le-modele-suit-la-situation"
+                  variant="new"
+                  lead="La même classe, deux tirages, deux probabilités différentes : il y a là une règle générale."
                 />
               )}
             </div>
@@ -213,6 +234,7 @@ export default function Module06LaboSituations() {
           done: vfDone,
           content: (
             <BatchChoiceQuestion
+              requires={['interpreter-une-probabilite', 'equiprobable', 'stabilisation', 'effectif-attendu']}
               rows={[
                 { id: 'a', label: '« P(pluie) = 0,9, donc il va pleuvoir, c’est sûr. »', options: ['Vrai', 'Faux'], correct: 1, correction: 'Probable, pas certain : certain, c’est 1.' },
                 { id: 'b', label: '« Une pièce tombe sur pile ou face, donc P(pile) = 1/2 même si la pièce est truquée. »', options: ['Vrai', 'Faux'], correct: 1, correction: '1/2 suppose deux faces de même chance.' },
@@ -221,7 +243,7 @@ export default function Module06LaboSituations() {
               ]}
               feedback={({ allRight, nCorrect, total }) => (
                 <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Une probabilité décrit un modèle et prévoit une tendance sur
+                  {allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Une probabilité décrit un modèle et prévoit ce que donneront
                   beaucoup d’essais ; elle ne dit jamais ce que donnera UN essai, et une petite série ne prouve rien.
                 </Feedback>
               )}
@@ -232,11 +254,9 @@ export default function Module06LaboSituations() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Roue, usine, classe : la même idée partout. Compter les issues favorables sur les issues possibles quand
-          elles ont la même chance ; estimer par une fréquence quand on ne connaît pas le modèle ; et toujours
-          prévoir <em>environ</em> P × n. Place au tournoi final.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={6}>
+          Roue, usine, classe : la même idée partout. Ta carte est complète — place au tournoi final.
+        </KnowledgeSnapshot>
       }
     />
   );

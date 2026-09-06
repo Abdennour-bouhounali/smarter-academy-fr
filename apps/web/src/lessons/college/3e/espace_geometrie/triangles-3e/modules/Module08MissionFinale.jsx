@@ -26,6 +26,7 @@ const EPREUVES = [
   {
     id: 'tr-e1',
     skill: 'constructible',
+    requires: ['inegalite-triangulaire'],
     title: 'Constructible ?',
     prompt: 'Peut-on construire un triangle de côtés 4 cm, 5 cm et 11 cm ?',
     options: [
@@ -41,6 +42,7 @@ const EPREUVES = [
   {
     id: 'tr-e2',
     skill: 'reconnaitre',
+    requires: ['triangles-particuliers'],
     title: 'Le bon nom',
     prompt: 'Dans le triangle ABC, on a AB = 6 cm, AC = 6 cm et BC = 4 cm. Comment s’appelle-t-il, et en quel sommet ?',
     options: ['Isocèle en A', 'Isocèle en B', 'Équilatéral', 'Rectangle en A'],
@@ -51,6 +53,7 @@ const EPREUVES = [
   {
     id: 'tr-e3',
     skill: 'reconnaitre',
+    requires: ['triangles-particuliers'],
     title: 'Deux propriétés à la fois',
     prompt: 'Un triangle peut-il être à la fois rectangle et isocèle ?',
     options: [
@@ -66,6 +69,7 @@ const EPREUVES = [
   {
     id: 'tr-e4',
     skill: 'somme',
+    requires: ['somme-des-angles', 'mem-consequences-180'],
     title: 'Le troisième angle',
     prompt: 'Dans un triangle, deux angles mesurent 38° et 74°. Combien mesure le troisième ?',
     options: ['68°', '112°', '46°', '138°'],
@@ -76,6 +80,7 @@ const EPREUVES = [
   {
     id: 'tr-e5',
     skill: 'somme',
+    requires: ['somme-des-angles', 'mem-consequences-180'],
     title: 'Dans un rectangle',
     prompt: 'Un triangle rectangle a un angle de 28°. Combien mesure son autre angle aigu ?',
     options: ['62°', '152°', '72°', '28°'],
@@ -86,6 +91,7 @@ const EPREUVES = [
   {
     id: 'tr-e6',
     skill: 'particuliers',
+    requires: ['triangles-particuliers', 'mem-consequences-180'],
     title: 'Les angles d’un isocèle',
     prompt: 'ABC est isocèle en A et l’angle en A mesure 30°. Combien mesure l’angle en B ?',
     options: ['75°', '150°', '60°', '30°'],
@@ -96,6 +102,7 @@ const EPREUVES = [
   {
     id: 'tr-e7',
     skill: 'construire',
+    requires: ['triangle-determine', 'mediatrice-sommet-isocele'],
     title: 'Où placer le sommet',
     prompt: 'On veut un triangle ABC isocèle en C, avec [AB] déjà tracé. Où doit se trouver C ?',
     options: [
@@ -111,6 +118,7 @@ const EPREUVES = [
   {
     id: 'tr-e8',
     skill: 'justifier',
+    requires: ['justifier'],
     title: 'Une copie incomplète',
     prompt: 'Un élève écrit seulement : « ABC est isocèle en A, donc l’angle B mesure 65°. » Que manque-t-il ?',
     options: [
@@ -126,6 +134,7 @@ const EPREUVES = [
   {
     id: 'tr-e9',
     skill: 'milieux',
+    requires: ['droite-des-milieux'],
     title: 'La droite des milieux',
     prompt: 'Dans le triangle MNP, R est le milieu de [MN] et S celui de [MP]. Si NP = 12 cm, combien mesure RS ?',
     options: ['6 cm', '24 cm', '12 cm', 'on ne peut pas le savoir'],
@@ -136,6 +145,7 @@ const EPREUVES = [
   {
     id: 'tr-e10',
     skill: 'milieux',
+    requires: ['droite-des-milieux'],
     title: 'Un problème de charpente',
     prompt: 'Une ferme de charpente a la forme d’un triangle isocèle de base 8 m. On pose une entretoise entre les milieux des deux autres côtés. Quelle est sa longueur, et pourquoi ?',
     options: [

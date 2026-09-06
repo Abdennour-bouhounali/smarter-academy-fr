@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useReducedMotion } from 'framer-motion';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -39,9 +40,14 @@ import {
  *   égales » ; « fréquence = probabilité ».
  * Feedback: chaque correction cite LES nombres de l'élève (ses effectifs, ses
  *   écarts, sa face en tête, sa prédiction) — jamais des valeurs inventées.
- * Formalization: « expérience aléatoire », « issues » à l'étape 1 (après le
- *   geste) ; « fréquence » à l'étape 3 ; « probabilité » et 1/6 à l'étape 7 ;
- *   « événement » et P = favorables ÷ possibles sont laissés aux modules 2–3.
+ * Formalization: chaque mot est posé par une <KnowledgeBrick>, APRÈS le geste
+ *   qui lui donne son sens et AVANT la question qui l'exige — « expérience
+ *   aléatoire » et « issue » à l'étape 1, « effectif » à l'étape 2,
+ *   « fréquence » à l'étape 3, « stabilisation » à l'étape 5, « le hasard n'a
+ *   pas de mémoire » à l'étape 6, « équiprobable » puis « probabilité » à
+ *   l'étape 7, « fréquence ≠ probabilité » à l'étape 8. Le texte vit dans
+ *   knowledge.jsx : rien n'est recopié ici. « Événement » et
+ *   P = favorables ÷ possibles sont laissés aux modules 2–3.
  * Scaffolding: un bouton (Lancer) → ×10 → séries → pari → expérience
  *   programmée → dé truqué → labo libre.
  * Transfer: le dé truqué ; les modules suivants (événement, sac, deux dés).
@@ -288,24 +294,26 @@ export default function Module01LaboratoireDuDe() {
               {predicted === null && !done1 && (
                 <Feedback tone="info">Commence par annoncer une face : c’est ta prédiction.</Feedback>
               )}
-              {guesses.length > 0 && (
-                <Feedback tone={done1 ? 'ok' : 'info'}>
-                  {done1 ? (
+              {guesses.length > 0 && !done1 && (
+                <Feedback tone="info">
+                  Tu avais dit <strong>{guesses[guesses.length - 1].pred}</strong>, le dé a donné{' '}
+                  <strong>{guesses[guesses.length - 1].got}</strong>
+                  {guesses[guesses.length - 1].pred === guesses[guesses.length - 1].got ? ' — deviné !' : '.'}{' '}
+                  Encore {GUESSES_NEEDED - guesses.length} lancer{GUESSES_NEEDED - guesses.length > 1 ? 's' : ''}.
+                </Feedback>
+              )}
+              {done1 && (
+                <KnowledgeBrick
+                  id="experience-aleatoire"
+                  variant="new"
+                  lead={(
                     <>
                       Sur {GUESSES_NEEDED} lancers, tu as deviné <strong>{hits} fois</strong>.
                       {hits >= 2 ? ' Bien joué — mais aurais-tu pu en être sûr ? Non.' : ''}{' '}
-                      Tu connais toutes les <strong>issues</strong> possibles (1, 2, 3, 4, 5, 6), mais personne ne
-                      peut prévoir laquelle va sortir : c’est une <strong>expérience aléatoire</strong>.
-                    </>
-                  ) : (
-                    <>
-                      Tu avais dit <strong>{guesses[guesses.length - 1].pred}</strong>, le dé a donné{' '}
-                      <strong>{guesses[guesses.length - 1].got}</strong>
-                      {guesses[guesses.length - 1].pred === guesses[guesses.length - 1].got ? ' — deviné !' : '.'}{' '}
-                      Encore {GUESSES_NEEDED - guesses.length} lancer{GUESSES_NEEDED - guesses.length > 1 ? 's' : ''}.
+                      Ce que tu viens de faire porte un nom, et ses six résultats possibles aussi.
                     </>
                   )}
-                </Feedback>
+                />
               )}
             </div>
           ),
@@ -329,8 +337,21 @@ export default function Module01LaboratoireDuDe() {
                 </Feedback>
               )}
               {few && (
+                <KnowledgeBrick
+                  id="effectif"
+                  variant="new"
+                  lead={(
+                    <>
+                      Tes {formatDec(few.t)} lancers ne sont plus un tas de résultats : ils se rangent
+                      en six barres. La hauteur de chaque barre porte un nom.
+                    </>
+                  )}
+                />
+              )}
+              {few && (
                 <TapQuestion
                   prompt={`Après ${formatDec(few.t)} lancers, la face ${few.k} ${few.c === 0 ? 'n’est jamais sortie' : `n’est sortie que ${few.c} fois`}. Que peut-on en conclure ?`}
+                  requires={['effectif', 'experience-aleatoire']}
                   options={[
                     `Le dé désavantage la face ${few.k}`,
                     `La face ${few.k} va sortir plus souvent ensuite, pour rattraper son retard`,
@@ -340,10 +361,10 @@ export default function Module01LaboratoireDuDe() {
                   cols={1}
                   explain={
                     <>
-                      Avec si peu de lancers, les écarts entre faces sont énormes et changent d’une série à
+                      Avec si peu de lancers, les écarts entre effectifs sont énormes et changent d’une série à
                       l’autre : ni « dé truqué » ni « rattrapage » ne se lisent sur {formatDec(few.t)} lancers.
-                      Chaque hauteur de barre est un <strong>effectif</strong> — le nombre de lancers qui ont
-                      donné cette face. Pour juger, il en faut beaucoup plus : c’est l’étape suivante.
+                      Pour juger, il en faut beaucoup plus : c’est l’étape suivante. Vérifie au passage que tes
+                      six effectifs additionnés redonnent bien le total : {formatDec(few.t)}.
                     </>
                   }
                   solved={fewDone}
@@ -369,17 +390,28 @@ export default function Module01LaboratoireDuDe() {
                 <Feedback tone="info">Repars de zéro : lance une série de 100 d’un coup et observe les six effectifs.</Feedback>
               )}
               {hundred && (
+                <KnowledgeBrick
+                  id="frequence"
+                  variant="new"
+                  lead={(
+                    <>
+                      La face {hundred.top} a pour effectif <strong>{hundred.c}</strong> sur 100 lancers.
+                      Pour dire si c’est beaucoup, il faut rapporter cet effectif au total.
+                    </>
+                  )}
+                >
                 <NumericQuestion
-                  prompt={`Sur 100 lancers, la face ${hundred.top} est sortie ${hundred.c} fois. Quelle part de tes lancers cela représente-t-il, en pourcentage ?`}
+                  prompt={`Exprime en pourcentage la fréquence de la face ${hundred.top} sur ces 100 lancers.`}
+                  requires={['frequence', 'effectif', 'pourcentage']}
                   suffix="%"
                   expected={hundred.c}
                   parse={parseDec}
                   display={`${hundred.c} %`}
                   explain={
                     <>
-                      {hundred.c} sur 100, c’est {hundred.c}/100 = <strong>{hundred.c} %</strong>. Cette part s’appelle la{' '}
-                      <strong>fréquence observée</strong> de la face {hundred.top} : effectif ÷ nombre total de lancers.
-                      Les six fréquences apparaissent maintenant sous le graphique.
+                      {hundred.c} sur 100, c’est {hundred.c}/100 = <strong>{hundred.c} %</strong>. Les six
+                      fréquences apparaissent maintenant sous le graphique : c’est avec elles qu’on pourra
+                      comparer une série de 10 lancers à une série de 1 000.
                     </>
                   }
                   explainFor={(n) => {
@@ -391,6 +423,7 @@ export default function Module01LaboratoireDuDe() {
                   solved={freqDone}
                   onAnswered={() => setFreqDone(true)}
                 />
+                </KnowledgeBrick>
               )}
             </div>
           ),
@@ -439,6 +472,7 @@ export default function Module01LaboratoireDuDe() {
               {runs.length >= RUNS_NEEDED && (
                 <TapQuestion
                   prompt={`Sur tes ${runs.length} séries de 1 000 lancers, que remarques-tu ?`}
+                  requires={['frequence', 'effectif']}
                   options={[
                     'Une face domine nettement les autres à chaque série',
                     'Aucune face ne domine vraiment : toutes restent proches de la même fréquence',
@@ -476,6 +510,7 @@ export default function Module01LaboratoireDuDe() {
               />
               <TapQuestion
                 prompt="Quand le nombre de lancers augmente, les fréquences des six faces…"
+                requires={['frequence']}
                 options={[
                   'deviennent exactement égales : 16,7 % chacune',
                   'se rapprochent les unes des autres, sans devenir exactement égales',
@@ -500,6 +535,13 @@ export default function Module01LaboratoireDuDe() {
                 solved={stabDone}
                 onAnswered={() => setStabDone(true)}
               />
+              {stabDone && (
+                <KnowledgeBrick
+                  id="stabilisation"
+                  variant="new"
+                  lead="Ce resserrement que tu viens de lire sur tes trois séries porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -535,6 +577,7 @@ export default function Module01LaboratoireDuDe() {
               {streakStats && (
                 <TapQuestion
                   prompt={`Il a fallu ${formatDec(streakStats.rolls)} lancers pour obtenir ${STREAK_TRIALS} fois trois 6 de suite. Le lancer suivant a donné un 6 à ${streakStats.six} — les six faces vont de ${streakStats.min} % à ${streakStats.max} %. Que montre l’expérience ?`}
+                  requires={['experience-aleatoire', 'frequence', 'stabilisation']}
                   options={[
                     'Après trois 6, le lancer suivant se répartit comme n’importe quel lancer : le dé n’a pas de mémoire',
                     'Le 6 est sorti plus souvent : le dé « continue sur sa lancée »',
@@ -545,13 +588,20 @@ export default function Module01LaboratoireDuDe() {
                   explain={
                     <>
                       Ta prédiction : « {memoryLabel} ». {memoryPred === 'pareil' ? 'Tu avais vu juste.' : 'L’expérience te contredit.'}{' '}
-                      Le dé ne sait pas ce qu’il vient de faire : chaque lancer repart de zéro, avec les mêmes chances.
-                      Trois 6 de suite, c’est rare (une fois sur 216 en moyenne — d’où les {formatDec(streakStats.rolls)} lancers
-                      nécessaires), mais une fois arrivé, le lancer suivant est un lancer comme les autres.
+                      Trois 6 de suite, c’est rare — environ une série sur 216, d’où les{' '}
+                      {formatDec(streakStats.rolls)} lancers qu’il a fallu — mais une fois arrivé, le lancer
+                      suivant se répartit comme n’importe quel autre.
                     </>
                   }
                   solved={memoryDone}
                   onAnswered={() => setMemoryDone(true)}
+                />
+              )}
+              {memoryDone && (
+                <KnowledgeBrick
+                  id="mem-sans-memoire"
+                  variant="new"
+                  lead="Tes 300 essais viennent de trancher une croyance très répandue."
                 />
               )}
             </div>
@@ -563,8 +613,15 @@ export default function Module01LaboratoireDuDe() {
           subtitle: 'Le nombre que tes barres cherchaient.',
           done: probDone,
           content: (
+            <div className="space-y-3">
+            <KnowledgeBrick
+              id="equiprobable"
+              variant="new"
+              lead="Avant de chercher ce nombre, il faut dire à quelle condition il existe."
+            />
             <TapQuestion
-              prompt="Si le dé est équilibré, chaque face a exactement la même chance. Quelle part revient alors à chaque face ?"
+              prompt="Un dé équilibré, donc : ses six issues sont équiprobables. Quelle part revient alors à chaque face ?"
+              requires={['equiprobable', 'experience-aleatoire']}
               options={['$\\frac{1}{6}$', '$\\frac{1}{2}$', '$\\frac{6}{100}$', '$\\frac{1}{1000}$']}
               renderOption={frac}
               correctionLabel="1/6"
@@ -577,15 +634,22 @@ export default function Module01LaboratoireDuDe() {
               ) : null)}
               explain={
                 <>
-                  1 face favorable sur 6 faces possibles : <strong>1/6 ≈ 16,7 %</strong>. Ce nombre s’appelle la{' '}
-                  <strong>probabilité</strong> d’obtenir cette face — on écrit P(6) = 1/6. Regarde le repère apparu
-                  sur ta série de 1 000 lancers : les six barres le serrent toutes. Tes fréquences tournaient autour
-                  de ce nombre-là.
+                  1 face favorable sur 6 faces possibles : <strong>1/6 ≈ 16,7 %</strong>. Regarde le repère
+                  apparu sur ta série de 1 000 lancers : les six barres le serrent toutes. Tes fréquences
+                  tournaient autour de ce nombre-là.
                 </>
               }
               solved={probDone}
               onAnswered={() => setProbDone(true)}
             />
+            {probDone && (
+              <KnowledgeBrick
+                id="probabilite"
+                variant="new"
+                lead="Ce nombre 1/6, que tes barres cherchaient sans jamais l’atteindre exactement, porte un nom."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -594,8 +658,10 @@ export default function Module01LaboratoireDuDe() {
           subtitle: 'Deux nombres proches, deux natures différentes.',
           done: contrastDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="Pourquoi ces deux nombres ne sont-ils pas identiques ?"
+              requires={['frequence', 'probabilite', 'equiprobable']}
               above={
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div className="rounded-xl border-2 border-indigo-200 bg-indigo-50 px-3 py-2">
@@ -619,14 +685,22 @@ export default function Module01LaboratoireDuDe() {
               cols={1}
               explain={
                 <>
-                  <strong>Fréquence observée ≠ probabilité.</strong> La fréquence dit ce qui s’est passé ; la
-                  probabilité dit ce qu’on attend d’un dé équilibré. Plus on lance, plus la fréquence se rapproche
-                  de 16,7 % — sans jamais être obligée de l’atteindre exactement.
+                  La fréquence dit ce qui s’est passé ; la probabilité dit ce qu’on attend d’un dé
+                  équilibré. Plus on lance, plus la fréquence se rapproche de 16,7 % — sans jamais être
+                  obligée de l’atteindre exactement.
                 </>
               }
               solved={contrastDone}
               onAnswered={() => setContrastDone(true)}
             />
+            {contrastDone && (
+              <KnowledgeBrick
+                id="mem-frequence-vs-probabilite"
+                variant="new"
+                lead="Deux cases côte à côte, deux nombres proches — et pourtant deux natures différentes."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -650,6 +724,7 @@ export default function Module01LaboratoireDuDe() {
               {loadedStats && (
                 <TapQuestion
                   prompt={`Avec ce dé truqué, la probabilité d’obtenir ${loadedStats.k} est-elle encore 1/6 ?`}
+                  requires={['probabilite', 'equiprobable', 'frequence']}
                   options={[
                     'Oui : 1/6 est vrai pour tous les dés à six faces',
                     'Non : 1/6 suppose que les six faces ont la même chance, ce qui n’est plus le cas',
@@ -676,12 +751,11 @@ export default function Module01LaboratoireDuDe() {
       ]}
       footer={
         <div className="space-y-4">
-          <Feedback tone="info">
-            Un lancer est imprévisible ; mille lancers ne le sont presque plus. Le nombre que les fréquences
-            cherchent, <strong>1/6</strong>, ne vient pas des lancers mais du <strong>modèle</strong> : un dé
-            équilibré, six faces qui ont la même chance. Et « obtenir un nombre pair » — quelle part ? C’est
-            la question du module suivant.
-          </Feedback>
+          <KnowledgeSnapshot moduleNumber={1}>
+            Un lancer est imprévisible ; mille lancers ne le sont presque plus. Et « obtenir un nombre
+            pair » — trois faces à la fois — quelle part cela représente-t-il ? C’est la question du
+            module suivant.
+          </KnowledgeSnapshot>
           <div className="space-y-2">
             <p className="text-sm font-semibold text-slate-700">Labo libre — tout est permis.</p>
             <div className="flex flex-wrap items-center gap-2">

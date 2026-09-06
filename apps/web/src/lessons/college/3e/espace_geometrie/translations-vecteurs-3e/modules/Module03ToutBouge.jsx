@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Shapes } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
 import {
@@ -23,6 +24,14 @@ import {
  *                       et croire qu'il faut translater chaque sommet
  *                       différemment. L'étape 2 le teste explicitement.
  * Formalization         vocabulaire « image de A par la translation ».
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le mot « translation » n'était nulle part avant d'être exigé, et « image »
+ *   n'existait que dans un encadré d'intro puis dans un `footer`. L'ordre est
+ *   maintenant : faire glisser la figure → brique `translation` → la question
+ *   sur ce qui se conserve → brique `image-point` → le calcul de A′ en essai
+ *   immédiat. L'encadré d'intro, qui recopiait la définition de A′, a disparu :
+ *   elle vit dans knowledge.jsx et paraît à sa place, dans la brique.
  */
 const CIBLE = { dx: 5, dy: 3 };
 
@@ -62,10 +71,11 @@ export default function Module03ToutBouge() {
             ariaLabel="Translate le triangle en réglant le déplacement"
           />
           {done1 ? (
-            <Feedback tone="ok">
-              La figure verte est <strong>superposable</strong> à la bleue : mêmes longueurs, mêmes
-              angles, même orientation. Une translation fait glisser sans déformer ni tourner.
-            </Feedback>
+            <KnowledgeBrick
+              id="translation"
+              variant="new"
+              lead="Tous les sommets ont reçu le même déplacement d’un seul coup, et la forme verte est restée le calque exact de la bleue. Ce glissement porte un nom."
+            />
           ) : (
             <Feedback tone="info">
               Déplacement actuel : {describeVec(v)}. Visé : {describeVec(CIBLE)}.
@@ -89,7 +99,8 @@ export default function Module03ToutBouge() {
           ]}
           correct={0}
           cols={1}
-          explain="La translation est un glissement : chaque point se déplace du même vecteur, donc les écarts entre les points sont inchangés. La figure image est superposable à la figure de départ, sans rotation ni agrandissement."
+          requires={['translation', 'deplacement']}
+          explain="La translation est un glissement : chaque point se déplace du même déplacement, donc les écarts entre les points sont inchangés. La figure obtenue est superposable à la figure de départ, sans rotation ni agrandissement."
           explainWrong="Regarde la figure verte du dessus : elle a exactement la même forme et la même inclinaison que la bleue. Seule sa position a changé."
           solved={q2}
           onAnswered={() => setQ2(true)}
@@ -98,30 +109,37 @@ export default function Module03ToutBouge() {
     },
     {
       num: 3,
-      title: 'L’image d’un point',
-      subtitle: 'On note A′ l’image de A.',
+      title: 'Le sommet qui correspond à A',
+      subtitle: 'Où atterrit le sommet A ?',
       done: q3,
       content: (
         <div className="space-y-3">
-          <div className="rounded-xl bg-slate-50 border-2 border-slate-200 p-3 text-center">
-            <p className="text-sm text-slate-700">
-              Le sommet A est en {`(${A.x} ; ${A.y})`}. On lui applique le déplacement{' '}
-              {formatVec(CIBLE)}.
-            </p>
-          </div>
-          <NumericQuestion
-            prompt="Quelle est l’abscisse de son image A′ ?"
-            expected={imageA.x}
-            parse={(s) => Number(String(s).replace(',', '.').replace('−', '-'))}
-            display={String(imageA.x)}
-            width="w-24"
-            explain={`On ajoute le déplacement horizontal à l’abscisse : ${A.x} + ${CIBLE.dx} = ${imageA.x}. L’ordonnée se calcule pareil, avec le déplacement vertical.`}
-            explainFor={(n) => (n === A.x + CIBLE.dy
-              ? 'Tu as ajouté le déplacement VERTICAL à l’abscisse. Chaque composante agit sur sa propre coordonnée.'
-              : null)}
-            solved={q3}
-            onAnswered={() => setQ3(true)}
-          />
+          <KnowledgeBrick
+            id="image-point"
+            variant="new"
+            lead={(
+              <>
+                Chaque sommet bleu a un correspondant vert. Le sommet A est en{' '}
+                {`(${A.x} ; ${A.y})`} et reçoit le déplacement {formatVec(CIBLE)} : son
+                correspondant a un nom, et une notation.
+              </>
+            )}
+          >
+            <NumericQuestion
+              prompt="Quelle est l’abscisse de son image A′ ?"
+              expected={imageA.x}
+              parse={(s) => Number(String(s).replace(',', '.').replace('−', '-'))}
+              display={String(imageA.x)}
+              width="w-24"
+              requires={['image-point', 'composante']}
+              explain={`On ajoute le déplacement horizontal à l’abscisse : ${A.x} + ${CIBLE.dx} = ${imageA.x}. L’ordonnée se calcule pareil, avec le déplacement vertical.`}
+              explainFor={(n) => (n === A.x + CIBLE.dy
+                ? 'Tu as ajouté le déplacement VERTICAL à l’abscisse. Chaque composante agit sur sa propre coordonnée.'
+                : null)}
+              solved={q3}
+              onAnswered={() => setQ3(true)}
+            />
+          </KnowledgeBrick>
         </div>
       ),
     },
@@ -150,18 +168,17 @@ export default function Module03ToutBouge() {
         <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 flex gap-3 items-start">
           <Shapes className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
           <p className="text-sm text-emerald-900">
-            L’image d’un point A par une translation se note <strong>A′</strong> (« A prime »).
-            L’image d’une figure est l’ensemble des images de ses points.
+            Règle le déplacement, puis surveille la forme verte : compare ses côtés, ses angles et
+            son inclinaison à ceux de la bleue.
           </p>
         </div>
       }
       steps={steps}
       footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Une translation fait glisser toute la figure du même
-          déplacement. L’image est <strong>superposable</strong> à la figure de départ : longueurs,
-          angles et orientation sont conservés.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu déplaces des points et des figures. Reste une question :
+          la flèche qui décrit le déplacement est-elle attachée à l’endroit où on la dessine ?
+        </KnowledgeSnapshot>
       }
     />
   );

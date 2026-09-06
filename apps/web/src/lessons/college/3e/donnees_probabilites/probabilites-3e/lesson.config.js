@@ -42,6 +42,15 @@ export const LESSON_CONFIG = {
   chapterTitle: 'Organisation et gestion de données, fonctions',
   passingScore: 6,
   masteryThreshold: 0.8,
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md) : lire un
+  // quotient et le simplifier, lire un pourcentage, soustraire à 1. Le module
+  // 0 les diagnostique — et rien d'autre. Tout le vocabulaire probabiliste
+  // (expérience aléatoire, issue, événement, effectif, fréquence,
+  // probabilité, équiprobable…) est établi DANS la leçon, par des
+  // <KnowledgeBrick>, jamais supposé connu.
+  priorKnowledge: ['quotient', 'pourcentage', 'calcul-numerique'],
   emoji: '🎲',
   estimatedDurationMin: 83,
   skills: [

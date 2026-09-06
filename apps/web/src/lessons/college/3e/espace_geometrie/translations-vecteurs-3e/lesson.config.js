@@ -37,6 +37,15 @@ export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/translatio
 export const LESSON_CONFIG = {
   id: 'translations-vecteurs-3e',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md) : elles viennent
+  // des années précédentes et le module 0 les diagnostique, une par une. Tout
+  // le reste — déplacement, vecteur, translation, coordonnées d'un vecteur —
+  // est établi DANS la leçon, par une brique.
+  priorKnowledge: ['coordonnees', 'abscisse', 'ordonnee', 'origine-repere', 'nombres-relatifs', 'droites-paralleles'],
   title: 'Translations et vecteurs',
   description:
     "Reproduire un même trajet depuis un autre point de départ, découvrir qu'une flèche posée ailleurs reste le même vecteur, puis s'en servir pour translater des figures et construire des parallélogrammes.",

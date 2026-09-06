@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -26,7 +27,11 @@ import { bagProbability, bagTotal, scaleBag, drawMany, fracLatex, simplify, form
  *   « doubler le sac change la chance ».
  * Feedback: l'écart avec la part visée est écrit (« pour l'instant 3/8 ») ;
  *   « montre-moi » après plusieurs réglages.
- * Formalization: la fraction P = k/n s'écrit après la première réussite.
+ * Formalization: chaque notion est posée par une <KnowledgeBrick> (texte
+ *   unique dans knowledge.jsx) : la formule P = favorables ÷ possibles dès que
+ *   le sac visé est composé, « deux fractions égales, la même probabilité »
+ *   après le doublement, « toutes les probabilités font 1 » après le sac à
+ *   deux contraintes, et « prévoir P × n » avant la prédiction de tirages.
  * Scaffolding: une contrainte → prédiction → tirage → deux contraintes →
  *   sans sac.
  */
@@ -132,12 +137,17 @@ export default function Module03SacDeBilles() {
                 </Feedback>
               )}
               {done1 && snap1 && (
-                <Feedback tone="ok">
-                  {snap1.rouge} rouge{snap1.rouge > 1 ? 's' : ''} sur {bagTotal(snap1)} billes :{' '}
-                  <MathText>{`$P(\\text{rouge}) = \\frac{${snap1.rouge}}{${bagTotal(snap1)}} = ${fracLatex(1, 4)}$`}</MathText>. La probabilité se
-                  calcule ainsi : <strong>nombre de billes favorables ÷ nombre total de billes</strong> — à condition que chaque
-                  bille ait la même chance d’être tirée.
-                </Feedback>
+                <KnowledgeBrick
+                  id="formule-probabilite"
+                  variant="new"
+                  lead={(
+                    <>
+                      {snap1.rouge} rouge{snap1.rouge > 1 ? 's' : ''} sur {bagTotal(snap1)} billes :{' '}
+                      <MathText>{`$P(\\text{rouge}) = \\frac{${snap1.rouge}}{${bagTotal(snap1)}} = ${fracLatex(1, 4)}$`}</MathText>.
+                      Ce que tu viens de faire à la main, une formule le dit pour toutes les situations.
+                    </>
+                  )}
+                />
               )}
             </div>
           ),
@@ -151,6 +161,7 @@ export default function Module03SacDeBilles() {
             <div className="space-y-3">
               <TapQuestion
                 prompt="Si on double chaque couleur du sac, la probabilité de tirer une rouge…"
+                requires={['formule-probabilite', 'probabilite']}
                 options={['reste la même', 'double', 'est divisée par deux']}
                 correct={0}
                 cols={1}
@@ -169,10 +180,16 @@ export default function Module03SacDeBilles() {
               {doubled && (
                 <>
                   <MarbleBag bag={bag} onChange={() => {}} disabled showProbability highlight="rouge" caption="Le sac doublé" />
-                  <Feedback tone="ok">
-                    <MathText>{`$\\frac{${bag.rouge}}{${total}} = \\frac{${simplify(bag.rouge, total).num}}{${simplify(bag.rouge, total).den}}$`}</MathText> : les deux fractions
-                    sont égales. La probabilité est une <strong>fraction du sac</strong>, pas un nombre de billes.
-                  </Feedback>
+                  <KnowledgeBrick
+                    id="fractions-egales-meme-probabilite"
+                    variant="new"
+                    lead={(
+                      <>
+                        <MathText>{`$\\frac{${bag.rouge}}{${total}} = \\frac{${simplify(bag.rouge, total).num}}{${simplify(bag.rouge, total).den}}$`}</MathText> : le sac
+                        a doublé, la fraction réduite n’a pas bougé.
+                      </>
+                    )}
+                  />
                 </>
               )}
             </div>
@@ -185,8 +202,14 @@ export default function Module03SacDeBilles() {
           done: expectDone && draws !== null,
           content: (
             <div className="space-y-3">
+              <KnowledgeBrick
+                id="effectif-attendu"
+                variant="new"
+                lead="Tu sais calculer la probabilité d’une couleur. Elle sert aussi à prévoir — approximativement — ce que donnera une longue série de tirages."
+              >
               <NumericQuestion
                 prompt={`Avec P(rouge) = 1/4, combien de billes rouges attends-tu sur ${N} tirages (avec remise) ?`}
+                requires={['effectif-attendu', 'formule-probabilite']}
                 expected={expected}
                 parse={parseDec}
                 display={formatDec(expected)}
@@ -199,6 +222,7 @@ export default function Module03SacDeBilles() {
                 solved={expectDone}
                 onAnswered={() => setExpectDone(true)}
               />
+              </KnowledgeBrick>
               {expectDone && (
                 <MarbleBag bag={bag} onChange={() => {}} disabled showProbability highlight="rouge" draws={draws} onDraw={draws ? null : draw} drawN={N} caption="Tirages avec remise" />
               )}
@@ -231,11 +255,17 @@ export default function Module03SacDeBilles() {
                 </Feedback>
               )}
               {done4 && (
-                <Feedback tone="ok">
-                  {bag4.bleu} bleues sur {bagTotal(bag4)} = 1/2, {bag4.vert} verte{bag4.vert > 1 ? 's' : ''} sur {bagTotal(bag4)} = 1/6 — et les{' '}
-                  {bag4.rouge} rouges font le reste : 1 − 1/2 − 1/6 = 1/3. Les probabilités de toutes les couleurs s’additionnent
-                  toujours pour donner 1.
-                </Feedback>
+                <KnowledgeBrick
+                  id="somme-des-probabilites"
+                  variant="new"
+                  lead={(
+                    <>
+                      {bag4.bleu} bleues sur {bagTotal(bag4)} = 1/2, {bag4.vert} verte{bag4.vert > 1 ? 's' : ''} sur{' '}
+                      {bagTotal(bag4)} = 1/6 — et les {bag4.rouge} rouges ont pris exactement le reste. Ce
+                      « reste » n’est pas un hasard.
+                    </>
+                  )}
+                />
               )}
             </div>
           ),
@@ -248,6 +278,7 @@ export default function Module03SacDeBilles() {
           content: (
             <TapQuestion
               prompt="Un sac contient 5 billes rouges, 3 bleues et 2 vertes. On tire une bille au hasard. Quelle est la probabilité qu’elle soit verte ?"
+              requires={['formule-probabilite', 'fractions-egales-meme-probabilite']}
               options={['$\\frac{1}{5}$', '$\\frac{2}{8}$', '$\\frac{2}{5}$', '$\\frac{1}{2}$']}
               renderOption={(o) => <MathText>{o}</MathText>}
               correctionLabel="1/5"
@@ -261,11 +292,10 @@ export default function Module03SacDeBilles() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> Quand toutes les issues ont la même chance,{' '}
-          <MathText>{'$P(A) = \\dfrac{\\text{nombre d’issues favorables}}{\\text{nombre d’issues possibles}}$'}</MathText>. Une
-          fraction égale décrit la même chance. Et si on lance deux dés ? Les sommes ont-elles toutes la même chance ?
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={3}>
+          Tu sais calculer une probabilité et prévoir un nombre de tirages. Et si on lance <strong>deux</strong>
+          {' '}dés d’un coup ? Les onze sommes ont-elles toutes la même chance ? C’est le module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

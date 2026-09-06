@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Calculator } from 'lucide-react';
-import { ContentModule, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TriangleLab from '../components/TriangleLab';
 import { baseAngles, thirdAngle, FIGURES } from '../components/triangleUtils';
@@ -36,6 +37,11 @@ export default function Module05CalculerSansMesurer() {
       done: q1,
       content: (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="methode-calculer-angle"
+            variant="new"
+            lead="La figure ne porte aucune mesure : voici comment on s’y prend quand même."
+          />
           <TriangleLab
             points={FIGURES.quelconque}
             draggable={false}
@@ -56,6 +62,7 @@ export default function Module05CalculerSansMesurer() {
             explainFor={(n) => (n === 108
               ? 'Tu as fait 61 + 47 = 108 : c’est la somme des deux angles connus, pas le troisième. Retranche-la à 180.'
               : n === 60 ? 'Attention : 60° serait le cas d’un triangle équilatéral. Ici les deux angles donnés sont différents.' : null)}
+            requires={['somme-des-angles', 'mem-consequences-180']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -90,6 +97,7 @@ export default function Module05CalculerSansMesurer() {
             explainFor={(n) => (n === 136
               ? 'Tu as trouvé 180 − 44 = 136 : c’est ce qui reste pour les DEUX angles à la base. Comme ils sont égaux, il faut encore diviser par 2.'
               : n === 60 ? 'Isocèle ne veut pas dire équilatéral : les trois angles ne valent 60° que si les trois côtés sont égaux.' : null)}
+            requires={['methode-calculer-angle', 'triangles-particuliers']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -145,6 +153,7 @@ export default function Module05CalculerSansMesurer() {
                 : `${nCorrect} sur ${total}. Dans chaque cas, demande-toi d’abord quels angles sont ÉGAUX, puis applique la somme.`}
             </Feedback>
           )}
+          requires={['methode-calculer-angle', 'mem-consequences-180']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
@@ -181,13 +190,11 @@ export default function Module05CalculerSansMesurer() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Équilatéral : trois angles de 60°. Isocèle : les deux angles
-          à la base sont égaux. Rectangle : les deux angles aigus somment 90°. Rectangle isocèle :
-          45° et 45°.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu calcules juste. Reste à l’écrire de façon convaincante.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

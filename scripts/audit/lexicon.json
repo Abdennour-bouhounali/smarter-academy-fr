@@ -94,6 +94,27 @@
       ]
     },
     {
+      "id": "notation-segment",
+      "label": "notation [AB] / (AB) / AB",
+      "grade": "6e",
+      "_comment": "Segment, droite et longueur se distinguent par leurs crochets. Sans rapport avec les crochets d'intervalle de seconde.",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])segments?\\s+\\[",
+        "crochets?(?=[^\\]]*(?<![\\p{L}\\p{N}_])segment)"
+      ],
+      "notationPatterns": [
+        "^\\[[A-Z]{2}\\]$"
+      ]
+    },
+    {
+      "id": "angle-droit",
+      "label": "angle droit",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])angle droit(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
       "id": "mediatrice",
       "label": "médiatrice",
       "grade": "6e",
@@ -481,11 +502,13 @@
       "grade": "seconde",
       "patterns": [
         "\\]\\s*-?[0-9∞]+\\s*;",
-        "(?<![\\p{L}\\p{N}_])crochets?(?![\\p{L}\\p{N}_])"
+        "(?<![\\p{L}\\p{N}_])crochets?(?![\\p{L}\\p{N}_])(?=[^.]*intervalle)",
+        "intervalle[^.]*(?<![\\p{L}\\p{N}_])crochets?(?![\\p{L}\\p{N}_])"
       ],
       "notationPatterns": [
         "[\\[\\]]\\s*[^;\\[\\]]+\\s*;\\s*[^;\\[\\]]+\\s*[\\[\\]]"
-      ]
+      ],
+      "_comment": "L'orientation des crochets d'un intervalle. Le crochet sert aussi à noter un segment [AB] depuis la 6e : on exige donc le contexte « intervalle »."
     },
     {
       "id": "ensemble-reels",
@@ -505,13 +528,15 @@
       "label": "symbole ∈",
       "grade": "seconde",
       "patterns": [
-        "(?<![\\p{L}\\p{N}_])appartient(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])appartient(?![\\p{L}\\p{N}_])\\s*[àa]\\s*(?:l['’](?:ensemble|intervalle)|un\\s+(?:ensemble|intervalle)|cet\\s+(?:ensemble|intervalle)|ℕ|ℤ|ℚ|ℝ|\\[|\\]|\\()",
+        "(?<![\\p{L}\\p{N}_])appartenance(?![\\p{L}\\p{N}_])",
         "∈"
       ],
       "notationPatterns": [
         "\\\\in(?![\\p{L}\\p{N}_])",
         "∈"
-      ]
+      ],
+      "_comment": "Le verbe « appartenir » au sens ENSEMBLISTE. Employé seul il est du français courant (« une question qui appartient à une autre leçon ») : seules les tournures où il désigne l'appartenance à un ensemble ou à un intervalle sont retenues, en plus du symbole ∈ lui-même."
     },
     {
       "id": "inclus",
@@ -783,9 +808,8 @@
       "label": "terme (d’une expression)",
       "grade": "3e",
       "patterns": [
-        "termes? semblables?",
         "(?<![\\p{L}\\p{N}_])termes?(?![\\p{L}\\p{N}_])\\s+(?:de l['’]expression|d['’]une expression|constants?|en\\s+x(?![\\p{L}\\p{N}_])|du milieu|central)",
-        "(?:chaque|les deux|tous les|ses|le second|le premier)\\s+termes?\\s+(?:de la parenth[èe]se|de l['’]expression|de la somme|semblables?)"
+        "(?:chaque|les deux|tous les|ses|le second|le premier)\\s+termes?\\s+(?:de la parenth[èe]se|de l['’]expression|de la somme)"
       ],
       "_comment": "Le mot « terme » au sens ALGÉBRIQUE (les morceaux additionnés d'une expression littérale). Le mot seul est aussi le langage courant des fractions (« les deux termes »), des rapports et des suites : n'y répondre que sur les collocations algébriques évite de signaler des leçons qui n'enseignent pas le calcul littéral."
     },
@@ -794,7 +818,6 @@
       "label": "facteur",
       "grade": "3e",
       "patterns": [
-        "facteurs? commune?s?",
         "(?<![\\p{L}\\p{N}_])facteurs?(?![\\p{L}\\p{N}_])\\s+(?:de l['’]expression|du (?:terme|produit)|de ce (?:terme|produit)|premiers?(?![\\p{L}\\p{N}_]))",
         "(?:les deux|chaque|ses|tous les)\\s+facteurs?(?![\\p{L}\\p{N}_])",
         "(?<![\\p{L}\\p{N}_])facteurs?\\s+de\\s+(?:5x|décomposition)(?![\\p{L}\\p{N}_])"

@@ -5,9 +5,15 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
 /**
  * Module 0 — MISSION DE DÉPART (diagnostic, jamais bloquant).
  *
- * Teste UNIQUEMENT les prérequis déclarés — fractions, pourcentages, calcul
- * numérique — et jamais la matière de la leçon : ni issue, ni événement, ni
- * probabilité, ni fréquence. Aucune question ne porte de métadonnée `assessment`.
+ * Teste UNIQUEMENT les prérequis déclarés — lire et simplifier un quotient,
+ * lire un pourcentage, soustraire à 1 — et jamais la matière de la leçon : ni
+ * issue, ni événement, ni probabilité, ni fréquence. Aucune question ne porte
+ * de métadonnée `assessment`.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique.
+ * Ces ids sont ceux de `priorKnowledge` (lesson.config.js) et d'eux seuls :
+ * un diagnostic MESURE des acquis, il n'enseigne rien
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 
 const SKILLS = {
@@ -19,6 +25,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'pb-d1',
+    requires: ['quotient'],
     skill: 'fractions',
     points: 2,
     prompt: 'Quelle fraction est égale à 2/8 ?',
@@ -29,6 +36,7 @@ const QUESTIONS = [
   },
   {
     id: 'pb-d2',
+    requires: ['quotient'],
     skill: 'fractions',
     points: 2,
     prompt: 'Laquelle de ces fractions est la plus grande ?',
@@ -39,6 +47,7 @@ const QUESTIONS = [
   },
   {
     id: 'pb-d3',
+    requires: ['pourcentage', 'quotient'],
     skill: 'pourcentages',
     points: 2,
     prompt: '25 sur 100, c’est…',
@@ -49,6 +58,7 @@ const QUESTIONS = [
   },
   {
     id: 'pb-d4',
+    requires: ['pourcentage'],
     skill: 'pourcentages',
     points: 2,
     prompt: 'Combien font 20 % de 300 ?',
@@ -59,6 +69,7 @@ const QUESTIONS = [
   },
   {
     id: 'pb-d5',
+    requires: ['calcul-numerique'],
     skill: 'calcul',
     points: 2,
     prompt: 'Que vaut 1 − 0,7 ?',

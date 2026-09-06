@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -31,8 +32,11 @@ import SlideCutToggle from '../components/SlideCutToggle';
  *   (a − b)² » (traité par le glissement).
  * Feedback: le compteur « n / 4 morceaux » quantifie l'écart ; le tableau
  *   colore en rose la colonne a² + b².
- * Formalization: les trois identités sont écrites APRÈS le découpage et la
- *   vérification numérique.
+ * Formalization: les trois identités vivent dans `knowledge.jsx` ; des
+ *   <KnowledgeBrick> les posent APRÈS le découpage (étape 2), APRÈS le
+ *   glissement (étape 4) et APRÈS le verdict de la dernière question. L'étape
+ *   1 reste une PRÉDICTION : elle n'exige rien de ce qu'elle fait découvrir
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 tentatives sans succès, « Je ne trouve pas —
  *   montre-moi » compte tout et signale la révélation.
  * Transfer: étape 4, écrire (a − b)² sans dessin, une fois le glissement vu.
@@ -129,6 +133,7 @@ export default function Module05CarreAPlusB() {
                   carré ci-dessous et compte toi-même.
                 </>
               }
+              requires={['developper']}
               solved={done1}
               onAnswered={() => setPredicted(true)}
             />
@@ -196,15 +201,17 @@ export default function Module05CarreAPlusB() {
                     <MathText>{'$a^{2} + b^{2}$'}</MathText>.
                     {revealed && ' (Les morceaux t’ont été montrés — refais le geste mentalement.)'}
                   </Feedback>
-                  <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 space-y-1.5">
-                    <p className="text-sm font-semibold text-violet-900">Le mot :</p>
-                    <p className="text-sm text-violet-900 leading-relaxed">
-                      <MathText>{'$(a + b)^{2} = a^{2} + 2ab + b^{2}$'}</MathText> est une{' '}
-                      <strong>identité remarquable</strong> : une double distributivité si fréquente
-                      qu’on la reconnaît d’un coup d’œil, dans les deux sens. Ce n’est pas une règle
-                      nouvelle — c’est le découpage que tu viens de faire.
-                    </p>
-                  </div>
+                  <KnowledgeBrick
+                    id="carre-somme"
+                    variant="new"
+                    lead="Les deux coins que tu as failli oublier sont exactement l’écart entre ta prédiction et la vérité."
+                  />
+                  <KnowledgeBrick
+                    id="identite-remarquable"
+                    variant="new"
+                    compact
+                    lead="Ce découpage revient si souvent qu’il porte un nom de famille."
+                  />
                 </>
               )}
             </div>
@@ -286,15 +293,11 @@ export default function Module05CarreAPlusB() {
                 </Feedback>
               )}
               {slid && (
-                <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 space-y-1.5">
-                  <p className="text-sm font-semibold text-violet-900">Ce que le glissement montre :</p>
-                  <p className="text-sm text-violet-900 leading-relaxed">
-                    <MathText>{'$a^{2} - b^{2} = (a + b)(a - b)$'}</MathText>. Attention : ce n’est{' '}
-                    <strong>pas</strong> <MathText>{'$(a - b)^{2}$'}</MathText> — le rectangle obtenu
-                    n’est pas un carré, ses côtés valent <MathText>{'$a + b$'}</MathText> et{' '}
-                    <MathText>{'$a - b$'}</MathText>.
-                  </p>
-                </div>
+                <KnowledgeBrick
+                  id="difference-carres"
+                  variant="new"
+                  lead="Rien n’a été ajouté ni enlevé : le même morceau, posé ailleurs, forme maintenant un rectangle."
+                />
               )}
               <TapQuestion
                 prompt={
@@ -332,31 +335,36 @@ export default function Module05CarreAPlusB() {
                     <MathText>{'$-2ab$'}</MathText> est indispensable.
                   </>
                 }
+                requires={['carre-somme', 'difference-carres', 'signe-parenthese']}
                 solved={minusDone}
                 onAnswered={() => setMinusDone(true)}
               />
               {done4 && (
-                <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 space-y-1.5">
-                  <p className="text-sm font-semibold text-violet-900">Les trois identités, ensemble :</p>
-                  <div className="text-sm text-violet-900 leading-relaxed space-y-1 font-medium">
-                    <p><MathText>{'$(a + b)^{2} = a^{2} + 2ab + b^{2}$'}</MathText> — le carré découpé en 4</p>
-                    <p><MathText>{'$(a - b)^{2} = a^{2} - 2ab + b^{2}$'}</MathText> — le même, avec −b</p>
-                    <p><MathText>{'$(a + b)(a - b) = a^{2} - b^{2}$'}</MathText> — le morceau qui glisse</p>
-                  </div>
-                </div>
+                <>
+                  <KnowledgeBrick
+                    id="carre-difference"
+                    variant="new"
+                    compact
+                    lead="Tu viens de le trouver : c’est le même carré, avec −b à la place de b."
+                  />
+                  <KnowledgeBrick
+                    id="mem-trois-identites"
+                    variant="new"
+                    compact
+                    lead="Les trois découpages, côte à côte."
+                  />
+                </>
               )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          <MathText>{'$(a + b)^{2}$'}</MathText> n’est pas <MathText>{'$a^{2} + b^{2}$'}</MathText> :
-          il manque les <strong>deux rectangles</strong> <MathText>{'$ab$'}</MathText>, et ils ont une
-          forme, une place, une aire. Les trois identités sont trois découpages — pas trois formules à
-          apprendre par cœur.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu as lu ces trois découpages du produit vers la somme. Au
+          module suivant, on les lit dans l’autre sens : de la somme vers le produit.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

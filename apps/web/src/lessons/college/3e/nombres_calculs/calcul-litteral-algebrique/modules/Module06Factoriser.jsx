@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -32,9 +33,13 @@ import {
  *   et « a² − b² = (a − b)² ».
  * Feedback: quand un seul terme porte le facteur, le message nomme le terme
  *   oublié ; le tableau de valeurs départage 3(2x + 3) et 3(2x + 9).
- * Formalization: la carte « À retenir » de l'étape 4 rassemble les trois
- *   gestes de la leçon — développer, réduire, factoriser — écrits comme des
- *   flèches sur le rectangle.
+ * Formalization: « factoriser », le facteur commun et la factorisation par
+ *   identité vivent dans `knowledge.jsx` ; des <KnowledgeBrick> les posent
+ *   après la reconstruction du rectangle (étape 1) et après la reconnaissance
+ *   du carré (étape 3). L'étape 4 garde son IMAGE — les deux sens de lecture
+ *   d'un même rectangle — mais plus aucune définition recopiée : celles-ci
+ *   vivent dans la carte, que le footer affiche
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 essais infructueux, « Je ne trouve pas — montre-moi »
  *   allume les deux facteurs et reconstruit le rectangle.
  * Transfer: étapes 2 et 3, deux factorisations sans facteur commun visible —
@@ -103,8 +108,8 @@ export default function Module06Factoriser() {
       steps={[
         {
           num: 1,
-          title: 'Le facteur commun',
-          subtitle: 'Touche-le dans CHAQUE carte — pas dans une seule.',
+          title: 'Le nombre qui est dans les deux cartes',
+          subtitle: 'Touche-le dans CHACUNE — pas dans une seule.',
           done: done1,
           content: (kit) => (
             <div className="space-y-3">
@@ -169,15 +174,17 @@ export default function Module06Factoriser() {
                     <MathText>{`$${formatTerms(SUM, { latex: true })} = ${formatProduct(REBUILT, { latex: true })}$`}</MathText>.
                     {revealed && ' (Le facteur t’a été montré — refais le geste sur l’étape suivante.)'}
                   </Feedback>
-                  <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-4 space-y-1.5">
-                    <p className="text-sm font-semibold text-purple-900">Le mot :</p>
-                    <p className="text-sm text-purple-900 leading-relaxed">
-                      <strong>Factoriser</strong>, c’est écrire une somme sous forme de{' '}
-                      <strong>produit</strong> — retrouver les côtés du rectangle à partir de ses
-                      morceaux. C’est exactement développer, lu à l’envers ; et la vérification est
-                      gratuite : redéveloppe et tu dois retomber sur la somme de départ.
-                    </p>
-                  </div>
+                  <KnowledgeBrick
+                    id="factoriser"
+                    variant="new"
+                    lead="Le rectangle s’est reconstruit tout seul dès que le 3 était touché dans les deux cartes. Ce chemin inverse porte un nom."
+                  />
+                  <KnowledgeBrick
+                    id="facteur-commun"
+                    variant="new"
+                    compact
+                    lead="Et voilà ce que tu as cherché pour y arriver."
+                  />
                   <ValueTable
                     columns={[
                       { id: 'somme', label: <MathText>{'$6x+9$'}</MathText>, fn: (x) => 6 * x + 9 },
@@ -245,6 +252,7 @@ export default function Module06Factoriser() {
                   toujours en <MathText>{'$(a + b)(a - b)$'}</MathText>.
                 </>
               }
+              requires={['factoriser', 'difference-carres', 'facteur-commun']}
               solved={done2}
               onAnswered={() => setDiffDone(true)}
             />
@@ -292,6 +300,7 @@ export default function Module06Factoriser() {
                     « + 9 » dehors.
                   </>
                 }
+                requires={['factoriser', 'carre-somme', 'difference-carres']}
                 solved={done3}
                 onAnswered={() => setSquareDone(true)}
               />
@@ -313,6 +322,11 @@ export default function Module06Factoriser() {
                     <MathText>{'$3x$'}</MathText> sont exactement le{' '}
                     <MathText>{'$6x$'}</MathText> du milieu.
                   </Feedback>
+                  <KnowledgeBrick
+                    id="factoriser-par-identite"
+                    variant="new"
+                    lead="Deux fois de suite, tu as retrouvé un produit sans aucun facteur commun : en reconnaissant la forme d’une identité."
+                  />
                 </>
               )}
             </div>
@@ -320,13 +334,12 @@ export default function Module06Factoriser() {
         },
         {
           num: 4,
-          title: 'À retenir',
-          subtitle: 'Les trois gestes de la leçon, sur une seule image.',
+          title: 'Une image, deux sens de lecture',
+          subtitle: 'Le même rectangle, parcouru dans un sens puis dans l’autre.',
           done: done4,
           content: (
             <div className="space-y-3">
               <div className="rounded-2xl border-2 border-purple-200 bg-white p-4 space-y-3">
-                <p className="text-sm font-bold text-purple-900">Une image, deux sens de lecture</p>
                 <div className="rounded-xl bg-purple-50 border border-purple-200 p-3 space-y-2 text-sm text-purple-900">
                   <p className="text-center font-mono font-bold">
                     produit&nbsp;&nbsp;<span aria-hidden="true">──développer──▶</span>&nbsp;&nbsp;somme
@@ -335,50 +348,35 @@ export default function Module06Factoriser() {
                     somme&nbsp;&nbsp;<span aria-hidden="true">◀──factoriser──</span>&nbsp;&nbsp;produit
                   </p>
                   <p className="text-center">
-                    <MathText>{'$3(2x + 3) \\;\\longleftrightarrow\\; 6x + 9$'}</MathText>
+                    <MathText>{'$3(2x + 3) \\longleftrightarrow 6x + 9$'}</MathText>
                   </p>
                 </div>
-                <div className="space-y-2 text-sm text-slate-700 leading-relaxed">
-                  <p>
-                    <strong>Développer</strong> : chaque terme d’un côté rencontre chaque terme de
-                    l’autre. <MathText>{'$k(a + b) = ka + kb$'}</MathText> et{' '}
-                    <MathText>{'$(a + b)(c + d) = ac + ad + bc + bd$'}</MathText>.
-                  </p>
-                  <p>
-                    <strong>Réduire</strong> : empiler les termes semblables — ceux qui portent la même
-                    forme de tuile. Ça ne change jamais la quantité.
-                  </p>
-                  <p>
-                    <strong>Factoriser</strong> : sortir le facteur commun de{' '}
-                    <strong>tous</strong> les termes, ou reconnaître une identité :
-                  </p>
-                  <ul className="list-none space-y-1 pl-2 font-medium">
-                    <li><MathText>{'$a^{2} + 2ab + b^{2} = (a + b)^{2}$'}</MathText></li>
-                    <li><MathText>{'$a^{2} - 2ab + b^{2} = (a - b)^{2}$'}</MathText></li>
-                    <li><MathText>{'$a^{2} - b^{2} = (a + b)(a - b)$'}</MathText></li>
-                  </ul>
-                  <p>
-                    <strong>Le réflexe de vérification</strong> : redévelopper le produit obtenu, ou
-                    tester deux valeurs. Une seule valeur ne prouve rien ; une seule valeur qui diffère
-                    réfute tout.
-                  </p>
-                </div>
+                <AlgebraRect
+                  product={REBUILT}
+                  mode="rebuild"
+                  splitA
+                  splitB
+                  counted={REBUILT_IDS}
+                  frozen
+                  caption="Une seule figure : les côtés à gauche de la flèche, les morceaux à droite."
+                />
               </div>
               <Feedback tone="info">
-                Cette carte est là pour être relue — rien à toucher. L’étape est validée dès que tu as
-                reconnu le carré à l’étape 3.
+                Une seule figure porte les deux gestes : rien à toucher ici. Tes connaissances, elles,
+                t’attendent en bas de page et dans le tiroir « Ma carte ». L’étape est validée dès que
+                tu as reconnu le carré à l’étape 3.
               </Feedback>
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Factoriser, c’est retrouver les <strong>côtés</strong> du rectangle à partir de ses morceaux.
-          Même image que développer, lue dans l’autre sens — et la vérification est toujours à portée
-          de main.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Développer, réduire, factoriser : les trois gestes sont
+          maintenant à toi. Au module suivant, la seule question qui reste — <em>lequel</em> choisir,
+          et pourquoi.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

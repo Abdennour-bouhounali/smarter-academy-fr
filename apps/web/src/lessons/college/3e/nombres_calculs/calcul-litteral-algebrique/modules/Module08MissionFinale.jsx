@@ -1,6 +1,7 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -24,6 +25,11 @@ import AlgebraRect from '../components/AlgebraRect';
  *   · ne diviser qu'un terme en factorisant (6x + 9 = 3(2x + 9)) — M6
  *   · conclure d'une seule valeur commune que deux écritures sont égales — M3
  *   · vouloir développer une équation produit au lieu de garder les facteurs — M7
+ *
+ * `requires` nomme, épreuve par épreuve, les connaissances que la leçon a
+ * établies et que l'épreuve mobilise. Le test final CONSOLIDE : il n'introduit
+ * ni concept, ni mot, ni notation, et la synthèse ne recopie aucune définition
+ * — elle affiche la carte complète (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  *
  * Couverture des 11 LPs :
  *   P1 → e1 · P2 → e2 · P3 → e3 · P4 → e3, e4 · P5 → e5 · P6 → e5 ·
@@ -52,6 +58,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'cl-e1',
+    requires: ['expression-litterale'],
     skill: 'sens',
     title: 'Épreuve 1',
     prompt: (
@@ -75,6 +82,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e2',
+    requires: ['terme', 'facteur'],
     skill: 'termes',
     title: 'Épreuve 2',
     prompt: (
@@ -100,6 +108,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e3',
+    requires: ['reduire', 'termes-semblables'],
     skill: 'reduire',
     title: 'Épreuve 3',
     prompt: (
@@ -122,6 +131,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e4',
+    requires: ['termes-semblables', 'reduire', 'regle-testeur'],
     skill: 'reduire',
     title: 'Épreuve 4',
     prompt: (
@@ -144,6 +154,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e5',
+    requires: ['distributivite-simple', 'developper'],
     skill: 'developper',
     title: 'Épreuve 5',
     prompt: (
@@ -166,6 +177,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e6',
+    requires: ['double-distributivite', 'developper', 'termes-semblables'],
     skill: 'developper',
     title: 'Épreuve 6',
     prompt: (
@@ -188,6 +200,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e7',
+    requires: ['carre-somme', 'identite-remarquable'],
     skill: 'identites',
     title: 'Épreuve 7',
     prompt: (
@@ -210,6 +223,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e8',
+    requires: ['factoriser', 'facteur-commun'],
     skill: 'factoriser',
     title: 'Épreuve 8',
     prompt: (
@@ -232,6 +246,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e9',
+    requires: ['regle-testeur', 'meme-expression'],
     skill: 'equivalence',
     title: 'Épreuve 9',
     prompt: (
@@ -257,6 +272,7 @@ const EPREUVES = [
   },
   {
     id: 'cl-e10',
+    requires: ['choisir-la-forme', 'produit-nul-forme', 'factoriser'],
     skill: 'choisir',
     title: 'Épreuve 10',
     prompt: (
@@ -330,15 +346,6 @@ function Synthese() {
         />
       </div>
 
-      <div className="bg-white border-2 border-emerald-200 rounded-2xl p-4 space-y-2">
-        <p className="text-sm font-semibold text-emerald-700 text-center">Les trois identités</p>
-        <div className="space-y-1.5 text-center text-slate-800">
-          <p><MathText>{'$(a + b)^{2} = a^{2} + 2ab + b^{2}$'}</MathText></p>
-          <p><MathText>{'$(a - b)^{2} = a^{2} - 2ab + b^{2}$'}</MathText></p>
-          <p><MathText>{'$(a + b)(a - b) = a^{2} - b^{2}$'}</MathText></p>
-        </div>
-      </div>
-
       <div className="bg-white border-2 border-sky-200 rounded-2xl p-4 space-y-2">
         <p className="text-sm font-semibold text-sky-700 text-center">
           Le rituel de vérification, figé sur a = 3 et b = 2
@@ -359,14 +366,6 @@ function Synthese() {
         />
       </div>
 
-      <div className="bg-gradient-to-br from-rose-500 to-purple-600 text-white rounded-2xl p-5 text-center space-y-1">
-        <p className="text-xs uppercase tracking-wide text-rose-100 font-mono font-bold">À retenir</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Développer = découper le rectangle</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Réduire = empiler les mêmes tuiles</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Factoriser = retrouver les côtés</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">La question décide de l’écriture</p>
-      </div>
-
       <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 space-y-2.5">
         <p className="text-sm font-bold text-amber-900">Les pièges à éviter</p>
         {PIEGES.map((p) => (
@@ -382,6 +381,9 @@ function Synthese() {
         exactement ce que fait le calcul littéral — et c’est pourquoi une transformation se vérifie
         toujours en redéveloppant, ou en testant deux valeurs.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

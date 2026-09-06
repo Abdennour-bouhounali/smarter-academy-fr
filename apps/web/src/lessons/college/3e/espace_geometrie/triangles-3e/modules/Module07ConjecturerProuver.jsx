@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FlaskConical, Stamp } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MidlineLab from '../components/MidlineLab';
 import { FIGURES, midlineOf } from '../components/triangleUtils';
@@ -98,11 +99,18 @@ export default function Module07ConjecturerProuver() {
             </button>
           )}
           {done1 ? (
+            <>
             <Feedback tone="ok">
               Trois triangles très différents, trois fois le même rapport : <strong>0,50</strong>.
               Et les chevrons verts n’ont jamais disparu — (IJ) est resté parallèle à (BC) tout du
               long. Ce n’est pas une coïncidence : c’est une propriété.
             </Feedback>
+              <KnowledgeBrick
+                id="droite-des-milieux"
+                variant="new"
+                lead="Cette double propriété que tu viens de vérifier trois fois porte un nom."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               Relevé actuel : IJ = {Math.round(m.ij)}, BC = {Math.round(m.bc)}, rapport{' '}
@@ -131,6 +139,7 @@ export default function Module07ConjecturerProuver() {
           cols={1}
           explain="C’est le théorème de la droite des milieux. Tes trois relevés donnaient tous un rapport de 0,50, et le parallélisme n’a jamais été pris en défaut — quelle que soit la forme du triangle."
           explainWrong="Regarde tes relevés : IJ était chaque fois la moitié de BC, et les chevrons indiquaient un parallélisme constant. Ni perpendiculaire, ni égal, ni variable."
+          requires={['droite-des-milieux']}
           solved={q2}
           onAnswered={() => setQ2(true)}
         />
@@ -160,9 +169,18 @@ export default function Module07ConjecturerProuver() {
             explainFor={(n) => (n === 34
               ? 'Tu as multiplié par 2 au lieu de diviser : le segment des milieux est plus COURT que le côté, il en vaut la moitié.'
               : n === 17 ? 'RS n’est pas égal à NP : il en vaut la moitié.' : null)}
+            requires={['droite-des-milieux']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
+            {q3 && (
+              <KnowledgeBrick
+                id="conjecturer-puis-prouver"
+                variant="new"
+                compact
+                lead="Et la leçon que cette propriété enseigne au-delà d’elle-même."
+              />
+            )}
         </div>
       ),
     },
@@ -202,13 +220,11 @@ export default function Module07ConjecturerProuver() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Théorème de la droite des milieux.</strong> Dans un triangle, le segment joignant
-          les milieux de deux côtés est parallèle au troisième côté et mesure la moitié de sa
-          longueur.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Il ne reste qu’à tout mettre à l’épreuve.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Compass, MoveHorizontal, Ruler } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
 import {
@@ -24,7 +25,22 @@ import {
  *                       courante dit « dans l'autre direction » pour un
  *                       demi-tour, ce que la géométrie appelle un autre SENS.
  * Feedback              chaque attribut est jugé séparément.
- * Formalization         l'étape 3 nomme le vecteur opposé.
+ * Formalization         l'étape 3 nomme le DÉPLACEMENT opposé.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Deux fautes réparées ici.
+ *   1. Le mot « vecteur » apparaissait pour la première fois dans la
+ *      `correction` de l'étape 2 — deux modules avant d'être enseigné, et dans
+ *      une position qui ne fait que renforcer. Ce module dit donc
+ *      « déplacement opposé », son propre vocabulaire ; « vecteur » attend le
+ *      module 4, où le geste le justifie.
+ *   2. « composante » n'était jamais posé : il arrivait lui aussi dans une
+ *      correction, puis était EXIGÉ à l'étape 3 (« changer le signe des deux
+ *      composantes »). Il est maintenant établi à l'étape 2, par une brique,
+ *      avant le tableau qui s'en sert.
+ *   L'ordre est : manipuler les trois voyants → brique `direction-nest-pas-sens`
+ *   → brique `composantes-ordonnees` avec le tableau en essai → brique
+ *   `deplacement-oppose` avec sa question en essai.
  */
 const REF = { dx: 3, dy: 2 };
 const ORIGINE = { x: -4, y: -2 };
@@ -92,12 +108,17 @@ export default function Module02DirectionSensLongueur() {
             <Lamp on={a.longueur} label="Longueur" />
           </div>
           {done1 ? (
-            <Feedback tone="ok">
-              Tu as produit les trois cas. Le plus surprenant :{' '}
-              <strong>{formatVec(opposite(REF))}</strong> a la <em>même direction</em> que la
-              référence et la <em>même longueur</em> — seul le sens change. En géométrie,
-              « direction » désigne la droite suivie, pas le côté vers lequel on va.
-            </Feedback>
+            <KnowledgeBrick
+              id="direction-nest-pas-sens"
+              variant="new"
+              lead={(
+                <>
+                  Tu as produit les trois cas. Le plus surprenant :{' '}
+                  <strong>{formatVec(opposite(REF))}</strong> gardait le voyant
+                  « Direction » allumé alors que la flèche partait à l’envers.
+                </>
+              )}
+            />
           ) : (
             <Feedback tone="info">
               Cas trouvés : {seen.size} sur 3. À obtenir : le sens contraire (essaie{' '}
@@ -114,48 +135,58 @@ export default function Module02DirectionSensLongueur() {
       subtitle: 'Toujours par rapport à la référence (3 ; 2).',
       done: batch,
       content: (
-        <BatchChoiceQuestion
-          intro={
-            <p className="text-sm text-slate-700">
-              Pour chaque déplacement, dis ce qui le distingue de la référence {formatVec(REF)}.
-            </p>
-          }
-          rows={[
-            {
-              id: 'c1', label: '(−3 ; −2)',
-              options: ['Sens contraire', 'Autre direction', 'Autre longueur'],
-              correct: 0,
-              correction: 'Même droite suivie et même longueur, mais on la parcourt à l’envers : c’est le vecteur opposé.',
-            },
-            {
-              id: 'c2', label: '(6 ; 4)',
-              options: ['Autre longueur, même sens', 'Sens contraire', 'Autre direction'],
-              correct: 0,
-              correction: '(6 ; 4) c’est deux fois (3 ; 2) : même direction, même sens, mais deux fois plus long.',
-            },
-            {
-              id: 'c3', label: '(2 ; 3)',
-              options: ['Autre direction', 'Sens contraire', 'Identique'],
-              correct: 0,
-              correction: 'Les composantes sont échangées : la droite suivie n’est plus la même. Attention, (3 ; 2) et (2 ; 3) sont deux déplacements différents.',
-            },
-            {
-              id: 'c4', label: '(3 ; 2)',
-              options: ['Identique', 'Sens contraire', 'Autre longueur'],
-              correct: 0,
-              correction: 'Mêmes composantes : c’est exactement le même déplacement, où qu’on le dessine.',
-            },
-          ]}
-          feedback={({ allRight, nCorrect, total }) => (
-            <Feedback tone={allRight ? 'ok' : 'info'}>
-              {allRight
-                ? 'Tu distingues bien les trois attributs — y compris le piège des composantes échangées.'
-                : `${nCorrect} sur ${total}. Compare toujours dans l’ordre : même droite ? même côté ? même longueur ?`}
-            </Feedback>
-          )}
-          solved={batch}
-          onAnswered={() => setBatch(true)}
-        />
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="composantes-ordonnees"
+            establishes={['composantes-ordonnees', 'composante']}
+            variant="new"
+            lead="Les deux réglages que tu viens d’utiliser — horizontal puis vertical — sont les deux nombres qui décrivent le déplacement. Ils portent un nom, et leur ordre compte."
+          >
+            <BatchChoiceQuestion
+              requires={['direction-sens-longueur', 'direction-nest-pas-sens', 'composante', 'composantes-ordonnees']}
+              intro={
+                <p className="text-sm text-slate-700">
+                  Pour chaque déplacement, dis ce qui le distingue de la référence {formatVec(REF)}.
+                </p>
+              }
+              rows={[
+                {
+                  id: 'c1', label: '(−3 ; −2)',
+                  options: ['Sens contraire', 'Autre direction', 'Autre longueur'],
+                  correct: 0,
+                  correction: 'Même droite suivie et même longueur, mais on la parcourt à l’envers : c’est le déplacement opposé.',
+                },
+                {
+                  id: 'c2', label: '(6 ; 4)',
+                  options: ['Autre longueur, même sens', 'Sens contraire', 'Autre direction'],
+                  correct: 0,
+                  correction: '(6 ; 4) c’est deux fois (3 ; 2) : même direction, même sens, mais deux fois plus long.',
+                },
+                {
+                  id: 'c3', label: '(2 ; 3)',
+                  options: ['Autre direction', 'Sens contraire', 'Identique'],
+                  correct: 0,
+                  correction: 'Les composantes sont échangées : la droite suivie n’est plus la même. Attention, (3 ; 2) et (2 ; 3) sont deux déplacements différents.',
+                },
+                {
+                  id: 'c4', label: '(3 ; 2)',
+                  options: ['Identique', 'Sens contraire', 'Autre longueur'],
+                  correct: 0,
+                  correction: 'Mêmes composantes : c’est exactement le même déplacement, où qu’on le dessine.',
+                },
+              ]}
+              feedback={({ allRight, nCorrect, total }) => (
+                <Feedback tone={allRight ? 'ok' : 'info'}>
+                  {allRight
+                    ? 'Tu distingues bien les trois attributs — y compris le piège des composantes échangées.'
+                    : `${nCorrect} sur ${total}. Compare toujours dans l’ordre : même droite ? même côté ? même longueur ?`}
+                </Feedback>
+              )}
+              solved={batch}
+              onAnswered={() => setBatch(true)}
+            />
+          </KnowledgeBrick>
+        </div>
       ),
     },
     {
@@ -163,16 +194,25 @@ export default function Module02DirectionSensLongueur() {
       title: 'Le déplacement opposé',
       done: q3,
       content: (
-        <TapQuestion
-          prompt="Un drone se déplace de (5 ; −1). Quel déplacement le ramène exactement à son point de départ ?"
-          options={['(−5 ; 1)', '(5 ; 1)', '(−5 ; −1)', '(1 ; −5)']}
-          correct={0}
-          cols={4}
-          explain="Pour revenir, il faut refaire le trajet à l’envers : chaque composante change de signe. (5 ; −1) puis (−5 ; 1) ramène bien au point de départ, car les deux se compensent."
-          explainWrong="Il faut changer le signe des DEUX composantes. En n’en changeant qu’une, on obtient une autre direction, et le drone n’est pas revenu chez lui."
-          solved={q3}
-          onAnswered={() => setQ3(true)}
-        />
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="deplacement-oppose"
+            variant="new"
+            lead="Le cas où seul le voyant « Sens » s’éteint a un nom, et un usage : c’est le déplacement qui annule l’autre."
+          >
+            <TapQuestion
+              prompt="Un drone se déplace de (5 ; −1). Quel déplacement le ramène exactement à son point de départ ?"
+              options={['(−5 ; 1)', '(5 ; 1)', '(−5 ; −1)', '(1 ; −5)']}
+              correct={0}
+              cols={4}
+              requires={['deplacement-oppose', 'composante']}
+              explain="Pour revenir, il faut refaire le trajet à l’envers : chaque composante change de signe. (5 ; −1) puis (−5 ; 1) ramène bien au point de départ, car les deux se compensent."
+              explainWrong="Il faut changer le signe des DEUX composantes. En n’en changeant qu’une, on obtient une autre direction, et le drone n’est pas revenu chez lui."
+              solved={q3}
+              onAnswered={() => setQ3(true)}
+            />
+          </KnowledgeBrick>
+        </div>
       ),
     },
   ];
@@ -213,11 +253,10 @@ export default function Module02DirectionSensLongueur() {
       }
       steps={steps}
       footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Deux déplacements sont identiques s’ils ont la même direction,
-          le même sens et la même longueur. Le déplacement <strong>opposé</strong> garde la
-          direction et la longueur, mais inverse le sens : ses deux composantes changent de signe.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais décrire un déplacement isolé. Au module suivant, on
+          l’applique à une figure entière — d’un coup, à tous ses sommets.
+        </KnowledgeSnapshot>
       }
     />
   );

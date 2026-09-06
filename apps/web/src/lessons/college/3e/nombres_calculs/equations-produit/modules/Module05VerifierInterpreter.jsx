@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import {
@@ -27,7 +28,11 @@ import {
  * Misconception targeted: « vérifier, c'est refaire la résolution » et
  *   « toute solution mathématique convient au problème concret ».
  * Feedback: la ligne montre le calcul complet, pas un verdict.
- * Formalization: le « À retenir » est construit à partir des gestes faits.
+ * Formalization: « vérifier » et « interpréter » vivent dans
+ *   `knowledge.jsx` ; des <KnowledgeBrick> les posent après la bande de
+ *   vérification et après le verdict sur le rectangle. L'étape 3 ne recopie
+ *   plus la méthode : elle l'affiche depuis la carte
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: les substitutions sont écrites pour l'élève, il ne tape rien.
  * Transfer: le module 6 rejette x = 0 pour un côté de carré.
  */
@@ -134,6 +139,13 @@ export default function Module05VerifierInterpreter() {
                   — aucun facteur nul, donc pas de produit nul.
                 </Feedback>
               )}
+              {allChecked && (
+                <KnowledgeBrick
+                  id="verifier-solution"
+                  variant="new"
+                  lead="Tu n’as rien résolu : tu as seulement remplacé x, trois fois. C’est exactement ce que veut dire vérifier."
+                />
+              )}
             </div>
           ),
         },
@@ -142,6 +154,7 @@ export default function Module05VerifierInterpreter() {
           title: 'Une solution peut être refusée par le problème',
           done: interpDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt={
                 <>
@@ -175,25 +188,31 @@ export default function Module05VerifierInterpreter() {
                   largeur de −7 cm : on la rejette, mais on ne rejette pas tout.
                 </>
               }
+              requires={['verifier-solution', 'ensemble-solutions', 'nombres-relatifs']}
               solved={interpDone}
               onAnswered={() => setInterpDone(true)}
             />
+            {interpDone && (
+              <KnowledgeBrick
+                id="interpreter-solution"
+                variant="new"
+                lead="L’équation avait raison sur ses deux solutions ; c’est le rectangle qui en a refusé une. Ces deux étapes ne se confondent jamais."
+              />
+            )}
+            </div>
           ),
         },
         {
           num: 3,
-          title: 'À retenir',
-          subtitle: 'Construit à partir de ce que tu viens de faire.',
+          title: 'Les trois façons de se tromper',
+          subtitle: 'Toutes les trois, tu les as déjà rencontrées.',
           done: retainDone,
           content: (
             <div className="space-y-3">
-              <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-5 space-y-2 text-center">
-                <p className="text-[11px] font-mono uppercase tracking-widest text-blue-200">La méthode complète</p>
-                <p className="font-mono font-extrabold text-sm sm:text-base">1. Tout ramener à « produit = 0 »</p>
-                <p className="font-mono font-extrabold text-sm sm:text-base">2. Annuler chaque facteur, séparément</p>
-                <p className="font-mono font-extrabold text-sm sm:text-base">3. Vérifier en remplaçant dans l’équation de départ</p>
-                <p className="font-mono font-extrabold text-sm sm:text-base">4. Interpréter : garder ce qui a un sens</p>
-              </div>
+              <p className="text-sm text-slate-600">
+                Tu as maintenant les quatre gestes en main. Avant de passer aux problèmes, revois les
+                trois façons de les rater — celles que tu as déjà croisées.
+              </p>
               <div className="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 space-y-1.5 text-sm">
                 <p className="font-bold text-amber-900">Les trois pièges déjà rencontrés</p>
                 <p className="text-rose-700">❌ Croire qu’il faut annuler les DEUX facteurs</p>
@@ -206,18 +225,19 @@ export default function Module05VerifierInterpreter() {
                 disabled={retainDone}
                 className="w-full min-h-[48px] rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-900 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
-                {retainDone ? '✓ Noté' : 'J’ai noté les quatre étapes'}
+                {retainDone ? '✓ Noté' : 'J’ai noté les trois pièges'}
               </button>
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Résoudre, vérifier, interpréter : trois gestes distincts. Le module suivant les enchaîne sur un
-          vrai problème de figures.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Résoudre, vérifier, interpréter : trois gestes distincts. Le
+          module suivant les enchaîne sur un vrai problème de figures — mais il faudra d’abord
+          fabriquer le produit, car il n’y en aura pas.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

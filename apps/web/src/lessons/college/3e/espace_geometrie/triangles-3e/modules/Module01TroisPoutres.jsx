@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Hammer, CircleSlash } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CompassBuilder from '../components/CompassBuilder';
 import { triangleInequality } from '../components/triangleUtils';
@@ -63,11 +64,18 @@ export default function Module01TroisPoutres() {
               className="w-11 h-11 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-40 text-xl font-bold">+</button>
           </div>
           {done1 ? (
+            <>
             <Feedback tone="ok">
               À {c}, les deux arcs se croisent et le triangle apparaît. Regarde le seuil :
               3 + 4 = 7. Tant que le mur dépassait 7, les poutres n’étaient pas assez longues
               pour se rejoindre — <strong>même bout à bout</strong>.
             </Feedback>
+              <KnowledgeBrick
+                id="inegalite-triangulaire"
+                variant="new"
+                lead="Ce seuil que tu viens de franchir a un nom, et il vaut pour trois longueurs quelconques."
+              />
+            </>
           ) : verdict.degenerate ? (
             <Feedback tone="info">
               À 7 exactement, les deux poutres se touchent bout à bout : 3 + 4 = 7. Le « triangle »
@@ -128,6 +136,7 @@ export default function Module01TroisPoutres() {
                 : `${nCorrect} sur ${total}. Le test est toujours le même : le plus grand côté doit être STRICTEMENT plus petit que la somme des deux autres.`}
             </Feedback>
           )}
+          requires={['inegalite-triangulaire']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
@@ -150,6 +159,7 @@ export default function Module01TroisPoutres() {
           cols={1}
           explain="C’est l’inégalité triangulaire. Géométriquement : le chemin direct d’un point à un autre est toujours plus court que le détour par un troisième point."
           explainWrong="Ce que tu as vu à l’écran : quand le mur dépassait 3 + 4, les arcs ne se rejoignaient plus. C’est bien le plus GRAND côté qui doit rester plus court que la somme des deux autres."
+          requires={['inegalite-triangulaire']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
@@ -191,13 +201,12 @@ export default function Module01TroisPoutres() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Inégalité triangulaire.</strong> Trois longueurs forment un triangle si et
-          seulement si la plus grande est strictement inférieure à la somme des deux autres.
-          Si elle lui est égale, le triangle est aplati ; si elle est plus grande, il n’existe pas.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais quand trois longueurs font un triangle. Reste à
+          savoir comment on l’appelle.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

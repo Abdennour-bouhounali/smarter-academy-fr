@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Move, Copy } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
 import CoordPlane from '../../../../../common/components/CoordPlane';
@@ -28,6 +29,15 @@ import {
  *                       composantes : une seule variable.
  * Formalization         le mot « vecteur » est introduit ICI, après le geste.
  * Transfer              module 5 : deux nombres suffisent à le décrire.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   « Vecteur » était bien introduit ici — mais dans un `Feedback` de fin
+ *   d'étape et dans le `footer`, et il avait déjà fuité au module 2 par une
+ *   `correction`. La fuite est bouchée (le module 2 dit « déplacement
+ *   opposé »), et le mot est désormais posé par une brique, à l'instant exact
+ *   où la troisième flèche est posée : c'est ce geste, et lui seul, qui rend
+ *   le mot nécessaire. L'ordre est : promener la flèche → brique `vecteur` →
+ *   brique `vecteurs-egaux` avec sa question en essai → le « à mémoriser ».
  */
 const V = DRONES.mouvement;
 const CIBLES = DRONES.positions;
@@ -93,12 +103,11 @@ export default function Module04FlecheVagabonde() {
             </button>
           )}
           {done1 ? (
-            <Feedback tone="ok">
-              Trois flèches, à trois endroits, <strong>rigoureusement identiques</strong> : même
-              direction, même sens, même longueur. On dit qu’elles représentent le{' '}
-              <strong>même vecteur</strong>. Un vecteur, c’est le déplacement lui-même — pas
-              l’endroit où on le dessine.
-            </Feedback>
+            <KnowledgeBrick
+              id="vecteur"
+              variant="new"
+              lead="Trois flèches, à trois endroits, rigoureusement identiques : même direction, même sens, même longueur. Les mathématiciens ont un mot pour cet objet qui reste le même où qu’on le pose."
+            />
           ) : (
             <Feedback tone="info">
               Flèche en {`(${origin.x} ; ${origin.y})`}, déplacement {describeVec(V)} —
@@ -143,6 +152,7 @@ export default function Module04FlecheVagabonde() {
             ]}
             correct={0}
             cols={1}
+            requires={['vecteur', 'deplacement']}
             explain="Le vecteur dit de combien se déplacer, pas où arriver. L’arrivée dépend à la fois du départ ET du vecteur — c’est justement ce qui rend le vecteur réutilisable partout."
             solved={q2}
             onAnswered={() => setQ2(true)}
@@ -155,21 +165,31 @@ export default function Module04FlecheVagabonde() {
       title: 'Deux flèches, un seul vecteur',
       done: q3,
       content: (
-        <TapQuestion
-          prompt="Une flèche va de (−4 ; 1) à (−1 ; 3). Une autre va de (2 ; −2) à (5 ; 0). Représentent-elles le même vecteur ?"
-          options={[
-            'Oui : les deux déplacements valent (3 ; 2).',
-            'Non : elles ne sont pas au même endroit.',
-            'Non : leurs points de départ sont différents.',
-            'Impossible à dire sans mesurer les flèches.',
-          ]}
-          correct={0}
-          cols={1}
-          explain="Premier déplacement : −1 − (−4) = 3 et 3 − 1 = 2. Second : 5 − 2 = 3 et 0 − (−2) = 2. Mêmes composantes, donc même vecteur — l’endroit ne compte pas."
-          explainWrong="C’est exactement ce que tu viens de manipuler : deux flèches posées à des endroits différents sont le même vecteur dès que leurs composantes coïncident."
-          solved={q3}
-          onAnswered={() => setQ3(true)}
-        />
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="vecteurs-egaux"
+            variant="new"
+            lead="Puisque l’endroit ne compte pas, il faut un critère qui n’en parle pas : les deux nombres du déplacement, et rien d’autre."
+          >
+            <TapQuestion
+              prompt="Une flèche va de (−4 ; 1) à (−1 ; 3). Une autre va de (2 ; −2) à (5 ; 0). Représentent-elles le même vecteur ?"
+              options={[
+                'Oui : les deux déplacements valent (3 ; 2).',
+                'Non : elles ne sont pas au même endroit.',
+                'Non : leurs points de départ sont différents.',
+                'Impossible à dire sans mesurer les flèches.',
+              ]}
+              correct={0}
+              cols={1}
+              requires={['vecteur', 'vecteurs-egaux', 'composante']}
+              explain="Premier déplacement : −1 − (−4) = 3 et 3 − 1 = 2. Second : 5 − 2 = 3 et 0 − (−2) = 2. Mêmes composantes, donc même vecteur — l’endroit ne compte pas."
+              explainWrong="C’est exactement ce que tu viens de manipuler : deux flèches posées à des endroits différents sont le même vecteur dès que leurs composantes coïncident."
+              solved={q3}
+              onAnswered={() => setQ3(true)}
+            />
+          </KnowledgeBrick>
+          {q3 && <KnowledgeBrick id="mem-vecteur-nest-pas-position" variant="new" compact />}
+        </div>
       ),
     },
   ];
@@ -209,11 +229,10 @@ export default function Module04FlecheVagabonde() {
       }
       steps={steps}
       footer={
-        <Feedback tone="ok">
-          <strong>Le mot juste.</strong> Un <strong>vecteur</strong> décrit un déplacement :
-          direction, sens et longueur. Deux flèches situées à des endroits différents représentent
-          le même vecteur si elles ont les mêmes composantes. On les dit <strong>égaux</strong>.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Le mot est posé. Reste à l’écrire : deux nombres suffisent, et
+          ils se calculent.
+        </KnowledgeSnapshot>
       }
     />
   );

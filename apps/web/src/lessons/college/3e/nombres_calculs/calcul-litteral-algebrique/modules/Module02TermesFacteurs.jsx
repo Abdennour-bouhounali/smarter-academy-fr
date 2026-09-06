@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TermCards from '../components/TermCards';
@@ -28,8 +29,11 @@ import { term, mergeTerms, isReduced, formatTerms } from '../components/litteral
  * Misconception targeted: « 3x + 2 = 5x » (#1) et « 3x + 2x = 5x² » (#2).
  * Feedback: le refus est formulé en tuiles (« une tuile x et une tuile 1
  *   n'ont pas la même forme »), jamais « faux ».
- * Formalization: « terme », « facteur », « termes semblables » sont nommés
- *   à la fin des étapes 1, 2 et 3 respectivement.
+ * Formalization: « terme », « facteur » et « termes semblables » vivent dans
+ *   `knowledge.jsx` et sont posés par des <KnowledgeBrick> à la fin des étapes
+ *   1, 2 et 3 — donc APRÈS le geste qui leur donne un sens et AVANT la
+ *   première question qui les exige (l'étape 4). Aucune définition n'est
+ *   recopiée ici (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 refus, « Montre-moi » regroupe la bonne paire.
  * Transfer: étape 4, quatre paires à trier — dont deux pièges classiques.
  */
@@ -120,14 +124,12 @@ export default function Module02TermesFacteurs() {
                 </Feedback>
               )}
               {termsDone && (
-                <div className="rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 space-y-1.5">
-                  <p className="text-sm font-semibold text-sky-900">Le mot :</p>
-                  <p className="text-sm text-sky-900 leading-relaxed">
-                    Ces quatre morceaux sont les <strong>termes</strong> de l’expression : ce qui est
-                    additionné. Le signe fait partie du terme —{' '}
-                    <MathText>{'$-2x$'}</MathText> est un terme, pas <MathText>{'$2x$'}</MathText>.
-                  </p>
-                </div>
+                <KnowledgeBrick
+                  id="terme"
+                  variant="new"
+                  compact
+                  lead="Tu as touché les quatre morceaux, et le troisième t’a obligé à emporter son signe. Ces morceaux ont un nom."
+                />
               )}
             </div>
           ),
@@ -182,14 +184,12 @@ export default function Module02TermesFacteurs() {
                 </>
               )}
               {factorsDone && (
-                <div className="rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 space-y-1.5">
-                  <p className="text-sm font-semibold text-sky-900">Le mot :</p>
-                  <p className="text-sm text-sky-900 leading-relaxed">
-                    <MathText>{'$5$'}</MathText> et <MathText>{'$x$'}</MathText> sont les{' '}
-                    <strong>facteurs</strong> de <MathText>{'$5x$'}</MathText> : ce qui est multiplié.
-                    On additionne des <strong>termes</strong>, on multiplie des <strong>facteurs</strong>.
-                  </p>
-                </div>
+                <KnowledgeBrick
+                  id="facteur"
+                  variant="new"
+                  compact
+                  lead="Tu viens d’ouvrir une carte : à l’intérieur, deux morceaux qui se multiplient. Eux aussi ont un nom — et ce n’est pas le même."
+                />
               )}
             </div>
           ),
@@ -254,15 +254,11 @@ export default function Module02TermesFacteurs() {
                     maintenant <MathText>{`$${formatTerms(expr, { latex: true })}$`}</MathText>.
                     {mergeRevealed && ' (La paire t’a été montrée — refais le geste à l’étape suivante.)'}
                   </Feedback>
-                  <div className="rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 space-y-1.5">
-                    <p className="text-sm font-semibold text-sky-900">Le mot :</p>
-                    <p className="text-sm text-sky-900 leading-relaxed">
-                      Deux termes qui portent la même forme de tuile — donc la même partie littérale —
-                      sont des <strong>termes semblables</strong>. Eux seuls se regroupent, et on ajoute
-                      alors leurs coefficients : <MathText>{'$5x - 2x = 3x$'}</MathText>. Le x ne change
-                      pas de forme au passage.
-                    </p>
-                  </div>
+                  <KnowledgeBrick
+                    id="termes-semblables"
+                    variant="new"
+                    lead="Une seule paire s’est empilée, et la machine a refusé toutes les autres. Ce qu’elle a accepté porte un nom."
+                  />
                 </>
               )}
             </div>
@@ -327,18 +323,20 @@ export default function Module02TermesFacteurs() {
                   )}
                 </Feedback>
               )}
+              requires={['termes-semblables', 'terme']}
               solved={batchDone}
               onAnswered={() => setBatchDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          On additionne des <strong>termes</strong>, on multiplie des <strong>facteurs</strong> — et
-          seules les tuiles de même forme s’empilent. C’est tout ce qu’il faut pour réduire.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais reconnaître ce qui s’empile. Au module suivant, on range
+          des expressions entières — signes compris — et on se donne un outil pour démasquer une
+          écriture fausse.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

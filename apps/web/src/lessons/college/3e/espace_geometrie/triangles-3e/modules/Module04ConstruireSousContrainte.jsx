@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Ruler, AlertOctagon } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CompassBuilder from '../components/CompassBuilder';
 import TriangleLab from '../components/TriangleLab';
@@ -79,11 +80,18 @@ export default function Module04ConstruireSousContrainte() {
             ))}
           </div>
           {done1 ? (
+            <>
             <Feedback tone="ok">
               Construit. Le procédé est celui du papier : on trace [AB], puis un arc de 6 depuis A
               et un arc de 5 depuis B ; leur intersection donne C. Les trois longueurs suffisent à
               déterminer le triangle.
             </Feedback>
+              <KnowledgeBrick
+                id="triangle-determine"
+                variant="new"
+                lead="Ce que ta construction vient de montrer vaut pour tout triangle."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               Il reste à ajuster :{' '}
@@ -103,6 +111,11 @@ export default function Module04ConstruireSousContrainte() {
       done: done2,
       content: (kit) => (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="mediatrice-sommet-isocele"
+            variant="new"
+            lead="Avant de placer C : il existe une droite où tous les points conviennent."
+          />
           <p className="text-sm text-slate-700">
             La base [AB] est <strong>verrouillée</strong> : seul C se déplace. Pour un isocèle en C,
             ce sont les côtés <strong>[CA] et [CB]</strong> qui doivent être égaux.
@@ -159,6 +172,7 @@ export default function Module04ConstruireSousContrainte() {
             correct={0}
             cols={1}
             explain="C’est l’inégalité triangulaire du module 1 : le plus grand côté (9) dépasse la somme des deux autres (3 + 4 = 7). Les arcs restent séparés, aucun point ne convient. Pour réparer l’énoncé, il faudrait un troisième côté strictement inférieur à 7."
+            requires={['triangle-determine', 'mediatrice-sommet-isocele']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -201,13 +215,12 @@ export default function Module04ConstruireSousContrainte() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Trois longueurs vérifiant l’inégalité triangulaire déterminent
-          un triangle unique (à un retournement près). Le sommet d’un isocèle se trouve sur la
-          médiatrice de la base : c’est l’ensemble des points équidistants de A et de B.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Trois longueurs suffisent à fixer un triangle. Calculons
+          maintenant ses angles sans rien mesurer.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

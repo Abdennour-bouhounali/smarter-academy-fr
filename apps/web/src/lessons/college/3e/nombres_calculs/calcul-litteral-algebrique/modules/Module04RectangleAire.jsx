@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -30,8 +31,11 @@ import { term, expandProduct, reduce, formatTerms } from '../components/litteral
  *   dorment encore).
  * Feedback: le compteur « n / N morceaux » quantifie l'écart ; le testeur
  *   confirme produit = somme sur plusieurs valeurs.
- * Formalization: le mot « développer » et la distributivité sont nommés
- *   APRÈS le comptage complet de l'étape 1.
+ * Formalization: « développer », la distributivité simple et la double
+ *   distributivité vivent dans `knowledge.jsx` ; des <KnowledgeBrick> les
+ *   posent après le comptage complet des étapes 1 et 3 — donc après le geste,
+ *   et avant la question sans dessin de l'étape 4
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 tentatives, « Je ne trouve pas — montre-moi » compte
  *   tout et signale la révélation ; un indice clignotant après le premier
  *   morceau compté.
@@ -157,15 +161,19 @@ export default function Module04RectangleAire() {
                 </Feedback>
               )}
               {done1 && (
-                <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4 space-y-1.5">
-                  <p className="text-sm font-semibold text-emerald-900">Le mot, maintenant qu’il est vu :</p>
-                  <p className="text-sm text-emerald-900 leading-relaxed">
-                    <strong>Développer</strong>, c’est passer du produit à la somme des morceaux.
-                    Le facteur devant la parenthèse multiplie <strong>chaque</strong> terme :{' '}
-                    <MathText>{'$k(a + b) = ka + kb$'}</MathText>. C’est la{' '}
-                    <strong>distributivité</strong>.
-                  </p>
-                </div>
+                <>
+                  <KnowledgeBrick
+                    id="developper"
+                    variant="new"
+                    lead="Une seule aire, deux façons de l’écrire : le produit des côtés, ou la somme des deux morceaux que tu viens de compter."
+                  />
+                  <KnowledgeBrick
+                    id="distributivite-simple"
+                    variant="new"
+                    compact
+                    lead="Le 3 est monté sur chacun des deux morceaux, pas seulement sur le premier. Cette règle, tu la connais déjà en nombres : 7 × 103 = 7 × 100 + 7 × 3."
+                  />
+                </>
               )}
             </div>
           ),
@@ -295,10 +303,14 @@ export default function Module04RectangleAire() {
                   <MathText>{'$3x$'}</MathText>, <MathText>{'$6$'}</MathText>. Les deux bandes de x se
                   regroupent en <MathText>{'$5x$'}</MathText>, donc{' '}
                   <MathText>{`$(x + 3)(x + 2) = ${formatTerms(reduce(expandProduct(P3)), { latex: true })}$`}</MathText>.
-                  C’est la <strong>double distributivité</strong> :{' '}
-                  <MathText>{'$(a + b)(c + d) = ac + ad + bc + bd$'}</MathText> — quatre produits,
-                  autant que de cases.
                 </Feedback>
+              )}
+              {done3 && (
+                <KnowledgeBrick
+                  id="double-distributivite"
+                  variant="new"
+                  lead="Quatre cases comptées, deux bandes de x regroupées : le rectangle vient de te donner la règle des deux côtés."
+                />
               )}
             </div>
           ),
@@ -342,19 +354,20 @@ export default function Module04RectangleAire() {
                   <MathText>{'$x^{2} + x + 5x + 5 = x^{2} + 6x + 5$'}</MathText>.
                 </>
               }
+              requires={['double-distributivite', 'developper', 'termes-semblables']}
               solved={transferDone}
               onAnswered={() => setTransferDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Développer, ce n’est pas une règle à retenir : c’est <strong>découper le rectangle</strong>.
-          Chaque morceau est un produit d’un terme de chaque côté, et l’aire totale est leur somme —
-          pour toute valeur de x, comme le testeur l’a confirmé.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Découper un rectangle quelconque, tu sais faire. Au module
+          suivant, on découpe un <em>carré</em> — et deux morceaux qu’on oublie presque toujours
+          apparaissent.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

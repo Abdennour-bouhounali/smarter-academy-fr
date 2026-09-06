@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
-import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProbabilityScale from '../components/ProbabilityScale';
 import { parseDec, formatDec } from '@smarter-academy/core';
@@ -24,7 +24,12 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Expected observation: « 1/6 est à gauche de 1/4 ; 1/2 au milieu ».
  * Misconception targeted: « 1/6 > 1/4 » ; « P peut dépasser 1 » ; « 0,9 ⇒
  *   certain » ; « la fréquence sur 1 000 lancers EST la probabilité ».
- * Formalization: le bloc « À retenir », après le geste.
+ * Formalization: le bloc « À retenir » manuscrit a disparu — il recopiait des
+ *   définitions déjà posées aux modules 1 à 4. Trois <KnowledgeBrick>
+ *   subsistent, une par notion RÉELLEMENT neuve ici : l'échelle 0–1 après le
+ *   placement, l'événement contraire avant la question qui l'exige,
+ *   l'interprétation avant la météo. Le récapitulatif complet est la carte
+ *   elle-même, en pied de module.
  */
 
 const ITEMS = [
@@ -85,34 +90,37 @@ export default function Module05Langage() {
                 <ValidateButton onClick={() => checkScale(kit.react)} disabled={!allPlaced} tone="indigo">Vérifier mes placements</ValidateButton>
               )}
               {scaleDone && (
-                <Feedback tone={scaleRight === ITEMS.length ? 'ok' : 'ko'}>
-                  {scaleRight} sur {ITEMS.length} bien placés. Sur l’échelle : 0 = impossible (somme 13), 1 = certain (au plus 6),{' '}
-                  1/2 au milieu (pair), 1/4 = 3 douzièmes (rouge), 1/6 = 2 douzièmes (somme 7). Toute probabilité est un nombre
-                  entre 0 et 1 — jamais au-delà.
-                </Feedback>
+                <>
+                  <Feedback tone={scaleRight === ITEMS.length ? 'ok' : 'ko'}>
+                    {scaleRight} sur {ITEMS.length} bien placés. Sur l’échelle : 0 = impossible (somme 13),
+                    1 = certain (au plus 6), 1/2 au milieu (pair), 1/4 = 3 douzièmes (rouge), 1/6 = 2 douzièmes
+                    (somme 7).
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="echelle-probabilites"
+                    variant="new"
+                    lead="Trois expériences différentes, une seule règle graduée : c’est cette règle qui borne toute probabilité."
+                  />
+                </>
               )}
             </div>
           ),
         },
         {
           num: 2,
-          title: 'À retenir',
-          subtitle: 'Les mots précis pour ce que tu as fait.',
+          title: 'L’événement contraire',
+          subtitle: 'Le dernier mot qui manque — puis quatre affirmations à trier.',
           done: vfDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 space-y-2 text-sm text-slate-800">
-                <p><strong>Expérience aléatoire</strong> : on connaît les <strong>issues</strong> possibles, pas le résultat.</p>
-                <p><strong>Événement</strong> : un ensemble d’issues. <strong>Impossible</strong> : aucune issue (P = 0). <strong>Certain</strong> : toutes (P = 1).</p>
-                <p>
-                  <strong>Probabilité</strong> d’un événement A, quand les issues ont toutes la même chance :{' '}
-                  <MathText>{'$P(A) = \\dfrac{\\text{nombre d’issues favorables}}{\\text{nombre d’issues possibles}}$'}</MathText>, un nombre entre 0 et 1.
-                </p>
-                <p><strong>Événement contraire</strong> (« non A ») : <MathText>{'$P(\\text{non } A) = 1 - P(A)$'}</MathText>. Exemple : P(pas de 6) = 1 − 1/6 = 5/6.</p>
-                <p><strong>Fréquence observée</strong> : effectif ÷ nombre d’essais. Elle change d’une série à l’autre et se <strong>rapproche</strong> de la probabilité quand le nombre d’essais grandit — sans jamais être obligée de l’égaler.</p>
-              </div>
+              <KnowledgeBrick
+                id="evenement-contraire"
+                variant="new"
+                lead="Il te manque un seul mot pour dire tout ce que tu sais faire : celui du « tout le reste »."
+              />
               <BatchChoiceQuestion
                 intro={<p className="text-sm font-semibold text-slate-700">Vrai ou faux ?</p>}
+                requires={['evenement-contraire', 'echelle-probabilites', 'mem-frequence-vs-probabilite', 'stabilisation']}
                 rows={[
                   { id: 'a', label: 'Sur 1 000 lancers, la fréquence du 6 est exactement 1/6.', options: ['Vrai', 'Faux'], correct: 1, correction: 'Elle en est proche, pas forcément égale.' },
                   { id: 'b', label: 'Une probabilité peut valoir 1,2.', options: ['Vrai', 'Faux'], correct: 1, correction: 'Jamais au-delà de 1.' },
@@ -121,8 +129,9 @@ export default function Module05Langage() {
                 ]}
                 feedback={({ allRight, nCorrect, total }) => (
                   <Feedback tone={allRight ? 'ok' : 'ko'}>
-                    {allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Retiens la différence : la <strong>fréquence</strong> raconte
-                    une expérience passée ; la <strong>probabilité</strong> décrit le modèle et sert à prévoir.
+                    {allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Les quatre affirmations
+                    rejouent les quatre pièges de la leçon : l’égalité exacte, le dépassement de 1, le
+                    contraire, et la stabilisation.
                   </Feedback>
                 )}
                 solved={vfDone}
@@ -138,8 +147,14 @@ export default function Module05Langage() {
           done: interpDone && ticketsDone,
           content: (
             <div className="space-y-4">
+              <KnowledgeBrick
+                id="interpreter-une-probabilite"
+                variant="new"
+                lead="Hors des dés et des billes, une probabilité s’écrit dans une phrase — et se lit de travers une fois sur deux."
+              />
               <TapQuestion
                 prompt="La météo annonce : « probabilité de pluie 0,7 ». Que signifie ce nombre ?"
+                requires={['interpreter-une-probabilite', 'echelle-probabilites']}
                 options={[
                   'Il y a 7 chances sur 10 qu’il pleuve : la pluie est probable, mais pas certaine',
                   'Il pleuvra pendant 70 % de la journée',
@@ -155,6 +170,7 @@ export default function Module05Langage() {
               {interpDone && (
                 <NumericQuestion
                   prompt="Une loterie donne une probabilité de gagner de 0,02 par ticket. Sur 1 000 tickets, combien de gagnants peut-on attendre, environ ?"
+                  requires={['interpreter-une-probabilite', 'effectif-attendu']}
                   expected={20}
                   parse={parseDec}
                   display={formatDec(20)}
@@ -173,10 +189,11 @@ export default function Module05Langage() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Tu as maintenant le vocabulaire et les deux règles (0 ≤ P ≤ 1, contraire = 1 − P). Le module suivant
-          fait travailler tout cela sur des situations réelles : une roue, une usine, un tirage au sort.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={5}>
+          Tu as maintenant le vocabulaire complet et les deux règles. Le module suivant fait travailler tout
+          cela sur des situations réelles : une roue de kermesse, une usine, un tirage au sort dans une
+          classe.
+        </KnowledgeSnapshot>
       }
     />
   );

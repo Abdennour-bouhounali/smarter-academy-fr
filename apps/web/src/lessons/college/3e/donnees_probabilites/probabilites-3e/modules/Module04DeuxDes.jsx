@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useReducedMotion } from 'framer-motion';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -32,7 +33,10 @@ import {
  * Misconception targeted: « 11 sommes ⇒ chacune 1/11 » ; « 6+1 et 1+6, c'est
  *   la même case ».
  * Feedback: cases manquantes / en trop comptées ; révélation après 3 essais.
- * Formalization: P(somme 7) = 6/36 = 1/6, après la grille.
+ * Formalization: trois <KnowledgeBrick> (texte unique dans knowledge.jsx),
+ *   chacune après le geste qui la justifie : « 36 couples équiprobables » et
+ *   « compter un événement sur la grille » quand les six cases du 7 sont
+ *   cochées, « 11 sommes ≠ 1/11 chacune » quand le piège est déjoué.
  * Scaffolding: pari → observation → grille guidée → grille libre → sans grille.
  */
 
@@ -197,11 +201,30 @@ export default function Module04DeuxDes() {
             <div className="space-y-3">
               {gridTask(g7, kit, 'Dé 1 en lignes, dé 2 en colonnes — chaque case est une issue')}
               {g7.done && (
-                <Feedback tone="ok">
-                  <strong>6 cases sur 36</strong> donnent 7 : (1 ; 6), (2 ; 5), (3 ; 4), (4 ; 3), (5 ; 2), (6 ; 1). Les 36 cases ont
-                  la même chance ; donc <MathText>{`$P(\\text{somme } 7) = \\frac{6}{36} = ${fracLatex(6, 36)}$`}</MathText> ≈ 16,7 % — exactement ce que ta série
-                  montrait ({freq7}). Pour la somme 2, une seule case : 1/36 ≈ 2,8 %.
-                </Feedback>
+                <>
+                  <KnowledgeBrick
+                    id="deux-epreuves-couples"
+                    variant="new"
+                    lead={(
+                      <>
+                        Tu viens de cocher <strong>6 cases</strong> pour une seule somme, dans un tableau qui en
+                        compte bien plus. C’est ce tableau, et non la liste des sommes, qui décrit l’expérience.
+                      </>
+                    )}
+                  />
+                  <KnowledgeBrick
+                    id="evenement-sur-la-grille"
+                    variant="new"
+                    compact
+                    lead={(
+                      <>
+                        Six cases favorables sur 36 :{' '}
+                        <MathText>{`$\\frac{6}{36} = ${fracLatex(6, 36)}$`}</MathText> ≈ 16,7 % — exactement ce que
+                        ta série montrait ({freq7}).
+                      </>
+                    )}
+                  />
+                </>
               )}
             </div>
           ),
@@ -214,6 +237,7 @@ export default function Module04DeuxDes() {
           content: (
             <TapQuestion
               prompt="Quelle est la probabilité d’obtenir une somme de 12 ?"
+              requires={['deux-epreuves-couples', 'evenement-sur-la-grille', 'probabilite']}
               above={snap && <TwoDiceLab counts={snap.counts} lastPair={snap.last} frozen theory={THEORY} showFreq caption="Ta série de 1 000 lancers, avec le modèle" />}
               options={['$\\frac{1}{36}$', '$\\frac{1}{11}$', '$\\frac{1}{12}$', '$\\frac{1}{6}$']}
               renderOption={(o) => <MathText>{o}</MathText>}
@@ -237,6 +261,7 @@ export default function Module04DeuxDes() {
               {g10.done && (
                 <TapQuestion
                   prompt="Quelle est la probabilité de gagner ?"
+                  requires={['evenement-sur-la-grille', 'deux-epreuves-couples', 'evenement']}
                   options={['$\\frac{6}{36} = \\frac{1}{6}$', '$\\frac{3}{11}$', '$\\frac{3}{36}$', '$\\frac{10}{36}$']}
                   renderOption={(o) => <MathText>{o}</MathText>}
                   correctionLabel="6/36 = 1/6"
@@ -256,8 +281,10 @@ export default function Module04DeuxDes() {
           subtitle: 'Sans grille, cette fois.',
           done: trapDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="Un joueur dit : « Il y a 11 sommes possibles, donc chaque somme a une probabilité de 1/11. » Qu’en penses-tu ?"
+              requires={['deux-epreuves-couples', 'equiprobable', 'evenement']}
               options={[
                 'Faux : les 11 sommes n’ont pas la même chance ; ce sont les 36 couples qui l’ont',
                 'Vrai : 11 issues, donc 1/11 chacune',
@@ -274,15 +301,23 @@ export default function Module04DeuxDes() {
               solved={trapDone}
               onAnswered={() => setTrapDone(true)}
             />
+            {trapDone && (
+              <KnowledgeBrick
+                id="mem-piege-des-sommes"
+                variant="new"
+                lead="Ce piège-là revient dans toutes les situations à deux épreuves : garde-le en tête."
+              />
+            )}
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Pour une expérience à deux épreuves, on compte les <strong>couples</strong> : la grille 6 × 6 est le tableau
-          des 36 issues. P(événement) = nombre de cases favorables ÷ 36. Il reste à mettre des mots précis sur tout
-          ce que tu as vu — c’est le module suivant.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={4}>
+          Une roue, un sac, deux dés : tu calcules partout la même chose. Il reste à ranger ce vocabulaire sur
+          une seule échelle et à voir ce qu’une probabilité veut dire dans une phrase ordinaire — c’est le
+          module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

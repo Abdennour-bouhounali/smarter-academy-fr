@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import EventBuilder from '../components/EventBuilder';
@@ -28,8 +29,12 @@ import { ZERO, rollMany, sameSet, faceList, eventCount, totalOf, formatPct, even
  *   de 4 » inclut le 4.
  * Feedback: l'écart est nommé (faces manquantes, faces en trop) ; révélation
  *   après 3 essais.
- * Formalization: « événement », « impossible / certain » — après le geste ;
- *   la fraction P = k/6 apparaît à la fin de l'étape 2 seulement.
+ * Formalization: chaque mot est posé par une <KnowledgeBrick> (texte unique
+ *   dans knowledge.jsx) : « événement » après la composition de l'étape 1,
+ *   « impossible / certain » après le tri de l'étape 3, « la probabilité
+ *   mesure la chance d'un événement » avant la question qui l'exige à
+ *   l'étape 4. La formule P = favorables ÷ possibles reste au module 3 : ici
+ *   on ne fait que COMPTER des issues favorables.
  * Scaffolding: événement dicté et vérifié → prédiction sur la série → tri
  *   → comparaison sans manipulation.
  */
@@ -135,10 +140,11 @@ export default function Module02IssuesEvenements() {
             <div className="space-y-3">
               {taskUi(t1, kit, { caption: 'Événement : « obtenir un nombre pair »' })}
               {t1.done && (
-                <Feedback tone="ok">
-                  Trois faces — 2, 4 et 6 — réalisent « obtenir un nombre pair ». Un <strong>événement</strong> n’est
-                  pas une face : c’est un <strong>ensemble d’issues</strong>. Ici, 3 issues favorables sur 6 possibles.
-                </Feedback>
+                <KnowledgeBrick
+                  id="evenement"
+                  variant="new"
+                  lead="Tu viens de retenir trois faces d’un coup — 2, 4 et 6 — pour une seule consigne. Ce paquet de faces porte un nom."
+                />
               )}
             </div>
           ),
@@ -159,6 +165,7 @@ export default function Module02IssuesEvenements() {
               {t2.done && (
                 <TapQuestion
                   prompt="Sur une série de 1 000 lancers, à peu près combien de fois l’événement « plus de 4 » va-t-il se réaliser ?"
+                  requires={['evenement', 'frequence', 'probabilite']}
                   options={[
                     'Environ 330 fois : 2 faces sur 6, c’est 1 fois sur 3',
                     'Environ 500 fois : une fois sur deux',
@@ -192,8 +199,10 @@ export default function Module02IssuesEvenements() {
           subtitle: 'Pour chaque événement, dis sa chance : 0, entre les deux, ou 1.',
           done: sortDone,
           content: (
+            <div className="space-y-3">
             <BatchChoiceQuestion
               intro={<p className="text-sm text-slate-700">On lance un dé équilibré à six faces.</p>}
+              requires={['evenement', 'equiprobable']}
               rows={[
                 { id: 'sept', label: '« Obtenir 7 »', options: ['0 (impossible)', 'entre 0 et 1', '1 (certain)'], correct: 0, correction: 'Aucune face ne donne 7 : impossible, chance 0.' },
                 { id: 'sixmax', label: '« Obtenir 6 ou moins »', options: ['0 (impossible)', 'entre 0 et 1', '1 (certain)'], correct: 2, correction: 'Toutes les faces conviennent : certain, chance 1.' },
@@ -202,14 +211,21 @@ export default function Module02IssuesEvenements() {
               ]}
               feedback={({ allRight, nCorrect, total }) => (
                 <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Un événement <strong>impossible</strong> n’est
-                  réalisé par aucune issue : sa chance vaut <strong>0</strong>. Un événement <strong>certain</strong> est réalisé
-                  par toutes : sa chance vaut <strong>1</strong>. Tous les autres sont entre les deux.
+                  {allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Les deux extrêmes de ce tri
+                  ont chacun leur nom : les voici.
                 </Feedback>
               )}
               solved={sortDone}
               onAnswered={() => setSortDone(true)}
             />
+            {sortDone && (
+              <KnowledgeBrick
+                id="evenement-impossible-certain"
+                variant="new"
+                lead="Aux deux bouts de ton tri, deux cas si particuliers qu’ils ont un nom chacun."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -221,38 +237,46 @@ export default function Module02IssuesEvenements() {
             <div className="space-y-4">
               <TapQuestion
                 prompt="Lequel de ces événements a le plus de chances de se réaliser en un lancer ?"
+                requires={['evenement', 'equiprobable']}
                 options={['« Obtenir un nombre pair »', '« Obtenir plus de 4 »', '« Obtenir un 3 »', 'Ils ont tous la même chance']}
                 correct={0}
                 cols={1}
-                explain="Trois faces favorables (2, 4, 6) contre deux (5, 6) contre une (3) : plus un événement est réalisé par d’issues, plus il a de chances. La chance se compte en issues favorables."
+                explain="Trois faces favorables (2, 4, 6) contre deux (5, 6) contre une (3) : la chance se compte en issues favorables, et les six faces d’un dé équilibré ont la même chance."
                 solved={cmpDone}
                 onAnswered={() => setCmpDone(true)}
               />
               {cmpDone && (
-                <TapQuestion
-                  prompt="Ce nombre entre 0 et 1 qui mesure la chance d’un événement s’appelle sa probabilité. Que dit une probabilité proche de 1 ?"
-                  options={[
-                    'Que l’événement a beaucoup de chances de se réaliser',
-                    'Que l’événement se réalisera exactement une fois',
-                    'Que l’événement est impossible',
-                  ]}
-                  correct={0}
-                  cols={1}
-                  explain="La probabilité mesure la POSSIBILITÉ qu’un événement se réalise : 0 pour l’impossible, 1 pour le certain, et entre les deux pour tout le reste — plus elle est proche de 1, plus l’événement est probable. Comment la calculer ? C’est le module suivant."
-                  solved={defDone}
-                  onAnswered={() => setDefDone(true)}
-                />
+                <KnowledgeBrick
+                  id="probabilite-mesure-chance"
+                  variant="new"
+                  lead="Tu viens de classer trois événements du moins probable au plus probable. Ce classement se chiffre — avec le nombre que tu connais déjà pour une face du dé."
+                >
+                  <TapQuestion
+                    prompt="Que dit alors une probabilité proche de 1 ?"
+                    requires={['probabilite-mesure-chance', 'evenement-impossible-certain']}
+                    options={[
+                      'Que l’événement a beaucoup de chances de se réaliser',
+                      'Que l’événement se réalisera exactement une fois',
+                      'Que l’événement est impossible',
+                    ]}
+                    correct={0}
+                    cols={1}
+                    explain="0 pour l’impossible, 1 pour le certain, et entre les deux pour tout le reste — plus la probabilité est proche de 1, plus l’événement est probable. Comment la calculer exactement ? C’est le module suivant."
+                    solved={defDone}
+                    onAnswered={() => setDefDone(true)}
+                  />
+                </KnowledgeBrick>
               )}
             </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Une <strong>issue</strong> est un résultat possible (une face). Un <strong>événement</strong> est un ensemble
-          d’issues. Sa <strong>probabilité</strong> est un nombre entre 0 et 1 qui mesure sa chance. Prochaine
-          question : comment l’écrire exactement, avec une fraction ?
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={2}>
+          Tu sais composer un événement et dire lequel a le plus de chances. Prochaine question : comment
+          écrire cette chance <strong>exactement</strong>, avec une fraction ? Un sac de billes va s’en
+          charger.
+        </KnowledgeSnapshot>
       }
     />
   );

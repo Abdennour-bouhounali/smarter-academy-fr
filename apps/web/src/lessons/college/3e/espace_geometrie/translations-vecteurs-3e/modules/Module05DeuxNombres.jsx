@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Hash } from 'lucide-react';
-import { ContentModule, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import {
@@ -22,7 +23,15 @@ import {
  * Misconception ciblée   soustraire dans le mauvais sens (départ − arrivée),
  *                       et échanger les deux composantes. `explainFor`
  *                       intercepte les deux.
- * Formalization         la formule est écrite à la fin, après le comptage.
+ * Formalization         la formule est posée à l'étape 2, après le comptage.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   La règle « arrivée − départ » ne vivait que dans l'encadré d'intro et dans
+ *   le `footer` — c'est-à-dire APRÈS les trois questions qui l'exigent. L'ordre
+ *   est maintenant : compter les carreaux (l'étape 1 n'a besoin que de compter)
+ *   → brique `coordonnees-vecteur`, qui transforme le comptage en calcul, avec
+ *   le calcul de C vers D en essai immédiat → le « à mémoriser » → le tableau
+ *   des égalités, qui s'appuie sur les deux.
  */
 const A = { x: -4, y: -2 };
 const B = { x: 2, y: 1 };
@@ -76,6 +85,7 @@ export default function Module05DeuxNombres() {
             parse={(s) => Number(String(s).replace(',', '.').replace('−', '-'))}
             display={String(AB.dx)}
             width="w-24"
+            requires={['composante', 'abscisse']}
             explain={`De l’abscisse ${A.x} à l’abscisse ${B.x}, on avance de ${B.x} − (${A.x}) = ${AB.dx} carreaux vers la droite.`}
             explainFor={(n) => (n === -AB.dx
               ? 'Tu as soustrait dans l’autre sens. On calcule toujours ARRIVÉE − DÉPART : le déplacement va de A vers B.'
@@ -95,22 +105,31 @@ export default function Module05DeuxNombres() {
         <div className="space-y-3">
           <div className="rounded-xl bg-slate-50 border-2 border-slate-200 p-3 text-center">
             <p className="text-sm text-slate-700">
-              C est en <strong>(5 ; −3)</strong> et D est en <strong>(1 ; 2)</strong>.
+              C est en <strong>(5 ; −3)</strong> et D est en <strong>(1 ; 2)</strong>. Cette
+              fois, il n’y a pas de quadrillage à regarder.
             </p>
           </div>
-          <NumericQuestion
-            prompt="Quelle est la composante VERTICALE du déplacement de C vers D ?"
-            expected={5}
-            parse={(s) => Number(String(s).replace(',', '.').replace('−', '-'))}
-            display="5"
-            width="w-24"
-            explain="On fait arrivée − départ sur les ordonnées : 2 − (−3) = 2 + 3 = 5. Le déplacement va vers le haut."
-            explainFor={(n) => (n === -5
-              ? 'Signe inversé : tu as calculé départ − arrivée. Le déplacement de C vers D se lit 2 − (−3).'
-              : n === -4 ? 'Tu as pris la composante horizontale (1 − 5 = −4). La question porte sur la verticale, donc sur les ordonnées.' : null)}
-            solved={q2}
-            onAnswered={() => setQ2(true)}
-          />
+          <KnowledgeBrick
+            id="coordonnees-vecteur"
+            variant="new"
+            lead={`Tu viens de compter ${AB.dx} carreaux vers la droite — c’est exactement ce que donne la soustraction ${B.x} − (${A.x}). Compter et calculer sont la même opération.`}
+          >
+            <NumericQuestion
+              prompt="Quelle est la composante VERTICALE du déplacement de C vers D ?"
+              expected={5}
+              parse={(s) => Number(String(s).replace(',', '.').replace('−', '-'))}
+              display="5"
+              width="w-24"
+              requires={['coordonnees-vecteur', 'composante', 'ordonnee']}
+              explain="On fait arrivée − départ sur les ordonnées : 2 − (−3) = 2 + 3 = 5. Le déplacement va vers le haut."
+              explainFor={(n) => (n === -5
+                ? 'Signe inversé : tu as calculé départ − arrivée. Le déplacement de C vers D se lit 2 − (−3).'
+                : n === -4 ? 'Tu as pris la composante horizontale (1 − 5 = −4). La question porte sur la verticale, donc sur les ordonnées.' : null)}
+              solved={q2}
+              onAnswered={() => setQ2(true)}
+            />
+          </KnowledgeBrick>
+          {q2 && <KnowledgeBrick id="mem-arrivee-moins-depart" variant="new" compact />}
         </div>
       ),
     },
@@ -121,6 +140,7 @@ export default function Module05DeuxNombres() {
       done: batch,
       content: (
         <BatchChoiceQuestion
+          requires={['coordonnees-vecteur', 'vecteurs-egaux', 'deplacement-oppose', 'composante']}
           intro={
             <p className="text-sm text-slate-700">
               Pour chaque paire de flèches, dis si elles représentent le même vecteur.
@@ -189,19 +209,17 @@ export default function Module05DeuxNombres() {
         <div className="rounded-xl border-2 border-purple-200 bg-purple-50 p-3 flex gap-3 items-start">
           <Hash className="w-5 h-5 text-purple-700 shrink-0 mt-0.5" aria-hidden="true" />
           <p className="text-sm text-purple-900">
-            Règle unique : on calcule toujours <strong>arrivée moins départ</strong>, séparément sur
-            chaque coordonnée.
+            Commence par compter sur le quadrillage. Tu chercheras ensuite l’opération qui donne le
+            même résultat sans compter.
           </p>
         </div>
       }
       steps={steps}
       footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Le vecteur qui mène de A (x<sub>A</sub> ; y<sub>A</sub>) à
-          B (x<sub>B</sub> ; y<sub>B</sub>) a pour coordonnées
-          (x<sub>B</sub> − x<sub>A</sub> ; y<sub>B</sub> − y<sub>A</sub>). Deux vecteurs sont égaux
-          exactement quand leurs coordonnées sont égales.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais calculer un vecteur. Il ne manque qu’une chose : la
+          façon dont les mathématiciens l’écrivent.
+        </KnowledgeSnapshot>
       }
     />
   );

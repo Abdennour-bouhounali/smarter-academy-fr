@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -27,8 +28,12 @@ import { evaluateBorder } from '../components/litteralUtils';
  * Misconception targeted: « écritures différentes = quantités différentes ».
  * Feedback: le tableau colore la ligne en vert quand les trois colonnes
  *   coïncident — la conclusion se lit, elle n'est pas affirmée.
- * Formalization: les mots « expression littérale » et « même expression »
- *   sont nommés à l'étape 3, après le tableau.
+ * Formalization: les mots vivent dans `knowledge.jsx` et sont posés par des
+ *   <KnowledgeBrick> à leur place exacte — « expression littérale » à la fin
+ *   de l'étape 1, une fois les dalles comptées et la lettre n rencontrée ;
+ *   « même expression » à la fin de l'étape 3, une fois le tableau vert.
+ *   Aucune définition n'est recopiée ici
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: le décompte visible sous le dessin ; les trois lectures
  *   coloriées apparaissent à l'étape 2.
  * Transfer: le tableau de valeurs devient le RITUEL de vérification de toute
@@ -95,9 +100,17 @@ export default function Module01TroisFormules() {
                     ? 'Le grand carré compte 16 cases, mais 4 sont le jardin lui-même : 16 − 4 = 12.'
                     : '12 dalles : 4 côtés de 2 dalles, plus les 4 coins.'
                 }
+                requires={['calcul-numerique']}
                 solved={counted}
                 onAnswered={() => setCounted(true)}
               />
+              {counted && (
+                <KnowledgeBrick
+                  id="expression-litterale"
+                  variant="new"
+                  lead="Tu viens de compter 12 dalles pour n = 2. Change n, le nombre change — mais la façon de compter, elle, ne change pas. Cette façon de compter porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -135,6 +148,7 @@ export default function Module01TroisFormules() {
                     vérifier tout de suite.
                   </>
                 }
+                requires={['expression-litterale']}
                 solved={whoDone}
                 onAnswered={() => setWhoDone(true)}
               />
@@ -178,15 +192,11 @@ export default function Module01TroisFormules() {
                     Toutes les lignes sont vertes : pour chaque n testé, les trois formules donnent le
                     même nombre.
                   </Feedback>
-                  <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 space-y-1.5">
-                    <p className="text-sm font-semibold text-indigo-900">Les mots, maintenant :</p>
-                    <p className="text-sm text-indigo-900 leading-relaxed">
-                      <MathText>{'$4n + 4$'}</MathText> est une <strong>expression littérale</strong> :
-                      une machine qui calcule un nombre pour chaque valeur de la lettre. Deux écritures
-                      sont la <strong>même expression</strong> quand elles donnent le même nombre pour{' '}
-                      <strong>toute</strong> valeur — pas seulement pour celle qu’on a essayée.
-                    </p>
-                  </div>
+                  <KnowledgeBrick
+                    id="meme-expression"
+                    variant="new"
+                    lead="Trois écritures, trois lignes vertes, et cela pour chaque n que tu as touché. Ce constat a un nom."
+                  />
                 </>
               )}
             </div>
@@ -224,18 +234,20 @@ export default function Module01TroisFormules() {
                   machine (pour n = 5 : 36 au lieu de 24).
                 </>
               }
+              requires={['expression-litterale']}
               solved={readDone}
               onAnswered={() => setReadDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Trois écritures, la même quantité pour chaque n : c’est la <strong>même expression</strong>.
-          Toute la leçon consiste à passer d’une écriture à l’autre — sans jamais changer la quantité.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Passer d’une écriture à l’autre sans changer la quantité :
+          c’est tout le travail de la leçon. Au module suivant, on ouvre une expression pour voir
+          de quels morceaux elle est faite.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }
