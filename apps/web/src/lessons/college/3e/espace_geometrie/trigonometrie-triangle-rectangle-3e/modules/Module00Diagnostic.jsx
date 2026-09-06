@@ -21,7 +21,7 @@ const QUESTIONS = [
   {
     id: 'tg-d1-hypotenuse',
     skill: 'triangle',
-    requires: ['triangle-rectangle', 'hypotenuse'],
+    requires: ['triangle-rectangle', 'hypotenuse', 'angle-droit'],
     points: 2,
     prompt: 'Dans un triangle rectangle, l’hypoténuse est le côté…',
     options: ['opposé à l’angle droit', 'le plus court', 'toujours horizontal'],

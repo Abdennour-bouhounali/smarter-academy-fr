@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PowerExplorer from '../components/PowerExplorer';
@@ -114,12 +115,19 @@ export default function Module02LaTourDesFacteurs() {
                 </Feedback>
               )}
               {exploreDone && (
-                <Feedback tone="ok">
-                  Un cran d’exposant en plus, et la valeur est <strong>multipliée par la base</strong> —
-                  pas augmentée de la base. C’est pour ça que{' '}
-                  <MathText>{`$${formatPower(2, 10)} = ${formatDec(pow(2, 10))}$`}</MathText> alors que{' '}
-                  <MathText>{'$2 \\times 10 = 20$'}</MathText>.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Un cran d’exposant en plus, et la valeur est <strong>multipliée par la base</strong> —
+                    pas augmentée de la base. C’est pour ça que{' '}
+                    <MathText>{`$${formatPower(2, 10)} = ${formatDec(pow(2, 10))}$`}</MathText> alors que{' '}
+                    <MathText>{'$2 \\times 10 = 20$'}</MathText>.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="calculer-puissance"
+                    variant="new"
+                    lead="Tu as réglé la base et l’exposant toi-même, et vu la valeur bondir d’un cran à l’autre."
+                  />
+                </>
               )}
             </div>
           ),
@@ -160,6 +168,7 @@ export default function Module02LaTourDesFacteurs() {
                   </Feedback>
                 )
               }
+              requires={['calculer-puissance', 'exposant-compte']}
               solved={zeroDone}
               onAnswered={() => setZeroDone(true)}
             />
@@ -196,13 +205,18 @@ export default function Module02LaTourDesFacteurs() {
                 </Feedback>
               )}
               {descDone && (
-                <Feedback tone="ok">
-                  Chaque cran divise par 10 : 1 000 → 100 → 10 → <strong className="font-mono">1</strong> →{' '}
-                  <strong className="font-mono">0,1</strong>. La tour vide vaut{' '}
-                  <MathText>{'$10^{0} = 1$'}</MathText>, et un cran plus bas{' '}
-                  <MathText>{'$10^{-1} = \\frac{1}{10} = 0{,}1$'}</MathText>. Un exposant négatif ne rend pas
-                  le nombre négatif : il le rend <strong>petit</strong>.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Chaque cran divise par 10 : 1 000 → 100 → 10 → <strong className="font-mono">1</strong> →{' '}
+                    <strong className="font-mono">0,1</strong>. Le mouvement ne s’arrête pas à la tour vide.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="exposant-nul"
+                    variant="new"
+                    compact
+                    lead="Tu as retiré le dernier bloc, et l’affichage n’est pas tombé à zéro."
+                  />
+                </>
               )}
             </div>
           ),
@@ -213,15 +227,11 @@ export default function Module02LaTourDesFacteurs() {
           done: negDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 text-center space-y-2">
-                <p className="text-sm font-semibold text-sky-900">À retenir</p>
-                <MathText className="text-lg text-slate-800">{'$a^{0} = 1$'}</MathText>
-                <MathText className="text-lg text-slate-800">{'$a^{-n} = \\dfrac{1}{a^{n}}$'}</MathText>
-                <p className="text-xs text-sky-800">
-                  (pour <MathText>{'$a \\neq 0$'}</MathText>) — descendre d’un cran, c’est diviser par la
-                  base, toujours.
-                </p>
-              </div>
+              <KnowledgeBrick
+                id="exposant-negatif"
+                variant="new"
+                lead="Sous le sol, la tour a continué à se diviser par 10 — et la valeur est restée positive."
+              >
               <TapQuestion
                 prompt={
                   <>
@@ -247,19 +257,21 @@ export default function Module02LaTourDesFacteurs() {
                     de valeur négative.
                   </>
                 }
+                requires={['exposant-negatif']}
                 solved={negDone}
                 onAnswered={() => setNegDone(true)}
               />
+              </KnowledgeBrick>
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          L’exposant est un compteur : positif on multiplie, nul on ne multiplie rien (donc 1), négatif on
-          divise. Au module suivant, deux tours vont fusionner.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          Au module suivant, deux tours vont fusionner — et c’est encore le compte des blocs qui décidera
+          du résultat.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

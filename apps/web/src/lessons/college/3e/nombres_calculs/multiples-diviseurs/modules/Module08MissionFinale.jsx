@@ -59,6 +59,7 @@ const EPREUVES = [
   {
     id: 'md-e1',
     skill: 'relation',
+    requires: ['multiple-et-diviseur', 'diviseur'],
     title: 'Épreuve 1',
     prompt: 'Les 36 chaises sont rangées en 4 rangées de 9 : 36 = 4 × 9. Quelle phrase est vraie ?',
     options: [
@@ -76,6 +77,7 @@ const EPREUVES = [
   {
     id: 'md-e2',
     skill: 'reconnaitre',
+    requires: ['diviseur', 'criteres-divisibilite'],
     title: 'Épreuve 2',
     prompt: 'Le stand de crêpes a vendu 91 parts, par plaques de 7. 91 est-il un multiple de 7 ?',
     options: [
@@ -92,6 +94,7 @@ const EPREUVES = [
   {
     id: 'md-e3',
     skill: 'criteres',
+    requires: ['criteres-divisibilite'],
     title: 'Épreuve 3',
     prompt: 'Le lot de tombola porte le numéro 4 725. Par quels nombres est-il divisible ?',
     extra: (
@@ -108,6 +111,7 @@ const EPREUVES = [
   {
     id: 'md-e4',
     skill: 'diviseurs',
+    requires: ['diviseurs-par-paires'],
     title: 'Épreuve 4',
     prompt: 'On veut ranger 28 gobelets en rectangles. Combien 28 a-t-il de diviseurs ?',
     options: ['6', '5', '3', '4'],
@@ -119,6 +123,7 @@ const EPREUVES = [
   {
     id: 'md-e5',
     skill: 'reconnaitre',
+    requires: ['diviseur', 'criteres-divisibilite'],
     title: 'Épreuve 5',
     prompt: 'Les tables se remplissent par 6 ou par 8. Lequel de ces nombres est un multiple à la fois de 6 et de 8 ?',
     options: ['14', '36', '48', '68'],
@@ -130,6 +135,7 @@ const EPREUVES = [
   {
     id: 'md-e6',
     skill: 'premiers',
+    requires: ['nombre-premier', 'tester-un-premier'],
     title: 'Épreuve 6',
     prompt: 'Parmi ces quatre numéros de ticket, lequel est un nombre premier ?',
     options: ['51', '57', '59', '91'],
@@ -141,6 +147,7 @@ const EPREUVES = [
   {
     id: 'md-e7',
     skill: 'decomposition',
+    requires: ['decomposition-facteurs-premiers'],
     title: 'Épreuve 7',
     prompt: 'Quelle est la décomposition en produit de facteurs premiers de 180 ?',
     options: [
@@ -159,6 +166,7 @@ const EPREUVES = [
   {
     id: 'md-e8',
     skill: 'problemes',
+    requires: ['facteurs-communs', 'facteurs-reunis'],
     title: 'Épreuve 8',
     prompt: 'Sur 126 tickets vendus, 84 sont gagnants. Quelle est la fraction 84/126 simplifiée au MAXIMUM ?',
     options: ['2/3', '42/63', '14/21', '4/6'],
@@ -170,6 +178,7 @@ const EPREUVES = [
   {
     id: 'md-e9',
     skill: 'premiers',
+    requires: ['nombre-premier', 'tester-un-premier'],
     title: 'Épreuve 9',
     prompt: 'Le nombre de couverts n est un multiple de 12. De quel autre nombre est-il forcément un multiple ?',
     options: ['24', '6', '5', '18'],
@@ -182,6 +191,7 @@ const EPREUVES = [
   {
     id: 'md-e10',
     skill: 'problemes',
+    requires: ['facteurs-communs', 'facteurs-reunis'],
     title: 'Épreuve 10',
     prompt: `Devant le collège, un bus part toutes les ${BUS_A} min et un autre toutes les ${BUS_B} min. Ils partent ensemble à ${formatClock(DEPART)}. À quelle heure repartiront-ils ensemble ?`,
     options: [

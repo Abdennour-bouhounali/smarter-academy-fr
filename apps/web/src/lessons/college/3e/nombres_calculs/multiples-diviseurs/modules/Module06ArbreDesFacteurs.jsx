@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import FactorTree from '../components/FactorTree';
@@ -131,6 +132,7 @@ export default function Module06ArbreDesFacteurs() {
                 ]}
                 correct={0}
                 cols={1}
+                requires={['nombre-premier']}
                 solved={predicted}
                 onAnswered={() => setPredicted(true)}
                 explain="À toi de le vérifier juste en dessous : coupe ce second arbre jusqu'au bout."
@@ -160,11 +162,15 @@ export default function Module06ArbreDesFacteurs() {
                           <p className="font-mono font-extrabold text-purple-900">{leavesB.join(' · ')}</p>
                         </div>
                       </div>
-                      <p className="text-sm text-purple-900">
-                        Identiques. Peu importe par où l’on coupe : la{' '}
-                        <strong>décomposition en facteurs premiers</strong> d’un nombre est{' '}
-                        <strong>unique</strong>. C’est sa carte d’identité définitive.
-                      </p>
+                      <KnowledgeBrick
+
+                        id="decomposition-facteurs-premiers"
+
+                        variant="new"
+
+                        lead="Deux arbres différents, les mêmes feuilles : ce n’est pas un hasard."
+
+                      />
                     </div>
                   )}
                 </>
@@ -242,6 +248,7 @@ export default function Module06ArbreDesFacteurs() {
                 correctionLabel="2² × 3 × 5"
                 correct={0}
                 cols={2}
+                requires={['decomposition-facteurs-premiers', 'puissance']}
                 solved={writeDone}
                 onAnswered={() => setWriteDone(true)}
                 explain={
@@ -257,12 +264,12 @@ export default function Module06ArbreDesFacteurs() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Chaque nombre a désormais une carte d’identité : ses facteurs premiers. Au module suivant,
-          on s’en sert pour simplifier une fraction, carreler un sol et attraper deux bus.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Chaque nombre a sa carte d’identité. Au module suivant, on
+          s’en sert pour simplifier, carreler et attraper deux bus.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

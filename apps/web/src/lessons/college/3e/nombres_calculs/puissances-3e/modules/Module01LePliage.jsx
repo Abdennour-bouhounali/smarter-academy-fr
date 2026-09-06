@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PaperFold from '../components/PaperFold';
@@ -110,21 +111,12 @@ export default function Module01LePliage() {
           done: nameDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 text-center space-y-2">
-                <p className="text-sm text-indigo-900">
-                  Pour éviter d’écrire {TARGET_FOLDS} fois « × 2 », on note le nombre répété, puis en petit
-                  et en haut, combien de fois il apparaît :
-                </p>
-                <MathText className="text-2xl text-slate-800">
-                  {`$\\underbrace{${formatExpanded(2, TARGET_FOLDS)}}_{${TARGET_FOLDS}\\text{ facteurs}} = 2^{${TARGET_FOLDS}} = ${pow(2, TARGET_FOLDS)}$`}
-                </MathText>
-                <p className="text-xs text-indigo-800">
-                  Le <strong>2</strong> en gros est la <strong>base</strong> : le nombre qui se répète. Le{' '}
-                  <strong>{TARGET_FOLDS}</strong> en petit est l’<strong>exposant</strong> : le nombre de
-                  facteurs. On lit « 2 puissance {TARGET_FOLDS} ».
-                </p>
-              </div>
               <PaperFold folds={TARGET_FOLDS} showCompact frozen />
+              <KnowledgeBrick
+                id="puissance"
+                variant="new"
+                lead={`Tu viens d’écrire ${TARGET_FOLDS} fois « × 2 » à la main. Ce calcul a une écriture courte, et ses deux nombres ont un nom.`}
+              >
               <TapQuestion
                 prompt={
                   <>
@@ -152,9 +144,11 @@ export default function Module01LePliage() {
                     un.
                   </>
                 }
+                requires={['puissance']}
                 solved={nameDone}
                 onAnswered={() => setNameDone(true)}
               />
+              </KnowledgeBrick>
             </div>
           ),
         },
@@ -163,6 +157,7 @@ export default function Module01LePliage() {
           title: 'Le piège le plus classique',
           done: trapDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt={
                 <>
@@ -188,9 +183,19 @@ export default function Module01LePliage() {
                   <MathText>{'$5^{2}$'}</MathText> : base et exposant échangés.
                 </>
               }
+              requires={['puissance']}
               solved={trapDone}
               onAnswered={() => setTrapDone(true)}
             />
+            {trapDone && (
+              <KnowledgeBrick
+                id="exposant-compte"
+                variant="new"
+                compact
+                lead="32 épaisseurs, pas 10 : le petit nombre en haut ne s’est pas invité dans la multiplication."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -216,19 +221,19 @@ export default function Module01LePliage() {
                   ? 'Tu as calculé 4 × 3. La question ne demande pas la valeur mais le NOMBRE de facteurs : 3.'
                   : 'L’exposant EST le nombre de facteurs : 4³ = 4 × 4 × 4, donc 3 facteurs.'
               }
+              requires={['puissance', 'exposant-compte']}
               solved={readDone}
               onAnswered={() => setReadDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Une puissance, c’est une multiplication répétée écrite court : la <strong>base</strong> se répète,
-          l’<strong>exposant</strong> compte les répétitions. Au module suivant, tu vas régler ces deux
-          nombres toi-même.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          Au module suivant, tu vas régler ces deux nombres toi-même — et descendre la tour jusqu’en
+          dessous de zéro.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

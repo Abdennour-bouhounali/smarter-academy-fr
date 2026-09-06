@@ -53,7 +53,7 @@ const QUESTIONS = [
   {
     id: 'th-d4-paralleles',
     skill: 'geometrie',
-    requires: ['droites-paralleles'],
+    requires: ['droites-paralleles', 'angle-droit'],
     points: 2,
     prompt: 'Deux droites parallèles, ce sont deux droites qui…',
     options: [

@@ -44,6 +44,22 @@
       ]
     },
     {
+      "id": "tables-multiplication",
+      "label": "tables de multiplication",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])tables? de multiplication(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "comparer-entiers",
+      "label": "comparer des entiers",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])comparer des (?:nombres |entiers)"
+      ]
+    },
+    {
       "id": "quotient",
       "label": "quotient",
       "grade": "6e",
@@ -865,6 +881,110 @@
       "grade": "3e",
       "patterns": [
         "facteur commun"
+      ]
+    },
+    {
+      "id": "nombre-rationnel",
+      "label": "nombre rationnel",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])(?:nombres? )?rationnels?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "irreductible",
+      "label": "fraction irréductible",
+      "grade": "5e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])irr[ée]ductibles?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])irr[ée]ductibilit[ée](?![\\p{L}\\p{N}_])"
+      ],
+      "_comment": "Rendre une fraction irréductible se travaille dès la 5e ; ce que la 3e ajoute est le lien avec le PGCD, couvert par l'entrée « pgcd ». Le niveau 5e évite de signaler comme neuf, dans une leçon de géométrie, un simple constat sur une fraction simplifiée."
+    },
+    {
+      "id": "ppcm",
+      "label": "PPCM",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])PPCM(?![\\p{L}\\p{N}_])",
+        "plus petit multiple commun"
+      ]
+    },
+    {
+      "id": "inverse-nombre",
+      "label": "inverse d’un nombre",
+      "grade": "3e",
+      "patterns": [
+        "(?:l|d)['’]inverse(?![\\p{L}\\p{N}_])\\s*(?:de\\s+(?:la\\s+)?(?:fraction|deuxi[èe]me|premi[èe]re|division|ce\\s+(?:nombre|quotient))|d['’]un\\s+(?:nombre|rationnel|quotient))",
+        "(?<![\\p{L}\\p{N}_])multiplier\\s+par\\s+(?:l['’])?inverse(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])inverses?(?![\\p{L}\\p{N}_])\\s+(?:de\\s+la\\s+fraction|du\\s+nombre|d['’]un\\s+nombre)"
+      ],
+      "_comment": "Le mot « inverse » au sens ARITHMÉTIQUE (le nombre dont le produit avec l'original vaut 1). Employé seul il désigne le contraire — « l'inverse de l'histoire », « c'est l'inverse » — ou un sens de lecture : on ne retient que les tournures où il porte sur un nombre ou une fraction."
+    },
+    {
+      "id": "denominateur-commun",
+      "label": "dénominateur commun",
+      "grade": "5e",
+      "patterns": [
+        "d[ée]nominateur commun",
+        "m[êe]me d[ée]nominateur"
+      ]
+    },
+    {
+      "id": "multiplication-repetee",
+      "label": "multiplication répétée",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])multiplication r[ée]p[ée]t[ée]e(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "decalage-virgule",
+      "label": "décalage de la virgule (×10, ÷10)",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])d[ée]cal(?:er|e|es|age|ages)\\s+la\\s+virgule(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "fraction-decimale",
+      "label": "fraction décimale",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])fractions? d[ée]cimales?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "exposant",
+      "label": "exposant",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])exposants?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "base-puissance",
+      "label": "base d’une puissance",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])bases?\\s+(?:de\\s+la\\s+|d[’']une\\s+)?puissance(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "notation-scientifique",
+      "label": "écriture / notation scientifique",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])[ée]critures?\\s+scientifiques?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])notations?\\s+scientifiques?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "ordre-de-grandeur",
+      "label": "ordre de grandeur",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])ordres?\\s+de\\s+grandeur(?![\\p{L}\\p{N}_])"
       ]
     }
   ],

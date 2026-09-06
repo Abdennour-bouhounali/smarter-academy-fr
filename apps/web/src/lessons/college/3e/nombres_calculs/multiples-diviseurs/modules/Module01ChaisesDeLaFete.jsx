@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RectangleArray from '../components/RectangleArray';
 import { layoutRows, normalizePair, hasPair } from '../components/divisibilityUtils';
@@ -82,6 +83,7 @@ export default function Module01ChaisesDeLaFete() {
               options={['Oui, ça tombe juste', 'Non, il restera des chaises', 'Impossible à savoir sans essayer']}
               correct={1}
               cols={1}
+              requires={['quotient']}
               solved={predicted}
               onAnswered={() => setPredicted(true)}
               explain={
@@ -130,6 +132,13 @@ export default function Module01ChaisesDeLaFete() {
                   </strong>
                   . Quand il ne l’est pas — 5 rangées — aucune écriture de ce genre n’existe.
                 </Feedback>
+              )}
+              {done2 && (
+                <KnowledgeBrick
+                  id="diviseur"
+                  variant="new"
+                  lead="Ce qui distingue 6 de 5 pour ranger 36 chaises a un nom."
+                />
               )}
             </div>
           ),
@@ -216,6 +225,7 @@ export default function Module01ChaisesDeLaFete() {
                   { id: 'r2', label: '4 est un diviseur de 36', options: ['Vrai', 'Faux'], correct: 0, correction: '4 rangées, reste 0 : oui.' },
                   { id: 'r3', label: '4 est un multiple de 36', options: ['Vrai', 'Faux'], correct: 1, correction: 'On ne peut pas faire 4 avec des paquets de 36.' },
                 ]}
+                requires={['diviseur']}
                 solved={batchDone}
                 onAnswered={() => setBatchDone(true)}
                 feedback={({ allRight }) => (
@@ -230,12 +240,12 @@ export default function Module01ChaisesDeLaFete() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Retiens le geste : <strong>reste 0 = diviseur</strong>. Au module suivant, on compare deux
-          listes qui n’ont pas du tout la même longueur.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Retiens le geste : reste 0 = diviseur. Au module suivant, on
+          compare deux listes qui n’ont pas du tout la même longueur.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -1,28 +1,41 @@
 import { lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
+import { LESSON_KNOWLEDGE } from './knowledge';
+import { LessonKnowledgeProvider } from '../../../../common/knowledge';
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
-// Module<NN><Descriptor>.jsx (docs/architecture/LESSON_CONTRACT.md), résolus par
-// le NUMÉRO de module lu dans le nom de fichier, pas par un import statique.
-//
-// `import.meta.glob` est volontairement paresseux : pendant la reconstruction
-// de la leçon, un module encore à écrire fait simplement disparaître SA route,
-// au lieu de casser la résolution d'App.jsx (qui importe toutes les leçons) et
-// de renvoyer un 500 pour l'application entière.
-const MODULE_FILES = import.meta.glob('./modules/Module*.jsx');
+// Module<NN><Descriptor>.jsx (docs/architecture/LESSON_CONTRACT.md), indexés par
+// le `number` du module. La table est explicite : le provider de la carte des
+// connaissances doit envelopper chaque page, et un glob paresseux rendrait ce
+// câblage invisible.
+const MODULE_COMPONENTS = {
+  0: lazy(() => import('./modules/Module00Diagnostic.jsx')),
+  1: lazy(() => import('./modules/Module01LePliage.jsx')),
+  2: lazy(() => import('./modules/Module02LaTourDesFacteurs.jsx')),
+  3: lazy(() => import('./modules/Module03EmpilerLesTours.jsx')),
+  4: lazy(() => import('./modules/Module04LaVirguleQuiGlisse.jsx')),
+  5: lazy(() => import('./modules/Module05EcritureScientifique.jsx')),
+  6: lazy(() => import('./modules/Module06LechelleDeLunivers.jsx')),
+  7: lazy(() => import('./modules/Module07MissionFinale.jsx')),
+};
 
-const MODULE_COMPONENTS = Object.entries(MODULE_FILES).reduce((acc, [path, loader]) => {
-  const match = path.match(/Module(\d+)/);
-  if (match) acc[Number(match[1])] = lazy(loader);
-  return acc;
-}, {});
-
+// Chaque page de la leçon (index + modules) est enveloppée dans le provider de
+// la carte des connaissances : il lit la progression, cumule les apports des
+// modules validés, accueille les connaissances posées par les
+// <KnowledgeBrick> au fil des étapes, et monte le tiroir « Ma carte ».
 function withSuspense(Component) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
-      <Component />
+      <LessonKnowledgeProvider
+        lessonId={LESSON_CONFIG.id}
+        knowledge={LESSON_KNOWLEDGE}
+        printTitle="PUISSANCES"
+        printSubject="Mathématiques · 3e"
+      >
+        <Component />
+      </LessonKnowledgeProvider>
     </Suspense>
   );
 }

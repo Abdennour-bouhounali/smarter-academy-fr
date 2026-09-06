@@ -23,6 +23,7 @@ const QUESTIONS = [
   {
     id: 'rd-d1-comparer',
     skill: 'relatifs',
+    requires: ['nombres-relatifs', 'ordre-nombres'],
     points: 2,
     prompt: 'Quel nombre est le plus petit : −4 ou −7 ?',
     options: ['−7', '−4', 'ils sont égaux'],
@@ -33,6 +34,7 @@ const QUESTIONS = [
   {
     id: 'rd-d2-soustraire',
     skill: 'relatifs',
+    requires: ['nombres-relatifs', 'calcul-numerique'],
     points: 2,
     prompt: 'Combien font 3 − (−2) ?',
     options: ['5', '1', '−5'],
@@ -43,6 +45,7 @@ const QUESTIONS = [
   {
     id: 'rd-d3-ecart',
     skill: 'relatifs',
+    requires: ['nombres-relatifs', 'ordre-nombres'],
     points: 2,
     prompt: 'Quel est l’écart entre −3 et 4 sur une droite graduée ?',
     options: ['7', '1', '−7'],
@@ -53,6 +56,7 @@ const QUESTIONS = [
   {
     id: 'rd-d4-graduation',
     skill: 'graduation',
+    requires: ['ordre-nombres', 'moyenne'],
     points: 2,
     prompt: 'Sur une droite graduée de 0,5 en 0,5, quel nombre se trouve juste entre 2 et 3 ?',
     options: ['2,5', '2,3', '5'],
@@ -63,6 +67,7 @@ const QUESTIONS = [
   {
     id: 'rd-d5-moyenne',
     skill: 'calcul',
+    requires: ['moyenne', 'calcul-numerique'],
     points: 2,
     prompt: 'Quelle est la moyenne de −2 et 6 ?',
     options: ['2', '4', '−4'],

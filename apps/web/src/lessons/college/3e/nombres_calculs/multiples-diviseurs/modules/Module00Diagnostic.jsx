@@ -21,6 +21,7 @@ const QUESTIONS = [
   {
     id: 'q1-ordre',
     skill: 'entiers',
+    requires: ['comparer-entiers'],
     points: 2,
     prompt: <>Parmi ces trois nombres, lequel est le plus <strong>grand</strong> : 408, 84, 480 ?</>,
     options: ['408', '84', '480'],
@@ -31,6 +32,7 @@ const QUESTIONS = [
   {
     id: 'q2-table',
     skill: 'calcul',
+    requires: ['tables-multiplication', 'quotient', 'puissance'],
     points: 2,
     prompt: <>Combien font <strong className="font-mono">7 × 8</strong> ?</>,
     options: ['54', '56', '63'],
@@ -41,6 +43,7 @@ const QUESTIONS = [
   {
     id: 'q3-produit',
     skill: 'calcul',
+    requires: ['tables-multiplication', 'quotient'],
     points: 2,
     prompt: <>Quel est le résultat de <strong className="font-mono">12 × 5</strong> ?</>,
     options: ['17', '60', '55'],
@@ -51,6 +54,7 @@ const QUESTIONS = [
   {
     id: 'q4-euclide',
     skill: 'calcul',
+    requires: ['tables-multiplication', 'quotient'],
     points: 2,
     prompt: (
       <>
@@ -66,6 +70,7 @@ const QUESTIONS = [
   {
     id: 'q5-reste-nul',
     skill: 'calcul',
+    requires: ['tables-multiplication', 'quotient'],
     points: 2,
     prompt: <>Quel est le reste de la division de <strong className="font-mono">36 par 4</strong> ?</>,
     options: ['0', '4', '9'],

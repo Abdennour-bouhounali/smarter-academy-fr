@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { parseDec, formatDec } from '@smarter-academy/core';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PrimeVenn from '../components/PrimeVenn';
 import {
@@ -134,6 +135,13 @@ export default function Module07LaboDecompositions() {
                   communs : la fraction n’est irréductible que lorsqu’il n’en reste plus aucun.
                 </Feedback>
               )}
+              {done1 && (
+                <KnowledgeBrick
+                  id="facteurs-communs"
+                  variant="new"
+                  lead="Ce que les deux décompositions ont en commun donne le plus grand découpage possible."
+                />
+              )}
             </div>
           ),
         },
@@ -164,6 +172,7 @@ export default function Module07LaboDecompositions() {
                 expected={TILE}
                 parse={parseDec}
                 display={formatDec(TILE)}
+                requires={['facteurs-communs', 'decomposition-facteurs-premiers']}
                 solved={tileDone}
                 onAnswered={() => setTileDone(true)}
                 explain={
@@ -218,6 +227,11 @@ export default function Module07LaboDecompositions() {
           done: busDone,
           content: (
             <div className="space-y-3">
+              <KnowledgeBrick
+                id="facteurs-reunis"
+                variant="new"
+                lead="Cette fois on ne cherche pas ce que les deux nombres ont en commun, mais le premier moment où ils se retrouvent."
+              />
               <p className="text-sm text-slate-600">
                 Devant le collège, un bus part toutes les <strong>{BUS_A} min</strong>, l’autre
                 toutes les <strong>{BUS_B} min</strong>. Ils partent ensemble à{' '}
@@ -240,6 +254,7 @@ export default function Module07LaboDecompositions() {
                 expected={MEET}
                 parse={parseDec}
                 display={formatDec(MEET)}
+                requires={['facteurs-reunis']}
                 solved={busDone}
                 onAnswered={() => setBusDone(true)}
                 explain={
@@ -309,6 +324,7 @@ export default function Module07LaboDecompositions() {
               ]}
               correct={0}
               cols={2}
+              requires={['facteurs-reunis']}
               solved={clockDone}
               onAnswered={() => setClockDone(true)}
               explain={
@@ -324,13 +340,11 @@ export default function Module07LaboDecompositions() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Un seul outil, trois usages : <strong>facteurs communs</strong> pour découper au plus grand
-          (fraction irréductible, plus grand carreau), <strong>facteurs réunis</strong> pour se
-          retrouver au plus tôt (les bus). Direction la fête.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Un seul outil, trois usages. Direction la fête.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

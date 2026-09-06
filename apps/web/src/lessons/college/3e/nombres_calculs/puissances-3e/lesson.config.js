@@ -42,6 +42,16 @@ export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/puissances-
 export const LESSON_CONFIG = {
   id: 'puissances-3e',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : elles viennent des années précédentes et le module 0 les
+  // diagnostique — priorités opératoires, multiplication répétée écrite en
+  // toutes lettres, décalage de la virgule par 10 / 100, écriture décimale
+  // d'une fraction décimale. Tout le reste doit être établi dans la leçon même.
+  priorKnowledge: ['calcul-numerique', 'multiplication-repetee', 'decalage-virgule', 'fraction-decimale'],
   title: 'Puissances',
   description:
     "Plier une feuille jusqu'à ce que compter les épaisseurs devienne impossible, puis empiler des tours de facteurs pour lire les règles de calcul sur le compte des blocs, faire glisser la virgule avec les puissances de 10 et mesurer l'univers en écriture scientifique.",

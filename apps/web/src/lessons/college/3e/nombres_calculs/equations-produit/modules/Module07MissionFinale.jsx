@@ -1,6 +1,7 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
@@ -26,6 +27,11 @@ import {
  *
  * Couverture des 10 LPs : P1 (e1), P2 (e2), P3 (e3), P4 (e4), P5 (e5),
  * P6 (e6), P7 (e7), P8 (e8), P9 (e9), P10 (e10).
+ *
+ * `requires` nomme, épreuve par épreuve, les connaissances que la leçon a
+ * établies et que l'épreuve mobilise. Le test final CONSOLIDE : il n'introduit
+ * ni concept, ni mot, ni notation, et la synthèse ne recopie aucune définition
+ * — elle affiche la carte complète (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 const F1 = lin(1, -3);
 const F2 = lin(2, 4);
@@ -49,6 +55,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'ep-e1',
+    requires: ['equation'],
     skill: 'equation',
     title: 'Épreuve 1',
     prompt: "Parmi ces trois écritures, laquelle est une ÉQUATION ?",
@@ -68,6 +75,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e2',
+    requires: ['ensemble-solutions', 'solution'],
     skill: 'equation',
     title: 'Épreuve 2',
     prompt: "Combien de solutions a l'équation x + 1 = x + 2 ?",
@@ -80,6 +88,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e3',
+    requires: ['equation-equivalente'],
     skill: 'balance',
     title: 'Épreuve 3',
     prompt: "On part de 2x + 3 = x + 7. Quelle transformation conserve les mêmes solutions ?",
@@ -96,6 +105,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e4',
+    requires: ['equation-premier-degre', 'equation-equivalente'],
     skill: 'balance',
     title: 'Épreuve 4',
     prompt: 'Quelle est la solution de 5x − 2 = 13 ?',
@@ -111,6 +121,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e5',
+    requires: ['equation-premier-degre', 'distributivite'],
     skill: 'balance',
     title: 'Épreuve 5',
     prompt: 'Pour résoudre 3(x + 2) = 15, quelle première étape est correcte ?',
@@ -127,6 +138,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e6',
+    requires: ['regle-produit-nul', 'produit-nul-constat'],
     skill: 'produit',
     title: 'Épreuve 6',
     prompt: 'Le produit de deux nombres vaut 0. Que peut-on affirmer à coup sûr ?',
@@ -143,6 +155,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e7',
+    requires: ['methode-branches', 'ensemble-solutions', 'equation-premier-degre'],
     skill: 'produit',
     title: 'Épreuve 7',
     prompt: "Résous (x − 3)(2x + 4) = 0.",
@@ -162,6 +175,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e8',
+    requires: ['verifier-solution', 'methode-branches'],
     skill: 'verifier',
     title: 'Épreuve 8',
     prompt: "Comment vérifier que x = 5 est solution de x(x − 5) = 0 ?",
@@ -178,6 +192,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e9',
+    requires: ['interpreter-solution', 'methode-branches'],
     skill: 'verifier',
     title: 'Épreuve 9',
     prompt:
@@ -195,6 +210,7 @@ const EPREUVES = [
   },
   {
     id: 'ep-e10',
+    requires: ['factoriser-vers-produit', 'methode-branches', 'mem-methode-complete'],
     skill: 'problemes',
     title: 'Épreuve 10',
     prompt:
@@ -258,13 +274,6 @@ function Synthese() {
         </p>
       </div>
 
-      <div className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl p-5 text-center space-y-1">
-        <p className="text-xs uppercase tracking-wide text-emerald-100 font-mono font-bold">À retenir</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Ramener à « produit = 0 »</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Annuler chaque facteur, séparément</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Vérifier en remplaçant, puis interpréter</p>
-      </div>
-
       <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 space-y-2.5">
         <p className="text-sm font-bold text-amber-900">Les pièges à éviter</p>
         {PIEGES.map((p) => (
@@ -279,6 +288,9 @@ function Synthese() {
         Aires, trajectoires, prix : dès qu'un problème mène à une équation où un produit peut s'annuler, le
         réflexe est le même — factoriser, puis annuler chaque facteur.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

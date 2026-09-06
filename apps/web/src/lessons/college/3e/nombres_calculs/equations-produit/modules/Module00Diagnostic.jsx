@@ -43,7 +43,7 @@ const QUESTIONS = [
     id: 'q2-reduire',
     skill: 'litteral',
     points: 2,
-    requires: ['reduire-expression', 'calcul-litteral'],
+    requires: ['reduire-expression', 'terme-algebrique', 'calcul-litteral'],
     prompt: (
       <>
         Réduis <MathText>{'$2x + 3 + x$'}</MathText>.
@@ -88,7 +88,7 @@ const QUESTIONS = [
     id: 'q5-distributivite',
     skill: 'distri',
     points: 2,
-    requires: ['distributivite'],
+    requires: ['distributivite', 'developper', 'facteur'],
     prompt: (
       <>
         Développe <MathText>{'$3(x + 2)$'}</MathText>.

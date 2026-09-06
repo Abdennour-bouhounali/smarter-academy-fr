@@ -39,6 +39,10 @@ export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/multiples-d
 
 export const LESSON_CONFIG = {
   id: 'multiples-diviseurs',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
+  priorKnowledge: ['comparer-entiers', 'tables-multiplication', 'quotient', 'puissance'],
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Multiples et diviseurs',
   description:

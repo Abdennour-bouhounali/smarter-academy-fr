@@ -51,7 +51,7 @@ export const LESSON_CONFIG = {
   // Formalisation continue par la carte des connaissances.
   knowledgeMap: true,
   // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
-  priorKnowledge: ['triangle-rectangle', 'hypotenuse', 'somme-angles-triangle', 'quotient', 'arrondi'],
+  priorKnowledge: ['angle-droit', 'triangle-rectangle', 'hypotenuse', 'somme-angles-triangle', 'quotient', 'arrondi'],
   knowledgeAudit: {
     ignore: [
       // « aire » n'apparaît que comme mauvaise réponse (« le quotient dépend-il

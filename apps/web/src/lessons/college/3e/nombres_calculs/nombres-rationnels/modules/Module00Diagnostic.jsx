@@ -11,6 +11,11 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * lire une fraction simple, reconnaître une fraction égale, faire une
  * division exacte, et manier les signes — jamais les rationnels de 3e
  * eux-mêmes (opérations, irréductibilité, priorités), qui SONT la leçon.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique.
+ * Ces ids sont exactement ceux du `priorKnowledge` de la leçon : un module 0
+ * MESURE des acquis antérieurs, il n'enseigne jamais la matière de la leçon
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 const SKILLS = {
   fractions: { label: 'Fractions', emoji: '🍕' },
@@ -23,6 +28,7 @@ const QUESTIONS = [
     id: 'q1-lire-fraction',
     skill: 'fractions',
     points: 2,
+    requires: ['quotient'],
     prompt: (
       <>
         Une pizza est partagée en 4 parts égales ; on en prend 3. Quelle fraction de la pizza a-t-on
@@ -39,6 +45,7 @@ const QUESTIONS = [
     id: 'q2-fraction-egale',
     skill: 'fractions',
     points: 2,
+    requires: ['quotient'],
     prompt: (
       <>
         Quelle fraction est égale à <MathText>{'$\\frac{1}{2}$'}</MathText> ?
@@ -54,6 +61,7 @@ const QUESTIONS = [
     id: 'q3-division',
     skill: 'calcul',
     points: 2,
+    requires: ['calcul-numerique', 'quotient'],
     prompt: (
       <>
         Combien font <MathText>{'$36 \\div 12$'}</MathText> ?
@@ -68,6 +76,7 @@ const QUESTIONS = [
     id: 'q4-produit-relatifs',
     skill: 'relatifs',
     points: 2,
+    requires: ['nombres-relatifs'],
     prompt: (
       <>
         Combien font <MathText>{'$(-3) \\times 4$'}</MathText> ?
@@ -82,6 +91,7 @@ const QUESTIONS = [
     id: 'q5-ordre-relatifs',
     skill: 'relatifs',
     points: 2,
+    requires: ['nombres-relatifs'],
     prompt: <>Lequel de ces deux nombres est le plus grand : −5 ou −2 ?</>,
     options: ['−2', '−5', 'Ils sont égaux'],
     cols: 3,

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import NumberGrid from '../components/NumberGrid';
 import PrimeChips from '../components/PrimeChips';
@@ -83,6 +84,7 @@ export default function Module05Crible() {
               options={['Environ 5', 'Environ 15', 'Environ 25', 'Presque aucun']}
               correct={1}
               cols={2}
+              requires={['nombre-premier']}
               solved={predicted}
               onAnswered={() => setPredicted(true)}
               explain={
@@ -139,6 +141,13 @@ export default function Module05Crible() {
                   puce.
                 </Feedback>
               )}
+              {done2 && (
+                <KnowledgeBrick
+                  id="tester-un-premier"
+                  variant="new"
+                  lead="Ce qui t’a permis de t’arrêter à 7 est un argument, pas une convention."
+                />
+              )}
             </div>
           ),
         },
@@ -157,6 +166,7 @@ export default function Module05Crible() {
               ]}
               correct={0}
               cols={1}
+              requires={['tester-un-premier', 'nombre-premier']}
               solved={whyDone}
               onAnswered={() => setWhyDone(true)}
               explain={
@@ -200,6 +210,7 @@ export default function Module05Crible() {
                   correction: '5 + 1 = 6, donc 51 = 3 × 17.',
                 },
               ]}
+              requires={['tester-un-premier']}
               solved={batchDone}
               onAnswered={() => setBatchDone(true)}
               feedback={({ allRight, nCorrect, total }) => (
@@ -222,13 +233,12 @@ export default function Module05Crible() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Tu as une méthode pour reconnaître un premier, et un argument pour savoir quand t’arrêter
-          de chercher. Au module suivant, ces premiers deviennent les briques de tous les autres
-          nombres.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu reconnais un premier et tu sais quand t’arrêter. Au module
+          suivant, ces premiers deviennent les briques de tous les autres nombres.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

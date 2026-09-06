@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RectangleArray from '../components/RectangleArray';
@@ -148,6 +149,13 @@ export default function Module02DeuxLectures() {
                   droite continue. Après 40 viennent 44, 48, 52 — <strong>sans jamais s’arrêter</strong>.
                 </Feedback>
               )}
+              {done1 && (
+                <KnowledgeBrick
+                  id="multiple-et-diviseur"
+                  variant="new"
+                  lead="La même égalité se lit dans les deux sens — et chaque sens a son mot."
+                />
+              )}
             </div>
           ),
         },
@@ -161,6 +169,7 @@ export default function Module02DeuxLectures() {
               options={['40', '400', '4 × 4 = 16', 'Il n’y en a pas']}
               correct={3}
               cols={2}
+              requires={['multiple-et-diviseur']}
               solved={infiniDone}
               onAnswered={() => setInfiniDone(true)}
               explain={
@@ -197,6 +206,7 @@ export default function Module02DeuxLectures() {
                 options={['3', '6', '12', 'Une infinité']}
                 correct={1}
                 cols={2}
+                requires={['multiple-et-diviseur', 'diviseur']}
                 solved={countDone}
                 onAnswered={() => setCountDone(true)}
                 explain={
@@ -240,6 +250,7 @@ export default function Module02DeuxLectures() {
                   correct: 2, correction: '9 ne divise pas 12, et 9 < 12 donc n’en est pas un multiple.',
                 },
               ]}
+              requires={['multiple-et-diviseur']}
               solved={batchDone}
               onAnswered={() => setBatchDone(true)}
               feedback={({ allRight, nCorrect, total }) => (
@@ -259,12 +270,12 @@ export default function Module02DeuxLectures() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Une liste infinie d’un côté, une liste finie et appariée de l’autre : deux lectures du même
-          produit. Au module suivant, les multiples se rangent en motifs sur une grille.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Une liste infinie d’un côté, une liste finie de l’autre. Au
+          module suivant, les multiples se rangent en motifs sur une grille.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

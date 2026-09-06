@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RationalBar from '../components/RationalBar';
@@ -24,8 +25,12 @@ import {
  * Misconception targeted: « 6/8 > 3/4 puisque 6 > 3 » et « −3/4 et 3/(−4)
  *   sont deux nombres différents ».
  * Feedback: l'écart au point cible est quantifié en valeur décimale.
- * Formalization: « rationnel = quotient de deux entiers, dénominateur non
- *   nul », NOMMÉ à l'étape 3, après le geste — jamais avant.
+ * Formalization: les mots vivent dans `knowledge.jsx`. « Écritures
+ *   équivalentes » est posé par une <KnowledgeBrick> dès la troisième découpe
+ *   (étape 1), avant la question de l'étape 2 qui l'exige ; « nombre
+ *   rationnel » à l'étape 3, après le geste ; le placement du signe à l'étape
+ *   4, une fois la barre négative parcourue
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 découpes sans atteindre 3 écritures, le module offre
  *   « montre-moi » qui pose 6/8.
  * Transfer: étape 4, la même barre à gauche de 0 pour les négatifs.
@@ -111,6 +116,13 @@ export default function Module01DeuxNomsUnNombre() {
                   {revealed && ' (Une écriture t’a été montrée — refais-en une à la main.)'}
                 </Feedback>
               )}
+              {explored && (
+                <KnowledgeBrick
+                  id="ecritures-equivalentes"
+                  variant="new"
+                  lead="Trois écritures, un seul marqueur : ce que tu viens de constater porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -153,6 +165,7 @@ export default function Module01DeuxNomsUnNombre() {
                   )}
                 </Feedback>
               )}
+              requires={['ecritures-equivalentes', 'quotient']}
               solved={decDone}
               onAnswered={() => setDecDone(true)}
             />
@@ -164,16 +177,11 @@ export default function Module01DeuxNomsUnNombre() {
           done: nameDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 space-y-2">
-                <p className="text-[11px] font-mono uppercase tracking-wide text-indigo-700">Le mot</p>
-                <p className="text-sm text-slate-700">
-                  Un <strong>nombre rationnel</strong> est un nombre qui peut s’écrire{' '}
-                  <MathText>{'$\\frac{a}{b}$'}</MathText> avec <MathText>{'$a$'}</MathText> et{' '}
-                  <MathText>{'$b$'}</MathText> <strong>entiers</strong> et{' '}
-                  <MathText>{'$b \\neq 0$'}</MathText>. Chacune de ses écritures marque le même point :
-                  ce sont des <strong>écritures équivalentes</strong>.
-                </p>
-              </div>
+              <KnowledgeBrick
+                id="nombre-rationnel"
+                variant="new"
+                lead="Ce point que tu as écrit de mille façons appartient à une grande famille de nombres. La voici, avec sa condition."
+              />
               <TapQuestion
                 prompt="Pourquoi exige-t-on que le dénominateur soit différent de zéro ?"
                 options={[
@@ -197,6 +205,7 @@ export default function Module01DeuxNomsUnNombre() {
                     en 0 part ne veut rien dire, donc aucun nombre ne peut être le résultat.
                   </>
                 }
+                requires={['nombre-rationnel', 'quotient']}
                 solved={nameDone}
                 onAnswered={() => setNameDone(true)}
               />
@@ -239,19 +248,28 @@ export default function Module01DeuxNomsUnNombre() {
                     {equivalent(rat(-3, 4), rat(3, -4)) ? 'les trois écritures sont équivalentes' : ''}.
                   </>
                 }
+                requires={['nombre-rationnel', 'ecritures-equivalentes', 'nombres-relatifs']}
                 solved={negDone}
                 onAnswered={() => setNegDone(true)}
               />
+              {negDone && (
+                <KnowledgeBrick
+                  id="signe-fraction"
+                  variant="new"
+                  compact
+                  lead="Trois écritures, un seul point à gauche de zéro. Reste à savoir laquelle on écrit d’habitude."
+                />
+              )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Un rationnel est un point. Toutes ses écritures — {WRITINGS.join(', ')}, 0,75 — ne sont que
-          des découpes différentes du même chemin. C’est ce qui rend possible tout le reste de la leçon.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> {WRITINGS.join(', ')}, 0,75 : mille écritures pour un point. Au
+          module suivant, on cherche la plus petite de toutes — celle qui sert de carte d’identité.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

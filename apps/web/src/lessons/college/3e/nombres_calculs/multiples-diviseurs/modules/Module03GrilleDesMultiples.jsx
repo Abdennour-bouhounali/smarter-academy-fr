@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import NumberGrid from '../components/NumberGrid';
 import { multiplesUpTo, digitSum, divisibleByCriterion } from '../components/divisibilityUtils';
@@ -165,6 +166,7 @@ export default function Module03GrilleDesMultiples() {
                 ]}
                 correct={0}
                 cols={1}
+                requires={['multiple-et-diviseur']}
                 solved={colDone}
                 onAnswered={() => setColDone(true)}
                 explain={
@@ -246,6 +248,13 @@ export default function Module03GrilleDesMultiples() {
                   </div>
                 </div>
               )}
+              {done3 && (
+                <KnowledgeBrick
+                  id="criteres-divisibilite"
+                  variant="new"
+                  lead="Ces régularités que tu viens de repérer portent un nom, et elles se retiennent."
+                />
+              )}
             </div>
           ),
         },
@@ -279,6 +288,7 @@ export default function Module03GrilleDesMultiples() {
                   correct: 1, correction: 'Impair, ne finit ni par 0 ni par 5, somme 11.',
                 },
               ]}
+              requires={['criteres-divisibilite']}
               solved={batchDone}
               onAnswered={() => setBatchDone(true)}
               feedback={({ allRight, nCorrect, total }) => (
@@ -298,12 +308,12 @@ export default function Module03GrilleDesMultiples() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Un critère, ce n’est pas une astuce : c’est une façon de voir la divisibilité sans poser la
-          division. Au module suivant, on repart des rectangles pour trouver TOUS les diviseurs.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Un critère, ce n’est pas une astuce : c’est voir la
+          divisibilité sans poser la division. Au module suivant, on cherche TOUS les diviseurs.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

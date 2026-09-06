@@ -37,6 +37,12 @@ export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/reperage-d
 
 export const LESSON_CONFIG = {
   id: 'reperage-droite-plan-3e',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0. Ni
+  // « abscisse » ni « ordonnée » n'y figurent : ce sont précisément la matière
+  // de cette leçon (teachingScope.include), et des briques les posent.
+  priorKnowledge: ['nombres-relatifs', 'ordre-nombres', 'calcul-numerique', 'moyenne'],
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Repérage sur une droite et dans le plan',
   description:

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RectangleArray from '../components/RectangleArray';
 import { divisorPairs, divisors, mirrorThreshold, isPrime, normalizePair, hasPair } from '../components/divisibilityUtils';
@@ -169,6 +170,20 @@ export default function Module04RectangleDetecteur() {
                   <strong>s’arrête</strong>, contrairement à celle des multiples.
                 </Feedback>
               )}
+
+              {done1 && (
+
+                <KnowledgeBrick
+
+                  id="diviseurs-par-paires"
+
+                  variant="new"
+
+                  lead="Chaque rectangle t’a donné deux diviseurs d’un coup : voilà la méthode complète."
+
+                />
+
+              )}
             </div>
           ),
         },
@@ -182,6 +197,7 @@ export default function Module04RectangleDetecteur() {
               options={['À partir de 4 rangées', 'À partir de 6 rangées', 'À partir de 9 rangées', 'Jamais : il y en a toujours de nouvelles']}
               correct={1}
               cols={2}
+              requires={['diviseurs-par-paires']}
               solved={mirrorDone}
               onAnswered={() => setMirrorDone(true)}
               explain={
@@ -342,32 +358,26 @@ export default function Module04RectangleDetecteur() {
               )}
 
               {done4 && (
-                <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 space-y-1.5">
-                  <p className="text-xs font-mono uppercase tracking-wide text-violet-600">
-                    Le mot pour ça
-                  </p>
-                  <p className="text-sm text-violet-900">
-                    Un nombre dont le seul rectangle est le bâton s’appelle un{' '}
-                    <strong>nombre premier</strong> : il a <strong>exactement deux diviseurs</strong>, 1
-                    et lui-même. 13 et 23 sont premiers ; 21 = 3 × 7 ne l’est pas.
-                  </p>
-                  <p className="text-sm text-violet-900">
-                    Attention : <strong className="font-mono">1</strong> n’est pas premier — son seul
-                    rectangle est 1 × 1, et il n’a donc qu’<strong>un</strong> diviseur, pas deux.
-                  </p>
-                </div>
+                <KnowledgeBrick
+
+                  id="nombre-premier"
+
+                  variant="new"
+
+                  lead="Un nombre dont le seul rectangle est le bâton mérite un nom."
+
+                />
               )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Tu sais maintenant lister les diviseurs d’un nombre sans en oublier : par paires, et sans
-          chercher au-delà du carré. Au module suivant, on va repérer les nombres premiers d’un coup,
-          jusqu’à 50.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu listes les diviseurs sans en oublier. Au module suivant,
+          on repère les premiers d’un coup, jusqu’à 50.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

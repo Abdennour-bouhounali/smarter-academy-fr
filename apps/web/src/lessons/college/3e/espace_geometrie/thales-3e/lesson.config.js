@@ -48,7 +48,7 @@ export const LESSON_CONFIG = {
   // Formalisation continue par la carte des connaissances.
   knowledgeMap: true,
   // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
-  priorKnowledge: ['proportionnalite', 'quotient', 'droites-paralleles', 'arrondi'],
+  priorKnowledge: ['angle-droit', 'proportionnalite', 'quotient', 'droites-paralleles', 'arrondi'],
   knowledgeAudit: {
     ignore: [
       // « aire » n'apparaît que comme mauvaise réponse dans le test final. Notion

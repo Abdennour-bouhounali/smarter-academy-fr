@@ -42,6 +42,16 @@ export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/nombres-rat
 export const LESSON_CONFIG = {
   id: 'nombres-rationnels',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : lire une fraction et en reconnaître une égale, diviser,
+  // manier les signes et l'ordre des relatifs — exactement ce que le module 0
+  // diagnostique. Tout le reste (irréductible, PGCD, PPCM, inverse, les quatre
+  // opérations sur les rationnels) est établi dans la leçon même.
+  priorKnowledge: ['quotient', 'calcul-numerique', 'nombres-relatifs'],
   title: 'Nombres rationnels',
   description:
     "Re-découper une barre sans jamais déplacer le point qu'elle marque, pour découvrir qu'un rationnel a mille écritures et une seule valeur — puis les rendre irréductibles, les comparer, les additionner à la même découpe, les multiplier, les diviser et les enchaîner dans de vrais problèmes.",

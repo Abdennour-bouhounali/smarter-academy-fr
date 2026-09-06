@@ -11,6 +11,10 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * opérations, une multiplication répétée écrite en toutes lettres, la
  * multiplication par 10 et 100, et la lecture d'une fraction unitaire —
  * jamais les puissances elles-mêmes, qui sont le contenu de la leçon.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique —
+ * uniquement des ids du `priorKnowledge` de lesson.config.js (contrat
+ * docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 const SKILLS = {
   calcul: { label: 'Calcul numérique', emoji: '🧮' },
@@ -21,6 +25,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-ordre',
+    requires: ['calcul-numerique'],
     skill: 'calcul',
     points: 2,
     prompt: (
@@ -35,6 +40,7 @@ const QUESTIONS = [
   },
   {
     id: 'q2-repetee',
+    requires: ['multiplication-repetee'],
     skill: 'multiplication',
     points: 2,
     prompt: (
@@ -49,6 +55,7 @@ const QUESTIONS = [
   },
   {
     id: 'q3-par-cent',
+    requires: ['decalage-virgule'],
     skill: 'multiplication',
     points: 2,
     prompt: (
@@ -63,6 +70,7 @@ const QUESTIONS = [
   },
   {
     id: 'q4-division-dix',
+    requires: ['decalage-virgule'],
     skill: 'calcul',
     points: 2,
     prompt: (
@@ -77,6 +85,7 @@ const QUESTIONS = [
   },
   {
     id: 'q5-fraction',
+    requires: ['fraction-decimale'],
     skill: 'fractions',
     points: 2,
     prompt: (
