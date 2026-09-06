@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import MathText from '../../../../../common/components/MathText';
-import { formatDec, formatFrac, normalize, plainFrac, toDecimal } from './rationalUtils';
+import { formatDec, formatFrac, normalize, plainFrac, simplify, toDecimal } from './rationalUtils';
 
 /**
  * RationalBar — LA manipulation signature de « Nombres rationnels ».
@@ -29,6 +29,22 @@ import { formatDec, formatFrac, normalize, plainFrac, toDecimal } from './ration
  * Transfer: deux barres empilées (`second`) servent à l'addition ; la même
  *   barre figée sert de synthèse dans le boss.
  *
+ * GLISSER SUR LA FIGURE (`drag`, désactivé par défaut). Taper « ×2 » dit déjà
+ * le geste arithmétique, mais c'est le geste d'un ADULTE qui connaît la règle.
+ * Avec `drag`, l'élève empoigne la barre elle-même, et les deux nombres du
+ * rationnel deviennent deux prises DISTINCTES :
+ *
+ *   le PEIGNE (toute la barre)  → le dénominateur, sur une échelle de coupes
+ *                                 admissibles ; la valeur est préservée, donc
+ *                                 ni la longueur coloriée ni le marqueur ne
+ *                                 bougent — l'écriture change, le nombre non ;
+ *   le BORD colorié             → le numérateur, par parts entières ; là, le
+ *                                 marqueur se déplace.
+ *
+ * C'est ce CONTRASTE qui est la leçon : une prise change le nom, l'autre change
+ * le nombre. Les puces restent (chemin tap-first et clavier), et tout appelant
+ * qui ne passe pas `drag` retrouve exactement le composant d'avant.
+ *
  * Composant CONTRÔLÉ : `value` appartient au module, `onValue` remonte la
  * nouvelle écriture. `frozen` rend la barre non interactive (synthèse).
  *
@@ -45,11 +61,28 @@ import { formatDec, formatFrac, normalize, plainFrac, toDecimal } from './ration
  * @param {boolean} [frozen=false]
  * @param {boolean} [compact=false]   masque la lecture chiffrée (synthèse)
  * @param {string}  [caption]
+ * @param {boolean} [drag=false]      glisser sur la figure (peigne + bord)
+ * @param {number[]} [cutLadder]      dénominateurs atteignables au peigne
+ * @param {(reason:string)=>void} [onRefuse] raison d'un geste impossible
  */
 const W = 660;
 const PAD = 34;
 const BAR_H = 46;
 const MAX_CUTS = 24; // au-delà, les traits deviennent illisibles (playbook §10.7)
+
+/**
+ * L'échelle des découpes atteignables au peigne, dérivée de la valeur COURANTE.
+ * On ne propose que des dénominateurs qui écrivent le même nombre : multiples du
+ * dénominateur irréductible. Le pas le plus fin reste sous MAX_CUTS, pour que
+ * les traits restent lisibles et que l'étiquette « ×N parts » ne s'affiche jamais.
+ */
+export function cutLadderFor(r) {
+  const base = simplify(r).den;
+  const ladder = [1, 2, 3, 4, 6, 8, 12, 16, 24]
+    .map((k) => base * k)
+    .filter((d) => d <= MAX_CUTS);
+  return ladder.length > 0 ? ladder : [base];
+}
 
 export default function RationalBar({
   value,
@@ -64,6 +97,9 @@ export default function RationalBar({
   caption,
   min = -1,
   max = 2,
+  drag = false,
+  cutLadder = null,
+  onRefuse = null,
 }) {
   const v = normalize(value);
   const w = second ? normalize(second) : null;
@@ -76,10 +112,128 @@ export default function RationalBar({
   const toX = (t) => PAD + ((t - min) / span) * (W - 2 * PAD);
   const zeroX = toX(0);
 
+  const svgRef = useRef(null);
+  const dragging = useRef(null);
+  const [scale, setScale] = useState(1);
+
+  // §6ter.5 : la taille tactile se MESURE, elle ne se déduit pas du viewBox.
+  // À 375 px la barre est rendue à ~0,52× : une prise de 24 unités SVG ne ferait
+  // que 12 px réels. On convertit 44 px CSS en unités SVG à chaque mise en page.
+  useLayoutEffect(() => {
+    const el = svgRef.current;
+    if (!el) return undefined;
+    const measure = () => {
+      const rect = el.getBoundingClientRect();
+      if (rect.width > 0) setScale(W / rect.width);
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
+
+  const grip = Math.max(24, 44 * scale); // unités SVG valant ≥ 44 px réels
+
+  const canDrag = drag && !frozen && typeof onValue === 'function';
+
+  const xFromEvent = useCallback((clientX) => {
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect || rect.width === 0) return null;
+    return ((clientX - rect.left) / rect.width) * W;
+  }, []);
+
+  /** Le peigne : on change la DÉCOUPE sans toucher au nombre. */
+  const combTo = useCallback((x) => {
+    const ladder = cutLadder ?? cutLadderFor(v);
+    const unitW = toX(1) - toX(0);
+    // La position horizontale choisit la finesse : à gauche on regroupe,
+    // à droite on coupe plus fin.
+    const t = Math.max(0, Math.min(1, (x - PAD) / (W - 2 * PAD)));
+    const d = ladder[Math.min(ladder.length - 1, Math.round(t * (ladder.length - 1)))];
+    if (d === v.den) return;
+    const exact = (v.num * d) / v.den;
+    if (!Number.isInteger(exact)) {
+      onRefuse?.(`On ne peut pas écrire ${plainFrac(v)} en ${d}èmes sans couper une part en deux.`);
+      return;
+    }
+    void unitW;
+    onValue({ num: exact, den: d });
+  }, [cutLadder, v, onValue, onRefuse, toX]);
+
+  /** Le bord colorié : on change le NOMBRE, par parts entières. */
+  const fillTo = useCallback((x) => {
+    const unitW = toX(1) - toX(0);
+    const partW = unitW / v.den;
+    const parts = Math.round((x - zeroX) / partW);
+    const lo = Math.round(min * v.den);
+    const hi = Math.round(max * v.den);
+    const n = Math.max(lo, Math.min(hi, parts));
+    if (n === v.num) return;
+    onValue({ num: n, den: v.den });
+  }, [v, onValue, toX, zeroX, min, max]);
+
+  const onPointerDown = (mode) => (e) => {
+    if (!canDrag) return;
+    dragging.current = mode;
+    try { e.currentTarget.setPointerCapture?.(e.pointerId); } catch { /* déjà relâché */ }
+    const x = xFromEvent(e.clientX);
+    if (x != null) (mode === 'comb' ? combTo : fillTo)(x);
+  };
+  const onPointerMove = (e) => {
+    if (!canDrag || !dragging.current) return;
+    const x = xFromEvent(e.clientX);
+    if (x != null) (dragging.current === 'comb' ? combTo : fillTo)(x);
+  };
+  const endDrag = (e) => {
+    if (!dragging.current) return;
+    dragging.current = null;
+    try { e.currentTarget.releasePointerCapture?.(e.pointerId); } catch { /* idem */ }
+  };
+
+  /** Clavier : l'alternative obligatoire au glisser. */
+  const combKey = (e) => {
+    const ladder = cutLadder ?? cutLadderFor(v);
+    const i = ladder.indexOf(v.den);
+    const at = (j) => {
+      const d = ladder[Math.max(0, Math.min(ladder.length - 1, j))];
+      const exact = (v.num * d) / v.den;
+      if (d !== v.den && Number.isInteger(exact)) onValue({ num: exact, den: d });
+      else if (d !== v.den) onRefuse?.(`On ne peut pas écrire ${plainFrac(v)} en ${d}èmes sans couper une part en deux.`);
+    };
+    const moves = {
+      ArrowRight: () => at(i + 1), ArrowUp: () => at(i + 1),
+      ArrowLeft: () => at(i - 1), ArrowDown: () => at(i - 1),
+      Home: () => at(0), End: () => at(ladder.length - 1),
+    };
+    if (moves[e.key]) { e.preventDefault(); moves[e.key](); }
+  };
+  const fillKey = (e) => {
+    const lo = Math.round(min * v.den);
+    const hi = Math.round(max * v.den);
+    const at = (n) => onValue({ num: Math.max(lo, Math.min(hi, n)), den: v.den });
+    const moves = {
+      ArrowRight: () => at(v.num + 1), ArrowUp: () => at(v.num + 1),
+      ArrowLeft: () => at(v.num - 1), ArrowDown: () => at(v.num - 1),
+      Home: () => at(0), End: () => at(v.den),
+    };
+    if (moves[e.key]) { e.preventDefault(); moves[e.key](); }
+  };
+
+  const unitW = toX(1) - toX(0);
+  const endX = zeroX + (v.num < 0 ? -1 : 1) * Math.abs(v.num) * (unitW / v.den);
+
   return (
-    <div className="space-y-3" role="group" aria-label="Barre des rationnels">
+    <div
+      className="space-y-3"
+      role="group"
+      aria-label="Barre des rationnels"
+      data-rb-num={v.num}
+      data-rb-den={v.den}
+      data-rb-num2={w ? w.num : undefined}
+      data-rb-den2={w ? w.den : undefined}
+    >
       <div className="w-full overflow-x-auto rounded-2xl border-2 border-slate-200 bg-white flex justify-center">
         <svg
+          ref={svgRef}
           viewBox={`0 0 ${W} ${H}`}
           className="w-full h-auto min-w-[320px] max-w-[660px] mx-auto block select-none"
           role={frozen ? 'img' : 'group'}
@@ -88,7 +242,10 @@ export default function RationalBar({
               ? `Deux barres : ${plainFrac(v)} et ${plainFrac(w)}`
               : `Barre représentant ${plainFrac(v)}`
           }
-          style={{ touchAction: 'manipulation' }}
+          style={{ touchAction: canDrag ? 'none' : 'manipulation' }}
+          onPointerMove={onPointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
         >
           <g pointerEvents="none">
             <Bar r={v} y={8} toX={toX} zeroX={zeroX} tone="indigo" />
@@ -104,6 +261,39 @@ export default function RationalBar({
               />
             )}
           </g>
+
+          {/* ── Les deux prises, peintes APRÈS le décor pour recevoir le pointeur ── */}
+          {canDrag && (
+            <>
+              <rect
+                x={PAD} y={8} width={W - 2 * PAD} height={BAR_H}
+                fill="transparent" cursor="ew-resize"
+                role="slider" tabIndex={0}
+                aria-label={`Nombre de parts : glisse pour couper plus fin ou regrouper. Actuellement ${v.den} parts.`}
+                aria-valuenow={v.den} aria-valuemin={1} aria-valuemax={MAX_CUTS}
+                aria-valuetext={`${v.den} parts — ${plainFrac(v)}`}
+                onPointerDown={onPointerDown('comb')}
+                onKeyDown={combKey}
+              />
+              <g>
+                <rect
+                  x={endX - grip / 2} y={8 - 8} width={grip} height={BAR_H + 16}
+                  fill="transparent" cursor="ew-resize"
+                  role="slider" tabIndex={0}
+                  aria-label={`Bord colorié : glisse pour prendre plus ou moins de parts. Actuellement ${Math.abs(v.num)} parts sur ${v.den}.`}
+                  aria-valuenow={v.num} aria-valuemin={Math.round(min * v.den)} aria-valuemax={Math.round(max * v.den)}
+                  aria-valuetext={plainFrac(v)}
+                  onPointerDown={onPointerDown('fill')}
+                  onKeyDown={fillKey}
+                />
+                {/* la poignée visible reste fine : c'est la ZONE qui est large */}
+                <g pointerEvents="none">
+                  <line x1={endX - 4} y1={8 + 10} x2={endX - 4} y2={8 + BAR_H - 10} stroke="#312e81" strokeWidth="2" opacity="0.55" />
+                  <line x1={endX + 4} y1={8 + 10} x2={endX + 4} y2={8 + BAR_H - 10} stroke="#312e81" strokeWidth="2" opacity="0.55" />
+                </g>
+              </g>
+            </>
+          )}
         </svg>
       </div>
 
@@ -118,7 +308,7 @@ export default function RationalBar({
       {/* ── Puces de re-découpe (tap-first) ──────────────────────────── */}
       {!frozen && onValue && (
         <ChipRow
-          label={w ? 'Barre 1' : 'Re-découper'}
+          label={w ? 'Barre 1' : (canDrag ? 'Ou tape' : 'Re-découper')}
           r={v}
           onValue={onValue}
           multiplyChips={multiplyChips}
