@@ -199,6 +199,38 @@ async function run() {
     await ctx.close();
   }
 
+  /* ── 4bis. M2 — deux chemins, puis la copie de Tom ────────────────── */
+  {
+    // Module 2 déjà terminé : toutes les étapes sont déverrouillées, on peut
+    // aller voir directement les deux ajouts du module.
+    const { ctx, page } = await open(browser, `${LESSON}/rendre-irreductible`, ['0', '1', '2'], { tag: 'm2b' });
+    const t = await body(page);
+    check('M2: the two forced routes are offered with DIFFERENT divisors',
+      /CHEMIN A/i.test(t) && /CHEMIN B/i.test(t), t.slice(0, 300));
+    check('M2: each route is a real Simplifier', (await page.locator('main :text("Trajet")').count()) >= 2);
+
+    // La copie de Tom : accuser une ligne juste donne sa raison, accuser la
+    // bonne la nomme — et seule la faute ouvre la réparation.
+    check('M2: the faulty copy is shown line by line', (await page.locator('[data-spot-line]').count()) === 3);
+    await page.locator('[data-spot-line="l1"]').click();
+    await page.waitForTimeout(300);
+    check('M2: accusing a correct line explains why it is correct',
+      /Ligne juste/i.test(await body(page)));
+    check('M2: the repair is not offered before the fault is found',
+      (await page.locator('[data-spot-repair]').count()) === 0);
+    await page.locator('[data-spot-line="l2"]').click();
+    await page.waitForTimeout(400);
+    const spotted = await body(page);
+    check('M2: the fault is named — only the numerator was divided',
+      /n’a divisé QUE le haut|n'a divisé QUE le haut/i.test(spotted), spotted.slice(0, 400));
+    check('M2: the repair opens once the fault is located',
+      (await page.locator('[data-spot-repair]').count()) === 3);
+    await page.locator('[data-spot-repair="both"]').click();
+    await page.waitForTimeout(400);
+    check('M2: repairing restores the value', /Réparée/i.test(await body(page)));
+    await ctx.close();
+  }
+
   /* ── 5. M3 — NumberLine place mode, stepper-driven ────────────────── */
   {
     const { ctx, page } = await open(browser, `${LESSON}/comparer`, ['0', '1', '2'], { tag: 'm3' });
