@@ -6,6 +6,8 @@ import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import FractionAreaGrid from '../components/FractionAreaGrid';
 import RationalBar from '../components/RationalBar';
+import PacketCounter from '../components/PacketCounter';
+import ErrorSpotter from '../components/ErrorSpotter';
 import {
   div, formatDec, formatFrac, mul, parseDec, rat, toDecimal,
 } from '../components/rationalUtils';
@@ -48,9 +50,18 @@ export default function Module05FractionDeFraction() {
   const [revealed, setRevealed] = useState(false);
   const [ruleDone, setRuleDone] = useState(false);
   const [divDone, setDivDone] = useState(false);
+  // Étape 3 : on ne LIT plus le nombre de paquets, on les POSE.
+  const [packets, setPackets] = useState(0);
+  const [packetRefusal, setPacketRefusal] = useState('');
+  // Étape 5 : la copie qui multiplie sans retourner.
+  const [tapped, setTapped] = useState([]);
+  const [repair, setRepair] = useState(null);
+  const [check2, setCheck2] = useState(0);
   const [invDone, setInvDone] = useState(false);
 
   const painted = cols.size === A.num && rows.size === B.num;
+  const spotDone = tapped.includes('q1') && repair === 'inv';
+  const packetsFull = Math.abs(packets * toDecimal(DIVISOR, 8) - toDecimal(DIVIDEND, 8)) < 1e-8 && packets > 0;
 
   const toggle = (setFn, key) => {
     setFn((prev) => {
@@ -187,15 +198,39 @@ export default function Module05FractionDeFraction() {
         {
           num: 3,
           title: 'Combien de quarts tiennent dans 3/2 ?',
-          subtitle: 'Compte les paquets sur la barre.',
-          done: divDone,
+          subtitle: 'Pose les paquets bout à bout, puis écris ce que tu as compté.',
+          done: packetsFull && divDone,
           content: (
             <div className="space-y-3">
-              <RationalBar value={rat(6, 4)} min={0} max={2} showDecimal frozen />
               <p className="text-sm text-slate-600">
-                La barre montre <MathText>{`$${formatFrac(DIVIDEND)} = \\frac{6}{4}$`}</MathText>,
-                découpée en quarts. Combien de paquets d’un quart y a-t-il ?
+                La zone bleue mesure <MathText>{`$${formatFrac(DIVIDEND)}$`}</MathText>. Pose des
+                paquets d’un quart bout à bout jusqu’à la remplir <strong>exactement</strong>, et
+                compte-les.
               </p>
+              <PacketCounter
+                total={DIVIDEND}
+                packet={DIVISOR}
+                placed={packets}
+                onPlaced={(n) => { setPacketRefusal(''); setPackets(n); }}
+                onRefuse={setPacketRefusal}
+                max={2}
+              />
+              {packetRefusal && <Feedback tone="ko">{packetRefusal}</Feedback>}
+              {!packetsFull && (
+                <Feedback tone="info">
+                  {packets === 0
+                    ? 'Glisse vers la droite (ou tape +) pour poser un premier paquet.'
+                    : `${packets} paquet${packets > 1 ? 's' : ''} posé${packets > 1 ? 's' : ''} — la zone bleue n’est pas encore remplie.`}
+                </Feedback>
+              )}
+              {packetsFull && (
+                <Feedback tone="ok">
+                  Remplie exactement avec <strong className="font-mono">{packets}</strong> paquets d’un
+                  quart. Tu viens de répondre à la question « combien de fois{' '}
+                  <MathText>{`$${formatFrac(DIVISOR)}$`}</MathText> tient-il dans{' '}
+                  <MathText>{`$${formatFrac(DIVIDEND)}$`}</MathText> ? » — sans poser une seule division.
+                </Feedback>
+              )}
               <NumericQuestion
                 prompt={
                   <>
@@ -270,6 +305,71 @@ export default function Module05FractionDeFraction() {
                 solved={invDone}
                 onAnswered={() => setInvDone(true)}
               />
+            </div>
+          ),
+        },
+        {
+          num: 5,
+          title: 'La copie de Naïm',
+          subtitle: 'Trouve la ligne fautive, répare-la, puis vérifie en comptant.',
+          done: spotDone && check2 === 2,
+          content: (kit) => (
+            <div className="space-y-3">
+              <ErrorSpotter
+                title="Naïm calcule 2/5 ÷ 3/4"
+                lines={[
+                  { id: 'q1', latex: '\\frac{2}{5} \\div \\frac{3}{4} \;=\; \\frac{2 \\times 3}{5 \\times 4}' },
+                  { id: 'q2', latex: '\;=\; \\frac{6}{20}' },
+                  { id: 'q3', latex: '\;=\; \\frac{3}{10}' },
+                ]}
+                faultyId="q1"
+                tapped={tapped}
+                onTap={(id, ok) => { setTapped((t) => (t.includes(id) ? t : [...t, id])); kit.react(ok); }}
+                reasonFor={(id) => {
+                  if (id === 'q2') return 'Ligne juste : 2 × 3 = 6 et 5 × 4 = 20. Le calcul est bon — c’est ce qu’on lui demandait de calculer qui était faux.';
+                  if (id === 'q3') return 'Ligne juste : 6/20 se simplifie bien par 2 en 3/10.';
+                  if (id === 'q1') return 'C’est là, dès la première ligne. Naïm a MULTIPLIÉ les deux fractions au lieu de retourner la seconde. Tout ce qui suit est juste, mais part d’un mauvais départ.';
+                  if (id === 'inv') return 'Oui : on retourne la seconde, puis on multiplie — 2/5 × 4/3 = 8/15 ≈ 0,53.';
+                  if (id === 'both') return 'Non : retourner les DEUX fractions donne 5/2 × 4/3, encore autre chose.';
+                  return 'Non : c’est exactement ce que Naïm a écrit, et c’est le produit, pas le quotient.';
+                }}
+                repairs={[
+                  { id: 'mul', latex: '\\frac{2}{5} \\times \\frac{3}{4}' },
+                  { id: 'inv', latex: '\\frac{2}{5} \\times \\frac{4}{3}' },
+                  { id: 'both', latex: '\\frac{5}{2} \\times \\frac{4}{3}' },
+                ]}
+                repairId="inv"
+                repairPicked={repair}
+                onRepair={(id, ok) => { setRepair(id); kit.react(ok); }}
+                repairPrompt="Par quoi fallait-il remplacer la première ligne ?"
+              />
+              {spotDone && (
+                <div className="rounded-2xl border-2 border-slate-200 bg-slate-50 p-3 space-y-2">
+                  <p className="text-sm font-semibold text-slate-700">
+                    Vérifie le raccourci sur un cas que tu peux compter :{' '}
+                    <MathText>{'$\\frac{1}{2} \\div \\frac{1}{4}$'}</MathText>. Combien de quarts
+                    dans un demi ?
+                  </p>
+                  <PacketCounter
+                    total={rat(1, 2)}
+                    packet={rat(1, 4)}
+                    placed={check2}
+                    onPlaced={setCheck2}
+                    max={1}
+                  />
+                  <Feedback tone={check2 === 2 ? 'ok' : 'info'}>
+                    {check2 === 2 ? (
+                      <>
+                        Deux paquets — et le raccourci donne{' '}
+                        <MathText>{'$\\frac{1}{2} \\times \\frac{4}{1} = 2$'}</MathText>. Compter et
+                        multiplier par l’inverse donnent bien la même chose.
+                      </>
+                    ) : (
+                      'Pose les paquets d’un quart jusqu’à remplir le demi.'
+                    )}
+                  </Feedback>
+                </div>
+              )}
             </div>
           ),
         },

@@ -414,6 +414,23 @@ async function run() {
       check('M5: product rule question reachable', false, 'option not visible');
     }
 
+    // Étape 3 : la division se COMPTE avant de s'écrire. Six quarts remplissent
+    // exactement 3/2 — le résultat dépasse le dividende, et l'élève le pose lui-même.
+    const pc = page.locator('[data-packets]').first();
+    check('M5: division is manipulated, not just typed', await pc.isVisible().catch(() => false));
+    const addPacket = page.locator('button[aria-label="Poser un paquet de plus"]').first();
+    for (let i = 0; i < 8; i += 1) {
+      if ((await pc.getAttribute('data-packets-full')) === 'true') break;
+      await addPacket.click(); await page.waitForTimeout(160);
+    }
+    check('M5: 1/4 packets fill 3/2 exactly — and it takes SIX of them',
+      (await pc.getAttribute('data-packets-full')) === 'true' && (await pc.getAttribute('data-packets')) === '6',
+      `${await pc.getAttribute('data-packets')} packets`);
+    // Un paquet de plus doit être REFUSÉ avec sa raison, pas déborder.
+    await addPacket.click(); await page.waitForTimeout(300);
+    check('M5: one packet too many is refused with its reason',
+      (await pc.getAttribute('data-packets')) === '6' && /dépasserait/i.test(await body(page)));
+
     // Step 3: « diviser rend plus petit » trap, answered wrong on purpose.
     const field = page.locator('input[type="text"], input[type="number"]').first();
     if (await field.isVisible().catch(() => false)) {
