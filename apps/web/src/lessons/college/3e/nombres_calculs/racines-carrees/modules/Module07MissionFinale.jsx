@@ -51,6 +51,7 @@ const EPREUVES = [
   {
     id: 'rc-e1',
     skill: 'sens',
+    requires: ['racine-carree', 'racine-existe-toujours'],
     title: 'Épreuve 1',
     prompt: "Un carré a une aire de 36 cm². Quelle est la longueur de son côté ?",
     options: ['$18 \\text{ cm}$', '$6 \\text{ cm}$', '$1296 \\text{ cm}$'],
@@ -65,6 +66,7 @@ const EPREUVES = [
   {
     id: 'rc-e2',
     skill: 'repertoire',
+    requires: ['carre-parfait', 'racine-du-carre'],
     title: 'Épreuve 2',
     prompt: 'Lequel de ces nombres est un carré parfait ?',
     options: ['50', '121', '20'],
@@ -77,6 +79,7 @@ const EPREUVES = [
   {
     id: 'rc-e3',
     skill: 'repertoire',
+    requires: ['carre-parfait', 'racine-du-carre'],
     title: 'Épreuve 3',
     prompt: 'Combien vaut √144 ?',
     options: ['$12$', '$72$', '$14$'],
@@ -91,6 +94,7 @@ const EPREUVES = [
   {
     id: 'rc-e4',
     skill: 'encadrer',
+    requires: ['encadrement', 'comparer-par-carres'],
     title: 'Épreuve 4',
     prompt: 'Que vaut (√13)² ?',
     options: ['$13$', '$169$', '$\\sqrt{169}$'],
@@ -105,6 +109,7 @@ const EPREUVES = [
   {
     id: 'rc-e5',
     skill: 'sens',
+    requires: ['racine-carree', 'racine-existe-toujours'],
     title: 'Épreuve 5',
     prompt: "Un jardin carré doit avoir une aire de 50 m². Que peut-on dire de son côté ?",
     options: [
@@ -121,6 +126,7 @@ const EPREUVES = [
   {
     id: 'rc-e6',
     skill: 'proprietes',
+    requires: ['produit-racines', 'somme-ne-passe-pas', 'quotient-racines'],
     title: 'Épreuve 6',
     prompt: 'Une seule de ces égalités est vraie. Laquelle ?',
     options: [
@@ -139,6 +145,7 @@ const EPREUVES = [
   {
     id: 'rc-e7',
     skill: 'simplifier',
+    requires: ['simplifier-racine', 'coefficient-sous-racine'],
     title: 'Épreuve 7',
     prompt: 'Quelle est la forme simplifiée de √18 ?',
     options: ['$3\\sqrt{2}$', '$9\\sqrt{2}$', '$2\\sqrt{9}$'],
@@ -153,6 +160,7 @@ const EPREUVES = [
   {
     id: 'rc-e8',
     skill: 'encadrer',
+    requires: ['encadrement', 'comparer-par-carres'],
     title: 'Épreuve 8',
     prompt: 'Quelle comparaison est vraie ?',
     options: ['$\\sqrt{50} < 7$', '$\\sqrt{50} > 7$', '$2\\sqrt{3} = \\sqrt{6}$'],
@@ -167,6 +175,7 @@ const EPREUVES = [
   {
     id: 'rc-e9',
     skill: 'geometrie',
+    requires: ['racines-en-geometrie', 'exact-vs-approche'],
     title: 'Épreuve 9',
     prompt: 'Un carré a 5 cm de côté. Quelle est la valeur EXACTE de sa diagonale ?',
     options: ['$10 \\text{ cm}$', '$5\\sqrt{2} \\text{ cm}$', '$50 \\text{ cm}$'],
@@ -181,6 +190,7 @@ const EPREUVES = [
   {
     id: 'rc-e10',
     skill: 'geometrie',
+    requires: ['racines-en-geometrie', 'exact-vs-approche'],
     title: 'Épreuve 10',
     prompt:
       "Un triangle rectangle a deux côtés de l'angle droit de 3 cm et 6 cm. Quelle est son hypoténuse ?",

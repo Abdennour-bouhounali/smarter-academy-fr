@@ -55,7 +55,8 @@ export const LESSON_CONFIG = {
   // diagnostique — le carré d'un nombre et sa notation, la priorité des
   // opérations, l'encadrement d'un nombre entre deux autres, l'aire d'un carré.
   // Tout le reste doit être établi dans la leçon même.
-  priorKnowledge: ['carre-nombre', 'calcul-numerique', 'encadrer-nombre', 'aire'],
+  priorKnowledge: ['carre-nombre', 'calcul-numerique', 'encadrer-nombre', 'aire',
+    'perimetre', 'quotient', 'angle-droit', 'coefficient-lineaire'],
   title: 'Racine carrée',
   description:
     "Redimensionner un carré jusqu'à ce que son aire tombe juste, découvrir que pour 50 m² aucun nombre décimal ne convient, puis apprendre à encadrer, comparer, multiplier et simplifier ces nouveaux nombres — jusqu'à la diagonale d'un carré et l'hypoténuse d'un triangle.",

@@ -25,7 +25,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-carre',
-    requires: ['carre-nombre'],
+    requires: ['carre-nombre', 'perimetre', 'quotient', 'angle-droit', 'coefficient-lineaire'],
     skill: 'carres',
     points: 2,
     prompt: (
