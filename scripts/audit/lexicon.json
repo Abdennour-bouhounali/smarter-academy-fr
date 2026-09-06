@@ -231,15 +231,16 @@
       "label": "notation f(x)",
       "grade": "3e",
       "patterns": [
-        "(?<![\\p{L}\\p{N}_])f\\s*\\(\\s*-?[0-9a-z]"
+        "(?<![\\p{L}\\p{N}_])f\\(\\s*-?[0-9a-z]"
       ],
       "notationPatterns": [
-        "(?<![\\p{L}\\p{N}_])[fgh]\\s*\\(\\s*[^)]*\\)"
+        "(?<![\\p{L}\\p{N}_])[fgh]\\(\\s*[^);]*\\)"
       ],
       "targetPatterns": [
         "notation f\\(x\\)",
         "(?<![\\p{L}\\p{N}_])f\\(x\\)"
-      ]
+      ],
+      "_comment": "La notation f(x) d'une fonction. À ne pas confondre avec un point nommé suivi de ses coordonnées — « F (3 ; 4) » — qui s'écrit en majuscule et dont les coordonnées sont séparées par un point-virgule."
     },
     {
       "id": "fonction",

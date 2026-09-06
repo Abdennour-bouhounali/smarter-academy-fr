@@ -38,6 +38,7 @@ const EPREUVES = [
   {
     id: 'rd-e1',
     skill: 'droite',
+    requires: ['abscisse-droite', 'abscisse-non-entiere'],
     title: 'Sur la droite graduée',
     prompt: 'Un banc est à 3 graduations à gauche de l’origine. Quelle est son abscisse ?',
     options: ['−3', '3', '0,3', 'on ne peut pas savoir'],
@@ -48,6 +49,7 @@ const EPREUVES = [
   {
     id: 'rd-e2',
     skill: 'roles',
+    requires: ['abscisse-ordonnee', 'ordre-du-couple', 'repere-plan'],
     title: 'Le rôle de chaque nombre',
     prompt: 'Dans le couple (−5 ; 2), que désigne le nombre −5 ?',
     options: [
@@ -63,6 +65,7 @@ const EPREUVES = [
   {
     id: 'rd-e3',
     skill: 'lire',
+    requires: ['lire-par-projection', 'origine-et-axes'],
     title: 'Lire un point',
     prompt: 'Quelles sont les coordonnées du point P ?',
     extra: (
@@ -79,6 +82,7 @@ const EPREUVES = [
   {
     id: 'rd-e4',
     skill: 'lire',
+    requires: ['lire-par-projection', 'origine-et-axes'],
     title: 'Un point sur un axe',
     prompt: 'Un point est situé sur l’axe vertical, 3 graduations au-dessus de l’origine. Quelles sont ses coordonnées ?',
     options: ['(0 ; 3)', '(3 ; 0)', '(3 ; 3)', 'il n’en a pas'],
@@ -89,6 +93,7 @@ const EPREUVES = [
   {
     id: 'rd-e5',
     skill: 'placer',
+    requires: ['placer-un-point', 'abscisse-ordonnee'],
     title: 'Placer un point',
     prompt: 'Où se trouve le point Q (4 ; −1) ?',
     options: [
@@ -104,6 +109,7 @@ const EPREUVES = [
   {
     id: 'rd-e6',
     skill: 'deplacer',
+    requires: ['deplacement-coordonnees'],
     title: 'Un déplacement',
     prompt: 'Un point part de (−1 ; 2). Il avance de 4 vers la droite et descend de 5. Où arrive-t-il ?',
     options: ['(3 ; −3)', '(−5 ; 7)', '(3 ; 7)', '(4 ; −5)'],
@@ -114,6 +120,7 @@ const EPREUVES = [
   {
     id: 'rd-e7',
     skill: 'longueur',
+    requires: ['longueur-axe', 'milieu-moyenne', 'limite-oblique'],
     title: 'Une longueur horizontale',
     prompt: 'A (−4 ; 1) et B (2 ; 1). Quelle est la longueur AB ?',
     options: ['6', '−6', '2', '−2'],
@@ -124,6 +131,7 @@ const EPREUVES = [
   {
     id: 'rd-e8',
     skill: 'longueur',
+    requires: ['longueur-axe', 'milieu-moyenne', 'limite-oblique'],
     title: 'La limite de la méthode',
     prompt: 'C (0 ; 0) et D (3 ; 4). Que peut-on affirmer ?',
     options: [
@@ -139,6 +147,7 @@ const EPREUVES = [
   {
     id: 'rd-e9',
     skill: 'figures',
+    requires: ['prouver-par-coordonnees', 'symetrique-axe', 'signe-et-cote'],
     title: 'Fermer un rectangle',
     prompt: 'ABCD est un rectangle avec A (−3 ; 2), B (2 ; 2) et C (2 ; −1). Quelles sont les coordonnées de D ?',
     extra: (
@@ -163,6 +172,7 @@ const EPREUVES = [
   {
     id: 'rd-e10',
     skill: 'figures',
+    requires: ['prouver-par-coordonnees', 'symetrique-axe', 'signe-et-cote'],
     title: 'Le symétrique',
     prompt: 'Quel est le symétrique de S (3 ; −2) par rapport à l’axe horizontal ?',
     options: ['(3 ; 2)', '(−3 ; −2)', '(−3 ; 2)', '(−2 ; 3)'],

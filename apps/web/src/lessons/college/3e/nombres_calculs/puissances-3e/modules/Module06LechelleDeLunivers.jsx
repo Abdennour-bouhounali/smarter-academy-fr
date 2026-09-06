@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import UniverseScale from '../components/UniverseScale';
@@ -121,6 +122,13 @@ export default function Module06LechelleDeLunivers() {
           title: 'Comparer sans calculer',
           done: compareDone,
           content: (
+            <div className="space-y-3">
+            <KnowledgeBrick
+              id="comparer-par-exposant"
+              variant="new"
+              compact
+              lead="Comparer deux nombres écrits en puissances de dix : l’exposant décide d’abord."
+            />
             <TapQuestion
               prompt={
                 <>
@@ -150,9 +158,11 @@ export default function Module06LechelleDeLunivers() {
                   des exposants égaux.
                 </>
               }
+              requires={['comparer-par-exposant', 'ecriture-scientifique']}
               solved={compareDone}
               onAnswered={() => setCompareDone(true)}
             />
+            </div>
           ),
         },
         {
@@ -161,6 +171,13 @@ export default function Module06LechelleDeLunivers() {
           subtitle: 'Un rapport de puissances de 10 : on soustrait les exposants.',
           done: ratioDone,
           content: (
+            <div className="space-y-3">
+            <KnowledgeBrick
+              id="rapport-echelle"
+              variant="new"
+              compact
+              lead="Et pour savoir combien de fois l’un tient dans l’autre."
+            />
             <NumericQuestion
               prompt={
                 <>
@@ -182,9 +199,11 @@ export default function Module06LechelleDeLunivers() {
                   ? `Tu as donné l’ordre de grandeur d’un seul des deux objets. Le RAPPORT est la différence : ${formatDec(orderOfMagnitude(GALAXIE.meters))} − ${formatDec(orderOfMagnitude(TERRE.meters))} = ${formatDec(RATIO_GALAXIE_TERRE)}.`
                   : `On soustrait les exposants : ${formatDec(orderOfMagnitude(GALAXIE.meters))} − ${formatDec(orderOfMagnitude(TERRE.meters))} = ${formatDec(RATIO_GALAXIE_TERRE)}.`
               }
+              requires={['rapport-echelle', 'regle-quotient']}
               solved={ratioDone}
               onAnswered={() => setRatioDone(true)}
             />
+            </div>
           ),
         },
         {
@@ -221,6 +240,7 @@ export default function Module06LechelleDeLunivers() {
                     10 × 10⁻¹ = 1 m.
                   </>
                 }
+                requires={['rapport-echelle', 'ecriture-scientifique']}
                 solved={problemDone}
                 onAnswered={() => setProblemDone(true)}
               />
@@ -228,12 +248,11 @@ export default function Module06LechelleDeLunivers() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Pour comparer deux grandeurs, on regarde l’exposant d’abord ; pour un rapport, on soustrait les
-          exposants ; pour un produit, on les additionne. Les règles du module 3, appliquées à l’univers.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Il ne reste qu’à tout mettre à l’épreuve.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -59,6 +59,7 @@ const EPREUVES = [
   {
     id: 'pu-e1',
     skill: 'notation',
+    requires: ['puissance', 'exposant-compte'],
     title: 'Épreuve 1',
     prompt:
       "On plie une feuille 5 fois : le nombre d'épaisseurs double à chaque pli. Quelle écriture donne le nombre d'épaisseurs ?",
@@ -75,6 +76,7 @@ const EPREUVES = [
   {
     id: 'pu-e2',
     skill: 'notation',
+    requires: ['puissance', 'exposant-compte'],
     title: 'Épreuve 2',
     prompt: "Dans l'écriture 4³, quelle multiplication est représentée ?",
     options: ['$4 + 4 + 4$', '$4 \\times 3$', '$4 \\times 4 \\times 4$'],
@@ -90,6 +92,7 @@ const EPREUVES = [
   {
     id: 'pu-e3',
     skill: 'calculer',
+    requires: ['calculer-puissance', 'exposant-nul', 'exposant-negatif'],
     title: 'Épreuve 3',
     prompt: 'Combien vaut 3⁴ ?',
     options: ['12', '81', '64'],
@@ -102,6 +105,7 @@ const EPREUVES = [
   {
     id: 'pu-e4',
     skill: 'calculer',
+    requires: ['calculer-puissance', 'exposant-nul', 'exposant-negatif'],
     title: 'Épreuve 4',
     prompt: "Que vaut 7⁰, et pourquoi ?",
     options: [
@@ -118,6 +122,7 @@ const EPREUVES = [
   {
     id: 'pu-e5',
     skill: 'regles',
+    requires: ['regle-produit', 'regle-quotient', 'regle-puissance-de-puissance'],
     title: 'Épreuve 5',
     prompt: 'Simplifie 3² × 3³.',
     options: ['$9^{5}$', '$3^{5}$', '$3^{6}$'],
@@ -133,6 +138,7 @@ const EPREUVES = [
   {
     id: 'pu-e6',
     skill: 'regles',
+    requires: ['regle-produit', 'regle-quotient', 'regle-puissance-de-puissance'],
     title: 'Épreuve 6',
     prompt: 'Simplifie 7⁶ ÷ 7⁴.',
     options: ['$7^{10}$', '$7^{2}$', '$7^{24}$'],
@@ -148,6 +154,7 @@ const EPREUVES = [
   {
     id: 'pu-e7',
     skill: 'dix',
+    requires: ['puissance-de-dix', 'ordre-de-grandeur'],
     title: 'Épreuve 7',
     extra: (
       <p className="text-xs text-slate-500 text-center">
@@ -174,6 +181,7 @@ const EPREUVES = [
   {
     id: 'pu-e8',
     skill: 'scientifique',
+    requires: ['ecriture-scientifique', 'puissance-de-dix'],
     title: 'Épreuve 8',
     prompt: "Quelle écriture de 0,00038 est l'écriture SCIENTIFIQUE ?",
     options: ['$3{,}8 \\times 10^{-4}$', '$3{,}8 \\times 10^{4}$', '$38 \\times 10^{-5}$', '$0{,}38 \\times 10^{-3}$'],
@@ -189,6 +197,7 @@ const EPREUVES = [
   {
     id: 'pu-e9',
     skill: 'scientifique',
+    requires: ['ecriture-scientifique', 'puissance-de-dix'],
     title: 'Épreuve 9',
     prompt: "Le diamètre de la Terre vaut 12 700 000 m. Comment passe-t-on à l'écriture scientifique ?",
     options: [
@@ -208,6 +217,7 @@ const EPREUVES = [
   {
     id: 'pu-e10',
     skill: 'problemes',
+    requires: ['rapport-echelle', 'comparer-par-exposant', 'ecriture-scientifique'],
     title: 'Épreuve 10',
     extra: (
       <p className="text-xs text-slate-500 text-center">

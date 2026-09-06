@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PowerTower from '../components/PowerTower';
@@ -273,15 +274,42 @@ export default function Module03EmpilerLesTours() {
           done: ruleDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4 space-y-2 text-center">
-                <p className="text-sm font-semibold text-emerald-900">À retenir — même base, on compte les blocs :</p>
-                <MathText className="text-lg text-slate-800">{'$a^{m} \\times a^{n} = a^{m+n}$'}</MathText>
-                <MathText className="text-lg text-slate-800">{'$a^{m} \\div a^{n} = a^{m-n}$'}</MathText>
-                <MathText className="text-lg text-slate-800">{'$\\left(a^{m}\\right)^{n} = a^{m \\times n}$'}</MathText>
-                <p className="text-xs text-emerald-800">
-                  La base ne change jamais. Ce sont les exposants — les comptes de blocs — qui bougent.
-                </p>
-              </div>
+
+              <KnowledgeBrick
+
+                id="regle-produit"
+
+                variant="new"
+
+                compact
+
+                lead="Multiplier deux puissances de même base : tu viens de le voir sur les tours."
+
+              />
+
+              <KnowledgeBrick
+
+                id="regle-quotient"
+
+                variant="new"
+
+                compact
+
+                lead="Diviser, c’est retirer des blocs."
+
+              />
+
+              <KnowledgeBrick
+
+                id="regle-puissance-de-puissance"
+
+                variant="new"
+
+                compact
+
+                lead="Et empiler une puissance sur une autre."
+
+              />
               <TapQuestion
                 prompt={
                   <>
@@ -308,6 +336,7 @@ export default function Module03EmpilerLesTours() {
                     produit. Sur la tour, on a bien 2 + 3 = 5 blocs.
                   </>
                 }
+                requires={['regle-produit', 'exposant-compte']}
                 solved={ruleDone}
                 onAnswered={() => setRuleDone(true)}
               />
@@ -315,13 +344,12 @@ export default function Module03EmpilerLesTours() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Tu as fusionné, retranché et répété des tours. Les trois règles ne sont pas trois formules à
-          apprendre : ce sont trois façons de <strong>compter des blocs</strong> — on ajoute, on enlève, on
-          multiplie le compte.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Trois règles, un seul principe : la base ne bouge pas, les
+          exposants se comptent. Au module suivant, la base devient 10.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

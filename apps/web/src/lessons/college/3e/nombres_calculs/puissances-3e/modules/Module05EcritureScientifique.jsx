@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SciNotationBuilder from '../components/SciNotationBuilder';
@@ -82,7 +83,7 @@ export default function Module05EcritureScientifique() {
       steps={[
         {
           num: 1,
-          title: `Réécris ${formatDec(BIG)} en écriture scientifique`,
+          title: `Réécris ${formatDec(BIG)} sous la forme a × 10ⁿ`,
           subtitle: 'Déplace la virgule jusqu’à ce que le cadre passe au vert.',
           done: bigDone,
           content: (kit) => (
@@ -147,6 +148,13 @@ export default function Module05EcritureScientifique() {
           subtitle: 'Elles valent toutes le même nombre. Une seule est acceptée.',
           done: sortDone,
           content: (
+            <div className="space-y-3">
+            <KnowledgeBrick
+              id="ecriture-scientifique"
+              variant="new"
+              compact
+              lead="La forme normalisée que tout le monde utilise."
+            />
             <BatchChoiceQuestion
               intro={
                 <p className="text-sm text-slate-600">
@@ -200,9 +208,11 @@ export default function Module05EcritureScientifique() {
                   </Feedback>
                 )
               }
+              requires={['ecriture-scientifique', 'puissance-de-dix']}
               solved={sortDone}
               onAnswered={() => setSortDone(true)}
             />
+            </div>
           ),
         },
         {
@@ -249,6 +259,7 @@ export default function Module05EcritureScientifique() {
                     1 et 10 : ce n’est pas l’écriture scientifique.
                   </>
                 }
+                requires={['ecriture-scientifique']}
                 solved={ruleDone}
                 onAnswered={() => setRuleDone(true)}
               />
@@ -256,12 +267,12 @@ export default function Module05EcritureScientifique() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Passer d’une écriture décimale à l’écriture scientifique, c’est déplacer la virgule jusqu’à un
-          coefficient entre 1 et 10, et compter les rangs pour l’exposant. Rien d’autre.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Une seule écriture pour tous les ordres de grandeur. Voyons
+          ce qu’elle permet à l’échelle de l’univers.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

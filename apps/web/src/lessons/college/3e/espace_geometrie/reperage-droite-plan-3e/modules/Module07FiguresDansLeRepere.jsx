@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Shapes, Sparkles } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -143,6 +143,7 @@ export default function Module07FiguresDansLeRepere() {
             expected={6}
             width="w-24"
             explain="A (−3 ; −2) et B (3 ; −2) ont la même ordonnée : AB = |3 − (−3)| = 6."
+            requires={['longueur-axe', 'abscisse-ordonnee']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -158,9 +159,17 @@ export default function Module07FiguresDansLeRepere() {
             cols={1}
             explain="Le milieu de [AB] a pour abscisse 0. Le sommet du triangle 1 a lui aussi l’abscisse 0 : il est donc à égale distance de A et de B. Celui du triangle 2 est en (1 ; 3), décalé — les deux côtés n’ont pas la même longueur. Le dessin ne suffisait pas, le calcul tranche."
             explainWrong="L’allure ne prouve rien : les deux triangles se ressemblent beaucoup. Ce sont les coordonnées qui décident, en comparant les distances aux deux extrémités de la base."
+            requires={['longueur-axe', 'abscisse-ordonnee', 'milieu-moyenne']}
             solved={q2b}
             onAnswered={() => setQ2b(true)}
           />
+            {q2b && (
+              <KnowledgeBrick
+                id="prouver-par-coordonnees"
+                variant="new"
+                lead="L’œil hésitait, le calcul a tranché : c’est tout l’intérêt des coordonnées."
+              />
+            )}
         </div>
       ),
     },
@@ -200,11 +209,11 @@ export default function Module07FiguresDansLeRepere() {
             />
           </div>
           {done3 ? (
-            <Feedback tone="ok">
-              {formatCoords(SYM_CIBLE)}. Par rapport à l’axe horizontal, l’abscisse ne change pas et
-              l’ordonnée change de signe. Les deux points sont à la même distance de l’axe, de part
-              et d’autre.
-            </Feedback>
+            <KnowledgeBrick
+              id="symetrique-axe"
+              variant="new"
+              lead={`${formatCoords(SYM_CIBLE)}. Ce que le reflet vient de faire aux coordonnées se dit en une règle.`}
+            />
           ) : (
             <Feedback tone="info">
               Tu es en {formatCoords(s)}. Un symétrique par rapport à l’axe horizontal reste à la

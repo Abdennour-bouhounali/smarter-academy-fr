@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DecimalShifter from '../components/DecimalShifter';
@@ -140,6 +141,13 @@ export default function Module04LaVirguleQuiGlisse() {
                   chiffres 3, 4 et 5 n’ont pas bougé — seule la virgule s’est déplacée.
                 </Feedback>
               )}
+              {bothHit && (
+                <KnowledgeBrick
+                  id="puissance-de-dix"
+                  variant="new"
+                  lead="Ce que la virgule vient de faire, l’exposant le compte."
+                />
+              )}
             </div>
           ),
         },
@@ -148,6 +156,7 @@ export default function Module04LaVirguleQuiGlisse() {
           title: 'Un exposant négatif ne rend pas le nombre négatif',
           done: signDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt={
                 <>
@@ -174,14 +183,16 @@ export default function Module04LaVirguleQuiGlisse() {
                   <MathText>{'$-5 \\times 10^{2}$'}</MathText>.
                 </>
               }
+              requires={['exposant-negatif', 'puissance-de-dix']}
               solved={signDone}
               onAnswered={() => setSignDone(true)}
             />
+            </div>
           ),
         },
         {
           num: 3,
-          title: 'Situe un nombre sur la bande des ordres de grandeur',
+          title: 'Situe un nombre sur la bande des puissances de dix',
           subtitle: `Où se place ${formatDec(STRIP_VALUE, { maxDecimals: 12 })} ?`,
           done: stripDone,
           content: (kit) => (
@@ -225,6 +236,12 @@ export default function Module04LaVirguleQuiGlisse() {
           done: orderDone,
           content: (
             <div className="space-y-4">
+            <KnowledgeBrick
+              id="ordre-de-grandeur"
+              variant="new"
+              compact
+              lead="Ce que tu viens de comparer porte un nom."
+            />
               <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 text-center space-y-2">
                 <p className="text-sm font-semibold text-violet-900">À retenir</p>
                 <MathText className="text-lg text-slate-800">
@@ -264,6 +281,7 @@ export default function Module04LaVirguleQuiGlisse() {
                     <strong className="font-mono">{formatDec(shiftDecimal(2, 5))}</strong>.
                   </>
                 }
+                requires={['ordre-de-grandeur', 'puissance-de-dix']}
                 solved={orderDone}
                 onAnswered={() => setOrderDone(true)}
               />
@@ -271,12 +289,12 @@ export default function Module04LaVirguleQuiGlisse() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Multiplier par une puissance de 10 ne change pas les chiffres, seulement leur place. L’exposant
-          donne l’ordre de grandeur — et c’est lui qu’on regarde en premier pour comparer.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> La virgule glisse au rythme de l’exposant. Reste à en faire
+          une écriture normalisée.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }
