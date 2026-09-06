@@ -654,9 +654,11 @@ async function run() {
   const MOBILE = [
     ['M1', `${LESSON}/deux-noms-un-nombre`, ['0']],
     ['M2', `${LESSON}/rendre-irreductible`, ['0', '1']],
+    ['M3', `${LESSON}/comparer`, ['0', '1', '2']],
     ['M4', `${LESSON}/la-meme-decoupe`, ['0', '1', '2', '3']],
     ['M5', `${LESSON}/fraction-de-fraction`, ['0', '1', '2', '3', '4']],
     ['M6', `${LESSON}/dans-quel-ordre`, ['0', '1', '2', '3', '4', '5']],
+    ['M7', `${LESSON}/le-budget-du-club`, ['0', '1', '2', '3', '4', '5', '6']],
   ];
   for (const [name, url, seed] of MOBILE) {
     const { ctx, page } = await open(browser, url, seed, { mobile: true, tag: `${name}-mobile` });
@@ -677,6 +679,22 @@ async function run() {
       return out;
     });
     check(`${name} mobile: tap targets ≥ 40 px`, small.length === 0, small.slice(0, 6).join(', '));
+
+    // §6ter.5 : les poignées de glissement comptent AUSSI, et elles ne sont pas
+    // des <button>. Leur taille se MESURE (getBoundingClientRect), elle ne se
+    // déduit pas du viewBox — un rect de 24 unités SVG ne fait que 12 px réels
+    // sur une barre rendue à 0,52×.
+    const smallHandles = await page.evaluate(() => {
+      const out = [];
+      document.querySelectorAll('main [role="slider"], main [role="separator"]').forEach((h) => {
+        const r = h.getBoundingClientRect();
+        if (r.width > 0 && r.height > 0 && r.width < 44 && r.height < 44) {
+          out.push(`${(h.getAttribute('aria-label') || '?').slice(0, 22)}:${Math.round(r.width)}x${Math.round(r.height)}`);
+        }
+      });
+      return out;
+    });
+    check(`${name} mobile: drag handles ≥ 44 px`, smallHandles.length === 0, smallHandles.slice(0, 4).join(', '));
 
     const anyTap = page.locator('main button:visible').first();
     if (await anyTap.isVisible().catch(() => false)) {

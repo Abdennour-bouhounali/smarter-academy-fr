@@ -131,7 +131,9 @@ export default function RationalBar({
     return () => window.removeEventListener('resize', measure);
   }, []);
 
-  const grip = Math.max(24, 44 * scale); // unités SVG valant ≥ 44 px réels
+  // 45 et non 44 : la conversion viewBox → pixels perd une fraction (43,99 px
+  // mesuré), et un seuil atteint « presque » n'est pas atteint.
+  const grip = Math.max(24, 45 * scale);
 
   const canDrag = drag && !frozen && typeof onValue === 'function';
 
@@ -278,7 +280,10 @@ export default function RationalBar({
               />
               <g>
                 <rect
-                  x={endX - grip / 2} y={8 - 8} width={grip} height={BAR_H + 16}
+                  x={endX - grip / 2}
+                  y={8 - Math.max(8, (grip - BAR_H) / 2)}
+                  width={grip}
+                  height={Math.max(BAR_H + 16, grip)}
                   fill="transparent" cursor="ew-resize"
                   role="slider" tabIndex={0}
                   aria-label={`Bord colorié : glisse pour prendre plus ou moins de parts. Actuellement ${Math.abs(v.num)} parts sur ${v.den}.`}

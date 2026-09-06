@@ -268,6 +268,14 @@ export default function NumberLine({
             className="cursor-grab focus:outline-none"
             style={{ touchAction: 'none' }}
           >
+            {/* §6ter.5 : la ZONE tactile est plus large que le glyphe. Le curseur
+                dessiné fait 28 unités de large, soit ~24 px réels à 375 px — sous
+                le seuil des 44 px. Ce rect transparent porte la prise sans rien
+                changer à l'apparence ni à la lecture mathématique. */}
+            <rect
+              x="-66" y={axisY - 46} width="132" height="66"
+              fill="transparent"
+            />
             <polygon
               points={`0,${axisY - 4} -14,${axisY - 30} 14,${axisY - 30}`}
               fill="#f59e0b"
