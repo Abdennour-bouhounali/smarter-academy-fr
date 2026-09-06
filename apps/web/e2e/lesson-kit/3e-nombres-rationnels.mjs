@@ -239,22 +239,40 @@ async function run() {
     check('M3: no NaN', !/NaN/.test(head));
 
     const plus = page.locator('button[aria-label="Avancer d’un douzième"]').first();
-    const validate = page.locator('button[aria-label="Valider la position du curseur"]').first();
     check('M3: tap-first stepper present', await plus.isVisible());
 
-    // Wrong-on-purpose first: validate at 6/12.
-    await validate.click();
-    await page.waitForTimeout(500);
+    // §6bis.3 : plus de « Valider » entre le geste et sa conséquence. L'écart à
+    // la cible se lit EN DIRECT, à chaque pas.
+    check('M3: no « Valider » button stands between the gesture and its effect',
+      (await page.locator('button[aria-label="Valider la position du curseur"]').count()) === 0);
     const wrong = await body(page);
-    check('M3: a wrong placement quantifies the gap in twelfths', /douzième/i.test(wrong) && /Bonne réponse/i.test(wrong), wrong.slice(0, 500));
+    check('M3: the gap to the target is quantified live, before any validation',
+      /douzième/i.test(wrong), wrong.slice(0, 500));
 
-    // Then walk to 9/12 and validate again.
-    for (let i = 0; i < 3; i += 1) { await plus.click(); await page.waitForTimeout(140); }
-    await validate.click();
+    // Then walk to 9/12 — reaching the target IS the validation.
+    for (let i = 0; i < 3; i += 1) { await plus.click(); await page.waitForTimeout(160); }
     await page.waitForTimeout(600);
     const right = await body(page);
     check('M3: placing 3/4 on the twelfths line completes', /9/.test(right) && /est à DROITE|à DROITE/i.test(right), right.slice(0, 500));
     await page.screenshot({ path: `${SHOT_DIR}nr-m3-numberline.png` });
+
+    // Étape 2 : la molette de découpe commune. 10 ne convient pas à 2/3 ;
+    // 15 convient aux deux, et la comparaison devient une lecture.
+    const dial = page.locator('[data-cut-den]').first();
+    check('M3: the common-cut dial is offered', await dial.isVisible().catch(() => false));
+    check('M3: the starting cut does NOT already work — there is something to find',
+      (await dial.getAttribute('data-cut-ok')) === 'false');
+    const track = page.locator('[role="slider"][aria-label="Nombre de parts de la découpe commune"]').first();
+    await track.focus();
+    for (let i = 0; i < 6; i += 1) {
+      if ((await dial.getAttribute('data-cut-ok')) === 'true') break;
+      await page.keyboard.press('ArrowRight');
+      await page.waitForTimeout(200);
+    }
+    const dialed = await body(page);
+    check('M3: a common cut can be reached, and both fractions are rewritten on it',
+      (await dial.getAttribute('data-cut-ok')) === 'true' && /Même découpe/i.test(dialed), dialed.slice(0, 400));
+    await page.waitForTimeout(400);
 
     // The « 1/4 > 1/2 » misconception question, answered wrong on purpose.
     const trap = page.locator('button', { hasText: 'C’est vrai : un plus grand dénominateur' }).first();

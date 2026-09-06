@@ -4,6 +4,8 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import NumberLine from '../../../../../common/components/NumberLine';
+import CommonCutLab from '../components/CommonCutLab';
+import ErrorSpotter from '../components/ErrorSpotter';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import {
   expandTo, formatDec, formatFrac, rat, roundTo, toDecimal,
@@ -48,14 +50,27 @@ const fmt = (x) => formatDec(x, { maxDecimals: 2 });
 export default function Module03Comparer() {
   const [pos, setPos] = useState(roundTo(6 / DEN));
   const [tries, setTries] = useState(0);
-  const [placed, setPlaced] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const [sortDone, setSortDone] = useState(false);
   const [ruleDone, setRuleDone] = useState(false);
   const [negDone, setNegDone] = useState(false);
 
+  // Étape 2 : la découpe commune essayée à la molette.
+  const [cutDen, setCutDen] = useState(10);
+  const [cutSeen, setCutSeen] = useState(false);
+
+  // Étape 5 : la copie à corriger, puis la réfutation SUR la droite.
+  const [tapped, setTapped] = useState([]);
+  const [repair, setRepair] = useState(null);
+  const [negPos, setNegPos] = useState(-0.5);
+
+  const negSpotted = tapped.includes('n2') && Math.abs(negPos + 0.75) < 1e-6;
+
   const twelfths = Math.round(pos * DEN);
   const onTarget = twelfths === TARGET_TWELFTHS;
+  // §6bis.3 : aucun « Valider » entre le geste et sa conséquence — atteindre la
+  // cible EST la validation, et l'écart se lit en direct pendant le trajet.
+  const placed = onTarget || revealed;
 
   const move = (d) => {
     const next = roundTo(Math.min(1, Math.max(0, pos + d * STEP)));
@@ -63,15 +78,9 @@ export default function Module03Comparer() {
     if (Math.round(next * DEN) !== TARGET_TWELFTHS) setTries((t) => t + 1);
   };
 
-  const validate = (kitReact) => {
-    setPlaced(true);
-    kitReact?.(onTarget);
-  };
-
   const showMe = (kitReact) => {
     setPos(roundTo(TARGET_TWELFTHS / DEN));
     setRevealed(true);
-    setPlaced(true);
     kitReact?.(false);
   };
 
@@ -99,7 +108,7 @@ export default function Module03Comparer() {
           num: 1,
           title: `Place ${'3/4'} sur la droite`,
           subtitle: 'La droite est graduée en douzièmes — pousse − ou +.',
-          done: placed && (onTarget || revealed),
+          done: placed,
           content: (kit) => (
             <div className="space-y-3">
               <NumberLine
@@ -143,34 +152,17 @@ export default function Module03Comparer() {
                 >
                   +
                 </button>
-                <button
-                  type="button"
-                  onClick={() => validate(kit.react)}
-                  aria-label="Valider la position du curseur"
-                  className="min-h-[44px] px-4 rounded-xl border-2 border-cyan-600 bg-cyan-600 text-sm font-bold text-white hover:bg-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
-                >
-                  Valider ma position
-                </button>
               </div>
 
               {!placed && (
                 <Feedback tone="info">
-                  Le curseur est sur <strong className="font-mono">{twelfths}/{DEN}</strong>. Combien de
-                  douzièmes font <MathText>{`$${formatFrac(A)}$`}</MathText> ? Chaque quart vaut 3
-                  douzièmes.
+                  Le curseur est sur <strong className="font-mono">{twelfths}/{DEN}</strong> ({fmt(pos)}) —
+                  tu es à <strong className="font-mono">{Math.abs(TARGET_TWELFTHS - twelfths)}</strong>{' '}
+                  douzième{Math.abs(TARGET_TWELFTHS - twelfths) > 1 ? 's' : ''} de{' '}
+                  <MathText>{`$${formatFrac(A)}$`}</MathText>. Chaque quart vaut 3 douzièmes.
                 </Feedback>
               )}
-              {placed && !onTarget && !revealed && (
-                <Feedback tone="ko">
-                  Ta position : <strong className="font-mono">{twelfths}/{DEN}</strong> (
-                  {fmt(pos)}). Bonne réponse : <strong className="font-mono">{TARGET_TWELFTHS}/{DEN}</strong> (
-                  {fmt(toDecimal(A, 4))}) — tu es à{' '}
-                  <strong className="font-mono">{Math.abs(TARGET_TWELFTHS - twelfths)}</strong> douzième
-                  {Math.abs(TARGET_TWELFTHS - twelfths) > 1 ? 's' : ''} de la cible. Un quart, c’est 3
-                  douzièmes, donc trois quarts font 3 × 3 = 9 douzièmes.
-                </Feedback>
-              )}
-              {placed && (onTarget || revealed) && (
+              {placed && (
                 <Feedback tone="ok">
                   <MathText>{`$${formatFrac(A)} = \\frac{${TARGET_TWELFTHS}}{${DEN}}$`}</MathText> et{' '}
                   <MathText>{`$${formatFrac(B)} = \\frac{${expandTo(B, DEN).num}}{${DEN}}$`}</MathText>.
@@ -179,7 +171,7 @@ export default function Module03Comparer() {
                   {revealed && ' (La position t’a été montrée — refais-la à la main.)'}
                 </Feedback>
               )}
-              {placed && (onTarget || revealed) && (
+              {placed && (
                 <KnowledgeBrick
                   id="comparer-rationnels"
                   variant="new"
@@ -200,6 +192,38 @@ export default function Module03Comparer() {
         },
         {
           num: 2,
+          title: 'Une seule découpe pour les deux',
+          subtitle: 'Fais glisser la molette : cherche une découpe qui convient AUX DEUX.',
+          done: cutSeen,
+          content: (kit) => (
+            <div className="space-y-3">
+              <CommonCutLab
+                a={rat(3, 5)}
+                b={rat(2, 3)}
+                labelA="3/5"
+                labelB="2/3"
+                candidates={[5, 6, 9, 10, 15, 30]}
+                den={cutDen}
+                onDen={(d, ok) => { setCutDen(d); if (ok) setCutSeen(true); kit.react(ok); }}
+              />
+              {!cutSeen && (
+                <Feedback tone="info">
+                  Tant qu’une des deux barres reste en pointillés, la découpe ne convient pas à ce
+                  nombre-là. Cherche un nombre de parts qui tombe juste pour <strong>3/5</strong> ET
+                  pour <strong>2/3</strong>.
+                </Feedback>
+              )}
+              {cutSeen && (
+                <Feedback tone="ok">
+                  Une fois la même découpe trouvée, la comparaison n’est plus un calcul : c’est une
+                  lecture. C’est exactement ce que tu viens de faire à la main sur la droite graduée.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
           title: 'Le piège du grand dénominateur',
           done: ruleDone,
           content: (
@@ -252,7 +276,7 @@ export default function Module03Comparer() {
           ),
         },
         {
-          num: 3,
+          num: 4,
           title: 'La stratégie sûre : même découpe',
           done: sortDone,
           content: (
@@ -283,25 +307,65 @@ export default function Module03Comparer() {
           ),
         },
         {
-          num: 4,
-          title: 'Et à gauche de zéro ?',
-          done: negDone,
-          content: (
+          num: 5,
+          title: 'La copie de Sarah',
+          subtitle: 'Une ligne est fausse. Trouve-la, puis réfute-la sur la droite.',
+          done: negSpotted && negDone,
+          content: (kit) => (
             <div className="space-y-4">
-              <NumberLine
-                min={-1}
-                max={0}
-                step={0.25}
-                labelEvery={1}
-                mode="static"
-                format={fmt}
-                markers={[
-                  { value: -0.75, label: '−3/4', color: '#e11d48' },
-                  { value: -0.5, label: '−1/2', color: '#0891b2' },
+              <ErrorSpotter
+                title="Sarah compare −3/4 et −1/2"
+                lines={[
+                  { id: 'n1', text: <>Je compare d’abord sans les signes : <MathText>{'$\\frac{3}{4} > \\frac{1}{2}$'}</MathText>, car 9/12 &gt; 6/12.</> },
+                  { id: 'n2', text: <>Donc <MathText>{'$-\\frac{3}{4} > -\\frac{1}{2}$'}</MathText> : le plus grand reste le plus grand.</> },
+                  { id: 'n3', text: <>Je vérifie : <MathText>{'$-\\frac{3}{4} = -0{,}75$'}</MathText> et <MathText>{'$-\\frac{1}{2} = -0{,}5$'}</MathText>.</> },
                 ]}
-                ariaLabel="Droite graduée de −1 à 0"
-                height={170}
+                faultyId="n2"
+                tapped={tapped}
+                onTap={(id, ok) => { setTapped((t) => (t.includes(id) ? t : [...t, id])); kit.react(ok); }}
+                reasonFor={(id) => {
+                  if (id === 'n1') return 'Ligne juste : en douzièmes, 9 > 6. Sur les POSITIFS, 3/4 est bien le plus grand.';
+                  if (id === 'n3') return 'Ligne juste : les deux valeurs décimales sont exactes.';
+                  return 'C’est là. Passer à l’opposé RENVERSE l’ordre : plus la part est grosse, plus on s’enfonce à gauche de zéro. Reste à le montrer.';
+                }}
               />
+              {tapped.includes('n2') && (
+                <div className="rounded-2xl border-2 border-cyan-200 bg-cyan-50/60 p-3 space-y-2">
+                  <p className="text-sm font-semibold text-cyan-900">
+                    Réfute-la : place le curseur sur <MathText>{'$-\\frac{3}{4}$'}</MathText> et regarde
+                    de quel côté il tombe.
+                  </p>
+                  <NumberLine
+                    min={-1}
+                    max={0}
+                    step={0.25}
+                    labelEvery={1}
+                    mode="place"
+                    value={negPos}
+                    onChange={(v) => setNegPos(roundTo(v))}
+                    snap={0.25}
+                    revealValue={false}
+                    format={fmt}
+                    markers={[{ value: -0.5, label: '−1/2', color: '#0891b2' }]}
+                    ariaLabel="Droite graduée de −1 à 0 : place −3/4"
+                    height={170}
+                  />
+                  <Feedback tone={negSpotted ? 'ok' : 'info'}>
+                    {negSpotted ? (
+                      <>
+                        Le curseur est à <strong className="font-mono">{fmt(-0.75)}</strong>, à GAUCHE
+                        de <strong className="font-mono">{fmt(-0.5)}</strong>. La ligne 2 de Sarah est
+                        donc bien fausse : <MathText>{'$-\\frac{3}{4} < -\\frac{1}{2}$'}</MathText>.
+                      </>
+                    ) : (
+                      <>
+                        Curseur sur <strong className="font-mono">{fmt(negPos)}</strong>. Amène-le sur{' '}
+                        <MathText>{'$-\\frac{3}{4}$'}</MathText>, c’est-à-dire {fmt(-0.75)}.
+                      </>
+                    )}
+                  </Feedback>
+                </div>
+              )}
               <TapQuestion
                 prompt={
                   <>
