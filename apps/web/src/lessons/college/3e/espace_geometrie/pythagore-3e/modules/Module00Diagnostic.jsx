@@ -21,6 +21,7 @@ const QUESTIONS = [
   {
     id: 'py-d1-angle-droit',
     skill: 'triangle',
+    requires: ['triangle-rectangle'],
     points: 2,
     prompt: 'Comment repère-t-on un angle droit sur une figure ?',
     options: ['À la petite marque carrée', 'À sa couleur', 'C’est toujours l’angle du bas'],
@@ -31,6 +32,7 @@ const QUESTIONS = [
   {
     id: 'py-d2-carre',
     skill: 'carres',
+    requires: ['puissance', 'aire'],
     points: 2,
     prompt: (<>Combien vaut <MathText>{'$7^{2}$'}</MathText> ?</>),
     options: ['49', '14', '77'],
@@ -41,6 +43,7 @@ const QUESTIONS = [
   {
     id: 'py-d3-somme-carres',
     skill: 'carres',
+    requires: ['puissance', 'aire'],
     points: 2,
     prompt: (<>Combien vaut <MathText>{'$6^{2} + 8^{2}$'}</MathText> ?</>),
     options: ['100', '196', '28'],
@@ -51,6 +54,7 @@ const QUESTIONS = [
   {
     id: 'py-d4-racine',
     skill: 'racines',
+    requires: ['racine-carree', 'arrondi'],
     points: 2,
     prompt: (<>Combien vaut <MathText>{'$\\sqrt{144}$'}</MathText> ?</>),
     options: ['12', '72', '14'],
@@ -61,6 +65,7 @@ const QUESTIONS = [
   {
     id: 'py-d5-encadrer',
     skill: 'racines',
+    requires: ['racine-carree', 'arrondi'],
     points: 2,
     prompt: (<>Entre quels entiers se trouve <MathText>{'$\\sqrt{50}$'}</MathText> ?</>),
     options: ['Entre 7 et 8', 'Entre 6 et 7', 'Entre 24 et 25'],

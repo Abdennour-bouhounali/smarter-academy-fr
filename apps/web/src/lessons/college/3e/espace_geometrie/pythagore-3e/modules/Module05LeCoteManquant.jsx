@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Minus } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { computePythagoreanLeg, roundTenth, isCoherentLeg } from '../components/pythagoreUtils';
@@ -34,6 +35,11 @@ export default function Module05LeCoteManquant() {
       done: q1,
       content: (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="calculer-un-cote-de-langle-droit"
+            variant="new"
+            lead="Cette fois l’hypoténuse est connue et c’est un autre côté qui manque : l’égalité ne change pas, l’inconnue change de place."
+          />
           <div className="rounded-xl bg-slate-50 border-2 border-slate-200 p-3 text-center">
             <p className="text-sm text-slate-700">
               KLM est rectangle en K. L’hypoténuse [LM] mesure 13 cm, et KL mesure 5 cm.
@@ -49,6 +55,7 @@ export default function Module05LeCoteManquant() {
             cols={2}
             explain="L’égalité de Pythagore s’écrit LM² = KL² + KM² : le carré de l’hypoténuse est la SOMME. Pour isoler KM², on retranche KL² des deux côtés. Quand on cherche un côté de l’angle droit, on soustrait."
             explainWrong="Additionner donnerait un résultat plus grand que l’hypoténuse, ce qui est impossible : un côté de l’angle droit est toujours plus court qu’elle."
+            requires={['calculer-un-cote-de-langle-droit', 'theoreme-pythagore']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -75,6 +82,7 @@ export default function Module05LeCoteManquant() {
             if (n === 8) return 'Tu as soustrait les longueurs (13 − 5). Ce sont leurs carrés qu’il faut soustraire : 169 − 25 = 144.';
             return null;
           }}
+          requires={['calculer-un-cote-de-langle-droit']}
           solved={q2}
           onAnswered={() => setQ2(true)}
         />
@@ -104,9 +112,18 @@ export default function Module05LeCoteManquant() {
             correct={0}
             cols={1}
             explain="L’hypoténuse est toujours le plus grand côté. Un résultat qui la dépasse signale une erreur — le plus souvent une addition à la place d’une soustraction. Ce contrôle prend deux secondes et rattrape l’erreur la plus fréquente."
+            requires={['calculer-un-cote-de-langle-droit']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
+            {q3 && (
+              <KnowledgeBrick
+                id="mem-controle-hypotenuse"
+                variant="new"
+                compact
+                lead="Un réflexe de relecture, qui rattrape l’erreur la plus fréquente du chapitre."
+              />
+            )}
         </div>
       ),
     },
@@ -141,13 +158,12 @@ export default function Module05LeCoteManquant() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Pour un côté de l’angle droit :{' '}
-          <MathText>{'$AB^{2} = BC^{2} - AC^{2}$'}</MathText>, où BC est l’hypoténuse. Le résultat
-          doit toujours être inférieur à l’hypoténuse — sinon, c’est qu’on a additionné par erreur.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Les deux calculs sont à ta disposition. Reste à choisir
+          lequel, et à le rédiger.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

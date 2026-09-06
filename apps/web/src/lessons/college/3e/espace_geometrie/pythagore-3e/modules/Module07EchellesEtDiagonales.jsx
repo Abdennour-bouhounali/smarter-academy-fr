@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Tv, Hammer } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LadderScene from '../components/LadderScene';
 import {
@@ -38,6 +39,11 @@ export default function Module07EchellesEtDiagonales() {
       done: q1,
       content: (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="pythagore-dans-le-reel"
+            variant="new"
+            lead="Voici où ce théorème sert vraiment — et dans quel sens, selon la question posée."
+          />
           <p className="text-sm text-slate-700">
             L’échelle mesure <strong>5 m</strong>. Le mur et le sol forment un angle droit : le
             triangle est donc rectangle, même si l’énoncé ne le dit pas.
@@ -68,6 +74,7 @@ export default function Module07EchellesEtDiagonales() {
             explainFor={(n) => (Math.abs(n - Math.sqrt(25 + dist * dist)) < 0.2
               ? 'Tu as additionné. L’échelle est déjà l’hypoténuse : la hauteur cherchée est forcément plus PETITE que 5 m.'
               : null)}
+            requires={['pythagore-dans-le-reel', 'methode-ecrire-puis-calculer']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -99,6 +106,7 @@ export default function Module07EchellesEtDiagonales() {
             explainFor={(n) => (n === 138
               ? 'Tu as additionné les longueurs (88 + 50). Ce sont leurs carrés qu’il faut additionner.'
               : n === 10244 ? 'C’est d² que tu as calculé. Prends la racine carrée pour obtenir la longueur.' : null)}
+            requires={['pythagore-dans-le-reel', 'calculer-un-cote-de-langle-droit']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -131,6 +139,7 @@ export default function Module07EchellesEtDiagonales() {
             cols={1}
             explain="Le maçon ne connaît PAS l’angle au départ : il l’obtient. En imposant des longueurs qui vérifient l’égalité, la réciproque garantit que l’angle est droit — exactement, pas approximativement. C’est le théorème utilisé pour CONSTRUIRE."
             explainWrong="Le théorème direct partirait d’un angle droit connu. Ici, c’est l’inverse : ce sont les longueurs qui sont choisies, et l’angle droit en découle."
+            requires={['pythagore-dans-le-reel', 'reciproque-pythagore']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -174,13 +183,11 @@ export default function Module07EchellesEtDiagonales() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Ce que tu viens de faire.</strong> Le théorème direct calcule une longueur quand
-          l’angle droit est donné par la situation ; la réciproque garantit un angle droit quand ce
-          sont les longueurs qu’on impose.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Il ne reste qu’à tout mettre à l’épreuve.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

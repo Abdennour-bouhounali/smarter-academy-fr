@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Scale, Grid3x3 } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareBalance from '../components/SquareBalance';
 import { FIGURES, balanceOf, isRightTriangle } from '../components/pythagoreUtils';
@@ -96,11 +97,11 @@ export default function Module02LesTroisCarres() {
             </div>
           )}
           {done1 && (
-            <Feedback tone="ok">
-              Trois triangles rectangles différents, et à chaque fois la même chose :{' '}
-              <strong>les deux petits carrés réunis ont exactement l’aire du grand</strong>. Les
-              nombres changent, l’égalité tient.
-            </Feedback>
+            <KnowledgeBrick
+              id="egalite-des-aires"
+              variant="new"
+              lead="Trois triangles différents, et à chaque fois la même chose. Ce constat porte un nom."
+            />
           )}
         </div>
       ),
@@ -128,6 +129,7 @@ export default function Module02LesTroisCarres() {
             cols={1}
             explain="La relation porte sur les AIRES des carrés, donc sur les carrés des longueurs : 9 + 16 = 25. Sur les longueurs elles-mêmes, 3 + 4 = 7, ce qui est faux — c’est justement pour cela qu’on regarde des aires."
             explainWrong="Attention : 3 + 4 = 7, pas 5. Ce sont les AIRES des carrés qui s’additionnent, pas les longueurs des côtés."
+            requires={['egalite-des-aires', 'aire', 'hypotenuse']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -171,13 +173,12 @@ export default function Module02LesTroisCarres() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Ce que tu viens d’observer.</strong> Dans un triangle rectangle, l’aire du carré
-          construit sur l’hypoténuse est égale à la somme des aires des carrés construits sur les
-          deux autres côtés.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> L’égalité est constatée. Reste à savoir si elle tient
+          quand l’angle n’est plus droit.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

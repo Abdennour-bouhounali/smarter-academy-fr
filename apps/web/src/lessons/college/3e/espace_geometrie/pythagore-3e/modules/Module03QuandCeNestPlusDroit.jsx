@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { AlertTriangle, ArrowLeftRight } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareBalance from '../components/SquareBalance';
 import { FIGURES, balanceOf, isRightTriangle } from '../components/pythagoreUtils';
@@ -58,12 +59,11 @@ export default function Module03QuandCeNestPlusDroit() {
             ariaLabel="Triangle déformable librement, avec ses trois carrés"
           />
           {done1 ? (
-            <Feedback tone="ok">
-              Tu l’as vu dans les trois cas : la balance est à l’équilibre{' '}
-              <strong>exactement</strong> quand la marque d’angle droit est là. Dès que l’angle
-              s’ouvre, le grand carré l’emporte ; dès qu’il se referme, ce sont les deux petits.
-              L’égalité des aires ne caractérise <strong>que</strong> le triangle rectangle.
-            </Feedback>
+            <KnowledgeBrick
+              id="equivalence-angle-droit"
+              variant="new"
+              lead="Tu l’as vu dans les trois cas : la balance s’équilibre exactement quand la marque d’angle droit est là."
+            />
           ) : (
             <Feedback tone="info">
               Situations rencontrées : {vus.size} sur 3.{' '}
@@ -105,6 +105,7 @@ export default function Module03QuandCeNestPlusDroit() {
             cols={1}
             explain="L’égalité des aires caractérise le triangle rectangle : quand elle est fausse, le triangle ne l’est pas. Ici 113 ≠ 144, et comme la somme est PLUS PETITE, l’angle est trop ouvert — le triangle est obtusangle."
             explainWrong="Justement, le calcul montre que les deux nombres sont DIFFÉRENTS. Or tu viens de voir que la balance ne s’équilibre que dans le cas rectangle."
+            requires={['equivalence-angle-droit', 'egalite-des-aires']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -147,13 +148,12 @@ export default function Module03QuandCeNestPlusDroit() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Une équivalence.</strong> L’égalité des aires et l’angle droit vont toujours
-          ensemble : l’un entraîne l’autre, dans les deux sens. C’est ce qui permettra, plus loin,
-          de <em>démontrer</em> qu’un triangle est rectangle à partir de ses seules longueurs.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Les deux sens vont ensemble. Il est temps de l’écrire avec
+          des lettres.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

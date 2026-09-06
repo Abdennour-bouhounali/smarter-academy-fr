@@ -42,6 +42,10 @@ export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/pythagore-
 
 export const LESSON_CONFIG = {
   id: 'pythagore-3e',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
+  priorKnowledge: ['triangle-rectangle', 'aire', 'puissance', 'racine-carree', 'arrondi'],
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Théorème de Pythagore',
   description:

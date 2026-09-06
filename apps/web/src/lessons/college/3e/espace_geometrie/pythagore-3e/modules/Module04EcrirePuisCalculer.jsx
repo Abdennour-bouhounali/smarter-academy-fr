@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { PenLine } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareBalance from '../components/SquareBalance';
@@ -38,6 +39,17 @@ export default function Module04EcrirePuisCalculer() {
       done: q1,
       content: (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="theoreme-pythagore"
+            variant="new"
+            lead="L’égalité des aires que tu viens d’établir s’écrit, avec des lettres, en une seule ligne."
+          />
+          <KnowledgeBrick
+            id="methode-ecrire-puis-calculer"
+            variant="new"
+            compact
+            lead="Et voici l’ordre dans lequel on s’en sert."
+          />
           <SquareBalance
             points={FIGURES.rect345}
             draggable={false}
@@ -52,6 +64,7 @@ export default function Module04EcrirePuisCalculer() {
             cols={2}
             explain="L’angle droit est en A, donc l’hypoténuse est [BC] : c’est elle qui porte le GRAND carré, seule de son côté de l’égalité. Les deux côtés de l’angle droit sont ensemble sur l’autre plateau."
             explainWrong="Repère d’abord l’hypoténuse (le côté opposé à l’angle droit) : son carré est le plus grand, il est donc seul d’un côté du signe égal."
+            requires={['theoreme-pythagore', 'hypotenuse']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -80,6 +93,7 @@ export default function Module04EcrirePuisCalculer() {
             explainFor={(n) => (n === 225
               ? 'Tu as trouvé EF² = 225, ce qui est juste — mais la question porte sur la LONGUEUR. Il reste à prendre la racine carrée : √225 = 15.'
               : n === 21 ? 'Tu as additionné les longueurs (9 + 12 = 21). Ce sont leurs CARRÉS qui s’additionnent, pas les longueurs.' : null)}
+            requires={['methode-ecrire-puis-calculer']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -109,6 +123,7 @@ export default function Module04EcrirePuisCalculer() {
             explainFor={(n) => (n === 74
               ? 'C’est HI² que tu as calculé. Prends ensuite la racine carrée : √74 ≈ 8,6.'
               : n === 12 ? 'Tu as additionné 5 + 7. Ce sont les carrés qui s’additionnent.' : null)}
+            requires={['methode-ecrire-puis-calculer', 'racine-carree']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -146,13 +161,12 @@ export default function Module04EcrirePuisCalculer() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Théorème de Pythagore.</strong> Si ABC est rectangle en A, alors{' '}
-          <MathText>{'$BC^{2} = AB^{2} + AC^{2}$'}</MathText>. Le carré de l’hypoténuse est égal à
-          la somme des carrés des deux autres côtés.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu calcules l’hypoténuse. Et si c’est un autre côté qui
+          manque ?
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

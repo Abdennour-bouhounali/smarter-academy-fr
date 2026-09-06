@@ -26,6 +26,7 @@ const EPREUVES = [
   {
     id: 'py-e1',
     skill: 'reperer',
+    requires: ['hypotenuse', 'triangle-rectangle'],
     title: 'Trouver l’hypoténuse',
     prompt: 'ABC est rectangle en B. Quel côté est l’hypoténuse ?',
     options: ['[AC]', '[AB]', '[BC]', 'Celui qui est horizontal'],
@@ -36,6 +37,7 @@ const EPREUVES = [
   {
     id: 'py-e2',
     skill: 'reperer',
+    requires: ['hypotenuse', 'triangle-rectangle'],
     title: 'Le plus grand côté',
     prompt: 'Dans un triangle rectangle, l’hypoténuse est…',
     options: [
@@ -51,6 +53,7 @@ const EPREUVES = [
   {
     id: 'py-e3',
     skill: 'aires',
+    requires: ['egalite-des-aires', 'aire'],
     title: 'La relation entre les carrés',
     extra: (
       <div className="my-2">
@@ -67,6 +70,7 @@ const EPREUVES = [
   {
     id: 'py-e4',
     skill: 'ecrire',
+    requires: ['theoreme-pythagore', 'methode-ecrire-puis-calculer'],
     title: 'Écrire l’égalité',
     prompt: 'DEF est rectangle en E. Quelle égalité est correcte ?',
     options: ['$DF^{2} = DE^{2} + EF^{2}$', '$DE^{2} = DF^{2} + EF^{2}$', '$DF = DE + EF$', '$DF^{2} = DE^{2} - EF^{2}$'],
@@ -79,6 +83,7 @@ const EPREUVES = [
   {
     id: 'py-e5',
     skill: 'calculer',
+    requires: ['methode-ecrire-puis-calculer', 'calculer-un-cote-de-langle-droit'],
     title: 'Calculer l’hypoténuse',
     prompt: 'Un triangle est rectangle, les côtés de l’angle droit mesurent 9 cm et 12 cm. Combien mesure l’hypoténuse ?',
     options: ['15 cm', '225 cm', '21 cm', '10,5 cm'],
@@ -89,6 +94,7 @@ const EPREUVES = [
   {
     id: 'py-e6',
     skill: 'calculer',
+    requires: ['methode-ecrire-puis-calculer', 'calculer-un-cote-de-langle-droit'],
     title: 'Calculer un côté de l’angle droit',
     prompt: 'Un triangle rectangle a une hypoténuse de 17 cm et un côté de l’angle droit de 8 cm. Combien mesure l’autre côté ?',
     options: ['15 cm', '25 cm', '18,8 cm', '9 cm'],
@@ -99,6 +105,7 @@ const EPREUVES = [
   {
     id: 'py-e7',
     skill: 'coherence',
+    requires: ['mem-controle-hypotenuse'],
     title: 'Un résultat suspect',
     prompt: 'Un élève cherche un côté de l’angle droit dans un triangle d’hypoténuse 12 cm, et trouve 14 cm. Que peut-on dire sans refaire le calcul ?',
     options: [
@@ -114,6 +121,7 @@ const EPREUVES = [
   {
     id: 'py-e8',
     skill: 'reciproque',
+    requires: ['reciproque-pythagore', 'choisir-direct-ou-reciproque'],
     title: 'Rectangle ou pas ?',
     prompt: 'Un triangle a pour côtés 9 cm, 12 cm et 15 cm. Est-il rectangle ?',
     options: [
@@ -129,6 +137,7 @@ const EPREUVES = [
   {
     id: 'py-e9',
     skill: 'reciproque',
+    requires: ['reciproque-pythagore', 'choisir-direct-ou-reciproque'],
     title: 'La rédaction correcte',
     prompt: 'Pour démontrer qu’un triangle est rectangle à partir de ses trois longueurs, par quoi commence-t-on ?',
     options: [
@@ -144,6 +153,7 @@ const EPREUVES = [
   {
     id: 'py-e10',
     skill: 'probleme',
+    requires: ['pythagore-dans-le-reel', 'methode-ecrire-puis-calculer'],
     title: 'L’échelle',
     extra: (
       <div className="my-2">

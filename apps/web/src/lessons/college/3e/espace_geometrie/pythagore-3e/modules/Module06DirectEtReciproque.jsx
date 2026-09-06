@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ScrollText, GitCompareArrows } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProofStrip from '../components/ProofStrip';
@@ -52,6 +53,11 @@ export default function Module06DirectEtReciproque() {
       done: done1,
       content: (kit) => (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="reciproque-pythagore"
+            variant="new"
+            lead="Cette fois l’angle droit n’est pas donné : c’est lui qu’il faut prouver. Voici la marche à suivre."
+          />
           <div className="rounded-xl bg-slate-50 border-2 border-slate-200 p-3">
             <p className="text-sm text-slate-800">{enonce}</p>
           </div>
@@ -105,6 +111,7 @@ export default function Module06DirectEtReciproque() {
       title: 'Deux sens à ne pas confondre',
       done: q2,
       content: (
+        <div className="space-y-3">
         <TapQuestion
           prompt="Dans quel cas utilise-t-on la RÉCIPROQUE du théorème de Pythagore ?"
           options={[
@@ -117,9 +124,19 @@ export default function Module06DirectEtReciproque() {
           cols={1}
           explain="Le théorème DIRECT part de l’angle droit pour calculer une longueur. La RÉCIPROQUE part des trois longueurs pour établir l’angle droit. Le sens de la déduction est inversé : ce qu’on suppose et ce qu’on conclut s’échangent."
           explainWrong="Attention : si tu SAIS déjà que le triangle est rectangle, c’est le théorème direct qui s’applique. La réciproque sert quand l’angle droit est justement la chose à prouver."
+          requires={['reciproque-pythagore', 'theoreme-pythagore']}
           solved={q2}
           onAnswered={() => setQ2(true)}
         />
+        {q2 && (
+          <KnowledgeBrick
+            id="choisir-direct-ou-reciproque"
+            variant="new"
+            compact
+            lead="Retiens le critère qui tranche à chaque fois."
+          />
+        )}
+        </div>
       ),
     },
   ];
@@ -167,18 +184,12 @@ export default function Module06DirectEtReciproque() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <div className="flex gap-2 items-start">
-            <ScrollText className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-            <span>
-              <strong>La charpente d’une réciproque.</strong> Repérer le plus grand côté · calculer
-              son carré · calculer la somme des carrés des deux autres · comparer · conclure en
-              citant la réciproque.
-            </span>
-          </div>
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Direct ou réciproque, tu sais trancher. Voyons cela sur de
+          vraies situations.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

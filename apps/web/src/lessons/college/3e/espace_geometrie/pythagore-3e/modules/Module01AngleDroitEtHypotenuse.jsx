@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Target, RotateCw } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareBalance from '../components/SquareBalance';
 import {
@@ -61,9 +62,17 @@ export default function Module01AngleDroitEtHypotenuse() {
             cols={4}
             explain="La petite marque carrée apparaît en A : c’est là que les deux côtés se rencontrent perpendiculairement. Elle n’est dessinée que lorsque l’angle vaut vraiment 90°."
             explainWrong="Ne te fie pas à l’orientation du dessin : cherche la marque carrée, qui signale l’angle droit où qu’il se trouve."
+            requires={['triangle-rectangle']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
+          {q1 && (
+            <KnowledgeBrick
+              id="hypotenuse"
+              variant="new"
+              lead="L’angle droit repéré, le côté qui lui fait face porte un nom."
+            />
+          )}
         </div>
       ),
     },
@@ -110,6 +119,7 @@ export default function Module01AngleDroitEtHypotenuse() {
                 : `${nCorrect} sur ${total}. Méthode infaillible : repère le sommet de l’angle droit, puis prends le côté d’en face.`}
             </Feedback>
           )}
+          requires={['hypotenuse']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
@@ -139,6 +149,7 @@ export default function Module01AngleDroitEtHypotenuse() {
             cols={1}
             explain="L’hypoténuse fait face au plus grand angle du triangle (l’angle droit, 90°), elle est donc le plus long côté. C’est un bon moyen de vérifier qu’on ne s’est pas trompé d’hypoténuse."
             explainWrong="Regarde les trois mesures : celle du côté opposé à l’angle droit dépasse les deux autres. C’est toujours le cas, car l’angle droit est le plus grand angle d’un triangle rectangle."
+            requires={['hypotenuse']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -182,13 +193,12 @@ export default function Module01AngleDroitEtHypotenuse() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Dans un triangle rectangle, l’<strong>hypoténuse</strong> est
-          le côté opposé à l’angle droit — celui qui ne touche pas le sommet marqué. C’est aussi
-          toujours le plus long des trois côtés.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais nommer les trois côtés. Au module suivant, on
+          construit un carré sur chacun d’eux.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }
