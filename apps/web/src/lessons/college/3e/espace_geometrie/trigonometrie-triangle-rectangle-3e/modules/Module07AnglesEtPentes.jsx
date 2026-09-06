@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Accessibility, Mountain } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { solveAngle, solveSide, roundTenth, tanDeg } from '../components/trigoUtils';
 
@@ -38,13 +39,11 @@ const angleEchelle = solveAngle({ ratio: 'cos', value: 2 / 6 });
       done: q1,
       content: (
         <div className="space-y-3">
-          <div className="rounded-xl bg-slate-50 border-2 border-slate-200 p-3">
-            <p className="text-sm text-slate-700">
-              Une rampe accessible doit avoir une pente d’au plus <strong>5 %</strong>, c’est-à-dire
-              qu’elle monte de 5 cm pour 100 cm parcourus horizontalement. Ce rapport
-              hauteur ÷ base est exactement la <strong>tangente</strong> de l’angle.
-            </p>
-          </div>
+          <KnowledgeBrick
+            id="pente-pourcentage"
+            variant="new"
+            lead="Une rampe accessible doit avoir une pente d’au plus 5 %. Encore faut-il savoir ce que ce pourcentage mesure."
+          />
           <NumericQuestion
             prompt="À quel angle correspond une pente de 5 % ? (arrondi au dixième de degré)"
             suffix="°"
@@ -56,6 +55,7 @@ const angleEchelle = solveAngle({ ratio: 'cos', value: 2 / 6 });
             explainFor={(n) => (Math.abs(n - 5) < 0.3
               ? 'Attention au piège : 5 % est un RAPPORT (0,05), pas un angle. Il faut lui appliquer arctan pour obtenir des degrés.'
               : null)}
+            requires={['pente-pourcentage', 'retrouver-angle']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -87,6 +87,7 @@ const angleEchelle = solveAngle({ ratio: 'cos', value: 2 / 6 });
             explainFor={(n) => (Math.abs(n - 19.5) < 1.5
               ? 'Tu as sans doute calculé arcsin(0,33). Ici, 2 m est le côté ADJACENT à l’angle au sol, donc c’est le cosinus.'
               : null)}
+            requires={['retrouver-angle', 'methode-choisir-rapport']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -119,6 +120,7 @@ const angleEchelle = solveAngle({ ratio: 'cos', value: 2 / 6 });
               if (Math.abs(n - 14 / Math.tan(38 * Math.PI / 180)) < 0.3) return 'Tu as divisé au lieu de multiplier. tan 38° = hauteur ÷ 14, donc hauteur = 14 × tan 38°.';
               return null;
             }}
+            requires={['methode-choisir-rapport', 'sinus-cosinus-tangente']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -161,13 +163,12 @@ const angleEchelle = solveAngle({ ratio: 'cos', value: 2 / 6 });
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Le réflexe à garder.</strong> Une pente exprimée en pourcentage est un{' '}
-          <em>rapport</em> : pour en tirer un angle, il faut arctan. Et 5 % ne fait pas 5°, mais
-          environ 2,9°.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Tu sais lire une pente comme un rapport. Il ne reste qu’à
+          tout mettre à l’épreuve.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

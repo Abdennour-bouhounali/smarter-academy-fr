@@ -21,6 +21,7 @@ const QUESTIONS = [
   {
     id: 'tg-d1-hypotenuse',
     skill: 'triangle',
+    requires: ['triangle-rectangle', 'hypotenuse'],
     points: 2,
     prompt: 'Dans un triangle rectangle, l’hypoténuse est le côté…',
     options: ['opposé à l’angle droit', 'le plus court', 'toujours horizontal'],
@@ -31,6 +32,7 @@ const QUESTIONS = [
   {
     id: 'tg-d2-somme-aigus',
     skill: 'angles',
+    requires: ['somme-angles-triangle'],
     points: 2,
     prompt: 'Dans un triangle rectangle, un angle aigu mesure 32°. Combien mesure l’autre ?',
     options: ['58°', '148°', '68°'],
@@ -41,6 +43,7 @@ const QUESTIONS = [
   {
     id: 'tg-d3-pythagore',
     skill: 'triangle',
+    requires: ['triangle-rectangle'],
     points: 2,
     prompt: 'Les côtés de l’angle droit mesurent 6 et 8. Combien mesure l’hypoténuse ?',
     options: ['10', '14', '48'],
@@ -51,6 +54,7 @@ const QUESTIONS = [
   {
     id: 'tg-d4-quotient',
     skill: 'calcul',
+    requires: ['quotient', 'arrondi'],
     points: 2,
     prompt: 'Combien vaut 3 ÷ 5 ?',
     options: ['0,6', '1,67', '15'],
@@ -61,6 +65,7 @@ const QUESTIONS = [
   {
     id: 'tg-d5-arrondi',
     skill: 'calcul',
+    requires: ['quotient', 'arrondi'],
     points: 2,
     prompt: 'Arrondi au dixième, que vaut 6,873 ?',
     options: ['6,9', '6,8', '7'],

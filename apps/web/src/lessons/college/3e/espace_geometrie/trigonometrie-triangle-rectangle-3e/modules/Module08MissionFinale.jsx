@@ -25,6 +25,7 @@ const EPREUVES = [
   {
     id: 'tg-e1',
     skill: 'reperer',
+    requires: ['cote-oppose', 'cote-adjacent', 'hypotenuse', 'mem-roles-relatifs'],
     title: 'L’hypoténuse',
     prompt: 'Dans un triangle RST rectangle en S, quel côté est l’hypoténuse ?',
     options: ['[RT]', '[RS]', '[ST]', 'Celui qui est horizontal'],
@@ -35,6 +36,7 @@ const EPREUVES = [
   {
     id: 'tg-e2',
     skill: 'reperer',
+    requires: ['cote-oppose', 'cote-adjacent', 'hypotenuse', 'mem-roles-relatifs'],
     title: 'Opposé et adjacent',
     prompt: 'Dans un triangle ABC rectangle en B, on étudie l’angle en A. Quel côté est le côté opposé ?',
     options: ['[BC]', '[AB]', '[AC]', 'Cela dépend de la taille du triangle'],
@@ -45,6 +47,7 @@ const EPREUVES = [
   {
     id: 'tg-e3',
     skill: 'reperer',
+    requires: ['cote-oppose', 'cote-adjacent', 'hypotenuse', 'mem-roles-relatifs'],
     title: 'Ce qui ne change pas',
     prompt: 'On passe d’un angle aigu à l’autre dans le même triangle rectangle. Qu’est-ce qui reste identique ?',
     options: [
@@ -60,6 +63,7 @@ const EPREUVES = [
   {
     id: 'tg-e4',
     skill: 'invariance',
+    requires: ['rapport-depend-angle'],
     title: 'Agrandir le triangle',
     prompt: 'On double toutes les longueurs d’un triangle rectangle, sans changer ses angles. Que deviennent le sinus, le cosinus et la tangente ?',
     options: [
@@ -75,6 +79,7 @@ const EPREUVES = [
   {
     id: 'tg-e5',
     skill: 'definitions',
+    requires: ['sinus-cosinus-tangente'],
     title: 'La bonne définition',
     prompt: 'Que vaut le cosinus d’un angle dans un triangle rectangle ?',
     options: [
@@ -92,6 +97,7 @@ const EPREUVES = [
   {
     id: 'tg-e6',
     skill: 'definitions',
+    requires: ['sinus-cosinus-tangente'],
     title: 'Un résultat impossible',
     prompt: 'Un élève calcule un cosinus et trouve 1,6. Que s’est-il passé ?',
     options: [
@@ -107,6 +113,7 @@ const EPREUVES = [
   {
     id: 'tg-e7',
     skill: 'choisir',
+    requires: ['methode-choisir-rapport', 'sinus-cosinus-tangente'],
     title: 'Choisir le rapport',
     prompt: 'On connaît l’hypoténuse et on cherche le côté adjacent à l’angle étudié. Quel rapport utiliser ?',
     options: ['Le cosinus', 'Le sinus', 'La tangente', 'N’importe lequel des trois'],
@@ -117,6 +124,7 @@ const EPREUVES = [
   {
     id: 'tg-e8',
     skill: 'calculer',
+    requires: ['methode-choisir-rapport', 'calculatrice-degres'],
     title: 'Calculer une longueur',
     prompt: 'Une échelle de 10 m forme un angle de 60° avec le sol. À quelle hauteur touche-t-elle le mur ? (arrondi au dixième)',
     options: ['8,7 m', '5,0 m', '11,5 m', '17,3 m'],
@@ -127,6 +135,7 @@ const EPREUVES = [
   {
     id: 'tg-e9',
     skill: 'angle',
+    requires: ['retrouver-angle'],
     title: 'Retrouver un angle',
     prompt: 'Dans un triangle rectangle, le côté opposé mesure 5 et l’hypoténuse 10. Quelle touche de la calculatrice donne l’angle ?',
     options: [
@@ -142,6 +151,7 @@ const EPREUVES = [
   {
     id: 'tg-e10',
     skill: 'probleme',
+    requires: ['methode-choisir-rapport', 'pente-pourcentage'],
     title: 'La pente en pourcentage',
     prompt: 'Une route affiche une pente de 10 %. Quel angle forme-t-elle avec l’horizontale ?',
     options: [

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Target } from 'lucide-react';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RatioLab from '../components/RatioLab';
 import RatioChooser from '../components/RatioChooser';
@@ -62,10 +63,17 @@ export default function Module05CalculerUneLongueur() {
             disabled={bonChoix}
           />
           {bonChoix ? (
-            <Feedback tone="ok">
-              Connu : l’hypoténuse. Cherché : le côté opposé. Le seul rapport qui relie ces deux
-              côtés est le <strong>sinus</strong>. Aucun choix arbitraire : il se déduit.
-            </Feedback>
+            <>
+              <Feedback tone="ok">
+                Connu : l’hypoténuse. Cherché : le côté opposé. Le seul rapport qui relie ces deux
+                côtés est le <strong>sinus</strong>. Aucun choix arbitraire : il se déduit.
+              </Feedback>
+              <KnowledgeBrick
+                id="methode-choisir-rapport"
+                variant="new"
+                lead="Ce raisonnement se refait à l’identique dans n’importe quel triangle."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               L’échelle (12 m) est l’hypoténuse — c’est elle que tu connais. La hauteur sur le mur
@@ -99,6 +107,7 @@ export default function Module05CalculerUneLongueur() {
               if (Math.abs(n - 12 * Math.cos(35 * Math.PI / 180)) < 0.3) return 'Tu as utilisé le cosinus : cela donne la distance au pied du mur, pas la hauteur. La hauteur est le côté OPPOSÉ à l’angle.';
               return null;
             }}
+            requires={['methode-choisir-rapport', 'sinus-cosinus-tangente']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -129,6 +138,7 @@ export default function Module05CalculerUneLongueur() {
             explainFor={(n) => (Math.abs(n - roundTenth(attendu)) < 0.2
               ? 'C’est la hauteur que tu viens de calculer. Ici le côté cherché est l’ADJACENT : il faut donc le cosinus.'
               : null)}
+            requires={['methode-choisir-rapport', 'sinus-cosinus-tangente']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -166,13 +176,12 @@ export default function Module05CalculerUneLongueur() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Opposé et hypoténuse ⇒ sinus. Adjacent et hypoténuse ⇒
-          cosinus. Opposé et adjacent ⇒ tangente. Et le résultat cherché reste toujours plus petit
-          que l’hypoténuse.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu sais aller de l’angle à une longueur. Le module suivant
+          fait le chemin inverse.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

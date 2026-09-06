@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BookMarked, Calculator } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RatioLab from '../components/RatioLab';
@@ -36,35 +37,42 @@ export default function Module04TroisRapportsTroisNoms() {
       title: 'Trois rapports, trois noms',
       done: batch,
       content: (
+        <div className="space-y-3">
         <BatchChoiceQuestion
           intro={
-            <div className="space-y-2">
+            <div className="space-y-3">
               <RatioLab alpha={ALPHA} hyp={HYP} disabled
                 ariaLabel="Triangle rectangle avec ses trois rapports affichés" />
               <p className="text-sm text-slate-700">
-                Voici les trois quotients que tu manipules depuis le début. Chacun porte un nom.
+                Voici les trois quotients que tu manipules depuis le début. Chacun porte un nom —
+                les voici, puis à toi de les reconnaître.
               </p>
+              <KnowledgeBrick
+                id="sinus-cosinus-tangente"
+                variant="new"
+                lead="Ces trois rapports reviennent si souvent que les mathématiciens leur ont donné un nom."
+              />
             </div>
           }
           rows={[
             {
               id: 'sin',
-              label: 'opposé ÷ hypoténuse s’appelle…',
-              options: ['le sinus', 'le cosinus', 'la tangente'],
+              label: 'Quel rapport le SINUS désigne-t-il ?',
+              options: ['opposé ÷ hypoténuse', 'adjacent ÷ hypoténuse', 'opposé ÷ adjacent'],
               correct: 0,
               correction: 'sin α = opposé / hypoténuse. Comme l’hypoténuse est le plus grand côté, ce quotient est toujours inférieur à 1.',
             },
             {
               id: 'cos',
-              label: 'adjacent ÷ hypoténuse s’appelle…',
-              options: ['le cosinus', 'le sinus', 'la tangente'],
+              label: 'Quel rapport le COSINUS désigne-t-il ?',
+              options: ['adjacent ÷ hypoténuse', 'opposé ÷ hypoténuse', 'opposé ÷ adjacent'],
               correct: 0,
               correction: 'cos α = adjacent / hypoténuse. Lui aussi est toujours inférieur à 1, pour la même raison.',
             },
             {
               id: 'tan',
-              label: 'opposé ÷ adjacent s’appelle…',
-              options: ['la tangente', 'le sinus', 'le cosinus'],
+              label: 'Quel rapport la TANGENTE désigne-t-elle ?',
+              options: ['opposé ÷ adjacent', 'opposé ÷ hypoténuse', 'adjacent ÷ hypoténuse'],
               correct: 0,
               correction: 'tan α = opposé / adjacent. C’est le seul des trois qui ne fait pas intervenir l’hypoténuse, et il peut dépasser 1.',
             },
@@ -87,9 +95,19 @@ export default function Module04TroisRapportsTroisNoms() {
                 : `${nCorrect} sur ${total}. Retiens la place de l’hypoténuse : au dénominateur pour le sinus et le cosinus, absente de la tangente.`}
             </Feedback>
           )}
+          requires={['sinus-cosinus-tangente', 'cote-oppose', 'cote-adjacent', 'hypotenuse']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
+        {batch && (
+          <KnowledgeBrick
+            id="mem-sinus-inferieur-1"
+            variant="new"
+            compact
+            lead="La dernière ligne t’a fait remarquer une limite : elle mérite d’être retenue telle quelle."
+          />
+        )}
+        </div>
       ),
     },
     {
@@ -106,6 +124,12 @@ export default function Module04TroisRapportsTroisNoms() {
               <strong>{Math.round(s.hyp)}</strong>.
             </p>
           </div>
+          <KnowledgeBrick
+            id="calculatrice-degres"
+            variant="new"
+            compact
+            lead="Avant de comparer avec la calculatrice, un mot sur ce qu’elle fait — et sur son piège."
+          />
           <NumericQuestion
             prompt={`Calcule le quotient ${Math.round(s.opp)} ÷ ${Math.round(s.hyp)}, arrondi au centième. Compare-le ensuite à sin ${ALPHA}° sur ta calculatrice.`}
             expected={(n) => Math.abs(n - mesure) < 0.011}
@@ -113,6 +137,7 @@ export default function Module04TroisRapportsTroisNoms() {
             display={String(Math.round(mesure * 100) / 100).replace('.', ',')}
             width="w-24"
             explain={`${Math.round(s.opp)} ÷ ${Math.round(s.hyp)} ≈ ${String(Math.round(mesure * 100) / 100).replace('.', ',')}. Et sin ${ALPHA}° ≈ ${String(Math.round(ratiosFor(ALPHA).sin * 100) / 100).replace('.', ',')} : c’est le même nombre. La touche « sin » de ta calculatrice ne fait rien d’autre que donner ce quotient, mesuré une fois pour toutes.`}
+            requires={['sinus-cosinus-tangente', 'calculatrice-degres']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -157,18 +182,12 @@ export default function Module04TroisRapportsTroisNoms() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <div className="flex gap-2 items-start">
-            <Calculator className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-            <span>
-              <strong>Ce que fait la calculatrice.</strong> Les touches sin, cos et tan donnent
-              directement ces quotients pour l’angle demandé. Vérifie qu’elle est bien en mode
-              degrés (DEG) : en mode radians, tous les résultats seraient faux.
-            </span>
-          </div>
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Les trois noms sont posés. Reste à choisir lequel utiliser
+          quand on cherche une longueur.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

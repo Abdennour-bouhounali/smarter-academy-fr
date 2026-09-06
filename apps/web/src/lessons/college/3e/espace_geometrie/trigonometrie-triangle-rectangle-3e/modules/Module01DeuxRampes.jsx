@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { TrendingUp } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RatioLab from '../components/RatioLab';
 import { RAMPES, sidesFor, roundTenth } from '../components/trigoUtils';
@@ -59,6 +60,7 @@ export default function Module01DeuxRampes() {
             cols={1}
             explain="Les deux rampes forment le même angle avec le sol. La plus grande n’est pas plus raide : elle est simplement plus longue, et elle monte donc plus haut. Tu vas le vérifier par le calcul à l’étape suivante."
             explainWrong="La longueur ne dit rien de l’inclinaison : une rampe deux fois plus longue au même angle monte deux fois plus haut, mais grimpe pareil."
+            requires={['triangle-rectangle']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -87,6 +89,7 @@ export default function Module01DeuxRampes() {
             display={String(Math.round((Math.round(petite.opp) / Math.round(petite.adj)) * 100) / 100).replace('.', ',')}
             width="w-24"
             explain={`${Math.round(petite.opp)} ÷ ${Math.round(petite.adj)} ≈ ${String(Math.round((Math.round(petite.opp) / Math.round(petite.adj)) * 100) / 100).replace('.', ',')}. Fais le même calcul pour la rampe B : tu obtiendras le même nombre.`}
+            requires={['quotient']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -118,9 +121,17 @@ export default function Module01DeuxRampes() {
             cols={1}
             explain="Deux rampes de tailles différentes mais de même angle donnent le même quotient. Ce nombre ne mesure donc pas une longueur : il mesure l’ANGLE. C’est toute la trigonométrie, et c’est ce que tu vas explorer dans les modules suivants."
             explainWrong="Les deux rampes ont des longueurs et des hauteurs différentes, et pourtant le même quotient. La seule chose qu’elles ont en commun, c’est leur angle."
+            requires={['quotient']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
+        {q3 && (
+          <KnowledgeBrick
+            id="pente-quotient"
+            variant="new"
+            lead="Ce que tu viens de constater sur les deux rampes vaut bien au-delà d’elles."
+          />
+        )}
         </div>
       ),
     },
@@ -156,13 +167,12 @@ export default function Module01DeuxRampes() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Ce que tu viens d’observer.</strong> Dans deux triangles rectangles de même angle,
-          le rapport de deux côtés est le même — quelle que soit leur taille. Ce rapport caractérise
-          l’angle.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Un quotient mesure la raideur. Reste à savoir de
+          quels côtés on parle : c’est le module suivant.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

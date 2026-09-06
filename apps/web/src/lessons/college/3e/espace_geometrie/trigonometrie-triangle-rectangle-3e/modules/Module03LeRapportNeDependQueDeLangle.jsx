@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Maximize2, Stamp } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RatioLab from '../components/RatioLab';
 import { SIGNATURE, sidesFor, ratiosFromSides } from '../components/trigoUtils';
@@ -135,6 +136,7 @@ export default function Module03LeRapportNeDependQueDeLangle() {
       title: 'La conclusion',
       done: q3,
       content: (
+        <div className="space-y-3">
         <TapQuestion
           prompt="De quoi dépend le quotient opposé ÷ hypoténuse dans un triangle rectangle ?"
           options={[
@@ -145,11 +147,20 @@ export default function Module03LeRapportNeDependQueDeLangle() {
           ]}
           correct={0}
           cols={1}
-          explain="Tu l’as vérifié dans les deux sens : changer la taille ne modifie rien, changer l’angle modifie tout. Ce quotient est donc une fonction de l’angle — c’est ce qui permet de le tabuler une fois pour toutes."
+          explain="Tu l’as vérifié dans les deux sens : changer la taille ne modifie rien, changer l’angle modifie tout. Ce quotient est donc entièrement déterminé par l’angle — c’est ce qui permet de le tabuler une fois pour toutes, angle par angle."
           explainWrong="Les trois relevés de l’étape 1 avaient des tailles différentes et donnaient les mêmes quotients. Seul le changement d’angle les a fait bouger."
+          requires={['cote-oppose', 'hypotenuse']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
+        {q3 && (
+          <KnowledgeBrick
+            id="rapport-depend-angle"
+            variant="new"
+            lead="Voilà la propriété que tes agrandissements viennent de mettre en évidence."
+          />
+        )}
+        </div>
       ),
     },
   ];
@@ -189,13 +200,12 @@ export default function Module03LeRapportNeDependQueDeLangle() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Ce que tu viens d’établir.</strong> Dans un triangle rectangle, chacun des trois
-          rapports de côtés est entièrement déterminé par l’angle. Deux triangles de même angle,
-          même de tailles très différentes, donnent les mêmes rapports.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Chaque rapport est déterminé par l’angle seul. Au module
+          suivant, ces trois rapports reçoivent enfin leur nom.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

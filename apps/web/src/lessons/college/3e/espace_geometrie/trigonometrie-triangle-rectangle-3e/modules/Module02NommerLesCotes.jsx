@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Tags, ArrowLeftRight } from 'lucide-react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RatioLab from '../components/RatioLab';
 import { roleOfSides, SIDE_NAMES } from '../components/trigoUtils';
@@ -22,6 +23,14 @@ import { roleOfSides, SIDE_NAMES } from '../components/trigoUtils';
  * Misconception ciblée   apprendre « BC est l'opposé » comme un fait absolu.
  *                       C'est l'erreur qui fait rater un exercice sur deux.
  * Formalization         les noms sin/cos/tan n'apparaissent PAS ici.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   L'étape 1 montrait les étiquettes « Opposé : [BC] · Adjacent : [AB] » —
+ *   des VALEURS, sans jamais dire ce que ces mots signifient —, puis l'étape 2
+ *   demandait « Quel côté est OPPOSÉ à l'angle R ? ». Le sens n'arrivait que
+ *   dans les `correction`, après la réponse, et dans le footer. Les trois rôles
+ *   sont désormais posés par des briques après le geste qui les fait voir
+ *   (l'échange des couleurs), avant la première question qui les exige.
  */
 export default function Module02NommerLesCotes() {
   const [vertex, setVertex] = useState('A');
@@ -74,15 +83,40 @@ export default function Module02NommerLesCotes() {
             ))}
           </div>
           {done1 ? (
-            <Feedback tone="ok">
-              Les côtés [AB] et [BC] ont <strong>échangé leurs rôles</strong> : ce qui était
-              l’opposé est devenu l’adjacent. Seule l’hypoténuse [AC] n’a pas bougé — elle est
-              toujours face à l’angle droit, quel que soit l’angle qu’on étudie.
-            </Feedback>
+            <>
+              <Feedback tone="ok">
+                Deux côtés ont <strong>échangé leurs places</strong> quand tu as changé d’angle.
+                Un seul n’a pas bougé. Voici comment on les appelle.
+              </Feedback>
+              <KnowledgeBrick
+                id="hypotenuse"
+                variant="rappel"
+                compact
+                lead={`Celui qui n’a pas bougé, c’est [${roles.hyp}].`}
+              />
+              <KnowledgeBrick
+                id="cote-oppose"
+                variant="new"
+                compact
+                lead={`Pour l’angle en ${vertex}, c’est [${roles.opp}] : il ne touche pas cet angle.`}
+              />
+              <KnowledgeBrick
+                id="cote-adjacent"
+                variant="new"
+                compact
+                lead={`Pour l’angle en ${vertex}, c’est [${roles.adj}] : il touche l’angle, sans être l’hypoténuse.`}
+              />
+              <KnowledgeBrick
+                id="mem-roles-relatifs"
+                variant="new"
+                compact
+                lead="Et voilà pourquoi ces deux mots ne désignent jamais un côté une fois pour toutes."
+              />
+            </>
           ) : (
             <Feedback tone="info">
-              Angle étudié : {vertex}. Opposé : [{roles.opp}] · Adjacent : [{roles.adj}] ·
-              Hypoténuse : [{roles.hyp}]. Essaie maintenant l’autre angle.
+              Angle étudié : {vertex}. Trois côtés, trois places différentes — bascule sur l’autre
+              angle et regarde lesquelles changent.
             </Feedback>
           )}
         </div>
@@ -135,6 +169,7 @@ export default function Module02NommerLesCotes() {
                 : `${nCorrect} sur ${total}. Méthode : l’hypoténuse est face à l’angle droit ; l’opposé ne touche pas l’angle étudié ; l’adjacent le touche.`}
             </Feedback>
           )}
+          requires={['hypotenuse', 'cote-oppose', 'cote-adjacent', 'mem-roles-relatifs']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
@@ -157,6 +192,7 @@ export default function Module02NommerLesCotes() {
           cols={1}
           explain="L’hypoténuse est définie par rapport à l’ANGLE DROIT, pas par rapport à l’angle étudié : elle ne change donc jamais. Opposé et adjacent, eux, s’échangent dès qu’on change d’angle de référence."
           explainWrong="Tu viens de le constater : en passant de l’angle A à l’angle C, l’opposé et l’adjacent ont échangé leurs rôles. Seule l’hypoténuse est restée la même."
+          requires={['hypotenuse', 'mem-roles-relatifs']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
@@ -199,13 +235,12 @@ export default function Module02NommerLesCotes() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> L’<strong>hypoténuse</strong> est face à l’angle droit : elle
-          ne change jamais. Le côté <strong>opposé</strong> ne touche pas l’angle étudié ; le côté{' '}
-          <strong>adjacent</strong> le touche. Changer d’angle échange ces deux-là.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais nommer les trois côtés à partir de l’angle étudié.
+          Au module suivant, on regarde ce que valent leurs quotients.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -48,6 +48,19 @@ export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/trigonomet
 
 export const LESSON_CONFIG = {
   id: 'trigonometrie-triangle-rectangle-3e',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
+  priorKnowledge: ['triangle-rectangle', 'hypotenuse', 'somme-angles-triangle', 'quotient', 'arrondi'],
+  knowledgeAudit: {
+    ignore: [
+      // « aire » n'apparaît que comme mauvaise réponse (« le quotient dépend-il
+      // de l'aire ? »). C'est une notion de 6e, acquise de longue date, et le
+      // distracteur ne demande pas de la manipuler : seulement d'écarter une
+      // dépendance. Rien à enseigner ici.
+      { term: 'aire', reason: 'distracteur ; notion de 6e, non manipulée' },
+    ],
+  },
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Trigonométrie dans le triangle rectangle',
   description:

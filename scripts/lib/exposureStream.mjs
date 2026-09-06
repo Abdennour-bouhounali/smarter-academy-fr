@@ -208,6 +208,23 @@ export function buildModuleStream(file, ctx) {
     return node;
   }
 
+  /**
+   * Rend un slot qui précède la question : s'il contient une brique, il est
+   * parcouru (la brique doit exister dans le flux) ; sinon il est aplati en un
+   * seul segment, comme tout texte de position « juste à temps ».
+   */
+  function walkSlot(node, slot, step, base) {
+    if (!node) return;
+    if (containsInteractive(node)) {
+      const previous = jitSlot;
+      jitSlot = slot;
+      walk(node, step, { jit: true });
+      jitSlot = previous;
+      return;
+    }
+    push(slot, node, base);
+  }
+
   // ── Question components ───────────────────────────────────────────────────
   const emitQuestion = (el, step, qIndex) => {
     const component = elementName(el);
@@ -218,8 +235,11 @@ export function buildModuleStream(file, ctx) {
     const requires = readRequires(attr(el, 'requires'));
     const base = { step, questionId, component, requires };
 
-    push('q.intro', attr(el, 'intro'), base);
-    push('q.above', unwrapRender(attr(el, 'above')), base);
+    // `intro` et `above` sont rendus AU-DESSUS de la question : une brique
+    // qui s'y trouve établit bien avant la demande. On les parcourt donc au
+    // lieu de les aplatir, sans quoi la brique resterait invisible.
+    walkSlot(attr(el, 'intro'), 'q.intro', step, base);
+    walkSlot(unwrapRender(attr(el, 'above')), 'q.above', step, base);
     push('q.prompt', attr(el, 'prompt'), { ...base, always: true, line: el.loc?.start.line });
 
     const correctIndex = literalValue(attr(el, 'correct'));
@@ -277,6 +297,8 @@ export function buildModuleStream(file, ctx) {
 
   // ── Generic walk over rendered content ────────────────────────────────────
   let questionCounter = 0;
+  // Slot courant quand on parcourt un `intro`/`above` contenant une brique.
+  let jitSlot = null;
   // While walking a mapped step template, member expressions like `s.question`
   // resolve against the data row currently being rendered.
   let rowFields = null;
@@ -301,9 +323,10 @@ export function buildModuleStream(file, ctx) {
       if (!containsInteractive(node)) {
         const collected = collectText(node);
         if (collected.text || collected.notation.length) {
-          push(opts.inBrick ? 'brick.tryit' : (opts.gated ? 'gated' : 'step.content'), node, {
-            step, gated: opts.gated || undefined,
-          });
+          const slot = opts.inBrick ? 'brick.tryit'
+            : (opts.jit && jitSlot) ? jitSlot
+            : (opts.gated ? 'gated' : 'step.content');
+          push(slot, node, { step, gated: opts.gated || undefined });
         }
         return;
       }
@@ -335,9 +358,10 @@ export function buildModuleStream(file, ctx) {
     // Plain text/markup in teaching position.
     const collected = collectText(node);
     if (collected.text || collected.notation.length) {
-      push(opts.inBrick ? 'brick.tryit' : (opts.gated ? 'gated' : 'step.content'), node, {
-        step, gated: opts.gated || undefined,
-      });
+      const slot = opts.inBrick ? 'brick.tryit'
+        : (opts.jit && jitSlot) ? jitSlot
+        : (opts.gated ? 'gated' : 'step.content');
+      push(slot, node, { step, gated: opts.gated || undefined });
     }
   }
 

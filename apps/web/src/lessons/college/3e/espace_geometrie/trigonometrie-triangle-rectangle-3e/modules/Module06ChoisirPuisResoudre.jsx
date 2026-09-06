@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { RotateCcw, ListChecks } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { solveAngle, roundTenth, isPlausibleRatio } from '../components/trigoUtils';
@@ -45,6 +46,7 @@ export default function Module06ChoisirPuisResoudre() {
             correct={0}
             cols={4}
             explain="Adjacent et hypoténuse : c’est la définition du cosinus. Donc cos α = 4 ÷ 9 ≈ 0,44."
+            requires={['methode-choisir-rapport', 'sinus-cosinus-tangente']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -58,6 +60,12 @@ export default function Module06ChoisirPuisResoudre() {
       done: q2,
       content: (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="retrouver-angle"
+            variant="new"
+            compact
+            lead="Jusqu’ici tu partais de l’angle. Cette fois c’est le rapport qui est connu."
+          />
           <div className="rounded-xl bg-slate-50 border-2 border-slate-200 p-3 text-center">
             <MathText>{'$\\cos \\alpha = \\dfrac{4}{9} \\approx 0{,}44$'}</MathText>
           </div>
@@ -74,6 +82,7 @@ export default function Module06ChoisirPuisResoudre() {
               if (Math.abs(n - Math.cos(0.44)) < 0.05) return 'Attention : tu as appliqué cos au lieu d’arccos. Pour remonter du rapport à l’angle, c’est la touche inverse.';
               return null;
             }}
+            requires={['retrouver-angle', 'sinus-cosinus-tangente']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -97,6 +106,7 @@ export default function Module06ChoisirPuisResoudre() {
           cols={1}
           explain="Le sinus vaut opposé ÷ hypoténuse, et l’hypoténuse est le plus grand côté : le quotient est donc toujours inférieur à 1. Un résultat supérieur signifie qu’on a mis l’hypoténuse au numérateur. Ce contrôle prend une seconde et rattrape l’erreur."
           explainWrong="Quel que soit l’angle ou la taille du triangle, l’opposé reste plus court que l’hypoténuse. Un sinus supérieur à 1 est donc toujours une erreur."
+          requires={['mem-sinus-inferieur-1', 'sinus-cosinus-tangente']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
@@ -143,17 +153,12 @@ export default function Module06ChoisirPuisResoudre() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <div className="flex gap-2 items-start">
-            <RotateCcw className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-            <span>
-              <strong>Deux sens, deux touches.</strong> Angle connu → sin, cos, tan donnent un
-              rapport. Rapport connu → arcsin, arccos, arctan donnent un angle.
-            </span>
-          </div>
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Les deux sens sont à ta disposition. Reste à les employer
+          sur de vraies pentes.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }
