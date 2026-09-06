@@ -236,6 +236,18 @@ export function auditLesson(lessonDir, catalogue, options = {}) {
       continue;
     }
 
+    // Un titre d'étape est lu alors que l'étape est encore verrouillée : il
+    // annonce le mot sans rien en dire. C'est une fuite réelle, mais moins
+    // grave qu'une demande — sauf si le mot n'est jamais posé ensuite.
+    if (first.kind === 'preview') {
+      const taught = hits.find((h) => TEACHING_KINDS.has(h.kind));
+      add(taught ? 'M_NAMED_IN_LOCKED_TITLE' : 'H_NAMED_ONLY_IN_TITLE',
+        taught ? 'medium' : 'high',
+        `« ${term.label} » est nommé dans le titre de l'étape ${first.step} (module ${first.module}), lisible avant que l'étape ne s'ouvre${taught ? '' : ', et n\'est jamais posé ensuite'}`,
+        { ...first, term: term.id });
+      continue;
+    }
+
     const where = `${first.slot} (module ${first.module}${first.step ? `, étape ${first.step}` : ''})`;
     if (distractorOnly) {
       add('L_DISTRACTOR_ONLY', 'low', `« ${term.label} » appears only as a wrong answer, first at ${where} — a distractor still creates a first exposure`, { ...first, term: term.id });

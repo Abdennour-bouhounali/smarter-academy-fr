@@ -228,8 +228,10 @@
       "label": "échelle d'un axe gradué",
       "grade": "3e",
       "patterns": [
-        "(?<![\\p{L}\\p{N}_])carreaux?(?![\\p{L}\\p{N}_])",
-        "(?<![\\p{L}\\p{N}_])graduations?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:un|le|chaque|ce)\\s+carreau\\s+(?:\\w+\\s+)?vaut(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:par|au)\\s+carreaux?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])entre\\s+deux\\s+graduations?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])sur\\s+(?:une|la|cette|chaque)\\s+graduation(?![\\p{L}\\p{N}_])",
         "(?<![\\p{L}\\p{N}_])[ée]chelles?(?![\\p{L}\\p{N}_])\\s+(de l['’]axe|du rep[èe]re|verticale|horizontale)"
       ],
       "targetPatterns": [
@@ -274,9 +276,9 @@
       "label": "coefficient (d'une fonction linéaire)",
       "grade": "3e",
       "patterns": [
-        "(?<![\\p{L}\\p{N}_])coefficients?(?![\\p{L}\\p{N}_])(?!\\s*(de proportionnalit[ée]|directeur|multiplicateur|est|\\?|:|,|\\.|$))"
+        "(?<![\\p{L}\\p{N}_])coefficients?(?![\\p{L}\\p{N}_])(?!\\s*(de proportionnalit[ée]|directeur|multiplicateur|est|[ab](?![\\p{L}\\p{N}_])|[0-9]|‹›|\\?|:|,|\\.|$))"
       ],
-      "_comment": "Le mot « coefficient » employé SEUL, comme notion à part entière. Toutes ses formes qualifiées — directeur, de proportionnalité, multiplicateur — sont d'autres entrées ; « le coefficient a » d'une affine relève de coefficient-directeur, et la lettre disparaissant du texte (la notation est extraite à part), on écarte aussi le coefficient suivi d'une ponctuation ou d'un mot qui le qualifie."
+      "_comment": "Le mot « coefficient » employé SEUL. Toutes ses formes qualifiées — directeur, de proportionnalité, multiplicateur — sont d'autres entrées, et « le coefficient a » ou « le coefficient 0,065 » désignent une valeur précise. Comme la notation et les valeurs interpolées sont extraites du texte, on écarte aussi ce qui suit immédiatement le mot quand c'est une lettre, un nombre, le marqueur ‹› d'interpolation, ou une ponctuation."
     },
     {
       "id": "pente",
@@ -307,7 +309,7 @@
       "label": "côté opposé",
       "grade": "3e",
       "patterns": [
-        "(?<![\\p{L}\\p{N}_])c[ôo]t[ée]s? oppos[ée]s?(?![\\p{L}\\p{N}_])(?!\\s+[àa] l['’]angle droit)",
+        "(?<![\\p{L}\\p{N}_])c[ôo]t[ée] oppos[ée](?![\\p{L}\\p{N}_])(?!s)(?!\\s+[àa] l['’]angle droit)",
         "(?<![\\p{L}\\p{N}_])OPPOS[ÉE](?![\\p{L}\\p{N}_])\\s+[àa]\\s+l['’]angle(?!\\s+droit)",
         "(?<![\\p{L}\\p{N}_])l['’]oppos[ée](?![\\p{L}\\p{N}_])(?=\\s*(÷|/|,|\\.|\\set\\s|\\squi\\s|\\sne\\s|\\stouche))"
       ],
@@ -355,6 +357,17 @@
       "grade": "3e",
       "patterns": [
         "Thal[èe]s"
+      ]
+    },
+    {
+      "id": "composante",
+      "label": "composante (d'un vecteur)",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])composantes?(?![\\p{L}\\p{N}_])"
+      ],
+      "targetPatterns": [
+        "(?<![\\p{L}\\p{N}_])composantes?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -674,8 +687,10 @@
       "label": "mode (statistique)",
       "grade": "3e",
       "patterns": [
-        "(?<![\\p{L}\\p{N}_])mode(?![\\p{L}\\p{N}_])(?!\\s+(?:de |d.))"
-      ]
+        "(?<![\\p{L}\\p{N}_])le mode(?![\\p{L}\\p{N}_])(?!\\s+(?:de |d.|«))",
+        "(?<![\\p{L}\\p{N}_])mode d['’]une s[ée]rie(?![\\p{L}\\p{N}_])"
+      ],
+      "_comment": "La valeur la plus fréquente d'une série. Le mot désigne aussi un état d'interface (« en mode altitude ») : on exige donc un contexte statistique."
     },
     {
       "id": "indicateur-stat",
@@ -753,6 +768,80 @@
         "(?<![\\p{L}\\p{N}_])vari[ea]\\s+contin[uû]",
         "(?<![\\p{L}\\p{N}_])continûment(?![\\p{L}\\p{N}_])",
         "(?<![\\p{L}\\p{N}_])grandeurs?\\s+discr[èe]tes?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "distributivite",
+      "label": "distributivité",
+      "grade": "4e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])distributivit[ée]s?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "terme-algebrique",
+      "label": "terme (d’une expression)",
+      "grade": "3e",
+      "patterns": [
+        "termes? semblables?",
+        "(?<![\\p{L}\\p{N}_])termes?(?![\\p{L}\\p{N}_])\\s+(?:de l['’]expression|d['’]une expression|constants?|en\\s+x(?![\\p{L}\\p{N}_])|du milieu|central)",
+        "(?:chaque|les deux|tous les|ses|le second|le premier)\\s+termes?\\s+(?:de la parenth[èe]se|de l['’]expression|de la somme|semblables?)"
+      ],
+      "_comment": "Le mot « terme » au sens ALGÉBRIQUE (les morceaux additionnés d'une expression littérale). Le mot seul est aussi le langage courant des fractions (« les deux termes »), des rapports et des suites : n'y répondre que sur les collocations algébriques évite de signaler des leçons qui n'enseignent pas le calcul littéral."
+    },
+    {
+      "id": "facteur",
+      "label": "facteur",
+      "grade": "3e",
+      "patterns": [
+        "facteurs? commune?s?",
+        "(?<![\\p{L}\\p{N}_])facteurs?(?![\\p{L}\\p{N}_])\\s+(?:de l['’]expression|du (?:terme|produit)|de ce (?:terme|produit)|premiers?(?![\\p{L}\\p{N}_]))",
+        "(?:les deux|chaque|ses|tous les)\\s+facteurs?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])facteurs?\\s+de\\s+(?:5x|décomposition)(?![\\p{L}\\p{N}_])"
+      ],
+      "_comment": "Le mot « facteur » au sens ALGÉBRIQUE. Employé seul il désigne aussi bien un diviseur (« un facteur ≤ 7 ») qu'un coefficient multiplicateur : on ne retient que les collocations où il nomme les morceaux multipliés d'un produit ou d'un terme."
+    },
+    {
+      "id": "termes-semblables",
+      "label": "termes semblables",
+      "grade": "3e",
+      "patterns": [
+        "termes? semblables?"
+      ]
+    },
+    {
+      "id": "reduire-expression",
+      "label": "réduire une expression",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])r[ée]du(?:ire|is|it|ite|ites|its)(?![\\p{L}\\p{N}_])\\s+(?:l['’]expression|cette expression|une expression|au m[êe]me d[ée]nominateur)",
+        "(?:forme|[ée]criture)s?\\s+r[ée]duites?(?![\\p{L}\\p{N}_])",
+        "r[ée]duction\\s+d['’]une expression"
+      ],
+      "_comment": "Le verbe « réduire » au sens du calcul littéral. « Réduire une fraction », « réduire une figure » et « réduire au même dénominateur » sont d'autres gestes — seule la première variante est ici volontairement gardée hors périmètre du présent terme."
+    },
+    {
+      "id": "developper",
+      "label": "développer",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])d[ée]velopp(?:er|e|es|ez|ons|ée?s?|ement|ant)(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "factoriser",
+      "label": "factoriser",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])factoris(?:er|e|es|ez|ons|ée?s?|ation|ations|ant)(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "facteur-commun",
+      "label": "facteur commun",
+      "grade": "3e",
+      "patterns": [
+        "facteur commun"
       ]
     }
   ],

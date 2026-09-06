@@ -207,7 +207,7 @@ export default function Module03BoutonB() {
         },
         {
           num: 4,
-          title: 'Deux droites parallèles',
+          title: 'Deux droites qui ne se croisent jamais',
           subtitle: 'Toutes les positions essayées à l’étape 2 avaient la même inclinaison. Nomme ce qu’elles étaient.',
           done: parallelDone,
           content: (kit) => (

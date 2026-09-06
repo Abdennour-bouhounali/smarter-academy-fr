@@ -127,7 +127,7 @@ export default function Module02BoutonA() {
         {
           num: 2,
           title: 'Explore les trois inclinaisons',
-          subtitle: 'Une pente forte, une pente douce, une pente négative.',
+          subtitle: 'Une montée forte, une montée douce, une descente.',
           done: explored && nameDone,
           content: (kit) => (
             <div className="space-y-3">

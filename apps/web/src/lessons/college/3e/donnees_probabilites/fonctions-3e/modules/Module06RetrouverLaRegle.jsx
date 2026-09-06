@@ -180,7 +180,7 @@ export default function Module06RetrouverLaRegle() {
         {
           num: 4,
           title: 'Sur un graphique',
-          subtitle: 'L’escalier montre le coefficient ; l’axe vertical montre b.',
+          subtitle: 'L’escalier montre l’un des deux nombres ; l’axe vertical montre l’autre.',
           done: graphDone,
           content: (kit) => (
             <div className="space-y-3">

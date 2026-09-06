@@ -214,7 +214,7 @@ export default function Module03ValeurDuMilieu() {
         },
         {
           num: 4,
-          title: 'Que mesure l’étendue ?',
+          title: 'Que mesure cet écart ?',
           done: senseDone,
           content: (
             <TapQuestion

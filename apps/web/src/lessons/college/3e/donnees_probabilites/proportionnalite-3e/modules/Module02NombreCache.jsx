@@ -77,6 +77,7 @@ export default function Module02NombreCache() {
               {done1 ? (
                 <KnowledgeBrick
                   id="coefficient-proportionnalite"
+                  establishes={['coefficient-lineaire']}
                   variant="new"
                   lead={<>Le même nombre dans les trois colonnes : <strong>{formatDec(K)}</strong>. Il ne dépend pas de la colonne, et il porte un nom.</>}
                 />

@@ -38,7 +38,9 @@ describe('flux d’exposition — l’ordre que l’élève rencontre vraiment',
     expect(bySlot['q.prompt']).toBe('demand');
     expect(bySlot['q.option']).toBe('demand');
     expect(bySlot['q.explain']).toBe('postAnswer');
-    expect(bySlot['step.title']).toBe('teaching');
+    // Un titre d'étape est lisible AVANT que l'étape ne s'ouvre (StepCard rend
+    // le titre dans son talon verrouillé) : il annonce, il n'enseigne pas.
+    expect(bySlot['step.title']).toBe('preview');
     expect(bySlot['footer']).toBe('teaching');
     expect(bySlot['brick.item']).toBe('brick');
   });
@@ -164,5 +166,17 @@ describe('lexique — conventions', () => {
 
   it('chaque terme déclare un niveau connu', () => {
     for (const t of LEXICON.terms) expect(LEXICON.gradeOrder).toContain(t.grade);
+  });
+});
+
+describe('titre d’étape — une annonce, pas un enseignement', () => {
+  it('un mot nommé dans un titre verrouillé est signalé', () => {
+    const r = audit('lesson-broken');
+    const codes = r.findings.map((f) => f.code);
+    const preview = codes.some((c) => c === 'M_NAMED_IN_LOCKED_TITLE' || c === 'H_NAMED_ONLY_IN_TITLE');
+    // La fixture cassée intitule son étape 3 « Enfin la leçon » : aucun terme du
+    // lexique n'y est nommé, donc rien à signaler ici — le test vérifie surtout
+    // que la règle ne se déclenche pas à tort.
+    expect(preview).toBe(false);
   });
 });

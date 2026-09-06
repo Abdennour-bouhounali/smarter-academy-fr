@@ -4,8 +4,11 @@
 // This is the model behind the knowledge-before-demand law
 // (docs/architecture/KNOWLEDGE_DEPENDENCY.md):
 //
-//   teaching  brief · intro · step title/subtitle · step content · gated
-//             reveal · footer            → may establish a concept
+//   teaching  brief · intro · step content · gated reveal · footer
+//                                        → may establish a concept
+//   preview   step title/subtitle        → LISIBLE alors que l'étape est encore
+//             verrouillée (StepCard rend le titre dans son talon) : cela
+//             annonce, cela n'enseigne pas.
 //   brick     <KnowledgeBrick id>        → establishes it, by declaration
 //   jit       q.above · q.intro          → visible at the moment of demand
 //   demand    prompt · options · rows    → the student must already know it
@@ -28,7 +31,10 @@ const QUESTION_COMPONENTS = new Set(['TapQuestion', 'BatchChoiceQuestion', 'Nume
 const BRICK = 'KnowledgeBrick';
 
 const KIND_BY_SLOT = {
-  brief: 'teaching', intro: 'teaching', 'step.title': 'teaching', 'step.subtitle': 'teaching',
+  brief: 'teaching', intro: 'teaching',
+  // Un titre et un sous-titre d'étape sont affichés AVANT que l'étape ne
+  // s'ouvre : ils ne peuvent donc pas établir une notion, seulement l'annoncer.
+  'step.title': 'preview', 'step.subtitle': 'preview',
   'step.content': 'teaching', footer: 'teaching', gated: 'teaching',
   'brick.lead': 'brick', 'brick.item': 'brick', 'brick.tryit': 'teaching',
   'q.intro': 'jit', 'q.above': 'jit', 'boss.extra': 'jit',
