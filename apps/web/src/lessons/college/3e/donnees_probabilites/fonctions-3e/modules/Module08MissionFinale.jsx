@@ -165,7 +165,7 @@ const EPREUVES = [
     options: ['f(x) = 6x', 'f(x) = 6x + 1', 'f(x) = x² ', 'f(x) = 6'],
     cols: 2,
     correct: 0,
-    explain: "Une fonction linéaire s'écrit ax, sans terme constant : sa droite passe par l'origine. 6x + 1 est affine sans être linéaire, et 6 est une fonction constante (affine avec a = 0).",
+    explain: "Une fonction linéaire s'écrit ax, sans rien qui s'ajoute : sa droite passe par l'origine. 6x + 1 est affine sans être linéaire, et 6 est une fonction constante (affine avec a = 0).",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-3e_P9', '3e_fonctions-3e_P10'] },
   },
   {

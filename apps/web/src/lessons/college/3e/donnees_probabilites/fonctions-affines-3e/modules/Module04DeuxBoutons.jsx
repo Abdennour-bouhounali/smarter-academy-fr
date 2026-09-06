@@ -262,7 +262,7 @@ export default function Module04DeuxBoutons() {
                 cols={2}
                 requires={['mem-f0-egale-b', 'ordonnee-origine']}
                 explain="f(0) = −4 × 0 + 7 = 7. L’image de 0 est toujours b : c’est le raccourci le plus utile de la leçon."
-                explainWrong="Remplace x par 0 : le terme en x disparaît et il ne reste que b."
+                explainWrong="Remplace x par 0 : la partie qui multiplie x disparaît et il ne reste que b."
                 solved={zeroDone}
                 onAnswered={(ok) => { setZeroDone(true); kit.react(ok); }}
               />

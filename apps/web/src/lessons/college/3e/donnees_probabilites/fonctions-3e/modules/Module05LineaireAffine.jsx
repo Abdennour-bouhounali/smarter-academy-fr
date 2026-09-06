@@ -164,7 +164,7 @@ export default function Module05LineaireAffine() {
                 intro={<p className="text-sm text-slate-600">Classe chaque écriture.</p>}
                 rows={[
                   { id: 'r1', label: 'f(x) = 5x', options: ['linéaire', 'affine non linéaire', 'ni l’une ni l’autre'], correct: 0,
-                    correction: 'Pas de terme constant : c’est linéaire (et donc aussi affine).' },
+                    correction: 'Rien ne s’ajoute après le × 5 : c’est linéaire (et donc aussi affine).' },
                   { id: 'r2', label: 'f(x) = 5x − 2', options: ['linéaire', 'affine non linéaire', 'ni l’une ni l’autre'], correct: 1,
                     correction: 'Le « − 2 » décale la droite : affine, mais pas linéaire.' },
                   { id: 'r3', label: 'f(x) = x²', options: ['linéaire', 'affine non linéaire', 'ni l’une ni l’autre'], correct: 2,
