@@ -67,6 +67,29 @@ export const LESSON_KNOWLEDGE = {
         ),
       },
       {
+        id: 'mem-numerateur-denominateur',
+        type: 'memoriser',
+        title: '⭐ Le haut déplace le point, le bas ne le déplace pas',
+        summary: 'Le numérateur compte les parts prises ; le dénominateur dit seulement leur taille.',
+        body: (
+          <div className="space-y-3">
+            <div className="rounded-xl bg-rose-50 border-2 border-rose-200 p-4 space-y-2 text-center">
+              <div className="text-base font-black text-rose-700">
+                changer le BAS = changer le nom
+              </div>
+              <div className="text-base font-black text-rose-700">
+                changer le HAUT = changer le nombre
+              </div>
+            </div>
+            <p>C’est la raison pour laquelle on a le droit de re-découper une fraction autant qu’on
+            veut : tant qu’on multiplie le haut <em>et</em> le bas, on ne touche qu’à l’écriture.</p>
+            <p className="text-xs text-slate-500">Toucher au numérateur seul, en revanche, donne un
+            autre nombre — c’est l’erreur de celui qui « simplifie » 3/4 en 3/2.</p>
+            <Souvenir>les deux prises de la barre : le peigne, puis le bord colorié.</Souvenir>
+          </div>
+        ),
+      },
+      {
         id: 'signe-fraction',
         type: 'regles',
         title: 'Où placer le signe moins',

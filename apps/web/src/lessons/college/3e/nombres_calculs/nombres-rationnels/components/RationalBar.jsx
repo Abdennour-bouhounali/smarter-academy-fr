@@ -266,7 +266,8 @@ export default function RationalBar({
           {canDrag && (
             <>
               <rect
-                x={PAD} y={8} width={W - 2 * PAD} height={BAR_H}
+                x={PAD} y={8 - Math.max(0, (grip - BAR_H) / 2)}
+                width={W - 2 * PAD} height={Math.max(BAR_H, grip)}
                 fill="transparent" cursor="ew-resize"
                 role="slider" tabIndex={0}
                 aria-label={`Nombre de parts : glisse pour couper plus fin ou regrouper. Actuellement ${v.den} parts.`}

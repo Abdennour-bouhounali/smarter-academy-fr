@@ -111,8 +111,39 @@ async function run() {
     const x3 = page.locator('button[aria-label^="Couper chaque part en 3"]').first();
 
     check('M1: re-cut chips rendered', await x2.isVisible());
-    await x2.click(); await page.waitForTimeout(300);   // 6/8
-    await x2.click(); await page.waitForTimeout(500);   // 12/16
+
+    // ── Le geste signature : GLISSER sur la figure elle-même. ──────────
+    // Le peigne change l'écriture ; le marqueur, lui, ne doit pas bouger d'un
+    // pixel. C'est toute la leçon, et c'est vérifiable au pixel près.
+    const bar = page.locator('[data-rb-num]').first();
+    const readBar = async () => ({
+      num: Number(await bar.getAttribute('data-rb-num')),
+      den: Number(await bar.getAttribute('data-rb-den')),
+    });
+    const markerX = () => page.locator('svg circle').first().getAttribute('cx');
+
+    check('M1: the figure itself carries two drag handles', (await page.locator('svg [role="slider"]').count()) === 2);
+
+    const beforeDrag = await readBar();
+    const beforeMark = await markerX();
+    const comb = page.locator('svg [role="slider"]').first();
+    const cb = await comb.boundingBox();
+    await page.mouse.move(cb.x + cb.width * 0.3, cb.y + cb.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(cb.x + cb.width * 0.75, cb.y + cb.height / 2, { steps: 12 });
+    await page.mouse.up();
+    await page.waitForTimeout(400);
+    const afterDrag = await readBar();
+    const afterMark = await markerX();
+
+    check('M1: dragging the comb re-writes the fraction',
+      afterDrag.den !== beforeDrag.den, `${beforeDrag.num}/${beforeDrag.den} → ${afterDrag.num}/${afterDrag.den}`);
+    check('M1: … and the marker does NOT move — the number is unchanged',
+      afterMark === beforeMark && (afterDrag.num / afterDrag.den) === (beforeDrag.num / beforeDrag.den),
+      `marker ${beforeMark} → ${afterMark}`);
+
+    await x2.click(); await page.waitForTimeout(300);
+    await x2.click(); await page.waitForTimeout(500);
     const after = await body(page);
     check('M1: signature manipulation completes on 3 writings', /écritures différentes/i.test(after), after.slice(0, 400));
     check('M1: decimal value shown and unchanged', /0,75/.test(after), after.slice(0, 400));
@@ -130,8 +161,13 @@ async function run() {
     const batch = await body(page);
     check('M1: batch correction reveals the maths after a wrong row', /1,33|autre point|valeur décimale/i.test(batch), batch.slice(0, 500));
 
-    // The « rationnel » vocabulary is named only AFTER the gesture (step 3).
-    check('M1: rule named after the gesture', batch.indexOf('nombre rationnel') > batch.indexOf('écritures différentes'));
+    // The « rationnel » vocabulary is named only AFTER the gesture: the word
+    // must NOT be on the page while the student is still manipulating. It is
+    // posed by the brick of a later step, which the sequential unlock keeps
+    // out of reach until the manipulations are done — c'est le contrat
+    // « connaissances avant la demande » lu à l'endroit, dans le temps.
+    check('M1: « rationnel » is not named while the student is still manipulating',
+      !/nombre rationnel/i.test(batch) && /écritures différentes/i.test(batch), batch.slice(0, 400));
     await ctx.close();
   }
 
