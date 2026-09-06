@@ -21,17 +21,39 @@ async function tapTargetsOk(page, scope) {
 {
   const { ctx, page } = await freshPage(null);
   await page.goto(`${LESSON}/1`, { waitUntil: 'networkidle' });
-  await page.waitForSelector('text=Le coffre aux nombres');
+  await page.waitForSelector('text=Le laboratoire des cartes');
   check('mobile m1: no horizontal scroll', await noHorizontalScroll(page));
   const t = await tapTargetsOk(page, page.locator('main'));
   check('mobile m1: all tap targets ≥ 40px', t.ok, JSON.stringify(t.small));
-  for (const v of ['8', '42', '307', '2.450', '18.700', '305.000']) await page.getByRole('button', { name: new RegExp(`^Placer ${v}$`) }).tap();
-  await page.getByRole('button', { name: 'Vérifier mon rangement' }).tap();
-  await page.waitForTimeout(500);
-  check('mobile m1: step1 solved via tap', (await page.getByText("termine l'étape précédente").count()) === 1);
-  await S(page, 2).getByRole('button', { name: 'Le nombre de chiffres du nombre' }).tap();
+  // Step 1 — cartes-chiffres : poser (tap), échanger (tap), max puis min.
+  for (const d of [3, 9, 1, 2]) await S(page, 1).getByRole('button', { name: `Poser la carte ${d}` }).tap();
+  await S(page, 1).getByRole('button', { name: 'Case des milliers : 3' }).tap();
+  await S(page, 1).getByRole('button', { name: 'Case des centaines : 9' }).tap();
+  await S(page, 1).getByRole('button', { name: 'Case des dizaines : 1' }).tap();
+  await S(page, 1).getByRole('button', { name: 'Case des unités : 2' }).tap();
+  await page.waitForTimeout(300);
+  check('mobile m1: max reached via tap', await S(page, 1).getByText(/Défi 2/).isVisible().catch(() => false));
+  await S(page, 1).getByRole('button', { name: 'Case des milliers : 9' }).tap();
+  await S(page, 1).getByRole('button', { name: 'Case des unités : 1' }).tap();
+  await S(page, 1).getByRole('button', { name: 'Case des centaines : 3' }).tap();
+  await S(page, 1).getByRole('button', { name: 'Case des dizaines : 2' }).tap();
   await page.waitForTimeout(400);
-  check('mobile m1: tap = answer (feedback shown)', await S(page, 2).getByText(/ordre de grandeur/).first().isVisible().catch(() => false));
+  check('mobile m1: step1 solved via tap', (await page.getByText("termine l'étape précédente").count()) === 1);
+  // Step 2 — le duel : prédiction (tap), B rangé au plus petit, question de fin.
+  await S(page, 2).getByRole('button', { name: 'B, avec ses 5 cartes' }).tap();
+  for (const d of [5, 4, 3, 2, 1]) await S(page, 2).getByRole('button', { name: `B — Poser la carte ${d}` }).tap();
+  await S(page, 2).getByRole('button', { name: 'B — Case des dizaines de milliers : 5' }).tap();
+  await S(page, 2).getByRole('button', { name: 'B — Case des unités : 1' }).tap();
+  await S(page, 2).getByRole('button', { name: 'B — Case des milliers : 4' }).tap();
+  await S(page, 2).getByRole('button', { name: 'B — Case des dizaines : 2' }).tap();
+  await page.waitForTimeout(400);
+  await S(page, 2).getByRole('button', { name: 'Avec une carte de plus, B gagne toujours, même avec des cartes plus faibles.' }).tap();
+  await page.waitForTimeout(400);
+  check('mobile m1: tap = answer (prediction quoted)', await S(page, 2).getByText(/Ta prédiction/).first().isVisible().catch(() => false));
+  // Step 3 — transfert : les six étiquettes, puis le piège.
+  for (const v of ['8', '42', '307', '2.450', '18.700', '305.000']) await S(page, 3).getByRole('button', { name: new RegExp(`^Placer ${v}$`) }).tap();
+  await S(page, 3).getByRole('button', { name: 'Vérifier mon rangement' }).tap();
+  await page.waitForTimeout(500);
   await S(page, 3).getByRole('button', { name: /12.000 est le plus grand/ }).tap();
   await page.waitForTimeout(500);
   check('mobile m1: all done, next enabled', await page.getByRole('button', { name: /Module suivant/ }).last().isEnabled().catch(() => false));
@@ -45,12 +67,20 @@ async function tapTargetsOk(page, scope) {
 {
   const { ctx, page } = await freshPage(['1', '2', '3']);
   await page.goto(`${LESSON}/4`, { waitUntil: 'networkidle' });
-  await page.waitForSelector('text=La valeur de chaque chiffre');
+  await page.waitForSelector('text=Déplace le chiffre 8');
+  check('mobile m4: no horizontal scroll on DigitMover', await noHorizontalScroll(page));
+  await S(page, 1).getByRole('button', { name: 'Déplacer le chiffre vers la gauche' }).tap();
+  await S(page, 1).getByRole('button', { name: 'Déplacer le chiffre vers la gauche' }).tap();
+  await S(page, 1).getByRole('button', { name: 'Déplacer le chiffre vers la gauche' }).tap();
+  await page.waitForTimeout(300);
+  check('mobile m4: 4 cases visited via tap', await S(page, 1).getByText(/8 000/).first().isVisible().catch(() => false));
+  check('mobile m4: step 2 unlocked', (await page.getByText("termine l'étape précédente").count()) === 2);
+  await page.screenshot({ path: SHOT_DIR + 'mob-m4-mover.png', fullPage: true });
   check('mobile m4: no page horizontal scroll with 7-col table', await noHorizontalScroll(page));
-  const cell = S(page, 1).getByRole('button', { name: 'Chiffre 8, position Dizaines de milliers' }).last();
+  const cell = S(page, 2).getByRole('button', { name: 'Chiffre 8, position Dizaines de milliers' }).last();
   await cell.scrollIntoViewIfNeeded(); await cell.tap(); await page.waitForTimeout(200);
-  await S(page, 1).getByRole('button', { name: /^80.000$/ }).last().tap(); await page.waitForTimeout(300);
-  check('mobile m4: digit hunt via tap', await S(page, 1).getByText('Chasse 2 / 3').isVisible().catch(() => false));
+  await S(page, 2).getByRole('button', { name: /^80.000$/ }).last().tap(); await page.waitForTimeout(300);
+  check('mobile m4: digit hunt via tap', await S(page, 2).getByText('Chasse 2 / 3').isVisible().catch(() => false));
   await page.screenshot({ path: SHOT_DIR + 'mob-m4.png', fullPage: true });
   await ctx.close();
 }

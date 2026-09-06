@@ -6,8 +6,14 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * Module 0 — MISSION DE DÉPART (diagnostic, jamais bloquant).
  *
  * Teste UNIQUEMENT les prérequis déclarés — nombres relatifs, calcul numérique,
- * proportionnalité — et jamais la matière de la leçon : ni moyenne, ni médiane,
- * ni étendue, ni effectif. Aucune question ne porte de métadonnée `assessment`.
+ * rangement de nombres, proportionnalité, pourcentage — et jamais la matière de
+ * la leçon : ni moyenne, ni médiane, ni étendue, ni effectif. Aucune question ne
+ * porte de métadonnée `assessment`.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique. Ces
+ * ids sont exactement ceux de `priorKnowledge` (lesson.config.js) : un
+ * diagnostic MESURE des acquis antérieurs, il n'enseigne rien
+ * (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 
 const SKILLS = {
@@ -19,6 +25,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'st-d1',
+    requires: ['calcul-numerique'],
     skill: 'calcul',
     points: 2,
     prompt: 'Combien font 12 + 8 + 10 ?',
@@ -29,6 +36,7 @@ const QUESTIONS = [
   },
   {
     id: 'st-d2',
+    requires: ['calcul-numerique'],
     skill: 'calcul',
     points: 2,
     prompt: 'Combien font 90 ÷ 6 ?',
@@ -39,6 +47,7 @@ const QUESTIONS = [
   },
   {
     id: 'st-d3',
+    requires: ['nombres-relatifs'],
     skill: 'relatifs',
     points: 2,
     prompt: 'Que vaut 12 − 20 ?',
@@ -49,6 +58,7 @@ const QUESTIONS = [
   },
   {
     id: 'st-d4',
+    requires: ['ordre-nombres'],
     skill: 'calcul',
     points: 2,
     prompt: 'Range ces nombres du plus petit au plus grand : 15, 5, 12, 30.',
@@ -59,6 +69,7 @@ const QUESTIONS = [
   },
   {
     id: 'st-d5',
+    requires: ['proportionnalite', 'pourcentage'],
     skill: 'proportion',
     points: 2,
     prompt: 'Dans une classe de 20 élèves, 5 viennent à pied. Quelle proportion cela représente-t-il ?',

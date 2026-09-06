@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { BATTERIE } from '../components/graphData';
@@ -37,6 +38,14 @@ import { formatDec } from '@smarter-academy/core';
  *   seulement) → relier/prolonger → axes nommés.
  * Transfer: le module 2 montre que la même courbe peut mentir selon l'échelle ;
  *   le module 4 fait CHOISIR l'échelle — ici elle est donnée.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   L'ordre est : geste → brique qui nomme → essai immédiat.
+ *     étape 1  prédire depuis le tableau seul (aucune notion de la leçon exigée)
+ *     étape 2  poser les cinq points, puis brique `ligne-devient-point`
+ *     étape 3  relier, puis brique `tendance` → la prévision devient légitime
+ *     étape 4  la question FAIT TROUVER la règle des axes ; la brique
+ *              `choix-des-axes` vient après, avec son essai immédiat.
  */
 
 const DATA = BATTERIE;
@@ -58,14 +67,17 @@ export default function Module01UneImage() {
   const [emptyDone, setEmptyDone] = useState(false);
   const [extended, setExtended] = useState(false);
   const [axesDone, setAxesDone] = useState(false);
+  const [axesTryDone, setAxesTryDone] = useState(false);
+  const [pointDone, setPointDone] = useState(false);
 
   const idx = placed.length;
   const target = idx < TARGETS.length ? TARGETS[idx] : null;
-  const done2 = placed.length === TARGETS.length || revealed;
+  const placedAll = placed.length === TARGETS.length || revealed;
+  const done2 = placedAll && pointDone;
   const done3 = extended;
 
   const validate = (kit) => {
-    if (done2 || !target) return;
+    if (placedAll || !target) return;
     if (cur.x === target.x && cur.y === target.y) {
       setPlaced((p) => [...p, { x: cur.x, y: cur.y }]);
       setWrong(null);
@@ -144,6 +156,7 @@ export default function Module01UneImage() {
               cols={2}
               explain="La charge perd 20 % à chaque heure, toujours le même pas : les points vont donc s’aligner en descendant. Tu vas le vérifier en les posant."
               explainWrong="Regarde la ligne du bas : −20, −20, −20, −20. Un pas régulier vers le bas donne des points alignés qui descendent. Pose-les pour le voir."
+              requires={['tableau-de-valeurs']}
               solved={shapeDone}
               onAnswered={() => setShapeDone(true)}
             />
@@ -156,7 +169,7 @@ export default function Module01UneImage() {
           done: done2,
           content: (kit) => (
             <div className="space-y-3">
-              {table(done2 ? TARGETS.length : idx)}
+              {table(placedAll ? TARGETS.length : idx)}
               <CoordPlane
                 range={RANGE}
                 unit={UNIT}
@@ -166,17 +179,17 @@ export default function Module01UneImage() {
                 step={{ x: 1, y: Y_STEP }}
                 points={[
                   ...placed.map((p, i) => ({ id: `p${i}`, x: p.x, y: p.y, color: '#059669' })),
-                  ...(done2 ? [] : [{ id: 'M', name: 'M', x: cur.x, y: cur.y, color: '#4f46e5' }]),
+                  ...(placedAll ? [] : [{ id: 'M', name: 'M', x: cur.x, y: cur.y, color: '#4f46e5' }]),
                 ]}
-                draggableId={done2 ? null : 'M'}
+                draggableId={placedAll ? null : 'M'}
                 onPointChange={(p) => { setCur(p); setWrong(null); }}
-                target={!done2 && target && placed.length === 0 ? target : null}
+                target={!placedAll && target && placed.length === 0 ? target : null}
                 ghost={wrong ? { ...wrong.target, label: 'ici' } : null}
                 axisLabels={{ x: 'h', y: '%' }}
                 ariaLabel="Repère : placer la charge de la batterie heure par heure"
-                caption={!done2}
+                caption={!placedAll}
               />
-              {!done2 && (
+              {!placedAll && (
                 <>
                   <button
                     type="button"
@@ -209,12 +222,26 @@ export default function Module01UneImage() {
                   )}
                 </>
               )}
-              {done2 && (
-                <Feedback tone={revealed ? 'info' : 'ok'}>
-                  {revealed ? 'On te les montre. ' : 'Les cinq points sont posés. '}
-                  Chaque ligne du tableau est devenue <strong>un point</strong> — et les cinq points
-                  sont alignés en descendant, comme la ligne du bas le laissait deviner.
-                </Feedback>
+              {placedAll && (
+                <KnowledgeBrick
+                  id="ligne-devient-point"
+                  variant="new"
+                  lead={revealed
+                    ? 'On te les montre : à chaque colonne du tableau correspond un point, et un seul.'
+                    : 'Les cinq points sont posés, et ils s’alignent en descendant. Ce que tu viens de faire cinq fois a un nom.'}
+                >
+                  <TapQuestion
+                    prompt="La colonne « 3 h · 40 % » du tableau correspond à quel point ?"
+                    options={['(3 ; 40)', '(40 ; 3)', '(3 ; 3)', '(40 ; 40)']}
+                    correct={0}
+                    cols={2}
+                    requires={['ligne-devient-point', 'coordonnees', 'abscisse', 'ordonnee']}
+                    explain="L’heure se lit sur l’axe horizontal, la charge sur l’axe vertical : (3 ; 40)."
+                    explainWrong="Le premier nombre est celui de l’axe horizontal — ici l’heure."
+                    solved={pointDone}
+                    onAnswered={() => setPointDone(true)}
+                  />
+                </KnowledgeBrick>
               )}
             </div>
           ),
@@ -253,16 +280,23 @@ export default function Module01UneImage() {
                 </button>
               )}
               {joined && (
-                <TapQuestion
-                  prompt="Si la batterie continue de se vider au même rythme, quand sera-t-elle à 0 % ?"
-                  options={[`À ${EMPTY_AT} h`, 'À 6 h', 'À 4 h', 'On ne peut pas le savoir']}
-                  correct={0}
-                  cols={2}
-                  explain={`À 4 h il reste 20 %, et la charge perd 20 % par heure : 0 % à ${EMPTY_AT} h. Prolonger le trait du regard suffit — c’est ce qu’un graphique permet et qu’un tableau ne dit pas.`}
-                  explainWrong="Suis l’alignement des points jusqu’à l’axe horizontal : c’est là que la charge atteint 0 %. Prolonge le trait pour le voir."
-                  solved={emptyDone}
-                  onAnswered={() => setEmptyDone(true)}
-                />
+                <KnowledgeBrick
+                  id="tendance"
+                  variant="new"
+                  lead="Le trait relie les cinq points — et il continue tout droit dans ta tête, au-delà du dernier relevé. C’est ce prolongement qui a un nom."
+                >
+                  <TapQuestion
+                    prompt="Si la batterie continue de se vider au même rythme, quand sera-t-elle à 0 % ?"
+                    options={[`À ${EMPTY_AT} h`, 'À 6 h', 'À 4 h', 'On ne peut pas le savoir']}
+                    correct={0}
+                    cols={2}
+                    requires={['tendance', 'ligne-devient-point']}
+                    explain={`À 4 h il reste 20 %, et la charge perd 20 % par heure : 0 % à ${EMPTY_AT} h. Prolonger le trait du regard suffit — c’est ce qu’un graphique permet et qu’un tableau ne dit pas.`}
+                    explainWrong="Suis l’alignement des points jusqu’à l’axe horizontal : c’est là que la charge atteint 0 %. Prolonge le trait pour le voir."
+                    solved={emptyDone}
+                    onAnswered={() => setEmptyDone(true)}
+                  />
+                </KnowledgeBrick>
               )}
               {emptyDone && !extended && (
                 <button
@@ -286,32 +320,58 @@ export default function Module01UneImage() {
         {
           num: 4,
           title: 'Qui va où ?',
-          done: axesDone,
+          subtitle: 'Cherche d’abord la raison — la règle vient ensuite.',
+          done: axesDone && axesTryDone,
           content: (
-            <TapQuestion
-              prompt="Pourquoi le temps est-il sur l’axe horizontal, et pas la charge ?"
-              options={[
-                'Parce que la charge dépend du temps, et non l’inverse',
-                'Parce que c’est plus joli ainsi',
-                'Parce que le temps est toujours plus petit',
-                'On peut mettre l’un ou l’autre indifféremment',
-              ]}
-              correct={0}
-              cols={1}
-              explain="L’axe horizontal — les abscisses — porte la grandeur dont l’autre dépend. La charge dépend du temps écoulé, donc le temps va en abscisse et la charge en ordonnée. Échanger les deux raconterait l’histoire à l’envers."
-              explainWrong="Ce n’est pas une question de goût : c’est la dépendance entre les deux grandeurs qui décide."
-              solved={axesDone}
-              onAnswered={() => setAxesDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Pourquoi le temps est-il sur l’axe horizontal, et pas la charge ?"
+                options={[
+                  'Parce que la charge dépend du temps, et non l’inverse',
+                  'Parce que c’est plus joli ainsi',
+                  'Parce que le temps est toujours plus petit',
+                  'On peut mettre l’un ou l’autre indifféremment',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['ligne-devient-point', 'abscisse', 'ordonnee']}
+                explain="Tu l’as trouvé : c’est la dépendance entre les deux grandeurs qui décide, pas le goût."
+                explainWrong="Ce n’est pas une question de goût. Demande-toi laquelle des deux grandeurs commande l’autre."
+                solved={axesDone}
+                onAnswered={() => setAxesDone(true)}
+              />
+              {axesDone && (
+                <KnowledgeBrick
+                  id="choix-des-axes"
+                  variant="new"
+                  lead="Ce que tu viens de trouver sur la batterie vaut pour n’importe quelles deux grandeurs. Voici la règle."
+                >
+                  <TapQuestion
+                    prompt="Un plein d’essence : on note le prix payé selon le nombre de litres pris. Quelle grandeur va en abscisse ?"
+                    options={[
+                      'Le nombre de litres, car le prix en dépend',
+                      'Le prix, car c’est ce qu’on veut connaître',
+                      'Peu importe, les deux marchent',
+                    ]}
+                    correct={0}
+                    cols={1}
+                    requires={['choix-des-axes', 'abscisse']}
+                    explain="C’est le nombre de litres qui commande le prix : les litres en abscisse, le prix en ordonnée."
+                    explainWrong="Cherche laquelle des deux commande l’autre : c’est en prenant des litres qu’on fait monter le prix."
+                    solved={axesTryDone}
+                    onAnswered={() => setAxesTryDone(true)}
+                  />
+                </KnowledgeBrick>
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Un graphique montre la <strong>tendance</strong> et permet de prévoir. Encore
-          faut-il l’avoir bien construit : l’<strong>échelle</strong> peut tout changer, et
-          c’est le module suivant.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={1}>
+          Encore faut-il avoir bien construit l’image : ce que vaut un carreau, et l’endroit
+          d’où part l’axe, peuvent tout changer. C’est le module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

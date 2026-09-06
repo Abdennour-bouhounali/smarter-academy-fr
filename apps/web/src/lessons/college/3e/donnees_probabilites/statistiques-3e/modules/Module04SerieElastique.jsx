@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DotPlot from '../components/DotPlot';
@@ -28,7 +29,9 @@ import { formatDec, roundTo } from '@smarter-academy/core';
  *   qu'une valeur extrême serait « une erreur » plutôt qu'une donnée qui pèse.
  * Feedback: les écarts depuis l'état initial sont affichés en permanence, avec
  *   leur signe.
- * Formalization: la règle est nommée à l'étape 3, après l'avoir constatée.
+ * Formalization: la règle est posée par une <KnowledgeBrick> à l'étape 3, APRÈS
+ *   que la manipulation l'a fait constater — l'étape 1 (prédiction) et l'étape 2
+ *   (manipulation) n'exigent donc PAS ce qu'elles font découvrir.
  * Scaffolding: prédiction → manipulation libre → généralisation.
  * Transfer: le module 6 s'en sert pour comparer deux classes.
  */
@@ -91,6 +94,7 @@ export default function Module04SerieElastique() {
           content: (
             <TapQuestion
               prompt="Si l’élève le plus éloigné double son temps de trajet, que se passe-t-il ?"
+              requires={['moyenne', 'mediane']}
               options={[
                 'La moyenne augmente, la médiane ne bouge pas',
                 'Les deux augmentent de la même façon',
@@ -168,21 +172,39 @@ export default function Module04SerieElastique() {
           title: 'Pourquoi la médiane résiste-t-elle ?',
           done: ruleDone,
           content: (
-            <TapQuestion
-              prompt="Pourquoi la médiane ne bouge-t-elle pas quand on éloigne la plus grande valeur ?"
-              options={[
-                'Parce qu’elle ne dépend que du rang des valeurs, pas de leur taille',
-                'Parce qu’elle est toujours égale à la moyenne',
-                'Parce que la plus grande valeur est ignorée dans son calcul',
-                'C’est un hasard, avec d’autres nombres elle bougerait',
-              ]}
-              correct={0}
-              cols={1}
-              explain="La médiane est la valeur du milieu une fois la série rangée : elle regarde l’ORDRE, pas les distances. Éloigner le maximum ne change pas son rang, donc la médiane reste. La moyenne, elle, additionne toutes les valeurs : chacune pèse."
-              explainWrong="La plus grande valeur n’est pas ignorée : elle occupe toujours la dernière place. C’est justement que seule sa PLACE compte pour la médiane."
-              solved={ruleDone}
-              onAnswered={() => setRuleDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Pourquoi la médiane ne bouge-t-elle pas quand on éloigne la plus grande valeur ?"
+                options={[
+                  'Parce qu’elle ne dépend que du rang des valeurs, pas de leur taille',
+                  'Parce qu’elle est toujours égale à la moyenne',
+                  'Parce que la plus grande valeur est ignorée dans son calcul',
+                  'C’est un hasard, avec d’autres nombres elle bougerait',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['mediane', 'moyenne']}
+                explain="La médiane est la valeur du milieu une fois la série rangée : elle regarde l’ORDRE, pas les distances. Éloigner le trajet le plus long ne change pas son rang, donc elle reste. La moyenne, elle, additionne toutes les valeurs : chacune pèse."
+                explainWrong="La plus grande valeur n’est pas ignorée : elle occupe toujours la dernière place. C’est justement que seule sa PLACE compte pour la médiane."
+                solved={ruleDone}
+                onAnswered={() => setRuleDone(true)}
+              />
+              {ruleDone && (
+                <KnowledgeBrick
+                  id="influence-valeur"
+                  variant="new"
+                  lead="Tu viens de le constater sur les trois cases : voici la règle, valable pour toute série."
+                />
+              )}
+              {ruleDone && (
+                <KnowledgeBrick
+                  id="valeur-extreme"
+                  variant="new"
+                  compact
+                  lead="Et un mot pour la donnée que tu as tirée si loin des autres."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -192,6 +214,7 @@ export default function Module04SerieElastique() {
           content: (
             <TapQuestion
               prompt="Cette fois on modifie légèrement une valeur centrale, sans changer son rang. Que se passe-t-il ?"
+              requires={['influence-valeur', 'moyenne', 'mediane', 'etendue']}
               options={[
                 'La moyenne bouge un peu, la médiane peut bouger aussi',
                 'Rien ne bouge : ce n’est pas un extrême',
@@ -209,11 +232,10 @@ export default function Module04SerieElastique() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          <strong>La règle.</strong> Déplacer une valeur de Δ décale la moyenne de Δ divisé
-          par l’effectif — toujours. La médiane ne bouge que si le déplacement change l’ordre.
-          L’étendue ne bouge que si on touche un extrême.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={4}>
+          Tu sais maintenant lequel des trois bouge, et pourquoi. Reste à savoir lequel
+          <strong> choisir</strong> selon la question posée — c’est le module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

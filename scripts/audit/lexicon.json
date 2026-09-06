@@ -274,8 +274,9 @@
       "label": "coefficient (d'une fonction linéaire)",
       "grade": "3e",
       "patterns": [
-        "(?<![\\p{L}\\p{N}_])coefficients?(?![\\p{L}\\p{N}_])(?!\\s+(de proportionnalit[ée]|directeur))"
-      ]
+        "(?<![\\p{L}\\p{N}_])coefficients?(?![\\p{L}\\p{N}_])(?!\\s*(de proportionnalit[ée]|directeur|multiplicateur|est|\\?|:|,|\\.|$))"
+      ],
+      "_comment": "Le mot « coefficient » employé SEUL, comme notion à part entière. Toutes ses formes qualifiées — directeur, de proportionnalité, multiplicateur — sont d'autres entrées ; « le coefficient a » d'une affine relève de coefficient-directeur, et la lettre disparaissant du texte (la notation est extraite à part), on écarte aussi le coefficient suivi d'une ponctuation ou d'un mot qui le qualifie."
     },
     {
       "id": "pente",
@@ -306,10 +307,11 @@
       "label": "côté opposé",
       "grade": "3e",
       "patterns": [
-        "c[ôo]t[ée]s? oppos[ée]s?",
-        "(?<![\\p{L}\\p{N}_])l['’]oppos[ée](?![\\p{L}\\p{N}_])",
-        "(?<![\\p{L}\\p{N}_])OPPOS[ÉE](?![\\p{L}\\p{N}_])"
-      ]
+        "(?<![\\p{L}\\p{N}_])c[ôo]t[ée]s? oppos[ée]s?(?![\\p{L}\\p{N}_])(?!\\s+[àa] l['’]angle droit)",
+        "(?<![\\p{L}\\p{N}_])OPPOS[ÉE](?![\\p{L}\\p{N}_])\\s+[àa]\\s+l['’]angle(?!\\s+droit)",
+        "(?<![\\p{L}\\p{N}_])l['’]oppos[ée](?![\\p{L}\\p{N}_])(?=\\s*(÷|/|,|\\.|\\set\\s|\\squi\\s|\\sne\\s|\\stouche))"
+      ],
+      "_comment": "Le « côté opposé » de la trigonométrie se dit d'un ANGLE AIGU étudié. « opposé à l'angle droit » définit l'hypoténuse, « s'opposer à » est un verbe, et « opposés par le sommet » désigne des angles : trois emplois qu'il ne faut pas confondre."
     },
     {
       "id": "cote-adjacent",
@@ -724,6 +726,33 @@
       "patterns": [
         "(?<![\\p{L}\\p{N}_])ordre croissant(?![\\p{L}\\p{N}_])",
         "(?<![\\p{L}\\p{N}_])ordre d[ée]croissant(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "axe-tronque",
+      "label": "axe tronqué / troncature",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])axes?\\s+tronqu[ée]s?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])troncatures?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "tendance",
+      "label": "tendance d'un nuage de points",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])tendances?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "relier-ou-non",
+      "label": "relier les points (grandeur continue ou discrète)",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])vari[ea]\\s+contin[uû]",
+        "(?<![\\p{L}\\p{N}_])continûment(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])grandeurs?\\s+discr[èe]tes?(?![\\p{L}\\p{N}_])"
       ]
     }
   ],

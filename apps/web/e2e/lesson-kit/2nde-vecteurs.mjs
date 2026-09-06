@@ -11,7 +11,7 @@ const KEY = 'u_anon_smarter_lesson_vecteurs-2nde';
 const M = {
   diag: `${LESSON}/mission-de-depart`, m1: `${LESSON}/le-robot-du-depot`, m2: `${LESSON}/le-meme-vecteur`,
   m3: `${LESSON}/deux-nombres-suffisent`, m4: `${LESSON}/enchainer-les-deplacements`, m5: `${LESSON}/etirer-inverser`,
-  m6: `${LESSON}/mesurer-un-vecteur`, m7: `${LESSON}/a-retenir`, m8: `${LESSON}/problemes-de-geometrie`,
+  m6: `${LESSON}/mesurer-un-vecteur`, m7: `${LESSON}/problemes-de-geometrie`,
   boss: `${LESSON}/mission-finale-le-depot`,
 };
 const o = (browser, url, seed, extra = {}) => open(browser, url, { key: KEY, completedModules: seed, ...extra });
@@ -46,7 +46,7 @@ const browser = await launch();
 {
   const { ctx, page } = await o(browser, LESSON, null, { tag: 'index' });
   const b = await body(page);
-  check('index: loads with all modules and 90 min', /robot du dépôt/i.test(b) && /Mission finale/.test(b) && /90\s*min/.test(b) && !/NaN/.test(b));
+  check('index: loads with all modules and 90 min', /robot du dépôt/i.test(b) && /Mission finale/.test(b) && /84\s*min/.test(b) && !/NaN/.test(b));
   await ctx.close();
 }
 {
@@ -246,34 +246,23 @@ const browser = await launch();
   await ctx.close();
 }
 
-/* M7 — formalisation */
+/* M7 — problems */
 {
   const { ctx, page } = await o(browser, M.m7, ['0', '1', '2', '3', '4', '5', '6'], { tag: 'm7' });
-  await batchFirst(page, '#step-1', 5);
-  await tap(page, '(−3 ; 2)', '#step-2');                             // wrong
-  check('M7: coefficient of i explained', /coefficient de i/.test(await body(page)));
-  await batchFirst(page, '#step-3', 4);
-  check('M7: complete', await nextEnabled(page));
-  await ctx.close();
-}
-
-/* M8 — problems */
-{
-  const { ctx, page } = await o(browser, M.m8, ['0', '1', '2', '3', '4', '5', '6', '7'], { tag: 'm8' });
   const issues = [];
   await audit(page, issues);
-  check('M8: gap to AB quantified', /Il manque/.test(await body(page)));
+  check('M7: gap to AB quantified', /Il manque/.test(await body(page)));
   await press(page, '#step-1', 'Diminuer D — x', 4, issues);
   await press(page, '#step-1', 'Diminuer D — y', 6, issues);
-  check('M8: parallelogram closed, D computed', /se ferme/.test(await body(page)) && /\(−1 ; −5\)/.test(await body(page)));
+  check('M7: parallelogram closed, D computed', /se ferme/.test(await body(page)) && /\(−1 ; −5\)/.test(await body(page)));
   await fillLast(page, '#step-2', '6');                               // total instead of v
-  check('M8: total-instead-of-v trap', /trajet TOTAL/.test(await body(page)));
+  check('M7: total-instead-of-v trap', /trajet TOTAL/.test(await body(page)));
   await fillLast(page, '#step-2', '3');
-  check('M8: sign trap on v', /redescend|Signe/.test(await body(page)));
+  check('M7: sign trap on v', /redescend|Signe/.test(await body(page)));
   await tapOption(page, '#step-3', 1);                                // wrong
-  check('M8: alignment proved by colinearity', /AC = 3·AB/.test(await body(page)));
-  check('M8: complete', await nextEnabled(page));
-  check('M8: layout safe', issues.length === 0, issues.slice(0, 3).join(' | '));
+  check('M7: alignment proved by colinearity', /AC = 3·AB/.test(await body(page)));
+  check('M7: complete', await nextEnabled(page));
+  check('M7: layout safe', issues.length === 0, issues.slice(0, 3).join(' | '));
   await ctx.close();
 }
 
@@ -286,11 +275,11 @@ const browser = await launch();
   check('boss: score', /\/ 10/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
-  check('boss: synthèse frozen depot', (await page.locator('svg[aria-label^="Le dépôt"]').count()) === 1);
+  check('boss: synthèse = the COMPLETE knowledge map (29 cards, drawer view inline)', (await page.locator('[data-knowledge-snapshot="complete"] [data-km-completeview] [data-km-item]').count()) === 29 && (await page.locator('svg[aria-label^="Le dépôt"]').count()) === 0);
   const lay = await layoutAudit(page);
   check('boss: synthèse lays out', lay.length === 0, lay.join(' | '));
   const completed = await readCompleted(page, KEY);
-  check('boss: completed in storage', Array.isArray(completed) && completed.includes('9'));
+  check('boss: completed in storage', Array.isArray(completed) && completed.includes('8'));
   await page.reload({ waitUntil: 'domcontentloaded' }); await settle(page, 1500);
   check('boss: reload restores review', /Résultat du défi/.test(await body(page)));
   await ctx.close();

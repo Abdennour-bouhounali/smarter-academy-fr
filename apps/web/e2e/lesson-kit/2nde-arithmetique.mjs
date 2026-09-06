@@ -10,8 +10,8 @@ const LESSON = `${BASE}/courses/lycee/seconde/nombres_calculs/arithmetique-2nde`
 const KEY = 'u_anon_smarter_lesson_arithmetique-2nde';
 const M = {
   diag: `${LESSON}/mission-de-depart`, m1: `${LESSON}/les-paquets-et-les-restes`, m2: `${LESSON}/pair-impair-et-la-lettre`,
-  m3: `${LESSON}/les-criteres-demontres`, m4: `${LESSON}/multiples-communs`, m5: `${LESSON}/a-retenir`,
-  m6: `${LESSON}/demontrer`, boss: `${LESSON}/mission-finale-latelier`,
+  m3: `${LESSON}/les-criteres-demontres`, m4: `${LESSON}/multiples-communs`,
+  m5: `${LESSON}/demontrer`, boss: `${LESSON}/mission-finale-latelier`,
 };
 const o = (browser, url, seed, extra = {}) => open(browser, url, { key: KEY, completedModules: seed, ...extra });
 const audit = async (page, issues) => { issues.push(...(await layoutAudit(page)), ...(await aspectAudit(page)), ...(await domOverflow(page))); };
@@ -121,40 +121,24 @@ const browser = await launch();
   await ctx.close();
 }
 
-/* M5 */
+/* M5 — proofs */
 {
   const { ctx, page } = await o(browser, M.m5, ['0', '1', '2', '3', '4'], { tag: 'm5' });
-  const rows = page.locator('#step-1 div[role="group"]');
-  for (let i = 0; i < 4; i += 1) await rows.nth(i).locator('button').first().click();
-  await settle(page);
-  check('M5: 0 is a multiple of everything', /0 est multiple de tout entier/.test(await body(page)));
-  await tapOption(page, '#step-2', 1);                               // wrong
-  check('M5: 5k + 5k′ explained', /5\(k \+ k′\)/.test(await body(page)));
-  const rows3 = page.locator('#step-3 div[role="group"]');
-  for (let i = 0; i < 4; i += 1) await rows3.nth(i).locator('button').first().click();
-  await settle(page);
-  check('M5: complete', await nextEnabled(page));
-  await ctx.close();
-}
-
-/* M6 — proofs */
-{
-  const { ctx, page } = await o(browser, M.m6, ['0', '1', '2', '3', '4', '5'], { tag: 'm6' });
   const place = async (t) => { await page.locator(`#step-1 button[aria-label^="Placer : ${t}"]`).click(); await page.waitForTimeout(100); };
   await place('Donc a + b = 7'); await place('Soit a et b'); await place('Alors a = 7k'); await place('Or k + k’'); await place('Donc a + b est');
   await page.locator('#step-1 button:has-text("Vérifier l’ordre")').click(); await settle(page);
-  check('M6: break point named', /L’ordre casse à la ligne 1/.test(await body(page)));
+  check('M5: break point named', /L’ordre casse à la ligne 1/.test(await body(page)));
   for (const t of ['Donc a + b = 7', 'Soit a et b', 'Alors a = 7k', 'Or k + k’', 'Donc a + b est']) await page.locator(`#step-1 button[aria-label^="Retirer : ${t}"]`).click().catch(() => {});
   await place('Soit a et b'); await place('Alors a = 7k'); await place('Donc a + b = 7'); await place('Or k + k’'); await place('Donc a + b est');
   await page.locator('#step-1 button:has-text("Vérifier l’ordre")').click(); await settle(page);
-  check('M6: proof in order', /Démonstration en ordre/.test(await body(page)));
+  check('M5: proof in order', /Démonstration en ordre/.test(await body(page)));
   await tapOption(page, '#step-2', 1);                               // wrong on purpose
-  check('M6: 3(n + 1) explained', /3 × \(un entier\)/.test(await body(page)));
+  check('M5: 3(n + 1) explained', /3 × \(un entier\)/.test(await body(page)));
   await tapOption(page, '#step-3', 1);                               // wrong
-  check('M6: examples are not a proof', /des exemples ne sont pas une preuve|deux consécutifs/.test(await body(page)));
+  check('M5: examples are not a proof', /des exemples ne sont pas une preuve|deux consécutifs/.test(await body(page)));
   await fillOk(page, '96', '#step-4');                                // wrong on purpose
-  check('M6: 96 targeted', /pas le PREMIER/.test(await body(page)));
-  check('M6: complete', await nextEnabled(page));
+  check('M5: 96 targeted', /pas le PREMIER/.test(await body(page)));
+  check('M5: complete', await nextEnabled(page));
   await ctx.close();
 }
 
@@ -167,9 +151,9 @@ const browser = await launch();
   check('boss: score', /\/ 10/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
-  check('boss: synthèse shows the frozen split', /9 × 523/.test(await body(page)));
+  check('boss: synthèse IS the complete knowledge map', /Ma carte des connaissances/.test(await body(page)) && (await page.locator('[data-knowledge-snapshot="complete"] [data-km-item]').count()) === 16);
   const completed = await readCompleted(page, KEY);
-  check('boss: completed in storage', Array.isArray(completed) && completed.includes('7'));
+  check('boss: completed in storage', Array.isArray(completed) && completed.includes('6'));
   await page.reload({ waitUntil: 'domcontentloaded' }); await settle(page, 1500);
   check('boss: reload restores review', /Résultat du défi/.test(await body(page)));
   await ctx.close();

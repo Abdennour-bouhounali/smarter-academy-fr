@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DotPlot from '../components/DotPlot';
 import { mean, median, range, effectifs, weightedMean } from '../components/statUtils';
@@ -25,7 +25,13 @@ import { formatDec, roundTo } from '@smarter-academy/core';
  * Misconception targeted: croire qu'un indicateur est « le bon » dans l'absolu ;
  *   et calculer une moyenne en oubliant les effectifs.
  * Feedback: le lot révèle la bonne réponse de chaque ligne.
- * Formalization: c'est le cœur du module.
+ * Formalization: c'est le cœur du module — mais plus par un « 🔑 À retenir »
+ *   recopié à la main en intro, qui redéfinissait trois notions déjà éprouvées
+ *   aux modules 2, 3 et 4. L'intro montre les trois repères SUR LE MÊME AXE
+ *   (c'est le geste : ils ne tombent pas au même endroit) ; le mot qui les
+ *   rassemble, « indicateur », est posé par une brique juste après. La moyenne
+ *   pondérée, jamais nommée jusqu'ici alors que l'étape 2 l'exige, a désormais
+ *   la sienne.
  * Scaffolding: synthèse visuelle → moyenne pondérée → choix d'indicateur.
  * Transfer: le module 6 met ce choix à l'épreuve sur deux classes.
  */
@@ -70,25 +76,19 @@ export default function Module05TroisIndicateurs() {
             showMean
             showMedian
             showRange
-            ariaLabel="Axe : les trois indicateurs de la série des trajets"
+            ariaLabel="Axe : les trois repères de la série des trajets"
           />
-          <div className="rounded-2xl border-2 border-slate-900 bg-slate-900 text-white p-4 space-y-2">
-            <p className="font-bold">🔑 À retenir</p>
-            <ul className="text-sm space-y-1 list-disc list-inside">
-              <li>
-                La <strong>moyenne</strong> ({formatDec(M)} min) partage équitablement : somme
-                des valeurs divisée par l’effectif. Toute valeur pèse.
-              </li>
-              <li>
-                La <strong>médiane</strong> ({formatDec(MED)} min) partage l’effectif : autant
-                en dessous qu’au-dessus. Seul l’ordre compte.
-              </li>
-              <li>
-                L’<strong>étendue</strong> ({formatDec(RNG)} min) mesure la dispersion : écart
-                entre le maximum et le minimum.
-              </li>
-            </ul>
-          </div>
+          <KnowledgeBrick
+            id="indicateur"
+            variant="new"
+            lead={(
+              <>
+                Les trois repères sont enfin sur le même axe : {formatDec(M)} min,{' '}
+                {formatDec(MED)} min et un écart de {formatDec(RNG)} min. Trois nombres pour une
+                seule série — et un mot pour les désigner tous les trois.
+              </>
+            )}
+          />
         </div>
       }
       steps={[
@@ -99,6 +99,7 @@ export default function Module05TroisIndicateurs() {
           content: (
             <TapQuestion
               prompt={<>Ici la moyenne ({formatDec(M)} min) dépasse la médiane ({formatDec(MED)} min). Pourquoi ?</>}
+              requires={['moyenne', 'mediane', 'valeur-extreme', 'indicateur']}
               options={[
                 'Quelques trajets très longs tirent la moyenne vers le haut',
                 'Il y a plus d’élèves au-dessus de la médiane',
@@ -119,8 +120,14 @@ export default function Module05TroisIndicateurs() {
           title: 'Calculer avec les effectifs',
           done: weightDone,
           content: (
+            <KnowledgeBrick
+              id="moyenne-ponderee"
+              variant="new"
+              lead="Ranger la série en tableau la raccourcit — mais on ne peut plus additionner les temps un par un."
+            >
             <TapQuestion
-              prompt="Pour calculer la moyenne à partir du tableau d’effectifs, que faut-il faire ?"
+              prompt="Applique la méthode au tableau ci-dessous. Que faut-il faire exactement ?"
+              requires={['moyenne-ponderee', 'calcul-moyenne', 'serie-statistique']}
               above={
                 <div className="rounded-xl bg-slate-50 border border-slate-200 p-2 overflow-x-auto">
                   <table className="w-full text-sm">
@@ -151,6 +158,7 @@ export default function Module05TroisIndicateurs() {
               solved={weightDone}
               onAnswered={() => setWeightDone(true)}
             />
+            </KnowledgeBrick>
           ),
         },
         {
@@ -158,8 +166,10 @@ export default function Module05TroisIndicateurs() {
           title: 'Quel indicateur pour quelle question ?',
           done: chooseDone,
           content: (
+            <div className="space-y-3">
             <BatchChoiceQuestion
               intro={<p className="text-sm text-slate-600">À chaque question, l’indicateur qui y répond.</p>}
+              requires={['indicateur', 'moyenne', 'mediane', 'etendue', 'valeur-extreme']}
               rows={[
                 { id: 'q1', label: '« Combien de temps met un élève typique ? »',
                   options: ['moyenne', 'médiane', 'étendue'], correct: 1,
@@ -182,14 +192,22 @@ export default function Module05TroisIndicateurs() {
               solved={chooseDone}
               onAnswered={() => setChooseDone(true)}
             />
+            {chooseDone && (
+              <KnowledgeBrick
+                id="choisir-indicateur"
+                variant="new"
+                lead="Quatre questions, trois indicateurs, aucun « meilleur » : voici la règle de décision que tu viens d’appliquer."
+              />
+            )}
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Un indicateur résume — donc il <strong>perd</strong> de l’information. Le choisir,
-          c’est décider quelle information on accepte de perdre.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={5}>
+          Un indicateur résume, donc il perd de l’information. Le module suivant montre à quel
+          point : deux classes que <strong>deux</strong> indicateurs n’arrivent pas à distinguer.
+        </KnowledgeSnapshot>
       }
     />
   );

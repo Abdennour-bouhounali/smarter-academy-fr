@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import TruncatedLine from '../components/TruncatedLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -38,6 +39,13 @@ import { formatDec } from '@smarter-academy/core';
  * NOTE — le module « le graphique qui ment » de 6e traitait l'axe tronqué. Ici
  * on ajoute le défaut proprement 3e : l'échelle qui APLATIT une variation
  * réelle, mesurée par `relativeSpread`.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Les défauts 1 à 3 se diagnostiquent avec ce que les modules 1, 2 et 3 ont
+ *   établi — rien de neuf. Le défaut 4 est neuf : la question le fait TROUVER,
+ *   puis la brique `echelle-qui-aplatit` le nomme et introduit le mot
+ *   « étendue », qui vivait auparavant dans un `explain`. La brique
+ *   `verifier-un-graphique` précède l'appariement des quatre vérifications.
  */
 
 const SPREAD = relativeSpread(TEMPERATURE.rows.map((r) => r.y));
@@ -53,6 +61,7 @@ export default function Module06AReparer() {
   const [malPlaceDone, setMalPlaceDone] = useState(false);
   const [echelleDone, setEchelleDone] = useState(false);
   const [checkDone, setCheckDone] = useState(false);
+  const [aplatitDone, setAplatitDone] = useState(false);
 
   return (
     <ContentModule
@@ -102,6 +111,7 @@ export default function Module06AReparer() {
                 cols={1}
                 explain={`Les températures vont de 17,5 à 19,5 °C : ${formatDec(Math.round(SPREAD * 100))} % d'écart seulement. En partant de 17, la courbe grimpe d'un bord à l'autre du cadre. Réparation : partir de 0, ou signaler clairement la troncature.`}
                 explainWrong="Regarde la graduation la plus basse de l’axe vertical : elle ne vaut pas 0."
+                requires={['axe-tronque', 'echelle-axe']}
                 solved={tronqueDone}
                 onAnswered={() => setTronqueDone(true)}
               />
@@ -138,6 +148,7 @@ export default function Module06AReparer() {
                 cols={1}
                 explain="Le volume dépend du temps, donc le temps va en abscisse. Ici c’est l’inverse : le graphique suggère que le temps dépendrait du volume. Réparation : échanger les deux axes."
                 explainWrong="Regarde les noms des axes : « L » en horizontal, « min » en vertical. Laquelle des deux grandeurs dépend de l’autre ?"
+                requires={['choix-des-axes', 'abscisse']}
                 solved={inverseDone}
                 onAnswered={() => setInverseDone(true)}
               />
@@ -175,6 +186,7 @@ export default function Module06AReparer() {
                 cols={1}
                 explain="Trois points sont alignés, le quatrième non : il a été posé à 52 au lieu de 30. Une rupture d’alignement dans une évolution régulière signale presque toujours une erreur de placement."
                 explainWrong="Compare la courbe au tableau, ligne à ligne. Un des quatre points ne correspond pas."
+                requires={['ligne-devient-point', 'placer-entre-graduations']}
                 solved={malPlaceDone}
                 onAnswered={() => setMalPlaceDone(true)}
               />
@@ -185,7 +197,7 @@ export default function Module06AReparer() {
           num: 4,
           title: 'Défaut n° 4',
           subtitle: 'Le défaut inverse du premier.',
-          done: echelleDone,
+          done: echelleDone && aplatitDone,
           content: (
             <div className="space-y-3">
               <TruncatedLine
@@ -207,11 +219,31 @@ export default function Module06AReparer() {
                 ]}
                 correct={0}
                 cols={1}
-                explain="L’axe monte jusqu’à 240 °C pour des valeurs autour de 19 : la courbe est écrasée sur le bas et paraît plate. Partir de 0 ne suffit pas — encore faut-il que l’échelle soit adaptée à l’étendue des données."
+                requires={['echelle-axe', 'axe-tronque', 'choisir-une-echelle']}
+                explain="L’axe monte jusqu’à 240 °C pour des valeurs autour de 19 : la courbe est écrasée sur le bas et paraît plate. Partir de 0 ne suffit donc pas."
                 explainWrong="Aucun nombre n’est faux et l’axe part de 0. Regarde jusqu’où monte l’axe par rapport aux valeurs représentées."
                 solved={echelleDone}
                 onAnswered={() => setEchelleDone(true)}
               />
+              {echelleDone && (
+                <KnowledgeBrick
+                  id="echelle-qui-aplatit"
+                  variant="new"
+                  lead="Tu viens de trouver le défaut inverse du premier : l’axe part bien de 0, et pourtant l’image trompe."
+                >
+                  <TapQuestion
+                    prompt="Les températures vont de 17,5 à 19,5 °C. Jusqu’où l’axe vertical devrait-il monter, au plus juste ?"
+                    options={['Jusqu’à 20 environ', 'Jusqu’à 240', 'Jusqu’à 100', 'Jusqu’à 17,5']}
+                    correct={0}
+                    cols={2}
+                    requires={['echelle-qui-aplatit', 'choisir-une-echelle']}
+                    explain="Un axe qui s’arrête un peu au-dessus de la plus grande valeur laisse la variation visible sans l’exagérer."
+                    explainWrong="Regarde la plus grande des valeurs représentées : l’axe n’a aucune raison de monter dix fois plus haut."
+                    solved={aplatitDone}
+                    onAnswered={() => setAplatitDone(true)}
+                  />
+                </KnowledgeBrick>
+              )}
             </div>
           ),
         },
@@ -220,35 +252,42 @@ export default function Module06AReparer() {
           title: 'Les quatre vérifications',
           done: checkDone,
           content: (
-            <BatchChoiceQuestion
-              intro={<p className="text-sm text-slate-600">À quoi sert chaque vérification ?</p>}
-              rows={[
-                { id: 'v1', label: 'Regarder d’où part l’axe vertical', options: ['détecter la troncature', 'détecter un point égaré'], correct: 0,
-                  correction: 'Un axe qui ne part pas de 0 exagère les écarts.' },
-                { id: 'v2', label: 'Regarder les noms des deux axes', options: ['détecter la troncature', 'détecter une inversion'], correct: 1,
-                  correction: 'La grandeur dont l’autre dépend doit être en abscisse.' },
-                { id: 'v3', label: 'Comparer chaque point au tableau', options: ['détecter un point égaré', 'détecter une échelle trop grande'], correct: 0,
-                  correction: 'C’est la seule vérification qui attrape une erreur de placement.' },
-                { id: 'v4', label: 'Comparer l’étendue des données au haut de l’axe', options: ['détecter une inversion', 'détecter une échelle inadaptée'], correct: 1,
-                  correction: 'Un axe montant bien au-delà des données aplatit la courbe.' },
-              ]}
-              feedback={({ allRight, nCorrect, total }) =>
-                allRight
-                  ? <>Les quatre. Ces vérifications se font <strong>avant</strong> de lire la courbe, pas après.</>
-                  : <>{nCorrect} sur {total}. Chaque défaut a son propre indice : le départ de l’axe, les noms, les points, l’étendue.</>
-              }
-              solved={checkDone}
-              onAnswered={() => setCheckDone(true)}
-            />
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="verifier-un-graphique"
+                variant="new"
+                lead="Quatre défauts, quatre indices. Rassemblés, ils forment la liste à passer avant de croire n’importe quel graphique."
+              />
+              <BatchChoiceQuestion
+                intro={<p className="text-sm text-slate-600">À quoi sert chaque vérification ?</p>}
+                rows={[
+                  { id: 'v1', label: 'Regarder d’où part l’axe vertical', options: ['détecter la troncature', 'détecter un point égaré'], correct: 0,
+                    correction: 'Un axe qui ne part pas de 0 exagère les écarts.' },
+                  { id: 'v2', label: 'Regarder les noms des deux axes', options: ['détecter la troncature', 'détecter une inversion'], correct: 1,
+                    correction: 'La grandeur dont l’autre dépend doit être en abscisse.' },
+                  { id: 'v3', label: 'Comparer chaque point au tableau', options: ['détecter un point égaré', 'détecter une échelle trop grande'], correct: 0,
+                    correction: 'C’est la seule vérification qui attrape une erreur de placement.' },
+                  { id: 'v4', label: 'Comparer l’étendue des données au haut de l’axe', options: ['détecter une inversion', 'détecter une échelle inadaptée'], correct: 1,
+                    correction: 'Un axe montant bien au-delà des données aplatit la courbe.' },
+                ]}
+                feedback={({ allRight, nCorrect, total }) =>
+                  allRight
+                    ? <>Les quatre. Ces vérifications se font <strong>avant</strong> de lire la courbe, pas après.</>
+                    : <>{nCorrect} sur {total}. Chaque défaut a son propre indice : le départ de l’axe, les noms, les points, l’étendue.</>
+                }
+                requires={['verifier-un-graphique', 'axe-tronque', 'choix-des-axes', 'ligne-devient-point', 'echelle-qui-aplatit']}
+                solved={checkDone}
+                onAnswered={() => setCheckDone(true)}
+              />
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          <strong>Avant de croire un graphique.</strong> D’où part l’axe · qui est en abscisse ·
-          les points correspondent-ils au tableau · l’échelle est-elle adaptée. Trois de ces
-          quatre défauts n’altèrent aucun nombre.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={6}>
+          Tu sais construire un graphique, le lire et repérer ceux qui trompent. La mission
+          finale rassemble les six modules en dix épreuves.
+        </KnowledgeSnapshot>
       }
     />
   );

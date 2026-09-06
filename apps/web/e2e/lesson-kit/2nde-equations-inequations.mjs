@@ -151,10 +151,10 @@ const browser = await launch();
   check('M5: −1 refused as solution', /jamais une solution/.test(await body(page)));
   await tap(page, '{−2}', '#step-3');                      // wrong
   check('M5: double zero trap', /interdite AVANT/.test(await body(page)));
-  const rows = page.locator('#step-4 div[role="group"]');
-  for (let i = 0; i < 4; i += 1) await rows.nth(i).locator('button').first().click();
-  await settle(page);
+  // Le module s'arrête ici : l'ancien encadré « À retenir : quatre types »
+  // est devenu la carte des connaissances, rendue en pied de module.
   check('M5: complete', await nextEnabled(page));
+  check('M5: the four-method card is now the knowledge map', (await page.locator('[data-knowledge-snapshot]').count()) === 1);
   check('M5: layout safe', issues.length === 0, issues.slice(0, 3).join(' | '));
   await ctx.close();
 }
@@ -186,7 +186,7 @@ const browser = await launch();
   check('boss: score', /\/ 10/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
-  check('boss: synthèse with the plans line', (await page.locator('svg[aria-label^="De 0 à 4 exclu"]').count()) === 1);
+  check('boss: synthèse IS the complete knowledge map', /Ma carte des connaissances/.test(await body(page)) && (await page.locator('[data-knowledge-snapshot="complete"] [data-km-item]').count()) === 20);
   const completed = await readCompleted(page, KEY);
   check('boss: completed in storage', Array.isArray(completed) && completed.includes('7'));
   await page.reload({ waitUntil: 'domcontentloaded' }); await settle(page, 1500);

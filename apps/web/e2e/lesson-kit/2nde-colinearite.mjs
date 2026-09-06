@@ -10,8 +10,8 @@ const LESSON = `${BASE}/courses/lycee/seconde/geometrie/colinearite-alignement-2
 const KEY = 'u_anon_smarter_lesson_colinearite-alignement-2nde';
 const M = {
   diag: `${LESSON}/mission-de-depart`, m1: `${LESSON}/le-rail`, m2: `${LESSON}/trois-points-une-droite`,
-  m3: `${LESSON}/des-coordonnees-proportionnelles`, m4: `${LESSON}/le-detecteur`, m5: `${LESSON}/a-retenir`,
-  m6: `${LESSON}/alignement-et-parallelisme`, boss: `${LESSON}/mission-finale-le-detecteur`,
+  m3: `${LESSON}/des-coordonnees-proportionnelles`, m4: `${LESSON}/le-detecteur`,
+  m5: `${LESSON}/alignement-et-parallelisme`, boss: `${LESSON}/mission-finale-le-detecteur`,
 };
 const o = (browser, url, seed, extra = {}) => open(browser, url, { key: KEY, completedModules: seed, ...extra });
 const audit = async (page, issues) => { issues.push(...(await layoutAudit(page)), ...(await aspectAudit(page)), ...(await domOverflow(page))); };
@@ -43,7 +43,7 @@ const browser = await launch();
 {
   const { ctx, page } = await o(browser, LESSON, null, { tag: 'index' });
   const b = await body(page);
-  check('index: loads with all modules and 70 min', /Le rail/.test(b) && /Mission finale/.test(b) && /70\s*min/.test(b) && !/NaN/.test(b));
+  check('index: loads with all modules and 64 min', /Le rail/.test(b) && /Mission finale/.test(b) && /64\s*min/.test(b) && !/NaN/.test(b));
   await ctx.close();
 }
 {
@@ -171,47 +171,35 @@ const browser = await launch();
   await ctx.close();
 }
 
-/* M5 — formalisation */
+/* M5 — alignment and parallelism */
 {
   const { ctx, page } = await o(browser, M.m5, ['0', '1', '2', '3', '4'], { tag: 'm5' });
-  await batchFirst(page, '#step-1', 5);
-  check('M5: card checked', /demi-tour/.test(await body(page)));
-  await tapOption(page, '#step-2', 1);                                // wrong on purpose
-  check('M5: factor corrected', /u = −3·v/.test(await body(page)));
-  await batchFirst(page, '#step-3', 4);
-  check('M5: complete', await nextEnabled(page));
-  await ctx.close();
-}
-
-/* M6 — alignment and parallelism */
-{
-  const { ctx, page } = await o(browser, M.m6, ['0', '1', '2', '3', '4', '5'], { tag: 'm6' });
   const issues = [];
   await tap(page, 'CD = AB', '#step-1');
   await audit(page, issues);
   let b = await body(page);
-  check('M6: lines secant at start, det shown', /sécantes/.test(b) && /det\(AB, CD\) = 3 × 1 − 2 × 4/.test(b));
+  check('M5: lines secant at start, det shown', /sécantes/.test(b) && /det\(AB, CD\) = 3 × 1 − 2 × 4/.test(b));
   await press(page, '#step-1', 'Diminuer x de D', 1, issues);
   await press(page, '#step-1', 'Augmenter y de D', 1, issues);      // (3 ; 4) parallel
   b = await body(page);
-  check('M6: first parallel position, k shown', /parallèles/.test(b) && /CD = 1·AB/.test(b));
+  check('M5: first parallel position, k shown', /parallèles/.test(b) && /CD = 1·AB/.test(b));
   await press(page, '#step-1', 'Diminuer x de D', 6, issues);
   await press(page, '#step-1', 'Diminuer y de D', 4, issues);       // (−3 ; 0) : CD = −AB
   b = await body(page);
-  check('M6: opposite-sense parallel, prediction corrected', /Trop fort/.test(b) && /le même test/.test(b));
+  check('M5: opposite-sense parallel, prediction corrected', /Trop fort/.test(b) && /le même test/.test(b));
   await tapOption(page, '#step-2', 0);                                // wrong on purpose (« oui »)
-  check('M6: the eye cannot decide', /suggère, elle ne prouve rien/.test(await body(page)));
+  check('M5: the eye cannot decide', /suggère, elle ne prouve rien/.test(await body(page)));
   await fillLast(page, '#step-3', '-9');
-  check('M6: sign trap on PR', /Signe inversé/.test(await body(page)));
+  check('M5: sign trap on PR', /Signe inversé/.test(await body(page)));
   await fillLast(page, '#step-3', '1');
-  check('M6: −2 forgotten trap', /oublie que l’ordonnée/.test(await body(page)));
+  check('M5: −2 forgotten trap', /oublie que l’ordonnée/.test(await body(page)));
   await batchFirst(page, '#step-4', 3);
-  check('M6: det decides where the eye hesitated', /L’œil hésitait, le déterminant a tranché/.test(await body(page)));
+  check('M5: det decides where the eye hesitated', /L’œil hésitait, le déterminant a tranché/.test(await body(page)));
   await fillLast(page, '#step-5', '4');
-  check('M6: missing coordinate trap targeted', /ordonnée de EG/.test(await body(page)));
-  check('M6: complete', await nextEnabled(page));
-  check('M6: layout safe (D swept, second rail pivots)', issues.length === 0, issues.slice(0, 3).join(' | '));
-  await page.screenshot({ path: `${SHOT_DIR}col-m6.png`, fullPage: true });
+  check('M5: missing coordinate trap targeted', /ordonnée de EG/.test(await body(page)));
+  check('M5: complete', await nextEnabled(page));
+  check('M5: layout safe (D swept, second rail pivots)', issues.length === 0, issues.slice(0, 3).join(' | '));
+  await page.screenshot({ path: `${SHOT_DIR}col-m5.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -224,11 +212,12 @@ const browser = await launch();
   check('boss: score', /\/ 10/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
-  check('boss: synthèse frozen rail', (await page.locator('svg[aria-label^="Le rail"]').count()) === 1);
+  // La synthèse est désormais la carte des connaissances complète (cf. 2nde-colinearite-carte.mjs).
+  check('boss: synthèse = complete knowledge map', (await page.locator('[data-knowledge-snapshot="complete"]').count()) === 1);
   const lay = await layoutAudit(page);
   check('boss: synthèse lays out', lay.length === 0, lay.join(' | '));
   const completed = await readCompleted(page, KEY);
-  check('boss: completed in storage', Array.isArray(completed) && completed.includes('7'));
+  check('boss: completed in storage', Array.isArray(completed) && completed.includes('6'));
   await page.reload({ waitUntil: 'domcontentloaded' }); await settle(page, 1500);
   check('boss: reload restores review', /Résultat du défi/.test(await body(page)));
   await ctx.close();

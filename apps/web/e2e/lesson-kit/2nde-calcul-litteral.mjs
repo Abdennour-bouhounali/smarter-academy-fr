@@ -190,7 +190,7 @@ const browser = await launch();
   check('boss: score', /\/ 10/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
-  check('boss: synthèse chain frozen', /tour de magie, démontré/.test(await body(page)) && /x \+ 3/.test(await body(page)));
+  check('boss: synthèse IS the complete knowledge map', /Ma carte des connaissances/.test(await body(page)) && (await page.locator('[data-knowledge-snapshot="complete"] [data-km-item]').count()) === 19);
   const completed = await readCompleted(page, KEY);
   check('boss: completed in storage', Array.isArray(completed) && completed.includes('7'));
   await page.reload({ waitUntil: 'domcontentloaded' }); await settle(page, 1500);

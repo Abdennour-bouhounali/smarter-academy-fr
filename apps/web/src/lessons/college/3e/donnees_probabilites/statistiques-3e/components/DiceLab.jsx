@@ -174,7 +174,10 @@ export default function DiceLab({
   const canThrow = (n) => !rolling && total + n <= MAX_TOTAL;
   const hasControls = !frozen && Object.values(controls).some(Boolean);
 
-  const reading = `Effectifs par face : ${FACES.map((f) => `${f} → ${counts[f - 1]}`).join(', ')} ; total ${formatDec(total)} lancers`;
+  // Le mot « effectif » n'entre dans la lecture d'écran qu'une fois `showVocab`
+  // posé — c'est-à-dire une fois la brique « série statistique » rendue. Avant,
+  // l'instrument se décrit sans son vocabulaire, comme à l'écran.
+  const reading = `${showVocab ? 'Effectifs par face' : 'Apparitions par face'} : ${FACES.map((f) => `${f} → ${counts[f - 1]}`).join(', ')} ; total ${formatDec(total)} lancers`;
   const theoryLegend = theory && (loadedFace === null
     ? 'probabilité du modèle, dé équilibré : 1/6 ≈ 16,7 % pour chaque face'
     : `probabilité du modèle, dé truqué : 3/8 = 37,5 % pour la face ${loadedFace}, 1/8 = 12,5 % pour les autres`);

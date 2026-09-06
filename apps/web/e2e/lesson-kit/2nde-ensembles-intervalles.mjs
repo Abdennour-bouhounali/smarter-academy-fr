@@ -195,19 +195,17 @@ const browser = await launch();
 /* ── M5 — croiser ── */
 {
   const { ctx, page } = await o(browser, M.m5, ['0', '1', '2', '3', '4'], { tag: 'm5' });
-  const rows = page.locator('#step-1 div[role="group"]');
-  for (let i = 0; i < 3; i += 1) await rows.nth(i).locator('button').first().click();
-  await settle(page);
-  // step 2: build ]2 ; 4]
-  const s2 = page.locator('#step-2 [role="slider"]');
+  // step 1: build ]2 ; 4]  (the module opens straight on the intersection —
+  // the old « À retenir » card is now the cumulative Knowledge Map footer)
+  const s2 = page.locator('#step-1 [role="slider"]');
   await s2.nth(0).focus(); await page.keyboard.press('Home'); for (let i = 0; i < 5; i += 1) await page.keyboard.press('ArrowRight');
   await s2.nth(1).focus(); await page.keyboard.press('End'); for (let i = 0; i < 5; i += 1) await page.keyboard.press('ArrowLeft');
-  await page.locator('#step-2 button[aria-label^="Borne de gauche"]').click();
-  await page.locator('#step-2 button:has-text("Valider ma construction")').click(); await settle(page);
+  await page.locator('#step-1 button[aria-label^="Borne de gauche"]').click();
+  await page.locator('#step-1 button:has-text("Valider ma construction")').click(); await settle(page);
   check('M5: intersection ]2 ; 4] accepted', /Construction juste : \]2 ; 4\]/.test(await body(page)));
-  // step 3: union — wrong twice → reveal
-  await page.locator('#step-3 button:has-text("Valider ma construction")').click(); await settle(page);
-  await page.locator('#step-3 button:has-text("Valider ma construction")').click(); await settle(page);
+  // step 2: union — wrong twice → reveal
+  await page.locator('#step-2 button:has-text("Valider ma construction")').click(); await settle(page);
+  await page.locator('#step-2 button:has-text("Valider ma construction")').click(); await settle(page);
   check('M5: union revealed after the cap', /Il fallait : \[−1 ; 7\[/.test(await body(page)));
   await tap(page, '[−5 ; 3]');                            // wrong on purpose
   check('M5: empty intersection explained', /A ∩ B = ∅/.test(await body(page)));
@@ -257,7 +255,7 @@ const browser = await launch();
   check('boss: profile lists skills', /profil de maîtrise/i.test(b) && /Croiser|Intersection et réunion/.test(b));
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
   b = await body(page);
-  check('boss: synthèse reuses the manège line', /Synthèse/.test(b) && (await page.locator('svg[aria-label^="Le panneau du manège"]').count()) === 1);
+  check('boss: synthèse IS the complete knowledge map', /Ma carte des connaissances/.test(b) && (await page.locator('[data-knowledge-snapshot="complete"] [data-km-item]').count()) === 23);
   check('boss: Terminer available', (await page.locator('a:has-text("Terminer")').count()) === 1);
   const completed = await readCompleted(page, KEY);
   check('boss: module 7 completed in storage', Array.isArray(completed) && completed.includes('7'), JSON.stringify(completed));

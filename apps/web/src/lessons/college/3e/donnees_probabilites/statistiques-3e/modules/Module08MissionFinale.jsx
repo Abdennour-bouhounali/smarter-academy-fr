@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
@@ -26,6 +27,12 @@ import { formatDec, roundTo } from '@smarter-academy/core';
  *
  * Couverture des Learning Points : P2 (e1, e2), P3 (e3, e8), P4 (e4, e5, e7),
  * P5 (e6), P7 (e7, e8), P1 (e2), P6 (e9), P8 (e9), P9 (e10), P10 (e10).
+ *
+ * LE BOSS N'INTRODUIT RIEN. `requires` nomme, pour chaque épreuve, ce que la
+ * leçon a établi et qu'elle mobilise (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ * Le distracteur « sans le mode » de l'épreuve 9 a été remplacé : le mode n'est
+ * enseigné nulle part dans cette leçon, et un mot rencontré pour la première
+ * fois dans une mauvaise réponse est une première exposition comme une autre.
  */
 
 const M = roundTo(mean(TRAJETS), 2);
@@ -51,6 +58,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'st-e1',
+    requires: ['serie-statistique'],
     skill: 'organiser',
     title: 'Épreuve 1',
     prompt: 'Dans une série, trois élèves annoncent 15 min. Que vaut 3 dans cette phrase ?',
@@ -62,6 +70,7 @@ const EPREUVES = [
   },
   {
     id: 'st-e2',
+    requires: ['serie-statistique'],
     skill: 'organiser',
     title: 'Épreuve 2',
     prompt: 'Une série comporte 9 temps différents, annoncés par 12 élèves au total. Quel est son effectif ?',
@@ -73,6 +82,7 @@ const EPREUVES = [
   },
   {
     id: 'st-e3',
+    requires: ['moyenne-ponderee', 'calcul-moyenne', 'serie-statistique'],
     skill: 'moyenne',
     title: 'Épreuve 3',
     prompt: 'Un tableau donne : 10 min (2 élèves), 15 min (3 élèves), 20 min (5 élèves). Quelle est la moyenne ?',
@@ -84,6 +94,7 @@ const EPREUVES = [
   },
   {
     id: 'st-e4',
+    requires: ['mediane'],
     skill: 'mediane',
     title: 'Épreuve 4',
     prompt: 'Cinq temps sont relevés dans cet ordre : 20, 5, 15, 8, 12. Quelle est la médiane ?',
@@ -95,6 +106,7 @@ const EPREUVES = [
   },
   {
     id: 'st-e5',
+    requires: ['mediane', 'mediane-effectif-pair'],
     skill: 'mediane',
     title: 'Épreuve 5',
     prompt: 'Quatre temps rangés : 4, 6, 9, 11. Quelle est la médiane ?',
@@ -106,6 +118,7 @@ const EPREUVES = [
   },
   {
     id: 'st-e6',
+    requires: ['etendue'],
     skill: 'mediane',
     title: 'Épreuve 6',
     prompt: `Les trajets vont de ${formatDec(Math.min(...TRAJETS))} à ${formatDec(Math.max(...TRAJETS))} min. Quelle est l'étendue ?`,
@@ -117,6 +130,7 @@ const EPREUVES = [
   },
   {
     id: 'st-e7',
+    requires: ['influence-valeur', 'moyenne', 'mediane'],
     skill: 'influence',
     title: 'Épreuve 7',
     prompt: 'L’élève le plus éloigné déménage encore plus loin. Que deviennent les indicateurs ?',
@@ -133,6 +147,7 @@ const EPREUVES = [
   },
   {
     id: 'st-e8',
+    requires: ['influence-valeur', 'calcul-moyenne'],
     skill: 'influence',
     title: 'Épreuve 8',
     prompt: 'Dans une classe de 20 élèves, un trajet augmente de 40 min. De combien la moyenne augmente-t-elle ?',
@@ -144,6 +159,7 @@ const EPREUVES = [
   },
   {
     id: 'st-e9',
+    requires: ['comparer-series', 'moyenne', 'mediane', 'etendue'],
     skill: 'choisir',
     title: 'Épreuve 9',
     prompt: 'Deux classes ont la même moyenne (15 min) et la même médiane. Peut-on conclure qu’elles se ressemblent ?',
@@ -151,15 +167,16 @@ const EPREUVES = [
       'Non : leurs étendues peuvent être très différentes',
       'Oui : deux indicateurs identiques suffisent',
       'Oui, si elles ont le même effectif',
-      'Impossible à dire sans le mode',
+      'Impossible à dire sans connaître leurs effectifs',
     ],
     cols: 1,
     correct: 0,
-    explain: "Une classe peut être resserrée entre 13 et 17 min pendant que l'autre s'étale de 5 à 25 min, avec exactement les mêmes moyenne et médiane. C'est la DISPERSION qui les sépare, et il faut l'étendue pour la voir.",
+    explain: "Une classe peut être resserrée entre 13 et 17 min pendant que l'autre s'étale de 5 à 25 min, avec exactement les mêmes moyenne et médiane. C'est la DISPERSION qui les sépare, et il faut l'étendue pour la voir — l'effectif, lui, n'y change rien.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_statistiques-3e_P6', '3e_statistiques-3e_P8'] },
   },
   {
     id: 'st-e10',
+    requires: ['mem-lire-un-chiffre-publie', 'moyenne', 'mem-ce-que-la-moyenne-ne-dit-pas'],
     skill: 'interpreter',
     title: 'Épreuve 10',
     prompt: '« La moyenne est de 16 min, donc la plupart des élèves mettent environ 16 min. » Cette phrase est-elle correcte ?',
@@ -219,16 +236,6 @@ function Synthese() {
         ariaLabel="Synthèse : la série des trajets et ses trois indicateurs"
       />
 
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-4 space-y-2">
-        <p className="font-bold text-slate-800">Le choix de l’indicateur</p>
-        <ul className="text-sm text-slate-700 space-y-1 list-disc list-inside">
-          <li><strong>Un total à répartir</strong> → la moyenne.</li>
-          <li><strong>Un cas typique</strong>, sans se laisser tirer par les extrêmes → la médiane.</li>
-          <li><strong>Un écart, une dispersion</strong> → l’étendue.</li>
-          <li>Une comparaison sérieuse en regarde <strong>plusieurs</strong>, jamais un seul.</li>
-        </ul>
-      </div>
-
       <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4">
         <p className="font-bold text-rose-800 mb-2">Les pièges déjoués</p>
         <ul className="space-y-1.5 text-sm">
@@ -246,6 +253,9 @@ function Synthese() {
         Un indicateur résume, donc il perd de l’information. Savoir lequel choisir — et ce
         qu’il cache — c’est tout le travail du statisticien.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

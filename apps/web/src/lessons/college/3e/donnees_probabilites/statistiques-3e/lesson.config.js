@@ -48,6 +48,24 @@ export const LESSON_CONFIG = {
   grade: '3e',
   chapter: 'donnees_probabilites',
   chapterTitle: 'Organisation et gestion de données, fonctions',
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : additionner, diviser, ranger des nombres et lire une
+  // proportion viennent des années antérieures. Le module 0 les diagnostique —
+  // et rien d'autre. Tout le vocabulaire statistique (série, valeur, effectif,
+  // fréquence, moyenne, médiane, étendue, indicateur…) est établi DANS la
+  // leçon, par des <KnowledgeBrick>, jamais supposé connu.
+  priorKnowledge: ['calcul-numerique', 'nombres-relatifs', 'ordre-nombres', 'proportionnalite', 'pourcentage'],
+  knowledgeAudit: {
+    ignore: [
+      // « ordre croissant » au module 0 : c'est le vocabulaire ordinaire du
+      // rangement de nombres (6e), pas les variations d'une fonction.
+      { term: 'variations', reason: "« ordre croissant » — rangement de nombres de 6e, pas les variations d'une fonction" },
+      // « n'appartient pas à la série » (module 3) : français courant. Le
+      // symbole ∈ n'est jamais écrit ni demandé dans cette leçon.
+      { term: 'appartient', reason: "verbe français courant ; le symbole ∈ n'apparaît nulle part" },
+    ],
+  },
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '📊',

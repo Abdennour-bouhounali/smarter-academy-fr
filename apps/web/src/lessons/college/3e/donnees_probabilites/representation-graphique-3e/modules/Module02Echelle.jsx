@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import TruncatedLine from '../components/TruncatedLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { TEMPERATURE } from '../components/graphData';
@@ -30,6 +31,15 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Formalization: la règle « toujours regarder d'où part l'axe » est posée.
  * Scaffolding: bascule guidée → lecture chiffrée → jugement.
  * Transfer: le module 6 fait réparer un graphique tronqué non signalé.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   « échelle », « carreau » et « graduation » sont la CIBLE de la leçon (P2) :
+ *   ils étaient exigés sans jamais être posés en position d'enseignement. Ils
+ *   le sont maintenant par la brique `echelle-axe`, à l'instant où la bascule
+ *   vient d'en montrer l'effet, et avant la première lecture chiffrée.
+ *     étape 1  basculer, puis brique `echelle-axe`   → essai « combien vaut un carreau ? »
+ *     étape 2  lire la même valeur dans les deux versions
+ *     étape 3  la lecture faite, brique `axe-tronque` → le jugement devient légitime
  */
 
 const SPREAD = relativeSpread(TEMPERATURE.rows.map((r) => r.y));
@@ -39,8 +49,10 @@ export default function Module02Echelle() {
   const [seen, setSeen] = useState(() => new Set(['full']));
   const [readDone, setReadDone] = useState(false);
   const [judgeDone, setJudgeDone] = useState(false);
+  const [carreauDone, setCarreauDone] = useState(false);
 
   const bothSeen = seen.has('full') && seen.has('zoom');
+  const step1Done = bothSeen && carreauDone;
 
   const toggle = (z, kit) => {
     setZoom(z);
@@ -72,7 +84,7 @@ export default function Module02Echelle() {
           num: 1,
           title: 'Regarde les deux versions',
           subtitle: 'Bascule d’une échelle à l’autre.',
-          done: bothSeen,
+          done: step1Done,
           content: (kit) => (
             <div className="space-y-3">
               <div className="flex gap-2">
@@ -105,17 +117,34 @@ export default function Module02Echelle() {
                 yLabel="°C"
                 ariaLabel={`Températures, axe vertical partant de ${zoom ? 17 : 0}`}
               />
-              <Feedback tone={bothSeen ? 'ok' : 'info'}>
-                {bothSeen ? (
-                  <>
-                    Mêmes quatre nombres, deux images opposées. L’écart réel est de 2 °C,
-                    soit <strong>{formatDec(Math.round(SPREAD * 100))} %</strong> de la température —
-                    petit, mais l’axe tronqué le fait paraître énorme.
-                  </>
-                ) : (
-                  <>Essaie aussi l’autre échelle avant de conclure.</>
-                )}
-              </Feedback>
+              {!bothSeen && (
+                <Feedback tone="info">Essaie aussi l’autre échelle avant de conclure.</Feedback>
+              )}
+              {bothSeen && (
+                <KnowledgeBrick
+                  id="echelle-axe"
+                  variant="new"
+                  lead={(
+                    <>
+                      Mêmes quatre nombres, deux images opposées. L’écart réel est de 2 °C, soit{' '}
+                      <strong>{formatDec(Math.round(SPREAD * 100))} %</strong> de la température.
+                      Ce qui a changé entre les deux boutons porte un nom.
+                    </>
+                  )}
+                >
+                  <TapQuestion
+                    prompt="Sur la version qui part de 17, combien vaut un carreau vertical ?"
+                    options={['0,5 °C', '1 °C', '4 °C', '17 °C']}
+                    correct={0}
+                    cols={2}
+                    requires={['echelle-axe']}
+                    explain="Les graduations vont de 0,5 en 0,5 : un carreau vaut 0,5 °C. Sur l’autre version il en vaut 4 — huit fois plus."
+                    explainWrong="Compte l’écart entre deux graduations voisines de l’axe vertical."
+                    solved={carreauDone}
+                    onAnswered={() => setCarreauDone(true)}
+                  />
+                </KnowledgeBrick>
+              )}
             </div>
           ),
         },
@@ -136,6 +165,7 @@ export default function Module02Echelle() {
                 if (n === 2) return 'Tu as peut-être lu un écart. On demande la valeur elle-même.';
                 return null;
               }}
+              requires={['echelle-axe']}
               solved={readDone}
               onAnswered={(ok) => { setReadDone(true); kit.react(ok); }}
             />
@@ -146,30 +176,39 @@ export default function Module02Echelle() {
           title: 'Laquelle est honnête ?',
           done: judgeDone,
           content: (
-            <TapQuestion
-              prompt="Un journal veut titrer « la salle surchauffe ! ». Quelle version choisira-t-il, et est-ce honnête ?"
-              options={[
-                'Celle partant de 17 : ce n’est pas faux, mais c’est trompeur si l’axe n’est pas signalé',
-                'Celle partant de 0 : elle exagère la hausse',
-                'Les deux disent exactement la même chose',
-                'Aucune des deux ne permet de conclure',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Un axe tronqué n’invente aucun chiffre : il grossit l’écart. Ce n’est pas interdit — c’est parfois utile pour voir de petites variations — mais il faut le signaler, sinon le lecteur croit à une explosion là où il y a 2 °C."
-              explainWrong="La version partant de 0 est celle qui aplatit. C’est l’axe tronqué qui spectaculaire la variation."
-              solved={judgeDone}
-              onAnswered={() => setJudgeDone(true)}
-            />
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="axe-tronque"
+                variant="new"
+                lead="Tu viens de lire 19 °C dans les deux versions : les nombres n’ont pas bougé. C’est le départ de l’axe qui a tout changé."
+              >
+                <TapQuestion
+                  prompt="Un journal veut titrer « la salle surchauffe ! ». Quelle version choisira-t-il, et est-ce honnête ?"
+                  options={[
+                    'Celle partant de 17 : ce n’est pas faux, mais c’est trompeur si l’axe n’est pas signalé',
+                    'Celle partant de 0 : elle exagère la hausse',
+                    'Les deux disent exactement la même chose',
+                    'Aucune des deux ne permet de conclure',
+                  ]}
+                  correct={0}
+                  cols={1}
+                  requires={['axe-tronque', 'echelle-axe']}
+                  explain="Le journal choisira la version tronquée : elle grossit l’écart sans inventer un chiffre. Signalée, elle est honnête ; muette, elle fait croire à une explosion là où il y a 2 °C."
+                  explainWrong="La version partant de 0 est celle qui aplatit. C’est l’axe tronqué qui rend la variation spectaculaire."
+                  solved={judgeDone}
+                  onAnswered={() => setJudgeDone(true)}
+                />
+              </KnowledgeBrick>
+              {judgeDone && <KnowledgeBrick id="mem-lire-les-graduations" variant="new" compact />}
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          <strong>Le réflexe.</strong> Avant de croire une courbe, regarde{' '}
-          <strong>d’où part l’axe</strong> et <strong>combien vaut un carreau</strong>. Les
-          nombres, eux, ne mentent jamais.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={2}>
+          L’échelle est donnée jusqu’ici. Reste à placer un point quand la valeur ne tombe pas
+          sur une graduation — c’est le module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

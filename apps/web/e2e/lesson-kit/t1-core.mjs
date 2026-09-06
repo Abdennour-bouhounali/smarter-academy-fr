@@ -40,7 +40,8 @@ await page.getByRole('button', { name: 'Refaire le diagnostic' }).click();
 check('m0: redo returns to questions', await page.getByRole('button', { name: 'Voir mon résultat' }).isDisabled().catch(() => false));
 
 await page.goto(`${LESSON}/1`, { waitUntil: 'networkidle' });
-await page.waitForSelector('text=Le coffre aux nombres', { timeout: 10000 });
+await page.waitForSelector('text=Le laboratoire des cartes', { timeout: 10000 });
+const S1 = (n) => page.locator(`#step-${n}`);
 check('m1: step 2 locked initially', (await page.getByText("termine l'étape précédente").count()) === 2);
 await page.getByRole('button', { name: /Module suivant/ }).last().click();
 await page.waitForTimeout(400);
@@ -48,28 +49,73 @@ check('m1: popover lists steps', await page.getByText('À terminer avant de cont
 check('m1: popover step 1 entry', await page.getByRole('button', { name: /Étape 1 —/ }).isVisible().catch(() => false));
 await page.screenshot({ path: SHOT_DIR + 'v2-m1-popover.png' });
 await page.getByRole('button', { name: /Module suivant/ }).last().click();
-for (const v of ['305.000', '8', '42', '307', '2.450', '18.700']) await page.getByRole('button', { name: new RegExp(`^Placer ${v}$`) }).click();
-await page.getByRole('button', { name: 'Vérifier mon rangement' }).click();
+
+/* Étape 1 — le laboratoire des cartes : poser, échanger, atteindre 9 321 puis 1 239. */
+for (const d of [3, 9, 1, 2]) await S1(1).getByRole('button', { name: `Poser la carte ${d}` }).click();
+await page.waitForTimeout(250);
+check('m1 lab: number derives from the arrangement (3 912)', await S1(1).getByText(/^3.912$/).first().isVisible().catch(() => false));
+check('m1 lab: a wrong arrangement does NOT solve the step', (await page.getByText("termine l'étape précédente").count()) === 2);
+// échange milliers ↔ centaines (3 ↔ 9), puis dizaines ↔ unités (1 ↔ 2) → 9 321
+await S1(1).getByRole('button', { name: 'Case des milliers : 3' }).click();
+await S1(1).getByRole('button', { name: 'Case des centaines : 9' }).click();
+await S1(1).getByRole('button', { name: 'Case des dizaines : 1' }).click();
+await S1(1).getByRole('button', { name: 'Case des unités : 2' }).click();
+await page.waitForTimeout(400);
+check('m1 lab: max reached → défi 2', await S1(1).getByText(/Défi 2/).isVisible().catch(() => false));
+check('m1 lab: max feedback names the left slot', await S1(1).getByText(/Plus grand possible/).isVisible().catch(() => false));
+check('m1 lab: step 1 still not done (min missing)', (await page.getByText("termine l'étape précédente").count()) === 2);
+// 9 321 → 1 329 → 1 239
+await S1(1).getByRole('button', { name: 'Case des milliers : 9' }).click();
+await S1(1).getByRole('button', { name: 'Case des unités : 1' }).click();
+await S1(1).getByRole('button', { name: 'Case des centaines : 3' }).click();
+await S1(1).getByRole('button', { name: 'Case des dizaines : 2' }).click();
+await page.waitForTimeout(400);
+check('m1 lab: min reached', await S1(1).getByText(/Plus petit possible/).isVisible().catch(() => false));
+check('m1 lab: step 1 done → step 2 unlocked', (await page.getByText("termine l'étape précédente").count()) === 1);
+check('m1 lab: replayable (nouvelles cartes)', await S1(1).getByRole('button', { name: /Nouvelles cartes/ }).isVisible().catch(() => false));
+
+/* Étape 2 — le duel : prédiction sans verdict, B rangé au plus petit, la question de fin. */
+await S1(2).getByRole('button', { name: 'Moi, avec mes 4 cartes' }).click();
+check('m1 duel: prediction has no verdict', !(await S1(2).getByText(/Bonne réponse/).first().isVisible().catch(() => false)));
+for (const d of [5, 4, 3, 2, 1]) await S1(2).getByRole('button', { name: `B — Poser la carte ${d}` }).click();
+await page.waitForTimeout(300);
+check('m1 duel: 54 321 gets a hint, not a verdict', await S1(2).getByText(/Peux-tu le ranger encore plus petit/).isVisible().catch(() => false));
+await S1(2).getByRole('button', { name: 'B — Case des dizaines de milliers : 5' }).click();
+await S1(2).getByRole('button', { name: 'B — Case des unités : 1' }).click();
+await S1(2).getByRole('button', { name: 'B — Case des milliers : 4' }).click();
+await S1(2).getByRole('button', { name: 'B — Case des dizaines : 2' }).click();
+await page.waitForTimeout(400);
+check('m1 duel: 12 345 > 9 321 stated', await S1(2).getByText(/le plus PETIT nombre que B/).isVisible().catch(() => false));
+await S1(2).getByRole('button', { name: /J'aurais pu gagner/ }).click(); // wrong on purpose
+await page.waitForTimeout(400);
+check('m1 duel: wrong shows bonne réponse', await S1(2).getByText(/Bonne réponse/).first().isVisible().catch(() => false));
+check('m1 duel: feedback quotes the prediction', await S1(2).getByText(/Ta prédiction/).isVisible().catch(() => false));
+check('m1 duel: wrong answer still unlocks step 3', (await page.getByText("termine l'étape précédente").count()) === 0);
+
+/* Étape 3 — transfert : les six étiquettes, puis le piège relu en cartes. */
+for (const v of ['305.000', '8', '42', '307', '2.450', '18.700']) await S1(3).getByRole('button', { name: new RegExp(`^Placer ${v}$`) }).click();
+await S1(3).getByRole('button', { name: 'Vérifier mon rangement' }).click();
 await page.waitForTimeout(500);
-check('m1: wrong order does NOT solve step1 (discovery mode)', (await page.getByText("termine l'étape précédente").count()) === 2);
+check('m1: wrong order does NOT solve step3 (discovery mode)', (await page.getByText("termine l'étape précédente").count()) === 0 && !(await S1(3).getByText(/Étiquette A/).isVisible().catch(() => false)));
 for (const v of ['305.000', '8', '42', '307', '2.450', '18.700']) {
-  const btn = page.getByRole('button', { name: new RegExp(`^Retirer ${v}$`) }).first();
+  const btn = S1(3).getByRole('button', { name: new RegExp(`^Retirer ${v}$`) }).first();
   if (await btn.isVisible().catch(() => false)) await btn.click();
 }
-for (const v of ['8', '42', '307', '2.450', '18.700', '305.000']) await page.getByRole('button', { name: new RegExp(`^Placer ${v}$`) }).click();
-await page.getByRole('button', { name: 'Vérifier mon rangement' }).click();
-await page.waitForTimeout(600);
-check('m1: correct order solves step1, step2 unlocked', (await page.getByText("termine l'étape précédente").count()) === 1);
-await page.getByRole('button', { name: 'Le premier chiffre, tout seul' }).click();
+for (const v of ['8', '42', '307', '2.450', '18.700', '305.000']) await S1(3).getByRole('button', { name: new RegExp(`^Placer ${v}$`) }).click();
+// Le rangement correct termine l'étape : on vérifie qu'AUCUN scroll
+// PROGRAMMATIQUE n'a lieu après le rendu du feedback (Playwright lui-même
+// scrolle la cible d'un .click() dans la vue avant de cliquer — on mesure
+// donc à partir de juste après le clic, pas avant).
+await S1(3).getByRole('button', { name: 'Vérifier mon rangement' }).click();
+await page.waitForTimeout(50);
 const yBefore = await page.evaluate(() => window.scrollY);
-await page.waitForTimeout(900);
-check('m1: step2 wrong shows Bonne réponse', await page.getByText(/Bonne réponse :/).first().isVisible().catch(() => false));
-check('m1: step2 wrong still unlocks step3', (await page.getByText("termine l'étape précédente").count()) === 0);
+await page.waitForTimeout(600);
 const yAfter = await page.evaluate(() => window.scrollY);
 check('m1: NO auto-scroll on step completion', Math.abs(yAfter - yBefore) < 5, `scrollY ${yBefore} → ${yAfter}`);
-await page.getByRole('button', { name: /12.000 est le plus grand/ }).click();
+await S1(3).getByRole('button', { name: /3.900 est le plus grand/ }).click(); // wrong on purpose
 await page.waitForTimeout(600);
-check('m1: step3 done, PiegeVisuel shown', await page.getByText('Longueur de la barre').isVisible().catch(() => false));
+check('m1: trap wrong shows bonne réponse', await S1(3).getByText(/Bonne réponse/).first().isVisible().catch(() => false));
+check('m1: trap read back as 4 cards vs 5', await S1(3).getByText(/Quatre cases contre cinq/).isVisible().catch(() => false));
 check('m1: NO auto-advance countdown', !(await page.getByText(/Passage automatique|Rester ici|dans \d+ s/).first().isVisible().catch(() => false)));
 check('m1: nav next enabled after allDone', await page.getByRole('button', { name: /Module suivant/ }).last().isEnabled().catch(() => false));
 await page.waitForTimeout(6000);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import GraphBuilder from '../components/GraphBuilder';
 import { RESERVOIR, VENTES } from '../components/graphData';
@@ -30,6 +31,14 @@ import { formatDec } from '@smarter-academy/core';
  * Formalization: la suite des quatre décisions est nommée en pied de module.
  * Scaffolding: axes guidés → échelle libre → points → tracé → cas discret.
  * Transfer: le module 6 fait réparer les graphiques mal construits.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Deux décisions neuves, chacune posée après le geste qui la justifie :
+ *     étape 2  essayer les pas, voir sortir 60 L → brique `choisir-une-echelle`
+ *     étape 4  basculer « relier »              → brique `relier-ou-non`
+ *     étape 5  le cas discret (la question d'origine, désormais légitime), puis
+ *              la brique `mem-quatre-decisions` qui récapitule l'ordre.
+ *   Les étapes 1 et 3 réemploient ce que les modules 1 et 3 ont établi.
  */
 
 const DATA = RESERVOIR;
@@ -115,6 +124,7 @@ export default function Module04Atelier() {
               cols={1}
               explain="L’axe horizontal porte la grandeur dont l’autre dépend. Le volume restant dépend du temps écoulé : le temps va donc en abscisse."
               explainWrong="Demande-toi laquelle des deux commande l’autre : c’est le temps qui passe et fait baisser le volume, pas l’inverse."
+              requires={['choix-des-axes', 'abscisse']}
               solved={axisDone}
               onAnswered={() => setAxisDone(true)}
             />
@@ -136,19 +146,25 @@ export default function Module04Atelier() {
                 targetIndex={-1}
                 axisLabels={{ x: 'min', y: 'L' }}
               />
-              <Feedback tone={done2 ? 'ok' : 'info'}>
-                {done2 ? (
-                  <>
-                    Avec <strong>{formatDec(step)} L par carreau</strong>, les quatre valeurs
-                    tiennent. Une échelle trop fine ne « zoome » pas : elle fait sortir les
-                    grandes valeurs du cadre.
-                  </>
-                ) : scaleOk ? (
-                  <>Ça rentre. Essaie une autre échelle pour voir ce qui se passe quand elle est trop fine.</>
-                ) : (
-                  <>Change d’échelle : il faut que la plus grande valeur (60 L) tienne dans les douze carreaux.</>
-                )}
-              </Feedback>
+              {!done2 && (
+                <Feedback tone="info">
+                  {scaleOk
+                    ? <>Ça rentre. Essaie une autre échelle pour voir ce qui se passe quand elle est trop fine.</>
+                    : <>Change d’échelle : il faut que la plus grande valeur (60 L) tienne dans les douze carreaux.</>}
+                </Feedback>
+              )}
+              {done2 && (
+                <KnowledgeBrick
+                  id="choisir-une-echelle"
+                  variant="new"
+                  lead={(
+                    <>
+                      Avec <strong>{formatDec(step)} L par carreau</strong>, les quatre valeurs
+                      tiennent — et tu as vu ce qui se passe quand le pas est trop fin.
+                    </>
+                  )}
+                />
+              )}
             </div>
           ),
         },
@@ -208,17 +224,18 @@ export default function Module04Atelier() {
                 showJoin
                 axisLabels={{ x: 'min', y: 'L' }}
               />
-              <Feedback tone={joined ? 'ok' : 'info'}>
-                {joined ? (
-                  <>
-                    On relie parce que le volume existe <strong>à chaque instant</strong>, pas
-                    seulement aux minutes mesurées. Le trait dit « entre deux relevés, ça a
-                    continué de descendre ».
-                  </>
-                ) : (
-                  <>Le volume baisse-t-il aussi entre deux relevés ? Si oui, le trait a un sens.</>
-                )}
-              </Feedback>
+              {!joined && (
+                <Feedback tone="info">
+                  Le volume baisse-t-il aussi entre deux relevés ? Si oui, le trait a un sens.
+                </Feedback>
+              )}
+              {joined && (
+                <KnowledgeBrick
+                  id="relier-ou-non"
+                  variant="new"
+                  lead="Tu as relié : le volume existe à chaque instant, pas seulement aux minutes mesurées. Mais ce n’est pas toujours le cas."
+                />
+              )}
             </div>
           ),
         },
@@ -227,29 +244,39 @@ export default function Module04Atelier() {
           title: 'Le cas où l’on ne relie pas',
           done: discreteDone,
           content: (
-            <TapQuestion
-              prompt="On note le nombre de cahiers vendus chaque jour. Faut-il relier les points ?"
-              options={[
-                'Non : il n’y a rien entre le jour 1 et le jour 2',
-                'Oui : cela montre mieux l’évolution',
-                'Oui, toujours, sur tous les graphiques',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Relier voudrait dire qu’il existe une valeur au « jour 1,5 » — ce qui n’a pas de sens pour des cahiers vendus par journée. On relie quand la grandeur varie continûment, pas autrement."
-              explainWrong="Demande-toi si un point entre les deux aurait un sens. Pour un volume qui coule, oui ; pour des ventes par jour, non."
-              solved={discreteDone}
-              onAnswered={() => setDiscreteDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="On note le nombre de cahiers vendus chaque jour. Faut-il relier les points ?"
+                options={[
+                  'Non : il n’y a rien entre le jour 1 et le jour 2',
+                  'Oui : cela montre mieux l’évolution',
+                  'Oui, toujours, sur tous les graphiques',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['relier-ou-non']}
+                explain="Relier voudrait dire qu’il existe une valeur au « jour 1,5 » — ce qui n’a pas de sens pour des cahiers vendus par journée."
+                explainWrong="Demande-toi si un point entre les deux aurait un sens. Pour un volume qui coule, oui ; pour des ventes par jour, non."
+                solved={discreteDone}
+                onAnswered={() => setDiscreteDone(true)}
+              />
+              {discreteDone && (
+                <KnowledgeBrick
+                  id="mem-quatre-decisions"
+                  variant="new"
+                  compact
+                  lead="Tu viens de prendre les quatre décisions, dans l’ordre. C’est cet ordre qu’il faut retenir."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          <strong>Les quatre décisions.</strong> Quelle grandeur sur quel axe · quelle
-          échelle · où tombent les points · faut-il relier. Change l’une d’elles, et le
-          graphique ne raconte plus la même chose.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={4}>
+          Tu sais construire. Reste à LIRE : au module suivant, quatre graphiques racontent
+          quatre histoires différentes — sans une seule unité.
+        </KnowledgeSnapshot>
       }
     />
   );

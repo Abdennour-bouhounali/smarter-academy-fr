@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DotPlot from '../components/DotPlot';
@@ -26,7 +27,12 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  *   croire que la médiane est toujours une donnée de la série ; confondre
  *   étendue et effectif.
  * Feedback: le décompte de part et d'autre est annoncé à chaque essai.
- * Formalization: les deux définitions sont posées après les gestes.
+ * Formalization: chaque mot est posé par une <KnowledgeBrick> après son geste
+ *   et AVANT la demande qui l'exige. C'est ce que ce module corrigeait : « Quelle
+ *   est l'ÉTENDUE de la série ? » était la toute première apparition du mot,
+ *   dans la demande elle-même — l'élève devait deviner ce qu'on lui demandait.
+ *   La brique « étendue » précède désormais la question, juste après que le
+ *   crochet violet a été montré sur l'axe.
  * Scaffolding: effectif pair (le cas subtil) traité d'emblée, avec le décompte
  *   visible en permanence.
  * Transfer: le module 4 oppose médiane et moyenne sous la même manipulation.
@@ -94,21 +100,26 @@ export default function Module03ValeurDuMilieu() {
                 showMedian={done1}
                 ariaLabel="Axe : place le repère qui coupe la série en deux"
               />
-              <Feedback tone={done1 ? (revealed ? 'info' : 'ok') : 'info'}>
-                {done1 ? (
-                  <>
-                    {revealed ? 'On te la montre : ' : 'Trouvée. '}
-                    la <strong>médiane</strong> vaut <strong>{formatDec(MED)} min</strong> :
-                    six élèves sont en dessous, six au-dessus.
-                  </>
-                ) : (
-                  <>
-                    Avec un repère à {formatDec(pick)} min : <strong>{below}</strong> élève
-                    {below > 1 ? 's' : ''} en dessous, <strong>{above}</strong> au-dessus.
-                    {below !== above && <> Il faut équilibrer les deux.</>}
-                  </>
-                )}
-              </Feedback>
+              {!done1 && (
+                <Feedback tone="info">
+                  Avec un repère à {formatDec(pick)} min : <strong>{below}</strong> élève
+                  {below > 1 ? 's' : ''} en dessous, <strong>{above}</strong> au-dessus.
+                  {below !== above && <> Il faut équilibrer les deux.</>}
+                </Feedback>
+              )}
+              {done1 && (
+                <KnowledgeBrick
+                  id="mediane"
+                  variant="new"
+                  lead={(
+                    <>
+                      {revealed ? 'On te la montre : ' : 'Trouvée. '}
+                      le repère est à <strong>{formatDec(MED)} min</strong> : six élèves en dessous,
+                      six au-dessus. Cette valeur de coupure porte un nom.
+                    </>
+                  )}
+                />
+              )}
               {!done1 && tries >= 4 && (
                 <button
                   type="button"
@@ -127,21 +138,31 @@ export default function Module03ValeurDuMilieu() {
           title: 'Le cas de l’effectif pair',
           done: pairDone,
           content: (
-            <TapQuestion
-              prompt="Quatre temps : 4, 6, 9 et 11 minutes. Quelle est la médiane ?"
-              options={[
-                '7,5 min — le milieu entre 6 et 9',
-                '6 min — la deuxième valeur',
-                '9 min — la troisième valeur',
-                'Il n’y en a pas, l’effectif est pair',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Avec un effectif pair, aucune donnée ne se trouve exactement au milieu : la médiane est la moyenne des deux valeurs centrales, (6 + 9) ÷ 2 = 7,5. Elle n’appartient donc pas à la série — et c’est parfaitement normal."
-              explainWrong="Range les quatre valeurs : les deux du milieu sont 6 et 9. La médiane se place entre elles."
-              solved={pairDone}
-              onAnswered={() => setPairDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Quatre temps : 4, 6, 9 et 11 minutes. Quelle est la médiane ?"
+                options={[
+                  '7,5 min — le milieu entre 6 et 9',
+                  '6 min — la deuxième valeur',
+                  '9 min — la troisième valeur',
+                  'Il n’y en a pas, l’effectif est pair',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['mediane', 'serie-statistique']}
+                explain="Aucune des quatre données ne se trouve exactement au milieu : la coupure tombe entre 6 et 9, et on prend le milieu de ces deux valeurs, (6 + 9) ÷ 2 = 7,5."
+                explainWrong="Range les quatre valeurs : les deux du milieu sont 6 et 9. La coupure qui laisse deux élèves de chaque côté se place entre elles."
+                solved={pairDone}
+                onAnswered={() => setPairDone(true)}
+              />
+              {pairDone && (
+                <KnowledgeBrick
+                  id="mediane-effectif-pair"
+                  variant="new"
+                  lead="Douze trajets, quatre temps : dans les deux cas l’effectif est pair. Voici la méthode, une fois pour toutes."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -157,23 +178,37 @@ export default function Module03ValeurDuMilieu() {
                 step={AXE.step}
                 mode="display"
                 showRange
-                ariaLabel="Axe : l’étendue de la série"
+                rangeUnnamed
+                ariaLabel="Axe : le crochet qui va du trajet le plus court au plus long"
               />
-              <NumericQuestion
-                prompt="Quelle est l’étendue de la série des trajets ?"
-                expected={RNG}
-                parse={parseDec}
-                display={formatDec(RNG)}
-                suffix="min"
-                explain={`Le trajet le plus long dure ${formatDec(Math.max(...TRAJETS))} min, le plus court ${formatDec(Math.min(...TRAJETS))} min : l'étendue vaut ${formatDec(Math.max(...TRAJETS))} − ${formatDec(Math.min(...TRAJETS))} = ${formatDec(RNG)} min. Elle mesure la DISPERSION, pas une valeur typique.`}
-                explainFor={(n) => {
-                  if (n === Math.max(...TRAJETS)) return 'Tu as donné le maximum. L’étendue est l’ÉCART entre le maximum et le minimum.';
-                  if (n === 12) return 'Douze est l’effectif de la classe, pas un écart de temps.';
-                  return null;
-                }}
-                solved={rangeDone}
-                onAnswered={(ok) => { setRangeDone(true); kit.react(ok); }}
-              />
+              <KnowledgeBrick
+                id="etendue"
+                variant="new"
+                lead={(
+                  <>
+                    Le crochet violet va du trajet le plus court, {formatDec(Math.min(...TRAJETS))} min,
+                    au plus long, {formatDec(Math.max(...TRAJETS))} min. Cet écart-là mesure autre chose
+                    que la médiane, et il a son propre nom.
+                  </>
+                )}
+              >
+                <NumericQuestion
+                  prompt="Calcule l’étendue de la série des trajets."
+                  expected={RNG}
+                  parse={parseDec}
+                  display={formatDec(RNG)}
+                  suffix="min"
+                  requires={['etendue', 'serie-statistique']}
+                  explain={`${formatDec(Math.max(...TRAJETS))} − ${formatDec(Math.min(...TRAJETS))} = ${formatDec(RNG)} min. C'est un ÉCART, pas une valeur typique : il dit à quel point la classe est dispersée.`}
+                  explainFor={(n) => {
+                    if (n === Math.max(...TRAJETS)) return 'Tu as donné le trajet le plus long. L’étendue est l’ÉCART entre le plus long et le plus court, donc une soustraction.';
+                    if (n === 12) return 'Douze est l’effectif de la classe, pas un écart de temps.';
+                    return null;
+                  }}
+                  solved={rangeDone}
+                  onAnswered={(ok) => { setRangeDone(true); kit.react(ok); }}
+                />
+              </KnowledgeBrick>
             </div>
           ),
         },
@@ -184,6 +219,7 @@ export default function Module03ValeurDuMilieu() {
           content: (
             <TapQuestion
               prompt="Deux classes ont la même moyenne, mais l’une a une étendue de 4 min et l’autre de 30 min. Que peut-on en dire ?"
+              requires={['etendue', 'moyenne']}
               options={[
                 'Dans la seconde, les trajets sont beaucoup plus dispersés',
                 'La seconde classe a plus d’élèves',
@@ -201,11 +237,10 @@ export default function Module03ValeurDuMilieu() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> La <strong>médiane</strong> partage l’effectif en deux
-          moitiés ; l’<strong>étendue</strong> mesure l’écart entre les extrêmes. Ni l’une ni
-          l’autre ne se confond avec la moyenne.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={3}>
+          Trois nombres résument maintenant la même série — et ils ne tombent pas au même
+          endroit. Le module suivant tire une seule valeur pour voir lequel bouge.
+        </KnowledgeSnapshot>
       }
     />
   );

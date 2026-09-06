@@ -10,8 +10,8 @@ const LESSON = `${BASE}/courses/lycee/seconde/nombres_calculs/valeur-absolue-dis
 const KEY = 'u_anon_smarter_lesson_valeur-absolue-distance-2nde';
 const M = {
   diag: `${LESSON}/mission-de-depart`, m1: `${LESSON}/deux-bateaux-une-distance`, m2: `${LESSON}/calculer-une-valeur-absolue`,
-  m3: `${LESSON}/la-distance-entre-deux-nombres`, m4: `${LESSON}/le-faisceau`, m5: `${LESSON}/a-retenir`,
-  m6: `${LESSON}/situations`, boss: `${LESSON}/mission-finale-le-phare`,
+  m3: `${LESSON}/la-distance-entre-deux-nombres`, m4: `${LESSON}/le-faisceau`,
+  m5: `${LESSON}/situations`, boss: `${LESSON}/mission-finale-le-phare`,
 };
 const o = (browser, url, seed, extra = {}) => open(browser, url, { key: KEY, completedModules: seed, ...extra });
 const audit = async (page, issues) => { issues.push(...(await layoutAudit(page)), ...(await aspectAudit(page))); };
@@ -136,31 +136,16 @@ const browser = await launch();
 /* M5 */
 {
   const { ctx, page } = await o(browser, M.m5, ['0', '1', '2', '3', '4'], { tag: 'm5' });
-  const rows = page.locator('#step-1 div[role="group"]');
-  for (let i = 0; i < 4; i += 1) await rows.nth(i).locator('button').first().click();
-  await settle(page);
-  await tap(page, '|x − 2| ≤ 8');   // wrong
-  check('M5: centre = milieu explained', /MILIEU/.test(await body(page)));
-  const r3 = page.locator('#step-3 div[role="group"]');
-  for (let i = 0; i < 3; i += 1) await r3.nth(i).locator('button').first().click();
-  await settle(page);
-  check('M5: complete', await nextEnabled(page));
-  await ctx.close();
-}
-
-/* M6 */
-{
-  const { ctx, page } = await o(browser, M.m6, ['0', '1', '2', '3', '4', '5'], { tag: 'm6' });
   const lay = await layoutAudit(page);
-  check('M6: tolerance line lays out', lay.length === 0, lay.join(' | '));
+  check('M5: tolerance line lays out', lay.length === 0, lay.join(' | '));
   await tap(page, '[20 ; 20,5]', '#step-1');   // wrong
-  check('M6: two-sided tolerance explained', /DEUX côtés/.test(await body(page)));
+  check('M5: two-sided tolerance explained', /DEUX côtés/.test(await body(page)));
   await fillOk(page, '0,55', '#step-1');        // wrong (distance not overshoot)
-  check('M6: 0,55 targeted', /dépassement est 0,55 − 0,5/.test(await body(page)));
+  check('M5: 0,55 targeted', /dépassement est 0,55 − 0,5/.test(await body(page)));
   await tap(page, '|T − 2| ≤ 8', '#step-2');
   await tap(page, '[10,5 ; 13,5]', '#step-3');
   await tap(page, 'Au km 1', '#step-4');
-  check('M6: complete', await nextEnabled(page));
+  check('M5: complete', await nextEnabled(page));
   await ctx.close();
 }
 
@@ -173,9 +158,9 @@ const browser = await launch();
   check('boss: score', /\/ 10/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
-  check('boss: synthèse frozen beam', (await page.locator('svg[aria-label^="Faisceau centré en 3 de rayon 2, de 1 à 5"]').count()) === 1);
+  check('boss: synthèse IS the complete knowledge map', /Ma carte des connaissances/.test(await body(page)) && (await page.locator('[data-knowledge-snapshot="complete"] [data-km-item]').count()) === 14);
   const completed = await readCompleted(page, KEY);
-  check('boss: completed in storage', Array.isArray(completed) && completed.includes('7'));
+  check('boss: completed in storage', Array.isArray(completed) && completed.includes('6'));
   await page.reload({ waitUntil: 'domcontentloaded' }); await settle(page, 1500);
   check('boss: reload restores review', /Résultat du défi/.test(await body(page)));
   await ctx.close();

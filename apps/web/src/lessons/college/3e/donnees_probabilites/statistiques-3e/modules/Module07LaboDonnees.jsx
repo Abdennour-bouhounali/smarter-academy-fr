@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DotPlot from '../components/DotPlot';
@@ -26,7 +27,9 @@ import { parseDec, formatDec, roundTo } from '@smarter-academy/core';
  *   visée suffit ; et accepter une affirmation parce qu'elle cite un chiffre.
  * Feedback: l'écart à la cible est quantifié à chaque réglage ; échappée après
  *   4 essais.
- * Formalization: aucune ; c'est l'atelier de transfert.
+ * Formalization: la méthode « viser une moyenne » est posée par une
+ *   <KnowledgeBrick> à l'étape 2, après que le réglage à la main l'a fait
+ *   éprouver ; le réflexe de lecture critique par une seconde à l'étape 3.
  * Scaffolding: cible affichée → calcul inverse → jugement d'une affirmation.
  * Transfer: c'est le module de transfert de la leçon.
  */
@@ -130,8 +133,10 @@ export default function Module07LaboDonnees() {
           title: 'Pourquoi faut-il autant ?',
           done: whyDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt={<>La moyenne actuelle est {formatDec(roundTo(mean(NOTES), 1))}. Pourquoi une note de {TARGET} ne suffirait-elle pas à atteindre {TARGET} de moyenne ?</>}
+              requires={['moyenne', 'calcul-moyenne']}
               options={[
                 'Parce qu’une note égale à la cible laisse la moyenne où elle est',
                 'Parce qu’il faut toujours une note maximale',
@@ -145,6 +150,14 @@ export default function Module07LaboDonnees() {
               solved={whyDone}
               onAnswered={() => setWhyDone(true)}
             />
+            {whyDone && (
+              <KnowledgeBrick
+                id="viser-une-moyenne"
+                variant="new"
+                lead="Tu as réglé la note à la main. Voici comment la trouver du premier coup, sans tâtonner."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -152,8 +165,10 @@ export default function Module07LaboDonnees() {
           title: 'L’affirmation du journal',
           done: claimDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="« La moyenne des trajets est de 16 min, donc la plupart des élèves mettent environ 16 min. » Que penser de cette phrase ?"
+              requires={['moyenne', 'mem-ce-que-la-moyenne-ne-dit-pas', 'comparer-series', 'etendue']}
               options={[
                 'Elle est trompeuse : la moyenne ne dit rien du nombre d’élèves proches d’elle',
                 'Elle est juste : c’est la définition de la moyenne',
@@ -167,14 +182,22 @@ export default function Module07LaboDonnees() {
               solved={claimDone}
               onAnswered={() => setClaimDone(true)}
             />
+            {claimDone && (
+              <KnowledgeBrick
+                id="mem-lire-un-chiffre-publie"
+                variant="new"
+                lead="Le réflexe à emporter hors du cours, chaque fois qu’un chiffre est publié quelque part."
+              />
+            )}
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Viser une moyenne, c’est raisonner sur la <strong>somme</strong> à atteindre. Et
-          citer une moyenne sans parler de dispersion, c’est dire une vérité qui trompe.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={7}>
+          Ta carte est complète. La mission finale te demande de t’en servir sur dix chiffres à
+          publier — sans en laisser passer un seul qui mente.
+        </KnowledgeSnapshot>
       }
     />
   );

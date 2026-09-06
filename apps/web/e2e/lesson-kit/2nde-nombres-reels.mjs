@@ -10,8 +10,8 @@ const LESSON = `${BASE}/courses/lycee/seconde/nombres_calculs/nombres-reels-2nde
 const KEY = 'u_anon_smarter_lesson_nombres-reels-2nde';
 const M = {
   diag: `${LESSON}/mission-de-depart`, m1: `${LESSON}/le-zoom-infini`, m2: `${LESSON}/les-familles-de-nombres`,
-  m3: `${LESSON}/decimal-ou-pas`, m4: `${LESSON}/exact-ou-approche`, m5: `${LESSON}/a-retenir`,
-  m6: `${LESSON}/encadrer-et-comparer`, boss: `${LESSON}/mission-finale-la-diagonale`,
+  m3: `${LESSON}/decimal-ou-pas`, m4: `${LESSON}/exact-ou-approche`,
+  m5: `${LESSON}/encadrer-et-comparer`, boss: `${LESSON}/mission-finale-la-diagonale`,
 };
 const o = (browser, url, seed, extra = {}) => open(browser, url, { key: KEY, completedModules: seed, ...extra });
 const audit = async (page, issues) => { issues.push(...(await layoutAudit(page)), ...(await aspectAudit(page))); };
@@ -143,41 +143,25 @@ const browser = await launch();
 /* M5 */
 {
   const { ctx, page } = await o(browser, M.m5, ['0', '1', '2', '3', '4'], { tag: 'm5' });
-  const rows = page.locator('#step-1 div[role="group"]');
-  for (let i = 0; i < 5; i += 1) await rows.nth(i).locator('button').first().click();
-  await settle(page);
-  check('M5: family batch reveals', /carré parfait/.test(await body(page)));
-  await tap(page, 'Arrondir π à 3,14 tout de suite');     // wrong on purpose
-  check('M5: rounding-late reflex explained', /s’additionnent|accumule/.test(await body(page)));
-  const rows3 = page.locator('#step-3 div[role="group"]');
-  for (let i = 0; i < 4; i += 1) await rows3.nth(i).locator('button').first().click();
-  await settle(page);
-  check('M5: complete', await nextEnabled(page));
-  await ctx.close();
-}
-
-/* M6 */
-{
-  const { ctx, page } = await o(browser, M.m6, ['0', '1', '2', '3', '4', '5'], { tag: 'm6' });
   const issues = [];
   for (const a of ['5', '2', '3', '4']) { await page.locator(`#step-1 button[aria-label="Essayer ${a}"]`).click(); await page.waitForTimeout(150); }
   await audit(page, issues);
   let b = await body(page);
-  check('M6: integer bracket 3 ≤ √10 < 4', /3 ≤ √10 < 4/.test(b) && /5² = 25/.test(b));
+  check('M5: integer bracket 3 ≤ √10 < 4', /3 ≤ √10 < 4/.test(b) && /5² = 25/.test(b));
   for (const a of ['3,5', '3,1', '3,2']) { await page.locator(`#step-2 button[aria-label="Essayer ${a}"]`).click(); await page.waitForTimeout(150); }
   await audit(page, issues);
-  check('M6: tenth bracket 3,1 ≤ √10 < 3,2', /3,1 ≤ √10 < 3,2/.test(await body(page)));
+  check('M5: tenth bracket 3,1 ≤ √10 < 3,2', /3,1 ≤ √10 < 3,2/.test(await body(page)));
   // ordering: wrong on purpose (√2 before 1,41)
   for (const t of ['1,4', '√2', '1,41', '1,42', '3/2']) { await page.locator(`#step-3 button[aria-label="Placer ${t}"]`).click(); await page.waitForTimeout(100); }
   await page.locator('#step-3 button:has-text("Vérifier")').click(); await settle(page);
   b = await body(page);
-  check('M6: ordering break point named, formative', /casse|ordre/i.test(b) && await page.locator('#step-4').count() > 0);
+  check('M5: ordering break point named, formative', /casse|ordre/i.test(b) && await page.locator('#step-4').count() > 0);
   await fillOk(page, '400', '#step-4');                  // wrong on purpose (half)
-  check('M6: half trap targeted', /pas la moitié/.test(await body(page)));
+  check('M5: half trap targeted', /pas la moitié/.test(await body(page)));
   await tap(page, '28 m', '#step-4');                    // wrong on purpose
-  check('M6: rounding up imposed by the situation', /trop court/.test(await body(page)));
-  check('M6: complete', await nextEnabled(page));
-  check('M6: layout safe', issues.length === 0, issues.slice(0, 3).join(' | '));
+  check('M5: rounding up imposed by the situation', /trop court/.test(await body(page)));
+  check('M5: complete', await nextEnabled(page));
+  check('M5: layout safe', issues.length === 0, issues.slice(0, 3).join(' | '));
   await ctx.close();
 }
 
@@ -190,9 +174,9 @@ const browser = await launch();
   check('boss: score shown', /\/ 10/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
-  check('boss: synthèse with frozen zoom line', (await page.locator('svg[aria-label^="Fenêtre de 1,41 à 1,42"]').count()) === 1);
+  check('boss: synthèse IS the complete knowledge map', /Ma carte des connaissances/.test(await body(page)) && (await page.locator('[data-knowledge-snapshot="complete"] [data-km-item]').count()) === 17);
   const completed = await readCompleted(page, KEY);
-  check('boss: completed in storage', Array.isArray(completed) && completed.includes('7'));
+  check('boss: completed in storage', Array.isArray(completed) && completed.includes('6'));
   await page.reload({ waitUntil: 'domcontentloaded' }); await settle(page, 1500);
   check('boss: reload restores review', /Résultat du défi/.test(await body(page)));
   await ctx.close();

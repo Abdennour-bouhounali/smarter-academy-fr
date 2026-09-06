@@ -75,6 +75,10 @@ export default function DotPlot({
   showMean = false,
   showMedian = false,
   showRange = false,
+  // Le crochet SANS le mot « étendue » : sert au module 3, où le graphique
+  // précède la brique qui nomme la notion. Le geste est montré, le mot arrive
+  // avec la brique (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+  rangeUnnamed = false,
   target = null,            // repère en pointillé (moyenne visée)
   unit = ' min',
   frozen = false,
@@ -185,7 +189,7 @@ export default function DotPlot({
             const a = toX(Math.min(...values));
             const b = toX(Math.max(...values));
             const y = ROW_RANGE - 12;
-            const label = `étendue ${formatDec(rng)}${unit}`;
+            const label = rangeUnnamed ? `${formatDec(rng)}${unit}` : `étendue ${formatDec(rng)}${unit}`;
             return (
               <g>
                 <path d={`M ${a} ${y - 5} L ${a} ${y} L ${b} ${y} L ${b} ${y - 5}`}

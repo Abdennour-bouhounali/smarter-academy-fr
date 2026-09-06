@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DotPlot from '../components/DotPlot';
 import { mean, median, range, compareSeries } from '../components/statUtils';
@@ -26,7 +26,9 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Misconception targeted: « la moyenne résume la série » ; et l'idée qu'une
  *   comparaison se tranche avec un seul nombre.
  * Feedback: les trois indicateurs des deux classes sont affichés côte à côte.
- * Formalization: aucune ; c'est l'atelier.
+ * Formalization: la règle « deux indicateurs identiques ne font pas deux séries
+ *   identiques » est posée par une <KnowledgeBrick> à l'étape 3, après que les
+ *   étapes 1 et 2 l'ont fait constater sur les deux axes empilés.
  * Scaffolding: constat guidé → calcul de l'étendue → interprétation.
  * Transfer: le module 7 démonte une affirmation trompeuse.
  */
@@ -92,6 +94,7 @@ export default function Module06DeuxClasses() {
           content: (
             <TapQuestion
               prompt="Compare les deux séries. Qu’ont-elles exactement en commun ?"
+              requires={['moyenne', 'mediane', 'etendue', 'indicateur']}
               options={[
                 'La même moyenne et la même médiane',
                 'La même moyenne seulement',
@@ -114,6 +117,7 @@ export default function Module06DeuxClasses() {
           content: (kit) => (
             <NumericQuestion
               prompt="Quelle est l’étendue de la classe B ?"
+              requires={['etendue']}
               expected={RB}
               parse={parseDec}
               display={formatDec(RB)}
@@ -134,8 +138,10 @@ export default function Module06DeuxClasses() {
           title: 'Que répondre au principal ?',
           done: interpDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="Le principal veut savoir dans quelle classe organiser un ramassage scolaire. Que lui conseiller ?"
+              requires={['etendue', 'moyenne', 'valeur-extreme', 'choisir-indicateur']}
               options={[
                 'La classe B : certains élèves viennent de bien plus loin',
                 'La classe A : sa moyenne est identique',
@@ -149,14 +155,22 @@ export default function Module06DeuxClasses() {
               solved={interpDone}
               onAnswered={() => setInterpDone(true)}
             />
+            {interpDone && (
+              <KnowledgeBrick
+                id="comparer-series"
+                variant="new"
+                lead="Ce que ces deux classes viennent de démontrer vaut pour toute comparaison de séries."
+              />
+            )}
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Deux séries peuvent partager <strong>moyenne et médiane</strong> et décrire des
-          réalités opposées. Comparer, c’est regarder plusieurs indicateurs — jamais un seul.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={6}>
+          Tu sais lire plusieurs indicateurs ensemble. Le dernier atelier retourne la moyenne —
+          au lieu de la calculer, on la <strong>vise</strong> — et démonte une phrase de journal.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -37,6 +37,24 @@ export const LESSON_BASE_PATH = '/courses/college/3e/donnees_probabilites/repres
 
 export const LESSON_CONFIG = {
   id: 'representation-graphique-3e',
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : elles viennent du repérage de 6e et des trois leçons
+  // antérieures du même chapitre — `fonctions-3e` (fonction, f(x), image,
+  // tableau de valeurs), `fonctions-lineaires-3e` et `fonctions-affines-3e`
+  // (forme ax + b, rôle de a, ordonnée à l'origine). Le module 0 les
+  // diagnostique une par une.
+  //
+  // CE QUE CETTE LEÇON N'ASSUME PAS. Le rôle de l'échelle, le placement entre
+  // deux graduations, le choix des axes et la détection d'un graphique
+  // trompeur sont sa matière (P1, P2, P4, P11) : ce sont des briques `new`,
+  // pas des prérequis. Deux questions du module 0 les pré-testaient ; elles
+  // ont été remplacées.
+  priorKnowledge: [
+    'fonction', 'notation-fx', 'image', 'tableau-de-valeurs',
+    'fonction-affine', 'coefficient-lineaire', 'ordonnee-origine',
+    'abscisse', 'ordonnee', 'coordonnees', 'origine-repere',
+  ],
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Représentation graphique',
   description:

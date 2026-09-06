@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { CROISSANCE } from '../components/graphData';
@@ -32,6 +33,12 @@ import { formatDec } from '@smarter-academy/core';
  * NOTE — `fonctions-3e` M04 plaçait déjà des points d'un tableau, mais sur une
  * grille d'unités où tout tombait juste, et pour constater l'alignement. Ici le
  * pas vaut 5 et les valeurs sont décimales : l'objet est le placement lui-même.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le geste d'abord, la règle ensuite : l'étape 1 fait DÉCOUVRIR qu'une valeur
+ *   peut tomber au milieu d'un carreau, la brique `placer-entre-graduations` la
+ *   nomme, et l'étape 2 — la question d'origine, désormais légitime — la teste
+ *   sur une autre valeur et une autre échelle.
  */
 
 const RANGE = { xMin: 0, xMax: 5, yMin: 0, yMax: 35 };
@@ -174,11 +181,13 @@ export default function Module03EntreDeuxGraduations() {
               )}
 
               {done1 && (
-                <Feedback tone={revealed ? 'info' : 'ok'}>
-                  {revealed ? 'On te les montre. ' : 'Les quatre points sont posés. '}
-                  Deux d’entre eux tombaient <strong>entre</strong> deux graduations : il
-                  fallait viser le milieu du carreau.
-                </Feedback>
+                <KnowledgeBrick
+                  id="placer-entre-graduations"
+                  variant="new"
+                  lead={revealed
+                    ? 'On te les montre. Deux des quatre hauteurs tombaient entre deux graduations : voici comment on les place.'
+                    : 'Les quatre points sont posés. Deux d’entre eux tombaient entre deux graduations — voici la règle que tu viens d’appliquer.'}
+                />
               )}
             </div>
           ),
@@ -200,6 +209,7 @@ export default function Module03EntreDeuxGraduations() {
               cols={1}
               explain="12,5 est exactement à mi-chemin entre 10 et 15 : on place le point au milieu du carreau. Arrondir à la graduation la plus proche fausserait le graphique — un point vaut la valeur qu’il représente, pas la graduation d’à côté."
               explainWrong="Une valeur qui tombe entre deux graduations se place entre elles. C’est justement à quoi sert de choisir une échelle : savoir ce que vaut un carreau permet de placer n’importe quelle valeur."
+              requires={['placer-entre-graduations', 'echelle-axe']}
               solved={halfDone}
               onAnswered={() => setHalfDone(true)}
             />
@@ -207,11 +217,10 @@ export default function Module03EntreDeuxGraduations() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Placer un point, c’est traduire deux nombres en une position. Quand l’échelle ne
-          vaut pas 1, il faut <strong>compter les carreaux</strong> — et parfois les couper
-          en deux.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={3}>
+          L’échelle t’était donnée jusqu’ici. Au module suivant, c’est toi qui la choisis —
+          et le mauvais choix se voit tout de suite.
+        </KnowledgeSnapshot>
       }
     />
   );

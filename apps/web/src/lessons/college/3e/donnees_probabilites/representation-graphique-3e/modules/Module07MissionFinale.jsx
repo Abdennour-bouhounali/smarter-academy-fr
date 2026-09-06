@@ -1,7 +1,7 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
-import MathText from '../../../../../common/components/MathText';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import TruncatedLine from '../components/TruncatedLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -26,6 +26,13 @@ import { RESERVOIR, TEMPERATURE } from '../components/graphData';
  *
  * Couverture des Learning Points : P1 (e1), P2 (e2, e5), P3 (e3), P4 (e4),
  * P5 (e5), P7 (e7), P6 (e6), P8 (e8), P9 (e6), P10 (e10), P11 (e9, e10).
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le test final CONSOLIDE : chaque épreuve déclare en `requires` ce qu'elle
+ *   exige, et n'exige rien que la leçon n'ait établi par une brique ou déclaré
+ *   en `priorKnowledge`. Il n'introduit ni concept, ni mot, ni notation.
+ *   La synthèse garde ses visuels et ses pièges ; la liste de définitions
+ *   qu'elle recopiait est remplacée par la carte complète, source unique.
  */
 
 const REGISTRE = [
@@ -47,6 +54,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'rg-e1',
+    requires: ['choix-des-axes', 'abscisse'],
     skill: 'axes',
     title: 'Épreuve 1',
     prompt: 'On représente la distance parcourue en fonction du temps. Quelle grandeur va sur l’axe horizontal ?',
@@ -58,6 +66,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e2',
+    requires: ['choisir-une-echelle', 'echelle-axe'],
     skill: 'echelle',
     title: 'Épreuve 2',
     prompt: 'Les valeurs vont jusqu’à 60. Le cadre fait 12 carreaux. Que se passe-t-il si un carreau vaut 2 ?',
@@ -74,6 +83,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e3',
+    requires: ['echelle-axe', 'placer-entre-graduations'],
     skill: 'echelle',
     title: 'Épreuve 3',
     prompt: 'Sur un axe gradué de 5 en 5, un point est placé deux carreaux et demi au-dessus de 0. Quelle valeur lit-on ?',
@@ -85,6 +95,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e4',
+    requires: ['placer-entre-graduations', 'echelle-axe'],
     skill: 'placer',
     title: 'Épreuve 4',
     prompt: 'Un carreau vaut 10. Où placer la valeur 45 ?',
@@ -101,6 +112,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e5',
+    requires: ['choisir-une-echelle', 'echelle-qui-aplatit'],
     skill: 'construire',
     title: 'Épreuve 5',
     prompt: 'Un tableau contient les valeurs 8, 22, 35 et 48. Sur 12 carreaux, quel pas choisir ?',
@@ -112,6 +124,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e6',
+    requires: ['forme-de-la-courbe', 'forme-et-situation'],
     skill: 'associer',
     title: 'Épreuve 6',
     prompt: 'Une courbe est une droite horizontale. Quelle situation décrit-elle ?',
@@ -128,6 +141,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e7',
+    requires: ['ligne-devient-point', 'verifier-un-graphique'],
     skill: 'construire',
     title: 'Épreuve 7',
     prompt: 'Un tableau indique 30 L à 4 min, mais la courbe passe à 52 L à cet endroit. Que conclure ?',
@@ -144,6 +158,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e8',
+    requires: ['forme-et-expression', 'forme-de-la-courbe', 'fonction-affine', 'coefficient-lineaire', 'ordonnee-origine'],
     skill: 'associer',
     title: 'Épreuve 8',
     prompt: 'Une droite part de 26 sur l’axe vertical et descend régulièrement. Quelle expression lui correspond ?',
@@ -155,6 +170,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e9',
+    requires: ['axe-tronque', 'echelle-axe', 'verifier-un-graphique'],
     skill: 'reparer',
     title: 'Épreuve 9',
     prompt: 'Un graphique montre des températures de 17,5 à 19,5 °C sur un axe partant de 17. La courbe grimpe d’un bord à l’autre. Que penser ?',
@@ -171,6 +187,7 @@ const EPREUVES = [
   },
   {
     id: 'rg-e10',
+    requires: ['echelle-qui-aplatit', 'choisir-une-echelle', 'verifier-un-graphique'],
     skill: 'reparer',
     title: 'Épreuve 10',
     prompt: 'Des valeurs autour de 19 sont tracées sur un axe montant jusqu’à 240, partant de 0. Le résultat paraît plat. Est-ce correct ?',
@@ -250,16 +267,6 @@ function Synthese() {
         </div>
       </div>
 
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-4 space-y-2">
-        <p className="font-bold text-slate-800">Avant de croire un graphique</p>
-        <ul className="text-sm text-slate-700 space-y-1 list-disc list-inside">
-          <li>D’où part l’axe vertical ?</li>
-          <li>Combien vaut un carreau ?</li>
-          <li>Quelle grandeur est en abscisse ?</li>
-          <li>Les points correspondent-ils au tableau ?</li>
-        </ul>
-      </div>
-
       <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4">
         <p className="font-bold text-rose-800 mb-2">Les pièges déjoués</p>
         <ul className="space-y-1.5 text-sm">
@@ -277,6 +284,9 @@ function Synthese() {
         Un graphique ne se subit pas : il se construit, et il se vérifie. Les mêmes nombres
         peuvent donner une image honnête ou trompeuse — c’est le constructeur qui décide.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

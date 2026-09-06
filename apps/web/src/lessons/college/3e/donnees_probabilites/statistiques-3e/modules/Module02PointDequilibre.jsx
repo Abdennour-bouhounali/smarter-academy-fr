@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DotPlot from '../components/DotPlot';
@@ -27,8 +28,11 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  *   avec la valeur la plus fréquente.
  * Feedback: le déséquilibre est quantifié et orienté à chaque déplacement ;
  *   échappée après 4 essais.
- * Formalization: la formule somme ÷ effectif arrive à l'étape 3, comme moyen de
- *   CALCULER ce point déjà trouvé.
+ * Formalization: « moyenne » est posée par une <KnowledgeBrick> à l'instant où
+ *   le pivot s'équilibre, et la formule somme ÷ effectif par une seconde brique
+ *   à l'étape 2, comme moyen de CALCULER ce point déjà trouvé. Ce module ne dit
+ *   rien de la médiane ni du mode : ils n'existent pas encore pour l'élève
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: série courte à moyenne ronde (TRY) → calcul → interprétation.
  * Transfer: le module 4 tire une valeur et regarde ce pivot suivre.
  */
@@ -91,15 +95,9 @@ export default function Module02PointDequilibre() {
                 showMean={done1}
                 ariaLabel="Axe : place le pivot d’équilibre de la série"
               />
-              <Feedback tone={done1 ? (revealed ? 'info' : 'ok') : 'info'}>
-                {done1 ? (
-                  <>
-                    {revealed ? 'On te le montre : ' : 'Équilibre atteint. '}
-                    le pivot est en <strong>{formatDec(M)} min</strong>. Les écarts à gauche
-                    compensent exactement ceux de droite — c’est ce qu’on appelle la{' '}
-                    <strong>moyenne</strong>.
-                  </>
-                ) : gap > 0 ? (
+              {!done1 && (
+              <Feedback tone="info">
+                {gap > 0 ? (
                   <>
                     La série penche <strong>à droite</strong> : il reste{' '}
                     {formatDec(gap)} d’écart en trop de ce côté. Déplace le pivot vers la droite.
@@ -111,6 +109,20 @@ export default function Module02PointDequilibre() {
                   </>
                 )}
               </Feedback>
+              )}
+              {done1 && (
+                <KnowledgeBrick
+                  id="moyenne"
+                  variant="new"
+                  lead={(
+                    <>
+                      {revealed ? 'On te le montre : ' : 'Équilibre atteint. '}
+                      le pivot est en <strong>{formatDec(M)} min</strong>, et là seulement les écarts
+                      de gauche compensent exactement ceux de droite. Ce point porte un nom.
+                    </>
+                  )}
+                />
+              )}
               {!done1 && tries >= 4 && (
                 <button
                   type="button"
@@ -129,26 +141,33 @@ export default function Module02PointDequilibre() {
           title: 'Comment le calculer ?',
           done: calcDone,
           content: (kit) => (
-            <NumericQuestion
-              prompt="Additionne les six trajets, puis divise par leur nombre. Que trouves-tu ?"
-              above={
-                <div className="rounded-xl bg-slate-50 border border-slate-200 p-3 text-center font-mono text-sm">
-                  {EQUILIBRE.join(' + ')} = {formatDec(sum(EQUILIBRE))} &nbsp;·&nbsp; effectif = {total(EQUILIBRE)}
-                </div>
-              }
-              expected={M}
-              parse={parseDec}
-              display={formatDec(M)}
-              suffix="min"
-              explain={`${formatDec(sum(EQUILIBRE))} ÷ ${total(EQUILIBRE)} = ${formatDec(M)} min — exactement le pivot que tu as trouvé. La division n'invente rien : elle CALCULE le point d'équilibre.`}
-              explainFor={(n) => {
-                if (n === sum(EQUILIBRE)) return 'Tu as donné la somme. Il reste à la diviser par l’effectif, ici 6.';
-                if (n === total(EQUILIBRE)) return 'Tu as donné l’effectif. C’est le diviseur, pas le résultat.';
-                return null;
-              }}
-              solved={calcDone}
-              onAnswered={(ok) => { setCalcDone(true); kit.react(ok); }}
-            />
+            <KnowledgeBrick
+              id="calcul-moyenne"
+              variant="new"
+              lead="Glisser un pivot marche sur six valeurs. Sur trois cents, il faut pouvoir le calculer."
+            >
+              <NumericQuestion
+                prompt="Applique la formule à tes six trajets. Que trouves-tu ?"
+                above={
+                  <div className="rounded-xl bg-white border border-slate-200 p-3 text-center font-mono text-sm">
+                    {EQUILIBRE.join(' + ')} = {formatDec(sum(EQUILIBRE))} &nbsp;·&nbsp; effectif = {total(EQUILIBRE)}
+                  </div>
+                }
+                expected={M}
+                parse={parseDec}
+                display={formatDec(M)}
+                suffix="min"
+                requires={['calcul-moyenne', 'moyenne', 'calcul-numerique']}
+                explain={`${formatDec(sum(EQUILIBRE))} ÷ ${total(EQUILIBRE)} = ${formatDec(M)} min — exactement le pivot que tu as trouvé à la main. La division n'invente rien : elle CALCULE le point d'équilibre.`}
+                explainFor={(n) => {
+                  if (n === sum(EQUILIBRE)) return 'Tu as donné la somme. Il reste à la diviser par l’effectif, ici 6.';
+                  if (n === total(EQUILIBRE)) return 'Tu as donné l’effectif. C’est le diviseur, pas le résultat.';
+                  return null;
+                }}
+                solved={calcDone}
+                onAnswered={(ok) => { setCalcDone(true); kit.react(ok); }}
+              />
+            </KnowledgeBrick>
           ),
         },
         {
@@ -156,30 +175,39 @@ export default function Module02PointDequilibre() {
           title: 'Ce que la moyenne dit — et ne dit pas',
           done: senseDone,
           content: (
-            <TapQuestion
-              prompt="La moyenne des trajets vaut 15 min. Qu’est-ce que cela signifie ?"
-              options={[
-                'Si tous les élèves mettaient le même temps, ce serait 15 min',
-                'La moitié des élèves mettent moins de 15 min',
-                'C’est le temps le plus fréquent dans la classe',
-                'C’est le temps du milieu de la liste',
-              ]}
-              correct={0}
-              cols={1}
-              explain="La moyenne répartit équitablement : c’est le temps que chacun mettrait si le total était partagé également. Elle ne dit rien du nombre d’élèves en dessous, ni de la valeur la plus fréquente — ce sont d’autres indicateurs."
-              explainWrong="« La moitié en dessous » décrit la médiane ; « le plus fréquent » décrit le mode. La moyenne, elle, égalise."
-              solved={senseDone}
-              onAnswered={() => setSenseDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="La moyenne des trajets vaut 15 min. Qu’est-ce que cela signifie ?"
+                options={[
+                  'Si tous les élèves mettaient le même temps, ce serait 15 min',
+                  'La moitié des élèves mettent moins de 15 min',
+                  'C’est le temps qui revient le plus souvent dans la classe',
+                  'Au moins un élève met exactement 15 min',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['moyenne', 'calcul-moyenne']}
+                explain="La moyenne répartit équitablement : c’est le temps que chacun mettrait si le total était partagé également entre les six élèves."
+                explainWrong="Reviens à la planche : le pivot est le point d’équilibre des écarts. Compter les élèves de part et d’autre, ou chercher le temps qui revient le plus souvent, c’est répondre à une autre question — la moyenne, elle, égalise."
+                solved={senseDone}
+                onAnswered={() => setSenseDone(true)}
+              />
+              {senseDone && (
+                <KnowledgeBrick
+                  id="mem-ce-que-la-moyenne-ne-dit-pas"
+                  variant="new"
+                  lead="Trois des quatre réponses étaient fausses pour la même raison : elles font dire à la moyenne ce qu’elle ne dit pas."
+                />
+              )}
+            </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> La moyenne est le point d’équilibre de la série, et se
-          calcule en divisant la <strong>somme</strong> des valeurs par leur{' '}
-          <strong>effectif</strong>.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={2}>
+          Un seul nombre pour toute la série — mais il se laisse tirer par les valeurs
+          éloignées. Le module suivant en cherche un autre, qui résiste.
+        </KnowledgeSnapshot>
       }
     />
   );

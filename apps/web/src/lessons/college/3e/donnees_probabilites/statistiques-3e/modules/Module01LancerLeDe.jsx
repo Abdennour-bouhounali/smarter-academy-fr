@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useReducedMotion } from 'framer-motion';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -38,8 +39,12 @@ import {
  *   par être exactement égales » ; « fréquence = probabilité ».
  * Feedback: chaque correction cite LES nombres de l'élève (ses effectifs, ses
  *   écarts, sa face en tête) — jamais des valeurs inventées.
- * Formalization: « effectif » à l'étape 2, « fréquence » à l'étape 3,
- *   « probabilité » et 1/6 à l'étape 7 — chaque mot après le geste.
+ * Formalization: chaque mot est posé par une <KnowledgeBrick> APRÈS le geste
+ *   qui lui donne son sens et AVANT la première demande qui l'exige —
+ *   « expérience aléatoire » et « série / valeurs / effectifs » à l'étape 2,
+ *   « fréquence » à l'étape 3, « stabilisation » à l'étape 5, « probabilité »
+ *   à l'étape 7, « fréquence ≠ probabilité » à l'étape 8. Les définitions
+ *   vivent dans knowledge.jsx, pas ici (docs/architecture/KNOWLEDGE_MAP.md).
  * Scaffolding: un seul bouton (Lancer) → ×10 → séries de 100 → séries de
  *   1 000 avec pari → dé truqué → questions sans manipulation.
  * Transfer: retour au jeu de plateau (étape 6) ; dé truqué (étape 9) ; la
@@ -261,24 +266,26 @@ export default function Module01LancerLeDe() {
               {predicted === null && !done1 && (
                 <Feedback tone="info">Commence par annoncer une face : c’est ta prédiction.</Feedback>
               )}
-              {guesses.length > 0 && (
-                <Feedback tone={done1 ? 'ok' : 'info'}>
-                  {done1 ? (
+              {guesses.length > 0 && !done1 && (
+                <Feedback tone="info">
+                  Tu avais dit <strong>{guesses[guesses.length - 1].pred}</strong>, le dé a donné{' '}
+                  <strong>{guesses[guesses.length - 1].got}</strong>
+                  {guesses[guesses.length - 1].pred === guesses[guesses.length - 1].got ? ' — deviné !' : '.'}{' '}
+                  Encore {GUESSES_NEEDED - guesses.length} lancer{GUESSES_NEEDED - guesses.length > 1 ? 's' : ''}.
+                </Feedback>
+              )}
+              {done1 && (
+                <KnowledgeBrick
+                  id="experience-aleatoire"
+                  variant="new"
+                  lead={(
                     <>
                       Sur {GUESSES_NEEDED} lancers, tu as deviné <strong>{hits} fois</strong>.
                       {hits >= 2 ? ' Bien joué — mais aurais-tu pu en être sûr ? Non.' : ''}{' '}
-                      Personne ne peut prévoir <em>un</em> lancer : c’est une{' '}
-                      <strong>expérience aléatoire</strong>. Le hasard décide.
-                    </>
-                  ) : (
-                    <>
-                      Tu avais dit <strong>{guesses[guesses.length - 1].pred}</strong>, le dé a donné{' '}
-                      <strong>{guesses[guesses.length - 1].got}</strong>
-                      {guesses[guesses.length - 1].pred === guesses[guesses.length - 1].got ? ' — deviné !' : '.'}{' '}
-                      Encore {GUESSES_NEEDED - guesses.length} lancer{GUESSES_NEEDED - guesses.length > 1 ? 's' : ''}.
+                      Ce que tu viens de faire porte un nom.
                     </>
                   )}
-                </Feedback>
+                />
               )}
             </div>
           ),
@@ -302,8 +309,21 @@ export default function Module01LancerLeDe() {
                 </Feedback>
               )}
               {few && (
+                <KnowledgeBrick
+                  id="serie-statistique"
+                  variant="new"
+                  lead={(
+                    <>
+                      Tes {formatDec(few.t)} lancers ne sont plus un tas de résultats : ils se
+                      rangent en six barres. Ce dessin a un nom, et ses deux nombres aussi.
+                    </>
+                  )}
+                />
+              )}
+              {few && (
                 <TapQuestion
                   prompt={`Après ${formatDec(few.t)} lancers, la face ${few.k} ${few.c === 0 ? 'n’est jamais sortie' : `n’est sortie que ${few.c} fois`}. Que peut-on en conclure ?`}
+                  requires={['serie-statistique', 'experience-aleatoire']}
                   options={[
                     `Le dé désavantage la face ${few.k}`,
                     `La face ${few.k} va sortir plus souvent ensuite, pour rattraper son retard`,
@@ -313,13 +333,11 @@ export default function Module01LancerLeDe() {
                   cols={1}
                   explain={
                     <>
-                      Avec si peu de lancers, les écarts entre faces sont énormes et changent d’une
-                      série à l’autre : ni « dé truqué » ni « rattrapage » ne se lisent sur{' '}
+                      Avec si peu de lancers, les écarts entre effectifs sont énormes et changent
+                      d’une série à l’autre : ni « dé truqué » ni « rattrapage » ne se lisent sur{' '}
                       {formatDec(few.t)} lancers. Pour juger, il en faut beaucoup plus — c’est l’étape
-                      suivante. Au passage, ce graphique est une <strong>série statistique</strong> :
-                      les faces 1 à 6 sont ses <strong>valeurs</strong>, et chaque hauteur de barre est un{' '}
-                      <strong>effectif</strong> — le nombre de lancers qui ont donné cette face. Les six
-                      effectifs additionnés redonnent le total : {formatDec(few.t)}.
+                      suivante. Vérifie au passage que tes six effectifs additionnés redonnent bien
+                      le total : {formatDec(few.t)}.
                     </>
                   }
                   solved={fewDone}
@@ -345,29 +363,40 @@ export default function Module01LancerLeDe() {
                 <Feedback tone="info">Repars de zéro : lance une série de 100 d’un coup et observe les six effectifs.</Feedback>
               )}
               {hundred && (
-                <NumericQuestion
-                  prompt={`Sur 100 lancers, la face ${hundred.top} est sortie ${hundred.c} fois. Est-ce beaucoup ? Exprime cette part en pourcentage.`}
-                  suffix="%"
-                  expected={hundred.c}
-                  parse={parseDec}
-                  display={`${hundred.c} %`}
-                  explain={
+                <KnowledgeBrick
+                  id="frequence"
+                  variant="new"
+                  lead={(
                     <>
-                      {hundred.c} sur 100, c’est {hundred.c}/100 = <strong>{hundred.c} %</strong>. Cette part
-                      s’appelle la <strong>fréquence</strong> de la face {hundred.top} : effectif ÷ nombre total de
-                      lancers. Les six fréquences apparaissent maintenant sous le graphique — elles permettent
-                      de comparer des séries de tailles différentes.
+                      La face {hundred.top} a pour effectif <strong>{hundred.c}</strong> sur 100 lancers.
+                      Pour dire si c’est beaucoup, il faut rapporter cet effectif au total.
                     </>
-                  }
-                  explainFor={(n) => {
-                    if (n === hundred.c / 100) return `Tu as calculé ${hundred.c}/100 = ${formatDec(n)} : c’est la fréquence en écriture décimale. En pourcentage, c’est ${hundred.c} %.`;
-                    if (n === 100 - hundred.c) return `Tu as compté les lancers où le ${hundred.top} n’est PAS sorti. Sa fréquence, c’est ${hundred.c} sur 100 = ${hundred.c} %.`;
-                    if (n === 6) return `6 est le nombre de faces, pas la part de la face ${hundred.top}. Sa fréquence : ${hundred.c} sur 100 = ${hundred.c} %.`;
-                    return null;
-                  }}
-                  solved={freqDone}
-                  onAnswered={() => setFreqDone(true)}
-                />
+                  )}
+                >
+                  <NumericQuestion
+                    prompt={`Exprime en pourcentage la fréquence de la face ${hundred.top} sur ces 100 lancers.`}
+                    suffix="%"
+                    expected={hundred.c}
+                    parse={parseDec}
+                    display={`${hundred.c} %`}
+                    requires={['frequence', 'serie-statistique', 'pourcentage']}
+                    explain={
+                      <>
+                        {hundred.c} sur 100, c’est {hundred.c}/100 = <strong>{hundred.c} %</strong>. Les six
+                        fréquences apparaissent maintenant sous le graphique : c’est avec elles qu’on pourra
+                        comparer une série de 10 lancers à une série de 1 000.
+                      </>
+                    }
+                    explainFor={(n) => {
+                      if (n === hundred.c / 100) return `Tu as calculé ${hundred.c}/100 = ${formatDec(n)} : c’est la fréquence en écriture décimale. En pourcentage, c’est ${hundred.c} %.`;
+                      if (n === 100 - hundred.c) return `Tu as compté les lancers où le ${hundred.top} n’est PAS sorti. Sa fréquence, c’est ${hundred.c} sur 100 = ${hundred.c} %.`;
+                      if (n === 6) return `6 est le nombre de faces, pas la part de la face ${hundred.top}. Sa fréquence : ${hundred.c} sur 100 = ${hundred.c} %.`;
+                      return null;
+                    }}
+                    solved={freqDone}
+                    onAnswered={() => setFreqDone(true)}
+                  />
+                </KnowledgeBrick>
               )}
             </div>
           ),
@@ -416,6 +445,7 @@ export default function Module01LancerLeDe() {
               {runs.length >= RUNS_NEEDED && (
                 <TapQuestion
                   prompt={`Sur tes ${runs.length} séries de 1 000 lancers, que remarques-tu ?`}
+                  requires={['frequence', 'serie-statistique']}
                   options={[
                     'Une face domine nettement les autres à chaque série',
                     'Aucune face ne domine vraiment : toutes restent proches de la même fréquence',
@@ -457,6 +487,7 @@ export default function Module01LancerLeDe() {
               )}
               <TapQuestion
                 prompt="Quand le nombre de lancers augmente, les fréquences des six faces…"
+                requires={['frequence']}
                 options={[
                   'deviennent exactement égales : 16,7 % chacune',
                   'se rapprochent les unes des autres, sans devenir exactement égales',
@@ -481,6 +512,13 @@ export default function Module01LancerLeDe() {
                 solved={stabDone}
                 onAnswered={() => setStabDone(true)}
               />
+              {stabDone && (
+                <KnowledgeBrick
+                  id="stabilisation"
+                  variant="new"
+                  lead="Tes trois séries viennent de le montrer : ce resserrement porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -493,6 +531,7 @@ export default function Module01LancerLeDe() {
             <div className="space-y-4">
               <TapQuestion
                 prompt="Un joueur attend un 6 pour sortir son pion et se plaint : « le 6 est plus difficile à obtenir ». Que montrent tes lancers ?"
+                requires={['frequence', 'stabilisation']}
                 above={r1 && (
                   <div className="rounded-xl border-2 border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 flex items-center gap-3">
                     <DieIcon face={6} size={32} />
@@ -518,6 +557,7 @@ export default function Module01LancerLeDe() {
               {gameA && (
                 <TapQuestion
                   prompt="Un autre joueur affirme : « Le 6 vient de sortir trois fois de suite, il est plus probable que les autres maintenant. » Que lui réponds-tu ?"
+                  requires={['experience-aleatoire', 'stabilisation']}
                   options={[
                     'Il a raison : trois 6 de suite prouvent que le dé favorise le 6',
                     'Trois lancers ne prouvent rien : sur 1 000 lancers, le 6 sort comme les autres',
@@ -527,9 +567,9 @@ export default function Module01LancerLeDe() {
                   cols={1}
                   explain={
                     <>
-                      Trois 6 de suite, c’est rare mais ça arrive (une fois sur 216 en moyenne). Le dé n’a pas de
-                      mémoire : chaque lancer repart de zéro. Tu l’as vu à l’étape 2 — sur quelques lancers, n’importe
-                      quelle face peut prendre de l’avance, et cette avance ne dure pas.
+                      Trois 6 de suite, c’est rare mais ça arrive : environ une série de trois lancers sur 216. Le
+                      dé n’a pas de mémoire : chaque lancer repart de zéro. Tu l’as vu à l’étape 2 — sur quelques
+                      lancers, n’importe quelle face peut prendre de l’avance, et cette avance ne dure pas.
                     </>
                   }
                   solved={gameB}
@@ -545,8 +585,10 @@ export default function Module01LancerLeDe() {
           subtitle: 'Le nombre que tes barres cherchaient.',
           done: probDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="Si le dé est équilibré, chaque face a exactement la même chance. Quelle part du total revient alors à chaque face ?"
+              requires={['frequence', 'serie-statistique']}
               options={['$\\frac{1}{6}$', '$\\frac{1}{2}$', '$\\frac{6}{100}$', '$\\frac{1}{1000}$']}
               renderOption={frac}
               correctionLabel="1/6"
@@ -559,15 +601,22 @@ export default function Module01LancerLeDe() {
               ) : null)}
               explain={
                 <>
-                  1 face favorable sur 6 faces possibles : <strong>1/6 ≈ 16,7 %</strong>. Ce nombre s’appelle la{' '}
-                  <strong>probabilité</strong> d’obtenir cette face — on écrit P(6) = 1/6. Regarde le repère apparu
-                  sur ta série de 1 000 lancers : les six barres le serrent toutes. Tes fréquences tournaient autour
-                  de ce nombre-là.
+                  1 face favorable sur 6 faces possibles : <strong>1/6 ≈ 16,7 %</strong>. Regarde le repère
+                  apparu sur ta série de 1 000 lancers : les six barres le serrent toutes. Tes fréquences
+                  tournaient autour de ce nombre-là.
                 </>
               }
               solved={probDone}
               onAnswered={() => setProbDone(true)}
             />
+            {probDone && (
+              <KnowledgeBrick
+                id="probabilite"
+                variant="new"
+                lead="Ce nombre 1/6, que tes barres cherchaient sans jamais l’atteindre exactement, porte un nom."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -576,8 +625,10 @@ export default function Module01LancerLeDe() {
           subtitle: 'Deux nombres proches, deux natures différentes.',
           done: contrastDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="Pourquoi ces deux nombres ne sont-ils pas identiques ?"
+              requires={['frequence', 'probabilite']}
               above={
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div className="rounded-xl border-2 border-indigo-200 bg-indigo-50 px-3 py-2">
@@ -601,14 +652,21 @@ export default function Module01LancerLeDe() {
               cols={1}
               explain={
                 <>
-                  <strong>Fréquence observée ≠ probabilité.</strong> La fréquence dit ce qui s’est passé ; la
-                  probabilité dit ce qu’on attend d’un dé équilibré. Plus on lance, plus la fréquence se rapproche
-                  de 16,7 % — sans jamais être obligée de l’atteindre exactement.
+                  Plus on lance, plus la fréquence se rapproche de 16,7 % — sans jamais être obligée de
+                  l’atteindre exactement. C’est ce que tes trois séries de 1 000 lancers ont montré.
                 </>
               }
               solved={contrastDone}
               onAnswered={() => setContrastDone(true)}
             />
+            {contrastDone && (
+              <KnowledgeBrick
+                id="mem-frequence-vs-probabilite"
+                variant="new"
+                lead="Deux nombres proches, deux natures différentes — à ne plus jamais confondre."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -632,6 +690,7 @@ export default function Module01LancerLeDe() {
               {loadedStats && (
                 <TapQuestion
                   prompt={`Avec ce dé truqué, la probabilité d’obtenir ${loadedStats.k} est-elle encore 1/6 ?`}
+                  requires={['probabilite', 'frequence']}
                   options={[
                     'Oui : 1/6 est vrai pour tous les dés à six faces',
                     'Non : 1/6 suppose que les six faces ont la même chance, ce qui n’est plus le cas',
@@ -664,6 +723,7 @@ export default function Module01LancerLeDe() {
             <div className="space-y-4">
               <TapQuestion
                 prompt="Tu lances un dé équilibré. Quelle est la probabilité d’obtenir un 4 ?"
+                requires={['probabilite']}
                 options={['$\\frac{1}{6}$', '$\\frac{1}{4}$', '$\\frac{4}{6}$', '$\\frac{1}{2}$']}
                 renderOption={frac}
                 correctionLabel="1/6"
@@ -676,6 +736,7 @@ export default function Module01LancerLeDe() {
               {finalA && (
                 <TapQuestion
                   prompt="Après 100 lancers, tu obtiens 22 fois le 4. Que peut-on dire ?"
+                  requires={['mem-frequence-vs-probabilite', 'frequence', 'probabilite']}
                   options={[
                     'La probabilité d’obtenir 4 est 22 %',
                     '22 % est la fréquence observée ; la probabilité reste 1/6 ≈ 16,7 %',
@@ -701,12 +762,11 @@ export default function Module01LancerLeDe() {
       ]}
       footer={
         <div className="space-y-4">
-          <Feedback tone="info">
-            Une série de lancers est une <strong>série statistique</strong> : les faces sont ses valeurs, les nombres
-            d’apparitions ses <strong>effectifs</strong>, et les fréquences disent la part de chaque face. Dans la
-            suite de la leçon, d’autres séries — des temps de trajet — et d’autres façons de les résumer. La{' '}
-            <strong>probabilité</strong>, elle, t’attend dans la leçon Probabilités.
-          </Feedback>
+          <KnowledgeSnapshot moduleNumber={1}>
+            Tu sais lire une série et ses effectifs. Dans la suite de la leçon, d’autres séries —
+            des temps de trajet — et des façons de les <strong>résumer en un seul nombre</strong>.
+            La probabilité, elle, t’attend dans la leçon Probabilités.
+          </KnowledgeSnapshot>
           <div className="space-y-2">
             <p className="text-sm font-semibold text-slate-700">Labo libre — tout est permis.</p>
             <div className="flex flex-wrap items-center gap-2">
