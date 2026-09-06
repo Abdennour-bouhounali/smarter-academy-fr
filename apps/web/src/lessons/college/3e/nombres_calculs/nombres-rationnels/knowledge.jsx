@@ -32,7 +32,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'nombre-rationnel',
         type: 'concepts',
         title: 'Nombre rationnel',
-        summary: 'Un nombre qui peut s’écrire a/b avec a et b entiers et b ≠ 0.',
+        summary: 'Un point de la droite qu’on peut écrire a/b, avec a et b entiers et b ≠ 0.',
         body: (
           <div className="space-y-3">
             <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-center">
@@ -113,7 +113,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'irreductible',
         type: 'vocabulaire',
         title: 'Fraction irréductible',
-        summary: 'Une fraction dont le numérateur et le dénominateur n’ont plus aucun diviseur commun autre que 1.',
+        summary: 'Plus aucun diviseur commun autre que 1 — autrement dit PGCD = 1. C’est la carte d’identité du nombre.',
         body: (
           <div className="space-y-3">
             <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-center">
@@ -156,7 +156,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'comparer-rationnels',
         type: 'methodes',
         title: 'Comparer deux rationnels',
-        summary: 'On les écrit avec le même dénominateur positif, puis on compare les numérateurs.',
+        summary: 'Même dénominateur positif, puis on compare les numérateurs — jamais les dénominateurs entre eux.',
         body: (
           <div className="space-y-3">
             <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-center">
@@ -179,7 +179,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'piege-denominateur',
         type: 'memoriser',
         title: '⭐ Un grand dénominateur donne de PETITES parts',
-        summary: '1/4 est plus petit que 1/2 : plus on découpe, plus chaque part est fine.',
+        summary: 'Plus le dénominateur est grand, plus la part est petite : 1/4 < 1/2. Et chez les négatifs, tout s’inverse.',
         body: (
           <div className="rounded-xl bg-rose-50 border-2 border-rose-200 p-4 space-y-2 text-center">
             <MathText className="text-lg">{'$\\frac{1}{4} < \\frac{1}{2}$'}</MathText>
@@ -203,7 +203,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'meme-decoupe',
         type: 'concepts',
         title: 'On n’additionne que des parts de même taille',
-        summary: 'Avant d’ajouter deux rationnels, il faut les réécrire avec le même dénominateur.',
+        summary: 'Pas de somme sans découpe commune : on réécrit d’abord les deux avec le même dénominateur.',
         body: (
           <div className="space-y-3">
             <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-center">
@@ -242,7 +242,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'somme-difference',
         type: 'formules',
         title: 'Additionner et soustraire',
-        summary: 'Même découpe, on opère sur les numérateurs, on garde le dénominateur.',
+        summary: 'a/c ± b/c = (a ± b)/c : on opère sur les numérateurs, le dénominateur ne bouge pas.',
         body: (
           <div className="space-y-3">
             <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-center space-y-1">
@@ -266,7 +266,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'produit-rationnels',
         type: 'formules',
         title: 'Multiplier deux rationnels',
-        summary: 'Numérateurs entre eux, dénominateurs entre eux — c’est l’aire commune du quadrillage.',
+        summary: 'a/b × c/d = ac/bd, sans découpe commune. Multiplier par un nombre plus petit que 1 rapetisse.',
         body: (
           <div className="space-y-3">
             <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-center space-y-1">
@@ -288,7 +288,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'quotient-rationnels',
         type: 'formules',
         title: 'Diviser, c’est multiplier par l’inverse',
-        summary: 'On retourne la seconde fraction, puis on multiplie.',
+        summary: 'a/b ÷ c/d = a/b × d/c : on retourne la SECONDE, puis on multiplie (c ≠ 0).',
         body: (
           <div className="space-y-3">
             <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-center space-y-1">
@@ -380,7 +380,7 @@ export const LESSON_KNOWLEDGE = {
         id: 'choisir-operation',
         type: 'methodes',
         title: 'Choisir l’opération que raconte l’énoncé',
-        summary: 'Chaque mot de l’histoire désigne une opération — c’est là qu’est le vrai travail.',
+        summary: 'Ajouter des parts, retirer du tout, prendre une part d’une part, faire des paquets : le mot dit l’opération.',
         body: (
           <div className="space-y-3">
             <ul className="text-sm space-y-1 pl-4 list-disc">
