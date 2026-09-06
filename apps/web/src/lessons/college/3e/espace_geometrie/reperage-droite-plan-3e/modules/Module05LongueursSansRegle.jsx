@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Ruler } from 'lucide-react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import {
@@ -19,7 +20,7 @@ import {
  * Mathematical state    deux points ; la longueur en est DÉRIVÉE.
  * Visual consequence    l'étiquette de longueur suit, et l'écart d'abscisses
  *                       affiché à côté porte toujours le même nombre.
- * Expected observation  la longueur, c'est la différence — en valeur absolue.
+ * Expected observation  la longueur, c'est l'écart, compté positivement.
  * Misconception ciblée   soustraire dans le mauvais sens et annoncer une
  *                       longueur négative ; et croire qu'on peut faire pareil
  *                       en diagonale (l'étape 4 dit explicitement que non).
@@ -89,10 +90,11 @@ export default function Module05LongueursSansRegle() {
             </p>
           </div>
           {done1 ? (
-            <Feedback tone="ok">
-              AB = 7. Les deux points ont la même ordonnée, donc seule l’abscisse compte : la longueur
-              est l’<strong>écart des abscisses</strong>, pris en valeur absolue.
-            </Feedback>
+            <KnowledgeBrick
+              id="longueur-axe"
+              variant="new"
+              lead="AB = 7, sans règle : A et B ont la même ordonnée, donc seule l’abscisse a bougé."
+            />
           ) : (
             <Feedback tone="info">
               Longueur actuelle : {longueur === null ? '0' : formatNumber(longueur)}. Il te faut 7.
@@ -110,8 +112,9 @@ export default function Module05LongueursSansRegle() {
           prompt="C (5 ; −1) et D (−2 ; −1). Quelle est la longueur CD ?"
           options={['7', '−7', '3', 'on ne peut pas la calculer']}
           correct={0}
-          explain="−2 − 5 = −7, et 5 − (−2) = 7 : les deux soustractions donnent le même écart au signe près. Une longueur est toujours positive, on prend donc la valeur absolue : CD = 7."
+          explain="−2 − 5 = −7, et 5 − (−2) = 7 : les deux soustractions donnent le même écart au signe près. Une longueur est toujours positive, on garde donc le résultat positif : CD = 7."
           explainWrong="Une longueur ne peut pas être négative. Si ta soustraction donne −7, c’est que tu as soustrait dans un sens ; l’écart vaut 7."
+          requires={['longueur-axe', 'abscisse-ordonnee']}
           solved={q2}
           onAnswered={() => setQ2(true)}
         />
@@ -137,6 +140,12 @@ export default function Module05LongueursSansRegle() {
             Le kiosque est en {formatCoords(kiosque)}, le manège en {formatCoords(manege)}.
             On veut planter un banc au <strong>milieu</strong> du segment.
           </p>
+          <KnowledgeBrick
+            id="milieu-moyenne"
+            variant="new"
+            compact
+            lead="Le segment est oblique : impossible de le mesurer ici. Mais son milieu, lui, se calcule."
+          />
           <NumericQuestion
             prompt="Quelle est l’abscisse du milieu ?"
             expected={milieu.x}
@@ -144,6 +153,7 @@ export default function Module05LongueursSansRegle() {
             display={formatNumber(milieu.x, 1)}
             width="w-28"
             explain={`Le milieu a pour coordonnées la moyenne de chaque coordonnée : (−3 + 4) ÷ 2 = ${formatNumber(milieu.x, 1)}.`}
+            requires={['milieu-moyenne', 'moyenne']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
@@ -156,6 +166,7 @@ export default function Module05LongueursSansRegle() {
       subtitle: 'La limite honnête de la méthode.',
       done: q4,
       content: (
+        <div className="space-y-3">
         <TapQuestion
           prompt="E (0 ; 0) et F (3 ; 4). Peut-on trouver EF de la même façon ?"
           options={[
@@ -168,9 +179,19 @@ export default function Module05LongueursSansRegle() {
           cols={1}
           explain="Quand les deux coordonnées changent, le segment est oblique et sa longueur n’est plus un simple écart. Il faudra le théorème de Pythagore — ce sera une autre leçon. (Ici EF vaut 5, et non 7.)"
           explainWrong="Additionner les deux écarts revient à mesurer le trajet en escalier, pas le segment droit. Le chemin direct est toujours plus court."
+          requires={['longueur-axe']}
           solved={q4}
           onAnswered={() => setQ4(true)}
         />
+        {q4 && (
+          <KnowledgeBrick
+            id="limite-oblique"
+            variant="new"
+            compact
+            lead="Tu viens de trouver la limite de la méthode toi-même : elle mérite d’être retenue telle quelle."
+          />
+        )}
+        </div>
       ),
     },
   ];
@@ -204,13 +225,12 @@ export default function Module05LongueursSansRegle() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Segment horizontal : longueur = |x<sub>B</sub> − x<sub>A</sub>|.
-          Segment vertical : longueur = |y<sub>B</sub> − y<sub>A</sub>|. Milieu : la moyenne de chaque
-          coordonnée. Segment oblique : il faudra Pythagore.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Trois modules de gestes, et déjà de quoi mesurer. Le module
+          suivant ne fait que ranger ce que tu as produit.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

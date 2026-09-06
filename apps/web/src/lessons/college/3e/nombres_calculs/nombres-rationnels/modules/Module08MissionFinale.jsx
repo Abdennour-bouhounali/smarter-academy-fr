@@ -1,6 +1,7 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
@@ -25,6 +26,11 @@ import { formatDec, rat, toDecimal } from '../components/rationalUtils';
  *
  * Couverture des 10 LPs : P1 (e1), P2 (e2), P3 (e3), P4 (e4), P5 (e5),
  * P6 (e6), P7 (e7), P8 (e8), P9 (e9), P10 (e10).
+ *
+ * `requires` nomme, épreuve par épreuve, les connaissances que la leçon a
+ * établies et que l'épreuve mobilise. Le test final CONSOLIDE : il n'introduit
+ * ni concept, ni mot, ni notation, et la synthèse ne recopie aucune définition
+ * — elle affiche la carte complète (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 const REGISTRE = [
   { id: 'point', emoji: '📍', label: 'Un rationnel', value: 'est un point' },
@@ -45,6 +51,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'nr-e1',
+    requires: ['nombre-rationnel'],
     skill: 'ecritures',
     title: 'Épreuve 1',
     prompt:
@@ -62,6 +69,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e2',
+    requires: ['ecritures-equivalentes', 'quotient-rationnels'],
     skill: 'ecritures',
     title: 'Épreuve 2',
     prompt: 'Laquelle de ces écritures ne désigne PAS le même nombre que les autres ?',
@@ -77,6 +85,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e3',
+    requires: ['irreductible', 'pgcd-irreductible'],
     skill: 'irreductible',
     title: 'Épreuve 3',
     prompt: 'Quelle est la forme irréductible de 18/24 ?',
@@ -92,6 +101,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e4',
+    requires: ['comparer-rationnels', 'piege-denominateur', 'signe-fraction'],
     skill: 'comparer',
     title: 'Épreuve 4',
     prompt: 'Quel est le plus grand de ces trois nombres ?',
@@ -107,6 +117,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e5',
+    requires: ['meme-decoupe', 'somme-difference', 'ppcm-denominateur'],
     skill: 'operations',
     title: 'Épreuve 5',
     prompt: 'Combien vaut 1/2 + 1/3 ?',
@@ -122,6 +133,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e6',
+    requires: ['produit-rationnels', 'irreductible'],
     skill: 'operations',
     title: 'Épreuve 6',
     prompt: 'On calcule 2/3 × 3/4. Que peut-on dire du résultat ?',
@@ -138,6 +150,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e7',
+    requires: ['quotient-rationnels', 'ecritures-equivalentes'],
     skill: 'operations',
     title: 'Épreuve 7',
     prompt: 'Combien vaut 3/2 ÷ 1/4 ?',
@@ -153,6 +166,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e8',
+    requires: ['choisir-operation', 'somme-difference', 'meme-decoupe'],
     skill: 'ordre',
     title: 'Épreuve 8',
     prompt:
@@ -170,6 +184,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e9',
+    requires: ['priorites-calcul', 'produit-rationnels', 'somme-difference'],
     skill: 'ordre',
     title: 'Épreuve 9',
     prompt: 'Combien vaut 1/2 + 2/3 × 3/4 ?',
@@ -185,6 +200,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e10',
+    requires: ['choisir-operation', 'produit-rationnels'],
     skill: 'problemes',
     title: 'Épreuve 10',
     prompt:
@@ -256,14 +272,6 @@ function Synthese() {
         </p>
       </div>
 
-      <div className="bg-gradient-to-br from-indigo-500 to-violet-600 text-white rounded-2xl p-5 text-center space-y-1">
-        <p className="text-xs uppercase tracking-wide text-indigo-100 font-mono font-bold">À retenir</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Un rationnel = un point, mille écritures</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Additionner : même découpe d’abord</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Diviser = multiplier par l’inverse</p>
-        <p className="font-mono font-extrabold text-sm sm:text-base">Parenthèses, puis × ÷, puis + −</p>
-      </div>
-
       <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 space-y-2.5">
         <p className="text-sm font-bold text-amber-900">Les pièges à éviter</p>
         {PIEGES.map((p) => (
@@ -278,6 +286,9 @@ function Synthese() {
         Recettes de cuisine, partages de budget, probabilités, pentes : dès qu’une quantité se compare
         à une autre, les rationnels sont là — et le réflexe reste le même, trouver la bonne découpe.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

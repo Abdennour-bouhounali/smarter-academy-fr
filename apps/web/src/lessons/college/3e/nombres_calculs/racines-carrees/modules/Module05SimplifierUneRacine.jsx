@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareTiling from '../components/SquareTiling';
@@ -114,32 +115,24 @@ export default function Module05SimplifierUneRacine() {
                   </p>
                 </Feedback>
               )}
+
+              {tilingDone && (
+                <KnowledgeBrick
+                  id="simplifier-racine"
+                  variant="new"
+                  lead="Un seul découpage donnait des cases entières. Ce geste-là a une méthode, et elle marche sur n’importe quelle racine."
+                />
+              )}
             </div>
           ),
         },
         {
           num: 2,
-          title: 'À retenir',
-          subtitle: 'La méthode, en trois gestes.',
+          title: 'Quel carré extraire ?',
+          subtitle: 'Le plus grand, sinon il faudra recommencer.',
           done: checkDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-4 space-y-3">
-                <p className="text-xs uppercase tracking-wide font-mono font-bold text-purple-700 text-center">
-                  À retenir — simplifier √n
-                </p>
-                <ol className="text-sm text-purple-950 space-y-1.5 list-decimal list-inside">
-                  <li>Chercher le <strong>plus grand carré parfait</strong> qui divise n (4, 9, 16, 25, 36…).</li>
-                  <li>Écrire n comme ce carré <strong>fois</strong> le reste : 12 = 4 × 3.</li>
-                  <li>Sortir sa racine : <MathText>{'$\\sqrt{4 \\times 3} = 2\\sqrt{3}$'}</MathText>.</li>
-                </ol>
-                <p className="text-center pt-1">
-                  <MathText className="text-lg text-slate-800">
-                    {'$\\sqrt{k^{2} \\times m} = k\\sqrt{m}$'}
-                  </MathText>
-                </p>
-              </div>
-
               <TapQuestion
                 prompt={
                   <>
@@ -167,6 +160,7 @@ export default function Module05SimplifierUneRacine() {
                     <MathText>{`$\\sqrt{72} = ${formatRoot(72)}$`}</MathText>.
                   </>
                 }
+                requires={['simplifier-racine', 'carre-parfait']}
                 solved={checkDone}
                 onAnswered={() => setCheckDone(true)}
               />
@@ -233,6 +227,7 @@ export default function Module05SimplifierUneRacine() {
                   )}
                 </Feedback>
               )}
+              requires={['simplifier-racine', 'carre-parfait', 'produit-racines']}
               solved={applyDone}
               onAnswered={() => setApplyDone(true)}
             />
@@ -244,6 +239,7 @@ export default function Module05SimplifierUneRacine() {
           subtitle: 'Que devient le 2 de 2√3 si on le rentre sous la racine ?',
           done: trapDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt={
                 <>
@@ -272,20 +268,28 @@ export default function Module05SimplifierUneRacine() {
                   <MathText>{'$(2\\sqrt{3})^{2} = 4 \\times 3 = 12$'}</MathText>, pas 6.
                 </>
               }
+              requires={['simplifier-racine', 'produit-racines', 'carre-de-la-racine']}
               solved={trapDone}
               onAnswered={() => setTrapDone(true)}
             />
+            {trapDone && (
+              <KnowledgeBrick
+                id="coefficient-sous-racine"
+                variant="new"
+                compact
+                lead="Le 2 n’est pas rentré tel quel sous la racine : il a compté double."
+              />
+            )}
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Simplifier une racine, c’est <strong>découper le carré le plus finement possible en carrés
-          identiques</strong> : <MathText>{`$${formatSqrt(N)} = ${formatRoot(simplified)}$`}</MathText>.
-          Le coefficient qui sort est la racine du carré parfait extrait — et pour le faire rentrer, on
-          l’élève au carré.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          Au module suivant, ces racines simplifiées sortent d’elles-mêmes : diagonales, hypoténuses,
+          longueurs à comparer.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

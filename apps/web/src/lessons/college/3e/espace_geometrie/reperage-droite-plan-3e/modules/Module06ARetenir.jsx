@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { BookOpen } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion, TapQuestion } from '../../../../../common/kit';
+import { Compass } from 'lucide-react';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { PARC, formatCoords } from '../components/reperageUtils';
@@ -71,7 +72,7 @@ export default function Module06ARetenir() {
               id: 'longueur',
               label: 'Comment trouve-t-on la longueur d’un segment horizontal ?',
               options: [
-                'En calculant l’écart des abscisses, en valeur absolue',
+                'En calculant l’écart des abscisses, compté positivement',
                 'En additionnant les deux abscisses',
               ],
               correct: 0,
@@ -85,6 +86,7 @@ export default function Module06ARetenir() {
                 : `${nCorrect} sur ${total}. Relis les corrections : chacune renvoie au module où tu l’as vu se produire.`}
             </Feedback>
           )}
+          requires={['abscisse-ordonnee', 'ordre-du-couple', 'lire-par-projection', 'longueur-axe']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
@@ -96,6 +98,13 @@ export default function Module06ARetenir() {
       subtitle: 'Ceux qu’on oublie souvent.',
       done: q2,
       content: (
+        <div className="space-y-3">
+        <KnowledgeBrick
+          id="signe-et-cote"
+          variant="new"
+          compact
+          lead="Tu viens de relier chaque règle à son geste. Reste le détail qui piège le plus : le signe."
+        />
         <TapQuestion
           prompt="Quelle affirmation est VRAIE ?"
           options={[
@@ -107,9 +116,11 @@ export default function Module06ARetenir() {
           correct={0}
           cols={1}
           explain="Sur l’axe vertical, on ne s’est pas décalé horizontalement : x = 0. L’origine, elle, a bien des coordonnées : (0 ; 0). Et le signe de l’abscisse dit gauche/droite, jamais haut/bas."
+          requires={['origine-et-axes', 'signe-et-cote']}
           solved={q2}
           onAnswered={() => setQ2(true)}
         />
+        </div>
       ),
     },
   ];
@@ -134,40 +145,22 @@ export default function Module06ARetenir() {
         ),
       }}
       intro={
-        <div className="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 space-y-2">
-          <div className="flex gap-2 items-center">
-            <BookOpen className="w-5 h-5 text-blue-700" aria-hidden="true" />
-            <p className="font-bold text-blue-900">À retenir</p>
-          </div>
-          <ul className="text-sm text-blue-900 space-y-1.5 list-disc pl-5">
-            <li>
-              Un point du plan est repéré par un <strong>couple</strong> (x ; y) :
-              x est son <strong>abscisse</strong>, y son <strong>ordonnée</strong>.
-            </li>
-            <li>
-              L’abscisse se lit sur l’axe <strong>horizontal</strong>, l’ordonnée sur l’axe{' '}
-              <strong>vertical</strong>. On les sépare par un point-virgule.
-            </li>
-            <li>
-              Le signe donne le côté : abscisse négative = à gauche, ordonnée négative = en dessous.
-            </li>
-            <li>
-              Segment <strong>horizontal</strong> : longueur = |x<sub>B</sub> − x<sub>A</sub>|.
-              Segment <strong>vertical</strong> : longueur = |y<sub>B</sub> − y<sub>A</sub>|.
-            </li>
-            <li>
-              <strong>Milieu</strong> : chaque coordonnée est la moyenne des deux.
-            </li>
-          </ul>
+        <div className="rounded-xl border-2 border-blue-200 bg-blue-50 p-3 flex gap-3 items-start">
+          <Compass className="w-5 h-5 text-blue-700 shrink-0 mt-0.5" aria-hidden="true" />
+          <p className="text-sm text-blue-900">
+            Rien de neuf dans ce module : chaque règle que tu vas retrouver est déjà sur ta carte
+            des connaissances, posée au moment où tu l’as fait apparaître. Ici, on vérifie que tu
+            sais <strong>d’où elle vient</strong>.
+          </p>
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          Ces règles suffisent pour tout le reste de la leçon : construire des figures, prouver
-          qu’un triangle est isocèle, retrouver un symétrique.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ces règles suffisent pour tout le reste de la leçon :
+          construire des figures, prouver qu’un triangle est isocèle, retrouver un symétrique.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

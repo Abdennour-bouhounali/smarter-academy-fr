@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -90,8 +91,7 @@ export default function Module02CarresParfaits() {
           content: (kit) => (
             <div className="space-y-3">
               <p className="text-sm text-slate-600">
-                Chaque marche est un carré de côté entier. Tape-la pour lire son aire — c’est un carré
-                parfait.
+                Chaque marche est un carré de côté entier. Tape-la pour lire son aire.
               </p>
 
               <SquareStaircase tapped={tapped} onTap={(n) => toggle(n, kit.react)} />
@@ -113,9 +113,18 @@ export default function Module02CarresParfaits() {
                   </p>
                   <p className="mt-1">
                     Regarde les écarts : 3, puis 5, puis 7, puis 9… Ils <strong>grandissent</strong>. Entre
-                    49 et 64, il n’y a <strong>aucun</strong> carré parfait : ni 50, ni 55, ni 60.
+                    49 et 64, il n’y a plus une seule marche : ni 50, ni 55, ni 60.
                   </p>
                 </Feedback>
+              )}
+
+              {stairDone && (
+                <KnowledgeBrick
+                  id="carre-parfait"
+                  variant="new"
+                  compact
+                  lead="Douze marches, douze aires qui tombent juste. Ces aires-là portent un nom."
+                />
               )}
             </div>
           ),
@@ -155,6 +164,7 @@ export default function Module02CarresParfaits() {
                   )}
                 </Feedback>
               )}
+              requires={['carre-parfait']}
               solved={sortDone}
               onAnswered={() => setSortDone(true)}
             />
@@ -252,21 +262,11 @@ export default function Module02CarresParfaits() {
           done: tripleDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 space-y-2">
-                <p className="text-sm text-indigo-900">
-                  Chaque marche relie trois écritures du même nombre :
-                </p>
-                <p className="text-center">
-                  <MathText className="text-lg text-slate-800">
-                    {'$8 \\;\\longrightarrow\\; 8^{2} = 64 \\;\\longrightarrow\\; \\sqrt{64} = 8$'}
-                  </MathText>
-                </p>
-                <p className="text-sm text-indigo-900">
-                  Élever au carré puis prendre la racine ramène au point de départ :{' '}
-                  <MathText>{'$\\sqrt{n^{2}} = n$'}</MathText> (pour n positif).
-                </p>
-              </div>
-
+              <KnowledgeBrick
+                id="racine-du-carre"
+                variant="new"
+                lead="Chaque marche que tu as tapée reliait trois écritures du même nombre : le côté, l’aire, et la racine de l’aire."
+              >
               <TapQuestion
                 prompt={
                   <>
@@ -292,24 +292,26 @@ export default function Module02CarresParfaits() {
                     onzième : <MathText>{'$11^{2} = 121$'}</MathText>.
                   </>
                 }
+                requires={['racine-du-carre', 'carre-parfait']}
                 solved={tripleDone}
                 onAnswered={() => setTripleDone(true)}
               />
+              </KnowledgeBrick>
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Douze marches apprises par cœur, c’est douze racines exactes gratuites — et surtout de quoi{' '}
-          <strong>encadrer</strong> toutes les autres. {isPerfectSquare(TARGET) ? '' : (
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          Douze marches apprises, c’est douze racines exactes gratuites — et surtout de quoi situer
+          toutes les autres. {isPerfectSquare(TARGET) ? '' : (
             <>
               Ainsi <MathText>{`$${formatSqrt(TARGET)}$`}</MathText> vit entre {isqrt(TARGET)} et{' '}
-              {isqrt(TARGET) + 1}.
+              {isqrt(TARGET) + 1} : le module suivant en fait une méthode.
             </>
           )}
-        </Feedback>
-      }
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

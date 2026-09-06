@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareLab from '../components/SquareLab';
 import {
-  bracket, isqrt, approxRoot, formatDec, formatSqrt, formatBracket,
+  bracket, approxRoot, formatDec, formatSqrt,
 } from '../components/rootUtils';
 
 /**
@@ -160,20 +161,28 @@ export default function Module03CarreAReconstruire() {
                     <MathText>{'$4{,}5^{2} = 20{,}25$'}</MathText> sautent par-dessus 20.
                   </p>
                   <p className="mt-1">
-                    Aucun nombre décimal ne tombe juste. Ce côté porte donc un nom à lui :{' '}
-                    <MathText>{`$${formatSqrt(TARGET)}$`}</MathText>, et on l’encadre :{' '}
-                    <MathText>{`$${formatBracket(TARGET)}$`}</MathText>{' '}
+                    Aucun nombre décimal ne tombe juste. Ce côté vaut donc exactement{' '}
+                    <MathText>{`$${formatSqrt(TARGET)}$`}</MathText>{' '}
                     (≈ {formatDec(approxRoot(TARGET, 2))} à la calculatrice).
                     {revealed && ' (Le côté t’a été montré — refais varier autour pour le sentir.)'}
                   </p>
                 </Feedback>
+              )}
+
+              {explored && (
+                <KnowledgeBrick
+                  id="encadrement"
+                  variant="new"
+                  compact
+                  lead={`Tu as coincé l’aire ${TARGET} entre deux carrés : le trop petit et le trop grand. Ce couloir a un nom, et c’est une réponse à part entière.`}
+                />
               )}
             </div>
           ),
         },
         {
           num: 2,
-          title: 'Encadrer, c’est répondre',
+          title: 'À toi : le couloir de √50',
           done: bracketed,
           content: (
             <TapQuestion
@@ -203,6 +212,7 @@ export default function Module03CarreAReconstruire() {
                   <MathText>{'$8^{2} = 64$'}</MathText> dépasse. Donc 7 &lt; √50 &lt; 8.
                 </>
               }
+              requires={['encadrement', 'carre-parfait', 'racine-carree']}
               solved={bracketed}
               onAnswered={() => setBracketed(true)}
             />
@@ -215,22 +225,11 @@ export default function Module03CarreAReconstruire() {
           done: squareDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 space-y-2">
-                <p className="text-sm text-violet-900">
-                  Sur ton carré : le côté est <MathText>{`$${formatSqrt(TARGET)}$`}</MathText>, et l’aire —
-                  c’est-à-dire le côté au carré — vaut 20. Autrement dit :
-                </p>
-                <p className="text-center">
-                  <MathText className="text-lg text-slate-800">
-                    {'$(\\sqrt{20})^{2} = 20$'}
-                  </MathText>
-                </p>
-                <p className="text-sm text-violet-900">
-                  Et dans l’autre sens : un carré d’aire <MathText>{'$7^{2} = 49$'}</MathText> a pour côté 7,
-                  donc <MathText>{'$\\sqrt{7^{2}} = 7$'}</MathText>.
-                </p>
-              </div>
-
+              <KnowledgeBrick
+                id="carre-de-la-racine"
+                variant="new"
+                lead={`Sur ton carré, le côté est √${TARGET} et l’aire vaut ${TARGET}. La même figure, lue dans l’autre sens.`}
+              >
               <TapQuestion
                 prompt={
                   <>
@@ -256,23 +255,31 @@ export default function Module03CarreAReconstruire() {
                     <MathText>{'$(\\sqrt{13})^{2} = 13$'}</MathText>.
                   </>
                 }
+                requires={['carre-de-la-racine', 'racine-carree']}
                 solved={squareDone}
                 onAnswered={() => setSquareDone(true)}
               />
+              </KnowledgeBrick>
             </div>
           ),
         },
         {
           num: 4,
           title: 'Comparer sans calculatrice',
-          subtitle: 'On compare les carrés, pas les approximations.',
+          subtitle: 'Deux longueurs, aucune calculatrice.',
           done: compareDone,
           content: (
             <div className="space-y-3">
               <p className="text-sm text-slate-600">
                 Deux longueurs : <MathText>{'$\\sqrt{50}$'}</MathText> et <strong>7</strong>. Laquelle est
-                la plus grande ? Compare les <strong>aires</strong> des carrés correspondants.
+                la plus grande ? Les deux cartes montrent l’aire de chaque carré.
               </p>
+              <KnowledgeBrick
+                id="comparer-par-carres"
+                variant="new"
+                compact
+                lead="Tu as vu au module 1 qu’un carré plus grand a un côté plus long. C’est tout ce qu’il faut."
+              />
               <TapQuestion
                 above={(shown) => (
                   <div className="grid grid-cols-2 gap-2 text-center">
@@ -311,6 +318,7 @@ export default function Module03CarreAReconstruire() {
                     {formatDec(approxRoot(50, 2))}). Et √50 = 7 est faux : sinon l’aire vaudrait 49.
                   </>
                 }
+                requires={['comparer-par-carres', 'carre-de-la-racine']}
                 solved={compareDone}
                 onAnswered={() => setCompareDone(true)}
               />
@@ -318,15 +326,12 @@ export default function Module03CarreAReconstruire() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Tu sais maintenant lire un carré dans les deux sens :{' '}
-          <strong>de l’aire au côté (la racine)</strong> et <strong>du côté à l’aire (le carré)</strong>.
-          Quand la racine ne tombe pas juste, on l’<strong>encadre</strong> entre deux entiers — et pour
-          comparer, on compare les carrés. Entre {isqrt(TARGET)} et {isqrt(TARGET) + 1} pour{' '}
-          <MathText>{`$${formatSqrt(TARGET)}$`}</MathText>.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          Au module suivant, deux carrés se collent : une des deux façons de les assembler se transporte
+          sous la racine, l’autre non.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

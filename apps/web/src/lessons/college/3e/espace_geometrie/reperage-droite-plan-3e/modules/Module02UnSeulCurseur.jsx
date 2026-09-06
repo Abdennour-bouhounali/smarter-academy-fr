@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Move, Compass, Repeat } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PointDriver from '../components/PointDriver';
 import {
@@ -105,6 +106,13 @@ export default function Module02UnSeulCurseur() {
               {p1.y !== MISSION_X.to.y && ' Le réglage y t’a écarté de la ligne : ramène-le à 2.'}
             </Feedback>
           )}
+          {done1 && (
+            <KnowledgeBrick
+              id="repere-plan"
+              variant="new"
+              lead="Deux axes, deux réglages : voilà l’objet dans lequel tu viens de déplacer M."
+            />
+          )}
         </div>
       ),
     },
@@ -133,14 +141,14 @@ export default function Module02UnSeulCurseur() {
             ariaLabel="Repère : amène le point M sur la seconde cible"
           />
           {done2 ? (
-            <Feedback tone="ok">
-              Le déplacement complet vaut{' '}
-              <strong>{describeDisplacement({
+            <KnowledgeBrick
+              id="abscisse-ordonnee"
+              variant="new"
+              lead={`Le déplacement complet vaut ${describeDisplacement({
                 dx: MISSION_XY.to.x - MISSION_XY.from.x,
                 dy: MISSION_XY.to.y - MISSION_XY.from.y,
-              })}</strong>. Le premier nombre du couple gouverne l’horizontal, le second le vertical.
-              On les appelle l’<strong>abscisse</strong> et l’<strong>ordonnée</strong>.
-            </Feedback>
+              })} — un réglage par direction. Chacun porte un nom.`}
+            />
           ) : (
             <Feedback tone="info">
               Il te reste {Math.abs(MISSION_XY.to.x - p2.x)} en x et {Math.abs(MISSION_XY.to.y - p2.y)} en y.
@@ -174,6 +182,14 @@ export default function Module02UnSeulCurseur() {
             ariaLabel="Repère : compare le point et son couple inversé"
           />
           {seenSwap && (
+            <KnowledgeBrick
+              id="quadrant"
+              variant="new"
+              compact
+              lead="Pour dire d’un mot où sont tombés le point et son fantôme, il manque un nom de zone."
+            />
+          )}
+          {seenSwap && (
             <Feedback tone="info">
               M est {quadrantOf(p3) === 0 ? 'sur un axe' : `dans le quadrant ${quadrantOf(p3)}`}, son
               inversé {quadrantOf(swap(p3)) === 0 ? 'sur un axe' : `dans le quadrant ${quadrantOf(swap(p3))}`}.
@@ -192,9 +208,18 @@ export default function Module02UnSeulCurseur() {
             cols={1}
             explain="Chaque coordonnée a un rôle : la première dit de combien on se décale à droite ou à gauche, la seconde de combien on monte ou on descend. En les échangeant, on donne l’ordre inverse aux deux directions."
             explainWrong="Le signe et la taille des nombres ne décident de rien : c’est la PLACE dans le couple qui donne le rôle. (2 ; −3) est en bas à droite, (−3 ; 2) en haut à gauche."
+            requires={['abscisse-ordonnee', 'repere-plan']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
+          {q3 && (
+            <KnowledgeBrick
+              id="ordre-du-couple"
+              variant="new"
+              compact
+              lead="C’est la conséquence à ne jamais oublier — celle que le fantôme gris met sous les yeux."
+            />
+          )}
         </div>
       ),
     },
@@ -235,13 +260,12 @@ export default function Module02UnSeulCurseur() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Le mot juste.</strong> Dans le couple (x ; y), x est l’<strong>abscisse</strong>
-          {' '}— elle se lit sur l’axe horizontal — et y est l’<strong>ordonnée</strong>, sur l’axe
-          vertical. On les sépare par un point-virgule, et jamais on ne les intervertit.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais ce que commande chaque nombre. Au module suivant, on
+          fait le chemin inverse : partir du point et retrouver son couple.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

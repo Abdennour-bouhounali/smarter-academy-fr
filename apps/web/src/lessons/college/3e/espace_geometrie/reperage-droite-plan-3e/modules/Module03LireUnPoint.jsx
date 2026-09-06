@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Crosshair } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import GuideReader from '../components/GuideReader';
@@ -61,10 +62,11 @@ export default function Module03LireUnPoint() {
             ariaLabel="Repère du parc : amène les guides sur le kiosque"
           />
           {done1 ? (
-            <Feedback tone="ok">
-              Le kiosque est en {formatCoords(kiosque)} : il {readCoords(kiosque)}. Remarque que
-              l’abscisse est <strong>négative</strong> — le kiosque est à gauche de la fontaine.
-            </Feedback>
+            <KnowledgeBrick
+              id="lire-par-projection"
+              variant="new"
+              lead={`Le kiosque est en ${formatCoords(kiosque)} : il ${readCoords(kiosque)}. Voilà le geste que tu viens de faire, mis en mots.`}
+            />
           ) : (
             <Feedback tone="info">
               Guides en {formatCoords(g1)}. Le guide vertical se règle sur l’axe horizontal, et le
@@ -111,10 +113,17 @@ export default function Module03LireUnPoint() {
       content: (
         <BatchChoiceQuestion
           intro={
-            <div className="space-y-2">
+            <div className="space-y-3">
               <p className="text-sm text-slate-700">
-                Voici le parc complet. Pour chaque lieu, choisis le bon couple.
+                Voici le parc complet. Deux lieux sont posés <em>sur</em> un axe, et la fontaine est
+                pile au croisement : avant de lire, un mot sur ces cas-là.
               </p>
+              <KnowledgeBrick
+                id="origine-et-axes"
+                variant="new"
+                compact
+                lead="Tes deux guides viennent de se croiser au centre à chaque départ : ce point-là a un nom."
+              />
               <CarteDuParc />
             </div>
           }
@@ -151,6 +160,7 @@ export default function Module03LireUnPoint() {
                 : `${nCorrect} lecture(s) juste(s) sur ${total}. Relis chaque correction : commence toujours par l’axe horizontal.`}
             </Feedback>
           )}
+          requires={['lire-par-projection', 'abscisse-ordonnee', 'origine-et-axes']}
           solved={batch}
           onAnswered={() => setBatch(true)}
         />
@@ -181,18 +191,18 @@ export default function Module03LireUnPoint() {
         <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 flex gap-3 items-start">
           <Crosshair className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
           <p className="text-sm text-emerald-900">
-            Le guide <strong>vertical</strong> se règle sur l’axe horizontal : il donne l’abscisse.
-            Le guide <strong>horizontal</strong> se règle sur l’axe vertical : il donne l’ordonnée.
+            Deux guides à faire coulisser : l’un est vertical, l’autre horizontal. Amène-les jusqu’à
+            ce qu’ils se croisent <strong>exactement</strong> sur le lieu demandé.
           </p>
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Pour lire un point, on le projette sur chaque axe. Un point situé
-          sur l’axe vertical a une abscisse nulle ; sur l’axe horizontal, une ordonnée nulle.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Tu sais lire un point. Au module suivant, tu feras l’inverse :
+          partir du couple pour retrouver l’endroit.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

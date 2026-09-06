@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareLab from '../components/SquareLab';
@@ -169,11 +170,16 @@ export default function Module01JardinCarre() {
                     <MathText>{'$7{,}1^{2} = 50{,}41$'}</MathText> — trop grand de 0,41 m². On saute
                     par-dessus 50 <strong>sans jamais tomber dessus</strong>.
                   </p>
-                  <p className="mt-1">
-                    Ce côté existe pourtant : c’est bien une longueur, celle d’un vrai jardin de 50 m². Mais
-                    aucun nombre entier — et, on le verra, aucun nombre décimal — ne l’écrit exactement.
-                  </p>
                 </Feedback>
+              )}
+
+              {doneB && (
+                <KnowledgeBrick
+                  id="racine-existe-toujours"
+                  variant="new"
+                  compact
+                  lead="Le jardin du voisin existe pourtant : c’est un vrai terrain, avec un vrai côté."
+                />
               )}
             </div>
           ),
@@ -184,23 +190,11 @@ export default function Module01JardinCarre() {
           done: nameDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4 space-y-2">
-                <p className="text-sm text-emerald-900">
-                  Le côté d’un carré d’aire <MathText>{'$a$'}</MathText> s’appelle la{' '}
-                  <strong>racine carrée de a</strong>, et s’écrit <MathText>{'$\\sqrt{a}$'}</MathText>.
-                </p>
-                <p className="text-center">
-                  <MathText className="text-lg text-slate-800">
-                    {'$\\sqrt{49} = 7 \\qquad \\text{car} \\qquad 7^{2} = 49$'}
-                  </MathText>
-                </p>
-                <p className="text-sm text-emerald-900">
-                  Le jardin du voisin a donc pour côté{' '}
-                  <MathText>{`$${formatSqrt(AREA_B)}$`}</MathText> mètres — un nombre compris entre{' '}
-                  {bracket(AREA_B)[0]} et {bracket(AREA_B)[1]} (≈ {formatDec(approxRoot(AREA_B, 2))}).
-                </p>
-              </div>
-
+              <KnowledgeBrick
+                id="racine-carree"
+                variant="new"
+                lead="Tu as cherché deux fois la même chose : le côté, à partir de l’aire. Ce nombre a un nom et un symbole."
+              >
               <TapQuestion
                 prompt={
                   <>
@@ -227,21 +221,27 @@ export default function Module01JardinCarre() {
                     racine. On cherche le nombre qui, multiplié <em>par lui-même</em>, donne 36 : c’est 6.
                   </>
                 }
+                requires={['racine-carree']}
                 solved={nameDone}
                 onAnswered={() => setNameDone(true)}
               />
+              </KnowledgeBrick>
+
+              <Feedback tone="info">
+                Le jardin du voisin a donc pour côté{' '}
+                <MathText>{`$${formatSqrt(AREA_B)}$`}</MathText> mètres — un nombre compris entre{' '}
+                {bracket(AREA_B)[0]} et {bracket(AREA_B)[1]} (≈ {formatDec(approxRoot(AREA_B, 2))}).
+              </Feedback>
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Un carré, deux lectures : du côté vers l’aire, c’est le <strong>carré</strong> ; de l’aire vers
-          le côté, c’est la <strong>racine carrée</strong>. Parfois elle tombe juste (49 → 7), parfois
-          non (50 → <MathText>{`$${formatSqrt(AREA_B)}$`}</MathText>). Le module suivant range les cas
-          qui tombent juste.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          Parfois la racine tombe juste (49 → 7), parfois non (50). Le module suivant range les cas qui
+          tombent juste.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

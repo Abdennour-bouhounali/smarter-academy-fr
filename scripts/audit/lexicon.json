@@ -558,8 +558,9 @@
       "id": "inclus",
       "label": "symbole ⊂",
       "grade": "seconde",
+      "_comment": "Le symbole ⊂ d'inclusion entre ensembles. « inclus » seul est l'adjectif courant (« bornes incluses ») : on exige « inclus dans » ou le symbole.",
       "patterns": [
-        "(?<![\\p{L}\\p{N}_])inclus(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])inclus(?:e|es)?\\s+dans(?![\\p{L}\\p{N}_])",
         "⊂"
       ],
       "notationPatterns": [
@@ -986,6 +987,102 @@
       "patterns": [
         "(?<![\\p{L}\\p{N}_])ordres?\\s+de\\s+grandeur(?![\\p{L}\\p{N}_])"
       ]
+    },
+    {
+      "id": "face-solide",
+      "label": "face d'un solide",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])faces?(?![\\p{L}\\p{N}_])\\s+(?:d['’]un|du|de\\s+la|de\\s+ce|planes?|triangulaires?|lat[ée]rales?)",
+        "(?<![\\p{L}\\p{N}_])(?:six|6|cinq|5|quatre|4|deux|2)\\s+faces?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "arete",
+      "label": "arête",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])ar[êe]tes?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "sommet-solide",
+      "label": "sommet d'un solide",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])sommets?(?![\\p{L}\\p{N}_])\\s+(?:d['’]un\\s+solide|du\\s+cube|du\\s+solide|cach[ée]s?|visibles?)",
+        "(?<![\\p{L}\\p{N}_])(?:huit|8|cinq|5|quatre|4|six|6)\\s+sommets?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "polyedre",
+      "label": "polyèdre",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])poly[èe]dres?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "relation-euler",
+      "label": "relation d'Euler",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])(?:relation|formule)\\s+d['’]Euler(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Euler(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "solide-convexe",
+      "label": "solide convexe",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])convexes?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "arete-cachee",
+      "label": "arête cachée (pointillé)",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])ar[êe]tes?\\s+cach[ée]es?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])en\\s+pointill[ée]s?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "perspective-cavaliere",
+      "label": "perspective cavalière",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])perspective\\s+cavali[èe]re(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])fuyantes?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])coefficient\\s+de\\s+r[ée]duction(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "point-de-fuite",
+      "label": "point de fuite (perspective conique)",
+      "grade": "seconde",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])points?\\s+de\\s+fuite(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "non-coplanaires",
+      "label": "droites non coplanaires",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])non[- ]coplanaires?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])coplanaires?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "trois-vues",
+      "label": "les trois vues (de face, de dessus, de côté)",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])vues?\\s+de\\s+(?:face|dessus|c[ôo]t[ée])(?![\\p{L}\\p{N}_])"
+      ],
+      "_comment": "Les vues de face / de dessus / de côté d'un solide. « Trois vues » seul est du français courant (« trois vues de la même machine ») : on exige les vues nommées."
     }
   ],
   "_boundaryNote": "Les motifs utilisent des bornes Unicode explicites (?<![\\p{L}\\p{N}_]) … (?![\\p{L}\\p{N}_]) et jamais \\b : en JavaScript \\b reste ASCII même sous le drapeau /u, si bien qu'une lettre accentuée crée une frontière au milieu d'un mot — « aire » se déclenchait dans « linéaire ». Conserver cette convention."

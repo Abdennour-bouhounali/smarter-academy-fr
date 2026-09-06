@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Target, AlertTriangle } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PointDriver from '../components/PointDriver';
 import {
@@ -69,10 +70,11 @@ export default function Module04PlacerEtEchanger() {
             ariaLabel="Repère : place le point A en (−4 ; 3)"
           />
           {done1 ? (
-            <Feedback tone="ok">
-              A {formatCoords(CIBLE_1)} : 4 vers la gauche, puis 3 vers le haut. Placer un point,
-              c’est effectuer ce déplacement depuis l’origine.
-            </Feedback>
+            <KnowledgeBrick
+              id="placer-un-point"
+              variant="new"
+              lead={`A ${formatCoords(CIBLE_1)} : 4 vers la gauche, puis 3 vers le haut. Ce que tu viens de faire porte un nom de méthode.`}
+            />
           ) : (
             <Feedback tone="info">
               Écart : {Math.abs(CIBLE_1.x - p1.x)} en abscisse, {Math.abs(CIBLE_1.y - p1.y)} en ordonnée.
@@ -151,10 +153,11 @@ export default function Module04PlacerEtEchanger() {
             ariaLabel="Repère : effectue le déplacement demandé"
           />
           {done3 ? (
-            <Feedback tone="ok">
-              Tu arrives en {formatCoords(CIBLE_3)}. On ajoute {DEP.dx} à l’abscisse et {DEP.dy} à
-              l’ordonnée : chaque coordonnée reçoit son propre déplacement.
-            </Feedback>
+            <KnowledgeBrick
+              id="deplacement-coordonnees"
+              variant="new"
+              lead={`Tu arrives en ${formatCoords(CIBLE_3)} : ${DEP.dx} ajouté d’un côté, ${DEP.dy} de l’autre. Jamais mélangés.`}
+            />
           ) : (
             <Feedback tone="info">
               Départ {formatCoords(DEPART_3)}. Tu es en {formatCoords(p3)} : tu as fait{' '}
@@ -181,6 +184,7 @@ export default function Module04PlacerEtEchanger() {
           cols={1}
           explain="On calcule la différence coordonnée par coordonnée : 1 − (−2) = 3 (vers la droite), et 1 − 5 = −4 (vers le bas)."
           explainWrong="Attention au sens de la soustraction : on fait toujours arrivée − départ, sur chaque coordonnée séparément."
+          requires={['deplacement-coordonnees', 'abscisse-ordonnee']}
           solved={q4}
           onAnswered={() => setQ4(true)}
         />
@@ -222,12 +226,12 @@ export default function Module04PlacerEtEchanger() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Placer M (x ; y), c’est partir de l’origine, se décaler de x
-          horizontalement, puis de y verticalement. Un déplacement s’ajoute coordonnée par coordonnée.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Tu sais lire et placer. Au module suivant, les coordonnées
+          cessent d’être une adresse : elles deviennent un instrument de mesure.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

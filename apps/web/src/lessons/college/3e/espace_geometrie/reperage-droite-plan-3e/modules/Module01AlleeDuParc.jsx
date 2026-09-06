@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { MapPin, HelpCircle } from 'lucide-react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { formatNumber } from '../components/reperageUtils';
@@ -64,6 +65,7 @@ export default function Module01AlleeDuParc() {
             correct={0}
             cols={1}
             explain="Sur une droite graduée, une distance donne DEUX positions possibles, une de chaque côté du zéro. Pour en désigner une seule, il faut ajouter le côté — c’est le rôle du signe."
+            requires={['nombres-relatifs']}
             solved={q1}
             onAnswered={() => setQ1(true)}
           />
@@ -73,13 +75,13 @@ export default function Module01AlleeDuParc() {
     {
       num: 2,
       title: 'Le signe tranche',
-      subtitle: 'Place le banc à l’abscisse −4.',
+      subtitle: 'Le banc est repéré par le nombre −4. Clique où il se trouve.',
       done: placed === -4,
       content: (kit) => (
         <div className="space-y-3">
           <p className="text-sm text-slate-700">
-            Cette fois la consigne est complète : le banc est à l’abscisse <strong>−4</strong>.
-            Clique la graduation qui convient.
+            Cette fois la consigne est complète : le banc est repéré par le nombre
+            {' '}<strong>−4</strong>. Clique la graduation qui convient.
           </p>
           <NumberLine
             min={-6} max={6} step={1} labelEvery={1}
@@ -98,22 +100,23 @@ export default function Module01AlleeDuParc() {
               Tu as choisi {formatNumber(placed)}.{' '}
               {placed === 4
                 ? 'C’est la bonne distance mais du mauvais côté : le signe − indique la gauche de la fontaine.'
-                : `L’abscisse demandée est −4 : quatre graduations à gauche du 0.`}
+                : `Le nombre demandé est −4 : quatre graduations à gauche du 0.`}
             </Feedback>
           )}
           {placed === -4 && (
-            <Feedback tone="ok">
-              Exact. Ce nombre −4 s’appelle l’<strong>abscisse</strong> du banc : il donne à la fois la
-              distance (4) et le côté (le signe −).
-            </Feedback>
+            <KnowledgeBrick
+              id="abscisse-droite"
+              variant="new"
+              lead="Le nombre que tu viens d’utiliser porte un nom — et il fait deux choses à la fois."
+            />
           )}
         </div>
       ),
     },
     {
       num: 3,
-      title: 'Entre deux graduations',
-      subtitle: 'Une abscisse n’est pas forcément un nombre entier.',
+      title: 'Et si le point tombe entre deux traits ?',
+      subtitle: 'Le nombre qui repère un point n’est pas forcément entier.',
       done: q3,
       content: (
         <div className="space-y-3">
@@ -135,9 +138,18 @@ export default function Module01AlleeDuParc() {
             explainFor={(n) => (n === 2.5
               ? 'Bonne distance, mauvais côté : l’arbre est à gauche du 0, donc son abscisse est négative.'
               : null)}
+            requires={['abscisse-droite', 'nombres-relatifs']}
             solved={q3}
             onAnswered={() => setQ3(true)}
           />
+          {q3 && (
+            <KnowledgeBrick
+              id="abscisse-non-entiere"
+              variant="new"
+              compact
+              lead="Tu viens de lire −2,5 : la règle vaut pour toutes les positions intermédiaires."
+            />
+          )}
         </div>
       ),
     },
@@ -163,6 +175,7 @@ export default function Module01AlleeDuParc() {
             correct={0}
             cols={1}
             explain="Une ligne se repère avec un nombre ; une surface en demande deux. C’est exactement ce que fait un repère du plan — et c’est le sujet du module suivant."
+            requires={['abscisse-droite']}
             solved={q4}
             onAnswered={() => setQ4(true)}
           />
@@ -205,12 +218,12 @@ export default function Module01AlleeDuParc() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Sur une droite graduée, l’<strong>abscisse</strong> d’un point est
-          le nombre relatif qui le repère : sa valeur donne la distance au zéro, son signe donne le côté.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Une allée se repère avec un nombre. Au module suivant, on
+          sort de l’allée — et on découvre ce qu’il faut de plus.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

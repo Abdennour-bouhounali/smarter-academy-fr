@@ -43,6 +43,13 @@ export const LESSON_BASE_PATH = '/courses/college/3e/espace_geometrie/representa
 
 export const LESSON_CONFIG = {
   id: 'representation-espace-3e',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0. Le
+  // vocabulaire « face / arête / sommet » vient de la 6e (solides et patrons) ;
+  // le repérage du plan vient de la leçon voisine. « polyèdre », en revanche,
+  // n'y est pas : la 6e ne le nomme pas, et une brique le pose au module 2.
+  priorKnowledge: ['face-solide', 'arete', 'sommet-solide', 'coordonnees', 'abscisse', 'ordonnee'],
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Représentation de l’espace',
   description:

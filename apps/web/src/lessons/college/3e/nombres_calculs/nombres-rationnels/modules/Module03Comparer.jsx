@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import NumberLine from '../../../../../common/components/NumberLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -27,8 +28,11 @@ import {
  * Misconception targeted: « 1/4 > 1/2 car 4 > 2 » (plus le dénominateur est
  *   grand, plus la part est PETITE) et « −3/4 > −1/2 car 3 > 1 ».
  * Feedback: l'écart au point cible est donné en douzièmes ET en décimal.
- * Formalization: étape 3, la stratégie du dénominateur commun, puis le cas
- *   des négatifs.
+ * Formalization: la stratégie de la découpe commune et le piège du grand
+ *   dénominateur vivent dans `knowledge.jsx` ; des <KnowledgeBrick> les posent
+ *   après le placement du curseur (étape 1) et après le verdict de l'étape 2.
+ *   Le mot PPCM n'est PAS prononcé ici : il est posé au module 4
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: puces de positions remarquables + stepper ; après 3 essais,
  *   « montre-moi » place le curseur.
  * Transfer: étape 4, ranger quatre rationnels dont deux négatifs.
@@ -175,6 +179,13 @@ export default function Module03Comparer() {
                   {revealed && ' (La position t’a été montrée — refais-la à la main.)'}
                 </Feedback>
               )}
+              {placed && (onTarget || revealed) && (
+                <KnowledgeBrick
+                  id="comparer-rationnels"
+                  variant="new"
+                  lead="Une fois les deux nombres sur la même droite, en douzièmes, il n’y a plus rien à calculer : il suffit de regarder."
+                />
+              )}
               {!placed && tries >= 3 && (
                 <button
                   type="button"
@@ -192,6 +203,7 @@ export default function Module03Comparer() {
           title: 'Le piège du grand dénominateur',
           done: ruleDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt={
                 <>
@@ -224,9 +236,19 @@ export default function Module03Comparer() {
                   demi-pizza.
                 </>
               }
+              requires={['comparer-rationnels', 'ecritures-equivalentes']}
               solved={ruleDone}
               onAnswered={() => setRuleDone(true)}
             />
+            {ruleDone && (
+              <KnowledgeBrick
+                id="piege-denominateur"
+                variant="new"
+                compact
+                lead="C’est l’erreur la plus tenace de tout le collège. Voilà comment ne plus jamais y tomber."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -235,14 +257,10 @@ export default function Module03Comparer() {
           done: sortDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-cyan-200 bg-cyan-50 p-4 space-y-2">
-                <p className="text-[11px] font-mono uppercase tracking-wide text-cyan-700">À retenir</p>
-                <p className="text-sm text-slate-700">
-                  Pour comparer deux rationnels : on les écrit avec{' '}
-                  <strong>le même dénominateur positif</strong>, puis on compare les numérateurs. (Ou
-                  bien on compare leurs valeurs décimales.)
-                </p>
-              </div>
+              <p className="text-sm text-slate-600">
+                Trois duels, à toi de trancher. Cherche à chaque fois une découpe qui convient aux
+                deux nombres.
+              </p>
               <BatchChoiceQuestion
                 intro={<p className="text-sm text-slate-600">Dans chaque duel, quel nombre est le plus grand ?</p>}
                 rows={[
@@ -254,9 +272,10 @@ export default function Module03Comparer() {
                   <Feedback tone={allRight ? 'ok' : 'info'}>
                     {allRight
                       ? 'Trois duels, trois découpes communes : 15es, 24es, 15es. Le numérateur tranche à chaque fois.'
-                      : `${nCorrect} / ${total}. Le réflexe : une découpe commune (le PPCM des deux dénominateurs), puis on compare les numérateurs. Ne jamais comparer les dénominateurs entre eux.`}
+                      : `${nCorrect} / ${total}. Le réflexe : une découpe qui convient aux deux dénominateurs, puis on compare les numérateurs. Ne jamais comparer les dénominateurs entre eux.`}
                   </Feedback>
                 )}
+                requires={['comparer-rationnels', 'piege-denominateur', 'ecritures-equivalentes']}
                 solved={sortDone}
                 onAnswered={() => setSortDone(true)}
               />
@@ -313,6 +332,7 @@ export default function Module03Comparer() {
                     trompe jamais, elle.
                   </>
                 }
+                requires={['comparer-rationnels', 'piege-denominateur', 'signe-fraction']}
                 solved={negDone}
                 onAnswered={() => setNegDone(true)}
               />
@@ -320,12 +340,13 @@ export default function Module03Comparer() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Comparer, c’est <strong>positionner</strong>. Même découpe, puis on compare les numérateurs —
-          et chez les négatifs, on n’oublie pas que le plus à droite reste le plus grand.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Comparer, c’est positionner — et la découpe commune fait tout le
+          travail. Au module suivant, cette même découpe devient la <em>condition</em> pour pouvoir
+          additionner.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SquareComposer from '../components/SquareComposer';
@@ -105,12 +106,18 @@ export default function Module04PavageEtProduit() {
                 seule, <MathText>{`$${formatSqrt(a * b)}$`}</MathText>.
                 {!productDone && ' Essaie une autre paire d’aires pour vérifier que ça marche à chaque fois.'}
                 {productDone && (
-                  <>
-                    {' '}Sur {seenProducts.size} paires testées, la même chose à chaque fois :{' '}
-                    <strong>le produit des racines est la racine du produit</strong>.
-                  </>
+                  <>{' '}Sur {seenProducts.size} paires testées, la même chose à chaque fois.</>
                 )}
               </Feedback>
+
+              {productDone && (
+                <KnowledgeBrick
+                  id="produit-racines"
+                  variant="new"
+                  compact
+                  lead="Deux carrés collés en rectangle, plusieurs fois, toujours le même résultat."
+                />
+              )}
             </div>
           ),
         },
@@ -161,29 +168,31 @@ export default function Module04PavageEtProduit() {
                     qui marche, c’est le PRODUIT, pas la somme.
                   </>
                 }
+                requires={['produit-racines', 'racine-du-carre']}
                 solved={trapAnswered}
                 onAnswered={() => setTrapAnswered(true)}
               />
+
+              {trapAnswered && (
+                <KnowledgeBrick
+                  id="somme-ne-passe-pas"
+                  variant="new"
+                  lead="7 contre 5 : la règle rose dépassait le carré en pointillés. Voilà ce qu’il faut en retenir."
+                />
+              )}
             </div>
           ),
         },
         {
           num: 3,
-          title: 'La règle, maintenant qu’elle est vue',
+          title: 'Applique la règle du produit',
           done: ruleDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 space-y-2 text-center">
-                <p className="text-sm font-semibold text-sky-900">Pour a et b positifs :</p>
-                <MathText className="text-lg text-slate-800">
-                  {'$\\sqrt{a} \\times \\sqrt{b} = \\sqrt{a \\times b}$'}
-                </MathText>
-                <p className="text-sm text-rose-700 font-semibold pt-1">
-                  Mais <MathText>{'$\\sqrt{a} + \\sqrt{b} \\neq \\sqrt{a + b}$'}</MathText> — aucune règle
-                  pour l’addition.
-                </p>
-              </div>
-
+              <p className="text-sm text-slate-600">
+                Deux racines, une multiplication. Une seule des trois réponses respecte ce que tu viens
+                de voir sur le rectangle.
+              </p>
               <TapQuestion
                 prompt={
                   <>
@@ -210,6 +219,7 @@ export default function Module04PavageEtProduit() {
                     <MathText>{'$\\sqrt{36} = 6$'}</MathText>. (36, c’est l’aire du carré, pas son côté.)
                   </>
                 }
+                requires={['produit-racines', 'somme-ne-passe-pas']}
                 solved={ruleDone}
                 onAnswered={() => setRuleDone(true)}
               />
@@ -223,15 +233,11 @@ export default function Module04PavageEtProduit() {
           done: quotientDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 space-y-2 text-center">
-                <p className="text-sm font-semibold text-sky-900">
-                  La division suit la même logique que la multiplication :
-                </p>
-                <MathText className="text-lg text-slate-800">
-                  {'$\\dfrac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\dfrac{a}{b}}$'}
-                </MathText>
-              </div>
-
+              <KnowledgeBrick
+                id="quotient-racines"
+                variant="new"
+                lead="Le rectangle assemblé donnait le produit ; le même rectangle découpé donne le quotient."
+              >
               <TapQuestion
                 prompt={
                   <>
@@ -257,21 +263,21 @@ export default function Module04PavageEtProduit() {
                     <MathText>{'$\\sqrt{25} = 5$'}</MathText>. (25 est l’aire, 5 est le côté.)
                   </>
                 }
+                requires={['quotient-racines', 'somme-ne-passe-pas']}
                 solved={quotientDone}
                 onAnswered={() => setQuotientDone(true)}
               />
+              </KnowledgeBrick>
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Deux règles qui marchent — <MathText>{'$\\sqrt{a}\\sqrt{b} = \\sqrt{ab}$'}</MathText> et{' '}
-          <MathText>{'$\\sqrt{a} / \\sqrt{b} = \\sqrt{a/b}$'}</MathText> — et une qui n’existe pas :{' '}
-          <MathText>{'$\\sqrt{a + b} \\neq \\sqrt{a} + \\sqrt{b}$'}</MathText>. Au module suivant, on
-          utilise la règle du produit <strong>à l’envers</strong>, pour simplifier.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          Au module suivant, on utilise la règle du produit <strong>à l’envers</strong> : au lieu de
+          réunir deux racines, on en sort un morceau.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

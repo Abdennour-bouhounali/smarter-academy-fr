@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import FractionAreaGrid from '../components/FractionAreaGrid';
@@ -169,19 +170,17 @@ export default function Module05FractionDeFraction() {
                     impossible.
                   </>
                 }
+                requires={['meme-decoupe', 'ecritures-equivalentes']}
                 solved={ruleDone}
                 onAnswered={() => setRuleDone(true)}
               />
-              <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4 space-y-1">
-                <p className="text-[11px] font-mono uppercase tracking-wide text-emerald-700">À retenir</p>
-                <MathText className="text-lg text-slate-800">
-                  {'$\\frac{a}{b} \\times \\frac{c}{d} = \\frac{a \\times c}{b \\times d}$'}
-                </MathText>
-                <p className="text-sm text-slate-700">
-                  Et on peut simplifier <strong>avant</strong> de multiplier — ça évite les gros
-                  nombres.
-                </p>
-              </div>
+              {ruleDone && (
+                <KnowledgeBrick
+                  id="produit-rationnels"
+                  variant="new"
+                  lead="Le rectangle vert que tu as peint donne les deux nombres d’un coup : sa largeur en haut, sa hauteur en bas."
+                />
+              )}
             </div>
           ),
         },
@@ -212,6 +211,7 @@ export default function Module05FractionDeFraction() {
                     ? "Piège classique : « diviser rend plus petit ». C'est vrai en divisant par un nombre PLUS GRAND que 1. Ici on divise par 1/4, qui est plus petit que 1 : le résultat est plus grand. Compte les paquets sur la barre — il y en a 6."
                     : "En quarts, 3/2 s'écrit 6/4 : il y a exactement 6 paquets d'un quart. Diviser par 1/4, c'est multiplier par 4."
                 }
+                requires={['ecritures-equivalentes', 'quotient']}
                 solved={divDone}
                 onAnswered={() => setDivDone(true)}
               />
@@ -227,20 +227,15 @@ export default function Module05FractionDeFraction() {
         },
         {
           num: 4,
-          title: 'Diviser, c’est multiplier par l’inverse',
+          title: 'Et si on n’a pas envie de compter les paquets ?',
           done: invDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4 space-y-1">
-                <p className="text-[11px] font-mono uppercase tracking-wide text-emerald-700">À retenir</p>
-                <MathText className="text-lg text-slate-800">
-                  {'$\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}$'}
-                </MathText>
-                <p className="text-sm text-slate-700">
-                  On <strong>retourne</strong> la deuxième fraction, puis on multiplie. (Et{' '}
-                  <MathText>{'$c \\neq 0$'}</MathText> : on ne divise pas par zéro.)
-                </p>
-              </div>
+              <KnowledgeBrick
+                id="quotient-rationnels"
+                variant="new"
+                lead="Compter six paquets d’un quart dans 3/2, c’est exactement multiplier 3/2 par 4. Ce raccourci a un nom."
+              />
               <TapQuestion
                 prompt={
                   <>
@@ -271,6 +266,7 @@ export default function Module05FractionDeFraction() {
                     <MathText>{'$\\frac{2}{5} \\times \\frac{4}{3} = \\frac{8}{15}$'}</MathText>.
                   </>
                 }
+                requires={['quotient-rationnels', 'produit-rationnels']}
                 solved={invDone}
                 onAnswered={() => setInvDone(true)}
               />
@@ -278,13 +274,12 @@ export default function Module05FractionDeFraction() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Multiplier, c’est prendre une part d’une part — l’aire commune du quadrillage. Diviser, c’est
-          compter les paquets, ce qui revient à multiplier par l’inverse. Ni l’un ni l’autre ne
-          « rapetisse toujours ».
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Ni multiplier ni diviser ne « rapetissent toujours ». Tu as
+          maintenant les quatre opérations — au module suivant, on regarde dans quel ORDRE les faire.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

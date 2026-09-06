@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -79,6 +79,13 @@ export default function Module02IsolerX() {
               <Escape t={t1} path={[TASKS[0].ops[0], TASKS[0].ops[2]]} />
               {t1.solved && !trapSeen && <Feedback tone="info">x = 4, comme au scanner. Avant de continuer, recommence et essaie « − 5 à gauche seulement » pour voir ce qui se passe.</Feedback>}
               {t1.solved && trapSeen && <Feedback tone="ok">Une opération faite à UN SEUL membre change les solutions (la ligne rouge). Faite aux DEUX membres, l’égalité reste vraie pour les mêmes x : − 5 des deux côtés, puis ÷ 2, et x = 4 apparaît — la valeur du scanner.</Feedback>}
+              {t1.solved && trapSeen && (
+                <KnowledgeBrick
+                  id="regle-deux-membres"
+                  variant="new"
+                  lead="La ligne rouge que tu viens de provoquer dit exactement ce qui est permis, et ce qui ne l’est pas."
+                />
+              )}
             </div>
           ),
         },
@@ -89,6 +96,13 @@ export default function Module02IsolerX() {
               <EquationSteps history={t2.history} ops={TASKS[1].ops} onApply={wrap(t2, TASKS[1], kit)} onUndo={t2.undo} onReset={t2.reset} />
               <Escape t={t2} path={[TASKS[1].ops[0], TASKS[1].ops[1], TASKS[1].ops[3]]} />
               {t2.solved && <Feedback tone="ok">− x des deux côtés rassemble les x à gauche ; + 4 rassemble les nombres à droite ; ÷ 2 isole x : x = 5. Vérification : 3 × 5 − 4 = 11 et 5 + 6 = 11.</Feedback>}
+              {t2.solved && (
+                <KnowledgeBrick
+                  id="methode-premier-degre"
+                  variant="new"
+                  lead="Rassembler les x, rassembler les nombres, diviser : tu viens de faire la suite complète. La voici en méthode."
+                />
+              )}
             </div>
           ),
         },
@@ -103,7 +117,16 @@ export default function Module02IsolerX() {
                   options={['Parce que 2,33 n’est pas solution : 7 × 2,33 + 2 = 18,31 alors que 4 × 2,33 + 9 = 18,32', 'Parce que les fractions sont plus jolies', 'On peut écrire 2,33, c’est pareil']} cols={1} correct={0}
                   explain="7/3 est la valeur EXACTE : 7 × 7/3 + 2 = 55/3 et 4 × 7/3 + 9 = 55/3, égalité parfaite. Avec 2,33 (une valeur approchée), les deux membres diffèrent : ce n’est pas une solution."
                   explainWrong="Vérifie avec 2,33 : 7 × 2,33 + 2 = 18,31 et 4 × 2,33 + 9 = 18,32 — pas égaux. Seule la fraction 7/3 rend l’égalité vraie exactement."
+                  requires={['methode-verifier-solution', 'methode-premier-degre']}
                   solved={exactDone} onAnswered={() => setExactDone(true)} />
+              )}
+              {exactDone && (
+                <KnowledgeBrick
+                  id="regle-solution-exacte"
+                  variant="new"
+                  compact
+                  lead="Tu viens de constater que 2,33 ne vérifie pas l’égalité. C’est une règle générale."
+                />
               )}
             </div>
           ),

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RationalBar from '../components/RationalBar';
@@ -33,9 +34,11 @@ import {
  *   comme unique méthode.
  * Feedback: tant que les découpes diffèrent, l'écart est nommé (« une barre
  *   est en 2 parts, l'autre en 3 : les morceaux n'ont pas la même taille »).
- * Formalization: étape 3, la règle des trois temps (même découpe, additionner
- *   les numérateurs, garder le dénominateur), puis la soustraction et les
- *   négatifs.
+ * Formalization: « même découpe », le PPCM et la règle de la somme vivent
+ *   dans `knowledge.jsx` ; des <KnowledgeBrick> les posent au moment exact —
+ *   la condition dès que les deux barres coïncident (étape 1), le PPCM après
+ *   le sélecteur (étape 2), la formule après le verdict de l'étape 3. Aucune
+ *   règle n'est recopiée ici (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 essais, « Je ne trouve pas — montre-moi » recoupe les
  *   deux barres en sixièmes.
  * Transfer: étape 4, une soustraction qui passe sous zéro (1/3 − 3/4).
@@ -148,6 +151,13 @@ export default function Module04MemeDecoupe() {
                   {revealed && ' (La découpe t’a été montrée — refais-la à la main pour la sentir.)'}
                 </Feedback>
               )}
+              {cutDone && (
+                <KnowledgeBrick
+                  id="meme-decoupe"
+                  variant="new"
+                  lead="Tant que les traits ne coïncidaient pas, il n’y avait rien à compter. Voilà la condition, et ce qu’elle interdit."
+                />
+              )}
             </div>
           ),
         },
@@ -170,12 +180,18 @@ export default function Module04MemeDecoupe() {
                 }}
               />
               {pickDone && (
-                <Feedback tone="ok">
-                  Une découpe commune est un <strong>multiple commun</strong> des deux dénominateurs. 6,
-                  12 et 24 marchent tous ; <strong className="font-mono">{TARGET_DEN}</strong> est le plus
-                  petit — c’est le PPCM de {A0.den} et {B0.den}. Avec 5 ou 7, on ne peut couper ni les
-                  demis ni les tiers en parts égales.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    6, 12 et 24 conviennent tous les trois ;{' '}
+                    <strong className="font-mono">{TARGET_DEN}</strong> est le plus petit. Avec 5 ou 7,
+                    on ne peut couper ni les demis ni les tiers en parts égales.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="ppcm-denominateur"
+                    variant="new"
+                    lead="Trois candidats acceptés, deux refusés : ce n’est pas au hasard. Le plus petit des trois porte même un nom."
+                  />
+                </>
               )}
             </div>
           ),
@@ -186,16 +202,6 @@ export default function Module04MemeDecoupe() {
           done: ruleDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 text-center space-y-2">
-                <p className="text-sm font-semibold text-violet-900">Additionner deux rationnels :</p>
-                <p className="text-sm text-slate-700">
-                  1. même découpe · 2. on additionne les <strong>numérateurs</strong> · 3. on{' '}
-                  <strong>garde</strong> le dénominateur commun.
-                </p>
-                <MathText className="text-lg text-slate-800">
-                  {'$\\frac{1}{2} + \\frac{1}{3} = \\frac{3}{6} + \\frac{2}{6} = \\frac{5}{6}$'}
-                </MathText>
-              </div>
               <TapQuestion
                 prompt="Un élève écrit 1/2 + 1/3 = 2/5. Qu’est-ce qui ne va pas ?"
                 options={[
@@ -222,9 +228,17 @@ export default function Module04MemeDecoupe() {
                     d’avoir additionné les dénominateurs : 2 demis + 3 tiers ne font pas 5 cinquièmes.
                   </>
                 }
+                requires={['meme-decoupe', 'ppcm-denominateur']}
                 solved={ruleDone}
                 onAnswered={() => setRuleDone(true)}
               />
+              {ruleDone && (
+                <KnowledgeBrick
+                  id="somme-difference"
+                  variant="new"
+                  lead="Une fois les parts à la même taille, il ne reste plus qu’à les compter. Voilà l’écriture du geste."
+                />
+              )}
             </div>
           ),
         },
@@ -252,6 +266,7 @@ export default function Module04MemeDecoupe() {
                       ? 'Ce serait 3 − 1 sans recouper 1/2 en 2/4. Une fois recoupée, la deuxième barre vaut 2 quarts, donc 3 − 2 = 1.'
                       : 'On recoupe 1/2 en 2/4, puis 3 − 2 = 1 : le résultat est 1/4.'
                   }
+                  requires={['somme-difference', 'meme-decoupe']}
                   solved={subDone}
                   onAnswered={() => setSubDone(true)}
                 />
@@ -283,6 +298,7 @@ export default function Module04MemeDecoupe() {
                     retire plus grand que ce qu’on avait.
                   </>
                 }
+                requires={['somme-difference', 'ppcm-denominateur', 'nombres-relatifs']}
                 solved={negDone}
                 onAnswered={() => setNegDone(true)}
               />
@@ -290,12 +306,13 @@ export default function Module04MemeDecoupe() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Retiens le geste, pas la recette : <strong>on ne compte des parts ensemble que si elles ont
-          la même taille</strong>. C’est tout ce que veut dire « mettre au même dénominateur ».
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Retiens le geste, pas la recette : on ne compte des parts
+          ensemble que si elles ont la même taille. Au module suivant, on ne compte plus — on prend
+          une part <em>d’une part</em>.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

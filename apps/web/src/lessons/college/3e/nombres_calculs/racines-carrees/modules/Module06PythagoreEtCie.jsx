@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import {
@@ -88,6 +89,11 @@ export default function Module06PythagoreEtCie() {
                 <MathText className="text-slate-800">{'$d^{2} = 5^{2} + 5^{2} = 25 + 25 = 50$'}</MathText>
               </div>
 
+              <KnowledgeBrick
+                id="racines-en-geometrie"
+                variant="new"
+                lead="Pythagore te donne le CARRÉ de la diagonale. Il reste un pas — celui que tu fais depuis le module 1."
+              >
               <TapQuestion
                 prompt="Quelle est la valeur EXACTE de la diagonale ?"
                 options={['$10 \\text{ cm}$', '$\\sqrt{50} = 5\\sqrt{2} \\text{ cm}$', '$50 \\text{ cm}$']}
@@ -111,9 +117,11 @@ export default function Module06PythagoreEtCie() {
                     <MathText>{`$\\sqrt{50} = ${formatRoot(DIAG)}$`}</MathText> cm.
                   </>
                 }
+                requires={['racines-en-geometrie', 'racine-carree', 'simplifier-racine']}
                 solved={diagDone}
                 onAnswered={() => setDiagDone(true)}
               />
+              </KnowledgeBrick>
             </div>
           ),
         },
@@ -125,9 +133,14 @@ export default function Module06PythagoreEtCie() {
           content: (
             <div className="space-y-3">
               <p className="text-sm text-slate-600">
-                Pour commander une planche, il faut un nombre lisible. Donne la valeur arrondie au{' '}
-                <strong>dixième</strong> de la diagonale (≈ à la calculatrice).
+                Pour commander une planche, il faut un nombre lisible. Mais lequel des deux nombres
+                écrit-on sur le bon de commande ?
               </p>
+              <KnowledgeBrick
+                id="exact-vs-approche"
+                variant="new"
+                lead="Tu viens d’écrire la diagonale sous deux formes : 5√2, et « environ 7,07 ». Elles n’ont pas le même rôle."
+              >
               <NumericQuestion
                 prompt="Diagonale arrondie au dixième (en cm) :"
                 expected={approxRoot(50, 1)}
@@ -161,9 +174,11 @@ export default function Module06PythagoreEtCie() {
                     </>
                   )
                 }
+                requires={['exact-vs-approche', 'racines-en-geometrie']}
                 solved={roundDone}
                 onAnswered={() => setRoundDone(true)}
               />
+              </KnowledgeBrick>
             </div>
           ),
         },
@@ -214,6 +229,7 @@ export default function Module06PythagoreEtCie() {
                     25 × 3 = 75, pas 45. Réponse : <MathText>{`$${formatRoot(HYP)}$`}</MathText>.
                   </>
                 }
+                requires={['racines-en-geometrie', 'simplifier-racine', 'carre-parfait']}
                 solved={hypDone}
                 onAnswered={() => setHypDone(true)}
               />
@@ -276,6 +292,7 @@ export default function Module06PythagoreEtCie() {
                   )}
                 </Feedback>
               )}
+              requires={['comparer-par-carres', 'coefficient-sous-racine', 'simplifier-racine']}
               solved={compareDone}
               onAnswered={() => setCompareDone(true)}
             />
@@ -325,6 +342,7 @@ export default function Module06PythagoreEtCie() {
                     </>
                   )
                 }
+                requires={['carre-de-la-racine', 'racines-en-geometrie']}
                 solved={calcDone}
                 onAnswered={() => setCalcDone(true)}
               />
@@ -339,14 +357,12 @@ export default function Module06PythagoreEtCie() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          En géométrie, les racines sont la règle plutôt que l’exception. Deux réflexes :{' '}
-          <strong>donner la valeur exacte</strong> (avec le symbole √, simplifiée) et n’utiliser
-          l’arrondi que pour se représenter la taille. Et pour comparer, toujours{' '}
-          <strong>les carrés</strong>.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          La carte est complète. Il ne reste qu’à la mettre à l’épreuve, du jardin de 49 m² à
+          l’hypoténuse.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

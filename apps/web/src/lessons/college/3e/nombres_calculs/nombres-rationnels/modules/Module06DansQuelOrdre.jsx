@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CalcChain from '../../../../../common/components/CalcChain';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -201,21 +202,11 @@ export default function Module06DansQuelOrdre() {
           done: compareDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-blue-200 bg-blue-50 p-4 space-y-2">
-                <p className="text-[11px] font-mono uppercase tracking-wide text-blue-700">À retenir</p>
-                <p className="text-sm text-slate-700">
-                  Dans une expression, on calcule dans cet ordre :
-                </p>
-                <ol className="text-sm text-slate-700 list-decimal list-inside space-y-0.5">
-                  <li>ce qui est entre <strong>parenthèses</strong> ;</li>
-                  <li>les <strong>multiplications et divisions</strong>, de gauche à droite ;</li>
-                  <li>les <strong>additions et soustractions</strong>, de gauche à droite.</li>
-                </ol>
-                <p className="text-sm text-slate-700">
-                  La barre de fraction joue le rôle d’une parenthèse : on calcule tout le haut et tout
-                  le bas avant de diviser.
-                </p>
-              </div>
+              <KnowledgeBrick
+                id="priorites-calcul"
+                variant="new"
+                lead="Deux expressions faites des mêmes nombres, deux résultats différents : c’est la parenthèse qui a tout décidé. Voilà la règle complète."
+              />
               <TapQuestion
                 prompt={
                   <>
@@ -247,6 +238,7 @@ export default function Module06DansQuelOrdre() {
                     <MathText>{'$\\frac{9}{12} - \\frac{2}{12} = \\frac{7}{12}$'}</MathText>.
                   </>
                 }
+                requires={['priorites-calcul', 'produit-rationnels', 'somme-difference']}
                 solved={compareDone}
                 onAnswered={() => setCompareDone(true)}
               />
@@ -254,12 +246,13 @@ export default function Module06DansQuelOrdre() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Avant de calculer, <strong>repère l’opération prioritaire</strong> : parenthèses, puis × et ÷,
-          puis + et −. C’est ce réflexe qui te servira dans le budget du club, au module suivant.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Avant de calculer, repère l’opération prioritaire. C’est ce
+          réflexe qui te servira dans le budget du club — où il faudra d’abord choisir QUELLE
+          opération faire.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

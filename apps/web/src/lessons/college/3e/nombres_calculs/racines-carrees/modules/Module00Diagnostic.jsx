@@ -11,6 +11,10 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * d'un entier, la lecture de la notation n², la priorité des opérations,
  * l'ordre de deux nombres, et l'aire d'un carré — jamais la racine carrée
  * elle-même, qui est le contenu de la leçon.
+ *
+ * `requires` nomme, pour chaque question, le prérequis qu'elle diagnostique —
+ * uniquement des ids du `priorKnowledge` de lesson.config.js (contrat
+ * docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  */
 const SKILLS = {
   carres: { label: 'Carrés et puissances', emoji: '²' },
@@ -21,6 +25,7 @@ const SKILLS = {
 const QUESTIONS = [
   {
     id: 'q1-carre',
+    requires: ['carre-nombre'],
     skill: 'carres',
     points: 2,
     prompt: (
@@ -35,6 +40,7 @@ const QUESTIONS = [
   },
   {
     id: 'q2-notation',
+    requires: ['carre-nombre'],
     skill: 'carres',
     points: 2,
     prompt: (
@@ -49,6 +55,7 @@ const QUESTIONS = [
   },
   {
     id: 'q3-priorites',
+    requires: ['calcul-numerique', 'carre-nombre'],
     skill: 'calcul',
     points: 2,
     prompt: (
@@ -63,6 +70,7 @@ const QUESTIONS = [
   },
   {
     id: 'q4-ordre',
+    requires: ['encadrer-nombre'],
     skill: 'calcul',
     points: 2,
     prompt: (
@@ -77,6 +85,7 @@ const QUESTIONS = [
   },
   {
     id: 'q5-aire',
+    requires: ['aire'],
     skill: 'longueurs',
     points: 2,
     prompt: (

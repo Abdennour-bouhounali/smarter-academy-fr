@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import BarModel from '../../../../../common/components/BarModel';
 import CalcChain from '../../../../../common/components/CalcChain';
@@ -35,7 +36,10 @@ import {
  *   priorités dans le calcul final.
  * Feedback: chaque réponse fausse est rapportée à la barre (« 7/12 du budget
  *   est déjà dépensé, il en reste donc 5/12, pas 5/24 »).
- * Formalization: la chaîne de calcul complète est affichée à la fin.
+ * Formalization: « choisir l'opération que raconte l'énoncé » vit dans
+ *   `knowledge.jsx` ; une <KnowledgeBrick> la pose après la première décision
+ *   de l'élève, et la chaîne de calcul complète reste affichée à la fin
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: les fractions du scénario sont rappelées en permanence.
  * Transfer: la dernière question demande un nombre ENTIER de maillots à
  *   partir d'un quotient décimal — il faut interpréter, pas seulement calculer.
@@ -54,8 +58,6 @@ export default function Module07BudgetDuClub() {
   const [q2, setQ2] = useState(false);
   const [q3, setQ3] = useState(false);
   const [q4, setQ4] = useState(false);
-
-  const allDone = q1 && q2 && q3 && q4;
 
   return (
     <ContentModule
@@ -103,9 +105,10 @@ export default function Module07BudgetDuClub() {
         {
           num: 1,
           title: 'Quelle opération pour le matériel ?',
-          subtitle: 'Modéliser avant de calculer.',
+          subtitle: 'Décider avant de calculer.',
           done: q1,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="Quelle opération donne la part du budget dépensée en MATÉRIEL (moteurs et capteurs) ?"
               options={[
@@ -133,9 +136,18 @@ export default function Module07BudgetDuClub() {
                   elles s’ajoutent : <MathText>{`$${formatFrac(MATERIEL)}$`}</MathText>.
                 </>
               }
+              requires={['meme-decoupe', 'somme-difference', 'produit-rationnels']}
               solved={q1}
               onAnswered={() => setQ1(true)}
             />
+            {q1 && (
+              <KnowledgeBrick
+                id="choisir-operation"
+                variant="new"
+                lead="Tu n’as rien calculé : tu as DÉCIDÉ. C’est là qu’un problème se gagne ou se perd."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -161,6 +173,7 @@ export default function Module07BudgetDuClub() {
                     ? 'C’est la part déjà dépensée, pas ce qui reste. Le tout vaut 12 douzièmes : 12 − 7 = 5.'
                     : '12 douzièmes en tout, 7 dépensés en matériel : 12 − 7 = 5. Le tournoi représente 5/12 du budget.'
                 }
+                requires={['choisir-operation', 'somme-difference', 'meme-decoupe']}
                 solved={q2}
                 onAnswered={() => setQ2(true)}
               />
@@ -197,6 +210,7 @@ export default function Module07BudgetDuClub() {
                     ? `60 €, c’est UN douzième du budget. Il en faut cinq : 60 × 5 = ${formatDec(TOURNOI_EUROS)} €.`
                     : `« Les 5/12 de 720 € » se calcule 720 ÷ 12 × 5 = 60 × 5 = ${formatDec(TOURNOI_EUROS)} €.`
                 }
+                requires={['choisir-operation', 'produit-rationnels']}
                 solved={q3}
                 onAnswered={() => setQ3(true)}
               />
@@ -234,6 +248,7 @@ export default function Module07BudgetDuClub() {
                     ? `Attention : chaque maillot coûte ${formatDec(12.5)} €, pas 1 €. ${formatDec(TOURNOI_EUROS)} ÷ ${formatDec(12.5)} = ${formatDec(MAILLOTS)}.`
                     : `${formatDec(TOURNOI_EUROS)} ÷ ${formatDec(12.5)} = ${formatDec(MAILLOTS)} maillots exactement.`
                 }
+                requires={['choisir-operation', 'quotient-rationnels']}
                 solved={q4}
                 onAnswered={() => setQ4(true)}
               />
@@ -258,15 +273,13 @@ export default function Module07BudgetDuClub() {
           ),
         },
       ]}
-      footer={
-        allDone ? (
-          <Feedback tone="ok">
-            Le vrai travail d’un problème n’est pas le calcul : c’est de{' '}
-            <strong>choisir l’opération</strong> à chaque étape, puis de les enchaîner dans le bon
-            ordre. Tu viens de le faire quatre fois de suite.
-          </Feedback>
-        ) : null
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Le vrai travail d’un problème n’est pas le calcul : c’est de
+          choisir l’opération à chaque étape, puis de les enchaîner dans le bon ordre. Ta carte est
+          complète — il ne reste qu’à la mettre à l’épreuve.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

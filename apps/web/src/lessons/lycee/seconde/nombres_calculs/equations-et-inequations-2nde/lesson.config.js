@@ -26,6 +26,17 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/nombres_calculs/equation
 
 export const LESSON_CONFIG = {
   id: 'equations-et-inequations-2nde',
+  // Connaissances SUPPOSÉES acquises (calcul littéral de 3e, ordre et
+  // intervalles d'« ensembles et intervalles »), diagnostiquées par le module 0.
+  priorKnowledge: ['calcul-litteral', 'developper', 'nombres-relatifs',
+    'ordre-nombres', 'intervalle', 'intervalle-crochets', 'ensemble-reels', 'appartient', 'aire', 'perimetre'],
+  knowledgeAudit: {
+    ignore: [
+      // « au maximum 25 € » est la locution courante, pas la notion d'extremum
+      // d'une fonction : la leçon ne l'enseigne ni ne la demande.
+      { term: 'extremum', reason: 'locution courante « au maximum », pas la notion' },
+    ],
+  },
   sequentialUnlock: true,
   title: 'Équations et inéquations',
   description:

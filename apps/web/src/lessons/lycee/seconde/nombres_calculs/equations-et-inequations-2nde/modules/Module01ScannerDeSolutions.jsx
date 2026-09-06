@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolutionScanner from '../components/SolutionScanner';
@@ -57,6 +57,13 @@ export default function Module01ScannerDeSolutions() {
               <SolutionScanner L={A} R={B} x={x} onX={(v) => { scan(v); if (relationAt(A, B, v) === '=' && !seen.has('=')) kit.react(true); }} />
               {scanDone ? <Feedback tone="ok">Une seule valeur rend les deux prix égaux : <strong>x = 4</strong> (13 € = 13 €). Avant, A est moins cher ; après, plus cher. Tu viens de résoudre l’équation 2x + 5 = 13 en balayant.</Feedback>
                 : <Feedback tone="info">{!seen.has('=') ? 'Cherche la valeur de x où les deux barres sont exactement égales.' : !seen.has('<') ? 'Maintenant un x où A est moins cher.' : 'Et un x où A est plus cher.'}</Feedback>}
+              {scanDone && (
+                <KnowledgeBrick
+                  id="equation-solution"
+                  variant="new"
+                  lead="Tu viens de trouver, en balayant, la seule valeur qui rend les deux prix égaux. Cette égalité et cette valeur ont chacune un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -68,7 +75,15 @@ export default function Module01ScannerDeSolutions() {
               <TapQuestion prompt="L’ensemble des x (en Go, x ≥ 0) tels que A < B est :" options={['{4}', '[0 ; 4[', ']4 ; 10]', '[0 ; 10]']} cols={4} correct={1}
                 explain={<>Toute la zone verte : de 0 (inclus) jusqu’à 4 (exclu, car en 4 les prix sont égaux). {prediction === 'infinite' ? 'Ta prédiction : une infinité. Exact' : prediction ? `Ta prédiction : ${prediction === 'aucune' ? 'aucune' : prediction === 'une' ? 'une seule' : 'quelques-unes'}. Le scanner te contredit` : 'Le scanner tranche'} : 0,5 Go, 1 Go, 3,99 Go… une INFINITÉ de valeurs rendent A moins cher. Résoudre 2x + 5 &lt; 13, c’est décrire toute cette zone : [0 ; 4[.</>}
                 explainWrong={<>Regarde la zone verte : elle commence à 0 et s’arrête juste avant 4 (en 4, A = B). {prediction === 'infinite' ? 'Ta prédiction : une infinité. Exacte' : prediction ? `Ta prédiction : ${prediction === 'aucune' ? 'aucune' : prediction === 'une' ? 'une seule' : 'quelques-unes'}. Le scanner te contredit` : 'Le scanner tranche'} : une inéquation a en général une infinité de solutions — tout un intervalle : [0 ; 4[.</>}
+                requires={['equation-solution', 'intervalle', 'intervalle-crochets']}
                 solved={regionDone} onAnswered={() => setRegionDone(true)} />
+              {regionDone && (
+                <KnowledgeBrick
+                  id="inequation-infinite"
+                  variant="new"
+                  lead="Une seule valeur pour l’égalité, mais toute une zone pour « moins cher » : ce n’est pas un accident."
+                />
+              )}
             </div>
           ),
         },
@@ -81,7 +96,16 @@ export default function Module01ScannerDeSolutions() {
                 <TapQuestion prompt="Combien de solutions a l’équation 2x + 3 = 2x + 5 ?" options={['Aucune', 'Une seule', 'Une infinité']} cols={3} correct={0}
                   explain="Quel que soit x, B′ coûte toujours 2 € de plus que A′ : les barres ne se rejoignent jamais. Cette équation n’a AUCUNE solution — son ensemble de solutions est ∅."
                   explainWrong="Regarde les barres : l’écart reste 2 € pour tout x. Aucune valeur ne rend l’égalité vraie : l’ensemble des solutions est vide, ∅."
+                  requires={['equation-solution']}
                   solved={noneDone} onAnswered={() => setNoneDone(true)} />
+              )}
+              {noneDone && (
+                <KnowledgeBrick
+                  id="regle-nombre-de-solutions"
+                  variant="new"
+                  compact
+                  lead="Une solution au premier essai, aucune au second : voilà les cas possibles, et comment on note l’ensemble."
+                />
               )}
             </div>
           ),
@@ -89,10 +113,21 @@ export default function Module01ScannerDeSolutions() {
         {
           num: 4, title: 'Vérifier une solution', done: verifDone,
           content: (
-            <NumericQuestion prompt="On affirme que x = 4 est solution de 2x + 5 = 13. Pour le VÉRIFIER, on calcule le membre de gauche pour x = 4. Combien vaut 2 × 4 + 5 ?" expected={13} suffix="= 13 ?"
-              explain="2 × 4 + 5 = 13, et le membre de droite vaut 13 : l’égalité est vraie, x = 4 est bien solution. Vérifier = remplacer x par la valeur et comparer les deux membres."
-              explainFor={(v) => (v === 29 ? '« 2x » veut dire 2 × x, pas « 2 collé à x » : 2 × 4 = 8, puis + 5 = 13.' : v === 11 ? 'N’oublie pas de multiplier : 2 × 4 = 8, puis 8 + 5 = 13.' : 'Remplace x par 4 : 2 × 4 + 5 = 13. Comme le membre de droite vaut 13, l’égalité tient.')}
-              solved={verifDone} onAnswered={() => setVerifDone(true)} />
+            <div className="space-y-3">
+              <NumericQuestion prompt="On affirme que x = 4 est solution de 2x + 5 = 13. Pour le VÉRIFIER, on calcule le membre de gauche pour x = 4. Combien vaut 2 × 4 + 5 ?" expected={13} suffix="= 13 ?"
+                explain="2 × 4 + 5 = 13, et le membre de droite vaut 13 : l’égalité est vraie, x = 4 est bien solution. Vérifier = remplacer x par la valeur et comparer les deux membres."
+                explainFor={(v) => (v === 29 ? '« 2x » veut dire 2 × x, pas « 2 collé à x » : 2 × 4 = 8, puis + 5 = 13.' : v === 11 ? 'N’oublie pas de multiplier : 2 × 4 = 8, puis 8 + 5 = 13.' : 'Remplace x par 4 : 2 × 4 + 5 = 13. Comme le membre de droite vaut 13, l’égalité tient.')}
+                requires={['equation-solution', 'calcul-litteral']}
+                solved={verifDone} onAnswered={() => setVerifDone(true)} />
+              {verifDone && (
+                <KnowledgeBrick
+                  id="methode-verifier-solution"
+                  variant="new"
+                  compact
+                  lead="Tu n’as pas résolu : tu as remplacé x par 4 et comparé. C’est une méthode à part entière."
+                />
+              )}
+            </div>
           ),
         },
       ]}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Simplifier from '../components/Simplifier';
@@ -25,7 +26,11 @@ import { gcd, isIrreducible, rat, simplify } from '../components/rationalUtils';
  *   diviser par n'importe quel nombre », « simplifier change la valeur ».
  * Feedback: une puce non-diviseur explique pourquoi (« 5 ne divise pas 24 »)
  *   et ne réinitialise rien.
- * Formalization: étape 3, la définition et le raccourci PGCD.
+ * Formalization: « irréductible » et le raccourci du PGCD vivent dans
+ *   `knowledge.jsx` ; deux <KnowledgeBrick> les posent dès que la fraction est
+ *   arrivée au bout — donc APRÈS le geste et AVANT les questions des étapes 2
+ *   et 3 qui les exigent. L'étape 3 ne recopie plus la définition
+ *   (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
  * Scaffolding: après 3 refus, le bouton PGCD est mis en avant.
  * Transfer: étape 4, reconnaître une fraction déjà irréductible (15/22).
  */
@@ -104,20 +109,33 @@ export default function Module02RendreIrreductible() {
               <RationalBar value={v} min={0} max={1} showDecimal={false} showLine />
               {!done && (
                 <Feedback tone="info">
-                  <MathText>{`$\\frac{${v.num}}{${v.den}}$`}</MathText> peut encore être réduite :{' '}
-                  {Math.abs(v.num)} et {v.den} ont encore{' '}
-                  <strong className="font-mono">{gcd(v.num, v.den)}</strong> comme plus grand diviseur
-                  commun. Et la barre en dessous ne change pas de longueur — seuls les traits de coupe
-                  disparaissent.
+                  <MathText>{`$\\frac{${v.num}}{${v.den}}$`}</MathText> peut encore se regrouper :
+                  il existe encore un nombre — <strong className="font-mono">{gcd(v.num, v.den)}</strong>{' '}
+                  au mieux — qui divise à la fois {Math.abs(v.num)} et {v.den}. Et la barre en dessous
+                  ne change pas de longueur : seuls les traits de coupe disparaissent.
                 </Feedback>
               )}
               {done && (
-                <Feedback tone="ok">
-                  <MathText>{`$\\frac{${v.num}}{${v.den}}$`}</MathText> est irréductible : le PGCD de{' '}
-                  {Math.abs(v.num)} et {v.den} vaut 1. Tu y es arrivé en{' '}
-                  <strong className="font-mono">{history.length}</strong> division
-                  {history.length > 1 ? 's' : ''} — et le point n’a jamais bougé.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    Plus aucun nombre ne divise à la fois{' '}
+                    <MathText>{`$${v.num}$`}</MathText> et <MathText>{`$${v.den}$`}</MathText> : c’est
+                    fini. Tu y es arrivé en{' '}
+                    <strong className="font-mono">{history.length}</strong> division
+                    {history.length > 1 ? 's' : ''} — et le point n’a jamais bougé.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="irreductible"
+                    variant="new"
+                    lead="Cette fraction-là, on ne peut plus la rapetisser. Elle porte un nom."
+                  />
+                  <KnowledgeBrick
+                    id="pgcd-irreductible"
+                    variant="new"
+                    compact
+                    lead="Et le nombre qui aurait tout fait d’un seul coup en porte un autre."
+                  />
+                </>
               )}
             </div>
           ),
@@ -151,6 +169,7 @@ export default function Module02RendreIrreductible() {
                   simplement plus rapide.
                 </>
               }
+              requires={['irreductible', 'pgcd-irreductible']}
               solved={ruleDone}
               onAnswered={() => setRuleDone(true)}
             />
@@ -162,15 +181,10 @@ export default function Module02RendreIrreductible() {
           done: pickDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-sky-200 bg-sky-50 p-4 space-y-2">
-                <p className="text-[11px] font-mono uppercase tracking-wide text-sky-700">À retenir</p>
-                <p className="text-sm text-slate-700">
-                  Une fraction est <strong>irréductible</strong> quand son numérateur et son
-                  dénominateur n’ont plus aucun diviseur commun autre que 1 — autrement dit quand{' '}
-                  <MathText>{'$\\mathrm{PGCD} = 1$'}</MathText>. Pour y arriver d’un coup : diviser par
-                  le PGCD.
-                </p>
-              </div>
+              <p className="text-sm text-slate-600">
+                Cette fois, personne ne simplifie à ta place : c’est à toi de repérer laquelle des
+                trois n’a plus rien à donner.
+              </p>
               <TapQuestion
                 prompt="Laquelle de ces trois fractions est déjà irréductible ?"
                 options={['$\\frac{14}{21}$', '$\\frac{15}{22}$', '$\\frac{9}{27}$']}
@@ -194,6 +208,7 @@ export default function Module02RendreIrreductible() {
                     donc elle l’irréductible.
                   </>
                 }
+                requires={['irreductible', 'pgcd-irreductible']}
                 solved={pickDone}
                 onAnswered={() => setPickDone(true)}
               />
@@ -201,13 +216,13 @@ export default function Module02RendreIrreductible() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Simplifier ne rapetisse pas le nombre : ça rapetisse son <strong>écriture</strong>. La forme
-          irréductible ({<MathText>{`$${'\\frac{2}{3}'}$`}</MathText>} ici) est unique — c’est elle qui
-          sert à reconnaître deux fractions égales d’un coup d’œil.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Simplifier ne rapetisse pas le nombre : ça rapetisse son
+          écriture. Au module suivant, on se sert de la découpe pour trancher entre deux rationnels —
+          lequel est le plus grand ?
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }
