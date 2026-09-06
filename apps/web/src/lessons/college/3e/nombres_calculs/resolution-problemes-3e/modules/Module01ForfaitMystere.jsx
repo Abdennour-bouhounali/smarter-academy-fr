@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -98,6 +99,7 @@ export default function Module01ForfaitMystere() {
                   recompte 9 € à chaque séance. Reste à savoir quand ça bascule.
                 </>
               }
+              requires={['proportionnalite']}
               solved={predicted}
               onAnswered={() => setPredicted(true)}
             />
@@ -211,6 +213,7 @@ export default function Module01ForfaitMystere() {
                     <MathText>{'$9n$'}</MathText> et <MathText>{'$24 + 5n$'}</MathText>.
                   </>
                 }
+                requires={['calcul-litteral']}
                 solved={revealDone}
                 onAnswered={() => setRevealDone(true)}
               />
@@ -223,49 +226,59 @@ export default function Module01ForfaitMystere() {
           subtitle: 'Une seule pièce de plus. Les essais s’en sortiraient-ils ?',
           done: lastDone,
           content: (
-            <TapQuestion
-              prompt={
-                <>
-                  Avec une carte B à 25 € (au lieu de 24 €), l’équation devient{' '}
-                  <MathText>{'$9n = 25 + 5n$'}</MathText>. En testant des nombres entiers de séances,
-                  trouverait-on une ligne où les deux prix sont égaux ?
-                </>
-              }
-              options={[
-                'Oui, il suffit de tester plus loin',
-                'Non : aucun nombre entier ne donne l’égalité',
-                'Oui, en n = 5',
-              ]}
-              cols={1}
-              correct={1}
-              explain={
-                <>
-                  <MathText>{'$9n = 25 + 5n$'}</MathText> donne <MathText>{'$4n = 25$'}</MathText>, donc{' '}
-                  <MathText>{'$n = 6{,}25$'}</MathText> : entre 6 et 7 séances. Aucune ligne du tableau ne
-                  sera verte — et pourtant le problème a une réponse. C’est exactement là que le tableau
-                  s’arrête et que l’équation continue. On y reviendra au module 7.
-                </>
-              }
-              explainWrong={
-                <>
-                  Pour n = 6 : 54 € contre 55 €. Pour n = 7 : 63 € contre 60 €. Les deux prix se croisent{' '}
-                  <em>entre</em> les deux — en{' '}
-                  <MathText>{'$n = 6{,}25$'}</MathText>, une valeur qu’aucune puce du tableau ne propose.
-                </>
-              }
-              solved={lastDone}
-              onAnswered={() => setLastDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt={
+                  <>
+                    Avec une carte B à 25 € (au lieu de 24 €), l’équation devient{' '}
+                    <MathText>{'$9n = 25 + 5n$'}</MathText>. En testant des nombres entiers de séances,
+                    trouverait-on une ligne où les deux prix sont égaux ?
+                  </>
+                }
+                options={[
+                  'Oui, il suffit de tester plus loin',
+                  'Non : aucun nombre entier ne donne l’égalité',
+                  'Oui, en n = 5',
+                ]}
+                cols={1}
+                correct={1}
+                explain={
+                  <>
+                    <MathText>{'$9n = 25 + 5n$'}</MathText> donne <MathText>{'$4n = 25$'}</MathText>, donc{' '}
+                    <MathText>{'$n = 6{,}25$'}</MathText> : entre 6 et 7 séances. Aucune ligne du tableau ne
+                    sera verte — et pourtant le problème a une réponse. C’est exactement là que le tableau
+                    s’arrête et que l’équation continue. On y reviendra au module 7.
+                  </>
+                }
+                explainWrong={
+                  <>
+                    Pour n = 6 : 54 € contre 55 €. Pour n = 7 : 63 € contre 60 €. Les deux prix se croisent{' '}
+                    <em>entre</em> les deux — en{' '}
+                    <MathText>{'$n = 6{,}25$'}</MathText>, une valeur qu’aucune puce du tableau ne propose.
+                  </>
+                }
+                requires={['equation-premier-degre']}
+                solved={lastDone}
+                onAnswered={() => setLastDone(true)}
+              />
+              {lastDone && (
+                <KnowledgeBrick
+                  id="pourquoi-une-equation"
+                  variant="new"
+                  compact
+                  lead="Le tableau finit par trouver ; l’équation, elle, ne dépend pas de la chance."
+                />
+              )}
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Essayer des valeurs marche… mais une équation trouve n en une ligne — et elle continue de marcher
-          quand le résultat n’est pas un nombre rond. Toute la leçon consiste à savoir écrire cette
-          équation, puis à revenir à l’histoire pour répondre.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Une équation trouve en une ligne ce que les essais cherchent
+          à tâtons. Toute la leçon consiste à savoir l’écrire.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

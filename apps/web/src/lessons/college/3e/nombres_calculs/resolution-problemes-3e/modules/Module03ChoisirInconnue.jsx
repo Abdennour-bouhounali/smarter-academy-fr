@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import BarModel from '../../../../../common/components/BarModel';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -117,66 +118,77 @@ export default function Module03ChoisirInconnue() {
           subtitle: 'Le piège du mot « de plus », vu en barres.',
           done: barDone,
           content: (
-            <TapQuestion
-              prompt={
-                <>
-                  Un élève a écrit : <MathText>{'$x$'}</MathText> = âge de Tom, et « Léa ={' '}
-                  <MathText>{'$x - 3$'}</MathText> ». Regarde les barres pour{' '}
-                  <MathText>{'$x = 11$'}</MathText>. Que montrent-elles ?
-                </>
-              }
-              above={
-                <div className="space-y-2">
-                  <BarModel
-                    bars={[
-                      {
-                        label: 'Tom (x = 11)',
-                        segments: [{ value: TOM, tone: 'sky', text: 'x' }],
-                      },
-                      {
-                        label: 'Léa selon cet élève (x − 3)',
-                        segments: [{ value: TOM - 3, tone: 'rose', text: 'x − 3' }],
-                      },
-                      {
-                        label: 'Léa selon l’énoncé (x + 3)',
-                        segments: [
-                          { value: TOM, tone: 'sky', text: 'x' },
-                          { value: 3, tone: 'emerald', text: '+3' },
-                        ],
-                      },
-                    ]}
-                    maxValue={16}
-                    unit=" ans"
-                  />
-                  <p className="text-xs text-slate-500 text-center">
-                    L’énoncé dit : « Léa a 3 ans <strong>de plus</strong> que Tom ».
-                  </p>
-                </div>
-              }
-              options={[
-                'La barre de Léa est plus courte : cette écriture dit le contraire de l’énoncé',
-                'Les deux écritures sont correctes, c’est au choix',
-                'La barre de Léa est plus longue : l’écriture est bonne',
-              ]}
-              cols={1}
-              correct={0}
-              explain={
-                <>
-                  <MathText>{'$x - 3$'}</MathText> donne 8 ans à Léa alors que Tom en a 11 : elle serait
-                  plus <em>jeune</em>. « De plus » veut dire qu’on <strong>ajoute</strong> à celui qui est
-                  cité comme référence — ici Tom. Donc Léa = <MathText>{'$x + 3$'}</MathText>. Le mot-clé ne
-                  suffit jamais : c’est la longueur des barres qui tranche.
-                </>
-              }
-              explainWrong={
-                <>
-                  Compare les deux premières barres : 11 pour Tom, 8 pour Léa. L’énoncé dit que Léa est plus
-                  âgée — l’écriture <MathText>{'$x - 3$'}</MathText> raconte donc l’inverse de l’histoire.
-                </>
-              }
-              solved={barDone}
-              onAnswered={() => setBarDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt={
+                  <>
+                    Un élève a écrit : <MathText>{'$x$'}</MathText> = âge de Tom, et « Léa ={' '}
+                    <MathText>{'$x - 3$'}</MathText> ». Regarde les barres pour{' '}
+                    <MathText>{'$x = 11$'}</MathText>. Que montrent-elles ?
+                  </>
+                }
+                above={
+                  <div className="space-y-2">
+                    <BarModel
+                      bars={[
+                        {
+                          label: 'Tom (x = 11)',
+                          segments: [{ value: TOM, tone: 'sky', text: 'x' }],
+                        },
+                        {
+                          label: 'Léa selon cet élève (x − 3)',
+                          segments: [{ value: TOM - 3, tone: 'rose', text: 'x − 3' }],
+                        },
+                        {
+                          label: 'Léa selon l’énoncé (x + 3)',
+                          segments: [
+                            { value: TOM, tone: 'sky', text: 'x' },
+                            { value: 3, tone: 'emerald', text: '+3' },
+                          ],
+                        },
+                      ]}
+                      maxValue={16}
+                      unit=" ans"
+                    />
+                    <p className="text-xs text-slate-500 text-center">
+                      L’énoncé dit : « Léa a 3 ans <strong>de plus</strong> que Tom ».
+                    </p>
+                  </div>
+                }
+                options={[
+                  'La barre de Léa est plus courte : cette écriture dit le contraire de l’énoncé',
+                  'Les deux écritures sont correctes, c’est au choix',
+                  'La barre de Léa est plus longue : l’écriture est bonne',
+                ]}
+                cols={1}
+                correct={0}
+                explain={
+                  <>
+                    <MathText>{'$x - 3$'}</MathText> donne 8 ans à Léa alors que Tom en a 11 : elle serait
+                    plus <em>jeune</em>. « De plus » veut dire qu’on <strong>ajoute</strong> à celui qui est
+                    cité comme référence — ici Tom. Donc Léa = <MathText>{'$x + 3$'}</MathText>. Le mot-clé ne
+                    suffit jamais : c’est la longueur des barres qui tranche.
+                  </>
+                }
+                explainWrong={
+                  <>
+                    Compare les deux premières barres : 11 pour Tom, 8 pour Léa. L’énoncé dit que Léa est plus
+                    âgée — l’écriture <MathText>{'$x - 3$'}</MathText> raconte donc l’inverse de l’histoire.
+                  </>
+                }
+                requires={['lire-un-enonce', 'calcul-litteral']}
+                solved={barDone}
+                onAnswered={() => setBarDone(true)}
+              />
+              {barDone && (
+                <KnowledgeBrick
+                  id="choisir-linconnue"
+                  variant="new"
+                  compact
+                  lead="Nommer une seule quantité suffit : les autres suivent."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -235,64 +247,74 @@ export default function Module03ChoisirInconnue() {
           subtitle: 'Les quatre formulations qui reviennent tout le temps.',
           done: relationsDone,
           content: (
-            <BatchChoiceQuestion
-              intro={
-                <p className="text-sm text-slate-700">
-                  Marc a <MathText>{'$x$'}</MathText> billes. Écris ce que possède chaque personne.
-                </p>
-              }
-              rows={[
-                {
-                  id: 'plus',
-                  label: <span>Léo a 3 billes de plus que Marc</span>,
-                  options: ['x + 3', 'x − 3', '3x'],
-                  correct: 0,
-                  correction: '« de plus » : on ajoute 3 au nombre de Marc.',
-                },
-                {
-                  id: 'double',
-                  label: <span>Nina a le double de Marc</span>,
-                  options: ['x + 2', '2x', 'x ÷ 2'],
-                  correct: 1,
-                  correction: '« le double » : on multiplie par 2.',
-                },
-                {
-                  id: 'moins',
-                  label: <span>Sam a 5 billes de moins que Marc</span>,
-                  options: ['5 − x', 'x − 5', '5x'],
-                  correct: 1,
-                  correction: '« 5 de moins que Marc » : on retire 5 à x — pas l’inverse.',
-                },
-                {
-                  id: 'moitie',
-                  label: <span>Ana a la moitié de Marc</span>,
-                  options: ['x − 2', '2x', 'x ÷ 2'],
-                  correct: 2,
-                  correction: '« la moitié » : on divise par 2.',
-                },
-              ]}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {nCorrect}/{total}. Les deux pièges de cette liste :{' '}
-                  <MathText>{'$5 - x$'}</MathText> au lieu de <MathText>{'$x - 5$'}</MathText> (« de moins
-                  que Marc » retire à Marc), et <MathText>{'$3x$'}</MathText> pour « 3 de plus » (multiplier
-                  n’est pas ajouter). Quand tu hésites, prends une valeur : si Marc a 10 billes, Sam en a 5,
-                  et <MathText>{'$5 - 10 = -5$'}</MathText> n’a aucun sens.
-                </Feedback>
+            <div className="space-y-3">
+              <BatchChoiceQuestion
+                intro={
+                  <p className="text-sm text-slate-700">
+                    Marc a <MathText>{'$x$'}</MathText> billes. Écris ce que possède chaque personne.
+                  </p>
+                }
+                rows={[
+                  {
+                    id: 'plus',
+                    label: <span>Léo a 3 billes de plus que Marc</span>,
+                    options: ['x + 3', 'x − 3', '3x'],
+                    correct: 0,
+                    correction: '« de plus » : on ajoute 3 au nombre de Marc.',
+                  },
+                  {
+                    id: 'double',
+                    label: <span>Nina a le double de Marc</span>,
+                    options: ['x + 2', '2x', 'x ÷ 2'],
+                    correct: 1,
+                    correction: '« le double » : on multiplie par 2.',
+                  },
+                  {
+                    id: 'moins',
+                    label: <span>Sam a 5 billes de moins que Marc</span>,
+                    options: ['5 − x', 'x − 5', '5x'],
+                    correct: 1,
+                    correction: '« 5 de moins que Marc » : on retire 5 à x — pas l’inverse.',
+                  },
+                  {
+                    id: 'moitie',
+                    label: <span>Ana a la moitié de Marc</span>,
+                    options: ['x − 2', '2x', 'x ÷ 2'],
+                    correct: 2,
+                    correction: '« la moitié » : on divise par 2.',
+                  },
+                ]}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {nCorrect}/{total}. Les deux pièges de cette liste :{' '}
+                    <MathText>{'$5 - x$'}</MathText> au lieu de <MathText>{'$x - 5$'}</MathText> (« de moins
+                    que Marc » retire à Marc), et <MathText>{'$3x$'}</MathText> pour « 3 de plus » (multiplier
+                    n’est pas ajouter). Quand tu hésites, prends une valeur : si Marc a 10 billes, Sam en a 5,
+                    et <MathText>{'$5 - 10 = -5$'}</MathText> n’a aucun sens.
+                  </Feedback>
+                )}
+                requires={['choisir-linconnue']}
+                solved={relationsDone}
+                onAnswered={() => setRelationsDone(true)}
+              />
+              {relationsDone && (
+                <KnowledgeBrick
+                  id="declarer-linconnue"
+                  variant="new"
+                  compact
+                  lead="Et il faut dire précisément ce que cette lettre désigne."
+                />
               )}
-              solved={relationsDone}
-              onAnswered={() => setRelationsDone(true)}
-            />
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Choisir <MathText>{'$x$'}</MathText>, c’est choisir par où on entre ; les autres quantités
-          s’écrivent alors avec cette lettre. Onglet <strong>Inconnue</strong> du carnet : rempli. Au module
-          suivant, on relie ces écritures par un signe <MathText>{'$=$'}</MathText>.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> L’inconnue est choisie et déclarée. Au module suivant, on
+          relie les écritures par un signe égal.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

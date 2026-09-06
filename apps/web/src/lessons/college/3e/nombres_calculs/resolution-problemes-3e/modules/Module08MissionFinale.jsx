@@ -64,6 +64,7 @@ const SKILLS = {
 const EPREUVES = [
   {
     id: 'rp-e1',
+    requires: ['lire-un-enonce'],
     skill: 'lire',
     title: 'Épreuve 1',
     prompt:
@@ -81,6 +82,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e2',
+    requires: ['lire-un-enonce', 'declarer-linconnue'],
     skill: 'lire',
     title: 'Épreuve 2',
     prompt:
@@ -98,6 +100,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e3',
+    requires: ['choisir-la-strategie', 'lire-un-enonce'],
     skill: 'strategie',
     title: 'Épreuve 3',
     prompt:
@@ -115,6 +118,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e4',
+    requires: ['choisir-linconnue', 'declarer-linconnue'],
     skill: 'inconnue',
     title: 'Épreuve 4',
     prompt:
@@ -135,6 +139,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e5',
+    requires: ['choisir-la-strategie'],
     skill: 'nombres',
     title: 'Épreuve 5',
     prompt: '250 g de farine pour 4 personnes. Quelle masse faut-il pour 7 personnes ?',
@@ -147,6 +152,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e6',
+    requires: ['traduire-en-equation'],
     skill: 'litteral',
     title: 'Épreuve 6',
     prompt:
@@ -163,6 +169,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e7',
+    requires: ['traduire-en-equation', 'choisir-linconnue'],
     skill: 'equation',
     title: 'Épreuve 7',
     prompt:
@@ -183,6 +190,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e8',
+    requires: ['resoudre-etape-par-etape'],
     skill: 'etapes',
     title: 'Épreuve 8',
     prompt: "Pour résoudre 4x + 8 = 40, quelle PREMIÈRE étape est valable ?",
@@ -199,6 +207,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e9',
+    requires: ['mem-verifier-dans-lhistoire', 'resoudre-etape-par-etape'],
     skill: 'verifier',
     title: 'Épreuve 9',
     prompt:
@@ -216,6 +225,7 @@ const EPREUVES = [
   },
   {
     id: 'rp-e10',
+    requires: ['interpreter-le-resultat', 'phrase-de-reponse'],
     skill: 'interpreter',
     title: 'Épreuve 10',
     prompt:

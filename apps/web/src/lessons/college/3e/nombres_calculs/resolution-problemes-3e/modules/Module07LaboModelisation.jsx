@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import InfoSorter from '../../../../../common/components/InfoSorter';
 import AnswerBuilder from '../../../../../common/components/AnswerBuilder';
@@ -309,6 +310,7 @@ export default function Module07LaboModelisation() {
                       </>
                     );
                   }}
+                  requires={['traduire-en-equation', 'resoudre-etape-par-etape']}
                   solved={nDone}
                   onAnswered={() => setNDone(true)}
                 />
@@ -368,9 +370,18 @@ export default function Module07LaboModelisation() {
                         premier entier <em>au-dessus</em> de 6,25 : <strong>7 séances</strong>.
                       </>
                     }
+                    requires={['resoudre-etape-par-etape']}
                     solved={interpDone}
                     onAnswered={() => setInterpDone(true)}
                   />
+            {interpDone && (
+              <KnowledgeBrick
+                id="interpreter-le-resultat"
+                variant="new"
+                compact
+                lead="Un résultat non entier n’est pas faux : le contexte décide."
+              />
+            )}
                 </div>
               )}
             </div>
@@ -414,6 +425,7 @@ export default function Module07LaboModelisation() {
                   fidèlement, et c’est la <em>situation</em> qui est impossible.
                 </>
               }
+              requires={['mem-verifier-dans-lhistoire', 'interpreter-le-resultat']}
               solved={plausibleDone}
               onAnswered={() => setPlausibleDone(true)}
             />
@@ -444,17 +456,25 @@ export default function Module07LaboModelisation() {
                 ]}
                 correctSentenceIndex={2}
                 hint="La largeur trouvée est 8, et une longueur se mesure en cm — pas en cm² (ça, c’est une aire)."
+                requires={['interpreter-le-resultat', 'declarer-linconnue']}
                 solved={answerDone}
                 onSolved={() => setAnswerDone(true)}
               />
               {answerDone && (
-                <Feedback tone="ok">
-                  La question était « quelles sont ses <strong>dimensions</strong> ? » : il en faut{' '}
-                  <strong>deux</strong>. « x = 8 » n’est pas une réponse (personne ne sait ce qu’est x
-                  ailleurs que dans ton brouillon), et donner la seule largeur laisse la question à moitié
-                  ouverte. Une réponse complète = un résultat, une unité, une phrase qui reprend la
-                  question.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    La question était « quelles sont ses <strong>dimensions</strong> ? » : il en faut{' '}
+                    <strong>deux</strong>. « x = 8 » n’est pas une réponse — personne ne sait ce qu’est x
+                    ailleurs que dans ton brouillon — et donner la seule largeur laisse la question à
+                    moitié ouverte.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="phrase-de-reponse"
+                    variant="new"
+                    compact
+                    lead="Ce que tu viens d’assembler a trois morceaux, et il en manque toujours un."
+                  />
+                </>
               )}
             </div>
           ),
@@ -469,6 +489,7 @@ export default function Module07LaboModelisation() {
               <ProblemText fragments={CLUB.fragments} title="Énoncé — Le club de sport" />
               <InfoSorter
                 items={ITEMS_CLUB}
+                requires={['lire-un-enonce']}
                 solved={sortedClub}
                 onSolved={() => setSortedClub(true)}
                 formative
@@ -495,6 +516,7 @@ export default function Module07LaboModelisation() {
                     ]}
                     correctSentenceIndex={1}
                     hint="La question demande un nombre de MOIS — pas la somme payée, qui était déjà dans l’énoncé."
+                    requires={['phrase-de-reponse', 'interpreter-le-resultat']}
                     solved={clubAnswerDone}
                     onSolved={() => setClubAnswerDone(true)}
                   />
@@ -511,13 +533,11 @@ export default function Module07LaboModelisation() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Un résultat non entier n’est pas faux : il faut l’interpréter dans le contexte — et arrondir dans
-          le sens que la question impose. Onglet <strong>Vérifier · Répondre</strong> du carnet : rempli. Le
-          carnet est complet — la mission finale t’attend.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={7}>
+          <strong>La suite.</strong> Le carnet est complet — la mission finale t’attend.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

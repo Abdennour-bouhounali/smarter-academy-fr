@@ -525,7 +525,9 @@ async function run() {
     check('revisit: completed module shows all steps unlocked', !/verrouill/i.test(b), b.slice(0, 200));
     check('revisit: every step is visible on a completed module',
       /Le rectangle/i.test(b) && /programme de calcul/i.test(b) && /sans filet/i.test(b), b.slice(0, 500));
-    check('revisit: footer recap visible on a completed module', /Traduire, c’est dire la/i.test(b));
+    check('revisit: footer recap visible on a completed module', /Traduire, c’est dire deux fois la m/i.test(b));
+    check('revisit: footer snapshot lists the module 4 knowledge',
+      /Traduire en équation/i.test(b), b.slice(0, 800));
     check('revisit: no NaN', !/NaN/.test(b));
     await page.screenshot({ path: `${SHOT_DIR}rp-revisit.png`, fullPage: true });
     await ctx.close();

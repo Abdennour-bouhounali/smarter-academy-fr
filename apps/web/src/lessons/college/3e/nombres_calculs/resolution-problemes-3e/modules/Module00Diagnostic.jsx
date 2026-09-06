@@ -34,6 +34,7 @@ const QUESTIONS = [
   {
     id: 'q1-priorites',
     skill: 'calcul',
+    requires: ['nombres-relatifs'],
     points: 2,
     prompt: (
       <>
@@ -49,6 +50,7 @@ const QUESTIONS = [
   {
     id: 'q2-evaluer',
     skill: 'litteral',
+    requires: ['calcul-litteral', 'developper'],
     points: 2,
     prompt: (
       <>
@@ -64,6 +66,7 @@ const QUESTIONS = [
   {
     id: 'q3-reduire',
     skill: 'litteral',
+    requires: ['calcul-litteral', 'developper'],
     points: 2,
     prompt: (
       <>
@@ -79,6 +82,7 @@ const QUESTIONS = [
   {
     id: 'q4-equation',
     skill: 'equations',
+    requires: ['equation-premier-degre', 'calcul-litteral'],
     points: 2,
     prompt: (
       <>
@@ -94,6 +98,7 @@ const QUESTIONS = [
   {
     id: 'q5-proportion',
     skill: 'proportion',
+    requires: ['proportionnalite'],
     points: 2,
     prompt: (
       <>

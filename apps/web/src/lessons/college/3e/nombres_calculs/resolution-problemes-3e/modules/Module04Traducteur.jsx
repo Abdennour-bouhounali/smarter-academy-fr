@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import EquationBuilder from '../components/EquationBuilder';
@@ -407,20 +408,30 @@ export default function Module04Traducteur() {
                       <MathText>{'$n = 6$'}</MathText> (54 = 54).
                     </>
                   }
+                  requires={['choisir-linconnue', 'declarer-linconnue']}
                   solved={s4}
                   onAnswered={() => setS4(true)}
+                />
+              )}
+
+              {s4 && (
+                <KnowledgeBrick
+                  id="traduire-en-equation"
+                  variant="new"
+                  compact
+                  lead="Ce que la sonde vient de montrer, c’est exactement ce qu’une équation demande."
                 />
               )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Trois histoires, trois équations — et jamais un seul calcul de résolution. Traduire, c’est dire la
-          même quantité deux fois. Reste à organiser la résolution : c’est le module 6.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Traduire, c’est dire deux fois la même quantité. Reste à
+          organiser la résolution.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

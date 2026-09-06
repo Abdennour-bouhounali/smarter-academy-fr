@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -216,6 +217,7 @@ export default function Module05DeuxStrategies() {
                     </>
                   );
                 }}
+                requires={['proportionnalite']}
                 solved={crepesDone}
                 onAnswered={() => setCrepesDone(true)}
               />
@@ -298,9 +300,18 @@ export default function Module05DeuxStrategies() {
                         cm existe parfaitement. Ce qui manque, c’est une largeur non entière.
                       </>
                     }
+                    requires={['pourquoi-une-equation', 'traduire-en-equation']}
                     solved={whyDone}
                     onAnswered={() => setWhyDone(true)}
                   />
+            {whyDone && (
+              <KnowledgeBrick
+                id="choisir-la-strategie"
+                variant="new"
+                compact
+                lead="Ce qui fait pencher pour l’une ou pour l’autre."
+              />
+            )}
                 </>
               )}
             </div>
@@ -374,6 +385,7 @@ export default function Module05DeuxStrategies() {
                     </>
                   );
                 }}
+                requires={['choisir-la-strategie', 'traduire-en-equation']}
                 solved={largeurDone}
                 onAnswered={() => setLargeurDone(true)}
               />
@@ -381,13 +393,12 @@ export default function Module05DeuxStrategies() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Une stratégie se choisit sur la structure : part fixe ou pas, quantité cherchée prise dans le
-          calcul ou pas. Et quand le résultat n’est pas rond, l’équation gagne — le tableau, lui, ne montre
-          que ce qu’on a pensé à tester. Onglet <strong>Résoudre</strong> du carnet : commencé.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> La structure du problème choisit la stratégie. Passons à la
+          résolution elle-même.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

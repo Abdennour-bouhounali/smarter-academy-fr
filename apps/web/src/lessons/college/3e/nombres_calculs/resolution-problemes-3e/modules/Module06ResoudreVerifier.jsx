@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProblemText from '../components/ProblemText';
@@ -206,6 +207,14 @@ export default function Module06ResoudreVerifier() {
                   <strong>équivalentes</strong> jusqu’à ce que x soit seul.
                 </Feedback>
               )}
+              {stripDone && (
+                <KnowledgeBrick
+                  id="resoudre-etape-par-etape"
+                  variant="new"
+                  compact
+                  lead="La règle que chaque carte valable respectait porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -252,62 +261,73 @@ export default function Module06ResoudreVerifier() {
           subtitle: 'Trois élèves disent avoir vérifié. Un seul a vraiment vérifié.',
           done: verifDone,
           content: (
-            <BatchChoiceQuestion
-              intro={
-                <p className="text-sm text-slate-700">
-                  Chaque élève a trouvé <MathText>{'$x = 11$'}</MathText>. Sa vérification prouve-t-elle que
-                  la réponse est bonne ?
-                </p>
-              }
-              rows={[
-                {
-                  id: 'derniere-ligne',
-                  label: (
-                    <span>
-                      « J’avais <MathText>{'$2x = 22$'}</MathText>, et <MathText>{'$2 \\times 11 = 22$'}</MathText> : c’est bon. »
-                    </span>
-                  ),
-                  options: ['Ça prouve', 'Ça ne prouve rien'],
-                  correct: 1,
-                  correction:
-                    'Cette ligne vérifie le DERNIER calcul, pas le problème. Si l’erreur était plus haut (par exemple 2x + 13 écrit au lieu de 2x + 3), elle passerait inaperçue.',
-                },
-                {
-                  id: 'histoire',
-                  label: (
-                    <span>
-                      « Tom 11, Léa 14 ; dans 5 ans 16 et 19 ; <MathText>{'$16 + 19 = 35$'}</MathText>, comme dans l’énoncé. »
-                    </span>
-                  ),
-                  options: ['Ça prouve', 'Ça ne prouve rien'],
-                  correct: 0,
-                  correction:
-                    'C’est LA vérification : on repart de l’énoncé, on recalcule ses quantités, on retombe sur sa donnée (35).',
-                },
-                {
-                  id: 'equation-depart',
-                  label: (
-                    <span>
-                      « Je remplace dans <MathText>{'$2x + 13 = 35$'}</MathText> : <MathText>{'$2 \\times 11 + 13 = 35$'}</MathText>. »
-                    </span>
-                  ),
-                  options: ['Ça prouve', 'Ça ne prouve rien'],
-                  correct: 0,
-                  correction:
-                    'Correct aussi : l’équation de DÉPART est la traduction de l’histoire, donc la substituer y revient. Ce qui ne prouve rien, c’est de substituer dans une ligne obtenue en cours de route.',
-                },
-              ]}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {nCorrect}/{total}. La règle : on vérifie dans l’<strong>énoncé</strong> ou dans
-                  l’équation de <strong>départ</strong> — jamais dans une ligne qu’on vient d’écrire. Une
-                  ligne intermédiaire est vraie <em>parce qu’on l’a fabriquée</em> ; elle ne peut pas
-                  témoigner contre elle-même.
-                </Feedback>
+            <div className="space-y-3">
+              <BatchChoiceQuestion
+                intro={
+                  <p className="text-sm text-slate-700">
+                    Chaque élève a trouvé <MathText>{'$x = 11$'}</MathText>. Sa vérification prouve-t-elle que
+                    la réponse est bonne ?
+                  </p>
+                }
+                rows={[
+                  {
+                    id: 'derniere-ligne',
+                    label: (
+                      <span>
+                        « J’avais <MathText>{'$2x = 22$'}</MathText>, et <MathText>{'$2 \\times 11 = 22$'}</MathText> : c’est bon. »
+                      </span>
+                    ),
+                    options: ['Ça prouve', 'Ça ne prouve rien'],
+                    correct: 1,
+                    correction:
+                      'Cette ligne vérifie le DERNIER calcul, pas le problème. Si l’erreur était plus haut (par exemple 2x + 13 écrit au lieu de 2x + 3), elle passerait inaperçue.',
+                  },
+                  {
+                    id: 'histoire',
+                    label: (
+                      <span>
+                        « Tom 11, Léa 14 ; dans 5 ans 16 et 19 ; <MathText>{'$16 + 19 = 35$'}</MathText>, comme dans l’énoncé. »
+                      </span>
+                    ),
+                    options: ['Ça prouve', 'Ça ne prouve rien'],
+                    correct: 0,
+                    correction:
+                      'C’est LA vérification : on repart de l’énoncé, on recalcule ses quantités, on retombe sur sa donnée (35).',
+                  },
+                  {
+                    id: 'equation-depart',
+                    label: (
+                      <span>
+                        « Je remplace dans <MathText>{'$2x + 13 = 35$'}</MathText> : <MathText>{'$2 \\times 11 + 13 = 35$'}</MathText>. »
+                      </span>
+                    ),
+                    options: ['Ça prouve', 'Ça ne prouve rien'],
+                    correct: 0,
+                    correction:
+                      'Correct aussi : l’équation de DÉPART est la traduction de l’histoire, donc la substituer y revient. Ce qui ne prouve rien, c’est de substituer dans une ligne obtenue en cours de route.',
+                  },
+                ]}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {nCorrect}/{total}. La règle : on vérifie dans l’<strong>énoncé</strong> ou dans
+                    l’équation de <strong>départ</strong> — jamais dans une ligne qu’on vient d’écrire. Une
+                    ligne intermédiaire est vraie <em>parce qu’on l’a fabriquée</em> ; elle ne peut pas
+                    témoigner contre elle-même.
+                  </Feedback>
+                )}
+                requires={['resoudre-etape-par-etape', 'traduire-en-equation']}
+                solved={verifDone}
+                onAnswered={() => setVerifDone(true)}
+              />
+              {verifDone && (
+                <KnowledgeBrick
+                  id="mem-verifier-dans-lhistoire"
+                  variant="new"
+                  compact
+                  lead="Où la vérification doit avoir lieu — et où elle ne prouve rien."
+                />
               )}
-              solved={verifDone}
-              onAnswered={() => setVerifDone(true)}
-            />
+            </div>
           ),
         },
         {
@@ -318,13 +338,12 @@ export default function Module06ResoudreVerifier() {
           content: () => <Carnet ticked={4} />,
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Vérifier, c’est remettre la valeur dans l’histoire — pas dans la dernière ligne. Onglets{' '}
-          <strong>Résoudre</strong> et <strong>Vérifier</strong> du carnet : remplis. Au module 7, tu feras
-          le parcours complet, de l’énoncé jusqu’à la phrase de réponse.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Résoudre et vérifier, c’est fait. Au module 7, le parcours
+          complet, de l’énoncé jusqu’à la phrase de réponse.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

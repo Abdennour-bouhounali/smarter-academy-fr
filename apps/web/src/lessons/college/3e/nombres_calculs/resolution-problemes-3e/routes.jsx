@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
+import { LESSON_KNOWLEDGE } from './knowledge';
+import { LessonKnowledgeProvider } from '../../../../common/knowledge';
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
@@ -19,10 +21,18 @@ const MODULE_COMPONENTS = Object.entries(MODULE_FILES).reduce((acc, [path, loade
   return acc;
 }, {});
 
+// Chaque page est enveloppée dans le provider de la carte des connaissances.
 function withSuspense(Component) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
-      <Component />
+      <LessonKnowledgeProvider
+        lessonId={LESSON_CONFIG.id}
+        knowledge={LESSON_KNOWLEDGE}
+        printTitle="RÉSOLUTION DE PROBLÈMES"
+        printSubject="Mathématiques · 3e"
+      >
+        <Component />
+      </LessonKnowledgeProvider>
     </Suspense>
   );
 }

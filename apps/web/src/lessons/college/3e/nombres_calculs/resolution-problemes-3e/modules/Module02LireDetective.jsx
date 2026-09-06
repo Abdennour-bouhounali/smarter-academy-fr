@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import InfoSorter from '../../../../../common/components/InfoSorter';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -81,6 +82,7 @@ export default function Module02LireDetective() {
               <ProblemText fragments={CREPES.fragments} title="Énoncé — Les crêpes" />
               <InfoSorter
                 items={ITEMS_CREPES}
+                requires={['pourquoi-une-equation']}
                 solved={sorted}
                 onSolved={() => setSorted(true)}
                 formative
@@ -127,6 +129,14 @@ export default function Module02LireDetective() {
                   phrase qui demande quelque chose — elle se reconnaît à son point d’interrogation et au
                   fait qu’elle nomme <em>ce qu’on cherche</em> : une masse de farine, en grammes.
                 </Feedback>
+              )}
+              {tappedFragment !== null && (
+                <KnowledgeBrick
+                  id="lire-un-enonce"
+                  variant="new"
+                  compact
+                  lead="Trois choses à repérer dans tout énoncé — tu viens de les séparer toi-même."
+                />
               )}
             </div>
           ),
@@ -177,6 +187,7 @@ export default function Module02LireDetective() {
                     sans plafond.
                   </Feedback>
                 )}
+                requires={['lire-un-enonce']}
                 solved={constraintsDone}
                 onAnswered={() => setConstraintsDone(true)}
               />
@@ -189,47 +200,49 @@ export default function Module02LireDetective() {
           subtitle: 'Le détective sait aussi dire qu’il n’a pas assez d’indices.',
           done: missingDone,
           content: (
-            <TapQuestion
-              prompt={
-                <>
-                  « Un cinéma vend 320 places pour la séance de 20 h. La salle compte 12 rangées. Combien
-                  reste-t-il de places libres ? » — Quelle information manque pour répondre ?
-                </>
-              }
-              options={[
-                'Le prix d’une place',
-                'Le nombre total de places de la salle',
-                'L’heure de la séance suivante',
-              ]}
-              cols={1}
-              correct={1}
-              explain={
-                <>
-                  « Il reste » suppose de connaître le <strong>total</strong> : sans la capacité de la
-                  salle, 320 places vendues ne dit rien du nombre de libres. Les 12 rangées et l’heure sont
-                  des données <em>inutiles</em> — un énoncé peut être incomplet <em>et</em> bavard en même
-                  temps.
-                </>
-              }
-              explainWrong={
-                <>
-                  Le prix ne dit rien du nombre de places, et l’heure non plus. Ce qui manque, c’est le{' '}
-                  <strong>total</strong> : sans lui, on ne peut pas soustraire les 320 places vendues.
-                </>
-              }
-              solved={missingDone}
-              onAnswered={() => setMissingDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt={
+                  <>
+                    « Un cinéma vend 320 places pour la séance de 20 h. La salle compte 12 rangées. Combien
+                    reste-t-il de places libres ? » — Quelle information manque pour répondre ?
+                  </>
+                }
+                options={[
+                  'Le prix d’une place',
+                  'Le nombre total de places de la salle',
+                  'L’heure de la séance suivante',
+                ]}
+                cols={1}
+                correct={1}
+                explain={
+                  <>
+                    « Il reste » suppose de connaître le <strong>total</strong> : sans la capacité de la
+                    salle, 320 places vendues ne dit rien du nombre de libres. Les 12 rangées et l’heure sont
+                    des données <em>inutiles</em> — un énoncé peut être incomplet <em>et</em> bavard en même
+                    temps.
+                  </>
+                }
+                explainWrong={
+                  <>
+                    Le prix ne dit rien du nombre de places, et l’heure non plus. Ce qui manque, c’est le{' '}
+                    <strong>total</strong> : sans lui, on ne peut pas soustraire les 320 places vendues.
+                  </>
+                }
+                requires={['lire-un-enonce']}
+                solved={missingDone}
+                onAnswered={() => setMissingDone(true)}
+              />
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          La question dit ce qu’on cherche ; les contraintes disent ce qu’on a le droit de trouver ; les
-          données utiles sont celles sans lesquelles la question reste sans réponse. Onglet{' '}
-          <strong>Lire</strong> du carnet : rempli.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais ce que l’énoncé donne. Reste à nommer ce qu’on
+          cherche.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -48,6 +48,19 @@ export const LESSON_BASE_PATH = '/courses/college/3e/nombres_calculs/resolution-
 
 export const LESSON_CONFIG = {
   id: 'resolution-problemes-3e',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
+  priorKnowledge: ['calcul-litteral', 'developper', 'nombres-relatifs', 'proportionnalite',
+    'equation-premier-degre'],
+  // Termes détectés par le lexique mais acquis dès le cycle 3 : la leçon les
+  // utilise comme support d'énoncé, elle ne les enseigne pas.
+  knowledgeAudit: {
+    ignore: [
+      { term: 'perimetre', reason: 'Périmètre du rectangle : notion de 6e, support d’énoncé, jamais un objectif de cette leçon.' },
+      { term: 'aire', reason: 'Cité une seule fois pour distinguer x² + 4x du périmètre ; aucune demande ne porte sur l’aire.' },
+    ],
+  },
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Résolution de problèmes',
   description:
