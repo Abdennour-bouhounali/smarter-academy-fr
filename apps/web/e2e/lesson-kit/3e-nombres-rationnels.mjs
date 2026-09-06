@@ -319,6 +319,13 @@ async function run() {
       await page.waitForTimeout(600);
       const good = await body(page);
       check('M4: the picker accepts 6 and rewrites both fractions', /plus petite découpe|PPCM/i.test(good), good.slice(0, 500));
+      // RÉGRESSION : le sélecteur recevait des constantes, si bien que choisir
+      // une découpe ne recoupait rien. L'étape 2 doit AGIR sur les barres.
+      const cut = page.locator('[data-rb-num]').first();
+      check('M4: choosing a common cut actually RE-CUTS both bars',
+        (await cut.getAttribute('data-rb-den')) === (await cut.getAttribute('data-rb-den2'))
+        && Number(await cut.getAttribute('data-rb-den')) % 6 === 0,
+        `${await cut.getAttribute('data-rb-num')}/${await cut.getAttribute('data-rb-den')} + ${await cut.getAttribute('data-rb-num2')}/${await cut.getAttribute('data-rb-den2')}`);
     } else {
       check('M4: common-denominator picker reachable', false, 'candidate not visible');
     }
@@ -332,6 +339,28 @@ async function run() {
       check('M4: the « 1/2 + 1/3 = 2/5 » trap is corrected numerically', /0,4/.test(await body(page)));
     } else {
       check('M4: rule question reachable', false, 'option not visible');
+    }
+
+    // Nommer l'erreur ne suffit plus : il faut la RÉPARER sur les barres, puis
+    // lire la somme sur la découpe qu'on vient de faire.
+    const repairBars = page.locator('[data-rb-num]').last();
+    check('M4: naming the error is not enough — a repair bar is offered',
+      await repairBars.isVisible().catch(() => false));
+    const rx3 = page.locator('button[aria-label^="Couper chaque part en 3 : Barre 1"]').last();
+    const rx2 = page.locator('button[aria-label^="Couper chaque part en 2 : Barre 2"]').last();
+    if (await rx3.isVisible().catch(() => false)) {
+      await rx3.click(); await page.waitForTimeout(300);
+      await rx2.click(); await page.waitForTimeout(500);
+      check('M4: repairing the copy brings both halves onto the same cut',
+        (await repairBars.getAttribute('data-rb-den')) === (await repairBars.getAttribute('data-rb-den2')),
+        `${await repairBars.getAttribute('data-rb-den')} vs ${await repairBars.getAttribute('data-rb-den2')}`);
+      const sumField = page.locator('input[type="text"], input[type="number"]').first();
+      if (await sumField.isVisible().catch(() => false)) {
+        await sumField.fill('5');
+        await page.locator('button:has-text("OK")').first().click();
+        await page.waitForTimeout(600);
+        check('M4: the repaired sum is read off the parts', /5/.test(await body(page)));
+      }
     }
 
     // Step 4 numeric: wrong first, then the correction shows the expected value.

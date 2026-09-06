@@ -7,7 +7,7 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RationalBar from '../components/RationalBar';
 import CommonDenominatorPicker from '../components/CommonDenominatorPicker';
 import {
-  add, commonDenominator, formatDec, formatFrac, parseDec, rat, sub, toDecimal,
+  add, commonDenominator, expandTo, formatDec, formatFrac, parseDec, rat, sub, toDecimal,
 } from '../components/rationalUtils';
 
 /**
@@ -56,11 +56,16 @@ export default function Module04MemeDecoupe() {
   const [picked, setPicked] = useState(null);
   const [pickDone, setPickDone] = useState(false);
   const [ruleDone, setRuleDone] = useState(false);
+  // Étape 3 : après avoir NOMMÉ l'erreur, l'élève la RÉPARE sur les barres.
+  const [ra, setRA] = useState(A0);
+  const [rb, setRB] = useState(B0);
+  const [sumNum, setSumNum] = useState(false);
   const [subDone, setSubDone] = useState(false);
   const [negDone, setNegDone] = useState(false);
 
   const sameCut = a.den === b.den;
   const cutDone = sameCut && a.den % A0.den === 0;
+  const repaired = ra.den === rb.den && ra.den % A0.den === 0 && ra.den % B0.den === 0;
 
   const changeA = (next) => {
     setA(next);
@@ -176,13 +181,30 @@ export default function Module04MemeDecoupe() {
                 onPick={(d, ok) => {
                   setPicked(d);
                   kit.react(ok);
-                  if (ok) setPickDone(true);
+                  if (ok) {
+                    // Le choix AGIT sur les barres : elles se re-découpent sous
+                    // les yeux de l'élève, marqueurs immobiles. On repart des
+                    // fractions d'ORIGINE, donc la valeur ne peut pas dériver.
+                    setA(expandTo(A0, d));
+                    setB(expandTo(B0, d));
+                    setPickDone(true);
+                  }
                 }}
+              />
+              <RationalBar
+                value={a}
+                second={b}
+                min={0}
+                max={1}
+                showDecimal
+                showLine={false}
               />
               {pickDone && (
                 <>
                   <Feedback tone="ok">
-                    6, 12 et 24 conviennent tous les trois ;{' '}
+                    Les deux barres viennent de se re-découper en{' '}
+                    <strong className="font-mono">{a.den}</strong> parts — et les marqueurs n’ont pas
+                    bougé. 6, 12 et 24 conviennent tous les trois ;{' '}
                     <strong className="font-mono">{TARGET_DEN}</strong> est le plus petit. Avec 5 ou 7,
                     on ne peut couper ni les demis ni les tiers en parts égales.
                   </Feedback>
@@ -199,7 +221,8 @@ export default function Module04MemeDecoupe() {
         {
           num: 3,
           title: 'La règle, maintenant qu’elle est vue',
-          done: ruleDone,
+          subtitle: 'Nomme l’erreur, puis répare-la sur les barres.',
+          done: ruleDone && repaired && sumNum,
           content: (
             <div className="space-y-4">
               <TapQuestion
@@ -238,6 +261,59 @@ export default function Module04MemeDecoupe() {
                   variant="new"
                   lead="Une fois les parts à la même taille, il ne reste plus qu’à les compter. Voilà l’écriture du geste."
                 />
+              )}
+              {ruleDone && (
+                <div className="rounded-2xl border-2 border-slate-200 bg-slate-50 p-3 space-y-3">
+                  <p className="text-sm font-semibold text-slate-700">
+                    À toi de réparer sa copie : re-découpe les deux barres pour que la somme devienne
+                    lisible.
+                  </p>
+                  <RationalBar
+                    value={ra}
+                    onValue={setRA}
+                    second={rb}
+                    onSecond={setRB}
+                    drag
+                    min={0}
+                    max={1}
+                    showDecimal={false}
+                    showLine={false}
+                  />
+                  {!repaired ? (
+                    <Feedback tone="info">
+                      Les parts n’ont pas encore la même taille :{' '}
+                      <MathText>{`$\\frac{${ra.num}}{${ra.den}}$`}</MathText> et{' '}
+                      <MathText>{`$\\frac{${rb.num}}{${rb.den}}$`}</MathText>. Tant qu’elles diffèrent,
+                      il n’y a rien à compter.
+                    </Feedback>
+                  ) : (
+                    <NumericQuestion
+                      prompt={
+                        <span>
+                          Les deux barres sont en {ra.den}
+                          èmes. Combien de parts en tout ?
+                        </span>
+                      }
+                      expected={ra.num + rb.num}
+                      parse={parseDec}
+                      display={`${ra.num + rb.num}`}
+                      suffix={`/ ${ra.den}`}
+                      explain={
+                        <>
+                          <MathText>{`$\\frac{${ra.num}}{${ra.den}} + \\frac{${rb.num}}{${ra.den}} = \\frac{${ra.num + rb.num}}{${ra.den}}$`}</MathText>{' '}
+                          — on compte les parts, on garde leur taille. Soit{' '}
+                          {formatDec(toDecimal(SUM, 4))}, et non {formatDec(toDecimal(rat(2, 5), 3))}.
+                        </>
+                      }
+                      explainFor={(n) => (n === ra.den + rb.den
+                        ? 'Tu as additionné les dénominateurs : c’est justement l’erreur qu’on répare.'
+                        : `Compte les parts coloriées des deux barres : ${ra.num} + ${rb.num}.`)}
+                      requires={['somme-difference', 'meme-decoupe']}
+                      solved={sumNum}
+                      onAnswered={() => setSumNum(true)}
+                    />
+                  )}
+                </div>
               )}
             </div>
           ),
