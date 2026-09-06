@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { SITUATIONS } from '../components/situationsData';
 import { formatDec, evaluate } from '../components/modelUtils';
@@ -32,8 +33,9 @@ export default function Module02GrandeursRepresentations() {
   const [reprDone, setReprDone] = useState(false);
   const [whyDone, setWhyDone] = useState(false);
 
-  const dependQ = (s, done, setDone) => (
+  const dependQ = (s, done, setDone, requires) => (
     <TapQuestion
+      requires={requires}
       prompt={<><strong>{s.title}.</strong> {s.text} Quelle grandeur dépend de quelle autre ?</>}
       options={[
         `${s.quantities[s.depends]} dépend de ${s.quantities[s.on]}`,
@@ -68,12 +70,29 @@ export default function Module02GrandeursRepresentations() {
         ),
       }}
       steps={[
-        { num: 1, title: 'Qui dépend de qui ?', subtitle: 'La piscine.', done: d1, content: dependQ(PISCINE, d1, setD1) },
+        {
+          num: 1,
+          title: 'Qui dépend de qui ?',
+          subtitle: 'La piscine. Repère ce qu’on choisit et ce qui en découle.',
+          done: d1,
+          content: (
+            <div className="space-y-3">
+              {dependQ(PISCINE, d1, setD1, [])}
+              {d1 && (
+                <KnowledgeBrick
+                  id="variable-modele"
+                  variant="new"
+                  lead="Tu viens de séparer ce qu’on choisit de ce qui en découle. Ces deux rôles ont un nom."
+                />
+              )}
+            </div>
+          ),
+        },
         { num: 2, title: 'Encore', subtitle: 'L’abonnement, puis le jardin.', done: d2 && d3,
           content: (
             <div className="space-y-4">
-              {dependQ(STREAMING, d2, setD2)}
-              {d2 && dependQ(JARDIN, d3, setD3)}
+              {dependQ(STREAMING, d2, setD2, ['variable-modele'])}
+              {d2 && dependQ(JARDIN, d3, setD3, ['variable-modele'])}
             </div>
           ),
         },
@@ -90,6 +109,7 @@ export default function Module02GrandeursRepresentations() {
                 { id: 'c', label: 'Jardin : pour l’aire, la marque de la clôture est…', options: ['inutile', 'utile'], correct: 0, correction: 'L’aire ne dépend que du côté.' },
                 { id: 'd', label: 'Jardin : pour le prix de la clôture, le côté du jardin est…', options: ['utile', 'inutile'], correct: 0, correction: 'Le périmètre 4c fixe la longueur à clôturer.' },
               ]}
+              requires={['informations-utiles', 'variable-modele']}
               feedback={({ allRight, nCorrect, total }) => (
                 <Feedback tone={allRight ? 'ok' : 'ko'}>
                   {allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Une information est utile ou non <em>selon la question</em> : le côté du
@@ -114,17 +134,26 @@ export default function Module02GrandeursRepresentations() {
                   { id: 'b', label: `Abonnement — « ${STREAMING.question} »`, options: ['un tableau', 'un graphique', 'une formule'], correct: 0, correction: 'Cinq valeurs demandées : un tableau les aligne.' },
                   { id: 'c', label: `Jardin — « ${JARDIN.question} »`, options: ['un graphique', 'un tableau', 'une formule'], correct: 0, correction: 'Une évolution se voit : la courbe monte de plus en plus vite.' },
                 ]}
+                requires={['variable-modele']}
                 feedback={({ allRight, nCorrect, total }) => (
                   <Feedback tone={allRight ? 'ok' : 'ko'}>
                     {allRight ? 'Trois sur trois.' : `${nCorrect} sur ${total}.`} Une valeur précise → la formule ; plusieurs valeurs → le tableau ; une
-                    allure, un maximum, un moment où deux courbes se croisent → le graphique. Les trois écritures restent vraies ; la question choisit la plus utile.
+                    allure, ou le moment où deux courbes se croisent → le graphique. Les trois écritures restent vraies ; la question choisit la plus utile.
                   </Feedback>
                 )}
                 solved={reprDone}
                 onAnswered={() => setReprDone(true)}
               />
               {reprDone && (
+                <KnowledgeBrick
+                  id="choisir-representation"
+                  variant="new"
+                  lead="Trois questions, trois écritures différentes — et c’est la question qui a décidé à chaque fois."
+                />
+              )}
+              {reprDone && (
                 <TapQuestion
+                  requires={['choisir-representation', 'variable-modele']}
                   prompt="Pour l’abonnement (6 € + 3 € par film), quelle est la facture pour 4 films ?"
                   options={[`${formatDec(evaluate(STREAMING.model, 4))} €`, '12 €', '24 €', '9 €']}
                   correct={0}
@@ -139,11 +168,9 @@ export default function Module02GrandeursRepresentations() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Avant de modéliser : nommer la <strong>variable</strong> (ce qu’on choisit) et la <strong>grandeur qui en dépend</strong>,
-          écarter le décor, et choisir l’écriture qui répond à la question. Le module suivant construit le tableau et le graphique
-          à la main.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={2}>
+          Le module suivant construit à la main les deux écritures que tu viens d’apprendre à choisir : le tableau, puis le graphique.
+        </KnowledgeSnapshot>
       }
     />
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import InfoSorter from '../../../../../common/components/InfoSorter';
 import ValueTable from '../../../../../common/components/ValueTable';
 import CoordPlane from '../../../../../common/components/CoordPlane';
@@ -90,6 +91,7 @@ export default function Module07GrandProjet() {
                 ]}
                 correct={0}
                 cols={1}
+                requires={['expression-du-modele', 'sens-des-parametres', 'familles-modeles']}
                 explain="La salle a une part fixe (240 €) et un coût par personne (6 €) : modèle affine. Le traiteur n’a qu’un coût par personne : modèle proportionnel, 14n."
                 solved={modelsDone}
                 onAnswered={() => setModelsDone(true)}
@@ -100,6 +102,7 @@ export default function Module07GrandProjet() {
                   options={['Le graphique des deux modèles : on voit où les droites se croisent', 'Un tableau pour n = 45 seulement', 'La couleur des devis']}
                   correct={0}
                   cols={1}
+                  requires={['choisir-representation']}
                   explain="Un « à partir de quand » est un croisement : le graphique le montre, puis le calcul (240 + 6n = 14n) le précise."
                   solved={reprDone}
                   onAnswered={() => setReprDone(true)}
@@ -124,12 +127,20 @@ export default function Module07GrandProjet() {
                 prompt="Pour quel nombre de personnes les deux formules coûtent-elles la même chose ?"
                 expected={SEUIL}
                 parse={parseDec}
+                requires={['expression-du-modele', 'equation-premier-degre', 'representation-graphique']}
                 display={formatDec(SEUIL)}
                 explain={`240 + 6n = 14n → 8n = 240 → n = ${formatDec(SEUIL)}. À ${formatDec(SEUIL)} personnes, ${formatDec(evaluate(S, SEUIL))} € des deux côtés — c'est le croisement des droites.`}
                 explainFor={(n) => (n === 240 / 14 || Math.abs(n - 17.14) < 0.02 ? '240 ÷ 14 compare la location au traiteur pour une personne. Il faut égaler les deux coûts totaux : 240 + 6n = 14n.' : null)}
                 solved={seuilDone}
                 onAnswered={() => setSeuilDone(true)}
               />
+              {seuilDone && (
+                <KnowledgeBrick
+                  id="seuil-deux-modeles"
+                  variant="new"
+                  lead="Les deux droites se croisent exactement là où ton calcul est tombé."
+                />
+              )}
             </div>
           ),
         },
@@ -149,6 +160,7 @@ export default function Module07GrandProjet() {
                 ]}
                 correct={win45[0] === S ? 0 : 1}
                 cols={1}
+                requires={['seuil-deux-modeles', 'expression-du-modele']}
                 explain={`Au-delà du seuil (${formatDec(SEUIL)}), la droite de la salle passe sous celle du traiteur : pour ${FETE.attendance} personnes, salle ${formatDec(evaluate(S, FETE.attendance))} € contre traiteur ${formatDec(evaluate(Tr, FETE.attendance))} €. En dessous de 30, c'est l'inverse.`}
                 solved={decideDone}
                 onAnswered={() => setDecideDone(true)}
@@ -156,9 +168,10 @@ export default function Module07GrandProjet() {
               {decideDone && (
                 <TapQuestion
                   prompt="Un membre du comité objecte : « et si seulement 25 personnes viennent ? ». Que vaut ta décision ?"
-                  options={['Elle dépend du nombre réel : à 25, le traiteur serait moins cher (350 € contre 390 €) — il faut sécuriser le nombre de participants', 'La salle reste moins chère dans tous les cas', 'Le modèle est faux']}
+                  options={['Elle dépend du nombre de participants effectivement présents : à 25, le traiteur serait moins cher (350 € contre 390 €) — il faut sécuriser ce nombre', 'La salle reste moins chère dans tous les cas', 'Le modèle est faux']}
                   correct={0}
                   cols={1}
+                  requires={['seuil-deux-modeles', 'mem-douter', 'interpreter-resultat']}
                   explain={<>Le modèle ne décide pas seul : il dit que la réponse bascule à 30. Une bonne décision cite le seuil et ses conditions. <MathText>{`$\\text{salle} = ${formatModel(S, { variable: 'n' })}$`}</MathText>, <MathText>{`$\\text{traiteur} = ${formatModel(Tr, { variable: 'n' })}$`}</MathText>.</>}
                   solved={checkDone}
                   onAnswered={() => setCheckDone(true)}
@@ -169,10 +182,10 @@ export default function Module07GrandProjet() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Le cycle complet sur une situation neuve : trier, modéliser deux fois, choisir le graphique pour voir le croisement,
-          calculer le seuil, décider — et garder la limite en tête. Tu es prêt pour le bureau d’études.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={7}>
+          Le cycle complet, mené seul sur une situation neuve : trier, modéliser deux fois, voir le croisement, calculer le seuil,
+          décider — et garder la limite en tête. Tu es prêt pour le bureau d’études.
+        </KnowledgeSnapshot>
       }
     />
   );

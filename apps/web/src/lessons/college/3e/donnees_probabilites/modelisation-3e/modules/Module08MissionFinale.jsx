@@ -1,6 +1,7 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import ModelTester from '../components/ModelTester';
@@ -25,6 +26,10 @@ import { TROTTINETTE as T } from '../components/situationsData';
  *
  * Couverture des Learning Points : P1 (e1), P2 (e2), P3 (e3), P4 (e4), P5 (e5),
  * P6 (e6), P7 (e7), P8 (e8), P9 (e8), P10 (e9), P11 (e10), P12 (e10).
+ *
+ * `requires` déclare, épreuve par épreuve, ce que le test consolide : rien qui
+ * ne soit posé par une brique des modules 1 à 7 ou par `priorKnowledge`. Le
+ * test final n'introduit ni concept, ni mot, ni notation.
  */
 
 const REGISTRE = [
@@ -49,6 +54,7 @@ const EPREUVES = [
     options: ['L’autonomie : 25 km', 'Le déblocage : 1 €', 'Le tarif : 0,15 € par minute', 'La durée du trajet'],
     cols: 1, correct: 0,
     explain: 'Le prix dépend de la durée, du déblocage et du tarif par minute. L’autonomie ne change pas d’un trajet à l’autre : elle n’entre pas dans le modèle.',
+    requires: ['informations-utiles'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P1'] },
   },
   {
@@ -57,6 +63,7 @@ const EPREUVES = [
     options: ['Variable : la durée · dépend : le volume d’eau', 'Variable : le volume d’eau · dépend : la durée', 'Variable : le débit · dépend : la durée', 'Variable : la surface du jardin · dépend : le volume'],
     cols: 1, correct: 0,
     explain: 'On choisit le moment (la durée t) ; le volume en découle : V = 12t. Le débit est un paramètre fixe, pas une variable.',
+    requires: ['variable-modele'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P2'] },
   },
   {
@@ -65,6 +72,7 @@ const EPREUVES = [
     options: ['Le graphique des deux modèles, où les droites se croisent', 'Le tableau pour n = 45 seulement', 'La liste des devis', 'Le prix pour une personne'],
     cols: 1, correct: 0,
     explain: 'Un « à partir de quand » est un croisement : le graphique le montre (puis le calcul le précise). Une valeur isolée ne répond pas à une question de seuil.',
+    requires: ['choisir-representation', 'seuil-deux-modeles'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P3'] },
   },
   {
@@ -73,6 +81,7 @@ const EPREUVES = [
     options: ['F = 6 + 3n', 'F = 9n', 'F = 6n + 3', 'F = 6 + 3 + n'],
     cols: 2, correct: 0,
     explain: 'Une part fixe (6) et un coût par film (3 × n) : F = 6 + 3n. « 9n » additionne à tort le fixe et le tarif par film.',
+    requires: ['expression-du-modele', 'sens-des-parametres'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P4'] },
   },
   {
@@ -81,6 +90,7 @@ const EPREUVES = [
     options: ['t = 4 → 40 L', 't = 4 → 20 L', 't = 4 → 55 L', 't = 4 → 64 L'],
     cols: 2, correct: 0,
     explain: '60 − 5 × 4 = 60 − 20 = 40 L. Chaque colonne du tableau est un calcul complet de la règle — avec la part fixe.',
+    requires: ['tableau-de-valeurs', 'expression-du-modele'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P5'] },
   },
   {
@@ -89,6 +99,7 @@ const EPREUVES = [
     options: ['Des points alignés sur une droite qui ne passe pas par l’origine', 'Des points alignés sur une droite qui passe par l’origine', 'Une courbe qui monte de plus en plus vite', 'Des points sans forme particulière'],
     cols: 1, correct: 0,
     explain: 'Modèle affine avec b = 1 : droite, mais 0 min → 1 €, donc pas par l’origine. Une droite par O signerait un modèle proportionnel.',
+    requires: ['representation-graphique', 'familles-modeles'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P6'] },
   },
   {
@@ -97,6 +108,7 @@ const EPREUVES = [
     options: ['Le prix d’une minute de trajet', 'Le prix du trajet', 'Le déblocage', 'La durée minimale'],
     cols: 2, correct: 0,
     explain: 'Le coefficient de t est ce qui s’ajoute pour CHAQUE minute : 0,15 € par minute. Le 1 est le déblocage, payé même pour 0 minute.',
+    requires: ['sens-des-parametres'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P7'] },
   },
   {
@@ -105,6 +117,7 @@ const EPREUVES = [
     options: ['f(x) = 2x + 5 : affine, à cause des 5 € pour 0 Go', 'f(x) = 3x : proportionnel', 'f(x) = 4,5x : proportionnel', 'Aucun modèle simple'],
     cols: 1, correct: 0,
     explain: 'Le point (0 ; 5) exclut tout modèle proportionnel. f(x) = 2x + 5 est d’accord avec les TROIS points : 5, 9, 15. Un modèle doit coller à toutes les données.',
+    requires: ['modele-choisi-par-donnees', 'familles-modeles', 'mem-toutes-les-donnees', 'notation-fx'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P8', '3e_modelisation-3e_P9'] },
   },
   {
@@ -113,6 +126,7 @@ const EPREUVES = [
     options: ['7 €', '6 €', '41 €', '46 €'],
     cols: 2, correct: 0,
     explain: '0,15 × 40 + 1 = 7 €. Oublier le déblocage donne 6 € ; ajouter la durée au déblocage donne 41 €.',
+    requires: ['expression-du-modele', 'modeliser'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P10'] },
   },
   {
@@ -121,6 +135,7 @@ const EPREUVES = [
     options: ['Le modèle n’est valable que jusqu’au plafond : 120 min coûtent 16 € (2 × 8), pas 19 €', 'Le prix est 19 €', 'Le modèle était faux depuis le début', 'L’application s’est trompée'],
     cols: 1, correct: 0,
     explain: 'Un modèle a un domaine de validité. Hors de ce domaine, le calcul reste juste et le résultat devient faux : c’est l’extrapolation. Il faut interpréter et vérifier dans la situation.',
+    requires: ['domaine-de-validite', 'extrapolation', 'interpreter-resultat'],
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_modelisation-3e_P11', '3e_modelisation-3e_P12'] },
   },
 ];
@@ -166,6 +181,9 @@ function Synthese() {
         </ul>
       </div>
       <Feedback tone="info">Un modèle est une traduction, pas la réalité : il sert à raisonner, il prévoit dans son domaine, et il se vérifie toujours en revenant à la situation.</Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

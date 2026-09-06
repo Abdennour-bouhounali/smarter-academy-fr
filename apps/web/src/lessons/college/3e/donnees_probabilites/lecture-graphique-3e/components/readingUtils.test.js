@@ -113,6 +113,19 @@ describe('lecture approchée et outils de problème', () => {
     for (const iv of above) expect(iv.to).toBeGreaterThan(iv.from);
   });
 
+  it('les bornes du seuil sont celles qu’on LIT sur le tracé, pas le relevé suivant', () => {
+    // Le drone est à 600 m à 3 h et à 6 h, et à 400 m à 7 h : il repasse donc
+    // sous le seuil À 6 h. Prendre l'abscisse du premier relevé sous le seuil
+    // (7 h) surestimerait la durée d'une heure entière, et la réponse attendue
+    // ne correspondrait plus au dessin.
+    expect(aboveThreshold(DRONE, 600)).toEqual([{ from: 3, to: 6 }, { from: 8, to: 10 }]);
+  });
+
+  it('un seuil franchi entre deux relevés donne une borne non entière', () => {
+    const curve = [{ x: 0, y: 0 }, { x: 1, y: 100 }, { x: 2, y: 0 }];
+    expect(aboveThreshold(curve, 50)).toEqual([{ from: 0.5, to: 1.5 }]);
+  });
+
   it('l’étendue calculée contient toute la courbe', () => {
     const r = rangeForCurve(BALLOON, 1, 100);
     for (const p of BALLOON) {

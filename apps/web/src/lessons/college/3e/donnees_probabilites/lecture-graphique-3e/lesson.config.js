@@ -36,6 +36,24 @@ export const LESSON_BASE_PATH = '/courses/college/3e/donnees_probabilites/lectur
 export const LESSON_CONFIG = {
   id: 'lecture-graphique-3e',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande ») : elles viennent de `fonctions-3e` et de
+  // `representation-graphique-3e`, deux leçons antérieures du même chapitre,
+  // et le module 0 les diagnostique une par une.
+  //
+  // CE QUE CETTE LEÇON N'ASSUME PAS. « image » et « antécédent » sont supposés
+  // connus comme MOTS — c'est fonctions-3e qui les a posés sur une machine et
+  // sur un tableau. Mais les LIRE sur un dessin, et surtout chercher TOUS les
+  // antécédents d'une valeur, sont la matière de la leçon (P1, P2) : ce sont
+  // des briques `new` du module 1 et du module 2, et les deux mots eux-mêmes
+  // sont resitués en `variant="rappel"` au moment où ils resservent.
+  priorKnowledge: [
+    'fonction', 'image', 'antecedent', 'notation-fx', 'representation-graphique',
+    'abscisse', 'ordonnee', 'coordonnees', 'echelle-axe',
+  ],
   title: 'Lecture graphique',
   description:
     "Promener un curseur sur une courbe pour y lire des images, chercher tous les antécédents d'une valeur, repérer maximum, minimum et intervalles de variation, puis résoudre un problème au point de croisement de deux courbes.",

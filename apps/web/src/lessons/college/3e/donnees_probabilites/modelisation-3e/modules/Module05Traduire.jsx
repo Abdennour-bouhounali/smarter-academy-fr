@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ExpressionBuilder from '../components/ExpressionBuilder';
@@ -100,10 +101,11 @@ export default function Module05Traduire() {
             <div className="space-y-3">
               {builder(b1, ['1', '0,15', 't', '+', '×', '60', '−'], 'prix', kit, '€')}
               {b1.done && (
-                <Feedback tone="ok">
-                  <MathText>{'$\\text{prix} = 0{,}15 \\times t + 1$'}</MathText> — ou 1 + 0,15 × t, c’est la même fonction. L’expression dit tout en une ligne :
-                  ce qu’on paie quelle que soit la durée.
-                </Feedback>
+                <KnowledgeBrick
+                  id="expression-du-modele"
+                  variant="new"
+                  lead="Tes cartes viennent de donner la même chose que les tickets, pour toutes les durées à la fois."
+                />
               )}
             </div>
           ),
@@ -114,13 +116,20 @@ export default function Module05Traduire() {
           subtitle: 'Un paramètre a toujours un sens dans la situation.',
           done: paramsDone,
           content: (
-            <BatchChoiceQuestion
+            <div className="space-y-4">
+              <KnowledgeBrick
+                id="sens-des-parametres"
+                variant="new"
+                lead="Trois nombres dans ton expression — et chacun raconte quelque chose de la trottinette."
+              />
+              <BatchChoiceQuestion
+              requires={['sens-des-parametres', 'expression-du-modele', 'variable-modele']}
               intro={<p className="text-sm text-slate-700">Dans <MathText>{'$\\text{prix} = 0{,}15 \\times t + 1$'}</MathText> :</p>}
               rows={[
                 { id: 'a', label: '0,15 représente…', options: ['le prix d’une minute', 'le prix du trajet', 'le déblocage'], correct: 0, correction: 'Ce qui s’ajoute pour chaque minute.' },
                 { id: 'b', label: '1 représente…', options: ['le déblocage, payé même pour 0 min', 'la première minute', 'le nombre de trajets'], correct: 0, correction: 'La part fixe : f(0) = 1.' },
                 { id: 'c', label: 't représente…', options: ['la durée, qu’on choisit', 'le prix', 'le tarif'], correct: 0, correction: 'La variable.' },
-                { id: 'd', label: 'Pour la trottinette, la fonction f : t ↦ 0,15t + 1 est…', options: ['affine', 'linéaire', 'ni l’une ni l’autre'], correct: 0, correction: 'a = 0,15 et b = 1 ≠ 0.' },
+                { id: 'd', label: 'Pour la trottinette, le modèle prix = 0,15t + 1 est…', options: ['affine', 'proportionnel', 'en carré'], correct: 0, correction: 'La part fixe vaut 1, elle n’est pas nulle : c’est un modèle affine, pas proportionnel.' },
               ]}
               feedback={({ allRight, nCorrect, total }) => (
                 <Feedback tone={allRight ? 'ok' : 'ko'}>
@@ -130,7 +139,8 @@ export default function Module05Traduire() {
               )}
               solved={paramsDone}
               onAnswered={() => setParamsDone(true)}
-            />
+              />
+            </div>
           ),
         },
         {
@@ -147,7 +157,8 @@ export default function Module05Traduire() {
                   options={['Le volume restant après 8 minutes : 20 L', 'Le temps pour vider 8 L', 'La vitesse de vidage']}
                   correct={0}
                   cols={1}
-                  explain="g(8) = 60 − 40 = 20 : l’image de 8 est le volume à la minute 8. Écrire le modèle comme une fonction permet de parler de g(8), de g(12) = 0, de l’antécédent de 30 (t = 6)…"
+                  requires={['expression-du-modele', 'notation-fx', 'image']}
+                  explain="g(8) = 60 − 40 = 20 : l’image de 8 est le volume à la minute 8. Écrire le modèle comme une fonction permet de parler de g(8), de g(12) = 0, ou de chercher à quel instant il reste 30 L."
                   solved={fnDone}
                   onAnswered={() => setFnDone(true)}
                 />
@@ -162,23 +173,17 @@ export default function Module05Traduire() {
           done: cycleDone,
           content: (
             <div className="space-y-4">
-              <div className="rounded-2xl border-2 border-violet-200 bg-violet-50 p-4 space-y-2 text-sm text-slate-800">
-                <p className="font-bold text-violet-900">Modéliser, c’est traduire une situation en mathématiques pour raisonner dessus.</p>
-                <ol className="list-decimal list-inside space-y-1">
-                  <li><strong>Situation</strong> : trier les informations utiles.</li>
-                  <li><strong>Grandeurs</strong> : nommer la variable et ce qui en dépend.</li>
-                  <li><strong>Relation</strong> : la règle d’accord avec toutes les données (proportionnelle, affine, en carré… ou aucune).</li>
-                  <li><strong>Représentation</strong> : tableau, graphique, expression / fonction — selon la question.</li>
-                  <li><strong>Calcul</strong> : prévoir, résoudre.</li>
-                  <li><strong>Interprétation</strong> : revenir à la situation, avec les unités.</li>
-                  <li><strong>Vérification</strong> : cohérence, ordre de grandeur, limites du modèle.</li>
-                </ol>
-              </div>
+              <KnowledgeBrick
+                id="cycle-modelisation"
+                variant="new"
+                lead="Sept étapes — et tu les as toutes faites, dans cet ordre, depuis le laboratoire du module 1."
+              />
               <TapQuestion
                 prompt="Un modèle donne « 6,25 » pour un trajet de 35 min. Quelle étape du cycle manque encore ?"
                 options={['L’interprétation : 6,25 €, à comparer au prix réel', 'Le calcul : il faut recommencer', 'Rien : 6,25 est la réponse']}
                 correct={0}
                 cols={1}
+                requires={['cycle-modelisation']}
                 explain="Un nombre nu n’est pas une réponse. 6,25 est un prix en euros, à confronter au ticket — et à douter si l’application affiche autre chose."
                 solved={cycleDone}
                 onAnswered={() => setCycleDone(true)}
@@ -188,10 +193,9 @@ export default function Module05Traduire() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          L’expression littérale est la forme la plus compacte d’un modèle : un nombre par paramètre, chacun avec son sens.
+        <KnowledgeSnapshot moduleNumber={5}>
           Le module suivant fait travailler la fin du cycle — prévoir, interpréter, douter.
-        </Feedback>
+        </KnowledgeSnapshot>
       }
     />
   );

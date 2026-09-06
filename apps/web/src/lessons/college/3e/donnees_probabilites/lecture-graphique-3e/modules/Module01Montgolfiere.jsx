@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import GraphProbe from '../components/GraphProbe';
 import { image, antecedents } from '../components/readingUtils';
@@ -31,11 +32,26 @@ import { formatDec } from '@smarter-academy/core';
  *   la place de l'ordonnée ; croire qu'une altitude n'a qu'une heure.
  * Feedback: la lecture en toutes lettres à chaque déplacement ; les défis se
  *   valident quand la sonde est au bon endroit — jamais par un « faux ».
- * Formalization: aucune — les mots image et antécédent attendent le module 2.
+ * Formalization: le GESTE de lecture, nommé après avoir été fait — pas les
+ *   mots « image » et « antécédent », qui viennent de `fonctions-3e` et sont
+ *   ici des prérequis (voir `priorKnowledge`).
  * Scaffolding: exploration libre (SHOW) → défi guidé « 3 h » (TRY) →
  *   prédiction (EXPLORE) → défi inverse « 400 m » (CHALLENGE).
- * Transfer: le module 2 bascule la sonde sur l'autre axe et nomme ce qui a
- *   été fait ici.
+ * Transfer: le module 2 bascule la sonde sur l'autre axe et compte les
+ *   réponses que ce second sens produit.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Ce module ne posait AUCUNE connaissance : la règle de lecture n'existait
+ *   que dans les `explain`, c'est-à-dire après les réponses. L'ordre est
+ *   maintenant :
+ *     étape 1  promener la sonde, puis brique `lecture-image-graphique`
+ *              → rappel `image` (acquis de fonctions-3e, resitué sur un dessin)
+ *     étape 1  la lecture affichée « c'est le point (x ; y) »
+ *              → brique `point-de-la-courbe` → essai immédiat
+ *     étapes 2-6  les questions, désormais toutes légitimes
+ *   Le mot « antécédent » n'est PAS posé ici : l'étape 4 fait seulement
+ *   constater qu'une altitude revient plusieurs fois, et c'est le module 2 qui
+ *   en tire la méthode.
  */
 
 const CHALLENGE_H = 3;       // « amène la sonde sur 3 h »
@@ -52,6 +68,7 @@ export default function Module01Montgolfiere() {
   const [x4, setX4] = useState(0);
   const [hitAlt, setHitAlt] = useState(false);
   const [coordDone, setCoordDone] = useState(false);
+  const [pairDone, setPairDone] = useState(false);
   const [shapeDone, setShapeDone] = useState(false);
 
   // On veut que l'élève ait parcouru les quatre temps du vol : la montée, le
@@ -100,7 +117,7 @@ export default function Module01Montgolfiere() {
           num: 1,
           title: 'Promène la sonde sur tout le vol',
           subtitle: 'Fais-la passer par la montée, le palier, la descente et la remontée.',
-          done: explored,
+          done: explored && coordDone,
           content: (kit) => (
             <div className="space-y-3">
               <GraphProbe
@@ -125,6 +142,44 @@ export default function Module01Montgolfiere() {
                   </>
                 )}
               </Feedback>
+
+              {explored && (
+                <>
+                  <KnowledgeBrick
+                    id="image"
+                    variant="rappel"
+                    compact
+                    lead="Ce que la courbe t’a répondu à chaque position porte déjà un nom, vu avec les machines à nombres."
+                  />
+                  <KnowledgeBrick
+                    id="lecture-image-graphique"
+                    variant="new"
+                    lead="Sur un dessin, la lire ne se calcule pas : c’est le trajet que ton doigt vient de faire."
+                  />
+                  <KnowledgeBrick
+                    id="point-de-la-courbe"
+                    variant="new"
+                    lead="Sous le repère, la lecture s’écrivait aussi sous la forme d’un couple. Voilà comment on la lit."
+                  >
+                    <TapQuestion
+                      prompt="Le point de la courbe situé en (3 ; 600) raconte quoi ?"
+                      options={[
+                        'À 3 h, le ballon était à 600 m',
+                        'À 600 h, le ballon était à 3 m',
+                        'Le ballon a mis 600 h pour monter de 3 m',
+                        'Le ballon est monté de 3 m par heure',
+                      ]}
+                      correct={0}
+                      cols={1}
+                      requires={['point-de-la-courbe', 'coordonnees', 'abscisse', 'ordonnee']}
+                      explain="L’abscisse d’abord (l’heure), l’ordonnée ensuite (l’altitude) : à 3 h, 600 m — exactement ce que la sonde affichait."
+                      explainWrong="L’abscisse est portée par l’axe horizontal — ce sont les heures. L’ordonnée est la hauteur : l’altitude."
+                      solved={coordDone}
+                      onAnswered={() => setCoordDone(true)}
+                    />
+                  </KnowledgeBrick>
+                </>
+              )}
             </div>
           ),
         },
@@ -182,6 +237,7 @@ export default function Module01Montgolfiere() {
               options={['Plus bas : il descend', 'Plus haut : il monte', 'À la même altitude']}
               correct={0}
               cols={1}
+              requires={['lecture-image-graphique']}
               explain={`À ${PRED_FROM} h : ${formatDec(image(BALLOON, PRED_FROM))} m. À ${PRED_TO} h : ${formatDec(image(BALLOON, PRED_TO))} m. Entre les deux, la courbe descend — le ballon perd de l’altitude.`}
               explainWrong={`Regarde la courbe entre ${PRED_FROM} h et ${PRED_TO} h : elle descend. ${formatDec(image(BALLOON, PRED_FROM))} m puis ${formatDec(image(BALLOON, PRED_TO))} m.`}
               solved={predDone}
@@ -227,23 +283,24 @@ export default function Module01Montgolfiere() {
         },
         {
           num: 5,
-          title: 'Que disent les deux nombres ?',
-          done: coordDone,
+          title: 'Le couple dans l’autre sens',
+          done: pairDone,
           content: (
             <TapQuestion
-              prompt="Le point de la courbe situé en (3 ; 600) raconte quoi ?"
+              prompt="Un camarade écrit « le ballon est au point (600 ; 3) ». Que lui répondre ?"
               options={[
-                'À 3 h, le ballon était à 600 m',
-                'À 600 h, le ballon était à 3 m',
-                'Le ballon a mis 600 h pour monter de 3 m',
-                'Le ballon est monté de 3 m par heure',
+                'Il a inversé les deux nombres : c’est (3 ; 600)',
+                'C’est correct, l’ordre n’a pas d’importance',
+                'Il manque une unité, sinon c’est juste',
+                'Le point n’existe pas sur cette courbe',
               ]}
               correct={0}
               cols={1}
-              explain="Un point de la courbe se lit toujours dans le même ordre : l’abscisse d’abord (l’heure), l’ordonnée ensuite (l’altitude). Ici : à 3 h, 600 m — exactement ce que la sonde t’a montré au défi."
-              explainWrong="L’abscisse est portée par l’axe horizontal — ce sont les heures. L’ordonnée est la hauteur : l’altitude."
-              solved={coordDone}
-              onAnswered={() => setCoordDone(true)}
+              requires={['point-de-la-courbe', 'coordonnees', 'abscisse', 'ordonnee']}
+              explain="Le premier nombre se lit sur l’axe horizontal : ici, 600 serait une heure — le relevé n’en compte que douze. L’ordre du couple n’est pas décoratif, il dit sur quel axe chaque nombre vit."
+              explainWrong="Regarde jusqu’où va l’axe horizontal : 600 h n’y figure pas. Le premier nombre du couple est toujours l’abscisse."
+              solved={pairDone}
+              onAnswered={() => setPairDone(true)}
             />
           ),
         },
@@ -257,6 +314,7 @@ export default function Module01Montgolfiere() {
               options={['À 0 h et à 7 h', 'Seulement à 0 h', 'Jamais', 'À 12 h']}
               correct={0}
               cols={2}
+              requires={['lecture-image-graphique', 'point-de-la-courbe']}
               explain="La courbe touche l’axe horizontal deux fois : au départ, et à 7 h. À 12 h elle est encore à 200 m — le vol n’est pas terminé quand le relevé s’arrête."
               explainWrong="Cherche les endroits où la courbe touche l’altitude 0. Il y en a plus d’un."
               solved={shapeDone}
@@ -265,13 +323,13 @@ export default function Module01Montgolfiere() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Tu viens de lire une fonction sans jamais la calculer. Au module suivant, on
-          retourne la sonde : au lieu de demander « quelle altitude à cette heure ? », on
-          demandera « à quelles heures cette altitude ? ».
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu viens de lire une fonction sans jamais la calculer. Au
+          module suivant, on retourne la sonde : au lieu de demander « quelle altitude à cette
+          heure ? », on demandera « à quelles heures cette altitude ? ».
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

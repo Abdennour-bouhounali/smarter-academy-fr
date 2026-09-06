@@ -52,6 +52,14 @@
       ]
     },
     {
+      "id": "pourcentage",
+      "label": "pourcentage",
+      "grade": "5e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])pourcentages?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
       "id": "proportionnalite",
       "label": "proportionnalité",
       "grade": "6e",
@@ -266,7 +274,7 @@
       "label": "coefficient (d'une fonction linéaire)",
       "grade": "3e",
       "patterns": [
-        "\\bcoefficients?\\b(?!\\s+(de proportionnalit[ée]|directeur))"
+        "(?<![\\p{L}\\p{N}_])coefficients?(?![\\p{L}\\p{N}_])(?!\\s+(de proportionnalit[ée]|directeur))"
       ]
     },
     {
@@ -274,7 +282,7 @@
       "label": "pente",
       "grade": "3e",
       "patterns": [
-        "\\bpentes?\\b"
+        "(?<![\\p{L}\\p{N}_])pentes?(?![\\p{L}\\p{N}_])"
       ]
     },
     {
@@ -614,6 +622,108 @@
       "grade": "3e",
       "patterns": [
         "(?<![\\p{L}\\p{N}_])extrapol\\w*"
+      ]
+    },
+    {
+      "id": "moyenne",
+      "label": "moyenne",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])moyennes?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "moyenne-ponderee",
+      "label": "moyenne pondérée",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])moyenne pond[ée]r[ée]e(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pond[ée]r[ée]e?s?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "effectif",
+      "label": "effectif",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])effectifs?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "serie-statistique",
+      "label": "série statistique",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])s[ée]ries? statistiques?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])s[ée]rie statistique(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "dispersion",
+      "label": "dispersion",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])dispersions?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])dispers[ée]e?s?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "mode-stat",
+      "label": "mode (statistique)",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])mode(?![\\p{L}\\p{N}_])(?!\\s+(?:de |d.))"
+      ]
+    },
+    {
+      "id": "indicateur-stat",
+      "label": "indicateur statistique",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])indicateurs?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "experience-aleatoire",
+      "label": "expérience aléatoire",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])exp[ée]riences? al[ée]atoires?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])al[ée]atoires?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "equiprobable",
+      "label": "équiprobabilité / dé équilibré",
+      "grade": "3e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])[ée]quiprobables?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])[ée]quiprobabilit[ée](?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "calcul-numerique",
+      "label": "calcul numérique (somme, quotient)",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])calcul num[ée]rique(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "nombres-relatifs",
+      "label": "nombres relatifs",
+      "grade": "5e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])(?:nombres? )?relatifs?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "ordre-nombres",
+      "label": "ranger des nombres (ordre)",
+      "grade": "6e",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])ordre croissant(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ordre d[ée]croissant(?![\\p{L}\\p{N}_])"
       ]
     }
   ],

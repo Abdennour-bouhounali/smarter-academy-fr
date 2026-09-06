@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
-import MathText from '../../../../../common/components/MathText';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import GraphProbe from '../components/GraphProbe';
-import { antecedents, image, isReadingOk } from '../components/readingUtils';
+import { antecedents } from '../components/readingUtils';
 import { BALLOON } from '../components/balloonData';
 import { parseDec, formatDec } from '@smarter-academy/core';
 
@@ -28,10 +28,23 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Misconception targeted: « à chaque valeur correspond une seule autre » — la
  *   symétrie supposée entre les deux sens de lecture.
  * Feedback: le décompte est écrit en clair (« atteinte 4 fois : à 2 h, 5 h… »).
- * Formalization: les mots image et antécédent sont posés à l'étape 3, sur des
- *   gestes déjà faits.
- * Scaffolding: mode imposé → mode libre → vocabulaire → cas à zéro antécédent.
+ * Formalization: la MÉTHODE du guide horizontal — « balayer toute la largeur
+ *   avant de conclure » — posée sur le geste qui vient d'être fait.
+ * Scaffolding: exploration des deux extrêmes → décompte → méthode → cas à zéro.
  * Transfer: le module 4 s'en sert pour les extremums.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   L'étape 3 était une question « devine le mot » : « antécédent » y
+ *   apparaissait pour la PREMIÈRE fois dans le texte des options, et n'était
+ *   expliqué qu'ensuite, dans l'`explain`. Un élève ne pouvait donc que
+ *   deviner. L'étape est retournée :
+ *     étape 1  balayer la courbe avec le guide horizontal (le geste)
+ *     étape 2  compter les croisements — sans nommer quoi que ce soit
+ *     étape 3  rappel `antecedent` (acquis de fonctions-3e) PUIS brique
+ *              `tous-les-antecedents` (ce que la lecture graphique ajoute),
+ *              et seulement alors la question, devenue une application
+ *     étape 4  le cas à zéro, puis la brique `mem-un-sens-pas-lautre`
+ *   Le mot n'est plus la réponse à trouver : la méthode l'est.
  */
 
 const Y_MANY = 400;      // atteint 4 fois
@@ -127,6 +140,7 @@ export default function Module02ImageOuAntecedent() {
               parse={parseDec}
               display={formatDec(antecedents(BALLOON, Y_MANY).length)}
               suffix="fois"
+              requires={['lecture-image-graphique']}
               explain={`Quatre fois : à ${antecedents(BALLOON, Y_MANY).map((x) => `${formatDec(x)} h`).join(', ')}. Le guide horizontal coupe la courbe en quatre endroits.`}
               explainFor={(n) => {
                 if (n === 1) return 'C’est le réflexe de l’image : dans ce sens-là, il n’y a effectivement qu’une réponse. Mais ici on part de l’altitude.';
@@ -140,24 +154,40 @@ export default function Module02ImageOuAntecedent() {
         },
         {
           num: 3,
-          title: 'Les deux mots',
+          title: 'Le geste que tu viens de faire porte un nom',
+          subtitle: 'Tu as balayé la courbe à hauteur constante et relevé chaque croisement.',
           done: vocabDone,
-          content: (
-            <TapQuestion
-              prompt={<>À 3 h le ballon est à 600 m. Quelle phrase est exacte ?</>}
-              options={[
-                '600 est l’image de 3, et 3 est un antécédent de 600',
-                '3 est l’image de 600, et 600 un antécédent de 3',
-                '3 et 600 sont deux images',
-                'Ni l’un ni l’autre : ce sont des coordonnées',
-              ]}
-              correct={0}
-              cols={1}
-              explain="L’heure est ce qu’on ENTRE, l’altitude ce qui SORT : 600 est l’image de 3, et 3 est un antécédent de 600. « Un » antécédent, car 600 en a d’autres — ici 4 h et 10 h."
-              explainWrong="On entre une heure et on lit une altitude : l’image est donc l’altitude, et l’heure est l’antécédent."
-              solved={vocabDone}
-              onAnswered={() => setVocabDone(true)}
-            />
+          content: (kit) => (
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="antecedent"
+                variant="rappel"
+                compact
+                lead="Les quatre heures que tu viens de relever pour 400 m portent déjà ce nom-là, vu avec les machines à nombres."
+              />
+              <KnowledgeBrick
+                id="tous-les-antecedents"
+                variant="new"
+                lead="Sur un dessin, en trouver UN ne suffit pas : voici le geste complet."
+              >
+                <TapQuestion
+                  prompt="L’altitude 200 m est atteinte quatre fois. Comment t’en assurer sans en oublier ?"
+                  options={[
+                    'En suivant le guide horizontal à 200 m d’un bout à l’autre du repère',
+                    'En s’arrêtant au premier croisement rencontré',
+                    'En lisant la valeur écrite sur l’axe vertical',
+                    'En cherchant le point le plus haut de la courbe',
+                  ]}
+                  correct={0}
+                  cols={1}
+                  requires={['tous-les-antecedents']}
+                  explain={`Le guide horizontal traverse tout le repère : à 200 m il coupe la courbe à ${antecedents(BALLOON, 200).map((x) => `${formatDec(x)} h`).join(', ')}. S’arrêter au premier croisement, c’est en oublier trois.`}
+                  explainWrong="Un antécédent se lit sur l’axe horizontal, et il faut balayer toute la largeur du repère avant de conclure."
+                  solved={vocabDone}
+                  onAnswered={(ok) => { setVocabDone(true); kit.react(ok); }}
+                />
+              </KnowledgeBrick>
+            </div>
           ),
         },
         {
@@ -165,27 +195,37 @@ export default function Module02ImageOuAntecedent() {
           title: 'Et quand il n’y a aucune réponse ?',
           done: noneDone,
           content: (
-            <TapQuestion
-              prompt="Combien d’antécédents l’altitude 800 m a-t-elle ?"
-              options={['Aucun : le ballon n’est jamais monté si haut', 'Un seul', 'Deux', 'Quatre']}
-              correct={0}
-              cols={2}
-              explain="Le sommet du vol est à 600 m. Le guide placé à 800 m ne coupe la courbe nulle part : cette altitude n’a aucun antécédent. Une valeur peut donc en avoir zéro, un, ou plusieurs — mais une heure a toujours exactement une altitude."
-              explainWrong="Regarde le point le plus haut de la courbe : le ballon n’a jamais dépassé 600 m."
-              solved={noneDone}
-              onAnswered={() => setNoneDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Combien d’antécédents l’altitude 800 m a-t-elle ?"
+                options={['Aucun : le ballon n’est jamais monté si haut', 'Un seul', 'Deux', 'Quatre']}
+                correct={0}
+                cols={2}
+                requires={['tous-les-antecedents']}
+                explain="Le guide placé à 800 m ne coupe la courbe nulle part : cette altitude n’a aucun antécédent. Une valeur peut donc en avoir zéro, un, ou plusieurs — mais une heure a toujours exactement une altitude."
+                explainWrong="Suis le guide horizontal à 800 m sur toute la largeur : il ne rencontre la courbe nulle part."
+                solved={noneDone}
+                onAnswered={() => setNoneDone(true)}
+              />
+              {noneDone && (
+                <KnowledgeBrick
+                  id="mem-un-sens-pas-lautre"
+                  variant="new"
+                  compact
+                  lead="Tu as maintenant vu les trois cas : quatre réponses, une seule, aucune. Voilà la dissymétrie, à retenir telle quelle."
+                />
+              )}
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> Chercher une <strong>image</strong> : on part de
-          l’abscisse et on descend sur la courbe — une seule réponse. Chercher un{' '}
-          <strong>antécédent</strong> : on part de l’ordonnée et on balaye — zéro, une ou
-          plusieurs réponses.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Tu sais interroger la courbe dans les deux sens. Reste à
+          savoir ce que valent vraiment les nombres que tu lis : au module suivant, c’est
+          l’échelle de l’axe qui décide.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -16,7 +16,8 @@
     "validate:lessons": "node scripts/validate-lessons.mjs",
     "audit:knowledge": "node scripts/audit-knowledge-dependencies.mjs --report",
     "audit:knowledge:gate": "node scripts/audit-knowledge-dependencies.mjs --gate",
-    "check:lessons": "npm run validate:lessons && npm run audit:knowledge:gate",
+    "check:katex": "node scripts/check-katex.mjs",
+    "check:lessons": "npm run validate:lessons && npm run audit:knowledge:gate && npm run check:katex",
     "test:scripts": "vitest run --dir scripts"
   },
   "devDependencies": {

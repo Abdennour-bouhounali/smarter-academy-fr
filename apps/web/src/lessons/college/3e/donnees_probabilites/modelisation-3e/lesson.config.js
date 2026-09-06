@@ -39,6 +39,26 @@ export const LESSON_BASE_PATH = '/courses/college/3e/donnees_probabilites/modeli
 export const LESSON_CONFIG = {
   id: 'modelisation-3e',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (états A du contrat « connaissances avant
+  // la demande ») : elles viennent de « fonctions-3e » et des années
+  // précédentes, et le module 0 les diagnostique une à une. « affine » n'y
+  // figure PAS : cette leçon en fait une famille de modèles et la pose
+  // elle-même, par une brique au module 3.
+  priorKnowledge: ['proportionnalite', 'fonction', 'notation-fx', 'image', 'fonction-lineaire', 'calcul-litteral', 'equation-premier-degre'],
+  knowledgeAudit: {
+    ignore: [
+      // « aire » et « périmètre » : notions de 6e, jamais manipulées ici. Elles
+      // n'apparaissent que dans le tri d'informations du module 2 (« pour
+      // l'aire, la marque de la clôture est utile ou non ? »), où la demande
+      // porte sur l'utilité d'une donnée, pas sur un calcul d'aire. Les
+      // introduire par une brique alourdirait le module sans rien enseigner.
+      { term: 'aire', reason: "notion de 6e ; sert seulement d'étiquette de situation dans le tri d'informations du module 2, jamais calculée" },
+      { term: 'perimetre', reason: "notion de 6e ; apparaît dans une correction du module 2 (« le périmètre 4c fixe la longueur à clôturer »), jamais demandée" },
+    ],
+  },
   title: 'Modélisation',
   description:
     "Trier les informations d'une situation, choisir ses grandeurs, tester des modèles sur des données réelles, dérouler tableau, graphique et expression, prévoir — puis revenir au réel pour interpréter et douter.",

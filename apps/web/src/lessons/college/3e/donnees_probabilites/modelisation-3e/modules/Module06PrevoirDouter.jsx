@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import ValueTable from '../../../../../common/components/ValueTable';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -38,6 +39,7 @@ export default function Module06PrevoirDouter() {
   const [tested, setTested] = useState(() => new Set());
   const [capDone, setCapDone] = useState(false);
   const [domDone, setDomDone] = useState(false);
+  const [extraNamed, setExtraNamed] = useState(false);
   const [cinemaDone, setCinemaDone] = useState(false);
   const [interpDone, setInterpDone] = useState(false);
   const [negDone, setNegDone] = useState(false);
@@ -86,9 +88,17 @@ export default function Module06PrevoirDouter() {
                   options={['L’application plafonne le prix à 8 € : le modèle n’est valable que jusqu’à ce plafond', 'Le modèle est faux depuis le début', 'L’application fait une erreur au-delà de 45 min']}
                   correct={0}
                   cols={1}
-                  explain={`8 € = 0,15 × t + 1 pour t ≈ ${formatDec(Math.round(CAP_X * 100) / 100)} min. Jusque-là le modèle est exact ; au-delà, une règle nouvelle (le plafond) prend le relais. Un modèle a un DOMAINE DE VALIDITÉ.`}
+                  requires={['expression-du-modele', 'modeliser']}
+                  explain={`8 € = 0,15 × t + 1 pour t ≈ ${formatDec(Math.round(CAP_X * 100) / 100)} min. Jusque-là le modèle est exact ; au-delà, une règle nouvelle (le plafond) prend le relais.`}
                   solved={capDone}
                   onAnswered={() => setCapDone(true)}
+                />
+              )}
+              {capDone && (
+                <KnowledgeBrick
+                  id="domaine-de-validite"
+                  variant="new"
+                  lead="Le modèle a été exact, puis il a cessé de l’être à partir d’une certaine durée. Cette plage a un nom."
                 />
               )}
               {!seen50 && <Feedback tone="info">Va voir au-delà de 40 minutes.</Feedback>}
@@ -99,8 +109,9 @@ export default function Module06PrevoirDouter() {
           num: 2,
           title: 'Le domaine de validité',
           subtitle: 'Sur le graphique, la droite s’arrête où le plafond commence.',
-          done: domDone,
+          done: domDone && extraNamed,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="Quel est le prix d’un trajet de 70 minutes ?"
               above={
@@ -113,10 +124,30 @@ export default function Module06PrevoirDouter() {
               options={['8 € : au-delà de 46,7 min, c’est le plafond qui s’applique', '11,50 € : 0,15 × 70 + 1', 'Impossible à dire']}
               correct={0}
               cols={1}
-              explain="Le modèle 0,15t + 1 n’est valable que sur [0 ; 46,7]. Utiliser un modèle hors de son domaine — extrapoler — donne un nombre juste en apparence (11,50 €) et faux en réalité."
+              requires={['domaine-de-validite', 'representation-graphique']}
+              explain="Le modèle 0,15t + 1 n’est exact que jusqu’à 46,7 min. Au-delà, il continue pourtant de donner un nombre : 11,50 € — juste en apparence, faux en réalité."
               solved={domDone}
               onAnswered={() => setDomDone(true)}
             />
+            {domDone && (
+              <KnowledgeBrick
+                id="extrapolation"
+                variant="new"
+                lead="Le calcul 0,15 × 70 + 1 est parfaitement juste, et pourtant sa réponse est fausse. Ce geste-là porte un nom."
+              >
+                <TapQuestion
+                  prompt="Quand un modèle donne un résultat hors de son domaine, que faut-il en penser ?"
+                  options={['Le calcul peut être juste et le résultat faux : c’est le modèle qui ne s’applique plus', 'Le calcul est forcément faux', 'Le résultat est bon puisque le calcul est bon']}
+                  correct={0}
+                  cols={1}
+                  requires={['extrapolation', 'domaine-de-validite']}
+                  explain="C’est tout le piège de l’extrapolation : rien dans le calcul ne signale qu’on est sorti du domaine. Seule la situation le dit."
+                  solved={extraNamed}
+                  onAnswered={() => setExtraNamed(true)}
+                />
+              </KnowledgeBrick>
+            )}
+            </div>
           ),
         },
         {
@@ -130,6 +161,7 @@ export default function Module06PrevoirDouter() {
                 prompt="Pour quel nombre de séances n les deux formules coûtent-elles la même chose ? (24 + 5n = 9n)"
                 expected={nCinema}
                 parse={parseDec}
+                requires={['expression-du-modele', 'equation-premier-degre']}
                 display={formatDec(nCinema)}
                 explain="24 + 5n = 9n donne 4n = 24, n = 6. À 6 séances, 54 € des deux côtés."
                 explainFor={(n) => (n === 24 / 9 || Math.abs(n - 2.67) < 0.01 ? '24 ÷ 9 compare la carte à une seule séance. Il faut égaler les deux dépenses : 24 + 5n = 9n.' : null)}
@@ -142,9 +174,17 @@ export default function Module06PrevoirDouter() {
                   options={[`Dès la ${interpretResult(25 / 4, { integer: true, min: 0 }).value}e séance : n est un nombre entier de séances`, '6,25 séances', 'Le problème est impossible', 'Dès la 6e séance']}
                   correct={0}
                   cols={1}
-                  explain="Le modèle donne 6,25, mais on ne va pas au cinéma 6,25 fois. À 6 séances la carte coûte encore plus (55 € contre 54) ; à 7, elle gagne (60 contre 63). Interpréter, c’est traduire le nombre dans le contexte : « dès la 7e séance »."
+                  requires={['cycle-modelisation']}
+                  explain="Le modèle donne 6,25, mais on ne va pas au cinéma 6,25 fois. À 6 séances la carte coûte encore plus (55 € contre 54) ; à 7, elle gagne (60 contre 63)."
                   solved={interpDone}
                   onAnswered={() => setInterpDone(true)}
+                />
+              )}
+              {interpDone && (
+                <KnowledgeBrick
+                  id="interpreter-resultat"
+                  variant="new"
+                  lead="Tu viens de transformer « 6,25 » en une phrase que le comité peut suivre."
                 />
               )}
             </div>
@@ -162,6 +202,7 @@ export default function Module06PrevoirDouter() {
                 options={['Une valeur négative est impossible : le modèle n’est valable que jusqu’à t = 12, quand le réservoir est vide', 'Le réservoir contient −15 L', 'Le modèle est faux'].map((s) => s)}
                 correct={0}
                 cols={1}
+                requires={['domaine-de-validite', 'interpreter-resultat']}
                 explain={`${interpretResult(-15, { min: 0, unit: ' L' }).reason}. Le modèle est exact sur [0 ; 12] ; au-delà, le réservoir reste vide : la situation impose ses bornes.`}
                 solved={negDone}
                 onAnswered={() => setNegDone(true)}
@@ -172,13 +213,15 @@ export default function Module06PrevoirDouter() {
                   options={['Le modèle « ×2 par heure » cesse d’être valable : la nourriture et la place manquent bien avant', 'Le calcul est faux', 'C’est exact, les bactéries sont très nombreuses']}
                   correct={0}
                   cols={1}
-                  explain="Le calcul est juste ; c’est l’EXTRAPOLATION qui ne l’est pas. Un modèle décrit une situation dans un domaine ; loin de ses données, il faut douter — l’ordre de grandeur crie l’absurdité."
+                  requires={['extrapolation', 'domaine-de-validite']}
+                  explain="Le calcul est juste ; c’est l’extrapolation qui ne l’est pas. Un modèle décrit une situation dans un domaine ; loin de ses données, il faut douter — l’ordre de grandeur crie l’absurdité."
                   solved={extraDone}
                   onAnswered={() => setExtraDone(true)}
                 />
               )}
               {extraDone && (
                 <BatchChoiceQuestion
+                  requires={['domaine-de-validite', 'interpreter-resultat', 'expression-du-modele']}
                   intro={<p className="text-sm font-semibold text-slate-700">Cohérent ou à revoir ?</p>}
                   rows={[
                     { id: 'a', label: 'Trottinette : 20 min → 4 € (modèle 0,15t + 1)', options: ['cohérent', 'à revoir'], correct: 0, correction: '0,15 × 20 + 1 = 4.' },
@@ -196,15 +239,22 @@ export default function Module06PrevoirDouter() {
                   onAnswered={() => setPlausDone(true)}
                 />
               )}
+              {plausDone && (
+                <KnowledgeBrick
+                  id="mem-douter"
+                  variant="new"
+                  compact
+                  lead="Trois vérifications, à chaque fois. C’est ce qui sépare un résultat d’une réponse."
+                />
+              )}
             </div>
           ),
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Un modèle est un outil pour prévoir — dans son <strong>domaine de validité</strong>. Le résultat s’interprète (unité, entier,
-          bornes) et se vérifie (ordre de grandeur). Douter d’un modèle n’est pas le trahir : c’est le comprendre. Dernier chantier : le grand projet.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={6}>
+          Douter d’un modèle n’est pas le trahir : c’est le comprendre. Dernier chantier : le grand projet, sur une situation neuve.
+        </KnowledgeSnapshot>
       }
     />
   );

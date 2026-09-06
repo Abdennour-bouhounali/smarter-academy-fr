@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import ValueTable from '../../../../../common/components/ValueTable';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PointPlacer from '../components/PointPlacer';
@@ -38,6 +39,7 @@ export default function Module03TableauGraphique() {
   const [wrong, setWrong] = useState(null);
   const [misses, setMisses] = useState(0);
   const [shapeDone, setShapeDone] = useState(false);
+  const [familyDone, setFamilyDone] = useState(false);
   const [emptyDone, setEmptyDone] = useState(false);
 
   const targets = ROWS.filter((r) => NEEDED.includes(r.x));
@@ -82,10 +84,15 @@ export default function Module03TableauGraphique() {
             <div className="space-y-3">
               <ValueTable columns={[{ id: 'v', label: 'volume (L) = 60 − 5 × t', fn: (t) => evaluate(R.model, t) }]} xs={R.xs} tested={tested}
                 onTest={(x) => { setTested((s) => new Set(s).add(x)); kit.react(true); }} variable="t" compare={false} unit="L" caption="Le réservoir, minute par minute" />
-              <Feedback tone={tableDone ? 'ok' : 'info'}>
-                {tableDone ? <>À t = 12, le volume vaut {formatDec(evaluate(R.model, 12))} L : le réservoir est vide au bout de 12 minutes. Le tableau le dit déjà — le graphique va le montrer.</>
-                  : <>Il manque {NEEDED.filter((x) => !tested.has(x)).map((x) => `t = ${x}`).join(', ')}.</>}
-              </Feedback>
+              {tableDone ? (
+                <KnowledgeBrick
+                  id="tableau-de-valeurs"
+                  variant="new"
+                  lead={`À t = 12, le volume vaut ${formatDec(evaluate(R.model, 12))} L : le réservoir est vide au bout de 12 minutes. Tu viens de construire ceci.`}
+                />
+              ) : (
+                <Feedback tone="info">Il manque {NEEDED.filter((x) => !tested.has(x)).map((x) => `t = ${x}`).join(', ')}.</Feedback>
+              )}
             </div>
           ),
         },
@@ -106,7 +113,13 @@ export default function Module03TableauGraphique() {
                 </Feedback>
               )}
               {!wrong && !placedDone && <Feedback tone="info">{placed.size} point{placed.size > 1 ? 's' : ''} posé{placed.size > 1 ? 's' : ''} sur {targets.length}. Flèches du clavier ou glisser, puis « Poser ».</Feedback>}
-              {placedDone && <Feedback tone="ok">Quatre points, une droite. Chaque ligne du tableau est devenue un point : le graphique est le tableau, dessiné.</Feedback>}
+              {placedDone && (
+                <KnowledgeBrick
+                  id="representation-graphique"
+                  variant="new"
+                  lead="Quatre points, une droite : chaque ligne du tableau est devenue un point."
+                />
+              )}
             </div>
           ),
         },
@@ -114,24 +127,60 @@ export default function Module03TableauGraphique() {
           num: 3,
           title: 'Lis la forme',
           subtitle: 'Que dit le dessin ?',
-          done: shapeDone && emptyDone,
+          done: shapeDone && familyDone && emptyDone,
           content: (
             <div className="space-y-4">
               <TapQuestion
-                prompt="Les points sont alignés, mais la droite ne passe pas par l’origine et descend. Quel type de modèle est-ce ?"
-                options={['Un modèle affine décroissant : volume = 60 − 5t', 'Un modèle proportionnel : le volume est proportionnel au temps', 'Une courbe : le réservoir se vide de plus en plus vite']}
+                prompt="Décris ce que tu vois sur ton graphique."
+                options={[
+                  'Les points sont alignés, la droite descend, et elle ne passe pas par l’origine (à t = 0, il y a déjà 60 L)',
+                  'Les points sont alignés et la droite passe par l’origine',
+                  'Les points ne sont pas alignés : c’est une courbe qui descend de plus en plus vite',
+                ]}
                 correct={0}
                 cols={1}
-                explain="Alignés → affine ; pas par O → part fixe (60 L au départ) ; qui descend → coefficient négatif (−5 L par minute). La forme du graphique dit la famille du modèle."
+                requires={['representation-graphique']}
+                explain="Trois observations, trois indices : alignés, ça descend, et le départ n’est pas à zéro. Chacune dit quelque chose sur la règle."
                 solved={shapeDone}
                 onAnswered={() => setShapeDone(true)}
               />
               {shapeDone && (
+                <>
+                  <KnowledgeBrick
+                    id="familles-modeles"
+                    variant="new"
+                    lead="« Alignés » et « pas par l’origine » ne sont pas des détails : ils désignent une famille de règles précise."
+                  />
+                  <KnowledgeBrick
+                    id="sens-de-variation"
+                    variant="new"
+                    compact
+                    lead="Et « ça descend » se dit aussi d’un mot."
+                  >
+                    <TapQuestion
+                      prompt="De quelle famille est donc le modèle du réservoir, volume = 60 − 5t ?"
+                      options={[
+                        'Affine décroissant : la part fixe vaut 60 et on retire 5 L à chaque minute',
+                        'Proportionnel décroissant : le volume est proportionnel au temps',
+                        'En carré : la courbe descend de plus en plus vite',
+                      ]}
+                      correct={0}
+                      cols={1}
+                      requires={['familles-modeles', 'sens-de-variation']}
+                      explain="Alignés + part fixe 60 → affine ; on retire 5 L par minute, donc ça descend → décroissant. Un modèle proportionnel partirait de 0 L, ce que le réservoir plein contredit."
+                      solved={familyDone}
+                      onAnswered={() => setFamilyDone(true)}
+                    />
+                  </KnowledgeBrick>
+                </>
+              )}
+              {familyDone && (
                 <TapQuestion
                   prompt="Sur le graphique, où lit-on le moment où le réservoir est vide ?"
                   options={['Là où la droite coupe l’axe des temps : t = 12 min', 'Là où la droite coupe l’axe des volumes : 60 L', 'Nulle part : il faut le tableau']}
                   correct={0}
                   cols={1}
+                  requires={['representation-graphique', 'tableau-de-valeurs']}
                   explain="Vide = volume 0 = la droite touche l’axe horizontal, à t = 12. Le tableau le disait (60 − 5 × 12 = 0) ; le graphique le montre d’un coup d’œil, et montrerait aussi 6 min (30 L) sans aucun calcul."
                   solved={emptyDone}
                   onAnswered={() => setEmptyDone(true)}
@@ -142,10 +191,9 @@ export default function Module03TableauGraphique() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          <strong>Tableau</strong> : une colonne = un calcul de la règle. <strong>Graphique</strong> : une ligne = un point. La forme (droite par O,
-          droite, courbe) dit la famille du modèle. Et quand on n’a QUE des points — sans règle — comment retrouver le modèle ? Module suivant.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={3}>
+          Ici, la règle était donnée et tu l’as dessinée. Et quand on n’a QUE des points, sans règle — comment retrouver le modèle ? Module suivant.
+        </KnowledgeSnapshot>
       }
     />
   );

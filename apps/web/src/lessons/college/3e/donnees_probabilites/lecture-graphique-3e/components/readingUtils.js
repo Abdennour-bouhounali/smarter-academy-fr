@@ -79,15 +79,33 @@ export function solveGraphically(curve, y) {
   return antecedentsOf(curve, y);
 }
 
-/** Les intervalles où la courbe est au-dessus d'un seuil (lecture de problème). */
+/**
+ * Les intervalles où la courbe est au-dessus d'un seuil (lecture de problème).
+ *
+ * LES BORNES SONT INTERPOLÉES, pas prises au relevé suivant. Prendre l'abscisse
+ * du premier point sous le seuil surestimait la durée : sur le vol du drone, la
+ * courbe passe de 600 m (à 6 h) à 400 m (à 7 h), et le franchissement a donc
+ * lieu à 6 h, pas à 7 h. La borne calculée est celle que l'élève LIT sur le
+ * dessin — la règle de la leçon : rien ne se calcule, tout se lit, et le code
+ * doit dire la même chose que le tracé.
+ */
 export function aboveThreshold(curve, threshold) {
+  /** L'abscisse où le segment [a, b] traverse le seuil. */
+  const cross = (a, b) => (
+    a.y === b.y ? a.x : a.x + (threshold - a.y) * (b.x - a.x) / (b.y - a.y)
+  );
+
   const out = [];
   let start = null;
   for (let i = 0; i < curve.length; i += 1) {
     const above = curve[i].y >= threshold;
-    if (above && start === null) start = curve[i].x;
+    if (above && start === null) {
+      // On entre : la borne est le point de franchissement sur le segment
+      // précédent, sauf au tout début de la courbe.
+      start = i === 0 ? curve[i].x : cross(curve[i - 1], curve[i]);
+    }
     if (!above && start !== null) {
-      out.push({ from: roundTo(start, 6), to: roundTo(curve[i].x, 6) });
+      out.push({ from: roundTo(start, 6), to: roundTo(cross(curve[i - 1], curve[i]), 6) });
       start = null;
     }
   }

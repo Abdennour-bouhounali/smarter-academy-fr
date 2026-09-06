@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import InfoSorter from '../../../../../common/components/InfoSorter';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import QuantityPicker from '../components/QuantityPicker';
@@ -50,6 +51,7 @@ export default function Module01LaboModelisation() {
   const [candidate, setCandidate] = useState(null);
   const [tested, setTested] = useState(() => new Set());
   const [modelDone, setModelDone] = useState(false);
+  const [allDataDone, setAllDataDone] = useState(false);
   const [viewsDone, setViewsDone] = useState(false);
   const [predDone, setPredDone] = useState(false);
   const [realDone, setRealDone] = useState(false);
@@ -92,10 +94,11 @@ export default function Module01LaboModelisation() {
             <div className="space-y-3">
               <InfoSorter items={T.infos} solved={sortDone} onSolved={() => setSortDone(true)} formative onCheck={kit.react} />
               {sortDone && (
-                <Feedback tone="ok">
-                  Trois informations comptent pour le prix : le déblocage (1 €), le tarif par minute (0,15 €) et la durée du
-                  trajet. Couleur, autonomie, heure et poids sont du décor — une situation réelle en est toujours pleine.
-                </Feedback>
+                <KnowledgeBrick
+                  id="informations-utiles"
+                  variant="new"
+                  lead="Trois cartes seulement sont restées dans le bac « utile » : le déblocage, le tarif par minute et la durée."
+                />
               )}
             </div>
           ),
@@ -115,7 +118,7 @@ export default function Module01LaboModelisation() {
               )}
               {qDone && (
                 <Feedback tone={qRight ? 'ok' : 'ko'}>
-                  {qRight ? 'Exact.' : 'Pas tout à fait : '}Les deux grandeurs sont la <strong>durée</strong> (ce qu’on choisit — la variable) et le{' '}
+                  {qRight ? 'Exact.' : 'Pas tout à fait : '}Les deux grandeurs sont la <strong>durée</strong> (ce qu’on choisit) et le{' '}
                   <strong>prix</strong> (ce qui en dépend). Poids et autonomie ne varient pas d’un trajet à l’autre : ils n’entrent pas dans la relation.
                 </Feedback>
               )}
@@ -126,7 +129,7 @@ export default function Module01LaboModelisation() {
           num: 3,
           title: 'Teste les modèles sur les tickets',
           subtitle: 'Quatre règles possibles. Une seule est d’accord avec les trois tickets — laquelle ?',
-          done: modelDone,
+          done: modelDone && allDataDone,
           content: (kit) => (
             <div className="space-y-3">
               <ModelTester candidates={T.candidates} points={T.tickets} selected={candidate}
@@ -145,10 +148,34 @@ export default function Module01LaboModelisation() {
                 </Feedback>
               )}
               {modelDone && (
-                <Feedback tone="ok">
-                  <strong>prix = 0,15 × durée + 1</strong> est d’accord avec les trois tickets. Le 1 € de déblocage se paie même pour 0 minute : le
-                  prix n’est pas proportionnel à la durée, et un modèle qui tombe juste sur un ticket mais pas sur les autres n’est pas le modèle.
-                </Feedback>
+                <>
+                  <Feedback tone="ok">
+                    <strong>prix = 0,15 × durée + 1</strong> est d’accord avec les trois tickets. Le 1 € de déblocage se paie même pour 0 minute : le
+                    prix n’est donc pas proportionnel à la durée.
+                  </Feedback>
+                  <KnowledgeBrick
+                    id="modeliser"
+                    variant="new"
+                    lead="Tu viens de trouver la règle qui raconte les trois tickets. Cette règle porte un nom."
+                  />
+                  <KnowledgeBrick
+                    id="mem-toutes-les-donnees"
+                    variant="new"
+                    compact
+                    lead="Et voilà pourquoi trois des quatre candidats ont été éliminés."
+                  >
+                    <TapQuestion
+                      prompt="Une règle donnerait exactement 4 € pour le ticket de 20 min, mais 3 € pour celui de 10 min (qui a coûté 2,50 €). Peut-on la garder ?"
+                      options={['Non : un seul désaccord suffit à l’éliminer', 'Oui, elle tombe juste sur un ticket', 'Oui, si l’écart est petit']}
+                      correct={0}
+                      cols={1}
+                      requires={['mem-toutes-les-donnees']}
+                      explain="Un modèle est une règle valable pour toute la situation : il doit rendre compte de chaque donnée, pas de la plus commode."
+                      solved={allDataDone}
+                      onAnswered={() => setAllDataDone(true)}
+                    />
+                  </KnowledgeBrick>
+                </>
               )}
             </div>
           ),
@@ -165,6 +192,7 @@ export default function Module01LaboModelisation() {
               options={['Les trois disent la même chose : les tickets sont sur la droite, et le tableau donne les mêmes nombres', 'Le tableau et la droite se contredisent pour 0 minute', 'Seule l’expression est un modèle, le reste est décoratif']}
               correct={0}
               cols={1}
+              requires={['modeliser']}
               explain="Un modèle est UNE règle ; tableau, graphique et expression en sont trois écritures. La droite ne passe pas par l’origine (0 min → 1 €), le tableau le dit aussi, l’expression l’écrit : + 1."
               solved={viewsDone}
               onAnswered={() => setViewsDone(true)}
@@ -182,6 +210,7 @@ export default function Module01LaboModelisation() {
               suffix="€"
               expected={predicted}
               parse={parseDec}
+              requires={['modeliser']}
               display={`${formatDec(predicted)} €`}
               above={(revealed) => revealed && <ModelViews model={T.model} xs={XS} points={T.tickets} extraPoint={{ x: T.predictX, y: predicted, label: '35 min' }} variable="t" xLabel="durée" yLabel="prix" xUnit="min" yUnit="€" show={{ graph: true }} />}
               explain={`0,15 × 35 + 1 = ${formatDec(predicted)} €. Le modèle prévoit une durée jamais essayée — c'est pour ça qu'on modélise.`}
@@ -207,6 +236,7 @@ export default function Module01LaboModelisation() {
                 options={['Le modèle est confirmé : il a prévu le prix réel', 'C’est un hasard : un modèle ne peut pas prévoir', 'Le modèle est faux, puisqu’il n’a pas de ticket de 35 min']}
                 correct={0}
                 cols={1}
+                requires={['modeliser']}
                 explain="Une prévision juste sur un cas nouveau est la meilleure confirmation d’un modèle. Modéliser, c’est traduire une situation en mathématiques pour pouvoir raisonner dessus — et prévoir."
                 solved={realDone}
                 onAnswered={() => setRealDone(true)}
@@ -217,7 +247,8 @@ export default function Module01LaboModelisation() {
                   options={['Le modèle a une limite qu’on ne connaît pas encore (un plafond ?) : il faut l’étudier', 'L’application s’est trompée', 'Les tickets étaient faux', 'Le modèle est proportionnel finalement']}
                   correct={0}
                   cols={1}
-                  explain="Un modèle n’est valable que dans un certain domaine. Ici l’application plafonne à 8 € par heure — une information qui n’était pas sur l’écran. Douter d’un modèle et chercher ses limites, c’est la fin du module 6."
+                  requires={['modeliser', 'mem-toutes-les-donnees']}
+                  explain="Ici l’application plafonne à 8 € par heure — une information qui n’était pas sur l’écran. Un modèle ne raconte donc pas forcément toute la situation : chercher où il s’arrête, c’est le module 6."
                   solved={capDone}
                   onAnswered={() => setCapDone(true)}
                 />
@@ -227,11 +258,11 @@ export default function Module01LaboModelisation() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Tu viens de <strong>modéliser</strong> : trier, choisir les grandeurs, trouver la règle d’accord avec toutes les données,
+        <KnowledgeSnapshot moduleNumber={1}>
+          Tu viens de modéliser en entier : trier, choisir les grandeurs, trouver la règle d’accord avec toutes les données,
           l’écrire de trois façons, prévoir — et revenir au réel. Les modules suivants reprennent chaque étape, jusqu’aux
           limites du modèle.
-        </Feedback>
+        </KnowledgeSnapshot>
       }
     />
   );

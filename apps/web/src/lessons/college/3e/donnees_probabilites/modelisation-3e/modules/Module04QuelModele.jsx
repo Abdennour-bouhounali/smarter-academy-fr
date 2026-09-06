@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ModelFitter, { buildModel } from '../components/ModelFitter';
@@ -123,9 +124,17 @@ export default function Module04QuelModele() {
                   options={['Parce que 0 Go coûte déjà 5 € : la droite ne passe pas par l’origine', 'Parce que les points ne sont pas alignés', 'Parce que k devait être négatif']}
                   correct={0}
                   cols={1}
+                  requires={['familles-modeles']}
                   explain="Un modèle proportionnel passe forcément par (0 ; 0). Le point (0 ; 5) l’exclut d’emblée : il faut un modèle affine, avec b = 5 (l’abonnement) et a = 2 (le prix du Go)."
                   solved={predDone}
                   onAnswered={() => setPredDone(true)}
+                />
+              )}
+              {predDone && (
+                <KnowledgeBrick
+                  id="modele-choisi-par-donnees"
+                  variant="new"
+                  lead="Un seul point t’a interdit toute une famille. Ce n’est pas un hasard."
                 />
               )}
             </div>
@@ -147,9 +156,17 @@ export default function Module04QuelModele() {
                   options={['Aucun modèle simple ne convient : la température monte puis redescend', 'Il faut un modèle proportionnel avec un plus grand k', 'Les données sont fausses', 'Le modèle affine avec b = 8 convient à peu près, c’est suffisant']}
                   correct={0}
                   cols={1}
+                  requires={['modele-choisi-par-donnees', 'familles-modeles', 'mem-toutes-les-donnees']}
                   explain="Choisir « aucun modèle simple » est une conclusion légitime : la température monte le matin et redescend le soir, aucune droite ni parabole y = c × x² ne suit cette forme. Un modèle « à peu près » qui rate trois points sur quatre n’est pas un modèle."
                   solved={noneDone}
                   onAnswered={() => setNoneDone(true)}
+                />
+              )}
+              {noneDone && (
+                <KnowledgeBrick
+                  id="aucun-modele-simple"
+                  variant="new"
+                  lead="Tu viens de refuser de forcer un modèle. C’est une bonne réponse, pas un abandon."
                 />
               )}
               {!noneDone && f4.moves < 3 && <Feedback tone="info">Essaie au moins trois réglages ou familles avant de conclure.</Feedback>}
@@ -158,10 +175,9 @@ export default function Module04QuelModele() {
         },
       ]}
       footer={
-        <Feedback tone="info">
-          Le modèle n’est pas choisi par goût mais par les <strong>données</strong> : points alignés par O → proportionnel ; alignés
-          avec une part fixe → affine ; croissance en carré → x² ; sinon, on le dit. Le module suivant met des mots sur tout le cycle.
-        </Feedback>
+        <KnowledgeSnapshot moduleNumber={4}>
+          Tu as réglé les modèles à la main, chiffre par chiffre. Le module suivant les écrit en une seule ligne — et met des mots sur tout le cycle.
+        </KnowledgeSnapshot>
       }
     />
   );

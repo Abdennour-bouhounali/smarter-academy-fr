@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import GraphProbe from '../components/GraphProbe';
 import { crossings, image, isReadingOk } from '../components/readingUtils';
@@ -35,6 +36,15 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * polylignes est donc indispensable, et le croisement ne peut pas se calculer
  * algébriquement. C'est ce qui distingue ce module des comparaisons de tarifs
  * des leçons voisines.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   « Point d'intersection » n'existait qu'au `prompt` de l'étape 4 — une
+ *   demande — et « résoudre graphiquement » qu'au `footer`. L'ordre est
+ *   maintenant :
+ *     étape 1  comparer les deux vols de part et d'autre du croisement
+ *              → brique `point-intersection`
+ *     étapes 2-3  lire l'abscisse puis l'ordonnée du point, désormais nommé
+ *     étape 4  ce que le croisement signifie → brique `resolution-graphique`
  */
 
 const HITS = crossings(BALLOON, BALLOON_2);
@@ -105,19 +115,19 @@ export default function Module05DeuxBallons() {
                   <p className="font-mono font-bold text-rose-900">{formatDec(image(BALLOON_2, x))} m</p>
                 </div>
               </div>
-              <Feedback tone={compared ? 'ok' : 'info'}>
-                {compared ? (
-                  <>
-                    Avant la rencontre, B est au-dessus ; après, c’est A. Le point où les
-                    courbes se coupent est exactement l’instant où l’écart s’annule.
-                  </>
-                ) : (
-                  <>
-                    Place la sonde <strong>avant</strong> puis <strong>après</strong> le point
-                    où les deux courbes se croisent, et compare les deux altitudes.
-                  </>
-                )}
-              </Feedback>
+              {!compared && (
+                <Feedback tone="info">
+                  Place la sonde <strong>avant</strong> puis <strong>après</strong> l’endroit
+                  où les deux courbes se touchent, et compare les deux altitudes.
+                </Feedback>
+              )}
+              {compared && (
+                <KnowledgeBrick
+                  id="point-intersection"
+                  variant="new"
+                  lead="Avant la rencontre, B est au-dessus ; après, c’est A. L’endroit exact où l’écart s’annule porte un nom."
+                />
+              )}
             </div>
           ),
         },
@@ -132,6 +142,7 @@ export default function Module05DeuxBallons() {
               parse={parseDec}
               display={formatDec(FIRST.x)}
               suffix="h"
+              requires={['point-intersection', 'point-de-la-courbe']}
               explain={`À ${formatDec(FIRST.x)} h, les deux courbes se coupent : les deux ballons sont alors à ${formatDec(FIRST.y)} m. Le croisement se lit sur l'axe des heures.`}
               explainFor={(n) => {
                 if (Math.abs(n - FIRST.y) < 60) return 'Tu as donné l’altitude du croisement. La question porte sur l’HEURE, lue sur l’axe horizontal.';
@@ -153,6 +164,7 @@ export default function Module05DeuxBallons() {
               parse={parseDec}
               display={formatDec(FIRST.y)}
               suffix="m"
+              requires={['point-intersection', 'echelle-graduation']}
               explain={`Au croisement, les deux ballons sont à ${formatDec(FIRST.y)} m. C'est la même valeur pour les deux — c'est justement ce que « se croiser » veut dire.`}
               explainFor={(n) => {
                 if (Math.abs(n - FIRST.x) < 1) return 'Tu as redonné l’heure. On demande maintenant l’altitude commune.';
@@ -168,31 +180,41 @@ export default function Module05DeuxBallons() {
           title: 'Que dit un point d’intersection ?',
           done: countDone,
           content: (
-            <TapQuestion
-              prompt="Que signifie exactement un point d’intersection entre les deux courbes ?"
-              options={[
-                'À cet instant, les deux ballons sont à la même altitude',
-                'Les deux ballons se touchent dans le ciel',
-                'Les deux ballons montent à la même vitesse',
-                'Les deux ballons ont parcouru la même distance',
-              ]}
-              correct={0}
-              cols={1}
-              explain="Un croisement ne dit rien de la position réelle des ballons dans le ciel, ni de leur vitesse : il dit que leurs deux altitudes coïncident à cet instant. Lire l’intersection, c’est résoudre graphiquement une égalité."
-              explainWrong="Les deux courbes représentent des altitudes, pas des trajectoires. Se couper signifie que les deux valeurs sont égales à cette heure-là."
-              solved={countDone}
-              onAnswered={() => setCountDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Que signifie exactement un point d’intersection entre les deux courbes ?"
+                options={[
+                  'À cet instant, les deux ballons sont à la même altitude',
+                  'Les deux ballons se touchent dans le ciel',
+                  'Les deux ballons montent à la même vitesse',
+                  'Les deux ballons ont parcouru la même distance',
+                ]}
+                correct={0}
+                cols={1}
+                requires={['point-intersection']}
+                explain="Un croisement ne dit rien de la position réelle des ballons dans le ciel, ni de leur vitesse : il dit que leurs deux altitudes coïncident à cet instant."
+                explainWrong="Les deux courbes représentent des altitudes, pas des trajectoires. Se couper signifie que les deux valeurs sont égales à cette heure-là."
+                solved={countDone}
+                onAnswered={() => setCountDone(true)}
+              />
+              {countDone && (
+                <KnowledgeBrick
+                  id="resolution-graphique"
+                  variant="new"
+                  lead="Tu viens de répondre à « quand sont-ils égaux ? » sans écrire la moindre équation. Ce geste a un nom."
+                />
+              )}
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> Chercher où deux courbes se coupent, c’est résoudre
-          graphiquement l’égalité de leurs deux valeurs. L’abscisse du point donne{' '}
-          <em>quand</em>, l’ordonnée donne <em>combien</em>.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Toutes les lectures sont désormais dans ta main. Au module
+          suivant, plus personne ne te dira laquelle employer : c’est le pilote qui pose la
+          question, en français.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

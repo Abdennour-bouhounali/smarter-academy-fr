@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import GraphProbe from '../components/GraphProbe';
 import {
@@ -28,14 +28,31 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Misconception targeted: donner un instant quand on demande une durée ; et
  *   répondre par une altitude à une question de temps.
  * Feedback: explainFor cible ces deux confusions nommément.
- * Formalization: aucune ; c'est l'atelier de transfert.
+ * Formalization: une seule méthode — `methode-question-en-lecture` — qui ne
+ *   dit aucune notion neuve, mais l'ordre dans lequel s'y prendre.
  * Scaffolding: question directe → question de durée → question inversée.
  * Transfer: c'est le module de transfert de la leçon.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Ce module n'introduit aucune notion : tout ce qu'il demande a été posé aux
+ *   modules 1 à 5. La brique de l'étape 2 pose la seule chose qui restait
+ *   implicite — « une durée est un ÉCART » — et elle est posée AVANT la
+ *   question de durée, non dans son `explainFor`.
+ *
+ * CORRIGÉ (mathématique). L'étape 3 annonçait « quatre fois » là où le guide
+ *   horizontal à 400 m ne coupe la courbe du drone que TROIS fois : la bonne
+ *   réponse contredisait son propre `explain`, calculé lui sur les données. Le
+ *   nombre est désormais dérivé de la courbe, jamais écrit à la main.
+ *   Et `aboveThreshold` interpole ses bornes : la durée attendue est celle
+ *   qu'on LIT sur le tracé, pas l'abscisse du relevé suivant.
  */
 
 const MAXP = maxOf(DRONE);
 const ABOVE = aboveThreshold(DRONE, 600);
 const DURATION = ABOVE.reduce((n, iv) => n + (iv.to - iv.from), 0);
+// Les options de l'étape 3 sont DÉRIVÉES de la courbe : une bonne réponse
+// écrite à la main finirait par contredire le dessin (elle le faisait).
+const AT_400 = antecedents(DRONE, 400);
 
 export default function Module06LaboLecture() {
   const [mode, setMode] = useState('x');
@@ -86,6 +103,7 @@ export default function Module06LaboLecture() {
               parse={parseDec}
               display={formatDec(MAXP.y)}
               suffix="m"
+              requires={['maximum-minimum', 'echelle-graduation']}
               explain={`Le sommet de la courbe est à ${formatDec(MAXP.y)} m, atteint à ${formatDec(MAXP.x)} h.`}
               explainFor={(n) => {
                 if (Math.abs(n - MAXP.x) < 1) return 'Tu as donné l’heure du sommet. On demande l’altitude qu’il y atteint.';
@@ -102,21 +120,29 @@ export default function Module06LaboLecture() {
           subtitle: 'Passe la sonde en mode « altitude » et pose-la sur 600.',
           done: durDone,
           content: (kit) => (
-            <NumericQuestion
-              prompt="Pendant combien d’heures le drone est-il resté au-dessus de 600 m ?"
-              expected={(n) => isReadingOk(DURATION, n, 0.6)}
-              parse={parseDec}
-              display={formatDec(DURATION)}
-              suffix="h"
-              explain={`Le drone franchit 600 m à ${formatDec(ABOVE[0].from)} h et repasse en dessous à ${formatDec(ABOVE[ABOVE.length - 1].to)} h : la durée est l'ÉCART entre ces deux instants, soit ${formatDec(DURATION)} h.`}
-              explainFor={(n) => {
-                if (isReadingOk(ABOVE[0].from, n, 0.4)) return 'Tu as donné l’heure du franchissement, pas la durée. La durée est la différence entre les deux instants.';
-                if (n === 600) return 'Tu as redonné l’altitude du seuil. La question porte sur une durée, en heures.';
-                return null;
-              }}
-              solved={durDone}
-              onAnswered={(ok) => { setDurDone(true); kit.react(ok); }}
-            />
+            <KnowledgeBrick
+              id="methode-question-en-lecture"
+              variant="new"
+              lead="Le pilote parle de temps passé, pas d’altitude. Avant de poser la sonde, décide ce qui est donné et ce qui est cherché."
+            >
+              <NumericQuestion
+                prompt="Pendant combien d’heures le drone est-il resté au-dessus de 600 m ?"
+                expected={(n) => isReadingOk(DURATION, n, 0.6)}
+                parse={parseDec}
+                display={formatDec(DURATION)}
+                suffix="h"
+                requires={['methode-question-en-lecture', 'tous-les-antecedents', 'intervalle-variation']}
+                explain={`Le guide horizontal à 600 m découpe ${ABOVE.length === 1 ? 'une période' : `${ABOVE.length} périodes`} au-dessus du seuil : ${ABOVE.map((iv) => `de ${formatDec(iv.from)} h à ${formatDec(iv.to)} h`).join(' et ')}. On additionne leurs longueurs : ${formatDec(DURATION)} h en tout.`}
+                explainFor={(n) => {
+                  if (isReadingOk(ABOVE[0].from, n, 0.4)) return 'Tu as donné l’heure du franchissement, pas la durée. Une durée est l’écart entre deux instants.';
+                  if (n === 600) return 'Tu as redonné l’altitude du seuil. La question porte sur une durée, en heures.';
+                  if (isReadingOk(ABOVE[ABOVE.length - 1].to - ABOVE[0].from, n, 0.4)) return 'Tu as soustrait le tout premier instant du tout dernier — mais le drone repasse sous le seuil entre les deux. Il faut additionner les périodes séparément.';
+                  return null;
+                }}
+                solved={durDone}
+                onAnswered={(ok) => { setDurDone(true); kit.react(ok); }}
+              />
+            </KnowledgeBrick>
           ),
         },
         {
@@ -127,14 +153,15 @@ export default function Module06LaboLecture() {
             <TapQuestion
               prompt="À quels moments le drone est-il passé par 400 m ?"
               options={[
-                'Quatre fois : à 2 h, 7 h et deux autres moments',
+                `${AT_400.length} fois : à ${AT_400.map((h) => `${formatDec(h)} h`).join(', ')}`,
                 'Une seule fois, en montant',
                 'Deux fois : une en montant, une en descendant',
                 'Jamais : 400 m n’est pas une graduation',
               ]}
               correct={0}
               cols={1}
-              explain={`Le guide horizontal à 400 m coupe la courbe en ${antecedents(DRONE, 400).length} endroits : à ${antecedents(DRONE, 400).map((x) => `${formatDec(x)} h`).join(', ')}. Un profil qui monte, redescend et remonte multiplie les passages.`}
+              requires={['tous-les-antecedents', 'echelle-graduation']}
+              explain={`Le guide horizontal à 400 m coupe la courbe en ${AT_400.length} endroits : à ${AT_400.map((x) => `${formatDec(x)} h`).join(', ')}. Un profil qui monte, redescend et remonte multiplie les passages — encore faut-il balayer tout le repère.`}
               explainWrong="Place la sonde en mode « altitude » sur 400 m et compte les points qui s’allument."
               solved={whenDone}
               onAnswered={() => setWhenDone(true)}
@@ -156,6 +183,7 @@ export default function Module06LaboLecture() {
               ]}
               correct={0}
               cols={1}
+              requires={['methode-question-en-lecture', 'intervalle-variation', 'mem-valeur-ou-moment']}
               explain="Une question de durée se lit toujours sur l’axe horizontal : on additionne les longueurs des intervalles où la courbe monte, puis celles où elle descend. Les altitudes ne renseignent que sur la hauteur, jamais sur le temps."
               explainWrong="Les altitudes se lisent verticalement, les durées horizontalement. La question porte sur du temps."
               solved={interpDone}
@@ -164,13 +192,12 @@ export default function Module06LaboLecture() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Répondre à un problème graphique, c’est d’abord décider <strong>sur quel axe</strong>{' '}
-          la réponse se lit : une altitude verticalement, un instant ou une durée
-          horizontalement.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Ta carte est complète : dix épreuves de la tour de contrôle
+          t’attendent, et toutes se règlent avec ce que tu viens d’y ranger.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

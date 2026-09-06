@@ -1,6 +1,7 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import GraphProbe from '../components/GraphProbe';
@@ -26,6 +27,14 @@ import { formatDec } from '@smarter-academy/core';
  *
  * Couverture des Learning Points : P1 (e1), P3 (e1), P2 (e2, e3), P4 (e4, e5),
  * P5 (e6), P6 (e7), P7 (e7), P8 (e8), P9 (e9), P10 (e10).
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le test final CONSOLIDE : il n'introduit ni concept, ni mot, ni notation.
+ *   `requires` déclare, épreuve par épreuve, ce que chacune exige — et tout y
+ *   est établi par une brique des modules 1 à 6, ou déclaré en
+ *   `priorKnowledge`. La synthèse garde ses visuels et ses pièges, mais ne
+ *   recopie plus aucune définition : la carte complète est rendue par
+ *   <KnowledgeSnapshot variant="complete" complete />, source unique.
  */
 
 const HITS = crossings(BALLOON, BALLOON_2);
@@ -53,6 +62,7 @@ const EPREUVES = [
     id: 'lg-e1',
     skill: 'lire',
     title: 'Épreuve 1',
+    requires: ['point-de-la-courbe', 'coordonnees', 'abscisse', 'ordonnee'],
     prompt: 'Un point de la courbe a pour coordonnées (5 ; 400). Que signifie-t-il ?',
     options: [
       'À 5 h, le ballon était à 400 m',
@@ -69,6 +79,7 @@ const EPREUVES = [
     id: 'lg-e2',
     skill: 'antecedent',
     title: 'Épreuve 2',
+    requires: ['tous-les-antecedents', 'mem-un-sens-pas-lautre'],
     prompt: 'Sur un vol qui monte, redescend puis remonte, combien de fois une altitude intermédiaire peut-elle être atteinte ?',
     options: [
       'Plusieurs fois : autant que la courbe croise ce niveau',
@@ -85,6 +96,7 @@ const EPREUVES = [
     id: 'lg-e3',
     skill: 'antecedent',
     title: 'Épreuve 3',
+    requires: ['tous-les-antecedents', 'mem-un-sens-pas-lautre', 'maximum-minimum'],
     prompt: 'Le sommet du vol est à 600 m. Combien d’antécédents l’altitude 800 m a-t-elle ?',
     options: ['Aucun', 'Un', 'Deux', 'Impossible à savoir'],
     cols: 2,
@@ -96,6 +108,7 @@ const EPREUVES = [
     id: 'lg-e4',
     skill: 'echelle',
     title: 'Épreuve 4',
+    requires: ['echelle-graduation'],
     prompt: 'Un carreau vertical vaut 100 m. La courbe est à quatre carreaux de hauteur. Quelle altitude ?',
     options: ['400 m', '4 m', '104 m', '40 m'],
     cols: 2,
@@ -107,6 +120,7 @@ const EPREUVES = [
     id: 'lg-e5',
     skill: 'echelle',
     title: 'Épreuve 5',
+    requires: ['lecture-entre-graduations', 'echelle-graduation'],
     prompt: 'À 1 h le ballon est à 200 m, à 2 h il est à 400 m. Que vaut son altitude à 1 h 30 ?',
     options: ['300 m', '200 m', '400 m', 'Impossible à lire'],
     cols: 2,
@@ -118,6 +132,7 @@ const EPREUVES = [
     id: 'lg-e6',
     skill: 'variations',
     title: 'Épreuve 6',
+    requires: ['maximum-minimum', 'mem-valeur-ou-moment'],
     prompt: 'Le sommet du vol est atteint à 3 h, à 600 m. Quel est le MAXIMUM de la fonction ?',
     options: ['600 m', '3 h', '3', 'De 3 h à 4 h'],
     cols: 2,
@@ -129,6 +144,7 @@ const EPREUVES = [
     id: 'lg-e7',
     skill: 'variations',
     title: 'Épreuve 7',
+    requires: ['intervalle-variation', 'mem-valeur-ou-moment'],
     prompt: 'Comment exprime-t-on une période pendant laquelle le ballon monte ?',
     options: [
       'Par un intervalle d’heures, par exemple de 0 h à 3 h',
@@ -145,6 +161,7 @@ const EPREUVES = [
     id: 'lg-e8',
     skill: 'croisement',
     title: 'Épreuve 8',
+    requires: ['point-intersection', 'point-de-la-courbe'],
     prompt: 'Deux courbes se coupent au point (2 ; 400). À quelle heure les deux ballons sont-ils à la même altitude ?',
     options: ['À 2 h', 'À 400 h', 'À 402 h', 'On ne peut pas le savoir'],
     cols: 2,
@@ -156,6 +173,7 @@ const EPREUVES = [
     id: 'lg-e9',
     skill: 'croisement',
     title: 'Épreuve 9',
+    requires: ['point-intersection', 'resolution-graphique'],
     prompt: 'Avant leur croisement, la courbe B est au-dessus de A. Que peut-on dire après le croisement ?',
     options: [
       'A passe au-dessus de B',
@@ -172,6 +190,7 @@ const EPREUVES = [
     id: 'lg-e10',
     skill: 'probleme',
     title: 'Épreuve 10',
+    requires: ['methode-question-en-lecture', 'mem-valeur-ou-moment'],
     prompt: 'Un drone franchit 600 m à 3 h et repasse en dessous à 5 h. Combien de temps est-il resté au-dessus ?',
     options: ['2 h', '3 h', '5 h', '600 m'],
     cols: 2,
@@ -250,6 +269,9 @@ function Synthese() {
         Une courbe répond à toutes ces questions sans qu’aucune formule n’intervienne. Il
         suffit de savoir sur quel axe chercher — et de lire l’échelle avant de conclure.
       </Feedback>
+
+      {/* Les connaissances elles-mêmes : la carte complète, source unique. */}
+      <KnowledgeSnapshot variant="complete" complete />
     </div>
   );
 }

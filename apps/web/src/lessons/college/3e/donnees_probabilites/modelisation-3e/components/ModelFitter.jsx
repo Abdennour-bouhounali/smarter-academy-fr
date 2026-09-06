@@ -28,10 +28,12 @@ import { formatDec, evaluate, residual, verdicts, formatModel, planeFor, proport
  * séparées) ; lectures dans le DOM.
  */
 export const FAMILIES = [
-  { id: 'proportional', label: 'y = k × x' },
-  { id: 'affine', label: 'y = a × x + b' },
-  { id: 'square', label: 'y = c × x²' },
-  { id: 'none', label: 'aucun modèle simple' },
+  // Les trois familles portent le nom que la brique « familles-modeles » (M3)
+  // leur a donné, à côté de leur forme : la chip relie le geste au mot.
+  { id: 'proportional', label: 'y = k × x', name: 'proportionnel' },
+  { id: 'affine', label: 'y = a × x + b', name: 'affine' },
+  { id: 'square', label: 'y = c × x²', name: 'en carré' },
+  { id: 'none', label: 'aucun', name: 'aucune ne convient' },
 ];
 
 export function buildModel(family, params) {
@@ -72,11 +74,12 @@ export default function ModelFitter({
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="group" aria-label="Famille de modèle">
         {FAMILIES.map((f) => (
           <button key={f.id} type="button" disabled={disabled} onClick={() => onFamily?.(f.id)} aria-pressed={family === f.id}
-            aria-label={`Famille : ${f.label}`}
+            aria-label={`Famille : ${f.name} (${f.label})`}
             className={`min-h-[44px] px-2 rounded-xl border-2 text-xs sm:text-sm font-mono font-bold transition focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-60
               ${family === f.id ? 'bg-emerald-600 border-emerald-600 text-white' : 'bg-white border-slate-300 text-slate-700 hover:border-emerald-500'}`}
             style={{ touchAction: 'manipulation' }}>
-            {f.label}
+            <span className="block">{f.label}</span>
+            <span className="block text-[0.7rem] font-normal opacity-70">{f.name}</span>
           </button>
         ))}
       </div>
