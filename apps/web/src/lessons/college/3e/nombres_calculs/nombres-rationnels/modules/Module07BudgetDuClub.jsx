@@ -71,6 +71,12 @@ export default function Module07BudgetDuClub() {
     { id: 'capteurs', label: 'capteurs', tone: 'amber', parts: 0 },
   ]);
   const composed = seg[0].parts === 4 && seg[1].parts === 3;
+  // Étape 4 : au lieu d'annoncer « un douzième vaut 60 € », l'élève l'ÉCHANTILLONNE
+  // sur la barre — la proportionnalité se constate avant de se calculer.
+  const [probe, setProbe] = useState([{ id: 'part', label: 'part sondée', tone: 'violet', parts: 0 }]);
+  const probed = probe[0].parts;
+  const [seenProbes, setSeenProbes] = useState([]);
+  const sampled = seenProbes.length >= 3;
 
   return (
     <ContentModule
@@ -216,9 +222,38 @@ export default function Module07BudgetDuClub() {
           num: 4,
           title: 'De la part aux euros',
           subtitle: `Le budget total est de ${formatDec(BUDGET)} €.`,
-          done: q3,
+          done: sampled && q3,
           content: (
             <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Avant de calculer, sonde la barre : tire la frontière sur 1, puis 2, puis 5
+                douzièmes, et lis le montant à chaque fois.
+              </p>
+              <BudgetBar
+                den={12}
+                segments={probe}
+                onResize={(id, parts) => {
+                  setProbe([{ ...probe[0], parts }]);
+                  if (parts > 0) setSeenProbes((v) => (v.includes(parts) ? v : [...v, parts]));
+                }}
+                total={BUDGET}
+                unknownLabel="…"
+              />
+              <Feedback tone={sampled ? 'ok' : 'info'}>
+                {sampled ? (
+                  <>
+                    Un douzième vaut <strong>{formatDec(BUDGET / 12)} €</strong>, et chaque douzième
+                    de plus ajoute la même chose : {seenProbes.slice(0, 3).sort((a, b) => a - b)
+                      .map((k) => `${k} → ${formatDec((k / 12) * BUDGET)} €`).join(', ')}. C’est de la
+                    proportionnalité — tu peux maintenant prévoir n’importe quelle part.
+                  </>
+                ) : (
+                  <>
+                    Sonde à trois endroits différents pour voir la régularité ({seenProbes.length}/3).
+                    Actuellement : {probed}/12 → {formatDec((probed / 12) * BUDGET)} €.
+                  </>
+                )}
+              </Feedback>
               <NumericQuestion
                 prompt={
                   <>
