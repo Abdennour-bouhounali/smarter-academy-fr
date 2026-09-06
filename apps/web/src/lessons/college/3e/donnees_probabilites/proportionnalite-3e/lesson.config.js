@@ -37,6 +37,21 @@ export const LESSON_BASE_PATH = '/courses/college/3e/donnees_probabilites/propor
 
 export const LESSON_CONFIG = {
   id: 'proportionnalite-3e',
+  // Formalisation continue par la carte des connaissances.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
+  priorKnowledge: ['quotient', 'pourcentage', 'tableau-de-valeurs'],
+  knowledgeAudit: {
+    ignore: [
+      // Le mot apparaît dans la correction de la question qui le fait
+      // DÉCOUVRIR, et la brique qui l'établit suit immédiatement, dans la même
+      // étape : « manipuler puis nommer », pas une exigence prématurée.
+      { term: 'proportionnalite', reason: 'nommé juste après la découverte, par la brique de l’étape' },
+      // Idem : l'aire est le sujet de la prédiction, et le constat k² est posé
+      // par la brique dès que l'élève a compté les copies.
+      { term: 'aire', reason: 'prédiction puis vérification ; la brique suit dans la même étape' },
+    ],
+  },
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Proportionnalité',
   description:

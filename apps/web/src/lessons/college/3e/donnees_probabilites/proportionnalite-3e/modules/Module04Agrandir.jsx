@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ScaleBox from '../components/ScaleBox';
 import RatioTable from '../components/RatioTable';
@@ -87,6 +88,7 @@ export default function Module04Agrandir() {
                 cols={2}
                 explain="Vérifie-le : règle k sur 2 et compte les copies de la maquette dans la grande banderole."
                 explainWrong="Ne me crois pas sur parole : règle k sur 2 et compte les copies de la maquette qui tiennent dans la grande banderole."
+                requires={['situation-proportionnelle']}
                 solved={predDone}
                 onAnswered={() => setPredDone(true)}
               />
@@ -108,6 +110,12 @@ export default function Module04Agrandir() {
           done: areaDone,
           content: (
             <div className="space-y-3">
+              <KnowledgeBrick
+                id="agrandissement-reduction"
+                variant="new"
+                compact
+                lead="Avant de calculer : ce que « agrandir de rapport k » veut dire exactement."
+              />
               <ScaleBox base={BASE} k={k2} onKChange={setK2} caption="Explore" />
               <NumericQuestion
                 prompt="Pour k = 3, quelle est l’aire de la banderole agrandie ? (maquette : 4 cm × 2 cm)"
@@ -121,6 +129,7 @@ export default function Module04Agrandir() {
                   if (n === 18) return '18 cm² correspond à k = 1,5 (aire × 2,25). Pour k = 3 : 12 × 6 = 72 cm².';
                   return null;
                 }}
+                requires={['agrandissement-reduction']}
                 solved={areaDone}
                 onAnswered={() => setAreaDone(true)}
               />
@@ -133,6 +142,7 @@ export default function Module04Agrandir() {
           subtitle: 'La boîte des décorations : 4 cm × 2 cm × 3 cm, agrandie ×2.',
           done: volDone,
           content: (
+            <div className="space-y-3">
             <TapQuestion
               prompt="On multiplie les trois dimensions de la boîte par 2. Son volume est multiplié par…"
               above={(revealed) => revealed && <ScaleBox base={BOX} k={2} onKChange={() => {}} frozen showVolume caption="La boîte agrandie ×2 (vue de face)" />}
@@ -140,9 +150,19 @@ export default function Module04Agrandir() {
               correct={0}
               cols={2}
               explain="Volume de base : 4 × 2 × 3 = 24 cm³ ; agrandie : 8 × 4 × 6 = 192 cm³ = 24 × 8. Trois dimensions multipliées par 2, c’est × 2 × 2 × 2 = × k³. Longueurs × k, aires × k², volumes × k³."
+              requires={['agrandissement-reduction']}
               solved={volDone}
               onAnswered={() => setVolDone(true)}
             />
+            {volDone && (
+              <KnowledgeBrick
+                id="mem-aires-volumes"
+                variant="new"
+                compact
+                lead="Aires et volumes ne suivent pas le rapport des longueurs : à retenir tel quel."
+              />
+            )}
+            </div>
           ),
         },
         {
@@ -161,12 +181,13 @@ export default function Module04Agrandir() {
                 expected={big[2]}
                 parse={parseDec}
                 display={`${formatDec(big[2])} cm`}
-                explain={`Le rapport d’agrandissement se lit sur le petit côté : 7,5 ÷ 3 = ${formatDec(ratioOfLengths(TRI[0], big[0]))}. Tous les côtés sont multipliés par ${formatDec(K_TRI)} : 4 → ${formatDec(big[1])}, 5 → ${formatDec(big[2])} cm. Les longueurs des deux triangles sont proportionnelles — c’est exactement ce que dit le théorème de Thalès.`}
+                explain={`Le rapport d’agrandissement se lit sur le petit côté : 7,5 ÷ 3 = ${formatDec(ratioOfLengths(TRI[0], big[0]))}. Tous les côtés sont multipliés par ${formatDec(K_TRI)} : 4 → ${formatDec(big[1])}, 5 → ${formatDec(big[2])} cm. Les longueurs des deux triangles sont proportionnelles : c’est la définition même d’un agrandissement.`}
                 explainFor={(n) => {
                   if (n === 9.5) return '5 + 4,5 ajoute l’écart du petit côté (7,5 − 3). Mais on MULTIPLIE : 5 × 2,5 = 12,5 cm.';
                   if (n === 10) return '10 cm, c’est le côté de 4 agrandi. Le plus grand côté : 5 × 2,5 = 12,5 cm.';
                   return null;
                 }}
+                requires={['agrandissement-reduction']}
                 solved={thalesDone}
                 onAnswered={() => setThalesDone(true)}
               />
@@ -185,19 +206,19 @@ export default function Module04Agrandir() {
               correct={0}
               cols={1}
               explain="Vérifier, c’est comparer les RAPPORTS : la largeur a été multipliée par 4, la hauteur doit l’être aussi : 15 × 4 = 60 cm. Avec 45 cm, la photo serait déformée. « Plus grand » ne suffit pas ; « même rapport » est le test."
+              requires={['mem-aires-volumes', 'agrandissement-reduction']}
               solved={checkDone}
               onAnswered={() => setCheckDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> Agrandissement ou réduction de rapport k : longueurs × k, aires × k², volumes × k³.
-          Les longueurs d’une figure et de son agrandie sont proportionnelles (Thalès), et un résultat se vérifie
-          en comparant les rapports. Prochaine étape : les pourcentages, qui sont eux aussi des multiplications.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> Longueurs, aires et volumes ne suivent pas le même rapport.
+          Passons aux pourcentages.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

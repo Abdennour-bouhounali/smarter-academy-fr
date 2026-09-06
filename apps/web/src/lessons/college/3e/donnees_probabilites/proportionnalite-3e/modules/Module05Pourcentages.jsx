@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PercentBar from '../components/PercentBar';
@@ -80,8 +81,16 @@ export default function Module05Pourcentages() {
                   cols={2}
                   explain="Augmenter de 20 %, c’est ajouter 20/100 du prix : 50 + 50 × 0,2 = 50 × (1 + 0,2) = 50 × 1,2 = 60 €. Le coefficient multiplicateur d’une hausse de t % est 1 + t/100."
                   explainWrong="50 × 1,2 = 60 : l’augmentation de 20 % est cachée dans une seule multiplication, par 1 + 20/100 = 1,2."
+                  requires={['pourcentage', 'quotient']}
                   solved={multDone}
                   onAnswered={() => setMultDone(true)}
+                />
+              )}
+              {multDone && (
+                <KnowledgeBrick
+                  id="coefficient-multiplicateur"
+                  variant="new"
+                  lead="Cette multiplication unique qui remplace « ajouter 20 % » a un nom, et une formule."
                 />
               )}
             </div>
@@ -109,6 +118,7 @@ export default function Module05Pourcentages() {
                     if (n === 100) return '80 × 1,25 = 100 est une HAUSSE de 25 %. Pour une baisse : × 0,75 = 60 €.';
                     return null;
                   }}
+                  requires={['coefficient-multiplicateur']}
                   solved={downDone}
                   onAnswered={() => setDownDone(true)}
                 />
@@ -130,6 +140,7 @@ export default function Module05Pourcentages() {
                 cols={1}
                 explain="Enchaîne les deux taux ci-dessous pour le voir : les −20 % s’appliquent à 60 €, pas à 50 €."
                 explainWrong="Enchaîne les deux taux ci-dessous : les −20 % portent sur 60 €, pas sur 50 €."
+                requires={['coefficient-multiplicateur']}
                 solved={rtPred}
                 onAnswered={() => setRtPred(true)}
               />
@@ -171,6 +182,7 @@ export default function Module05Pourcentages() {
                     {allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Le bon outil dépend des nombres — et un résultat se vérifie toujours avant d’être annoncé.
                   </Feedback>
                 )}
+                requires={['coefficient-multiplicateur', 'pourcentage']}
                 solved={methodDone}
                 onAnswered={() => setMethodDone(true)}
               />
@@ -178,12 +190,12 @@ export default function Module05Pourcentages() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Tu as maintenant toute la boîte à outils. Le module suivant l’emmène en sciences : vitesse, masse volumique,
-          échelle — avec un tableau, un graphique, et un résultat à vérifier.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Tu as toute la boîte à outils. Le module suivant l’emmène
+          en sciences.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

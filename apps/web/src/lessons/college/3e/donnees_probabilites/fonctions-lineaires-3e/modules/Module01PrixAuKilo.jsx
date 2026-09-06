@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -31,7 +32,19 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  *   part fixe reste proportionnelle.
  * Feedback: la lecture « x kg → y € » ; explainFor cible l'addition ; la
  *   colonne des rapports montre le 4 partout.
- * Formalization: f(x) = 4x est posé À LA FIN, comme un résumé.
+ * Formalization: f(x) = 4x est posé À L'ÉTAPE 4, par une brique, dès que la
+ *   colonne des rapports a montré le 4 partout — puis essayé immédiatement.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Ce module posait « fonction linéaire » dans un `explain` d'étape 4 et
+ *   f(x) = ax dans son `footer` — c'est-à-dire APRÈS les avoir exigés, et pour
+ *   le footer après TOUTES les étapes. L'ordre est maintenant :
+ *     étape 3  rappel de la notation f(x) (acquis de la leçon « Fonctions »)
+ *     étape 4  la colonne des rapports montre le 4 → briques `fonction-lineaire`
+ *              et `lineaire-est-proportionnalite` → essai immédiat f(3)
+ *     étape 6  la barquette casse tout → brique `mem-zero-donne-zero`
+ *   Le mot « linéaire » n'est prononcé nulle part avant l'étape 4, et la
+ *   fonction affine — objet d'une autre leçon — n'est plus nommée du tout.
  * Scaffolding: masse libre → prédiction → prix hors balance → rapport →
  *   graphique → contre-exemple.
  * Transfer: le module 2 fait varier le coefficient ; le module 3 fait pivoter
@@ -51,6 +64,7 @@ export default function Module01PrixAuKilo() {
   const [doubleDone, setDoubleDone] = useState(false);
   const [outsideDone, setOutsideDone] = useState(false);
   const [ratioDone, setRatioDone] = useState(false);
+  const [nameDone, setNameDone] = useState(false);
   const [originDone, setOriginDone] = useState(false);
   const [fixed, setFixed] = useState(0);
   const [notPropDone, setNotPropDone] = useState(false);
@@ -167,6 +181,7 @@ export default function Module01PrixAuKilo() {
               options={['Il double : 8 €', 'Il coûte 5 € : un kilo de plus, un euro de plus', 'Il reste 4 €', 'Impossible à savoir sans peser']}
               correct={0}
               cols={1}
+              requires={['proportionnalite']}
               above={(revealed) => revealed && (
                 <div className="grid grid-cols-2 gap-2">{receipt(1)}{receipt(2)}</div>
               )}
@@ -180,31 +195,40 @@ export default function Module01PrixAuKilo() {
         {
           num: 3,
           title: 'Sans peser',
-          subtitle: `La balance s’arrête à ${X_MAX} kg. Et pour ${OUTSIDE_X} kg ?`,
+          subtitle: `Appelons p la caisse : p(x) est le prix de x kg. La balance s’arrête à ${X_MAX} kg — et pour ${OUTSIDE_X} kg ?`,
           done: outsideDone,
           content: (kit) => (
-            <NumericQuestion
-              prompt={`Combien coûtent ${OUTSIDE_X} kg de cerises ?`}
-              expected={image(A, OUTSIDE_X)}
-              parse={parseDec}
-              display={formatDec(image(A, OUTSIDE_X))}
-              suffix="€"
-              explain={`${OUTSIDE_X} × 4 = ${formatDec(image(A, OUTSIDE_X))} €. Le prix s’obtient en multipliant la masse par 4 — même hors de la balance.`}
-              explainFor={(n) => {
-                if (n === OUTSIDE_X + A) return 'Tu as ajouté 4 au lieu de multiplier par 4 : ici c’est bien 7 × 4.';
-                if (n === image(A, X_MAX)) return `Tu as pris ${X_MAX} kg, la limite de la balance. On demande ${OUTSIDE_X} kg.`;
-                return null;
-              }}
-              solved={outsideDone}
-              onAnswered={(ok) => { setOutsideDone(true); }}
-            />
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="notation-fx"
+                variant="rappel"
+                compact
+                lead="La balance est une machine à nombres comme celles de la leçon précédente : on peut lui donner un nom et écrire ses résultats en une ligne."
+              />
+              <NumericQuestion
+                prompt={<>Combien coûtent {OUTSIDE_X} kg de cerises ? Autrement dit, que vaut <MathText>{'$p(7)$'}</MathText> ?</>}
+                expected={image(A, OUTSIDE_X)}
+                parse={parseDec}
+                display={formatDec(image(A, OUTSIDE_X))}
+                suffix="€"
+                requires={['notation-fx', 'image']}
+                explain={`${OUTSIDE_X} × 4 = ${formatDec(image(A, OUTSIDE_X))} €. Le prix s’obtient en multipliant la masse par 4 — même hors de la balance.`}
+                explainFor={(n) => {
+                  if (n === OUTSIDE_X + A) return 'Tu as ajouté 4 au lieu de multiplier par 4 : ici c’est bien 7 × 4.';
+                  if (n === image(A, X_MAX)) return `Tu as pris ${X_MAX} kg, la limite de la balance. On demande ${OUTSIDE_X} kg.`;
+                  return null;
+                }}
+                solved={outsideDone}
+                onAnswered={(ok) => { setOutsideDone(true); kit.react(ok); }}
+              />
+            </div>
           ),
         },
         {
           num: 4,
           title: 'Le nombre qui ne change pas',
-          done: ratioDone,
-          content: (
+          done: ratioDone && nameDone,
+          content: (kit) => (
             <div className="space-y-3">
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-2 overflow-x-auto">
                 <table className="w-full text-sm">
@@ -242,11 +266,44 @@ export default function Module01PrixAuKilo() {
                 ]}
                 correct={0}
                 cols={1}
-                explain="4 est le prix d’UN kilo. C’est le coefficient de proportionnalité que tu utilises depuis la 6e — et, écrit autrement, f(x) = 4x est une fonction linéaire."
+                requires={['proportionnalite']}
+                explain="4 est le prix d’UN kilo : c’est le coefficient de proportionnalité que tu utilises depuis la 6e. Il ne change jamais, quelle que soit la masse."
                 explainWrong="Le prix total change à chaque pesée ; le 4, lui, ne change jamais. C’est le prix par kilo."
                 solved={ratioDone}
                 onAnswered={() => setRatioDone(true)}
               />
+
+              {ratioDone && (
+                <>
+                  <KnowledgeBrick
+                    id="fonction-lineaire"
+                    variant="new"
+                    lead="Un nombre fixe qui multiplie, et rien d’autre : cette machine-là porte un nom."
+                  />
+                  <KnowledgeBrick
+                    id="lineaire-est-proportionnalite"
+                    variant="new"
+                    lead="Et ce nom ne désigne pas une mathématique neuve — regarde la ligne « prix ÷ masse »."
+                  >
+                    <NumericQuestion
+                      prompt={<>La caisse est donc la fonction linéaire <MathText>{'$p(x) = 4x$'}</MathText>. Que vaut <MathText>{'$p(3)$'}</MathText> ?</>}
+                      expected={image(A, 3)}
+                      parse={parseDec}
+                      display={formatDec(image(A, 3))}
+                      suffix="€"
+                      requires={['fonction-lineaire', 'notation-fx', 'image']}
+                      explain="p(3) = 4 × 3 = 12 €. Dans f(x) = ax, on remplace x par le nombre voulu et on multiplie par a."
+                      explainFor={(n) => {
+                        if (n === 7) return 'Tu as ajouté 4 et 3. Une fonction linéaire MULTIPLIE : 4 × 3.';
+                        if (n === 43) return 'Tu as accolé les deux chiffres. 4x veut dire « 4 fois x ».';
+                        return null;
+                      }}
+                      solved={nameDone}
+                      onAnswered={(ok) => { setNameDone(true); kit.react(ok); }}
+                    />
+                  </KnowledgeBrick>
+                </>
+              )}
             </div>
           ),
         },
@@ -267,6 +324,7 @@ export default function Module01PrixAuKilo() {
               ]}
               correct={0}
               cols={1}
+              requires={['fonction-lineaire', 'coordonnees', 'origine-repere']}
               explain="Aucune cerise, aucun euro : le point (0 ; 0) appartient à la droite. Tous tes points sont alignés avec l’origine — c’est ce à quoi ressemble une situation proportionnelle dans un repère."
               explainWrong="Que paie-t-on pour 0 kg ? Rien. Le point (0 ; 0) est donc sur la droite, qui passe par O."
               solved={originDone}
@@ -301,7 +359,7 @@ export default function Module01PrixAuKilo() {
                 )}
               </Feedback>
               <TapQuestion
-                prompt="Avec 1 € de barquette en plus, la situation reste-t-elle proportionnelle ?"
+                prompt="Avec 1 € de barquette en plus, est-ce encore une fonction linéaire ?"
                 options={[
                   'Non : pour 0 kg on paie déjà 1 €',
                   'Oui : le prix augmente toujours régulièrement',
@@ -309,23 +367,30 @@ export default function Module01PrixAuKilo() {
                 ]}
                 correct={0}
                 cols={1}
-                explain="Dans une situation proportionnelle, 0 donne toujours 0 et la droite passe par O. Ici on paie 1 € sans rien acheter : ce n’est plus une fonction linéaire (c’est une fonction affine, l’objet de la leçon suivante)."
+                requires={['fonction-lineaire', 'lineaire-est-proportionnalite']}
+                explain="Dans une situation proportionnelle, 0 donne toujours 0 et la droite passe par O. Ici on paie 1 € sans rien acheter : la multiplication ne suffit plus, il faut AJOUTER 1. Ce n’est donc plus une fonction linéaire."
                 explainWrong="Vérifie les rapports : 5 ÷ 1 = 5, mais 9 ÷ 2 = 4,5. Ils ne sont pas égaux, donc pas de proportionnalité — et la droite rate O."
                 solved={notPropDone}
                 onAnswered={() => setNotPropDone(true)}
               />
+              {notPropDone && (
+                <KnowledgeBrick
+                  id="mem-zero-donne-zero"
+                  variant="new"
+                  compact
+                  lead="Tu viens de trouver le test le plus rapide qui existe. Retiens-le tel quel."
+                />
+              )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> Une situation de proportionnalité s’écrit{' '}
-          <MathText>{'$f(x) = ax$'}</MathText> : on appelle cela une{' '}
-          <strong>fonction linéaire</strong>, et <MathText>{'$a$'}</MathText> est le
-          coefficient de proportionnalité. Sa droite passe toujours par O.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Ici le prix au kilo valait 4. Au module suivant, trois
+          marchands changent ce nombre — et lui seul.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

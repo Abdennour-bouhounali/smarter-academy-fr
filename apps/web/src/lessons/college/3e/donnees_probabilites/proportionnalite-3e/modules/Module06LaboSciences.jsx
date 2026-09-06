@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RatioTable from '../components/RatioTable';
@@ -71,6 +72,11 @@ export default function Module06LaboSciences() {
           done: vDone && dDone && tDone,
           content: (
             <div className="space-y-4">
+              <KnowledgeBrick
+                id="grandeurs-quotient"
+                variant="new"
+                lead="Trois grandeurs des sciences ne sont rien d’autre que des coefficients de proportionnalité."
+              />
               <RatioTable xLabel="temps" xUnit="h" yLabel="distance" yUnit="km" columns={vitRows} ratios="all" caption="Le train régional" />
               <CoordPlane range={RANGE_V} unit={56} unitY={200 / RANGE_V.yMax} xStep={1} yStep={90}
                 functions={[{ id: 'v', a: 90, b: 0, tone: 'rose', label: 'train' }]}
@@ -81,7 +87,8 @@ export default function Module06LaboSciences() {
                 options={['90 : la vitesse, en km par heure', '315 : la distance totale', '3,5 : le temps du trajet', '0,011 : les heures par km']}
                 correct={0}
                 cols={1}
-                explain="distance ÷ temps = 90 partout : c’est la VITESSE, 90 km/h — la distance parcourue en une heure. Sur le graphique, c’est la pente de la droite : à chaque heure, 90 km de plus."
+                explain="distance ÷ temps = 90 partout : c’est la VITESSE, 90 km/h — la distance parcourue en une heure. Sur le graphique, c’est l’inclinaison de la droite : à chaque heure, 90 km de plus."
+                requires={['grandeurs-quotient', 'coefficient-proportionnalite']}
                 solved={vDone}
                 onAnswered={() => setVDone(true)}
               />
@@ -94,6 +101,7 @@ export default function Module06LaboSciences() {
                   display={`${formatDec(distance(90, 2.5))} km`}
                   explain="90 × 2,5 = 225 km. Sur le graphique : la droite passe par (2,5 ; 225)."
                   explainFor={(n) => (n === 92.5 ? '90 + 2,5 additionne la vitesse et le temps. Distance = vitesse × temps = 225 km.' : null)}
+                  requires={['grandeurs-quotient']}
                   solved={dDone}
                   onAnswered={() => setDDone(true)}
                 />
@@ -111,6 +119,7 @@ export default function Module06LaboSciences() {
                     if (n === 4.05 || n === 45) return 'Attention à la virgule : 405 ÷ 90 = 4,5 h.';
                     return null;
                   }}
+                  requires={['grandeurs-quotient']}
                   solved={tDone}
                   onAnswered={() => setTDone(true)}
                 />
@@ -133,6 +142,7 @@ export default function Module06LaboSciences() {
                 display={`${formatDec(mass(7.8, 25))} g`}
                 explain="masse = masse volumique × volume = 7,8 × 25 = 195 g. La masse volumique est un coefficient de proportionnalité entre volume et masse."
                 explainFor={(n) => (n === 32.8 ? '7,8 + 25 additionne. La masse volumique se MULTIPLIE par le volume : 195 g.' : null)}
+                requires={['grandeurs-quotient', 'coefficient-proportionnalite']}
                 solved={mDone}
                 onAnswered={() => setMDone(true)}
               />
@@ -147,7 +157,8 @@ export default function Module06LaboSciences() {
                   options={['La droite A, la plus raide : à volume égal, plus de masse', 'La droite B, la plus basse', 'Les deux : elles passent par l’origine', 'Impossible sans le tableau']}
                   correct={0}
                   cols={1}
-                  explain="Les deux passent par O (proportionnalité), mais la pente lit le coefficient : A monte de 7,8 g par cm³, B de 2,7. Le fer, plus dense, est la droite la plus raide — le graphique dit le coefficient sans un seul calcul."
+                  explain="Les deux passent par O (proportionnalité), mais leur inclinaison lit le coefficient : A monte de 7,8 g par cm³, B de 2,7. Le fer, plus dense, est la droite la plus raide — le graphique dit le coefficient sans un seul calcul."
+                  requires={['grandeurs-quotient', 'droite-par-origine']}
                   solved={gDone}
                   onAnswered={() => setGDone(true)}
                 />
@@ -174,6 +185,7 @@ export default function Module06LaboSciences() {
                 if (n === 0.175) return 'Un facteur 10 manque : 7 × 25 000 = 175 000 cm = 1,75 km.';
                 return null;
               }}
+              requires={['grandeurs-quotient', 'coefficient-proportionnalite']}
               solved={mapDone}
               onAnswered={() => setMapDone(true)}
             />
@@ -192,6 +204,7 @@ export default function Module06LaboSciences() {
                 correct={0}
                 cols={1}
                 explain={`Un ordre de grandeur suffit : 3 h à 90 km/h font moins de 300 km. 2 700 km est ${magnitudeOk(2700, 270) ? 'plausible' : 'dix fois trop grand'} — une virgule ou un zéro a glissé. Vérifier, c’est d’abord se demander si le nombre est raisonnable.`}
+                requires={['grandeurs-quotient']}
                 solved={absurdDone}
                 onAnswered={() => setAbsurdDone(true)}
               />
@@ -210,6 +223,7 @@ export default function Module06LaboSciences() {
                       (une baisse baisse) et par l’ordre de grandeur.
                     </Feedback>
                   )}
+                  requires={['grandeurs-quotient']}
                   solved={plausDone}
                   onAnswered={() => setPlausDone(true)}
                 />
@@ -218,12 +232,11 @@ export default function Module06LaboSciences() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Vitesse, masse volumique, échelle : trois coefficients de proportionnalité, trois droites par l’origine.
-          Tableau, graphique et situation racontent le même nombre. Place à la grande tablée.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          <strong>La suite.</strong> Trois grandeurs, un seul mécanisme. Place à la grande tablée.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -9,7 +9,7 @@
 //
 // Run: node apps/web/e2e/lesson-kit/3e-modelisation-carte.mjs   (vite on :5261, depuis apps/web/)
 import { launch, open, check, summary, settle } from './_2nde-helpers.mjs';
-const BASE = process.env.KIT_BASE || 'http://localhost:5261';
+const BASE = process.env.KIT_BASE || 'http://localhost:5251';
 const LESSON = `${BASE}/courses/college/3e/donnees_probabilites/modelisation-3e`;
 const KEY = 'u_anon_smarter_lesson_modelisation-3e';
 const o = (b, u, seed, x = {}) => open(b, u, { key: KEY, completedModules: seed, ...x });

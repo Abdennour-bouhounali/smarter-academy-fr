@@ -18,11 +18,11 @@ const SKILLS = {
 };
 
 const QUESTIONS = [
-  { id: 'pr-d1', skill: 'fractions', points: 2, prompt: 'Que vaut 3/4 de 20 ?', options: ['15', '5', '12', '24'], cols: 2, correct: 0, explain: '20 ÷ 4 = 5, puis 5 × 3 = 15.' },
-  { id: 'pr-d2', skill: 'pourcentages', points: 2, prompt: 'Combien font 10 % de 250 ?', options: ['25', '2,5', '10', '240'], cols: 2, correct: 0, explain: '10 % de 250 = 250 ÷ 10 = 25.' },
-  { id: 'pr-d3', skill: 'relatifs', points: 2, prompt: 'Que vaut 1 − 0,25 ?', options: ['0,75', '0,25', '1,25', '0,85'], cols: 2, correct: 0, explain: '1 − 0,25 = 0,75.' },
-  { id: 'pr-d4', skill: 'tableaux', points: 2, prompt: 'Dans un tableau, la ligne « masse » indique 2 puis 6, la ligne « prix » indique 5 puis ?. Si le prix est proportionnel à la masse, que vaut ? ', options: ['15', '9', '10', '7,5'], cols: 2, correct: 0, explain: 'De 2 à 6, on multiplie par 3 ; donc 5 × 3 = 15.' },
-  { id: 'pr-d5', skill: 'fractions', points: 2, prompt: 'Que vaut 7,5 ÷ 3 ?', options: ['2,5', '2,25', '3,5', '22,5'], cols: 2, correct: 0, explain: '3 × 2,5 = 7,5, donc 7,5 ÷ 3 = 2,5.' },
+  { id: 'pr-d1', skill: 'fractions', requires: ['quotient'], points: 2, prompt: 'Que vaut 3/4 de 20 ?', options: ['15', '5', '12', '24'], cols: 2, correct: 0, explain: '20 ÷ 4 = 5, puis 5 × 3 = 15.' },
+  { id: 'pr-d2', skill: 'pourcentages', requires: ['pourcentage'], points: 2, prompt: 'Combien font 10 % de 250 ?', options: ['25', '2,5', '10', '240'], cols: 2, correct: 0, explain: '10 % de 250 = 250 ÷ 10 = 25.' },
+  { id: 'pr-d3', skill: 'relatifs', requires: ['quotient'], points: 2, prompt: 'Que vaut 1 − 0,25 ?', options: ['0,75', '0,25', '1,25', '0,85'], cols: 2, correct: 0, explain: '1 − 0,25 = 0,75.' },
+  { id: 'pr-d4', skill: 'tableaux', requires: ['tableau-de-valeurs', 'quotient'], points: 2, prompt: 'Dans un tableau, la ligne « masse » indique 2 puis 6, la ligne « prix » indique 5 puis ?. Si le prix est proportionnel à la masse, que vaut ? ', options: ['15', '9', '10', '7,5'], cols: 2, correct: 0, explain: 'De 2 à 6, on multiplie par 3 ; donc 5 × 3 = 15.' },
+  { id: 'pr-d5', skill: 'fractions', requires: ['quotient'], points: 2, prompt: 'Que vaut 7,5 ÷ 3 ?', options: ['2,5', '2,25', '3,5', '22,5'], cols: 2, correct: 0, explain: '3 × 2,5 = 7,5, donc 7,5 ÷ 3 = 2,5.' },
 ];
 
 export default function Module00Diagnostic() {

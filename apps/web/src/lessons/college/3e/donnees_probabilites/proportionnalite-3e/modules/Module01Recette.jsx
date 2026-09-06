@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RecipeLab from '../components/RecipeLab';
@@ -108,6 +109,7 @@ export default function Module01Recette() {
               above={(revealed) => revealed && <RecipeLab people={4} onPeopleChange={() => {}} disabled highlightId="farine" caption="Pour 4 personnes" />}
               explain="Deux fois plus de convives, deux fois plus de farine : 600 g. Et deux fois plus d’œufs, de lait, de sucre — tout double en même temps. C’est la marque d’une situation proportionnelle."
               explainWrong="Regarde la recette réglée sur 4 : chaque barre a exactement doublé. On ne rajoute pas une quantité fixe, on MULTIPLIE."
+              requires={['quotient']}
               solved={doubleDone}
               onAnswered={() => setDoubleDone(true)}
             />
@@ -134,6 +136,7 @@ export default function Module01Recette() {
                 if (n === 450) return '450 g, c’est pour 3 personnes. Pour 7 : 150 × 7 = 1 050 g.';
                 return null;
               }}
+              requires={['quotient']}
               solved={sevenDone}
               onAnswered={() => setSevenDone(true)}
             />
@@ -149,14 +152,30 @@ export default function Module01Recette() {
               <RatioTable xLabel="personnes" yLabel="farine" yUnit="g" columns={rows} ratios="all" horizontal={rows.length >= 2 ? { from: 0, to: rows.length - 1, factor: rows[rows.length - 1].x / rows[0].x } : null} caption="Tes couples, avec le rapport farine ÷ personnes" />
               <TapQuestion
                 prompt="Que représente ce 150 qui revient dans toutes les colonnes ?"
-                options={['La farine pour UNE personne — le nombre par lequel on multiplie', 'Le nombre de convives maximum', 'La farine pour 2 personnes', 'Le nombre de crêpes']}
+                options={['La farine pour UNE personne — le nombre par lequel on multiplie', 'Le nombre de convives les plus nombreux', 'La farine pour 2 personnes', 'Le nombre de crêpes']}
                 correct={0}
                 cols={1}
                 explain="150 g, c’est la farine d’une seule personne. Pour n personnes, on multiplie n par 150 — toujours le même nombre, quel que soit n. Ce rapport constant est la SIGNATURE d’une situation de proportionnalité."
                 explainWrong="Le total de farine change à chaque réglage ; le rapport farine ÷ personnes, lui, vaut 150 partout : c’est la farine d’UNE personne."
+                requires={['quotient']}
                 solved={ratioDone}
                 onAnswered={() => setRatioDone(true)}
               />
+              {ratioDone && (
+                <>
+                  <KnowledgeBrick
+                    id="situation-proportionnelle"
+                    variant="new"
+                    lead="Ce rapport constant que tu viens de repérer est la signature d’une situation qui a un nom."
+                  />
+                  <KnowledgeBrick
+                    id="droite-par-origine"
+                    variant="new"
+                    compact
+                    lead="Et voici comment la reconnaître d’un coup d’œil sur un graphique."
+                  />
+                </>
+              )}
             </div>
           ),
         },
@@ -181,6 +200,7 @@ export default function Module01Recette() {
               cols={1}
               explain="0 personne, 0 g : le point (0 ; 0) est sur la droite, et tous les autres avec lui, puisqu’on multiplie toujours par 150. Points alignés avec l’origine : c’est à quoi ressemble la proportionnalité dans un repère."
               explainWrong="Regarde : la droite qui joint tes points passe exactement par O, parce que 0 personne demande 0 g. C’est la signature graphique de la proportionnalité."
+              requires={['droite-par-origine', 'situation-proportionnelle']}
               solved={graphDone}
               onAnswered={() => setGraphDone(true)}
             />
@@ -201,6 +221,7 @@ export default function Module01Recette() {
                 cols={1}
                 explain="Le temps de cuisson d’UNE crêpe ne dépend pas du nombre de convives : il vaut 25 min pour 1 comme pour 12. Ce n’est pas une grandeur proportionnelle — le rapport temps ÷ personnes change à chaque réglage."
                 explainWrong="Fais varier les convives : la barre du temps de cuisson ne bouge pas. 25 ÷ 2 ≠ 25 ÷ 7 — pas de rapport constant, pas de proportionnalité."
+                requires={['situation-proportionnelle']}
                 solved={fixedDone}
                 onAnswered={() => setFixedDone(true)}
               />
@@ -211,6 +232,7 @@ export default function Module01Recette() {
                   correct={0}
                   cols={1}
                   explain="Avant de calculer, il faut nommer les grandeurs : ici « nombre de personnes » et « quantité d’ingrédient ». Le temps de cuisson n’intervient pas dans la proportionnalité — même s’il figure dans la recette."
+                  requires={['situation-proportionnelle', 'droite-par-origine']}
                   solved={gDone}
                   onAnswered={() => setGDone(true)}
                 />
@@ -219,13 +241,12 @@ export default function Module01Recette() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> Dans une situation de proportionnalité, on passe d’une grandeur à l’autre en{' '}
-          <strong>multipliant toujours par le même nombre</strong> (ici 150) — et les points s’alignent avec l’origine.
-          Comment trouver ce nombre dans n’importe quelle situation ? C’est le module suivant.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          <strong>La suite.</strong> Tu sais reconnaître une situation proportionnelle. Reste à
+          nommer le nombre qui la commande.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

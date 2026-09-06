@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -30,7 +31,17 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  *   (étape 3, le piège des coefficients successifs) ; et l'idée qu'un
  *   agrandissement multiplie l'aire par le même coefficient que les longueurs.
  * Feedback: explainFor cible le pourcentage traité comme une addition.
- * Formalization: le coefficient est relu dans les mots de chaque situation.
+ * Formalization: le coefficient est relu dans les mots de chaque situation —
+ *   par une brique posée dès que le vélo a montré ce que « 12 km/h » veut dire,
+ *   pas dans le pied de module.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Les étapes 4 et 5 reposaient sur une règle — « les coefficients se
+ *   multiplient » — qui n'était énoncée que dans les `explain`, c'est-à-dire
+ *   après la réponse. Elle est désormais posée par la brique
+ *   `coefficients-se-multiplient` à l'étape 4, APRÈS que l'étape 3 a fait
+ *   traduire « −20 % » en « × 0,8 », et AVANT la question du double
+ *   pourcentage puis celle de l'aire.
  * Scaffolding: contexte guidé → contexte à traduire → piège.
  * Transfer: c'est le module de transfert de la leçon.
  */
@@ -46,6 +57,7 @@ export default function Module05LaboLineaire() {
   const [remiseDone, setRemiseDone] = useState(false);
   const [pieceDone, setPieceDone] = useState(false);
   const [aireDone, setAireDone] = useState(false);
+  const [situDone, setSituDone] = useState(false);
 
   return (
     <ContentModule
@@ -96,6 +108,7 @@ export default function Module05LaboLineaire() {
                 parse={parseDec}
                 display={formatDec(image(V, 3.5))}
                 suffix="km"
+                requires={['fonction-lineaire', 'coefficient', 'notation-fx', 'image']}
                 explain="d(3,5) = 12 × 3,5 = 42 km. La vitesse est le coefficient : elle dit combien de kilomètres par heure."
                 explainFor={(n) => {
                   if (n === 15.5) return 'Tu as ajouté 12 et 3,5. Ici on multiplie : la distance est proportionnelle au temps.';
@@ -104,6 +117,13 @@ export default function Module05LaboLineaire() {
                 solved={distDone}
                 onAnswered={(ok) => { setDistDone(true); kit.react(ok); }}
               />
+              {distDone && (
+                <KnowledgeBrick
+                  id="coefficient-en-situation"
+                  variant="new"
+                  lead="Ici le coefficient s’appelle « vitesse ». C’est le même a que le prix au kilo — seul le mot change."
+                />
+              )}
             </div>
           ),
         },
@@ -118,6 +138,7 @@ export default function Module05LaboLineaire() {
               parse={parseDec}
               display={formatDec(antecedent(V, 30))}
               suffix="h"
+              requires={['coefficient-en-situation', 'antecedent', 'coefficient-par-division']}
               explain="On cherche l’antécédent de 30 : 12 × t = 30, donc t = 30 ÷ 12 = 2,5 h."
               explainFor={(n) => {
                 if (n === 360) return 'Tu as multiplié 30 par 12. Pour remonter à la durée, il faut diviser.';
@@ -140,6 +161,7 @@ export default function Module05LaboLineaire() {
               parse={parseDec}
               display={formatDec(image(REMISE, 45))}
               suffix="€"
+              requires={['coefficient-en-situation', 'fonction-lineaire']}
               explain="Enlever 20 %, c’est multiplier par 0,8 : 45 × 0,8 = 36 €. La remise est donc une fonction linéaire de coefficient 0,8."
               explainFor={(n) => {
                 if (n === 25) return 'Tu as soustrait 20 au lieu d’enlever 20 %. Vingt pour cent de 45, c’est 9.';
@@ -156,21 +178,30 @@ export default function Module05LaboLineaire() {
           num: 4,
           title: 'Le piège des remises successives',
           done: pieceDone,
-          content: (
-            <TapQuestion
-              prompt="Un prix baisse de 20 %, puis remonte de 20 %. Revient-on au prix de départ ?"
-              options={[
-                'Non : on obtient 96 % du prix initial',
-                'Oui : −20 % puis +20 % s’annulent',
-                'Non : on obtient plus que le prix initial',
-              ]}
-              correct={0}
-              cols={1}
-              explain="On multiplie par 0,8 puis par 1,2 : 0,8 × 1,2 = 0,96. Il manque 4 %. Les pourcentages ne s’additionnent pas — ce sont les coefficients qui se multiplient."
-              explainWrong="Essaie sur 100 € : −20 % donne 80 €, puis +20 % de 80 € donne 96 €, pas 100 €."
-              solved={pieceDone}
-              onAnswered={() => setPieceDone(true)}
-            />
+          content: (kit) => (
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="coefficients-se-multiplient"
+                variant="new"
+                lead="Tu viens d’écrire « −20 % » comme « × 0,8 ». Que se passe-t-il quand deux évolutions s’enchaînent ?"
+              >
+                <TapQuestion
+                  prompt="Un prix baisse de 20 %, puis remonte de 20 %. Revient-on au prix de départ ?"
+                  options={[
+                    'Non : on obtient 96 % du prix initial',
+                    'Oui : −20 % puis +20 % s’annulent',
+                    'Non : on obtient plus que le prix initial',
+                  ]}
+                  correct={0}
+                  cols={1}
+                  requires={['coefficients-se-multiplient', 'coefficient-en-situation']}
+                  explain="On multiplie par 0,8 puis par 1,2 : 0,8 × 1,2 = 0,96. Il manque 4 %."
+                  explainWrong="Essaie sur 100 € : −20 % donne 80 €, puis +20 % de 80 € donne 96 €, pas 100 €."
+                  solved={pieceDone}
+                  onAnswered={(ok) => { setPieceDone(true); kit.react(ok); }}
+                />
+              </KnowledgeBrick>
+            </div>
           ),
         },
         {
@@ -183,6 +214,7 @@ export default function Module05LaboLineaire() {
               options={['9', '3', '6', '12']}
               correct={0}
               cols={2}
+              requires={['coefficients-se-multiplient', 'fonction-lineaire']}
               explain="La longueur et la largeur sont toutes deux multipliées par 3, donc l’aire est multipliée par 3 × 3 = 9. Les longueurs suivent une fonction linéaire de coefficient 3 ; l’aire, elle, n’en suit pas une de coefficient 3."
               explainWrong="Prends un rectangle 2 × 5 (aire 10). Agrandi, il devient 6 × 15, d’aire 90 : neuf fois plus, pas trois."
               solved={aireDone}
@@ -191,13 +223,12 @@ export default function Module05LaboLineaire() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Une vitesse, un taux de remise, un facteur d’agrandissement : trois noms pour le
-          même <MathText>{'$a$'}</MathText> de <MathText>{'$f(x) = ax$'}</MathText>.
-          Reconnaître la fonction linéaire, c’est savoir quoi multiplier.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          <strong>La suite.</strong> Ta carte est complète. Reste à la mettre à l’épreuve : huit
+          étals t’attendent au marché.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

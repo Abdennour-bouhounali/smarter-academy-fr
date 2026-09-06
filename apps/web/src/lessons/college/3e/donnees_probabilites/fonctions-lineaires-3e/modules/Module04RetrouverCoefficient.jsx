@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -25,7 +26,15 @@ import { parseDec, formatDec } from '@smarter-academy/core';
  * Misconception targeted: prendre l'origine comme point de référence (elle ne
  *   détermine rien) ; et inverser le rapport en x ÷ y.
  * Feedback: explainFor cible l'inversion et la soustraction.
- * Formalization: la méthode en une ligne est posée en pied de module.
+ * Formalization: la méthode complète est posée à l'étape 4, une fois les
+ *   trois sources parcourues — puis essayée immédiatement.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le module n'introduit RIEN de neuf avant sa dernière étape : les trois
+ *   premières réemploient `coefficient-par-division` (module 2),
+ *   `un-point-suffit` (module 2) et `droite-par-origine` (module 3). La brique
+ *   `methode-determiner-lineaire` vient APRÈS les trois sources, parce que
+ *   c'est leur mise en commun — pas leur prérequis.
  * Scaffolding: point donné → point à choisir → graphique sans étiquette.
  * Transfer: le module 5 applique la méthode à trois contextes réels.
  */
@@ -38,6 +47,7 @@ export default function Module04RetrouverCoefficient() {
   const [chooseDone, setChooseDone] = useState(false);
   const [tableDone, setTableDone] = useState(false);
   const [graphDone, setGraphDone] = useState(false);
+  const [methodDone, setMethodDone] = useState(false);
 
   const rows = [{ x: 2, y: 9 }, { x: 5, y: 22.5 }, { x: 8, y: 36 }];
 
@@ -72,6 +82,7 @@ export default function Module04RetrouverCoefficient() {
               expected={coefficientFromPair(4, 10)}
               parse={parseDec}
               display={formatDec(coefficientFromPair(4, 10))}
+              requires={['coefficient-par-division', 'un-point-suffit', 'notation-fx', 'image']}
               explain="a = 10 ÷ 4 = 2,5. La fonction est donc f(x) = 2,5x — vérification : 2,5 × 4 = 10. ✓"
               explainFor={(n) => {
                 if (n === 6) return 'Tu as soustrait (10 − 4). Le coefficient est un rapport : on divise.';
@@ -94,6 +105,7 @@ export default function Module04RetrouverCoefficient() {
               options={['(0 ; 0)', '(1 ; 3)', '(−2 ; −6)', '(4 ; 12)']}
               correct={0}
               cols={2}
+              requires={['un-point-suffit', 'coefficient-par-division', 'droite-par-origine', 'coordonnees']}
               explain="Le point (0 ; 0) appartient à toutes les fonctions linéaires : il ne les distingue pas. Et 0 ÷ 0 n’a pas de sens. Il faut un point d’abscisse non nulle."
               explainWrong="Les trois autres donnent tous a = 3 par division. Seul un point d’abscisse nulle est inutilisable."
               solved={chooseDone}
@@ -127,6 +139,7 @@ export default function Module04RetrouverCoefficient() {
                 expected={coefficientFromTable(rows)}
                 parse={parseDec}
                 display={formatDec(coefficientFromTable(rows))}
+                requires={['coefficient-par-division', 'test-lineaire', 'notation-fx']}
                 explain="9 ÷ 2 = 4,5 ; 22,5 ÷ 5 = 4,5 ; 36 ÷ 8 = 4,5. Tous les rapports coïncident : a = 4,5. N’importe quelle colonne suffisait."
                 explainFor={(n) => {
                   if (n === 7) return 'Tu as peut-être fait 9 − 2. Le coefficient est un rapport, pas une différence.';
@@ -142,7 +155,7 @@ export default function Module04RetrouverCoefficient() {
           num: 4,
           title: 'À partir d’une droite',
           subtitle: 'La droite passe par le point marqué.',
-          done: graphDone,
+          done: graphDone && methodDone,
           content: (kit) => (
             <div className="space-y-3">
               <CoordPlane
@@ -158,23 +171,46 @@ export default function Module04RetrouverCoefficient() {
                 options={['f(x) = 1,5x', 'f(x) = 6x', 'f(x) = 4x', 'f(x) = 0,67x']}
                 correct={0}
                 cols={2}
+                requires={['coefficient-par-division', 'droite-par-origine', 'fonction-lineaire', 'coordonnees']}
                 explain="Le point A a pour coordonnées (4 ; 6), donc a = 6 ÷ 4 = 1,5. La droite passe bien par l’origine : c’est une fonction linéaire."
                 explainWrong="Lis les coordonnées de A : abscisse 4, ordonnée 6. Le coefficient est l’ordonnée divisée par l’abscisse."
                 solved={graphDone}
                 onAnswered={(ok) => { setGraphDone(true); kit.react(ok); }}
               />
+
+              {graphDone && (
+                <KnowledgeBrick
+                  id="methode-determiner-lineaire"
+                  variant="new"
+                  lead="Un couple, un tableau, une droite : tu viens de faire trois fois la même chose. Voici cette chose, en quatre gestes."
+                >
+                  <NumericQuestion
+                    prompt={<>Applique-la : une fonction linéaire vérifie <MathText>{'$f(6) = 15$'}</MathText>. Quel est son coefficient ?</>}
+                    expected={coefficientFromPair(6, 15)}
+                    parse={parseDec}
+                    display={formatDec(coefficientFromPair(6, 15))}
+                    requires={['methode-determiner-lineaire']}
+                    explain="a = 15 ÷ 6 = 2,5, donc f(x) = 2,5x. Vérification : 2,5 × 6 = 15. ✓"
+                    explainFor={(n) => {
+                      if (n === 9) return 'Tu as soustrait (15 − 6). Le coefficient est un quotient : 15 ÷ 6.';
+                      if (Math.abs(n - 0.4) < 0.01) return 'Tu as divisé 6 par 15. C’est l’image divisée par l’antécédent : 15 ÷ 6.';
+                      return null;
+                    }}
+                    solved={methodDone}
+                    onAnswered={(ok) => { setMethodDone(true); kit.react(ok); }}
+                  />
+                </KnowledgeBrick>
+              )}
             </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>La méthode, en une ligne.</strong> Prends un point{' '}
-          <MathText>{'$(x \\; ; \\; y)$'}</MathText> de la droite, avec{' '}
-          <MathText>{'$x \\neq 0$'}</MathText>, et calcule{' '}
-          <MathText>{'$a = y \\div x$'}</MathText>. Puis vérifie sur une autre donnée.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={4}>
+          <strong>La suite.</strong> La méthode est en place. Au module suivant, elle sort du
+          cahier : un vélo, une étiquette de soldes, une photo agrandie.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

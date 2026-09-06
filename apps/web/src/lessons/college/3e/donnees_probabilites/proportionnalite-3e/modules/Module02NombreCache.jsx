@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RatioTable from '../components/RatioTable';
 import { SITUATIONS, tableFor } from '../components/situationsData';
@@ -73,12 +74,17 @@ export default function Module02NombreCache() {
             <div className="space-y-3">
               <RatioTable xLabel={ESS.xLabel} yLabel={ESS.yLabel} xUnit={ESS.xUnit} yUnit={ESS.yUnit} columns={essRows} ratios={rev1}
                 onColumnTap={(i) => { setRev1((s) => new Set(s).add(i)); kit.react(true); }} caption="Le carnet de la voiture" />
-              <Feedback tone={done1 ? 'ok' : 'info'}>
-                {done1 ? (
-                  <>Le même nombre dans les trois colonnes : <strong>{formatDec(K)}</strong>. Il ne dépend pas de la colonne — c’est le{' '}
-                    <strong>coefficient de proportionnalité</strong> de la situation : essence = distance × {formatDec(K)}.</>
-                ) : <>Encore {essRows.length - rev1.size} rapport{essRows.length - rev1.size > 1 ? 's' : ''} à révéler.</>}
-              </Feedback>
+              {done1 ? (
+                <KnowledgeBrick
+                  id="coefficient-proportionnalite"
+                  variant="new"
+                  lead={<>Le même nombre dans les trois colonnes : <strong>{formatDec(K)}</strong>. Il ne dépend pas de la colonne, et il porte un nom.</>}
+                />
+              ) : (
+                <Feedback tone="info">
+                  Encore {essRows.length - rev1.size} rapport{essRows.length - rev1.size > 1 ? 's' : ''} à révéler.
+                </Feedback>
+              )}
             </div>
           ),
         },
@@ -95,6 +101,7 @@ export default function Module02NombreCache() {
                 correct={0}
                 cols={1}
                 explain="essence ÷ distance = litres PAR kilomètre : 0,065 L pour 1 km (soit 6,5 L pour 100 km). Le coefficient est la valeur pour UNE unité de la première grandeur."
+                requires={['situation-proportionnelle', 'quotient']}
                 solved={meaningDone}
                 onAnswered={() => setMeaningDone(true)}
               />
@@ -112,6 +119,7 @@ export default function Module02NombreCache() {
                     if (n === 6.5) return '6,5 L, c’est pour 100 km. Pour 300 km : 300 × 0,065 = 19,5 L.';
                     return null;
                   }}
+                  requires={['coefficient-proportionnalite']}
                   solved={useDone}
                   onAnswered={() => setUseDone(true)}
                 />
@@ -136,6 +144,7 @@ export default function Module02NombreCache() {
                   cols={1}
                   explain="Pas de nombre commun : pas de proportionnalité. Les 10 € d’abonnement se paient même pour 0 film — cette part fixe casse le rapport. (2 € par film est bien un « prix unitaire », mais le prix TOTAL n’est pas proportionnel au nombre de films.)"
                   explainWrong="Un coefficient qui varie n’est pas un coefficient. Quand les rapports diffèrent, la situation n’est pas proportionnelle — ici à cause des 10 € fixes."
+                  requires={['coefficient-proportionnalite']}
                   solved={whyDone}
                   onAnswered={() => setWhyDone(true)}
                 />
@@ -162,19 +171,19 @@ export default function Module02NombreCache() {
                   augmentent ensemble sans être proportionnels. Le test, c’est le RAPPORT : le même nombre dans chaque colonne.
                 </Feedback>
               )}
+              requires={['coefficient-proportionnalite']}
               solved={sortDone}
               onAnswered={() => setSortDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          Le <strong>coefficient de proportionnalité</strong> est le rapport « seconde grandeur ÷ première grandeur »,
-          identique dans toutes les colonnes ; c’est la valeur pour une unité ({formatDec(K)} L par km, {formatDec(distance(90, 1))} km par h).
-          Prochaine question : quand une case est vide, par quel chemin la remplir ?
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          <strong>La suite.</strong> Le coefficient est identifié. Quand une case est vide, par
+          quel chemin la remplir ?
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

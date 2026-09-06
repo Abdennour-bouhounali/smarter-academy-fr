@@ -36,6 +36,33 @@ export const LESSON_BASE_PATH = '/courses/college/3e/donnees_probabilites/foncti
 export const LESSON_CONFIG = {
   id: 'fonctions-lineaires-3e',
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module pose ses briques et se termine sur l'état courant de la carte.
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md). Elles viennent
+  // des années précédentes ET de la leçon « Fonctions », qui précède celle-ci
+  // dans le chapitre : la notion de fonction, l'image, l'antécédent et la
+  // notation f(x) ne sont PAS l'objet d'étude ici — le coefficient l'est.
+  // Le module 0 les diagnostique toutes ; le module 1 repose « fonction » et
+  // « notation-fx » en variant="rappel", juste à temps.
+  priorKnowledge: [
+    'fonction', 'notation-fx', 'image', 'antecedent',
+    'proportionnalite', 'abscisse', 'ordonnee', 'coordonnees', 'origine-repere',
+  ],
+  knowledgeAudit: {
+    ignore: [
+      // « appartient » est ici le verbe français ordinaire (« le point (0 ; 0)
+      // appartient à la droite »), pas le symbole ∈ de Seconde que le lexique
+      // cherche. Rien à enseigner : l'appartenance d'un point à une droite est
+      // le langage du repérage, acquis depuis la 6e.
+      { term: 'appartient', reason: "verbe français, pas le symbole ∈ ; appartenance d'un point à une droite" },
+      // « extremum / maximum / minimum » n'apparaît pas : le détecteur repère
+      // « au minimum » dans le distracteur « Deux au minimum » (module 2,
+      // étape 4). C'est la locution courante, pas la notion de Seconde.
+      { term: 'extremum', reason: "locution « au minimum » dans un distracteur, pas la notion d'extremum" },
+    ],
+  },
   title: 'Fonctions linéaires',
   description:
     "Reconnaître qu'une situation de proportionnalité s'écrit f(x) = ax, faire pivoter la droite autour de l'origine pour comprendre ce que fait le coefficient, et retrouver a à partir d'un point, d'un tableau ou d'un graphique.",

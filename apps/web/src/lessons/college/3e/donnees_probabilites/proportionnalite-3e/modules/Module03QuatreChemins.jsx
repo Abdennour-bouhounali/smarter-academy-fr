@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RatioTable from '../components/RatioTable';
 import StrategyPicker from '../components/StrategyPicker';
@@ -82,6 +83,13 @@ export default function Module03QuatreChemins() {
           content: (kit) => (
             <div className="space-y-3">
               <RatioTable xLabel="masse" xUnit="kg" yLabel="prix" yUnit="€" columns={[{ x: 3, y: applyRule(TOM.rule, 3) }, { x: 5, y: t1 ? applyRule(TOM.rule, 5) : null }]} caption="Les tomates" />
+              {t1 && c1.size >= 2 && (
+                <KnowledgeBrick
+                  id="quatre-chemins"
+                  variant="new"
+                  lead="Tu viens d’ouvrir plusieurs chemins vers la même case. Les voici tous les quatre."
+                />
+              )}
               <NumericQuestion
                 prompt="Combien coûtent 5 kg de tomates ?"
                 suffix="€"
@@ -94,6 +102,7 @@ export default function Module03QuatreChemins() {
                   if (n === 37.5) return '7,5 × 5 = 37,5 oublie que 7,50 € est le prix de 3 kg. Prix d’1 kg : 7,5 ÷ 3 = 2,5 €, puis × 5 = 12,50 €.';
                   return null;
                 }}
+                requires={['coefficient-proportionnalite']}
                 solved={t1}
                 onAnswered={() => setT1(true)}
               />
@@ -127,6 +136,7 @@ export default function Module03QuatreChemins() {
                   if (n === 25) return '30 − 5 = 25 retire 1 € par cahier manquant : mais un cahier vaut 2,50 €, pas 1 €. Sept cahiers : 17,50 €.';
                   return null;
                 }}
+                requires={['quatre-chemins']}
                 solved={t2}
                 onAnswered={() => setT2(true)}
               />
@@ -154,6 +164,7 @@ export default function Module03QuatreChemins() {
                   if (n === 88) return '22 × 4 = 88 prend le facteur 4 (la masse de départ) au lieu du facteur 12 ÷ 4 = 3. Prix : 66 €.';
                   return null;
                 }}
+                requires={['quatre-chemins']}
                 solved={t3}
                 onAnswered={() => setT3(true)}
               />
@@ -180,6 +191,7 @@ export default function Module03QuatreChemins() {
                   dans les deux sens, toujours avec le même facteur sur les deux lignes — ou avec le coefficient 0,065.
                 </Feedback>
               )}
+              requires={['quatre-chemins', 'coefficient-proportionnalite']}
               solved={tableDone}
               onAnswered={() => setTableDone(true)}
             />
@@ -198,20 +210,19 @@ export default function Module03QuatreChemins() {
               correct={0}
               cols={1}
               explain="Le produit en croix suppose des rapports égaux. Ici 12 ÷ 1 ≠ 20 ÷ 5 : la situation n’est pas proportionnelle (10 € fixes), donc aucune des « quatre méthodes » ne s’applique. Le vrai prix : 10 + 2 × 10 = 30 €. Avant de calculer, on vérifie qu’on a le droit."
+              requires={['quatre-chemins', 'situation-proportionnelle']}
               solved={trapDone}
               onAnswered={() => setTrapDone(true)}
             />
           ),
         },
       ]}
-      footer={
-        <Feedback tone="info">
-          <strong>À retenir.</strong> Quatre chemins vers une case vide : passer par l’unité, multiplier une colonne par un
-          facteur (sur les deux lignes), multiplier par le coefficient, ou faire le produit en croix. Ils concordent
-          toujours — mais seulement dans une situation proportionnelle. Et si on agrandit une figure : les aires
-          suivent-elles le même chemin ?
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          <strong>La suite.</strong> Quatre chemins qui concordent — dans une situation
+          proportionnelle. Et si on agrandit une figure ?
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

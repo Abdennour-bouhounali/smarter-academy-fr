@@ -1,6 +1,7 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -23,6 +24,18 @@ import { image, tableOf } from '../components/linearUtils';
  *
  * Couverture des Learning Points : P1 (e1), P8 (e1), P2 (e4), P3 (e2),
  * P4 (e6), P5 (e2), P6 (e4), P7 (e5), P9 (e7), P10 (e3), P11 (e8).
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le test final CONSOLIDE et n'introduit RIEN : chaque épreuve déclare ses
+ *   `requires`, tous établis par une brique d'un module antérieur ou par le
+ *   `priorKnowledge` de la leçon. Le mot « fonction affine » a disparu de
+ *   l'épreuve 1 — il n'est enseigné nulle part ici, et une bonne réponse ne
+ *   doit jamais s'expliquer par un mot que l'élève n'a pas.
+ *   La SYNTHÈSE ne recopie plus de définitions : la liste « ce qui se lit sur
+ *   la droite » est remplacée par la carte des connaissances complète
+ *   (<KnowledgeSnapshot variant="complete" complete />), source unique. Les
+ *   visuels — la droite à pivot, les quatre noms du coefficient — et les
+ *   pièges déjoués restent : ils ne sont pas des définitions.
  */
 
 const REGISTRE = [
@@ -54,7 +67,8 @@ const EPREUVES = [
     ],
     cols: 1,
     correct: 0,
-    explain: "Seul le prix au kilo est proportionnel : 0 kg coûte 0 €. Les deux suivants ont une part fixe (fonctions affines), et la dernière est constante.",
+    requires: ['fonction-lineaire', 'lineaire-est-proportionnalite', 'mem-zero-donne-zero'],
+    explain: "Seul le prix au kilo est proportionnel : 0 kg coûte 0 €. Les deux suivants font payer quelque chose pour 0 (10 € d'abonnement, 2 € de prise en charge), et la dernière ne change jamais.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-3e_P1', '3e_fonctions-lineaires-3e_P8'] },
   },
   {
@@ -65,6 +79,7 @@ const EPREUVES = [
     options: ['4,5', '14', '9', '2'],
     cols: 2,
     correct: 0,
+    requires: ['coefficient', 'coefficient-par-division', 'test-lineaire'],
     explain: "18 ÷ 4 = 4,5 et 27 ÷ 6 = 4,5 : les rapports coïncident, donc a = 4,5. Le coefficient est un quotient, jamais une différence.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-3e_P3', '3e_fonctions-lineaires-3e_P5'] },
   },
@@ -76,6 +91,7 @@ const EPREUVES = [
     options: ['f(x) = 2,5x', 'f(x) = 0,4x', 'f(x) = 12x', 'f(x) = 160x'],
     cols: 2,
     correct: 0,
+    requires: ['methode-determiner-lineaire', 'coefficient-par-division', 'notation-fx', 'image'],
     explain: "a = 20 ÷ 8 = 2,5. Attention au sens du quotient : c'est l'image divisée par l'antécédent, pas l'inverse (0,4 serait 8 ÷ 20).",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-3e_P10'] },
   },
@@ -92,6 +108,7 @@ const EPREUVES = [
     ],
     cols: 1,
     correct: 0,
+    requires: ['pivot-autour-origine', 'droite-par-origine', 'coefficient'],
     explain: "Comme f(0) = 0 quel que soit a, le point (0 ; 0) reste sur la droite : elle tourne autour de lui. Une droite qui glisse verticalement, c'est le rôle de b — et b n'existe pas ici.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-3e_P2', '3e_fonctions-lineaires-3e_P6'] },
   },
@@ -103,6 +120,7 @@ const EPREUVES = [
     options: ['(0 ; 0)', '(1 ; 4)', '(−3 ; −12)', '(2,5 ; 10)'],
     cols: 2,
     correct: 0,
+    requires: ['un-point-suffit', 'droite-par-origine', 'coordonnees'],
     explain: "L'origine appartient à TOUTES les fonctions linéaires : elle n'en distingue aucune. Les trois autres points donnent chacun a = 4 par division.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-3e_P7'] },
   },
@@ -114,6 +132,7 @@ const EPREUVES = [
     options: ['51 €', '45 €', '9 €', '69 €'],
     cols: 2,
     correct: 0,
+    requires: ['coefficient-en-situation', 'fonction-lineaire'],
     explain: "Enlever 15 %, c'est multiplier par 0,85 : 60 × 0,85 = 51 €. Retirer 15 (et non 15 %) donnerait 45 € — c'est le piège.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-3e_P4'] },
   },
@@ -130,6 +149,7 @@ const EPREUVES = [
     ],
     cols: 1,
     correct: 0,
+    requires: ['coefficients-se-multiplient', 'coefficient-en-situation'],
     explain: "On multiplie par 1,1 puis par 0,9 : 1,1 × 0,9 = 0,99. Il manque 1 %. Les pourcentages ne s'additionnent pas ; ce sont les coefficients qui se multiplient.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-3e_P9'] },
   },
@@ -141,6 +161,7 @@ const EPREUVES = [
     options: ['Elle est multipliée par 4', 'Elle est doublée', 'Elle est multipliée par 8', 'Elle ne change pas'],
     cols: 2,
     correct: 0,
+    requires: ['coefficients-se-multiplient', 'fonction-lineaire'],
     explain: "La longueur ET la largeur doublent, donc l'aire est multipliée par 2 × 2 = 4. Les longueurs suivent une fonction linéaire de coefficient 2 ; l'aire, non.",
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['3e_fonctions-lineaires-3e_P11'] },
   },
@@ -178,27 +199,21 @@ function Synthese() {
         </p>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
-        <CoordPlane
-          range={SYN_RANGE}
-          unit={30}
-          functions={[{ id: 'f', a: SYN_A, b: 0, tone: 'indigo', label: 'f' }]}
-          staircase={{ from: { x: 0, y: 0 }, a: SYN_A, run: 1 }}
-          points={[{ id: 'O', name: 'O', x: 0, y: 0, color: '#e11d48' }]}
-          frozen
-          caption={false}
-          ariaLabel="Synthèse : la droite de f, son escalier et le pivot O"
-        />
-        <div className="rounded-2xl border-2 border-slate-200 bg-white p-4 space-y-2">
-          <p className="font-bold text-slate-800">Ce qui se lit sur la droite</p>
-          <ul className="text-sm text-slate-700 space-y-1 list-disc list-inside">
-            <li>Elle passe par <strong>l’origine</strong> — toujours.</li>
-            <li>L’escalier <MathText>{'$+1 \\rightarrow +a$'}</MathText> donne le coefficient.</li>
-            <li><MathText>{'$a > 0$'}</MathText> : elle monte. <MathText>{'$a < 0$'}</MathText> : elle descend.</li>
-            <li>Un point suffit à la déterminer, sauf l’origine.</li>
-          </ul>
-        </div>
-      </div>
+      <CoordPlane
+        range={SYN_RANGE}
+        unit={30}
+        functions={[{ id: 'f', a: SYN_A, b: 0, tone: 'indigo', label: 'f' }]}
+        staircase={{ from: { x: 0, y: 0 }, a: SYN_A, run: 1 }}
+        points={[{ id: 'O', name: 'O', x: 0, y: 0, color: '#e11d48' }]}
+        frozen
+        caption={false}
+        ariaLabel="Synthèse : la droite de f, son escalier et le pivot O"
+      />
+
+      {/* Aucune définition n'est recopiée ici : la carte des connaissances EST
+          la synthèse, et elle rend les mêmes items que les briques des
+          modules (docs/architecture/KNOWLEDGE_MAP.md). */}
+      <KnowledgeSnapshot variant="complete" complete />
 
       <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4">
         <p className="font-bold text-emerald-800 mb-1">Le même coefficient, quatre noms</p>
