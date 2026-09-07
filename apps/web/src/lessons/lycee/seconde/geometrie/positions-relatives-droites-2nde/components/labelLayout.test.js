@@ -63,18 +63,35 @@ describe('balayage des états atteignables (±6)', () => {
     for (let x = -3; x <= 3; x += 1) for (let y = -3; y <= 3; y += 1) if (x || y) vs.push({ x, y });
     const As = [{ x: -3, y: -1 }, { x: 0, y: 0 }, { x: 5, y: 5 }, { x: -6, y: 6 }, { x: 6, y: -6 }, { x: 2, y: -4 }];
     const Bs = [{ x: 3, y: -1 }, { x: -5, y: 4 }, { x: 6, y: 6 }, { x: 0, y: -6 }, { x: 1, y: 1 }];
-    let n = 0; let dropped = 0; let droppedLine = 0;
+    let n = 0; let dropped = 0; let droppedLine = 0; let degenerate = 0;
     for (const u of vs) for (const v of vs) for (const A of As) for (const B of Bs) {
       const s = sceneFor(6, A, u, B, v);
       assertPlacedFree(s);
       dropped += s.pointLabels.filter((p) => !p.box).length;
-      droppedLine += s.lineLabels.filter((l) => !l.box).length;
+      s.lineLabels.forEach((l, i) => {
+        if (l.box) return;
+        // Une droite qui ne FAIT QUE toucher un coin du cadre n'a pas de corde
+        // à étiqueter : deux des six ancrages du balayage (±6, ∓6) SONT des
+        // coins, et une direction sortante n'y laisse qu'un point commun.
+        // Il n'y a alors rien à nommer — ce n'est pas un défaut de placement.
+        const ch = s.chords[i];
+        const len = ch.p ? Math.hypot(ch.q.x - ch.p.x, ch.q.y - ch.p.y) : 0;
+        if (len < 1) degenerate += 1; else droppedLine += 1;
+      });
       n += 1;
     }
     expect(n).toBe(48 * 48 * 30);
-    // Les droites sont TOUJOURS identifiées ; un nom de point peut céder la place (le DOM le porte).
+    // Toute droite VISIBLE (corde non réduite à un point) est nommée.
     expect(droppedLine).toBe(0);
-    expect(dropped / (n * 3)).toBeLessThan(0.01);
+    // Les cas dégénérés existent et sont attendus : ce sont exactement les
+    // scènes ancrées sur un coin. On verrouille leur nombre pour qu'une
+    // régression du clipping se voie (13 824 = 1/5 des 69 120 scènes).
+    expect(degenerate).toBe(13824);
+    // Depuis que `placeAroundPoint` essaie des anneaux successifs, PLUS AUCUN
+    // nom de point ne cède la place sur tout le balayage (c'était 8 371).
+    // On verrouille le zéro : un retour au budget de 1 % masquerait la
+    // régression exacte que ce correctif a supprimée.
+    expect(dropped).toBe(0);
   }, 60000);
 });
 

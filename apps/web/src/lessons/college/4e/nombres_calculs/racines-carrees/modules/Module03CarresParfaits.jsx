@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { StepProgressBar } from '../../../../../common/components/LessonUI';
 import SectionHeader from '../../../../../common/components/SectionHeader';
 import MathText from '../../../../../common/components/MathText';
 import ExerciseValidator from '../../../../../common/components/ExerciseValidator';
@@ -40,6 +41,11 @@ export default function Module03CarresParfaits() {
 
   const allCorrect = ex1.isCorrect && ex2.isCorrect && ex3.isCorrect;
 
+  // Progression des exercices — même source que le déverrouillage de
+  // `nextLink`, pour que le bandeau ne puisse pas mentir sur l'état.
+  const doneCount = (ex1.isCorrect ? 1 : 0) + (ex2.isCorrect ? 1 : 0) + (ex3.isCorrect ? 1 : 0);
+  const totalSteps = 3;
+
   return (
     <ModuleLayout
       lessonId={MODULE_CTX.lessonId}
@@ -58,6 +64,9 @@ export default function Module03CarresParfaits() {
       nextLink={allCorrect ? nextLink : null}
       onNextClick={() => markModuleCompleted('L03-4e')}
     >
+      {doneCount < totalSteps && (
+        <StepProgressBar doneCount={doneCount} total={totalSteps} />
+      )}
       <div className="space-y-12 max-w-4xl mx-auto w-full">
         
         <section>

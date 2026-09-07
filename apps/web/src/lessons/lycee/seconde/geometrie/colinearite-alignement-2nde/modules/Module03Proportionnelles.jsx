@@ -121,7 +121,7 @@ export default function Module03Proportionnelles() {
               prompt="u(2 ; −3) et v(−6 ; y) sont colinéaires. Que vaut y ?"
               expected={9} parse={parseSigned} display="9" width="w-24"
               explain="v = k·u avec −6 = 2k, donc k = −3, et y = −3 × (−3) = 9. Produits en croix : 2 × 9 = 18 et (−3) × (−6) = 18."
-              explainFor={(n) => (n === -9 ? 'Le signe : k = −6 ÷ 2 = −3, puis y = k × (−3) = (−3) × (−3) = +9.' : n === 6 ? '6 serait −6 en valeur absolue… mais y = k × (−3) avec k = −3 : y = 9.' : `Avec y = ${fr(n)}, les produits en croix valent 2 × ${factor(n)} = ${fr(2 * n)} et (−3) × (−6) = 18 : différents. Il faut y = 9.`)}
+              explainFor={(n) => (n === -9 ? 'Le signe : k = −6 ÷ 2 = −3, puis y = k × (−3) = (−3) × (−3) = +9.' : n === 6 ? '6 est bien à la même distance de 0 que −6… mais y = k × (−3) avec k = −3 : y = 9.' : `Avec y = ${fr(n)}, les produits en croix valent 2 × ${factor(n)} = ${fr(2 * n)} et (−3) × (−6) = 18 : différents. Il faut y = 9.`)}
               solved={n3} onAnswered={() => setN3(true)} />
           ),
         },

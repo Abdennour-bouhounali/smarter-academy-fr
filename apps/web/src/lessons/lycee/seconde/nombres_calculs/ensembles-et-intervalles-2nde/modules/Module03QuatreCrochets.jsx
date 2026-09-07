@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -59,21 +59,37 @@ export default function Module03QuatreCrochets() {
           title: 'Lire un intervalle',
           done: readDone,
           content: (
-            <TapQuestion
-              prompt="Quelle écriture correspond à l’ensemble colorié ?"
-              above={
-                <div className="rounded-2xl border-2 border-slate-200 bg-white p-2">
-                  <RealLine min={-5} max={5} step={1} intervals={[{ id: 'I', from: -2, to: 3, tone: 'indigo' }]} ariaLabel="Intervalle de −2 à 3, les deux bornes incluses" />
-                </div>
-              }
-              options={['[−2 ; 3]', ']−2 ; 3[', '[−2 ; 3[', ']−2 ; 3]']}
-              cols={2}
-              correct={0}
-              explain="Les deux crochets sont tournés vers l’intérieur : −2 et 3 appartiennent tous les deux. C’est un intervalle FERMÉ : tous les nombres de −2 à 3, bornes comprises."
-              explainWrong="Regarde les crochets sur le dessin : ils sont tournés vers les nombres, donc −2 et 3 sont inclus. On écrit [−2 ; 3], intervalle fermé."
-              solved={readDone}
-              onAnswered={() => setReadDone(true)}
-            />
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="intervalle"
+                variant="new"
+                establishes={['intervalle']}
+                lead="La plage du manège, celle que tu as testée taille par taille, porte ce nom en mathématiques."
+              />
+              <TapQuestion
+                prompt="Quelle écriture correspond à l’ensemble colorié ?"
+                above={
+                  <div className="rounded-2xl border-2 border-slate-200 bg-white p-2">
+                    <RealLine min={-5} max={5} step={1} intervals={[{ id: 'I', from: -2, to: 3, tone: 'indigo' }]} ariaLabel="Intervalle de −2 à 3, les deux bornes incluses" />
+                  </div>
+                }
+                options={['[−2 ; 3]', ']−2 ; 3[', '[−2 ; 3[', ']−2 ; 3]']}
+                cols={2}
+                correct={0}
+                requires={['intervalle', 'mem-borne']}
+                explain="Les deux crochets sont tournés vers l’intérieur : −2 et 3 appartiennent tous les deux. C’est un intervalle FERMÉ : tous les nombres de −2 à 3, bornes comprises."
+                explainWrong="Regarde les crochets sur le dessin : ils sont tournés vers les nombres, donc −2 et 3 sont inclus. On écrit [−2 ; 3], intervalle fermé."
+                solved={readDone}
+                onAnswered={() => setReadDone(true)}
+              />
+              {readDone && (
+                <KnowledgeBrick
+                  id="types-intervalles"
+                  variant="new"
+                  lead="Deux crochets, deux décisions indépendantes : cela fait quatre écritures possibles, et chacune a son nom."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -116,6 +132,13 @@ export default function Module03QuatreCrochets() {
                 solved={done3}
               />
               {done3 && (
+                <KnowledgeBrick
+                  id="demi-droite-infini"
+                  variant="new"
+                  lead="Tu viens d’étendre une borne sans jamais l’atteindre : c’est une demi-droite, et son crochet ne se ferme pas."
+                />
+              )}
+              {done3 && (
                 <TapQuestion
                   prompt="Pourquoi le crochet est-il toujours ouvert du côté de +∞ ?"
                   options={['Parce que +∞ n’est pas un nombre : on ne l’atteint jamais', 'Parce que les grands nombres ne comptent pas', 'C’est une convention sans raison']}
@@ -135,22 +158,31 @@ export default function Module03QuatreCrochets() {
           title: 'Appartient ou pas ?',
           done: batchDone,
           content: (
-            <BatchChoiceQuestion
-              intro={<p className="text-sm text-slate-600">Pour chaque ligne, le nombre appartient-il à l’intervalle ?</p>}
-              rows={[
-                { id: 'r1', label: '3 ∈ [−2 ; 3[ ?', options: ['oui', 'non'], correct: 1, correction: '3[ : la borne 3 est exclue.' },
-                { id: 'r2', label: '−2 ∈ [−2 ; 3[ ?', options: ['oui', 'non'], correct: 0, correction: '[−2 : la borne −2 est incluse.' },
-                { id: 'r3', label: '2,999 ∈ [−2 ; 3[ ?', options: ['oui', 'non'], correct: 0, correction: '2,999 < 3 : il est dedans, aussi près de 3 soit-il.' },
-                { id: 'r4', label: '5 ∈ ]−∞ ; 5] ?', options: ['oui', 'non'], correct: 0, correction: '5] : la borne 5 est incluse.' },
-              ]}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {allRight ? 'Quatre sur quatre : ' : `${nCorrect} / ${total}. `}Seule la borne se décide au crochet ; tout ce qui est strictement entre les bornes appartient, toujours.
-                </Feedback>
-              )}
-              solved={batchDone}
-              onAnswered={() => setBatchDone(true)}
-            />
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="methode-appartenance-intervalle"
+                variant="new"
+                compact
+                lead="Avant de trancher quatre cas d’affilée, la marche à suivre — celle que tu as appliquée sans la nommer depuis le manège."
+              />
+              <BatchChoiceQuestion
+                intro={<p className="text-sm text-slate-600">Pour chaque ligne, le nombre appartient-il à l’intervalle ?</p>}
+                rows={[
+                  { id: 'r1', label: '3 ∈ [−2 ; 3[ ?', options: ['oui', 'non'], correct: 1, correction: '3[ : la borne 3 est exclue.' },
+                  { id: 'r2', label: '−2 ∈ [−2 ; 3[ ?', options: ['oui', 'non'], correct: 0, correction: '[−2 : la borne −2 est incluse.' },
+                  { id: 'r3', label: '2,999 ∈ [−2 ; 3[ ?', options: ['oui', 'non'], correct: 0, correction: '2,999 < 3 : il est dedans, aussi près de 3 soit-il.' },
+                  { id: 'r4', label: '5 ∈ ]−∞ ; 5] ?', options: ['oui', 'non'], correct: 0, correction: '5] : la borne 5 est incluse.' },
+                ]}
+                requires={['intervalle', 'vocab-appartenance', 'methode-appartenance-intervalle', 'demi-droite-infini']}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {allRight ? 'Quatre sur quatre : ' : `${nCorrect} / ${total}. `}Seule la borne se décide au crochet ; tout ce qui est strictement entre les bornes appartient, toujours.
+                  </Feedback>
+                )}
+                solved={batchDone}
+                onAnswered={() => setBatchDone(true)}
+              />
+            </div>
           ),
         },
       ]}

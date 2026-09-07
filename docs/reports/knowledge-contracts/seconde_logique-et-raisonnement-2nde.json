@@ -2,7 +2,10 @@
   "lesson": "logique-et-raisonnement-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "appartient",
+    "ensemble-reels"
+  ],
   "conceptsIntroduced": [
     {
       "id": "proposition",
@@ -127,13 +130,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
       "line": 9,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "ensemble-reels",
-        "appartient"
+      "requires": [
+        "appartient",
+        "ensemble-reels"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "appartient": "prior",
+        "ensemble-reels": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "q2-inter",
@@ -142,8 +148,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
       "line": 10,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "appartient"
+      ],
+      "prerequisiteStatus": {
+        "appartient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -509,30 +519,6 @@
     }
   ],
   "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« symbole ∈ » first appears at diag.option (module 0) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
-      "line": 9,
-      "module": 0,
-      "step": null,
-      "term": "appartient",
-      "questionId": "q1-appartient",
-      "position": 2
-    },
-    {
-      "code": "L_DISTRACTOR_ONLY",
-      "severity": "low",
-      "message": "« ensemble ℝ » appears only as a wrong answer, first at diag.option (module 0) — a distractor still creates a first exposure",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/modules/Module00Diagnostic.jsx",
-      "line": 9,
-      "module": 0,
-      "step": null,
-      "term": "ensemble-reels",
-      "questionId": "q1-appartient",
-      "position": 4
-    },
     {
       "code": "W_ITEM_WITHOUT_BRICK",
       "severity": "info",

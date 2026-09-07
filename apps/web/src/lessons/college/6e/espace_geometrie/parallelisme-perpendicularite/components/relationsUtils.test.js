@@ -179,3 +179,24 @@ describe('l’équerre — le rituel en deux gestes', () => {
     expect(st.onLine).toBe(false);
   });
 });
+
+describe('la tolérance de l’équerre ne dément pas l’énoncé', () => {
+  const d = L(0, 100, 0);
+  const point = { x: 120, y: 100 };
+
+  // « Le sommet doit être exactement sur le point » : un écart que l'élève
+  // VOIT (la pastille du point a un rayon de 5,5) ne peut pas être accepté.
+  it('refuse un sommet visiblement à côté du point', () => {
+    expect(isEquerreAligned({ p: { x: 130, y: 100 }, angleDeg: 0 }, d, point).atPoint).toBe(false);
+    expect(isEquerreAligned({ p: { x: 128, y: 100 }, angleDeg: 0 }, d, point).ok).toBe(false);
+  });
+
+  it('accepte la main qui tremble un peu', () => {
+    expect(isEquerreAligned({ p: { x: 123, y: 102 }, angleDeg: 1 }, d, point).ok).toBe(true);
+  });
+
+  // 6° sur une branche de 78 unités écartaient le bout de 8 unités du trait.
+  it('refuse un côté qui n’est plus le long de la droite', () => {
+    expect(isEquerreAligned({ p: { x: 120, y: 100 }, angleDeg: 5 }, d, point).aligned).toBe(false);
+  });
+});

@@ -39,7 +39,7 @@ const Egalite = ({ children }) => (
 /** Le cube de 1 dm d'arête, dessiné en perspective cavalière — le seul
  *  visuel de la leçon qui sorte du plan, parce que c'est justement le sujet. */
 const CubeDm = () => (
-  <svg width={150} height={120} viewBox="0 0 150 120" aria-hidden="true" className="select-none">
+  <svg viewBox="0 0 150 120" aria-hidden="true" className="select-none w-full h-auto" style={{ maxWidth: 150 }}>
     <polygon points="30,40 100,40 100,100 30,100" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2" />
     <polygon points="30,40 55,20 125,20 100,40" fill="#bae6fd" stroke="#0284c7" strokeWidth="2" />
     <polygon points="100,40 125,20 125,80 100,100" fill="#7dd3fc" stroke="#0284c7" strokeWidth="2" />

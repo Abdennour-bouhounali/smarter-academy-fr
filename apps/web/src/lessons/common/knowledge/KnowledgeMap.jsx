@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Printer, ArrowLeft, Compass, FileText, PanelRight, Expand, ChevronUp, ChevronDown } from 'lucide-react';
+import { X, Printer, ArrowLeft, Compass, FileText, PanelRight, Expand, ChevronUp, ChevronDown, Columns2 } from 'lucide-react';
 import { useLessonViewport } from './useLessonViewport';
+import { useWorkspaceLayout } from '../../../context/WorkspaceLayoutContext';
 import { buildStructure, progressionByModule, HIGHLIGHT_CAT } from './knowledgeStructure';
+import ConceptVisual from './ConceptVisual';
 
 /* ─────────────────────────────────────────────────────────────────────────
    PRINT STYLES
@@ -299,10 +301,10 @@ function ItemDetailView({ item, onBack, catColor }) {
 
       {/* Visual */}
       {item.visual && (
-        <div className="bg-white rounded-xl border border-slate-100 p-3 flex items-center justify-center overflow-hidden">
-          <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
+        <div className="bg-white rounded-xl border border-slate-100 px-3 py-3">
+          <ConceptVisual size={item.visualSize} context="drawer">
             {item.visual}
-          </div>
+          </ConceptVisual>
         </div>
       )}
 
@@ -425,11 +427,9 @@ function PrintCard({ item, catColor }) {
         <span className="text-[7pt]">●</span> {item.title}
       </div>
       {item.visual && (
-        <div className="flex justify-center my-2 overflow-hidden print-example">
-          <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
-            {item.visual}
-          </div>
-        </div>
+        <ConceptVisual size={item.visualSize} context="print">
+          {item.visual}
+        </ConceptVisual>
       )}
       <div className="text-[9pt] text-[#172033] leading-snug space-y-2 sa-print-body">
         {item.body}
@@ -450,9 +450,9 @@ function PrintHero({ items }) {
           {items.map(item => (
             <div key={item.id} className="print-card">
               {item.visual && (
-                <div className="flex justify-center mb-3">
+                <ConceptVisual size={item.visualSize} context="print">
                   {item.visual}
-                </div>
+                </ConceptVisual>
               )}
               <div className="text-[#172554] text-[10pt] font-medium sa-print-hero-body space-y-3">
                 {item.body}
@@ -552,11 +552,9 @@ function CompleteCard({ item, catColor }) {
       </div>
       {item.summary && <p className="text-xs text-slate-500 mb-2 leading-snug">{item.summary}</p>}
       {item.visual && (
-        <div className="flex justify-center my-2 overflow-hidden">
-          <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
-            {item.visual}
-          </div>
-        </div>
+        <ConceptVisual size={item.visualSize} context="drawer">
+          {item.visual}
+        </ConceptVisual>
       )}
       {item.body}
     </div>
@@ -645,6 +643,10 @@ export function CompleteView({ items, printable = true, columns = 1 }) {
    ───────────────────────────────────────────────────────────────────────── */
 
 export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onModeChange, printTitle, printSubject, expanded = false, onExpandedChange }) {
+  // Mode colonne : la coquille a DÉJÀ rétréci le contenu et réservé une
+  // gouttière à droite. La carte n'a donc rien à pousser — elle se pose dans
+  // la place qu'on lui a faite (cf. WorkspaceLayoutContext).
+  const { isPrior, priorPreferred, priorAvailable, togglePrior, maCarteWidth } = useWorkspaceLayout();
   const [minimized, setMinimized] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -665,7 +667,10 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
 
   // En mode plein sur large écran, la carte se lit en colonnes — sinon la
   // hiérarchie s'étire en une bande étroite au milieu du vide.
-  const panelWidth = expanded ? vpWidth : width;
+  // En mode colonne la largeur est celle que la coquille a réservée : les deux
+  // valeurs doivent être la MÊME, sinon la carte flotte dans sa gouttière ou
+  // la déborde.
+  const panelWidth = expanded ? vpWidth : isPrior ? maCarteWidth : width;
   const contentColumns = expanded && panelWidth >= 1100 ? 3 : expanded && panelWidth >= 720 ? 2 : 1;
 
   // Les deux géométries, en valeurs NUMÉRIQUES pour que framer-motion puisse
@@ -677,12 +682,24 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
     width: drawerW,
     height: minimized ? 56 : vpHeight,
   };
+  // COLONNE — le <main> réserve `maCarteWidth` à sa droite ; `vpRight` vaut
+  // donc cette largeur, et la colonne est exactement l'espace entre le bord
+  // droit du contenu et celui de la fenêtre. Aucune constante en double : la
+  // même valeur sert à réserver et à occuper.
+  const priorGeom = {
+    top: vpTop,
+    left: Math.max(0, (vpOuter || 0) - maCarteWidth),
+    width: maCarteWidth,
+    height: vpHeight,
+  };
   const expandedGeom = {
     top: vpTop,
     left: vpLeft,
     width: vpWidth,
     height: vpHeight,
   };
+
+  const geom = expanded ? expandedGeom : isPrior ? priorGeom : drawerGeom;
 
   // Items déjà réduits par la progression (KnowledgeProvider) ; le drapeau
   // `discovered` reste honoré pour un masquage ponctuel.
@@ -695,10 +712,12 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
     }
   }, [isOpen]);
 
-  // « Réduit » n'a de sens que pour le tiroir ; le mode plein l'annule.
+  // « Réduit » n'a de sens que pour le tiroir flottant : en mode plein comme
+  // en mode colonne, la carte occupe une place RÉSERVÉE — la replier y
+  // laisserait un trou dans la mise en page au lieu de rendre de l'espace.
   useEffect(() => {
-    if (expanded) setMinimized(false);
-  }, [expanded]);
+    if (expanded || isPrior) setMinimized(false);
+  }, [expanded, isPrior]);
 
   // Persist Width
   useEffect(() => {
@@ -779,8 +798,8 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
             //   tiroir ⇄ plein   : les quatre bords se déplacent de façon continue
             initial={expanded
               ? { opacity: 0, scale: 0.985, ...expandedGeom }
-              : { opacity: 0, x: '110%', ...drawerGeom }}
-            animate={{ opacity: 1, scale: 1, x: 0, ...(expanded ? expandedGeom : drawerGeom) }}
+              : { opacity: 0, x: '110%', ...geom }}
+            animate={{ opacity: 1, scale: 1, x: 0, ...geom }}
             exit={expanded
               ? { opacity: 0, scale: 0.985, transition: { duration: 0.16, ease: 'easeIn' } }
               : { opacity: 0, x: '110%', transition: { type: 'spring', damping: 32, stiffness: 320 } }}
@@ -793,14 +812,20 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
               'z-40 flex flex-col bg-white border-slate-200 overflow-hidden',
               expanded
                 ? 'border-l border-r border-b shadow-xl shadow-slate-900/10'
-                : 'border-l border-b shadow-2xl shadow-slate-900/15 rounded-bl-2xl',
+                // COLONNE — une simple bordure, un fond très légèrement plus
+                // froid : une séparation, pas un objet posé sur la leçon. Ni
+                // ombre portée ni coin arrondi, qui la feraient à nouveau
+                // flotter au-dessus du contenu.
+                : isPrior
+                  ? 'border-l bg-slate-50/60'
+                  : 'border-l border-b shadow-2xl shadow-slate-900/15 rounded-bl-2xl',
             ].join(' ')}
             role="dialog"
             aria-label="Ma carte des connaissances"
             aria-modal="false" // It's a companion, not a blocking modal
           >
             {/* ── Resize Handle (Left Edge) ── */}
-            {!expanded && <div
+            {!expanded && !isPrior && <div
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
@@ -846,21 +871,43 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                   aria-label="Affichage de la carte"
                 >
                   <button
-                    onClick={() => onExpandedChange?.(false)}
+                    onClick={() => { onExpandedChange?.(false); if (priorPreferred) togglePrior(); }}
                     role="radio"
-                    aria-checked={!expanded}
-                    title="Tiroir — la leçon reste visible à côté"
+                    aria-checked={!expanded && !isPrior}
+                    title="Tiroir — la carte se pose au-dessus de la leçon"
                     data-km-view="drawer"
                     className={[
                       'flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-md text-[11px] font-bold transition-colors',
-                      !expanded ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800',
+                      !expanded && !isPrior ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800',
                     ].join(' ')}
                   >
                     <PanelRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                     <span className="hidden sm:inline">Tiroir</span>
                   </button>
+                  {/* ── COLONNE ────────────────────────────────────────────
+                      La troisième présentation, et la seule qui change la
+                      COQUILLE : la barre latérale se comprime, la leçon
+                      rétrécit, la carte prend la place ainsi libérée. Elle
+                      n'apparaît qu'au-dessus de 1024px — en dessous, deux
+                      zones utiles côte à côte n'en font plus aucune. */}
+                  {priorAvailable && (
+                    <button
+                      onClick={() => { onExpandedChange?.(false); if (!priorPreferred) togglePrior(); }}
+                      role="radio"
+                      aria-checked={isPrior}
+                      title="Colonne — la leçon fait de la place à la carte"
+                      data-km-view="prior"
+                      className={[
+                        'flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-md text-[11px] font-bold transition-colors',
+                        isPrior ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800',
+                      ].join(' ')}
+                    >
+                      <Columns2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                      <span className="hidden sm:inline">Colonne</span>
+                    </button>
+                  )}
                   <button
-                    onClick={() => onExpandedChange?.(true)}
+                    onClick={() => { if (priorPreferred) togglePrior(); onExpandedChange?.(true); }}
                     role="radio"
                     aria-checked={expanded}
                     title="Plein écran — la carte occupe toute la zone de la leçon"
@@ -878,7 +925,7 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
 
                 {/* Replier — n'existe qu'en mode tiroir, et son icône (chevron)
                     ne ressemble plus à celle du plein écran. */}
-                {!expanded && <button
+                {!expanded && !isPrior && <button
                   onClick={() => setMinimized(m => !m)}
                   className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-700"
                   aria-label={minimized ? 'Déplier la carte' : 'Replier la carte'}

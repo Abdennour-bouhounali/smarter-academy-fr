@@ -31,7 +31,7 @@ const Piege = ({ children }) => <p className="text-xs text-rose-600">⚠️ {chi
 function PointImage({ color = '#7c3aed' }) {
   const W = 148, H = 84, ax = 74, y = 42;
   return (
-    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className="select-none">
+    <svg viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className="select-none w-full h-auto" style={{ maxWidth: W }}>
       <line x1={ax} y1="6" x2={ax} y2={H - 6} stroke="#94a3b8" strokeWidth="1.6" strokeDasharray="5 3" />
       <text x={ax + 5} y="15" fontSize="9" fill="#64748b" fontFamily="ui-monospace, monospace">(d)</text>
       <line x1="26" y1={y} x2="122" y2={y} stroke={color} strokeWidth="1.6" />

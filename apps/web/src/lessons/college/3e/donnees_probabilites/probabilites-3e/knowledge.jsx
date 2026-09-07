@@ -72,7 +72,8 @@ function SixFaces({ highlight = [], width = 232 }) {
   const s = 32;
   const gap = 6;
   return (
-    <svg width={width} height={44} viewBox={`0 0 ${width} 44`} role="img"
+    <svg viewBox={`0 0 ${width} 44`} role="img"
+      style={{ maxWidth: width }} className="w-full h-auto"
       aria-label={highlight.length > 0
         ? `Les six faces d'un dé ; les faces ${highlight.join(', ')} sont retenues`
         : "Les six faces d'un dé"}>
@@ -99,8 +100,8 @@ function MiniBars({ counts, mark = null, width = 232, height = 96 }) {
   const base = height - 16;
   const h = (v) => (v / top) * (base - 10);
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img"
-      aria-label={`Six barres de fréquences${mark ? ', avec un repère théorique' : ''}`}>
+    <svg viewBox={`0 0 ${width} ${height}`} role="img"
+      aria-label={`Six barres de fréquences${mark ? ', avec un repère théorique' : ''}`} style={{ maxWidth: width }} className="w-full h-auto">
       {fr.map((v, i) => (
         <g key={i}>
           <rect x={8 + i * (bw + gap)} y={base - h(v)} width={bw} height={h(v)} rx="3" fill="#6366f1" opacity="0.85" />
@@ -122,8 +123,8 @@ function MiniBars({ counts, mark = null, width = 232, height = 96 }) {
 function MiniScale({ marks = [], width = 240 }) {
   const x = (p) => 18 + p * (width - 36);
   return (
-    <svg width={width} height={62} viewBox={`0 0 ${width} 62`} role="img"
-      aria-label="Échelle des probabilités de 0 à 1">
+    <svg viewBox={`0 0 ${width} 62`} role="img"
+      aria-label="Échelle des probabilités de 0 à 1" style={{ maxWidth: width }} className="w-full h-auto">
       <line x1={x(0)} y1={38} x2={x(1)} y2={38} stroke="#94a3b8" strokeWidth="2" />
       {[0, 0.5, 1].map((g) => (
         <g key={g}>
@@ -149,8 +150,8 @@ function MiniScale({ marks = [], width = 240 }) {
 function MiniGrid({ highlight = () => false, width = 168 }) {
   const cell = width / 7;
   return (
-    <svg width={width} height={width} viewBox={`0 0 ${width} ${width}`} role="img"
-      aria-label="Grille des 36 couples de deux dés">
+    <svg viewBox={`0 0 ${width} ${width}`} role="img"
+      aria-label="Grille des 36 couples de deux dés" style={{ maxWidth: width }} className="w-full h-auto">
       {[1, 2, 3, 4, 5, 6].map((a) => (
         <text key={`r${a}`} x={cell * 0.5} y={cell * (a + 0.65)} textAnchor="middle" fontSize="9" fill="#64748b">{a}</text>
       ))}
@@ -177,8 +178,8 @@ function MiniBag({ rouge = 2, bleu = 4, vert = 2, width = 200 }) {
   const rows = Math.ceil(all.length / per);
   const height = 18 + rows * (r * 2 + 5);
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img"
-      aria-label={`Sac de ${all.length} billes : ${rouge} rouges, ${bleu} bleues, ${vert} vertes`}>
+    <svg viewBox={`0 0 ${width} ${height}`} role="img"
+      aria-label={`Sac de ${all.length} billes : ${rouge} rouges, ${bleu} bleues, ${vert} vertes`} style={{ maxWidth: width }} className="w-full h-auto">
       {all.map((fill, i) => (
         <circle key={i} cx={14 + (i % per) * (r * 2 + 4)} cy={12 + Math.floor(i / per) * (r * 2 + 5) + r}
           r={r} fill={fill} opacity="0.9" />

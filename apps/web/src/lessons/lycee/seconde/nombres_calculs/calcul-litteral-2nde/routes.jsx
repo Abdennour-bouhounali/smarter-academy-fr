@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
+import { LESSON_KNOWLEDGE } from './knowledge';
+import { LessonKnowledgeProvider } from '../../../../common/knowledge';
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
@@ -15,10 +17,22 @@ const MODULE_COMPONENTS = Object.entries(MODULE_FILES).reduce((acc, [path, loade
   return acc;
 }, {});
 
+// Chaque page de la leçon (index + modules) est enveloppée dans le provider
+// de la carte des connaissances (implémentation partagée, lessons/common/knowledge) :
+// il lit la progression, cumule les apports des modules validés, monte le
+// tiroir « Ma carte » et laisse un <KnowledgeBrick> poser sa connaissance
+// à l'instant où le module l'enseigne (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
 function withSuspense(Component) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
-      <Component />
+      <LessonKnowledgeProvider
+        lessonId={LESSON_CONFIG.id}
+        knowledge={LESSON_KNOWLEDGE}
+        printTitle="CALCUL LITTÉRAL"
+        printSubject="Mathématiques · 2nde"
+      >
+        <Component />
+      </LessonKnowledgeProvider>
     </Suspense>
   );
 }

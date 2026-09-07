@@ -34,7 +34,11 @@ import MathText from '../../../../../common/components/MathText';
  * @param {boolean} [frozen=false]
  */
 const W = 320;
-const H = 120;
+/* La feuille occupe y = 10 → 100 ; les 44 px du bas sont la bande de
+   légende, SOUS le papier. Écrire le compte par-dessus les bandes
+   masquerait justement ce qu'on demande de compter. */
+const H = 152;
+const PAPER_BOTTOM = 100;
 const MAX_DRAWN = 32;
 
 export default function PaperFold({ folds, onChange, maxFolds = 6, showCompact = false, frozen = false }) {
@@ -52,23 +56,25 @@ export default function PaperFold({ folds, onChange, maxFolds = 6, showCompact =
           aria-label={`Feuille pliée ${folds} fois : ${layers} épaisseurs`}
         >
           <g pointerEvents="none">
-            <rect x="0" y="10" width={W} height={H - 20} rx="6" fill="#eef2ff" stroke="#6366f1" strokeWidth="2" />
+            <rect x="0" y="10" width={W} height={PAPER_BOTTOM - 10} rx="6" fill="#eef2ff" stroke="#6366f1" strokeWidth="2" />
             {Array.from({ length: drawn }, (_, i) => (
               <rect
                 key={i}
                 x={i * bandW}
                 y={10}
                 width={bandW}
-                height={H - 20}
+                height={PAPER_BOTTOM - 10}
                 fill={i % 2 === 0 ? '#c7d2fe' : '#e0e7ff'}
                 stroke="#6366f1"
                 strokeWidth={drawn > 16 ? 0.4 : 1}
               />
             ))}
-            <text x={W / 2} y={H - 26} textAnchor="middle" fontSize="22" fontWeight="bold" fill="#3730a3" fontFamily="monospace">
+            {/* Le compte, SOUS la feuille : il annonce les bandes sans en
+                cacher une seule. */}
+            <text x={W / 2} y={PAPER_BOTTOM + 30} textAnchor="middle" fontSize="26" fontWeight="bold" fill="#3730a3" fontFamily="monospace">
               {formatDec(layers)}
             </text>
-            <text x={W / 2} y={H - 8} textAnchor="middle" fontSize="11" fill="#4338ca">
+            <text x={W / 2} y={PAPER_BOTTOM + 46} textAnchor="middle" fontSize="13" fill="#4338ca">
               épaisseur{layers > 1 ? 's' : ''}
             </text>
           </g>

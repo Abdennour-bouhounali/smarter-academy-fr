@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, XCircle, Lightbulb, Info, Timer as TimerIcon, Volume2, VolumeX, Flame } from 'lucide-react';
+import { useLessonChrome } from '../hooks/useLessonChrome';
 
 /**
  * Briques d'interface partagées par les leçons Smarter Academy.
  * Toutes les classes Tailwind sont écrites en toutes lettres (pas
- * d'interpolation) pour rester détectables au build.
+ * d'interpolation) pour rester détectables au build. Seule exception :
+ * une classe peut être composée à partir d'une variable si TOUTES ses
+ * valeurs possibles existent littéralement ailleurs dans la source — c'est
+ * le cas des tables de décalage de utils/lessonChrome.js.
  *
  * Convention de validation (à respecter dans tout module utilisant
  * ValidateButton pour déclencher onSolved) : la condition de réussite
@@ -353,10 +357,14 @@ export function XPBurst({ amount, tick }) {
  * seule. `doneCount`/`total` : nombre d'étapes terminées sur le total.
  */
 export function StepProgressBar({ doneCount, total }) {
+  // Le décalage collant vient du bandeau réellement rendu au-dessus (contrat
+  // lessonChrome), jamais d'un `top-16` supposé : chez l'élève connecté sur
+  // grand écran il n'y a aucun en-tête, et réserver 64 px y ouvrirait un vide.
+  const { stickyTopClass } = useLessonChrome();
   if (!total) return null;
   const pct = Math.round((doneCount / total) * 100);
   return (
-    <div className="sticky top-16 z-10 -mx-4 px-4 py-2 bg-slate-50/90 backdrop-blur-sm border-b border-slate-200 sm:rounded-xl sm:border sm:mx-0">
+    <div className={`sticky ${stickyTopClass} z-10 -mx-4 px-4 py-2 bg-slate-50/90 backdrop-blur-sm border-b border-slate-200 sm:rounded-xl sm:border sm:mx-0`}>
       <div className="flex items-center gap-2.5">
         <div className="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
           <motion.div

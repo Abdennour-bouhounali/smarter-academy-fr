@@ -22,6 +22,10 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/nombres_calculs/valeur-a
 
 export const LESSON_CONFIG = {
   id: 'valeur-absolue-distance-2nde',
+  // Connaissances SUPPOSÉES acquises, venues d'« Ensembles et intervalles » :
+  // la leçon écrit ses ensembles de solutions en crochets dès le module 4.
+  // Diagnostiquées par q4 (appartenance) et q5 (écriture en crochets).
+  priorKnowledge: ['intervalle', 'intervalle-crochets', 'appartient'],
   sequentialUnlock: true,
   title: 'Valeur absolue et distance',
   description:

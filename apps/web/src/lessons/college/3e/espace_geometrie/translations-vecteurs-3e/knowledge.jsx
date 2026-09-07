@@ -34,7 +34,7 @@ import MathText from '../../../../common/components/MathText';
 /* Une petite figure de carte : viewBox commun, légende sous le dessin. */
 const Fig = ({ children, caption, w = 200, h = 120 }) => (
   <div className="space-y-1">
-    <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} role="img" aria-label={caption}>
+    <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-label={caption} style={{ maxWidth: w }} className="w-full h-auto">
       {children}
     </svg>
     <p className="text-xs text-slate-500 text-center">{caption}</p>

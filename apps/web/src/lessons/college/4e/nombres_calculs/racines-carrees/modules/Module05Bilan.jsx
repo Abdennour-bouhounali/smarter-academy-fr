@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { StepProgressBar } from '../../../../../common/components/LessonUI';
 import SectionHeader from '../../../../../common/components/SectionHeader';
 import MathText from '../../../../../common/components/MathText';
 import MathInput from '../../../../../common/components/MathInput';
@@ -56,6 +57,11 @@ export default function Module05Bilan() {
 
   const allCorrect = q1.isCorrect && q2.isCorrect && q3.isCorrect;
 
+  // Progression des exercices — même source que le déverrouillage de
+  // `nextLink`, pour que le bandeau ne puisse pas mentir sur l'état.
+  const doneCount = (q1.isCorrect ? 1 : 0) + (q2.isCorrect ? 1 : 0) + (q3.isCorrect ? 1 : 0);
+  const totalSteps = 3;
+
   return (
     <ModuleLayout
       lessonId={MODULE_CTX.lessonId}
@@ -74,6 +80,9 @@ export default function Module05Bilan() {
       nextLink={null}
       onNextClick={() => markModuleCompleted('L05-4e')}
     >
+      {doneCount < totalSteps && (
+        <StepProgressBar doneCount={doneCount} total={totalSteps} />
+      )}
       <div className="space-y-12 max-w-4xl mx-auto w-full pb-20">
         
         <section>

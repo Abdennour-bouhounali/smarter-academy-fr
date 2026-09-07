@@ -2,7 +2,12 @@
   "lesson": "variations-extremums-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "intervalle",
+    "intervalle-crochets",
+    "appartient",
+    "inclus"
+  ],
   "conceptsIntroduced": [
     {
       "id": "variations-sens",
@@ -14,7 +19,12 @@
       "id": "regle-plus-bas-au-bord",
       "type": "regles",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
+        "line": 69,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "definition-croissante-decroissante",
@@ -108,7 +118,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 8,
+      "line": 14,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -120,7 +130,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 9,
+      "line": 15,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -132,7 +142,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 10,
+      "line": 16,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -144,7 +154,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 11,
+      "line": 17,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -156,9 +166,47 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 12,
+      "line": 18,
       "requires": null,
       "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-d6",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
+      "line": 19,
+      "requires": [
+        "intervalle",
+        "intervalle-crochets",
+        "appartient"
+      ],
+      "prerequisiteStatus": {
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "appartient": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "va-d7",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
+      "line": 20,
+      "requires": [
+        "intervalle",
+        "inclus"
+      ],
+      "prerequisiteStatus": {
+        "intervalle": "prior",
+        "inclus": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -168,13 +216,11 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
-      "line": 74,
+      "line": 81,
       "requires": null,
       "prerequisiteStatus": {},
-      "lexiconHits": [
-        "intervalle"
-      ],
-      "pedagogicallyValid": false
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M01-S4-Q2",
@@ -182,7 +228,7 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
-      "line": 85,
+      "line": 92,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -209,10 +255,8 @@
       "line": 50,
       "requires": null,
       "prerequisiteStatus": {},
-      "lexiconHits": [
-        "appartient"
-      ],
-      "pedagogicallyValid": false
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M03-S3-Q2",
@@ -307,10 +351,8 @@
       "line": 46,
       "requires": null,
       "prerequisiteStatus": {},
-      "lexiconHits": [
-        "inclus"
-      ],
-      "pedagogicallyValid": false
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M06-S1-Q1",
@@ -495,42 +537,6 @@
   ],
   "findings": [
     {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« intervalle » is a target concept of this lesson but its first appearance is q.explain (module 1, étape 3); it is only taught later at apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module02CroissanteDecroissante.jsx:78",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
-      "line": 77,
-      "module": 1,
-      "step": 3,
-      "term": "intervalle",
-      "questionId": "M01-S3-Q1",
-      "position": 39
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« symbole ∈ » first appears at q.correction (module 3, étape 2) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module03LeTableauDeVariations.jsx",
-      "line": 55,
-      "module": 3,
-      "step": 2,
-      "term": "appartient",
-      "questionId": "M03-S2-Q1",
-      "position": 111
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« symbole ⊂ » first appears at q.correction (module 5, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module05ComparerSansCalculer.jsx",
-      "line": 48,
-      "module": 5,
-      "step": 3,
-      "term": "inclus",
-      "questionId": "M05-S3-Q3",
-      "position": 205
-    },
-    {
       "code": "W_ITEM_WITHOUT_BRICK",
       "severity": "info",
       "message": "knowledge item 'variations-sens' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
@@ -557,21 +563,9 @@
     {
       "code": "W_ITEM_WITHOUT_BRICK",
       "severity": "info",
-      "message": "knowledge item 'regle-plus-bas-au-bord' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 35,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
       "message": "knowledge item 'definition-croissante-decroissante' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 42,
+      "line": 48,
       "module": 2,
       "step": null,
       "term": null,
@@ -583,7 +577,7 @@
       "severity": "info",
       "message": "knowledge item 'vocab-monotone-intervalle' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 53,
+      "line": 59,
       "module": 2,
       "step": null,
       "term": null,
@@ -595,7 +589,7 @@
       "severity": "info",
       "message": "knowledge item 'mem-croissante-ordre' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 58,
+      "line": 64,
       "module": 2,
       "step": null,
       "term": null,
@@ -607,7 +601,7 @@
       "severity": "info",
       "message": "knowledge item 'tableau-de-variations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 65,
+      "line": 71,
       "module": 3,
       "step": null,
       "term": null,
@@ -619,7 +613,7 @@
       "severity": "info",
       "message": "knowledge item 'methode-construire-tableau-variations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 79,
+      "line": 85,
       "module": 3,
       "step": null,
       "term": null,
@@ -631,7 +625,7 @@
       "severity": "info",
       "message": "knowledge item 'methode-lire-tableau-variations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 84,
+      "line": 90,
       "module": 3,
       "step": null,
       "term": null,
@@ -643,7 +637,7 @@
       "severity": "info",
       "message": "knowledge item 'maximum-minimum' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 91,
+      "line": 97,
       "module": 4,
       "step": null,
       "term": null,
@@ -655,7 +649,7 @@
       "severity": "info",
       "message": "knowledge item 'methode-extremum-tableau' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 107,
+      "line": 113,
       "module": 4,
       "step": null,
       "term": null,
@@ -667,7 +661,7 @@
       "severity": "info",
       "message": "knowledge item 'mem-valeur-et-endroit' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 112,
+      "line": 118,
       "module": 4,
       "step": null,
       "term": null,
@@ -679,7 +673,7 @@
       "severity": "info",
       "message": "knowledge item 'methode-comparer-images-tableau' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 119,
+      "line": 125,
       "module": 5,
       "step": null,
       "term": null,
@@ -691,7 +685,7 @@
       "severity": "info",
       "message": "knowledge item 'methode-encadrer-images' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 130,
+      "line": 136,
       "module": 5,
       "step": null,
       "term": null,
@@ -703,7 +697,7 @@
       "severity": "info",
       "message": "knowledge item 'methode-optimiser' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 137,
+      "line": 143,
       "module": 6,
       "step": null,
       "term": null,

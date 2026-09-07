@@ -19,6 +19,33 @@ const MUTED = '#94a3b8';
 const GRID = '#e2e8f0';
 
 /**
+ * L'ÉCHELLE DE TRAIT, commune à toutes les figures.
+ *
+ * Ces nombres sont des unités de viewBox, pas des pixels : ils grandissent
+ * donc AVEC le dessin. Ce qui compte n'est pas leur valeur absolue mais leur
+ * RAPPORT — c'est lui qui décide de la lisibilité une fois la figure affichée
+ * en grand. Les figures avaient été réglées une par une : on y trouvait des
+ * étiquettes de 7,5 à 16 et des traits de 1 à 3, si bien qu'agrandies,
+ * certaines paraissaient grêles et d'autres pâteuses.
+ *
+ * Trois épaisseurs, deux tailles de texte, et rien d'autre :
+ *   RULE   le trait porteur (la droite, l'axe, le contour)
+ *   MARK   ce qui se pose dessus (graduations, repères, hachures)
+ *   HAIR   ce qui est en arrière-plan (quadrillage)
+ *   LABEL  ce qu'on lit (nombres, noms de points)
+ *   NOTE   ce qui commente, plus discret
+ */
+const S = {
+  RULE: 2,
+  MARK: 1.5,
+  HAIR: 1,
+  LABEL: 12,
+  NOTE: 10.5,
+  DOT: 4,
+  HALO: 1.5,   // la plaque d'étiquette (voir knowledgeVisuals.jsx)
+};
+
+/**
  * PartsBar — une unité coupée en `den` parts égales, dont `num` sont prises.
  * La figure de base de tout ce qui est fraction : elle montre la découpe
  * (le dénominateur) ET la prise (le numérateur) d'un seul coup d'œil.
@@ -38,8 +65,8 @@ export function PartsBar({
   const step = w / den;
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-      aria-hidden="true" className={`select-none ${className}`}>
+    <svg viewBox={`0 0 ${width} ${height}`}
+      aria-hidden="true" className={`select-none ${className} w-full h-auto`} style={{ maxWidth: width }}>
       {Array.from({ length: den }, (_, i) => (
         <rect
           key={i}
@@ -47,15 +74,15 @@ export function PartsBar({
           width={step} height={barH}
           fill={i < num ? color : '#fff'}
           fillOpacity={i < num ? 0.85 : 1}
-          stroke={INK} strokeWidth="1.5"
+          stroke={INK} strokeWidth={S.MARK}
         />
       ))}
       {showUnit && (
         <>
-          <line x1={pad} y1={height - 8} x2={pad + w} y2={height - 8} stroke={MUTED} strokeWidth="1" />
-          <line x1={pad} y1={height - 11} x2={pad} y2={height - 5} stroke={MUTED} strokeWidth="1" />
-          <line x1={pad + w} y1={height - 11} x2={pad + w} y2={height - 5} stroke={MUTED} strokeWidth="1" />
-          <text x={pad + w / 2} y={height - 1} textAnchor="middle" fontSize="9" fill={MUTED} fontFamily="ui-monospace, monospace">
+          <line x1={pad} y1={height - 8} x2={pad + w} y2={height - 8} stroke={MUTED} strokeWidth={S.HAIR} />
+          <line x1={pad} y1={height - 11} x2={pad} y2={height - 5} stroke={MUTED} strokeWidth={S.HAIR} />
+          <line x1={pad + w} y1={height - 11} x2={pad + w} y2={height - 5} stroke={MUTED} strokeWidth={S.HAIR} />
+          <text x={pad + w / 2} y={height - 1} textAnchor="middle" fontSize={S.NOTE} fill={MUTED} fontFamily="ui-monospace, monospace">
             1 unité
           </text>
         </>
@@ -91,10 +118,10 @@ export function PartsCircle({
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}
       aria-hidden="true" className={`select-none ${className}`}>
       {den === 1 ? (
-        <circle cx={c} cy={c} r={r} fill={num >= 1 ? color : '#fff'} fillOpacity={num >= 1 ? 0.85 : 1} stroke={INK} strokeWidth="1.5" />
+        <circle cx={c} cy={c} r={r} fill={num >= 1 ? color : '#fff'} fillOpacity={num >= 1 ? 0.85 : 1} stroke={INK} strokeWidth={S.MARK} />
       ) : (
         Array.from({ length: den }, (_, i) => (
-          <path key={i} d={sector(i)} fill={i < num ? color : '#fff'} fillOpacity={i < num ? 0.85 : 1} stroke={INK} strokeWidth="1.5" />
+          <path key={i} d={sector(i)} fill={i < num ? color : '#fff'} fillOpacity={i < num ? 0.85 : 1} stroke={INK} strokeWidth={S.MARK} />
         ))
       )}
     </svg>
@@ -121,24 +148,24 @@ export function MiniNumberLine({
   const toX = (v) => padL + ((v - min) / (max - min)) * w;
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-      aria-hidden="true" className={`select-none overflow-visible ${className}`}>
+    <svg viewBox={`0 0 ${width} ${height}`}
+      aria-hidden="true" className={`select-none overflow-visible ${className} w-full h-auto`} style={{ maxWidth: width }}>
       <defs>
         <marker id="mnl-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill={INK} />
         </marker>
       </defs>
-      <line x1={padL} y1={y} x2={width - 4} y2={y} stroke={INK} strokeWidth="1.5" markerEnd="url(#mnl-arrow)" />
+      <line x1={padL} y1={y} x2={width - 4} y2={y} stroke={INK} strokeWidth={S.MARK} markerEnd="url(#mnl-arrow)" />
 
       {ticks.map((t, i) => (
         <g key={`t${i}`}>
           <line
             x1={toX(t.at)} y1={y - (t.strong ? 7 : 4)}
             x2={toX(t.at)} y2={y + (t.strong ? 7 : 4)}
-            stroke={t.strong ? INK : MUTED} strokeWidth={t.strong ? 1.5 : 1}
+            stroke={t.strong ? INK : MUTED} strokeWidth={t.strong ? S.MARK : S.HAIR}
           />
           {t.label && (
-            <text x={toX(t.at)} y={y + 19} textAnchor="middle" fontSize="9.5" fill={MUTED} fontFamily="ui-monospace, monospace">
+            <text x={toX(t.at)} y={y + 19} textAnchor="middle" fontSize={S.NOTE} fill={MUTED} fontFamily="ui-monospace, monospace">
               {t.label}
             </text>
           )}
@@ -147,9 +174,9 @@ export function MiniNumberLine({
 
       {marks.map((m, i) => (
         <g key={`m${i}`}>
-          <circle cx={toX(m.at)} cy={y} r="4.5" fill={m.color ?? '#e11d48'} stroke="#fff" strokeWidth="1.5" />
+          <circle cx={toX(m.at)} cy={y} r={S.DOT} fill={m.color ?? '#e11d48'} stroke="#fff" strokeWidth={S.MARK} />
           {m.label && (
-            <text x={toX(m.at)} y={y - 11} textAnchor="middle" fontSize="10" fontWeight="700" fill={m.color ?? '#e11d48'} fontFamily="ui-monospace, monospace">
+            <text x={toX(m.at)} y={y - 11} textAnchor="middle" fontSize={S.NOTE} fontWeight="700" fill={m.color ?? '#e11d48'} fontFamily="ui-monospace, monospace">
               {m.label}
             </text>
           )}
@@ -177,8 +204,8 @@ export function UnitLadder({
   const y = 14, h = 22;
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-      aria-hidden="true" className={`select-none ${className}`}>
+    <svg viewBox={`0 0 ${width} ${height}`}
+      aria-hidden="true" className={`select-none ${className} w-full h-auto`} style={{ maxWidth: width }}>
       {steps.map((s, i) => {
         const on = highlight.includes(i);
         return (
@@ -189,7 +216,7 @@ export function UnitLadder({
             />
             <text
               x={i * cellW + cellW / 2} y={y + h / 2 + 4}
-              textAnchor="middle" fontSize="10.5" fontWeight={on ? '800' : '600'}
+              textAnchor="middle" fontSize={S.LABEL} fontWeight={on ? '800' : '600'}
               fill={on ? '#1d4ed8' : INK} fontFamily="ui-monospace, monospace"
             >
               {s}
@@ -198,7 +225,7 @@ export function UnitLadder({
         );
       })}
       {steps.slice(0, -1).map((_, i) => (
-        <text key={`x${i}`} x={(i + 1) * cellW} y={height - 3} textAnchor="middle" fontSize="8" fill={MUTED}>
+        <text key={`x${i}`} x={(i + 1) * cellW} y={height - 3} textAnchor="middle" fontSize={S.NOTE} fill={MUTED}>
           ×10
         </text>
       ))}
@@ -224,13 +251,13 @@ export function PlaceValue({
   const yLab = 12, yBox = 18, h = 24;
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-      aria-hidden="true" className={`select-none ${className}`}>
+    <svg viewBox={`0 0 ${width} ${height}`}
+      aria-hidden="true" className={`select-none ${className} w-full h-auto`} style={{ maxWidth: width }}>
       {columns.map((c, i) => {
         const on = highlight === i;
         return (
           <g key={i}>
-            <text x={i * cellW + cellW / 2} y={yLab} textAnchor="middle" fontSize="7.5" fill={MUTED} fontFamily="ui-monospace, monospace">
+            <text x={i * cellW + cellW / 2} y={yLab} textAnchor="middle" fontSize={S.NOTE} fill={MUTED} fontFamily="ui-monospace, monospace">
               {c.label}
             </text>
             <rect
@@ -278,9 +305,9 @@ export function MiniFigure({
   const pts = points.map((p) => `${toX(p.x)},${toY(p.y)}`).join(' ');
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-      aria-hidden="true" className={`select-none overflow-visible ${className}`}>
-      <polygon points={pts} fill={fill} stroke={stroke} strokeWidth="2" strokeLinejoin="round" />
+    <svg viewBox={`0 0 ${width} ${height}`}
+      aria-hidden="true" className={`select-none overflow-visible ${className} w-full h-auto`} style={{ maxWidth: width }}>
+      <polygon points={pts} fill={fill} stroke={stroke} strokeWidth={S.RULE} strokeLinejoin="round" />
 
       {rightAngles.map((i, k) => {
         const p = points[i];
@@ -294,7 +321,7 @@ export function MiniFigure({
         const b = { x: toX(p.x) + (vx / nv) * s, y: toY(p.y) + (vy / nv) * s };
         return (
           <path key={`ra${k}`} d={`M ${a.x} ${a.y} L ${a.x + b.x - toX(p.x)} ${a.y + b.y - toY(p.y)} L ${b.x} ${b.y}`}
-            fill="none" stroke={stroke} strokeWidth="1.3" />
+            fill="none" stroke={stroke} strokeWidth={S.MARK} />
         );
       })}
 
@@ -311,17 +338,33 @@ export function MiniFigure({
           return (
             <line key={`tk${k}-${j}`}
               x1={cx - nx * 4} y1={cy - ny * 4} x2={cx + nx * 4} y2={cy + ny * 4}
-              stroke={stroke} strokeWidth="1.6" />
+              stroke={stroke} strokeWidth={S.MARK} />
           );
         });
       })}
 
-      {labels.map((l, k) => (
-        <text key={`l${k}`} x={toX(l.x)} y={toY(l.y)} fontSize="10.5" fontWeight="700"
-          fill={INK} textAnchor={l.anchor ?? 'middle'} fontFamily="ui-monospace, monospace">
+      {labels.map((l, k) => {
+        /* LE NOM D'UN SOMMET SE MET DEHORS.
+           L'étiquette était posée AUX coordonnées du sommet : « C » et « D »
+           tombaient donc sur le coin et sur les deux côtés qui s'y rejoignent.
+           On l'écarte du centre de la figure — la seule direction qui sorte à
+           coup sûr de la matière — et on laisse `dx`/`dy` reprendre la main
+           quand une leçon veut un placement précis. */
+        const gx = points.reduce((a, p) => a + p.x, 0) / (points.length || 1);
+        const gy = points.reduce((a, p) => a + p.y, 0) / (points.length || 1);
+        const vx = l.x - gx, vy = l.y - gy;
+        const m = Math.hypot(vx, vy) || 1;
+        const OUT = 9;
+        const px = toX(l.x) + (l.dx ?? (vx / m) * OUT);
+        const py = toY(l.y) + (l.dy ?? (vy / m) * OUT + 4);
+        return (
+        <text key={`l${k}`} x={px} y={py} fontSize={S.LABEL} fontWeight="700"
+          fill={INK} textAnchor={l.anchor ?? 'middle'} fontFamily="ui-monospace, monospace"
+          paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">
           {l.text}
         </text>
-      ))}
+        );
+      })}
     </svg>
   );
 }
@@ -341,14 +384,19 @@ export function MiniGrid({
   color = '#34d399',
   className = '',
 }) {
-  const padL = rowLabels ? 16 : 2;
+  // LA GOUTTIÈRE EST TAILLÉE SUR LES ÉTIQUETTES, PAS DEVINÉE.
+  // Elle valait 16 quelle que soit la légende : « Crê. » ou « Prix », au
+  // corps S.NOTE, débordait de la gouttière et se posait sur la première
+  // colonne du quadrillage. On la calcule sur la plus longue.
+  const CH = S.NOTE * 0.58;                     // largeur moyenne d'un chiffre
+  const padL = rowLabels ? Math.max(...rowLabels.map((l) => String(l).length)) * CH + 7 : 2;
   const padT = colLabels ? 13 : 2;
   const width = padL + cols * cell + 4;
   const height = padT + rows * cell + 4;
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-      aria-hidden="true" className={`select-none overflow-visible ${className}`}>
+    <svg viewBox={`0 0 ${width} ${height}`}
+      aria-hidden="true" className={`select-none overflow-visible ${className} w-full h-auto`} style={{ maxWidth: width }}>
       {Array.from({ length: rows }, (_, r) =>
         Array.from({ length: cols }, (_, c) => {
           const on = filled.some((f) => f.r === r && f.c === c);
@@ -357,20 +405,20 @@ export function MiniGrid({
               x={padL + c * cell} y={padT + r * cell}
               width={cell} height={cell}
               fill={on ? color : '#fff'} fillOpacity={on ? 0.75 : 1}
-              stroke={GRID} strokeWidth="1" />
+              stroke={GRID} strokeWidth={S.HAIR} />
           );
         })
       )}
-      <rect x={padL} y={padT} width={cols * cell} height={rows * cell} fill="none" stroke={INK} strokeWidth="1.5" />
+      <rect x={padL} y={padT} width={cols * cell} height={rows * cell} fill="none" stroke={INK} strokeWidth={S.MARK} />
 
       {colLabels?.map((l, i) => (
-        <text key={`cl${i}`} x={padL + i * cell + cell / 2} y={padT - 4} textAnchor="middle" fontSize="8.5" fill={MUTED} fontFamily="ui-monospace, monospace">{l}</text>
+        <text key={`cl${i}`} x={padL + i * cell + cell / 2} y={padT - 4} textAnchor="middle" fontSize={S.NOTE} fill={MUTED} fontFamily="ui-monospace, monospace">{l}</text>
       ))}
       {rowLabels?.map((l, i) => (
-        <text key={`rl${i}`} x={padL - 4} y={padT + i * cell + cell / 2 + 3} textAnchor="end" fontSize="8.5" fill={MUTED} fontFamily="ui-monospace, monospace">{l}</text>
+        <text key={`rl${i}`} x={padL - 4} y={padT + i * cell + cell / 2 + 3} textAnchor="end" fontSize={S.NOTE} fill={MUTED} fontFamily="ui-monospace, monospace">{l}</text>
       ))}
       {nodes.map((n, i) => (
-        <circle key={`n${i}`} cx={padL + n.c * cell} cy={padT + n.r * cell} r="3.5" fill={n.color ?? '#e11d48'} stroke="#fff" strokeWidth="1.2" />
+        <circle key={`n${i}`} cx={padL + n.c * cell} cy={padT + n.r * cell} r={S.DOT} fill={n.color ?? '#e11d48'} stroke="#fff" strokeWidth={S.MARK} />
       ))}
     </svg>
   );

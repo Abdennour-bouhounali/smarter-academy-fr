@@ -817,6 +817,41 @@ even then it ships with a stepper or keyboard twin (§17, §27).
 
 ---
 
+## 16bis. The controls do not move under the finger
+
+> **A control keeps its position while the figure changes size.**
+
+A manipulation makes something grow, shrink, or appear. If the buttons sit *after* that something
+in the flow, every action shoves them down or up — and the student's next tap lands where the
+button no longer is. On a phone this is worse than untidy: the finger is already on its way.
+
+The rule, in order of preference:
+
+1. **Put the controls BESIDE the figure, not after it.** A figure that grows vertically must
+   carry its buttons on its left or right: a side column is immune to height changes, so the
+   pointer never has to travel and the button is where the hand left it. This is the default for
+   any manipulation whose figure changes size — `puissances-3e` M2/M3 place « Ajouter / Retirer »
+   in a side column beside the tower, which grows upward *and* descends below its ground line.
+   The same reasoning applies to a bar that lengthens or a list that gains rows.
+2. **Only if the figure's size is genuinely fixed** may the controls sit underneath it.
+3. **Reserving the maximum height is the fallback**, not the first move — it stops the shifting
+   but pays for it with a large empty area above a small figure, which reads as a layout bug.
+4. **Never let a feedback block push the controls.** Messages that appear on success belong
+   *below* the controls, or in a container whose height is already reserved.
+
+On a phone the side column becomes a row underneath — there is no width for it — so the figure's
+maximum height must be reserved there, where the trade-off is worth it.
+
+Counter-example to avoid, and the reason this section exists: a stack whose buttons follow it in
+the DOM. Adding a block pushes the buttons down by exactly one block height, so a student tapping
+« add » five times chases the button down the screen.
+
+This is not only comfort. A control that moves makes the student watch the *interface* instead of
+the *mathematics* — and §5 asks that one action produce one visible mathematical consequence, not
+two (the consequence, plus a layout shift).
+
+---
+
 ## 17. Mobile-first manipulation
 
 Requirements:
@@ -1281,6 +1316,53 @@ For every interactive mathematical object:
 
 ---
 
+## 28bis. Visual invariant — a diagram must not contradict the lesson
+
+A figure is not decoration: for most students it *is* the mathematics. Two rules,
+both learned from real defects found in this codebase.
+
+### 1. No unintended collision
+
+> Every label, number or notation must own its space. It may never overlap a
+> meaningful line, axis, curve, arrow, point, edge, connector, or another label.
+
+Applies to static and interactive states, and at every width (test 375px and
+1280px at minimum). Never resolve a collision by clipping (`overflow:hidden`
+hides the bug and eats the label) or by shrinking the text (readability is the
+thing being protected). Fix the placement instead:
+
+- derive the position from the geometry (a direction vector, the emptiest
+  quadrant), never from a hardcoded offset that only works for today's data;
+- keep the label clear of the gutters where axis numbers live;
+- when a label must sit over a drawing, give it a halo
+  (`paintOrder="stroke" stroke="#fff"`) — sized to about an eighth of the font,
+  since a heavier outline eats thin glyphs like `O` from the inside.
+
+`node scripts/audit-svg-collisions.mjs` measures this in a real browser
+(rendered bounding boxes, stroke-accurate for curves) and ignores what is
+deliberate: data labels inside their own filled region, and haloed text.
+
+### 2. The drawing must agree with the claim
+
+A figure that shows something other than what the text asserts is a
+**pedagogical bug**, not a cosmetic one. Two recurring forms:
+
+- **Eyeballed geometry.** Hand-typed coordinates drift. A "perpendicular" pair
+  whose dot product was 1388 taught the wrong angle. Compute the figure from a
+  direction vector and its normal, so the property holds by construction at any
+  size.
+- **Tolerance wider than the eye.** A manipulation that lights "vertex on the
+  point" while the student SEES a gap teaches that "roughly" is enough. Keep the
+  tolerance below what is visible at the rendered size — compare it to the
+  radius of the dot being aimed at, not to the viewBox.
+
+### Sizing
+
+Give an important diagram the room it needs (`visualSize` on a knowledge item:
+`sm` / `md` / `lg` / `full`). Semantic size, never pixels, and never a
+`transform: scale()` — the `viewBox` scales geometry, labels and strokes
+together, so a scaled figure stays sharp.
+
 ## 29. Quality checklist
 
 Run before declaring a lesson complete. Every answer must be **yes**.
@@ -1296,6 +1378,11 @@ Run before declaring a lesson complete. Every answer must be **yes**.
 - Does every question `require` only knowledge established EARLIER — a `<KnowledgeBrick>` above it, or a `priorKnowledge` id diagnosed by Module 0 (§6quinquies)? Is no required word first met in an `explain`, a `correction`, a distractor or the `footer`?
 - Does `npm run audit:knowledge` report no critical or high finding for this lesson?
 - Does scaffolding progressively disappear (§15)?
+
+### Diagrams (§28bis)
+- Does `node scripts/audit-svg-collisions.mjs` report no collision for this lesson's figures, at 375px AND 1280px?
+- Does every figure still SHOW what its text claims — angles computed rather than eyeballed, and a validated placement visibly correct?
+- Is every important diagram large enough to be read without zooming, and does no label sit on a line, a point or another label?
 
 ### Interaction
 - Does every interaction have a mathematical purpose (§18)?

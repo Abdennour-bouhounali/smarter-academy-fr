@@ -220,3 +220,81 @@ svg [role="slider"]:focus,
 svg [role="slider"]:focus-visible {
   outline: none;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Visuels de connaissance — la taille est décidée par ConceptVisual.
+
+   Chaque schéma de leçon porte la largeur à laquelle il a été DESSINÉ
+   (`style="max-width: 140px"`, `width="200"`…). Utile isolément, cette borne
+   devenait un plafond : dans une carte de 686 px le schéma restait une
+   vignette, et agrandir la carte ne changeait rien.
+
+   On la neutralise ici, pour les seuls enfants directs d'un ConceptVisual.
+   Le `viewBox` conserve la géométrie exacte — traits, étiquettes et
+   épaisseurs grandissent ensemble, sans flou ni déformation. La largeur
+   affichée vient alors de `visualSize` (sm / md / lg / full).
+   ───────────────────────────────────────────────────────────────────────── */
+/* Descendant à toute profondeur : un schéma est souvent enveloppé dans un
+   <div> ou une <figure> qui lui est propre. `!important` est nécessaire — la
+   borne d'origine est un style INLINE (`style="max-width: 132px"`), qu'une
+   règle ordinaire ne peut pas dépasser. On ne cible que l'intérieur d'un
+   ConceptVisual : partout ailleurs les schémas gardent leur taille. */
+.sa-concept-visual svg {
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
+.sa-concept-visual figcaption {
+  max-width: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ESPACE DE TRAVAIL — MODE COLONNE DE « MA CARTE »
+   (context/WorkspaceLayoutContext.jsx)
+
+   Trois régions, une seule source de vérité :
+
+     ┌────┬────────────────────────────┬────────────┐
+     │ S  │        CONTENU             │  MA CARTE  │
+     └────┴────────────────────────────┴────────────┘
+
+   Les deux coquilles posent `--sa-sidebar-w` et `--sa-gutter-w` sur leur
+   <main>. La réservation elle-même se fait ICI, en CSS, et non par des classes
+   Tailwind calculées : le décalage de la barre latérale n'existe qu'à partir
+   de `lg`, et une media query est le seul endroit qui puisse le dire sans
+   dupliquer le point de rupture dans du JavaScript. Les variables sont
+   optionnelles — une page sans elles retombe sur `0px` et garde exactement sa
+   mise en page d'avant.
+
+   `transition: padding` — la coquille « fait de la place » ; c'est le même
+   mouvement, et la même durée, que la compression de la barre latérale.
+   ───────────────────────────────────────────────────────────────────────── */
+.sa-workspace-main {
+  padding-right: var(--sa-gutter-w, 0px);
+  transition: padding 300ms ease-out;
+}
+
+@media (min-width: 1024px) {
+  .sa-workspace-main {
+    padding-left: var(--sa-sidebar-w, 0px);
+  }
+}
+
+/* Le mouvement est une commodité, pas une information : qui demande moins
+   d'animation obtient le même état final, immédiatement. */
+@media (prefers-reduced-motion: reduce) {
+  .sa-workspace-main,
+  .sa-workspace-sidebar {
+    transition: none;
+  }
+}
+
+/* Barre latérale comprimée — les libellés ne sont pas `display:none` (ils
+   resteraient dans l'arbre d'accessibilité tout en cassant l'alignement) :
+   ils s'effacent et cessent d'occuper de la place, pendant que le lien se
+   recentre sur son icône. Le nom reste lisible par un lecteur d'écran via le
+   `title`/`aria-label` porté par le lien lui-même. */
+.sa-workspace-sidebar {
+  transition: width 300ms ease-out;
+}

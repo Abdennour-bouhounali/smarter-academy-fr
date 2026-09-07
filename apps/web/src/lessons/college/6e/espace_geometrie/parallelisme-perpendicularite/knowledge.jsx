@@ -27,36 +27,94 @@ const Souvenir = ({ children }) => (
 
 const Piege = ({ children }) => <p className="text-xs text-rose-600">⚠️ {children}</p>;
 
-/** Deux droites, avec le codage de la relation. */
+/**
+ * Deux droites, avec le codage de la relation.
+ *
+ * LA FIGURE EST CALCULÉE, PAS DESSINÉE À L'ŒIL. Les coordonnées étaient
+ * saisies à la main : agrandie, la figure « perpendiculaire » montrait un
+ * angle qui n'était pas droit (produit scalaire ≈ 1388 au lieu de 0), et
+ * l'équerre flottait à côté du croisement. Sur la carte qui ENSEIGNE l'angle
+ * droit, c'est le dessin qui contredisait la leçon.
+ *
+ * Tout part maintenant d'un vecteur directeur u : la seconde droite suit son
+ * normal (-uy, ux) — perpendiculaire par construction, à n'importe quelle
+ * taille — et l'équerre est bâtie sur ces deux mêmes vecteurs, donc posée
+ * exactement dans l'angle.
+ */
 function DeuxDroites({ kind = 'paralleles', color = '#0284c7' }) {
-  const W = 140, H = 74;
+  // Le viewBox fixe la GÉOMÉTRIE, pas la taille : la largeur affichée est
+  // décidée par ConceptVisual (`visualSize` de l'item).
+  //
+  // La légende est en HTML, PAS en <text> : un <text> vit dans le viewBox et
+  // grandirait avec le dessin, au point de dépasser le titre de la carte.
+  const W = 160, H = 62;
+  const cx = W / 2, cy = H / 2;
+
+  // Direction commune, normalisée : la pente douce se lit sans effort.
+  const dx = 8, dy = -2.2;
+  const len = Math.hypot(dx, dy);
+  const ux = dx / len, uy = dy / len;
+  // Le normal — c'est LUI qui garantit les 90°.
+  const nx = -uy, ny = ux;
+
+  const seg = (px, py, half) =>
+    [px - ux * half, py - uy * half, px + ux * half, py + uy * half].map((v) => +v.toFixed(2));
+  const segN = (px, py, half) =>
+    [px - nx * half, py - ny * half, px + nx * half, py + ny * half].map((v) => +v.toFixed(2));
+
+  const stroke = { stroke: color, strokeWidth: 2.6, strokeLinecap: 'round' };
+  const legend = kind === 'paralleles' ? 'même écart partout' : 'angle droit : 90°';
+
+  let figure;
   if (kind === 'paralleles') {
-    return (
-      <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className="select-none">
-        {[26, 54].map((y) => (
-          <line key={y} x1="8" y1={y + 6} x2={W - 8} y2={y - 6} stroke={color} strokeWidth="2.2" strokeLinecap="round" />
-        ))}
-        {/* L'écart, mesuré perpendiculairement, est le même aux deux endroits. */}
-        {[42, 104].map((x) => (
-          <line key={x} x1={x} y1={30 - (x - 8) * 12 / 124 + 2} x2={x + 5.5} y2={58 - (x - 8) * 12 / 124 - 1}
-            stroke="#94a3b8" strokeWidth="1.4" strokeDasharray="3 2" />
-        ))}
-        <text x={W / 2} y={H - 4} fontSize="9.5" fill="#64748b" textAnchor="middle" fontFamily="ui-monospace, monospace">
-          même écart partout
-        </text>
-      </svg>
+    const gap = 17;                       // écart mesuré perpendiculairement
+    const half = W / 2 - 12;
+    const [ax1, ay1, ax2, ay2] = seg(cx + nx * gap / 2, cy + ny * gap / 2, half);
+    const [bx1, by1, bx2, by2] = seg(cx - nx * gap / 2, cy - ny * gap / 2, half);
+    figure = (
+      <>
+        <line x1={ax1} y1={ay1} x2={ax2} y2={ay2} {...stroke} />
+        <line x1={bx1} y1={by1} x2={bx2} y2={by2} {...stroke} />
+        {/* Les deux mesures de l'écart : même longueur, portées par le normal. */}
+        {[-0.42, 0.42].map((t) => {
+          const px = cx + ux * (half * t), py = cy + uy * (half * t);
+          // D'une droite à l'autre, exactement : c'est CE segment qui montre
+          // que l'écart ne change pas.
+          return (
+            <line key={t} x1={+(px + nx * gap / 2).toFixed(2)} y1={+(py + ny * gap / 2).toFixed(2)}
+              x2={+(px - nx * gap / 2).toFixed(2)} y2={+(py - ny * gap / 2).toFixed(2)}
+              stroke="#94a3b8" strokeWidth="1.6" strokeDasharray="3.5 2.5" strokeLinecap="round" />
+          );
+        })}
+      </>
+    );
+  } else {
+    const half = W / 2 - 12;
+    const [ax1, ay1, ax2, ay2] = seg(cx, cy, half);
+    const [bx1, by1, bx2, by2] = segN(cx, cy, H / 2 - 10);
+    const m = 11;                         // côté de l'équerre
+    figure = (
+      <>
+        <line x1={ax1} y1={ay1} x2={ax2} y2={ay2} {...stroke} />
+        <line x1={bx1} y1={by1} x2={bx2} y2={by2} {...stroke} />
+        {/* L'équerre, bâtie sur u et n : elle épouse l'angle au lieu de le longer. */}
+        <path
+          d={`M ${(cx + ux * m).toFixed(2)} ${(cy + uy * m).toFixed(2)}
+              L ${(cx + ux * m + nx * m).toFixed(2)} ${(cy + uy * m + ny * m).toFixed(2)}
+              L ${(cx + nx * m).toFixed(2)} ${(cy + ny * m).toFixed(2)}`}
+          fill="none" stroke={color} strokeWidth="1.8" strokeLinejoin="round" opacity="0.75" />
+        <circle cx={cx} cy={cy} r="2.4" fill={color} />
+      </>
     );
   }
+
   return (
-    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className="select-none">
-      <line x1="12" y1="52" x2={W - 12} y2="24" stroke={color} strokeWidth="2.2" strokeLinecap="round" />
-      <line x1="58" y1="8" x2="82" y2="68" stroke={color} strokeWidth="2.2" strokeLinecap="round" />
-      {/* Le petit carré de l'angle droit, au point de croisement. */}
-      <path d="M 70 38 L 79 36 L 82 46 L 73 48 Z" fill="none" stroke={color} strokeWidth="1.4" />
-      <text x={W / 2} y={H - 3} fontSize="9.5" fill="#64748b" textAnchor="middle" fontFamily="ui-monospace, monospace">
-        angle droit : 90°
-      </text>
-    </svg>
+    <figure className="w-full m-0">
+      <svg viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className="select-none w-full h-auto">
+        {figure}
+      </svg>
+      <figcaption className="mt-1 text-center font-mono text-xs text-slate-500">{legend}</figcaption>
+    </figure>
   );
 }
 
@@ -71,6 +129,7 @@ export const LESSON_KNOWLEDGE = {
         title: 'Deux droites parallèles',
         summary: 'Deux droites qui ne se coupent en aucun point, même prolongées sans fin.',
         visual: <DeuxDroites kind="paralleles" color="#4f46e5" />,
+        visualSize: 'lg',
         body: (
           <div className="space-y-2">
             <p>
@@ -95,6 +154,7 @@ export const LESSON_KNOWLEDGE = {
         title: 'L’écart constant',
         summary: 'Deux droites sont parallèles exactement quand leur écart est le même partout.',
         visual: <DeuxDroites kind="paralleles" color="#0284c7" />,
+        visualSize: 'lg',
         body: (
           <div className="space-y-2">
             <p>

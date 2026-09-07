@@ -42,14 +42,42 @@ export default function RelationFigure({
           x1={seg.from.x} y1={seg.from.y} x2={seg.to.x} y2={seg.to.y}
           stroke={color} strokeWidth="3" strokeLinecap="round"
         />
-        {line.name && (
-          <text
-            x={seg.to.x - 14} y={seg.to.y - 8}
-            className="font-space" fontSize="13" fontWeight="700" fill={color}
-          >
-            {line.name}
-          </text>
-        )}
+        {line.name && (() => {
+          /* L'ÉTIQUETTE SE RANGE, ELLE NE SE POSE PAS SUR LE TRAIT.
+             Elle était calée sur `seg.to` — le point de SORTIE de la boîte —
+             avec un décalage fixe : une rue horizontale sortait à droite et
+             son nom passait hors cadre (« Ru… »), une rue verticale sortait
+             en bas et son nom tombait sur le trait rouge.
+             On choisit donc le bout le plus dégagé, on s'écarte du trait
+             PERPENDICULAIREMENT (jamais le long), et on rentre le tout dans
+             la boîte. */
+          const d = dirOf(line.angleDeg);
+          const vertical = Math.abs(d.x) < Math.abs(d.y);
+          const CH = 6.2, PAD = 8;                    // largeur d'un caractère
+          const w = line.name.length * CH;
+          let tx, ty, anchor;
+          if (vertical) {
+            // On se décale sur le CÔTÉ, en haut : le bas est souvent occupé.
+            const top = seg.from.y < seg.to.y ? seg.from : seg.to;
+            tx = top.x + 10; ty = top.y + 16; anchor = 'start';
+            if (tx + w > box.xMax - 2) { tx = top.x - 10; anchor = 'end'; }
+          } else {
+            // On reste au bout, mais AU-DESSUS du trait et dans le cadre.
+            const end = seg.from.x > seg.to.x ? seg.from : seg.to;
+            tx = end.x - 6; ty = end.y - 9; anchor = 'end';
+            if (tx - w < box.xMin + 2) { tx = seg.from.x + 6; anchor = 'start'; }
+          }
+          ty = Math.max(box.yMin + 12, Math.min(ty, box.yMax - 4));
+          return (
+            <text
+              x={tx} y={ty} textAnchor={anchor}
+              className="font-space" fontSize="13" fontWeight="700" fill={color}
+              paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round"
+            >
+              {line.name}
+            </text>
+          );
+        })()}
       </g>
     );
   };
@@ -116,15 +144,44 @@ export default function RelationFigure({
         {inter && (
           <>
             <circle cx={inter.x} cy={inter.y} r="5" fill="#0f172a" />
-            {/* Étiquette placée AU-DESSUS du point : à sa droite, elle
-                chevauchait la droite qui file dans cette direction
-                (collision constatée en revue visuelle). */}
-            <text
-              x={inter.x} y={inter.y - 16} textAnchor="middle"
-              className="font-mono" fontSize="10" fill="#475569"
-            >
-              elles se coupent
-            </text>
+            {/* AU POINT DE CROISEMENT, LES QUATRE DIRECTIONS NE SE VALENT PAS.
+                « Au-dessus » avait été choisi contre une collision à droite,
+                mais deux droites qui se coupent partent dans quatre
+                directions : au-dessus il y a toujours l'une d'elles.
+                On teste donc les quatre côtés et on garde celui dont
+                l'écart ANGULAIRE aux deux droites est le plus grand —
+                c'est-à-dire le quadrant le plus vide. */}
+            {(() => {
+              const dirs = [d1, d2].map((l) => dirOf(l.angleDeg));
+              const cands = [
+                { dx: 0, dy: -18, anchor: 'middle' },
+                { dx: 0, dy: 22, anchor: 'middle' },
+                { dx: 16, dy: 4, anchor: 'start' },
+                { dx: -16, dy: 4, anchor: 'end' },
+              ];
+              const clearance = (c) => {
+                const m = Math.hypot(c.dx, c.dy);
+                const vx = c.dx / m, vy = c.dy / m;
+                // sin de l'angle au trait : 0 = dans l'axe, 1 = perpendiculaire
+                return Math.min(...dirs.map((d) => Math.abs(vx * d.y - vy * d.x)));
+              };
+              const best = cands
+                .filter((c) => {
+                  const x = inter.x + c.dx, y = inter.y + c.dy;
+                  return x > box.xMin + 40 && x < box.xMax - 40 &&
+                         y > box.yMin + 10 && y < box.yMax - 6;
+                })
+                .sort((a, b) => clearance(b) - clearance(a))[0] ?? cands[0];
+              return (
+                <text
+                  x={inter.x + best.dx} y={inter.y + best.dy} textAnchor={best.anchor}
+                  className="font-mono" fontSize="10" fill="#475569"
+                  paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round"
+                >
+                  elles se coupent
+                </text>
+              );
+            })()}
           </>
         )}
 

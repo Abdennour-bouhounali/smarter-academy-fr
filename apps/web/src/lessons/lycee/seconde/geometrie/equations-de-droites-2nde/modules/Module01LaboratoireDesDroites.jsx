@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LineLab from '../components/LineLab';
@@ -92,6 +92,21 @@ export default function Module01LaboratoireDesDroites() {
               ) : (
                 <Feedback tone="info">{seen.has('double') ? 'Doublée : la droite n’a pas bougé. Maintenant renverse-la (u → −u).' : seen.has('reverse') ? 'Renversée : rien n’a bougé. Maintenant double-la (u → 2u).' : 'Appuie sur u → 2u, puis sur u → −u.'}</Feedback>
               )}
+              {done1 && (
+                <>
+                  <KnowledgeBrick
+                    id="droite-vecteur-directeur"
+                    variant="new"
+                    lead="Ni la longueur ni le sens de la flèche n’ont bougé la droite. Le mot qui nomme ce que tu viens de constater :"
+                  />
+                  <KnowledgeBrick
+                    id="droite-vocabulaire-directeur"
+                    variant="new"
+                    compact
+                    lead="Le mot en une ligne, pour tes notes."
+                  />
+                </>
+              )}
             </div>
           ),
         },
@@ -120,6 +135,21 @@ export default function Module01LaboratoireDesDroites() {
               ) : (
                 <Feedback tone="info">{mode !== 'A' ? 'Sélectionne « Déplacer le point A ».' : slides === 1 ? 'Un déplacement. Encore un.' : 'Déplace A : la droite doit glisser, sans tourner.'}</Feedback>
               )}
+              {done3 && (
+                <>
+                  <KnowledgeBrick
+                    id="droite-point-direction"
+                    variant="new"
+                    lead="Tu as fait pivoter, puis glisser. Les deux ingrédients que tu viens d’isoler, chacun avec son effet :"
+                  />
+                  <KnowledgeBrick
+                    id="mem-droite-point-direction"
+                    variant="new"
+                    compact
+                    lead="À garder en tête pour toute la leçon."
+                  />
+                </>
+              )}
             </div>
           ),
         },
@@ -131,6 +161,7 @@ export default function Module01LaboratoireDesDroites() {
               options={['(2 ; 4) et (−1 ; −2)', 'Seulement (2 ; 4)', 'Aucun : le vecteur directeur est unique', '(2 ; 1) et (−2 ; −1)']} cols={1} correct={0}
               explain="Tout vecteur non nul colinéaire à u dirige la même droite : (2 ; 4) = 2u et (−1 ; −2) = −u. (2 ; 1) n’est pas colinéaire à (1 ; 2) : autre direction."
               explainWrong="Tu viens de le voir : 2u et −u laissent la droite en place. Tout vecteur non nul colinéaire à u est un vecteur directeur ; (2 ; 1) ne l’est pas (det = 1 × 1 − 2 × 2 ≠ 0)."
+              requires={['droite-vecteur-directeur']}
               solved={q4} onAnswered={() => setQ4(true)} />
           ),
         },

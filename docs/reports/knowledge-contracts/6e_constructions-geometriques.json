@@ -29,7 +29,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module02RegleGraduee.jsx",
-        "line": 108,
+        "line": 140,
         "step": 1,
         "variant": "new"
       }
@@ -40,7 +40,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module03Compas.jsx",
-        "line": 186,
+        "line": 156,
         "step": 3,
         "variant": "new"
       }
@@ -51,8 +51,8 @@
       "module": 5,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module05Programme.jsx",
-        "line": 139,
-        "step": 1,
+        "line": 311,
+        "step": 2,
         "variant": "new"
       }
     },
@@ -76,7 +76,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module02RegleGraduee.jsx",
-        "line": 149,
+        "line": 197,
         "step": 3,
         "variant": "new"
       }
@@ -87,7 +87,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module03Compas.jsx",
-        "line": 113,
+        "line": 92,
         "step": 1,
         "variant": "new"
       }
@@ -98,7 +98,7 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module04Equerre.jsx",
-        "line": 111,
+        "line": 113,
         "step": 1,
         "variant": "new"
       }
@@ -109,7 +109,7 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module04Equerre.jsx",
-        "line": 140,
+        "line": 142,
         "step": 2,
         "variant": "new"
       }
@@ -120,8 +120,8 @@
       "module": 5,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module05Programme.jsx",
-        "line": 144,
-        "step": 1,
+        "line": 316,
+        "step": 2,
         "variant": "new"
       }
     },
@@ -296,28 +296,12 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M02-S1-Q1",
-      "module": 2,
-      "step": 1,
-      "component": "NumericQuestion",
-      "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module02RegleGraduee.jsx",
-      "line": 86,
-      "requires": [
-        "instrument-garantit"
-      ],
-      "prerequisiteStatus": {
-        "instrument-garantit": "established@M1"
-      },
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M02-S2-Q2",
+      "questionId": "M02-S2-Q1",
       "module": 2,
       "step": 2,
-      "component": "TapQuestion",
+      "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module02RegleGraduee.jsx",
-      "line": 122,
+      "line": 157,
       "requires": [
         "mesurer-difference"
       ],
@@ -328,12 +312,12 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M02-S3-Q3",
+      "questionId": "M02-S3-Q2",
       "module": 2,
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module02RegleGraduee.jsx",
-      "line": 154,
+      "line": 210,
       "requires": [
         "tracer-longueur",
         "mesurer-difference",
@@ -353,7 +337,7 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module03Compas.jsx",
-      "line": 128,
+      "line": 112,
       "requires": [
         "reporter-au-compas",
         "instrument-garantit"
@@ -371,7 +355,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module03Compas.jsx",
-      "line": 160,
+      "line": 140,
       "requires": [
         "reporter-au-compas"
       ],
@@ -387,7 +371,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module04Equerre.jsx",
-      "line": 154,
+      "line": 156,
       "requires": [
         "construire-perpendiculaire",
         "construire-parallele",
@@ -404,12 +388,12 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M05-S2-Q1",
+      "questionId": "M05-S3-Q1",
       "module": 5,
-      "step": 2,
+      "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/espace_geometrie/constructions-geometriques/modules/Module05Programme.jsx",
-      "line": 159,
+      "line": 331,
       "requires": [
         "programme-construction",
         "ordre-dependances",

@@ -114,10 +114,14 @@ export default function PolygonPerimeter({
                 if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); !disabled && onTapSide?.(i); }
               }}
             />
+            {/* L'étiquette est déjà poussée vers l'extérieur (lx/ly), mais
+                « 6.5 m » est large : sur un côté oblique, son coin mord
+                encore le trait. Le halo lui garantit son fond. */}
             <text
               x={e.lx} y={e.ly} textAnchor="middle" dominantBaseline="middle"
               className={isTapped ? 'fill-emerald-700' : 'fill-slate-600'}
               style={{ fontSize: 15, fontFamily: 'monospace', fontWeight: 700, pointerEvents: 'none' }}
+              paintOrder="stroke" stroke="#fff" strokeWidth="3.5" strokeLinejoin="round"
             >
               {sideLengths[i]} {unit}
             </text>

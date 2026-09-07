@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Feedback } from '../components/LessonUI';
 import { CATEGORIES, useLessonKnowledge } from '../knowledge';
+import ConceptVisual from '../knowledge/ConceptVisual';
 
 /**
  * KnowledgeBrick — pose UNE connaissance à l'instant où l'élève en a besoin.
@@ -32,6 +33,10 @@ import { CATEGORIES, useLessonKnowledge } from '../knowledge';
  * @param {boolean} [unlock=true] faire entrer l'item dans la carte au montage
  * @param {boolean} [compact=false] masquer le visuel (étapes denses)
  * @param {React.ReactNode} [children] l'essai immédiat : une petite question, une manipulation
+ *
+ * TAILLE DU VISUEL. Elle vient de l'item (`visualSize`), pas de la brique :
+ * une même connaissance se lit pareil dans la brique et dans la carte.
+ * Voir ConceptVisual — 'sm' | 'md' (défaut) | 'lg' | 'full'.
  */
 export default function KnowledgeBrick({
   id,
@@ -93,9 +98,9 @@ export default function KnowledgeBrick({
         </div>
 
         {!compact && item.visual && (
-          <div className="flex justify-center rounded-xl border border-slate-100 bg-slate-50/60 p-2 overflow-x-auto">
+          <ConceptVisual size={item.visualSize} context="brick">
             {item.visual}
-          </div>
+          </ConceptVisual>
         )}
 
         <div className={style.body}>{item.body}</div>

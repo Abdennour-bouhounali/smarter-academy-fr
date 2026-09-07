@@ -185,47 +185,81 @@ async function run() {
     check('M3: header shows module 3 of 8', /Module\s*3\s*\/\s*8/i.test(head));
     check('M3: no NaN', !/NaN/.test(head));
 
-    const stackA = page.locator('button[aria-label="Empiler un facteur 3 sur la tour A"]').first();
-    const stackB = page.locator('button[aria-label="Empiler un facteur 3 sur la tour B"]').first();
-    const mergeBtn = page.locator('button[aria-label="Verser la tour B dans la tour A"]').first();
+    // La manipulation est un GESTE (glisser un facteur, puis tirer la tour B
+    // sur la tour A). Le chemin sans souris passe par la figure elle-même :
+    // activer la réserve PREND le facteur, activer une tour l'y POSE —
+    // c'est ce chemin qu'on pilote ici, et l'exercer prouve qu'il marche.
+    const supply = page.locator('button[aria-label^="Prendre un facteur"]').first();
+    const zoneA = page.locator('[data-drop-zone="A"]').first();
+    const zoneB = page.locator('[data-drop-zone="B"]').first();
 
-    check('M3: merge button disabled before the towers are set', !(await mergeBtn.isVisible().catch(() => false)));
+    check('M3: no merge offered before the towers are built',
+      !(await page.locator('button', { hasText: 'Fusionner les tours' }).first().isVisible().catch(() => false)));
 
-    // A: 1 → 2 blocks, B: 1 → 3 blocks.
-    await stackA.click(); await page.waitForTimeout(200);
-    await stackB.click(); await page.waitForTimeout(200);
-    await stackB.click(); await page.waitForTimeout(300);
+    const place = async (zone) => {
+      await supply.click(); await page.waitForTimeout(120);
+      await zone.click(); await page.waitForTimeout(220);
+    };
+    // A : 1 → 2 facteurs ; B : 1 → 3 facteurs.
+    await place(zoneA);
+    await place(zoneB);
+    await place(zoneB);
     const ready = await body(page);
-    check('M3: towers ready prompt appears', /Les deux tours sont prêtes/i.test(ready), ready.slice(0, 400));
+    check('M3: towers ready prompt appears', /tours sont prêtes/i.test(ready), ready.slice(0, 400));
 
-    await page.locator('button[aria-label="Verser la tour B dans la tour A"]').first().click();
+    await page.locator('button', { hasText: 'Fusionner les tours' }).first().click();
     await page.waitForTimeout(600);
-    const merged = await body(page);
-    check('M3: signature merge completes and reads the block count', /5\s*blocs|243/.test(merged), merged.slice(0, 500));
-    check('M3: the base is explicitly said not to change', /base est restée/i.test(merged));
+    const joined = await body(page);
+
+    // LE point de la refonte : l'écriture intermédiaire est montrée, et 3⁵ ne
+    // l'est PAS encore — l'élève doit d'abord compter les facteurs.
+    check('M3: the equation keeps A × B = C on screen', /Tour C/i.test(joined), joined.slice(0, 500));
+    check('M3: the merge shows the repeated-factor stage',
+      /Ce que ça veut dire/i.test(joined), joined.slice(0, 600));
+    check('M3: the short form is withheld until the student counts',
+      !/L’écriture courte|L'écriture courte/.test(joined), joined.slice(0, 600));
+    check('M3: the student is asked to COUNT the factors',
+      /Combien de facteurs/i.test(joined), joined.slice(0, 400));
     await page.screenshot({ path: `${SHOT_DIR}pu-m3-merge.png` });
 
-    // Step 2 — the quotient.
-    const splitBtn = page.locator('button[aria-label="Retirer les blocs de B à la tour A"]').first();
-    if (await splitBtn.isVisible().catch(() => false)) {
-      await splitBtn.click();
-      await page.waitForTimeout(600);
-      const split = await body(page);
-      check('M3: quotient step completes (exponents subtract)', /exposants se soustraient/i.test(split), split.slice(0, 400));
-    } else {
-      check('M3: quotient step reachable', false, 'retrancher button not visible');
-    }
+    // Les cinq facteurs sont individuellement présents dans le DOM.
+    const blocks = await page.locator('button[aria-label*="Facteur 3 au sommet"], div').evaluateAll(
+      (els) => els.filter((e) => e.textContent.trim() === '3' && e.className.includes('min-w-[64px]')).length,
+    );
+    check('M3: the five factors are individually rendered', blocks >= 5, `counted ${blocks}`);
 
-    // Step 3 — repeat.
-    const repeatBtn = page.locator('button[aria-label="Répéter la tour 2 fois"]').first();
-    if (await repeatBtn.isVisible().catch(() => false)) {
-      await repeatBtn.click();
+    // On compte : c'est la réponse qui débloque 3⁵.
+    const field = page.locator('input[type="text"], input[type="number"]').first();
+    if (await field.isVisible().catch(() => false)) {
+      await field.fill('5');
+      await field.press('Enter');
       await page.waitForTimeout(600);
-      const rep = await body(page);
-      check('M3: repeat step multiplies exponents', /multiplier<\/strong>|multiplier. les exposants|multiplier/i.test(rep), rep.slice(0, 300));
-    } else {
-      check('M3: repeat step reachable', false, 'repeat button not visible');
     }
+    const counted = await body(page);
+    check('M3: counting reveals the short form 3^5', /écriture courte/i.test(counted), counted.slice(0, 600));
+    check('M3: the sum of the counts is read aloud', /2\s*\+\s*3\s*=\s*5|font.{0,40}5 facteurs/.test(counted), counted.slice(0, 800));
+    check('M3: the base is explicitly said not to change', /base est restée/i.test(counted));
+
+    // Étape 2 — le quotient : retirer les blocs du sommet un par un.
+    const top = page.locator('button[aria-label*="au sommet"]');
+    for (let i = 0; i < 2; i += 1) {
+      const b = top.last();
+      if (await b.isVisible().catch(() => false)) { await b.click(); await page.waitForTimeout(250); }
+    }
+    const split = await body(page);
+    check('M3: quotient step completes (exponents subtract)',
+      /exposants|enlever des facteurs/i.test(split), split.slice(0, 400));
+    check('M3: the cancelled pairs are shown', /paire/i.test(split), split.slice(0, 400));
+
+    // Étape 3 — les paquets restent distincts.
+    const addCopy = page.locator('button', { hasText: 'Ajouter une copie' }).first();
+    for (let i = 0; i < 2; i += 1) {
+      if (await addCopy.isVisible().catch(() => false)) { await addCopy.click(); await page.waitForTimeout(250); }
+    }
+    const rep = await body(page);
+    check('M3: repeat step counts PACKETS, not a single pile', /paquets? de/i.test(rep), rep.slice(0, 400));
+    check('M3: repetition gives 6 factors, distinct from the product’s 5',
+      /6 facteurs/.test(rep), rep.slice(0, 500));
     await page.screenshot({ path: `${SHOT_DIR}pu-m3-rules.png` });
 
     // Wrong-on-purpose on the rule question: 9^5.

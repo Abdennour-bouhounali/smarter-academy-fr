@@ -4,7 +4,8 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
-import PowerTower from '../components/PowerTower';
+import { Tower } from '../components/FactorTower';
+import { makeTower, mergeInto } from '../components/factorTowerUtils';
 import DecimalShifter from '../components/DecimalShifter';
 import { formatDec, formatScientific, toScientific } from '../components/powerUtils';
 import { UNIVERSE_ITEMS } from '../components/universeItems';
@@ -276,7 +277,15 @@ function Synthese() {
         <p className="text-sm font-semibold text-slate-700 text-center">
           Les deux tours, figées sur la fusion
         </p>
-        <PowerTower base={3} n={2} n2={3} mode="merge" combined frozen label="Fusion de deux tours, figée" />
+        {/* Les cinq facteurs restent COMPTABLES un par un — c'est la figure
+            que l'élève a construite au module 3, pas un résumé. */}
+        <div className="flex justify-center">
+          <Tower
+            tower={mergeInto(makeTower(3, 2, 'a'), makeTower(3, 3, 'b'))}
+            title="Les deux tours réunies"
+            frozen
+          />
+        </div>
         <p className="text-center text-xs text-slate-500">
           <MathText>{'$3^{2} \\times 3^{3} = 3^{5} = 243$'}</MathText> — 2 blocs plus 3 blocs.
         </p>

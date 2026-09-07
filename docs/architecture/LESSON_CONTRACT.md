@@ -155,6 +155,34 @@ A module is **one React component**, always wrapped in `<ModuleLayout>`, whose b
 - Calls `useProgress(lessonId).markModuleCompleted(moduleId)` (directly, or via `ModuleLayout`'s `onNextClick`) exactly when the module's own definition of "done" is met — this is module-specific and intentionally not standardized (a "discovery" module and a "boss" module have different completion definitions; forcing one shape here would be exactly the kind of premature abstraction the phase brief warns against).
 - Where the module contains a *gradeable* exercise, the exercise portion should honor the Exercise Contract (`EXERCISE_CONTRACT.md`) rather than inventing a new validate/feedback shape.
 
+### Module Progress Bar — layout contract
+
+The step progress bar (`StepProgressBar`, `lessons/common/components/LessonUI.jsx`) belongs to the **lesson shell, not to the header**. Its sticky offset is derived from what is actually rendered above it — never from a hardcoded `top-16`.
+
+**Source of truth:** `lessons/common/utils/lessonChrome.js` (`getLessonChromeLayout({ authenticated })`), surfaced to React by `lessons/common/hooks/useLessonChrome.js`. `ModuleLayout` computes it once and publishes it through `LessonChromeContext`; children *receive* the layout rather than guessing whether a header exists.
+
+The chrome a lesson actually renders (`CourseLayout` picks the shell from auth state):
+
+| Mode | Shell | Persistent top element | `stickyTopClass` | `contentOffsetClass` |
+|---|---|---|---|---|
+| Visitor | `MainLayout` | `Navbar` — `fixed top-0 h-16` | `top-16` | `pt-16` |
+| Student, `< lg` | `StudentLayout` | mobile header — `fixed top-0 h-14` | `top-14` | `pt-0` |
+| Student, `≥ lg` | `StudentLayout` | sidebar only — **none at top** | `lg:top-0` | `pt-0` |
+
+Student mode uses `pt-0` because `StudentLayout`'s `<main>` already consumes its mobile header with `pt-14 lg:pt-0`; the module must not reserve that space a second time.
+
+**Rules**
+
+- The progress bar must **never reserve space for a header that is not rendered.** Reserving 64px in the student shell is the regression this contract exists to prevent.
+- It sticks immediately below the highest persistent navigation element, and at the very top of the viewport when there is none.
+- All modules use the **same shared component**. No lesson may implement an independent progress-bar variant without an explicit architectural reason.
+- A module must never silently omit the bar. Content modules that don't use the `ContentModule` kit still render `StepProgressBar` themselves, fed by the same state that gates `nextLink` (see `college/4e/nombres_calculs/racines-carrees`).
+- Progress values are always **derived**, never hardcoded — `doneCount`/`total` come from real step/exercise state, and the bar hides at `allDone` (`{!allDone && …}` in `ContentModule`).
+- **No layout hacks**: negative offsets (`-mt-16`), `translateY` compensation, or `overflow: hidden` to mask the gap are forbidden. Fix the layout relationship instead.
+- Offsets are expressed as Tailwind scale steps in `lessonChrome.js`'s literal class tables. Every class must exist **verbatim** in that file, or Tailwind's JIT scan won't emit it and the offset silently becomes zero.
+
+**Guards:** `lessons/common/utils/lessonChrome.test.js` (unit — offsets, no-negative-offset, JIT literals, single implementation) and `apps/web/e2e/lesson-kit/lesson-chrome-sticky.mjs` (browser — both shells across 320→1440px, module transitions, reload).
+
 ### Module types observed (not enforced, described)
 
 `style: 'featured'` (the default — explanation + manipulation + practice), `'boss'` (multi-phase capstone, e.g. `Module11BossFinal.jsx`'s épreuves/profil/synthèse/flash structure), `'assessment'` (used by `Module10BilanEvaluation.jsx`-style modules). The contract supports all three without requiring they behave identically — per the phase brief's explicit instruction not to force different module types into one artificial shape.

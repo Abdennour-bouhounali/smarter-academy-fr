@@ -14,6 +14,7 @@ const SKILLS = {
   fractions: { label: 'Fractions', emoji: '½' },
   relatifs: { label: 'Nombres relatifs', emoji: '±' },
   puissances: { label: 'Puissances et carrés', emoji: '²' },
+  ecriture: { label: 'Écriture ensembliste', emoji: '∈' },
 };
 
 const QUESTIONS = [
@@ -46,6 +47,16 @@ const QUESTIONS = [
     prompt: <>Combien vaut <MathText>{'$\\sqrt{49}$'}</MathText> ?</>,
     options: ['7', '24,5', '49'], cols: 3, correct: 0,
     explain: '√49 est le nombre positif dont le carré vaut 49 : 7 × 7 = 49. Ce n’est pas la moitié de 49.',
+  },
+  {
+    // On mesure la LECTURE du symbole ∈ (acquis d'« Ensembles et
+    // intervalles »), pas les familles de nombres — matière de la leçon.
+    id: 'q6-appartient', skill: 'ecriture', points: 2,
+    requires: ['appartient'],
+    prompt: 'Que signifie l’écriture « 4 ∈ ℕ » ?',
+    options: ['4 appartient à ℕ', '4 est plus grand que ℕ', 'ℕ appartient à 4'],
+    cols: 1, correct: 0,
+    explain: 'Le symbole ∈ se lit « appartient à » : à sa gauche un élément, à sa droite l’ensemble qui le contient.',
   },
 ];
 

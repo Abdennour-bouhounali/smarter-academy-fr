@@ -23,6 +23,7 @@ import { FIGURES, pointAt, formatReduced, formatCartesian, reducedOf, cartesianO
 const EPREUVES = [
   {
     id: 'eq-e1',
+    requires: ['droite-vecteur-directeur', 'droite-point-direction'],
     skill: 'labo',
     title: 'Vecteurs directeurs',
     prompt: 'Une droite a pour vecteur directeur u (2 ; −3). Lesquels de ces vecteurs la dirigent aussi ?',
@@ -33,6 +34,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e2',
+    requires: ['droite-equation-cartesienne', 'droite-lire-cartesienne'],
     skill: 'equation',
     title: 'Lire un vecteur directeur',
     prompt: 'Un vecteur directeur de la droite 3x + 2y − 6 = 0 est…',
@@ -43,6 +45,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e3',
+    requires: ['droite-calculer-pente', 'droite-pente'],
     skill: 'pente',
     title: 'Pente entre deux points',
     prompt: 'P (−1 ; 2) et Q (3 ; −4). Pente de (PQ) ?',
@@ -53,6 +56,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e4',
+    requires: ['droite-methode-deux-points', 'droite-equation-reduite'],
     skill: 'atelier',
     title: 'Par deux points',
     prompt: 'Équation réduite de la droite passant par (0 ; −2) et (2 ; 2) ?',
@@ -63,6 +67,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e5',
+    requires: ['droite-methode-point-vecteur', 'droite-equation-cartesienne'],
     skill: 'atelier',
     title: 'Par un point et un vecteur directeur',
     prompt: 'Droite passant par A (1 ; −2), de vecteur directeur u (2 ; 1). Équation cartésienne ?',
@@ -73,6 +78,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e6',
+    requires: ['droite-methode-point-pente', 'droite-equation-reduite'],
     skill: 'atelier',
     title: 'Par un point et une pente',
     prompt: 'Droite passant par (2 ; 3), de pente −1. Équation réduite ?',
@@ -83,6 +89,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e7',
+    requires: ['droite-lire-equation', 'droite-ordonnee-origine', 'droite-role-m-p'],
     skill: 'coefficients',
     title: 'Lire y = mx + p',
     prompt: 'Dans y = −0,5x + 4, que représente le nombre 4 ?',
@@ -98,6 +105,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e8',
+    requires: ['droite-verticale', 'droite-equation-cartesienne'],
     skill: 'coefficients',
     title: 'La verticale',
     prompt: 'La droite passant par (3 ; 1) et (3 ; −4)…',
@@ -113,6 +121,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e9',
+    requires: ['droite-tracer', 'droite-appartenance'],
     skill: 'coefficients',
     title: 'Tracer',
     prompt: 'Pour tracer la droite y = −x + 2, quels points peut-on placer ?',
@@ -123,6 +132,7 @@ const EPREUVES = [
   },
   {
     id: 'eq-e10',
+    requires: ['droite-alignement-equation', 'droite-methode-tester-point'],
     skill: 'appartenance',
     title: 'Alignés ?',
     prompt: 'A (−2 ; −3), B (1 ; 3), C (3 ; 7). La droite (AB) a pour équation y = 2x + 1. Les trois points sont-ils alignés ?',

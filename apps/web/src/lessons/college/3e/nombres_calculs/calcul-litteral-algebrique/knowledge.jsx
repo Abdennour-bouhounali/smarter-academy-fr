@@ -23,10 +23,10 @@ import MathText from '../../../../common/components/MathText';
 /** Petit rectangle d'aire, la figure fil rouge de la leçon. */
 const RectFig = ({ caption, children, width = 200, height = 120 }) => (
   <div className="space-y-1">
-    <svg viewBox="0 0 200 120" width={width} height={height} role="img" aria-label={caption}>
+    <svg viewBox="0 0 200 120" role="img" aria-label={caption} style={{ maxWidth: width }} className="w-full h-auto">
       {children}
     </svg>
-    <p className="text-[11px] text-slate-500 text-center">{caption}</p>
+    <p className="text-xs text-slate-500 text-center">{caption}</p>
   </div>
 );
 

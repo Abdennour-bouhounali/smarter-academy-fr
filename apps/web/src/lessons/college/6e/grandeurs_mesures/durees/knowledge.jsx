@@ -49,7 +49,7 @@ function EscalierDuTemps({ width = 258, height = 62 }) {
   const y = 14;
   const h = 24;
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} aria-hidden="true" className="select-none">
+    <svg viewBox={`0 0 ${width} ${height}`} aria-hidden="true" className="select-none w-full h-auto" style={{ maxWidth: width }}>
       {cells.map((c, i) => (
         <g key={c}>
           <rect x={i * cellW + 2} y={y} width={cellW - 4} height={h} fill="#eef2ff" stroke="#6366f1" strokeWidth="1.4" />

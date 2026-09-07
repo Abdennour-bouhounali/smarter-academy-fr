@@ -71,7 +71,30 @@
       "brick": null
     }
   ],
-  "vocabularyIntroduced": [],
+  "vocabularyIntroduced": [
+    {
+      "id": "vocab-monte-descend",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module02LaParabole.jsx",
+        "line": 62,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "vocab-extremum",
+      "type": "vocabulaire",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module04LeV.jsx",
+        "line": 56,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
   "proceduresIntroduced": [
     {
       "id": "methode-tableau-tracer",
@@ -191,7 +214,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module02LaParabole.jsx",
-      "line": 67,
+      "line": 74,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -203,13 +226,11 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module02LaParabole.jsx",
-      "line": 78,
+      "line": 85,
       "requires": null,
       "prerequisiteStatus": {},
-      "lexiconHits": [
-        "variations"
-      ],
-      "pedagogicallyValid": false
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M03-S4-Q1",
@@ -229,7 +250,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module04LeV.jsx",
-      "line": 79,
+      "line": 86,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -241,13 +262,11 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module04LeV.jsx",
-      "line": 90,
+      "line": 97,
       "requires": null,
       "prerequisiteStatus": {},
-      "lexiconHits": [
-        "extremum"
-      ],
-      "pedagogicallyValid": false
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M05-S4-Q1",
@@ -444,30 +463,6 @@
   ],
   "findings": [
     {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« variations / croissante / décroissante » is a target concept of this lesson but its first appearance is q.rowOption (module 2, étape 4); it is only taught later at apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module03LHyperbole.jsx:78",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module02LaParabole.jsx",
-      "line": 80,
-      "module": 2,
-      "step": 4,
-      "term": "variations",
-      "questionId": "M02-S4-Q2",
-      "position": 64
-    },
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« extremum / maximum / minimum » is a target concept of this lesson but its first appearance is q.rowLabel (module 4, étape 4) and it is never taught in a teaching position",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/modules/Module04LeV.jsx",
-      "line": 92,
-      "module": 4,
-      "step": 4,
-      "term": "extremum",
-      "questionId": "M04-S4-Q2",
-      "position": 135
-    },
-    {
       "code": "W_ITEM_WITHOUT_BRICK",
       "severity": "info",
       "message": "knowledge item 'trois-references' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
@@ -520,7 +515,7 @@
       "severity": "info",
       "message": "knowledge item 'fonction-carre' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 69,
+      "line": 85,
       "module": 2,
       "step": null,
       "term": null,
@@ -532,7 +527,7 @@
       "severity": "info",
       "message": "knowledge item 'regle-comparer-carres' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 85,
+      "line": 101,
       "module": 2,
       "step": null,
       "term": null,
@@ -544,7 +539,7 @@
       "severity": "info",
       "message": "knowledge item 'mem-parabole' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 95,
+      "line": 111,
       "module": 2,
       "step": null,
       "term": null,
@@ -556,7 +551,7 @@
       "severity": "info",
       "message": "knowledge item 'fonction-inverse' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 107,
+      "line": 123,
       "module": 3,
       "step": null,
       "term": null,
@@ -568,7 +563,7 @@
       "severity": "info",
       "message": "knowledge item 'regle-comparer-inverses' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 124,
+      "line": 140,
       "module": 3,
       "step": null,
       "term": null,
@@ -580,7 +575,7 @@
       "severity": "info",
       "message": "knowledge item 'mem-hyperbole' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 134,
+      "line": 150,
       "module": 3,
       "step": null,
       "term": null,
@@ -592,7 +587,7 @@
       "severity": "info",
       "message": "knowledge item 'fonction-valeur-absolue' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 146,
+      "line": 178,
       "module": 4,
       "step": null,
       "term": null,
@@ -604,7 +599,7 @@
       "severity": "info",
       "message": "knowledge item 'regle-carre-vs-va' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 161,
+      "line": 193,
       "module": 4,
       "step": null,
       "term": null,
@@ -616,7 +611,7 @@
       "severity": "info",
       "message": "knowledge item 'mem-le-v' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 172,
+      "line": 204,
       "module": 4,
       "step": null,
       "term": null,
@@ -628,7 +623,7 @@
       "severity": "info",
       "message": "knowledge item 'methode-antecedents-reference' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 184,
+      "line": 216,
       "module": 5,
       "step": null,
       "term": null,
@@ -640,7 +635,7 @@
       "severity": "info",
       "message": "knowledge item 'regle-ordre-references' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 195,
+      "line": 227,
       "module": 5,
       "step": null,
       "term": null,
@@ -652,7 +647,7 @@
       "severity": "info",
       "message": "knowledge item 'formule-references' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 206,
+      "line": 238,
       "module": 5,
       "step": null,
       "term": null,
@@ -664,7 +659,7 @@
       "severity": "info",
       "message": "knowledge item 'methode-modeliser-reference' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/knowledge.jsx",
-      "line": 213,
+      "line": 245,
       "module": 6,
       "step": null,
       "term": null,

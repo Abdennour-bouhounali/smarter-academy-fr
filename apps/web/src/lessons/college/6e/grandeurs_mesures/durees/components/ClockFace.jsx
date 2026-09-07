@@ -123,7 +123,12 @@ export default function ClockFace({
             const n = i === 0 ? 12 : i;
             const p = polarToXY(C, C, R - 24, i * 30);
             return (
-              <text key={n} x={p.x} y={p.y + 5} textAnchor="middle" style={{ fontSize: 15, fontFamily: 'monospace', fontWeight: 700 }} className="fill-slate-700">
+              /* Les aiguilles BALAIENT forcément les chiffres : on ne peut
+                 pas les écarter, on leur donne une plaque. Le halo blanc
+                 découpe le fond à la forme du chiffre, qui reste lisible
+                 quelle que soit l'heure affichée. */
+              <text key={n} x={p.x} y={p.y + 5} textAnchor="middle" style={{ fontSize: 15, fontFamily: 'monospace', fontWeight: 700 }} className="fill-slate-700"
+                paintOrder="stroke" stroke="#fff" strokeWidth="3" strokeLinejoin="round">
                 {n}
               </text>
             );

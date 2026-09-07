@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useProgress } from '../hooks/useProgress';
 import { isModuleUnlocked, lockedReason } from '@smarter-academy/core';
 import { scrollToStep } from '../utils/scrollToStep';
+import { LessonChromeContext, useLessonChromeLayout } from '../hooks/useLessonChrome';
 
 /**
  * ModuleLayout — shared layout wrapper for every lesson module.
@@ -72,6 +73,12 @@ export default function ModuleLayout({
 }) {
   const navigate = useNavigate();
 
+  // Le décalage haut réservé par la coquille du module dépend du bandeau
+  // réellement rendu au-dessus : la Navbar visiteur est `fixed` sans
+  // compensation (le module la réserve), alors que StudentLayout consomme
+  // déjà son en-tête mobile via `pt-14 lg:pt-0` (le module ne réserve rien).
+  const chrome = useLessonChromeLayout();
+
   const progressPct = Math.round((moduleNumber / totalModules) * 100);
   const isLastModule = moduleNumber === (lastModuleNumber ?? totalModules);
 
@@ -111,7 +118,8 @@ export default function ModuleLayout({
   // progression ne se produit pour un module inaccessible.
   if (!unlocked) {
     return (
-      <div className="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+      <LessonChromeContext.Provider value={chrome}>
+      <div className={`min-h-screen flex flex-col justify-between ${chrome.contentOffsetClass} bg-slate-50`}>
         <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full flex items-center justify-center">
           <div className="max-w-md w-full bg-white border-2 border-slate-200 rounded-3xl p-8 text-center space-y-4 shadow-sm">
             <div className="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
@@ -133,11 +141,13 @@ export default function ModuleLayout({
           <p>© {new Date().getFullYear()} Abdennour BOUHOUNALI — Professeur de Mathématiques</p>
         </footer>
       </div>
+      </LessonChromeContext.Provider>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+    <LessonChromeContext.Provider value={chrome}>
+    <div className={`min-h-screen flex flex-col justify-between ${chrome.contentOffsetClass} bg-slate-50`}>
       <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
 
         {/* Navigation Header */}
@@ -266,6 +276,7 @@ export default function ModuleLayout({
         <p>© {new Date().getFullYear()} Abdennour BOUHOUNALI — Professeur de Mathématiques</p>
       </footer>
     </div>
+    </LessonChromeContext.Provider>
   );
 }
 

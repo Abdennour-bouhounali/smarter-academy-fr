@@ -219,9 +219,12 @@ export default function VirtualRegle({
                   x1={x} y1={RULER_TOP} x2={x} y2={RULER_TOP + (majeure ? 15 : 9)}
                   stroke="#ca8a04" strokeWidth={majeure ? 1.6 : 1}
                 />
+                {/* Le segment mesuré passe SOUS la règle : sans plaque, les
+                    graduations se lisaient à travers le trait. */}
                 <text
                   x={x} y={RULER_TOP + 30} textAnchor="middle"
                   className="font-mono" fontSize="10" fill="#854d0e"
+                  paintOrder="stroke" stroke="#fffbeb" strokeWidth="2.5" strokeLinejoin="round"
                 >
                   {i}
                 </text>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MembershipLab from '../components/MembershipLab';
@@ -65,18 +65,34 @@ export default function Module05CePointEstIlSurLaDroite() {
                   L et N sont à 0,1 unité de la droite : invisible à l’écran, évident dans l’équation. Un point appartient à une droite <strong>exactement quand ses coordonnées vérifient son équation</strong>.
                 </Feedback>
               )}
+              {done1 && (
+                <KnowledgeBrick
+                  id="droite-appartenance"
+                  variant="new"
+                  lead="L et N étaient à 0,1 de la droite — invisible à l’œil, net dans le calcul. Le seul critère fiable :"
+                />
+              )}
             </div>
           ),
         },
         {
           num: 2, title: 'Le critère', done: q2,
           content: (
-            <TapQuestion
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="droite-methode-tester-point"
+                variant="new"
+                compact
+                lead="Le laboratoire faisait le calcul pour toi. Le voici en deux gestes, à faire seul."
+              />
+              <TapQuestion
               prompt="Le point (7 ; 4,5) est-il sur la droite y = 0,5x + 1 ?"
               options={['Oui : 0,5 × 7 + 1 = 4,5 = y', 'Non : 7 est trop loin sur le dessin', 'Oui : il est dans le prolongement, à vue d’œil', 'Non : 0,5 × 4,5 + 1 ≠ 7']} cols={1} correct={0}
               explain="On remplace x par 7 : 0,5 × 7 + 1 = 4,5, qui est bien l’ordonnée du point. Il est sur la droite — même hors du cadre, sans dessin. On remplace x par l’ABSCISSE et on compare à l’ordonnée, jamais l’inverse."
-              explainWrong="Le test : remplacer x par l’abscisse 7 dans l’équation, 0,5 × 7 + 1 = 4,5, et comparer à l’ordonnée 4,5. Égalité : le point est dessus. Le dessin n’a pas son mot à dire."
-              solved={q2} onAnswered={() => setQ2(true)} />
+                explainWrong="Le test : remplacer x par l’abscisse 7 dans l’équation, 0,5 × 7 + 1 = 4,5, et comparer à l’ordonnée 4,5. Égalité : le point est dessus. Le dessin n’a pas son mot à dire."
+                requires={['droite-appartenance', 'droite-methode-tester-point']}
+                solved={q2} onAnswered={() => setQ2(true)} />
+            </div>
           ),
         },
         {
@@ -84,12 +100,27 @@ export default function Module05CePointEstIlSurLaDroite() {
           content: (
             <div className="space-y-3">
               <LineScene line={LINE3} nameA="A" frozen points={[{ id: 'B', name: 'B', ...B3, color: '#e11d48' }, { id: 'C', name: 'C', ...C3, color: '#0284c7' }]} ariaLabel={`Droite (AB) ${formatReduced(RED3)} et le point C`} />
+              <KnowledgeBrick
+                id="droite-alignement-equation"
+                variant="new"
+                compact
+                lead="Trois points, et le même test qu’à l’instant — appliqué au troisième."
+              />
               <TapQuestion
                 prompt={`La droite (AB) a pour équation ${formatReduced(RED3)}. A, B et C sont-ils alignés ?`}
                 options={['Oui : 0,5 × 5 + 0,5 = 3 = y_C, C est sur (AB)', 'Non : C est trop loin de B', 'Oui : sur la figure, c’est droit', 'Non : 0,5 × 3 + 0,5 ≠ 5']} cols={1} correct={0}
                 explain="Trois points sont alignés quand le troisième est sur la droite des deux premiers : C vérifie l’équation de (AB) (0,5 × 5 + 0,5 = 3 = y_C). C’est la version « équation » du test det(AB, AC) = 0 de la leçon précédente."
                 explainWrong="Remplace x par x_C = 5 dans l’équation de (AB) : 0,5 × 5 + 0,5 = 3, et y_C = 3. Égalité : C est sur (AB), les trois points sont alignés. La distance et l’apparence ne comptent pas."
+                requires={['droite-alignement-equation', 'droite-methode-tester-point']}
                 solved={q3} onAnswered={() => setQ3(true)} />
+              {q3 && (
+                <KnowledgeBrick
+                  id="mem-droite-appartenance"
+                  variant="new"
+                  compact
+                  lead="Ce qu’il faut retenir de ce module."
+                />
+              )}
             </div>
           ),
         },

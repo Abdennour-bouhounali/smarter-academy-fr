@@ -19,7 +19,7 @@ import MathText from '../../../../common/components/MathText';
 
 const Fig = ({ children, caption }) => (
   <div className="space-y-1">
-    <svg viewBox="0 0 200 140" width="200" height="140" role="img" aria-label={caption}>
+    <svg viewBox="0 0 200 140" role="img" aria-label={caption} style={{ maxWidth: 200 }} className="w-full h-auto">
       {children}
     </svg>
     <p className="text-xs text-slate-500 text-center">{caption}</p>

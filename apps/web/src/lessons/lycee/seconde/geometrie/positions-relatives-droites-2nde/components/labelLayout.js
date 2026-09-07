@@ -84,14 +84,26 @@ export function placeAlongLine(p, q, size, obstacles, frame, offset = 9) {
 
 const DIRS = [[1, -1], [-1, -1], [1, 1], [-1, 1], [1, 0], [-1, 0], [0, -1], [0, 1]];
 
-/** Étiquette d'un point : huit directions autour du centre, écartées de `gap`. */
+/**
+ * Étiquette d'un point : huit directions autour du centre, à distance
+ * croissante.
+ *
+ * L'anneau le plus proche est essayé d'abord, dans les huit directions ; on
+ * ne s'éloigne que si aucune n'est libre. L'étiquette reste donc au plus près
+ * de son point, mais elle n'est plus ABANDONNÉE parce qu'un seul rayon a été
+ * tenté : le point d'intersection, cerné par deux cordes et quatre poignées,
+ * échouait ainsi dans 7 699 scènes du balayage alors que 7 697 d'entre elles
+ * offraient une place à peine plus loin.
+ */
 export function placeAroundPoint(c, size, obstacles, frame, gap = 9) {
-  for (const [dx, dy] of DIRS) {
-    const g = dx && dy ? gap * 0.8 : gap;
-    const cx = c.x + dx * (g + size.width / 2);
-    const cy = c.y + dy * (g + size.height / 2);
-    const box = { x: cx - size.width / 2, y: cy - size.height / 2, ...size };
-    if (boxInside(box, frame) && isFree(box, obstacles)) return box;
+  for (const ring of [1, 1.6, 2.4, 3.4]) {
+    for (const [dx, dy] of DIRS) {
+      const g = (dx && dy ? gap * 0.8 : gap) * ring;
+      const cx = c.x + dx * (g + size.width / 2);
+      const cy = c.y + dy * (g + size.height / 2);
+      const box = { x: cx - size.width / 2, y: cy - size.height / 2, ...size };
+      if (boxInside(box, frame) && isFree(box, obstacles)) return box;
+    }
   }
   return null;
 }
@@ -172,14 +184,27 @@ export function layoutScene({ geo, range, step, lines, handles = [], points = []
   // posé tôt ne doit pas recouvrir un point ajouté après lui.
   const named = points.map((pt) => ({ ...pt, c: toSvg(pt.x, pt.y) }));
   for (const pt of named) obstacles.discs.push({ c: pt.c, r: 7 });
-  const pointLabels = [];
-  for (const pt of named) {
-    const { c } = pt;
+  // ORDRE DE POSE — le premier servi est le plus contraint, pas le premier
+  // déclaré. Le point d'intersection est cerné par DEUX cordes et par les
+  // poignées des deux droites : c'est la position la plus encombrée du plan,
+  // et c'est aussi le point que la leçon veut nommer. Posé en dernier, son
+  // étiquette cédait la place dans 92 % des cas perdus. On sert donc d'abord
+  // les points les plus contraints, l'ordre de rendu restant celui déclaré.
+  const crowding = (pt) => obstacles.segments.reduce(
+    (k, sg) => k + (segmentHitsRect(sg.p, sg.q, { x: pt.c.x - 26, y: pt.c.y - 13, width: 52, height: 26 }) ? 1 : 0),
+    0,
+  );
+  const order = named
+    .map((pt, i) => ({ pt, i, k: crowding(pt) }))
+    .sort((a, b) => b.k - a.k || a.i - b.i);
+  const boxes = new Map();
+  for (const { pt } of order) {
     const size = labelSize(pt.name, 14);
-    const box = placeAroundPoint(c, size, obstacles, frame, 12);
+    const box = placeAroundPoint(pt.c, size, obstacles, frame, 12);
     if (box) obstacles.rects.push({ ...box, tag: pt.name });
-    pointLabels.push({ id: pt.id, name: pt.name, c, box });
+    boxes.set(pt.id, box ?? null);
   }
+  const pointLabels = named.map((pt) => ({ id: pt.id, name: pt.name, c: pt.c, box: boxes.get(pt.id) }));
   const lineLabels = [];
   for (const l of chords) {
     if (!l.p) { lineLabels.push({ id: l.id, name: l.name, box: null }); continue; }

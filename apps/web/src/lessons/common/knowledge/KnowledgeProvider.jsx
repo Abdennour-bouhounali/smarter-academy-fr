@@ -1,5 +1,6 @@
-import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useProgress } from '../hooks/useProgress';
+import { useWorkspaceLayout } from '../../../context/WorkspaceLayoutContext';
 import { cumulativeKnowledge, findKnowledgeItem, knowledgeModuleNumbers, toModuleSet } from './knowledgeState';
 import { KnowledgeMapTrigger } from './KnowledgeMap';
 
@@ -42,6 +43,18 @@ export function LessonKnowledgeProvider({ lessonId, knowledge, printTitle, print
   const [liveUnlocked, setLiveUnlocked] = useState([]);
   const [liveItems, setLiveItems] = useState([]);
   const [open, setOpen] = useState(false);
+
+  // La coquille doit savoir qu'une carte est ouverte pour lui réserver sa
+  // colonne (mode « prior »). Le provider est le seul à connaître cette
+  // information ; il la PUBLIE, sans jamais lire en retour la géométrie —
+  // c'est WorkspaceLayoutContext qui décide si la colonne est tenable.
+  const { setMapOpen } = useWorkspaceLayout();
+  useEffect(() => {
+    setMapOpen(open);
+    // Démontage (navigation vers une page sans carte) : la coquille se
+    // redéploie, sinon elle garderait une gouttière vide.
+    return () => setMapOpen(false);
+  }, [open, setMapOpen]);
 
   const unlockModule = useCallback((n) => {
     const num = Number(n);

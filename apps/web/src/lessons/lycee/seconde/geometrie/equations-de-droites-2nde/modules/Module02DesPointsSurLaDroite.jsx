@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LineWalker from '../components/LineWalker';
@@ -62,6 +62,20 @@ export default function Module02DesPointsSurLaDroite() {
               ) : (
                 <Feedback tone="info">Encore à visiter : {GOALS.filter((g) => !visited.has(g)).map((g) => `t = ${formatDec(g)}`).join(', ')}.</Feedback>
               )}
+              {done1 && (
+                <>
+                  <KnowledgeBrick
+                    id="droite-points-parametres"
+                    variant="new"
+                    lead="Chacun des points que tu viens d’atteindre s’écrit de la même façon."
+                  />
+                  <KnowledgeBrick
+                    id="droite-pente"
+                    variant="new"
+                    lead="Et l’escalier se répétait à l’identique : ce rapport constant a un nom."
+                  />
+                </>
+              )}
             </div>
           ),
         },
@@ -73,29 +87,54 @@ export default function Module02DesPointsSurLaDroite() {
               options={['0,5', '2', '3', '6']} cols={4} correct={0}
               explain={`Montée : 3 − 0 = 3 ; avancée : 5 − (−1) = 6 ; pente = 3 ÷ 6 = 0,5 — exactement u_y / u_x = 1 / 2. Peu importe les deux points choisis sur la droite : le rapport ne change pas.`}
               explainWrong="La pente est la MONTÉE divisée par l’AVANCÉE : (3 − 0) ÷ (5 − (−1)) = 3 ÷ 6 = 0,5. Avec la flèche : u_y / u_x = 1/2. 2 est l’inverse, 3 et 6 sont la montée et l’avancée elles-mêmes."
+              requires={['droite-pente']}
               solved={q2} onAnswered={() => setQ2(true)} />
           ),
         },
         {
           num: 3, title: 'Pente entre deux points', subtitle: `P ${formatPoint(P)} et Q ${formatPoint(Q)}.`, done: n3,
           content: (
-            <NumericQuestion
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="droite-calculer-pente"
+                variant="new"
+                lead="Ici, pas de flèche donnée : seulement deux points. Le calcul est le même, écrit avec leurs coordonnées."
+              />
+              <NumericQuestion
               prompt="Quelle est la pente de la droite (PQ) ?"
               expected={mPQ} parse={parseSigned} display={formatSlope(mPQ)} width="w-24"
               explain={`Montée : yQ − yP = −4 − 5 = −9 ; avancée : xQ − xP = 4 − (−2) = 6 ; pente = −9 ÷ 6 = −1,5. Le vecteur PQ (6 ; −9) dirige la droite : u_y / u_x = −9/6.`}
               explainFor={(n) => (Math.abs(n + 2 / 3) < 0.01 ? 'Tu as divisé l’avancée par la montée. La pente est montée ÷ avancée : −9 ÷ 6 = −1,5.' : n === 1.5 ? 'Le signe : la droite DESCEND de P à Q (y passe de 5 à −4). Pente −1,5.' : n === -9 ? '−9 est la montée seule. Divise par l’avancée 6 : −1,5.' : null)}
-              solved={n3} onAnswered={() => setN3(true)} />
+                requires={['droite-calculer-pente', 'droite-pente']}
+                solved={n3} onAnswered={() => setN3(true)} />
+            </div>
           ),
         },
         {
           num: 4, title: 'Pente et vecteur directeur', done: q4,
           content: (
-            <TapQuestion
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="droite-pente-vers-directeur"
+                variant="new"
+                lead="Tu as lu la pente sur la flèche. On peut faire le chemin inverse."
+              />
+              <TapQuestion
               prompt="Une droite a pour pente −3. Lesquels de ces vecteurs la dirigent ?"
               options={['(1 ; −3) et (−2 ; 6)', '(−3 ; 1)', '(3 ; 1)', '(1 ; 3)']} cols={1} correct={0}
               explain="Pente −3 : pour 1 vers la droite, 3 vers le bas — (1 ; −3) convient, et tout vecteur colinéaire aussi : (−2 ; 6) = −2 × (1 ; −3). (−3 ; 1) échange avancée et montée ; (1 ; 3) monte."
               explainWrong="Pente = u_y / u_x. Pour (1 ; −3) : −3 ✓. Pour (−2 ; 6) : 6 / (−2) = −3 ✓. (−3 ; 1) donnerait −1/3, (3 ; 1) donnerait 1/3, (1 ; 3) donnerait 3."
-              solved={q4} onAnswered={() => setQ4(true)} />
+                requires={['droite-pente-vers-directeur', 'droite-vecteur-directeur']}
+                solved={q4} onAnswered={() => setQ4(true)} />
+              {q4 && (
+                <KnowledgeBrick
+                  id="mem-droite-pente"
+                  variant="new"
+                  compact
+                  lead="Ce qu’il faut retenir de ce module."
+                />
+              )}
+            </div>
           ),
         },
       ]}

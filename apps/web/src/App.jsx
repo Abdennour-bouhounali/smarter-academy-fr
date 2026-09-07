@@ -23,6 +23,7 @@ import DiagnosticRun from './pages/student/diagnostic/DiagnosticRun';
 import DiagnosticResult from './pages/student/diagnostic/DiagnosticResult';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
+import { WorkspaceLayoutProvider } from './context/WorkspaceLayoutContext';
 import { useLessonProgressSync } from './hooks/useLessonProgressSync';
 import fractionsRoutes from './lessons/college/6e/nombres_calculs/fractions/routes';
 import quatreOperationsRoutes from './lessons/college/6e/nombres_calculs/quatre-operations/routes';
@@ -82,6 +83,23 @@ import logique2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/logique-e
 import vecteurs2ndeRoutes from './lessons/lycee/seconde/geometrie/vecteurs-2nde/routes';
 import colinearite2ndeRoutes from './lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/routes';
 import equationsDroites2ndeRoutes from './lessons/lycee/seconde/geometrie/equations-de-droites-2nde/routes';
+import fonctionAffine2ndeRoutes from './lessons/lycee/seconde/fonctions/fonction-affine-2nde/routes';
+import fonctions2ndeRoutes from './lessons/lycee/seconde/fonctions/fonctions-2nde/routes';
+import fonctionsReference2ndeRoutes from './lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/routes';
+import signeFonctions2ndeRoutes from './lessons/lycee/seconde/fonctions/signe-fonctions-2nde/routes';
+import variations2ndeRoutes from './lessons/lycee/seconde/fonctions/variations-extremums-2nde/routes';
+import positionsRelatives2ndeRoutes from './lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/routes';
+import arbresProbabilites2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/routes';
+import boitesMoustaches2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/routes';
+import evolutionsSuccessives2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/routes';
+import frequencesConditionnelles2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/routes';
+import loiGrandsNombres2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/routes';
+import probabilitesConditionnelles2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/routes';
+import proportionsPourcentages2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/routes';
+import seriesRegroupees2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/routes';
+import statistiquesUneVariable2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/routes';
+import tableauxCroises2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/routes';
+import testsDiagnostiques2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/routes';
 
 // Hydrates local lesson progress from the server on login and flushes the
 // offline queue — must live inside AuthProvider, hence this null component.
@@ -99,6 +117,7 @@ export default function App() {
   return (
     <AuthProvider>
       <LessonProgressSync />
+      <WorkspaceLayoutProvider>
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -190,9 +209,27 @@ export default function App() {
             {vecteurs2ndeRoutes()}
             {colinearite2ndeRoutes()}
             {equationsDroites2ndeRoutes()}
+            {fonctionAffine2ndeRoutes()}
+            {fonctions2ndeRoutes()}
+            {fonctionsReference2ndeRoutes()}
+            {signeFonctions2ndeRoutes()}
+            {variations2ndeRoutes()}
+            {positionsRelatives2ndeRoutes()}
+            {arbresProbabilites2ndeRoutes()}
+            {boitesMoustaches2ndeRoutes()}
+            {evolutionsSuccessives2ndeRoutes()}
+            {frequencesConditionnelles2ndeRoutes()}
+            {loiGrandsNombres2ndeRoutes()}
+            {probabilitesConditionnelles2ndeRoutes()}
+            {proportionsPourcentages2ndeRoutes()}
+            {seriesRegroupees2ndeRoutes()}
+            {statistiquesUneVariable2ndeRoutes()}
+            {tableauxCroises2ndeRoutes()}
+            {testsDiagnostiques2ndeRoutes()}
           </Route>
         </Routes>
       </Router>
+      </WorkspaceLayoutProvider>
     </AuthProvider>
   );
 }

@@ -1,0 +1,39 @@
+import React from 'react';
+import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
+import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import { LESSON_CONFIG } from '../lesson.config';
+
+/** Module 7 — ÉVALUATION. Distracteurs = croissante confondue avec positive (M1–M2), le minimum « forcément dans un creux » (M1, M4), valeur / endroit (M4), conclure hors d'un intervalle de monotonie (M5), abscisse / image dans un tableau (M3). 12 LPs couverts. */
+const EPREUVES = [
+  { id: 'va-e1', skill: 'variations', title: 'Croissante', prompt: 'f est croissante sur [1 ; 5]. Que peut-on affirmer ?', options: ['f(2) ≤ f(4)', 'f(2) > 0', 'f(2) ≥ f(4)', 'f(1) = f(5)'], cols: 2, explain: 'Croissante : a < b ⟹ f(a) ≤ f(b). 2 < 4 donne f(2) ≤ f(4). Rien sur le signe.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P1', 'seconde_variations-extremums-2nde_P11'] } },
+  { id: 'va-e2', skill: 'variations', title: 'Décroissante', prompt: 'g est décroissante sur [−3 ; 0]. Alors g(−2) et g(−1)…', options: ['g(−2) ≥ g(−1)', 'g(−2) ≤ g(−1)', 'g(−2) = g(−1)', 'sont négatifs'], cols: 2, explain: '−2 < −1 et g décroissante : les images sont dans l’ordre inverse, g(−2) ≥ g(−1).', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P2', 'seconde_variations-extremums-2nde_P11'] } },
+  { id: 'va-e3', skill: 'variations', title: 'Monotone', prompt: 'Une fonction monte sur [0 ; 2] puis descend sur [2 ; 5]. Sur quel intervalle est-elle monotone ?', options: ['[0 ; 2]', '[0 ; 5]', '[1 ; 3]', 'aucun'], cols: 4, explain: 'Monotone = un seul sens sur tout l’intervalle : [0 ; 2] (ou [2 ; 5]). [0 ; 5] et [1 ; 3] contiennent le retournement en 2.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P3'] } },
+  { id: 'va-e4', skill: 'lecture', title: 'Sur la courbe', prompt: 'Sur sa courbe, f descend de x = −1 à x = 2, puis monte. Son tableau de variations a…', options: ['une flèche ↘ de −1 à 2, puis ↗', 'une flèche ↗ de −1 à 2, puis ↘', 'deux flèches ↘', 'un 0 en 2'], cols: 1, explain: 'Descendre = décroissante = ↘ ; le retournement en 2 sépare les deux flèches. Un « 0 » appartient au tableau de signes, pas de variations.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P4', 'seconde_variations-extremums-2nde_P10'] } },
+  { id: 'va-e5', skill: 'tableau', title: 'Lire un tableau', prompt: 'Tableau de h sur [0 ; 8] : h(0) = 2 ↗ h(3) = 9 ↘ h(8) = 1. Entre quelles valeurs est h(5) ?', options: ['entre 1 et 9', 'entre 3 et 8', 'entre 2 et 9', 'entre 0 et 8'], cols: 2, explain: '5 ∈ [3 ; 8] où h descend de 9 à 1 : 1 ≤ h(5) ≤ 9. « 3 et 8 » sont des abscisses.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P6', 'seconde_variations-extremums-2nde_P5'] } },
+  { id: 'va-e6', skill: 'tableau', title: 'Construire', prompt: 'Même tableau (h(0) = 2 ↗ h(3) = 9 ↘ h(8) = 1). Laquelle des courbes convient ?', options: ['Une courbe qui part de (0 ; 2), monte jusqu’à (3 ; 9), redescend jusqu’à (8 ; 1)', 'Une courbe qui part de (2 ; 0), monte jusqu’à (9 ; 3), redescend jusqu’à (1 ; 8)', 'Une courbe qui descend de (0 ; 2) à (3 ; 9)', 'Une droite de (0 ; 2) à (8 ; 1)'], cols: 1, explain: 'Les nombres du haut sont des abscisses, ceux du bas des images : les points sont (0 ; 2), (3 ; 9), (8 ; 1), reliés selon les flèches.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P10', 'seconde_variations-extremums-2nde_P5'] } },
+  { id: 'va-e7', skill: 'extremum', title: 'Maximum', prompt: 'Toujours h : h(0) = 2 ↗ h(3) = 9 ↘ h(8) = 1. Le maximum de h sur [0 ; 8] est…', options: ['9, atteint en 3', '3, atteint en 9', '8', '9, atteint en 8'], cols: 2, explain: 'Le maximum est une VALEUR prise par h (9), atteinte pour l’abscisse 3.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P7'] } },
+  { id: 'va-e8', skill: 'extremum', title: 'Minimum au bord', prompt: 'Toujours h. Son minimum sur [0 ; 8] est…', options: ['1, atteint en 8', '2, atteint en 0', '0', '3'], cols: 4, explain: 'Les valeurs du tableau : 2, 9, 1. La plus petite est 1, en x = 8 — au bord. Un minimum n’est pas forcément un creux.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P8'] } },
+  { id: 'va-e9', skill: 'extremum', title: 'Sur un intervalle', prompt: 'Toujours h. Son maximum sur [4 ; 8] est…', options: ['h(4) : sur [4 ; 8], h est décroissante, le maximum est au début', '9', 'h(8) = 1', 'on ne peut rien dire'], cols: 1, explain: 'Sur [4 ; 8] ⊂ [3 ; 8], h décroît : la plus grande valeur est h(4) (même si le tableau ne la donne pas). Le sommet 9 (en 3) est hors de l’intervalle.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P9', 'seconde_variations-extremums-2nde_P6'] } },
+  { id: 'va-e10', skill: 'optimiser', title: 'Optimiser', prompt: 'Un rectangle a un périmètre de 24 m et une largeur x. Son aire est A(x) = x(12 − x), croissante sur [0 ; 6], décroissante sur [6 ; 12]. L’aire maximale est…', options: ['36 m², pour x = 6', '6 m²', '72 m², pour x = 12', '12 m², pour x = 6'], cols: 2, explain: 'Le maximum est atteint en x = 6 : A(6) = 6 × 6 = 36 m² — un carré. 6 est l’endroit, 36 la valeur.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_variations-extremums-2nde_P12', 'seconde_variations-extremums-2nde_P7'] } },
+];
+const SKILLS = { variations: { label: 'Croissante, décroissante, monotone', module: 2 }, lecture: { label: 'Lire les variations sur la courbe', module: 1 }, tableau: { label: 'Tableau de variations', module: 3 }, extremum: { label: 'Maximum, minimum', module: 4 }, optimiser: { label: 'Optimiser', module: 6 } };
+const BADGES = [
+  { id: 'b1', emoji: '🏅', label: 'Les inégalités', test: (m) => !m.variations },
+  { id: 'b2', emoji: '🏅', label: 'Lecteur de courbes', test: (m) => !m.lecture },
+  { id: 'b3', emoji: '🏅', label: 'Le tableau', test: (m) => !m.tableau },
+  { id: 'b4', emoji: '🏅', label: 'Sommets et vallées', test: (m) => !m.extremum },
+  { id: 'b5', emoji: '🏅', label: 'Optimiseur', test: (m) => !m.optimiser },
+  { id: 'b-parfait', emoji: '💎', label: 'Guide de montagne', test: (m) => Object.keys(m).length === 0 },
+];
+export default function Module07MissionFinale() {
+  return (
+    <BossFinal ctx={MODULE_CTX} navLinks={getNavLinks(7)} moduleNumber={7} lessonConfig={LESSON_CONFIG}
+      moduleTitle="🏆 Mission finale : le sommet" moduleSubtitle="Dix épreuves sur les variations et les extremums" estimatedTime="15 min" timerSeconds={600} timerLabel="10 min" xpPerCorrect={10}
+      brief={{ tag: 'Mission finale', title: 'Guide de montagne', tone: 'amber', body: <p>Dix questions, une seule validation. Réflexe : sur quel intervalle ? valeur ou endroit ? les bords comptent.</p> }}
+      registre={[{ id: 'r1', emoji: '↗', label: 'Croissante', value: 'a < b ⟹ f(a) ≤ f(b)' }, { id: 'r2', emoji: '↘', label: 'Décroissante', value: 'a < b ⟹ f(a) ≥ f(b)' }, { id: 'r3', emoji: '⛰️', label: 'Maximum', value: 'valeur atteinte' }, { id: 'r4', emoji: '📊', label: 'Tableau', value: 'flèches + valeurs' }]}
+      skills={SKILLS} epreuves={EPREUVES} badges={BADGES}
+      synthese={<KnowledgeSnapshot variant="complete" complete />}
+      completion={{ masterTitle: 'Guide de montagne !', title: 'Mission accomplie', message: 'Tu sais lire, construire et utiliser les variations d’une fonction.', verbs: ['Lire', 'Définir', 'Construire', 'Optimiser'], masterBadgeLabel: 'Guide de montagne' }} />
+  );
+}

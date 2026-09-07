@@ -44,8 +44,8 @@ function MiniDots({ values, mark = null, markColor = '#0284c7', markLabel = '', 
   const x = (v) => 14 + ((v - min) / (max - min)) * (width - 28);
   const counts = new Map();
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img"
-      aria-label={`Série de ${values.length} valeurs sur un axe`}>
+    <svg viewBox={`0 0 ${width} ${height}`} role="img"
+      aria-label={`Série de ${values.length} valeurs sur un axe`} style={{ maxWidth: width }} className="w-full h-auto">
       <line x1={10} y1={height - 22} x2={width - 10} y2={height - 22} stroke="#94a3b8" strokeWidth="1.5" />
       {[0, 10, 20, 30, 40].map((g) => (
         <g key={g}>
@@ -73,8 +73,8 @@ function MiniBars({ counts, width = 220, height = 84 }) {
   const top = Math.max(...counts, 1);
   const bw = (width - 20) / counts.length;
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img"
-      aria-label="Effectifs des six faces d’un dé">
+    <svg viewBox={`0 0 ${width} ${height}`} role="img"
+      aria-label="Effectifs des six faces d’un dé" style={{ maxWidth: width }} className="w-full h-auto">
       {counts.map((c, i) => {
         const h = (c / top) * (height - 30);
         return (

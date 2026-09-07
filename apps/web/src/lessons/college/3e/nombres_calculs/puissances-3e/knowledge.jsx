@@ -24,29 +24,44 @@ const Souvenir = ({ children }) => (
   <div className="text-xs text-slate-400 italic">📍 Souvenir : {children}</div>
 );
 
-/** La tour de blocs, figure fil rouge : un bloc = un facteur. */
-const TowerFig = ({ blocks = 3, caption }) => (
-  <div className="space-y-1">
-    <svg viewBox="0 0 120 110" width={120} height={110} role="img" aria-label={caption}>
-      <line x1="10" y1="92" x2="110" y2="92" stroke="#94a3b8" strokeWidth="2" />
-      {Array.from({ length: blocks }).map((_, i) => (
-        <g key={i}>
-          <rect
-            x="38" y={86 - (i + 1) * 22} width="44" height="20" rx="4"
-            fill="#e0f2fe" stroke="#0284c7" strokeWidth="2"
-          />
-          <text x="60" y={86 - (i + 1) * 22 + 14} textAnchor="middle" fontSize="11" fill="#0c4a6e">×3</text>
-        </g>
-      ))}
-    </svg>
-    <p className="text-[11px] text-slate-500 text-center">{caption}</p>
-  </div>
-);
+/**
+ * La tour de blocs, figure fil rouge : un bloc = UN FACTEUR.
+ *
+ * L'étiquette porte « 3 » et non « ×3 » : un bloc est un facteur, pas un
+ * opérateur. Le signe × est dessiné ENTRE les blocs, à sa vraie place —
+ * c'est lui qui multiplie. La figure dit donc exactement ce que dit le
+ * labo du module 3, et 3³ ne peut pas se lire « une boîte valant 27 ».
+ */
+const TowerFig = ({ blocks = 3, caption }) => {
+  const H = 22;
+  const top = (i) => 86 - (i + 1) * H;
+  return (
+    <div className="space-y-1">
+      <svg viewBox="0 0 120 110" role="img" aria-label={caption} style={{ maxWidth: 120 }} className="w-full h-auto">
+        <line x1="10" y1="92" x2="110" y2="92" stroke="#94a3b8" strokeWidth="2" />
+        {Array.from({ length: blocks }).map((_, i) => (
+          <g key={i}>
+            <rect
+              x="38" y={top(i)} width="44" height="20" rx="4"
+              fill="#e0f2fe" stroke="#0284c7" strokeWidth="2"
+            />
+            <text x="60" y={top(i) + 14} textAnchor="middle" fontSize="12" fontWeight="700" fill="#0c4a6e">3</text>
+            {/* Le × vit entre deux facteurs, jamais sur l'un d'eux. */}
+            {i > 0 && (
+              <text x="60" y={top(i) + 21} textAnchor="middle" fontSize="9" fill="#64748b">×</text>
+            )}
+          </g>
+        ))}
+      </svg>
+      <p className="text-xs text-slate-500 text-center">{caption}</p>
+    </div>
+  );
+};
 
 /** La bande des rangs : la virgule glisse, les chiffres ne bougent pas. */
 const ShiftFig = ({ caption }) => (
   <div className="space-y-1">
-    <svg viewBox="0 0 240 78" width={240} height={78} role="img" aria-label={caption}>
+    <svg viewBox="0 0 240 78" role="img" aria-label={caption} style={{ maxWidth: 240 }} className="w-full h-auto">
       <text x="120" y="24" textAnchor="middle" fontSize="16" fill="#334155" fontFamily="monospace">3 , 4 5</text>
       <path d="M120 32 L200 32" stroke="#7c3aed" strokeWidth="2" markerEnd="url(#kmArrow)" />
       <defs>
@@ -57,7 +72,7 @@ const ShiftFig = ({ caption }) => (
       <text x="160" y="26" textAnchor="middle" fontSize="10" fill="#7c3aed">4 rangs</text>
       <text x="120" y="62" textAnchor="middle" fontSize="16" fill="#334155" fontFamily="monospace">3 4 5 0 0</text>
     </svg>
-    <p className="text-[11px] text-slate-500 text-center">{caption}</p>
+    <p className="text-xs text-slate-500 text-center">{caption}</p>
   </div>
 );
 
@@ -187,7 +202,8 @@ export const LESSON_KNOWLEDGE = {
             <p className="text-xs text-slate-500">La <strong>base ne bouge jamais</strong> : aucun
             bloc ne change de nature quand on fusionne. Écrire <MathText>{'$9^{5}$'}</MathText>{' '}
             reviendrait à multiplier aussi les bases.</p>
-            <Souvenir>les blocs de B qui viennent se poser sur A.</Souvenir>
+            <Souvenir>les 3 facteurs de B posés sur les 2 de A — et les 5 que tu as comptés
+            un par un, avant que 3⁵ ne s’écrive.</Souvenir>
           </div>
         ),
       },
@@ -206,7 +222,8 @@ export const LESSON_KNOWLEDGE = {
             <p className="text-xs text-slate-500">Si on enlève plus de blocs qu’il n’y en a, on
             passe sous le sol — et le résultat s’écrit avec un exposant négatif, exactement comme au
             module 2.</p>
-            <Souvenir>le sommet de la tour A qui disparaissait bloc par bloc.</Souvenir>
+            <Souvenir>chaque facteur retiré du sommet, qui s’annulait avec un facteur du
+            diviseur : une paire 3/3 qui vaut 1.</Souvenir>
           </div>
         ),
       },
@@ -225,7 +242,8 @@ export const LESSON_KNOWLEDGE = {
             <p className="text-xs text-slate-500">C’est LA règle qui multiplie les exposants — pas
             celle du produit. Confondre les deux donne{' '}
             <MathText>{'$3^{2} \\times 3^{3} = 3^{6}$'}</MathText>, qui est faux.</p>
-            <Souvenir>la tour recopiée une seconde fois par-dessus elle-même.</Souvenir>
+            <Souvenir>les trois PAQUETS de 2 facteurs, restés séparés — 6 facteurs, quand
+            en rassembler 2 et 3 n’en donnait que 5.</Souvenir>
           </div>
         ),
       },

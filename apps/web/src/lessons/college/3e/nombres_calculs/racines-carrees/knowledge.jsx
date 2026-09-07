@@ -27,7 +27,7 @@ const Souvenir = ({ children }) => (
 /** Le carré, figure fil rouge : l'aire dedans, le côté au bord. */
 const SquareFig = ({ area, side, caption, tone = '#059669' }) => (
   <div className="space-y-1">
-    <svg viewBox="0 0 150 130" width={150} height={130} role="img" aria-label={caption}>
+    <svg viewBox="0 0 150 130" role="img" aria-label={caption} style={{ maxWidth: 150 }} className="w-full h-auto">
       <rect x="30" y="14" width="90" height="90" fill={`${tone}18`} stroke={tone} strokeWidth="2.5" />
       <text x="75" y="64" textAnchor="middle" fontSize="15" fill={tone} fontFamily="monospace">
         {area}
@@ -36,14 +36,14 @@ const SquareFig = ({ area, side, caption, tone = '#059669' }) => (
         {side}
       </text>
     </svg>
-    <p className="text-[11px] text-slate-500 text-center">{caption}</p>
+    <p className="text-xs text-slate-500 text-center">{caption}</p>
   </div>
 );
 
 /** Le pavage 2×2 du carré d'aire 12 : quatre cases d'aire 3. */
 const TilingFig = ({ caption }) => (
   <div className="space-y-1">
-    <svg viewBox="0 0 140 130" width={140} height={130} role="img" aria-label={caption}>
+    <svg viewBox="0 0 140 130" role="img" aria-label={caption} style={{ maxWidth: 140 }} className="w-full h-auto">
       <rect x="25" y="14" width="90" height="90" fill="#f5f3ff" stroke="#7c3aed" strokeWidth="2.5" />
       <line x1="70" y1="14" x2="70" y2="104" stroke="#7c3aed" strokeWidth="1.5" />
       <line x1="25" y1="59" x2="115" y2="59" stroke="#7c3aed" strokeWidth="1.5" />
@@ -52,7 +52,7 @@ const TilingFig = ({ caption }) => (
       ))}
       <text x="70" y="120" textAnchor="middle" fontSize="12" fill="#475569" fontFamily="monospace">2 × √3</text>
     </svg>
-    <p className="text-[11px] text-slate-500 text-center">{caption}</p>
+    <p className="text-xs text-slate-500 text-center">{caption}</p>
   </div>
 );
 

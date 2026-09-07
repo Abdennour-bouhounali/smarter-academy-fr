@@ -56,7 +56,12 @@
       "id": "regle-carre-positif",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
+        "line": 48,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-simplifier-facteurs",
@@ -312,13 +317,11 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
-      "line": 41,
+      "line": 43,
       "requires": null,
       "prerequisiteStatus": {},
-      "lexiconHits": [
-        "extremum"
-      ],
-      "pedagogicallyValid": false
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M05-S4-Q4",
@@ -326,7 +329,7 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
-      "line": 54,
+      "line": 65,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -491,18 +494,6 @@
   ],
   "findings": [
     {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« extremum / maximum / minimum » is a target concept of this lesson but its first appearance is q.explain (module 5, étape 3); it is only taught later at apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx:50",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
-      "line": 42,
-      "module": 5,
-      "step": 3,
-      "term": "extremum",
-      "questionId": "M05-S3-Q3",
-      "position": 140
-    },
-    {
       "code": "W_ITEM_WITHOUT_BRICK",
       "severity": "info",
       "message": "knowledge item 'expression-litterale' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
@@ -664,18 +655,6 @@
       "message": "knowledge item 'regle-choisir-la-forme' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
       "line": 276,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-carre-positif' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 302,
       "module": 5,
       "step": null,
       "term": null,

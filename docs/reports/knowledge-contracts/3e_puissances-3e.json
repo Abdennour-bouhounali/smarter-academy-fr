@@ -37,7 +37,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module02LaTourDesFacteurs.jsx",
-        "line": 213,
+        "line": 257,
         "step": 3,
         "variant": "new"
       }
@@ -48,7 +48,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module02LaTourDesFacteurs.jsx",
-        "line": 230,
+        "line": 274,
         "step": 4,
         "variant": "new"
       }
@@ -59,7 +59,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module03EmpilerLesTours.jsx",
-        "line": 278,
+        "line": 579,
         "step": 4,
         "variant": "new"
       }
@@ -70,7 +70,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module03EmpilerLesTours.jsx",
-        "line": 290,
+        "line": 585,
         "step": 4,
         "variant": "new"
       }
@@ -81,7 +81,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module03EmpilerLesTours.jsx",
-        "line": 302,
+        "line": 591,
         "step": 4,
         "variant": "new"
       }
@@ -118,7 +118,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module02LaTourDesFacteurs.jsx",
-        "line": 125,
+        "line": 134,
         "step": 1,
         "variant": "new"
       }
@@ -296,7 +296,7 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module02LaTourDesFacteurs.jsx",
-      "line": 143,
+      "line": 152,
       "requires": [
         "calculer-puissance",
         "exposant-compte"
@@ -314,7 +314,7 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module02LaTourDesFacteurs.jsx",
-      "line": 235,
+      "line": 279,
       "requires": [
         "exposant-negatif"
       ],
@@ -325,18 +325,32 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M03-S4-Q1",
+      "questionId": "M03-S1-Q1",
+      "module": 3,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module03EmpilerLesTours.jsx",
+      "line": 336,
+      "requires": [
+        "exposant-compte"
+      ],
+      "prerequisiteStatus": {
+        "exposant-compte": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q2",
       "module": 3,
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module03EmpilerLesTours.jsx",
-      "line": 313,
+      "line": 544,
       "requires": [
-        "regle-produit",
         "exposant-compte"
       ],
       "prerequisiteStatus": {
-        "regle-produit": "established@M3",
         "exposant-compte": "established@M1"
       },
       "lexiconHits": [],
@@ -472,7 +486,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 63,
+      "line": 64,
       "requires": [
         "puissance",
         "exposant-compte"
@@ -490,7 +504,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 80,
+      "line": 81,
       "requires": [
         "puissance",
         "exposant-compte"
@@ -508,7 +522,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 96,
+      "line": 97,
       "requires": [
         "calculer-puissance",
         "exposant-nul",
@@ -528,7 +542,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 109,
+      "line": 110,
       "requires": [
         "calculer-puissance",
         "exposant-nul",
@@ -548,7 +562,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 126,
+      "line": 127,
       "requires": [
         "regle-produit",
         "regle-quotient",
@@ -568,7 +582,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 142,
+      "line": 143,
       "requires": [
         "regle-produit",
         "regle-quotient",
@@ -588,7 +602,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 158,
+      "line": 159,
       "requires": [
         "puissance-de-dix",
         "ordre-de-grandeur"
@@ -606,7 +620,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 185,
+      "line": 186,
       "requires": [
         "ecriture-scientifique",
         "puissance-de-dix"
@@ -624,7 +638,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 201,
+      "line": 202,
       "requires": [
         "ecriture-scientifique",
         "puissance-de-dix"
@@ -642,7 +656,7 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/puissances-3e/modules/Module07MissionFinale.jsx",
-      "line": 221,
+      "line": 222,
       "requires": [
         "rapport-echelle",
         "comparer-par-exposant",

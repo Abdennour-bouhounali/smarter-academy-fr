@@ -28,6 +28,9 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/nombres_calculs/calcul-l
 export const LESSON_CONFIG = {
   id: 'calcul-litteral-2nde',
   sequentialUnlock: true,
+  // La formalisation de cette leçon est la carte des connaissances (knowledge.jsx),
+  // alimentée module après module par les <KnowledgeBrick>.
+  knowledgeMap: true,
   title: 'Calcul littéral',
   description:
     "Suivre un tour de magie avec une lettre, empiler des termes semblables, découper un carré de côté a + b, retrouver un facteur commun, choisir la forme qui répond à la question : réduire, développer et factoriser ne changent que l'écriture — et chaque écriture sert à quelque chose.",

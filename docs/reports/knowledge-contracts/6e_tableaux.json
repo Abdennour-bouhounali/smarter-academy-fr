@@ -14,7 +14,7 @@
       "module": 1,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module01MessageEnVrac.jsx",
-        "line": 107,
+        "line": 167,
         "step": 2,
         "variant": "new"
       }
@@ -49,7 +49,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module02Anatomie.jsx",
-        "line": 105,
+        "line": 108,
         "step": 1,
         "variant": "new"
       }
@@ -60,7 +60,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module02Anatomie.jsx",
-        "line": 110,
+        "line": 113,
         "step": 1,
         "variant": "new"
       }
@@ -71,7 +71,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module02Anatomie.jsx",
-        "line": 115,
+        "line": 118,
         "step": 1,
         "variant": "new"
       }
@@ -84,8 +84,8 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module04LireCroisement.jsx",
-        "line": 83,
-        "step": 1,
+        "line": 141,
+        "step": 2,
         "variant": "new"
       }
     },
@@ -95,8 +95,8 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module04LireCroisement.jsx",
-        "line": 144,
-        "step": 3,
+        "line": 202,
+        "step": 4,
         "variant": "new"
       }
     },
@@ -130,8 +130,8 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module04LireCroisement.jsx",
-        "line": 176,
-        "step": 4,
+        "line": 234,
+        "step": 5,
         "variant": "new"
       }
     }
@@ -225,7 +225,7 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module01MessageEnVrac.jsx",
-      "line": 64,
+      "line": 109,
       "requires": [
         "lecture-information"
       ],
@@ -236,28 +236,28 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M01-S2-Q2",
-      "module": 1,
-      "step": 2,
-      "component": "TapQuestion",
-      "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module01MessageEnVrac.jsx",
-      "line": 88,
-      "requires": [
-        "lecture-information"
-      ],
-      "prerequisiteStatus": {
-        "lecture-information": "prior"
-      },
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M01-S3-Q3",
+      "questionId": "M01-S3-Q2",
       "module": 1,
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module01MessageEnVrac.jsx",
-      "line": 122,
+      "line": 190,
+      "requires": [
+        "tableau-outil"
+      ],
+      "prerequisiteStatus": {
+        "tableau-outil": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q3",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module01MessageEnVrac.jsx",
+      "line": 213,
       "requires": [
         "tableau-outil"
       ],
@@ -273,7 +273,7 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module02Anatomie.jsx",
-      "line": 169,
+      "line": 179,
       "requires": [
         "ligne-colonne",
         "entete",
@@ -293,7 +293,7 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module02Anatomie.jsx",
-      "line": 194,
+      "line": 204,
       "requires": [
         "entete",
         "cellule-croisement"
@@ -344,12 +344,12 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M04-S1-Q1",
+      "questionId": "M04-S2-Q1",
       "module": 4,
-      "step": 1,
+      "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module04LireCroisement.jsx",
-      "line": 88,
+      "line": 146,
       "requires": [
         "lire-un-croisement",
         "ligne-colonne",
@@ -364,12 +364,12 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M04-S2-Q2",
+      "questionId": "M04-S3-Q2",
       "module": 4,
-      "step": 2,
+      "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module04LireCroisement.jsx",
-      "line": 116,
+      "line": 174,
       "requires": [
         "lire-un-croisement"
       ],
@@ -380,12 +380,12 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M04-S3-Q3",
+      "questionId": "M04-S4-Q3",
       "module": 4,
-      "step": 3,
+      "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module04LireCroisement.jsx",
-      "line": 135,
+      "line": 193,
       "requires": [
         "lecture-inverse",
         "entete"
@@ -398,12 +398,12 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M04-S4-Q4",
+      "questionId": "M04-S5-Q4",
       "module": 4,
-      "step": 4,
+      "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/donnees_proportionnalite/tableaux/modules/Module04LireCroisement.jsx",
-      "line": 186,
+      "line": 244,
       "requires": [
         "lire-un-croisement",
         "mem-double-entree"

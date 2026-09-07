@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ModuleLayout from '../../../../../common/components/ModuleLayout';
+import { StepProgressBar } from '../../../../../common/components/LessonUI';
 import SectionHeader from '../../../../../common/components/SectionHeader';
 import MathText from '../../../../../common/components/MathText';
 import ExerciseValidator from '../../../../../common/components/ExerciseValidator';
@@ -29,6 +30,11 @@ export default function Module04Encadrement() {
     ]
   });
 
+  // Progression des exercices — même source que le déverrouillage de
+  // `nextLink`, pour que le bandeau ne puisse pas mentir sur l'état.
+  const doneCount = (encadrementEx.isCorrect ? 1 : 0);
+  const totalSteps = 1;
+
   return (
     <ModuleLayout
       lessonId={MODULE_CTX.lessonId}
@@ -47,6 +53,9 @@ export default function Module04Encadrement() {
       nextLink={encadrementEx.isCorrect ? nextLink : null}
       onNextClick={() => markModuleCompleted('L04-4e')}
     >
+      {doneCount < totalSteps && (
+        <StepProgressBar doneCount={doneCount} total={totalSteps} />
+      )}
       <div className="space-y-12 max-w-4xl mx-auto w-full">
         
         <section>

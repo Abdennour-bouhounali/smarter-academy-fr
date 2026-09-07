@@ -265,15 +265,25 @@ export default function ShapeLab({
             })}
 
           {showAngles &&
-            points.map((p, i) => (
-              <text
-                key={`ang${i}`}
-                x={p.x + (c.x - p.x) * 0.22} y={p.y + (c.y - p.y) * 0.22 + 4}
-                textAnchor="middle" className="font-mono" fontSize="10" fill="#059669"
-              >
-                {settled ? `${Math.round(A[i])}°` : '…'}
-              </text>
-            ))}
+            points.map((p, i) => {
+              /* Même correction que pour les noms de sommets : un écart
+                 proportionnel laissait la mesure sur la pastille et sur son
+                 propre arc. On rentre d'une distance fixe, plus grande que
+                 l'arc (rayon 18) et que la pastille (rayon 8). */
+              const ix = c.x - p.x, iy = c.y - p.y;
+              const n = Math.hypot(ix, iy) || 1;
+              const IN = 26;
+              return (
+                <text
+                  key={`ang${i}`}
+                  x={p.x + (ix / n) * IN} y={p.y + (iy / n) * IN + 3}
+                  textAnchor="middle" className="font-mono" fontSize="10" fill="#059669"
+                  paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round"
+                >
+                  {settled ? `${Math.round(A[i])}°` : '…'}
+                </text>
+              );
+            })}
 
           {/* Sommets peints — la zone tactile est séparée, plus large */}
           {points.map((p, i) => (
@@ -284,15 +294,27 @@ export default function ShapeLab({
               stroke="#fff" strokeWidth="2.5"
             />
           ))}
-          {points.map((p, i) => (
-            <text
-              key={`vn${i}`}
-              x={p.x + (p.x - c.x) * 0.17 + 4} y={p.y + (p.y - c.y) * 0.17 - 6}
-              className="font-space" fontSize="13" fontWeight="700" fill="#0f172a"
-            >
-              {names[i]}
-            </text>
-          ))}
+          {points.map((p, i) => {
+            /* L'écart au sommet était PROPORTIONNEL à sa distance au centre
+               (× 0,17) : un sommet proche du centre gardait donc son nom
+               collé sur lui, par-dessus la pastille de glissement. On sort
+               d'une distance FIXE, toujours suffisante, dans la direction qui
+               s'éloigne de la figure. */
+            const ox = p.x - c.x, oy = p.y - c.y;
+            const n = Math.hypot(ox, oy) || 1;
+            const OUT = 16;
+            return (
+              <text
+                key={`vn${i}`}
+                x={p.x + (ox / n) * OUT} y={p.y + (oy / n) * OUT + 4}
+                textAnchor="middle"
+                className="font-space" fontSize="13" fontWeight="700" fill="#0f172a"
+                paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round"
+              >
+                {names[i]}
+              </text>
+            );
+          })}
         </g>
 
         {/* Zones tactiles : une par sommet mobile — au plus 4 nœuds */}

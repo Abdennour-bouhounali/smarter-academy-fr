@@ -149,7 +149,22 @@ export function perpendicularThroughPoint(line, q, name = 'd′') {
  *   1. un côté de l'angle droit est aligné sur la droite ;
  *   2. le sommet de l'angle droit est sur le point visé.
  */
-export function isEquerreAligned(equerre, line, point, { angleTol = 6, distTol = 12 } = {}) {
+/**
+ * LA TOLÉRANCE DOIT TENIR LA PROMESSE DU TEXTE.
+ *
+ * Elle valait 12 unités de boîte et 6°. Dans un cadre de 320 rendu vers
+ * 520 px, 12 unités font une vingtaine de PIXELS : l'élève voyait le sommet
+ * nettement à côté de A, et les deux voyants s'allumaient quand même — la
+ * leçon dit « le sommet doit être EXACTEMENT sur le point », le logiciel
+ * disait le contraire. Pire, 6° sur une branche de 78 unités laissent le
+ * bout de l'équerre dériver de 8 unités : le côté n'était visiblement plus
+ * « le long de la droite ».
+ *
+ * 5 unités (≈ 8 px à l'écran, moins que la pastille du point, qui a un rayon
+ * de 5,5) et 2,5° : assez large pour rester attrapable au doigt, assez
+ * étroit pour qu'un placement validé SOIT un placement juste.
+ */
+export function isEquerreAligned(equerre, line, point, { angleTol = 2.5, distTol = 5 } = {}) {
   const onLine = distanceTo(line, equerre.p) <= distTol;
   const atPoint = point ? dist(equerre.p, point) <= distTol : true;
   const da = Math.abs(normalizeAngle(equerre.angleDeg) - normalizeAngle(line.angleDeg));

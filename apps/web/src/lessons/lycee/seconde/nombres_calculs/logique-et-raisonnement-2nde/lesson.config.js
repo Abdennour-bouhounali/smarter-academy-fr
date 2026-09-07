@@ -25,6 +25,10 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/nombres_calculs/logique-
 
 export const LESSON_CONFIG = {
   id: 'logique-et-raisonnement-2nde',
+  // Connaissances SUPPOSÉES acquises, venues d'« Ensembles et intervalles »
+  // (premier objet du domaine) : la leçon les emploie dès le module 0 pour
+  // écrire ses propriétés numériques. Diagnostiquées par q1 et q2.
+  priorKnowledge: ['appartient', 'ensemble-reels'],
   sequentialUnlock: true,
   title: 'Logique et raisonnement',
   description:

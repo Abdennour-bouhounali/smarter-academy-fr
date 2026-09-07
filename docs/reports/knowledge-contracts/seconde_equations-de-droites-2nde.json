@@ -2,85 +2,158 @@
   "lesson": "equations-de-droites-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "abscisse",
+    "ordonnee",
+    "coordonnees",
+    "vecteur",
+    "colineaire",
+    "fonction-affine",
+    "coefficient-directeur"
+  ],
   "conceptsIntroduced": [
     {
       "id": "droite-point-direction",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module01LaboratoireDesDroites.jsx",
+        "line": 140,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-vecteur-directeur",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module01LaboratoireDesDroites.jsx",
+        "line": 97,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-points-parametres",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module02DesPointsSurLaDroite.jsx",
+        "line": 67,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-pente",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module02DesPointsSurLaDroite.jsx",
+        "line": 72,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-pente-vers-directeur",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module02DesPointsSurLaDroite.jsx",
+        "line": 117,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-equation-idee",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
+        "line": 72,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-equation-cartesienne",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
+        "line": 85,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-equation-reduite",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
+        "line": 104,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-formules-equations",
       "type": "formules",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
+        "line": 137,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-role-m-p",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module04LaboratoireDesCoefficients.jsx",
+        "line": 79,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-ordonnee-origine",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module04LaboratoireDesCoefficients.jsx",
+        "line": 99,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-verticale",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module04LaboratoireDesCoefficients.jsx",
+        "line": 120,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-appartenance",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module05CePointEstIlSurLaDroite.jsx",
+        "line": 69,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -88,7 +161,12 @@
       "id": "droite-vocabulaire-directeur",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module01LaboratoireDesDroites.jsx",
+        "line": 102,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -96,46 +174,76 @@
       "id": "droite-calculer-pente",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module02DesPointsSurLaDroite.jsx",
+        "line": 98,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-methode-point-vecteur",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
+        "line": 123,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-lire-equation",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module04LaboratoireDesCoefficients.jsx",
+        "line": 147,
+        "step": 5,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-tracer",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module04LaboratoireDesCoefficients.jsx",
+        "line": 133,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-methode-tester-point",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module05CePointEstIlSurLaDroite.jsx",
+        "line": 82,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-alignement-equation",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module05CePointEstIlSurLaDroite.jsx",
+        "line": 103,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "droite-methode-deux-points",
       "type": "methodes",
       "module": 6,
       "brick": {
-        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-        "line": 56,
-        "step": 1,
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module06ARetenir.jsx",
+        "line": 82,
+        "step": 3,
         "variant": "new"
       }
     },
@@ -144,8 +252,8 @@
       "type": "methodes",
       "module": 6,
       "brick": {
-        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-        "line": 96,
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module06ARetenir.jsx",
+        "line": 87,
         "step": 3,
         "variant": "new"
       }
@@ -155,19 +263,19 @@
       "type": "methodes",
       "module": 6,
       "brick": {
-        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-        "line": 114,
-        "step": 4,
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module06ARetenir.jsx",
+        "line": 63,
+        "step": 2,
         "variant": "new"
       }
     },
     {
       "id": "droite-modeliser",
       "type": "methodes",
-      "module": 6,
+      "module": 7,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-        "line": 140,
+        "line": 127,
         "step": 6,
         "variant": "new"
       }
@@ -178,37 +286,67 @@
       "id": "mem-droite-point-direction",
       "type": "memoriser",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module01LaboratoireDesDroites.jsx",
+        "line": 145,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-droite-pente",
       "type": "memoriser",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module02DesPointsSurLaDroite.jsx",
+        "line": 130,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-droite-deux-ecritures",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
+        "line": 143,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-droite-m-p",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module04LaboratoireDesCoefficients.jsx",
+        "line": 161,
+        "step": 5,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-droite-appartenance",
       "type": "memoriser",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module05CePointEstIlSurLaDroite.jsx",
+        "line": 117,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-droite-trois-chemins",
       "type": "memoriser",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module06ARetenir.jsx",
+        "line": 104,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -219,8 +357,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module00Diagnostic.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "abscisse",
+        "ordonnee",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "ordonnee": "prior",
+        "coordonnees": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -230,9 +376,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 32,
+      "requires": [
+        "vecteur",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "vecteur": "prior",
+        "coordonnees": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -242,13 +394,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "colineaire"
+      "line": 43,
+      "requires": [
+        "colineaire",
+        "vecteur"
       ],
-      "pedagogicallyValid": false
+      "prerequisiteStatus": {
+        "colineaire": "prior",
+        "vecteur": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "eq-d4-image",
@@ -256,9 +412,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 54,
+      "requires": [
+        "fonction-affine"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -268,9 +428,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 65,
+      "requires": [
+        "fonction-affine",
+        "coefficient-directeur"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine": "prior",
+        "coefficient-directeur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -280,9 +446,13 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module01LaboratoireDesDroites.jsx",
-      "line": 129,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 159,
+      "requires": [
+        "droite-vecteur-directeur"
+      ],
+      "prerequisiteStatus": {
+        "droite-vecteur-directeur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -292,9 +462,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module02DesPointsSurLaDroite.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 85,
+      "requires": [
+        "droite-pente"
+      ],
+      "prerequisiteStatus": {
+        "droite-pente": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -304,9 +478,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module02DesPointsSurLaDroite.jsx",
-      "line": 82,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 103,
+      "requires": [
+        "droite-calculer-pente",
+        "droite-pente"
+      ],
+      "prerequisiteStatus": {
+        "droite-calculer-pente": "established@M2",
+        "droite-pente": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -316,9 +496,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module02DesPointsSurLaDroite.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "droite-pente-vers-directeur",
+        "droite-vecteur-directeur"
+      ],
+      "prerequisiteStatus": {
+        "droite-pente-vers-directeur": "established@M2",
+        "droite-vecteur-directeur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -328,9 +514,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
-      "line": 77,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 90,
+      "requires": [
+        "droite-equation-idee",
+        "droite-equation-cartesienne"
+      ],
+      "prerequisiteStatus": {
+        "droite-equation-idee": "established@M3",
+        "droite-equation-cartesienne": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -340,9 +532,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
-      "line": 88,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 109,
+      "requires": [
+        "droite-equation-reduite",
+        "droite-equation-cartesienne",
+        "droite-pente"
+      ],
+      "prerequisiteStatus": {
+        "droite-equation-reduite": "established@M3",
+        "droite-equation-cartesienne": "established@M3",
+        "droite-pente": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -352,9 +552,15 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module03DeLaDroiteALEquation.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 128,
+      "requires": [
+        "droite-methode-point-vecteur",
+        "droite-equation-cartesienne"
+      ],
+      "prerequisiteStatus": {
+        "droite-methode-point-vecteur": "established@M3",
+        "droite-equation-cartesienne": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -364,9 +570,17 @@
       "step": 5,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module04LaboratoireDesCoefficients.jsx",
-      "line": 115,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 153,
+      "requires": [
+        "droite-lire-equation",
+        "droite-role-m-p",
+        "droite-ordonnee-origine"
+      ],
+      "prerequisiteStatus": {
+        "droite-lire-equation": "established@M4",
+        "droite-role-m-p": "established@M4",
+        "droite-ordonnee-origine": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -376,9 +590,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module05CePointEstIlSurLaDroite.jsx",
-      "line": 74,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 88,
+      "requires": [
+        "droite-appartenance",
+        "droite-methode-tester-point"
+      ],
+      "prerequisiteStatus": {
+        "droite-appartenance": "established@M5",
+        "droite-methode-tester-point": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -388,9 +608,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module05CePointEstIlSurLaDroite.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 109,
+      "requires": [
+        "droite-alignement-equation",
+        "droite-methode-tester-point"
+      ],
+      "prerequisiteStatus": {
+        "droite-alignement-equation": "established@M5",
+        "droite-methode-tester-point": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -401,8 +627,20 @@
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module06ARetenir.jsx",
       "line": 45,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "droite-vecteur-directeur",
+        "droite-ordonnee-origine",
+        "droite-verticale",
+        "droite-equation-cartesienne",
+        "droite-pente-vers-directeur"
+      ],
+      "prerequisiteStatus": {
+        "droite-vecteur-directeur": "established@M1",
+        "droite-ordonnee-origine": "established@M4",
+        "droite-verticale": "established@M4",
+        "droite-equation-cartesienne": "established@M3",
+        "droite-pente-vers-directeur": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -412,9 +650,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module06ARetenir.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 68,
+      "requires": [
+        "droite-lire-cartesienne",
+        "droite-equation-cartesienne",
+        "droite-equation-reduite"
+      ],
+      "prerequisiteStatus": {
+        "droite-lire-cartesienne": "established@M6",
+        "droite-equation-cartesienne": "established@M3",
+        "droite-equation-reduite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -424,9 +670,19 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module06ARetenir.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 93,
+      "requires": [
+        "droite-methode-deux-points",
+        "droite-methode-point-pente",
+        "droite-methode-point-vecteur",
+        "droite-verticale"
+      ],
+      "prerequisiteStatus": {
+        "droite-methode-deux-points": "established@M6",
+        "droite-methode-point-pente": "established@M6",
+        "droite-methode-point-vecteur": "established@M3",
+        "droite-verticale": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -436,17 +692,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 63,
+      "line": 58,
       "requires": [
         "droite-methode-deux-points",
         "droite-calculer-pente"
       ],
       "prerequisiteStatus": {
-        "droite-methode-deux-points": "established@M7",
-        "droite-calculer-pente": "missing"
+        "droite-methode-deux-points": "established@M6",
+        "droite-calculer-pente": "established@M2"
       },
       "lexiconHits": [],
-      "pedagogicallyValid": false
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M07-S1-Q2",
@@ -454,17 +710,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 69,
+      "line": 64,
       "requires": [
         "droite-methode-deux-points",
         "droite-equation-reduite"
       ],
       "prerequisiteStatus": {
-        "droite-methode-deux-points": "established@M7",
-        "droite-equation-reduite": "missing"
+        "droite-methode-deux-points": "established@M6",
+        "droite-equation-reduite": "established@M3"
       },
       "lexiconHits": [],
-      "pedagogicallyValid": false
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M07-S2-Q3",
@@ -472,15 +728,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 82,
+      "line": 77,
       "requires": [
-        "droite-methode-point-vecteur"
+        "droite-methode-point-vecteur",
+        "droite-equation-cartesienne"
       ],
       "prerequisiteStatus": {
-        "droite-methode-point-vecteur": "missing"
+        "droite-methode-point-vecteur": "established@M3",
+        "droite-equation-cartesienne": "established@M3"
       },
       "lexiconHits": [],
-      "pedagogicallyValid": false
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M07-S3-Q4",
@@ -488,12 +746,14 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 102,
+      "line": 91,
       "requires": [
-        "droite-methode-point-pente"
+        "droite-methode-point-pente",
+        "droite-equation-reduite"
       ],
       "prerequisiteStatus": {
-        "droite-methode-point-pente": "established@M7"
+        "droite-methode-point-pente": "established@M6",
+        "droite-equation-reduite": "established@M3"
       },
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -504,17 +764,17 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 120,
+      "line": 103,
       "requires": [
         "droite-lire-cartesienne",
         "droite-equation-cartesienne"
       ],
       "prerequisiteStatus": {
-        "droite-lire-cartesienne": "established@M7",
-        "droite-equation-cartesienne": "missing"
+        "droite-lire-cartesienne": "established@M6",
+        "droite-equation-cartesienne": "established@M3"
       },
       "lexiconHits": [],
-      "pedagogicallyValid": false
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M07-S6-Q6",
@@ -522,17 +782,19 @@
       "step": 6,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 146,
+      "line": 133,
       "requires": [
         "droite-modeliser",
-        "droite-appartenance"
+        "droite-appartenance",
+        "droite-methode-deux-points"
       ],
       "prerequisiteStatus": {
         "droite-modeliser": "established@M7",
-        "droite-appartenance": "missing"
+        "droite-appartenance": "established@M5",
+        "droite-methode-deux-points": "established@M6"
       },
       "lexiconHits": [],
-      "pedagogicallyValid": false
+      "pedagogicallyValid": true
     },
     {
       "questionId": "eq-e1",
@@ -540,9 +802,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 27,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 28,
+      "requires": [
+        "droite-vecteur-directeur",
+        "droite-point-direction"
+      ],
+      "prerequisiteStatus": {
+        "droite-vecteur-directeur": "established@M1",
+        "droite-point-direction": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -552,9 +820,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 37,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 39,
+      "requires": [
+        "droite-equation-cartesienne",
+        "droite-lire-cartesienne"
+      ],
+      "prerequisiteStatus": {
+        "droite-equation-cartesienne": "established@M3",
+        "droite-lire-cartesienne": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -564,9 +838,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 50,
+      "requires": [
+        "droite-calculer-pente",
+        "droite-pente"
+      ],
+      "prerequisiteStatus": {
+        "droite-calculer-pente": "established@M2",
+        "droite-pente": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -576,9 +856,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 61,
+      "requires": [
+        "droite-methode-deux-points",
+        "droite-equation-reduite"
+      ],
+      "prerequisiteStatus": {
+        "droite-methode-deux-points": "established@M6",
+        "droite-equation-reduite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -588,9 +874,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 67,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 72,
+      "requires": [
+        "droite-methode-point-vecteur",
+        "droite-equation-cartesienne"
+      ],
+      "prerequisiteStatus": {
+        "droite-methode-point-vecteur": "established@M3",
+        "droite-equation-cartesienne": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -600,9 +892,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 77,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 83,
+      "requires": [
+        "droite-methode-point-pente",
+        "droite-equation-reduite"
+      ],
+      "prerequisiteStatus": {
+        "droite-methode-point-pente": "established@M6",
+        "droite-equation-reduite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -612,9 +910,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 94,
+      "requires": [
+        "droite-lire-equation",
+        "droite-ordonnee-origine",
+        "droite-role-m-p"
+      ],
+      "prerequisiteStatus": {
+        "droite-lire-equation": "established@M4",
+        "droite-ordonnee-origine": "established@M4",
+        "droite-role-m-p": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -624,9 +930,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "droite-verticale",
+        "droite-equation-cartesienne"
+      ],
+      "prerequisiteStatus": {
+        "droite-verticale": "established@M4",
+        "droite-equation-cartesienne": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -636,9 +948,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 126,
+      "requires": [
+        "droite-tracer",
+        "droite-appartenance"
+      ],
+      "prerequisiteStatus": {
+        "droite-tracer": "established@M4",
+        "droite-appartenance": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -648,445 +966,18 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
-      "line": 127,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 137,
+      "requires": [
+        "droite-alignement-equation",
+        "droite-methode-tester-point"
+      ],
+      "prerequisiteStatus": {
+        "droite-alignement-equation": "established@M5",
+        "droite-methode-tester-point": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "C_TARGET_DEMANDED_BEFORE_TAUGHT",
-      "severity": "critical",
-      "message": "« colinéaire » is a target concept of this lesson but its first appearance is diag.prompt (module 0); it is only taught later at apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module01LaboratoireDesDroites.jsx:87",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 41,
-      "module": 0,
-      "step": null,
-      "term": "colineaire",
-      "questionId": "eq-d3-colineaires",
-      "position": 11
-    },
-    {
-      "code": "E_REQUIRES_NOT_ESTABLISHED",
-      "severity": "critical",
-      "message": "question 'M07-S1-Q1' requires 'droite-calculer-pente', which no brick establishes and priorKnowledge does not declare",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 63,
-      "module": 7,
-      "step": 1,
-      "term": null,
-      "questionId": "M07-S1-Q1",
-      "position": 200
-    },
-    {
-      "code": "E_REQUIRES_NOT_ESTABLISHED",
-      "severity": "critical",
-      "message": "question 'M07-S1-Q2' requires 'droite-equation-reduite', which no brick establishes and priorKnowledge does not declare",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 69,
-      "module": 7,
-      "step": 1,
-      "term": null,
-      "questionId": "M07-S1-Q2",
-      "position": 203
-    },
-    {
-      "code": "E_REQUIRES_NOT_ESTABLISHED",
-      "severity": "critical",
-      "message": "question 'M07-S2-Q3' requires 'droite-methode-point-vecteur', which no brick establishes and priorKnowledge does not declare",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 82,
-      "module": 7,
-      "step": 2,
-      "term": null,
-      "questionId": "M07-S2-Q3",
-      "position": 208
-    },
-    {
-      "code": "E_REQUIRES_NOT_ESTABLISHED",
-      "severity": "critical",
-      "message": "question 'M07-S4-Q5' requires 'droite-equation-cartesienne', which no brick establishes and priorKnowledge does not declare",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 120,
-      "module": 7,
-      "step": 4,
-      "term": null,
-      "questionId": "M07-S4-Q5",
-      "position": 225
-    },
-    {
-      "code": "E_REQUIRES_NOT_ESTABLISHED",
-      "severity": "critical",
-      "message": "question 'M07-S6-Q6' requires 'droite-appartenance', which no brick establishes and priorKnowledge does not declare",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 146,
-      "module": 7,
-      "step": 6,
-      "term": null,
-      "questionId": "M07-S6-Q6",
-      "position": 248
-    },
-    {
-      "code": "W_BRICK_MODULE_MISMATCH",
-      "severity": "medium",
-      "message": "brick 'droite-methode-deux-points' renders in module 7 but knowledge.jsx declares it under module 6 — the map attributes it to 6",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 56,
-      "module": 7,
-      "step": 1,
-      "term": null,
-      "questionId": null,
-      "position": 199
-    },
-    {
-      "code": "W_BRICK_MODULE_MISMATCH",
-      "severity": "medium",
-      "message": "brick 'droite-methode-point-pente' renders in module 7 but knowledge.jsx declares it under module 6 — the map attributes it to 6",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 96,
-      "module": 7,
-      "step": 3,
-      "term": null,
-      "questionId": null,
-      "position": 217
-    },
-    {
-      "code": "W_BRICK_MODULE_MISMATCH",
-      "severity": "medium",
-      "message": "brick 'droite-lire-cartesienne' renders in module 7 but knowledge.jsx declares it under module 6 — the map attributes it to 6",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 114,
-      "module": 7,
-      "step": 4,
-      "term": null,
-      "questionId": null,
-      "position": 224
-    },
-    {
-      "code": "W_BRICK_MODULE_MISMATCH",
-      "severity": "medium",
-      "message": "brick 'droite-modeliser' renders in module 7 but knowledge.jsx declares it under module 6 — the map attributes it to 6",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module07AtelierConstruireEtResoudre.jsx",
-      "line": 140,
-      "module": 7,
-      "step": 6,
-      "term": null,
-      "questionId": null,
-      "position": 247
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-point-direction' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 43,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-vecteur-directeur' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 78,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-vocabulaire-directeur' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 103,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-droite-point-direction' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 115,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-points-parametres' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 132,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-pente' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 176,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-calculer-pente' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 204,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-pente-vers-directeur' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 231,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-droite-pente' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 249,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-equation-idee' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 267,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-equation-cartesienne' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 293,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-equation-reduite' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 322,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-methode-point-vecteur' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 349,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-formules-equations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 378,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-droite-deux-ecritures' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 392,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-role-m-p' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 414,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-ordonnee-origine' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 453,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-verticale' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 472,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-lire-equation' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 497,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-tracer' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 515,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-droite-m-p' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 536,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-appartenance' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 558,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-methode-tester-point' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 579,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-alignement-equation' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 604,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-droite-appartenance' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 630,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-droite-trois-chemins' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/knowledge.jsx",
-      "line": 747,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

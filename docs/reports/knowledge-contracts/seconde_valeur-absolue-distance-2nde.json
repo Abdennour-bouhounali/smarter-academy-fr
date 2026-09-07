@@ -2,7 +2,11 @@
   "lesson": "valeur-absolue-distance-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "intervalle",
+    "intervalle-crochets",
+    "appartient"
+  ],
   "conceptsIntroduced": [
     {
       "id": "valeur-absolue-distance-zero",
@@ -138,8 +142,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "intervalle",
+        "intervalle-crochets",
+        "appartient"
+      ],
+      "prerequisiteStatus": {
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "appartient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,8 +162,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module00Diagnostic.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "intervalle",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "intervalle": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -236,10 +254,8 @@
       "line": 84,
       "requires": null,
       "prerequisiteStatus": {},
-      "lexiconHits": [
-        "intervalle-crochets"
-      ],
-      "pedagogicallyValid": false
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M05-S1-Q1",
@@ -459,18 +475,6 @@
     }
   ],
   "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« crochets d'intervalle » first appears at q.explain (module 4, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/valeur-absolue-distance-2nde/modules/Module04LeFaisceau.jsx",
-      "line": 87,
-      "module": 4,
-      "step": 3,
-      "term": "intervalle-crochets",
-      "questionId": "M04-S3-Q2",
-      "position": 109
-    },
     {
       "code": "W_ITEM_WITHOUT_BRICK",
       "severity": "info",

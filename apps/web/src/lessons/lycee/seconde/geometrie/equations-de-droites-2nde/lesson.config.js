@@ -31,6 +31,13 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/geometrie/equations-de-d
 
 export const LESSON_CONFIG = {
   id: 'equations-de-droites-2nde',
+  // Connaissances SUPPOSÉES acquises, mesurées — et rien d'autre — par le
+  // module 0 : le repérage du collège, le vecteur et la COLINÉARITÉ de la
+  // leçon précédente (« Vecteurs et colinéarité »), la fonction affine de 3e.
+  // « colinéaire » est bien un prérequis et non une notion de cette leçon :
+  // le module 3 s'appuie dessus (det(AM, u) = 0) sans jamais le redéfinir.
+  priorKnowledge: ['abscisse', 'ordonnee', 'coordonnees', 'vecteur',
+    'colineaire', 'fonction-affine', 'coefficient-directeur'],
   sequentialUnlock: true,
   title: 'Équations de droites',
   description:

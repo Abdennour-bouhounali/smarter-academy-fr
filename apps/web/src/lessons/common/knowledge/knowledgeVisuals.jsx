@@ -9,6 +9,37 @@ import React from 'react';
    connaît pas : elle reçoit `item.visual` déjà construit.
    ───────────────────────────────────────────────────────────────────────── */
 
+/**
+ * L'ÉCHELLE DE TRAIT — mêmes rapports que les figures de 6e
+ * (common/knowledge6e/visuals6e.jsx), pour que collège et lycée se
+ * ressemblent une fois les schémas affichés en grand.
+ *
+ * Unités de viewBox, donc proportionnelles au dessin : c'est le RAPPORT
+ * entre elles qui fait la lisibilité, pas leur valeur absolue.
+ */
+const S = {
+  RULE: 2,      // le trait porteur (courbe, vecteur, côté)
+  MARK: 1.5,    // ce qui se pose dessus (axes, graduations)
+  HAIR: 1,      // l'arrière-plan (quadrillage)
+  LABEL: 12,    // ce qu'on lit
+  NOTE: 10.5,   // ce qui commente
+  DOT: 4,       // un point
+  /**
+   * HALO — la « plaque » d'étiquette, en une ligne.
+   *
+   * Le texte est peint APRÈS son propre contour blanc (paintOrder), ce qui
+   * lui découpe un fond à sa forme exacte : il garde son espace au-dessus
+   * d'une courbe sans masquer un rectangle de dessin.
+   *
+   * L'épaisseur se mesure EN PROPORTION du texte, jamais en absolu. Le
+   * contour est peint des deux côtés du trait de la lettre : à 2,5 sur un
+   * texte de 12, il mangeait presque tout l'intérieur d'un « O », qui
+   * finissait en anneau creux — moins lisible que la collision corrigée.
+   * Un huitième du corps suffit à détacher le texte du fond.
+   */
+  HALO: 1.5,
+};
+
 function ArrowDef({ id, color }) {
   return (
     <marker id={id} markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
@@ -46,31 +77,31 @@ export function MiniPlane({
   for (let y = Math.ceil(yMin); y <= Math.floor(yMax); y++) gys.push(y);
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-      aria-hidden="true" className={`select-none overflow-visible ${className}`}>
+    <svg viewBox={`0 0 ${width} ${height}`} style={{ maxWidth: width }}
+      aria-hidden="true" className={`select-none overflow-visible w-full h-auto ${className}`}>
       <defs>
         {arrows.map((a, i) => <ArrowDef key={i} id={`kmp-${i}`} color={a.color ?? '#7c3aed'} />)}
       </defs>
       <g transform={`translate(${pad.left},${pad.top})`}>
         {showGrid && gxs.map(x => (
-          <line key={`gx${x}`} x1={toX(x)} y1={0} x2={toX(x)} y2={H} stroke="#e2e8f0" strokeWidth="1" />
+          <line key={`gx${x}`} x1={toX(x)} y1={0} x2={toX(x)} y2={H} stroke="#e2e8f0" strokeWidth={S.HAIR} />
         ))}
         {showGrid && gys.map(y => (
-          <line key={`gy${y}`} x1={0} y1={toY(y)} x2={W} y2={toY(y)} stroke="#e2e8f0" strokeWidth="1" />
+          <line key={`gy${y}`} x1={0} y1={toY(y)} x2={W} y2={toY(y)} stroke="#e2e8f0" strokeWidth={S.HAIR} />
         ))}
         {showAxes && (
           <>
-            <line x1={toX(0)} y1={0} x2={toX(0)} y2={H} stroke="#94a3b8" strokeWidth="1.5" />
-            <line x1={0} y1={toY(0)} x2={W} y2={toY(0)} stroke="#94a3b8" strokeWidth="1.5" />
+            <line x1={toX(0)} y1={0} x2={toX(0)} y2={H} stroke="#94a3b8" strokeWidth={S.MARK} />
+            <line x1={0} y1={toY(0)} x2={W} y2={toY(0)} stroke="#94a3b8" strokeWidth={S.MARK} />
           </>
         )}
         {showAxes && gxs.filter(x => x !== 0).map(x => (
           <text key={`lx${x}`} x={toX(x)} y={toY(0) + 14}
-            textAnchor="middle" fontSize="9" fill="#94a3b8">{x}</text>
+            textAnchor="middle" fontSize={S.LABEL} fill="#94a3b8">{x}</text>
         ))}
         {showAxes && gys.filter(y => y !== 0).map(y => (
           <text key={`ly${y}`} x={toX(0) - 5} y={toY(y) + 3.5}
-            textAnchor="end" fontSize="9" fill="#94a3b8">{y}</text>
+            textAnchor="end" fontSize={S.LABEL} fill="#94a3b8">{y}</text>
         ))}
         {segments.map((sg, i) => {
           const x1 = toX(sg.from.x); const y1 = toY(sg.from.y);
@@ -85,8 +116,8 @@ export function MiniPlane({
               <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={color} strokeWidth={sg.width ?? 2.2}
                 strokeDasharray={sg.dashed ? '5 4' : undefined} strokeLinecap="round" />
               {sg.label && (
-                <text x={lx} y={ly + dy} textAnchor="middle" fontSize="11" fontWeight="700" fill={color}
-                  paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round">{sg.label}</text>
+                <text x={lx} y={ly + dy} textAnchor="middle" fontSize={S.LABEL} fontWeight="700" fill={color}
+                  paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">{sg.label}</text>
               )}
             </g>
           );
@@ -111,8 +142,8 @@ export function MiniPlane({
               {a.label && (
                 <text x={mx - uy * 12} y={my + ux * 12}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="11" fontWeight="700" fill={color}
-                  paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round">
+                  fontSize={S.LABEL} fontWeight="700" fill={color}
+                  paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">
                   {a.label}
                 </text>
               )}
@@ -134,11 +165,11 @@ export function MiniPlane({
           const o = offs[lp] ?? offs.tl;
           return (
             <g key={i}>
-              <circle cx={cx} cy={cy} r="4.5" fill={color} />
+              <circle cx={cx} cy={cy} r={S.DOT} fill={color} />
               {p.label && (
                 <text x={cx + o.dx} y={cy + o.dy} textAnchor={o.anchor}
-                  fontSize="12" fontWeight="700" fill={color}
-                  paintOrder="stroke" stroke="#fff" strokeWidth="3" strokeLinejoin="round">
+                  fontSize={S.LABEL} fontWeight="700" fill={color}
+                  paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">
                   {p.label}
                 </text>
               )}
@@ -163,17 +194,17 @@ export function RightTriangle({ a = 3, b = 4, hyp = 5, color = '#7c3aed', width 
   const sq = 9;
   const sqPts = `${px[1] - sq},${py[1]} ${px[1] - sq},${py[1] - sq} ${px[1]},${py[1] - sq}`;
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} aria-hidden="true" className="select-none">
-      <polygon points={pts} fill="none" stroke={color} strokeWidth="2.2" />
-      <polyline points={sqPts} fill="none" stroke={color} strokeWidth="1.5" />
+    <svg viewBox={`0 0 ${width} ${height}`} style={{ maxWidth: width }} aria-hidden="true" className="select-none w-full h-auto">
+      <polygon points={pts} fill="none" stroke={color} strokeWidth={S.RULE} />
+      <polyline points={sqPts} fill="none" stroke={color} strokeWidth={S.MARK} />
       {[[px[0], py[0]], [px[1], py[1]], [px[2], py[2]]].map(([cx, cy], i) => (
-        <circle key={i} cx={cx} cy={cy} r="4" fill={color} />
+        <circle key={i} cx={cx} cy={cy} r={S.DOT} fill={color} />
       ))}
-      <text x={(px[0] + px[1]) / 2} y={py[0] + 18} textAnchor="middle" fontSize="13" fontWeight="700" fill="#0369a1">{a}</text>
-      <text x={px[1] + 14} y={(py[1] + py[2]) / 2 + 5} textAnchor="middle" fontSize="13" fontWeight="700" fill="#047857">{b}</text>
+      <text x={(px[0] + px[1]) / 2} y={py[0] + 18} textAnchor="middle" fontSize={S.LABEL} fontWeight="700" fill="#0369a1">{a}</text>
+      <text x={px[1] + 14} y={(py[1] + py[2]) / 2 + 5} textAnchor="middle" fontSize={S.LABEL} fontWeight="700" fill="#047857">{b}</text>
       <text x={(px[0] + px[2]) / 2 - 10} y={(py[0] + py[2]) / 2 - 6}
-        textAnchor="middle" fontSize="13" fontWeight="800" fill={color}
-        paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round">{hyp}</text>
+        textAnchor="middle" fontSize={S.LABEL} fontWeight="800" fill={color}
+        paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">{hyp}</text>
     </svg>
   );
 }
@@ -203,7 +234,7 @@ export function ChaslesArrow({
           </marker>
         </defs>
         <line x1={x1} y1={y1} x2={x2 - ux * shrink} y2={y2 - uy * shrink}
-          stroke={color} strokeWidth="2" markerEnd={`url(#${id})`} />
+          stroke={color} strokeWidth={S.RULE} markerEnd={`url(#${id})`} />
       </>
     );
   }
@@ -214,13 +245,13 @@ export function ChaslesArrow({
       {[[xA, A, colorAB], [xB, B, colorBC], [xC, C, colorAC]].map(([x, name, c], i) => (
         <g key={i}>
           <circle cx={x} cy={yTop} r={r} fill="#0f172a" />
-          <text x={x} y={yTop - 11} textAnchor="middle" fontSize="13" fontWeight="700" fill="#0f172a">{name}</text>
+          <text x={x} y={yTop - 11} textAnchor="middle" fontSize={S.LABEL} fontWeight="700" fill="#0f172a">{name}</text>
         </g>
       ))}
       <Seg x1={xA + r} y1={yTop} x2={xB - r} y2={yTop} color={colorAB} id="chs-ab" />
-      <text x={(xA + xB) / 2} y={yTop - 5} textAnchor="middle" fontSize="10" fontWeight="700" fill={colorAB}>AB</text>
+      <text x={(xA + xB) / 2} y={yTop - 5} textAnchor="middle" fontSize={S.LABEL} fontWeight="700" fill={colorAB}>AB</text>
       <Seg x1={xB + r} y1={yTop} x2={xC - r} y2={yTop} color={colorBC} id="chs-bc" />
-      <text x={(xB + xC) / 2} y={yTop - 5} textAnchor="middle" fontSize="10" fontWeight="700" fill={colorBC}>BC</text>
+      <text x={(xB + xC) / 2} y={yTop - 5} textAnchor="middle" fontSize={S.LABEL} fontWeight="700" fill={colorBC}>BC</text>
 
       {/* AC as a curved arrow underneath */}
       <defs>
@@ -230,8 +261,8 @@ export function ChaslesArrow({
       </defs>
       <path
         d={`M ${xA} ${yTop + r + 2} Q ${(xA + xC) / 2} ${yBot + 10} ${xC - 6} ${yTop + r + 4}`}
-        fill="none" stroke={colorAC} strokeWidth="2" markerEnd="url(#chs-ac)" />
-      <text x={(xA + xC) / 2} y={yBot + 20} textAnchor="middle" fontSize="10" fontWeight="700" fill={colorAC}>AC</text>
+        fill="none" stroke={colorAC} strokeWidth={S.RULE} markerEnd="url(#chs-ac)" />
+      <text x={(xA + xC) / 2} y={yBot + 20} textAnchor="middle" fontSize={S.LABEL} fontWeight="700" fill={colorAC}>AC</text>
     </svg>
   );
 }
@@ -290,6 +321,24 @@ export function MiniGraph({
       const right = left + w;
       if (left < axisX + 14 && right > axisX - 14 && Math.abs(cx - axisX) > 2) { anchor = 'middle'; x = cx; y = o.dy < 0 ? cy - 8 : cy + 14; }
     }
+    // UN POINT POSÉ SUR UN AXE. Le cas de l'origine : le point est SUR l'axe,
+    // donc le garde ci-dessus (« assez loin de l'axe ») ne le protégeait pas,
+    // et son étiquette atterrissait dans la gouttière des graduations — « O »
+    // par-dessus « −1 ». On la pousse alors du côté opposé aux nombres :
+    // les graduations x vivent sous l'axe horizontal et les y à gauche du
+    // vertical, donc en haut à droite il n'y a jamais personne.
+    const axisY = yMin <= 0 && yMax >= 0 ? toY(0) : null;
+    const onAxisX = axisX !== null && Math.abs(cx - axisX) <= 2;
+    const onAxisY = axisY !== null && Math.abs(cy - axisY) <= 2;
+    if (onAxisX || onAxisY) {
+      // Assez près pour qu'on voie QUI est nommé, assez loin pour que la
+      // pastille reste identifiable : on se cale sur le rayon du point.
+      anchor = 'start';
+      x = cx + S.DOT + 2;
+      y = cy - S.DOT - 2;
+      if (x + w > W) { anchor = 'end'; x = cx - S.DOT - 2; }
+      if (y < 10) y = cy + S.DOT + 10;
+    }
     if (anchor === 'middle') { x = Math.max(w / 2, Math.min(W - w / 2, x)); }
     if (y < 10) y = cy + 14;
     if (y > H + 10) y = cy - 6;
@@ -324,8 +373,8 @@ export function MiniGraph({
   };
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-      aria-hidden="true" className={`select-none overflow-visible ${className}`}>
+    <svg viewBox={`0 0 ${width} ${height}`} style={{ maxWidth: width }}
+      aria-hidden="true" className={`select-none overflow-visible w-full h-auto ${className}`}>
       <defs>
         <clipPath id={`mg-clip-${width}-${height}`}><rect x="0" y="0" width={W} height={H} /></clipPath>
       </defs>
@@ -336,24 +385,32 @@ export function MiniGraph({
             fill={b.color ?? '#10b981'} opacity={b.opacity ?? 0.14} />
         ))}
         {showGrid && gxs.map((x) => (
-          <line key={`gx${x}`} x1={toX(x)} y1={0} x2={toX(x)} y2={H} stroke="#e2e8f0" strokeWidth="1" />
+          <line key={`gx${x}`} x1={toX(x)} y1={0} x2={toX(x)} y2={H} stroke="#e2e8f0" strokeWidth={S.HAIR} />
         ))}
         {showGrid && gys.map((y) => (
-          <line key={`gy${y}`} x1={0} y1={toY(y)} x2={W} y2={toY(y)} stroke="#e2e8f0" strokeWidth="1" />
+          <line key={`gy${y}`} x1={0} y1={toY(y)} x2={W} y2={toY(y)} stroke="#e2e8f0" strokeWidth={S.HAIR} />
         ))}
-        {xMin <= 0 && xMax >= 0 && <line x1={toX(0)} y1={0} x2={toX(0)} y2={H} stroke="#94a3b8" strokeWidth="1.5" />}
-        {yMin <= 0 && yMax >= 0 && <line x1={0} y1={toY(0)} x2={W} y2={toY(0)} stroke="#94a3b8" strokeWidth="1.5" />}
+        {xMin <= 0 && xMax >= 0 && <line x1={toX(0)} y1={0} x2={toX(0)} y2={H} stroke="#94a3b8" strokeWidth={S.MARK} />}
+        {yMin <= 0 && yMax >= 0 && <line x1={0} y1={toY(0)} x2={W} y2={toY(0)} stroke="#94a3b8" strokeWidth={S.MARK} />}
+        {/* Graduations : le HALO leur donne leur propre espace. Une courbe
+            passe forcément près des axes — sans plaque, « −1 » et « −2 » se
+            lisaient à travers le tracé, et l'élève ne savait plus si le
+            nombre nommait l'axe ou la courbe. Le halo blanc (paintOrder)
+            découpe le fond du texte sans rien masquer d'utile : c'est la
+            plaque d'étiquette, au coût d'un attribut. */}
         {gxs.filter((x) => x !== 0).map((x) => (
           <text key={`lx${x}`} x={toX(x)} y={(yMin <= 0 && yMax >= 0 ? toY(0) : H) + 12}
-            textAnchor="middle" fontSize="9" fill="#94a3b8">{fmt(x)}</text>
+            textAnchor="middle" fontSize={S.LABEL} fill="#94a3b8"
+            paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">{fmt(x)}</text>
         ))}
         {gys.filter((y) => y !== 0).map((y) => (
           <text key={`ly${y}`} x={(xMin <= 0 && xMax >= 0 ? toX(0) : 0) - 4} y={toY(y) + 3.5}
-            textAnchor="end" fontSize="9" fill="#94a3b8">{fmt(y)}</text>
+            textAnchor="end" fontSize={S.LABEL} fill="#94a3b8"
+            paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">{fmt(y)}</text>
         ))}
         {guides.map((g, i) => (g.x != null
-          ? <line key={`gu${i}`} x1={toX(g.x)} y1={0} x2={toX(g.x)} y2={H} stroke={g.color ?? '#0284c7'} strokeWidth="1.5" strokeDasharray="4 3" />
-          : <line key={`gu${i}`} x1={0} y1={toY(g.y)} x2={W} y2={toY(g.y)} stroke={g.color ?? '#059669'} strokeWidth="1.5" strokeDasharray="4 3" />))}
+          ? <line key={`gu${i}`} x1={toX(g.x)} y1={0} x2={toX(g.x)} y2={H} stroke={g.color ?? '#0284c7'} strokeWidth={S.MARK} strokeDasharray="4 3" />
+          : <line key={`gu${i}`} x1={0} y1={toY(g.y)} x2={W} y2={toY(g.y)} stroke={g.color ?? '#059669'} strokeWidth={S.MARK} strokeDasharray="4 3" />))}
         <g clipPath={`url(#mg-clip-${width}-${height})`}>
           {functions.map((f, i) => pathsOf(f).map((d, j) => (
             <path key={`f${i}-${j}`} d={d} fill="none" stroke={f.color ?? '#4f46e5'} strokeWidth={f.width ?? 2.2}
@@ -361,8 +418,8 @@ export function MiniGraph({
           )))}
         </g>
         {functions.filter((f) => f.label).map((f, i) => (
-          <text key={`fl${i}`} x={W - 2} y={10 + i * 12} textAnchor="end" fontSize="10" fontWeight="700" fill={f.color ?? '#4f46e5'}
-            paintOrder="stroke" stroke="#fff" strokeWidth="2.5">{f.label}</text>
+          <text key={`fl${i}`} x={W - 2} y={10 + i * 12} textAnchor="end" fontSize={S.LABEL} fontWeight="700" fill={f.color ?? '#4f46e5'}
+            paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO}>{f.label}</text>
         ))}
         {points.map((p, i) => {
           const cx = toX(p.x); const cy = toY(p.y);
@@ -371,10 +428,10 @@ export function MiniGraph({
           const lp = p.label ? placeLabel(cx, cy, o, p.label) : null;
           return (
             <g key={`p${i}`}>
-              <circle cx={cx} cy={cy} r="4" fill={p.hollow ? '#fff' : color} stroke={color} strokeWidth="2" />
+              <circle cx={cx} cy={cy} r={S.DOT} fill={p.hollow ? '#fff' : color} stroke={color} strokeWidth={S.RULE} />
               {lp && (
-                <text x={lp.x} y={lp.y} textAnchor={lp.anchor} fontSize="11" fontWeight="700" fill={color}
-                  paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round">{p.label}</text>
+                <text x={lp.x} y={lp.y} textAnchor={lp.anchor} fontSize={S.LABEL} fontWeight="700" fill={color}
+                  paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">{p.label}</text>
               )}
             </g>
           );

@@ -2,7 +2,9 @@
   "lesson": "positions-relatives-droites-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "colineaire"
+  ],
   "conceptsIntroduced": [
     {
       "id": "positions-trois-cas",
@@ -181,11 +183,13 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
       "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
+      "requires": [
         "colineaire"
       ],
+      "prerequisiteStatus": {
+        "colineaire": "prior"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -194,7 +198,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 61,
+      "line": 64,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -490,18 +494,6 @@
     }
   ],
   "findings": [
-    {
-      "code": "M_TAUGHT_TOO_LATE",
-      "severity": "medium",
-      "message": "« colinéaire » first appears at diag.option (module 0), before its teaching position at apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module02LaDirection.jsx:96",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/positions-relatives-droites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 56,
-      "module": 0,
-      "step": null,
-      "term": "colineaire",
-      "questionId": "pr-d4-det",
-      "position": 17
-    },
     {
       "code": "W_ITEM_WITHOUT_BRICK",
       "severity": "info",

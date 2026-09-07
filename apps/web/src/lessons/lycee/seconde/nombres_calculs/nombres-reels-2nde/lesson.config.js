@@ -26,6 +26,23 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/nombres_calculs/nombres-
 
 export const LESSON_CONFIG = {
   id: 'nombres-reels-2nde',
+  // Connaissance SUPPOSÉE acquise, venue d'« Ensembles et intervalles »
+  // (premier objet du domaine) : le symbole ∈, employé pour écrire « 4 ∈ ℕ »
+  // dès le module 2. Les familles de nombres elles-mêmes sont la MATIÈRE de
+  // cette leçon : elles restent enseignées ici, jamais supposées.
+  // Diagnostiquée par q6-appartient.
+  priorKnowledge: ['appartient'],
+  // Faux positif documenté du lexique : « ordre croissant » dans la question
+  // q2 du module 0 est la locution française du RANGEMENT de nombres, pas la
+  // notion de variation d'une fonction que le terme vise. Le contrat demande
+  // de déclarer l'exception plutôt que d'abaisser le niveau du terme
+  // (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+  knowledgeAudit: {
+    ignore: [{
+      term: 'variations',
+      reason: "« Range dans l'ordre croissant » (module 0) est le rangement de trois relatifs, pas la variation d'une fonction : cette leçon n'étudie aucune fonction.",
+    }],
+  },
   sequentialUnlock: true,
   title: 'Nombres réels',
   description:

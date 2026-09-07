@@ -15,9 +15,9 @@ const seedThrough = (n) => Array.from({ length: n + 1 }, (_, i) => String(i));
 const audit = async (page, issues) => { issues.push(...(await layoutAudit(page)), ...(await aspectAudit(page)), ...(await domOverflow(page))); };
 const CONTRIB = {
   1: ['trois-references', 'regle-symetrie-entrees', 'regle-pres-loin-zero', 'methode-tableau-tracer'],
-  2: ['fonction-carre', 'regle-comparer-carres', 'mem-parabole'],
+  2: ['vocab-monte-descend', 'fonction-carre', 'regle-comparer-carres', 'mem-parabole'],
   3: ['fonction-inverse', 'regle-comparer-inverses', 'mem-hyperbole'],
-  4: ['fonction-valeur-absolue', 'regle-carre-vs-va', 'mem-le-v'],
+  4: ['vocab-extremum', 'fonction-valeur-absolue', 'regle-carre-vs-va', 'mem-le-v'],
   5: ['methode-antecedents-reference', 'regle-ordre-references', 'formule-references'],
   6: ['methode-modeliser-reference'],
 };

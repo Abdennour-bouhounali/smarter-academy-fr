@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoefficientLab from '../components/CoefficientLab';
@@ -75,6 +75,13 @@ export default function Module04LaboratoireDesCoefficients() {
               ) : (
                 <Feedback tone="info">{!ms.has(2) ? 'Passe par m = 2. ' : ''}{![...ms].some((m) => m < 0) ? 'Puis un m négatif.' : ''}</Feedback>
               )}
+              {done1 && (
+                <KnowledgeBrick
+                  id="droite-role-m-p"
+                  variant="new"
+                  lead="Un bouton, un effet. Voilà ce que fait chacun des deux — le second se vérifie à l’étape suivante."
+                />
+              )}
             </div>
           ),
         },
@@ -87,6 +94,13 @@ export default function Module04LaboratoireDesCoefficients() {
                 <Feedback tone="ok">p fait <strong>glisser</strong> la droite verticalement, sans la faire tourner : la flèche (1 ; {formatDec(val.m)}) n’a pas changé. p est l’<strong>ordonnée à l’origine</strong> : la droite coupe l’axe des ordonnées en (0 ; p).</Feedback>
               ) : (
                 <Feedback tone="info">{!ps.has(3) ? 'Passe par p = 3. ' : ''}{!ps.has(-2) ? 'Puis p = −2.' : ''}</Feedback>
+              )}
+              {done2 && (
+                <KnowledgeBrick
+                  id="droite-ordonnee-origine"
+                  variant="new"
+                  lead="Le point où la droite coupe l’axe des ordonnées t’a suivi à chaque glissement. Il porte un nom."
+                />
               )}
             </div>
           ),
@@ -102,22 +116,56 @@ export default function Module04LaboratoireDesCoefficients() {
               ) : (
                 <Feedback tone="info">Amène b à 0 en gardant a ≠ 0. Le vecteur directeur est (−b ; a) : lis-le sur la flèche.</Feedback>
               )}
+              {done3 && (
+                <KnowledgeBrick
+                  id="droite-verticale"
+                  variant="new"
+                  lead="La droite que les deux boutons de y = m·x + p ne savaient pas atteindre :"
+                />
+              )}
             </div>
           ),
         },
         {
           num: 4, title: 'Tracer une droite à partir de son équation', subtitle: 'Place P et Q pour que la droite (PQ) soit y = −2x + 3. Aucune cible n’est dessinée : c’est l’équation qui guide.', done: b4,
-          content: (kit) => <LineBuilder target={TARGET4} solved={b4} onSolved={() => setB4(true)} react={kit.react} />,
+          content: (kit) => (
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="droite-tracer"
+                variant="new"
+                compact
+                lead="Sans cible dessinée, c’est l’équation qui dit où poser les points."
+              />
+              <LineBuilder target={TARGET4} solved={b4} onSolved={() => setB4(true)} react={kit.react} />
+            </div>
+          ),
         },
         {
           num: 5, title: 'Lire une équation', done: q5,
           content: (
-            <TapQuestion
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="droite-lire-equation"
+                variant="new"
+                compact
+                lead="Tu as réglé m et p toi-même ; on peut maintenant les lire sur une équation qu’on n’a pas écrite."
+              />
+              <TapQuestion
               prompt="Droite d’équation y = −0,5x + 4. Que peut-on lire ?"
               options={['Pente −0,5 ; elle coupe l’axe des ordonnées en (0 ; 4)', 'Pente 4 ; elle coupe l’axe des ordonnées en (0 ; −0,5)', 'Elle passe par (4 ; 0) et descend de 0,5 par unité', 'Elle est verticale']} cols={1} correct={0}
               explain="m = −0,5 est la pente (pour 1 à droite, 0,5 vers le bas) et p = 4 l’ordonnée à l’origine : point (0 ; 4). Vecteur directeur (1 ; −0,5), ou (2 ; −1)."
-              explainWrong="Dans y = m·x + p, m multiplie x (pente : −0,5) et p est la constante (ordonnée à l’origine : 4, point (0 ; 4) — pas (4 ; 0))."
-              solved={q5} onAnswered={() => setQ5(true)} />
+                explainWrong="Dans y = m·x + p, m multiplie x (pente : −0,5) et p est la constante (ordonnée à l’origine : 4, point (0 ; 4) — pas (4 ; 0))."
+                requires={['droite-lire-equation', 'droite-role-m-p', 'droite-ordonnee-origine']}
+                solved={q5} onAnswered={() => setQ5(true)} />
+              {q5 && (
+                <KnowledgeBrick
+                  id="mem-droite-m-p"
+                  variant="new"
+                  compact
+                  lead="Ce qu’il faut retenir de ce module."
+                />
+              )}
+            </div>
           ),
         },
       ]}

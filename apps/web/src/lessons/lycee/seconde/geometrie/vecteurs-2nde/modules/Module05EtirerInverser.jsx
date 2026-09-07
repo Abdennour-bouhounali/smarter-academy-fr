@@ -110,7 +110,7 @@ export default function Module05EtirerInverser() {
     },
     {
       num: 3,
-      title: 'Construis un vecteur colinéaire',
+      title: 'Construis un vecteur porté par la même direction',
       subtitle: `La flèche grise est u = ${formatVec(U)}. Règle v pour qu’il soit un multiple de u — mais pas u lui-même.`,
       done: done3,
       content: (kit) => (

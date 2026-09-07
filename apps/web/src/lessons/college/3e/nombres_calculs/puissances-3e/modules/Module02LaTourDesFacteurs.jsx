@@ -5,7 +5,8 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PowerExplorer from '../components/PowerExplorer';
-import PowerTower from '../components/PowerTower';
+import { Tower } from '../components/FactorTower';
+import { makeTower, removeFactor, addFactor } from '../components/factorTowerUtils';
 import { formatDec, formatPower, pow } from '../components/powerUtils';
 
 /**
@@ -57,6 +58,14 @@ export default function Module02LaTourDesFacteurs() {
   };
 
   const descDone = descVisited.includes(0) && descVisited.some((v) => v < 0);
+
+  /* L'exposant reste l'état du module ; la tour n'en est qu'une lecture.
+     Négatif, il se traduit par des facteurs SOUS le sol (module 3). */
+  const towerFor = (n) => {
+    let t = makeTower(10, 0, 'a');
+    for (let i = 0; i < Math.abs(n); i += 1) t = n > 0 ? addFactor(t, 'a') : removeFactor(t);
+    return t;
+  };
 
   const stepDown = (next) => {
     setDescN(next);
@@ -185,17 +194,52 @@ export default function Module02LaTourDesFacteurs() {
                 La tour est en base <strong>10</strong>. Chaque bloc retiré divise la valeur par 10.
                 Descends jusqu’à la tour vide, puis continue.
               </p>
-              <PowerTower
-                base={10}
-                n={descN}
-                onChange={(v) => {
-                  stepDown(v);
-                  if (v <= -1 && !descDone) kit.react(true);
-                }}
-                minN={-2}
-                maxN={4}
-                label="Tour de base 10 à dépiler"
-              />
+              {/* La tour est DÉRIVÉE de `descN` : le module garde son état
+                  (descN, descVisited) et la figure n'en est que la lecture.
+                  Un bloc porte « 10 », pas « × 10 » — c'est un facteur, et
+                  le × vit entre les blocs. */}
+              {/* §16bis — les commandes sont À CÔTÉ de la tour, pas dessous.
+                  La tour monte et descend sous son sol : des boutons placés
+                  après elle se déroberaient sous le doigt à chaque geste.
+                  Une colonne latérale est insensible à la hauteur, donc le
+                  curseur ne bouge plus. Sous 640 px il n'y a pas la largeur
+                  pour une colonne : on repasse en ligne, et c'est là qu'on
+                  réserve la hauteur maximale de la figure. */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-3 sm:gap-6">
+                <div
+                  className="flex justify-center order-1 sm:order-none"
+                  style={{ minHeight: 4 * 44 + 3 * 18 + 96 }}
+                >
+                  <Tower
+                    tower={towerFor(descN)}
+                    title="Tour de base 10"
+                    onRemoveTop={() => {
+                      const v = descN - 1;
+                      if (v < -2) return;
+                      stepDown(v);
+                      if (v <= -1 && !descDone) kit.react(true);
+                    }}
+                  />
+                </div>
+                <div className="flex sm:flex-col justify-center gap-2 order-2 sm:order-none shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => { if (descN < 4) stepDown(descN + 1); }}
+                    aria-label="Ajouter un facteur 10 à la tour"
+                    className="min-h-[44px] px-4 rounded-xl border-2 bg-sky-600 border-sky-700 text-white text-sm font-bold hover:bg-sky-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  >
+                    Ajouter un facteur
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { if (descN > -2) { const v = descN - 1; stepDown(v); if (v <= -1 && !descDone) kit.react(true); } }}
+                    aria-label="Retirer un facteur 10 de la tour"
+                    className="min-h-[44px] px-4 rounded-xl border-2 border-slate-300 bg-white text-sm font-bold text-slate-700 hover:border-sky-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  >
+                    Retirer un facteur
+                  </button>
+                </div>
+              </div>
               {!descDone && (
                 <Feedback tone="info">
                   Valeur actuelle : <strong className="font-mono">{formatDec(pow(10, descN), { maxDecimals: 6 })}</strong>.{' '}

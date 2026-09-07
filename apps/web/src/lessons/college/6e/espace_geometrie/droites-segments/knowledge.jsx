@@ -48,7 +48,7 @@ function TraitVisuel({ left = 'stop', right = 'stop', nameA = 'A', nameB = 'B', 
     );
   };
   return (
-    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className="select-none">
+    <svg viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className="select-none w-full h-auto" style={{ maxWidth: W }}>
       <line
         x1={left === 'stop' ? xa : 8} y1={y} x2={right === 'stop' ? xb : W - 8} y2={y}
         stroke={color} strokeWidth="2.2" strokeLinecap="round"
@@ -292,7 +292,7 @@ export const LESSON_KNOWLEDGE = {
         title: 'Le milieu d’un segment',
         summary: 'Le point M de [AB] tel que AM = MB — deux conditions, pas une.',
         visual: (
-          <svg width="132" height="40" viewBox="0 0 132 40" aria-hidden="true" className="select-none">
+          <svg viewBox="0 0 132 40" aria-hidden="true" className="select-none w-full h-auto" style={{ maxWidth: 132 }}>
             <line x1="20" y1="24" x2="112" y2="24" stroke="#7c3aed" strokeWidth="2.2" strokeLinecap="round" />
             {[20, 66, 112].map((x, i) => (
               <circle key={x} cx={x} cy="24" r="4" fill={i === 1 ? '#e11d48' : '#7c3aed'} />

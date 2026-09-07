@@ -155,7 +155,10 @@ export default function LiquidContainer({
             <g key={i}>
               <line x1={18} y1={y} x2={34} y2={y} stroke="#64748b" strokeWidth="2" />
               {g.label && (
-                <text x={12} y={y + 4} textAnchor="end" style={{ fontSize: 11, fontFamily: 'monospace', fontWeight: 700 }} fill="#475569">
+                /* Posée à x=12, l'étiquette touchait la paroi gauche du
+                   récipient. On la recule dans la marge, hors du verre. */
+                <text x={6} y={y + 4} textAnchor="end" style={{ fontSize: 11, fontFamily: 'monospace', fontWeight: 700 }} fill="#475569"
+                  paintOrder="stroke" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round">
                   {g.label}
                 </text>
               )}

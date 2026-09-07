@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -38,10 +38,21 @@ export default function Module05TroisFormes() {
         },
         {
           num: 3, title: 'A(x) descend-il sous −4 ?', done: q3,
-          content: <TapQuestion prompt="Quelle forme montre que A(x) ≥ −4 pour tout x ?" options={FORMS} renderOption={tex} correctionLabel="(x + 1)² − 4" cols={3} correct={2}
-            explain="(x + 1)² est un carré : toujours ≥ 0. Donc (x + 1)² − 4 ≥ −4, avec égalité pour x = −1 : le minimum est −4. Cette forme « carré + constante » donne le minimum d’un coup."
-            explainWrong="Un carré n’est jamais négatif : (x + 1)² ≥ 0, donc A(x) = (x + 1)² − 4 ≥ −4. Les autres formes cachent ce carré."
-            solved={q3} onAnswered={() => setQ3(true)} />,
+          content: (
+            <div className="space-y-3">
+              <TapQuestion prompt="Quelle forme montre que A(x) ≥ −4 pour tout x ?" options={FORMS} renderOption={tex} correctionLabel="(x + 1)² − 4" cols={3} correct={2}
+                explain="(x + 1)² est un carré : toujours ≥ 0. Donc (x + 1)² − 4 ≥ −4, et l’égalité a lieu pour x = −1 : A(x) descend jusqu’à −4, jamais plus bas. Cette forme « carré + constante » le montre d’un coup."
+                explainWrong="Un carré n’est jamais négatif : (x + 1)² ≥ 0, donc A(x) = (x + 1)² − 4 ≥ −4. Les autres formes cachent ce carré."
+                solved={q3} onAnswered={() => setQ3(true)} />
+              {q3 && (
+                <KnowledgeBrick
+                  id="regle-carre-positif"
+                  variant="new"
+                  lead="Tu viens de lire que A(x) ne descend jamais sous −4, et qu’il atteint −4 en x = −1. Cette plus petite valeur atteinte porte un nom : le MINIMUM de A. La plus grande valeur atteinte s’appellerait le MAXIMUM ; l’un ou l’autre, on dit un EXTREMUM."
+                />
+              )}
+            </div>
+          ),
         },
         {
           num: 4, title: 'À retenir', done: b4,

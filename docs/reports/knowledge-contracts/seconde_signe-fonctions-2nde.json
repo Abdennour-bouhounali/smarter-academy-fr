@@ -2,7 +2,11 @@
   "lesson": "signe-fonctions-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "intervalle",
+    "intervalle-crochets",
+    "appartient"
+  ],
   "conceptsIntroduced": [
     {
       "id": "signe-position-courbe",
@@ -120,7 +124,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 8,
+      "line": 14,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -132,7 +136,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 9,
+      "line": 15,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -144,7 +148,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 10,
+      "line": 16,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -156,7 +160,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 11,
+      "line": 17,
       "requires": null,
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -168,9 +172,29 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 12,
+      "line": 18,
       "requires": null,
       "prerequisiteStatus": {},
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "sg-d6",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
+      "line": 19,
+      "requires": [
+        "intervalle",
+        "intervalle-crochets",
+        "appartient"
+      ],
+      "prerequisiteStatus": {
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "appartient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -219,11 +243,8 @@
       "line": 60,
       "requires": null,
       "prerequisiteStatus": {},
-      "lexiconHits": [
-        "intervalle-crochets",
-        "appartient"
-      ],
-      "pedagogicallyValid": false
+      "lexiconHits": [],
+      "pedagogicallyValid": true
     },
     {
       "questionId": "M02-S4-Q3",
@@ -491,30 +512,6 @@
     }
   ],
   "findings": [
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« crochets d'intervalle » first appears at q.correction (module 2, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module02LesZerosEtLeTableau.jsx",
-      "line": 62,
-      "module": 2,
-      "step": 3,
-      "term": "intervalle-crochets",
-      "questionId": "M02-S3-Q2",
-      "position": 69
-    },
-    {
-      "code": "H_NEVER_TAUGHT",
-      "severity": "high",
-      "message": "« symbole ∈ » first appears at q.correction (module 2, étape 3) and is never established in a teaching position in this lesson",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module02LesZerosEtLeTableau.jsx",
-      "line": 62,
-      "module": 2,
-      "step": 3,
-      "term": "appartient",
-      "questionId": "M02-S3-Q2",
-      "position": 69
-    },
     {
       "code": "W_ITEM_WITHOUT_BRICK",
       "severity": "info",

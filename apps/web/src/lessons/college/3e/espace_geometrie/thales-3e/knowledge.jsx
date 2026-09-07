@@ -15,10 +15,10 @@ import MathText from '../../../../common/components/MathText';
 
 const Fig = ({ children, caption }) => (
   <div className="space-y-1">
-    <svg viewBox="0 0 200 130" width="200" height="130" role="img" aria-label={caption}>
+    <svg viewBox="0 0 200 130" role="img" aria-label={caption} style={{ maxWidth: 200 }} className="w-full h-auto">
       {children}
     </svg>
-    <p className="text-[11px] text-slate-500 text-center">{caption}</p>
+    <p className="text-xs text-slate-500 text-center">{caption}</p>
   </div>
 );
 

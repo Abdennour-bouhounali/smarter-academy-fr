@@ -13,8 +13,8 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module02MemeContour.jsx",
-        "line": 129,
-        "step": 1,
+        "line": 277,
+        "step": 2,
         "variant": "new"
       }
     },
@@ -24,8 +24,8 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module02MemeContour.jsx",
-        "line": 169,
-        "step": 2,
+        "line": 256,
+        "step": 1,
         "variant": "new"
       }
     },
@@ -35,7 +35,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module03Paver.jsx",
-        "line": 203,
+        "line": 210,
         "step": 4,
         "variant": "new"
       }
@@ -46,7 +46,7 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module04FormuleRectangle.jsx",
-        "line": 134,
+        "line": 144,
         "step": 1,
         "variant": "new"
       }
@@ -57,7 +57,7 @@
       "module": 5,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module05UnitesAire.jsx",
-        "line": 151,
+        "line": 164,
         "step": 1,
         "variant": "new"
       }
@@ -70,7 +70,7 @@
       "module": 1,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module01Mission.jsx",
-        "line": 152,
+        "line": 238,
         "step": 2,
         "variant": "new"
       }
@@ -81,7 +81,7 @@
       "module": 1,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module01Mission.jsx",
-        "line": 180,
+        "line": 266,
         "step": 3,
         "variant": "new"
       }
@@ -94,7 +94,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module03Paver.jsx",
-        "line": 127,
+        "line": 134,
         "step": 1,
         "variant": "new"
       }
@@ -105,7 +105,7 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module04FormuleRectangle.jsx",
-        "line": 208,
+        "line": 218,
         "step": 3,
         "variant": "new"
       }
@@ -118,7 +118,7 @@
       "module": 5,
       "brick": {
         "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module05UnitesAire.jsx",
-        "line": 205,
+        "line": 218,
         "step": 3,
         "variant": "new"
       }
@@ -211,7 +211,7 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module01Mission.jsx",
-      "line": 138,
+      "line": 224,
       "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
@@ -223,7 +223,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module01Mission.jsx",
-      "line": 167,
+      "line": 253,
       "requires": [
         "aire"
       ],
@@ -239,7 +239,7 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module01Mission.jsx",
-      "line": 197,
+      "line": 283,
       "requires": [
         "aire",
         "perimetre"
@@ -252,30 +252,32 @@
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M02-S2-Q1",
-      "module": 2,
-      "step": 2,
-      "component": "TapQuestion",
-      "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module02MemeContour.jsx",
-      "line": 146,
-      "requires": [
-        "aire",
-        "perimetre"
-      ],
-      "prerequisiteStatus": {
-        "aire": "established@M1",
-        "perimetre": "established@M1"
-      },
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M02-S3-Q2",
+      "questionId": "M02-S3-Q1",
       "module": 2,
       "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module02MemeContour.jsx",
+      "line": 291,
+      "requires": [
+        "aire",
+        "perimetre",
+        "aire-perimetre-independants"
+      ],
+      "prerequisiteStatus": {
+        "aire": "established@M1",
+        "perimetre": "established@M1",
+        "aire-perimetre-independants": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q2",
+      "module": 2,
+      "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module02MemeContour.jsx",
-      "line": 185,
+      "line": 310,
       "requires": [
         "aire",
         "perimetre",
@@ -297,7 +299,7 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module03Paver.jsx",
-      "line": 141,
+      "line": 148,
       "requires": [
         "aire",
         "mesurer-par-pavage"
@@ -315,7 +317,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module03Paver.jsx",
-      "line": 160,
+      "line": 167,
       "requires": [
         "aire",
         "mesurer-par-pavage"
@@ -333,7 +335,7 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module03Paver.jsx",
-      "line": 190,
+      "line": 197,
       "requires": [
         "aire",
         "mesurer-par-pavage"
@@ -351,7 +353,7 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module04FormuleRectangle.jsx",
-      "line": 149,
+      "line": 159,
       "requires": [
         "aire",
         "aire-rectangle",
@@ -371,7 +373,7 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module04FormuleRectangle.jsx",
-      "line": 167,
+      "line": 177,
       "requires": [
         "aire",
         "aire-rectangle",
@@ -391,7 +393,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module04FormuleRectangle.jsx",
-      "line": 194,
+      "line": 204,
       "requires": [
         "aire",
         "aire-rectangle",
@@ -411,7 +413,7 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module04FormuleRectangle.jsx",
-      "line": 222,
+      "line": 232,
       "requires": [
         "aire",
         "aire-rectangle",
@@ -431,7 +433,7 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module05UnitesAire.jsx",
-      "line": 165,
+      "line": 178,
       "requires": [
         "aire",
         "marche-x100"
@@ -449,7 +451,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/college/6e/grandeurs_mesures/aires/modules/Module05UnitesAire.jsx",
-      "line": 191,
+      "line": 204,
       "requires": [
         "aire",
         "choisir-unite-aire",

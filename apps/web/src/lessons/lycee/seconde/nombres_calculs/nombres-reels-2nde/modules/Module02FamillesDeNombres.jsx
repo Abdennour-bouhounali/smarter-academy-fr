@@ -51,7 +51,7 @@ export default function Module02FamillesDeNombres() {
         {
           num: 1,
           title: 'Range les huit nombres',
-          subtitle: 'ℕ entiers naturels · ℤ entiers relatifs · 𝔻 décimaux (écriture qui s’arrête) · ℚ rationnels (fractions) · ℝ tous les réels.',
+          subtitle: 'Chaque nombre a sa famille — dépose-les et regarde où ils tombent.',
           done: sortDone,
           content: (kit) => (
             <div className="space-y-3">

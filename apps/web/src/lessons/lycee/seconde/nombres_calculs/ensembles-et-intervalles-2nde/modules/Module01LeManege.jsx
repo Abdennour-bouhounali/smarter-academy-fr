@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import IntervalFilter from '../components/IntervalFilter';
@@ -109,6 +109,11 @@ export default function Module01LeManege() {
                       : 'Le panneau tranche : 1,90 est refusé — « moins de 1,90 » exclut 1,90 lui-même. 1,899 passe, pas 1,90.'}{' '}
                     Et 1,20 passe : « à partir de » inclut la borne.
                   </Feedback>
+                  <KnowledgeBrick
+                    id="borne-incluse-exclue"
+                    variant="new"
+                    lead="1,20 passe, 1,90 non — avec les mêmes deux nombres écrits sur le panneau. Ce que tu viens de tester porte un nom."
+                  />
                   <TapQuestion
                     prompt="Combien de tailles différentes peuvent passer entre 1,20 m et 1,90 m ?"
                     options={['70 : une par centimètre', '700 : une par millimètre', 'Une infinité']}
@@ -119,6 +124,14 @@ export default function Module01LeManege() {
                     solved={countDone}
                     onAnswered={() => setCountDone(true)}
                   />
+                  {countDone && (
+                    <KnowledgeBrick
+                      id="plage-infinite"
+                      variant="new"
+                      compact
+                      lead="1,895 · 1,8999 · 1,89999… tu peux continuer sans fin : ce n’est pas un détail, c’est la nature de la plage."
+                    />
+                  )}
                 </>
               )}
             </div>
@@ -162,11 +175,12 @@ export default function Module01LeManege() {
           done: readDone,
           content: (
             <div className="space-y-3">
-              <p className="text-sm text-slate-600">
-                Les mathématiciens écrivent la plage avec ses deux bornes et deux crochets : le crochet est{' '}
-                <strong>tourné vers le nombre</strong> quand la borne est incluse, <strong>tourné vers l’extérieur</strong> quand elle est exclue.
-                Ton panneau modifié s’écrit : <span className="font-mono font-bold text-slate-900">{notation(I)}</span>.
-              </p>
+              <KnowledgeBrick
+                id="mem-borne"
+                variant="new"
+                establishes={['mem-borne', 'intervalle-crochets']}
+                lead={<>Tu as retourné les crochets à la main : voilà la convention d’écriture qu’ils suivent. Ton panneau modifié s’écrit <span className="font-mono font-bold text-slate-900">{notation(I)}</span>.</>}
+              />
               <TapQuestion
                 prompt="Et le panneau d’origine du forain (1,20 inclus, 1,90 exclu) ?"
                 options={['[1,2 ; 1,9[', ']1,2 ; 1,9]', '[1,2 ; 1,9]', ']1,2 ; 1,9[']}
