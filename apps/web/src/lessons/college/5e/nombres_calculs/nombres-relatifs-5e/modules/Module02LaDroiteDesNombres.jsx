@@ -180,7 +180,7 @@ export default function Module02LaDroiteDesNombres() {
       brief={{
         tag: 'Découverte',
         title: 'L’ascenseur, couché',
-        tone: 'violet',
+        tone: 'indigo',
         body: (
           <p>
             On fait pivoter la cage d’ascenseur d’un quart de tour : les étages deviennent une{' '}

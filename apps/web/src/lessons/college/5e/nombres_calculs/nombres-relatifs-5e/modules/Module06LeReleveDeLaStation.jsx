@@ -172,7 +172,7 @@ export default function Module06LeReleveDeLaStation() {
       brief={{
         tag: 'Entraînement',
         title: 'Une semaine en montagne',
-        tone: 'rose',
+        tone: 'slate',
         body: (
           <p>
             Voici le relevé d’une station de montagne : cinq jours, une température minimale et une

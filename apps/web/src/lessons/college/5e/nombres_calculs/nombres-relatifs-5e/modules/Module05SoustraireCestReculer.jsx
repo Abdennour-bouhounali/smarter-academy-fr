@@ -224,7 +224,7 @@ export default function Module05SoustraireCestReculer() {
       brief={{
         tag: 'Manipulation',
         title: 'Le déplacement inverse',
-        tone: 'purple',
+        tone: 'indigo',
         body: (
           <p>
             « Soustraire, ça diminue » — c’est vrai avec les nombres positifs. Avec les relatifs,

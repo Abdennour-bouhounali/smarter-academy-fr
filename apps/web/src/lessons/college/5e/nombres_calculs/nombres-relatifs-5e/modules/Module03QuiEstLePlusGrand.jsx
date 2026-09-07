@@ -181,7 +181,7 @@ export default function Module03QuiEstLePlusGrand() {
       brief={{
         tag: 'Découverte',
         title: 'Une intuition à corriger',
-        tone: 'sky',
+        tone: 'indigo',
         body: (
           <p>
             7 est plus grand que 2, c’est entendu. Mais {fmt(-7)} et {fmt(-2)} ? La réponse va

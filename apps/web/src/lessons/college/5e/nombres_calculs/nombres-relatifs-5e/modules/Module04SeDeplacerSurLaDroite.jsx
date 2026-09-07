@@ -211,7 +211,7 @@ export default function Module04SeDeplacerSurLaDroite() {
       brief={{
         tag: 'Manipulation',
         title: 'Un départ, un pas, une arrivée',
-        tone: 'emerald',
+        tone: 'slate',
         body: (
           <p>
             Additionner un nombre relatif, ce n’est pas « faire un calcul » : c’est{' '}

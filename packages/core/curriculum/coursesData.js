@@ -1427,9 +1427,10 @@ const smaMetadata = {
       "Enchaîner les quatre opérations sur des relatifs",
       "Contrôler le signe d'un résultat avant de calculer",
     ],
+    // Alignée sur la somme des `estimatedMin` des modules (lesson.config.js).
     durationMinutes: 70,
     difficulty: 'Moyen',
-    status: 'coming_soon',
+    status: 'available',
     icon: '➕',
     tier: 'free',
   },
