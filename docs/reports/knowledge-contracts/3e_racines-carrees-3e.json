@@ -5,7 +5,7 @@
   "prerequisites": [
     "carre-nombre",
     "calcul-numerique",
-    "encadrer-nombre",
+    "encadrement",
     "aire",
     "perimetre",
     "quotient",
@@ -241,10 +241,10 @@
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/racines-carrees/modules/Module00Diagnostic.jsx",
       "line": 71,
       "requires": [
-        "encadrer-nombre"
+        "encadrement"
       ],
       "prerequisiteStatus": {
-        "encadrer-nombre": "prior"
+        "encadrement": "prior"
       },
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -328,7 +328,7 @@
         "racine-carree"
       ],
       "prerequisiteStatus": {
-        "encadrement": "established@M3",
+        "encadrement": "prior",
         "carre-parfait": "established@M2",
         "racine-carree": "established@M1"
       },
@@ -645,7 +645,7 @@
         "comparer-par-carres"
       ],
       "prerequisiteStatus": {
-        "encadrement": "established@M3",
+        "encadrement": "prior",
         "comparer-par-carres": "established@M3"
       },
       "lexiconHits": [],
@@ -719,7 +719,7 @@
         "comparer-par-carres"
       ],
       "prerequisiteStatus": {
-        "encadrement": "established@M3",
+        "encadrement": "prior",
         "comparer-par-carres": "established@M3"
       },
       "lexiconHits": [],
@@ -762,5 +762,18 @@
       "pedagogicallyValid": true
     }
   ],
-  "findings": []
+  "findings": [
+    {
+      "code": "W_PRIOR_REESTABLISHED",
+      "severity": "info",
+      "message": "'encadrement' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
+      "file": "apps/web/src/lessons/college/3e/nombres_calculs/racines-carrees/modules/Module03CarreAReconstruire.jsx",
+      "line": 173,
+      "module": 3,
+      "step": 1,
+      "term": null,
+      "questionId": null,
+      "position": 101
+    }
+  ]
 }

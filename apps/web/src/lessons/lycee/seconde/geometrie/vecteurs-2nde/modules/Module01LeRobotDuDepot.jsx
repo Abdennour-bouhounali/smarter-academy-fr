@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Bot, Flag } from 'lucide-react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DisplacementLab from '../components/DisplacementLab';
@@ -237,21 +238,39 @@ export default function Module01LeRobotDuDepot() {
       title: 'Ce qui définit un trajet',
       done: q5,
       content: (
-        <TapQuestion
-          prompt="Pour dire que deux robots ont fait le MÊME trajet, que faut-il vérifier ?"
-          options={[
-            'Qu’ils se sont déplacés dans la même direction, dans le même sens, et de la même longueur.',
-            'Qu’ils sont arrivés à la même case.',
-            'Qu’ils sont partis de la même case.',
-            'Qu’ils ont suivi le même chemin case par case.',
-          ]}
-          correct={0}
-          cols={1}
-          explain="Un trajet se décrit par trois choses : la direction (la droite suivie), le sens (de quel côté on la parcourt) et la longueur. Ni le départ, ni l’arrivée, ni le détour n’en font partie — c’est pour cela que la recette se réutilise partout."
-          explainWrong="Tes deux robots sont justement partis d’endroits différents et arrivés à des endroits différents, avec la même recette. Et au premier essai, le chemin suivi n’a rien changé à la recette."
-          solved={q5}
-          onAnswered={() => setQ5(true)}
-        />
+        <div className="space-y-3">
+          {/* Les quatre étapes précédentes viennent de montrer, en le
+              pilotant, qu'un déplacement ne dépend ni du départ ni du
+              chemin suivi : c'est l'instant où « vecteur » a un sens,
+              avant la question qui l'exige. */}
+          <KnowledgeBrick
+            id="vecteur-deplacement"
+            variant="new"
+            lead={<>Tu viens de piloter deux robots avec la <strong>même recette</strong> depuis deux cases différentes, et de faire le trajet <strong>retour</strong>. Cette recette porte un nom.</>}
+          />
+          <KnowledgeBrick
+            id="mem-deplacement"
+            variant="new"
+            compact
+            lead={<>Une phrase à retenir pour toute la leçon.</>}
+          />
+          <TapQuestion
+            prompt="Pour dire que deux robots ont fait le MÊME trajet, que faut-il vérifier ?"
+            options={[
+              'Qu’ils se sont déplacés dans la même direction, dans le même sens, et de la même longueur.',
+              'Qu’ils sont arrivés à la même case.',
+              'Qu’ils sont partis de la même case.',
+              'Qu’ils ont suivi le même chemin case par case.',
+            ]}
+            correct={0}
+            cols={1}
+            requires={['vecteur-deplacement']}
+            explain="Un trajet se décrit par trois choses : la direction (la droite suivie), le sens (de quel côté on la parcourt) et la longueur. Ni le départ, ni l’arrivée, ni le détour n’en font partie — c’est pour cela que la recette se réutilise partout."
+            explainWrong="Tes deux robots sont justement partis d’endroits différents et arrivés à des endroits différents, avec la même recette. Et au premier essai, le chemin suivi n’a rien changé à la recette."
+            solved={q5}
+            onAnswered={() => setQ5(true)}
+          />
+        </div>
       ),
     },
   ];
@@ -291,13 +310,7 @@ export default function Module01LeRobotDuDepot() {
         </div>
       }
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Le mot juste.</strong> Cette recette — {describeMove(RECETTE)}, d’où que l’on parte —
-          les mathématiciens l’appellent un <strong>vecteur</strong> : une direction, un sens, une
-          longueur, et pas de point de départ. Module suivant : on le promène.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={1} />}
     />
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion , KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -45,6 +45,13 @@ export default function Module05DeuxTrajectoires() {
         <div className="space-y-4">
           <TwoLinesPlane lines={[{ id: 'd1', name: '(d₁)', line: DRONE1, tone: 'indigo' }, { id: 'd2', name: '(d₂)', line: DRONE2, tone: 'rose' }]} showIntersection={false} />
           <LineReadouts L1={DRONE1} L2={DRONE2} show={{ equations: true, position: false, intersection: false }} />
+          {/* Le transfert : la situation réelle doit être traduite avant d'être
+              calculée. C'est la seule notion neuve du module. */}
+          <KnowledgeBrick
+            id="methode-trajectoires"
+            variant="new"
+            lead="Deux drones, deux équations : le croisement se cherche exactement comme un point d’intersection."
+          />
           <NumericQuestion
             prompt="Abscisse du point de croisement ?"
             expected={3}
@@ -55,6 +62,7 @@ export default function Module05DeuxTrajectoires() {
               : n === 1 ? '2x − 3 = −x + 6 : les x se rassemblent en 2x + x = 3x, et les nombres en 6 + 3 = 9. Donc x = 3.'
               : n === -3 ? 'Signe : 2x + x = 6 + 3, soit 3x = 9, x = 3.'
               : 'Égale les deux ordonnées : 2x − 3 = −x + 6, d’où 3x = 9 et x = 3.')}
+            requires={['methode-trajectoires', 'point-intersection-systeme', 'methode-resoudre-systeme']}
             solved={qx}
             onAnswered={() => setQx(true)}
           />
@@ -67,6 +75,7 @@ export default function Module05DeuxTrajectoires() {
               explain={<span>y = 2 × 3 − 3 = 3 ; et −3 + 6 = 3 aussi. Les drones se croisent en <strong>(3 ; 3)</strong> — s’ils y passent au même instant, il y a collision.</span>}
               explainFor={(n) => (n === 9 ? 'y = 2x − 3 avec x = 3 : 6 − 3 = 3 (pas 2 × 3 + 3).'
                 : 'Remplace x = 3 dans l’une des équations : 2 × 3 − 3 = 3. L’autre confirme : −3 + 6 = 3.')}
+              requires={['methode-trajectoires', 'methode-resoudre-systeme']}
               solved={qy}
               onAnswered={() => setQy(true)}
             />
@@ -86,6 +95,11 @@ export default function Module05DeuxTrajectoires() {
             handles={[{ id: 'C', name: 'C', x: C.x, y: C.y, color: TONES.rose }]}
             showIntersection={false}
           />
+          <KnowledgeBrick
+            id="methode-parallele-par-un-point"
+            variant="new"
+            lead="Même direction imposée, un point imposé : il ne reste qu’une inconnue."
+          />
           <NumericQuestion
             prompt="Valeur de p pour la parallèle passant par C(1 ; 5) ?"
             expected={3}
@@ -96,6 +110,7 @@ export default function Module05DeuxTrajectoires() {
               : n === 5 ? '5 est l’ordonnée de C, pas p. C vérifie y = 2x + p : 5 = 2 × 1 + p, donc p = 3.'
               : n === 7 ? 'Signe : 5 = 2 + p donne p = 5 − 2 = 3.'
               : 'Même m que la route (2), et C(1 ; 5) vérifie l’équation : 5 = 2 × 1 + p, p = 3.')}
+            requires={['methode-parallele-par-un-point', 'critere-equations-reduites']}
             solved={q2}
             onAnswered={() => setQ2(true)}
           />
@@ -108,7 +123,13 @@ export default function Module05DeuxTrajectoires() {
       subtitle: 'A(0 ; 1), B(2 ; 4), C(−1 ; −2), D(3 ; 4). Position relative des droites (AB) et (CD) ?',
       done: q3,
       content: (
-        <TapQuestion
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="methode-ab-cd"
+            variant="new"
+            lead="Quand les droites sont données par quatre points, on fabrique d’abord les deux vecteurs."
+          />
+          <TapQuestion
           above={(revealed) => (
             <TwoLinesPlane
               lines={revealed ? [{ id: 'ab', name: '(AB)', line: AB, tone: 'indigo' }, { id: 'cd', name: '(CD)', line: CD, tone: 'rose' }] : []}
@@ -124,9 +145,11 @@ export default function Module05DeuxTrajectoires() {
           cols={2}
           explain={<span>AB(2 ; 3) et CD(4 ; 6) : det = 2 × 6 − 3 × 4 = 0, même direction. Confondues ou parallèles ? (AB) : y = 1,5x + 1 ; C(−1 ; −2) donne 1,5 × (−1) + 1 = −0,5 ≠ −2, donc C n’est pas sur (AB) : <strong>strictement parallèles</strong>.</span>}
           explainWrong={<span>Deux étapes. Direction : AB(2 ; 3), CD(4 ; 6), det = 12 − 12 = 0 ⟹ même direction, donc pas sécantes. Position : C est-il sur (AB) ? (AB) a pour équation y = 1,5x + 1 et 1,5 × (−1) + 1 = −0,5 ≠ −2 : non. Strictement parallèles.</span>}
+          requires={['methode-ab-cd', 'methode-comparer-directions', 'critere-vecteurs-directeurs']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
+        </div>
       ),
     },
     {
@@ -146,6 +169,7 @@ export default function Module05DeuxTrajectoires() {
           cols={1}
           explain="0 = 0 est vrai pour TOUT x : chaque point de l’une vérifie l’équation de l’autre. Les deux équations décrivent la même droite (2x − 4y + 8 = 0 ⟺ y = 0,5x + 2)."
           explainWrong="Une égalité toujours vraie ne désigne pas un point, elle les désigne tous : les droites sont confondues. Compare avec le module 4 : une égalité fausse (2 = −1) donnait « aucun point ». Et (0 ; 0) ne vérifie pas y = 0,5x + 2."
+          requires={['regle-nombre-solutions', 'critere-equations-cartesiennes', 'methode-ramener-meme-ecriture']}
           solved={q4}
           onAnswered={() => setQ4(true)}
         />

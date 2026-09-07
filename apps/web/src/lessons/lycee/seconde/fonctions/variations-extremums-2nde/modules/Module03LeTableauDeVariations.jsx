@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -12,6 +12,24 @@ import { TRAIL, TRAIL_RANGE, BOSSE, BOSSE_RANGE, variationTable, curvePieces } f
  * Module 3 — DÉCOUVERTE : le tableau de variations.
  * Step 1  construire les flèches du sentier sous la piste peinte (correction flèche par flèche).
  * Step 2  lire un tableau donné (g, sans courbe).  Step 3  retrouver la courbe d'un tableau.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   « Tableau de variations » n'était nommé que dans le `Feedback` de
+ *   correction de l'étape 1 et dans l'« À retenir » du pied : les étapes 2 et 3
+ *   demandaient d'en lire un, puis d'en retrouver la courbe, sans qu'il ait été
+ *   posé en position d'enseignement. L'ordre est maintenant
+ *   geste → brique → demande :
+ *     étape 1  poser soi-même les quatre flèches sous la piste peinte →
+ *              briques `tableau-de-variations` puis
+ *              `methode-construire-tableau-variations`
+ *     étape 2  lire un tableau sans courbe → brique
+ *              `methode-lire-tableau-variations` posée AVANT le QCM
+ *     étape 3  du tableau à la courbe, désormais légitime (`requires`)
+ *   Le retour de l'étape 2 ne parle plus d'« encadrement » : le mot appartient
+ *   au module 5, qui l'enseigne — l'anticiper ici le rendait exigible trop tôt.
+ *
+ *   La construction des flèches se fige après correction, comme toute question
+ *   corrigée : ce n'est pas un laboratoire libre mais une réponse validée.
  */
 const TRUTH = variationTable(TRAIL).arrows;
 const MINI = { range: { xMin: -4, xMax: 4, yMin: -5, yMax: 5 }, unit: 22 };
@@ -37,7 +55,21 @@ export default function Module03LeTableauDeVariations() {
           <VariationTable f={TRAIL} editable={!revealed} values={vals} reveal={revealed} unit=" m"
             onChange={(i, v) => { if (revealed) return; const n = [...vals]; n[i] = v; setVals(n); if (n.every((s) => s !== null)) { setRevealed(true); kit.react(n.every((s, k) => s === TRUTH[k])); } }} />
           {revealed ? (
-            <Feedback tone={okAll ? 'ok' : 'ko'}>{okAll ? 'Quatre flèches justes.' : 'Regarde les flèches corrigées.'} Ligne du haut : les bornes (0 et 10) et les points où le sens change (3, 6, 8,5). Ligne du bas : la valeur de h à chacun, et entre deux, une flèche <strong>↗</strong> (croissante) ou <strong>↘</strong> (décroissante). C’est un <strong>tableau de variations</strong> : la piste peinte, en résumé.</Feedback>
+            <>
+              <Feedback tone={okAll ? 'ok' : 'ko'}>{okAll ? 'Quatre flèches justes.' : 'Regarde les flèches corrigées.'} Ligne du haut : les bornes (0 et 10) et les points où le sens change (3, 6, 8,5). Ligne du bas : la valeur de h à chacun, et entre deux, une flèche <strong>↗</strong> (croissante) ou <strong>↘</strong> (décroissante). C’est un <strong>tableau de variations</strong> : la piste peinte, en résumé.</Feedback>
+              {/* L'objet vient d'être fabriqué flèche par flèche : c'est ici
+                  qu'il reçoit son nom, avant qu'on demande d'en lire un. */}
+              <KnowledgeBrick
+                id="tableau-de-variations"
+                variant="new"
+                lead="Ces quatre flèches que tu viens de poser sous la piste peinte forment un objet qui a un nom."
+              />
+              <KnowledgeBrick
+                id="methode-construire-tableau-variations"
+                variant="new"
+                lead="Le geste que tu viens de faire, rangé en trois temps — pour le refaire sur n’importe quelle courbe."
+              />
+            </>
           ) : (
             <Feedback tone="info">{vals.filter((v) => v !== null).length} flèche(s) sur 4. Suis la couleur de la piste.</Feedback>
           )}
@@ -47,15 +79,25 @@ export default function Module03LeTableauDeVariations() {
     {
       num: 2, title: 'Lire un tableau', done: q2,
       content: (
-        <BatchChoiceQuestion intro={<div className="space-y-2"><p className="text-sm text-slate-700">Une fonction g, sur [−4 ; 4], donnée par son tableau seulement :</p><VariationTable f={BOSSE} /></div>}
+        <div className="space-y-4">
+          {/* Aucun geste ne précède cette lecture : la brique se pose donc en
+              tête d'étape, avant la première demande qui s'en sert. */}
+          <KnowledgeBrick
+            id="methode-lire-tableau-variations"
+            variant="new"
+            lead="Tu viens de construire un tableau à partir d’une courbe. Voici la lecture inverse : ce qu’un tableau seul te dit."
+          />
+          <BatchChoiceQuestion intro={<div className="space-y-2"><p className="text-sm text-slate-700">Une fonction g, sur [−4 ; 4], donnée par son tableau seulement :</p><VariationTable f={BOSSE} /></div>}
           rows={[
             { id: 'r1', label: 'g est croissante sur', options: ['[−4 ; −2] et [2 ; 4]', '[−2 ; 2]', '[−4 ; 4]'], correct: 0, correction: 'les flèches ↗' },
             { id: 'r2', label: 'g est décroissante sur', options: ['[−2 ; 2]', '[−4 ; −2]', '[2 ; 4]'], correct: 0, correction: 'la flèche ↘' },
             { id: 'r3', label: 'g(−2) = ?', options: ['4', '−4', '−2'], correct: 0, correction: 'la valeur posée en haut, sous −2' },
             { id: 'r4', label: 'g(0) est compris entre', options: ['−4 et 4', '−4 et 0', '0 et 4'], correct: 0, correction: '0 ∈ [−2 ; 2], où g descend de 4 à −4' },
           ]}
-          feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Un tableau donne les intervalles de monotonie, les valeurs aux bornes et aux retournements — et donc un encadrement de g(x) sur chaque intervalle.</Feedback>}
+          feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Un tableau donne les intervalles de monotonie, ainsi que les valeurs de g aux bornes et aux retournements — entre lesquelles toutes les images de l’intervalle se trouvent.</Feedback>}
+          requires={['methode-lire-tableau-variations', 'tableau-de-variations', 'definition-croissante-decroissante', 'vocab-monotone-intervalle', 'notation-fx', 'intervalle-crochets', 'appartient']}
           solved={q2} onAnswered={() => setQ2(true)} />
+        </div>
       ),
     },
     {
@@ -79,6 +121,7 @@ export default function Module03LeTableauDeVariations() {
           options={['Courbe A', 'Courbe B', 'Courbe C', 'Aucune']} correct={0} cols={4}
           explain="↗ jusqu’à −2 (où g = 4), ↘ jusqu’à 2 (où g = −4), puis ↗ : la courbe A. B fait l’inverse (↘ ↗ ↘), C n’a qu’un retournement."
           explainWrong="Suis les flèches : montée jusqu’au point (−2 ; 4), descente jusqu’à (2 ; −4), remontée. Seule la courbe A monte-descend-monte avec ces sommets."
+          requires={['methode-lire-tableau-variations', 'tableau-de-variations', 'methode-lire-variations-courbe', 'abscisse', 'ordonnee']}
           solved={q3} onAnswered={() => setQ3(true)} />
       ),
     },

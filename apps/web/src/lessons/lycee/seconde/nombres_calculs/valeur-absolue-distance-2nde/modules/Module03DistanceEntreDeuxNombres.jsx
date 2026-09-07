@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DistanceLine from '../components/DistanceLine';
@@ -51,18 +52,51 @@ export default function Module03DistanceEntreDeuxNombres() {
               <Feedback tone={shifts >= 2 ? 'ok' : 'info'}>
                 A = {a} km, B = {b} km : écart <strong>{d} km</strong>. {shifts >= 2 ? 'Les deux ont avancé ensemble et la barre n’a pas bougé : la distance ne dépend que de l’écart entre les deux nombres, pas de l’endroit où ils sont.' : 'Quand les deux avancent du même pas, regarde la barre.'}
               </Feedback>
+              {/* Le geste vient de montrer la barre entre A et B, puis son
+                  invariance quand les deux avancent ensemble : les deux
+                  bricks se posent ici, avant la question de l'étape 2. */}
+              {shifts >= 2 && (
+                <KnowledgeBrick
+                  id="distance-deux-nombres"
+                  variant="new"
+                  compact
+                  lead={<>La barre entre A et B mesure <strong>{d} km</strong>, quel que soit l’ordre dans lequel on la lit.</>}
+                />
+              )}
+              {shifts >= 2 && (
+                <KnowledgeBrick
+                  id="regle-distance-invariante"
+                  variant="new"
+                  compact
+                  lead={<>A et B ont avancé ensemble, deux fois : la barre entre eux n’a pas bougé.</>}
+                />
+              )}
             </div>
           ),
         },
         {
           num: 2, title: 'Dans quel ordre soustraire ?', done: orderDone,
           content: (
-            <TapQuestion
-              prompt="A = −3 et B = 5. Quelle expression donne leur distance ?"
-              options={['|5 − (−3)|', '|(−3) − 5|', 'Les deux : elles valent 8', '5 − 3 = 2']} cols={2} correct={2}
-              explain="5 − (−3) = 8 et (−3) − 5 = −8 : les valeurs absolues sont toutes deux 8. La distance entre a et b est |b − a| = |a − b| — l’ordre n’a pas d’importance, la valeur absolue s’en charge."
-              explainWrong="Les deux différences sont opposées (8 et −8), donc leurs valeurs absolues sont égales : 8. Et 5 − 3 = 2 oublie le signe de −3 : de −3 à 5 il y a 3 km jusqu’au phare, puis 5 km."
-              solved={orderDone} onAnswered={() => setOrderDone(true)} />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="A = −3 et B = 5. Quelle expression donne leur distance ?"
+                options={['|5 − (−3)|', '|(−3) − 5|', 'Les deux : elles valent 8', '5 − 3 = 2']} cols={2} correct={2}
+                requires={['distance-deux-nombres', 'regle-distance-invariante', 'nombres-relatifs']}
+                explain="5 − (−3) = 8 et (−3) − 5 = −8 : les valeurs absolues sont toutes deux 8. La distance entre a et b est |b − a| = |a − b| — l’ordre n’a pas d’importance, la valeur absolue s’en charge."
+                explainWrong="Les deux différences sont opposées (8 et −8), donc leurs valeurs absolues sont égales : 8. Et 5 − 3 = 2 oublie le signe de −3 : de −3 à 5 il y a 3 km jusqu’au phare, puis 5 km."
+                solved={orderDone} onAnswered={() => setOrderDone(true)} />
+              {/* La question vient de confirmer la formule d(a;b) = |b−a| =
+                  |a−b| : elle se retient ici, avant le calcul sans la côte de
+                  l'étape 3. */}
+              {orderDone && (
+                <KnowledgeBrick
+                  id="mem-distance"
+                  variant="new"
+                  compact
+                  lead={<>Les deux expressions valaient 8 : |b − a| = |a − b|, la formule de la distance.</>}
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -71,13 +105,14 @@ export default function Module03DistanceEntreDeuxNombres() {
             <NumericQuestion
               prompt="Quelle est la distance entre −7,5 et −2 ?"
               expected={5.5} parse={parseDec} display="5,5" suffix="km"
+              requires={['mem-distance', 'distance-deux-nombres']}
               explain="|−2 − (−7,5)| = |−2 + 7,5| = |5,5| = 5,5. Ou |−7,5 − (−2)| = |−5,5| = 5,5 : même résultat."
               explainFor={(v) => (v === 9.5 ? 'Tu as additionné 7,5 et 2. Les deux nombres sont du MÊME côté du phare : la distance est la différence des distances, 7,5 − 2 = 5,5.' : v === -5.5 ? 'Une distance n’est jamais négative : |−5,5| = 5,5.' : 'Calcule b − a = −2 − (−7,5) = 5,5, puis prends la valeur absolue : 5,5.')}
               solved={calcDone} onAnswered={() => setCalcDone(true)} />
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Distance entre a et b : <strong>|b − a| = |a − b|</strong>. La distance à 0 n’était que le cas a = 0. Reste à éclairer TOUS les nombres à moins de r d’un point : le faisceau.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={3} />}
     />
   );
 }

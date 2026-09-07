@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import ValueTable from '../../../../../common/components/ValueTable';
 import MathText from '../../../../../common/components/MathText';
@@ -44,11 +45,30 @@ export default function Module03Developper() {
               <PredictionChips prompt="(x + 3)² est-il égal à x² + 9 ?" options={[{ id: 'oui', label: 'Oui' }, { id: 'non', label: 'Non' }]} value={prediction} onChange={setPrediction} disabled={tested.size >= 2} />
               <IdentityGrid a={a} b={b} mode="plus" onA={bump(setA, 'a')} onB={bump(setB, 'b')} />
               <ValueTable columns={[{ id: 'l', label: <MathText>{'$(x+3)^{2}$'}</MathText>, fn: (x) => (x + 3) ** 2 }, { id: 'r', label: <MathText>{'$x^{2}+9$'}</MathText>, fn: (x) => x * x + 9 }, { id: 'd', label: <MathText>{'$x^{2}+6x+9$'}</MathText>, fn: (x) => x * x + 6 * x + 9 }]} xs={[1, 2, 0, -3, 10]} tested={tested} onTest={(v) => { const s = new Set(tested); s.add(v); setTested(s); if (s.size === 2) kit.react(true); }} caption="Teste au moins deux valeurs." />
+              {/* Le découpage du carré vient de compter les morceaux : c'est
+                  l'instant où « développer » se nomme, avant la question. */}
+              {seen.size >= 2 && tested.size >= 2 && (
+                <KnowledgeBrick
+                  id="developper"
+                  variant="new"
+                  compact
+                  lead={<>Tu viens de découper (a + b)² en morceaux — a², ab, ab, b² — et de retrouver la somme. Transformer un produit en somme, c’est <strong>développer</strong>.</>}
+                />
+              )}
               {seen.size >= 2 && tested.size >= 2 && (
                 <TapQuestion prompt="Que vaut (a + b)² ?" options={['a² + 2ab + b² : le grand carré, les DEUX rectangles ab, le petit carré', 'a² + b²', 'a² + ab + b²']} cols={1} correct={0}
+                  requires={['developper', 'calcul-litteral', 'carre-nombre']}
                   explain={<>{prediction === 'non' ? 'Ta prédiction : non. Exact' : prediction === 'oui' ? 'Ta prédiction : oui. Le carré te contredit' : 'Le carré tranche'} : il manque les deux rectangles ab. (x + 3)² = x² + 6x + 9, et le tableau le confirme pour chaque x — x² + 9 ne s’accorde qu’en x = 0.</>}
                   explainWrong="Compte les morceaux du carré : a², ab, encore ab, b². Deux rectangles, pas un, pas zéro : (a + b)² = a² + 2ab + b². Le tableau montre que x² + 9 rate dès x = 1 (16 ≠ 10)."
                   solved={plusDone} onAnswered={() => setPlusDone(true)} />
+              )}
+              {plusDone && (
+                <KnowledgeBrick
+                  id="mem-carre-somme"
+                  variant="new"
+                  compact
+                  lead={<>Le piège du module : (a + b)² n’est jamais a² + b², il manque le double produit 2ab.</>}
+                />
               )}
             </div>
           ),
@@ -59,6 +79,7 @@ export default function Module03Developper() {
             <div className="space-y-3">
               <IdentityGrid a={a2} b={b2} mode="minus" onA={setA2} onB={setB2} aRange={[3, 6]} bRange={[1, 3]} />
               <TapQuestion prompt="Que vaut (a − b)² ?" options={['a² − 2ab + b²', 'a² − b²', 'a² − 2ab − b²']} cols={3} correct={0}
+                requires={['developper', 'mem-carre-somme']}
                 explain="Retirer les deux bandes ab enlève le coin b² deux fois : il faut le remettre une fois. (a − b)² = a² − 2ab + b². Le double produit est négatif, le b² reste positif."
                 explainWrong="Regarde le coin rose : il appartient aux DEUX bandes retirées. Enlevé deux fois, on le rajoute une fois : a² − 2ab + b², avec + b²."
                 solved={minusDone} onAnswered={() => setMinusDone(true)} />
@@ -71,9 +92,20 @@ export default function Module03Developper() {
             <div className="space-y-3">
               <IdentityGrid a={a3} b={b3} mode="diff" onA={setA3} onB={setB3} aRange={[3, 6]} bRange={[1, 3]} />
               <TapQuestion prompt="L’équerre (a² − b²) se découpe en a(a − b) + b(a − b). Donc :" options={['a² − b² = (a − b)(a + b)', 'a² − b² = (a − b)²', 'a² − b² = a² − 2ab + b²']} cols={1} correct={0}
+                requires={['developper', 'mem-carre-somme']}
                 explain="a(a − b) + b(a − b) = (a + b)(a − b) : le facteur (a − b) est commun. C’est la troisième identité : (a + b)(a − b) = a² − b² — les termes ab et −ab s’annulent."
                 explainWrong="L’équerre vaut a² − b² ; ses deux morceaux ont le facteur (a − b) en commun : a(a − b) + b(a − b) = (a + b)(a − b). Ce n’est pas un carré : (a − b)² a un −2ab."
                 solved={diffDone} onAnswered={() => setDiffDone(true)} />
+              {/* Les trois cas (a+b)², (a−b)², (a+b)(a−b) viennent d'être
+                  découverts un par un : c'est l'instant où elles se nomment
+                  ENSEMBLE, avant le drill de l'étape 4 qui les redemande toutes. */}
+              {diffDone && (
+                <KnowledgeBrick
+                  id="identites-remarquables"
+                  variant="new"
+                  lead={<>Tu viens de retrouver les trois développements sur des aires : ce sont les trois <strong>identités remarquables</strong>.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -86,12 +118,13 @@ export default function Module03Developper() {
               { id: 'r3', label: '(x + 4)(x − 4)', options: ['x² − 16', 'x² − 8x − 16', 'x² + 16'], correct: 0 },
               { id: 'r4', label: '(x + 2)(3x − 1)', options: ['3x² − 2', '3x² + 5x − 2', '3x² + 6x − 2'], correct: 1, correction: 'x·3x + x·(−1) + 2·3x + 2·(−1).' },
             ]}
+              requires={['identites-remarquables', 'developper', 'mem-carre-somme']}
               feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} / ${total}.`} Développer, c’est distribuer chaque terme sur chaque terme — quatre produits pour deux binômes ; les identités remarquables sont des raccourcis à connaître.</Feedback>}
               solved={batchDone} onAnswered={() => setBatchDone(true)} />
           ),
         },
       ]}
-      footer={<Feedback tone="ok"><strong>Développer :</strong> (a + b)² = a² + 2ab + b² · (a − b)² = a² − 2ab + b² · (a + b)(a − b) = a² − b² — lus sur des aires. Le chemin inverse, retrouver les côtés à partir des morceaux, c’est factoriser.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={3} />}
     />
   );
 }

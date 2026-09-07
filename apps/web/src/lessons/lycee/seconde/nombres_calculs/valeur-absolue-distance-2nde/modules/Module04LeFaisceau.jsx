@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import BeamLine from '../components/BeamLine';
@@ -47,10 +48,23 @@ export default function Module04LeFaisceau() {
             <div className="space-y-3">
               <BeamLine a={3} r={2} x={x} onX={(v) => { moveX(v); if ((v === 5 || v === 1) && !litSeen.has('edge')) kit.react(true); }} showNotation={false} />
               <Stepper label="bateau x" value={x} onChange={moveX} min={-10} max={10} step={0.5} unit=" km" />
+              {/* Le balayage vient de montrer une zone éclairée des DEUX
+                  côtés du phare, avec un bord de chaque côté : c'est
+                  l'instant où « faisceau symétrique = intervalle » se nomme,
+                  avant la question qui l'exige juste après. */}
+              {scanDone && (
+                <KnowledgeBrick
+                  id="faisceau-intervalle"
+                  variant="new"
+                  compact
+                  lead={<>Tu as trouvé le bord à gauche (1) et à droite (5) : le faisceau éclaire tout l’intervalle entre les deux.</>}
+                />
+              )}
               {scanDone ? (
                 <TapQuestion
                   prompt="La zone éclairée, c’est l’ensemble des x tels que |x − 3| ≤ 2. Quel intervalle est-ce ?"
                   options={['[1 ; 5]', ']−∞ ; 5]', '[3 ; 5]', '[−2 ; 2]']} cols={2} correct={0}
+                  requires={['faisceau-intervalle', 'intervalle', 'intervalle-crochets']}
                   explain="Le faisceau va de 3 − 2 = 1 à 3 + 2 = 5, des deux côtés du phare : [1 ; 5]. Les bords sont éclairés (≤)."
                   explainWrong="Le faisceau est SYMÉTRIQUE autour du centre 3 : il éclaire 2 km à gauche (jusqu’à 1) ET 2 km à droite (jusqu’à 5). ]−∞ ; 5] oublie le bord gauche ; [3 ; 5] oublie le côté ouest ; [−2 ; 2] est centré en 0."
                   solved={readDone} onAnswered={() => setReadDone(true)} />
@@ -72,6 +86,16 @@ export default function Module04LeFaisceau() {
                 why="Le centre est le MILIEU de l’intervalle, (−1 + 7) ÷ 2 = 3, et le rayon la moitié de sa longueur, (7 − (−1)) ÷ 2 = 4."
                 hint={() => 'Le centre est au milieu de −1 et 7 ; le rayon est la distance du centre à un bord.'}
                 onDone={() => setD2(true)} solved={d2} label="Valider mon réglage" />
+              {/* Le réglage vient de retrouver centre et rayon à partir des
+                  bornes : la méthode se nomme ici, une fois le geste fait. */}
+              {d2 && (
+                <KnowledgeBrick
+                  id="methode-centre-rayon"
+                  variant="new"
+                  compact
+                  lead={<>Tu as retrouvé centre 3 et rayon 4 à partir de [−1 ; 7] : le milieu des bornes, la moitié de leur écart.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -84,14 +108,34 @@ export default function Module04LeFaisceau() {
               <TapQuestion
                 prompt="Avec |x − 3| < 2 (strict), le bateau au km 5 est-il éclairé ?"
                 options={['Oui, comme avant', 'Non : |5 − 3| = 2, et 2 n’est pas strictement inférieur à 2']} cols={1} correct={1}
+                requires={['faisceau-intervalle', 'methode-centre-rayon']}
                 explain="Avec <, le bord est exclu : la zone devient ]1 ; 5[, intervalle ouvert. Le bateau au km 5 est pile sur le bord : dans le noir. Les deux bords 1 et 5 sont exactement les solutions de |x − 3| = 2."
                 explainWrong="Regarde le verdict du lab avec le bord exclu : |5 − 3| = 2, et 2 < 2 est faux. La zone éclairée devient ]1 ; 5[ : bords exclus, comme des crochets ouverts."
                 solved={edgeDone} onAnswered={() => setEdgeDone(true)} />
+              {/* La question vient de fixer que |x−a|=r donne exactement les
+                  deux bords : la conclusion se nomme après coup, en fin de
+                  module. */}
+              {edgeDone && (
+                <KnowledgeBrick
+                  id="equation-distance-egale"
+                  variant="new"
+                  compact
+                  lead={<>Les deux bords, 1 et 5, sont exactement les solutions de |x − 3| = 2.</>}
+                />
+              )}
+              {edgeDone && (
+                <KnowledgeBrick
+                  id="mem-faisceau"
+                  variant="new"
+                  compact
+                  lead={<>Centre, rayon, bords : tu as maintenant les trois pièces du faisceau.</>}
+                />
+              )}
             </div>
           ),
         },
       ]}
-      footer={<Feedback tone="ok"><strong>|x − a| ≤ r ⇔ x ∈ [a − r ; a + r]</strong> (strict ⇔ ouvert). Et <strong>|x − a| = r</strong> a deux solutions : a − r et a + r, les bords du faisceau.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={4} />}
     />
   );
 }

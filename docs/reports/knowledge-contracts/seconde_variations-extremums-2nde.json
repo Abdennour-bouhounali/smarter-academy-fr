@@ -6,14 +6,25 @@
     "intervalle",
     "intervalle-crochets",
     "appartient",
-    "inclus"
+    "inclus",
+    "notation-fx",
+    "antecedent",
+    "abscisse",
+    "ordonnee",
+    "aire",
+    "perimetre"
   ],
   "conceptsIntroduced": [
     {
       "id": "variations-sens",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
+        "line": 69,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-plus-bas-au-bord",
@@ -21,7 +32,7 @@
       "module": 1,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
-        "line": 69,
+        "line": 103,
         "step": 2,
         "variant": "new"
       }
@@ -30,19 +41,34 @@
       "id": "definition-croissante-decroissante",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module02CroissanteDecroissante.jsx",
+        "line": 89,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "tableau-de-variations",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module03LeTableauDeVariations.jsx",
+        "line": 62,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "maximum-minimum",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module04MaximumMinimum.jsx",
+        "line": 53,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -50,7 +76,12 @@
       "id": "vocab-monotone-intervalle",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module02CroissanteDecroissante.jsx",
+        "line": 113,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -58,43 +89,78 @@
       "id": "methode-lire-variations-courbe",
       "type": "methodes",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
+        "line": 96,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-construire-tableau-variations",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module03LeTableauDeVariations.jsx",
+        "line": 67,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-lire-tableau-variations",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module03LeTableauDeVariations.jsx",
+        "line": 85,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-extremum-tableau",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module04MaximumMinimum.jsx",
+        "line": 107,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-comparer-images-tableau",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module05ComparerSansCalculer.jsx",
+        "line": 37,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-encadrer-images",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module05ComparerSansCalculer.jsx",
+        "line": 61,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-optimiser",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module06AtelierOptimiser.jsx",
+        "line": 37,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -102,13 +168,23 @@
       "id": "mem-croissante-ordre",
       "type": "memoriser",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module02CroissanteDecroissante.jsx",
+        "line": 118,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-valeur-et-endroit",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module04MaximumMinimum.jsx",
+        "line": 58,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -118,9 +194,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -130,9 +210,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 25,
+      "requires": [
+        "abscisse",
+        "ordonnee",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "ordonnee": "prior",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -142,9 +230,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 26,
+      "requires": [
+        "antecedent",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "antecedent": "prior",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -154,8 +250,8 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 17,
-      "requires": null,
+      "line": 27,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -166,8 +262,8 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 18,
-      "requires": null,
+      "line": 28,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -178,7 +274,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 19,
+      "line": 29,
       "requires": [
         "intervalle",
         "intervalle-crochets",
@@ -198,7 +294,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
-      "line": 20,
+      "line": 30,
       "requires": [
         "intervalle",
         "inclus"
@@ -211,14 +307,42 @@
       "pedagogicallyValid": true
     },
     {
+      "questionId": "va-d8",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module00Diagnostic.jsx",
+      "line": 31,
+      "requires": [
+        "aire",
+        "perimetre"
+      ],
+      "prerequisiteStatus": {
+        "aire": "prior",
+        "perimetre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
       "questionId": "M01-S3-Q1",
       "module": 1,
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
-      "line": 81,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "regle-plus-bas-au-bord",
+        "methode-lire-variations-courbe",
+        "intervalle",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "regle-plus-bas-au-bord": "established@M1",
+        "methode-lire-variations-courbe": "established@M1",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -228,9 +352,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module01LeRandonneur.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 127,
+      "requires": [
+        "variations-sens",
+        "methode-lire-variations-courbe",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "variations-sens": "established@M1",
+        "methode-lire-variations-courbe": "established@M1",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -240,9 +372,23 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module02CroissanteDecroissante.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 133,
+      "requires": [
+        "definition-croissante-decroissante",
+        "vocab-monotone-intervalle",
+        "mem-croissante-ordre",
+        "variations-sens",
+        "notation-fx",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "definition-croissante-decroissante": "established@M2",
+        "vocab-monotone-intervalle": "established@M2",
+        "mem-croissante-ordre": "established@M2",
+        "variations-sens": "established@M1",
+        "notation-fx": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -252,9 +398,25 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module03LeTableauDeVariations.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 90,
+      "requires": [
+        "methode-lire-tableau-variations",
+        "tableau-de-variations",
+        "definition-croissante-decroissante",
+        "vocab-monotone-intervalle",
+        "notation-fx",
+        "intervalle-crochets",
+        "appartient"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-tableau-variations": "established@M3",
+        "tableau-de-variations": "established@M3",
+        "definition-croissante-decroissante": "established@M2",
+        "vocab-monotone-intervalle": "established@M2",
+        "notation-fx": "prior",
+        "intervalle-crochets": "prior",
+        "appartient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -264,9 +426,21 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module03LeTableauDeVariations.jsx",
-      "line": 66,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 108,
+      "requires": [
+        "methode-lire-tableau-variations",
+        "tableau-de-variations",
+        "methode-lire-variations-courbe",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-tableau-variations": "established@M3",
+        "tableau-de-variations": "established@M3",
+        "methode-lire-variations-courbe": "established@M1",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -276,9 +450,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module04MaximumMinimum.jsx",
-      "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "maximum-minimum",
+        "mem-valeur-et-endroit",
+        "notation-fx",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4",
+        "notation-fx": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -288,9 +472,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module04MaximumMinimum.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 80,
+      "requires": [
+        "maximum-minimum",
+        "mem-valeur-et-endroit",
+        "abscisse",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4",
+        "abscisse": "prior",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -300,9 +494,21 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module04MaximumMinimum.jsx",
-      "line": 58,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "maximum-minimum",
+        "mem-valeur-et-endroit",
+        "regle-plus-bas-au-bord",
+        "tableau-de-variations",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4",
+        "regle-plus-bas-au-bord": "established@M1",
+        "tableau-de-variations": "established@M3",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -312,9 +518,25 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module04MaximumMinimum.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 112,
+      "requires": [
+        "methode-extremum-tableau",
+        "maximum-minimum",
+        "mem-valeur-et-endroit",
+        "tableau-de-variations",
+        "methode-lire-tableau-variations",
+        "intervalle-crochets",
+        "inclus"
+      ],
+      "prerequisiteStatus": {
+        "methode-extremum-tableau": "established@M4",
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4",
+        "tableau-de-variations": "established@M3",
+        "methode-lire-tableau-variations": "established@M3",
+        "intervalle-crochets": "prior",
+        "inclus": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -324,9 +546,23 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module05ComparerSansCalculer.jsx",
-      "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 42,
+      "requires": [
+        "methode-comparer-images-tableau",
+        "tableau-de-variations",
+        "methode-lire-tableau-variations",
+        "vocab-monotone-intervalle",
+        "definition-croissante-decroissante",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "methode-comparer-images-tableau": "established@M5",
+        "tableau-de-variations": "established@M3",
+        "methode-lire-tableau-variations": "established@M3",
+        "vocab-monotone-intervalle": "established@M2",
+        "definition-croissante-decroissante": "established@M2",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -336,9 +572,23 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module05ComparerSansCalculer.jsx",
-      "line": 36,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 66,
+      "requires": [
+        "methode-encadrer-images",
+        "methode-comparer-images-tableau",
+        "tableau-de-variations",
+        "maximum-minimum",
+        "appartient",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "methode-encadrer-images": "established@M5",
+        "methode-comparer-images-tableau": "established@M5",
+        "tableau-de-variations": "established@M3",
+        "maximum-minimum": "established@M4",
+        "appartient": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -348,9 +598,25 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module05ComparerSansCalculer.jsx",
-      "line": 46,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 78,
+      "requires": [
+        "methode-comparer-images-tableau",
+        "methode-encadrer-images",
+        "vocab-monotone-intervalle",
+        "definition-croissante-decroissante",
+        "maximum-minimum",
+        "inclus",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "methode-comparer-images-tableau": "established@M5",
+        "methode-encadrer-images": "established@M5",
+        "vocab-monotone-intervalle": "established@M2",
+        "definition-croissante-decroissante": "established@M2",
+        "maximum-minimum": "established@M4",
+        "inclus": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -360,9 +626,19 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module06AtelierOptimiser.jsx",
-      "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 42,
+      "requires": [
+        "methode-optimiser",
+        "aire",
+        "perimetre",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "methode-optimiser": "established@M6",
+        "aire": "prior",
+        "perimetre": "prior",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -372,9 +648,25 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module06AtelierOptimiser.jsx",
-      "line": 30,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 54,
+      "requires": [
+        "methode-optimiser",
+        "methode-extremum-tableau",
+        "tableau-de-variations",
+        "maximum-minimum",
+        "mem-valeur-et-endroit",
+        "variations-sens",
+        "aire"
+      ],
+      "prerequisiteStatus": {
+        "methode-optimiser": "established@M6",
+        "methode-extremum-tableau": "established@M4",
+        "tableau-de-variations": "established@M3",
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4",
+        "variations-sens": "established@M1",
+        "aire": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -384,9 +676,17 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module06AtelierOptimiser.jsx",
-      "line": 45,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "methode-optimiser",
+        "aire",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "methode-optimiser": "established@M6",
+        "aire": "prior",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -396,9 +696,21 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module06AtelierOptimiser.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 76,
+      "requires": [
+        "methode-optimiser",
+        "mem-valeur-et-endroit",
+        "maximum-minimum",
+        "aire",
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "methode-optimiser": "established@M6",
+        "mem-valeur-et-endroit": "established@M4",
+        "maximum-minimum": "established@M4",
+        "aire": "prior",
+        "abscisse": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -408,9 +720,21 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module06AtelierOptimiser.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 88,
+      "requires": [
+        "methode-optimiser",
+        "methode-extremum-tableau",
+        "tableau-de-variations",
+        "maximum-minimum",
+        "mem-valeur-et-endroit"
+      ],
+      "prerequisiteStatus": {
+        "methode-optimiser": "established@M6",
+        "methode-extremum-tableau": "established@M4",
+        "tableau-de-variations": "established@M3",
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -420,9 +744,21 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 9,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "definition-croissante-decroissante",
+        "mem-croissante-ordre",
+        "variations-sens",
+        "notation-fx",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "definition-croissante-decroissante": "established@M2",
+        "mem-croissante-ordre": "established@M2",
+        "variations-sens": "established@M1",
+        "notation-fx": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -432,9 +768,21 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 10,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "definition-croissante-decroissante",
+        "mem-croissante-ordre",
+        "variations-sens",
+        "notation-fx",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "definition-croissante-decroissante": "established@M2",
+        "mem-croissante-ordre": "established@M2",
+        "variations-sens": "established@M1",
+        "notation-fx": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -444,9 +792,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 22,
+      "requires": [
+        "vocab-monotone-intervalle",
+        "variations-sens",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "vocab-monotone-intervalle": "established@M2",
+        "variations-sens": "established@M1",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -456,9 +812,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 23,
+      "requires": [
+        "methode-lire-variations-courbe",
+        "tableau-de-variations",
+        "methode-construire-tableau-variations",
+        "variations-sens"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-variations-courbe": "established@M1",
+        "tableau-de-variations": "established@M3",
+        "methode-construire-tableau-variations": "established@M3",
+        "variations-sens": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -468,9 +834,23 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "methode-lire-tableau-variations",
+        "methode-encadrer-images",
+        "tableau-de-variations",
+        "notation-fx",
+        "appartient",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-tableau-variations": "established@M3",
+        "methode-encadrer-images": "established@M5",
+        "tableau-de-variations": "established@M3",
+        "notation-fx": "prior",
+        "appartient": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -480,9 +860,21 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 25,
+      "requires": [
+        "methode-lire-tableau-variations",
+        "tableau-de-variations",
+        "methode-lire-variations-courbe",
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-tableau-variations": "established@M3",
+        "tableau-de-variations": "established@M3",
+        "methode-lire-variations-courbe": "established@M1",
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -492,9 +884,21 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 26,
+      "requires": [
+        "maximum-minimum",
+        "mem-valeur-et-endroit",
+        "methode-extremum-tableau",
+        "notation-fx",
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4",
+        "methode-extremum-tableau": "established@M4",
+        "notation-fx": "prior",
+        "abscisse": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -504,9 +908,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 27,
+      "requires": [
+        "maximum-minimum",
+        "mem-valeur-et-endroit",
+        "regle-plus-bas-au-bord",
+        "methode-extremum-tableau"
+      ],
+      "prerequisiteStatus": {
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4",
+        "regle-plus-bas-au-bord": "established@M1",
+        "methode-extremum-tableau": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -516,9 +930,23 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 28,
+      "requires": [
+        "methode-extremum-tableau",
+        "maximum-minimum",
+        "methode-lire-tableau-variations",
+        "vocab-monotone-intervalle",
+        "inclus",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "methode-extremum-tableau": "established@M4",
+        "maximum-minimum": "established@M4",
+        "methode-lire-tableau-variations": "established@M3",
+        "vocab-monotone-intervalle": "established@M2",
+        "inclus": "prior",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -528,181 +956,26 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/modules/Module07MissionFinale.jsx",
-      "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 29,
+      "requires": [
+        "methode-optimiser",
+        "maximum-minimum",
+        "mem-valeur-et-endroit",
+        "aire",
+        "perimetre",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "methode-optimiser": "established@M6",
+        "maximum-minimum": "established@M4",
+        "mem-valeur-et-endroit": "established@M4",
+        "aire": "prior",
+        "perimetre": "prior",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'variations-sens' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 14,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-lire-variations-courbe' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 30,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'definition-croissante-decroissante' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 48,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-monotone-intervalle' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 59,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-croissante-ordre' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 64,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'tableau-de-variations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 71,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-construire-tableau-variations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 85,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-lire-tableau-variations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 90,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'maximum-minimum' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 97,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-extremum-tableau' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 113,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-valeur-et-endroit' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 118,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-comparer-images-tableau' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 125,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-encadrer-images' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 136,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-optimiser' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/variations-extremums-2nde/knowledge.jsx",
-      "line": 143,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

@@ -34,6 +34,32 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/fonctions/fonctions-de-r
 
 export const LESSON_CONFIG = {
   id: 'fonctions-de-reference-2nde',
+  // CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+  // Ce que la leçon SUPPOSE, et que le module 0 mesure — un id par question de
+  // diagnostic, sinon W_PRIOR_NOT_DIAGNOSED. Rien de ce que la leçon enseigne
+  // (les trois courbes, leurs symétries, leurs variations, la position
+  // relative) n'est ici : cela vient des briques des modules 1 à 6.
+  //   fonction, notation-fx, image  la machine à nombres et son écriture (3e)
+  //   abscisse, ordonnee            lire un point du repère (6e)
+  //   valeur-absolue                la distance à 0 (chapitre « Valeur absolue »)
+  //   puissance                     un carré se calcule (4e)
+  //   inverse-nombre                1 ÷ a (3e)
+  priorKnowledge: ['fonction', 'notation-fx', 'image', 'abscisse', 'ordonnee', 'valeur-absolue', 'puissance', 'inverse-nombre'],
+  knowledgeAudit: {
+    ignore: [
+      // « en pointillés » est ici une convention de tracé (la parabole et les
+      // demi-droites y = x / y = −x, dessinées en repère), pas l'arête cachée
+      // d'un solide en perspective cavalière. Rien à enseigner.
+      { term: 'arete-cachee', reason: '« en pointillés » = convention de tracé du repère, jamais l’arête cachée d’un solide' },
+      // « vitesse moyenne » au module 6 : le langage ordinaire du trajet, pas
+      // l'indicateur statistique. La leçon ne calcule aucune moyenne.
+      { term: 'moyenne', reason: '« vitesse moyenne » — langage du trajet, jamais la moyenne d’une série' },
+      // « périmètre » n'apparaît que dans la correction d'un distracteur
+      // (« 4c serait son périmètre »), pour séparer c² de 4c. Notion de 6e,
+      // jamais demandée ni calculée ici.
+      { term: 'perimetre', reason: 'correction d’un distracteur ; notion de 6e, jamais demandée' },
+    ],
+  },
   sequentialUnlock: true,
   knowledgeMap: true,
   title: 'Fonctions de référence',

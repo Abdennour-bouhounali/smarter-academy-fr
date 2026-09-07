@@ -31,7 +31,15 @@ export const LESSON_CONFIG = {
   // dès le module 2. Les familles de nombres elles-mêmes sont la MATIÈRE de
   // cette leçon : elles restent enseignées ici, jamais supposées.
   // Diagnostiquée par q6-appartient.
-  priorKnowledge: ['appartient'],
+  // Le reste vient du collège : fraction → écriture décimale (fraction-decimale,
+  // quotient, numerateur, denominateur), rangement de relatifs (ordre-nombres),
+  // puissances de 10 (puissance, exposant), carré d'un décimal (puissance),
+  // racine carrée d'un carré parfait (racine-carree). Diagnostiquées par
+  // q1 à q5 du module 0 — jamais la nature des nombres, matière de la leçon.
+  priorKnowledge: [
+    'appartient', 'fraction-decimale', 'quotient', 'numerateur', 'denominateur',
+    'ordre-nombres', 'puissance', 'exposant', 'racine-carree',
+  ],
   // Faux positif documenté du lexique : « ordre croissant » dans la question
   // q2 du module 0 est la locution française du RANGEMENT de nombres, pas la
   // notion de variation d'une fonction que le terme vise. Le contrat demande
@@ -41,6 +49,15 @@ export const LESSON_CONFIG = {
     ignore: [{
       term: 'variations',
       reason: "« Range dans l'ordre croissant » (module 0) est le rangement de trois relatifs, pas la variation d'une fonction : cette leçon n'étudie aucune fonction.",
+    }, {
+      term: 'perimetre',
+      reason: "« Le périmètre du rond-point » (module 4) emploie le mot au sens ordinaire du collège pour habiller un problème d'écriture exacte/approchée (6π) : cette leçon n'enseigne ni ne redéfinit le périmètre.",
+    }, {
+      term: 'diagonale',
+      reason: "« La diagonale du champ » (module 5) emploie le mot au sens ordinaire du collège pour habiller un encadrement de √800 : cette leçon n'enseigne ni ne redéfinit la diagonale.",
+    }, {
+      term: 'aire',
+      reason: "« Un disque a un rayon... quelle écriture de son aire » (boss, épreuve 7) emploie le mot au sens ordinaire du collège pour habiller un problème d'écriture exacte/approchée (25π) : cette leçon n'enseigne ni ne redéfinit l'aire.",
     }],
   },
   sequentialUnlock: true,
@@ -75,6 +92,11 @@ export const LESSON_CONFIG = {
       'La valeur absolue (leçon « Valeur absolue et distance »)',
     ],
   },
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module se termine sur l'état courant de la carte, et le test final en
+  // affiche la version complète. Aucun module « À retenir » n'est attendu
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
   modules: [
     {
       id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`,
@@ -113,23 +135,14 @@ export const LESSON_CONFIG = {
       color: 'emerald', style: 'featured', estimatedMin: 10, difficulty: 3, actionText: 'Approcher',
     },
     {
-      id: '05', number: 5, slug: 'a-retenir', path: `${LESSON_BASE_PATH}/a-retenir`,
-      title: 'À retenir', desc: 'Les familles, les écritures, et le bon réflexe : exact tant qu’on calcule, approché seulement pour conclure.',
-      stage: 'formalization',
-      teachesLearningPointIds: [
-        'seconde_nombres-reels-2nde_P1', 'seconde_nombres-reels-2nde_P3', 'seconde_nombres-reels-2nde_P4',
-      ],
-      color: 'violet', style: 'featured', estimatedMin: 8, difficulty: 3, actionText: 'Retenir',
-    },
-    {
-      id: '06', number: 6, slug: 'encadrer-et-comparer', path: `${LESSON_BASE_PATH}/encadrer-et-comparer`,
+      id: '05', number: 5, slug: 'encadrer-et-comparer', path: `${LESSON_BASE_PATH}/encadrer-et-comparer`,
       title: 'Encadrer et comparer', desc: 'Encadre √10 par des carrés, range √2 parmi ses approximations, puis clôture un champ dont la diagonale n’est pas décimale.',
       stage: 'practice_lab',
       teachesLearningPointIds: ['seconde_nombres-reels-2nde_P5', 'seconde_nombres-reels-2nde_P2'],
       color: 'rose', style: 'featured', estimatedMin: 11, difficulty: 4, actionText: 'Encadrer',
     },
     {
-      id: '07', number: 7, slug: 'mission-finale-la-diagonale', path: `${LESSON_BASE_PATH}/mission-finale-la-diagonale`,
+      id: '06', number: 6, slug: 'mission-finale-la-diagonale', path: `${LESSON_BASE_PATH}/mission-finale-la-diagonale`,
       title: '🏆 Mission finale : la diagonale', desc: 'Dix épreuves pour prouver qu’aucune écriture ne te trompe.',
       stage: 'evaluation',
       color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi',

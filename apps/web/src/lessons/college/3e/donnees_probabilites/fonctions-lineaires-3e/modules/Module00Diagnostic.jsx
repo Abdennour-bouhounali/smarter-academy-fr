@@ -68,7 +68,7 @@ const QUESTIONS = [
     options: ['Oui, tous les rapports valent 3', 'Non, les écarts changent', 'Oui, on ajoute 3 à chaque fois'],
     cols: 1,
     correct: 0,
-    requires: ['proportionnalite'],
+    requires: ['proportionnalite', 'coefficient-proportionnalite'],
     explain: '6 ÷ 2 = 3, 9 ÷ 3 = 3, 15 ÷ 5 = 3 : les rapports sont égaux, c’est proportionnel.',
   },
   {

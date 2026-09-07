@@ -82,6 +82,47 @@ export const LESSON_CONFIG = {
       'Les équations de droites (leçon « Droites du plan »)',
     ],
   },
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module se termine sur l'état courant de la carte, et le test final en
+  // affiche la version complète. Aucun module « À retenir » n'est attendu
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes venues du
+  // collège et toutes diagnostiquées par le module 0 :
+  //   — lire et ordonner un couple de coordonnées (6e) ;
+  //   — calculer avec des relatifs (5e) ;
+  //   — l'image d'un point par une translation du collège (3e) ;
+  //   — Pythagore et l'hypoténuse d'un triangle rectangle (4e).
+  // La leçon enseigne le reste : le vecteur comme déplacement, l'égalité de
+  // deux vecteurs, le vecteur nul et son opposé, la base orthonormée et les
+  // coordonnées d'un vecteur, la somme, le produit par un réel, la
+  // colinéarité, la norme, la distance, le milieu, et leur usage en problème.
+  priorKnowledge: [
+    'abscisse', 'ordonnee', 'coordonnees', 'origine-repere', 'nombres-relatifs',
+    'translation', 'triangle-rectangle', 'angle-droit', 'hypotenuse',
+  ],
+  knowledgeAudit: {
+    ignore: [
+      // Module 2, étape 4 (correction) : « le retour, lui, représente un
+      // AUTRE vecteur, l'opposé » désigne le VECTEUR opposé (établi étape 3,
+      // brique regle-vecteur-oppose), jamais le « côté opposé » de la
+      // trigonométrie de 3e — le scanner du lexique confond les deux via
+      // le seul mot « opposé » suivi d'un point.
+      { term: 'cote-oppose', reason: 'désigne le vecteur opposé (établi module 2), pas le côté opposé de la trigonométrie' },
+      // Module 8, épreuve 6 (explain) : « aucune des autres paires n'a un
+      // facteur commun aux deux coordonnées » emploie « facteur commun » au
+      // sens arithmétique courant (un nombre qui multiplie les deux
+      // coordonnées à la fois — la colinéarité, établie module 5), jamais
+      // la factorisation d'expression littérale de 3e.
+      { term: 'facteur-commun', reason: 'sens arithmétique courant (un multiplicateur commun aux deux coordonnées), pas la factorisation littérale de 3e' },
+      // Module 8, épreuve 7 (explain) : « le coefficient de i » désigne le
+      // nombre qui multiplie le vecteur de base i dans u = x·i + y·j
+      // (établi module 3, vocab-base-orthonormee), jamais le coefficient
+      // directeur d'une fonction affine de 3e.
+      { term: 'coefficient-lineaire', reason: 'désigne le multiplicateur du vecteur de base i (module 3), pas le coefficient d’une fonction linéaire de 3e' },
+    ],
+  },
   modules: [
     {
       id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`,
@@ -132,21 +173,14 @@ export const LESSON_CONFIG = {
       color: 'cyan', style: 'featured', estimatedMin: 9, difficulty: 3, actionText: 'Mesurer',
     },
     {
-      id: '07', number: 7, slug: 'a-retenir', path: `${LESSON_BASE_PATH}/a-retenir`,
-      title: 'À retenir', desc: 'Égalité, somme, produit, coordonnées, norme, milieu : la carte de la leçon.',
-      stage: 'formalization',
-      teachesLearningPointIds: ['seconde_vecteurs-2nde_P1', 'seconde_vecteurs-2nde_P2', 'seconde_vecteurs-2nde_P4', 'seconde_vecteurs-2nde_P5', 'seconde_vecteurs-2nde_P6', 'seconde_vecteurs-2nde_P8', 'seconde_vecteurs-2nde_P9', 'seconde_vecteurs-2nde_P10', 'seconde_vecteurs-2nde_P11', 'seconde_vecteurs-2nde_P12', 'seconde_vecteurs-2nde_P13'],
-      color: 'blue', style: 'featured', estimatedMin: 6, difficulty: 3, actionText: 'Retenir',
-    },
-    {
-      id: '08', number: 8, slug: 'problemes-de-geometrie', path: `${LESSON_BASE_PATH}/problemes-de-geometrie`,
+      id: '07', number: 7, slug: 'problemes-de-geometrie', path: `${LESSON_BASE_PATH}/problemes-de-geometrie`,
       title: 'Problèmes de géométrie', desc: 'Fermer un parallélogramme, retrouver un déplacement manquant, prouver un alignement.',
       stage: 'practice_lab',
       teachesLearningPointIds: ['seconde_vecteurs-2nde_P14', 'seconde_vecteurs-2nde_P3', 'seconde_vecteurs-2nde_P11', 'seconde_vecteurs-2nde_P13', 'seconde_vecteurs-2nde_P6'],
       color: 'rose', style: 'featured', estimatedMin: 10, difficulty: 4, actionText: 'Résoudre',
     },
     {
-      id: '09', number: 9, slug: 'mission-finale-le-depot', path: `${LESSON_BASE_PATH}/mission-finale-le-depot`,
+      id: '08', number: 8, slug: 'mission-finale-le-depot', path: `${LESSON_BASE_PATH}/mission-finale-le-depot`,
       title: '🏆 Mission finale : le dépôt', desc: 'Dix épreuves pour prouver que tu maîtrises les vecteurs.',
       stage: 'evaluation',
       color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi',

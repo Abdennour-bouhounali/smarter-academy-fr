@@ -24,6 +24,7 @@ const QUESTIONS = [
     id: 'q1-comparer-relatifs',
     skill: 'relatifs',
     points: 2,
+    requires: ['nombres-relatifs'],
     prompt: 'Quel est le plus grand des deux nombres −3 et −5 ?',
     options: ['−3', '−5', 'Ils sont égaux'],
     cols: 3,
@@ -34,6 +35,7 @@ const QUESTIONS = [
     id: 'q2-comparer-decimaux',
     skill: 'relatifs',
     points: 2,
+    requires: ['ordre-nombres'],
     prompt: 'Laquelle de ces comparaisons est vraie ?',
     options: ['2,5 < 2,05', '2,05 < 2,5', '2,5 = 2,50 est faux'],
     cols: 1,
@@ -44,6 +46,7 @@ const QUESTIONS = [
     id: 'q3-inegalite-stricte',
     skill: 'inegalites',
     points: 2,
+    requires: ['lecture-inegalite'],
     prompt: (
       <>
         Que signifie <MathText>{'$x > 4$'}</MathText> ?
@@ -58,6 +61,7 @@ const QUESTIONS = [
     id: 'q4-lire-un-point',
     skill: 'droite',
     points: 2,
+    requires: ['abscisse'],
     prompt: (
       <span className="block space-y-2">
         <span className="block">Quelle est l’abscisse du point A ?</span>
@@ -73,6 +77,7 @@ const QUESTIONS = [
     id: 'q5-inegalite-large',
     skill: 'inegalites',
     points: 2,
+    requires: ['lecture-inegalite'],
     prompt: 'Un panneau indique « poids maximal 30 kg ». Quelle inégalité traduit les poids p autorisés ?',
     options: ['p < 30', 'p ≤ 30', 'p ≥ 30'],
     cols: 3,

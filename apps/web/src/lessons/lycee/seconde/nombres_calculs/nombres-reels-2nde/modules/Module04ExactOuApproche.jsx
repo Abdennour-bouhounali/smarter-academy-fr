@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { parseDec } from '@smarter-academy/core';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -70,6 +71,15 @@ export default function Module04ExactOuApproche() {
               ) : (
                 <Feedback tone="info">Précision actuelle : 10<sup>−{k}</sup>. Monte jusqu’au millième et lis le carré de l’arrondi à chaque étape.</Feedback>
               )}
+              {/* Les carrés successifs de l'arrondi de √2 viennent de montrer
+                  qu'aucun décimal n'atteint jamais 2 exactement. */}
+              {labDone && (
+                <KnowledgeBrick
+                  id="regle-aucun-decimal-nest-racine"
+                  variant="new"
+                  lead={<>1,41² ; 1,414² ; 1,4142² — tu viens de les calculer, et aucun ne vaut 2.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -78,16 +88,27 @@ export default function Module04ExactOuApproche() {
           title: 'Arrondi ou troncature ?',
           done: roundDone,
           content: (
-            <TapQuestion
-              prompt="Quel est l’arrondi de 2/3 au centième ?"
-              options={['0,66', '0,67', '0,7', '0,6667']}
-              cols={4}
-              correct={1}
-              explain="2/3 = 0,6666… Le chiffre suivant le centième est un 6 (≥ 5) : on arrondit au-dessus, 0,67. La troncature, elle, coupe sans regarder : 0,66. Et 0,7 est l’arrondi au dixième."
-              explainWrong="Regarde le chiffre APRÈS le centième : 0,66|6… — c’est un 6, donc l’arrondi monte à 0,67. 0,66 est la troncature (on coupe), 0,7 est arrondi au dixième, 0,6667 au dix-millième."
-              solved={roundDone}
-              onAnswered={() => setRoundDone(true)}
-            />
+            <div className="space-y-3">
+              {/* La lecture des encadrements du module 1 donnait déjà des
+                  troncatures ; la méthode de l'arrondi (chiffre suivant ≥ 5)
+                  se pose ici, avant la première question qui l'exige. */}
+              <KnowledgeBrick
+                id="arrondi-troncature"
+                variant="new"
+                lead={<>Tu as vu l’arrondi de √2 se resserrer à chaque précision. Troncature et arrondi ne donnent pas toujours le même chiffre.</>}
+              />
+              <TapQuestion
+                prompt="Quel est l’arrondi de 2/3 au centième ?"
+                options={['0,66', '0,67', '0,7', '0,6667']}
+                cols={4}
+                correct={1}
+                requires={['arrondi-troncature']}
+                explain="2/3 = 0,6666… Le chiffre suivant le centième est un 6 (≥ 5) : on arrondit au-dessus, 0,67. La troncature, elle, coupe sans regarder : 0,66. Et 0,7 est l’arrondi au dixième."
+                explainWrong="Regarde le chiffre APRÈS le centième : 0,66|6… — c’est un 6, donc l’arrondi monte à 0,67. 0,66 est la troncature (on coupe), 0,7 est arrondi au dixième, 0,6667 au dix-millième."
+                solved={roundDone}
+                onAnswered={() => setRoundDone(true)}
+              />
+            </div>
           ),
         },
         {
@@ -95,18 +116,31 @@ export default function Module04ExactOuApproche() {
           title: 'Le périmètre du rond-point',
           done: exactDone,
           content: (
-            <TapQuestion
-              prompt={<>Un rond-point circulaire a un rayon de 3 m. Son périmètre vaut <MathText>{'$2\\pi r$'}</MathText>. Laquelle de ces écritures est EXACTE ?</>}
-              options={['$6\\pi$ m', '$18{,}84$ m', '$18{,}85$ m', '$18{,}8496$ m']}
-              renderOption={(o) => <MathText>{o}</MathText>}
-              correctionLabel="6π m"
-              cols={4}
-              correct={0}
-              explain="6π est le nombre lui-même : π n’a pas d’écriture décimale finie, donc aucun décimal ne peut être exact. 18,85 est l’arrondi au centième, 18,84 la troncature, 18,8496 l’arrondi au dix-millième — tous approchés, à écrire avec ≈."
-              explainWrong="Tous les nombres à virgule proposés sont des approximations de 6π : π ne s’écrit pas avec un nombre fini de chiffres. On garde 6π tant qu’on calcule, on n’arrondit qu’à la fin (6π ≈ 18,85 m)."
-              solved={exactDone}
-              onAnswered={() => setExactDone(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt={<>Un rond-point circulaire a un rayon de 3 m. Son périmètre vaut <MathText>{'$2\\pi r$'}</MathText>. Laquelle de ces écritures est EXACTE ?</>}
+                options={['$6\\pi$ m', '$18{,}84$ m', '$18{,}85$ m', '$18{,}8496$ m']}
+                renderOption={(o) => <MathText>{o}</MathText>}
+                correctionLabel="6π m"
+                cols={4}
+                correct={0}
+                requires={['arrondi-troncature', 'regle-aucun-decimal-nest-racine']}
+                explain="6π est le nombre lui-même : π n’a pas d’écriture décimale finie, donc aucun décimal ne peut être exact. 18,85 est l’arrondi au centième, 18,84 la troncature, 18,8496 l’arrondi au dix-millième — tous approchés, à écrire avec ≈."
+                explainWrong="Tous les nombres à virgule proposés sont des approximations de 6π : π ne s’écrit pas avec un nombre fini de chiffres. On garde 6π tant qu’on calcule, on n’arrondit qu’à la fin (6π ≈ 18,85 m)."
+                solved={exactDone}
+                onAnswered={() => setExactDone(true)}
+              />
+              {/* Le rond-point vient de montrer : garder 6π pendant le calcul,
+                  n'arrondir qu'à la fin. */}
+              {exactDone && (
+                <KnowledgeBrick
+                  id="mem-exact-puis-arrondir"
+                  variant="new"
+                  compact
+                  lead={<>Tu viens de choisir 6π plutôt que 18,85 : l’écriture exacte, tant qu’on n’a pas fini de calculer.</>}
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -119,6 +153,7 @@ export default function Module04ExactOuApproche() {
               expected={3.2}
               parse={parseDec}
               display="3,2"
+              requires={['arrondi-troncature', 'mem-exact-puis-arrondir']}
               explain="√10 = 3,16… : le chiffre après le dixième est 6, donc on arrondit au-dessus : 3,2. La troncature serait 3,1."
               explainFor={(v) => (v === 3.1
                 ? '3,1 est la troncature. Pour arrondir, regarde le chiffre suivant : 3,1|6 → 6 ≥ 5, on monte à 3,2.'
@@ -130,11 +165,7 @@ export default function Module04ExactOuApproche() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Écriture exacte (√2, 1/3, 6π) tant qu’on calcule ; valeur approchée (≈ 1,41 ; ≈ 0,33 ; ≈ 18,85) seulement pour conclure — en précisant si c’est une troncature ou un arrondi, et à quelle précision.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={4} />}
     />
   );
 }

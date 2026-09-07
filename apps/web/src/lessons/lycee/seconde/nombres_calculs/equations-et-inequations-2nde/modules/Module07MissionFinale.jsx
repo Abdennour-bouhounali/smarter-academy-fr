@@ -1,6 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
@@ -48,29 +48,13 @@ const BADGES = [
   { id: 'b-model', emoji: '🧩', label: 'Modélisation sans faute', test: (m) => !m.modeliser },
   { id: 'b-perfect', emoji: '💎', label: 'Dix sur dix', test: (m) => Object.values(m).every((v) => !v) },
 ];
-function Synthese() {
-  return (
-    <div className="space-y-4">
-      <div className="text-center space-y-1"><h2 className="text-xl font-space font-extrabold text-slate-900">Synthèse : les deux forfaits</h2><p className="text-sm text-slate-500">L’équation a une solution ; l’inéquation, une demi-droite.</p></div>
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-2">
-        <RealLine min={0} max={10} step={1} intervals={[{ id: 'lt', from: 0, to: 4, openTo: true, tone: 'emerald', label: '2x + 5 < 13' }]} points={[{ id: 'eq', value: 4, label: '2x + 5 = 13', tone: 'indigo' }]} ariaLabel="De 0 à 4 exclu, A moins cher ; en 4, égalité" />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-        <Feedback tone="info"><strong>Résoudre</strong> = trouver toutes les solutions (une, aucune, une infinité) ; <strong>vérifier</strong> = substituer dans chaque membre.</Feedback>
-        <Feedback tone="info"><strong>Premier degré :</strong> même opération aux deux membres, x d’un côté, ÷ coefficient, solution exacte.</Feedback>
-        <Feedback tone="info"><strong>Inéquation :</strong> idem, mais × ou ÷ par un négatif retourne le sens ; solutions = intervalle sur la droite.</Feedback>
-        <Feedback tone="info"><strong>Produit nul :</strong> A × B = 0 ⇔ A = 0 ou B = 0. <strong>Quotient :</strong> A/B = 0 ⇔ A = 0 et B ≠ 0 (valeur interdite).</Feedback>
-      </div>
-    </div>
-  );
-}
 export default function Module07MissionFinale() {
   return (
     <BossFinal ctx={MODULE_CTX} navLinks={getNavLinks(7)} moduleNumber={7}
       moduleTitle="🏆 Mission finale : les deux forfaits" moduleSubtitle="Dix épreuves pour prouver qu’aucune équation ne te résiste." estimatedTime="15 min"
       lessonConfig={LESSON_CONFIG} timerSeconds={600} timerLabel="10 min" xpPerCorrect={10}
       brief={{ tag: '🏆 Boss final', title: 'Dix équations et inéquations, sans scanner.', body: <p>Aucune aide, une seule validation à la fin. Tes réponses deviennent ton profil de maîtrise.</p> }}
-      registre={REGISTRE} skills={SKILLS} epreuves={EPREUVES} badges={BADGES} synthese={<Synthese />}
+      registre={REGISTRE} skills={SKILLS} epreuves={EPREUVES} badges={BADGES} synthese={<KnowledgeSnapshot variant="complete" complete />}
       completion={{ masterTitle: 'Maître des équations', title: 'Leçon terminée', message: 'Tu sais résoudre une équation ou une inéquation du premier degré, un produit nul, un quotient — et vérifier, et interpréter.', verbs: ['Balayer', 'Isoler', 'Retourner', 'Annuler'], masterBadgeLabel: 'Tous les badges débloqués' }} />
   );
 }

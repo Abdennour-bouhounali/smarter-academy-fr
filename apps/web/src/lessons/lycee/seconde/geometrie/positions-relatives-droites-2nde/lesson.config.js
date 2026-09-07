@@ -42,11 +42,18 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/geometrie/positions-rela
 
 export const LESSON_CONFIG = {
   id: 'positions-relatives-droites-2nde',
-  // Connaissance SUPPOSÉE acquise (état A du contrat) : la colinéarité vient
-  // des leçons « Vecteurs » et « Colinéarité et alignement », et le module 0
-  // la mesure explicitement. On ne déclare QUE ce que le module 0 diagnostique
-  // — déclarer davantage produit des W_PRIOR_NOT_DIAGNOSED.
-  priorKnowledge: ['colineaire'],
+  // Ce que la leçon SUPPOSE acquis (état A du contrat), venu des leçons
+  // « Vecteurs », « Colinéarité et alignement » et « Équations de droites ».
+  // On ne déclare QUE ce qu'une question du module 0 mesure : déclarer
+  // davantage produit des W_PRIOR_NOT_DIAGNOSED, et promet un diagnostic
+  // que la leçon ne fait pas. Les positions relatives elles-mêmes n'y sont
+  // pas — c'est la matière de la leçon, posée par les briques des modules 1 à 5.
+  priorKnowledge: [
+    'colineaire',
+    'vecteur', 'coordonnees',
+    'coefficient-directeur', 'ordonnee-origine', 'pente',
+    'terme-algebrique', 'reduire-expression', 'origine-repere',
+  ],
   sequentialUnlock: true,
   knowledgeMap: true,
   title: 'Positions relatives de deux droites',

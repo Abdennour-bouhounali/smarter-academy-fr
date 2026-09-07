@@ -45,7 +45,11 @@ export const LESSON_CONFIG = {
   // Formalisation continue par la carte des connaissances.
   knowledgeMap: true,
   // Connaissances SUPPOSÉES acquises, diagnostiquées par le module 0.
-  priorKnowledge: ['triangle-rectangle', 'aire', 'puissance', 'racine-carree', 'arrondi'],
+  // « angle droit » (6e) est un prérequis au même titre que le triangle
+  // rectangle : le module 0 le diagnostique dès sa première question, et la
+  // leçon ne l'enseigne pas — elle enseigne le lien entre cet angle et les
+  // aires des carrés.
+  priorKnowledge: ['triangle-rectangle', 'angle-droit', 'aire', 'puissance', 'racine-carree', 'arrondi'],
   sequentialUnlock: true, // déverrouillage séquentiel des modules (voir lessonAccess.js)
   title: 'Théorème de Pythagore',
   description:

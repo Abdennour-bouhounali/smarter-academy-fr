@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -14,6 +14,24 @@ import { affine, imageOf, TABLE_AFFINE, TABLE_NON_AFFINE, TANK_RANGE, formatDec 
  * Step 2  la même mesure sur une courbe non affine : le quotient change.
  * Step 3  reconnaître une table affine (accroissements proportionnels).
  * Step 4  la formule.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Le mot « taux d'accroissement » et la méthode de la table n'existaient que
+ *   dans les `Feedback` de fin d'étape et dans le pied : les questions des
+ *   étapes 3 et 4 les exigeaient sans qu'ils aient été posés en position
+ *   d'enseignement. L'ordre est maintenant geste → brique → demande :
+ *     étape 1  trois paires d'instants, le même nombre → brique `taux-accroissement`
+ *     étape 2  le même geste sur une courbe qui n'est pas une droite →
+ *              brique `methode-reconnaitre-affine-table`, avant la table
+ *     étape 3  la table (`requires`)
+ *     étape 4  brique `formule-taux`, puis la question sur f(2) et f(5)
+ *   Le titre de l'étape 1 ne nomme plus le « quotient » : un titre se lit
+ *   alors que l'étape est encore verrouillée, et annonçait donc le mot avant
+ *   le geste qui le fabrique.
+ *
+ * MANIPULATION JAMAIS GELÉE. Les deux sondes restaient `disabled` une fois
+ * l'étape réussie ; elles restent vivantes, avec le seul verrou d'ANTÉRIORITÉ
+ * (`!done1`) sur l'étape 2.
  */
 const V = affine(3, 10);
 const NON = (x) => 0.4 * x * x + 2;
@@ -32,13 +50,16 @@ export default function Module02LeTauxDAccroissement() {
 
   const steps = [
     {
-      num: 1, title: 'Deux instants, un quotient', subtitle: 'V(t) = 3t + 10. Choisis deux instants t₁ ≠ t₂ ; le bandeau calcule (V₂ − V₁) ÷ (t₂ − t₁). Essaie trois paires différentes.', done: done1,
+      num: 1, title: 'Deux instants, un seul nombre', subtitle: 'V(t) = 3t + 10. Choisis deux instants t₁ ≠ t₂ ; le bandeau calcule (V₂ − V₁) ÷ (t₂ − t₁). Essaie trois paires différentes.', done: done1,
       content: (kit) => (
         <div className="space-y-3">
           <PredictionChips prompt="si je prends deux instants très éloignés au lieu de deux instants proches, le quotient…" options={[{ id: 'same', label: 'Ne change pas' }, { id: 'more', label: 'Devient plus grand' }, { id: 'less', label: 'Devient plus petit' }]} value={pred1} onChange={setPred1} disabled={done1} />
-          <RateProbes fn={(x) => imageOf(V, x)} affineLine={V} range={TANK_RANGE} unit={30} unitY={5} xStep={1} yStep={10} x1={p1.x1} x2={p1.x2} onChange={(n) => move1(n, kit.react)} disabled={done1} name="V" variable="t" />
+          <RateProbes fn={(x) => imageOf(V, x)} affineLine={V} range={TANK_RANGE} unit={30} unitY={5} xStep={1} yStep={10} x1={p1.x1} x2={p1.x2} onChange={(n) => move1(n, kit.react)} name="V" variable="t" />
           {done1 ? (
-            <Feedback tone="ok">{pred1 === 'same' ? 'Ta prédiction tenait' : pred1 ? 'Ta prédiction ne tenait pas' : 'Regarde'} : trois paires, toujours <strong>3</strong>. Ce quotient s’appelle le <strong>taux d’accroissement</strong> entre t₁ et t₂ ; pour une fonction affine, il ne dépend pas des instants : c’est <strong>a</strong>. L’escalier a la même pente partout.</Feedback>
+            <>
+              <Feedback tone="ok">{pred1 === 'same' ? 'Ta prédiction tenait' : pred1 ? 'Ta prédiction ne tenait pas' : 'Regarde'} : trois paires, toujours <strong>3</strong> — proches ou éloignés, les instants n’y changent rien. L’escalier a la même pente partout.</Feedback>
+              <KnowledgeBrick id="taux-accroissement" variant="new" lead={<>Le nombre que tu viens d’obtenir trois fois de suite porte un nom, et c’est exactement le <strong>a</strong> du module précédent.</>} />
+            </>
           ) : (
             <Feedback tone="info">{pairs.size} paire{pairs.size > 1 ? 's' : ''} sur 3 (t₁ ≠ t₂).</Feedback>
           )}
@@ -49,9 +70,12 @@ export default function Module02LeTauxDAccroissement() {
       num: 2, title: 'Et si la courbe n’est pas une droite ?', subtitle: 'Même mesure sur une autre fonction. Trouve deux paires d’instants qui donnent des quotients différents.', done: done2,
       content: (kit) => (
         <div className="space-y-3">
-          <RateProbes fn={NON} range={NON_RANGE} unit={38} unitY={9} xStep={1} yStep={5} x1={p2.x1} x2={p2.x2} onChange={(n) => move2(n, kit.react)} disabled={done2 || !done1} name="g" variable="x" />
+          <RateProbes fn={NON} range={NON_RANGE} unit={38} unitY={9} xStep={1} yStep={5} x1={p2.x1} x2={p2.x2} onChange={(n) => move2(n, kit.react)} disabled={!done1} name="g" variable="x" />
           {done2 ? (
-            <Feedback tone="ok">Ici le quotient <strong>change</strong> selon les instants : cette fonction n’est pas affine. Un taux d’accroissement constant, c’est la signature d’une fonction affine — et de sa droite.</Feedback>
+            <>
+              <Feedback tone="ok">Ici le quotient <strong>change</strong> selon les instants : cette fonction n’est pas affine. Un taux d’accroissement constant, c’est la signature d’une fonction affine — et de sa droite.</Feedback>
+              <KnowledgeBrick id="methode-reconnaitre-affine-table" variant="new" lead={<>Tu viens de comparer deux taux sur une courbe. Une table de valeurs se teste de la même manière — c’est ce que demande l’étape suivante.</>} />
+            </>
           ) : (
             <Feedback tone="info">{rates.size} valeur{rates.size > 1 ? 's' : ''} de quotient obtenue{rates.size > 1 ? 's' : ''}. Éloigne les instants.</Feedback>
           )}
@@ -83,18 +107,23 @@ export default function Module02LeTauxDAccroissement() {
             { id: 'r4', label: 'Table 2 est-elle affine ?', options: ['non : +1 puis +3 par unité', 'oui', 'oui : y = x + 1'], correct: 0, correction: 'taux 1 puis 3' },
           ]}
           feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Pour reconnaître une fonction affine dans une table : calculer (Δy) ÷ (Δx) entre plusieurs couples ; s’il est toujours le même, c’est a, et b se lit en x = 0.</Feedback>}
+          requires={['taux-accroissement', 'methode-reconnaitre-affine-table']}
           solved={q3} onAnswered={() => setQ3(true)} />
       ),
     },
     {
       num: 4, title: 'La formule', done: q4,
       content: (
-        <TapQuestion prompt={<span>f est affine, f(2) = 7 et f(5) = 16. Son coefficient directeur a vaut…</span>}
-          options={['(16 − 7) ÷ (5 − 2) = 3', '(5 − 2) ÷ (16 − 7) = 1/3', '16 − 7 = 9', '(7 − 16) ÷ (5 − 2) = −3']}
-          correct={0} cols={2}
-          explain={<span><MathText>{'$a = \\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = \\dfrac{16 - 7}{5 - 2} = 3$'}</MathText> : ce que f gagne par unité de x.</span>}
-          explainWrong="Le taux est (différence des images) ÷ (différence des x), dans le même ordre : (16 − 7) ÷ (5 − 2) = 9 ÷ 3 = 3. Pas l’inverse, pas la seule différence des images."
-          solved={q4} onAnswered={() => setQ4(true)} />
+        <div className="space-y-3">
+          <KnowledgeBrick id="formule-taux" variant="new" lead={<>Ce que tu as mesuré à la main trois fois s’écrit en une ligne, avec deux valeurs quelconques.</>} />
+            <TapQuestion prompt={<span>f est affine, f(2) = 7 et f(5) = 16. Son coefficient directeur a vaut…</span>}
+            options={['(16 − 7) ÷ (5 − 2) = 3', '(5 − 2) ÷ (16 − 7) = 1/3', '16 − 7 = 9', '(7 − 16) ÷ (5 − 2) = −3']}
+            correct={0} cols={2}
+            explain={<span><MathText>{'$a = \\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = \\dfrac{16 - 7}{5 - 2} = 3$'}</MathText> : ce que f gagne par unité de x.</span>}
+            explainWrong="Le taux est (différence des images) ÷ (différence des x), dans le même ordre : (16 − 7) ÷ (5 − 2) = 9 ÷ 3 = 3. Pas l’inverse, pas la seule différence des images."
+            requires={['taux-accroissement', 'formule-taux']}
+            solved={q4} onAnswered={() => setQ4(true)} />
+        </div>
       ),
     },
   ];

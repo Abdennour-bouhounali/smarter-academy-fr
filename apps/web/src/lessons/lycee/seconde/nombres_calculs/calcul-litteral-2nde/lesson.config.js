@@ -31,6 +31,29 @@ export const LESSON_CONFIG = {
   // La formalisation de cette leçon est la carte des connaissances (knowledge.jsx),
   // alimentée module après module par les <KnowledgeBrick>.
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes du
+  // collège et toutes diagnostiquées par le module 0 :
+  //   — le calcul littéral de 4e/3e : la lettre, la distributivité, réduire
+  //     des termes semblables, développer un produit simple, le carré ;
+  //   — les entiers : multiples, pair/impair (repris de « Arithmétique »).
+  // La Seconde REPREND ces gestes pour les étendre — double distributivité,
+  // identités remarquables, factorisation par un binôme, choix de la forme :
+  // c'est cela que la leçon enseigne, pas la distributivité elle-même.
+  priorKnowledge: [
+    'calcul-litteral', 'distributivite', 'developper', 'termes-semblables',
+    'reduire-expression', 'terme-algebrique', 'facteur', 'carre-nombre',
+  ],
+  knowledgeAudit: {
+    ignore: [
+      // « résoudre B(x) = 0 » (module 5, étape 4, intitulé de ligne) matche le
+      // motif générique « Résoudre … = » du lexique, qui vise l'équation du
+      // premier degré de 4e. Ici, aucune équation n'est résolue : la ligne
+      // demande seulement QUELLE FORME choisir pour répondre — la résolution
+      // elle-même est explicitement hors périmètre (voir teachingScope.exclude).
+      { term: 'equation-premier-degre', reason: 'emploi générique de « résoudre … = 0 » pour désigner la question, pas une équation à résoudre — la résolution d’équations est hors périmètre de cette leçon' },
+    ],
+  },
   title: 'Calcul littéral',
   description:
     "Suivre un tour de magie avec une lettre, empiler des termes semblables, découper un carré de côté a + b, retrouver un facteur commun, choisir la forme qui répond à la question : réduire, développer et factoriser ne changent que l'écriture — et chaque écriture sert à quelque chose.",

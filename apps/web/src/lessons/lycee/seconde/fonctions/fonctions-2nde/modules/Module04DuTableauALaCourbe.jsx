@@ -27,6 +27,11 @@ import { F4, F4_XS, imageOf } from '../components/fonctionsUtils';
  *     étape 4  brique `mem-point-sur-courbe`, puis la lecture des deux sens
  *   Le repérage (abscisse, ordonnée, coordonnées) est un acquis de 6e déclaré
  *   en `priorKnowledge` et diagnostiqué au module 0.
+ *
+ * MANIPULATION JAMAIS GELÉE. Le plan restait `disabled` une fois les six
+ * points placés : l'élève ne pouvait plus déplacer un point pour vérifier ce
+ * qu'il venait de comprendre. Il reste vivant — seul `showCurve` dépend encore
+ * de la réussite, parce que la courbe est la RÉCOMPENSE du geste.
  */
 const RANGE = { xMin: -3, xMax: 4, yMin: -4, yMax: 7 };
 
@@ -60,7 +65,7 @@ export default function Module04DuTableauALaCourbe() {
       content: (kit) => (
         <div className="space-y-3">
           <PlotTable f={F4} xs={F4_XS} range={RANGE} placed={placed} moves={moves} active={active} onActive={setActive}
-            onPlace={(x, p) => place(x, p, kit.react)} onEscape={(x) => escape(x, kit.react)} disabled={done1} showCurve={done1} />
+            onPlace={(x, p) => place(x, p, kit.react)} onEscape={(x) => escape(x, kit.react)} showCurve={done1} />
           {done1 && (
             <>
               <KnowledgeBrick

@@ -22,10 +22,14 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/nombres_calculs/valeur-a
 
 export const LESSON_CONFIG = {
   id: 'valeur-absolue-distance-2nde',
-  // Connaissances SUPPOSÉES acquises, venues d'« Ensembles et intervalles » :
-  // la leçon écrit ses ensembles de solutions en crochets dès le module 4.
-  // Diagnostiquées par q4 (appartenance) et q5 (écriture en crochets).
-  priorKnowledge: ['intervalle', 'intervalle-crochets', 'appartient'],
+  // Connaissances SUPPOSÉES acquises. 'nombres-relatifs' (5e) et 'abscisse'
+  // (6e) portent l'opposé et la lecture sur la droite graduée, vécus dès le
+  // module 1 ; 'intervalle', 'intervalle-crochets', 'appartient' viennent
+  // d'« Ensembles et intervalles » — la leçon écrit ses ensembles de
+  // solutions en crochets dès le module 4. Diagnostiquées par q1 (opposé),
+  // q2 (abscisse), q3 (soustraction de relatifs), q4 (appartenance) et q5
+  // (écriture en crochets).
+  priorKnowledge: ['nombres-relatifs', 'abscisse', 'intervalle', 'intervalle-crochets', 'appartient'],
   sequentialUnlock: true,
   title: 'Valeur absolue et distance',
   description:
@@ -59,14 +63,18 @@ export const LESSON_CONFIG = {
       'La résolution générale d’inéquations (leçon « Équations et inéquations »)',
     ],
   },
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module se termine sur l'état courant de la carte, et le test final en
+  // affiche la version complète. Aucun module « À retenir » n'est attendu
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
   modules: [
     { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — pour savoir par où bien commencer.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
     { id: '01', number: 1, slug: 'deux-bateaux-une-distance', path: `${LESSON_BASE_PATH}/deux-bateaux-une-distance`, title: 'Deux bateaux, une distance', desc: 'Un phare en 0, une côte graduée en km. Déplace le bateau : à quelle distance du phare est-il ?', stage: 'trigger', teachesLearningPointIds: ['seconde_valeur-absolue-distance-2nde_P1'], color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 1, actionText: 'Déplacer le bateau' },
     { id: '02', number: 2, slug: 'calculer-une-valeur-absolue', path: `${LESSON_BASE_PATH}/calculer-une-valeur-absolue`, title: 'Calculer |x|', desc: 'Une machine à deux règles : si x ≥ 0 elle rend x, sinon elle rend −x. Pourquoi −x est-il positif ?', stage: 'discovery', teachesLearningPointIds: ['seconde_valeur-absolue-distance-2nde_P2', 'seconde_valeur-absolue-distance-2nde_P1'], color: 'sky', style: 'featured', estimatedMin: 7, difficulty: 2, actionText: 'Tester la machine' },
     { id: '03', number: 3, slug: 'la-distance-entre-deux-nombres', path: `${LESSON_BASE_PATH}/la-distance-entre-deux-nombres`, title: 'La distance entre deux nombres', desc: 'Deux bateaux, une barre entre eux : |b − a| ou |a − b|, c’est la même longueur. Et si les deux avancent ?', stage: 'discovery', teachesLearningPointIds: ['seconde_valeur-absolue-distance-2nde_P3'], color: 'cyan', style: 'featured', estimatedMin: 8, difficulty: 2, actionText: 'Mesurer l’écart' },
     { id: '04', number: 4, slug: 'le-faisceau', path: `${LESSON_BASE_PATH}/le-faisceau`, title: 'Le faisceau du phare', desc: 'Un centre, un rayon : le faisceau éclaire tous les x tels que |x − a| ≤ r. C’est un intervalle.', stage: 'manipulation', teachesLearningPointIds: ['seconde_valeur-absolue-distance-2nde_P5', 'seconde_valeur-absolue-distance-2nde_P4'], color: 'emerald', style: 'featured', estimatedMin: 9, difficulty: 3, actionText: 'Allumer le faisceau' },
-    { id: '05', number: 5, slug: 'a-retenir', path: `${LESSON_BASE_PATH}/a-retenir`, title: 'À retenir', desc: 'Distance à 0, distance entre deux nombres, faisceau et intervalle : les quatre lectures en une carte.', stage: 'formalization', teachesLearningPointIds: ['seconde_valeur-absolue-distance-2nde_P1', 'seconde_valeur-absolue-distance-2nde_P2', 'seconde_valeur-absolue-distance-2nde_P3', 'seconde_valeur-absolue-distance-2nde_P5'], color: 'violet', style: 'featured', estimatedMin: 6, difficulty: 3, actionText: 'Retenir' },
-    { id: '06', number: 6, slug: 'situations', path: `${LESSON_BASE_PATH}/situations`, title: 'Situations', desc: 'Une vis à 20 mm ± 0,5, un vaccin entre 2 et 8 °C, un randonneur à moins de 1,5 km de la borne 12.', stage: 'practice_lab', teachesLearningPointIds: ['seconde_valeur-absolue-distance-2nde_P4', 'seconde_valeur-absolue-distance-2nde_P5'], color: 'rose', style: 'featured', estimatedMin: 8, difficulty: 4, actionText: 'Résoudre' },
-    { id: '07', number: 7, slug: 'mission-finale-le-phare', path: `${LESSON_BASE_PATH}/mission-finale-le-phare`, title: '🏆 Mission finale : le phare', desc: 'Dix épreuves pour prouver qu’aucune distance ne te trompe.', stage: 'evaluation', color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi' },
+    { id: '05', number: 5, slug: 'situations', path: `${LESSON_BASE_PATH}/situations`, title: 'Situations', desc: 'Une vis à 20 mm ± 0,5, un vaccin entre 2 et 8 °C, un randonneur à moins de 1,5 km de la borne 12.', stage: 'practice_lab', teachesLearningPointIds: ['seconde_valeur-absolue-distance-2nde_P4', 'seconde_valeur-absolue-distance-2nde_P5'], color: 'rose', style: 'featured', estimatedMin: 8, difficulty: 4, actionText: 'Résoudre' },
+    { id: '06', number: 6, slug: 'mission-finale-le-phare', path: `${LESSON_BASE_PATH}/mission-finale-le-phare`, title: '🏆 Mission finale : le phare', desc: 'Dix épreuves pour prouver qu’aucune distance ne te trompe.', stage: 'evaluation', color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi' },
   ],
 };

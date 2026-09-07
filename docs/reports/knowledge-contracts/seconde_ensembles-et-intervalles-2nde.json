@@ -2,7 +2,12 @@
   "lesson": "ensembles-et-intervalles-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "nombres-relatifs",
+    "ordre-nombres",
+    "lecture-inegalite",
+    "abscisse"
+  ],
   "conceptsIntroduced": [
     {
       "id": "borne-incluse-exclue",
@@ -10,7 +15,7 @@
       "module": 1,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module01LeManege.jsx",
-        "line": 112,
+        "line": 113,
         "step": 1,
         "variant": "new"
       }
@@ -21,7 +26,7 @@
       "module": 1,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module01LeManege.jsx",
-        "line": 128,
+        "line": 130,
         "step": 1,
         "variant": "new"
       }
@@ -32,7 +37,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module02LangageDesEnsembles.jsx",
-        "line": 70,
+        "line": 71,
         "step": 1,
         "variant": "new"
       }
@@ -43,7 +48,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module02LangageDesEnsembles.jsx",
-        "line": 123,
+        "line": 124,
         "step": 3,
         "variant": "new"
       }
@@ -54,7 +59,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module03QuatreCrochets.jsx",
-        "line": 63,
+        "line": 64,
         "step": 1,
         "variant": "new"
       }
@@ -65,7 +70,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module03QuatreCrochets.jsx",
-        "line": 86,
+        "line": 87,
         "step": 1,
         "variant": "new"
       }
@@ -76,7 +81,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module03QuatreCrochets.jsx",
-        "line": 135,
+        "line": 136,
         "step": 3,
         "variant": "new"
       }
@@ -87,7 +92,7 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module04InegaliteOuIntervalle.jsx",
-        "line": 80,
+        "line": 81,
         "step": 1,
         "variant": "new"
       }
@@ -98,7 +103,7 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module04InegaliteOuIntervalle.jsx",
-        "line": 119,
+        "line": 120,
         "step": 3,
         "variant": "new"
       }
@@ -107,13 +112,23 @@
       "id": "regle-intersection-vide",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module05CroiserDeuxIntervalles.jsx",
+        "line": 194,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-contrainte-implicite",
       "type": "regles",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module06Situations.jsx",
+        "line": 153,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -123,7 +138,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module02LangageDesEnsembles.jsx",
-        "line": 76,
+        "line": 77,
         "step": 1,
         "variant": "new"
       }
@@ -134,7 +149,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module02LangageDesEnsembles.jsx",
-        "line": 82,
+        "line": 83,
         "step": 1,
         "variant": "new"
       }
@@ -145,7 +160,7 @@
       "module": 2,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module02LangageDesEnsembles.jsx",
-        "line": 108,
+        "line": 109,
         "step": 2,
         "variant": "new"
       }
@@ -158,7 +173,7 @@
       "module": 3,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module03QuatreCrochets.jsx",
-        "line": 162,
+        "line": 164,
         "step": 4,
         "variant": "new"
       }
@@ -169,7 +184,7 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module04InegaliteOuIntervalle.jsx",
-        "line": 170,
+        "line": 171,
         "step": 5,
         "variant": "new"
       }
@@ -178,25 +193,45 @@
       "id": "intersection-intervalles",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module05CroiserDeuxIntervalles.jsx",
+        "line": 125,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "reunion-intervalles",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module05CroiserDeuxIntervalles.jsx",
+        "line": 154,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-phrase-intervalle",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module06Situations.jsx",
+        "line": 83,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-compter-entiers",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module06Situations.jsx",
+        "line": 99,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -206,7 +241,7 @@
       "module": 1,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module01LeManege.jsx",
-        "line": 178,
+        "line": 180,
         "step": 3,
         "variant": "new"
       }
@@ -217,7 +252,7 @@
       "module": 4,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module04InegaliteOuIntervalle.jsx",
-        "line": 194,
+        "line": 195,
         "step": 5,
         "variant": "new"
       }
@@ -226,7 +261,12 @@
       "id": "mem-inter-union",
       "type": "memoriser",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module05CroiserDeuxIntervalles.jsx",
+        "line": 161,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -237,8 +277,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module00Diagnostic.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -248,9 +292,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module00Diagnostic.jsx",
-      "line": 33,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 34,
+      "requires": [
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -260,9 +308,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module00Diagnostic.jsx",
-      "line": 43,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 45,
+      "requires": [
+        "lecture-inegalite"
+      ],
+      "prerequisiteStatus": {
+        "lecture-inegalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -272,9 +324,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module00Diagnostic.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 60,
+      "requires": [
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -284,9 +340,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module00Diagnostic.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 76,
+      "requires": [
+        "lecture-inegalite"
+      ],
+      "prerequisiteStatus": {
+        "lecture-inegalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -296,9 +356,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module01LeManege.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 118,
+      "requires": [
+        "borne-incluse-exclue"
+      ],
+      "prerequisiteStatus": {
+        "borne-incluse-exclue": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -308,9 +372,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module01LeManege.jsx",
-      "line": 184,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 186,
+      "requires": [
+        "mem-borne",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "mem-borne": "established@M1",
+        "intervalle-crochets": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -320,7 +390,7 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module02LangageDesEnsembles.jsx",
-      "line": 129,
+      "line": 130,
       "requires": [
         "ensemble",
         "vocab-appartenance",
@@ -342,7 +412,7 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module03QuatreCrochets.jsx",
-      "line": 69,
+      "line": 70,
       "requires": [
         "intervalle",
         "mem-borne"
@@ -360,9 +430,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module03QuatreCrochets.jsx",
-      "line": 142,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 143,
+      "requires": [
+        "demi-droite-infini"
+      ],
+      "prerequisiteStatus": {
+        "demi-droite-infini": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -372,7 +446,7 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module03QuatreCrochets.jsx",
-      "line": 169,
+      "line": 171,
       "requires": [
         "intervalle",
         "vocab-appartenance",
@@ -394,7 +468,7 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module04InegaliteOuIntervalle.jsx",
-      "line": 124,
+      "line": 125,
       "requires": [
         "intervalle",
         "regle-signe-crochet",
@@ -416,7 +490,7 @@
       "step": 5,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module04InegaliteOuIntervalle.jsx",
-      "line": 177,
+      "line": 178,
       "requires": [
         "intervalle",
         "regle-signe-crochet",
@@ -440,9 +514,13 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module05CroiserDeuxIntervalles.jsx",
-      "line": 88,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 89,
+      "requires": [
+        "types-intervalles"
+      ],
+      "prerequisiteStatus": {
+        "types-intervalles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -452,9 +530,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module05CroiserDeuxIntervalles.jsx",
-      "line": 152,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 177,
+      "requires": [
+        "intersection-intervalles",
+        "ensemble-vide"
+      ],
+      "prerequisiteStatus": {
+        "intersection-intervalles": "established@M5",
+        "ensemble-vide": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -464,9 +548,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module06Situations.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "methode-compter-entiers"
+      ],
+      "prerequisiteStatus": {
+        "methode-compter-entiers": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -476,9 +564,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module06Situations.jsx",
-      "line": 105,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 119,
+      "requires": [
+        "methode-appartenance-intervalle"
+      ],
+      "prerequisiteStatus": {
+        "methode-appartenance-intervalle": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -488,9 +580,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module06Situations.jsx",
-      "line": 125,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 141,
+      "requires": [
+        "methode-phrase-intervalle"
+      ],
+      "prerequisiteStatus": {
+        "methode-phrase-intervalle": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -500,9 +596,13 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module06Situations.jsx",
-      "line": 142,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 168,
+      "requires": [
+        "methode-compter-entiers"
+      ],
+      "prerequisiteStatus": {
+        "methode-compter-entiers": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -513,8 +613,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
       "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "vocab-appartenance",
+        "vocab-inclusion"
+      ],
+      "prerequisiteStatus": {
+        "vocab-appartenance": "established@M2",
+        "vocab-inclusion": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -524,9 +630,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 62,
+      "requires": [
+        "vocab-intersection-reunion"
+      ],
+      "prerequisiteStatus": {
+        "vocab-intersection-reunion": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -536,9 +646,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "intervalle",
+        "mem-borne"
+      ],
+      "prerequisiteStatus": {
+        "intervalle": "established@M3",
+        "mem-borne": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -548,9 +664,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 87,
+      "requires": [
+        "methode-appartenance-intervalle"
+      ],
+      "prerequisiteStatus": {
+        "methode-appartenance-intervalle": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -560,9 +680,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 99,
+      "requires": [
+        "regle-signe-crochet",
+        "regle-sens-inegalite",
+        "demi-droite-infini"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-crochet": "established@M4",
+        "regle-sens-inegalite": "established@M4",
+        "demi-droite-infini": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -572,9 +700,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 106,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 111,
+      "requires": [
+        "regle-signe-crochet",
+        "methode-traduire"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-crochet": "established@M4",
+        "methode-traduire": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -584,9 +718,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "methode-compter-entiers"
+      ],
+      "prerequisiteStatus": {
+        "methode-compter-entiers": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -596,9 +734,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 128,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 135,
+      "requires": [
+        "intersection-intervalles",
+        "reunion-intervalles"
+      ],
+      "prerequisiteStatus": {
+        "intersection-intervalles": "established@M5",
+        "reunion-intervalles": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -608,9 +752,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 140,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 148,
+      "requires": [
+        "methode-phrase-intervalle"
+      ],
+      "prerequisiteStatus": {
+        "methode-phrase-intervalle": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -620,97 +768,18 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/modules/Module07MissionFinale.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 160,
+      "requires": [
+        "intersection-intervalles",
+        "methode-phrase-intervalle"
+      ],
+      "prerequisiteStatus": {
+        "intersection-intervalles": "established@M5",
+        "methode-phrase-intervalle": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'intersection-intervalles' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/knowledge.jsx",
-      "line": 422,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'reunion-intervalles' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/knowledge.jsx",
-      "line": 452,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-intersection-vide' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/knowledge.jsx",
-      "line": 475,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-inter-union' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/knowledge.jsx",
-      "line": 501,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-phrase-intervalle' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/knowledge.jsx",
-      "line": 524,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-contrainte-implicite' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/knowledge.jsx",
-      "line": 545,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-compter-entiers' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/ensembles-et-intervalles-2nde/knowledge.jsx",
-      "line": 565,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

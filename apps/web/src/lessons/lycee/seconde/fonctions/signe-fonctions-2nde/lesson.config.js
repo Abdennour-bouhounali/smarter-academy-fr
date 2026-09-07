@@ -33,11 +33,16 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/fonctions/signe-fonction
 
 export const LESSON_CONFIG = {
   id: 'signe-fonctions-2nde',
-  // Connaissances SUPPOSÉES acquises, venues d'« Ensembles et intervalles »
-  // (premier objet du domaine « Nombres et calculs ») : le tableau de signes
-  // découpe l'axe en intervalles et l'on y lit « x ∈ ]1 ; 4[ » dès le
-  // module 2. Diagnostiquées par sg-d6.
-  priorKnowledge: ['intervalle', 'intervalle-crochets', 'appartient'],
+  // Connaissances SUPPOSÉES acquises (docs/architecture/KNOWLEDGE_DEPENDENCY.md,
+  // état A), chacune MESURÉE par une question du module 0 :
+  //   intervalle, intervalle-crochets, appartient  — d'« Ensembles et
+  //     intervalles » : le tableau de signes découpe l'axe en intervalles et
+  //     l'on y lit « x ∈ ]1 ; 4[ » dès le module 2 (sg-d6) ;
+  //   notation-fx, fonction, image — de la 3e : la leçon écrit f(x) dès sa
+  //     première phrase, elle ne l'enseigne pas (sg-d1) ;
+  //   abscisse, ordonnee — de la 6e : le signe de f(x) EST la position d'un
+  //     point repéré par son abscisse et son ordonnée (sg-d2).
+  priorKnowledge: ['intervalle', 'intervalle-crochets', 'appartient', 'notation-fx', 'fonction', 'image', 'abscisse', 'ordonnee'],
   sequentialUnlock: true,
   knowledgeMap: true,
   title: 'Signe d’une fonction',

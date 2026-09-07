@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorPlane, { Lamp, ComponentStepper } from '../components/VectorPlane';
@@ -141,17 +142,47 @@ export default function Module01LeRail() {
           content: (
             <div className="space-y-3">
               <p className="text-sm text-slate-600">Deux vecteurs non nuls qui ont la même direction — le même rail, quels que soient leur longueur et leur sens — sont dits <span className="font-bold text-slate-900">colinéaires</span>. Tu as fabriqué {[...seen].length} façons d’être ou de ne pas l’être : plus long, à l’envers, hors du rail.</p>
+              <KnowledgeBrick
+                id="colin-direction"
+                variant="new"
+                compact
+                lead={<>Tu viens de poser v plus long, à l’envers, puis hors du rail de u : la propriété qu’ils partagent sur le rail porte un nom.</>}
+              />
+              <KnowledgeBrick
+                id="colin-vocabulaire-direction-sens"
+                variant="new"
+                compact
+                lead={<>Trois mots pour ce que tu as manipulé : direction, sens, longueur.</>}
+              />
+              <KnowledgeBrick
+                id="colin-vecteur-nul"
+                variant="new"
+                compact
+                lead={<>Le point (0 ; 0) que tu ne pouvais pas choisir pour v : le vecteur nul.</>}
+              />
               <TapQuestion
                 prompt="u(2 ; 1) et w(−6 ; −3) sont-ils colinéaires ? (Teste-le sur le rail si tu hésites.)"
                 options={['Oui : même direction, sens contraire', 'Non : w part dans l’autre sens', 'Non : w est trois fois plus long']} cols={1} correct={0}
                 explain="w = (−6 ; −3) roule sur le rail de u, à l’envers et trois fois plus long : colinéaires. Ni le sens ni la longueur ne comptent."
                 explainWrong="Regarde le rail : (−6 ; −3) est dessus. Le sens contraire et la longueur triple ne changent pas la direction — w et u sont colinéaires."
+                requires={['colin-direction', 'colin-vocabulaire-direction-sens', 'colin-vecteur-nul']}
                 solved={named} onAnswered={() => setNamed(true)} />
+              {named && (
+                <KnowledgeBrick
+                  id="mem-colin-rail"
+                  variant="new"
+                  lead={<>C’est le réflexe de toute la leçon : ni le sens, ni la longueur ne comptent — seule la direction.</>}
+                />
+              )}
             </div>
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Tu reconnais la colinéarité à l’œil, sur le rail. Mais pour (37 ; 22) et (−111 ; −66), sans dessin ? Il faut un critère sur les coordonnées : c’est le fil des modules 3 et 4. Avant cela, une question : à quoi sert la colinéarité en géométrie ? Un indice : trois points.</Feedback>}
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          Mais pour (37 ; 22) et (−111 ; −66), l’œil ne suffit plus : il faut un critère.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
@@ -101,7 +102,26 @@ export default function Module02LeMemeVecteur() {
               même longueur. Elles représentent le <strong>même vecteur</strong>, noté{' '}
               <VecName>u</VecName>. Chaque flèche en est un <strong>représentant</strong>.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les trois flèches posées viennent de montrer, en le voyant, que
+              le déplacement ne change pas quand on le promène : l'égalité et
+              le vocabulaire de représentant ont ici un sens concret. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="egalite-vecteurs"
+              variant="new"
+              lead={<>Tu viens de promener la même flèche à trois endroits sans jamais changer son déplacement.</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="vocab-representant"
+              variant="new"
+              compact
+              lead={<>Chacune des trois flèches que tu viens de poser en est un exemple.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               Flèche en {formatVec(origin)}.
               {tropPres ? ' Trop près d’une flèche déjà posée : éloigne-toi pour bien voir les deux.' : ' Pose-la, puis déplace-la ailleurs.'}
@@ -135,7 +155,17 @@ export default function Module02LeMemeVecteur() {
               déplace rien est le <strong>vecteur nul</strong>, noté <VecName>0</VecName>. Pour tout
               point A, <VecName>AA</VecName> = <VecName>0</VecName>.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* A′ vient de revenir sur A sous les yeux de l'élève : le vecteur
+              nul est ce point-flèche qu'il vient d'obtenir. */}
+          {done2 && (
+            <KnowledgeBrick
+              id="vecteur-nul"
+              variant="new"
+              lead={<>Tu viens de réduire le déplacement jusqu’à ce que A′ revienne exactement sur A.</>}
+            />
+          )}
+          {!done2 && (
             <Feedback tone="info">Amène les deux réglages à 0.</Feedback>
           )}
         </div>
@@ -167,7 +197,18 @@ export default function Module02LeMemeVecteur() {
               sens contraire. C’est le <strong>vecteur opposé</strong>, noté −<VecName>u</VecName>.
               Et pour deux points, <VecName>BA</VecName> = −<VecName>AB</VecName>.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* La flèche violette vient d'être construite comme le retour
+              exact de u : l'opposé est ce que l'élève tient déjà sous les
+              yeux, pas une définition à mémoriser à froid. */}
+          {done3 && (
+            <KnowledgeBrick
+              id="regle-vecteur-oppose"
+              variant="new"
+              lead={<>Tu viens de construire le trajet <strong>retour</strong> de u.</>}
+            />
+          )}
+          {!done3 && (
             <Feedback tone="info">
               {equal(v3, U) ? 'Tu as reconstruit u lui-même : le retour va dans l’autre sens.' : (DIAGNOSIS_TEXT[why3] ?? 'Continue.')}
             </Feedback>
@@ -190,6 +231,7 @@ export default function Module02LeMemeVecteur() {
           ]}
           correct={0}
           cols={1}
+          requires={['egalite-vecteurs', 'vocab-representant', 'vecteur-nul', 'regle-vecteur-oppose']}
           explain="Choisis n’importe quel point de départ, trace le déplacement : tu obtiens un représentant du même vecteur. Il y en a donc une infinité — et le retour, lui, représente un AUTRE vecteur, l’opposé."
           explainWrong="Tu viens de poser trois flèches identiques à trois endroits, et tu aurais pu continuer indéfiniment : chaque point de départ donne un représentant."
           solved={q4}
@@ -219,16 +261,7 @@ export default function Module02LeMemeVecteur() {
         ),
       }}
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Un vecteur <VecName>u</VecName> est un déplacement : direction, sens,
-          longueur. Toutes les flèches qui ont ces trois attributs sont ses représentants, et deux
-          vecteurs sont <strong>égaux</strong> quand ils ont les mêmes. <VecName>AB</VecName> est le
-          vecteur qui mène de A à B ; <VecName>AA</VecName> = <VecName>0</VecName> ;{' '}
-          <VecName>BA</VecName> = −<VecName>AB</VecName>. Reste à trouver comment l’écrire avec des
-          nombres.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={2} />}
     />
   );
 }

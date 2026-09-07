@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProductScanner from '../components/ProductScanner';
@@ -109,7 +110,7 @@ export default function Module05QuotientEtValeurInterdite() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Quatre formes, quatre méthodes — et toujours : vérifier, et interpréter. Le module suivant les met au travail sur des problèmes.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={5} />}
     />
   );
 }

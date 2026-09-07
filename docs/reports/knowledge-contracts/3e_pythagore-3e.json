@@ -4,6 +4,7 @@
   "lexiconVersion": 1,
   "prerequisites": [
     "triangle-rectangle",
+    "angle-droit",
     "aire",
     "puissance",
     "racine-carree",
@@ -136,10 +137,12 @@
       "file": "apps/web/src/lessons/college/3e/espace_geometrie/pythagore-3e/modules/Module00Diagnostic.jsx",
       "line": 21,
       "requires": [
-        "triangle-rectangle"
+        "triangle-rectangle",
+        "angle-droit"
       ],
       "prerequisiteStatus": {
-        "triangle-rectangle": "prior"
+        "triangle-rectangle": "prior",
+        "angle-droit": "prior"
       },
       "lexiconHits": [],
       "pedagogicallyValid": true

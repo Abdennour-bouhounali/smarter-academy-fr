@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolutionScanner from '../components/SolutionScanner';
@@ -131,7 +132,7 @@ export default function Module01ScannerDeSolutions() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Une <strong>équation</strong> est une égalité avec une inconnue ; la <strong>résoudre</strong>, c’est trouver TOUTES les valeurs qui la rendent vraie — une, aucune, ou une infinité. Balayer marche pour 4… mais pas pour 7/3. Il faut une méthode : le module suivant.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={1} />}
     />
   );
 }

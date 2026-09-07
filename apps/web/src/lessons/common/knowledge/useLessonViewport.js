@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 /**
  * Géométrie du « viewport de la leçon » — la zone de contenu réellement
@@ -22,12 +22,28 @@ import { useEffect, useState } from 'react';
  *          coordonnées en pixels, relatives au viewport (position: fixed).
  */
 export function useLessonViewport(active = true) {
+  // `ready` distingue « pas encore mesuré » (des zéros, qui placeraient la
+  // carte au coin haut GAUCHE) de « mesuré, et il se trouve que c'est 0 ».
+  // Sans lui, un consommateur ne peut pas savoir si la boîte est réelle, et
+  // animer vers elle fait traverser l'écran au panneau.
   const [box, setBox] = useState(() => ({
     top: 0, left: 0, right: 0, bottom: 0,
-    width: 0, height: 0, headerHeight: 0, viewportWidth: 0,
+    width: 0, height: 0, headerHeight: 0, viewportWidth: 0, ready: false,
   }));
 
-  useEffect(() => {
+  // useLayoutEffect, PAS useEffect : la mesure doit exister avant que le
+  // navigateur ne peigne la première image.
+  //
+  // Avec useEffect, une carte qui s'ouvre était rendue une fois avec la boîte
+  // initiale (des zéros), donc `left` valait 0 — le bord GAUCHE de l'écran —
+  // avant de sauter à sa vraie place au rendu suivant. framer-motion
+  // interpolait entre les deux : la carte traversait l'écran de gauche à
+  // droite au lieu de se déplier là où elle doit être.
+  //
+  // Ici la mesure est faite et posée dans le même passage synchrone : la
+  // première image peinte porte déjà la bonne géométrie, et l'animation
+  // d'ouverture n'a plus qu'à jouer l'échelle depuis le coin haut droit.
+  useLayoutEffect(() => {
     if (!active || typeof window === 'undefined') return undefined;
 
     const measure = () => {
@@ -42,7 +58,7 @@ export function useLessonViewport(active = true) {
           top: headerHeight, left: 0, right: 0, bottom: 0,
           width: window.innerWidth,
           height: Math.max(0, window.innerHeight - headerHeight),
-          headerHeight, viewportWidth: window.innerWidth,
+          headerHeight, viewportWidth: window.innerWidth, ready: true,
         });
         return;
       }
@@ -65,7 +81,7 @@ export function useLessonViewport(active = true) {
         top, left, right, bottom,
         width: Math.max(0, window.innerWidth - left - right),
         height: Math.max(0, window.innerHeight - top - bottom),
-        headerHeight, viewportWidth: window.innerWidth,
+        headerHeight, viewportWidth: window.innerWidth, ready: true,
       });
     };
 

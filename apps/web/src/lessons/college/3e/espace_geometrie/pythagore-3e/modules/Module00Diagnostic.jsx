@@ -21,7 +21,7 @@ const QUESTIONS = [
   {
     id: 'py-d1-angle-droit',
     skill: 'triangle',
-    requires: ['triangle-rectangle'],
+    requires: ['triangle-rectangle', 'angle-droit'],
     points: 2,
     prompt: 'Comment repère-t-on un angle droit sur une figure ?',
     options: ['À la petite marque carrée', 'À sa couleur', 'C’est toujours l’angle du bas'],

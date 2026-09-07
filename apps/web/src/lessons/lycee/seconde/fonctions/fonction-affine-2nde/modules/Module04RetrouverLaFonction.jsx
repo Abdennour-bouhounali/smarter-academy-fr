@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import CoordPlane from '../../../../../common/components/CoordPlane';
@@ -11,6 +11,19 @@ import { POINTS4, fromTwoPoints, parseDec, formatDec } from '../components/affin
  * Module 4 — MANIPULATION : retrouver la fonction à partir de deux données.
  * Step 1  a par le taux entre (1 ; 5) et (4 ; 11).  Step 2  b en remontant à x = 0 (b = f(x₁) − a·x₁).
  * Step 3  la droite tracée confirme.  Step 4  lire a et b sur un graphique (escalier, axe).
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   La méthode « a par le taux, puis b en remontant à zéro » n'existait que
+ *   dans les `explain` et dans l'« À retenir » du pied, c'est-à-dire APRÈS les
+ *   quatre questions qui l'exigeaient. Les deux premières étapes ne demandent
+ *   désormais que ce que le module 2 a déjà établi (le taux, sa formule), et
+ *   la méthode complète est posée à l'instant où le calcul vient d'être fait :
+ *     étape 1  a par le taux  (`requires` : formule-taux, taux-accroissement)
+ *     étape 2  b en remontant à zéro → brique `methode-determiner-affine`
+ *     étape 3  brique `mem-deux-points`, puis la vérification sur la droite
+ *     étape 4  la lecture graphique (`requires` : methode-lire-a-b-graphique)
+ *   Aucun laboratoire ici : les deux plans sont des figures de lecture
+ *   (`CoordPlane`), il n'y avait donc rien à dégeler.
  */
 const F = fromTwoPoints(POINTS4[0], POINTS4[1]);   // a = 2, b = 3
 const RANGE = { xMin: -1, xMax: 6, yMin: -1, yMax: 13 };
@@ -31,27 +44,36 @@ export default function Module04RetrouverLaFonction() {
         <NumericQuestion above={plane(false)} prompt="Coefficient directeur a ?" expected={2} parse={parseDec} display={formatDec(2)}
           explain={<span><MathText>{'$a = \\dfrac{11 - 5}{4 - 1} = \\dfrac{6}{3} = 2$'}</MathText> — f gagne 2 par unité de x.</span>}
           explainFor={(n) => (n === 6 ? '6 est la différence des images ; divise par la différence des x (4 − 1 = 3) : a = 2.' : n === 0.5 ? 'Tu as inversé : (différence des images) ÷ (différence des x) = 6 ÷ 3 = 2.' : n === -2 ? 'Prends les différences dans le même ordre : (11 − 5) ÷ (4 − 1) = 2.' : 'a = (11 − 5) ÷ (4 − 1) = 2.')}
+          requires={['taux-accroissement', 'formule-taux']}
           solved={qa} onAnswered={() => setQa(true)} />
       ),
     },
     {
       num: 2, title: 'Puis b', subtitle: 'f(x) = 2x + b, et f(1) = 5.', done: qb,
       content: (
-        <NumericQuestion prompt="Ordonnée à l’origine b ?" expected={3} parse={parseDec} display={formatDec(3)}
-          explain={<span>5 = 2 × 1 + b, donc b = 5 − 2 = <strong>3</strong>. Vérification avec l’autre point : 2 × 4 + 3 = 11 ✓. f(x) = 2x + 3.</span>}
-          explainFor={(n) => (n === 5 ? '5 est f(1), pas f(0). Remonte d’un pas : b = 5 − 2 × 1 = 3.' : n === 7 ? 'Signe : b = 5 − 2, pas 5 + 2.' : 'f(1) = 2 × 1 + b = 5 donne b = 3.')}
-          solved={qb} onAnswered={() => setQb(true)} />
+        <div className="space-y-3">
+          <NumericQuestion prompt="Ordonnée à l’origine b ?" expected={3} parse={parseDec} display={formatDec(3)}
+            explain={<span>5 = 2 × 1 + b, donc b = 5 − 2 = <strong>3</strong>. Vérification avec l’autre point : 2 × 4 + 3 = 11 ✓. f(x) = 2x + 3.</span>}
+            explainFor={(n) => (n === 5 ? '5 est f(1), pas f(0). Remonte d’un pas : b = 5 − 2 × 1 = 3.' : n === 7 ? 'Signe : b = 5 − 2, pas 5 + 2.' : 'f(1) = 2 × 1 + b = 5 donne b = 3.')}
+            requires={['fonction-affine-ab', 'taux-accroissement']}
+            solved={qb} onAnswered={() => setQb(true)} />
+          {qb && <KnowledgeBrick id="methode-determiner-affine" variant="new" lead={<>Tu viens de faire les deux gestes dans l’ordre : le taux d’abord, la remontée à zéro ensuite. C’est toute la méthode.</>} />}
+        </div>
       ),
     },
     {
       num: 3, title: 'La droite confirme', done: q3,
       content: (
-        <TapQuestion above={plane(true)} prompt="Sur la droite de f(x) = 2x + 3, que voit-on ?"
-          options={['Elle passe par (0 ; 3) et par les deux points ; d’un point au suivant, +1 en x donne +2 en y', 'Elle passe par (3 ; 0)', 'Elle passe par (2 ; 3)', 'Elle ne passe pas par (4 ; 11)']}
-          correct={0} cols={1}
-          explain="b = 3 est l’ordonnée du point sur l’axe vertical ; l’escalier +1 → +2 est le coefficient directeur. Les deux données sont sur la droite : la fonction retrouvée est la bonne."
-          explainWrong="Regarde le point marqué b = 3 sur l’axe vertical et l’escalier +1 → +2 : c’est bien y = 2x + 3, et les deux points donnés sont dessus."
-          solved={q3} onAnswered={() => setQ3(true)} />
+        <div className="space-y-3">
+          <KnowledgeBrick id="mem-deux-points" variant="new" lead={<>La méthode en une ligne, à garder pour la suite.</>} />
+            <TapQuestion above={plane(true)} prompt="Sur la droite de f(x) = 2x + 3, que voit-on ?"
+            options={['Elle passe par (0 ; 3) et par les deux points ; d’un point au suivant, +1 en x donne +2 en y', 'Elle passe par (3 ; 0)', 'Elle passe par (2 ; 3)', 'Elle ne passe pas par (4 ; 11)']}
+            correct={0} cols={1}
+            explain="b = 3 est l’ordonnée du point sur l’axe vertical ; l’escalier +1 → +2 est le coefficient directeur. Les deux données sont sur la droite : la fonction retrouvée est la bonne."
+            explainWrong="Regarde le point marqué b = 3 sur l’axe vertical et l’escalier +1 → +2 : c’est bien y = 2x + 3, et les deux points donnés sont dessus."
+            requires={['methode-determiner-affine', 'mem-deux-points']}
+            solved={q3} onAnswered={() => setQ3(true)} />
+        </div>
       ),
     },
     {
@@ -65,6 +87,7 @@ export default function Module04RetrouverLaFonction() {
             { id: 'r4', label: 'g est', options: ['décroissante', 'croissante'], correct: 0, correction: 'a < 0' },
           ]}
           feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Sur un graphique : b là où la droite coupe l’axe vertical, a par un escalier (variation de y ÷ variation de x, signe compris).</Feedback>}
+          requires={['methode-lire-a-b-graphique', 'regle-signe-a-variations', 'methode-determiner-affine']}
           solved={q4} onAnswered={() => setQ4(true)} />
       ),
     },

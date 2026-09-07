@@ -28,7 +28,7 @@ const QUESTIONS = [
     id: 'q1-lire-fraction',
     skill: 'fractions',
     points: 2,
-    requires: ['quotient'],
+    requires: ['quotient', 'numerateur', 'denominateur'],
     prompt: (
       <>
         Une pizza est partagée en 4 parts égales ; on en prend 3. Quelle fraction de la pizza a-t-on
@@ -45,7 +45,7 @@ const QUESTIONS = [
     id: 'q2-fraction-egale',
     skill: 'fractions',
     points: 2,
-    requires: ['quotient'],
+    requires: ['quotient', 'numerateur', 'denominateur'],
     prompt: (
       <>
         Quelle fraction est égale à <MathText>{'$\\frac{1}{2}$'}</MathText> ?

@@ -59,6 +59,22 @@ export const LESSON_CONFIG = {
       'La résolution d’inéquations (leçon « Équations et inéquations »)',
     ],
   },
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module se termine sur l'état courant de la carte, et le test final en
+  // affiche la version complète. Aucun module « À retenir » n'est attendu
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes venues du
+  // collège et toutes diagnostiquées par le module 0 : comparer des relatifs
+  // et des décimaux, lire une inégalité stricte ou large, lire l'abscisse
+  // d'un point sur une droite graduée. Cette leçon est la PREMIÈRE de la
+  // 2nde sur ce chapitre : elle enseigne elle-même tout le reste, y compris
+  // le vocabulaire d'ensembles et d'intervalles que « Fonctions » (2nde)
+  // suppose déjà acquis.
+  priorKnowledge: [
+    'nombres-relatifs', 'ordre-nombres', 'lecture-inegalite', 'abscisse',
+  ],
   modules: [
     {
       id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`,

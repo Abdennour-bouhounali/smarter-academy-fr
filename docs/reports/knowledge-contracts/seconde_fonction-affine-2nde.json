@@ -2,37 +2,71 @@
   "lesson": "fonction-affine-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "fonction",
+    "notation-fx",
+    "fonction-affine",
+    "representation-graphique",
+    "coefficient-directeur",
+    "ordonnee-origine",
+    "pente",
+    "origine-repere"
+  ],
   "conceptsIntroduced": [
     {
       "id": "fonction-affine-ab",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module01LeReservoir.jsx",
+        "line": 69,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "taux-accroissement",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module02LeTauxDAccroissement.jsx",
+        "line": 61,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "formule-taux",
       "type": "formules",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module02LeTauxDAccroissement.jsx",
+        "line": 118,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-signe-a-variations",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module03CroissanteOuDecroissante.jsx",
+        "line": 48,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-signe-affine-zero",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module05SigneEquationsInequations.jsx",
+        "line": 51,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -40,7 +74,12 @@
       "id": "vocab-coefficient-ordonnee",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module01LeReservoir.jsx",
+        "line": 98,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -48,37 +87,67 @@
       "id": "methode-reconnaitre-affine-table",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module02LeTauxDAccroissement.jsx",
+        "line": 77,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-lire-a-b-graphique",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module03CroissanteOuDecroissante.jsx",
+        "line": 75,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-determiner-affine",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module04RetrouverLaFonction.jsx",
+        "line": 60,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-equation-affine",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module05SigneEquationsInequations.jsx",
+        "line": 38,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-inequation-affine",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module05SigneEquationsInequations.jsx",
+        "line": 79,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-modeliser-affine",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module06AtelierModeliser.jsx",
+        "line": 31,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -86,13 +155,23 @@
       "id": "mem-a-taux-b-depart",
       "type": "memoriser",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module01LeReservoir.jsx",
+        "line": 110,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-deux-points",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module04RetrouverLaFonction.jsx",
+        "line": 68,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -102,9 +181,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module00Diagnostic.jsx",
-      "line": 8,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "fonction",
+        "notation-fx"
+      ],
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "notation-fx": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -114,9 +199,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module00Diagnostic.jsx",
-      "line": 9,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "fonction",
+        "fonction-affine"
+      ],
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "fonction-affine": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -126,9 +217,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module00Diagnostic.jsx",
-      "line": 10,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 22,
+      "requires": [
+        "fonction-affine",
+        "representation-graphique"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine": "prior",
+        "representation-graphique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -138,9 +235,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module00Diagnostic.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 23,
+      "requires": [
+        "coefficient-directeur",
+        "ordonnee-origine",
+        "origine-repere"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-directeur": "prior",
+        "ordonnee-origine": "prior",
+        "origine-repere": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,9 +255,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module00Diagnostic.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "pente"
+      ],
+      "prerequisiteStatus": {
+        "pente": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,9 +271,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module01LeReservoir.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 111,
+      "requires": [
+        "fonction-affine-ab",
+        "vocab-coefficient-ordonnee",
+        "mem-a-taux-b-depart"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine-ab": "established@M1",
+        "vocab-coefficient-ordonnee": "established@M1",
+        "mem-a-taux-b-depart": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +291,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module02LeTauxDAccroissement.jsx",
-      "line": 66,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 90,
+      "requires": [
+        "taux-accroissement",
+        "methode-reconnaitre-affine-table"
+      ],
+      "prerequisiteStatus": {
+        "taux-accroissement": "established@M2",
+        "methode-reconnaitre-affine-table": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +309,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module02LeTauxDAccroissement.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 119,
+      "requires": [
+        "taux-accroissement",
+        "formule-taux"
+      ],
+      "prerequisiteStatus": {
+        "taux-accroissement": "established@M2",
+        "formule-taux": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,12 +327,14 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module03CroissanteOuDecroissante.jsx",
-      "line": 43,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [
-        "ensemble-reels"
+      "line": 59,
+      "requires": [
+        "regle-signe-a-variations"
       ],
+      "prerequisiteStatus": {
+        "regle-signe-a-variations": "established@M3"
+      },
+      "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
@@ -212,9 +343,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module03CroissanteOuDecroissante.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 76,
+      "requires": [
+        "methode-lire-a-b-graphique",
+        "regle-signe-a-variations"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-a-b-graphique": "established@M3",
+        "regle-signe-a-variations": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -224,9 +361,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module04RetrouverLaFonction.jsx",
-      "line": 31,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 44,
+      "requires": [
+        "taux-accroissement",
+        "formule-taux"
+      ],
+      "prerequisiteStatus": {
+        "taux-accroissement": "established@M2",
+        "formule-taux": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -236,9 +379,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module04RetrouverLaFonction.jsx",
-      "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 55,
+      "requires": [
+        "fonction-affine-ab",
+        "taux-accroissement"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine-ab": "established@M1",
+        "taux-accroissement": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -248,9 +397,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module04RetrouverLaFonction.jsx",
-      "line": 49,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "methode-determiner-affine",
+        "mem-deux-points"
+      ],
+      "prerequisiteStatus": {
+        "methode-determiner-affine": "established@M4",
+        "mem-deux-points": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -260,9 +415,17 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module04RetrouverLaFonction.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 82,
+      "requires": [
+        "methode-lire-a-b-graphique",
+        "regle-signe-a-variations",
+        "methode-determiner-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-a-b-graphique": "established@M3",
+        "regle-signe-a-variations": "established@M3",
+        "methode-determiner-affine": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -272,9 +435,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module05SigneEquationsInequations.jsx",
-      "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 39,
+      "requires": [
+        "fonction-affine-ab",
+        "methode-equation-affine"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine-ab": "established@M1",
+        "methode-equation-affine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -284,9 +453,13 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module05SigneEquationsInequations.jsx",
-      "line": 32,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 52,
+      "requires": [
+        "regle-signe-affine-zero"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-affine-zero": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -296,9 +469,13 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module05SigneEquationsInequations.jsx",
-      "line": 46,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 68,
+      "requires": [
+        "methode-equation-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-equation-affine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -308,9 +485,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module05SigneEquationsInequations.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 80,
+      "requires": [
+        "methode-inequation-affine",
+        "methode-equation-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-inequation-affine": "established@M5",
+        "methode-equation-affine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -320,9 +503,17 @@
       "step": 1,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module06AtelierModeliser.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 32,
+      "requires": [
+        "methode-modeliser-affine",
+        "fonction-affine-ab",
+        "methode-inequation-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser-affine": "established@M6",
+        "fonction-affine-ab": "established@M1",
+        "methode-inequation-affine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -332,9 +523,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module06AtelierModeliser.jsx",
-      "line": 29,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 48,
+      "requires": [
+        "methode-modeliser-affine",
+        "methode-determiner-affine",
+        "regle-signe-a-variations"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser-affine": "established@M6",
+        "methode-determiner-affine": "established@M4",
+        "regle-signe-a-variations": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -344,9 +543,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module06AtelierModeliser.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 61,
+      "requires": [
+        "methode-modeliser-affine",
+        "methode-equation-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser-affine": "established@M6",
+        "methode-equation-affine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -356,9 +561,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module06AtelierModeliser.jsx",
-      "line": 46,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "methode-modeliser-affine",
+        "methode-inequation-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser-affine": "established@M6",
+        "methode-inequation-affine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -368,9 +579,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 9,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 19,
+      "requires": [
+        "fonction-affine-ab",
+        "vocab-coefficient-ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine-ab": "established@M1",
+        "vocab-coefficient-ordonnee": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -380,9 +597,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 10,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "fonction-affine-ab",
+        "mem-a-taux-b-depart",
+        "methode-modeliser-affine"
+      ],
+      "prerequisiteStatus": {
+        "fonction-affine-ab": "established@M1",
+        "mem-a-taux-b-depart": "established@M1",
+        "methode-modeliser-affine": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -392,9 +617,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "taux-accroissement",
+        "formule-taux"
+      ],
+      "prerequisiteStatus": {
+        "taux-accroissement": "established@M2",
+        "formule-taux": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -404,9 +635,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 22,
+      "requires": [
+        "taux-accroissement",
+        "methode-reconnaitre-affine-table"
+      ],
+      "prerequisiteStatus": {
+        "taux-accroissement": "established@M2",
+        "methode-reconnaitre-affine-table": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -416,9 +653,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 23,
+      "requires": [
+        "regle-signe-a-variations"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-a-variations": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -428,9 +669,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "methode-lire-a-b-graphique",
+        "methode-determiner-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-a-b-graphique": "established@M3",
+        "methode-determiner-affine": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -440,9 +687,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 25,
+      "requires": [
+        "methode-determiner-affine",
+        "mem-deux-points"
+      ],
+      "prerequisiteStatus": {
+        "methode-determiner-affine": "established@M4",
+        "mem-deux-points": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -452,9 +705,13 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 26,
+      "requires": [
+        "regle-signe-affine-zero"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-affine-zero": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -464,9 +721,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 27,
+      "requires": [
+        "methode-modeliser-affine",
+        "methode-equation-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser-affine": "established@M6",
+        "methode-equation-affine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -476,193 +739,18 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module07MissionFinale.jsx",
-      "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 28,
+      "requires": [
+        "methode-inequation-affine",
+        "regle-signe-affine-zero"
+      ],
+      "prerequisiteStatus": {
+        "methode-inequation-affine": "established@M5",
+        "regle-signe-affine-zero": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'fonction-affine-ab' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 11,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-coefficient-ordonnee' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 26,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-a-taux-b-depart' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 31,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'taux-accroissement' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 38,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-reconnaitre-affine-table' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 49,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'formule-taux' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 54,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-signe-a-variations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 61,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-lire-a-b-graphique' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 77,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-determiner-affine' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 84,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-deux-points' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 98,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-signe-affine-zero' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 105,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-equation-affine' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 110,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-inequation-affine' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 115,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-modeliser-affine' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/knowledge.jsx",
-      "line": 128,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "I_FIRST_IN_JIT",
-      "severity": "info",
-      "message": "« ensemble ℝ » first appears in a just-in-time slot (q.intro)",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde/modules/Module03CroissanteOuDecroissante.jsx",
-      "line": 43,
-      "module": 3,
-      "step": 2,
-      "term": "ensemble-reels",
-      "questionId": "M03-S2-Q1",
-      "position": 90
-    }
-  ]
+  "findings": []
 }

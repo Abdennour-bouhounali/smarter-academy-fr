@@ -70,7 +70,7 @@ const QUESTIONS = [
   },
   {
     id: 'q4-ordre',
-    requires: ['encadrer-nombre'],
+    requires: ['encadrement'],
     skill: 'calcul',
     points: 2,
     prompt: (

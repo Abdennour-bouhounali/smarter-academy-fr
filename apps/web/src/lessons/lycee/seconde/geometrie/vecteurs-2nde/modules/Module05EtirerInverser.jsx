@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ScaleLab from '../components/ScaleLab';
@@ -79,7 +80,17 @@ export default function Module05EtirerInverser() {
               <strong>direction</strong> mais retourne le sens ; k = 0 laisse le vecteur nul. Dans tous les
               cas, k·<VecName>u</VecName> = (k × {formatNum(U.x)} ; k × {formatNum(U.y)}).
             </Feedback>
-          ) : (
+          ) : null}
+          {/* k = 2, −1 puis 0 viennent d'être visités et regardés : la règle
+              du produit par un réel est ce que la flèche vient de montrer. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="regle-produit-reel"
+              variant="new"
+              lead={<>Tu viens de passer par k = 2, k = −1 et k = 0 sur la même flèche.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Encore à visiter : {remaining.map((g) => `k = ${formatNum(g)}`).join(', ')}.</Feedback>
           )}
         </div>
@@ -98,6 +109,7 @@ export default function Module05EtirerInverser() {
             { id: 'k3', label: '0,5·u', options: [formatVec(scale(U, 0.5)), '(1 ; 1)', '(2,5 ; 1,5)'], correct: 0, correction: '(0,5 × 2 ; 0,5 × 1) = (1 ; 0,5) : deux fois plus court, même sens.' },
             { id: 'k4', label: '−3·u', options: [formatVec(scale(U, -3)), '(−6 ; 3)', '(6 ; 3)'], correct: 0, correction: 'Trois fois plus long ET retourné : (−6 ; −3).' },
           ]}
+          requires={['regle-produit-reel']}
           feedback={({ allRight, nCorrect, total }) => (
             <Feedback tone={allRight ? 'ok' : 'info'}>
               {allRight ? 'k multiplie chaque coordonnée, signe compris.' : `${nCorrect} sur ${total}. k·(x ; y) = (k·x ; k·y) : les deux coordonnées, avec le signe de k.`}
@@ -145,7 +157,17 @@ export default function Module05EtirerInverser() {
               <strong>colinéaires</strong>. Deux vecteurs non nuls sont colinéaires exactement quand
               l’un est un multiple de l’autre.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* v vient d'être réglé pour être un multiple de u, et l'élève a
+              vu les deux flèches s'aligner : la colinéarité est ce résultat. */}
+          {done3 && (
+            <KnowledgeBrick
+              id="regle-colineaire"
+              variant="new"
+              lead={<>Tu viens de régler v pour qu’il ait la même direction que u.</>}
+            />
+          )}
+          {!done3 && (
             <Feedback tone="info">Un multiple de (2 ; 1) : (4 ; 2), (−2 ; −1), (6 ; 3)… Les deux coordonnées sont multipliées par le même nombre.</Feedback>
           )}
         </div>
@@ -161,6 +183,7 @@ export default function Module05EtirerInverser() {
           options={['(2 ; 3) et (−4 ; −6)', '(2 ; 3) et (3 ; 2)', '(2 ; 3) et (4 ; 5)', '(1 ; 0) et (0 ; 1)']}
           correct={0}
           cols={2}
+          requires={['regle-colineaire', 'regle-produit-reel']}
           explain="(−4 ; −6) = −2 × (2 ; 3) : même direction, sens contraire — colinéaires. Les autres ne sont pas des multiples : (3 ; 2) échange les coordonnées, (4 ; 5) double la première mais pas la seconde, et i et j sont perpendiculaires."
           explainWrong="Cherche un nombre k qui multiplie LES DEUX coordonnées : seul (−4 ; −6) = −2 × (2 ; 3) convient."
           solved={q4}
@@ -190,14 +213,7 @@ export default function Module05EtirerInverser() {
         ),
       }}
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> k·<VecName>u</VecName> a pour coordonnées (k·x ; k·y) : même direction
-          que <VecName>u</VecName>, longueur multipliée par |k|, même sens si k &gt; 0, sens contraire si
-          k &lt; 0, vecteur nul si k = 0. Deux vecteurs non nuls sont <strong>colinéaires</strong> quand
-          l’un est un multiple de l’autre — ils ont la même direction.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={5} />}
     />
   );
 }

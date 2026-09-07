@@ -22,6 +22,7 @@ import { LESSON_CONFIG } from '../lesson.config';
 const EPREUVES = [
   {
     id: 'pr-e1',
+    requires: ['positions-trois-cas', 'critere-equations-reduites', 'methode-interpretation-graphique'],
     skill: 'labo',
     title: 'Hors du dessin',
     prompt: 'Sur une figure, deux droites (d₁) : y = 0,5x + 2 et (d₂) : y = 0,6x − 4 ne se coupent pas dans le cadre. Que peut-on affirmer ?',
@@ -37,6 +38,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e2',
+    requires: ['positions-trois-cas', 'mem-trois-comptes', 'vocab-secantes-paralleles-confondues'],
     skill: 'labo',
     title: 'Points communs',
     prompt: 'Deux droites distinctes du plan ont exactement…',
@@ -47,6 +49,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e3',
+    requires: ['critere-vecteurs-directeurs', 'formule-det-directions', 'methode-comparer-directions'],
     skill: 'direction',
     title: 'Vecteurs directeurs',
     prompt: '(d₁) a pour vecteur directeur u(3 ; −2) et (d₂) v(−6 ; 4). Position relative ?',
@@ -57,6 +60,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e4',
+    requires: ['critere-vecteurs-directeurs', 'critere-pentes', 'methode-comparer-directions'],
     skill: 'direction',
     title: 'La verticale',
     prompt: '(d₁) : x = 2 et (d₂) : y = 3x + 1. Comment décider de leur position relative ?',
@@ -72,16 +76,18 @@ const EPREUVES = [
   },
   {
     id: 'pr-e5',
+    requires: ['critere-equations-reduites', 'mem-m-decide-p-departage', 'vocab-secantes-paralleles-confondues'],
     skill: 'equations',
     title: 'Même pente ?',
     prompt: 'y = −2x + 5 et y = −2x − 1. Position relative ?',
-    options: ['Strictement parallèles', 'Confondues', 'Sécantes', 'Perpendiculaires'],
+    options: ['Strictement parallèles', 'Confondues', 'Sécantes', 'Parallèles et confondues à la fois'],
     cols: 2,
     explain: 'Même coefficient directeur (−2) : même direction. Ordonnées à l’origine différentes (5 et −1) : pas la même droite. Strictement parallèles.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_positions-relatives-droites-2nde_P4', 'seconde_positions-relatives-droites-2nde_P1'] },
   },
   {
     id: 'pr-e6',
+    requires: ['critere-equations-cartesiennes', 'methode-ramener-meme-ecriture', 'critere-equations-reduites'],
     skill: 'equations',
     title: 'Deux écritures',
     prompt: '3x − y + 2 = 0 et y = 3x + 2. Position relative ?',
@@ -92,6 +98,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e7',
+    requires: ['point-intersection-systeme', 'methode-resoudre-systeme', 'formule-abscisse-intersection'],
     skill: 'intersection',
     title: 'Le point commun',
     prompt: 'y = 2x − 1 et y = −x + 5. Coordonnées du point d’intersection ?',
@@ -102,6 +109,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e8',
+    requires: ['regle-nombre-solutions', 'point-intersection-systeme', 'mem-intersection-systeme'],
     skill: 'intersection',
     title: 'Le système',
     prompt: 'Un système de deux équations de droites conduit à 4 = 4. Combien de solutions ?',
@@ -112,6 +120,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e9',
+    requires: ['methode-parallele-par-un-point', 'critere-equations-reduites'],
     skill: 'probleme',
     title: 'La parallèle',
     prompt: 'Équation de la droite parallèle à y = −3x + 1 passant par E(2 ; −1) ?',
@@ -122,6 +131,7 @@ const EPREUVES = [
   },
   {
     id: 'pr-e10',
+    requires: ['methode-ab-cd', 'critere-vecteurs-directeurs', 'regle-direction-position'],
     skill: 'probleme',
     title: 'Quatre points',
     prompt: 'A(1 ; 1), B(3 ; 2), C(0 ; 4), D(4 ; 6). Les droites (AB) et (CD) sont…',

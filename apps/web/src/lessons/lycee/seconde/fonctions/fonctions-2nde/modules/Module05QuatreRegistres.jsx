@@ -153,7 +153,7 @@ export default function Module05QuatreRegistres() {
         <div className="space-y-3">
           <ValueTable
             columns={[{ id: 'a', label: <MathText>{'$2x + 10$'}</MathText>, fn: (x) => 2 * x + 10 }, { id: 'b', label: <MathText>{'$2(x + 5)$'}</MathText>, fn: (x) => 2 * (x + 5) }]}
-            xs={[0, 1, 2, 3, 5, 10]} tested={tested} disabled={q4}
+            xs={[0, 1, 2, 3, 5, 10]} tested={tested}
             onTest={(x) => { const s = new Set(tested); s.add(x); setTested(s); if (s.size === 3) kit.react(true); }} />
           {tested.size >= 3 ? (
             <TapQuestion prompt="2x + 10 et 2(x + 5) définissent-elles la même fonction ?"

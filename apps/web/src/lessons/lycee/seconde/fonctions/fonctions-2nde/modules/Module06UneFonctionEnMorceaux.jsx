@@ -33,6 +33,11 @@ import { POOL, POOL_RANGE, antecedentsOf, formatDec } from '../components/foncti
  *   Les intervalles eux-mêmes sont un acquis du chapitre « Ensembles et
  *   intervalles » (`priorKnowledge`) : ce que ce module ajoute, c'est leur
  *   RÉUNION comme ensemble de définition.
+ *
+ * MANIPULATION JAMAIS GELÉE. La sonde restait `disabled` une fois l'étape
+ * réussie : l'élève ne pouvait plus rejouer le phénomène qu'il venait de
+ * comprendre. Elle reste vivante ; les deux sondes restent vivantes,
+ * y compris pour retraverser le trou de l'ensemble de définition.
  */
 const PROBE = { f: POOL, range: POOL_RANGE, unit: 300 / 22, unitY: 2.4, xStep: 1, yStep: 10, axisLabels: { x: 'h', y: 'n' }, xUnit: ' h', yUnit: ' nageurs', labelEvery: 2 };
 const N50 = antecedentsOf(POOL, 50, POOL_RANGE).length;
@@ -56,7 +61,7 @@ export default function Module06UneFonctionEnMorceaux() {
       done: done1,
       content: (kit) => (
         <div className="space-y-3">
-          <FunctionProbe {...PROBE} mode="x" value={x} disabled={done1}
+          <FunctionProbe {...PROBE} mode="x" value={x}
             onChange={(v) => { setX(v); if (v === 10 && !seen10) { setSeen10(true); kit.react(true); } if (v > 12 && v < 14 && !seen13) { setSeen13(true); kit.react(true); } }} />
           {done1 ? (
             <>
@@ -131,7 +136,7 @@ export default function Module06UneFonctionEnMorceaux() {
       done: seen50,
       content: (kit) => (
         <div className="space-y-3">
-          <FunctionProbe {...PROBE} mode={mode} onModeChange={setMode} value={mode === 'x' ? x : yv} disabled={seen50}
+          <FunctionProbe {...PROBE} mode={mode} onModeChange={setMode} value={mode === 'x' ? x : yv}
             onChange={(v) => { if (mode === 'x') setX(v); else { setYv(v); if (v === 50 && !seen50) { setSeen50(true); kit.react(true); } } }} />
           {seen50 ? (
             <Feedback tone="ok">

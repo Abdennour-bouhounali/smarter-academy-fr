@@ -53,7 +53,7 @@ export default function Module03LeTableauDeValeurs() {
       done: q1,
       content: (kit) => (
         <div className="space-y-3">
-          <ValueTable columns={COLUMNS} xs={[1, 2, 3, 4, 5, 6]} tested={tested} compare={false} disabled={q1}
+          <ValueTable columns={COLUMNS} xs={[1, 2, 3, 4, 5, 6]} tested={tested} compare={false}
             onTest={(x) => { const s = new Set(tested); s.add(x); setTested(s); if (s.size === 3) kit.react(true); }}
             caption="Une ligne par valeur testée : la bonne formule coïncide avec la machine sur TOUTES les lignes." />
           {enough ? (

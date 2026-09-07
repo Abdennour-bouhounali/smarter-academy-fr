@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DistanceLine from '../components/DistanceLine';
@@ -63,6 +64,25 @@ export default function Module01DeuxBateaux() {
               ) : (
                 <Feedback tone="info">Bateau au km {x} : distance au phare {abs(x)} km. {visited.has(-4) ? 'Maintenant le km +4.' : visited.has(4) ? 'Maintenant le km −4.' : 'Va au km −4, puis au km +4.'}</Feedback>
               )}
+              {/* Le geste vient de montrer que la barre est une LONGUEUR, la
+                  même des deux côtés du phare : c'est l'instant où « distance
+                  à 0 » et « jamais négative » ont un sens. */}
+              {exploreDone && (
+                <KnowledgeBrick
+                  id="valeur-absolue-distance-zero"
+                  variant="new"
+                  compact
+                  lead={<>Tu viens de mesurer la barre au km −4 <strong>et</strong> au km +4 : même longueur, <strong>4 km</strong>.</>}
+                />
+              )}
+              {exploreDone && (
+                <KnowledgeBrick
+                  id="mem-valeur-absolue-positive"
+                  variant="new"
+                  compact
+                  lead={<>Une barre ne mesure jamais moins que 0.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -77,6 +97,16 @@ export default function Module01DeuxBateaux() {
               ) : (
                 <Feedback tone="info">{fives.size === 0 ? 'Cherche une position où la barre mesure 5 km.' : `Une position trouvée (${[...fives][0]}). Il y en a une autre, de l’autre côté du phare.`}</Feedback>
               )}
+              {/* Les deux positions trouvées (−5 et 5) viennent de montrer la
+                  règle ; la question de l'étape 3 va l'exiger. */}
+              {fivesDone && (
+                <KnowledgeBrick
+                  id="regle-opposes-meme-distance"
+                  variant="new"
+                  compact
+                  lead={<>−5 et 5 : deux positions <strong>opposées</strong>, une seule et même distance au phare.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -88,6 +118,7 @@ export default function Module01DeuxBateaux() {
               <TapQuestion
                 prompt="Combien vaut |−7| ?"
                 options={['−7', '7', '0']} cols={3} correct={1}
+                requires={['valeur-absolue-distance-zero', 'mem-valeur-absolue-positive', 'nombres-relatifs']}
                 explain="|−7| est la distance de −7 à 0 : 7 km de barre. Une valeur absolue est une longueur, jamais négative."
                 explainWrong="|−7| est une DISTANCE : celle de −7 au phare. La barre mesure 7, pas −7. Une valeur absolue n’est jamais négative."
                 solved={readDone} onAnswered={() => setReadDone(true)} />
@@ -95,7 +126,11 @@ export default function Module01DeuxBateaux() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">|x| est la longueur de la barre entre x et 0. Mais comment la CALCULER sans dessiner, pour n’importe quel nombre — même −12,75 ? C’est le module suivant.</Feedback>}
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          Mais comment la CALCULER sans dessiner ? C’est le module suivant.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

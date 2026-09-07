@@ -5,50 +5,90 @@
   "prerequisites": [
     "intervalle",
     "intervalle-crochets",
-    "appartient"
+    "appartient",
+    "notation-fx",
+    "fonction",
+    "image",
+    "abscisse",
+    "ordonnee"
   ],
   "conceptsIntroduced": [
     {
       "id": "signe-position-courbe",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module01AuDessusOuEnDessous.jsx",
+        "line": 72,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-signe-constant-entre-zeros",
       "type": "regles",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module01AuDessusOuEnDessous.jsx",
+        "line": 97,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "tableau-de-signes",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module02LesZerosEtLeTableau.jsx",
+        "line": 64,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-signe-affine",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module03LeSigneDUneFonctionAffine.jsx",
+        "line": 81,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "formule-zero-affine",
       "type": "formules",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module03LeSigneDUneFonctionAffine.jsx",
+        "line": 60,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-signe-produit",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module04ProduitEtQuotient.jsx",
+        "line": 52,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-signe-quotient",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module04ProduitEtQuotient.jsx",
+        "line": 74,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -56,13 +96,23 @@
       "id": "zero-fonction",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module01AuDessusOuEnDessous.jsx",
+        "line": 92,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "vocab-solutions-intervalles",
       "type": "vocabulaire",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module05ResoudreAvecLeSigne.jsx",
+        "line": 55,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -70,37 +120,67 @@
       "id": "methode-construire-tableau",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module02LesZerosEtLeTableau.jsx",
+        "line": 69,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-lire-tableau",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module02LesZerosEtLeTableau.jsx",
+        "line": 86,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-tableau-produit-quotient",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module04ProduitEtQuotient.jsx",
+        "line": 79,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-resoudre-par-le-signe",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module05ResoudreAvecLeSigne.jsx",
+        "line": 37,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-verifier-graphiquement",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module05ResoudreAvecLeSigne.jsx",
+        "line": 86,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-modeliser-signe",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module06AtelierGelEtBenefice.jsx",
+        "line": 28,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -108,13 +188,23 @@
       "id": "mem-au-dessus-en-dessous",
       "type": "memoriser",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module01AuDessusOuEnDessous.jsx",
+        "line": 126,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-signe-de-a",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module03LeSigneDUneFonctionAffine.jsx",
+        "line": 86,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -124,9 +214,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "fonction",
+        "notation-fx",
+        "image"
+      ],
+      "prerequisiteStatus": {
+        "fonction": "prior",
+        "notation-fx": "prior",
+        "image": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -136,9 +234,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 22,
+      "requires": [
+        "abscisse",
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "ordonnee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -148,8 +252,8 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 16,
-      "requires": null,
+      "line": 23,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -160,8 +264,8 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 17,
-      "requires": null,
+      "line": 24,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -172,8 +276,8 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 18,
-      "requires": null,
+      "line": 25,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -184,7 +288,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module00Diagnostic.jsx",
-      "line": 19,
+      "line": 26,
       "requires": [
         "intervalle",
         "intervalle-crochets",
@@ -204,9 +308,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module01AuDessusOuEnDessous.jsx",
-      "line": 73,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 113,
+      "requires": [
+        "signe-position-courbe",
+        "zero-fonction",
+        "regle-signe-constant-entre-zeros"
+      ],
+      "prerequisiteStatus": {
+        "signe-position-courbe": "established@M1",
+        "zero-fonction": "established@M1",
+        "regle-signe-constant-entre-zeros": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -216,9 +328,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module01AuDessusOuEnDessous.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 131,
+      "requires": [
+        "signe-position-courbe",
+        "mem-au-dessus-en-dessous"
+      ],
+      "prerequisiteStatus": {
+        "signe-position-courbe": "established@M1",
+        "mem-au-dessus-en-dessous": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -228,9 +346,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module02LesZerosEtLeTableau.jsx",
-      "line": 32,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 43,
+      "requires": [
+        "zero-fonction",
+        "signe-position-courbe"
+      ],
+      "prerequisiteStatus": {
+        "zero-fonction": "established@M1",
+        "signe-position-courbe": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -240,9 +364,23 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module02LesZerosEtLeTableau.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 91,
+      "requires": [
+        "tableau-de-signes",
+        "methode-lire-tableau",
+        "zero-fonction",
+        "intervalle",
+        "intervalle-crochets",
+        "appartient"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-signes": "established@M2",
+        "methode-lire-tableau": "established@M2",
+        "zero-fonction": "established@M1",
+        "intervalle": "prior",
+        "intervalle-crochets": "prior",
+        "appartient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -252,9 +390,21 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module02LesZerosEtLeTableau.jsx",
-      "line": 74,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 107,
+      "requires": [
+        "tableau-de-signes",
+        "methode-lire-tableau",
+        "zero-fonction",
+        "signe-position-courbe",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-signes": "established@M2",
+        "methode-lire-tableau": "established@M2",
+        "zero-fonction": "established@M1",
+        "signe-position-courbe": "established@M1",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -264,9 +414,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module03LeSigneDUneFonctionAffine.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 102,
+      "requires": [
+        "formule-zero-affine",
+        "regle-signe-affine",
+        "mem-signe-de-a",
+        "tableau-de-signes"
+      ],
+      "prerequisiteStatus": {
+        "formule-zero-affine": "established@M3",
+        "regle-signe-affine": "established@M3",
+        "mem-signe-de-a": "established@M3",
+        "tableau-de-signes": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -276,9 +436,19 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module03LeSigneDUneFonctionAffine.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 114,
+      "requires": [
+        "formule-zero-affine",
+        "regle-signe-affine",
+        "mem-signe-de-a",
+        "zero-fonction"
+      ],
+      "prerequisiteStatus": {
+        "formule-zero-affine": "established@M3",
+        "regle-signe-affine": "established@M3",
+        "mem-signe-de-a": "established@M3",
+        "zero-fonction": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -288,9 +458,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module04ProduitEtQuotient.jsx",
-      "line": 64,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "regle-signe-quotient",
+        "zero-fonction",
+        "tableau-de-signes"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-quotient": "established@M4",
+        "zero-fonction": "established@M1",
+        "tableau-de-signes": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -300,9 +478,19 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module04ProduitEtQuotient.jsx",
-      "line": 75,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 107,
+      "requires": [
+        "regle-signe-produit",
+        "regle-signe-quotient",
+        "methode-tableau-produit-quotient",
+        "formule-zero-affine"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-produit": "established@M4",
+        "regle-signe-quotient": "established@M4",
+        "methode-tableau-produit-quotient": "established@M4",
+        "formule-zero-affine": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -312,9 +500,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module05ResoudreAvecLeSigne.jsx",
-      "line": 25,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 42,
+      "requires": [
+        "methode-resoudre-par-le-signe",
+        "zero-fonction",
+        "tableau-de-signes"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-par-le-signe": "established@M5",
+        "zero-fonction": "established@M1",
+        "tableau-de-signes": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -324,9 +520,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module05ResoudreAvecLeSigne.jsx",
-      "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 60,
+      "requires": [
+        "methode-resoudre-par-le-signe",
+        "vocab-solutions-intervalles",
+        "methode-lire-tableau",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-par-le-signe": "established@M5",
+        "vocab-solutions-intervalles": "established@M5",
+        "methode-lire-tableau": "established@M2",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -336,9 +542,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module05ResoudreAvecLeSigne.jsx",
-      "line": 46,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 73,
+      "requires": [
+        "methode-resoudre-par-le-signe",
+        "vocab-solutions-intervalles",
+        "zero-fonction",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-par-le-signe": "established@M5",
+        "vocab-solutions-intervalles": "established@M5",
+        "zero-fonction": "established@M1",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -348,9 +564,19 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module05ResoudreAvecLeSigne.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 91,
+      "requires": [
+        "methode-resoudre-par-le-signe",
+        "methode-verifier-graphiquement",
+        "vocab-solutions-intervalles",
+        "regle-signe-quotient"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-par-le-signe": "established@M5",
+        "methode-verifier-graphiquement": "established@M5",
+        "vocab-solutions-intervalles": "established@M5",
+        "regle-signe-quotient": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -360,9 +586,19 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module06AtelierGelEtBenefice.jsx",
-      "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 33,
+      "requires": [
+        "methode-modeliser-signe",
+        "methode-resoudre-par-le-signe",
+        "vocab-solutions-intervalles",
+        "regle-signe-produit"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser-signe": "established@M6",
+        "methode-resoudre-par-le-signe": "established@M5",
+        "vocab-solutions-intervalles": "established@M5",
+        "regle-signe-produit": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -372,9 +608,19 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module06AtelierGelEtBenefice.jsx",
-      "line": 28,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "methode-modeliser-signe",
+        "regle-signe-produit",
+        "methode-resoudre-par-le-signe",
+        "formule-zero-affine"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser-signe": "established@M6",
+        "regle-signe-produit": "established@M4",
+        "methode-resoudre-par-le-signe": "established@M5",
+        "formule-zero-affine": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -384,9 +630,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module06AtelierGelEtBenefice.jsx",
-      "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 61,
+      "requires": [
+        "regle-signe-quotient",
+        "methode-tableau-produit-quotient",
+        "methode-resoudre-par-le-signe",
+        "vocab-solutions-intervalles"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-quotient": "established@M4",
+        "methode-tableau-produit-quotient": "established@M4",
+        "methode-resoudre-par-le-signe": "established@M5",
+        "vocab-solutions-intervalles": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -396,9 +652,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 9,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 18,
+      "requires": [
+        "signe-position-courbe",
+        "mem-au-dessus-en-dessous",
+        "zero-fonction"
+      ],
+      "prerequisiteStatus": {
+        "signe-position-courbe": "established@M1",
+        "mem-au-dessus-en-dessous": "established@M1",
+        "zero-fonction": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -408,9 +672,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 10,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 19,
+      "requires": [
+        "zero-fonction",
+        "signe-position-courbe"
+      ],
+      "prerequisiteStatus": {
+        "zero-fonction": "established@M1",
+        "signe-position-courbe": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -420,9 +690,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "tableau-de-signes",
+        "methode-lire-tableau",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-signes": "established@M2",
+        "methode-lire-tableau": "established@M2",
+        "intervalle-crochets": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -432,9 +710,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "tableau-de-signes",
+        "methode-construire-tableau",
+        "regle-signe-constant-entre-zeros",
+        "zero-fonction"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-signes": "established@M2",
+        "methode-construire-tableau": "established@M2",
+        "regle-signe-constant-entre-zeros": "established@M1",
+        "zero-fonction": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -444,9 +732,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 22,
+      "requires": [
+        "formule-zero-affine",
+        "regle-signe-affine",
+        "mem-signe-de-a",
+        "tableau-de-signes"
+      ],
+      "prerequisiteStatus": {
+        "formule-zero-affine": "established@M3",
+        "regle-signe-affine": "established@M3",
+        "mem-signe-de-a": "established@M3",
+        "tableau-de-signes": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -456,9 +754,15 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 23,
+      "requires": [
+        "regle-signe-produit",
+        "methode-tableau-produit-quotient"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-produit": "established@M4",
+        "methode-tableau-produit-quotient": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -468,9 +772,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "regle-signe-quotient",
+        "methode-tableau-produit-quotient",
+        "zero-fonction"
+      ],
+      "prerequisiteStatus": {
+        "regle-signe-quotient": "established@M4",
+        "methode-tableau-produit-quotient": "established@M4",
+        "zero-fonction": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -480,9 +792,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 25,
+      "requires": [
+        "methode-resoudre-par-le-signe",
+        "vocab-solutions-intervalles",
+        "regle-signe-produit"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-par-le-signe": "established@M5",
+        "vocab-solutions-intervalles": "established@M5",
+        "regle-signe-produit": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -492,9 +812,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 26,
+      "requires": [
+        "methode-resoudre-par-le-signe",
+        "vocab-solutions-intervalles",
+        "zero-fonction"
+      ],
+      "prerequisiteStatus": {
+        "methode-resoudre-par-le-signe": "established@M5",
+        "vocab-solutions-intervalles": "established@M5",
+        "zero-fonction": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -504,217 +832,20 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/modules/Module07MissionFinale.jsx",
-      "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 27,
+      "requires": [
+        "methode-verifier-graphiquement",
+        "signe-position-courbe",
+        "vocab-solutions-intervalles"
+      ],
+      "prerequisiteStatus": {
+        "methode-verifier-graphiquement": "established@M5",
+        "signe-position-courbe": "established@M1",
+        "vocab-solutions-intervalles": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'signe-position-courbe' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 12,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'zero-fonction' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 28,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-signe-constant-entre-zeros' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 33,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-au-dessus-en-dessous' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 38,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'tableau-de-signes' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 45,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-construire-tableau' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 60,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-lire-tableau' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 65,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-signe-affine' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 72,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'formule-zero-affine' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 87,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-signe-de-a' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 92,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-signe-produit' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 99,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-signe-quotient' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 114,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-tableau-produit-quotient' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 124,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-resoudre-par-le-signe' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 131,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-verifier-graphiquement' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 143,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-solutions-intervalles' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 149,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-modeliser-signe' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/fonctions/signe-fonctions-2nde/knowledge.jsx",
-      "line": 156,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

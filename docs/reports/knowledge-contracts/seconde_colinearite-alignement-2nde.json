@@ -2,73 +2,134 @@
   "lesson": "colinearite-alignement-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "abscisse",
+    "ordonnee",
+    "coordonnees",
+    "composante",
+    "vecteur"
+  ],
   "conceptsIntroduced": [
     {
       "id": "colin-direction",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module01LeRail.jsx",
+        "line": 145,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-vecteur-nul",
       "type": "regles",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module01LeRail.jsx",
+        "line": 157,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-alignement",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module02TroisPoints.jsx",
+        "line": 105,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-oeil-hesite",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module02TroisPoints.jsx",
+        "line": 137,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-multiple",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module03Proportionnelles.jsx",
+        "line": 94,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-nul-colineaire-tout",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module03Proportionnelles.jsx",
+        "line": 100,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-determinant",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module04Detecteur.jsx",
+        "line": 123,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-critere-det",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module04Detecteur.jsx",
+        "line": 129,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-formule-det",
       "type": "formules",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module04Detecteur.jsx",
+        "line": 167,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-alignement-det",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+        "line": 190,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-parallelisme-det",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+        "line": 116,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -76,25 +137,45 @@
       "id": "colin-vocabulaire-direction-sens",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module01LeRail.jsx",
+        "line": 151,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-vocabulaire-aligne",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module02TroisPoints.jsx",
+        "line": 111,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-vocabulaire-determinant",
       "type": "vocabulaire",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module04Detecteur.jsx",
+        "line": 150,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-vocabulaire-parallele",
       "type": "vocabulaire",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+        "line": 122,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -102,31 +183,56 @@
       "id": "colin-produits-croix",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module03Proportionnelles.jsx",
+        "line": 117,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-coordonnee-manquante-prop",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module03Proportionnelles.jsx",
+        "line": 154,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-calculer-det",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module04Detecteur.jsx",
+        "line": 180,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-methode-conclure",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+        "line": 196,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "colin-coordonnee-manquante-det",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+        "line": 221,
+        "step": 5,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -134,25 +240,45 @@
       "id": "mem-colin-rail",
       "type": "memoriser",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module01LeRail.jsx",
+        "line": 171,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-colin-multiple",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module03Proportionnelles.jsx",
+        "line": 161,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-colin-det-zero",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module04Detecteur.jsx",
+        "line": 201,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-colin-deux-usages",
       "type": "memoriser",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+        "line": 227,
+        "step": 5,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -163,8 +289,18 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module00Diagnostic.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "abscisse",
+        "ordonnee",
+        "vecteur",
+        "composante"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "ordonnee": "prior",
+        "vecteur": "prior",
+        "composante": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +310,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module00Diagnostic.jsx",
-      "line": 30,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 31,
+      "requires": [
+        "abscisse",
+        "ordonnee",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "ordonnee": "prior",
+        "coordonnees": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +330,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module00Diagnostic.jsx",
-      "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 42,
+      "requires": [
+        "vecteur",
+        "composante"
+      ],
+      "prerequisiteStatus": {
+        "vecteur": "prior",
+        "composante": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +348,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module00Diagnostic.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 53,
+      "requires": [
+        "vecteur",
+        "composante"
+      ],
+      "prerequisiteStatus": {
+        "vecteur": "prior",
+        "composante": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +366,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module00Diagnostic.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 64,
+      "requires": [
+        "vecteur",
+        "composante"
+      ],
+      "prerequisiteStatus": {
+        "vecteur": "prior",
+        "composante": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,9 +384,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module01LeRail.jsx",
-      "line": 144,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 163,
+      "requires": [
+        "colin-direction",
+        "colin-vocabulaire-direction-sens",
+        "colin-vecteur-nul"
+      ],
+      "prerequisiteStatus": {
+        "colin-direction": "established@M1",
+        "colin-vocabulaire-direction-sens": "established@M1",
+        "colin-vecteur-nul": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +404,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module02TroisPoints.jsx",
-      "line": 113,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 128,
+      "requires": [
+        "colin-alignement",
+        "colin-vocabulaire-aligne"
+      ],
+      "prerequisiteStatus": {
+        "colin-alignement": "established@M2",
+        "colin-vocabulaire-aligne": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,9 +422,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module02TroisPoints.jsx",
-      "line": 126,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 150,
+      "requires": [
+        "colin-alignement",
+        "colin-oeil-hesite"
+      ],
+      "prerequisiteStatus": {
+        "colin-alignement": "established@M2",
+        "colin-oeil-hesite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -258,9 +440,15 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module03Proportionnelles.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "colin-multiple",
+        "colin-produits-croix"
+      ],
+      "prerequisiteStatus": {
+        "colin-multiple": "established@M3",
+        "colin-produits-croix": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -270,9 +458,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module03Proportionnelles.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 144,
+      "requires": [
+        "colin-multiple",
+        "colin-produits-croix"
+      ],
+      "prerequisiteStatus": {
+        "colin-multiple": "established@M3",
+        "colin-produits-croix": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -282,9 +476,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module04Detecteur.jsx",
-      "line": 143,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 172,
+      "requires": [
+        "colin-determinant",
+        "colin-formule-det"
+      ],
+      "prerequisiteStatus": {
+        "colin-determinant": "established@M4",
+        "colin-formule-det": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -294,33 +494,51 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module04Detecteur.jsx",
-      "line": 154,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 193,
+      "requires": [
+        "colin-critere-det",
+        "colin-calculer-det"
+      ],
+      "prerequisiteStatus": {
+        "colin-critere-det": "established@M4",
+        "colin-calculer-det": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M05-S1-Q1",
-      "module": 5,
-      "step": 1,
-      "component": "BatchChoiceQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05ARetenir.jsx",
-      "line": 45,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M05-S2-Q2",
+      "questionId": "M05-S2-Q1",
       "module": 5,
       "step": 2,
       "component": "TapQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05ARetenir.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+      "line": 146,
+      "requires": [
+        "colin-oeil-hesite"
+      ],
+      "prerequisiteStatus": {
+        "colin-oeil-hesite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+      "line": 160,
+      "requires": [
+        "abscisse",
+        "vecteur",
+        "composante"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "vecteur": "prior",
+        "composante": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -328,483 +546,236 @@
       "questionId": "M05-S3-Q3",
       "module": 5,
       "step": 3,
-      "component": "BatchChoiceQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05ARetenir.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M06-S2-Q1",
-      "module": 6,
-      "step": 2,
-      "component": "TapQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06AlignementParallelisme.jsx",
-      "line": 130,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M06-S3-Q2",
-      "module": 6,
-      "step": 3,
       "component": "NumericQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06AlignementParallelisme.jsx",
-      "line": 143,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+      "line": 166,
+      "requires": [
+        "ordonnee",
+        "vecteur",
+        "composante"
+      ],
+      "prerequisiteStatus": {
+        "ordonnee": "prior",
+        "vecteur": "prior",
+        "composante": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M06-S3-Q3",
-      "module": 6,
-      "step": 3,
-      "component": "NumericQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06AlignementParallelisme.jsx",
-      "line": 148,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M06-S4-Q4",
-      "module": 6,
+      "questionId": "M05-S4-Q4",
+      "module": 5,
       "step": 4,
       "component": "BatchChoiceQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06AlignementParallelisme.jsx",
-      "line": 159,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+      "line": 179,
+      "requires": [
+        "colin-oeil-hesite",
+        "colin-critere-det"
+      ],
+      "prerequisiteStatus": {
+        "colin-oeil-hesite": "established@M2",
+        "colin-critere-det": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M06-S5-Q5",
-      "module": 6,
+      "questionId": "M05-S5-Q5",
+      "module": 5,
       "step": 5,
       "component": "NumericQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06AlignementParallelisme.jsx",
-      "line": 172,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module05AlignementParallelisme.jsx",
+      "line": 210,
+      "requires": [
+        "colin-methode-conclure"
+      ],
+      "prerequisiteStatus": {
+        "colin-methode-conclure": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e1",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 26,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 28,
+      "requires": [
+        "colin-direction",
+        "colin-vocabulaire-direction-sens",
+        "colin-critere-det"
+      ],
+      "prerequisiteStatus": {
+        "colin-direction": "established@M1",
+        "colin-vocabulaire-direction-sens": "established@M1",
+        "colin-critere-det": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e2",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 44,
+      "requires": [
+        "colin-multiple",
+        "colin-produits-croix"
+      ],
+      "prerequisiteStatus": {
+        "colin-multiple": "established@M3",
+        "colin-produits-croix": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e3",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 56,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 60,
+      "requires": [
+        "colin-multiple",
+        "colin-coordonnee-manquante-prop"
+      ],
+      "prerequisiteStatus": {
+        "colin-multiple": "established@M3",
+        "colin-coordonnee-manquante-prop": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e4",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 66,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 71,
+      "requires": [
+        "colin-formule-det",
+        "colin-calculer-det"
+      ],
+      "prerequisiteStatus": {
+        "colin-formule-det": "established@M4",
+        "colin-calculer-det": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e5",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 76,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 82,
+      "requires": [
+        "colin-calculer-det",
+        "mem-colin-det-zero"
+      ],
+      "prerequisiteStatus": {
+        "colin-calculer-det": "established@M4",
+        "mem-colin-det-zero": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e6",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 91,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 98,
+      "requires": [
+        "colin-alignement-det"
+      ],
+      "prerequisiteStatus": {
+        "colin-alignement-det": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e7",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 106,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 114,
+      "requires": [
+        "colin-alignement-det",
+        "colin-oeil-hesite"
+      ],
+      "prerequisiteStatus": {
+        "colin-alignement-det": "established@M5",
+        "colin-oeil-hesite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e8",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 121,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 130,
+      "requires": [
+        "colin-parallelisme-det",
+        "colin-vocabulaire-parallele"
+      ],
+      "prerequisiteStatus": {
+        "colin-parallelisme-det": "established@M5",
+        "colin-vocabulaire-parallele": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e9",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 136,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 146,
+      "requires": [
+        "colin-parallelisme-det",
+        "colin-methode-conclure"
+      ],
+      "prerequisiteStatus": {
+        "colin-parallelisme-det": "established@M5",
+        "colin-methode-conclure": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "col-e10",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module07MissionFinale.jsx",
-      "line": 151,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/modules/Module06MissionFinale.jsx",
+      "line": 162,
+      "requires": [
+        "colin-coordonnee-manquante-det",
+        "mem-colin-deux-usages"
+      ],
+      "prerequisiteStatus": {
+        "colin-coordonnee-manquante-det": "established@M5",
+        "mem-colin-deux-usages": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-direction' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 45,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-vocabulaire-direction-sens' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 81,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-vecteur-nul' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 96,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-colin-rail' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 109,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-alignement' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 125,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-oeil-hesite' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 167,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-vocabulaire-aligne' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 186,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-multiple' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 205,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-produits-croix' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 244,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-nul-colineaire-tout' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 273,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-coordonnee-manquante-prop' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 286,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-colin-multiple' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 305,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-determinant' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 322,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-critere-det' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 359,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-calculer-det' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 382,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-formule-det' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 414,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-vocabulaire-determinant' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 428,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-colin-det-zero' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 441,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-alignement-det' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 463,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-parallelisme-det' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 491,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-methode-conclure' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 530,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-coordonnee-manquante-det' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 561,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'colin-vocabulaire-parallele' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 585,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-colin-deux-usages' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/knowledge.jsx",
-      "line": 598,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

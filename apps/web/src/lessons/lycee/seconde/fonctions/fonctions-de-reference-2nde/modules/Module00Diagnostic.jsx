@@ -7,6 +7,15 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * officiels (clé 'seconde_fonctions_de_reference') : « Fonctions »,
  * « Valeur absolue », « Puissances ». On teste une image, une lecture de
  * courbe, |−3|, (−4)² et 1/0,5 — jamais les propriétés des courbes de référence.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Un diagnostic MESURE, il n'enseigne pas : chaque question ne peut exiger
+ *   qu'un id de `priorKnowledge` (lesson.config.js), et chaque id déclaré est
+ *   mesuré ici par au moins une question. La notation f(x) et l'abscisse
+ *   apparaissaient dès ce module alors que la leçon ne les posait qu'au module
+ *   2 : elles sont acquises de 3e et de 6e, elles sont donc déclarées comme
+ *   telles et diagnostiquées ci-dessous. Rien des trois courbes de référence —
+ *   parabole, hyperbole, V — n'est demandé ici.
  */
 const SKILLS = {
   fonctions: { label: 'Fonctions', emoji: 'ƒ' },
@@ -14,11 +23,11 @@ const SKILLS = {
   calcul: { label: 'Carrés et inverses', emoji: '🔢' },
 };
 const QUESTIONS = [
-  { id: 'fr-d1', skill: 'fonctions', points: 2, prompt: 'f(x) = 2x − 1. Que vaut f(3) ?', options: ['5', '6', '23'], cols: 3, correct: 0, explain: '2 × 3 − 1 = 5.' },
-  { id: 'fr-d2', skill: 'fonctions', points: 2, prompt: 'Sur une courbe, le point (2 ; 7) est dessus. Que peut-on écrire ?', options: ['f(2) = 7', 'f(7) = 2', '2 = 7'], cols: 3, correct: 0, explain: 'Abscisse 2, ordonnée 7 : l’image de 2 est 7.' },
-  { id: 'fr-d3', skill: 'va', points: 2, prompt: 'Que vaut |−3| ?', options: ['3', '−3', '0'], cols: 3, correct: 0, explain: 'La valeur absolue est la distance à 0 : |−3| = 3.' },
-  { id: 'fr-d4', skill: 'calcul', points: 2, prompt: 'Que vaut (−4)² ?', options: ['16', '−16', '−8'], cols: 3, correct: 0, explain: '(−4) × (−4) = 16 : un carré n’est jamais négatif.' },
-  { id: 'fr-d5', skill: 'calcul', points: 2, prompt: 'Quel est l’inverse de 0,5 ?', options: ['2', '0,5', '−0,5'], cols: 3, correct: 0, explain: '1 ÷ 0,5 = 2 (et 0,5 × 2 = 1).' },
+  { id: 'fr-d1', skill: 'fonctions', points: 2, prompt: 'f(x) = 2x − 1. Que vaut f(3) ?', options: ['5', '6', '23'], cols: 3, correct: 0, explain: '2 × 3 − 1 = 5.', requires: ['fonction', 'notation-fx'] },
+  { id: 'fr-d2', skill: 'fonctions', points: 2, prompt: 'Sur une courbe, le point (2 ; 7) est dessus. Que peut-on écrire ?', options: ['f(2) = 7', 'f(7) = 2', '2 = 7'], cols: 3, correct: 0, explain: 'Abscisse 2, ordonnée 7 : l’image de 2 est 7.', requires: ['abscisse', 'ordonnee', 'image', 'notation-fx'] },
+  { id: 'fr-d3', skill: 'va', points: 2, prompt: 'Que vaut |−3| ?', options: ['3', '−3', '0'], cols: 3, correct: 0, explain: 'La valeur absolue est la distance à 0 : |−3| = 3.', requires: ['valeur-absolue'] },
+  { id: 'fr-d4', skill: 'calcul', points: 2, prompt: 'Que vaut (−4)² ?', options: ['16', '−16', '−8'], cols: 3, correct: 0, explain: '(−4) × (−4) = 16 : un carré n’est jamais négatif.', requires: ['puissance'] },
+  { id: 'fr-d5', skill: 'calcul', points: 2, prompt: 'Quel est l’inverse de 0,5 ?', options: ['2', '0,5', '−0,5'], cols: 3, correct: 0, explain: '1 ÷ 0,5 = 2 (et 0,5 × 2 = 1).', requires: ['inverse-nombre'] },
 ];
 export default function Module00Diagnostic() {
   return (

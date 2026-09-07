@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import FamilySorter from '../components/FamilySorter';
@@ -67,6 +68,36 @@ export default function Module02FamillesDeNombres() {
                   <p>Chaque boîte est dans la suivante : <span className="font-mono font-bold">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</span>. Et √9 = 3 : une racine carrée peut très bien être un entier.</p>
                 </div>
               )}
+              {/* Le rangement vient de faire vivre les cinq familles et les
+                  trois mots (décimal / rationnel / irrationnel) : c'est
+                  l'instant pour les nommer, avant le Vrai/Faux qui les exige. */}
+              {sortDone && (
+                <>
+                  <KnowledgeBrick
+                    id="familles-emboitees"
+                    variant="new"
+                    lead={<>Tu viens de ranger huit nombres dans cinq boîtes emboîtées.</>}
+                  />
+                  <KnowledgeBrick
+                    id="decimal"
+                    variant="new"
+                    compact
+                    lead={<>3/4 et 0,5 sont tombés dans la boîte 𝔻 : leur écriture décimale s’arrête.</>}
+                  />
+                  <KnowledgeBrick
+                    id="rationnel"
+                    variant="new"
+                    compact
+                    lead={<>1/3 est resté hors de 𝔻 mais dans ℚ : une fraction d’entiers, sans écriture décimale finie.</>}
+                  />
+                  <KnowledgeBrick
+                    id="irrationnel"
+                    variant="new"
+                    compact
+                    lead={<>√2 et π sont restés hors de toutes les boîtes de fractions : aucune écriture en fraction d’entiers.</>}
+                  />
+                </>
+              )}
             </div>
           ),
         },
@@ -82,6 +113,7 @@ export default function Module02FamillesDeNombres() {
                 { id: 'r3', label: '1/3 est un nombre décimal', options: ['vrai', 'faux'], correct: 1, correction: '0,333… ne s’arrête jamais.' },
                 { id: 'r4', label: '√16 est irrationnel', options: ['vrai', 'faux'], correct: 1, correction: '√16 = 4 ∈ ℕ.' },
               ]}
+              requires={['familles-emboitees', 'decimal', 'rationnel', 'irrationnel']}
               feedback={({ allRight, nCorrect, total }) => (
                 <Feedback tone={allRight ? 'ok' : 'ko'}>
                   {allRight ? 'Quatre sur quatre.' : `${nCorrect} / ${total}.`} Les boîtes sont emboîtées : ce qui est dans ℕ est aussi dans ℤ, 𝔻, ℚ et ℝ. Le contraire est faux : 1/3 ∈ ℚ mais 1/3 ∉ 𝔻.
@@ -93,11 +125,11 @@ export default function Module02FamillesDeNombres() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          ℝ, l’ensemble des réels, c’est toute la droite : chaque point est un nombre. Dedans, des familles emboîtées selon l’écriture décimale. Mais pourquoi 1/3 tourne-t-il en rond alors que 3/8 s’arrête ? Le module suivant pose la division.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          Mais pourquoi 1/3 tourne-t-il en rond alors que 3/8 s’arrête ? Le module suivant pose la division.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

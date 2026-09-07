@@ -1,6 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
@@ -52,6 +52,7 @@ const EPREUVES = [
     options: ['−4 ∈ ℕ', '−4 ∈ ℤ', '0 ∉ ℕ', 'ℤ ⊂ ℕ'],
     cols: 2,
     correct: 1,
+    requires: ['vocab-appartenance', 'vocab-inclusion'],
     explain: '−4 est un entier négatif : il est dans ℤ, pas dans ℕ (les entiers naturels commencent à 0, donc 0 ∈ ℕ). C’est ℕ qui est inclus dans ℤ, pas l’inverse.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P1'] },
   },
@@ -63,6 +64,7 @@ const EPREUVES = [
     options: ['{2 ; 3}', '{1 ; 2 ; 3 ; 5 ; 6}', '{1 ; 6}', '∅'],
     cols: 2,
     correct: 0,
+    requires: ['vocab-intersection-reunion'],
     explain: 'L’intersection, ce sont les éléments communs : 2 et 3. {1 ; 2 ; 3 ; 5 ; 6} est la réunion A ∪ B ; {1 ; 6} sont les éléments de A qui ne sont pas dans B.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P1'] },
   },
@@ -75,6 +77,7 @@ const EPREUVES = [
     options: [']−3 ; 1]', '[−3 ; 1[', '[−3 ; 1]', ']−3 ; 1['],
     cols: 2,
     correct: 0,
+    requires: ['intervalle', 'mem-borne'],
     explain: 'En −3, le crochet est tourné vers l’extérieur : −3 exclu. En 1, tourné vers le nombre : 1 inclus. ]−3 ; 1], semi-ouvert.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P2', 'seconde_ensembles-et-intervalles-2nde_P4'] },
   },
@@ -86,6 +89,7 @@ const EPREUVES = [
     options: ['2', '−1', '−1,5', '2,001'],
     cols: 4,
     correct: 1,
+    requires: ['methode-appartenance-intervalle'],
     explain: '[−1 : la borne −1 est incluse. 2[ : 2 est exclu, et 2,001 est au-delà. −1,5 < −1 est avant la borne de gauche.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P2', 'seconde_ensembles-et-intervalles-2nde_P4'] },
   },
@@ -97,6 +101,7 @@ const EPREUVES = [
     options: ['[−2 ; +∞[', ']−2 ; +∞[', ']−∞ ; −2]', '[−2 ; +∞]'],
     cols: 2,
     correct: 0,
+    requires: ['regle-signe-crochet', 'regle-sens-inegalite', 'demi-droite-infini'],
     explain: '« Plus grand ou égal » : −2 inclus (crochet fermé) et on regarde vers +∞. L’infini n’est pas un nombre : son crochet est toujours ouvert, jamais [−2 ; +∞].',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P3'] },
   },
@@ -108,6 +113,7 @@ const EPREUVES = [
     options: ['0 < x ≤ 4', '0 ≤ x < 4', '0 ≤ x ≤ 4', '0 < x < 4'],
     cols: 2,
     correct: 0,
+    requires: ['regle-signe-crochet', 'methode-traduire'],
     explain: ']0 : 0 exclu, signe strict <. 4] : 4 inclus, signe large ≤. Donc 0 < x ≤ 4.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P3'] },
   },
@@ -119,6 +125,7 @@ const EPREUVES = [
     options: ['3', '5', '4', 'Une infinité'],
     cols: 4,
     correct: 0,
+    requires: ['methode-compter-entiers'],
     explain: 'Les bornes 1 et 5 sont exclues : restent 2, 3 et 4 — trois entiers. Il y a bien une infinité de NOMBRES dans ]1 ; 5[ (1,5 ; 2,75 ; …), mais seulement trois entiers.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P4', 'seconde_ensembles-et-intervalles-2nde_P5'] },
   },
@@ -131,6 +138,7 @@ const EPREUVES = [
     options: ['[2 ; 3]', '[−1 ; 6[', ']2 ; 3]', '∅'],
     cols: 2,
     correct: 0,
+    requires: ['intersection-intervalles', 'reunion-intervalles'],
     explain: 'La zone recouverte deux fois va de 2 à 3 ; 2 est inclus (J est fermé en 2) et 3 aussi (I est fermé en 3). [−1 ; 6[ est la réunion.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P5', 'seconde_ensembles-et-intervalles-2nde_P4'] },
   },
@@ -142,6 +150,7 @@ const EPREUVES = [
     options: ['[26 ; 29[', ']26 ; 29]', '[26 ; 29]', ']26 ; 29['],
     cols: 2,
     correct: 0,
+    requires: ['methode-phrase-intervalle'],
     explain: '« Au moins 26 » : 26 inclus. « Strictement inférieure à 29 » : 29 exclu. [26 ; 29[.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P5', 'seconde_ensembles-et-intervalles-2nde_P3'] },
   },
@@ -153,6 +162,7 @@ const EPREUVES = [
     options: ['[1,4 ; 1,9[', '[1,2 ; +∞[', ']1,4 ; 1,9[', '[1,2 ; 1,4]'],
     cols: 2,
     correct: 0,
+    requires: ['intersection-intervalles', 'methode-phrase-intervalle'],
     explain: 'Les deux à la fois : l’intersection de [1,2 ; 1,9[ et de [1,4 ; +∞[. « À partir de 1,40 » inclut 1,40 ; le manège exclut 1,90. [1,4 ; 1,9[.',
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P5'] },
   },
@@ -167,30 +177,6 @@ const BADGES = [
   { id: 'b-perfect', emoji: '💎', label: 'Dix sur dix', test: (m) => Object.values(m).every((v) => !v) },
 ];
 
-function Synthese() {
-  return (
-    <div className="space-y-4">
-      <div className="text-center space-y-1">
-        <h2 className="text-xl font-space font-extrabold text-slate-900">Synthèse : du panneau à l’intervalle</h2>
-        <p className="text-sm text-slate-500">Le filtre du manège, figé, avec ce qu’il t’a appris.</p>
-      </div>
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-2">
-        <RealLine
-          min={1} max={2.2} step={0.1} labelEvery={2}
-          intervals={[{ id: 'M', from: 1.2, to: 1.9, openTo: true, tone: 'indigo', label: '[1,2 ; 1,9[' }]}
-          points={[{ id: 'a', value: 1.2, label: '1,2', tone: 'emerald' }, { id: 'b', value: 1.899, label: '1,899', tone: 'emerald' }, { id: 'c', value: 1.9, label: '1,9', tone: 'rose', open: true }]}
-          ariaLabel="Le panneau du manège : 1,2 inclus, 1,899 inclus, 1,9 exclu"
-        />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-        <Feedback tone="info"><strong>Ensembles.</strong> ∈ appartient, ⊂ est inclus, ∩ dans les deux, ∪ dans l’un ou l’autre, ∅ vide. ℕ ⊂ ℤ ⊂ ℝ.</Feedback>
-        <Feedback tone="info"><strong>Crochets.</strong> Tourné vers le nombre : borne incluse (≤). Vers l’extérieur : exclue (&lt;). L’infini est toujours du côté ouvert.</Feedback>
-        <Feedback tone="info"><strong>Traduire.</strong> a ≤ x &lt; b ⇔ x ∈ [a ; b[. « x ≤ b » regarde vers −∞, « x ≥ a » vers +∞.</Feedback>
-        <Feedback tone="info"><strong>Croiser.</strong> I ∩ J = la zone recouverte deux fois ; I ∪ J = tout ce qui est recouvert. Deux plages disjointes : intersection ∅.</Feedback>
-      </div>
-    </div>
-  );
-}
 
 export default function Module07MissionFinale() {
   return (
@@ -214,7 +200,7 @@ export default function Module07MissionFinale() {
       skills={SKILLS}
       epreuves={EPREUVES}
       badges={BADGES}
-      synthese={<Synthese />}
+      synthese={<KnowledgeSnapshot variant="complete" complete />}
       completion={{
         masterTitle: 'Maître des crochets',
         title: 'Leçon terminée',

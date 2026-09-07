@@ -2,55 +2,104 @@
   "lesson": "calcul-litteral-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "calcul-litteral",
+    "distributivite",
+    "developper",
+    "termes-semblables",
+    "reduire-expression",
+    "terme-algebrique",
+    "facteur",
+    "carre-nombre"
+  ],
   "conceptsIntroduced": [
     {
       "id": "expression-litterale",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module01LeTourDeMagie.jsx",
+        "line": 87,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "egalite-pour-tout-x",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module01LeTourDeMagie.jsx",
+        "line": 112,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-tester-ne-prouve-pas",
       "type": "regles",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module01LeTourDeMagie.jsx",
+        "line": 68,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-exposants-pas-additionnes",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module02Reduire.jsx",
+        "line": 94,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "developper",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module03Developper.jsx",
+        "line": 51,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "identites-remarquables",
       "type": "formules",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module03Developper.jsx",
+        "line": 103,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "factoriser",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module04Factoriser.jsx",
+        "line": 70,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-choisir-la-forme",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
+        "line": 73,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-carre-positif",
@@ -58,7 +107,7 @@
       "module": 5,
       "brick": {
         "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
-        "line": 48,
+        "line": 52,
         "step": 3,
         "variant": "new"
       }
@@ -67,7 +116,12 @@
       "id": "regle-simplifier-facteurs",
       "type": "regles",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module06DemontrerEtResoudre.jsx",
+        "line": 99,
+        "step": 4,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -75,7 +129,12 @@
       "id": "vocab-terme-coefficient",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module02Reduire.jsx",
+        "line": 58,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -83,37 +142,67 @@
       "id": "methode-reduire",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module02Reduire.jsx",
+        "line": 65,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-facteur-commun",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module04Factoriser.jsx",
+        "line": 86,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-identite-inverse",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module04Factoriser.jsx",
+        "line": 104,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-prouver-egalite-formes",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
+        "line": 79,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-demontrer-litteral",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module06DemontrerEtResoudre.jsx",
+        "line": 47,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-modeliser-aire",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module06DemontrerEtResoudre.jsx",
+        "line": 78,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -121,13 +210,23 @@
       "id": "mem-reduire",
       "type": "memoriser",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module02Reduire.jsx",
+        "line": 109,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-carre-somme",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module03Developper.jsx",
+        "line": 66,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -138,8 +237,18 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module00Diagnostic.jsx",
       "line": 9,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-litteral",
+        "termes-semblables",
+        "reduire-expression",
+        "terme-algebrique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "termes-semblables": "prior",
+        "reduire-expression": "prior",
+        "terme-algebrique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,8 +259,18 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module00Diagnostic.jsx",
       "line": 10,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-litteral",
+        "distributivite",
+        "developper",
+        "facteur"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "distributivite": "prior",
+        "developper": "prior",
+        "facteur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,8 +281,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-litteral",
+        "carre-nombre"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "carre-nombre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,8 +299,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,8 +315,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module00Diagnostic.jsx",
       "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "carre-nombre"
+      ],
+      "prerequisiteStatus": {
+        "carre-nombre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -197,9 +330,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module01LeTourDeMagie.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 58,
+      "requires": [
+        "calcul-litteral",
+        "distributivite"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "prior",
+        "distributivite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -209,9 +348,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module01LeTourDeMagie.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "expression-litterale",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "expression-litterale": "established@M1",
+        "calcul-litteral": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -221,9 +366,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module01LeTourDeMagie.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 118,
+      "requires": [
+        "egalite-pour-tout-x",
+        "expression-litterale",
+        "regle-tester-ne-prouve-pas"
+      ],
+      "prerequisiteStatus": {
+        "egalite-pour-tout-x": "established@M1",
+        "expression-litterale": "established@M1",
+        "regle-tester-ne-prouve-pas": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -233,9 +386,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module02Reduire.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 102,
+      "requires": [
+        "regle-exposants-pas-additionnes",
+        "vocab-terme-coefficient",
+        "regle-tester-ne-prouve-pas"
+      ],
+      "prerequisiteStatus": {
+        "regle-exposants-pas-additionnes": "established@M2",
+        "vocab-terme-coefficient": "established@M2",
+        "regle-tester-ne-prouve-pas": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -245,9 +406,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module03Developper.jsx",
-      "line": 48,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 59,
+      "requires": [
+        "developper",
+        "calcul-litteral",
+        "carre-nombre"
+      ],
+      "prerequisiteStatus": {
+        "developper": "prior",
+        "calcul-litteral": "prior",
+        "carre-nombre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -257,9 +426,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module03Developper.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 81,
+      "requires": [
+        "developper",
+        "mem-carre-somme"
+      ],
+      "prerequisiteStatus": {
+        "developper": "prior",
+        "mem-carre-somme": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -269,9 +444,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module03Developper.jsx",
-      "line": 73,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 94,
+      "requires": [
+        "developper",
+        "mem-carre-somme"
+      ],
+      "prerequisiteStatus": {
+        "developper": "prior",
+        "mem-carre-somme": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -281,9 +462,17 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module03Developper.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "identites-remarquables",
+        "developper",
+        "mem-carre-somme"
+      ],
+      "prerequisiteStatus": {
+        "identites-remarquables": "established@M3",
+        "developper": "prior",
+        "mem-carre-somme": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -293,9 +482,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
-      "line": 27,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 28,
+      "requires": [
+        "developper",
+        "factoriser"
+      ],
+      "prerequisiteStatus": {
+        "developper": "prior",
+        "factoriser": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -305,9 +500,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
-      "line": 34,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 36,
+      "requires": [
+        "factoriser",
+        "developper"
+      ],
+      "prerequisiteStatus": {
+        "factoriser": "established@M4",
+        "developper": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -317,9 +518,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
-      "line": 43,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "factoriser",
+        "developper",
+        "carre-nombre"
+      ],
+      "prerequisiteStatus": {
+        "factoriser": "established@M4",
+        "developper": "prior",
+        "carre-nombre": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -329,9 +538,21 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module05TroisFormes.jsx",
-      "line": 65,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 85,
+      "requires": [
+        "regle-choisir-la-forme",
+        "methode-prouver-egalite-formes",
+        "factoriser",
+        "developper",
+        "regle-carre-positif"
+      ],
+      "prerequisiteStatus": {
+        "regle-choisir-la-forme": "established@M5",
+        "methode-prouver-egalite-formes": "established@M5",
+        "factoriser": "established@M4",
+        "developper": "prior",
+        "regle-carre-positif": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -341,9 +562,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module06DemontrerEtResoudre.jsx",
-      "line": 45,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 62,
+      "requires": [
+        "methode-demontrer-litteral",
+        "developper",
+        "regle-tester-ne-prouve-pas"
+      ],
+      "prerequisiteStatus": {
+        "methode-demontrer-litteral": "established@M6",
+        "developper": "prior",
+        "regle-tester-ne-prouve-pas": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -353,9 +582,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module06DemontrerEtResoudre.jsx",
-      "line": 56,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 84,
+      "requires": [
+        "methode-modeliser-aire",
+        "developper"
+      ],
+      "prerequisiteStatus": {
+        "methode-modeliser-aire": "established@M6",
+        "developper": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -365,9 +600,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module06DemontrerEtResoudre.jsx",
-      "line": 65,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "regle-simplifier-facteurs",
+        "factoriser"
+      ],
+      "prerequisiteStatus": {
+        "regle-simplifier-facteurs": "established@M6",
+        "factoriser": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -378,8 +619,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "egalite-pour-tout-x",
+        "regle-tester-ne-prouve-pas"
+      ],
+      "prerequisiteStatus": {
+        "egalite-pour-tout-x": "established@M1",
+        "regle-tester-ne-prouve-pas": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -390,8 +637,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 36,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "expression-litterale"
+      ],
+      "prerequisiteStatus": {
+        "expression-litterale": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -402,8 +653,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 37,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "vocab-terme-coefficient",
+        "methode-reduire",
+        "regle-exposants-pas-additionnes"
+      ],
+      "prerequisiteStatus": {
+        "vocab-terme-coefficient": "established@M2",
+        "methode-reduire": "established@M2",
+        "regle-exposants-pas-additionnes": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -414,8 +673,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "developper",
+        "mem-carre-somme"
+      ],
+      "prerequisiteStatus": {
+        "developper": "prior",
+        "mem-carre-somme": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -426,8 +691,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 39,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "developper",
+        "identites-remarquables"
+      ],
+      "prerequisiteStatus": {
+        "developper": "prior",
+        "identites-remarquables": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -438,8 +709,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "factoriser",
+        "methode-facteur-commun"
+      ],
+      "prerequisiteStatus": {
+        "factoriser": "established@M4",
+        "methode-facteur-commun": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -450,8 +727,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "factoriser",
+        "methode-facteur-commun"
+      ],
+      "prerequisiteStatus": {
+        "factoriser": "established@M4",
+        "methode-facteur-commun": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -462,8 +745,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "regle-choisir-la-forme",
+        "factoriser",
+        "developper"
+      ],
+      "prerequisiteStatus": {
+        "regle-choisir-la-forme": "established@M5",
+        "factoriser": "established@M4",
+        "developper": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -474,8 +765,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 43,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-demontrer-litteral",
+        "developper",
+        "identites-remarquables"
+      ],
+      "prerequisiteStatus": {
+        "methode-demontrer-litteral": "established@M6",
+        "developper": "prior",
+        "identites-remarquables": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -486,228 +785,30 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module07MissionFinale.jsx",
       "line": 44,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "regle-simplifier-facteurs",
+        "factoriser"
+      ],
+      "prerequisiteStatus": {
+        "regle-simplifier-facteurs": "established@M6",
+        "factoriser": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
   "findings": [
     {
-      "code": "W_ITEM_WITHOUT_BRICK",
+      "code": "W_PRIOR_REESTABLISHED",
       "severity": "info",
-      "message": "knowledge item 'expression-litterale' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 28,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'egalite-pour-tout-x' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 47,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-tester-ne-prouve-pas' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 65,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-terme-coefficient' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 87,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-reduire' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 105,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-exposants-pas-additionnes' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 124,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-reduire' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 142,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'developper' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 161,
+      "message": "'developper' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/modules/Module03Developper.jsx",
+      "line": 51,
       "module": 3,
-      "step": null,
+      "step": 1,
       "term": null,
       "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'identites-remarquables' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 176,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-carre-somme' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 195,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'factoriser' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 215,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-facteur-commun' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 233,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-identite-inverse' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 253,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-choisir-la-forme' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 276,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-prouver-egalite-formes' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 316,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-demontrer-litteral' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 338,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-modeliser-aire' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 357,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-simplifier-facteurs' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/calcul-litteral-2nde/knowledge.jsx",
-      "line": 375,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
+      "position": 81
     }
   ]
 }

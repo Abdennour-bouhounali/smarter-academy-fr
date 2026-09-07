@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import RhythmLine from '../components/RhythmLine';
@@ -34,8 +35,18 @@ export default function Module04MultiplesCommuns() {
           content: (kit) => (
             <div className="space-y-3">
               <RhythmLine a={a} b={b} onA={(v) => { setA(v); set(v, b); }} onB={(v) => { setB(v); set(a, v); if (seen.size === 1) kit.react(true); }} showAnswer={seen.size >= 2} />
+              {/* Les marques viennent de se superposer à 36 min (12 et 18) :
+                  ce premier rendez-vous a un nom, avant la question qui l'exige. */}
+              {seen.size >= 2 && (
+                <KnowledgeBrick
+                  id="ppcm"
+                  variant="new"
+                  lead={<>Les marques des deux bus viennent de se superposer pour la première fois. Ce premier multiple commun s’appelle le <strong>PPCM</strong> — le plus petit multiple commun.</>}
+                />
+              )}
               {seen.size >= 2 ? (
                 <TapQuestion prompt="Le premier rendez-vous de deux bus (12 min et 18 min) est à 36 min. Pourquoi pas 216 = 12 × 18 ?" options={['Parce que 12 et 18 partagent des facteurs : 36 est déjà un multiple des deux', 'Parce qu’on a arrondi', 'Parce que 216 minutes, c’est trop long']} cols={1} correct={0}
+                  requires={['ppcm']}
                   explain="216 EST un rendez-vous (le produit en est toujours un), mais pas le premier. Le premier multiple commun s’appelle le PPCM : ici 36. Quand les deux nombres ne partagent aucun facteur (6 et 35), le produit est bien le premier."
                   explainWrong="Le produit 12 × 18 = 216 est bien un multiple commun, mais pas le PREMIER : 36 l’est déjà (36 = 12 × 3 = 18 × 2). C’est le PPCM."
                   solved={rdvDone} onAnswered={() => setRdvDone(true)} />
@@ -48,20 +59,41 @@ export default function Module04MultiplesCommuns() {
           content: (
             <div className="space-y-3">
               <NumericQuestion prompt="Quel est le côté du PLUS GRAND carreau possible (en cm) ?" expected={gcd(84, 126)} suffix="cm"
+                requires={[]}
                 explain={`Le côté doit diviser 84 ET 126 : c’est un diviseur commun. Le plus grand est 42 (84 = 42 × 2, 126 = 42 × 3). La pièce est alors pavée par 2 × 3 = 6 carreaux.`}
                 explainFor={(v) => (v === 21 ? '21 divise bien les deux, mais ce n’est pas le PLUS GRAND : 42 aussi divise 84 et 126.' : v === 84 ? '84 ne divise pas 126 (126 = 84 + 42) : le carreau dépasserait. Cherche un diviseur COMMUN.' : v === 63 ? '63 divise 126 mais pas 84 : il faut un diviseur des DEUX.' : 'Les diviseurs communs de 84 et 126 sont 1, 2, 3, 6, 7, 14, 21, 42 : le plus grand est 42.')}
                 solved={tileDone} onAnswered={() => setTileDone(true)} />
+              {/* Tu viens de trouver 42, le plus grand carreau qui pave sans
+                  découpe : ce plus grand diviseur commun a un nom, avant la
+                  question qui l'exige. */}
+              {tileDone && (
+                <KnowledgeBrick
+                  id="pgcd"
+                  variant="new"
+                  lead={<>42 est le plus grand diviseur commun de 84 et 126 : c’est le <strong>PGCD</strong> — le plus grand carreau qui tombe juste.</>}
+                />
+              )}
               {tileDone && (
                 <TapQuestion prompt="Pourquoi le côté du carreau doit-il être un DIVISEUR de 84 et de 126 ?" options={['Pour que les carreaux remplissent exactement chaque dimension, sans reste', 'Parce que 84 et 126 sont pairs', 'Pour que le carreau soit carré']} cols={1} correct={0}
+                  requires={['pgcd']}
                   explain="Aligner des carreaux de côté c le long de 84 cm exige 84 = c × (un entier) : reste nul. Idem pour 126. Donc c est un diviseur commun ; « le plus grand carreau » = le PGCD."
                   explainWrong="Le carreau doit tomber juste sur les deux dimensions : 84 et 126 doivent être des multiples de son côté, sinon il faudrait découper. D’où « diviseur commun »."
                   solved={whyDone} onAnswered={() => setWhyDone(true)} />
+              )}
+              {/* Les deux problèmes résolus (rendez-vous, carreau) donnent le
+                  réflexe pour choisir entre les deux à l'avenir. */}
+              {whyDone && (
+                <KnowledgeBrick
+                  id="methode-reconnaitre-ppcm-pgcd"
+                  variant="new"
+                  lead={<>Un rendez-vous, un cycle qui se répète → <strong>PPCM</strong> (plus grand que les deux nombres). Un partage sans reste, un découpage → <strong>PGCD</strong> (plus petit que les deux nombres).</>}
+                />
               )}
             </div>
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Deux questions symétriques : « quand se retrouvent-ils ? » demande le plus petit multiple commun (PPCM, {lcm(12, 18)} pour 12 et 18) ; « quel est le plus grand morceau qui tombe juste ? » demande le plus grand diviseur commun (PGCD, {gcd(84, 126)} pour 84 et 126, parmi {divisors(gcd(84, 126)).length} diviseurs communs).</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={4} />}
     />
   );
 }

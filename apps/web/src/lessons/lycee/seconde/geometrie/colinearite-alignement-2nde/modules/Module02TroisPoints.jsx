@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorPlane, { Lamp, ComponentStepper } from '../components/VectorPlane';
@@ -99,7 +100,21 @@ export default function Module02TroisPoints() {
               <PredictionChips prompt="si je place C en (5 ; 3), A, B et C seront-ils alignés ?" options={[{ id: 'oui', label: 'Oui' }, { id: 'non', label: 'Non' }]} value={prediction} onChange={setPrediction} disabled={done1} />
               {lab(kit)}
               {done1 ? (
-                <Feedback tone="ok">Positions trouvées : {foundList.map(formatVec).join(', ')}. {between ? 'Entre A et B, ' : ''}{beyondA ? 'de l’autre côté de A (AC part alors dans le sens contraire de AB !), ' : ''}au-delà de B : à chaque fois, <strong>AC roule sur le rail de AB</strong>. Alignés ⇔ AB et AC colinéaires. {prediction ? `Ta prédiction pour (5 ; 3) : ${prediction}. ${found.has('5;3') ? 'Tu l’as vérifiée.' : 'Vérifie-la si tu veux.'}` : ''}</Feedback>
+                <>
+                  <Feedback tone="ok">Positions trouvées : {foundList.map(formatVec).join(', ')}. {between ? 'Entre A et B, ' : ''}{beyondA ? 'de l’autre côté de A (AC part alors dans le sens contraire de AB !), ' : ''}au-delà de B : à chaque fois, <strong>AC roule sur le rail de AB</strong>. Alignés ⇔ AB et AC colinéaires. {prediction ? `Ta prédiction pour (5 ; 3) : ${prediction}. ${found.has('5;3') ? 'Tu l’as vérifiée.' : 'Vérifie-la si tu veux.'}` : ''}</Feedback>
+                  <KnowledgeBrick
+                    id="colin-alignement"
+                    variant="new"
+                    compact
+                    lead={<>Tu viens de trouver trois positions de C où les voyants « alignés » et « colinéaires » s’allument ensemble : ce lien porte un nom.</>}
+                  />
+                  <KnowledgeBrick
+                    id="colin-vocabulaire-aligne"
+                    variant="new"
+                    compact
+                    lead={<>Le mot pour trois points sur une même droite.</>}
+                  />
+                </>
               ) : (
                 <Feedback tone="info">{found.size} position{found.size > 1 ? 's' : ''} alignée{found.size > 1 ? 's' : ''} sur 3. {aligned ? 'Celle-ci l’est ! Cherche-en une autre — pourquoi pas de l’autre côté de A.' : 'C n’est pas sur la droite (AB) : rapproche-le du pointillé.'}</Feedback>
               )}
@@ -115,8 +130,17 @@ export default function Module02TroisPoints() {
                 options={['Oui, C est sur (AB)', 'Non, C n’est pas sur (AB)']} cols={2} correct={1}
                 explain="Non : AB = (4 ; 2) et AC = (8 ; 5). Pour rester sur le rail, 8 = 2 × 4 exigerait 5 = 2 × 2 — il faudrait C en (5 ; 3). L’œil hésite à un carreau près ; les coordonnées ne se trompent pas."
                 explainWrong="Presque, mais non : AB = (4 ; 2), AC = (8 ; 5). Si AC était sur le rail, 8 étant le double de 4, il faudrait 5 = double de 2. Le point aligné est (5 ; 3). Place C en (5 ; 4) ci-dessous : le voyant reste éteint."
+                requires={['colin-alignement', 'colin-vocabulaire-aligne']}
                 solved={q2} onAnswered={() => setQ2(true)} />
               {lab(kit)}
+              {q2 && (
+                <KnowledgeBrick
+                  id="colin-oeil-hesite"
+                  variant="new"
+                  compact
+                  lead={<>C en (5 ; 4) avait l’air aligné, et ne l’était pas : ce que ça dit sur l’œil et le dessin.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -128,11 +152,16 @@ export default function Module02TroisPoints() {
               options={['les vecteurs AB et AC sont colinéaires', 'les vecteurs AB et AC sont égaux', 'AB et AC ont la même longueur', 'C est entre A et B']} cols={1} correct={0}
               explain="Alignés ⇔ AB et AC ont la même direction ⇔ colinéaires. Ni égaux (C ≠ B), ni de même longueur, ni forcément entre A et B : (−5 ; −2) est aligné, de l’autre côté de A."
               explainWrong="Tu as vu (−5 ; −2) ou (5 ; 3) s’aligner : AC n’y est ni égal à AB, ni de même longueur, ni « entre ». La seule chose commune à toutes tes positions alignées : AC sur le rail de AB — colinéaires."
+              requires={['colin-alignement', 'colin-oeil-hesite']}
               solved={q3} onAnswered={() => setQ3(true)} />
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Alignement = colinéarité de deux vecteurs. Il reste à décider la colinéarité SANS dessin, à partir des coordonnées : module 3.</Feedback>}
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          Il reste à décider la colinéarité SANS dessiner.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

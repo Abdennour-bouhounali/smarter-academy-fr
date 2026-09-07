@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import ValueTable from '../../../../../common/components/ValueTable';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -59,10 +59,57 @@ export default function Module04Factoriser() {
       estimatedTime="11 min"
       brief={{ tag: '🔎 Mission 04', title: 'Développer coupe en morceaux. Factoriser recolle : retrouver le produit.', tone: 'indigo', body: <p>Quatre sommes. À chaque fois, touche le facteur commun — le plus grand possible.</p> }}
       steps={[
-        { num: 1, title: 'Un monôme commun', done: !!done.t1, content: <FactorFinder task={TASKS[0]} onDone={mark('t1')} solved={!!done.t1} /> },
-        { num: 2, title: 'Un binôme commun', done: !!done.t2, content: <FactorFinder task={TASKS[1]} onDone={mark('t2')} solved={!!done.t2} /> },
+        {
+          num: 1, title: 'Un monôme commun', done: !!done.t1,
+          content: (
+            <div className="space-y-3">
+              <FactorFinder task={TASKS[0]} onDone={mark('t1')} solved={!!done.t1} />
+              {/* Le facteur 4x vient d'être sorti devant : c'est l'instant où
+                  « factoriser » se nomme — avant que le module 5 ne le redemande. */}
+              {!!done.t1 && (
+                <KnowledgeBrick
+                  id="factoriser"
+                  variant="new"
+                  compact
+                  lead={<>Tu viens de transformer une somme en produit : c’est le chemin inverse de développer. Cette opération s’appelle <strong>factoriser</strong>.</>}
+                />
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2, title: 'Un binôme commun', done: !!done.t2,
+          content: (
+            <div className="space-y-3">
+              <FactorFinder task={TASKS[1]} onDone={mark('t2')} solved={!!done.t2} />
+              {!!done.t2 && (
+                <KnowledgeBrick
+                  id="methode-facteur-commun"
+                  variant="new"
+                  lead={<>Cette fois le facteur commun était tout un binôme, (x + 1) — pas seulement un nombre ou un x.</>}
+                />
+              )}
+            </div>
+          ),
+        },
         { num: 3, title: 'Une différence de carrés', done: !!done.t3, content: <FactorFinder task={TASKS[2]} onDone={mark('t3')} solved={!!done.t3} /> },
-        { num: 4, title: 'Un carré caché', done: !!done.t4, content: <FactorFinder task={TASKS[3]} onDone={mark('t4')} solved={!!done.t4} /> },
+        {
+          num: 4, title: 'Un carré caché', done: !!done.t4,
+          content: (
+            <div className="space-y-3">
+              <FactorFinder task={TASKS[3]} onDone={mark('t4')} solved={!!done.t4} />
+              {/* Les étapes 3 et 4 viennent de reconnaître les deux identités à
+                  l'envers : a² − b², puis a² + 2ab + b². */}
+              {!!done.t4 && (
+                <KnowledgeBrick
+                  id="methode-identite-inverse"
+                  variant="new"
+                  lead={<>x² − 25 et 4x² + 12x + 9 se factorisaient sans facteur commun apparent : il fallait reconnaître une identité remarquable à l’envers.</>}
+                />
+              )}
+            </div>
+          ),
+        },
         {
           num: 5, title: 'Vérifier, pas croire', subtitle: 'Teste (x + 1)(3x + 1) contre la somme de départ.', done: tested.size >= 3,
           content: (kit) => (
@@ -70,7 +117,7 @@ export default function Module04Factoriser() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok"><strong>Factoriser :</strong> repérer le facteur commun (le plus grand : nombre × x…), ou reconnaître une identité (a² − b², a² ± 2ab + b²), puis écrire le PRODUIT. Le résultat doit être un produit — un « … + 9 » qui traîne n’est pas factorisé. Et toujours vérifier en développant, ou au tableau.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={4} />}
     />
   );
 }

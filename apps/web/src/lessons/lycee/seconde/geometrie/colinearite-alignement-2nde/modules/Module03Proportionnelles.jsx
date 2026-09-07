@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, BatchChoiceQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorPlane from '../components/VectorPlane';
@@ -88,7 +89,21 @@ export default function Module03Proportionnelles() {
               <div className="flex justify-center"><Stepper label="k" value={k} onChange={(nk) => changeK(nk, kit.react)} min={-3} max={3} step={0.5} tone="emerald" /></div>
               <ProportionTable u={U} v={v} k={k} />
               {done1 ? (
-                <Feedback tone="ok">Quel que soit k, v reste sur le rail : <strong>colinéaire à u ⇔ v = k·u</strong>. Les coordonnées de v sont celles de u multipliées par le même k — elles sont <strong>proportionnelles</strong>. k &lt; 0 retourne le sens{visited.has(0) ? ' ; k = 0 donne le vecteur nul, colinéaire à tout vecteur' : ''}.</Feedback>
+                <>
+                  <Feedback tone="ok">Quel que soit k, v reste sur le rail : <strong>colinéaire à u ⇔ v = k·u</strong>. Les coordonnées de v sont celles de u multipliées par le même k — elles sont <strong>proportionnelles</strong>. k &lt; 0 retourne le sens{visited.has(0) ? ' ; k = 0 donne le vecteur nul, colinéaire à tout vecteur' : ''}.</Feedback>
+                  <KnowledgeBrick
+                    id="colin-multiple"
+                    variant="new"
+                    compact
+                    lead={<>Tu viens de régler k et de voir v = k·u rester sur le rail à chaque valeur.</>}
+                  />
+                  <KnowledgeBrick
+                    id="colin-nul-colineaire-tout"
+                    variant="new"
+                    compact
+                    lead={<>Et k = 0 : le cas particulier que tu as croisé en réglant le curseur.</>}
+                  />
+                </>
               ) : (
                 <Feedback tone="info">{k === 0 ? 'k = 0 : v est le vecteur nul (0 ; 0) — colinéaire à tout vecteur, par convention. ' : ''}{!visited.has(2) ? 'Passe par k = 2. ' : ''}{![...visited].some((x) => x < 0) ? 'Essaie un k négatif. ' : ''}{![...visited].some((x) => !Number.isInteger(x)) ? 'Et un k non entier, comme 1,5.' : ''}</Feedback>
               )}
@@ -98,35 +113,62 @@ export default function Module03Proportionnelles() {
         {
           num: 2, title: 'Sans dessiner', subtitle: 'Les coordonnées sont-elles proportionnelles ? Décide, puis vérifie avec les produits en croix.', done: b2,
           content: (
-            <BatchChoiceQuestion
-              intro={<p className="text-sm text-slate-600">Rappel de collège : deux couples (x ; y) et (x′ ; y′) sont proportionnels quand les produits en croix x·y′ et y·x′ sont égaux.</p>}
-              rows={[
-                { id: 'r1', label: 'u(2 ; 1) et v(6 ; 3)', options: ['colinéaires', 'non colinéaires'], correct: 0 },
-                { id: 'r2', label: 'u(2 ; 1) et v(4 ; 3)', options: ['colinéaires', 'non colinéaires'], correct: 1, correction: '×2 sur x mais ×3 sur y : 2 × 3 ≠ 1 × 4.' },
-                { id: 'r3', label: 'u(3 ; −2) et v(−1,5 ; 1)', options: ['colinéaires', 'non colinéaires'], correct: 0, correction: 'v = −0,5·u.' },
-                { id: 'r4', label: 'u(4 ; 0) et v(6 ; 0)', options: ['colinéaires', 'non colinéaires'], correct: 0, correction: 'v = 1,5·u — pas besoin de diviser par 0 : 4 × 0 = 0 × 6.' },
-              ]}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {allRight ? 'Quatre sur quatre. ' : `${nCorrect} / ${total}. `}Produits en croix : {pairs.map((p) => <span key={p.id} className="block font-mono text-xs">{cross(p)}{det(p.u, p.v) === 0 ? ' → égaux, colinéaires' : ' → différents, non colinéaires'}</span>)}
-                </Feedback>
-              )}
-              solved={b2} onAnswered={() => setB2(true)} />
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="colin-produits-croix"
+                variant="new"
+                lead={<>Le rappel de collège avant d’en refaire quatre : les produits en croix, sans dessin.</>}
+              />
+              <BatchChoiceQuestion
+                intro={<p className="text-sm text-slate-600">Rappel de collège : deux couples (x ; y) et (x′ ; y′) sont proportionnels quand les produits en croix x·y′ et y·x′ sont égaux.</p>}
+                rows={[
+                  { id: 'r1', label: 'u(2 ; 1) et v(6 ; 3)', options: ['colinéaires', 'non colinéaires'], correct: 0 },
+                  { id: 'r2', label: 'u(2 ; 1) et v(4 ; 3)', options: ['colinéaires', 'non colinéaires'], correct: 1, correction: '×2 sur x mais ×3 sur y : 2 × 3 ≠ 1 × 4.' },
+                  { id: 'r3', label: 'u(3 ; −2) et v(−1,5 ; 1)', options: ['colinéaires', 'non colinéaires'], correct: 0, correction: 'v = −0,5·u.' },
+                  { id: 'r4', label: 'u(4 ; 0) et v(6 ; 0)', options: ['colinéaires', 'non colinéaires'], correct: 0, correction: 'v = 1,5·u — pas besoin de diviser par 0 : 4 × 0 = 0 × 6.' },
+                ]}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {allRight ? 'Quatre sur quatre. ' : `${nCorrect} / ${total}. `}Produits en croix : {pairs.map((p) => <span key={p.id} className="block font-mono text-xs">{cross(p)}{det(p.u, p.v) === 0 ? ' → égaux, colinéaires' : ' → différents, non colinéaires'}</span>)}
+                  </Feedback>
+                )}
+                requires={['colin-multiple', 'colin-produits-croix']}
+                solved={b2} onAnswered={() => setB2(true)} />
+            </div>
           ),
         },
         {
           num: 3, title: 'La coordonnée manquante', done: n3,
           content: (
-            <NumericQuestion
-              prompt="u(2 ; −3) et v(−6 ; y) sont colinéaires. Que vaut y ?"
-              expected={9} parse={parseSigned} display="9" width="w-24"
-              explain="v = k·u avec −6 = 2k, donc k = −3, et y = −3 × (−3) = 9. Produits en croix : 2 × 9 = 18 et (−3) × (−6) = 18."
-              explainFor={(n) => (n === -9 ? 'Le signe : k = −6 ÷ 2 = −3, puis y = k × (−3) = (−3) × (−3) = +9.' : n === 6 ? '6 est bien à la même distance de 0 que −6… mais y = k × (−3) avec k = −3 : y = 9.' : `Avec y = ${fr(n)}, les produits en croix valent 2 × ${factor(n)} = ${fr(2 * n)} et (−3) × (−6) = 18 : différents. Il faut y = 9.`)}
-              solved={n3} onAnswered={() => setN3(true)} />
+            <div className="space-y-3">
+              <NumericQuestion
+                prompt="u(2 ; −3) et v(−6 ; y) sont colinéaires. Que vaut y ?"
+                expected={9} parse={parseSigned} display="9" width="w-24"
+                explain="v = k·u avec −6 = 2k, donc k = −3, et y = −3 × (−3) = 9. Produits en croix : 2 × 9 = 18 et (−3) × (−6) = 18."
+                explainFor={(n) => (n === -9 ? 'Le signe : k = −6 ÷ 2 = −3, puis y = k × (−3) = (−3) × (−3) = +9.' : n === 6 ? '6 est bien à la même distance de 0 que −6… mais y = k × (−3) avec k = −3 : y = 9.' : `Avec y = ${fr(n)}, les produits en croix valent 2 × ${factor(n)} = ${fr(2 * n)} et (−3) × (−6) = 18 : différents. Il faut y = 9.`)}
+                requires={['colin-multiple', 'colin-produits-croix']}
+                solved={n3} onAnswered={() => setN3(true)} />
+              {/* La résolution qui précède EST la méthode : on la nomme une
+                  fois qu'elle vient d'être exécutée en entier. */}
+              {n3 && (
+                <KnowledgeBrick
+                  id="colin-coordonnee-manquante-prop"
+                  variant="new"
+                  lead={<>Tu viens de trouver y en écrivant la proportionnalité puis en résolvant : la méthode en trois lignes.</>}
+                />
+              )}
+              {n3 && (
+                <KnowledgeBrick
+                  id="mem-colin-multiple"
+                  variant="new"
+                  lead={<>Ce que tu viens de faire, en une ligne à retenir.</>}
+                />
+              )}
+            </div>
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Colinéaires ⇔ les produits en croix x·y′ et y·x′ sont égaux ⇔ leur différence x·y′ − y·x′ est nulle. Ce nombre a un nom, un signe et une aire : module 4.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={3} />}
     />
   );
 }

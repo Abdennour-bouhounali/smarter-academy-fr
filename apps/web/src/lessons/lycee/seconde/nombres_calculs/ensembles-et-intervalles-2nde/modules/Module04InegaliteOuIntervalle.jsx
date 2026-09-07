@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -202,11 +203,7 @@ export default function Module04InegaliteOuIntervalle() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Décrire un ensemble de nombres par un intervalle, c’est traduire une (double) inégalité : chaque signe devient un crochet, et le sens de l’inégalité dit vers quel infini regarder.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={4} />}
     />
   );
 }

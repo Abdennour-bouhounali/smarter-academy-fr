@@ -3,56 +3,104 @@
   "grade": "seconde",
   "lexiconVersion": 1,
   "prerequisites": [
-    "appartient"
+    "appartient",
+    "fraction-decimale",
+    "quotient",
+    "numerateur",
+    "denominateur",
+    "ordre-nombres",
+    "puissance",
+    "exposant",
+    "racine-carree"
   ],
   "conceptsIntroduced": [
     {
       "id": "droite-reelle",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module01LeZoomInfini.jsx",
+        "line": 100,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "trois-comportements",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module01LeZoomInfini.jsx",
+        "line": 132,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "familles-emboitees",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module02FamillesDeNombres.jsx",
+        "line": 76,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-restes-division",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module03DecimalOuPas.jsx",
+        "line": 83,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-fraction-finie-ou-periodique",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module03DecimalOuPas.jsx",
+        "line": 121,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "exact-approche",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module03DecimalOuPas.jsx",
+        "line": 160,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-aucun-decimal-nest-racine",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module04ExactOuApproche.jsx",
+        "line": 77,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-sens-arrondi",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05EncadrerEtComparer.jsx",
+        "line": 136,
+        "step": 4,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -60,19 +108,34 @@
       "id": "decimal",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module02FamillesDeNombres.jsx",
+        "line": 81,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "rationnel",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module02FamillesDeNombres.jsx",
+        "line": 87,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "irrationnel",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module02FamillesDeNombres.jsx",
+        "line": 93,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -80,25 +143,45 @@
       "id": "methode-encadrer-decimales",
       "type": "methodes",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module01LeZoomInfini.jsx",
+        "line": 149,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "arrondi-troncature",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module04ExactOuApproche.jsx",
+        "line": 95,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-encadrer-racine",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05EncadrerEtComparer.jsx",
+        "line": 76,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-comparer-reels",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05EncadrerEtComparer.jsx",
+        "line": 102,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -106,13 +189,23 @@
       "id": "mem-exact-approche",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module03DecimalOuPas.jsx",
+        "line": 165,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-exact-puis-arrondir",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module04ExactOuApproche.jsx",
+        "line": 136,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -123,8 +216,18 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module00Diagnostic.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "fraction-decimale",
+        "quotient",
+        "numerateur",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "fraction-decimale": "prior",
+        "quotient": "prior",
+        "numerateur": "prior",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -134,9 +237,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module00Diagnostic.jsx",
-      "line": 27,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 28,
+      "requires": [
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -146,9 +253,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module00Diagnostic.jsx",
-      "line": 33,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 35,
+      "requires": [
+        "puissance",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "puissance": "prior",
+        "exposant": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -158,9 +271,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module00Diagnostic.jsx",
-      "line": 39,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 42,
+      "requires": [
+        "puissance"
+      ],
+      "prerequisiteStatus": {
+        "puissance": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -170,9 +287,13 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module00Diagnostic.jsx",
-      "line": 45,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 49,
+      "requires": [
+        "racine-carree"
+      ],
+      "prerequisiteStatus": {
+        "racine-carree": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -182,7 +303,7 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module00Diagnostic.jsx",
-      "line": 51,
+      "line": 56,
       "requires": [
         "appartient"
       ],
@@ -198,9 +319,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module01LeZoomInfini.jsx",
-      "line": 126,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 154,
+      "requires": [
+        "droite-reelle",
+        "methode-encadrer-decimales"
+      ],
+      "prerequisiteStatus": {
+        "droite-reelle": "established@M1",
+        "methode-encadrer-decimales": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +337,19 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module02FamillesDeNombres.jsx",
-      "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 109,
+      "requires": [
+        "familles-emboitees",
+        "decimal",
+        "rationnel",
+        "irrationnel"
+      ],
+      "prerequisiteStatus": {
+        "familles-emboitees": "established@M2",
+        "decimal": "established@M2",
+        "rationnel": "established@M2",
+        "irrationnel": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,9 +359,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module03DecimalOuPas.jsx",
-      "line": 115,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 135,
+      "requires": [
+        "regle-restes-division",
+        "regle-fraction-finie-ou-periodique"
+      ],
+      "prerequisiteStatus": {
+        "regle-restes-division": "established@M3",
+        "regle-fraction-finie-ou-periodique": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +377,15 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module03DecimalOuPas.jsx",
-      "line": 137,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 172,
+      "requires": [
+        "exact-approche",
+        "mem-exact-approche"
+      ],
+      "prerequisiteStatus": {
+        "exact-approche": "established@M3",
+        "mem-exact-approche": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,9 +395,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module04ExactOuApproche.jsx",
-      "line": 81,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 100,
+      "requires": [
+        "arrondi-troncature"
+      ],
+      "prerequisiteStatus": {
+        "arrondi-troncature": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -258,9 +411,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module04ExactOuApproche.jsx",
-      "line": 98,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 120,
+      "requires": [
+        "arrondi-troncature",
+        "regle-aucun-decimal-nest-racine"
+      ],
+      "prerequisiteStatus": {
+        "arrondi-troncature": "established@M4",
+        "regle-aucun-decimal-nest-racine": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -270,397 +429,230 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module04ExactOuApproche.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 151,
+      "requires": [
+        "arrondi-troncature",
+        "mem-exact-puis-arrondir"
+      ],
+      "prerequisiteStatus": {
+        "arrondi-troncature": "established@M4",
+        "mem-exact-puis-arrondir": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M05-S1-Q1",
+      "questionId": "M05-S4-Q1",
       "module": 5,
-      "step": 1,
-      "component": "BatchChoiceQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05ARetenir.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M05-S2-Q2",
-      "module": 5,
-      "step": 2,
-      "component": "TapQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05ARetenir.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M05-S3-Q3",
-      "module": 5,
-      "step": 3,
-      "component": "BatchChoiceQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05ARetenir.jsx",
-      "line": 90,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M06-S4-Q1",
-      "module": 6,
       "step": 4,
       "component": "NumericQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06EncadrerEtComparer.jsx",
-      "line": 97,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05EncadrerEtComparer.jsx",
+      "line": 119,
+      "requires": [
+        "methode-encadrer-racine"
+      ],
+      "prerequisiteStatus": {
+        "methode-encadrer-racine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M06-S4-Q2",
-      "module": 6,
+      "questionId": "M05-S4-Q2",
+      "module": 5,
       "step": 4,
       "component": "TapQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06EncadrerEtComparer.jsx",
-      "line": 110,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05EncadrerEtComparer.jsx",
+      "line": 144,
+      "requires": [
+        "regle-sens-arrondi",
+        "methode-encadrer-racine"
+      ],
+      "prerequisiteStatus": {
+        "regle-sens-arrondi": "established@M5",
+        "methode-encadrer-racine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e1",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
       "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "familles-emboitees",
+        "decimal",
+        "rationnel"
+      ],
+      "prerequisiteStatus": {
+        "familles-emboitees": "established@M2",
+        "decimal": "established@M2",
+        "rationnel": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e2",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 49,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 50,
+      "requires": [
+        "familles-emboitees",
+        "irrationnel",
+        "racine-carree"
+      ],
+      "prerequisiteStatus": {
+        "familles-emboitees": "established@M2",
+        "irrationnel": "established@M2",
+        "racine-carree": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e3",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 59,
+      "requires": [
+        "droite-reelle",
+        "methode-encadrer-decimales"
+      ],
+      "prerequisiteStatus": {
+        "droite-reelle": "established@M1",
+        "methode-encadrer-decimales": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e4",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 70,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 73,
+      "requires": [
+        "regle-restes-division",
+        "regle-fraction-finie-ou-periodique"
+      ],
+      "prerequisiteStatus": {
+        "regle-restes-division": "established@M3",
+        "regle-fraction-finie-ou-periodique": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e5",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 82,
+      "requires": [
+        "regle-restes-division",
+        "decimal"
+      ],
+      "prerequisiteStatus": {
+        "regle-restes-division": "established@M3",
+        "decimal": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e6",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 92,
+      "requires": [
+        "arrondi-troncature"
+      ],
+      "prerequisiteStatus": {
+        "arrondi-troncature": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e7",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 95,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 101,
+      "requires": [
+        "mem-exact-puis-arrondir",
+        "arrondi-troncature"
+      ],
+      "prerequisiteStatus": {
+        "mem-exact-puis-arrondir": "established@M4",
+        "arrondi-troncature": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e8",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 111,
+      "requires": [
+        "methode-encadrer-racine"
+      ],
+      "prerequisiteStatus": {
+        "methode-encadrer-racine": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e9",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 112,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 120,
+      "requires": [
+        "methode-comparer-reels"
+      ],
+      "prerequisiteStatus": {
+        "methode-comparer-reels": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "nr-e10",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module07MissionFinale.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module06MissionFinale.jsx",
+      "line": 129,
+      "requires": [
+        "methode-encadrer-racine",
+        "regle-sens-arrondi"
+      ],
+      "prerequisiteStatus": {
+        "methode-encadrer-racine": "established@M5",
+        "regle-sens-arrondi": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'droite-reelle' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 27,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'trois-comportements' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 48,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-encadrer-decimales' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 75,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'familles-emboitees' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 97,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'decimal' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 121,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'rationnel' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 138,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'irrationnel' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 154,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-restes-division' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 177,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-fraction-finie-ou-periodique' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 194,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'exact-approche' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 216,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-exact-approche' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 234,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'arrondi-troncature' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 255,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-aucun-decimal-nest-racine' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 277,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-exact-puis-arrondir' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 297,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-encadrer-racine' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 319,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-comparer-reels' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 341,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-sens-arrondi' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/knowledge.jsx",
-      "line": 359,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

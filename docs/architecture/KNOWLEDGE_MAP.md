@@ -23,16 +23,71 @@ It is not a summary of the current module, and not a static revision sheet shipp
 It starts empty, gains the contribution of each module as that module is completed, and ends as the
 complete lesson knowledge. Its presentations are all fed by the same data:
 
-- **the drawer** (« Ma carte ») — a right-anchored, resizable companion panel, openable from any
-  lesson page. *Compact access.*
+- **the drawer** — a right-anchored, resizable panel floating above the lesson. No longer offered
+  as a *choice* (its button is gone): it is the fallback below 1024px, where a column has no room.
+  *Not a presentation the student picks.*
+- **the column** (« Colonne », *prior mode*) — the workspace makes ROOM for the map instead of
+  letting it float above the lesson: the sidebar compresses to icons, the content genuinely
+  shrinks, and the map becomes a real third region. Resizable, and bounded so the lesson keeps at
+  least `MIN_CONTENT_WIDTH`. Desktop only (≥ 1024px). *A second workspace.*
 - **expanded** — the same map filling the lesson's own viewport. *A full knowledge workspace.*
 - **print (A4)** — a dedicated structured document. *A mathematical reference.*
 - **the module « À retenir »** — the end-of-module snapshot of that same map, in the page.
 
 ```text
 Module completion → authoritative progress (useProgress) → knowledge contribution
-                  → cumulative reducer → drawer | expanded | print | snapshot
+                  → cumulative reducer → drawer | column | expanded | print | snapshot
 ```
+
+### The column (prior mode)
+
+```text
+┌────┬────────────────────────────┬────────────┐
+│ S  │        CONTENU             │  MA CARTE  │
+└────┴────────────────────────────┴────────────┘
+```
+
+The layout state lives in `src/context/WorkspaceLayoutContext.jsx`, mounted above the router in
+`App.jsx` — **above both shells**, since `CourseLayout` picks `StudentLayout` or `MainLayout` by
+authentication and the column must work under either. `mode` is `closed | normal | prior`; only
+`prior` changes the shell, so the drawer and expanded geometry (locked by `km-layout.mjs` and the
+ten `*-carte.mjs` suites) are untouched.
+
+**How the content actually shrinks.** The shell reserves a right gutter in the padding of its
+`<main>`, via `--sa-gutter-w` and the `.sa-workspace-main` rule in `index.css`. This is deliberate:
+`useLessonViewport` already measures that padding box to find the rectangle offered to the lesson,
+so reserving the gutter there means every existing measurement sees the new geometry unchanged —
+and the map lands exactly in the gutter it just created. A CSS grid would have added a *second*
+measurement system.
+
+> Reserve with `padding-right` on `<main>`, never with a competing grid.
+
+`contentGutter === maCarteWidth` is what guarantees the content is never hidden behind the card;
+`maxMaCarteWidth()` bounds the resize so the lesson always keeps `MIN_CONTENT_WIDTH`.
+
+**The sidebar has two reasons to be collapsed, and one state.** `sidebarCollapsed` is derived as
+`prior || sidebarManuallyCollapsed` — the manual toggle (`data-sidebar-toggle`, persisted under
+`sidebarCollapsed`) is a comfort, prior mode is a need, so prior wins and the toggle is disabled
+(and says why) while the column is open.
+
+**Fullscreen suspends the column.** `mapExpanded` (published by the panel) drops the gutter to 0:
+fullscreen covers the lesson area itself, so reserving a column there would amputate the very
+rectangle it fills — the card stopped short of the right edge. For the same reason `expandedGeom`
+is computed as *sidebar edge → window edge* rather than read from `<main>`: the shell only releases
+the gutter on the next render, so a measured width made the panel lurch left before correcting
+right. Both are regression-tested in `km-prior.mjs`.
+
+**Opening and closing** slide in from the right (`x: 100% → 0`, 300ms) while the shell's gutter
+opens underneath on the same curve — the lesson makes room *while* the card arrives, and both
+movements land together.
+
+Only `x` is animated, never the geometry. `top/left/width/height` are **posed** through `style`,
+and the panel is not mounted until `useLessonViewport` reports `ready`. Animating the geometry was
+a real bug: framer-motion interpolated from its own zero state (`left: 0`), so the card was born at
+the *left* edge and travelled across the screen. `useLessonViewport` also measures in a
+`useLayoutEffect`, so the first painted frame already carries the true rectangle.
+
+Covered by `apps/web/e2e/lesson-kit/km-prior.mjs` (54 assertions) and `sidebar-toggle.mjs` (29).
 
 The architectural rule that motivates everything else:
 

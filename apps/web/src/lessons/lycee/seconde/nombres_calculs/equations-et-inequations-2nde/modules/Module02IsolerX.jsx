@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -132,7 +133,7 @@ export default function Module02IsolerX() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok"><strong>Méthode :</strong> rassembler les x d’un côté, les nombres de l’autre (même opération aux deux membres), puis diviser par le coefficient de x. Solution exacte, puis VÉRIFIER par substitution. Et pour une inéquation ? Presque pareil… presque.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={2} />}
     />
   );
 }

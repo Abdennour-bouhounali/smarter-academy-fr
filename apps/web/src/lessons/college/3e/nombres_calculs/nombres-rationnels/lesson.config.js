@@ -51,7 +51,11 @@ export const LESSON_CONFIG = {
   // manier les signes et l'ordre des relatifs — exactement ce que le module 0
   // diagnostique. Tout le reste (irréductible, PGCD, PPCM, inverse, les quatre
   // opérations sur les rationnels) est établi dans la leçon même.
-  priorKnowledge: ['quotient', 'calcul-numerique', 'nombres-relatifs'],
+  // « numérateur » et « dénominateur » (6e) nomment les deux nombres d'une
+  // fraction : le module 0 s'en sert dès sa première question et la leçon ne
+  // les (ré)enseigne pas — elle enseigne que le MÊME point admet mille
+  // écritures. Ils sont donc des prérequis, pas des cibles.
+  priorKnowledge: ['quotient', 'numerateur', 'denominateur', 'calcul-numerique', 'nombres-relatifs'],
   title: 'Nombres rationnels',
   description:
     "Re-découper une barre sans jamais déplacer le point qu'elle marque, pour découvrir qu'un rationnel a mille écritures et une seule valeur — puis les rendre irréductibles, les comparer, les additionner à la même découpe, les multiplier, les diviser et les enchaîner dans de vrais problèmes.",

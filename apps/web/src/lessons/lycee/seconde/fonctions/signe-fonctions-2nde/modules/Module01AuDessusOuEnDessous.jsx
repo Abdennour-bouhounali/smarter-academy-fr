@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -17,6 +17,26 @@ import { TEMP, TEMP_RANGE, CUBIC, CUBIC_RANGE, signAt } from '../components/sign
  *         l'alternance − + − +.
  * Step 3  entre deux zéros, le signe ne change pas.  Step 4  f(x) > 0 ⟺ au-dessus.
  * Rien n'est appelé « tableau de signes » avant le module 2.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Les quatre connaissances du module ne vivaient que dans les `Feedback` de
+ *   fin d'étape et dans l'« À retenir » du pied : rien n'était posé en
+ *   position d'enseignement, et les questions des étapes 3 et 4 exigeaient
+ *   « signe de f(x) », « zéro » et le mot « fonction » lui-même sans qu'aucun
+ *   n'ait été établi. L'ordre est maintenant geste → brique → demande :
+ *     étape 1  balayer la journée, voir l'axe se peindre → brique
+ *              `signe-position-courbe`
+ *     étape 2  trouver les trois traversées → briques `zero-fonction` puis
+ *              `regle-signe-constant-entre-zeros`
+ *     étape 3  la question sur le signe constant, désormais légitime
+ *     étape 4  brique `mem-au-dessus-en-dessous` avant la question qui la teste
+ *
+ * MANIPULATION JAMAIS GELÉE. Les deux sondes restaient `disabled` une fois
+ * l'étape réussie : l'élève ne pouvait plus rebalayer la courbe qu'il venait
+ * de comprendre. Elles restent vivantes ; seul le verrou d'ANTÉRIORITÉ
+ * (`!done1`) demeure à l'étape 2, parce qu'une étape garde son ordre. Les
+ * `PredictionChips`, eux, se figent toujours : une prédiction s'enregistre
+ * une fois, avant la révélation.
  */
 const TEMP_PROBE = { f: TEMP, range: TEMP_RANGE, unit: 15, unitY: 14, xStep: 1, yStep: 2, axisLabels: { x: 't', y: 'T' }, xUnit: ' h', yUnit: ' °C', labelEvery: 2 };
 const CUBIC_PROBE = { f: CUBIC, range: CUBIC_RANGE, unit: 40, unitY: 18, xStep: 1, yStep: 1, axisLabels: { x: 'x', y: 'y' }, labelEvery: 2 };
@@ -43,11 +63,18 @@ export default function Module01AuDessusOuEnDessous() {
       content: (kit) => (
         <div className="space-y-3">
           <PredictionChips prompt="combien de fois la température passe-t-elle par 0 °C dans la journée ?" options={[{ id: '1', label: 'Une fois' }, { id: '2', label: 'Deux fois' }, { id: '0', label: 'Jamais' }]} value={pred} onChange={setPred} disabled={done1} />
-          <SignProbe {...TEMP_PROBE} value={t} visited={visT} onChange={(v) => moveT(v, kit.react)} disabled={done1} />
+          <SignProbe {...TEMP_PROBE} value={t} visited={visT} onChange={(v) => moveT(v, kit.react)} />
           {done1 ? (
-            <Feedback tone="ok">
-              {pred === '2' ? 'Ta prédiction tenait' : pred ? 'Ta prédiction ne tenait pas' : 'Regarde l’axe'} : à <strong>6 h</strong> et à <strong>18 h</strong>, T = 0 — la courbe <strong>traverse</strong> l’axe. Entre les deux, l’axe est vert : T &gt; 0, la courbe est au-dessus. Avant 6 h et après 18 h, rose : T &lt; 0, la courbe est en dessous — il gèle. Le signe de T(t) se lit sur la position de la courbe.
-            </Feedback>
+            <>
+              <Feedback tone="ok">
+                {pred === '2' ? 'Ta prédiction tenait' : pred ? 'Ta prédiction ne tenait pas' : 'Regarde l’axe'} : à <strong>6 h</strong> et à <strong>18 h</strong>, T = 0 — la courbe <strong>traverse</strong> l’axe. Entre les deux, l’axe est vert : T &gt; 0, la courbe est au-dessus. Avant 6 h et après 18 h, rose : T &lt; 0, la courbe est en dessous — il gèle. Le signe de T(t) se lit sur la position de la courbe.
+              </Feedback>
+              <KnowledgeBrick
+                id="signe-position-courbe"
+                variant="new"
+                lead={<>La couleur que ta sonde vient de peindre a un nom : c’est le <strong>signe</strong> de la fonction T en cette heure-là. Repasse la sonde sur la journée en lisant les trois cas.</>}
+              />
+            </>
           ) : (
             <Feedback tone="info">{!coveredT ? 'Balaye : le matin, la journée, le soir.' : 'Il reste à trouver les deux heures exactes où la courbe touche l’axe (T = 0).'}</Feedback>
           )}
@@ -58,9 +85,22 @@ export default function Module01AuDessusOuEnDessous() {
       num: 2, title: 'Une courbe qui traverse trois fois', subtitle: 'Nouvelle courbe. Balaye-la et trouve les trois abscisses où f(x) = 0.', done: done2,
       content: (kit) => (
         <div className="space-y-3">
-          <SignProbe {...CUBIC_PROBE} value={x} visited={visX} onChange={(v) => moveX(v, kit.react)} disabled={done2 || !done1} />
+          <SignProbe {...CUBIC_PROBE} value={x} visited={visX} onChange={(v) => moveX(v, kit.react)} disabled={!done1} />
           {done2 ? (
-            <Feedback tone="ok">Trois traversées, en <strong>−3</strong>, <strong>1</strong> et <strong>4</strong> ; quatre zones sur l’axe peint : <strong>− + − +</strong>. À chaque traversée, le signe change ; entre deux traversées, il ne change jamais.</Feedback>
+            <>
+              <Feedback tone="ok">Trois traversées, en <strong>−3</strong>, <strong>1</strong> et <strong>4</strong> ; quatre zones sur l’axe peint : <strong>− + − +</strong>. À chaque traversée, le signe change ; entre deux traversées, il ne change jamais.</Feedback>
+              <KnowledgeBrick
+                id="zero-fonction"
+                variant="new"
+                lead={<>Les trois abscisses que tu viens de trouver — −3, 1 et 4 — portent un nom.</>}
+              />
+              <KnowledgeBrick
+                id="regle-signe-constant-entre-zeros"
+                variant="new"
+                compact
+                lead={<>Et si tu repasses la sonde entre deux points ambre, la couleur ne bouge plus : essaie.</>}
+              />
+            </>
           ) : (
             <Feedback tone="info">Zéros trouvés : {[-3, 1, 4].filter((z) => visX.includes(z)).length} sur 3. Signe actuel : {signAt(CUBIC, x) === '+' ? 'positif' : signAt(CUBIC, x) === '−' ? 'négatif' : 'nul'}.</Feedback>
           )}
@@ -73,6 +113,7 @@ export default function Module01AuDessusOuEnDessous() {
         <TapQuestion prompt="Entre deux zéros consécutifs d’une fonction (courbe tracée d’un seul trait), le signe de f(x)…"
           options={['ne change pas : pour changer de signe, la courbe devrait traverser l’axe, donc passer par un zéro', 'change une fois au milieu', 'dépend du signe de x', 'peut changer plusieurs fois']}
           correct={0} cols={1}
+          requires={['signe-position-courbe', 'zero-fonction', 'regle-signe-constant-entre-zeros']}
           explain="Passer du dessus au dessous de l’axe oblige la courbe à le traverser : c’est un zéro. Donc entre deux zéros consécutifs, le signe est constant — un seul test suffit à le connaître."
           explainWrong="Regarde l’axe peint : une seule couleur entre deux points ambre. Pour changer de couleur il faut passer par un zéro. Le signe de f(x) n’a rien à voir avec le signe de x : la courbe des températures est négative pour t = 2 (positif) et positive pour t = 12."
           solved={q3} onAnswered={() => setQ3(true)} />
@@ -81,12 +122,20 @@ export default function Module01AuDessusOuEnDessous() {
     {
       num: 4, title: 'Dire le signe', done: q4,
       content: (
-        <TapQuestion prompt="Que signifie « f(x) > 0 » pour un x donné ?"
-          options={['Le point de la courbe d’abscisse x est au-dessus de l’axe des abscisses', 'x est positif', 'La courbe monte en x', 'Le point est à droite de l’axe des ordonnées']}
-          correct={0} cols={1}
-          explain="f(x) est l’ordonnée du point d’abscisse x ; positive, le point est au-dessus de l’axe horizontal. Le signe de x (à droite ou à gauche) n’intervient pas, ni le sens de la courbe."
-          explainWrong="f(x) est une ordonnée. f(x) > 0 : le point (x ; f(x)) est au-dessus de l’axe des abscisses — l’axe peint en vert. Rien à voir avec x positif ni avec « ça monte »."
-          solved={q4} onAnswered={() => setQ4(true)} />
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="mem-au-dessus-en-dessous"
+            variant="new"
+            lead={<>Deux courbes balayées, une seule chose à retenir de tout ce module.</>}
+          />
+          <TapQuestion prompt="Que signifie « f(x) > 0 » pour un x donné ?"
+            options={['Le point de la courbe d’abscisse x est au-dessus de l’axe des abscisses', 'x est positif', 'La courbe monte en x', 'Le point est à droite de l’axe des ordonnées']}
+            correct={0} cols={1}
+            requires={['signe-position-courbe', 'mem-au-dessus-en-dessous']}
+            explain="f(x) est l’ordonnée du point d’abscisse x ; positive, le point est au-dessus de l’axe horizontal. Le signe de x (à droite ou à gauche) n’intervient pas, ni le sens de la courbe."
+            explainWrong="f(x) est une ordonnée. f(x) > 0 : le point (x ; f(x)) est au-dessus de l’axe des abscisses — l’axe peint en vert. Rien à voir avec x positif ni avec « ça monte »."
+            solved={q4} onAnswered={() => setQ4(true)} />
+        </div>
       ),
     },
   ];

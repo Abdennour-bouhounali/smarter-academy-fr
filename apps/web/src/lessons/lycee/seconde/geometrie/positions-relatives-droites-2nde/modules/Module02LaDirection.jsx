@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -97,13 +97,27 @@ export default function Module02LaDirection() {
           <PredictionChips prompt="au moment où (d₂) devient parallèle à (d₁), que vaut det(u, v) ?"
             options={[{ id: 'zero', label: 'Il vaut 0' }, { id: 'max', label: 'Il est le plus grand possible' }, { id: 'same', label: 'Il ne change pas' }]}
             value={pred1} onChange={setPred1} disabled={done1} />
-          <DirectionLab state={done1 ? snap1 : state} onChange={(n) => change1(n, kit.react)} disabled={done1} />
+          <DirectionLab state={state} onChange={(n) => change1(n, kit.react)} />
           {done1 ? (
-            <Feedback tone="ok">
+            <>
+              <Feedback tone="ok">
               {pred1 === 'zero' ? 'Ta prédiction était la bonne' : pred1 ? 'Ta prédiction ne tenait pas' : 'Regarde'} : det(u, v) vaut <strong>0</strong> exactement quand
               v a la direction de u — v = {coupleText(snap1.v.x, snap1.v.y)} est colinéaire à u = {coupleText(snap1.u.x, snap1.u.y)}. Et au même instant, les pentes sont
               devenues égales : m₁ = m₂ = {slopeText(snap1.u)}. Sans dessin, <strong>un seul nombre</strong> décide.
-            </Feedback>
+              </Feedback>
+              {/* Le nombre est tombé à 0 sous les doigts de l'élève : c'est le
+                  moment où le critère peut être nommé, et pas plus tard. */}
+              <KnowledgeBrick
+                id="critere-vecteurs-directeurs"
+                variant="new"
+                lead="Ce nombre que tu viens d’annuler porte un nom, et il décide à lui seul."
+              />
+              <KnowledgeBrick
+                id="formule-det-directions"
+                variant="new"
+                lead="La même chose, en une ligne à retenir."
+              />
+            </>
           ) : (
             <Feedback tone="info">det(u, v) = {formatDec(det(state.u, state.v))} : les droites sont sécantes. Il faut que v et u aient la <em>même direction</em>.</Feedback>
           )}
@@ -117,13 +131,27 @@ export default function Module02LaDirection() {
       done: done2,
       content: (kit) => (
         <div className="space-y-3">
-          <DirectionLab state={done2 ? snap2 : (done1 ? state : START)} onChange={(n) => change2(n, kit.react)} disabled={done2 || !done1} />
+          <DirectionLab state={done1 ? state : START} onChange={(n) => change2(n, kit.react)} disabled={!done1} />
           {done2 ? (
-            <Feedback tone="ok">
+            <>
+              <Feedback tone="ok">
               v = {coupleText(snap2.v.x, snap2.v.y)} : (d₂) est verticale, et sa pente <strong>n’existe pas</strong> (on diviserait par v_x = 0). Comparer les pentes ne
               peut donc rien dire — mais det(u, v) = {formatDec(det(snap2.u, snap2.v))} ≠ 0 tranche : <strong>sécantes</strong>. Le déterminant marche toujours ; les pentes,
               seulement quand les deux droites en ont une.
-            </Feedback>
+              </Feedback>
+              {/* La verticale vient d'exhiber la limite des pentes : le critère
+                  et son exception se posent ensemble, jamais l'un sans l'autre. */}
+              <KnowledgeBrick
+                id="critere-pentes"
+                variant="new"
+                lead="L’autre outil — plus rapide, mais avec l’exception que tu viens de rencontrer."
+              />
+              <KnowledgeBrick
+                id="methode-comparer-directions"
+                variant="new"
+                lead="Les deux critères rangés en une marche à suivre."
+              />
+            </>
           ) : (
             <Feedback tone="info">Amène la pointe de v exactement au-dessus (ou au-dessous) de B.</Feedback>
           )}
@@ -144,6 +172,7 @@ export default function Module02LaDirection() {
           explainFor={(n) => (n === -8 ? 'Tu as calculé 2 × (−4) : c’est u_x · v_x. Le déterminant croise les coordonnées : u_x · v_y − u_y · v_x = 2 × (−2) − 1 × (−4) = 0.'
             : n === -2 || n === 2 ? 'Tu as sans doute additionné. Le déterminant est une DIFFÉRENCE de deux produits croisés : 2 × (−2) − 1 × (−4) = −4 + 4 = 0.'
             : '2 × (−2) − 1 × (−4) = −4 − (−4) = 0 : les deux vecteurs ont la même direction ((−4 ; −2) = −2·(2 ; 1)).')}
+          requires={['critere-vecteurs-directeurs', 'formule-det-directions']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
@@ -168,6 +197,7 @@ export default function Module02LaDirection() {
               d’exception ; les pentes en ont une, la verticale.
             </Feedback>
           )}
+          requires={['critere-vecteurs-directeurs', 'critere-pentes', 'methode-comparer-directions']}
           solved={q4}
           onAnswered={() => setQ4(true)}
         />

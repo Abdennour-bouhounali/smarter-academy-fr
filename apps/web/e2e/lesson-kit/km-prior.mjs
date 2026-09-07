@@ -102,6 +102,9 @@ async function enterPrior(page) {
   await openMap(page);
   const col = page.locator('#km-root [data-km-view="prior"]');
   if (!(await col.count())) return false;
+  // La colonne est désormais le DÉFAUT : le bouton peut déjà être actif. On
+  // clique quand même (l'action est idempotente) pour couvrir le cas où une
+  // préférence « plein écran » traînait.
   await col.click();
   await page.waitForTimeout(900); // transition 300ms + ressort framer-motion
   return true;
@@ -117,6 +120,10 @@ async function enterPrior(page) {
   check('A: sidebar déployée (256)', Math.abs(before.sidebar.w - 256) < 2, JSON.stringify(before.sidebar));
   check('A: aucune carte montée', before.map === null);
 
+  // Le tiroir flottant n'est plus une présentation qu'on choisit.
+  await openMap(page);
+  check('B: le bouton « Tiroir » n\'existe plus', (await page.locator('#km-root [data-km-view="drawer"]').count()) === 0);
+  check('B: la carte s\'ouvre DIRECTEMENT en colonne', (await regions(page)).map.w <= 460 && Math.abs((await regions(page)).sidebar.w - 80) < 2);
   check('B: le contrôle « Colonne » existe', await enterPrior(page));
   const after = await regions(page);
 
@@ -145,6 +152,175 @@ async function enterPrior(page) {
   await ctx.close();
 }
 
+/* ── COLONNE FLEXIBLE — et le contenu jamais caché derrière la carte ─────── */
+{
+  console.log('\n=== flexible column: drag the handle, content never hides ===');
+  const ctx = await context({ width: 1440, height: 900 });
+  const page = await newPage(ctx, MODULE);
+  await enterPrior(page);
+
+  const before = await regions(page);
+  const handle = page.locator('#km-root .cursor-col-resize');
+  check('colonne: la poignée de redimensionnement existe', (await handle.count()) === 1);
+
+  // ÉLARGIR — on tire la poignée vers la gauche.
+  let hb = await handle.boundingBox();
+  await page.mouse.move(hb.x + hb.width / 2, hb.y + hb.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(hb.x - 180, hb.y + hb.height / 2, { steps: 14 });
+  await page.mouse.up();
+  await page.waitForTimeout(600);
+
+  const wide = await regions(page);
+  check('élargie: la carte a grandi', wide.map.w > before.map.w + 100, `${before.map.w} -> ${wide.map.w}`);
+  check('élargie: le contenu a rétréci d\'autant', wide.content.w < before.content.w - 100,
+    `${before.content.w} -> ${wide.content.w}`);
+  check('élargie: les trois zones pavent TOUJOURS la fenêtre',
+    Math.abs(wide.sidebar.w + wide.content.w + wide.map.w - wide.vw) < 4,
+    JSON.stringify({ s: wide.sidebar.w, c: wide.content.w, m: wide.map.w, vw: wide.vw }));
+  check('élargie: le contenu n\'est PAS caché derrière la carte', wide.map.x >= wide.content.right - 2,
+    `map.x=${wide.map.x} content.right=${wide.content.right}`);
+  check('élargie: aucun défilement horizontal', !wide.hScroll);
+
+  // POUSSER À FOND — la borne doit protéger la leçon.
+  hb = await handle.boundingBox();
+  await page.mouse.move(hb.x + hb.width / 2, hb.y + hb.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(60, hb.y + hb.height / 2, { steps: 18 });
+  await page.mouse.up();
+  await page.waitForTimeout(600);
+
+  const max = await regions(page);
+  check('à fond: la leçon garde une largeur utilisable (>= 500px)', max.content.w >= 500, `${max.content.w}`);
+  check('à fond: le contenu reste devant la carte', max.map.x >= max.content.right - 2,
+    `map.x=${max.map.x} content.right=${max.content.right}`);
+  check('à fond: aucun défilement horizontal', !max.hScroll);
+
+  // La largeur choisie survit à la navigation.
+  const chosen = max.map.w;
+  await page.locator(`a[href="${LESSON}"]`).first().click();
+  await page.waitForTimeout(2400);
+  const kept = await regions(page);
+  check('la largeur choisie est conservée', Math.abs(kept.map.w - chosen) < 4, `${chosen} -> ${kept.map?.w}`);
+  await ctx.close();
+}
+
+/* ── PLEIN ÉCRAN — la colonne se retire, la carte va jusqu'au bord ───────── */
+{
+  console.log('\n=== fullscreen suspends the column and reaches the edge ===');
+  const ctx = await context({ width: 1440, height: 900 });
+  const page = await newPage(ctx, MODULE);
+  await enterPrior(page);
+
+  await page.locator('#km-root [data-km-view="expanded"]').click();
+  await page.waitForTimeout(1200);
+  const fs = await regions(page);
+  // Le piège corrigé ici : tant que la coquille réservait la gouttière de la
+  // colonne, le rectangle rempli par le plein écran était amputé d'autant et
+  // la carte s'arrêtait avant le bord droit.
+  check('plein écran: la carte atteint le bord DROIT de l\'écran',
+    Math.abs(fs.map.right - fs.vw) < 2, JSON.stringify({ right: fs.map.right, vw: fs.vw }));
+  check('plein écran: elle part du bord de la barre latérale',
+    Math.abs(fs.map.x - fs.sidebar.w) < 2, JSON.stringify({ x: fs.map.x, s: fs.sidebar.w }));
+  check('plein écran: aucune bande vide', Math.abs(fs.map.w - (fs.vw - fs.sidebar.w)) < 2, JSON.stringify(fs.map));
+  check('plein écran: aucun défilement horizontal', !fs.hScroll);
+
+  // Retour à la colonne : la mise en page à trois zones revient intacte.
+  // (l'absence d'à-coup pendant la bascule est vérifiée plus bas)
+  await page.locator('#km-root [data-km-view="prior"]').click();
+  await page.waitForTimeout(1100);
+  const back = await regions(page);
+  check('retour colonne: les trois zones pavent de nouveau la fenêtre',
+    Math.abs(back.sidebar.w + back.content.w + back.map.w - back.vw) < 4,
+    JSON.stringify({ s: back.sidebar.w, c: back.content.w, m: back.map.w, vw: back.vw }));
+  check('retour colonne: le contenu est de nouveau devant la carte', back.map.x >= back.content.right - 2);
+  await ctx.close();
+}
+
+/* ── OUVERTURE : la carte ENTRE PAR LA DROITE, le contenu lui fait place ─── */
+{
+  console.log('\n=== opening slides in from the right; content makes room ===');
+  const ctx = await context({ width: 1440, height: 900 });
+  const page = await newPage(ctx, MODULE);
+
+  const contentBefore = (await regions(page)).content.w;
+
+  // Le bug corrigé : la géométrie était ANIMÉE, donc framer-motion partait de
+  // son état zéro (left:0) et la carte traversait l'écran DEPUIS LA GAUCHE.
+  // Désormais la géométrie est posée via `style` et seul `x` s'anime, depuis
+  // `100%` — soit exactement une largeur de panneau à droite de sa place.
+  await page.locator('[data-km-trigger]').click();
+  const lefts = [];
+  for (let i = 0; i < 20; i++) {
+    const v = await page.evaluate(() => {
+      const el = document.getElementById('km-root');
+      return el ? Math.round(el.getBoundingClientRect().left) : null;
+    });
+    if (v !== null) lefts.push(v);
+    await page.waitForTimeout(25);
+  }
+  await page.waitForTimeout(1200);
+  const after = await regions(page);
+
+  check('ouverture: la carte entre par la DROITE', lefts[0] > after.map.x + 100,
+    JSON.stringify({ first: lefts[0], settled: after.map.x }));
+  check('ouverture: elle glisse de droite à gauche, sans retour',
+    lefts.every((v, i) => i === 0 || v <= lefts[i - 1] + 3), lefts.join(','));
+  check('ouverture: jamais depuis la gauche de l\'écran', Math.min(...lefts) > 400, `min=${Math.min(...lefts)}`);
+  check('ouverture: le contenu rétrécit pour faire place',
+    after.content.w < contentBefore - 100, `${contentBefore} -> ${after.content.w}`);
+  check('ouverture: la carte ne recouvre pas le contenu', after.map.x >= after.content.right - 2);
+
+  // Fermeture : la carte ressort par la droite, le contenu se ré-étale.
+  await page.locator('#km-root button[aria-label="Fermer la carte"]').click();
+  const out = [];
+  for (let i = 0; i < 20; i++) {
+    const v = await page.evaluate(() => {
+      const el = document.getElementById('km-root');
+      return el ? Math.round(el.getBoundingClientRect().left) : null;
+    });
+    if (v !== null) out.push(v);
+    await page.waitForTimeout(25);
+  }
+  await page.waitForTimeout(900);
+  check('fermeture: la carte ressort vers la DROITE',
+    out.every((v, i) => i === 0 || v >= out[i - 1] - 3), out.join(','));
+  check('fermeture: le contenu retrouve sa largeur',
+    Math.abs((await regions(page)).content.w - contentBefore) < 4);
+  await ctx.close();
+}
+
+/* ── TRANSITION SANS À-COUP entre colonne et plein écran ─────────────────── */
+{
+  console.log('\n=== column <-> fullscreen: the panel never doubles back ===');
+  const ctx = await context({ width: 1440, height: 900 });
+  const page = await newPage(ctx, MODULE);
+  await enterPrior(page);
+
+  const left = () => page.evaluate(() => Math.round(document.getElementById('km-root').getBoundingClientRect().left));
+
+  // Le bug corrigé : la coquille ne libérait sa gouttière qu'au rendu SUIVANT,
+  // donc le panneau visait d'abord une largeur amputée (départ vers la gauche)
+  // avant de se corriger vers la droite. On échantillonne le bord gauche
+  // pendant toute la bascule : il doit converger de façon MONOTONE.
+  await page.locator('#km-root [data-km-view="expanded"]').click();
+  const going = [];
+  for (let i = 0; i < 26; i++) { going.push(await left()); await page.waitForTimeout(28); }
+  await page.waitForTimeout(1200);
+  const fsLeft = await left();
+  check('colonne → plein écran: aucun dépassement vers la gauche',
+    going.every((v) => v >= fsLeft - 12), JSON.stringify({ min: Math.min(...going), fsLeft }));
+
+  await page.locator('#km-root [data-km-view="prior"]').click();
+  const back = [];
+  for (let i = 0; i < 26; i++) { back.push(await left()); await page.waitForTimeout(28); }
+  await page.waitForTimeout(1200);
+  const colLeft = await left();
+  check('plein écran → colonne: aucun dépassement vers la droite',
+    back.every((v) => v <= colLeft + 12), JSON.stringify({ max: Math.max(...back), colLeft }));
+  await ctx.close();
+}
+
 /* ── C / D — la coquille survit à la navigation, sur toutes les pages ────── */
 {
   console.log('\n=== C+D: navigation while prior stays active ===');
@@ -152,14 +328,17 @@ async function enterPrior(page) {
   const page = await newPage(ctx, MODULE);
   await enterPrior(page);
 
-  // C — un autre module.
-  await page.goto(B + LESSON, { waitUntil: 'domcontentloaded' });
+  // C — on navigue COMME UN ÉLÈVE : un clic sur le fil d'Ariane, donc une
+  // navigation côté client. Un `page.goto` rechargerait la page entière et
+  // ferait courir la mesure contre l'animation de sortie du panneau — ce que
+  // l'élève ne fait jamais, et ce que ce scénario ne cherche pas à décrire.
+  await page.locator(`a[href="${LESSON}"]`).first().click();
   await page.waitForTimeout(2400);
-  await openMap(page);
-  await page.waitForTimeout(500);
   const idx = await regions(page);
-  check('C: l\'index de la leçon retrouve le mode colonne', Math.abs(idx.sidebar.w - 80) < 2 && idx.map && idx.map.w >= 300,
+  check('C: l\'index de la leçon garde le mode colonne', Math.abs(idx.sidebar.w - 80) < 2 && idx.map && idx.map.w >= 300,
     JSON.stringify({ s: idx.sidebar?.w, m: idx.map?.w }));
+  check('C: la carte reste hors du contenu', idx.map && idx.map.x >= idx.content.right - 2,
+    JSON.stringify({ mx: idx.map?.x, cr: idx.content?.right }));
   check('C: pas de défilement horizontal sur l\'index', !idx.hScroll);
 
   // D — le catalogue des leçons, qui n'a pas de carte : la coquille redéploie.

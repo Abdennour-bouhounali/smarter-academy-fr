@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -13,6 +13,25 @@ import { roundTo, formatDec } from '../components/signeUtils';
  * Step 1  b seul (a = 2 verrouillé) : amener le zéro en x = 1,5 → zéro = −b/a.
  * Step 2  a seul (b = −3 verrouillé) : rendre a négatif → le côté + bascule à gauche.
  * Step 3  le tableau de 2x − 3.  Step 4  sans curseur : −3x + 6.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   La formule x = −b/a et la règle « signe de a à droite du zéro » ne
+ *   vivaient que dans les `Feedback` des étapes 1 et 2 et dans l'« À retenir »
+ *   du pied ; les deux questions des étapes 3 et 4 les exigeaient sans qu'une
+ *   seule brique ne les ait posées. L'ordre est maintenant
+ *   geste → brique → demande :
+ *     étape 1  amener le zéro en 1,5 avec b → brique `formule-zero-affine`
+ *     étape 2  faire basculer a sous 0      → briques `regle-signe-affine`
+ *              puis `mem-signe-de-a`
+ *     étapes 3 et 4  les deux questions d'origine, désormais légitimes
+ *
+ * MANIPULATION JAMAIS GELÉE. Les deux `AffineSignLab` se figeaient sur un
+ * instantané (`done1 ? snap1.a : v1.a`) dès l'étape réussie : l'élève ne
+ * pouvait plus rejouer le glissement du zéro ni le basculement des couleurs.
+ * Ils reçoivent maintenant la valeur VIVANTE ; les instantanés `snap1` et
+ * `snap2` restent, parce que les `Feedback` citent la valeur atteinte au
+ * moment de la réussite. Seul le verrou d'ANTÉRIORITÉ (`!done1`) demeure à
+ * l'étape 2. Les `PredictionChips` se figent toujours.
  */
 export default function Module03LeSigneDUneFonctionAffine() {
   const [v1, setV1] = useState({ a: 2, b: 1 });
@@ -23,17 +42,27 @@ export default function Module03LeSigneDUneFonctionAffine() {
   const [q3, setQ3] = useState(false);
   const [q4, setQ4] = useState(false);
   const done1 = snap1 !== null; const done2 = snap2 !== null;
-  const change1 = (n, react) => { setV1(n); if (roundTo(-n.b / n.a, 6) === 1.5) { setSnap1(n); react?.(true); } };
-  const change2 = (n, react) => { setV2(n); if (n.a < 0) { setSnap2(n); react?.(true); } };
+  // Le laboratoire reste VIVANT après la réussite : l'instantané et la
+  // réaction du kit ne se déclenchent donc qu'à la PREMIÈRE fois (!done),
+  // sans quoi rejouer le réglage rejouerait la validation.
+  const change1 = (n, react) => { setV1(n); if (!done1 && roundTo(-n.b / n.a, 6) === 1.5) { setSnap1(n); react?.(true); } };
+  const change2 = (n, react) => { setV2(n); if (!done2 && n.a < 0) { setSnap2(n); react?.(true); } };
 
   const steps = [
     {
       num: 1, title: 'Déplace le zéro avec b', subtitle: 'a = 2 est verrouillé. Règle b pour amener le zéro en x = 1,5.', done: done1,
       content: (kit) => (
         <div className="space-y-3">
-          <AffineSignLab a={done1 ? snap1.a : v1.a} b={done1 ? snap1.b : v1.b} onChange={(n) => change1(n, kit.react)} lockA disabled={done1} />
+          <AffineSignLab a={v1.a} b={v1.b} onChange={(n) => change1(n, kit.react)} lockA />
           {done1 ? (
-            <Feedback tone="ok">Zéro en 1,5 pour b = {formatDec(snap1.b)} : c’est la solution de 2x + b = 0, soit <strong>x = −b/a</strong> = 3/2. Le zéro glisse avec b ; les couleurs, elles, ne changent pas de côté : − à gauche, + à droite.</Feedback>
+            <>
+              <Feedback tone="ok">Zéro en 1,5 pour b = {formatDec(snap1.b)} : c’est la solution de 2x + b = 0, soit <strong>x = −b/a</strong> = 3/2. Le zéro glisse avec b ; les couleurs, elles, ne changent pas de côté : − à gauche, + à droite.</Feedback>
+              <KnowledgeBrick
+                id="formule-zero-affine"
+                variant="new"
+                lead={<>Chaque cran de b déplaçait le zéro d’une quantité régulière : c’est qu’il se calcule.</>}
+              />
+            </>
           ) : (
             <Feedback tone="info">Le zéro est en x = {formatDec(roundTo(-v1.b / v1.a, 6))}. Observe : chaque cran de b le déplace.</Feedback>
           )}
@@ -45,9 +74,22 @@ export default function Module03LeSigneDUneFonctionAffine() {
       content: (kit) => (
         <div className="space-y-3">
           <PredictionChips prompt="si a devient négatif, que fait la zone verte (+) ?" options={[{ id: 'gauche', label: 'Elle passe à gauche du zéro' }, { id: 'rien', label: 'Elle ne bouge pas' }, { id: 'disparait', label: 'Elle disparaît' }]} value={pred2} onChange={setPred2} disabled={done2} />
-          <AffineSignLab a={done2 ? snap2.a : v2.a} b={done2 ? snap2.b : v2.b} onChange={(n) => change2(n, kit.react)} lockB disabled={done2 || !done1} />
+          <AffineSignLab a={v2.a} b={v2.b} onChange={(n) => change2(n, kit.react)} lockB disabled={!done1} />
           {done2 ? (
-            <Feedback tone="ok">{pred2 === 'gauche' ? 'Ta prédiction tenait' : pred2 ? 'Ta prédiction ne tenait pas' : 'Regarde'} : avec a = {formatDec(snap2.a)} &lt; 0, la droite descend et la zone + passe <strong>à gauche</strong> du zéro. Règle : <strong>à droite du zéro, f(x) a le signe de a</strong> ; à gauche, le signe contraire.</Feedback>
+            <>
+              <Feedback tone="ok">{pred2 === 'gauche' ? 'Ta prédiction tenait' : pred2 ? 'Ta prédiction ne tenait pas' : 'Regarde'} : avec a = {formatDec(snap2.a)} &lt; 0, la droite descend et la zone + passe <strong>à gauche</strong> du zéro. Règle : <strong>à droite du zéro, f(x) a le signe de a</strong> ; à gauche, le signe contraire.</Feedback>
+              <KnowledgeBrick
+                id="regle-signe-affine"
+                variant="new"
+                lead={<>Repasse a au-dessus de 0, puis en dessous : le vert change de côté et rien d’autre ne bouge.</>}
+              />
+              <KnowledgeBrick
+                id="mem-signe-de-a"
+                variant="new"
+                compact
+                lead={<>Une seule phrase à garder de ces deux curseurs.</>}
+              />
+            </>
           ) : (
             <Feedback tone="info">a = {formatDec(v2.a)} : la droite {v2.a > 0 ? 'monte' : v2.a < 0 ? 'descend' : 'est horizontale'}. Passe a en dessous de 0.</Feedback>
           )}
@@ -60,6 +102,7 @@ export default function Module03LeSigneDUneFonctionAffine() {
         <TapQuestion prompt={<span>Quel est le tableau de signes de <MathText>{'$f(x) = 2x - 3$'}</MathText> ?</span>}
           options={['− sur ]−∞ ; 1,5[, 0 en 1,5, + sur ]1,5 ; +∞[', '+ sur ]−∞ ; 1,5[, 0 en 1,5, − sur ]1,5 ; +∞[', '− sur ]−∞ ; 3[, 0 en 3, + sur ]3 ; +∞[', '+ partout : 2 est positif']}
           correct={0} cols={1}
+          requires={['formule-zero-affine', 'regle-signe-affine', 'mem-signe-de-a', 'tableau-de-signes']}
           explain="Zéro : 2x − 3 = 0 ⟺ x = 3/2 = 1,5. a = 2 > 0 : signe + à droite du zéro, − à gauche."
           explainWrong="D’abord le zéro : 2x − 3 = 0 donne x = 1,5 (pas 3 : on divise par a). Puis le signe de a = 2 > 0 à droite du zéro : + sur ]1,5 ; +∞[, − avant."
           solved={q3} onAnswered={() => setQ3(true)} />
@@ -75,6 +118,7 @@ export default function Module03LeSigneDUneFonctionAffine() {
             { id: 'r3', label: 'g(0)', options: ['positif', 'négatif'], correct: 0, correction: 'à gauche du zéro : signe contraire à a' },
             { id: 'r4', label: 'g(x) = 0 a pour solution', options: ['x = 2', 'x = −3', 'aucune'], correct: 0, correction: 'le zéro' },
           ]}
+          requires={['formule-zero-affine', 'regle-signe-affine', 'mem-signe-de-a', 'zero-fonction']}
           feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} ax + b : un zéro en −b/a ; à droite, le signe de a ; à gauche, le signe contraire.</Feedback>}
           solved={q4} onAnswered={() => setQ4(true)} />
       ),

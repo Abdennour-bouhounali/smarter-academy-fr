@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -144,6 +145,7 @@ export default function Module03QuatreCrochets() {
                   options={['Parce que +∞ n’est pas un nombre : on ne l’atteint jamais', 'Parce que les grands nombres ne comptent pas', 'C’est une convention sans raison']}
                   cols={1}
                   correct={0}
+                  requires={['demi-droite-infini']}
                   explain="+∞ n’est pas un nombre de la droite, c’est une direction. Aucun nombre ne « vaut » +∞, donc la borne ne peut pas être incluse : [3 ; +∞[, jamais [3 ; +∞]."
                   explainWrong="Les grands nombres comptent tous ! Mais +∞ lui-même n’est pas un nombre : on ne peut pas l’inclure. D’où le crochet toujours ouvert en ±∞."
                   solved={whyDone}
@@ -186,17 +188,7 @@ export default function Module03QuatreCrochets() {
           ),
         },
       ]}
-      footer={
-        <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 text-sm text-indigo-900 space-y-1.5">
-          <p className="font-semibold">Les quatre types d’intervalles bornés (a &lt; b) :</p>
-          <ul className="font-mono space-y-0.5">
-            <li>[a ; b] fermé — a et b inclus</li>
-            <li>]a ; b[ ouvert — a et b exclus</li>
-            <li>[a ; b[ et ]a ; b] semi-ouverts</li>
-          </ul>
-          <p>Demi-droites : [a ; +∞[, ]a ; +∞[, ]−∞ ; b], ]−∞ ; b[ — l’infini est toujours du côté ouvert. ℝ lui-même s’écrit ]−∞ ; +∞[. L’intervalle {notation(TARGET_2)} est {typeOf(TARGET_2)}.</p>
-        </div>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={3} />}
     />
   );
 }

@@ -72,6 +72,11 @@ export const LESSON_CONFIG = {
       'Les systèmes d’équations',
     ],
   },
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module se termine sur l'état courant de la carte, et le test final en
+  // affiche la version complète. Aucun module « À retenir » n'est attendu
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
   modules: [
     { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — pour savoir par où bien commencer.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
     { id: '01', number: 1, slug: 'le-scanner-de-solutions', path: `${LESSON_BASE_PATH}/le-scanner-de-solutions`, title: 'Le scanner de solutions', desc: 'Deux forfaits, un curseur : balaye x et regarde où les deux prix se croisent — et où l’un est moins cher.', stage: 'trigger', teachesLearningPointIds: ['seconde_equations-et-inequations-2nde_P1', 'seconde_equations-et-inequations-2nde_P4', 'seconde_equations-et-inequations-2nde_P7'], color: 'indigo', style: 'featured', estimatedMin: 9, difficulty: 1, actionText: 'Balayer x' },

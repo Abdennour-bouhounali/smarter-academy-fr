@@ -48,7 +48,8 @@ export const LESSON_CONFIG = {
   // « notation-fx » en variant="rappel", juste à temps.
   priorKnowledge: [
     'fonction', 'notation-fx', 'image', 'antecedent',
-    'proportionnalite', 'abscisse', 'ordonnee', 'coordonnees', 'origine-repere',
+    'proportionnalite', 'coefficient-proportionnalite',
+    'abscisse', 'ordonnee', 'coordonnees', 'origine-repere',
   ],
   knowledgeAudit: {
     ignore: [

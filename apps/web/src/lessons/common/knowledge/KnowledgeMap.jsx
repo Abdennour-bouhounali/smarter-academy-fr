@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Printer, ArrowLeft, Compass, FileText, PanelRight, Expand, ChevronUp, ChevronDown, Columns2 } from 'lucide-react';
+import { X, Printer, ArrowLeft, Compass, FileText, Expand, ChevronUp, ChevronDown, Columns2 } from 'lucide-react';
 import { useLessonViewport } from './useLessonViewport';
 import { useWorkspaceLayout } from '../../../context/WorkspaceLayoutContext';
 import { buildStructure, progressionByModule, HIGHLIGHT_CAT } from './knowledgeStructure';
@@ -646,7 +646,16 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
   // Mode colonne : la coquille a DÉJÀ rétréci le contenu et réservé une
   // gouttière à droite. La carte n'a donc rien à pousser — elle se pose dans
   // la place qu'on lui a faite (cf. WorkspaceLayoutContext).
-  const { isPrior, priorPreferred, priorAvailable, togglePrior, maCarteWidth } = useWorkspaceLayout();
+  const { isPrior, priorAvailable, setPrior, maCarteWidth,
+          setPriorWidth, priorWidthBounds, setMapExpanded } = useWorkspaceLayout();
+
+  // La coquille doit savoir que le plein écran est actif pour LIBÉRER la
+  // gouttière de la colonne : sans cela le rectangle de la leçon reste amputé
+  // et la carte s'arrête avant le bord droit de l'écran.
+  useEffect(() => {
+    setMapExpanded(isOpen && expanded);
+    return () => setMapExpanded(false);
+  }, [isOpen, expanded, setMapExpanded]);
   const [minimized, setMinimized] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -660,10 +669,14 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
   });
   const [isDragging, setIsDragging] = useState(false);
 
+  // Vrai le temps de la première image après l'ouverture (cf. `style` plus bas).
+  const [justOpened, setJustOpened] = useState(true);
+
   // Géométrie du viewport de la leçon (header + sidebar + barre basse mesurés).
   // En mode plein, la carte occupe EXACTEMENT ce rectangle.
   const viewport = useLessonViewport(isOpen);
-  const { top: vpTop, left: vpLeft, right: vpRight, width: vpWidth, height: vpHeight, viewportWidth: vpOuter } = viewport;
+  const { top: vpTop, left: vpLeft, right: vpRight, width: vpWidth, height: vpHeight,
+          viewportWidth: vpOuter, ready: vpReady } = viewport;
 
   // En mode plein sur large écran, la carte se lit en colonnes — sinon la
   // hiérarchie s'étire en une bande étroite au milieu du vide.
@@ -692,10 +705,17 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
     width: maCarteWidth,
     height: vpHeight,
   };
+  // PLEIN ÉCRAN — la géométrie ne peut PAS être lue sur <main> pendant la
+  // bascule depuis la colonne : la coquille ne libère sa gouttière qu'au
+  // rendu SUIVANT, si bien que `vpWidth` vaut encore la largeur amputée et que
+  // le panneau partait vers la gauche avant de se corriger vers la droite (le
+  // « à-coup » visible). On la calcule donc directement : du bord droit de la
+  // barre latérale au bord de la fenêtre — deux valeurs qui, elles, sont
+  // justes dès la première image.
   const expandedGeom = {
     top: vpTop,
     left: vpLeft,
-    width: vpWidth,
+    width: Math.max(0, (vpOuter || 0) - vpLeft),
     height: vpHeight,
   };
 
@@ -712,12 +732,25 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
     }
   }, [isOpen]);
 
+  // La carte vient de s'ouvrir : on pose sa géométrie sans transition, puis on
+  // rend la main aux transitions dès l'image suivante.
+  useEffect(() => {
+    if (!isOpen) { setJustOpened(true); return undefined; }
+    const id = requestAnimationFrame(() => setJustOpened(false));
+    return () => cancelAnimationFrame(id);
+  }, [isOpen]);
+
   // « Réduit » n'a de sens que pour le tiroir flottant : en mode plein comme
   // en mode colonne, la carte occupe une place RÉSERVÉE — la replier y
   // laisserait un trou dans la mise en page au lieu de rendre de l'espace.
   useEffect(() => {
     if (expanded || isPrior) setMinimized(false);
   }, [expanded, isPrior]);
+
+  // Filet de sécurité : si la carte se démonte au milieu d'un geste (une
+  // navigation pendant le glissement), le drapeau resterait sur <html> et la
+  // gouttière ne s'animerait plus jamais.
+  useEffect(() => () => document.documentElement.removeAttribute('data-sa-resizing'), []);
 
   // Persist Width
   useEffect(() => {
@@ -749,12 +782,26 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
   const handlePointerDown = useCallback((e) => {
     e.target.setPointerCapture(e.pointerId);
     setIsDragging(true);
+    // La coquille coupe l'animation de sa gouttière le temps du geste, sinon
+    // le contenu traîne de 300ms derrière la poignée (cf. index.css).
+    document.documentElement.setAttribute('data-sa-resizing', '');
   }, []);
 
   const handlePointerMove = useCallback((e) => {
     if (!isDragging) return;
     e.preventDefault();
-    
+
+    // MODE COLONNE — la carte est collée au bord de la FENÊTRE (c'est la
+    // coquille qui lui réserve la place), et la largeur qu'on ajuste est celle
+    // de la gouttière. Les bornes viennent du contexte : elles garantissent
+    // qu'il reste toujours MIN_CONTENT_WIDTH à la leçon, donc que le contenu
+    // ne peut jamais finir caché derrière la carte.
+    if (isPrior) {
+      const next = window.innerWidth - e.clientX;
+      setPriorWidth(Math.min(Math.max(next, priorWidthBounds.min), priorWidthBounds.max));
+      return;
+    }
+
     // Le bord droit du tiroir est celui du viewport de la leçon : la largeur
     // est la distance du pointeur à CE bord, pas au bord de la fenêtre.
     const rightEdge = window.innerWidth - vpRight;
@@ -773,16 +820,17 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
     if (newWidth > maxWidth) newWidth = maxWidth;
 
     setWidth(newWidth);
-  }, [isDragging, vpRight, vpWidth]);
+  }, [isDragging, vpRight, vpWidth, isPrior, setPriorWidth, priorWidthBounds.min, priorWidthBounds.max]);
 
   const handlePointerUp = useCallback((e) => {
     setIsDragging(false);
+    document.documentElement.removeAttribute('data-sa-resizing');
     e.target.releasePointerCapture(e.pointerId);
   }, []);
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isOpen && vpReady && (
         <>
           {/* Mobile backdrop (optional based on user preference, but let's keep it subtle for very small screens if needed, actually the user wanted it to be a companion that doesn't block the lesson entirely. So we might remove the backdrop completely to let them interact with the lesson). */}
           
@@ -796,18 +844,40 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
             //   ouverture tiroir : glissé depuis le bord droit
             //   ouverture plein  : fondu + très léger zoom (il ne vient d'aucun bord)
             //   tiroir ⇄ plein   : les quatre bords se déplacent de façon continue
-            initial={expanded
-              ? { opacity: 0, scale: 0.985, ...expandedGeom }
-              : { opacity: 0, x: '110%', ...geom }}
-            animate={{ opacity: 1, scale: 1, x: 0, ...geom }}
-            exit={expanded
-              ? { opacity: 0, scale: 0.985, transition: { duration: 0.16, ease: 'easeIn' } }
-              : { opacity: 0, x: '110%', transition: { type: 'spring', damping: 32, stiffness: 320 } }}
-            transition={{
-              type: 'spring', damping: 30, stiffness: 260,
-              opacity: { duration: 0.18 }, scale: { duration: 0.2 },
+            // OUVERTURE / FERMETURE — la carte ENTRE PAR LA DROITE : elle
+            // glisse de droite à gauche jusqu'à sa colonne, et ressort par la
+            // droite en partant. Pendant ce temps la coquille rétrécit le
+            // contenu (gouttière de `--sa-gutter-w`, même durée) : les deux
+            // mouvements se répondent, la leçon fait de la place pendant que
+            // la carte arrive.
+            //
+            // Seul `x` est animé — un DÉCALAGE relatif à la géométrie posée,
+            // jamais la géométrie elle-même. C'est ce qui distingue cette
+            // entrée du bug corrigé juste avant : en animant `left`,
+            // framer-motion partait de son propre état zéro (left:0) et la
+            // carte traversait tout l'écran depuis le bord GAUCHE. Ici elle
+            // part de `x: 100%`, c'est-à-dire d'exactement une largeur de
+            // panneau à DROITE de sa place — hors écran, quel que soit le mode.
+            initial={{ x: '100%', opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '100%', opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              position: 'fixed',
+              maxWidth: '100vw',
+              ...geom,
+              // Pendant le glissement de la poignée, la carte doit suivre le
+              // pointeur à l'image près : aucune transition.
+              // `justOpened` : à la toute première image il n'existe aucun état
+              // précédent d'où venir. Toute transition n'y ferait donc que
+              // RATTRAPER une valeur initiale approximative (la largeur de
+              // tiroir par défaut avant la première mesure) — ce rattrapage se
+              // voit comme un glissement. On ne transitionne qu'ensuite, pour
+              // les vrais changements de mode.
+              transition: isDragging || justOpened
+                ? 'none'
+                : 'top 300ms cubic-bezier(0.22,1,0.36,1), left 300ms cubic-bezier(0.22,1,0.36,1), width 300ms cubic-bezier(0.22,1,0.36,1), height 300ms cubic-bezier(0.22,1,0.36,1)',
             }}
-            style={{ position: 'fixed', maxWidth: '100vw' }}
             className={[
               'z-40 flex flex-col bg-white border-slate-200 overflow-hidden',
               expanded
@@ -825,7 +895,7 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
             aria-modal="false" // It's a companion, not a blocking modal
           >
             {/* ── Resize Handle (Left Edge) ── */}
-            {!expanded && !isPrior && <div
+            {!expanded && <div
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
@@ -856,12 +926,17 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
               </div>
               <div className="flex items-center gap-1 shrink-0">
                 {/* ── Sélecteur de PRÉSENTATION ──────────────────────────────
-                    Deux états explicites et étiquetés, plutôt que deux icônes
-                    abstraites qu'on confondait (le même Maximize2 servait à la
-                    fois à « plein écran » et à « déplier ») :
+                    Deux états explicites et étiquetés :
 
-                      Tiroir      → panneau étroit, la leçon reste visible à côté
+                      Colonne     → la leçon FAIT DE LA PLACE à la carte
                       Plein écran → la carte occupe tout l'espace de la leçon
+
+                    Le tiroir flottant n'est plus proposé : il posait la carte
+                    PAR-DESSUS la leçon, ce que la colonne fait mieux et sans
+                    rien recouvrir. Il reste la présentation de repli là où la
+                    colonne n'a pas de sens (< 1024px), mais ce n'est alors plus
+                    un choix : c'est la seule mise en page tenable, et un bouton
+                    l'affichant serait un bouton sans alternative.
 
                     L'état courant est mis en évidence ; c'est un vrai groupe
                     radio pour les lecteurs d'écran. */}
@@ -870,20 +945,6 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                   role="radiogroup"
                   aria-label="Affichage de la carte"
                 >
-                  <button
-                    onClick={() => { onExpandedChange?.(false); if (priorPreferred) togglePrior(); }}
-                    role="radio"
-                    aria-checked={!expanded && !isPrior}
-                    title="Tiroir — la carte se pose au-dessus de la leçon"
-                    data-km-view="drawer"
-                    className={[
-                      'flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-md text-[11px] font-bold transition-colors',
-                      !expanded && !isPrior ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800',
-                    ].join(' ')}
-                  >
-                    <PanelRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                    <span className="hidden sm:inline">Tiroir</span>
-                  </button>
                   {/* ── COLONNE ────────────────────────────────────────────
                       La troisième présentation, et la seule qui change la
                       COQUILLE : la barre latérale se comprime, la leçon
@@ -892,7 +953,7 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                       zones utiles côte à côte n'en font plus aucune. */}
                   {priorAvailable && (
                     <button
-                      onClick={() => { onExpandedChange?.(false); if (!priorPreferred) togglePrior(); }}
+                      onClick={() => { onExpandedChange?.(false); setPrior(true); }}
                       role="radio"
                       aria-checked={isPrior}
                       title="Colonne — la leçon fait de la place à la carte"
@@ -907,7 +968,7 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                     </button>
                   )}
                   <button
-                    onClick={() => { if (priorPreferred) togglePrior(); onExpandedChange?.(true); }}
+                    onClick={() => onExpandedChange?.(true)}
                     role="radio"
                     aria-checked={expanded}
                     title="Plein écran — la carte occupe toute la zone de la leçon"

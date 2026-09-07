@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import IntervalBuilder from '../components/IntervalBuilder';
@@ -79,6 +79,13 @@ export default function Module06Situations() {
                 onReveal={() => setG(BOTH)}
                 solved={d1}
               />
+              {d1 && (
+                <KnowledgeBrick
+                  id="methode-phrase-intervalle"
+                  variant="new"
+                  lead="Tu viens de traduire deux phrases en bornes et en crochets, puis de croiser les deux plages. C’est la méthode générale, pour n’importe quelle situation."
+                />
+              )}
             </div>
           ),
         },
@@ -89,10 +96,17 @@ export default function Module06Situations() {
           done: d2a && d2b,
           content: (
             <div className="space-y-3">
+              <KnowledgeBrick
+                id="methode-compter-entiers"
+                variant="new"
+                compact
+                lead="Un intervalle contient une infinité de réels, mais un nombre fini d’entiers — à condition de vérifier chaque borne."
+              />
               <NumericQuestion
                 prompt="Combien de températures ENTIÈRES (en °C) conviennent ?"
                 expected={integersIn(VACCIN).length}
                 suffix="températures"
+                requires={['methode-compter-entiers']}
                 explain="[2 ; 8] contient les entiers 2, 3, 4, 5, 6, 7, 8 : sept valeurs. Mais il contient aussi 2,5 ou 7,99 — une infinité de températures en tout."
                 explainFor={(v) => (v === 6
                   ? 'Tu as oublié une borne : 2 et 8 sont tous les deux inclus. De 2 à 8, cela fait 8 − 2 + 1 = 7 entiers.'
@@ -107,6 +121,7 @@ export default function Module06Situations() {
                   options={['Oui, c’est presque 8', 'Non : 8,5 ∉ [2 ; 8]']}
                   cols={2}
                   correct={1}
+                  requires={['methode-appartenance-intervalle']}
                   explain="8,5 > 8 : hors de l’intervalle, même de peu. Une borne est une frontière nette, pas une zone floue."
                   explainWrong="« Presque » ne compte pas : la borne est 8, et 8,5 > 8. Donc 8,5 ∉ [2 ; 8] — il faut réagir."
                   solved={d2b}
@@ -122,16 +137,27 @@ export default function Module06Situations() {
           subtitle: 'Un forfait coûte 15 € plus 2 € par gigaoctet. Budget : au plus 25 €.',
           done: d3,
           content: (
-            <TapQuestion
-              prompt="Quel intervalle décrit les quantités x de gigaoctets possibles ?"
-              options={['[0 ; 5]', ']−∞ ; 5]', '[0 ; 5[', '[5 ; +∞[']}
-              cols={2}
-              correct={0}
-              explain="15 + 2x ≤ 25 donne 2x ≤ 10, soit x ≤ 5 — et 5 Go est encore possible (« au plus »). Mais une quantité ne peut pas être négative : x ≥ 0. D’où x ∈ [0 ; 5]."
-              explainWrong="Deux contraintes : le budget (x ≤ 5, avec 5 possible car « au plus 25 € ») ET le bon sens (x ≥ 0, pas de gigaoctets négatifs). L’intervalle est [0 ; 5]."
-              solved={d3}
-              onAnswered={() => setD3(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="Quel intervalle décrit les quantités x de gigaoctets possibles ?"
+                options={['[0 ; 5]', ']−∞ ; 5]', '[0 ; 5[', '[5 ; +∞[']}
+                cols={2}
+                correct={0}
+                requires={['methode-phrase-intervalle']}
+                explain="15 + 2x ≤ 25 donne 2x ≤ 10, soit x ≤ 5 — et 5 Go est encore possible (« au plus »). Mais une quantité ne peut pas être négative : x ≥ 0. D’où x ∈ [0 ; 5]."
+                explainWrong="Deux contraintes : le budget (x ≤ 5, avec 5 possible car « au plus 25 € ») ET le bon sens (x ≥ 0, pas de gigaoctets négatifs). L’intervalle est [0 ; 5]."
+                solved={d3}
+                onAnswered={() => setD3(true)}
+              />
+              {d3 && (
+                <KnowledgeBrick
+                  id="regle-contrainte-implicite"
+                  variant="new"
+                  compact
+                  lead="Le calcul seul donnait x ≤ 5 : c’est le bon sens de la situation qui a ajouté x ≥ 0."
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -148,6 +174,7 @@ export default function Module06Situations() {
               }
               expected={integersIn(COUNT_INT).length}
               suffix="entiers"
+              requires={['methode-compter-entiers']}
               explain={`Les entiers de [−2,5 ; 3[ sont ${integersIn(COUNT_INT).join(' ; ')} : cinq. −2,5 n’est pas entier, et 3 est exclu.`}
               explainFor={(v) => (v === 6
                 ? '3 est EXCLU (crochet ouvert) : −2, −1, 0, 1, 2 → cinq entiers.'
@@ -159,11 +186,11 @@ export default function Module06Situations() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Une phrase → des bornes → des crochets → un intervalle : {inequality(BOTH, 't')} pour faire les deux attractions, [2 ; 8] pour le vaccin, [0 ; 5] pour le forfait. Il ne reste plus qu’à prouver que tu maîtrises tout cela : le boss t’attend.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={6}>
+          Il ne reste plus qu’à prouver que tu maîtrises tout cela : le boss t’attend.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

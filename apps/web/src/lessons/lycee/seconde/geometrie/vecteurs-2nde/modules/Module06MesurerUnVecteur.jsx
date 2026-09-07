@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
@@ -86,7 +87,33 @@ export default function Module06MesurerUnVecteur() {
               <strong>double</strong> la longueur (pas ×4). Cette formule marche parce que la base est{' '}
               <strong>orthonormée</strong> : axes perpendiculaires, même unité.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le calcul vient de se réécrire deux fois sous les yeux de
+              l'élève, pour (3;4) puis (6;8) : la méthode est ce résultat. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="methode-calcul-norme"
+              variant="new"
+              lead={<>Tu viens de lire l’escalier de u = (3 ; 4), puis de (6 ; 8).</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="vocab-norme"
+              variant="new"
+              compact
+              lead={<>Le nombre que tu viens de calculer deux fois porte un nom.</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="formule-norme"
+              variant="new"
+              compact
+              lead={<>La même règle, écrite en formule.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">{seen.has('a') ? 'Maintenant (6 ; 8).' : 'D’abord (3 ; 4).'} Regarde le calcul se réécrire à chaque réglage — y compris quand la racine ne tombe pas juste.</Feedback>
           )}
         </div>
@@ -104,6 +131,7 @@ export default function Module06MesurerUnVecteur() {
           parse={parseDecSigned}
           display={formatNum(dist(A2, B2))}
           width="w-24"
+          requires={['methode-calcul-norme', 'vocab-norme', 'regle-coordonnees']}
           explain={`AB = (3 − (−1) ; −1 − 2) = (4 ; −3), donc AB = √(4² + (−3)²) = √(16 + 9) = √25 = 5.`}
           explainFor={(n) => (n === 25
             ? '25 est AB², la somme des carrés. Il reste la racine : √25 = 5.'
@@ -128,7 +156,25 @@ export default function Module06MesurerUnVecteur() {
               <VecName>AB</VecName>. Ses coordonnées sont les <strong>moyennes</strong> de celles de A et B :
               ({formatNum(A3.x)} + {formatNum(B3.x)}) ÷ 2 = {formatNum(M3.x)} et ({formatNum(A3.y)} + {formatNum(B3.y)}) ÷ 2 = {formatNum(M3.y)}.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* I vient d'être amené à la position où AI = IB : le milieu est
+              ce point que l'élève a lui-même trouvé par tâtonnement. */}
+          {done3 && (
+            <KnowledgeBrick
+              id="methode-milieu"
+              variant="new"
+              lead={<>Tu viens de déplacer I jusqu’à ce que <VecName>AI</VecName> et <VecName>IB</VecName> deviennent le même vecteur.</>}
+            />
+          )}
+          {done3 && (
+            <KnowledgeBrick
+              id="formule-milieu"
+              variant="new"
+              compact
+              lead={<>La même règle, écrite en formule.</>}
+            />
+          )}
+          {!done3 && (
             <Feedback tone="info">Le point I peut se poser au demi-carreau. Les deux flèches doivent avoir les mêmes coordonnées.</Feedback>
           )}
         </div>
@@ -144,6 +190,7 @@ export default function Module06MesurerUnVecteur() {
           options={[formatVec(midpoint(C4, D4)), '(−3 ; 2)', '(−2 ; −2)', '(3 ; −2)']}
           correct={0}
           cols={2}
+          requires={['methode-milieu', 'formule-milieu']}
           explain="Moyenne des abscisses : (2 + (−4)) ÷ 2 = −1 ; moyenne des ordonnées : (−3 + 1) ÷ 2 = −1. Le milieu est (−1 ; −1)."
           explainWrong="(−3 ; 2) est la moitié du vecteur CD, pas un point : le milieu s’obtient avec la SOMME des coordonnées divisée par 2, soit (−1 ; −1)."
           solved={q4}
@@ -173,13 +220,7 @@ export default function Module06MesurerUnVecteur() {
         ),
       }}
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Dans une base orthonormée, ‖<VecName>u</VecName>‖ = √(x² + y²) ;
-          la distance AB est ‖<VecName>AB</VecName>‖ = √((x<sub>B</sub> − x<sub>A</sub>)² + (y<sub>B</sub> − y<sub>A</sub>)²) ;
-          le milieu I de [AB] a pour coordonnées ((x<sub>A</sub> + x<sub>B</sub>)/2 ; (y<sub>A</sub> + y<sub>B</sub>)/2).
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={6} />}
     />
   );
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 
 /**
- * Module 7 — Boss Final « La diagonale » (moteur du kit, QCM uniquement).
+ * Module 6 — Boss Final « La diagonale » (moteur du kit, QCM uniquement).
  * Fichier de DONNÉES.
  *
  * Distracteurs = pièges des modules 1–6 : « √2 = 1,414 » (M1, M4) ·
@@ -39,6 +39,7 @@ const tex = (o) => <MathText>{o}</MathText>;
 const EPREUVES = [
   {
     id: 'nr-e1', skill: 'familles', title: 'Épreuve 1',
+    requires: ['familles-emboitees', 'decimal', 'rationnel'],
     prompt: 'Laquelle de ces affirmations est vraie ?',
     options: ['Tout nombre décimal est un nombre rationnel', 'Tout nombre rationnel est un nombre décimal', 'Un nombre réel est toujours rationnel', 'ℚ ⊂ 𝔻'],
     cols: 1, correct: 0,
@@ -47,6 +48,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e2', skill: 'familles', title: 'Épreuve 2',
+    requires: ['familles-emboitees', 'irrationnel', 'racine-carree'],
     prompt: 'Quelle est la plus petite famille contenant √36 ?',
     options: ['ℕ', '𝔻 sans être dans ℤ', 'ℚ sans être dans 𝔻', 'Les irrationnels'],
     cols: 2, correct: 0,
@@ -55,6 +57,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e3', skill: 'droite', title: 'Épreuve 3',
+    requires: ['droite-reelle', 'methode-encadrer-decimales'],
     prompt: 'Le point marqué est √2. Quel encadrement lit-on sur cette fenêtre ?',
     extra: (
       <div className="rounded-2xl border border-slate-200 bg-white p-1">
@@ -68,6 +71,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e4', skill: 'division', title: 'Épreuve 4',
+    requires: ['regle-restes-division', 'regle-fraction-finie-ou-periodique'],
     prompt: 'On pose la division de 4 par 11. Que se passe-t-il ?',
     options: ['Un reste revient : l’écriture est périodique (0,3636…)', 'Le reste tombe à 0 : 4/11 est décimal', 'Elle ne s’arrête ni ne se répète : 4/11 est irrationnel', 'Elle donne exactement 0,36'],
     cols: 1, correct: 0,
@@ -76,6 +80,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e5', skill: 'division', title: 'Épreuve 5',
+    requires: ['regle-restes-division', 'decimal'],
     prompt: 'Laquelle de ces fractions est un nombre décimal ?',
     options: ['$\\frac{7}{20}$', '$\\frac{1}{6}$', '$\\frac{5}{9}$', '$\\frac{2}{7}$'],
     renderOption: tex, optionLabel: (i) => ['7/20', '1/6', '5/9', '2/7'][i],
@@ -85,6 +90,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e6', skill: 'approche', title: 'Épreuve 6',
+    requires: ['arrondi-troncature'],
     prompt: 'Quel est l’arrondi au centième de 5/6 = 0,8333… ?',
     options: ['0,83', '0,84', '0,8', '0,833'],
     cols: 4, correct: 0,
@@ -93,6 +99,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e7', skill: 'approche', title: 'Épreuve 7',
+    requires: ['mem-exact-puis-arrondir', 'arrondi-troncature'],
     prompt: 'Un disque a un rayon de 5 cm. Quelle écriture de son aire est EXACTE ?',
     options: ['$25\\pi$ cm²', '$78{,}5$ cm²', '$78{,}54$ cm²', '$78{,}5398$ cm²'],
     renderOption: tex, optionLabel: (i) => ['25π cm²', '78,5 cm²', '78,54 cm²', '78,5398 cm²'][i],
@@ -102,6 +109,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e8', skill: 'encadrer', title: 'Épreuve 8',
+    requires: ['methode-encadrer-racine'],
     prompt: 'Sans calculatrice : entre quels entiers consécutifs se trouve √40 ?',
     options: ['6 et 7', '19 et 21', '5 et 6', '39 et 41'],
     cols: 4, correct: 0,
@@ -110,6 +118,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e9', skill: 'encadrer', title: 'Épreuve 9',
+    requires: ['methode-comparer-reels'],
     prompt: 'Range dans l’ordre croissant : 1,73 ; √3 ; 7/4 ; 1,7.   (√3 = 1,7320…)',
     options: ['1,7 < 1,73 < √3 < 7/4', '1,7 < √3 < 1,73 < 7/4', '7/4 < 1,7 < 1,73 < √3', '1,73 < 1,7 < √3 < 7/4'],
     cols: 1, correct: 0,
@@ -118,6 +127,7 @@ const EPREUVES = [
   },
   {
     id: 'nr-e10', skill: 'droite', title: 'Épreuve 10',
+    requires: ['methode-encadrer-racine', 'regle-sens-arrondi'],
     prompt: 'Une planche doit mesurer √50 dm (≈ 7,07 dm). Le vendeur ne coupe qu’au décimètre entier et il faut que la planche soit assez longue. On demande :',
     options: ['8 dm', '7 dm', '7,07 dm', '25 dm'],
     cols: 4, correct: 0,
@@ -134,37 +144,13 @@ const BADGES = [
   { id: 'b-perfect', emoji: '💎', label: 'Dix sur dix', test: (m) => Object.values(m).every((v) => !v) },
 ];
 
-function Synthese() {
-  return (
-    <div className="space-y-4">
-      <div className="text-center space-y-1">
-        <h2 className="text-xl font-space font-extrabold text-slate-900">Synthèse : la diagonale du carreau</h2>
-        <p className="text-sm text-slate-500">√2, figé au zoom ×1000, avec ses voisins.</p>
-      </div>
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-2">
-        <RealLine
-          min={1.41} max={1.42} step={0.001} format={(v) => v.toFixed(3).replace('.', ',')}
-          intervals={[{ id: 'b', from: 1.414, to: 1.415, openTo: true, tone: 'emerald', label: '1,414 ≤ √2 < 1,415' }]}
-          points={[{ id: 'x', value: Math.SQRT2, label: '√2', tone: 'indigo' }]}
-          ariaLabel="Fenêtre de 1,41 à 1,42 avec √2 encadré entre 1,414 et 1,415"
-        />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-        <Feedback tone="info"><strong>La droite.</strong> Tout réel est un point ; chaque zoom ×10 donne un chiffre de plus et un encadrement plus fin.</Feedback>
-        <Feedback tone="info"><strong>Les familles.</strong> ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ. Décimal : l’écriture s’arrête. Rationnel : finie ou périodique. Irrationnel : ni l’un ni l’autre (√2, π).</Feedback>
-        <Feedback tone="info"><strong>Exact / approché.</strong> √2, 1/3, 6π sont exacts ; 1,414, 0,33, 18,85 sont approchés (≈). Exact tant qu’on calcule, approché pour conclure.</Feedback>
-        <Feedback tone="info"><strong>Encadrer.</strong> √n entre deux carrés ; comparer sur la même droite ; arrondir dans le sens que la situation impose.</Feedback>
-      </div>
-    </div>
-  );
-}
 
-export default function Module07MissionFinale() {
+export default function Module06MissionFinale() {
   return (
     <BossFinal
       ctx={MODULE_CTX}
-      navLinks={getNavLinks(7)}
-      moduleNumber={7}
+      navLinks={getNavLinks(6)}
+      moduleNumber={6}
       moduleTitle="🏆 Mission finale : la diagonale"
       moduleSubtitle="Dix épreuves pour prouver qu’aucune écriture ne te trompe."
       estimatedTime="15 min"
@@ -177,7 +163,7 @@ export default function Module07MissionFinale() {
       skills={SKILLS}
       epreuves={EPREUVES}
       badges={BADGES}
-      synthese={<Synthese />}
+      synthese={<KnowledgeSnapshot variant="complete" complete />}
       completion={{
         masterTitle: 'Maître de la droite réelle',
         title: 'Leçon terminée',

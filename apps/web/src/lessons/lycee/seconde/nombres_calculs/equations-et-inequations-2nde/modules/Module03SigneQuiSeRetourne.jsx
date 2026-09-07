@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -123,7 +124,7 @@ export default function Module03SigneQuiSeRetourne() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Une inéquation se résout comme une équation, avec UNE règle de plus : multiplier ou diviser par un négatif retourne le sens. Ses solutions forment un intervalle, à représenter sur la droite. Reste le cas où x apparaît dans un produit.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={3} />}
     />
   );
 }

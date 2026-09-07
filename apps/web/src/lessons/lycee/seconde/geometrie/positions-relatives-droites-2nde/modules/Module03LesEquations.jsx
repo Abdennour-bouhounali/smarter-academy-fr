@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion , KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -53,13 +53,22 @@ export default function Module03LesEquations() {
           <PredictionChips prompt="pour rendre (d₂) parallèle à (d₁), quelle valeur de m₂ faut-il ?"
             options={[{ id: 'm', label: 'm₂ = 0,5, comme (d₁)' }, { id: 'p', label: 'Ça dépend aussi de p₂' }, { id: 'opp', label: 'm₂ = −0,5' }]}
             value={pred1} onChange={setPred1} disabled={done1} />
-          <ReducedLab d1={D1} value={done1 ? snap1 : val} onChange={(n) => change1(n, kit.react)} disabled={done1} lockP />
+          <ReducedLab d1={D1} value={val} onChange={(n) => change1(n, kit.react)} lockP />
           {done1 ? (
-            <Feedback tone="ok">
+            <>
+              <Feedback tone="ok">
               {pred1 === 'm' ? 'Ta prédiction était la bonne' : pred1 === 'p' ? 'Ta prédiction : ça dépend de p₂. Non — p₂ n’a pas bougé' : pred1 === 'opp' ? 'Ta prédiction : −0,5. C’est l’autre diagonale' : 'Regarde'} :
               à <strong>m₂ = {formatDec(snap1.m)} = m₁</strong>, les droites deviennent <strong>strictement parallèles</strong>, quel que soit p₂ (ici p₂ = {formatDec(snap1.p)}).
               Le coefficient directeur EST la direction : (1 ; m) dirige la droite.
-            </Feedback>
+              </Feedback>
+              {/* m seul vient de suffire, p verrouillé : le rôle de m est établi
+                  par le geste avant que la règle complète ne soit énoncée (étape 2). */}
+              <KnowledgeBrick
+                id="critere-equations-reduites"
+                variant="new"
+                lead="Tu n’as touché qu’à m₂, et cela a suffi. Voilà ce que m et p décident chacun."
+              />
+            </>
           ) : (
             <Feedback tone="info">Sécantes tant que m₂ ≠ m₁. Le point I glisse le long de (d₁) quand m₂ change.</Feedback>
           )}
@@ -73,12 +82,19 @@ export default function Module03LesEquations() {
       done: done2,
       content: (kit) => (
         <div className="space-y-3">
-          <ReducedLab d1={D1} value={done2 ? snap2 : (done1 ? val : { m: 0.5, p: -1 })} onChange={(n) => change2(n, kit.react)} disabled={done2 || !done1} lockM />
+          <ReducedLab d1={D1} value={done1 ? val : { m: 0.5, p: -1 }} onChange={(n) => change2(n, kit.react)} disabled={!done1} lockM />
           {done2 ? (
-            <Feedback tone="ok">
+            <>
+              <Feedback tone="ok">
               À <strong>p₂ = {formatDec(snap2.p)} = p₁</strong> : mêmes m, mêmes p, <strong>même équation</strong> — c’est la même droite, tous ses points sont communs.
               Même pente ne suffisait pas ; il fallait aussi le même point de passage sur l’axe des ordonnées.
-            </Feedback>
+              </Feedback>
+              <KnowledgeBrick
+                id="mem-m-decide-p-departage"
+                variant="new"
+                lead="Deux réglages, deux rôles : la phrase qui les résume."
+              />
+            </>
           ) : (
             <Feedback tone="info">Parallèles, toujours zéro point commun… jusqu’à ce que p₂ atteigne p₁.</Feedback>
           )}
@@ -90,7 +106,18 @@ export default function Module03LesEquations() {
       title: 'Une même droite, deux écritures',
       done: q3,
       content: (
-        <TapQuestion
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="critere-equations-cartesiennes"
+            variant="new"
+            lead="Une même droite s’écrit de deux façons. Avant de comparer, il faut savoir passer de l’une à l’autre."
+          />
+          <KnowledgeBrick
+            id="methode-ramener-meme-ecriture"
+            variant="new"
+            lead="D’où la marche à suivre, dès que les deux écritures diffèrent."
+          />
+          <TapQuestion
           prompt={<span>La droite d’équation cartésienne <MathText>{'$2x - 4y + 8 = 0$'}</MathText> et la droite <MathText>{'$y = 0{,}5x + 2$'}</MathText> : quelle position relative ?</span>}
           options={[
             'Confondues : c’est la même droite, écrite autrement.',
@@ -102,9 +129,11 @@ export default function Module03LesEquations() {
           cols={1}
           explain="Isole y : 2x − 4y + 8 = 0 ⟺ −4y = −2x − 8 ⟺ y = 0,5x + 2. Même m, même p : même droite. On peut aussi comparer les coefficients cartésiens : (2 ; −4 ; 8) est proportionnel à (−0,5 ; 1 ; −2)."
           explainWrong="Ramène toujours les deux écritures à la même forme avant de comparer. 2x − 4y + 8 = 0 devient y = 0,5x + 2 : ce sont les mêmes m et p que la seconde droite."
+          requires={['critere-equations-reduites', 'critere-equations-cartesiennes', 'methode-ramener-meme-ecriture']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
+        </div>
       ),
     },
     {
@@ -126,6 +155,7 @@ export default function Module03LesEquations() {
               m₁ = m₂ et p₁ = p₂ ⇒ confondues. Une équation cartésienne se ramène d’abord à la forme réduite (ou on compare a₁b₂ − a₂b₁).
             </Feedback>
           )}
+          requires={['critere-equations-reduites', 'critere-equations-cartesiennes', 'methode-ramener-meme-ecriture', 'mem-m-decide-p-departage']}
           solved={q4}
           onAnswered={() => setQ4(true)}
         />

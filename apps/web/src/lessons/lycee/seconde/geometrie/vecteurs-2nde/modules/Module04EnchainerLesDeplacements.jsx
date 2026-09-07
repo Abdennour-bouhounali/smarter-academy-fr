@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SumLab from '../components/SumLab';
@@ -75,7 +76,25 @@ export default function Module04EnchainerLesDeplacements() {
               <strong>{formatVec(add(U, V))}</strong> : c’est <VecName>u</VecName> + <VecName>v</VecName>, et ses
               coordonnées sont les <strong>sommes</strong> 3 + (−1) et 1 + 3.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* La flèche ambre vient d'afficher le trajet direct : la somme
+              est ce que l'élève regarde, pas une formule annoncée d'avance. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="regle-somme"
+              variant="new"
+              lead={<>Tu viens de poser v au bout de u et de voir le trajet direct (flèche ambre) apparaître.</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="formule-somme"
+              variant="new"
+              compact
+              lead={<>La même règle, écrite en formule.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Règle v = {formatVec(V)} : la flèche verte part du bout de u. C se déplace avec elle.</Feedback>
           )}
         </div>
@@ -144,6 +163,25 @@ export default function Module04EnchainerLesDeplacements() {
             ]}
             ariaLabel="Trois points A, B, C avec les flèches AB, BC et AC"
           />
+          {/* La figure ci-dessus affiche déjà AB, BC et AC : la relation de
+              Chasles nomme ce que l'élève va vérifier dans la question. */}
+          <KnowledgeBrick
+            id="vocab-relation-chasles"
+            variant="new"
+            lead={<>Regarde les trois flèches : AB, puis BC, puis AC en pointillé.</>}
+          />
+          <KnowledgeBrick
+            id="mem-chasles"
+            variant="new"
+            compact
+            lead={<>Une phrase à retenir : la lettre du milieu disparaît.</>}
+          />
+          <KnowledgeBrick
+            id="formule-chasles"
+            variant="new"
+            compact
+            lead={<>La même règle, écrite en formule.</>}
+          />
           <TapQuestion
             prompt={<>Que vaut <VecName>AB</VecName> + <VecName>BC</VecName> ?</>}
             options={['AC', 'CA', 'AB', 'BC']}
@@ -151,6 +189,7 @@ export default function Module04EnchainerLesDeplacements() {
             correctionLabel="AC"
             correct={0}
             cols={4}
+            requires={['vocab-relation-chasles', 'regle-somme']}
             explain={`Aller de A à B puis de B à C, c’est aller de A à C : AB + BC = AC. Vérifie avec les coordonnées : ${formatVec(vec(A, B))} + ${formatVec(vec(B, C))} = ${formatVec(vec(A, C))}. C’est la relation de Chasles, vraie pour n’importe quel point B.`}
             solved={q3}
             onAnswered={() => setQ3(true)}
@@ -171,8 +210,9 @@ export default function Module04EnchainerLesDeplacements() {
             rows={[
               { id: 's1', label: '(2 ; −3) + (−5 ; 1)', options: ['(−3 ; −2)', '(7 ; −4)', '(−3 ; 2)'], correct: 0, correction: '2 + (−5) = −3 et −3 + 1 = −2.' },
               { id: 's2', label: '(4 ; 0) + (−4 ; 0)', options: ['(0 ; 0)', '(8 ; 0)', '(0 ; 4)'], correct: 0, correction: 'Les deux vecteurs sont opposés : la somme est le vecteur nul.' },
-              { id: 's3', label: 'v + u, quand u + v = (2 ; 4)', options: ['(2 ; 4)', '(4 ; 2)', '(−2 ; −4)'], correct: 0, correction: 'L’addition est commutative : le parallélogramme le montre, les deux chemins arrivent au même point.' },
+              { id: 's3', label: 'v + u, quand u + v = (2 ; 4)', options: ['(2 ; 4)', '(4 ; 2)', '(−2 ; −4)'], correct: 0, correction: 'L’addition est commutative : la figure ci-dessus le montre, les deux chemins arrivent au même point.' },
             ]}
+            requires={['regle-somme', 'vocab-relation-chasles']}
             feedback={({ allRight, nCorrect, total }) => (
               <Feedback tone={allRight ? 'ok' : 'info'}>
                 {allRight ? 'Coordonnée par coordonnée, avec les signes : c’est tout.' : `${nCorrect} sur ${total}. On ajoute les abscisses ensemble, puis les ordonnées ensemble, sans oublier les signes.`}
@@ -206,15 +246,7 @@ export default function Module04EnchainerLesDeplacements() {
         ),
       }}
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> <VecName>u</VecName> + <VecName>v</VecName> est le déplacement « u puis v » :
-          on pose <VecName>v</VecName> au bout de <VecName>u</VecName>, la somme va du début à la fin. En
-          coordonnées, (x ; y) + (x′ ; y′) = (x + x′ ; y + y′). Pour tous points A, B, C :{' '}
-          <VecName>AB</VecName> + <VecName>BC</VecName> = <VecName>AC</VecName> (Chasles), et{' '}
-          <VecName>u</VecName> + (−<VecName>u</VecName>) = <VecName>0</VecName>.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={4} />}
     />
   );
 }

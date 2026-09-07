@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion , KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -71,12 +71,21 @@ export default function Module04LePointDIntersection() {
           <PredictionChips prompt="si deux droites ne se coupent pas dans le cadre du dessin, alors…"
             options={[{ id: 'par', label: 'Elles sont parallèles' }, { id: 'loin', label: 'Elles se coupent peut-être plus loin' }, { id: 'jamais', label: 'Elles ne se coupent jamais' }]}
             value={pred1} onChange={setPred1} disabled={done1} />
-          <ReducedLab d1={D1} value={val} onChange={change1} disabled={done1} halfSpan={halfSpan} onHalfSpan={(h) => zoom1(h, kit.react)} />
+          <ReducedLab d1={D1} value={val} onChange={change1} halfSpan={halfSpan} onHalfSpan={(h) => zoom1(h, kit.react)} />
           {done1 ? (
-            <Feedback tone="ok">
+            <>
+              <Feedback tone="ok">
               {pred1 === 'loin' ? 'Ta prédiction était la bonne' : pred1 ? 'Ta prédiction ne tenait pas' : 'Regarde'} : I {fracCoupleText(I)} existait <strong>hors du cadre</strong> — les
               droites étaient sécantes, pas parallèles. Le dessin a des bords ; les équations n’en ont pas. Seul le calcul (ou m₁ = m₂) permet de conclure « parallèles ».
-            </Feedback>
+              </Feedback>
+              {/* Le cadre vient de mentir à l'élève : c'est le moment d'établir
+                  ce que la lecture graphique peut, et ne peut pas, prouver. */}
+              <KnowledgeBrick
+                id="methode-interpretation-graphique"
+                variant="new"
+                lead="Tu viens de voir un point commun disparaître du dessin sans cesser d’exister."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               {!escaped ? (I ? `I ${fracCoupleText(I)} est dans le cadre. Rapproche m₂ de 0,5 (sans l’atteindre) ou éloigne p₂ : I file le long de (d₁).` : 'Parallèles : aucun point commun. Remets m₂ ≠ 0,5.')
@@ -97,6 +106,23 @@ export default function Module04LePointDIntersection() {
           <div className="rounded-xl border border-slate-200 bg-white p-3 text-sm text-slate-700">
             En I, les deux ordonnées sont égales : <MathText>{'$0{,}5x + 2 = -x - 1$'}</MathText>. Une seule inconnue, une seule équation.
           </div>
+          {/* Le point commun est ici DEMANDÉ par le calcul : la notion de système
+              et la marche à suivre se posent avant les deux questions. */}
+          <KnowledgeBrick
+            id="point-intersection-systeme"
+            variant="new"
+            lead="Ce que tu t’apprêtes à calculer porte un nom : c’est la solution d’un système."
+          />
+          <KnowledgeBrick
+            id="methode-resoudre-systeme"
+            variant="new"
+            lead="Deux étapes, toujours les mêmes."
+          />
+          <KnowledgeBrick
+            id="formule-abscisse-intersection"
+            variant="new"
+            lead="Et l’égalité par laquelle tout commence."
+          />
           <NumericQuestion
             prompt="Résous 0,5x + 2 = −x − 1. Abscisse x de I ?"
             expected={-2}
@@ -108,6 +134,7 @@ export default function Module04LePointDIntersection() {
               : n === -6 || n === 6 ? 'Il faut diviser −3 par 1,5, pas le multiplier par 2 : −3 ÷ 1,5 = −2.'
               : n === -1 ? 'Rassemble d’abord les x d’un côté : 0,5x + x = 1,5x, et les nombres de l’autre : −1 − 2 = −3.'
               : 'Rassemble : 0,5x + x = −1 − 2, soit 1,5x = −3, d’où x = −2.')}
+            requires={['point-intersection-systeme', 'methode-resoudre-systeme', 'formule-abscisse-intersection']}
             solved={qx}
             onAnswered={() => setQx(true)}
           />
@@ -121,6 +148,7 @@ export default function Module04LePointDIntersection() {
               explainFor={(n) => (n === -3 ? 'Tu as remplacé x par 2 : avec x = −2, y = −(−2) − 1 = 2 − 1 = 1.'
                 : n === 3 ? 'Vérifie le signe : 0,5 × (−2) = −1, donc y = −1 + 2 = 1.'
                 : 'Remplace x = −2 : y = 0,5 × (−2) + 2 = 1. L’autre équation doit donner la même chose : −(−2) − 1 = 1.')}
+              requires={['point-intersection-systeme', 'methode-resoudre-systeme']}
               solved={qy}
               onAnswered={() => setQy(true)}
             />
@@ -133,7 +161,13 @@ export default function Module04LePointDIntersection() {
       title: 'Le système n’a pas de solution',
       done: q3,
       content: (
-        <TapQuestion
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="regle-nombre-solutions"
+            variant="new"
+            lead="Un système peut n’avoir aucune solution, ou en avoir une infinité — et cela se lit comme une position relative."
+          />
+          <TapQuestion
           prompt={<span>On cherche le point commun de <MathText>{'$y = 0{,}5x + 2$'}</MathText> et <MathText>{'$y = 0{,}5x - 1$'}</MathText>. L’équation <MathText>{'$0{,}5x + 2 = 0{,}5x - 1$'}</MathText> donne <MathText>{'$2 = -1$'}</MathText>. Que conclure ?</span>}
           options={[
             'Aucune solution : les droites sont strictement parallèles.',
@@ -145,9 +179,11 @@ export default function Module04LePointDIntersection() {
           cols={1}
           explain="Une égalité fausse (2 = −1) signifie qu’aucun x ne convient : les droites n’ont aucun point commun. Cohérent avec m₁ = m₂ = 0,5 et p₁ ≠ p₂. Une égalité toujours vraie (0 = 0) signifierait au contraire des droites confondues."
           explainWrong="Le calcul est juste : 0,5x s’élimine des deux côtés et il reste 2 = −1, faux pour tout x. Aucun point commun, donc strictement parallèles — le système « traduit » la position relative."
+          requires={['point-intersection-systeme', 'regle-nombre-solutions']}
           solved={q3}
           onAnswered={() => setQ3(true)}
         />
+        </div>
       ),
     },
     {
@@ -155,7 +191,13 @@ export default function Module04LePointDIntersection() {
       title: 'Combien de solutions ?',
       done: q4,
       content: (
-        <BatchChoiceQuestion
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="mem-intersection-systeme"
+            variant="new"
+            lead="La phrase à garder de tout ce module."
+          />
+          <BatchChoiceQuestion
           intro={<p className="text-sm text-slate-700">Sans résoudre entièrement : combien de couples (x ; y) vérifient les deux équations ?</p>}
           rows={[
             { id: 's1', label: 'y = 2x + 1 et y = −3x + 6', options: ['0', '1', 'une infinité'], correct: 1, correction: 'm différents : un point commun' },
@@ -168,9 +210,11 @@ export default function Module04LePointDIntersection() {
               système EST la position relative.
             </Feedback>
           )}
+          requires={['regle-nombre-solutions', 'point-intersection-systeme', 'mem-intersection-systeme']}
           solved={q4}
           onAnswered={() => setQ4(true)}
         />
+        </div>
       ),
     },
   ];

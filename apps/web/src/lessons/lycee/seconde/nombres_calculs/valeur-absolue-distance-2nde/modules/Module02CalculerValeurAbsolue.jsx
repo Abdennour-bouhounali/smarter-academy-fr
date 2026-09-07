@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AbsMachine from '../components/AbsMachine';
@@ -42,6 +43,14 @@ export default function Module02CalculerValeurAbsolue() {
               ) : (
                 <Feedback tone="info">{!negDone ? 'Entre un nombre négatif : quelle règle s’allume ?' : !posDone ? 'Et un positif ?' : !zeroDone ? 'Et 0 ?' : 'Encore un essai, celui que tu veux — −4,5 par exemple.'}</Feedback>
               )}
+              {machineDone && (
+                <KnowledgeBrick
+                  id="regle-calcul-valeur-absolue"
+                  variant="new"
+                  compact
+                  lead={<>Tu as vu les deux règles s’allumer : positif ou 0 → même nombre ; négatif → son opposé.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -51,6 +60,7 @@ export default function Module02CalculerValeurAbsolue() {
             <TapQuestion
               prompt="Si x = −8, combien vaut −x ?"
               options={['−8', '8', 'On ne peut pas savoir']} cols={3} correct={1}
+              requires={['regle-calcul-valeur-absolue', 'nombres-relatifs']}
               explain="−x est l’opposé de x. L’opposé de −8 est 8 : quand x est négatif, −x est positif. C’est pour cela que la règle 2 rend bien une distance positive."
               explainWrong="« −x » ne signifie pas « un nombre négatif » mais « l’opposé de x ». Si x = −8, son opposé est 8 : −x = −(−8) = 8."
               solved={whyDone} onAnswered={() => setWhyDone(true)} />
@@ -59,20 +69,31 @@ export default function Module02CalculerValeurAbsolue() {
         {
           num: 3, title: 'Calcule', done: batchDone,
           content: (
-            <BatchChoiceQuestion
-              rows={[
-                { id: 'r1', label: '|−3|', options: ['−3', '3'], correct: 1 },
-                { id: 'r2', label: '−|−3|', options: ['−3', '3'], correct: 0, correction: 'd’abord |−3| = 3, puis l’opposé : −3.' },
-                { id: 'r3', label: '|3 − 5|', options: ['−2', '2'], correct: 1, correction: '3 − 5 = −2, puis |−2| = 2.' },
-                { id: 'r4', label: '|x| pour x = −2,5', options: ['−2,5', '2,5'], correct: 1 },
-                { id: 'r5', label: '|−6| − |6|', options: ['0', '−12'], correct: 0, correction: '6 − 6 = 0 : opposés, même distance.' },
-              ]}
-              feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Cinq sur cinq.' : `${nCorrect} / ${total}.`} On calcule d’abord ce qu’il y a ENTRE les barres, puis on prend la distance à 0 ; un signe − devant les barres s’applique après.</Feedback>}
-              solved={batchDone} onAnswered={() => setBatchDone(true)} />
+            <div className="space-y-3">
+              {whyDone && (
+                <KnowledgeBrick
+                  id="methode-calculer-expression-absolue"
+                  variant="new"
+                  compact
+                  lead={<>Une expression avec des barres se calcule comme une parenthèse : l’intérieur d’abord, la distance ensuite.</>}
+                />
+              )}
+              <BatchChoiceQuestion
+                rows={[
+                  { id: 'r1', label: '|−3|', options: ['−3', '3'], correct: 1 },
+                  { id: 'r2', label: '−|−3|', options: ['−3', '3'], correct: 0, correction: 'd’abord |−3| = 3, puis l’opposé : −3.' },
+                  { id: 'r3', label: '|3 − 5|', options: ['−2', '2'], correct: 1, correction: '3 − 5 = −2, puis |−2| = 2.' },
+                  { id: 'r4', label: '|x| pour x = −2,5', options: ['−2,5', '2,5'], correct: 1 },
+                  { id: 'r5', label: '|−6| − |6|', options: ['0', '−12'], correct: 0, correction: '6 − 6 = 0 : opposés, même distance.' },
+                ]}
+                requires={['methode-calculer-expression-absolue', 'regle-calcul-valeur-absolue']}
+                feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Cinq sur cinq.' : `${nCorrect} / ${total}.`} On calcule d’abord ce qu’il y a ENTRE les barres, puis on prend la distance à 0 ; un signe − devant les barres s’applique après.</Feedback>}
+                solved={batchDone} onAnswered={() => setBatchDone(true)} />
+            </div>
           ),
         },
       ]}
-      footer={<Feedback tone="ok"><strong>À retenir :</strong> |x| = x si x ≥ 0, |x| = −x si x &lt; 0 ; |x| ≥ 0 toujours ; |x| = |−x|. Et entre deux bateaux ? Module suivant.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={2} />}
     />
   );
 }

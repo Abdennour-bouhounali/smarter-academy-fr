@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -36,6 +36,22 @@ import { lineFromPointVector, relativePosition, det, coupleText, frameFor, inRan
  * Formalization          rien n'est calculé ici : le module se termine sur la
  *                        question « avec seulement les quatre couples de
  *                        nombres, peut-on décider ? » (module 2).
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Les quatre connaissances du module vivaient uniquement dans les `Feedback`
+ *   de fin d'étape et dans l'« À retenir » du pied : rien n'était posé en
+ *   position d'enseignement, et la question de l'étape 4 exigeait les trois
+ *   mots sans qu'aucun n'ait été établi. L'ordre est maintenant
+ *   geste → brique → demande :
+ *     étape 1  rendre v colinéaire à u  → brique `vocab-secantes-paralleles-confondues`
+ *     étape 2  déplacer B seul          → brique `regle-direction-position`
+ *     étape 3  produire les trois cas   → briques `positions-trois-cas` puis `mem-trois-comptes`
+ *     étape 4  la question d'origine, désormais légitime (`requires`)
+ *
+ * MANIPULATION JAMAIS GELÉE. Les laboratoires restaient `disabled` une fois
+ * l'étape réussie : l'élève ne pouvait plus rejouer le phénomène qu'il venait
+ * de comprendre. Ils restent vivants ; seul le verrou d'ANTÉRIORITÉ (`!done1`,
+ * `!done2`) demeure, parce qu'une étape garde son ordre.
  */
 const START = { A: { x: -3, y: -1 }, u: { x: 2, y: 1 }, B: { x: 3, y: -1 }, v: { x: 1, y: -1 } };
 const { range: RANGE } = frameFor(6);
@@ -156,14 +172,23 @@ export default function Module01LeLaboratoireDesDeuxDroites() {
             options={[{ id: 'dir', label: 'Changer la direction de (d₂)' }, { id: 'pos', label: 'Éloigner B de (d₁)' }, { id: 'les2', label: 'Les deux à la fois' }]}
             value={pred1} onChange={setPred1} disabled={done1}
           />
-          <Lab state={done1 ? snap1 : state} ids={['vTip']} activeId="vTip" onActive={() => {}} onChange={(n) => change1(n, kit.react)} disabled={done1} />
+          <Lab state={state} ids={['vTip']} activeId="vTip" onActive={() => {}} onChange={(n) => change1(n, kit.react)} />
           {!done1 && moves1 >= ESCAPE_AFTER && escape(() => change1({ ...state, v: { ...state.u } }, kit.react))}
           {done1 ? (
-            <Feedback tone="ok">
-              {pred1 === 'dir' ? 'Ta prédiction était la bonne' : pred1 === 'pos' ? 'Ta prédiction : éloigner B. Tu n’as pas touché à B, et pourtant' : pred1 === 'les2' ? 'Ta prédiction : les deux. Un seul a suffi' : 'Regarde'} :
-              en donnant à v <strong>la direction de u</strong> ({coupleText(snap1.v.x, snap1.v.y)}), le point I a disparu <strong>d’un coup, partout</strong> — pas seulement dans le cadre.
-              Les droites sont <strong>{POSITION_LABEL[posOf(snap1)]}</strong>.
-            </Feedback>
+            <>
+              <Feedback tone="ok">
+                {pred1 === 'dir' ? 'Ta prédiction était la bonne' : pred1 === 'pos' ? 'Ta prédiction : éloigner B. Tu n’as pas touché à B, et pourtant' : pred1 === 'les2' ? 'Ta prédiction : les deux. Un seul a suffi' : 'Regarde'} :
+                en donnant à v <strong>la direction de u</strong> ({coupleText(snap1.v.x, snap1.v.y)}), le point I a disparu <strong>d’un coup, partout</strong> — pas seulement dans le cadre.
+                Les droites sont <strong>{POSITION_LABEL[posOf(snap1)]}</strong>.
+              </Feedback>
+              {/* Le geste vient de produire deux des trois situations : c'est ici
+                  que les mots se posent, avant la moindre demande qui les emploie. */}
+              <KnowledgeBrick
+                id="vocab-secantes-paralleles-confondues"
+                variant="new"
+                lead="Les deux situations que tu viens de produire portent un nom — et il en existe une troisième."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               {moves1 === 0 ? 'Choisis la poignée v (elle est déjà active), puis glisse-la, ou utilise la croix. Le point I t’indique le point commun.' :
@@ -181,14 +206,22 @@ export default function Module01LeLaboratoireDesDeuxDroites() {
       done: done2,
       content: (kit) => (
         <div className="space-y-3">
-          <Lab state={done2 ? snap2 : (done1 ? state : START)} ids={['B']} activeId="B" onActive={() => {}} onChange={(n) => change2(n, kit.react)} disabled={done2 || !done1} />
+          <Lab state={done1 ? state : START} ids={['B']} activeId="B" onActive={() => {}} onChange={(n) => change2(n, kit.react)} disabled={!done1} />
           {!done2 && done1 && moves2 >= ESCAPE_AFTER && escape(() => change2({ ...state, B: { x: state.A.x + state.u.x, y: state.A.y + state.u.y } }, kit.react))}
           {done2 ? (
-            <Feedback tone="ok">
-              B est tombé <strong>sur (d₁)</strong> : les deux droites ont alors <strong>tous</strong> leurs points en commun — elles sont{' '}
-              <strong>confondues</strong>. {moves2 > 1 ? `Avant cela, tu as déplacé B ${moves2 - 1} fois : le compte restait « aucun point commun ».` : 'Dès le premier déplacement — mais partout ailleurs, le compte serait resté « aucun point commun ».'}
-              La direction décide entre <em>sécantes</em> et <em>parallèles</em> ; la position décide entre <em>parallèles</em> et <em>confondues</em>.
-            </Feedback>
+            <>
+              <Feedback tone="ok">
+                B est tombé <strong>sur (d₁)</strong> : les deux droites ont alors <strong>tous</strong> leurs points en commun — elles sont{' '}
+                <strong>confondues</strong>. {moves2 > 1 ? `Avant cela, tu as déplacé B ${moves2 - 1} fois : le compte restait « aucun point commun ».` : 'Dès le premier déplacement — mais partout ailleurs, le compte serait resté « aucun point commun ».'}
+              </Feedback>
+              {/* Deux gestes distincts (v puis B) ont produit deux effets distincts :
+                  la règle qui les sépare peut maintenant être nommée. */}
+              <KnowledgeBrick
+                id="regle-direction-position"
+                variant="new"
+                lead="Tu as changé une direction, puis une position — et les deux n’ont pas fait la même chose."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               {moves2 === 0 ? 'Glisse B où tu veux (ou utilise la croix). Vise aussi la droite (d₁) elle-même.' :
@@ -205,7 +238,7 @@ export default function Module01LeLaboratoireDesDeuxDroites() {
       done: done3,
       content: (kit) => (
         <div className="space-y-3">
-          <Lab state={state} ids={['A', 'uTip', 'B', 'vTip']} activeId={active} onActive={setActive} onChange={(n) => change3(n, kit.react)} disabled={done3 || !done2} />
+          <Lab state={state} ids={['A', 'uTip', 'B', 'vTip']} activeId={active} onActive={setActive} onChange={(n) => change3(n, kit.react)} disabled={!done2} />
           <div className="flex flex-wrap gap-2" role="group" aria-label="Situations produites">
             {['secantes', 'paralleles', 'confondues'].map((p) => (
               <span key={p} className={`px-3 py-1.5 rounded-full text-xs font-bold border ${seen.has(p) ? 'bg-emerald-600 border-emerald-700 text-white' : 'bg-white border-slate-300 text-slate-500'}`}>
@@ -214,10 +247,23 @@ export default function Module01LeLaboratoireDesDeuxDroites() {
             ))}
           </div>
           {done3 ? (
-            <Feedback tone="ok">
-              Trois situations, trois comptes : <strong>1</strong> point commun (sécantes), <strong>0</strong> (strictement parallèles), <strong>une infinité</strong> (confondues).
-              Il n’en existe pas d’autre : deux droites distinctes qui ont deux points communs sont… la même droite.
-            </Feedback>
+            <>
+              <Feedback tone="ok">
+                Trois situations produites de tes mains — et le compte des points communs change à chaque fois.
+              </Feedback>
+              {/* Les trois cas ont été FABRIQUÉS avant d'être énumérés : la brique
+                  ne fait que ranger ce que l'élève vient d'obtenir. */}
+              <KnowledgeBrick
+                id="positions-trois-cas"
+                variant="new"
+                lead="Tu viens de produire les trois situations possibles. Il n’en existe pas d’autre."
+              />
+              <KnowledgeBrick
+                id="mem-trois-comptes"
+                variant="new"
+                lead="À retenir sous la forme la plus courte : trois positions, trois comptes."
+              />
+            </>
           ) : (
             <Feedback tone="info">
               Actuellement : <strong>{POSITION_LABEL[pos]}</strong>. {seen.has('secantes') ? '' : 'Pour des sécantes, donne à u et v deux directions différentes. '}
@@ -245,6 +291,7 @@ export default function Module01LeLaboratoireDesDeuxDroites() {
           cols={1}
           explain="Deux points distincts définissent UNE droite. Si deux droites partagent deux points, elles sont confondues et partagent alors tous leurs points. Restent trois cas : 1 (sécantes), 0 (strictement parallèles), une infinité (confondues)."
           explainWrong="Tu viens de le constater au laboratoire : dès que B est tombé sur (d₁) avec la même direction, TOUTE la droite est devenue commune. Une droite n’a pas de longueur, et deux droites ne peuvent pas se couper deux fois."
+          requires={['positions-trois-cas', 'vocab-secantes-paralleles-confondues', 'mem-trois-comptes']}
           solved={q4}
           onAnswered={() => setQ4(true)}
         />

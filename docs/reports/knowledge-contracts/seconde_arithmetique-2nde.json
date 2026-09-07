@@ -2,73 +2,131 @@
   "lesson": "arithmetique-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "tables-multiplication",
+    "quotient"
+  ],
   "conceptsIntroduced": [
     {
       "id": "division-euclidienne",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module01PaquetsEtRestes.jsx",
+        "line": 108,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "multiple-diviseur",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module01PaquetsEtRestes.jsx",
+        "line": 113,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-reste-decide",
       "type": "regles",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module01PaquetsEtRestes.jsx",
+        "line": 75,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "ecriture-litterale-parite",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
+        "line": 47,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "lettre-couvre-tout",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
+        "line": 62,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-parite-operations",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
+        "line": 111,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "criteres-divisibilite",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module03CriteresDemontres.jsx",
+        "line": 77,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "critere-est-decoupage",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module03CriteresDemontres.jsx",
+        "line": 55,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "ppcm",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module04MultiplesCommuns.jsx",
+        "line": 41,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "pgcd",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module04MultiplesCommuns.jsx",
+        "line": 70,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "regle-exemples-pas-preuve",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05Demontrer.jsx",
+        "line": 77,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [],
@@ -77,19 +135,34 @@
       "id": "methode-preuve-parite",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
+        "line": 86,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-reconnaitre-ppcm-pgcd",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module04MultiplesCommuns.jsx",
+        "line": 86,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-demonstration-arithmetique",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05Demontrer.jsx",
+        "line": 46,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -97,13 +170,23 @@
       "id": "mem-multiple-reste",
       "type": "memoriser",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module01PaquetsEtRestes.jsx",
+        "line": 126,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-conclure-par-definition",
       "type": "memoriser",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05Demontrer.jsx",
+        "line": 84,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -114,8 +197,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module00Diagnostic.jsx",
       "line": 8,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -126,8 +213,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module00Diagnostic.jsx",
       "line": 9,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -138,8 +229,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module00Diagnostic.jsx",
       "line": 10,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,8 +245,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,8 +261,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -173,8 +276,8 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module01PaquetsEtRestes.jsx",
-      "line": 65,
-      "requires": null,
+      "line": 66,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -185,9 +288,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module01PaquetsEtRestes.jsx",
-      "line": 80,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "regle-reste-decide"
+      ],
+      "prerequisiteStatus": {
+        "regle-reste-decide": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -197,9 +304,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module01PaquetsEtRestes.jsx",
-      "line": 97,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 118,
+      "requires": [
+        "division-euclidienne",
+        "multiple-diviseur"
+      ],
+      "prerequisiteStatus": {
+        "division-euclidienne": "established@M1",
+        "multiple-diviseur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -209,8 +322,8 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
-      "line": 38,
-      "requires": null,
+      "line": 39,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -221,9 +334,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
-      "line": 43,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 55,
+      "requires": [
+        "ecriture-litterale-parite"
+      ],
+      "prerequisiteStatus": {
+        "ecriture-litterale-parite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -233,9 +350,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
-      "line": 54,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 76,
+      "requires": [
+        "ecriture-litterale-parite",
+        "lettre-couvre-tout"
+      ],
+      "prerequisiteStatus": {
+        "ecriture-litterale-parite": "established@M2",
+        "lettre-couvre-tout": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -245,9 +368,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
-      "line": 68,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 101,
+      "requires": [
+        "methode-preuve-parite"
+      ],
+      "prerequisiteStatus": {
+        "methode-preuve-parite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -257,9 +384,13 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module02PairImpair.jsx",
-      "line": 80,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "regle-parite-operations"
+      ],
+      "prerequisiteStatus": {
+        "regle-parite-operations": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -269,8 +400,8 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module03CriteresDemontres.jsx",
-      "line": 45,
-      "requires": null,
+      "line": 46,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -281,9 +412,13 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module03CriteresDemontres.jsx",
-      "line": 58,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "critere-est-decoupage"
+      ],
+      "prerequisiteStatus": {
+        "critere-est-decoupage": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -293,9 +428,13 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module03CriteresDemontres.jsx",
-      "line": 68,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 89,
+      "requires": [
+        "criteres-divisibilite"
+      ],
+      "prerequisiteStatus": {
+        "criteres-divisibilite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -305,9 +444,13 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module04MultiplesCommuns.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 48,
+      "requires": [
+        "ppcm"
+      ],
+      "prerequisiteStatus": {
+        "ppcm": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -317,8 +460,8 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module04MultiplesCommuns.jsx",
-      "line": 50,
-      "requires": null,
+      "line": 61,
+      "requires": [],
       "prerequisiteStatus": {},
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -329,397 +472,228 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module04MultiplesCommuns.jsx",
-      "line": 55,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "pgcd"
+      ],
+      "prerequisiteStatus": {
+        "pgcd": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M05-S1-Q1",
-      "module": 5,
-      "step": 1,
-      "component": "BatchChoiceQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05ARetenir.jsx",
-      "line": 28,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M05-S2-Q2",
+      "questionId": "M05-S2-Q1",
       "module": 5,
       "step": 2,
       "component": "TapQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05ARetenir.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05Demontrer.jsx",
+      "line": 57,
+      "requires": [
+        "methode-demonstration-arithmetique"
+      ],
+      "prerequisiteStatus": {
+        "methode-demonstration-arithmetique": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M05-S3-Q3",
+      "questionId": "M05-S3-Q2",
       "module": 5,
       "step": 3,
-      "component": "BatchChoiceQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05ARetenir.jsx",
-      "line": 49,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M06-S2-Q1",
-      "module": 6,
-      "step": 2,
       "component": "TapQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06Demontrer.jsx",
-      "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05Demontrer.jsx",
+      "line": 69,
+      "requires": [
+        "methode-demonstration-arithmetique"
+      ],
+      "prerequisiteStatus": {
+        "methode-demonstration-arithmetique": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
-      "questionId": "M06-S3-Q2",
-      "module": 6,
-      "step": 3,
-      "component": "TapQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06Demontrer.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
-      "lexiconHits": [],
-      "pedagogicallyValid": true
-    },
-    {
-      "questionId": "M06-S4-Q3",
-      "module": 6,
+      "questionId": "M05-S4-Q3",
+      "module": 5,
       "step": 4,
       "component": "NumericQuestion",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06Demontrer.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module05Demontrer.jsx",
+      "line": 96,
+      "requires": [
+        "ppcm"
+      ],
+      "prerequisiteStatus": {
+        "ppcm": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e1",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 33,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "multiple-diviseur"
+      ],
+      "prerequisiteStatus": {
+        "multiple-diviseur": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e2",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 34,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "division-euclidienne"
+      ],
+      "prerequisiteStatus": {
+        "division-euclidienne": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e3",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "criteres-divisibilite"
+      ],
+      "prerequisiteStatus": {
+        "criteres-divisibilite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e4",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 36,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "critere-est-decoupage"
+      ],
+      "prerequisiteStatus": {
+        "critere-est-decoupage": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e5",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 37,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "ecriture-litterale-parite",
+        "regle-parite-operations"
+      ],
+      "prerequisiteStatus": {
+        "ecriture-litterale-parite": "established@M2",
+        "regle-parite-operations": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e6",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "ecriture-litterale-parite"
+      ],
+      "prerequisiteStatus": {
+        "ecriture-litterale-parite": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e7",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 39,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "ppcm",
+        "pgcd"
+      ],
+      "prerequisiteStatus": {
+        "ppcm": "established@M4",
+        "pgcd": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e8",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pgcd"
+      ],
+      "prerequisiteStatus": {
+        "pgcd": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e9",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 41,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-demonstration-arithmetique"
+      ],
+      "prerequisiteStatus": {
+        "methode-demonstration-arithmetique": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
     {
       "questionId": "ar-e10",
-      "module": 7,
+      "module": 6,
       "step": null,
       "component": "boss",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module07MissionFinale.jsx",
+      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/modules/Module06MissionFinale.jsx",
       "line": 42,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "regle-parite-operations"
+      ],
+      "prerequisiteStatus": {
+        "regle-parite-operations": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'division-euclidienne' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 27,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'multiple-diviseur' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 46,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-reste-decide' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 65,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-multiple-reste' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 86,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'ecriture-litterale-parite' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 108,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'lettre-couvre-tout' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 127,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-preuve-parite' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 146,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-parite-operations' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 169,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'criteres-divisibilite' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 192,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'critere-est-decoupage' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 210,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'ppcm' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 237,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'pgcd' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 256,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-reconnaitre-ppcm-pgcd' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 274,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-demonstration-arithmetique' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 302,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regle-exemples-pas-preuve' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 324,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-conclure-par-definition' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/knowledge.jsx",
-      "line": 346,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

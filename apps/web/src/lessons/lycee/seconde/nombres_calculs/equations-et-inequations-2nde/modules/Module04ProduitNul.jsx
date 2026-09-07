@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProductScanner from '../components/ProductScanner';
@@ -133,7 +134,7 @@ export default function Module04ProduitNul() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok"><strong>Équation produit nul :</strong> A × B = 0 ⇔ A = 0 ou B = 0. Ramener à 0 d’abord, factoriser, puis une branche par facteur. Et si x est au dénominateur ? Une valeur devient interdite : module suivant.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={4} />}
     />
   );
 }

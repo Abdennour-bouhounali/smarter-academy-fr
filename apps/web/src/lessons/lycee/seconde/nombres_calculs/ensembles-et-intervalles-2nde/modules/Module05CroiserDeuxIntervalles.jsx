@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import RealLine from '../../../../../common/components/RealLine';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -91,6 +92,7 @@ export default function Module05CroiserDeuxIntervalles() {
                   { id: 'r2', label: '[−2 ; 5[', options: ['fermé', 'ouvert', 'semi-ouvert'], correct: 2 },
                   { id: 'r3', label: '[3 ; 3,5]', options: ['fermé', 'ouvert', 'semi-ouvert'], correct: 0 },
                 ]}
+                requires={['types-intervalles']}
                 feedback={({ allRight }) => (
                   <Feedback tone={allRight ? 'ok' : 'ko'}>Deux crochets vers l’intérieur : fermé. Deux vers l’extérieur : ouvert. Un de chaque : semi-ouvert.</Feedback>
                 )}
@@ -119,6 +121,13 @@ export default function Module05CroiserDeuxIntervalles() {
                 onReveal={() => setG1(INTER)}
                 solved={d1}
               />
+              {d1 && (
+                <KnowledgeBrick
+                  id="intersection-intervalles"
+                  variant="new"
+                  lead="Tu viens de garder la zone recouverte deux fois, et de reprendre le crochet de l’intervalle qui s’arrête à chaque borne. C’est la méthode générale."
+                />
+              )}
             </div>
           ),
         },
@@ -141,6 +150,21 @@ export default function Module05CroiserDeuxIntervalles() {
                 onReveal={() => setG2(UNION)}
                 solved={d2}
               />
+              {d2 && (
+                <KnowledgeBrick
+                  id="reunion-intervalles"
+                  variant="new"
+                  lead="Cette fois tu as gardé TOUT ce qui est colorié, d’une couleur ou de l’autre — la borne de gauche venait de I, celle de droite de J."
+                />
+              )}
+              {d2 && (
+                <KnowledgeBrick
+                  id="mem-inter-union"
+                  variant="new"
+                  compact
+                  lead="Les deux gestes que tu viens de faire, côte à côte."
+                />
+              )}
             </div>
           ),
         },
@@ -149,29 +173,36 @@ export default function Module05CroiserDeuxIntervalles() {
           title: 'Quand rien ne se croise',
           done: d3,
           content: (
-            <TapQuestion
-              prompt="A = [−5 ; −2] et B = [0 ; 3]. Que vaut A ∩ B ?"
-              above={
-                <div className="rounded-2xl border-2 border-slate-200 bg-white p-2">
-                  <RealLine min={-6} max={4} step={1} intervals={[{ id: 'A', from: -5, to: -2, tone: 'sky', label: 'A' }, { id: 'B', from: 0, to: 3, tone: 'amber', label: 'B' }]} ariaLabel="Deux intervalles disjoints A = [−5 ; −2] et B = [0 ; 3]" />
-                </div>
-              }
-              options={['∅ : aucun nombre n’est dans les deux', '[−2 ; 0]', '[−5 ; 3]', '{−2 ; 0}']}
-              cols={1}
-              correct={0}
-              explain="Les deux bandes ne se touchent pas : aucun nombre n’est à la fois dans A et dans B. L’intersection est l’ensemble vide, ∅. (Et A ∪ B n’est pas un intervalle : il a un trou entre −2 et 0.)"
-              explainWrong="Regarde le dessin : entre −2 et 0, rien n’est colorié. Aucun nombre n’appartient aux deux : A ∩ B = ∅. [−5 ; 3] serait un ensemble bien trop grand, avec un trou en plus."
-              solved={d3}
-              onAnswered={() => setD3(true)}
-            />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="A = [−5 ; −2] et B = [0 ; 3]. Que vaut A ∩ B ?"
+                above={
+                  <div className="rounded-2xl border-2 border-slate-200 bg-white p-2">
+                    <RealLine min={-6} max={4} step={1} intervals={[{ id: 'A', from: -5, to: -2, tone: 'sky', label: 'A' }, { id: 'B', from: 0, to: 3, tone: 'amber', label: 'B' }]} ariaLabel="Deux intervalles disjoints A = [−5 ; −2] et B = [0 ; 3]" />
+                  </div>
+                }
+                options={['∅ : aucun nombre n’est dans les deux', '[−2 ; 0]', '[−5 ; 3]', '{−2 ; 0}']}
+                cols={1}
+                correct={0}
+                requires={['intersection-intervalles', 'ensemble-vide']}
+                explain="Les deux bandes ne se touchent pas : aucun nombre n’est à la fois dans A et dans B. L’intersection est l’ensemble vide, ∅. (Et A ∪ B n’est pas un intervalle : il a un trou entre −2 et 0.)"
+                explainWrong="Regarde le dessin : entre −2 et 0, rien n’est colorié. Aucun nombre n’appartient aux deux : A ∩ B = ∅. [−5 ; 3] serait un ensemble bien trop grand, avec un trou en plus."
+                solved={d3}
+                onAnswered={() => setD3(true)}
+              />
+              {d3 && (
+                <KnowledgeBrick
+                  id="regle-intersection-vide"
+                  variant="new"
+                  compact
+                  lead="Deux plages qui ne se touchent pas : leur intersection est ∅, comme pour les diviseurs de 12 et 18 qui n’avaient rien en commun avec 5."
+                />
+              )}
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Croiser deux intervalles se lit sur la droite : l’intersection est la zone recouverte deux fois ({notation(INTER)}, {typeOf(INTER)}), la réunion tout ce qui est recouvert au moins une fois ({notation(UNION)}). Deux plages qui ne se touchent pas ont une intersection vide.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={5} />}
     />
   );
 }

@@ -4,6 +4,8 @@
   "lexiconVersion": 1,
   "prerequisites": [
     "quotient",
+    "numerateur",
+    "denominateur",
     "calcul-numerique",
     "nombres-relatifs"
   ],
@@ -211,10 +213,14 @@
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module00Diagnostic.jsx",
       "line": 27,
       "requires": [
-        "quotient"
+        "quotient",
+        "numerateur",
+        "denominateur"
       ],
       "prerequisiteStatus": {
-        "quotient": "prior"
+        "quotient": "prior",
+        "numerateur": "prior",
+        "denominateur": "prior"
       },
       "lexiconHits": [],
       "pedagogicallyValid": true
@@ -227,10 +233,14 @@
       "file": "apps/web/src/lessons/college/3e/nombres_calculs/nombres-rationnels/modules/Module00Diagnostic.jsx",
       "line": 44,
       "requires": [
-        "quotient"
+        "quotient",
+        "numerateur",
+        "denominateur"
       ],
       "prerequisiteStatus": {
-        "quotient": "prior"
+        "quotient": "prior",
+        "numerateur": "prior",
+        "denominateur": "prior"
       },
       "lexiconHits": [],
       "pedagogicallyValid": true

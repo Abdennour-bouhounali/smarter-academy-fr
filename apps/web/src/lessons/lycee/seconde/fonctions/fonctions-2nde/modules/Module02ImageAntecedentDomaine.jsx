@@ -34,6 +34,11 @@ import { BOX, antecedentsOf, formatDec } from '../components/fonctionsUtils';
  *   Le titre de l'étape 3 ne nomme plus « ensemble de définition » : un titre
  *   se lit alors que l'étape est encore verrouillée, et annonçait donc le mot
  *   avant tout enseignement.
+ *
+ * MANIPULATION JAMAIS GELÉE. La sonde restait `disabled` une fois l'étape
+ * réussie : l'élève ne pouvait plus rejouer le phénomène qu'il venait de
+ * comprendre. Elle reste vivante ; seul le verrou d'ANTÉRIORITÉ demeure,
+ * parce qu'une étape garde son ordre.
  */
 const PROBE = { f: BOX, range: GRAPH_RANGE, unit: GRAPH_UNIT, unitY: GRAPH_UNIT_Y, xStep: 0.5, yStep: 100, axisLabels: { x: 'x', y: 'V' }, xUnit: ' cm', yUnit: ' cm³', labelEvery: 2 };
 const XS400 = antecedentsOf(BOX, 400, GRAPH_RANGE);
@@ -54,7 +59,7 @@ export default function Module02ImageAntecedentDomaine() {
       done: seen2,
       content: (kit) => (
         <div className="space-y-3">
-          <FunctionProbe {...PROBE} mode="x" value={x} onChange={(v) => { setX(v); if (v === 2 && !seen2) { setSeen2(true); kit.react(true); } }} disabled={seen2} />
+          <FunctionProbe {...PROBE} mode="x" value={x} onChange={(v) => { setX(v); if (v === 2 && !seen2) { setSeen2(true); kit.react(true); } }} />
           {seen2 ? (
             <>
               <KnowledgeBrick
@@ -82,7 +87,7 @@ export default function Module02ImageAntecedentDomaine() {
       done: seen400,
       content: (kit) => (
         <div className="space-y-3">
-          <FunctionProbe {...PROBE} mode="y" value={yv} onChange={(v) => { setYv(v); if (v === 400 && !seen400) { setSeen400(true); kit.react(true); } }} disabled={seen400 || !seen2} />
+          <FunctionProbe {...PROBE} mode="y" value={yv} onChange={(v) => { setYv(v); if (v === 400 && !seen400) { setSeen400(true); kit.react(true); } }} disabled={!seen2} />
           {seen400 ? (
             <>
               <KnowledgeBrick

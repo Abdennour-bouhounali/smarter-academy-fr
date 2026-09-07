@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
-import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { parseDec } from '../components/eqUtils';
@@ -108,7 +108,7 @@ export default function Module06Modeliser() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Choisir l’inconnue, traduire, résoudre, vérifier, interpréter : la chaîne complète. Le boss te la fera parcourir dix fois.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={6} />}
     />
   );
 }

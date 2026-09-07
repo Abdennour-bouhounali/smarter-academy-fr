@@ -30,11 +30,31 @@
  * tableau de signes en général (leçon « Signe d'une fonction ») : elle les
  * réactive du point de vue de la fonction (taux, valeur initiale).
  * CARTE DES CONNAISSANCES : lessons/common/knowledge, données knowledge.jsx.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ * La fonction affine est une notion de 3e que la Seconde REPREND : f(x), la
+ * représentation graphique, le mot « affine », le coefficient directeur,
+ * l'ordonnée à l'origine et la pente d'une droite sont donc de l'ACQUIS
+ * (état A), pas la matière de la leçon. Ils sont déclarés ci-dessous et
+ * mesurés — chacun — par une question du module 0. Ce que la leçon ÉTABLIT
+ * (état B) vit dans knowledge.jsx et est posé par les briques des modules 1
+ * à 6, chaque fois après le geste qui donne son sens au mot.
  */
 export const LESSON_BASE_PATH = '/courses/lycee/seconde/fonctions/fonction-affine-2nde';
 
 export const LESSON_CONFIG = {
   id: 'fonction-affine-2nde',
+  // Ce que la leçon SUPPOSE acquis (état A), venu de la 3e (« Fonctions
+  // affines ») et du repérage de collège. On ne déclare QUE ce qu'une
+  // question du module 0 mesure : déclarer davantage produit des
+  // W_PRIOR_NOT_DIAGNOSED, et promet un diagnostic que la leçon ne fait pas.
+  // Le taux d'accroissement, la lecture des variations par le signe de a, la
+  // détermination par deux données et le signe de ax + b n'y sont PAS : c'est
+  // la matière de la leçon, posée par les briques des modules 1 à 6.
+  priorKnowledge: [
+    'fonction', 'notation-fx', 'fonction-affine', 'representation-graphique',
+    'coefficient-directeur', 'ordonnee-origine', 'pente', 'origine-repere',
+  ],
   sequentialUnlock: true,
   knowledgeMap: true,
   title: 'Fonction affine',

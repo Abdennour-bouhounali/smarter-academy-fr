@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DigitSplit from '../components/DigitSplit';
@@ -43,9 +44,19 @@ export default function Module03CriteresDemontres() {
               <DigitSplit n={n} numbers={NUMBERS} onPick={(v) => { pick(v); if (seen.size === 2) kit.react(true); }} mode="nine" />
               {seen.size >= 3 && (
                 <TapQuestion prompt="Pourquoi la somme des chiffres suffit-elle à décider ?" options={['Parce que 9, 99, 999… sont des multiples de 9 : cette part n’a aucune influence, tout se joue sur la somme des chiffres', 'Parce que les chiffres sont petits', 'C’est une coïncidence des nombres testés']} cols={1} correct={0}
+                  requires={[]}
                   explain="Chaque chiffre d apporte d × 10^k = d × (10^k − 1) + d : la première part (d × 9, d × 99, d × 999…) est toujours multiple de 9. Il ne reste que la somme des chiffres. Donc n est multiple de 9 exactement quand elle l’est — et pareil pour 3, car 9, 99, 999… sont aussi multiples de 3."
                   explainWrong="Regarde le tableau : la colonne « multiple de 9 » se remplit toute seule quel que soit le nombre (999, 99, 9 sont des multiples de 9). Le seul élément qui varie, c’est la somme des chiffres."
                   solved={whyDone} onAnswered={() => setWhyDone(true)} />
+              )}
+              {/* Le découpage 4 725 = 9 × 523 + 18 vient de montrer QUE le
+                  critère est un découpage — l'étape 2 va le réutiliser sur 4. */}
+              {whyDone && (
+                <KnowledgeBrick
+                  id="critere-est-decoupage"
+                  variant="new"
+                  lead={<>Un critère n’est pas une astuce : on sépare le nombre en une part <strong>toujours multiple</strong>, et un reste qui décide seul.</>}
+                />
               )}
             </div>
           ),
@@ -56,16 +67,26 @@ export default function Module03CriteresDemontres() {
             <div className="space-y-3">
               <DigitSplit n={n2} numbers={[1316, 1318, 2500, 731]} onPick={setN2} mode="hundred" />
               <TapQuestion prompt="Pourquoi les deux derniers chiffres suffisent-ils pour 4 ?" options={['Parce que 100 est un multiple de 4 : les centaines n’ont aucune influence', 'Parce que 4 est pair', 'Parce que 4 divise 10']} cols={1} correct={0}
+                requires={['critere-est-decoupage']}
                 explain="n = 100 × (centaines) + (deux derniers chiffres), et 100 = 4 × 25 : la première part est toujours multiple de 4. Il ne reste que les deux derniers chiffres. (4 ne divise pas 10 : c’est pourquoi le dernier chiffre seul ne suffit pas.)"
                 explainWrong="4 ne divise pas 10, donc le dernier chiffre seul ne suffit pas — mais 4 divise 100, donc toutes les centaines s’annulent : seuls les deux derniers chiffres comptent."
                 solved={fourDone} onAnswered={() => setFourDone(true)} />
+              {/* Deux découpages faits (9 et 4) : la liste complète des
+                  critères peut être posée, avant l'étape 3 qui les applique. */}
+              {fourDone && (
+                <KnowledgeBrick
+                  id="criteres-divisibilite"
+                  variant="new"
+                  lead={<>Dernier chiffre pour 2, 5, 10 ; deux derniers chiffres pour 4 ; somme des chiffres pour 3 et 9.</>}
+                />
+              )}
             </div>
           ),
         },
         {
           num: 3, title: 'Applique les critères', done: batchDone,
           content: (
-            <BatchChoiceQuestion intro={<p className="text-sm text-slate-600">Pour chaque nombre, par quoi est-il divisible ?</p>} rows={[
+            <BatchChoiceQuestion intro={<p className="text-sm text-slate-600">Pour chaque nombre, par quoi est-il divisible ?</p>} requires={['criteres-divisibilite']} rows={[
               { id: 'r1', label: '2 346', options: ['par 3 seulement', 'par 9 seulement', 'par 3 et par 9'], correct: 0, correction: 'somme 15 : multiple de 3, pas de 9.' },
               { id: 'r2', label: '1 080', options: ['par 9 et par 10', 'par 10 seulement', 'ni l’un ni l’autre'], correct: 0, correction: 'somme 9 ; dernier chiffre 0.' },
               { id: 'r3', label: '731', options: ['par 3', 'par aucun de 2, 3, 5', 'par 5'], correct: 1, correction: 'somme 11 ; finit par 1.' },
@@ -76,7 +97,7 @@ export default function Module03CriteresDemontres() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Un critère n’est pas une astuce : c’est un découpage. <strong>n = 9k + (somme des chiffres)</strong> pour 3 et 9 ; <strong>n = 100k + (deux derniers chiffres)</strong> pour 4 ; et le dernier chiffre seul pour 2, 5, 10 (car 10 est multiple de 2, 5 et 10).</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={3} />}
     />
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
@@ -82,7 +83,25 @@ export default function Module03DeuxNombresSuffisent() {
               Les deux nombres <strong>(3 ; 2)</strong> sont les <strong>coordonnées</strong> de{' '}
               <VecName>u</VecName> — exactement les marches de l’escalier.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* B vient d'arriver sur l'anneau : l'escalier qui restait sous les
+              yeux donne son sens à la base et aux coordonnées. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="coordonnees-vecteur"
+              variant="new"
+              lead={<>Tu viens de lire l’escalier : deux marches, deux nombres.</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="vocab-base-orthonormee"
+              variant="new"
+              compact
+              lead={<>Les deux petites flèches i et j que tu viens de voir, à côté de l’escalier.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">L’anneau ambre marque la case où B doit arriver. Lis les marches de l’escalier à chaque réglage.</Feedback>
           )}
         </div>
@@ -137,7 +156,50 @@ export default function Module03DeuxNombresSuffisent() {
               <strong>x<sub>B</sub> − x<sub>A</sub></strong> et la verticale <strong>y<sub>B</sub> − y<sub>A</sub></strong>.
               Bouger A change le vecteur ; bouger B aussi ; mais la règle, elle, ne bouge pas.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le tableau vient de recalculer B − A à chaque mouvement de A ou
+              de B : la règle « arrivée moins départ » est ce que l'élève
+              vient de voir se répéter, pas une formule à apprendre par cœur. */}
+          {done2 && (
+            <KnowledgeBrick
+              id="regle-coordonnees"
+              variant="new"
+              lead={<>Tu viens de bouger A et B, et de voir le tableau recalculer B − A à chaque fois.</>}
+            />
+          )}
+          {done2 && (
+            <KnowledgeBrick
+              id="mem-arrivee-moins-depart"
+              variant="new"
+              compact
+              lead={<>La ligne à retenir : le tableau que tu viens de lire calcule toujours B − A, jamais A − B.</>}
+            />
+          )}
+          {done2 && (
+            <KnowledgeBrick
+              id="methode-calcul-coordonnees"
+              variant="new"
+              compact
+              lead={<>Les trois étapes que tu viens d’exécuter, en les répétant sur A et B.</>}
+            />
+          )}
+          {done2 && (
+            <KnowledgeBrick
+              id="formule-coordonnees"
+              variant="new"
+              compact
+              lead={<>La même règle, écrite en formule.</>}
+            />
+          )}
+          {done2 && (
+            <KnowledgeBrick
+              id="mem-oppose"
+              variant="new"
+              compact
+              lead={<>Un corollaire immédiat : inverser A et B inverse le signe des deux coordonnées.</>}
+            />
+          )}
+          {!done2 && (
             <Feedback tone="info">Actuellement <VecName>AB</VecName> = {formatVec(v2)}. Objectif (−2 ; 4) : B doit être 2 à gauche et 4 au-dessus de A.</Feedback>
           )}
         </div>
@@ -156,6 +218,7 @@ export default function Module03DeuxNombresSuffisent() {
             parse={parseDecSigned}
             display={formatNum(CD.x)}
             width="w-24"
+            requires={['regle-coordonnees', 'mem-arrivee-moins-depart']}
             explain={`Arrivée moins départ, sur les abscisses : ${formatNum(D.x)} − ${formatNum(C.x)} = ${formatNum(CD.x)}. Le déplacement va vers la gauche.`}
             explainFor={(n) => (n === -CD.x
               ? 'Signe inversé : tu as calculé départ − arrivée. Le vecteur va de C VERS D, donc xD − xC.'
@@ -170,6 +233,7 @@ export default function Module03DeuxNombresSuffisent() {
               parse={parseDecSigned}
               display={formatNum(CD.y)}
               width="w-24"
+              requires={['regle-coordonnees', 'mem-arrivee-moins-depart']}
               explain={`Sur les ordonnées : ${formatNum(D.y)} − (${formatNum(C.y)}) = ${formatNum(CD.y)}. Soustraire −3, c’est ajouter 3.`}
               explainFor={(n) => (n === -CD.y
                 ? 'Signe inversé : c’est yD − yC = 2 − (−3) = 5, pas l’inverse.'
@@ -184,9 +248,18 @@ export default function Module03DeuxNombresSuffisent() {
     {
       num: 4,
       title: 'Égaux ou pas ?',
-      subtitle: 'Deux vecteurs sont égaux si leurs deux coordonnées coïncident.',
+      subtitle: 'Compare, paire par paire, sans faire la figure.',
       done: b4,
       content: (
+        <div className="space-y-3">
+          {/* Les modules 2 et 3 viennent d'installer l'égalité par la figure
+              (M2) et les coordonnées (M3, escalier + tableau) : cette brique
+              formule le CRITÈRE de calcul, juste avant qu'il ne serve. */}
+          <KnowledgeBrick
+            id="regle-egalite-coordonnees"
+            variant="new"
+            lead={<>Tu sais calculer les coordonnées d’un vecteur. Comparer deux vecteurs revient à comparer deux couples de nombres.</>}
+          />
         <BatchChoiceQuestion
           intro={<p className="text-sm text-slate-700">Pour chaque paire de flèches, même vecteur ou non ?</p>}
           rows={[
@@ -195,6 +268,7 @@ export default function Module03DeuxNombresSuffisent() {
             { id: 'p3', label: 'De (0 ; 0) à (2 ; 3), et de (0 ; 0) à (3 ; 2)', options: ['Même vecteur', 'Différents'], correct: 1, correction: '(2 ; 3) ≠ (3 ; 2) : les coordonnées échangées donnent une autre direction.' },
             { id: 'p4', label: 'De (−5 ; −5) à (−3 ; −1), et de (3 ; 1) à (5 ; 5)', options: ['Même vecteur', 'Différents'], correct: 0, correction: 'Les deux valent (2 ; 4), aux deux extrémités du sol.' },
           ]}
+          requires={['regle-egalite-coordonnees', 'regle-coordonnees']}
           feedback={({ allRight, nCorrect, total }) => (
             <Feedback tone={allRight ? 'ok' : 'info'}>
               {allRight ? 'Tu compares les coordonnées, et rien d’autre : c’est le bon critère.' : `${nCorrect} sur ${total}. Calcule arrivée − départ sur chaque coordonnée, puis compare les deux couples.`}
@@ -203,6 +277,7 @@ export default function Module03DeuxNombresSuffisent() {
           solved={b4}
           onAnswered={() => setB4(true)}
         />
+        </div>
       ),
     },
   ];
@@ -227,15 +302,7 @@ export default function Module03DeuxNombresSuffisent() {
         ),
       }}
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> Dans une base orthonormée (<VecName>i</VecName>, <VecName>j</VecName>),
-          un vecteur <VecName>u</VecName> = x<VecName>i</VecName> + y<VecName>j</VecName> a pour
-          coordonnées (x ; y). Le vecteur <VecName>AB</VecName> a pour coordonnées
-          (x<sub>B</sub> − x<sub>A</sub> ; y<sub>B</sub> − y<sub>A</sub>), et deux vecteurs sont égaux
-          exactement quand leurs coordonnées le sont.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={3} />}
     />
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import FractionExpander from '../components/FractionExpander';
@@ -75,6 +76,16 @@ export default function Module03DecimalOuPas() {
               ) : (
                 <Feedback tone="info">{(shown['trois-huitiemes'] ?? 0) < 3 ? 'Pose 3 ÷ 8 : combien de chiffres avant que le reste tombe à 0 ?' : 'Maintenant 1/3 : regarde le reste après chaque chiffre.'}</Feedback>
               )}
+              {/* Les deux divisions posées viennent de montrer que c'est le
+                  reste qui décide : 0 arrête, un reste qui revient tourne
+                  en rond. */}
+              {step1Done && (
+                <KnowledgeBrick
+                  id="regle-restes-division"
+                  variant="new"
+                  lead={<>3 ÷ 8 s’est arrêté sur un reste 0 ; 1 ÷ 3 a vu son reste 1 revenir.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -104,6 +115,15 @@ export default function Module03DecimalOuPas() {
                   {prediction === 'repete' ? 'Ta prédiction : elle se répète. Exact' : prediction === 'arrete' ? 'Ta prédiction : elle s’arrête. La division te contredit' : 'Ta prédiction : ni l’un ni l’autre. La division te contredit'} : les restes possibles sont 1, 2, 3, 4, 5, 6 — jamais plus de six, puisqu’un reste est plus petit que 7. Au septième chiffre, un reste revient forcément, et tout recommence : période 285714. <strong>Toute fraction a une écriture qui s’arrête ou se répète</strong> — jamais « ni l’un ni l’autre ».
                 </Feedback>
               )}
+              {/* 2/7 vient de montrer POURQUOI : un reste est toujours plus
+                  petit que le diviseur, donc l'un d'eux revient forcément. */}
+              {step2Done && (
+                <KnowledgeBrick
+                  id="regle-fraction-finie-ou-periodique"
+                  variant="new"
+                  lead={<>2 ÷ 7 a mis six chiffres avant qu’un reste ne revienne — jamais plus, puisqu’un reste est plus petit que 7.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -121,6 +141,7 @@ export default function Module03DecimalOuPas() {
               ]}
               cols={1}
               correct={0}
+              requires={['regle-restes-division', 'regle-fraction-finie-ou-periodique']}
               explain="Un reste est toujours plus petit que le diviseur : pour 7, il vaut 0, 1, 2, 3, 4, 5 ou 6. S’il vaut 0, l’écriture s’arrête ; sinon, après au plus 6 chiffres un reste revient et la suite se répète. C’est vrai pour toute fraction : décimale (reste 0) ou périodique."
               explainWrong="Ni la parité de 7 ni la taille de 2 ne comptent. Ce qui compte : un reste est plus petit que 7, donc il n’y a que six restes non nuls possibles — l’un d’eux revient forcément, et à partir de là tout se répète."
               solved={whyDone}
@@ -133,30 +154,46 @@ export default function Module03DecimalOuPas() {
           title: 'Exact ou approché ?',
           done: exactDone,
           content: (
-            <BatchChoiceQuestion
-              intro={<p className="text-sm text-slate-600">Chaque écriture est-elle EXACTE (le nombre lui-même) ou APPROCHÉE (un nombre proche) ?</p>}
-              rows={[
-                { id: 'r1', label: '1/3 = 0,33', options: ['exacte', 'approchée'], correct: 1, correction: '0,33 = 33/100 ≠ 1/3 ; il manque une infinité de 3.' },
-                { id: 'r2', label: '3/8 = 0,375', options: ['exacte', 'approchée'], correct: 0, correction: 'La division s’arrête : c’est le nombre lui-même.' },
-                { id: 'r3', label: '2/7 ≈ 0,2857', options: ['exacte', 'approchée'], correct: 1, correction: 'Quatre chiffres d’une écriture infinie.' },
-                { id: 'r4', label: '5/6', options: ['exacte', 'approchée'], correct: 0, correction: 'La fraction EST l’écriture exacte de ce nombre.' },
-              ]}
-              feedback={({ allRight, nCorrect, total }) => (
-                <Feedback tone={allRight ? 'ok' : 'ko'}>
-                  {allRight ? 'Quatre sur quatre.' : `${nCorrect} / ${total}.`} Quand l’écriture décimale ne s’arrête pas, la seule écriture exacte est la fraction : 1/3, 2/7, 5/6. Couper les chiffres donne une valeur approchée, à écrire avec ≈.
-                </Feedback>
-              )}
-              solved={exactDone}
-              onAnswered={() => setExactDone(true)}
-            />
+            <div className="space-y-3">
+              {/* Les restes viennent d'établir que 1/3 et 2/7 ne s'arrêtent
+                  jamais : la fraction est donc leur seule écriture exacte. */}
+              <KnowledgeBrick
+                id="exact-approche"
+                variant="new"
+                lead={<>3/8 s’est arrêté : 0,375 est le nombre lui-même. 1/3 et 2/7 ne s’arrêtent jamais : couper leurs chiffres n’est qu’une approximation.</>}
+              />
+              <KnowledgeBrick
+                id="mem-exact-approche"
+                variant="new"
+                compact
+                lead={<>Le réflexe à garder pour la suite.</>}
+              />
+              <BatchChoiceQuestion
+                intro={<p className="text-sm text-slate-600">Chaque écriture est-elle EXACTE (le nombre lui-même) ou APPROCHÉE (un nombre proche) ?</p>}
+                rows={[
+                  { id: 'r1', label: '1/3 = 0,33', options: ['exacte', 'approchée'], correct: 1, correction: '0,33 = 33/100 ≠ 1/3 ; il manque une infinité de 3.' },
+                  { id: 'r2', label: '3/8 = 0,375', options: ['exacte', 'approchée'], correct: 0, correction: 'La division s’arrête : c’est le nombre lui-même.' },
+                  { id: 'r3', label: '2/7 ≈ 0,2857', options: ['exacte', 'approchée'], correct: 1, correction: 'Quatre chiffres d’une écriture infinie.' },
+                  { id: 'r4', label: '5/6', options: ['exacte', 'approchée'], correct: 0, correction: 'La fraction EST l’écriture exacte de ce nombre.' },
+                ]}
+                requires={['exact-approche', 'mem-exact-approche']}
+                feedback={({ allRight, nCorrect, total }) => (
+                  <Feedback tone={allRight ? 'ok' : 'ko'}>
+                    {allRight ? 'Quatre sur quatre.' : `${nCorrect} / ${total}.`} Quand l’écriture décimale ne s’arrête pas, la seule écriture exacte est la fraction : 1/3, 2/7, 5/6. Couper les chiffres donne une valeur approchée, à écrire avec ≈.
+                  </Feedback>
+                )}
+                solved={exactDone}
+                onAnswered={() => setExactDone(true)}
+              />
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Décimal ⇔ la division tombe sur un reste 0. Rationnel non décimal ⇔ un reste revient et l’écriture tourne en rond. Et √2, qui ne fait ni l’un ni l’autre, n’est donc aucune fraction : il est irrationnel. Son écriture exacte, c’est « √2 » — le module suivant montre ce que valent ses approximations.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={3}>
+          Le module suivant montre ce que valent les approximations de √2.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

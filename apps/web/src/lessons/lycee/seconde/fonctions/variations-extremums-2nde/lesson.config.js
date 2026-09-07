@@ -34,12 +34,21 @@ export const LESSON_BASE_PATH = '/courses/lycee/seconde/fonctions/variations-ext
 
 export const LESSON_CONFIG = {
   id: 'variations-extremums-2nde',
-  // Connaissances SUPPOSÉES acquises, venues d'« Ensembles et intervalles ».
-  // La leçon enseigne « croissante SUR UN INTERVALLE » — pas ce qu'est un
-  // intervalle, ni ∈, ni ⊂, qu'elle emploie pour désigner ses domaines
-  // ([−4 ; −2], 0 ∈ [−2 ; 2], [−1 ; 1] inclus dans [−2 ; 2]).
-  // Diagnostiquées par va-d6 et va-d7.
-  priorKnowledge: ['intervalle', 'intervalle-crochets', 'appartient', 'inclus'],
+  // Connaissances SUPPOSÉES acquises (KNOWLEDGE_DEPENDENCY.md, état A).
+  // Venues d'« Ensembles et intervalles » (2nde) : la leçon enseigne
+  // « croissante SUR UN INTERVALLE » — pas ce qu'est un intervalle, ni ∈,
+  // ni ⊂, qu'elle emploie pour désigner ses domaines ([−4 ; −2],
+  // 0 ∈ [−2 ; 2], [−1 ; 1] inclus dans [−2 ; 2]).
+  // Venues du collège, et employées dès le module 1 sans jamais être
+  // enseignées ici : la notation f(x) et l'antécédent (3e, leçon
+  // « Fonctions »), l'abscisse (6e, le repère), l'aire et le périmètre
+  // (6e, les grandeurs) dont vit l'atelier d'optimisation du module 6.
+  // CHAQUE id ci-dessous est mesuré par une question du module 0.
+  priorKnowledge: [
+    'intervalle', 'intervalle-crochets', 'appartient', 'inclus',
+    'notation-fx', 'antecedent', 'abscisse', 'ordonnee',
+    'aire', 'perimetre',
+  ],
   sequentialUnlock: true,
   knowledgeMap: true,
   title: 'Variations et extremums',

@@ -11,6 +11,23 @@ import { ABS, SQUARE, ABS_RANGE, curvePieces, squareBelowAbs, formatDec } from '
  * Step 1  le miroir sur |x| : h(−a) = h(a) = distance à 0 ; deux demi-droites y = x et y = −x.
  * Step 2  le V contre la parabole : trouver a avec a² < |a|, puis a² > |a| → x² ≤ |x| ⟺ −1 ≤ x ≤ 1.
  * Step 3  |x| = 3. Step 4  portrait.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   Seul `vocab-extremum` était posé. Surtout, la question de l'étape 3
+ *   demandait « les antécédents de 3 » alors que le mot n'apparaissait ensuite
+ *   que dans le pied du module — donc APRÈS. Le vocabulaire de 3e est
+ *   maintenant réactivé à l'étape 1, par le `lead` de la brique que le geste du
+ *   miroir vient de rendre lisible. L'ordre est geste → brique → demande :
+ *     étape 1  le miroir sur |x|      → briques `vocab-extremum` puis
+ *                                       `fonction-valeur-absolue` (dont le lead
+ *                                       rappelle image / antécédent, acquis de 3e)
+ *     étape 2  le V contre la parabole → brique `regle-carre-vs-va`
+ *     étape 3  |x| = 3, désormais légitime (`requires`)
+ *     étape 4  le portrait, puis `mem-le-v`
+ *
+ * MANIPULATION JAMAIS GELÉE. Les deux sondes restaient `disabled` dès l'étape
+ * réussie. Elles restent vivantes ; seul le verrou d'ANTÉRIORITÉ (`!done1`)
+ * demeure — et la surbrillance de [−1 ; 1] reste allumée une fois découverte.
  */
 const PLANE = { f: ABS, range: ABS_RANGE, unit: 34, unitY: 34 };
 const HALF_LINES = [
@@ -46,18 +63,25 @@ export default function Module04LeV() {
       num: 1, title: 'La distance à zéro', subtitle: 'La sonde a et le point d’abscisse −a. Les deux demi-droites en pointillés sont y = x et y = −x.', done: done1,
       content: (kit) => (
         <div className="space-y-3">
-          <TwoProbes {...PLANE} a={a1} b={0} showB={false} showMirror step={0.5} extraCurves={HALF_LINES} onChange={(v) => move1(v, kit.react)} disabled={done1} />
+          <TwoProbes {...PLANE} a={a1} b={0} showB={false} showMirror step={0.5} extraCurves={HALF_LINES} onChange={(v) => move1(v, kit.react)} />
           {done1 ? (
             <Feedback tone="ok"><strong>h(−a) = h(a)</strong> = la distance de a à 0 : axe de symétrie (Oy), comme la parabole. La courbe suit y = x à droite de 0 et y = −x à gauche : deux <strong>demi-droites</strong> qui se rejoignent en O, le point le plus bas — un <strong>V</strong>.</Feedback>
           ) : (
             <Feedback tone="info">h({formatDec(a1)}) = {formatDec(Math.abs(a1))}. Va voir du côté négatif.</Feedback>
           )}
           {done1 && (
-            <KnowledgeBrick
-              id="vocab-extremum"
-              variant="new"
-              lead="Le coin du V est le point le plus bas de la courbe : aucune valeur de |x| ne descend plus bas que 0. Ce « point le plus bas » a un nom."
-            />
+            <>
+              <KnowledgeBrick
+                id="vocab-extremum"
+                variant="new"
+                lead="Le coin du V est le point le plus bas de la courbe : aucune valeur de |x| ne descend plus bas que 0. Ce « point le plus bas » a un nom."
+              />
+              <KnowledgeBrick
+                id="fonction-valeur-absolue"
+                variant="new"
+                lead="Le miroir a tout dit : voici le portrait du V. Garde aussi le vocabulaire de 3e, il va servir tout de suite — la sortie |x| est l’image de x, et les entrées qui donnent une sortie choisie en sont les antécédents."
+              />
+            </>
           )}
         </div>
       ),
@@ -66,14 +90,21 @@ export default function Module04LeV() {
       num: 2, title: 'Le V contre la parabole', subtitle: 'La parabole est en pointillés. Trouve un a pour lequel a² < |a|, puis un a pour lequel a² > |a|.', done: done2,
       content: (kit) => (
         <div className="space-y-3">
-          <TwoProbes {...PLANE} a={a2} b={0} showB={false} step={0.5} extraCurves={PARABOLA} highlightIntervals={done2 ? [{ from: -1, to: 1, tone: 'emerald' }] : []} onChange={(v) => move2(v, kit.react)} disabled={done2 || !done1} />
+          <TwoProbes {...PLANE} a={a2} b={0} showB={false} step={0.5} extraCurves={PARABOLA} highlightIntervals={done2 ? [{ from: -1, to: 1, tone: 'emerald' }] : []} onChange={(v) => move2(v, kit.react)} disabled={!done1} />
           <div className="flex flex-wrap gap-2 text-sm font-mono font-bold tabular-nums" aria-live="polite">
             <span className="px-3 py-1.5 rounded-lg bg-indigo-50 border border-indigo-200 text-indigo-900">a² = {formatDec(a2 * a2)}</span>
             <span className="px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900">|a| = {formatDec(Math.abs(a2))}</span>
             <span className="px-3 py-1.5 rounded-lg bg-slate-900 text-white" data-compare={cmp2}>a² {cmp2} |a|</span>
           </div>
           {done2 ? (
-            <Feedback tone="ok">Entre −1 et 1, le V passe <strong>au-dessus</strong> de la parabole (0,5² = 0,25 &lt; 0,5) ; au-delà, la parabole domine (2² = 4 &gt; 2). Les deux courbes se croisent en −1, 0 et 1 : <strong>x² ≤ |x| exactement pour −1 ≤ x ≤ 1</strong>.</Feedback>
+            <>
+              <Feedback tone="ok">Entre −1 et 1, le V passe <strong>au-dessus</strong> de la parabole (0,5² = 0,25 &lt; 0,5) ; au-delà, la parabole domine (2² = 4 &gt; 2). Les deux courbes se croisent en −1, 0 et 1 : <strong>x² ≤ |x| exactement pour −1 ≤ x ≤ 1</strong>.</Feedback>
+              <KnowledgeBrick
+                id="regle-carre-vs-va"
+                variant="new"
+                lead="Les deux positions que tu viens de trouver — a² &lt; |a| près de 0, a² &gt; |a| plus loin — se résument en une seule ligne."
+              />
+            </>
           ) : (
             <Feedback tone="info">{!seenBelow ? 'Cherche un a (non nul) avec a² < |a| : essaie près de 0. ' : ''}{!seenAboveMoved ? 'Puis éloigne-toi : a² > |a|.' : ''}</Feedback>
           )}
@@ -85,7 +116,7 @@ export default function Module04LeV() {
       content: (
         <TapQuestion prompt="Quels nombres ont pour valeur absolue 3 ? (c’est-à-dire : les antécédents de 3 par x ↦ |x|)"
           options={['−3 et 3', '3 seulement', '−3 seulement', 'aucun']}
-          correct={0} cols={4}
+          correct={0} cols={4} requires={['fonction-valeur-absolue', 'valeur-absolue', 'image']}
           explain="Deux nombres sont à distance 3 de 0 : −3 et 3. Sur le V, la droite y = 3 coupe les deux demi-droites."
           explainWrong="La valeur absolue est une distance à 0, et deux nombres sont à distance 3 de zéro : 3 et −3. Le V le montre : la droite horizontale y = 3 le coupe deux fois."
           solved={q3} onAnswered={() => setQ3(true)} />
@@ -94,15 +125,24 @@ export default function Module04LeV() {
     {
       num: 4, title: 'Portrait du V', done: q4,
       content: (
-        <BatchChoiceQuestion intro={<p className="text-sm text-slate-700">Sans sonde :</p>}
-          rows={[
-            { id: 'r1', label: 'Minimum de |x|', options: ['0, atteint en x = 0', '1, atteint en x = 1', 'il n’y en a pas'], correct: 0, correction: 'le coin du V' },
-            { id: 'r2', label: 'Sur [0 ; +∞[, |x| est', options: ['croissante', 'décroissante'], correct: 0, correction: 'la demi-droite y = x monte' },
-            { id: 'r3', label: '|x| = x exactement pour', options: ['x ≥ 0', 'x ≤ 0', 'tout x'], correct: 0, correction: 'à gauche, |x| = −x' },
-            { id: 'r4', label: 'x² ≤ |x| pour', options: ['−1 ≤ x ≤ 1', 'tout x', 'aucun x'], correct: 0, correction: 'le V au-dessus de la parabole' },
-          ]}
-          feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Le V : |x| = distance à 0, axe de symétrie (Oy), minimum 0 en 0, décroissante sur ]−∞ ; 0], croissante sur [0 ; +∞[, jamais négative ; au-dessus de la parabole sur [−1 ; 1].</Feedback>}
-          solved={q4} onAnswered={() => setQ4(true)} />
+        <div className="space-y-3">
+          <BatchChoiceQuestion requires={['fonction-valeur-absolue', 'vocab-extremum', 'regle-carre-vs-va', 'vocab-monte-descend']} intro={<p className="text-sm text-slate-700">Sans sonde :</p>}
+            rows={[
+              { id: 'r1', label: 'Minimum de |x|', options: ['0, atteint en x = 0', '1, atteint en x = 1', 'il n’y en a pas'], correct: 0, correction: 'le coin du V' },
+              { id: 'r2', label: 'Sur [0 ; +∞[, |x| est', options: ['croissante', 'décroissante'], correct: 0, correction: 'la demi-droite y = x monte' },
+              { id: 'r3', label: '|x| = x exactement pour', options: ['x ≥ 0', 'x ≤ 0', 'tout x'], correct: 0, correction: 'à gauche, |x| = −x' },
+              { id: 'r4', label: 'x² ≤ |x| pour', options: ['−1 ≤ x ≤ 1', 'tout x', 'aucun x'], correct: 0, correction: 'le V au-dessus de la parabole' },
+            ]}
+            feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Le V : |x| = distance à 0, axe de symétrie (Oy), minimum 0 en 0, décroissante sur ]−∞ ; 0], croissante sur [0 ; +∞[, jamais négative ; au-dessus de la parabole sur [−1 ; 1].</Feedback>}
+            solved={q4} onAnswered={() => setQ4(true)} />
+          {q4 && (
+            <KnowledgeBrick
+              id="mem-le-v"
+              variant="new"
+              lead="Deux lignes à emporter — c’est l’image mentale de la fonction valeur absolue."
+            />
+          )}
+        </div>
       ),
     },
   ];

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorScene, { VecName, SCENE_COLORS } from '../components/VectorScene';
@@ -10,7 +11,7 @@ import {
 } from '../components/vecteurUtils';
 
 /**
- * Module 8 — LABORATOIRE : les vecteurs comme outil.
+ * Module 7 — LABORATOIRE : les vecteurs comme outil.
  *
  * Activity              fermer un parallélogramme ; retrouver le déplacement
  *                       manquant ; prouver un alignement.
@@ -34,7 +35,7 @@ const ETAPE = add(depart, U2);
 const { A: A3, B: B3, C: C3 } = SCENES.problemes.alignes;
 const ESCAPE_AFTER = 12;
 
-export default function Module08ProblemesDeGeometrie() {
+export default function Module07ProblemesDeGeometrie() {
   const [D, setD] = useState({ x: 3, y: 1 });
   const [moves, setMoves] = useState(0);
   const done1 = isParallelogram(A, B, C, D);
@@ -54,8 +55,8 @@ export default function Module08ProblemesDeGeometrie() {
   const steps = [
     {
       num: 1,
-      title: 'Fermer le parallélogramme',
-      subtitle: `A ${formatVec(A)}, B ${formatVec(B)}, C ${formatVec(C)}. Place D pour que ABCD soit un parallélogramme.`,
+      title: 'Le quatrième sommet',
+      subtitle: `A ${formatVec(A)}, B ${formatVec(B)}, C ${formatVec(C)}. Place D pour que ABCD ait ses côtés opposés parallèles et de même longueur.`,
       done: done1,
       content: (kit) => (
         <div className="space-y-3">
@@ -104,7 +105,18 @@ export default function Module08ProblemesDeGeometrie() {
               quadrilatère se ferme. Par le calcul : D = C − <VecName>AB</VecName>, soit
               ({formatNum(C.x)} − {formatNum(AB.x)} ; {formatNum(C.y)} − {formatNum(AB.y)}).
             </Feedback>
-          ) : (
+          ) : null}
+          {/* D vient d'être placé pour que DC = AB : la méthode du quatrième
+              sommet est ce que l'élève vient de construire, pas une formule
+              annoncée avant le geste. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="methode-parallelogramme"
+              variant="new"
+              lead={<>Tu viens de placer D jusqu’à ce que <VecName>DC</VecName> devienne exactement <VecName>AB</VecName>.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               {equal(DC, vec(C, D))
                 ? ''
@@ -136,12 +148,21 @@ export default function Module08ProblemesDeGeometrie() {
             ]}
             ariaLabel="Le robot fait u puis un déplacement inconnu v"
           />
+          {/* La figure vient d'afficher u, v (inconnu) et le trajet total en
+              fantôme : la méthode « v = total − u » est ce que l'élève a
+              sous les yeux avant de la mettre en œuvre. */}
+          <KnowledgeBrick
+            id="methode-deplacement-manquant"
+            variant="new"
+            lead={<>Regarde la figure : le robot fait u, puis v, et le trajet total (en fantôme) va du départ à l’arrivée.</>}
+          />
           <NumericQuestion
             prompt={<>Abscisse de <VecName>v</VecName> ?</>}
             expected={V2.x}
             parse={parseDecSigned}
             display={formatNum(V2.x)}
             width="w-24"
+            requires={['regle-somme', 'mem-arrivee-moins-depart', 'methode-deplacement-manquant']}
             explain={`Le trajet total vaut ${formatVec(vec(depart, arrivee))} = u + v. Donc v = total − u : ${formatNum(vec(depart, arrivee).x)} − ${formatNum(U2.x)} = ${formatNum(V2.x)}.`}
             explainFor={(n) => (n === vec(depart, arrivee).x
               ? `${formatNum(n)} est l’abscisse du trajet TOTAL (départ → arrivée). Il faut lui retirer celle de u : 6 − 4 = 2.`
@@ -156,6 +177,7 @@ export default function Module08ProblemesDeGeometrie() {
               parse={parseDecSigned}
               display={formatNum(V2.y)}
               width="w-24"
+              requires={['regle-somme', 'mem-arrivee-moins-depart', 'methode-deplacement-manquant']}
               explain={`Sur les ordonnées : total ${formatNum(vec(depart, arrivee).y)} − ${formatNum(U2.y)} = ${formatNum(V2.y)}. Le robot redescend.`}
               explainFor={(n) => (n === 3 ? 'Signe : le total monte de 0, u monte de 3, donc v doit descendre de 3 : 0 − 3 = −3.' : null)}
               solved={q2b}
@@ -185,6 +207,13 @@ export default function Module08ProblemesDeGeometrie() {
             ]}
             ariaLabel="Trois points A, B, C et les vecteurs AB et AC"
           />
+          {/* La figure vient d'afficher AB et AC : la méthode (colinéaires
+              ⟺ alignés) est ce que l'élève va vérifier dans la question. */}
+          <KnowledgeBrick
+            id="methode-alignement"
+            variant="new"
+            lead={<>Regarde les deux flèches AB et AC, tracées depuis le même point A.</>}
+          />
           <TapQuestion
             prompt="Quelle justification est correcte ?"
             options={[
@@ -195,6 +224,7 @@ export default function Module08ProblemesDeGeometrie() {
             ]}
             correct={0}
             cols={1}
+            requires={['methode-alignement', 'regle-colineaire']}
             explain="Trois points sont alignés exactement quand deux vecteurs qui les relient (AB et AC) sont colinéaires — ici AC = 3·AB. Des coordonnées différentes ou des longueurs différentes n’empêchent rien : c’est la DIRECTION qui compte, et la figure seule ne prouve rien."
             explainWrong="Les coordonnées de AB (3 ; 2) et AC (9 ; 6) sont différentes, et pourtant AC = 3·AB : même direction, donc alignés. Une figure suggère, un calcul prouve."
             solved={q3}
@@ -208,8 +238,8 @@ export default function Module08ProblemesDeGeometrie() {
   return (
     <ContentModule
       ctx={MODULE_CTX}
-      navLinks={getNavLinks(8)}
-      moduleNumber={8}
+      navLinks={getNavLinks(7)}
+      moduleNumber={7}
       moduleTitle="Problèmes de géométrie"
       moduleSubtitle="Les vecteurs comme outil"
       estimatedTime="10 min"
@@ -225,13 +255,7 @@ export default function Module08ProblemesDeGeometrie() {
         ),
       }}
       steps={steps}
-      footer={
-        <Feedback tone="ok">
-          <strong>Retenons.</strong> ABCD est un parallélogramme ⟺ <VecName>AB</VecName> = <VecName>DC</VecName> ;
-          un déplacement inconnu se retrouve par différence (v = total − u) ; A, B, C sont alignés ⟺{' '}
-          <VecName>AB</VecName> et <VecName>AC</VecName> sont colinéaires.
-        </Feedback>
-      }
+      footer={<KnowledgeSnapshot moduleNumber={7} />}
     />
   );
 }

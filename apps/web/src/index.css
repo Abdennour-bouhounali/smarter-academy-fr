@@ -272,13 +272,24 @@ svg [role="slider"]:focus-visible {
    ───────────────────────────────────────────────────────────────────────── */
 .sa-workspace-main {
   padding-right: var(--sa-gutter-w, 0px);
-  transition: padding 300ms ease-out;
+  /* Même durée et même courbe que l'entrée du panneau (KnowledgeMap.jsx) :
+     la leçon fait de la place PENDANT que la carte arrive, et les deux
+     mouvements se terminent ensemble. */
+  transition: padding 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @media (min-width: 1024px) {
   .sa-workspace-main {
     padding-left: var(--sa-sidebar-w, 0px);
   }
+}
+
+/* Pendant un redimensionnement à la poignée, la gouttière doit suivre le
+   pointeur À L'IMAGE PRÈS : une transition de 300ms ferait traîner le contenu
+   derrière la carte. On la coupe le temps du geste (le panneau pose le
+   drapeau sur <html>), et elle revient pour les changements de mode. */
+html[data-sa-resizing] .sa-workspace-main {
+  transition: none;
 }
 
 /* Le mouvement est une commodité, pas une information : qui demande moins
@@ -296,5 +307,5 @@ svg [role="slider"]:focus-visible {
    recentre sur son icône. Le nom reste lisible par un lecteur d'écran via le
    `title`/`aria-label` porté par le lien lui-même. */
 .sa-workspace-sidebar {
-  transition: width 300ms ease-out;
+  transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }

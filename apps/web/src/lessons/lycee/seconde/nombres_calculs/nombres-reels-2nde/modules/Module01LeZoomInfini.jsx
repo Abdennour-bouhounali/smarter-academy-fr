@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ZoomLine from '../components/ZoomLine';
@@ -92,6 +93,16 @@ export default function Module01LeZoomInfini() {
                   {prediction === 'non' ? 'Ta prédiction : jamais. Le zoom confirme' : prediction === 'oui' ? 'Ta prédiction : oui, en zoomant assez. Le zoom te contredit' : 'Le zoom tranche'} : 1,5 tombe pile au premier zoom, mais √2 reste <strong>toujours entre deux graduations</strong> — 1,4 puis 1,41 puis 1,414 puis 1,4142… Chaque zoom donne un chiffre de plus et un encadrement plus fin, jamais un point sur une graduation. Et aucun motif ne se répète.
                 </Feedback>
               )}
+              {/* Le zoom vient de montrer : tout nombre est un point de la
+                  droite, et chaque zoom ×10 resserre son encadrement d'un
+                  chiffre. C'est le moment où « droite-reelle » a un sens. */}
+              {step2Done && (
+                <KnowledgeBrick
+                  id="droite-reelle"
+                  variant="new"
+                  lead={<>Tu viens de zoomer sur √2 quatre fois de suite : à chaque fois, un chiffre de plus et une fenêtre plus étroite.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -115,6 +126,15 @@ export default function Module01LeZoomInfini() {
               ) : (
                 <Feedback tone="info">Zoome sur 1/3 : que remarques-tu sur les chiffres qui apparaissent ?</Feedback>
               )}
+              {/* Les trois zooms (2/8, 1/3, √2/π) viennent de faire vivre les
+                  trois comportements : c'est l'instant pour les nommer. */}
+              {step3Done && (
+                <KnowledgeBrick
+                  id="trois-comportements"
+                  variant="new"
+                  lead={<>2/8 s’est arrêté, 1/3 a répété son 3, et √2 comme π n’ont fait ni l’un ni l’autre.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -123,24 +143,34 @@ export default function Module01LeZoomInfini() {
           title: 'Lire un encadrement',
           done: readDone,
           content: (
-            <TapQuestion
-              prompt="D’après le zoom, entre quels deux nombres à deux décimales se trouve √2 ?"
-              options={['1,41 et 1,42', '1,4 et 1,5', '1,414 et 1,415', '1,42 et 1,43']}
-              cols={2}
-              correct={0}
-              explain="Au zoom ×100, √2 est entre les graduations 1,41 et 1,42 : on écrit 1,41 < √2 < 1,42, un encadrement d’amplitude 0,01. (1,4 < √2 < 1,5 est vrai mais à une décimale ; 1,414 < √2 < 1,415 en a trois.)"
-              explainWrong="Deux décimales = le zoom ×100 : la fenêtre 1,41 → 1,42 contient √2. Les autres encadrements ont une ou trois décimales, ou sont faux (√2 < 1,42)."
-              solved={readDone}
-              onAnswered={() => setReadDone(true)}
-            />
+            <div className="space-y-3">
+              {/* La méthode de lecture d'un encadrement : sens vécu dès le
+                  premier zoom, formalisée ici avant la question qui l'exige. */}
+              <KnowledgeBrick
+                id="methode-encadrer-decimales"
+                variant="new"
+                lead={<>Regarde encore le zoom sur √2 : à chaque étape, deux graduations encadrent le nombre.</>}
+              />
+              <TapQuestion
+                prompt="D’après le zoom, entre quels deux nombres à deux décimales se trouve √2 ?"
+                options={['1,41 et 1,42', '1,4 et 1,5', '1,414 et 1,415', '1,42 et 1,43']}
+                cols={2}
+                correct={0}
+                requires={['droite-reelle', 'methode-encadrer-decimales']}
+                explain="Au zoom ×100, √2 est entre les graduations 1,41 et 1,42 : on écrit 1,41 < √2 < 1,42, un encadrement d’amplitude 0,01. (1,4 < √2 < 1,5 est vrai mais à une décimale ; 1,414 < √2 < 1,415 en a trois.)"
+                explainWrong="Deux décimales = le zoom ×100 : la fenêtre 1,41 → 1,42 contient √2. Les autres encadrements ont une ou trois décimales, ou sont faux (√2 < 1,42)."
+                solved={readDone}
+                onAnswered={() => setReadDone(true)}
+              />
+            </div>
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Tout nombre est un point de la droite, et le zoom en donne un chiffre à la fois. Certains nombres finissent par tomber sur une graduation, d’autres tournent en rond, d’autres ni l’un ni l’autre. Ces trois familles ont des noms : c’est le module suivant.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          Ces trois familles ont des noms : c’est le module suivant.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SetBoxes from '../components/SetBoxes';
@@ -146,11 +147,11 @@ export default function Module02LangageDesEnsembles() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          <strong>À retenir :</strong> un ensemble est une collection d’éléments. <span className="font-mono">∈</span> appartient, <span className="font-mono">∉</span> n’appartient pas, <span className="font-mono">⊂</span> est inclus dans, <span className="font-mono">∩</span> intersection (dans les deux), <span className="font-mono">∪</span> réunion (dans l’un ou l’autre), <span className="font-mono">∅</span> ensemble vide. ℕ ⊂ ℤ ⊂ ℝ. La plage du manège est un ensemble de réels : au module suivant, son nom.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={2}>
+          La plage du manège est un ensemble de réels : au module suivant, son nom.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

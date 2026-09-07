@@ -58,14 +58,36 @@ export const LESSON_CONFIG = {
       'La preuve de l’irrationalité de √2 (leçon « Logique et raisonnement »)',
     ],
   },
+  // La leçon formalise en continu par sa carte des connaissances : chaque
+  // module se termine sur l'état courant de la carte, et le test final en
+  // affiche la version complète. Aucun module « À retenir » n'est attendu
+  // (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
+  // Prérequis : la table de multiplication et le reste d'une division
+  // (module 0, q1/q2). Le vocabulaire multiple/diviseur, pair/impair, PGCD,
+  // PPCM… est enseigné ICI (module 1 et suivants), donc n'y figure pas.
+  priorKnowledge: ['tables-multiplication', 'quotient'],
+  // « factoriser »/« développer » : sens courant du collège (3e), employés
+  // en passant dans des explications de calcul littéral déjà posé par cette
+  // leçon (2k+1) — pas des notions réenseignées ni ciblées ici.
+  // « relation d'Euler » : faux positif du lexique — le texte parle du
+  // polynôme premier d'Euler n² + n + 41, sans rapport avec la relation
+  // d'Euler des polyèdres (V − E + F = 2, leçon de géométrie 3e).
+  knowledgeAudit: {
+    ignore: [
+      { term: 'factoriser', reason: 'sens courant du collège, employé en passant dans une explication (2k+2m+2 = 2(k+m+1)) déjà justifiée par la leçon' },
+      { term: 'developper', reason: 'sens courant du collège, employé en passant dans une explication (4k²+4k+1) déjà justifiée par la leçon' },
+      { term: 'relation-euler', reason: 'faux positif : « polynôme d’Euler » (n² + n + 41, module 5) est sans rapport avec la relation d’Euler des polyèdres' },
+      { term: 'arrondi', reason: 'distracteur du module 4 (« on a arrondi ») : réponse fausse au sens courant, jamais un calcul d’arrondi de cette leçon' },
+    ],
+  },
   modules: [
     { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — pour savoir par où bien commencer.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
     { id: '01', number: 1, slug: 'les-paquets-et-les-restes', path: `${LESSON_BASE_PATH}/les-paquets-et-les-restes`, title: 'Les paquets et les restes', desc: 'Range des jetons en paquets de p. Deux tas sans reste : leur somme aussi. Deux restes de 1 : ils forment un paquet.', stage: 'trigger', teachesLearningPointIds: ['seconde_arithmetique-2nde_P1', 'seconde_arithmetique-2nde_P3'], color: 'indigo', style: 'featured', estimatedMin: 9, difficulty: 1, actionText: 'Faire des paquets' },
     { id: '02', number: 2, slug: 'pair-impair-et-la-lettre', path: `${LESSON_BASE_PATH}/pair-impair-et-la-lettre`, title: 'Pair, impair, et la lettre', desc: 'Un pair s’écrit 2k, un impair 2k + 1. Avec ces écritures, un constat devient une preuve.', stage: 'discovery', teachesLearningPointIds: ['seconde_arithmetique-2nde_P3', 'seconde_arithmetique-2nde_P5'], color: 'sky', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Écrire avec k' },
     { id: '03', number: 3, slug: 'les-criteres-demontres', path: `${LESSON_BASE_PATH}/les-criteres-demontres`, title: 'Les critères, démontrés', desc: 'Pourquoi la somme des chiffres décide pour 3 et 9 ? Découpe 4 725 en 999 + 99 + 9 et regarde.', stage: 'discovery', teachesLearningPointIds: ['seconde_arithmetique-2nde_P2', 'seconde_arithmetique-2nde_P5'], color: 'cyan', style: 'featured', estimatedMin: 10, difficulty: 3, actionText: 'Découper le nombre' },
     { id: '04', number: 4, slug: 'multiples-communs', path: `${LESSON_BASE_PATH}/multiples-communs`, title: 'Multiples communs', desc: 'Deux bus, deux rythmes : quand se croisent-ils ? Et quel est le plus grand carreau qui pave sans découpe ?', stage: 'manipulation', teachesLearningPointIds: ['seconde_arithmetique-2nde_P4', 'seconde_arithmetique-2nde_P1'], color: 'emerald', style: 'featured', estimatedMin: 10, difficulty: 3, actionText: 'Croiser les rythmes' },
-    { id: '05', number: 5, slug: 'a-retenir', path: `${LESSON_BASE_PATH}/a-retenir`, title: 'À retenir', desc: 'Multiples, diviseurs, restes, parité, critères : les règles et ce qu’elles permettent de prouver.', stage: 'formalization', teachesLearningPointIds: ['seconde_arithmetique-2nde_P1', 'seconde_arithmetique-2nde_P2', 'seconde_arithmetique-2nde_P3'], color: 'violet', style: 'featured', estimatedMin: 7, difficulty: 3, actionText: 'Retenir' },
-    { id: '06', number: 6, slug: 'demontrer', path: `${LESSON_BASE_PATH}/demontrer`, title: 'Démontrer', desc: 'Remets une démonstration en ordre, prouve que le carré d’un impair est impair, et déjoue une fausse preuve.', stage: 'practice_lab', teachesLearningPointIds: ['seconde_arithmetique-2nde_P5', 'seconde_arithmetique-2nde_P3', 'seconde_arithmetique-2nde_P4'], color: 'rose', style: 'featured', estimatedMin: 10, difficulty: 4, actionText: 'Démontrer' },
-    { id: '07', number: 7, slug: 'mission-finale-latelier', path: `${LESSON_BASE_PATH}/mission-finale-latelier`, title: '🏆 Mission finale : l’atelier', desc: 'Dix épreuves pour prouver qu’aucun reste ne t’échappe.', stage: 'evaluation', color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi' },
+    { id: '05', number: 5, slug: 'demontrer', path: `${LESSON_BASE_PATH}/demontrer`, title: 'Démontrer', desc: 'Remets une démonstration en ordre, prouve que le carré d’un impair est impair, et déjoue une fausse preuve.', stage: 'practice_lab', teachesLearningPointIds: ['seconde_arithmetique-2nde_P5', 'seconde_arithmetique-2nde_P3', 'seconde_arithmetique-2nde_P4'], color: 'rose', style: 'featured', estimatedMin: 10, difficulty: 4, actionText: 'Démontrer' },
+    { id: '06', number: 6, slug: 'mission-finale-latelier', path: `${LESSON_BASE_PATH}/mission-finale-latelier`, title: '🏆 Mission finale : l’atelier', desc: 'Dix épreuves pour prouver qu’aucun reste ne t’échappe.', stage: 'evaluation', color: 'amber', style: 'assessment', estimatedMin: 15, difficulty: 4, actionText: 'Relever le défi' },
   ],
 };

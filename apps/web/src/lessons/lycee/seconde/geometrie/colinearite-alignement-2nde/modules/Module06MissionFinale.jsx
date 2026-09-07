@@ -1,12 +1,13 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import VectorPlane from '../components/VectorPlane';
 import { formatVec } from '../components/colinUtils';
 
 /**
- * Module 7 — ÉVALUATION (BossFinal, données uniquement).
+ * Module 6 — ÉVALUATION (BossFinal, données uniquement).
  *
  * Dix épreuves, silencieuses jusqu'à la soumission unique. Chaque
  * distracteur encode une erreur RÉELLEMENT rencontrée dans la leçon :
@@ -23,6 +24,7 @@ const EPREUVES = [
   {
     id: 'col-e1',
     skill: 'rail',
+    requires: ['colin-direction', 'colin-vocabulaire-direction-sens', 'colin-critere-det'],
     title: 'Sens contraire',
     prompt: 'u (3 ; −1) et v (−6 ; 2). Sont-ils colinéaires ?',
     options: [
@@ -38,6 +40,7 @@ const EPREUVES = [
   {
     id: 'col-e2',
     skill: 'rail',
+    requires: ['colin-multiple', 'colin-produits-croix'],
     title: 'Les deux ont grandi',
     prompt: 'u (2 ; 1) et v (4 ; 3). Sont-ils colinéaires ?',
     options: [
@@ -53,6 +56,7 @@ const EPREUVES = [
   {
     id: 'col-e3',
     skill: 'proportion',
+    requires: ['colin-multiple', 'colin-coordonnee-manquante-prop'],
     title: 'La coordonnée manquante',
     prompt: 'u (3 ; −2) et v (−6 ; y) sont colinéaires. Que vaut y ?',
     options: ['4', '−4', '−12', '9'],
@@ -63,6 +67,7 @@ const EPREUVES = [
   {
     id: 'col-e4',
     skill: 'det',
+    requires: ['colin-formule-det', 'colin-calculer-det'],
     title: 'Calculer un déterminant',
     prompt: 'u (2 ; 5) et v (3 ; 7). det(u, v) = ?',
     options: ['−1', '29', '1', '0'],
@@ -73,6 +78,7 @@ const EPREUVES = [
   {
     id: 'col-e5',
     skill: 'det',
+    requires: ['colin-calculer-det', 'mem-colin-det-zero'],
     title: 'Le signe des produits',
     prompt: 'u (−4 ; 6) et v (2 ; −3). Que vaut det(u, v), et que peut-on en conclure ?',
     options: [
@@ -88,6 +94,7 @@ const EPREUVES = [
   {
     id: 'col-e6',
     skill: 'alignes',
+    requires: ['colin-alignement-det'],
     title: 'Trois points',
     prompt: 'A (1 ; 2), B (3 ; 5), C (7 ; 11). Alignés ?',
     options: [
@@ -103,6 +110,7 @@ const EPREUVES = [
   {
     id: 'col-e7',
     skill: 'alignes',
+    requires: ['colin-alignement-det', 'colin-oeil-hesite'],
     title: 'Le presque-aligné',
     prompt: 'A (0 ; 0), B (3 ; 1), C (7 ; 2). Alignés ?',
     options: [
@@ -118,6 +126,7 @@ const EPREUVES = [
   {
     id: 'col-e8',
     skill: 'paralleles',
+    requires: ['colin-parallelisme-det', 'colin-vocabulaire-parallele'],
     title: 'Deux droites',
     prompt: 'A (−2 ; 1), B (1 ; 3), C (4 ; −1), D (−2 ; −5). Les droites (AB) et (CD) sont-elles parallèles ?',
     options: [
@@ -133,6 +142,7 @@ const EPREUVES = [
   {
     id: 'col-e9',
     skill: 'paralleles',
+    requires: ['colin-parallelisme-det', 'colin-methode-conclure'],
     title: 'Quel quadrilatère ?',
     prompt: 'A (0 ; 0), B (4 ; 1), C (10 ; 5), D (2 ; 3). AB (4 ; 1), DC (8 ; 2), AD (2 ; 3), BC (6 ; 4). Que peut-on dire de ABCD ?',
     options: [
@@ -148,6 +158,7 @@ const EPREUVES = [
   {
     id: 'col-e10',
     skill: 'problemes',
+    requires: ['colin-coordonnee-manquante-det', 'mem-colin-deux-usages'],
     title: 'Aligner un point',
     prompt: 'A (−1 ; 2), B (2 ; 4), C (5 ; y). Pour quelle valeur de y les points sont-ils alignés ?',
     options: ['6', '4', '8', '5'],
@@ -177,55 +188,13 @@ const BADGES = [
 ];
 
 /** La synthèse : le rail de u, v = −2·u dessus, et trois points alignés. */
-function Synthese() {
-  const RANGE = { xMin: -6, xMax: 6, yMin: -6, yMax: 6 };
-  const U = { x: 2, y: 1 };
-  const V = { x: -4, y: -2 };
-  const A = { x: -5, y: 4 };
-  const B = { x: -2, y: 2 };
-  const C = { x: 4, y: -2 };
-  return (
-    <div className="space-y-4">
-      <VectorPlane
-        range={RANGE}
-        points={[{ id: 'A', name: 'A', ...A, color: 'rose' }, { id: 'B', name: 'B', ...B, color: 'rose' }, { id: 'C', name: 'C', ...C, color: 'rose' }]}
-        rails={[{ id: 'rail-u', through: { x: 0, y: 0 }, dir: U, color: 'violet' }, { id: 'rail-ab', through: A, dir: { x: 3, y: -2 }, color: 'sky' }]}
-        vectors={[
-          { id: 'u', from: { x: 0, y: 0 }, to: U, color: 'violet', width: 5 },
-          { id: 'v', from: { x: 0, y: 0 }, to: V, color: 'emerald', width: 3 },
-          { id: 'ab', from: A, to: B, color: 'violet', width: 4 },
-          { id: 'ac', from: A, to: C, color: 'emerald', width: 2.5 },
-        ]}
-        legend={[
-          { id: 'u', label: 'u', value: formatVec(U), color: 'violet' },
-          { id: 'v', label: 'v = −2·u', value: 'det = 0', color: 'emerald' },
-          { id: 'abc', label: 'A, B, C alignés', value: 'det(AB, AC) = 0', color: 'sky' },
-        ]}
-        frozen
-        ariaLabel="Le rail : u et v = −2·u colinéaires ; trois points A, B, C alignés sur une droite"
-      />
-      <div className="grid sm:grid-cols-3 gap-2 text-sm">
-        {[
-          { t: 'Même rail', d: 'Colinéaires : même direction, quels que soient longueur et sens.' },
-          { t: 'Un nombre', d: 'det(u, v) = x·y′ − y·x′ ; nul ⇔ colinéaires.' },
-          { t: 'Deux usages', d: 'Alignés : det(AB, AC) = 0. Parallèles : det(AB, CD) = 0.' },
-        ].map(({ t, d }) => (
-          <div key={t} className="rounded-xl border-2 border-slate-200 bg-white p-3">
-            <p className="font-semibold text-slate-800">{t}</p>
-            <p className="text-xs text-slate-600">{d}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
-export default function Module07MissionFinale() {
+export default function Module06MissionFinale() {
   return (
     <BossFinal
       ctx={MODULE_CTX}
-      navLinks={getNavLinks(7)}
-      moduleNumber={7}
+      navLinks={getNavLinks(6)}
+      moduleNumber={6}
       lessonConfig={LESSON_CONFIG}
       moduleTitle="🏆 Mission finale : le détecteur"
       moduleSubtitle="Dix épreuves pour prouver qu’aucun alignement ne t’échappe"
@@ -253,7 +222,7 @@ export default function Module07MissionFinale() {
       skills={SKILLS}
       epreuves={EPREUVES}
       badges={BADGES}
-      synthese={<Synthese />}
+      synthese={<KnowledgeSnapshot variant="complete" complete />}
       completion={{
         masterTitle: 'Maître du déterminant !',
         title: 'Mission accomplie',

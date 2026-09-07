@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorPlane, { Lamp, ComponentStepper } from '../components/VectorPlane';
@@ -117,7 +118,21 @@ export default function Module04Detecteur() {
               <PredictionChips prompt="que doit-il se passer pour que le déterminant soit nul ?" options={[{ id: 'rail', label: 'u et v sur le même rail' }, { id: 'perp', label: 'u et v perpendiculaires' }, { id: 'long', label: 'u et v de même longueur' }]} value={prediction} onChange={setPrediction} disabled={zeroSeen} />
               {lab(kit)}
               {zeroSeen ? (
-                <Feedback tone="ok">{prediction === 'rail' ? 'Ta prédiction : sur le même rail. Le détecteur confirme' : prediction ? `Ta prédiction : ${prediction === 'perp' ? 'perpendiculaires' : 'même longueur'}. Le détecteur te contredit` : 'Le détecteur tranche'} : det = 0 exactement quand le parallélogramme est <strong>plat</strong>, c’est-à-dire quand u et v sont colinéaires. Et |det| est son aire, en carreaux.</Feedback>
+                <>
+                  <Feedback tone="ok">{prediction === 'rail' ? 'Ta prédiction : sur le même rail. Le détecteur confirme' : prediction ? `Ta prédiction : ${prediction === 'perp' ? 'perpendiculaires' : 'même longueur'}. Le détecteur te contredit` : 'Le détecteur tranche'} : det = 0 exactement quand le parallélogramme est <strong>plat</strong>, c’est-à-dire quand u et v sont colinéaires. Et |det| est son aire, en carreaux.</Feedback>
+                  <KnowledgeBrick
+                    id="colin-determinant"
+                    variant="new"
+                    compact
+                    lead={<>Le nombre affiché sous le parallélogramme, que tu viens d’annuler : le déterminant.</>}
+                  />
+                  <KnowledgeBrick
+                    id="colin-critere-det"
+                    variant="new"
+                    compact
+                    lead={<>Ce que tu viens de vérifier au geste : le parallélogramme plat, et det = 0, ensemble.</>}
+                  />
+                </>
               ) : (
                 <Feedback tone="info">det = {fr(D)} : le parallélogramme a une aire de {fr(Math.abs(D))} carreaux. Aplatis-le : amène v sur le rail de u (par exemple v = (6 ; 2), ou (−3 ; −1)).</Feedback>
               )}
@@ -130,7 +145,15 @@ export default function Module04Detecteur() {
             <div className="space-y-3">
               {lab(kit)}
               {done2 ? (
-                <Feedback tone="ok">Le signe dit de quel côté du rail se trouve v (à gauche de u : positif ; à droite : négatif). Et un déterminant de <strong>±1</strong> — u (3 ; 1) et v (4 ; 1), par exemple — c’est un parallélogramme d’aire 1 : l’œil hésite, <strong>le déterminant tranche</strong>. Zéro, ou pas zéro : rien d’autre ne compte pour la colinéarité.</Feedback>
+                <>
+                  <Feedback tone="ok">Le signe dit de quel côté du rail se trouve v (à gauche de u : positif ; à droite : négatif). Et un déterminant de <strong>±1</strong> — u (3 ; 1) et v (4 ; 1), par exemple — c’est un parallélogramme d’aire 1 : l’œil hésite, <strong>le déterminant tranche</strong>. Zéro, ou pas zéro : rien d’autre ne compte pour la colinéarité.</Feedback>
+                  <KnowledgeBrick
+                    id="colin-vocabulaire-determinant"
+                    variant="new"
+                    compact
+                    lead={<>Le mot pour le nombre que tu viens de faire changer de signe, puis presque annuler.</>}
+                  />
+                </>
               ) : (
                 <Feedback tone="info">{!signs.has('+') ? 'Il manque un déterminant positif. ' : ''}{!signs.has('-') ? 'Il manque un déterminant négatif. ' : ''}{!nearSeen ? 'Il manque un presque-plat : det = 1 ou −1 (essaie u = (3 ; 1), v = (4 ; 1)).' : ''}</Feedback>
               )}
@@ -140,27 +163,52 @@ export default function Module04Detecteur() {
         {
           num: 3, title: 'Calculer', done: n3,
           content: (
-            <NumericQuestion
-              prompt="Sans dessin : det(u, v) pour u(3 ; 5) et v(2 ; 4) ?"
-              expected={2} parse={parseSigned} display="2" width="w-24"
-              explain="det = x_u × y_v − y_u × x_v = 3 × 4 − 5 × 2 = 12 − 10 = 2. Non nul : u et v ne sont pas colinéaires (presque : aire 2)."
-              explainFor={(n) => (n === 22 ? '22 = 12 + 10 : tu as AJOUTÉ les produits en croix. Le déterminant est leur DIFFÉRENCE : 12 − 10 = 2.' : n === -2 ? '−2 = 10 − 12 : l’ordre est inversé. On commence par x_u × y_v = 3 × 4 = 12, puis on retire y_u × x_v = 5 × 2 = 10 : 2.' : n === 0 ? 'Non : 3 × 4 = 12 et 5 × 2 = 10 ne sont pas égaux. det = 12 − 10 = 2, u et v ne sont pas colinéaires.' : `det = 3 × 4 − 5 × 2 = 12 − 10 = 2, pas ${fr(n)}.`)}
-              solved={n3} onAnswered={() => setN3(true)} />
+            <div className="space-y-3">
+              <KnowledgeBrick
+                id="colin-formule-det"
+                variant="new"
+                lead={<>La formule que tu as déjà utilisée au geste, écrite cette fois sans dessin.</>}
+              />
+              <NumericQuestion
+                prompt="Sans dessin : det(u, v) pour u(3 ; 5) et v(2 ; 4) ?"
+                expected={2} parse={parseSigned} display="2" width="w-24"
+                explain="det = x_u × y_v − y_u × x_v = 3 × 4 − 5 × 2 = 12 − 10 = 2. Non nul : u et v ne sont pas colinéaires (presque : aire 2)."
+                explainFor={(n) => (n === 22 ? '22 = 12 + 10 : tu as AJOUTÉ les produits en croix. Le déterminant est leur DIFFÉRENCE : 12 − 10 = 2.' : n === -2 ? '−2 = 10 − 12 : l’ordre est inversé. On commence par x_u × y_v = 3 × 4 = 12, puis on retire y_u × x_v = 5 × 2 = 10 : 2.' : n === 0 ? 'Non : 3 × 4 = 12 et 5 × 2 = 10 ne sont pas égaux. det = 12 − 10 = 2, u et v ne sont pas colinéaires.' : `det = 3 × 4 − 5 × 2 = 12 − 10 = 2, pas ${fr(n)}.`)}
+                requires={['colin-determinant', 'colin-formule-det']}
+                solved={n3} onAnswered={() => setN3(true)} />
+              {n3 && (
+                <KnowledgeBrick
+                  id="colin-calculer-det"
+                  variant="new"
+                  lead={<>Le calcul que tu viens de faire, avec ses deux pièges nommés.</>}
+                />
+              )}
+            </div>
           ),
         },
         {
           num: 4, title: 'Décider', done: q4,
           content: (
-            <TapQuestion
-              prompt="u(4 ; 6) et v(6 ; 9) sont-ils colinéaires ?"
-              options={['Oui : det = 4 × 9 − 6 × 6 = 0', 'Non : 6 ≠ 9, les coordonnées diffèrent', 'Non : det = 4 × 6 − 6 × 9 = −30']} cols={1} correct={0}
-              explain="det(u, v) = 4 × 9 − 6 × 6 = 36 − 36 = 0 : colinéaires (v = 1,5·u). Le détecteur remplace le dessin."
-              explainWrong="Calcule : x_u × y_v − y_u × x_v = 4 × 9 − 6 × 6 = 36 − 36 = 0. Zéro : colinéaires, v = 1,5·u. Des coordonnées différentes n’empêchent pas la colinéarité ; et attention à l’ordre des produits."
-              solved={q4} onAnswered={() => setQ4(true)} />
+            <div className="space-y-3">
+              <TapQuestion
+                prompt="u(4 ; 6) et v(6 ; 9) sont-ils colinéaires ?"
+                options={['Oui : det = 4 × 9 − 6 × 6 = 0', 'Non : 6 ≠ 9, les coordonnées diffèrent', 'Non : det = 4 × 6 − 6 × 9 = −30']} cols={1} correct={0}
+                explain="det(u, v) = 4 × 9 − 6 × 6 = 36 − 36 = 0 : colinéaires (v = 1,5·u). Le détecteur remplace le dessin."
+                explainWrong="Calcule : x_u × y_v − y_u × x_v = 4 × 9 − 6 × 6 = 36 − 36 = 0. Zéro : colinéaires, v = 1,5·u. Des coordonnées différentes n’empêchent pas la colinéarité ; et attention à l’ordre des produits."
+                requires={['colin-critere-det', 'colin-calculer-det']}
+                solved={q4} onAnswered={() => setQ4(true)} />
+              {q4 && (
+                <KnowledgeBrick
+                  id="mem-colin-det-zero"
+                  variant="new"
+                  lead={<>Ce que tu viens d’appliquer, en une ligne à retenir.</>}
+                />
+              )}
+            </div>
           ),
         },
       ]}
-      footer={<Feedback tone="ok">det(u, v) = x·y′ − y·x′ ; det = 0 ⇔ u et v colinéaires. Un outil, deux usages en géométrie : alignés (AB, AC) et parallèles (AB, CD). La carte au module 5.</Feedback>}
+      footer={<KnowledgeSnapshot moduleNumber={4} />}
     />
   );
 }

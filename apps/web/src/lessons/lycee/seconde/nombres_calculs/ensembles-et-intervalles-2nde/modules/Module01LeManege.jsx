@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import IntervalFilter from '../components/IntervalFilter';
@@ -119,6 +120,7 @@ export default function Module01LeManege() {
                     options={['70 : une par centimètre', '700 : une par millimètre', 'Une infinité']}
                     cols={1}
                     correct={2}
+                    requires={['borne-incluse-exclue']}
                     explain="Entre deux tailles, il y en a toujours une autre : 1,895, puis 1,8999, puis 1,89999… La plage contient TOUS les nombres entre ses bornes, pas seulement ceux qu’on sait mesurer."
                     explainWrong="Une taille n’est pas forcément un nombre « rond » : 1,895 m est une taille, 1,8999 m aussi. Entre deux nombres, il y en a toujours un troisième — la plage en contient une infinité."
                     solved={countDone}
@@ -186,6 +188,7 @@ export default function Module01LeManege() {
                 options={['[1,2 ; 1,9[', ']1,2 ; 1,9]', '[1,2 ; 1,9]', ']1,2 ; 1,9[']}
                 cols={2}
                 correct={0}
+                requires={['mem-borne', 'intervalle-crochets']}
                 explain="[1,2 : crochet tourné vers 1,2, la borne est incluse (« à partir de »). 1,9[ : crochet tourné vers l’extérieur, 1,9 est exclu (« moins de »)."
                 explainWrong="Regarde le sens de chaque crochet : vers le nombre = inclus, vers l’extérieur = exclu. « À partir de 1,20 » inclut 1,20 ; « moins de 1,90 » exclut 1,90 : [1,2 ; 1,9[."
                 solved={readDone}
@@ -195,11 +198,11 @@ export default function Module01LeManege() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Une plage de nombres, deux bornes, et pour chaque borne une décision : incluse ou exclue. Cet ensemble a un nom et quatre visages — c’est ce que le module 3 va nommer. Mais d’abord : c’est quoi, exactement, « un ensemble » ?
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          Mais d’abord : c’est quoi, exactement, « un ensemble » ?
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PackLab from '../components/PackLab';
@@ -63,9 +64,20 @@ export default function Module01PaquetsEtRestes() {
               {!step1Done && <Feedback tone="info">{!seen.has('both0') ? 'Trouve deux tas SANS reste (essaie 12 et 20 en paquets de 4).' : !seen.has('left') ? 'Maintenant un cas où il reste des jetons après réunion (12 et 20 en paquets de 7).' : 'Réponds à la question ci-dessous.'}</Feedback>}
               {seen.has('both0') && seen.has('left') && (
                 <TapQuestion prompt="Quand la réunion des deux tas est-elle encore un multiple de p ?" options={['Quand les restes des deux tas s’additionnent en 0 ou en un paquet complet', 'Toujours', 'Seulement si les deux tas sont sans reste']} cols={1} correct={0}
+                  requires={[]}
                   explain={<>{prediction === 'non' ? 'Ta prédiction pour deux tas sans reste : jamais de reste. Exact' : prediction === 'oui' ? 'Ta prédiction : parfois. Les paquets te contredisent pour ce cas-là' : 'Constat'} — mais ce n’est pas le seul cas : 7 et 9 ont chacun un reste de 1 (paquets de 2), et leurs deux jetons seuls forment un paquet de plus : 16 est bien un multiple de 2. Ce sont les RESTES qui décident.</>}
                   explainWrong="Regarde la ligne « réunion » : les restes s’ajoutent. S’ils font 0, ou juste un paquet complet, la somme est un multiple de p. Sinon il reste des jetons."
                   solved={sumDone} onAnswered={() => setSumDone(true)} />
+              )}
+              {/* Le geste (paquets + réunion) vient de montrer que ce sont
+                  les restes qui décident : l'étape 2 va s'appuyer dessus. */}
+              {sumDone && (
+                <KnowledgeBrick
+                  id="regle-reste-decide"
+                  variant="new"
+                  compact
+                  lead={<>Tu viens de le voir avec les jetons : ce sont les <strong>restes</strong> qui décident si la réunion reste un multiple de p.</>}
+                />
               )}
             </div>
           ),
@@ -78,6 +90,7 @@ export default function Module01PaquetsEtRestes() {
               <button type="button" onClick={() => setAll(7, 9, 2)} className="min-h-[44px] px-3 rounded-xl border-2 border-slate-300 bg-white text-sm font-bold text-slate-700 hover:border-indigo-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">7 et 9, paquets de 2</button>
               {oddSeen && (
                 <TapQuestion prompt="La somme de deux nombres impairs est :" options={['Toujours paire : les deux jetons seuls forment un paquet de 2', 'Toujours impaire', 'Parfois paire, parfois impaire']} cols={1} correct={0}
+                  requires={['regle-reste-decide']}
                   explain="Un impair, c’est des paquets de 2 et UN jeton seul. Deux impairs : deux jetons seuls, qui forment exactement un paquet de plus. Reste 0 : la somme est paire. Toujours."
                   explainWrong="Les paquets le montrent : chaque impair laisse exactement 1 jeton seul ; 1 + 1 = 2, un paquet complet, reste 0. La somme est paire — toujours, pas parfois."
                   solved={oddDone} onAnswered={() => setOddDone(true)} />
@@ -90,19 +103,41 @@ export default function Module01PaquetsEtRestes() {
           num: 3, title: 'Les mots', done: wordsDone,
           content: (
             <div className="space-y-3">
-              <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 text-sm text-indigo-900 space-y-1.5">
-                <p>Ranger n en paquets de p, c’est la <strong>division euclidienne</strong> : <span className="font-mono font-bold">n = p × q + r</span> avec 0 ≤ r &lt; p — q paquets, r jetons seuls.</p>
-                <p>Quand <strong>r = 0</strong>, n est un <strong>multiple</strong> de p, et p est un <strong>diviseur</strong> de n : <span className="font-mono">n = p × q</span>. La même égalité, lue dans les deux sens.</p>
-              </div>
+              {/* Les jetons rangés en paquets (étapes 1-2) portent maintenant
+                  des noms, avant la question qui les exige. */}
+              <KnowledgeBrick
+                id="division-euclidienne"
+                variant="new"
+                lead={<>Ranger n en paquets de p, c’est la <strong>division euclidienne</strong> : <span className="font-mono font-bold">n = p × q + r</span> avec 0 ≤ r &lt; p — q paquets, r jetons seuls.</>}
+              />
+              <KnowledgeBrick
+                id="multiple-diviseur"
+                variant="new"
+                lead={<>Quand <strong>r = 0</strong>, n est un <strong>multiple</strong> de p, et p est un <strong>diviseur</strong> de n : <span className="font-mono">n = p × q</span>. La même égalité, lue dans les deux sens.</>}
+              />
               <TapQuestion prompt="On sait que 91 = 7 × 13. Quelle affirmation est exacte ?" options={['91 est un multiple de 7, et 7 est un diviseur de 91', '7 est un multiple de 91', '91 est un diviseur de 7', '91 et 7 sont tous deux des multiples de 13']} cols={1} correct={0}
+                requires={['division-euclidienne', 'multiple-diviseur']}
                 explain="Le grand nombre est le multiple, les petits sont les diviseurs : 91 est multiple de 7 et de 13 ; 7 et 13 sont des diviseurs de 91. Une seule égalité, deux lectures."
                 explainWrong="Attention au sens : dans 91 = 7 × 13, c’est 91 qui contient 7 fois 13 (et 13 fois 7). Donc 91 est le MULTIPLE, 7 et 13 les DIVISEURS."
                 solved={wordsDone} onAnswered={() => setWordsDone(true)} />
+              {/* Bilan du module : la règle « multiple ⟺ reste nul » qui a
+                  porté les trois étapes. */}
+              {wordsDone && (
+                <KnowledgeBrick
+                  id="mem-multiple-reste"
+                  variant="new"
+                  lead={<>⭐ Retiens : <strong>n = pk ⟺ p divise n ⟺ le reste de n par p vaut 0.</strong></>}
+                />
+              )}
             </div>
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Le reste décide : <strong>r = 0</strong> ⇔ multiple. Et les restes s’additionnent — c’est pourquoi la somme de deux multiples de p est un multiple de p, et pourquoi deux impairs font un pair. Il reste à le PROUVER pour tous les nombres : c’est le module suivant, avec une lettre.</Feedback>}
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          Il reste à le <strong>prouver</strong> pour tous les nombres, pas seulement ceux qu’on a essayés : c’est le module suivant, avec une lettre.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

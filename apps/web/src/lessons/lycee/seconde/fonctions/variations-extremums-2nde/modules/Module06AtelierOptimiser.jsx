@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -8,7 +8,21 @@ import TrailLab from '../components/TrailLab';
 import VariationTable from '../components/VariationTable';
 import { ENCLOS, ENCLOS_RANGE, makeFunction, parseDec, formatDec } from '../components/variationsUtils';
 
-/** Module 6 — LABORATOIRE D'ENTRAÎNEMENT : optimiser. L'enclos (aire maximale), un coût minimal donné par un tableau. */
+/**
+ * Module 6 — LABORATOIRE D'ENTRAÎNEMENT : optimiser. L'enclos (aire maximale),
+ * un coût minimal donné par un tableau.
+ *
+ * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
+ *   « Optimiser » — modéliser, dresser le tableau, lire l'extremum — n'était
+ *   énoncé que dans l'« À retenir » du pied, c'est-à-dire après les cinq
+ *   demandes de l'atelier. Faute de geste qui la précède, la brique
+ *   `methode-optimiser` ouvre l'étape 1, avant la modélisation qu'elle sert.
+ *   L'AIRE et le PÉRIMÈTRE, eux, ne sont pas enseignés ici : ce sont des
+ *   acquis de 6e, désormais déclarés dans `priorKnowledge` et mesurés par la
+ *   question va-d8 du module 0.
+ *   Ce module ne comporte aucun laboratoire réglable — les deux courbes sont
+ *   `frozen` par construction, à titre de figure : rien à dégeler.
+ */
 const COUT = makeFunction('C', (q) => 0.02 * (q - 40) ** 2 + 6, { domain: [0, 100], turns: [40], unit: ' €' });
 
 export default function Module06AtelierOptimiser() {
@@ -17,11 +31,21 @@ export default function Module06AtelierOptimiser() {
     {
       num: 1, title: 'L’enclos', subtitle: 'On dispose de 40 m de clôture pour un enclos rectangulaire de largeur x (en m).', done: q1,
       content: (
-        <TapQuestion prompt="Quelle est l’aire A(x) de l’enclos, en fonction de x ?"
+        <div className="space-y-4">
+          {/* La démarche entière se pose avant la première modélisation :
+              c'est elle qui fait de cet atelier autre chose qu'un calcul. */}
+          <KnowledgeBrick
+            id="methode-optimiser"
+            variant="new"
+            lead="Tu sais lire un extremum sur un tableau. Voici à quoi cela sert quand la question est « quelle est la meilleure valeur ? »."
+          />
+          <TapQuestion prompt="Quelle est l’aire A(x) de l’enclos, en fonction de x ?"
           options={['A(x) = x(20 − x)', 'A(x) = x(40 − x)', 'A(x) = 40x', 'A(x) = x²']} correct={0} cols={2}
           explain="Périmètre 40 : 2 × (largeur + longueur) = 40, donc longueur = 20 − x. Aire = x(20 − x), pour 0 ≤ x ≤ 20."
           explainWrong="Deux largeurs et deux longueurs font 40 m : x + longueur = 20, longueur = 20 − x. L’aire est largeur × longueur = x(20 − x)."
+          requires={['methode-optimiser', 'aire', 'perimetre', 'notation-fx']}
           solved={q1} onAnswered={() => setQ1(true)} />
+        </div>
       ),
     },
     {
@@ -35,6 +59,7 @@ export default function Module06AtelierOptimiser() {
             { id: 'r4', label: 'A(5) et A(15)', options: ['sont égales (75 m²)', 'A(5) < A(15)', 'A(5) > A(15)'], correct: 0, correction: 'symétrie de la parabole' },
           ]}
           feedback={({ allRight, nCorrect, total }) => <Feedback tone={allRight ? 'ok' : 'ko'}>{allRight ? 'Quatre sur quatre.' : `${nCorrect} sur ${total}.`} Optimiser, c’est lire un extremum sur un tableau de variations : l’aire est maximale (100 m²) pour x = 10, l’enclos carré.</Feedback>}
+          requires={['methode-optimiser', 'methode-extremum-tableau', 'tableau-de-variations', 'maximum-minimum', 'mem-valeur-et-endroit', 'variations-sens', 'aire']}
           solved={q2} onAnswered={() => setQ2(true)} />
       ),
     },
@@ -45,11 +70,13 @@ export default function Module06AtelierOptimiser() {
           <NumericQuestion prompt={<span>Calcule A(5), en m². (<MathText>{'$A(x) = x(20 - x)$'}</MathText>)</span>} expected={75} parse={parseDec} display={formatDec(75)}
             explain={<span>A(5) = 5 × 15 = <strong>75</strong> m². Moins que 100 : cohérent avec le maximum.</span>}
             explainFor={(n) => (n === 100 ? '100 est le maximum, atteint en 10. Pour x = 5 : 5 × (20 − 5) = 75.' : n === 15 ? '15 est la longueur ; l’aire est 5 × 15 = 75.' : 'A(5) = 5 × (20 − 5) = 75.')}
+            requires={['methode-optimiser', 'aire', 'notation-fx']}
             solved={q3a} onAnswered={() => setQ3a(true)} />
           {q3a && (
             <NumericQuestion prompt="Quelle largeur x (en m) donne l’aire maximale ?" expected={10} parse={parseDec} display={formatDec(10)}
               explain={<span>Le maximum de A est atteint en x = <strong>10</strong> : un carré 10 × 10, aire 100 m².</span>}
               explainFor={(n) => (n === 100 ? '100 est l’aire maximale, pas la largeur. Elle est atteinte pour x = 10.' : n === 20 ? 'Pour x = 20, la longueur vaut 0 : aire nulle. Le maximum est au milieu, x = 10.' : 'Le tableau place le maximum en x = 10.')}
+              requires={['methode-optimiser', 'mem-valeur-et-endroit', 'maximum-minimum', 'aire', 'abscisse']}
               solved={q3b} onAnswered={() => setQ3b(true)} />
           )}
         </div>
@@ -63,6 +90,7 @@ export default function Module06AtelierOptimiser() {
           options={['q = 40, coût 6 €', 'q = 0, coût 38 €', 'q = 100, coût 78 €', 'q = 6, coût 40 €']} correct={0} cols={2}
           explain="Le tableau descend jusqu’à q = 40 puis remonte : le minimum est 6 €, atteint pour q = 40. Produire moins ou plus coûte plus cher à l’unité."
           explainWrong="Le minimum est la plus petite valeur de la ligne du bas : 6 €, sous q = 40 (la vallée). Ne confonds pas la valeur (6 €) et l’endroit (q = 40)."
+          requires={['methode-optimiser', 'methode-extremum-tableau', 'tableau-de-variations', 'maximum-minimum', 'mem-valeur-et-endroit']}
           solved={q4} onAnswered={() => setQ4(true)} />
       ),
     },

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import OrderingGame from '../../../../../common/components/OrderingGame';
@@ -8,7 +9,7 @@ import SquareBracketer from '../components/SquareBracketer';
 import { sqrtIntegerBracket } from '../components/realsUtils';
 
 /**
- * Module 6 — PRACTICE LAB : « Encadrer et comparer ».
+ * Module 5 — PRACTICE LAB : « Encadrer et comparer ».
  *
  * Activity: encadrer √10 par des carrés (entiers, puis dixièmes) ; ranger
  *   √2 parmi ses approximations ; encadrer la diagonale d'un champ carré et
@@ -27,7 +28,7 @@ const ITEMS = [
   { id: 'e', value: 1.5, text: '3/2' },
 ];
 
-export default function Module06EncadrerEtComparer() {
+export default function Module05EncadrerEtComparer() {
   const [tried0, setTried0] = useState(() => new Set());
   const [tried1, setTried1] = useState(() => new Set());
   const [orderDone, setOrderDone] = useState(false);
@@ -40,8 +41,8 @@ export default function Module06EncadrerEtComparer() {
   return (
     <ContentModule
       ctx={MODULE_CTX}
-      navLinks={getNavLinks(6)}
-      moduleNumber={6}
+      navLinks={getNavLinks(5)}
+      moduleNumber={5}
       moduleTitle="Encadrer et comparer"
       moduleSubtitle="Encadre √10 par des carrés, range √2 parmi ses approximations, puis clôture un champ dont la diagonale n’est pas décimale."
       estimatedTime="11 min"
@@ -69,6 +70,15 @@ export default function Module06EncadrerEtComparer() {
             <div className="space-y-3">
               <SquareBracketer n={10} level={1} tried={tried1} onTry={(a) => { const s = new Set(tried1); s.add(a); setTried1(s); if (s.has(3.1) && s.has(3.2) && !found1) kit.react(true); }} />
               {found1 && <Feedback tone="ok">3,1² = 9,61 ≤ 10 &lt; 10,24 = 3,2² : donc 3,1 ≤ √10 &lt; 3,2. On pourrait continuer au centième (3,16² = 9,9856 ; 3,17² = 10,0489) — l’encadrement se resserre, √10 ne tombe jamais dessus.</Feedback>}
+              {/* Les deux encadrements de √10 (entiers, puis dixièmes) viennent
+                  de montrer la méthode : encadrer n par deux carrés encadre √n. */}
+              {found1 && (
+                <KnowledgeBrick
+                  id="methode-encadrer-racine"
+                  variant="new"
+                  lead={<>Tu viens d’encadrer √10 deux fois : d’abord par 3 et 4, puis par 3,1 et 3,2.</>}
+                />
+              )}
             </div>
           ),
         },
@@ -77,14 +87,26 @@ export default function Module06EncadrerEtComparer() {
           title: 'Range dans l’ordre croissant',
           done: orderDone,
           content: (
-            <OrderingGame
-              items={ITEMS}
-              direction="asc"
-              formative
-              solved={orderDone}
-              onSolved={() => setOrderDone(true)}
-              instruction="Touche les cartes dans l’ordre croissant. √2 ≈ 1,4142… et 3/2 = 1,5."
-            />
+            <div className="space-y-3">
+              <OrderingGame
+                items={ITEMS}
+                direction="asc"
+                formative
+                solved={orderDone}
+                onSolved={() => setOrderDone(true)}
+                instruction="Touche les cartes dans l’ordre croissant. √2 ≈ 1,4142… et 3/2 = 1,5."
+              />
+              {/* Le rangement vient de faire comparer des écritures
+                  différentes (décimaux, racine, fraction) sur une même droite. */}
+              {orderDone && (
+                <KnowledgeBrick
+                  id="methode-comparer-reels"
+                  variant="new"
+                  compact
+                  lead={<>Tu viens de ranger 1,4 ; 1,41 ; √2 ; 1,42 et 3/2 en les ramenant à une même écriture décimale.</>}
+                />
+              )}
+            </div>
           ),
         },
         {
@@ -98,6 +120,7 @@ export default function Module06EncadrerEtComparer() {
                 prompt={<>Entre quels entiers consécutifs se trouve <MathText>{'$\\sqrt{800}$'}</MathText> ? Donne le plus petit.</>}
                 expected={28}
                 suffix="≤ √800 < …"
+                requires={['methode-encadrer-racine']}
                 explain="28² = 784 ≤ 800 < 841 = 29², donc 28 ≤ √800 < 29. La diagonale mesure un peu plus de 28 m (≈ 28,28 m)."
                 explainFor={(v) => (v === 400
                   ? '√800 n’est pas la moitié de 800 : c’est le nombre dont le carré vaut 800. Cherche deux carrés parfaits autour de 800 : 784 = 28² et 841 = 29².'
@@ -106,12 +129,24 @@ export default function Module06EncadrerEtComparer() {
                 solved={lowDone}
                 onAnswered={() => setLowDone(true)}
               />
+              {/* L'encadrement vient de donner 28 ≤ √800 < 29 : c'est l'instant
+                  pour poser que la SITUATION peut imposer le sens de l'arrondi,
+                  avant la question du câble qui l'exige. */}
+              {lowDone && (
+                <KnowledgeBrick
+                  id="regle-sens-arrondi"
+                  variant="new"
+                  compact
+                  lead={<>Tu viens de trouver 28 ≤ √800 &lt; 29. La diagonale mesure donc un peu plus de 28 m.</>}
+                />
+              )}
               {lowDone && (
                 <TapQuestion
                   prompt="On tire un câble le long de la diagonale. Le câble se vend au mètre entier. Combien de mètres acheter ?"
                   options={['28 m', '29 m', '28,28 m', '30 m']}
                   cols={4}
                   correct={1}
+                  requires={['regle-sens-arrondi', 'methode-encadrer-racine']}
                   explain="La diagonale vaut √800 ≈ 28,28 m : 28 m ne suffit pas, il faut arrondir AU-DESSUS, 29 m. Ici la situation impose le sens de l’arrondi, pas la règle du chiffre suivant."
                   explainWrong="28,28 n’est pas un nombre entier de mètres, et 28 m est trop court (√800 > 28). Il faut le premier entier au-dessus : 29 m. Arrondir « au plus proche » donnerait 28 — et un câble trop court."
                   solved={cableDone}
@@ -122,11 +157,11 @@ export default function Module06EncadrerEtComparer() {
           ),
         },
       ]}
-      footer={
-        <Feedback tone="ok">
-          Encadrer une racine, c’est encadrer par des carrés ; comparer des réels, c’est les ramener sur la même droite ; arrondir, c’est choisir la précision — et parfois le sens — que la situation impose. Le boss t’attend.
-        </Feedback>
-      }
+      footer={(
+        <KnowledgeSnapshot moduleNumber={5}>
+          Le boss t’attend.
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }
