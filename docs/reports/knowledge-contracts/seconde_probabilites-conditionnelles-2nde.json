@@ -2,13 +2,29 @@
   "lesson": "probabilites-conditionnelles-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "experience-aleatoire",
+    "issue-evenement",
+    "equiprobable",
+    "probabilite",
+    "quotient",
+    "numerateur",
+    "denominateur",
+    "pourcentage",
+    "effectif",
+    "tableau-double-entree"
+  ],
   "conceptsIntroduced": [
     {
       "id": "univers-restreint",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module01EteindreLaPopulation.jsx",
+        "line": 82,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "notation-sachant",
@@ -25,19 +41,34 @@
       "id": "inversion",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module03NeJamaisRetournerLaCondition.jsx",
+        "line": 90,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "frequence-probabilite",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module04DesFrequencesAuxProbabilites.jsx",
+        "line": 50,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "probabilites-composees",
       "type": "formules",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module04DesFrequencesAuxProbabilites.jsx",
+        "line": 96,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [],
@@ -46,7 +77,12 @@
       "id": "methode-situation",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module05AtelierSituationsConcretes.jsx",
+        "line": 148,
+        "step": null,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -54,7 +90,12 @@
       "id": "mem-indice",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module03NeJamaisRetournerLaCondition.jsx",
+        "line": 97,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -65,8 +106,18 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "probabilite",
+        "issue-evenement",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "prior",
+        "issue-evenement": "prior",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -77,8 +128,18 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "equiprobable",
+        "experience-aleatoire",
+        "probabilite",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "equiprobable": "prior",
+        "experience-aleatoire": "prior",
+        "probabilite": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -89,8 +150,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient",
+        "pourcentage",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior",
+        "pourcentage": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -101,8 +170,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tableau-double-entree",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "tableau-double-entree": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -113,8 +188,18 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "denominateur",
+        "numerateur",
+        "effectif",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "denominateur": "prior",
+        "numerateur": "prior",
+        "effectif": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -124,9 +209,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module01EteindreLaPopulation.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 99,
+      "requires": [
+        "univers-restreint",
+        "probabilite",
+        "denominateur",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "univers-restreint": "established@M1",
+        "probabilite": "prior",
+        "denominateur": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -153,8 +248,22 @@
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module02LaNotationSachantQue.jsx",
       "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "notation-sachant",
+        "univers-restreint",
+        "tableau-double-entree",
+        "effectif",
+        "pourcentage",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1",
+        "tableau-double-entree": "prior",
+        "effectif": "prior",
+        "pourcentage": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -164,9 +273,21 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module02LaNotationSachantQue.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 88,
+      "requires": [
+        "notation-sachant",
+        "univers-restreint",
+        "probabilite",
+        "denominateur",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1",
+        "probabilite": "prior",
+        "denominateur": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -176,9 +297,21 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module03NeJamaisRetournerLaCondition.jsx",
-      "line": 101,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 120,
+      "requires": [
+        "inversion",
+        "mem-indice",
+        "notation-sachant",
+        "univers-restreint",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "inversion": "established@M3",
+        "mem-indice": "established@M3",
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -188,9 +321,21 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module04DesFrequencesAuxProbabilites.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 56,
+      "requires": [
+        "frequence-probabilite",
+        "notation-sachant",
+        "univers-restreint",
+        "probabilite",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "frequence-probabilite": "established@M4",
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1",
+        "probabilite": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -200,9 +345,21 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module04DesFrequencesAuxProbabilites.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 102,
+      "requires": [
+        "probabilites-composees",
+        "notation-sachant",
+        "univers-restreint",
+        "probabilite",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "probabilites-composees": "established@M4",
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1",
+        "probabilite": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -212,9 +369,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module04DesFrequencesAuxProbabilites.jsx",
-      "line": 105,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 125,
+      "requires": [
+        "notation-sachant",
+        "mem-indice",
+        "univers-restreint",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "notation-sachant": "established@M2",
+        "mem-indice": "established@M3",
+        "univers-restreint": "established@M1",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -224,9 +391,19 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module05AtelierSituationsConcretes.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 45,
+      "requires": [
+        "methode-situation",
+        "notation-sachant",
+        "univers-restreint",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation": "established@M5",
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -236,9 +413,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module05AtelierSituationsConcretes.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 68,
+      "requires": [
+        "methode-situation",
+        "notation-sachant",
+        "univers-restreint"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation": "established@M5",
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -248,9 +433,19 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module05AtelierSituationsConcretes.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 91,
+      "requires": [
+        "methode-situation",
+        "inversion",
+        "notation-sachant",
+        "univers-restreint"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation": "established@M5",
+        "inversion": "established@M3",
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -260,9 +455,17 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module05AtelierSituationsConcretes.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "methode-situation",
+        "probabilites-composees",
+        "notation-sachant"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation": "established@M5",
+        "probabilites-composees": "established@M4",
+        "notation-sachant": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -273,8 +476,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "univers-restreint"
+      ],
+      "prerequisiteStatus": {
+        "univers-restreint": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -285,8 +492,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "notation-sachant",
+        "mem-indice"
+      ],
+      "prerequisiteStatus": {
+        "notation-sachant": "established@M2",
+        "mem-indice": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -297,8 +510,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "notation-sachant",
+        "univers-restreint",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -309,8 +530,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "notation-sachant",
+        "univers-restreint"
+      ],
+      "prerequisiteStatus": {
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -321,8 +548,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "notation-sachant",
+        "univers-restreint",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "notation-sachant": "established@M2",
+        "univers-restreint": "established@M1",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -333,8 +568,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "inversion",
+        "mem-indice",
+        "notation-sachant"
+      ],
+      "prerequisiteStatus": {
+        "inversion": "established@M3",
+        "mem-indice": "established@M3",
+        "notation-sachant": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -345,8 +588,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "inversion",
+        "notation-sachant"
+      ],
+      "prerequisiteStatus": {
+        "inversion": "established@M3",
+        "notation-sachant": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -357,8 +606,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "notation-sachant",
+        "mem-indice"
+      ],
+      "prerequisiteStatus": {
+        "notation-sachant": "established@M2",
+        "mem-indice": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -369,8 +624,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "probabilites-composees"
+      ],
+      "prerequisiteStatus": {
+        "probabilites-composees": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -381,84 +640,15 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/modules/Module06MissionFinaleSachantQue.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "frequence-probabilite"
+      ],
+      "prerequisiteStatus": {
+        "frequence-probabilite": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'univers-restreint' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/knowledge.jsx",
-      "line": 43,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'inversion' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/knowledge.jsx",
-      "line": 91,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-indice' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/knowledge.jsx",
-      "line": 111,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'frequence-probabilite' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/knowledge.jsx",
-      "line": 125,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'probabilites-composees' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/knowledge.jsx",
-      "line": 143,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-situation' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/probabilites-conditionnelles-2nde/knowledge.jsx",
-      "line": 165,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

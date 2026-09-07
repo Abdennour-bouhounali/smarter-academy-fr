@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { CrossTableView, conditionalFrequency, formatPercent } from '../../../../../common/stats';
@@ -89,7 +89,26 @@ export default function Module03ParmiLesUnsParmiLesAutres() {
               et donc la réponse.
               {' '}<span className="text-slate-500">Rebascule autant que tu veux.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le geste vient de faire basculer la même case entre deux
+              conditions opposées : c'est l'instant où l'erreur d'inversion
+              peut être nommée, avant la question de l'étape 2. */}
+          {done1 && (
+            <>
+              <KnowledgeBrick
+                id="inversion-condition"
+                variant="new"
+                lead={<>Tu viens de faire basculer la même case entre deux conditions opposées, et le pourcentage a sauté de {formatPercent(P_BUS_SACHANT_2DE, 1)} à {formatPercent(P_2DE_SACHANT_BUS, 1)}.</>}
+              />
+              <KnowledgeBrick
+                id="mem-parmi"
+                variant="new"
+                compact
+                lead={<>Dans les deux phrases, repère ce qui suit « parmi les… » : c’est lui qui devient le dénominateur.</>}
+              />
+            </>
+          )}
+          {!done1 && (
             <Feedback tone="info">Essaie les deux conditions.</Feedback>
           )}
         </div>
@@ -109,6 +128,7 @@ export default function Module03ParmiLesUnsParmiLesAutres() {
             'C’est impossible à trancher',
           ]}
           correct={0} cols={1}
+          requires={['inversion-condition', 'mem-parmi', 'denominateur', 'quotient']}
           explain="Les deux phrases ont le même numérateur (les accidents graves en voiture) mais des dénominateurs sans commune mesure : quelques milliers d’accidents d’un côté, des millions de trajets de l’autre. La seconde fréquence est minuscule. C’est exactement l’erreur du module précédent, portée à l’absurde."
           explainWrong="Regarde les dénominateurs : « parmi les accidents » compte des accidents, « parmi les trajets » compte des trajets. Ces deux groupes n’ont ni la même taille ni le même sens."
           solved={done2} onAnswered={() => setQ2(true)}
@@ -120,23 +140,34 @@ export default function Module03ParmiLesUnsParmiLesAutres() {
       title: 'Comparer des sous-populations',
       done: done3,
       content: (
-        <NumericQuestion
-          prompt="Parmi les 80 élèves de terminale, 40 viennent en voiture. Quelle est cette fréquence conditionnelle, en pourcentage ?"
-          expected={50} suffix="%"
-          above={(revealed) => (
-            <div className="rounded-xl border border-sky-200 bg-sky-50 p-3 text-sm text-sky-900 space-y-1">
-              <p>Rappel : en 2de, 20 élèves sur 200 viennent en voiture, soit 10 %.</p>
-              {revealed && <p className="text-xs">40 ÷ 80 = 0,5 = 50 % — cinq fois plus qu’en 2de.</p>}
-            </div>
-          )}
-          explain="40 ÷ 80 = 50 %. En effectif brut, 40 élèves de terminale contre 20 de 2de, soit « deux fois plus » ; mais rapporté à chaque niveau, la part passe de 10 % à 50 %, soit CINQ fois plus. Comparer des groupes de tailles différentes exige les conditionnelles."
-          explainFor={(n) => (n === 40
-            ? '40 est l’effectif. La fréquence conditionnelle le rapporte à son groupe de référence : 40 ÷ 80 = 50 %.'
-            : n === 10
-              ? '10 % est la part de la voiture en 2de. Ici on demande la part parmi les TERMINALES : 40 ÷ 80 = 50 %.'
-              : 'On divise par l’effectif de la population de référence : 40 ÷ 80 = 50 %.')}
-          solved={done3} onAnswered={() => setQ3(true)}
-        />
+        <div className="space-y-3">
+          {/* La comparaison 2de/terminale de l'étape 1 vient de montrer un
+              écart d'effectif trompeur : c'est le moment de nommer la règle,
+              avant la question qui la mobilise. */}
+          <KnowledgeBrick
+            id="comparer-sous-populations"
+            variant="new"
+            lead={<>En 2de comme en terminale, la voiture n’a pas le même poids — mais les deux groupes n’ont pas la même taille. Comparer leurs effectifs bruts serait trompeur.</>}
+          />
+          <NumericQuestion
+            prompt="Parmi les 80 élèves de terminale, 40 viennent en voiture. Quelle est cette fréquence conditionnelle, en pourcentage ?"
+            expected={50} suffix="%"
+            requires={['comparer-sous-populations', 'population-reference', 'quotient', 'pourcentage', 'effectif']}
+            above={(revealed) => (
+              <div className="rounded-xl border border-sky-200 bg-sky-50 p-3 text-sm text-sky-900 space-y-1">
+                <p>Rappel : en 2de, 20 élèves sur 200 viennent en voiture, soit 10 %.</p>
+                {revealed && <p className="text-xs">40 ÷ 80 = 0,5 = 50 % — cinq fois plus qu’en 2de.</p>}
+              </div>
+            )}
+            explain="40 ÷ 80 = 50 %. En effectif brut, 40 élèves de terminale contre 20 de 2de, soit « deux fois plus » ; mais rapporté à chaque niveau, la part passe de 10 % à 50 %, soit CINQ fois plus. Comparer des groupes de tailles différentes exige les conditionnelles."
+            explainFor={(n) => (n === 40
+              ? '40 est l’effectif. La fréquence conditionnelle le rapporte à son groupe de référence : 40 ÷ 80 = 50 %.'
+              : n === 10
+                ? '10 % est la part de la voiture en 2de. Ici on demande la part parmi les TERMINALES : 40 ÷ 80 = 50 %.'
+                : 'On divise par l’effectif de la population de référence : 40 ÷ 80 = 50 %.')}
+            solved={done3} onAnswered={() => setQ3(true)}
+          />
+        </div>
       ),
     },
   ];

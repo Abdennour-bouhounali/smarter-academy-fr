@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -35,6 +35,14 @@ export default function Module03LesQuartiles() {
         <div className="space-y-3">
           <SeriesLab values={TRAJETS_A} min={0} max={60} unit="min"
             label="2de A — Q1, médiane et Q3" show={{ median: true, quartiles: true }} />
+          {/* La bande violette vient de montrer Q1 et Q3 sur la 2de A : on
+              pose ici ce que ces deux seuils signifient, avant la question
+              qui exige de le lire correctement. */}
+          <KnowledgeBrick
+            id="quartiles"
+            variant="new"
+            lead={<>La bande violette ci-dessus encadre la moitié centrale des élèves. Ses deux bornes, Q1 et Q3, sont des seuils de position — voici ce qu’ils veulent dire.</>}
+          />
           <TapQuestion
             prompt="Que signifie Q1 = 12 min pour la 2de A ?"
             options={[
@@ -44,6 +52,7 @@ export default function Module03LesQuartiles() {
               '12 est le quart de la durée maximale',
             ]}
             correct={0} cols={1}
+            requires={['quartiles', 'mediane-stat', 'effectif']}
             explain="Q1 est la plus petite valeur telle qu’au moins 25 % de l’effectif lui est inférieur ou égal. Ici, le rang de Q1 est ⌈20/4⌉ = 5 : la 5ᵉ valeur de la série rangée, soit 12 min."
             explainWrong="Un quartile est un SEUIL de position dans l’effectif, pas un effectif ni une fraction de la valeur maximale. Q1 = 12 : au moins un quart des élèves sont à 12 min ou moins."
             solved={q1s} onAnswered={() => setQ1s(true)}
@@ -65,6 +74,7 @@ export default function Module03LesQuartiles() {
             </div>
           )}
           expected={23} suffix="ᵉ valeur"
+          requires={['quartiles', 'arrondi']}
           explain="3n/4 = 22,5 ; on prend l’entier immédiatement supérieur, soit le rang 23. Q3 est la 23ᵉ valeur de la série rangée — une vraie valeur de la série."
           explainFor={(n) => (n === 22
             ? 'On arrondit à l’entier SUPÉRIEUR, jamais à l’inférieur : 22,5 donne le rang 23.'
@@ -84,16 +94,27 @@ export default function Module03LesQuartiles() {
           <NumericQuestion
             prompt="Pour la 2de A : Q1 = 12 min et Q3 = 25 min. Quel est l’écart interquartile, en minutes ?"
             expected={13} suffix="min"
+            requires={['quartiles']}
             explain="Q3 − Q1 = 25 − 12 = 13 min. C’est l’amplitude dans laquelle vit la MOITIÉ CENTRALE des élèves."
             explainFor={() => 'L’écart interquartile est la différence Q3 − Q1 = 25 − 12 = 13 min.'}
             solved={q3} onAnswered={() => setQ3(true)}
           />
-          {q3 && (
+          {q3 ? (
             <Feedback tone="ok">
               L’étendue de la 2de A vaut 35 min (40 − 5) : elle dépend entièrement des deux élèves
               les plus extrêmes. L’écart interquartile, lui, vaut <strong>13 min</strong> et ne dépend
               que du cœur de la série — un élève qui déménage très loin ne le change pas.
             </Feedback>
+          ) : null}
+          {/* Le calcul vient de donner les deux mesures d'étalement, l'une
+              sensible aux extrêmes, l'autre non : on les nomme ici, avant le
+              vrai/faux de l'étape 4 qui les distingue. */}
+          {q3 && (
+            <KnowledgeBrick
+              id="etendue-interquartile"
+              variant="new"
+              lead={<>Tu viens de calculer 25 − 12 = 13 min. L’étendue (35 min) et cet écart interquartile mesurent tous deux un étalement, mais pas le même.</>}
+            />
           )}
         </div>
       ),
@@ -111,6 +132,7 @@ export default function Module03LesQuartiles() {
             { id: 'r3', label: 'Q3 − Q1 contient environ la moitié de l’effectif', options: ['Vrai', 'Faux'], correct: 0, correction: 'Du 1er au 3e quartile : la moitié centrale.' },
             { id: 'r4', label: 'On a toujours Q1 ≤ médiane ≤ Q3', options: ['Vrai', 'Faux'], correct: 0, correction: 'Par construction, les trois seuils sont ordonnés.' },
           ]}
+          requires={['quartiles', 'etendue-interquartile', 'mediane-stat', 'etendue']}
           feedback={({ allRight, nCorrect, total }) => (
             <Feedback tone={allRight ? 'ok' : 'ko'}>
               {allRight ? 'Les quatre.' : `${nCorrect} sur ${total}.`} Deux mesures d’étalement, deux

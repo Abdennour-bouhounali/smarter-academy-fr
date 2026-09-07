@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { parseDec } from '@smarter-academy/core';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -32,23 +32,29 @@ export default function Module03SensibiliteEtSpecificite() {
       done: q1,
       content: (
         <div className="space-y-3">
+          {/* Les quatre cases sont nommées depuis le module 2 : on peut donner
+              maintenant les deux quotients qui mesurent le test, avant la
+              première question qui en demande un. */}
+          <KnowledgeBrick
+            id="sensibilite-specificite"
+            variant="new"
+            lead={<>Tu sais nommer les quatre cases. On peut maintenant les diviser — et chaque division se fait dans une <strong>colonne</strong> du tableau.</>}
+          />
           <div className="rounded-2xl border-2 border-sky-200 bg-white p-4 space-y-2">
-            <div className="text-center">
-              <MathText>{'$$\\text{sensibilité} = P_{\\text{atteint}}(\\text{test }+) = \\frac{VP}{VP + FN}$$'}</MathText>
-            </div>
             <p className="text-sm text-slate-700">
-              On se place <strong>parmi les personnes atteintes</strong> et on regarde combien le test
+              Ici, on se place <strong>parmi les personnes atteintes</strong> et on regarde combien le test
               repère : {S.truePositive} sur {S.ill}.
             </p>
           </div>
           <NumericQuestion
+            requires={['sensibilite-specificite', 'vocabulaire-cases', 'quotient', 'pourcentage']}
             prompt={`Le test détecte ${S.truePositive} personnes parmi les ${S.ill} personnes atteintes. Quelle est sa sensibilité ? (en %)`}
             expected={(n) => Math.abs(n - S.sensitivity * 100) < 0.3}
             parse={parseDec}
             display="99 %"
             suffix="%"
             explain={`${S.truePositive} ÷ ${S.ill} = 0,99, soit 99 %. La sensibilité se calcule dans la colonne des personnes ATTEINTES.`}
-            solved={q1} onAnswered={(ok) => { if (ok) setQ1(true); }}
+            solved={q1} onAnswered={() => setQ1(true)}
           />
         </div>
       ),
@@ -69,6 +75,7 @@ export default function Module03SensibiliteEtSpecificite() {
             </p>
           </div>
           <NumericQuestion
+            requires={['sensibilite-specificite', 'vocabulaire-cases', 'quotient', 'pourcentage']}
             prompt={`Le test déclare négatives ${S.trueNegative.toLocaleString('fr-FR')} des ${S.healthy.toLocaleString('fr-FR')} personnes saines. Quelle est sa spécificité ? (en %)`}
             expected={(n) => Math.abs(n - S.specificity * 100) < 0.3}
             parse={parseDec}
@@ -78,7 +85,7 @@ export default function Module03SensibiliteEtSpecificite() {
             explainFor={(n) => (Math.abs(n - 5) < 0.5
               ? 'Les 5 % sont le taux d’ERREUR sur les personnes saines. La spécificité est le complément : la part de personnes saines correctement déclarées négatives.'
               : null)}
-            solved={q2} onAnswered={(ok) => { if (ok) setQ2(true); }}
+            solved={q2} onAnswered={() => setQ2(true)}
           />
         </div>
       ),
@@ -94,6 +101,7 @@ export default function Module03SensibiliteEtSpecificite() {
             spécificité, savoir <strong>qui était sain</strong>.
           </div>
           <TapQuestion
+            requires={['sensibilite-specificite']}
             prompt="Quand une personne reçoit son résultat de test, que connaît-elle déjà ?"
             options={[
               'Uniquement le résultat du test, pas son état de santé',

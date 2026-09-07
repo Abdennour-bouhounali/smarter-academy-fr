@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Histogram, groupIntoClasses } from '../../../../../common/stats';
@@ -52,6 +52,7 @@ export default function Module06AtelierLireUneDistribution() {
               '[180 ; 190] ; et 13 % mesurent moins de 170 cm',
             ]}
             correct={0} cols={1}
+            requires={['lire-histogramme', 'frequences-cumulees', 'effectif']}
             explain="La classe la plus haute est [170 ; 180[ avec 63 élèves. « Moins de 170 cm » cumule les deux premières classes : 12 + 47 = 59, soit 59/140 ≈ 42 %."
             explainWrong="63 est l’effectif de la classe modale elle-même, pas le cumul en dessous de 170. Il faut additionner 12 et 47, soit 59 élèves sur 140 ≈ 42 %."
             solved={a1} onAnswered={() => setA1(true)}
@@ -75,6 +76,7 @@ export default function Module06AtelierLireUneDistribution() {
               'On ne peut rien dire sans connaître les fréquences',
             ]}
             correct={0} cols={1}
+            requires={['histogramme-aire', 'vocab-classe-amplitude', 'effectif']}
             explain="Sur des amplitudes inégales, la hauteur est une densité (effectif ÷ amplitude) : [4 ; 8] a une hauteur de 4 et pourtant 16 salariés, tandis que [3 ; 4[ a une hauteur de 22 pour 22 salariés. Comparer les hauteurs ne compare pas les effectifs — il faut lire le tableau ou comparer les AIRES."
             explainWrong="La hauteur d’une barre d’histogramme n’est l’effectif que si toutes les classes ont la même amplitude. Ici la dernière est 4 fois plus large : sa hauteur est divisée par 4."
             solved={b1} onAnswered={() => setB1(true)}
@@ -83,6 +85,7 @@ export default function Module06AtelierLireUneDistribution() {
             <NumericQuestion
               prompt="Effectifs : 18, 34, 22 et 16. Combien de salariés gagnent moins de 3 000 € ?"
               expected={52} suffix="salariés"
+              requires={['frequences-cumulees', 'histogramme-aire']}
               explain="18 + 34 = 52 salariés sur 90, soit environ 58 %."
               explainFor={(n) => (n === 34
                 ? '34 est l’effectif de la seule classe [2 ; 3[. « Moins de 3 » inclut aussi [1 ; 2[ : 18 + 34 = 52.'
@@ -99,6 +102,16 @@ export default function Module06AtelierLireUneDistribution() {
       done: c1,
       content: (
         <Situation emoji="⚠️" title="Lire honnêtement une série regroupée">
+          {/* Les deux situations précédentes viennent de faire toucher du
+              doigt ce qui reste exact (le cumul) et ce qui a été perdu
+              (le détail) : la règle générale se pose ici, avant de trancher
+              entre quatre affirmations. */}
+          <KnowledgeBrick
+            id="lire-honnetement"
+            variant="new"
+            compact
+            lead={<>Les tailles et les salaires viennent de te montrer ce qu’un tableau regroupé garde, et ce qu’il a perdu.</>}
+          />
           <TapQuestion
             prompt="À partir du seul histogramme des salaires, laquelle de ces affirmations est LÉGITIME ?"
             options={[
@@ -108,6 +121,7 @@ export default function Module06AtelierLireUneDistribution() {
               '« Aucun salarié ne gagne 3 000 € »',
             ]}
             correct={0} cols={1}
+            requires={['lire-honnetement', 'frequences-cumulees', 'mediane-stat']}
             explain="Un cumul de classes est une lecture exacte : 52 salariés sur 90 ≈ 58 %. En revanche le regroupement ne permet ni de désigner une valeur exacte comme la plus fréquente, ni d’annoncer une médiane au dixième près (elle serait estimée), ni de nier l’existence d’une valeur particulière."
             explainWrong="Tout ce qui descend EN DESSOUS de la classe — valeur la plus fréquente, médiane exacte, présence d’une valeur donnée — est perdu par le regroupement. Seuls les effectifs par tranche et leurs cumuls sont exacts."
             solved={c1} onAnswered={() => setC1(true)}

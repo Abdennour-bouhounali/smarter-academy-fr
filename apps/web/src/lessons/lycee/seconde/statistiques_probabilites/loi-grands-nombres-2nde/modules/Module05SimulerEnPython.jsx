@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { parseDec } from '@smarter-academy/core';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -32,6 +32,16 @@ export default function Module05SimulerEnPython() {
           <pre className="rounded-xl border-2 border-slate-200 bg-slate-900 text-slate-100 p-4 text-sm overflow-x-auto">
             <code>{PYTHON_SCRIPT}</code>
           </pre>
+          {/* Le script est sous les yeux : la boucle, le test et la division
+              finale s'y montrent avant que la première question n'en parle.
+              « boucle » revient du programme scolaire de 6e — simple rappel,
+              au point d'emploi. */}
+          <KnowledgeBrick
+            id="lire-simulation"
+            variant="rappel"
+            establishes={['boucle']}
+            lead={<>Dans ce script, trois lignes font tout : <code>for i in range(n)</code> répète — c’est une <strong>boucle</strong>, déjà croisée en 6e —, <code>if de == 6</code> compte, <code>succes / n</code> divise.</>}
+          />
           <TapQuestion
             prompt="Que représente la variable succes à la fin de la boucle ?"
             options={[
@@ -41,6 +51,7 @@ export default function Module05SimulerEnPython() {
               'La probabilité d’obtenir 6',
             ]}
             correct={0} cols={1}
+            requires={['lire-simulation', 'boucle', 'effectif']}
             explain="succes est incrémenté d’une unité chaque fois que le dé vaut 6 : c’est un EFFECTIF (un nombre entier de lancers gagnants). Le nombre de lancers, lui, est n = 10 000. La fréquence n’apparaît qu’à la dernière ligne, quand on divise."
             explainWrong="Relis la ligne « succes = succes + 1 » : elle ajoute 1 à chaque 6 obtenu. C’est donc un comptage, pas un quotient."
             solved={q1} onAnswered={() => setQ1(true)}
@@ -57,6 +68,7 @@ export default function Module05SimulerEnPython() {
           prompt="print(succes / n) affiche un nombre. Duquel s’approchera-t-il très probablement ?"
           options={['≈ 0,167', '≈ 1 667', '≈ 6', '≈ 0,5']}
           correct={0} cols={4}
+          requires={['lire-simulation', 'loi-grands-nombres', 'frequence-observee', 'probabilite']}
           explain="succes / n est la fréquence observée des 6 sur 10 000 lancers : d’après la loi des grands nombres, elle sera très proche de 1/6 ≈ 0,167. Le nombre 1 667 serait l’effectif attendu (succes seul), pas la fréquence."
           explainWrong="On divise l’effectif des 6 par le nombre de lancers : le résultat est une fréquence, donc un nombre entre 0 et 1, proche de la probabilité 1/6."
           solved={q2} onAnswered={() => setQ2(true)}
@@ -84,8 +96,9 @@ export default function Module05SimulerEnPython() {
             parse={parseDec}
             display="17,0 %"
             suffix="%"
+            requires={['lire-simulation', 'frequence-observee', 'arrondi', 'quotient']}
             explain="1 702 ÷ 10 000 = 0,1702, soit 17,0 %. C’est proche de 16,7 % — l’écart restant est la fluctuation, qui ne disparaît jamais complètement."
-            solved={q3} onAnswered={(ok) => { if (ok) setQ3(true); }}
+            solved={q3} onAnswered={() => setQ3(true)}
           />
         </div>
       ),

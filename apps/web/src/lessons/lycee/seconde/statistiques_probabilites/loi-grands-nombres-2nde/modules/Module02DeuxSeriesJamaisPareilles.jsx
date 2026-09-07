@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { formatPercent } from '../../../../../common/stats';
@@ -55,7 +55,19 @@ export default function Module02DeuxSeriesJamaisPareilles() {
               <strong>dispersion</strong> qui s’effondre. Ce phénomène porte un nom : la{' '}
               <strong>fluctuation d’échantillonnage</strong>.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les deux nuages sont côte à côte sur le même axe : c'est
+              maintenant, et pas avant, que « fluctuation d'échantillonnage »
+              désigne quelque chose de vu. L'étape 2 l'exige. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="fluctuation"
+              variant="new"
+              establishes={['echantillon', 'dispersion', 'etendue']}
+              lead={<>Tu viens de faire passer l’étendue de {formatPercent(spreads[10], 1)} à {formatPercent(spreads[1000], 1)} sans rien changer d’autre que la taille des séries.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               Lots lancés : {Object.keys(spreads).length ? Object.keys(spreads).map((k) => Number(k).toLocaleString('fr-FR')).join(', ') : 'aucun'}.
               Il faut au moins les séries de 10 et celles de 1 000 pour comparer.
@@ -78,6 +90,7 @@ export default function Module02DeuxSeriesJamaisPareilles() {
             'La probabilité de Pile n’est pas 1/2',
           ]}
           correct={0} cols={1}
+          requires={['fluctuation', 'frequence-observee', 'probabilite', 'pourcentage']}
           explain="Sur 100 lancers, un écart de quelques points au modèle est parfaitement ordinaire — tu viens de le produire vingt fois d’affilée. Conclure au truquage à partir d’une seule série de 100 lancers, c’est prendre la fluctuation pour un signal."
           explainWrong="Rien dans ces deux résultats n’est surprenant : le nuage des séries de 100 s’étale justement de part et d’autre de 50 %. Il faudrait des séries bien plus longues pour soupçonner quoi que ce soit."
           solved={done2} onAnswered={() => setQ2(true)}

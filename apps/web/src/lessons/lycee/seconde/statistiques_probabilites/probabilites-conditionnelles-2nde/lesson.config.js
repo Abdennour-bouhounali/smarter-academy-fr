@@ -42,6 +42,23 @@ export const LESSON_CONFIG = {
   id: 'probabilites-conditionnelles-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes venues du
+  // collège et toutes diagnostiquées par le module 0 :
+  //   — le modèle probabiliste de 3e : expérience aléatoire, issue et
+  //     événement, équiprobabilité, et la probabilité comme quotient des cas
+  //     favorables par les cas possibles ;
+  //   — les écritures d'un quotient : numérateur, dénominateur, pourcentage ;
+  //   — l'effectif d'un groupe et la lecture d'un tableau à double entrée,
+  //     que la leçon utilise comme outils de comptage sans les redécouvrir.
+  // La leçon enseigne le reste : l'univers restreint, la notation P_A(B), la
+  // non-symétrie du conditionnement, le lien fréquence/probabilité et les
+  // probabilités composées.
+  priorKnowledge: [
+    'experience-aleatoire', 'issue-evenement', 'equiprobable', 'probabilite',
+    'quotient', 'numerateur', 'denominateur', 'pourcentage',
+    'effectif', 'tableau-double-entree',
+  ],
   title: 'Probabilités conditionnelles',
   description:
     "Éteindre une partie de la population et recalculer dans ce qui reste : conditionner, ce n'est pas ajouter une information, c'est changer d'univers. Découvrir pourquoi « sachant A, la probabilité de B » ne se retourne jamais.",

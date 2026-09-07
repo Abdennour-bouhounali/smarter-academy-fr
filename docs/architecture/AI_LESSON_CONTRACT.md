@@ -27,6 +27,39 @@ staging and assessment metadata**.
    it genuinely evaluates several distinct competencies. When uncertain,
    classify the question as practice and write a better assessment instead.
 
+## Non-blocking progression — HARD INVARIANT for every generated lesson
+
+A generated lesson inherits this rule automatically. It is **normative**, and
+a violation is a **RELEASE BLOCKER**:
+
+- The generated lesson **MUST** allow progression after incorrect answers.
+- The generated lesson **MUST NOT** create correctness-gated progression.
+- The generated lesson **MUST** provide targeted feedback after errors
+  (`explain` / `explainWrong` / `explainFor` naming the actual misconception,
+  not just « Incorrect »).
+- The generated lesson **MAY** recommend a retry.
+- The generated lesson **MUST NOT** require a retry to unlock subsequent
+  learning content.
+- The generated lesson **MUST** provide a valid continuation path after an
+  incorrect answer.
+
+This applies to **every** generated question, in every stage —
+`prerequisite_check`, `trigger`, `discovery`, `manipulation`,
+`formalization`, `practice_lab` and `evaluation` alike.
+
+Mechanically: the kit calls `onAnswered(isCorrect)` unconditionally and
+reveals the correct answer, so a step must be marked done on *answered*, not
+on *answered correctly*:
+
+```jsx
+- onAnswered={(ok) => { if (ok) setQ2(true); }}   // ❌ traps the learner
++ onAnswered={() => setQ2(true)}                   // ✅
+```
+
+Enforced by `npm run check:non-blocking` (in `npm run check:lessons`).
+Full rule and the conforming exceptions (replayable manipulations,
+bounded-attempt components): `LESSON_CONTRACT.md` § Progression non bloquante.
+
 ## Pedagogical staging
 
 A lesson's **modules** follow the canonical learning journey

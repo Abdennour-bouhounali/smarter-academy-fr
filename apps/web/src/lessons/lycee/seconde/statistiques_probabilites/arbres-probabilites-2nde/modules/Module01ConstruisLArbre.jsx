@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -48,6 +48,16 @@ export default function Module01ConstruisLArbre() {
               {pred === 'deux' && ' Le résultat final n’a que deux couleurs, mais on peut y arriver par quatre routes différentes — et c’est ce qui va tout changer.'}
             </Feedback>
           )}
+          {/* L'arbre vient d'être posé à la main, dans l'ordre imposé par
+              l'expérience : on peut maintenant nommer ce qu'on a construit,
+              avant la question de l'étape 2 qui interroge cet ordre. */}
+          {built && (
+            <KnowledgeBrick
+              id="arbre-structure"
+              variant="new"
+              lead={<>Tu viens de poser toi-même les deux étages et les quatre bouts de l’arbre — et de buter sur l’ordre. Ce que tu as construit a un nom.</>}
+            />
+          )}
         </div>
       ),
     },
@@ -65,6 +75,7 @@ export default function Module01ConstruisLArbre() {
             'C’est arbitraire : les deux ordres se valent',
           ]}
           correct={0} cols={1}
+          requires={['arbre-structure', 'experience-aleatoire', 'issue-evenement']}
           explain="L’arbre suit l’ordre dans lequel l’expérience se déroule. Le sac détermine la composition dans laquelle on tire : la couleur dépend du sac. Ce n’est ni une convention d’écriture ni une question de taille."
           explainWrong="Regarde ce qui dépend de quoi : une fois le sac choisi, les chances d’obtenir une rouge changent. C’est cette dépendance qui fixe l’ordre des niveaux."
           solved={q2} onAnswered={() => setQ2(true)}

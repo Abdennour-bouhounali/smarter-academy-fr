@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { CrossTableView, crossTable } from '../../../../../common/stats';
@@ -70,7 +70,18 @@ export default function Module03LesMargesEtLeTotal() {
               dans la marge du tableau. Le coin en bas à droite est le <strong>total général</strong> : 60.
               {' '}<span className="text-slate-500">Continue à éclairer ce que tu veux.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les trois mises en évidence viennent de séparer la ligne, la
+              colonne et le coin : on peut les nommer avant que l'étape 2 ne
+              demande d'en faire la double somme. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="effectifs-marginaux"
+              variant="new"
+              lead={<>Tu viens d’éclairer une ligne entière, une colonne entière, puis le coin. Ces trois nombres vivent dans la <strong>marge</strong> du tableau.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Mises en évidence essayées : {seen.size} sur 3.</Feedback>
           )}
         </div>
@@ -84,6 +95,7 @@ export default function Module03LesMargesEtLeTotal() {
         <NumericQuestion
           prompt="Additionne les quatre totaux de lignes (15 + 19 + 13 + 13), puis les trois totaux de colonnes (14 + 20 + 26). Que trouves-tu dans les deux cas ?"
           expected={60}
+          requires={['effectifs-marginaux', 'tableau-croise', 'effectif']}
           explain="Les deux sommes valent 60. C’est inévitable : chaque élève est compté une fois dans sa ligne et une fois dans sa colonne. Cette double lecture du total général est une vérification GRATUITE — si les deux sommes diffèrent, il y a une erreur de comptage."
           explainFor={() => 'Les deux sommes doivent donner le même nombre, l’effectif total : 15 + 19 + 13 + 13 = 60 et 14 + 20 + 26 = 60.'}
           solved={done2} onAnswered={() => setQ2(true)}
@@ -95,6 +107,15 @@ export default function Module03LesMargesEtLeTotal() {
       title: 'Marge ou case ?',
       done: done3,
       content: (
+        <div className="space-y-3">
+          {/* La double somme vient de tomber juste : le critère de lecture
+              peut être fixé avant qu'on demande de l'appliquer. */}
+          <KnowledgeBrick
+            id="mem-case-marge"
+            variant="new"
+            compact
+            lead={<>Tu as maintenant les deux endroits où lire : le bord, et l’intérieur. Voici comment la question te dit lequel choisir.</>}
+          />
         <TapQuestion
           prompt="« Combien d’élèves de 2de B font de la danse ? » Où lit-on la réponse ?"
           options={[
@@ -104,10 +125,12 @@ export default function Module03LesMargesEtLeTotal() {
             'Dans le total général : 60 élèves',
           ]}
           correct={0} cols={1}
+          requires={['mem-case-marge', 'effectifs-marginaux', 'tableau-croise']}
           explain="La question porte sur les DEUX caractères à la fois : c’est une case, pas une marge. Les 19 danseurs et les 20 élèves de 2de B répondent à des questions à un seul caractère."
           explainWrong="Une marge ne renseigne que sur un caractère. Dès que la question en croise deux (« de 2de B » ET « danse »), la réponse est à l’intersection."
           solved={done3} onAnswered={() => setQ3(true)}
         />
+        </div>
       ),
     },
   ];

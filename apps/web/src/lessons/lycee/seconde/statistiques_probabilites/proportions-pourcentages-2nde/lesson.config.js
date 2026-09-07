@@ -39,6 +39,38 @@ export const LESSON_CONFIG = {
   id: 'proportions-pourcentages-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes venues du
+  // collège et toutes diagnostiquées par le module 0 :
+  //   — écritures d'un même nombre : fraction, quotient, écriture décimale,
+  //     numérateur/dénominateur, fraction décimale ;
+  //   — le pourcentage tel qu'il est vu au collège (5e) : appliquer « 25 % de
+  //     60 », et la proportionnalité qui le porte (6e) ;
+  //   — l'effectif d'un groupe (3e), qu'on compte ici avant de le rapporter.
+  // La leçon enseigne le reste : proportion et tout de référence, les trois
+  // écritures comme un seul nombre, la proportion de proportion, la
+  // distinction état/variation, le taux et le coefficient multiplicateur.
+  priorKnowledge: [
+    'quotient', 'numerateur', 'denominateur', 'fraction-decimale',
+    'pourcentage', 'proportionnalite', 'coefficient-proportionnalite',
+    'effectif',
+  ],
+  knowledgeAudit: {
+    ignore: [
+      // « attention au chiffre des centièmes » (module 5, correction de la
+      // ligne c5) sert à faire RELIRE 1,035 contre 1,35 : c'est du français
+      // courant pour désigner un rang de l'écriture décimale, pas la
+      // numération de position de 6e, qui n'est ni enseignée ni exigée ici —
+      // aucune question ne demande d'identifier une valeur de position.
+      { term: 'valeur-position', reason: 'emploi courant pour montrer où lire la virgule, hors périmètre de la leçon' },
+      // Le titre de l'étape 3 du module 5, « Du coefficient au taux », abrège
+      // « coefficient MULTIPLICATEUR », qui est l'objet du module et que
+      // l'étape 1 a posé (brique coefficient-multiplicateur). Il ne s'agit pas
+      // du coefficient d'une fonction linéaire de 3e. Le titre reste tel quel :
+      // le raccourci est celui qu'emploie l'élève une fois la notion établie.
+      { term: 'coefficient-lineaire', reason: 'abréviation du coefficient multiplicateur posé à l’étape 1 du même module ; autre notion que le coefficient d’une fonction linéaire' },
+    ],
+  },
   title: 'Proportions et pourcentages',
   description:
     "Découper une population en sous-groupes emboîtés et lire chaque part de trois façons — décimale, fraction, pourcentage —, comprendre qu'un pourcentage de pourcentage se multiplie, puis séparer nettement ce qui décrit un état (une proportion) de ce qui décrit une variation (une évolution), que le coefficient multiplicateur rend calculable.",

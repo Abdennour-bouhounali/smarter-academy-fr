@@ -36,6 +36,27 @@ export const LESSON_CONFIG = {
   id: 'series-regroupees-classes-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes venues du
+  // collège ou de « Statistiques à une variable », leçon 2nde antérieure de la
+  // même progression — et toutes diagnostiquées par le module 0 :
+  //   — le vocabulaire d'une série : série statistique, effectif, fréquence,
+  //     et le quotient qui fait passer de l'un à l'autre ;
+  //   — la moyenne et la moyenne pondérée (3e), sur laquelle la moyenne
+  //     estimée par les centres sera calquée ;
+  //   — les indicateurs d'une série discrète — moyenne, médiane, étendue —
+  //     dont la leçon montre qu'ils deviennent ESTIMÉS une fois regroupés ;
+  //   — l'intervalle et ses crochets, notation dans laquelle les classes
+  //     seront écrites, et l'arrondi (6e) que les consignes de calcul exigent.
+  // La leçon enseigne le reste : le regroupement en classes, l'amplitude et le
+  // centre, l'histogramme où l'AIRE porte l'effectif, les fréquences cumulées
+  // et leur polygone, la moyenne estimée, la classe médiane et l'interpolation.
+  priorKnowledge: [
+    'serie-statistique', 'effectif', 'frequence', 'quotient',
+    'moyenne', 'moyenne-ponderee',
+    'indicateur-stat', 'mediane-stat', 'etendue',
+    'intervalle', 'intervalle-crochets', 'arrondi',
+  ],
   title: 'Séries regroupées en classes',
   description:
     "Recevoir deux cents temps de recharge tous différents, constater qu'aucun tableau d'effectifs ne les résume, puis découper l'axe en tranches jusqu'à faire apparaître la forme de la distribution — histogramme, fréquences cumulées, et des indicateurs devenus estimés parce que le regroupement a perdu le détail.",

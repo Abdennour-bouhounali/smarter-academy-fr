@@ -2,37 +2,66 @@
   "lesson": "tableaux-croises-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "effectif",
+    "tableau-double-entree",
+    "serie-statistique"
+  ],
   "conceptsIntroduced": [
     {
       "id": "tableau-croise",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module01SoixanteFichesARanger.jsx",
+        "line": 106,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "qualitative-nominale-ordinale",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module02DeuxVariablesQualitatives.jsx",
+        "line": 107,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "combien-modalites",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module02DeuxVariablesQualitatives.jsx",
+        "line": 50,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "effectifs-marginaux",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module03LesMargesEtLeTotal.jsx",
+        "line": 78,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "filtres-logiques",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module04FiltrerAvecEtOuNon.jsx",
+        "line": 72,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -40,7 +69,12 @@
       "id": "fichier-donnees",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module01SoixanteFichesARanger.jsx",
+        "line": 151,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -48,7 +82,12 @@
       "id": "comparer-honnetement",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module05AtelierInterpreterUnTableau.jsx",
+        "line": 68,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -56,7 +95,12 @@
       "id": "mem-case-marge",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module03LesMargesEtLeTotal.jsx",
+        "line": 113,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -67,8 +111,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -79,8 +127,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -91,8 +143,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module00Diagnostic.jsx",
       "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tableau-double-entree",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "tableau-double-entree": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -103,8 +161,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module00Diagnostic.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tableau-double-entree",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "tableau-double-entree": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -115,8 +179,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module00Diagnostic.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "serie-statistique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -126,9 +194,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module01SoixanteFichesARanger.jsx",
-      "line": 138,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 157,
+      "requires": [
+        "fichier-donnees",
+        "tableau-croise",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "fichier-donnees": "established@M1",
+        "tableau-croise": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -138,9 +214,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module01SoixanteFichesARanger.jsx",
-      "line": 159,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 179,
+      "requires": [
+        "tableau-croise",
+        "tableau-double-entree",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "tableau-croise": "established@M1",
+        "tableau-double-entree": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,9 +234,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module02DeuxVariablesQualitatives.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 56,
+      "requires": [
+        "combien-modalites",
+        "tableau-croise"
+      ],
+      "prerequisiteStatus": {
+        "combien-modalites": "established@M2",
+        "tableau-croise": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,9 +252,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module02DeuxVariablesQualitatives.jsx",
-      "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 125,
+      "requires": [
+        "qualitative-nominale-ordinale",
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "qualitative-nominale-ordinale": "established@M2",
+        "serie-statistique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +270,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module03LesMargesEtLeTotal.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "effectifs-marginaux",
+        "tableau-croise",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectifs-marginaux": "established@M3",
+        "tableau-croise": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +290,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module03LesMargesEtLeTotal.jsx",
-      "line": 98,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 119,
+      "requires": [
+        "mem-case-marge",
+        "effectifs-marginaux",
+        "tableau-croise"
+      ],
+      "prerequisiteStatus": {
+        "mem-case-marge": "established@M3",
+        "effectifs-marginaux": "established@M3",
+        "tableau-croise": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +310,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module04FiltrerAvecEtOuNon.jsx",
-      "line": 81,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "filtres-logiques",
+        "effectifs-marginaux",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "filtres-logiques": "established@M4",
+        "effectifs-marginaux": "established@M3",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +330,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module04FiltrerAvecEtOuNon.jsx",
-      "line": 99,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 111,
+      "requires": [
+        "filtres-logiques",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "filtres-logiques": "established@M4",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -223,8 +349,18 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module05AtelierInterpreterUnTableau.jsx",
       "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "effectifs-marginaux",
+        "mem-case-marge",
+        "tableau-croise",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectifs-marginaux": "established@M3",
+        "mem-case-marge": "established@M3",
+        "tableau-croise": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +370,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module05AtelierInterpreterUnTableau.jsx",
-      "line": 65,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 75,
+      "requires": [
+        "effectifs-marginaux",
+        "comparer-honnetement",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectifs-marginaux": "established@M3",
+        "comparer-honnetement": "established@M5",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,9 +390,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module05AtelierInterpreterUnTableau.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 94,
+      "requires": [
+        "comparer-honnetement",
+        "effectifs-marginaux",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "comparer-honnetement": "established@M5",
+        "effectifs-marginaux": "established@M3",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -259,8 +411,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "qualitative-nominale-ordinale",
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "qualitative-nominale-ordinale": "established@M2",
+        "serie-statistique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -271,8 +429,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "qualitative-nominale-ordinale"
+      ],
+      "prerequisiteStatus": {
+        "qualitative-nominale-ordinale": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -283,8 +445,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "qualitative-nominale-ordinale"
+      ],
+      "prerequisiteStatus": {
+        "qualitative-nominale-ordinale": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -295,8 +461,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "fichier-donnees"
+      ],
+      "prerequisiteStatus": {
+        "fichier-donnees": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -307,8 +477,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tableau-croise",
+        "mem-case-marge",
+        "effectifs-marginaux"
+      ],
+      "prerequisiteStatus": {
+        "tableau-croise": "established@M1",
+        "mem-case-marge": "established@M3",
+        "effectifs-marginaux": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -319,8 +497,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "effectifs-marginaux",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectifs-marginaux": "established@M3",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -331,8 +515,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "effectifs-marginaux",
+        "mem-case-marge",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectifs-marginaux": "established@M3",
+        "mem-case-marge": "established@M3",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -343,8 +535,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "filtres-logiques",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "filtres-logiques": "established@M4",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -355,8 +553,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "filtres-logiques",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "filtres-logiques": "established@M4",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -367,108 +571,19 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/modules/Module06MissionFinaleLeClub.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "comparer-honnetement",
+        "effectifs-marginaux",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "comparer-honnetement": "established@M5",
+        "effectifs-marginaux": "established@M3",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'tableau-croise' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/knowledge.jsx",
-      "line": 55,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'fichier-donnees' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/knowledge.jsx",
-      "line": 75,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'qualitative-nominale-ordinale' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/knowledge.jsx",
-      "line": 88,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'combien-modalites' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/knowledge.jsx",
-      "line": 111,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'effectifs-marginaux' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/knowledge.jsx",
-      "line": 124,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-case-marge' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/knowledge.jsx",
-      "line": 143,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'filtres-logiques' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/knowledge.jsx",
-      "line": 157,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'comparer-honnetement' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/knowledge.jsx",
-      "line": 182,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

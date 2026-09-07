@@ -64,11 +64,12 @@ export default function Module02LaNotationSachantQue() {
             parse={parseDec}
             display="50 %"
             suffix="%"
+            requires={['notation-sachant', 'univers-restreint', 'tableau-double-entree', 'effectif', 'pourcentage', 'quotient']}
             explain="La condition « externe » impose le dénominateur : 600 externes. Parmi eux, 300 sont en club, donc 300/600 = 0,50 = 50 %."
             explainFor={(n) => (Math.abs(n - 37.5) < 0.5
               ? 'Tu as divisé par 800 : c’est P(A ∩ B), la probabilité d’être externe ET en club, pas la conditionnelle. La condition impose 600 au dénominateur.'
               : null)}
-            solved={q2} onAnswered={(ok) => { if (ok) setQ2(true); }}
+            solved={q2} onAnswered={() => setQ2(true)}
           />
         </div>
       ),
@@ -88,6 +89,7 @@ export default function Module02LaNotationSachantQue() {
             prompt="On tire un élève au hasard parmi les 800. La probabilité qu’il soit à la fois interne et en club vaut…"
             options={['18,75 %', '75 %', '33,3 %', '56,3 %']}
             correct={0} cols={4}
+            requires={['notation-sachant', 'univers-restreint', 'probabilite', 'denominateur', 'pourcentage']}
             explain="Sans condition, l’univers reste les 800 élèves : 150/800 = 0,1875, soit 18,75 %. Les 75 % correspondent à P_interne(club) — une autre question, posée dans un univers plus petit."
             explainWrong="Aucune condition n’est imposée ici : le dénominateur reste 800. On calcule P(A ∩ B), pas une probabilité conditionnelle."
             solved={q3} onAnswered={() => setQ3(true)}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -57,6 +57,13 @@ export default function Module04EstimerLaMoyenne() {
               </tbody>
             </table>
           </div>
+          {/* Le tableau des centres vient d'être posé : la question qui suit
+              exige de dire POURQUOI on remplace la classe par ce centre. */}
+          <KnowledgeBrick
+            id="moyenne-estimee"
+            variant="new"
+            lead={<>Tu viens de voir chaque classe réduite à un seul nombre, son centre — la ligne que tu vas maintenant pondérer par les effectifs.</>}
+          />
           <TapQuestion
             prompt="Pourquoi remplace-t-on chaque classe par son centre ?"
             options={[
@@ -66,6 +73,7 @@ export default function Module04EstimerLaMoyenne() {
               'Parce que le centre est la valeur la plus fréquente',
             ]}
             correct={0} cols={1}
+            requires={['moyenne-estimee', 'moyenne-ponderee', 'indicateur-stat']}
             explain="Le tableau regroupé ne contient plus les valeurs individuelles. On fait l’hypothèse que, dans chaque classe, les valeurs se répartissent à peu près symétriquement autour du centre — d’où une ESTIMATION, pas un calcul exact."
             explainWrong="Rien ne garantit que la moyenne d’une classe soit son centre : les 64 recharges de [40 ; 50[ pourraient toutes être vers 41 min. Le centre est une hypothèse raisonnable, pas une vérité."
             solved={q1} onAnswered={() => setQ1(true)}
@@ -88,6 +96,7 @@ export default function Module04EstimerLaMoyenne() {
           )}
           expected={(n) => Math.abs(n - 16.67) < 0.02}
           display="16,67"
+          requires={['moyenne-estimee', 'moyenne-ponderee']}
           explain="(5×5 + 15×15 + 10×25) ÷ 30 = 500 ÷ 30 ≈ 16,67. On pondère les CENTRES par les effectifs."
           explainFor={(n) => (n === 15
             ? '15 est la moyenne des trois centres (5, 15, 25) sans tenir compte des effectifs. Il faut pondérer : 500 ÷ 30 ≈ 16,67.'
@@ -114,6 +123,14 @@ export default function Module04EstimerLaMoyenne() {
               <p className="font-mono text-2xl font-black text-slate-900">{formatNumber(EXACT, 2)} min</p>
             </div>
           </div>
+          {/* Les deux nombres viennent d'être affichés côte à côte, presque
+              égaux : c'est l'instant où « estimée » cesse d'être un mot vague
+              et devient le constat qu'exige la question suivante. */}
+          <KnowledgeBrick
+            id="mem-estimation"
+            variant="new"
+            lead={<>Les deux valeurs ci-dessus se ressemblent, mais une seule vient des 200 durées brutes.</>}
+          />
           <TapQuestion
             prompt="L’estimation et la valeur exacte coïncident presque parfaitement ici. Peut-on en conclure que l’estimation est toujours fiable ?"
             options={[
@@ -123,6 +140,7 @@ export default function Module04EstimerLaMoyenne() {
               'Oui, à condition que les classes aient la même amplitude',
             ]}
             correct={0} cols={1}
+            requires={['mem-estimation', 'moyenne-estimee']}
             explain="Ici les écarts se compensent d’une classe à l’autre, d’où un accord excellent. Mais si, dans une classe large, tous les individus étaient tassés près d’une borne, le centre serait un mauvais représentant et l’estimation serait décalée. C’est le prix du regroupement : on gagne en lisibilité, on perd en exactitude."
             explainWrong="La méthode repose sur une hypothèse — la répartition régulière dans chaque classe — qui est souvent raisonnable, jamais garantie. L’écart peut aller dans les deux sens."
             solved={q3} onAnswered={() => setQ3(true)}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { formatPercent } from '../../../../../common/stats';
@@ -65,7 +65,18 @@ export default function Module01LaMemeCaseTroisNombres() {
               change tout.
               {' '}<span className="text-slate-500">Continue à changer de case et de référence.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le geste vient de faire varier le SEUL dénominateur, numérateur
+              figé : c'est l'instant où le groupe de référence peut être nommé,
+              avant la question de l'étape 2 qui le demande. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="population-reference"
+              variant="new"
+              lead={<>Tu viens de garder les mêmes <strong>100 élèves</strong> et de changer trois fois le groupe auquel tu les rapportes. Ce groupe porte un nom.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Références essayées : {seenRefs.size} sur 3.</Feedback>
           )}
         </div>
@@ -85,6 +96,7 @@ export default function Module01LaMemeCaseTroisNombres() {
             'Les 100 élèves de 2de qui prennent le bus',
           ]}
           correct={0} cols={1}
+          requires={['population-reference', 'quotient', 'denominateur', 'pourcentage', 'effectif']}
           explain="La phrase dit « des élèves de 2de » : ce groupe est la population de référence, donc le dénominateur. 100 ÷ 200 = 50 %. Rapporté aux 400 enquêtés on obtiendrait 25 %, et rapporté aux 160 usagers du bus 62,5 % — trois phrases différentes."
           explainWrong="Le groupe de référence est celui que la phrase désigne juste après « des » ou « parmi les » : ici les élèves de 2de, soit 200 personnes."
           solved={done2} onAnswered={() => setQ2(true)}

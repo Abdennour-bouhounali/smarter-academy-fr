@@ -41,6 +41,36 @@ export const LESSON_CONFIG = {
   id: 'statistiques-une-variable-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes venues du
+  // collège et toutes diagnostiquées par le module 0 :
+  //   — la statistique descriptive de 3e : ce qu'est une série, un effectif,
+  //     une fréquence, un indicateur ; la moyenne (6e), la moyenne pondérée
+  //     par des effectifs, la médiane, le mode, l'étendue et l'idée de
+  //     dispersion — la 2nde les reprend pour les articuler, pas pour les
+  //     découvrir ;
+  //   — le calcul qui les porte : quotient (6e), arrondi (6e), ranger des
+  //     nombres dans l'ordre croissant (6e), et la racine carrée (4e) dont
+  //     l'écart type a besoin.
+  // La leçon enseigne le reste : les quartiles Q1 et Q3 et l'écart
+  // interquartile, l'écart type, la robustesse, la linéarité de la moyenne,
+  // et la méthode de comparaison position + dispersion.
+  priorKnowledge: [
+    'serie-statistique', 'effectif', 'frequence', 'indicateur-stat',
+    'moyenne', 'moyenne-ponderee', 'mediane-stat', 'mode-stat',
+    'etendue', 'dispersion',
+    'quotient', 'arrondi', 'ordre-nombres', 'racine-carree',
+  ],
+  knowledgeAudit: {
+    ignore: [
+      // « translation » (module 5, module 7 épreuve st-e9) désigne le fait
+      // de décaler TOUTES les valeurs d'une série de la même quantité — le
+      // sens statistique de « translater », hors périmètre de la
+      // translation géométrique de 3e (vecteur, figure) : aucune figure
+      // n'est déplacée ici, aucune question ne porte sur la géométrie.
+      { term: 'translation', reason: "emploi statistique (décaler toutes les valeurs d'une série), pas la translation géométrique de 3e" },
+    ],
+  },
   title: 'Statistiques à une variable',
   description:
     "Poser les temps de trajet d'une classe sur un axe, chercher le nombre qui la résume et découvrir qu'aucun n'y suffit seul : la moyenne se laisse tirer par une valeur extrême, la médiane non, et deux séries de même moyenne peuvent s'étaler tout autrement — d'où les indicateurs de dispersion, étendue, écart interquartile et écart type.",
@@ -51,7 +81,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '📊',
-  estimatedDurationMin: 85,
+  estimatedDurationMin: 86,
   skills: [
     'Lire une série statistique et la représenter sur un axe',
     'Calculer une moyenne, une médiane, les quartiles, et savoir ce que chacun mesure',
@@ -74,7 +104,7 @@ export const LESSON_CONFIG = {
     ],
   },
   modules: [
-    { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — sur la moyenne, la médiane et la lecture d’un tableau d’effectifs.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
+    { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — sur la moyenne, la médiane, la lecture d’un tableau d’effectifs et les indicateurs du collège.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 5, difficulty: 1, actionText: 'Vérifier mes bases' },
     { id: '01', number: 1, slug: 'les-temps-de-trajet', path: `${LESSON_BASE_PATH}/les-temps-de-trajet`, title: 'Les temps de trajet', desc: 'Vingt élèves, vingt durées posées sur un axe. Un seul nombre peut-il résumer tout ça ? Déplace une valeur et regarde qui bouge.', stage: 'trigger', teachesLearningPointIds: ['seconde_statistiques-une-variable-2nde_P1', 'seconde_statistiques-une-variable-2nde_P2', 'seconde_statistiques-une-variable-2nde_P4'], color: 'indigo', style: 'featured', estimatedMin: 12, difficulty: 1, actionText: 'Poser la série' },
     { id: '02', number: 2, slug: 'moyenne-et-mediane', path: `${LESSON_BASE_PATH}/moyenne-et-mediane`, title: 'Moyenne et médiane', desc: 'Deux façons de dire « le milieu ». L’une additionne tout, l’autre compte les individus — et elles ne répondent pas à la même question.', stage: 'discovery', teachesLearningPointIds: ['seconde_statistiques-une-variable-2nde_P2', 'seconde_statistiques-une-variable-2nde_P4', 'seconde_statistiques-une-variable-2nde_P6'], color: 'violet', style: 'featured', estimatedMin: 12, difficulty: 2, actionText: 'Comparer les deux' },
     { id: '03', number: 3, slug: 'les-quartiles', path: `${LESSON_BASE_PATH}/les-quartiles`, title: 'Les quartiles', desc: 'Découper la série en quatre paquets d’effectifs égaux : Q1, la médiane, Q3. Et l’écart interquartile, qui mesure le cœur de la série.', stage: 'discovery', teachesLearningPointIds: ['seconde_statistiques-une-variable-2nde_P5', 'seconde_statistiques-une-variable-2nde_P9'], color: 'sky', style: 'featured', estimatedMin: 12, difficulty: 3, actionText: 'Découper en quatre' },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { formatPercent } from '../../../../../common/stats';
@@ -68,7 +68,27 @@ export default function Module01LanceEtRegarde() {
                 Relance encore : la petite série saute, la grande bouge à peine.
               </span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le geste vient d'être fait — deux séries lancées, deux chiffres
+              obtenus. C'est l'instant où les mots qui le décrivent ont un
+              sens, et l'étape 2 va les exiger. */}
+          {done1 && (
+            <>
+              <KnowledgeBrick
+                id="experience-simulation"
+                variant="new"
+                compact
+                establishes={['experience-aleatoire']}
+                lead={<>Tu n’as pas lancé une fois : la machine a rejoué le même tirage {big.n.toLocaleString('fr-FR')} fois de suite. Ce geste-là porte un nom.</>}
+              />
+              <KnowledgeBrick
+                id="frequence-observee"
+                variant="new"
+                lead={<>Le chiffre qui s’affiche sous ta série — {formatPercent(big.frequency, 2)} — n’est pas la probabilité du dé : c’est le résultat de <strong>tes</strong> lancers, et il change à chaque relance.</>}
+              />
+            </>
+          )}
+          {!done1 && (
             <Feedback tone="info">
               Il te reste à lancer {small ? 'une grande série (1 000 ou 10 000)' : big ? 'une petite série (10 ou 100)' : 'une petite série, puis une grande'}.
             </Feedback>
@@ -90,6 +110,7 @@ export default function Module01LanceEtRegarde() {
             'Rien : tout est dû au hasard',
           ]}
           correct={0} cols={1}
+          requires={['frequence-observee', 'experience-simulation', 'probabilite', 'quotient', 'effectif']}
           explain="La probabilité du modèle n’a jamais bougé — c’est une donnée du dé, pas un résultat. Le nombre de succès, lui, AUGMENTE avec les répétitions. Ce qui se resserre, c’est la fréquence observée : le quotient succès ÷ répétitions."
           explainWrong="La probabilité est fixée par le modèle (1/6 pour un dé équilibré) : aucune série ne la déplace. Ce sont les fréquences que tu as calculées qui se rapprochent d’elle."
           solved={done2} onAnswered={() => setQ2(true)}

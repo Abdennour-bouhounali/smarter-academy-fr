@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -35,6 +35,13 @@ export default function Module03CeQueLaLoiDitVraiment() {
       content: (
         <div className="space-y-3">
           <GapExplorer p={0.5} />
+          {/* Les deux colonnes sont sous les yeux, calculées sur la MÊME
+              série : la règle peut être nommée avant d'être exigée. */}
+          <KnowledgeBrick
+            id="deux-ecarts"
+            variant="new"
+            lead={<>Relis les deux dernières colonnes de haut en bas : la verte descend, la rouge monte. Ce n’est pas une erreur du tableau.</>}
+          />
           <TapQuestion
             prompt="Quand le nombre de lancers augmente, que devient l’écart entre le nombre de Pile obtenu et la moitié des lancers ?"
             options={[
@@ -44,6 +51,7 @@ export default function Module03CeQueLaLoiDitVraiment() {
               'Il devient négatif',
             ]}
             correct={0} cols={2}
+            requires={['deux-ecarts', 'frequence-observee', 'quotient', 'effectif']}
             explain="C’est le contre-sens le plus fréquent. L’écart en NOMBRE grandit (une centaine sur 10 000 lancers, contre une unité sur 10) ; c’est l’écart en FRÉQUENCE qui se resserre, parce qu’on divise par un nombre de plus en plus grand. La loi des grands nombres ne parle que du quotient."
             explainWrong="Regarde les deux colonnes : la verte (fréquence) descend, la rouge (nombre) monte. Seule la fréquence se rapproche de p."
             solved={q1} onAnswered={() => setQ1(true)}
@@ -60,10 +68,19 @@ export default function Module03CeQueLaLoiDitVraiment() {
           <div className="rounded-xl border-2 border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
             Une pièce équilibrée vient de donner <strong>cinq fois Pile</strong> d’affilée.
           </div>
+          {/* Le module 2 a montré vingt séries qui ne se corrigeaient jamais
+              l'une l'autre : l'indépendance se nomme ici, avant la question
+              qui la met à l'épreuve. */}
+          <KnowledgeBrick
+            id="mem-independance"
+            variant="new"
+            lead={<>Aucune des vingt séries du module précédent ne « rattrapait » la précédente : chacune repartait de zéro.</>}
+          />
           <TapQuestion
             prompt="Au sixième lancer, la probabilité d’obtenir Face vaut…"
             options={['1/2, comme toujours', 'Plus de 1/2, pour compenser', 'Moins de 1/2', 'On ne peut pas savoir']}
             correct={0} cols={2}
+            requires={['mem-independance', 'fluctuation', 'probabilite', 'issue-evenement']}
             explain="La pièce ne se souvient de rien : chaque lancer est indépendant des précédents, donc P(Face) = 1/2 quoi qu’il se soit passé avant. Croire au rattrapage, c’est la « loi des séries » — elle n’existe pas. La stabilisation ne vient pas d’une compensation : les cinq Piles du début sont simplement DILUÉS par les milliers de lancers suivants."
             explainWrong="Si la pièce est équilibrée, chaque lancer redémarre à zéro : P(Face) = 1/2. Aucun mécanisme ne « rééquilibre » les lancers passés."
             solved={q2} onAnswered={() => setQ2(true)}
@@ -91,6 +108,13 @@ export default function Module03CeQueLaLoiDitVraiment() {
               des écarts passés.
             </div>
           </div>
+          {/* L'énoncé vient d'être lu ; la brique l'inscrit dans la carte
+              avant que l'étape ne demande de trier ses formulations. */}
+          <KnowledgeBrick
+            id="loi-grands-nombres"
+            variant="new"
+            lead={<>C’est exactement ce que tes séries montraient depuis le module 1 — écrit en une ligne.</>}
+          />
           <TapQuestion
             prompt="Une pièce équilibrée lancée 10 000 fois. Laquelle de ces affirmations est correcte ?"
             options={[
@@ -100,6 +124,7 @@ export default function Module03CeQueLaLoiDitVraiment() {
               'La fréquence de Pile sera exactement 0,5',
             ]}
             correct={0} cols={1}
+            requires={['loi-grands-nombres', 'deux-ecarts', 'fluctuation', 'frequence-observee', 'probabilite']}
             explain="« Très probablement proche » est tout ce que la loi promet. Obtenir exactement 5 000 Pile est possible mais peu probable — et les trois autres formulations confondent la tendance de la fréquence avec une égalité des effectifs."
             explainWrong="La loi est une affirmation sur la PROXIMITÉ de la fréquence, jamais sur une égalité exacte des effectifs."
             solved={q3} onAnswered={() => setQ3(true)}

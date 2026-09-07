@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -47,9 +47,17 @@ export default function Module04DesFrequencesAuxEffectifs() {
           <div className="rounded-xl border border-emerald-200 bg-white p-3 text-center">
             <MathText>{'$$\\text{effectif} = \\text{fréquence} \\times \\text{effectif de référence}$$'}</MathText>
           </div>
+          {/* La formule vient d'être posée : c'est l'instant pour la nommer,
+              avant la première application (500 × 60 %) qui l'exige. */}
+          <KnowledgeBrick
+            id="frequences-vers-effectifs"
+            variant="new"
+            lead={<>Tu as maintenant l’opération inverse de la leçon précédente : au lieu de diviser un effectif, tu vas multiplier une fréquence par sa référence.</>}
+          />
           <NumericQuestion
             prompt="Combien d’élèves sont demi-pensionnaires ?"
             expected={300} suffix="élèves"
+            requires={['frequences-vers-effectifs', 'pourcentage', 'quotient', 'effectif']}
             explain="0,60 × 500 = 300. Les 60 % se rapportent à l’ensemble des élèves : la référence est le total, 500."
             explainFor={(n) => (n === 60
               ? '60 est le pourcentage, pas l’effectif : 0,60 × 500 = 300 élèves.'
@@ -67,6 +75,7 @@ export default function Module04DesFrequencesAuxEffectifs() {
         <NumericQuestion
           prompt="Combien de demi-pensionnaires font partie d’une association ?"
           expected={75} suffix="élèves"
+          requires={['frequences-vers-effectifs', 'population-reference', 'pourcentage', 'quotient']}
           explain="Les 25 % se rapportent aux DEMI-PENSIONNAIRES, pas à tout le lycée : 0,25 × 300 = 75 élèves. Rapportés au lycée entier, ces 75 élèves ne représentent que 15 %."
           explainFor={(n) => (n === 125
             ? 'Tu as multiplié par 500 : 0,25 × 500 = 125. Mais la phrase dit « parmi les demi-pensionnaires » : la référence est 300, donc 0,25 × 300 = 75.'
@@ -85,6 +94,7 @@ export default function Module04DesFrequencesAuxEffectifs() {
         <NumericQuestion
           prompt="Combien d’externes font partie d’une association ?"
           expected={80} suffix="élèves"
+          requires={['frequences-vers-effectifs', 'population-reference', 'pourcentage', 'quotient']}
           explain="Il y a 500 − 300 = 200 externes, et 0,40 × 200 = 80 d’entre eux sont en association. Chaque pourcentage a sa propre référence : 300 pour les uns, 200 pour les autres."
           explainFor={(n) => (n === 200
             ? '200 est le nombre d’externes. Il reste à en prendre 40 % : 0,40 × 200 = 80.'
@@ -101,6 +111,15 @@ export default function Module04DesFrequencesAuxEffectifs() {
       done: q4,
       content: (
         <div className="space-y-3">
+          {/* Les trois cases précédentes viennent d'être reconstruites une à
+              une : c'est l'instant pour nommer la méthode d'ensemble, avant
+              la question de synthèse qui la mobilise. */}
+          <KnowledgeBrick
+            id="methode-completer-tableau"
+            variant="new"
+            compact
+            lead={<>Tu viens de reconstruire trois cases l’une après l’autre, chacune avec sa propre référence. C’est la méthode complète.</>}
+          />
           <TapQuestion
             prompt="Au total, quelle proportion des 500 élèves fait partie d’une association ?"
             options={[
@@ -110,6 +129,7 @@ export default function Module04DesFrequencesAuxEffectifs() {
               '15 % : seulement les demi-pensionnaires',
             ]}
             correct={0} cols={1}
+            requires={['methode-completer-tableau', 'frequences-vers-effectifs', 'somme-conditionnelles', 'quotient']}
             explain="On additionne les EFFECTIFS (75 + 80 = 155), puis on rapporte au total : 155 ÷ 500 = 31 %. On ne peut ni additionner ni moyenner directement deux pourcentages qui n’ont pas la même référence — sauf si les deux groupes avaient la même taille, ce qui n’est pas le cas (300 contre 200)."
             explainWrong="25 % et 40 % ont des dénominateurs différents (300 et 200) : ni leur somme ni leur moyenne n’a de sens. Il faut repasser par les effectifs : (75 + 80) ÷ 500 = 31 %."
             solved={q4} onAnswered={() => setQ4(true)}

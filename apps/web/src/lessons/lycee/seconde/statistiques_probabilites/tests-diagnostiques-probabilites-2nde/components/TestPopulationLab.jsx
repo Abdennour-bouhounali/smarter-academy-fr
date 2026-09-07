@@ -1,15 +1,21 @@
 import React from 'react';
-import PopulationGrid from '../../../../../common/stats/PopulationGrid';
+import PopulationBar from '../../../../../common/stats/PopulationBar';
 import { formatPercent } from '../../../../../common/stats';
 import { POPULATION, scenario, populationGroups } from '../data';
 
 /**
  * TestPopulationLab — la population de 10 000 personnes, révélée par étapes.
  *
- * OBSERVATION ATTENDUE : à l'étape « positifs », les pastilles orange (495
- * faux positifs) écrasent visuellement les rouges (99 vrais positifs). Le
- * paradoxe n'est pas énoncé, il se VOIT — et il se voit parce qu'on compte
- * des individus, pas parce qu'on manipule des décimaux.
+ * OBSERVATION ATTENDUE : à l'étape « positifs », l'orange (495 faux
+ * positifs) écrase le rouge (99 vrais positifs). Le paradoxe n'est pas
+ * énoncé, il se VOIT — et il se voit parce que les LARGEURS sont
+ * proportionnelles aux effectifs, pas parce qu'on manipule des décimaux.
+ *
+ * POURQUOI DEUX BARRES. Avec 1 % de prévalence, les 99 vrais positifs font
+ * 1 % de la largeur totale : invisibles dans la seule barre du haut. La barre
+ * du bas REDESSINE les positifs sur toute la largeur — c'est précisément le
+ * geste « parmi les positifs », donc le dénominateur de la VPP, et c'est là
+ * que le rapport 99 contre 495 devient lisible.
  *
  * Les étapes sont volontairement dans cet ordre : la population entière, puis
  * le partage malades/sains (et sa disproportion), puis seulement le résultat
@@ -66,11 +72,10 @@ export default function TestPopulationLab({ step = 'population', params, onStepC
         </div>
       )}
 
-      <PopulationGrid
+      <PopulationBar
         groups={viewGroups}
         dimmed={dimmed}
-        columns={100}
-        maxDots={10000}
+        restrictedLabel="Ne restent que les tests positifs"
         caption={`Population de ${POPULATION.toLocaleString('fr-FR')} personnes — étape « ${step} »`}
       />
 

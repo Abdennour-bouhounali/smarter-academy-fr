@@ -19,6 +19,44 @@ Three exercise patterns exist today with no shared contract (`docs/reports/ARCHI
 
 Any pure validation function intended for use with `useAdaptiveExercise` must return this shape. This is not a new invention — it's what the hook has always expected (`useAdaptiveExercise.js`'s own JSDoc); the cleanup phase found and fixed three modules that violated it by returning a bare boolean instead.
 
+## Non-blocking progression — HARD INVARIANT
+
+> **An incorrect answer MUST NEVER block lesson progression.** It is
+> pedagogical evidence, not a progression lock. Every validated interaction
+> MUST provide targeted feedback and a clear recovery path. The learner MAY
+> retry, be guided, see the solution, or continue — retry MUST NOT be
+> mandatory to continue.
+
+Violating this is a **RELEASE BLOCKER**.
+
+Four systems, deliberately **decoupled** — a failed validation MUST NOT by
+itself imply `nextActivity.disabled = true`:
+
+| System | Question |
+| --- | --- |
+| **Validation** | is the answer correct? (`{isCorrect, fields?, feedback?}` above) |
+| **Feedback** | what reasoning error did the learner make? |
+| **Evidence** | what does this tell us about the Learning Point? |
+| **Progression** | can the learner continue? |
+
+The Exercise Result shape carries `isCorrect` for validation, feedback and
+evidence. It says **nothing** about progression, and no consumer may derive
+progression from it alone. Concretely, the kit calls `onAnswered(isCorrect)`
+unconditionally; a module completes its step on *answered*, never on
+*answered correctly*:
+
+```jsx
+- onAnswered={(ok) => { if (ok) setQ2(true); }}   // dead end
++ onAnswered={() => setQ2(true)}
+```
+
+An exercise that genuinely warrants retry uses a bounded-attempts component
+that ends by revealing the solution and calling `onDone(false)`
+(`BuildCheck`, `ProofOrder`) — the way out always exists.
+
+Enforced by `npm run check:non-blocking`, part of `npm run check:lessons`.
+Full rule: `LESSON_CONTRACT.md` § Progression non bloquante.
+
 ## Answer validation boundary
 
 ```

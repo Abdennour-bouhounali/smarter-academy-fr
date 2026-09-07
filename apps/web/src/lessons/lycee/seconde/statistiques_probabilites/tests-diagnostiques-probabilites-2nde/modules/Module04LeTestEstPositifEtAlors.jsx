@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { parseDec } from '@smarter-academy/core';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -74,10 +74,12 @@ export default function Module04LeTestEstPositifEtAlors() {
       done: q2,
       content: (
         <div className="space-y-3">
+          <KnowledgeBrick
+            id="valeur-predictive"
+            variant="new"
+            lead={<>Tu viens de voir la VPP bouger sans que le test change. Voici son nom et sa formule.</>}
+          />
           <div className="rounded-2xl border-2 border-emerald-200 bg-white p-4 space-y-3">
-            <div className="text-center">
-              <MathText>{'$$P_{\\text{test }+}(\\text{atteint}) = \\frac{VP}{VP + FP}$$'}</MathText>
-            </div>
             <p className="text-sm text-slate-700">
               On l’appelle la <strong>valeur prédictive positive</strong>. Elle se calcule sur une
               <strong> ligne</strong> du tableau (les positifs), là où sensibilité et spécificité se
@@ -95,6 +97,7 @@ export default function Module04LeTestEstPositifEtAlors() {
             </div>
           </div>
           <NumericQuestion
+            requires={['valeur-predictive', 'sensibilite-specificite', 'quotient', 'pourcentage']}
             prompt={`Avec les valeurs de départ (${S.truePositive} vrais positifs et ${S.falsePositive} faux positifs), quelle est la valeur prédictive positive ? (en %, arrondie au dixième)`}
             expected={(n) => Math.abs(n - S.ppv * 100) < 0.4}
             parse={parseDec}
@@ -104,7 +107,7 @@ export default function Module04LeTestEstPositifEtAlors() {
             explainFor={(n) => (Math.abs(n - 99) < 1
               ? 'C’est la sensibilité : elle se calcule parmi les personnes atteintes. Ici la condition est « le test est positif », donc le dénominateur est le nombre de positifs.'
               : null)}
-            solved={q2} onAnswered={(ok) => { if (ok) setQ2(true); }}
+            solved={q2} onAnswered={() => setQ2(true)}
           />
         </div>
       ),
@@ -114,19 +117,27 @@ export default function Module04LeTestEstPositifEtAlors() {
       title: 'Repérer l’inversion',
       done: q3,
       content: (
-        <TapQuestion
-          prompt="« Ce test est fiable à 99 %, donc si tu es positif, tu as 99 % de risque d’être atteint. » Où est l’erreur ?"
-          options={[
-            'On a échangé la condition : 99 % est P(test + | atteint), pas P(atteint | test +)',
-            'Le test n’est pas vraiment fiable à 99 %',
-            'Il faudrait ajouter la spécificité aux 99 %',
-            'Il n’y a pas d’erreur',
-          ]}
-          correct={0} cols={1}
-          explain="C’est l’erreur d’inversion du conditionnement, exactement celle rencontrée avec les fréquences conditionnelles. Les 99 % se calculent parmi les personnes atteintes ; la question porte sur les personnes positives. Deux populations de référence différentes, deux nombres sans rapport : 99 % et 16,7 %."
-          explainWrong="Les 99 % annoncés sont une qualité mesurée SUR LES MALADES. La question posée part du résultat du test — c’est le conditionnement inverse."
-          solved={q3} onAnswered={() => setQ3(true)}
-        />
+        <div className="space-y-3">
+          <KnowledgeBrick
+            id="mem-inversion-test"
+            variant="new"
+            lead={<>Les deux nombres que tu viens de calculer — 99 % et {formatPercent(S.ppv, 1)} — ne répondent pas à la même question.</>}
+          />
+          <TapQuestion
+            requires={['mem-inversion-test', 'valeur-predictive', 'sensibilite-specificite']}
+            prompt="« Ce test est fiable à 99 %, donc si tu es positif, tu as 99 % de risque d’être atteint. » Où est l’erreur ?"
+            options={[
+              'On a échangé la condition : 99 % est P(test + | atteint), pas P(atteint | test +)',
+              'Le test n’est pas vraiment fiable à 99 %',
+              'Il faudrait ajouter la spécificité aux 99 %',
+              'Il n’y a pas d’erreur',
+            ]}
+            correct={0} cols={1}
+            explain="C’est l’erreur d’inversion du conditionnement, exactement celle rencontrée avec les fréquences conditionnelles. Les 99 % se calculent parmi les personnes atteintes ; la question porte sur les personnes positives. Deux populations de référence différentes, deux nombres sans rapport : 99 % et 16,7 %."
+            explainWrong="Les 99 % annoncés sont une qualité mesurée SUR LES MALADES. La question posée part du résultat du test — c’est le conditionnement inverse."
+            solved={q3} onAnswered={() => setQ3(true)}
+          />
+        </div>
       ),
     },
   ];

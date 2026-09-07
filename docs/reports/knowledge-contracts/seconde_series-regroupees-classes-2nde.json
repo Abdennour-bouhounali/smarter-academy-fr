@@ -2,43 +2,86 @@
   "lesson": "series-regroupees-classes-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "serie-statistique",
+    "effectif",
+    "frequence",
+    "quotient",
+    "moyenne",
+    "moyenne-ponderee",
+    "indicateur-stat",
+    "mediane-stat",
+    "etendue",
+    "intervalle",
+    "intervalle-crochets",
+    "arrondi"
+  ],
   "conceptsIntroduced": [
     {
       "id": "regroupement-classes",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module01DeuxCentsRecharges.jsx",
+        "line": 83,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "histogramme-aire",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module02DuTableauALHistogramme.jsx",
+        "line": 137,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "frequences-cumulees",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module03LesFrequencesCumulees.jsx",
+        "line": 72,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "moyenne-estimee",
       "type": "formules",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module04EstimerLaMoyenne.jsx",
+        "line": 62,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "classe-mediane",
       "type": "concepts",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module05LaClasseMediane.jsx",
+        "line": 62,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "lire-honnetement",
       "type": "regles",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module06AtelierLireUneDistribution.jsx",
+        "line": 109,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -46,7 +89,12 @@
       "id": "vocab-classe-amplitude",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module01DeuxCentsRecharges.jsx",
+        "line": 90,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -54,25 +102,45 @@
       "id": "choix-amplitude",
       "type": "methodes",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module01DeuxCentsRecharges.jsx",
+        "line": 98,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "lire-histogramme",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module02DuTableauALHistogramme.jsx",
+        "line": 65,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "polygone-cumule",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module03LesFrequencesCumulees.jsx",
+        "line": 120,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "mediane-interpolee",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module05LaClasseMediane.jsx",
+        "line": 92,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -80,7 +148,12 @@
       "id": "mem-estimation",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module04EstimerLaMoyenne.jsx",
+        "line": 129,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -90,9 +163,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module00Diagnostic.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "frequence",
+        "effectif",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "prior",
+        "effectif": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -102,9 +183,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module00Diagnostic.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "effectif",
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "prior",
+        "serie-statistique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -114,9 +201,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module00Diagnostic.jsx",
-      "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 22,
+      "requires": [
+        "frequence",
+        "serie-statistique",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "prior",
+        "serie-statistique": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -126,9 +221,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module00Diagnostic.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 23,
+      "requires": [
+        "moyenne-ponderee",
+        "moyenne",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "moyenne-ponderee": "prior",
+        "moyenne": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -138,9 +241,55 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module00Diagnostic.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "intervalle",
+        "intervalle-crochets"
+      ],
+      "prerequisiteStatus": {
+        "intervalle": "prior",
+        "intervalle-crochets": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "sr-d6",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module00Diagnostic.jsx",
+      "line": 28,
+      "requires": [
+        "indicateur-stat",
+        "moyenne",
+        "mediane-stat",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "indicateur-stat": "prior",
+        "moyenne": "prior",
+        "mediane-stat": "prior",
+        "etendue": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "sr-d7",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module00Diagnostic.jsx",
+      "line": 29,
+      "requires": [
+        "arrondi",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,9 +299,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module01DeuxCentsRecharges.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 130,
+      "requires": [
+        "regroupement-classes",
+        "serie-statistique",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "regroupement-classes": "established@M1",
+        "serie-statistique": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,9 +319,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module01DeuxCentsRecharges.jsx",
-      "line": 123,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 152,
+      "requires": [
+        "regroupement-classes",
+        "vocab-classe-amplitude",
+        "indicateur-stat"
+      ],
+      "prerequisiteStatus": {
+        "regroupement-classes": "established@M1",
+        "vocab-classe-amplitude": "established@M1",
+        "indicateur-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +339,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module02DuTableauALHistogramme.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 71,
+      "requires": [
+        "lire-histogramme",
+        "vocab-classe-amplitude",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "lire-histogramme": "established@M2",
+        "vocab-classe-amplitude": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +359,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module02DuTableauALHistogramme.jsx",
-      "line": 80,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 89,
+      "requires": [
+        "lire-histogramme",
+        "regroupement-classes",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "lire-histogramme": "established@M2",
+        "regroupement-classes": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +379,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module02DuTableauALHistogramme.jsx",
-      "line": 123,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 142,
+      "requires": [
+        "histogramme-aire",
+        "vocab-classe-amplitude",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "histogramme-aire": "established@M2",
+        "vocab-classe-amplitude": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +399,15 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module03LesFrequencesCumulees.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "frequences-cumulees",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "frequences-cumulees": "established@M3",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,9 +417,15 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module03LesFrequencesCumulees.jsx",
-      "line": 123,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 139,
+      "requires": [
+        "polygone-cumule",
+        "frequences-cumulees"
+      ],
+      "prerequisiteStatus": {
+        "polygone-cumule": "established@M3",
+        "frequences-cumulees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +435,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module03LesFrequencesCumulees.jsx",
-      "line": 145,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 162,
+      "requires": [
+        "polygone-cumule",
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "polygone-cumule": "established@M3",
+        "frequence": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,9 +453,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module04EstimerLaMoyenne.jsx",
-      "line": 60,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "moyenne-estimee",
+        "moyenne-ponderee",
+        "indicateur-stat"
+      ],
+      "prerequisiteStatus": {
+        "moyenne-estimee": "established@M4",
+        "moyenne-ponderee": "prior",
+        "indicateur-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -258,9 +473,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module04EstimerLaMoyenne.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "moyenne-estimee",
+        "moyenne-ponderee"
+      ],
+      "prerequisiteStatus": {
+        "moyenne-estimee": "established@M4",
+        "moyenne-ponderee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -270,9 +491,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module04EstimerLaMoyenne.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "mem-estimation",
+        "moyenne-estimee"
+      ],
+      "prerequisiteStatus": {
+        "mem-estimation": "established@M4",
+        "moyenne-estimee": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -282,9 +509,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module05LaClasseMediane.jsx",
-      "line": 59,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "classe-mediane",
+        "frequences-cumulees",
+        "mediane-stat"
+      ],
+      "prerequisiteStatus": {
+        "classe-mediane": "established@M5",
+        "frequences-cumulees": "established@M3",
+        "mediane-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -294,9 +529,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module05LaClasseMediane.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 100,
+      "requires": [
+        "mediane-interpolee",
+        "classe-mediane"
+      ],
+      "prerequisiteStatus": {
+        "mediane-interpolee": "established@M5",
+        "classe-mediane": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -306,9 +547,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module05LaClasseMediane.jsx",
-      "line": 116,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 135,
+      "requires": [
+        "mediane-interpolee",
+        "mediane-stat"
+      ],
+      "prerequisiteStatus": {
+        "mediane-interpolee": "established@M5",
+        "mediane-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -319,8 +566,16 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module06AtelierLireUneDistribution.jsx",
       "line": 46,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "lire-histogramme",
+        "frequences-cumulees",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "lire-histogramme": "established@M2",
+        "frequences-cumulees": "established@M3",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -330,9 +585,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module06AtelierLireUneDistribution.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "histogramme-aire",
+        "vocab-classe-amplitude",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "histogramme-aire": "established@M2",
+        "vocab-classe-amplitude": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -342,9 +605,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module06AtelierLireUneDistribution.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 85,
+      "requires": [
+        "frequences-cumulees",
+        "histogramme-aire"
+      ],
+      "prerequisiteStatus": {
+        "frequences-cumulees": "established@M3",
+        "histogramme-aire": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -354,9 +623,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module06AtelierLireUneDistribution.jsx",
-      "line": 102,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "lire-honnetement",
+        "frequences-cumulees",
+        "mediane-stat"
+      ],
+      "prerequisiteStatus": {
+        "lire-honnetement": "established@M6",
+        "frequences-cumulees": "established@M3",
+        "mediane-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -367,8 +644,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "regroupement-classes",
+        "serie-statistique",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "regroupement-classes": "established@M1",
+        "serie-statistique": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -379,8 +664,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "vocab-classe-amplitude",
+        "choix-amplitude"
+      ],
+      "prerequisiteStatus": {
+        "vocab-classe-amplitude": "established@M1",
+        "choix-amplitude": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -391,8 +682,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "histogramme-aire",
+        "vocab-classe-amplitude"
+      ],
+      "prerequisiteStatus": {
+        "histogramme-aire": "established@M2",
+        "vocab-classe-amplitude": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -403,8 +700,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "lire-histogramme",
+        "frequences-cumulees"
+      ],
+      "prerequisiteStatus": {
+        "lire-histogramme": "established@M2",
+        "frequences-cumulees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -415,8 +718,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "frequences-cumulees",
+        "polygone-cumule"
+      ],
+      "prerequisiteStatus": {
+        "frequences-cumulees": "established@M3",
+        "polygone-cumule": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -427,8 +736,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "moyenne-estimee",
+        "moyenne-ponderee"
+      ],
+      "prerequisiteStatus": {
+        "moyenne-estimee": "established@M4",
+        "moyenne-ponderee": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -439,8 +754,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mem-estimation",
+        "moyenne-estimee"
+      ],
+      "prerequisiteStatus": {
+        "mem-estimation": "established@M4",
+        "moyenne-estimee": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -451,8 +772,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "classe-mediane",
+        "frequences-cumulees"
+      ],
+      "prerequisiteStatus": {
+        "classe-mediane": "established@M5",
+        "frequences-cumulees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -463,8 +790,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mediane-interpolee",
+        "classe-mediane"
+      ],
+      "prerequisiteStatus": {
+        "mediane-interpolee": "established@M5",
+        "classe-mediane": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -475,156 +808,17 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/modules/Module07MissionFinaleLaBorne.jsx",
       "line": 24,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "lire-honnetement",
+        "frequences-cumulees"
+      ],
+      "prerequisiteStatus": {
+        "lire-honnetement": "established@M6",
+        "frequences-cumulees": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'regroupement-classes' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 33,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-classe-amplitude' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 53,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'choix-amplitude' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 66,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'histogramme-aire' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 80,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'lire-histogramme' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 102,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'frequences-cumulees' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 116,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'polygone-cumule' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 135,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'moyenne-estimee' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 149,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-estimation' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 168,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'classe-mediane' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 182,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mediane-interpolee' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 196,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'lire-honnetement' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/series-regroupees-classes-2nde/knowledge.jsx",
-      "line": 218,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

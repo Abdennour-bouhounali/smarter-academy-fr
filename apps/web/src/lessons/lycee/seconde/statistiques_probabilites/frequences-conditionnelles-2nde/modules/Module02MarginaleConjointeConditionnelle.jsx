@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
-import MathText from '../../../../../common/components/MathText';
 import { CrossTableView, conditionalFrequency, formatPercent } from '../../../../../common/stats';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { enqueteTable, TRANSPORTS } from '../data';
@@ -31,21 +30,13 @@ export default function Module02MarginaleConjointeConditionnelle() {
       done: true,
       content: (
         <div className="space-y-3">
-          <div className="rounded-xl border border-violet-200 bg-violet-50 p-3 text-center">
-            <MathText>{'$$f = \\frac{\\text{effectif de la case}}{\\text{effectif de RÉFÉRENCE}}$$'}</MathText>
-          </div>
-          <div className="grid gap-2 text-sm">
-            <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-amber-900">
-              <strong>Marginale</strong> — effectif d’une <em>modalité</em> ÷ total. « 40 % des enquêtés prennent le bus » (160/400).
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-800">
-              <strong>Conjointe</strong> — effectif d’une <em>case</em> ÷ total. « 25 % des enquêtés sont en 2de ET prennent le bus » (100/400).
-            </div>
-            <div className="rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-indigo-900">
-              <strong>Conditionnelle</strong> — effectif d’une <em>case</em> ÷ effectif de sa ligne ou de sa colonne.
-              « 50 % des élèves de 2de prennent le bus » (100/200).
-            </div>
-          </div>
+          {/* Les trois dénominateurs ont déjà été manipulés au module 1 : ici
+              on ne fait que leur donner leur nom, avant toute demande. */}
+          <KnowledgeBrick
+            id="trois-frequences"
+            variant="new"
+            lead={<>Au module précédent tu as changé trois fois de référence sans les nommer. Voici les trois noms, chacun attaché à son dénominateur.</>}
+          />
           <Feedback tone="info">
             Les trois utilisent le même numérateur ou presque : ce qui les distingue est <strong>ce par quoi on
             divise</strong>. Une phrase contenant « parmi les… » ou « des… » annonce toujours une conditionnelle.
@@ -79,6 +70,7 @@ export default function Module02MarginaleConjointeConditionnelle() {
           <NumericQuestion
             prompt="Quelle est la fréquence MARGINALE des élèves de terminale, en pourcentage ?"
             expected={20} suffix="%"
+            requires={['trois-frequences', 'population-reference', 'quotient', 'pourcentage', 'effectif', 'tableau-double-entree']}
             explain="80 élèves de terminale sur 400 enquêtés : 80 ÷ 400 = 0,20 = 20 %. Une fréquence marginale se rapporte toujours au TOTAL."
             explainFor={(n) => (n === 80
               ? '80 est l’effectif, pas la fréquence : il reste à le rapporter au total, 80 ÷ 400 = 20 %.'
@@ -93,8 +85,17 @@ export default function Module02MarginaleConjointeConditionnelle() {
       title: 'La somme qui vaut 1',
       done: q3,
       content: (
-        <BatchChoiceQuestion
-          intro={(
+        <div className="space-y-3">
+          {/* La répartition des 200 élèves de 2de est sous les yeux : c'est le
+              moment de dire ce qu'elle vaut, avant de le faire vérifier. */}
+          <KnowledgeBrick
+            id="somme-conditionnelles"
+            variant="new"
+            compact
+            lead={<>Tu viens de calculer une fréquence sur une référence choisie. Regarde ce qui se passe quand on les prend TOUTES sur la même référence.</>}
+          />
+          <BatchChoiceQuestion
+            intro={(
             <div className="space-y-2">
               <p className="text-sm text-slate-700">
                 Parmi les 200 élèves de 2de : {formatPercent(conditionalFrequency(T, { axis: 'col', key: '2de' }, 'bus'), 0)} en bus,
@@ -105,7 +106,8 @@ export default function Module02MarginaleConjointeConditionnelle() {
               <p className="text-sm font-semibold text-slate-700">Vrai ou faux ?</p>
             </div>
           )}
-          rows={[
+            requires={['somme-conditionnelles', 'trois-frequences', 'population-reference', 'denominateur']}
+            rows={[
             { id: 's1', label: 'Ces quatre pourcentages somment à 100 %', options: ['Vrai', 'Faux'], correct: 0, correction: `Ils répartissent tout le groupe de référence : ${formatPercent(somme2de, 0)}.` },
             { id: 's2', label: 'Les quatre fréquences CONJOINTES du bus somment aussi à 100 %', options: ['Vrai', 'Faux'], correct: 1, correction: 'Non : les conjointes ne somment à 1 que sur le tableau ENTIER, pas sur une ligne.' },
             { id: 's3', label: 'Les fréquences marginales des quatre transports somment à 100 %', options: ['Vrai', 'Faux'], correct: 0, correction: 'Chaque enquêté a exactement un mode de transport : 40 + 20 + 22,5 + 17,5 = 100 %.' },
@@ -119,8 +121,9 @@ export default function Module02MarginaleConjointeConditionnelle() {
               conditions différentes.
             </Feedback>
           )}
-          solved={q3} onAnswered={() => setQ3(true)}
-        />
+            solved={q3} onAnswered={() => setQ3(true)}
+          />
+        </div>
       ),
     },
   ];

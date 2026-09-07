@@ -36,6 +36,38 @@ export const LESSON_CONFIG = {
   id: 'frequences-conditionnelles-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes
+  // diagnostiquées par le module 0 :
+  //   — le quotient et ses deux termes (6e) : ici on ne fait que DIVISER, et
+  //     toute la leçon consiste à choisir ce qu'on écrit au dénominateur ;
+  //   — le pourcentage (5e) et la proportionnalité qui le porte (6e) ;
+  //   — le tableau à double entrée (6e), l'effectif d'un groupe et la fréquence
+  //     d'une série statistique (3e), tous posés par la leçon « Tableaux
+  //     croisés » qui précède immédiatement celle-ci.
+  // La leçon enseigne le reste : la population de référence, les trois
+  // fréquences distinguées par leur dénominateur, la somme des conditionnelles
+  // d'une même condition, l'erreur d'inversion, et le passage des fréquences
+  // aux effectifs.
+  priorKnowledge: [
+    'quotient', 'numerateur', 'denominateur',
+    'pourcentage', 'proportionnalite',
+    'tableau-double-entree', 'effectif',
+  ],
+  // Le terme « même dénominateur » du module 2 ne parle pas de la mise au même
+  // dénominateur de deux fractions (technique de 5e) : il dit qu'on ne peut
+  // additionner deux fréquences que si elles portent sur le MÊME groupe de
+  // référence. Le sens courant, hors périmètre de la leçon.
+  knowledgeAudit: {
+    ignore: [
+      { term: 'denominateur-commun', reason: 'emploi au sens courant — « le même dénominateur », c’est-à-dire le même groupe de référence, pas la mise au même dénominateur de deux fractions' },
+      // « la moyenne de 25 % et 40 % » est un distracteur du module 4 : la
+      // leçon s'en sert pour dire que moyenner deux pourcentages de références
+      // différentes n'a pas de sens. L'indicateur lui-même est du programme de
+      // 3e et n'est ni enseigné ni exigé ici.
+      { term: 'moyenne', reason: 'apparaît uniquement comme distracteur (« la moyenne de 25 % et 40 % »), justement pour être réfuté ; l’indicateur n’est ni enseigné ni demandé' },
+    ],
+  },
   title: 'Fréquences conditionnelles',
   description:
     "Prendre une case d'un tableau croisé et la diviser tour à tour par le total, par sa ligne, puis par sa colonne : trois nombres différents pour un même effectif. Changer soi-même la population de référence jusqu'à ce que le dénominateur cesse d'être une convention d'écriture et devienne le groupe dont on parle.",

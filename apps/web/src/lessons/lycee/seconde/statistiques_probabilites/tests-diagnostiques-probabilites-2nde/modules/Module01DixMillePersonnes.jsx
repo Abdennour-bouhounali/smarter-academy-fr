@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { formatPercent } from '../../../../../common/stats';
@@ -73,7 +73,19 @@ export default function Module01DixMillePersonnes() {
                 c’est une question de population de référence.
               </span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les quatre groupes viennent d'être COMPTÉS à l'écran, et le
+              déséquilibre 99 / 495 est encore sous les yeux : c'est l'instant
+              où l'on peut les nommer comme partition — avant la question de
+              l'étape 2, qui l'exige. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="quatre-groupes"
+              variant="new"
+              lead={<>Tu viens de séparer <strong>{S.ill}</strong> personnes atteintes de <strong>{S.healthy.toLocaleString('fr-FR')}</strong> personnes saines, puis de compter combien de chaque groupe le test déclare positives. Ces quatre nombres ont un statut.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               Étapes révélées : {seen.size} sur 4. Va jusqu’à « ne garder que les positifs ».
             </Feedback>
@@ -87,6 +99,7 @@ export default function Module01DixMillePersonnes() {
       done: done2,
       content: (
         <TapQuestion
+          requires={['quatre-groupes', 'effectif', 'pourcentage']}
           prompt={`Pourquoi y a-t-il ${S.falsePositive} faux positifs, alors que le test ne se trompe que sur 5 % des personnes saines ?`}
           options={[
             'Parce que les personnes saines sont très nombreuses : 5 % de 9 900 font beaucoup',

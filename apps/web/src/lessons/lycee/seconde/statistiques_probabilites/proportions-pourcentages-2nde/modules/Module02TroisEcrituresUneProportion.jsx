@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -50,7 +50,26 @@ export default function Module02TroisEcrituresUneProportion() {
               {' '}<strong>le décimal</strong> permet de multiplier, <strong>le pourcentage</strong> se compare d’un coup d’œil.
               Passer de l’un à l’autre ne change pas la valeur : 0,6 = 60/100 = 60 %.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les trois cases viennent de bouger ENSEMBLE : c'est l'instant où
+              « changer d'écriture » se voit ne rien changer à la valeur, avant
+              que l'étape 4 ne demande de le faire à la main. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="trois-ecritures"
+              variant="new"
+              lead={<>Tu n’as réglé qu’<strong>une</strong> part, et les trois cases se sont mises d’accord toutes seules. Voici les deux gestes qui font passer de l’une à l’autre.</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="vocab-pourcentage"
+              variant="new"
+              compact
+              lead={<>Et le mot lui-même dit l’opération : « pour cent », c’est « sur cent ».</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Parts testées : {tested.size} sur 3.</Feedback>
           )}
         </div>
@@ -61,9 +80,19 @@ export default function Module02TroisEcrituresUneProportion() {
       title: 'De la proportion à l’effectif',
       done: q2,
       content: (
+        <div className="space-y-3">
+        {/* L'étape 1 a montré que la proportion est UN nombre à trois habits.
+            Avant de le faire travailler dans les deux sens (étapes 2 et 3),
+            on pose la relation qui le relie à la part et au tout. */}
+        <KnowledgeBrick
+          id="formule-proportion"
+          variant="new"
+          lead={<>Ce nombre unique se lit dans les <strong>deux sens</strong> : il donne la part quand on connaît le tout, et le tout quand on connaît la part.</>}
+        />
         <NumericQuestion
           prompt="Dans un lycée de 1 250 élèves, 36 % font une langue ancienne. Combien d’élèves cela représente-t-il ?"
           expected={450} suffix="élèves"
+          requires={['formule-proportion', 'trois-ecritures', 'vocab-part-tout', 'pourcentage', 'effectif']}
           explain="36 % = 0,36 et 0,36 × 1 250 = 450. Appliquer une proportion, c’est MULTIPLIER le tout par le nombre décimal."
           explainFor={(n) => (n === 36
             ? '36 est le pourcentage, pas l’effectif : il faut encore le multiplier par le tout, 0,36 × 1 250 = 450.'
@@ -72,6 +101,7 @@ export default function Module02TroisEcrituresUneProportion() {
               : 'partie = proportion × tout, soit 0,36 × 1 250 = 450.')}
           solved={q2} onAnswered={() => setQ2(true)}
         />
+        </div>
       ),
     },
     {
@@ -83,6 +113,7 @@ export default function Module02TroisEcrituresUneProportion() {
         <NumericQuestion
           prompt="Dans un autre lycée, 189 élèves sont demi-pensionnaires, et cela représente 42 % des élèves. Combien y a-t-il d’élèves en tout ?"
           expected={450} suffix="élèves"
+          requires={['formule-proportion', 'proportion-reference', 'vocab-part-tout', 'quotient', 'effectif']}
           above={(revealed) => (
             <div className="rounded-xl border border-violet-200 bg-violet-50 p-3 text-center">
               <MathText>{'$$\\text{partie} = p \\times \\text{tout} \\quad\\Longrightarrow\\quad \\text{tout} = \\frac{\\text{partie}}{p}$$'}</MathText>
@@ -105,6 +136,7 @@ export default function Module02TroisEcrituresUneProportion() {
       done: q4,
       content: (
         <BatchChoiceQuestion
+          requires={['trois-ecritures', 'vocab-pourcentage', 'fraction-decimale', 'numerateur', 'denominateur', 'quotient']}
           intro={<p className="text-sm font-semibold text-slate-700">Pour chaque proportion, quelle est l’écriture en pourcentage ?</p>}
           rows={[
             { id: 'r1', label: <span className="font-mono">0,08</span>, options: ['0,8 %', '8 %', '80 %'], correct: 1, correction: '0,08 = 8/100 = 8 %' },

@@ -35,6 +35,29 @@ export const LESSON_CONFIG = {
   id: 'tableaux-croises-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes venues du
+  // collège et toutes diagnostiquées par le module 0 :
+  //   — l'effectif d'un groupe (3e), qu'on compte, qu'on additionne et dont on
+  //     prend le complémentaire avant de le croiser ;
+  //   — le tableau à double entrée (6e) : lire une case à l'intersection d'une
+  //     ligne et d'une colonne, totaliser une ligne. Ici il devient un tableau
+  //     CROISÉ, c'est-à-dire un comptage exhaustif et sans recouvrement ;
+  //   — la série statistique et son caractère (3e), pour reconnaître qu'un
+  //     caractère dont les valeurs sont des mots n'est pas numérique.
+  // La leçon enseigne le reste : le tableau croisé d'effectifs comme comptage,
+  // le fichier de données individuelles, nominale vs ordinale, les effectifs
+  // marginaux et le total général, et les filtres ET / OU / NON.
+  priorKnowledge: ['effectif', 'tableau-double-entree', 'serie-statistique'],
+  // « moyenne » n'apparaît que comme mauvaise réponse au diagnostic (tc-d5),
+  // pour opposer un INDICATEUR à la nature d'un caractère. Le mot est acquis
+  // depuis la 6e, la leçon ne calcule aucune moyenne et l'exclut de son
+  // périmètre : le poser en brique ici serait hors sujet.
+  knowledgeAudit: {
+    ignore: [
+      { term: 'moyenne', reason: 'Distracteur du diagnostic (tc-d5) opposant un indicateur à la nature d’un caractère ; notion de 6e, hors périmètre de cette leçon qui ne calcule aucune moyenne.' },
+    ],
+  },
   title: 'Tableaux croisés',
   description:
     "Recevoir soixante fiches d'élèves décrites par deux caractères, les ranger soi-même case par case jusqu'à ce que le tableau croisé se remplisse, puis découvrir que les totaux de lignes et de colonnes tombent sur le même nombre — parce que chaque individu occupe une case et une seule.",

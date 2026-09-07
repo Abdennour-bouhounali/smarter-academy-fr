@@ -15,6 +15,6 @@ export { default as DotPlot } from './DotPlot';
 export { default as BoxPlot } from './BoxPlot';
 export { default as Histogram } from './Histogram';
 export { default as CrossTableView } from './CrossTableView';
-export { default as PopulationGrid } from './PopulationGrid';
+export { default as PopulationBar } from './PopulationBar';
 export { default as ProbabilityTree } from './ProbabilityTree';
 export { default as FrequencyChart } from './FrequencyChart';

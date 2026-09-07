@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { BoxPlot } from '../../../../../common/stats';
@@ -55,14 +55,26 @@ export default function Module05AtelierLireDesBoites() {
               'Impossible de comparer sans les moyennes',
             ]}
             correct={0} cols={1}
+            requires={['mediane-ne-dit-pas-tout', 'mediane-stat', 'dispersion']}
             explain="Les médianes sont quasi identiques (200 et 210 ms) : elles ne départagent rien. Ce qui distingue les serveurs, c’est la queue : A atteint 900 ms là où B plafonne à 320 ms. Pour un service en ligne, ce sont justement ces requêtes lentes qui font la mauvaise expérience."
             explainWrong="Un écart de 10 ms sur la médiane est négligeable devant une moustache qui s’étend jusqu’à 900 ms. Comparer deux boîtes ne se réduit jamais à comparer deux médianes."
             solved={a1} onAnswered={() => setA1(true)}
           />
+          {/* Le premier situation vient de montrer la méthode que l'atelier
+              met en pratique : regarder d'abord si les médianes se
+              distinguent vraiment, puis la dispersion et les moustaches. */}
+          {a1 && (
+            <KnowledgeBrick
+              id="interpreter-contexte"
+              variant="new"
+              lead={<>Tu viens de le faire : médianes quasi égales, donc regarder la dispersion et les moustaches — souvent le vrai sujet.</>}
+            />
+          )}
           {a1 && (
             <NumericQuestion
               prompt="Pour le serveur A : Q1 = 180 ms et Q3 = 240 ms. Quel est son écart interquartile ?"
               expected={60} suffix="ms"
+              requires={['interpreter-contexte', 'quartile', 'etendue']}
               explain="240 − 180 = 60 ms. Remarque : cet écart interquartile est faible alors que l’étendue vaut 900 − 120 = 780 ms — tout le problème du serveur A est dans sa moustache droite, pas dans son cœur."
               explainFor={(n) => (n === 780
                 ? '780 ms est l’ÉTENDUE (900 − 120). L’écart interquartile est la largeur du rectangle : 240 − 180 = 60 ms.'
@@ -92,6 +104,7 @@ export default function Module05AtelierLireDesBoites() {
               'La classe Y a de meilleurs résultats en général',
             ]}
             correct={0} cols={1}
+            requires={['interpreter-contexte', 'mediane-ne-dit-pas-tout', 'quartile', 'dispersion']}
             explain="Médiane identique, dispersions opposées : X s’étale de 4 à 20 (écart interquartile 6), Y de 8 à 16 (écart interquartile 2). En X coexistent des élèves en difficulté et d’excellents ; en Y presque tout le monde tourne autour de 12. La médiane seule ne l’aurait jamais montré."
             explainWrong="Une note maximale plus haute concerne un seul élève et ne rend pas la classe « meilleure » : la médiane est la même. Ce qui les distingue est l’ÉTALEMENT des résultats."
             solved={b1} onAnswered={() => setB1(true)}

@@ -36,6 +36,26 @@ export const LESSON_CONFIG = {
   id: 'boites-a-moustaches-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes
+  // diagnostiquées par le module 0 :
+  //   — la série statistique et son effectif (3e), qu'on compte ici avant de
+  //     le découper en quarts ; ranger les valeurs (6e) précède tout rang ;
+  //   — médiane (3e), quartiles et écart interquartile (leçon 2nde
+  //     « Statistiques à une variable ») : ici on les DESSINE, on ne les
+  //     calcule plus ;
+  //   — étendue, dispersion et la notion d'indicateur statistique (3e) ;
+  //   — la moyenne (6e), dont la leçon a besoin comme CONTRE-EXEMPLE : elle ne
+  //     fait pas partie du résumé des cinq nombres.
+  // La leçon enseigne le reste : le résumé des cinq nombres, la construction
+  // de la boîte, le quart d'effectif par zone, la lecture de l'étendue et de
+  // l'écart interquartile SUR la figure, l'axe commun et le choix d'indicateur.
+  priorKnowledge: [
+    'serie-statistique', 'effectif', 'ordre-nombres',
+    'mediane-stat', 'quartile',
+    'etendue', 'dispersion', 'indicateur-stat',
+    'moyenne',
+  ],
   title: 'Boîtes à moustaches',
   description:
     "Réduire une série de trente relevés à cinq nombres, les poser un par un jusqu'à voir la boîte se construire, puis empiler trois villes sur un même axe pour comparer d'un coup d'œil ce qu'aucune liste de valeurs ne laissait voir : le centre, l'étalement, et la part de l'effectif que couvre chaque zone.",

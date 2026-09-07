@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -50,7 +50,18 @@ export default function Module03LeTauxGlobal() {
               somme : +10 % puis +10 % donne <strong>+21 %</strong> (1,10 × 1,10 = 1,21), le 1 % de plus étant
               « les 10 % appliqués aux 10 % déjà gagnés ».
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le bloc bilan affichait les deux nombres côte à côte ; l'élève
+              vient de chercher lui-même où ils coïncident. On peut nommer le
+              taux global, que l'étape 2 va demander de calculer. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="taux-global"
+              variant="new"
+              lead={<>Le coefficient global, tu sais le calculer depuis le module 2. Ce que tu viens de lire en bas du bloc, c’est ce qu’il devient une fois traduit en pourcentage.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               Chaînes essayées : {seen.size} sur 3.{!hasZero ? ' Essaie une évolution à 0 %.' : ''}
             </Feedback>
@@ -63,8 +74,10 @@ export default function Module03LeTauxGlobal() {
       title: 'Du coefficient au taux global',
       done: q2,
       content: (
+        <div className="space-y-3">
         <NumericQuestion
           prompt="Une population subit +8 % puis −5 %. Quel est le taux d’évolution global, en pourcentage (arrondi au dixième) ?"
+          requires={['taux-global', 'coefficient-global', 'pourcentage', 'arrondi']}
           above={(revealed) => (
             <div className="rounded-xl border border-sky-200 bg-sky-50 p-3 text-center">
               <MathText>{'$$t_{\\text{global}} = k_{\\text{global}} - 1$$'}</MathText>
@@ -81,6 +94,17 @@ export default function Module03LeTauxGlobal() {
               : 'k = 1,08 × 0,95 = 1,026 puis t = k − 1 = +2,6 %.')}
           solved={q2} onAnswered={() => setQ2(true)}
         />
+        {/* La somme (+3 %) et le taux global (+2,6 %) viennent de s'écarter
+            sur un cas chiffré : c'est le moment de dire à quelle condition
+            ils coïncideraient — l'étape 3 en fait quatre fois l'épreuve. */}
+        {q2 && (
+          <KnowledgeBrick
+            id="somme-jamais"
+            variant="new"
+            lead={<>+3 % annoncé par la somme, +2,6 % en réalité. Et à l’étape 1, les deux nombres ne se rejoignaient qu’en un seul cas.</>}
+          />
+        )}
+        </div>
       ),
     },
     {
@@ -90,6 +114,7 @@ export default function Module03LeTauxGlobal() {
       content: (
         <BatchChoiceQuestion
           intro={<p className="text-sm font-semibold text-slate-700">Pour chaque chaîne, quel est le taux global ?</p>}
+          requires={['somme-jamais', 'taux-global', 'coefficient-global', 'pourcentage']}
           rows={[
             { id: 'g1', label: '+10 % puis +10 %', options: ['+20 %', '+21 %', '+100 %'], correct: 1, correction: '1,1 × 1,1 = 1,21 → +21 %' },
             { id: 'g2', label: '+20 % puis −20 %', options: ['0 %', '−4 %', '−40 %'], correct: 1, correction: '1,2 × 0,8 = 0,96 → −4 %' },
@@ -121,6 +146,7 @@ export default function Module03LeTauxGlobal() {
             'Non : c’est −70 %',
           ]}
           correct={0} cols={2}
+          requires={['somme-jamais', 'taux-global', 'coefficient-global', 'pourcentage']}
           explain="0,70 × 0,70 = 0,49 : il reste 49 % du prix, donc la remise totale est de 51 %. Elle est plus avantageuse que 51 %… mais moins que les 60 % annoncés par le client. Deux baisses successives ne peuvent d’ailleurs jamais atteindre −100 %."
           explainWrong="La seconde remise porte sur le prix déjà réduit. Il reste 70 % de 70 %, soit 49 % du prix initial : la remise est de 51 %."
           solved={q4} onAnswered={() => setQ4(true)}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { AFFIRMATIONS } from '../data';
@@ -23,10 +23,18 @@ export default function Module05AtelierAffirmations() {
     done: solved.has(a.id),
     content: (
       <div className="space-y-3">
+        {i === 0 && (
+          <KnowledgeBrick
+            id="methode-affirmation-test"
+            variant="new"
+            lead={<>Avant de trancher, la même question à chaque fois : sur quelle population ce pourcentage est-il calculé ?</>}
+          />
+        )}
         <blockquote className="rounded-xl border-l-4 border-rose-400 bg-rose-50 px-4 py-3 text-sm text-rose-900 italic">
           {a.claim}
         </blockquote>
         <TapQuestion
+          requires={['methode-affirmation-test', 'valeur-predictive', 'sensibilite-specificite', 'mem-inversion-test']}
           prompt="Cette affirmation est-elle correcte ?"
           options={['Vrai', 'Faux']}
           correct={a.correct ? 0 : 1}

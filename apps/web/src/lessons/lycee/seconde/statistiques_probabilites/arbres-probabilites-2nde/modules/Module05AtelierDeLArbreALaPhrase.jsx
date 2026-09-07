@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { parseDec } from '@smarter-academy/core';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import ProbabilityTree from '../../../../../common/stats/ProbabilityTree';
@@ -32,15 +32,27 @@ export default function Module05AtelierDeLArbreALaPhrase() {
           {s.context}
         </div>
         <ProbabilityTree branches={s.tree} asPercent />
+        {/* Les billes ont disparu, mais pas le geste : sur la PREMIÈRE
+            situation, on énonce la marche à suivre juste avant de la
+            demander — ensuite l'élève la refait seul sur les deux autres. */}
+        {i === 0 && (
+          <KnowledgeBrick
+            id="methode-situation-arbre"
+            variant="new"
+            compact
+            lead={<>Plus de sacs ni de billes — et pourtant l’arbre est là, avec les mêmes deux étages. Voilà ce qui se transporte d’une situation à l’autre.</>}
+          />
+        )}
         <NumericQuestion
           prompt={s.question}
           expected={(n) => Math.abs(n - s.answer * 100) < 0.3}
           parse={parseDec}
           display={s.display}
           suffix="%"
+          requires={['methode-situation-arbre', 'produit-chemin', 'somme-chemins', 'poids-conditionnels', 'arbre-structure']}
           explain={s.explain}
           solved={solved.has(s.id)}
-          onAnswered={(ok) => { if (ok) setSolved((prev) => new Set(prev).add(s.id)); }}
+          onAnswered={() => setSolved((prev) => new Set(prev).add(s.id))}
         />
       </div>
     ),

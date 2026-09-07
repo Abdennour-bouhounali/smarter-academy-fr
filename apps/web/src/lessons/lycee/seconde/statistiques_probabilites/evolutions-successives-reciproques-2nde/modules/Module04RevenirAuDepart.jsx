@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -87,7 +87,18 @@ export default function Module04RevenirAuDepart() {
               coefficients sont toujours inverses l’un de l’autre.
               {' '}<span className="text-slate-500">Continue à glisser : l’écart ne se referme qu’en un seul point.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les deux écarts viennent d'être refermés à la main, dans les deux
+              sens : le taux trouvé n'est pas l'opposé, et les coefficients
+              sont inverses. On peut le nommer avant l'étape 2. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="evolution-reciproque"
+              variant="new"
+              lead={<>Tu as refermé l’écart en <strong>−20 %</strong> dans un cas et en <strong>+25 %</strong> dans l’autre. Les taux ne sont pas opposés — mais 1,25 × 0,80 = 1.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               Cas résolus : {solved.size} sur 2. {solved.has(caseId) ? 'Passe à l’autre cas.' : 'Referme l’écart rouge.'}
             </Feedback>
@@ -100,8 +111,10 @@ export default function Module04RevenirAuDepart() {
       title: 'Le coefficient réciproque',
       done: q2,
       content: (
+        <div className="space-y-3">
         <TapQuestion
           prompt="Une quantité est multipliée par 1,6. Quel coefficient la ramène à sa valeur initiale ?"
+          requires={['evolution-reciproque', 'coefficient-proportionnalite']}
           above={(revealed) => (
             <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-center">
               <MathText>{'$$k \\times k\' = 1 \\quad\\Longleftrightarrow\\quad k\' = \\frac{1}{k}$$'}</MathText>
@@ -114,6 +127,17 @@ export default function Module04RevenirAuDepart() {
           explainWrong="Il faut que 1,6 × k’ = 1, donc k’ = 1 ÷ 1,6 = 0,625. Le taux réciproque est 0,625 − 1 = −0,375, soit −37,5 %."
           solved={q2} onAnswered={() => setQ2(true)}
         />
+        {/* Le coefficient réciproque vient d'être calculé (1 ÷ 1,6 = 0,625) et
+            relu en taux (−37,5 %). L'aller-retour k → t s'écrit d'un trait :
+            l'étape 3 le demandera sur une baisse de 50 %. */}
+        {q2 && (
+          <KnowledgeBrick
+            id="formule-taux-reciproque"
+            variant="new"
+            lead={<>Tu es passé de 1,6 à 0,625, puis de 0,625 à −37,5 %. Ces deux pas s’enchaînent en une seule écriture.</>}
+          />
+        )}
+        </div>
       ),
     },
     {
@@ -121,8 +145,10 @@ export default function Module04RevenirAuDepart() {
       title: 'Annuler une forte baisse',
       done: q3,
       content: (
+        <div className="space-y-3">
         <NumericQuestion
           prompt="Un prix a baissé de 50 %. De quel pourcentage doit-il augmenter pour revenir à sa valeur initiale ?"
+          requires={['formule-taux-reciproque', 'evolution-reciproque', 'pourcentage']}
           expected={100} suffix="%"
           explain="k = 0,50, donc k’ = 1 ÷ 0,50 = 2 : il faut DOUBLER, soit +100 %. Reprendre 50 % ne rendrait que la moitié de ce qui a été perdu."
           explainFor={(n) => (n === 50
@@ -132,6 +158,16 @@ export default function Module04RevenirAuDepart() {
               : 'k’ = 1 ÷ 0,50 = 2, soit t’ = 2 − 1 = 1 = +100 %.')}
           solved={q3} onAnswered={() => setQ3(true)}
         />
+        {/* +100 % pour annuler −50 % : le cas le plus spectaculaire de la
+            règle. Il devient le repère à emporter. */}
+        {q3 && (
+          <KnowledgeBrick
+            id="mem-inverse-pas-oppose"
+            variant="new"
+            lead={<>Trois fois de suite, l’opposé n’a pas suffi. Voilà ce qui marche à tous les coups.</>}
+          />
+        )}
+        </div>
       ),
     },
   ];

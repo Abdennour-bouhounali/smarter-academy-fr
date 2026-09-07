@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { parseDec } from '@smarter-academy/core';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -59,10 +59,21 @@ export default function Module03MultiplierLeLongDunChemin() {
             prompt="Quel calcul retrouve directement ce 0,30 à partir des deux poids du chemin (0,6 puis 0,5) ?"
             options={['0,6 × 0,5', '0,6 + 0,5', '0,6 − 0,5', '0,6 ÷ 0,5']}
             correct={0} cols={4}
+            requires={['arbre-structure', 'poids-conditionnels', 'probabilite', 'quotient']}
             explain="0,6 × 0,5 = 0,30. Prendre « la moitié des 600 » revient à multiplier : le second poids s’applique à ce qui reste après le premier, il ne s’ajoute pas. Une somme donnerait 1,1 — impossible pour une probabilité."
             explainWrong="Reprends le comptage : on prend 60 % de 1 000, puis la moitié de CE résultat. Enchaîner deux proportions, c’est les multiplier."
             solved={q1} onAnswered={() => setQ1(true)}
           />
+          {/* Le produit vient d'être RETROUVÉ par comptage (600 puis 300) :
+              c'est le moment de le nommer, avant que l'étape 2 ne demande de
+              l'appliquer à un chemin qu'aucun comptage n'accompagne. */}
+          {q1 && (
+            <KnowledgeBrick
+              id="produit-chemin"
+              variant="new"
+              lead={<>Tu n’as rien appliqué : tu as compté 600 tirages, puis leur moitié. Et c’est ce comptage qui donne le produit.</>}
+            />
+          )}
         </div>
       ),
     },
@@ -88,13 +99,14 @@ export default function Module03MultiplierLeLongDunChemin() {
             parse={parseDec}
             display="10 %"
             suffix="%"
+            requires={['produit-chemin', 'poids-conditionnels', 'arbre-structure']}
             explain="0,4 × 0,25 = 0,10, soit 10 %. Le sac B est choisi 4 fois sur 10, et une fois dedans, une bille sur quatre est rouge."
             explainFor={(n) => (Math.abs(n - 65) < 1
               ? 'Tu as additionné les deux poids (0,4 + 0,25). Le long d’un chemin, on multiplie : la seconde étape se joue seulement parmi les tirages qui ont pris cette route.'
               : Math.abs(n - 25) < 0.5
                 ? 'Le 0,25 est la probabilité d’une rouge UNE FOIS le sac B choisi. Il reste à tenir compte de la probabilité d’avoir choisi B.'
                 : null)}
-            solved={q2} onAnswered={(ok) => { if (ok) setQ2(true); }}
+            solved={q2} onAnswered={() => setQ2(true)}
           />
           {q2 && (
             <Feedback tone="ok">

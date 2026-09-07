@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -28,23 +28,35 @@ export default function Module02MoyenneEtMediane() {
       title: 'La moyenne : partager équitablement',
       done: q1,
       content: (
-        <NumericQuestion
-          prompt="Cinq élèves mettent 10, 12, 15, 20 et 43 minutes. Quelle est la moyenne, en minutes ?"
-          above={(revealed) => (
-            <div className="rounded-xl border border-violet-200 bg-violet-50 p-3 text-center">
-              <MathText>{'$$\\bar{x} = \\frac{x_1 + x_2 + \\dots + x_n}{n}$$'}</MathText>
-              {revealed && <p className="text-xs text-violet-700 mt-1">(10 + 12 + 15 + 20 + 43) ÷ 5 = 100 ÷ 5 = 20</p>}
-            </div>
-          )}
-          expected={20} suffix="min"
-          explain="100 ÷ 5 = 20 min. Remarque : quatre élèves sur cinq sont EN DESSOUS de cette moyenne — le 43 la tire vers le haut."
-          explainFor={(n) => (n === 15
-            ? '15 est la valeur du milieu (la médiane), pas la moyenne. La moyenne additionne toutes les durées : 100 ÷ 5 = 20.'
-            : n === 100
-              ? '100 est la somme. Il reste à la partager entre les 5 élèves : 100 ÷ 5 = 20 min.'
-              : 'Somme ÷ effectif : (10 + 12 + 15 + 20 + 43) ÷ 5 = 20 min.')}
-          solved={q1} onAnswered={() => setQ1(true)}
-        />
+        <div className="space-y-3">
+          {/* Le module 1 a montré le repère orange bouger ; la formule et la
+              pondération par les effectifs sont posées ICI, avant les deux
+              calculs des étapes 1 et 2 qui les exigent. */}
+          <KnowledgeBrick
+            id="moyenne"
+            variant="new"
+            establishes={['moyenne', 'moyenne-ponderee']}
+            lead={<>Le repère orange du module 1, celui qui suivait l'élève déménagé : voici comment il se calcule — et ce qui se passe quand plusieurs élèves partagent la même durée.</>}
+          />
+          <NumericQuestion
+            prompt="Cinq élèves mettent 10, 12, 15, 20 et 43 minutes. Quelle est la moyenne, en minutes ?"
+            above={(revealed) => (
+              <div className="rounded-xl border border-violet-200 bg-violet-50 p-3 text-center">
+                <MathText>{'$$\\bar{x} = \\frac{x_1 + x_2 + \\dots + x_n}{n}$$'}</MathText>
+                {revealed && <p className="text-xs text-violet-700 mt-1">(10 + 12 + 15 + 20 + 43) ÷ 5 = 100 ÷ 5 = 20</p>}
+              </div>
+            )}
+            expected={20} suffix="min"
+            requires={['moyenne', 'quotient', 'effectif']}
+            explain="100 ÷ 5 = 20 min. Remarque : quatre élèves sur cinq sont EN DESSOUS de cette moyenne — le 43 la tire vers le haut."
+            explainFor={(n) => (n === 15
+              ? '15 est la valeur du milieu (la médiane), pas la moyenne. La moyenne additionne toutes les durées : 100 ÷ 5 = 20.'
+              : n === 100
+                ? '100 est la somme. Il reste à la partager entre les 5 élèves : 100 ÷ 5 = 20 min.'
+                : 'Somme ÷ effectif : (10 + 12 + 15 + 20 + 43) ÷ 5 = 20 min.')}
+            solved={q1} onAnswered={() => setQ1(true)}
+          />
+        </div>
       ),
     },
     {
@@ -61,6 +73,7 @@ export default function Module02MoyenneEtMediane() {
             </div>
           )}
           expected={22} suffix="min"
+          requires={['moyenne', 'moyenne-ponderee', 'effectif', 'quotient']}
           explain="(30 + 100 + 90) ÷ 10 = 220 ÷ 10 = 22 min. Chaque valeur compte autant de fois qu’il y a d’élèves."
           explainFor={(n) => (n === 25
             ? '25 est la moyenne des trois valeurs 10, 20 et 45 — comme s’il y avait un élève par valeur. Il faut PONDÉRER par les effectifs : 220 ÷ 10 = 22.'
@@ -79,6 +92,14 @@ export default function Module02MoyenneEtMediane() {
         <div className="space-y-3">
           <SeriesLab values={TRAJETS_A} min={0} max={60} unit="min"
             label="2de A — 20 élèves, donc effectif pair" show={{ median: true }} />
+          {/* Le repère vert du module 1 : on le nomme et on dit ce qu'il
+              partage, avant la question sur l'effectif pair. */}
+          <KnowledgeBrick
+            id="mediane"
+            variant="new"
+            compact
+            lead={<>L'autre repère — celui qui ne suivait pas l'élève déménagé — coupe la classe en deux paquets d'élèves. Le voici ci-dessus, sur la 2de A.</>}
+          />
           <NumericQuestion
             prompt="La 2de A compte 20 élèves. Les 10ᵉ et 11ᵉ valeurs de la série rangée sont 18 et 18. Quelle est la médiane, en minutes ?"
             above={(revealed) => (
@@ -88,6 +109,7 @@ export default function Module02MoyenneEtMediane() {
               </div>
             )}
             expected={18} suffix="min"
+            requires={['mediane', 'effectif', 'mediane-stat', 'ordre-nombres']}
             explain="(18 + 18) ÷ 2 = 18 min. Au moins la moitié des élèves mettent 18 min ou moins, au moins la moitié mettent 18 min ou plus."
             explainFor={() => 'Avec un effectif pair, on prend la demi-somme des deux valeurs centrales : (18 + 18) ÷ 2 = 18.'}
             solved={q3} onAnswered={() => setQ3(true)}
@@ -100,19 +122,30 @@ export default function Module02MoyenneEtMediane() {
       title: 'Laquelle choisir ?',
       done: q4,
       content: (
-        <TapQuestion
-          prompt="Dans une entreprise, presque tous les salaires tournent autour de 2 000 €, sauf trois dirigeants payés 40 000 €. Quel indicateur décrit le mieux « le salaire habituel » ?"
-          options={[
-            'La médiane, car elle n’est pas tirée par les très hauts salaires',
-            'La moyenne, car elle utilise toutes les valeurs',
-            'Les deux donnent la même chose',
-            'Ni l’une ni l’autre',
-          ]}
-          correct={0} cols={1}
-          explain="La moyenne serait gonflée par trois valeurs extrêmes et ne décrirait le salaire de presque personne. La médiane répond à « la moitié des salariés gagnent moins que… », ce qui est bien la question posée. La moyenne reste utile pour d’autres questions — par exemple la masse salariale totale."
-          explainWrong="Utiliser toutes les valeurs est justement le problème ici : trois salaires énormes déplacent la moyenne loin de ce que gagne la grande majorité. La médiane compte les personnes, pas les euros."
-          solved={q4} onAnswered={() => setQ4(true)}
-        />
+        <div className="space-y-3">
+          {/* Les deux calculs sont faits : on peut maintenant énoncer le
+              critère de choix que la question qui suit met à l'épreuve. */}
+          <KnowledgeBrick
+            id="choisir-position"
+            variant="new"
+            compact
+            lead={<>Tu sais calculer les deux. Reste à savoir laquelle répond à la question posée — et c'est la présence de valeurs extrêmes qui tranche.</>}
+          />
+          <TapQuestion
+            prompt="Dans une entreprise, presque tous les salaires tournent autour de 2 000 €, sauf trois dirigeants payés 40 000 €. Quel indicateur décrit le mieux « le salaire habituel » ?"
+            options={[
+              'La médiane, car elle n’est pas tirée par les très hauts salaires',
+              'La moyenne, car elle utilise toutes les valeurs',
+              'Les deux donnent la même chose',
+              'Ni l’une ni l’autre',
+            ]}
+            correct={0} cols={1}
+            requires={['choisir-position', 'moyenne', 'mediane', 'indicateur-stat']}
+            explain="La moyenne serait gonflée par trois valeurs extrêmes et ne décrirait le salaire de presque personne. La médiane répond à « la moitié des salariés gagnent moins que… », ce qui est bien la question posée. La moyenne reste utile pour d’autres questions — par exemple la masse salariale totale."
+            explainWrong="Utiliser toutes les valeurs est justement le problème ici : trois salaires énormes déplacent la moyenne loin de ce que gagne la grande majorité. La médiane compte les personnes, pas les euros."
+            solved={q4} onAnswered={() => setQ4(true)}
+          />
+        </div>
       ),
     },
   ];

@@ -2,37 +2,72 @@
   "lesson": "loi-grands-nombres-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "issue-evenement",
+    "equiprobable",
+    "probabilite",
+    "frequence",
+    "effectif",
+    "quotient",
+    "pourcentage",
+    "face-solide",
+    "arrondi"
+  ],
   "conceptsIntroduced": [
     {
       "id": "frequence-observee",
       "type": "formules",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module01LanceEtRegarde.jsx",
+        "line": 84,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "fluctuation",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module02DeuxSeriesJamaisPareilles.jsx",
+        "line": 63,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "loi-grands-nombres",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module03CeQueLaLoiDitVraiment.jsx",
+        "line": 113,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "deux-ecarts",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module03CeQueLaLoiDitVraiment.jsx",
+        "line": 40,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "modele-realite",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module04LeModeleEstIlBon.jsx",
+        "line": 55,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -40,7 +75,12 @@
       "id": "experience-simulation",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module01LanceEtRegarde.jsx",
+        "line": 77,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -48,13 +88,23 @@
       "id": "methode-tester-modele",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module04LeModeleEstIlBon.jsx",
+        "line": 61,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "lire-simulation",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module05SimulerEnPython.jsx",
+        "line": 39,
+        "step": 1,
+        "variant": "rappel"
+      }
     }
   ],
   "memorisation": [
@@ -62,7 +112,12 @@
       "id": "mem-independance",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module03CeQueLaLoiDitVraiment.jsx",
+        "line": 74,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -72,9 +127,19 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module00Diagnostic.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 18,
+      "requires": [
+        "probabilite",
+        "equiprobable",
+        "issue-evenement",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "prior",
+        "equiprobable": "prior",
+        "issue-evenement": "prior",
+        "face-solide": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -84,9 +149,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module00Diagnostic.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 19,
+      "requires": [
+        "probabilite",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -96,9 +167,19 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module00Diagnostic.jsx",
-      "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "probabilite",
+        "equiprobable",
+        "issue-evenement",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "prior",
+        "equiprobable": "prior",
+        "issue-evenement": "prior",
+        "face-solide": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -108,9 +189,19 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module00Diagnostic.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "frequence",
+        "effectif",
+        "quotient",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "prior",
+        "effectif": "prior",
+        "quotient": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -120,9 +211,35 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module00Diagnostic.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 22,
+      "requires": [
+        "frequence",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "prior",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "lgn-d6",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module00Diagnostic.jsx",
+      "line": 23,
+      "requires": [
+        "arrondi",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "arrondi": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -132,9 +249,21 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module01LanceEtRegarde.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 104,
+      "requires": [
+        "frequence-observee",
+        "experience-simulation",
+        "probabilite",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "frequence-observee": "established@M1",
+        "experience-simulation": "established@M1",
+        "probabilite": "prior",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -144,9 +273,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module02DeuxSeriesJamaisPareilles.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 84,
+      "requires": [
+        "fluctuation",
+        "frequence-observee",
+        "probabilite",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "fluctuation": "established@M2",
+        "frequence-observee": "established@M1",
+        "probabilite": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -156,9 +295,19 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module03CeQueLaLoiDitVraiment.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 45,
+      "requires": [
+        "deux-ecarts",
+        "frequence-observee",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "deux-ecarts": "established@M3",
+        "frequence-observee": "established@M1",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -168,9 +317,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module03CeQueLaLoiDitVraiment.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 79,
+      "requires": [
+        "mem-independance",
+        "fluctuation",
+        "probabilite",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "mem-independance": "established@M3",
+        "fluctuation": "established@M2",
+        "probabilite": "prior",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -180,9 +339,21 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module03CeQueLaLoiDitVraiment.jsx",
-      "line": 94,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 118,
+      "requires": [
+        "loi-grands-nombres",
+        "deux-ecarts",
+        "fluctuation",
+        "frequence-observee",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "loi-grands-nombres": "established@M3",
+        "deux-ecarts": "established@M3",
+        "fluctuation": "established@M2",
+        "frequence-observee": "established@M1",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -192,9 +363,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module04LeModeleEstIlBon.jsx",
-      "line": 70,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 89,
+      "requires": [
+        "modele-realite",
+        "methode-tester-modele",
+        "equiprobable",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "modele-realite": "established@M4",
+        "methode-tester-modele": "established@M4",
+        "equiprobable": "prior",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -204,9 +385,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module05SimulerEnPython.jsx",
-      "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 45,
+      "requires": [
+        "lire-simulation",
+        "boucle",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "lire-simulation": "established@M5",
+        "boucle": "established@M5",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -216,9 +405,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module05SimulerEnPython.jsx",
-      "line": 56,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "lire-simulation",
+        "loi-grands-nombres",
+        "frequence-observee",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "lire-simulation": "established@M5",
+        "loi-grands-nombres": "established@M3",
+        "frequence-observee": "established@M1",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -228,9 +427,19 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module05SimulerEnPython.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 91,
+      "requires": [
+        "lire-simulation",
+        "frequence-observee",
+        "arrondi",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "lire-simulation": "established@M5",
+        "frequence-observee": "established@M1",
+        "arrondi": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -241,8 +450,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "frequence-observee",
+        "quotient",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "frequence-observee": "established@M1",
+        "quotient": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -253,8 +470,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "frequence-observee",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "frequence-observee": "established@M1",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -265,8 +488,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "experience-simulation",
+        "mem-independance"
+      ],
+      "prerequisiteStatus": {
+        "experience-simulation": "established@M1",
+        "mem-independance": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -277,8 +506,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "loi-grands-nombres",
+        "fluctuation"
+      ],
+      "prerequisiteStatus": {
+        "loi-grands-nombres": "established@M3",
+        "fluctuation": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -289,8 +524,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mem-independance",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "mem-independance": "established@M3",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -301,8 +542,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "deux-ecarts",
+        "frequence-observee",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "deux-ecarts": "established@M3",
+        "frequence-observee": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -313,8 +562,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "fluctuation",
+        "loi-grands-nombres"
+      ],
+      "prerequisiteStatus": {
+        "fluctuation": "established@M2",
+        "loi-grands-nombres": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -325,8 +580,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "modele-realite",
+        "equiprobable"
+      ],
+      "prerequisiteStatus": {
+        "modele-realite": "established@M4",
+        "equiprobable": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -337,8 +598,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "lire-simulation",
+        "frequence-observee",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "lire-simulation": "established@M5",
+        "frequence-observee": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -349,120 +618,17 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/modules/Module06MissionFinaleLeGrandNombre.jsx",
       "line": 24,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-tester-modele",
+        "modele-realite"
+      ],
+      "prerequisiteStatus": {
+        "methode-tester-modele": "established@M4",
+        "modele-realite": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'experience-simulation' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 43,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'frequence-observee' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 61,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'fluctuation' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 84,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'loi-grands-nombres' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 106,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'deux-ecarts' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 126,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-independance' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 144,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'modele-realite' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 161,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-tester-modele' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 179,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'lire-simulation' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/loi-grands-nombres-2nde/knowledge.jsx",
-      "line": 198,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

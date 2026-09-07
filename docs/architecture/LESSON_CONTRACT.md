@@ -67,6 +67,75 @@ system requires:
   never time spent, page views, or a generic score. Practice mistakes do not
   block completion; the module exists for learning, not examination.
 
+## Progression non bloquante — INVARIANT DUR
+
+> **Une mauvaise réponse ne DOIT JAMAIS bloquer, verrouiller, piéger ni
+> empêcher l'élève de poursuivre son parcours.**
+>
+> Une réponse fausse est une **preuve pédagogique**, jamais un verrou de
+> progression. Toute interaction validée DOIT fournir un retour ciblé et un
+> chemin de sortie. L'élève PEUT réessayer, être guidé, voir la solution, ou
+> continuer vers l'activité suivante — mais le réessai NE DOIT JAMAIS être
+> obligatoire pour avancer.
+
+Violer cet invariant est un **RELEASE BLOCKER**, pas une préférence d'UX.
+
+**Quatre systèmes, à garder découplés** — une validation en échec n'implique
+jamais, à elle seule, `nextActivity.disabled = true` :
+
+| Système | Question à laquelle il répond |
+| --- | --- |
+| Validation | la réponse est-elle juste ? |
+| Retour (feedback) | quelle erreur de raisonnement l'élève a-t-il faite ? |
+| Preuve (evidence) | que nous apprend cette réponse sur le Learning Point ? |
+| Progression | l'élève peut-il continuer à apprendre ? |
+
+Concrètement, pour chaque activité interactive :
+
+```text
+réponse juste    → retour → progression
+réponse fausse   → retour ciblé → remédiation/réessai FACULTATIFS → progression
+```
+
+et jamais :
+
+```text
+réponse fausse   → verrou → cul-de-sac
+```
+
+**Ce que cela veut dire dans le code.** Le kit (`lessons/common/kit/questions.jsx`)
+appelle `onAnswered(isCorrect)` **inconditionnellement** et révèle la bonne
+réponse en cas d'erreur, sans boucle « Réessayer » : une question du kit ne
+peut pas être re-répondue. Un module DOIT donc valider son étape dès que
+l'élève a **répondu**, jamais seulement s'il a répondu **juste** :
+
+```jsx
+- onAnswered={(ok) => { if (ok) setQ2(true); }}   // ❌ cul-de-sac
++ onAnswered={() => setQ2(true)}                   // ✅
+```
+
+Sans cela, l'étape ne se valide jamais, `ContentModule` laisse `nextLink`
+à `undefined`, et le module suivant reste verrouillé
+(`packages/core/lessonAccess.js`) : l'élève doit recharger la page.
+
+**Restent conformes**, parce que le chemin de sortie existe :
+- une **manipulation rejouable** (glisser un point, relancer un robot,
+  cliquer une barre) qui n'avance que sur un geste juste — l'élève
+  recommence autant qu'il veut ;
+- un composant à **essais bornés** qui finit par révéler la solution et
+  appeler `onDone(false)` (`BuildCheck`, `ProofOrder`).
+
+**Maîtrise ≠ autorisation d'avancer.** Un élève continue son parcours alors
+qu'un Learning Point est « en cours », « à renforcer » ou « découverte » ; le
+système RECOMMANDE de la pratique, il n'enferme pas.
+
+Cet invariant ne consiste PAS à accepter toutes les réponses : la distinction
+juste / faux / partiellement juste et le retour ciblé restent entiers. Le but
+est un apprentissage **non bloquant, pas non évalué**.
+
+**Garde exécutable :** `npm run check:non-blocking`
+(`scripts/check-non-blocking.mjs`), inclus dans `npm run check:lessons`.
+
 `npm run validate:lessons` (`scripts/validate-lessons.mjs`) enforces all of
 this.
 

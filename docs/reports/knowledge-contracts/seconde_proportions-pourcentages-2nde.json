@@ -2,49 +2,93 @@
   "lesson": "proportions-pourcentages-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "quotient",
+    "numerateur",
+    "denominateur",
+    "fraction-decimale",
+    "pourcentage",
+    "proportionnalite",
+    "coefficient-proportionnalite",
+    "effectif"
+  ],
   "conceptsIntroduced": [
     {
       "id": "proportion-reference",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module01LeLyceeDe800Eleves.jsx",
+        "line": 203,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "formule-proportion",
       "type": "formules",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
+        "line": 87,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "proportion-de-proportion",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module03UnPourcentageDePourcentage.jsx",
+        "line": 75,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "etat-vs-variation",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
+        "line": 64,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "point-vs-pourcent",
       "type": "regles",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
+        "line": 71,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "formule-taux-evolution",
       "type": "formules",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
+        "line": 140,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "coefficient-multiplicateur",
       "type": "concepts",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
+        "line": 65,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -52,13 +96,23 @@
       "id": "vocab-part-tout",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module01LeLyceeDe800Eleves.jsx",
+        "line": 112,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "vocab-pourcentage",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
+        "line": 65,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -66,25 +120,45 @@
       "id": "trois-ecritures",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
+        "line": 58,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-remises-successives",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module03UnPourcentageDePourcentage.jsx",
+        "line": 119,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-coefficient-taux",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
+        "line": 127,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-lire-enonce",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
+        "line": 38,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -92,13 +166,23 @@
       "id": "mem-de-quoi",
       "type": "memoriser",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module01LeLyceeDe800Eleves.jsx",
+        "line": 241,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-k-1-plus-t",
       "type": "memoriser",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
+        "line": 72,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -109,8 +193,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient",
+        "numerateur",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior",
+        "numerateur": "prior",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -121,8 +213,18 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "fraction-decimale",
+        "quotient",
+        "numerateur",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "fraction-decimale": "prior",
+        "quotient": "prior",
+        "numerateur": "prior",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -133,8 +235,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
       "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pourcentage",
+        "proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -145,8 +253,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pourcentage",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -157,8 +273,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module00Diagnostic.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pourcentage",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "coefficient-proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -168,9 +290,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module01LeLyceeDe800Eleves.jsx",
-      "line": 134,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 147,
+      "requires": [
+        "vocab-part-tout",
+        "pourcentage",
+        "effectif",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "vocab-part-tout": "established@M1",
+        "pourcentage": "prior",
+        "effectif": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -180,9 +312,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module01LeLyceeDe800Eleves.jsx",
-      "line": 198,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 224,
+      "requires": [
+        "proportion-reference",
+        "vocab-part-tout",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "proportion-reference": "established@M1",
+        "vocab-part-tout": "established@M1",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -192,9 +332,21 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
-      "line": 64,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "formule-proportion",
+        "trois-ecritures",
+        "vocab-part-tout",
+        "pourcentage",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "formule-proportion": "established@M2",
+        "trois-ecritures": "established@M2",
+        "vocab-part-tout": "established@M1",
+        "pourcentage": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -204,9 +356,21 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
-      "line": 87,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 118,
+      "requires": [
+        "formule-proportion",
+        "proportion-reference",
+        "vocab-part-tout",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "formule-proportion": "established@M2",
+        "proportion-reference": "established@M1",
+        "vocab-part-tout": "established@M1",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -216,9 +380,23 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module02TroisEcrituresUneProportion.jsx",
-      "line": 108,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 140,
+      "requires": [
+        "trois-ecritures",
+        "vocab-pourcentage",
+        "fraction-decimale",
+        "numerateur",
+        "denominateur",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "trois-ecritures": "established@M2",
+        "vocab-pourcentage": "established@M2",
+        "fraction-decimale": "prior",
+        "numerateur": "prior",
+        "denominateur": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -228,9 +406,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module03UnPourcentageDePourcentage.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "proportion-de-proportion",
+        "proportion-reference",
+        "vocab-part-tout",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "proportion-de-proportion": "established@M3",
+        "proportion-reference": "established@M1",
+        "vocab-part-tout": "established@M1",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -240,9 +428,19 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module03UnPourcentageDePourcentage.jsx",
-      "line": 106,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 129,
+      "requires": [
+        "methode-remises-successives",
+        "proportion-de-proportion",
+        "proportion-reference",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "methode-remises-successives": "established@M3",
+        "proportion-de-proportion": "established@M3",
+        "proportion-reference": "established@M1",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -252,9 +450,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 90,
+      "requires": [
+        "point-vs-pourcent",
+        "etat-vs-variation",
+        "pourcentage",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "point-vs-pourcent": "established@M4",
+        "etat-vs-variation": "established@M4",
+        "pourcentage": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -264,9 +472,19 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 113,
+      "requires": [
+        "etat-vs-variation",
+        "point-vs-pourcent",
+        "vocab-part-tout",
+        "proportion-reference"
+      ],
+      "prerequisiteStatus": {
+        "etat-vs-variation": "established@M4",
+        "point-vs-pourcent": "established@M4",
+        "vocab-part-tout": "established@M1",
+        "proportion-reference": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -276,9 +494,21 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module04EtatOuVariation.jsx",
-      "line": 120,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 149,
+      "requires": [
+        "formule-taux-evolution",
+        "etat-vs-variation",
+        "quotient",
+        "pourcentage",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "formule-taux-evolution": "established@M4",
+        "etat-vs-variation": "established@M4",
+        "quotient": "prior",
+        "pourcentage": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -288,9 +518,21 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
-      "line": 75,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 95,
+      "requires": [
+        "coefficient-multiplicateur",
+        "mem-k-1-plus-t",
+        "trois-ecritures",
+        "pourcentage",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-multiplicateur": "established@M5",
+        "mem-k-1-plus-t": "established@M5",
+        "trois-ecritures": "established@M2",
+        "pourcentage": "prior",
+        "coefficient-proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -300,9 +542,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
-      "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 133,
+      "requires": [
+        "methode-coefficient-taux",
+        "coefficient-multiplicateur",
+        "mem-k-1-plus-t",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "methode-coefficient-taux": "established@M5",
+        "coefficient-multiplicateur": "established@M5",
+        "mem-k-1-plus-t": "established@M5",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -312,9 +564,19 @@
       "step": 4,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module05LeCoefficientMultiplicateur.jsx",
-      "line": 119,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 150,
+      "requires": [
+        "coefficient-multiplicateur",
+        "methode-coefficient-taux",
+        "mem-k-1-plus-t",
+        "trois-ecritures"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-multiplicateur": "established@M5",
+        "methode-coefficient-taux": "established@M5",
+        "mem-k-1-plus-t": "established@M5",
+        "trois-ecritures": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -324,9 +586,19 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 47,
+      "requires": [
+        "methode-lire-enonce",
+        "proportion-reference",
+        "mem-de-quoi",
+        "vocab-part-tout"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-enonce": "established@M6",
+        "proportion-reference": "established@M1",
+        "mem-de-quoi": "established@M1",
+        "vocab-part-tout": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -336,9 +608,19 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "methode-lire-enonce",
+        "formule-proportion",
+        "proportion-reference",
+        "methode-remises-successives"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-enonce": "established@M6",
+        "formule-proportion": "established@M2",
+        "proportion-reference": "established@M1",
+        "methode-remises-successives": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -348,9 +630,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 81,
+      "requires": [
+        "methode-lire-enonce",
+        "proportion-de-proportion",
+        "proportion-reference",
+        "mem-de-quoi"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-enonce": "established@M6",
+        "proportion-de-proportion": "established@M3",
+        "proportion-reference": "established@M1",
+        "mem-de-quoi": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -360,9 +652,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
-      "line": 78,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 91,
+      "requires": [
+        "methode-lire-enonce",
+        "proportion-de-proportion",
+        "formule-proportion",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-enonce": "established@M6",
+        "proportion-de-proportion": "established@M3",
+        "formule-proportion": "established@M2",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -372,9 +674,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
-      "line": 100,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 114,
+      "requires": [
+        "methode-lire-enonce",
+        "etat-vs-variation",
+        "point-vs-pourcent",
+        "mem-de-quoi"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-enonce": "established@M6",
+        "etat-vs-variation": "established@M4",
+        "point-vs-pourcent": "established@M4",
+        "mem-de-quoi": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -384,9 +696,19 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module06AtelierLireLesPourcentages.jsx",
-      "line": 114,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 129,
+      "requires": [
+        "methode-lire-enonce",
+        "coefficient-multiplicateur",
+        "mem-k-1-plus-t",
+        "etat-vs-variation"
+      ],
+      "prerequisiteStatus": {
+        "methode-lire-enonce": "established@M6",
+        "coefficient-multiplicateur": "established@M5",
+        "mem-k-1-plus-t": "established@M5",
+        "etat-vs-variation": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -396,9 +718,23 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "formule-proportion",
+        "vocab-part-tout",
+        "trois-ecritures",
+        "proportion-reference",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "formule-proportion": "established@M2",
+        "vocab-part-tout": "established@M1",
+        "trois-ecritures": "established@M2",
+        "proportion-reference": "established@M1",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -408,9 +744,21 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "formule-proportion",
+        "proportion-reference",
+        "vocab-part-tout",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "formule-proportion": "established@M2",
+        "proportion-reference": "established@M1",
+        "vocab-part-tout": "established@M1",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -420,9 +768,21 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 22,
+      "requires": [
+        "trois-ecritures",
+        "vocab-pourcentage",
+        "fraction-decimale",
+        "denominateur",
+        "numerateur"
+      ],
+      "prerequisiteStatus": {
+        "trois-ecritures": "established@M2",
+        "vocab-pourcentage": "established@M2",
+        "fraction-decimale": "prior",
+        "denominateur": "prior",
+        "numerateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -432,9 +792,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 23,
+      "requires": [
+        "proportion-de-proportion",
+        "proportion-reference",
+        "mem-de-quoi",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "proportion-de-proportion": "established@M3",
+        "proportion-reference": "established@M1",
+        "mem-de-quoi": "established@M1",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -444,9 +814,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "methode-remises-successives",
+        "proportion-de-proportion",
+        "proportion-reference",
+        "methode-lire-enonce"
+      ],
+      "prerequisiteStatus": {
+        "methode-remises-successives": "established@M3",
+        "proportion-de-proportion": "established@M3",
+        "proportion-reference": "established@M1",
+        "methode-lire-enonce": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -456,9 +836,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 25,
+      "requires": [
+        "point-vs-pourcent",
+        "etat-vs-variation",
+        "formule-taux-evolution",
+        "mem-de-quoi"
+      ],
+      "prerequisiteStatus": {
+        "point-vs-pourcent": "established@M4",
+        "etat-vs-variation": "established@M4",
+        "formule-taux-evolution": "established@M4",
+        "mem-de-quoi": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -468,9 +858,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 26,
+      "requires": [
+        "formule-taux-evolution",
+        "etat-vs-variation",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "formule-taux-evolution": "established@M4",
+        "etat-vs-variation": "established@M4",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -480,9 +880,19 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 27,
+      "requires": [
+        "mem-k-1-plus-t",
+        "coefficient-multiplicateur",
+        "methode-coefficient-taux",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "mem-k-1-plus-t": "established@M5",
+        "coefficient-multiplicateur": "established@M5",
+        "methode-coefficient-taux": "established@M5",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -492,9 +902,17 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 28,
+      "requires": [
+        "methode-coefficient-taux",
+        "coefficient-multiplicateur",
+        "mem-k-1-plus-t"
+      ],
+      "prerequisiteStatus": {
+        "methode-coefficient-taux": "established@M5",
+        "coefficient-multiplicateur": "established@M5",
+        "mem-k-1-plus-t": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -504,193 +922,22 @@
       "step": null,
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/modules/Module07MissionFinaleDeQuoiParleTOn.jsx",
-      "line": 24,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 29,
+      "requires": [
+        "coefficient-multiplicateur",
+        "mem-k-1-plus-t",
+        "trois-ecritures",
+        "methode-coefficient-taux"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-multiplicateur": "established@M5",
+        "mem-k-1-plus-t": "established@M5",
+        "trois-ecritures": "established@M2",
+        "methode-coefficient-taux": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'proportion-reference' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 36,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-part-tout' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 55,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-de-quoi' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 67,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'formule-proportion' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 81,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'trois-ecritures' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 98,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocab-pourcentage' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 115,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'proportion-de-proportion' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 128,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-remises-successives' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 151,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'etat-vs-variation' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 165,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'point-vs-pourcent' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 185,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'formule-taux-evolution' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 199,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'coefficient-multiplicateur' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 215,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-coefficient-taux' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 237,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-k-1-plus-t' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 249,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-lire-enonce' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde/knowledge.jsx",
-      "line": 263,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

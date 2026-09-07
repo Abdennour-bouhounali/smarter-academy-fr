@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 
@@ -92,7 +92,18 @@ export default function Module01LePrixDuVelo() {
               Le vélo a perdu <strong>4 %</strong> au total.
               {' '}<span className="text-slate-500">Continue à régler les deux curseurs : l’arrivée ne revient à 100 € que si l’un des taux est nul.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le geste vient de montrer que la seconde évolution a porté sur
+              120 € et non sur 100 € : c'est l'instant où « la base bouge »
+              a un sens, et les étapes 2 à 4 vont s'appuyer dessus. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="base-mouvante"
+              variant="new"
+              lead={<>Tu viens de voir la baisse retirer <strong>24 €</strong> là où la hausse n’en avait ajouté que 20. Le pourcentage était le même — pas le nombre sur lequel il s’applique.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Choisis +20 % pour la première évolution et −20 % pour la seconde.</Feedback>
           )}
         </div>
@@ -160,7 +171,18 @@ export default function Module01LePrixDuVelo() {
               96 €. L’ordre ne change pas l’arrivée — indice sérieux sur la nature de l’opération qui combine
               deux évolutions.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les deux ordres viennent de donner la même arrivée : le constat
+              est fait, on peut le nommer avant que l'étape 4 ne s'en serve. */}
+          {done3 && (
+            <KnowledgeBrick
+              id="ordre-sans-importance"
+              variant="new"
+              compact
+              lead={<>Deux chemins, deux valeurs intermédiaires différentes (120 € ou 80 €), et pourtant la même arrivée.</>}
+            />
+          )}
+          {!done3 && (
             <Feedback tone="info">Essaie les deux ordres.</Feedback>
           )}
         </div>
@@ -171,19 +193,31 @@ export default function Module01LePrixDuVelo() {
       title: 'Pourquoi ça ne s’annule pas',
       done: done4,
       content: (
-        <TapQuestion
-          prompt="Pourquoi la baisse de 20 % ne compense-t-elle pas la hausse de 20 % ?"
-          options={[
-            'Parce que les deux pourcentages ne s’appliquent pas à la même valeur : +20 % sur 100, mais −20 % sur 120',
-            'Parce qu’une baisse compte toujours plus qu’une hausse',
-            'Parce qu’il faudrait faire la baisse en premier',
-            'Parce que 20 % n’est pas un nombre rond',
-          ]}
-          correct={0} cols={1}
-          explain="La hausse ajoute 20 € (20 % de 100), la baisse retire 24 € (20 % de 120). Chaque évolution se rapporte à la valeur courante, et celle-ci a changé entre les deux."
-          explainWrong="Tu l’as vu à l’étape 3 : l’ordre n’y change rien, et à l’étape 2 le phénomène existe pour tous les taux. Ce qui compte, c’est que le second pourcentage porte sur une base déjà modifiée."
-          solved={done4} onAnswered={() => setQ4(true)}
-        />
+        <div className="space-y-3">
+          <TapQuestion
+            prompt="Pourquoi la baisse de 20 % ne compense-t-elle pas la hausse de 20 % ?"
+            options={[
+              'Parce que les deux pourcentages ne s’appliquent pas à la même valeur : +20 % sur 100, mais −20 % sur 120',
+              'Parce qu’une baisse compte toujours plus qu’une hausse',
+              'Parce qu’il faudrait faire la baisse en premier',
+              'Parce que 20 % n’est pas un nombre rond',
+            ]}
+            correct={0} cols={1}
+            requires={['base-mouvante', 'ordre-sans-importance', 'pourcentage']}
+            explain="La hausse ajoute 20 € (20 % de 100), la baisse retire 24 € (20 % de 120). Chaque évolution se rapporte à la valeur courante, et celle-ci a changé entre les deux."
+            explainWrong="Tu l’as vu à l’étape 3 : l’ordre n’y change rien, et à l’étape 2 le phénomène existe pour tous les taux. Ce qui compte, c’est que le second pourcentage porte sur une base déjà modifiée."
+            solved={done4} onAnswered={() => setQ4(true)}
+          />
+          {/* Le fait est maintenant expliqué : il devient le repère que
+              l'élève emporte dans toute la leçon. */}
+          {done4 && (
+            <KnowledgeBrick
+              id="mem-ne-sannule-pas"
+              variant="new"
+              lead={<>C’est le chiffre à retenir de ce module — il reviendra à chaque chaîne.</>}
+            />
+          )}
+        </div>
       ),
     },
   ];

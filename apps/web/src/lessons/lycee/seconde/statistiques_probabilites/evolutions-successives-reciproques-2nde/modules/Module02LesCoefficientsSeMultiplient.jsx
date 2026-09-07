@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -44,7 +44,18 @@ export default function Module02LesCoefficientsSeMultiplient() {
               deux maillons ou trois, hausses ou baisses mélangées. Et comme la multiplication est commutative,
               <strong> l’ordre ne change rien</strong> : c’est exactement ce que tu avais constaté au module 1.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Trois chaînes ont donné le même verdict : le produit affiché est
+              l'arrivée. La règle peut être nommée avant que l'étape 2 ne la
+              demande sur un cas à trois maillons. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="coefficient-global"
+              variant="new"
+              lead={<>Sur chacune de tes chaînes, le produit des coefficients affiché valait exactement le rapport arrivée / départ.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Chaînes essayées : {tested.size} sur 3. Essaie aussi trois évolutions.</Feedback>
           )}
         </div>
@@ -55,8 +66,10 @@ export default function Module02LesCoefficientsSeMultiplient() {
       title: 'Un seul coefficient pour toute la chaîne',
       done: q2,
       content: (
+        <div className="space-y-3">
         <NumericQuestion
           prompt="Un loyer subit trois hausses : +10 %, puis +5 %, puis +2 %. Par quel nombre le loyer initial est-il multiplié au total ? (arrondi au millième)"
+          requires={['coefficient-global', 'pourcentage', 'coefficient-proportionnalite', 'arrondi']}
           above={(revealed) => (
             <div className="rounded-xl border border-violet-200 bg-violet-50 p-3 text-center">
               <MathText>{'$$k_{\\text{global}} = k_1 \\times k_2 \\times k_3$$'}</MathText>
@@ -73,6 +86,16 @@ export default function Module02LesCoefficientsSeMultiplient() {
               : 'On multiplie les trois coefficients : 1,10 × 1,05 × 1,02 = 1,1781.')}
           solved={q2} onAnswered={() => setQ2(true)}
         />
+        {/* Le calcul vient d'être fait une fois en entier : on peut poser la
+            marche à suivre, que l'étape 3 réclamera sur un cas mixte. */}
+        {q2 && (
+          <KnowledgeBrick
+            id="methode-composer"
+            variant="new"
+            lead={<>Tu viens de faire les trois gestes dans l’ordre : traduire chaque taux, multiplier, appliquer.</>}
+          />
+        )}
+        </div>
       ),
     },
     {
@@ -84,6 +107,7 @@ export default function Module02LesCoefficientsSeMultiplient() {
           prompt="Un article subit une hausse de 50 % puis une baisse de 40 %. Quel est le coefficient global ?"
           options={['1,5 × 0,6 = 0,9', '1,5 + 0,6 = 2,1', '1,5 − 0,4 = 1,1', '0,5 × 0,4 = 0,2']}
           correct={0} cols={2}
+          requires={['methode-composer', 'coefficient-global', 'pourcentage']}
           explain="k = 1,50 × 0,60 = 0,90 : au total, l’article a perdu 10 %, malgré une hausse « plus grande » que la baisse. Le produit tranche, pas la comparaison des taux."
           explainWrong="Les coefficients sont 1,50 (hausse de 50 %) et 0,60 (baisse de 40 %, il reste 60 %). On les multiplie : 1,50 × 0,60 = 0,90."
           solved={q3} onAnswered={() => setQ3(true)}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Histogram, groupIntoClasses, formatNumber } from '../../../../../common/stats';
@@ -66,9 +66,18 @@ export default function Module03LesFrequencesCumulees() {
               </tbody>
             </table>
           </div>
+          {/* Le tableau vient de faire apparaître la ligne « cumul » : c'est
+              l'instant où le concept a un sens concret, avant de le nommer
+              et de l'exiger dans la question qui suit. */}
+          <KnowledgeBrick
+            id="frequences-cumulees"
+            variant="new"
+            lead={<>La ligne « Cumul croissant » que tu viens de lire compte, à chaque borne, tous les individus situés en dessous.</>}
+          />
           <NumericQuestion
             prompt="Combien de recharges ont duré moins de 40 minutes ?"
             expected={98} suffix="recharges"
+            requires={['frequences-cumulees', 'effectif']}
             explain="4 + 39 + 55 = 98. C’est exactement le cumul croissant lu sous la classe [30 ; 40[ : le cumul répond d’un seul coup d’œil."
             explainFor={(n) => (n === 55
               ? '55 est l’effectif de la seule classe [30 ; 40[. « Moins de 40 min » inclut aussi les deux classes précédentes : 4 + 39 + 55 = 98.'
@@ -100,15 +109,22 @@ export default function Module03LesFrequencesCumulees() {
               <span>5 %</span><span>50 %</span><span>95 %</span>
             </div>
           </div>
-          {done2 ? (
-            <Feedback tone="ok">
+          {done2 ? (<Feedback tone="ok">
               Le polygone répond à <strong>toutes</strong> les questions « combien en dessous de… » sans
               recalculer : on entre par une hauteur, on ressort par une durée (ou l’inverse). Il part
               de <strong>0 %</strong> à la borne gauche de la première classe et atteint
               <strong> 100 %</strong> à la borne droite de la dernière — il ne redescend jamais.
               {' '}<span className="text-slate-500">Continue à déplacer la lecture.</span>
-            </Feedback>
-          ) : (
+            </Feedback>) : null}
+          {done2 && (
+            <KnowledgeBrick
+              id="polygone-cumule"
+              variant="new"
+              compact
+              lead={<>Le déplacement que tu viens de faire, d’une hauteur vers une durée, est la lecture du polygone que tu construiras toi-même.</>}
+            />
+          )}
+          {!done2 && (
             <Feedback tone="info">Positions de lecture essayées : {seen.size} sur 3.</Feedback>
           )}
         </div>
@@ -133,6 +149,7 @@ export default function Module03LesFrequencesCumulees() {
               <strong> croissant de 0 % à 100 %</strong> : c’est ce qui permet de le lire dans les deux sens.
             </Feedback>
           )}
+          requires={['polygone-cumule', 'frequences-cumulees']}
           solved={done3} onAnswered={() => setQ3(true)}
         />
       ),
@@ -151,6 +168,7 @@ export default function Module03LesFrequencesCumulees() {
             'La recharge moyenne dure 81 % de 50 min',
           ]}
           correct={0} cols={1}
+          requires={['polygone-cumule', 'frequence']}
           explain="Le cumul CROISSANT compte tout ce qui est en dessous du seuil : 162 recharges sur 200, soit 81 %. Le complément à 100 % donne les 19 % restantes."
           explainWrong="Le cumul croissant se lit « en dessous de » : à 50 min, 162 recharges sur 200 sont déjà comptées, soit 81 %. Ce n’est pas un effectif, c’est une fréquence."
           solved={done4} onAnswered={() => setQ4(true)}

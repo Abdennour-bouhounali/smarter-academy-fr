@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -82,7 +82,26 @@ export default function Module03NeJamaisRetournerLaCondition() {
               150 élèves du numérateur sont exactement les mêmes. Échanger les rôles de la condition et de
               l’événement, c’est changer d’univers : les deux nombres n’ont aucune raison d’être égaux.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* La bascule vient de montrer les deux nombres côte à côte : on peut
+              maintenant poser la règle, puis le moyen de la retenir — avant la
+              question de l'étape 2, qui l'exige sur un exemple hors du lycée. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="inversion"
+              variant="new"
+              lead={<>Tu viens de basculer la condition et d’obtenir <strong>75 %</strong> puis <strong>33 %</strong> avec les mêmes 150 élèves au numérateur. Voilà la règle que ce basculement vient de démontrer.</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="mem-indice"
+              variant="new"
+              compact
+              lead={<>Et le repère pour ne plus jamais se tromper de sens, en regardant simplement où est écrit l’indice.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Essaie l’autre sens du conditionnement pour comparer.</Feedback>
           )}
         </div>
@@ -107,6 +126,7 @@ export default function Module03NeJamaisRetournerLaCondition() {
               'Le raisonnement est juste',
             ]}
             correct={0} cols={1}
+            requires={['inversion', 'mem-indice', 'notation-sachant', 'univers-restreint', 'probabilite']}
             explain="La statistique porte sur l’univers des ACCIDENTS : parmi eux, beaucoup sont proches du domicile. Mais la question du risque porte sur l’univers des TRAJETS : la plupart des trajets sont eux aussi proches du domicile. On a inversé la condition — exactement ce que tu viens de faire avec les internes et les clubs."
             explainWrong="Le problème n’est pas la fiabilité des chiffres : c’est le sens du conditionnement. Un pourcentage calculé parmi les accidents ne dit rien du risque par trajet."
             solved={done2} onAnswered={() => setQ2(true)}

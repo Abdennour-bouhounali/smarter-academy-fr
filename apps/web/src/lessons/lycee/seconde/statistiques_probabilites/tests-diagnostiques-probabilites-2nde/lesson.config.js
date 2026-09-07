@@ -47,6 +47,25 @@ export const LESSON_CONFIG = {
   id: 'tests-diagnostiques-probabilites-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md). Cette leçon est
+  // la DERNIÈRE du chapitre : elle ne réinvente ni le vocabulaire du hasard,
+  // ni la lecture d'un tableau croisé. Toutes sont diagnostiquées au module 0 :
+  //   — le langage des probabilités du collège (3e) : expérience aléatoire,
+  //     issue et événement, probabilité, et la fréquence qui l'approche ;
+  //   — l'effectif d'un groupe (3e) — ici on COMPTE des personnes avant de
+  //     rapporter quoi que ce soit, c'est le choix didactique de la leçon ;
+  //   — le tableau à double entrée (6e), support des quatre cases ;
+  //   — pourcentage (5e), quotient, dénominateur, proportionnalité et arrondi
+  //     (6e) : les outils avec lesquels on divise une case par un total.
+  // La leçon enseigne le reste : les quatre catégories du test, la prévalence,
+  // sensibilité et spécificité, la valeur prédictive positive, et l'inversion
+  // du conditionnement.
+  priorKnowledge: [
+    'experience-aleatoire', 'issue-evenement', 'probabilite', 'frequence',
+    'effectif', 'tableau-double-entree',
+    'pourcentage', 'quotient', 'denominateur', 'proportionnalite', 'arrondi',
+  ],
   title: 'Tests diagnostiques',
   description:
     "Un test juste 99 fois sur 100 annonce un résultat positif : la personne est-elle malade ? Compter les quatre groupes d'une population de 10 000 pour découvrir que la réponse est « probablement pas » — et comprendre exactement pourquoi.",
@@ -57,7 +76,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '🧪',
-  estimatedDurationMin: 80,
+  estimatedDurationMin: 81,
   skills: [
     'Modéliser un test diagnostique par quatre effectifs : VP, FP, VN, FN',
     'Définir et calculer sensibilité et spécificité',
@@ -81,7 +100,7 @@ export const LESSON_CONFIG = {
     ],
   },
   modules: [
-    { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — sur les probabilités conditionnelles.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
+    { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — sur le langage du hasard, les probabilités conditionnelles et la lecture d’un tableau.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 5, difficulty: 1, actionText: 'Vérifier mes bases' },
     { id: '01', number: 1, slug: 'dix-mille-personnes', path: `${LESSON_BASE_PATH}/dix-mille-personnes`, title: 'Dix mille personnes, quatre groupes', desc: 'Répartis toi-même la population, puis compte les positifs. Le résultat va te surprendre.', stage: 'trigger', teachesLearningPointIds: ['seconde_tests-diagnostiques-probabilites-2nde_P1', 'seconde_tests-diagnostiques-probabilites-2nde_P2'], color: 'indigo', style: 'featured', estimatedMin: 15, difficulty: 1, actionText: 'Répartir la population' },
     { id: '02', number: 2, slug: 'les-quatre-cases', path: `${LESSON_BASE_PATH}/les-quatre-cases`, title: 'Les quatre cases du test', desc: 'Vrai positif, faux positif, vrai négatif, faux négatif : nommer ce que tu viens de compter.', stage: 'discovery', teachesLearningPointIds: ['seconde_tests-diagnostiques-probabilites-2nde_P3', 'seconde_tests-diagnostiques-probabilites-2nde_P4', 'seconde_tests-diagnostiques-probabilites-2nde_P5'], color: 'violet', style: 'featured', estimatedMin: 13, difficulty: 2, actionText: 'Nommer les cases' },
     { id: '03', number: 3, slug: 'sensibilite-et-specificite', path: `${LESSON_BASE_PATH}/sensibilite-et-specificite`, title: 'Sensibilité et spécificité', desc: 'Deux qualités du test — qui se lisent toutes les deux « sachant l’état de santé ».', stage: 'discovery', teachesLearningPointIds: ['seconde_tests-diagnostiques-probabilites-2nde_P6', 'seconde_tests-diagnostiques-probabilites-2nde_P7'], color: 'sky', style: 'featured', estimatedMin: 13, difficulty: 3, actionText: 'Mesurer le test' },

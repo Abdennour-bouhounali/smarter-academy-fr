@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { formatPercent, proportion } from '../../../../../common/stats';
@@ -69,7 +69,8 @@ export default function Module01LeLyceeDe800Eleves() {
   const changeReading = (r, react) => {
     setReading(r);
     const next = new Set(seenReadings); next.add(r); setSeenReadings(next);
-    if (!done3 && next.size >= 2 && seenSubs.size >= 2) react?.(true);
+    // seenSubs est un TABLEAU (seenReadings est le Set) : c'est bien .length.
+    if (!done3 && next.size >= 2 && seenSubs.length >= 2) react?.(true);
   };
 
   const pSubInPart = proportion(sub, part);
@@ -103,7 +104,19 @@ export default function Module01LeLyceeDe800Eleves() {
               <strong> élèves</strong> ; le pourcentage, lui, se calcule tout seul. Il <strong>dépend des deux nombres</strong>.
               {' '}<span className="text-slate-500">Continue à glisser si tu veux : ici, {part} sur {TOTAL} font {formatPercent(proportion(part, TOTAL), 1)}.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le geste vient de montrer que le pourcentage se calcule à partir
+              de DEUX nombres : on peut maintenant nommer ce quotient et son
+              tout, avant la première question (étape 2) qui les exige. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="vocab-part-tout"
+              variant="new"
+              compact
+              lead={<>Tu viens de pousser des <strong>élèves</strong> et de voir un <strong>pourcentage</strong> se calculer tout seul. Ces deux nombres portent un nom.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               {part} demi-pensionnaires sur {TOTAL} → {formatPercent(proportion(part, TOTAL), 1)}.
               Découpages essayés : {seenParts.length} sur 3.
@@ -140,6 +153,7 @@ export default function Module01LeLyceeDe800Eleves() {
               'On ne peut pas comparer',
             ]}
             correct={1} cols={1}
+            requires={['vocab-part-tout', 'pourcentage', 'effectif', 'quotient']}
             explain="200 sur 800 = 25 % ; 200 sur 400 = 50 %. Le même effectif ne dit rien tant qu’on ne dit pas SUR COMBIEN."
             explainWrong="Le nombre 200 est identique, mais il n’est pas rapporté au même tout : 200/800 = 0,25 et 200/400 = 0,5."
             solved={done2} onAnswered={() => setQ2(true)}
@@ -181,7 +195,18 @@ export default function Module01LeLyceeDe800Eleves() {
               les 800 élèves. Le nombre du haut ne bouge pas — c’est celui du bas, le <strong>tout de référence</strong>,
               qui change tout. <span className="text-slate-500">Glisse encore et bascule entre les deux lectures : l’écart demeure.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les deux lectures viennent de donner DEUX nombres pour les mêmes
+              internes : c'est l'instant où « proportion » et « tout de
+              référence » ont un sens, et l'étape 4 va les exiger. */}
+          {done3 && (
+            <KnowledgeBrick
+              id="proportion-reference"
+              variant="new"
+              lead={<>Les mêmes <strong>{sub} internes</strong>, deux pourcentages. Ce n’est pas une contradiction : ce sont deux quotients qui n’ont pas le même dénominateur.</>}
+            />
+          )}
+          {!done3 && (
             <Feedback tone="info">
               {seenSubs.length < 2 ? 'Change le nombre d’internes. ' : ''}
               {seenReadings.size < 2 ? 'Puis change ce que tu regardes avec les deux boutons.' : ''}
@@ -195,6 +220,7 @@ export default function Module01LeLyceeDe800Eleves() {
       title: '« 30 % » — de quoi ?',
       done: done4,
       content: (
+        <div className="space-y-3">
         <TapQuestion
           prompt="Un article de journal titre : « 30 % des jeunes de ce lycée sont internes ». Que manque-t-il pour que la phrase soit vérifiable ?"
           options={[
@@ -204,10 +230,21 @@ export default function Module01LeLyceeDe800Eleves() {
             'La date de l’enquête',
           ]}
           correct={1} cols={1}
+          requires={['proportion-reference', 'vocab-part-tout', 'pourcentage']}
           explain="Un pourcentage n’est jamais un nombre isolé : il rapporte une part à un tout. Sans le tout, « 30 % » ne désigne aucune quantité — 30 % de 800 et 30 % de 480 ne sont pas le même nombre d’élèves."
           explainWrong="Tu viens de le voir à l’étape 3 : les mêmes internes valent deux pourcentages différents selon le groupe de référence. C’est ce tout qu’il faut préciser."
           solved={done4} onAnswered={() => setQ4(true)}
         />
+        {/* La question du module, une fois résolue, devient la consigne que
+            l'élève emportera dans toute la leçon. */}
+        {done4 && (
+          <KnowledgeBrick
+            id="mem-de-quoi"
+            variant="new"
+            lead={<>C’est le réflexe de toute la leçon — et il vaut aussi pour les évolutions du module 4.</>}
+          />
+        )}
+        </div>
       ),
     },
   ];

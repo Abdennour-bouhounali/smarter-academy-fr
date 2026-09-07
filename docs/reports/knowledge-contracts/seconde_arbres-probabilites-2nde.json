@@ -2,31 +2,58 @@
   "lesson": "arbres-probabilites-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "experience-aleatoire",
+    "issue-evenement",
+    "probabilite",
+    "equiprobable",
+    "frequence",
+    "quotient"
+  ],
   "conceptsIntroduced": [
     {
       "id": "poids-conditionnels",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module02CeQuePesentLesBranches.jsx",
+        "line": 55,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "somme-branches",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module02CeQuePesentLesBranches.jsx",
+        "line": 108,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "produit-chemin",
       "type": "formules",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module03MultiplierLeLongDunChemin.jsx",
+        "line": 71,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "somme-chemins",
       "type": "formules",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module04AdditionnerLesChemins.jsx",
+        "line": 61,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -34,7 +61,12 @@
       "id": "arbre-structure",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module01ConstruisLArbre.jsx",
+        "line": 55,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -42,7 +74,12 @@
       "id": "methode-situation-arbre",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module05AtelierDeLArbreALaPhrase.jsx",
+        "line": 39,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -50,7 +87,12 @@
       "id": "mem-produit-somme",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module04AdditionnerLesChemins.jsx",
+        "line": 104,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -61,8 +103,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "probabilite",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "prior",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -73,8 +121,20 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "probabilite",
+        "issue-evenement",
+        "equiprobable",
+        "quotient",
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "prior",
+        "issue-evenement": "prior",
+        "equiprobable": "prior",
+        "quotient": "prior",
+        "frequence": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -85,8 +145,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module00Diagnostic.jsx",
       "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -97,8 +161,12 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module00Diagnostic.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -109,8 +177,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module00Diagnostic.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "experience-aleatoire",
+        "issue-evenement",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "experience-aleatoire": "prior",
+        "issue-evenement": "prior",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -120,9 +196,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module01ConstruisLArbre.jsx",
-      "line": 59,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 69,
+      "requires": [
+        "arbre-structure",
+        "experience-aleatoire",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "arbre-structure": "established@M1",
+        "experience-aleatoire": "prior",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -133,8 +217,18 @@
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module02CeQuePesentLesBranches.jsx",
       "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "arbre-structure",
+        "frequence",
+        "quotient",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "arbre-structure": "established@M1",
+        "frequence": "prior",
+        "quotient": "prior",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -144,9 +238,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module02CeQuePesentLesBranches.jsx",
-      "line": 62,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 73,
+      "requires": [
+        "poids-conditionnels",
+        "arbre-structure",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "poids-conditionnels": "established@M2",
+        "arbre-structure": "established@M1",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -156,9 +258,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module02CeQuePesentLesBranches.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 114,
+      "requires": [
+        "somme-branches",
+        "arbre-structure",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "somme-branches": "established@M2",
+        "arbre-structure": "established@M1",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -169,8 +279,18 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module03MultiplierLeLongDunChemin.jsx",
       "line": 58,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "arbre-structure",
+        "poids-conditionnels",
+        "probabilite",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "arbre-structure": "established@M1",
+        "poids-conditionnels": "established@M2",
+        "probabilite": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -180,9 +300,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module03MultiplierLeLongDunChemin.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 96,
+      "requires": [
+        "produit-chemin",
+        "poids-conditionnels",
+        "arbre-structure"
+      ],
+      "prerequisiteStatus": {
+        "produit-chemin": "established@M3",
+        "poids-conditionnels": "established@M2",
+        "arbre-structure": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -192,9 +320,19 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module04AdditionnerLesChemins.jsx",
-      "line": 57,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 67,
+      "requires": [
+        "somme-chemins",
+        "produit-chemin",
+        "arbre-structure",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "somme-chemins": "established@M4",
+        "produit-chemin": "established@M3",
+        "arbre-structure": "established@M1",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -204,9 +342,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module04AdditionnerLesChemins.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "mem-produit-somme",
+        "somme-chemins",
+        "produit-chemin"
+      ],
+      "prerequisiteStatus": {
+        "mem-produit-somme": "established@M4",
+        "somme-chemins": "established@M4",
+        "produit-chemin": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -216,9 +362,21 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module05AtelierDeLArbreALaPhrase.jsx",
-      "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "methode-situation-arbre",
+        "produit-chemin",
+        "somme-chemins",
+        "poids-conditionnels",
+        "arbre-structure"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation-arbre": "established@M5",
+        "produit-chemin": "established@M3",
+        "somme-chemins": "established@M4",
+        "poids-conditionnels": "established@M2",
+        "arbre-structure": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -228,9 +386,21 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module05AtelierDeLArbreALaPhrase.jsx",
-      "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "methode-situation-arbre",
+        "produit-chemin",
+        "somme-chemins",
+        "poids-conditionnels",
+        "arbre-structure"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation-arbre": "established@M5",
+        "produit-chemin": "established@M3",
+        "somme-chemins": "established@M4",
+        "poids-conditionnels": "established@M2",
+        "arbre-structure": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -240,9 +410,21 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module05AtelierDeLArbreALaPhrase.jsx",
-      "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "methode-situation-arbre",
+        "produit-chemin",
+        "somme-chemins",
+        "poids-conditionnels",
+        "arbre-structure"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation-arbre": "established@M5",
+        "produit-chemin": "established@M3",
+        "somme-chemins": "established@M4",
+        "poids-conditionnels": "established@M2",
+        "arbre-structure": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -253,8 +435,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "arbre-structure",
+        "experience-aleatoire",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "arbre-structure": "established@M1",
+        "experience-aleatoire": "prior",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -265,8 +455,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "arbre-structure",
+        "methode-situation-arbre",
+        "experience-aleatoire"
+      ],
+      "prerequisiteStatus": {
+        "arbre-structure": "established@M1",
+        "methode-situation-arbre": "established@M5",
+        "experience-aleatoire": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -277,8 +475,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "poids-conditionnels",
+        "arbre-structure",
+        "probabilite"
+      ],
+      "prerequisiteStatus": {
+        "poids-conditionnels": "established@M2",
+        "arbre-structure": "established@M1",
+        "probabilite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -289,8 +495,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "somme-branches",
+        "arbre-structure",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "somme-branches": "established@M2",
+        "arbre-structure": "established@M1",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -301,8 +515,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "produit-chemin",
+        "poids-conditionnels",
+        "arbre-structure"
+      ],
+      "prerequisiteStatus": {
+        "produit-chemin": "established@M3",
+        "poids-conditionnels": "established@M2",
+        "arbre-structure": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -313,8 +535,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "produit-chemin",
+        "poids-conditionnels",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "produit-chemin": "established@M3",
+        "poids-conditionnels": "established@M2",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -325,8 +555,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "somme-chemins",
+        "produit-chemin",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "somme-chemins": "established@M4",
+        "produit-chemin": "established@M3",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -337,8 +575,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mem-produit-somme",
+        "somme-chemins",
+        "produit-chemin"
+      ],
+      "prerequisiteStatus": {
+        "mem-produit-somme": "established@M4",
+        "somme-chemins": "established@M4",
+        "produit-chemin": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -349,8 +595,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-situation-arbre",
+        "produit-chemin",
+        "somme-chemins",
+        "poids-conditionnels"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation-arbre": "established@M5",
+        "produit-chemin": "established@M3",
+        "somme-chemins": "established@M4",
+        "poids-conditionnels": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -361,96 +617,19 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/modules/Module06MissionFinaleLArbre.jsx",
       "line": 24,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-situation-arbre",
+        "produit-chemin",
+        "arbre-structure"
+      ],
+      "prerequisiteStatus": {
+        "methode-situation-arbre": "established@M5",
+        "produit-chemin": "established@M3",
+        "arbre-structure": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'arbre-structure' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/knowledge.jsx",
-      "line": 46,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'poids-conditionnels' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/knowledge.jsx",
-      "line": 68,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'somme-branches' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/knowledge.jsx",
-      "line": 86,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'produit-chemin' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/knowledge.jsx",
-      "line": 102,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'somme-chemins' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/knowledge.jsx",
-      "line": 122,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-produit-somme' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/knowledge.jsx",
-      "line": 143,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-situation-arbre' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/arbres-probabilites-2nde/knowledge.jsx",
-      "line": 157,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

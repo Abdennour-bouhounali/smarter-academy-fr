@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { parseDec } from '@smarter-academy/core';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -44,6 +44,15 @@ export default function Module04DesFrequencesAuxProbabilites() {
               </p>
             </div>
           </div>
+          {/* Les deux encadrés viennent de montrer le MÊME 150/200 sous deux
+              statuts : c'est le point d'appui de l'item, posé avant la question
+              qui demande de nommer la différence. */}
+          <KnowledgeBrick
+            id="frequence-probabilite"
+            variant="new"
+            compact
+            lead={<>Tu viens de lire le même quotient <strong>150/200</strong> dans les deux encadrés, avec deux statuts différents. C’est exactement ce que la carte retient.</>}
+          />
           <TapQuestion
             prompt="Qu’est-ce qui distingue une fréquence conditionnelle d’une probabilité conditionnelle ?"
             options={[
@@ -53,6 +62,7 @@ export default function Module04DesFrequencesAuxProbabilites() {
               'Rien du tout : ce sont deux noms pour la même chose',
             ]}
             correct={0} cols={1}
+            requires={['frequence-probabilite', 'notation-sachant', 'univers-restreint', 'probabilite', 'quotient']}
             explain="Le quotient est rigoureusement le même : 150/200. Ce qui change est son statut — la fréquence RÉSUME une série d’observations, la probabilité PRÉVOIT le résultat d’une expérience aléatoire. C’est d’ailleurs la loi des grands nombres qui justifie qu’on passe de l’une à l’autre : sur un grand nombre de tirages, la fréquence observée s’approche de la probabilité."
             explainWrong="Les deux se calculent exactement pareil (effectif de l’intersection ÷ effectif de la condition), et les deux peuvent s’écrire en pourcentage. La différence est de nature, pas de formule."
             solved={q1} onAnswered={() => setQ1(true)}
@@ -80,19 +90,29 @@ export default function Module04DesFrequencesAuxProbabilites() {
               0,25 × 0,75 = <strong>0,1875</strong> — et c’est bien 150/800.
             </div>
           </div>
+          {/* La formule vient d'être relue à l'endroit sur les internes en club
+              (0,25 × 0,75 = 0,1875 = 150/800) : on pose l'item juste avant de la
+              demander sur la ville. */}
+          <KnowledgeBrick
+            id="probabilites-composees"
+            variant="new"
+            compact
+            lead={<>Tu viens de vérifier la formule sur les internes en club : 0,25 × 0,75 redonne bien 150/800. Elle mérite d’entrer dans ta carte.</>}
+          />
           <NumericQuestion
             prompt="Dans une ville, 40 % des habitants font du vélo. Parmi les cyclistes, 30 % vont travailler à vélo chaque jour. Quelle est la probabilité qu’un habitant tiré au hasard soit un cycliste quotidien ? (en %)"
             expected={(n) => Math.abs(n - 12) < 0.3}
             parse={parseDec}
             display="12 %"
             suffix="%"
+            requires={['probabilites-composees', 'notation-sachant', 'univers-restreint', 'probabilite', 'pourcentage']}
             explain="On compose : 0,40 × 0,30 = 0,12, soit 12 %. Les 30 % ne concernent que les cyclistes ; on ne peut pas les appliquer à toute la ville."
             explainFor={(n) => (Math.abs(n - 30) < 0.5
               ? 'Les 30 % sont une probabilité CONDITIONNELLE : ils portent sur les seuls cyclistes. Pour revenir à toute la ville, il faut les multiplier par la probabilité d’être cycliste.'
               : Math.abs(n - 70) < 0.5
                 ? 'On ne additionne pas des probabilités ici : il s’agit de deux étapes successives, donc d’un produit.'
                 : null)}
-            solved={q2} onAnswered={(ok) => { if (ok) setQ2(true); }}
+            solved={q2} onAnswered={() => setQ2(true)}
           />
         </div>
       ),
@@ -111,6 +131,7 @@ export default function Module04DesFrequencesAuxProbabilites() {
             'La moitié des élèves du lycée sont externes',
           ]}
           correct={0} cols={1}
+          requires={['notation-sachant', 'mem-indice', 'univers-restreint', 'probabilite']}
           explain="L’indice « externe » désigne la population dont on parle : la phrase commence donc par « parmi les externes ». Les trois autres formulations décrivent P_club(externe), P(externe ∩ club) et P(externe) — trois nombres différents."
           explainWrong="Repère l’indice : il donne le groupe de référence. P_externe(club) parle des externes, et dit quelle part d’entre eux est en club."
           solved={q3} onAnswered={() => setQ3(true)}

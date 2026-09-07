@@ -2,37 +2,70 @@
   "lesson": "frequences-conditionnelles-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "quotient",
+    "numerateur",
+    "denominateur",
+    "pourcentage",
+    "proportionnalite",
+    "tableau-double-entree",
+    "effectif"
+  ],
   "conceptsIntroduced": [
     {
       "id": "population-reference",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module01LaMemeCaseTroisNombres.jsx",
+        "line": 73,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "trois-frequences",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module02MarginaleConjointeConditionnelle.jsx",
+        "line": 35,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "somme-conditionnelles",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module02MarginaleConjointeConditionnelle.jsx",
+        "line": 91,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "inversion-condition",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module03ParmiLesUnsParmiLesAutres.jsx",
+        "line": 98,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "frequences-vers-effectifs",
       "type": "formules",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module04DesFrequencesAuxEffectifs.jsx",
+        "line": 52,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [],
@@ -41,19 +74,34 @@
       "id": "comparer-sous-populations",
       "type": "methodes",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module03ParmiLesUnsParmiLesAutres.jsx",
+        "line": 147,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-completer-tableau",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module04DesFrequencesAuxEffectifs.jsx",
+        "line": 117,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "lire-un-article",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module05AtelierDonneesReelles.jsx",
+        "line": 47,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -61,7 +109,12 @@
       "id": "mem-parmi",
       "type": "memoriser",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module03ParmiLesUnsParmiLesAutres.jsx",
+        "line": 103,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -72,8 +125,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient",
+        "pourcentage",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior",
+        "pourcentage": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -84,8 +145,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient",
+        "numerateur",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior",
+        "numerateur": "prior",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -96,8 +165,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pourcentage",
+        "proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -108,8 +183,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tableau-double-entree",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "tableau-double-entree": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -120,8 +201,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module00Diagnostic.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "tableau-double-entree",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "tableau-double-entree": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -131,9 +218,21 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module01LaMemeCaseTroisNombres.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 90,
+      "requires": [
+        "population-reference",
+        "quotient",
+        "denominateur",
+        "pourcentage",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "population-reference": "established@M1",
+        "quotient": "prior",
+        "denominateur": "prior",
+        "pourcentage": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -143,9 +242,23 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module02MarginaleConjointeConditionnelle.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "trois-frequences",
+        "population-reference",
+        "quotient",
+        "pourcentage",
+        "effectif",
+        "tableau-double-entree"
+      ],
+      "prerequisiteStatus": {
+        "trois-frequences": "established@M2",
+        "population-reference": "established@M1",
+        "quotient": "prior",
+        "pourcentage": "prior",
+        "effectif": "prior",
+        "tableau-double-entree": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -155,9 +268,19 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module02MarginaleConjointeConditionnelle.jsx",
-      "line": 98,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 99,
+      "requires": [
+        "somme-conditionnelles",
+        "trois-frequences",
+        "population-reference",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "somme-conditionnelles": "established@M2",
+        "trois-frequences": "established@M2",
+        "population-reference": "established@M1",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -167,9 +290,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module03ParmiLesUnsParmiLesAutres.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "inversion-condition",
+        "mem-parmi",
+        "denominateur",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "inversion-condition": "established@M3",
+        "mem-parmi": "established@M3",
+        "denominateur": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -179,9 +312,21 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module03ParmiLesUnsParmiLesAutres.jsx",
-      "line": 127,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 157,
+      "requires": [
+        "comparer-sous-populations",
+        "population-reference",
+        "quotient",
+        "pourcentage",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "comparer-sous-populations": "established@M3",
+        "population-reference": "established@M1",
+        "quotient": "prior",
+        "pourcentage": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -191,9 +336,19 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module04DesFrequencesAuxEffectifs.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 57,
+      "requires": [
+        "frequences-vers-effectifs",
+        "pourcentage",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "frequences-vers-effectifs": "established@M4",
+        "pourcentage": "prior",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -203,9 +358,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module04DesFrequencesAuxEffectifs.jsx",
-      "line": 67,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 75,
+      "requires": [
+        "frequences-vers-effectifs",
+        "population-reference",
+        "pourcentage",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "frequences-vers-effectifs": "established@M4",
+        "population-reference": "established@M1",
+        "pourcentage": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -215,9 +380,19 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module04DesFrequencesAuxEffectifs.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 94,
+      "requires": [
+        "frequences-vers-effectifs",
+        "population-reference",
+        "pourcentage",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "frequences-vers-effectifs": "established@M4",
+        "population-reference": "established@M1",
+        "pourcentage": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -227,9 +402,19 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module04DesFrequencesAuxEffectifs.jsx",
-      "line": 104,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "methode-completer-tableau",
+        "frequences-vers-effectifs",
+        "somme-conditionnelles",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "methode-completer-tableau": "established@M4",
+        "frequences-vers-effectifs": "established@M4",
+        "somme-conditionnelles": "established@M2",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -239,9 +424,21 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module05AtelierDonneesReelles.jsx",
-      "line": 44,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 52,
+      "requires": [
+        "lire-un-article",
+        "population-reference",
+        "quotient",
+        "pourcentage",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-article": "established@M5",
+        "population-reference": "established@M1",
+        "quotient": "prior",
+        "pourcentage": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -251,9 +448,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module05AtelierDonneesReelles.jsx",
-      "line": 54,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 63,
+      "requires": [
+        "lire-un-article",
+        "inversion-condition",
+        "mem-parmi"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-article": "established@M5",
+        "inversion-condition": "established@M3",
+        "mem-parmi": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -263,9 +468,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module05AtelierDonneesReelles.jsx",
-      "line": 77,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 87,
+      "requires": [
+        "comparer-sous-populations",
+        "population-reference",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "comparer-sous-populations": "established@M3",
+        "population-reference": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -276,8 +489,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "population-reference",
+        "mem-parmi",
+        "denominateur"
+      ],
+      "prerequisiteStatus": {
+        "population-reference": "established@M1",
+        "mem-parmi": "established@M3",
+        "denominateur": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -288,8 +509,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "trois-frequences",
+        "population-reference",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "trois-frequences": "established@M2",
+        "population-reference": "established@M1",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -300,8 +529,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "trois-frequences",
+        "quotient",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "trois-frequences": "established@M2",
+        "quotient": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -312,8 +549,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "somme-conditionnelles",
+        "trois-frequences"
+      ],
+      "prerequisiteStatus": {
+        "somme-conditionnelles": "established@M2",
+        "trois-frequences": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -324,8 +567,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "inversion-condition",
+        "mem-parmi"
+      ],
+      "prerequisiteStatus": {
+        "inversion-condition": "established@M3",
+        "mem-parmi": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -336,8 +585,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "inversion-condition",
+        "mem-parmi"
+      ],
+      "prerequisiteStatus": {
+        "inversion-condition": "established@M3",
+        "mem-parmi": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -348,8 +603,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "comparer-sous-populations",
+        "population-reference"
+      ],
+      "prerequisiteStatus": {
+        "comparer-sous-populations": "established@M3",
+        "population-reference": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -360,8 +621,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "somme-conditionnelles",
+        "frequences-vers-effectifs"
+      ],
+      "prerequisiteStatus": {
+        "somme-conditionnelles": "established@M2",
+        "frequences-vers-effectifs": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -372,8 +639,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "frequences-vers-effectifs",
+        "methode-completer-tableau"
+      ],
+      "prerequisiteStatus": {
+        "frequences-vers-effectifs": "established@M4",
+        "methode-completer-tableau": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -384,120 +657,19 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/modules/Module06MissionFinaleLeDenominateur.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-completer-tableau",
+        "inversion-condition",
+        "lire-un-article"
+      ],
+      "prerequisiteStatus": {
+        "methode-completer-tableau": "established@M4",
+        "inversion-condition": "established@M3",
+        "lire-un-article": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'population-reference' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 45,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'trois-frequences' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 67,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'somme-conditionnelles' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 85,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'inversion-condition' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 102,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'comparer-sous-populations' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 122,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-parmi' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 133,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'frequences-vers-effectifs' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 147,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-completer-tableau' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 167,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'lire-un-article' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/knowledge.jsx",
-      "line": 185,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

@@ -37,7 +37,7 @@ export function lyceeTable() {
 }
 
 /**
- * Les quatre catégories, pour PopulationGrid. L'ordre de remplissage
+ * Les quatre catégories, pour PopulationBar. L'ordre de remplissage
  * regroupe d'abord les internes : la condition « interne » éteint alors un
  * bloc CONTIGU de pastilles, ce qui rend l'univers restreint lisible d'un
  * coup d'œil (un damier ne montrerait rien).

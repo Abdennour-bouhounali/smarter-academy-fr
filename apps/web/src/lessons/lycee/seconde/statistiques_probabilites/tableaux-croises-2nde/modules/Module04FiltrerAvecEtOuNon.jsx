@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -64,7 +64,18 @@ export default function Module04FiltrerAvecEtOuNon() {
               et le <strong>NON</strong> le complémentaire.
               {' '}<span className="text-slate-500">Continue à composer des filtres.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les pastilles ne se sont allumées qu'une fois sur le OU : la règle
+              des trois filtres peut être posée avant que les étapes 2 et 3 ne
+              demandent de la calculer. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="filtres-logiques"
+              variant="new"
+              lead={<>Tu viens de composer un OU et un NON, et de voir les pastilles s’allumer <strong>une seule fois</strong> chacune. Voilà ce que comptent tes trois filtres.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               {!usedOu ? 'Choisis une classe ET une activité, puis passe l’opérateur à OU. ' : ''}
               {!usedNon ? 'Essaie aussi un bouton NON.' : ''}
@@ -81,6 +92,7 @@ export default function Module04FiltrerAvecEtOuNon() {
         <NumericQuestion
           prompt="Il y a 19 danseurs et 20 élèves de 2de B ; 6 élèves de 2de B font de la danse. Combien d’élèves sont « en 2de B OU à la danse » ?"
           expected={33} suffix="élèves"
+          requires={['filtres-logiques', 'effectifs-marginaux', 'effectif']}
           explain="19 + 20 − 6 = 33. On additionne les deux groupes puis on retire l’intersection, comptée deux fois. C’est la formule des cardinaux : n(A ou B) = n(A) + n(B) − n(A et B)."
           explainFor={(n) => (n === 39
             ? '39 = 19 + 20 : tu as compté deux fois les 6 élèves qui vérifient les deux critères. Il faut retirer l’intersection : 39 − 6 = 33.'
@@ -105,6 +117,7 @@ export default function Module04FiltrerAvecEtOuNon() {
             'On ne peut pas savoir sans le tableau complet',
           ]}
           correct={0} cols={2}
+          requires={['filtres-logiques', 'effectif']}
           explain="Le NON désigne le complémentaire dans la population : 60 − 20 = 40 élèves. Sa seule donnée nécessaire est l’effectif total et celui du groupe nié."
           explainWrong="Nier un critère revient à prendre tous les individus qui ne le vérifient pas : 60 − 20 = 40. Le tableau croisé complet n’est pas nécessaire."
           solved={done3} onAnswered={() => setQ3(true)}

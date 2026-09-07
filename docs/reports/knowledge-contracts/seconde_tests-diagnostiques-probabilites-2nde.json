@@ -2,25 +2,52 @@
   "lesson": "tests-diagnostiques-probabilites-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "experience-aleatoire",
+    "issue-evenement",
+    "probabilite",
+    "frequence",
+    "effectif",
+    "tableau-double-entree",
+    "pourcentage",
+    "quotient",
+    "denominateur",
+    "proportionnalite",
+    "arrondi"
+  ],
   "conceptsIntroduced": [
     {
       "id": "quatre-groupes",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module01DixMillePersonnes.jsx",
+        "line": 82,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "sensibilite-specificite",
       "type": "formules",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module03SensibiliteEtSpecificite.jsx",
+        "line": 38,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "valeur-predictive",
       "type": "formules",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module04LeTestEstPositifEtAlors.jsx",
+        "line": 77,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -28,7 +55,12 @@
       "id": "vocabulaire-cases",
       "type": "vocabulaire",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module02LesQuatreCases.jsx",
+        "line": 38,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -36,7 +68,12 @@
       "id": "methode-affirmation-test",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module05AtelierAffirmations.jsx",
+        "line": 27,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -44,19 +81,52 @@
       "id": "mem-inversion-test",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module04LeTestEstPositifEtAlors.jsx",
+        "line": 121,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
+    {
+      "questionId": "td-d0",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module00Diagnostic.jsx",
+      "line": 19,
+      "requires": [
+        "experience-aleatoire",
+        "issue-evenement",
+        "probabilite",
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "experience-aleatoire": "prior",
+        "issue-evenement": "prior",
+        "probabilite": "prior",
+        "frequence": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
     {
       "questionId": "td-d1",
       "module": 0,
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "probabilite",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "prior",
+        "issue-evenement": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -66,9 +136,33 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "probabilite",
+        "issue-evenement"
+      ],
+      "prerequisiteStatus": {
+        "probabilite": "prior",
+        "issue-evenement": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "td-d2b",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module00Diagnostic.jsx",
+      "line": 22,
+      "requires": [
+        "tableau-double-entree",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "tableau-double-entree": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -78,9 +172,21 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 23,
+      "requires": [
+        "quotient",
+        "denominateur",
+        "effectif",
+        "pourcentage",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior",
+        "denominateur": "prior",
+        "effectif": "prior",
+        "pourcentage": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -90,9 +196,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 24,
+      "requires": [
+        "pourcentage",
+        "proportionnalite",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "proportionnalite": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -102,9 +216,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module00Diagnostic.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 25,
+      "requires": [
+        "pourcentage",
+        "effectif",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "effectif": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -114,9 +236,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module01DixMillePersonnes.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 101,
+      "requires": [
+        "quatre-groupes",
+        "effectif",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "quatre-groupes": "established@M1",
+        "effectif": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -126,9 +256,15 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module02LesQuatreCases.jsx",
-      "line": 40,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 43,
+      "requires": [
+        "vocabulaire-cases",
+        "quatre-groupes"
+      ],
+      "prerequisiteStatus": {
+        "vocabulaire-cases": "established@M2",
+        "quatre-groupes": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -138,9 +274,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module02LesQuatreCases.jsx",
-      "line": 58,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 62,
+      "requires": [
+        "vocabulaire-cases",
+        "quatre-groupes"
+      ],
+      "prerequisiteStatus": {
+        "vocabulaire-cases": "established@M2",
+        "quatre-groupes": "established@M1"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,9 +292,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module02LesQuatreCases.jsx",
-      "line": 74,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 79,
+      "requires": [
+        "vocabulaire-cases",
+        "quatre-groupes",
+        "tableau-double-entree",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "vocabulaire-cases": "established@M2",
+        "quatre-groupes": "established@M1",
+        "tableau-double-entree": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,9 +314,19 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module03SensibiliteEtSpecificite.jsx",
-      "line": 44,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 49,
+      "requires": [
+        "sensibilite-specificite",
+        "vocabulaire-cases",
+        "quotient",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "sensibilite-specificite": "established@M3",
+        "vocabulaire-cases": "established@M2",
+        "quotient": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +336,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module03SensibiliteEtSpecificite.jsx",
-      "line": 71,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 77,
+      "requires": [
+        "sensibilite-specificite",
+        "vocabulaire-cases",
+        "quotient",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "sensibilite-specificite": "established@M3",
+        "vocabulaire-cases": "established@M2",
+        "quotient": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +358,13 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module03SensibiliteEtSpecificite.jsx",
-      "line": 96,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 103,
+      "requires": [
+        "sensibilite-specificite"
+      ],
+      "prerequisiteStatus": {
+        "sensibilite-specificite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +374,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module04LeTestEstPositifEtAlors.jsx",
-      "line": 97,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 99,
+      "requires": [
+        "valeur-predictive",
+        "sensibilite-specificite",
+        "quotient",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "valeur-predictive": "established@M4",
+        "sensibilite-specificite": "established@M3",
+        "quotient": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +396,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module04LeTestEstPositifEtAlors.jsx",
-      "line": 117,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 126,
+      "requires": [
+        "mem-inversion-test",
+        "valeur-predictive",
+        "sensibilite-specificite"
+      ],
+      "prerequisiteStatus": {
+        "mem-inversion-test": "established@M4",
+        "valeur-predictive": "established@M4",
+        "sensibilite-specificite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,9 +416,19 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module05AtelierAffirmations.jsx",
-      "line": 29,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 36,
+      "requires": [
+        "methode-affirmation-test",
+        "valeur-predictive",
+        "sensibilite-specificite",
+        "mem-inversion-test"
+      ],
+      "prerequisiteStatus": {
+        "methode-affirmation-test": "established@M5",
+        "valeur-predictive": "established@M4",
+        "sensibilite-specificite": "established@M3",
+        "mem-inversion-test": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +438,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module05AtelierAffirmations.jsx",
-      "line": 29,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 36,
+      "requires": [
+        "methode-affirmation-test",
+        "valeur-predictive",
+        "sensibilite-specificite",
+        "mem-inversion-test"
+      ],
+      "prerequisiteStatus": {
+        "methode-affirmation-test": "established@M5",
+        "valeur-predictive": "established@M4",
+        "sensibilite-specificite": "established@M3",
+        "mem-inversion-test": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,9 +460,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module05AtelierAffirmations.jsx",
-      "line": 29,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 36,
+      "requires": [
+        "methode-affirmation-test",
+        "valeur-predictive",
+        "sensibilite-specificite",
+        "mem-inversion-test"
+      ],
+      "prerequisiteStatus": {
+        "methode-affirmation-test": "established@M5",
+        "valeur-predictive": "established@M4",
+        "sensibilite-specificite": "established@M3",
+        "mem-inversion-test": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -258,9 +482,19 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module05AtelierAffirmations.jsx",
-      "line": 29,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 36,
+      "requires": [
+        "methode-affirmation-test",
+        "valeur-predictive",
+        "sensibilite-specificite",
+        "mem-inversion-test"
+      ],
+      "prerequisiteStatus": {
+        "methode-affirmation-test": "established@M5",
+        "valeur-predictive": "established@M4",
+        "sensibilite-specificite": "established@M3",
+        "mem-inversion-test": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -271,8 +505,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quatre-groupes",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "quatre-groupes": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -283,8 +523,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quatre-groupes",
+        "pourcentage",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quatre-groupes": "established@M1",
+        "pourcentage": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -295,8 +543,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "vocabulaire-cases"
+      ],
+      "prerequisiteStatus": {
+        "vocabulaire-cases": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -307,8 +559,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "vocabulaire-cases"
+      ],
+      "prerequisiteStatus": {
+        "vocabulaire-cases": "established@M2"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -319,8 +575,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "sensibilite-specificite",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "sensibilite-specificite": "established@M3",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -331,8 +593,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "sensibilite-specificite",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "sensibilite-specificite": "established@M3",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -343,8 +611,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "valeur-predictive",
+        "sensibilite-specificite"
+      ],
+      "prerequisiteStatus": {
+        "valeur-predictive": "established@M4",
+        "sensibilite-specificite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -355,8 +629,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mem-inversion-test",
+        "valeur-predictive",
+        "sensibilite-specificite"
+      ],
+      "prerequisiteStatus": {
+        "mem-inversion-test": "established@M4",
+        "valeur-predictive": "established@M4",
+        "sensibilite-specificite": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -367,8 +649,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-affirmation-test",
+        "sensibilite-specificite",
+        "valeur-predictive"
+      ],
+      "prerequisiteStatus": {
+        "methode-affirmation-test": "established@M5",
+        "sensibilite-specificite": "established@M3",
+        "valeur-predictive": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -379,84 +669,17 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/modules/Module06MissionFinaleLeTest.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-affirmation-test",
+        "valeur-predictive"
+      ],
+      "prerequisiteStatus": {
+        "methode-affirmation-test": "established@M5",
+        "valeur-predictive": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'quatre-groupes' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/knowledge.jsx",
-      "line": 49,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'vocabulaire-cases' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/knowledge.jsx",
-      "line": 71,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'sensibilite-specificite' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/knowledge.jsx",
-      "line": 88,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'valeur-predictive' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/knowledge.jsx",
-      "line": 111,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-inversion-test' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/knowledge.jsx",
-      "line": 134,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-affirmation-test' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/knowledge.jsx",
-      "line": 150,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

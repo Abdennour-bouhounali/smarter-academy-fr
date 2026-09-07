@@ -38,6 +38,39 @@ export const LESSON_CONFIG = {
   id: 'loi-grands-nombres-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes venues du
+  // collège et toutes diagnostiquées par le module 0 :
+  //   — le vocabulaire du hasard de 3e : issue et événement, dé équilibré /
+  //     issues équiprobables, probabilité d'un événement. La 2nde n'invente
+  //     rien de tout cela : elle interroge le STATUT de l'équiprobabilité
+  //     (module 4), pas le mot ;
+  //   — la fréquence de 3e et l'effectif qu'on lui rapporte, ainsi que le
+  //     quotient (6e) et le pourcentage (5e) qui l'écrivent ;
+  //   — la face d'un solide (6e), qui sert seulement à décrire le dé ;
+  //   — l'arrondi (6e), demandé au module 5 pour lire un résultat de
+  //     simulation à une décimale donnée.
+  // La leçon enseigne le reste : simulation et répétitions indépendantes,
+  // fluctuation d'échantillonnage, loi des grands nombres et ses deux
+  // contre-sens, modèle confronté aux données, lecture d'un script. Deux
+  // notions déjà croisées ailleurs sont RE-POSÉES au point d'emploi par une
+  // brique plutôt que supposées : « expérience aléatoire » au module 1, la
+  // « boucle » d'un programme (6e) au module 5.
+  priorKnowledge: [
+    'issue-evenement', 'equiprobable', 'probabilite',
+    'frequence', 'effectif', 'quotient', 'pourcentage', 'face-solide', 'arrondi',
+  ],
+  knowledgeAudit: {
+    ignore: [
+      // « a tendance à grandir » (M03, distracteur de la boss e6) et « la
+      // tendance d'ensemble » (GapExplorer) emploient « tendance » au sens
+      // courant — une direction qu'on observe dans une série de nombres —
+      // jamais au sens 3e de « tendance d'un nuage de points » (droite qui
+      // résume un nuage). Aucune question de cette leçon ne demande de
+      // tracer ou lire une tendance de nuage de points.
+      { term: 'tendance', reason: 'emploi courant (« a tendance à ») pour décrire l’écart en nombre, hors périmètre du sens 3e (tendance d’un nuage de points)' },
+    ],
+  },
   title: 'Loi des grands nombres',
   description:
     "Lancer soi-même dix fois, puis cent, puis dix mille : voir la fréquence sauter dans tous les sens au début, puis se resserrer autour de la probabilité sans jamais s'y poser exactement. Comprendre ce que la loi promet — et ce qu'elle ne promet pas.",
@@ -48,7 +81,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '🎲',
-  estimatedDurationMin: 70,
+  estimatedDurationMin: 72,
   skills: [
     'Simuler une expérience aléatoire et la répéter un grand nombre de fois',
     'Calculer une fréquence observée et la comparer à la probabilité du modèle',

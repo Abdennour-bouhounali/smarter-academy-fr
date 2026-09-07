@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -74,7 +74,35 @@ export default function Module01DeuxCentsRecharges() {
               L’amplitude est un <strong>choix</strong>, et ce choix change ce qu’on voit.
               {' '}<span className="text-slate-500">Continue à la régler.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le geste vient de fabriquer les tranches et de montrer qu'elles
+              résument la série : on peut les nommer, dire ce qu'elles coûtent,
+              puis dire comment se règle leur largeur — les trois avant la
+              première question, à l'étape 2. */}
+          {done2 && (
+            <KnowledgeBrick
+              id="regroupement-classes"
+              variant="new"
+              lead={<>Tu viens de remplacer 200 durées toutes différentes par une poignée de tranches, et de voir une forme apparaître.</>}
+            />
+          )}
+          {done2 && (
+            <KnowledgeBrick
+              id="vocab-classe-amplitude"
+              variant="new"
+              compact
+              lead={<>Les tranches que tu règles, et le nombre que tu fais glisser, portent chacun un nom.</>}
+            />
+          )}
+          {done2 && (
+            <KnowledgeBrick
+              id="choix-amplitude"
+              variant="new"
+              compact
+              lead={<>Le peigne de 2 min et les deux barres de 40 min viennent de te montrer les deux façons de rater ce réglage.</>}
+            />
+          )}
+          {!done2 && (
             <Feedback tone="info">
               {!seenFine ? 'Essaie l’amplitude la plus fine (2 min). ' : ''}
               {!seenLarge ? 'Puis la plus large (40 min).' : ''}
@@ -108,6 +136,7 @@ export default function Module01DeuxCentsRecharges() {
               'Le même tableau que pour une série de notes',
             ]}
             correct={0} cols={1}
+            requires={['regroupement-classes', 'serie-statistique', 'effectif']}
             explain="Sur une grandeur CONTINUE mesurée finement, deux valeurs coïncident presque jamais. Le tableau d’effectifs classique se réduit à la liste des données : il ne résume rien. C’est exactement le problème que ton découpage vient de résoudre."
             explainWrong="Chaque durée n’apparaît qu’une fois : le tableau aurait autant de lignes que d’individus. C’est ce qui distingue une variable continue d’une variable discrète comme une note sur 20."
             solved={done1} onAnswered={() => setQ1(true)}
@@ -129,6 +158,7 @@ export default function Module01DeuxCentsRecharges() {
             'Sa durée exacte et son rang',
           ]}
           correct={0} cols={1}
+          requires={['regroupement-classes', 'vocab-classe-amplitude', 'indicateur-stat']}
           explain="Le regroupement rend la série lisible, mais il PERD le détail : « 64 recharges entre 40 et 50 min » ne dit pas si l’une durait 41 ou 49 min. C’est pourquoi les indicateurs calculés à partir des classes seront des ESTIMATIONS."
           explainWrong="Les données brutes existent toujours, mais le tableau regroupé ne les contient plus : il ne retient que le nombre d’individus par tranche. C’est le prix de la lisibilité."
           solved={done3} onAnswered={() => setQ3(true)}

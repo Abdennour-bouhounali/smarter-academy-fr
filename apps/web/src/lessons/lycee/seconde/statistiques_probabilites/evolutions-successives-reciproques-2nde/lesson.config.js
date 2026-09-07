@@ -35,6 +35,23 @@ export const LESSON_CONFIG = {
   id: 'evolutions-successives-reciproques-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md). Toutes sont
+  // diagnostiquées par le module 0 :
+  //   — le pourcentage lui-même et la proportionnalité qui le porte : ils
+  //     viennent du collège (5e/6e) et la leçon « Proportions et pourcentages »
+  //     les a repris ; ici on ENCHAÎNE des pourcentages, on ne les définit plus ;
+  //   — le quotient, dont le taux d'évolution (V_f − V_i)/V_i est un cas ;
+  //   — le coefficient de proportionnalité, dont le coefficient multiplicateur
+  //     k = 1 + t d'UNE évolution est la forme installée par la leçon
+  //     précédente — cette leçon-ci se contente d'en faire le produit ;
+  //   — l'arrondi (6e), employé dans les consignes de calcul (« au millième »).
+  // La leçon enseigne le reste : la base mouvante, le produit des coefficients,
+  // le taux global, l'évolution réciproque et la remontée d'une chaîne.
+  priorKnowledge: [
+    'pourcentage', 'proportionnalite', 'coefficient-proportionnalite',
+    'quotient', 'arrondi',
+  ],
   title: 'Évolutions successives et réciproques',
   description:
     "Faire subir à un prix deux évolutions de suite et constater que +20 % puis −20 % ne ramène pas au point de départ, puis découvrir que seuls les coefficients se composent — par produit pour enchaîner, par inverse pour revenir en arrière — et s'en servir pour retrouver une valeur initiale.",

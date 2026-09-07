@@ -2,49 +2,90 @@
   "lesson": "evolutions-successives-reciproques-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "pourcentage",
+    "proportionnalite",
+    "coefficient-proportionnalite",
+    "quotient",
+    "arrondi"
+  ],
   "conceptsIntroduced": [
     {
       "id": "base-mouvante",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module01LePrixDuVelo.jsx",
+        "line": 100,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "ordre-sans-importance",
       "type": "regles",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module01LePrixDuVelo.jsx",
+        "line": 178,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "coefficient-global",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module02LesCoefficientsSeMultiplient.jsx",
+        "line": 52,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "taux-global",
       "type": "formules",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module03LeTauxGlobal.jsx",
+        "line": 58,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "somme-jamais",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module03LeTauxGlobal.jsx",
+        "line": 101,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "evolution-reciproque",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module04RevenirAuDepart.jsx",
+        "line": 95,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "formule-taux-reciproque",
       "type": "formules",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module04RevenirAuDepart.jsx",
+        "line": 134,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [],
@@ -53,25 +94,45 @@
       "id": "methode-composer",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module02LesCoefficientsSeMultiplient.jsx",
+        "line": 92,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "retrouver-valeur-initiale",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module05RetrouverLaValeurInitiale.jsx",
+        "line": 37,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "verification-systematique",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module05RetrouverLaValeurInitiale.jsx",
+        "line": 65,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-choisir-operation",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module06AtelierLireLesEvolutions.jsx",
+        "line": 38,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -79,13 +140,23 @@
       "id": "mem-ne-sannule-pas",
       "type": "memoriser",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module01LePrixDuVelo.jsx",
+        "line": 214,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "mem-inverse-pas-oppose",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module04RevenirAuDepart.jsx",
+        "line": 164,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -96,8 +167,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module00Diagnostic.jsx",
       "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pourcentage",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "coefficient-proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -108,8 +185,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module00Diagnostic.jsx",
       "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pourcentage",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "coefficient-proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -120,8 +203,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module00Diagnostic.jsx",
       "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-proportionnalite",
+        "pourcentage",
+        "proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "prior",
+        "pourcentage": "prior",
+        "proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -132,8 +223,14 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module00Diagnostic.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quotient",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -144,8 +241,16 @@
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module00Diagnostic.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "pourcentage",
+        "proportionnalite",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "prior",
+        "proportionnalite": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -155,9 +260,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module01LePrixDuVelo.jsx",
-      "line": 174,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 197,
+      "requires": [
+        "base-mouvante",
+        "ordre-sans-importance",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "base-mouvante": "established@M1",
+        "ordre-sans-importance": "established@M1",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -167,9 +280,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module02LesCoefficientsSeMultiplient.jsx",
-      "line": 61,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "coefficient-global",
+        "pourcentage",
+        "coefficient-proportionnalite",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-global": "established@M2",
+        "pourcentage": "prior",
+        "coefficient-proportionnalite": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -179,9 +302,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module02LesCoefficientsSeMultiplient.jsx",
-      "line": 83,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 106,
+      "requires": [
+        "methode-composer",
+        "coefficient-global",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "methode-composer": "established@M2",
+        "coefficient-global": "established@M2",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -191,9 +322,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module03LeTauxGlobal.jsx",
-      "line": 69,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 82,
+      "requires": [
+        "taux-global",
+        "coefficient-global",
+        "pourcentage",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "taux-global": "established@M3",
+        "coefficient-global": "established@M2",
+        "pourcentage": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -203,9 +344,19 @@
       "step": 3,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module03LeTauxGlobal.jsx",
-      "line": 92,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 116,
+      "requires": [
+        "somme-jamais",
+        "taux-global",
+        "coefficient-global",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "somme-jamais": "established@M3",
+        "taux-global": "established@M3",
+        "coefficient-global": "established@M2",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -215,9 +366,19 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module03LeTauxGlobal.jsx",
-      "line": 115,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 140,
+      "requires": [
+        "somme-jamais",
+        "taux-global",
+        "coefficient-global",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "somme-jamais": "established@M3",
+        "taux-global": "established@M3",
+        "coefficient-global": "established@M2",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -227,9 +388,15 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module04RevenirAuDepart.jsx",
-      "line": 106,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 119,
+      "requires": [
+        "evolution-reciproque",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "evolution-reciproque": "established@M4",
+        "coefficient-proportionnalite": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -239,9 +406,17 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module04RevenirAuDepart.jsx",
-      "line": 124,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 149,
+      "requires": [
+        "formule-taux-reciproque",
+        "evolution-reciproque",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "formule-taux-reciproque": "established@M4",
+        "evolution-reciproque": "established@M4",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -251,9 +426,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module05RetrouverLaValeurInitiale.jsx",
-      "line": 35,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "retrouver-valeur-initiale",
+        "evolution-reciproque",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-valeur-initiale": "established@M5",
+        "evolution-reciproque": "established@M4",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -263,9 +446,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module05RetrouverLaValeurInitiale.jsx",
-      "line": 58,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 80,
+      "requires": [
+        "retrouver-valeur-initiale",
+        "evolution-reciproque",
+        "formule-taux-reciproque",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-valeur-initiale": "established@M5",
+        "evolution-reciproque": "established@M4",
+        "formule-taux-reciproque": "established@M4",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -275,9 +468,19 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module05RetrouverLaValeurInitiale.jsx",
-      "line": 81,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "retrouver-valeur-initiale",
+        "verification-systematique",
+        "coefficient-global",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-valeur-initiale": "established@M5",
+        "verification-systematique": "established@M5",
+        "coefficient-global": "established@M2",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -287,9 +490,19 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module06AtelierLireLesEvolutions.jsx",
-      "line": 36,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 44,
+      "requires": [
+        "methode-choisir-operation",
+        "coefficient-global",
+        "somme-jamais",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-operation": "established@M6",
+        "coefficient-global": "established@M2",
+        "somme-jamais": "established@M3",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -299,9 +512,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module06AtelierLireLesEvolutions.jsx",
-      "line": 50,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 59,
+      "requires": [
+        "methode-composer",
+        "coefficient-global",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "methode-composer": "established@M2",
+        "coefficient-global": "established@M2",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -311,9 +532,21 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module06AtelierLireLesEvolutions.jsx",
-      "line": 72,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 82,
+      "requires": [
+        "methode-choisir-operation",
+        "coefficient-global",
+        "somme-jamais",
+        "base-mouvante",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-operation": "established@M6",
+        "coefficient-global": "established@M2",
+        "somme-jamais": "established@M3",
+        "base-mouvante": "established@M1",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -323,9 +556,17 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module06AtelierLireLesEvolutions.jsx",
-      "line": 86,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 97,
+      "requires": [
+        "methode-composer",
+        "coefficient-global",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "methode-composer": "established@M2",
+        "coefficient-global": "established@M2",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -335,9 +576,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module06AtelierLireLesEvolutions.jsx",
-      "line": 107,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 119,
+      "requires": [
+        "methode-choisir-operation",
+        "retrouver-valeur-initiale",
+        "evolution-reciproque",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "methode-choisir-operation": "established@M6",
+        "retrouver-valeur-initiale": "established@M5",
+        "evolution-reciproque": "established@M4",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -347,9 +598,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module06AtelierLireLesEvolutions.jsx",
-      "line": 121,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "retrouver-valeur-initiale",
+        "verification-systematique"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-valeur-initiale": "established@M5",
+        "verification-systematique": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -360,8 +617,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-global",
+        "methode-composer",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-global": "established@M2",
+        "methode-composer": "established@M2",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -372,8 +637,20 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-global",
+        "methode-composer",
+        "base-mouvante",
+        "mem-ne-sannule-pas",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-global": "established@M2",
+        "methode-composer": "established@M2",
+        "base-mouvante": "established@M1",
+        "mem-ne-sannule-pas": "established@M1",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -384,8 +661,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-global",
+        "taux-global",
+        "somme-jamais",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-global": "established@M2",
+        "taux-global": "established@M3",
+        "somme-jamais": "established@M3",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -396,8 +683,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-global",
+        "taux-global",
+        "somme-jamais",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-global": "established@M2",
+        "taux-global": "established@M3",
+        "somme-jamais": "established@M3",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -408,8 +705,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-global",
+        "methode-composer",
+        "somme-jamais",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-global": "established@M2",
+        "methode-composer": "established@M2",
+        "somme-jamais": "established@M3",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -420,8 +727,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "evolution-reciproque",
+        "formule-taux-reciproque",
+        "mem-inverse-pas-oppose",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "evolution-reciproque": "established@M4",
+        "formule-taux-reciproque": "established@M4",
+        "mem-inverse-pas-oppose": "established@M4",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -432,8 +749,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "evolution-reciproque",
+        "formule-taux-reciproque",
+        "mem-inverse-pas-oppose",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "evolution-reciproque": "established@M4",
+        "formule-taux-reciproque": "established@M4",
+        "mem-inverse-pas-oppose": "established@M4",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -444,8 +771,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "retrouver-valeur-initiale",
+        "methode-choisir-operation",
+        "verification-systematique",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-valeur-initiale": "established@M5",
+        "methode-choisir-operation": "established@M6",
+        "verification-systematique": "established@M5",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -456,8 +793,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "retrouver-valeur-initiale",
+        "coefficient-global",
+        "evolution-reciproque",
+        "methode-choisir-operation"
+      ],
+      "prerequisiteStatus": {
+        "retrouver-valeur-initiale": "established@M5",
+        "coefficient-global": "established@M2",
+        "evolution-reciproque": "established@M4",
+        "methode-choisir-operation": "established@M6"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -468,168 +815,23 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/modules/Module07MissionFinaleLaChaine.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "coefficient-global",
+        "taux-global",
+        "somme-jamais",
+        "mem-ne-sannule-pas",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-global": "established@M2",
+        "taux-global": "established@M3",
+        "somme-jamais": "established@M3",
+        "mem-ne-sannule-pas": "established@M1",
+        "pourcentage": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'base-mouvante' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 26,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'ordre-sans-importance' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 45,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-ne-sannule-pas' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 56,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'coefficient-global' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 70,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-composer' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 88,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'taux-global' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 108,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'somme-jamais' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 126,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'evolution-reciproque' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 141,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'formule-taux-reciproque' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 163,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-inverse-pas-oppose' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 177,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'retrouver-valeur-initiale' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 191,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'verification-systematique' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 211,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-choisir-operation' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/evolutions-successives-reciproques-2nde/knowledge.jsx",
-      "line": 225,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

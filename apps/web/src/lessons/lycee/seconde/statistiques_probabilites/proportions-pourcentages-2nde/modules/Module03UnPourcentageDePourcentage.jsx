@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -66,7 +66,19 @@ export default function Module03UnPourcentageDePourcentage() {
               <em> d’une part déjà réduite</em>. 60 % puis 25 % donne {formatPercent(0.15, 0)} du lycée —
               {' '}<strong>0,60 × 0,25 = 0,15</strong>. On <strong>multiplie</strong>, on n’additionne jamais.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* La barre vient de montrer, sur trois réglages, que le sous-groupe
+              reste plus petit que chacun des deux groupes : la règle « on
+              multiplie » se dit maintenant, avant que l'étape 2 ne demande à
+              quel tout le produit se rapporte. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="proportion-de-proportion"
+              variant="new"
+              lead={<>Tu viens de régler trois emboîtements, et jamais la petite barre n’a dépassé la grande. C’est que les deux parts se <strong>multiplient</strong>.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               Réglages essayés : {seen.size} sur 3. Actuellement {formatPercent(outer, 0)} puis {formatPercent(inner, 0)} →
               {' '}<strong>{formatPercent(combined, 2)}</strong> du lycée.
@@ -89,6 +101,7 @@ export default function Module03UnPourcentageDePourcentage() {
             'Le nombre de latinistes',
           ]}
           correct={0} cols={1}
+          requires={['proportion-de-proportion', 'proportion-reference', 'vocab-part-tout', 'pourcentage']}
           explain="Le produit de deux proportions emboîtées se rapporte au tout de la PREMIÈRE : 6 % de tous les élèves du lycée sont des secondes latinistes. Parmi les secondes seuls, ils sont 15 %."
           explainWrong="15 % est déjà la part parmi les secondes. En multipliant par 0,40, on ramène cette part au lycée entier : 6 % de tous les élèves."
           solved={q2} onAnswered={() => setQ2(true)}
@@ -100,8 +113,18 @@ export default function Module03UnPourcentageDePourcentage() {
       title: 'Deux remises l’une après l’autre',
       done: q3,
       content: (
+        <div className="space-y-3">
+        {/* Le même emboîtement, mais sur des prix : ce qu'on garde après une
+            remise est lui-même une part. On le pose avant de le faire calculer. */}
+        <KnowledgeBrick
+          id="methode-remises-successives"
+          variant="new"
+          compact
+          lead={<>Une remise laisse une <strong>part du prix</strong> — et la remise suivante s’emboîte dedans, exactement comme les internes dans les demi-pensionnaires.</>}
+        />
         <NumericQuestion
           prompt="Un manteau coûte 200 €. Le magasin annonce −30 %, puis −20 % de plus sur le prix déjà réduit. Quel est le prix final, en euros ?"
+          requires={['methode-remises-successives', 'proportion-de-proportion', 'proportion-reference', 'pourcentage']}
           above={(revealed) => (
             <div className="rounded-xl border border-sky-200 bg-sky-50 p-3 text-center">
               <MathText>{'$$200 \\times 0{,}70 \\times 0{,}80$$'}</MathText>
@@ -117,6 +140,7 @@ export default function Module03UnPourcentageDePourcentage() {
               : 'Chaque remise s’applique au prix courant : 200 × 0,70 = 140, puis 140 × 0,80 = 112 €.')}
           solved={q3} onAnswered={() => setQ3(true)}
         />
+        </div>
       ),
     },
   ];

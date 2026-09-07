@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { CrossTableView, crossTable } from '../../../../../common/stats';
@@ -57,14 +57,25 @@ export default function Module05AtelierInterpreterUnTableau() {
               'On ne peut rien dire du tout avec ce tableau',
             ]}
             correct={0} cols={1}
+            requires={['effectifs-marginaux', 'mem-case-marge', 'tableau-croise', 'effectif']}
             explain="Comparer des effectifs bruts entre groupes de tailles différentes n’a pas de sens. 5 sur 14 est une part plus grande que 8 sur 26 : rapportée à sa classe, la danse est en réalité plus fréquente en 2de A. Le tableau contient bien l’information — encore faut-il faire la division, ce qui est l’objet de la leçon suivante."
             explainWrong="Les deux classes n’ont pas le même effectif : 14 contre 26. Un effectif brut plus grand peut correspondre à une part plus petite."
             solved={a1} onAnswered={() => setA1(true)}
           />
+          {/* Le piège vient de se refermer : 8 > 5 mais 5 sur 14 > 8 sur 26.
+              La règle de comparaison est posée ici, avant le second tableau. */}
+          {a1 && (
+            <KnowledgeBrick
+              id="comparer-honnetement"
+              variant="new"
+              lead={<>Tu viens de constater que <strong>8 danseurs</strong> peuvent être une part plus petite que <strong>5 danseurs</strong>. Voilà à quelle condition deux effectifs se comparent.</>}
+            />
+          )}
           {a1 && (
             <NumericQuestion
               prompt="Combien d’élèves compte la 2de A au total (toutes activités) ?"
               expected={14} suffix="élèves"
+              requires={['effectifs-marginaux', 'comparer-honnetement', 'effectif']}
               explain="C’est l’effectif marginal de la colonne 2de A : 6 + 5 + 2 + 1 = 14. Il est indispensable pour interpréter les 5 danseurs de cette classe."
               explainFor={() => 'On lit le total de la colonne 2de A : 6 + 5 + 2 + 1 = 14 élèves.'}
               solved={a2} onAnswered={() => setA2(true)}
@@ -89,6 +100,7 @@ export default function Module05AtelierInterpreterUnTableau() {
               'Les deux modes sont équivalents',
             ]}
             correct={0} cols={1}
+            requires={['comparer-honnetement', 'effectifs-marginaux', 'effectif']}
             explain="Quand les groupes comparés ont le même effectif, comparer les effectifs bruts revient à comparer les proportions : 180/300 contre 40/300. C’est exactement pourquoi les enquêtes cherchent souvent des groupes de tailles égales."
             explainWrong="Comparer des effectifs bruts est légitime ICI, précisément parce que les deux colonnes totalisent 300 chacune. Le problème du premier tableau venait de l’inégalité 14 contre 26."
             solved={b1} onAnswered={() => setB1(true)}

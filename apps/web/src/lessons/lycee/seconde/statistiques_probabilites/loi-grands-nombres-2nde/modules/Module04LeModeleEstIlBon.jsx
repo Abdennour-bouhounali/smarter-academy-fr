@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -46,19 +46,38 @@ export default function Module04LeModeleEstIlBon() {
               nombres devient ici un <strong>instrument de mesure</strong> : elle permet de confronter une
               hypothèse aux données.
             </Feedback>
-          ) : verdict && !verdict.correct ? (
+          ) : null}
+          {/* Le verdict vient d'être obtenu sur une longue série : les deux
+              notions qui l'ont rendu possible — l'hypothèse d'équiprobabilité,
+              et la méthode qui vient de servir à la juger — se nomment ici. */}
+          {done1 && (
+            <>
+              <KnowledgeBrick
+                id="modele-realite"
+                variant="new"
+                compact
+                lead={<>Le dé B « équilibré » ne l’était pas : l’équiprobabilité que tu supposais n’était qu’une hypothèse, et les lancers viennent de la mettre en défaut.</>}
+              />
+              <KnowledgeBrick
+                id="methode-tester-modele"
+                variant="new"
+                lead={<>Ce que tu viens de faire — prévoir la fréquence du modèle, lancer beaucoup, comparer — c’est la méthode pour mettre n’importe quel modèle à l’épreuve.</>}
+              />
+            </>
+          )}
+          {!done1 && verdict && !verdict.correct ? (
             <Feedback tone="warn">
               Ce dé-là était équilibré. Sur {verdict.n.toLocaleString('fr-FR')} lancers, l’écart que tu as vu
               venait de la fluctuation, pas d’un truquage. Relance avec une série plus longue.
             </Feedback>
-          ) : verdict && verdict.correct ? (
+          ) : !done1 && verdict && verdict.correct ? (
             <Feedback tone="info">
               Bien vu — mais sur {verdict.n.toLocaleString('fr-FR')} lancers seulement, tu pouvais tomber juste
               par chance. Refais l’essai sur 300 ou 3 000 lancers pour que ce soit une <strong>preuve</strong>.
             </Feedback>
-          ) : (
+          ) : !done1 ? (
             <Feedback tone="info">Lance les dés, puis accuse celui que tu soupçonnes.</Feedback>
-          )}
+          ) : null}
         </div>
       ),
     },
@@ -76,6 +95,7 @@ export default function Module04LeModeleEstIlBon() {
             'Une conséquence de la loi des grands nombres',
           ]}
           correct={0} cols={1}
+          requires={['modele-realite', 'methode-tester-modele', 'equiprobable', 'probabilite']}
           explain="L’équiprobabilité est une HYPOTHÈSE qu’on pose sur un objet réel, en général parce que rien ne distingue ses faces. Le dé B vient de montrer qu’elle peut être fausse. Les mathématiques calculent les conséquences du modèle ; c’est l’expérience — donc de longues séries — qui juge si le modèle décrit bien l’objet."
           explainWrong="Aucun théorème ne garantit qu’un dé réel est équilibré : c’est une hypothèse sur le monde, que seule une longue série de lancers permet de mettre à l’épreuve."
           solved={done2} onAnswered={() => setQ2(true)}

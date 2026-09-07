@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { BoxPlot, DotPlot, fiveNumberSummary, formatNumber } from '../../../../../common/stats';
@@ -83,7 +83,28 @@ export default function Module01CinqNombresSuffisent() {
               et la figure s’appelle une <strong>boîte à moustaches</strong>.
               {' '}<span className="text-slate-500">Tu peux recommencer pour revoir l’ordre de construction.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les cinq repères viennent d'être posés un par un et le rectangle
+              est apparu : c'est l'instant où ces cinq nombres, et la figure
+              qu'ils engendrent, peuvent être nommés — avant l'étape 2 qui les
+              exige. La méthode de tracé suit dans la foulée, puisque l'élève
+              vient exactement de l'exécuter. */}
+          {done1 && (
+            <>
+              <KnowledgeBrick
+                id="resume-cinq-nombres"
+                variant="new"
+                lead={<>Tu n’as dévoilé que <strong>cinq</strong> des trente relevés, et la série a déjà une silhouette.</>}
+              />
+              <KnowledgeBrick
+                id="construire-boite"
+                variant="new"
+                compact
+                lead={<>L’ordre dans lequel tu viens de les révéler est exactement l’ordre du tracé.</>}
+              />
+            </>
+          )}
+          {!done1 && (
             <Feedback tone="info">
               {step === 0 && 'Commence par le minimum : c’est la pastille la plus à gauche du nuage.'}
               {step === 1 && 'Le maximum ferme l’autre bout.'}
@@ -109,6 +130,7 @@ export default function Module01CinqNombresSuffisent() {
             'De 0 °C à la médiane',
           ]}
           correct={0} cols={1}
+          requires={['resume-cinq-nombres', 'construire-boite', 'quartile', 'effectif']}
           explain={`Le rectangle va toujours de Q1 à Q3 : il couvre la moitié centrale de l’effectif. Les moustaches, elles, rejoignent le minimum et le maximum.`}
           explainWrong="Les extrémités du rectangle sont les quartiles, pas les extrêmes : ce sont les moustaches qui vont jusqu’au minimum et au maximum."
           solved={done2} onAnswered={() => setQ3q(true)}

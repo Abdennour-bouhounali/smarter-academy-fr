@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -57,7 +57,26 @@ export default function Module05LeCoefficientMultiplicateur() {
               est <strong>toujours positif</strong> : « −20 % » se traduit par ×0,80, jamais par ×0,20 ni ×(−0,20).
               {' '}<span className="text-slate-500">Continue à glisser : le curseur traverse 1, jamais 0.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le curseur vient de traverser 1 dans les deux sens : le pivot est
+              VU. On peut nommer ce nombre et sa relation au taux, avant que
+              l'étape 2 ne demande de le produire. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="coefficient-multiplicateur"
+              variant="new"
+              lead={<>Tu as fait traverser le curseur d’un côté à l’autre, et il est passé par <strong>1</strong> — jamais par 0. Ce nombre-là a un nom.</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="mem-k-1-plus-t"
+              variant="new"
+              compact
+              lead={<>Et une seule égalité à retenir pour toute la suite.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               {!hasUp ? 'Essaie une hausse. ' : ''}{!hasDown ? 'Essaie une baisse. ' : ''}{!hasZero ? 'Et 0 %.' : ''}
             </Feedback>
@@ -71,6 +90,7 @@ export default function Module05LeCoefficientMultiplicateur() {
       done: q2,
       content: (
         <BatchChoiceQuestion
+          requires={['coefficient-multiplicateur', 'mem-k-1-plus-t', 'trois-ecritures', 'pourcentage', 'coefficient-proportionnalite']}
           intro={(
             <div className="space-y-2">
               <div className="rounded-xl border border-cyan-200 bg-cyan-50 p-3 text-center">
@@ -101,14 +121,25 @@ export default function Module05LeCoefficientMultiplicateur() {
       title: 'Du coefficient au taux',
       done: q3,
       content: (
+        <div className="space-y-3">
+        {/* L'étape 2 allait du taux vers le coefficient ; ici on remonte. Le
+            chemin de retour t = k − 1 se pose avant qu'on le demande. */}
+        <KnowledgeBrick
+          id="methode-coefficient-taux"
+          variant="new"
+          compact
+          lead={<>Tu viens de faire k à partir de t. Le curseur se lit aussi dans l’autre sens : d’un coefficient on retrouve le taux.</>}
+        />
         <TapQuestion
           prompt="Un prix est multiplié par 0,94. Quelle évolution cela représente-t-il ?"
+          requires={['methode-coefficient-taux', 'coefficient-multiplicateur', 'mem-k-1-plus-t', 'pourcentage']}
           options={['Une baisse de 6 %', 'Une baisse de 94 %', 'Une hausse de 94 %', 'Une baisse de 0,94 %']}
           correct={0} cols={2}
           explain="t = k − 1 = 0,94 − 1 = −0,06, soit une baisse de 6 %. Le coefficient dit ce qui RESTE (94 %), le taux dit ce qu’on a PERDU (6 %)."
           explainWrong="0,94 est proche de 1 : le changement est donc petit. Ce qui reste, c’est 94 % ; ce qui a disparu, c’est 6 %. Le taux est t = k − 1 = −0,06."
           solved={q3} onAnswered={() => setQ3(true)}
         />
+        </div>
       ),
     },
     {
@@ -119,6 +150,7 @@ export default function Module05LeCoefficientMultiplicateur() {
         <NumericQuestion
           prompt="Un loyer de 640 € augmente de 3,5 %. Quel est le nouveau loyer, en euros ?"
           expected={662.4} suffix="€"
+          requires={['coefficient-multiplicateur', 'methode-coefficient-taux', 'mem-k-1-plus-t', 'trois-ecritures']}
           explain="640 × 1,035 = 662,40 €. On multiplie par le coefficient, une seule opération."
           explainFor={(n) => (n === 22.4
             ? '22,40 € est l’AUGMENTATION (640 × 0,035). Le nouveau loyer est 640 + 22,40 = 662,40 €, soit 640 × 1,035.'

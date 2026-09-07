@@ -2,55 +2,110 @@
   "lesson": "statistiques-une-variable-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "serie-statistique",
+    "effectif",
+    "frequence",
+    "indicateur-stat",
+    "moyenne",
+    "moyenne-ponderee",
+    "mediane-stat",
+    "mode-stat",
+    "etendue",
+    "dispersion",
+    "quotient",
+    "arrondi",
+    "ordre-nombres",
+    "racine-carree"
+  ],
   "conceptsIntroduced": [
     {
       "id": "serie-statistique",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module01LesTempsDeTrajet.jsx",
+        "line": 87,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "moyenne",
       "type": "formules",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
+        "line": 35,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "mediane",
       "type": "concepts",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
+        "line": 97,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "quartiles",
       "type": "concepts",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module03LesQuartiles.jsx",
+        "line": 41,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "etendue-interquartile",
       "type": "formules",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module03LesQuartiles.jsx",
+        "line": 113,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
       "id": "ecart-type",
       "type": "concepts",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module04LEcartType.jsx",
+        "line": 97,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "robustesse",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module05AjouterOuRetirerUneValeur.jsx",
+        "line": 102,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "linearite-moyenne",
       "type": "regles",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module05AjouterOuRetirerUneValeur.jsx",
+        "line": 150,
+        "step": 2,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [
@@ -58,7 +113,12 @@
       "id": "vocab-effectif-frequence",
       "type": "vocabulaire",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module01LesTempsDeTrajet.jsx",
+        "line": 145,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "proceduresIntroduced": [
@@ -66,13 +126,23 @@
       "id": "choisir-position",
       "type": "methodes",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
+        "line": 128,
+        "step": 4,
+        "variant": "new"
+      }
     },
     {
       "id": "methode-comparer",
       "type": "methodes",
       "module": 6,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module06AtelierComparerDeuxSeries.jsx",
+        "line": 69,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -80,7 +150,12 @@
       "id": "mem-deux-nombres",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module04LEcartType.jsx",
+        "line": 150,
+        "step": 4,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -90,9 +165,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module00Diagnostic.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 14,
+      "requires": [
+        "moyenne",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -102,9 +183,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module00Diagnostic.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 15,
+      "requires": [
+        "moyenne",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "prior",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -114,9 +201,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module00Diagnostic.jsx",
-      "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 16,
+      "requires": [
+        "mediane-stat",
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "mediane-stat": "prior",
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -126,9 +219,15 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module00Diagnostic.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 17,
+      "requires": [
+        "effectif",
+        "serie-statistique"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "prior",
+        "serie-statistique": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -138,9 +237,71 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module00Diagnostic.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 18,
+      "requires": [
+        "moyenne-ponderee",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "moyenne-ponderee": "prior",
+        "effectif": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "st-d6",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module00Diagnostic.jsx",
+      "line": 19,
+      "requires": [
+        "frequence",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "prior",
+        "effectif": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "st-d7",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module00Diagnostic.jsx",
+      "line": 20,
+      "requires": [
+        "indicateur-stat",
+        "etendue",
+        "dispersion",
+        "mode-stat"
+      ],
+      "prerequisiteStatus": {
+        "indicateur-stat": "prior",
+        "etendue": "prior",
+        "dispersion": "prior",
+        "mode-stat": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "st-d8",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module00Diagnostic.jsx",
+      "line": 21,
+      "requires": [
+        "racine-carree"
+      ],
+      "prerequisiteStatus": {
+        "racine-carree": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -150,9 +311,21 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module01LesTempsDeTrajet.jsx",
-      "line": 98,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 110,
+      "requires": [
+        "serie-statistique",
+        "moyenne",
+        "mediane-stat",
+        "etendue",
+        "dispersion"
+      ],
+      "prerequisiteStatus": {
+        "serie-statistique": "prior",
+        "moyenne": "prior",
+        "mediane-stat": "prior",
+        "etendue": "prior",
+        "dispersion": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -162,9 +335,23 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module01LesTempsDeTrajet.jsx",
-      "line": 137,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 159,
+      "requires": [
+        "serie-statistique",
+        "vocab-effectif-frequence",
+        "moyenne",
+        "indicateur-stat",
+        "dispersion",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "serie-statistique": "prior",
+        "vocab-effectif-frequence": "established@M1",
+        "moyenne": "prior",
+        "indicateur-stat": "prior",
+        "dispersion": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -174,9 +361,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
-      "line": 34,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 44,
+      "requires": [
+        "moyenne",
+        "quotient",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "prior",
+        "quotient": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -186,9 +381,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
-      "line": 58,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 70,
+      "requires": [
+        "moyenne",
+        "moyenne-ponderee",
+        "effectif",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "prior",
+        "moyenne-ponderee": "prior",
+        "effectif": "prior",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -198,9 +403,19 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 106,
+      "requires": [
+        "mediane",
+        "effectif",
+        "mediane-stat",
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "mediane": "established@M2",
+        "effectif": "prior",
+        "mediane-stat": "prior",
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -210,9 +425,19 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "choisir-position",
+        "moyenne",
+        "mediane",
+        "indicateur-stat"
+      ],
+      "prerequisiteStatus": {
+        "choisir-position": "established@M2",
+        "moyenne": "prior",
+        "mediane": "established@M2",
+        "indicateur-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -222,9 +447,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module03LesQuartiles.jsx",
-      "line": 38,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 46,
+      "requires": [
+        "quartiles",
+        "mediane-stat",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "quartiles": "established@M3",
+        "mediane-stat": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -234,9 +467,15 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module03LesQuartiles.jsx",
-      "line": 62,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 71,
+      "requires": [
+        "quartiles",
+        "arrondi"
+      ],
+      "prerequisiteStatus": {
+        "quartiles": "established@M3",
+        "arrondi": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -246,9 +485,13 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module03LesQuartiles.jsx",
-      "line": 84,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 94,
+      "requires": [
+        "quartiles"
+      ],
+      "prerequisiteStatus": {
+        "quartiles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -258,9 +501,19 @@
       "step": 4,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module03LesQuartiles.jsx",
-      "line": 107,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 128,
+      "requires": [
+        "quartiles",
+        "etendue-interquartile",
+        "mediane-stat",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "quartiles": "established@M3",
+        "etendue-interquartile": "established@M3",
+        "mediane-stat": "prior",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -270,9 +523,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module04LEcartType.jsx",
-      "line": 109,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 120,
+      "requires": [
+        "ecart-type",
+        "racine-carree"
+      ],
+      "prerequisiteStatus": {
+        "ecart-type": "established@M4",
+        "racine-carree": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -282,9 +541,15 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module04LEcartType.jsx",
-      "line": 134,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 155,
+      "requires": [
+        "ecart-type",
+        "mem-deux-nombres"
+      ],
+      "prerequisiteStatus": {
+        "ecart-type": "established@M4",
+        "mem-deux-nombres": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -294,9 +559,17 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module05AjouterOuRetirerUneValeur.jsx",
-      "line": 110,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 122,
+      "requires": [
+        "robustesse",
+        "mediane-stat",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "robustesse": "established@M5",
+        "mediane-stat": "prior",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -306,9 +579,15 @@
       "step": 3,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module05AjouterOuRetirerUneValeur.jsx",
-      "line": 139,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 164,
+      "requires": [
+        "robustesse",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "robustesse": "established@M5",
+        "quotient": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -318,9 +597,17 @@
       "step": 4,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module05AjouterOuRetirerUneValeur.jsx",
-      "line": 157,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 183,
+      "requires": [
+        "robustesse",
+        "mediane-stat",
+        "moyenne"
+      ],
+      "prerequisiteStatus": {
+        "robustesse": "established@M5",
+        "mediane-stat": "prior",
+        "moyenne": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -331,8 +618,16 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module06AtelierComparerDeuxSeries.jsx",
       "line": 51,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "moyenne",
+        "dispersion",
+        "indicateur-stat"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "prior",
+        "dispersion": "prior",
+        "indicateur-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -342,9 +637,17 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module06AtelierComparerDeuxSeries.jsx",
-      "line": 79,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 90,
+      "requires": [
+        "methode-comparer",
+        "mediane-stat",
+        "quartiles"
+      ],
+      "prerequisiteStatus": {
+        "methode-comparer": "established@M6",
+        "mediane-stat": "prior",
+        "quartiles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -354,9 +657,13 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module06AtelierComparerDeuxSeries.jsx",
-      "line": 93,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 105,
+      "requires": [
+        "etendue-interquartile"
+      ],
+      "prerequisiteStatus": {
+        "etendue-interquartile": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -366,9 +673,15 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module06AtelierComparerDeuxSeries.jsx",
-      "line": 110,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 123,
+      "requires": [
+        "methode-comparer",
+        "moyenne"
+      ],
+      "prerequisiteStatus": {
+        "methode-comparer": "established@M6",
+        "moyenne": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -379,8 +692,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "serie-statistique",
+        "vocab-effectif-frequence",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "serie-statistique": "prior",
+        "vocab-effectif-frequence": "established@M1",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -391,8 +712,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "moyenne",
+        "moyenne-ponderee",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "prior",
+        "moyenne-ponderee": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -403,8 +732,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mediane",
+        "mediane-stat",
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "mediane": "established@M2",
+        "mediane-stat": "prior",
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -415,8 +752,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quartiles"
+      ],
+      "prerequisiteStatus": {
+        "quartiles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -427,8 +768,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "quartiles"
+      ],
+      "prerequisiteStatus": {
+        "quartiles": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -439,8 +784,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "etendue-interquartile",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "etendue-interquartile": "established@M3",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -451,8 +802,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "ecart-type",
+        "racine-carree"
+      ],
+      "prerequisiteStatus": {
+        "ecart-type": "established@M4",
+        "racine-carree": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -463,8 +820,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "ecart-type",
+        "mem-deux-nombres"
+      ],
+      "prerequisiteStatus": {
+        "ecart-type": "established@M4",
+        "mem-deux-nombres": "established@M4"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -475,8 +838,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 24,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "linearite-moyenne",
+        "robustesse"
+      ],
+      "prerequisiteStatus": {
+        "linearite-moyenne": "established@M5",
+        "robustesse": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -487,156 +856,66 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module07MissionFinaleResumerUneSerie.jsx",
       "line": 25,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "methode-comparer",
+        "robustesse"
+      ],
+      "prerequisiteStatus": {
+        "methode-comparer": "established@M6",
+        "robustesse": "established@M5"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
   "findings": [
     {
-      "code": "W_ITEM_WITHOUT_BRICK",
+      "code": "W_PRIOR_REESTABLISHED",
       "severity": "info",
-      "message": "knowledge item 'serie-statistique' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 30,
+      "message": "'serie-statistique' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module01LesTempsDeTrajet.jsx",
+      "line": 87,
       "module": 1,
-      "step": null,
+      "step": 1,
       "term": null,
       "questionId": null,
-      "position": -1
+      "position": 46
     },
     {
-      "code": "W_ITEM_WITHOUT_BRICK",
+      "code": "W_PRIOR_REESTABLISHED",
       "severity": "info",
-      "message": "knowledge item 'vocab-effectif-frequence' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 49,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'moyenne' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 63,
+      "message": "'moyenne' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
+      "line": 35,
       "module": 2,
-      "step": null,
+      "step": 1,
       "term": null,
       "questionId": null,
-      "position": -1
+      "position": 74
     },
     {
-      "code": "W_ITEM_WITHOUT_BRICK",
+      "code": "W_PRIOR_REESTABLISHED",
       "severity": "info",
-      "message": "knowledge item 'mediane' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 80,
+      "message": "'moyenne' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
+      "line": 35,
       "module": 2,
-      "step": null,
+      "step": 1,
       "term": null,
       "questionId": null,
-      "position": -1
+      "position": 74
     },
     {
-      "code": "W_ITEM_WITHOUT_BRICK",
+      "code": "W_PRIOR_REESTABLISHED",
       "severity": "info",
-      "message": "knowledge item 'choisir-position' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 92,
+      "message": "'moyenne-ponderee' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/modules/Module02MoyenneEtMediane.jsx",
+      "line": 35,
       "module": 2,
-      "step": null,
+      "step": 1,
       "term": null,
       "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'quartiles' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 106,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'etendue-interquartile' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 128,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'ecart-type' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 142,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-deux-nombres' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 165,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'robustesse' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 179,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'linearite-moyenne' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 201,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'methode-comparer' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/statistiques-une-variable-2nde/knowledge.jsx",
-      "line": 224,
-      "module": 6,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
+      "position": 74
     }
   ]
 }

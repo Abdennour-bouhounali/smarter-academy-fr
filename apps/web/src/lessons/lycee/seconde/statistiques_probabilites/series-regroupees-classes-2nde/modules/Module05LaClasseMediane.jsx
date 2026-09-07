@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Histogram, groupIntoClasses, medianClass, interpolatedMedian, median, formatNumber } from '../../../../../common/stats';
@@ -56,6 +56,14 @@ export default function Module05LaClasseMediane() {
               </tbody>
             </table>
           </div>
+          {/* La ligne surlignée du tableau vient de montrer, sous les yeux,
+              la classe où le cumul franchit 50 % : le nom vient l'instant
+              d'après, avant la question qui l'exige. */}
+          <KnowledgeBrick
+            id="classe-mediane"
+            variant="new"
+            lead={<>La case surlignée du tableau est celle où le cumul, encore trop faible juste avant, franchit 50 %.</>}
+          />
           <TapQuestion
             prompt="Quelle est la classe médiane de cette série ?"
             options={[
@@ -65,6 +73,7 @@ export default function Module05LaClasseMediane() {
               '[10 ; 90] : la médiane est au milieu de tout',
             ]}
             correct={0} cols={1}
+            requires={['classe-mediane', 'frequences-cumulees', 'mediane-stat']}
             explain="La classe médiane est la PREMIÈRE dont la fréquence cumulée atteint ou dépasse 50 %. À 40 min le cumul vaut 49 % : la moitié n’est pas encore atteinte, elle l’est dans [40 ; 50[ (81 %). Que cette classe soit aussi la plus peuplée est ici une coïncidence."
             explainWrong="49 % est en dessous de 50 % : la médiane n’est pas encore atteinte à 40 min. C’est donc la classe SUIVANTE, [40 ; 50[, qui contient la médiane."
             solved={q1} onAnswered={() => setQ1(true)}
@@ -77,7 +86,15 @@ export default function Module05LaClasseMediane() {
       title: 'Estimer la médiane dans sa classe',
       done: q2,
       content: (
-        <NumericQuestion
+        <div className="space-y-3">
+          {/* La classe médiane est acquise : reste à dire COMMENT avancer à
+              l'intérieur, avant que la question ne le demande. */}
+          <KnowledgeBrick
+            id="mediane-interpolee"
+            variant="new"
+            lead={<>Tu sais déjà dans quelle classe chercher : il reste à avancer à l’intérieur, proportionnellement à ce qu’il manque pour atteindre la moitié.</>}
+          />
+          <NumericQuestion
           prompt="Dans la classe [40 ; 50[, le cumul passe de 98 à 162 individus. La médiane correspond au 100ᵉ individu. Estime-la par interpolation, en minutes (arrondie au dixième)."
           above={(revealed) => (
             <div className="rounded-xl border border-cyan-200 bg-cyan-50 p-3 text-sm text-cyan-900 space-y-1">
@@ -87,6 +104,7 @@ export default function Module05LaClasseMediane() {
           )}
           expected={(n) => Math.abs(n - 40.3) < 0.15}
           display="40,3 min"
+          requires={['mediane-interpolee', 'classe-mediane']}
           explain="40 + (2/64) × 10 ≈ 40,31 min. C’est exactement ce que donne la lecture du polygone cumulé à la hauteur 50 %."
           explainFor={(n) => (n === 45
             ? '45 est le CENTRE de la classe médiane. L’interpolation tient compte de la position exacte du 100ᵉ individu dans la classe : ici tout près du début, d’où ≈ 40,3 min.'
@@ -94,7 +112,8 @@ export default function Module05LaClasseMediane() {
               ? '40 est la borne inférieure de la classe. Il faut y ajouter la fraction parcourue : (2/64) × 10 ≈ 0,31 min.'
               : 'On part de 40 et on avance de (100 − 98)/64 de la largeur : 40 + (2/64) × 10 ≈ 40,3 min.')}
           solved={q2} onAnswered={() => setQ2(true)}
-        />
+          />
+        </div>
       ),
     },
     {
@@ -122,6 +141,7 @@ export default function Module05LaClasseMediane() {
               'L’estimation est toujours inférieure à la valeur exacte',
             ]}
             correct={0} cols={1}
+            requires={['mediane-interpolee', 'mediane-stat']}
             explain="L’écart vaut environ 0,2 min sur des durées de 40 min : négligeable en pratique. L’interpolation suppose que les 64 individus de la classe sont régulièrement répartis, ce qui n’est qu’approximativement vrai — d’où un petit décalage, dans un sens ou dans l’autre selon les séries."
             explainWrong="Une estimation proche n’est pas une erreur : c’est le meilleur résultat accessible à partir d’un tableau regroupé. Elle n’est pas non plus systématiquement inférieure."
             solved={q3} onAnswered={() => setQ3(true)}

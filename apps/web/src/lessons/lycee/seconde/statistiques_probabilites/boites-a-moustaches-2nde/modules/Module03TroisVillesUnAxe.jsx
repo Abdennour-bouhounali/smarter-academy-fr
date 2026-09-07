@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { BoxPlot, median, interquartileRange, range as rangeOf, formatNumber } from '../../../../../common/stats';
@@ -69,7 +69,18 @@ export default function Module03TroisVillesUnAxe() {
               <strong> Comparer des boîtes exige un axe commun</strong> — sinon la figure ment.
               {' '}<span className="text-slate-500">Rebascule autant que tu veux.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* La bascule vient de faire mentir la figure sous ses yeux : c'est
+              l'instant où la condition de la comparaison se nomme, avant que
+              l'étape 2 ne demande de comparer trois villes. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="axe-commun"
+              variant="new"
+              lead={<>Le seul changement entre les deux affichages est l’<strong>axe</strong> — les trente relevés de chaque ville, eux, n’ont pas bougé.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Essaie les deux modes d’affichage.</Feedback>
           )}
         </div>
@@ -93,6 +104,7 @@ export default function Module03TroisVillesUnAxe() {
             { id: 'r3', label: 'Étendue la plus grande', options: ['Embrun', 'Toulouse', 'Brest'], correct: 0, correction: `Embrun : ${rangeOf(EMBRUN)} °C d’une pointe de moustache à l’autre.` },
             { id: 'r4', label: 'Ville du jour le plus chaud du mois', options: ['Embrun', 'Toulouse', 'Brest'], correct: 0, correction: `Embrun : maximum ${Math.max(...EMBRUN)} °C, alors que sa médiane est la plus BASSE.` },
           ]}
+          requires={['axe-commun', 'mediane-stat', 'quartile', 'etendue', 'dispersion']}
           feedback={({ allRight, nCorrect, total }) => (
             <Feedback tone={allRight ? 'ok' : 'ko'}>
               {allRight ? 'Les quatre.' : `${nCorrect} sur ${total}.`} La dernière ligne est la plus instructive :
@@ -109,7 +121,17 @@ export default function Module03TroisVillesUnAxe() {
       title: 'Ce qu’une médiane ne dit pas',
       done: q3,
       content: (
-        <TapQuestion
+        <div className="space-y-3">
+          {/* La ligne r4 de l'étape 2 vient de faire constater le cas : Embrun,
+              médiane la plus basse ET jour le plus chaud. On le pose comme
+              règle ici, avant la question qui demande d'y répondre seul. */}
+          <KnowledgeBrick
+            id="mediane-ne-dit-pas-tout"
+            variant="new"
+            compact
+            lead={<>Tu viens de désigner Embrun deux fois : pour la médiane la plus <strong>basse</strong>, et pour le jour le plus <strong>chaud</strong>.</>}
+          />
+          <TapQuestion
           prompt="Un touriste conclut : « Embrun est la ville la plus froide, je n’y aurai jamais chaud ». Que lui répondre ?"
           options={[
             `Sa médiane est bien la plus basse, mais son maximum (${Math.max(...EMBRUN)} °C) est le plus haut des trois : il y aura des jours très chauds`,
@@ -118,10 +140,12 @@ export default function Module03TroisVillesUnAxe() {
             'On ne peut rien dire sans connaître les moyennes',
           ]}
           correct={0} cols={1}
+          requires={['mediane-ne-dit-pas-tout', 'axe-commun', 'mediane-stat', 'etendue']}
           explain={`La médiane résume la POSITION centrale, pas l’ensemble des valeurs. À Embrun la moitié des jours sont sous ${median(EMBRUN)} °C, mais l’étendue de ${rangeOf(EMBRUN)} °C laisse place à des jours à ${Math.max(...EMBRUN)} °C — plus chauds que partout ailleurs.`}
           explainWrong="La boîte d’Embrun est la plus basse au centre, mais sa moustache droite dépasse celles des deux autres villes. Médiane basse et maximum élevé sont parfaitement compatibles."
           solved={q3} onAnswered={() => setQ3(true)}
-        />
+          />
+        </div>
       ),
     },
   ];

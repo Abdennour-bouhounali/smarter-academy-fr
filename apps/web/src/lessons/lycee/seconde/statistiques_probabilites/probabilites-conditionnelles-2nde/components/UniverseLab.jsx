@@ -1,17 +1,18 @@
 import React from 'react';
-import PopulationGrid from '../../../../../common/stats/PopulationGrid';
+import PopulationBar from '../../../../../common/stats/PopulationBar';
 import { formatPercent } from '../../../../../common/stats';
 import { POPULATION_GROUPS, CONDITIONS, EVENTS, probabilityUnder } from '../data';
 
 /**
- * UniverseLab — l'interaction SIGNATURE : appliquer une condition ÉTEINT
+ * UniverseLab — l'interaction SIGNATURE : appliquer une condition RETIRE
  * une partie de la population, et la probabilité se recalcule dans ce qui
  * reste.
  *
  * OBSERVATION ATTENDUE : « être en club » vaut 56 % sur toute la population
  * et 75 % chez les seuls internes. Le numérateur (150) n'a pas changé de
- * nature — c'est le TOUT qui a rétréci. L'élève doit voir les pastilles
- * s'éteindre pour que « univers restreint » cesse d'être une métaphore.
+ * nature — c'est le TOUT qui a rétréci. La figure le montre en deux barres :
+ * la population entière, puis le sous-groupe REDESSINÉ sur toute la largeur.
+ * « Univers restreint » cesse d'être une métaphore : c'est la barre du bas.
  *
  * Le quotient est affiché en toutes lettres (150 / 200), jamais seulement
  * son résultat : c'est le dénominateur qui est l'objet de la leçon.
@@ -21,8 +22,9 @@ export default function UniverseLab({ conditionId, eventId, onConditionChange, o
   const ev = EVENTS.find((e) => e.id === eventId) ?? EVENTS[0];
   const { numerator, denominator, value } = probabilityUnder(cond.id, ev.id);
 
-  // Les groupes hors de l'univers restreint sont estompés, pas retirés :
-  // l'élève doit VOIR ce qu'il vient d'exclure.
+  // Les groupes hors de l'univers restreint sont hachurés dans la barre du
+  // haut, pas supprimés : l'élève doit VOIR ce qu'il vient d'exclure, puis
+  // le retrouver absent de la barre du bas.
   const dimmed = POPULATION_GROUPS.filter((g) => !cond.keep(g)).map((g) => g.id);
 
   return (
@@ -67,10 +69,10 @@ export default function UniverseLab({ conditionId, eventId, onConditionChange, o
         </div>
       </div>
 
-      <PopulationGrid
+      <PopulationBar
         groups={POPULATION_GROUPS}
         dimmed={dimmed}
-        columns={40}
+        restrictedLabel={cond.id === 'aucune' ? undefined : `Univers restreint : ${cond.short}`}
         caption={`Population de 800 élèves ; univers restreint : ${cond.short}, soit ${denominator} élèves`}
       />
 

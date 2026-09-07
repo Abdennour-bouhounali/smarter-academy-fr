@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { CrossTableView, crossTable } from '../../../../../common/stats';
@@ -44,6 +44,15 @@ export default function Module02DeuxVariablesQualitatives() {
       title: 'Qualitatif, pas quantitatif',
       done: done1,
       content: (
+        <div className="space-y-3">
+          {/* Le module 1 a rempli DOUZE cases pour soixante fiches : c'est ce
+              rapport-là que la question ci-dessous va interroger. */}
+          <KnowledgeBrick
+            id="combien-modalites"
+            variant="new"
+            compact
+            lead={<>Tu as rangé 60 fiches dans <strong>12 cases</strong> seulement : 3 classes × 4 activités. C’est ce petit nombre qui rend le tableau lisible.</>}
+          />
         <TapQuestion
           prompt="Pourquoi peut-on croiser « classe » et « activité » dans un tableau, mais pas « taille en cm » et « âge en années » de la même façon ?"
           options={[
@@ -53,10 +62,12 @@ export default function Module02DeuxVariablesQualitatives() {
             'Parce qu’il faut toujours exactement deux modalités',
           ]}
           correct={0} cols={1}
+          requires={['combien-modalites', 'tableau-croise']}
           explain="Un tableau croisé suppose un nombre RAISONNABLE de modalités de chaque côté. « Classe » en a 3, « activité » 4 : douze cases. Une variable quantitative continue comme la taille devrait d’abord être regroupée en classes pour être croisée."
           explainWrong="Rien n’interdit de croiser des grandeurs numériques — à condition de les regrouper d’abord en classes. Le problème est le NOMBRE de modalités, pas leur nature de nombre."
           solved={done1} onAnswered={() => setQ1(true)}
         />
+        </div>
       ),
     },
     {
@@ -89,7 +100,17 @@ export default function Module02DeuxVariablesQualitatives() {
               « avant » une autre, est <strong>nominale</strong>.
               {' '}<span className="text-slate-500">Rebascule autant que tu veux.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* La bascule vient de montrer qu'un ordre se lit ou ne se lit pas :
+              les deux mots peuvent être posés, et l'étape 3 va les exiger. */}
+          {done2 && (
+            <KnowledgeBrick
+              id="qualitative-nominale-ordinale"
+              variant="new"
+              lead={<>Tu viens de voir les <strong>mêmes effectifs</strong> devenir lisibles ou illisibles selon l’ordre des lignes. Ce qui distingue les deux cas porte un nom.</>}
+            />
+          )}
+          {!done2 && (
             <Feedback tone="info">Essaie les deux ordres et compare la lisibilité.</Feedback>
           )}
         </div>
@@ -109,6 +130,7 @@ export default function Module02DeuxVariablesQualitatives() {
             { id: 'v4', label: 'Mention au bac (passable, AB, B, TB)', options: ['Nominale', 'Ordinale'], correct: 1, correction: 'Les mentions sont hiérarchisées.' },
             { id: 'v5', label: 'Ville de naissance', options: ['Nominale', 'Ordinale'], correct: 0, correction: 'Les villes ne se classent pas dans un ordre intrinsèque.' },
           ]}
+          requires={['qualitative-nominale-ordinale', 'serie-statistique']}
           feedback={({ allRight, nCorrect, total }) => (
             <Feedback tone={allRight ? 'ok' : 'ko'}>
               {allRight ? 'Les cinq.' : `${nCorrect} sur ${total}.`} Le test : <strong>« puis-je dire qu’une

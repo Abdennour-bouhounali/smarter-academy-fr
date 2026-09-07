@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { parseDec } from '@smarter-academy/core';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -54,19 +54,30 @@ export default function Module04AdditionnerLesChemins() {
               par l’un ou par l’autre, jamais par les deux — c’est pourquoi on peut les additionner.
             </Feedback>
           )}
+          {/* Le geste vient de montrer DEUX routes disjointes vers le même
+              résultat : on nomme la règle avant de demander le nombre, sinon
+              l'élève n'a plus que la moyenne naïve pour s'en sortir. */}
+          {showPaths && (
+            <KnowledgeBrick
+              id="somme-chemins"
+              variant="new"
+              lead={<>Tu as allumé les deux routes qui mènent à une rouge, et elles ne se croisent jamais. C’est ce qui autorise ce qui suit.</>}
+            />
+          )}
           <NumericQuestion
             prompt="Quelle est la probabilité d’obtenir une bille rouge ? (en %)"
             expected={(n) => Math.abs(n - pCouleur('rouge') * 100) < 0.5}
             parse={parseDec}
             display="40 %"
             suffix="%"
+            requires={['somme-chemins', 'produit-chemin', 'arbre-structure', 'issue-evenement']}
             explain="0,30 + 0,10 = 0,40, soit 40 %. On additionne les probabilités des deux chemins qui réalisent l’événement."
             explainFor={(n) => (Math.abs(n - 37.5) < 0.6
               ? 'Tu as fait la moyenne des deux compositions : (1/2 + 1/4) ÷ 2 = 0,375. Mais les deux sacs ne sont PAS choisis aussi souvent — le sac A l’est 6 fois sur 10. Il faut pondérer, c’est-à-dire additionner les chemins.'
               : Math.abs(n - 30) < 0.6
                 ? 'C’est la probabilité du seul chemin passant par A. Une rouge peut aussi venir du sac B : il reste un chemin à ajouter.'
                 : null)}
-            solved={q1} onAnswered={(ok) => { if (ok) setQ1(true); }}
+            solved={q1} onAnswered={() => setQ1(true)}
           />
         </div>
       ),
@@ -90,6 +101,12 @@ export default function Module04AdditionnerLesChemins() {
               </div>
             </div>
           </div>
+          <KnowledgeBrick
+            id="mem-produit-somme"
+            variant="new"
+            compact
+            lead={<>Deux gestes séparés depuis le début : avancer sur une route, ou rassembler des routes. Voilà de quoi ne plus les confondre.</>}
+          />
           <TapQuestion
             prompt="Dans quel cas additionne-t-on des probabilités dans un arbre ?"
             options={[
@@ -99,6 +116,7 @@ export default function Module04AdditionnerLesChemins() {
               'Jamais : dans un arbre on multiplie toujours',
             ]}
             correct={0} cols={1}
+            requires={['mem-produit-somme', 'somme-chemins', 'produit-chemin']}
             explain="Multiplier et additionner ne répondent pas à la même question. On multiplie EN AVANÇANT sur un chemin (les étapes s’enchaînent) ; on additionne EN RASSEMBLANT des chemins différents qui aboutissent au même résultat."
             explainWrong="Le long d’un même chemin, les étapes s’enchaînent : c’est un produit. L’addition ne sert qu’à réunir des routes distinctes menant au même événement."
             solved={q2} onAnswered={() => setQ2(true)}

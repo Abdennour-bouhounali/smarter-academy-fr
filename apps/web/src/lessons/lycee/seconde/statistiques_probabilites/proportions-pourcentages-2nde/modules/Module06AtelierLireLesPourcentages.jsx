@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -31,12 +31,22 @@ export default function Module06AtelierLireLesPourcentages() {
       title: 'La remise du magasin',
       done: a1 && a2,
       content: (
+        <div className="space-y-3">
+        {/* L'atelier ne réenseigne rien : il met en ordre les cinq modules
+            précédents en une procédure de lecture, posée avant la première
+            situation puisque c'est elle que chaque situation exécute. */}
+        <KnowledgeBrick
+          id="methode-lire-enonce"
+          variant="new"
+          lead={<>Les trois situations qui suivent se traitent toutes de la même façon : d’abord la <strong>référence</strong>, ensuite <strong>état ou variation</strong>, et seulement après, le calcul.</>}
+        />
         <Situation emoji="🏷️" title="« −40 % sur le deuxième article »">
           <p className="text-sm text-slate-700">
             Deux articles à 60 € chacun. Le second est vendu avec 40 % de remise.
           </p>
           <TapQuestion
             prompt="La remise de 40 % porte sur quoi ?"
+            requires={['methode-lire-enonce', 'proportion-reference', 'mem-de-quoi', 'vocab-part-tout']}
             options={['Sur le total des deux articles (120 €)', 'Sur le second article seulement (60 €)', 'Sur chacun des deux articles']}
             correct={1} cols={1}
             explain="« Sur le deuxième article » désigne la référence : 40 % de 60 €, soit 24 € de remise. Rapportée aux 120 € payés au départ, la remise ne représente que 20 %."
@@ -47,6 +57,7 @@ export default function Module06AtelierLireLesPourcentages() {
             <NumericQuestion
               prompt="Combien paie-t-on les deux articles au total, en euros ?"
               expected={96} suffix="€"
+              requires={['methode-lire-enonce', 'formule-proportion', 'proportion-reference', 'methode-remises-successives']}
               explain="60 + 60 × 0,60 = 60 + 36 = 96 €. La remise vaut 24 €, soit 20 % du prix initial des deux articles."
               explainFor={(n) => (n === 72
                 ? 'Tu as appliqué la remise aux deux articles : 120 × 0,60 = 72 €. Or elle ne porte que sur le second : 60 + 36 = 96 €.'
@@ -57,6 +68,7 @@ export default function Module06AtelierLireLesPourcentages() {
             />
           )}
         </Situation>
+        </div>
       ),
     },
     {
@@ -68,6 +80,7 @@ export default function Module06AtelierLireLesPourcentages() {
           <p className="text-sm text-slate-700">Le lycée compte 800 inscrits au conseil de vie lycéenne.</p>
           <TapQuestion
             prompt="Les 60 % qui ont choisi A se comptent parmi…"
+            requires={['methode-lire-enonce', 'proportion-de-proportion', 'proportion-reference', 'mem-de-quoi']}
             options={['les 800 inscrits', 'les votants seulement', 'les abstentionnistes']}
             correct={1} cols={3}
             explain="« d’entre eux » renvoie aux votants. La part de A parmi TOUS les inscrits est 0,55 × 0,60 = 33 %."
@@ -78,6 +91,7 @@ export default function Module06AtelierLireLesPourcentages() {
             <NumericQuestion
               prompt="Combien d’inscrits ont voté pour A ?"
               expected={264} suffix="inscrits"
+              requires={['methode-lire-enonce', 'proportion-de-proportion', 'formule-proportion', 'effectif']}
               explain="800 × 0,55 = 440 votants, puis 440 × 0,60 = 264. Soit directement 800 × 0,55 × 0,60 = 264, c’est-à-dire 33 % des inscrits."
               explainFor={(n) => (n === 480
                 ? '480 = 800 × 0,60 : tu as appliqué les 60 % à tous les inscrits. Ils ne portent que sur les 440 votants : 440 × 0,60 = 264.'
@@ -99,6 +113,7 @@ export default function Module06AtelierLireLesPourcentages() {
           <p className="text-sm text-slate-700">Deux pourcentages dans la même phrase — mais pas de la même nature.</p>
           <TapQuestion
             prompt="Le « 4 % » et le passage de « 30 % à 31 % » décrivent…"
+            requires={['methode-lire-enonce', 'etat-vs-variation', 'point-vs-pourcent', 'mem-de-quoi']}
             options={[
               'deux évolutions',
               'deux états',
@@ -114,6 +129,7 @@ export default function Module06AtelierLireLesPourcentages() {
             <NumericQuestion
               prompt="Le loyer était de 750 €. Combien devient-il après la hausse de 4 %, en euros ?"
               expected={780} suffix="€"
+              requires={['methode-lire-enonce', 'coefficient-multiplicateur', 'mem-k-1-plus-t', 'etat-vs-variation']}
               explain="750 × 1,04 = 780 €. Le coefficient 1,04 fait l’opération en une fois."
               explainFor={(n) => (n === 30
                 ? '30 € est l’augmentation. Le nouveau loyer est 750 + 30 = 780 €, soit 750 × 1,04.'

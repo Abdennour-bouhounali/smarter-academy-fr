@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { BoxPlot, median, interquartileRange, range as rangeOf } from '../../../../../common/stats';
@@ -78,13 +78,23 @@ export default function Module04ChoisirLeBonIndicateur() {
               );
             })}
           </div>
-          {done1 && (
+          {done1 ? (
             <Feedback tone={allRight ? 'ok' : 'ko'}>
               {allRight ? 'Les quatre.' : 'Regarde les corrections ci-dessus.'} Trois villes, quatre questions,
               et <strong>trois réponses différentes</strong> : il n’existe pas de « meilleure » ville dans l’absolu.
               Un résumé statistique répond à une question précise — encore faut-il choisir le bon nombre.
               {' '}<span className="text-slate-500">Tu peux changer tes réponses.</span>
             </Feedback>
+          ) : null}
+          {/* Les quatre réponses viennent de montrer qu'une question précise
+              appelle un indicateur précis : c'est l'instant pour nommer la
+              règle, avant que l'étape 2 ne l'exige. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="choisir-indicateur"
+              variant="new"
+              lead={<>Position pour « où ? », dispersion pour « à quel point est-ce régulier ? ». Tu viens de le vivre sur quatre questions.</>}
+            />
           )}
         </div>
       ),
@@ -102,6 +112,7 @@ export default function Module04ChoisirLeBonIndicateur() {
             { id: 'i3', label: '« Quel est le cas le plus extrême ? »', options: ['Le maximum', 'La médiane', 'Q3'], correct: 0, correction: 'Seul le maximum le donne — c’est le bout de la moustache.' },
             { id: 'i4', label: '« Quel écart total entre les cas extrêmes ? »', options: ['L’étendue', 'L’écart interquartile', 'La médiane'], correct: 0, correction: 'Étendue = maximum − minimum, d’une pointe à l’autre.' },
           ]}
+          requires={['choisir-indicateur', 'quartile', 'etendue', 'dispersion']}
           feedback={({ allRight: ar, nCorrect, total }) => (
             <Feedback tone={ar ? 'ok' : 'ko'}>
               {ar ? 'Les quatre.' : `${nCorrect} sur ${total}.`} Deux familles : les indicateurs de
@@ -118,6 +129,7 @@ export default function Module04ChoisirLeBonIndicateur() {
       title: 'Interpréter en contexte',
       done: q3,
       content: (
+        <div className="space-y-3">
         <TapQuestion
           prompt="Un organisateur de festival en plein air veut minimiser le risque de mauvaise surprise météo. Quel critère doit-il privilégier ?"
           options={[
@@ -127,10 +139,21 @@ export default function Module04ChoisirLeBonIndicateur() {
             'L’étendue la plus grande, pour avoir toutes les possibilités',
           ]}
           correct={0} cols={1}
+          requires={['choisir-indicateur', 'dispersion', 'etendue']}
           explain={`« Minimiser la surprise » est une question de RÉGULARITÉ, pas de niveau : c’est la dispersion qui répond. Brest a l’écart interquartile le plus faible (${interquartileRange(BREST)} °C) et l’étendue la plus courte (${rangeOf(BREST)} °C) : on sait à quoi s’attendre. Si la question avait été « où fait-il le plus chaud ? », la réponse aurait été Toulouse.`}
           explainWrong="Une médiane élevée ne protège pas des écarts, et une grande étendue est précisément ce qu’il faut éviter ici. Le critère de la prévisibilité est la dispersion."
           solved={q3} onAnswered={() => setQ3(true)}
         />
+        {/* Capstone du module : le réflexe qui reste, une fois les trois
+            étapes vécues. */}
+        {q3 && (
+          <KnowledgeBrick
+            id="mem-boite"
+            variant="new"
+            lead={<>C’est ce réflexe qui va servir dans l’atelier et la mission finale.</>}
+          />
+        )}
+        </div>
       ),
     },
   ];

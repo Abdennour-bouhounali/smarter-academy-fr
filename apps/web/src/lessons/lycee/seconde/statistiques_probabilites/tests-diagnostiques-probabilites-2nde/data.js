@@ -43,7 +43,7 @@ export function scenario(params = REFERENCE) {
   return { ...c, ...diagnosticIndicators(c) };
 }
 
-/** Les quatre catégories, pour PopulationGrid. Les atteints d'abord : leur
+/** Les quatre catégories, pour PopulationBar. Les atteints d'abord : leur
  *  petit nombre doit sauter aux yeux face à la masse des sains. */
 export function populationGroups(params = REFERENCE) {
   const c = counts(params);

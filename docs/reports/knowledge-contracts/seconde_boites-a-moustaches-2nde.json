@@ -2,37 +2,72 @@
   "lesson": "boites-a-moustaches-2nde",
   "grade": "seconde",
   "lexiconVersion": 1,
-  "prerequisites": [],
+  "prerequisites": [
+    "serie-statistique",
+    "effectif",
+    "ordre-nombres",
+    "mediane-stat",
+    "quartile",
+    "etendue",
+    "dispersion",
+    "indicateur-stat",
+    "moyenne"
+  ],
   "conceptsIntroduced": [
     {
       "id": "resume-cinq-nombres",
       "type": "concepts",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module01CinqNombresSuffisent.jsx",
+        "line": 94,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "zones-quart",
       "type": "regles",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module02CeQueChaqueZoneRaconte.jsx",
+        "line": 52,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "lire-dispersion",
       "type": "formules",
       "module": 2,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module02CeQueChaqueZoneRaconte.jsx",
+        "line": 87,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
       "id": "axe-commun",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module03TroisVillesUnAxe.jsx",
+        "line": 77,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "mediane-ne-dit-pas-tout",
       "type": "regles",
       "module": 3,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module03TroisVillesUnAxe.jsx",
+        "line": 128,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "vocabularyIntroduced": [],
@@ -41,19 +76,34 @@
       "id": "construire-boite",
       "type": "methodes",
       "module": 1,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module01CinqNombresSuffisent.jsx",
+        "line": 99,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "choisir-indicateur",
       "type": "methodes",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module04ChoisirLeBonIndicateur.jsx",
+        "line": 93,
+        "step": 1,
+        "variant": "new"
+      }
     },
     {
       "id": "interpreter-contexte",
       "type": "methodes",
       "module": 5,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module05AtelierLireDesBoites.jsx",
+        "line": 67,
+        "step": 1,
+        "variant": "new"
+      }
     }
   ],
   "memorisation": [
@@ -61,7 +111,12 @@
       "id": "mem-boite",
       "type": "memoriser",
       "module": 4,
-      "brick": null
+      "brick": {
+        "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module04ChoisirLeBonIndicateur.jsx",
+        "line": 150,
+        "step": 3,
+        "variant": "new"
+      }
     }
   ],
   "questions": [
@@ -71,9 +126,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module00Diagnostic.jsx",
-      "line": 11,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 17,
+      "requires": [
+        "mediane-stat",
+        "serie-statistique",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "mediane-stat": "prior",
+        "serie-statistique": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -83,9 +146,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module00Diagnostic.jsx",
-      "line": 12,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 18,
+      "requires": [
+        "quartile",
+        "effectif",
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "quartile": "prior",
+        "effectif": "prior",
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -95,9 +166,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module00Diagnostic.jsx",
-      "line": 13,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 19,
+      "requires": [
+        "mediane-stat",
+        "serie-statistique",
+        "ordre-nombres"
+      ],
+      "prerequisiteStatus": {
+        "mediane-stat": "prior",
+        "serie-statistique": "prior",
+        "ordre-nombres": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -107,9 +186,17 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module00Diagnostic.jsx",
-      "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 20,
+      "requires": [
+        "etendue",
+        "dispersion",
+        "indicateur-stat"
+      ],
+      "prerequisiteStatus": {
+        "etendue": "prior",
+        "dispersion": "prior",
+        "indicateur-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -119,9 +206,37 @@
       "step": null,
       "component": "diag",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module00Diagnostic.jsx",
-      "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 21,
+      "requires": [
+        "quartile",
+        "etendue",
+        "dispersion"
+      ],
+      "prerequisiteStatus": {
+        "quartile": "prior",
+        "etendue": "prior",
+        "dispersion": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "bm-d6",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module00Diagnostic.jsx",
+      "line": 22,
+      "requires": [
+        "moyenne",
+        "serie-statistique",
+        "indicateur-stat"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "prior",
+        "serie-statistique": "prior",
+        "indicateur-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -131,9 +246,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module01CinqNombresSuffisent.jsx",
-      "line": 103,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 124,
+      "requires": [
+        "resume-cinq-nombres",
+        "construire-boite",
+        "quartile",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "resume-cinq-nombres": "established@M1",
+        "construire-boite": "established@M1",
+        "quartile": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -143,9 +268,17 @@
       "step": 1,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module02CeQueChaqueZoneRaconte.jsx",
-      "line": 47,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 61,
+      "requires": [
+        "zones-quart",
+        "quartile",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "zones-quart": "established@M2",
+        "quartile": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -155,9 +288,19 @@
       "step": 2,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module02CeQueChaqueZoneRaconte.jsx",
-      "line": 68,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 92,
+      "requires": [
+        "lire-dispersion",
+        "quartile",
+        "etendue",
+        "dispersion"
+      ],
+      "prerequisiteStatus": {
+        "lire-dispersion": "established@M2",
+        "quartile": "prior",
+        "etendue": "prior",
+        "dispersion": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -167,9 +310,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module02CeQueChaqueZoneRaconte.jsx",
-      "line": 89,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 115,
+      "requires": [
+        "lire-dispersion",
+        "zones-quart",
+        "dispersion",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "lire-dispersion": "established@M2",
+        "zones-quart": "established@M2",
+        "dispersion": "prior",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -179,9 +332,21 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module03TroisVillesUnAxe.jsx",
-      "line": 85,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 96,
+      "requires": [
+        "axe-commun",
+        "mediane-stat",
+        "quartile",
+        "etendue",
+        "dispersion"
+      ],
+      "prerequisiteStatus": {
+        "axe-commun": "established@M3",
+        "mediane-stat": "prior",
+        "quartile": "prior",
+        "etendue": "prior",
+        "dispersion": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -191,9 +356,19 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module03TroisVillesUnAxe.jsx",
-      "line": 112,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 134,
+      "requires": [
+        "mediane-ne-dit-pas-tout",
+        "axe-commun",
+        "mediane-stat",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "mediane-ne-dit-pas-tout": "established@M3",
+        "axe-commun": "established@M3",
+        "mediane-stat": "prior",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -203,9 +378,19 @@
       "step": 2,
       "component": "BatchChoiceQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module04ChoisirLeBonIndicateur.jsx",
-      "line": 98,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 108,
+      "requires": [
+        "choisir-indicateur",
+        "quartile",
+        "etendue",
+        "dispersion"
+      ],
+      "prerequisiteStatus": {
+        "choisir-indicateur": "established@M4",
+        "quartile": "prior",
+        "etendue": "prior",
+        "dispersion": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -215,9 +400,17 @@
       "step": 3,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module04ChoisirLeBonIndicateur.jsx",
-      "line": 121,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 133,
+      "requires": [
+        "choisir-indicateur",
+        "dispersion",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "choisir-indicateur": "established@M4",
+        "dispersion": "prior",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -228,8 +421,16 @@
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module05AtelierLireDesBoites.jsx",
       "line": 49,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mediane-ne-dit-pas-tout",
+        "mediane-stat",
+        "dispersion"
+      ],
+      "prerequisiteStatus": {
+        "mediane-ne-dit-pas-tout": "established@M3",
+        "mediane-stat": "prior",
+        "dispersion": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -239,9 +440,17 @@
       "step": 1,
       "component": "NumericQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module05AtelierLireDesBoites.jsx",
-      "line": 63,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 74,
+      "requires": [
+        "interpreter-contexte",
+        "quartile",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-contexte": "established@M5",
+        "quartile": "prior",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -251,9 +460,19 @@
       "step": 2,
       "component": "TapQuestion",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module05AtelierLireDesBoites.jsx",
-      "line": 86,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "line": 98,
+      "requires": [
+        "interpreter-contexte",
+        "mediane-ne-dit-pas-tout",
+        "quartile",
+        "dispersion"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-contexte": "established@M5",
+        "mediane-ne-dit-pas-tout": "established@M3",
+        "quartile": "prior",
+        "dispersion": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -264,8 +483,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 14,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "resume-cinq-nombres",
+        "mediane-stat",
+        "quartile"
+      ],
+      "prerequisiteStatus": {
+        "resume-cinq-nombres": "established@M1",
+        "mediane-stat": "prior",
+        "quartile": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -276,8 +503,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 15,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "construire-boite",
+        "quartile"
+      ],
+      "prerequisiteStatus": {
+        "construire-boite": "established@M1",
+        "quartile": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -288,8 +521,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 16,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "lire-dispersion",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "lire-dispersion": "established@M2",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -300,8 +539,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 17,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "zones-quart",
+        "mem-boite",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "zones-quart": "established@M2",
+        "mem-boite": "established@M4",
+        "effectif": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -312,8 +559,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 18,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "lire-dispersion",
+        "quartile",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "lire-dispersion": "established@M2",
+        "quartile": "prior",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -324,8 +579,14 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 19,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mediane-ne-dit-pas-tout",
+        "mediane-stat"
+      ],
+      "prerequisiteStatus": {
+        "mediane-ne-dit-pas-tout": "established@M3",
+        "mediane-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -336,8 +597,16 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 20,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "mediane-ne-dit-pas-tout",
+        "mediane-stat",
+        "dispersion"
+      ],
+      "prerequisiteStatus": {
+        "mediane-ne-dit-pas-tout": "established@M3",
+        "mediane-stat": "prior",
+        "dispersion": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -348,8 +617,12 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 21,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "axe-commun"
+      ],
+      "prerequisiteStatus": {
+        "axe-commun": "established@M3"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -360,8 +633,18 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 22,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "choisir-indicateur",
+        "mem-boite",
+        "dispersion",
+        "etendue"
+      ],
+      "prerequisiteStatus": {
+        "choisir-indicateur": "established@M4",
+        "mem-boite": "established@M4",
+        "dispersion": "prior",
+        "etendue": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     },
@@ -372,120 +655,19 @@
       "component": "boss",
       "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/modules/Module06MissionFinaleLesCinqNombres.jsx",
       "line": 23,
-      "requires": null,
-      "prerequisiteStatus": {},
+      "requires": [
+        "interpreter-contexte",
+        "choisir-indicateur",
+        "mediane-stat"
+      ],
+      "prerequisiteStatus": {
+        "interpreter-contexte": "established@M5",
+        "choisir-indicateur": "established@M4",
+        "mediane-stat": "prior"
+      },
       "lexiconHits": [],
       "pedagogicallyValid": true
     }
   ],
-  "findings": [
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'resume-cinq-nombres' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 38,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'construire-boite' (module 1) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 58,
-      "module": 1,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'zones-quart' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 79,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'lire-dispersion' (module 2) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 99,
-      "module": 2,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'axe-commun' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 116,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mediane-ne-dit-pas-tout' (module 3) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 128,
-      "module": 3,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'choisir-indicateur' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 144,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'mem-boite' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 161,
-      "module": 4,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    },
-    {
-      "code": "W_ITEM_WITHOUT_BRICK",
-      "severity": "info",
-      "message": "knowledge item 'interpreter-contexte' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
-      "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-      "line": 175,
-      "module": 5,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
-    }
-  ]
+  "findings": []
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { formatPercent } from '../../../../../common/stats';
@@ -73,7 +73,19 @@ export default function Module01EteindreLaPopulation() {
               consiste pas à ajouter une information au calcul : on <strong>jette une partie de la
               population</strong> et on recalcule dans ce qui reste. Le tout a changé.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le geste vient de faire sortir 600 élèves de l'univers et de
+              déplacer le quotient sans toucher au numérateur : c'est
+              l'instant où la sous-population peut être nommée, avant la
+              question de l'étape 2 qui l'exige. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="univers-restreint"
+              variant="new"
+              lead={<>Tu viens d’écarter une partie des 800 élèves et de voir la probabilité changer sans que le nombre d’élèves en club retenus ne bouge. Ce que tu as remplacé porte un nom.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">Conditions essayées : {seen.size} sur 3.</Feedback>
           )}
         </div>
@@ -93,6 +105,7 @@ export default function Module01EteindreLaPopulation() {
             'Le calcul a été fait avec plus de précision',
           ]}
           correct={0} cols={1}
+          requires={['univers-restreint', 'probabilite', 'denominateur', 'effectif']}
           explain="Le numérateur reste 150 dans les deux cas : ce sont bien les mêmes élèves. Ce qui change, c’est l’univers — 800 élèves d’abord, 200 ensuite. 150/800 ≈ 18,8 % n’est d’ailleurs pas la même question : c’est la probabilité d’être À LA FOIS interne et en club."
           explainWrong="Regarde les deux quotients affichés : 450/800 puis 150/200. C’est le dénominateur — l’univers dans lequel on calcule — qui a été remplacé."
           solved={done2} onAnswered={() => setQ2(true)}

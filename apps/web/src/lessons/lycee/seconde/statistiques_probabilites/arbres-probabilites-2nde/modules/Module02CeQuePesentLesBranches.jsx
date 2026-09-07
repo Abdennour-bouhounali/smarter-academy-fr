@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { parseDec } from '@smarter-academy/core';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -41,12 +41,23 @@ export default function Module02CeQuePesentLesBranches() {
             parse={parseDec}
             display="25 %"
             suffix="%"
+            requires={['arbre-structure', 'frequence', 'quotient', 'probabilite']}
             explain={`${SACS.B.rouges} ÷ ${sacTotal('B')} = 0,25. Le poids d’une branche du second niveau se lit DANS le sac où l’on est déjà.`}
             explainFor={(n) => (Math.abs(n - 20) < 0.5
               ? 'Attention : on ne compte pas les billes des deux sacs réunis. Une fois le sac B choisi, seules ses 8 billes existent.'
               : null)}
-            solved={q1} onAnswered={(ok) => { if (ok) setQ1(true); }}
+            solved={q1} onAnswered={() => setQ1(true)}
           />
+          {/* Le comptage vient d'avoir lieu DANS le sac B seul, jamais sur les
+              14 billes réunies : c'est exactement ce que dit une conditionnelle.
+              On la nomme ici, avant que l'étape 2 ne demande de l'interpréter. */}
+          {q1 && (
+            <KnowledgeBrick
+              id="poids-conditionnels"
+              variant="new"
+              lead={<>Pour trouver ce poids, tu n’as compté que les 8 billes du sac B — pas les 14 des deux sacs. Ce choix a un nom.</>}
+            />
+          )}
         </div>
       ),
     },
@@ -68,6 +79,7 @@ export default function Module02CeQuePesentLesBranches() {
               'On a une chance sur deux de choisir le sac A',
             ]}
             correct={0} cols={1}
+            requires={['poids-conditionnels', 'arbre-structure', 'probabilite']}
             explain="C’est une probabilité CONDITIONNELLE : P_A(rouge). Le sac A est déjà choisi — on raisonne dans l’univers restreint à ses 6 billes. La probabilité d’obtenir une rouge sur l’ensemble des tirages est un autre nombre, que tu calculeras au module 4."
             explainWrong="Le poids d’une branche du second niveau se lit toujours « sachant qu’on est arrivé jusqu’ici ». Il ne concerne pas tous les tirages, seulement ceux qui passent par ce nœud."
             solved={q2} onAnswered={() => setQ2(true)}
@@ -90,6 +102,15 @@ export default function Module02CeQuePesentLesBranches() {
               sac A choisi, la bille est forcément rouge ou bleue.
             </p>
           </div>
+          {/* La règle sort du constat qu'on vient de faire sur le sac A :
+              elle est posée AVANT la question qui demande de l'appliquer
+              à un arbre étranger. */}
+          <KnowledgeBrick
+            id="somme-branches"
+            variant="new"
+            compact
+            lead={<>Une fois le sac A choisi, il ne reste que rouge ou bleue : 0,5 + 0,5 = 1. Ce n’est pas un hasard de ces nombres-là.</>}
+          />
           <TapQuestion
             prompt="Un arbre montre, partant d’un même nœud, deux branches de poids 0,7 et 0,2. Que peut-on dire ?"
             options={[
@@ -99,6 +120,7 @@ export default function Module02CeQuePesentLesBranches() {
               'Il faut multiplier 0,7 par 0,2',
             ]}
             correct={0} cols={1}
+            requires={['somme-branches', 'arbre-structure', 'issue-evenement']}
             explain="0,7 + 0,2 = 0,9 ≠ 1 : ou bien un poids est erroné, ou bien une issue a été oubliée. Un arbre correct répartit toujours la totalité des cas depuis chaque nœud — c’est le premier contrôle à faire."
             explainWrong="Les branches issues d’un même nœud décrivent toutes les suites possibles : leur somme vaut nécessairement 1."
             solved={q3} onAnswered={() => setQ3(true)}

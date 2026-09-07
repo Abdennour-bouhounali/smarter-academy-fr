@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -94,7 +94,18 @@ export default function Module05AjouterOuRetirerUneValeur() {
               On dit que la médiane et l’écart interquartile sont <strong>robustes</strong> : un individu
               exceptionnel ne les déplace pas, parce qu’ils comptent des effectifs, pas des valeurs.
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le tableau vient de montrer QUI bouge et QUI résiste à l'élève
+              exceptionnel : on nomme cette propriété ici, avant qu'elle ne
+              soit exigée par la question de l'étape 2. */}
+          {added && (
+            <KnowledgeBrick
+              id="robustesse"
+              variant="new"
+              lead={<>Le tableau vient de le montrer : médiane et écart interquartile n’ont pas bougé, moyenne et écart type ont explosé. Cette résistance a un nom.</>}
+            />
+          )}
+          {!added && (
             <Feedback tone="info">Ajoute l’élève à 120 min pour comparer les deux colonnes.</Feedback>
           )}
         </div>
@@ -105,6 +116,7 @@ export default function Module05AjouterOuRetirerUneValeur() {
       title: 'Tout le monde part 5 minutes plus tôt',
       done: q2,
       content: (
+        <div className="space-y-3">
         <BatchChoiceQuestion
           intro={(
             <div className="space-y-2">
@@ -120,6 +132,7 @@ export default function Module05AjouterOuRetirerUneValeur() {
             { id: 'l3', label: 'Écart type (8,97 min)', options: ['8,97 min', '3,97 min', '1,79 min'], correct: 0, correction: 'Inchangé : décaler toute la série ne change pas son étalement.' },
             { id: 'l4', label: 'Écart interquartile (13 min)', options: ['13 min', '8 min', '2,6 min'], correct: 0, correction: 'Inchangé, pour la même raison.' },
           ]}
+          requires={['robustesse', 'mediane-stat', 'etendue']}
           feedback={({ allRight, nCorrect, total }) => (
             <Feedback tone={allRight ? 'ok' : 'ko'}>
               {allRight ? 'Les quatre.' : `${nCorrect} sur ${total}.`} Retirer la même durée à tout le monde
@@ -129,6 +142,18 @@ export default function Module05AjouterOuRetirerUneValeur() {
           )}
           solved={q2} onAnswered={() => setQ2(true)}
         />
+        {/* Le tableau vient de séparer ce qui SUIT le décalage (position) de
+            ce qui n'en bouge PAS (dispersion) : on nomme cette règle avant
+            que le retrait de valeur, à l'étape 3, ne remette la moyenne au
+            travail. */}
+        {q2 && (
+          <KnowledgeBrick
+            id="linearite-moyenne"
+            variant="new"
+            lead={<>Retirer 5 min à tout le monde a décalé moyenne et médiane, sans toucher à l’étalement. C’est une règle générale.</>}
+          />
+        )}
+        </div>
       ),
     },
     {
@@ -139,6 +164,7 @@ export default function Module05AjouterOuRetirerUneValeur() {
         <NumericQuestion
           prompt="Cinq élèves : 10, 12, 14, 16 et 48 min (moyenne 20 min). On retire l’élève à 48 min. Quelle est la nouvelle moyenne, en minutes ?"
           expected={13} suffix="min"
+          requires={['robustesse', 'quotient']}
           explain="(10 + 12 + 14 + 16) ÷ 4 = 52 ÷ 4 = 13 min. Retirer la valeur extrême fait chuter la moyenne de 7 min ; la médiane, elle, passe seulement de 14 à 13."
           explainFor={(n) => (n === 20
             ? '20 était la moyenne AVEC l’élève à 48 min. Sans lui : 52 ÷ 4 = 13 min.'
@@ -163,6 +189,7 @@ export default function Module05AjouterOuRetirerUneValeur() {
             'Parce que la moyenne n’a pas de sens sur des revenus',
           ]}
           correct={0} cols={1}
+          requires={['robustesse', 'mediane-stat', 'moyenne']}
           explain="Quelques revenus très élevés tirent fortement la moyenne vers le haut, sans rien changer à ce que gagne la personne « du milieu ». La médiane décrit mieux la situation typique — c’est la robustesse constatée à l’étape 1."
           explainWrong="La médiane n’est pas toujours plus grande (ici elle est plus PETITE que la moyenne), et son calcul demande de trier toute la série. Son avantage est sa robustesse aux valeurs extrêmes."
           solved={q4} onAnswered={() => setQ4(true)}

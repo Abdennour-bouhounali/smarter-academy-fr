@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { median, standardDeviation, interquartileRange, range as rangeOf, mean, formatNumber } from '../../../../../common/stats';
@@ -57,10 +57,21 @@ export default function Module06AtelierComparerDeuxSeries() {
               'On ne peut pas savoir sans les effectifs',
             ]}
             correct={0} cols={1}
+            requires={['moyenne', 'dispersion', 'indicateur-stat']}
             explain="Les positions sont quasi identiques (19,15 et 19,10 min), donc elles ne départagent rien. C’est la DISPERSION qui tranche : en 2de B tout le monde est entre 14 et 25 min, en 2de A entre 5 et 40."
             explainWrong="Les deux classes ont les mêmes effectifs (20) et pratiquement la même moyenne : ces chiffres ne peuvent pas départager. Il faut regarder l’écart type ou l’étendue."
             solved={a1} onAnswered={() => setA1(true)}
           />
+          {/* La comparaison vient de se jouer sur la dispersion, la position
+              ne départageant rien : on nomme ici la méthode en deux temps
+              que les situations suivantes vont réutiliser. */}
+          {a1 && (
+            <KnowledgeBrick
+              id="methode-comparer"
+              variant="new"
+              lead={<>Tu viens de comparer 2de A et 2de B en deux temps : d’abord la position (elle ne tranchait pas), puis la dispersion (elle a tranché). C’est la méthode générale.</>}
+            />
+          )}
         </Situation>
       ),
     },
@@ -85,6 +96,7 @@ export default function Module06AtelierComparerDeuxSeries() {
               'Que l’atelier X a moins de commandes',
             ]}
             correct={0} cols={1}
+            requires={['methode-comparer', 'mediane-stat', 'quartiles']}
             explain="Même médiane ne veut pas dire mêmes séries : l’atelier X est très régulier (écart interquartile 4 min), l’atelier Y très irrégulier (19 min). Pour un client qui veut une durée prévisible, X est nettement préférable."
             explainWrong="La médiane ne dit que la position centrale. Ici elle est identique, donc elle ne distingue rien : c’est la dispersion qui sépare les deux ateliers."
             solved={b1} onAnswered={() => setB1(true)}
@@ -93,6 +105,7 @@ export default function Module06AtelierComparerDeuxSeries() {
             <NumericQuestion
               prompt="Quel est l’écart interquartile de l’atelier Y, en minutes ? (Q1 = 9 min, Q3 = 28 min)"
               expected={19} suffix="min"
+              requires={['etendue-interquartile']}
               explain="Q3 − Q1 = 28 − 9 = 19 min, contre 4 min pour l’atelier X : presque cinq fois plus dispersé."
               explainFor={() => 'L’écart interquartile est la différence Q3 − Q1 = 28 − 9 = 19 min.'}
               solved={b2} onAnswered={() => setB2(true)}
@@ -116,6 +129,7 @@ export default function Module06AtelierComparerDeuxSeries() {
               'Non, parce que la moyenne ne se compare jamais',
             ]}
             correct={0} cols={1}
+            requires={['methode-comparer', 'moyenne']}
             explain="Un écart de 0,05 min — trois secondes — sur des séries qui s’étalent sur des dizaines de minutes ne permet aucune conclusion. Comparer deux indicateurs suppose que leur écart soit grand devant la dispersion des données."
             explainWrong="Comparer deux moyennes est parfaitement légitime, mais un écart de 0,05 min entre des séries dispersées de 3 à 9 min d’écart type n’a aucune signification pratique."
             solved={c1} onAnswered={() => setC1(true)}

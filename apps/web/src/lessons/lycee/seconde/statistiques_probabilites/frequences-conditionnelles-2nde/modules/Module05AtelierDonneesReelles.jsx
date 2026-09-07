@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { CrossTableView, conditionalFrequency, formatPercent } from '../../../../../common/stats';
@@ -41,9 +41,18 @@ export default function Module05AtelierDonneesReelles() {
         <Situation emoji="📰" title="« 60 % des garçons sont inscrits en club sportif »">
           <CrossTableView table={S} rowsTitle="Inscription" colsTitle="Sexe"
             caption="Enquête sur 400 lycéens" />
+          {/* Le tableau vient d'être posé et l'affirmation de l'article vient
+              d'être lue : c'est l'instant pour nommer la méthode de
+              vérification, avant la question qui la met en œuvre. */}
+          <KnowledgeBrick
+            id="lire-un-article"
+            variant="new"
+            lead={<>Avant de vérifier si « 60 % des garçons » est vrai, demande-toi d’abord : 60 % de quoi ?</>}
+          />
           <NumericQuestion
             prompt="Vérifie : parmi les 160 garçons, 96 sont en club. Quelle fréquence conditionnelle, en pourcentage ?"
             expected={60} suffix="%"
+            requires={['lire-un-article', 'population-reference', 'quotient', 'pourcentage', 'effectif']}
             explain={`96 ÷ 160 = 0,60 = 60 %. L’affirmation de l’article est donc exacte : sa référence est bien « les garçons ».`}
             explainFor={(n) => (n === 24
               ? '24 % serait 96 ÷ 400, la fréquence conjointe (part du total). L’article dit « des garçons » : on divise par 160.'
@@ -60,6 +69,7 @@ export default function Module05AtelierDonneesReelles() {
                 'On ne peut pas le savoir avec ce tableau',
               ]}
               correct={0} cols={1}
+              requires={['lire-un-article', 'inversion-condition', 'mem-parmi']}
               explain={`Les deux phrases partagent le numérateur 96 mais pas le dénominateur : 160 garçons d’un côté, 180 inscrits de l’autre. On passe de 60 % à ${formatPercent(P_G_CLUB, 1)}.`}
               explainWrong={`« Parmi les garçons, les inscrits » divise par 160 ; « parmi les inscrits, les garçons » divise par 180. Résultats : 60 % et ${formatPercent(P_G_CLUB, 1)}.`}
               solved={a2} onAnswered={() => setA2(true)}
@@ -83,6 +93,7 @@ export default function Module05AtelierDonneesReelles() {
               'On ne peut rien comparer ici',
             ]}
             correct={0} cols={1}
+            requires={['comparer-sous-populations', 'population-reference', 'effectif']}
             explain={`Les deux groupes n’ont pas la même taille : 160 garçons et 240 filles. En effectif brut, 96 > 84 ; en part, ${formatPercent(P_CLUB_G, 0)} contre ${formatPercent(P_CLUB_F, 0)} — l’écart réel est bien plus net que ne le laisse croire « 96 contre 84 ». C’est le lien direct avec l’atelier de la leçon « Tableaux croisés ».`}
             explainWrong="L’effectif brut est bien plus élevé chez les garçons, mais ils sont aussi moins nombreux au total (160 contre 240). Comparer des groupes de tailles différentes exige les fréquences conditionnelles."
             solved={b1} onAnswered={() => setB1(true)}

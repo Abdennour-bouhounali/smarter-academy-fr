@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -29,8 +29,19 @@ export default function Module05RetrouverLaValeurInitiale() {
       title: 'Le prix avant les soldes',
       done: q1,
       content: (
+        <div className="space-y-3">
+        {/* Pas de nouveau laboratoire ici : le geste qui donne du sens a été
+            fait au module 4 (l'écart refermé par le coefficient INVERSE).
+            La brique en tire la conséquence — remonter, c'est diviser —
+            AVANT la première question, qui l'exige. */}
+        <KnowledgeBrick
+          id="retrouver-valeur-initiale"
+          variant="new"
+          lead={<>Au module 4, tu refermais l’écart en multipliant par l’inverse du coefficient. Ici on ne connaît pas le départ : c’est exactement le même geste, écrit comme une division.</>}
+        />
         <NumericQuestion
           prompt="Après une remise de 20 %, un manteau coûte 96 €. Quel était son prix avant la remise, en euros ?"
+          requires={['retrouver-valeur-initiale', 'evolution-reciproque', 'pourcentage']}
           above={(revealed) => (
             <div className="rounded-xl border border-cyan-200 bg-cyan-50 p-3 text-center">
               <MathText>{'$$V_i \\times k = V_f \\quad\\Longrightarrow\\quad V_i = \\frac{V_f}{k}$$'}</MathText>
@@ -48,6 +59,17 @@ export default function Module05RetrouverLaValeurInitiale() {
                 : 'Prix initial = prix final ÷ coefficient = 96 ÷ 0,80 = 120 €.')}
           solved={q1} onAnswered={() => setQ1(true)}
         />
+        {/* La vérification a été faite dans l'explication (120 × 0,80 = 96) :
+            on en fait un réflexe, que les étapes 2 et 3 réemploieront. */}
+        {q1 && (
+          <KnowledgeBrick
+            id="verification-systematique"
+            variant="new"
+            compact
+            lead={<>Tu as trouvé 120 €, et 120 × 0,80 redonne bien 96 €. Ce contrôle coûte une multiplication.</>}
+          />
+        )}
+        </div>
       ),
     },
     {
@@ -64,6 +86,7 @@ export default function Module05RetrouverLaValeurInitiale() {
             'On peut ajouter 20 %, cela revient au même',
           ]}
           correct={2} cols={1}
+          requires={['retrouver-valeur-initiale', 'evolution-reciproque', 'formule-taux-reciproque', 'pourcentage']}
           explain="96 × 1,20 = 115,20 € ≠ 120 €, parce que la remise s’était calculée sur 120 € et non sur 96 €. Le taux réciproque de −20 % est +25 % (1 ÷ 0,8 = 1,25), et 96 × 1,25 = 120 € ✓ — c’est bien la division par 0,8."
           explainWrong="Les 20 % de la remise se calculaient sur le prix initial (120 €), soit 24 € ; 20 % du prix soldé ne valent que 19,20 €. Le bon taux de retour est +25 %, c’est-à-dire une division par 0,80."
           solved={q2} onAnswered={() => setQ2(true)}
@@ -77,6 +100,7 @@ export default function Module05RetrouverLaValeurInitiale() {
       content: (
         <NumericQuestion
           prompt="Une population a augmenté de 10 %, puis diminué de 20 %. Elle compte aujourd’hui 8 800 habitants. Combien en comptait-elle au départ ?"
+          requires={['retrouver-valeur-initiale', 'verification-systematique', 'coefficient-global', 'pourcentage']}
           above={(revealed) => (
             <div className="rounded-xl border border-cyan-200 bg-cyan-50 p-3 text-center">
               <MathText>{'$$k_{\\text{global}} = 1{,}10 \\times 0{,}80 = 0{,}88$$'}</MathText>

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -98,7 +98,18 @@ export default function Module01SoixanteFichesARanger() {
               un comptage <strong>exhaustif</strong> (personne n’est oublié) et <strong>sans recouvrement</strong>
               (personne n’est compté deux fois).
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le rangement vient de faire tomber le total sur 60 : la figure
+              construite peut être nommée AVANT la question de l'étape 3, qui
+              exige d'y lire une case. */}
+          {done2 && (
+            <KnowledgeBrick
+              id="tableau-croise"
+              variant="new"
+              lead={<>Tu viens de ranger les {ELEVES.length} fiches une par une, sans en oublier ni en dédoubler. La figure que tu as fabriquée porte un nom.</>}
+            />
+          )}
+          {!done2 && (
             <Feedback tone="info">
               {wrong ? 'Cette case ne correspond pas aux deux caractères de la fiche — relis-la et réessaie. ' : ''}
               {placed} fiche{placed > 1 ? 's' : ''} rangée{placed > 1 ? 's' : ''} sur {ELEVES.length}.
@@ -135,6 +146,14 @@ export default function Module01SoixanteFichesARanger() {
             </table>
             <p className="text-xs text-slate-500 mt-2">… et 52 autres lignes.</p>
           </div>
+          {/* La forme brute est sous les yeux : on la nomme avant de demander
+              ce qu'il aurait fallu faire sans le tableau. */}
+          <KnowledgeBrick
+            id="fichier-donnees"
+            variant="new"
+            compact
+            lead={<>Voilà d’où venaient tes fiches : une ligne par élève, une colonne par caractère.</>}
+          />
           <TapQuestion
             prompt="Sans le tableau que tu viens de remplir, comment aurait-il fallu répondre à « combien d’élèves de 2de A font du judo ? »"
             options={[
@@ -144,6 +163,7 @@ export default function Module01SoixanteFichesARanger() {
               'C’est impossible à savoir',
             ]}
             correct={0} cols={1}
+            requires={['fichier-donnees', 'tableau-croise', 'effectif']}
             explain="Le fichier contient l’information, mais ne la présente pas : il faut compter. Et additionner « 2de A » et « judo » compterait plusieurs fois les mêmes élèves — ceux qui vérifient les deux."
             explainWrong="Un fichier de données individuelles liste les élèves un par un ; il ne totalise rien. Additionner les deux effectifs compterait deux fois les élèves de 2de A qui font du judo."
             solved={done1} onAnswered={() => setQ1(true)}
@@ -165,6 +185,7 @@ export default function Module01SoixanteFichesARanger() {
             '29 : la somme des deux totaux',
           ]}
           correct={0} cols={1}
+          requires={['tableau-croise', 'tableau-double-entree', 'effectif']}
           explain="La case à l’intersection donne directement l’effectif qui vérifie les DEUX caractères : 6 élèves. Le total de ligne (15 judokas) et celui de colonne (14 élèves de 2de A) répondent à d’autres questions ; leur somme (29) ne correspond à aucun groupe, car elle compte deux fois les 6 élèves de la case."
           explainWrong="Les totaux de ligne et de colonne portent sur UN seul caractère. C’est la case d’intersection qui croise les deux : 6 élèves."
           solved={done3} onAnswered={() => setQ3(true)}

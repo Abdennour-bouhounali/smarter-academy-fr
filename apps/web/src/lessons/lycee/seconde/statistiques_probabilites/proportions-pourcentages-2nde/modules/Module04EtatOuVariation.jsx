@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -56,7 +56,25 @@ export default function Module04EtatOuVariation() {
               de plus, et <strong>+25 %</strong> de boursiers.
               {' '}<span className="text-slate-500">Continue à régler les deux années : les deux cases divergent presque toujours.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Les deux cases viennent de diverger sur trois réglages : les deux
+              sens du signe « % » sont désormais VUS, on peut les nommer avant
+              que l'étape 2 ne demande de trancher entre eux. */}
+          {done1 && (
+            <KnowledgeBrick
+              id="etat-vs-variation"
+              variant="new"
+              lead={<>Deux nombres, une seule paire d’années. C’est que le signe « % » sert ici à <strong>deux choses différentes</strong>.</>}
+            />
+          )}
+          {done1 && (
+            <KnowledgeBrick
+              id="point-vs-pourcent"
+              variant="new"
+              lead={<>Et chacune a son mot : la case de gauche compte des <strong>points</strong>, celle de droite des <strong>pour cent</strong>.</>}
+            />
+          )}
+          {!done1 && (
             <Feedback tone="info">
               Réglages essayés : {seen.size} sur 3. Ici : {formatNumber(points * 100, 1)} points, et {formatPercent(rate, 1)} d’évolution.
             </Feedback>
@@ -78,6 +96,7 @@ export default function Module04EtatOuVariation() {
             'C’est faux dans tous les cas',
           ]}
           correct={0} cols={1}
+          requires={['point-vs-pourcent', 'etat-vs-variation', 'pourcentage', 'quotient']}
           explain="Les deux formulations sont justes mais différentes : la baisse est de 2 POINTS (8 − 6) et de 25 % en évolution relative ((6 − 8)/8 = −0,25). Le journal a choisi la seconde lecture, et il a le droit — à condition de dire « de 25 % », pas « de 25 points »."
           explainWrong="« Baisser de 2 points » et « baisser de 25 % » décrivent le même passage de 8 % à 6 %. La confusion vient de ce que les deux s’écrivent avec le signe %. Ici (6 − 8)/8 = −0,25."
           solved={q2} onAnswered={() => setQ2(true)}
@@ -90,6 +109,7 @@ export default function Module04EtatOuVariation() {
       done: q3,
       content: (
         <BatchChoiceQuestion
+          requires={['etat-vs-variation', 'point-vs-pourcent', 'vocab-part-tout', 'proportion-reference']}
           intro={<p className="text-sm font-semibold text-slate-700">Chaque phrase décrit-elle un <strong>état</strong> (une proportion) ou une <strong>variation</strong> (une évolution) ?</p>}
           rows={[
             { id: 'p1', label: '« 62 % des élèves sont demi-pensionnaires »', options: ['État', 'Variation'], correct: 0, correction: 'Une part du total à un instant donné.' },
@@ -114,8 +134,17 @@ export default function Module04EtatOuVariation() {
       title: 'Le calcul d’une évolution',
       done: q4,
       content: (
+        <div className="space-y-3">
+        {/* L'étape 1 faisait AFFICHER le taux ; ici il faut le produire. On pose
+            donc la formule — et surtout son dénominateur — juste avant. */}
+        <KnowledgeBrick
+          id="formule-taux-evolution"
+          variant="new"
+          lead={<>La case de droite de l’étape 1 calculait ceci toute seule. À toi de la refaire — en divisant par la bonne valeur.</>}
+        />
         <NumericQuestion
           prompt="Un club passe de 240 à 288 adhérents. De quel pourcentage a-t-il augmenté ?"
+          requires={['formule-taux-evolution', 'etat-vs-variation', 'quotient', 'pourcentage', 'effectif']}
           above={(revealed) => (
             <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-center">
               <MathText>{'$$t = \\frac{V_{\\text{finale}} - V_{\\text{initiale}}}{V_{\\text{initiale}}}$$'}</MathText>
@@ -131,6 +160,7 @@ export default function Module04EtatOuVariation() {
               : 'Différence divisée par la valeur initiale : (288 − 240) ÷ 240 = 0,20 = 20 %.')}
           solved={q4} onAnswered={() => setQ4(true)}
         />
+        </div>
       ),
     },
   ];

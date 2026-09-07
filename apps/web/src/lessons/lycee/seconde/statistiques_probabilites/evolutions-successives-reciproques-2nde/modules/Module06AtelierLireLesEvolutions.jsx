@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -32,9 +32,18 @@ export default function Module06AtelierLireLesEvolutions() {
       done: a1 && a2,
       content: (
         <Situation emoji="🏷️" title="« −30 %, puis −50 % sur les articles déjà soldés »">
+          {/* Les trois opérations existent déjà (modules 2, 4 et 5) ; ce que
+              l'atelier demande de neuf, c'est de CHOISIR laquelle. La brique
+              pose ce tri avant la première situation. */}
+          <KnowledgeBrick
+            id="methode-choisir-operation"
+            variant="new"
+            lead={<>Tu sais composer, inverser et remonter. Dans les trois situations qui suivent, la difficulté est ailleurs : décider laquelle l’énoncé réclame.</>}
+          />
           <p className="text-sm text-slate-700">Un blouson affiché 200 € avant les soldes.</p>
           <TapQuestion
             prompt="La remise totale annoncée par un client comme « −80 % » est-elle correcte ?"
+            requires={['methode-choisir-operation', 'coefficient-global', 'somme-jamais', 'pourcentage']}
             options={[
               'Non : 0,70 × 0,50 = 0,35, donc −65 %',
               'Oui : 30 + 50 = 80 %',
@@ -49,6 +58,7 @@ export default function Module06AtelierLireLesEvolutions() {
           {a1 && (
             <NumericQuestion
               prompt="Quel est le prix final du blouson, en euros ?"
+              requires={['methode-composer', 'coefficient-global', 'pourcentage']}
               expected={70} suffix="€"
               explain="200 × 0,70 × 0,50 = 70 €. On peut aussi faire 200 × 0,35 = 70 €."
               explainFor={(n) => (n === 40
@@ -71,6 +81,7 @@ export default function Module06AtelierLireLesEvolutions() {
           <p className="text-sm text-slate-700">Une commune de 12 000 habitants au départ.</p>
           <TapQuestion
             prompt="Sans calculer précisément, la population après trois ans est…"
+            requires={['methode-choisir-operation', 'coefficient-global', 'somme-jamais', 'base-mouvante', 'pourcentage']}
             options={[
               'un peu supérieure à 12 000, car +5 − 5 + 2 = +2 % environ mais la compensation +5/−5 est légèrement négative',
               'exactement 12 240 habitants',
@@ -85,6 +96,7 @@ export default function Module06AtelierLireLesEvolutions() {
           {b1 && (
             <NumericQuestion
               prompt="Combien d’habitants après ces trois années ? (arrondi à l’unité)"
+              requires={['methode-composer', 'coefficient-global', 'arrondi']}
               expected={(n) => Math.abs(n - 12209) <= 1}
               display="12 209 habitants"
               explain="12 000 × 1,05 × 0,95 × 1,02 = 12 209,4, soit environ 12 209 habitants."
@@ -106,6 +118,7 @@ export default function Module06AtelierLireLesEvolutions() {
           <p className="text-sm text-slate-700">On cherche le salaire d’avant la revalorisation.</p>
           <TapQuestion
             prompt="Quelle opération donne le salaire initial ?"
+            requires={['methode-choisir-operation', 'retrouver-valeur-initiale', 'evolution-reciproque', 'pourcentage']}
             options={[
               '2 080 ÷ 1,04',
               '2 080 × 0,96',
@@ -120,6 +133,7 @@ export default function Module06AtelierLireLesEvolutions() {
           {c1 && (
             <NumericQuestion
               prompt="Quel était le salaire initial, en euros ?"
+              requires={['retrouver-valeur-initiale', 'verification-systematique']}
               expected={2000} suffix="€"
               explain="2 080 ÷ 1,04 = 2 000 €. Vérification : 2 000 × 1,04 = 2 080 ✓."
               explainFor={(n) => (Math.abs(n - 1996.8) < 1

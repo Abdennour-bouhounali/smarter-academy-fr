@@ -719,6 +719,24 @@ is acceptable only when the manipulation itself already shows the student whethe
 (a filled container overflows, a balance tilts). Otherwise, let the wrong state be submitted and
 describe it. A step that can never produce a wrong state produces no diagnostic information.
 
+**Une erreur ne ferme jamais la porte — INVARIANT DUR.** L'erreur est une
+information ; elle ne DOIT JAMAIS verrouiller la suite du parcours. Une étape
+se valide dès que l'élève a **répondu**, jamais seulement s'il a répondu
+**juste** :
+
+```jsx
+- onAnswered={(ok) => { if (ok) setQ2(true); }}   // ❌ cul-de-sac : le QCM a
+                                                   // déjà révélé la réponse et
+                                                   // ne se laisse pas re-répondre
++ onAnswered={() => setQ2(true)}                   // ✅
+```
+
+Restent conformes, parce qu'un chemin de sortie existe : une **manipulation
+rejouable** (le placement fautif reste sur la droite, l'élève recommence) et un
+composant à **essais bornés** qui révèle la solution puis appelle
+`onDone(false)`. Règle complète : `LESSON_CONTRACT.md` § Progression non
+bloquante ; garde exécutable : `npm run check:non-blocking`.
+
 ---
 
 ## 13. Feedback rules

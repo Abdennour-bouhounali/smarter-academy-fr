@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TestPopulationLab from '../components/TestPopulationLab';
@@ -32,12 +32,16 @@ export default function Module02LesQuatreCases() {
             <p>Chaque nom se lit en deux morceaux :</p>
             <p>· <strong>positif / négatif</strong> = ce que le test <strong>affiche</strong> ;</p>
             <p>· <strong>vrai / faux</strong> = le test <strong>avait-il raison</strong> ?</p>
-            <div className="rounded-lg border border-violet-200 bg-violet-50 px-3 py-2 text-violet-900">
-              Un <strong>faux positif</strong> est donc un test qui affiche « positif » alors que la personne
-              est saine. Il n’y a rien à apprendre par cœur : il suffit de lire les deux mots.
-            </div>
           </div>
+          {/* La lecture en deux morceaux vient d'être faite : on pose le
+              vocabulaire ici, avant la première question qui l'exige. */}
+          <KnowledgeBrick
+            id="vocabulaire-cases"
+            variant="new"
+            lead={<>Applique cette lecture aux quatre groupes que tu as comptés au module précédent.</>}
+          />
           <TapQuestion
+            requires={['vocabulaire-cases', 'quatre-groupes']}
             prompt="Une personne saine dont le test est positif est…"
             options={['un faux positif', 'un vrai positif', 'un faux négatif', 'un vrai négatif']}
             correct={0} cols={2}
@@ -56,6 +60,7 @@ export default function Module02LesQuatreCases() {
         <div className="space-y-3">
           <TestPopulationLab step="test" params={REFERENCE} />
           <TapQuestion
+            requires={['vocabulaire-cases', 'quatre-groupes']}
             prompt="Une personne atteinte dont le test est négatif — donc rassurée à tort — s’appelle…"
             options={['un faux négatif', 'un faux positif', 'un vrai négatif', 'un vrai positif']}
             correct={0} cols={2}
@@ -72,6 +77,7 @@ export default function Module02LesQuatreCases() {
       done: q3,
       content: (
         <TapQuestion
+          requires={['vocabulaire-cases', 'quatre-groupes', 'tableau-double-entree', 'effectif']}
           prompt={`Dans ce tableau, que représente le total de la ligne « Test + », soit ${S.positive} personnes ?`}
           options={[
             'Toutes les personnes dont le test est positif, atteintes ou non',

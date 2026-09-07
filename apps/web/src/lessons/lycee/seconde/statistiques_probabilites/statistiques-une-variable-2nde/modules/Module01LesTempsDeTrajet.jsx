@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { mean, median, formatNumber } from '../../../../../common/stats';
@@ -78,7 +78,19 @@ export default function Module01LesTempsDeTrajet() {
               qu’il habite à 40 ou à 400 minutes.
               {' '}<span className="text-slate-500">Continue à déplacer les pastilles : moyenne {formatNumber(m, 2)} min, médiane {formatNumber(med, 1)} min.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* Le va-et-vient vient de montrer que les vingt durées forment UN
+              objet dont deux repères ne disent pas la même chose : c'est
+              l'instant où « série » et « position / étalement » ont un sens,
+              avant que l'étape 2 n'exige de la résumer. */}
+          {done3 && (
+            <KnowledgeBrick
+              id="serie-statistique"
+              variant="new"
+              lead={<>Tu viens de déplacer <strong>un</strong> élève et de voir <strong>un seul</strong> des deux repères le suivre. Ces vingt durées forment un objet qui a un nom.</>}
+            />
+          )}
+          {!done3 && (
             <Feedback tone="info">
               {!pushedFar ? 'Emmène une pastille au-delà de 55 min.' : 'Maintenant ramène-la sous 45 min.'}
               {' '}Actuellement : orange {formatNumber(m, 2)} min, vert {formatNumber(med, 1)} min.
@@ -104,6 +116,7 @@ export default function Module01LesTempsDeTrajet() {
               '35 min : l’écart entre le plus court et le plus long',
             ]}
             correct={0} cols={1}
+            requires={['serie-statistique', 'moyenne', 'mediane-stat', 'etendue', 'dispersion']}
             explain="Le gros du nuage se situe entre 10 et 25 min. Un extrême (5 ou 40) ne décrit qu’un élève ; l’étendue (35) mesure l’étalement, pas la position."
             explainWrong="Un seul élève, si atypique soit-il, ne résume pas la classe. Regarde où les pastilles s’accumulent."
             solved={done1} onAnswered={() => setQ1(true)}
@@ -126,6 +139,15 @@ export default function Module01LesTempsDeTrajet() {
             équitable</strong> du temps total. Ils diffèrent parce que quelques trajets très longs
             « tirent » le second vers la droite.
           </Feedback>
+          {/* Le mot « moitiés d'effectif » vient d'être employé sur la figure :
+              on pose ici le vocabulaire qui compte les individus, dont l'étape
+              4 et tout le reste de la leçon se serviront. */}
+          <KnowledgeBrick
+            id="vocab-effectif-frequence"
+            variant="new"
+            compact
+            lead={<>Le repère vert a partagé la classe en deux paquets de <strong>dix élèves</strong>. Compter des élèves, c'est compter un effectif.</>}
+          />
         </div>
       ),
     },
@@ -143,6 +165,7 @@ export default function Module01LesTempsDeTrajet() {
             'Non, mais seulement si les effectifs diffèrent',
           ]}
           correct={0} cols={1}
+          requires={['serie-statistique', 'vocab-effectif-frequence', 'moyenne', 'indicateur-stat', 'dispersion', 'effectif']}
           explain="Une classe où tout le monde met entre 17 et 21 min et une classe où l’on met entre 5 et 40 min peuvent avoir la même moyenne. Un indicateur de POSITION ne dit rien de l’ÉTALEMENT."
           explainWrong="Rien n’empêche deux séries de même moyenne d’avoir des allures opposées : c’est précisément ce que la suite de la leçon va mesurer."
           solved={done4} onAnswered={() => setQ4(true)}

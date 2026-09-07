@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, PredictionChips } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
@@ -89,7 +89,18 @@ export default function Module04LEcartType() {
               Plus il est petit, plus la moyenne est un bon résumé.
               {' '}<span className="text-slate-500">Continue à déplacer les pastilles.</span>
             </Feedback>
-          ) : (
+          ) : null}
+          {/* La bande vient de se rétrécir sous les yeux de l'élève : on
+              nomme et formalise ici cette distance typique, avant le calcul
+              posé à l'étape 3. */}
+          {done2 && (
+            <KnowledgeBrick
+              id="ecart-type"
+              variant="new"
+              lead={<>La bande verte que tu viens de resserrer a un nom et une formule : c’est l’écart type.</>}
+            />
+          )}
+          {!done2 && (
             <Feedback tone="info">
               Écart type actuel : {formatNumber(sd, 2)} min (au départ {formatNumber(sdA, 2)}).
               Rapproche les pastilles de la moyenne pour le faire descendre sous {formatNumber(sdA - 2.5, 1)}.
@@ -116,6 +127,7 @@ export default function Module04LEcartType() {
             </div>
           )}
           expected={2}
+          requires={['ecart-type', 'racine-carree']}
           explain="La moyenne des carrés des écarts vaut 4 (c’est la variance) ; l’écart type en est la racine carrée : 2. On élève au carré pour que les écarts négatifs ne compensent pas les positifs, puis on prend la racine pour revenir à l’unité de départ."
           explainFor={(n) => (n === 4
             ? '4 est la VARIANCE (la moyenne des carrés des écarts). L’écart type est sa racine carrée : √4 = 2.'
@@ -131,6 +143,15 @@ export default function Module04LEcartType() {
       title: 'Interpréter',
       done: done4,
       content: (
+        <div className="space-y-3">
+        {/* Position (module 2) et dispersion (écart type, à l'instant) sont
+            maintenant toutes deux posées : c'est le moment de nommer la
+            règle qui les réunit, avant la question qui en fait usage. */}
+        <KnowledgeBrick
+          id="mem-deux-nombres"
+          variant="new"
+          lead={<>Moyenne ou médiane racontent OÙ ; écart type ou écart interquartile racontent COMMENT ça s’étale. Une série se résume toujours par les deux.</>}
+        />
         <TapQuestion
           prompt="Deux capteurs mesurent la même température de 20 °C. Le capteur X a un écart type de 0,2 °C, le capteur Y de 3 °C. Lequel choisir ?"
           options={[
@@ -140,10 +161,12 @@ export default function Module04LEcartType() {
             'On ne peut pas conclure sans connaître la médiane',
           ]}
           correct={0} cols={1}
+          requires={['ecart-type', 'mem-deux-nombres']}
           explain="Un écart type faible signifie des mesures resserrées autour de la moyenne, donc reproductibles. Ici l’écart type se lit comme une incertitude : ±0,2 °C contre ±3 °C."
           explainWrong="L’écart type mesure la DISPERSION : plus il est grand, plus les mesures sont éparpillées. Un capteur fiable a un petit écart type."
           solved={done4} onAnswered={() => setQ4(true)}
         />
+        </div>
       ),
     },
   ];

@@ -43,6 +43,22 @@ export const LESSON_CONFIG = {
   id: 'arbres-probabilites-2nde',
   sequentialUnlock: true,
   knowledgeMap: true,
+  // Connaissances SUPPOSÉES acquises (état A du contrat « connaissances avant
+  // la demande », docs/architecture/KNOWLEDGE_DEPENDENCY.md), toutes
+  // diagnostiquées par le module 0 :
+  //   — le langage des probabilités du collège (3e) : expérience aléatoire,
+  //     issue et événement, probabilité d'un événement, cas équiprobables.
+  //     L'arbre ne les redéfinit pas, il les organise ;
+  //   — la fréquence (3e) et le quotient (6e), qui donnent le poids d'une
+  //     branche quand on compte les billes d'un sac, et l'arithmétique
+  //     décimale (produit et somme) que les chemins vont demander.
+  // La leçon enseigne le reste : la structure de l'arbre, les poids du second
+  // niveau lus comme des conditionnelles, la somme des branches d'un nœud,
+  // le produit le long d'un chemin, la somme des chemins d'un événement.
+  priorKnowledge: [
+    'experience-aleatoire', 'issue-evenement', 'probabilite', 'equiprobable',
+    'frequence', 'quotient',
+  ],
   title: 'Arbres de probabilités',
   description:
     "Construire soi-même l'arbre d'une expérience à deux temps, brancher les poids, puis découvrir que multiplier le long d'un chemin et additionner les chemins n'est pas une recette : c'est ce que la situation impose.",
