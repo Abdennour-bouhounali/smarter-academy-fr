@@ -7,3 +7,25 @@ database_export.sql
 
 # Generated curriculum export (build artifact of exportCurriculum.mjs)
 packages/core/curriculum/.generated/
+
+# ── Outils d'agent (config locale, pas du code du projet) ────────────────
+.claude/
+.agents/
+skills-lock.json
+
+# ── Sorties de tests et de build ─────────────────────────────────────────
+coverage/
+playwright-report/
+test-results/
+.vite/
+*.tsbuildinfo
+
+# ── Brouillons de session ────────────────────────────────────────────────
+# Sondes Playwright jetables écrites à la racine pendant une mise au point
+# (capture d'écran, vérification d'un parcours), et pages web enregistrées
+# servant de référence visuelle : utiles sur le moment, jamais du dépôt.
+_probe*.mjs
+_shot*.mjs
+_*.html
+_*_files/
+*.log
