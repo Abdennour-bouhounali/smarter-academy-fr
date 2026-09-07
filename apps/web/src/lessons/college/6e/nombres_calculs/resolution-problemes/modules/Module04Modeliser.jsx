@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ContentModule, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
-import GroupBuilder from '../../../../../common/components/GroupBuilder';
+import StructureLab from '../components/StructureLab';
 import BarModel from '../../../../../common/components/BarModel';
-import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /**
@@ -13,38 +13,60 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * barres, puis choisir la bonne représentation selon la situation.
  */
 
-/* ─── Étape 1 : le modèle « groupes » ─────────────────────────────── */
+/* ─── Étape 1 : le modèle « groupes » ─────────────────────────────────
+   Le GroupBuilder d'origine pilotait la quantité par des boutons + / − et se
+   figeait après validation : deux règles projet enfreintes d'un coup (jamais
+   de stepper pour une grandeur qu'on peut saisir ; une manipulation ne gèle
+   jamais). On reprend ici le laboratoire de structure du module 1 — l'élève
+   retrouve le geste qu'il connaît, appliqué à une autre situation, et il peut
+   continuer à l'explorer une fois l'étagère bâtie. */
 function ModeleGroupes({ react, solved, onSolved }) {
-  const [groups, setGroups] = useState(0);
-  const target = 4;
-  const perGroup = 18;
-  const isDone = solved || groups === target;
+  const [groups, setGroups] = useState(2);
+  const [perGroup, setPerGroup] = useState(8);
+  const T_G = 4;
+  const T_P = 18;
+  const isDone = solved || (groups === T_G && perGroup === T_P);
+
+  const change = (g, p) => {
+    setGroups(g);
+    setPerGroup(p);
+    if (g === T_G && p === T_P) {
+      react(true);
+      onSolved?.();
+    }
+  };
 
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-600">
-        Une bibliothèque possède 4 étagères. Chaque étagère contient 18 livres. Construis les 4 étagères.
+        Une bibliothèque possède 4 étagères. Chaque étagère contient 18 livres. Construis cette structure :
+        glisse le bord droit pour les étagères, le curseur du couloir pour les livres.
       </p>
-      <GroupBuilder perGroup={perGroup} groups={solved ? target : groups} onChange={setGroups} max={4} tone="amber" unit=" livres" disabled={solved} />
-      {!solved && (
-        <div className="text-center">
-          <ValidateButton
-            onClick={() => {
-              if (groups === target) {
-                react(true);
-                onSolved?.();
-              }
-            }}
-            disabled={groups !== target}
-          >
-            Valider
-          </ValidateButton>
-        </div>
-      )}
+      <StructureLab
+        groups={groups}
+        perGroup={perGroup}
+        onGroups={(g) => change(g, perGroup)}
+        onPerGroup={(p) => change(groups, p)}
+        maxGroups={8}
+        maxPerGroup={24}
+        target={72}
+        unit="livre"
+        packLabel="étagère"
+        color="#f59e0b"
+      />
       {isDone && (
         <Feedback tone="ok">
-          Le modèle « groupes » rend la multiplication visible : 4 étagères de 18 livres, c'est{' '}
-          <strong className="font-mono">4 × 18 = 72</strong> livres.
+          {groups === T_G && perGroup === T_P ? (
+            <>
+              Le modèle « groupes » rend la multiplication visible : 4 étagères de 18 livres, c'est{' '}
+              <strong className="font-mono">4 × 18 = 72</strong> livres.
+            </>
+          ) : (
+            <>
+              Tu continues d'explorer : <strong className="font-mono">{groups} × {perGroup} = {groups * perGroup}</strong>{' '}
+              livres. Le modèle décrit n'importe quelle bibliothèque à étagères identiques.
+            </>
+          )}
         </Feedback>
       )}
     </div>

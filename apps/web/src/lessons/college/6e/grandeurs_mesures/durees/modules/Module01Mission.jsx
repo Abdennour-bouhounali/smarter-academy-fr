@@ -1,16 +1,43 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import CadranAccumulateur from '../components/CadranAccumulateur';
 
 /**
- * Module 1 — déclencheur : chaque durée a son unité… et le temps ne
- * compte pas comme les longueurs.
+ * Module 1 — LABORATOIRE : « La course contre la montre ».
  *
- * Le crochet final (« 1,5 minute = 1 min 50 s ? ») ouvre la porte de toute
- * la leçon : ici, tout marche par 60.
+ * Activity: faire tourner la grande aiguille du chronomètre de la course et
+ *   regarder la durée s'accumuler, tour après tour.
+ * Mathematical objective: une durée s'accumule, et elle s'accumule EN BASE
+ *   60 — la retenue se fait à 60, pas à 100.
+ * Student action: on attrape l'aiguille et on la fait tourner ; l'heure, les
+ *   deux aiguilles, le compte de tours et la durée écoulée bougent ensemble.
+ * Mathematical state: UN entier `elapsed` (minutes écoulées) ; la
+ *   décomposition en heures et minutes EST sa division euclidienne par 60,
+ *   donc la retenue est calculée et jamais écrite à la main.
+ * Expected observation: au passage sur le 12, le compteur du tour ne va pas
+ *   jusqu'à 100 : il retombe à 0 et l'heure gagne 1. On voit la retenue.
+ * Misconception targeted: « le temps se compte comme les longueurs » — la
+ *   virgule décimale (1 h 30 = « 1,30 h »), qui vient de croire que la
+ *   retenue se fait à 100. Ici l'élève voit l'aiguille sauter à 60.
+ * Controlled surprise: la prédiction porte sur ce qu'affichera le compteur
+ *   du tour quand l'aiguille franchira le 12 ; beaucoup annoncent 100.
+ * Formalization: rien n'est nommé dans ce labo — les unités arrivent à
+ *   l'étape 2 (brique `unites-temps`), la règle du 60 au module 3, qui la
+ *   redémontre sur son propre tour complet.
+ * Scaffolding: le cadran ne se fige jamais ; on peut tourner en arrière,
+ *   revenir à zéro (touche Début) et refaire l'expérience à volonté.
+ *
+ * ⚠️ Aucun escalier ×10 ici : le temps n'est PAS décimal. La leçon garde
+ * son `EscalierDuTemps` à marches inégales (module 4), volontairement
+ * différent de l'`UnitLadder` des longueurs.
  */
+// Le départ de la course : 9 h 00 pile, pour que la première retenue tombe
+// sur une heure ronde et se lise sans ambiguïté.
+const DEPART = { hours: 9, minutes: 0 };
+
 const UNIT_ROWS = [
   { id: 'sprint', emoji: '🏃', label: 'Un sprint de 100 mètres', correct: 's' },
   { id: 'cours', emoji: '📚', label: 'Un cours de mathématiques', correct: 'min' },
@@ -36,7 +63,60 @@ const TRAP_Q = {
     'Une minute vaut 60 secondes : sa MOITIÉ vaut 30 s, pas 50. Le temps ne compte pas en dixièmes comme les longueurs — ici, tout marche par 60. C’est le grand secret de cette leçon.',
 };
 
+/**
+ * ACTION      attraper la grande aiguille et la faire tourner.
+ * CHANGE      l'heure avance, la petite aiguille suit, le compteur du tour
+ *             monte — et retombe à 0 au passage du 12.
+ * OBSERVATION la retenue se fait à 60, pas à 100 : elle est mécanique.
+ * SENS        le temps n'est pas décimal, d'où l'interdit « 1 h 30 = 1,30 h ».
+ *
+ * Validé quand l'élève a franchi le 12 au moins une fois — c'est-à-dire
+ * quand il a PRODUIT la retenue, pas quand il l'a lue.
+ */
+function ChronoLab({ react, solved, onSolved }) {
+  const [elapsed, setElapsed] = useState(0);
+  const [maxVu, setMaxVu] = useState(0);
+  const done = solved || maxVu >= 60;
+
+  const change = (v) => {
+    setElapsed(v);
+    setMaxVu((m) => Math.max(m, v));
+  };
+
+  /* Le signal part d'un EFFET, jamais de l'updater de setState : appeler
+     `react` (un setState du parent) depuis l'updater d'un enfant met à jour
+     un composant pendant le rendu d'un autre. */
+  React.useEffect(() => {
+    if (maxVu >= 60 && !solved) { react(true); onSolved?.(); }
+  }, [maxVu, solved, react, onSolved]);
+
+  return (
+    <div className="space-y-3">
+      <p className="text-sm text-slate-600">
+        La course part à <strong>9 h 00</strong>. Attrape la{' '}
+        <strong className="text-rose-600">grande aiguille</strong> et fais-lui faire au moins un tour complet.
+        Surveille les deux compteurs pendant qu'elle passe sur le 12.
+      </p>
+      <CadranAccumulateur
+        start={DEPART}
+        elapsed={elapsed}
+        onChange={change}
+        maxElapsed={4 * 60}
+      />
+      {done && (
+        <Feedback tone="ok">
+          Un tour complet de la grande aiguille, et la petite a avancé d'exactement une graduation : le
+          compteur du tour est passé de 55 à 0 pendant que le compte de tours passait à 1. Fais-en un
+          deuxième, ou reviens en arrière : la retenue se fait toujours au même endroit.
+        </Feedback>
+      )}
+    </div>
+  );
+}
+
 export default function Module01Mission() {
+  const [chronoDone, setChronoDone] = useState(false);
+  const [pred, setPred] = useState(null);
   const [unitsDone, setUnitsDone] = useState(false);
   const [estimDone, setEstimDone] = useState(false);
   const [trapDone, setTrapDone] = useState(false);
@@ -47,16 +127,49 @@ export default function Module01Mission() {
       navLinks={getNavLinks(1)}
       moduleNumber={1}
       moduleTitle="La course contre la montre"
-      moduleSubtitle="Un sprint, un cours, des vacances : chaque durée a son unité."
+      moduleSubtitle="Fais tourner le chronomètre : le temps s’accumule, mais pas comme tu crois."
       estimatedTime="7 min"
       brief={{
         tag: '📋 Mission 01',
         title: 'Léa prépare sa journée de compétition d’athlétisme.',
-        body: <p>Du sprint de quelques secondes aux vacances qui suivront : les durées de sa journée ne se mesurent pas toutes pareil.</p>,
+        body: <p>Le chronomètre officiel part à 9 h 00. Fais-le tourner toi-même : tu vas voir tout de suite ce qui distingue le temps de toutes les autres grandeurs.</p>,
       }}
       steps={[
         {
           num: 1,
+          title: 'Le chronomètre de la course',
+          subtitle: 'Fais tourner la grande aiguille : le temps s’accumule sous ton doigt.',
+          done: chronoDone,
+          content: (kit) => (
+            <div className="space-y-4">
+              <PredictionChips
+                prompt="quand la grande aiguille repassera sur le 12, qu’affichera le compteur du tour ?"
+                options={[
+                  { id: 'cent', label: '100 min' },
+                  { id: 'soixante', label: 'Il repartira de 0, et l’heure avancera' },
+                  { id: 'dix', label: '10 min' },
+                ]}
+                value={pred}
+                onChange={setPred}
+                disabled={chronoDone}
+              />
+              <ChronoLab react={kit.react} solved={chronoDone} onSolved={() => setChronoDone(true)} />
+              {chronoDone && (
+                <Feedback tone="ok">
+                  {pred === 'soixante'
+                    ? 'Ta prédiction tenait : '
+                    : pred
+                      ? 'Ta prédiction annonçait autre chose, et pourtant : '
+                      : ''}
+                  le compteur du tour ne dépasse jamais 59. À 60, il retombe à 0 et l'heure gagne 1 — c'est
+                  le mécanisme lui-même qui l'impose. Retiens ce nombre : <strong>60</strong>, et pas 100.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
           title: 'À chaque durée, son unité',
           done: unitsDone,
           content: (
@@ -110,7 +223,7 @@ export default function Module01Mission() {
           // Le titre était « Le bon ordre de grandeur » : StepCard l'affiche
           // AVANT que l'étape ne s'ouvre, si bien que le mot arrivait avant
           // que rien ne l'ait posé. Titre neutre, mot posé par la brique.
-          num: 2,
+          num: 3,
           title: 'Réaliste, ou pas du tout ?',
           done: estimDone,
           content: (
@@ -157,7 +270,7 @@ export default function Module01Mission() {
           ),
         },
         {
-          num: 3,
+          num: 4,
           title: 'Le piège de la virgule',
           done: trapDone,
           content: (
@@ -176,8 +289,9 @@ export default function Module01Mission() {
       ]}
       footer={
         <KnowledgeSnapshot moduleNumber={1}>
-          <strong>La suite.</strong> Une question reste ouverte : pourquoi une demi-minute
-          fait-elle 30 s et non 50 ? La réponse se cache dans le mécanisme d'une horloge.
+          <strong>La suite.</strong> Tu as vu l'aiguille repartir à 0 après 60 minutes. Reste à
+          lire une heure sur un cadran sans se tromper — puis à comprendre pourquoi ce 60 vaut
+          aussi entre les minutes et les secondes.
         </KnowledgeSnapshot>
       }
     />

@@ -201,3 +201,22 @@
 * {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   POIGNÉES DE MANIPULATION EN SVG
+   ─────────────────────────────────────────────────────────────────────────
+   Une poignée de labo est un <rect>/<circle> SVG TRANSPARENT et volontairement
+   large (≥ 44 px, la zone de captation du doigt), rendu focalisable par
+   `role="slider"` + `tabIndex`. Au clic comme au focus, le navigateur y trace
+   son contour par défaut : un grand cadre noir qui n'entoure pas la poignée
+   mais sa zone de captation — signalé par l'utilisateur le 2026-09-07.
+
+   On retire ce contour UNIQUEMENT sur ces zones transparentes. L'indicateur de
+   focus n'est pas supprimé pour autant : chaque composant dessine un anneau
+   sur la pastille VISIBLE de sa poignée (voir StructureLab), ce qui est à la
+   fois plus lisible et conforme à l'exigence d'un focus visible.
+   ───────────────────────────────────────────────────────────────────────── */
+svg [role="slider"]:focus,
+svg [role="slider"]:focus-visible {
+  outline: none;
+}

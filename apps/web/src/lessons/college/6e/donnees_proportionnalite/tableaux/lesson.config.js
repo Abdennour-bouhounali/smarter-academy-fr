@@ -76,7 +76,7 @@ export const LESSON_CONFIG = {
       stage: 'prerequisite_check',
       color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
     { id: '01', number: 1, slug: 'le-message-en-vrac', path: `${LESSON_BASE_PATH}/le-message-en-vrac`,
-      title: 'Le message en vrac', desc: 'Onze informations jetées en désordre : réponds vite… si tu peux.',
+      title: 'Le message en vrac', desc: 'Huit résultats jetés en désordre : range-les toi-même et vois ce que ça change.',
       stage: 'trigger', teachesLearningPointIds: ['6e_tableaux_P1'],
       color: 'indigo', style: 'featured', estimatedMin: 8, difficulty: 1, actionText: 'Démarrer' },
     { id: '02', number: 2, slug: 'anatomie-d-un-tableau', path: `${LESSON_BASE_PATH}/anatomie-d-un-tableau`,

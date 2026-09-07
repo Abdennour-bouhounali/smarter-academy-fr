@@ -35,7 +35,30 @@ export default function EcartGauge({
   const dragging = useRef(false);
   const [settled, setSettled] = useState(true);
 
-  const P = pointOn(d1, t);
+  /* Bornes du paramètre t : les extrémités du morceau de d₁ RÉELLEMENT
+     visible dans le cadre, avec une marge pour que le point P (r = 7) et son
+     étiquette restent entièrement dedans. Sans ces bornes, le chemin clavier
+     (±12 par flèche, illimité) pousse P — et son nom — hors du cadre :
+     §6bis.4 exige qu'aucun état atteignable n'ait de mise en page invalide.
+     Le chemin pointeur, lui, est déjà borné par le rectangle du SVG. */
+  const T_MARGIN = 16;
+  const tRange = (() => {
+    const line = toLine(d1);
+    const dir = dirOf(d1.angleDeg);
+    const seg = clipToBox(
+      { kind: 'droite', a: d1.p, b: { x: d1.p.x + dir.x * 50, y: d1.p.y + dir.y * 50 } },
+      box
+    );
+    if (!seg) return null;
+    const tA = paramOf(line, seg.from);
+    const tB = paramOf(line, seg.to);
+    const lo = Math.min(tA, tB) + T_MARGIN;
+    const hi = Math.max(tA, tB) - T_MARGIN;
+    return hi > lo ? { lo, hi } : null;
+  })();
+  const clampT = (v) => (tRange ? Math.max(tRange.lo, Math.min(tRange.hi, v)) : v);
+
+  const P = pointOn(d1, clampT(t));
   const gap = distanceTo(d2, P);
   const relation = relationOf(d1, d2);
 
@@ -47,7 +70,7 @@ export default function EcartGauge({
       const y = box.yMin + ((clientY - rect.top) / rect.height) * (box.yMax - box.yMin);
       // Projection sur d₁ : le point ne peut QUE glisser le long de la droite.
       const line = toLine(d1);
-      return paramOf(line, projectOnLine(line, { x, y }));
+      return clampT(paramOf(line, projectOnLine(line, { x, y })));
     },
     [box.xMin, box.yMin, box.xMax, box.yMax, d1]
   );
@@ -77,7 +100,7 @@ export default function EcartGauge({
     if (!(e.key in map)) return;
     e.preventDefault();
     setSettled(true);
-    onTChange(t + map[e.key]);
+    onTChange(clampT(t + map[e.key]));
   };
 
   const allSame = stamps.length > 1 && stamps.every((s) => Math.abs(s - stamps[0]) < 1);
@@ -116,7 +139,7 @@ export default function EcartGauge({
 
       <div className="flex items-center justify-center gap-2 flex-wrap">
         <div className="rounded-xl border-2 border-sky-300 bg-sky-50 px-4 py-2 text-center">
-          <div className="text-[10px] font-mono uppercase tracking-wide text-sky-600">Écart mesuré</div>
+          <div className="text-xs font-mono uppercase tracking-wide text-sky-600">Écart mesuré</div>
           <div className="font-mono font-extrabold text-lg text-sky-900 tabular-nums" aria-live="polite">
             {settled ? Math.round(gap) : '…'}
           </div>
@@ -135,7 +158,7 @@ export default function EcartGauge({
 
       {stamps.length > 0 && (
         <div className="rounded-xl border-2 border-slate-200 bg-white p-3 space-y-2">
-          <p className="text-[11px] font-mono uppercase tracking-wide text-slate-500">
+          <p className="text-xs font-mono uppercase tracking-wide text-slate-500">
             Mesures notées ({stamps.length})
           </p>
           <div className="flex gap-1.5 flex-wrap">
@@ -167,14 +190,47 @@ export default function EcartGauge({
  * RelationFigure ici : on redessine les deux droites à partir du même
  * modèle, via clipToBox — la géométrie reste dérivée de l'état, pas copiée.
  */
+/** Hauteur réelle d'une étiquette à fontSize 13 (getBBox mesure 16,6 unités
+ *  pour « e₁ », indice compris) plus une marge de sécurité : sous cet écart
+ *  vertical, deux noms de droites se chevauchent. Mesuré, pas supposé. */
+const LABEL_H = 20;
+
 function RelationFigureInline({ d1, d2, P, box }) {
   const foot = footOf(d2, P);
-  const trace = (line, color, key) => {
+
+  const segOf = (line) => {
     const dir = dirOf(line.angleDeg);
-    const seg = clipToBox(
+    return clipToBox(
       { kind: 'droite', a: line.p, b: { x: line.p.x + dir.x * 50, y: line.p.y + dir.y * 50 } },
       box
     );
+  };
+
+  // Les deux étiquettes sont placées ENSEMBLE, jamais chacune dans son coin :
+  // deux droites SÉCANTES sortent du cadre très près l'une de l'autre (les
+  // paires e₁/e₂ de la leçon sortent à 5 unités d'écart), et deux noms posés
+  // indépendamment se chevauchent alors. On les écarte symétriquement, en
+  // restant dans le cadre — §6bis.4 : toute position atteignable du geste
+  // doit avoir une mise en page valide, pas seulement la position par défaut.
+  const s1 = segOf(d1);
+  const s2 = segOf(d2);
+  const labelY = (() => {
+    if (!s1 || !s2) return [s1 ? s1.to.y - 8 : 0, s2 ? s2.to.y - 8 : 0];
+    let y1 = s1.to.y - 8;
+    let y2 = s2.to.y - 8;
+    const gap = y2 - y1;
+    if (Math.abs(gap) < LABEL_H) {
+      const push = (LABEL_H - Math.abs(gap)) / 2;
+      const sign = gap >= 0 ? 1 : -1;
+      y1 -= sign * push;
+      y2 += sign * push;
+    }
+    // On garde les deux noms à l'intérieur du cadre.
+    const clampY = (y) => Math.max(box.yMin + LABEL_H, Math.min(box.yMax - 4, y));
+    return [clampY(y1), clampY(y2)];
+  })();
+
+  const trace = (line, color, key, seg, yLabel) => {
     if (!seg) return null;
     return (
       <g key={key}>
@@ -183,7 +239,7 @@ function RelationFigureInline({ d1, d2, P, box }) {
           stroke={color} strokeWidth="3" strokeLinecap="round"
         />
         {line.name && (
-          <text x={seg.to.x - 14} y={seg.to.y - 8} className="font-space" fontSize="13" fontWeight="700" fill={color}>
+          <text x={seg.to.x - 14} y={yLabel} className="font-space" fontSize="13" fontWeight="700" fill={color}>
             {line.name}
           </text>
         )}
@@ -193,14 +249,25 @@ function RelationFigureInline({ d1, d2, P, box }) {
 
   return (
     <>
-      {trace(d1, '#4f46e5', 'd1')}
-      {trace(d2, '#0891b2', 'd2')}
+      {trace(d1, '#4f46e5', 'd1', s1, labelY[0])}
+      {trace(d2, '#0891b2', 'd2', s2, labelY[1])}
       {/* Le connecteur, TOUJOURS perpendiculaire à d₂ : c'est la définition
           de la distance qui dessine, jamais un trait « droit devant ». */}
       <line x1={P.x} y1={P.y} x2={foot.x} y2={foot.y} stroke="#f59e0b" strokeWidth="2.5" strokeDasharray="5 4" />
       <circle cx={foot.x} cy={foot.y} r="4" fill="#f59e0b" />
       <circle cx={P.x} cy={P.y} r="7" fill="#f59e0b" stroke="#fff" strokeWidth="2.5" />
-      <text x={P.x + 10} y={P.y - 9} className="font-space" fontSize="13" fontWeight="700" fill="#0f172a">P</text>
+      {/* L'étiquette « P » bascule du côté INTÉRIEUR quand le point approche
+          d'un bord : posée systématiquement à droite, elle sortait du cadre
+          dès que l'élève poussait P jusqu'au bout de la course (§6bis.4 —
+          balayer le geste, ne pas l'échantillonner). Idem en haut. */}
+      <text
+        x={P.x + (P.x > box.xMax - 24 ? -10 : 10)}
+        y={P.y + (P.y < box.yMin + 22 ? 20 : -9)}
+        textAnchor={P.x > box.xMax - 24 ? 'end' : 'start'}
+        className="font-space" fontSize="13" fontWeight="700" fill="#0f172a"
+      >
+        P
+      </text>
     </>
   );
 }

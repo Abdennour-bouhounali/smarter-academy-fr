@@ -82,7 +82,6 @@ export default function Module02EcartConstant() {
                   }
                 }}
                 box={BOX}
-                disabled={parDone}
                 ariaLabel="Première paire : fais glisser P le long de d₁"
               />
               {parDone && (
@@ -130,7 +129,6 @@ export default function Module02EcartConstant() {
                   }
                 }}
                 box={BOX}
-                disabled={secDone}
                 ariaLabel="Seconde paire : fais glisser P le long de e₁"
               />
               {secDone && (

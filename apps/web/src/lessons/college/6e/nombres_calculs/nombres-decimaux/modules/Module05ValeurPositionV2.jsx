@@ -37,10 +37,9 @@ function DigitHunt({ chasse, solved, onSolved }) {
           intPlaces={1}
           decPlaces={3}
           selectedKey={clicked}
-          onDigitClick={(cell) => {
-            if (solved) return;
-            setClicked(cell.key);
-          }}
+          // RÈGLE PROJET (2026-09-06) : le tableau reste cliquable après la
+          // validation — c'est là que l'élève va vérifier les autres colonnes.
+          onDigitClick={(cell) => setClicked(cell.key)}
         />
       </div>
 

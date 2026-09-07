@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -43,6 +43,7 @@ const PAIR_B = [
 
 export default function Module01LesRails() {
   const [zoomed, setZoomed] = useState(false);
+  const [pred, setPred] = useState(null);
   const [predicted, setPredicted] = useState(false);
   const [zoomDone, setZoomDone] = useState(false);
   const [ruleDone, setRuleDone] = useState(false);
@@ -74,30 +75,43 @@ export default function Module01LesRails() {
           title: 'Prédis : laquelle finira par se couper ?',
           subtitle: 'Regarde bien avant de choisir.',
           done: predicted,
-          content: (
-            <TapQuestion
-              above={
-                <div className="grid sm:grid-cols-2 gap-3">
-                  <div className="space-y-1">
-                    <p className="text-xs font-mono text-center text-slate-500">Paire A</p>
-                    <RelationFigure droites={PAIR_A} box={NEAR} showMarks={false} showIntersection={false} ariaLabel="Paire A vue de près" />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-mono text-center text-slate-500">Paire B</p>
-                    <RelationFigure droites={PAIR_B} box={NEAR} showMarks={false} showIntersection={false} ariaLabel="Paire B vue de près" />
-                  </div>
+          content: (kit) => (
+            /* Prédiction SANS verdict (§6ter.3) : une manipulation SUIT
+               immédiatement (« Prolonger » à l'étape 2), donc c'est
+               l'expérience qui doit répondre — pas un texte de correction.
+               Corriger ici tuerait la surprise que le dézoom doit produire :
+               l'élève lirait la réponse avant de l'avoir vue. */
+            <div className="space-y-3">
+              <div className="grid sm:grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <p className="text-xs font-mono text-center text-slate-500">Paire A</p>
+                  <RelationFigure droites={PAIR_A} box={NEAR} showMarks={false} showIntersection={false} ariaLabel="Paire A vue de près" />
                 </div>
-              }
-              prompt="Si on prolongeait ces droites très loin, laquelle des deux paires finirait par se croiser ?"
-              options={['La paire A', 'La paire B', 'Aucune des deux']}
-              correct={1}
-              cols={3}
-              explain="C’est la paire B : ses deux droites n’ont pas la même inclinaison (10° et 0°). De près, l’écart est invisible."
-              explainWrong="À cette échelle, impossible de trancher à l’œil — c’est justement le piège. Prolongeons pour vérifier."
-              requires={[]}
-              solved={predicted}
-              onAnswered={() => setPredicted(true)}
-            />
+                <div className="space-y-1">
+                  <p className="text-xs font-mono text-center text-slate-500">Paire B</p>
+                  <RelationFigure droites={PAIR_B} box={NEAR} showMarks={false} showIntersection={false} ariaLabel="Paire B vue de près" />
+                </div>
+              </div>
+              <PredictionChips
+                prompt="si on les prolongeait très loin, laquelle finirait par se croiser ?"
+                options={[
+                  { id: 'A', label: 'La paire A' },
+                  { id: 'B', label: 'La paire B' },
+                  { id: 'none', label: 'Aucune des deux' },
+                ]}
+                value={pred}
+                onChange={(v) => {
+                  setPred(v);
+                  if (!predicted) { kit.react(true); setPredicted(true); }
+                }}
+              />
+              {pred && (
+                <Feedback tone="info">
+                  Note ta prédiction. À cette échelle, personne ne peut trancher à l’œil : il faut
+                  <strong> prolonger pour voir</strong>. C’est l’étape suivante.
+                </Feedback>
+              )}
+            </div>
           ),
         },
         {
@@ -135,6 +149,10 @@ export default function Module01LesRails() {
                 <Feedback tone={zoomDone ? 'ok' : 'info'}>
                   La paire B <strong>se coupe</strong> : le point d’intersection est apparu. La paire A, elle,
                   garde le même écart aussi loin qu’on aille — ses droites ne se rencontreront jamais.
+                  {/* L'expérience répond à la prédiction, nommément (§6ter.3). */}
+                  {pred === 'B' && <> Ta prédiction était la paire B : l’expérience te donne raison.</>}
+                  {pred === 'A' && <> Tu avais prédit la paire A : c’est l’autre — de près, l’œil ne pouvait pas trancher.</>}
+                  {pred === 'none' && <> Tu avais prédit qu’aucune ne se croiserait : la paire B vient de te contredire.</>}
                 </Feedback>
               )}
 

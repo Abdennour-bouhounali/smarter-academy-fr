@@ -1,202 +1,41 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus, Repeat, Scissors } from 'lucide-react';
-import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { motion } from 'framer-motion';
+import { ContentModule, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import Base10Blocks from '../components/Base10Blocks';
+import PlaceValueBoard from '../components/PlaceValueBoard';
+import { EMPTY_BOARD, boardValue, pieceCount, isTidy } from '../components/boardUtils';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { formatFr, decompose } from '../components/numberUtils';
 
 /**
- * Module 2 V2 — reconstruit sur le lesson kit. La manipulation BlockWorkshop
- * (matériel base 10) est le cœur pédagogique et reste un composant maison ;
- * le shell vient du kit, et `react(true)` (son/série) est branché via le
- * slot-fonction `content(kit)`.
+ * Module 2 — l'atelier continue, et les colonnes prennent un nom.
+ *
+ * Activity: fabriquer 347 puis 1 205 en déplaçant des objets sur le même
+ *   plateau qu'au module 1, puis défaire un groupement (une barre rendue en
+ *   dix cubes) jusqu'à n'avoir plus que des cubes.
+ * Mathematical objective: l'écriture chiffrée est la LISTE des colonnes, dans
+ *   l'ordre — y compris les colonnes vides, qui s'écrivent 0.
+ * Student action: le même geste qu'au module 1 (prendre, poser, porter à
+ *   gauche, rendre en dix). Aucun stepper : la version précédente pilotait
+ *   chaque colonne par des boutons `+` / `−` et l'échange par un bouton
+ *   « Échanger » — les blocs ne bougeaient jamais, on incrémentait un
+ *   compteur (anti-motif rejeté le 2026-09-06).
+ * Mathematical state: `board` = { UM, C, D, U }, comme au module 1.
+ * Expected observation (étape 2) : pour 1 205, la colonne des dizaines reste
+ *   VIDE — et pourtant il faut écrire quelque chose à cette place, sinon
+ *   1 205 se lit 125.
+ * Controlled surprise (étape 3) : 50 s'écrit avec deux chiffres et se fabrique
+ *   avec cinquante cubes. Deux plateaux très différents, un seul nombre.
+ * Misconception targeted: « une colonne vide, on saute » — la cause n°1 des
+ *   erreurs d'écriture des grands nombres.
+ * Formalization: `position-chiffre`, puis `zero-place`, puis `groupement-dix`,
+ *   chacune posée juste après le geste qui lui donne un sens.
+ * Scaffolding: le plateau ne se fige jamais, même une fois l'objectif atteint.
  */
 
-const MATERIEL = [
-  { key: 'UM', name: 'millier', plural: 'milliers', value: 1000, tone: 'text-amber-700 border-amber-300 bg-amber-50' },
-  { key: 'C', name: 'centaine', plural: 'centaines', value: 100, tone: 'text-violet-700 border-violet-300 bg-violet-50' },
-  { key: 'D', name: 'dizaine', plural: 'dizaines', value: 10, tone: 'text-sky-700 border-sky-300 bg-sky-50' },
-  { key: 'U', name: 'unité', plural: 'unités', value: 1, tone: 'text-emerald-700 border-emerald-300 bg-emerald-50' },
-];
-
-const totalOf = (c) => (c.UM || 0) * 1000 + (c.C || 0) * 100 + (c.D || 0) * 10 + (c.U || 0);
-
-const canonical = (n) => ({
-  UM: Math.floor(n / 1000),
-  C: Math.floor((n % 1000) / 100),
-  D: Math.floor((n % 100) / 10),
-  U: n % 10,
-});
-
-const isCanonical = (c) => {
-  const k = canonical(totalOf(c));
-  return k.UM === (c.UM || 0) && k.C === (c.C || 0) && k.D === (c.D || 0) && k.U === (c.U || 0);
-};
-
-const countBlocks = (c) => (c.UM || 0) + (c.C || 0) + (c.D || 0) + (c.U || 0);
-
-function BlockWorkshop({
-  target,
-  start = { UM: 0, C: 0, D: 0, U: 0 },
-  available = ['UM', 'C', 'D', 'U'],
-  requireCanonical = false,
-  allowSplit = false,
-  maxRender = 12,
-  goalCheck,
-  onReach,
-  successNote,
-}) {
-  const [counts, setCounts] = useState(start);
-  const total = totalOf(counts);
-  const reached = total === target;
-  const canonicalOk = !requireCanonical || isCanonical(counts);
-  const solved = goalCheck ? goalCheck(counts) : reached && canonicalOk;
-
-  React.useEffect(() => {
-    if (solved) onReach?.(counts);
-    // onReach est stable côté appelant (setState) : on ne l'inclut pas en dépendance.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [solved, counts]);
-
-  const bump = (key, delta) =>
-    setCounts((c) => ({ ...c, [key]: Math.max(0, (c[key] || 0) + delta) }));
-
-  const EXCHANGES = [
-    { from: 'U', to: 'D', label: '10 unités = 1 dizaine' },
-    { from: 'D', to: 'C', label: '10 dizaines = 1 centaine' },
-    { from: 'C', to: 'UM', label: '10 centaines = 1 millier' },
-  ].filter((e) => available.includes(e.from) && available.includes(e.to) && (counts[e.from] || 0) >= 10);
-
-  const SPLITS = allowSplit
-    ? [
-        { from: 'D', to: 'U', label: '1 dizaine = 10 unités' },
-        { from: 'C', to: 'D', label: '1 centaine = 10 dizaines' },
-        { from: 'UM', to: 'C', label: '1 millier = 10 centaines' },
-      ].filter((s) => available.includes(s.from) && available.includes(s.to) && (counts[s.from] || 0) >= 1)
-    : [];
-
-  const exchange = (from, to) =>
-    setCounts((c) => ({ ...c, [from]: c[from] - 10, [to]: (c[to] || 0) + 1 }));
-
-  const split = (from, to) =>
-    setCounts((c) => ({ ...c, [from]: c[from] - 1, [to]: (c[to] || 0) + 10 }));
-
-  return (
-    <div className="space-y-4">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        {MATERIEL.filter((m) => available.includes(m.key)).map((m) => (
-          <div key={m.key} className={`rounded-xl border-2 p-3 space-y-2 ${m.tone}`}>
-            <div className="text-center">
-              <div className="text-xs font-mono font-bold uppercase">{m.plural}</div>
-              <div className="text-[10px] font-mono opacity-70">1 = {formatFr(m.value)}</div>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <button
-                type="button"
-                onClick={() => bump(m.key, -1)}
-                disabled={(counts[m.key] || 0) === 0}
-                aria-label={`Retirer une ${m.name}`}
-                className="w-9 h-9 rounded-lg bg-white border-2 border-current/20 flex items-center justify-center disabled:opacity-30 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              >
-                <Minus className="w-4 h-4" aria-hidden="true" />
-              </button>
-              <span className="font-mono font-extrabold text-xl tabular-nums w-8 text-center" aria-live="polite">
-                {counts[m.key] || 0}
-              </span>
-              <button
-                type="button"
-                onClick={() => bump(m.key, 1)}
-                aria-label={`Ajouter une ${m.name}`}
-                className="w-9 h-9 rounded-lg bg-white border-2 border-current/20 flex items-center justify-center hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              >
-                <Plus className="w-4 h-4" aria-hidden="true" />
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <AnimatePresence>
-        {(EXCHANGES.length > 0 || SPLITS.length > 0) && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
-            <div className="flex flex-wrap gap-2">
-              {EXCHANGES.map((e) => (
-                <button
-                  key={`ex-${e.from}`}
-                  type="button"
-                  onClick={() => exchange(e.from, e.to)}
-                  className="px-3 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-xs font-bold min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
-                >
-                  <Repeat className="inline w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
-                  Échanger : {e.label}
-                </button>
-              ))}
-              {SPLITS.map((s) => (
-                <button
-                  key={`sp-${s.from}`}
-                  type="button"
-                  onClick={() => split(s.from, s.to)}
-                  className="px-3 py-2.5 rounded-xl bg-white border-2 border-slate-300 text-slate-600 hover:border-slate-500 font-mono text-xs font-bold min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                >
-                  <Scissors className="inline w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
-                  Casser : {s.label}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
-        <Base10Blocks counts={counts} max={maxRender} />
-      </div>
-
-      <div
-        className={`rounded-2xl border-2 p-4 flex items-center justify-between gap-4 flex-wrap transition-colors ${
-          solved ? 'border-emerald-300 bg-emerald-50' : 'border-slate-200 bg-white'
-        }`}
-      >
-        <div>
-          <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
-            Ton nombre
-          </div>
-          <div className="font-mono font-extrabold text-3xl text-slate-800 tabular-nums" aria-live="polite">
-            {formatFr(total)}
-          </div>
-          <div className="text-[11px] font-mono text-slate-400">{countBlocks(counts)} bloc(s) utilisé(s)</div>
-        </div>
-        {target !== undefined && (
-          <div className="text-right">
-            <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">Objectif</div>
-            <div className="font-mono font-extrabold text-2xl text-slate-400 tabular-nums">{formatFr(target)}</div>
-          </div>
-        )}
-      </div>
-
-      {reached && !canonicalOk && (
-        <Feedback tone="hint">
-          Bravo, ton matériel vaut bien <strong className="font-mono">{formatFr(total)}</strong> ! Mais tu utilises{' '}
-          {countBlocks(counts)} blocs. Peux-tu représenter le même nombre avec{' '}
-          <strong>le moins de blocs possible</strong> ? Utilise les boutons <em>Échanger</em>.
-        </Feedback>
-      )}
-
-      {solved && (
-        <Feedback tone="ok">
-          {successNote || (
-            <>
-              Nombre construit : <strong className="font-mono">{formatFr(total)}</strong>.
-            </>
-          )}
-        </Feedback>
-      )}
-    </div>
-  );
-}
-
+/* Le nombre fabriqué se relit comme une somme : c'est le pont entre le
+   plateau et l'écriture chiffrée, et il DÉRIVE du nombre, jamais saisi. */
 function Reveal({ n }) {
   const parts = decompose(n);
   return (
@@ -211,17 +50,66 @@ function Reveal({ n }) {
         {parts.map((p) => formatFr(p)).join(' + ')}
       </div>
       <p className="text-xs text-slate-400 pt-1">
-        Chaque paquet de matériel devient un morceau de l'écriture du nombre.
+        Chaque colonne du plateau devient un morceau de l'écriture du nombre.
       </p>
     </motion.div>
+  );
+}
+
+/**
+ * Un atelier avec un objectif. Le plateau reste vivant après la réussite
+ * (règle projet : une manipulation ne se fige jamais).
+ *
+ * @param {number}   target
+ * @param {function} [goal]  (board) => bool — défaut : la valeur cible, rangée au plus court
+ */
+function AtelierCible({ target, start = EMPTY_BOARD, available, allowBreak = true, goal, onReach, note, hint }) {
+  const [board, setBoard] = useState(start);
+  const total = boardValue(board);
+  const ok = goal ? goal(board) : total === target && isTidy(board);
+
+  const handle = (next) => {
+    setBoard(next);
+    if (goal ? goal(next) : boardValue(next) === target && isTidy(next)) onReach?.(next);
+  };
+
+  return (
+    <div className="space-y-3">
+      <div className="rounded-xl border-2 border-slate-900 bg-slate-900 text-white px-4 py-3 flex items-baseline justify-between gap-3 flex-wrap">
+        <span className="text-sm">{note}</span>
+        <span className="font-mono font-black text-2xl text-amber-300 tabular-nums">{formatFr(target)}</span>
+      </div>
+
+      <PlaceValueBoard
+        board={board}
+        onBoard={handle}
+        available={available}
+        allowBreak={allowBreak}
+      />
+
+      <button
+        type="button"
+        onClick={() => setBoard(start)}
+        className="min-h-[44px] px-4 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:border-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+      >
+        Recommencer
+      </button>
+
+      {!ok && total === target && (
+        <Feedback tone="hint">
+          Ton plateau vaut bien <strong className="font-mono">{formatFr(total)}</strong>, mais avec{' '}
+          <strong>{pieceCount(board)}</strong> objets. {hint}
+        </Feedback>
+      )}
+    </div>
   );
 }
 
 export default function Module02Construire() {
   const [s1, setS1] = useState(false);
   const [s2, setS2] = useState(false);
-  const [s3a, setS3a] = useState(false);
-  const [s3b, setS3b] = useState(false);
+  const [pred, setPred] = useState(null);
+  const [s3, setS3] = useState(false);
 
   return (
     <ContentModule
@@ -229,16 +117,16 @@ export default function Module02Construire() {
       navLinks={getNavLinks(2)}
       moduleNumber={2}
       moduleTitle="Construire les nombres"
-      moduleSubtitle="Fabrique les nombres avec du matériel base 10 : le groupement par 10 devient visible."
+      moduleSubtitle="Le même plateau qu'au module 1 — et cette fois, chaque colonne prend un nom."
       estimatedTime="12 min"
       brief={{
         tag: '🧱 Atelier',
-        title: "Avant d'écrire un nombre, on va le fabriquer.",
+        title: "Avant d'écrire un nombre, on le fabrique.",
         body: (
           <>
             <p>
-              Tu disposes de quatre sortes de matériel. Regarde bien : chaque forme est faite de dix formes plus
-              petites.
+              Tu retrouves les quatre sortes d'objets. Regarde bien : chaque forme est faite de dix
+              formes plus petites.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
               {[
@@ -260,28 +148,24 @@ export default function Module02Construire() {
       steps={[
         {
           num: 1,
-          title: 'Construis le nombre 347',
-          subtitle: 'Plusieurs assemblages sont possibles… mais un seul utilise le moins de blocs possible.',
+          title: 'Fabrique 347, avec le moins d’objets possible',
+          subtitle: 'Plusieurs plateaux valent 347 — un seul est rangé au plus court.',
           done: s1,
           content: (kit) => (
             <>
-              <BlockWorkshop
+              <AtelierCible
                 target={347}
                 available={['C', 'D', 'U']}
-                requireCanonical
-                maxRender={12}
-                onReach={() => {
-                  if (!s1) kit.react(true);
-                  setS1(true);
-                }}
-                successNote={
-                  <>
-                    Parfait : <strong>3 plaques</strong>, <strong>4 barres</strong> et <strong>7 cubes</strong>.
-                  </>
-                }
+                note="Fabrique exactement"
+                hint="Porte les piles de dix dans la colonne de gauche."
+                onReach={() => { if (!s1) kit.react(true); setS1(true); }}
               />
               {s1 && (
                 <div className="space-y-3 mt-4">
+                  <Feedback tone="ok">
+                    <strong>3 plaques</strong>, <strong>4 barres</strong> et <strong>7 cubes</strong> —
+                    et l'écriture les reprend dans le même ordre, de la plus grosse à la plus petite.
+                  </Feedback>
                   <Reveal n={347} />
                   {/* Le nombre vient d'être fabriqué : c'est ici, et pas
                       avant, que « position » veut dire quelque chose. */}
@@ -297,25 +181,25 @@ export default function Module02Construire() {
         },
         {
           num: 2,
-          title: 'Construis maintenant 1 205',
-          subtitle: 'Attention : une position va rester vide.',
+          title: 'Fabrique maintenant 1 205',
+          subtitle: 'Attention : une colonne va rester vide.',
           done: s2,
           content: (kit) => (
             <>
-              <BlockWorkshop
+              <AtelierCible
                 target={1205}
-                requireCanonical
-                maxRender={12}
-                onReach={() => {
-                  if (!s2) kit.react(true);
-                  setS2(true);
-                }}
-                successNote={<>1 bloc, 2 plaques, aucune barre et 5 cubes.</>}
+                note="Fabrique exactement"
+                hint="Porte les piles de dix dans la colonne de gauche."
+                onReach={() => { if (!s2) kit.react(true); setS2(true); }}
               />
               {s2 && (
                 <div className="space-y-3 mt-4">
+                  <Feedback tone="ok">
+                    1 bloc, 2 plaques, <strong>aucune barre</strong> et 5 cubes. La colonne des dizaines
+                    est vide — mais si on ne l'écrit pas, il reste « 125 », et ce n'est plus le même nombre.
+                  </Feedback>
                   <Reveal n={1205} />
-                  {/* La position vide vient d'apparaître dans la manipulation :
+                  {/* La colonne vide vient d'apparaître dans la manipulation :
                       le zéro se nomme maintenant, pas dans un explain. */}
                   <KnowledgeBrick
                     id="zero-place"
@@ -329,68 +213,40 @@ export default function Module02Construire() {
         },
         {
           num: 3,
-          title: "Atelier d'échange : de 37 à 50",
-          subtitle: "Ajoute 1 dizaine, puis 3 unités. Observe ce qui se passe quand les unités s'accumulent.",
-          done: s3a && s3b,
+          title: 'Défaire le rangement : 50 en cubes seulement',
+          subtitle: 'Reprends chaque barre et rends-la en dix cubes, jusqu’au bout.',
+          done: s3,
           content: (kit) => (
             <div className="space-y-4">
-              <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900">
-                <strong>Objectif 1 :</strong> partir de 37 et atteindre exactement 50, en utilisant l'échange
-                « 10 unités = 1 dizaine ».
-              </div>
-
-              <BlockWorkshop
-                target={50}
-                start={{ UM: 0, C: 0, D: 3, U: 7 }}
-                available={['D', 'U']}
-                requireCanonical
-                allowSplit
-                maxRender={50}
-                onReach={() => {
-                  if (!s3a) kit.react(true);
-                  setS3a(true);
-                }}
-                successNote={<>50 atteint, et rangé au plus court : <strong>5 dizaines</strong>.</>}
+              <PredictionChips
+                prompt="cinquante rendu entièrement en cubes, ça fera…"
+                options={[
+                  { id: '5', label: '5 cubes' },
+                  { id: '50', label: '50 cubes' },
+                  { id: '500', label: '500 cubes' },
+                ]}
+                value={pred}
+                onChange={setPred}
+                disabled={s3}
               />
 
-              {s3a && (
+              <AtelierCible
+                target={50}
+                start={{ UM: 0, C: 0, D: 5, U: 0 }}
+                available={['D', 'U']}
+                note="Montre ce nombre uniquement en cubes"
+                hint="Rends chaque barre en dix cubes."
+                goal={(b) => (b.U || 0) === 50 && (b.D || 0) === 0}
+                onReach={() => { if (!s3) kit.react(true); setS3(true); }}
+              />
+
+              {s3 && (
                 <>
                   <Feedback tone="ok">
-                    Tu as vu la transformation : 37 <span className="font-mono">+ 10</span> = 47, puis 47{' '}
-                    <span className="font-mono">+ 3</span> = 50. En arrivant à 10 unités, elles se sont
-                    regroupées en 1 dizaine. <strong>50 = 5 dizaines.</strong>
-                  </Feedback>
-
-                  <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900">
-                    <strong>Objectif 2 :</strong> montre le même nombre 50 avec{' '}
-                    <strong>uniquement des unités</strong>. Utilise les boutons <em>Casser</em>.
-                  </div>
-
-                  <BlockWorkshop
-                    target={50}
-                    start={{ UM: 0, C: 0, D: 5, U: 0 }}
-                    available={['D', 'U']}
-                    allowSplit
-                    maxRender={50}
-                    goalCheck={(c) => (c.U || 0) === 50 && (c.D || 0) === 0}
-                    onReach={() => {
-                      if (!s3b) kit.react(true);
-                      setS3b(true);
-                    }}
-                    successNote={
-                      <>
-                        <strong>50 = 50 unités = 5 dizaines.</strong> Deux représentations, un seul nombre.
-                      </>
-                    }
-                  />
-                </>
-              )}
-
-              {s3b && (
-                <>
-                  <Feedback tone="info">
-                    <strong>50 unités</strong> et <strong>5 dizaines</strong>, c'est la même quantité — mais
-                    l'une se lit d'un coup d'œil et l'autre non.
+                    {pred === '50' ? 'Ta prédiction tenait : ' : pred ? 'Ta prédiction annonçait autre chose : ' : ''}
+                    <strong className="font-mono">50 cubes</strong> et{' '}
+                    <strong className="font-mono">5 barres</strong>, c'est la même quantité — mais l'une se
+                    lit d'un coup d'œil et l'autre demande de compter. C'est pour ça qu'on range par dix.
                   </Feedback>
                   {/* Le geste d'échange (10 → 1) vient d'être fait dans les
                       deux sens : c'est le moment de le nommer. */}

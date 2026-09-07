@@ -179,10 +179,13 @@ function Mission({ mission, done, onDone, react }) {
   const kind = classifyQuad(pts);
   const reached = reallyReached(pts, mission);
 
+  /* La figure reste déformable APRÈS la réussite (règle projet du
+     2026-09-06) : c'est en continuant à tirer le sommet que l'élève voit
+     ce qui reste vrai et ce qui se brise. Seule la COMPLÉTION cesse d'être
+     re-déclenchée ; le geste, lui, ne se ferme jamais. */
   const handle = (next) => {
-    if (done || revealed) return;
     setPts(next);
-    if (reallyReached(next, mission)) {
+    if (!done && !revealed && reallyReached(next, mission)) {
       react(true);
       onDone();
     }
@@ -202,7 +205,6 @@ function Mission({ mission, done, onDone, react }) {
         showAngles={mission.showAngles}
         axisLock={mission.axisLock}
         linkedPairs={mission.linkedPairs}
-        disabled={done || revealed}
         ariaLabel={`Quadrilatère à déformer — actuellement : ${shapeName(pts)}`}
       />
 
@@ -233,20 +235,24 @@ function Mission({ mission, done, onDone, react }) {
       )}
 
       {(done || revealed) && (
-        <Feedback tone={revealed ? 'info' : 'ok'}>
+        <Feedback tone={revealed ? 'info' : reached ? 'ok' : 'info'}>
           {revealed && <strong>Pas grave, on te le montre. </strong>}
           {mission.minAngleBreak ? (
             <>
-              Les angles droits ont disparu : la figure a perdu <strong>toutes</strong> ses propriétés
-              remarquables. Il ne reste qu’un <strong>quadrilatère quelconque</strong> — quatre côtés, et
-              rien de plus à en dire.
+              Les angles droits ont disparu : la figure perd <strong>toutes</strong> ses propriétés
+              remarquables. Il ne reste qu’un quadrilatère quelconque — quatre côtés, et rien de plus
+              à en dire.
             </>
           ) : (
             <>
-              Le nom a changé tout seul, parce que les <strong>propriétés</strong> ont changé — pas parce
-              qu’on a rebaptisé la figure.
+              Le nom change tout seul, parce que les <strong>propriétés</strong> changent — pas parce
+              qu’on rebaptise la figure.
             </>
-          )}
+          )}{' '}
+          {/* La figure reste manipulable : le verdict cite donc ce qu'elle est
+              MAINTENANT, jamais l'instant de la réussite. */}
+          Continue à tirer un sommet : c’est en ce moment un{' '}
+          <strong>{shapeName(pts)}</strong>.
         </Feedback>
       )}
 

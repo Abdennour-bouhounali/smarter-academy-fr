@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import UnitSwitcher from '../components/UnitSwitcher';
+import InvariantRibbon from '../components/InvariantRibbon';
 import { convert, formatLength } from '../components/lengthUtils';
 
 /**
@@ -39,6 +40,16 @@ export default function Module01Mission() {
   const [constatDone, setConstatDone] = useState(false);
   const [matchDone, setMatchDone] = useState(false);
 
+  /* Le laboratoire d'invariance : l'élève pose lui-même la longueur du ruban,
+     puis change d'unité. `ribbonMm` est la longueur PHYSIQUE, en millimètres —
+     elle ne bouge que par le geste, jamais par un changement d'unité. */
+  const [ribbonMm, setRibbonMm] = useState(1500);
+  const [ribbonUnit, setRibbonUnit] = useState('cm');
+  const [pred, setPred] = useState(null);
+  const [pulled, setPulled] = useState(false);
+  const [unitsSeenOnFixed, setUnitsSeenOnFixed] = useState(['cm']);
+  const [ribbonDone, setRibbonDone] = useState(false);
+
   const handleUnitChange = (u) => {
     setDisplayUnit(u);
     setSeenUnits((prev) => (prev.includes(u) ? prev : [...prev, u]));
@@ -67,6 +78,71 @@ export default function Module01Mission() {
       steps={[
         {
           num: 1,
+          title: 'Tire sur le ruban, puis change d’unité',
+          subtitle: 'Donne-lui la longueur que tu veux, et surveille le repère noir.',
+          done: ribbonDone,
+          content: (kit) => (
+            <div className="space-y-4">
+              {/* Prédiction SANS verdict (§6ter.3) : c'est le ruban qui
+                  répondra, une seconde plus tard. Elle est posée À CÔTÉ du
+                  labo, jamais devant lui (règle du 2026-09-05). */}
+              <PredictionChips
+                prompt="quand tu passeras de cm à mm, que fera le ruban ?"
+                options={[
+                  { id: 'plus-long', label: 'Il deviendra plus long' },
+                  { id: 'plus-court', label: 'Il deviendra plus court' },
+                  { id: 'rien', label: 'Il ne bougera pas' },
+                ]}
+                value={pred}
+                onChange={setPred}
+              />
+              {/* JAMAIS `disabled` : le ruban reste tirable après validation. */}
+              <InvariantRibbon
+                lengthMm={ribbonMm}
+                onLengthChange={(v) => { setRibbonMm(v); setPulled(true); }}
+                unit={ribbonUnit}
+                onUnitChange={(u) => {
+                  setRibbonUnit(u);
+                  const next = unitsSeenOnFixed.includes(u) ? unitsSeenOnFixed : [...unitsSeenOnFixed, u];
+                  setUnitsSeenOnFixed(next);
+                  // Le geste ET deux écritures au moins : l'élève a posé une
+                  // longueur, puis l'a vue s'écrire autrement sans bouger.
+                  if (pulled && next.length >= 2 && !ribbonDone) {
+                    kit.react(true);
+                    setRibbonDone(true);
+                  }
+                }}
+                changedUnitWhileFixed={unitsSeenOnFixed.length >= 2}
+              />
+              {!ribbonDone && (
+                <p className="text-center text-xs text-slate-500">
+                  Tire d’abord le bout du ruban, puis touche une autre unité.
+                </p>
+              )}
+              {ribbonDone && (
+                <Feedback tone="ok">
+                  Le ruban n’a pas bougé d’un pixel. Pourtant le nombre, lui, a changé —{' '}
+                  {pred === 'rien'
+                    ? 'exactement comme tu l’avais prédit.'
+                    : 'ce n’est donc pas la longueur qui change, c’est l’unité qui la mesure.'}
+                </Feedback>
+              )}
+              {/* La brique nomme ce que le GESTE vient d'établir : le ruban
+                  posé par l'élève n'a pas bougé pendant que son écriture
+                  changeait. C'est ici, et pas à l'étape suivante, que
+                  l'invariance a été rendue visible au pixel près. */}
+              {ribbonDone && (
+                <KnowledgeBrick
+                  id="longueur-invariante"
+                  variant="new"
+                  lead="Ton ruban n’a pas bougé pendant que son nombre changeait."
+                />
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
           title: 'Une même distance, quatre unités',
           done: switchDone,
           content: (kit) => (
@@ -88,21 +164,11 @@ export default function Module01Mission() {
                   nombre s'adapte en conséquence.
                 </Feedback>
               )}
-              {/* Le geste vient d'être fait : la route n'a pas bougé alors que
-                  le nombre changeait. C'est l'instant où l'invariance de la
-                  longueur veut dire quelque chose de précis. */}
-              {switchDone && (
-                <KnowledgeBrick
-                  id="longueur-invariante"
-                  variant="new"
-                  lead="Tu viens de changer quatre fois d'unité sans jamais changer de trajet."
-                />
-              )}
             </div>
           ),
         },
         {
-          num: 2,
+          num: 3,
           title: 'Un premier constat',
           done: constatDone,
           content: (
@@ -119,7 +185,7 @@ export default function Module01Mission() {
           ),
         },
         {
-          num: 3,
+          num: 4,
           title: 'À chaque situation, son unité',
           done: matchDone,
           content: (

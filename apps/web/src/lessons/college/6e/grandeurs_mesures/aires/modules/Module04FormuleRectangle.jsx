@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import AreaGrid from '../components/AreaGrid';
+import RectStretcher from '../components/RectStretcher';
 import { rectangleArea, squareArea, parseDec, formatDec } from '../components/areaUtils';
 
 /**
@@ -14,7 +14,8 @@ import { rectangleArea, squareArea, parseDec, formatDec } from '../components/ar
  * (décimaux → parseDec/formatDec), et la décomposition en L traite les
  * figures composées.
  */
-const RECT = { rows: 4, cols: 7 };
+// Le terrain disponible : le potager s'étire librement dans ce cadre.
+const RECT = { rows: 5, cols: 8 };
 
 const DECOMP_Q = {
   q: 'La salle en L peut se découper en deux rectangles : un 5 m × 3 m et un 2 m × 2 m. Quelle est son aire totale ?',
@@ -34,63 +35,59 @@ const SOUSTRACTION_Q = {
   explain: 'Aire du mur : 4 × 3 = 12 m². Aire de la fenêtre : 2 × 1 = 2 m². À peindre : 12 − 2 = 10 m². On peut aussi RETRANCHER une aire.',
 };
 
-function LigneParLigne({ react, solved, onSolved }) {
-  const [rowsPainted, setRowsPainted] = useState(solved ? RECT.rows : 0);
-  const done = solved || rowsPainted === RECT.rows;
-  const cells = Array.from({ length: rowsPainted * RECT.cols }, (_, i) => i);
+/**
+ * ACTION      étirer le potager par son coin : largeur ET hauteur suivent
+ *             le doigt.
+ * CHANGE      les carreaux apparaissent, et l'écriture additive
+ *             « 7 + 7 + 7 + 7 » se recompose à chaque ligne gagnée.
+ * OBSERVATION une ligne de plus, c'est `cols` carreaux d'un coup : compter
+ *             ligne par ligne, c'est additionner le même nombre.
+ * SENS        A = L × l décrit la construction du quadrillage, ce n'est pas
+ *             une formule tombée du ciel.
+ *
+ * L'ancienne version avait un bouton « Colorier une ligne (1/4) » : quatre
+ * clics scénarisés, une seule trajectoire, et plus rien à explorer ensuite.
+ * Ici les deux dimensions sont libres — l'élève peut fabriquer 1 × 8, 8 × 1,
+ * le carré 4 × 4 — et le labo reste vivant après validation.
+ */
+function PotagerLab({ react, solved, onSolved }) {
+  const [dim, setDim] = useState({ cols: 1, rows: 1 });
+  const [seenRows, setSeenRows] = useState([1]);
+  // Explorer, ici, c'est avoir fabriqué au moins trois hauteurs différentes :
+  // sans cela, « une ligne de plus = +cols carreaux » reste une phrase.
+  const done = solved || seenRows.length >= 3;
 
-  const paintRow = () => {
-    if (done) return;
-    const next = rowsPainted + 1;
-    setRowsPainted(next);
-    if (next === RECT.rows) {
-      react(true);
-      onSolved?.();
-    }
+  const change = (next) => {
+    setDim(next);
+    setSeenRows((prev) => (prev.includes(next.rows) ? prev : [...prev, next.rows]));
   };
+
+  /* Le signal de réussite part d'un EFFET, jamais de l'updater de setState :
+     appeler `react` (un setState du parent) depuis l'updater d'un enfant
+     met à jour un composant pendant le rendu d'un autre. */
+  React.useEffect(() => {
+    if (seenRows.length >= 3 && !solved) { react(true); onSolved?.(); }
+  }, [seenRows.length, solved, react, onSolved]);
 
   return (
     <div className="space-y-3">
       <p className="text-sm text-slate-600">
-        Le potager fait {RECT.rows} lignes de {RECT.cols} carreaux. Colorie-le ligne par ligne et regarde le
-        compte grandir.
+        Le potager se redessine au cordeau. Attrape le <strong className="text-rose-600">coin rouge</strong> et
+        étire-le : change sa largeur, puis sa hauteur, et regarde le compte se construire.
       </p>
-      <AreaGrid
-        rows={RECT.rows}
-        cols={RECT.cols}
-        cells={cells}
-        unit="m²"
-        showRowColHints
-        tone="violet"
-        ariaLabel="Potager à colorier ligne par ligne"
+      <RectStretcher
+        cols={dim.cols}
+        rows={dim.rows}
+        onChange={change}
+        maxCols={RECT.cols}
+        maxRows={RECT.rows}
       />
-      <div className="text-center space-y-2">
-        <div className="font-mono text-lg text-slate-800">
-          {rowsPainted > 0 ? (
-            <>
-              {Array.from({ length: rowsPainted }, () => RECT.cols).join(' + ')} ={' '}
-              <strong>{rowsPainted * RECT.cols}</strong> carreaux
-              {rowsPainted > 1 && <span className="text-violet-600"> = {rowsPainted} × {RECT.cols}</span>}
-            </>
-          ) : (
-            <span className="text-slate-400">0 carreau</span>
-          )}
-        </div>
-        {!done && (
-          <button
-            type="button"
-            onClick={paintRow}
-            className="px-5 py-2.5 rounded-xl bg-violet-600 text-white font-semibold text-sm hover:bg-violet-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
-          >
-            Colorier une ligne ({rowsPainted + 1}/{RECT.rows})
-          </button>
-        )}
-      </div>
       {done && (
         <Feedback tone="ok">
-          {RECT.rows} lignes de {RECT.cols} carreaux : {RECT.rows} × {RECT.cols} ={' '}
-          <strong>{RECT.rows * RECT.cols} carreaux</strong>. Compter ligne par ligne, c'est MULTIPLIER — l'aire du
-          rectangle est <strong>A = L × l</strong>.
+          Chaque ligne gagnée ajoute <strong>{dim.cols} carreaux d'un coup</strong> — pas un par un. Additionner
+          {' '}{dim.rows} fois le nombre {dim.cols}, cela s'écrit <strong className="font-mono">{dim.rows} × {dim.cols}</strong>.
+          L'aire du rectangle est donc <strong>A = L × l</strong>. Essaie encore : fabrique une seule ligne, puis
+          une seule colonne — la règle tient à chaque fois.
         </Feedback>
       )}
     </div>
@@ -99,6 +96,7 @@ function LigneParLigne({ react, solved, onSolved }) {
 
 export default function Module04FormuleRectangle() {
   const [lignesDone, setLignesDone] = useState(false);
+  const [pred, setPred] = useState(null);
   const [rectCalcDone, setRectCalcDone] = useState(false);
   const [carreCalcDone, setCarreCalcDone] = useState(false);
   const [decompDone, setDecompDone] = useState(false);
@@ -123,11 +121,23 @@ export default function Module04FormuleRectangle() {
       steps={[
         {
           num: 1,
-          title: 'Ligne par ligne',
+          title: 'Étire le potager',
+          subtitle: 'Deux dimensions libres, un seul geste : le compte suit.',
           done: lignesDone,
           content: (kit) => (
-            <div className="space-y-5">
-              <LigneParLigne react={kit.react} solved={lignesDone} onSolved={() => setLignesDone(true)} />
+            <div className="space-y-4">
+              <PredictionChips
+                prompt="si tu ajoutes UNE ligne à un potager large de 7 carreaux, combien de carreaux gagne-t-il ?"
+                options={[
+                  { id: 'un', label: '1 carreau' },
+                  { id: 'sept', label: '7 carreaux' },
+                  { id: 'quatorze', label: '14 carreaux' },
+                ]}
+                value={pred}
+                onChange={setPred}
+                disabled={lignesDone}
+              />
+              <PotagerLab react={kit.react} solved={lignesDone} onSolved={() => setLignesDone(true)} />
               {/* La multiplication s'est écrite toute seule pendant le
                   coloriage : la formule ne fait que la fixer. */}
               {lignesDone && (

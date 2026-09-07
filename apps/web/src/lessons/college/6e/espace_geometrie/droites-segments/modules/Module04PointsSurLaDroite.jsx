@@ -39,12 +39,16 @@ function Task({ mode, target, done, onDone, react, hint }) {
   const reached = mode === 'midpoint' ? gap <= TOL_MID && alignmentGap(A, B, m) <= TOL_ALIGN : gap <= TOL_ALIGN;
 
   const handleChange = (next) => {
-    if (done || revealed) return;
+    // `revealed` fige (la figure montre la réponse) ; une réussite, non :
+    // continuer à déplacer M et voir la distance repasser au-dessus de 0 est
+    // ce qui apprend que « presque aligné » n'existe pas
+    // (règle projet du 2026-09-06).
+    if (revealed) return;
     setM(next);
     const g = mode === 'midpoint' ? midpointGap(A, B, next) : alignmentGap(A, B, next);
     const onLine = alignmentGap(A, B, next) <= TOL_ALIGN;
     const ok = mode === 'midpoint' ? g <= TOL_MID && onLine : g <= TOL_ALIGN;
-    if (ok) {
+    if (ok && !done) {
       react(true);
       onDone();
     }
@@ -59,7 +63,7 @@ function Task({ mode, target, done, onDone, react, hint }) {
         onMChange={handleChange}
         mode={mode}
         box={BOX}
-        disabled={done || revealed}
+        disabled={revealed}
         ariaLabel={mode === 'midpoint' ? 'Place M à égale distance de A et de B, sur le trait' : 'Place M exactement sur le trait qui passe par A et B'}
       />
 
@@ -81,18 +85,28 @@ function Task({ mode, target, done, onDone, react, hint }) {
         </div>
       )}
 
+      {/* Texte VIVANT : `reached` se recalcule depuis la position courante de
+          M, donc le feedback ne peut pas mentir si l'élève redéplace le point
+          après avoir validé l'étape. */}
       {(done || revealed) && (
-        <Feedback tone={revealed ? 'info' : 'ok'}>
+        <Feedback tone={revealed ? 'info' : reached ? 'ok' : 'hint'}>
           {revealed && <>Pas grave, on te le montre. </>}
-          {mode === 'midpoint' ? (
-            <>
-              Tes deux longueurs affichent le même nombre, et M est bien posé sur le trait. Être
-              « à peu près au centre » n’aurait pas suffi.
-            </>
+          {revealed || reached ? (
+            mode === 'midpoint' ? (
+              <>
+                Tes deux longueurs affichent le même nombre, et M est bien posé sur le trait. Être
+                « à peu près au centre » n’aurait pas suffi.
+              </>
+            ) : (
+              <>
+                M est aligné avec A et B : sa distance à la droite vaut <strong>0</strong>. « Presque aligné »
+                n’existe pas en géométrie.
+              </>
+            )
           ) : (
             <>
-              M est aligné avec A et B : sa distance à la droite vaut <strong>0</strong>. « Presque aligné »
-              n’existe pas en géométrie.
+              Tu as redéplacé M : l’écart affiché n’est plus nul. L’étape reste acquise — et c’est
+              justement la preuve que « presque » ne suffit pas. Continue à essayer.
             </>
           )}
         </Feedback>

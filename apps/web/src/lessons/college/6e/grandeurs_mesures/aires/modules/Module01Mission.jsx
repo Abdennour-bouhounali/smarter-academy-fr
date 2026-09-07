@@ -1,18 +1,37 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import AreaGrid from '../components/AreaGrid';
+import PaveLab from '../components/PaveLab';
 
 /**
- * Module 1 — déclencheur : l'aire se découvre en RECOUVRANT.
+ * Module 1 — LABORATOIRE : « La guerre des pelouses ».
  *
- * Deux jardins qui se disputent le titre de « plus grand » : l'élève tape
- * des carreaux de pelouse pour recouvrir chaque jardin, et le comptage
- * tranche. Le mot « aire » n'arrive qu'après le geste.
+ * Activity: paver deux jardins au doigt — on appuie sur la pelouse et on
+ *   BALAIE, les carreaux se posent sous le doigt — puis comparer les comptes.
+ * Mathematical objective: mesurer une surface, c'est compter combien de fois
+ *   l'unité de surface la recouvre. Le nombre EST le compte de carreaux.
+ * Student action: le balayage pose les carreaux en continu ; le compteur
+ *   monte à chaque carreau touché, sans clic de validation.
+ * Mathematical state: DEUX listes d'indices (`cellsA`, `cellsB`) ; les deux
+ *   compteurs, le verdict et la comparaison en dérivent tous.
+ * Expected observation: le jardin qui PARAÎT le plus étroit demande PLUS de
+ *   carreaux — la forme ne dit rien de la quantité de surface.
+ * Misconception targeted: « le plus grand, c'est le plus long » — juger une
+ *   surface à sa silhouette au lieu de la recouvrir.
+ * Controlled surprise: la prédiction se fait à l'œil, le pavage tranche.
+ * Formalization: le mot « aire » n'arrive qu'à l'étape 2, après le geste ;
+ *   « périmètre » à l'étape 3, après le second geste (le tour).
+ * Scaffolding: le pavage se refait à volonté (repasser sur un carreau posé
+ *   le retire) et ne se fige jamais après validation.
+ *
+ * L'ancienne version tapait 21 carreaux un par un et figeait la grille
+ * (`disabled={done}`) dès le dernier posé : 21 clics, puis plus rien à
+ * explorer. Le balayage rend le geste au carreleur, et le labo reste vivant.
  */
-// Jardin A : long et fin (2 × 6 = 12 carreaux) ; jardin B : ramassé (3 × 4 = 12… non, B plus petit : 3 × 3 = 9).
+// Jardin A : allongé (2 × 6 = 12 carreaux). Jardin B : ramassé (3 × 3 = 9).
+// A PARAÎT plus étroit et pourtant il en demande plus — c'est la surprise.
 const JARDIN_A = { rows: 2, cols: 6, count: 12 };
 const JARDIN_B = { rows: 3, cols: 3, count: 9 };
 
@@ -50,62 +69,97 @@ const VOCAB_ROWS = [
 ];
 const VOCAB_OPTIONS = ['l’aire', 'le périmètre', 'une longueur'];
 
-function JardinPaver({ react, solved, onSolved }) {
-  const [cellsA, setCellsA] = useState(solved ? Array.from({ length: JARDIN_A.count }, (_, i) => i) : []);
-  const [cellsB, setCellsB] = useState(solved ? Array.from({ length: JARDIN_B.count }, (_, i) => i) : []);
+/**
+ * Le laboratoire de pavage. Les deux jardins partagent le même geste ; le
+ * module n'interprète qu'une fois les deux entièrement recouverts.
+ */
+function JardinPaver({ onFull, full }) {
+  const [cellsA, setCellsA] = useState([]);
+  const [cellsB, setCellsB] = useState([]);
+
+  const add = (setter) => (i) =>
+    setter((prev) => (prev.includes(i) ? prev : [...prev, i]));
+  const remove = (setter) => (i) => setter((prev) => prev.filter((x) => x !== i));
+
   const aFull = cellsA.length === JARDIN_A.count;
   const bFull = cellsB.length === JARDIN_B.count;
-  const done = solved || (aFull && bFull);
 
-  const toggle = (setCells) => (i) => {
-    if (done) return;
-    setCells((prev) => {
-      const next = prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i];
-      return next;
-    });
-  };
-
+  /* Le signal « les deux jardins sont pavés » part d'un effet, jamais de
+     l'updater de setState : appeler le setState du parent depuis l'updater
+     d'un enfant, c'est mettre à jour un composant pendant le rendu d'un
+     autre (avertissement React, et rendu incohérent). */
   React.useEffect(() => {
-    if (aFull && bFull && !solved) {
-      react(true);
-      onSolved?.();
-    }
-  }, [aFull, bFull, solved, react, onSolved]);
+    if (aFull && bFull) onFull?.();
+  }, [aFull, bFull, onFull]);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       <p className="text-sm text-slate-600">
-        Recouvre entièrement les deux jardins de carreaux de pelouse (tape chaque carreau), puis compare les
-        comptes.
+        Appuie sur un jardin et <strong>balaie</strong> : les carreaux de pelouse se posent sous ton doigt.
+        Recouvre les deux entièrement (repasse sur un carreau posé pour le retirer).
       </p>
-      <div className="grid sm:grid-cols-2 gap-6">
-        <div className="space-y-2">
+      <div className="grid sm:grid-cols-2 gap-5">
+        <div className="space-y-1.5">
           <p className="text-center text-xs font-semibold text-slate-500">Jardin A (tout en longueur)</p>
-          <AreaGrid rows={JARDIN_A.rows} cols={JARDIN_A.cols} cells={cellsA} onToggle={toggle(setCellsA)} unit="carreau" disabled={done} tone="emerald" ariaLabel="Jardin A" />
-          <p className="text-center font-mono text-sm text-slate-700">{cellsA.length} carreau{cellsA.length > 1 ? 'x' : ''}</p>
+          <PaveLab
+            rows={JARDIN_A.rows}
+            cols={JARDIN_A.cols}
+            cells={cellsA}
+            onPave={add(setCellsA)}
+            onUnpave={remove(setCellsA)}
+            tone="emerald"
+            ariaLabel="Jardin A à paver"
+          />
         </div>
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <p className="text-center text-xs font-semibold text-slate-500">Jardin B (ramassé)</p>
-          <AreaGrid rows={JARDIN_B.rows} cols={JARDIN_B.cols} cells={cellsB} onToggle={toggle(setCellsB)} unit="carreau" disabled={done} tone="sky" ariaLabel="Jardin B" />
-          <p className="text-center font-mono text-sm text-slate-700">{cellsB.length} carreau{cellsB.length > 1 ? 'x' : ''}</p>
+          <PaveLab
+            rows={JARDIN_B.rows}
+            cols={JARDIN_B.cols}
+            cells={cellsB}
+            onPave={add(setCellsB)}
+            onUnpave={remove(setCellsB)}
+            tone="sky"
+            ariaLabel="Jardin B à paver"
+          />
         </div>
       </div>
-      {done && (
+      {/* Le verdict n'apparaît que quand les DEUX pavages sont complets :
+          comparer deux mesures suppose d'avoir mesuré les deux. */}
+      {aFull && bFull && (
         <Feedback tone="ok">
-          Verdict du recouvrement : jardin A = <strong>12 carreaux</strong>, jardin B = <strong>9 carreaux</strong>.
-          Le jardin « tout en longueur » a PLUS de pelouse, même s'il paraît étroit. Mesurer une surface en
-          comptant des carreaux-unités : c'est exactement ça, mesurer une <strong>aire</strong>.
+          Verdict du recouvrement : jardin A = <strong>{JARDIN_A.count} carreaux</strong>, jardin B ={' '}
+          <strong>{JARDIN_B.count} carreaux</strong>. Le jardin « tout en longueur » a PLUS de pelouse, même
+          s'il paraît étroit. {full ? 'Recommence autant que tu veux : le compte ne dépend pas de l’ordre des carreaux.' : ''}
         </Feedback>
       )}
     </div>
   );
 }
 
+/** Capture `kit.react` dans une ref, sans provoquer de rendu supplémentaire. */
+function ReactRefSetter({ kit, target }) {
+  target.current = kit.react;
+  return null;
+}
+
 export default function Module01Mission() {
   const [paverDone, setPaverDone] = useState(false);
+  const [pred, setPred] = useState(null);
   const [sensDone, setSensDone] = useState(false);
   const [tourDone, setTourDone] = useState(false);
   const [vocabDone, setVocabDone] = useState(false);
+  const reactRef = React.useRef(null);
+  const paverDoneRef = React.useRef(false);
+  paverDoneRef.current = paverDone;
+
+  // Stable : l'effet du labo ne dépend donc que de l'état du pavage.
+  const onBothPaved = React.useCallback(() => {
+    if (paverDoneRef.current) return;
+    reactRef.current?.(true);
+    setPaverDone(true);
+  }, []);
+
 
   return (
     <ContentModule
@@ -118,15 +172,47 @@ export default function Module01Mission() {
       brief={{
         tag: '📋 Mission 01',
         title: '« Mon jardin est plus grand ! » — « Non, c’est le mien ! »',
-        body: <p>Les deux voisins n'arrivent pas à se mettre d'accord à l'œil nu. Départage-les avec une méthode indiscutable.</p>,
+        body: <p>Les deux voisins n'arrivent pas à se mettre d'accord à l'œil nu. Départage-les avec une méthode indiscutable : recouvre.</p>,
       }}
       steps={[
         {
           num: 1,
           title: 'Recouvre et compte',
+          subtitle: 'Le compteur suit ton doigt : rien à valider.',
           done: paverDone,
           content: (kit) => (
-            <JardinPaver react={kit.react} solved={paverDone} onSolved={() => setPaverDone(true)} />
+            <div className="space-y-4">
+              {/* `kit.react` change d'identité à chaque rendu : on le garde
+                  dans une ref pour que `onBothPaved` reste stable et que
+                  l'effet du labo ne se redéclenche pas en boucle. */}
+              <ReactRefSetter kit={kit} target={reactRef} />
+              <PredictionChips
+                prompt="à l’œil nu, lequel des deux jardins demandera le plus de carreaux ?"
+                options={[
+                  { id: 'a', label: 'Le jardin A (allongé)' },
+                  { id: 'b', label: 'Le jardin B (ramassé)' },
+                  { id: 'egal', label: 'Autant tous les deux' },
+                ]}
+                value={pred}
+                onChange={setPred}
+                disabled={paverDone}
+              />
+              <JardinPaver
+                full={paverDone}
+                onFull={onBothPaved}
+              />
+              {paverDone && (
+                <Feedback tone="ok">
+                  {pred === 'a'
+                    ? 'Ta prédiction tenait : '
+                    : pred
+                      ? 'Ta prédiction disait autre chose, et pourtant : '
+                      : ''}
+                  12 carreaux contre 9. La <strong>silhouette</strong> d'un jardin ne dit pas combien de pelouse
+                  il faut : seul le recouvrement tranche.
+                </Feedback>
+              )}
+            </div>
           ),
         },
         {

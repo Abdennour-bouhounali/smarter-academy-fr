@@ -3,15 +3,26 @@ import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import PaveLab from '../components/PaveLab';
 import { convert, parseDec, formatDec } from '../components/areaUtils';
 
 /**
  * Module 5 — formalisation : la marche des aires vaut ×100.
  *
- * La découverte passe par le quadrillage du dm² : l'élève tape
- * « Quadriller en cm », un quadrillage 10×10 STATIQUE se dessine (jamais
- * 100 nœuds interactifs — plafond de densité), et 10 × 10 = 100 surgit.
- * Le contraste avec les longueurs (×10) est le message central.
+ * ACTION      l'élève PAVE lui-même le carré de 1 dm de côté avec des
+ *             carreaux de 1 cm² — au balayage du doigt, comme au module 3.
+ * CHANGE      le compteur monte carreau après carreau, et la première
+ *             rangée révèle qu'il en faut 10 juste pour traverser.
+ * OBSERVATION dix rangées de dix : 100 carreaux, et non 10.
+ * SENS        la marche entre deux unités d'aire voisines vaut ×100 parce
+ *             que le côté est multiplié par 10 DANS LES DEUX SENS.
+ *
+ * L'ancienne version affichait un bouton « Quadriller en cm ▦ » : le
+ * quadrillage apparaissait tout fait, l'élève n'avait rien produit. C'est
+ * une révélation, pas une manipulation (INTERACTION_PEDAGOGY §2). Le
+ * pavage à 100 carreaux reste sous le plafond de densité parce que les
+ * cellules ne sont pas 100 boutons scénarisés mais une seule surface
+ * balayée — et le geste continu rend le comptage supportable.
  */
 const PREDICTION_OPTIONS = ['10 carreaux de 1 cm²', '100 carreaux de 1 cm²', '1 000 carreaux de 1 cm²'];
 
@@ -27,49 +38,44 @@ const CHOIX_Q = {
     'Un timbre : quelques cm². Un cahier : environ 600 cm² (pas encore un m² !). La France : en km². L’unité d’aire se choisit selon la surface à mesurer.',
 };
 
-/** Quadrillage 10×10 statique en SVG pur — décor, aucune interactivité. */
-function DmSquare({ gridded }) {
-  const S = 220;
-  return (
-    <svg viewBox={`0 0 ${S} ${S}`} className="w-full max-w-[240px] mx-auto select-none" role="img" aria-label={gridded ? '1 dm² quadrillé en 100 cm²' : '1 dm²'}>
-      <rect x={1} y={1} width={S - 2} height={S - 2} fill="#fef3c7" stroke="#d97706" strokeWidth="2.5" />
-      {gridded && (
-        <g style={{ pointerEvents: 'none' }}>
-          {Array.from({ length: 9 }).map((_, i) => (
-            <React.Fragment key={i}>
-              <line x1={((i + 1) * S) / 10} y1={1} x2={((i + 1) * S) / 10} y2={S - 1} stroke="#d97706" strokeWidth="0.8" opacity="0.6" />
-              <line x1={1} y1={((i + 1) * S) / 10} x2={S - 1} y2={((i + 1) * S) / 10} stroke="#d97706" strokeWidth="0.8" opacity="0.6" />
-            </React.Fragment>
-          ))}
-          {/* Un cm² témoin, en surbrillance */}
-          <rect x={1} y={1} width={S / 10} height={S / 10} fill="#f59e0b" opacity="0.85" />
-        </g>
-      )}
-      <text x={S / 2} y={gridded ? S + 0 : S / 2 + 6} textAnchor="middle" style={{ fontSize: 16, fontFamily: 'monospace', fontWeight: 700, pointerEvents: 'none' }} className="fill-amber-700">
-        {gridded ? '' : '1 dm²'}
-      </text>
-    </svg>
-  );
-}
+/**
+ * Le pavage du dm². 10 × 10 = 100 carreaux de 1 cm² : l'élève les pose
+ * lui-même, et la première rangée suffit déjà à casser l'intuition « ×10 ».
+ *
+ * Validé dès que la PREMIÈRE RANGÉE est complète (10 carreaux) : c'est là
+ * que se joue la découverte — il en faut déjà dix rien que pour traverser,
+ * donc bien plus de dix pour recouvrir. Le pavage complet reste possible et
+ * n'est jamais bloqué : le labo ne se fige pas.
+ */
+const DM_COLS = 10;
+const DM_ROWS = 10;
 
 function DmDiscovery({ react, solved, onSolved }) {
   const [prediction, setPrediction] = useState(null);
-  const [gridded, setGridded] = useState(solved);
-  const done = solved || gridded;
+  const [cells, setCells] = useState([]);
+  // La première rangée est celle des indices 0..9 : la traversée du carré.
+  const rangeeFaite = Array.from({ length: DM_COLS }, (_, i) => i).every((i) => cells.includes(i));
+  const complet = cells.length === DM_COLS * DM_ROWS;
+  const done = solved || rangeeFaite;
 
-  const reveal = () => {
-    if (done) return;
-    setGridded(true);
-    react(prediction === 1);
-    onSolved?.();
-  };
+  const pave = (i) => setCells((prev) => (prev.includes(i) ? prev : [...prev, i]));
+
+  /* Le signal part d'un EFFET : appeler `react` depuis l'updater de
+     setState met à jour le parent pendant le rendu de l'enfant. */
+  React.useEffect(() => {
+    if (rangeeFaite && !solved) { react(prediction === 1); onSolved?.(); }
+    // `prediction` est volontairement hors dépendances : le verdict doit
+    // porter sur la prédiction au moment où la rangée se complète.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rangeeFaite, solved]);
+  const unpave = (i) => setCells((prev) => prev.filter((x) => x !== i));
 
   return (
     <div className="space-y-4">
       <div className="space-y-2">
         <p className="text-sm font-semibold text-slate-700">
-          Voici un carré de 1 dm de côté : son aire vaut 1 dm². Son côté mesure aussi 10 cm. AVANT de quadriller :
-          combien de carreaux de 1 cm² faudra-t-il pour le recouvrir ?
+          Voici un carré de 1 dm de côté : son aire vaut 1 dm². Son côté mesure aussi 10 cm. AVANT de le
+          paver : combien de carreaux de 1 cm² faudra-t-il pour le recouvrir ?
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2" role="group" aria-label="Ta prédiction">
           {PREDICTION_OPTIONS.map((opt, i) => (
@@ -79,7 +85,7 @@ function DmDiscovery({ react, solved, onSolved }) {
               disabled={done}
               onClick={() => setPrediction(i)}
               aria-pressed={prediction === i}
-              className={`px-3 py-2.5 rounded-xl border-2 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
+              className={`min-h-[44px] px-3 py-2.5 rounded-xl border-2 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
                 prediction === i
                   ? 'bg-amber-500 border-amber-600 text-white'
                   : 'bg-white border-slate-200 text-slate-700 hover:border-amber-300'
@@ -91,26 +97,33 @@ function DmDiscovery({ react, solved, onSolved }) {
         </div>
       </div>
 
-      <DmSquare gridded={done} />
-
-      {prediction !== null && !done && (
-        <div className="text-center">
-          <button
-            type="button"
-            onClick={reveal}
-            className="px-5 py-2.5 rounded-xl bg-amber-500 text-white font-semibold text-sm hover:bg-amber-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-          >
-            Quadriller en cm ▦
-          </button>
-        </div>
-      )}
+      <p className="text-sm text-slate-600">
+        Appuie sur le carré et <strong>balaie</strong> pour poser les carreaux de 1 cm². Commence par une
+        seule rangée, de gauche à droite.
+      </p>
+      {/* cellSize 26 px : 10 colonnes tiennent dans 260 px, donc dans la
+          colonne de contenu même à 375 px de large. */}
+      <PaveLab
+        rows={DM_ROWS}
+        cols={DM_COLS}
+        cells={cells}
+        onPave={pave}
+        onUnpave={unpave}
+        cellSize={26}
+        tone="amber"
+        unit="cm²"
+        ariaLabel="Carré de 1 dm² à paver en cm²"
+      />
 
       {done && (
         <Feedback tone={prediction === 1 ? 'ok' : 'info'}>
-          {prediction === 1 ? 'Bien prédit : ' : 'Le quadrillage a tranché : '}
-          10 colonnes × 10 lignes = <strong>100 carreaux</strong>. Donc <strong>1 dm² = 100 cm²</strong> — la
-          marche entre deux unités d'aire voisines vaut <strong>× 100</strong> (10 × 10), et non × 10 comme les
-          longueurs. C'est LA différence à retenir.
+          {prediction === 1 ? 'Bien prédit : ' : 'Le pavage a tranché : '}
+          il faut déjà <strong>10 carreaux</strong> rien que pour traverser le carré une fois — et il y a{' '}
+          <strong>10 rangées</strong> comme celle-là. Soit <strong className="font-mono">10 × 10 = 100</strong>{' '}
+          carreaux de 1 cm² dans 1 dm². La marche entre deux unités d'aire vaut <strong>×100</strong>, alors
+          qu'entre deux unités de longueur elle vaut ×10 : parce que le côté est multiplié par 10 dans les
+          DEUX sens.
+          {complet ? ' Tu viens de les poser tous les cent.' : ' Continue si tu veux les poser tous.'}
         </Feedback>
       )}
     </div>

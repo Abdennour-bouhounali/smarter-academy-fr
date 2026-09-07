@@ -6,6 +6,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import BarChart from '../components/BarChart';
+import ReadRuler from '../components/ReadRuler';
 import PieChart from '../components/PieChart';
 import { CDI, SONDAGE } from '../components/meteoData';
 import { maxIndex, minIndex, parseDec, formatDec } from '../components/chartUtils';
@@ -31,6 +32,13 @@ const ECART = CDI.values[I_MAX] - CDI.values[I_MIN]; // 30
 export default function Module04LireComparer() {
   const [maxDone, setMaxDone] = useState(false);
   const [minDone, setMinDone] = useState(false);
+  // La barre COURANTE désignée, distincte du jalon : le diagramme continue à
+  // répondre au doigt une fois la bonne barre trouvée.
+  const [pickedMax, setPickedMax] = useState(null);
+  const [pickedMin, setPickedMin] = useState(null);
+  // La hauteur de la règle de lecture (étape 3) : c'est le geste qui mesure.
+  const [rule, setRule] = useState(0);
+  const [ruleSeen, setRuleSeen] = useState({ bas: false, haut: false });
   const [ecartDone, setEcartDone] = useState(false);
   const [doubleDone, setDoubleDone] = useState(false);
   const [camembertDone, setCamembertDone] = useState(false);
@@ -63,14 +71,17 @@ export default function Module04LireComparer() {
               <p className="text-sm text-slate-600">Touche la barre du jour où le CDI a reçu le plus d'élèves.</p>
               <BarChart
                 series={CDI}
-                mode={maxDone ? 'display' : 'read'}
+                mode="read"
                 step={10}
-                selected={maxDone ? I_MAX : null}
+                selected={pickedMax}
                 highlightMax={maxDone}
                 onSelect={(i) => {
+                  // Le diagramme reste désignable APRÈS la bonne réponse : on
+                  // arrête seulement de rejouer le jalon (règle projet du
+                  // 2026-09-06 — un labo ne se fige jamais).
+                  setPickedMax(i);
                   const ok = i === I_MAX;
-                  kit.react(ok);
-                  if (ok) setMaxDone(true);
+                  if (!maxDone) { kit.react(ok); if (ok) setMaxDone(true); }
                 }}
                 title="Élèves au CDI cette semaine"
                 axisLabel="élèves"
@@ -103,14 +114,14 @@ export default function Module04LireComparer() {
               <p className="text-sm text-slate-600">Et maintenant, le jour où il y a eu le moins de monde.</p>
               <BarChart
                 series={CDI}
-                mode={minDone ? 'display' : 'read'}
+                mode="read"
                 step={10}
-                selected={minDone ? I_MIN : null}
+                selected={pickedMin}
                 highlightMin={minDone}
                 onSelect={(i) => {
+                  setPickedMin(i);
                   const ok = i === I_MIN;
-                  kit.react(ok);
-                  if (ok) setMinDone(true);
+                  if (!minDone) { kit.react(ok); if (ok) setMinDone(true); }
                 }}
                 title="Élèves au CDI cette semaine"
                 axisLabel="élèves"
@@ -131,7 +142,36 @@ export default function Module04LireComparer() {
           done: ecartDone,
           content: (
             <div className="space-y-3">
-              <BarChart series={CDI} step={10} highlightMax highlightMin title="Élèves au CDI cette semaine" axisLabel="élèves" tone="violet" />
+              <p className="text-sm text-slate-600">
+                Fais monter la règle rouge : arrête-la d’abord au sommet de la barre la plus courte,
+                puis au sommet de la plus haute. Les deux hauteurs se lisent sur l’axe.
+              </p>
+              {/* La règle MESURE : l'élève amène le trait au sommet de chaque
+                  barre et lit la valeur sur l'axe. L'écart n'est plus une
+                  impression visuelle, c'est la distance entre deux arrêts. */}
+              <ReadRuler
+                series={CDI}
+                value={rule}
+                onChange={(v) => {
+                  setRule(v);
+                  if (v === CDI.values[I_MIN]) setRuleSeen((r) => ({ ...r, bas: true }));
+                  if (v === CDI.values[I_MAX]) setRuleSeen((r) => ({ ...r, haut: true }));
+                }}
+                step={10}
+                ruleStep={1}
+                tone="violet"
+                title="Élèves au CDI cette semaine"
+                axisLabel="élèves"
+                readout={
+                  <p className="text-xs text-slate-500 mt-0.5">
+                    {ruleSeen.bas && ruleSeen.haut
+                      ? `Tu as posé la règle sur les deux sommets : ${CDI.values[I_MIN]} puis ${CDI.values[I_MAX]}.`
+                      : ruleSeen.bas
+                      ? `Le sommet de la barre la plus courte est à ${CDI.values[I_MIN]}. Monte maintenant jusqu’à la plus haute.`
+                      : 'Monte doucement : regarde les barres se faire dépasser une à une.'}
+                  </p>
+                }
+              />
               {/* Voir « c'est plus haut » ne suffit pas : la méthode qui
                   transforme l'impression en nombre est posée avant la demande. */}
               <KnowledgeBrick

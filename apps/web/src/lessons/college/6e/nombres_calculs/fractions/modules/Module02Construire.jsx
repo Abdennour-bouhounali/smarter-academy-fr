@@ -6,6 +6,7 @@ import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PartitionShape from '../components/PartitionShape';
+import FractionBar from '../components/FractionBar';
 import { texFrac } from '../components/fractionUtils';
 
 /**
@@ -43,27 +44,6 @@ function Tag({ children, color = 'slate' }) {
     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full border text-xs font-bold uppercase tracking-widest ${cls}`}>
       {children}
     </span>
-  );
-}
-
-/** Compteur de parts — central et lisible */
-function PartsCounter({ taken, total, targetNum }) {
-  const done = taken === targetNum;
-  return (
-    <div className="flex flex-col items-center gap-0.5">
-      <div className={`font-mono font-extrabold text-3xl sm:text-4xl transition-colors ${taken > 0 ? 'text-amber-600' : 'text-slate-300'}`}>
-        {taken} / {total}
-      </div>
-      <div className="text-sm text-slate-500 font-sans">
-        {done
-          ? '✓ Parts prises'
-          : taken === 0
-          ? 'Touche les parts que tu veux prendre'
-          : taken < targetNum
-          ? `Encore ${targetNum - taken} part${targetNum - taken > 1 ? 's' : ''}…`
-          : `Tu en as pris ${taken} — essaie d'en prendre ${targetNum}`}
-      </div>
-    </div>
   );
 }
 
@@ -113,156 +93,122 @@ const DEN_OPTIONS = [2, 3, 4, 5, 8, 10];
  *   tone  — palette PartitionShape
  *   hint  — aide contextuelle affichée en phase SPLIT
  */
+/**
+ * Construction — LE geste de la leçon, désormais fait EN GLISSANT.
+ *
+ * Avant : on choisissait la découpe dans une rangée de puces (2, 3, 4, 5, 8,
+ * 10), puis on tapait les parts une par une. Deux problèmes :
+ *   · la découpe — le geste central de la leçon — était un clic sur un chiffre,
+ *     pas un partage. L'élève ne voyait jamais les parts rétrécir pendant qu'il
+ *     changeait d'avis ;
+ *   · prendre 7 parts sur 10 demandait sept clics, alors qu'on prend une
+ *     LONGUEUR d'un seul geste.
+ *
+ * Maintenant, `FractionBar` porte les deux prises : on tire le couloir pour
+ * découper (les traits se multiplient sous le doigt, la barre ne change pas de
+ * taille), et on tire le bord colorié pour prendre. La fraction reste la
+ * CONCLUSION : elle n'est écrite qu'après validation.
+ *
+ * Ce qui ne change pas : les trois constructions et leur rampe de support
+ * (1/2 guidé → 3/4 → 7/10 autonome), le retour sur une mauvaise découpe avant
+ * de montrer la cible, la révélation en fin de construction.
+ */
 function Construction({ config, solved, onSolved, reactKit, showTarget }) {
-  const { den, num, shape, tone, hint } = config;
-  const [phase, setPhase] = useState('split');  // 'split' | 'take' | 'reveal'
-  const [chosenDen, setChosenDen] = useState(null);
-  const [cells, setCells] = useState([]);
+  const { den, num, tone, hint } = config;
+  // Un seul état mathématique : {chosenDen, taken}. Tout en dérive (§28).
+  const [chosenDen, setChosenDen] = useState(solved ? den : DEN_OPTIONS[0]);
+  const [taken, setTaken] = useState(solved ? num : 0);
+  const [touched, setTouched] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
-  const denOk   = chosenDen === den;
-  const taken   = solved ? num : cells.length;
-  const numOk   = cells.length === num;
+  const denOk = chosenDen === den;
+  const numOk = taken === num;
+  const shown = revealed || solved;
 
-  /* ── Phase SPLIT : choisir la découpe ── */
-  const pickDen = (d) => {
-    if (solved || phase !== 'split') return;
+  const cut = (d) => {
+    setTouched(true);
     setChosenDen(d);
-    setCells([]);
-    setPhase('take');
+    // Prendre plus de parts qu'il n'en existe n'a pas de sens : on borne.
+    setTaken((n) => Math.min(n, d));
+  };
+  const take = (n) => {
+    setTouched(true);
+    setTaken(n);
   };
 
-  /* ── Phase TAKE : prendre des parts ── */
-  const toggle = (i) => {
-    if (solved || phase !== 'take') return;
-    setCells((prev) =>
-      prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i].sort((a, b) => a - b)
-    );
-  };
-
-  /* ── Validation : la fraction apparaît ── */
   const validate = () => {
-    if (!denOk || !numOk || solved) return;
-    setPhase('reveal');
+    if (!denOk || !numOk) return;
+    setRevealed(true);
     reactKit(true);
     onSolved();
   };
 
-  /* ── Réinitialiser la découpe ── */
-  const resetSplit = () => {
-    if (solved) return;
-    setChosenDen(null);
-    setCells([]);
-    setPhase('split');
-  };
-
   return (
-    <div className="space-y-5">
-
-      {/* ── Phase SPLIT ── */}
-      {phase === 'split' && (
-        <div className="space-y-3">
-          {hint && (
-            <p className="text-base text-slate-600 font-sans leading-relaxed">{hint}</p>
-          )}
-          <p className="text-base sm:text-lg font-semibold text-slate-800 font-sans">
-            En combien de parts égales veux-tu couper l'unité ?
-          </p>
-          <div className="flex flex-wrap gap-2.5">
-            {DEN_OPTIONS.map((d) => (
-              <button
-                key={d}
-                type="button"
-                onClick={() => pickDen(d)}
-                aria-label={`Couper en ${d} parts`}
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl border-2 font-mono font-bold text-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 bg-white border-slate-200 text-slate-700 hover:border-indigo-400 hover:bg-indigo-50"
-              >
-                {d}
-              </button>
-            ))}
-          </div>
-        </div>
+    <div className="space-y-4">
+      {hint && !shown && (
+        <p className="text-base text-slate-600 font-sans leading-relaxed">{hint}</p>
       )}
 
-      {/* ── Phase TAKE ── */}
-      {(phase === 'take' || phase === 'reveal' || solved) && chosenDen !== null && (
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
+      <div className="rounded-2xl bg-amber-50 border-2 border-amber-200 p-3 sm:p-5">
+        {/* Même règle qu'au module 1 : `solved` ne repeint PAS la barre sur la
+            cible — figer par l'affichage est la même faute que figer par
+            `disabled`. On montre l'état vivant ; au retour sur le module, on
+            repart de la construction attendue (voir l'initialisation). */}
+        <FractionBar
+          num={taken}
+          den={chosenDen}
+          onNum={take}
+          onDen={cut}
+          denOptions={DEN_OPTIONS}
+          tone={tone}
+          /* L'écriture a+b/c n'apparaît qu'après la validation : elle est la
+             conclusion de la construction, jamais son mode d'emploi (§14). */
+          showWriting={shown}
+        />
+      </div>
 
-          {/* Résumé de la découpe + possibilité de recommencer */}
-          <div className="flex items-center gap-3 flex-wrap">
-            <Tag color="amber">
-              Unité coupée en {chosenDen} parts égales
-            </Tag>
-            {phase === 'take' && !denOk && (
-              <button
-                type="button"
-                onClick={resetSplit}
-                className="text-sm text-indigo-600 underline font-sans focus:outline-none focus-visible:ring-1"
-              >
-                Changer la découpe
-              </button>
-            )}
-          </div>
+      {/* Retour sur une découpe qui ne convient pas — AVANT de montrer la cible. */}
+      {touched && !denOk && !shown && (
+        <Feedback tone="hint">
+          Tu as coupé en {chosenDen} parts. Observe ton unité : {chosenDen} parts n'est peut-être pas la bonne
+          découpe pour cette construction. Reprends le curseur du couloir.
+        </Feedback>
+      )}
 
-          {/* Feedback si mauvaise découpe — AVANT de montrer la cible */}
-          {phase === 'take' && !denOk && (
-            <Feedback tone="hint">
-              Tu as choisi {chosenDen} parts. Observe bien ton unité : {chosenDen} parts n'est peut-être pas
-              la bonne découpe pour cet exercice. Tu peux changer le nombre ci-dessus.
-            </Feedback>
-          )}
-
-          {/* Chocolat / pizza — hero visuel */}
-          <div className="rounded-2xl bg-amber-50 border-2 border-amber-200 p-4 sm:p-6 flex flex-col items-center gap-4">
-            <div className="w-full max-w-xs">
-              <PartitionShape
-                shape={shape}
-                parts={chosenDen}
-                cells={solved ? Array.from({ length: num }, (_, i) => i) : cells}
-                onToggle={phase === 'take' ? toggle : undefined}
-                tone={tone}
-                size="lg"
-              />
-            </div>
-
-            {/* Compteur */}
-            {phase === 'take' && denOk && (
-              <PartsCounter taken={cells.length} total={chosenDen} targetNum={num} />
-            )}
-
-            {/* Affichage de la cible — seulement APRÈS que l'élève a choisi la découpe */}
-            {phase === 'take' && denOk && showTarget && (
-              <p className="text-base text-indigo-700 font-semibold font-sans text-center">
-                Prends maintenant exactement <strong>{num} part{num > 1 ? 's' : ''}</strong>.
-              </p>
-            )}
-          </div>
-
-          {/* Valider */}
-          {phase === 'take' && denOk && (
-            <div className="flex justify-center">
-              <ValidateButton onClick={validate} disabled={!numOk} tone="indigo">
-                J'ai construit ma fraction →
-              </ValidateButton>
-            </div>
-          )}
-
-          {/* Mauvais nombre de parts — feedback formatif */}
-          {phase === 'take' && denOk && cells.length > 0 && cells.length !== num && showTarget && (
-            <p className="text-center text-sm text-slate-500 font-sans">
-              {cells.length > num
-                ? `Tu en as pris ${cells.length} — enlèves-en ${cells.length - num}.`
-                : `Tu en as pris ${cells.length} — il en faut ${num}.`}
+      {denOk && !shown && (
+        <>
+          <Tag color="amber">Unité coupée en {chosenDen} parts égales</Tag>
+          {showTarget && (
+            <p className="text-base text-indigo-700 font-semibold font-sans text-center">
+              Tire maintenant le bord colorié pour prendre exactement{' '}
+              <strong>{num} part{num > 1 ? 's' : ''}</strong>.
             </p>
           )}
-        </motion.div>
+          {taken > 0 && !numOk && showTarget && (
+            <p className="text-center text-sm text-slate-500 font-sans">
+              {taken > num
+                ? `Tu en as pris ${taken} — tire le bord vers la gauche.`
+                : `Tu en as pris ${taken} — il en faut ${num}.`}
+            </p>
+          )}
+          <div className="flex justify-center">
+            <ValidateButton onClick={validate} disabled={!numOk} tone="indigo">
+              J'ai construit ma fraction →
+            </ValidateButton>
+          </div>
+        </>
       )}
 
-      {/* ── Phase REVEAL / solved ── */}
-      <FractionReveal
-        num={num}
-        den={chosenDen ?? den}
-        visible={phase === 'reveal' || solved}
-      />
+      <FractionReveal num={num} den={den} visible={shown} />
+
+      {/* RÈGLE PROJET : la barre reste vivante après la validation — c'est en
+          la re-découpant que l'élève éprouve que le bas commande la taille des
+          parts et le haut leur nombre. */}
+      {shown && (
+        <p className="text-center text-xs text-slate-500 font-sans">
+          La barre reste manipulable : re-découpe-la pour voir ce que devient ta prise.
+        </p>
+      )}
     </div>
   );
 }
@@ -272,7 +218,6 @@ const BUILDS = [
   {
     den: 2,
     num: 1,
-    shape: 'bar',
     tone: 'sky',
     hint: "Commence par couper l'unit\u00e9 en deux \u2014 le partage le plus simple.",
     showTarget: true,  // guidé : on montre la cible immédiatement
@@ -282,7 +227,6 @@ const BUILDS = [
   {
     den: 4,
     num: 3,
-    shape: 'bar',
     tone: 'amber',
     hint: "Cette fois, partage l'unit\u00e9 en 4 parts \u00e9gales, puis prends 3 parts.",
     showTarget: true,  // encore guidé
@@ -292,7 +236,6 @@ const BUILDS = [
   {
     den: 10,
     num: 7,
-    shape: 'bar',
     tone: 'emerald',
     hint: null,        // défi autonome : pas d'instruction sur la cible avant la découpe
     showTarget: false, // la cible n'est révélée qu'après que l'élève a choisi la découpe

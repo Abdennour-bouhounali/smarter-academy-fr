@@ -32,7 +32,9 @@ function SautsBuilder({ react, solved, onSolved }) {
   const done = solved || visibleCount >= HOPS.length;
 
   const tapChip = (chip) => {
-    if (done) return;
+    // Pas de `done` bloquant (règle projet du 2026-09-06) : une fois le
+    // trajet construit, l'élève peut le refaire du départ pour vérifier que
+    // l'ordre des sauts est bien ce qui compte.
     if (chip.hopIndex === visibleCount) {
       setWrongPick(null);
       const next = visibleCount + 1;
@@ -52,7 +54,18 @@ function SautsBuilder({ react, solved, onSolved }) {
         Construis le trajet en tapant les sauts DANS L'ORDRE : d'abord jusqu'à l'heure ronde, puis les heures
         entières, puis le reste.
       </p>
-      <DurationLine start={START} end={END} hops={HOPS} visibleCount={done ? HOPS.length : visibleCount} />
+      <DurationLine start={START} end={END} hops={HOPS} visibleCount={visibleCount} />
+      {visibleCount > 0 && (
+        <div className="text-center">
+          <button
+            type="button"
+            onClick={() => { setVisibleCount(0); setWrongPick(null); }}
+            className="min-h-[44px] px-4 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:border-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+          >
+            Refaire le trajet depuis {formatTime(START)}
+          </button>
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2" role="group" aria-label="Sauts disponibles">
         {CHIPS.map((chip) => {
           const used = chip.hopIndex !== -1 && chip.hopIndex < visibleCount;
@@ -60,7 +73,7 @@ function SautsBuilder({ react, solved, onSolved }) {
             <button
               key={chip.id}
               type="button"
-              disabled={done || used}
+              disabled={used}
               onClick={() => tapChip(chip)}
               className={`px-3 py-2.5 rounded-xl border-2 font-mono text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
                 used

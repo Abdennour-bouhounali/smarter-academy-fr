@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { ContentModule, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import Balance from '../components/Balance';
 import ItemBank from '../components/ItemBank';
 import Gauge from '../components/Gauge';
+import BothSidesLab from '../components/BothSidesLab';
 import { formatMass } from '../components/massUtils';
 
 /**
@@ -49,14 +50,17 @@ function EquivalenceBalance({ react, solved, onSolved }) {
   const equal = allPlaced && totalLeft === totalRight && totalLeft > 0;
   const done = solved || equal || revealed;
 
+  // Poser et reprendre restent TOUJOURS possibles, y compris après que
+  // l'équilibre a été trouvé (règle projet du 2026-09-06). Il y a plusieurs
+  // arrangements équilibrés (100+300 | 300+100 aussi bien que 100+100+... ) :
+  // continuer à chercher est mathématiquement fécond, pas du bruit.
   const place = (id, zone) => {
-    if (done || !zone) return;
+    if (!zone) return;
     setPlacement((p) => ({ ...p, [id]: zone }));
   };
   const handleRelease = (id, x, y) => place(id, zoneAt(x, y, leftZoneRef, rightZoneRef));
 
   const takeBack = (id) => {
-    if (done) return;
     setPlacement((p) => {
       const n = { ...p };
       delete n[id];
@@ -64,9 +68,8 @@ function EquivalenceBalance({ react, solved, onSolved }) {
     });
   };
 
-  // L'équilibre atteint valide l'étape. Tant qu'il ne l'est pas, l'élève
-  // continue de manipuler librement : rien ne se fige sur un arrangement
-  // déséquilibré, et aucun message ne prétend le contraire.
+  // L'équilibre atteint valide l'étape — une seule fois. La validation ne se
+  // rejoue pas, mais elle ne verrouille rien non plus.
   React.useEffect(() => {
     if (equal && !solved) {
       react?.(true);
@@ -87,13 +90,15 @@ function EquivalenceBalance({ react, solved, onSolved }) {
       <p className="text-sm text-slate-600">
         Répartis les quatre poids sur les deux plateaux pour trouver un arrangement à l’équilibre.
       </p>
+      {/* Réserve et plateaux restent OUVERTS après l'équilibre trouvé (règle
+          projet du 2026-09-06) : chercher un SECOND arrangement équilibré est
+          précisément ce qui montre que l'équilibre n'est pas unique. */}
       <ItemBank
         items={WEIGHTS}
         placement={placement}
         onDragRelease={handleRelease}
         onDraggingChange={setDragging}
         onPlace={place}
-        disabled={done}
       />
       <Balance
         left={left}
@@ -103,7 +108,7 @@ function EquivalenceBalance({ react, solved, onSolved }) {
         dragging={dragging}
         leftZoneRef={leftZoneRef}
         rightZoneRef={rightZoneRef}
-        onItemTap={done ? undefined : takeBack}
+        onItemTap={takeBack}
         ariaLabel="Balance avec des poids de 100 g et 300 g"
       />
 
@@ -206,6 +211,11 @@ function GaugeReadRound({ round, index, react, solved, onSolved }) {
 
 export default function Module03ComparerMesurer() {
   const [equivDone, setEquivDone] = useState(false);
+  /* Le labo « des deux côtés » : on note quels gestes ont été essayés pour
+     ne valider que lorsque l'élève a VU les deux comportements. */
+  const [bothPred, setBothPred] = useState(null);
+  const [bothTried, setBothTried] = useState([]);
+  const [bothDone, setBothDone] = useState(false);
   const [gaugeDone, setGaugeDone] = useState([]);
   const allGaugesDone = gaugeDone.length === GAUGE_ROUNDS.length;
 
@@ -244,6 +254,64 @@ export default function Module03ComparerMesurer() {
         },
         {
           num: 2,
+          title: 'Ajoute des poids sans casser l’équilibre',
+          subtitle: 'La balance part équilibrée. À toi de la faire pencher — ou pas.',
+          done: bothDone,
+          content: (kit) => (
+            <div className="space-y-4">
+              {/* Prédiction SANS verdict (§6ter.3) : c'est la balance qui
+                  répond, pas un texte de correction. */}
+              <PredictionChips
+                prompt="si tu poses 50 g des DEUX côtés à la fois, que fera la balance ?"
+                options={[
+                  { id: 'gauche', label: 'Elle penchera à gauche' },
+                  { id: 'droite', label: 'Elle penchera à droite' },
+                  { id: 'rien', label: 'Elle restera horizontale' },
+                ]}
+                value={bothPred}
+                onChange={setBothPred}
+              />
+              {/* JAMAIS `disabled` : l'élève doit pouvoir continuer d'empiler
+                  après validation — c'est en empilant cinq fois 50 g des deux
+                  côtés qu'il voit que l'égalité tient à CHAQUE fois. */}
+              <BothSidesLab
+                onAction={(what) => {
+                  if (what === 'reset') return;
+                  // `what` vaut 'deséquilibre' ou 'équilibre' : le labo signale
+                  // l'ÉTAT obtenu après le dépôt, pas le bouton utilisé — le
+                  // glisser-déposer n'a pas de « bouton des deux côtés ».
+                  const next = bothTried.includes(what) ? bothTried : [...bothTried, what];
+                  setBothTried(next);
+                  // Il faut avoir VU les deux comportements : la balance
+                  // penchée (un seul côté chargé) puis rééquilibrée (autant
+                  // des deux côtés).
+                  const vuLesDeux = next.includes('desequilibre') && next.includes('equilibre');
+                  if (vuLesDeux && !bothDone) {
+                    kit.react(true);
+                    setBothDone(true);
+                  }
+                }}
+              />
+              {!bothDone && (
+                <p className="text-center text-xs text-slate-500">
+                  Glisse un poids sur un seul plateau — puis rétablis l’équilibre en chargeant
+                  autant de l’autre côté.
+                </p>
+              )}
+              {bothDone && (
+                <Feedback tone="ok">
+                  Les plateaux sont plus chargés qu’au départ — et pourtant la balance est revenue
+                  à l’horizontale dès que tu as ajouté <strong>la même masse des deux côtés</strong>.
+                  {bothPred === 'rien'
+                    ? ' C’est exactement ce que tu avais prédit.'
+                    : ' Ce n’est pas le poids total qui décide, c’est l’égalité entre les deux sommes.'}
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
           title: 'Lis le cadran',
           subtitle: 'Trois pesées à lire, une par une.',
           done: allGaugesDone,

@@ -4,6 +4,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PatronGrid from '../components/PatronGrid';
+import FoldLab from '../components/FoldLab';
 import {
   gridFromArt, foldsIntoCube, patronHint,
   PATRON_CROIX, PATRON_IMPOSSIBLE, PATRON_BANDE,
@@ -24,6 +25,11 @@ import {
  *
  * Politique formative : la prédiction est révélée par le SIMULATEUR, pas par
  * une réponse écrite d'avance — et `onAnswered` est inconditionnel.
+ *
+ * Depuis la refonte des manipulations : une fois la prédiction posée, l'élève
+ * ne lit plus un verdict, il REPLIE le patron de sa main (FoldLab) et voit
+ * soit la boîte se fermer, soit deux cases se chevaucher. Le simulateur ne
+ * dit plus « impossible » — il le MONTRE.
  */
 const PATRONS = [
   {
@@ -51,7 +57,11 @@ const PATRONS = [
 /** Une prédiction : on répond, puis le simulateur tranche sous les yeux. */
 function Prediction({ patron, done, onDone }) {
   const [answered, setAnswered] = useState(false);
+  // Le taux de pliage de CE patron : disponible dès que la prédiction est
+  // posée, et jamais figé ensuite (règle projet du 2026-09-06).
+  const [t, setT] = useState(0);
   const result = foldsIntoCube(patron.grid);
+  const revele = answered || done;
 
   return (
     <div className="space-y-3">
@@ -85,6 +95,30 @@ function Prediction({ patron, done, onDone }) {
         solved={done}
         onAnswered={() => { setAnswered(true); if (!done) onDone(); }}
       />
+
+      {/* La vérification n'est pas une phrase : c'est le geste. L'élève
+          replie lui-même et regarde ce qui se passe. */}
+      {revele && (
+        <div className="space-y-2">
+          <p className="text-sm text-slate-600">
+            Vérifie toi-même : replie {patron.label.toLowerCase()} jusqu’au bout.
+          </p>
+          <FoldLab
+            grid={patron.grid}
+            t={t}
+            onTChange={setT}
+            cell={30}
+            ariaLabel={`${patron.label} : replie-le pour vérifier ta prédiction`}
+          />
+          {t >= 0.98 && (
+            <Feedback tone={result.ok ? 'ok' : 'ko'}>
+              {result.ok
+                ? 'La boîte s’est refermée : les 6 cases sont devenues les 6 faces.'
+                : `${patronHint(result)} Les cases en rouge sont celles qui n’ont plus de place.`}
+            </Feedback>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -111,6 +111,53 @@ export const domOverflow = (page) => page.evaluate(() => {
 });
 
 export const noHScroll = (page) => page.evaluate(() => document.scrollingElement.scrollWidth <= window.innerWidth + 1);
+
+/**
+ * dragBy — un VRAI glissement au pointeur sur une poignée de manipulation.
+ *
+ * `page.mouse` travaille en coordonnées de FENÊTRE. Une poignée située sous la
+ * ligne de flottaison reçoit donc un `pointerdown` dans le vide :
+ * `elementFromPoint` ne trouve rien, le glissement « réussit » sans rien
+ * déplacer, et l'assertion échoue sur une valeur inchangée qui ressemble à un
+ * bug du composant. Le piège a coûté un cycle de débogage à trois suites 6e
+ * différentes (2026-09-07) — d'où ce helper, qui fait défiler AVANT de lire la
+ * boîte englobante.
+ *
+ * @param {import('playwright').Page} page
+ * @param {import('playwright').Locator} handle  la poignée à saisir
+ * @param {number} dx  déplacement horizontal, en pixels
+ * @param {number} dy  déplacement vertical, en pixels
+ * @param {number} [steps=14]  un glissement se fait en plusieurs pas : les
+ *   composants écoutent `pointermove`, un saut unique n'en émet qu'un seul.
+ */
+export async function dragBy(page, handle, dx, dy, steps = 14) {
+  await handle.scrollIntoViewIfNeeded();
+  const b = await handle.boundingBox();
+  if (!b) throw new Error('dragBy : poignée sans boîte englobante (masquée ?)');
+  const x = b.x + b.width / 2;
+  const y = b.y + b.height / 2;
+  await page.mouse.move(x, y);
+  await page.mouse.down();
+  await page.mouse.move(x + dx, y + dy, { steps });
+  await page.mouse.up();
+}
+
+/**
+ * dragOnto — prendre un objet et le lâcher sur une zone (glisser-déposer).
+ * Même précaution de défilement, sur les DEUX éléments.
+ */
+export async function dragOnto(page, source, target, steps = 16) {
+  await source.scrollIntoViewIfNeeded();
+  const a = await source.boundingBox();
+  await target.scrollIntoViewIfNeeded();
+  const b = await target.boundingBox();
+  if (!a || !b) throw new Error('dragOnto : source ou cible sans boîte englobante');
+  await page.mouse.move(a.x + a.width / 2, a.y + a.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2, { steps });
+  await page.mouse.up();
+}
+
 export const smallTargets = (page) => page.evaluate(() => {
   const bad = [];
   for (const b of document.querySelectorAll('main button')) {

@@ -44,8 +44,15 @@ export default function RotateToRight({
     onGoalReached?.();
   }, [reached, solved, onGoalReached]);
 
+  // `solved` ne bloque PAS la rotation : une fois l'objectif atteint, tourner
+  // encore pour voir le carré d'angle droit DISPARAÎTRE à 85° est ce qui
+  // apprend que perpendiculaire vaut 90° exactement, et non « à peu près »
+  // (règle projet du 2026-09-06 : une manipulation ne se fige jamais après
+  // validation). `disabled` reste, lui, réservé aux figures d'illustration
+  // pilotées par le module. Le verdict affiché est déjà VIVANT (`reached`),
+  // il ne peut donc pas mentir quand l'élève continue à tourner.
   const rotate = (sign) => {
-    if (disabled || solved) return;
+    if (disabled) return;
     onAngleChange(normalizeAngle(d2.angleDeg + sign * STEP));
   };
 
@@ -68,7 +75,7 @@ export default function RotateToRight({
 
       <div className="flex items-center justify-center gap-2 flex-wrap">
         <button
-          type="button" onClick={() => rotate(-1)} disabled={disabled || solved}
+          type="button" onClick={() => rotate(-1)} disabled={disabled}
           className={`${btn} bg-white border-slate-300 text-slate-700`}
           aria-label="Tourner de 5 degrés vers la gauche"
         >
@@ -78,7 +85,7 @@ export default function RotateToRight({
         {/* Lecture de l'angle : focusable, pilotable aux flèches */}
         <div
           role="slider"
-          tabIndex={disabled || solved ? -1 : 0}
+          tabIndex={disabled ? -1 : 0}
           aria-label="Inclinaison de la deuxième droite"
           aria-valuenow={Math.round(angle)}
           aria-valuemin={0}
@@ -93,7 +100,7 @@ export default function RotateToRight({
         </div>
 
         <button
-          type="button" onClick={() => rotate(1)} disabled={disabled || solved}
+          type="button" onClick={() => rotate(1)} disabled={disabled}
           className={`${btn} bg-white border-slate-300 text-slate-700`}
           aria-label="Tourner de 5 degrés vers la droite"
         >

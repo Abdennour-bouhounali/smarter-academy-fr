@@ -194,7 +194,7 @@ function UsefulDataCheck({ step, solved, onAnswered }) {
               key={i}
               type="button"
               onClick={() => toggle(i)}
-              disabled={done}
+              disabled={false}
               aria-pressed={wasPicked}
               className={`w-full text-left px-4 py-2.5 rounded-xl border-2 text-sm transition-all min-h-[44px] flex items-center justify-between gap-2 ${cls}`}
             >

@@ -25,12 +25,31 @@ function SharingManip({ onComplete, done }) {
   const finished = totalDistributed === total;
 
   const give = (personIdx) => {
-    if (remaining <= 0 || done) return;
+    if (remaining <= 0) return;
     setDistribution((prev) => {
       const next = [...prev];
       next[personIdx] += 1;
       return next;
     });
+  };
+
+  /* Glisser-déposer : on attrape une bille du tas et on la lâche sur un ami.
+     `elementFromPoint` retrouve le destinataire sous le doigt, si bien que le
+     même code sert à la souris et au tactile. Le clic reste actif — c'est le
+     chemin clavier et le secours (demande utilisateur du 2026-09-07). */
+  const [carrying, setCarrying] = useState(false);
+  const grab = (e) => {
+    if (remaining <= 0) return;
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+    setCarrying(true);
+  };
+  const release = (e) => {
+    if (!carrying) return;
+    e.currentTarget.releasePointerCapture?.(e.pointerId);
+    setCarrying(false);
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    const target = el?.closest?.('[data-friend]');
+    if (target) give(Number(target.getAttribute('data-friend')));
   };
 
   const personEmojis = ['😀', '😎', '🤩', '😄', '🥳', '😇'];
@@ -44,11 +63,26 @@ function SharingManip({ onComplete, done }) {
 
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
         <div className="text-xs font-mono text-amber-500 font-bold mb-1">BILLES RESTANTES</div>
-        <div className="flex flex-wrap gap-1.5 justify-center min-h-[40px]">
+        <div
+          className="flex flex-wrap gap-1.5 justify-center min-h-[40px]"
+          style={{ touchAction: 'none' }}
+          onPointerDown={grab}
+          onPointerUp={release}
+          onPointerCancel={() => setCarrying(false)}
+        >
           {Array.from({ length: remaining }).map((_, i) => (
-            <div key={i} className="w-6 h-6 rounded-full bg-amber-400 shadow-sm" />
+            <div
+              key={i}
+              className={`w-6 h-6 rounded-full bg-amber-400 shadow-sm transition-transform ${carrying ? 'scale-110' : ''}`}
+              style={{ cursor: remaining > 0 ? 'grab' : 'default' }}
+            />
           ))}
         </div>
+        {remaining > 0 && (
+          <p className="text-[11px] text-amber-700 mt-1">
+            Fais glisser une bille sur un ami — ou touche un ami pour lui en donner une.
+          </p>
+        )}
         <div className="text-2xl font-space font-bold text-amber-700 mt-2">{remaining}</div>
       </div>
 
@@ -56,10 +90,11 @@ function SharingManip({ onComplete, done }) {
         {Array.from({ length: people }).map((_, i) => (
           <button
             key={i}
+            data-friend={i}
             onClick={() => give(i)}
-            disabled={remaining === 0 || done}
+            disabled={remaining === 0}
             className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all focus:outline-none ${
-              remaining > 0 && !done ? 'hover:border-amber-400 hover:bg-amber-50 cursor-pointer' : 'cursor-default'
+              remaining > 0 ? 'hover:border-amber-400 hover:bg-amber-50 cursor-pointer' : 'cursor-default'
             } ${distribution[i] === perPerson ? 'border-emerald-400 bg-emerald-50' : 'border-slate-200 bg-white'}`}
           >
             <span className="text-2xl">{personEmojis[i]}</span>
@@ -127,9 +162,9 @@ function GroupingManip({ onComplete, done }) {
       <div className="flex items-center justify-between gap-4">
         <div className="text-sm text-slate-500">Restant : <strong className="text-slate-700">{remaining}</strong> billes</div>
         <button
-          onClick={() => { if (!finished && !done) setGroups((v) => v + 1); }}
-          disabled={finished || done}
-          className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${finished || done ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 text-white'}`}
+          onClick={() => { if (!finished) setGroups((v) => v + 1); }}
+          disabled={finished}
+          className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${finished ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 text-white'}`}
         >
           Faire un groupe de {groupSize} →
         </button>
@@ -210,9 +245,9 @@ function EuclideanDivision({ onComplete, done }) {
           )}
         </div>
         <button
-          onClick={() => { if (!done && remaining >= divisor) setGroups((v) => v + 1); }}
-          disabled={remaining < divisor || done}
-          className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${remaining < divisor || done ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-amber-600 hover:bg-amber-700 text-white'}`}
+          onClick={() => { if (remaining >= divisor) setGroups((v) => v + 1); }}
+          disabled={remaining < divisor}
+          className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${remaining < divisor ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-amber-600 hover:bg-amber-700 text-white'}`}
         >
           Former un groupe de {divisor}
         </button>

@@ -40,8 +40,10 @@ function NumberBuilder({ target, hint, onSolved, solved, react }) {
   const total = d.UM * 1000 + d.C * 100 + d.D * 10 + d.U;
   const isRight = total === target;
 
+  // RÈGLE PROJET (2026-09-06) : les colonnes ne se figent JAMAIS après la
+  // validation de l'étape. La seule borne est MATHÉMATIQUE : un chiffre tourne
+  // dans 0–9, parce qu'à dix on change de colonne.
   const bump = (key, delta) => {
-    if (solved) return;
     setChecked(false);
     setD((prev) => ({ ...prev, [key]: (prev[key] + delta + 10) % 10 }));
   };
@@ -64,9 +66,8 @@ function NumberBuilder({ target, hint, onSolved, solved, react }) {
               <button
                 type="button"
                 onClick={() => bump(c.key, 1)}
-                disabled={solved}
                 aria-label={`Augmenter le chiffre des ${c.label.toLowerCase()}`}
-                className="w-8 h-7 rounded-lg bg-white/80 border border-current/20 flex items-center justify-center hover:bg-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                className="w-11 min-h-[44px] rounded-lg bg-white/80 border border-current/20 flex items-center justify-center hover:bg-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <Plus className="w-3.5 h-3.5" aria-hidden="true" />
               </button>
@@ -80,9 +81,8 @@ function NumberBuilder({ target, hint, onSolved, solved, react }) {
               <button
                 type="button"
                 onClick={() => bump(c.key, -1)}
-                disabled={solved}
                 aria-label={`Diminuer le chiffre des ${c.label.toLowerCase()}`}
-                className="w-8 h-7 rounded-lg bg-white/80 border border-current/20 flex items-center justify-center hover:bg-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                className="w-11 min-h-[44px] rounded-lg bg-white/80 border border-current/20 flex items-center justify-center hover:bg-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <Minus className="w-3.5 h-3.5" aria-hidden="true" />
               </button>

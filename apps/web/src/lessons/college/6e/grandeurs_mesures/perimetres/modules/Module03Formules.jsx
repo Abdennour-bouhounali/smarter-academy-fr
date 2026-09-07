@@ -5,6 +5,7 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PolygonPerimeter from '../components/PolygonPerimeter';
 import FormulaBuilder from '../components/FormulaBuilder';
+import RectRibbon from '../components/RectRibbon';
 import { squarePerimeter, formatDec, parseDec } from '../components/perimUtils';
 
 /**
@@ -16,16 +17,17 @@ import { squarePerimeter, formatDec, parseDec } from '../components/perimUtils';
  * emplacements et valide la séquence par ids de jetons.
  */
 const RECT = { sideLengths: [6, 4, 6, 4], unit: 'm' };
-const RECT_COLORS = ['#2563eb', '#f97316', '#2563eb', '#f97316'];
 
 const EGAUX_Q = {
-  q: 'En faisant le tour du rectangle, qu’as-tu remarqué sur ses côtés ?',
+  q: 'Tu as fabriqué plusieurs rectangles très différents. Qu’est-ce qui n’a JAMAIS changé dans le ruban de leur tour ?',
   options: [
-    'Les quatre côtés sont tous différents',
-    'Les côtés opposés sont égaux deux à deux : deux longueurs (L) et deux largeurs (l)',
+    'Les quatre segments étaient toujours de la même longueur',
+    'Il y avait toujours deux segments bleus égaux (les longueurs L) et deux orange égaux (les largeurs l)',
+    'Le ruban gardait toujours la même longueur totale',
   ],
   correct: 1,
-  explain: 'Deux côtés bleus égaux (les longueurs L) et deux côtés orange égaux (les largeurs l) : cette régularité va permettre une formule.',
+  explain:
+    'Quelles que soient les dimensions choisies, le ruban se compose de L + l + L + l : deux longueurs et deux largeurs. C’est cette régularité — vraie pour TOUS les rectangles, pas seulement celui du départ — qui va permettre une formule.',
 };
 
 // Formule cible : P = 2 × ( L + l )
@@ -61,7 +63,11 @@ function FormulaRound({ react, targetIds, chipDefs, prefix, hint, successText, s
   const [revealed, setRevealed] = useState(false);
   const filled = slots.every((s) => s.placedChipId);
   const isCorrect = filled && slots.every((s, i) => s.placedChipId === targetIds[i]);
-  const done = solved || isCorrect || revealed;
+  // `done` se VERROUILLE : une fois la formule trouvée, l'étape reste
+  // validée même si l'élève défait ses jetons pour explorer.
+  const [everDone, setEverDone] = useState(false);
+  const done = solved || everDone || isCorrect || revealed;
+  React.useEffect(() => { if (isCorrect || revealed) setEverDone(true); }, [isCorrect, revealed]);
 
   /** Sortie de secours : après 2 essais, montrer la formule sans bloquer. */
   const showSolution = () => {
@@ -75,7 +81,6 @@ function FormulaRound({ react, targetIds, chipDefs, prefix, hint, successText, s
   const chips = chipDefs.map((c) => ({ ...c, used: usedIds.has(c.id) }));
 
   const placeChip = (chipId) => {
-    if (done) return;
     setCheckedWrong(false);
     // On calcule le prochain état HORS de l'updater : appeler react/onSolved
     // depuis l'intérieur d'un updater setState déclenche un setState pendant
@@ -88,7 +93,7 @@ function FormulaRound({ react, targetIds, chipDefs, prefix, hint, successText, s
     // jamais de blocage — les jetons restent retirables.
     if (next.every((s) => s.placedChipId)) {
       const ok = next.every((s, i) => s.placedChipId === targetIds[i]);
-      react(ok);
+      if (!everDone) react(ok);
       if (ok) onSolved?.();
       else {
         setCheckedWrong(true);
@@ -98,20 +103,22 @@ function FormulaRound({ react, targetIds, chipDefs, prefix, hint, successText, s
   };
 
   const clearSlot = (slotId) => {
-    if (done) return;
     setCheckedWrong(false);
     setSlots((prev) => prev.map((s) => (s.id === slotId ? { ...s, placedChipId: null } : s)));
   };
 
   return (
     <div className="space-y-3">
+      {/* Les jetons restent RETIRABLES après la bonne formule (règle projet
+          du 2026-09-06) : l'élève peut défaire 2 × (L + l) pour reconstruire
+          L + l + L + l et vérifier de ses mains que les deux écritures
+          donnent le même tour. */}
       <FormulaBuilder
         slots={slots}
         chips={chips}
         onChipTap={placeChip}
         onSlotTap={clearSlot}
         prefix={prefix}
-        disabled={done}
       />
       {done && <Feedback tone={revealed ? 'info' : 'ok'}>{successText}</Feedback>}
       {checkedWrong && !done && (
@@ -141,7 +148,18 @@ export default function Module03Formules() {
   const [sqFormulaDone, setSqFormulaDone] = useState(false);
   const [calcDone, setCalcDone] = useState(false);
 
-  const [tapped, setTapped] = useState([]);
+  // Le rectangle du labo : deux dimensions libres, et la trace des
+  // rectangles distincts déjà fabriqués.
+  const maxL = 9;
+  const maxl = 6;
+  const [dims, setDims] = useState({ L: RECT.sideLengths[0], l: RECT.sideLengths[1] });
+  const [seen, setSeen] = useState([`${RECT.sideLengths[0]}x${RECT.sideLengths[1]}`]);
+  // `kit` n'existe que dans `content` : on garde `react` dans une ref pour
+  // que l'effet de validation ci-dessous reste stable.
+  const reactRef = React.useRef(null);
+  React.useEffect(() => {
+    if (seen.length >= 3 && !traceDone) { reactRef.current?.(true); setTraceDone(true); }
+  }, [seen.length, traceDone]);
 
   return (
     <ContentModule
@@ -159,30 +177,38 @@ export default function Module03Formules() {
       steps={[
         {
           num: 1,
-          title: 'Observe les côtés du rectangle',
+          title: 'Fabrique tes propres rectangles',
+          subtitle: 'Étire le coin : le ruban du tour se recompose sous la figure.',
           done: traceDone && egauxDone,
           content: (kit) => (
             <div className="space-y-5">
               <div className="space-y-3">
-                <p className="text-sm text-slate-600">Fais le tour du rectangle : les couleurs vont te montrer quelque chose.</p>
-                <PolygonPerimeter
-                  shape="rectangle"
-                  sideLengths={RECT.sideLengths}
+                {((reactRef.current = kit.react), null)}
+                <p className="text-sm text-slate-600">
+                  Attrape le <strong className="text-rose-600">coin rouge</strong> et fabrique au moins trois
+                  rectangles différents. Regarde le ruban sous la figure : que garde-t-il de commun ?
+                </p>
+                <RectRibbon
+                  L={dims.L}
+                  l={dims.l}
+                  maxL={maxL}
+                  maxl={maxl}
                   unit={RECT.unit}
-                  sideColors={RECT_COLORS}
-                  tappedIndices={tapped}
-                  onTapSide={(i) => {
-                    if (traceDone || tapped.includes(i)) return;
-                    const next = [...tapped, i];
-                    setTapped(next);
-                    if (next.length === 4) {
-                      kit.react(true);
-                      setTraceDone(true);
-                    }
+                  onChange={(next) => {
+                    setDims(next);
+                    // « Explorer », ici, c'est avoir fabriqué trois rectangles
+                    // de dimensions DIFFÉRENTES : une seule paire de nombres
+                    // ne prouverait pas la régularité. La VALIDATION, elle,
+                    // part d'un effet — jamais de l'updater de setState.
+                    setSeen((prev) => {
+                      const key = `${next.L}x${next.l}`;
+                      return prev.includes(key) ? prev : [...prev, key];
+                    });
                   }}
-                  disabled={traceDone}
-                  showRunningTotal
                 />
+                <p className="text-center text-xs text-slate-500">
+                  Rectangles fabriqués : <strong className="font-mono">{seen.length}</strong> / 3
+                </p>
               </div>
               {traceDone && (
                 <TapQuestion
@@ -218,7 +244,8 @@ export default function Module03Formules() {
                 successText={
                   <>
                     <strong>P = 2 × (L + l)</strong> — la même chose que L + l + L + l, mais sans risque d'oublier
-                    un côté. Ici : 2 × (6 + 4) = 20 m.
+                    un côté. Sur le rectangle que tu viens de fabriquer : 2 × ({dims.L} + {dims.l}) ={' '}
+                    {2 * (dims.L + dims.l)} m.
                   </>
                 }
                 solved={rectFormulaDone}

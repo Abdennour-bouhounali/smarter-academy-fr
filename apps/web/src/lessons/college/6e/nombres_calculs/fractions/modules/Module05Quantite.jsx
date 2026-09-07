@@ -7,71 +7,126 @@ import { Feedback, ValidateButton } from '../../../../../common/components/Lesso
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PartitionShape from '../components/PartitionShape';
 import ObjectGroup from '../components/ObjectGroup';
+import QuantityShareLab from '../components/QuantityShareLab';
 import { texFrac } from '../components/fractionUtils';
 
 /**
  * Module 5 V2 — reconstruit sur le lesson kit.
- * Étape 1 : manipulation bespoke (CollectionAtelier) — sélectionner le bon
- * nombre de groupes est un geste de construction, pas une question ; elle
- * garde son mécanisme "atteins l'objectif" (Valider désactivé tant que la
- * sélection n'est pas exacte), et appelle kit.react(true) au succès.
+ * Étape 1 : manipulation bespoke (CollectionAtelier) sur QuantityShareLab —
+ * l'élève forme LUI-MÊME les paniers (prise du bas) avant d'en emporter
+ * (prise du haut), architecture reprise de RationalBar (3e). Trois commandes
+ * s'enchaînent dans le MÊME labo, qui ne se fige jamais ; « Livrer » n'est
+ * plus désactivé : il rend un verdict (kit.react) au lieu d'interdire.
  * Étape 2 : la sélection des 3 groupes sur 4 reste une manipulation
  * (gate local `groupsOk`) ; le QCM de comparaison qui suit est converti en
  * <TapQuestion> — un tap = la réponse, révélation immédiate, onSolved
  * inconditionnel.
  */
 
-/* ─── Étape 1 : fraction d'une collection ────────────────────────── */
-const COLLECTION = [
-  { total: 12, groups: 3, take: 1, emoji: '🎈' },
-  { total: 12, groups: 3, take: 2, emoji: '🎈' },
+/* ─── Étape 1 : fraction d'une collection ──────────────────────────
+   Deux prises distinctes sur la MÊME collection : le bas RANGE (combien de
+   paniers égaux), le haut EMPORTE (combien de paniers on prend). L'élève
+   forme donc lui-même les groupes au lieu de les recevoir tout faits — c'est
+   la condition pour que « diviser par le bas » soit un geste vécu et non une
+   règle récitée. Le labo ne se fige jamais : les deux prises restent vivantes
+   après la validation, pour que l'élève puisse continuer à explorer. */
+const COMMANDES = [
+  { total: 12, groups: 3, take: 1 },
+  { total: 12, groups: 3, take: 2 },
+  { total: 12, groups: 4, take: 3 },
 ];
 
-function CollectionAtelier({ item, solved, onSolved, react }) {
-  const [sel, setSel] = useState([]);
-  const perGroup = item.total / item.groups;
-  const isRight = sel.length === item.take;
+function CollectionAtelier({ solved, onSolved, react }) {
+  const total = 12;
+  const [groups, setGroups] = useState(2);
+  const [taken, setTaken] = useState(0);
+  const [doneIdx, setDoneIdx] = useState([]);
 
-  const toggle = (g) => {
-    if (solved) return;
-    setSel((prev) => (prev.includes(g) ? prev.filter((x) => x !== g) : [...prev, g].sort()));
+  // Ranger en moins de paniers ne peut pas laisser plus de paniers emportés
+  // qu'il n'en existe : on rabat l'emport, jamais l'inverse.
+  const setGroupsSafe = (g) => {
+    setGroups(g);
+    setTaken((n) => Math.min(n, g));
+  };
+
+  const cur = COMMANDES.find((_, i) => !doneIdx.includes(i)) ?? null;
+  const perGroup = total / groups;
+  const matches = cur && groups === cur.groups && taken === cur.take;
+  const allDone = doneIdx.length === COMMANDES.length;
+
+  const validate = () => {
+    react(!!matches);
+    if (matches) {
+      const i = COMMANDES.indexOf(cur);
+      const next = [...doneIdx, i];
+      setDoneIdx(next);
+      if (next.length === COMMANDES.length) onSolved?.();
+    }
   };
 
   return (
     <div className="space-y-4">
-      <div className="text-center text-sm text-slate-600">
-        Sélectionne <MathText>{`$${texFrac(item.take, item.groups)}$`}</MathText> des {item.total} ballons.
+      <div className="rounded-xl border-2 border-sky-200 bg-sky-50 px-4 py-3 text-center">
+        <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-sky-500">
+          Commande {Math.min(doneIdx.length + 1, COMMANDES.length)} / {COMMANDES.length}
+        </div>
+        {cur ? (
+          <div className="text-sm text-slate-700 mt-1">
+            Range les {total} ballons, puis emporte{' '}
+            <MathText>{`$${texFrac(cur.take, cur.groups)}$`}</MathText> du tas.
+          </div>
+        ) : (
+          <div className="text-sm text-slate-700 mt-1">
+            Les trois commandes sont livrées — la collection reste à toi, continue d'essayer.
+          </div>
+        )}
       </div>
 
-      <ObjectGroup
-        total={item.total}
-        groups={item.groups}
-        selectedSet={sel}
-        onToggleGroup={toggle}
-        emoji={item.emoji}
+      <QuantityShareLab
+        total={total}
+        groups={groups}
+        taken={taken}
+        onGroups={setGroupsSafe}
+        onTaken={setTaken}
         tone="sky"
+        caption="Tire la piste du bas pour former les paniers, celle du haut pour en emporter. Le nombre total de ballons ne bouge jamais."
       />
 
-      {!solved && (
+      <div className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-center text-xs font-mono text-slate-600">
+        {total} ÷ {groups} = <strong className="text-slate-800">{perGroup}</strong> par panier
+        {taken > 0 && (
+          <>
+            {' '}→ {perGroup} × {taken} ={' '}
+            <strong className="text-sky-700">{perGroup * taken} ballons</strong>
+          </>
+        )}
+      </div>
+
+      {cur && (
         <div className="text-center">
-          <ValidateButton
-            onClick={() => {
-              if (!isRight) return;
-              react(true);
-              onSolved?.();
-            }}
-            disabled={!isRight}
-          >
-            Valider
-          </ValidateButton>
+          <ValidateButton onClick={validate}>Livrer la commande</ValidateButton>
         </div>
       )}
 
-      {solved && (
+      {doneIdx.length > 0 && !allDone && (
         <Feedback tone="ok">
-          <MathText>{`$${texFrac(item.take, item.groups)}$`}</MathText> de {item.total}, c'est {item.total} ÷{' '}
-          {item.groups} = {perGroup} par groupe, puis {perGroup} × {item.take} ={' '}
-          <strong>{perGroup * item.take}</strong>.
+          Livrée. La collection ne change pas : c'est le <strong>rangement</strong> qui change, et
+          il décide de la taille d'un panier.
+        </Feedback>
+      )}
+
+      {allDone && (
+        <Feedback tone="ok">
+          Les trois commandes sont passées par les deux mêmes gestes : le nombre du bas a formé les
+          paniers ({total} ÷ 3 = 4, puis {total} ÷ 4 = 3), le nombre du haut a dit combien en
+          emporter. Le tas de {total} ballons, lui, n'a jamais changé.
+        </Feedback>
+      )}
+
+      {solved && !allDone && (
+        <Feedback tone="info">
+          Tu avais déjà livré les trois commandes : la collection reste manipulable pour essayer
+          d'autres rangements.
         </Feedback>
       )}
     </div>
@@ -225,10 +280,10 @@ function ComparaisonMemeQuantite({ solved, onSolved }) {
 }
 
 export default function Module05Quantite() {
-  const [collDone, setCollDone] = useState([]);
+  const [collDone, setCollDone] = useState(false);
   const [compDone, setCompDone] = useState(false);
 
-  const s1 = collDone.length === COLLECTION.length;
+  const s1 = collDone;
   const s2 = compDone;
 
   return (
@@ -253,22 +308,15 @@ export default function Module05Quantite() {
       steps={[
         {
           num: 1,
-          title: '12 ballons, 3 groupes égaux',
+          title: '12 ballons : range-les, puis emporte',
           done: s1,
           content: (kit) => (
             <div className="space-y-8">
-              {COLLECTION.map((item, i) =>
-                i === 0 || collDone.includes(i - 1) ? (
-                  <div key={item.take} className="space-y-3 border-t border-slate-100 pt-5 first:border-0 first:pt-0">
-                    <CollectionAtelier
-                      item={item}
-                      solved={collDone.includes(i)}
-                      react={kit.react}
-                      onSolved={() => setCollDone((d) => (d.includes(i) ? d : [...d, i]))}
-                    />
-                  </div>
-                ) : null
-              )}
+              <CollectionAtelier
+                solved={collDone}
+                react={kit.react}
+                onSolved={() => setCollDone(true)}
+              />
               {s1 && (
                 <>
                   <Feedback tone="info">

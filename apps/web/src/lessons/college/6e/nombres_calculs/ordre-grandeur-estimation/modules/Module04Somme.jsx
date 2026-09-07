@@ -3,6 +3,9 @@ import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../commo
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import EstimateInput from '../components/EstimateInput';
+import EstimationScale, { bandOf } from '../components/EstimationScale';
+import { formatFr } from '../components/estimationUtils';
+import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 
 /**
  * Module 4 — manipulation, reconstruit sur le lesson kit.
@@ -35,6 +38,38 @@ const RECO = [
   { q: '523 + 468 ≈ ?', options: ['100', '1 000', '10 000'], correct: 1, explain: '523 ≈ 500 et 468 ≈ 500 : 500 + 500 = 1 000.' },
   { q: '89 + 76 ≈ ?', options: ['17', '170', '1 700'], correct: 1, explain: '89 ≈ 90 et 76 ≈ 80 : 90 + 80 = 170.' },
 ];
+
+/* Une échelle par somme : l'élève pose son ordre de grandeur AVANT de
+   l'écrire. Le repère exact n'apparaît qu'après le geste — on ne peut donc pas
+   lire la réponse au lieu de l'estimer. */
+function SommeScale({ sum }) {
+  const [value, setValue] = useState(100);
+  const [revealed, setRevealed] = useState(false);
+  return (
+    <div className="space-y-2">
+      <EstimationScale
+        value={value}
+        onChange={setValue}
+        exact={sum.exact}
+        revealed={revealed}
+        ariaLabel={`Ton ordre de grandeur pour ${sum.a} plus ${sum.b}`}
+      />
+      {!revealed ? (
+        <div className="text-center">
+          <ValidateButton onClick={() => setRevealed(true)} tone="indigo">
+            Montrer le résultat exact sur l’échelle →
+          </ValidateButton>
+        </div>
+      ) : (
+        <Feedback tone={bandOf(value).index === bandOf(sum.exact).index ? 'ok' : 'info'}>
+          {bandOf(value).index === bandOf(sum.exact).index
+            ? <>Même bande que le résultat exact ({formatFr(sum.exact)}) : ton ordre de grandeur tient.</>
+            : <>Ton curseur est dans « {bandOf(value).label} », {formatFr(sum.exact)} est dans « {bandOf(sum.exact).label} ». Reprends le curseur — il reste vivant.</>}
+        </Feedback>
+      )}
+    </div>
+  );
+}
 
 export default function Module04Somme() {
   const [stratDone, setStratDone] = useState(false);
@@ -102,8 +137,13 @@ export default function Module04Somme() {
                     <div className="text-center font-mono text-2xl font-extrabold text-slate-800">
                       {s.a} + {s.b}
                     </div>
+                    {/* Le geste d'abord : on POSE l'ordre de grandeur sur
+                        l'échelle du module 1 avant d'écrire un nombre. La
+                        saisie qui suit ne fait que préciser ce qu'on vient de
+                        montrer du doigt. */}
+                    <SommeScale sum={s} />
                     <EstimateInput
-                      prompt="Sans calculer exactement, donne un ordre de grandeur."
+                      prompt="Maintenant, écris l'ordre de grandeur que tu viens de montrer."
                       acceptMin={s.min}
                       acceptMax={s.max}
                       exact={s.exact}

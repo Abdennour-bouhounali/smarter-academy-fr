@@ -48,7 +48,11 @@ export default function CoordGrid({
 }) {
   const svgRef = useRef(null);
   const dragging = useRef(false);
+  // En mode `read`, quel guide est saisi : 'vertical' | 'horizontal' | null.
+  // null = les deux suivent le doigt (le geste historique, conservé).
+  const grabbed = useRef(null);
   const [focusHint, setFocusHint] = useState(false);
+  const [focusGuide, setFocusGuide] = useState(null);
   const interactive = !disabled && (mode === 'place' || mode === 'read' || mode === 'cells');
 
   const { cols, rows, step } = grid;
@@ -78,6 +82,17 @@ export default function CoordGrid({
       return;
     }
     if (mode === 'read') {
+      // Un guide SAISI ne commande que SON nombre : tirer le guide vertical
+      // ne change que la première coordonnée, et l'autre reste où elle est.
+      // C'est ce qui fait sentir que chaque guide porte un rôle, et un seul.
+      if (grabbed.current === 'vertical') {
+        onGuideChange?.({ vertical: next.col, horizontal: guides.horizontal });
+        return;
+      }
+      if (grabbed.current === 'horizontal') {
+        onGuideChange?.({ vertical: guides.vertical, horizontal: next.row });
+        return;
+      }
       onGuideChange?.({ vertical: next.col, horizontal: next.row });
       return;
     }
@@ -86,6 +101,8 @@ export default function CoordGrid({
 
   const handlePointerDown = (e) => {
     if (!interactive) return;
+    // Le doigt posé sur le fond déplace les DEUX guides (geste historique) ;
+    // les poignées, elles, ont déjà armé `grabbed` sur leur propre pointerdown.
     dragging.current = true;
     try {
       e.currentTarget.setPointerCapture?.(e.pointerId);
@@ -103,6 +120,7 @@ export default function CoordGrid({
   const endDrag = (e) => {
     if (!dragging.current) return;
     dragging.current = false;
+    grabbed.current = null;
     try {
       e.currentTarget.releasePointerCapture?.(e.pointerId);
     } catch {
@@ -134,8 +152,53 @@ export default function CoordGrid({
     commit(next);
   };
 
+  /**
+   * Chemin clavier d'UNE poignée de guide : les flèches de son axe seulement.
+   * Le guide vertical ne répond qu'à gauche/droite, l'horizontal qu'à
+   * haut/bas — le clavier dit donc la même chose que le geste : ce guide-là
+   * ne commande qu'une direction.
+   */
+  const handleGuideKey = (which) => (e) => {
+    if (!interactive || mode !== 'read') return;
+    const v = guides.vertical ?? 0;
+    const h = guides.horizontal ?? 0;
+    const map = which === 'vertical'
+      ? { ArrowRight: v + 1, ArrowLeft: v - 1, Home: 0, End: cols }
+      : { ArrowUp: h + 1, ArrowDown: h - 1, Home: 0, End: rows };
+    const nv = map[e.key];
+    if (nv === undefined) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const bounded = Math.max(0, Math.min(which === 'vertical' ? cols : rows, nv));
+    onGuideChange?.(
+      which === 'vertical'
+        ? { vertical: bounded, horizontal: h }
+        : { vertical: v, horizontal: bounded }
+    );
+  };
+
   const px = (col, row) => gridToSvg(grid, col, row);
   const maxDiag = Math.min(cols, rows);
+
+  /**
+   * Côté de la zone de captation d'une poignée, EN UNITÉS DE VIEWBOX.
+   *
+   * Le SVG est fluide : à 375 px de large, le quadrillage se rend à environ
+   * 0,81 × son viewBox, si bien qu'un carré de 44 unités n'y mesure plus que
+   * 36 px CSS — sous le plancher tactile. On dimensionne donc la zone à
+   * partir de la LARGEUR RÉELLE la plus petite que le composant puisse
+   * prendre (le cadre du contenu à 375 px, marges déduites), et non d'un
+   * nombre d'unités écrit en dur : la poignée fait ainsi 44 px CSS au pire
+   * cas, et davantage dès que l'écran s'élargit.
+   */
+  const MIN_RENDER_PX = 267;   // largeur mesurée du quadrillage sur un écran de 375 px
+  const HIT = Math.ceil((44 * grid.width) / MIN_RENDER_PX);
+  /* Aux deux extrémités de sa course, une zone de captation centrée sortirait
+     du viewBox (§6bis.4 : on balaie TOUTE la course). On la recale donc dans
+     le cadre — la pastille VISIBLE, elle, reste centrée sur son guide, si
+     bien que le geste continue de désigner exactement la bonne graduation. */
+  const fitX = (x) => Math.max(0, Math.min(grid.width - HIT, x));
+  const fitY = (y) => Math.max(0, Math.min(grid.height - HIT, y));
 
   const currentLabel = mode === 'read'
     ? (guides.vertical != null && guides.horizontal != null
@@ -153,7 +216,10 @@ export default function CoordGrid({
         ref={svgRef}
         viewBox={`0 0 ${grid.width} ${grid.height}`}
         className="w-full max-w-[560px] select-none"
-        style={{ width: size, touchAction: mode === 'place' ? 'none' : 'manipulation' }}
+        /* `touchAction:'none'` dès qu'un glissement pilote la figure — en
+            lecture, les deux poignées de guide se tirent au doigt, et sans
+            cela le navigateur ferait défiler la page au lieu de les suivre. */
+        style={{ width: size, touchAction: mode === 'place' || mode === 'read' ? 'none' : 'manipulation' }}
         {...(interactive
           ? { role: 'group', 'aria-label': ariaLabel ?? 'Quadrillage repérable' }
           : { role: 'img', 'aria-label': ariaLabel ?? 'Quadrillage' })}
@@ -371,6 +437,91 @@ export default function CoordGrid({
             style={{ outline: 'none' }}
           />
         )}
+        {/* ── Les DEUX poignées de guide, chacune sur son axe ──────────────
+            Peintes APRÈS la zone tactile de fond, elles reçoivent donc le
+            doigt en premier ; `grabbed` dit alors à `commit` de ne changer
+            qu'UN des deux nombres. C'est la différence entre « je déplace un
+            croisement » et « je déplace l'abscisse ». Le rectangle de
+            captation fait 44 px de large et reste DANS le cadre : la poignée
+            verticale coulisse au pied du quadrillage, l'horizontale contre
+            l'axe des ordonnées, et aucune position atteignable ne les fait
+            déborder ni chevaucher les graduations. */}
+        {interactive && mode === 'read' && guides.vertical != null && guides.horizontal != null && (
+          <g>
+            {(() => {
+              const gv = px(guides.vertical, 0);
+              const gh = px(0, guides.horizontal);
+              return (
+                <>
+                  {/* Poignée du guide VERTICAL — elle coulisse horizontalement. */}
+                  <g>
+                    <rect
+                      x={fitX(gv.x - HIT / 2)} y={fitY(gv.y - HIT / 2)} width={HIT} height={HIT}
+                      fill="transparent"
+                      role="slider"
+                      tabIndex={0}
+                      aria-label="Poignée du guide vertical — elle commande la première coordonnée"
+                      aria-valuemin={0}
+                      aria-valuemax={cols}
+                      aria-valuenow={guides.vertical}
+                      aria-valuetext={`guide vertical sur ${guides.vertical}`}
+                      onPointerDown={() => { grabbed.current = 'vertical'; }}
+                      onKeyDown={handleGuideKey('vertical')}
+                      onFocus={() => setFocusGuide('vertical')}
+                      onBlur={() => setFocusGuide(null)}
+                      style={{ cursor: 'ew-resize', outline: 'none' }}
+                    />
+                    <rect
+                      x={gv.x - 9} y={gv.y + 3} width="18" height="11" rx="3"
+                      fill="#0284c7" stroke="#ffffff" strokeWidth="2"
+                      style={{ pointerEvents: 'none' }}
+                    />
+                    {focusGuide === 'vertical' && (
+                      <rect
+                        x={gv.x - 13} y={gv.y - 1} width="26" height="19" rx="5"
+                        fill="none" stroke="#2563eb" strokeWidth="2.5"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    )}
+                  </g>
+
+                  {/* Poignée du guide HORIZONTAL — elle coulisse verticalement. */}
+                  <g>
+                    <rect
+                      x={fitX(gh.x - 6)} y={fitY(gh.y - HIT / 2)} width={HIT} height={HIT}
+                      fill="transparent"
+                      role="slider"
+                      tabIndex={0}
+                      aria-label="Poignée du guide horizontal — elle commande la seconde coordonnée"
+                      aria-valuemin={0}
+                      aria-valuemax={rows}
+                      aria-valuenow={guides.horizontal}
+                      aria-valuetext={`guide horizontal sur ${guides.horizontal}`}
+                      onPointerDown={() => { grabbed.current = 'horizontal'; }}
+                      onKeyDown={handleGuideKey('horizontal')}
+                      onFocus={() => setFocusGuide('horizontal')}
+                      onBlur={() => setFocusGuide(null)}
+                      style={{ cursor: 'ns-resize', outline: 'none' }}
+                    />
+                    <rect
+                      x={gh.x + 3} y={gh.y - 9} width="11" height="18" rx="3"
+                      fill="#059669" stroke="#ffffff" strokeWidth="2"
+                      style={{ pointerEvents: 'none' }}
+                    />
+                    {focusGuide === 'horizontal' && (
+                      <rect
+                        x={gh.x - 1} y={gh.y - 13} width="19" height="26" rx="5"
+                        fill="none" stroke="#2563eb" strokeWidth="2.5"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    )}
+                  </g>
+                </>
+              );
+            })()}
+          </g>
+        )}
+
         {interactive && focusHint && (
           <rect
             x="1" y="1" width={grid.width - 2} height={grid.height - 2}

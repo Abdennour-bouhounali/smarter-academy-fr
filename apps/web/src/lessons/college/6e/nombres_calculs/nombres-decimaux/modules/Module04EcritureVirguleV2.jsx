@@ -40,8 +40,10 @@ function DecimalBuilder({ item, solved, onSolved, react }) {
     ...(item.useHundredths ? [{ key: 'd2', label: 'Centièmes', tone: 'bg-violet-50 border-violet-300 text-violet-800' }] : []),
   ];
 
+  // RÈGLE PROJET (2026-09-06) : les colonnes ne se figent JAMAIS après la
+  // validation de l'étape. La seule borne est MATHÉMATIQUE : un chiffre tourne
+  // dans 0–9, parce qu'à dix on change de colonne.
   const bump = (key, delta) => {
-    if (solved) return;
     setChecked(false);
     setD((prev) => ({ ...prev, [key]: (prev[key] + delta + 10) % 10 }));
   };
@@ -55,11 +57,11 @@ function DecimalBuilder({ item, solved, onSolved, react }) {
             <div className={`rounded-xl border-2 p-2 ${c.tone}`}>
               <div className="text-[9px] font-mono font-bold uppercase text-center tracking-wide">{c.label}</div>
               <div className="flex flex-col items-center gap-1 mt-1">
-                <button type="button" onClick={() => bump(c.key, 1)} disabled={solved} aria-label={`Augmenter les ${c.label.toLowerCase()}`} className="w-8 h-7 rounded-lg bg-white/80 border border-current/20 flex items-center justify-center hover:bg-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                <button type="button" onClick={() => bump(c.key, 1)} aria-label={`Augmenter les ${c.label.toLowerCase()}`} className="w-11 min-h-[44px] rounded-lg bg-white/80 border border-current/20 flex items-center justify-center hover:bg-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                   <Plus className="w-3.5 h-3.5" aria-hidden="true" />
                 </button>
                 <span className="font-mono font-extrabold text-2xl tabular-nums" aria-live="polite">{d[c.key]}</span>
-                <button type="button" onClick={() => bump(c.key, -1)} disabled={solved} aria-label={`Diminuer les ${c.label.toLowerCase()}`} className="w-8 h-7 rounded-lg bg-white/80 border border-current/20 flex items-center justify-center hover:bg-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                <button type="button" onClick={() => bump(c.key, -1)} aria-label={`Diminuer les ${c.label.toLowerCase()}`} className="w-11 min-h-[44px] rounded-lg bg-white/80 border border-current/20 flex items-center justify-center hover:bg-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                   <Minus className="w-3.5 h-3.5" aria-hidden="true" />
                 </button>
               </div>
@@ -90,7 +92,17 @@ function DecimalBuilder({ item, solved, onSolved, react }) {
         </Feedback>
       )}
 
-      {solved && <Feedback tone="ok">{item.explain}</Feedback>}
+      {/* Le retour cite la valeur VIVANTE : l'élève peut continuer à tourner
+          les chiffres après la validation sans que la phrase devienne fausse. */}
+      {solved && (
+        <Feedback tone="ok">
+          {item.explain}
+          {!isRight && (
+            <> Ton écriture affiche maintenant <strong className="font-mono">{formatDec(built)}</strong> —
+            continue d'essayer, la virgule ne bouge pas.</>
+          )}
+        </Feedback>
+      )}
     </div>
   );
 }

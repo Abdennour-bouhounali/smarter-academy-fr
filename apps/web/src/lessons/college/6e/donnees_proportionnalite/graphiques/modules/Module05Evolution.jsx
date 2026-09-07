@@ -6,6 +6,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LineChart from '../components/LineChart';
+import EvolutionProbe, { segmentAt } from '../components/EvolutionProbe';
 import BarChart from '../components/BarChart';
 import { METEO, JOURS } from '../components/meteoData';
 import { allVariations, makeSeries } from '../components/chartUtils';
@@ -39,6 +40,10 @@ const CROISSANTE = makeSeries({
 
 export default function Module05Evolution() {
   const [relierDone, setRelierDone] = useState(false);
+  // La sonde : sa position (en dixièmes de relevé) et les passages parcourus.
+  const [pos, setPos] = useState(0);
+  const [seen, setSeen] = useState([]);
+  const [sondeDone, setSondeDone] = useState(false);
   const [sensDone, setSensDone] = useState(false);
   const [hausseDone, setHausseDone] = useState(false);
   const [interpDone, setInterpDone] = useState(false);
@@ -97,6 +102,54 @@ export default function Module05Evolution() {
         },
         {
           num: 2,
+          title: 'Promène la sonde sur la ligne',
+          subtitle: 'Attrape le curseur posé sur la ligne et fais-le glisser d’un jour à l’autre.',
+          done: sondeDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              {/* La sonde ne se fige JAMAIS après validation (règle projet du
+                  2026-09-06) : la repromener est précisément ce qui fait
+                  sentir que le sens change de passage en passage. */}
+              <EvolutionProbe
+                series={METEO}
+                pos={pos}
+                onChange={(p) => {
+                  setPos(p);
+                  const seg = segmentAt(p, METEO.categories.length);
+                  if (seg === null) return;
+                  setSeen((prev) => (prev.includes(seg) ? prev : [...prev, seg]));
+                }}
+                title="Température à midi (°C)"
+                axisLabel="°C"
+                readout={
+                  <p className="mt-1 text-xs font-mono text-slate-500">
+                    Passages parcourus : {Math.min(seen.length, VARS.length)} / {VARS.length}
+                  </p>
+                }
+              />
+              {!sondeDone && (
+                <button
+                  type="button"
+                  disabled={seen.length < VARS.length}
+                  onClick={() => { kit.react(true); setSondeDone(true); }}
+                  className="w-full min-h-[44px] px-4 rounded-xl border-2 font-bold text-sm bg-amber-500 border-amber-600 text-white disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                >
+                  J’ai parcouru toute la semaine
+                </button>
+              )}
+              {sondeDone && (
+                <Feedback tone="ok">
+                  Tu as parcouru les {VARS.length} passages :{' '}
+                  {VARS.map((v, i) => `${JOURS[i]}→${JOURS[i + 1]} ${v.delta > 0 ? '+' : ''}${v.delta}`).join(' · ')}.
+                  Le sens ne se lit jamais sur un point tout seul — il se lit sur le{' '}
+                  <strong>passage</strong> d’un relevé au suivant.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
           title: 'Monte ou descend ?',
           done: sensDone,
           content: (
@@ -128,7 +181,7 @@ export default function Module05Evolution() {
           ),
         },
         {
-          num: 3,
+          num: 4,
           title: 'La plus forte montée',
           done: hausseDone,
           content: (
@@ -169,7 +222,7 @@ export default function Module05Evolution() {
           ),
         },
         {
-          num: 4,
+          num: 5,
           title: 'Interpréter, sans inventer',
           done: interpDone,
           content: (

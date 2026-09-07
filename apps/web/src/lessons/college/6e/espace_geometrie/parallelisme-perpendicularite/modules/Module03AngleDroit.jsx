@@ -78,9 +78,14 @@ export default function Module03AngleDroit() {
               />
               {rotDone && (
                 <>
+                  {/* La rotation reste ouverte après validation : le texte
+                      invite donc explicitement à repartir de 90°, et c'est
+                      cette expérience-là qui prépare la question de l'étape 2
+                      (« à 85°, alors ? »). */}
                   <Feedback tone="ok">
                     Le petit carré est apparu à l’intersection : c’est la marque de l’
                     <strong>angle droit</strong>, et il n’est apparu qu’à cet angle-là.
+                    Continue à tourner : tu verras le carré disparaître dès le premier cran.
                   </Feedback>
                   {/* La relation se définit ICI, après le geste qui l'a fait
                       surgir — et séparément du parallélisme. */}

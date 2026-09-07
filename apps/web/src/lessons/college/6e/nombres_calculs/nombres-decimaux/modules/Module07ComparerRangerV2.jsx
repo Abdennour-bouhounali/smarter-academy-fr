@@ -150,7 +150,9 @@ function DecCompareLab({ a, b, solved, onSolved, react }) {
                 <button
                   key={sym}
                   type="button"
-                  disabled={solved}
+                  // RÈGLE PROJET (2026-09-06) : les trois signes restent
+                  // cliquables après la validation — l'élève doit pouvoir
+                  // reposer le bon signe lui-même, pas seulement le lire.
                   onClick={() => { setPick(sym); setChecked(false); }}
                   aria-label={`Signe ${sym}`}
                   // `solved` (the parent's onSolved → s3) flips true the instant Valider is
@@ -182,10 +184,16 @@ function DecCompareLab({ a, b, solved, onSolved, react }) {
             </Feedback>
           )}
 
+          {/* Le retour énonce la comparaison VRAIE, pas le bouton enfoncé :
+              l'élève peut reposer un autre signe sans rendre la phrase fausse. */}
           {solved && (
             <Feedback tone="ok">
               <span className="font-mono font-bold">{formatDec(a)} {correctSymbol} {formatDec(b)}</span> — tout
               s'est joué aux {cellsA[firstDiff].label.toLowerCase()}.
+              {pick !== null && pick !== correctSymbol && (
+                <> Le signe posé en ce moment est <strong className="font-mono">{pick}</strong> : repose{' '}
+                <strong className="font-mono">{correctSymbol}</strong> pour retrouver l'écriture juste.</>
+              )}
             </Feedback>
           )}
         </div>

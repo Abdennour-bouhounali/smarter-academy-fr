@@ -78,8 +78,15 @@ function ReadRound({ react, angle, index, solved, onSolved }) {
   const [picked, setPicked] = useState(solved ? angle : null);
   const done = solved || picked !== null;
   const isRight = picked === angle;
+  const [lastRead, setLastRead] = useState(null);
 
+  /* La lecture reste OUVERTE après la réponse (règle projet du
+     2026-09-06 : un labo ne se fige jamais). `picked` garde la PREMIÈRE
+     lecture — c'est elle que juge le verdict — pendant que `lastRead` suit
+     les lectures suivantes : l'élève peut retourner voir l'autre
+     graduation, ce qui est justement le geste que le module enseigne. */
   const handleRead = (value) => {
+    setLastRead(value);
     if (done) return;
     setPicked(value);
     react(value === angle);
@@ -89,14 +96,15 @@ function ReadRound({ react, angle, index, solved, onSolved }) {
   return (
     <div className="space-y-3">
       <p className="text-xs font-mono text-slate-500 uppercase tracking-wide">
-        {done ? `Mesure ${index} terminée` : `Mesure ${index} · Tape la graduation où sort le second côté`}
+        {done
+          ? `Mesure ${index} · tu peux continuer à taper les graduations`
+          : `Mesure ${index} · Tape la graduation où sort le second côté`}
       </p>
       <Protractor
         angleDeg={angle}
         mode="read"
         onReadTick={handleRead}
-        selectedValue={picked}
-        disabled={done}
+        selectedValue={lastRead ?? picked}
       />
       {done && (
         <Feedback tone={isRight ? 'ok' : 'ko'}>

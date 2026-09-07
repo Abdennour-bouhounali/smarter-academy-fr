@@ -95,7 +95,6 @@ export default function Module05Notations() {
                 }}
                 box={BOX}
                 showNotation
-                disabled={exploreDone}
               />
               <NotationBreakdown kind={obj.kind} />
               {!exploreDone && (

@@ -18,12 +18,21 @@ function RetirerBilles({ react, solved, onSolved }) {
   const [removed, setRemoved] = useState([]);
   const total = 18;
   const target = 7;
-  const remaining = total - removed.length;
-  const isDone = solved || removed.length === target;
+  // Collant : une fois les 7 billes données, le retour reste affiché même si
+  // l'élève continue à explorer — il se met simplement à jour (règle projet).
+  const [reached, setReached] = useState(false);
+  const isDone = solved || reached || removed.length === target;
 
+  /* RÈGLE PROJET (2026-09-06) : une manipulation ne se fige JAMAIS après la
+     validation de l'étape — c'est en continuant à donner et à reprendre des
+     billes que l'élève consolide « 18 − 7 ». Seule la borne MATHÉMATIQUE
+     subsiste : on ne peut pas donner plus de billes qu'Ana n'en a. */
   const toggle = (i) => {
-    if (solved) return;
-    setRemoved((prev) => (prev.includes(i) ? prev.filter((x) => x !== i) : prev.length < target ? [...prev, i] : prev));
+    setRemoved((prev) => {
+      const next = prev.includes(i) ? prev.filter((x) => x !== i) : prev.length < total ? [...prev, i] : prev;
+      if (next.length === target) setReached(true);
+      return next;
+    });
   };
 
   return (
@@ -33,24 +42,23 @@ function RetirerBilles({ react, solved, onSolved }) {
       </p>
       <div className="flex flex-wrap gap-2 p-4 bg-slate-50 border border-slate-200 rounded-2xl justify-center">
         {Array.from({ length: total }, (_, i) => {
-          const isRemoved = solved || removed.includes(i);
+          const isRemoved = removed.includes(i);
           return (
             <button
               key={i}
               type="button"
               onClick={() => toggle(i)}
-              disabled={solved}
               aria-pressed={isRemoved}
               aria-label={`Bille ${i + 1}${isRemoved ? ', donnée' : ''}`}
-              className={`w-8 h-8 rounded-full border-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+              className={`w-11 h-11 rounded-full border-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                 isRemoved ? 'bg-slate-100 border-slate-200 opacity-30' : 'bg-amber-400 border-amber-500 hover:scale-105'
               }`}
             />
           );
         })}
       </div>
-      <p className="text-center text-sm font-mono text-slate-600">
-        Données : <strong>{solved ? target : removed.length}</strong> — Restantes : <strong>{solved ? remaining : total - removed.length}</strong>
+      <p className="text-center text-sm font-mono text-slate-600" role="status" aria-live="polite">
+        Données : <strong>{removed.length}</strong> — Restantes : <strong>{total - removed.length}</strong>
       </p>
       {!solved && (
         <div className="text-center">
@@ -69,8 +77,20 @@ function RetirerBilles({ react, solved, onSolved }) {
       )}
       {isDone && (
         <Feedback tone="ok">
-          Il reste <strong>{remaining}</strong> billes à Ana. On a modélisé un RETRAIT : 18 − 7 = 11. L'opération
-          est apparue en manipulant, pas en repérant le mot « donne ».
+          {removed.length === target ? (
+            <>
+              Il reste <strong>{total - removed.length}</strong> billes à Ana. On a modélisé un RETRAIT :{' '}
+              <strong className="font-mono">18 − 7 = 11</strong>. L'opération est apparue en manipulant, pas en
+              repérant le mot « donne ».
+            </>
+          ) : (
+            <>
+              Tu continues d'explorer : Ana donne <strong>{removed.length}</strong> billes, il lui en reste{' '}
+              <strong>{total - removed.length}</strong> —{' '}
+              <strong className="font-mono">18 − {removed.length} = {total - removed.length}</strong>. Le
+              retrait fonctionne pour n'importe quel nombre de billes données.
+            </>
+          )}
         </Feedback>
       )}
     </div>

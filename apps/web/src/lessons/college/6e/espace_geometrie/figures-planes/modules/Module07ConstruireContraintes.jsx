@@ -31,9 +31,15 @@ const DEPART_QUAD = [{ x: 80, y: 60 }, { x: 210, y: 70 }, { x: 220, y: 175 }, { 
  * Le chantier 1 (rectangle) et le chantier 2 (carré) exigent tous deux des
  * angles droits EXACTS. Les obtenir en déplaçant quatre sommets libres est
  * hors de portée à la souris : on donne donc à l'élève un rectangle-outil
- * dont il règle la largeur et la hauteur, ce qui garde les angles droits par
- * construction et laisse le vrai travail — satisfaire les contraintes — à sa
- * charge.
+ * dont les angles droits sont garantis par construction, et tout son travail
+ * porte sur les LONGUEURS — ce que le chantier demande réellement.
+ *
+ * Le geste est le COIN du rectangle : l'attraper et le tirer règle largeur et
+ * hauteur à la fois, en diagonale, exactement comme on étire un cadre. Les
+ * anciens boutons `+` / `−` et le curseur `<input type="range">` sont
+ * proscrits par la règle projet du 2026-09-06 (jamais de stepper pour une
+ * grandeur continue : on saisit l'objet lui-même). Le chemin clavier est
+ * conservé — le coin est un `role="slider"` piloté aux flèches.
  */
 function rectFrom(w, h) {
   const cx = 140;
@@ -95,12 +101,16 @@ function Chantier({ chantier, done, onDone, react }) {
   const success = ok && forbiddenOk;
 
   /** Applique une nouvelle dimension et teste la réussite hors updater. */
+  /* Les bornes restent des bornes de CADRE (la figure ne sort pas du dessin)
+     — jamais un verrou de progression : après la réussite, l'élève continue
+     à redimensionner et voit les contraintes se satisfaire ou se rompre. */
   const setDim = (nextW, nextH) => {
-    if (done || revealed) return;
+    if (revealed) return;
     const cw = Math.max(40, Math.min(230, nextW));
     const ch = Math.max(40, Math.min(190, nextH));
     setW(cw);
     setH(ch);
+    if (done) return;
     const next = rectFrom(cw, ch);
     const r = checkConstraints(next, chantier.required);
     const f = checkConstraints(next, chantier.forbidden).detail;
@@ -114,32 +124,40 @@ function Chantier({ chantier, done, onDone, react }) {
         {chantier.label}
       </div>
 
+      {/* Le coin bas-droit EST la commande : le tirer en diagonale règle la
+          largeur et la hauteur à la fois. Les trois autres sommets suivent
+          pour que la figure reste un rectangle — les angles droits sont donc
+          exacts quoi que fasse l'élève. Jamais figé : même réussie, la
+          figure se déforme encore. */}
       <ShapeLab
         points={shown}
+        onPointsChange={(next) => {
+          // Seul le coin bas-droit (index 2) porte le geste ; on en déduit
+          // les deux dimensions, puis on reconstruit le rectangle centré.
+          const c = next[2];
+          setDim((c.x - 140) * 2, (c.y - 115) * 2);
+        }}
         box={BOX}
-        draggable={false}
+        lockedIndices={[0, 1, 3]}
         showLengths
         showProperties={false}
-        ariaLabel={`Figure en construction — actuellement : ${shapeName(shown)}`}
+        ariaLabel={`Figure en construction — actuellement : ${shapeName(shown)} ; tire le coin pour la redimensionner`}
       />
 
-      {!done && !revealed && (
-        <div className="grid sm:grid-cols-2 gap-3">
-          <DimControl
-            label="Largeur"
-            value={Math.round(w)}
-            onChange={(v) => setDim(v, h)}
-            min={40}
-            max={230}
-          />
-          <DimControl
-            label="Hauteur"
-            value={Math.round(h)}
-            onChange={(v) => setDim(w, v)}
-            min={40}
-            max={190}
-          />
+      <div className="grid grid-cols-2 gap-2 text-center" role="status" aria-live="polite">
+        <div className="rounded-xl border-2 border-slate-200 bg-slate-50 px-2 py-2">
+          <div className="text-[11px] font-mono uppercase tracking-wide text-slate-400">largeur</div>
+          <div className="font-mono font-black text-xl text-indigo-800">{Math.round(w)}</div>
         </div>
+        <div className="rounded-xl border-2 border-slate-200 bg-slate-50 px-2 py-2">
+          <div className="text-[11px] font-mono uppercase tracking-wide text-slate-400">hauteur</div>
+          <div className="font-mono font-black text-xl text-indigo-800">{Math.round(h)}</div>
+        </div>
+      </div>
+      {!done && !revealed && (
+        <p className="text-xs text-slate-500 text-center">
+          Attrape le coin en bas à droite de la figure et tire-le.
+        </p>
       )}
 
       {/* Le contrôle, contrainte par contrainte : l'élève voit ce qui manque */}
@@ -206,40 +224,6 @@ function Chantier({ chantier, done, onDone, react }) {
           Je ne trouve pas — montre-moi
         </button>
       )}
-    </div>
-  );
-}
-
-/**
- * Réglage d'une dimension : boutons ± (pas de 5), curseur, et flèches du
- * clavier. Trois chemins pour la même action — aucun n'est réservé au
- * pointeur (playbook §10.1).
- */
-function DimControl({ label, value, onChange, min, max }) {
-  const btn = 'min-h-[44px] min-w-[44px] rounded-xl border-2 border-slate-300 bg-white font-mono font-bold text-slate-700 hover:border-indigo-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
-  return (
-    <div className="rounded-2xl border-2 border-slate-200 bg-white p-3 space-y-2">
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-mono uppercase tracking-wide text-slate-500">{label}</span>
-        <span className="font-mono font-extrabold text-indigo-900 tabular-nums">{value}</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <button type="button" className={btn} onClick={() => onChange(value - 5)} aria-label={`Diminuer la ${label.toLowerCase()}`}>
-          −
-        </button>
-        <input
-          type="range"
-          min={min}
-          max={max}
-          value={value}
-          onChange={(e) => onChange(Number(e.target.value))}
-          className="flex-1 accent-indigo-600"
-          aria-label={`${label} : ${value}`}
-        />
-        <button type="button" className={btn} onClick={() => onChange(value + 5)} aria-label={`Augmenter la ${label.toLowerCase()}`}>
-          +
-        </button>
-      </div>
     </div>
   );
 }

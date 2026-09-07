@@ -19,6 +19,14 @@ import { makeGrid, formatCoords, formatCell } from '../components/reperageUtils'
  *
  * Ce module ne réinvente rien : il NOMME ce que les modules 1 à 5 ont fait
  * manipuler, et il ajoute la seule distinction encore absente.
+ *
+ * ── LE GESTE QUI ENSEIGNE ─────────────────────────────────────────────
+ * Les deux quadrillages sont LIÉS : glisser sur l'un déplace aussi l'autre,
+ * au même endroit du plan. L'élève promène donc UN SEUL doigt et lit deux
+ * écritures simultanées — B3 d'un côté, (2 ; 1) de l'autre. La distinction
+ * cesse d'être une définition à retenir : elle devient un décalage qu'on
+ * voit, puisque la case suit le doigt en surface pendant que le nœud saute
+ * de croisement en croisement.
  */
 const GRID = makeGrid({ cols: 4, rows: 3, step: 46 });
 
@@ -37,6 +45,22 @@ export default function Module06NoeudsEtCases() {
   const [sortDone, setSortDone] = useState(false);
 
   const bothTried = cell !== null && node !== null;
+
+  /* Un seul geste, deux lectures : poser un point sur un nœud désigne aussi
+     la case dont ce nœud est le coin bas-gauche, et inversement. Les deux
+     quadrillages restent manipulables séparément — c'est le même lieu du
+     plan, lu de deux façons. */
+  const poserNoeud = (n) => {
+    setNode(n);
+    setCell({
+      colonne: Math.min(n.col, GRID.cols - 1),
+      ligne: Math.min(n.row, GRID.rows - 1),
+    });
+  };
+  const choisirCase = (c) => {
+    setCell(c);
+    setNode({ col: c.colonne, row: c.ligne });
+  };
 
   return (
     <ContentModule
@@ -69,27 +93,43 @@ export default function Module06NoeudsEtCases() {
                   <p className="text-xs font-mono uppercase tracking-wide text-indigo-600 text-center">
                     Repérage par CASES
                   </p>
+                  <p className="text-[11px] text-center text-slate-500" role="status">
+                    {cell ? formatCell(cell.colonne, cell.ligne) : '— choisis une case'}
+                  </p>
                   <CoordGrid
                     grid={GRID}
                     mode="cells"
                     selectedCell={cell}
-                    onCellSelect={setCell}
-                    ariaLabel="Quadrillage en mode cases : choisis une case"
+                    onCellSelect={choisirCase}
+                    ariaLabel="Quadrillage en mode cases : choisis une case ; le nœud correspondant suit à droite"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <p className="text-xs font-mono uppercase tracking-wide text-emerald-600 text-center">
                     Repérage par NŒUDS
                   </p>
+                  <p className="text-[11px] text-center text-slate-500" role="status">
+                    {node ? formatCoords(node) : '— pose un point'}
+                  </p>
                   <CoordGrid
                     grid={GRID}
                     mode="place"
                     point={node}
-                    onPointChange={setNode}
-                    ariaLabel="Quadrillage en mode nœuds : pose un point sur un croisement"
+                    onPointChange={poserNoeud}
+                    ariaLabel="Quadrillage en mode nœuds : pose un point sur un croisement ; la case correspondante suit à gauche"
                   />
                 </div>
               </div>
+
+              {bothTried && (
+                <Feedback tone="info">
+                  Même endroit du plan, deux écritures :{' '}
+                  <strong className="font-mono">{formatCell(cell.colonne, cell.ligne)}</strong>{' '}
+                  désigne une <strong>surface</strong>, tandis que{' '}
+                  <strong className="font-mono">{formatCoords(node)}</strong> désigne un{' '}
+                  <strong>point</strong>. Promène-les : les deux écritures changent ensemble.
+                </Feedback>
+              )}
 
               {bothTried && !exploreDone && (
                 <button

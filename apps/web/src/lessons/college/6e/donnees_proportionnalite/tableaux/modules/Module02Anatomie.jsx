@@ -36,6 +36,9 @@ export default function Module02Anatomie() {
 
   const allVisited = visited.length === PARTS.length;
   const meaning = picked ? cellMeaning(TOURNOI, picked.r, picked.c) : null;
+  // La cellule DEMANDÉE (Tom × Relais), et non l'avancement de l'étape : le
+  // message doit décrire ce que l'élève vient de toucher, à tout instant.
+  const cibleTouchee = !!picked && picked.r === 1 && picked.c === 2;
 
   return (
     <ContentModule
@@ -135,25 +138,32 @@ export default function Module02Anatomie() {
                 table={TOURNOI}
                 caption="Tournoi de la 6e B — touche une cellule pour la lire"
                 tone="sky"
-                onCellClick={
-                  designeDone
-                    ? null
-                    : (r, c) => {
-                        setPicked({ r, c });
-                        const ok = r === 1 && c === 2;
-                        kit.react(ok);
-                        if (ok) setDesigneDone(true);
-                      }
-                }
+                /* La grille reste VIVANTE après la bonne réponse : l'élève
+                   continue à désigner d'autres cellules et à lire ce qu'elles
+                   veulent dire — c'est précisément l'exploration qui installe
+                   le croisement (règle projet du 2026-09-06 : un labo ne se
+                   fige jamais après validation de l'étape). */
+                onCellClick={(r, c) => {
+                  setPicked({ r, c });
+                  const ok = r === 1 && c === 2;
+                  if (!designeDone) {
+                    kit.react(ok);
+                    if (ok) setDesigneDone(true);
+                  }
+                }}
                 selected={picked}
                 highlight={designeDone ? [{ r: 1, c: 2 }] : []}
-                disabled={designeDone}
               />
+              {/* Le message décrit la cellule COURANTE, pas l'état de l'étape :
+                  une fois la bonne trouvée, l'élève peut continuer à en
+                  désigner d'autres et lire à chaque fois ce qu'elles disent. */}
               {meaning && (
-                <Feedback tone={designeDone ? 'ok' : 'ko'}>
+                <Feedback tone={cibleTouchee ? 'ok' : designeDone ? 'info' : 'ko'}>
                   Tu as touché : <strong>{meaning.text}</strong>.{' '}
-                  {designeDone
+                  {cibleTouchee
                     ? 'C’est bien la cellule demandée : ligne Tom, colonne Relais.'
+                    : designeDone
+                    ? 'Chaque case dit ce que son nom de gauche et sa bande du haut annoncent. Continue à en toucher d’autres.'
                     : 'Ce n’est pas celle demandée. Suis la ligne de Tom, puis descends jusqu’à la colonne Relais — la cellule cherchée est à leur croisement.'}
                 </Feedback>
               )}

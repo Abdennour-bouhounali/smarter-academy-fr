@@ -32,8 +32,13 @@ function SetChallenge({ react, solved, onSolved }) {
   const isTarget = time.hours === TARGET.hours && time.minutes === TARGET.minutes;
   const done = solved || checked;
 
+  // L'heure figée au moment de la validation : le verdict doit rester vrai
+  // pendant que l'élève continue à tourner l'aiguille.
+  const [validated, setValidated] = useState(null);
+
   const validate = () => {
     if (done) return;
+    setValidated(time);
     setChecked(true);
     react(isTarget);
     onSolved?.();
@@ -45,13 +50,17 @@ function SetChallenge({ react, solved, onSolved }) {
         Le train part à <strong>16 h 30</strong>. Règle l'horloge de la gare : fais glisser la grande aiguille
         (ou utilise les boutons), puis valide.
       </p>
+      {/* L'horloge reste RÉGLABLE après validation (règle projet du
+          2026-09-06) : c'est en continuant à tourner l'aiguille que l'élève
+          voit la petite aiguille glisser entre deux chiffres, ce que le
+          module enseigne. Le verdict, lui, porte sur l'heure au moment du
+          « C'est réglé ! » et ne change plus. */}
       <ClockFace
         hours={time.hours}
         minutes={time.minutes}
-        mode={done ? 'display' : 'set'}
+        mode="set"
         onChange={setTime}
         showBothNotations
-        disabled={done}
       />
       {!done && (
         <div className="text-center">
@@ -70,7 +79,7 @@ function SetChallenge({ react, solved, onSolved }) {
             <>Parfaitement réglé : <strong>16 h 30</strong> — la petite aiguille à mi-chemin entre 4 et 5, la grande sur le 6.</>
           ) : (
             <>
-              Ton horloge indique {formatTime({ h: time.hours, min: time.minutes })}, le train part à{' '}
+              Ton horloge indiquait {formatTime(validated ? { h: validated.hours, min: validated.minutes } : { h: time.hours, min: time.minutes })}, le train part à{' '}
               <strong>16 h 30</strong> : la grande aiguille doit pointer le 6 (30 min) et la petite être à
               mi-chemin entre 4 et 5.
             </>

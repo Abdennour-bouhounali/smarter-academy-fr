@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
-import { ValidateButton } from '../../../../../common/components/LessonUI';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import ArrayGrid from '../components/ArrayGrid';
+import RectangleLab from '../components/RectangleLab';
+import { formatFr } from '../components/estimationUtils';
 import EstimateInput from '../components/EstimateInput';
 
 /**
@@ -25,33 +25,69 @@ const RECT_Q = {
     "La surface du rectangle donne directement l'ordre de grandeur : 50 × 20 = 1 000. On « voit » le résultat, sans poser la multiplication.",
 };
 
-function RectangleReveal({ shown, onShow, solved, onAnswered }) {
+/**
+ * Le rectangle ne se RÉVÈLE plus : il se CONSTRUIT.
+ *
+ * L'ancienne étape 1 était un bouton « Voir le rectangle 50 × 20 » suivi d'une
+ * image fixe et d'un QCM. L'élève ne posait aucun arrondi ; le rectangle de
+ * 50 × 20 lui était donné tout fait, donc le geste central de la leçon —
+ * remplacer 49 par 50 et 21 par 20 — n'était jamais fait.
+ *
+ * Ici, l'élève tire les deux côtés jusqu'aux dimensions rondes, et le
+ * rectangle exact (49 × 21) reste en pointillé derrière : il VOIT le peu qu'il
+ * ajoute ou retire, et la surface se recalcule sous son doigt.
+ */
+function RectangleAtelier({ solved, onAnswered }) {
+  const [a, setA] = useState(30);
+  const [b, setB] = useState(30);
+  // Le rectangle « rond » visé : 50 × 20. On ne le nomme pas — l'élève le
+  // trouve en tirant, et le pointillé lui dit quand il colle au vrai.
+  const rond = a === 50 && b === 20;
+  const [atteint, setAtteint] = useState(false);
+  if (rond && !atteint) setAtteint(true);
+
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-600">
-        Pour estimer <strong className="font-mono">49 × 21</strong>, on arrondit : 49 ≈ 50 et 21 ≈ 20.
+        <strong className="font-mono">49 × 21</strong> est dessiné en pointillé. Tire les deux côtés jusqu'à
+        des dimensions <strong>rondes</strong>, aussi près que possible du pointillé.
       </p>
 
-      {!shown && !solved ? (
-        <div className="text-center">
-          <ValidateButton onClick={onShow} tone="indigo">
-            Voir le rectangle 50 × 20
-          </ValidateButton>
-        </div>
-      ) : (
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
-          <ArrayGrid rows={50} cols={20} tone="indigo" caption="50 × 20 = ?" />
-          <TapQuestion
-            prompt={RECT_Q.q}
-            requires={['arrondi', 'ordre-de-grandeur']}
-            options={RECT_Q.options}
-            correct={RECT_Q.correct}
-            cols={3}
-            explain={RECT_Q.explain}
-            solved={solved}
-            onAnswered={onAnswered}
-          />
-        </motion.div>
+      <RectangleLab
+        a={a} b={b}
+        onA={setA} onB={setB}
+        exactA={49} exactB={21}
+        maxA={80} maxB={40}
+        stepA={10} stepB={5}
+      />
+
+      {(atteint || solved) && (
+        <Feedback tone="ok">
+          {rond ? (
+            <>
+              <strong className="font-mono">50 × 20 = 1 000</strong>, et le vrai rectangle (49 × 21 = 1 029)
+              tient presque exactement dedans. Tu n'as pas posé la multiplication : tu as lu une surface.
+            </>
+          ) : (
+            <>
+              Tu continues d'explorer : <strong className="font-mono">{a} × {b} = {formatFr(a * b)}</strong>.
+              Compare au pointillé — combien peux-tu bouger un côté sans changer la taille du rectangle ?
+            </>
+          )}
+        </Feedback>
+      )}
+
+      {(atteint || solved) && (
+        <TapQuestion
+          prompt={RECT_Q.q}
+          requires={['arrondi', 'ordre-de-grandeur']}
+          options={RECT_Q.options}
+          correct={RECT_Q.correct}
+          cols={3}
+          explain={RECT_Q.explain}
+          solved={solved}
+          onAnswered={onAnswered}
+        />
       )}
     </div>
   );
@@ -76,7 +112,6 @@ const PRODUITS = [
 ];
 
 export default function Module06Produit() {
-  const [rectShown, setRectShown] = useState(false);
   const [rectDone, setRectDone] = useState(false);
   const [fauxDone, setFauxDone] = useState(false);
   const [prodDone, setProdDone] = useState([]);
@@ -91,7 +126,7 @@ export default function Module06Produit() {
       navLinks={getNavLinks(6)}
       moduleNumber={6}
       moduleTitle="Ordre de grandeur d'un produit"
-      moduleSubtitle="49 × 21 ≈ 50 × 20 : voir le rectangle avant de calculer."
+      moduleSubtitle="Un produit est une surface : rends le rectangle rond, et lis sa taille."
       estimatedTime="8 min"
       brief={{
         tag: '✖️ Produit',
@@ -101,16 +136,14 @@ export default function Module06Produit() {
       steps={[
         {
           num: 1,
-          title: 'Le rectangle 50 × 20',
+          // Le titre ne donne plus les dimensions rondes : c'est précisément ce
+          // que l'élève doit trouver en tirant les côtés.
+          title: 'Rends le rectangle rond',
+          subtitle: 'Tire les deux côtés jusqu’à des dimensions faciles à multiplier.',
           done: s1,
           content: (
             <div className="space-y-5">
-              <RectangleReveal
-                shown={rectShown}
-                onShow={() => setRectShown(true)}
-                solved={rectDone}
-                onAnswered={() => setRectDone(true)}
-              />
+              <RectangleAtelier solved={rectDone} onAnswered={() => setRectDone(true)} />
               {s1 && (
                 <KnowledgeBrick
                   id="produit-rectangle"

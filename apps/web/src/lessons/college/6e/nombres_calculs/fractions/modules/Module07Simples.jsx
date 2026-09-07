@@ -5,6 +5,7 @@ import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PartitionShape from '../components/PartitionShape';
+import useDragDrop from '../../../../../common/manip6e/useDragDrop';
 import { texFrac, partName } from '../components/fractionUtils';
 
 /**
@@ -71,29 +72,58 @@ const PAIRS = [
 ];
 const NAME_ORDER = [3, 0, 2, 1];
 
+/**
+ * Jeu d'association — on FAIT GLISSER la figure sur son nom.
+ *
+ * Demande utilisateur du 2026-09-07 : « make them a drag and drop ». Poser une
+ * figure sur une étiquette, c'est le geste même de l'appariement : la figure
+ * va REJOINDRE son nom. Deux clics en faisaient un formulaire.
+ *
+ * Le chemin en deux temps survit intact (clavier / lecteur d'écran) : activer
+ * une figure la prend, activer un nom l'y pose. `zoneProps` ne fait que
+ * marquer la cible pour `elementFromPoint` — les gestionnaires clic et clavier
+ * sont posés en plus, explicitement.
+ */
 function JeuAssociation({ solved, onSolved }) {
-  const [selectedShape, setSelectedShape] = useState(null);
   const [matched, setMatched] = useState([]);
   const [wrong, setWrong] = useState(null);
 
-  const attemptMatch = (nameSlotPairIdx) => {
-    if (selectedShape === null) return;
-    if (selectedShape === nameSlotPairIdx) {
-      const next = [...matched, selectedShape];
-      setMatched(next);
-      setSelectedShape(null);
-      if (next.length === PAIRS.length) onSolved?.();
-    } else {
-      setWrong([selectedShape, nameSlotPairIdx]);
-      setTimeout(() => setWrong(null), 700);
-      setSelectedShape(null);
-    }
-  };
+  // Le glisser est toujours ACCEPTÉ, même quand il est faux : un refus muet
+  // n'enseignerait rien. C'est l'erreur affichée (rouge, 700 ms) qui enseigne.
+  const dd = useDragDrop({
+    onDrop: (shapeId, nameZone) => {
+      const shapeIdx = Number(shapeId);
+      const nameSlotPairIdx = Number(nameZone);
+      if (matched.includes(shapeIdx) || matched.includes(nameSlotPairIdx)) return;
+      if (shapeIdx === nameSlotPairIdx) {
+        const next = [...matched, shapeIdx];
+        setMatched(next);
+        if (next.length === PAIRS.length) onSolved?.();
+      } else {
+        setWrong([shapeIdx, nameSlotPairIdx]);
+        setTimeout(() => setWrong(null), 700);
+      }
+    },
+  });
+  const selectedShape = dd.held === null ? null : Number(dd.held);
+  const heldPair = selectedShape === null ? null : PAIRS[selectedShape];
 
   return (
     <div className="space-y-4">
+      {/* La figure transportée suit le doigt ; `pointer-events-none` pour
+          qu'elle ne masque jamais l'étiquette visée sous le pointeur. */}
+      {dd.ghost && heldPair && (
+        <div
+          aria-hidden="true"
+          className="fixed z-50 pointer-events-none p-2 rounded-xl border-2 border-blue-500 bg-white shadow-lg w-24"
+          style={{ left: dd.ghost.x + 12, top: dd.ghost.y + 12 }}
+        >
+          <PartitionShape shape={heldPair.shape} parts={heldPair.den} shaded={heldPair.num} tone={heldPair.tone} size="sm" />
+        </div>
+      )}
+
       <p className="text-sm text-slate-600">
-        Tape une figure, puis tape le nom qui lui correspond.
+        Fais glisser chaque figure sur le nom qui lui correspond.
       </p>
 
       <div className="grid grid-cols-2 gap-6">
@@ -108,10 +138,9 @@ function JeuAssociation({ solved, onSolved }) {
               <button
                 key={i}
                 type="button"
-                disabled={isMatched}
-                onClick={() => setSelectedShape(i)}
-                aria-pressed={isSelected}
-                className={`w-full p-2 rounded-xl border-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                {...dd.sourceProps(String(i))}
+                aria-label={`Figure ${i + 1}${isMatched ? ', déjà appariée' : ''}`}
+                className={`w-full p-2 rounded-xl border-2 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                   isMatched
                     ? 'border-emerald-300 bg-emerald-50 opacity-60'
                     : isWrong
@@ -134,17 +163,25 @@ function JeuAssociation({ solved, onSolved }) {
             const p = PAIRS[pairIdx];
             const isMatched = matched.includes(pairIdx);
             const isWrong = wrong && wrong[1] === pairIdx;
+            const hot = dd.hoverZone === String(pairIdx);
             return (
               <button
                 key={pairIdx}
                 type="button"
-                disabled={isMatched}
-                onClick={() => attemptMatch(pairIdx)}
+                {...dd.zoneProps(String(pairIdx))}
+                onClick={() => dd.dropHere(String(pairIdx))}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dd.dropHere(String(pairIdx)); }
+                }}
                 className={`w-full px-3 py-4 rounded-xl border-2 font-semibold text-sm capitalize transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                   isMatched
                     ? 'border-emerald-300 bg-emerald-50 text-emerald-700 opacity-60'
                     : isWrong
                     ? 'border-rose-400 bg-rose-50 text-rose-700'
+                    : hot
+                    ? 'border-blue-500 bg-blue-100 ring-2 ring-blue-300 text-blue-900'
+                    : selectedShape !== null
+                    ? 'border-blue-300 bg-blue-50/40 text-slate-700 cursor-pointer'
                     : 'border-slate-200 bg-white text-slate-700 hover:border-slate-400'
                 }`}
               >

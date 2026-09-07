@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -26,6 +26,7 @@ const AXE = lineThrough({ x: 160, y: 0 }, { x: 160, y: 220 });
 
 export default function Module03PointEtImage() {
   const [M, setM] = useState({ x: 85, y: 70 });
+  const [pred, setPred] = useState(null);
   const [explored, setExplored] = useState([]);
   const [moveDone, setMoveDone] = useState(false);
   const [distDone, setDistDone] = useState(false);
@@ -70,12 +71,28 @@ export default function Module03PointEtImage() {
           done: moveDone,
           content: (kit) => (
             <div className="space-y-3">
+              {/* La prédiction est recueillie SANS verdict (§6ter.3) : c'est
+                  le geste, une seconde plus tard, qui répondra. Elle vit à
+                  CÔTÉ du labo — jamais devant lui (règle du 2026-09-05). */}
+              <PredictionChips
+                prompt="si tu éloignes M de l’axe, que fait M′ ?"
+                options={[
+                  { id: 'suit', label: 'Il s’éloigne autant' },
+                  { id: 'fixe', label: 'Il ne bouge pas' },
+                  { id: 'approche', label: 'Il se rapproche de l’axe' },
+                ]}
+                value={pred}
+                onChange={setPred}
+              />
+              {/* JAMAIS `disabled` : une manipulation ne se fige pas après
+                  validation de l'étape (règle projet du 2026-09-06). L'élève
+                  doit pouvoir continuer à promener M — c'est précisément là
+                  qu'il vérifie que la règle tient PARTOUT. */}
               <MirrorLab
                 axis={AXE}
                 points={[M]}
                 onPointChange={handleMove}
                 box={BOX}
-                disabled={moveDone}
                 ariaLabel="Miroir : déplace le point M, son image M prime suit"
               />
               <div className="flex items-center justify-between gap-2 flex-wrap">

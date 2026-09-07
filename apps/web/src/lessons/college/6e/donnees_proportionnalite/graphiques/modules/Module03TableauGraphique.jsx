@@ -53,15 +53,20 @@ export default function Module03TableauGraphique() {
   const guidedOk = guided.values[TARGET_INDEX] === TEMPERATURES[TARGET_INDEX];
   const missing = JOURS.map((j, i) => ({ j, gap: TEMPERATURES[i] - built.values[i] })).filter((x) => x.gap !== 0);
 
+  /* Les deux labos restent RÉGLABLES après avoir atteint leur cible : seul
+     le jalon `…Done` cesse de rebasculer (règle projet du 2026-09-06 — une
+     manipulation ne se fige jamais après validation de l'étape). L'élève
+     peut donc continuer à tirer les barres et à voir le tableau suivre, ce
+     qui est précisément ce que le module enseigne. La seule limite est
+     MATHÉMATIQUE : à l'étape 1 une seule barre est réglable. */
   const handleGuided = (i, v) => {
-    if (i !== TARGET_INDEX || guidedDone) return;
+    if (i !== TARGET_INDEX) return;
     const next = withValue(guided, i, v);
     setGuided(next);
     if (next.values[TARGET_INDEX] === TEMPERATURES[TARGET_INDEX]) setGuidedDone(true);
   };
 
   const handleBuilt = (i, v) => {
-    if (builtDone) return;
     const next = withValue(built, i, v);
     setBuilt(next);
     if (next.values.every((x, k) => x === TEMPERATURES[k])) setBuiltDone(true);
@@ -108,7 +113,6 @@ export default function Module03TableauGraphique() {
                 title="Température à midi (°C)"
                 axisLabel="°C"
                 tableCaption="Le tableau bouge en même temps que la barre"
-                disabled={guidedDone}
                 step={1}
                 axisFloor={AXIS_FLOOR}
               />
@@ -157,7 +161,6 @@ export default function Module03TableauGraphique() {
                 title="Ta semaine météo (°C)"
                 axisLabel="°C"
                 tableCaption="Tes valeurs"
-                disabled={builtDone}
                 step={1}
                 axisFloor={AXIS_FLOOR}
               />

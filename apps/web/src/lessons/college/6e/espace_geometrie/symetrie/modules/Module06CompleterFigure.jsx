@@ -105,7 +105,6 @@ export default function Module06CompleterFigure() {
                 showConnector={false}
                 polygon={false}
                 box={BOX}
-                disabled={allDone}
                 ariaLabel={
                   allDone
                     ? 'Figure complétée par symétrie'

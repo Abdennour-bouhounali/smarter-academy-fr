@@ -67,8 +67,6 @@ function RobotMission({ run, done, onDone, react }) {
           if (ok) onDone();
         }}
         allowedSteps={run.allowedSteps}
-        solved={done}
-        disabled={done}
       />
 
       {done && (
@@ -79,10 +77,22 @@ function RobotMission({ run, done, onDone, react }) {
         </Feedback>
       )}
 
-      {!done && landed && !samePoint(landed, run.flag) && (
-        <Feedback tone="ko">
+      {/* Le programme reste modifiable après la réussite (règle projet du
+          2026-09-06) : essayer un chemin plus long, ou plus court, est la
+          meilleure façon de voir que le MINIMUM ne dépend que des deux
+          écarts. Le retour suit donc le dernier atterrissage réel. */}
+      {landed && !samePoint(landed, run.flag) && (
+        <Feedback tone={done ? 'info' : 'ko'}>
           Le robot s’est arrêté en <strong className="font-mono">{formatCoords(landed)}</strong>, pas sur le
           drapeau. Modifie ton programme et relance — le robot ne se casse pas.
+        </Feedback>
+      )}
+
+      {done && landed && samePoint(landed, run.flag) && program.length > d.total && (
+        <Feedback tone="info">
+          Ce programme fait <strong className="font-mono">{program.length} pas</strong> et arrive
+          quand même au drapeau : un détour est possible, mais{' '}
+          <strong className="font-mono">{d.total}</strong> reste le minimum.
         </Feedback>
       )}
     </div>

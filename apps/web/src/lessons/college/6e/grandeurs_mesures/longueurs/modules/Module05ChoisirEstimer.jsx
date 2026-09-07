@@ -146,6 +146,9 @@ export default function Module05ChoisirEstimer() {
           done: refDone,
           content: (kit) => (
             <div className="space-y-3">
+              {/* La règle de report reste glissable après validation (règle
+                  projet du 2026-09-06) : c'est en la reportant une deuxième
+                  fois que l'élève voit qu'elle tient DEUX fois dans la porte. */}
               <ReferenceRuler
                 targetLabel="La porte"
                 targetHeightM={2}
@@ -153,7 +156,6 @@ export default function Module05ChoisirEstimer() {
                 referenceLabel="1 m"
                 position={refPos}
                 onPositionChange={setRefPos}
-                disabled={refDone}
               />
               {!refDone && (
                 <div className="text-center">

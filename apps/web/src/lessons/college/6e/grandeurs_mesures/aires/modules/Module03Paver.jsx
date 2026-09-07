@@ -4,6 +4,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AreaGrid from '../components/AreaGrid';
+import PaveLab from '../components/PaveLab';
 import { parseDec, formatDec } from '../components/areaUtils';
 
 /**
@@ -44,50 +45,56 @@ const UNIT_Q = {
     'Avec des cm², il faudrait des millions de carreaux ; avec des km², la cour n’en remplirait même pas un. Le m² donne un compte raisonnable : l’unité d’aire se choisit comme l’unité de longueur — selon la taille de ce qu’on mesure.',
 };
 
+/**
+ * ACTION      appuyer sur la terrasse et BALAYER : les carreaux se posent
+ *             sous le doigt, comme un carreleur pose ses dalles.
+ * CHANGE      le compte de carreaux monte en direct, sans validation.
+ * OBSERVATION la terrasse en L n'a aucune formule — et pourtant son aire
+ *             s'obtient, exactement, en comptant le recouvrement.
+ * SENS        mesurer une aire = compter combien de fois l'unité de surface
+ *             recouvre la figure.
+ *
+ * Le labo ne se fige PAS une fois la terrasse pavée (règle projet) : on peut
+ * repasser dessus pour retirer des carreaux et recommencer, et vérifier que
+ * le compte final ne dépend pas de l'ordre de pose.
+ */
 function TerrassePaver({ react, solved, onSolved }) {
-  const [cells, setCells] = useState(solved ? TERRASSE : []);
-  const done = solved || cells.length === TERRASSE.length;
+  const [cells, setCells] = useState([]);
+  const full = cells.length === TERRASSE.length;
+  const done = solved || full;
 
-  const toggle = (i) => {
-    if (done) return;
-    setCells((prev) => {
-      const next = prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i];
-      return next;
-    });
-  };
+  const pave = (i) => setCells((prev) => (prev.includes(i) ? prev : [...prev, i]));
 
+  /* Le signal part d'un EFFET : appeler `react` depuis l'updater de setState
+     met à jour le parent pendant le rendu de l'enfant. */
   React.useEffect(() => {
-    if (cells.length === TERRASSE.length && !solved) {
-      react(true);
-      onSolved?.();
-    }
-  }, [cells.length, solved, react, onSolved]);
+    if (full && !solved) { react(true); onSolved?.(); }
+  }, [full, solved, react, onSolved]);
+  const unpave = (i) => setCells((prev) => prev.filter((x) => x !== i));
 
   return (
     <div className="space-y-3">
       <p className="text-sm text-slate-600">
-        Le carreleur doit paver la terrasse (la zone claire). Tape chaque carreau pour la recouvrir entièrement —
-        le compteur suit ton travail.
+        Le carreleur doit paver la terrasse (la zone claire). Appuie dessus et <strong>balaie</strong> pour poser
+        les carreaux — repasse sur un carreau posé pour le retirer.
       </p>
-      <AreaGrid
+      <PaveLab
         rows={ROWS}
         cols={COLS}
         cells={cells}
-        onToggle={toggle}
+        onPave={pave}
+        onUnpave={unpave}
         outline={TERRASSE}
         unit="m²"
-        disabled={done}
         tone="emerald"
         ariaLabel="Terrasse à paver"
       />
-      <div className="text-center font-mono text-lg text-slate-800">
-        Carreaux posés : <strong>{cells.length}</strong> {done && <>→ aire = <strong>{TERRASSE.length} m²</strong></>}
-      </div>
       {done && (
         <Feedback tone="ok">
           Terrasse entièrement pavée : <strong>{TERRASSE.length} carreaux de 1 m²</strong>, donc une aire de{' '}
           <strong>{TERRASSE.length} m²</strong>. Mesurer une aire = compter combien de fois l'unité de surface
-          recouvre la figure.
+          recouvre la figure. Retire quelques carreaux et repose-les dans un autre ordre : le compte final ne
+          change pas.
         </Feedback>
       )}
     </div>

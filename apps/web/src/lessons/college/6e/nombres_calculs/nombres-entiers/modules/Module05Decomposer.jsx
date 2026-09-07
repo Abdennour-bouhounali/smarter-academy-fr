@@ -27,8 +27,10 @@ function DecompositionTiles({ target, onSolved, solved, react }) {
   const attendu = decompose(target);
   const isRight = sum === target && picked.length === attendu.length;
 
+  // RÈGLE PROJET (2026-09-06) : les tuiles ne se figent JAMAIS après la
+  // validation — c'est en reprenant et en reposant des tuiles que l'élève
+  // vérifie qu'une autre combinaison ne donne pas le même nombre.
   const toggle = (i) => {
-    if (solved) return;
     setChecked(false);
     setPicked((p) => (p.includes(i) ? p.filter((x) => x !== i) : [...p, i]));
   };
@@ -52,7 +54,6 @@ function DecompositionTiles({ target, onSolved, solved, react }) {
                 key={`${t}-${i}`}
                 type="button"
                 onClick={() => toggle(i)}
-                disabled={solved}
                 aria-pressed={isPicked}
                 className={`px-4 py-3 rounded-xl border-2 font-mono font-extrabold tabular-nums transition-all min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                   isPicked
@@ -188,8 +189,9 @@ function ZeroHunt({ n, solved, onSolved, react }) {
           value={n}
           selectedKey={null}
           highlightKeys={solved ? zeroKeys : clicked}
+          // RÈGLE PROJET (2026-09-06) : le tableau reste cliquable après la
+          // validation, pour continuer à désigner d'autres colonnes.
           onDigitClick={(cell) => {
-            if (solved) return;
             setChecked(false);
             setClicked((c) => (c.includes(cell.key) ? c.filter((x) => x !== cell.key) : [...c, cell.key]));
           }}

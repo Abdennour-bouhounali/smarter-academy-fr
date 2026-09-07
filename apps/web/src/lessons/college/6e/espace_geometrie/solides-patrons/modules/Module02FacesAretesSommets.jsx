@@ -4,6 +4,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidView from '../components/SolidView';
+import { DragTray } from '../../../../../common/manip6e';
 import { SOLIDES, SOLIDES_LIST, isPolyhedron, eulerCheck } from '../components/solidesUtils';
 
 /**
@@ -18,7 +19,35 @@ import { SOLIDES, SOLIDES_LIST, isPolyhedron, eulerCheck } from '../components/s
  *
  * Misconception visée : confondre arête (un segment) et sommet (un point),
  * ou compter seulement ce qui est visible.
+ *
+ * ── LE TRI PAR NATURE (étape 2) ───────────────────────────────────────
+ * Distinguer les trois mots ne se joue pas sur leur définition mais sur la
+ * NATURE de l'objet : une surface, un segment, un point. L'élève prend donc
+ * de vrais objets géométriques (un carré, un trait, un point — et des objets
+ * du quotidien) et les DÉPOSE dans la bonne famille (`DragTray`, pointeur et
+ * clavier). Un dépôt faux est refusé par la zone elle-même : la contrainte
+ * enseigne au lieu de sanctionner.
  */
+/* Les objets à trier : leur nature est ce qui décide, jamais leur nom. */
+const A_TRIER = [
+  { id: 'o1', famille: 'faces', label: 'le dessus d’une boîte', forme: 'surface' },
+  { id: 'o2', famille: 'aretes', label: 'le bord d’une table', forme: 'segment' },
+  { id: 'o3', famille: 'sommets', label: 'le coin d’un dé', forme: 'point' },
+  { id: 'o4', famille: 'faces', label: 'le fond d’un tiroir', forme: 'surface' },
+  { id: 'o5', famille: 'aretes', label: 'l’arête d’un glaçon', forme: 'segment' },
+  { id: 'o6', famille: 'sommets', label: 'la pointe d’une pyramide', forme: 'point' },
+];
+
+/** La vignette d'un objet : sa NATURE, dessinée — pas son nom. */
+function FormeIcon({ forme }) {
+  if (forme === 'surface') {
+    return <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="4" y="4" width="18" height="18" fill="#a5b4fc" stroke="#4338ca" strokeWidth="2" rx="2" /></svg>;
+  }
+  if (forme === 'segment') {
+    return <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><line x1="4" y1="20" x2="22" y2="6" stroke="#7c3aed" strokeWidth="3.5" strokeLinecap="round" /></svg>;
+  }
+  return <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="5" fill="#e11d48" stroke="#fff" strokeWidth="2" /></svg>;
+}
 const HIGHLIGHTS = [
   { id: 'faces', label: 'Faces', desc: 'les surfaces planes', key: 'faces' },
   { id: 'aretes', label: 'Arêtes', desc: 'les segments où deux faces se rencontrent', key: 'aretes' },
@@ -33,6 +62,10 @@ export default function Module02FacesAretesSommets() {
   const [exploreDone, setExploreDone] = useState(false);
   const [countDone, setCountDone] = useState(false);
   const [eulerDone, setEulerDone] = useState(false);
+  /* Le tri : objet → famille. Un objet mal placé ne peut pas être déposé
+     (la zone le refuse), donc l'état ne contient que des tris justes. */
+  const [tri, setTri] = useState({});
+  const triDone = A_TRIER.every((o) => tri[o.id]);
 
   const allSeen = HIGHLIGHTS.every((h) => seen.includes(h.id));
   const cube = SOLIDES.cube;
@@ -133,6 +166,85 @@ export default function Module02FacesAretesSommets() {
         },
         {
           num: 2,
+          title: 'Range chaque objet dans sa famille',
+          subtitle: 'Prends un objet et dépose-le. Ce qui décide, c’est sa NATURE.',
+          done: triDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Une <strong>surface</strong>, un <strong>segment</strong>, un <strong>point</strong> :
+                trois natures différentes. Glisse chaque objet dans la bonne famille — une zone
+                refuse ce qui n’est pas de sa nature.
+              </p>
+
+              {/* Vrai glisser-déposer (pointeur) ET chemin clavier complet :
+                  activer un objet le prend, activer une zone l'y dépose. */}
+              <DragTray
+                sourcesLabel="Les objets à ranger"
+                zonesLabel="Les trois familles"
+                sources={A_TRIER.filter((o) => !tri[o.id]).map((o) => ({
+                  id: o.id,
+                  label: o.label,
+                  node: (
+                    <span className="flex items-center gap-2">
+                      <FormeIcon forme={o.forme} />
+                      <span className="text-sm">{o.label}</span>
+                    </span>
+                  ),
+                }))}
+                zones={HIGHLIGHTS.map((h) => ({
+                  id: h.id,
+                  label: h.label,
+                  // La zone REFUSE ce qui n'est pas de sa nature : la
+                  // contrainte est mathématique, pas un score.
+                  accepts: (srcId) => A_TRIER.find((o) => o.id === srcId)?.famille === h.id,
+                  node: (
+                    <div className="flex flex-wrap gap-1 justify-center">
+                      {A_TRIER.filter((o) => tri[o.id] === h.id).map((o) => (
+                        <span key={o.id} title={o.label}>
+                          <FormeIcon forme={o.forme} />
+                        </span>
+                      ))}
+                    </div>
+                  ),
+                }))}
+                onDrop={(srcId, zoneId) => {
+                  setTri((prev) => {
+                    const next = { ...prev, [srcId]: zoneId };
+                    if (A_TRIER.every((o) => next[o.id])) kit.react?.(true);
+                    return next;
+                  });
+                }}
+                onRemove={(zoneId) => {
+                  // Jamais figé : on peut ressortir un objet et recommencer.
+                  setTri((prev) => {
+                    const last = A_TRIER.filter((o) => prev[o.id] === zoneId).pop();
+                    if (!last) return prev;
+                    const next = { ...prev };
+                    delete next[last.id];
+                    return next;
+                  });
+                }}
+              />
+
+              <div className="rounded-xl border border-slate-200 bg-slate-50/70 px-3 py-2 text-center text-sm text-slate-600">
+                Rangés : <strong className="font-mono">{Object.keys(tri).length}</strong> /{' '}
+                {A_TRIER.length}
+              </div>
+
+              {triDone && (
+                <Feedback tone="ok">
+                  Aucun objet n’a pu entrer dans la mauvaise famille : c’est sa{' '}
+                  <strong>nature</strong> qui décide. Une face a une aire, une arête a une longueur,
+                  un sommet n’a ni l’une ni l’autre — c’est pour cela que les trois se comptent
+                  séparément.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
           title: 'Compte pour trois solides',
           done: countDone,
           content: (
@@ -179,7 +291,7 @@ export default function Module02FacesAretesSommets() {
           ),
         },
         {
-          num: 3,
+          num: 4,
           title: 'Un lien entre les trois nombres',
           subtitle: 'Vérifie-le toi-même sur le cube.',
           done: eulerDone,

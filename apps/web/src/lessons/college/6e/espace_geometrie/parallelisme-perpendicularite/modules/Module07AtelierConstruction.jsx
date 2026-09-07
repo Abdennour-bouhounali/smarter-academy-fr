@@ -33,26 +33,29 @@ function Construction({ target, point, done, onDone, react, ariaLabel, hint }) {
 
   return (
     <div className="space-y-3">
+      {/* L'instrument reste MANIPULABLE après la réussite (règle projet du
+          2026-09-06) : reposer l'équerre ailleurs et re-tracer est exactement
+          la façon dont on vérifie qu'une construction n'était pas un coup de
+          chance. Seule la validation de l'étape, elle, ne se rejoue pas. */}
       <VirtualEquerre
         line={D}
         point={point}
         equerre={equerre}
-        onEquerreChange={(next) => { if (!done) setEquerre(next); }}
+        onEquerreChange={setEquerre}
         mode="construct"
         construct={target}
         drawn={drawn}
         onTrace={(built) => {
-          if (done) return;
           setDrawn(built);
           // L'instrument A CONSTRUIT la droite : elle est juste par
           // construction. On vérifie tout de même la relation obtenue —
           // c'est relationOf, et lui seul, qui prononce le verdict.
           const ok = relationOf(D, built) === (target === 'parallele' ? RELATIONS.paralleles : RELATIONS.perpendiculaires);
+          if (done) return;           // l'étape ne se revalide pas…
           react(ok);
           if (ok) onDone();
         }}
         box={BOX}
-        disabled={done}
         ariaLabel={ariaLabel}
       />
 

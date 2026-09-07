@@ -6,7 +6,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProportionTable from '../components/ProportionTable';
-import QuantityMachine from '../components/QuantityMachine';
+import StretchLab from '../components/StretchLab';
 import { CREPES, JUS } from '../components/kermesseData';
 import { applyRule, buildRows, ratioAt, parseDec, formatDec } from '../components/proportionUtils';
 
@@ -38,7 +38,7 @@ export default function Module02MemeNombre() {
   const [coefDone, setCoefDone] = useState(false);
   const [predireDone, setPredireDone] = useState(false);
   const [jusDone, setJusDone] = useState(false);
-  const [jusQty, setJusQty] = useState(2);
+  const [jusQty, setJusQty] = useState(4);
 
   const allChecked = checked.length === ROWS.length;
 
@@ -204,17 +204,31 @@ export default function Module02MemeNombre() {
                 Au stand d'à côté, le jus coûte <strong>0,50 € le litre</strong>. Le coefficient n'est pas
                 toujours un nombre entier — essaie plusieurs quantités.
               </p>
-              <QuantityMachine
+              {/* Le même geste qu'au module 1, sur un coefficient plus petit
+                  que 1 : la barre du bas reste sous celle du haut, à toutes
+                  les quantités. C'est CELA qu'un choix dans une liste ne
+                  montrait pas — entre 4 et 6 litres, il n'y avait rien. */}
+              <StretchLab
                 rule={JUS.rule}
-                quantities={[1, 2, 4, 6, 10]}
+                min={1}
+                max={10}
+                step={1}
                 value={jusQty}
-                onChange={setJusQty}
-                inputLabel="Litres"
-                outputLabel="Prix"
-                inputEmoji="🧃"
-                outputEmoji="💶"
-                outputUnit="€"
-                showComputation
+                onChange={(v) => { setJusQty(v); kit.react?.(true); }}
+                xLabel="Litres"
+                yLabel="Prix"
+                yUnit="€"
+                readout={
+                  <div className="rounded-xl border-2 border-slate-200 bg-slate-50 px-3 py-2.5 text-center">
+                    <p className="font-mono text-sm text-slate-800">
+                      {formatDec(jusQty)} L → {formatDec(applyRule(JUS.rule, jusQty))} €
+                    </p>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      Cette fois la barre du bas reste plus courte. Tire, et vérifie que c’est vrai
+                      partout.
+                    </p>
+                  </div>
+                }
               />
               <TapQuestion
                 prompt="Quel est le coefficient de cette situation (litres → prix) ?"

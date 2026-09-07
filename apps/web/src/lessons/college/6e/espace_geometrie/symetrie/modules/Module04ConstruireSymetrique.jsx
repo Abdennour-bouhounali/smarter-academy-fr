@@ -48,10 +48,14 @@ function Chantier({ chantier, done, onDone, react }) {
   const state = checkSymmetric(chantier.axis, chantier.M, cand);
 
   const handle = (p) => {
-    if (done || revealed) return;
+    // `revealed` fige : la figure montre alors la RÉPONSE, pas la proposition
+    // de l'élève. Mais une réussite (`done`) ne fige pas — l'élève doit
+    // pouvoir déplacer encore son point et voir les deux voyants s'éteindre
+    // dès qu'il s'écarte (règle projet du 2026-09-06).
+    if (revealed) return;
     setCand(p);
     const st = checkSymmetric(chantier.axis, chantier.M, p);
-    if (st.ok) { react(true); onDone(); }
+    if (st.ok && !done) { react(true); onDone(); }
   };
 
   return (
@@ -70,12 +74,15 @@ function Chantier({ chantier, done, onDone, react }) {
         showConnector={done || revealed}
         ghostImage={revealed ? reflectPoint(chantier.axis, chantier.M) : null}
         box={BOX}
-        disabled={done || revealed}
+        disabled={revealed}
         ariaLabel="Place le point symétrique de M"
       />
 
-      {/* Les DEUX conditions, contrôlées séparément */}
-      {!done && !revealed && (
+      {/* Les DEUX conditions, contrôlées séparément. Elles restent affichées
+          après la réussite : la manipulation continue, donc l'élève doit
+          garder sous les yeux l'état VIVANT des deux conditions — un panneau
+          qui disparaîtrait laisserait un feedback figé mentir sur la figure. */}
+      {!revealed && (
         <div className="grid sm:grid-cols-2 gap-2">
           <div
             className={`rounded-xl border-2 px-3 py-2 text-xs font-semibold flex items-center gap-2 ${
@@ -112,12 +119,26 @@ function Chantier({ chantier, done, onDone, react }) {
         </div>
       )}
 
+      {/* Le texte de réussite doit rester VRAI si l'élève continue à
+          manipuler : il décrit donc l'état VIVANT (`state.ok`), pas un
+          état figé au moment de la validation. Déplacer le point après
+          coup éteint les voyants — et le texte le dit. */}
       {(done || revealed) && (
-        <Feedback tone={revealed ? 'info' : 'ok'}>
+        <Feedback tone={revealed || state.ok ? (revealed ? 'info' : 'ok') : 'hint'}>
           {revealed && <strong>Pas grave, on te le montre. </strong>}
-          Les deux conditions sont réunies : <strong>[MM′] ⊥ (d)</strong> et{' '}
-          <strong>M et M′ à égale distance</strong> de l’axe. C’est ce couple de conditions qui définit le
-          symétrique — jamais une seule des deux.
+          {revealed || state.ok ? (
+            <>
+              Les deux conditions sont réunies : <strong>[MM′] ⊥ (d)</strong> et{' '}
+              <strong>M et M′ à égale distance</strong> de l’axe. C’est ce couple de conditions qui définit le
+              symétrique — jamais une seule des deux.
+            </>
+          ) : (
+            <>
+              Tu as déplacé ton point : les deux conditions ne sont plus réunies en même temps.
+              L’étape reste acquise — continue à essayer, et regarde les deux voyants se rallumer
+              ensemble quand tu retrouves la bonne place.
+            </>
+          )}
         </Feedback>
       )}
 

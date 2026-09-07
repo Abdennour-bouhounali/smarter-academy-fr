@@ -30,8 +30,15 @@ function BuildRound({ react, target, zeroSide, intro, solved, onSolved }) {
   const [marked, setMarked] = useState(solved ? target : null);
   const done = solved || marked !== null;
   const isRight = marked === target;
+  const [lastMark, setLastMark] = useState(null);
 
+  /* La construction reste ouverte après la réponse (règle projet du
+     2026-09-06) : `marked` garde la PREMIÈRE marque — celle que juge le
+     verdict — et `lastMark` suit les suivantes, pour que l'élève puisse
+     poser l'autre graduation et voir de ses yeux qu'elle donne un angle
+     visiblement différent. */
   const handlePlace = (value) => {
+    setLastMark(value);
     if (done) return;
     setMarked(value);
     react(value === target);
@@ -46,10 +53,16 @@ function BuildRound({ react, target, zeroSide, intro, solved, onSolved }) {
         mode="place"
         zeroSide={zeroSide}
         onReadTick={handlePlace}
-        selectedValue={marked}
-        placedTick={done && isRight ? (zeroSide === 'right' ? target : 180 - target) : null}
-        traceRevealed={done && isRight}
-        disabled={done}
+        selectedValue={lastMark ?? marked}
+        placedTick={(() => {
+          // La trace suit la DERNIÈRE marque posée : construire l'autre
+          // graduation doit dessiner l'autre angle, sinon le geste ne montre
+          // rien. La position est convertie dans le repère du rapporteur.
+          const v = lastMark ?? (done && isRight ? target : null);
+          if (v === null) return null;
+          return zeroSide === 'right' ? v : 180 - v;
+        })()}
+        traceRevealed={lastMark !== null || (done && isRight)}
         ariaLabel={`Construire un angle de ${target} degrés`}
       />
       {done && (

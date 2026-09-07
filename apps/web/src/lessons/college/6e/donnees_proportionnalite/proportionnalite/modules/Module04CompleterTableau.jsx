@@ -6,6 +6,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ProportionTable from '../components/ProportionTable';
+import ArrowReader from '../components/ArrowReader';
 import { CREPES } from '../components/kermesseData';
 import { applyRule, ratioAt, parseDec, formatDec } from '../components/proportionUtils';
 
@@ -24,6 +25,13 @@ import { applyRule, ratioAt, parseDec, formatDec } from '../components/proportio
  * chemins possibles, et la dernière étape fait remarquer qu'ils donnent tous
  * la même réponse. C'est ce qui prépare le module 5 (choisir), sans encore
  * demander de choisir.
+ *
+ * ÉTAPE 1 — LE LABO D'ABORD (règle projet du 2026-09-05, INTERACTION_PEDAGOGY
+ * §6bis). Avant de demander une seule valeur, l'élève TRAÎNE une flèche sur
+ * le tableau et découvre par le geste les deux lectures qu'il devra ensuite
+ * employer : vers le bas le même × 3 partout, sur le côté un facteur qui
+ * dépend des colonnes et qui agit sur les DEUX lignes à la fois. Les chemins
+ * de l'étape 3 ne tombent donc plus du ciel — ils ont été vus bouger.
  */
 const K = ratioAt(CREPES.rule, 1); // 3
 const Y = (x) => applyRule(CREPES.rule, x);
@@ -38,10 +46,27 @@ const CELLS = [
 export default function Module04CompleterTableau() {
   const [found, setFound] = useState([]);
   const [chemDone, setChemDone] = useState(false);
+  // Le labo d'ouverture : la flèche, et les lectures DISTINCTES déjà posées.
+  const [arrow, setArrow] = useState({ dir: 'down', from: 0, to: 0 });
+  // La flèche est montée SUR la colonne 0 : cette lecture-là est déjà à
+  // l'écran, elle compte donc dès le départ. Sans cela, l'élève qui glisse
+  // de la 1re à la 3e colonne aurait bel et bien vu deux lectures verticales
+  // distinctes sans que la seconde soit comptée.
+  const [seen, setSeen] = useState(['d0']);   // clés de lecture visitées
 
   const step = found.length;
   const current = CELLS[Math.min(step, CELLS.length - 1)];
   const allFound = found.length === CELLS.length;
+
+  /* JALON DE COMPLÉTION SUR GESTE CONTINU — on ne compte pas des pixels, on
+     compte des LECTURES CLAIREMENT DISTINCTES : au moins deux colonnes
+     différentes vues à la verticale (c'est ce qui prouve que le × 3 ne
+     bouge pas) ET au moins une lecture horizontale (le facteur qui, lui,
+     dépend des colonnes). Un seul glissement ne peut donc pas valider
+     l'étape par accident. */
+  const downSeen = seen.filter((k) => k.startsWith('d')).length;
+  const acrossSeen = seen.filter((k) => k.startsWith('a')).length;
+  const labDone = downSeen >= 2 && acrossSeen >= 1;
 
   const columns = [
     { x: 3, y: Y(3) },
@@ -61,14 +86,63 @@ export default function Module04CompleterTableau() {
         title: 'Le tarif du stand est affiché… en partie.',
         body: (
           <p>
-            Une seule colonne est connue : 3 crêpes coûtent {Y(3)} €. Complète les autres — et remarque qu'il
-            y a souvent plus d'un chemin pour y arriver.
+            L'an dernier, le tarif complet avait été affiché : apprends d'abord à le LIRE dans ses deux sens.
+            Cette année, une seule colonne est connue — 3 crêpes coûtent {Y(3)} €. À toi de compléter les
+            autres, et de remarquer qu'il y a souvent plus d'un chemin pour y arriver.
           </p>
         ),
       }}
       steps={[
         {
           num: 1,
+          title: 'Traîne la flèche sur le tableau',
+          subtitle: 'Deux façons de le lire — trouve-les toutes les deux.',
+          done: labDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Voici le tarif <strong>complet</strong> de l'an dernier. Attrape la flèche :{' '}
+                <strong>dans une colonne</strong> elle
+                descend d'une grandeur à l'autre ; <strong>entre les deux lignes</strong> elle se couche et
+                relie deux colonnes.
+              </p>
+              <ArrowReader
+                rule={CREPES.rule}
+                xs={[1, 3, 6, 9]}
+                xLabel="Crêpes"
+                yLabel="Prix"
+                yUnit="€"
+                arrow={arrow}
+                onArrowChange={(a) => {
+                  setArrow(a);
+                  const key = a.dir === 'down' ? `d${a.from}` : `a${a.from}`;
+                  setSeen((prev) => {
+                    if (prev.includes(key)) return prev;
+                    kit.react?.(true);
+                    return [...prev, key];
+                  });
+                }}
+                caption="Tarif de l’an dernier — la flèche lit à ta place"
+              />
+              {!labDone ? (
+                <Feedback tone="info">
+                  {downSeen < 2
+                    ? 'Pose la flèche vers le bas dans une autre colonne : le nombre change-t-il ?'
+                    : "Maintenant fais passer la flèche ENTRE les deux lignes : elle se couche, et lit dans l'autre sens."}
+                </Feedback>
+              ) : (
+                <Feedback tone="ok">
+                  Deux lectures, deux nombres différents. Vers le bas c'est <strong>toujours × {K}</strong>,
+                  quelle que soit la colonne. Sur le côté, le facteur dépend des colonnes choisies — mais il
+                  agit sur les DEUX lignes en même temps. Garde la flèche sous la main : elle sert pour la
+                  suite.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
           title: `Complète les cases (${found.length}/${CELLS.length})`,
           done: allFound,
           content: (kit) => (
@@ -124,7 +198,7 @@ export default function Module04CompleterTableau() {
           ),
         },
         {
-          num: 2,
+          num: 3,
           title: 'Plusieurs chemins, une seule réponse',
           done: chemDone,
           content: (

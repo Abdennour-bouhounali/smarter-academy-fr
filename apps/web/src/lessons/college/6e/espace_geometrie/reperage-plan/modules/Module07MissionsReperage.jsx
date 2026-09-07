@@ -85,9 +85,13 @@ export default function Module07MissionsReperage() {
                 grid={GRID}
                 mode="place"
                 point={guess}
+                /* Le plan reste manipulable après la réussite (règle projet
+                   du 2026-09-06) : l'élève peut reposer son point ailleurs et
+                   vérifier que les deux indices ne désignent bien qu'un seul
+                   nœud. Seule la complétion cesse d'être re-déclenchée. */
                 onPointChange={(n) => {
-                  if (cacheDone) return;
                   setGuess(n);
+                  if (cacheDone) return;
                   const ok = samePoint(n, CACHE);
                   kit.react(ok);
                   if (ok) setCacheDone(true);
@@ -95,16 +99,20 @@ export default function Module07MissionsReperage() {
                 }}
                 overlay={PARC}
                 ghost={cacheDone ? null : tries >= 3 ? { ...CACHE, label: formatCoords(CACHE) } : null}
-                disabled={cacheDone}
                 ariaLabel="Plan du parc : pose un point sur la cache secrète"
               />
 
               {cacheDone && (
                 <>
-                  <Feedback tone="ok">
+                  <Feedback tone={guess && samePoint(guess, CACHE) ? 'ok' : 'info'}>
                     La cache est en <strong className="font-mono">{formatCoords(CACHE)}</strong>. Le tir à
                     l’arc est en <span className="font-mono">(2 ; 3)</span> : 3 pas à droite donnent 2 + 3 = 5,
                     et 2 pas plus bas donnent 3 − 2 = 1.
+                    {guess && !samePoint(guess, CACHE) && (
+                      <> Tu viens de reposer ton point en{' '}
+                        <strong className="font-mono">{formatCoords(guess)}</strong> : les deux indices,
+                        eux, ne désignent qu’un seul nœud.</>
+                    )}
                   </Feedback>
                   {/* Le raisonnement vient d'être fait en acte : chaque indice
                       n'a touché qu'une seule des deux coordonnées. On en fait

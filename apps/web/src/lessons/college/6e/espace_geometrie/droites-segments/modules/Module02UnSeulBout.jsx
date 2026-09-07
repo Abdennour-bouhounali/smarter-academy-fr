@@ -59,12 +59,13 @@ export default function Module02UnSeulBout() {
           done: rayDone,
           content: (kit) => (
             <div className="space-y-2">
+              {/* JAMAIS `disabled` après validation : la manipulation reste
+                  ouverte pour que l'élève rejoue le geste (règle 2026-09-06). */}
               <ExtentPuller
                 obj={ray}
                 onObjChange={setRay}
                 baseBox={BOX}
                 pullable="b"
-                disabled={rayDone}
                 onExtended={() => {
                   if (rayDone) return;
                   kit.react(true);

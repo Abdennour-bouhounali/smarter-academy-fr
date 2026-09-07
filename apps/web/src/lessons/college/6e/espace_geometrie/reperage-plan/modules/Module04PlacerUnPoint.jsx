@@ -43,9 +43,13 @@ function PlaceMission({ target, done, onDone, react }) {
   const wrong = point && !ok;
   const exhausted = tries >= MAX_TRIES;
 
+  /* Le point reste déplaçable APRÈS la réussite (règle projet du
+     2026-09-06) : l'élève peut le promener et voir les coordonnées se
+     réécrire, ce qui est précisément ce que la leçon enseigne. Seule la
+     comptabilité des essais et la complétion cessent. */
   const handleChange = (n) => {
-    if (done || revealed) return;
     setPoint(n);
+    if (done || revealed) return;
     if (samePoint(n, target.node)) {
       react(true);
       onDone();
@@ -71,7 +75,6 @@ function PlaceMission({ target, done, onDone, react }) {
         onPointChange={handleChange}
         target={done || revealed ? target.node : null}
         ghost={revealed && !ok ? { ...target.node, label: formatCoords(target.node) } : null}
-        disabled={done || revealed}
         ariaLabel={`Quadrillage : place un point aux coordonnées ${formatCoords(target.node)}`}
       />
 
@@ -101,6 +104,16 @@ function PlaceMission({ target, done, onDone, react }) {
       {ok && (
         <Feedback tone="ok">
           Exactement : {formatCoords(target.node)}. Horizontale d’abord, verticale ensuite.
+        </Feedback>
+      )}
+
+      {/* Le quadrillage n'est plus figé : si l'élève repart explorer après
+          avoir réussi, le retour suit son point au lieu de mentir. */}
+      {done && wrong && (
+        <Feedback tone="info">
+          Tu as repris le point : il est maintenant en{' '}
+          <strong className="font-mono">{formatCoords(point)}</strong>. La cible était{' '}
+          {formatCoords(target.node)} — promène-le, les deux nombres se réécrivent tout seuls.
         </Feedback>
       )}
 

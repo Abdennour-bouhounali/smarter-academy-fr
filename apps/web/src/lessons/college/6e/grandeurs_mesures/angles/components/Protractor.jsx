@@ -104,11 +104,32 @@ export default function Protractor({
               // séries de nombres se chevauchent près du sommet du demi-cercle
               // et deviennent illisibles — or c'est justement la lecture des
               // DEUX graduations qui est l'enjeu de la leçon.
-              const lo = polarToXY(C, CY, R - 24, p);
-              // La couronne intérieure est resserrée vers le centre pour que
-              // les nombres des deux échelles ne se télescopent pas au sommet
-              // du demi-cercle (où les rayons convergent).
-              const li = polarToXY(C, CY, R - 62, p);
+              /* Couronne extérieure. Mesuré au balayage e2e du 2026-09-07 :
+                 une étiquette à trois chiffres occupe 19,9 px de large en
+                 fontSize 13, alors que l'espacement entre deux graduations à
+                 10° ne vaut que 18,5 px à R − 24 — d'où le chevauchement
+                 « 110 ↔ 120 » près du sommet du demi-cercle.
+
+                 Deux corrections, mesurées et non estimées :
+                 — la couronne remonte à R − 8, ce qui porte l'espacement à
+                   21,3 px ;
+                 — la taille passe par l'ATTRIBUT SVG `fontSize` et non par
+                   `style`, car la feuille globale du site écrasait le style
+                   inline (11 demandé, 13 rendu) ; la boîte tombe à 17,2 px.
+                 Marge résiduelle ≈ 4 px sur TOUTE la course, sommet compris
+                 (§6bis.4 : on balaie, on n'échantillonne pas). */
+              const lo = polarToXY(C, CY, R - 8, p);
+              /* La couronne intérieure : plus le rayon est petit, plus deux
+                 étiquettes voisines se rapprochent. À R − 62 l'espacement
+                 vaut ~12 px pour des nombres à trois chiffres larges de ~18 px :
+                 elles se CHEVAUCHAIENT (mesuré par le balayage e2e du
+                 2026-09-07, §6bis.4). On la remonte à R − 44 et on n'y
+                 étiquette qu'une graduation sur deux — l'échelle intérieure
+                 doit être VISIBLE et lisible, pas exhaustive ; les valeurs
+                 manquantes restent annoncées par l'aria-label de chaque zone
+                 tactile et par la bulle « 50 ou 130 ? ». */
+              const li = polarToXY(C, CY, R - 44, p);
+              const innerLabelled = p % (tickStep * 2) === 0;
               const outer = outerFor(p);
               const inner = otherScale(outer);
               const selected = selectedValue !== null && (selectedValue === outer || selectedValue === inner)
@@ -116,11 +137,19 @@ export default function Protractor({
               return (
                 <g key={p}>
                   <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={selected ? '#dc2626' : '#a16207'} strokeWidth={selected ? 3 : 1.5} />
-                  <text x={lo.x} y={lo.y + 4} textAnchor="middle" style={{ fontSize: 11, fontFamily: 'monospace', fontWeight: 700 }} className="fill-amber-900">
+                  <text
+                    x={lo.x} y={lo.y + 4} textAnchor="middle"
+                    fontSize={10} fontFamily="monospace" fontWeight={700} letterSpacing="-0.4"
+                    className="fill-amber-900"
+                  >
                     {outer}
                   </text>
-                  {doubleGraduation && (
-                    <text x={li.x} y={li.y + 4} textAnchor="middle" style={{ fontSize: 10, fontFamily: 'monospace', fontWeight: 600 }} className="fill-amber-600">
+                  {doubleGraduation && innerLabelled && (
+                    <text
+                      x={li.x} y={li.y + 4} textAnchor="middle"
+                      fontSize={10} fontFamily="monospace" fontWeight={600}
+                      className="fill-amber-600"
+                    >
                       {inner}
                     </text>
                   )}

@@ -37,18 +37,27 @@ const VERDICT_OPTIONS = ['Le plateau gauche est plus lourd', 'Le plateau droit e
 function BalanceDiscovery({ solved, onAnswered }) {
   const [placement, setPlacement] = useState({});
   const [dragging, setDragging] = useState(false);
+  // L'arrangement SUR LEQUEL le verdict a été rendu. La balance reste
+  // manipulable après la réponse (règle du 2026-09-06), mais la question,
+  // elle, a été posée sur une pesée précise : on la fige au moment où
+  // l'élève répond, sinon un déplacement ultérieur changerait après coup la
+  // bonne réponse d'une question DÉJÀ corrigée.
+  const [verdictOn, setVerdictOn] = useState(null);
   const leftZoneRef = useRef(null);
   const rightZoneRef = useRef(null);
 
+  // Poser et reprendre restent TOUJOURS possibles, même après que l'élève a
+  // répondu au verdict (règle projet du 2026-09-06). Le module 1 est un
+  // laboratoire : c'est en essayant crayon contre vélo, puis pomme contre
+  // cartable, que « plus lourd » prend un sens — une seule pesée ne suffit pas.
   const place = (id, zone) => {
-    if (solved || !zone) return;
+    if (!zone) return;
     setPlacement((p) => ({ ...p, [id]: zone }));
   };
 
   const handleRelease = (id, x, y) => place(id, zoneAt(x, y, leftZoneRef, rightZoneRef));
 
   const takeBack = (id) => {
-    if (solved) return;
     setPlacement((p) => {
       const n = { ...p };
       delete n[id];
@@ -61,7 +70,12 @@ function BalanceDiscovery({ solved, onAnswered }) {
   const totalLeft = left.reduce((s, it) => s + it.mass, 0);
   const totalRight = right.reduce((s, it) => s + it.mass, 0);
   const canAnswer = left.length > 0 && right.length > 0;
-  const correctIndex = totalLeft === totalRight ? 2 : totalLeft > totalRight ? 0 : 1;
+  const verdictFor = (l, r) => (l === r ? 2 : l > r ? 0 : 1);
+  // Tant que rien n'est répondu, la question suit la balance en direct ; une
+  // fois répondue, elle reste attachée à la pesée qui l'a produite.
+  const correctIndex = verdictOn
+    ? verdictFor(verdictOn.left, verdictOn.right)
+    : verdictFor(totalLeft, totalRight);
 
   return (
     <div className="space-y-4">
@@ -74,7 +88,6 @@ function BalanceDiscovery({ solved, onAnswered }) {
         onDragRelease={handleRelease}
         onDraggingChange={setDragging}
         onPlace={place}
-        disabled={solved}
       />
       <Balance
         left={left}
@@ -83,7 +96,7 @@ function BalanceDiscovery({ solved, onAnswered }) {
         dragging={dragging}
         leftZoneRef={leftZoneRef}
         rightZoneRef={rightZoneRef}
-        onItemTap={solved ? undefined : takeBack}
+        onItemTap={takeBack}
         ariaLabel="Balance à deux plateaux"
       />
       {canAnswer && (
@@ -95,12 +108,20 @@ function BalanceDiscovery({ solved, onAnswered }) {
           cols={1}
           explain="La balance penche toujours du côté le plus lourd : le plateau qui descend porte la plus grande masse."
           solved={solved}
-          onAnswered={onAnswered}
+          onAnswered={() => {
+            if (!verdictOn) setVerdictOn({ left: totalLeft, right: totalRight });
+            onAnswered();
+          }}
         />
       )}
       {!canAnswer && (
         <p className="text-center text-xs text-slate-400 italic">
           Pose au moins un objet de chaque côté pour comparer.
+        </p>
+      )}
+      {solved && (
+        <p className="text-center text-xs text-slate-500">
+          Continue à peser : reprends un objet et essaie une autre paire.
         </p>
       )}
     </div>

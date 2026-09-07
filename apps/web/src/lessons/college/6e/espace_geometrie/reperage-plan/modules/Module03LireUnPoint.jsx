@@ -70,7 +70,7 @@ export default function Module03LireUnPoint() {
         {
           num: 1,
           title: 'Croise les deux guides sur T',
-          subtitle: 'Touche le quadrillage ou utilise les flèches du clavier.',
+          subtitle: 'Attrape CHAQUE poignée séparément : chacune ne commande qu’un seul des deux nombres.',
           done: guideDone,
           content: (kit) => (
             <div className="space-y-3">
@@ -87,7 +87,6 @@ export default function Module03LireUnPoint() {
                   }
                 }}
                 labelledNodes={[{ col: T.col, row: T.row, name: 'T' }]}
-                disabled={guideDone}
                 ariaLabel="Quadrillage : amène le guide vertical et le guide horizontal sur le point T"
               />
               {!guideDone && (
@@ -96,17 +95,33 @@ export default function Module03LireUnPoint() {
                     ? 'Touche le quadrillage pour poser les deux guides.'
                     : aligned
                       ? 'Les guides se croisent sur T.'
-                      : 'Les guides ne passent pas encore par T — continue de les déplacer.'}
+                      : `Les guides se croisent en (${guides.vertical} ; ${guides.horizontal}). Tire la poignée bleue (en bas) pour le premier nombre, la verte (à gauche) pour le second.`}
                 </p>
               )}
               {guideDone && (
                 <>
-                  <Feedback tone="ok">
-                    Les guides se croisent sur T. Le guide vertical part de{' '}
-                    <strong className="font-mono">{T.col}</strong> sur l’axe horizontal — c’est
-                    l’abscisse ; le guide horizontal part de{' '}
-                    <strong className="font-mono">{T.row}</strong> sur l’axe vertical — c’est
-                    l’ordonnée.
+                  {/* Le quadrillage n'est plus figé : le retour décrit donc la
+                      position COURANTE des guides, jamais l'instant de la
+                      réussite (règle projet du 2026-09-06). */}
+                  <Feedback tone={aligned ? 'ok' : 'info'}>
+                    {aligned ? (
+                      <>
+                        Les guides se croisent sur T. Le guide vertical part de{' '}
+                        <strong className="font-mono">{T.col}</strong> sur l’axe horizontal — c’est
+                        l’abscisse ; le guide horizontal part de{' '}
+                        <strong className="font-mono">{T.row}</strong> sur l’axe vertical — c’est
+                        l’ordonnée.
+                      </>
+                    ) : (
+                      <>
+                        Tu as redéplacé les guides : ils se croisent maintenant en{' '}
+                        <strong className="font-mono">
+                          ({guides.vertical} ; {guides.horizontal})
+                        </strong>
+                        , et non sur T <span className="font-mono">({T.col} ; {T.row})</span>. Chaque
+                        croisement désigne un point, et un seul.
+                      </>
+                    )}
                   </Feedback>
                   {/* Les deux nombres sont maintenant lus : on peut nommer et
                       écrire le couple, PUIS fixer le geste en méthode. Les

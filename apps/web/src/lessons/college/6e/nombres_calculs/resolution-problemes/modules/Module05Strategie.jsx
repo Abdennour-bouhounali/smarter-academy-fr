@@ -39,8 +39,11 @@ function ChoixOuvert({ react, solved, onSolved }) {
   const [picks, setPicks] = useState([]);
   const [checked, setChecked] = useState(false);
 
+  /* RÈGLE PROJET (2026-09-06) : le choix reste rejouable après la validation.
+     La question porte sur « quelles stratégies conviennent ICI » — c'est en
+     essayant d'autres combinaisons que l'élève éprouve le critère, et le
+     verdict reste affiché pour chaque essai. */
   const toggle = (key) => {
-    if (solved) return;
     setChecked(false);
     setPicks((p) => (p.includes(key) ? p.filter((k) => k !== key) : [...p, key]));
   };
@@ -54,8 +57,8 @@ function ChoixOuvert({ react, solved, onSolved }) {
   };
 
   const showTone = (s) => {
-    const isSel = solved ? STRATEGIES.filter((x) => x.good).some((x) => x.key === s.key) : picks.includes(s.key);
-    if (checked || solved) {
+    const isSel = picks.includes(s.key);
+    if (checked) {
       if (s.good) return 'bg-emerald-50 border-emerald-400 text-emerald-800';
       if (isSel) return 'bg-rose-50 border-rose-400 text-rose-700';
       return 'bg-white border-slate-200 text-slate-400';
@@ -75,7 +78,6 @@ function ChoixOuvert({ react, solved, onSolved }) {
           <button
             key={s.key}
             type="button"
-            disabled={solved || checked}
             onClick={() => toggle(s.key)}
             aria-pressed={picks.includes(s.key)}
             className={`px-4 py-3 rounded-xl border-2 text-sm font-medium min-h-[48px] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${showTone(s)}`}
@@ -85,13 +87,15 @@ function ChoixOuvert({ react, solved, onSolved }) {
           </button>
         ))}
       </div>
-      {!solved && !checked && (
+      {!checked && (
         <div className="text-center">
-          <ValidateButton onClick={submit} disabled={picks.length === 0}>Valider</ValidateButton>
+          <ValidateButton onClick={submit} disabled={picks.length === 0}>
+            {solved ? 'Revalider' : 'Valider'}
+          </ValidateButton>
         </div>
       )}
-      {(checked || solved) && (
-        <Feedback tone={isRight || solved ? 'ok' : 'ko'}>
+      {checked && (
+        <Feedback tone={isRight ? 'ok' : 'ko'}>
           Le calcul direct (18 ÷ 3 = 6) et le schéma / manipulation (former des groupes de 3) fonctionnent tous
           les deux très bien ici. Le tableau et la droite graduée sont moins adaptés à ce type de partage.
         </Feedback>

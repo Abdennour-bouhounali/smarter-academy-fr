@@ -6,17 +6,21 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SolidView from '../components/SolidView';
 import PatronGrid from '../components/PatronGrid';
+import FoldLab from '../components/FoldLab';
 import {
   gridFromArt, gridOf, foldsIntoCube, filledCells, patronHint,
-  PATRON_CROIX, PATRON_ESCALIER,
+  PATRON_CROIX, PATRON_ESCALIER, PATRON_IMPOSSIBLE,
 } from '../components/solidesUtils';
 
 /**
  * Module 3 — MANIPULATION, et l'interaction SIGNATURE de la leçon.
  *
- * ACTION          l'élève coche des cases pour dessiner un patron.
+ * ACTION          l'élève coche des cases pour dessiner un patron, PUIS il
+ *                 saisit la figure et la replie à la main (FoldLab).
  * TRANSFORMATION  le verdict se recalcule à chaque clic, par SIMULATION du
- *                 pliage — jamais par comparaison à une liste mémorisée.
+ *                 pliage — jamais par comparaison à une liste mémorisée — et
+ *                 le pliage lui-même devient visible : les six faces se
+ *                 relèvent, ou se chevauchent.
  * SENS MATH.      un patron est une configuration qui se replie ; sa forme
  *                 exacte importe peu, c'est le pliage qui décide.
  * FEEDBACK        le refus est motivé (trop de cases, morceaux séparés, deux
@@ -28,23 +32,56 @@ import {
  */
 const VIDE = gridOf(3, 5, Array.from({ length: 3 }, () => Array(5).fill(false)));
 
+/* La surprise contrôlée : deux patrons de 6 cases, d'un seul morceau, très
+   semblables à l'œil — et un seul se referme. Le verdict n'est écrit nulle
+   part : c'est `foldsIntoCube`, donc la simulation du pliage, qui décide.
+   PATRON_IMPOSSIBLE (2 × 3) échoue par superposition ; le « T » à côté est
+   un patron valide du cube. */
+const PATRON_T = gridFromArt([
+  '.#..',
+  '###.',
+  '.#..',
+  '.#..',
+]);
+
+const PIEGE = [
+  { id: 'a', label: 'Patron A', grid: PATRON_IMPOSSIBLE },
+  { id: 'b', label: 'Patron B', grid: PATRON_T },
+];
+
 export default function Module03DeplierCube() {
   const [grid, setGrid] = useState(VIDE);
   const [libreDone, setLibreDone] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const [tries, setTries] = useState(0);
   const [nbDone, setNbDone] = useState(false);
+  /* Le taux de pliage : 0 = à plat, 1 = refermé. C'est LE geste de la
+     leçon, et il reste disponible en permanence. */
+  const [t, setT] = useState(0);
+  const [plieDone, setPlieDone] = useState(false);
+  /* Le piège : chaque patron a son propre taux de pliage, et l'étape est
+     acquise quand les DEUX ont été repliés jusqu'au bout — donc quand
+     l'élève a vu l'un fermer et l'autre se superposer. */
+  const [tPiege, setTPiege] = useState({ a: 0, b: 0 });
+  const [plies, setPlies] = useState([]);
+  const pieegeDone = plies.length >= 2;
 
   const result = foldsIntoCube(grid);
   const shown = revealed ? PATRON_CROIX : grid;
 
+  /* La grille reste modifiable APRÈS la réussite : c'est en changeant une
+     case et en repliant que l'élève voit un patron valide devenir
+     impossible. Seule la complétion cesse d'être re-déclenchée. */
   const toggle = (r, c, react) => {
-    if (libreDone || revealed) return;
+    if (revealed) return;
     const cells = grid.cells.map((row) => [...row]);
     cells[r][c] = !cells[r][c];
     const next = gridOf(grid.rows, grid.cols, cells);
     setGrid(next);
-    if (foldsIntoCube(next).ok) { react(true); setLibreDone(true); }
+    // Modifier le patron rouvre la boîte : on ne garde pas un pliage qui
+    // ne correspondrait plus à la figure affichée.
+    setT(0);
+    if (!libreDone && foldsIntoCube(next).ok) { react(true); setLibreDone(true); }
   };
 
   return (
@@ -78,7 +115,7 @@ export default function Module03DeplierCube() {
                 <PatronGrid
                   grid={shown}
                   onToggle={(r, c) => toggle(r, c, kit.react)}
-                  readOnly={libreDone || revealed}
+                  readOnly={revealed}
                   ariaLabel="Grille : coche les cases de ton patron"
                 />
               </div>
@@ -131,6 +168,96 @@ export default function Module03DeplierCube() {
         },
         {
           num: 2,
+          title: 'Referme la boîte',
+          subtitle: 'Attrape la figure et tire : les six faces se relèvent.',
+          done: plieDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Voici ton patron. Replie-le entièrement — puis rouvre-le, et recommence autant que
+                tu veux.
+              </p>
+
+              {/* LE geste de la leçon : le taux de pliage est continu et
+                  c'est l'élève qui le pilote, en saisissant la figure. */}
+              <FoldLab
+                grid={shown}
+                t={t}
+                onTChange={(v) => {
+                  setT(v);
+                  if (!plieDone && v >= 0.98) { kit.react?.(true); setPlieDone(true); }
+                }}
+                ariaLabel="Ton patron, à replier en cube"
+              />
+
+              {plieDone && (
+                <Feedback tone="ok">
+                  La boîte s’est refermée : chaque case est devenue une face, et il n’en manquait
+                  aucune. Rouvre-la, décoche une case, et replie — tu verras la boîte refuser de
+                  fermer.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 3,
+          title: 'Deux patrons qui se ressemblent',
+          subtitle: 'Un seul des deux se referme. Lequel ?',
+          done: pieegeDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Ces deux patrons ont tous les deux <strong>6 cases</strong> et se tiennent d’un seul
+                morceau. Replie-les l’un après l’autre.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {PIEGE.map((cas) => (
+                  <div key={cas.id} className="space-y-1.5">
+                    <p className="text-xs font-mono text-center text-slate-500">{cas.label}</p>
+                    <FoldLab
+                      grid={cas.grid}
+                      t={tPiege[cas.id]}
+                      onTChange={(v) => {
+                        setTPiege((prev) => ({ ...prev, [cas.id]: v }));
+                        if (v >= 0.98) {
+                          setPlies((prev) => (prev.includes(cas.id) ? prev : [...prev, cas.id]));
+                        }
+                      }}
+                      cell={28}
+                      ariaLabel={`${cas.label} : replie-le pour voir s’il ferme`}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {!pieegeDone && (
+                <Feedback tone="info">
+                  Replie les <strong>deux</strong> patrons jusqu’au bout ({plies.length} / 2 fait).
+                </Feedback>
+              )}
+
+              {pieegeDone && (
+                <>
+                  <Feedback tone="ok">
+                    Même nombre de cases, même allure — et pourtant l’un se referme, l’autre non :
+                    deux de ses cases réclament la <strong>même face</strong> du cube et se
+                    chevauchent (elles passent au rouge), pendant qu’une face reste à découvert.
+                    C’est le pliage qui tranche, jamais la ressemblance.
+                  </Feedback>
+                  {/* Volontairement AUCUNE brique ici : le module 4 est celui
+                      qui nomme le critère d'impossibilité (`patron-impossible`
+                      y est déclaré). Le module 3 se contente de faire VOIR le
+                      phénomène — le nommer ici le dédoublerait et l'audit
+                      l'attribuerait au mauvais module. */}
+                </>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 4,
           title: 'Y en a-t-il un seul possible ?',
           done: nbDone,
           content: (

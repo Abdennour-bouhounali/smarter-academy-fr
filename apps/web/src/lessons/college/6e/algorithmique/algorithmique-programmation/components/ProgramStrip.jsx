@@ -1,13 +1,22 @@
 import React from 'react';
-import { ChevronUp, ChevronDown, X, Minus, Plus } from 'lucide-react';
+import { ChevronUp, ChevronDown, X, Minus, Plus, GripVertical } from 'lucide-react';
+import { useDragDrop } from '../../../../../common/manip6e';
 import { INSTRUCTION_LABELS, countSteps } from './algoUtils';
 
 /**
  * ProgramStrip — le programme, lisible et modifiable carte par carte.
  *
- * TOUT est tap-first (§10.1) : ajouter = taper une carte de la palette ;
- * réordonner = ↑/↓ ; supprimer = ✕ ; régler une boucle = −/+. Aucun drag
- * n'est nécessaire, donc tout est utilisable au doigt ET au clavier.
+ * RÉORDONNER, C'EST DÉPLACER (demande utilisateur du 2026-09-07) : l'élève
+ * SAISIT une carte par sa poignée et la lâche à sa nouvelle place. Le geste
+ * dit ce qu'il fait — « cette instruction passe avant celle-là » —, ce qu'un
+ * couple de flèches ne montrait pas. C'est exactement le point du module 4 :
+ * l'ordre n'est pas une propriété du programme, c'est une position qu'on
+ * choisit.
+ *
+ * Les chemins de secours restent entiers (§17, §27) : ajouter = taper une
+ * carte de la palette ; réordonner = ↑/↓ au clavier OU prendre-puis-poser ;
+ * supprimer = ✕ ; régler une boucle = −/+. Tout reste donc faisable au doigt
+ * comme au clavier, sans souris.
  *
  * La carte en cours d'exécution est surlignée (`runningIndex`) : c'est la
  * correspondance instruction → action, montrée et non affirmée.
@@ -97,6 +106,22 @@ export default function ProgramStrip({
     [next[i], next[j]] = [next[j], next[i]];
     update(next);
   };
+  /* Le glisser-déposer de réordonnancement : on prend la carte `from` et on
+     la lâche sur la position `to`. Le tableau est reconstruit par extraction
+     puis insertion — jamais par échange, sinon lâcher une carte trois rangs
+     plus bas produirait une permutation que l'élève n'a pas demandée. */
+  const dnd = useDragDrop({
+    onDrop: (from, to) => {
+      const a = Number(from);
+      const b = Number(to);
+      if (locked || Number.isNaN(a) || Number.isNaN(b) || a === b) return;
+      const next = [...program];
+      const [moved] = next.splice(a, 1);
+      next.splice(b, 0, moved);
+      update(next);
+    },
+  });
+
   const setTimes = (i, times) => {
     const next = [...program];
     next[i] = { ...next[i], times: Math.min(10, Math.max(1, times)) };
@@ -116,6 +141,14 @@ export default function ProgramStrip({
         )}
       </div>
 
+      {!locked && program.length > 1 && (
+        <p className="text-[11px] text-slate-400" role="status">
+          {dnd.held !== null
+            ? 'Une carte est en main : lâche-la sur la poignée de sa nouvelle place.'
+            : 'Attrape une carte par sa poignée ⣿ pour la déplacer.'}
+        </p>
+      )}
+
       {program.length === 0 ? (
         <p className="text-xs text-slate-400 italic py-2">{emptyHint}</p>
       ) : (
@@ -126,12 +159,47 @@ export default function ProgramStrip({
             return (
               <li
                 key={i}
+                {...(locked ? {} : dnd.zoneProps(String(i)))}
                 className={`${CARD_BASE} ${
                   isRunning
                     ? 'border-amber-400 bg-amber-50 ring-2 ring-amber-200'
+                    : dnd.hoverZone === String(i) && dnd.held !== String(i)
+                    ? 'border-blue-500 bg-blue-50'
+                    : dnd.held === String(i)
+                    ? 'border-slate-800 bg-white shadow-lg'
                     : 'border-slate-200 bg-slate-50'
                 }`}
               >
+                {/* LA POIGNÉE : c'est la carte elle-même qu'on saisit et qu'on
+                    déplace. 44 × 44 px, et elle sert aussi de bouton
+                    prendre/poser au clavier. */}
+                {!locked ? (() => {
+                  const src = dnd.sourceProps(String(i));
+                  const holdingOther = dnd.held !== null && dnd.held !== String(i);
+                  return (
+                    <button
+                      type="button"
+                      {...src}
+                      aria-label={
+                        dnd.held === String(i)
+                          ? `Instruction ${i + 1} en main — active une autre poignée pour l’y placer`
+                          : holdingOther
+                          ? `Placer l’instruction en main à la position ${i + 1}`
+                          : `Déplacer l’instruction ${i + 1}`
+                      }
+                      /* Une poignée sert des DEUX côtés du geste : elle prend sa
+                         propre carte, et elle accueille celle qui est en main —
+                         c'est ce qui rend le réordonnancement faisable sans
+                         souris, exactement comme le glissement. */
+                      onClick={(e) => (holdingOther ? dnd.dropHere(String(i)) : src.onClick?.(e))}
+                      className={`w-11 h-11 -my-1 shrink-0 inline-flex items-center justify-center rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                        holdingOther ? 'text-blue-600 bg-blue-50' : 'text-slate-400 hover:bg-slate-200'
+                      }`}
+                    >
+                      <GripVertical className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                  );
+                })() : null}
                 <span className="w-5 shrink-0 text-[11px] font-mono text-slate-400 tabular-nums">
                   {i + 1}
                 </span>

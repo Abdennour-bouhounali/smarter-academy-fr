@@ -103,14 +103,15 @@ function PlacerNombre({ item, solved, onSolved, react }) {
           height={190}
           mode="place"
           value={pos}
+          // RÈGLE PROJET (2026-09-06) : la droite ne se fige JAMAIS après la
+          // validation. L'élève garde le curseur pour aller voir où tombent
+          // les voisins de la cible — le repère fantôme reste affiché à côté.
           onChange={(v) => {
-            if (solved) return;
             setPos(v);
             setChecked(false);
           }}
           snap={item.step}
           revealValue={solved || checked}
-          disabled={solved}
           ghost={solved || (checked && !isRight) ? { value: item.target, label: formatFr(item.target) } : null}
           ariaLabel={`Place ${formatFr(item.target)} entre ${formatFr(item.min)} et ${formatFr(item.max)}`}
         />

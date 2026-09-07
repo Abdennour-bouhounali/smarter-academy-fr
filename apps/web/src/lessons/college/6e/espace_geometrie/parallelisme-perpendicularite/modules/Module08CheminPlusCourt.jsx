@@ -76,7 +76,6 @@ export default function Module08CheminPlusCourt() {
                   }
                 }}
                 box={BOX}
-                disabled={foundDone}
                 ariaLabel="Route et maison M : choisis le point d’arrivée H"
               />
               {foundDone && (

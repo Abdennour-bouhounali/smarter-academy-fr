@@ -6,6 +6,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DataTable from '../components/DataTable';
+import CrossFinder from '../components/CrossFinder';
 import { TOURNOI, ELEVES } from '../components/tournoiData';
 import { cellValue, makeTable, parseDec, formatDec } from '../components/tableUtils';
 
@@ -15,8 +16,12 @@ import { cellValue, makeTable, parseDec, formatDec } from '../components/tableUt
  * Le piège n°1 des tableaux à double entrée n'est pas de ne pas savoir lire,
  * c'est de glisser d'une ligne à l'autre. Le module l'attaque de front :
  *
- *  1. lecture guidée : la ligne et la colonne visées sont surlignées, on
- *     voit physiquement le croisement se former ;
+ *  1. LABO D'OUVERTURE : l'élève traîne lui-même un viseur sur la grille.
+ *     Les deux bandes le suivent en continu et ne se rencontrent qu'en une
+ *     case, dont la phrase de lecture se réécrit sous la grille. Le
+ *     surlignage n'est plus SUBI (deux bandes posées par le module sur une
+ *     case déjà choisie) : il est PRODUIT par le geste, et le décalage d'une
+ *     ligne — l'erreur n°1 — se voit changer de propriétaire en direct ;
  *  2. lecture libre, avec des distracteurs qui sont TOUS des cases voisines
  *     réelles du tableau (la ligne du dessous, la colonne d'à côté) ;
  *  3. lecture inverse : on donne la valeur, l'élève retrouve QUI et QUOI ;
@@ -34,10 +39,21 @@ const BUS = makeTable({
 });
 
 export default function Module04LireCroisement() {
+  const [cross, setCross] = useState({ r: 3, c: 0 });
+  const [visited, setVisited] = useState(['3-0']);
   const [guideDone, setGuideDone] = useState(false);
   const [libreDone, setLibreDone] = useState(false);
   const [inverseDone, setInverseDone] = useState(false);
   const [busDone, setBusDone] = useState(false);
+
+  /* JALON SUR GESTE CONTINU — on compte des CROISEMENTS distincts, pas des
+     pixels : au moins trois cases visitées, réparties sur au moins deux
+     lignes ET deux colonnes. Un glissement horizontal seul ne peut donc pas
+     valider l'étape : il faut avoir changé de ligne, c'est-à-dire avoir vu
+     le nombre changer de propriétaire. */
+  const rowsSeen = new Set(visited.map((k) => k.split('-')[0])).size;
+  const colsSeen = new Set(visited.map((k) => k.split('-')[1])).size;
+  const exploreDone = visited.length >= 3 && rowsSeen >= 2 && colsSeen >= 2;
 
   return (
     <ContentModule
@@ -60,13 +76,55 @@ export default function Module04LireCroisement() {
       steps={[
         {
           num: 1,
+          title: 'Promène le viseur',
+          subtitle: 'Les deux bandes te suivent — regarde ce que la case raconte.',
+          done: exploreDone,
+          content: (kit) => (
+            <div className="space-y-3">
+              <p className="text-sm text-slate-600">
+                Attrape la grille et fais glisser. La <strong>bande de ligne</strong> et la{' '}
+                <strong>bande de colonne</strong> te suivent : elles ne se rencontrent jamais qu'en{' '}
+                <strong>une seule case</strong>.
+              </p>
+              <CrossFinder
+                table={TOURNOI}
+                cross={cross}
+                onCrossChange={(next) => {
+                  setCross(next);
+                  const key = `${next.r}-${next.c}`;
+                  setVisited((prev) => {
+                    if (prev.includes(key)) return prev;
+                    kit.react?.(true);
+                    return [...prev, key];
+                  });
+                }}
+                caption="Tournoi de la 6e B — traîne le viseur"
+                tone="violet"
+              />
+              {!exploreDone ? (
+                <Feedback tone="info">
+                  {rowsSeen < 2
+                    ? 'Change de LIGNE sans lâcher : le nombre change — et il change de propriétaire.'
+                    : 'Change aussi de COLONNE : la ligne reste la même, mais l’épreuve change.'}
+                </Feedback>
+              ) : (
+                <Feedback tone="ok">
+                  Tu l'as vu de tes yeux : glisser d'une seule ligne, et le même endroit raconte la
+                  performance de quelqu'un d'autre. Voilà pourquoi il faut tenir la ligne ET la colonne.
+                </Feedback>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 2,
           title: 'Lecture guidée',
           done: guideDone,
           content: (
             <div className="space-y-3">
               <p className="text-sm text-slate-600">
-                La ligne de <strong>Léa</strong> et la colonne <strong>Précision</strong> sont éclairées : leur
-                croisement est la valeur cherchée.
+                Le viseur est rangé. La ligne de <strong>Léa</strong> et la colonne{' '}
+                <strong>Précision</strong> sont éclairées : leur croisement est la valeur cherchée.
               </p>
               <DataTable
                 table={TOURNOI}
@@ -107,7 +165,7 @@ export default function Module04LireCroisement() {
           ),
         },
         {
-          num: 2,
+          num: 3,
           title: 'Sans les repères',
           done: libreDone,
           content: (
@@ -128,7 +186,7 @@ export default function Module04LireCroisement() {
           ),
         },
         {
-          num: 3,
+          num: 4,
           title: 'Lecture inverse',
           done: inverseDone,
           content: (
@@ -166,7 +224,7 @@ export default function Module04LireCroisement() {
           ),
         },
         {
-          num: 4,
+          num: 5,
           title: 'Transfert : les horaires de bus',
           done: busDone,
           content: (

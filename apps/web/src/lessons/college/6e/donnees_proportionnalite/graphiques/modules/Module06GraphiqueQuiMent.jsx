@@ -6,6 +6,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import BarChart from '../components/BarChart';
+import AxisCutter from '../components/AxisCutter';
 import { makeSeries, withValue } from '../components/chartUtils';
 
 /**
@@ -41,8 +42,12 @@ const CLUB_VRAI = makeSeries({
 const CLUB_FAUX = withValue(CLUB_VRAI, 2, 20); // mercredi dessiné à 20 au lieu de 11
 
 export default function Module06GraphiqueQuiMent() {
+  // Le pied de l'axe, piloté par l'élève : c'est LUI qui fabrique le trucage.
+  const [base, setBase] = useState(0);
+  const [cutSeen, setCutSeen] = useState(false);
   const [tronqueDone, setTronqueDone] = useState(false);
   const [reperageDone, setReperageDone] = useState(false);
+  const [pickedBar, setPickedBar] = useState(null);
   const [correctionDone, setCorrectionDone] = useState(false);
   const [gradDone, setGradDone] = useState(false);
 
@@ -68,28 +73,38 @@ export default function Module06GraphiqueQuiMent() {
         {
           num: 1,
           title: 'Piège 1 : l’axe qui ne part pas de zéro',
+          subtitle: 'Fabrique le mensonge de tes propres mains.',
           done: tronqueDone,
-          content: (
+          content: (kit) => (
             <div className="space-y-3">
               <p className="text-sm text-slate-600">
                 Une publicité compare la satisfaction de deux marques : <strong>96 %</strong> contre{' '}
-                <strong>100 %</strong>. Voici son graphique.
+                <strong>100 %</strong>. Les deux nombres sont exacts, et ils ne changeront pas.{' '}
+                <strong>Attrape le pied de l’axe</strong> (la poignée à gauche) et fais-le monter.
               </p>
-              <div className="bg-rose-50 border-2 border-rose-200 rounded-2xl p-3">
-                <p className="text-xs font-bold text-rose-700 text-center mb-1">Le graphique de la publicité</p>
-                <BarChart
-                  series={VENTES}
-                  step={5}
-                  zeroBased={false}
-                  baseValue={95}
-                  title="Satisfaction (%)"
-                  tone="rose"
-                />
-              </div>
-              <div className="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-3">
-                <p className="text-xs font-bold text-emerald-700 text-center mb-1">Le même écart, axe depuis 0</p>
-                <BarChart series={VENTES} step={20} title="Satisfaction (%)" tone="emerald" />
-              </div>
+              {/* L'élève ne CONSTATE plus le trucage : il le FABRIQUE. Les
+                  valeurs restent celles de la publicité ; seul l'endroit où
+                  l'axe commence obéit à son doigt. */}
+              <AxisCutter
+                series={VENTES}
+                baseValue={base}
+                onChange={(v) => {
+                  setBase(v);
+                  if (v >= 90 && !cutSeen) { setCutSeen(true); kit.react(true); }
+                }}
+                step={base === 0 ? 20 : 5}
+                title="Satisfaction (%)"
+                axisLabel="%"
+                readout={
+                  <p className="text-xs text-center text-slate-600 mt-1">
+                    {base === 0
+                      ? 'Axe depuis 0 : les deux barres se ressemblent, et c’est la vérité.'
+                      : cutSeen
+                      ? 'Tu viens de fabriquer le trucage. Redescends à 0 : les nombres n’ont jamais bougé.'
+                      : 'Continue de monter le pied de l’axe et regarde l’écart enfler.'}
+                  </p>
+                }
+              />
               <TapQuestion
                 prompt="Pourquoi le premier graphique est-il trompeur ?"
                 options={[
@@ -129,12 +144,15 @@ export default function Module06GraphiqueQuiMent() {
               <BarChart
                 series={CLUB_FAUX}
                 step={5}
-                mode={reperageDone ? 'display' : 'read'}
-                selected={reperageDone ? 2 : null}
+                mode="read"
+                selected={pickedBar}
                 onSelect={(i) => {
+                  // Le diagramme reste désignable : l'élève peut vérifier les
+                  // trois barres contre le tableau, y compris après avoir
+                  // trouvé la fautive (règle projet du 2026-09-06).
+                  setPickedBar(i);
                   const ok = i === 2;
-                  kit.react(ok);
-                  if (ok) setReperageDone(true);
+                  if (!reperageDone) { kit.react(ok); if (ok) setReperageDone(true); }
                 }}
                 title="Présents au club (graphique publié)"
                 axisLabel="élèves"

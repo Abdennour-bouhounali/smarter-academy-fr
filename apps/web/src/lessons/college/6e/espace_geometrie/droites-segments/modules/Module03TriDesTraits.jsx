@@ -72,7 +72,6 @@ export default function Module03TriDesTraits() {
                   setSeen((s) => (s.includes(k) ? s : [...s, k]));
                 }}
                 box={BOX}
-                disabled={morphDone}
               />
               <div className="flex items-center justify-between gap-2 flex-wrap">
                 <span className="text-xs font-mono text-slate-500">

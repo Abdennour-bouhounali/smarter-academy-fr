@@ -22,10 +22,14 @@ function FractionBuilder({ target, den: targetDen, onSolved, solved, hint, react
 
   const isRight = num === target && den === targetDen;
 
+  // RÈGLE PROJET (2026-09-06) : le constructeur ne se fige JAMAIS après la
+  // validation de l'étape. Les bornes gardées sont MATHÉMATIQUES : le nombre
+  // du haut ne descend pas sous 0, et il ne dépasse pas le nombre du bas —
+  // au-delà, on ne prend plus des parts de l'unité, on en prend plusieurs.
+  const maxNum = den ?? 1000;
   const bump = (delta) => {
-    if (solved) return;
     setChecked(false);
-    setNum((n) => Math.max(0, n - 0 + delta));
+    setNum((n) => Math.min(maxNum, Math.max(0, n + delta)));
   };
 
   return (
@@ -39,7 +43,7 @@ function FractionBuilder({ target, den: targetDen, onSolved, solved, hint, react
             <button
               type="button"
               onClick={() => bump(-1)}
-              disabled={solved}
+              disabled={num === 0}
               aria-label="Diminuer le nombre du haut"
               className="w-9 h-9 rounded-lg bg-white border-2 border-slate-200 flex items-center justify-center hover:border-slate-400 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
@@ -51,7 +55,7 @@ function FractionBuilder({ target, den: targetDen, onSolved, solved, hint, react
             <button
               type="button"
               onClick={() => bump(1)}
-              disabled={solved}
+              disabled={num >= maxNum}
               aria-label="Augmenter le nombre du haut"
               className="w-9 h-9 rounded-lg bg-white border-2 border-slate-200 flex items-center justify-center hover:border-slate-400 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
@@ -74,11 +78,12 @@ function FractionBuilder({ target, den: targetDen, onSolved, solved, hint, react
                 key={d}
                 type="button"
                 onClick={() => {
-                  if (solved) return;
                   setChecked(false);
                   setDen(d);
+                  // Changer le découpage ne doit pas laisser un nombre du haut
+                  // impossible derrière lui.
+                  setNum((n) => Math.min(n, d));
                 }}
-                disabled={solved}
                 aria-pressed={den === d}
                 className={`px-3 py-2 rounded-lg border-2 font-mono text-sm font-bold min-h-[40px] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                   den === d

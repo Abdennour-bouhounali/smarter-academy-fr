@@ -39,11 +39,15 @@ export default function Module05PoserEquerre() {
   const state = isEquerreAligned(equerre, LINE, POINT);
 
   const handleChange = (next) => {
-    if (placeDone || revealed) return;
+    // `revealed` fige : l'équerre montre alors la RÉPONSE. Mais une réussite
+    // ne fige pas — reposer l'équerre et voir les voyants s'éteindre puis se
+    // rallumer est exactement le rituel qu'on veut faire répéter
+    // (règle projet du 2026-09-06).
+    if (revealed) return;
     setEquerre(next);
     setMoves((m) => m + 1);
     const st = isEquerreAligned(next, LINE, POINT);
-    if (st.ok) setPlaceDone(true);
+    if (st.ok && !placeDone) setPlaceDone(true);
   };
 
   return (
@@ -83,15 +87,19 @@ export default function Module05PoserEquerre() {
                 }}
                 mode="verify"
                 box={BOX}
-                disabled={placeDone || revealed}
+                disabled={revealed}
                 ariaLabel="Équerre à poser sur la droite d, au point A"
               />
 
               {(placeDone || revealed) && (
                 <>
-                  <Feedback tone={revealed ? 'info' : 'ok'}>
+                  {/* Texte VIVANT : si l'élève rebouge l'équerre après coup,
+                      « les deux voyants sont allumés » deviendrait faux. */}
+                  <Feedback tone={revealed || state.ok ? (revealed ? 'info' : 'ok') : 'hint'}>
                     {revealed && <strong>Pas grave, on te le montre. </strong>}
-                    Les deux voyants sont allumés en même temps : l’équerre est bien posée.
+                    {revealed || state.ok
+                      ? 'Les deux voyants sont allumés en même temps : l’équerre est bien posée.'
+                      : 'Tu as rebougé l’équerre : les deux voyants ne sont plus allumés ensemble. L’étape reste acquise — repose-la pour les rallumer.'}
                   </Feedback>
                   <KnowledgeBrick
                     id="rituel-equerre"

@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, XCircle } from 'lucide-react';
+import useDragDrop from '../manip6e/useDragDrop';
 
 /**
  * InfoSorter — tri des informations utiles / inutiles d'un énoncé.
  *
- * Interaction en deux temps, robuste au tactile : on touche une carte pour
- * la sélectionner, puis on touche le bac de destination. Pas de glisser
- * fragile sur mobile.
+ * GLISSER-DÉPOSER, avec le tap en secours (demande utilisateur du 2026-09-07 :
+ * « make them a drag and drop » — deux clics pour ranger une carte, c'est un
+ * formulaire, pas un tri). On attrape la carte et on la lâche dans un bac ;
+ * la carte suit le doigt, le bac survolé s'allume.
+ *
+ * L'ancien en-tête invoquait « pas de glisser fragile sur mobile » pour
+ * justifier les deux temps. Ce n'est plus vrai : `useDragDrop` s'appuie sur
+ * `setPointerCapture` + `elementFromPoint`, donc le geste suit le doigt même
+ * quand il sort de la carte, au tactile comme à la souris. Le chemin en deux
+ * temps reste disponible tel quel — c'est aussi le chemin clavier et lecteur
+ * d'écran (activer la carte la prend, activer le bac l'y pose).
  *
  * @param {{id, text, useful}[]} items
  * @param {boolean} [formative] quand true (modules de contenu, politique
@@ -20,17 +29,25 @@ import { CheckCircle2, XCircle } from 'lucide-react';
  */
 export default function InfoSorter({ items, onSolved, solved, formative = false, onCheck }) {
   const [assign, setAssign] = useState({}); // id -> 'utile' | 'inutile'
-  const [selected, setSelected] = useState(null);
   const [checked, setChecked] = useState(false);
+
+  // Le geste (pointeur ET clavier) est délégué au hook partagé ; ce composant
+  // ne garde que la mathématique du tri.
+  const dd = useDragDrop({
+    onDrop: (id, bin) => {
+      setChecked(false);
+      setAssign((a) => ({ ...a, [id]: bin }));
+    },
+  });
+  const selected = dd.held;
 
   const allAssigned = items.every((it) => assign[it.id]);
   const allRight = items.every((it) => assign[it.id] === (it.useful ? 'utile' : 'inutile'));
 
-  const place = (bin) => {
-    if (selected === null || solved) return;
+  // Reposer une carte déjà rangée : on la remet dans la réserve.
+  const unassign = (id) => {
+    setAssign((a) => { const n = { ...a }; delete n[id]; return n; });
     setChecked(false);
-    setAssign((a) => ({ ...a, [selected]: bin }));
-    setSelected(null);
   };
 
   const pool = items.filter((it) => !assign[it.id]);
@@ -43,13 +60,27 @@ export default function InfoSorter({ items, onSolved, solved, formative = false,
     return right ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800';
   };
 
+  const heldItem = items.find((it) => it.id === dd.held);
+
   return (
     <div className="space-y-4">
+      {/* La carte transportée suit le pointeur. `pointer-events-none` pour
+          qu'elle ne masque jamais le bac visé sous le doigt. */}
+      {dd.ghost && heldItem && (
+        <div
+          aria-hidden="true"
+          className="fixed z-50 pointer-events-none px-3 py-2.5 rounded-xl border-2 border-blue-500 bg-blue-50 text-blue-900 text-sm font-medium shadow-lg max-w-[260px]"
+          style={{ left: dd.ghost.x + 12, top: dd.ghost.y + 12 }}
+        >
+          {heldItem.text}
+        </div>
+      )}
+
       {/* Réserve de cartes */}
       {pool.length > 0 && (
         <div>
           <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-2">
-            Touche une information, puis un bac
+            Fais glisser une information dans un bac
           </div>
           <div className="flex flex-wrap gap-2">
             {pool.map((it) => (
@@ -57,8 +88,8 @@ export default function InfoSorter({ items, onSolved, solved, formative = false,
                 key={it.id}
                 layout
                 type="button"
-                onClick={() => setSelected(it.id)}
-                aria-pressed={selected === it.id}
+                {...dd.sourceProps(it.id)}
+                style={{ touchAction: 'none', cursor: 'grab' }}
                 className={`px-3 py-2.5 rounded-xl border-2 text-sm font-medium text-left max-w-[260px] transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                   selected === it.id ? 'bg-blue-50 border-blue-500 ring-2 ring-blue-300 text-blue-900' : 'bg-white border-slate-200 text-slate-700 hover:border-slate-400'
                 }`}
@@ -73,12 +104,15 @@ export default function InfoSorter({ items, onSolved, solved, formative = false,
       {/* Bacs de tri */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div
+          {...dd.zoneProps('utile')}
           role="button"
           tabIndex={0}
-          onClick={() => place('utile')}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') place('utile'); }}
+          onClick={() => dd.dropHere('utile')}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dd.dropHere('utile'); } }}
           className={`rounded-2xl border-2 border-dashed p-3 min-h-[100px] space-y-1.5 transition-colors ${
-            selected !== null ? 'border-emerald-400 bg-emerald-50/50 cursor-pointer' : 'border-slate-200 bg-slate-50'
+            dd.hoverZone === 'utile' ? 'border-emerald-500 bg-emerald-50 ring-2 ring-emerald-300'
+              : selected !== null ? 'border-emerald-400 bg-emerald-50/50 cursor-pointer'
+              : 'border-slate-200 bg-slate-50'
           }`}
         >
           <div className="text-[11px] font-mono font-bold text-emerald-600 uppercase tracking-wider">
@@ -91,8 +125,7 @@ export default function InfoSorter({ items, onSolved, solved, formative = false,
               layout
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              disabled={solved}
-              onClick={(e) => { e.stopPropagation(); if (!solved) setAssign((a) => { const n = { ...a }; delete n[it.id]; return n; }); setChecked(false); }}
+              onClick={(e) => { e.stopPropagation(); unassign(it.id); }}
               className={`w-full text-left px-3 py-2 rounded-lg border-2 text-sm transition-colors ${cardTone(it)} ${solved ? '' : 'hover:opacity-80'}`}
             >
               {checked && (it.useful ? <CheckCircle2 className="inline w-3.5 h-3.5 mr-1.5" aria-hidden="true" /> : <XCircle className="inline w-3.5 h-3.5 mr-1.5" aria-hidden="true" />)}
@@ -102,12 +135,15 @@ export default function InfoSorter({ items, onSolved, solved, formative = false,
         </div>
 
         <div
+          {...dd.zoneProps('inutile')}
           role="button"
           tabIndex={0}
-          onClick={() => place('inutile')}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') place('inutile'); }}
+          onClick={() => dd.dropHere('inutile')}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dd.dropHere('inutile'); } }}
           className={`rounded-2xl border-2 border-dashed p-3 min-h-[100px] space-y-1.5 transition-colors ${
-            selected !== null ? 'border-slate-400 bg-slate-50 cursor-pointer' : 'border-slate-200 bg-slate-50'
+            dd.hoverZone === 'inutile' ? 'border-slate-500 bg-slate-100 ring-2 ring-slate-300'
+              : selected !== null ? 'border-slate-400 bg-slate-50 cursor-pointer'
+              : 'border-slate-200 bg-slate-50'
           }`}
         >
           <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">
@@ -120,8 +156,7 @@ export default function InfoSorter({ items, onSolved, solved, formative = false,
               layout
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              disabled={solved}
-              onClick={(e) => { e.stopPropagation(); if (!solved) setAssign((a) => { const n = { ...a }; delete n[it.id]; return n; }); setChecked(false); }}
+              onClick={(e) => { e.stopPropagation(); unassign(it.id); }}
               className={`w-full text-left px-3 py-2 rounded-lg border-2 text-sm transition-colors ${cardTone(it)} ${solved ? '' : 'hover:opacity-80'}`}
             >
               {checked && (!it.useful ? <CheckCircle2 className="inline w-3.5 h-3.5 mr-1.5" aria-hidden="true" /> : <XCircle className="inline w-3.5 h-3.5 mr-1.5" aria-hidden="true" />)}

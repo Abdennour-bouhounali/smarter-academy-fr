@@ -1,32 +1,56 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import AngleFigure from '../components/AngleFigure';
+import OuvertureLab from '../components/OuvertureLab';
 import { formatDeg } from '../components/angleUtils';
 
 
 /**
- * Module 1 — déclencheur : l'angle est une OUVERTURE.
+ * Module 1 — LABORATOIRE : « L'angle est une OUVERTURE ».
  *
- * L'élève ouvre la porte à la main : les côtés ne s'allongent pas, c'est
- * l'écartement qui grandit. Puis le piège maître de toute la leçon — deux
- * angles de 40°, l'un aux côtés courts, l'autre aux côtés très longs.
+ * Activity: sur un même angle, trois poignées indépendantes — faire TOURNER
+ *   le côté mobile, et RALLONGER chacun des deux côtés séparément.
+ * Mathematical objective: la mesure d'un angle dépend de l'ouverture et
+ *   d'elle seule ; la longueur des côtés n'a aucun effet.
+ * Student action: chaque poignée agit immédiatement sur la figure ; la
+ *   mesure affichée réagit à l'une et reste de marbre devant les autres.
+ * Mathematical state: un triplet (deg, r0, r1) dont DEUX composantes sont
+ *   mathématiquement inertes — c'est cette inertie qui est l'objet du module.
+ * Expected observation: on peut doubler la longueur des deux côtés sans
+ *   gagner un seul degré ; en revanche, une rotation minuscule change la
+ *   mesure aussitôt.
+ * Misconception targeted: « l'angle aux côtés longs est le plus grand » —
+ *   LA misconception de 6e sur les angles, et la raison pour laquelle tant
+ *   d'élèves lisent un rapporteur de travers.
+ * Controlled surprise: la prédiction porte sur l'effet d'un rallongement ;
+ *   la majorité annonce que la mesure grandira. Elle ne bouge pas.
+ * Formalization: le mot « angle » à l'étape 1 (après la rotation), la règle
+ *   « la longueur des côtés ne compte pas » à l'étape 2 — chacun après le
+ *   geste qui le fonde.
+ * Scaffolding: aucune poignée ne se fige après validation ; les extrêmes
+ *   (5°, 175°, côtés minimaux et maximaux) sont tous atteignables, au doigt
+ *   comme au clavier.
+ *
+ * L'ancienne version ouvrait une porte (une seule poignée), puis présentait
+ * DEUX figures dessinées de 40° pour asséner que la longueur ne compte pas :
+ * l'élève lisait deux images et cochait. Ici il tire lui-même sur les côtés
+ * et voit le nombre refuser de bouger — sa propre main réfute son intuition.
  */
 const START_DEG = 20;
-const TARGET_DEG = 90;
 
 const RAYONS_Q = {
-  q: 'Ces deux angles ont exactement la même ouverture (40°), mais les côtés du second sont bien plus longs. Lequel est le PLUS GRAND ?',
+  q: 'Tu viens de rallonger les côtés au maximum, puis de les raccourcir au minimum. Qu’est-il arrivé à la mesure pendant ces gestes ?',
   options: [
-    'Celui de gauche (côtés courts)',
-    'Celui de droite (côtés longs)',
-    'Ils sont égaux : la longueur des côtés ne change rien',
+    'Elle a grandi quand les côtés se sont allongés',
+    'Elle a diminué quand les côtés se sont allongés',
+    'Elle n’a pas bougé d’un seul degré : seule la rotation la change',
   ],
   correct: 2,
   explain:
-    'Un angle mesure une OUVERTURE, pas une longueur. Prolonger ses côtés ne l’ouvre pas davantage : les deux angles mesurent 40°. C’est LE piège le plus fréquent des angles.',
+    'Un angle mesure une OUVERTURE, pas une longueur. Prolonger ses côtés ne l’ouvre pas davantage — c’est exactement ce que le compteur vient de te montrer en restant figé pendant que tu tirais. C’est LE piège le plus fréquent des angles.',
 };
 
 const NOTATION_Q = {
@@ -36,45 +60,78 @@ const NOTATION_Q = {
   explain: 'La lettre du milieu est toujours le SOMMET — le point d’où partent les deux demi-droites. Les deux autres lettres nomment un point sur chaque côté.',
 };
 
-function PorteOuvrante({ react, solved, onSolved }) {
-  const [deg, setDeg] = useState(solved ? TARGET_DEG : START_DEG);
-  const [maxSeen, setMaxSeen] = useState(solved ? TARGET_DEG : START_DEG);
-  const done = solved || maxSeen >= TARGET_DEG;
+/**
+ * ACTION      trois poignées : la rotation (bleue, sur le côté mobile) et
+ *             les deux bouts de côté (blanches, cerclées de rouge).
+ * CHANGE      la figure et la mesure se recalculent à chaque pixel.
+ * OBSERVATION la mesure suit la rotation ; elle ignore les allongements.
+ * SENS        l'angle est une ouverture — d'où les degrés, et non les cm.
+ *
+ * L'étape est validée quand l'élève a fait les DEUX familles de gestes :
+ * tourner (au moins 30° d'amplitude) et rallonger un côté. Sans les deux,
+ * l'observation « seule la rotation compte » n'a pas été produite.
+ */
+function AngleLab({ react, solved, onSolved }) {
+  const [deg, setDeg] = useState(START_DEG);
+  const [rays, setRays] = useState([60, 60]);
+  const [tourne, setTourne] = useState(false);
+  const [rallonge, setRallonge] = useState(false);
+  // La mesure au moment du premier allongement : c'est la preuve, gardée par
+  // le code et non par une phrase, que le nombre n'a pas bougé.
+  const degAuRallonge = React.useRef(null);
+  const done = solved || (tourne && rallonge);
 
-  const handleChange = (d) => {
-    if (done) return;
+  const changeDeg = (d) => {
     setDeg(d);
-    if (d > maxSeen) {
-      setMaxSeen(d);
-      if (d >= TARGET_DEG) {
-        react(true);
-        onSolved?.();
-      }
-    }
+    if (Math.abs(d - START_DEG) >= 30) setTourne(true);
   };
+
+  const changeRay = (i, v) => {
+    setRays((prev) => {
+      const next = [...prev];
+      next[i] = v;
+      if (Math.abs(v - prev[i]) > 0) {
+        if (degAuRallonge.current === null) degAuRallonge.current = deg;
+        setRallonge(true);
+      }
+      return next;
+    });
+  };
+
+  React.useEffect(() => {
+    if (tourne && rallonge && !solved) { react(true); onSolved?.(); }
+  }, [tourne, rallonge, solved, react, onSolved]);
 
   return (
     <div className="space-y-3">
       <p className="text-sm text-slate-600">
-        Voici une porte vue du dessus, fermée à {formatDeg(START_DEG)}. Fais glisser le battant (ou utilise les
-        boutons ±10°) pour l'ouvrir en grand — au moins jusqu'à l'angle droit.
+        Voici une porte vue du dessus. Attrape la <strong className="text-sky-600">poignée bleue</strong> pour
+        la faire pivoter — puis les <strong className="text-rose-600">bouts des côtés</strong> pour les
+        rallonger. Surveille le nombre à chaque geste.
       </p>
-      <AngleFigure
-        deg={done ? Math.max(deg, TARGET_DEG) : deg}
-        rotation={0}
-        rayLengths={[95, 95]}
-        arcLabel={formatDeg(done ? Math.max(deg, TARGET_DEG) : deg)}
-        interactive={!done}
-        onChange={handleChange}
-        disabled={done}
+      <OuvertureLab
+        deg={deg}
+        rayLengths={rays}
+        onDeg={changeDeg}
+        onRay={changeRay}
         tone="sky"
-        ariaLabel="Porte vue du dessus, à ouvrir"
       />
+      <div className="flex justify-center gap-2 text-xs">
+        <span className={`px-2 py-1 rounded-lg font-mono font-bold ${tourne ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-400'}`}>
+          {tourne ? '✓' : '○'} j'ai fait pivoter
+        </span>
+        <span className={`px-2 py-1 rounded-lg font-mono font-bold ${rallonge ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-400'}`}>
+          {rallonge ? '✓' : '○'} j'ai rallongé un côté
+        </span>
+      </div>
       {done && (
         <Feedback tone="ok">
-          En ouvrant la porte, le battant n'est pas devenu plus LONG : c'est l'<strong>écartement</strong> entre le
-          mur et le battant qui a grandi. Cette ouverture entre deux demi-droites partant d'un même point (le{' '}
-          <strong>sommet</strong>) s'appelle un <strong>angle</strong>.
+          En faisant pivoter le battant, ce n'est pas sa LONGUEUR qui a grandi : c'est l'
+          <strong>écartement</strong> entre le mur et le battant. Et quand tu as rallongé les côtés, le
+          nombre n'a pas bougé{degAuRallonge.current !== null ? ` (il était à ${formatDeg(degAuRallonge.current)}, il y est resté)` : ''}.
+          Cette ouverture entre deux demi-droites partant d'un même point (le <strong>sommet</strong>)
+          s'appelle un <strong>angle</strong>. Continue à jouer avec les trois poignées : la règle tient à
+          chaque fois.
         </Feedback>
       )}
     </div>
@@ -83,7 +140,12 @@ function PorteOuvrante({ react, solved, onSolved }) {
 
 export default function Module01Ouverture() {
   const [porteDone, setPorteDone] = useState(false);
+  const [pred, setPred] = useState(null);
   const [rayonsDone, setRayonsDone] = useState(false);
+  // La figure de vérification de l'étape 2 : elle reste manipulable, avant
+  // comme après la réponse (règle projet : un labo ne se fige jamais).
+  const [verifDeg, setVerifDeg] = useState(40);
+  const [verifRays, setVerifRays] = useState([45, 45]);
   const [notationDone, setNotationDone] = useState(false);
 
   return (
@@ -102,11 +164,30 @@ export default function Module01Ouverture() {
       steps={[
         {
           num: 1,
-          title: 'Ouvre la porte',
+          title: 'Ouvre la porte, puis rallonge ses côtés',
+          subtitle: 'Trois poignées, un seul nombre : lequel des gestes le fait bouger ?',
           done: porteDone,
           content: (kit) => (
-            <div className="space-y-5">
-              <PorteOuvrante react={kit.react} solved={porteDone} onSolved={() => setPorteDone(true)} />
+            <div className="space-y-4">
+              <PredictionChips
+                prompt="si tu rallonges les deux côtés sans rien faire tourner, que fera la mesure ?"
+                options={[
+                  { id: 'grandit', label: 'Elle grandira' },
+                  { id: 'fixe', label: 'Elle ne changera pas' },
+                  { id: 'baisse', label: 'Elle diminuera' },
+                ]}
+                value={pred}
+                onChange={setPred}
+                disabled={porteDone}
+              />
+              <AngleLab react={kit.react} solved={porteDone} onSolved={() => setPorteDone(true)} />
+              {porteDone && pred && (
+                <Feedback tone="info">
+                  {pred === 'fixe'
+                    ? 'Ta prédiction tenait : la mesure est restée fixe pendant que tu tirais.'
+                    : 'Ta prédiction annonçait une mesure qui change ; la figure te contredit — elle n’a pas bougé.'}
+                </Feedback>
+              )}
               {/* Le battant vient d'être ouvert sans jamais s'allonger :
                   c'est ICI que le mot « angle » a un sens, pas dans un
                   explain (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}
@@ -126,19 +207,23 @@ export default function Module01Ouverture() {
           done: rayonsDone,
           content: (
             <div className="space-y-5">
+            {/* La figure reste VIVANTE pendant la question : l'élève peut
+                re-tirer les côtés pour vérifier sa réponse avant de la
+                donner, et continuer après. Deux images figées ne
+                permettaient que de croire. */}
+            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3 space-y-2">
+              <p className="text-xs font-semibold text-slate-500">
+                Vérifie encore : tire les bouts des côtés, regarde le nombre.
+              </p>
+              <OuvertureLab
+                deg={verifDeg}
+                rayLengths={verifRays}
+                onDeg={setVerifDeg}
+                onRay={(i, v) => setVerifRays((prev) => { const n = [...prev]; n[i] = v; return n; })}
+                tone="violet"
+              />
+            </div>
             <TapQuestion
-              above={
-                <div className="grid grid-cols-2 gap-4" aria-hidden="true">
-                  <div className="space-y-1">
-                    <AngleFigure deg={40} rayLengths={[50, 50]} arcLabel="40°" tone="sky" size={180} />
-                    <p className="text-center text-xs text-slate-500">Côtés courts</p>
-                  </div>
-                  <div className="space-y-1">
-                    <AngleFigure deg={40} rayLengths={[100, 100]} arcLabel="40°" tone="violet" size={180} />
-                    <p className="text-center text-xs text-slate-500">Côtés longs</p>
-                  </div>
-                </div>
-              }
               prompt={RAYONS_Q.q}
               options={RAYONS_Q.options}
               correct={RAYONS_Q.correct}

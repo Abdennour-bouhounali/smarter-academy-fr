@@ -71,9 +71,13 @@ function Mission({ mission, done, onDone, react }) {
   const reached =
     mission.target === 'triangle-isocele' ? traits.isocele : traits.rectangle;
 
+  /* Le triangle reste déformable APRÈS la réussite (règle projet du
+     2026-09-06). C'est même le cœur de cette leçon : en continuant à tirer
+     le sommet, l'élève voit le caractère isocèle se perdre puis revenir —
+     donc que la propriété tient aux LONGUEURS, pas au dessin. */
   const handle = (next) => {
-    if (done || revealed) return;
     setPts(next);
+    if (done || revealed) return;
     const t = triangleTraits(next);
     const ok = mission.target === 'triangle-isocele' ? t.isocele : t.rectangle;
     if (ok) { react(true); onDone(); }
@@ -97,7 +101,6 @@ function Mission({ mission, done, onDone, react }) {
         // exactement égaux : les deux longueurs affichées deviennent
         // identiques, au lieu d'un « 143 / 141 » qui contredirait le verdict.
         snapEqualSides
-        disabled={done || revealed}
         ariaLabel={`Triangle à déformer — actuellement : ${shapeName(pts)}`}
       />
 
@@ -114,16 +117,21 @@ function Mission({ mission, done, onDone, react }) {
       )}
 
       {(done || revealed) && (
-        <Feedback tone={revealed ? 'info' : 'ok'}>
+        <Feedback tone={revealed ? 'info' : reached ? 'ok' : 'info'}>
           {revealed && <strong>Pas grave, on te le montre. </strong>}
           {mission.target === 'triangle-isocele' ? (
             <>
-              <strong>[AC] = [BC]</strong> : le triangle est <strong>isocèle</strong> en C. C’est une
+              Deux côtés de même longueur, et le triangle est <strong>isocèle</strong>. C’est une
               propriété des CÔTÉS — les deux qui partent du sommet mobile.
             </>
           ) : (
-            <>Un angle de 90° : le triangle est <strong>rectangle</strong>. C’est une propriété d’un ANGLE.</>
-          )}
+            <>Un angle de 90°, et le triangle est <strong>rectangle</strong>. C’est une propriété d’un ANGLE.</>
+          )}{' '}
+          {/* Le triangle reste manipulable : on cite ce qu'il est MAINTENANT.
+              Le perdre puis le retrouver est exactement la leçon. */}
+          {reached
+            ? <>C’est en ce moment un <strong>{shapeName(pts)}</strong> — continue à tirer le sommet pour lui faire perdre ce caractère.</>
+            : <>Tu viens de le déformer : ce n’est plus un {mission.target === 'triangle-isocele' ? 'triangle isocèle' : 'triangle rectangle'}, mais un <strong>{shapeName(pts)}</strong>. La propriété ne tenait qu’aux mesures.</>}
         </Feedback>
       )}
 

@@ -36,20 +36,22 @@ function Construction({ target, point, done, onDone, react, hint, ariaLabel }) {
         line={D}
         point={point}
         equerre={equerre}
-        onEquerreChange={(next) => { if (!done) setEquerre(next); }}
+        /* Jamais figée : après le tracé, déplacer l'équerre montre que le
+           rituel « côté sur la droite, sommet sur le point » est bien ce qui
+           autorisait la construction — et qu'il se rompt dès qu'on bouge. */
+        onEquerreChange={setEquerre}
         mode="construct"
         construct={target}
         drawn={drawn}
         onTrace={(built) => {
-          if (done) return;
           setDrawn(built);
           const attendu = target === 'parallele' ? RELATIONS.paralleles : RELATIONS.perpendiculaires;
           const ok = relationOf(D, built) === attendu;
+          if (done) return;
           react(ok);
           if (ok) onDone();
         }}
         box={BOX}
-        disabled={done}
         ariaLabel={ariaLabel}
       />
 

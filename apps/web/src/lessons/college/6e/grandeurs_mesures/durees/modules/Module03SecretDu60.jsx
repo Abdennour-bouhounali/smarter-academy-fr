@@ -35,7 +35,6 @@ function TourComplet({ react, solved, onSolved }) {
   const done = solved || advanced >= 60;
 
   const handleChange = (next) => {
-    if (done) return;
     const nextTotal = next.hours * 60 + next.minutes;
     let delta = nextTotal - prevTotal.current;
     // Passage minuit improbable ici, mais on protège le delta.
@@ -58,17 +57,22 @@ function TourComplet({ react, solved, onSolved }) {
         Il est 9 h 00. Fais avancer la <strong>grande</strong> aiguille d'un tour COMPLET (par glisser ou par
         +5 min) et surveille la petite aiguille…
       </p>
+      {/* L'horloge reste RÉGLABLE après le tour complet (règle projet du
+          2026-09-06) : la règle « un tour = une heure » se vérifie en en
+          faisant un deuxième, et en revenant en arrière. Le geler à la
+          seconde où la découverte tombe interdit exactement cela. */}
       <ClockFace
-        hours={done && !solved ? time.hours : done ? 10 : time.hours}
-        minutes={done && !solved ? time.minutes : done ? 0 : time.minutes}
-        mode={done ? 'display' : 'set'}
+        hours={time.hours}
+        minutes={time.minutes}
+        mode="set"
         onChange={handleChange}
         showDigital
         bumpButtons={['+5min']}
-        disabled={done}
       />
       <div className="text-center font-mono text-sm text-slate-600" aria-live="polite">
-        Minutes avancées : <strong>{Math.min(advanced, 60)}</strong> / 60
+        Minutes avancées : <strong>{advanced}</strong>
+        {advanced >= 60 && <> — soit {Math.floor(advanced / 60)} tour{Math.floor(advanced / 60) > 1 ? 's' : ''} complet{Math.floor(advanced / 60) > 1 ? 's' : ''} et {advanced % 60} min</>}
+        {advanced < 60 && <> / 60</>}
       </div>
       {done && (
         <Feedback tone="ok">

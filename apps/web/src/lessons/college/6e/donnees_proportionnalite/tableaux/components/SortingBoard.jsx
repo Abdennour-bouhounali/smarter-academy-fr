@@ -122,6 +122,9 @@ export default function SortingBoard({
         </div>
       )}
 
+      {/* Pas de gel par l'avancement : quand tout est rangé il n'y a plus
+          d'information EN MAIN, donc plus rien à poser — la contrainte est
+          mathématique, pas progressive (règle projet du 2026-09-06). */}
       <motion.div
         animate={wrong && !reduce ? { x: [0, -6, 6, 0] } : {}}
         transition={{ duration: 0.3 }}
@@ -130,11 +133,10 @@ export default function SortingBoard({
           table={table}
           caption={caption}
           tone={tone}
-          onCellClick={done ? null : handleCell}
+          onCellClick={current ? handleCell : null}
           highlight={showTarget && target ? [target] : []}
           wrongCells={wrong ? [{ r: wrong.r, c: wrong.c }] : []}
           highlightRow={current && !done ? table.rowLabels.indexOf(current.row) : null}
-          disabled={done}
         />
       </motion.div>
 

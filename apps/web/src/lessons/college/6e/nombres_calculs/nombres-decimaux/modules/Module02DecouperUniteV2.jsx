@@ -21,8 +21,12 @@ function ShadeWorkshop({ parts, target, tone, onSolved, solved, helper, react })
   const [checked, setChecked] = useState(false);
   const isRight = shaded === target;
 
+  // RÈGLE PROJET (2026-09-06) : le coloriage ne se fige JAMAIS après la
+  // validation de l'étape — c'est justement APRÈS la découverte que l'élève
+  // teste « et si j'en colorie une de plus ? ». Les seules bornes qui
+  // subsistent sont MATHÉMATIQUES : on ne descend pas sous 0 part, on ne
+  // dépasse pas les `parts` parts de l'unité.
   const bump = (delta) => {
-    if (solved) return;
     setChecked(false);
     setShaded((s) => Math.min(parts, Math.max(0, s + delta)));
   };
@@ -34,7 +38,6 @@ function ShadeWorkshop({ parts, target, tone, onSolved, solved, helper, react })
         shaded={shaded}
         tone={tone}
         onToggle={(i) => {
-          if (solved) return;
           setChecked(false);
           setShaded((prev) => (prev === i + 1 ? i : i + 1));
         }}
@@ -46,7 +49,7 @@ function ShadeWorkshop({ parts, target, tone, onSolved, solved, helper, react })
           <button
             type="button"
             onClick={() => bump(-1)}
-            disabled={solved || shaded === 0}
+            disabled={shaded === 0}
             aria-label="Enlever une part"
             className="w-10 h-10 rounded-xl bg-white border-2 border-slate-200 flex items-center justify-center hover:border-slate-400 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
@@ -58,7 +61,7 @@ function ShadeWorkshop({ parts, target, tone, onSolved, solved, helper, react })
           <button
             type="button"
             onClick={() => bump(1)}
-            disabled={solved || shaded === parts}
+            disabled={shaded === parts}
             aria-label="Ajouter une part"
             className="w-10 h-10 rounded-xl bg-white border-2 border-slate-200 flex items-center justify-center hover:border-slate-400 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
@@ -87,9 +90,16 @@ function ShadeWorkshop({ parts, target, tone, onSolved, solved, helper, react })
         </Feedback>
       )}
 
+      {/* Le retour cite la valeur VIVANTE : si l'élève continue à colorier
+          après la validation, la phrase reste vraie au lieu de décrire un
+          état figé. */}
       {solved && (
         <Feedback tone="ok">
-          <MathText>{`$\\frac{${target}}{${parts}}$`}</MathText> de l'unité sont coloriés.
+          <MathText>{`$\\frac{${target}}{${parts}}$`}</MathText> de l'unité, c'était l'objectif.
+          {shaded !== target && (
+            <> Tu en es maintenant à <strong>{shaded}</strong> part{shaded > 1 ? 's' : ''} sur {parts} —
+            continue d'essayer, l'unité ne change pas de taille.</>
+          )}
         </Feedback>
       )}
     </div>

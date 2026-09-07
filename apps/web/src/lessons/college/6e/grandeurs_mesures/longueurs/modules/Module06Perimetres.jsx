@@ -19,10 +19,18 @@ function TraceRound({ react, shape, sideLengths, unit, solved, onSolved }) {
   const isDone = solved || tapped.length === sideLengths.length;
 
   const handleTap = (i) => {
-    if (solved || tapped.includes(i)) return;
+    // Le tour terminé, on peut le REFAIRE : taper un côté déjà parcouru
+    // relance le tour à zéro. Refaire le tour dans l'autre sens et retrouver
+    // la même somme est précisément ce qui montre que le périmètre ne dépend
+    // pas du chemin (règle projet du 2026-09-06 : rien ne se fige).
+    if (tapped.length === sideLengths.length) {
+      setTapped([i]);
+      return;
+    }
+    if (tapped.includes(i)) return;
     const next = [...tapped, i];
     setTapped(next);
-    if (next.length === sideLengths.length) {
+    if (next.length === sideLengths.length && !solved) {
       react(true);
       onSolved?.();
     }
@@ -31,7 +39,7 @@ function TraceRound({ react, shape, sideLengths, unit, solved, onSolved }) {
   return (
     <div className="space-y-3">
       <p className="text-sm text-slate-600">Tape chaque côté, dans l'ordre, pour faire tout le tour de la figure.</p>
-      <PolygonPerimeter shape={shape} sideLengths={sideLengths} unit={unit} tappedIndices={tapped} onTapSide={handleTap} disabled={solved} showRunningTotal />
+      <PolygonPerimeter shape={shape} sideLengths={sideLengths} unit={unit} tappedIndices={tapped} onTapSide={handleTap} showRunningTotal />
       <div className="text-center font-mono text-lg text-slate-800">
         Tour parcouru : <strong>{total} {unit}</strong> {tapped.length > 0 && `(${tapped.length}/${sideLengths.length} côtés)`}
       </div>

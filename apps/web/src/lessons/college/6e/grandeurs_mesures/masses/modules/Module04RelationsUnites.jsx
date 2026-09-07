@@ -15,7 +15,10 @@ import UnitLadder from '../components/UnitLadder';
  * dès que la cible est atteinte, sans bouton bloquant.
  */
 function BuildRound({ perGroup, target, unit, targetLabel, tone, react, done, onSolved }) {
-  const [groups, setGroups] = useState(0);
+  // Une étape déjà validée lors d'une visite précédente rouvre sur la pile
+  // TERMINÉE (et non sur zéro) : l'élève retrouve ce qu'il avait construit,
+  // et peut le défaire pour le refaire.
+  const [groups, setGroups] = useState(done ? target / perGroup : 0);
   const reached = groups * perGroup === target;
 
   React.useEffect(() => {
@@ -30,14 +33,16 @@ function BuildRound({ perGroup, target, unit, targetLabel, tone, react, done, on
       <p className="text-sm text-slate-600">
         Empile des blocs de {perGroup}{unit} jusqu’à obtenir exactement {targetLabel}.
       </p>
+      {/* La pile reste manipulable après la cible atteinte (règle projet du
+          2026-09-06) : défaire et refaire la pile est la façon dont l'élève
+          vérifie que c'est bien 10 blocs, et pas « à peu près ». */}
       <GroupBuilder
         perGroup={perGroup}
-        groups={done ? target / perGroup : groups}
+        groups={groups}
         onChange={setGroups}
         max={target / perGroup}
         tone={tone}
         unit={unit}
-        disabled={done}
       />
       {(reached || done) && (
         <Feedback tone="ok">

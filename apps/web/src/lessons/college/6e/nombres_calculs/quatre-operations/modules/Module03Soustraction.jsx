@@ -219,8 +219,8 @@ function SubtractionLine({ onSolved, done }) {
               if (next === target) onSolved();
             }
           }}
-          disabled={finished || done}
-          className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${finished || done ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-rose-600 hover:bg-rose-700 text-white shadow-md'}`}
+          disabled={finished}
+          className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${finished ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-rose-600 hover:bg-rose-700 text-white shadow-md'}`}
         >
           ← −1 pas
         </button>

@@ -62,7 +62,7 @@ export default function ItemBank({ items, placement, onDragRelease, onDraggingCh
                     disabled={disabled}
                     onClick={() => onPlace(it.id, 'left')}
                     aria-label={`Poser ${it.label} sur le plateau de gauche`}
-                    className="px-2 py-0.5 rounded-md border border-slate-200 bg-white text-[11px] font-bold text-slate-600 hover:border-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                    className="min-h-[44px] min-w-[44px] px-3 rounded-md border border-slate-200 bg-white text-sm font-bold text-slate-600 hover:border-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                   >
                     ←
                   </button>
@@ -71,7 +71,7 @@ export default function ItemBank({ items, placement, onDragRelease, onDraggingCh
                     disabled={disabled}
                     onClick={() => onPlace(it.id, 'right')}
                     aria-label={`Poser ${it.label} sur le plateau de droite`}
-                    className="px-2 py-0.5 rounded-md border border-slate-200 bg-white text-[11px] font-bold text-slate-600 hover:border-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                    className="min-h-[44px] min-w-[44px] px-3 rounded-md border border-slate-200 bg-white text-sm font-bold text-slate-600 hover:border-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                   >
                     →
                   </button>
@@ -108,7 +108,7 @@ function DraggableItem({ item, disabled, onDragStart, onDragEnd }) {
       className="flex flex-col items-center gap-1 px-3 py-2.5 rounded-xl border-2 bg-white border-slate-200 text-slate-600 min-h-[64px] min-w-[72px] shadow-sm cursor-grab active:cursor-grabbing focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
     >
       <span className="text-xl" aria-hidden="true">{item.emoji}</span>
-      <span className="text-[11px] font-semibold leading-tight text-center text-slate-700">{item.label}</span>
+      <span className="text-xs font-semibold leading-tight text-center text-slate-700">{item.label}</span>
     </motion.button>
   );
 }

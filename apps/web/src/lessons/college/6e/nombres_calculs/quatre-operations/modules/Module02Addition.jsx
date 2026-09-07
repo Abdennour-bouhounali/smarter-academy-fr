@@ -65,7 +65,7 @@ function ManipObjects({ onSolved, done }) {
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={handleMove}
-            disabled={finished || done}
+            disabled={finished}
             className={`px-5 py-3 rounded-xl font-bold text-sm transition-all focus:outline-none ${
               finished || done
                 ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
@@ -209,7 +209,7 @@ function ManipNumberLine({ onSolved, done }) {
         </div>
         <button
           onClick={handleStep}
-          disabled={finished || done}
+          disabled={finished}
           className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${
             finished || done
               ? 'bg-slate-200 text-slate-400 cursor-not-allowed'

@@ -1,18 +1,45 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PolygonPerimeter from '../components/PolygonPerimeter';
+import ContourUnroller from '../components/ContourUnroller';
 
 /**
- * Module 1 — déclencheur.
+ * Module 1 — LABORATOIRE : « La clôture du parc ».
  *
- * Le périmètre se DÉCOUVRE en faisant le tour : l'élève parcourt le contour
- * de l'enclos côté par côté (geste, jamais d'état faux) avant qu'on nomme
- * quoi que ce soit. Le mot « périmètre » n'apparaît qu'après le geste.
+ * Activity: DÉROULER le contour de l'enclos — l'élève tire le bout du ruban
+ *   et un point parcourt le bord, côté après côté, pendant que le même tour
+ *   s'empile à plat sur une règle.
+ * Mathematical objective: le périmètre est une LONGUEUR — le contour mis
+ *   bout à bout — et non une propriété abstraite du dessin.
+ * Student action: le geste est continu ; le point sur la figure, les côtés
+ *   allumés, la règle et le total bougent tous ensemble, sans validation.
+ * Mathematical state: UN réel `parcouru` (la distance parcourue le long du
+ *   bord) ; position, portion allumée, somme partielle en dérivent.
+ * Expected observation: quand le point revient à son départ, le ruban porte
+ *   exactement 12 + 9 + 14 + 8 = 43 m. Le tour est devenu un segment.
+ * Misconception targeted: « le périmètre, c'est la taille de la figure » —
+ *   et, à l'inverse, l'idée qu'un tour ne se mesure pas au mètre ruban.
+ * Controlled surprise: la prédiction porte sur la longueur du ruban ; l'œil
+ *   sous-estime presque toujours un contour déroulé.
+ * Formalization: le mot « périmètre » n'arrive qu'à la brique, après le tour
+ *   complet ; son unité (des mètres) découle du ruban qu'on vient de voir.
+ * Scaffolding: le déroulement se rejoue à l'infini, dans les deux sens, et
+ *   ne se fige jamais après validation de l'étape.
+ *
+ * L'ancienne version tapait les quatre côtés l'un après l'autre : quatre
+ * clics, un total, et surtout aucune raison visible que ce total soit une
+ * LONGUEUR. Le ruban déroulé donne cette raison.
  */
 const ENCLOS = { sideLengths: [12, 9, 14, 8], unit: 'm' };
+// Quadrilatère quelconque : aucun côté égal, donc aucune formule possible —
+// seule la somme des côtés fait le tour.
+const ENCLOS_VERTICES = [
+  { x: 30, y: 170 }, { x: 270, y: 150 }, { x: 230, y: 30 }, { x: 70, y: 50 },
+];
+const ENCLOS_TOTAL = ENCLOS.sideLengths.reduce((a, b) => a + b, 0);
 
 const TRAP_Q = {
   q: "Voici deux enclos. Celui de droite paraît plus « grand » à l'intérieur, mais son contour est plus court. Lequel demande le PLUS de clôture ?",
@@ -33,45 +60,42 @@ const UNITE_Q = {
     'Le périmètre est la LONGUEUR du contour : il se mesure donc avec une unité de longueur (m, cm, km…). Les m² mesurent des surfaces, pas des tours.',
 };
 
-function TraceEnclos({ react, solved, onSolved }) {
-  const [tapped, setTapped] = useState(solved ? ENCLOS.sideLengths.map((_, i) => i) : []);
-  const total = tapped.reduce((s, i) => s + ENCLOS.sideLengths[i], 0);
-  const isDone = solved || tapped.length === ENCLOS.sideLengths.length;
+function DeroulerEnclos({ react, solved, onSolved }) {
+  const [parcouru, setParcouru] = useState(0);
+  const [tourFait, setTourFait] = useState(false);
+  const done = solved || tourFait;
 
-  const handleTap = (i) => {
-    if (solved || tapped.includes(i)) return;
-    const next = [...tapped, i];
-    setTapped(next);
-    if (next.length === ENCLOS.sideLengths.length) {
-      react(true);
-      onSolved?.();
+  const change = (v) => {
+    setParcouru(v);
+    // Le tour est « fait » dès que le point est revenu à son point de
+    // départ — c'est le seul état qui compte mathématiquement.
+    if (v >= ENCLOS_TOTAL - 1e-9 && !tourFait) {
+      setTourFait(true);
+      if (!solved) { react(true); onSolved?.(); }
     }
   };
 
   return (
     <div className="space-y-3">
       <p className="text-sm text-slate-600">
-        Le gardien doit commander la clôture du nouvel enclos. Tape chaque côté, dans l'ordre, pour faire le tour
-        complet avec lui.
+        Le gardien doit commander la clôture du nouvel enclos. Attrape le{' '}
+        <strong className="text-rose-600">bout du ruban</strong> sous la figure et tire : le contour se
+        déroule en ligne droite, côté après côté.
       </p>
-      <PolygonPerimeter
-        shape="quad"
+      <ContourUnroller
+        vertices={ENCLOS_VERTICES}
         sideLengths={ENCLOS.sideLengths}
+        travelled={parcouru}
+        onChange={change}
         unit={ENCLOS.unit}
-        tappedIndices={tapped}
-        onTapSide={handleTap}
-        disabled={solved}
-        showRunningTotal
+        step={0.5}
       />
-      <div className="text-center font-mono text-lg text-slate-800">
-        Clôture parcourue : <strong>{total} {ENCLOS.unit}</strong>{' '}
-        {tapped.length > 0 && !isDone && `(${tapped.length}/${ENCLOS.sideLengths.length} côtés)`}
-      </div>
-      {isDone && (
+      {done && (
         <Feedback tone="ok">
-          Tu as fait le tour complet : {ENCLOS.sideLengths.join(' + ')} ={' '}
-          <strong>{ENCLOS.sideLengths.reduce((a, b) => a + b, 0)} m</strong> de clôture. Cette longueur du contour
-          porte un nom : c'est le <strong>périmètre</strong> de l'enclos.
+          Le tour complet, mis à plat, mesure {ENCLOS.sideLengths.join(' + ')} ={' '}
+          <strong>{ENCLOS_TOTAL} {ENCLOS.unit}</strong> de clôture. Cette longueur du contour porte un nom :
+          c'est le <strong>périmètre</strong> de l'enclos. Rembobine et recommence : le ruban donne toujours
+          la même longueur.
         </Feedback>
       )}
     </div>
@@ -80,6 +104,7 @@ function TraceEnclos({ react, solved, onSolved }) {
 
 export default function Module01Mission() {
   const [traceDone, setTraceDone] = useState(false);
+  const [pred, setPred] = useState(null);
   const [trapDone, setTrapDone] = useState(false);
   const [uniteDone, setUniteDone] = useState(false);
 
@@ -99,11 +124,34 @@ export default function Module01Mission() {
       steps={[
         {
           num: 1,
-          title: 'Fais le tour de l’enclos',
+          title: 'Déroule le tour de l’enclos',
+          subtitle: 'Le ruban se remplit sous ton doigt : rien à valider.',
           done: traceDone,
           content: (kit) => (
-            <div className="space-y-5">
-              <TraceEnclos react={kit.react} solved={traceDone} onSolved={() => setTraceDone(true)} />
+            <div className="space-y-4">
+              <PredictionChips
+                prompt="mis bout à bout, ce contour fera-t-il plus ou moins de 30 m ?"
+                options={[
+                  { id: 'moins', label: 'Moins de 30 m' },
+                  { id: 'autour', label: 'Autour de 30 m' },
+                  { id: 'plus', label: 'Plus de 30 m' },
+                ]}
+                value={pred}
+                onChange={setPred}
+                disabled={traceDone}
+              />
+              <DeroulerEnclos react={kit.react} solved={traceDone} onSolved={() => setTraceDone(true)} />
+              {traceDone && (
+                <Feedback tone="info">
+                  {pred === 'plus'
+                    ? 'Ta prédiction tenait : '
+                    : pred
+                      ? 'Ta prédiction visait plus bas, et pourtant : '
+                      : ''}
+                  43 m de ruban pour un enclos qui tient dans une cour. Un contour déroulé est presque
+                  toujours plus long qu'on ne le croit.
+                </Feedback>
+              )}
               {/* Le tour vient d'être parcouru côté par côté : c'est ICI que
                   le mot existe, et pas dans un explain
                   (docs/architecture/KNOWLEDGE_DEPENDENCY.md). */}

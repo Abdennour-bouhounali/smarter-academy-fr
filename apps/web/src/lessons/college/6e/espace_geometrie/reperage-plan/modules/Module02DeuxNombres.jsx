@@ -83,11 +83,13 @@ export default function Module02DeuxNombres() {
           done: swapDone,
           content: (kit) => (
             <div className="space-y-3">
+              {/* Jamais figé : après la découverte, promener A pour voir A′
+                  se refléter reste l'observation la plus parlante de la
+                  leçon (règle projet du 2026-09-06). */}
               <SwapLab
                 grid={GRID}
                 point={point}
                 onPointChange={(n) => handlePoint(n, kit.react)}
-                disabled={swapDone}
               />
               <div className="flex items-center justify-between gap-2 flex-wrap">
                 <span className="text-xs font-mono text-slate-500">

@@ -3,7 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import { ContentModule, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import ArrayGrid from '../components/ArrayGrid';
+import SplitRectangle from '../components/SplitRectangle';
 
 /**
  * Module 4 V2 — reconstruit sur le lesson kit.
@@ -22,63 +25,84 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
  * immédiate, onAnswered inconditionnel, indice affiché en cas d'erreur.
  */
 
-/* ─── Manipulation 1 : Groupes égaux (bespoke) ────────────────────── */
+/* ─── Manipulation 1 : les boîtes qu'on POSE et qu'on RETIRE ─────────
+   Deux corrections par rapport à la version précédente :
+   1. les boutons `+` / `−` sont remplacés par le geste direct — on tape une
+      boîte pour la retirer, on tape l'emplacement vide pour en poser une ;
+   2. la manipulation n'est PLUS figée quand l'étape est validée
+      (`disabled={solved}` était un bug de classe : l'élève doit pouvoir
+      continuer à explorer après la découverte). */
 function EqualGroups({ onSolved, solved, react }) {
-  const [numGroups, setNumGroups] = useState(solved ? 4 : 1);
+  const [numGroups, setNumGroups] = useState(1);
   const perGroup = 3;
   const target = 4;
+  const MAX = 8;
 
   const total = numGroups * perGroup;
-  const finished = numGroups === target;
+  const reached = numGroups >= target;
+
+  React.useEffect(() => {
+    if (reached && !solved) { react?.(true); onSolved?.(); }
+  }, [reached, solved, onSolved, react]);
 
   return (
     <div className="space-y-5">
       <p className="text-sm text-slate-600 leading-relaxed">
-        On prépare des boîtes, chacune contenant <strong>3 objets</strong>.
-        Ajoute des boîtes une par une et observe comment la quantité totale évolue.
+        Chaque boîte contient <strong>3 objets</strong>. Touche l'emplacement vide pour{' '}
+        <strong>poser une boîte</strong>, ou une boîte pour la <strong>retirer</strong>.
       </p>
 
-      {/* Boîtes */}
-      <div className="flex flex-wrap gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl min-h-[100px]">
+      <div className="flex flex-wrap gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl min-h-[110px]">
         {Array.from({ length: numGroups }).map((_, gi) => (
-          <motion.div
+          <motion.button
             key={gi}
+            type="button"
+            layout
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="flex flex-col items-center gap-1.5 bg-violet-50 border-2 border-violet-200 rounded-xl p-3"
+            onClick={() => setNumGroups((v) => Math.max(1, v - 1))}
+            aria-label={`Retirer la boîte ${gi + 1}`}
+            className="flex flex-col items-center gap-1.5 bg-violet-50 border-2 border-violet-200 rounded-xl p-3 min-h-[76px]
+                       hover:border-rose-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
           >
             <div className="flex gap-1">
               {Array.from({ length: perGroup }).map((_, oi) => (
-                <div key={oi} className="w-6 h-6 rounded-full bg-violet-400 shadow-sm" />
+                <span key={oi} className="w-6 h-6 rounded-full bg-violet-400 shadow-sm" />
               ))}
             </div>
             <span className="text-[10px] font-mono text-violet-600 font-bold">Boîte {gi + 1}</span>
-          </motion.div>
+          </motion.button>
         ))}
+
+        {/* L'emplacement vide EST le bouton « poser une boîte » : le geste se
+            fait là où l'objet va apparaître, pas dans une barre de contrôle. */}
+        {numGroups < MAX && (
+          <button
+            type="button"
+            onClick={() => setNumGroups((v) => Math.min(MAX, v + 1))}
+            aria-label="Poser une boîte de 3 objets"
+            className="flex flex-col items-center justify-center gap-1 border-2 border-dashed border-violet-300 rounded-xl p-3
+                       min-h-[76px] min-w-[76px] text-violet-500 hover:border-violet-500 hover:bg-violet-50/50
+                       focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+          >
+            <span className="text-2xl leading-none" aria-hidden="true">+</span>
+            <span className="text-[10px] font-mono font-bold">poser</span>
+          </button>
+        )}
       </div>
 
-      {/* Contrôle */}
-      <div className="flex items-center justify-center gap-4">
-        <button
-          onClick={() => setNumGroups((v) => Math.max(1, v - 1))}
-          disabled={solved}
-          className="w-10 h-10 rounded-full bg-slate-200 hover:bg-slate-300 font-bold text-xl transition-all disabled:opacity-40"
-        >−</button>
-        <div className="text-center">
-          <div className="text-2xl font-space font-bold text-violet-700">{numGroups} boîte{numGroups > 1 ? 's' : ''}</div>
-          <div className="text-sm text-slate-500">{numGroups} × {perGroup} = <strong className="text-violet-700">{total}</strong> objets</div>
+      <div className="text-center" role="status" aria-live="polite">
+        <div className="text-2xl font-space font-bold text-violet-700">
+          {numGroups} boîte{numGroups > 1 ? 's' : ''}
         </div>
-        <button
-          onClick={() => setNumGroups((v) => Math.min(v + 1, 8))}
-          disabled={solved}
-          className="w-10 h-10 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold text-xl transition-all disabled:opacity-40"
-        >+</button>
+        <div className="text-sm text-slate-500">
+          {numGroups} × {perGroup} = <strong className="text-violet-700">{total}</strong> objets
+        </div>
       </div>
 
-      {/* Addition répétée */}
       <div className="bg-slate-800 text-white rounded-xl p-4 text-center space-y-1">
         <div className="text-xs font-mono text-slate-400">Addition répétée → pont vers la multiplication</div>
-        <div className="font-space font-bold text-lg">
+        <div className="font-space font-bold text-lg break-words">
           {Array.from({ length: numGroups }, () => perGroup).join(' + ')}
           <span className="text-violet-300 ml-2">= {total}</span>
         </div>
@@ -88,22 +112,14 @@ function EqualGroups({ onSolved, solved, react }) {
       </div>
 
       <AnimatePresence>
-        {finished && !solved && (
-          <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+        {reached && (
+          <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}>
             <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3 text-sm text-emerald-800">
-              <CheckCircle2 className="inline w-4 h-4 mr-1" />
-              <strong>4 × 3 = 12</strong> — 4 groupes de 3, c'est 12. La multiplication, c'est des <em>groupes de même taille</em>.
+              <CheckCircle2 className="inline w-4 h-4 mr-1" aria-hidden="true" />
+              <strong>{numGroups} × {perGroup} = {total}</strong> — des groupes de même taille.
+              Écrire la somme prend {numGroups} termes ; la multiplication en prend deux.
+              Continue à poser et retirer des boîtes : la ligne du haut s'allonge, celle du bas non.
             </div>
-            <div className="text-sm text-slate-600 bg-violet-50 border border-violet-200 rounded-xl p-3">
-              💡 L'addition répétée (3+3+3+3) donne le même résultat, mais la multiplication est bien plus rapide
-              quand le nombre de groupes est grand !
-            </div>
-            <button
-              onClick={() => { react(true); onSolved(); }}
-              className="w-full py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl transition-all"
-            >
-              Continuer →
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -111,71 +127,65 @@ function EqualGroups({ onSolved, solved, react }) {
   );
 }
 
-/* ─── Manipulation 2 : Grille interactive — exploration libre (bespoke) ─── */
+/* ─── Manipulation 2 : le rectangle qu'on redimensionne au coin ─────────
+   L'ancienne grille était pilotée par quatre boutons `+` / `−` posés sous
+   elle. Ici l'élève tire le COIN du rectangle : les deux facteurs changent
+   sous sa main, et le pivot 3×4 → 4×3 devient une observation, pas une
+   règle annoncée. */
 function GridManip({ onSolved, solved, react }) {
-  const [rows, setRows] = useState(3);
-  const [cols, setCols] = useState(4);
-  const total = rows * cols;
+  const [dim, setDim] = useState({ rows: 3, cols: 4 });
+  const [seen, setSeen] = useState([]);
+  const [pivotSeen, setPivotSeen] = useState(false);
+
+  const resize = ({ rows, cols }) => {
+    setDim({ rows, cols });
+    const key = `${rows}x${cols}`;
+    setSeen((v) => {
+      if (v.includes(key)) return v;
+      const next = [...v, key];
+      // Le pivot : avoir vu a×b ET b×a, avec a ≠ b — c'est la commutativité
+      // constatée, pas récitée.
+      if (rows !== cols && v.includes(`${cols}x${rows}`)) setPivotSeen(true);
+      return next;
+    });
+  };
+
+  const explored = seen.length >= 4;
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       <p className="text-sm text-slate-600 leading-relaxed">
-        Une grille rectangulaire illustre parfaitement la multiplication.
-        Modifie le nombre de lignes et de colonnes.
+        Ce rectangle est fait de jetons. Tire son <strong>coin</strong> et regarde le total.
       </p>
 
-      {/* Grille */}
-      <div className="overflow-x-auto">
-        <div className="inline-flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-200">
-          {Array.from({ length: rows }).map((_, ri) => (
-            <div key={ri} className="flex gap-1">
-              {Array.from({ length: cols }).map((_, ci) => (
-                <motion.div
-                  key={ci}
-                  layout
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: (ri * cols + ci) * 0.02 }}
-                  className="w-8 h-8 rounded-md bg-violet-400 shadow-sm flex items-center justify-center text-[10px] font-mono text-white font-bold"
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      <ArrayGrid rows={dim.rows} cols={dim.cols} onResize={resize} />
 
-      {/* Contrôles */}
-      <div className="grid grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <label className="text-xs font-mono font-bold text-slate-500 uppercase">Lignes (groupes)</label>
-          <div className="flex items-center gap-2">
-            <button onClick={() => setRows((v) => Math.max(1, v - 1))} className="w-9 h-9 rounded-full bg-slate-200 hover:bg-slate-300 font-bold transition-all">−</button>
-            <span className="w-8 text-center font-space font-bold text-xl text-violet-700">{rows}</span>
-            <button onClick={() => setRows((v) => Math.min(v + 1, 8))} className="w-9 h-9 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold transition-all">+</button>
-          </div>
-        </div>
-        <div className="space-y-2">
-          <label className="text-xs font-mono font-bold text-slate-500 uppercase">Colonnes (par groupe)</label>
-          <div className="flex items-center gap-2">
-            <button onClick={() => setCols((v) => Math.max(1, v - 1))} className="w-9 h-9 rounded-full bg-slate-200 hover:bg-slate-300 font-bold transition-all">−</button>
-            <span className="w-8 text-center font-space font-bold text-xl text-violet-700">{cols}</span>
-            <button onClick={() => setCols((v) => Math.min(v + 1, 10))} className="w-9 h-9 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold transition-all">+</button>
-          </div>
-        </div>
-      </div>
+      {pivotSeen && (
+        <Feedback tone="ok">
+          Tu as fabriqué <strong className="font-mono">{dim.rows} × {dim.cols}</strong> et aussi{' '}
+          <strong className="font-mono">{dim.cols} × {dim.rows}</strong> : le rectangle a pivoté,
+          mais le nombre de jetons n'a pas bougé. L'ordre des deux nombres ne change pas le total.
+        </Feedback>
+      )}
+      {!pivotSeen && explored && (
+        <Feedback tone="info">
+          {seen.length} rectangles essayés. Essaie maintenant de faire pivoter le rectangle :
+          fabrique <strong className="font-mono">{dim.cols} × {dim.rows}</strong> après{' '}
+          <strong className="font-mono">{dim.rows} × {dim.cols}</strong>.
+        </Feedback>
+      )}
+      {!explored && (
+        <Feedback tone="info">
+          Fabrique plusieurs rectangles différents — tu en as essayé{' '}
+          <strong className="font-mono">{seen.length}</strong> sur 4.
+        </Feedback>
+      )}
 
-      <div className="text-center font-space font-bold text-3xl bg-violet-50 border border-violet-200 rounded-xl py-4">
-        <span className="text-slate-600">{rows}</span>
-        <span className="text-violet-500 mx-3">×</span>
-        <span className="text-slate-600">{cols}</span>
-        <span className="text-violet-400 mx-3">=</span>
-        <span className="text-violet-700">{total}</span>
-      </div>
-
-      {!solved && (
+      {!solved && explored && (
         <button
+          type="button"
           onClick={() => { react(true); onSolved(); }}
-          className="w-full py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl transition-all"
+          className="w-full min-h-[48px] py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
         >
           J'ai exploré la grille → continuer
         </button>
@@ -184,90 +194,64 @@ function GridManip({ onSolved, solved, react }) {
   );
 }
 
-/* ─── Manipulation 3 : Décomposition — 7 × 23 (bespoke walkthrough) ─── */
+/* ─── Manipulation 3 : COUPER le rectangle soi-même ────────────────────
+   L'ancienne version était un diaporama de trois panneaux : l'élève cliquait
+   « Étape suivante → » et lisait le raisonnement tout fait. Ici il coupe le
+   rectangle lui-même et constate que la somme des deux morceaux ne dépend
+   pas de l'endroit de la coupe — la distributivité devient une observation
+   d'AIRE, et la coupe ronde (20 | 3) apparaît comme la plus commode. */
 function DecompositionManip({ onSolved, solved, react }) {
-  const [step, setStep] = useState(solved ? 2 : 0);
-  // 7 × 23
-  const a = 7, b = 23, b1 = 20, b2 = 3;
+  const ROWS = 7, COLS = 23;
+  const [cut, setCut] = useState(11);
+  const [seen, setSeen] = useState([]);
+  const roundCut = cut === 20;
 
-  const steps = [
-    {
-      title: '7 × 23 — Comment faire ?',
-      content: (
-        <div className="space-y-3">
-          <p className="text-sm text-slate-600">
-            Calculer <strong>7 × 23</strong> de tête, c'est compliqué. Mais <strong>23 = 20 + 3</strong> !
-          </p>
-          <div className="bg-violet-50 border border-violet-200 rounded-xl p-4 text-center text-lg font-space font-bold text-violet-700">
-            23 = 20 + 3
-          </div>
-          <p className="text-sm text-slate-500">On peut donc découper le problème en deux parties plus simples.</p>
-        </div>
-      ),
-    },
-    {
-      title: 'On distribue la multiplication',
-      content: (
-        <div className="space-y-3">
-          <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-2 text-center font-space font-bold text-xl">
-            <div>
-              <span className="text-slate-600">{a} × {b}</span>
-              <span className="text-slate-400 mx-2">=</span>
-              <span className="text-violet-600">{a} × {b1}</span>
-              <span className="text-slate-400 mx-2">+</span>
-              <span className="text-indigo-600">{a} × {b2}</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-violet-50 border border-violet-200 rounded-xl p-4 text-center">
-              <div className="text-xs font-mono text-violet-500 mb-1">{a} × {b1}</div>
-              <div className="text-2xl font-space font-bold text-violet-700">{a * b1}</div>
-            </div>
-            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 text-center">
-              <div className="text-xs font-mono text-indigo-500 mb-1">{a} × {b2}</div>
-              <div className="text-2xl font-space font-bold text-indigo-700">{a * b2}</div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Résultat final',
-      content: (
-        <div className="space-y-3">
-          <div className="bg-slate-800 text-white rounded-xl p-5 text-center space-y-2">
-            <div className="text-slate-400 text-sm font-mono">{a} × {b1} + {a} × {b2}</div>
-            <div className="text-2xl font-space font-bold">{a * b1} + {a * b2}</div>
-            <div className="text-3xl font-space font-bold text-violet-300">= {a * b}</div>
-          </div>
-          <div className="text-sm text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3">
-            <CheckCircle2 className="inline w-4 h-4 mr-1" />
-            <strong>7 × 23 = {a * b}</strong> — La décomposition rend le calcul mental beaucoup plus simple !
-          </div>
-        </div>
-      ),
-    },
-  ];
+  const change = (v) => {
+    setCut(v);
+    setSeen((prev) => (prev.includes(v) ? prev : [...prev, v]));
+  };
+
+  const explored = seen.length >= 3;
+  const canFinish = explored && roundCut;
 
   return (
     <div className="space-y-4">
-      {steps.slice(0, step + 1).map((s, i) => (
-        <motion.div key={i} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-white border border-slate-200 rounded-2xl p-5 space-y-3">
-          <div className="text-xs font-mono font-bold text-violet-600 uppercase">{s.title}</div>
-          {s.content}
-        </motion.div>
-      ))}
-      {step < steps.length - 1 && (
-        <button onClick={() => setStep((v) => v + 1)} className="w-full py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl transition-all">
-          Étape suivante →
-        </button>
+      <p className="text-sm text-slate-600 leading-relaxed">
+        Calculer <strong className="font-mono">7 × 23</strong> de tête est difficile. Coupe ce
+        rectangle en deux et regarde ce que valent les morceaux.
+      </p>
+
+      <SplitRectangle rows={ROWS} cols={COLS} cut={cut} onCut={change} />
+
+      {explored && !roundCut && (
+        <Feedback tone="info">
+          Où que tu coupes, la somme des deux morceaux vaut toujours{' '}
+          <strong className="font-mono">{ROWS * COLS}</strong>. Cherche maintenant la coupe qui rend
+          les deux calculs faciles à faire de tête — celle qui laisse un <strong>nombre rond</strong> à
+          gauche.
+        </Feedback>
       )}
-      {step === steps.length - 1 && !solved && (
+      {roundCut && (
+        <Feedback tone="ok">
+          Voilà la coupe utile : <strong className="font-mono">7 × 20 = 140</strong> et{' '}
+          <strong className="font-mono">7 × 3 = 21</strong>, donc{' '}
+          <strong className="font-mono">140 + 21 = 161</strong>. Découper un facteur en un nombre
+          rond plus un petit reste, c'est ce qui rend le calcul mental possible.
+        </Feedback>
+      )}
+      {!explored && (
+        <Feedback tone="info">
+          Essaie plusieurs coupes ({seen.length} / 3) et surveille la ligne du bas.
+        </Feedback>
+      )}
+
+      {canFinish && !solved && (
         <button
+          type="button"
           onClick={() => { react(true); onSolved(); }}
-          className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all"
+          className="w-full min-h-[48px] py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
         >
-          Compris → suite
+          J'ai trouvé la coupe utile → suite
         </button>
       )}
     </div>

@@ -35,15 +35,28 @@ const SAMI_Q = {
 };
 
 function TraceRound({ react, shape, vertices, sideLengths, unit, intro, solved, onSolved }) {
-  const [tapped, setTapped] = useState(solved ? sideLengths.map((_, i) => i) : []);
+  const [tapped, setTapped] = useState([]);
   const total = tapped.reduce((s, i) => s + sideLengths[i], 0);
-  const isDone = solved || tapped.length === sideLengths.length;
+  // `isDone` = l'étape a été franchie une fois ; `tapped` dit ce qui est
+  // compté MAINTENANT — les deux sont distincts depuis que le tour se refait.
+  const [everDone, setEverDone] = useState(false);
+  const isDone = solved || everDone || tapped.length === sideLengths.length;
+  React.useEffect(() => {
+    if (tapped.length === sideLengths.length) setEverDone(true);
+  }, [tapped.length, sideLengths.length]);
 
+  /* Re-taper un côté déjà compté le RETIRE : c'est ainsi que l'élève voit
+     ce que fait un côté oublié — exactement l'erreur que l'étape 3 va lui
+     demander de diagnostiquer chez Sami. Le tour ne se fige donc jamais
+     (règle projet du 2026-09-06). */
   const handleTap = (i) => {
-    if (solved || tapped.includes(i)) return;
+    if (tapped.includes(i)) {
+      setTapped(tapped.filter((x) => x !== i));
+      return;
+    }
     const next = [...tapped, i];
     setTapped(next);
-    if (next.length === sideLengths.length) {
+    if (next.length === sideLengths.length && !solved) {
       react(true);
       onSolved?.();
     }
@@ -59,17 +72,24 @@ function TraceRound({ react, shape, vertices, sideLengths, unit, intro, solved, 
         unit={unit}
         tappedIndices={tapped}
         onTapSide={handleTap}
-        disabled={solved}
         showRunningTotal
       />
       <div className="text-center font-mono text-lg text-slate-800">
         Périmètre parcouru : <strong>{formatDec(total)} {unit}</strong>{' '}
         {tapped.length > 0 && !isDone && `(${tapped.length}/${sideLengths.length} côtés)`}
       </div>
-      {isDone && (
+      {isDone && tapped.length === sideLengths.length && (
         <Feedback tone="ok">
           Tour complet : {sideLengths.map((v) => formatDec(v)).join(' + ')} ={' '}
-          <strong>{formatDec(perimeter(sideLengths))} {unit}</strong>.
+          <strong>{formatDec(perimeter(sideLengths))} {unit}</strong>. Re-tape un côté pour le retirer : tu
+          verras tout de suite ce que coûte un côté oublié.
+        </Feedback>
+      )}
+      {isDone && tapped.length < sideLengths.length && (
+        <Feedback tone="hint">
+          Il manque {sideLengths.length - tapped.length} côté
+          {sideLengths.length - tapped.length > 1 ? 's' : ''} : le compte affiché n'est plus le tour complet
+          — c'est exactement l'erreur du côté oublié.
         </Feedback>
       )}
     </div>

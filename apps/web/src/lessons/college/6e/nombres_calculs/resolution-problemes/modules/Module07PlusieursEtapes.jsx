@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ContentModule, NumericQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import CalcChain from '../../../../../common/components/CalcChain';
+import { DragTray } from '../../../../../common/manip6e';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
@@ -137,94 +138,130 @@ const ORDER_STEPS = [
 ];
 const CORRECT_ORDER = ['a', 'b', 'c', 'd'];
 
+/**
+ * La chaîne se CONSTRUIT en déposant chaque maillon à sa place.
+ *
+ * Activity: prendre une étape de raisonnement et la POSER dans le maillon 1, 2,
+ *   3 ou 4 de la chaîne.
+ * Mathematical objective: un problème à plusieurs étapes est un enchaînement
+ *   ORDONNÉ — chaque maillon consomme le résultat du précédent.
+ * Student action: glisser une étiquette de la réserve vers un maillon (au doigt,
+ *   à la souris) ou, au clavier, l'activer puis activer le maillon voulu.
+ * Mathematical state: `slots`, un tableau de 4 cases. L'ordre affiché, le
+ *   verdict et le diagnostic en dérivent.
+ * Expected observation: on ne peut pas calculer le total des places après avoir
+ *   soustrait les places vendues — le maillon suivant n'aurait rien à consommer.
+ * Misconception targeted: « l'ordre des calculs est arbitraire ».
+ *
+ * Le geste précédent (taper une étiquette pour l'empiler) plaçait les étapes
+ * dans l'ordre où on les touchait : impossible de corriger le maillon 2 sans
+ * défaire les suivants, et surtout ce n'était pas le geste de la chose — on
+ * RANGE des étapes dans des cases, on ne les empile pas. DragTray fournit le
+ * glisser-déposer complet, avec le chemin clavier et le clic de secours.
+ */
 function RemettreOrdre({ react, solved, onSolved }) {
-  const [built, setBuilt] = useState([]);
+  // Une case par maillon ; null = maillon vide.
+  const [slots, setSlots] = useState([null, null, null, null]);
   const [checked, setChecked] = useState(false);
 
-  const pool = ORDER_STEPS.filter((s) => !built.includes(s.id));
-  const isRight = CORRECT_ORDER.every((id, i) => built[i] === id) && built.length === CORRECT_ORDER.length;
+  const placed = slots.filter(Boolean);
+  const full = placed.length === ORDER_STEPS.length;
+  const isRight = full && CORRECT_ORDER.every((id, i) => slots[i] === id);
 
-  const add = (id) => {
-    if (solved) return;
+  /* RÈGLE PROJET (2026-09-06) : la construction ne se fige jamais après la
+     validation — l'élève doit pouvoir sortir un maillon et le replacer. */
+  const drop = (stepId, zoneId) => {
+    const idx = Number(zoneId);
     setChecked(false);
-    setBuilt((prev) => [...prev, id]);
-  };
-  const remove = (id) => {
-    if (solved) return;
-    setChecked(false);
-    setBuilt((prev) => prev.filter((x) => x !== id));
+    setSlots((prev) => {
+      const next = [...prev];
+      // Une étape déjà posée ailleurs quitte son ancienne case : on ne peut pas
+      // avoir deux fois le même maillon dans la chaîne.
+      const from = next.indexOf(stepId);
+      if (from >= 0) next[from] = null;
+      next[idx] = stepId;
+      return next;
+    });
   };
 
-  const check = () => {
+  const removeAt = (zoneId) => {
+    const idx = Number(zoneId);
+    setChecked(false);
+    setSlots((prev) => {
+      const next = [...prev];
+      next[idx] = null;
+      return next;
+    });
+  };
+
+  const verify = () => {
     setChecked(true);
     react(isRight);
     onSolved?.();
   };
 
+  const sources = ORDER_STEPS.filter((st) => !slots.includes(st.id)).map((st) => ({
+    id: st.id,
+    label: st.text,
+    node: <span className="block max-w-[15rem] text-left text-sm text-slate-700">{st.text}</span>,
+  }));
+
+  const zones = slots.map((id, i) => {
+    const st = id ? ORDER_STEPS.find((x) => x.id === id) : null;
+    const bad = checked && id !== CORRECT_ORDER[i];
+    return {
+      id: String(i),
+      label: `Maillon ${i + 1}`,
+      node: st ? (
+        <span
+          className={`block text-left text-xs leading-snug px-1 ${
+            bad ? 'text-rose-700' : checked ? 'text-emerald-800' : 'text-slate-700'
+          }`}
+        >
+          {st.text}
+        </span>
+      ) : (
+        <span className="text-[11px] text-slate-400 italic">à remplir</span>
+      ),
+    };
+  });
+
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-600">
-        Voici les étapes (mélangées) de la résolution d'un problème sur la vente de billets. Reconstitue l'ordre
-        logique en les touchant une par une.
+        Voici les étapes (mélangées) de la résolution d'un problème sur la vente de billets.{' '}
+        <strong>Fais glisser</strong> chaque étape dans le maillon qui lui revient — ou, au clavier, active
+        l'étape puis le maillon.
       </p>
 
-      {!solved && pool.length > 0 && (
-        <div>
-          <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-2">Étapes disponibles</div>
-          <div className="flex flex-col gap-2">
-            {pool.map((s) => (
-              <button
-                key={s.id}
-                type="button"
-                onClick={() => add(s.id)}
-                className="text-left px-3 py-2.5 rounded-xl border-2 border-slate-200 bg-white text-sm text-slate-700 hover:border-blue-400 min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              >
-                {s.text}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+      <DragTray
+        sources={sources}
+        zones={zones}
+        onDrop={drop}
+        onRemove={removeAt}
+        sourcesLabel="Étapes à ranger"
+        zonesLabel="Ta chaîne de calcul"
+      />
 
-      <div>
-        <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-2">Ton ordre</div>
-        <div className="space-y-1.5 min-h-[60px] p-2 rounded-xl border-2 border-dashed border-slate-200 bg-slate-50">
-          {built.length === 0 && !solved && <p className="text-xs text-slate-400 italic px-2">Touche une étape ci-dessus pour commencer.</p>}
-          {(solved ? CORRECT_ORDER : built).map((id, i) => {
-            const s = ORDER_STEPS.find((x) => x.id === id);
-            const isBad = checked && !solved && id !== CORRECT_ORDER[i];
-            return (
-              <button
-                key={id}
-                type="button"
-                onClick={() => remove(id)}
-                disabled={solved}
-                className={`w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg border-2 text-sm ${
-                  solved ? 'border-emerald-300 bg-emerald-50 text-emerald-800' : isBad ? 'border-rose-400 bg-rose-50 text-rose-700' : 'border-slate-300 bg-white text-slate-700'
-                }`}
-              >
-                <span className="font-mono font-bold text-xs text-slate-400">{i + 1}.</span>
-                {s.text}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {checked && !isRight && !solved && (
+      {checked && !isRight && (
         <Feedback tone="ko">
-          Cet ordre n'est pas encore le bon : Comprendre → Calculer l'intermédiaire → Calculer le final →
-          Répondre. Retire une étape et replace-la.
+          Cet ordre n'est pas encore le bon. Repère les maillons en rouge : l'enchaînement va toujours de
+          Comprendre → Calculer l'intermédiaire → Calculer le final → Répondre. Sors un maillon et repose-le.
         </Feedback>
       )}
 
-      {!solved && (
-        <div className="text-center">
-          <ValidateButton onClick={check} disabled={built.length !== ORDER_STEPS.length}>Vérifier mon ordre</ValidateButton>
-        </div>
-      )}
+      <div className="text-center">
+        <ValidateButton onClick={verify} disabled={!full}>
+          {solved ? 'Revérifier ma chaîne' : 'Vérifier ma chaîne'}
+        </ValidateButton>
+      </div>
 
-      {solved && <Feedback tone="ok">Comprendre → Calculer l'intermédiaire → Calculer le final → Répondre : c'est toujours cet enchaînement.</Feedback>}
+      {solved && (!checked || isRight) && (
+        <Feedback tone="ok">
+          Comprendre → Calculer l'intermédiaire → Calculer le final → Répondre : c'est toujours cet
+          enchaînement. Tu peux sortir un maillon et le reposer autant de fois que tu veux.
+        </Feedback>
+      )}
     </div>
   );
 }

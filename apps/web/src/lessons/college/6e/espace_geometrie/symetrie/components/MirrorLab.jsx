@@ -255,7 +255,7 @@ const TONES = {
 function Gauge({ label, value, tone }) {
   return (
     <div className={`rounded-xl border-2 px-3.5 py-2 text-center ${TONES[tone]}`}>
-      <div className="text-[10px] font-mono uppercase tracking-wide opacity-70">{label}</div>
+      <div className="text-xs font-mono uppercase tracking-wide opacity-70">{label}</div>
       <div className="font-mono font-extrabold text-base tabular-nums" aria-live="polite">
         {value === null ? '…' : value}
       </div>

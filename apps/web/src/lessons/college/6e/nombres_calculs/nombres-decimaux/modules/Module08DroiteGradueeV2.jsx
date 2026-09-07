@@ -85,12 +85,14 @@ function PlacerNombre({ min, max, step, labelEvery, target, explain, solved, onS
           min={min} max={max} step={step} labelEvery={labelEvery} height={190}
           mode="place"
           value={pos}
-          onChange={(v) => { if (done) return; setPos(v); }}
+          // RÈGLE PROJET (2026-09-06) : la droite ne se fige JAMAIS après la
+          // validation. L'élève garde le curseur pour aller voir où tombent
+          // les voisins de la cible — le repère fantôme reste affiché à côté.
+          onChange={setPos}
           snap={step}
           format={(v) => formatDec(v)}
           revealValue={done}
-          disabled={done}
-          ghost={done && !isRight ? { value: target, label: formatDec(target) } : null}
+          ghost={done ? { value: target, label: formatDec(target) } : null}
           ariaLabel={`Place ${formatDec(target)} entre ${formatDec(min)} et ${formatDec(max)}`}
         />
       </div>
@@ -101,10 +103,12 @@ function PlacerNombre({ min, max, step, labelEvery, target, explain, solved, onS
         </ValidateButton>
       )}
 
+      {/* Le retour cite la position VIVANTE : l'élève peut continuer à
+          déplacer le curseur sans que la phrase devienne fausse. */}
       {checked && !isRight && (
         <Feedback tone="ko">
-          Tu as placé le curseur sur <strong className="font-mono">{formatDec(pos)}</strong> (repère vert = la bonne
-          position). {explain}
+          Le curseur est sur <strong className="font-mono">{formatDec(pos)}</strong> (repère vert = la bonne
+          position, <strong className="font-mono">{formatDec(target)}</strong>). {explain}
         </Feedback>
       )}
       {/* `solved` alone (parent's onSolved, fired unconditionally) must never imply "right" —

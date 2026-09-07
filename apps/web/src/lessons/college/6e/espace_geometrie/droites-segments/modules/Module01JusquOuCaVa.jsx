@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, KnowledgeBrick, PredictionChips } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -26,6 +26,7 @@ const DRO0 = { kind: 'droite', a: { x: 70, y: 110 }, b: { x: 200, y: 70 } };
 export default function Module01JusquOuCaVa() {
   const [seg, setSeg] = useState(SEG0);
   const [dro, setDro] = useState(DRO0);
+  const [pred, setPred] = useState(null);
   const [segDone, setSegDone] = useState(false);
   const [droDone, setDroDone] = useState(false);
   const [diffDone, setDiffDone] = useState(false);
@@ -56,12 +57,25 @@ export default function Module01JusquOuCaVa() {
           done: segDone,
           content: (kit) => (
             <div className="space-y-2">
+              {/* Prédiction SANS verdict (§6ter.3) : c'est le geste qui
+                  répond, jamais un texte de correction. */}
+              <PredictionChips
+                prompt="en tirant sur le bout, jusqu’où ce trait va-t-il aller ?"
+                options={[
+                  { id: 'bute', label: 'Il va buter' },
+                  { id: 'infini', label: 'Il continuera toujours' },
+                ]}
+                value={pred}
+                onChange={setPred}
+              />
+              {/* JAMAIS `disabled` : le trait reste tirable après validation —
+                  c'est en re-tirant que l'élève confirme que ça bute VRAIMENT
+                  (règle projet du 2026-09-06). */}
               <ExtentPuller
                 obj={seg}
                 onObjChange={setSeg}
                 baseBox={BOX}
                 pullable="b"
-                disabled={segDone}
                 onBlocked={() => {
                   if (segDone) return;
                   kit.react(true);
@@ -98,7 +112,6 @@ export default function Module01JusquOuCaVa() {
                 onObjChange={setDro}
                 baseBox={BOX}
                 pullable="b"
-                disabled={droDone}
                 onExtended={() => {
                   if (droDone) return;
                   kit.react(true);

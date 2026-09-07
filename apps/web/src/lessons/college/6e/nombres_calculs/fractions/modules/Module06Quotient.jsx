@@ -7,6 +7,7 @@ import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PartitionShape from '../components/PartitionShape';
+import ShareOutLab from '../components/ShareOutLab';
 
 /**
  * Module 6 V2 — reconstruit sur le lesson kit.
@@ -15,7 +16,10 @@ import PartitionShape from '../components/PartitionShape';
  *   formative par construction (aucune notion de "faux" à corriger) ;
  *   garde son mécanisme bespoke via `content: (kit) => …`, appelle
  *   `kit.react(true)` et `onSolved()` inconditionnellement à la validation.
- * Étape 2 : QCM (MOTIF_Q) → TapQuestion.
+ * Étape 2 : labo d'abord (MotifLab sur ShareOutLab) — l'élève tire le nombre
+ *   de convives et voit toutes les pizzas se recouper ensemble, architecture
+ *   reprise de CommonCutLab (3e) ; le QCM de transfert (MOTIF_Q → TapQuestion)
+ *   n'apparaît qu'ensuite.
  * Étape 3 : les 2 situations partage/regroupement (SITUATIONS) → une seule
  *   BatchChoiceQuestion à 2 lignes, correction automatique à la 2e réponse.
  * Étape 4 : erreur à corriger (ERREUR) → TapQuestion.
@@ -102,12 +106,101 @@ function PartageQuotient({ solved, onSolved, react }) {
   );
 }
 
-/* ─── Étape 2 : le motif se répète ───────────────────────────────── */
-const MOTIFS = [
-  { a: 1, b: 2, tone: 'sky' },
-  { a: 1, b: 3, tone: 'violet' },
-  { a: 2, b: 3, tone: 'emerald' },
-];
+/* ─── Étape 2 : le motif se répète ─────────────────────────────────
+   Trois dessins côte à côte MONTRENT le motif ; ils ne le font pas vivre.
+   Ici l'élève tire lui-même le nombre de convives et voit toutes les pizzas
+   se recouper d'un coup : c'est le nombre du BAS qui commande la découpe, et
+   ça se constate au lieu de se lire. Architecture reprise de CommonCutLab
+   (3e) — une prise re-découpe plusieurs figures, l'écriture est dérivée —
+   sans sa mathématique (aucun dénominateur commun ici). */
+function MotifLab({ solved, onSolved, react }) {
+  const [pies, setPies] = useState(1);
+  const [people, setPeople] = useState(2);
+  const [seen, setSeen] = useState([]);
+
+  // Les trois écritures à faire apparaître soi-même. Toutes ont un numérateur
+  // et un dénominateur d'entiers positifs simples — rien au-delà de la 6e.
+  const CIBLES = [
+    { a: 1, b: 3 },
+    { a: 2, b: 3 },
+    { a: 3, b: 5 },
+  ];
+  const cur = CIBLES.find((c, i) => !seen.includes(i)) ?? null;
+  const matches = cur && pies === cur.a && people === cur.b;
+  const allSeen = seen.length === CIBLES.length;
+
+  const validate = () => {
+    react(!!matches);
+    if (matches) {
+      const next = [...seen, CIBLES.indexOf(cur)];
+      setSeen(next);
+      if (next.length === CIBLES.length) onSolved?.();
+    }
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="rounded-xl border-2 border-rose-200 bg-rose-50 px-4 py-3 text-center">
+        {cur ? (
+          <div className="text-sm text-slate-700">
+            Mets sur la table de quoi obtenir{' '}
+            <MathText>{`$\\frac{${cur.a}}{${cur.b}}$`}</MathText> de pizza par personne.
+            <span className="block text-xs text-slate-500 mt-1">
+              Écriture {seen.length + 1} sur {CIBLES.length}
+            </span>
+          </div>
+        ) : (
+          <div className="text-sm text-slate-700">
+            Les trois écritures sont sorties du même geste — la table reste à toi.
+          </div>
+        )}
+      </div>
+
+      <ShareOutLab
+        pies={pies}
+        people={people}
+        onPies={setPies}
+        onPeople={setPeople}
+        minPies={1}
+        maxPies={4}
+        minPeople={2}
+        maxPeople={8}
+        caption="Tire la piste des personnes : toutes les pizzas se recoupent en même temps. Tire celle des pizzas : la découpe, elle, ne change pas."
+      />
+
+      {cur && (
+        <div className="text-center">
+          <ValidateButton onClick={validate} tone="amber">
+            C'est ma table
+          </ValidateButton>
+        </div>
+      )}
+
+      {seen.length > 0 && !allSeen && (
+        <Feedback tone="ok">
+          Trouvé. Remarque qui a fait quoi : le nombre de <strong>personnes</strong> a coupé les
+          pizzas, le nombre de <strong>pizzas</strong> a dit combien de parts tu emportes.
+        </Feedback>
+      )}
+
+      {allSeen && (
+        <Feedback tone="ok">
+          Dans les trois cas, tu as écrit <em>pizzas sur personnes</em> : le nombre qui découpe va
+          en bas, celui qui compte ce qu'on partage va en haut. Partager 3 pizzas entre 5
+          personnes, c'est <MathText>{'$3 \\div 5 = \\frac{3}{5}$'}</MathText> — et le partage
+          lui-même a produit la fraction.
+        </Feedback>
+      )}
+
+      {solved && !allSeen && (
+        <Feedback tone="info">
+          Tu avais déjà trouvé les trois écritures : la table reste manipulable pour en essayer
+          d'autres.
+        </Feedback>
+      )}
+    </div>
+  );
+}
 
 const MOTIF_Q = {
   q: 'En suivant le même principe, que vaut 2 ÷ 3 ?',
@@ -156,6 +249,7 @@ const ERREUR = {
 
 export default function Module06Quotient() {
   const [s1, setS1] = useState(false);
+  const [motifDone, setMotifDone] = useState(false);
   const [s2, setS2] = useState(false);
   const [s3, setS3] = useState(false);
   const [s4, setS4] = useState(false);
@@ -205,30 +299,29 @@ export default function Module06Quotient() {
           num: 2,
           title: 'Le même motif se répète',
           done: s2,
-          content: (
+          content: (kit) => (
             <div className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {MOTIFS.map((m) => (
-                  <div key={`${m.a}-${m.b}`} className="border-2 border-slate-200 rounded-2xl p-3 bg-white flex items-center gap-3">
-                    <PartitionShape shape="bar" parts={m.b} shaded={m.a} tone={m.tone} size="sm" />
-                    <div className="text-lg shrink-0">
-                      <MathText>{`$${m.a} \\div ${m.b} = \\frac{${m.a}}{${m.b}}$`}</MathText>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <TapQuestion
-                prompt={MOTIF_Q.q}
-                options={MOTIF_Q.options}
-                correct={MOTIF_Q.correct}
-                cols={4}
-                renderOption={renderFractionOption}
-                explain={MOTIF_Q.explain}
-                requires={['fraction-quotient']}
-                solved={s2}
-                onAnswered={() => setS2(true)}
+              {/* Le labo d'abord : le motif se CONSTATE en tirant les pistes,
+                  et la question de transfert ne vient qu'après (§6bis). */}
+              <MotifLab
+                solved={motifDone}
+                react={kit.react}
+                onSolved={() => setMotifDone(true)}
               />
+
+              {motifDone && (
+                <TapQuestion
+                  prompt={MOTIF_Q.q}
+                  options={MOTIF_Q.options}
+                  correct={MOTIF_Q.correct}
+                  cols={4}
+                  renderOption={renderFractionOption}
+                  explain={MOTIF_Q.explain}
+                  requires={['fraction-quotient']}
+                  solved={s2}
+                  onAnswered={() => setS2(true)}
+                />
+              )}
             </div>
           ),
         },

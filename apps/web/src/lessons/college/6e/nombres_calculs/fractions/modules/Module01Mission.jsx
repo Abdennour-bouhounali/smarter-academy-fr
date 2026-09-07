@@ -6,6 +6,7 @@ import MathText from '../../../../../common/components/MathText';
 import { Feedback, ValidateButton } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import PartitionShape from '../components/PartitionShape';
+import FractionBar from '../components/FractionBar';
 
 /**
  * Module 1 V2 — reconstruit sur le lesson kit.
@@ -79,18 +80,39 @@ function QuestionBlock({ children }) {
 /* ─────────────────────────────────────────────────────────────────────
    ÉTAPE 1 — MANIPULATION DU CHOCOLAT
    ───────────────────────────────────────────────────────────────────── */
+/**
+ * PartageAtelier — on PREND une longueur de tablette, on ne clique pas des
+ * cases une par une.
+ *
+ * Avant : quatre cases cliquables ; prendre trois parts demandait trois clics,
+ * et « prendre plus » n'était pas un geste continu mais une suite de tapes.
+ * Le geste réel du partage — poser le doigt et tirer jusqu'à sa part — était
+ * absent.
+ *
+ * Ici, l'élève tire le bord de la zone coloriée : la quantité prise suit son
+ * doigt, part par part (elle se cale sur les parts : on ne prend pas un tiers
+ * de part). Le compteur, lui, reste dérivé du même état.
+ *
+ * La découpe reste FIXE à 4 dans ce module : l'unité est déjà partagée entre
+ * quatre personnes, et changer le nombre de parts est la découverte du module
+ * suivant (§8 — une variable à la fois).
+ */
 function PartageAtelier({ react, solved, onSolved }) {
-  const [cells, setCells] = useState([]);
   const parts = 4;
   const target = 3;
-  const count = solved ? target : cells.length;
-  const isDone = solved || cells.length === target;
+  const [reached, setReached] = useState(false);
+  /* `solved` ne doit PAS repeindre la barre sur la cible : ce serait figer la
+     manipulation par l'affichage plutôt que par un `disabled` — même faute,
+     déguisée. On affiche toujours l'état vivant ; au retour sur le module
+     (solved dès le montage, rien de pris), on repart de la cible. */
+  const [taken, setTaken] = useState(solved ? target : 0);
+  const count = taken;
+  const isDone = solved || reached;
 
-  const toggle = (i) => {
-    if (solved) return;
-    const next = cells.includes(i) ? cells.filter((x) => x !== i) : [...cells, i].sort();
-    setCells(next);
-    if (next.length === target) {
+  const take = (n) => {
+    setTaken(n);
+    if (n === target && !reached) {
+      setReached(true);
       react(true);
       onSolved?.();
     }
@@ -98,7 +120,6 @@ function PartageAtelier({ react, solved, onSolved }) {
 
   return (
     <div className="space-y-6">
-      {/* Instruction */}
       <div className="space-y-2">
         <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-sans">
           La tablette est déjà coupée en{' '}
@@ -107,29 +128,36 @@ function PartageAtelier({ react, solved, onSolved }) {
         </p>
         {!isDone && (
           <p className="text-base text-amber-700 font-semibold font-sans">
-            👆 Touche exactement <strong>3 parts</strong> — celles que tu manges.
+            👆 Tire le bord de la zone colorée jusqu'à avoir exactement <strong>3 parts</strong> — celles
+            que tu manges.
           </p>
         )}
       </div>
 
-      {/* Chocolate stage */}
-      <div className="rounded-2xl bg-amber-50 border-2 border-amber-200 p-5 sm:p-7 flex flex-col items-center gap-5">
-        <div className="w-full max-w-sm">
-          <PartitionShape
-            shape="bar"
-            parts={parts}
-            cells={solved ? [0, 1, 2] : cells}
-            onToggle={toggle}
-            tone="amber"
-            size="lg"
-          />
-        </div>
-
-        {/* Progress counter */}
-        <ProgressCounter count={count} total={parts} />
+      <div className="rounded-2xl bg-amber-50 border-2 border-amber-200 p-3 sm:p-5">
+        <FractionBar
+          num={count}
+          den={parts}
+          onNum={take}
+          /* La découpe est fixe ici : une seule option dans le couloir, donc
+             le geste « découper » ne peut rien changer (§8). */
+          onDen={undefined}
+          denOptions={[parts]}
+          tone="amber"
+          /* L'écriture 3/4 n'existe pas encore pour l'élève : elle est la
+             découverte de l'étape 3 (§6quinquies — jamais avant sa brique). */
+          showWriting={false}
+        />
       </div>
 
-      {/* Success state */}
+      <p className="text-center text-sm text-slate-500 font-sans">
+        {count === 0
+          ? 'Attrape le bord et tire vers la droite.'
+          : count === target
+          ? '✓ Tu as pris 3 parts sur 4.'
+          : `${count} part${count > 1 ? 's' : ''} prise${count > 1 ? 's' : ''} — continue.`}
+      </p>
+
       <AnimatePresence>
         {isDone && (
           <motion.div
@@ -144,9 +172,20 @@ function PartageAtelier({ react, solved, onSolved }) {
               <p className="text-base sm:text-lg font-bold text-emerald-800 font-sans">
                 Partage réussi !
               </p>
+              {/* RÈGLE PROJET : la barre reste vivante. Le texte doit donc
+                  rester VRAI si l'élève continue à tirer le bord. */}
               <p className="text-base text-emerald-700 leading-relaxed font-sans">
-                Tu as pris <strong>3 parts sur les 4</strong>.
-                C'est exactement cette quantité qu'il va falloir apprendre à noter.
+                {count === target ? (
+                  <>
+                    Tu as pris <strong>3 parts sur les 4</strong>. C'est exactement cette quantité qu'il va
+                    falloir apprendre à noter.
+                  </>
+                ) : (
+                  <>
+                    Tu continues d'explorer : <strong>{count} part{count > 1 ? 's' : ''} sur les 4</strong>. La
+                    tablette, elle, n'a pas changé de taille — seule ta part change.
+                  </>
+                )}
               </p>
             </div>
           </motion.div>

@@ -46,14 +46,10 @@ function PlacerFraction({ den, target, min = 0, max = 1, markers = [], explain, 
           height={190}
           mode="place"
           value={pos}
-          onChange={(v) => {
-            if (done) return;
-            setPos(v);
-          }}
+          onChange={setPos}
           snap={step}
           format={fracLineFormat(den)}
           revealValue={done}
-          disabled={done}
           ghost={done && !isRight ? { value: target, label: fracLineFormat(den)(target) } : null}
           ariaLabel={`Place ${fracLineFormat(den)(target)} entre ${min} et ${max}`}
           edgesOnly
@@ -77,14 +73,21 @@ function PlacerFraction({ den, target, min = 0, max = 1, markers = [], explain, 
 
       {checked && !isRight && (
         <Feedback tone="ko">
-          Tu as placé le curseur sur <strong className="font-mono">{fracLineFormat(den)(pos)}</strong> (repère vert =
-          la bonne position). {explain}
+          Ton curseur est sur <strong className="font-mono">{fracLineFormat(den)(pos)}</strong> (repère vert =
+          la bonne position). {explain} Le curseur reste libre : ramène-le sur le repère pour voir l'écart
+          se refermer.
         </Feedback>
       )}
       {/* `solved` (parent's onSolved, fired unconditionally) must never imply "right" — only
           report success when THIS check was actually correct, or on a genuine revisit (solved
           from mount, never checked this session). */}
-      {(checked ? isRight : solved) && <Feedback tone="ok">{explain}</Feedback>}
+      {(checked ? isRight : solved) && (
+        <Feedback tone="ok">
+          {isRight
+            ? explain
+            : <>Tu continues d'explorer : ton curseur est sur <strong className="font-mono">{fracLineFormat(den)(pos)}</strong>. {explain}</>}
+        </Feedback>
+      )}
     </div>
   );
 }
