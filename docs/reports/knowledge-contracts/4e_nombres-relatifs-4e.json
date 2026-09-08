@@ -1,0 +1,559 @@
+{
+  "lesson": "nombres-relatifs-4e",
+  "grade": "4e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "nombre-relatif",
+    "oppose",
+    "distance-a-zero",
+    "ordre-relatifs",
+    "addition-deplacement",
+    "soustraction-oppose",
+    "priorites-operatoires"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "regularite-table",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module01ProlongerLaTable.jsx",
+        "line": 169,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "regle-des-signes",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module02LaRegleDesSignes.jsx",
+        "line": 36,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "quotient-relatifs",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module04Diviser.jsx",
+        "line": 76,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "priorites-relatifs",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module05EnchainerLesOperations.jsx",
+        "line": 96,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [],
+  "proceduresIntroduced": [
+    {
+      "id": "parite-facteurs",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module03PlusieursFacteurs.jsx",
+        "line": 84,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "controle-du-signe",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module05EnchainerLesOperations.jsx",
+        "line": 125,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-parite",
+      "type": "memoriser",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module03PlusieursFacteurs.jsx",
+        "line": 89,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "nr4-d1-oppose",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module00Diagnostic.jsx",
+      "line": 23,
+      "requires": [
+        "oppose",
+        "nombre-relatif"
+      ],
+      "prerequisiteStatus": {
+        "oppose": "prior",
+        "nombre-relatif": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-d2-comparer",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module00Diagnostic.jsx",
+      "line": 34,
+      "requires": [
+        "ordre-relatifs",
+        "distance-a-zero"
+      ],
+      "prerequisiteStatus": {
+        "ordre-relatifs": "prior",
+        "distance-a-zero": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-d3-somme",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module00Diagnostic.jsx",
+      "line": 45,
+      "requires": [
+        "addition-deplacement"
+      ],
+      "prerequisiteStatus": {
+        "addition-deplacement": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-d4-difference",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module00Diagnostic.jsx",
+      "line": 56,
+      "requires": [
+        "soustraction-oppose"
+      ],
+      "prerequisiteStatus": {
+        "soustraction-oppose": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-d5-priorites",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module00Diagnostic.jsx",
+      "line": 67,
+      "requires": [
+        "priorites-operatoires"
+      ],
+      "prerequisiteStatus": {
+        "priorites-operatoires": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q1",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module01ProlongerLaTable.jsx",
+      "line": 174,
+      "requires": [
+        "regularite-table"
+      ],
+      "prerequisiteStatus": {
+        "regularite-table": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S1-Q1",
+      "module": 2,
+      "step": 1,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module02LaRegleDesSignes.jsx",
+      "line": 48,
+      "requires": [
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q2",
+      "module": 2,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module02LaRegleDesSignes.jsx",
+      "line": 67,
+      "requires": [
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q3",
+      "module": 2,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module02LaRegleDesSignes.jsx",
+      "line": 88,
+      "requires": [
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module03PlusieursFacteurs.jsx",
+      "line": 95,
+      "requires": [
+        "parite-facteurs",
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "parite-facteurs": "established@M3",
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module03PlusieursFacteurs.jsx",
+      "line": 119,
+      "requires": [
+        "parite-facteurs",
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "parite-facteurs": "established@M3",
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S1-Q1",
+      "module": 4,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module04Diviser.jsx",
+      "line": 44,
+      "requires": [
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q2",
+      "module": 4,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module04Diviser.jsx",
+      "line": 82,
+      "requires": [
+        "quotient-relatifs",
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "quotient-relatifs": "established@M4",
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q3",
+      "module": 4,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module04Diviser.jsx",
+      "line": 101,
+      "requires": [
+        "quotient-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "quotient-relatifs": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q4",
+      "module": 4,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module04Diviser.jsx",
+      "line": 121,
+      "requires": [
+        "quotient-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "quotient-relatifs": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module05EnchainerLesOperations.jsx",
+      "line": 101,
+      "requires": [
+        "priorites-relatifs",
+        "quotient-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "priorites-relatifs": "established@M5",
+        "quotient-relatifs": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module05EnchainerLesOperations.jsx",
+      "line": 130,
+      "requires": [
+        "priorites-relatifs",
+        "controle-du-signe",
+        "parite-facteurs"
+      ],
+      "prerequisiteStatus": {
+        "priorites-relatifs": "established@M5",
+        "controle-du-signe": "established@M5",
+        "parite-facteurs": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e1",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 48,
+      "requires": [
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e2",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 59,
+      "requires": [
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e3",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 70,
+      "requires": [
+        "regularite-table",
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "regularite-table": "established@M1",
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e4",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 86,
+      "requires": [
+        "parite-facteurs"
+      ],
+      "prerequisiteStatus": {
+        "parite-facteurs": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e5",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 102,
+      "requires": [
+        "parite-facteurs",
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "parite-facteurs": "established@M3",
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e6",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 113,
+      "requires": [
+        "quotient-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "quotient-relatifs": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e7",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 124,
+      "requires": [
+        "quotient-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "quotient-relatifs": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e8",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 140,
+      "requires": [
+        "priorites-relatifs",
+        "regle-des-signes"
+      ],
+      "prerequisiteStatus": {
+        "priorites-relatifs": "established@M5",
+        "regle-des-signes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e9",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 151,
+      "requires": [
+        "priorites-relatifs",
+        "quotient-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "priorites-relatifs": "established@M5",
+        "quotient-relatifs": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "nr4-e10",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/4e/nombres_calculs/nombres-relatifs-4e/modules/Module06MissionFinale.jsx",
+      "line": 162,
+      "requires": [
+        "controle-du-signe",
+        "parite-facteurs"
+      ],
+      "prerequisiteStatus": {
+        "controle-du-signe": "established@M5",
+        "parite-facteurs": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

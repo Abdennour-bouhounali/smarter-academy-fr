@@ -29,7 +29,9 @@ import fractionsRoutes from './lessons/college/6e/nombres_calculs/fractions/rout
 import quatreOperationsRoutes from './lessons/college/6e/nombres_calculs/quatre-operations/routes';
 import nombresEntiersRoutes from './lessons/college/6e/nombres_calculs/nombres-entiers/routes';
 import racinesCarrees4eRoutes from './lessons/college/4e/nombres_calculs/racines-carrees/routes';
+import operations5eRoutes from './lessons/college/5e/nombres_calculs/operations-5e/routes';
 import nombresRelatifs5eRoutes from './lessons/college/5e/nombres_calculs/nombres-relatifs-5e/routes';
+import nombresRationnels5eRoutes from './lessons/college/5e/nombres_calculs/nombres-rationnels-5e/routes';
 import nombresRelatifs4eRoutes from './lessons/college/4e/nombres_calculs/nombres-relatifs-4e/routes';
 import racinesCarrees3eRoutes from './lessons/college/3e/nombres_calculs/racines-carrees/routes';
 import reperageDroitePlan3eRoutes from './lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/routes';
@@ -157,7 +159,9 @@ export default function App() {
             {quatreOperationsRoutes()}
             {nombresEntiersRoutes()}
             {racinesCarrees4eRoutes()}
+            {operations5eRoutes()}
             {nombresRelatifs5eRoutes()}
+            {nombresRationnels5eRoutes()}
             {nombresRelatifs4eRoutes()}
             {racinesCarrees3eRoutes()}
             {reperageDroitePlan3eRoutes()}

@@ -1,0 +1,765 @@
+{
+  "lesson": "operations-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "calcul-numerique",
+    "tables-multiplication",
+    "valeur-position",
+    "quotient",
+    "decalage-virgule"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "structure-calcul",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module01LesDeuxCaisses.jsx",
+        "line": 211,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "priorites",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module02LOrdreCache.jsx",
+        "line": 181,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "criteres-divisibilite",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module03MultiplesEtDiviseurs.jsx",
+        "line": 130,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "quotient-invariant",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module06DiviserParUnDecimal.jsx",
+        "line": 99,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "parentheses",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module01LesDeuxCaisses.jsx",
+        "line": 216,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "multiple-diviseur",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module03MultiplesEtDiviseurs.jsx",
+        "line": 100,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "enchainement",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module04EnchainerLesOperations.jsx",
+        "line": 107,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "decouper-calcul",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module05LeCalculMalin.jsx",
+        "line": 142,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "diviser-decimal",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module06DiviserParUnDecimal.jsx",
+        "line": 130,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ordre-de-grandeur",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module07LaNoteDuTraiteur.jsx",
+        "line": 94,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-priorites",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module02LOrdreCache.jsx",
+        "line": 186,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-controler",
+      "type": "memoriser",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module07LaNoteDuTraiteur.jsx",
+        "line": 148,
+        "step": 4,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "op5-d1-sens",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module00Diagnostic.jsx",
+      "line": 24,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-d2-tables",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module00Diagnostic.jsx",
+      "line": 35,
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-d3-decimaux",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module00Diagnostic.jsx",
+      "line": 46,
+      "requires": [
+        "valeur-position"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-d4-virgule",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module00Diagnostic.jsx",
+      "line": 57,
+      "requires": [
+        "decalage-virgule"
+      ],
+      "prerequisiteStatus": {
+        "decalage-virgule": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-d5-quotient",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module00Diagnostic.jsx",
+      "line": 68,
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q1",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module01LesDeuxCaisses.jsx",
+      "line": 221,
+      "requires": [
+        "structure-calcul",
+        "parentheses"
+      ],
+      "prerequisiteStatus": {
+        "structure-calcul": "established@M1",
+        "parentheses": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S1-Q1",
+      "module": 2,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module02LOrdreCache.jsx",
+      "line": 54,
+      "requires": [
+        "calcul-numerique",
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior",
+        "tables-multiplication": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module02LOrdreCache.jsx",
+      "line": 119,
+      "requires": [
+        "calcul-numerique",
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior",
+        "tables-multiplication": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q3",
+      "module": 2,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module02LOrdreCache.jsx",
+      "line": 187,
+      "requires": [
+        "priorites",
+        "parentheses"
+      ],
+      "prerequisiteStatus": {
+        "priorites": "established@M2",
+        "parentheses": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module03MultiplesEtDiviseurs.jsx",
+      "line": 105,
+      "requires": [
+        "multiple-diviseur"
+      ],
+      "prerequisiteStatus": {
+        "multiple-diviseur": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module03MultiplesEtDiviseurs.jsx",
+      "line": 137,
+      "requires": [
+        "criteres-divisibilite",
+        "multiple-diviseur"
+      ],
+      "prerequisiteStatus": {
+        "criteres-divisibilite": "established@M3",
+        "multiple-diviseur": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q3",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module03MultiplesEtDiviseurs.jsx",
+      "line": 193,
+      "requires": [
+        "multiple-diviseur",
+        "criteres-divisibilite"
+      ],
+      "prerequisiteStatus": {
+        "multiple-diviseur": "established@M3",
+        "criteres-divisibilite": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module04EnchainerLesOperations.jsx",
+      "line": 112,
+      "requires": [
+        "enchainement",
+        "priorites"
+      ],
+      "prerequisiteStatus": {
+        "enchainement": "established@M4",
+        "priorites": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module04EnchainerLesOperations.jsx",
+      "line": 138,
+      "requires": [
+        "priorites",
+        "enchainement"
+      ],
+      "prerequisiteStatus": {
+        "priorites": "established@M2",
+        "enchainement": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q3",
+      "module": 4,
+      "step": 4,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module04EnchainerLesOperations.jsx",
+      "line": 162,
+      "requires": [
+        "priorites",
+        "parentheses",
+        "enchainement"
+      ],
+      "prerequisiteStatus": {
+        "priorites": "established@M2",
+        "parentheses": "established@M1",
+        "enchainement": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module05LeCalculMalin.jsx",
+      "line": 149,
+      "requires": [
+        "decouper-calcul"
+      ],
+      "prerequisiteStatus": {
+        "decouper-calcul": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module05LeCalculMalin.jsx",
+      "line": 206,
+      "requires": [
+        "decouper-calcul"
+      ],
+      "prerequisiteStatus": {
+        "decouper-calcul": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q3",
+      "module": 5,
+      "step": 4,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module05LeCalculMalin.jsx",
+      "line": 231,
+      "requires": [
+        "decouper-calcul"
+      ],
+      "prerequisiteStatus": {
+        "decouper-calcul": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q1",
+      "module": 6,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module06DiviserParUnDecimal.jsx",
+      "line": 104,
+      "requires": [
+        "quotient-invariant"
+      ],
+      "prerequisiteStatus": {
+        "quotient-invariant": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q2",
+      "module": 6,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module06DiviserParUnDecimal.jsx",
+      "line": 135,
+      "requires": [
+        "diviser-decimal",
+        "quotient-invariant"
+      ],
+      "prerequisiteStatus": {
+        "diviser-decimal": "established@M6",
+        "quotient-invariant": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S4-Q3",
+      "module": 6,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module06DiviserParUnDecimal.jsx",
+      "line": 160,
+      "requires": [
+        "diviser-decimal",
+        "quotient-invariant"
+      ],
+      "prerequisiteStatus": {
+        "diviser-decimal": "established@M6",
+        "quotient-invariant": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S1-Q1",
+      "module": 7,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module07LaNoteDuTraiteur.jsx",
+      "line": 68,
+      "requires": [
+        "enchainement",
+        "priorites"
+      ],
+      "prerequisiteStatus": {
+        "enchainement": "established@M4",
+        "priorites": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S2-Q2",
+      "module": 7,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module07LaNoteDuTraiteur.jsx",
+      "line": 99,
+      "requires": [
+        "ordre-de-grandeur"
+      ],
+      "prerequisiteStatus": {
+        "ordre-de-grandeur": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S3-Q3",
+      "module": 7,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module07LaNoteDuTraiteur.jsx",
+      "line": 122,
+      "requires": [
+        "enchainement",
+        "priorites",
+        "ordre-de-grandeur"
+      ],
+      "prerequisiteStatus": {
+        "enchainement": "established@M4",
+        "priorites": "established@M2",
+        "ordre-de-grandeur": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S4-Q4",
+      "module": 7,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module07LaNoteDuTraiteur.jsx",
+      "line": 151,
+      "requires": [
+        "ordre-de-grandeur",
+        "mem-controler"
+      ],
+      "prerequisiteStatus": {
+        "ordre-de-grandeur": "established@M7",
+        "mem-controler": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e1",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 52,
+      "requires": [
+        "priorites",
+        "structure-calcul"
+      ],
+      "prerequisiteStatus": {
+        "priorites": "established@M2",
+        "structure-calcul": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e2",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 63,
+      "requires": [
+        "parentheses",
+        "priorites"
+      ],
+      "prerequisiteStatus": {
+        "parentheses": "established@M1",
+        "priorites": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e3",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 74,
+      "requires": [
+        "enchainement",
+        "priorites"
+      ],
+      "prerequisiteStatus": {
+        "enchainement": "established@M4",
+        "priorites": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e4",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 85,
+      "requires": [
+        "enchainement",
+        "parentheses",
+        "priorites"
+      ],
+      "prerequisiteStatus": {
+        "enchainement": "established@M4",
+        "parentheses": "established@M1",
+        "priorites": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e5",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 96,
+      "requires": [
+        "decouper-calcul"
+      ],
+      "prerequisiteStatus": {
+        "decouper-calcul": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e6",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 107,
+      "requires": [
+        "decouper-calcul"
+      ],
+      "prerequisiteStatus": {
+        "decouper-calcul": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e7",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 118,
+      "requires": [
+        "diviser-decimal",
+        "quotient-invariant"
+      ],
+      "prerequisiteStatus": {
+        "diviser-decimal": "established@M6",
+        "quotient-invariant": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e8",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 129,
+      "requires": [
+        "diviser-decimal",
+        "quotient-invariant"
+      ],
+      "prerequisiteStatus": {
+        "diviser-decimal": "established@M6",
+        "quotient-invariant": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e9",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 140,
+      "requires": [
+        "multiple-diviseur",
+        "criteres-divisibilite"
+      ],
+      "prerequisiteStatus": {
+        "multiple-diviseur": "established@M3",
+        "criteres-divisibilite": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "op5-e10",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/operations-5e/modules/Module08MissionFinale.jsx",
+      "line": 151,
+      "requires": [
+        "ordre-de-grandeur",
+        "mem-controler"
+      ],
+      "prerequisiteStatus": {
+        "ordre-de-grandeur": "established@M7",
+        "mem-controler": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

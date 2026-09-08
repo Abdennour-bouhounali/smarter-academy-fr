@@ -96,8 +96,12 @@
 
 Ce niveau n'est pas encore traité. Les constats sont enregistrés ici pour mémoire.
 
-1 leçon(s) · critiques 0 · hautes 0 · moyennes 0 · basses 0
+5 leçon(s) · critiques 0 · hautes 0 · moyennes 0 · basses 0
 
 | Leçon | Carte | Bricks | requires | Contrat | C | H | M | L |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `4e:nombres-relatifs-4e` | ✅ | 7 | 27/27 | 0 | 0 | 0 | 0 | 0 |
 | `4e:racines-carrees-4e` | — | 0 | 0/0 | 0 | 0 | 0 | 0 | 0 |
+| `5e:nombres-rationnels-5e` | ✅ | 9 | 27/27 | 0 | 0 | 0 | 0 | 0 |
+| `5e:nombres-relatifs-5e` | ✅ | 10 | 30/30 | 0 | 0 | 0 | 0 | 0 |
+| `5e:operations-5e` | ✅ | 12 | 35/35 | 0 | 0 | 0 | 0 | 0 |

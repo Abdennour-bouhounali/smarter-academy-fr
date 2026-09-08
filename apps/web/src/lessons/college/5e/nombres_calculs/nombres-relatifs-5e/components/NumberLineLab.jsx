@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { fmt } from './relatifs';
 
 /**
@@ -35,12 +35,54 @@ export default function NumberLineLab({
   marks = [],            // [{ at, label?, color?, tone? }]
   jump = null,           // { from, to, label? }
   disabled = false,
-  width = 640,
+  width: nominalWidth = 640,
   ariaLabel,
 }) {
   const uid = useId();
   const svgRef = useRef(null);
+  const boxRef = useRef(null);
   const [dragging, setDragging] = useState(false);
+
+  const interactive = Boolean(onChange) && !disabled;
+
+  /**
+   * Largeur RÉELLEMENT disponible, mesurée sur le conteneur.
+   *
+   * Une droite d'ILLUSTRATION (celle des cartes de connaissances) doit tenir
+   * dans sa carte SANS défiler et SANS rapetisser : ses graduations se lisent
+   * à la même taille partout. On ne peut donc ni garder un viewBox plus large
+   * que la carte (il faudrait défiler), ni le laisser se mettre à l'échelle
+   * (le dessin, hauteur comprise, rétrécirait).
+   *
+   * La sortie est de rendre le viewBox AUSSI LARGE QUE LA PLACE : une unité
+   * SVG vaut alors un pixel CSS, la hauteur reste exactement H, et rien n'est
+   * déformé. La droite se tasse horizontalement — c'est précisément ce que
+   * `labelEvery` sait absorber, en chiffrant une graduation sur deux.
+   *
+   * La droite MANIPULABLE, elle, garde sa largeur nominale et son plancher :
+   * sous ~560 px, la cible de glissement deviendrait trop étroite au doigt, et
+   * mieux vaut alors laisser le conteneur défiler.
+   */
+  const [boxW, setBoxW] = useState(null);
+  useLayoutEffect(() => {
+    if (interactive) return undefined;
+    const el = boxRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return undefined;
+    const ro = new ResizeObserver(([entry]) => {
+      const w = entry.contentRect.width;
+      if (w > 0) setBoxW(w);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [interactive]);
+
+  // Largeur du repère de dessin. Pour l'illustration, elle épouse la place
+  // disponible : une unité SVG = un pixel CSS, donc la hauteur reste H et rien
+  // ne rapetisse. Le plancher est bas (160 px) parce qu'un plancher élevé
+  // rendait la mise à l'échelle — et donc la perte de hauteur — inévitable
+  // dans les cartes étroites du mobile ; c'est `labelEvery` qui absorbe
+  // l'étroitesse, en ne chiffrant qu'une graduation sur deux ou trois.
+  const width = interactive ? nominalWidth : Math.max(160, Math.min(boxW ?? nominalWidth, nominalWidth));
 
   const span = max - min;
   const innerW = width - PAD_X * 2;
@@ -96,8 +138,6 @@ export default function NumberLineLab({
     };
   }, [dragging, move, numberFromClientX]);
 
-  const interactive = Boolean(onChange) && !disabled;
-
   const onKeyDown = (e) => {
     if (!interactive) return;
     if (e.key === 'ArrowLeft') { e.preventDefault(); move((value ?? 0) - 1); }
@@ -107,12 +147,15 @@ export default function NumberLineLab({
   };
 
   return (
-    <div className="rounded-2xl border-2 border-slate-200 bg-white p-2 sm:p-3 overflow-x-auto">
+    <div
+      ref={boxRef}
+      className="rounded-2xl border-2 border-slate-200 bg-white p-2 sm:p-3 overflow-x-auto"
+    >
       <svg
         ref={svgRef}
         viewBox={`0 0 ${width} ${H}`}
         className="w-full touch-none select-none"
-        style={{ minWidth: Math.min(width, 560) }}
+        style={interactive ? { minWidth: Math.min(width, 560) } : { height: H }}
         role={interactive ? 'slider' : 'img'}
         tabIndex={interactive ? 0 : -1}
         aria-valuemin={interactive ? min : undefined}
