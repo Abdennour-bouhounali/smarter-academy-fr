@@ -190,7 +190,7 @@ export default function Module03EnchainerLesOperations() {
       brief={{
         tag: 'Manipulation',
         title: 'Choisis l’ordre, vois la différence',
-        tone: 'sky',
+        tone: 'indigo',
         body: (
           <p>
             Trois ou quatre opérations dans un même calcul : impossible de tout faire d’un coup. Ici,

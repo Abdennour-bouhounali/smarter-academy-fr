@@ -1,0 +1,665 @@
+{
+  "lesson": "puissances-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "multiplication-repetee",
+    "tables-multiplication",
+    "calcul-numerique",
+    "decalage-virgule",
+    "aire"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "exposant",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module02CeQueCompteLEtage.jsx",
+        "line": 66,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "puissance-de-dix",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module05LesPuissancesDeDix.jsx",
+        "line": 122,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "priorite-puissance",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module06CalculerAvecUnePuissance.jsx",
+        "line": 76,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "puissance",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module01LEchiquierDuRoi.jsx",
+        "line": 196,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "carre-cube",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module03LeCarreEtLeCube.jsx",
+        "line": 81,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [],
+  "memorisation": [
+    {
+      "id": "mem-exposant",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module02CeQueCompteLEtage.jsx",
+        "line": 71,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "carres-parfaits",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module04LesCarresParfaits.jsx",
+        "line": 171,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "pui5-d1-repetition",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module00Diagnostic.jsx",
+      "line": 23,
+      "requires": [
+        "multiplication-repetee"
+      ],
+      "prerequisiteStatus": {
+        "multiplication-repetee": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-d2-repetition",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module00Diagnostic.jsx",
+      "line": 34,
+      "requires": [
+        "multiplication-repetee",
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "multiplication-repetee": "prior",
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-d3-tables",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module00Diagnostic.jsx",
+      "line": 45,
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-d4-aire",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module00Diagnostic.jsx",
+      "line": 56,
+      "requires": [
+        "aire"
+      ],
+      "prerequisiteStatus": {
+        "aire": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-d5-virgule",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module00Diagnostic.jsx",
+      "line": 67,
+      "requires": [
+        "decalage-virgule"
+      ],
+      "prerequisiteStatus": {
+        "decalage-virgule": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q1",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module01LEchiquierDuRoi.jsx",
+      "line": 207,
+      "requires": [
+        "puissance"
+      ],
+      "prerequisiteStatus": {
+        "puissance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S1-Q1",
+      "module": 2,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module02CeQueCompteLEtage.jsx",
+      "line": 42,
+      "requires": [
+        "puissance"
+      ],
+      "prerequisiteStatus": {
+        "puissance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q2",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module02CeQueCompteLEtage.jsx",
+      "line": 72,
+      "requires": [
+        "exposant",
+        "puissance"
+      ],
+      "prerequisiteStatus": {
+        "exposant": "established@M2",
+        "puissance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q3",
+      "module": 2,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module02CeQueCompteLEtage.jsx",
+      "line": 97,
+      "requires": [
+        "exposant",
+        "puissance"
+      ],
+      "prerequisiteStatus": {
+        "exposant": "established@M2",
+        "puissance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q4",
+      "module": 2,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module02CeQueCompteLEtage.jsx",
+      "line": 124,
+      "requires": [
+        "exposant",
+        "puissance",
+        "mem-exposant"
+      ],
+      "prerequisiteStatus": {
+        "exposant": "established@M2",
+        "puissance": "established@M1",
+        "mem-exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module03LeCarreEtLeCube.jsx",
+      "line": 86,
+      "requires": [
+        "carre-cube",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "carre-cube": "established@M3",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module03LeCarreEtLeCube.jsx",
+      "line": 111,
+      "requires": [
+        "carre-cube"
+      ],
+      "prerequisiteStatus": {
+        "carre-cube": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q3",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module03LeCarreEtLeCube.jsx",
+      "line": 136,
+      "requires": [
+        "carre-cube"
+      ],
+      "prerequisiteStatus": {
+        "carre-cube": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module04LesCarresParfaits.jsx",
+      "line": 176,
+      "requires": [
+        "carres-parfaits"
+      ],
+      "prerequisiteStatus": {
+        "carres-parfaits": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module04LesCarresParfaits.jsx",
+      "line": 196,
+      "requires": [
+        "carres-parfaits",
+        "carre-cube"
+      ],
+      "prerequisiteStatus": {
+        "carres-parfaits": "established@M4",
+        "carre-cube": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q3",
+      "module": 4,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module04LesCarresParfaits.jsx",
+      "line": 222,
+      "requires": [
+        "carres-parfaits"
+      ],
+      "prerequisiteStatus": {
+        "carres-parfaits": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module05LesPuissancesDeDix.jsx",
+      "line": 127,
+      "requires": [
+        "puissance-de-dix",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "puissance-de-dix": "established@M5",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module05LesPuissancesDeDix.jsx",
+      "line": 147,
+      "requires": [
+        "puissance-de-dix"
+      ],
+      "prerequisiteStatus": {
+        "puissance-de-dix": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q3",
+      "module": 5,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module05LesPuissancesDeDix.jsx",
+      "line": 172,
+      "requires": [
+        "puissance-de-dix"
+      ],
+      "prerequisiteStatus": {
+        "puissance-de-dix": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S1-Q1",
+      "module": 6,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module06CalculerAvecUnePuissance.jsx",
+      "line": 51,
+      "requires": [
+        "exposant",
+        "puissance"
+      ],
+      "prerequisiteStatus": {
+        "exposant": "established@M2",
+        "puissance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q2",
+      "module": 6,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module06CalculerAvecUnePuissance.jsx",
+      "line": 81,
+      "requires": [
+        "priorite-puissance",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "priorite-puissance": "established@M6",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q3",
+      "module": 6,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module06CalculerAvecUnePuissance.jsx",
+      "line": 105,
+      "requires": [
+        "priorite-puissance",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "priorite-puissance": "established@M6",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S4-Q4",
+      "module": 6,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module06CalculerAvecUnePuissance.jsx",
+      "line": 130,
+      "requires": [
+        "priorite-puissance",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "priorite-puissance": "established@M6",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e1",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 55,
+      "requires": [
+        "puissance",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "puissance": "established@M1",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e2",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 66,
+      "requires": [
+        "puissance",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "puissance": "established@M1",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e3",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 77,
+      "requires": [
+        "exposant",
+        "mem-exposant"
+      ],
+      "prerequisiteStatus": {
+        "exposant": "established@M2",
+        "mem-exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e4",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 88,
+      "requires": [
+        "exposant",
+        "mem-exposant"
+      ],
+      "prerequisiteStatus": {
+        "exposant": "established@M2",
+        "mem-exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e5",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 104,
+      "requires": [
+        "carre-cube"
+      ],
+      "prerequisiteStatus": {
+        "carre-cube": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e6",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 115,
+      "requires": [
+        "carre-cube",
+        "carres-parfaits"
+      ],
+      "prerequisiteStatus": {
+        "carre-cube": "established@M3",
+        "carres-parfaits": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e7",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 126,
+      "requires": [
+        "carres-parfaits"
+      ],
+      "prerequisiteStatus": {
+        "carres-parfaits": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e8",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 137,
+      "requires": [
+        "puissance-de-dix"
+      ],
+      "prerequisiteStatus": {
+        "puissance-de-dix": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e9",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 148,
+      "requires": [
+        "puissance-de-dix",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "puissance-de-dix": "established@M5",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "pui5-e10",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/puissances-5e/modules/Module07MissionFinale.jsx",
+      "line": 159,
+      "requires": [
+        "priorite-puissance",
+        "exposant"
+      ],
+      "prerequisiteStatus": {
+        "priorite-puissance": "established@M6",
+        "exposant": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

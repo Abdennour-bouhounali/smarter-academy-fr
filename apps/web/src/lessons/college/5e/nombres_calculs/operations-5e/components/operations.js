@@ -341,3 +341,124 @@ export const parseDecimalFr = (str) => {
   if (!/^\d+(\.\d+)?$/.test(cleaned)) return NaN;
   return Number(cleaned);
 };
+
+/* ── La machine à états de la pose de parenthèse ───────────────────────── */
+
+/**
+ * L'état d'ExpressionLab, et la seule fonction qui le fait évoluer.
+ *
+ * POURQUOI CE FICHIER, et pas le composant. La pose de parenthèse est une
+ * transformation d'état pur : (état, geste) → état. La mettre ici la rend
+ * testable au balayage exhaustif, exactement comme `evalExpr` — le composant
+ * n'a plus qu'à peindre l'état qu'on lui donne.
+ *
+ * L'ÉTAT A DEUX CHAMPS SÉPARÉS, et c'est tout le correctif :
+ *
+ *   anchor : number | null   le premier terme touché d'une pose EN COURS
+ *   paren  : {from,to} | null le bloc COMMIS, celui que l'élève a obtenu
+ *
+ * Le bug corrigé venait de les avoir confondus dans un seul champ
+ * `{from, to:null}` : un troisième tap écrasait alors le bloc commis par une
+ * ouverture pendante, et la découverte de l'élève disparaissait sans qu'il
+ * l'ait demandé. Séparés, un tap qui démarre une nouvelle sélection ne touche
+ * PAS `paren` — le bloc reste affiché, et n'est remplacé qu'au moment où la
+ * nouvelle sélection est réellement fermée. L'élève ne perd jamais un
+ * résultat sans en obtenir un autre à la place.
+ *
+ * TRANSITIONS (`labReduce`) :
+ *
+ *   IDLE            —tap i→        SELECTING(anchor=i)         paren inchangé
+ *   SELECTING(i)    —tap i→        IDLE                        paren inchangé
+ *   SELECTING(i)    —tap j≠i→      COMMITTED(paren={i..j})     nouveau bloc
+ *   COMMITTED(p)    —tap i∈p→      IDLE, paren=null            on retire le bloc
+ *   COMMITTED(p)    —tap i∉p→      SELECTING(i), paren=p       le bloc RESTE
+ *   n'importe quel  —reset→        IDLE, paren=null
+ *
+ * La règle « tap dans le bloc = l'enlever » garde le geste réversible sans
+ * bouton ; « Recommencer » existe quand même, parce qu'un geste de secours
+ * doit être VISIBLE (§7 de la commande, §17bis « discoverable »).
+ */
+
+/** L'état initial du laboratoire. `paren` peut être pré-posée par le module. */
+export const labInit = (paren = null) => ({ anchor: null, paren });
+
+/** Les trois phases lisibles de l'état — ce que l'interface doit raconter. */
+export const labPhase = ({ anchor, paren }) => {
+  if (anchor !== null) return 'selecting';
+  if (paren) return 'committed';
+  return 'idle';
+};
+
+/**
+ * Le seul réducteur de la manipulation.
+ * @param {{anchor:number|null, paren:{from:number,to:number}|null}} state
+ * @param {{type:'tap', index:number}|{type:'reset'}} action
+ */
+export const labReduce = (state, action) => {
+  if (action.type === 'reset') return { anchor: null, paren: null };
+  if (action.type !== 'tap') return state;
+
+  const i = action.index;
+  const { anchor, paren } = state;
+
+  // Une sélection est en cours : ce tap la ferme, ou l'annule.
+  if (anchor !== null) {
+    if (i === anchor) return { anchor: null, paren };            // annule, garde le bloc
+    return {
+      anchor: null,
+      paren: { from: Math.min(anchor, i), to: Math.max(anchor, i) },
+    };
+  }
+
+  // Un bloc est commis, et l'élève touche l'un de ses termes : il le retire.
+  if (paren && i >= paren.from && i <= paren.to) return { anchor: null, paren: null };
+
+  // Sinon : on démarre une sélection SANS détruire le bloc commis.
+  return { anchor: i, paren };
+};
+
+/** La consigne à afficher — une seule à la fois, dérivée de l'état (§8). */
+export const labHint = (state, { nums }) => {
+  const phase = labPhase(state);
+  if (phase === 'selecting') {
+    const n = fr(nums[state.anchor]);
+    return `Bien. Touche maintenant le nombre où ton bloc s’arrête — le ${n} en fait déjà partie.`;
+  }
+  if (phase === 'committed') {
+    return 'Touche un nombre du bloc pour l’ouvrir, ou un nombre en dehors pour essayer un autre regroupement.';
+  }
+  return 'Touche un nombre pour commencer ton bloc.';
+};
+
+/**
+ * La CASCADE de réécriture : le calcul, ligne à ligne, jusqu'au total.
+ *
+ * `traceEval` dit quelles opérations sont effectuées et dans quel ordre ;
+ * cette fonction en fait ce que l'élève doit LIRE — l'expression entière
+ * réécrite après chaque étape :
+ *
+ *     (2 + 3) × 4   →   5 × 4   →   20
+ *
+ * C'est l'exigence pédagogique centrale de la manipulation : montrer que
+ * l'élève n'a changé ni les nombres ni les signes, seulement le morceau qui se
+ * calcule en premier. Un total seul (« 20 ») ne le montrerait pas.
+ *
+ * La parenthèse se referme d'elle-même dès que son contenu est réduit à un
+ * seul terme : on n'écrit jamais « (5) », qui n'apprend rien.
+ */
+export const rewriteSteps = (expr, paren = null) => {
+  const lignes = [writeExpr(expr, paren)];
+  let n = [...expr.nums];
+  let o = [...expr.ops];
+  let p = paren;
+
+  for (const etape of traceEval(expr, paren)) {
+    n = [...n.slice(0, etape.at), etape.res, ...n.slice(etape.at + 2)];
+    o = [...o.slice(0, etape.at), ...o.slice(etape.at + 1)];
+    // Une parenthèse dont le contenu ne fait plus qu'un terme n'a plus d'objet.
+    if (p) p = p.to - 1 > p.from ? { from: p.from, to: p.to - 1 } : null;
+    lignes.push(writeExpr({ nums: n, ops: o }, p));
+  }
+  // Deux lignes identiques d'affilée n'apprennent rien : on n'en garde qu'une.
+  return lignes.filter((l, i) => i === 0 || l !== lignes[i - 1]);
+};

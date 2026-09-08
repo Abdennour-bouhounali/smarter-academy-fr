@@ -259,7 +259,7 @@ export default function Module04LeCalculMalin() {
       brief={{
         tag: 'Manipulation',
         title: '17 × 6, sans poser l’opération',
-        tone: 'emerald',
+        tone: 'indigo',
         body: (
           <p>
             Poser une multiplication prend du temps, et une retenue oubliée fausse tout. Il existe

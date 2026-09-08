@@ -197,7 +197,7 @@ export default function Module02DeuxEcrituresUnNombre() {
       brief={{
         tag: 'Découverte',
         title: 'Le mystère du curseur immobile',
-        tone: 'violet',
+        tone: 'indigo',
         body: (
           <p>
             Au module précédent, tu as changé le découpage et le point est resté{' '}

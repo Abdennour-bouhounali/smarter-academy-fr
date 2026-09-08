@@ -5,7 +5,7 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ExpressionLab from '../components/ExpressionLab';
-import { TICKET, evalExpr, fr } from '../components/operations';
+import { TICKET, evalExpr, fr, writeExpr, labInit, allParens } from '../components/operations';
 
 /**
  * Module 1 — DÉCLENCHEUR, et l'interaction SIGNATURE : les deux caisses
@@ -40,66 +40,74 @@ import { TICKET, evalExpr, fr } from '../components/operations';
 const VINGT = 20;
 const QUATORZE = 14;
 
+/** Le second ticket de l'étape 3 : mêmes nombres, deux totaux atteignables. */
+const LONG = { nums: [10, 2, 3], ops: ['−', '×'] };
+
 export default function Module01LesDeuxCaisses() {
   // Étape 1 — obtenir 20 : la caisse qui additionne d'abord.
-  const [paren1, setParen1] = useState(null);
+  const [lab1, setLab1] = useState(() => labInit());
   const [vu20, setVu20] = useState(false);
   const done1 = vu20;
   const [pred1, setPred1] = useState(null);
 
-  // Étape 2 — obtenir 14 : l'autre caisse.
-  const [paren2, setParen2] = useState({ from: 0, to: 1 });
+  // Étape 2 — obtenir 14 : l'autre caisse. Elle DÉMARRE sur le bloc de
+  // l'étape 1, pour que l'élève parte de ce qu'il vient d'obtenir (20) et le
+  // défasse lui-même — la comparaison des deux structures est le sujet.
+  const [lab2, setLab2] = useState(() => labInit({ from: 0, to: 1 }));
   const [vu14, setVu14] = useState(false);
   const done2 = vu14;
 
-  // Étape 3 — un calcul plus long : trouver DEUX totaux différents.
-  const LONG = { nums: [10, 2, 3], ops: ['−', '×'] };
-  const [paren3, setParen3] = useState(null);
+  // Étape 3 — un autre ticket : trouver DEUX totaux différents.
+  const [lab3, setLab3] = useState(() => labInit());
   const [totaux, setTotaux] = useState(() => new Set([evalExpr(LONG, null)]));
   const done3 = totaux.size >= 2;
 
   const [q4, setQ4] = useState(false);
 
-  const poser1 = (p, react) => {
-    setParen1(p);
-    if (p && p.to !== null && evalExpr(TICKET, p) === VINGT && !vu20) {
+  /**
+   * Un but n'est atteint que par un bloc COMMIS, jamais par une sélection en
+   * cours : l'état du labo porte les deux séparément, et seul `paren` décide.
+   * C'est ce qui empêche l'étape de se valider sur un demi-geste.
+   */
+  const poser1 = (next, react) => {
+    setLab1(next);
+    if (evalExpr(TICKET, next.paren) === VINGT && next.paren && !vu20) {
       setVu20(true);
       react?.(true);
     }
   };
 
-  const poser2 = (p, react) => {
-    setParen2(p);
-    if (evalExpr(TICKET, p && p.to !== null ? p : null) === QUATORZE && !vu14) {
+  const poser2 = (next, react) => {
+    setLab2(next);
+    if (evalExpr(TICKET, next.paren) === QUATORZE && !vu14) {
       setVu14(true);
       react?.(true);
     }
   };
 
-  const poser3 = (p, react) => {
-    setParen3(p);
-    const valide = p && p.to !== null ? p : null;
-    const v = evalExpr(LONG, valide);
-    const next = new Set(totaux);
-    next.add(v);
-    setTotaux(next);
-    if (next.size >= 2 && totaux.size < 2) react?.(true);
+  const poser3 = (next, react) => {
+    setLab3(next);
+    const v = evalExpr(LONG, next.paren);
+    const suivant = new Set(totaux);
+    suivant.add(v);
+    setTotaux(suivant);
+    if (suivant.size >= 2 && totaux.size < 2) react?.(true);
   };
 
   const steps = [
     {
       num: 1,
       title: 'Fais afficher 20 à la caisse',
-      subtitle: 'Touche deux nombres pour poser une parenthèse autour d’eux. Le total se met à jour tout seul.',
+      subtitle: 'Touche un nombre, puis un autre. Le calcul se réécrit tout seul jusqu’au total.',
       done: done1,
       content: (kit) => (
         <div className="space-y-3">
           <ExpressionLab
             expr={TICKET}
-            paren={paren1}
-            onParen={(p) => poser1(p, kit.react)}
+            state={lab1}
+            onState={(next) => poser1(next, kit.react)}
             resultLabel="La caisse affiche"
-            ariaLabel="Ticket 2 + 3 × 4 — pose une parenthèse"
+            ariaLabel="Ticket 2 + 3 × 4 — désigne le bloc à calculer en premier"
           />
           <PredictionChips
             prompt="penses-tu qu’une parenthèse peut changer le total, alors que les nombres restent les mêmes ?"
@@ -129,17 +137,35 @@ export default function Module01LesDeuxCaisses() {
     {
       num: 2,
       title: 'L’autre caisse affiche 14',
-      subtitle: 'Trouve maintenant une écriture qui donne 14. Tu peux enlever la parenthèse en touchant un de ses nombres.',
+      subtitle: 'Le bloc de l’étape 1 est encore là. Défais-le, et trouve une écriture qui donne 14.',
       done: done2,
       content: (kit) => (
         <div className="space-y-3">
           <ExpressionLab
             expr={TICKET}
-            paren={paren2}
-            onParen={(p) => poser2(p, kit.react)}
+            state={lab2}
+            onState={(next) => poser2(next, kit.react)}
             resultLabel="La caisse affiche"
             ariaLabel="Ticket 2 + 3 × 4 — trouve 14"
           />
+          {/* §14 — la comparaison est le sujet du module : dès que les DEUX
+              structures ont été obtenues, elles restent affichées côte à côte,
+              mêmes nombres, mêmes signes, deux totaux. */}
+          {done1 && done2 && (
+            <div className="grid sm:grid-cols-2 gap-2" aria-label="Les deux caisses, côte à côte">
+              {[
+                { p: { from: 0, to: 1 }, v: VINGT, t: 'D’abord la somme', c: 'border-amber-300 bg-amber-50 text-amber-900' },
+                { p: { from: 1, to: 2 }, v: QUATORZE, t: 'D’abord le produit', c: 'border-indigo-300 bg-indigo-50 text-indigo-900' },
+              ].map(({ p, v, t, c }) => (
+                <div key={t} className={`rounded-xl border-2 px-3 py-2.5 text-center ${c}`}>
+                  <div className="text-xs font-semibold opacity-70">{t}</div>
+                  <div className="font-mono text-lg sm:text-xl font-black tabular-nums">
+                    {writeExpr(TICKET, p)} = {fr(v)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
           {done2 ? (
             <Feedback tone="ok">
               <strong>14</strong>, cette fois. Deux caisses, un seul ticket, deux totaux — et
@@ -166,10 +192,10 @@ export default function Module01LesDeuxCaisses() {
         <div className="space-y-3">
           <ExpressionLab
             expr={LONG}
-            paren={paren3}
-            onParen={(p) => poser3(p, kit.react)}
+            state={lab3}
+            onState={(next) => poser3(next, kit.react)}
             resultLabel="Ce ticket vaut"
-            ariaLabel="Ticket 10 − 2 × 3 — essaie les parenthèses"
+            ariaLabel="Ticket 10 − 2 × 3 — essaie les regroupements"
           />
           <div className="flex flex-wrap items-center justify-center gap-2">
             <span className="text-xs uppercase tracking-wide text-slate-500">Totaux trouvés</span>

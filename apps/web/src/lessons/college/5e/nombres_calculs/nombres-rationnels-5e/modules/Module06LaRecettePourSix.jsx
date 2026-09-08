@@ -211,7 +211,7 @@ export default function Module06LaRecettePourSix() {
       brief={{
         tag: 'Entraînement',
         title: 'La recette est pour quatre',
-        tone: 'rose',
+        tone: 'amber',
         body: (
           <p>
             Vous serez six à table, et la recette est prévue pour quatre. Toutes les quantités sont

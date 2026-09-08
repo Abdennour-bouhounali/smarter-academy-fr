@@ -217,7 +217,7 @@ export default function Module03RemonterLaMachine() {
       brief={{
         tag: 'Découverte',
         title: 'Et dans l’autre sens ?',
-        tone: 'sky',
+        tone: 'indigo',
         body: (
           <p>
             Tu sais fabriquer des écritures de plus en plus compliquées d’un même nombre. La

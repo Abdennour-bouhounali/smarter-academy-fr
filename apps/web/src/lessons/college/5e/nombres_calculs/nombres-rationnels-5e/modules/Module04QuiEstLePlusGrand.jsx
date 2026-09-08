@@ -209,7 +209,7 @@ export default function Module04QuiEstLePlusGrand() {
       brief={{
         tag: 'Manipulation',
         title: '2/3 ou 7/12 ?',
-        tone: 'emerald',
+        tone: 'indigo',
         body: (
           <p>
             Impossible de répondre d’un coup d’œil : les parts n’ont pas la même taille. Comparer

@@ -1,0 +1,689 @@
+{
+  "lesson": "calcul-litteral-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "calcul-numerique",
+    "tables-multiplication",
+    "perimetre",
+    "quotient"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "regularite",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module01LeMotifQuiGrandit.jsx",
+        "line": 191,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "inconnue-variable",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module02LaLettreEstUnEmplacement.jsx",
+        "line": 113,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "distributivite",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module05LeRectangleQuOnCoupe.jsx",
+        "line": 95,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "calcul-litteral",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module02LaLettreEstUnEmplacement.jsx",
+        "line": 83,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "formule",
+      "type": "methodes",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module01LeMotifQuiGrandit.jsx",
+        "line": 196,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ecrire-expression",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module03EcrireLaRecette.jsx",
+        "line": 70,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "substituer",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module04RemplacerParUnNombre.jsx",
+        "line": 87,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "produire-formule",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module06LaFormuleDuCarrelage.jsx",
+        "line": 134,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-developper",
+      "type": "memoriser",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module05LeRectangleQuOnCoupe.jsx",
+        "line": 100,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "cl5-d1-priorites",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module00Diagnostic.jsx",
+      "line": 24,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-d2-priorites",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module00Diagnostic.jsx",
+      "line": 35,
+      "requires": [
+        "calcul-numerique",
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior",
+        "tables-multiplication": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-d3-regularite",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module00Diagnostic.jsx",
+      "line": 46,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-d4-regularite",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module00Diagnostic.jsx",
+      "line": 57,
+      "requires": [
+        "calcul-numerique",
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior",
+        "quotient": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-d5-perimetre",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module00Diagnostic.jsx",
+      "line": 68,
+      "requires": [
+        "perimetre"
+      ],
+      "prerequisiteStatus": {
+        "perimetre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q1",
+      "module": 1,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module01LeMotifQuiGrandit.jsx",
+      "line": 162,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q2",
+      "module": 1,
+      "step": 4,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module01LeMotifQuiGrandit.jsx",
+      "line": 201,
+      "requires": [
+        "formule",
+        "regularite"
+      ],
+      "prerequisiteStatus": {
+        "formule": "established@M1",
+        "regularite": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q1",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module02LaLettreEstUnEmplacement.jsx",
+      "line": 88,
+      "requires": [
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module02LaLettreEstUnEmplacement.jsx",
+      "line": 118,
+      "requires": [
+        "inconnue-variable",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "inconnue-variable": "established@M2",
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q3",
+      "module": 2,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module02LaLettreEstUnEmplacement.jsx",
+      "line": 144,
+      "requires": [
+        "inconnue-variable"
+      ],
+      "prerequisiteStatus": {
+        "inconnue-variable": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S1-Q1",
+      "module": 3,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module03EcrireLaRecette.jsx",
+      "line": 45,
+      "requires": [
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q2",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module03EcrireLaRecette.jsx",
+      "line": 93,
+      "requires": [
+        "ecrire-expression",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "ecrire-expression": "established@M3",
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q3",
+      "module": 3,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module03EcrireLaRecette.jsx",
+      "line": 119,
+      "requires": [
+        "ecrire-expression"
+      ],
+      "prerequisiteStatus": {
+        "ecrire-expression": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q4",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module03EcrireLaRecette.jsx",
+      "line": 181,
+      "requires": [
+        "ecrire-expression",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "ecrire-expression": "established@M3",
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module04RemplacerParUnNombre.jsx",
+      "line": 92,
+      "requires": [
+        "substituer",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "substituer": "established@M4",
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module04RemplacerParUnNombre.jsx",
+      "line": 117,
+      "requires": [
+        "substituer"
+      ],
+      "prerequisiteStatus": {
+        "substituer": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q3",
+      "module": 4,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module04RemplacerParUnNombre.jsx",
+      "line": 145,
+      "requires": [
+        "substituer"
+      ],
+      "prerequisiteStatus": {
+        "substituer": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module05LeRectangleQuOnCoupe.jsx",
+      "line": 101,
+      "requires": [
+        "distributivite",
+        "mem-developper"
+      ],
+      "prerequisiteStatus": {
+        "distributivite": "established@M5",
+        "mem-developper": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module05LeRectangleQuOnCoupe.jsx",
+      "line": 131,
+      "requires": [
+        "distributivite",
+        "substituer"
+      ],
+      "prerequisiteStatus": {
+        "distributivite": "established@M5",
+        "substituer": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q3",
+      "module": 5,
+      "step": 4,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module05LeRectangleQuOnCoupe.jsx",
+      "line": 157,
+      "requires": [
+        "distributivite",
+        "mem-developper"
+      ],
+      "prerequisiteStatus": {
+        "distributivite": "established@M5",
+        "mem-developper": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q1",
+      "module": 6,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module06LaFormuleDuCarrelage.jsx",
+      "line": 139,
+      "requires": [
+        "produire-formule",
+        "ecrire-expression"
+      ],
+      "prerequisiteStatus": {
+        "produire-formule": "established@M6",
+        "ecrire-expression": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q2",
+      "module": 6,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module06LaFormuleDuCarrelage.jsx",
+      "line": 165,
+      "requires": [
+        "produire-formule",
+        "substituer"
+      ],
+      "prerequisiteStatus": {
+        "produire-formule": "established@M6",
+        "substituer": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S4-Q3",
+      "module": 6,
+      "step": 4,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module06LaFormuleDuCarrelage.jsx",
+      "line": 194,
+      "requires": [
+        "produire-formule",
+        "substituer"
+      ],
+      "prerequisiteStatus": {
+        "produire-formule": "established@M6",
+        "substituer": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e1",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 57,
+      "requires": [
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e2",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 73,
+      "requires": [
+        "inconnue-variable",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "inconnue-variable": "established@M2",
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e3",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 89,
+      "requires": [
+        "ecrire-expression",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "ecrire-expression": "established@M3",
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e4",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 100,
+      "requires": [
+        "ecrire-expression"
+      ],
+      "prerequisiteStatus": {
+        "ecrire-expression": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e5",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 111,
+      "requires": [
+        "substituer",
+        "calcul-litteral"
+      ],
+      "prerequisiteStatus": {
+        "substituer": "established@M4",
+        "calcul-litteral": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e6",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 122,
+      "requires": [
+        "substituer"
+      ],
+      "prerequisiteStatus": {
+        "substituer": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e7",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 133,
+      "requires": [
+        "distributivite",
+        "mem-developper"
+      ],
+      "prerequisiteStatus": {
+        "distributivite": "established@M5",
+        "mem-developper": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e8",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 144,
+      "requires": [
+        "distributivite",
+        "substituer"
+      ],
+      "prerequisiteStatus": {
+        "distributivite": "established@M5",
+        "substituer": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e9",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 160,
+      "requires": [
+        "produire-formule",
+        "ecrire-expression"
+      ],
+      "prerequisiteStatus": {
+        "produire-formule": "established@M6",
+        "ecrire-expression": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "cl5-e10",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/nombres_calculs/calcul-litteral-5e/modules/Module07MissionFinale.jsx",
+      "line": 171,
+      "requires": [
+        "produire-formule",
+        "substituer"
+      ],
+      "prerequisiteStatus": {
+        "produire-formule": "established@M6",
+        "substituer": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

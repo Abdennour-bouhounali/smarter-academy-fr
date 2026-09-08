@@ -189,7 +189,7 @@ export default function Module05DiviserParUnDecimal() {
       brief={{
         tag: 'Manipulation',
         title: 'Une virgule au diviseur',
-        tone: 'purple',
+        tone: 'indigo',
         body: (
           <p>
             <strong className="font-mono">7,2 ÷ 0,4</strong> : impossible à poser tel quel — tu n’as

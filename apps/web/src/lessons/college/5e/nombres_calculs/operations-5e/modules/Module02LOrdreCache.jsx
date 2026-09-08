@@ -4,6 +4,7 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ExpressionLab from '../components/ExpressionLab';
+import { evalExpr, fr, writeExpr, labInit } from '../components/operations';
 
 /**
  * Module 2 — DÉCOUVERTE : d'où vient la convention.
@@ -24,18 +25,24 @@ const CINE = { nums: [4, 2, 9], ops: ['+', '×'] };   // 4 € de bus + 2 places
 
 export default function Module02LOrdreCache() {
   const [q1, setQ1] = useState(false);
-  const [paren2, setParen2] = useState(null);
+  const [lab2, setLab2] = useState(() => labInit());
   const [vuBloc, setVuBloc] = useState(false);
   const done2 = vuBloc;
+  // Ce que l'élève a essayé AVANT de trouver : sert à diagnostiquer son
+  // regroupement au lieu de répéter la consigne (§23 — jamais « Incorrect. »).
+  const [essai2, setEssai2] = useState(null);
   const [q3, setQ3] = useState(false);
   const [q4, setQ4] = useState(false);
 
-  const poser2 = (p, react) => {
-    setParen2(p);
-    if (p && p.to !== null && p.from === 1 && p.to === 2 && !vuBloc) {
-      setVuBloc(true);
-      react?.(true);
+  const poser2 = (next, react) => {
+    setLab2(next);
+    if (!next.paren) { setEssai2(null); return; }
+    if (next.paren.from === 1 && next.paren.to === 2) {
+      if (!vuBloc) { setVuBloc(true); react?.(true); }
+      setEssai2(null);
+      return;
     }
+    setEssai2(next.paren);
   };
 
   const steps = [
@@ -85,18 +92,53 @@ export default function Module02LOrdreCache() {
         <div className="space-y-3">
           <ExpressionLab
             expr={CINE}
-            paren={paren2}
-            onParen={(p) => poser2(p, kit.react)}
+            state={lab2}
+            onState={(next) => poser2(next, kit.react)}
             resultLabel="Le papier donne"
-            ariaLabel="Calcul 4 + 2 × 9 — entoure le bloc"
+            ariaLabel="Calcul 4 + 2 × 9 — entoure le bloc qui forme une quantité"
           />
           {done2 ? (
-            <Feedback tone="ok">
-              <strong className="font-mono">2 × 9</strong> forme un bloc : c’est{' '}
-              <em>le prix des places</em>, une seule quantité. On le compte d’abord (18 €), puis on
-              lui ajoute le bus. Et voici l’essentiel : la parenthèse a donné <strong>22</strong>,
-              exactement comme si on n’en avait mis <strong>aucune</strong>. La lecture sans
-              parenthèses fait déjà passer le produit d’abord.
+            <>
+              <Feedback tone="ok">
+                <strong className="font-mono">2 × 9</strong> forme un bloc : c’est{' '}
+                <em>le prix des places</em>, une seule quantité. On le compte d’abord (18 €), puis
+                on lui ajoute le bus.
+              </Feedback>
+              {/* §15 — la découverte PROPRE au module 2 : la parenthèse posée
+                  et l'absence de parenthèse donnent le MÊME total. C'est cela
+                  qui distingue ce module du module 1, où la parenthèse changeait
+                  le résultat. Les deux écritures restent affichées ensemble. */}
+              <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 space-y-2">
+                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800 text-center">
+                  Compare les deux écritures
+                </p>
+                <div className="grid sm:grid-cols-2 gap-2">
+                  {[
+                    { p: { from: 1, to: 2 }, t: 'Avec ta parenthèse' },
+                    { p: null, t: 'Sans aucune parenthèse' },
+                  ].map(({ p, t }) => (
+                    <div key={t} className="rounded-lg border-2 border-emerald-300 bg-white px-3 py-2 text-center">
+                      <div className="text-xs font-semibold text-slate-500">{t}</div>
+                      <div className="font-mono text-lg font-black tabular-nums text-emerald-700">
+                        {writeExpr(CINE, p)} = {fr(evalExpr(CINE, p))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-slate-700 text-center">
+                  <strong>Le même total, 22.</strong> Ta parenthèse n’a rien changé — elle a
+                  seulement rendu <em>visible</em> un regroupement qui se faisait déjà tout seul.
+                </p>
+              </div>
+            </>
+          ) : essai2 ? (
+            /* Diagnostic du regroupement RÉELLEMENT posé, jamais « Incorrect ». */
+            <Feedback tone="ko">
+              Tu as entouré <strong className="font-mono">{writeExpr(CINE, essai2)}</strong>, ce qui
+              donne <strong>{fr(evalExpr(CINE, essai2))}</strong>. Mais «{' '}
+              {essai2.from === 0 && essai2.to === 1 ? '4 + 2' : '4 + 2 × 9'} » ne désigne aucune
+              quantité de la sortie : on n’achète pas 6 places, et le bus n’est pas une place de
+              cinéma. Cherche le morceau qui vaut <strong>18 €</strong> — le prix des places.
             </Feedback>
           ) : (
             <Feedback tone="info">
@@ -211,7 +253,7 @@ export default function Module02LOrdreCache() {
       brief={{
         tag: 'Découverte',
         title: 'Qui décide, quand personne n’écrit de parenthèses ?',
-        tone: 'violet',
+        tone: 'indigo',
         body: (
           <p>
             Tu as vu qu’un calcul sans parenthèses est ambigu. Pourtant, tout le monde tombe

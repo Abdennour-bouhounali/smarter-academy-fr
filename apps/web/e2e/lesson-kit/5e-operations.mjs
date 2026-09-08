@@ -68,6 +68,49 @@ const browser = await launch();
   check('M1 : la manipulation reste rejouable après validation',
     (await total()) !== '20', `total=${await total()}`);
 
+  /* RÉGRESSION — le troisième tap ne détruit plus le bloc commis.
+     Bug d'origine : l'état ne portait qu'un champ `{from, to}`, et `to: null`
+     y servait aussi d'« ouverture en cours ». Un tap sur un terme EXTÉRIEUR au
+     bloc écrasait donc { from:0, to:1 } par { from:2, to:null } : la
+     parenthèse disparaissait, le total repassait de 20 à 14, et l'élève
+     perdait sa découverte sans l'avoir demandé. `anchor` et `paren` sont
+     désormais deux champs distincts (labReduce, components/operations.js). */
+  await page.click('[data-phase] ~ button, button:has-text("Recommencer")').catch(() => {});
+  await settle(page, 250);
+  await page.click('button[data-term="0"]'); await settle(page, 180);
+  await page.click('button[data-term="1"]'); await settle(page, 320);
+  check('M1 régression : (2 + 3) est bien commis', (await total()) === '20', `total=${await total()}`);
+
+  await page.click('button[data-term="2"]'); await settle(page, 320);
+  check('M1 régression : un 3e tap ne détruit PAS le bloc — le total reste 20',
+    (await total()) === '20', `total=${await total()}`);
+  const sels = await page.evaluate(() => [...document.querySelectorAll('button[data-term]')]
+    .map((b) => b.dataset.selected));
+  check('M1 régression : (2 + 3) reste surligné, le 3e terme devient une ancre',
+    sels[0] === 'bloc' && sels[1] === 'bloc' && sels[2] === 'ancre', JSON.stringify(sels));
+
+  // Le bloc n'est remplacé qu'au tap qui FERME la nouvelle sélection.
+  await page.click('button[data-term="1"]'); await settle(page, 320);
+  check('M1 régression : le nouveau bloc remplace l’ancien à la fermeture — 2 + (3 × 4) = 14',
+    (await total()) === '14', `total=${await total()}`);
+
+  // La cascade §13 montre la STRUCTURE, pas seulement le total.
+  // La page porte TROIS laboratoires (une par étape) : on ne lit que le premier.
+  const casc = await page.evaluate(() => {
+    const ol = document.querySelector('ol[aria-label="Le calcul, étape par étape"]');
+    return ol ? [...ol.querySelectorAll('li')]
+      .map((li) => li.textContent.replace(/[↓\s]+/g, ' ').trim()).filter(Boolean) : [];
+  });
+  check('M1 : la cascade réécrit le calcul jusqu’au total',
+    casc.join(' | ').includes('2 + (3 × 4)') && casc[casc.length - 1] === '14', casc.join(' | '));
+
+  // « Recommencer » : le retour à l'expression nue est EXPLICITE, jamais accidentel.
+  await page.click('button:has-text("Recommencer")'); await settle(page, 320);
+  const sels2 = await page.evaluate(() => [...document.querySelectorAll('button[data-term]')]
+    .map((b) => b.dataset.selected));
+  check('M1 : « Recommencer » ramène à l’expression nue',
+    (await total()) === '14' && sels2.every((x) => x === 'non'), `${await total()} ${JSON.stringify(sels2)}`);
+
   // Cibles tactiles : 44 px minimum sur les termes du ticket.
   const petits = await page.evaluate(() => [...document.querySelectorAll('button[data-term]')]
     .filter((b) => { const r = b.getBoundingClientRect(); return r.width < 44 || r.height < 44; }).length);

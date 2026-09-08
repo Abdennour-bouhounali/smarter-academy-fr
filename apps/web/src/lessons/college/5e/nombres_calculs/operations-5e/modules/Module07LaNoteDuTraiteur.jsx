@@ -211,7 +211,7 @@ export default function Module07LaNoteDuTraiteur() {
       brief={{
         tag: 'Entraînement',
         title: 'Une commande à vérifier',
-        tone: 'rose',
+        tone: 'amber',
         body: (
           <p>
             Un traiteur envoie sa note pour une fête. Avant de payer, il faut la contrôler. La

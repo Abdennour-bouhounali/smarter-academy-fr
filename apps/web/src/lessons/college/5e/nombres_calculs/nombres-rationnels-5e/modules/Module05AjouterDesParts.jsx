@@ -194,7 +194,7 @@ export default function Module05AjouterDesParts() {
       brief={{
         tag: 'Manipulation',
         title: '1/4 de tarte, puis 3/8 de plus',
-        tone: 'purple',
+        tone: 'indigo',
         body: (
           <p>
             Tu as un quart de tarte, on t’en donne trois huitièmes. Combien en as-tu ? Impossible de
