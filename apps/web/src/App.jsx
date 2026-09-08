@@ -34,6 +34,9 @@ import nombresRelatifs5eRoutes from './lessons/college/5e/nombres_calculs/nombre
 import nombresRationnels5eRoutes from './lessons/college/5e/nombres_calculs/nombres-rationnels-5e/routes';
 import puissances5eRoutes from './lessons/college/5e/nombres_calculs/puissances-5e/routes';
 import calculLitteral5eRoutes from './lessons/college/5e/nombres_calculs/calcul-litteral-5e/routes';
+import transformations5eRoutes from './lessons/college/5e/espace_geometrie/transformations-5e/routes';
+import angles5eRoutes from './lessons/college/5e/espace_geometrie/angles-5e/routes';
+import triangles5eRoutes from './lessons/college/5e/espace_geometrie/triangles-5e/routes';
 import nombresRelatifs4eRoutes from './lessons/college/4e/nombres_calculs/nombres-relatifs-4e/routes';
 import racinesCarrees3eRoutes from './lessons/college/3e/nombres_calculs/racines-carrees/routes';
 import reperageDroitePlan3eRoutes from './lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/routes';
@@ -166,6 +169,9 @@ export default function App() {
             {nombresRationnels5eRoutes()}
             {puissances5eRoutes()}
             {calculLitteral5eRoutes()}
+            {transformations5eRoutes()}
+            {angles5eRoutes()}
+            {triangles5eRoutes()}
             {nombresRelatifs4eRoutes()}
             {racinesCarrees3eRoutes()}
             {reperageDroitePlan3eRoutes()}

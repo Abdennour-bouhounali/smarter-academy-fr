@@ -37,14 +37,38 @@ export const rotatePartialPts = (pts, c, angleDeg) =>
 
 /* ── Les figures de la leçon ─────────────────────────────────────────────── */
 
-/** Un drapeau : asymétrique, donc un demi-tour se VOIT (contrairement à un
- *  carré, qui retomberait sur lui-même et cacherait le phénomène). */
+/**
+ * Un drapeau : asymétrique, donc un demi-tour se VOIT (contrairement à un
+ * carré, qui retomberait sur lui-même et cacherait le phénomène).
+ *
+ * TAILLE. Les sommets sont espacés d'au moins 60 px : c'est ce qui garantit
+ * que leurs étiquettes (« A », « B »…) trouvent une place libre au lieu de se
+ * marcher dessus, et que la figure occupe vraiment le cadre. Une figure
+ * étriquée n'est pas seulement laide — ses noms de points deviennent
+ * illisibles dès qu'on la fait tourner.
+ */
 export const DRAPEAU = [
-  { x: 0, y: 0 }, { x: 0, y: -86 }, { x: 62, y: -66 }, { x: 18, y: -46 }, { x: 18, y: 0 },
+  { x: 0, y: 0 }, { x: 0, y: -156 }, { x: 132, y: -120 }, { x: 40, y: -84 }, { x: 40, y: 0 },
+];
+
+/**
+ * La lettre F : la figure TÉMOIN du module 6.
+ *
+ * Elle n'a ni axe ni centre de symétrie. C'est ce qui la rend décisive : un F
+ * retourné par un pliage se reconnaît instantanément (il est « à l'envers »),
+ * alors qu'un F ayant fait un demi-tour reste un F qu'on pourrait remettre
+ * droit en le faisant glisser sur la table. Sur une figure symétrique, cette
+ * différence serait invisible — et c'est justement pourquoi elle est
+ * introuvable dans la plupart des exercices.
+ */
+export const LETTRE_F = [
+  { x: 0, y: 0 }, { x: 0, y: -150 }, { x: 90, y: -150 }, { x: 90, y: -122 },
+  { x: 30, y: -122 }, { x: 30, y: -88 }, { x: 76, y: -88 }, { x: 76, y: -60 },
+  { x: 30, y: -60 }, { x: 30, y: 0 },
 ];
 
 /** Un triangle quelconque — aucun angle droit, aucun côté égal. */
-export const TRIANGLE = [{ x: 0, y: 0 }, { x: 96, y: 22 }, { x: 34, y: -62 }];
+export const TRIANGLE = [{ x: 0, y: 0 }, { x: 168, y: 38 }, { x: 60, y: -108 }];
 
 /** Place une figure modèle à une position donnée de la scène. */
 export const placer = (forme, at) => forme.map((p) => ({ x: p.x + at.x, y: p.y + at.y }));

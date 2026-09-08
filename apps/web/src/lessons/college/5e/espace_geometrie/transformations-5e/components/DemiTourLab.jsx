@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import GeoScene, { Dot, Handle, Poly, Seg, dotObstacles, polyObstacles } from '../../../../../common/geo5e/GeoScene';
+import GeoScene, { Dot, Handle, Poly, Seg, dotObstacles, polyObstacles, segObstacles } from '../../../../../common/geo5e/GeoScene';
 import { clampPt, midpoint, symCentralPts } from '../../../../../common/geo5e/geo5e';
 import { rotatePartialPts } from './transformations';
 
-const W = 720;
-const H = 430;
+const W = 760;
+const H = 520;
 
 /**
  * DemiTourLab — LE laboratoire de la leçon : un calque qu'on fait tourner
@@ -35,8 +35,20 @@ export default function DemiTourLab({
   const courant = rotatePartialPts(figure, centre, angle);
   const fini = angle >= 179.5;
 
-  // La poignée de rotation : au bout du premier sommet, elle suit le calque.
-  const poignee = courant[0];
+  /* La poignée de rotation NE se confond avec aucun sommet : elle est posée
+     au-delà du centre de gravité du calque, dans le prolongement du rayon.
+     Un sommet nommé « A » et une poignée qu'on saisit sont deux objets
+     différents — les superposer rendait la figure illisible et donnait
+     l'impression qu'on traînait le point A lui-même. */
+  const g = {
+    x: courant.reduce((s, p) => s + p.x, 0) / courant.length,
+    y: courant.reduce((s, p) => s + p.y, 0) / courant.length,
+  };
+  const dg = Math.hypot(g.x - centre.x, g.y - centre.y) || 1;
+  const poignee = {
+    x: centre.x + ((g.x - centre.x) / dg) * (dg + 46),
+    y: centre.y + ((g.y - centre.y) / dg) * (dg + 46),
+  };
 
   const move = useCallback((p) => {
     if (!p || !drag) return;
@@ -45,7 +57,11 @@ export default function DemiTourLab({
     } else if (drag === 'rot') {
       // L'angle suit le doigt, mais reste dans [0 ; 180] : le calque ne part
       // pas au-delà du demi-tour, qui est le seul objet de la 5e.
-      const a0 = Math.atan2(figure[0].y - centre.y, figure[0].x - centre.x);
+      const g0 = {
+        x: figure.reduce((s, q) => s + q.x, 0) / figure.length,
+        y: figure.reduce((s, q) => s + q.y, 0) / figure.length,
+      };
+      const a0 = Math.atan2(g0.y - centre.y, g0.x - centre.x);
       const a1 = Math.atan2(p.y - centre.y, p.x - centre.x);
       let d = ((a1 - a0) * 180) / Math.PI;
       while (d < 0) d += 360;
@@ -54,7 +70,7 @@ export default function DemiTourLab({
   }, [drag, onCentre, onAngle, figure, centre]);
 
   const labels = [
-    { id: 'O', text: 'O', anchor: centre, color: '#dc2626' },
+    { id: 'O', text: 'O', anchor: centre, color: '#dc2626', priority: true },
     ...figure.map((p, i) => ({ id: `s${i}`, text: nomsSommets[i], anchor: p, color: '#334155' })),
     ...(montrerImage && fini
       ? image.map((p, i) => ({ id: `i${i}`, text: `${nomsSommets[i]}’`, anchor: p, color: '#7c3aed' }))
@@ -62,9 +78,14 @@ export default function DemiTourLab({
   ];
 
   const obstacles = [
-    ...dotObstacles([centre, ...figure], 15),
+    ...dotObstacles([centre, ...figure], 16),
     ...polyObstacles(figure),
-    ...(montrerImage && fini ? [...dotObstacles(image, 15), ...polyObstacles(image)] : []),
+    // La poignée et sa tige sont des obstacles comme les autres : aucune
+    // étiquette ne doit venir se poser dessus.
+    ...dotObstacles([poignee], 20),
+    ...segObstacles(centre, poignee),
+    ...(angle > 0.5 ? [...dotObstacles(courant, 14), ...polyObstacles(courant)] : []),
+    ...(montrerImage && fini ? [...dotObstacles(image, 16), ...polyObstacles(image)] : []),
   ];
 
   return (

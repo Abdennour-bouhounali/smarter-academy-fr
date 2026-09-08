@@ -41,7 +41,7 @@
  * documentaires : components/transformations.js LÈVE si l'on demande une
  * rotation d'un angle autre que 180°, et le test le vérifie.
  */
-export const LESSON_BASE_PATH = '/courses/college/5e/geometrie/transformations-5e';
+export const LESSON_BASE_PATH = '/courses/college/5e/espace_geometrie/transformations-5e';
 
 export const LESSON_CONFIG = {
   id: 'transformations-5e',
@@ -51,7 +51,7 @@ export const LESSON_CONFIG = {
     "Faire tourner un calque d’un demi-tour autour d’une punaise, découvrir que chaque point atterrit à une place prévisible, établir que le centre est toujours le milieu du segment qui joint un point à son image, puis vérifier ce que ce demi-tour conserve — longueurs, angles, aires — et ce qui distingue vraiment un demi-tour d’un pliage.",
   level: 'college',
   grade: '5e',
-  chapter: 'geometrie',
+  chapter: 'espace_geometrie',
   chapterTitle: 'Espace et géométrie',
   passingScore: 6,
   masteryThreshold: 0.8,

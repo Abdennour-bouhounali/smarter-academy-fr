@@ -73,7 +73,7 @@ const QUESTIONS = [
     options: ['4', '2', '1'],
     cols: 3,
     correct: 0,
-    explain: 'Les deux médianes et les deux diagonales : 4 axes de symétrie.',
+    explain: 'Les deux droites qui passent par les milieux des côtés opposés, et les deux diagonales : 4 axes de symétrie.',
   },
   {
     id: 'tr5-d6-figures',
@@ -108,7 +108,8 @@ export default function Module00Diagnostic() {
       questions={QUESTIONS}
       moduleTitle="Mission de départ"
       moduleSubtitle="Ce dont on va se servir"
-      intro={{
+      estimatedTime="4 min"
+      brief={{
         title: 'Avant de faire tourner quoi que ce soit',
         body: (
           <p>
