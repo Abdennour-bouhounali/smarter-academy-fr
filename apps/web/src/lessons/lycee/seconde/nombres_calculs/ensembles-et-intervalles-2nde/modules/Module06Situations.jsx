@@ -117,13 +117,13 @@ export default function Module06Situations() {
               />
               {d2a && (
                 <TapQuestion
-                  prompt="Le frigo affiche 8,5 °C. Le vaccin est-il encore dans sa plage ?"
-                  options={['Oui, c’est presque 8', 'Non : 8,5 ∉ [2 ; 8]']}
+                  prompt="Le frigo affiche 8,5 °C. Que vaut la température par rapport à la plage [2 ; 8] ?"
+                  options={['8,5 ∉ [2 ; 8] : hors plage', '8,5 ∈ [2 ; 8] : la borne 8 est incluse', '8,5 ∈ [2 ; 8] : l’écart est inférieur à 1', '8,5 ∈ ]2 ; 8[ : les bornes ne comptent pas']}
                   cols={2}
-                  correct={1}
+                  correct={0}
                   requires={['methode-appartenance-intervalle']}
                   explain="8,5 > 8 : hors de l’intervalle, même de peu. Une borne est une frontière nette, pas une zone floue."
-                  explainWrong="« Presque » ne compte pas : la borne est 8, et 8,5 > 8. Donc 8,5 ∉ [2 ; 8] — il faut réagir."
+                  explainWrong="Le crochet fermé rend 8 lui-même acceptable, mais il ne rend acceptable RIEN au-delà : 8,5 > 8, donc 8,5 ∉ [2 ; 8]. Ni la petitesse de l’écart ni le sens des crochets n’y changent quoi que ce soit — il faut réagir."
                   solved={d2b}
                   onAnswered={() => setD2b(true)}
                 />

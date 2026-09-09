@@ -237,7 +237,10 @@ const browser = await launch();
   check('M6: both rides = ]1,4 ; 1,9[', /Construction juste : \]1,4 ; 1,9\[/.test(await body(page)));
   await fillOk(page, '6', '#step-2');                     // wrong on purpose (forgot a bound)
   check('M6: 6 is targeted', /oublié une borne/.test(await body(page)));
-  await tap(page, 'presque 8', '#step-2');                // wrong on purpose
+  // Faux exprès : « la borne 8 est incluse » est la lecture erronée la plus
+  // fréquente — le crochet fermé accepte 8, pas 8,5. (L'option « presque 8 »
+  // a été retirée : elle se réfutait elle-même, cf. audit 2de A1-9.)
+  await tap(page, 'la borne 8 est incluse', '#step-2');
   check('M6: 8,5 out of range explained', /8,5 > 8/.test(await body(page)));
   await tap(page, ']−∞ ; 5]', '#step-3');                 // wrong on purpose
   check('M6: x ≥ 0 recalled', /pas de gigaoctets négatifs/.test(await body(page)));

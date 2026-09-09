@@ -147,7 +147,7 @@ export default function Module03LeTauxGlobal() {
           ]}
           correct={0} cols={2}
           requires={['somme-jamais', 'taux-global', 'coefficient-global', 'pourcentage']}
-          explain="0,70 × 0,70 = 0,49 : il reste 49 % du prix, donc la remise totale est de 51 %. Elle est plus avantageuse que 51 %… mais moins que les 60 % annoncés par le client. Deux baisses successives ne peuvent d’ailleurs jamais atteindre −100 %."
+          explain="0,70 × 0,70 = 0,49 : il reste 49 % du prix, donc la remise totale est de 51 %. C’est mieux que les 30 % d’une seule baisse, mais moins que les 60 % annoncés par le client — la seconde baisse ne porte que sur ce qui reste. Deux baisses successives ne peuvent d’ailleurs jamais atteindre −100 %."
           explainWrong="La seconde remise porte sur le prix déjà réduit. Il reste 70 % de 70 %, soit 49 % du prix initial : la remise est de 51 %."
           solved={q4} onAnswered={() => setQ4(true)}
         />

@@ -104,7 +104,7 @@ export default function Module05LeCoefficientMultiplicateur() {
             { id: 'c2', label: 'Baisse de 12 %', options: ['×0,12', '×0,88', '×−0,12'], correct: 1, correction: '1 − 0,12 = 0,88' },
             { id: 'c3', label: 'Hausse de 100 %', options: ['×1', '×2', '×100'], correct: 1, correction: '1 + 1 = 2 : la valeur double' },
             { id: 'c4', label: 'Baisse de 100 %', options: ['×0', '×0,01', '×−1'], correct: 0, correction: '1 − 1 = 0 : il ne reste rien' },
-            { id: 'c5', label: 'Hausse de 3,5 %', options: ['×1,35', '×1,035', '×3,5'], correct: 1, correction: '1 + 0,035 = 1,035 — attention au chiffre des centièmes' },
+            { id: 'c5', label: 'Hausse de 3,5 %', options: ['×1,35', '×1,035', '×3,5'], correct: 1, correction: '3,5 % = 3,5 ÷ 100 = 0,035, donc k = 1,035. Le 3 est aux centièmes et le 5 aux millièmes : ×1,35 serait une hausse de 35 %.' },
           ]}
           feedback={({ allRight, nCorrect, total }) => (
             <Feedback tone={allRight ? 'ok' : 'ko'}>

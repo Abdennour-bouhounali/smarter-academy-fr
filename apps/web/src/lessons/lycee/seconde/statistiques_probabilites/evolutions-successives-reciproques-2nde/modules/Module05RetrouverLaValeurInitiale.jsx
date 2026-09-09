@@ -111,8 +111,8 @@ export default function Module05RetrouverLaValeurInitiale() {
           explain="k global = 1,10 × 0,80 = 0,88, donc V initiale = 8 800 ÷ 0,88 = 10 000. Vérification : 10 000 → 11 000 → 8 800 ✓."
           explainFor={(n) => (n === 8800 * 0.88 || Math.abs(n - 7744) < 1
             ? 'Tu as multiplié par 0,88 au lieu de diviser. Pour remonter la chaîne : 8 800 ÷ 0,88 = 10 000.'
-            : Math.abs(n - 8888.89) < 5
-              ? 'Tu n’as remonté qu’une seule des deux évolutions. Le coefficient global vaut 1,10 × 0,80 = 0,88 : 8 800 ÷ 0,88 = 10 000.'
+            : (Math.abs(n - 8000) < 5 || Math.abs(n - 11000) < 5)
+              ? 'Tu n’as remonté qu’UNE des deux évolutions (8 800 ÷ 1,10 = 8 000, ou 8 800 ÷ 0,80 = 11 000). Il faut remonter les deux d’un coup, par le coefficient global : 1,10 × 0,80 = 0,88, puis 8 800 ÷ 0,88 = 10 000.'
               : Math.abs(n - 9680) < 5
                 ? 'Tu as remonté la baisse (÷0,8) mais appliqué la hausse dans le mauvais sens. Un seul calcul suffit : 8 800 ÷ (1,10 × 0,80) = 10 000.'
                 : 'On divise par le coefficient GLOBAL : 8 800 ÷ 0,88 = 10 000 habitants.')}
