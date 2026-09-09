@@ -135,6 +135,9 @@ import statistiquesUneVariable2ndeRoutes from './lessons/lycee/seconde/statistiq
 import tableauxCroises2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/tableaux-croises-2nde/routes';
 import testsDiagnostiques2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/routes';
 
+// ---- PREMIÈRE SPÉCIALITÉ ----
+import derivationNombreDerive1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-nombre-derive-1ere/routes';
+
 // Hydrates local lesson progress from the server on login and flushes the
 // offline queue — must live inside AuthProvider, hence this null component.
 function LessonProgressSync() {
@@ -294,6 +297,9 @@ export default function App() {
             {statistiquesUneVariable2ndeRoutes()}
             {tableauxCroises2ndeRoutes()}
             {testsDiagnostiques2ndeRoutes()}
+
+            {/* ---- PREMIÈRE SPÉCIALITÉ ---- */}
+            {derivationNombreDerive1ereRoutes()}
           </Route>
         </Routes>
       </Router>
