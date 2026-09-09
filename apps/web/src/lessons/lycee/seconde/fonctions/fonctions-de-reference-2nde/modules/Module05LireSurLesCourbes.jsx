@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -42,6 +42,11 @@ export default function Module05LireSurLesCourbes() {
   const [y3, setY3] = useState(1);
   const [seen3, setSeen3] = useState(false);
   const [q4, setQ4] = useState(false);
+  const [xi, setXi] = useState(1);
+  const [seenPos, setSeenPos] = useState(false);
+  const [seenNegX, setSeenNegX] = useState(false);
+  const [qImg, setQImg] = useState(false);
+  const doneImg = seenPos && seenNegX;
   const done1 = seen4 && seenNeg;
 
   const steps = [
@@ -95,7 +100,49 @@ export default function Module05LireSurLesCourbes() {
       ),
     },
     {
-      num: 4, title: 'Qui est au-dessus ?', done: q4,
+      num: 4,
+      title: 'Dans l’autre sens : lire une IMAGE',
+      subtitle: 'Sonde VERTICALE cette fois : tu choisis x, la courbe répond f(x). Pose-la en 3, puis en −3.',
+      done: doneImg && qImg,
+      content: (kit) => (
+        <div className="space-y-3">
+          {/* Les trois étapes précédentes lisaient des ANTÉCÉDENTS (sonde
+              horizontale, mode y). Lire une IMAGE est le geste inverse et il
+              manquait : la sonde passe en mode x. Deux abscisses opposées sont
+              imposées pour que la symétrie de la parabole se voie dans le sens
+              image, et pas seulement dans le sens antécédent. */}
+          <FunctionProbe f={SQUARE} range={SQUARE_RANGE} unit={34} unitY={30} mode="x" value={xi} xStep={1}
+            onChange={(v) => { setXi(v); let hit = false; if (v === 3 && !seenPos) { setSeenPos(true); hit = seenNegX; } if (v === -3 && !seenNegX) { setSeenNegX(true); hit = seenPos; } if (hit) kit.react(true); }} />
+          {doneImg ? (
+            <>
+              <Feedback tone="ok">
+                f(3) = 9 et f(−3) = 9 : <strong>une</strong> image pour chaque x, mais la MÊME pour deux x
+                opposés. C’est pourquoi lire une image (un seul point, toujours) et lire un antécédent
+                (zéro, un ou deux points) ne sont pas le même geste.
+              </Feedback>
+              <KnowledgeBrick
+                id="methode-image-reference"
+                variant="new"
+                lead={<>Tu viens de faire le geste inverse des trois étapes précédentes : partir de x, monter, lire. Il porte un nom et une règle.</>}
+              />
+              <TapQuestion
+                prompt="Sur la courbe de g(x) = 1/x, tu poses la sonde verticale en x = 2. Que lis-tu ?"
+                options={['0,5 : c’est l’image de 2', '2 : c’est l’antécédent de 0,5', 'Deux valeurs, 0,5 et −0,5', 'Rien : 2 n’a pas d’image']}
+                correct={0} cols={1}
+                requires={['methode-image-reference']}
+                explain="En mode image, on part de x et on monte jusqu’à la courbe : g(2) = 1/2 = 0,5, et il n’y a qu’un point — une fonction ne donne qu’une image. Le sens inverse (partir de 0,5 et chercher les x) est la lecture d’antécédent."
+                explainWrong="Poser la sonde en x = 2 donne l’IMAGE de 2, c’est-à-dire g(2) = 0,5. Chercher qui a pour image 0,5 serait la lecture inverse."
+                solved={qImg} onAnswered={() => setQImg(true)}
+              />
+            </>
+          ) : (
+            <Feedback tone="info">{!seenPos ? 'Pose la sonde en 3. ' : ''}{!seenNegX ? 'Puis en −3.' : ''}</Feedback>
+          )}
+        </div>
+      ),
+    },
+    {
+      num: 5, title: 'Qui est au-dessus ?', done: q4,
       content: (
         <div className="space-y-3">
           <BatchChoiceQuestion

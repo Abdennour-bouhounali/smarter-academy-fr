@@ -214,6 +214,17 @@ export const LESSON_KNOWLEDGE = {
     ],
     5: [
       {
+        id: 'methode-image-reference', type: 'methodes', title: 'Lire une image sur une courbe',
+        summary: 'Partir de x sur l’axe horizontal, monter jusqu’à la courbe, lire l’ordonnée : c’est f(x). Il n’y a JAMAIS qu’un seul point — une fonction ne donne qu’une image.',
+        body: (
+          <div className="space-y-2 text-sm">
+            <p>Sens IMAGE : je choisis x, la courbe répond f(x). Un point, toujours un seul.</p>
+            <p>Sens ANTÉCÉDENT : je choisis k, je cherche les x tels que f(x) = k. Zéro, un ou deux points.</p>
+            <div className="rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-indigo-900">f(3) = 9 et f(−3) = 9 : deux x différents, la MÊME image.</div>
+          </div>
+        ),
+      },
+      {
         id: 'methode-antecedents-reference', type: 'methodes', title: 'Résoudre x² = k, 1/x = k, |x| = k',
         summary: 'Sur la courbe : compter les points communs avec y = k. Carré et valeur absolue : 2 solutions si k > 0, 1 si k = 0, 0 si k < 0 ; inverse : 1 solution si k ≠ 0, 0 si k = 0.',
         body: (

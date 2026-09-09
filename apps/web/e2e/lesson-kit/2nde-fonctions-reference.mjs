@@ -18,7 +18,7 @@ const CONTRIB = {
   2: ['vocab-monte-descend', 'fonction-carre', 'regle-comparer-carres', 'mem-parabole'],
   3: ['fonction-inverse', 'regle-comparer-inverses', 'mem-hyperbole'],
   4: ['vocab-extremum', 'fonction-valeur-absolue', 'regle-carre-vs-va', 'mem-le-v'],
-  5: ['methode-antecedents-reference', 'regle-ordre-references', 'formule-references'],
+  5: ['methode-antecedents-reference', 'regle-ordre-references', 'formule-references', 'methode-image-reference'],
   6: ['methode-modeliser-reference'],
 };
 const TOTAL = Object.values(CONTRIB).flat().length;
@@ -170,7 +170,14 @@ const browser = await launch();
   check('M5: 1/x = 2 one solution', /une seule<\/strong> solution|une seule solution/.test(await body(page)));
   await press(page, '#step-3', 'Avancer la sonde', 2, issues);   // 1 → 3
   check('M5: |x| = 3 two solutions', /−3 et 3/.test(await body(page)));
-  await batchFirst(page, '#step-4', 4);
+  // Étape 4 (ajoutée le 2026-09-10) : lire une IMAGE, sonde VERTICALE.
+  // Les trois premières lisaient des antécédents ; celle-ci fait le geste
+  // inverse et pose la brique methode-image-reference.
+  await press(page, '#step-4', 'Avancer la sonde', 2, issues);   // 1 → 3
+  await press(page, '#step-4', 'Reculer la sonde', 6, issues);   // 3 → −3
+  await tapOption(page, '#step-4', 0);
+  check('M5: image read on the curve (f(3) = f(−3) = 9)', /la MÊME pour deux x|une<\/strong> image/.test(await body(page)));
+  await batchFirst(page, '#step-5', 4);
   check('M5: complete', await nextEnabled(page));
   check('M5: snapshot M1..M5, nothing from M6', sameSet(await snapshotIds(page), expectedAfter(5)));
   check('M5: layout safe', issues.length === 0, issues.slice(0, 3).join(' | '));
