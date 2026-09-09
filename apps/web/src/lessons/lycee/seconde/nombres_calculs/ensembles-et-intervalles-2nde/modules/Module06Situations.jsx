@@ -68,7 +68,7 @@ export default function Module06Situations() {
                   ariaLabel="Les deux plages de tailles superposées"
                 />
               </div>
-              <IntervalBuilder value={k} onChange={setK} min={1} max={2.2} step={0.1} showNotation={false} disabled={d1} ghost={g} />
+              <IntervalBuilder value={k} onChange={setK} min={1} max={2.2} step={0.1} showNotation={false} ghost={g} />
               <BuildCheck
                 isRight={() => sameInterval(k, BOTH)}
                 current={() => notation(k)}

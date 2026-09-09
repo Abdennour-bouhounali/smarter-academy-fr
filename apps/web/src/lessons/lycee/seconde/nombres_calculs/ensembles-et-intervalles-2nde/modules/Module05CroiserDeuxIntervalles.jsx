@@ -110,7 +110,7 @@ export default function Module05CroiserDeuxIntervalles() {
           content: (
             <div className="space-y-3">
               {twoBands}
-              <IntervalBuilder value={k1} onChange={setK1} min={-3} max={9} step={1} showNotation={false} disabled={d1} ghost={g1} />
+              <IntervalBuilder value={k1} onChange={setK1} min={-3} max={9} step={1} showNotation={false} ghost={g1} />
               <BuildCheck
                 isRight={() => sameInterval(k1, INTER)}
                 current={() => notation(k1)}
@@ -139,7 +139,7 @@ export default function Module05CroiserDeuxIntervalles() {
           content: (
             <div className="space-y-3">
               {twoBands}
-              <IntervalBuilder value={k2} onChange={setK2} min={-3} max={9} step={1} showNotation={false} disabled={d2} ghost={g2} />
+              <IntervalBuilder value={k2} onChange={setK2} min={-3} max={9} step={1} showNotation={false} ghost={g2} />
               <BuildCheck
                 isRight={() => sameInterval(k2, UNION)}
                 current={() => notation(k2)}

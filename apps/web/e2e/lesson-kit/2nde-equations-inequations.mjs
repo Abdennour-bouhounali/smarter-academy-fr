@@ -151,8 +151,18 @@ const browser = await launch();
   check('M5: −1 refused as solution', /jamais une solution/.test(await body(page)));
   await tap(page, '{−2}', '#step-3');                      // wrong
   check('M5: double zero trap', /interdite AVANT/.test(await body(page)));
-  // Le module s'arrête ici : l'ancien encadré « À retenir : quatre types »
-  // est devenu la carte des connaissances, rendue en pied de module.
+  // Étape 4 — « quatre types, quatre méthodes » : quatre lignes à apparier.
+  // Elle DOIT être jouée, sinon `allDone` reste faux et le pied de module
+  // (la carte) n'est jamais rendu : c'est ce qui masquait l'assertion suivante.
+  for (const [label, choice] of [['(x − 5)(x + 2) = 0', 'produit nul'], ['4x − 7 = 2x + 1', 'premier degré'],
+    ['(x + 4)/(x − 1) = 0', 'quotient'], ['x(x − 3) = 0', 'produit nul']]) {
+    // `role="group"` n'entoure que les boutons ; l'étiquette est son frère.
+    // On vise donc la LIGNE (le conteneur qui porte les deux).
+    const row = page.locator('#step-4 .rounded-2xl').filter({ hasText: label }).last();
+    await row.locator('button[aria-pressed]').filter({ hasText: choice }).first().click({ force: true });
+    await page.waitForTimeout(80);
+  }
+  await settle(page);
   check('M5: complete', await nextEnabled(page));
   check('M5: the four-method card is now the knowledge map', (await page.locator('[data-knowledge-snapshot]').count()) === 1);
   check('M5: layout safe', issues.length === 0, issues.slice(0, 3).join(' | '));
@@ -186,7 +196,7 @@ const browser = await launch();
   check('boss: score', /\/ 10/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
-  check('boss: synthèse IS the complete knowledge map', /Ma carte des connaissances/.test(await body(page)) && (await page.locator('[data-knowledge-snapshot="complete"] [data-km-item]').count()) === 20);
+  check('boss: synthèse IS the complete knowledge map', /Ma carte des connaissances/.test(await body(page)) && (await page.locator('[data-knowledge-snapshot="complete"] [data-km-item]').count()) === 21);
   const completed = await readCompleted(page, KEY);
   check('boss: completed in storage', Array.isArray(completed) && completed.includes('7'));
   await page.reload({ waitUntil: 'domcontentloaded' }); await settle(page, 1500);

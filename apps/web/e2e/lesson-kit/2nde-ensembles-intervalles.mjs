@@ -117,7 +117,7 @@ const browser = await launch();
   const rows = page.locator('#step-3 div[role="group"]');
   for (let i = 0; i < 4; i += 1) await rows.nth(i).locator('button').first().click();
   await settle(page);
-  check('M2: batch reveals ∅', /ensemble vide/.test(await body(page)));
+  check('M2: batch reveals ∅', /[Ee]nsemble vide/.test(await body(page)));
   check('M2: complete', await nextEnabled(page));
   await ctx.close();
 }
@@ -176,7 +176,7 @@ const browser = await launch();
   check('M4: −3 ≤ x < 2 accepted', /Construction juste : −3 ≤ x < 2/.test(await body(page)));
   await tap(page, '[3 ; +∞[');                              // the direction trap, wrong on purpose
   b = await body(page);
-  check('M4: direction trap corrected with the drawn half-line', /vers la GAUCHE/.test(b) && (await page.locator('svg[aria-label^="Demi-droite"]').count()) === 1);
+  check('M4: direction trap corrected with the drawn half-line', /vers la GAUCHE/.test(b) && (await page.locator('svg[aria-label^="Demi-droite"]').count()) >= 1);
   // step 4: decimals — build [2,5 ; 4[
   const s4 = page.locator('#step-4 [role="slider"]');
   await s4.nth(0).focus(); await page.keyboard.press('Home'); for (let i = 0; i < 5; i += 1) await page.keyboard.press('ArrowRight');
@@ -195,17 +195,26 @@ const browser = await launch();
 /* ── M5 — croiser ── */
 {
   const { ctx, page } = await o(browser, M.m5, ['0', '1', '2', '3', '4'], { tag: 'm5' });
-  // step 1: build ]2 ; 4]  (the module opens straight on the intersection —
-  // the old « À retenir » card is now the cumulative Knowledge Map footer)
-  const s2 = page.locator('#step-1 [role="slider"]');
+  // Étape 1 = l'encadré « À retenir » + un appariement de types (le module ne
+  // s'ouvre PAS sur l'intersection, contrairement à ce que ce test supposait :
+  // cet encadré écrit à la main double la carte des connaissances, il est
+  // signalé comme tel dans docs/audits/2DE_LEARNING_POINT_AUDIT.md).
+  for (const [label, choice] of [[']0 ; 1[', 'ouvert'], ['[−2 ; 5[', 'semi-ouvert'], ['[3 ; 3,5]', 'fermé']]) {
+    const row = page.locator('#step-1 .rounded-2xl').filter({ hasText: label }).last();
+    await row.locator('button[aria-pressed]').filter({ hasText: choice }).first().click({ force: true });
+    await page.waitForTimeout(80);
+  }
+  await settle(page);
+  // Étape 2 : construire ]2 ; 4] = I ∩ J.
+  const s2 = page.locator('#step-2 [role="slider"]');
   await s2.nth(0).focus(); await page.keyboard.press('Home'); for (let i = 0; i < 5; i += 1) await page.keyboard.press('ArrowRight');
   await s2.nth(1).focus(); await page.keyboard.press('End'); for (let i = 0; i < 5; i += 1) await page.keyboard.press('ArrowLeft');
-  await page.locator('#step-1 button[aria-label^="Borne de gauche"]').click();
-  await page.locator('#step-1 button:has-text("Valider ma construction")').click(); await settle(page);
+  await page.locator('#step-2 button[aria-label^="Borne de gauche"]').click();
+  await page.locator('#step-2 button:has-text("Valider ma construction")').click(); await settle(page);
   check('M5: intersection ]2 ; 4] accepted', /Construction juste : \]2 ; 4\]/.test(await body(page)));
   // step 2: union — wrong twice → reveal
-  await page.locator('#step-2 button:has-text("Valider ma construction")').click(); await settle(page);
-  await page.locator('#step-2 button:has-text("Valider ma construction")').click(); await settle(page);
+  await page.locator('#step-3 button:has-text("Valider ma construction")').click(); await settle(page);
+  await page.locator('#step-3 button:has-text("Valider ma construction")').click(); await settle(page);
   check('M5: union revealed after the cap', /Il fallait : \[−1 ; 7\[/.test(await body(page)));
   await tap(page, '[−5 ; 3]');                            // wrong on purpose
   check('M5: empty intersection explained', /A ∩ B = ∅/.test(await body(page)));

@@ -25,7 +25,7 @@ const CONTRIB = {
   1: ['equation-solution', 'regle-nombre-de-solutions', 'methode-verifier-solution', 'inequation-infinite'],
   2: ['regle-deux-membres', 'methode-premier-degre', 'regle-solution-exacte'],
   3: ['regle-signe-retourne', 'methode-resoudre-inequation', 'mem-signe-negatif'],
-  4: ['produit-nul', 'methode-equation-produit', 'regle-piege-produit-non-nul', 'mem-produit-nul'],
+  4: ['vocab-facteur', 'produit-nul', 'methode-equation-produit', 'regle-piege-produit-non-nul', 'mem-produit-nul'],
   5: ['valeur-interdite', 'quotient-nul', 'methode-choisir-methode'],
   6: ['methode-modeliser', 'regle-interpreter-solution', 'methode-traduire-vitesse'],
 };

@@ -66,7 +66,7 @@ export default function Module04InegaliteOuIntervalle() {
           done: d1,
           content: (
             <div className="space-y-3">
-              <IntervalBuilder value={b1} onChange={setB1} min={-5} max={6} step={1} showNotation={false} disabled={d1} ghost={g1} />
+              <IntervalBuilder value={b1} onChange={setB1} min={-5} max={6} step={1} showNotation={false} ghost={g1} />
               <BuildCheck
                 isRight={() => sameInterval(b1, T1)}
                 current={() => `${notation(b1)}, soit ${inequality(b1)}`}
@@ -97,7 +97,7 @@ export default function Module04InegaliteOuIntervalle() {
               <div className="rounded-2xl border-2 border-slate-200 bg-white p-2">
                 <RealLine min={-5} max={5} step={1} intervals={[{ id: 'I', from: -3, to: 2, openTo: true, tone: 'indigo', label: '[−3 ; 2[' }]} ariaLabel="Intervalle [−3 ; 2[" />
               </div>
-              <InequalityComposer a={-3} b={2} value={signs} onChange={setSigns} disabled={d2} />
+              <InequalityComposer a={-3} b={2} value={signs} onChange={setSigns} />
               <BuildCheck
                 isRight={signsRight}
                 current={signsText}
@@ -148,7 +148,7 @@ export default function Module04InegaliteOuIntervalle() {
           done: d4,
           content: (
             <div className="space-y-3">
-              <IntervalBuilder value={b4} onChange={setB4} min={0} max={6} step={0.5} variable="L" showNotation={false} disabled={d4} ghost={g4} />
+              <IntervalBuilder value={b4} onChange={setB4} min={0} max={6} step={0.5} variable="L" showNotation={false} ghost={g4} />
               <BuildCheck
                 isRight={() => sameInterval(b4, T4)}
                 current={() => notation(b4)}

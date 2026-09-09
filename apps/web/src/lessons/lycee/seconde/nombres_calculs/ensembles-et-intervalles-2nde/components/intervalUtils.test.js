@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   interval, contains, notation, inequality, typeOf, intersect, union, integersIn, isEmpty,
-  sameInterval, smallestSet, vennRegion, divisorsOf, texNotation,
+  sameInterval, smallestSet, vennRegion, divisorsOf, texNotation, roundTo,
 } from './intervalUtils';
 
 describe('interval / contains', () => {
@@ -104,5 +104,45 @@ describe('integersIn / sets / venn', () => {
     expect(vennRegion(4, A, B)).toBe('A');
     expect(vennRegion(9, A, B)).toBe('B');
     expect(vennRegion(5, A, B)).toBe('none');
+  });
+});
+
+describe('bornes réglées au bouton — pas de dérive flottante', () => {
+  // Le module 6 refusait une réponse JUSTE : au pas 0,1, quatre appuis sur « + »
+  // depuis 1 donnaient 1.4000000000000001, et `sameInterval` compare en `===`.
+  // L'élève lisait « ta construction : ]1,4 ; 1,9[ » et « il fallait :
+  // ]1,4 ; 1,9[ » — deux chaînes identiques, la sienne déclarée fausse, parce
+  // que `formatDec` masquait la dérive. Le geste de GLISSEMENT arrondissait
+  // déjà : seul le chemin par boutons était atteint, donc aucun test qui
+  // glisse ne pouvait le voir.
+  const bump = (cur, d, s) => roundTo(Math.round((cur + d * s) / s) * s);
+
+  it('quatre pas de +0,1 depuis 1 valent exactement 1,4', () => {
+    let v = 1;
+    for (let i = 0; i < 4; i += 1) v = bump(v, 1, 0.1);
+    expect(v).toBe(1.4);
+  });
+
+  it('trois pas de −0,1 depuis 2,2 valent exactement 1,9', () => {
+    let v = 2.2;
+    for (let i = 0; i < 3; i += 1) v = bump(v, -1, 0.1);
+    expect(v).toBe(1.9);
+  });
+
+  it('l’intervalle ainsi construit est reconnu égal à sa cible', () => {
+    let from = 1;
+    for (let i = 0; i < 4; i += 1) from = bump(from, 1, 0.1);
+    let to = 2.2;
+    for (let i = 0; i < 3; i += 1) to = bump(to, -1, 0.1);
+    expect(sameInterval(interval(from, to, true, true), interval(1.4, 1.9, true, true))).toBe(true);
+  });
+
+  it('reste exact aux autres pas de la leçon (0,5 et 1)', () => {
+    let v = 0;
+    for (let i = 0; i < 7; i += 1) v = bump(v, 1, 0.5);
+    expect(v).toBe(3.5);
+    let w = -3;
+    for (let i = 0; i < 5; i += 1) w = bump(w, 1, 1);
+    expect(w).toBe(2);
   });
 });

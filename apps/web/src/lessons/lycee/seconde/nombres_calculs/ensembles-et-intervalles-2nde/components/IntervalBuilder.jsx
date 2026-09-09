@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatDec } from '@smarter-academy/core';
 import RealLine from '../../../../../common/components/RealLine';
-import { interval, notation, inequality } from './intervalUtils';
+import { interval, notation, inequality, roundTo } from './intervalUtils';
 
 /**
  * IntervalBuilder — construire un intervalle : deux bornes (curseurs ou
@@ -55,7 +55,14 @@ export default function IntervalBuilder({
   const bump = (side, d) => {
     const cur = side === 'from' ? I.from : I.to;
     if (!Number.isFinite(cur)) return;
-    const v = Math.round((cur + d * s) / s) * s;
+    // `Math.round(x / s) * s` REFABRIQUE un flottant : au pas 0,1, quatre
+    // appuis depuis 1 donnent 1.4000000000000001, que `sameInterval` (comparaison
+    // stricte) refuse — l'élève lisait « ta construction : ]1,4 ; 1,9[ » face à
+    // « il fallait : ]1,4 ; 1,9[ », les deux identiques, la sienne déclarée fausse.
+    // `roundTo` coupe la dérive ; le chemin par glissement y passait déjà.
+    // ATTENTION : son second paramètre est un nombre de DÉCIMALES, pas un pas —
+    // `roundTo(v, 0.1)` arrondirait à l'entier. On garde la valeur par défaut.
+    const v = roundTo(Math.round((cur + d * s) / s) * s);
     if (side === 'from') set({ from: Math.max(min, Math.min(v, finT ? I.to : max)) });
     else set({ to: Math.min(max, Math.max(v, finF ? I.from : min)) });
   };

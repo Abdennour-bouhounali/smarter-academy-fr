@@ -21,7 +21,7 @@ const browser = await launch();
 {
   const { ctx, page } = await o(browser, LESSON, null, { tag: 'index' });
   const b = await body(page);
-  check('index: loads with all modules and 65 min', /paquets et les restes/i.test(b) && /Mission finale/.test(b) && /65\s*min/.test(b) && !/NaN/.test(b));
+  check('index: loads with all modules and 68 min', /paquets et les restes/i.test(b) && /Mission finale/.test(b) && /68\s*min/.test(b) && !/NaN/.test(b));
   await ctx.close();
 }
 {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
@@ -88,15 +88,14 @@ export default function Module05QuotientEtValeurInterdite() {
           ),
         },
         {
-          num: 4, title: 'À retenir : quatre types, quatre méthodes', done: cardDone,
+          num: 4, title: 'Reconnaître la forme', done: cardDone,
           content: (
             <div className="space-y-3">
-              <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 text-sm text-indigo-900 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <div className="rounded-xl bg-white border border-indigo-200 p-3"><div className="text-[11px] font-bold uppercase text-indigo-500">premier degré</div><div className="font-mono font-extrabold">ax + b = cx + d</div><div className="text-xs">même opération aux deux membres ; x d’un côté, nombres de l’autre ; ÷ coefficient ; solution exacte ; vérifier</div></div>
-                <div className="rounded-xl bg-white border border-indigo-200 p-3"><div className="text-[11px] font-bold uppercase text-indigo-500">inéquation</div><div className="font-mono font-extrabold">ax + b ≤ cx + d</div><div className="text-xs">idem, mais × ou ÷ par un négatif RETOURNE le sens ; solutions = intervalle sur la droite</div></div>
-                <div className="rounded-xl bg-white border border-indigo-200 p-3"><div className="text-[11px] font-bold uppercase text-indigo-500">produit nul</div><div className="font-mono font-extrabold">A × B = 0</div><div className="text-xs">⇔ A = 0 ou B = 0 ; ramener à 0 et factoriser d’abord</div></div>
-                <div className="rounded-xl bg-white border border-indigo-200 p-3"><div className="text-[11px] font-bold uppercase text-indigo-500">quotient nul</div><div className="font-mono font-extrabold">A / B = 0</div><div className="text-xs">⇔ A = 0 et B ≠ 0 ; valeur interdite d’abord</div></div>
-              </div>
+              <KnowledgeBrick
+                id="methode-choisir-methode"
+                variant="new"
+                lead={<>Tu viens de rencontrer les quatre formes. Voilà, en un seul endroit, comment les reconnaître.</>}
+              />
               <BatchChoiceQuestion requires={['methode-choisir-methode', 'produit-nul', 'quotient-nul']} intro={<p className="text-sm text-slate-600">Pour chaque équation, la méthode :</p>}
                 rows={[
                   { id: 'r1', label: '(x − 5)(x + 2) = 0', options: ['produit nul', 'premier degré', 'quotient'], correct: 0 },

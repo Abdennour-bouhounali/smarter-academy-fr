@@ -100,7 +100,7 @@ export default function Module03QuatreCrochets() {
           done: done2,
           content: (
             <div className="space-y-3">
-              <IntervalBuilder value={built2} onChange={setBuilt2} min={-5} max={5} step={1} showNotation={false} disabled={done2} ghost={ghost2} />
+              <IntervalBuilder value={built2} onChange={setBuilt2} min={-5} max={5} step={1} showNotation={false} ghost={ghost2} />
               <BuildCheck
                 isRight={() => sameInterval(built2, TARGET_2)}
                 current={() => notation(built2)}
@@ -121,7 +121,7 @@ export default function Module03QuatreCrochets() {
           done: done3 && whyDone,
           content: (
             <div className="space-y-3">
-              <IntervalBuilder value={built3} onChange={setBuilt3} min={-5} max={8} step={1} showNotation={false} allowInfinite disabled={done3} ghost={ghost3} />
+              <IntervalBuilder value={built3} onChange={setBuilt3} min={-5} max={8} step={1} showNotation={false} allowInfinite ghost={ghost3} />
               <BuildCheck
                 isRight={() => sameInterval(built3, TARGET_3)}
                 current={() => notation(built3)}
