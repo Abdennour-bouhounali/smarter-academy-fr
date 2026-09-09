@@ -1258,6 +1258,267 @@
       "patterns": [
         "(?<![\\p{L}\\p{N}_])boucles?(?![\\p{L}\\p{N}_])"
       ]
+    },
+    {
+      "id": "discriminant",
+      "label": "discriminant",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])discriminants?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "trinome",
+      "label": "trinôme",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])trin[oô]mes?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "racine-trinome",
+      "label": "racine d’un trinôme",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "racines?\\s+(?:du|d[eu]s?\\s+)?trin[oô]me",
+        "racines?\\s+de\\s+l['’]?[ée]quation\\s+du\\s+second\\s+degr[ée]"
+      ]
+    },
+    {
+      "id": "forme-factorisee",
+      "label": "forme factorisée",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "forme\\s+factoris[ée]e\\s+(?:du|d['’]un)\\s+trin[oô]me"
+      ]
+    },
+    {
+      "id": "suite-numerique",
+      "label": "suite numérique",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "suites?\\s+num[ée]riques?"
+      ]
+    },
+    {
+      "id": "suite-arithmetique",
+      "label": "suite arithmétique",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "suites?\\s+arithm[ée]tiques?"
+      ]
+    },
+    {
+      "id": "suite-geometrique",
+      "label": "suite géométrique",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "suites?\\s+g[ée]om[ée]triques?"
+      ]
+    },
+    {
+      "id": "raison-suite",
+      "label": "raison d’une suite",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "raisons?\\s+(?:de\\s+la\\s+|d['’]une\\s+)?suite",
+        "raisons?\\s+(?:arithm[ée]tique|g[ée]om[ée]trique)"
+      ]
+    },
+    {
+      "id": "relation-recurrence",
+      "label": "relation de récurrence",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "r[ée]currence"
+      ]
+    },
+    {
+      "id": "terme-general",
+      "label": "terme général",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "terme g[ée]n[ée]ral",
+        "formule explicite"
+      ]
+    },
+    {
+      "id": "taux-de-variation",
+      "label": "taux de variation",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "taux de variation"
+      ]
+    },
+    {
+      "id": "nombre-derive",
+      "label": "nombre dérivé",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "nombre d[ée]riv[ée]"
+      ]
+    },
+    {
+      "id": "fonction-derivee",
+      "label": "fonction dérivée",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "fonction\\s+d[ée]riv[ée]e",
+        "d[ée]riv[ée]e\\s+de\\s+la\\s+fonction"
+      ]
+    },
+    {
+      "id": "tangente-courbe",
+      "label": "tangente à une courbe",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "tangente [àa] la courbe"
+      ]
+    },
+    {
+      "id": "exponentielle",
+      "label": "exponentielle",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])exponentielles?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "radian",
+      "label": "radian",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])radians?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "cercle-trigonometrique",
+      "label": "cercle trigonométrique",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "cercle trigonom[ée]trique"
+      ]
+    },
+    {
+      "id": "periodicite",
+      "label": "périodicité",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "p[ée]riodicit[ée]\\s+(?:de\\s+la\\s+|d['’]une\\s+)?fonction",
+        "fonctions?\\s+p[ée]riodiques?"
+      ]
+    },
+    {
+      "id": "produit-scalaire",
+      "label": "produit scalaire",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "produits? scalaires?"
+      ]
+    },
+    {
+      "id": "orthogonal",
+      "label": "orthogonal",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])orthogonal(?:e|es|aux)?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])orthogonaux(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])orthogonalit[ée](?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "vecteur-normal",
+      "label": "vecteur normal",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "vecteurs? normal(?:e|es|aux)?",
+        "vecteurs? normaux"
+      ]
+    },
+    {
+      "id": "projection-orthogonale",
+      "label": "projection orthogonale",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "projection orthogonale",
+        "(?<![\\p{L}\\p{N}_])projet[ée]e?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "representation-parametrique",
+      "label": "représentation paramétrique",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "repr[ée]sentation param[ée]trique"
+      ]
+    },
+    {
+      "id": "variable-aleatoire",
+      "label": "variable aléatoire",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "variables? al[ée]atoires?"
+      ]
+    },
+    {
+      "id": "loi-de-probabilite",
+      "label": "loi de probabilité",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "lois? de probabilit[ée]"
+      ]
+    },
+    {
+      "id": "esperance",
+      "label": "espérance",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "(?<![\\p{L}\\p{N}_])esp[ée]rances?\\s+(?:math[ée]matique|de\\s+[XY]|d['’]une\\s+variable)",
+        "(?<![\\p{L}\\p{N}_])esp[ée]rance(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "ecart-type",
+      "label": "écart type",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "[ée]cart[- ]types?"
+      ]
+    },
+    {
+      "id": "schema-bernoulli",
+      "label": "schéma de Bernoulli",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "Bernoulli"
+      ]
+    },
+    {
+      "id": "loi-binomiale",
+      "label": "loi binomiale",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "lois? binomiales?",
+        "(?<![\\p{L}\\p{N}_])binomiale?s?(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "probabilites-totales",
+      "label": "probabilités totales",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "probabilit[ée]s totales"
+      ]
+    },
+    {
+      "id": "independance",
+      "label": "indépendance",
+      "grade": "premiere_specialite",
+      "patterns": [
+        "ind[ée]pendan(?:ce|ts?|tes?)\\s+(?:de\\s+deux\\s+)?[ée]v[ée]nements?",
+        "[ée]v[ée]nements?\\s+ind[ée]pendants?",
+        "ind[ée]pendance\\s+en\\s+probabilit"
+      ]
     }
   ],
   "_boundaryNote": "Les motifs utilisent des bornes Unicode explicites (?<![\\p{L}\\p{N}_]) … (?![\\p{L}\\p{N}_]) et jamais \\b : en JavaScript \\b reste ASCII même sous le drapeau /u, si bien qu'une lettre accentuée crée une frontière au milieu d'un mot — « aire » se déclenchait dans « linéaire ». Conserver cette convention."
