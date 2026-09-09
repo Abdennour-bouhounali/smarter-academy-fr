@@ -388,6 +388,142 @@ export const SOLIDS = {
   },
 };
 
+/* ── Solides PARAMÉTRIQUES — pyramide, prisme, cône (4e) ──────────────── */
+
+/**
+ * POURQUOI DES CONSTRUCTEURS, ET PAS SEULEMENT DES SOLIDES FIGÉS.
+ *
+ * `SOLIDS` porte des solides d'illustration, aux dimensions fixes : ils
+ * servent à MONTRER (les vues, les arêtes cachées, Euler). Le programme de
+ * 4e demande autre chose — reconnaître la base et la hauteur, et découvrir
+ * que le volume d'une pyramide vaut le TIERS de celui du prisme de même base
+ * et de même hauteur. Cela exige que l'élève CHANGE ces deux grandeurs et
+ * voie la conséquence : il faut donc des solides construits à la demande, et
+ * un prisme et une pyramide qui partagent exactement la même base.
+ *
+ * Ces fonctions sont ADDITIVES : `SOLIDS`, `SOLIDS_LIST` et tous leurs
+ * consommateurs existants sont inchangés. Les solides produits respectent
+ * les mêmes invariants que ceux du catalogue (normales sortantes, F + S − A
+ * = 2, chaque arête portée par deux faces) — c'est vérifié par les tests.
+ */
+
+/**
+ * Pyramide à base carrée, DROITE : le sommet est à la verticale du centre de
+ * la base. `cote` est le côté de la base, `hauteur` la hauteur — la vraie,
+ * celle qui est perpendiculaire à la base, pas l'arête latérale.
+ *
+ * La base est posée à y = −hauteur/2 et le sommet à y = +hauteur/2 : le
+ * solide reste centré, donc une rotation le fait tourner sur lui-même au
+ * lieu de le faire fuir hors du cadre.
+ */
+export function makePyramide(cote = 110, hauteur = 120, { nom, emoji } = {}) {
+  const c = cote / 2;
+  const y0 = -hauteur / 2;
+  const y1 = hauteur / 2;
+  return {
+    id: 'pyramide-param',
+    nom: nom ?? 'pyramide à base carrée',
+    emoji: emoji ?? '🔺',
+    natureFaces: '1 carré et 4 triangles',
+    cote,
+    hauteur,
+    aireBase: cote * cote,
+    vertices: [
+      v3(-c, y0, c), v3(c, y0, c), v3(c, y0, -c), v3(-c, y0, -c),
+      v3(0, y1, 0),
+    ],
+    names: ['A', 'B', 'C', 'D', 'S'],
+    edges: [
+      [0, 1], [1, 2], [2, 3], [3, 0],
+      [0, 4], [1, 4], [2, 4], [3, 4],
+    ],
+    faces: [
+      [3, 2, 1, 0], // base, vue de dessous
+      [0, 1, 4], [1, 2, 4], [2, 3, 4], [3, 0, 4],
+    ],
+  };
+}
+
+/**
+ * Prisme droit à base CARRÉE — le récipient de référence de la découverte du
+ * tiers. Même base et même hauteur qu'une `makePyramide(cote, hauteur)` : ce
+ * sont les deux solides qu'on compare, et c'est le seul cas où la comparaison
+ * a un sens.
+ */
+export function makePrismeCarre(cote = 110, hauteur = 120, { nom, emoji } = {}) {
+  const c = cote / 2;
+  const y0 = -hauteur / 2;
+  const y1 = hauteur / 2;
+  return {
+    id: 'prisme-carre-param',
+    nom: nom ?? 'prisme droit à base carrée',
+    emoji: emoji ?? '📦',
+    natureFaces: '2 carrés et 4 rectangles',
+    cote,
+    hauteur,
+    aireBase: cote * cote,
+    vertices: [
+      v3(-c, y0, c), v3(c, y0, c), v3(c, y1, c), v3(-c, y1, c),
+      v3(-c, y0, -c), v3(c, y0, -c), v3(c, y1, -c), v3(-c, y1, -c),
+    ],
+    names: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+    edges: [
+      [0, 1], [1, 2], [2, 3], [3, 0],
+      [4, 5], [5, 6], [6, 7], [7, 4],
+      [0, 4], [1, 5], [2, 6], [3, 7],
+    ],
+    faces: [
+      [0, 1, 2, 3], // avant
+      [5, 4, 7, 6], // arrière
+      [1, 5, 6, 2], // droite
+      [4, 0, 3, 7], // gauche
+      [3, 2, 6, 7], // dessus
+      [4, 5, 1, 0], // dessous
+    ],
+  };
+}
+
+/**
+ * LE CÔNE N'EST PAS UN POLYÈDRE — il n'a ni sommets ni arêtes au sens de ce
+ * module, et lui en inventer mentirait (même raison qui a écarté le cylindre
+ * de `SOLIDS` : voir `representations-espace-5e/components/espace5e.js`).
+ * Il est donc décrit par ses GRANDEURS, et dessiné comme une révolution.
+ *
+ * `apex` et `centreBase` sont donnés pour que la hauteur soit traçable : ce
+ * segment-là est ce que l'élève doit reconnaître, et il est perpendiculaire
+ * au plan de base par construction.
+ */
+export function makeCone(rayon = 55, hauteur = 120, { nom, emoji } = {}) {
+  return {
+    id: 'cone-param',
+    nom: nom ?? 'cône de révolution',
+    emoji: emoji ?? '🍦',
+    estPolyedre: false,
+    natureFaces: 'un disque et une surface courbe',
+    rayon,
+    hauteur,
+    aireBase: Math.PI * rayon * rayon,
+    centreBase: v3(0, -hauteur / 2, 0),
+    apex: v3(0, hauteur / 2, 0),
+  };
+}
+
+/** Cylindre de révolution — le récipient de comparaison du cône. */
+export function makeCylindre(rayon = 55, hauteur = 120, { nom, emoji } = {}) {
+  return {
+    id: 'cylindre-param',
+    nom: nom ?? 'cylindre de révolution',
+    emoji: emoji ?? '🥫',
+    estPolyedre: false,
+    natureFaces: 'deux disques et une surface courbe',
+    rayon,
+    hauteur,
+    aireBase: Math.PI * rayon * rayon,
+    centreBase: v3(0, -hauteur / 2, 0),
+    centreHaut: v3(0, hauteur / 2, 0),
+  };
+}
+
 export const SOLIDS_LIST = Object.values(SOLIDS);
 
 /** Nom du sommet d'indice i (A, B, C…), tel qu'écrit dans les énoncés. */

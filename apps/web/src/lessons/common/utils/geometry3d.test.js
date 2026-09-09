@@ -7,6 +7,10 @@ import {
   countsOf, eulerCheck,
   relativePosition, pointOnPlane,
   SOLIDS, SOLIDS_LIST, vertexName, edgeName,
+  makePyramide,
+  makePrismeCarre,
+  makeCone,
+  makeCylindre,
 } from './geometry3d';
 
 const near = (a, b, eps = 1e-9) => expect(Math.abs(a - b)).toBeLessThan(eps);
@@ -244,5 +248,161 @@ describe('noms scolaires', () => {
     expect(vertexName(SOLIDS.cube, 6)).toBe('G');
     expect(edgeName(SOLIDS.cube, [0, 4])).toBe('[AE]');
     expect(vertexName(SOLIDS.pyramide, 4)).toBe('S');
+  });
+});
+
+/* ══════════════════════════════════════════════════════════════════════
+   SOLIDES PARAMÉTRIQUES (4e) — pyramide, prisme carré, cône, cylindre
+   L'élève CHANGE la base et la hauteur : chaque solide ainsi construit doit
+   satisfaire exactement les mêmes invariants que ceux du catalogue, pour
+   TOUTES les dimensions atteignables — sinon le dessin finirait par mentir.
+   ══════════════════════════════════════════════════════════════════════ */
+
+const DIMENSIONS = [];
+for (const cote of [40, 60, 90, 110, 160]) {
+  for (const hauteur of [30, 70, 120, 200]) DIMENSIONS.push([cote, hauteur]);
+}
+
+describe('pyramide et prisme paramétriques — invariants sur TOUT le domaine', () => {
+  it('la pyramide a 5 faces, 8 arêtes, 5 sommets, quelles que soient ses dimensions', () => {
+    for (const [c, h] of DIMENSIONS) {
+      expect(countsOf(makePyramide(c, h))).toEqual({ faces: 5, aretes: 8, sommets: 5 });
+    }
+  });
+
+  it('le prisme carré a 6 faces, 12 arêtes, 8 sommets', () => {
+    for (const [c, h] of DIMENSIONS) {
+      expect(countsOf(makePrismeCarre(c, h))).toEqual({ faces: 6, aretes: 12, sommets: 8 });
+    }
+  });
+
+  it('F + S − A = 2 pour toutes les dimensions', () => {
+    for (const [c, h] of DIMENSIONS) {
+      expect(eulerCheck(makePyramide(c, h))).toBe(2);
+      expect(eulerCheck(makePrismeCarre(c, h))).toBe(2);
+    }
+  });
+
+  it('chaque arête est portée par exactement deux faces', () => {
+    for (const s of [makePyramide(90, 70), makePrismeCarre(90, 70), makePyramide(160, 200)]) {
+      const count = new Map();
+      for (const f of s.faces) {
+        for (let n = 0; n < f.length; n += 1) {
+          const i = f[n];
+          const j = f[(n + 1) % f.length];
+          const key = i < j ? `${i}-${j}` : `${j}-${i}`;
+          count.set(key, (count.get(key) ?? 0) + 1);
+        }
+      }
+      expect(count.size).toBe(s.edges.length);
+      for (const [, c] of count) expect(c).toBe(2);
+    }
+  });
+
+  it('les normales restent SORTANTES pour toutes les dimensions', () => {
+    for (const [c, h] of DIMENSIONS) {
+      for (const s of [makePyramide(c, h), makePrismeCarre(c, h)]) {
+        const centre = centroid3(s.vertices);
+        for (const f of s.faces) {
+          const n = faceNormal(s, f);
+          const fromCentre = sub3(centroid3(f.map((i) => s.vertices[i])), centre);
+          expect(dot3(n, fromCentre)).toBeGreaterThan(0);
+        }
+      }
+    }
+  });
+
+  it('sous TOUTE rotation, il reste des arêtes visibles — le solide ne disparaît jamais', () => {
+    for (let yaw = -180; yaw < 180; yaw += 15) {
+      for (const pitch of [-40, -10, 0, 20, 45]) {
+        for (const s of [makePyramide(110, 120), makePrismeCarre(110, 120), makePyramide(40, 200)]) {
+          const t = rotateSolid(s, { yaw, pitch });
+          const { visible, hidden } = visibleEdges(t);
+          expect(visible.length).toBeGreaterThan(0);
+          expect(visible.length + hidden.length).toBe(t.edges.length);
+        }
+      }
+    }
+  });
+
+  it('la BASE est carrée et la HAUTEUR est la distance base → sommet', () => {
+    const p = makePyramide(90, 140);
+    const [A, B, C, D, S] = p.vertices;
+    // base carrée
+    expect(dist3(A, B)).toBeCloseTo(90);
+    expect(dist3(B, C)).toBeCloseTo(90);
+    expect(dist3(C, D)).toBeCloseTo(90);
+    expect(dist3(D, A)).toBeCloseTo(90);
+    // les quatre sommets de base sont au même niveau
+    expect(new Set([A.y, B.y, C.y, D.y]).size).toBe(1);
+    // le sommet est À LA VERTICALE du centre de la base (pyramide DROITE),
+    // et la hauteur est bien celle annoncée — pas l'arête latérale.
+    const centreBase = centroid3([A, B, C, D]);
+    expect(centreBase.x).toBeCloseTo(0);
+    expect(centreBase.z).toBeCloseTo(0);
+    expect(S.x).toBeCloseTo(centreBase.x);
+    expect(S.z).toBeCloseTo(centreBase.z);
+    expect(S.y - A.y).toBeCloseTo(140);
+    // l'arête latérale est PLUS LONGUE que la hauteur : c'est le piège visé.
+    expect(dist3(A, S)).toBeGreaterThan(140);
+  });
+
+  it('pyramide et prisme de mêmes dimensions partagent EXACTEMENT la même base', () => {
+    const py = makePyramide(90, 140);
+    const pr = makePrismeCarre(90, 140);
+    expect(py.aireBase).toBe(pr.aireBase);
+    const basePy = py.vertices.slice(0, 4).map((v) => [v.x, v.y, v.z]).sort();
+    const basePr = pr.vertices.filter((v) => v.y === Math.min(...pr.vertices.map((w) => w.y)))
+      .map((v) => [v.x, v.y, v.z]).sort();
+    expect(basePy).toEqual(basePr);
+  });
+
+  it('les deux solides restent CENTRÉS : une rotation les fait tourner sur place', () => {
+    for (const [c, h] of DIMENSIONS) {
+      for (const s of [makePyramide(c, h), makePrismeCarre(c, h)]) {
+        const g = centroid3(s.vertices);
+        expect(Math.abs(g.x)).toBeLessThan(1e-9);
+        expect(Math.abs(g.z)).toBeLessThan(1e-9);
+        // la hauteur est répartie de part et d'autre de l'origine
+        const ys = s.vertices.map((v) => v.y);
+        expect(Math.min(...ys)).toBeCloseTo(-h / 2);
+        expect(Math.max(...ys)).toBeCloseTo(h / 2);
+      }
+    }
+  });
+});
+
+describe('cône et cylindre — décrits par leurs GRANDEURS, pas par des sommets', () => {
+  it('n’inventent NI sommets NI arêtes : ce ne sont pas des polyèdres', () => {
+    for (const s of [makeCone(50, 120), makeCylindre(50, 120)]) {
+      expect(s.estPolyedre).toBe(false);
+      expect(s.vertices).toBeUndefined();
+      expect(s.edges).toBeUndefined();
+      expect(s.faces).toBeUndefined();
+    }
+  });
+
+  it('portent le rayon, la hauteur et l’aire de base exacte (π r²)', () => {
+    const c = makeCone(30, 80);
+    expect(c.rayon).toBe(30);
+    expect(c.hauteur).toBe(80);
+    expect(c.aireBase).toBeCloseTo(Math.PI * 900);
+  });
+
+  it('la hauteur du cône est le segment centre de base → sommet, vertical', () => {
+    const c = makeCone(40, 150);
+    expect(c.apex.x).toBe(c.centreBase.x);
+    expect(c.apex.z).toBe(c.centreBase.z);
+    expect(dist3(c.apex, c.centreBase)).toBeCloseTo(150);
+  });
+
+  it('cône et cylindre de mêmes grandeurs ont la même base', () => {
+    expect(makeCone(45, 90).aireBase).toBe(makeCylindre(45, 90).aireBase);
+  });
+});
+
+describe('les solides du catalogue ne bougent pas', () => {
+  it('SOLIDS_LIST contient toujours les quatre solides figés, inchangés', () => {
+    expect(SOLIDS_LIST.map((s) => s.id).sort()).toEqual(['cube', 'pave', 'prisme', 'pyramide']);
   });
 });

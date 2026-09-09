@@ -37,7 +37,24 @@ import calculLitteral5eRoutes from './lessons/college/5e/nombres_calculs/calcul-
 import transformations5eRoutes from './lessons/college/5e/espace_geometrie/transformations-5e/routes';
 import angles5eRoutes from './lessons/college/5e/espace_geometrie/angles-5e/routes';
 import triangles5eRoutes from './lessons/college/5e/espace_geometrie/triangles-5e/routes';
+import parallelogrammes5eRoutes from './lessons/college/5e/espace_geometrie/parallelogrammes-5e/routes';
+import reperage5eRoutes from './lessons/college/5e/espace_geometrie/reperage-5e/routes';
+import representationsEspace5eRoutes from './lessons/college/5e/espace_geometrie/representations-espace-5e/routes';
+import proportionnalite5eRoutes from './lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/routes';
+import fonctions5eRoutes from './lessons/college/5e/proportionnalite_fonctions/fonctions-5e/routes';
+import statistiques5eRoutes from './lessons/college/5e/donnees_probabilites/statistiques-5e/routes';
+import probabilites5eRoutes from './lessons/college/5e/donnees_probabilites/probabilites-5e/routes';
+import algorithmiqueProgrammation5eRoutes from './lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/routes';
 import nombresRelatifs4eRoutes from './lessons/college/4e/nombres_calculs/nombres-relatifs-4e/routes';
+import nombresRationnels4eRoutes from './lessons/college/4e/nombres_calculs/nombres-rationnels-4e/routes';
+import puissances4eRoutes from './lessons/college/4e/nombres_calculs/puissances-4e/routes';
+import calculLitteral4eRoutes from './lessons/college/4e/nombres_calculs/calcul-litteral-4e/routes';
+import equations4eRoutes from './lessons/college/4e/nombres_calculs/equations-4e/routes';
+import proportionnalite4eRoutes from './lessons/college/4e/proportionnalite_fonctions/proportionnalite-4e/routes';
+import fonctions4eRoutes from './lessons/college/4e/proportionnalite_fonctions/fonctions-4e/routes';
+import probabilites4eRoutes from './lessons/college/4e/donnees_probabilites/probabilites-4e/routes';
+import pythagore4eRoutes from './lessons/college/4e/espace_geometrie/pythagore-4e/routes';
+import statistiques4eRoutes from './lessons/college/4e/donnees_probabilites/statistiques-4e/routes';
 import racinesCarrees3eRoutes from './lessons/college/3e/nombres_calculs/racines-carrees/routes';
 import reperageDroitePlan3eRoutes from './lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/routes';
 import triangles3eRoutes from './lessons/college/3e/espace_geometrie/triangles-3e/routes';
@@ -172,7 +189,24 @@ export default function App() {
             {transformations5eRoutes()}
             {angles5eRoutes()}
             {triangles5eRoutes()}
+            {parallelogrammes5eRoutes()}
+            {reperage5eRoutes()}
+            {representationsEspace5eRoutes()}
+            {proportionnalite5eRoutes()}
+            {fonctions5eRoutes()}
+            {statistiques5eRoutes()}
+            {probabilites5eRoutes()}
+            {algorithmiqueProgrammation5eRoutes()}
             {nombresRelatifs4eRoutes()}
+            {nombresRationnels4eRoutes()}
+            {puissances4eRoutes()}
+            {calculLitteral4eRoutes()}
+            {equations4eRoutes()}
+            {proportionnalite4eRoutes()}
+            {fonctions4eRoutes()}
+            {probabilites4eRoutes()}
+            {pythagore4eRoutes()}
+            {statistiques4eRoutes()}
             {racinesCarrees3eRoutes()}
             {reperageDroitePlan3eRoutes()}
             {triangles3eRoutes()}
