@@ -3,7 +3,7 @@
 import {
   launch, open, check, summary, errs, body, settle, layoutAudit, aspectAudit, domOverflow, noHScroll, smallTargets,
   readCompleted, nextEnabled, tap, tapOption, runBoss, SHOT_DIR,
-} from './_2nde-helpers.mjs';
+  chromeTop,} from './_2nde-helpers.mjs';
 
 const BASE = process.env.KIT_BASE || 'http://localhost:5241';
 const LESSON = `${BASE}/courses/lycee/seconde/fonctions/fonctions-2nde`;
@@ -297,8 +297,8 @@ const browser = await launch();
   await openDrawer(page);
   const vw = await page.evaluate(() => window.innerWidth);
   const panel = await page.locator('#km-root').boundingBox();
-  const hdr = await page.locator('#app-header').boundingBox();
-  check('mobile: drawer fits, right edge fixed, under the header', !!panel && panel.width <= vw + 1 && Math.abs(panel.x + panel.width - vw) < 2 && Math.abs(panel.y - (hdr.y + hdr.height)) < 2);
+  const top = await chromeTop(page);
+  check('mobile: drawer fits, right edge fixed, under the header', !!panel && panel.width <= vw + 1 && Math.abs(panel.x + panel.width - vw) < 2 && Math.abs(panel.y - top) < 2);
   await page.screenshot({ path: `${SHOT_DIR}fo-m1-mobile.png`, fullPage: true });
   await ctx.close();
 }

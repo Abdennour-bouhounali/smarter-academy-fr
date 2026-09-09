@@ -309,7 +309,13 @@ export default function Module01LeRobotDuDepot() {
         </div>
       }
       steps={steps}
-      footer={<KnowledgeSnapshot moduleNumber={1} />}
+      footer={(
+        <KnowledgeSnapshot moduleNumber={1}>
+          Direction, sens, longueur : trois mots pour un seul déplacement — c’est cela que les
+          mathématiciens appellent un vecteur. Au module suivant, on promène la flèche ailleurs
+          dans le plan : le déplacement ne change pas, alors est-ce encore le même vecteur ?
+        </KnowledgeSnapshot>
+      )}
     />
   );
 }

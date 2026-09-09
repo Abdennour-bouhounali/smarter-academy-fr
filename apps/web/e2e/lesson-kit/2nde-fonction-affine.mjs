@@ -3,7 +3,7 @@
 import {
   launch, open, check, summary, errs, body, settle, layoutAudit, aspectAudit, domOverflow, noHScroll, smallTargets,
   readCompleted, nextEnabled, tap, tapOption, runBoss, SHOT_DIR,
-} from './_2nde-helpers.mjs';
+  chromeTop,} from './_2nde-helpers.mjs';
 
 const BASE = process.env.KIT_BASE || 'http://localhost:5241';
 const LESSON = `${BASE}/courses/lycee/seconde/fonctions/fonction-affine-2nde`;
@@ -212,8 +212,8 @@ const browser = await launch();
   const small = await smallTargets(page); check('mobile M1: targets ≥ 40 px', small.length === 0, small.join(', '));
   check('mobile M1: layout safe at 375 px', issues.length === 0, issues.slice(0, 3).join(' | '));
   await openDrawer(page);
-  const vw = await page.evaluate(() => window.innerWidth); const panel = await page.locator('#km-root').boundingBox(); const hdr = await page.locator('#app-header').boundingBox();
-  check('mobile: drawer fits, right edge fixed, under the header', !!panel && panel.width <= vw + 1 && Math.abs(panel.x + panel.width - vw) < 2 && Math.abs(panel.y - (hdr.y + hdr.height)) < 2);
+  const vw = await page.evaluate(() => window.innerWidth); const panel = await page.locator('#km-root').boundingBox(); const top = await chromeTop(page);
+  check('mobile: drawer fits, right edge fixed, under the header', !!panel && panel.width <= vw + 1 && Math.abs(panel.x + panel.width - vw) < 2 && Math.abs(panel.y - top) < 2);
   await ctx.close();
 }
 check('zero console/page errors across the run', errs.length === 0, errs.slice(0, 4).join(' | '));

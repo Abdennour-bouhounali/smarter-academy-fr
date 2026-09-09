@@ -117,6 +117,13 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
+        // `app-header` est l'ANCRE du viewport de leçon : useLessonViewport le
+        // mesure pour poser le haut du tiroir « Ma carte », et un
+        // ResizeObserver le suit (la barre change de hauteur au défilement).
+        // Sans cet id, la mesure vaut 0 et le tiroir s'ouvre SOUS cette barre
+        // fixe z-50 — son bouton « Fermer » devient inatteignable.
+        // Contrat : docs/architecture/KNOWLEDGE_MAP.md § Header Integration.
+        id="app-header"
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}

@@ -175,7 +175,7 @@ export default function StudentNavbar() {
       </aside>
 
       {/* Mobile top bar */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-white border-b border-slate-200 z-40 flex items-center justify-between px-4">
+      <header id="app-header" className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-white border-b border-slate-200 z-40 flex items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
           <img src="/smarter-academy-logo.webp" alt="Smarter Academy" className="h-8 w-auto rounded-md object-contain" />
           <span className="font-mono-jetbrains text-[10px] text-blue-500 font-semibold tracking-wider uppercase">Espace élève</span>

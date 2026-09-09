@@ -3,7 +3,7 @@
 // Run: node apps/web/e2e/lesson-kit/2nde-arithmetique-carte.mjs   (vite on :5240, started from apps/web/)
 import {
   launch, open, check, summary, errs, body, settle, noHScroll, SHOT_DIR,
-} from './_2nde-helpers.mjs';
+  chromeTop,} from './_2nde-helpers.mjs';
 
 const BASE = process.env.KIT_BASE || 'http://localhost:5240';
 const LESSON = `${BASE}/courses/lycee/seconde/nombres_calculs/arithmetique-2nde`;
@@ -49,9 +49,9 @@ const browser = await launch();
   check('index: trigger « Ma carte » mounted by the provider', (await page.locator('button[data-km-trigger]').count()) === 1);
   await openDrawer(page);
   check('index: map empty before module 1', (await page.locator('#km-root [data-km-empty]').count()) === 1 && (await drawerIds(page)).length === 0);
-  const hdr = await page.locator('#app-header').boundingBox();
+  const top = await chromeTop(page);
   const panel = await page.locator('#km-root').boundingBox();
-  check('index: panel top under #app-header, right edge flush', !!hdr && !!panel && Math.abs(panel.y - (hdr.y + hdr.height)) < 2 && Math.abs(panel.x + panel.width - 1280) < 2, JSON.stringify({ hdr, panel }));
+  check('index: panel top under le haut du viewport de leçon, right edge flush', !!panel && Math.abs(panel.y - top) < 2 && Math.abs(panel.x + panel.width - 1280) < 2, JSON.stringify({ top, panel }));
   check('index: left-edge resize handle present', (await page.locator('#km-root .cursor-col-resize').count()) === 1);
   await page.screenshot({ path: `${SHOT_DIR}ar-carte-index-empty.png` });
   await ctx.close();
@@ -143,8 +143,8 @@ for (const n of [1, 2, 3, 4, 5]) {
   await openDrawer(page);
   const vw = await page.evaluate(() => window.innerWidth);
   const panel = await page.locator('#km-root').boundingBox();
-  const hdr = await page.locator('#app-header').boundingBox();
-  check('mobile: drawer fits the viewport, right edge fixed, under the header', !!panel && panel.width <= vw + 1 && Math.abs(panel.x + panel.width - vw) < 2 && Math.abs(panel.y - (hdr.y + hdr.height)) < 2, JSON.stringify({ vw, panel, hdr }));
+  const top = await chromeTop(page);
+  check('mobile: drawer fits the viewport, right edge fixed, under the header', !!panel && panel.width <= vw + 1 && Math.abs(panel.x + panel.width - vw) < 2 && Math.abs(panel.y - top) < 2, JSON.stringify({ vw, panel, top }));
   check('mobile: drawer lists the cumulative items', (await drawerIds(page)).length === expectedAfter(4).length);
   await page.screenshot({ path: `${SHOT_DIR}ar-carte-mobile.png` });
   await ctx.close();

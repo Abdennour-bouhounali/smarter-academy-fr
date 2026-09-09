@@ -110,6 +110,28 @@ export const domOverflow = (page) => page.evaluate(() => {
   return out;
 });
 
+/**
+ * Le haut du VIEWPORT DE LEÇON — le bord supérieur auquel le tiroir « Ma carte »
+ * s'ancre (position: fixed).
+ *
+ * Ces suites mesuraient `#app-header` et comparaient le panneau à son bas. Ce
+ * n'est plus vrai : la coquille rend le header `lg:hidden` pour un élève
+ * connecté, si bien qu'il reste dans le DOM avec une hauteur de 0 — et sur les
+ * autres coquilles il peut être absent. `useLessonViewport` (la source de
+ * vérité du panneau) calcule `top = Math.max(hauteur du header, padding-top de
+ * <main>)` ; on reproduit exactement ce calcul, sans constante en dur.
+ *
+ * @returns {Promise<number>} l'ordonnée du haut du viewport de leçon, en pixels.
+ */
+export const chromeTop = (page) => page.evaluate(() => {
+  const header = document.getElementById('app-header');
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
+  const main = document.querySelector('main');
+  if (!main) return headerHeight;
+  const padTop = parseFloat(getComputedStyle(main).paddingTop) || 0;
+  return Math.max(headerHeight, padTop);
+});
+
 export const noHScroll = (page) => page.evaluate(() => document.scrollingElement.scrollWidth <= window.innerWidth + 1);
 
 /**
