@@ -56,6 +56,8 @@ export default function Module05AlignementParallelisme() {
   const [n3b, setN3b] = useState(false);
   const [b4, setB4] = useState(false);
   const [n5, setN5] = useState(false);
+  const [n6, setN6] = useState(false);
+  const [n6b, setN6b] = useState(false);
 
   const moveD = (p, react) => {
     if (samePoint(p, C)) return;
@@ -229,6 +231,55 @@ export default function Module05AlignementParallelisme() {
                     lead={<>Ce que tu as fait dans ce module, en une ligne : un test, deux usages — parallélisme à l’étape 1, alignement ici.</>}
                   />
                 </>
+              )}
+            </div>
+          ),
+        },
+        {
+          num: 6, title: 'Niveau 6 — un problème de parallélisme',
+          subtitle: 'A (1 ; 1), B (5 ; 2), C (6 ; 5). Où placer D pour que ABCD soit un parallélogramme — et comment le PROUVER ?',
+          done: n6 && n6b,
+          content: (
+            <div className="space-y-3">
+              {/* Les niveaux 2 à 5 portaient tous sur l'ALIGNEMENT. Le critère
+                  de parallélisme était enseigné au niveau 1, mais aucun PROBLÈME
+                  de parallélisme n'était posé : l'unique épreuve du boss (col-e9,
+                  le trapèze) mesurait donc une compétence jamais travaillée. */}
+              <NumericQuestion
+                prompt="Quelle est l’ordonnée de D ?"
+                expected={4} parse={parseSigned} display="4" width="w-24"
+                above={() => (
+                  <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3 text-sm text-indigo-900">
+                    Dans un parallélogramme ABCD, le côté [AB] et le côté [DC] sont parallèles ET de même
+                    longueur : autrement dit AB = DC, les deux vecteurs sont ÉGAUX. Or AB = (4 ; 1).
+                  </div>
+                )}
+                explain="AB = (4 ; 1). Pour que DC = AB, il faut C − D = (4 ; 1), donc D = C − (4 ; 1) = (6 − 4 ; 5 − 1) = (2 ; 4). L’ordonnée de D vaut 4."
+                explainFor={(n) => (n === 6 ? 'Tu as pris l’ordonnée de C. D s’obtient en retirant AB à C : 5 − 1 = 4.'
+                  : n === 2 ? '2 est l’ABSCISSE de D, pas son ordonnée.'
+                  : 'D = C − AB : (6 − 4 ; 5 − 1) = (2 ; 4).')}
+                requires={['colin-parallelisme-det', 'colin-methode-conclure']}
+                solved={n6} onAnswered={() => setN6(true)} />
+              {n6 && (
+                <TapQuestion
+                  prompt="D (2 ; 4) étant placé, quelle rédaction PROUVE que (AD) ∥ (BC) ?"
+                  options={[
+                    'AD = (1 ; 3), BC = (1 ; 3) : det(AD, BC) = 1 × 3 − 3 × 1 = 0, donc AD et BC sont colinéaires et (AD) ∥ (BC)',
+                    'Sur la figure, (AD) et (BC) ne se coupent pas : elles sont parallèles',
+                    'AD et BC ont la même longueur, donc les droites sont parallèles',
+                    'ABCD est un parallélogramme, donc (AD) ∥ (BC)',
+                  ]}
+                  correct={0} cols={1}
+                  requires={['colin-parallelisme-det', 'colin-methode-conclure']}
+                  explain="Une démonstration de parallélisme passe par les VECTEURS directeurs : on les calcule, on montre que leur déterminant est nul, on conclut. Ici det(AD, BC) = 0 : les droites sont parallèles. C’est le même geste qu’au niveau 1, mais énoncé et rédigé."
+                  explainWrong="« On le voit sur la figure » ne prouve rien (le niveau 2 l’a montré), l’égalité des longueurs non plus (deux segments de même longueur peuvent être sécants), et invoquer le parallélogramme suppose acquis ce qu’on veut établir. Seul le déterminant nul le démontre."
+                  solved={n6b} onAnswered={() => setN6b(true)} />
+              )}
+              {n6 && n6b && (
+                <Feedback tone="ok">
+                  Tu viens de faire les deux moitiés d’un problème de parallélisme : <strong>construire</strong>
+                  le point qui le réalise, puis <strong>démontrer</strong> qu’il le réalise vraiment.
+                </Feedback>
               )}
             </div>
           ),

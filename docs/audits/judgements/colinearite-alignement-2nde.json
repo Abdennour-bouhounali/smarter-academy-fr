@@ -1,192 +1,481 @@
 {
-  "lesson": "colinearite-alignement-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-geometrie-batch",
-  "learningPoints": {
-    "seconde_colinearite-alignement-2nde_P1": {
-      "status": "DUPLICATED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-rail", "step": 1, "mechanism": "manipulation:VectorPlane" },
-        { "module": 1, "moduleSlug": "le-rail", "step": 2, "mechanism": "feedback" },
-        { "module": 1, "moduleSlug": "le-rail", "step": 4, "mechanism": "brick:colin-direction" },
-        { "module": 1, "moduleSlug": "le-rail", "step": 4, "mechanism": "question:M01-S4" }
-      ],
-      "manipulation": "VectorPlane — v est glissable, un « rail » (la droite portée par u) traverse le plan, et trois lampes Direction / Sens / Longueur s'allument indépendamment ; la garde de chaque étape impose successivement une longueur différente, un sens contraire, puis une sortie du rail",
-      "assessmentQuestionIds": ["col-e1"],
-      "knowledgeItems": ["colin-direction", "colin-vocabulaire-direction-sens", "colin-vecteur-nul", "mem-colin-rail"],
-      "notes": "La chaîne est complète — geste (trois configurations imposées), révélations conditionnées à chaque étape, trois briques posées AVANT la question de l'étape 4 — et le rail est un dispositif fort : il rend la « même direction » visible indépendamment du sens et de la longueur. Statut DUPLICATED et non COVERED parce que la notion n'est pas neuve au niveau : vecteurs-2nde M5 étape 3 la définit déjà (« deux vecteurs non nuls sont colinéaires exactement quand l'un est un multiple de l'autre », brique regle-colineaire) sur le MÊME vecteur porteur u = (2 ; 1) et le même exemple v = (6 ; 3) = 3·u. Voir lessonLevel.duplicates. Ce qui est authentiquement neuf ici est la SÉPARATION direction / sens / longueur (colin-vocabulaire-direction-sens) et le cas du vecteur nul.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+ "lesson": "colinearite-alignement-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-geometrie-batch",
+ "learningPoints": {
+  "seconde_colinearite-alignement-2nde_P1": {
+   "status": "DUPLICATED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-rail",
+     "step": 1,
+     "mechanism": "manipulation:VectorPlane"
     },
-    "seconde_colinearite-alignement-2nde_P2": {
-      "status": "DUPLICATED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-rail", "step": 4, "mechanism": "question:M01-S4" },
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 1, "mechanism": "manipulation:Stepper" },
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 1, "mechanism": "brick:colin-multiple" },
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 2, "mechanism": "brick:colin-produits-croix" },
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 2, "mechanism": "question:M03-S2" }
-      ],
-      "manipulation": "M3 étape 1 : un curseur k de −3 à 3 au pas 0,5, le ProportionTable qui montre u, ×k, v, et la garde qui impose de visiter k = 2, un k négatif et un k non entier",
-      "assessmentQuestionIds": ["col-e2"],
-      "knowledgeItems": ["colin-multiple", "colin-produits-croix", "mem-colin-multiple"],
-      "notes": "Bien construit : la garde impose trois régimes de k (grand, négatif, fractionnaire), la brique colin-produits-croix précède la BatchChoiceQuestion, et le produit en croix est présenté comme le test SANS division — ce qui règle proprement le cas u = (4 ; 0) de la ligne r4. Mais, comme P1, la notion « v = k·u » est déjà celle de vecteurs-2nde M5, avec le même u = (2 ; 1) et le même v = (6 ; 3). Ce qui est neuf ici : les produits en croix comme technique.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-rail",
+     "step": 2,
+     "mechanism": "feedback"
     },
-    "seconde_colinearite-alignement-2nde_P3": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 1, "mechanism": "manipulation:Stepper" },
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 1, "mechanism": "feedback" },
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 2, "mechanism": "brick:colin-produits-croix" },
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 2, "mechanism": "question:M03-S2" },
-        { "module": 3, "moduleSlug": "des-coordonnees-proportionnelles", "step": 3, "mechanism": "question:M03-S3" }
-      ],
-      "manipulation": "Curseur k + ProportionTable : l'élève voit les deux colonnes se multiplier par le même nombre à chaque cran",
-      "assessmentQuestionIds": ["col-e3", "col-e10"],
-      "knowledgeItems": ["colin-produits-croix", "colin-coordonnee-manquante-prop", "mem-colin-multiple"],
-      "notes": "C'est le vrai apport de M3, et il est correctement séquencé : la proportionnalité est VUE dans le tableau, puis la brique du produit en croix la transforme en test calculable AVANT la BatchChoiceQuestion, puis la NumericQuestion de l'étape 3 fait chercher une coordonnée manquante (y = 9 pour u(2 ; −3), v(−6 ; y)) avec des explainFor sur −9 et 6. Deux épreuves du boss (col-e3, col-e10). Réserve mineure : la brique colin-coordonnee-manquante-prop qui NOMME la méthode arrive APRÈS la question qui l'exige (étape 3, gardée par n3) — l'élève doit inventer la méthode, ce qui est acceptable ici puisque la brique colin-produits-croix, posée à l'étape 2, en contient tout le contenu opératoire.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-rail",
+     "step": 4,
+     "mechanism": "brick:colin-direction"
     },
-    "seconde_colinearite-alignement-2nde_P4": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 1, "mechanism": "manipulation:VectorPlane" },
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 1, "mechanism": "feedback" },
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 1, "mechanism": "brick:colin-determinant" },
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 3, "mechanism": "brick:colin-formule-det" },
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 3, "mechanism": "question:M04-S3" }
-      ],
-      "manipulation": "VectorPlane avec u ET v glissables, le PARALLÉLOGRAMME (O, u, u+v, v) tracé en polygone, et le déterminant recalculé en direct sous le plan avec son expression littérale développée (detText). La garde de l'étape 1 exige d'aplatir le parallélogramme (det = 0) ; celle de l'étape 2 exige d'obtenir les deux signes ET un cas presque plat (|det| = 1)",
-      "assessmentQuestionIds": ["col-e4", "col-e5"],
-      "knowledgeItems": ["colin-determinant", "colin-calculer-det", "colin-formule-det", "colin-vocabulaire-determinant", "mem-colin-det-zero"],
-      "notes": "Le meilleur module de la leçon. Le déterminant n'est pas une formule tombée du ciel : c'est l'AIRE SIGNÉE du parallélogramme que l'élève aplatit de ses mains, et le signe (l'étape 2 impose de passer d'un côté du rail à l'autre) reçoit une signification géométrique. La brique colin-formule-det est posée AVANT la NumericQuestion de l'étape 3, avec trois explainFor ciblés (22 = somme, −2 = ordre inversé, 0). col-e4 et col-e5 mesurent bien le calcul, signes compris.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_colinearite-alignement-2nde_P5": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 1, "mechanism": "manipulation:VectorPlane" },
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 1, "mechanism": "brick:colin-critere-det" },
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 2, "mechanism": "feedback" },
-        { "module": 4, "moduleSlug": "le-detecteur", "step": 4, "mechanism": "question:M04-S4" }
-      ],
-      "manipulation": "La même que P4 ; l'étape 2 fait vivre le cas critique |det| = 1 (« l'œil hésite, le déterminant tranche »)",
-      "assessmentQuestionIds": ["col-e5"],
-      "knowledgeItems": ["colin-critere-det", "mem-colin-det-zero"],
-      "notes": "Le critère det = 0 ⇔ colinéaires naît de l'aplatissement du parallélogramme (révélation conditionnée par zeroSeen), la brique colin-critere-det est gardée par ce même geste, et la TapQuestion de l'étape 4 (u(4 ; 6) et v(6 ; 9), det = 0) l'éprouve sur un cas non trivial. L'étape 2, qui impose de rencontrer le presque-plat, est ce qui rend l'épistémologie de la leçon honnête : le critère sert précisément là où l'œil échoue.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_colinearite-alignement-2nde_P6": {
-      "status": "DUPLICATED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "trois-points-une-droite", "step": 1, "mechanism": "manipulation:VectorPlane" },
-        { "module": 2, "moduleSlug": "trois-points-une-droite", "step": 1, "mechanism": "feedback" },
-        { "module": 2, "moduleSlug": "trois-points-une-droite", "step": 1, "mechanism": "brick:colin-alignement" },
-        { "module": 2, "moduleSlug": "trois-points-une-droite", "step": 3, "mechanism": "question:M02-S3" },
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 4, "mechanism": "brick:colin-alignement-det" }
-      ],
-      "manipulation": "VectorPlane M2 — A et B fixes, C glissable, rail par A dans la direction AB ; la garde exige TROIS positions alignées distinctes de C (dont, en pratique, au-delà de A, où AC change de sens)",
-      "assessmentQuestionIds": ["col-e6", "col-e7"],
-      "knowledgeItems": ["colin-alignement", "colin-vocabulaire-aligne", "colin-oeil-hesite", "colin-alignement-det"],
-      "notes": "Enseignement solide et en deux temps : M2 établit alignés ⇔ AB et AC colinéaires par le geste, M5 le reformule en det(AB, AC) = 0 (brique colin-alignement-det). Statut DUPLICATED : vecteurs-2nde M7 étape 3 enseigne DÉJÀ « prouver un alignement », avec la brique methode-alignement (« A, B, C alignés ⟺ AB et AC colinéaires », exemple A(−4;−3), B(−1;−1), C(5;3), AC = 3·AB) et la même formule rhétorique « une figure suggère, un calcul prouve ». La scène de M5 ici (P(−4;−2), Q(−1;0), R(5;3)) est la scène de vecteurs-2nde décalée d'une unité en y pour la transformer en presque-alignement. Ce qui est neuf : le test par déterminant et le point épistémique colin-oeil-hesite. DÉFAUT D'ORDRE à noter : à l'étape 2 de M2, la TapQuestion (« si C est en (5 ; 4), sont-ils alignés ? ») vient AVANT le laboratoire de vérification et AVANT la brique colin-oeil-hesite, qui n'est posée qu'après la réponse — l'élève est donc interrogé sur un presque-alignement avant qu'on lui ait dit que l'œil ne prouve pas.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_colinearite-alignement-2nde_P7": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 1, "mechanism": "manipulation:VectorPlane" },
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 1, "mechanism": "feedback" },
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 1, "mechanism": "brick:colin-parallelisme-det" },
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 1, "mechanism": "brick:colin-vocabulaire-parallele" }
-      ],
-      "manipulation": "VectorPlane M5 étape 1 — D glissable, deux rails (celui de (AB), violet et fixe ; celui de (CD), qui vire à l'émeraude quand il devient parallèle), det(AB, CD) affiché en direct ; la garde exige DEUX positions parallèles dont au moins une de sens contraire (collinearityRatio < 0)",
-      "assessmentQuestionIds": ["col-e8", "col-e9"],
-      "knowledgeItems": ["colin-parallelisme-det", "colin-vocabulaire-parallele"],
-      "notes": "Excellente garde : exiger une position de sens contraire force à comprendre que le parallélisme ne dépend pas du sens — la méprise symétrique de celle traitée en M1. Les deux briques sont gardées par done1 et colin-vocabulaire-parallele porte establishes={['droites-paralleles']}, ce qui rattache proprement le terme du lexique. Deux épreuves au boss.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_colinearite-alignement-2nde_P8": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 2, "mechanism": "question:M05-S2" },
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 3, "mechanism": "question:M05-S3" },
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 4, "mechanism": "question:M05-S4" },
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 4, "mechanism": "brick:colin-methode-conclure" },
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 5, "mechanism": "question:M05-S5" }
-      ],
-      "manipulation": "Aucune manipulation propre : M5 étapes 2 à 5 est une descente d'échafaudage sur figure figée (VectorPlane `frozen`) — à l'œil, puis construire les vecteurs, puis la proportionnalité, puis le déterminant, puis la coordonnée manquante",
-      "assessmentQuestionIds": ["col-e7", "col-e10"],
-      "knowledgeItems": ["colin-methode-conclure", "colin-coordonnee-manquante-det", "mem-colin-deux-usages"],
-      "notes": "La progression en cinq niveaux est pédagogiquement remarquable — elle fait EXPÉRIMENTER l'insuffisance de l'œil (étape 2 : la bonne réponse est « impossible à dire sans calcul »), puis monte jusqu'à la coordonnée manquante. Le savoir mobilisé (det, colinéarité) est établi ailleurs, donc pas de dette. Réserve d'ORDRE : les briques qui nomment la méthode (colin-methode-conclure, colin-coordonnee-manquante-det) sont posées APRÈS les questions qu'elles servent (gardées par b4 puis n5) ; seule colin-methode-conclure, posée en fin d'étape 4, précède la NumericQuestion de l'étape 5, qui la déclare d'ailleurs dans requires. L'étape 3 exige de calculer PR avec requires = ['abscisse','vecteur','composante'], des prérequis de niveau, sans aucune brique de la leçon : correct, c'est du réinvestissement.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_colinearite-alignement-2nde_P9": {
-      "status": "ASSESSMENT_ONLY",
-      "evidence": [
-        { "module": 5, "moduleSlug": "alignement-et-parallelisme", "step": 1, "mechanism": "brick:colin-parallelisme-det" }
-      ],
-      "manipulation": "Aucune : aucune étape de la leçon ne pose un problème de parallélisme à résoudre",
-      "assessmentQuestionIds": ["col-e9"],
-      "knowledgeItems": ["colin-parallelisme-det", "colin-methode-conclure"],
-      "notes": "ASSESSMENT_ONLY. Le CRITÈRE de parallélisme est bien enseigné (P7, M5 étape 1, manipulation + briques), mais « résoudre un PROBLÈME de parallélisme » n'est jamais demandé dans la leçon : M5 étape 3 porte sur un alignement, l'étape 5 sur une coordonnée manquante pour aligner. Le teachingScope.include de l'objet officiel annonce pourtant « Problèmes : coordonnée manquante pour un alignement, parallélogramme, trapèze ». La seule occurrence est l'épreuve du boss col-e9 (A, B, C, D → parallélogramme ou trapèze ?), qui (a) est la première et unique rencontre de cette tâche, (b) donne les QUATRE vecteurs déjà calculés dans son énoncé, donc ne mesure que la lecture de deux déterminants, et (c) mobilise les mots « trapèze » et « parallélogramme », qui ne sont ni dans priorKnowledge, ni portés par une brique, ni diagnostiqués par le module 0. Un élève découvre la discrimination parallélogramme/trapèze pendant son évaluation.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-rail",
+     "step": 4,
+     "mechanism": "question:M01-S4"
     }
+   ],
+   "manipulation": "VectorPlane — v est glissable, un « rail » (la droite portée par u) traverse le plan, et trois lampes Direction / Sens / Longueur s'allument indépendamment ; la garde de chaque étape impose successivement une longueur différente, un sens contraire, puis une sortie du rail",
+   "assessmentQuestionIds": [
+    "col-e1"
+   ],
+   "knowledgeItems": [
+    "colin-direction",
+    "colin-vocabulaire-direction-sens",
+    "colin-vecteur-nul",
+    "mem-colin-rail"
+   ],
+   "notes": "La chaîne est complète — geste (trois configurations imposées), révélations conditionnées à chaque étape, trois briques posées AVANT la question de l'étape 4 — et le rail est un dispositif fort : il rend la « même direction » visible indépendamment du sens et de la longueur. Statut DUPLICATED et non COVERED parce que la notion n'est pas neuve au niveau : vecteurs-2nde M5 étape 3 la définit déjà (« deux vecteurs non nuls sont colinéaires exactement quand l'un est un multiple de l'autre », brique regle-colineaire) sur le MÊME vecteur porteur u = (2 ; 1) et le même exemple v = (6 ; 3) = 3·u. Voir lessonLevel.duplicates. Ce qui est authentiquement neuf ici est la SÉPARATION direction / sens / longueur (colin-vocabulaire-direction-sens) et le cas du vecteur nul.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "pedagogicalProblems": [
-      "P9 « Résoudre un problème de parallélisme » n'est enseigné nulle part : aucune étape ne pose un tel problème, et l'unique épreuve (col-e9, Module06MissionFinale.jsx) fournit les quatre vecteurs pré-calculés et emploie « trapèze » et « parallélogramme », deux termes qu'aucune brique n'établit et que le diagnostic du module 0 ne mesure pas.",
-      "SEPT ÉTAPES SANS AUCUNE QUESTION : M1 étapes 1, 2, 3 ; M2 étape 1 ; M3 étape 1 ; M4 étapes 1 et 2 ; M5 étape 1. Ce sont des manipulations suivies d'un Feedback conditionné — le fait mathématique y est AFFIRMÉ par le texte de la révélation, jamais vérifié. La première vérification de quoi que ce soit intervient à l'étape 4 du module 1. Le dispositif reste conforme à la rubrique (une révélation conditionnée enseigne), mais rien ne détecte l'élève qui a atteint la garde par tâtonnement sans rien observer.",
-      "Module 2, étape 2 : la TapQuestion (« si C est en (5 ; 4), A, B et C sont-ils alignés ? ») est placée AVANT le laboratoire de vérification de la même étape, et la brique colin-oeil-hesite (« l'œil ne prouve pas ») n'est posée qu'APRÈS la réponse, gardée par q2. L'élève est donc interrogé sur un presque-alignement — le cas précis où l'œil ment — avant que la leçon lui ait dit de se méfier de son œil. C'est le seul renversement d'ordre franchement fautif de la leçon.",
-      "Module 3 : la garde done1 exige de visiter k = 2, un k négatif et un k non entier, mais PAS k = 0. La brique colin-nul-colineaire-tout est pourtant affichée inconditionnellement dès done1, avec un lead qui affirme « le cas particulier que tu as croisé en réglant le curseur » — affirmation fausse pour la majorité des élèves, qui n'auront jamais posé k à 0. Le vecteur nul est donc nommé sans avoir été vu.",
-      "Module 1, étape 3 : la garde done3 est satisfaite par N'IMPORTE quelle sortie du rail (c.direction === false). Or le contre-exemple pédagogiquement chargé — v = (4 ; 3), où ×2 sur x et ×3 sur y montrent que « les deux ont grandi » ne suffit pas — n'est affiché que sous condition (v.x === 4 && v.y === 3). L'aha que le docblock du module désigne comme central sera donc manqué par la plupart des élèves, alors même que l'épreuve col-e2 du boss porte exactement sur ce cas (u(2 ; 1) et v(4 ; 3)).",
-      "Module 2, étape 1 : les deux premières lampes (« A, B, C alignés » et « AB et AC colinéaires ») sont pilotées par le MÊME booléen `aligned` (Module02TroisPoints.jsx:81-82). Elles s'allument donc toujours ensemble par construction, et non parce que deux calculs indépendants concordent. L'équivalence que la leçon veut faire découvrir est ainsi câblée dans l'affichage plutôt que constatée."
-    ],
-    "technicalProblems": [
-      "AUCUNE manipulation n'est gelée après validation — c'est un point fort à préserver. Les quatre `disabled={doneN}` (Module01LeRail.jsx:104, Module02TroisPoints.jsx:100, Module04Detecteur.jsx:118, Module05AlignementParallelisme.jsx:82) portent tous sur des PredictionChips, ce qui est le comportement voulu (une prédiction se verrouille une fois que la manipulation y a répondu). Le prop `disabled` de VectorPlane est déclaré (VectorPlane.jsx:43) et n'est jamais passé par un module ; le seul `frozen` (Module05AlignementParallelisme.jsx:143) est une figure statique par conception.",
-      "COMMENTAIRE FAUX, modules/Module05AlignementParallelisme.jsx:32 : « // L'œil : P, Q, R « ont l'air » alignés — det = 1. » La valeur réelle est det(PQ, PR) = 3×5 − 2×9 = −3, et c'est bien −3 qu'affichent l'option correcte de la ligne p2, la correction de p3, le feedback (via detText) et la brique de knowledge.jsx. Le spec docs/lessons/2NDE_COLINEARITE_ALIGNEMENT_SPEC.md porte la même erreur. Aucune conséquence pour l'élève : seul le commentaire est faux, tout ce qui est affiché est juste.",
-      "COLLISION NARRATIVE entre M2 et M5 autour du point (5 ; 4) : en M2 (A(−3;−1), B(1;1)), (5 ; 4) est le presque-aligné, la bonne réponse est « non alignés » ; en M5 (P(−4;−2), Q(−1;0)), le feedback dit « Pour aligner R, il faudrait R en (5 ; 4) » — cette fois (5 ; 4) EST la position alignée. Les deux affirmations sont mathématiquement exactes dans leur configuration respective (vérifié : yForAlignment(P,Q,5) = 4), mais l'élève rencontre le même couple de nombres avec deux verdicts opposés à trente minutes d'intervalle.",
-      "Aucun problème de tolérance : EPS = 1e-9 dans colinUtils.js, alors que tous les points glissables s'accrochent à la grille entière (VectorPlane, step = 1 par défaut ; CoordPlane.snapCoord) et que le curseur k de M3 avance au pas 0,5 avec roundTo. Le plus petit |det| non nul atteignable sur la grille vaut 1 — précisément le cas « presque plat » que M4 étape 2 met en scène volontairement. La tolérance est donc très inférieure à ce que l'élève distingue, jamais l'inverse. Les mathématiques sont justes et verrouillées par colinUtils.test.js (det, pointsAligned, yForAlignment, detText et sa convention de parenthésage) et par labelLayout.test.js (balayage de la grille 13×13).",
-      "NUMÉROTATION PÉRIMÉE (le module « À retenir » a été supprimé au profit de la carte des connaissances, mais le renommage M6 → M5 n'a pas été propagé) : Module05AlignementParallelisme.jsx:76 affiche encore brief.tag = '🧪 Mission 06' à l'élève ; Module06MissionFinale.jsx:176-177 attribue les compétences `paralleles` et `problemes` au module 6, c'est-à-dire au boss lui-même, alors que ce contenu vit au module 5 — un élève qui rate ces épreuves sera renvoyé vers le mauvais module.",
-      "Module06MissionFinale.jsx:190 : commentaire orphelin « /** La synthèse : le rail de u, v = −2·u dessus, et trois points alignés. */ » décrivant une figure de synthèse qui n'existe pas (synthese est un simple KnowledgeSnapshot).",
-      "CODE MORT : components/learningPoints.js est intégralement mort — LESSON_LEARNING_POINTS n'est importé nulle part dans apps/web/src ; c'est un troisième exemplaire des ids de LP, après lesson.config.js et coursesData.js. Dans colinUtils.js, `sameSense` et `inRange` ne sont appelés nulle part (pas même dans les tests) ; `norm`, `dot`, `detExpression`, `areCollinear`, et les réexports `parseDec`/`formatDec`/`roundTo` ne sont jamais importés par un module. Props déclarés jamais passés : VectorPlane.disabled/unit/step/avoidSegments, Stepper.unit/disabled, PredictionChips.ariaLabel, MiniPlane.showGrid/className.",
-      "DÉRIVE SPEC/CODE : docs/lessons/2NDE_COLINEARITE_ALIGNEMENT_SPEC.md §3-§4 nomme quatre composants — DirectionLab, AlignmentLab, ScalarLab, DetLab — dont aucun n'existe (les laboratoires sont des closures `lab(kit)` inlinées dans les modules) ; son tableau §4 décrit encore 8 modules avec un « a-retenir » en 5 et le boss en 7, et son « Shipped state » annonce 70 min quand la config en somme 64."
-    ],
-    "duplicates": [
-      "AVEC vecteurs-2nde — la colinéarité elle-même (P1, P2, et le socle de P3) : vecteurs-2nde M5 « Étirer, inverser » étape 3 fait DÉJÀ construire un vecteur multiple de u par glissement, avec un lecteur en direct de colinearFactor, et sa révélation conditionnée énonce « deux vecteurs non nuls sont colinéaires exactement quand l'un est un multiple de l'autre » ; sa brique regle-colineaire (vecteurs-2nde/knowledge.jsx) est intitulée « Vecteurs colinéaires » et travaillée sur u = (2 ; 1), v = (6 ; 3) = 3·u. Or colinearite-alignement-2nde reprend LE MÊME u = (2 ; 1) en M1 et en M3, et LE MÊME exemple (6 ; 3) dans la ligne r1 de sa BatchChoiceQuestion M3 et dans sa brique colin-produits-croix. Les deux leçons posent donc la notion avec variant=\"new\" sur le même matériel numérique. Le partage prévu par les configs (vecteurs exclut « le déterminant », colinéarité exclut « vecteur directeur et équation ») ne protège que le déterminant, pas la colinéarité elle-même.",
-      "AVEC vecteurs-2nde — l'alignement (P6) : vecteurs-2nde M7 étape 3 enseigne « Prouver un alignement » avec la brique methode-alignement (« A, B, C alignés ⟺ AB et AC colinéaires », A(−4;−3), B(−1;−1), C(5;3), AC = 3·AB) et sa TapQuestion l'éprouve. La brique colin-alignement de M2 énonce la même équivalence, et colin-methode-conclure reprend jusqu'à la formule rhétorique « une figure suggère, un calcul prouve » déjà présente dans le corps de methode-alignement. La scène P(−4;−2), Q(−1;0), R(5;3) de M5 est celle de vecteurs-2nde décalée d'une unité en y.",
-      "CONTRADICTION DÉCLARATIVE : lesson.config.js:71-73 justifie l'absence de `colineaire` dans priorKnowledge par « la colinéarité elle-même est le contenu propre de cette leçon : elle n'est jamais un prérequis ». C'est factuellement démenti par vecteurs-2nde, qui la pose en M5 et l'éprouve dans son boss (vec-e6). Symétriquement, equations-de-droites-2nde déclare bien `colineaire` dans SON priorKnowledge en renvoyant à « la leçon précédente ». Les trois leçons ne s'accordent pas sur qui possède la notion.",
-      "AVEC positions-relatives-droites-2nde (leçon aval) : celle-ci repose des briques critere-vecteurs-directeurs, formule-det-directions, methode-comparer-directions et methode-ab-cd avec variant=\"new\", alors que colin-parallelisme-det (« (AB) ∥ (CD) ⇔ det(AB, CD) = 0 »), colin-methode-conclure et mem-colin-deux-usages couvrent déjà ce terrain. La frontière annoncée (positions-relatives exclut « le déterminant comme objet ») ne tient pas au niveau des briques."
-    ],
-    "verticalPositioning": {
-      "revised": "Rien du collège : la colinéarité, le déterminant et le parallélisme par les vecteurs n'existent nulle part avant la 2de. Ce qui est révisé, c'est la colinéarité de la leçon VOISINE (vecteurs-2nde M5) et l'alignement de vecteurs-2nde M7 — révision non déclarée, posée en variant=\"new\".",
-      "extended": "L'alignement, qui passe du critère « AC = k·AB » (vecteurs-2nde M7) au test calculable det(AB, AC) = 0, applicable sans chercher le facteur k et donc sans division. La séparation direction / sens / longueur, déjà vue en 3e (translations-vecteurs-3e M2) et effleurée en vecteurs-2nde M1, devient ici manipulable indépendamment grâce aux trois lampes du rail.",
-      "new": "Le DÉTERMINANT comme objet : sa formule x·y′ − y·x′, son interprétation en aire signée du parallélogramme, le sens de son signe (de quel côté du rail se trouve v), et le critère det = 0. Les produits en croix comme test sans division. Le parallélisme de deux droites par la colinéarité de deux vecteurs. La recherche d'une coordonnée manquante pour aligner. Et surtout le point épistémique colin-oeil-hesite : un dessin ne prouve pas, un calcul prouve.",
-      "formalized": "Les notations det(u, v), la formule colin-formule-det, les deux règles colin-alignement-det et colin-parallelisme-det, et la brique mem-colin-deux-usages qui unifie explicitement les deux applications d'un même test. La leçon porte la carte des connaissances (knowledgeMap: true, aucun module « À retenir », six KnowledgeSnapshot, carte complète en synthèse du boss).",
-      "tool": "Le déterminant devient l'outil unique de la démonstration en géométrie repérée — alignement, parallélisme, quatrième sommet — et le prérequis explicite de equations-de-droites-2nde (dont M3 construit l'équation à partir de det(AM, u) = 0) et de positions-relatives-droites-2nde (critère de direction)."
+  "seconde_colinearite-alignement-2nde_P2": {
+   "status": "DUPLICATED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-rail",
+     "step": 4,
+     "mechanism": "question:M01-S4"
     },
-    "officialScopeNotCovered": [
-      "« Résoudre un problème de parallélisme » (teachingScope.include #5, « Problèmes : coordonnée manquante pour un alignement, parallélogramme, trapèze ») : le parallélogramme et le trapèze n'apparaissent QUE dans l'épreuve col-e9 du boss, jamais dans un module. C'est le LP P9, jugé ASSESSMENT_ONLY ci-dessus. La coordonnée manquante pour un alignement, elle, est bien traitée (M5 étape 5).",
-      "« Le vecteur nul colinéaire à tout vecteur » (teachingScope.include #2) : la brique colin-nul-colineaire-tout existe et la brique colin-vecteur-nul aussi, mais aucune garde n'oblige à rencontrer le cas (k = 0 n'est pas requis par done1 en M3) et aucune question ni épreuve ne le mesure. Enseigné en texte, jamais éprouvé.",
-      "« Interprétation : aire signée du parallélogramme » (teachingScope.include #3) : bien enseigné par la manipulation de M4 (polygone du parallélogramme, signe travaillé à l'étape 2), mais aucune question ni épreuve ne porte sur l'AIRE ni sur le SIGNE en tant que tels — col-e5 demande la valeur de det et sa conclusion, jamais son interprétation géométrique.",
-      "Les autres items de teachingScope.include sont couverts par un LP et éprouvés."
-    ],
-    "recommendations": [
-      "Écrire une étape de problème de parallélisme dans M5 (parallélogramme puis trapèze, avec les vecteurs à construire par l'élève), et poser une brique pour « parallélogramme » et « trapèze » — sans quoi col-e9 restera la première rencontre de la tâche.",
-      "Inverser l'ordre dans M2 étape 2 : laboratoire d'abord, brique colin-oeil-hesite ensuite, question en dernier. Aujourd'hui la question précède les deux.",
-      "Durcir deux gardes : exiger k = 0 dans M3 (sinon retirer de la brique colin-nul-colineaire-tout le lead qui affirme que l'élève l'a rencontré), et exiger en M1 étape 3 une sortie du rail où les deux coordonnées ont augmenté (le cas (4 ; 3)), puisque c'est le cas que le boss mesure en col-e2.",
-      "Découpler les deux premières lampes de M2 (Module02TroisPoints.jsx:81-82) : les calculer indépendamment (alignement des trois points d'un côté, colinéarité de AB et AC de l'autre) pour que leur concordance soit un constat et non un câblage.",
-      "Trancher le partage avec vecteurs-2nde : soit vecteurs-2nde M5 cesse de nommer « colinéaires » (et se limite au produit par un réel), soit les briques colin-direction / colin-multiple passent en variant=\"rappel\" et la leçon s'ouvre franchement sur le déterminant — qui est son apport réel.",
-      "Corriger la numérotation périmée visible par l'élève : brief.tag « Mission 06 » du module 5, et SKILLS.paralleles / SKILLS.problemes qui renvoient au module 6 (le boss) au lieu du module 5.",
-      "Corriger le commentaire det = 1 → det = −3 (Module05AlignementParallelisme.jsx:32 et le spec) ; supprimer components/learningPoints.js et les exports morts de colinUtils.js (sameSense, inRange) ; mettre le spec à jour (DirectionLab / AlignmentLab / ScalarLab / DetLab n'existent pas, 7 modules et non 8, 64 min et non 70)."
-    ]
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 1,
+     "mechanism": "manipulation:Stepper"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 1,
+     "mechanism": "brick:colin-multiple"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 2,
+     "mechanism": "brick:colin-produits-croix"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 2,
+     "mechanism": "question:M03-S2"
+    }
+   ],
+   "manipulation": "M3 étape 1 : un curseur k de −3 à 3 au pas 0,5, le ProportionTable qui montre u, ×k, v, et la garde qui impose de visiter k = 2, un k négatif et un k non entier",
+   "assessmentQuestionIds": [
+    "col-e2"
+   ],
+   "knowledgeItems": [
+    "colin-multiple",
+    "colin-produits-croix",
+    "mem-colin-multiple"
+   ],
+   "notes": "Bien construit : la garde impose trois régimes de k (grand, négatif, fractionnaire), la brique colin-produits-croix précède la BatchChoiceQuestion, et le produit en croix est présenté comme le test SANS division — ce qui règle proprement le cas u = (4 ; 0) de la ligne r4. Mais, comme P1, la notion « v = k·u » est déjà celle de vecteurs-2nde M5, avec le même u = (2 ; 1) et le même v = (6 ; 3). Ce qui est neuf ici : les produits en croix comme technique.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_colinearite-alignement-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 1,
+     "mechanism": "manipulation:Stepper"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 2,
+     "mechanism": "brick:colin-produits-croix"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 2,
+     "mechanism": "question:M03-S2"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "des-coordonnees-proportionnelles",
+     "step": 3,
+     "mechanism": "question:M03-S3"
+    }
+   ],
+   "manipulation": "Curseur k + ProportionTable : l'élève voit les deux colonnes se multiplier par le même nombre à chaque cran",
+   "assessmentQuestionIds": [
+    "col-e3",
+    "col-e10"
+   ],
+   "knowledgeItems": [
+    "colin-produits-croix",
+    "colin-coordonnee-manquante-prop",
+    "mem-colin-multiple"
+   ],
+   "notes": "C'est le vrai apport de M3, et il est correctement séquencé : la proportionnalité est VUE dans le tableau, puis la brique du produit en croix la transforme en test calculable AVANT la BatchChoiceQuestion, puis la NumericQuestion de l'étape 3 fait chercher une coordonnée manquante (y = 9 pour u(2 ; −3), v(−6 ; y)) avec des explainFor sur −9 et 6. Deux épreuves du boss (col-e3, col-e10). Réserve mineure : la brique colin-coordonnee-manquante-prop qui NOMME la méthode arrive APRÈS la question qui l'exige (étape 3, gardée par n3) — l'élève doit inventer la méthode, ce qui est acceptable ici puisque la brique colin-produits-croix, posée à l'étape 2, en contient tout le contenu opératoire.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_colinearite-alignement-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 1,
+     "mechanism": "manipulation:VectorPlane"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 1,
+     "mechanism": "brick:colin-determinant"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 3,
+     "mechanism": "brick:colin-formule-det"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 3,
+     "mechanism": "question:M04-S3"
+    }
+   ],
+   "manipulation": "VectorPlane avec u ET v glissables, le PARALLÉLOGRAMME (O, u, u+v, v) tracé en polygone, et le déterminant recalculé en direct sous le plan avec son expression littérale développée (detText). La garde de l'étape 1 exige d'aplatir le parallélogramme (det = 0) ; celle de l'étape 2 exige d'obtenir les deux signes ET un cas presque plat (|det| = 1)",
+   "assessmentQuestionIds": [
+    "col-e4",
+    "col-e5"
+   ],
+   "knowledgeItems": [
+    "colin-determinant",
+    "colin-calculer-det",
+    "colin-formule-det",
+    "colin-vocabulaire-determinant",
+    "mem-colin-det-zero"
+   ],
+   "notes": "Le meilleur module de la leçon. Le déterminant n'est pas une formule tombée du ciel : c'est l'AIRE SIGNÉE du parallélogramme que l'élève aplatit de ses mains, et le signe (l'étape 2 impose de passer d'un côté du rail à l'autre) reçoit une signification géométrique. La brique colin-formule-det est posée AVANT la NumericQuestion de l'étape 3, avec trois explainFor ciblés (22 = somme, −2 = ordre inversé, 0). col-e4 et col-e5 mesurent bien le calcul, signes compris.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_colinearite-alignement-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 1,
+     "mechanism": "manipulation:VectorPlane"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 1,
+     "mechanism": "brick:colin-critere-det"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 2,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-detecteur",
+     "step": 4,
+     "mechanism": "question:M04-S4"
+    }
+   ],
+   "manipulation": "La même que P4 ; l'étape 2 fait vivre le cas critique |det| = 1 (« l'œil hésite, le déterminant tranche »)",
+   "assessmentQuestionIds": [
+    "col-e5"
+   ],
+   "knowledgeItems": [
+    "colin-critere-det",
+    "mem-colin-det-zero"
+   ],
+   "notes": "Le critère det = 0 ⇔ colinéaires naît de l'aplatissement du parallélogramme (révélation conditionnée par zeroSeen), la brique colin-critere-det est gardée par ce même geste, et la TapQuestion de l'étape 4 (u(4 ; 6) et v(6 ; 9), det = 0) l'éprouve sur un cas non trivial. L'étape 2, qui impose de rencontrer le presque-plat, est ce qui rend l'épistémologie de la leçon honnête : le critère sert précisément là où l'œil échoue.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_colinearite-alignement-2nde_P6": {
+   "status": "DUPLICATED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "trois-points-une-droite",
+     "step": 1,
+     "mechanism": "manipulation:VectorPlane"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-points-une-droite",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-points-une-droite",
+     "step": 1,
+     "mechanism": "brick:colin-alignement"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-points-une-droite",
+     "step": 3,
+     "mechanism": "question:M02-S3"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 4,
+     "mechanism": "brick:colin-alignement-det"
+    }
+   ],
+   "manipulation": "VectorPlane M2 — A et B fixes, C glissable, rail par A dans la direction AB ; la garde exige TROIS positions alignées distinctes de C (dont, en pratique, au-delà de A, où AC change de sens)",
+   "assessmentQuestionIds": [
+    "col-e6",
+    "col-e7"
+   ],
+   "knowledgeItems": [
+    "colin-alignement",
+    "colin-vocabulaire-aligne",
+    "colin-oeil-hesite",
+    "colin-alignement-det"
+   ],
+   "notes": "Enseignement solide et en deux temps : M2 établit alignés ⇔ AB et AC colinéaires par le geste, M5 le reformule en det(AB, AC) = 0 (brique colin-alignement-det). Statut DUPLICATED : vecteurs-2nde M7 étape 3 enseigne DÉJÀ « prouver un alignement », avec la brique methode-alignement (« A, B, C alignés ⟺ AB et AC colinéaires », exemple A(−4;−3), B(−1;−1), C(5;3), AC = 3·AB) et la même formule rhétorique « une figure suggère, un calcul prouve ». La scène de M5 ici (P(−4;−2), Q(−1;0), R(5;3)) est la scène de vecteurs-2nde décalée d'une unité en y pour la transformer en presque-alignement. Ce qui est neuf : le test par déterminant et le point épistémique colin-oeil-hesite. DÉFAUT D'ORDRE à noter : à l'étape 2 de M2, la TapQuestion (« si C est en (5 ; 4), sont-ils alignés ? ») vient AVANT le laboratoire de vérification et AVANT la brique colin-oeil-hesite, qui n'est posée qu'après la réponse — l'élève est donc interrogé sur un presque-alignement avant qu'on lui ait dit que l'œil ne prouve pas.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_colinearite-alignement-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 1,
+     "mechanism": "manipulation:VectorPlane"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 1,
+     "mechanism": "brick:colin-parallelisme-det"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 1,
+     "mechanism": "brick:colin-vocabulaire-parallele"
+    }
+   ],
+   "manipulation": "VectorPlane M5 étape 1 — D glissable, deux rails (celui de (AB), violet et fixe ; celui de (CD), qui vire à l'émeraude quand il devient parallèle), det(AB, CD) affiché en direct ; la garde exige DEUX positions parallèles dont au moins une de sens contraire (collinearityRatio < 0)",
+   "assessmentQuestionIds": [
+    "col-e8",
+    "col-e9"
+   ],
+   "knowledgeItems": [
+    "colin-parallelisme-det",
+    "colin-vocabulaire-parallele"
+   ],
+   "notes": "Excellente garde : exiger une position de sens contraire force à comprendre que le parallélisme ne dépend pas du sens — la méprise symétrique de celle traitée en M1. Les deux briques sont gardées par done1 et colin-vocabulaire-parallele porte establishes={['droites-paralleles']}, ce qui rattache proprement le terme du lexique. Deux épreuves au boss.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_colinearite-alignement-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 2,
+     "mechanism": "question:M05-S2"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 3,
+     "mechanism": "question:M05-S3"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 4,
+     "mechanism": "question:M05-S4"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 4,
+     "mechanism": "brick:colin-methode-conclure"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 5,
+     "mechanism": "question:M05-S5"
+    }
+   ],
+   "manipulation": "Aucune manipulation propre : M5 étapes 2 à 5 est une descente d'échafaudage sur figure figée (VectorPlane `frozen`) — à l'œil, puis construire les vecteurs, puis la proportionnalité, puis le déterminant, puis la coordonnée manquante",
+   "assessmentQuestionIds": [
+    "col-e7",
+    "col-e10"
+   ],
+   "knowledgeItems": [
+    "colin-methode-conclure",
+    "colin-coordonnee-manquante-det",
+    "mem-colin-deux-usages"
+   ],
+   "notes": "La progression en cinq niveaux est pédagogiquement remarquable — elle fait EXPÉRIMENTER l'insuffisance de l'œil (étape 2 : la bonne réponse est « impossible à dire sans calcul »), puis monte jusqu'à la coordonnée manquante. Le savoir mobilisé (det, colinéarité) est établi ailleurs, donc pas de dette. Réserve d'ORDRE : les briques qui nomment la méthode (colin-methode-conclure, colin-coordonnee-manquante-det) sont posées APRÈS les questions qu'elles servent (gardées par b4 puis n5) ; seule colin-methode-conclure, posée en fin d'étape 4, précède la NumericQuestion de l'étape 5, qui la déclare d'ailleurs dans requires. L'étape 3 exige de calculer PR avec requires = ['abscisse','vecteur','composante'], des prérequis de niveau, sans aucune brique de la leçon : correct, c'est du réinvestissement.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_colinearite-alignement-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 6,
+     "mechanism": "question:M05-S6-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 6,
+     "mechanism": "question:M05-S6-Q2"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "alignement-et-parallelisme",
+     "step": 1,
+     "mechanism": "manipulation:VectorPlane"
+    }
+   ],
+   "manipulation": "Aucun instrument propre, mais un vrai PROBLÈME posé : niveau 6 du module 5 (ajouté le 2026-09-10) — construire D pour que ABCD soit un parallélogramme, puis choisir la rédaction qui le DÉMONTRE.",
+   "assessmentQuestionIds": [
+    "col-e9"
+   ],
+   "knowledgeItems": [
+    "colin-parallelisme-det",
+    "colin-methode-conclure"
+   ],
+   "notes": "RÉÉVALUÉ le 2026-09-10 : c'était le seul ASSESSMENT_ONLY de la 2de — le critère de parallélisme était enseigné (niveau 1), mais aucun PROBLÈME de parallélisme n'était jamais posé, alors que l'unique épreuve col-e9 (le trapèze) en demandait un. Le niveau 6 pose les deux moitiés du geste : CONSTRUIRE le point qui réalise le parallélogramme (D = C − AB = (2 ; 4), vérifié), puis DÉMONTRER par le déterminant — avec trois rédactions fausses en distracteurs, dont « on le voit sur la figure », que le niveau 2 a déjà réfuté. ASSESSMENT_ONLY. Le CRITÈRE de parallélisme est bien enseigné (P7, M5 étape 1, manipulation + briques), mais « résoudre un PROBLÈME de parallélisme » n'est jamais demandé dans la leçon : M5 étape 3 porte sur un alignement, l'étape 5 sur une coordonnée manquante pour aligner. Le teachingScope.include de l'objet officiel annonce pourtant « Problèmes : coordonnée manquante pour un alignement, parallélogramme, trapèze ». La seule occurrence est l'épreuve du boss col-e9 (A, B, C, D → parallélogramme ou trapèze ?), qui (a) est la première et unique rencontre de cette tâche, (b) donne les QUATRE vecteurs déjà calculés dans son énoncé, donc ne mesure que la lecture de deux déterminants, et (c) mobilise les mots « trapèze » et « parallélogramme », qui ne sont ni dans priorKnowledge, ni portés par une brique, ni diagnostiqués par le module 0. Un élève découvre la discrimination parallélogramme/trapèze pendant son évaluation.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
   }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "P9 « Résoudre un problème de parallélisme » n'est enseigné nulle part : aucune étape ne pose un tel problème, et l'unique épreuve (col-e9, Module06MissionFinale.jsx) fournit les quatre vecteurs pré-calculés et emploie « trapèze » et « parallélogramme », deux termes qu'aucune brique n'établit et que le diagnostic du module 0 ne mesure pas.",
+   "SEPT ÉTAPES SANS AUCUNE QUESTION : M1 étapes 1, 2, 3 ; M2 étape 1 ; M3 étape 1 ; M4 étapes 1 et 2 ; M5 étape 1. Ce sont des manipulations suivies d'un Feedback conditionné — le fait mathématique y est AFFIRMÉ par le texte de la révélation, jamais vérifié. La première vérification de quoi que ce soit intervient à l'étape 4 du module 1. Le dispositif reste conforme à la rubrique (une révélation conditionnée enseigne), mais rien ne détecte l'élève qui a atteint la garde par tâtonnement sans rien observer.",
+   "Module 2, étape 2 : la TapQuestion (« si C est en (5 ; 4), A, B et C sont-ils alignés ? ») est placée AVANT le laboratoire de vérification de la même étape, et la brique colin-oeil-hesite (« l'œil ne prouve pas ») n'est posée qu'APRÈS la réponse, gardée par q2. L'élève est donc interrogé sur un presque-alignement — le cas précis où l'œil ment — avant que la leçon lui ait dit de se méfier de son œil. C'est le seul renversement d'ordre franchement fautif de la leçon.",
+   "Module 3 : la garde done1 exige de visiter k = 2, un k négatif et un k non entier, mais PAS k = 0. La brique colin-nul-colineaire-tout est pourtant affichée inconditionnellement dès done1, avec un lead qui affirme « le cas particulier que tu as croisé en réglant le curseur » — affirmation fausse pour la majorité des élèves, qui n'auront jamais posé k à 0. Le vecteur nul est donc nommé sans avoir été vu.",
+   "Module 1, étape 3 : la garde done3 est satisfaite par N'IMPORTE quelle sortie du rail (c.direction === false). Or le contre-exemple pédagogiquement chargé — v = (4 ; 3), où ×2 sur x et ×3 sur y montrent que « les deux ont grandi » ne suffit pas — n'est affiché que sous condition (v.x === 4 && v.y === 3). L'aha que le docblock du module désigne comme central sera donc manqué par la plupart des élèves, alors même que l'épreuve col-e2 du boss porte exactement sur ce cas (u(2 ; 1) et v(4 ; 3)).",
+   "Module 2, étape 1 : les deux premières lampes (« A, B, C alignés » et « AB et AC colinéaires ») sont pilotées par le MÊME booléen `aligned` (Module02TroisPoints.jsx:81-82). Elles s'allument donc toujours ensemble par construction, et non parce que deux calculs indépendants concordent. L'équivalence que la leçon veut faire découvrir est ainsi câblée dans l'affichage plutôt que constatée."
+  ],
+  "technicalProblems": [
+   "AUCUNE manipulation n'est gelée après validation — c'est un point fort à préserver. Les quatre `disabled={doneN}` (Module01LeRail.jsx:104, Module02TroisPoints.jsx:100, Module04Detecteur.jsx:118, Module05AlignementParallelisme.jsx:82) portent tous sur des PredictionChips, ce qui est le comportement voulu (une prédiction se verrouille une fois que la manipulation y a répondu). Le prop `disabled` de VectorPlane est déclaré (VectorPlane.jsx:43) et n'est jamais passé par un module ; le seul `frozen` (Module05AlignementParallelisme.jsx:143) est une figure statique par conception.",
+   "COMMENTAIRE FAUX, modules/Module05AlignementParallelisme.jsx:32 : « // L'œil : P, Q, R « ont l'air » alignés — det = 1. » La valeur réelle est det(PQ, PR) = 3×5 − 2×9 = −3, et c'est bien −3 qu'affichent l'option correcte de la ligne p2, la correction de p3, le feedback (via detText) et la brique de knowledge.jsx. Le spec docs/lessons/2NDE_COLINEARITE_ALIGNEMENT_SPEC.md porte la même erreur. Aucune conséquence pour l'élève : seul le commentaire est faux, tout ce qui est affiché est juste.",
+   "COLLISION NARRATIVE entre M2 et M5 autour du point (5 ; 4) : en M2 (A(−3;−1), B(1;1)), (5 ; 4) est le presque-aligné, la bonne réponse est « non alignés » ; en M5 (P(−4;−2), Q(−1;0)), le feedback dit « Pour aligner R, il faudrait R en (5 ; 4) » — cette fois (5 ; 4) EST la position alignée. Les deux affirmations sont mathématiquement exactes dans leur configuration respective (vérifié : yForAlignment(P,Q,5) = 4), mais l'élève rencontre le même couple de nombres avec deux verdicts opposés à trente minutes d'intervalle.",
+   "Aucun problème de tolérance : EPS = 1e-9 dans colinUtils.js, alors que tous les points glissables s'accrochent à la grille entière (VectorPlane, step = 1 par défaut ; CoordPlane.snapCoord) et que le curseur k de M3 avance au pas 0,5 avec roundTo. Le plus petit |det| non nul atteignable sur la grille vaut 1 — précisément le cas « presque plat » que M4 étape 2 met en scène volontairement. La tolérance est donc très inférieure à ce que l'élève distingue, jamais l'inverse. Les mathématiques sont justes et verrouillées par colinUtils.test.js (det, pointsAligned, yForAlignment, detText et sa convention de parenthésage) et par labelLayout.test.js (balayage de la grille 13×13).",
+   "NUMÉROTATION PÉRIMÉE (le module « À retenir » a été supprimé au profit de la carte des connaissances, mais le renommage M6 → M5 n'a pas été propagé) : Module05AlignementParallelisme.jsx:76 affiche encore brief.tag = '🧪 Mission 06' à l'élève ; Module06MissionFinale.jsx:176-177 attribue les compétences `paralleles` et `problemes` au module 6, c'est-à-dire au boss lui-même, alors que ce contenu vit au module 5 — un élève qui rate ces épreuves sera renvoyé vers le mauvais module.",
+   "Module06MissionFinale.jsx:190 : commentaire orphelin « /** La synthèse : le rail de u, v = −2·u dessus, et trois points alignés. */ » décrivant une figure de synthèse qui n'existe pas (synthese est un simple KnowledgeSnapshot).",
+   "CODE MORT : components/learningPoints.js est intégralement mort — LESSON_LEARNING_POINTS n'est importé nulle part dans apps/web/src ; c'est un troisième exemplaire des ids de LP, après lesson.config.js et coursesData.js. Dans colinUtils.js, `sameSense` et `inRange` ne sont appelés nulle part (pas même dans les tests) ; `norm`, `dot`, `detExpression`, `areCollinear`, et les réexports `parseDec`/`formatDec`/`roundTo` ne sont jamais importés par un module. Props déclarés jamais passés : VectorPlane.disabled/unit/step/avoidSegments, Stepper.unit/disabled, PredictionChips.ariaLabel, MiniPlane.showGrid/className.",
+   "DÉRIVE SPEC/CODE : docs/lessons/2NDE_COLINEARITE_ALIGNEMENT_SPEC.md §3-§4 nomme quatre composants — DirectionLab, AlignmentLab, ScalarLab, DetLab — dont aucun n'existe (les laboratoires sont des closures `lab(kit)` inlinées dans les modules) ; son tableau §4 décrit encore 8 modules avec un « a-retenir » en 5 et le boss en 7, et son « Shipped state » annonce 70 min quand la config en somme 64."
+  ],
+  "duplicates": [
+   "AVEC vecteurs-2nde — la colinéarité elle-même (P1, P2, et le socle de P3) : vecteurs-2nde M5 « Étirer, inverser » étape 3 fait DÉJÀ construire un vecteur multiple de u par glissement, avec un lecteur en direct de colinearFactor, et sa révélation conditionnée énonce « deux vecteurs non nuls sont colinéaires exactement quand l'un est un multiple de l'autre » ; sa brique regle-colineaire (vecteurs-2nde/knowledge.jsx) est intitulée « Vecteurs colinéaires » et travaillée sur u = (2 ; 1), v = (6 ; 3) = 3·u. Or colinearite-alignement-2nde reprend LE MÊME u = (2 ; 1) en M1 et en M3, et LE MÊME exemple (6 ; 3) dans la ligne r1 de sa BatchChoiceQuestion M3 et dans sa brique colin-produits-croix. Les deux leçons posent donc la notion avec variant=\"new\" sur le même matériel numérique. Le partage prévu par les configs (vecteurs exclut « le déterminant », colinéarité exclut « vecteur directeur et équation ») ne protège que le déterminant, pas la colinéarité elle-même.",
+   "AVEC vecteurs-2nde — l'alignement (P6) : vecteurs-2nde M7 étape 3 enseigne « Prouver un alignement » avec la brique methode-alignement (« A, B, C alignés ⟺ AB et AC colinéaires », A(−4;−3), B(−1;−1), C(5;3), AC = 3·AB) et sa TapQuestion l'éprouve. La brique colin-alignement de M2 énonce la même équivalence, et colin-methode-conclure reprend jusqu'à la formule rhétorique « une figure suggère, un calcul prouve » déjà présente dans le corps de methode-alignement. La scène P(−4;−2), Q(−1;0), R(5;3) de M5 est celle de vecteurs-2nde décalée d'une unité en y.",
+   "CONTRADICTION DÉCLARATIVE : lesson.config.js:71-73 justifie l'absence de `colineaire` dans priorKnowledge par « la colinéarité elle-même est le contenu propre de cette leçon : elle n'est jamais un prérequis ». C'est factuellement démenti par vecteurs-2nde, qui la pose en M5 et l'éprouve dans son boss (vec-e6). Symétriquement, equations-de-droites-2nde déclare bien `colineaire` dans SON priorKnowledge en renvoyant à « la leçon précédente ». Les trois leçons ne s'accordent pas sur qui possède la notion.",
+   "AVEC positions-relatives-droites-2nde (leçon aval) : celle-ci repose des briques critere-vecteurs-directeurs, formule-det-directions, methode-comparer-directions et methode-ab-cd avec variant=\"new\", alors que colin-parallelisme-det (« (AB) ∥ (CD) ⇔ det(AB, CD) = 0 »), colin-methode-conclure et mem-colin-deux-usages couvrent déjà ce terrain. La frontière annoncée (positions-relatives exclut « le déterminant comme objet ») ne tient pas au niveau des briques."
+  ],
+  "verticalPositioning": {
+   "revised": "Rien du collège : la colinéarité, le déterminant et le parallélisme par les vecteurs n'existent nulle part avant la 2de. Ce qui est révisé, c'est la colinéarité de la leçon VOISINE (vecteurs-2nde M5) et l'alignement de vecteurs-2nde M7 — révision non déclarée, posée en variant=\"new\".",
+   "extended": "L'alignement, qui passe du critère « AC = k·AB » (vecteurs-2nde M7) au test calculable det(AB, AC) = 0, applicable sans chercher le facteur k et donc sans division. La séparation direction / sens / longueur, déjà vue en 3e (translations-vecteurs-3e M2) et effleurée en vecteurs-2nde M1, devient ici manipulable indépendamment grâce aux trois lampes du rail.",
+   "new": "Le DÉTERMINANT comme objet : sa formule x·y′ − y·x′, son interprétation en aire signée du parallélogramme, le sens de son signe (de quel côté du rail se trouve v), et le critère det = 0. Les produits en croix comme test sans division. Le parallélisme de deux droites par la colinéarité de deux vecteurs. La recherche d'une coordonnée manquante pour aligner. Et surtout le point épistémique colin-oeil-hesite : un dessin ne prouve pas, un calcul prouve.",
+   "formalized": "Les notations det(u, v), la formule colin-formule-det, les deux règles colin-alignement-det et colin-parallelisme-det, et la brique mem-colin-deux-usages qui unifie explicitement les deux applications d'un même test. La leçon porte la carte des connaissances (knowledgeMap: true, aucun module « À retenir », six KnowledgeSnapshot, carte complète en synthèse du boss).",
+   "tool": "Le déterminant devient l'outil unique de la démonstration en géométrie repérée — alignement, parallélisme, quatrième sommet — et le prérequis explicite de equations-de-droites-2nde (dont M3 construit l'équation à partir de det(AM, u) = 0) et de positions-relatives-droites-2nde (critère de direction)."
+  },
+  "officialScopeNotCovered": [
+   "« Résoudre un problème de parallélisme » (teachingScope.include #5, « Problèmes : coordonnée manquante pour un alignement, parallélogramme, trapèze ») : le parallélogramme et le trapèze n'apparaissent QUE dans l'épreuve col-e9 du boss, jamais dans un module. C'est le LP P9, jugé ASSESSMENT_ONLY ci-dessus. La coordonnée manquante pour un alignement, elle, est bien traitée (M5 étape 5).",
+   "« Le vecteur nul colinéaire à tout vecteur » (teachingScope.include #2) : la brique colin-nul-colineaire-tout existe et la brique colin-vecteur-nul aussi, mais aucune garde n'oblige à rencontrer le cas (k = 0 n'est pas requis par done1 en M3) et aucune question ni épreuve ne le mesure. Enseigné en texte, jamais éprouvé.",
+   "« Interprétation : aire signée du parallélogramme » (teachingScope.include #3) : bien enseigné par la manipulation de M4 (polygone du parallélogramme, signe travaillé à l'étape 2), mais aucune question ni épreuve ne porte sur l'AIRE ni sur le SIGNE en tant que tels — col-e5 demande la valeur de det et sa conclusion, jamais son interprétation géométrique.",
+   "Les autres items de teachingScope.include sont couverts par un LP et éprouvés."
+  ],
+  "recommendations": [
+   "Écrire une étape de problème de parallélisme dans M5 (parallélogramme puis trapèze, avec les vecteurs à construire par l'élève), et poser une brique pour « parallélogramme » et « trapèze » — sans quoi col-e9 restera la première rencontre de la tâche.",
+   "Inverser l'ordre dans M2 étape 2 : laboratoire d'abord, brique colin-oeil-hesite ensuite, question en dernier. Aujourd'hui la question précède les deux.",
+   "Durcir deux gardes : exiger k = 0 dans M3 (sinon retirer de la brique colin-nul-colineaire-tout le lead qui affirme que l'élève l'a rencontré), et exiger en M1 étape 3 une sortie du rail où les deux coordonnées ont augmenté (le cas (4 ; 3)), puisque c'est le cas que le boss mesure en col-e2.",
+   "Découpler les deux premières lampes de M2 (Module02TroisPoints.jsx:81-82) : les calculer indépendamment (alignement des trois points d'un côté, colinéarité de AB et AC de l'autre) pour que leur concordance soit un constat et non un câblage.",
+   "Trancher le partage avec vecteurs-2nde : soit vecteurs-2nde M5 cesse de nommer « colinéaires » (et se limite au produit par un réel), soit les briques colin-direction / colin-multiple passent en variant=\"rappel\" et la leçon s'ouvre franchement sur le déterminant — qui est son apport réel.",
+   "Corriger la numérotation périmée visible par l'élève : brief.tag « Mission 06 » du module 5, et SKILLS.paralleles / SKILLS.problemes qui renvoient au module 6 (le boss) au lieu du module 5.",
+   "Corriger le commentaire det = 1 → det = −3 (Module05AlignementParallelisme.jsx:32 et le spec) ; supprimer components/learningPoints.js et les exports morts de colinUtils.js (sameSense, inRange) ; mettre le spec à jour (DirectionLab / AlignmentLab / ScalarLab / DetLab n'existent pas, 7 modules et non 8, 64 min et non 70)."
+  ]
+ }
 }

@@ -197,6 +197,17 @@ const browser = await launch();
   check('M5: det decides where the eye hesitated', /L’œil hésitait, le déterminant a tranché/.test(await body(page)));
   await fillLast(page, '#step-5', '4');
   check('M5: missing coordinate trap targeted', /ordonnée de EG/.test(await body(page)));
+  // Niveau 6 (ajouté le 2026-09-10) : le PROBLÈME de parallélisme, construire
+  // puis démontrer — la seule étape de la leçon qui porte P9 en enseignement.
+  // `onAnswered` est INCONDITIONNEL (progression non bloquante) : une réponse
+  // fausse marque l'étape répondue et verrouille la saisie. On envoie donc la
+  // valeur fausse une seule fois, et l'explainFor ciblé fait foi.
+  await fillLast(page, '#step-6', '6');                               // wrong: l'ordonnée de C
+  check('M5: D built from C minus AB', /ordonnée de C/.test(await body(page)));
+  await tapOption(page, '#step-6', 1);                                // wrong: « on le voit sur la figure »
+  check('M5: seeing is not proving', /ne prouve rien|suppose acquis/.test(await body(page)));
+  await tapOption(page, '#step-6', 0);
+  check('M5: parallelism problem solved and proved', /construire<\/strong>|démontrer/.test(await body(page)));
   check('M5: complete', await nextEnabled(page));
   check('M5: layout safe (D swept, second rail pivots)', issues.length === 0, issues.slice(0, 3).join(' | '));
   await page.screenshot({ path: `${SHOT_DIR}col-m5.png`, fullPage: true });

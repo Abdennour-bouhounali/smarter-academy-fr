@@ -4,6 +4,10 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
+// PILOTE JSXGraph (docs/experiments/JSXGRAPH_PILOT.md) — développement
+// seulement, et seulement avec ?viz=jsxgraph. L'élève voit VectorLab.
+import VectorLabJSXGraph from '../components/VectorLabJSXGraph';
+import { useJSXGraph } from '../../../../../common/math-visualization/pilotSwitch';
 import { VecName } from '../components/VectorScene';
 import {
   SCENES, RANGE, equal, isZero, opposite, describeMove, formatVec, diagnose, DIAGNOSIS_TEXT,
@@ -32,6 +36,8 @@ const START = { x: -5, y: -4 };
 const TROP_PRES = 2;
 
 export default function Module02LeMemeVecteur() {
+  const pilot = useJSXGraph();
+  const MoveLab = pilot ? VectorLabJSXGraph : VectorLab;
   const [pred, setPred] = useState(null);
   const [origin, setOrigin] = useState(START);
   const [posed, setPosed] = useState([]);
@@ -70,7 +76,7 @@ export default function Module02LeMemeVecteur() {
             onChange={setPred}
             disabled={done1}
           />
-          <VectorLab
+          <MoveLab
             origin={origin}
             vector={U}
             onOriginChange={setOrigin}
