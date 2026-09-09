@@ -118,14 +118,11 @@ export default function Module05AjouterOuRetirerUneValeur() {
       content: (
         <div className="space-y-3">
         <BatchChoiceQuestion
-          intro={(
-            <div className="space-y-2">
-              <div className="rounded-xl border border-cyan-200 bg-cyan-50 p-3 text-center">
-                <MathText>{'$$\\overline{x + b} = \\bar{x} + b \\qquad \\overline{a x} = a\\,\\bar{x}$$'}</MathText>
-              </div>
-              <p className="text-sm font-semibold text-slate-700">On retire 5 min au trajet de <strong>chaque</strong> élève. Que devient chaque indicateur ?</p>
-            </div>
-          )}
+          // La formule de linéarité était affichée ICI, au-dessus du tableau :
+          // l'élève lisait la règle puis remplissait les quatre lignes qu'elle
+          // dicte — aucune découverte. Elle est désormais posée par la brique
+          // `linearite-moyenne`, APRÈS que le tableau l'a fait apparaître.
+          intro={<p className="text-sm font-semibold text-slate-700">On retire 5 min au trajet de <strong>chaque</strong> élève. Que devient chaque indicateur ? Décide ligne par ligne, sans formule.</p>}
           rows={[
             { id: 'l1', label: 'Moyenne (19,15 min)', options: ['14,15 min', '19,15 min', '3,83 min'], correct: 0, correction: 'Elle diminue de 5 : 19,15 − 5 = 14,15.' },
             { id: 'l2', label: 'Médiane (18 min)', options: ['13 min', '18 min', '3,6 min'], correct: 0, correction: 'Elle diminue de 5 aussi : 13 min.' },

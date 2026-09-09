@@ -57,7 +57,10 @@ export const LESSON_CONFIG = {
   // et la méthode de comparaison position + dispersion.
   priorKnowledge: [
     'serie-statistique', 'effectif', 'frequence', 'indicateur-stat',
-    'moyenne', 'moyenne-ponderee', 'mediane-stat', 'mode-stat',
+    // 'mode-stat' RETIRÉ : le mode statistique n'est enseigné par AUCUNE leçon,
+    // à aucun niveau — le déclarer en prérequis faisait mesurer au module 0 un
+    // acquis inexistant (audit 2de, rupture de chaîne amont).
+    'moyenne', 'moyenne-ponderee', 'mediane-stat',
     'etendue', 'dispersion',
     'quotient', 'arrondi', 'ordre-nombres', 'racine-carree',
   ],
