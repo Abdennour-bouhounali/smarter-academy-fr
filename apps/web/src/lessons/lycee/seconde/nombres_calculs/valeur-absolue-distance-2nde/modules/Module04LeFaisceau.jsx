@@ -78,7 +78,7 @@ export default function Module04LeFaisceau() {
           num: 2, title: 'Retrouve le phare', subtitle: 'Le faisceau éclaire exactement [−1 ; 7]. Règle le centre et le rayon.', done: d2,
           content: (
             <div className="space-y-3">
-              <BeamLine a={a2} r={r2} x={x3} onA={setA2} onR={setR2} onX={setX3} rMax={8} disabled={d2} />
+              <BeamLine a={a2} r={r2} x={x3} onA={setA2} onR={setR2} onX={setX3} rMax={8} />
               <BuildCheck
                 isRight={() => a2 === target2.a && r2 === target2.r}
                 current={() => `centre ${a2}, rayon ${r2} → ${notation(absInequalitySet(a2, r2))}`}

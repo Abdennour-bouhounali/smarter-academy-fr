@@ -69,7 +69,7 @@ export default function Module04LaboratoireDesCoefficients() {
           content: (kit) => (
             <div className="space-y-3">
               <PredictionChips prompt="si j’augmente m, que fait la droite ?" options={[{ id: 'pivote', label: 'Elle pivote autour du point (0 ; p)' }, { id: 'monte', label: 'Elle monte, parallèle à elle-même' }, { id: 'rien', label: 'Elle ne bouge pas' }]} value={pred1} onChange={setPred1} disabled={done1} />
-              <CoefficientLab mode="reduced" value={val} onChange={(v) => changeReduced(v, kit.react)} ghost={ghost} disabled={done1} />
+              <CoefficientLab mode="reduced" value={val} onChange={(v) => changeReduced(v, kit.react)} ghost={ghost} />
               {done1 ? (
                 <Feedback tone="ok">{pred1 === 'pivote' ? 'Ta prédiction était juste' : pred1 ? 'Ta prédiction ne tenait pas' : 'Regarde'} : m fait <strong>pivoter</strong> la droite autour de (0 ; p). Un pas à droite, m vers le haut : m est la <strong>pente</strong> — la flèche (1 ; m) est un vecteur directeur. Négatif, la droite descend.</Feedback>
               ) : (
@@ -89,7 +89,7 @@ export default function Module04LaboratoireDesCoefficients() {
           num: 2, title: 'Fais varier p', subtitle: 'Passe par p = 3, puis p = −2. Ne touche pas à m.', done: done2,
           content: (kit) => (
             <div className="space-y-3">
-              <CoefficientLab mode="reduced" value={val} onChange={(v) => changeReduced(v, kit.react)} ghost={ghost} disabled={done2} />
+              <CoefficientLab mode="reduced" value={val} onChange={(v) => changeReduced(v, kit.react)} ghost={ghost} />
               {done2 ? (
                 <Feedback tone="ok">p fait <strong>glisser</strong> la droite verticalement, sans la faire tourner : la flèche (1 ; {formatDec(val.m)}) n’a pas changé. p est l’<strong>ordonnée à l’origine</strong> : la droite coupe l’axe des ordonnées en (0 ; p).</Feedback>
               ) : (
@@ -110,7 +110,7 @@ export default function Module04LaboratoireDesCoefficients() {
           content: (kit) => (
             <div className="space-y-3">
               <PredictionChips prompt="peut-on obtenir une droite verticale avec y = m·x + p ?" options={[{ id: 'grand', label: 'Oui, avec m très grand' }, { id: 'jamais', label: 'Non, jamais' }, { id: 'zero', label: 'Oui, avec m = 0' }]} value={pred3} onChange={setPred3} disabled={done3} />
-              <CoefficientLab mode="cartesian" value={car} onChange={(v) => changeCar(v, kit.react)} ghost={carGhost} disabled={done3} />
+              <CoefficientLab mode="cartesian" value={car} onChange={(v) => changeCar(v, kit.react)} ghost={carGhost} />
               {done3 ? (
                 <Feedback tone="ok">{pred3 === 'jamais' ? 'Ta prédiction était juste' : pred3 === 'grand' ? 'm très grand donne une droite très raide, jamais verticale' : pred3 === 'zero' ? 'm = 0 donne une droite horizontale' : 'Regarde'} : avec <strong>b = 0</strong>, l’équation devient a·x + c = 0, soit x = {formatDec(-car.c / car.a)} — une droite verticale, sans équation réduite (aucun m ne convient : le vecteur directeur (−b ; a) = (0 ; {formatDec(car.a)}) a u_x = 0). L’équation cartésienne écrit TOUTES les droites.</Feedback>
               ) : (

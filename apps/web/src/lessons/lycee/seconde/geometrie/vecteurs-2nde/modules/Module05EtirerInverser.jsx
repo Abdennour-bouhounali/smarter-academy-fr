@@ -71,7 +71,7 @@ export default function Module05EtirerInverser() {
             onChange={setPred}
             disabled={done1}
           />
-          <ScaleLab origin={O} u={U} k={k} onK={(next) => onK(next, kit.react)} range={RANGE} disabled={done1} />
+          <ScaleLab origin={O} u={U} k={k} onK={(next) => onK(next, kit.react)} range={RANGE} />
           {done1 ? (
             <Feedback tone="ok">
               {pred === 'long' ? 'Ta prédiction était juste' : pred === 'inv' ? 'Pour k = 2 le sens ne change pas — c’est k négatif qui retourne la flèche' : pred === 'haut' ? 'Doubler multiplie LES DEUX coordonnées : la direction ne change pas' : 'Regarde'} :
@@ -139,7 +139,6 @@ export default function Module05EtirerInverser() {
             names={{ origin: 'C', tip: 'D', vector: 'v' }}
             ghosts={[{ origin: O, vector: U, name: 'u' }]}
             showWords={false}
-            disabled={done3}
             ariaLabel={`Flèche v depuis C, coordonnées ${formatVec(v3)}`}
           />
           <p className="text-sm text-slate-700" aria-live="polite">

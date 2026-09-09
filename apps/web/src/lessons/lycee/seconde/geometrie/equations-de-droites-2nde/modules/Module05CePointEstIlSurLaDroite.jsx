@@ -58,7 +58,6 @@ export default function Module05CePointEstIlSurLaDroite() {
                 onPredict={(id, v) => setPredictions((p) => ({ ...p, [id]: v }))}
                 tested={tested}
                 onTest={(id, on, pred) => { setTested((t) => [...t, id]); kit.react(pred === (on ? 'oui' : 'non')); }}
-                disabled={done1}
               />
               {done1 && (
                 <Feedback tone="ok">

@@ -62,7 +62,7 @@ export default function Module03DeLaDroiteALEquation() {
           content: (kit) => (
             <div className="space-y-3">
               <PredictionChips prompt="pour quelles positions de M le nombre vaut-il 0 ?" options={[{ id: 'droite', label: 'Quand M est sur la droite' }, { id: 'A', label: 'Seulement quand M est en A' }, { id: 'partout', label: 'Partout' }]} value={pred} onChange={setPred} disabled={done1} />
-              <DetTester line={LINE} M={M} onM={(p) => moveM(p, kit.react)} found={found} disabled={done1} />
+              <DetTester line={LINE} M={M} onM={(p) => moveM(p, kit.react)} found={found} />
               {done1 ? (
                 <Feedback tone="ok">{pred === 'droite' ? 'Ta prédiction était juste' : pred === 'A' ? 'Pas seulement en A' : pred === 'partout' ? 'Pas partout' : 'Regarde'} : {found.map(formatPoint).join(', ')} — trois points verts, tous <strong>sur la droite</strong>. Le nombre 2(x − 1) − 1(y − 3) vaut 0 pour TOUS les points de la droite et pour eux seuls : c’est une relation entre x et y qui décrit la droite entière.</Feedback>
               ) : (

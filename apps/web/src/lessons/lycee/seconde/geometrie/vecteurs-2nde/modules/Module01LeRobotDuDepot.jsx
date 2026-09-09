@@ -77,7 +77,6 @@ export default function Module01LeRobotDuDepot() {
             activeId="r1"
             station={station}
             onMove={(_, next) => { setP1(next); if (equal(next, station)) kit.react(true); }}
-            disabled={done1}
             ariaLabel={`Sol du dépôt — robot en ${formatVec(p1)}, station en ${formatVec(station)}`}
           />
           {done1 ? (
@@ -123,7 +122,6 @@ export default function Module01LeRobotDuDepot() {
               setMoves2((n) => n + 1);
               if (equal(vec(start2, next), RECETTE)) kit.react(true);
             }}
-            disabled={done2}
             ariaLabel={`Sol du dépôt — second robot en ${formatVec(p2)}, parti de ${formatVec(start2)}`}
           />
           {!done2 && moves2 >= ESCAPE_AFTER && (
@@ -168,7 +166,6 @@ export default function Module01LeRobotDuDepot() {
               if (leg === 1 && equal(next, MID)) { setLeg(2); kit.react(true); }
               if (leg === 2 && equal(next, END)) { setLeg(3); kit.react(true); }
             }}
-            disabled={done3}
             ariaLabel={`Sol du dépôt — robot en ${formatVec(p3)}, ordre ${Math.min(leg, 2)} en cours`}
           />
           {!done3 && moves3 >= ESCAPE_AFTER && (
@@ -217,7 +214,6 @@ export default function Module01LeRobotDuDepot() {
             station={start}
             trail={[{ from: start, to: station, name: 'aller' }]}
             onMove={(_, next) => { setP4(next); if (equal(next, start)) kit.react(true); }}
-            disabled={done4}
             ariaLabel={`Sol du dépôt — robot en ${formatVec(p4)}, départ à retrouver en ${formatVec(start)}`}
           />
           {done4 ? (

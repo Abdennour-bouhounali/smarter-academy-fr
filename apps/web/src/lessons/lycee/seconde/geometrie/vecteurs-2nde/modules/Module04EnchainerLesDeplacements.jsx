@@ -66,7 +66,6 @@ export default function Module04EnchainerLesDeplacements() {
             onV={(nv) => { setV1(nv); if (equal(nv, V)) kit.react(true); }}
             range={RANGE}
             showSum={done1}
-            disabled={done1}
           />
           {done1 ? (
             <Feedback tone="ok">
@@ -125,7 +124,6 @@ export default function Module04EnchainerLesDeplacements() {
             range={RANGE}
             names={{ u: 'u', v: 'v', sum: 'u + v', origin: 'A', mid: 'B', end: 'C' }}
             showSum
-            disabled={done2}
           />
           {done2 ? (
             <Feedback tone="ok">

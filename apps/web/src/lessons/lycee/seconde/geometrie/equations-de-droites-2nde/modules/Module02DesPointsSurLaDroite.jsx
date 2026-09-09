@@ -57,7 +57,7 @@ export default function Module02DesPointsSurLaDroite() {
           num: 1, title: 'Marche : t = 2, t = 3, puis t = −2', subtitle: 'M = A + t·u. Regarde l’escalier et le calcul.', done: done1,
           content: (kit) => (
             <div className="space-y-3">
-              <LineWalker line={LINE} t={t} onT={(v) => walk(v, kit.react)} visited={[...visited]} min={-2} max={3} disabled={done1} />
+              <LineWalker line={LINE} t={t} onT={(v) => walk(v, kit.react)} visited={[...visited]} min={-2} max={3} />
               {done1 ? (
                 <Feedback tone="ok">Tous les points visités sont <strong>sur la droite</strong>, et ils s’écrivent tous pareil : M = A + t·u = ({formatDec(LINE.A.x)} + 2t ; {formatDec(LINE.A.y)} + t). Chaque pas ajoute u_x = 2 à x et u_y = 1 à y — en arrière (t &lt; 0), il les retire. Entre deux points de la droite, l’avancée et la montée gardent toujours le même rapport.</Feedback>
               ) : (

@@ -76,7 +76,6 @@ export default function Module06MesurerUnVecteur() {
             names={{ origin: 'A', tip: 'B', vector: 'u' }}
             escalier
             showWords={false}
-            disabled={done1}
             ariaLabel={`Flèche u depuis A, coordonnées ${formatVec(v1)}`}
           />
           <NormReadout v={v1} />
@@ -149,7 +148,7 @@ export default function Module06MesurerUnVecteur() {
       done: done3,
       content: (kit) => (
         <div className="space-y-3">
-          <MidpointLab A={A3} B={B3} I={I} onI={(p) => { setI(p); if (equal(vec(A3, p), vec(p, B3))) kit.react(true); }} range={RANGE} disabled={done3} />
+          <MidpointLab A={A3} B={B3} I={I} onI={(p) => { setI(p); if (equal(vec(A3, p), vec(p, B3))) kit.react(true); }} range={RANGE} />
           {done3 ? (
             <Feedback tone="ok">
               I {formatVec(M3)} : <VecName>AI</VecName> = <VecName>IB</VecName>, chacun vaut la moitié de{' '}

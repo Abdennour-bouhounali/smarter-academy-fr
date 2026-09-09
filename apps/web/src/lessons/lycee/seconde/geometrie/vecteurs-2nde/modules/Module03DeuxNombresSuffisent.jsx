@@ -69,7 +69,6 @@ export default function Module03DeuxNombresSuffisent() {
             ]}
             extraPoints={[{ id: 'tgt', x: B0.x, y: B0.y, hollow: true, color: '#f59e0b' }]}
             showWords={false}
-            disabled={done1}
             ariaLabel={`Flèche u de A ${formatVec(A0)} vers B, coordonnées ${formatVec(v1)}`}
           />
           <p className="text-sm text-slate-700 font-mono" aria-live="polite">
@@ -124,7 +123,6 @@ export default function Module03DeuxNombresSuffisent() {
             names={{ origin: 'A', tip: 'B', vector: 'AB' }}
             escalier
             showWords={false}
-            disabled={done2}
             ariaLabel={`A en ${formatVec(A)}, B en ${formatVec(B)}, vecteur AB ${formatVec(v2)}`}
           />
           <div className="overflow-x-auto">

@@ -79,7 +79,6 @@ export default function Module02LeMemeVecteur() {
             names={{ origin: 'A', tip: 'B', vector: 'u' }}
             ghosts={posed.map((p, i) => ({ origin: p, vector: U, name: `${i + 1}` }))}
             showCoords={false}
-            disabled={done1}
             ariaLabel={`Flèche u partant de ${formatVec(origin)}, déplacement ${describeMove(U)}`}
           />
           <p className="text-sm text-slate-700" aria-live="polite">
@@ -144,7 +143,6 @@ export default function Module02LeMemeVecteur() {
             range={RANGE}
             names={{ origin: 'A', tip: 'A′', vector: 'AA′' }}
             showCoords={false}
-            disabled={done2}
             ariaLabel={`Flèche de A à A′, déplacement ${describeMove(v2)}`}
           />
           <p className="text-sm text-slate-700" aria-live="polite">Déplacement : <strong>{describeMove(v2)}</strong>.</p>
@@ -186,7 +184,6 @@ export default function Module02LeMemeVecteur() {
             names={{ origin: 'B', tip: 'A', vector: 'BA' }}
             ghosts={[{ origin: { x: -4, y: 0 }, vector: U, name: 'u' }]}
             showCoords={false}
-            disabled={done3}
             ariaLabel={`Flèche de B à A, déplacement ${describeMove(v3)}`}
           />
           <p className="text-sm text-slate-700" aria-live="polite">Déplacement : <strong>{describeMove(v3)}</strong>.</p>

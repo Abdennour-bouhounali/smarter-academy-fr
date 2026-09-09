@@ -82,7 +82,6 @@ export default function Module07ProblemesDeGeometrie() {
             ]}
             draggableId={done1 ? null : 'D'}
             onPointChange={(p) => placeD(p, kit.react)}
-            disabled={done1}
             ariaLabel={`Parallélogramme à fermer — D en ${formatVec(D)}`}
           />
           <div className="flex flex-wrap gap-x-6 gap-y-2">

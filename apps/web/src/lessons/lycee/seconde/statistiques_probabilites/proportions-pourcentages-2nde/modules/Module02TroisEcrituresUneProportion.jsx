@@ -42,7 +42,6 @@ export default function Module02TroisEcrituresUneProportion() {
             options={[200, 240, 400, 480, 600]}
             tested={tested}
             onTest={(v) => test(v, kit.react)}
-            disabled={done1}
           />
           {done1 ? (
             <Feedback tone="ok">
