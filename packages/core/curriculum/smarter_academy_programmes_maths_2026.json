@@ -2614,27 +2614,286 @@
         {
           "id": "algebre",
           "title": "Algèbre",
-          "description": "Développer les outils algébriques nécessaires à l'étude des suites, fonctions, équations et structures du programme de spécialité."
+          "description": "Développer les outils algébriques nécessaires à l'étude des suites, fonctions, équations et structures du programme de spécialité.",
+          "official_objects": [
+            {
+              "id": "second_degre",
+              "title": "Équations et inéquations du second degré",
+              "description": "Résoudre, factoriser et étudier le signe d'un trinôme du second degré, et modéliser des problèmes concrets.",
+              "prerequisites": [
+                "Calcul littéral",
+                "Équations du premier degré",
+                "Signe d’une fonction affine"
+              ],
+              "level_specificity": "En Première, le trinôme devient un objet d'étude complet : le discriminant décide du nombre de racines, la forme factorisée en découle, et le tableau de signes rend les inéquations mécaniques.",
+              "teachingScope": {
+                "include": [
+                  "Calculer le discriminant d'une équation du second degré",
+                  "Résoudre une équation du second degré selon le signe du discriminant",
+                  "Déterminer les racines d'un trinôme",
+                  "Factoriser un trinôme à partir de ses racines",
+                  "Déterminer le signe d'un trinôme du second degré",
+                  "Résoudre une inéquation du second degré",
+                  "Relier les racines et la représentation graphique de la parabole",
+                  "Modéliser un problème concret par une équation du second degré",
+                  "Modéliser un problème concret par une inéquation du second degré",
+                  "Interpréter les solutions dans le contexte du problème"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "suites_numeriques",
+              "title": "Suites numériques",
+              "description": "Générer, reconnaître et étudier des suites arithmétiques et géométriques, et modéliser des évolutions.",
+              "prerequisites": [
+                "Fonctions",
+                "Pourcentages et évolutions",
+                "Calcul littéral"
+              ],
+              "level_specificity": "En Première, la suite est introduite comme une fonction de l'entier : on distingue récurrence et forme explicite, on prouve le caractère arithmétique ou géométrique, et on somme les premiers termes.",
+              "teachingScope": {
+                "include": [
+                  "Générer les termes d'une suite définie par une formule explicite",
+                  "Générer les termes d'une suite définie par une relation de récurrence",
+                  "Reconnaître une suite arithmétique et déterminer sa raison",
+                  "Reconnaître une suite géométrique et déterminer sa raison",
+                  "Démontrer qu'une suite est arithmétique ou géométrique",
+                  "Calculer un terme de rang donné d'une suite arithmétique",
+                  "Calculer un terme de rang donné d'une suite géométrique",
+                  "Calculer la somme des n premiers termes d'une suite arithmétique",
+                  "Calculer la somme des n premiers termes d'une suite géométrique",
+                  "Étudier le sens de variation d'une suite",
+                  "Modéliser une situation concrète à l'aide d'une suite",
+                  "Interpréter les résultats d'un modèle par suite"
+                ],
+                "exclude": []
+              }
+            }
+          ]
         },
         {
           "id": "analyse",
           "title": "Analyse",
-          "description": "Étudier les fonctions, leurs variations, dérivées et comportements à travers des modèles et problèmes."
+          "description": "Étudier les fonctions, leurs variations, dérivées et comportements à travers des modèles et problèmes.",
+          "official_objects": [
+            {
+              "id": "derivation",
+              "title": "La dérivée d’une fonction",
+              "description": "Construire le nombre dérivé comme limite d'un taux de variation, dériver les fonctions usuelles et relier signe de la dérivée et variations.",
+              "prerequisites": [
+                "Fonctions",
+                "Variations et extremums",
+                "Taux d’accroissement",
+                "Équations de droites"
+              ],
+              "level_specificity": "En Première, le taux d'accroissement de la Seconde devient nombre dérivé : la tangente prend un sens, les règles de dérivation s'installent, et le signe de la dérivée remplace la lecture graphique pour établir les variations.",
+              "teachingScope": {
+                "include": [
+                  "Calculer un taux de variation entre deux points",
+                  "Comprendre le nombre dérivé comme limite du taux de variation",
+                  "Interpréter le nombre dérivé comme coefficient directeur de la tangente",
+                  "Déterminer l'équation de la tangente en un point",
+                  "Calculer la dérivée des fonctions usuelles",
+                  "Utiliser la dérivée d'une somme et d'un produit par un réel",
+                  "Utiliser la dérivée d'un produit",
+                  "Utiliser la dérivée d'un quotient",
+                  "Utiliser la dérivée d'une fonction composée simple",
+                  "Relier le signe de la dérivée aux variations de la fonction",
+                  "Construire un tableau de variations à partir de la dérivée",
+                  "Résoudre un problème d'optimisation à l'aide de la dérivée"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "fonction_exponentielle",
+              "title": "La fonction exponentielle",
+              "description": "Découvrir la fonction exponentielle par sa propriété caractéristique, ses règles algébriques et ses usages de modélisation.",
+              "prerequisites": [
+                "Dérivation",
+                "Puissances",
+                "Équations et inéquations"
+              ],
+              "level_specificity": "En Première, l'exponentielle est définie par f' = f et f(0) = 1 : c'est la première fonction dont la définition est une propriété de sa dérivée, et ses règles algébriques prolongent celles des puissances.",
+              "teachingScope": {
+                "include": [
+                  "Connaître la définition de la fonction exponentielle",
+                  "Comprendre la propriété caractéristique f' = f et f(0) = 1",
+                  "Déterminer l'ensemble de définition et le signe de l'exponentielle",
+                  "Étudier les variations de la fonction exponentielle",
+                  "Calculer la dérivée de exp(u) dans des cas simples",
+                  "Utiliser la relation e^(a+b) = e^a × e^b",
+                  "Utiliser les relations e^(−a) et e^(a−b)",
+                  "Utiliser la relation (e^a)^n = e^(na)",
+                  "Résoudre une équation avec des exponentielles",
+                  "Résoudre une inéquation avec des exponentielles",
+                  "Représenter graphiquement la fonction exponentielle",
+                  "Modéliser une croissance ou une décroissance par une exponentielle"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "fonctions_trigonometriques",
+              "title": "Les fonctions trigonométriques",
+              "description": "Étudier les fonctions sinus et cosinus, leurs propriétés et leur usage pour décrire des phénomènes périodiques.",
+              "prerequisites": [
+                "Cercle trigonométrique",
+                "Radian",
+                "Fonctions",
+                "Dérivation"
+              ],
+              "level_specificity": "En Première, cosinus et sinus deviennent des FONCTIONS d'une variable réelle : parité et périodicité structurent leur courbe, et les phénomènes périodiques trouvent enfin un modèle.",
+              "teachingScope": {
+                "include": [
+                  "Situer un réel sur le cercle trigonométrique",
+                  "Connaître les propriétés de parité des fonctions sinus et cosinus",
+                  "Connaître et utiliser la périodicité des fonctions trigonométriques",
+                  "Étudier les variations des fonctions sinus et cosinus",
+                  "Représenter graphiquement les fonctions sinus et cosinus",
+                  "Interpréter une représentation graphique d'une fonction trigonométrique",
+                  "Résoudre une équation du type cos(x) = k",
+                  "Résoudre une équation du type sin(x) = k",
+                  "Résoudre une inéquation trigonométrique simple",
+                  "Utiliser les formules d'addition",
+                  "Utiliser les formules de duplication",
+                  "Modéliser un phénomène périodique par une fonction trigonométrique"
+                ],
+                "exclude": []
+              }
+            }
+          ]
         },
         {
           "id": "geometrie",
           "title": "Géométrie",
-          "description": "Utiliser les vecteurs, coordonnées et outils géométriques pour résoudre et démontrer."
+          "description": "Utiliser les vecteurs, coordonnées et outils géométriques pour résoudre et démontrer.",
+          "official_objects": [
+            {
+              "id": "produit_scalaire",
+              "title": "Le produit scalaire dans le plan",
+              "description": "Définir le produit scalaire, l'utiliser pour l'orthogonalité, les angles, les distances et la démonstration en géométrie plane.",
+              "prerequisites": [
+                "Vecteurs",
+                "Coordonnées",
+                "Norme d’un vecteur",
+                "Trigonométrie"
+              ],
+              "level_specificity": "En Première, le produit scalaire donne aux vecteurs un outil de MESURE : l'orthogonalité devient un calcul, et les angles comme les distances se déduisent des coordonnées.",
+              "teachingScope": {
+                "include": [
+                  "Calculer un produit scalaire à partir des coordonnées",
+                  "Calculer un produit scalaire à partir des normes et de l'angle",
+                  "Utiliser la bilinéarité et la symétrie du produit scalaire",
+                  "Démontrer l'orthogonalité de deux vecteurs par le produit scalaire",
+                  "Calculer un angle à l'aide du produit scalaire",
+                  "Calculer une distance à l'aide du produit scalaire",
+                  "Établir une équation de droite sous forme normale",
+                  "Déterminer un vecteur normal à une droite",
+                  "Démontrer un alignement ou une orthogonalité en géométrie plane",
+                  "Déterminer la nature d'un triangle à l'aide du produit scalaire"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "geometrie_espace",
+              "title": "Les vecteurs, les droites et les plans de l’espace",
+              "description": "Étendre le calcul vectoriel à l'espace, caractériser droites et plans, et calculer des distances.",
+              "prerequisites": [
+                "Vecteurs du plan",
+                "Coordonnées",
+                "Produit scalaire",
+                "Représentation de l’espace"
+              ],
+              "level_specificity": "En Première, le repérage passe du plan à l'ESPACE : un troisième nombre suffit à décrire un point, et parallélisme comme orthogonalité se démontrent par le calcul plutôt que sur la figure.",
+              "teachingScope": {
+                "include": [
+                  "Déterminer les coordonnées d'un vecteur dans l'espace",
+                  "Calculer la norme d'un vecteur de l'espace",
+                  "Calculer un produit scalaire dans l'espace",
+                  "Reconnaître le parallélisme de deux droites de l'espace",
+                  "Reconnaître l'orthogonalité de deux droites de l'espace",
+                  "Étudier les positions relatives d'une droite et d'un plan",
+                  "Étudier les positions relatives de deux plans",
+                  "Démontrer le parallélisme dans l'espace",
+                  "Démontrer l'orthogonalité dans l'espace",
+                  "Déterminer une représentation paramétrique d'une droite",
+                  "Déterminer une équation cartésienne d'un plan",
+                  "Calculer une distance dans l'espace"
+                ],
+                "exclude": []
+              }
+            }
+          ]
         },
         {
           "id": "probabilites",
           "title": "Probabilités",
-          "description": "Construire et analyser des modèles probabilistes et utiliser les outils de calcul adaptés."
+          "description": "Construire et analyser des modèles probabilistes et utiliser les outils de calcul adaptés.",
+          "official_objects": [
+            {
+              "id": "variables_aleatoires",
+              "title": "Les variables aléatoires",
+              "description": "Définir une variable aléatoire, sa loi, son espérance et sa dispersion, et reconnaître une loi binomiale.",
+              "prerequisites": [
+                "Probabilités",
+                "Arbres pondérés",
+                "Fréquences"
+              ],
+              "level_specificity": "En Première, le hasard se chiffre : une variable aléatoire résume une expérience par un nombre, et l'espérance donne enfin un critère de décision.",
+              "teachingScope": {
+                "include": [
+                  "Définir une variable aléatoire discrète",
+                  "Déterminer la loi de probabilité d'une variable aléatoire",
+                  "Représenter une loi de probabilité par un tableau",
+                  "Calculer l'espérance d'une variable aléatoire",
+                  "Interpréter l'espérance dans le contexte",
+                  "Calculer la variance d'une variable aléatoire",
+                  "Calculer l'écart type d'une variable aléatoire",
+                  "Reconnaître un schéma de Bernoulli",
+                  "Reconnaître une situation relevant de la loi binomiale",
+                  "Calculer une probabilité avec la loi binomiale",
+                  "Modéliser une situation aléatoire par une variable aléatoire",
+                  "Utiliser l'espérance pour une prise de décision"
+                ],
+                "exclude": []
+              }
+            },
+            {
+              "id": "probabilites_conditionnelles_independance",
+              "title": "Les probabilités conditionnelles et l’indépendance",
+              "description": "Calculer et interpréter des probabilités conditionnelles, utiliser les arbres pondérés et caractériser l'indépendance.",
+              "prerequisites": [
+                "Probabilités conditionnelles de 2de",
+                "Arbres de probabilités",
+                "Tableaux croisés"
+              ],
+              "level_specificity": "En Première, le conditionnement devient un calcul outillé : la formule des probabilités totales et l'inversion du conditionnement s'appuient sur l'arbre pondéré construit en Seconde.",
+              "teachingScope": {
+                "include": [
+                  "Calculer une probabilité conditionnelle",
+                  "Interpréter une probabilité conditionnelle",
+                  "Construire un arbre pondéré",
+                  "Exploiter un arbre pondéré pour calculer une probabilité",
+                  "Utiliser la formule des probabilités totales",
+                  "Inverser un conditionnement",
+                  "Reconnaître l'indépendance de deux événements",
+                  "Vérifier l'indépendance par le calcul",
+                  "Distinguer indépendance et incompatibilité",
+                  "Résoudre un problème concret avec des probabilités conditionnelles"
+                ],
+                "exclude": []
+              }
+            }
+          ]
         },
         {
           "id": "algorithmique_programmation",
           "title": "Algorithmique et programmation",
-          "description": "Utiliser la programmation pour explorer, simuler, conjecturer et résoudre des problèmes mathématiques."
+          "description": "Utiliser la programmation pour explorer, simuler, conjecturer et résoudre des problèmes mathématiques.",
+          "official_objects": []
         }
       ]
     },
