@@ -1,0 +1,208 @@
+{
+  "lesson": "boites-a-moustaches-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-stats-proba-batch",
+  "learningPoints": {
+    "seconde_boites-a-moustaches-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "cinq-nombres-suffisent", "step": 1, "mechanism": "manipulation:BoxPlot(reveal)" },
+        { "module": 1, "moduleSlug": "cinq-nombres-suffisent", "step": 1, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "cinq-nombres-suffisent", "step": 1, "mechanism": "brick:resume-cinq-nombres" },
+        { "module": 1, "moduleSlug": "cinq-nombres-suffisent", "step": 1, "mechanism": "brick:construire-boite" },
+        { "module": 1, "moduleSlug": "cinq-nombres-suffisent", "step": 2, "mechanism": "question:TapQuestion (rectangle Q1→Q3)" },
+        { "module": 5, "moduleSlug": "atelier-lire-des-boites", "step": 1, "mechanism": "question:TapQuestion (serveurs A/B)" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e1" }
+      ],
+      "manipulation": "La SEULE vraie fabrication de la leçon : module 1 étape 1, un bouton « Révéler le minimum / le maximum / la médiane / Q1 / Q3 » avance un compteur `step` (0→5) et passe `reveal={ORDER[step-1]}` à BoxPlot, qui dessine la figure UN REPÈRE À LA FOIS. Le DotPlot des 30 relevés de Brest reste affiché au-dessus, donc l'élève voit d'où sort chaque repère. L'étape ne se valide qu'à 5/5, et un bouton « Recommencer » remet step à 0 — le laboratoire reste vivant après validation. Ce n'est PAS un glisser-déposer : c'est une révélation progressive pilotée par l'élève, mais la boîte n'est jamais montrée déjà construite.",
+      "assessmentQuestionIds": ["bm-e1"],
+      "knowledgeItems": ["resume-cinq-nombres", "construire-boite"],
+      "notes": "Le meilleur enchaînement de la leçon et le seul qui mérite pleinement « geste → nom → demande ». Les briques resume-cinq-nombres et construire-boite sont conditionnées à done1 (les cinq repères posés), donc AVANT la TapQuestion de l'étape 2 : ordre source correct. La question de l'étape 2 vise l'erreur exacte (« du minimum au maximum ») avec explainWrong dédié. Cinq nombres vérifiés : Brest = {14, 17, 19, 21, 24}, étendue 10, écart interquartile 4.",
+      "crossGrade": { "overlapsWith": ["3e:statistiques-3e", "2de:statistiques-une-variable-2nde"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_boites-a-moustaches-2nde_P2": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "cinq-nombres-suffisent", "step": 1, "mechanism": "manipulation:BoxPlot(reveal)" },
+        { "module": 1, "moduleSlug": "cinq-nombres-suffisent", "step": 1, "mechanism": "brick:construire-boite" },
+        { "module": 1, "moduleSlug": "cinq-nombres-suffisent", "step": 2, "mechanism": "question:TapQuestion (rectangle Q1→Q3)" },
+        { "module": 2, "moduleSlug": "ce-que-chaque-zone-raconte", "step": 1, "mechanism": "manipulation:DotPlot(showQuartiles, showMedian)" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e2" }
+      ],
+      "manipulation": "La révélation progressive du module 1 place la médiane (trait vert) puis Q1 et Q3 (les deux bords du rectangle) dans cet ordre, avec un Feedback d'aide par palier (« Q1 ouvre la boîte à gauche », « Q3 la ferme à droite — et le rectangle apparaît »). Au module 2, le DotPlot d'Embrun reçoit showQuartiles et showMedian : les repères sont posés SUR le nuage des individus, ce qui relie la position d'un quartile à un comptage de pastilles.",
+      "assessmentQuestionIds": ["bm-e2"],
+      "knowledgeItems": ["construire-boite", "resume-cinq-nombres"],
+      "notes": "PARTIALLY_COVERED, et c'est le point le plus discutable de la leçon. L'intitulé est « identifier médiane ET quartiles ». Sur la figure, l'élève identifie parfaitement les DEUX bords du rectangle et le trait vert — c'est enseigné et éprouvé (bm-e2). Mais ce que Q1 SIGNIFIE (un seuil de rang, « au moins 25 % de l'effectif lui est inférieur ou égal ») n'est jamais établi ici : la leçon le déclare acquis (priorKnowledge « quartile ») et le module 0 le DIAGNOSTIQUE comme prérequis (bm-d2, bm-d5). Or aucune leçon de collège ne l'enseigne (voir lessonLevel.prerequisiteGaps). Un élève qui n'a jamais rencontré la notion sort de la leçon en sachant OÙ est Q1 sur une figure, sans savoir CE QU'IL EST — ce qui suffit pour lire une boîte mais pas pour en construire une à partir d'une série brute, alors que la brique construire-boite le lui demande à l'étape 1 (« ranger la série, calculer les cinq nombres »). Cette étape-là de la méthode n'est ni manipulée ni éprouvée.",
+      "crossGrade": { "overlapsWith": ["2de:statistiques-une-variable-2nde"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_boites-a-moustaches-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "ce-que-chaque-zone-raconte", "step": 2, "mechanism": "brick:lire-dispersion" },
+        { "module": 2, "moduleSlug": "ce-que-chaque-zone-raconte", "step": 2, "mechanism": "question:NumericQuestion (écart interquartile d'Embrun)" },
+        { "module": 5, "moduleSlug": "atelier-lire-des-boites", "step": 1, "mechanism": "question:NumericQuestion (IQ du serveur A)" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e3" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e5" }
+      ],
+      "manipulation": "AUCUNE manipulation propre. La brique lire-dispersion est posée sous les cinq nombres d'Embrun affichés depuis l'étape 1, sans geste préalable ; c'est le BoxPlot statique du module 2 qui sert de support. La seule chose que l'élève « fait », c'est répondre.",
+      "assessmentQuestionIds": ["bm-e3", "bm-e5"],
+      "knowledgeItems": ["lire-dispersion"],
+      "notes": "COVERED malgré l'absence de geste, parce que le couple étendue / écart interquartile est établi (brique AVANT la question, ordre source correct), éprouvé deux fois sur des valeurs différentes, et surtout parce que le PIÈGE est traité frontalement : l'explainFor de la NumericQuestion distingue explicitement la réponse 29 (l'étendue) de la réponse attendue 12 (l'écart interquartile), et l'atelier rejoue le contraste sur le serveur A (IQ 60 ms contre étendue 780 ms — vérifié : 240−180 = 60, 900−120 = 780). Deux épreuves du boss (bm-e3 étendue 29, bm-e5 IQ 12) sur la même boîte forcent la distinction. Valeurs vérifiées : Embrun {6, 13, 17,5, 25, 35}, étendue 29, IQ 12.",
+      "crossGrade": { "overlapsWith": ["4e:statistiques-4e", "3e:statistiques-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_boites-a-moustaches-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "ce-que-chaque-zone-raconte", "step": 1, "mechanism": "manipulation:PredictionChips + DotPlot(showQuartiles)" },
+        { "module": 2, "moduleSlug": "ce-que-chaque-zone-raconte", "step": 1, "mechanism": "brick:zones-quart" },
+        { "module": 2, "moduleSlug": "ce-que-chaque-zone-raconte", "step": 1, "mechanism": "question:TapQuestion (moustache droite d'Embrun)" },
+        { "module": 2, "moduleSlug": "ce-que-chaque-zone-raconte", "step": 3, "mechanism": "question:TapQuestion (Brest 4 °C contre Embrun 12 °C)" },
+        { "module": 4, "moduleSlug": "choisir-le-bon-indicateur", "step": 3, "mechanism": "brick:mem-boite" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e4" }
+      ],
+      "manipulation": "Pas de manipulation au sens fort : un pari (PredictionChips « plus large = plus de monde ? ») et une FIGURE À COMPTER. Le DotPlot d'Embrun porte ses repères de quartiles, et la brique zones-quart — conditionnée à `pred` (donc révélée dès que l'élève a parié, avant la question) — demande explicitement de COMPTER les pastilles à droite de Q3 puis celles entre Q1 et la médiane. C'est un geste de comptage à l'œil, pas une action sur l'objet.",
+      "assessmentQuestionIds": ["bm-e4", "bm-e5"],
+      "knowledgeItems": ["zones-quart", "mem-boite", "lire-dispersion"],
+      "notes": "COVERED : la misconception la plus fréquente (zone large = zone peuplée) est attaquée par un pari recueilli sans verdict, puis tranchée par un comptage vérifiable, puis nommée par une brique posée AVANT la question qui l'exige, puis mesurée par bm-e4. Vérification numérique du comptage proposé : Embrun compte 7 relevés strictement au-dessus de Q3 = 25 (et 8 à partir de 25 inclus) sur 30, soit bien « environ un quart » comme l'affirme l'explain (« ~8 des 30 jours ») ; entre Q1 = 13 et la médiane 17,5 on en compte 7 également — le comptage demandé par la brique tombe donc juste. Réserve : le nuage est statique, l'élève ne peut pas surligner une zone ni voir le compte s'afficher ; la vérification repose sur sa bonne volonté à compter des pastilles.",
+      "crossGrade": { "overlapsWith": ["3e:statistiques-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_boites-a-moustaches-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 1, "mechanism": "manipulation:bascule axe commun / échelles séparées (BoxPlot)" },
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 1, "mechanism": "brick:axe-commun" },
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 2, "mechanism": "question:BatchChoiceQuestion (4 lignes, 3 villes)" },
+        { "module": 5, "moduleSlug": "atelier-lire-des-boites", "step": 2, "mechanism": "question:TapQuestion (deux classes, même médiane)" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e7" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e8" }
+      ],
+      "manipulation": "La deuxième vraie manipulation de la leçon : deux boutons « Axe commun (correct) » / « Chaque boîte à son échelle » ; le premier rend un seul BoxPlot à trois séries sur domain {4 ; 37}, le second rend TROIS BoxPlot séparés sans domain, donc chacun recalcule son échelle sur sa propre étendue et occupe toute la largeur. L'étape ne se valide qu'après avoir vu les DEUX modes (seenBoth.size ≥ 2), et la bascule reste active ensuite (« Rebascule autant que tu veux »). C'est une manipulation authentique : le même jeu de données produit deux figures contradictoires, et c'est le geste qui fait mentir la figure.",
+      "assessmentQuestionIds": ["bm-e7", "bm-e8"],
+      "knowledgeItems": ["axe-commun", "mediane-ne-dit-pas-tout", "interpreter-contexte"],
+      "notes": "COVERED. L'axe commun est LA condition de toute comparaison, et elle est éprouvée par le geste plutôt que décrétée. La BatchChoiceQuestion de l'étape 2 fait comparer quatre facettes différentes (médiane la plus haute → Toulouse 24 ; la plus régulière → Brest IQ 4 ; étendue la plus grande → Embrun 29 ; jour le plus chaud → Embrun 35), toutes vérifiées. L'atelier ajoute le cas difficile (deux séries de MÊME médiane 12 mais dispersions opposées, IQ 6 contre 2 — vérifié) que la comparaison des seules médianes ne distingue pas.",
+      "crossGrade": { "overlapsWith": ["4e:statistiques-4e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_boites-a-moustaches-2nde_P6": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 2, "mechanism": "question:BatchChoiceQuestion ligne r1 et ligne r4" },
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 3, "mechanism": "brick:mediane-ne-dit-pas-tout" },
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 3, "mechanism": "question:TapQuestion (le touriste)" },
+        { "module": 5, "moduleSlug": "atelier-lire-des-boites", "step": 1, "mechanism": "question:TapQuestion (serveur A, médiane la plus basse)" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e6" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e7" }
+      ],
+      "manipulation": "Aucune manipulation dédiée : le porteur est la bascule d'axe du module 3 étape 1, qui met les trois boîtes sur la même échelle et rend les trois médianes comparables d'un coup d'œil. Le reste est un enchaînement question → brique → question.",
+      "assessmentQuestionIds": ["bm-e6", "bm-e7"],
+      "knowledgeItems": ["mediane-ne-dit-pas-tout", "axe-commun"],
+      "notes": "COVERED grâce au CONTRE-EXEMPLE d'Embrun, qui est le vrai apport pédagogique : médiane la plus basse (17,5) ET maximum le plus haut (35) — vérifié, et verrouillé par un test de data.test.js. L'ordre source est correct : la ligne r4 de la BatchChoiceQuestion fait CONSTATER le cas à l'étape 2, la brique mediane-ne-dit-pas-tout le pose comme règle en tête de l'étape 3, la TapQuestion du touriste l'exige ensuite. Deux épreuves du boss (bm-e6 sur le sens correct de la comparaison, bm-e7 sur la compatibilité médiane basse / maximum haut) le mesurent sur des valeurs neuves.",
+      "crossGrade": { "overlapsWith": ["4e:statistiques-4e", "3e:statistiques-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_boites-a-moustaches-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "ce-que-chaque-zone-raconte", "step": 3, "mechanism": "question:TapQuestion (Brest 4 °C contre Embrun 12 °C)" },
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 1, "mechanism": "manipulation:bascule axe commun / échelles séparées" },
+        { "module": 3, "moduleSlug": "trois-villes-un-axe", "step": 2, "mechanism": "question:BatchChoiceQuestion lignes r2 et r3" },
+        { "module": 4, "moduleSlug": "choisir-le-bon-indicateur", "step": 3, "mechanism": "question:TapQuestion (festival en plein air)" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e8" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e9" }
+      ],
+      "manipulation": "Le geste porteur reste la bascule d'axe : c'est précisément quand les échelles sont séparées que les DISPERSIONS deviennent incomparables (les trois boîtes occupent la même largeur alors que leurs IQ valent 4, 6 et 12 °C). La comparaison Brest/Embrun du module 2 étape 3 est en revanche un BoxPlot statique à deux séries.",
+      "assessmentQuestionIds": ["bm-e8", "bm-e9"],
+      "knowledgeItems": ["lire-dispersion", "axe-commun", "zones-quart", "choisir-indicateur"],
+      "notes": "COVERED. La dispersion est comparée sur deux registres complémentaires : la LARGEUR DU RECTANGLE (module 2 étape 3, Brest 4 °C contre Embrun 12 °C — vérifié) et la LONGUEUR TOTALE (l'étendue, ligne r3). Le distracteur « Brest a moins de jours de relevé » de la TapQuestion vise l'erreur effectif/dispersion, et l'explain rappelle que les deux séries comptent bien 30 relevés. La question du festival (module 4 étape 3) éprouve la compétence en contexte, avec la bonne réponse « faible dispersion » plutôt que « médiane la plus haute ».",
+      "crossGrade": { "overlapsWith": ["3e:statistiques-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_boites-a-moustaches-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "choisir-le-bon-indicateur", "step": 1, "mechanism": "manipulation:quatre questions × trois villes, verdict par question" },
+        { "module": 4, "moduleSlug": "choisir-le-bon-indicateur", "step": 1, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "choisir-le-bon-indicateur", "step": 1, "mechanism": "brick:choisir-indicateur" },
+        { "module": 4, "moduleSlug": "choisir-le-bon-indicateur", "step": 2, "mechanism": "question:BatchChoiceQuestion (4 associations question ↔ indicateur)" },
+        { "module": 4, "moduleSlug": "choisir-le-bon-indicateur", "step": 3, "mechanism": "brick:mem-boite" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e9" }
+      ],
+      "manipulation": "Manipulation légère mais réelle : quatre questions (« où fait-il le plus chaud ? », « où est-ce le plus prévisible ? », « où le jour le plus chaud ? », « où le plus grand écart ? ») et, pour chacune, trois boutons-villes. Dès qu'une ville est désignée, la carte se colore et une ligne apparaît : « On regarde LA MÉDIANE LA PLUS HAUTE → Toulouse, médiane 24 °C ». L'étape se valide quand les quatre questions ont une réponse (juste ou non) et les réponses restent modifiables ensuite (« Tu peux changer tes réponses »). Le point vécu : trois villes, quatre questions, TROIS réponses différentes — il n'y a pas de « meilleure » série dans l'absolu.",
+      "assessmentQuestionIds": ["bm-e9"],
+      "knowledgeItems": ["choisir-indicateur", "mem-boite"],
+      "notes": "COVERED, et c'est le module qui justifie le mieux son étiquette « manipulation » après le module 1. La brique choisir-indicateur est conditionnée à done1, donc posée après le geste et avant la BatchChoiceQuestion qui l'exige. La demande n'est pas devinable de son énoncé : les quatre lignes de l'étape 2 opposent des indicateurs de POSITION et de DISPERSION sur des formulations proches, et bm-e9 transpose la compétence hors du contexte météo (des pièces d'usine « les plus régulières »). Réserve mineure : le verdict par question est immédiat (vert/rouge dès le clic), ce qui autorise à balayer les trois villes jusqu'au vert sans raisonner.",
+      "crossGrade": { "overlapsWith": ["4e:statistiques-4e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_boites-a-moustaches-2nde_P9": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "choisir-le-bon-indicateur", "step": 3, "mechanism": "question:TapQuestion (festival en plein air)" },
+        { "module": 5, "moduleSlug": "atelier-lire-des-boites", "step": 1, "mechanism": "question:TapQuestion (deux serveurs)" },
+        { "module": 5, "moduleSlug": "atelier-lire-des-boites", "step": 1, "mechanism": "brick:interpreter-contexte" },
+        { "module": 5, "moduleSlug": "atelier-lire-des-boites", "step": 1, "mechanism": "question:NumericQuestion (IQ du serveur A)" },
+        { "module": 5, "moduleSlug": "atelier-lire-des-boites", "step": 2, "mechanism": "question:TapQuestion (deux classes, même médiane)" },
+        { "module": 6, "moduleSlug": "mission-finale-les-cinq-nombres", "step": null, "mechanism": "question:bm-e10" }
+      ],
+      "manipulation": "AUCUNE. Le module 5 est un practice_lab entièrement sans instrument : quatre BoxPlot statiques (serveurs A/B, classes X/Y) et trois questions. La brique interpreter-contexte est posée après la première réponse (a1), donc sans geste préalable — elle est établie par le texte, pas par l'action.",
+      "assessmentQuestionIds": ["bm-e10"],
+      "knowledgeItems": ["interpreter-contexte", "mediane-ne-dit-pas-tout"],
+      "notes": "COVERED parce que les contextes sont réellement variés et vont au-delà du cas facile : deux serveurs de médianes quasi égales (200 et 210 ms) que seule la queue distingue (900 contre 320 ms), deux classes de médiane IDENTIQUE (12) que seule la dispersion distingue (IQ 6 contre 2 — vérifié sur les séries reconstruites par `fromFive`), et un organisateur de festival dont le critère est la prévisibilité. La brique arrive AVANT la NumericQuestion qui la mobilise (ordre source correct), et bm-e10 rejoue le cas des serveurs. Réserve : la brique interpreter-contexte ne respecte pas « geste → brique » ; le geste équivalent (la bascule d'axe, le choix d'indicateur) est ailleurs, ce qui suffit ici mais fragilise le module 5 pris isolément.",
+      "crossGrade": { "overlapsWith": ["4e:statistiques-4e"], "kind": "extension" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "manipulationVerdict": "VERDICT SUR LA MANIPULATION — la question posée : l'élève MANIPULE-t-il, ou lit-il des boîtes pré-dessinées ? Réponse : les deux, dans un rapport d'environ un tiers / deux tiers. `boites-a-moustaches-2nde/components/` n'existe pas (répertoire absent, pas seulement vide) : toutes les figures viennent de la bibliothèque partagée `apps/web/src/lessons/common/stats/`, et les deux composants utilisés — BoxPlot.jsx et DotPlot.jsx — sont PUREMENT PRÉSENTATIONNELS. Vérifié par lecture intégrale : aucun onClick, aucun onPointerDown, aucun handle, aucun état interne, aucune prop de rappel. Ce sont des fonctions valeurs → SVG. Aucun élève ne peut donc DÉPLACER une moustache, TIRER un bord de rectangle, ni CONSTRUIRE une boîte en posant des repères sur un axe vierge. Ce qu'il fait réellement, ce sont TROIS interactions inline pilotées par des boutons dans les modules : (1) module 1 étape 1, la révélation progressive — cinq clics qui font apparaître min, max, médiane, Q1 puis Q3 et voient le rectangle se fermer ; c'est la plus forte, la figure est FABRIQUÉE et non montrée, avec un bouton « Recommencer » qui rejoue la construction ; (2) module 3 étape 1, la bascule axe commun / échelles séparées — deux boutons qui rendent la MÊME donnée sous deux figures contradictoires ; c'est une vraie manipulation conceptuelle, l'élève provoque lui-même le mensonge graphique ; (3) module 4 étape 1, quatre questions × trois boutons-villes avec verdict et indicateur affichés à chaque clic — manipulation légère, à mi-chemin de la question à choix multiples. Les modules 2 et 5 n'ont AUCUNE interaction : quatre BoxPlot statiques et des questions (le PredictionChips du module 2 est un pari, pas un instrument). CONSÉQUENCE SUR LES STATUTS : la lecture est enseignée par le geste (P1 COVERED sans réserve, P5 et P8 COVERED via les bascules), mais tout ce qui touche à la DISPERSION et à l'INTERPRÉTATION (P3, P4, P9) repose sur des figures qu'on regarde, avec une brique posée sans geste préalable ; aucun de ces LP ne tombe pour autant en dessous de COVERED, parce que la brique précède toujours la question qui l'exige et que les questions attaquent les vraies misconceptions plutôt que des variantes faciles. Le seul LP dégradé est P2, et pour une raison de PRÉREQUIS, pas de manipulation. Une manipulation qui manque et qui changerait la leçon : construire une boîte en plaçant soi-même les cinq repères sur un axe, avec vérification — la brique construire-boite énonce une méthode en quatre étapes que l'élève n'exécute jamais dans le sens « série brute → figure ».",
+    "prerequisiteGaps": [
+      {
+        "notion": "quartile (Q1, Q3) et écart interquartile",
+        "declaredAs": "priorKnowledge dans lesson.config.js : ['serie-statistique', 'effectif', 'ordre-nombres', 'mediane-stat', 'quartile', 'etendue', 'dispersion', 'indicateur-stat', 'moyenne']",
+        "testedAsPriorBy": ["bm-d2", "bm-d5"],
+        "questionDetail": "bm-d2 (module 0, skill 'position', requires ['quartile', 'effectif', 'ordre-nombres']) : « Q1 est un seuil tel qu'au moins… de l'effectif lui est inférieur ou égal » — options 25 % / 50 % / 75 %. C'est la DÉFINITION du premier quartile, demandée comme un acquis. bm-d5 (skill 'dispersion', requires ['quartile', 'etendue', 'dispersion']) : « Q1 = 12 et Q3 = 25. L'écart interquartile vaut… » — le calcul Q3 − Q1 est lui aussi supposé connu à l'entrée.",
+        "collegeReality": "CONFIRMÉ par lecture des lesson.config.js du collège (constat déjà établi par deux autres agents, enregistré ici sans être rejugé). Le programme officiel de 3e inclut « Quartiles » et « Boîtes à moustaches », mais la leçon construite `college/3e/donnees_probabilites/statistiques-3e/lesson.config.js` les met en teachingScope.exclude : ['Quartiles et diagrammes en boîte', 'Écart type et variance', 'Séries regroupées en classes d'amplitude', 'Fréquences cumulées'] — et n'en enseigne rien. La 4e les exclut à son tour en les renvoyant à la 3e : `college/4e/donnees_probabilites/statistiques-4e/lesson.config.js` exclut « Les quartiles et l'écart interquartile (3e) » et « La boîte à moustaches (3e) ». Aucune leçon de collège livrée n'enseigne donc le quartile.",
+        "mitigation": "PARTIELLE, et interne à la 2nde : la leçon `statistiques-une-variable-2nde` du MÊME chapitre les enseigne (teachingScope.include : « Médiane (demi-somme centrale si n pair) ; quartiles Q1 et Q3 aux rangs ⌈n/4⌉ et ⌈3n/4⌉ », items de carte 'quartiles' et 'etendue-interquartile'), et le catalogue la place AVANT boites-a-moustaches (packages/core/curriculum/coursesData.js, clés seconde_statistiques_une_variable ligne 2186 puis seconde_boites_a_moustaches ligne 2232). Le commentaire du lesson.config.js l'assume explicitement : « ici on les DESSINE, on ne les calcule plus ». La séquence de 2nde est donc cohérente si elle est suivie dans l'ordre.",
+        "consequence": "Le trou est RÉEL mais localisé. Il est de deux natures. (1) Verticalement : un élève arrivant de 3e n'a jamais rencontré le mot « quartile » — la rupture est entre le collège et le lycée, pas dans cette leçon. (2) Latéralement : la leçon n'est PAS autonome. Un élève qui l'ouvre sans avoir fait statistiques-une-variable-2nde échoue à bm-d2 et bm-d5 sans être bloqué (le diagnostic n'est jamais bloquant), puis traverse toute la leçon en manipulant des repères dont il ignore la définition. LP touchés : P2 « Identifier médiane et quartiles » est déclassé en PARTIALLY_COVERED pour cette raison précise — l'élève identifie la POSITION de Q1 sur la figure sans que la leçon ne dise jamais ce qu'est Q1. P3 et P4 sont moins exposés : l'écart interquartile y est redéfini par le geste (« la largeur du rectangle ») indépendamment de la définition par rang, et le quart d'effectif par zone est reconstruit par comptage au module 2. Correctif minimal, sans toucher au périmètre : ajouter au module 1 une brique de rappel (variant 'known') qui redonne la définition par rang de Q1 et Q3 avant la révélation, ou déclarer explicitement statistiques-une-variable-2nde comme prérequis bloquant."
+      }
+    ],
+    "officialScopeNotCovered": [],
+    "pedagogicalProblems": [
+      "Deux des cinq modules d'apprentissage (2 et 5) n'ont AUCUNE interaction : le module 2 se compose d'un pari (PredictionChips), de deux figures statiques et de trois questions ; le module 5 de quatre BoxPlot statiques et de trois questions. Le module 2 est pourtant étiqueté stage 'discovery' et porte à lui seul P3 et P4. Le comptage de pastilles que la brique zones-quart demande (« Compte les pastilles du nuage à droite de Q3 ») n'est vérifié par rien : aucun compteur, aucun surlignage de zone, aucune validation. L'élève peut passer outre.",
+      "La brique construire-boite (module 1) énonce une méthode en quatre étapes dont la première est « Ranger la série, calculer les cinq nombres » — un geste que la leçon exclut de son périmètre et que l'élève n'exécute donc jamais. Le sens de lecture « série brute → figure » n'est manipulé qu'à moitié (les cinq nombres sont RÉVÉLÉS, pas calculés), et jamais éprouvé : aucune question, ni dans les modules ni au boss, ne part d'une liste de valeurs pour demander la boîte.",
+      "Le module 0 diagnostique comme prérequis une notion que le collège construit n'enseigne pas (voir prerequisiteGaps). Les questions bm-d2 et bm-d5 mesurent donc, pour un élève venu directement de 3e, un acquis inexistant — sans conséquence bloquante, mais sans rattrapage non plus.",
+      "Le module 4 étape 1 affiche un verdict immédiat (bordure verte ou rouge) à chaque clic sur une ville, et permet de changer sa réponse indéfiniment. Un élève peut donc balayer les trois villes jusqu'au vert sans jamais choisir un indicateur. La conséquence visuelle utile (« On regarde la médiane la plus haute → Toulouse ») s'affiche aussi bien après un clic au hasard qu'après un raisonnement.",
+      "Aucune épreuve du boss ne fait produire ou choisir une FIGURE : les dix épreuves sont des QCM textuels, alors que la compétence centrale de la leçon est graphique. Le contraste avec bm-e4 (« la moustache droite est deux fois plus longue que la gauche ») est net : la question décrit une figure au lieu de la montrer."
+    ],
+    "technicalProblems": [
+      "AUCUN gel de laboratoire. Le grep `disabled={done` / `disabled={d[0-9]` sur les sept modules ne renvoie que deux occurrences, toutes deux sur PredictionChips (Module01CinqNombresSuffisent.jsx:56 `disabled={done1}` et Module02CeQueChaqueZoneRaconte.jsx:42 `disabled={q1}`) : c'est le verrouillage voulu d'un PARI après coup, pas le gel d'un instrument. Les trois interactions réelles (révélation, bascule d'axe, choix par question) restent pleinement utilisables après validation de leur étape, et le module 1 offre même un bouton « Recommencer » explicite.",
+      "AUCUN import de kit manquant. Vérification exhaustive des sept modules pour KnowledgeBrick, TapQuestion, NumericQuestion, BatchChoiceQuestion, PredictionChips, ContentModule, BossFinal, PrerequisiteDiagnostic, Feedback, KnowledgeSnapshot et MathText : tout composant rendu est importé.",
+      "Imports morts (sans conséquence à l'exécution) : `formatNumber` est importé de common/stats dans Module01CinqNombresSuffisent.jsx (ligne 5), Module02CeQueChaqueZoneRaconte.jsx (ligne 5) et Module03TroisVillesUnAxe.jsx (ligne 5) sans jamais être appelé dans aucun des trois.",
+      "`ATELIER_BOITES` est exporté par data.js (les cinq nombres des deux serveurs) mais n'est importé nulle part : le module 5 redéfinit les mêmes valeurs en dur via son helper local `fromFive`. Donnée dupliquée, et donc non couverte par data.test.js — si l'une des deux copies bougeait, rien ne le signalerait.",
+      "Aucun défaut mathématique. Vérifications numériques indépendantes (via statsUtils, convention ⌈kn/4⌉) : Brest {14, 17, 19, 21, 24}, étendue 10, IQ 4 ; Toulouse {16, 21, 24, 27, 32}, étendue 16, IQ 6 ; Embrun {6, 13, 17,5, 25, 35}, étendue 29, IQ 12 ; Embrun compte 7 relevés au-dessus de Q3 = 25 et 7 entre Q1 = 13 et la médiane 17,5, ce qui valide le « environ un quart » de l'explain du module 2 ; séries reconstruites du module 5 : serveur A {120, 180, 200, 240, 900} (IQ 60, étendue 780), serveur B {150, 190, 210, 230, 320}, classe X {4, 9, 12, 15, 20} (IQ 6), classe Y {8, 11, 12, 13, 16} (IQ 2). Toutes les valeurs citées dans les énoncés, les explain et les épreuves du boss tombent juste."
+    ],
+    "duplicates": [
+      "Pas de duplication avec `statistiques-une-variable-2nde` : le découpage est net et déclaré des deux côtés. Cette leçon-là calcule médiane, quartiles et écart interquartile et exclut « Tracé et lecture d'une boîte à moustaches » ; celle-ci les DESSINE et exclut « Calcul des quartiles et de la médiane, conventions de rang ». Le risque n'est pas la redite mais le contraire : la charnière entre les deux n'est pas rappelée à l'élève (aucune brique 'known' ne réactive la définition de Q1 au module 1).",
+      "Recouvrement volontaire avec `4e:statistiques-4e` sur « comparer deux séries en choisissant le résumé qui répond à la question posée » : le module 4 rejoue cette compétence de 4e sur un nouvel outil graphique. C'est de la consolidation, pas un doublon — le 4e la traite sur moyenne/médiane/étendue, la 2nde y ajoute l'écart interquartile et la lecture sur figure.",
+      "Aucun recouvrement avec les trois autres leçons du lot (tableaux croisés, fréquences conditionnelles, probabilités conditionnelles) : elles portent sur des variables croisées, celle-ci sur une variable unique. Aucun item de carte n'est partagé."
+    ],
+    "recommendations": [
+      "Ajouter une manipulation de CONSTRUCTION au module 1 ou 2 : un axe gradué vierge sur lequel l'élève pose lui-même les cinq repères (ou règle cinq curseurs) jusqu'à faire coïncider sa boîte avec celle de la série affichée, validée comme un BuildCheck. C'est le geste qui manque, et il fermerait la brique construire-boite qu'aucune demande n'éprouve aujourd'hui.",
+      "Combler le trou du quartile sans changer le périmètre : ajouter au module 1, avant la révélation, une KnowledgeBrick variant 'known' rappelant la définition par rang de Q1 et Q3 (⌈n/4⌉, ⌈3n/4⌉), avec un renvoi explicite à statistiques-une-variable-2nde. Cela ferait passer P2 en COVERED.",
+      "Rendre le comptage du module 2 vérifiable : un bouton qui surligne dans le DotPlot les pastilles d'une zone choisie et en affiche l'effectif. La règle « chaque zone = un quart » deviendrait un constat produit par l'élève au lieu d'une affirmation à croire.",
+      "Ajouter au boss une épreuve GRAPHIQUE (choisir, parmi quatre boîtes, celle qui correspond à un résumé de cinq nombres donné, ou l'inverse), pour mesurer la compétence dans le registre où elle est enseignée.",
+      "Supprimer les trois imports morts de `formatNumber` (Module01 ligne 5, Module02 ligne 5, Module03 ligne 5) et faire consommer `ATELIER_BOITES` par le module 5 au lieu de redéfinir ses valeurs en dur."
+    ],
+    "verticalPositioning": {
+      "revised": "La série statistique, l'effectif et l'ordre des valeurs (3e/statistiques-3e, 6e pour le rangement) ; la MÉDIANE, installée en 4e (statistiques-4e : « la médiane comme valeur qui partage la série en deux moitiés de même taille », aux deux parités) et reprise en 3e ; l'ÉTENDUE, définie en 4e (« écart entre la plus grande et la plus petite valeur ») et en 3e ; l'idée qu'on choisit un résumé selon la question posée, déjà travaillée en 4e — le module 4 en est la reprise directe sur un nouvel outil.",
+      "extended": "La comparaison de deux séries, que la 4e menait sur des indicateurs isolés, devient une comparaison de SILHOUETTES sur un axe commun : on ne compare plus deux nombres mais deux formes, position et étalement simultanément. L'étendue, connue depuis la 4e comme un calcul, devient une longueur qui se lit d'une pointe de moustache à l'autre.",
+      "new": "La boîte à moustaches elle-même et son protocole de tracé ; le RÉSUMÉ DES CINQ NOMBRES comme objet (et le fait qu'il n'y entre ni moyenne ni écart type) ; le découpage de l'effectif en quatre quarts et la dissociation LARGEUR ↔ EFFECTIF, qui est la vraie difficulté cognitive du chapitre ; l'écart interquartile lu comme la largeur du rectangle ; l'axe commun comme condition de validité d'une comparaison graphique ; le contre-exemple médiane basse / maximum haut.",
+      "formalized": "Rien n'est formalisé ici au sens strict : les quartiles sont supposés déjà définis par statistiques-une-variable-2nde et cette leçon ne pose aucune définition nouvelle par rang. Ce qui se formalise est GRAPHIQUE : la correspondance biunivoque entre cinq nombres et une figure, et le vocabulaire « rectangle / moustaches / zones » qui permet d'en parler.",
+      "tool": "La leçon livre l'instrument de COMPARAISON de distributions, réutilisé partout ensuite : en 2nde même pour opposer des séries en classes (series-regroupees-classes-2nde), en première pour comparer des échantillons, et dans toute lecture de données réelles. Elle prépare aussi l'écart type comme second indicateur de dispersion, en ayant d'abord installé un indicateur ROBUSTE (l'écart interquartile) et l'idée que position et dispersion sont deux questions distinctes."
+    }
+  }
+}

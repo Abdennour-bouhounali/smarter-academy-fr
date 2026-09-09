@@ -1,0 +1,385 @@
+{
+ "lesson": "loi-grands-nombres-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "session-principale",
+ "learningPoints": {
+  "seconde_loi-grands-nombres-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "lance-et-regarde",
+     "step": 1,
+     "mechanism": "manipulation:SimulationLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "lance-et-regarde",
+     "step": 1,
+     "mechanism": "brick:experience-simulation"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "lance-et-regarde",
+     "step": 2,
+     "mechanism": "question:M01-S2-Q1"
+    }
+   ],
+   "manipulation": "SimulationLab — chaque lancer est réellement calculé (générateur mulberry32, graine renouvelée) : « Relancer » produit une vraie nouvelle série, ce n'est pas un bouton décoratif",
+   "assessmentQuestionIds": [
+    "lgn-e9"
+   ],
+   "knowledgeItems": [
+    "experience-simulation",
+    "frequence-observee"
+   ],
+   "notes": "Vérifié dans le composant : le hasard est effectif, donc l'élève observe une variabilité authentique et non une animation scriptée. C'est la condition pour que la fluctuation ait un sens.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_loi-grands-nombres-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "deux-series-jamais-pareilles",
+     "step": 1,
+     "mechanism": "manipulation:FluctuationBoard"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "deux-series-jamais-pareilles",
+     "step": 1,
+     "mechanism": "brick:fluctuation"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "deux-series-jamais-pareilles",
+     "step": 2,
+     "mechanism": "question:M02-S2-Q1"
+    }
+   ],
+   "manipulation": "FluctuationBoard — deux séries lancées côte à côte, jamais identiques",
+   "assessmentQuestionIds": [
+    "lgn-e3",
+    "lgn-e5"
+   ],
+   "knowledgeItems": [
+    "fluctuation"
+   ],
+   "notes": "L'indépendance des répétitions est montrée par la juxtaposition de deux séries, puis nommée par la brique mem-independance en M3.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_loi-grands-nombres-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "lance-et-regarde",
+     "step": 1,
+     "mechanism": "manipulation:SimulationLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "lance-et-regarde",
+     "step": 1,
+     "mechanism": "brick:frequence-observee"
+    }
+   ],
+   "manipulation": "SimulationLab affiche la fréquence observée après chaque série",
+   "assessmentQuestionIds": [
+    "lgn-e1"
+   ],
+   "knowledgeItems": [
+    "frequence-observee"
+   ],
+   "notes": "Le calcul de la fréquence est le sous-produit immédiat du geste : nombre de succès sur nombre de lancers, recalculé sous les yeux de l'élève.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_loi-grands-nombres-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "deux-series-jamais-pareilles",
+     "step": 1,
+     "mechanism": "manipulation:FluctuationBoard"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "deux-series-jamais-pareilles",
+     "step": 1,
+     "mechanism": "brick:fluctuation"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "ce-que-la-loi-dit-vraiment",
+     "step": 1,
+     "mechanism": "manipulation:GapExplorer"
+    }
+   ],
+   "manipulation": "FluctuationBoard puis GapExplorer (l'écart à la probabilité selon la taille de la série)",
+   "assessmentQuestionIds": [
+    "lgn-e6",
+    "lgn-e7"
+   ],
+   "knowledgeItems": [
+    "fluctuation",
+    "deux-ecarts"
+   ],
+   "notes": "La fluctuation est ÉPROUVÉE avant d'être expliquée : sur 10 lancers la fréquence tombe n'importe où, ce que le commentaire du composant énonce comme l'observation attendue.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_loi-grands-nombres-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "ce-que-la-loi-dit-vraiment",
+     "step": 1,
+     "mechanism": "manipulation:GapExplorer"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "ce-que-la-loi-dit-vraiment",
+     "step": 1,
+     "mechanism": "brick:deux-ecarts"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "ce-que-la-loi-dit-vraiment",
+     "step": 3,
+     "mechanism": "brick:loi-grands-nombres"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "ce-que-la-loi-dit-vraiment",
+     "step": 3,
+     "mechanism": "question:M03-S3-Q1"
+    }
+   ],
+   "manipulation": "GapExplorer — on fait grandir n et on regarde l'écart à la probabilité se resserrer, l'écart ABSOLU et l'écart RELATIF étant distingués",
+   "assessmentQuestionIds": [
+    "lgn-e4",
+    "lgn-e5",
+    "lgn-e6"
+   ],
+   "knowledgeItems": [
+    "deux-ecarts",
+    "loi-grands-nombres"
+   ],
+   "notes": "La distinction des deux écarts (brique deux-ecarts) est ce qui empêche l'énoncé naïf « ça se rapproche » : c'est le vrai contenu de 2de sur ce sujet.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:probabilites-3e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_loi-grands-nombres-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "ce-que-la-loi-dit-vraiment",
+     "step": 1,
+     "mechanism": "manipulation:GapExplorer"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "ce-que-la-loi-dit-vraiment",
+     "step": 3,
+     "mechanism": "brick:loi-grands-nombres"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "ce-que-la-loi-dit-vraiment",
+     "step": 2,
+     "mechanism": "question:M03-S2-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "lgn-e2"
+   ],
+   "knowledgeItems": [
+    "loi-grands-nombres"
+   ],
+   "notes": "Le lien fréquence/probabilité est énoncé APRÈS l'exploration de l'écart, donc comme conclusion.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:probabilites-3e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_loi-grands-nombres-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-modele-est-il-bon",
+     "step": 1,
+     "mechanism": "manipulation:DiceDetector"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-modele-est-il-bon",
+     "step": 1,
+     "mechanism": "brick:modele-realite"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-modele-est-il-bon",
+     "step": 2,
+     "mechanism": "brick:methode-tester-modele"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-modele-est-il-bon",
+     "step": 2,
+     "mechanism": "question:M04-S2-Q1"
+    }
+   ],
+   "manipulation": "DiceDetector — décider si un dé observé est équilibré, c'est-à-dire confronter un modèle à des données",
+   "assessmentQuestionIds": [
+    "lgn-e7",
+    "lgn-e8",
+    "lgn-e10"
+   ],
+   "knowledgeItems": [
+    "modele-realite",
+    "methode-tester-modele"
+   ],
+   "notes": "C'est l'apport propre de la 2de sur ce chapitre : la 3e observe la stabilisation, la 2de s'en sert pour JUGER un modèle.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_loi-grands-nombres-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-modele-est-il-bon",
+     "step": 1,
+     "mechanism": "manipulation:DiceDetector"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-modele-est-il-bon",
+     "step": 1,
+     "mechanism": "brick:modele-realite"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-modele-est-il-bon",
+     "step": 2,
+     "mechanism": "question:M04-S2-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "lgn-e8",
+    "lgn-e10"
+   ],
+   "knowledgeItems": [
+    "modele-realite"
+   ],
+   "notes": "L'équiprobabilité présentée comme une HYPOTHÈSE qu'on peut mettre en défaut : le dé truqué du détecteur en est la contre-épreuve.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_loi-grands-nombres-2nde_P9": {
+   "status": "PARTIALLY_COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "simuler-en-python",
+     "step": 1,
+     "mechanism": "brick:lire-simulation"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "simuler-en-python",
+     "step": 2,
+     "mechanism": "question:M05-S2-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "simuler-en-python",
+     "step": 3,
+     "mechanism": "question:M05-S3-Q1"
+    }
+   ],
+   "manipulation": "Aucune : le script Python est affiché tel quel dans un <pre>, il n'est ni exécuté ni modifiable",
+   "assessmentQuestionIds": [
+    "lgn-e9"
+   ],
+   "knowledgeItems": [
+    "lire-simulation"
+   ],
+   "notes": "L'intitulé du LP est « UTILISER une simulation Python ou tableur ». Le module fait LIRE un script (la brique s'appelle d'ailleurs lire-simulation) et pose des questions sur ce qu'il produirait ; il ne fait ni exécuter, ni compléter, ni modifier. La compétence réellement enseignée est la lecture d'algorithme, pas l'usage d'une simulation. Le LP n'est donc pas couvert au sens de son intitulé — mais il n'est pas absent non plus : la simulation, elle, est bien vécue en M1 avec SimulationLab.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "P9 promet « utiliser une simulation Python ou tableur » et le module 5 n'offre qu'un script en lecture seule (Module05SimulerEnPython.jsx:32, un <pre> avec le code). Deux réparations possibles : rendre le script exécutable (ou au moins ses paramètres réglables), ou reformuler le LP en « lire et interpréter un algorithme de simulation », ce que la leçon fait réellement et bien.",
+   "La leçon n'a aucun module d'étape `manipulation` : deux modules sont étiquetés `practice_lab` (M4 et M5). Ce n'est pas une faute de contrat — l'ordre des étapes reste valide — mais le module 4, qui porte la vraie nouveauté de 2de (confronter modèle et réalité), est rangé comme un atelier d'application alors qu'il est un module de découverte.",
+   "P5 « observer la stabilisation des fréquences » est déjà un pointsToLearn de 3e_probabilites. La leçon ne le signale pas et le module 3 le pose comme neuf ; ce qui est réellement nouveau (les deux écarts, absolu et relatif) mériterait d'être ce que le déclencheur annonce."
+  ],
+  "technicalProblems": [
+   "Aucun laboratoire gelé, aucun composant du kit rendu sans import.",
+   "SimulationLab utilise un générateur pseudo-aléatoire à graine explicite (mulberry32) : le hasard est réel et reproductible, ce qui est le bon choix pour une leçon qui parle de fluctuation."
+  ],
+  "duplicates": [
+   "Avec 3e probabilites-3e, dont le pointsToLearn « la stabilisation des fréquences lorsque le nombre d'expériences augmente » recouvre P5 et P6."
+  ],
+  "verticalPositioning": {
+   "revised": "La fréquence observée et la stabilisation, déjà vues en 3e.",
+   "extended": "La simulation, qui passe de l'illustration à l'instrument de décision.",
+   "new": "La distinction modèle probabiliste / situation réelle, l'équiprobabilité comme HYPOTHÈSE réfutable, et la différence entre écart absolu et écart relatif.",
+   "formalized": "L'énoncé de la loi des grands nombres (brique loi-grands-nombres), et l'indépendance des répétitions.",
+   "tool": "La simulation devient l'outil de fonctions-en-python-2nde (leçon à écrire)."
+  },
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Utiliser une simulation Python ou tableur",
+    "taughtAnyway": false,
+    "evidence": "Module05SimulerEnPython.jsx:32 — le script est rendu dans un <pre>, sans exécution ni saisie",
+    "recommendation": "absent"
+   }
+  ],
+  "recommendations": [
+   "Rendre les paramètres du script Python réglables (nombre de répétitions, probabilité) et afficher le résultat, ou reformuler P9 pour dire ce que le module enseigne vraiment.",
+   "Faire du module 4 un module de découverte (stage `discovery` ou `manipulation`) : c'est là qu'est le contenu propre à la Seconde."
+  ]
+ }
+}

@@ -4,7 +4,7 @@
 
 ## 1. Identity & curriculum contract
 
-- Key `seconde_colinearite_et_alignement` · id `colinearite-alignement-2nde` (kept from the provisional catalogue) · 📐 · Difficile · free · 70 min.
+- Key `seconde_colinearite_et_alignement` · id `colinearite-alignement-2nde` (kept from the provisional catalogue) · 📐 · Difficile · free · 64 min.
 - Path `/courses/lycee/seconde/geometrie/colinearite-alignement-2nde` — first lesson of the Seconde « Géométrie » domain to be built (directory `apps/web/src/lessons/lycee/seconde/geometrie/`).
 - LPs (append-only, `seconde_colinearite-alignement-2nde_P1…P9`): P1 comprendre la colinéarité · P2 reconnaître deux vecteurs colinéaires · P3 proportionnalité des coordonnées · P4 calculer un déterminant · P5 déterminant ⇒ colinéarité · P6 trois points alignés · P7 deux droites parallèles · P8 problème d'alignement · P9 problème de parallélisme.
 - Prerequisites: « Vecteurs » (2nde, coming_soon) — coordinates of a vector, of AB, k·u, opposite vector. The diagnostic tests exactly those, never the lesson's own material.
@@ -33,7 +33,7 @@ Rejected candidates: (a) two moving drones with animated trajectories — animat
 
 Labels: vector names live in a DOM legend (never in SVG text, so overlapping arrows cannot produce overlapping labels); point names are placed by `labelLayout.placeLabels`, a pure collision-avoiding placer unit-tested on the whole grid of reachable positions.
 
-## 4. Module architecture (8 · 70 min)
+## 4. Module architecture (8 · 64 min)
 
 | # | Slug | Stage | LPs | min | Responsibility | Interaction |
 |---|---|---|---|---|---|---|

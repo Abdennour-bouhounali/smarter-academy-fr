@@ -1,0 +1,143 @@
+{
+  "lesson": "nombres-reels-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-nombres-calculs-batch",
+  "learningPoints": {
+    "seconde_nombres-reels-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-zoom-infini", "step": 1, "mechanism": "manipulation:ZoomLine" },
+        { "module": 1, "moduleSlug": "le-zoom-infini", "step": 2, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-zoom-infini", "step": 1, "mechanism": "brick:droite-reelle" },
+        { "module": 1, "moduleSlug": "le-zoom-infini", "step": 2, "mechanism": "brick:trois-comportements" },
+        { "module": 2, "moduleSlug": "les-familles-de-nombres", "step": 1, "mechanism": "manipulation:FamilySorter" },
+        { "module": 2, "moduleSlug": "les-familles-de-nombres", "step": 1, "mechanism": "brick:familles-emboitees" },
+        { "module": 2, "moduleSlug": "les-familles-de-nombres", "step": 2, "mechanism": "question:M02-S2-Q1" }
+      ],
+      "manipulation": "ZoomLine — zoom ×10 successif sur 1,5 / √2 / 1/3 / 2/8 / π ; la fenêtre, les chiffres, l'encadrement et le verdict « tombe pile » sont dérivés des chiffres exacts (longDivision / chaîne de décimales), jamais d'un flottant. Puis FamilySorter — huit nombres à ranger dans ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ, l'écriture décimale s'affiche au toucher.",
+      "assessmentQuestionIds": ["nr-e1", "nr-e2"],
+      "knowledgeItems": ["droite-reelle", "trois-comportements", "familles-emboitees", "decimal", "rationnel", "irrationnel"],
+      "notes": "Séquence exemplaire : le geste (zoom) précède le nom (bricks gated sur step2Done / sortDone), qui précède la demande (TapQuestion M01-S3-Q1, BatchChoiceQuestion M02-S2-Q1). « Tout réel est un point de la droite » est vécu comme un fait opératoire (le point existe à chaque niveau de zoom) plutôt qu'énoncé comme axiome de complétude — c'est le bon niveau pour la 2de. L'emboîtement des familles est manipulé (les boîtes sont décalées visuellement et FamilySorter écrit la chaîne d'appartenances). Les deux épreuves du boss ne sont pas devinables : e1 oppose 𝔻 ⊂ ℚ à sa réciproque, e2 piège « une racine est toujours irrationnelle » avec √36.",
+      "crossGrade": { "overlapsWith": ["3e:nombres-rationnels", "3e:racines-carrees"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_nombres-reels-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-zoom-infini", "step": 1, "mechanism": "manipulation:ZoomLine" },
+        { "module": 1, "moduleSlug": "le-zoom-infini", "step": 3, "mechanism": "brick:methode-encadrer-decimales" },
+        { "module": 1, "moduleSlug": "le-zoom-infini", "step": 3, "mechanism": "question:M01-S3-Q1" },
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 3, "mechanism": "manipulation:OrderingGame" },
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 3, "mechanism": "brick:methode-comparer-reels" }
+      ],
+      "manipulation": "ZoomLine (placement/lecture d'un réel entre deux graduations à toute précision) puis OrderingGame formative (ranger 1,4 ; 1,41 ; √2 ; 1,42 ; 3/2 sur une même droite).",
+      "assessmentQuestionIds": ["nr-e3", "nr-e10"],
+      "knowledgeItems": ["droite-reelle", "methode-encadrer-decimales", "methode-comparer-reels"],
+      "notes": "L'intitulé dit « représenter ». Le module 1 fait LIRE la position (l'élève zoome, la droite se redessine) et le module 5 fait ORDONNER des écritures hétérogènes sur la droite ; l'épreuve nr-e3 du boss donne une RealLine et demande l'encadrement lu dessus. En revanche l'élève ne PLACE jamais lui-même un point sur une droite vierge (aucune poignée déplaçable, aucun BuildCheck de placement) : le geste est « zoomer autour d'un point déjà tracé », pas « poser le point ». Facette la plus faible du LP, mais elle reste enseignée par la lecture réciproque ; je la retiens sous COVERED avec réserve plutôt que PARTIALLY_COVERED parce que l'objet officiel distingue « repérer » et « placer » et que le repérage, lui, est complet et éprouvé.",
+      "crossGrade": { "overlapsWith": ["3e:nombres-rationnels"], "kind": "consolidation" },
+      "confidence": "medium"
+    },
+    "seconde_nombres-reels-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "les-familles-de-nombres", "step": 1, "mechanism": "manipulation:FamilySorter" },
+        { "module": 2, "moduleSlug": "les-familles-de-nombres", "step": 1, "mechanism": "brick:decimal" },
+        { "module": 2, "moduleSlug": "les-familles-de-nombres", "step": 1, "mechanism": "brick:rationnel" },
+        { "module": 2, "moduleSlug": "les-familles-de-nombres", "step": 1, "mechanism": "brick:irrationnel" },
+        { "module": 3, "moduleSlug": "decimal-ou-pas", "step": 1, "mechanism": "manipulation:FractionExpander" },
+        { "module": 3, "moduleSlug": "decimal-ou-pas", "step": 1, "mechanism": "brick:regle-restes-division" },
+        { "module": 3, "moduleSlug": "decimal-ou-pas", "step": 2, "mechanism": "brick:regle-fraction-finie-ou-periodique" },
+        { "module": 3, "moduleSlug": "decimal-ou-pas", "step": 3, "mechanism": "question:M03-S3-Q1" }
+      ],
+      "manipulation": "FractionExpander — la division posée un chiffre à la fois avec la TRACE DES RESTES visible ; le reste 0 ferme la machine (3/8), le reste qui revient est encadré et la période soulignée (1/3, 2/7, 5/6). Le critère « décimal ⇔ dénominateur réduit sans facteur autre que 2 et 5 » est affiché comme conséquence, pas comme règle mémorisée.",
+      "assessmentQuestionIds": ["nr-e2", "nr-e4", "nr-e5"],
+      "knowledgeItems": ["decimal", "rationnel", "irrationnel", "regle-restes-division", "regle-fraction-finie-ou-periodique"],
+      "notes": "Le point le mieux traité de la leçon. Le module 3 ne se contente pas de classer : il DÉMONTRE que le troisième comportement est impossible pour une fraction (au plus q−1 restes non nuls, donc l'un revient forcément), et la question M03-S3-Q1 exige exactement ce raisonnement, avec des distracteurs qui ne se devinent pas de l'énoncé (« parce que 7 est impair », « parce que 2 < 7 »). Cela fonde ensuite l'irrationalité comme absence de fraction, sans faire la preuve pour √2 (correctement exclue vers la leçon Logique).",
+      "crossGrade": { "overlapsWith": ["3e:nombres-rationnels"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_nombres-reels-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "decimal-ou-pas", "step": 4, "mechanism": "brick:exact-approche" },
+        { "module": 3, "moduleSlug": "decimal-ou-pas", "step": 4, "mechanism": "question:M03-S4-Q2" },
+        { "module": 4, "moduleSlug": "exact-ou-approche", "step": 1, "mechanism": "manipulation:RoundingLab" },
+        { "module": 4, "moduleSlug": "exact-ou-approche", "step": 1, "mechanism": "brick:regle-aucun-decimal-nest-racine" },
+        { "module": 4, "moduleSlug": "exact-ou-approche", "step": 2, "mechanism": "brick:arrondi-troncature" },
+        { "module": 4, "moduleSlug": "exact-ou-approche", "step": 2, "mechanism": "question:M04-S2-Q1" },
+        { "module": 4, "moduleSlug": "exact-ou-approche", "step": 3, "mechanism": "question:M04-S3-Q2" }
+      ],
+      "manipulation": "RoundingLab — pousser la précision 10⁻ᵏ (k de 0 à 4) sur √2, π ou 2/3 ; l'encadrement, la troncature, l'arrondi et le CHIFFRE SUIVANT qui décide s'affichent côte à côte, et pour √2 le carré de l'arrondi (1,9881 ; 1,999396 ; 1,99996164) est calculé exactement par squareOfDecimal.",
+      "assessmentQuestionIds": ["nr-e6", "nr-e7"],
+      "knowledgeItems": ["exact-approche", "mem-exact-approche", "arrondi-troncature", "regle-aucun-decimal-nest-racine", "mem-exact-puis-arrondir"],
+      "notes": "Le panneau du carré est la meilleure idée de la leçon : la conviction « √2 = 1,414 » est détruite par le calcul, pas par une phrase. La distinction arrondi/troncature est vécue avant d'être nommée (le lab affiche « arrondi (chiffre suivant : 6) » pendant qu'on pousse k), et arrondi-troncature est posée en step 2 AVANT M04-S2-Q1 qui l'exige. Les distracteurs de M04-S2-Q1 (0,66 troncature, 0,7 dixième, 0,6667 dix-millième) sont tous des erreurs de méthode, pas des leurres arbitraires. Le boss e7 (25π contre 78,5) mesure la même chose sur un contexte neuf.",
+      "crossGrade": { "overlapsWith": ["3e:racines-carrees"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_nombres-reels-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 1, "mechanism": "manipulation:SquareBracketer" },
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 2, "mechanism": "manipulation:SquareBracketer" },
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 2, "mechanism": "brick:methode-encadrer-racine" },
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 3, "mechanism": "manipulation:OrderingGame" },
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 4, "mechanism": "question:M05-S4-Q1" },
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 4, "mechanism": "brick:regle-sens-arrondi" },
+        { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 4, "mechanism": "question:M05-S4-Q2" },
+        { "module": 1, "moduleSlug": "le-zoom-infini", "step": 3, "mechanism": "brick:methode-encadrer-decimales" }
+      ],
+      "manipulation": "SquareBracketer — toucher des candidats a ; a² se calcule et se compare à n (vert si a² ≤ n, rouge sinon) ; l'encadrement s'écrit dès que le dernier « sous » et le premier « au-dessus » ont été essayés. Deux niveaux : entiers (3, 4) puis dixièmes (3,1 ; 3,2).",
+      "assessmentQuestionIds": ["nr-e3", "nr-e8", "nr-e9", "nr-e10"],
+      "knowledgeItems": ["methode-encadrer-racine", "methode-comparer-reels", "regle-sens-arrondi", "methode-encadrer-decimales"],
+      "notes": "Trois formes d'encadrement sont couvertes : décimal à 10⁻ᵏ (M1/M4), par des carrés (M5), et la comparaison d'écritures hétérogènes (OrderingGame). La brique regle-sens-arrondi est posée après M05-S4-Q1 mais AVANT M05-S4-Q2 qui l'exige — l'ordre source est correct. Le câble de 29 m (arrondir au-dessus contre la règle du chiffre suivant) est une vraie idée pédagogique, reprise au boss par nr-e10 (planche de √50 dm → 8 dm).",
+      "crossGrade": { "overlapsWith": ["3e:racines-carrees"], "kind": "extension" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "officialScopeNotCovered": [
+      {
+        "scopeItem": "Utiliser un arrondi adapté à une situation",
+        "taughtAnyway": true,
+        "evidence": [
+          { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 4, "mechanism": "brick:regle-sens-arrondi" },
+          { "module": 5, "moduleSlug": "encadrer-et-comparer", "step": 4, "mechanism": "question:M05-S4-Q2" },
+          { "module": 6, "moduleSlug": "mission-finale-la-diagonale", "step": null, "mechanism": "question:nr-e10" }
+        ],
+        "recommendation": "append-lp",
+        "notes": "Aucun des 5 LPs catalogue ne porte cet item : P4 dit « écritures exactes et approchées » (l'arrondi comme OBJET) et P5 « comparer et encadrer ». Le choix du sens d'arrondi IMPOSÉ PAR LA SITUATION — 28,28 m de diagonale exigent 29 m de câble, √50 dm exige 8 dm — est pourtant enseigné explicitement, par une brique dédiée (regle-sens-arrondi) et éprouvé deux fois (M05-S4-Q2 et nr-e10). C'est le seul item officiel de cette leçon dont l'enseignement est réel mais l'attribution LP absente : un LP P6 « Choisir un arrondi adapté à la situation » rendrait la couverture lisible et récupérerait deux épreuves de boss aujourd'hui rattachées à P5."
+      }
+    ],
+    "pedagogicalProblems": [
+      "P2 « Représenter des nombres réels sur une droite graduée » : aucune manipulation ne fait PLACER un réel. ZoomLine (module 1) redessine la fenêtre autour d'un point déjà tracé — l'élève contrôle le zoom, pas la position ; SquareBracketer affiche l'encadrement trouvé mais ne demande pas de poser √10. Toute la leçon travaille la lecture, jamais l'écriture graphique, alors que l'objet officiel liste « Repérer » ET « Placer un nombre réel sur une droite graduée » comme deux items distincts. Un mini-BuildCheck « place √2 sur cette droite au dixième près » manque (apps/web/src/lessons/lycee/seconde/nombres_calculs/nombres-reels-2nde/modules/Module05EncadrerEtComparer.jsx).",
+      "Le module 1 étape 1 gèle la prédiction dès que l'étape est validée (`disabled={step2Done}` sur PredictionChips, Module01LeZoomInfini.jsx:78). C'est le comportement voulu pour une prédiction (on ne réécrit pas son pari après le verdict), mais il en résulte que l'élève qui revient sur le module voit des puces mortes sans explication.",
+      "Le module 5 (« Encadrer et comparer ») porte le tag de brief « 🧭 Mission 06 » alors qu'il est le module 5 (Module05EncadrerEtComparer.jsx:50). Séquelle de la suppression de l'ancien module « À retenir » ; l'élève lit un numéro de mission qui ne correspond à rien dans la barre de navigation.",
+      "Même décalage dans le boss : SKILLS.encadrer est étiqueté `module: 6` (Module06MissionFinale.jsx:34) alors que « Encadrer et comparer » est le module 5. Le profil de maîtrise renvoie donc l'élève vers le boss lui-même quand il rate e8/e9."
+    ],
+    "technicalProblems": [
+      "components/BuildCheck.jsx n'est importé par aucun module de cette leçon (vérifié par grep sur `components/BuildCheck'`) : fichier mort, copié depuis une leçon sœur. Il alourdit le bundle et fait croire à une validation de construction qui n'existe pas.",
+      "Le commentaire d'en-tête du boss (Module06MissionFinale.jsx:13-20) référence des modules « M5 » et « M6 » qui n'existent plus après la suppression du module « À retenir » : la table de couverture annoncée dans le JSDoc ne correspond plus à la numérotation réelle.",
+      "docs/lessons/2NDE_NOMBRES_REELS_SPEC.md décrit encore une architecture à 8 modules (0..7) avec `a-retenir` en module 5 et `encadrer-et-comparer` en module 6. La spec est en dérive par rapport au code livré (7 modules, 0..6).",
+      "Aucun défaut mathématique trouvé. Toutes les valeurs vérifiées numériquement : 7/20 = 0,35 (seul décimal de nr-e5), 6² = 36 ≤ 40 < 49 = 7² (nr-e8), 7/4 = 1,75 > √3 = 1,7320… > 1,73 > 1,7 (nr-e9), √50 ≈ 7,071 → 8 dm (nr-e10), 4725 − 18 = 4707 = 9 × 523. Les distracteurs sont des erreurs de méthode identifiables, jamais des valeurs arbitrairement proches de la bonne réponse.",
+      "Les manipulations ne sont jamais gelées après validation : ZoomLine, FamilySorter, FractionExpander, RoundingLab et SquareBracketer reçoivent tous leur `disabled` par défaut à false et aucun module ne passe `disabled={done}`. SquareBracketer désactive un candidat DÉJÀ essayé (`disabled={disabled || t}`), ce qui est un comportement de mémoire, pas un gel."
+    ],
+    "duplicates": [
+      "Chevauchement assumé et non problématique avec 3e/nombres-rationnels (pointsToLearn : « Comprendre les nombres rationnels comme quotient de deux entiers », « Reconnaître différentes écritures d'un même nombre rationnel ») : la 3e installe le rationnel comme nombre, la 2de ajoute le CRITÈRE par les restes et l'opposition décimal/rationnel. Pas de duplication : les gestes diffèrent (RationalBar en 3e, FractionExpander ici).",
+      "Chevauchement avec 3e/racines-carrees (« Comparer des nombres contenant des racines carrées », « Comprendre le sens géométrique de la racine carrée ») : l'encadrement de √n par des carrés est nouveau ici (SquareBracketer), mais la comparaison de racines a déjà été vue. Anticipation raisonnable, pas un doublon."
+    ],
+    "recommendations": [
+      "Ajouter un LP « Choisir un arrondi adapté à la situation » (append-only, P6) : l'enseignement existe et est éprouvé deux fois, seule l'attribution manque.",
+      "Ajouter au module 5 une étape de PLACEMENT (BuildCheck : poser √2 entre deux graduations au centième) pour fermer la facette « placer » de P2.",
+      "Corriger le tag de brief du module 5 (« Mission 06 » → « Mission 05 ») et SKILLS.encadrer.module (6 → 5) dans le boss.",
+      "Supprimer components/BuildCheck.jsx, ou l'utiliser pour l'étape de placement ci-dessus.",
+      "Mettre la spec à jour sur l'architecture 7 modules effectivement livrée."
+    ],
+    "verticalPositioning": {
+      "revised": "Les familles ℕ, ℤ, 𝔻, ℚ et la lecture d'une abscisse sur une droite graduée (6e/5e) ; le rationnel comme quotient d'entiers et ses écritures multiples (3e/nombres-rationnels) ; la racine carrée comme opération inverse du carré et les carrés parfaits (3e/racines-carrees) ; les puissances de 10 négatives, réutilisées pour dire la précision 10⁻ᵏ (3e/puissances-3e, 4e_puissances).",
+      "extended": "L'encadrement, connu en 3e comme « entre deux entiers », devient un encadrement à toute précision 10⁻ᵏ obtenu par zoom successif, puis un encadrement de √n par deux carrés à un niveau de précision choisi. La comparaison de racines (3e) s'étend à la comparaison d'écritures hétérogènes (décimal, fraction, racine) ramenées sur une même droite.",
+      "new": "ℝ comme ensemble : le fait que tout point de la droite soit un nombre, et l'existence de nombres qui ne sont AUCUNE fraction. L'irrationalité (√2, π) et le critère qui la rend crédible : toute fraction a une écriture finie ou périodique, parce qu'il n'y a qu'un nombre fini de restes. La distinction 𝔻 ⊊ ℚ, absente du collège où « fraction » et « décimal » cohabitent sans hiérarchie.",
+      "formalized": "L'opposition écriture EXACTE / valeur APPROCHÉE, avec la discipline du signe (= réservé à l'exact, ≈ dès qu'on coupe) ; la distinction arrondi / troncature avec la règle du chiffre suivant ; le réflexe « exact tant qu'on calcule, approché pour conclure », qui transforme une habitude de calculatrice en règle explicite.",
+      "tool": "La droite réelle graduée et zoomable devient l'instrument de référence du chapitre : la leçon « Valeur absolue et distance » réutilise littéralement la même RealLine pour porter |x| et les faisceaux, et « Ensembles et intervalles » y pose ses crochets. Le critère par les restes sert de modèle de démonstration réutilisé par « Arithmétique »."
+    }
+  }
+}

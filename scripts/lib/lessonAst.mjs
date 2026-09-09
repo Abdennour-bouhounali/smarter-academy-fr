@@ -110,10 +110,18 @@ export function buildLessonIndex() {
         for (const lesson of chapter.lessons) {
           lessonIndex.set(`${grade.id}:${lesson.id}`, {
             learningPointIds: new Set(lesson.learningPoints.map((lp) => lp.id)),
+            learningPoints: lesson.learningPoints.map((lp) => ({ id: lp.id, title: lp.title, order: lp.order })),
             pointsToLearn: lesson.learningPoints.map((lp) => lp.title),
             status: lesson.status,
             title: lesson.title,
             durationMinutes: lesson.durationMinutes,
+            // Curriculum coordinates, needed by any per-grade report that
+            // groups lessons by domain / official object.
+            officialObject: lesson.officialObject ?? null,
+            chapterId: chapter.id,
+            chapterTitle: chapter.title,
+            path: lesson.path,
+            prerequisites: lesson.prerequisites ?? [],
           });
         }
       }
@@ -146,6 +154,10 @@ export function parseLessonConfig(lessonDir) {
   if (!configNode) return { id: null, modules: null };
 
   const id = literalValue(propOf(configNode, 'id'));
+  const title = literalValue(propOf(configNode, 'title'));
+  // The author's declared lesson length. The SUM of the modules' estimatedMin
+  // is the truth; this field and the catalogue's durationMinutes must match it.
+  const estimatedDurationMin = literalValue(propOf(configNode, 'estimatedDurationMin'));
   // `knowledgeMap: true` — the lesson's formalisation is the cumulative
   // Knowledge Map instead of a dedicated « À retenir » module.
   const knowledgeMap = literalValue(propOf(configNode, 'knowledgeMap')) === true;
@@ -179,6 +191,8 @@ export function parseLessonConfig(lessonDir) {
           stage: literalValue(propOf(el, 'stage')),
           estimatedMin: literalValue(propOf(el, 'estimatedMin')),
           slug: literalValue(propOf(el, 'slug')),
+          title: literalValue(propOf(el, 'title')),
+          path: literalValue(propOf(el, 'path')),
           teachesLearningPointIds: literalValue(propOf(el, 'teachesLearningPointIds')),
           requiresLearningPointIds: literalValue(propOf(el, 'requiresLearningPointIds')),
         }))
@@ -186,6 +200,8 @@ export function parseLessonConfig(lessonDir) {
 
   return {
     id: typeof id === 'string' ? id : null,
+    title: typeof title === 'string' ? title : null,
+    estimatedDurationMin: typeof estimatedDurationMin === 'number' ? estimatedDurationMin : null,
     modules,
     knowledgeMap,
     grade: gradeOf(lessonDir),

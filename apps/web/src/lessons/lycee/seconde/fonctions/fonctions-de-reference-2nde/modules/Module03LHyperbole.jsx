@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { ContentModule, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, BatchChoiceQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TwoProbes from '../components/TwoProbes';
-import PredictionChips from '../components/PredictionChips';
 import { INVERSE, INVERSE_RANGE, imageOf, formatDec } from '../components/referenceUtils';
 
 /**

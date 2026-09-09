@@ -1,0 +1,296 @@
+{
+  "lesson": "fonctions-de-reference-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-fonctions-batch",
+  "learningPoints": {
+    "seconde_fonctions-de-reference-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "trois-machines", "step": 1, "mechanism": "manipulation:ThreeMachines" },
+        { "module": 4, "moduleSlug": "le-v", "step": 1, "mechanism": "manipulation:TwoProbes" },
+        { "module": 4, "moduleSlug": "le-v", "step": 1, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "le-v", "step": 1, "mechanism": "brick:fonction-valeur-absolue" },
+        { "module": 4, "moduleSlug": "le-v", "step": 3, "mechanism": "question:M04-S3-Q1" },
+        { "module": 4, "moduleSlug": "le-v", "step": 4, "mechanism": "question:M04-S4-Q1" },
+        { "module": 4, "moduleSlug": "le-v", "step": 4, "mechanism": "brick:mem-le-v" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e7" }
+      ],
+      "manipulation": "TwoProbes en mode miroir (module 4 étape 1) : une sonde a et, simultanément, le point d'abscisse −a, reliés par un segment pointillé ; les deux demi-droites y = x et y = −x sont tracées en pointillés (extraCurves) sous la courbe. L'étape n'est validée qu'après un passage du côté négatif, et la révélation conditionnée écrit alors h(−a) = h(a) = distance de a à 0, avec les mots « deux demi-droites » et « un V ». Les images sont calculées par imageOf, jamais écrites à la main.",
+      "assessmentQuestionIds": ["fr-e7"],
+      "knowledgeItems": ["fonction-valeur-absolue", "mem-le-v", "vocab-extremum", "regle-carre-vs-va"],
+      "notes": "Le geste qui fonde le LP est le miroir, et il est bien un geste : l'élève déplace a, voit le point jumeau se déplacer symétriquement, et la validation exige d'avoir traversé zéro. Le mot « V » et le mot « demi-droite » n'apparaissent qu'après (Feedback conditionné par done1), et la brique fonction-valeur-absolue suit. Le lead de cette brique fait aussi un travail rare : il réactive explicitement image et antécédent (acquis de 3e) juste avant l'étape 3 qui les emploie (« les antécédents de 3 par x ↦ |x| »), ce que le commentaire d'en-tête documente comme une correction d'ordre. L'épreuve fr-e7 est reconnaissante (« quelle courbe est faite de deux demi-droites qui se rejoignent en O ? ») mais son distracteur x² est exactement la confusion que le module 4 étape 2 a démontée en superposant les deux courbes. Prérequis correctement déclaré : valeur-absolue vient de valeur-absolue-distance-2nde et est diagnostiqué par fr-d3.",
+      "crossGrade": { "overlapsWith": ["2de:valeur-absolue-distance-2nde"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "trois-machines", "step": 2, "mechanism": "manipulation:ThreeMachines" },
+        { "module": 1, "moduleSlug": "trois-machines", "step": 2, "mechanism": "brick:regle-symetrie-entrees" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 1, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 1, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 2, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 2, "mechanism": "brick:vocab-monte-descend" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 2, "mechanism": "brick:regle-comparer-carres" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 3, "mechanism": "brick:fonction-carre" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 4, "mechanism": "question:M02-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e3" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e4" }
+      ],
+      "manipulation": "Deux gestes distincts, tous deux validés par une condition sur ce que l'élève a fait. (1) Le miroir : la sonde a et le point −a à la même hauteur, l'étape n'étant validée qu'après avoir visité un négatif ET un positif autre que 1. (2) LA CHASSE AU CONTRE-EXEMPLE (étape 2) : on part de a = 2, b = 3 où a < b et f(a) < f(b), et l'élève doit TROUVER une paire a < b avec f(a) > f(b) — la condition de validation est littéralement `next.a < next.b && next.a² > next.b²`. Il ne peut la trouver que du côté des négatifs, ce qui fabrique la décroissance sur ]−∞ ; 0] au lieu de l'énoncer.",
+      "assessmentQuestionIds": ["fr-e3", "fr-e4"],
+      "knowledgeItems": ["fonction-carre", "regle-comparer-carres", "mem-parabole", "vocab-monte-descend", "regle-symetrie-entrees"],
+      "notes": "C'est le meilleur module de la leçon. La chasse au contre-exemple est un dispositif pédagogiquement supérieur au simple « observe » : l'obstacle réel de la 2de (« le plus grand nombre a le plus grand carré ») n'est pas contredit par un texte mais par une paire que l'ÉLÈVE doit produire, et la PredictionChips l'a fait s'engager avant. Vérifié numériquement : (−5)² = 25 > (−2)² = 4, et (−7)² = 49 > (−4)² = 16 pour fr-e3. Le signe (étape 3) est traité avec la bonne finesse — « x² ≥ 0 pour tout x, et x² = 0 seulement pour x = 0 », le distracteur étant x² > 0 pour tout x, c'est-à-dire l'oubli du cas 0. Le portrait est rassemblé par la brique fonction-carre APRÈS les trois gestes, et l'épreuve fr-e4 demande de repérer la propriété FAUSSE (« croissante sur ℝ »), ce qui n'est pas devinable sans le portrait. Le module 5 étape 1 ajoute la lecture d'antécédents (x² = 4 → deux, x² = −1 → aucun).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "trois-machines", "step": 1, "mechanism": "manipulation:ThreeMachines" },
+        { "module": 1, "moduleSlug": "trois-machines", "step": 3, "mechanism": "manipulation:ThreeMachines" },
+        { "module": 1, "moduleSlug": "trois-machines", "step": 3, "mechanism": "brick:regle-pres-loin-zero" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 1, "mechanism": "manipulation:TwoProbes" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 2, "mechanism": "manipulation:TwoProbes" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 3, "mechanism": "manipulation:TwoProbes" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 3, "mechanism": "brick:regle-comparer-inverses" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 3, "mechanism": "brick:fonction-inverse" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 4, "mechanism": "question:M03-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e5" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e6" }
+      ],
+      "manipulation": "Trois gestes en escalier. (1) ThreeMachines : taper 0 fait afficher « refusé : on ne divise pas par 0 » — le refus est produit par imageOf qui renvoie null, donc c'est le modèle, pas un message écrit à la main. (2) TwoProbes approche de 0 par pas de 0,25 : la validation exige d'avoir atteint |a| ≤ 0,25 ET d'être passé exactement sur 0. (3) La seconde chasse au contre-exemple, la plus fine de la leçon : trouver a < b avec g(a) < g(b), ce qui n'est possible qu'À CHEVAL sur 0 — la condition de validation le vérifie par imageOf, donc l'élève doit réellement produire le couple.",
+      "assessmentQuestionIds": ["fr-e2", "fr-e5", "fr-e6", "fr-e10"],
+      "knowledgeItems": ["fonction-inverse", "regle-comparer-inverses", "mem-hyperbole", "regle-pres-loin-zero"],
+      "notes": "L'obstacle traité ici est le plus profond du chapitre, et il est traité correctement : « 1/x est décroissante » est FAUX sur ℝ*, et la leçon ne se contente pas de le dire — elle fait fabriquer le contre-exemple. La conséquence est énoncée au bon niveau de généralité : « une propriété se donne toujours sur un intervalle », ce qui prépare exactement variations-extremums-2nde. Vérifié : 1/(−2) = −0,5 < 1/3 ≈ 0,333 (fr-e5), 1/0,01 = 100, 1/1000 = 0,001, signe de 1/(−0,5) négatif, 1/x = 0 sans solution. La ligne r4 de M03-S4-Q1 (« l'équation 1/x = 0 n'a aucune solution ») est un vrai contenu, pas un remplissage : elle articule la lecture graphique (la courbe ne touche jamais l'axe) et l'algèbre. Le domaine ℝ* est nommé et dérivé (R_STAR dans referenceUtils, domainText affichant « ℝ* = ]−∞ ; 0[ ∪ ]0 ; +∞[ »).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "trois-machines", "step": 1, "mechanism": "manipulation:ThreeMachines" },
+        { "module": 1, "moduleSlug": "trois-machines", "step": 1, "mechanism": "brick:trois-references" },
+        { "module": 1, "moduleSlug": "trois-machines", "step": 4, "mechanism": "question:M01-S4-Q1" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 4, "mechanism": "brick:formule-references" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "question:M06-S1-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e1" }
+      ],
+      "manipulation": "ThreeMachines — l'interaction signature : UNE entrée nourrit TROIS machines simultanément, et les trois sorties s'affichent côte à côte avec la formule de chacune en en-tête. L'élève tape ses propres nombres (NumberField, jusqu'à ±1000) en plus des pastilles. L'étape 1 exige cinq entrées dont un négatif et 0 : c'est ce protocole, et non un texte, qui produit le contraste (−3 donne 9, −1/3 et 3).",
+      "assessmentQuestionIds": ["fr-e1"],
+      "knowledgeItems": ["trois-references", "formule-references", "regle-symetrie-entrees"],
+      "notes": "« Connaître leurs expressions » est un LP de mémorisation, et la leçon le traite comme une mémorisation INCARNÉE : les trois formules ne sont jamais présentées en liste avant d'avoir été nourries, et la brique formule-references qui les rassemble arrive au module 5, une fois les trois portraits faits. L'épreuve fr-e1 est bien construite : pour x = −3, les trois réponses (9, −1/3, 3) avec les distracteurs qui sont les trois fautes classiques ensemble — (−3)² = −9, 1/(−3) = 1/3 (signe perdu), |−3| = −3. Réserve mineure : aucune demande n'exige jamais d'ÉCRIRE une expression de mémoire (tout est en QCM), donc le LP est mesuré en reconnaissance et non en restitution.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P5": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "trois-machines", "step": 3, "mechanism": "manipulation:ThreeMachines" },
+        { "module": 1, "moduleSlug": "trois-machines", "step": 3, "mechanism": "brick:methode-tableau-tracer" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 4, "mechanism": "manipulation:ValueTable" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 4, "mechanism": "question:M06-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e2" }
+      ],
+      "manipulation": "Deux instruments. (1) ThreeMachines accumule les entrées testées et affiche « n entrées testées » — c'est un tableau de valeurs en acte, mais présenté comme trois cartes de sortie, pas comme un tableau à deux lignes. (2) ValueTable (composant partagé) au module 6 étape 4 : trois colonnes x², 1/x, |x| sur xs = [−2, −1, −0,5, 0,5, 1, 2], l'élève devant en tester au moins quatre avant que la question ne se débloque.",
+      "assessmentQuestionIds": ["fr-e2"],
+      "knowledgeItems": ["methode-tableau-tracer"],
+      "notes": "PARTIALLY_COVERED, et la facette manquante est celle du verbe : « CONSTRUIRE un tableau de valeurs ». L'élève ne construit jamais de tableau — il DÉCLENCHE le calcul de colonnes déjà écrites. Dans ThreeMachines comme dans ValueTable, les valeurs de x sont fournies par le composant (xs en propriété) et les images sont calculées par la machine ; l'élève ne saisit aucune image, ne choisit pas les abscisses (sauf par saisie libre au module 1, qui n'alimente pas un tableau structuré), et ne complète aucune case. Comparer avec PlotTable de fonctions-2nde, où l'élève place vraiment chaque point : ici, rien d'équivalent. La brique methode-tableau-tracer est bien posée après le geste (module 1 étape 3, après avoir tapé un tout petit et un grand nombre) et elle décrit correctement la démarche, mais elle DÉCRIT une méthode que l'élève n'a pas exécutée à la main. Ce qui est réellement enseigné, et qui est de vrai contenu, c'est le CHOIX DES VALEURS : symétriques autour de 0, avec un tout petit et un grand — car c'est ce choix qui révèle les trois caractères. L'épreuve fr-e2 mesure d'ailleurs autre chose que la construction (« quelle colonne est impossible dans un tableau de x ↦ 1/x ? » → x = 0), c'est-à-dire l'ensemble de définition. Le LP est donc enseigné dans son intention et éprouvé de biais, mais son verbe n'est jamais accompli.",
+      "crossGrade": { "overlapsWith": ["3e:fonctions-3e", "2de:fonctions-2nde"], "kind": "repetition" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P6": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "trois-machines", "step": 3, "mechanism": "manipulation:ThreeMachines" },
+        { "module": 1, "moduleSlug": "trois-machines", "step": 3, "mechanism": "brick:methode-tableau-tracer" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 4, "mechanism": "brick:mem-parabole" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 4, "mechanism": "brick:mem-hyperbole" },
+        { "module": 4, "moduleSlug": "le-v", "step": 4, "mechanism": "brick:mem-le-v" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 4, "mechanism": "question:M05-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e7" }
+      ],
+      "manipulation": "ThreeMachines : les points s'accumulent au fur et à mesure des entrées, et les COURBES apparaissent après six entrées (`showCurves={tested.length >= 6}`). La courbe est donc la récompense d'un travail point par point — l'élève voit ses propres points être rejoints par la courbe.",
+      "assessmentQuestionIds": ["fr-e7"],
+      "knowledgeItems": ["methode-tableau-tracer", "mem-parabole", "mem-hyperbole", "mem-le-v"],
+      "notes": "PARTIALLY_COVERED pour la même raison que P5, et c'est le défaut structurant de la leçon. « REPRÉSENTER graphiquement une fonction de référence » suppose que l'élève produise la représentation ; ici il déclenche son apparition. Aucun composant de cette leçon ne permet de placer un point : ThreeMachines pose les points automatiquement à partir des entrées, TwoProbes et FunctionProbe déplacent des sondes sur une courbe DÉJÀ TRACÉE, et le module 6 n'a que des QCM. Il n'existe aucun équivalent du PlotTable de fonctions-2nde. Ce qui est réellement acquis — et qui a de la valeur — c'est l'IMAGE MENTALE : les trois briques mem-parabole, mem-hyperbole et mem-le-v sont des cartes de mémorisation, et le brief du boss demande explicitement « dessine la courbe dans ta tête ». Mais dessiner dans sa tête n'est pas représenter, et aucune épreuve ne demande de produire ni même de choisir une allure de courbe autrement que par sa description verbale (fr-e7 : « quelle courbe est faite de deux demi-droites ? »). Facette couverte : reconnaître et décrire l'allure. Facette manquante : tracer.",
+      "crossGrade": { "overlapsWith": ["3e:representation-graphique-3e", "2de:fonctions-2nde"], "kind": "repetition" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "la-parabole", "step": 1, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 3, "mechanism": "brick:fonction-carre" },
+        { "module": 2, "moduleSlug": "la-parabole", "step": 4, "mechanism": "question:M02-S4-Q1" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 2, "mechanism": "manipulation:TwoProbes" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 3, "mechanism": "brick:fonction-inverse" },
+        { "module": 4, "moduleSlug": "le-v", "step": 1, "mechanism": "manipulation:TwoProbes" },
+        { "module": 4, "moduleSlug": "le-v", "step": 1, "mechanism": "brick:vocab-extremum" },
+        { "module": 4, "moduleSlug": "le-v", "step": 4, "mechanism": "question:M04-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e4" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e5" }
+      ],
+      "manipulation": "Le MIROIR, décliné trois fois sur trois courbes avec la même gestuelle (TwoProbes showMirror : le point a, le point −a, le segment qui les relie). C'est la meilleure idée de conception de la leçon : le même geste produit trois résultats différents — f(−a) = f(a) pour x² (les deux points face à face de part et d'autre de l'axe vertical), g(−a) = −g(a) pour 1/x (face à face à travers l'origine), h(−a) = h(a) pour |x|. La symétrie devient une propriété qu'on TESTE, pas qu'on récite.",
+      "assessmentQuestionIds": ["fr-e3", "fr-e4", "fr-e5"],
+      "knowledgeItems": ["fonction-carre", "fonction-inverse", "fonction-valeur-absolue", "vocab-monte-descend", "vocab-extremum", "regle-comparer-carres", "regle-comparer-inverses"],
+      "notes": "Les caractéristiques travaillées sont exactement celles du programme : axe ou centre de symétrie, signe, sens de variation par intervalle, extremum, points caractéristiques, comportement aux bords du domaine. Toutes sont DÉRIVÉES dans referenceUtils (symmetryOf, variationOn, signOf) et verrouillées par des tests (symmetryOf(SQUARE) = 'axe', symmetryOf(INVERSE) = 'centre', variationOn(SQUARE, −1, 1) = null). Le vocabulaire de variation est explicitement pris au sens du collège (« la courbe monte / descend »), la définition par inégalités étant renvoyée à variations-extremums-2nde par teachingScope.exclude : ce partage est propre et documenté. La brique vocab-extremum, posée au module 4 sur le coin du V, est en revanche un TERME AU-DESSUS DU NIVEAU DE LA LEÇON (voir duplicates).",
+      "crossGrade": { "overlapsWith": ["2de:variations-extremums-2nde"], "kind": "anticipation" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "le-v", "step": 2, "mechanism": "manipulation:TwoProbes" },
+        { "module": 4, "moduleSlug": "le-v", "step": 2, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "le-v", "step": 2, "mechanism": "brick:regle-carre-vs-va" },
+        { "module": 4, "moduleSlug": "le-v", "step": 4, "mechanism": "question:M04-S4-Q1" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 4, "mechanism": "question:M05-S4-Q1" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 4, "mechanism": "brick:regle-ordre-references" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e9" }
+      ],
+      "manipulation": "TwoProbes au module 4 étape 2, avec la parabole superposée en pointillés (extraCurves = PARABOLA) : trois pastilles dans le DOM affichent a², |a| et le VERDICT comparatif (a² < |a| ou a² > |a|, attribut data-compare). L'étape n'est validée qu'après avoir trouvé LES DEUX régimes — un a avec a² < |a| et un a avec a² > |a| ; le highlightIntervals de [−1 ; 1] ne s'allume qu'alors. Le seuil x = 1 est donc découvert par encadrement, pas donné.",
+      "assessmentQuestionIds": ["fr-e9"],
+      "knowledgeItems": ["regle-carre-vs-va", "regle-ordre-references"],
+      "notes": "La comparaison des courbes est traitée sur deux niveaux : d'abord deux courbes (le V contre la parabole, avec le résultat exact x² ≤ |x| ⟺ −1 ≤ x ≤ 1, calculé par squareBelowAbs et testé), puis les trois ensemble au module 5 étape 4 avec l'ordre sur ]0 ; 1[ et sur ]1 ; +∞[ et le point de concours (1 ; 1). Vérifié numériquement : orderAt(0,5) = [x², |x|, 1/x] soit 0,25 < 0,5 < 2 ; orderAt(2) = [1/x, |x|, x²] soit 0,5 < 2 < 4 ; en x = 0,2 (fr-e9) : 0,04 < 0,2 < 5. Ces deux ordres sont verrouillés par les tests de referenceUtils. Le retour explique la CAUSE et pas seulement le fait (« entre 0 et 1, élever au carré diminue et inverser augmente ; au-delà de 1, c'est l'inverse »), ce qui donne à l'élève un moyen de reconstruire l'ordre plutôt que de le mémoriser.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P9": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "trois-machines", "step": 1, "mechanism": "manipulation:ThreeMachines" },
+        { "module": 3, "moduleSlug": "l-hyperbole", "step": 4, "mechanism": "question:M03-S4-Q1" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 4, "mechanism": "question:M05-S4-Q1" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 4, "mechanism": "manipulation:ValueTable" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 4, "mechanism": "question:M06-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e9" }
+      ],
+      "manipulation": "Aucune manipulation de lecture d'IMAGE sur une courbe. Vérifié dans le code : les trois FunctionProbe du module 5 sont toutes en `mode=\"y\"` (Module05LireSurLesCourbes.jsx:52, 66, 79), c'est-à-dire en mode antécédents ; le mode « x », qui est celui qui lit une image sur une courbe, n'est jamais monté dans cette leçon. Les TwoProbes des modules 2 à 4 affichent bien f(a) dans le DOM, mais leur objet est la comparaison f(a)/f(b) ou la symétrie, pas la lecture d'une image comme geste.",
+      "assessmentQuestionIds": ["fr-e8", "fr-e9"],
+      "knowledgeItems": ["methode-antecedents-reference", "regle-ordre-references"],
+      "notes": "PARTIALLY_COVERED, et c'est un décalage entre l'intitulé du LP et ce que le module qui le déclare enseigne réellement. Le module 5 s'appelle « Lire sur les courbes » et déclare P9 et P10 ; mais ses trois étapes de manipulation sont exclusivement des lectures d'ANTÉCÉDENTS (x² = 4, x² = −1, 1/x = 2, |x| = 3). Le LP « Déterminer une image graphiquement » n'a donc aucun geste propre. Ce qui le sauve du statut EXERCISED_ONLY, c'est que la lecture d'image est bel et bien exercée dans plusieurs demandes — g(0,01) = 100 et g(1000) = 0,001 (module 3 étape 4, vérifiés), la position relative en x = 0,2 (fr-e9, vérifiée : 0,04 / 0,2 / 5), le point (−2 ; −0,5) reconnu sur l'hyperbole (module 6 étape 4, vérifié : 1/(−2) = −0,5) — et que ThreeMachines EST une lecture d'image, mais par la machine, pas sur la courbe. Deux facettes se distinguent donc : lire une image PAR LE CALCUL est couvert ; lire une image SUR LA COURBE, qui est le verbe du LP, n'a ni geste ni brique ni épreuve dédiée. Correctif à coût nul : le composant FunctionProbe copié dans cette leçon supporte déjà `mode=\"x\"` et `onModeChange` — il suffirait de rendre le module 5 étape 1 bimodal.",
+      "crossGrade": { "overlapsWith": ["3e:lecture-graphique-3e", "2de:fonctions-2nde"], "kind": "repetition" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P10": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 1, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 1, "mechanism": "feedback" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 2, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 3, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 3, "mechanism": "brick:methode-antecedents-reference" },
+        { "module": 4, "moduleSlug": "le-v", "step": 3, "mechanism": "question:M04-S3-Q1" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "question:M06-S1-Q2" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e8" }
+      ],
+      "manipulation": "Trois sondes HORIZONTALES successives, une par référence, chacune validée par une cible atteinte. Étape 1 sur la parabole : amener y à 4 (deux points s'allument) PUIS à −1 (aucun) — la double condition est ce qui fabrique le contraste « deux solutions / aucune ». Étape 2 sur l'hyperbole : y = 2, un seul point. Étape 3 sur le V : y = 3, deux points. Les points d'intersection sont calculés par antecedentsOf, qui est exact pour les trois références (racine carrée, inverse, opposé) et non échantillonné — le dessin ne peut pas mentir.",
+      "assessmentQuestionIds": ["fr-e8"],
+      "knowledgeItems": ["methode-antecedents-reference", "fonction-valeur-absolue"],
+      "notes": "COVERED sans réserve, et c'est le LP le mieux servi du module 5. La leçon organise une VARIATION SYSTÉMATIQUE du nombre de solutions (2, 0, 1, 2) au lieu de traiter un seul cas, puis la brique methode-antecedents-reference énonce la règle générale en fonction du signe de k — 2 solutions si k > 0, 1 si k = 0, 0 si k < 0 pour le carré et la valeur absolue ; 1 si k ≠ 0, 0 si k = 0 pour l'inverse. La brique arrive à l'étape 3, après les trois gestes, avant l'épreuve fr-e8 qui demande les trois comptages d'un coup (x² = 9 → 2, |x| = 9 → 2, 1/x = 9 → 1 : vérifiés) avec le distracteur « 1, 1 et 1 » qui est l'oubli de la solution négative. Le module 6 ajoute la contrainte de contexte : c² = 2,25 a deux antécédents mais un seul est une longueur (c = 1,5, vérifié), et l'explainFor traite explicitement −1,5.",
+      "crossGrade": { "overlapsWith": ["3e:lecture-graphique-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-de-reference-2nde_P11": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "question:M06-S1-Q1" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "question:M06-S1-Q2" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "brick:methode-modeliser-reference" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 2, "mechanism": "question:M06-S2-Q1" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 3, "mechanism": "question:M06-S3-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e10" }
+      ],
+      "manipulation": "Aucune — le module 6 est un practice lab volontairement sans instrument (le seul geste est le ValueTable de l'étape 4, qui sert un autre LP). La brique methode-modeliser-reference n'est donc pas conditionnée à un geste : elle est posée APRÈS la première reconnaissance faite par l'élève seul (les deux questions de l'étape 1), ce que le commentaire d'en-tête assume explicitement — « poser la brique avant l'étape 1 donnerait la réponse de la première question ».",
+      "assessmentQuestionIds": ["fr-e10"],
+      "knowledgeItems": ["methode-modeliser-reference"],
+      "notes": "COVERED malgré l'absence de manipulation, parce que le module 6 fait deux choses qu'un simple exercice ne fait pas. (1) Il varie réellement les situations et couvre les trois références : une aire de carré (x²), une durée de trajet t(v) = 120/v (inverse à un facteur près), un écart de température e(x) = |x| (valeur absolue) — trois domaines de sens différents. (2) Il exige les DEUX sens à chaque fois : reconnaître la référence, puis remonter de l'image vers l'antécédent avec la contrainte du contexte (c = 1,5 m et non −1,5). Vérifications : t(60) = 2 h, t(30) = 4 h, doubler v divise t par 2 ; e(−4) = 4, les températures à 2,5 °C de 0 sont −2,5 et 2,5 ; 1,5² = 2,25 ; fr-e10 : 200/(2v) = (200/v)/2, la durée est divisée par 2 — toutes exactes. La brique methode-modeliser-reference donne les trois INDICES de tri (aire de carré → x² ; « distance ÷ vitesse » ou « à partager entre » → 1/x ; un écart, une distance, une marge → |x|), ce qui est un contenu transférable et pas une liste d'exemples. L'épreuve fr-e10 n'est pas devinable : son distracteur « divisée par 4 » est l'erreur de confusion avec 1/x², et l'explain le nomme.",
+      "crossGrade": { "overlapsWith": ["3e:modelisation-3e", "2de:fonctions-2nde"], "kind": "extension" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "officialScopeNotCovered": [
+      {
+        "scopeItem": "parité (vocabulaire) — « Étudier la parité d'une fonction lorsque pertinent » et « Étudier la parité de la fonction carrée » (référentiel externe, chapitres « Généralités sur les fonctions » et « Fonctions carrée, cube, racine carrée et inverse »)",
+        "taughtAnyway": true,
+        "evidence": [
+          { "module": 1, "moduleSlug": "trois-machines", "step": 2, "mechanism": "manipulation:ThreeMachines" },
+          { "module": 1, "moduleSlug": "trois-machines", "step": 2, "mechanism": "feedback" },
+          { "module": 1, "moduleSlug": "trois-machines", "step": 2, "mechanism": "brick:regle-symetrie-entrees" },
+          { "module": 2, "moduleSlug": "la-parabole", "step": 1, "mechanism": "manipulation:TwoProbes" },
+          { "module": 2, "moduleSlug": "la-parabole", "step": 1, "mechanism": "feedback" },
+          { "module": 3, "moduleSlug": "l-hyperbole", "step": 2, "mechanism": "manipulation:TwoProbes" },
+          { "module": 3, "moduleSlug": "l-hyperbole", "step": 2, "mechanism": "feedback" },
+          { "module": 4, "moduleSlug": "le-v", "step": 1, "mechanism": "manipulation:TwoProbes" },
+          { "module": 4, "moduleSlug": "le-v", "step": 1, "mechanism": "feedback" },
+          { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e1" },
+          { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e4" }
+        ],
+        "recommendation": "add-brick-and-lp",
+        "notes": "CONFIRMÉ ET PRÉCISÉ. Le grep sur tout apps/web/src/lessons/lycee/seconde ne donne AUCUNE occurrence de « fonction paire », « fonction impaire », ni de « parité » au sens fonctionnel : zéro dans la Seconde entière. Les seules occurrences de « parité » concernent les entiers pairs et impairs (arithmetique-2nde, logique-et-raisonnement-2nde) et n'ont aucun rapport. MAIS la PROPRIÉTÉ est bel et bien enseignée ici, et par le geste — c'est le sens de taughtAnyway: true. Le module 1 étape 2 fait produire à l'élève une paire d'opposés et constate « même carré, même valeur absolue, inverses opposés » ; la brique regle-symetrie-entrees l'écrit en formules : (−x)² = x², |−x| = |x|, 1/(−x) = −1/x. Les modules 2, 3 et 4 rejouent chacun le miroir sur sa courbe, et les trois révélations conditionnées énoncent respectivement f(−a) = f(a) (« axe de symétrie »), g(−a) = −g(a) (« centre de symétrie ») et h(−a) = h(a). C'est exactement la définition d'une fonction paire et d'une fonction impaire — moins les deux mots. La propriété est même DÉRIVÉE dans le modèle (symmetryOf renvoie 'axe' ou 'centre') et verrouillée par un test. Ce qui manque est donc uniquement le VOCABULAIRE, et son absence a une conséquence : un élève qui rencontrera « f est paire » en Première ou dans un manuel ne fera pas le lien avec le miroir qu'il a manipulé quatre fois. Correctif à faible coût et parfaitement placé : ajouter au module 2 étape 1 (après la révélation f(−a) = f(a)) une brique `vocab-fonction-paire-impaire` qui nomme les deux cas et renvoie aux trois miroirs, puis un LP « Étudier la parité d'une fonction de référence » — l'enseignement existe déjà en entier, seul le nom manque. Note de conception : cette leçon dit d'ailleurs 'axe de symétrie' / 'centre de symétrie', ce qui est le vocabulaire GÉOMÉTRIQUE de la courbe, alors que 'paire' / 'impaire' est le vocabulaire FONCTIONNEL de l'égalité ; les deux sont au programme et le second est celui qui se réinvestit."
+      },
+      {
+        "scopeItem": "Résoudre x² = k (référentiel externe, chapitre « Fonctions carrée, cube, racine carrée et inverse »)",
+        "taughtAnyway": true,
+        "evidence": [
+          { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 1, "mechanism": "manipulation:FunctionProbe" },
+          { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 1, "mechanism": "feedback" },
+          { "module": 5, "moduleSlug": "lire-sur-les-courbes", "step": 3, "mechanism": "brick:methode-antecedents-reference" },
+          { "module": 6, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "question:M06-S1-Q2" },
+          { "module": 7, "moduleSlug": "mission-finale-les-trois-courbes", "step": null, "mechanism": "question:fr-e8" }
+        ],
+        "recommendation": "append-lp",
+        "notes": "VÉRIFIÉ : la résolution GÉNÉRALE de x² = k EST enseignée, contrairement à ce qu'une lecture rapide du module 5 laisserait croire. Le module 5 étape 1 ne se contente pas de sonder x² = 4 et x² = −1 : la double condition de validation (seen4 ET seenNeg) impose de rencontrer les DEUX régimes, et la révélation conditionnée généralise immédiatement — « un nombre positif a deux antécédents par la fonction carré, OPPOSÉS », en ajoutant le cas x² = 0. La brique methode-antecedents-reference (étape 3) énonce ensuite la trichotomie complète en fonction du SIGNE DE k, pour les trois références, et non pour les seules valeurs sondées. Le module 6 fait résoudre c² = 2,25 sur une valeur non sondée et non entière (c = 1,5, vérifié), avec la contrainte de contexte qui écarte −1,5 ; fr-e8 fait résoudre x² = 9 sur une valeur neuve. La résolution est graphique et par retour au carré, jamais par le radical (√ n'apparaît nulle part : la fonction racine carrée est explicitement hors périmètre) — ce qui est le traitement attendu en 2de. Aucun des 11 LPs ne nomme cette compétence : P10 dit « déterminer un antécédent graphiquement » (le geste) et P2 « étudier la fonction carré » (le portrait). Un LP « Résoudre x² = k, 1/x = k, |x| = k » serait justifié ; la brique porte déjà ce titre exact."
+      },
+      {
+        "scopeItem": "Résoudre x² > k et x² ≤ k (référentiel externe, chapitre « Fonctions carrée, cube, racine carrée et inverse »)",
+        "taughtAnyway": false,
+        "evidence": [
+          { "module": 4, "moduleSlug": "le-v", "step": 2, "mechanism": "manipulation:TwoProbes" },
+          { "module": 4, "moduleSlug": "le-v", "step": 4, "mechanism": "question:M04-S4-Q1" },
+          { "module": 6, "moduleSlug": "atelier-modeliser", "step": 3, "mechanism": "question:M06-S3-Q1" }
+        ],
+        "recommendation": "add-module-step",
+        "notes": "NON ENSEIGNÉ — et je le dis sans nuance, c'est le trou le plus net de la leçon. Il n'existe dans tout le code AUCUNE résolution de x² > k ni de x² ≤ k, pour aucun k. Ce qui existe et qu'il ne faut pas confondre avec cela : (1) le module 4 étape 2 compare DEUX FONCTIONS, x² et |x|, et aboutit à x² ≤ |x| ⟺ −1 ≤ x ≤ 1 — c'est une inéquation entre deux courbes, pas contre une constante, et son second membre n'est pas un k ; (2) le module 6 étape 3 ligne r3 fait choisir « e(x) ≤ 1 pour −1 ≤ x ≤ 1 », qui est bien une inéquation |x| ≤ k avec k = 1, mais c'est UNE LIGNE DE QCM sur la valeur absolue, sans geste, sans brique, sans généralisation, et jamais transposée au carré ; (3) le module 5, qui est le module de résolution, est intégralement en mode antécédents (mode « y » de FunctionProbe), lequel n'affiche que des points d'intersection et n'a aucune notion de « au-dessus » ou « en dessous ». La conséquence pédagogique est précise : l'élève sait que x² = 4 a deux solutions opposées, mais rien dans la leçon ne lui fait voir que x² > 4 est ]−∞ ; −2[ ∪ ]2 ; +∞[, c'est-à-dire la RÉUNION que la symétrie de la parabole impose. Or c'est exactement l'obstacle classique de la 2de sur ce point (l'élève écrit « x > 2 »), et il n'est jamais rencontré. Aucune leçon sœur ne le comble : signe-fonctions-2nde résout f(x) > 0 (contre zéro, pas contre k), et fonctions-2nde ne traite aucune inéquation. Correctif : une étape au module 5 où la sonde horizontale à y = k allume, via highlightIntervals, les intervalles de x où la courbe est au-dessus — l'infrastructure existe déjà (TwoProbes et FunctionProbe acceptent tous deux highlightIntervals, et le module 4 s'en sert pour [−1 ; 1])."
+      }
+    ],
+    "pedagogicalProblems": [
+      "LE TROU CENTRAL : la leçon fait LIRE trois courbes sans jamais en faire TRACER une. Deux LPs sur onze en portent la trace (P5 « construire un tableau de valeurs » et P6 « représenter graphiquement »), tous deux jugés PARTIALLY_COVERED. Aucun composant de la leçon ne permet de placer un point : ThreeMachines pose les points tout seul dès qu'une entrée est touchée, TwoProbes et FunctionProbe déplacent des sondes sur une courbe déjà tracée, ValueTable calcule des colonnes déjà écrites. La leçon sœur fonctions-2nde possède pourtant exactement le composant qu'il faudrait (PlotTable, où l'élève place les six points d'un tableau) : le contraste est frappant entre deux leçons du même chapitre écrites par la même main.",
+      "x² > k et x² ≤ k ne sont enseignés nulle part (voir officialScopeNotCovered). L'élève sort en sachant résoudre l'équation et pas l'inéquation, alors que l'inéquation est précisément là où la symétrie de la parabole produit une réunion d'intervalles — l'obstacle le plus caractéristique du chapitre.",
+      "P9 « Déterminer une image graphiquement » n'a aucun geste : les trois sondes du module 5, qui est LE module de lecture, sont toutes en mode antécédents. Le composant FunctionProbe copié dans cette leçon supporte pourtant mode=\"x\" et onModeChange — la fonctionnalité est présente et inutilisée.",
+      "La brique vocab-extremum (module 4 étape 1) enseigne « minimum, maximum, extremum » alors que teachingScope.exclude renvoie explicitement extremums et variations à variations-extremums-2nde. Le mot est nécessaire ici (le coin du V est un minimum) mais la brique le DÉFINIT au lieu de le poser en rappel ou en anticipation assumée : c'est un terme au-dessus du niveau de la leçon, et un élève qui ferait variations-extremums ensuite le rencontrerait comme déjà acquis alors que la leçon qui doit l'établir ne l'a pas encore fait.",
+      "La symétrie est enseignée quatre fois par le geste et jamais nommée « parité » : voir officialScopeNotCovered. C'est un manque de vocabulaire, pas de contenu, mais il coupe l'élève du mot qu'il rencontrera partout ailleurs."
+    ],
+    "technicalProblems": [
+      "Module04LeV.jsx:41 — état mort et trompeur : `const [seenAbove, setSeenAbove] = useState(true);` est déclaré avec un commentaire qui s'autocontredit (« a = 2 : a² > |a| déjà constaté au départ ? non — on l'exige par un geste ») et n'est JAMAIS lu ni écrit ensuite ; la logique réelle passe par seenAboveMoved. `seenAbove` et `setSeenAbove` sont morts. Correctif : supprimer la ligne.",
+      "AUCUN GEL DE MANIPULATION dans cette leçon. Vérification exhaustive du grep `disabled={d…}` : tous les `disabled` des modules 1 à 6 sont des verrous d'ANTÉRIORITÉ (`!done1`, `!done2`, `!seen2`), jamais des gels sur l'étape courante ; les seuls `disabled={doneN}` portent sur des PredictionChips (Module01:68, Module02:69, Module03:96), ce qui est correct et voulu — une prédiction s'enregistre une fois. Les en-têtes de tous les modules portent la mention explicite « MANIPULATION JAMAIS GELÉE » avec la description du bug corrigé. C'est la leçon la plus propre des trois auditées sur ce point.",
+      "Aucun défaut mathématique. Vérifications numériques : (−3)² = 9, 1/(−3) = −1/3, |−3| = 3 (fr-e1) ; (−7)² = 49 > (−4)² = 16 (fr-e3) ; 1/(−2) = −0,5 < 1/3 ≈ 0,333 (fr-e5) ; 1/0,01 = 100, 1/1000 = 0,001 ; x² = 9 → {−3 ; 3}, |x| = 9 → {−9 ; 9}, 1/x = 9 → {1/9} (fr-e8) ; en x = 0,2 : x² = 0,04 < |x| = 0,2 < 1/x = 5 (fr-e9) ; 200/(2v) = (200/v)/2 (fr-e10) ; 1,5² = 2,25 ; t(60) = 2, t(30) = 4 ; 1/(−2) = −0,5 pour le point (−2 ; −0,5) ; x² ≤ |x| ⟺ −1 ≤ x ≤ 1 ; les trois courbes concourent en (1 ; 1). Toutes exactes, et l'essentiel est verrouillé par referenceUtils.test.js (symétries, variations, antécédents, orderAt, squareBelowAbs, deux morceaux pour l'hyperbole).",
+      "referenceUtils.antecedentsOf est EXACT pour les trois références (branchement sur f.id vers √y, 1/y, ±y) et ne tombe sur la dichotomie que pour une fonction inconnue : le dessin et le texte ne peuvent pas diverger. C'est le bon choix.",
+      "Aucun composant mort : ThreeMachines (M1), TwoProbes (M2, M3, M4) et FunctionProbe (M5) sont tous rendus. FunctionProbe est une copie de celui de fonctions-2nde, conformément à la règle « on copie, on n'importe pas entre leçons » — la duplication est ici assumée et documentée en tête de referenceUtils."
+    ],
+    "duplicates": [
+      "ANTICIPATION sur variations-extremums-2nde, assumée mais imparfaitement cloisonnée. Cette leçon emploie « croissante » et « décroissante » explicitement au sens du collège (la courbe monte / descend) et renvoie la définition par inégalités à la leçon dédiée : le partage est déclaré dans teachingScope.exclude et respecté dans les questions (M02-S4-Q1 demande « croissante ou décroissante » sur un intervalle, jamais l'implication a < b ⟹ f(a) ≤ f(b)). En revanche la brique vocab-extremum définit minimum, maximum ET extremum, ce qui empiète : c'est variations-extremums-2nde qui doit établir ces trois mots, et elle le fait (brique maximum-minimum, module 4). Le mot arrive donc en 2de par deux leçons différentes, la première en le définissant sans que la manipulation qui lui donne son sens (le réglage d'intervalle) ait eu lieu. À convertir en variant=\"rappel\" ou en anticipation explicite.",
+      "REPETITION partielle avec fonctions-2nde sur la lecture d'antécédents et sur le tableau de valeurs. Le geste « sonde horizontale, compter les points d'intersection avec y = k » est enseigné dans les deux leçons avec le MÊME composant (FunctionProbe, copié). Ce n'est pas fautif — la seconde spécialise sur les trois références et généralise en fonction du signe de k — mais l'ordre de parcours n'est garanti par rien et le priorKnowledge de cette leçon ne déclare NI image-antecedent NI ensemble-definition, alors que le module 5 en vit entièrement. Un élève qui commencerait par les fonctions de référence rencontrerait la dissymétrie image/antécédent sans qu'elle ait jamais été établie.",
+      "Aucun doublon avec valeur-absolue-distance-2nde : cette leçon-là enseigne |x| comme DISTANCE et l'inéquation |x − a| ≤ r ; celle-ci enseigne x ↦ |x| comme FONCTION et sa courbe. Le prérequis valeur-absolue est correctement déclaré et diagnostiqué (fr-d3). Le partage est propre.",
+      "Aucun doublon avec signe-fonctions-2nde : le signe de x² et le signe de 1/x sont établis ici comme propriétés des courbes, jamais sous forme de tableau de signes (teachingScope.exclude)."
+    ],
+    "recommendations": [
+      "Ajouter au module 2 étape 1, juste après la révélation f(−a) = f(a), une brique `vocab-fonction-paire-impaire` qui nomme les deux notions et renvoie aux trois miroirs déjà manipulés (x² et |x| paires, 1/x impaire). L'enseignement existe en entier ; seul le mot manque, et son absence est un trou de vocabulaire à l'échelle de toute la Seconde. Ajouter en append-only le LP « Étudier la parité d'une fonction de référence ».",
+      "Ajouter au module 5 une étape d'inéquation : sonde horizontale à y = k avec highlightIntervals sur {x : f(x) > k}, sur la parabole d'abord (x² > 4 → deux intervalles, l'obstacle) puis sur le V. C'est le seul manque de contenu réel de la leçon, et l'infrastructure est déjà là (le module 4 utilise highlightIntervals).",
+      "Rendre bimodale la première sonde du module 5 (mode=\"x\" / mode=\"y\" via onModeChange, comme le fait le module 6 de fonctions-2nde) : P9 « déterminer une image graphiquement » aurait enfin son geste, à coût quasi nul.",
+      "Donner à P5 et P6 un geste de construction : porter PlotTable de fonctions-2nde dans cette leçon (copie, pas import) et faire placer les points de x² sur un tableau symétrique {−2, −1, −0,5, 0, 0,5, 1, 2}. Le choix des abscisses symétriques est justement ce que la leçon enseigne à l'oral ; le faire exécuter transformerait deux PARTIALLY_COVERED en COVERED.",
+      "Convertir vocab-extremum en variant=\"rappel\" ou l'annoncer comme anticipation, et ajouter dans le priorKnowledge de la leçon les ids image-antecedent et ensemble-definition (issus de fonctions-2nde), avec les questions de diagnostic correspondantes au module 0.",
+      "Supprimer l'état mort seenAbove/setSeenAbove (Module04LeV.jsx:41)."
+    ],
+    "verticalPositioning": {
+      "revised": "Le vocabulaire fonctionnel de 3e (fonction, notation f(x), image), le repérage de 6e (abscisse, ordonnée), le carré d'un nombre relatif (4e, dont (−4)² = 16 qui est LE piège rejoué au module 1) et l'inverse d'un nombre (3e). Tous déclarés en priorKnowledge et mesurés un à un par les cinq questions du module 0 — le diagnostic ne demande rien des trois courbes elles-mêmes, ce qui est la discipline attendue. S'y ajoute, en amont immédiat de 2de, la valeur absolue comme distance à zéro (valeur-absolue-distance-2nde), diagnostiquée par fr-d3.",
+      "extended": "La lecture graphique de 3e (lecture-graphique-3e : lire une image, un antécédent, repérer les variations) s'étend ici à des courbes NON AFFINES, ce qui change tout : en 3e une droite n'a qu'un antécédent par valeur, ici la parabole en a deux, l'hyperbole une, et un nombre négatif n'en a aucun par x². La comparaison de nombres (« le plus grand a la plus grande image ») cesse d'être universelle : c'est l'extension la plus coûteuse cognitivement, et elle est traitée frontalement par les deux chasses au contre-exemple.",
+      "new": "Trois choses n'existaient pas au collège. (1) Les COURBES elles-mêmes comme objets nommés et mémorisés : parabole, hyperbole, V — avec leur allure comme image mentale mobilisable sans calcul (le brief du boss le dit : « dessine la courbe dans ta tête »). (2) Une fonction dont l'ensemble de définition N'EST PAS ℝ : ℝ* et le trou en 0, avec l'idée qu'une courbe puisse être en deux morceaux et ne jamais toucher un axe. (3) La POSITION RELATIVE de plusieurs courbes, et le fait que l'ordre s'inverse en x = 1 — une comparaison qui ne se lit ni sur une seule courbe ni dans un seul calcul.",
+      "formalized": "Ce qui était en 3e une intuition sur les nombres devient ici une propriété de fonction, énoncée en formules : (−x)² = x², |−x| = |x|, 1/(−x) = −1/x (brique regle-symetrie-entrees) ; le signe de 1/x est celui de x ; x² ≥ 0 avec égalité au seul point 0. Se formalise surtout le fait qu'une propriété de variation se donne SUR UN INTERVALLE et jamais sur une réunion — l'hyperbole décroissante sur chaque branche mais pas sur ℝ*. C'est cette formalisation-là que variations-extremums-2nde reprendra et généralisera avec les inégalités.",
+      "tool": "La leçon fournit le RÉPERTOIRE de courbes dont vit tout le reste du lycée : x² sert de support à variations-extremums (paraboles), à signe-fonctions (signe d'un produit) et à toute la 1re (second degré) ; 1/x sert aux quotients, aux asymptotes et aux limites ; |x| sert aux tolérances et aux voisinages. La règle de comparaison des carrés selon le côté de 0 est réinvestie chaque fois qu'on encadre une expression. Elle presuppose fonctions-2nde (image, antécédent, courbe représentative) sans le déclarer, et prépare directement variations-extremums-2nde, dont elle anticipe le vocabulaire."
+    }
+  }
+}

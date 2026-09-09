@@ -1,0 +1,191 @@
+{
+  "lesson": "positions-relatives-droites-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-geometrie-batch",
+  "learningPoints": {
+    "seconde_positions-relatives-droites-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-laboratoire-des-deux-droites", "step": 1, "mechanism": "manipulation:TwoLinesPlane" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-deux-droites", "step": 1, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-deux-droites", "step": 1, "mechanism": "brick:vocab-secantes-paralleles-confondues" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-deux-droites", "step": 3, "mechanism": "brick:positions-trois-cas" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-deux-droites", "step": 4, "mechanism": "question:M01-S4" },
+        { "module": 3, "moduleSlug": "les-equations", "step": 1, "mechanism": "manipulation:ReducedLab" }
+      ],
+      "manipulation": "TwoLinesPlane — l'élève tire la pointe de v jusqu'à faire DISPARAÎTRE le point d'intersection, et la révélation lui montre que I ne s'est pas éloigné : il a cessé d'exister. Puis ReducedLab M3 étape 1, où amener m₂ à m₁ (p₂ verrouillé) rend les droites strictement parallèles quel que soit p₂",
+      "assessmentQuestionIds": ["pr-e2", "pr-e3", "pr-e5", "pr-e10"],
+      "knowledgeItems": ["positions-trois-cas", "vocab-secantes-paralleles-confondues", "regle-direction-position", "mem-trois-comptes", "critere-equations-reduites"],
+      "notes": "Le parallélisme est PRODUIT par l'élève à trois reprises et de trois façons (par la direction en M1, par le déterminant en M2, par m₂ = m₁ en M3), chaque fois avec une garde qui teste l'état atteint et non le geste effectué. Quatre épreuves du boss. La distinction « strictement parallèles » / « confondues » est le fil du module 1 et son verrouillage (M1 étape 2 : déplacer B jusqu'à ce qu'il tombe SUR (d₁)) est ce qui rend le vocabulaire nécessaire plutôt que décrété.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_positions-relatives-droites-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-laboratoire-des-deux-droites", "step": 3, "mechanism": "manipulation:TwoLinesPlane" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-deux-droites", "step": 3, "mechanism": "brick:positions-trois-cas" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-deux-droites", "step": 4, "mechanism": "question:M01-S4" },
+        { "module": 2, "moduleSlug": "la-direction", "step": 2, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "la-direction", "step": 2, "mechanism": "brick:critere-pentes" },
+        { "module": 2, "moduleSlug": "la-direction", "step": 4, "mechanism": "question:M02-S4" }
+      ],
+      "manipulation": "M1 étape 3 « le tour complet » — la garde exige d'avoir PRODUIT les trois positions (sécantes, parallèles, confondues) ; M2 étape 2 fait construire la verticale, cas où la comparaison des pentes ne dit rien mais où det ≠ 0 tranche « sécantes »",
+      "assessmentQuestionIds": ["pr-e1", "pr-e2", "pr-e4"],
+      "knowledgeItems": ["positions-trois-cas", "mem-trois-comptes", "critere-pentes", "methode-comparer-directions"],
+      "notes": "La question de M1 étape 4 (« deux droites peuvent-elles avoir exactement DEUX points communs ? ») est excellente : elle mesure la trichotomie 1 / 0 / ∞ qui est la thèse du module, et elle n'est pas devinable — un élève qui n'a pas vécu le cas « confondues » n'a pas de raison d'exclure 2. Les trois briques qu'elle déclare en requires sont toutes posées avant (étapes 1 et 3).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_positions-relatives-droites-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "la-direction", "step": 1, "mechanism": "manipulation:DirectionLab" },
+        { "module": 2, "moduleSlug": "la-direction", "step": 1, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "la-direction", "step": 2, "mechanism": "manipulation:DirectionLab" },
+        { "module": 2, "moduleSlug": "la-direction", "step": 2, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "la-direction", "step": 2, "mechanism": "brick:critere-pentes" },
+        { "module": 2, "moduleSlug": "la-direction", "step": 4, "mechanism": "question:M02-S4" }
+      ],
+      "manipulation": "DirectionLab — les lectures m₁ et m₂ sont affichées en direct à côté de det(u, v) ; l'étape 1 fait annuler le déterminant et l'élève constate qu'AU MÊME INSTANT les deux pentes deviennent égales ; l'étape 2 lui fait fabriquer le contre-exemple : v vertical, m₂ « aucune (verticale) », la comparaison des pentes muette, le déterminant décisif",
+      "assessmentQuestionIds": ["pr-e3", "pr-e4", "pr-e10"],
+      "knowledgeItems": ["critere-pentes", "critere-vecteurs-directeurs", "methode-comparer-directions"],
+      "notes": "Le meilleur moment d'enseignement de la leçon : la LIMITE du critère des pentes n'est pas énoncée, elle est CONSTRUITE par l'élève (la garde de l'étape 2 est v.x === 0), et la brique critere-pentes n'apparaît qu'après ce contre-exemple — donc elle est posée avec sa restriction, pas amputée puis corrigée. La ligne r3 de la BatchChoiceQuestion (deux verticales) et l'épreuve pr-e4 mesurent exactement ce cas.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "extension",
+        "detail": "La pente est un acquis (priorKnowledge `pente`, `coefficient-directeur`, diagnostiqué par pr-d2-pente). Neuf ici : la COMPARAISON de deux pentes comme critère de position relative, et le fait qu'une droite verticale n'en ait pas — ce que la fonction affine de 3e ne pouvait pas poser."
+      },
+      "confidence": "high"
+    },
+    "seconde_positions-relatives-droites-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "les-equations", "step": 1, "mechanism": "manipulation:ReducedLab" },
+        { "module": 3, "moduleSlug": "les-equations", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "les-equations", "step": 1, "mechanism": "brick:critere-equations-reduites" },
+        { "module": 3, "moduleSlug": "les-equations", "step": 2, "mechanism": "manipulation:ReducedLab" },
+        { "module": 3, "moduleSlug": "les-equations", "step": 2, "mechanism": "brick:mem-m-decide-p-departage" },
+        { "module": 3, "moduleSlug": "les-equations", "step": 3, "mechanism": "brick:critere-equations-cartesiennes" },
+        { "module": 3, "moduleSlug": "les-equations", "step": 3, "mechanism": "question:M03-S3" },
+        { "module": 3, "moduleSlug": "les-equations", "step": 4, "mechanism": "question:M03-S4" }
+      ],
+      "manipulation": "ReducedLab avec verrouillage alterné : étape 1, p₂ est verrouillé et seul m₂ bouge — on atteint « parallèles » ; étape 2, m₂ est verrouillé et seul p₂ bouge — on atteint « confondues ». Une variable à la fois, exactement le protocole voulu",
+      "assessmentQuestionIds": ["pr-e5", "pr-e6", "pr-e9"],
+      "knowledgeItems": ["critere-equations-reduites", "critere-equations-cartesiennes", "methode-ramener-meme-ecriture", "mem-m-decide-p-departage"],
+      "notes": "La séquence lockP puis lockM est un dispositif propre : elle fait découvrir « m décide, p départage » par deux gestes complémentaires plutôt que par une phrase. L'étape 3 est le modèle d'ordre de tout le lot audité : les deux briques neuves (critere-equations-cartesiennes, methode-ramener-meme-ecriture) sont posées AVANT la TapQuestion qui les exige, dans la même étape. L'invariant mathématique 2x − 4y + 8 = 0 ⟺ y = 0,5x + 2 est verrouillé par droitesUtils.test.js (normalizeLine).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_positions-relatives-droites-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 2, "mechanism": "brick:point-intersection-systeme" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 2, "mechanism": "brick:methode-resoudre-systeme" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 2, "mechanism": "brick:formule-abscisse-intersection" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 2, "mechanism": "question:M04-S2a" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 2, "mechanism": "question:M04-S2b" },
+        { "module": 5, "moduleSlug": "deux-trajectoires", "step": 1, "mechanism": "question:M05-S1a" }
+      ],
+      "manipulation": "M4 étape 1 (ReducedLab avec zoom ±6 / ±15 / ±40) sert de motivation : l'élève fait SORTIR I du cadre puis le retrouve en dézoomant, ce qui établit que I existait pendant tout ce temps. L'étape 2 elle-même n'a pas de manipulation (le ReducedLab y est figé, en illustration)",
+      "assessmentQuestionIds": ["pr-e7"],
+      "knowledgeItems": ["point-intersection-systeme", "methode-resoudre-systeme", "formule-abscisse-intersection", "methode-interpretation-graphique"],
+      "notes": "COVERED, et l'étape 2 est la mieux ordonnée de la leçon : trois briques posées avant deux NumericQuestion enchaînées (l'abscisse, puis l'ordonnée obtenue par substitution), avec des explainFor sur cinq valeurs fautives. Réserve de densité : une seule épreuve au boss (pr-e7), partagée avec P6 — c'est le LP le plus mince en preuve de la leçon, alors qu'il est au cœur de l'objet officiel.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_positions-relatives-droites-2nde_P6": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 2, "mechanism": "brick:methode-resoudre-systeme" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 2, "mechanism": "question:M04-S2a" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 3, "mechanism": "brick:regle-nombre-solutions" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 3, "mechanism": "question:M04-S3" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 4, "mechanism": "question:M04-S4" }
+      ],
+      "manipulation": "Aucune : le système est un objet de calcul, présenté puis exécuté",
+      "assessmentQuestionIds": ["pr-e7", "pr-e8"],
+      "knowledgeItems": ["point-intersection-systeme", "methode-resoudre-systeme", "regle-nombre-solutions", "mem-intersection-systeme"],
+      "notes": "PARTIEL. Ce qui EST enseigné et pratiqué : le cas à UNE solution, par une méthode explicite et complète (brique methode-resoudre-systeme : égaler les deux expressions de y, regrouper, diviser, substituer, vérifier), exécutée deux fois en M4 étape 2 et rejouée en M5 étape 1. Ce qui ne l'est PAS : (a) ni « substitution » ni « élimination » n'est jamais nommée, et la seule technique enseignée — égaler les deux expressions de y — ne s'applique qu'à deux équations déjà réduites ; le système à deux équations cartésiennes n'est jamais résolu par l'élève ; (b) la notation { } d'un système n'apparaît qu'une fois, en affichage statique dans la brique point-intersection-systeme, et l'élève n'a jamais à en écrire ou manipuler un ; (c) surtout, des trois cas 0 / 1 / ∞ solutions, seul le cas 1 est CALCULÉ par l'élève. Les cas 0 et ∞ lui sont toujours présentés comme un calcul déjà terminé dont il doit étiqueter le résultat (M4 étape 3 : « 0,5x + 2 = 0,5x − 1 donne 2 = −1, que conclure ? » ; M4 étape 4 ; M5 étape 4 ; et l'épreuve pr-e8 : « un système conduit à 4 = 4, combien de solutions ? »). L'interprétation est enseignée, la dérivation ne l'est pas. À noter aussi que le spec docs/lessons/2NDE_POSITIONS_RELATIVES_DROITES_SPEC.md liste « Systèmes simples » parmi les prérequis, mais priorKnowledge ne déclare que reduire-expression et terme-algebrique, et le module 0 ne diagnostique qu'une équation linéaire à une inconnue (pr-d5-equation).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_positions-relatives-droites-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 1, "mechanism": "manipulation:ReducedLab" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 1, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 1, "mechanism": "brick:methode-interpretation-graphique" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 3, "mechanism": "brick:regle-nombre-solutions" },
+        { "module": 4, "moduleSlug": "le-point-d-intersection", "step": 4, "mechanism": "question:M04-S4" }
+      ],
+      "manipulation": "ReducedLab avec chips de zoom (±6, ±15, ±40) — la garde exige d'abord de faire SORTIR I du cadre, puis de le RETROUVER en dézoomant ; la révélation conclut que le dessin a des bords, pas les équations",
+      "assessmentQuestionIds": ["pr-e1", "pr-e8"],
+      "knowledgeItems": ["methode-interpretation-graphique", "regle-nombre-solutions", "mem-intersection-systeme"],
+      "notes": "Dispositif honnête et rare : au lieu d'affirmer que le graphique ne prouve rien, la leçon fabrique le cas où il ment (deux droites de pentes 0,5 et 0,6, dont l'intersection est en x = 60 — valeur verrouillée par droitesUtils.test.js). L'épreuve pr-e1 rejoue exactement cette situation. Réserve technique sur la garde : `done1 = escaped && found` où `found` n'est mis qu'à l'intérieur du gestionnaire de zoom — la séquence attendue (sortir d'abord, dézoomer ensuite) est imposée par la machine d'état, ce qui peut demander un rejeu si l'élève dézoome trop tôt.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_positions-relatives-droites-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "deux-trajectoires", "step": 1, "mechanism": "brick:methode-trajectoires" },
+        { "module": 5, "moduleSlug": "deux-trajectoires", "step": 1, "mechanism": "question:M05-S1a" },
+        { "module": 5, "moduleSlug": "deux-trajectoires", "step": 2, "mechanism": "brick:methode-parallele-par-un-point" },
+        { "module": 5, "moduleSlug": "deux-trajectoires", "step": 2, "mechanism": "question:M05-S2" },
+        { "module": 5, "moduleSlug": "deux-trajectoires", "step": 3, "mechanism": "brick:methode-ab-cd" },
+        { "module": 5, "moduleSlug": "deux-trajectoires", "step": 3, "mechanism": "question:M05-S3" }
+      ],
+      "manipulation": "Aucune : le module 5 n'a aucune manipulation vivante (les TwoLinesPlane y sont statiques, sans poignée ni stepper). Deux mises en scène cependant : à l'étape 2 la droite-réponse n'est tracée qu'une fois la valeur de p trouvée, et à l'étape 3 les deux droites n'apparaissent qu'après la réponse (`above={(revealed) => …}`)",
+      "assessmentQuestionIds": ["pr-e9", "pr-e10"],
+      "knowledgeItems": ["methode-trajectoires", "methode-parallele-par-un-point", "methode-ab-cd"],
+      "notes": "Trois problèmes bien différenciés (croisement de trajectoires, parallèle par un point, position de (AB) et (CD)), chacun précédé de sa brique de méthode — l'ordre est correct dans les trois étapes. Le fait de ne révéler la droite ou les droites qu'APRÈS la réponse est un bon choix : il empêche de lire le résultat sur le dessin. Deux épreuves au boss. Le module réinvestit sans rien réenseigner, ce qui est le rôle d'un practice_lab.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "pedagogicalProblems": [
+      "P6 « Résoudre un système associé à deux droites » : seul le cas à une solution est calculé par l'élève. Les cas 0 et ∞ solutions lui sont toujours servis comme un calcul déjà achevé qu'il doit étiqueter (Module04LePointDIntersection.jsx étapes 3 et 4, Module05DeuxTrajectoires.jsx étape 4, épreuve pr-e8 : « un système conduit à 4 = 4 »). Il n'a jamais à faire apparaître lui-même le 2 = −1 ni le 0 = 0. Par ailleurs aucune technique générale n'est nommée (ni substitution ni élimination) et le système à deux équations cartésiennes n'est jamais résolu — la seule méthode enseignée, égaler deux expressions de y, suppose les deux équations déjà réduites.",
+      "SEPT ÉTAPES DE MANIPULATION SANS AUCUNE QUESTION : M1 étapes 1, 2, 3 ; M2 étapes 1 et 2 ; M3 étapes 1 et 2 ; M4 étape 1. Le fait mathématique y est établi par une révélation conditionnée puis par une brique, mais rien ne vérifie que l'élève a observé plutôt que tâtonné jusqu'à ce que la garde cède. C'est un choix d'architecture cohérent (les questions sont regroupées en fin de module), mais il laisse les modules 1 à 3 sans aucun contrôle avant leur dernière étape.",
+      "Le module 5, seul practice_lab de la leçon, ne comporte AUCUNE manipulation vivante : ses trois TwoLinesPlane sont des figures fixes. Un élève qui a passé quatre modules à tirer des poignées termine sur du calcul pur. Ce n'est pas une faute de couverture (P8 est bien enseigné et éprouvé), mais c'est une rupture avec la promesse d'interaction de la leçon.",
+      "P5 « Déterminer le point d'intersection » — cœur de l'objet officiel — n'a qu'une seule épreuve au boss (pr-e7), partagée avec P6. C'est le LP le moins mesuré de la leçon, alors que huit LPs se partagent dix épreuves et que P1 en reçoit quatre.",
+      "Prérequis non diagnostiqué : le spec (docs/lessons/2NDE_POSITIONS_RELATIVES_DROITES_SPEC.md) liste « Systèmes simples » parmi les prérequis de la leçon, mais priorKnowledge ne le déclare pas et le module 0 ne mesure qu'une équation à une inconnue (pr-d5-equation, 2x + 1 = −x + 4). Les neuf entrées de priorKnowledge sont en revanche toutes diagnostiquées, une par une."
+    ],
+    "technicalProblems": [
+      "AUCUNE manipulation n'est gelée après validation — point fort, et c'est délibéré : l'en-tête de Module01LeLaboratoireDesDeuxDroites.jsx (lignes 51-54) documente explicitement « MANIPULATION JAMAIS GELÉE… seul le verrou d'ANTÉRIORITÉ demeure ». Les quatre `disabled={doneN}` de la leçon (Module01:173, Module02:99, Module03:55, Module04:73) portent tous sur des PredictionChips, ce qui est le comportement voulu. Un seul `disabled` en dur, sur une illustration statique par conception (Module04LePointDIntersection.jsx:105, un ReducedLab d'affichage).",
+      "VERROUS D'ANTÉRIORITÉ REDONDANTS : les quatre `disabled={!doneN}` (Module01:209 et :241, Module02:134, Module03:85) verrouillent un laboratoire tant que l'étape PRÉCÉDENTE n'est pas faite — ce n'est donc pas un gel, le laboratoire s'ouvre à la réussite et reste vivant ensuite. Mais common/kit/ContentModule.jsx (ligne 99) passe déjà `locked={isStepLocked(alreadyCompleted, !steps[i-1].done)}` à chaque StepCard : l'étape N est déjà inatteignable tant que N−1 n'est pas validée. Ces quatre props sont donc un second verrou sur une porte déjà fermée, et les valeurs de repli qu'ils pilotent (`state={done1 ? state : START}`, `value={done1 ? val : {m: 0.5, p: −1}}`) ne sont jamais rendues. Inoffensif mais mort.",
+      "Mathématiques justes et fortement verrouillées : droitesUtils.test.js prouve par balayage exhaustif (plus de 30 000 configurations : 48 vecteurs × 48 × 4 points × 4) les deux biconditionnelles qui portent toute la leçon — `intersection === null ⟺ relativePosition !== 'secantes'` et `det(u, v) === 0 ⟺ relativePosition !== 'secantes'` — ainsi que la forme canonique unique d'une droite (normalizeLine({a:2,b:−4,c:8}) === lineFromSlopeIntercept(0.5, 2), c'est-à-dire exactement l'affirmation de M3 étape 3), le traitement des verticales (slopeOf → null), l'intersection par Cramer vérifiée en arithmétique entière, et le cas hors cadre (60 ; 31) sur lequel reposent M4 étape 1 et l'épreuve pr-e1. labelLayout.test.js balaie 69 120 scènes avec zéro étiquette abandonnée.",
+      "AUCUN problème de tolérance : toutes les conditions de réussite sont des égalités exactes sur des entiers ou des rationnels exacts — `det === 0`, `next.v.x === 0`, égalité de triplets canoniques {a, b, c}, appartenance testée en arithmétique entière. Les poignées s'accrochent à la grille entière (moveHandle applique Math.round) et les curseurs de M3 avancent au pas 0,5, sur lequel les cibles m₂ = 0,5 et p₂ = 2 tombent exactement. Aucune manipulation n'accepte une configuration que l'élève verrait comme fausse.",
+      "Machine d'état fragile en M4 étape 1 : `done1 = escaped && found`, où `found` n'est positionné que dans le gestionnaire de zoom et `escaped` que lorsque I quitte ±6. Si l'élève dézoome avant d'avoir chassé I hors du cadre, l'ordre attendu n'est pas satisfait et il doit rejouer la séquence. La garde est atteignable, mais elle est sensible à l'ordre plutôt que tolérante.",
+      "CODE MORT : components/Stepper.jsx est intégralement mort — exporté par défaut, importé nulle part (ReducedLab utilise le ParamSlider partagé de common/components/AffineExplorer) ; le spec le liste pourtant comme livré. components/learningPoints.js (LESSON_LEARNING_POINTS) est mort lui aussi : la leçon n'a pas de MasteryReport et BossFinal tire ses LPs de lessonConfig ; son commentaire d'en-tête prétend être « le seul endroit où les ids sont nommés », ce qui est faux (ils sont aussi dans lesson.config.js et dans les littéraux assessment du module 6). Dans droitesUtils.js, une longue liste d'exports n'est utilisée que par les tests ou par personne : fracEquals, fracIsInt, cartesianTex, fracCoupleTex, clampInt, gcd, lineTex, fracFromDecimal, normalizeLine, sameLine, isValidVector, verticalLine, commonPointsCount, interceptOf, reducedEquation, isOn, parallelThrough, yAt, xAt. `commonPointsCount` est le cas le plus parlant : la thèse de la leçon est « 1, 0 ou ∞ », la fonction existe et est testée, et l'interface utilise à la place la table de chaînes COMMON_POINTS_TEXT. Props déclarés jamais passés : TwoLinesPlane.frozen, ReducedLab.cartesian (le chemin d'affichage cartésien n'est donc jamais montré à un élève).",
+      "components/PredictionChips.jsx duplique sciemment le composant partagé exporté par common/kit (la leçon date du 2026-09-05, le partagé vise les leçons écrites à partir du 2026-09-06)."
+    ],
+    "duplicates": [
+      "AVEC colinearite-alignement-2nde : le recouvrement est réel et non déclaré au niveau des briques. lesson.config.js exclut « le déterminant comme objet » et déclare `colineaire` en priorKnowledge (diagnostiqué par pr-d4-det), ce qui autorise le RÉEMPLOI — mais quatre briques d'ici sont posées en variant=\"new\" alors que colinearite-alignement-2nde possède déjà l'équivalent : critere-vecteurs-directeurs et formule-det-directions face à colin-parallelisme-det (« (AB) ∥ (CD) ⇔ det(AB, CD) = 0 ») et colin-formule-det ; methode-comparer-directions et methode-ab-cd face à colin-methode-conclure (« construire les deux vecteurs, calculer leur déterminant, conclure ») et mem-colin-deux-usages. La méthode methode-ab-cd de M5 étape 3 est presque un sur-ensemble de colin-methode-conclure : sa moitié authentiquement neuve est le second temps (départager parallèles et confondues en testant si C appartient à (AB)). L'élève se voit donc annoncer comme neuf un savoir que sa carte contient peut-être déjà.",
+      "AVEC equations-de-droites-2nde : recouvrement plus étroit et mieux délimité (lesson.config.js exclut « la construction des équations de droites », et coefficient-directeur, ordonnee-origine, pente sont en priorKnowledge et diagnostiqués). Résidus : la brique methode-ramener-meme-ecriture (« 2x − 4y + 8 = 0 ⟺ y = 0,5x + 2 »), posée en variant=\"new\", restitue le contenu de droite-lire-cartesienne et mem-droite-deux-ecritures ; et la manipulation de M3 étapes 1-2 (m fait pivoter, p fait glisser) refait celle du CoefficientLab de equations-de-droites M4 étapes 1-2 (brique droite-role-m-p). Le feedback de M3 étape 1 (« le coefficient directeur EST la direction : (1 ; m) dirige la droite ») reprend droite-pente-vers-directeur.",
+      "APPORT PROPRE, non recouvert : 14 des 21 items de la carte sont authentiquement neufs — la trichotomie et son vocabulaire (positions-trois-cas, vocab-secantes-paralleles-confondues, regle-direction-position, mem-trois-comptes), le critère COMPARATIF sur les réduites (critere-equations-reduites, mem-m-decide-p-departage, distinct du rôle de m et p pour UNE droite), la totalité du module 4 (six items sur le système et l'interprétation graphique) et les deux méthodes de problème methode-parallele-par-un-point et methode-trajectoires."
+    ],
+    "verticalPositioning": {
+      "revised": "Rien du collège directement. Sont réinvestis, et correctement déclarés en prérequis diagnostiqués : le coefficient directeur et l'ordonnée à l'origine (3e), le vecteur et ses coordonnées (vecteurs-2nde), la colinéarité et le déterminant (colinearite-alignement-2nde), la lecture d'une équation réduite et cartésienne (equations-de-droites-2nde), et la résolution d'une équation à une inconnue.",
+      "extended": "Le déterminant, jusqu'ici test de colinéarité entre deux vecteurs, devient critère de position entre deux DROITES. La pente, propriété d'une droite, devient un objet de comparaison entre deux droites — avec sa limite (les verticales n'en ont pas), construite par l'élève. L'équation, jusqu'ici description d'une droite, devient l'une des deux lignes d'un système.",
+      "new": "La trichotomie sécantes / strictement parallèles / confondues et les trois comptes 1, 0, ∞ ; le critère comparatif sur les réduites (m décide, p départage) et sur les cartésiennes (a₁b₂ − a₂b₁) ; le point d'intersection comme SOLUTION d'un système et la correspondance entre le nombre de solutions et la position relative ; l'idée que le cadre du dessin a des bords mais que les équations n'en ont pas.",
+      "formalized": "La correspondance système ⟷ géométrie, portée par les briques point-intersection-systeme, regle-nombre-solutions et mem-intersection-systeme, et la formule fermée formule-abscisse-intersection x = (p₂ − p₁)/(m₁ − m₂). La leçon porte la carte des connaissances (knowledgeMap: true, aucun module « À retenir », six KnowledgeSnapshot, carte complète en synthèse du boss) : architecture conforme.",
+      "tool": "Décider d'une position relative et calculer une intersection deviennent des outils de résolution de problèmes concrets (trajectoires qui se croisent, route parallèle à construire), et le socle des systèmes linéaires et de la géométrie analytique de Première."
+    },
+    "officialScopeNotCovered": [
+      "« Résoudre un système associé à deux droites » (teachingScope.include de l'objet officiel positions_relatives_droites) : partiellement couvert seulement. Une méthode existe et est pratiquée pour le cas à une solution ; aucune technique générale n'est nommée, le système en écriture cartésienne n'est jamais résolu par l'élève, et les cas à zéro et à une infinité de solutions sont toujours interprétés, jamais dérivés. Voir le LP P6, jugé PARTIALLY_COVERED.",
+      "Les sept autres items de teachingScope.include (reconnaître parallèles, reconnaître sécantes, comparer les pentes, utiliser les équations pour le parallélisme, déterminer le point d'intersection, interpréter graphiquement une intersection, résoudre un problème géométrique) ont chacun un LP, un enseignement gestuel ou méthodique, et au moins une épreuve.",
+      "Le teachingScope.exclude est respecté : ni vecteur normal ni orthogonalité, la construction des équations est laissée à equations-de-droites-2nde, et le déterminant est réemployé sans être redéfini comme objet."
+    ],
+    "recommendations": [
+      "Compléter P6 : faire produire à l'élève au moins un cas dégénéré (poser un système sans solution et le mener jusqu'au 2 = −1, plutôt que lui présenter le calcul fini), et ajouter une résolution où au moins une équation est donnée sous forme cartésienne — c'est le seul manque de périmètre officiel de la leçon.",
+      "Ajouter une seconde épreuve pour P5, aujourd'hui mesuré par la seule pr-e7, partagée avec P6.",
+      "Rendre le module 5 manipulable au moins une fois (l'étape 2, « une route parallèle », se prête naturellement à un placement de droite par l'élève) : c'est le practice_lab, et il ne contient aucun geste.",
+      "Ajouter une question de contrôle aux étapes de manipulation les plus chargées (M1 étape 3, M2 étape 2, M3 étape 2), qui établissent chacune un fait central sans que rien ne vérifie qu'il a été observé.",
+      "Trancher le partage de briques avec colinearite-alignement-2nde : passer critere-vecteurs-directeurs, formule-det-directions, methode-comparer-directions et methode-ab-cd en variant=\"rappel\", ou restreindre chacune à ce qu'elle ajoute réellement (pour methode-ab-cd : le second temps qui départage parallèles et confondues). Même geste pour methode-ramener-meme-ecriture face à equations-de-droites-2nde.",
+      "Supprimer les quatre `disabled={!doneN}` redondants (ContentModule verrouille déjà l'étape) ainsi que les valeurs de repli qu'ils pilotent ; supprimer components/Stepper.jsx et components/learningPoints.js, tous deux morts, et les exports jamais importés de droitesUtils.js ; remplacer le PredictionChips local par celui de common/kit.",
+      "Aligner priorKnowledge et le spec sur la question des systèmes : soit déclarer et diagnostiquer un prérequis « système simple », soit retirer « Systèmes simples » de la liste des prérequis du spec."
+    ]
+  }
+}

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TankLab from '../components/TankLab';
-import PredictionChips from '../components/PredictionChips';
 import { affine, imageOf, formatDec } from '../components/affineUtils';
 
 /**

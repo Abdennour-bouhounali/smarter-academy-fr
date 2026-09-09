@@ -36,7 +36,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '🔢',
-  estimatedDurationMin: 65,
+  estimatedDurationMin: 68,
   skills: [
     'Reconnaître et utiliser les multiples et diviseurs',
     'Utiliser les propriétés de divisibilité',

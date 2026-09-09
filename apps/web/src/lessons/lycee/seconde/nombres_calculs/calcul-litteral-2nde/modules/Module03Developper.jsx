@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import ValueTable from '../../../../../common/components/ValueTable';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import IdentityGrid from '../components/IdentityGrid';
-import PredictionChips from '../components/PredictionChips';
 
 /**
  * Module 3 — DISCOVERY : « Développer : l'aire qui se découpe ».

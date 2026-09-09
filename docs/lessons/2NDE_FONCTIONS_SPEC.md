@@ -4,7 +4,7 @@
 
 ## 1. Identity & curriculum contract
 
-- Key `seconde_fonctions` · id `fonctions-2nde` · domain `fonctions` · ƒ · Difficile · free · **85 min** (= module sum).
+- Key `seconde_fonctions` · id `fonctions-2nde` · domain `fonctions` · ƒ · Difficile · free · **87 min** (= module sum).
 - Route `/courses/lycee/seconde/fonctions/fonctions-2nde`.
 - LPs `seconde_fonctions-2nde_P1…P12` (dépendance · variable · ensemble de définition · image · antécédent ·
   tableau · graphique · expression · registres · modéliser · intervalle · réunion d'intervalles).
@@ -40,7 +40,7 @@ pas de boîte ». Prédiction sans verdict (« la moitié ? »). Le mot « fonct
 formule le module 3. Candidats rejetés : la machine mystérieuse (3e), un tarif de parking (peu de courbe), un
 tableau à remplir (pas de phénomène).
 
-## 4. Module architecture (9 · 85 min)
+## 4. Module architecture (9 · 87 min)
 
 | # | Slug | Stage | LPs | min | Responsibility | Interaction |
 |---|---|---|---|---|---|---|

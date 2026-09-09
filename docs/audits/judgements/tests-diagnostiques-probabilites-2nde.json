@@ -1,0 +1,407 @@
+{
+ "lesson": "tests-diagnostiques-probabilites-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "session-principale",
+ "learningPoints": {
+  "seconde_tests-diagnostiques-probabilites-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "dix-mille-personnes",
+     "step": 1,
+     "mechanism": "manipulation:TestPopulationLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "dix-mille-personnes",
+     "step": 1,
+     "mechanism": "brick:quatre-groupes"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "dix-mille-personnes",
+     "step": 2,
+     "mechanism": "question:M01-S2-Q1"
+    }
+   ],
+   "manipulation": "TestPopulationLab — 10 000 personnes se répartissent en quatre groupes sous les yeux de l'élève",
+   "assessmentQuestionIds": [
+    "td-e1"
+   ],
+   "knowledgeItems": [
+    "quatre-groupes"
+   ],
+   "notes": "Le choix d'une population entière plutôt que de probabilités abstraites est ce qui rend le paradoxe visible : 99 vrais positifs contre 495 faux positifs se COMPTENT.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "dix-mille-personnes",
+     "step": 1,
+     "mechanism": "manipulation:TestPopulationLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "dix-mille-personnes",
+     "step": 1,
+     "mechanism": "brick:quatre-groupes"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "td-e2"
+   ],
+   "knowledgeItems": [
+    "quatre-groupes"
+   ],
+   "notes": "Identifier la population de référence est le premier geste : c'est aussi ce qui manquera à l'élève qui inversera plus tard le conditionnement.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "les-quatre-cases",
+     "step": 1,
+     "mechanism": "manipulation:TestPopulationLab"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-quatre-cases",
+     "step": 1,
+     "mechanism": "brick:vocabulaire-cases"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-quatre-cases",
+     "step": 2,
+     "mechanism": "question:M02-S2-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "td-e1"
+   ],
+   "knowledgeItems": [
+    "vocabulaire-cases"
+   ],
+   "notes": "P1 et P3 partagent l'épreuve td-e1 ; l'appariement est acceptable car modéliser la situation, c'est précisément nommer les quatre événements.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "les-quatre-cases",
+     "step": 1,
+     "mechanism": "brick:vocabulaire-cases"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-quatre-cases",
+     "step": 2,
+     "mechanism": "question:M02-S2-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "td-e3"
+   ],
+   "knowledgeItems": [
+    "vocabulaire-cases"
+   ],
+   "notes": "Faux positif défini sur la population affichée, pas en abstrait.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "les-quatre-cases",
+     "step": 1,
+     "mechanism": "brick:vocabulaire-cases"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-quatre-cases",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "td-e4"
+   ],
+   "knowledgeItems": [
+    "vocabulaire-cases"
+   ],
+   "notes": "Faux négatif : le groupe le plus petit (1 personne sur 10 000 au scénario de référence), ce qui est en soi une observation utile.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "sensibilite-et-specificite",
+     "step": 1,
+     "mechanism": "brick:sensibilite-specificite"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "sensibilite-et-specificite",
+     "step": 1,
+     "mechanism": "question:M03-S1-Q1"
+    }
+   ],
+   "manipulation": "Aucun instrument propre au module 3",
+   "assessmentQuestionIds": [
+    "td-e5"
+   ],
+   "knowledgeItems": [
+    "sensibilite-specificite"
+   ],
+   "notes": "La sensibilité est définie comme une proportion PARMI les malades : la restriction d'univers vue en probabilites-conditionnelles est réinvestie.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "sensibilite-et-specificite",
+     "step": 2,
+     "mechanism": "brick:sensibilite-specificite"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "sensibilite-et-specificite",
+     "step": 2,
+     "mechanism": "question:M03-S2-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "td-e6"
+   ],
+   "knowledgeItems": [
+    "sensibilite-specificite"
+   ],
+   "notes": "Spécificité, symétrique de la sensibilité sur les non-malades.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-test-est-positif-et-alors",
+     "step": 1,
+     "mechanism": "manipulation:PpvExplorer"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-test-est-positif-et-alors",
+     "step": 1,
+     "mechanism": "brick:valeur-predictive"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-test-est-positif-et-alors",
+     "step": 2,
+     "mechanism": "question:M04-S2-Q1"
+    }
+   ],
+   "manipulation": "PpvExplorer — trois curseurs (prévalence, sensibilité, spécificité) recalculent la valeur prédictive en direct",
+   "assessmentQuestionIds": [
+    "td-e7"
+   ],
+   "knowledgeItems": [
+    "valeur-predictive"
+   ],
+   "notes": "Vérifié numériquement : prévalence 1 %, sensibilité 99 %, spécificité 95 % sur 10 000 donnent VP=99, FP=495, donc VPP = 99/594 ≈ 16,7 %. Deux tests verrouillent l'intervalle (16,5–17) et l'écart sensibilité − VPP > 0,7 : la surprise ne peut pas être détruite par un réglage.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-test-est-positif-et-alors",
+     "step": 1,
+     "mechanism": "manipulation:PpvExplorer"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-test-est-positif-et-alors",
+     "step": 3,
+     "mechanism": "brick:mem-inversion-test"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "atelier-affirmations",
+     "step": 3,
+     "mechanism": "question:M05-S3-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "td-e10"
+   ],
+   "knowledgeItems": [
+    "valeur-predictive",
+    "mem-inversion-test"
+   ],
+   "notes": "Le curseur de prévalence fait passer la VPP de ~2 % à ~93 % : l'élève VOIT que la même performance de test donne des conclusions opposées selon la population.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-test-est-positif-et-alors",
+     "step": 1,
+     "mechanism": "manipulation:PpvExplorer"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-test-est-positif-et-alors",
+     "step": 3,
+     "mechanism": "brick:mem-inversion-test"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-test-est-positif-et-alors",
+     "step": 3,
+     "mechanism": "question:M04-S3-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "td-e8"
+   ],
+   "knowledgeItems": [
+    "mem-inversion-test"
+   ],
+   "notes": "L'inversion du conditionnement, seulement nommée dans probabilites-conditionnelles, est ici MANIPULÉE : c'est la leçon qui répare l'occasion manquée de sa voisine.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_tests-diagnostiques-probabilites-2nde_P11": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "atelier-affirmations",
+     "step": 1,
+     "mechanism": "brick:methode-affirmation-test"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "atelier-affirmations",
+     "step": 1,
+     "mechanism": "question:M05-S1-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "atelier-affirmations",
+     "step": 4,
+     "mechanism": "question:M05-S4-Q1"
+    }
+   ],
+   "manipulation": "Atelier de quatre affirmations à juger (étapes construites par .map)",
+   "assessmentQuestionIds": [
+    "td-e9",
+    "td-e10"
+   ],
+   "knowledgeItems": [
+    "methode-affirmation-test"
+   ],
+   "notes": "L'atelier fait juger des affirmations réelles, ce qui est le bon transfert pour ce chapitre. Comme dans arbres M5, la brique methode-affirmation-test est enregistrée quatre fois parce qu'elle vit dans le gabarit mappé.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "Le module 3 (sensibilité, spécificité) n'a aucun instrument alors que TestPopulationLab, présent aux modules 1 et 2, pourrait montrer ces deux proportions comme des sous-populations. Deux LP y reposent sur des briques et des questions.",
+   "P1 et P3 partagent leur unique épreuve td-e1."
+  ],
+  "technicalProblems": [
+   "Aucun laboratoire gelé, aucun composant du kit rendu sans import.",
+   "La brique methode-affirmation-test est enregistrée quatre fois (gabarit mappé du module 5) : la placer dans le slot intro la poserait une seule fois.",
+   "data.test.js verrouille les propriétés PÉDAGOGIQUES et non seulement les valeurs : VPP dans (16,5 ; 17), sensibilité − VPP > 0,7, faux positifs > 3 × vrais positifs. C'est le meilleur exemple du dépôt de tests qui protègent une intention d'enseignement."
+  ],
+  "duplicates": [
+   "P8/P10 reprennent l'inversion du conditionnement de probabilites-conditionnelles-2nde P6/P8 — reprise assumée et justifiée : là elle était énoncée, ici elle est manipulée et chiffrée."
+  ],
+  "verticalPositioning": {
+   "revised": "La probabilité conditionnelle et la lecture d'un tableau à double entrée.",
+   "extended": "Le tableau croisé devient tableau de contingence d'un test.",
+   "new": "Faux positif, faux négatif, sensibilité, spécificité, valeur prédictive positive, et l'effet de la prévalence.",
+   "formalized": "La distinction P(positif | malade) et P(malade | positif), avec les chiffres qui montrent leur écart.",
+   "tool": "Application majeure du programme : c'est le point d'arrivée du chapitre probabilités."
+  },
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Les 11 items de teachingScope.include correspondent aux 11 learning points — aucun écart.",
+    "taughtAnyway": true,
+    "evidence": "comparaison item par item",
+    "recommendation": "none"
+   }
+  ],
+  "recommendations": [
+   "Donner au module 3 une vue de TestPopulationLab restreinte aux malades puis aux non-malades : la sensibilité et la spécificité deviendraient deux lectures du même écran."
+  ]
+ }
+}

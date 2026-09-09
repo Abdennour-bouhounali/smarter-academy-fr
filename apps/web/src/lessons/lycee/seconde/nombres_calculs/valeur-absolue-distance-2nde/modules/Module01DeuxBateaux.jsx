@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DistanceLine from '../components/DistanceLine';
 import Stepper from '../components/Stepper';
-import PredictionChips from '../components/PredictionChips';
 import { abs } from '../components/absUtils';
 
 /**

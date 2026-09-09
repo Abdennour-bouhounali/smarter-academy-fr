@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
-import KnowledgeSnapshot from '../components/KnowledgeSnapshot';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import LineBuilder from '../components/LineBuilder';
 import LineScene from '../components/LineScene';
 import {

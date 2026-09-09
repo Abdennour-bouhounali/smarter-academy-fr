@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DetTester from '../components/DetTester';
-import PredictionChips from '../components/PredictionChips';
 import { FIGURES, detTest, cartesianOf, reducedOf, formatCartesian, formatReduced, formatPoint, formatVec } from '../components/lineUtils';
 import { parseDec } from '@smarter-academy/core';
 

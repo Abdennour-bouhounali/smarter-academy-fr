@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Bot, Flag } from 'lucide-react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DisplacementLab from '../components/DisplacementLab';
-import PredictionChips from '../components/PredictionChips';
 import {
   SCENES, vec, add, equal, opposite, diagnose, DIAGNOSIS_TEXT, describeMove, formatVec,
 } from '../components/vecteurUtils';

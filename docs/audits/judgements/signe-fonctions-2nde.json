@@ -1,0 +1,577 @@
+{
+ "lesson": "signe-fonctions-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "session-principale",
+ "learningPoints": {
+  "seconde_signe-fonctions-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 1,
+     "mechanism": "manipulation:SignProbe"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 1,
+     "mechanism": "brick:signe-position-courbe"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 3,
+     "mechanism": "question:M01-S3-Q1"
+    }
+   ],
+   "manipulation": "SignProbe — la sonde balaie la courbe et PEINT l'axe sous elle (vert au-dessus, rose en dessous) ; l'étape n'est acquise que si l'élève a couvert les trois zones et posé la sonde sur les deux zéros",
+   "assessmentQuestionIds": [
+    "sg-e1",
+    "sg-e3"
+   ],
+   "knowledgeItems": [
+    "signe-position-courbe",
+    "mem-au-dessus-en-dessous"
+   ],
+   "notes": "Le signe naît d'une POSITION observée avant d'être un calcul : c'est l'ordre juste. done1 exige explicitement visT.includes(6) && visT.includes(18), donc l'élève ne peut pas valider sans avoir rencontré les deux zéros.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 1,
+     "mechanism": "manipulation:SignProbe"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 1,
+     "mechanism": "brick:signe-position-courbe"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 2,
+     "mechanism": "manipulation:SignProbe"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-zeros-et-le-tableau",
+     "step": 1,
+     "mechanism": "brick:tableau-de-signes"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 4,
+     "mechanism": "question:M01-S4-Q1"
+    }
+   ],
+   "manipulation": "SignProbe sur deux fonctions (température puis cubique) : la lecture du signe est toujours celle de la position de la courbe",
+   "assessmentQuestionIds": [
+    "sg-e1",
+    "sg-e2",
+    "sg-e10"
+   ],
+   "knowledgeItems": [
+    "signe-position-courbe",
+    "mem-au-dessus-en-dessous"
+   ],
+   "notes": "Repris en clôture par sg-e10, qui fait le chemin inverse (d'un résultat algébrique vers ce qu'on voit sur la courbe) — c'est la vérification graphique de P12.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 2,
+     "mechanism": "manipulation:SignProbe"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "au-dessus-ou-en-dessous",
+     "step": 2,
+     "mechanism": "brick:zero-fonction"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-zeros-et-le-tableau",
+     "step": 1,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-d-une-fonction-affine",
+     "step": 1,
+     "mechanism": "brick:formule-zero-affine"
+    }
+   ],
+   "manipulation": "SignProbe : les zéros sont les abscisses où la courbe TRAVERSE l'axe, trouvés à la sonde ; puis formule x = −b/a en M3",
+   "assessmentQuestionIds": [
+    "sg-e2",
+    "sg-e4"
+   ],
+   "knowledgeItems": [
+    "zero-fonction",
+    "formule-zero-affine"
+   ],
+   "notes": "Deux voies complémentaires : graphique (M1/M2) puis algébrique (M3). done2 de M1 exige les trois zéros −3, 1, 4.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "les-zeros-et-le-tableau",
+     "step": 1,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-zeros-et-le-tableau",
+     "step": 1,
+     "mechanism": "brick:tableau-de-signes"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-zeros-et-le-tableau",
+     "step": 2,
+     "mechanism": "brick:methode-construire-tableau"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-et-quotient",
+     "step": 1,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "les-zeros-et-le-tableau",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q1"
+    }
+   ],
+   "manipulation": "SignTable EN SAISIE (editable) : les cases de signe sont des boutons que l'élève remplit lui-même, et `reveal` ne compare qu'ensuite — Module02:57 et Module04:46,68",
+   "assessmentQuestionIds": [
+    "sg-e3",
+    "sg-e4",
+    "sg-e7"
+   ],
+   "knowledgeItems": [
+    "tableau-de-signes",
+    "methode-construire-tableau",
+    "methode-lire-tableau"
+   ],
+   "notes": "L'élève CONSTRUIT le tableau, il ne le lit pas : c'est la différence qui fait de P4 un COVERED et non un MENTIONED_ONLY. Le composant expose editable/values/onChange et n'affiche la correction qu'au reveal.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-d-une-fonction-affine",
+     "step": 1,
+     "mechanism": "manipulation:AffineSignLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-d-une-fonction-affine",
+     "step": 1,
+     "mechanism": "brick:formule-zero-affine"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-d-une-fonction-affine",
+     "step": 2,
+     "mechanism": "manipulation:AffineSignLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-d-une-fonction-affine",
+     "step": 2,
+     "mechanism": "brick:regle-signe-affine"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-d-une-fonction-affine",
+     "step": 3,
+     "mechanism": "question:M03-S3-Q1"
+    }
+   ],
+   "manipulation": "AffineSignLab — a et b se règlent, le zéro −b/a se déplace et la zone verte BASCULE de côté quand a change de signe",
+   "assessmentQuestionIds": [
+    "sg-e5"
+   ],
+   "knowledgeItems": [
+    "formule-zero-affine",
+    "regle-signe-affine",
+    "mem-signe-de-a"
+   ],
+   "notes": "La prédiction de l'étape 2 (« si a devient négatif, que fait la zone verte ? ») est recueillie AVANT le geste, puis tranchée par lui. Bon usage de PredictionChips.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "produit-et-quotient",
+     "step": 1,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-et-quotient",
+     "step": 1,
+     "mechanism": "brick:regle-signe-produit"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-et-quotient",
+     "step": 1,
+     "mechanism": "question:M04-S1-Q1"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-gel-et-benefice",
+     "step": 1,
+     "mechanism": "manipulation:SignProbe"
+    }
+   ],
+   "manipulation": "SignTable à deux lignes de facteurs : l'élève remplit la ligne du produit et voit la règle des signes se former colonne par colonne",
+   "assessmentQuestionIds": [
+    "sg-e6"
+   ],
+   "knowledgeItems": [
+    "regle-signe-produit",
+    "methode-tableau-produit-quotient"
+   ],
+   "notes": "sg-e6 est la SEULE épreuve de P6, mais elle ne porte que lui — donc la preuve est propre, quoique unique.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "produit-et-quotient",
+     "step": 2,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-et-quotient",
+     "step": 2,
+     "mechanism": "brick:regle-signe-quotient"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-et-quotient",
+     "step": 2,
+     "mechanism": "question:M04-S2-Q1"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-gel-et-benefice",
+     "step": 2,
+     "mechanism": "manipulation:SignProbe"
+    }
+   ],
+   "manipulation": "Même tableau en saisie, avec la double barre à la valeur interdite (quotientMarks)",
+   "assessmentQuestionIds": [
+    "sg-e7"
+   ],
+   "knowledgeItems": [
+    "regle-signe-quotient",
+    "methode-tableau-produit-quotient"
+   ],
+   "notes": "sg-e7 vise la colonne x = 4 du quotient, c'est-à-dire exactement la valeur interdite — la question porte sur le point qui distingue quotient et produit.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 1,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 1,
+     "mechanism": "brick:methode-resoudre-par-le-signe"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 2,
+     "mechanism": "brick:vocab-solutions-intervalles"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 2,
+     "mechanism": "question:M05-S2-Q1"
+    }
+   ],
+   "manipulation": "Le tableau construit en M4 sert d'instrument de résolution : lire les intervalles où la ligne finale porte le signe demandé",
+   "assessmentQuestionIds": [
+    "sg-e8",
+    "sg-e9"
+   ],
+   "knowledgeItems": [
+    "methode-resoudre-par-le-signe",
+    "vocab-solutions-intervalles"
+   ],
+   "notes": "Le passage tableau → ensemble de solutions est le cœur de la leçon et il est enseigné comme une LECTURE du tableau, pas comme une règle nouvelle.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-d-une-fonction-affine",
+     "step": 1,
+     "mechanism": "brick:formule-zero-affine"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 1,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 1,
+     "mechanism": "question:M05-S1-Q1"
+    }
+   ],
+   "manipulation": "Les zéros sont les bornes du tableau : résoudre f(x)=0, c'est lire la ligne 0",
+   "assessmentQuestionIds": [
+    "sg-e5",
+    "sg-e9"
+   ],
+   "knowledgeItems": [
+    "formule-zero-affine",
+    "methode-resoudre-par-le-signe"
+   ],
+   "notes": "Cas limite de l'inéquation large : sg-e9 (≤ 0) oblige à décider si les zéros sont inclus, ce qui teste P9 à l'intérieur de P11.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 2,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 2,
+     "mechanism": "brick:vocab-solutions-intervalles"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 2,
+     "mechanism": "question:M05-S2-Q1"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-gel-et-benefice",
+     "step": 1,
+     "mechanism": "manipulation:SignProbe"
+    }
+   ],
+   "manipulation": "Lecture des zones + du tableau ; l'atelier M6 (gel, bénéfice) rejoue la même lecture sur des situations",
+   "assessmentQuestionIds": [
+    "sg-e8"
+   ],
+   "knowledgeItems": [
+    "methode-resoudre-par-le-signe",
+    "vocab-solutions-intervalles"
+   ],
+   "notes": "sg-e8 est partagée avec P8 mais l'option correcte exige l'ensemble de solutions complet (deux intervalles), donc elle mesure bien la résolution stricte.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P11": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 3,
+     "mechanism": "manipulation:SignTable"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 3,
+     "mechanism": "question:M05-S3-Q1"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-gel-et-benefice",
+     "step": 2,
+     "mechanism": "manipulation:SignProbe"
+    }
+   ],
+   "manipulation": "Même instrument, sens inverse ; l'inéquation large impose de trancher l'inclusion des bornes",
+   "assessmentQuestionIds": [
+    "sg-e9",
+    "sg-e10"
+   ],
+   "knowledgeItems": [
+    "methode-resoudre-par-le-signe",
+    "vocab-solutions-intervalles"
+   ],
+   "notes": "L'obstacle réel (bornes ouvertes/fermées) est confronté par le couple sg-e8 (>) / sg-e9 (≤) sur le MÊME polynôme : seule l'inclusion des zéros distingue les deux réponses.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_signe-fonctions-2nde_P12": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 4,
+     "mechanism": "manipulation:SignProbe"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 4,
+     "mechanism": "brick:methode-verifier-graphiquement"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "resoudre-avec-le-signe",
+     "step": 4,
+     "mechanism": "question:M05-S4-Q1"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-gel-et-benefice",
+     "step": 3,
+     "mechanism": "question:M06-S3-Q1"
+    }
+   ],
+   "manipulation": "Retour à la sonde après le calcul : l'ensemble trouvé algébriquement doit coïncider avec la zone peinte",
+   "assessmentQuestionIds": [
+    "sg-e10"
+   ],
+   "knowledgeItems": [
+    "methode-verifier-graphiquement"
+   ],
+   "notes": "Boucle fermée entre le registre graphique (M1) et le registre algébrique (M4/M5) — c'est ce qui empêche le tableau de signes de devenir un rituel sans référent.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "Toutes les inéquations de la leçon sont posées CONTRE ZÉRO : f(x) > 0, f(x) ≤ 0, P(x) ≤ 0, Q(x) ≥ 0 (vérifié par balayage de Module05ResoudreAvecLeSigne.jsx). Le seuil général f(x) > k n'apparaît nulle part en 2de — ni ici, ni ailleurs. Pour la liste externe, LP26/LP27 restent donc PARTIELS : l'élève sait ramener à zéro seulement si quelqu'un le lui a dit, et personne ne le lui dit.",
+   "P6 et P7 ne sont mesurés que par une épreuve chacun (sg-e6, sg-e7) alors que le signe d'un produit et celui d'un quotient sont le contenu propre du module 4 : deux compétences centrales à une question chacune."
+  ],
+  "technicalProblems": [
+   "Aucun laboratoire gelé : les seuls `disabled` de la leçon portent sur PredictionChips (Module01:64, Module03:75), ce qui est le comportement voulu — une prédiction se recueille une fois. SignProbe et SignTable restent manipulables après validation.",
+   "Aucun composant du kit rendu sans import (vérifié sur les 8 modules)."
+  ],
+  "duplicates": [
+   "Le signe d'une fonction affine (P5) est aussi enseigné par fonction-affine-2nde P9, avec sa propre manipulation. Les deux leçons se déclarent mutuellement voisines ; la frontière annoncée (ici le cas général, là l'affine) tient, mais l'élève rencontre deux fois la même bascule du signe de a."
+  ],
+  "verticalPositioning": {
+   "revised": "La lecture graphique d'une position par rapport à l'axe, déjà pratiquée en 3e (lecture-graphique-3e).",
+   "extended": "L'équation du premier degré devient recherche de zéro, et l'inéquation devient lecture d'un tableau plutôt que manipulation d'inégalité.",
+   "new": "Le TABLEAU DE SIGNES comme objet et comme instrument : sa construction en saisie, la règle des signes d'un produit, la valeur interdite d'un quotient, et le passage tableau → ensemble de solutions.",
+   "formalized": "Le vocabulaire zéro / signe / ensemble de solutions en intervalles, et la méthode « ramener à zéro, factoriser, tabler, lire ».",
+   "tool": "Le tableau de signes devient l'outil de signe-fonctions pour variations-extremums et pour l'étude des fonctions de référence."
+  },
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Les 12 items de teachingScope.include de l'objet seconde/signe_fonctions correspondent exactement aux 12 learning points — aucun écart.",
+    "taughtAnyway": true,
+    "evidence": "comparaison item par item avec smarter_academy_programmes_maths_2026.json",
+    "recommendation": "none"
+   }
+  ],
+  "recommendations": [
+   "Ajouter une épreuve pour P6 et une pour P7 (le test final en a 10 pour 12 LP : 9 des 10 épreuves sont déjà partagées).",
+   "Introduire au moins un cas f(x) > k avec k ≠ 0 dans l'atelier M6, en montrant le geste « ramener à zéro » — c'est le chaînon manquant entre cette leçon et les inéquations rencontrées ailleurs."
+  ]
+ }
+}

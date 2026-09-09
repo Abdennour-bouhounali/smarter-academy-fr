@@ -1,0 +1,216 @@
+{
+  "lesson": "frequences-conditionnelles-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-stats-proba-batch",
+  "learningPoints": {
+    "seconde_frequences-conditionnelles-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "la-meme-case-trois-nombres", "step": 1, "mechanism": "manipulation:ReferenceLab" },
+        { "module": 1, "moduleSlug": "la-meme-case-trois-nombres", "step": 1, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "la-meme-case-trois-nombres", "step": 1, "mechanism": "brick:population-reference" },
+        { "module": 1, "moduleSlug": "la-meme-case-trois-nombres", "step": 2, "mechanism": "question:TapQuestion (quel dénominateur pour « 50 % des 2de » ?)" },
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 1, "mechanism": "brick:mem-parmi" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e1" }
+      ],
+      "manipulation": "ReferenceLab — L'INTERACTION SIGNATURE, et une vraie manipulation. Le tableau des 400 lycéens est cliquable case par case : cliquer une case la fixe comme NUMÉRATEUR (elle passe en indigo plein). Trois boutons « Tout le monde / Sa colonne / Sa ligne » changent alors la RÉFÉRENCE : le groupe correspondant s'illumine dans le tableau (la ligne entière, la colonne entière, ou tout, avec la marge concernée surlignée en indigo foncé), et sous le tableau la division s'écrit en toutes lettres — « 100 / 200 = 50,0 % », avec la phrase française du groupe (« parmi les “2de” »). La variable contrôlée est exactement le DÉNOMINATEUR, et le composant le dit : « Le numérateur ne change pas (100 personnes) : c'est le dénominateur qui dépend du groupe de référence choisi. » L'étape ne se valide qu'après avoir essayé LES TROIS références (seenRefs.size ≥ 3), et le laboratoire n'est jamais gelé.",
+      "assessmentQuestionIds": ["fc-e1"],
+      "knowledgeItems": ["population-reference", "mem-parmi", "trois-frequences"],
+      "notes": "COVERED sans réserve — c'est le meilleur enchaînement de la leçon et l'un des meilleurs des quatre auditées. Un pari précède le geste (« un seul pourcentage, ou plusieurs ? »), la manipulation produit la surprise (les mêmes 100 élèves valent 25 %, 50 % ou 62,5 % — vérifié : 100/400, 100/200, 100/160), la brique population-reference est conditionnée à done1 donc posée après le geste et avant la question de l'étape 2. La demande n'est pas devinable : les quatre options de la TapQuestion sont les quatre nombres du problème (200 les 2de, 400 le total, 160 les usagers du bus, 100 la case elle-même), tous plausibles.",
+      "crossGrade": { "overlapsWith": ["2de:tableaux-croises-2nde"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_frequences-conditionnelles-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "la-meme-case-trois-nombres", "step": 1, "mechanism": "manipulation:ReferenceLab" },
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 1, "mechanism": "brick:trois-frequences" },
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 3, "mechanism": "question:NumericQuestion (40 ÷ 80 = 50 %)" },
+        { "module": 5, "moduleSlug": "atelier-donnees-reelles", "step": 1, "mechanism": "question:NumericQuestion (96 ÷ 160 = 60 %)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e2" }
+      ],
+      "manipulation": "ReferenceLab affiche le quotient en clair pour chaque combinaison case × référence, ce qui fait du calcul une conséquence lisible du geste plutôt qu'une formule appliquée. Aucune manipulation dédiée au calcul lui-même : les trois occasions de calculer sont des NumericQuestion.",
+      "assessmentQuestionIds": ["fc-e2"],
+      "knowledgeItems": ["trois-frequences", "population-reference"],
+      "notes": "COVERED. Le calcul est éprouvé trois fois sur des données DIFFÉRENTES (40/80 = 50 % en terminale au module 3, 96/160 = 60 % chez les garçons au module 5, 100/200 = 50 % au boss — tous vérifiés), et chaque explainFor nomme le piège précis : au module 3, la réponse 40 (l'effectif pris pour la fréquence) et la réponse 10 (la valeur de l'autre groupe) ; au module 5, la réponse 24 (96/400, la conjointe). fc-e2 pose ses distracteurs sur les trois dénominateurs concurrents (50 % la conditionnelle, 25 % la conjointe, 62,5 % l'inverse). Réserve : la brique trois-frequences est posée au module 2 étape 1, une étape marquée `done: true` — donc validée d'office, sans aucune interaction ni question (voir pedagogicalProblems).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_frequences-conditionnelles-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "la-meme-case-trois-nombres", "step": 1, "mechanism": "manipulation:ReferenceLab (référence « Tout le monde »)" },
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 1, "mechanism": "brick:trois-frequences" },
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 3, "mechanism": "question:BatchChoiceQuestion ligne s3" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e3" }
+      ],
+      "manipulation": "Indirecte : la troisième référence de ReferenceLab (« Tout le monde ») illumine le total général en ambre et met 400 au dénominateur. C'est le même geste que pour la conditionnelle, dans une de ses trois positions — mais la marginale au sens strict (une MARGE rapportée au total, pas une CASE) n'est pas manipulable dans le laboratoire, qui n'accepte que des cases comme numérateur.",
+      "assessmentQuestionIds": ["fc-e3"],
+      "knowledgeItems": ["trois-frequences"],
+      "notes": "COVERED, mais c'est le LP le plus faiblement porté de la leçon. La distinction marginale / conjointe — toutes deux divisent par 400, seul le numérateur diffère (une marge contre une case) — n'est établie que par le corps de l'item trois-frequences et le Feedback d'accompagnement ; aucun geste ne la fait vivre, puisque ReferenceLab ne permet pas de choisir une marge comme numérateur. Elle est cependant nommée avant toute demande, éprouvée par la ligne s3 de la BatchChoiceQuestion (« les fréquences marginales des quatre transports somment à 100 % » — vérifié : 40 % + 20 % + 22,5 % + 17,5 % = 100 %) et mesurée par fc-e3 (160/400 = 40 %, avec le distracteur 25 % qui est la conjointe). Le compte est bon, mais de justesse.",
+      "crossGrade": { "overlapsWith": ["2de:tableaux-croises-2nde"], "kind": "extension" },
+      "confidence": "medium"
+    },
+    "seconde_frequences-conditionnelles-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 1, "mechanism": "brick:trois-frequences" },
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 2, "mechanism": "manipulation:bascule effectifs / fréquences conjointes (CrossTableView mode)" },
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 2, "mechanism": "question:NumericQuestion (80 ÷ 400 = 20 %)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e3" }
+      ],
+      "manipulation": "Module 2 étape 2 : deux boutons « Effectifs » / « Fréquences conjointes (÷ 400) » qui passent `mode` à CrossTableView, lequel réaffiche les douze cases soit en effectifs soit en pourcentages du total. Manipulation faible — une bascule d'affichage, sans condition de validation (l'étape se valide par la NumericQuestion, pas par la bascule) — mais elle rend visible que passer aux fréquences est une DIVISION UNIFORME quand la référence est le total.",
+      "assessmentQuestionIds": ["fc-e3"],
+      "knowledgeItems": ["trois-frequences", "population-reference"],
+      "notes": "COVERED. Le calcul marginal est éprouvé sur une marge de colonne (80 terminales sur 400 = 20 %, vérifié) avec un explainFor qui traite le piège de l'effectif rendu tel quel (« 80 est l'effectif, pas la fréquence »). La brique trois-frequences précède la question (étape 1 avant étape 2 : ordre source correct). Réserve : rien n'oblige l'élève à toucher la bascule avant de répondre — elle est décorative pour la validation.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_frequences-conditionnelles-2nde_P5": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 1, "mechanism": "brick:frequences-vers-effectifs" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 1, "mechanism": "question:NumericQuestion (0,60 × 500 = 300)" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 2, "mechanism": "question:NumericQuestion (0,25 × 300 = 75)" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 3, "mechanism": "question:NumericQuestion (0,40 × 200 = 80)" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 4, "mechanism": "brick:methode-completer-tableau" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 4, "mechanism": "feedback" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e9" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e10" }
+      ],
+      "manipulation": "AUCUNE. Le module 4 est étiqueté stage 'manipulation' dans lesson.config.js et n'en contient pas une seule : quatre questions (trois NumericQuestion, une TapQuestion), un encadré d'énoncé, une formule en MathText et deux briques. Il n'importe ni ReferenceLab ni CrossTableView. Aucun tableau n'est affiché, à aucun moment.",
+      "assessmentQuestionIds": ["fc-e9", "fc-e10"],
+      "knowledgeItems": ["frequences-vers-effectifs", "methode-completer-tableau"],
+      "notes": "PARTIALLY_COVERED, et le décalage porte sur le mot COMPLÉTER. L'intitulé officiel est « Compléter un tableau croisé ». Ce que le module 4 fait réellement, c'est calculer QUATRE EFFECTIFS ISOLÉS à partir de pourcentages (300 demi-pensionnaires, 75 en association parmi eux, 80 externes en association, puis 31 % au total — tous vérifiés). Le tableau n'est jamais dessiné : il n'apparaît que dans le Feedback final, sous forme de PHRASE (« 75 et 225 chez les demi-pensionnaires, 80 et 120 chez les externes »). L'élève ne remplit donc aucune case, ne complète aucune ligne par différence, et ne vérifie jamais que les marges tombent juste — alors que la brique methode-completer-tableau énonce précisément ces quatre étapes (« Poser l'effectif total / Calculer les marges / Calculer chaque case / Compléter le reste par différences, puis vérifier que les marges tombent juste »). Deux des quatre étapes de la méthode enseignée ne sont ni manipulées ni éprouvées. Les deux épreuves du boss confirment le glissement : fc-e9 demande un effectif isolé (75), fc-e10 une fréquence conditionnelle (96/180 ≈ 53 %) sous le titre trompeur « Compléter un tableau ». Le calcul est solide, la compétence « compléter » ne l'est pas.",
+      "crossGrade": { "overlapsWith": ["2de:tableaux-croises-2nde"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_frequences-conditionnelles-2nde_P6": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 1, "mechanism": "manipulation:bascule de condition (CrossTableView highlight ligne ↔ colonne)" },
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 1, "mechanism": "brick:inversion-condition" },
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 1, "mechanism": "brick:mem-parmi" },
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 2, "mechanism": "question:TapQuestion (90 % des accidents graves)" },
+        { "module": 5, "moduleSlug": "atelier-donnees-reelles", "step": 1, "mechanism": "question:TapQuestion (60 % des inscrits sont des garçons ?)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e5" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e6" }
+      ],
+      "manipulation": "Deux boutons « Parmi les élèves de 2de… » / « Parmi les usagers du bus… » qui font basculer le `highlight` de CrossTableView de la colonne 2de à la ligne bus, tandis qu'un encadré réécrit le quotient : 100/200 = 50,0 % ou 100/160 = 62,5 %. Le tableau est en mode 'conditional', donc ses cases affichent les pourcentages calculés dans la référence courante — la ZONE COLORÉE est la population de référence, et la légende le dit. L'étape ne se valide qu'après avoir vu les DEUX sens (seen.size ≥ 2) et la bascule reste active ensuite.",
+      "assessmentQuestionIds": ["fc-e5", "fc-e6"],
+      "knowledgeItems": ["inversion-condition", "mem-parmi"],
+      "notes": "COVERED, et c'est le second enchaînement fort de la leçon. Un pari précède (« est-ce le même nombre ? »), le geste tranche (50 % contre 62,5 % — vérifié), les deux briques inversion-condition et mem-parmi sont conditionnées à done1 donc posées après le geste et avant la question de l'étape 2. Cette question porte l'erreur d'inversion à l'absurde hors du contexte scolaire (« 90 % des accidents graves impliquent une voiture, donc 90 % des trajets en voiture finissent en accident ») : c'est ce qui la rend mémorable, et le boss la rejoue (fc-e6). fc-e5 mesure le calcul du sens inverse (100/160 = 62,5 %) avec le distracteur 50 % qui est l'autre sens.",
+      "crossGrade": { "overlapsWith": ["2de:probabilites-conditionnelles-2nde"], "kind": "anticipation" },
+      "confidence": "high"
+    },
+    "seconde_frequences-conditionnelles-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 3, "mechanism": "brick:comparer-sous-populations" },
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 3, "mechanism": "question:NumericQuestion (40 ÷ 80 = 50 %, contre 10 % en 2de)" },
+        { "module": 5, "moduleSlug": "atelier-donnees-reelles", "step": 2, "mechanism": "question:TapQuestion (96 garçons contre 84 filles en club)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e7" }
+      ],
+      "manipulation": "Aucune manipulation dédiée. Le seul appui expérientiel est la bascule de l'étape 1, qui a montré que le dénominateur décide. La NumericQuestion de l'étape 3 utilise cependant la prop `above` pour afficher en permanence le terme de comparaison (« Rappel : en 2de, 20 élèves sur 200 viennent en voiture, soit 10 % ») et, une fois révélée, la conclusion (« 40 ÷ 80 = 50 % — cinq fois plus qu'en 2de ») : la comparaison est donc construite sous les yeux de l'élève, pas seulement énoncée dans l'explain.",
+      "assessmentQuestionIds": ["fc-e7"],
+      "knowledgeItems": ["comparer-sous-populations", "population-reference"],
+      "notes": "COVERED. Le point difficile est bien choisi et bien vérifié : en effectif brut, 40 terminales contre 20 secondes, soit « deux fois plus » ; en part, 50 % contre 10 %, soit CINQ fois plus (vérifié : 20/200 = 0,1 et 40/80 = 0,5). Le facteur 2 contre 5 rend l'écart entre les deux lectures impossible à ignorer. La brique comparer-sous-populations précède la NumericQuestion (ordre source correct). L'atelier rejoue la compétence sur des groupes très déséquilibrés (160 garçons, 240 filles ; 60 % contre 35 % — vérifié) et fc-e7 la mesure avec le distracteur « deux fois plus fréquente » qui est exactement l'erreur de lecture brute.",
+      "crossGrade": { "overlapsWith": ["2de:tableaux-croises-2nde"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_frequences-conditionnelles-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 2, "mechanism": "manipulation:bascule effectifs / fréquences conjointes (CrossTableView mode)" },
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 2, "mechanism": "question:NumericQuestion (80 ÷ 400 = 20 %)" },
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 3, "mechanism": "brick:somme-conditionnelles" },
+        { "module": 2, "moduleSlug": "marginale-conjointe-conditionnelle", "step": 3, "mechanism": "question:BatchChoiceQuestion (4 lignes vrai/faux)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e4" }
+      ],
+      "manipulation": "La bascule effectifs → fréquences conjointes du module 2 étape 2 : les douze cases passent d'un entier à un pourcentage du total, ce qui matérialise le passage. Manipulation faible (bascule d'affichage, sans condition de validation).",
+      "assessmentQuestionIds": ["fc-e4"],
+      "knowledgeItems": ["somme-conditionnelles", "trois-frequences"],
+      "notes": "COVERED. Le passage effectifs → fréquences est établi par la bascule puis éprouvé par le calcul (80/400 = 20 %). Mais l'apport réel de ce LP est la PROPRIÉTÉ DE CONTRÔLE : les conditionnelles d'une même condition somment à 1, les conjointes seulement sur le tableau entier, et deux fréquences de références différentes ne s'additionnent pas. La BatchChoiceQuestion couvre les quatre cas d'un coup, avec deux réponses « vrai » et deux « faux », ce qui interdit de deviner par uniformité. Vérifié : la répartition des 200 élèves de 2de vaut 50 % bus + 20 % vélo + 10 % voiture + 20 % à pied = 100 %, et les marginales des transports 40 + 20 + 22,5 + 17,5 = 100 %. La brique somme-conditionnelles est posée en tête de l'étape 3, avant la question qui l'exige.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_frequences-conditionnelles-2nde_P9": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 1, "mechanism": "brick:frequences-vers-effectifs" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 1, "mechanism": "question:NumericQuestion (0,60 × 500 = 300)" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 2, "mechanism": "question:NumericQuestion (0,25 × 300 = 75)" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 3, "mechanism": "question:NumericQuestion (0,40 × 200 = 80)" },
+        { "module": 4, "moduleSlug": "des-frequences-aux-effectifs", "step": 4, "mechanism": "question:TapQuestion (31 % au total)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e8" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e9" }
+      ],
+      "manipulation": "AUCUNE (voir P5 : le module 4 n'a aucune interaction malgré son stage 'manipulation'). La formule effectif = fréquence × effectif de référence est affichée en MathText, puis appliquée trois fois.",
+      "assessmentQuestionIds": ["fc-e8", "fc-e9"],
+      "knowledgeItems": ["frequences-vers-effectifs", "somme-conditionnelles", "methode-completer-tableau"],
+      "notes": "COVERED malgré l'absence de geste, parce que la progression des trois calculs est réellement bien construite et que chaque explainFor nomme un piège distinct : au pas 1, la réponse 60 (le pourcentage rendu tel quel) ; au pas 2, la réponse 125 (0,25 × 500, c'est-à-dire la référence oubliée — LE piège du LP) ; au pas 3, les réponses 200 (la marge, calcul inachevé) et 120 (0,40 × 300, la mauvaise référence). Chaque pourcentage a SA référence, et c'est ce qui est éprouvé, pas la multiplication. La TapQuestion de synthèse ajoute le point le plus fin : on ne moyenne pas 25 % et 40 % (distracteur 32,5 %) ni ne les additionne (distracteur 65 %), il faut repasser par les effectifs — (75 + 80)/500 = 31 %, vérifié. La brique frequences-vers-effectifs précède la première question (ordre source correct). fc-e8 et fc-e9 rejouent les deux pièges.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_frequences-conditionnelles-2nde_P10": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "parmi-les-uns-parmi-les-autres", "step": 2, "mechanism": "question:TapQuestion (90 % des accidents graves)" },
+        { "module": 5, "moduleSlug": "atelier-donnees-reelles", "step": 1, "mechanism": "brick:lire-un-article" },
+        { "module": 5, "moduleSlug": "atelier-donnees-reelles", "step": 1, "mechanism": "question:NumericQuestion (vérifier 96 ÷ 160 = 60 %)" },
+        { "module": 5, "moduleSlug": "atelier-donnees-reelles", "step": 1, "mechanism": "question:TapQuestion (le lecteur qui inverse)" },
+        { "module": 5, "moduleSlug": "atelier-donnees-reelles", "step": 2, "mechanism": "question:TapQuestion (96 garçons contre 84 filles)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e6" },
+        { "module": 6, "moduleSlug": "mission-finale-le-denominateur", "step": null, "mechanism": "question:fc-e10" }
+      ],
+      "manipulation": "AUCUNE. Le module 5 est un practice_lab sans instrument : un CrossTableView statique (le tableau « club sportif »), une brique et trois questions. Le seul tableau du module 2 est réutilisé, sans ReferenceLab.",
+      "assessmentQuestionIds": ["fc-e6", "fc-e10"],
+      "knowledgeItems": ["lire-un-article", "inversion-condition", "comparer-sous-populations", "mem-parmi"],
+      "notes": "COVERED. Le module 5 fait exactement ce que l'intitulé demande et le fait bien : il pose la bonne première question (« la première question n'est pas “est-ce vrai ?” mais “par quoi divise-t-elle ?” »), puis met l'élève devant une affirmation de presse VRAIE (60 % des garçons sont en club — vérifié, 96/160) qu'il doit d'abord confirmer, avant de démonter l'inversion qu'un lecteur en tire (96/180 ≈ 53,3 %, vérifié). Vérifier une affirmation juste avant d'en réfuter une fausse est un enchaînement plus honnête que d'aligner des pièges. La brique lire-un-article précède la NumericQuestion qui la met en œuvre (ordre source correct). fc-e10 rejoue le cas au boss.",
+      "crossGrade": { "overlapsWith": ["2de:probabilites-conditionnelles-2nde"], "kind": "anticipation" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "referenceLabReach": "PORTÉE RÉELLE DE ReferenceLab — la question posée : combien des 10 LPs reposent vraiment sur le laboratoire signature, et combien sur de simples questions ? Réponse : ReferenceLab n'est importé et rendu que par UN SEUL module sur sept — Module01LaMemeCaseTroisNombres.jsx (import ligne 7, rendu à l'étape 1). Aucun autre module ne l'utilise, y compris ceux qui en auraient le plus besoin. Décompte par LP. (1) REPOSE DIRECTEMENT dessus : P1 « Comprendre une fréquence conditionnelle » — le laboratoire EST son enseignement, la brique population-reference est conditionnée à l'avoir manipulé trois fois. C'est le seul cas net. (2) EN DÉPEND INDIRECTEMENT, comme socle : P2 (le quotient affiché en toutes lettres par le laboratoire fait du calcul une lecture), P3 (sa troisième référence, « Tout le monde », est la seule expérience du dénominateur total). Deux LPs. (3) REPOSENT SUR D'AUTRES INTERACTIONS, plus faibles, empruntées à la bibliothèque partagée plutôt qu'au laboratoire : P6 et P8 s'appuient sur des bascules de CrossTableView (highlight ligne ↔ colonne au module 3 ; mode effectifs ↔ conjointes au module 2), P4 sur cette même bascule d'affichage. Trois LPs, qui ont un geste mais pas CELUI-là. (4) REPOSENT SUR DES QUESTIONS SEULES, sans aucune interaction : P5, P7, P9, P10 — les modules 4 et 5 n'affichent aucun instrument, et le module 4 ne montre même pas de tableau. Quatre LPs. BILAN : 1 LP porté par le laboratoire, 2 qui s'y adossent, 3 portés par des bascules secondaires, 4 portés par de pures questions. Autrement dit, l'interaction signature couvre le TIERS AMONT de la leçon (les modules 1 à 3, où se joue la compréhension) et disparaît complètement de la moitié aval (modules 4 et 5, où se joue l'application). Ce n'est pas absurde — le sens précède l'usage — mais deux occasions manquées sont flagrantes : au module 4, ReferenceLab lu à l'envers (choisir une référence, saisir une fréquence, voir l'effectif se calculer) donnerait exactement la compétence P5/P9 qui est aujourd'hui purement calculatoire ; au module 5, le rendre cliquable sur le tableau « club sportif » permettrait à l'élève de VÉRIFIER l'affirmation de presse en désignant lui-même le dénominateur, au lieu de le lire dans l'énoncé de la question.",
+    "officialScopeNotCovered": [],
+    "pedagogicalProblems": [
+      "Le module 4, étiqueté stage 'manipulation' dans lesson.config.js, ne contient AUCUNE manipulation : quatre questions, un encadré d'énoncé, une formule et deux briques. Il n'importe ni ReferenceLab ni CrossTableView et n'affiche jamais de tableau — alors qu'il est censé enseigner « Compléter un tableau croisé » (P5). L'étiquette de stage est trompeuse et la compétence en pâtit (voir P5, PARTIALLY_COVERED).",
+      "Le module 2 étape 1 est marquée `done: true` : elle est validée d'office, sans interaction ni question. Elle ne contient qu'une KnowledgeBrick et un Feedback. C'est là que sont posés les TROIS NOMS de la leçon (marginale, conjointe, conditionnelle) — la nomenclature centrale est donc livrée en pure lecture, dans une étape que l'élève traverse sans rien faire.",
+      "La distinction marginale / conjointe n'est portée par aucun geste : ReferenceLab n'accepte qu'une CASE comme numérateur, jamais une marge, si bien que la fréquence marginale ne peut pas y être fabriquée. Elle est seulement définie dans le corps de l'item trois-frequences. C'est la faiblesse de P3 (confiance medium).",
+      "La brique methode-completer-tableau énonce quatre étapes dont deux ne sont jamais exécutées : « compléter le reste par différences » et « vérifier que les marges tombent juste ». L'élève apprend une méthode dont il ne pratique que la moitié.",
+      "Le module 5 réutilise un CrossTableView statique là où ReferenceLab, cliquable, serait immédiatement pertinent : la compétence évaluée (« quel dénominateur cette phrase suppose-t-elle ? ») est exactement celle que le laboratoire matérialise. L'instrument existe, il n'est pas mobilisé.",
+      "L'énoncé de la NumericQuestion du module 5 étape 1 donne déjà la division à faire (« parmi les 160 garçons, 96 sont en club »). L'élève n'a donc pas à IDENTIFIER le dénominateur — ce qui est pourtant tout l'objet du module — mais seulement à effectuer 96 ÷ 160."
+    ],
+    "technicalProblems": [
+      "AUCUN gel de laboratoire. Le grep `disabled={done` / `disabled={d[0-9]` sur les sept modules et le composant renvoie deux occurrences, toutes deux sur PredictionChips (Module01LaMemeCaseTroisNombres.jsx:52 `disabled={done1}` et Module03ParmiLesUnsParmiLesAutres.jsx:56 `disabled={done1}`) : verrouillage voulu d'un pari, pas gel d'un instrument. ReferenceLab.jsx n'a aucun `disabled` et son en-tête déclare la règle du projet (« jamais figé après validation de l'étape »).",
+      "AUCUN import de kit manquant. Vérification exhaustive des sept modules pour KnowledgeBrick, TapQuestion, NumericQuestion, BatchChoiceQuestion, PredictionChips, ContentModule, BossFinal, PrerequisiteDiagnostic, Feedback, KnowledgeSnapshot et MathText : tout composant rendu est importé.",
+      "ReferenceLab.jsx:24 : la fonction `phrase` du mode 'total' est déclarée `(r, c) => 'de l'ensemble des enquêtés'` — deux paramètres déclarés, aucun utilisé. Sans conséquence, mais signale un copier-coller depuis les deux autres entrées.",
+      "Module01LaMemeCaseTroisNombres.jsx : `onPick` met à jour row et col (l'élève peut donc changer de case librement, ce qui est voulu) mais le Feedback de fin d'étape et la brique restent rédigés pour la case « bus × 2de » (« les mêmes 100 élèves valent 25 %, 50 %, 62,5 % »). Si l'élève a déplacé le numérateur avant de finir ses trois références, le texte de conclusion ne décrit plus ce qu'il voit à l'écran.",
+      "Aucun défaut mathématique. Toutes les valeurs citées ont été recalculées : enquête 400 lycéens, marges de lignes bus 160, vélo 80, voiture 90, à pied 70 ; marges de colonnes 2de 200, 1re 120, terminale 80 ; case bus × 2de = 100 → conjointe 25 %, conditionnelle « parmi les 2de » 50 %, conditionnelle « parmi le bus » 62,5 % ; répartition des 2de 50/20/10/20 % (somme 100 %) ; marginales des transports 40/20/22,5/17,5 % (somme 100 %) ; voiture par niveau 10 % / 25 % / 50 % ; tableau sport 400 personnes, marges 180/220 et 160/240, club parmi garçons 60 %, club parmi filles 35 %, garçons parmi les inscrits 96/180 ≈ 53,3 % ; module 4 : 0,60 × 500 = 300, 0,25 × 300 = 75, 0,40 × 200 = 80, (75 + 80)/500 = 31 %. Tout tombe juste, y compris les distracteurs annoncés (125, 39, 24 %).",
+      "Le second jeu de données (SPORT / sportTable) est bien dans data.js et couvert par data.test.js, contrairement à ce que fait la leçon voisine « Tableaux croisés » avec son enquête vélo. Bon point."
+    ],
+    "duplicates": [
+      "CHAÎNE DÉLIBÉRÉE et bien tenue : tableaux croisés (compter) → fréquences conditionnelles (diviser) → probabilités conditionnelles (modéliser). Le périmètre exclut explicitement « Construction du tableau croisé d'effectifs, variables nominales/ordinales, filtres ET/OU/NON » (amont) et « Notation P_A(B), arbre pondéré, probabilité » (aval). La leçon amont annonce celle-ci dans son KnowledgeSnapshot final, celle-ci annonce la suivante dans le sien.",
+      "SEUL POINT DE REDITE : « comparer des sous-populations de tailles différentes ». L'item comparer-sous-populations (module 3 étape 3) refait le travail de l'item comparer-honnetement de tableaux-croises-2nde (module 5 étape 1). Le partage est en principe net — là-bas on constate que l'effectif brut ne suffit pas, ici on donne l'outil — et le module 5 le rappelle dans son explain (« C'est le lien direct avec l'atelier de la leçon Tableaux croisés »). Mais la brique comparer-sous-populations est posée en variant 'new', avec un lead qui repart de zéro (« les deux groupes n'ont pas la même taille... Comparer leurs effectifs bruts serait trompeur ») : elle réenseigne comme NEUF un constat déjà établi, au lieu de le réactiver en variant 'known' et d'enchaîner directement sur ce qui est réellement nouveau (le quotient). C'est le seul endroit du triptyque où une notion est re-posée plutôt que réutilisée.",
+      "L'erreur d'inversion sera reprise par probabilites-conditionnelles-2nde (item 'inversion', module 3), avec le même exemple structurel (même numérateur, deux dénominateurs) mais sur des données et un vocabulaire différents. La leçon aval traite frontalement le risque de doublon dans son module 4 (« c'est la même division, seul le STATUT change »), ce qui est le bon geste : la redite est nommée, donc elle n'en est plus une.",
+      "Aucun recouvrement avec le collège : ni la fréquence conditionnelle ni la population de référence n'apparaissent dans les teachingScope de 3e ou 4e."
+    ],
+    "recommendations": [
+      "Rendre le module 4 digne de son stage 'manipulation' : afficher un tableau croisé VIDE (demi-pensionnaires / externes × association / pas d'association) que l'élève remplit case par case au fil des trois calculs, avec les marges qui se recalculent et une vérification finale. Cela ferait passer P5 de PARTIALLY_COVERED à COVERED et fermerait les deux étapes orphelines de la brique methode-completer-tableau.",
+      "Donner une interaction au module 2 étape 1, aujourd'hui `done: true` : par exemple trois phrases à classer en marginale / conjointe / conditionnelle, ou ReferenceLab rejoué avec la consigne de produire les trois nombres et de les nommer. La nomenclature centrale de la leçon ne devrait pas être livrée en lecture pure.",
+      "Étendre ReferenceLab pour accepter une MARGE comme numérateur (cliquer un total de ligne ou de colonne) : la fréquence marginale deviendrait manipulable et la distinction marginale / conjointe cesserait de reposer sur le seul texte. C'est le correctif qui remonterait la confiance de P3.",
+      "Réutiliser ReferenceLab au module 5, sur le tableau « club sportif », pour que l'élève VÉRIFIE l'affirmation de presse en désignant lui-même le dénominateur au lieu de le lire dans l'énoncé.",
+      "Passer la brique comparer-sous-populations en variant 'known' avec un lead qui renvoie explicitement à l'atelier de « Tableaux croisés », pour marquer la réutilisation plutôt que le réenseignement.",
+      "Rendre le Feedback de fin du module 1 étape 1 dépendant de la case effectivement choisie (row/col), ou reverrouiller le numérateur sur « bus × 2de » tant que les trois références ne sont pas essayées, pour que le texte de conclusion décrive toujours ce que l'élève a sous les yeux."
+    ],
+    "verticalPositioning": {
+      "revised": "Le quotient et ses deux termes (6e, diagnostiqués par fc-d1 et fc-d2), le pourcentage (5e) et la proportionnalité qui le porte (6e, fc-d3) ; le tableau à double entrée (6e) et l'effectif d'un groupe (3e), tous deux réinstallés par la leçon « Tableaux croisés » qui précède immédiatement (fc-d4 et fc-d5 diagnostiquent l'effectif marginal et la case comme ET).",
+      "extended": "La proportion, connue depuis la 5e comme « partie ÷ tout », se dédouble : le TOUT n'est plus unique. C'est le geste central de la leçon — un même numérateur admet trois dénominateurs légitimes selon la question posée. La fréquence de 3e (effectif ÷ effectif total), qui n'avait qu'une lecture, en acquiert trois.",
+      "new": "La POPULATION DE RÉFÉRENCE comme objet nommé ; les trois fréquences distinguées par leur seul dénominateur (marginale, conjointe, conditionnelle) ; la propriété de contrôle « les conditionnelles d'une même condition somment à 1 » et son corollaire (on n'additionne jamais deux fréquences de références différentes) ; l'ERREUR D'INVERSION (« parmi les A les B » ≠ « parmi les B les A »), qui est l'apport conceptuel majeur ; le sens de lecture inverse effectif = fréquence × référence.",
+      "formalized": "Le mot « parmi » (et son équivalent « des ») est promu au rang d'INDICATEUR SYNTAXIQUE du dénominateur — c'est l'item mem-parmi, et c'est une formalisation linguistique autant que mathématique : la leçon apprend à lire une phrase française comme une division. C'est ce même repère qui deviendra l'indice de P_A(B) dans la leçon suivante.",
+      "tool": "La leçon fournit l'outil de LECTURE CRITIQUE d'un chiffre : devant tout pourcentage, demander « divisé par quoi ? ». Il sert immédiatement dans probabilites-conditionnelles-2nde (même quotient, autre statut), puis dans tests-diagnostiques-probabilites-2nde où la confusion sensibilité / valeur prédictive positive est exactement l'erreur d'inversion enseignée ici, et enfin dans toute lecture de presse. C'est le pré-requis conceptuel direct du conditionnement probabiliste."
+    }
+  }
+}

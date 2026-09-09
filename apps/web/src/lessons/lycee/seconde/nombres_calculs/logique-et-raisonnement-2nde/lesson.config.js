@@ -60,7 +60,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '🧠',
-  estimatedDurationMin: 65,
+  estimatedDurationMin: 67,
   skills: [
     'Construire et analyser une proposition mathématique',
     'Utiliser les connecteurs logiques',

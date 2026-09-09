@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TwoLinesPlane, { TONES } from '../components/TwoLinesPlane';
 import HandlePad from '../components/HandlePad';
 import LineReadouts from '../components/LineReadouts';
-import PredictionChips from '../components/PredictionChips';
 import { lineFromPointVector, relativePosition, det, coupleText, frameFor, inRange, POSITION_LABEL } from '../components/droitesUtils';
 
 /**

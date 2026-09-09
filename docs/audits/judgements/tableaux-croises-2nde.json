@@ -1,0 +1,208 @@
+{
+  "lesson": "tableaux-croises-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-stats-proba-batch",
+  "learningPoints": {
+    "seconde_tableaux-croises-2nde_P1": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 1, "mechanism": "brick:combien-modalites" },
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 1, "mechanism": "question:TapQuestion (classe × activité vs taille × âge)" },
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 3, "mechanism": "question:BatchChoiceQuestion (5 variables à classer)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e1" }
+      ],
+      "manipulation": "Aucune manipulation ne porte ce LP. Le module 2 étape 1 s'ouvre directement sur une brique puis une question ; il n'y a ni tri de variables, ni bascule, ni instrument. Le seul appui expérientiel est rétrospectif : « tu as rangé 60 fiches dans 12 cases seulement », qui renvoie au geste du module 1.",
+      "assessmentQuestionIds": ["tc-e1"],
+      "knowledgeItems": ["combien-modalites", "qualitative-nominale-ordinale"],
+      "notes": "PARTIALLY_COVERED, et le décalage est précis. L'intitulé officiel est « identifier deux variables QUALITATIVES ». Ce que le module 2 étape 1 enseigne réellement, c'est autre chose : le NOMBRE DE MODALITÉS (« pourquoi peut-on croiser classe et activité mais pas taille en cm et âge en années ? » — bonne réponse : « parce qu'elles ont un petit nombre de modalités »). L'explainWrong le dit lui-même : « Le problème est le NOMBRE de modalités, pas leur nature de nombre. » Le critère qualitatif / quantitatif n'est donc jamais établi dans les modules : il n'apparaît qu'au module 0 comme PRÉREQUIS (tc-d5, « un caractère couleur des yeux est… qualitatif », requires ['serie-statistique']) et l'item de carte qualitative-nominale-ordinale, posé au module 2 étape 2, définit « qualitative » en une incise avant de consacrer tout son corps au couple nominal/ordinal. Or l'épreuve du boss tc-e1 demande exactement ce critère non enseigné (« laquelle est qualitative ? » — sport pratiqué contre taille, nombre de frères, durée). Un élève qui ne saurait pas déjà distinguer qualitatif de quantitatif ne l'apprend pas ici. La facette « deux variables » est en revanche parfaitement acquise par le geste du module 1.",
+      "crossGrade": { "overlapsWith": ["3e:statistiques-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 2, "mechanism": "manipulation:bascule ordre quelconque / ordre naturel (CrossTableView)" },
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 2, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 2, "mechanism": "brick:qualitative-nominale-ordinale" },
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 3, "mechanism": "question:BatchChoiceQuestion lignes v1, v3, v5" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e2" }
+      ],
+      "manipulation": "Deux boutons « Ordre quelconque » / « Ordre naturel (débutant → confirmé) » qui rendent le même CrossTableView avec deux `rowOrder` différents (NIVEAUX contre ['confirmé', 'débutant', 'intermédiaire']). L'étape ne se valide qu'après avoir vu les DEUX présentations (seen.size ≥ 2) et la bascule reste active ensuite. Le contraste est fait sur les MÊMES individus et les MÊMES effectifs, ce qui isole exactement la propriété étudiée : seul l'ordre des lignes change.",
+      "assessmentQuestionIds": ["tc-e2"],
+      "knowledgeItems": ["qualitative-nominale-ordinale"],
+      "notes": "COVERED. Le nominal est défini par CONTRASTE avec l'ordinal, ce qui est la bonne façon de le faire : la bascule montre qu'un ordre se lit ou ne se lit pas, le Feedback nomme les deux mots, la brique est posée conditionnée à done2 (donc après le geste et avant la BatchChoiceQuestion qui l'exige : ordre source correct). Trois lignes sur cinq de l'étape 3 sont nominales (activité, couleur des yeux, ville de naissance) et le feedback donne le TEST opérationnel (« puis-je dire qu'une modalité vient avant une autre, sans arbitraire ? »). tc-e2 mesure la définition sur des distracteurs qui sont les confusions réelles (« toujours au nombre de deux », « sont des nombres », « peuvent être moyennées »).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 2, "mechanism": "manipulation:bascule ordre quelconque / ordre naturel (CrossTableView)" },
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 2, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 2, "mechanism": "brick:qualitative-nominale-ordinale" },
+        { "module": 2, "moduleSlug": "deux-variables-qualitatives", "step": 3, "mechanism": "question:BatchChoiceQuestion lignes v2 et v4" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e3" }
+      ],
+      "manipulation": "Même bascule que P2, lue dans l'autre sens : dans l'ordre naturel des niveaux (débutant → intermédiaire → confirmé) la répartition se lit comme une PROGRESSION ; dans l'ordre mélangé la même information devient illisible. Le tableau des niveaux est vérifié : débutant 28, intermédiaire 24, confirmé 8, marges de colonnes 14 / 20 / 26, total 60.",
+      "assessmentQuestionIds": ["tc-e3"],
+      "knowledgeItems": ["qualitative-nominale-ordinale"],
+      "notes": "COVERED, et c'est la meilleure idée pédagogique du module 2 : l'ordinalité n'est pas définie par une propriété abstraite mais par sa CONSÉQUENCE PRATIQUE (l'ordre doit être respecté dans le tableau, sinon on perd une information réelle). Le choix des données est excellent — la variable niveau porte sur les MÊMES 60 élèves que l'activité, ce qui permet d'opposer nominal et ordinal sans changer de population. Les deux lignes ordinales de l'étape 3 (niveau, mention au bac) et tc-e3 (mention contre ville, couleur, prénom) éprouvent le critère sur des exemples neufs.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 1, "mechanism": "manipulation:FileSorter" },
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 2, "mechanism": "brick:fichier-donnees" },
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 2, "mechanism": "question:TapQuestion (comment répondre sans le tableau)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e4" }
+      ],
+      "manipulation": "FileSorter : chaque fiche est affichée comme un individu nommé (« Fiche 3 sur 60 — Chloé, Classe : 2de B, Activité : danse »), c'est-à-dire exactement une LIGNE du fichier de données, et l'élève doit la ranger. Il lit donc 60 lignes individuelles, une par une, avant de voir l'extrait tabulaire du fichier à l'étape 2. La forme brute est vécue avant d'être montrée.",
+      "assessmentQuestionIds": ["tc-e4"],
+      "knowledgeItems": ["fichier-donnees", "tableau-croise"],
+      "notes": "COVERED. L'ordre pédagogique est inversé par rapport à l'habitude, et c'est un choix fort : on manipule les fiches (étape 1) AVANT de voir le fichier dont elles sortent (étape 2). La brique fichier-donnees est posée avant la TapQuestion qui l'exige (ordre source correct). La question n'est pas devinable de son énoncé : elle demande ce qu'il aurait fallu faire SANS tableau, et son distracteur « additionner le nombre d'élèves de 2de A et le nombre de judokas » est l'erreur de double comptage que le module 4 traitera. tc-e4 mesure la structure ligne = individu / colonne = variable.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 1, "mechanism": "manipulation:FilterLab" },
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 1, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 1, "mechanism": "brick:filtres-logiques" },
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 2, "mechanism": "question:NumericQuestion (2de B OU danse = 33)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e8" }
+      ],
+      "manipulation": "FilterLab : une grille de 60 pastilles, une par élève. L'élève compose un filtre en choisissant un critère de classe, un critère d'activité, l'opérateur (ET / OU) et une négation sur chacun ; les pastilles s'allument ou s'éteignent EN DIRECT et l'effectif retenu s'affiche (« 23 élèves sur 60 »). C'est une manipulation authentique de la POPULATION : filtrer cesse d'être une opération sur des nombres pour devenir une sélection d'individus qu'on voit.",
+      "assessmentQuestionIds": ["tc-e8"],
+      "knowledgeItems": ["filtres-logiques", "effectifs-marginaux"],
+      "notes": "COVERED. Le laboratoire n'est jamais gelé (aucun `disabled` sur FilterLab, et son en-tête le déclare comme règle du projet). L'étape 1 exige explicitement d'avoir composé un OU à deux critères ET essayé un NON avant de se valider (`done1 = usedOu && usedNon`), donc l'élève ne peut pas la traverser sans avoir manipulé les deux opérateurs difficiles. Effectifs vérifiés sur la population engendrée par graine : 2de A = 14, judo = 15, intersection 6, « 2de A OU judo » = 23 (et non 29).",
+      "crossGrade": { "overlapsWith": ["4e:probabilites-4e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P6": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 1, "mechanism": "manipulation:FileSorter" },
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 1, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 1, "mechanism": "brick:tableau-croise" },
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 3, "mechanism": "question:TapQuestion (6 élèves de 2de A au judo)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e5" }
+      ],
+      "manipulation": "FileSorter — L'INTERACTION SIGNATURE, et une vraie construction. Une fiche est affichée (prénom, classe, activité) ; l'élève CLIQUE la case du tableau où elle doit aller ; la case s'incrémente, les marges et le total se recalculent en direct, la fiche suivante apparaît. Une erreur colore la case fautive en rose sans bloquer ni faire avancer le compteur — on corrige et on réessaie. Un bouton « Ranger automatiquement les fiches restantes » évite la corvée des 60 clics une fois la mécanique comprise. Le tableau n'est jamais montré rempli : il est FABRIQUÉ case par case.",
+      "assessmentQuestionIds": ["tc-e5"],
+      "knowledgeItems": ["tableau-croise", "fichier-donnees"],
+      "notes": "COVERED sans réserve — c'est le meilleur enchaînement des quatre leçons du lot. Un pari précède le geste (« que vaudra la somme de toutes les cases ? » : 60 / plus de 60 / moins de 60), le geste tranche, le Feedback nomme la propriété fondamentale (comptage exhaustif et sans recouvrement), la brique tableau-croise est posée conditionnée à done2 donc avant la question de l'étape 3. La demande n'est pas devinable : ses distracteurs sont les trois autres nombres du tableau (15 le total de ligne, 14 le total de colonne, 29 leur somme), tous plausibles, tous vérifiés — cells.judo['2de A'] = 6, rowTotals.judo = 15, colTotals['2de A'] = 14.",
+      "crossGrade": { "overlapsWith": ["6e:tableau-double-entree"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 3, "mechanism": "question:TapQuestion (case contre marges)" },
+        { "module": 3, "moduleSlug": "les-marges-et-le-total", "step": 1, "mechanism": "manipulation:surbrillance ligne / colonne / total (CrossTableView highlight)" },
+        { "module": 3, "moduleSlug": "les-marges-et-le-total", "step": 3, "mechanism": "brick:mem-case-marge" },
+        { "module": 3, "moduleSlug": "les-marges-et-le-total", "step": 3, "mechanism": "question:TapQuestion (2de B et danse : où lit-on ?)" },
+        { "module": 5, "moduleSlug": "atelier-interpreter-un-tableau", "step": 1, "mechanism": "question:NumericQuestion (total de la 2de A)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e5" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e7" }
+      ],
+      "manipulation": "Module 3 étape 1 : trois boutons (« Les judokas, toutes classes » / « La 2de C, toutes activités » / « Le total général ») qui passent un `highlight` à CrossTableView, lequel colore la ligne, la colonne ou le coin correspondant. L'étape exige d'avoir essayé LES TROIS (seen.size ≥ 3). C'est une manipulation faible — un sélecteur de surbrillance — mais elle sépare visuellement les trois lieux de lecture, ce qu'aucun texte ne fait aussi vite.",
+      "assessmentQuestionIds": ["tc-e5", "tc-e7"],
+      "knowledgeItems": ["mem-case-marge", "effectifs-marginaux", "tableau-croise"],
+      "notes": "COVERED. Le critère de lecture (la question porte-t-elle sur UN caractère ou sur LES DEUX ?) est établi par la surbrillance, nommé par mem-case-marge — brique posée en tête de l'étape 3, donc avant la question qui l'exige — puis éprouvé sur une case dont les trois distracteurs sont les trois marges concurrentes (19 danseurs, 20 élèves de 2de B, 60 au total ; réponse 6, vérifiée : cells.danse['2de B'] = 6). La compétence est rejouée hors contexte au boss (tc-e5, sur « sport » × « classe »).",
+      "crossGrade": { "overlapsWith": ["6e:tableau-double-entree"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "soixante-fiches-a-ranger", "step": 1, "mechanism": "manipulation:FileSorter (marges recalculées en direct)" },
+        { "module": 3, "moduleSlug": "les-marges-et-le-total", "step": 1, "mechanism": "manipulation:surbrillance ligne / colonne / total" },
+        { "module": 3, "moduleSlug": "les-marges-et-le-total", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "les-marges-et-le-total", "step": 1, "mechanism": "brick:effectifs-marginaux" },
+        { "module": 3, "moduleSlug": "les-marges-et-le-total", "step": 2, "mechanism": "question:NumericQuestion (la double somme = 60)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e6" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e7" }
+      ],
+      "manipulation": "Double appui. (1) Dans FileSorter, chaque clic met à jour non seulement la case mais aussi son total de ligne, son total de colonne et le total général : l'élève VOIT les marges se construire comme des sommes, jamais comme des données. (2) La surbrillance du module 3 isole ensuite chacune d'elles.",
+      "assessmentQuestionIds": ["tc-e6", "tc-e7"],
+      "knowledgeItems": ["effectifs-marginaux", "mem-case-marge"],
+      "notes": "COVERED, avec une bonne idée : la marge n'est pas présentée comme un contrôle mais comme la RÉPONSE à une question sur un seul caractère (« 15 judokas toutes classes confondues »). La brique effectifs-marginaux suit les trois surbrillances et précède la NumericQuestion de l'étape 2 (ordre source correct). La « vérification gratuite » — les deux sommes valent l'effectif total — est établie par un calcul que l'élève fait lui-même : 15 + 19 + 13 + 13 = 60 et 14 + 20 + 26 = 60, les deux vérifiés sur la population engendrée. tc-e7 en fait une propriété générale et tc-e6 mesure le calcul d'une marge isolée. Réserve : la NumericQuestion donne les huit nombres à additionner dans son énoncé, donc elle éprouve une addition plus qu'une lecture de tableau.",
+      "crossGrade": { "overlapsWith": ["6e:tableau-double-entree"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P9": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "atelier-interpreter-un-tableau", "step": 1, "mechanism": "question:TapQuestion (8 danseurs en 2de C contre 5 en 2de A)" },
+        { "module": 5, "moduleSlug": "atelier-interpreter-un-tableau", "step": 1, "mechanism": "brick:comparer-honnetement" },
+        { "module": 5, "moduleSlug": "atelier-interpreter-un-tableau", "step": 1, "mechanism": "question:NumericQuestion (effectif de la 2de A)" },
+        { "module": 5, "moduleSlug": "atelier-interpreter-un-tableau", "step": 2, "mechanism": "question:TapQuestion (enquête 300/300, vélo 180 contre 40)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e10" }
+      ],
+      "manipulation": "AUCUNE. Le module 5 est un practice_lab sans instrument : deux CrossTableView statiques (le club, puis une enquête vélo/voiture × ville/campagne) et trois questions. La brique comparer-honnetement est posée après la première réponse, sans geste préalable.",
+      "assessmentQuestionIds": ["tc-e10"],
+      "knowledgeItems": ["comparer-honnetement", "effectifs-marginaux", "mem-case-marge"],
+      "notes": "COVERED malgré l'absence de geste, parce que le module traite la difficulté par un COUPLE de cas opposés, ce qui est plus instructif qu'une règle. Cas 1 : groupes de tailles inégales (2de A 14 élèves, 2de C 26) où l'effectif brut ment — 8 > 5 mais 5/14 ≈ 35,7 % > 8/26 ≈ 30,8 % (vérifié). Cas 2 : groupes de tailles ÉGALES (300 et 300) où la comparaison brute redevient légitime — c'est la nuance qui empêche de retenir « ne jamais comparer des effectifs ». La brique précède la NumericQuestion qui la mobilise. Le module s'arrête volontairement avant la division (« ce qui est l'objet de la leçon suivante ») : il fait constater l'insuffisance sans donner l'outil, ce qui motive exactement fréquences-conditionnelles-2nde. tc-e10 le mesure avec les valeurs 5/14 ≈ 36 % contre 8/26 ≈ 31 %.",
+      "crossGrade": { "overlapsWith": ["2de:frequences-conditionnelles-2nde"], "kind": "anticipation" },
+      "confidence": "high"
+    },
+    "seconde_tableaux-croises-2nde_P10": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 1, "mechanism": "manipulation:FilterLab (OU inclusif et NON)" },
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 1, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 1, "mechanism": "brick:filtres-logiques" },
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 2, "mechanism": "question:NumericQuestion (19 + 20 − 6 = 33)" },
+        { "module": 4, "moduleSlug": "filtrer-avec-et-ou-non", "step": 3, "mechanism": "question:TapQuestion (NON : 60 − 20 = 40)" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e8" },
+        { "module": 6, "moduleSlug": "mission-finale-le-club", "step": null, "mechanism": "question:tc-e9" }
+      ],
+      "manipulation": "FilterLab, et le point mathématique est VÉRIFIÉ dans le code : quand l'élève sélectionne deux critères et l'opérateur OU, le composant affiche (FilterLab.jsx:109-115) la ligne « 14 + 15 = 29, mais 6 élèves vérifient les deux critères et ne sont comptés qu'une fois : 14 + 15 − 6 = 23 ». Les trois nombres sont calculés en direct (nClasse, nActivite, nBoth) sur la population filtrée, jamais écrits en dur. Et la grille des 60 pastilles le MONTRE : un élève de 2de A qui fait du judo n'a qu'une pastille, elle ne s'allume qu'une fois. La non-double-comptabilisation de l'intersection est donc à la fois visible (une pastille, un individu) et écrite (la soustraction affichée). Sur un ET, le composant affiche à la place « c'est exactement une case du tableau croisé : l'intersection des deux critères », ce qui referme le lien avec le module 1.",
+      "assessmentQuestionIds": ["tc-e8", "tc-e9"],
+      "knowledgeItems": ["filtres-logiques"],
+      "notes": "COVERED sans réserve. C'est le deuxième meilleur enchaînement de la leçon. Un pari précède le geste (« 14 en 2de A, 15 judokas : combien en 2de A OU au judo ? » — 29 / moins de 29 / plus de 29), la manipulation tranche à 23, la brique filtres-logiques est posée conditionnée à done1 donc avant les questions des étapes 2 et 3. La NumericQuestion de l'étape 2 rejoue la formule sur d'AUTRES valeurs (19 danseurs, 20 élèves de 2de B, 6 à l'intersection → 33, vérifié) et son explainFor traite nommément le piège 39 (l'addition sans soustraction) et le piège 6 (l'intersection prise pour la réunion). Le NON est traité séparément à l'étape 3 (60 − 20 = 40, vérifié) et rejoué au boss sur d'autres nombres (60 − 26 = 34). L'articulation ET ↔ case du tableau est le fil qui relie ce module au module 1.",
+      "crossGrade": { "overlapsWith": ["4e:probabilites-4e"], "kind": "consolidation" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "officialScopeNotCovered": [],
+    "pedagogicalProblems": [
+      "P1 est MAL ALIGNÉ avec ce que le module 2 enseigne réellement : l'intitulé dit « identifier deux variables qualitatives », le module traite le NOMBRE DE MODALITÉS et l'explainWrong écarte explicitement le critère de nature (« Rien n'interdit de croiser des grandeurs numériques — à condition de les regrouper d'abord en classes. Le problème est le NOMBRE de modalités, pas leur nature de nombre »). Le critère qualitatif / quantitatif n'est établi nulle part dans les modules ; il est seulement diagnostiqué comme prérequis (tc-d5) et exigé au boss (tc-e1). C'est le seul vrai trou d'enseignement de la leçon.",
+      "Le module 5 est un practice_lab entièrement sans manipulation (deux tableaux statiques, trois questions) et la brique comparer-honnetement y est posée sans geste préalable. Choix assumé, mais il rend P9 dépendant du seul texte, alors qu'un instrument existe déjà dans la leçon : FilterLab pourrait montrer côte à côte les pastilles de 2de A et de 2de C avec leurs parts.",
+      "La NumericQuestion du module 3 étape 2 donne dans son énoncé les huit nombres à additionner (« Additionne les quatre totaux de lignes (15 + 19 + 13 + 13), puis les trois totaux de colonnes (14 + 20 + 26) »). Elle éprouve donc une addition, pas la LECTURE des marges dans le tableau — alors que la surbrillance de l'étape 1 vient précisément d'apprendre à les y trouver.",
+      "Le module 3 étape 1 est une manipulation faible : trois boutons qui colorent une ligne, une colonne ou un coin. Rien n'est transformé, rien n'est construit, aucune quantité ne change. C'est un sélecteur de mise en évidence, utile mais loin du FileSorter du module 1 ou du FilterLab du module 4.",
+      "Aucune épreuve du boss ne demande de CONSTRUIRE quoi que ce soit, alors que la construction est l'interaction signature de la leçon : tc-e5 « Case ou marge ? » mesure une lecture, tc-e6 une addition. La compétence P6 (« construire un tableau croisé d'effectifs ») est enseignée par le geste et évaluée par un QCM de lecture."
+    ],
+    "technicalProblems": [
+      "AUCUN gel de laboratoire. Le grep `disabled={done` / `disabled={d[0-9]` sur les sept modules et les deux composants renvoie trois occurrences, toutes légitimes : Module01SoixanteFichesARanger.jsx:82 et Module04FiltrerAvecEtOuNon.jsx:54 verrouillent un PredictionChips (un pari, après coup) ; FileSorter.jsx:91 `disabled={done}` désactive les boutons-cases quand `index >= eleves.length`, c'est-à-dire quand les 60 fiches SONT RANGÉES — c'est la fin naturelle de la tâche (il n'y a plus de fiche à placer), pas un gel après validation d'étape. FilterLab n'a aucun `disabled` et reste pleinement manipulable indéfiniment.",
+      "AUCUN import de kit manquant. Vérification exhaustive des sept modules pour KnowledgeBrick, TapQuestion, NumericQuestion, BatchChoiceQuestion, PredictionChips, ContentModule, BossFinal, PrerequisiteDiagnostic, Feedback, KnowledgeSnapshot et MathText : tout composant rendu est importé.",
+      "Module01SoixanteFichesARanger.jsx:39 : `const done1 = q1;` alors que `done1` sert de `done` à l'ÉTAPE 2 et `done2` (index >= 60) à l'étape 1. La numérotation des drapeaux est inversée par rapport à celle des étapes, ce qui rend le module difficile à relire ; le comportement, lui, est correct.",
+      "Aucun défaut mathématique. Les 60 fiches sont engendrées par `makeRng(20260907)` (graine figée) et tous les effectifs cités dans les modules ont été recalculés indépendamment : cases judo {2de A: 6, 2de B: 3, 2de C: 6}, danse {5, 6, 8}, escalade {2, 5, 6}, théâtre {1, 6, 6} ; marges de lignes judo 15, danse 19, escalade 13, théâtre 13 ; marges de colonnes 2de A 14, 2de B 20, 2de C 26 ; total 60. Filtres vérifiés : « 2de A OU judo » = 23 (14 + 15 − 6), « 2de B OU danse » = 33 (20 + 19 − 6), « PAS en 2de B » = 40, « PAS en 2de C » = 34. Comparaison du module 5 : 5/14 ≈ 35,7 % contre 8/26 ≈ 30,8 %, l'affirmation « la danse est plus fréquente en 2de A » est exacte. Tableau des niveaux : débutant 28, intermédiaire 24, confirmé 8.",
+      "Les valeurs du second tableau du module 5 (l'enquête vélo/voiture) sont écrites en dur dans le module (ENQUETE, lignes 22-29) et non dans data.js : elles échappent donc à data.test.js. Elles sont cohérentes (180 + 40 = 220, 120 + 260 = 380, colonnes 300 et 300, total 600) mais rien ne le garantirait après une modification."
+    ],
+    "duplicates": [
+      "CHAÎNE DÉLIBÉRÉE, et proprement découpée : tableaux croisés (compter) → fréquences conditionnelles (diviser) → probabilités conditionnelles (modéliser). Le partage est déclaré des deux côtés : cette leçon exclut « Fréquences marginales et conditionnelles, division par un effectif de référence » et « Notation P_A(B) », et son module 5 s'arrête explicitement au constat que la comparaison brute est insuffisante en annonçant la suite (« Rapporter chaque effectif à son groupe de référence, c'est calculer une fréquence conditionnelle : toute la leçon suivante »). Aucune notion n'est réenseignée comme neuve.",
+      "Le SEUL point de recouvrement réel avec fréquences-conditionnelles-2nde est la comparaison de sous-populations de tailles différentes : l'item comparer-honnetement (module 5, ici) et l'item comparer-sous-populations (module 3, là-bas) portent la même idée. Ce n'est pas un doublon fautif — ici on démontre que l'effectif brut ne suffit PAS (sans donner l'outil), là-bas on donne l'outil (la conditionnelle) — mais les deux items de carte sont proches au point qu'un élève pourrait les croire identiques. La leçon suivante fait d'ailleurs le lien explicitement (« C'est le lien direct avec l'atelier de la leçon Tableaux croisés »).",
+      "Recouvrement assumé avec 4e/probabilites-4e sur ET / OU / NON : la 4e enseigne déjà « L'intersection : les issues qui vérifient les DEUX conditions » et « La réunion : les issues qui vérifient l'UNE ou l'AUTRE — sans compter deux fois », en excluant la formule P(A ∪ B) = P(A) + P(B) − P(A ∩ B) énoncée comme règle. La 2nde reprend donc le geste sur des EFFECTIFS et pose cette fois la formule n(A ou B) = n(A) + n(B) − n(A et B) dans l'item filtres-logiques. C'est une reprise avec formalisation, pas une duplication — mais la leçon ne signale nulle part à l'élève qu'il a déjà rencontré l'idée en 4e (aucune brique variant 'known')."
+    ],
+    "recommendations": [
+      "Corriger le trou de P1 : ajouter au module 2 étape 1, AVANT la question sur le nombre de modalités, un tri qualitatif / quantitatif — quatre ou cinq caractères des mêmes 60 élèves (prénom, classe, activité, taille, nombre de frères) à ranger en deux colonnes — puis poser une brique qui définit « qualitative = valeurs qui sont des modalités, pas des nombres sur lesquels on calcule ». C'est ce que tc-e1 mesure aujourd'hui sans que rien ne l'enseigne.",
+      "Ajouter au boss une épreuve de CONSTRUCTION : donner cinq ou six fiches individuelles et demander l'effectif d'une case, ou faire choisir parmi quatre tableaux celui qui correspond au fichier montré. La compétence signature de la leçon n'est aujourd'hui mesurée que par des questions de lecture.",
+      "Faire lire les marges plutôt que les donner : retirer les huit nombres de l'énoncé de la NumericQuestion du module 3 étape 2, en laissant l'élève les trouver dans le CrossTableView affiché juste au-dessus.",
+      "Donner un instrument au module 5 : réutiliser FilterLab pour afficher côte à côte les pastilles de 2de A et de 2de C avec leurs effectifs de danseurs, afin que l'insuffisance de la comparaison brute se VOIE au lieu d'être seulement dite.",
+      "Déplacer les données de l'enquête vélo/voiture du module 5 vers data.js et les couvrir par data.test.js, comme les 60 fiches le sont déjà.",
+      "Renommer les drapeaux de Module01SoixanteFichesARanger.jsx pour que done1/done2/done3 correspondent aux étapes 1/2/3."
+    ],
+    "verticalPositioning": {
+      "revised": "Le tableau à double entrée de 6e (lire une case à l'intersection d'une ligne et d'une colonne, totaliser une ligne), explicitement déclaré en priorKnowledge et diagnostiqué par tc-d3 et tc-d4 ; l'effectif d'un groupe et son complémentaire (3e, tc-d1 et tc-d2) ; la série statistique et son caractère (3e), pour reconnaître qu'un caractère dont les valeurs sont des mots n'est pas numérique.",
+      "extended": "Le tableau à double entrée, qui était en 6e un OBJET À LIRE, devient un COMPTAGE À PRODUIRE : exhaustif (personne n'est oublié) et sans recouvrement (personne n'est compté deux fois). C'est ce changement de statut que FileSorter fait vivre, et il justifie à lui seul que la notion revienne au lycée. L'intersection et la réunion, rencontrées en 4e sur des issues d'expériences aléatoires (probabilites-4e), reviennent ici sur des EFFECTIFS d'individus réels et gagnent leur formule de cardinaux.",
+      "new": "Le FICHIER DE DONNÉES INDIVIDUELLES comme forme brute (une ligne par individu, une colonne par variable), et le tableau croisé comme son résumé ; la distinction NOMINALE / ORDINALE et la conséquence pratique de l'ordinalité sur l'ordre des lignes ; les EFFECTIFS MARGINAUX comme réponses à des questions sur un seul caractère, et la double somme comme vérification gratuite ; la formule n(A ou B) = n(A) + n(B) − n(A et B) ; la condition de validité d'une comparaison d'effectifs bruts (des groupes de même taille).",
+      "formalized": "Le OU de la conversation courante, souvent exclusif, est fixé comme INCLUSIF — et la formalisation passe par une constatation visuelle (une pastille ne s'allume qu'une fois) plutôt que par une convention à retenir. La correspondance ET ↔ case du tableau croisé est posée explicitement par FilterLab, ce qui unifie les deux moitiés de la leçon : filtrer avec un ET, c'est lire une case.",
+      "tool": "La leçon fournit l'INSTRUMENT DE COMPTAGE dont dépend tout le reste du chapitre : fréquences-conditionnelles-2nde y divisera, probabilites-conditionnelles-2nde y lira des probabilités, arbres-probabilites-2nde et tests-diagnostiques-probabilites-2nde s'appuieront encore sur le même quadrillage. Elle installe aussi le réflexe critique — un effectif brut ne se compare qu'à groupes de taille égale — qui est le vrai pont vers la leçon suivante."
+    }
+  }
+}

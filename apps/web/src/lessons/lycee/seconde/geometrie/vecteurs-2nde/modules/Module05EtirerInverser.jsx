@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, BatchChoiceQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ScaleLab from '../components/ScaleLab';
 import VectorLab from '../components/VectorLab';
-import PredictionChips from '../components/PredictionChips';
 import { VecName } from '../components/VectorScene';
 import { SCENES, RANGE, colinearFactor, isZero, equal, formatVec, formatNum, scale } from '../components/vecteurUtils';
 

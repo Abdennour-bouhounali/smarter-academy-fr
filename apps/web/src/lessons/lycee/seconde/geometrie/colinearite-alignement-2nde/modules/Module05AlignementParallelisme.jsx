@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorPlane, { Lamp, ComponentStepper } from '../components/VectorPlane';
-import PredictionChips from '../components/PredictionChips';
 import {
   vecFromPoints, det, detText, linesParallel, collinearityRatio, pointsAligned, yForAlignment,
   formatVec, fr, parseSigned, samePoint,

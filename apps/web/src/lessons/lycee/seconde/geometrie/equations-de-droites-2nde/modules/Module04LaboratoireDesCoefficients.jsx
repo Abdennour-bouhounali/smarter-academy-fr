@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoefficientLab from '../components/CoefficientLab';
 import LineBuilder from '../components/LineBuilder';
-import PredictionChips from '../components/PredictionChips';
 import { lineFromReduced, lineFromCartesian } from '../components/lineUtils';
 import { formatDec } from '@smarter-academy/core';
 

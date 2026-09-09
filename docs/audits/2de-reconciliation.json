@@ -1,0 +1,1540 @@
+[
+ {
+  "extId": "LP1",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_calcul-litteral-2nde_P3"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M3 « Développer : l'aire qui se découpe » ; brique developper, official include « Développer une expression »."
+ },
+ {
+  "extId": "LP2",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_calcul-litteral-2nde_P4"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M4 facteur commun (nombre, monôme, binôme) plus identité à l'envers ; official include « Factoriser une expression »."
+ },
+ {
+  "extId": "LP3",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_calcul-litteral-2nde_P3",
+   "seconde_calcul-litteral-2nde_P4"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M3/IdentityGrid modes plus, minus, diff enseigne les 3 identités ; brique identites-remarquables ; réemploi en factorisation M4."
+ },
+ {
+  "extId": "LP4",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_calcul-litteral-2nde_P4",
+   "seconde_calcul-litteral-2nde_P6"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M6 étape 4 simplifie (2x+4)/(x+2) avec valeur interdite ; une seule occurrence, aucun entraînement dédié."
+ },
+ {
+  "extId": "LP5",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "fractions_algebriques",
+  "confidence": "high",
+  "note": "Aucune addition de fractions algébriques ; calcul-litteral exclut « fractions rationnelles au-delà d'une simplification »."
+ },
+ {
+  "extId": "LP6",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "fractions_algebriques",
+  "confidence": "high",
+  "note": "Idem : official include « calculs avec des expressions fractionnaires » non couvert par le code."
+ },
+ {
+  "extId": "LP7",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "fractions_algebriques",
+  "confidence": "high",
+  "note": "Aucune division de fractions algébriques dans les 27 leçons de 2de."
+ },
+ {
+  "extId": "LP8",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "puissances-4e (exposants négatifs, règles opératoires) et puissances-3e ; aucun objet officiel puissances en 2de."
+ },
+ {
+  "extId": "LP9",
+  "match": "PREMIERE",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Exposants fractionnaires absents de tout le référentiel 2026 collège et 2de ; 3e exclut explicitement l'exponentielle."
+ },
+ {
+  "extId": "LP10",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "puissances-4e : « Règles opératoires de base sur les exposants entiers », multiplier/diviser/puissance d'une puissance."
+ },
+ {
+  "extId": "LP11",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "racines-carrees (3e) M4 Pavage et produit : racine(a)*racine(b)=racine(ab) et le quotient ; hors 4e (exclu)."
+ },
+ {
+  "extId": "LP12",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "racines-carrees (3e) M5 « Simplifier une racine » ; le 4e l'exclut nommément (racine(12)=2racine(3))."
+ },
+ {
+  "extId": "LP13",
+  "match": "PREMIERE",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "racines-carrees/lesson.config.js l.96 met « La rationalisation des dénominateurs » hors périmètre ; absente de 2de."
+ },
+ {
+  "extId": "LP14",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P2",
+   "seconde_equations-et-inequations-2nde_P5",
+   "seconde_equations-et-inequations-2nde_P6"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "1er degré, produit nul, quotient avec valeur interdite ; le second degré non factorisé est exclu du périmètre."
+ },
+ {
+  "extId": "LP15",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P3",
+   "seconde_signe-fonctions-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Inéquation du 1er degré (M3) plus tableau de signes produit/quotient dans signe-fonctions M4/M5."
+ },
+ {
+  "extId": "LP16",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonctions-2nde_P3"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "fonctions-2nde M2 « Image, antécédent, ensemble de définition » ; M6 réunion d'intervalles."
+ },
+ {
+  "extId": "LP17",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonctions-2nde_P4"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M2/M3/M7 ; sonde verticale."
+ },
+ {
+  "extId": "LP18",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonctions-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M2/M3/M7 ; sonde horizontale, comptage des antécédents."
+ },
+ {
+  "extId": "LP19",
+  "match": "SPLIT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P1",
+   "seconde_variations-extremums-2nde_P2",
+   "seconde_variations-extremums-2nde_P3"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Croissance, décroissance, monotonie définies par les inégalités en M2."
+ },
+ {
+  "extId": "LP20",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P4"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M1 Le randonneur : la piste se peint vert/rose selon le sens."
+ },
+ {
+  "extId": "LP21",
+  "match": "SPLIT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P7",
+   "seconde_variations-extremums-2nde_P8",
+   "seconde_variations-extremums-2nde_P9"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M4 : maximum, minimum, extremum sur un intervalle réglable, distinction valeur/endroit."
+ },
+ {
+  "extId": "LP22",
+  "match": "SPLIT",
+  "canonical": [
+   "seconde_fonctions-2nde_P7",
+   "seconde_fonctions-de-reference-2nde_P7",
+   "seconde_variations-extremums-2nde_P4",
+   "seconde_signe-fonctions-2nde_P2"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Lecture graphique éclatée : images/antécédents, caractéristiques d'une courbe, variations, signe."
+ },
+ {
+  "extId": "LP23",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "f(-x)=f(x) et g(-x)=-g(x) enseignés comme symétries (M1/M2/M3/M4) ; « fonction paire/impaire » n'apparaît nulle part en 2de."
+ },
+ {
+  "extId": "LP24",
+  "match": "PREMIERE",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Le mot « asymptote » est absent de tout apps/web/src/lessons/lycee ; hors objet officiel fonctions_de_reference."
+ },
+ {
+  "extId": "LP25",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonctions-2nde_P5",
+   "seconde_fonctions-de-reference-2nde_P10"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Sonde horizontale y=k générale : fonctions-2nde M2/M6, references M5 (x²=4, x²=-1, 1/x=2, |x|=3)."
+ },
+ {
+  "extId": "LP26",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_signe-fonctions-2nde_P10",
+   "seconde_signe-fonctions-2nde_P12"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "signe-fonctions M5 résout f(x)>0 (k=0) avec bandes sur la courbe ; f(x)>k pour k non nul n'est jamais posé."
+ },
+ {
+  "extId": "LP27",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_signe-fonctions-2nde_P11",
+   "seconde_signe-fonctions-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M5 fait f(x)<=0 et Q(x)>=0 ; le seuil reste 0, la comparaison à une horizontale y=k n'est pas traitée."
+ },
+ {
+  "extId": "LP28",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M3 : poser soi-même les flèches sous la piste, brique methode-construire-tableau-variations."
+ },
+ {
+  "extId": "LP29",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P6"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M1/M5/M6 ; tableau de valeurs puis tracé (P5 pour le tableau)."
+ },
+ {
+  "extId": "LP30",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "fonctions-lineaires-3e (« Reconnaître une fonction linéaire ») ; aucun objet linéaire en 2de, fonction_affine seul."
+ },
+ {
+  "extId": "LP31",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "fonctions-lineaires-3e M2 Coefficient, M3 Droite à pivot ; « fonction linéaire » absent de tout le code 2de."
+ },
+ {
+  "extId": "LP32",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonction-affine-2nde_P1"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "fonction-affine-2nde M1 Le réservoir, M2 table à accroissements proportionnels."
+ },
+ {
+  "extId": "LP33",
+  "match": "SPLIT",
+  "canonical": [
+   "seconde_fonction-affine-2nde_P2",
+   "seconde_fonction-affine-2nde_P3",
+   "seconde_fonction-affine-2nde_P4"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "a comme taux d'accroissement, b comme valeur de départ ; M1/M2/M3."
+ },
+ {
+  "extId": "LP34",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-de-droites-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Aussi seconde_fonction-affine-2nde_P6 (M4 « Retrouver la fonction » à partir de deux points)."
+ },
+ {
+  "extId": "LP35",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-de-droites-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M6/M7 ; official include « à partir d'un point et de la pente »."
+ },
+ {
+  "extId": "LP36",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonction-affine-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Aussi equations-de-droites P3/P4 (pente) ; M2/M4 lecture du déplacement +1 horizontal."
+ },
+ {
+  "extId": "LP37",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonction-affine-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M3/M4 : lecture de b à l'intersection avec l'axe des ordonnées."
+ },
+ {
+  "extId": "LP38",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "fonctions-lineaires-3e « Relier une fonction linéaire à une situation de proportionnalité » ; non repris en 2de."
+ },
+ {
+  "extId": "LP39",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Idem LP38 ; proportions-pourcentages-2nde traite le coefficient multiplicateur, pas le modèle fonctionnel."
+ },
+ {
+  "extId": "LP40",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "fonctions-lineaires-3e M4 « Retrouver le coefficient » ; l'analogue 2de est fonction-affine P6, pour une affine."
+ },
+ {
+  "extId": "LP41",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "fonctions-lineaires-3e / proportionnalite-3e ; en 2de la modélisation passe par l'affine (P6, M6)."
+ },
+ {
+  "extId": "LP42",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "fonctions-lineaires-3e (M1 prix au kilo, problèmes) ; l'atelier 2de M6 modélise des affines, pas des linéaires."
+ },
+ {
+  "extId": "LP43",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Idem ; le coût proportionnel est un exercice de fonctions-lineaires-3e, repris en 2de sous forme affine (abonnement)."
+ },
+ {
+  "extId": "LP44",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonction-affine-2nde_P6"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M6 Atelier : modéliser (abonnement 25 € + 30 €/mois) ; M7 mission le robinet."
+ },
+ {
+  "extId": "LP45",
+  "match": "SPLIT",
+  "canonical": [
+   "seconde_fonction-affine-2nde_P9",
+   "seconde_fonction-affine-2nde_P10",
+   "seconde_fonction-affine-2nde_P11"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M5 « Signe, équations, inéquations » puis M6 les applique aux situations."
+ },
+ {
+  "extId": "LP46",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_positions-relatives-droites-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M4 Le point d'intersection ; P1/P2 distinguent parallèles et sécantes en amont."
+ },
+ {
+  "extId": "LP47",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_positions-relatives-droites-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M4/M5 : lecture graphique de l'intersection, cas 0 / 1 / une infinité de solutions."
+ },
+ {
+  "extId": "LP48",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_positions-relatives-droites-2nde_P6"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M4 : brique point-intersection-systeme, methode-resoudre-systeme ; M6 le cas 4 = 4."
+ },
+ {
+  "extId": "LP49",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P2"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M2 La parabole ; brique fonction-carre."
+ },
+ {
+  "extId": "LP50",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "fonctions_cube_racine",
+  "confidence": "high",
+  "note": "lesson.config.js l.94 exclut « Fonctions racine carrée et cube » ; absent de l'objet officiel fonctions_de_reference."
+ },
+ {
+  "extId": "LP51",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "fonctions_cube_racine",
+  "confidence": "high",
+  "note": "Même exclusion explicite ; les trois références du repo sont carré, inverse, valeur absolue."
+ },
+ {
+  "extId": "LP52",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "fonctions_cube_racine",
+  "confidence": "high",
+  "note": "D = [0 ; +inf[ n'est jamais posé : la fonction racine n'existe pas dans la leçon."
+ },
+ {
+  "extId": "LP53",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P3"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M3 L'hyperbole ; D = R*, centre de symétrie O, signe de x."
+ },
+ {
+  "extId": "LP54",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P2",
+   "seconde_fonctions-de-reference-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M2 établit f(-a)=f(a) et l'axe (Oy) ; le mot « paire » n'est jamais employé — même écart que LP23."
+ },
+ {
+  "extId": "LP55",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P2"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M2 : décroissante sur ]-inf ; 0], croissante sur [0 ; +inf[ ; brique mem-parabole et QCM fr-e4."
+ },
+ {
+  "extId": "LP56",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P2",
+   "seconde_fonctions-de-reference-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Minimum 0 en 0 dans knowledge.jsx fonction-carre et l'épreuve fr-e4 ; pas de LP dédié aux extremums ici."
+ },
+ {
+  "extId": "LP57",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P6",
+   "seconde_fonctions-de-reference-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M1 tableau de valeurs puis tracé ; P6 couvre les trois références, pas seulement le carré."
+ },
+ {
+  "extId": "LP58",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Brique mem-parabole : sommet O, axe de symétrie, jamais sous l'axe, descend puis monte."
+ },
+ {
+  "extId": "LP59",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P10"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M5 étape 1 : sonde horizontale à 4 puis -1 — deux solutions, aucune ; résolution graphique, pas algébrique."
+ },
+ {
+  "extId": "LP60",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "second_degre_elementaire",
+  "confidence": "high",
+  "note": "x²>k n'est posé nulle part ; M5 compte les points communs avec y=k mais n'exploite jamais l'inégalité."
+ },
+ {
+  "extId": "LP61",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "second_degre_elementaire",
+  "confidence": "high",
+  "note": "x²<=k absent ; equations-et-inequations exclut les équations du second degré non factorisées."
+ },
+ {
+  "extId": "LP62",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "second_degre_elementaire",
+  "confidence": "high",
+  "note": "Aucune famille ax²+b en 2de ; seule x^2 nue est étudiée, sans coefficient ni translation."
+ },
+ {
+  "extId": "LP63",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "second_degre_elementaire",
+  "confidence": "high",
+  "note": "Corollaire de LP62 : aucun tracé de parabole paramétrée dans le code des 27 leçons."
+ },
+ {
+  "extId": "LP64",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_fonctions-de-reference-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M5 étape 4 : ordre des trois courbes sur ]0;1[ et ]1;+inf[, point (1 ; 1) ; brique regle-ordre-references."
+ },
+ {
+  "extId": "LP65",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "fonctions_cube_racine",
+  "confidence": "high",
+  "note": "P11 modélise avec une référence, mais le cube n'en est pas une ici ; hors périmètre déclaré."
+ },
+ {
+  "extId": "LP66",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P3"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M2 étape 3 : la monotonie est relative à un intervalle ; brique vocab-monotone-intervalle."
+ },
+ {
+  "extId": "LP67",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P1"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M2 : trois paires a<b donnent h(a)<h(b) ; brique definition-croissante-decroissante."
+ },
+ {
+  "extId": "LP68",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P2"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M2 étape 2 : sur [3 ; 6], a<b et h(a)>h(b)."
+ },
+ {
+  "extId": "LP69",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M3 étape 1 : les quatre flèches posées à la main, correction flèche par flèche."
+ },
+ {
+  "extId": "LP70",
+  "match": "SPLIT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P5",
+   "seconde_variations-extremums-2nde_P6",
+   "seconde_variations-extremums-2nde_P9"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Bornes du domaine dans le tableau (M3), lecture (M3 étape 2), extremums lus dans le tableau (M4 étape 4)."
+ },
+ {
+  "extId": "LP71",
+  "match": "SPLIT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P4",
+   "seconde_variations-extremums-2nde_P10"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M1 lecture sur la courbe, M3 étape 3 le passage tableau <-> courbe dans les deux sens."
+ },
+ {
+  "extId": "LP72",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P4",
+   "seconde_variations-extremums-2nde_P12"
+  ],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Le sentier (altitude/distance) et l'atelier M6 ancrent les variations dans le concret ; pas de LP dédié."
+ },
+ {
+  "extId": "LP73",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_variations-extremums-2nde_P12"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "M6 Atelier : optimiser (enclos d'aire maximale, coût minimal) ; brique methode-optimiser."
+ },
+ {
+  "extId": "LP74",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "variations_operations",
+  "confidence": "high",
+  "note": "Aucune composition à partir des références ; variations-extremums exclut les fonctions de référence."
+ },
+ {
+  "extId": "LP75",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "variations_operations",
+  "confidence": "high",
+  "note": "Variations d'une somme hors des 12 items officiels de variations_et_extremums."
+ },
+ {
+  "extId": "LP76",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "variations_operations",
+  "confidence": "high",
+  "note": "Variations d'un produit absentes du référentiel 2026 comme du code."
+ },
+ {
+  "extId": "LP77",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "variations_operations",
+  "confidence": "high",
+  "note": "Variations d'un quotient absentes ; signe-fonctions traite le SIGNE d'un quotient, pas ses variations."
+ },
+ {
+  "extId": "LP78",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P2"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Module 02 « Isoler x sans casser l'égalité » ; l'objet officiel inclut littéralement « Résoudre une équation du premier degré »."
+ },
+ {
+  "extId": "LP79",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Le second degré n'est pas au programme de 2de : seule la forme factorisée (produit nul, x²=9) est traitée en M04. Pas de discriminant."
+ },
+ {
+  "extId": "LP80",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P2",
+   "seconde_equations-et-inequations-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Une équation développée se ramène au premier degré (P2) ou se factorise pour le produit nul (P5) ; M04 fait la manœuvre explicitement."
+ },
+ {
+  "extId": "LP81",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P5 « Résoudre des équations produit » — module 04 « Produit nul », avec le piège du produit non nul."
+ },
+ {
+  "extId": "LP82",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P3"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P3 ; module 03 « Le signe qui se retourne » traite l'inversion du sens lors de la division par un négatif."
+ },
+ {
+  "extId": "LP83",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_signe-fonctions-2nde_P6",
+   "seconde_signe-fonctions-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Atteignable via signe-fonctions : trinôme factorisé = tableau de signes d'un produit (P6) puis P8. Aucun LP « second degré »."
+ },
+ {
+  "extId": "LP84",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_signe-fonctions-2nde_P12",
+   "seconde_signe-fonctions-2nde_P2"
+  ],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "signe-fonctions P9/P12 relient f(x)=0 aux zéros lus sur la courbe. equations-et-inequations n'a pas de volet graphique pour les équations."
+ },
+ {
+  "extId": "LP85",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_signe-fonctions-2nde_P2",
+   "seconde_signe-fonctions-2nde_P10",
+   "seconde_signe-fonctions-2nde_P11",
+   "seconde_signe-fonctions-2nde_P12",
+   "seconde_equations-et-inequations-2nde_P4"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "signe-fonctions M05 lit les bandes au-dessus/en dessous de l'axe ; E&I P4 représente l'ensemble des solutions sur une droite graduée."
+ },
+ {
+  "extId": "LP86",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_valeur-absolue-distance-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "|x−a|=r est TAUGHT dans valeur-absolue M04 (brique equation-distance-egale, 2 bords) mais AUCUN LP ne le mesure — candidat à un LP ajouté."
+ },
+ {
+  "extId": "LP87",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_valeur-absolue-distance-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "|x−a|≤r ⇔ [a−r;a+r] enseigné en valeur-absolue M04 (BeamLine) et au scope officiel, mais AUCUN LP ne le mesure."
+ },
+ {
+  "extId": "LP88",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P6"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P6 « équations quotient avec les restrictions » ; module 05 « Quotient et valeur interdite » (trou en x=−1, zéro en x=3)."
+ },
+ {
+  "extId": "LP89",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_signe-fonctions-2nde_P7",
+   "seconde_signe-fonctions-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Passe par le tableau de signes d'un quotient (signe-fonctions P7+P8, M04/M05, double barre). Aucun LP en E&I."
+ },
+ {
+  "extId": "LP90",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P1",
+   "seconde_equations-et-inequations-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Objet officiel « Modéliser un problème par une équation » ; module 06 « Modéliser » (brique methode-modeliser)."
+ },
+ {
+  "extId": "LP91",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P3",
+   "seconde_equations-et-inequations-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Module 06 « Modéliser » et la mission finale « les deux forfaits » ; scope officiel « Modéliser un problème par une inéquation »."
+ },
+ {
+  "extId": "LP92",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-et-inequations-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P7 « Interpréter et vérifier les solutions », enseigné par les modules 01, 02, 04, 05 et 06."
+ },
+ {
+  "extId": "LP93",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Placer un point : reperage-droite-plan-3e (module 04 « Placer, et ne pas échanger ») ; déjà amorcé en reperage-5e et reperage-4e."
+ },
+ {
+  "extId": "LP94",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Lire les coordonnées : reperage-droite-plan-3e module 03 « Lire un point » ; repris en 5e/4e. Prérequis en 2de, pas un LP de 2de."
+ },
+ {
+  "extId": "LP95",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P12"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "vecteurs-2nde P12 « Calculer une distance entre deux points », enseigné au module 06 « Mesurer un vecteur »."
+ },
+ {
+  "extId": "LP96",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P13"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "vecteurs-2nde P13 « Coordonnées du milieu d'un segment », module 06 puis réemployé au module 07."
+ },
+ {
+  "extId": "LP97",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_colinearite-alignement-2nde_P3",
+   "seconde_colinearite-alignement-2nde_P4",
+   "seconde_colinearite-alignement-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "colinearite-alignement-2nde : proportionnalité des coordonnées (P3) et déterminant (P4/P5)."
+ },
+ {
+  "extId": "LP98",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "orthogonalite_coordonnees",
+  "confidence": "high",
+  "note": "Aucun produit scalaire en 2de : l'orthogonalité par coordonnées est absente du référentiel et du code. Extension proposée."
+ },
+ {
+  "extId": "LP99",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-de-droites-2nde_P5",
+   "seconde_equations-de-droites-2nde_P6",
+   "seconde_equations-de-droites-2nde_P7",
+   "seconde_equations-de-droites-2nde_P8",
+   "seconde_equations-de-droites-2nde_P9"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "equations-de-droites-2nde : réduite (P8) et cartésienne (P9), établies depuis 2 points, point+vecteur ou point+pente."
+ },
+ {
+  "extId": "LP100",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_equations-de-droites-2nde_P10",
+   "seconde_equations-de-droites-2nde_P11"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Tracer une droite depuis son équation (P10) et tester l'appartenance d'un point (P11)."
+ },
+ {
+  "extId": "LP101",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_vecteurs-2nde_P1"
+  ],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "La direction est l'un des trois attributs de l'égalité (M02, brique egalite-vecteurs) mais aucun LP ne porte « direction » seul."
+ },
+ {
+  "extId": "LP102",
+  "match": "PARTIAL",
+  "canonical": [
+   "seconde_vecteurs-2nde_P1",
+   "seconde_vecteurs-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Le sens apparaît dans l'égalité (M02) et dans le vecteur opposé / k<0 (P5). Pas de LP dédié à la caractérisation par le sens."
+ },
+ {
+  "extId": "LP103",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P10"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P10 « Calculer la norme d'un vecteur » (module 06) ; la longueur est aussi le 3e attribut de l'égalité en M02."
+ },
+ {
+  "extId": "LP104",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P4"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P4 « Additionner deux vecteurs » ; module 04 « Enchaîner les déplacements » (relation de Chasles)."
+ },
+ {
+  "extId": "LP105",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Le vecteur opposé est enseigné (M02, briques vecteur-opposé) mais u − v n'est jamais posé ni demandé : aucun LP, aucune tâche."
+ },
+ {
+  "extId": "LP106",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P5 « Multiplier un vecteur par un réel » ; module 05 « Étirer, inverser »."
+ },
+ {
+  "extId": "LP107",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P8",
+   "seconde_vecteurs-2nde_P9",
+   "seconde_vecteurs-2nde_P11"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Lire (P8), calculer (P9) et former les coordonnées de AB (P11) ; module 03 « Deux nombres suffisent »."
+ },
+ {
+  "extId": "LP108",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P10"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P10, module 06 : ‖u‖ = √(x²+y²), avec le piège de la racine oubliée en mission finale."
+ },
+ {
+  "extId": "LP109",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_colinearite-alignement-2nde_P3",
+   "seconde_colinearite-alignement-2nde_P4",
+   "seconde_colinearite-alignement-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "colinearite-alignement-2nde : proportionnalité des coordonnées et déterminant xy'−x'y."
+ },
+ {
+  "extId": "LP110",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P6",
+   "seconde_colinearite-alignement-2nde_P1",
+   "seconde_colinearite-alignement-2nde_P2"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Reconnaître graphiquement deux vecteurs colinéaires : vecteurs-2nde P6 (M05) et colinéarité P1/P2."
+ },
+ {
+  "extId": "LP111",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_colinearite-alignement-2nde_P7",
+   "seconde_colinearite-alignement-2nde_P9"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "colinearite-alignement-2nde P7 « deux droites parallèles » et P9 « problème de parallélisme »."
+ },
+ {
+  "extId": "LP112",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_colinearite-alignement-2nde_P6",
+   "seconde_colinearite-alignement-2nde_P8",
+   "seconde_equations-de-droites-2nde_P12"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Alignement de trois points : colinéarité P6/P8 et equations-de-droites P12."
+ },
+ {
+  "extId": "LP113",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_vecteurs-2nde_P13",
+   "seconde_vecteurs-2nde_P14"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "vecteurs-2nde P13 (milieu) et P14 (résoudre un problème) ; module 07 démontre parallélogramme et milieu."
+ },
+ {
+  "extId": "LP114",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Aucun objet officiel de trigonométrie en 2de ; le 3e trigonometrie exclut explicitement « Cercle trigonométrique »."
+ },
+ {
+  "extId": "LP115",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Le radian n'apparaît ni dans le référentiel 2de ni au collège (3e reste en degrés, arccos/arcsin à la calculatrice)."
+ },
+ {
+  "extId": "LP116",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Enroulement de la droite des réels sur le cercle : absent du référentiel 2de et du code."
+ },
+ {
+  "extId": "LP117",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Coordonnées (cos t ; sin t) d'un point du cercle : rien en 2de ; le 3e ne définit cos/sin que dans le triangle rectangle."
+ },
+ {
+  "extId": "LP118",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Valeurs remarquables du cosinus : absentes du référentiel 2de et de trigonometrie-triangle-rectangle-3e."
+ },
+ {
+  "extId": "LP119",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Valeurs remarquables du sinus : même constat, aucun objet officiel de 2de ne les porte."
+ },
+ {
+  "extId": "LP120",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Utiliser les valeurs remarquables suppose le cercle : hors scope 2de, exclu en 3e."
+ },
+ {
+  "extId": "LP121",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "cos²t + sin²t = 1 n'apparaît nulle part dans le référentiel 2026 pour la 2de ni au collège."
+ },
+ {
+  "extId": "LP122",
+  "match": "PREMIERE",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Les formules d'addition ne sont ni en 2de ni au collège : elles relèvent du programme de Première."
+ },
+ {
+  "extId": "LP123",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Résoudre cos(t)=a sur un intervalle exige le cercle trigonométrique, explicitement exclu en 3e et absent en 2de."
+ },
+ {
+  "extId": "LP124",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "trigonometrie_cercle",
+  "confidence": "high",
+  "note": "Résoudre sin(t)=a sur un intervalle : même exclusion. À couvrir par l'extension trigonometrie_cercle."
+ },
+ {
+  "extId": "LP125",
+  "match": "COLLEGE_POINTER",
+  "canonical": [
+   "seconde_loi-grands-nombres-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Enseigné en probabilites-5e (« Calculer une probabilité en équiprobabilité ») ; en 2de c'est une hypothèse de modèle (LGN P8)."
+ },
+ {
+  "extId": "LP126",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Aucune occurrence de dénombrement, combinaison, arrangement ou factorielle dans les onze leçons 2de ni au référentiel officiel de 2de."
+ },
+ {
+  "extId": "LP127",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_arbres-probabilites-2nde_P1",
+   "seconde_arbres-probabilites-2nde_P9"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "arbres-probabilites-2nde P1 « Construire un arbre » et P9 « Passer d'une situation réelle à un arbre »."
+ },
+ {
+  "extId": "LP128",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_arbres-probabilites-2nde_P2",
+   "seconde_arbres-probabilites-2nde_P3",
+   "seconde_arbres-probabilites-2nde_P10"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "P2 « Lire un arbre pondéré », P3 (pondération d'une branche), P10 (arbre vers langage naturel)."
+ },
+ {
+  "extId": "LP129",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_arbres-probabilites-2nde_P5",
+   "seconde_arbres-probabilites-2nde_P6",
+   "seconde_arbres-probabilites-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Probabilité d'un chemin (P5), produit des branches (P6), probabilité d'un événement (P7)."
+ },
+ {
+  "extId": "LP130",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_arbres-probabilites-2nde_P7",
+   "seconde_arbres-probabilites-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Enseignée sans son nom : module 04 « Additionner les chemins » pondère les deux sacs (P8), P7 conclut sur l'événement."
+ },
+ {
+  "extId": "LP131",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "independance_probabiliste",
+  "confidence": "high",
+  "note": "L'indépendance n'apparaît que comme hypothèse de répétition (LGN P2) ; P(A∩B)=P(A)×P(B) n'est jamais posé ni reconnu."
+ },
+ {
+  "extId": "LP132",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_probabilites-conditionnelles-2nde_P3",
+   "seconde_probabilites-conditionnelles-2nde_P4",
+   "seconde_probabilites-conditionnelles-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "probabilites-conditionnelles-2nde : calculer P_A(B) (P3), depuis un tableau (P4), en situation concrète (P5)."
+ },
+ {
+  "extId": "LP133",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_probabilites-conditionnelles-2nde_P7",
+   "seconde_probabilites-conditionnelles-2nde_P9",
+   "seconde_tests-diagnostiques-probabilites-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Interpréter (P7), relier aux fréquences conditionnelles (P9) et l'usage en test diagnostique (tests P8)."
+ },
+ {
+  "extId": "LP134",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_arbres-probabilites-2nde_P9",
+   "seconde_tests-diagnostiques-probabilites-2nde_P1",
+   "seconde_probabilites-conditionnelles-2nde_P5"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Modéliser : passer d'une situation réelle à un arbre (arbres P9) ou à un test diagnostique (tests P1)."
+ },
+ {
+  "extId": "LP135",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_probabilites-conditionnelles-2nde_P7",
+   "seconde_probabilites-conditionnelles-2nde_P8",
+   "seconde_tests-diagnostiques-probabilites-2nde_P9",
+   "seconde_tests-diagnostiques-probabilites-2nde_P10"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Interprétation contextuelle et piège de l'inversion du conditionnement (PC P8, tests P9/P10/P11)."
+ },
+ {
+  "extId": "LP136",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_positions_sections",
+  "confidence": "high",
+  "note": "Aucun objet « espace » en 2de (le domaine géométrie est vecteurs/colinéarité/droites) ; points, droites et plans de l'espace non couverts."
+ },
+ {
+  "extId": "LP137",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "representations-espace-5e (vues, perspective, patrons) et representation-espace-3e (perspective cavalière, faces/arêtes)."
+ },
+ {
+  "extId": "LP138",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "representation-espace-3e module 07 « Dans le cube » : droites non coplanaires ; pointsToLearn « positions relatives »."
+ },
+ {
+  "extId": "LP139",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_positions_sections",
+  "confidence": "high",
+  "note": "Positions relatives de deux PLANS : ni le 3e (dont l'objet exclut les plans paramétriques) ni la 2de ne les traitent."
+ },
+ {
+  "extId": "LP140",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_positions_sections",
+  "confidence": "high",
+  "note": "Le parallélisme dans l'espace (théorème du toit, plans parallèles) n'est enseigné à aucun niveau du dépôt."
+ },
+ {
+  "extId": "LP141",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_positions_sections",
+  "confidence": "high",
+  "note": "L'orthogonalité dans l'espace (droite orthogonale à un plan) est absente du référentiel 2de comme des leçons collège."
+ },
+ {
+  "extId": "LP142",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Volume du parallélépipède : acquis antérieur au collège, mobilisé en 4e (« Trois versements », prisme de référence). Aucun LP de 2de."
+ },
+ {
+  "extId": "LP143",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Le prisme droit sert de récipient de référence en representations-espace-4e module 01 ; ses patrons sont vus en 5e."
+ },
+ {
+  "extId": "LP144",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "representations-espace-4e : pointsToLearn « Calculer le volume d'une pyramide » (modules 01, 03, 05)."
+ },
+ {
+  "extId": "LP145",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "representations-espace-4e : « Calculer le volume d'un cône de révolution » (module 04 « Le cône, tourné d'un triangle »)."
+ },
+ {
+  "extId": "LP146",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_volumes_coordonnees",
+  "confidence": "high",
+  "note": "Le volume de la boule est au scope officiel de 3e mais representation-espace-3e ne le traite pas (aucun module, aucun pointsToLearn)."
+ },
+ {
+  "extId": "LP147",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_positions_sections",
+  "confidence": "high",
+  "note": "« Sections de solides par un plan » est au scope officiel 3e mais absent de representation-espace-3e ; le 4e l'exclut. Trou réel."
+ },
+ {
+  "extId": "LP148",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_positions_sections",
+  "confidence": "high",
+  "note": "Représenter une section plane : même trou que LP147, aucun module ni point d'apprentissage à aucun niveau."
+ },
+ {
+  "extId": "LP149",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_volumes_coordonnees",
+  "confidence": "high",
+  "note": "Coordonnées dans l'espace : exclues explicitement en 5e, 4e et 3e (« Coordonnées cartésiennes 3D complètes »), absentes en 2de."
+ },
+ {
+  "extId": "LP150",
+  "match": "MISSING",
+  "canonical": [],
+  "proposedExtension": "geometrie_espace_volumes_coordonnees",
+  "confidence": "high",
+  "note": "Résoudre un problème spatial par coordonnées suppose LP149 : rien à aucun niveau du dépôt."
+ },
+ {
+  "extId": "LP151",
+  "match": "SUBSUMED",
+  "canonical": [
+   "seconde_statistiques-une-variable-2nde_P1"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Population et caractère sont portés par « Lire une série statistique » (P1) et le prérequis serie-statistique ; pas de LP nommé."
+ },
+ {
+  "extId": "LP152",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "medium",
+  "note": "Le mode n'est enseigné dans AUCUNE leçon : priorKnowledge mode-stat de statistiques-une-variable-2nde sans source collège."
+ },
+ {
+  "extId": "LP153",
+  "match": "COLLEGE_POINTER",
+  "canonical": [
+   "seconde_boites-a-moustaches-2nde_P3"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "L'étendue est enseignée en statistiques-4e et statistiques-3e ; en 2de elle n'est reprise que via boites-a-moustaches P3."
+ },
+ {
+  "extId": "LP154",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_statistiques-une-variable-2nde_P4",
+   "seconde_series-regroupees-classes-2nde_P8",
+   "seconde_series-regroupees-classes-2nde_P9"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "statistiques-une-variable P4 + classe médiane (SR P8/P9). Trou quartiles : 4e et statistiques-3e les excluent, boîtes-2nde les exige."
+ },
+ {
+  "extId": "LP155",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_statistiques-une-variable-2nde_P2",
+   "seconde_statistiques-une-variable-2nde_P3",
+   "seconde_series-regroupees-classes-2nde_P6",
+   "seconde_series-regroupees-classes-2nde_P7"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Moyenne (P2), linéarité (P3), moyenne pondérée et estimation par classes (séries regroupées P6/P7)."
+ },
+ {
+  "extId": "LP156",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_statistiques-une-variable-2nde_P6",
+   "seconde_statistiques-une-variable-2nde_P12",
+   "seconde_boites-a-moustaches-2nde_P6",
+   "seconde_boites-a-moustaches-2nde_P8"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Interpréter les indicateurs (P6), comparer deux séries (P12), comparer des médianes et choisir un indicateur (boîtes P6/P8)."
+ },
+ {
+  "extId": "LP157",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Diagramme en bâtons : statistiques-5e module 05 « Barres ou camembert ? » ; pointsToLearn « Lire et construire un diagramme en barres »."
+ },
+ {
+  "extId": "LP158",
+  "match": "EXACT",
+  "canonical": [
+   "seconde_series-regroupees-classes-2nde_P3",
+   "seconde_series-regroupees-classes-2nde_P4"
+  ],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "series-regroupees-classes-2nde P3 « Construire un histogramme » et P4 « Lire un histogramme »."
+ },
+ {
+  "extId": "LP159",
+  "match": "COLLEGE_POINTER",
+  "canonical": [],
+  "proposedExtension": null,
+  "confidence": "high",
+  "note": "Diagramme circulaire : statistiques-5e module 05, pointsToLearn « Lire et construire un diagramme circulaire »."
+ }
+]

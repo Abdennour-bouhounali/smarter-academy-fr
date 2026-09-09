@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion , KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, TapQuestion, NumericQuestion, BatchChoiceQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ReducedLab from '../components/ReducedLab';
-import PredictionChips from '../components/PredictionChips';
 import { lineFromSlopeIntercept, intersection, intersectionInFrame, frameFor, fracCoupleText, parseDec, formatDec } from '../components/droitesUtils';
 
 /**

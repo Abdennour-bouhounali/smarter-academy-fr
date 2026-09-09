@@ -40,7 +40,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '📐',
-  estimatedDurationMin: 70,
+  estimatedDurationMin: 64,
   skills: [
     'Reconnaître deux vecteurs colinéaires',
     'Utiliser la proportionnalité des coordonnées',

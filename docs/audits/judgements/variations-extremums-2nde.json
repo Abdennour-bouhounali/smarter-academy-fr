@@ -1,0 +1,281 @@
+{
+  "lesson": "variations-extremums-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-fonctions-batch",
+  "learningPoints": {
+    "seconde_variations-extremums-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 1, "mechanism": "manipulation:TrailLab" },
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 1, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 1, "mechanism": "brick:variations-sens" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 1, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 1, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 2, "mechanism": "brick:definition-croissante-decroissante" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 4, "mechanism": "question:M02-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e1" }
+      ],
+      "manipulation": "TrailLab — l'interaction signature : un randonneur avance cran par cran (pas 0,5 km) sur le profil d'un sentier ; l'altimètre affiche h(x), et SOUS SES PAS l'axe des abscisses se peint, vert quand ça monte, rose quand ça descend. La couleur est calculée par variationOn sur le cran courant, donc dérivée. L'étape 1 n'est validée que si TOUS les crans de 0 à 3 km ont été visités : on ne peut pas sauter, il faut marcher. Puis TwoProbes au module 2 : trois paires (a, b) avec a < b à poser sur la montée, et le DOM affiche à chaque fois « a < b et h(a) < h(b) ».",
+      "assessmentQuestionIds": ["va-e1"],
+      "knowledgeItems": ["variations-sens", "definition-croissante-decroissante", "mem-croissante-ordre"],
+      "notes": "L'enchaînement geste → nom → définition est exemplaire et se déroule sur deux modules. Le module 1 fait vivre « ça monte » sans le mot mathématique ; la brique variations-sens le pose après une montée entière parcourue à la main. Le module 2 refait le travail au niveau exigé en 2de : la définition PAR INÉGALITÉS n'est pas énoncée puis illustrée, elle est CONSTATÉE sur trois paires que l'élève choisit lui-même, et la validation compte les paires distinctes (Set sur `a|b`) — trois verdicts concordants avant que la brique definition-croissante-decroissante ne consigne « a < b ⟹ h(a) ≤ h(b) ». Le lead de la brique cite le geste (« six paires placées de tes mains, deux verdicts constants »). L'épreuve va-e1 n'est pas devinable : parmi les quatre options, « f(2) > 0 » est le distracteur qui teste la confusion croissance/positivité — confusion que le module 1 étape 4 a déjà attaquée frontalement (« descendre ne veut pas dire négatif : les altitudes restent au-dessus de 0 »), et que la ligne r1 de M02-S4-Q1 rejoue.",
+      "crossGrade": { "overlapsWith": ["3e:lecture-graphique-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 2, "mechanism": "manipulation:TrailLab" },
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 4, "mechanism": "question:M01-S4-Q1" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 2, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 2, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 2, "mechanism": "brick:definition-croissante-decroissante" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 4, "mechanism": "question:M02-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e2" }
+      ],
+      "manipulation": "Le même dispositif, du côté de la descente : trois paires a < b entre 3 et 6 km, et le verdict s'inverse — « a < b ⟹ h(a) > h(b) ». La symétrie de traitement entre les deux étapes est ce qui fait que la définition tombe comme une paire et non comme une règle isolée ; la brique n'arrive qu'après les SIX paires (trois montantes, trois descendantes).",
+      "assessmentQuestionIds": ["va-e2"],
+      "knowledgeItems": ["definition-croissante-decroissante", "variations-sens", "mem-croissante-ordre"],
+      "notes": "COVERED au même titre que P1, dont il est le miroir exact. La question du module 1 étape 4 (« entre 3 et 6 km, quand x augmente, h(x)… ») pose déjà le sens correct avant toute inégalité, et son explainWrong désamorce spécifiquement « descendre = devenir négatif ». L'épreuve va-e2 est correctement construite : g décroissante sur [−3 ; 0], donc de −2 < −1 on tire g(−2) ≥ g(−1) — travailler sur des ABSCISSES NÉGATIVES est le vrai piège, car l'élève tenté d'appliquer « plus grand → plus petit » sans regarder l'ordre de −2 et −1 se trompe. Le distracteur « sont négatifs » rejoue une dernière fois la confusion variation/signe.",
+      "crossGrade": { "overlapsWith": ["3e:lecture-graphique-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 3, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 3, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 3, "mechanism": "brick:vocab-monotone-intervalle" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 3, "mechanism": "brick:mem-croissante-ordre" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 4, "mechanism": "question:M02-S4-Q1" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 3, "mechanism": "question:M05-S3-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e3" }
+      ],
+      "manipulation": "LA CHASSE AU CONTRE-EXEMPLE DOUBLE (module 2 étape 3), le meilleur dispositif de la leçon. Sur [0 ; 6] entier, l'élève doit trouver DEUX paires contradictoires — une avec a < 3 < b et h(a) < h(b), une autre avec h(a) > h(b) — et la validation exige littéralement les deux (seenUp && seenDown), chacune vérifiée par imageOf. C'est donc l'élève qui FABRIQUE la contradiction qui rend le mot « monotone » et la mention « sur un intervalle » nécessaires ; la PredictionChips l'a fait s'engager avant (« sur [0 ; 6], peut-on dire que h est croissante ou décroissante ? »).",
+      "assessmentQuestionIds": ["va-e3"],
+      "knowledgeItems": ["vocab-monotone-intervalle", "mem-croissante-ordre", "definition-croissante-decroissante"],
+      "notes": "C'est la meilleure page de conception des trois leçons auditées. La monotonie n'est pas définie puis illustrée : elle naît d'un besoin que l'élève a créé de ses mains. La conséquence est énoncée au bon niveau de généralité — « une variation s'énonce toujours SUR UN INTERVALLE où elle est vraie » — et elle est ensuite réinvestie deux fois, au module 5 étape 3 (« g est monotone sur [−1 ; 1] : vrai, car inclus dans [−2 ; 2] » vs « sur [−3 ; −1] : faux, à cheval sur −2 ») et au boss va-e3, dont les distracteurs [0 ; 5] et [1 ; 3] contiennent tous deux le retournement en 2 — c'est-à-dire exactement l'erreur que l'étape 3 a fait commettre puis corriger. Le modèle mathématique encode la même chose : variationOn renvoie null quand aucun des deux sens ne tient, et le test verrouille variationOn(TRAIL, 1, 5) = null.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 1, "mechanism": "manipulation:TrailLab" },
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 2, "mechanism": "manipulation:TrailLab" },
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 2, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 2, "mechanism": "brick:methode-lire-variations-courbe" },
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 3, "mechanism": "question:M01-S3-Q1" },
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 3, "mechanism": "question:M03-S3-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e4" }
+      ],
+      "manipulation": "TrailLab sur le sentier entier : l'étape 2 exige d'avoir visité TOUS les crans de 3 à 10 km, donc d'avoir traversé les quatre tronçons et les trois retournements (3, 6, 8,5 km), qui se marquent d'un anneau ambre quand on y passe (showTurns='found'). À la fin, l'axe entier est peint en quatre bandes de couleur : la lecture des variations sur un graphique existe alors comme un OBJET VISIBLE, produit par la marche, avant d'être une méthode.",
+      "assessmentQuestionIds": ["va-e4"],
+      "knowledgeItems": ["methode-lire-variations-courbe", "variations-sens", "regle-plus-bas-au-bord"],
+      "notes": "La lecture des variations sur un graphique est un acquis partiel de 3e (lecture-graphique-3e a pour pointsToLearn « Repérer les variations d'une fonction à partir de son graphique » et « Identifier les intervalles où une fonction augmente ou diminue »), et la leçon ne fait pas semblant de l'ignorer : elle la refait par le geste, mais son apport propre est ailleurs — la marche cran par cran fait comprendre que les changements de sens se produisent EXACTEMENT aux sommets et aux vallées, ce qui prépare les bornes du tableau. La révélation conditionnée nomme les quatre tronçons avec leurs valeurs (620 m à 3 km, contre 560 m à 8,5 km : le second sommet n'est pas le plus haut, ce qui casse l'idée que « le sommet » est unique). Vérifié par les tests : les images aux nœuds sont 300, 620, 380, 560, 420 et le tableau des flèches est ↗ ↘ ↗ ↘.",
+      "crossGrade": { "overlapsWith": ["3e:lecture-graphique-3e"], "kind": "repetition" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 1, "mechanism": "manipulation:VariationTable" },
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 1, "mechanism": "brick:tableau-de-variations" },
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 1, "mechanism": "brick:methode-construire-tableau-variations" },
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 2, "mechanism": "question:M06-S2-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e5" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e6" }
+      ],
+      "manipulation": "OUI, l'élève CONSTRUIT le tableau — c'était le point à vérifier, et la réponse est positive avec une réserve précise. VariationTable en mode `editable` (Module03, étape 1) : les quatre flèches sont des boutons vides marqués « ? » que l'élève bascule ↗ / ↘ un par un, sous la piste peinte du sentier (TrailLab paintAll frozen, affiché juste au-dessus comme référence visuelle). Quand les quatre sont posées, la correction s'affiche flèche par flèche (vert si juste, rouge avec la bonne valeur sinon, via `reveal`) et la vérité est DÉRIVÉE de variationTable(TRAIL), jamais écrite à la main. RÉSERVE : seules les flèches sont saisies. La ligne des abscisses (0, 3, 6, 8,5, 10) et la ligne des valeurs (300, 620, 380, 560, 420) sont pré-remplies par le composant, et leur position haute/basse est calculée par isHigh — l'élève ne choisit ni les bornes, ni les points de retournement, ni le placement des valeurs.",
+      "assessmentQuestionIds": ["va-e5", "va-e6"],
+      "knowledgeItems": ["tableau-de-variations", "methode-construire-tableau-variations"],
+      "notes": "COVERED, parce que le geste central du LP — décider du SENS sur chaque tronçon et l'inscrire dans la case correspondante — est bien accompli par l'élève, et que la brique tableau-de-variations n'arrive qu'après (« ces quatre flèches que TU viens de poser forment un objet qui a un nom »). L'étayage est légitime : les bornes viennent d'être découvertes au module 1 (les anneaux ambre) et les valeurs sont lisibles sur l'altimètre. Mais la couverture n'est pas totale au sens strict du verbe « construire » : identifier soi-même les points de retournement et placer les valeurs en haut ou en bas selon la flèche sont deux compétences réelles du LP que le composant exécute à la place de l'élève. Le boss compense partiellement (va-e6 fait choisir la courbe qui correspond à un tableau, en distinguant abscisses et images ; va-e5 fait encadrer h(5)), mais aucune épreuve ne demande de produire un tableau. Le sous-titre de l'étape est honnête à ce sujet (« les valeurs aux bornes, sommets et vallées sont déjà lues sur la courbe »).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P6": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 2, "mechanism": "brick:methode-lire-tableau-variations" },
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 2, "mechanism": "question:M03-S2-Q1" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 1, "mechanism": "question:M05-S1-Q1" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 2, "mechanism": "question:M05-S2-Q1" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 3, "mechanism": "question:M05-S3-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e5" }
+      ],
+      "manipulation": "Aucune manipulation propre, et c'est un choix assumé : la lecture d'un tableau se fait sur un tableau NU (VariationTable sans editable, la fonction g = 0,25x³ − 3x sur [−4 ; 4], sans courbe ni expression données à l'élève). La brique methode-lire-tableau-variations est donc posée EN TÊTE d'étape 2, avant la première demande qu'elle sert — le commentaire d'en-tête le documente comme une décision (« aucun geste ne précède cette lecture »).",
+      "assessmentQuestionIds": ["va-e5", "va-e9"],
+      "knowledgeItems": ["methode-lire-tableau-variations", "tableau-de-variations"],
+      "notes": "COVERED malgré l'absence de geste, parce que le LP « LIRE un tableau » est ici traité avec un sérieux inhabituel et sur quatre modules. La progression est réelle : lire les intervalles de monotonie et les valeurs (M3 étape 2), en déduire l'ORDRE de deux images sans calculer (M5 étape 1), en déduire un ENCADREMENT (M5 étape 2), puis distinguer ce que le tableau dit de ce qu'il ne dit pas (M5 étape 3, et surtout la ligne r3 de M04-S4-Q1 : « maximum de g sur [−1 ; 3] → on ne peut pas le lire, g(−1) et g(3) ne sont pas dans le tableau »). Le contenu décisif — un tableau a des SILENCES — est enseigné, ce qui est rare. La ligne r4 de M03-S2-Q1 (« g(0) est compris entre −4 et 4 ») introduit l'encadrement au bon moment, et le commentaire d'en-tête note que le mot « encadrement » a été délibérément retiré de ce retour pour ne pas anticiper sur le module 5 qui l'enseigne. Vérifié : g(−2) = 4, g(2) = −4, g(−4) = −4, g(4) = 4 ; le tableau ↗ ↘ ↗ est verrouillé par un test.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 1, "mechanism": "manipulation:IntervalLab" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 1, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 1, "mechanism": "brick:maximum-minimum" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 1, "mechanism": "brick:mem-valeur-et-endroit" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 2, "mechanism": "question:M04-S2-Q1" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 4, "mechanism": "brick:methode-extremum-tableau" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 4, "mechanism": "question:M04-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e7" }
+      ],
+      "manipulation": "IntervalLab — deux bornes a et b réglables (boutons ±, pas 0,5) délimitent une bande ambre sur le profil du sentier ; le bandeau affiche en temps réel le maximum ET le minimum de h sur [a ; b], AVEC l'endroit où ils sont atteints, tout calculé par extremumOn (candidats = les deux bornes et les retournements intérieurs). L'étape n'est validée qu'une fois [5 ; 10] atteint : l'élève doit ramener a de 0 à 5 et VOIR le maximum passer de 620 (en 3) à 560 (en 8,5) sans que la courbe ait bougé.",
+      "assessmentQuestionIds": ["va-e7", "va-e10"],
+      "knowledgeItems": ["maximum-minimum", "mem-valeur-et-endroit", "methode-extremum-tableau"],
+      "notes": "Le geste est le bon et il est le seul possible : ce n'est pas la fonction qu'on fait varier mais l'INTERVALLE, ce qui isole exactement la variable dont dépend l'extremum. Le lead de la brique le dit (« tu n'as touché ni au sentier ni à la courbe — seulement à l'intervalle — et le plus haut a changé »). L'étape 2 sépare ensuite les deux nombres par DEUX saisies numériques distinctes (« quel est le maximum ? » → 620 ; « en quelle abscisse est-il atteint ? » → 3), et chaque explainFor traite l'inversion de l'autre (« 3 km est l'ENDROIT ; le maximum est 620 m »). C'est la manière la plus nette de traiter la confusion valeur/endroit que j'aie vue dans ce corpus. L'étape 4 ajoute le cas du maximum ATTEINT DEUX FOIS (g sur [−4 ; 4] : 4 en −2 et en 4, vérifié et verrouillé par le test maxOn(BOSSE) = {value: 4, at: [−2, 4]}). Le boss va-e7 garde le distracteur « 3, atteint en 9 », c'est-à-dire l'inversion pure.",
+      "crossGrade": { "overlapsWith": ["3e:lecture-graphique-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 2, "mechanism": "brick:regle-plus-bas-au-bord" },
+        { "module": 1, "moduleSlug": "le-randonneur", "step": 3, "mechanism": "question:M01-S3-Q1" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 1, "mechanism": "manipulation:IntervalLab" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 3, "mechanism": "question:M04-S3-Q1" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 4, "mechanism": "question:M04-S4-Q1" },
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 4, "mechanism": "question:M06-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e8" }
+      ],
+      "manipulation": "Le geste porteur est celui du module 1 : le bandeau de TrailLab affiche « plus bas : … » calculé sur les altitudes DÉJÀ VISITÉES, si bien qu'en marchant l'élève voit que le minimum reste 300 m — la valeur du DÉPART — même après avoir traversé la vallée de 380 m. La misconception (« le minimum est forcément dans un creux ») est donc réfutée par l'instrument avant d'être nommée. IntervalLab la rejoue ensuite avec des bornes mobiles.",
+      "assessmentQuestionIds": ["va-e8"],
+      "knowledgeItems": ["regle-plus-bas-au-bord", "maximum-minimum", "mem-valeur-et-endroit", "methode-extremum-tableau"],
+      "notes": "COVERED, et le traitement du minimum est même meilleur que celui du maximum, parce qu'il porte l'obstacle le plus coriace : l'extremum AU BORD. Le profil du sentier est conçu pour cela — les nœuds [0, 300], [3, 620], [6, 380], [8,5, 560], [10, 420] font que le creux visible (380) n'est PAS le minimum (300, au départ), vérifié et verrouillé par le test minOn(TRAIL) = {value: 300, at: [0]}. La question M01-S3-Q1 met les deux valeurs en concurrence directe dans ses options, et la question M04-S3-Q1 la reprend avec le distracteur supplémentaire « 0, car h ne prend pas de valeur négative » — la confusion minimum/signe. Le boss va-e8 rejoue le bord sur un tableau neuf (minimum 1 atteint en 8). La brique regle-plus-bas-au-bord est posée au module 1 étape 2, donc APRÈS la marche complète et AVANT la question de l'étape 3 qu'elle sert.",
+      "crossGrade": { "overlapsWith": ["3e:lecture-graphique-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P9": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 1, "mechanism": "manipulation:IntervalLab" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 1, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 1, "mechanism": "brick:maximum-minimum" },
+        { "module": 4, "moduleSlug": "maximum-minimum", "step": 4, "mechanism": "question:M04-S4-Q1" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 3, "mechanism": "question:M05-S3-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e9" }
+      ],
+      "manipulation": "IntervalLab est TOUT ENTIER ce LP : l'attribut data-interval du bandeau, les data-max et data-min qui l'accompagnent, et la bande ambre (highlightIntervals) qui matérialise [a ; b] sur la courbe. Régler l'intervalle et voir l'extremum changer EST la définition opératoire de « extremum sur un intervalle ». La manipulation reste vivante pendant les quatre étapes du module — le commentaire d'en-tête documente que le gel a été retiré précisément parce que l'élève doit pouvoir éprouver d'autres intervalles après avoir compris.",
+      "assessmentQuestionIds": ["va-e9"],
+      "knowledgeItems": ["maximum-minimum", "methode-extremum-tableau", "mem-valeur-et-endroit"],
+      "notes": "COVERED, et c'est le LP le plus finement éprouvé de la leçon. L'épreuve va-e9 est remarquable : « le maximum de h sur [4 ; 8] est h(4) : sur [4 ; 8], h est décroissante, le maximum est au début » — la bonne réponse est une valeur qu'on ne peut PAS lire dans le tableau, seulement localiser par le raisonnement, et le distracteur « 9 » est le sommet global, hors de l'intervalle. Cette question mesure exactement ce que la manipulation a enseigné : l'extremum dépend de l'intervalle, et le sommet global peut en être exclu. La ligne r3 de M04-S4-Q1 pose le cas dual (bornes non tabulées → on ne peut pas conclure), et la ligne r4 le cas d'un sous-intervalle monotone. Les quatre positions possibles sont donc couvertes : extremum au retournement, au bord, hors intervalle, illisible.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P10": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 1, "mechanism": "manipulation:VariationTable" },
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 1, "mechanism": "manipulation:TrailLab" },
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 1, "mechanism": "brick:methode-construire-tableau-variations" },
+        { "module": 3, "moduleSlug": "le-tableau-de-variations", "step": 3, "mechanism": "question:M03-S3-Q1" },
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 2, "mechanism": "question:M06-S2-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e6" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e4" }
+      ],
+      "manipulation": "Les DEUX SENS du lien sont travaillés, et c'est ce qui fait le LP. Sens courbe → tableau : à l'étape 1, la piste peinte de TrailLab est affichée juste au-dessus du tableau à remplir, et l'élève transporte chaque couleur en flèche. Sens tableau → courbe : à l'étape 3, le tableau de g est donné seul, face à trois candidates tracées par CoordPlane (A = 0,25x³ − 3x, B son opposée, C une parabole), et il faut choisir. Le module 6 étape 2 affiche encore le couple courbe + tableau côte à côte, cette fois sur l'enclos.",
+      "assessmentQuestionIds": ["va-e4", "va-e6"],
+      "knowledgeItems": ["tableau-de-variations", "methode-construire-tableau-variations", "methode-lire-tableau-variations", "methode-lire-variations-courbe"],
+      "notes": "COVERED sans réserve. Les trois candidates de l'étape 3 sont bien choisies : B a le profil INVERSÉ (↘ ↗ ↘) et C n'a qu'UN retournement — deux erreurs structurelles distinctes, pas des variantes cosmétiques. Vérifié : A = 0,25x³ − 3x a bien ses retournements en ±2 (dérivée 0,75x² − 3), avec g(−2) = 4 et g(2) = −4 ; B les a aux mêmes abscisses mais avec le sens inverse ; C = 0,3x² − 3 n'en a qu'un, en 0. Le boss va-e6 mesure la même compétence sur un tableau textuel avec le distracteur qui INTERVERTIT abscisses et images (« part de (2 ; 0), monte jusqu'à (9 ; 3) ») — c'est la faute réelle, et elle est la même que celle que fonctions-2nde traite avec (6 ; 3) contre (3 ; 6). Le va-e4 ajoute une précision qu'on trouve rarement : un « 0 » dans un tableau appartient au tableau de SIGNES, pas au tableau de variations — ce qui protège la frontière avec signe-fonctions-2nde.",
+      "crossGrade": { "overlapsWith": ["3e:representation-graphique-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P11": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 1, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 2, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 3, "mechanism": "manipulation:TwoProbes" },
+        { "module": 2, "moduleSlug": "croissante-decroissante", "step": 3, "mechanism": "brick:mem-croissante-ordre" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 1, "mechanism": "brick:methode-comparer-images-tableau" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 1, "mechanism": "question:M05-S1-Q1" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 2, "mechanism": "brick:methode-encadrer-images" },
+        { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 2, "mechanism": "question:M05-S2-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e2" }
+      ],
+      "manipulation": "TwoProbes affiche en permanence, dans une pastille noire à attribut data-compare, le verdict conjoint « a < b et h(a) < h(b) » — les deux inégalités côte à côte, calculées par compareImages. Comparer f(a) et f(b) est donc un geste avant d'être une déduction : l'élève pose les deux sondes et lit. Le module 5 retire ensuite la courbe et ne laisse que le tableau, ce qui force le passage du constat au raisonnement.",
+      "assessmentQuestionIds": ["va-e1", "va-e2"],
+      "knowledgeItems": ["methode-comparer-images-tableau", "methode-encadrer-images", "definition-croissante-decroissante", "mem-croissante-ordre"],
+      "notes": "COVERED, et le module 5 apporte ce qui fait la différence entre une compétence et un automatisme : le cas où l'on NE PEUT PAS conclure. La ligne r3 de M05-S1-Q1 (« g(−1) et g(3) ») a pour bonne réponse « on ne peut pas savoir », et le retour le revendique explicitement (« \"on ne peut pas savoir\" est la bonne réponse, pas un aveu »). Le modèle mathématique porte la même distinction : compareByTable renvoie '<', '>', '=' ou 'indetermine' selon que a et b tombent ou non dans un même intervalle de monotonie, et les tests verrouillent compareByTable(TRAIL, 2, 5) = 'indetermine'. Vérifications numériques des quatre lignes : g(0,5) = −1,47 > g(1,2) = −3,17 ✓ ; g(−3) = 2,25 < g(−2,5) = 3,59 ✓ ; g(−1) = 2,75 et g(3) = −2,25 mais indéterminable par le seul tableau ✓ ; g(2,5) = −3,59 < g(3,5) = 0,22 ✓. L'encadrement (étape 2) est la seconde facette du LP et il est traité : sur [−2 ; 2] où g descend de 4 à −4, toutes les images sont entre −4 et 4, avec les distracteurs « −2 ≤ g(x) ≤ 2 » qui confondent abscisses et images.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_variations-extremums-2nde_P12": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 1, "mechanism": "brick:methode-optimiser" },
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 1, "mechanism": "question:M06-S1-Q1" },
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 2, "mechanism": "question:M06-S2-Q1" },
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 3, "mechanism": "question:M06-S3-Q1" },
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 3, "mechanism": "question:M06-S3-Q2" },
+        { "module": 6, "moduleSlug": "atelier-optimiser", "step": 4, "mechanism": "question:M06-S4-Q1" },
+        { "module": 7, "moduleSlug": "mission-finale-le-sommet", "step": null, "mechanism": "question:va-e10" }
+      ],
+      "manipulation": "Aucune — le module 6 est un practice lab sans instrument réglable, et son commentaire d'en-tête l'assume explicitement (« ce module ne comporte aucun laboratoire réglable — les deux courbes sont frozen par construction, à titre de figure : rien à dégeler »). La brique methode-optimiser ouvre l'étape 1, avant la modélisation qu'elle sert, faute de geste qui la précède.",
+      "assessmentQuestionIds": ["va-e10"],
+      "knowledgeItems": ["methode-optimiser", "maximum-minimum", "methode-extremum-tableau"],
+      "notes": "COVERED malgré l'absence de geste, parce que l'atelier fait faire la chaîne COMPLÈTE — modéliser, dresser ou lire le tableau, lire l'extremum, dire où — et sur DEUX situations de sens opposé : un maximum à trouver (l'aire de l'enclos) et un minimum (le coût unitaire). Le geste porteur existe, mais il est au module 4 (IntervalLab), ce qui suffit. Vérifications numériques complètes : périmètre 40 ⟹ longueur = 20 − x ⟹ A(x) = x(20 − x) sur [0 ; 20], maximum 100 m² en x = 10 (l'enclos CARRÉ, ce que la ligne r3 fait remarquer), A(5) = A(15) = 75 par symétrie ; C(q) = 0,02(q − 40)² + 6 donne C(0) = 38, C(40) = 6, C(100) = 78, minimum 6 € en q = 40 ; va-e10 : périmètre 24 ⟹ A(x) = x(12 − x), maximum A(6) = 36 m². Toutes exactes, et l'enclos est verrouillé par un test (maxOn(ENCLOS) = {value: 100, at: [10]}). Les deux NumericQuestion de l'étape 3 rejouent une dernière fois la distinction valeur/endroit avec des explainFor qui traitent l'inversion (100 pour 10). L'aire et le périmètre sont des acquis de 6e correctement déclarés en priorKnowledge et mesurés par va-d8.",
+      "crossGrade": { "overlapsWith": ["3e:modelisation-3e"], "kind": "extension" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "officialScopeNotCovered": [
+      {
+        "scopeItem": "parité (vocabulaire) — « Étudier la parité d'une fonction lorsque pertinent » (référentiel externe, chapitre « Généralités sur les fonctions »)",
+        "taughtAnyway": false,
+        "evidence": [],
+        "recommendation": "no-action-here",
+        "notes": "VÉRIFIÉ par grep sur tout apps/web/src/lessons/lycee/seconde : ZÉRO occurrence de « fonction paire » ou « fonction impaire » dans la Seconde entière ; les seules occurrences de « parité » portent sur les entiers pairs et impairs (arithmetique-2nde, logique-et-raisonnement-2nde). Cette leçon-ci n'a pas à porter la parité et ne l'évoque nulle part : f(−x) n'apparaît dans aucun module, aucune fonction étudiée n'est symétrique (TRAIL est un profil quelconque, BOSSE est impaire mais cela n'est jamais remarqué ni utilisé — g(−x) = −g(x) pour 0,25x³ − 3x, ce que la leçon ignore délibérément). Le manque réel est dans fonctions-de-reference-2nde, où la propriété est enseignée quatre fois par le geste sans jamais être nommée ; voir le jugement de cette leçon. Aucune action ici. Remarque incidente : la symétrie de BOSSE aurait pu servir de contrôle (le tableau ↗ ↘ ↗ avec g(−4) = −4 et g(4) = 4 est symétrique) mais l'exploiter détournerait la leçon de son objet.",
+        "scopeItemSource": "external"
+      },
+      {
+        "scopeItem": "Résoudre graphiquement f(x) = k, f(x) > k et f(x) ≤ k (référentiel externe, chapitre « Généralités sur les fonctions »)",
+        "taughtAnyway": false,
+        "evidence": [
+          { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 2, "mechanism": "question:M05-S2-Q1" },
+          { "module": 5, "moduleSlug": "comparer-sans-calculer", "step": 3, "mechanism": "question:M05-S3-Q1" }
+        ],
+        "recommendation": "defer-to-signe-fonctions",
+        "notes": "NON ENSEIGNÉ, et il faut le dire nettement : aucune sonde horizontale n'existe dans cette leçon. TrailLab et IntervalLab n'ont qu'un mode de lecture, `readGuides={{ mode: 'x', … }}` — un guide VERTICAL. Il n'y a donc nulle part de droite y = k à croiser avec la courbe, ni pour compter des antécédents, ni pour résoudre une inéquation. Ce qui existe et qu'il ne faut pas confondre avec cela : l'ENCADREMENT des images (M05-S2-Q1 : −4 ≤ g(x) ≤ 4 pour x ∈ [−2 ; 2]) et la MAJORATION par le maximum (M05-S3-Q1 ligne r3 : g(x) ≤ 4 pour tout x de [−4 ; 4]). Ces deux énoncés sont des inégalités SUR LES IMAGES déduites du tableau, dans le sens « je connais l'intervalle des x, j'encadre les y » — exactement l'inverse de « je connais k, je cherche les x tels que f(x) > k ». La différence est réelle et elle est celle que le programme demande. C'est cohérent avec le périmètre déclaré (teachingScope.exclude renvoie le signe et le tableau de signes à signe-fonctions-2nde), mais il faut noter que signe-fonctions ne résout f(x) > 0 que contre ZÉRO : la résolution contre un k quelconque n'est enseignée dans AUCUNE leçon de 2de. Voir la même remarque dans les jugements de fonctions-2nde et fonctions-de-reference-2nde : c'est un trou de niveau, cohérent sur les trois leçons."
+      }
+    ],
+    "pedagogicalProblems": [
+      "P5 « Construire un tableau de variations » n'est construit qu'à moitié : l'élève pose les quatre flèches, mais les bornes (0, 3, 6, 8,5, 10), les valeurs (300, 620, 380, 560, 420) et leur position haute ou basse sont pré-remplies par VariationTable. Identifier soi-même les points de retournement et décider si une valeur se pose en haut ou en bas de la case sont deux compétences réelles du LP que le composant exécute à la place de l'élève. Aucune épreuve du boss ne demande non plus de produire un tableau (va-e5 et va-e6 en font lire un). L'étayage est légitime au premier tableau ; il faudrait un second tableau moins étayé, par exemple au module 6 sur l'enclos.",
+      "Deux modules sur six n'ont aucune manipulation : le module 5 (comparer sans calculer) et le module 6 (atelier optimiser). Les deux l'assument dans leur commentaire d'en-tête, et les quatre briques concernées (methode-lire-tableau-variations, methode-comparer-images-tableau, methode-encadrer-images, methode-optimiser) sont posées en TÊTE d'étape, c'est-à-dire avant la demande qu'elles servent — l'ordre source est donc correct, mais ces briques sont établies par le texte et non par l'action, ce qui contrevient à la règle « geste → brique → demande ». Le geste porteur existe ailleurs (TwoProbes pour la comparaison, IntervalLab pour l'extremum), ce qui sauve les LPs concernés ; mais un tiers de la leçon fonctionne en mode manuel scolaire.",
+      "La résolution graphique de f(x) = k et des inéquations associées est absente (voir officialScopeNotCovered), alors que le composant partagé CoordPlane supporte readGuides en mode 'y' — la fonctionnalité existe et n'est pas montée ici.",
+      "P4 « Lire les variations sur un graphique » est un REDOUBLEMENT quasi intégral d'un pointToLearn de lecture-graphique-3e (« Repérer les variations d'une fonction à partir de son graphique », « Identifier les intervalles où une fonction augmente ou diminue »). Le module 1 le refait entièrement par le geste sans jamais signaler que c'est un acquis à réactiver, et le priorKnowledge de la leçon ne le déclare pas. L'apport propre de la 2de sur ce point (les changements de sens se produisent exactement aux retournements, ce qui donne les bornes du tableau) existe mais reste implicite."
+    ],
+    "technicalProblems": [
+      "AUCUN GEL DE MANIPULATION. Vérification exhaustive du grep `disabled={d…}` sur les six modules : Module01:84 `disabled={!done1}` et Module02:82, 105 `disabled={!done1}` / `disabled={!done2}` sont des verrous d'ANTÉRIORITÉ (l'étape n s'ouvre quand l'étape n−1 est faite), jamais des gels de l'étape courante ; Module01:61, Module02:104 portent sur des PredictionChips, ce qui est correct et voulu. Les en-têtes des modules 1, 2, 3 et 4 portent tous la mention « MANIPULATION JAMAIS GELÉE » avec la description du bug corrigé, et le module 6 précise qu'il n'a rien à dégeler. Aucune occurrence à corriger.",
+      "Une exception légitime, à ne pas confondre avec un gel : VariationTable au module 3 étape 1 devient non modifiable après correction (`editable={!revealed}` et `disabled={!editable || reveal}` sur chaque bouton-flèche). Ce n'est pas un laboratoire mais une QUESTION corrigée, et le commentaire d'en-tête le distingue explicitement (« ce n'est pas un laboratoire libre mais une réponse validée »). Correct.",
+      "Aucun défaut mathématique. Vérifications numériques : profil TRAIL aux nœuds 300 / 620 / 380 / 560 / 420 avec retournements en 3, 6 et 8,5 ; maxOn(TRAIL) = 620 en 3 ; minOn(TRAIL) = 300 en 0 ; maxOn(TRAIL, 5, 10) = 560 en 8,5 ; minOn(TRAIL, 5, 10) = 380 en 6 ; g = 0,25x³ − 3x a ses retournements en ±2 (dérivée 0,75x² − 3), g(−2) = 4, g(2) = −4, g(−4) = −4, g(4) = 4, maximum 4 atteint DEUX fois (−2 et 4), minimum −4 atteint deux fois (−4 et 2) ; g(0,5) = −1,469 > g(1,2) = −3,168 ; g(−3) = 2,25 < g(−2,5) = 3,594 ; g(2,5) = −3,594 < g(3,5) = 0,219 ; A(x) = x(20 − x) : maximum 100 en 10, A(5) = A(15) = 75 ; C(q) = 0,02(q − 40)² + 6 : C(0) = 38, C(40) = 6, C(100) = 78 ; va-e10 : A(6) = 36 pour un périmètre 24. Toutes exactes, et l'essentiel est verrouillé par variationsUtils.test.js (flèches, extremums, extremums sur sous-intervalle, comparaison par tableau, y compris les cas « atteint deux fois » et « indéterminé »).",
+      "Le modèle est correctement construit sur des `turns` DÉCLARÉS plutôt que détectés numériquement (comme les zéros dans « Signe d'une fonction ») : les flèches du tableau, les extremums et compareByTable en dérivent tous, donc aucun tableau n'est écrit à la main et le dessin ne peut pas contredire le texte.",
+      "Aucun composant mort : TrailLab (M1, M3, M6, et via IntervalLab en M4), TwoProbes (M2), VariationTable (M3, M4, M5, M6) et IntervalLab (M4) sont tous rendus. TwoProbes et VariationTable sont des copies locales conformes à la règle « on copie, on n'importe pas entre leçons »."
+    ],
+    "duplicates": [
+      "ANTICIPATION reçue de fonctions-de-reference-2nde, non déclarée. Cette leçon-ci est celle qui DOIT établir « croissante », « décroissante » et « extremum » — elle le fait, par les gestes des modules 2 et 4. Mais fonctions-de-reference-2nde a déjà posé une brique vocab-monte-descend (croissante/décroissante au sens du collège, module 2) ET une brique vocab-extremum qui DÉFINIT minimum, maximum et extremum (module 4). Un élève qui suit l'ordre du catalogue rencontre donc ces mots deux fois, la première fois définis sans que la manipulation qui leur donne leur sens (le réglage d'intervalle) ait eu lieu. Ce n'est pas un doublon fautif de cette leçon — c'est la leçon voisine qui déborde — mais le priorKnowledge d'ici ne mentionne rien de ces briques, si bien qu'aucune des deux leçons ne sait ce que l'autre a posé.",
+      "REPETITION avec 3e/lecture-graphique-3e sur P4 : « Repérer les variations d'une fonction à partir de son graphique » et « Identifier les intervalles où une fonction augmente ou diminue » sont des pointsToLearn de la leçon de 3e, et « Identifier les valeurs maximales et minimales lorsque cela est pertinent » y figure aussi. La 2de refait le geste et ajoute la définition par inégalités, la notion d'intervalle et le tableau — l'apport est réel — mais le recouvrement de P4 (et partiellement de P7/P8) n'est déclaré nulle part, ni en priorKnowledge, ni au module 0 qui ne teste aucune variation.",
+      "Aucun doublon avec fonctions-2nde : celle-ci exclut explicitement variations, extremums et tableau de variations (teachingScope.exclude), et son knowledgeAudit.ignore documente l'unique emploi du mot « extremum » comme sens courant. Le partage est propre dans ce sens-là.",
+      "Aucun doublon avec signe-fonctions-2nde : le va-e4 protège même activement la frontière en faisant remarquer qu'un « 0 » dans un tableau appartient au tableau de signes et non au tableau de variations."
+    ],
+    "recommendations": [
+      "Ajouter un SECOND tableau à construire, moins étayé, où l'élève identifie lui-même les bornes et les points de retournement (par exemple sur l'enclos, au module 6 étape 2, avant que le tableau corrigé ne s'affiche). C'est ce qui manque à P5 pour être couvert au sens plein du verbe « construire ». À défaut, ajouter au boss une épreuve de production de tableau.",
+      "Donner un geste au module 5 : une variante de TwoProbes sur le tableau seul (deux abscisses à poser, le tableau surlignant l'intervalle de monotonie qui les contient, ou signalant qu'aucun ne les contient tous les deux) transformerait methode-comparer-images-tableau d'une brique-texte en une brique-geste, sans changer une seule question.",
+      "Déclarer en priorKnowledge le recouvrement avec 3e/lecture-graphique-3e (lecture des variations sur un graphique) et ajouter une question de diagnostic au module 0 : la leçon saurait alors ce qu'elle réactive et ce qu'elle établit. Aujourd'hui le module 0 teste huit prérequis dont aucun ne porte sur les variations.",
+      "Se coordonner avec fonctions-de-reference-2nde sur vocab-extremum : soit cette leçon-là le pose en variant=\"rappel\" pointant vers ici, soit celle-ci le déclare en priorKnowledge. En l'état, les deux leçons enseignent le mot comme neuf.",
+      "Envisager, si le périmètre le permet, une étape de résolution graphique de f(x) = k au module 4 (le maximum de h sur [a ; b] serait alors relié au nombre de solutions de h(x) = k selon la position de k) — cela comblerait un trou qui traverse les trois leçons du chapitre. Sinon, l'ajouter explicitement à signe-fonctions-2nde en généralisant de 0 à k."
+    ],
+    "verticalPositioning": {
+      "revised": "La lecture graphique de 3e est le socle direct : lecture-graphique-3e enseigne déjà à repérer les variations sur un graphique, à identifier les intervalles où une fonction augmente ou diminue, et à identifier les valeurs maximales et minimales — ce module 1 les refait donc au sens strict, en les incarnant dans une marche. S'y ajoutent la notation f(x) et l'antécédent (3e), l'abscisse et l'ordonnée (6e), l'aire et le périmètre (6e, dont vit tout l'atelier d'optimisation), et — venus de la 2de déjà faite — l'intervalle, les crochets, ∈ et ⊂ d'ensembles-et-intervalles-2nde. Les huit questions du module 0 mesurent chacun de ces ids, sans jamais tester une variation.",
+      "extended": "L'intuition de 3e (« la courbe monte ») s'étend en deux directions. Vers la précision : la définition par inégalités, a < b ⟹ f(a) ≤ f(b), qui rend la propriété vérifiable sur un couple particulier au lieu d'être une impression d'ensemble. Vers la restriction : la mention obligatoire de l'INTERVALLE, sans laquelle l'énoncé est faux — c'est le vrai saut du collège au lycée sur ce chapitre, et la chasse au contre-exemple du module 2 étape 3 le fait vivre. L'idée de « valeur maximale » de 3e s'étend de même : un maximum est désormais une valeur ATTEINTE, sur un intervalle donné, et pas forcément à un sommet.",
+      "new": "Quatre choses n'existaient pas au collège. (1) Le TABLEAU DE VARIATIONS comme objet à construire et à lire, avec ses conventions (bornes et retournements en haut, valeurs et flèches en bas, valeur posée haut ou bas selon la flèche). (2) Le mot MONOTONE, et l'idée qu'une fonction peut n'être ni croissante ni décroissante sur un intervalle. (3) L'extremum AU BORD de l'intervalle, qui n'est ni un sommet ni un creux — l'obstacle le plus coriace, et celui que le profil du sentier est conçu pour produire (300 m au départ, plus bas que la vallée de 380 m). (4) Le raisonnement SANS CALCUL : comparer f(a) et f(b) à partir du seul tableau, encadrer f(x), et savoir reconnaître les cas où l'on ne peut pas conclure.",
+      "formalized": "Ce qui était une lecture devient une déduction outillée : la flèche du tableau donne l'ORDRE des images (si a et b sont dans un même intervalle de monotonie) et leurs BORNES (les valeurs aux extrémités encadrent toutes les images de l'intervalle). Se formalise aussi la distinction VALEUR / ENDROIT — « h admet sur [0 ; 10] un maximum égal à 620, atteint en 3 » — qui est la formulation exacte attendue au lycée, et que deux saisies numériques séparées obligent à tenir. Enfin, l'idée qu'un extremum peut être atteint plusieurs fois est formalisée dans le modèle lui-même (extremumOn renvoie { value, at: [x…] }, une liste).",
+      "tool": "La leçon fournit le TABLEAU DE VARIATIONS, qui devient l'instrument de résumé de toute fonction pour le reste du lycée : il sert à optimiser (module 6, et tous les problèmes de maximum de Première), à comparer sans calculer, à encadrer, et il est le support sur lequel viendra se greffer le signe de la dérivée en Première. Elle presuppose fonctions-2nde (f(x), antécédent, courbe) et ensembles-et-intervalles-2nde (intervalle, ⊂), et elle est elle-même presupposée par signe-fonctions-2nde (dont le tableau de signes calque la présentation) et par fonction-affine-2nde (qui relie le signe du coefficient directeur aux variations). Le vocabulaire qu'elle installe est aussi celui que fonctions-de-reference-2nde emploie par anticipation."
+    }
+  }
+}

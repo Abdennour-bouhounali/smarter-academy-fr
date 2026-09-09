@@ -92,7 +92,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: 'ƒ',
-  estimatedDurationMin: 85,
+  estimatedDurationMin: 87,
   skills: [
     'Comprendre une fonction comme une dépendance entre deux grandeurs',
     "Identifier la variable et l'ensemble de définition",

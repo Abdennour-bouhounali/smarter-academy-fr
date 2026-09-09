@@ -289,9 +289,24 @@ gardant que la **phrase de transition** vers le module suivant, jamais le rappel
 mathématiques —, et l'îlot de composants dupliqués supprimé (les cinq fichiers copiés,
 morts depuis la remontée dans `common/knowledge/`).
 
-`equations-de-droites-2nde` garde ses `components/Knowledge*.jsx` : ce sont des
-**ré-exports d'une ligne** vers `common/knowledge/` (le motif prévu par `KNOWLEDGE_MAP.md`),
-pas des copies.
+> ### ⚠️ Correction du 2026-09-09 — les ré-exports ont été supprimés
+>
+> Ce paragraphe disait que `equations-de-droites-2nde` gardait ses
+> `components/Knowledge*.jsx` parce que ce sont des ré-exports d'une ligne et non des copies.
+> C'était exact, mais l'audit des Learning Points de 2de
+> (`docs/audits/2DE_LEARNING_POINT_AUDIT.md`) a montré que cette leçon était la **seule** des
+> 27 à conserver cet îlot, et qu'un seul module l'utilisait encore
+> (`modules/Module07AtelierConstruireEtResoudre.jsx:5`).
+>
+> Les cinq fichiers ont été supprimés le 2026-09-09 — `KnowledgeMap.jsx`,
+> `KnowledgeProvider.jsx`, `KnowledgeSnapshot.jsx`, `knowledgeState.js` et son test, qui
+> rejouait à l'identique neuf cas déjà couverts par `common/knowledge/knowledgeState.test.js`.
+> L'import du module 07 pointe désormais sur `common/knowledge`, comme dans les 26 autres
+> leçons. `vitest --root apps/web` reste vert (3065 tests), la fumée navigateur ouvre les
+> 9 pages de la leçon sans erreur.
+>
+> **Le motif « ré-export » n'a donc plus d'exemple vivant en 2de** : une leçon importe le
+> paquet partagé directement.
 
 ### Numérotation : la source de vérité
 

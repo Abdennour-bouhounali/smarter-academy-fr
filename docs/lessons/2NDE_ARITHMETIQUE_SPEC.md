@@ -4,7 +4,7 @@
 
 ## 1. Identity & curriculum contract
 
-- Key `seconde_arithmetique` · id `arithmetique-2nde` · 🔢 · Difficile · free · 65 min.
+- Key `seconde_arithmetique` · id `arithmetique-2nde` · 🔢 · Difficile · free · 68 min.
 - LPs: P1 multiples et diviseurs · P2 propriétés de divisibilité · P3 raisonner sur les entiers · P4 problèmes · P5 démonstration.
 - Prerequisites: Nombres entiers, Calcul numérique.
 - Distinct from the 3e lesson « Multiples et diviseurs » (rectangle detector, sieve, factor tree): here packs and remainders, criteria that are PROVED, literal parity, and written proof.
@@ -28,7 +28,7 @@
 
 Controlled variables: two heaps a and b, and the pack size p. State a, b, p; packs, lone tokens, the union line and every verdict derived (`divmod`, `addPacks`). Full packs are DOM tiles capped at 12 plus a « ×N » badge; lone tokens are round chips; no SVG text. Aha: two heaps without remainder give a sum without remainder; 7 + 9 at p = 2 completes a pack; 12 + 20 at p = 7 does not. Rejected candidates: a divisibility MCQ (no phenomenon), the 3e rectangle array (already shipped, and it shows divisors of one number, not the sum rule), a number line of multiples (kept as the module 4 rhythm line).
 
-## 4. Module architecture (8 · 65 min)
+## 4. Module architecture (8 · 68 min)
 
 | # | Slug | Stage | LPs | min | Responsibility | Interaction |
 |---|---|---|---|---|---|---|

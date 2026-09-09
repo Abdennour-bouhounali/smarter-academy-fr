@@ -1,0 +1,273 @@
+{
+  "lesson": "fonction-affine-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-fonctions-proba-batch",
+  "learningPoints": {
+    "seconde_fonction-affine-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 1, "mechanism": "manipulation:TankLab" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 1, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 1, "mechanism": "brick:fonction-affine-ab" },
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 2, "mechanism": "manipulation:RateProbes" },
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 2, "mechanism": "brick:methode-reconnaitre-affine-table" },
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 3, "mechanism": "question:M02-S3-r3" },
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 3, "mechanism": "question:M02-S3-r4" }
+      ],
+      "manipulation": "TankLab (M1 étape 1, a = 3 et b = 10 verrouillés) : l'élève doit visiter t = 0, 1, 2, 3, 4, 5 SANS SAUTER de minute (done1 = [0..5].every(visitedT.includes)) ; le tableau minute par minute n'apparaît QU'ALORS (showTable={done1}) et affiche 10, 13, 16, 19, 22, 25 avec la ligne « + par minute ». Puis RateProbes (M2 étape 2) sur g(x) = 0,4x² + 2 : la garde exige DEUX quotients différents (rates.size >= 2), c'est-à-dire de fabriquer soi-même le contre-exemple.",
+      "assessmentQuestionIds": ["fa-e1", "fa-e4"],
+      "knowledgeItems": ["fonction-affine-ab", "vocab-coefficient-ordonnee", "methode-reconnaitre-affine-table", "taux-accroissement"],
+      "notes": "Le critère de reconnaissance n'est pas donné comme une forme à repérer (« il y a un x sans carré ») mais comme un COMPORTEMENT : gain constant par unité. Et le contre-exemple est manipulé, pas montré — l'étape 2 de M2 ne se valide que si l'élève a lui-même obtenu deux quotients différents sur une parabole. La brique methode-reconnaitre-affine-table est posée à ce moment précis, AVANT le BatchChoiceQuestion de l'étape 3 qui l'exige : ordre source correct. fa-e4 (table x = 0 → 5 ; 2 → 9 ; 5 → 15) est la vraie mesure et n'est pas devinable : les accroissements bruts sont 4 et 6, seul le quotient (4/2 = 2 et 6/3 = 2) tranche, et le distracteur « Non : les accroissements 4 et 6 sont différents » est exactement l'erreur visée. Vérifié : (9−5)/2 = 2, (15−9)/3 = 2, b = f(0) = 5.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "consolidation",
+        "detail": "fonctions-affines-3e (teachingScope : « Forme f(x) = ax + b et rôle séparé des deux paramètres ») enseigne déjà la forme et les briques fonction-affine / forme-ax-b / mem-affine-vs-lineaire. Ce qui est NEUF en 2de est le critère par le taux constant et la reconnaissance dans une TABLE (methode-reconnaitre-affine-table) : la 3e n'a que tableau-affine, qui va de l'expression vers la table, jamais l'inverse."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 3, "mechanism": "manipulation:TankLab" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 3, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 3, "mechanism": "brick:vocab-coefficient-ordonnee" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 4, "mechanism": "brick:mem-a-taux-b-depart" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 4, "mechanism": "question:M01-S4-Q1" }
+      ],
+      "manipulation": "TankLab M1 étape 3, b verrouillé : la garde exige d'être passé par a < 0 ET par a = 0 (seenNeg && seenZero). La cuve se vide, la droite pivote autour de (0 ; b), et les deux robinets SVG changent de couleur selon le signe de a. La manipulation reste vivante après validation (aucun `disabled={doneN}` — le module le documente explicitement).",
+      "assessmentQuestionIds": ["fa-e2"],
+      "knowledgeItems": ["fonction-affine-ab", "vocab-coefficient-ordonnee", "mem-a-taux-b-depart"],
+      "notes": "Chaîne exemplaire : geste (a par 0), révélation conditionnée, brique de vocabulaire, brique memoriser, puis la question. La question M01-S4-Q1 porte sur un AUTRE réservoir (V(t) = 2t + 12) et son distracteur principal est l'échange a/b (« 12 L par minute, 2 L au départ ») : elle n'est pas devinable de son énoncé. Réserve mineure : fa-e2 est la seule épreuve du boss qui porte P2, et elle est partagée avec P3 — mais son option correcte (1,5t + 8) exige bien les deux lectures à la fois.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "repetition",
+        "detail": "fonctions-affines-3e M02 « Le bouton a » fait EXACTEMENT le même geste : b verrouillé, a seul mobile sur AffineExplorer, avec les briques coefficient-directeur et role-de-a. Le réservoir remplace le taxi, le geste et la conclusion sont identiques. La 2de le déclare d'ailleurs en priorKnowledge (coefficient-directeur) et le diagnostique (fa-d4) — le module 1 étape 3 est donc une réactivation, pas une découverte."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 2, "mechanism": "manipulation:TankLab" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 2, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 3, "mechanism": "brick:vocab-coefficient-ordonnee" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 4, "mechanism": "brick:mem-a-taux-b-depart" },
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 4, "mechanism": "question:M01-S4-Q1" }
+      ],
+      "manipulation": "TankLab M1 étape 2, a verrouillé à 3 : la garde exige TROIS valeurs distinctes de b (bs.size >= 3), et `intercept` marque le point (0 ; b) sur le plan. La droite GLISSE sans tourner — le contraste avec l'étape 3 (elle pivote) est la seule chose qui sépare les deux rôles.",
+      "assessmentQuestionIds": ["fa-e2", "fa-e7"],
+      "knowledgeItems": ["fonction-affine-ab", "vocab-coefficient-ordonnee", "mem-a-taux-b-depart"],
+      "notes": "L'opposition glisser / pivoter est le vrai dispositif : b ne peut être compris comme « valeur de départ » que parce que le changer ne touche pas au « +3 par minute ». fa-e7 (f(1) = 4, f(3) = 10, b = ?) est la meilleure épreuve du LP : elle attaque la méprise b = f(1), avec 4 en distracteur. Vérifié : a = (10 − 4)/(3 − 1) = 3, puis b = 4 − 3 × 1 = 1.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "repetition",
+        "detail": "fonctions-affines-3e M03 « Le bouton b » est le geste jumeau (a verrouillé, b seul), avec les briques ordonnee-origine, role-de-b et mem-f0-egale-b. Le config de la 3e énonce déjà l'invariant : « changer b ne change jamais l'inclinaison ». Répétition assumée et déclarée (priorKnowledge : ordonnee-origine ; diagnostic fa-d4)."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 1, "mechanism": "manipulation:RateProbes" },
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 1, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 1, "mechanism": "brick:taux-accroissement" },
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 4, "mechanism": "brick:formule-taux" },
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 4, "mechanism": "question:M02-S4-Q1" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 2, "mechanism": "question:M06-S2-Q1" }
+      ],
+      "manipulation": "RateProbes sur V(t) = 3t + 10 : deux sondes t₁ et t₂ (boutons ±), l'escalier Δt / ΔV dessiné en deux segments (vert horizontal, rose vertical), et le bandeau qui RÉÉCRIT le calcul en direct — « (25 − 13) ÷ (5 − 1) = 3 ». La garde exige TROIS paires distinctes (pairs.size >= 3), donc trois écritures différentes du même résultat.",
+      "assessmentQuestionIds": ["fa-e3"],
+      "knowledgeItems": ["taux-accroissement", "formule-taux", "methode-modeliser-affine"],
+      "notes": "Le meilleur enchaînement de la leçon. La PredictionChips (« deux instants très éloignés : le quotient… ») est recueillie sans verdict et la manipulation tranche ; le titre de l'étape 1 a été délibérément dénommé (« Deux instants, un seul nombre » et non « le quotient ») pour ne pas annoncer le mot avant le geste — le docblock du module le dit et c'est vérifiable dans le code. La brique taux-accroissement est gardée par done1, formule-taux est posée en tête de l'étape 4 avant la question. fa-e3 (f(2) = 9, f(6) = 1) est un taux NÉGATIF avec les distracteurs −8 (différence seule) et −0,5 (quotient inversé) : non devinable. Vérifié : (1 − 9)/(6 − 2) = −2.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "extension",
+        "detail": "La 3e fait bien calculer une pente entre deux points (M05 SlopeFromTwoPoints, brique pente-deux-points), mais toujours pour DÉTERMINER la droite. Ce qui est neuf en 2de est le statut du quotient comme INVARIANT de la fonction — le même pour tout couple — établi par la garde des trois paires et par le contre-exemple non affine de l'étape 2. La 3e n'a aucun contre-exemple : elle ne travaille que sur des droites."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 1, "mechanism": "manipulation:TankLab" },
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 1, "mechanism": "brick:regle-signe-a-variations" },
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 2, "mechanism": "question:M03-S2-r1" },
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 2, "mechanism": "question:M03-S2-r2" }
+      ],
+      "manipulation": "TankLab M3 étape 1 SANS aucun verrou sur a ni b (lockT seulement) : la garde exige d'avoir vu les TROIS régimes (seen = {croissante, decroissante, constante}), et un badge DOM `data-variation` affiche ↗ / ↘ / → en direct. Le point crucial est que b reste mobile : l'élève peut le pousser dans tous les sens et constater que la flèche ne bouge pas.",
+      "assessmentQuestionIds": ["fa-e5"],
+      "knowledgeItems": ["regle-signe-a-variations", "methode-lire-a-b-graphique", "methode-modeliser-affine"],
+      "notes": "La méprise visée — « b négatif ⇒ décroissante » — est attaquée deux fois et par deux moyens différents : par le geste (bouger b ne change pas la flèche, condition implicite de l'étape 1 puisque b est déverrouillé) puis par la ligne r2 du BatchChoice (f(x) = 0,5x − 9). fa-e5 (f(x) = 2x − 100) porte le distracteur explicite « décroissante sur ℝ, car −100 est négatif » : la mesure est nette. Le cas a = 0 est traité par le geste ET par la ligne r3.",
+      "crossGrade": {
+        "overlapsWith": [],
+        "kind": "none",
+        "detail": "Le sens de variation et le tableau de variations n'existent pas dans fonctions-affines-3e : son teachingScope ne les liste pas et aucune de ses 15 briques ne les porte. La 3e parle d'inclinaison et de droites parallèles, jamais de monotonie sur ℝ. Notion authentiquement neuve, même si la droite qui monte ou descend est un acquis visuel."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P6": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "retrouver-la-fonction", "step": 1, "mechanism": "question:M04-S1-Q1" },
+        { "module": 4, "moduleSlug": "retrouver-la-fonction", "step": 2, "mechanism": "question:M04-S2-Q1" },
+        { "module": 4, "moduleSlug": "retrouver-la-fonction", "step": 2, "mechanism": "brick:methode-determiner-affine" },
+        { "module": 4, "moduleSlug": "retrouver-la-fonction", "step": 3, "mechanism": "brick:mem-deux-points" },
+        { "module": 4, "moduleSlug": "retrouver-la-fonction", "step": 3, "mechanism": "question:M04-S3-Q1" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 2, "mechanism": "question:M06-S2-Q1" }
+      ],
+      "manipulation": "AUCUNE. Le module 4 n'a pas de laboratoire : ses deux CoordPlane sont des figures de lecture statiques (`plane(withLine)` et l'intro du BatchChoice), sans poignée, sans onChange, sans readGuides. Le docblock l'assume (« Aucun laboratoire ici : les deux plans sont des figures de lecture, il n'y avait donc rien à dégeler »).",
+      "assessmentQuestionIds": ["fa-e4", "fa-e7", "fa-e9"],
+      "knowledgeItems": ["methode-determiner-affine", "mem-deux-points", "methode-modeliser-affine"],
+      "notes": "PARTIEL, et c'est le point faible de la leçon. La séquence est correcte du point de vue de l'ORDRE — l'étape 1 ne demande que ce que M2 a établi (le taux), l'étape 2 demande b et la brique methode-determiner-affine n'est posée qu'APRÈS la réponse ({qb && <KnowledgeBrick …>}), l'étape 3 pose mem-deux-points avant la vérification. Mais rien n'est ÉTABLI par un geste : la méthode « a par le taux, puis remonter à zéro » est découverte par deux NumericQuestion successives dont les explainFor font le travail d'enseignement (n === 5 → « 5 est f(1), pas f(0). Remonte d'un pas »). C'est de la découverte guidée par la correction, pas par la manipulation — et c'est précisément la facette que la 3e, elle, manipule (SlopeFromTwoPoints, avec le triangle Δx/Δy redessiné en glissant A ou B). Les trois épreuves du boss sont solides (fa-e7 attaque b = f(1)) mais mesurent une méthode que la 2de n'a pas fait vivre. Vérifié : fromTwoPoints((1;5),(4;11)) = {a: 2, b: 3}, contrôle 2×4+3 = 11 ✓ ; téléphérique a = (1800 − 2400)/4 = −150.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "repetition",
+        "detail": "fonctions-affines-3e consacre son module 05 entier à « Deux points suffisent » (même formule que le titre du brief de 2de), avec la manipulation SlopeFromTwoPoints — deux pastilles déplaçables, le triangle Δx/Δy qui se redessine, a = Δy/Δx écrit dessous — et les briques pente-deux-points et methode-retrouver-a-b. Son module 06 la réapplique à deux factures. La 2de reprend donc le MÊME contenu avec MOINS de manipulation que le collège : c'est le seul endroit de la leçon où la 2de est pédagogiquement en retrait de la 3e."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "le-taux-d-accroissement", "step": 1, "mechanism": "manipulation:RateProbes" },
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 3, "mechanism": "brick:methode-lire-a-b-graphique" },
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 3, "mechanism": "question:M03-S3-Q1" },
+        { "module": 4, "moduleSlug": "retrouver-la-fonction", "step": 4, "mechanism": "question:M04-S4-r2" },
+        { "module": 4, "moduleSlug": "retrouver-la-fonction", "step": 4, "mechanism": "question:M04-S4-r3" }
+      ],
+      "manipulation": "RateProbes (M2 étape 1) est la manipulation porteuse : l'escalier entre les deux sondes EST la lecture graphique de a, et l'élève le déplace lui-même trois fois. Les supports des M3 étape 3 et M4 étape 4 sont ensuite des figures frozen (TankLab a = −2, b = 20 ; CoordPlane avec `staircase` run 2).",
+      "assessmentQuestionIds": ["fa-e6"],
+      "knowledgeItems": ["methode-lire-a-b-graphique", "taux-accroissement", "formule-taux", "methode-determiner-affine"],
+      "notes": "Le cas DÉCROISSANT — la vraie difficulté de la lecture graphique — est traité deux fois et jamais sur un exemple facile : M3 étape 3 lit a = −2 sur une droite qui descend, M4 étape 4 lit a = −1,5 sur un escalier de course 2 (« de x = 0 à x = 2, g passe de 6 à 3 »), ce qui oblige à diviser et pas seulement à lire une marche. Le distracteur −3 de la ligne r2 est exactement l'oubli de la division par la course. La brique methode-lire-a-b-graphique est posée en tête de M3 étape 3, avant la première demande. Vérifié : (3 − 6)/2 = −1,5 ; fa-e6 (0 ; −2) et (3 ; 4) → a = (4 − (−2))/3 = 2, b = −2.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "consolidation",
+        "detail": "La 3e a déjà la brique lire-a-et-b-graphique et son teachingScope inclut « Lecture de a (escalier) et de b (ordonnée à l'origine) sur un graphique ». La 2de ajoute le cas décroissant travaillé pour lui-même et la course ≠ 1."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-reservoir", "step": 2, "mechanism": "manipulation:TankLab" },
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 3, "mechanism": "brick:methode-lire-a-b-graphique" },
+        { "module": 3, "moduleSlug": "croissante-ou-decroissante", "step": 3, "mechanism": "question:M03-S3-Q1" },
+        { "module": 4, "moduleSlug": "retrouver-la-fonction", "step": 4, "mechanism": "question:M04-S4-r1" }
+      ],
+      "manipulation": "TankLab avec `intercept={{ y: b, label: 'b = …' }}` : le point (0 ; b) est marqué et étiqueté sur le plan, et l'étape 2 du module 1 le fait glisser trois fois. La lecture inverse (d'une droite donnée vers b) est ensuite demandée sur figures frozen.",
+      "assessmentQuestionIds": ["fa-e6"],
+      "knowledgeItems": ["methode-lire-a-b-graphique", "regle-signe-a-variations", "methode-determiner-affine", "mem-deux-points"],
+      "notes": "Facette la moins difficile du lot, et traitée en conséquence : elle est portée par le marqueur `intercept` du laboratoire plutôt que par une étape dédiée. Réserve : la ligne r1 du M4 étape 4 (« b = ? », options 6 / −1,5 / 0) est quasi devinable pour qui a compris que b se lit sur l'axe vertical, et fa-e6 est partagée avec P7. Aucune épreuve n'isole P8. Le LP reste couvert parce que le geste, la brique et deux demandes existent dans le bon ordre.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "repetition",
+        "detail": "Briques ordonnee-origine, role-de-b, mem-f0-egale-b et lire-a-et-b-graphique en 3e : la lecture de b sur l'axe est intégralement de niveau collège, et la 2de la déclare en priorKnowledge."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P9": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 2, "mechanism": "brick:regle-signe-affine-zero" },
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 2, "mechanism": "question:M05-S2-r1" },
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 2, "mechanism": "question:M05-S2-r3" },
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 2, "mechanism": "question:M05-S2-r4" }
+      ],
+      "manipulation": "AUCUNE. C'est le constat central de cet audit sur la leçon : le module 5 ne contient PAS de laboratoire. Le seul TankLab du module est celui de l'étape 1, rendu avec `lockA lockB lockT frozen` — c'est-à-dire une illustration inerte, sans curseur, sans horloge, sans poignée. Le docblock du module l'assume (« Le réservoir de l'étape 1 est une figure de lecture (frozen), pas un laboratoire : il n'y avait rien à dégeler dans ce module »).",
+      "assessmentQuestionIds": ["fa-e8", "fa-e10"],
+      "knowledgeItems": ["regle-signe-affine-zero", "methode-equation-affine", "methode-inequation-affine", "methode-modeliser-affine"],
+      "notes": "PARTIEL. L'ordre source est correct — la brique regle-signe-affine-zero est posée en TÊTE de l'étape 2, avant le BatchChoiceQuestion — et le contenu est juste : le zéro vient d'être trouvé à l'étape 1 (7,5), la règle « signe de a à droite du zéro » est énoncée sur ce constat, et les quatre lignes couvrent V(5), V(9), l'intervalle et le tableau. Mais rien n'ÉTABLIT la règle : elle est ANNONCÉE dans le corps de la brique, puis appliquée. Un élève qui n'a jamais vu de tableau de signes doit la croire sur parole — il n'a aucun moyen, dans ce module, de faire basculer le côté « + » et de voir ce qui se passe. La leçon voisine signe-fonctions-2nde possède exactement ce geste (AffineSignLab : deux curseurs, l'axe entièrement peint, le zéro qui glisse avec b et le côté + qui bascule avec a) et le teachingScope de fonction-affine renvoie explicitement le tableau de signes général à cette leçon — mais rien dans la progression du catalogue ne garantit l'ordre, et le LP P9 est porté ICI. Les deux épreuves du boss sont bonnes (fa-e8 : g(x) = −3x + 12, g(x) < 0 pour x > 4, avec a < 0 ; vérifié). Statut PARTIALLY_COVERED : enseigné correctement mais sans geste, sur un LP dont l'intitulé (« étudier le signe ») suppose une construction.",
+      "crossGrade": {
+        "overlapsWith": [],
+        "kind": "none",
+        "detail": "Aucun recouvrement : fonctions-affines-3e EXCLUT explicitement « Inéquations et étude de signe » dans son teachingScope.exclude, et aucune leçon de collège ne contient les mots « tableau de signes » (vérifié par grep sur apps/web/src/lessons/college). Le seul acquis proche est la règle des signes d'un produit (4e/nombres-relatifs-4e, LP P3), qui ne porte pas sur une expression en x. Notion authentiquement neuve — ce qui rend l'absence de geste plus coûteuse."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P10": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 1, "mechanism": "brick:methode-equation-affine" },
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 1, "mechanism": "question:M05-S1-Q1" },
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 3, "mechanism": "question:M05-S3-Q1" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 3, "mechanism": "question:M06-S3-Q1" }
+      ],
+      "manipulation": "AUCUNE (TankLab frozen à l'étape 1). La progression est portée par trois demandes de difficulté croissante et leurs explainFor.",
+      "assessmentQuestionIds": ["fa-e9"],
+      "knowledgeItems": ["methode-equation-affine", "regle-signe-affine-zero", "methode-modeliser-affine"],
+      "notes": "COVERED malgré l'absence de geste, parce que l'équation du premier degré est un ACQUIS déclaré de collège (3e/equations, réactivé par sg-d3 dans la leçon voisine) : ce que la 2de ajoute ici est la LECTURE fonctionnelle (« quand le réservoir est-il vide » = résoudre V(t) = 0), et cette lecture est bien établie par la situation avant d'être demandée. La progression est réelle : k = 0 (étape 1, cas du zéro), puis k = 20 (étape 3, cas général), puis la bougie du module 6 (situation à modéliser d'abord). Les explainFor sont chirurgicaux : n === 26 → « Tu as soustrait 4 de 30 » ; n === 10 → « 10 = 30 − 20 est ce qu'il faut vider ». Vérifié : −4t + 30 = 0 → t = 7,5 ; −4t + 30 = 20 → t = 2,5 ; −2,5t + 20 = 5 → t = 6 ; fa-e9 : −3t + 18 = 6 → t = 4.",
+      "crossGrade": {
+        "overlapsWith": ["3e:equations-produit", "4e:equations-4e"],
+        "kind": "consolidation",
+        "detail": "La résolution algébrique de ax + b = k est de niveau 4e/3e ; la 2de ne la réenseigne pas, elle l'applique à une fonction et à une situation. Aucune redite."
+      },
+      "confidence": "high"
+    },
+    "seconde_fonction-affine-2nde_P11": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 4, "mechanism": "brick:methode-inequation-affine" },
+        { "module": 5, "moduleSlug": "signe-equations-inequations", "step": 4, "mechanism": "question:M05-S4-Q1" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "question:M06-S1-r4" },
+        { "module": 6, "moduleSlug": "atelier-modeliser", "step": 3, "mechanism": "question:M06-S3-Q2" }
+      ],
+      "manipulation": "AUCUNE, et c'est ici que cela coûte le plus cher. Le renversement du sens quand on divise par a < 0 n'est CONFRONTÉ par aucun geste : il est annoncé dans le corps de la brique methode-inequation-affine (« Diviser (ou multiplier) par un nombre négatif retourne l'inégalité »), posée en tête de l'étape 4 — donc AVANT la seule question qui l'éprouve, et dont le lead annonce même le piège (« avec un piège de plus, que voici avant d'essayer »).",
+      "assessmentQuestionIds": ["fa-e10"],
+      "knowledgeItems": ["methode-inequation-affine", "methode-equation-affine", "methode-modeliser-affine"],
+      "notes": "PARTIEL. Ce que la leçon fait BIEN : les trois inéquations rencontrées ont toutes a < 0 (−4t + 30 > 10 ; −2,5t + 20 > 10 ; −2x + 6 > 0 au boss) sauf le budget du module 6 (30m + 25 ≤ 205, a > 0), donc le cas difficile domine ; l'explain de chaque question propose une VÉRIFICATION numérique (« Teste t = 3 : V(3) = 18 > 10 ✓ ; t = 6 : V(6) = 6, non »), ce qui donne à l'élève un moyen de trancher seul ; et la situation elle-même est un garde-fou (« le réservoir se vide : c'est au début qu'il reste plus de 10 L »). Ce qu'elle ne fait PAS : faire découvrir le renversement. Aucun instrument ne permet de tester une valeur, de la voir échouer, et d'en conclure que l'ensemble est de l'autre côté ; le TankLab de l'étape 1 aurait pu le faire (une sonde t + le verdict V(t) > 10 en direct) mais il est frozen. La leçon voisine signe-fonctions-2nde résout ce type d'inéquation par le TABLEAU, ce qui contourne le renversement au lieu de le confronter — l'élève de 2de n'a donc, dans tout le chapitre, aucune expérience du renversement lui-même. fa-e10 est bien construite (distracteurs x > 3 = sens non retourné, x < −3 et x > −3 = signe du quotient) ; vérifié : −2x + 6 > 0 ⟺ x < 3, et solveIneq(affine(-2,6), 0, '>') donne bien ]−∞ ; 3[ (test unitaire affineUtils.test.js, ligne « a < 0 : le sens s'inverse »).",
+      "crossGrade": {
+        "overlapsWith": [],
+        "kind": "none",
+        "detail": "Les inéquations sont exclues à TOUS les niveaux du collège : fonctions-affines-3e exclut « Inéquations et étude de signe », 3e/equations-produit exclut « Inéquations (aucun point du catalogue ne les demande) », et 4e/calcul-litteral-4e, 4e/equations-4e, 4e/raisonnement-problemes-4e les excluent également. Notion strictement neuve en 2de — d'où l'importance de la confronter par l'expérience plutôt que par la règle."
+      },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "officialScopeNotCovered": [
+      {
+        "scopeItem": "aucun",
+        "taughtAnyway": true,
+        "evidence": [],
+        "recommendation": "none",
+        "notes": "L'objet officiel packages/core/curriculum/smarter_academy_programmes_maths_2026.json → levels.seconde → domaine fonctions → fonction_affine porte exactement ONZE entrées dans teachingScope.include, et elles correspondent mot pour mot aux onze LPs de la leçon (« Reconnaître une fonction affine », « Identifier le coefficient directeur », …, « Résoudre une inéquation avec une fonction affine »). teachingScope.exclude est vide. Aucun item officiel n'est sans LP, et aucun LP n'excède le périmètre officiel. Le teachingScope du lesson.config ajoute une précision utile que le référentiel n'exige pas (« le sens s'inverse quand on divise par a < 0 ») et qui est bien traitée, quoique sans geste (voir P11."
+      }
+    ],
+    "pedagogicalProblems": [
+      "TROU DE MANIPULATION SUR LE DERNIER TIERS : les modules 4, 5 et 6 — soit les LPs P6, P9, P10, P11 et une partie de P7/P8 — ne contiennent AUCUN laboratoire. Le module 4 n'affiche que des CoordPlane de lecture, le module 5 un TankLab explicitement `frozen`, le module 6 rien du tout. Les trois premiers modules sont exemplaires (TankLab avec trois gardes de visite, RateProbes avec garde de trois paires, TankLab avec garde des trois régimes) ; la leçon s'arrête net de manipuler juste avant les notions les plus NEUVES du programme (signe, équation, inéquation — toutes exclues du collège à tous les niveaux). Le rapport est inversé : on manipule ce que l'élève a déjà vu en 3e, on énonce ce qu'il découvre.",
+      "P11 : le renversement du sens de l'inégalité quand a < 0 est ANNONCÉ, jamais confronté. La brique methode-inequation-affine (module 5, étape 4) est posée en tête de l'étape, et son lead annonce même le piège avant que l'élève n'essaie (« avec un piège de plus, que voici avant d'essayer »). C'est la méprise n° 5 du spec, et c'est la seule des cinq qui ne soit pas mise à l'épreuve par un geste ou par une prédiction sans verdict. Un TankLab non gelé à l'étape 1 du module 5, avec une sonde t et un verdict « V(t) > 10 ? » en direct, produirait exactement l'expérience manquante — l'élève verrait que ce sont les PETITS t qui satisfont l'inéquation.",
+      "P6 : la 2de est en RETRAIT du collège sur « déterminer une fonction affine à partir de deux données ». fonctions-affines-3e consacre son module 05 à cette compétence avec une vraie manipulation (SlopeFromTwoPoints : deux pastilles déplaçables, triangle Δx/Δy qui se redessine, a = Δy/Δx écrit dessous) ; le module 4 de 2de reprend la même compétence, le même titre de section (« Deux points suffisent ») et le même exemple de forme, avec deux figures statiques. Le module a été manifestement conçu comme une application, mais le LP le crédite d'un enseignement.",
+      "Le module 6 est un practice_lab sans instrument (choix assumé), mais il porte SEPT LPs dans teachesLearningPointIds (P6, P4, P5, P9, P10, P11, P1). Aucun de ces LPs n'y est établi — le module réemploie. L'attribution gonfle artificiellement la couverture apparente de P9 et P11, qui reposent en réalité sur le seul module 5.",
+      "Densité de preuve au boss : dix épreuves pour onze LPs, dont cinq portent deux LPs. P2 et P8 ne sont mesurés par aucune épreuve qui les isole (fa-e2 sert P2+P3, fa-e6 sert P7+P8), et P9 partage ses deux épreuves avec P11 (fa-e10 → P11+P9). L'épreuve la plus faible est fa-e2 : ses distracteurs (« 8t + 1,5 », « 9,5t », « 1,5t − 8 ») sont tous éliminables par ordre de grandeur sans comprendre les rôles."
+    ],
+    "technicalProblems": [
+      "AUCUNE MANIPULATION GELÉE — et c'est une réparation manifestement DÉLIBÉRÉE et documentée : les docblocks des modules 1, 2 et 3 portent chacun un paragraphe « MANIPULATION JAMAIS GELÉE » expliquant que les `disabled={doneN}` ont été retirés et que seuls les verrous d'ANTÉRIORITÉ subsistent. Vérifié par grep : les seuls `disabled={doneN}` restants sont sur des PredictionChips (Module01LeReservoir.jsx:63, Module02LeTauxDAccroissement.jsx:55), ce qui est correct — une prédiction s'enregistre une fois. Les trois `disabled={!done1}` / `disabled={!done2}` (Module01:80, Module01:93, Module02:72) sont des verrous d'antériorité, l'inverse du bug. Cette leçon est un modèle sur ce point.",
+      "AUCUN import manquant. Vérifié composant par composant sur les huit fichiers .jsx des modules : chaque balise majuscule rendue est soit importée depuis common/kit, common/components ou components/, soit définie localement. Aucun ReferenceError latent.",
+      "AUCUNE dérive de durée : catalogue 75, config 75, somme des modules 75. Aucun flag dans la matrice (flags: []). knowledge.jsx : 14 items, 0 problème détecté. Sept KnowledgeSnapshot pour sept modules non-évaluation.",
+      "Mathématiques exactes, vérifiées indépendamment : rate constant = a pour toute paire (test unitaire) ; fromTwoPoints((1;5),(4;11)) = {a:2, b:3} ; zeroOf(−4t+30) = 7,5 ; solveEq(−4t+30, 20) = 2,5 ; solveIneq(g, 0, '>') avec g = −3x+6 donne ]−∞ ; 2[ (renversement correct) ; intervalText(solveIneq(F5, 6, '>')) = ']5 ; +∞[' ; (9−5)/2 = (15−9)/3 = 2 (fa-e4) ; (1−9)/(6−2) = −2 (fa-e3) ; (4−(−2))/3 = 2 (fa-e6) ; b = 4 − 3 = 1 (fa-e7) ; −3t+18 = 6 → t = 4 (fa-e9) ; −2x+6 > 0 ⟺ x < 3 (fa-e10). Cinq tests vitest verrouillent ces invariants, y compris le renversement du sens.",
+      "Le module 4 importe `POINTS4, fromTwoPoints, parseDec, formatDec` et les utilise tous ; aucun export mort constaté dans affineUtils.js — `signTable`, `variationOf`, `isAffineTable`, `intervalText`, `affineText`, `coupleText`, `TABLE_*`, `G5`, `F5` sont tous consommés par un module ou par le test. Seul `imageOf` est réexporté largement, ce qui est normal.",
+      "TankLab masque ses contrôles quand `frozen` (`{!disabled && !frozen && (…)}`, TankLab.jsx:59) : la figure de M5 étape 1 et celle de M3 étape 3 sont donc bien inertes par construction, sans curseur mort à l'écran. Correct sur le plan de l'interface — c'est le CHOIX de les figer qui est discutable, pas son implémentation."
+    ],
+    "duplicates": [
+      "AVEC LA 3e — les modules 1 et 3 rejouent fonctions-affines-3e. M1 étape 2 (« Change le volume de départ », b seul, a verrouillé) est le jumeau de la 3e M03 « Le bouton b » (briques ordonnee-origine, role-de-b, mem-f0-egale-b) ; M1 étape 3 (« Change le débit », a seul) est le jumeau de la 3e M02 « Le bouton a » (briques coefficient-directeur, role-de-a). Le config de la 3e énonce déjà l'invariant que la 2de fait redécouvrir : « changer b ne change jamais l'inclinaison ; changer a ne change jamais le point de départ ». La différence est le décor (réservoir contre taxi) et le composant (TankLab contre AffineExplorer partagé). CE N'EST PAS UN DÉFAUT DE FRONTIÈRE : la 2de le DÉCLARE (priorKnowledge : coefficient-directeur, ordonnee-origine, pente ; diagnostic fa-d4 et fa-d5), et son lesson.config dit explicitement que ce sont des acquis d'état A. Le problème est ailleurs : ces acquis déclarés occupent quand même les dix minutes du module déclencheur et trois des onze LPs (P2, P3, P8), au détriment du dernier tiers qui, lui, n'a plus de manipulation.",
+      "AVEC LA 3e — M4 « Retrouver la fonction » double le module 05 de la 3e, titre inclus (« Deux points suffisent »), avec moins d'interaction. Voir P6.",
+      "EN 2de — la frontière avec signe-fonctions-2nde est propre sur le papier (teachingScope.exclude : « Tableau de signes d'un produit ou d'un quotient (leçon Signe d'une fonction) ») mais elle laisse un TROU : le signe de ax + b est enseigné DEUX FOIS, ici sans geste (module 5, brique regle-signe-affine-zero) et là-bas avec un geste complet (module 3, AffineSignLab, briques regle-signe-affine + formule-zero-affine + mem-signe-de-a). Les deux leçons portent chacune un LP dessus (fonction-affine P9, signe-fonctions P5). La version faible est celle qui l'introduit en premier dans l'ordre du catalogue.",
+      "Aucun doublon avec equations-de-droites-2nde ni positions-relatives-droites-2nde : l'équation cartésienne, le vecteur directeur, les droites verticales et les systèmes sont exclus par teachingScope.exclude et n'apparaissent nulle part dans le code."
+    ],
+    "recommendations": [
+      "DÉGELER le TankLab du module 5 étape 1 et lui donner une sonde de comparaison : retirer `frozen`, garder a et b verrouillés (−4 et 30), laisser t mobile, et afficher un verdict en direct « V(t) = 18 > 10 ✓ / V(t) = 6 < 10 ✗ ». Une garde qui exige de trouver un t qui satisfait et un t qui ne satisfait pas produirait l'expérience du renversement : l'élève constaterait que ce sont les PETITS t qui marchent, AVANT que la brique ne l'explique. C'est le correctif le plus rentable de la leçon : il transforme P9 et P11 de PARTIALLY_COVERED en COVERED d'un seul geste.",
+      "Donner un geste à P6 : le module 4 devrait laisser l'élève DÉPLACER les deux points (1 ; 5) et (4 ; 11) sur le CoordPlane et voir a puis b se recalculer — c'est-à-dire faire au moins ce que fonctions-affines-3e fait déjà avec SlopeFromTwoPoints. En l'état, le collège manipule et le lycée récite.",
+      "Alléger le module 1 de ce qui est acquis. Les étapes 2 et 3 rejouent les modules 02 et 03 de la 3e ; les fondre en une seule étape (« un bouton fait glisser, l'autre fait pivoter — trouve lequel »), plus rapide parce que réactivante, libérerait cinq à sept minutes à réinvestir dans le module 5.",
+      "Ajouter une épreuve au boss qui isole P9 sur un tableau de signes à choisir (le boss n'en contient aucune : fa-e8 demande un intervalle, pas un tableau), et une qui isole P2 par une lecture de coefficient dans une situation où l'ordre de grandeur ne suffit pas.",
+      "Vérifier au niveau du catalogue que signe-fonctions-2nde précède fonction-affine-2nde, ou déplacer le geste AffineSignLab dans fonction-affine : en l'état, le seul endroit du chapitre où le signe de ax + b se manipule n'est pas celui qui porte le LP."
+    ],
+    "verticalPositioning": {
+      "revised": "Tout le module 1 et une partie du module 3 : la forme f(x) = ax + b, le rôle séparé de a et de b, le fait que la représentation soit une droite, la lecture de b sur l'axe vertical et de a par l'escalier. fonctions-affines-3e enseigne déjà tout cela avec les mêmes gestes (AffineExplorer, un paramètre verrouillé à la fois) et les briques coefficient-directeur / role-de-a / ordonnee-origine / role-de-b / mem-f0-egale-b / lire-a-et-b-graphique. La 2de l'assume : ces six notions sont en priorKnowledge et mesurées par fa-d2, fa-d3, fa-d4, fa-d5.",
+      "extended": "Le taux d'accroissement. La 3e calcule une pente entre deux points (SlopeFromTwoPoints, brique pente-deux-points) mais toujours pour DÉTERMINER une droite ; la 2de en fait un invariant de la fonction — le même quotient pour tout couple d'abscisses — et lui oppose un contre-exemple non affine que l'élève doit produire lui-même (M2 étape 2, garde rates.size >= 2). La reconnaissance dans une TABLE (accroissements proportionnels, pas différences égales) est également neuve : la 3e n'a que tableau-affine, de l'expression vers la table.",
+      "new": "Le sens de variation et le tableau de variations d'une fonction affine (aucune brique de 3e ne les porte) ; le signe de ax + b et son zéro −b/a ; l'équation ax + b = k lue comme une question sur la fonction ; et surtout l'INÉQUATION, avec le renversement du sens quand a < 0. Ces trois derniers points sont strictement neufs : les inéquations et l'étude de signe sont exclues explicitement par fonctions-affines-3e, par 3e/equations-produit et par les trois leçons de 4e concernées, et la chaîne « tableau de signes » n'existe nulle part dans apps/web/src/lessons/college.",
+      "formalized": "La notation du taux d'accroissement a = (f(x₂) − f(x₁))/(x₂ − x₁), posée par la brique formule-taux après trois mesures à la main ; la méthode en deux temps « a par le quotient, puis b = f(x₁) − a·x₁ » (mem-deux-points) ; et le vocabulaire de la monotonie sur ℝ (« une seule flèche »), qui remplace le vocabulaire visuel du collège (« ça monte »).",
+      "tool": "La fonction affine devient l'outil de modélisation du chapitre : « tant au départ, puis tant par unité » (methode-modeliser-affine) traité sur trois registres au module 6 — abonnement, téléphérique, bougie. Elle est le prérequis direct de variations-extremums-2nde (le tableau de variations généralisé), de signe-fonctions-2nde (le signe de ax + b y devient une ligne de tableau parmi d'autres) et d'equations-de-droites-2nde (où le même a devient le coefficient directeur d'une droite d'équation, et où les droites verticales font sortir du cadre fonctionnel)."
+    }
+  }
+}

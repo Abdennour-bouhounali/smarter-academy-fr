@@ -4,7 +4,7 @@
 
 ## 1. Identity & curriculum contract
 
-- Key `seconde_nombres_reels` · id `nombres-reels-2nde` · `/courses/lycee/seconde/nombres_calculs/nombres-reels-2nde` · ℝ · Difficile · free · 75 min (= module sum).
+- Key `seconde_nombres_reels` · id `nombres-reels-2nde` · `/courses/lycee/seconde/nombres_calculs/nombres-reels-2nde` · ℝ · Difficile · free · 67 min (= module sum).
 - LPs: P1 ensemble ℝ · P2 représenter sur une droite · P3 décimaux / rationnels / irrationnels · P4 écritures exactes et approchées · P5 comparer et encadrer.
 - Prerequisites displayed: Fractions, Nombres relatifs, Puissances.
 
@@ -28,7 +28,7 @@ Controlled variable: zoom level k (0..6) and the number. State `{spec, k}`; wind
 
 Precedent for exactness: `roundTo(…, 10)` in `ticksBetween` — the default 6-dp rounding collapsed all ticks at step 10⁻⁷ (found by the e2e layout sweep, pinned by a unit test).
 
-## 4. Module architecture (8 · 75 min)
+## 4. Module architecture (8 · 67 min)
 
 | # | Slug | Stage | LPs | min | Responsibility | Interaction |
 |---|---|---|---|---|---|---|

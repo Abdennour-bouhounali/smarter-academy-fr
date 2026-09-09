@@ -41,7 +41,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '📏',
-  estimatedDurationMin: 65,
+  estimatedDurationMin: 59,
   skills: [
     'Interpréter la valeur absolue comme une distance à zéro',
     'Calculer la valeur absolue d’un nombre réel',

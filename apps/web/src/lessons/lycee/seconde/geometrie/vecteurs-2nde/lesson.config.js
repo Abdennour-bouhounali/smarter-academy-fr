@@ -51,7 +51,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '➡️',
-  estimatedDurationMin: 90,
+  estimatedDurationMin: 84,
   skills: [
     "Comprendre l'égalité de deux vecteurs",
     'Identifier le vecteur nul',

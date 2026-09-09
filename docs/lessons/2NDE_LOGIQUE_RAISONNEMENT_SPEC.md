@@ -4,7 +4,7 @@
 
 ## 1. Identity & curriculum contract
 
-- Key `seconde_logique_et_raisonnement` · id `logique-et-raisonnement-2nde` · 🧠 · Difficile · free · 65 min.
+- Key `seconde_logique_et_raisonnement` · id `logique-et-raisonnement-2nde` · 🧠 · Difficile · free · 67 min.
 - LPs: P1 proposition · P2 connecteurs · P3 implication · P4 équivalence · P5 contre-exemple · P6 contradiction.
 - Prerequisites: Ensembles, Calcul littéral.
 
@@ -29,7 +29,7 @@ Controlled variable: n (next, jumps 10/20/39/40/41, free input). State `tested[]
 
 Secondary labs: `FilterLab` (two properties, four connectors, both lamps always visible), `ImplicationLab` (the four TT/TF/FT/FF boxes, the TF box turning red when filled, direction switch for the converse), `PigeonLab` (13 pupils, 12 months).
 
-## 4. Module architecture (8 · 65 min)
+## 4. Module architecture (8 · 67 min)
 
 | # | Slug | Stage | LPs | min | Responsibility | Interaction |
 |---|---|---|---|---|---|---|

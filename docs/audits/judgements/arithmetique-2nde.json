@@ -1,0 +1,150 @@
+{
+  "lesson": "arithmetique-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-nombres-calculs-batch",
+  "learningPoints": {
+    "seconde_arithmetique-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "les-paquets-et-les-restes", "step": 1, "mechanism": "manipulation:PackLab" },
+        { "module": 1, "moduleSlug": "les-paquets-et-les-restes", "step": 1, "mechanism": "brick:regle-reste-decide" },
+        { "module": 1, "moduleSlug": "les-paquets-et-les-restes", "step": 3, "mechanism": "brick:division-euclidienne" },
+        { "module": 1, "moduleSlug": "les-paquets-et-les-restes", "step": 3, "mechanism": "brick:multiple-diviseur" },
+        { "module": 1, "moduleSlug": "les-paquets-et-les-restes", "step": 3, "mechanism": "question:M01-S3-Q1" },
+        { "module": 1, "moduleSlug": "les-paquets-et-les-restes", "step": 3, "mechanism": "brick:mem-multiple-reste" },
+        { "module": 4, "moduleSlug": "multiples-communs", "step": 1, "mechanism": "manipulation:RhythmLine" }
+      ],
+      "manipulation": "PackLab — deux tas de jetons (a, b) et une taille de paquet p réglables ; les jetons se rangent visuellement en paquets pleins et en unités seules, et la ligne « réunion » montre les restes s'ajouter et former (ou non) un paquet supplémentaire. Tout est dérivé de addPacks / divmod.",
+      "assessmentQuestionIds": ["ar-e1", "ar-e2"],
+      "knowledgeItems": ["division-euclidienne", "multiple-diviseur", "regle-reste-decide", "mem-multiple-reste"],
+      "notes": "Le vocabulaire multiple/diviseur arrive au module 1 étape 3, après deux étapes de manipulation : les jetons ont déjà montré que « r = 0 » est la propriété qui compte. La question M01-S3-Q1 (91 = 7 × 13) vise l'inversion du sens multiple/diviseur, l'erreur réelle, et ses distracteurs (« 7 est un multiple de 91 ») ne sont pas devinables. La division euclidienne est présentée comme la formalisation du rangement, pas comme une définition à apprendre. Le boss ar-e2 (reste de 100 par 7 = 2) inclut le distracteur 14 (le quotient), qui teste que le reste est < p.",
+      "crossGrade": { "overlapsWith": ["3e:multiples-diviseurs"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_arithmetique-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "les-criteres-demontres", "step": 1, "mechanism": "manipulation:DigitSplit" },
+        { "module": 3, "moduleSlug": "les-criteres-demontres", "step": 1, "mechanism": "question:M03-S1-Q1" },
+        { "module": 3, "moduleSlug": "les-criteres-demontres", "step": 1, "mechanism": "brick:critere-est-decoupage" },
+        { "module": 3, "moduleSlug": "les-criteres-demontres", "step": 2, "mechanism": "manipulation:DigitSplit" },
+        { "module": 3, "moduleSlug": "les-criteres-demontres", "step": 2, "mechanism": "brick:criteres-divisibilite" },
+        { "module": 3, "moduleSlug": "les-criteres-demontres", "step": 3, "mechanism": "question:M03-S3-Q1" }
+      ],
+      "manipulation": "DigitSplit — choisir un nombre (4725, 2346, 1080, 731) et le voir se décomposer en une part TOUJOURS multiple de 9 (999a + 99b + 9c) et la somme de ses chiffres ; mode `hundred` pour le critère par 4 (100 × centaines + deux derniers chiffres). nineSplit(4725) = {ninePart: 4707, nineTimes: 523, digitSum: 18}, vérifié.",
+      "assessmentQuestionIds": ["ar-e3", "ar-e4"],
+      "knowledgeItems": ["criteres-divisibilite", "critere-est-decoupage"],
+      "notes": "Traitement remarquable : le critère n'est pas donné puis appliqué, il est DÉMONTRÉ par un découpage manipulable, et la généralisation (« un critère, c'est séparer une part toujours multiple d'un reste qui décide seul ») est nommée avant d'être réutilisée sur 4. La brique criteres-divisibilite (la liste des critères) arrive en dernier, après les deux démonstrations — l'ordre inverse de l'usage scolaire habituel. La question M03-S1-Q1 exige le raisonnement, pas la règle, et son distracteur « c'est une coïncidence des nombres testés » est exactement la conception naïve visée. Le boss ar-e3 sépare multiple de 3 et multiple de 9 (somme 15).",
+      "crossGrade": { "overlapsWith": ["3e:multiples-diviseurs"], "kind": "formalized" },
+      "confidence": "high"
+    },
+    "seconde_arithmetique-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "les-paquets-et-les-restes", "step": 2, "mechanism": "manipulation:PackLab" },
+        { "module": 1, "moduleSlug": "les-paquets-et-les-restes", "step": 2, "mechanism": "question:M01-S2-Q1" },
+        { "module": 2, "moduleSlug": "pair-impair-et-la-lettre", "step": 1, "mechanism": "question:M02-S1-Q1" },
+        { "module": 2, "moduleSlug": "pair-impair-et-la-lettre", "step": 1, "mechanism": "brick:ecriture-litterale-parite" },
+        { "module": 2, "moduleSlug": "pair-impair-et-la-lettre", "step": 1, "mechanism": "brick:lettre-couvre-tout" },
+        { "module": 2, "moduleSlug": "pair-impair-et-la-lettre", "step": 3, "mechanism": "manipulation:ValueTable" },
+        { "module": 2, "moduleSlug": "pair-impair-et-la-lettre", "step": 3, "mechanism": "brick:regle-parite-operations" },
+        { "module": 2, "moduleSlug": "pair-impair-et-la-lettre", "step": 4, "mechanism": "question:M02-S4-Q1" }
+      ],
+      "manipulation": "PackLab réglé sur p = 2 avec deux impairs (7 et 9) : les deux jetons seuls forment exactement un paquet de plus — impair + impair = pair devient visible avant d'être écrit. Puis ValueTable (module 2 étape 3) : tester k = 1, 2, 3, 0, 5 et voir (2k+1)² et 2(2k²+2k)+1 coïncider colonne à colonne.",
+      "assessmentQuestionIds": ["ar-e5", "ar-e6", "ar-e10"],
+      "knowledgeItems": ["ecriture-litterale-parite", "lettre-couvre-tout", "regle-parite-operations", "methode-preuve-parite", "regle-reste-decide"],
+      "notes": "L'articulation constat → preuve est le cœur de la leçon et elle est réussie : le module 1 fait CONSTATER avec des jetons, le module 2 pose la question « pourquoi écrire 2k + 1 plutôt que 3, 5, 7 ? » et sa réponse (« k peut être n'importe quel entier ») est ce qui autorise la démonstration. Le BatchChoiceQuestion final couvre 2n + 5, n + n, n(n+1) et n² — dont un cas « ça dépend », ce qui évite le pattern « tout est toujours pair ». Le boss ar-e10 (n(n+1) pair) exige la raison, pas le résultat.",
+      "crossGrade": { "overlapsWith": ["4e:calcul-litteral", "3e:multiples-diviseurs"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_arithmetique-2nde_P4": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "multiples-communs", "step": 1, "mechanism": "manipulation:RhythmLine" },
+        { "module": 4, "moduleSlug": "multiples-communs", "step": 1, "mechanism": "brick:ppcm" },
+        { "module": 4, "moduleSlug": "multiples-communs", "step": 1, "mechanism": "question:M04-S1-Q1" },
+        { "module": 4, "moduleSlug": "multiples-communs", "step": 2, "mechanism": "question:M04-S2-Q1" },
+        { "module": 4, "moduleSlug": "multiples-communs", "step": 2, "mechanism": "brick:pgcd" },
+        { "module": 4, "moduleSlug": "multiples-communs", "step": 2, "mechanism": "question:M04-S2-Q2" },
+        { "module": 4, "moduleSlug": "multiples-communs", "step": 2, "mechanism": "brick:methode-reconnaitre-ppcm-pgcd" },
+        { "module": 5, "moduleSlug": "demontrer", "step": 4, "mechanism": "question:M05-S4-Q1" }
+      ],
+      "manipulation": "RhythmLine — deux rythmes de bus réglables (Steppers 2..20 min) ; les marques de chaque bus s'affichent sur une même ligne de temps et les rendez-vous communs se colorent. Le premier rendez-vous (36 min pour 12 et 18, vérifié) apparaît comme un fait visuel avant d'être nommé PPCM.",
+      "assessmentQuestionIds": ["ar-e7", "ar-e8"],
+      "knowledgeItems": ["ppcm", "pgcd", "methode-reconnaitre-ppcm-pgcd"],
+      "notes": "PARTIELLEMENT couvert parce que les deux moitiés du LP ne sont pas traitées de la même façon. Côté MULTIPLES : manipulation complète (RhythmLine), brique posée sur le geste, question qui attaque le piège « le rendez-vous, c'est a × b » (216 contre 36), épreuve de boss neuve (15 s / 20 s → 60 s, vérifié). Côté DIVISEURS : aucune manipulation. Le PGCD arrive directement par une NumericQuestion (« côté du plus grand carreau pour 84 × 126 ») — l'élève doit produire 42 sans instrument pour chercher les diviseurs communs, et la brique pgcd n'est posée qu'APRÈS cette question, donc elle ne peut rien avoir établi pour elle. L'explainFor rattrape (il liste les diviseurs communs 1, 2, 3, 6, 7, 14, 21, 42), mais un explain ne compte pas comme enseignement. Un élève qui n'a jamais rencontré le PGCD doit donc le deviner ou échouer puis lire — c'est exactement le régime EXERCISED_ONLY pour cette moitié du LP. La deuxième question (« pourquoi le côté doit-il être un diviseur ? ») est bonne mais vient après.",
+      "crossGrade": { "overlapsWith": ["3e:multiples-diviseurs"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_arithmetique-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "pair-impair-et-la-lettre", "step": 2, "mechanism": "question:M02-S2-Q1" },
+        { "module": 2, "moduleSlug": "pair-impair-et-la-lettre", "step": 2, "mechanism": "brick:methode-preuve-parite" },
+        { "module": 3, "moduleSlug": "les-criteres-demontres", "step": 1, "mechanism": "brick:critere-est-decoupage" },
+        { "module": 5, "moduleSlug": "demontrer", "step": 1, "mechanism": "manipulation:ProofOrder" },
+        { "module": 5, "moduleSlug": "demontrer", "step": 1, "mechanism": "brick:methode-demonstration-arithmetique" },
+        { "module": 5, "moduleSlug": "demontrer", "step": 2, "mechanism": "question:M05-S2-Q1" },
+        { "module": 5, "moduleSlug": "demontrer", "step": 3, "mechanism": "question:M05-S3-Q1" },
+        { "module": 5, "moduleSlug": "demontrer", "step": 3, "mechanism": "brick:regle-exemples-pas-preuve" },
+        { "module": 5, "moduleSlug": "demontrer", "step": 3, "mechanism": "brick:mem-conclure-par-definition" }
+      ],
+      "manipulation": "ProofOrder — reconstituer la preuve « la somme de deux multiples de 7 est un multiple de 7 » en touchant ses cinq lignes dans l'ordre ; à la vérification, la PREMIÈRE ligne mal placée est désignée ; deux essais puis l'ordre correct est révélé et l'étape se termine (jamais bloquant).",
+      "assessmentQuestionIds": ["ar-e4", "ar-e9", "ar-e10"],
+      "knowledgeItems": ["methode-preuve-parite", "methode-demonstration-arithmetique", "regle-exemples-pas-preuve", "mem-conclure-par-definition", "critere-est-decoupage"],
+      "notes": "La démonstration est enseignée comme une STRUCTURE manipulable (hypothèse littérale → transformation → facteur entier → conclusion par la définition), reconstituée à la main avant d'être nommée. Trois preuves différentes sont produites dans la leçon (somme d'impairs, carré d'un impair, somme de trois consécutifs) et une fausse preuve est critiquée (Léa, quatre exemples), avec le contre-modèle du polynôme d'Euler n² + n + 41 qui montre pourquoi. Le boss ar-e9 demande la PREMIÈRE LIGNE d'une preuve, ce qui teste la structure et non le résultat, avec un distracteur « supposons que a + b ne soit pas multiple de 5 » (l'absurde, valide en soi mais pas la méthode directe demandée) — distracteur exigeant mais légitime.",
+      "crossGrade": { "overlapsWith": ["2de:logique-et-raisonnement-2nde"], "kind": "consolidation" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "officialScopeNotCovered": [
+      {
+        "scopeItem": "Présenter une fraction sous forme irréductible",
+        "taughtAnyway": false,
+        "evidence": [],
+        "recommendation": "append-lp",
+        "notes": "VÉRIFIÉ ABSENT. Aucune occurrence de « irréductible », « simplifier » ou d'une fraction à réduire dans arithmetique-2nde (grep sur toute l'arborescence de la leçon : zéro résultat) ; arithUtils.js expose gcd et divisors mais aucune fonction de réduction de fraction, et aucun module n'affiche de fraction. Recherche élargie : aucune leçon de lycee/seconde ne mentionne « irréductible ». L'item est enseigné en 3e (college/3e/nombres_calculs/nombres-rationnels/modules/Module02RendreIrreductible.jsx, avec RationalBar et le pointsToLearn « Rendre une fraction irréductible ») et jamais réactivé en 2de. La brique manquante est pourtant à portée immédiate : le PGCD est enseigné au module 4 et « diviser numérateur et dénominateur par leur PGCD » en est l'application canonique. Recommandation : ajouter un LP et une étape au module 4 (après pgcd) plutôt que de laisser l'item orphelin — sinon l'objet officiel « Arithmétique » reste incomplet pour la 2de."
+      },
+      {
+        "scopeItem": "Déterminer le plus grand multiple inférieur à une valeur donnée",
+        "taughtAnyway": false,
+        "evidence": [],
+        "recommendation": "append-lp",
+        "notes": "VÉRIFIÉ ABSENT. Aucune occurrence de « plus grand multiple » dans la leçon. Aucune question ne demande « quel est le plus grand multiple de 7 inférieur à 100 ? » ni son équivalent contextualisé (combien de boîtes pleines, où s'arrête la dernière graduation…). C'est d'autant plus regrettable que la manipulation PackLab EST le geste qui répond : ranger n en paquets de p donne q paquets pleins, donc p × q est précisément le plus grand multiple de p inférieur ou égal à n, et le lab affiche déjà q et r. La compétence est donc INCARNÉE par le laboratoire sans jamais être ni nommée ni demandée : une seule question au module 1 étape 3 (« 100 jetons en paquets de 7 : combien de jetons dans les paquets pleins ? ») la ferait passer de MISSING à COVERED. Le boss ar-e2 s'en approche (reste de 100 par 7) mais demande le reste, pas le multiple."
+      }
+    ],
+    "pedagogicalProblems": [
+      "Le PGCD est demandé avant d'être enseigné. Module04MultiplesCommuns.jsx étape 2 : la NumericQuestion « côté du plus grand carreau » (réponse 42 = pgcd(84, 126)) est rendue en premier, et la brique `pgcd` n'apparaît que conditionnée à `tileDone`, c'est-à-dire APRÈS la réponse. L'ordre source est donc demande → brique, l'inverse de la règle. Le PPCM, lui, est correctement traité (RhythmLine → brique ppcm → question). Correctif minimal : donner au module 4 une manipulation de diviseurs communs (une grille 84 × 126 à paver dont on fait varier le carreau) avant la question.",
+      "Aucune manipulation ne porte les DIVISEURS. Les trois laboratoires de la leçon (PackLab, DigitSplit, RhythmLine) explorent tous le côté « multiples/restes ». Un élève découvre visuellement ce qu'est un multiple commun, jamais ce qu'est un diviseur commun.",
+      "Les deux items officiels absents (fraction irréductible, plus grand multiple inférieur) laissent l'objet « Arithmétique » couvert à 10/12 items. Le premier crée un trou vertical réel : la 3e apprend à rendre irréductible, la 2de ne la réactive jamais alors qu'elle vient d'installer le PGCD qui la justifie.",
+      "Le module 5 porte le tag de brief « 🧠 Mission 06 » alors qu'il est le module 5 (Module05Demontrer.jsx:36) ; le boss étiquette SKILLS.demontrer `module: 6` et son JSDoc s'annonce comme « Module 7 » alors que le fichier est Module06MissionFinale.jsx. Le profil de maîtrise renvoie donc l'élève vers le boss au lieu du module « Démontrer »."
+    ],
+    "technicalProblems": [
+      "components/BuildCheck.jsx : fichier mort, aucun module ne l'importe (grep `components/BuildCheck'` → 0 résultat dans la leçon).",
+      "components/Stepper.jsx : jamais importé directement par un module ; il n'est utilisé qu'indirectement par PackLab et RhythmLine. Ce n'est pas un fichier mort mais l'inventaire des composants le fait apparaître comme non routé.",
+      "Le JSDoc du boss (Module06MissionFinale.jsx:9) se déclare « Module 7 — Boss Final » et cite des pièges « M6 » : dérive de commentaire après suppression d'un module, comme dans les trois leçons sœurs du chapitre.",
+      "Aucun défaut mathématique. Vérifications numériques : pgcd(84, 126) = 42 et ses distracteurs 21 (diviseur commun non maximal), 84 (ne divise pas 126), 63 (divise 126 pas 84) sont tous des erreurs nommées ; ppcm(12, 18) = 36 avec 216 = 12 × 18 comme piège ; ppcm(15, 20) = 60, distracteurs 300 (produit), 35 (somme), 5 (pgcd) — les quatre options couvrent quatre confusions distinctes, aucune n'est arbitrairement proche ; pgcd(36, 48) = 12 ; ppcm(8, 12) = 24 ; nineSplit(4725) = 9 × 523 + 18 ; oddSquareForm(3) = {n: 7, square: 49, m: 24} et 2 × 24 + 1 = 49.",
+      "Aucune manipulation gelée : PackLab, DigitSplit et RhythmLine reçoivent tous `disabled = false` par défaut et aucun module ne passe `disabled={done}`. ProofOrder désactive ses lignes une fois l'étape terminée (`disabled={done}` sur les lignes placées), ce qui est correct : la preuve est alors affichée résolue, et le composant ne bloque jamais (révélation après deux essais).",
+      "Le seul `disabled={…}` lié à une validation est celui des PredictionChips (Module01 ligne 58, Module03 ligne 43), comportement voulu pour une prédiction."
+    ],
+    "duplicates": [
+      "Recouvrement volontaire et bien géré avec 3e/multiples-diviseurs (pointsToLearn : « Comprendre la relation entre multiples et diviseurs », « Utiliser les critères de divisibilité usuels », « Raisonner sur la divisibilité »). Le teachingScope.exclude de la 2de renvoie explicitement le crible d'Ératosthène et la décomposition en facteurs premiers à la 3e, et le traitement diffère radicalement : la 3e APPLIQUE les critères, la 2de les DÉMONTRE par découpage. Ce n'est pas un doublon, c'est le passage de la règle à sa raison.",
+      "Recouvrement avec 2de/logique-et-raisonnement-2nde sur « des exemples ne prouvent pas » : les deux leçons utilisent le polynôme d'Euler n² + n + 41 (ici dans l'explain de M05-S3-Q1, là comme manipulation signature du module 1). Chaque leçon déclare l'autre en exclusion (arithmétique exclut la preuve d'irrationalité de √2, logique exclut les preuves d'arithmétique elles-mêmes), mais le contre-modèle d'Euler est bel et bien mobilisé deux fois. Ce n'est pas grave — c'est un rappel dans l'une, une manipulation dans l'autre — mais il vaut mieux que l'élève rencontre Euler d'abord en Logique."
+    ],
+    "recommendations": [
+      "Ajouter au module 4 une manipulation de diviseurs communs AVANT la question du carreau, et déplacer la brique pgcd avant la NumericQuestion.",
+      "Ajouter une étape « rendre irréductible » au module 4 (application directe du PGCD) et le LP correspondant : c'est l'item officiel manquant le plus facile à combler.",
+      "Ajouter au module 1 étape 3 une question sur le plus grand multiple inférieur (« 100 jetons en paquets de 7 : combien de jetons dans les paquets pleins ? ») — PackLab affiche déjà la réponse, seule la demande manque.",
+      "Supprimer components/BuildCheck.jsx.",
+      "Corriger le tag de brief du module 5 et la numérotation du boss (JSDoc « Module 7 », SKILLS.demontrer.module = 6)."
+    ],
+    "verticalPositioning": {
+      "revised": "Multiples et diviseurs, les critères de divisibilité usuels et la reconnaissance pair/impair (3e/multiples-diviseurs) ; la table de multiplication et le reste d'une division, seuls prérequis déclarés et diagnostiqués ; la factorisation d'une expression littérale (4e_calcul_litteral : « Factoriser une expression à facteur commun évident »), réutilisée pour écrire 2k + 2m + 2 = 2(k + m + 1).",
+      "extended": "Le multiple commun, connu en 3e comme une liste à comparer, devient un rendez-vous manipulable dont on fait varier les deux rythmes, et le PGCD un problème de pavage. La parité, simple étiquette au collège, devient une propriété qui se propage à travers les opérations et se démontre.",
+      "new": "La démonstration arithmétique elle-même : écrire l'hypothèse avec une lettre, transformer, reconnaître la forme « p × un entier », conclure par la définition. Et le fait qu'un critère de divisibilité SE DÉMONTRE — 999a + 99b + 9c pour 9 et 3, 100 × centaines pour 4 — au lieu de se retenir.",
+      "formalized": "La division euclidienne n = pq + r avec 0 ≤ r < p comme écriture du rangement en paquets, et l'équivalence « n = pk ⟺ p divise n ⟺ le reste vaut 0 » qui unifie trois formulations que le collège gardait séparées. L'écriture littérale 2k / 2k + 1 / pk comme quantification implicite : la lettre couvre tous les cas, c'est ce qui distingue une preuve d'un faisceau d'exemples.",
+      "tool": "La leçon fournit le modèle de démonstration réutilisé par « Logique et raisonnement » (mêmes cinq lignes, même composant ProofOrder) et par tout le travail sur les entiers en Première. Le critère par les restes, lui, avait déjà servi dans « Nombres réels » à établir qu'une fraction a une écriture finie ou périodique — les deux leçons partagent la même idée motrice."
+    }
+  }
+}

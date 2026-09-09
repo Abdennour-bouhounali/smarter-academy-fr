@@ -7,10 +7,10 @@ import { MiniPlane } from './components/knowledgeVisuals';
  *
  * Chaque module déclare ce qu'il APPORTE à la carte des connaissances ; la
  * carte que voit l'élève est la réduction cumulative des modules validés
- * (components/knowledgeState.js). Deux présentations consomment ces données :
- * le tiroir « Ma carte » (components/KnowledgeMap.jsx) et l'« À retenir » de
- * fin de module (components/KnowledgeSnapshot.jsx) ; la synthèse du test
- * final affiche la carte complète. Aucun module n'écrit son propre résumé.
+ * (lessons/common/knowledge/knowledgeState.js). Deux présentations consomment
+ * ces données : le tiroir « Ma carte » et l'« À retenir » de fin de module,
+ * tous deux importés de `lessons/common/knowledge` ; la synthèse du test final
+ * affiche la carte complète. Aucun module n'écrit son propre résumé.
  *
  * Règle d'or : un item n'utilise que des notions déjà rencontrées par l'élève
  * au module qui le déclare. L'ordre d'introduction est strict :

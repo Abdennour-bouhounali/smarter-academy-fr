@@ -71,7 +71,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: 'ℝ',
-  estimatedDurationMin: 75,
+  estimatedDurationMin: 67,
   skills: [
     'Comprendre l’ensemble des nombres réels',
     'Représenter des nombres réels sur une droite graduée',

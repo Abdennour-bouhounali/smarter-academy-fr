@@ -1,0 +1,383 @@
+{
+ "lesson": "arbres-probabilites-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "session-principale",
+ "learningPoints": {
+  "seconde_arbres-probabilites-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "construis-larbre",
+     "step": 1,
+     "mechanism": "manipulation:TreeBuilder"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "construis-larbre",
+     "step": 1,
+     "mechanism": "brick:arbre-structure"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "construis-larbre",
+     "step": 2,
+     "mechanism": "question:M01-S2-Q1"
+    }
+   ],
+   "manipulation": "TreeBuilder — l'élève pose lui-même les branches et l'arbre n'est complet (onComplete) que si la structure est juste",
+   "assessmentQuestionIds": [
+    "ar-e1"
+   ],
+   "knowledgeItems": [
+    "arbre-structure"
+   ],
+   "notes": "Le déclencheur est une CONSTRUCTION, pas un arbre montré : la structure de l'arbre est le premier objet de la leçon et l'élève la fabrique.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "ce-que-pesent-les-branches",
+     "step": 1,
+     "mechanism": "brick:poids-conditionnels"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "ce-que-pesent-les-branches",
+     "step": 2,
+     "mechanism": "brick:somme-branches"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "ce-que-pesent-les-branches",
+     "step": 2,
+     "mechanism": "question:M02-S2-Q1"
+    }
+   ],
+   "manipulation": "Aucune manipulation propre : lecture guidée de l'arbre construit en M1",
+   "assessmentQuestionIds": [
+    "ar-e4"
+   ],
+   "knowledgeItems": [
+    "poids-conditionnels",
+    "somme-branches"
+   ],
+   "notes": "La règle « la somme des branches d'un même nœud vaut 1 » est posée par brique après une lecture dirigée. C'est correct mais moins fort que M1 : l'élève lit, il ne règle rien.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "ce-que-pesent-les-branches",
+     "step": 1,
+     "mechanism": "brick:poids-conditionnels"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "ce-que-pesent-les-branches",
+     "step": 1,
+     "mechanism": "question:M02-S1-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "ar-e3"
+   ],
+   "knowledgeItems": [
+    "poids-conditionnels"
+   ],
+   "notes": "P3 et P4 partagent leur unique épreuve ar-e3. Comme la pondération d'une branche EST une probabilité conditionnelle, l'appariement est légitime : une seule notion vue sous deux noms.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "ce-que-pesent-les-branches",
+     "step": 1,
+     "mechanism": "brick:poids-conditionnels"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "ce-que-pesent-les-branches",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "ar-e3"
+   ],
+   "knowledgeItems": [
+    "poids-conditionnels"
+   ],
+   "notes": "Voir P3 : l'épreuve unique et partagée est ici défendable, mais elle reste unique pour deux LP.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "multiplier-le-long-dun-chemin",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "multiplier-le-long-dun-chemin",
+     "step": 1,
+     "mechanism": "question:M03-S1-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "multiplier-le-long-dun-chemin",
+     "step": 2,
+     "mechanism": "brick:produit-chemin"
+    }
+   ],
+   "manipulation": "Comptage effectif sur 1 000 tirages (600 par A, dont 300 rouges…) AVANT toute formule",
+   "assessmentQuestionIds": [
+    "ar-e5"
+   ],
+   "knowledgeItems": [
+    "produit-chemin"
+   ],
+   "notes": "Ordre pédagogique juste et vérifié dans le source : l'étape 1 s'intitule « Comptons sur 1 000 tirages » et son sous-titre est « Pas de formule : on compte ». La règle du produit n'est nommée qu'à l'étape 2, une fois le résultat obtenu par dénombrement.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "multiplier-le-long-dun-chemin",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "multiplier-le-long-dun-chemin",
+     "step": 2,
+     "mechanism": "brick:produit-chemin"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "multiplier-le-long-dun-chemin",
+     "step": 2,
+     "mechanism": "question:M03-S2-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "ar-e5",
+    "ar-e6"
+   ],
+   "knowledgeItems": [
+    "produit-chemin"
+   ],
+   "notes": "La multiplication est la CONCLUSION du comptage, pas son point de départ.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "additionner-les-chemins",
+     "step": 1,
+     "mechanism": "brick:somme-chemins"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "additionner-les-chemins",
+     "step": 1,
+     "mechanism": "question:M04-S1-Q1"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "additionner-les-chemins",
+     "step": 2,
+     "mechanism": "brick:mem-produit-somme"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "ar-e7",
+    "ar-e9"
+   ],
+   "knowledgeItems": [
+    "somme-chemins",
+    "mem-produit-somme"
+   ],
+   "notes": "P(rouge) = 0,6×0,5 + 0,4×0,25 = 0,40 — vérifié numériquement — alors que la moyenne naïve non pondérée donne 0,375. L'écart de 0,025 est asservi par un test (data.test.js), donc re-régler les sacs ne peut pas détruire silencieusement la surprise.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "additionner-les-chemins",
+     "step": 1,
+     "mechanism": "brick:somme-chemins"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "additionner-les-chemins",
+     "step": 2,
+     "mechanism": "question:M04-S2-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "ar-e7",
+    "ar-e8"
+   ],
+   "knowledgeItems": [
+    "somme-chemins",
+    "mem-produit-somme"
+   ],
+   "notes": "La brique mem-produit-somme unifie les deux gestes (multiplier le long, additionner entre) : c'est la synthèse dont la leçon a besoin.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "construis-larbre",
+     "step": 1,
+     "mechanism": "manipulation:TreeBuilder"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "atelier-de-larbre-a-la-phrase",
+     "step": 1,
+     "mechanism": "brick:methode-situation-arbre"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "atelier-de-larbre-a-la-phrase",
+     "step": 1,
+     "mechanism": "question:M05-S1-Q1"
+    }
+   ],
+   "manipulation": "TreeBuilder en M1 ; l'atelier M5 rejoue le passage situation → arbre sur trois situations (étapes construites par .map sur SITUATIONS)",
+   "assessmentQuestionIds": [
+    "ar-e2",
+    "ar-e9"
+   ],
+   "knowledgeItems": [
+    "methode-situation-arbre"
+   ],
+   "notes": "M5 est un module « atelier » dont les étapes sont générées par .map() : le flux d'exposition les déplie correctement (3 étapes, 3 questions), mais la brique methode-situation-arbre y est comptée trois fois — une par ligne.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_arbres-probabilites-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "atelier-de-larbre-a-la-phrase",
+     "step": 2,
+     "mechanism": "brick:methode-situation-arbre"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "atelier-de-larbre-a-la-phrase",
+     "step": 3,
+     "mechanism": "question:M05-S3-Q1"
+    }
+   ],
+   "manipulation": "—",
+   "assessmentQuestionIds": [
+    "ar-e10"
+   ],
+   "knowledgeItems": [
+    "methode-situation-arbre"
+   ],
+   "notes": "Le sens inverse (arbre → phrase) est demandé, ce qui est le bon test de compréhension d'un registre.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "Une seule manipulation dans toute la leçon (TreeBuilder, module 1). Les modules 2, 3 et 4 — qui portent 8 des 10 LP — n'ont AUCUN composant interactif : ils avancent par questions et briques. Le comptage sur 1 000 tirages de M3 est excellent mais il est LU, pas conduit : l'élève ne règle ni les effectifs ni les poids.",
+   "Cinq LP (P2, P3, P4, P5, P10) reposent chacun sur une seule épreuve, et P3/P4 partagent la même. Dix épreuves pour dix LP paraît équilibré, mais quatre épreuves sont doublement affectées."
+  ],
+  "technicalProblems": [
+   "Aucun laboratoire gelé (seul PredictionChips est disabled après construction, ce qui est voulu).",
+   "Aucun composant du kit rendu sans import.",
+   "La brique methode-situation-arbre est enregistrée trois fois par le flux d'exposition parce qu'elle est placée dans le gabarit mappé de M5 plutôt que dans un point de rendu unique (slot intro)."
+  ],
+  "duplicates": [
+   "P3/P4 (pondération d'une branche = probabilité conditionnelle) recouvrent probabilites-conditionnelles-2nde P1/P3, qui l'enseignent avec une manipulation (UniverseLab). L'ordre catalogue place les arbres APRÈS les conditionnelles : ici la notion est donc revue, ce que la leçon ne dit pas."
+  ],
+  "verticalPositioning": {
+   "revised": "Le calcul d'une probabilité en situation d'équiprobabilité (3e probabilites-3e).",
+   "extended": "L'expérience à deux étapes, déjà rencontrée en 4e (probabilites-4e, deux dés), devient un objet pondéré.",
+   "new": "L'ARBRE PONDÉRÉ : la pondération d'une branche comme probabilité conditionnelle, le produit le long d'un chemin, la somme sur les chemins.",
+   "formalized": "Les deux règles produit/somme, réunies par mem-produit-somme.",
+   "tool": "L'arbre devient l'instrument de tests-diagnostiques-probabilites-2nde."
+  },
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Les 10 items de teachingScope.include correspondent aux 10 learning points — aucun écart.",
+    "taughtAnyway": true,
+    "evidence": "comparaison item par item",
+    "recommendation": "none"
+   }
+  ],
+  "recommendations": [
+   "Donner une manipulation au module 3 ou 4 : un arbre dont on règle les poids et qui affiche en direct l'effectif de chaque chemin sur 1 000 tirages rendrait le produit et la somme MANIPULABLES au lieu d'être lus.",
+   "Déplacer la brique methode-situation-arbre de M5 dans le slot intro pour qu'elle ne soit posée qu'une fois."
+  ]
+ }
+}

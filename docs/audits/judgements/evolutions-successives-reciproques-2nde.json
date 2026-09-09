@@ -1,0 +1,183 @@
+{
+  "lesson": "evolutions-successives-reciproques-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-stats-proba-batch-A",
+  "learningPoints": {
+    "seconde_evolutions-successives-reciproques-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 1, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 1, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 1, "mechanism": "brick:base-mouvante" },
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 2, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 3, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 2, "moduleSlug": "les-coefficients-se-multiplient", "step": 1, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 6, "moduleSlug": "atelier-lire-les-evolutions", "step": 1, "mechanism": "question:M06-S1-Q2 (200 × 0,70 × 0,50)" }
+      ],
+      "manipulation": "EvolutionChain — la chaîne complète, maillon par maillon : chaque case affiche la valeur qui ENTRE, la flèche porte le coefficient ET son taux, et l'étiquette du curseur dit sur quoi il s'applique (« s'applique à 120,00 € »). C'est ce libellé qui porte tout le module : la baisse de 20 % est visiblement appliquée à 120 €, pas à 100 €. L'étape 1 n'est validée qu'après avoir réellement posé +20 % PUIS −20 % (garde exacte à 1e-9 sur les deux curseurs), donc après avoir exécuté la chaîne de l'énoncé soi-même.",
+      "assessmentQuestionIds": ["ev-e2"],
+      "knowledgeItems": ["base-mouvante", "coefficient-global", "methode-composer"],
+      "notes": "Déclencheur exemplaire. La PredictionChips propose l'erreur canonique (« exactement 100 € — ça s'annule ») et la chaîne tranche sans verdict préalable. Le feedback explique le mécanisme par les EUROS avant de le formaliser : « elle retire 24 € quand la hausse n'en avait ajouté que 20 ». L'étape 2 vérifie que ce n'est pas un accident de 20 % (±10 % → 99 €, ±25 % → 93,75 €, ±50 % → 75 € ; les trois vérifiés) et l'étape 3 montre que l'ordre n'y change rien. La brique base-mouvante est posée à la fin de l'étape 1, avant toute question. Le boss ev-e2 rejoue sur 250 € (250 × 1,20 × 0,80 = 240 €, vérifié) avec le distracteur 250 € qui est la faute visée.",
+      "crossGrade": { "overlapsWith": ["2de:proportions-pourcentages-2nde"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_evolutions-successives-reciproques-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 3, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 3, "mechanism": "brick:ordre-sans-importance" },
+        { "module": 2, "moduleSlug": "les-coefficients-se-multiplient", "step": 1, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 2, "moduleSlug": "les-coefficients-se-multiplient", "step": 1, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "les-coefficients-se-multiplient", "step": 1, "mechanism": "brick:coefficient-global" },
+        { "module": 2, "moduleSlug": "les-coefficients-se-multiplient", "step": 2, "mechanism": "question:M02-S2 (1,10 × 1,05 × 1,02)" },
+        { "module": 2, "moduleSlug": "les-coefficients-se-multiplient", "step": 2, "mechanism": "brick:methode-composer" },
+        { "module": 2, "moduleSlug": "les-coefficients-se-multiplient", "step": 3, "mechanism": "question:M02-S3 (1,5 × 0,6)" }
+      ],
+      "manipulation": "EvolutionChain avec `maxSteps={3}` et deux boutons « + Ajouter une évolution » / « − Retirer la dernière » : l'élève teste sa conjecture sur des chaînes qu'il CHOISIT, y compris à trois maillons. Le bloc bilan affiche en permanence le produit écrit en toutes lettres (« 1,30 × 0,90 = 1,1700 ») à côté du parcours départ → arrivée : la coïncidence est constatée sur chaque essai, pas énoncée. L'étape exige trois chaînes distinctes.",
+      "assessmentQuestionIds": ["ev-e1", "ev-e5"],
+      "knowledgeItems": ["coefficient-global", "methode-composer", "ordre-sans-importance"],
+      "notes": "La progression conjecture → test → règle est authentique : le module 1 finit sur « 1,20 × 0,80 = 0,96 — coïncidence ou règle ? », le module 2 la met à l'épreuve. La commutativité est justifiée par l'observation du module 1 étape 3 (deux ordres, deux valeurs intermédiaires — 120 € ou 80 € —, même arrivée) puis nommée : « comme la multiplication est commutative ». L'étape 2 fait passer à TROIS maillons avec un arrondi au millième (1,10 × 1,05 × 1,02 = 1,1781, vérifié) et son explainFor branche explicitement sur 1,17, la somme des taux. Le boss ev-e1 est direct (1,32) et ev-e5 est plus fin (1,02 × 1,03 × 0,99 = 1,040094, vérifié) — mais voir technicalProblems : ce distracteur est trop proche.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_evolutions-successives-reciproques-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 1, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 1, "mechanism": "brick:taux-global" },
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 2, "mechanism": "question:M03-S2 (1,08 × 0,95 → +2,6 %)" },
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 3, "mechanism": "question:M03-S3 (BatchChoiceQuestion, 4 chaînes)" },
+        { "module": 6, "moduleSlug": "atelier-lire-les-evolutions", "step": 2, "mechanism": "question:M06-S2-Q2" }
+      ],
+      "manipulation": "EvolutionChain affiche, dans son bloc bilan, DEUX nombres côte à côte : l'évolution globale calculée (k − 1) et, en dessous, « Somme des taux annoncés : … — un nombre qui ne décrit pas cette chaîne ». La consigne de l'étape 1 est une CHASSE : « cherche un cas où ils sont égaux ». La gate est exigeante et bien pensée : trois chaînes ET au moins une avec un taux nul, c'est-à-dire que l'élève doit trouver lui-même le SEUL cas de coïncidence.",
+      "assessmentQuestionIds": ["ev-e3", "ev-e4", "ev-e5"],
+      "knowledgeItems": ["taux-global", "coefficient-global", "somme-jamais"],
+      "notes": "La gate `seen.size >= 3 && hasZero` est un vrai geste de recherche mathématique : l'élève ne valide qu'après avoir isolé la condition d'égalité (un taux nul, donc une seule évolution réelle). C'est bien plus fort qu'un compteur d'essais. La brique taux-global suit ce constat, puis somme-jamais est posée à l'étape 2 APRÈS que +3 % (somme) et +2,6 % (réel) se sont écartés sur un cas chiffré — l'ordre source est correct partout. La BatchChoiceQuestion de l'étape 3 est excellente : g3 (−10 % deux fois → −19 %, vérifié) attaque le côté baisse, et g4 (+100 % puis −50 % → 0 %, vérifié) est le contre-exemple qui empêche de retenir « ça ne revient jamais au départ » comme une règle. Le boss l'éprouve trois fois.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_evolutions-successives-reciproques-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 1, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 2, "mechanism": "manipulation:EvolutionChain" },
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 4, "mechanism": "question:M01-S4 (pourquoi ça ne s'annule pas)" },
+        { "module": 1, "moduleSlug": "le-prix-du-velo", "step": 4, "mechanism": "brick:mem-ne-sannule-pas" },
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 1, "mechanism": "brick:taux-global" },
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 2, "mechanism": "brick:somme-jamais" },
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 4, "mechanism": "question:M03-S4 (−30 % puis −30 %)" }
+      ],
+      "manipulation": "Deux gestes distincts portent ce LP. Au module 1 étape 2, l'élève teste trois couples de taux opposés (±10, ±25, ±50) sur une chaîne verrouillée et constate que le manque EXISTE TOUJOURS et qu'il GRANDIT avec le taux — ce n'est donc pas un accident. Au module 3 étape 1, le bloc bilan affiche la somme des taux à côté du taux global, sur des chaînes libres.",
+      "assessmentQuestionIds": ["ev-e2", "ev-e4", "ev-e10"],
+      "knowledgeItems": ["base-mouvante", "mem-ne-sannule-pas", "somme-jamais"],
+      "notes": "Le LP le mieux servi de la leçon, parce qu'il est attaqué par trois angles successifs : le phénomène (module 1 étape 1), sa généralité (étape 2 : trois taux, toujours une perte), sa CAUSE (étape 4 : la question demande POURQUOI, et la bonne réponse nomme la base mouvante). La question M01-S4 n'est pas devinable de son énoncé : les trois distracteurs sont des explications plausibles et fausses (« une baisse compte plus qu'une hausse », « il faudrait faire la baisse d'abord ») que les étapes 2 et 3 ont préalablement réfutées par l'expérience. La question M03-S4 (−30 % puis −30 % ≠ −60 %) est le cas commercial réel : 0,70 × 0,70 = 0,49, vérifié. Le boss l'éprouve trois fois, dont ev-e10 qui demande une conclusion SANS montants (1,10 × 0,90 = 0,99, vérifié).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_evolutions-successives-reciproques-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 1, "mechanism": "manipulation:ReciprocalFinder" },
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 1, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 1, "mechanism": "brick:evolution-reciproque" },
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 3, "mechanism": "question:M04-S3 (annuler −50 %)" },
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 3, "mechanism": "brick:mem-inverse-pas-oppose" },
+        { "module": 6, "moduleSlug": "atelier-lire-les-evolutions", "step": 3, "mechanism": "question:M06-S3-Q1" }
+      ],
+      "manipulation": "ReciprocalFinder — la première évolution est imposée, l'élève glisse la SECONDE (pas de 1 %, de −60 % à +110 %) et vise le retour exact au prix de départ. Un segment ROUGE matérialise l'écart et se referme ; un point passe au vert et affiche « ✓ au départ ». Le produit k₁ × k₂ est écrit en permanence avec la mention « — il faut exactement 1 ». Le composant dit même explicitement, tant que la cible n'est pas atteinte : « l'opposé du premier taux (−25 %) ne ramène pas au départ : essaie ». L'étape exige de résoudre les DEUX cas — annuler une hausse (+25 % → −20 %) ET annuler une baisse (−20 % → +25 %).",
+      "assessmentQuestionIds": ["ev-e6", "ev-e9"],
+      "knowledgeItems": ["evolution-reciproque", "formule-taux-reciproque", "mem-inverse-pas-oppose"],
+      "notes": "Le meilleur laboratoire des quatre leçons du lot. L'élève commence NÉCESSAIREMENT par l'opposé (l'état initial de `second` est −0,25 pour le cas 'up' et +0,20 pour le cas 'down', c'est-à-dire l'erreur exacte) et VOIT l'écart rouge subsister avant de chercher. La règle k' = 1/k est ensuite la RAISON d'un fait qu'il a établi, jamais une consigne préalable. Les deux cas sont imposés pour interdire la fausse généralisation « le réciproque est plus petit ». Le pas de 1 % rend les deux cibles atteignables exactement (−20 % et +25 %, vérifiés : 1/1,25 = 0,80 et 1/0,80 = 1,25). L'étape 3 pousse au cas spectaculaire : annuler −50 % demande +100 %, et l'explainFor réfute d'abord la réponse 50 % par le calcul (0,5 × 1,5 = 0,75, vérifié). Le boss ev-e6 rejoue +25 % → −20 % avec le distracteur −25 % dont l'explication montre qu'il donne 0,9375, pas 1.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_evolutions-successives-reciproques-2nde_P6": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 1, "mechanism": "manipulation:ReciprocalFinder" },
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 1, "mechanism": "brick:evolution-reciproque" },
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 2, "mechanism": "question:M04-S2 (×1,6 → k' = ?)" },
+        { "module": 4, "moduleSlug": "revenir-au-depart", "step": 2, "mechanism": "brick:formule-taux-reciproque" },
+        { "module": 5, "moduleSlug": "retrouver-la-valeur-initiale", "step": 2, "mechanism": "question:M05-S2" }
+      ],
+      "manipulation": "Le même ReciprocalFinder : quand la cible est atteinte, l'encadré vert écrit l'identité que l'élève vient de fabriquer — « ×0,800 = 1 ÷ 1,25 ». Le coefficient réciproque n'est donc pas défini, il est LU sur le résultat du geste.",
+      "assessmentQuestionIds": ["ev-e7"],
+      "knowledgeItems": ["evolution-reciproque", "formule-taux-reciproque"],
+      "notes": "La question M04-S2 travaille sur un coefficient qui n'est PAS celui du laboratoire (1,6 au lieu de 1,25) et dont l'inverse n'est pas un nombre familier : 1 ÷ 1,6 = 0,625, soit −37,5 % (vérifié). Les distracteurs encodent les trois fautes réelles : 0,4 (= 1 − 0,6, le complément à 1 au lieu de l'inverse), −1,6 (un coefficient négatif) et 1,6 (l'identité). La brique formule-taux-reciproque est posée APRÈS ce calcul et enchaîne les deux pas k → k' → t' en une écriture, avant l'étape 3 qui les réclame. Le boss ev-e7 rejoue dans l'autre sens (×0,8 → 1,25, vérifié) avec le distracteur 1,2 dont l'explication montre qu'il donne 0,96.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_evolutions-successives-reciproques-2nde_P7": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 6, "moduleSlug": "atelier-lire-les-evolutions", "step": 1, "mechanism": "brick:methode-choisir-operation" },
+        { "module": 6, "moduleSlug": "atelier-lire-les-evolutions", "step": 1, "mechanism": "question:M06-S1-Q1 (« −80 % » est-il correct ?)" },
+        { "module": 6, "moduleSlug": "atelier-lire-les-evolutions", "step": 2, "mechanism": "question:M06-S2-Q1 (sans calculer précisément…)" },
+        { "module": 6, "moduleSlug": "atelier-lire-les-evolutions", "step": 3, "mechanism": "question:M06-S3-Q1 (quelle opération ?)" },
+        { "module": 3, "moduleSlug": "le-taux-global", "step": 4, "mechanism": "question:M03-S4 (le client dit « donc −60 % »)" }
+      ],
+      "manipulation": "AUCUNE. Le module 6 est un practice lab volontairement sans instrument : trois situations textuelles (soldes en deux temps, population sur trois ans, salaire revalorisé) traitées par questions. Les gestes porteurs sont ceux des modules 1 à 4, réinvestis ici.",
+      "assessmentQuestionIds": ["ev-e10"],
+      "knowledgeItems": ["methode-choisir-operation", "somme-jamais", "coefficient-global"],
+      "notes": "PARTIELLEMENT couvert. L'interprétation est réellement travaillée — la question M06-S2-Q1 est même la plus exigeante de la leçon : elle demande de conclure SANS calculer précisément (« un peu supérieure à 12 000, car la compensation +5/−5 est légèrement négative »), ce qui est le vrai geste d'interprétation d'un ordre de grandeur. Le boss ev-e10 (« le CA a baissé de 10 % après une hausse de 10 % ») est du même calibre et sa bonne réponse quantifie l'écart sans montants. MAIS deux réserves. (1) La brique methode-choisir-operation est posée sans geste, sur du texte, en tête de la première situation. (2) Surtout, l'intitulé du LP est « interpréter une évolution DANS SON CONTEXTE » et le contexte reste toujours le même registre — prix, population, salaire —, toujours arithmétique, jamais critique : à aucun moment l'élève n'a à dire ce qu'une évolution ne permet PAS de conclure, ni à repérer une formulation trompeuse au-delà de l'erreur de somme. La facette « interpréter » est donc traitée comme « choisir la bonne opération », ce qui est moins que l'intitulé.",
+      "crossGrade": { "overlapsWith": ["2de:proportions-pourcentages-2nde"], "kind": "consolidation" },
+      "confidence": "medium"
+    },
+    "seconde_evolutions-successives-reciproques-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "retrouver-la-valeur-initiale", "step": 1, "mechanism": "brick:retrouver-valeur-initiale" },
+        { "module": 5, "moduleSlug": "retrouver-la-valeur-initiale", "step": 1, "mechanism": "question:M05-S1 (96 € après −20 %)" },
+        { "module": 5, "moduleSlug": "retrouver-la-valeur-initiale", "step": 1, "mechanism": "brick:verification-systematique" },
+        { "module": 5, "moduleSlug": "retrouver-la-valeur-initiale", "step": 2, "mechanism": "question:M05-S2 (pourquoi pas +20 % ?)" },
+        { "module": 5, "moduleSlug": "retrouver-la-valeur-initiale", "step": 3, "mechanism": "question:M05-S3 (8 800 ÷ 0,88)" },
+        { "module": 6, "moduleSlug": "atelier-lire-les-evolutions", "step": 3, "mechanism": "question:M06-S3-Q2" }
+      ],
+      "manipulation": "AUCUNE au module 5, et c'est un choix argumenté en tête de fichier (INTERACTION_PEDAGOGY §6bis.2) : le geste qui donne du sens a déjà été fait au module 4 — refermer l'écart en multipliant par l'inverse —, et remonter une chaîne est le MÊME geste écrit comme une division. La brique retrouver-valeur-initiale le dit explicitement en s'appuyant sur le module 4.",
+      "assessmentQuestionIds": ["ev-e8", "ev-e9"],
+      "knowledgeItems": ["retrouver-valeur-initiale", "verification-systematique", "methode-choisir-operation"],
+      "notes": "Le module est court mais il vise juste : l'erreur ciblée (appliquer le taux au prix FINAL) est traitée trois fois de suite et de trois façons. D'abord par un explainFor branché sur 115,20 € (= 96 × 1,20, vérifié) ; puis par une question dédiée dont la bonne réponse est « les deux affirmations précédentes disent la même chose et sont justes » — une construction rare qui force à voir que « ajouter 25 % » et « diviser par 0,8 » sont la même opération (1/0,8 = 1,25, vérifié) ; enfin sur une chaîne à deux maillons où il faut composer AVANT de diviser (8 800 ÷ (1,10 × 0,80) = 10 000, vérifié, avec vérification 10 000 → 11 000 → 8 800). La brique verification-systematique installe le contrôle par multiplication, qui est le bon réflexe. Le boss ev-e8 (45 ÷ 0,75 = 60, vérifié) porte le distracteur 56,25 € = 45 × 1,25, l'erreur exacte, et ev-e9 est un joli piège : la chaîne +25 % puis −20 % a un coefficient global de 1 (vérifié), donc la réponse est la valeur finale elle-même.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "officialScopeNotCovered": [],
+    "pedagogicalProblems": [
+      "P7 (« Interpréter une évolution dans son contexte ») est réduit à « choisir la bonne opération ». Les trois situations du module 6 sont toutes des exercices de calcul déguisés : identifier s'il faut composer, inverser ou remonter. Aucune ne demande ce qu'une évolution NE PERMET PAS de conclure, aucune ne confronte une formulation médiatique honnête à une formulation trompeuse — alors que la leçon jumelle (proportions-pourcentages-2nde) fait exactement cela, très bien, avec son module 4 étape 2. C'est le seul LP de la leçon qui n'atteint pas COVERED.",
+      "Le module 5 n'a AUCUNE manipulation et ses deux briques (retrouver-valeur-initiale, verification-systematique) sont posées sur du texte. Le raisonnement du fichier est solide (« ne pas ajouter une manipulation qui ne révèle rien de neuf ») et le geste du module 4 porte réellement l'inverse — le LP reste couvert —, mais il en résulte que la moitié du parcours (modules 5 et 6, soit 19 minutes sur 70) est purement textuelle. Un ReciprocalFinder inversé, où l'élève chercherait la valeur de DÉPART au curseur jusqu'à ce que l'arrivée coïncide avec 96 €, coûterait peu et rétablirait l'équilibre.",
+      "La brique methode-choisir-operation (module 6, étape 1) est posée sans geste préalable, en tête de la première situation, comme un sommaire des modules précédents. Même remarque que dans la leçon jumelle : c'est acceptable en practice_lab, mais ce n'est pas « geste → brique ».",
+      "Le module 1 étapes 2 et 3 rendent EvolutionChain avec `editable={false}` : l'élève choisit un couple de taux par un bouton, puis regarde. Le geste est un CLIC sur un couple prédéfini, pas un réglage — c'est nettement plus pauvre que l'étape 1, où il glisse les deux curseurs. La conclusion de l'étape 2 (« ±10 % laisse 99 €, ±25 % laisse 93,75 €, ±50 % laisse 75 € ») est donnée dans le feedback, y compris pour le couple que l'élève n'a PAS testé (la gate n'en exige que deux sur trois) : on lui affirme un résultat qu'il n'a pas vu."
+    ],
+    "technicalProblems": [
+      "AUCUNE ERREUR ARITHMÉTIQUE. Cette leçon n'a ni data.js ni fichier de test : tous les nombres de ses modules et de son boss sont écrits à la main. Tous ont été recalculés et tous sont exacts. Détail : M01 1,20 × 0,80 = 0,96 → 96 € ; 0,99 → 99 € ; 0,9375 → 93,75 € ; 0,75 → 75 € ; les deux ordres donnent bien 120 puis 96, ou 80 puis 96. M02 1,10 × 1,05 × 1,02 = 1,1781 (arrondi 1,178) et la somme 1,17 ; 1,50 × 0,60 = 0,90. M03 1,08 × 0,95 = 1,026 → +2,6 % et la somme +3 % ; 1,1 × 1,1 = 1,21 → +21 % ; 1,2 × 0,8 = 0,96 → −4 % ; 0,9 × 0,9 = 0,81 → −19 % ; 2 × 0,5 = 1 → 0 % ; 0,70 × 0,70 = 0,49 → −51 %. M04 1 ÷ 1,25 = 0,80 ; 1 ÷ 0,80 = 1,25 ; 1 ÷ 1,6 = 0,625 → −37,5 % ; 1,25 × 0,75 = 0,9375 ; 0,5 × 1,5 = 0,75 ; 1 ÷ 0,5 = 2 → +100 %. M05 96 ÷ 0,80 = 120 et 96 × 1,20 = 115,20 ; 1,10 × 0,80 = 0,88 et 8 800 ÷ 0,88 = 10 000. M06 0,70 × 0,50 = 0,35 → −65 % et 200 × 0,35 = 70 € ; 1,05 × 0,95 = 0,9975 puis × 1,02 = 1,01745 et 12 000 × 1,01745 = 12 209,4 ; 2 080 ÷ 1,04 = 2 000 et 2 080 × 0,96 = 1 996,80. BOSS 1,1 × 1,2 = 1,32 ; 250 × 0,96 = 240 ; 1,15 × 0,90 = 1,035 → +3,5 % ; 0,7² = 0,49 → −51 % ; 1,02 × 1,03 × 0,99 = 1,040094 ; 1/1,25 = 0,8 ; 1/0,8 = 1,25 et 0,8 × 1,2 = 0,96 ; 45 ÷ 0,75 = 60 et 45 × 1,25 = 56,25 ; 1,25 × 0,80 = 1 ; 1,10 × 0,90 = 0,99.",
+      "AUCUN GEL DE LABORATOIRE. Les deux seuls `disabled` de la leçon (Module01LePrixDuVelo.jsx:84, Module04RevenirAuDepart.jsx:62) portent sur des PredictionChips, ce qui est le comportement voulu — une prédiction se fige une fois posée. EvolutionChain et ReciprocalFinder documentent tous deux la règle « jamais figé après validation » et la respectent : les curseurs restent vivants après la gate, et les feedbacks invitent explicitement à continuer.",
+      "ev-e5 est une question DÉFECTUEUSE : la bonne réponse est 1,0400 et la faute visée (additionner les taux : 2 + 3 − 1 = 4 %, soit 1,04) donne EXACTEMENT le même nombre à quatre décimales — l'explication l'admet elle-même (« la somme des taux est ici très proche, parce que les taux sont petits »). Un élève qui commet la faute que le distracteur est censé détecter obtient la bonne réponse. Vérifié : 1,02 × 1,03 × 0,99 = 1,040094, et 1 + 0,04 = 1,04. La question ne mesure donc PAS la compétence qu'elle déclare (P2/P3) ; il faut soit changer les taux pour écarter les deux valeurs (par exemple +20 %, +30 %, −10 % : produit 1,404 contre somme 1,40 — encore trop proche ; +50 %, +40 %, −20 % : produit 1,68 contre somme 1,70), soit demander une précision qui sépare (« au dix-millième »), soit retirer l'épreuve.",
+      "M03 étape 4, formulation contradictoire dans l'`explain` : « il reste 49 % du prix, donc la remise totale est de 51 %. Elle est plus avantageuse que 51 %… mais moins que les 60 % annoncés ». La phrase « plus avantageuse que 51 % » n'a pas de sens — la remise VAUT 51 %. La suite (« moins que les 60 % annoncés ») est juste. Vraisemblablement un reste de rédaction ; à corriger en « Elle est réelle — 51 % — mais inférieure aux 60 % annoncés par le client ».",
+      "M05 étape 3, distracteur mal ciblé : l'explainFor branche sur 8 888,89 avec le message « tu n'as remonté qu'une seule des deux évolutions ». Or 8 800 ÷ 1,10 = 8 000 et 8 800 ÷ 0,80 = 11 000 : aucune remontée partielle ne donne 8 888,89 (qui est 8 800 ÷ 0,99). Le message est donc attaché à une valeur qu'aucun raisonnement plausible ne produit. Les branches 7 744 (= 8 800 × 0,88, vérifié) et 9 680 sont, elles, correctes.",
+      "Module02LesCoefficientsSeMultiplient.jsx:6 importe `formatNumber` et `globalCoefficient` sans les utiliser (le composant EvolutionChain les emploie en interne). Import mort, sans conséquence fonctionnelle.",
+      "L'étape 2 du module 1 valide à `triedPairs.size >= 2` alors que trois couples sont proposés, mais son feedback affirme les trois résultats. Voir pedagogicalProblems : soit exiger les trois, soit n'affirmer que ce qui a été vu."
+    ],
+    "duplicates": [
+      "AVEC proportions-pourcentages-2nde — recouvrement VOULU et proprement borné, dans les deux sens. Cette leçon suppose k = 1 + t acquis, le met en priorKnowledge et le DIAGNOSTIQUE (ev-d1 : +20 % → ×1,2 ; ev-d2 : −20 % → ×0,8 ; ev-d3 : ×1,05 → +5 %) au lieu de le réenseigner : aucune brique de la carte ne redéfinit le coefficient d'une seule évolution. Réciproquement, la leçon amont exclut nommément « évolutions successives, coefficient global, évolution réciproque » et son module 5 annonce cette leçon-ci par son nom. Le découpage est le plus propre du chapitre. Pas de duplication.",
+      "AVEC les autres leçons de statistiques du chapitre (statistiques-une-variable, series-regroupees, boites-a-moustaches) — aucun recouvrement : ce sont des univers disjoints (évolution d'une grandeur dans le temps contre description d'une distribution). Le seul point de contact possible serait le taux d'évolution d'un indicateur, qu'aucune des deux ne traite.",
+      "AVEC 3e/proportionnalite-3e — le coefficient de proportionnalité et les problèmes de pourcentage du collège sont supposés et diagnostiqués (ev-d1 à ev-d5). Le collège ne pose JAMAIS le produit de deux coefficients d'évolution ni l'évolution réciproque : la matière de cette leçon est intégralement neuve. Aucun doublon vertical."
+    ],
+    "recommendations": [
+      "Réparer ou retirer ev-e5 : c'est le seul défaut sérieux de la leçon. Un distracteur qui vaut la bonne réponse ne mesure rien. Suggestion : « +50 %, puis +40 %, puis −20 % » (produit 1,68 ; somme 1,70) rend les deux visiblement distincts.",
+      "Ajouter au module 6 une quatrième situation d'interprétation CRITIQUE — par exemple deux titres décrivant la même chaîne, l'un exact, l'autre trompeur, à départager —, pour que P7 mesure « interpréter » et non « choisir l'opération ».",
+      "Corriger la phrase « Elle est plus avantageuse que 51 % » (Module03LeTauxGlobal.jsx, étape 4, explain).",
+      "Corriger la branche 8 888,89 de l'explainFor du module 5 étape 3, qui ne correspond à aucune faute plausible (les remontées partielles donnent 8 000 ou 11 000).",
+      "Exiger les TROIS couples à l'étape 2 du module 1 (`triedPairs.size >= 3`), puisque le feedback affirme les trois résultats — ou ne commenter que les couples réellement testés.",
+      "Envisager une manipulation au module 5 : le même ReciprocalFinder avec la valeur de DÉPART comme curseur et l'arrivée à atteindre fixée à 96 €. Cela rendrait la division « visible » et supprimerait le seul bloc entièrement textuel de la leçon."
+    ],
+    "verticalPositioning": {
+      "revised": "Le coefficient multiplicateur d'UNE évolution, k = 1 + t, installé par proportions-pourcentages-2nde et diagnostiqué ici trois fois (ev-d1, ev-d2, ev-d3) ; le taux d'évolution (V_f − V_i)/V_i, diagnostiqué par ev-d4 ; le pourcentage et la proportionnalité du collège (5e, 3e/proportionnalite-3e : « Résoudre des problèmes de pourcentages ») ; l'arrondi de 6e, dont trois questions font un usage explicite (« au millième », « au dixième », « à l'unité »).",
+      "extended": "L'évolution unique du collège et de la leçon précédente devient une CHAÎNE. Le coefficient cesse d'être un nombre qu'on applique une fois pour devenir un objet qui se COMPOSE — et c'est l'entrée, encore implicite, dans la structure multiplicative : produit, élément neutre (k = 1), inverse. Le pied du module 4 le dit presque : « diviser par un coefficient, c'est multiplier par son inverse ».",
+      "new": "Le coefficient global comme PRODUIT des coefficients, et l'indépendance à l'ordre qui en découle ; le taux global t = k_global − 1 et le fait, contre-intuitif et jamais rencontré au collège, que les taux ne s'additionnent pas ; l'ÉVOLUTION RÉCIPROQUE k' = 1/k, notion entièrement neuve dont l'obstacle (le réciproque n'est pas l'opposé) est le cœur de la leçon ; et la remontée d'une chaîne, V_i = V_f ÷ k_global.",
+      "formalized": "Ce que le collège traitait comme des applications successives de recettes (« calcule le prix après la première remise, puis après la seconde ») devient un calcul unique par un coefficient global — un gain d'économie de pensée, pas seulement de technique. L'égalité k × k' = 1 formalise l'idée d'« annuler », qui restait au collège une manipulation d'énoncé (« refaire le chemin à l'envers »). Et la BASE MOUVANTE — le fait qu'un pourcentage porte toujours sur la valeur courante — devient un objet nommé (brique base-mouvante) alors qu'elle n'était au collège qu'une source d'erreurs silencieuses.",
+      "tool": "La leçon fournit l'OUTIL CHAÎNE DE COEFFICIENTS, dont dépendent directement les indices base 100, les taux d'intérêt composés, l'inflation, et — en première — les suites géométriques, dont k_global = k₁ × k₂ × … est exactement le terme général quand les taux sont égaux. Le teachingScope l'annonce en excluant nommément « taux moyen avec racine n-ième, suites géométriques (programme de première) » : la frontière est tracée là où la 2de s'arrête. Elle réutilise le coefficient de proportions-pourcentages-2nde et prépare tout le calcul financier."
+    }
+  }
+}

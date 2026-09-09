@@ -1,0 +1,275 @@
+{
+  "lesson": "fonctions-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-fonctions-batch",
+  "learningPoints": {
+    "seconde_fonctions-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "la-boite", "step": 1, "mechanism": "manipulation:BoxLab" },
+        { "module": 1, "moduleSlug": "la-boite", "step": 1, "mechanism": "brick:fonction-dependance" },
+        { "module": 1, "moduleSlug": "la-boite", "step": 2, "mechanism": "manipulation:BoxLab" },
+        { "module": 1, "moduleSlug": "la-boite", "step": 2, "mechanism": "brick:mem-un-x-une-valeur" },
+        { "module": 1, "moduleSlug": "la-boite", "step": 4, "mechanism": "question:M01-S4-Q1" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e1" }
+      ],
+      "manipulation": "BoxLab — une feuille carrée de 20 cm, une glissière x (0 → 10, pas 0,5) ; le patron se rogne, la boîte se replie en perspective, le volume est CALCULÉ (boxVolume) et jamais saisi. Le bouton « Enregistrer » se désactive sur une découpe déjà posée (« Déjà enregistrée ») : c'est ce refus, et non un texte, qui fait vivre « une découpe, un volume, toujours le même ». L'étape 1 n'est validée qu'après trois boîtes différentes.",
+      "assessmentQuestionIds": ["fo-e1"],
+      "knowledgeItems": ["fonction-dependance", "vocab-variable", "mem-un-x-une-valeur"],
+      "notes": "L'ordre geste → nom → demande est respecté à la lettre : le mot « fonction » n'apparaît nulle part avant la brique fonction-dependance, posée à l'étape 1 sous condition done1, c'est-à-dire APRÈS trois enregistrements. Le lead de la brique cite le geste (« tu l'as peut-être remarqué en essayant d'enregistrer deux fois la même découpe »), donc la brique est bien la consigne d'un constat, pas une définition parachutée. Aucune formule n'est montrée dans tout le module : la dépendance existe avant sa règle, ce qui attaque frontalement la misconception « une fonction c'est une formule ». La PredictionChips (« quelle découpe donne le plus grand volume ? ») est recueillie sans verdict et l'étape 2 tranche : V(5) = 500 < V(3) = 588, la meilleure de la grille est x = 3,5 (591,5 cm³) — vérifié numériquement, et bestBoxOnGrid(0,5) = {x: 3,5 ; v: 591,5} est verrouillé par un test. L'épreuve fo-e1 n'est pas devinable : son distracteur « Chaque volume vient d'une seule découpe » est exactement la réciproque fausse que la manipulation a réfutée (400 cm³ vient de deux découpes).",
+      "crossGrade": { "overlapsWith": ["3e:fonctions-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "la-boite", "step": 3, "mechanism": "manipulation:BoxLab" },
+        { "module": 1, "moduleSlug": "la-boite", "step": 3, "mechanism": "brick:vocab-variable" },
+        { "module": 1, "moduleSlug": "la-boite", "step": 4, "mechanism": "question:M01-S4-Q1" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 2, "mechanism": "brick:methode-modeliser" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 2, "mechanism": "question:M05-S2-Q2" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e8" }
+      ],
+      "manipulation": "BoxLab avec showGraph : chaque boîte enregistrée devient un point (x ; V) sur le repère, et un curseur pointillé marque la découpe réglée. L'étape 3 exige six points avant de poser le nom « variable » sur le nombre que l'élève règle depuis dix minutes.",
+      "assessmentQuestionIds": ["fo-e1", "fo-e8"],
+      "knowledgeItems": ["vocab-variable", "fonction-dependance", "methode-modeliser"],
+      "notes": "Le mot « variable » est déposé au moment exact où le geste l'a rendu nécessaire : la brique vocab-variable arrive à l'étape 3, et son lead désigne le geste (« ce nombre x que tu règles à la glissière porte un nom »). La compétence est réellement éprouvée ailleurs qu'au module 1 : au module 5 étape 2, l'élève doit CHOISIR la variable dans une situation neuve (un rectangle de largeur x et de longueur 5) avant d'écrire P(x) = 2x + 10 — le distracteur 5x est l'aire, x + 5 le demi-périmètre. Le boss fo-e8 rejoue le choix sur un carré de côté x (A(x) = x² et P(x) = 4x), avec un distracteur qui échange les deux. Réserve : « identifier la variable » n'est jamais éprouvé sur une situation à DEUX grandeurs candidates où le choix serait contestable ; la variable est toujours désignée par l'énoncé (« largeur x », « côté x »).",
+      "crossGrade": { "overlapsWith": ["3e:modelisation-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "la-boite", "step": 1, "mechanism": "manipulation:BoxLab" },
+        { "module": 1, "moduleSlug": "la-boite", "step": 4, "mechanism": "question:M01-S4-Q1" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 3, "mechanism": "brick:rappel-intervalle" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 3, "mechanism": "brick:ensemble-definition" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 3, "mechanism": "question:M02-S3-Q1" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 1, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 1, "mechanism": "brick:reunion-intervalles" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e2" }
+      ],
+      "manipulation": "Deux gestes portent la notion, et aucun n'est un texte. (1) BoxLab au module 1 : à x = 0 et à x = 10 le bandeau bascule sur « rien découpé : pas de boîte (hauteur 0) » / « tout découpé : pas de boîte (fond 0) », et Box3D ne dessine plus rien (boxExists renvoie false) — l'élève VOIT les bornes cesser d'exister avant de savoir qu'on les exclut. (2) FunctionProbe au module 6 : la sonde verticale amenée entre 12 h et 14 h affiche « aucune image — 13 n'est pas dans l'ensemble de définition [8 ; 12] ∪ [14 ; 20] », le texte étant DÉRIVÉ de inDomain, donc incapable de contredire le dessin.",
+      "assessmentQuestionIds": ["fo-e2", "fo-e9"],
+      "knowledgeItems": ["ensemble-definition", "rappel-intervalle", "reunion-intervalles", "vocab-union-intervalles"],
+      "notes": "OUI, l'ensemble de définition est enseigné comme NOTION et non asserté — c'était le point à vérifier. Le cas où D_f ≠ ℝ est fourni par la situation elle-même (la contrainte de la boîte) et non par un interdit algébrique : 0 < x < 10 parce qu'au-delà il n'y a plus de feuille à plier. La brique ensemble-definition contient explicitement la mise en garde décisive (« Qu'une formule « calcule » pour x = 12 ne suffit pas : s'il n'y a pas de boîte, 12 n'a pas d'image ») et elle est posée AVANT la TapQuestion M02-S3-Q1 qu'elle sert — l'ordre source est correct. Le titre de l'étape 3 a été délibérément dénommé (« Quelles découpes ont une image ? » et non « L'ensemble de définition ») pour ne pas livrer le mot pendant que l'étape est encore verrouillée : c'est un soin rare. Le module 6 fournit le second cas non trivial, la réunion d'intervalles. Le boss fo-e2 change de feuille (20 cm mais découpe aux quatre coins ⟹ ]0 ; 10[) avec les trois distracteurs qui sont les trois erreurs réelles : bornes fermées, feuille entière, ℝ.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 1, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 1, "mechanism": "brick:image-antecedent" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 2, "mechanism": "brick:vocab-notation-fx" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 1, "mechanism": "manipulation:ValueTable" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 2, "mechanism": "brick:methode-calculer-image" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 2, "mechanism": "question:M03-S2-Q2" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 2, "mechanism": "question:M03-S2-Q3" },
+        { "module": 7, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "question:M07-S1-Q2" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e3" }
+      ],
+      "manipulation": "FunctionProbe en mode « x » (module 2 étape 1) : un guide vertical glissé jusqu'à x = 2 ; un seul point s'allume et le DOM écrit « V(2) = 512 — c'est le point (2 ; 512) ». Puis ValueTable au module 3 étape 1 : l'élève TESTE au moins trois valeurs de x et compare trois formules candidates à la « machine » du module 1 ; une seule colonne coïncide partout, x(20 − 2x)².",
+      "assessmentQuestionIds": ["fo-e3", "fo-e10"],
+      "knowledgeItems": ["methode-calculer-image", "image-antecedent", "vocab-notation-fx", "tableau-valeurs"],
+      "notes": "Les deux voies (graphique puis calculatoire) sont manipulées avant d'être demandées. L'étape 1 du module 3 est un vrai geste épistémique et pas un exercice : elle exige TROIS valeurs testées, et le retour dit pourquoi (« une coïncidence sur une seule ligne ne prouve rien »). Les deux NumericQuestion de l'étape 2 vont au-delà du cas facile : g(2) = 7 et surtout g(−1) = −2 (vérifiés), avec des explainFor qui nomment les deux fautes exactes — 31 pour (3 × 2)² et −8 pour 3 × (−1) − 5, c'est-à-dire le carré appliqué au produit et le carré oublié sur un négatif. Le boss fo-e3 (g(−2) = 5, vérifié) reprend les mêmes pièges avec −11 et 13. Le module 7 rejoue le calcul sur une feuille de 30 cm : V(5) = 5 × 20² = 2 000 cm³, vérifié, avec le distracteur 3 125 qui est l'erreur « 30 − x » au lieu de « 30 − 2x ».",
+      "crossGrade": { "overlapsWith": ["3e:fonctions-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 2, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 2, "mechanism": "brick:methode-lire-antecedents-graphique" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 4, "mechanism": "question:M02-S4-Q2" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 4, "mechanism": "brick:regle-antecedent-equation" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 4, "mechanism": "question:M03-S4-Q5" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 2, "mechanism": "question:M05-S2-Q3" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e4" }
+      ],
+      "manipulation": "FunctionProbe basculé en mode « y » : le guide devient horizontal, et à V = 400 DEUX points s'allument d'un coup. Le readout est dérivé d'antecedentsOf : « la valeur 400 cm³ est atteinte 2 fois : pour x ≈ 1,3 et x ≈ 5,9 ». La dissymétrie est encodée dans les types du modèle (imageOf → un nombre ou null ; antecedentsOf → une liste), donc le texte ne peut structurellement pas contredire le dessin.",
+      "assessmentQuestionIds": ["fo-e4", "fo-e5", "fo-e6"],
+      "knowledgeItems": ["methode-lire-antecedents-graphique", "regle-antecedent-equation", "image-antecedent"],
+      "notes": "Le meilleur enchaînement de la leçon avec P1. La misconception centrale — image et antécédent symétriques — est attaquée par le GESTE (la sonde verticale touche une fois, l'horizontale deux fois) puis par une BatchChoiceQuestion dédiée à l'étape 4 dont chaque ligne isole une facette (588 est l'image de 3 ; les deux solutions de V(x) = 400 sont des antécédents ; V(12) n'existe pas ; 3 n'a qu'une image). Le module 3 étape 4 ajoute la voie exacte : « chercher l'antécédent de 11, c'est résoudre f(x) = 11 » — 2x + 3 = 11 donne x = 4 (vérifié), et l'explainFor traite explicitement le piège 25 = f(11), c'est-à-dire l'inversion. Le boss fo-e4 (3x − 4 = 11 → x = 5, vérifié) garde le même distracteur 29 = f(11). Réserve mineure : la résolution reste toujours du premier degré ; aucun antécédent n'est jamais cherché par le calcul sur une expression du second degré (V(x) = 400 n'est résolu que graphiquement), ce qui est cohérent avec le périmètre de la 2de mais laisse la voie exacte plus étroite que la voie graphique.",
+      "crossGrade": { "overlapsWith": ["3e:fonctions-3e", "3e:lecture-graphique-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P6": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 1, "mechanism": "manipulation:ValueTable" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 3, "mechanism": "brick:tableau-valeurs" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 3, "mechanism": "question:M03-S3-Q4" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e5" }
+      ],
+      "manipulation": "ValueTable (composant partagé) à l'étape 1 : l'élève touche une valeur de x et les quatre colonnes se calculent — la machine du module 1 et les trois formules candidates. Le tableau est donc d'abord un INSTRUMENT de départage avant d'être un objet à lire ; la brique tableau-valeurs, à l'étape 3, s'appuie explicitement là-dessus (« tu viens de t'en servir pour départager trois formules »).",
+      "assessmentQuestionIds": ["fo-e5"],
+      "knowledgeItems": ["tableau-valeurs", "image-antecedent"],
+      "notes": "Ce qui fait de ce LP un COVERED et non un simple exercice de lecture, c'est que la leçon enseigne les SILENCES du tableau autant que ses réponses. Les quatre lignes de M03-S3-Q4 sont construites pour cela : h(2) se lit, les antécédents de 2 sont DEUX (−1 et 1, sur le tableau h(x) = x² + 1 des données H_TABLE — vérifié : x = −1 → 2 et x = 1 → 2), h(1,5) « le tableau ne le dit pas », et 7 n'a « aucun antécédent MONTRÉ » — la formulation distingue soigneusement l'absence de preuve de la preuve d'absence. Le boss fo-e5 rejoue exactement cette structure sur un tableau neuf (deux antécédents de 1, en 0 et 2) avec « 3 n'a aucun antécédent » et « h(1,5) = 2 » comme distracteurs, qui sont les deux fautes de lecture visées.",
+      "crossGrade": { "overlapsWith": ["3e:fonctions-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 1, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 1, "mechanism": "brick:methode-lire-image-graphique" },
+        { "module": 2, "moduleSlug": "image-antecedent-ensemble-de-definition", "step": 2, "mechanism": "brick:methode-lire-antecedents-graphique" },
+        { "module": 4, "moduleSlug": "du-tableau-a-la-courbe", "step": 1, "mechanism": "manipulation:PlotTable" },
+        { "module": 4, "moduleSlug": "du-tableau-a-la-courbe", "step": 1, "mechanism": "brick:courbe-representative" },
+        { "module": 4, "moduleSlug": "du-tableau-a-la-courbe", "step": 4, "mechanism": "brick:mem-point-sur-courbe" },
+        { "module": 4, "moduleSlug": "du-tableau-a-la-courbe", "step": 4, "mechanism": "question:M04-S4-Q3" },
+        { "module": 7, "moduleSlug": "atelier-modeliser", "step": 3, "mechanism": "question:M07-S3-Q4" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e6" }
+      ],
+      "manipulation": "PlotTable (module 4 étape 1) — l'élève PLACE lui-même les six points (x ; f(x)) de f(x) = x² − 3 : une puce choisit la ligne du tableau, le point se glisse (souris ou clavier) et n'est validé que si abscisse ET ordonnée sont exactes. Les retours intermédiaires distinguent les deux fautes (« l'abscisse du point doit être 3 » vs « l'ordonnée est l'image : f(3) = 6 »), et la courbe n'apparaît qu'une fois les six posés — elle est la récompense du geste. Une trappe de sortie apparaît après 12 déplacements sur la même ligne : jamais de blocage.",
+      "assessmentQuestionIds": ["fo-e6", "fo-e7"],
+      "knowledgeItems": ["methode-lire-image-graphique", "methode-lire-antecedents-graphique", "courbe-representative", "methode-tester-point", "mem-point-sur-courbe"],
+      "notes": "COVERED sans réserve : le LP « lire une fonction sur un graphique » est servi dans les deux sens (image et antécédents), par deux composants différents, et la lecture est REVENDIQUÉE comme approximative (le pied du module 2 le dit : « la courbe répond, mais approximativement (x ≈ 1,3) »), ce qui motive le module 3. Vérifications numériques du module 4 : f(1,5) = −0,75, f(6) = 33, f(3) = 6, f(2,5) = 3,25, f(0) = −3, antécédents de 1 = {−2 ; 2}, aucun antécédent de −5 (le minimum est −3) — toutes exactes. Le boss fo-e6 mesure le point le plus fin de tout le LP : « y = 2 coupe la courbe en trois points » ⟹ 2 a TROIS ANTÉCÉDENTS, avec le distracteur « 2 a trois images » qui est précisément la confusion que la sonde a réfutée.",
+      "crossGrade": { "overlapsWith": ["3e:lecture-graphique-3e", "3e:representation-graphique-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 1, "mechanism": "manipulation:ValueTable" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 1, "mechanism": "question:M03-S1-Q1" },
+        { "module": 3, "moduleSlug": "le-tableau-de-valeurs", "step": 2, "mechanism": "brick:methode-calculer-image" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 4, "mechanism": "manipulation:ValueTable" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 4, "mechanism": "question:M05-S4-Q5" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e3" }
+      ],
+      "manipulation": "Deux ValueTable, aux deux bouts du LP. Au module 3 : trois expressions candidates départagées ligne par ligne. Au module 5 étape 4 : 2x + 10 et 2(x + 5) côte à côte, testées sur au moins trois valeurs — chaque ligne verte est une coïncidence de plus, jusqu'à ce que la question demande si c'est la MÊME fonction.",
+      "assessmentQuestionIds": ["fo-e3", "fo-e4"],
+      "knowledgeItems": ["methode-calculer-image", "quatre-registres", "tableau-valeurs"],
+      "notes": "L'étape 4 du module 5 est la meilleure trouvaille de ce LP : la bonne réponse (« oui, car 2(x + 5) = 2x + 10 en développant ») est ASSORTIE d'un distracteur qui est la demi-vérité expérimentale (« oui, mais seulement pour les x testés »), et le retour tranche en distinguant l'évidence numérique de la preuve littérale (« les lignes vertes le confirment ; le calcul littéral le prouve »). Une fonction est donc définie par ses images et non par l'écriture de sa règle — c'est exactement « lire une fonction à partir d'une expression » pris au sérieux. La distributivité est un acquis de 4e, correctement déclaré en priorKnowledge et diagnostiqué par fo-d5. Réserve : la reconnaissance d'une expression à partir d'une courbe (M05-S1-Q1, trois courbes A/B/C) est un peu devinable de l'allure seule (une parabole, deux droites) sans calculer d'image, même si le retour enseigne la bonne méthode.",
+      "crossGrade": { "overlapsWith": ["3e:fonctions-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P9": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "du-tableau-a-la-courbe", "step": 1, "mechanism": "manipulation:PlotTable" },
+        { "module": 4, "moduleSlug": "du-tableau-a-la-courbe", "step": 1, "mechanism": "brick:methode-tracer-courbe" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 1, "mechanism": "brick:quatre-registres" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 1, "mechanism": "question:M05-S1-Q1" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 3, "mechanism": "brick:methode-choisir-registre" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 3, "mechanism": "question:M05-S3-Q4" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e7" }
+      ],
+      "manipulation": "PlotTable est LE passage de registre incarné : le tableau est à l'écran, l'élève transporte chaque ligne vers le repère de ses mains, et la courbe naît de ce transport. Le module 5 ne manipule plus mais fait jouer les registres l'un contre l'autre.",
+      "assessmentQuestionIds": ["fo-e7", "fo-e8"],
+      "knowledgeItems": ["quatre-registres", "methode-choisir-registre", "methode-tracer-courbe", "courbe-representative"],
+      "notes": "COVERED, avec une nuance sur la COUVERTURE des passages. Les quatre registres sont tous vécus avant d'être nommés (situation M1, tableau M3, courbe M4, expression M3), et la brique quatre-registres les rassemble en ouverture du module 5 — c'est-à-dire après le vécu, avant la première question qui les compare. La question M05-S3-Q4 est excellente et rare : elle n'évalue pas une traduction mais un CHOIX STRATÉGIQUE de registre (calculer f(3,7) exactement → l'expression ; compter les antécédents de 2 → la courbe ; voir où f dépasse 100 → la courbe), ce qui est la vraie compétence du LP. Nuance : sur les douze passages possibles entre quatre registres, la leçon en travaille cinq (tableau→courbe, expression→courbe, situation→expression, expression→tableau, tableau→expression). Le passage courbe→tableau et surtout courbe→expression ne sont jamais demandés à l'élève de produire — M05-S1-Q1 en est la version reconnaissance à QCM, pas la version production.",
+      "crossGrade": { "overlapsWith": ["3e:representation-graphique-3e", "3e:modelisation-3e"], "kind": "consolidation" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P10": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "la-boite", "step": 1, "mechanism": "manipulation:BoxLab" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 2, "mechanism": "brick:methode-modeliser" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 2, "mechanism": "question:M05-S2-Q2" },
+        { "module": 5, "moduleSlug": "quatre-registres", "step": 2, "mechanism": "question:M05-S2-Q3" },
+        { "module": 7, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "brick:methode-verifier-modele" },
+        { "module": 7, "moduleSlug": "atelier-modeliser", "step": 1, "mechanism": "question:M07-S1-Q1" },
+        { "module": 7, "moduleSlug": "atelier-modeliser", "step": 2, "mechanism": "question:M07-S2-Q3" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e8" }
+      ],
+      "manipulation": "Le module 1 EST la modélisation, vécue sans être nommée : une situation matérielle (une feuille, un pliage), une grandeur choisie, une autre qui en dépend — et la formule refusée jusqu'au module 3. La brique methode-modeliser (module 5 étape 2) revient explicitement sur ce vécu (« au module 1, tu as fait le chemin sans le nommer »). Le module 7 est un practice lab sans instrument : le support se retire, trois situations neuves.",
+      "assessmentQuestionIds": ["fo-e2", "fo-e8"],
+      "knowledgeItems": ["methode-modeliser", "methode-verifier-modele", "vocab-variable", "quatre-registres"],
+      "notes": "La modélisation est traitée comme une DÉMARCHE en trois temps et non comme un exercice de mise en équation, et la brique methode-verifier-modele ajoute le geste que les manuels oublient : éprouver l'expression sur une valeur connue et sur l'ensemble où la situation a un sens. Le module 7 varie réellement les situations (géométrique : la feuille de 30 cm ; tarifaire par paliers : le forfait ; graphique : h(x) = −x² + 4) et exige à chaque fois de dire l'ensemble de définition. Vérifications : V₃₀(5) = 2 000 cm³ ; forfait f(5) = 10 + 4 × 3 = 22 € ; antécédent de 18 € = 4 Go ; D = [0 ; 10] ; h(0) = 4, h(3) = −5, h(1) = 3, antécédents de 0 = {−2 ; 2} — toutes exactes. Le boss fo-e8 (A(x) = x², P(x) = 4x) mesure la traduction mais reste facile ; c'est le module 7 qui porte la difficulté réelle, sans être mesuré à l'évaluation à ce niveau de complexité.",
+      "crossGrade": { "overlapsWith": ["3e:modelisation-3e"], "kind": "extension" },
+      "confidence": "high"
+    },
+    "seconde_fonctions-2nde_P11": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 1, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 3, "mechanism": "brick:methode-fonction-par-morceaux" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 3, "mechanism": "question:M06-S3-Q2" },
+        { "module": 7, "moduleSlug": "atelier-modeliser", "step": 2, "mechanism": "question:M07-S2-Q3" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e10" }
+      ],
+      "manipulation": "FunctionProbe sur la piscine, dont le domaine est [8 ; 12] ∪ [14 ; 20]. La ligne r4 de M06-S3-Q2 (« T(12) ? ») fait vivre le cas décisif du LP : 12 est une BORNE FERMÉE, donc 12 a une image — c'est le seul endroit de la leçon où la nature du crochet change la réponse à une question de valeur.",
+      "assessmentQuestionIds": ["fo-e10"],
+      "knowledgeItems": ["methode-fonction-par-morceaux", "reunion-intervalles"],
+      "notes": "PARTIALLY_COVERED, et l'intitulé est la raison. « Utiliser une fonction définie sur UN intervalle » est, pris à la lettre, le cas simple — et il est effectivement partout dans la leçon (]0 ; 10[ au module 2, [0 ; 10] au module 7, [−3 ; 3] au module 7 étape 3). Mais aucun module ne le TRAITE pour lui-même : les deux modules qui le déclarent en teaches (6 et 7) sont construits sur la réunion d'intervalles, et le boss fo-e10 (T(12) + T(16) = 8, vérifié) est une question sur une fonction définie par MORCEAUX, pas sur un intervalle unique. Concrètement, P11 est enseigné en creux, comme le cas dégénéré de P12, et sa seule épreuve du boss est partagée avec P12 et P4. Le LP n'est donc jamais éprouvé isolément — un élève pourrait passer fo-e10 en ne maîtrisant que la lecture par morceaux. La facette manquante n'est pas mathématique mais évaluative : il faudrait une épreuve où l'enjeu soit la seule appartenance à un intervalle unique, avec le piège de la borne (par exemple « f est définie sur ]0 ; 5] ; f(0) existe-t-il ? »). C'est un défaut mineur, mais c'est bien une facette de l'intitulé qui n'est pas mesurée.",
+      "crossGrade": { "overlapsWith": ["2de:ensembles-et-intervalles-2nde"], "kind": "consolidation" },
+      "confidence": "medium"
+    },
+    "seconde_fonctions-2nde_P12": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 1, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 1, "mechanism": "brick:reunion-intervalles" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 1, "mechanism": "brick:vocab-union-intervalles" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 2, "mechanism": "question:M06-S2-Q1" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 3, "mechanism": "question:M06-S3-Q2" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 4, "mechanism": "manipulation:FunctionProbe" },
+        { "module": 6, "moduleSlug": "une-fonction-en-morceaux", "step": 4, "mechanism": "feedback" },
+        { "module": 8, "moduleSlug": "mission-finale-la-boite", "step": null, "mechanism": "question:fo-e9" }
+      ],
+      "manipulation": "FunctionProbe sur la piscine. L'étape 1 n'est validée qu'après DEUX gestes contrastés : la sonde à 10 h (« n(10) = 45 ») puis la sonde entre 12 h et 14 h, où le readout dérivé bascule sur « aucune image ». L'étape 4 change de mode : la sonde horizontale à n = 50 traverse le trou et compte QUATRE antécédents répartis sur les deux morceaux — la révélation conditionnée (`seen50 ? <Feedback>`) l'énonce alors, pas avant.",
+      "assessmentQuestionIds": ["fo-e9", "fo-e10"],
+      "knowledgeItems": ["reunion-intervalles", "vocab-union-intervalles", "methode-fonction-par-morceaux"],
+      "notes": "Le symbole ∪ est posé par une brique (vocab-union-intervalles) à l'étape 1, c'est-à-dire APRÈS le geste qui le rend nécessaire et AVANT la question de l'étape 2 dont les options le contiennent : l'ordre source est correct, et le commentaire d'en-tête du module documente que ce n'était pas le cas avant. La misconception visée est la bonne et elle est rare dans les manuels : « dans le trou, l'image vaut 0 » — le boss fo-e9 en fait un distracteur explicite (n(13) = 0), à côté de « la moyenne de n(12) et n(14) », qui est l'autre réflexe d'interpolation. L'étape 4 va au-delà du cas facile : compter des antécédents QUAND le domaine est troué oblige à ne pas conclure de la seule allure d'un morceau. Le tarif de l'étape 3 introduit la fonction définie par morceaux avec deux formules différentes, ce qui est le vrai contenu de 2de.",
+      "crossGrade": { "overlapsWith": ["2de:ensembles-et-intervalles-2nde"], "kind": "extension" },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "officialScopeNotCovered": [
+      {
+        "scopeItem": "parité (vocabulaire) — « Étudier la parité d'une fonction lorsque pertinent » (référentiel externe, chapitre « Généralités sur les fonctions »)",
+        "taughtAnyway": false,
+        "evidence": [],
+        "recommendation": "no-action-here",
+        "notes": "VÉRIFIÉ par grep sur tout apps/web/src/lessons/lycee/seconde : ZÉRO occurrence de « fonction paire », « fonction impaire » ou de la parité au sens fonctionnel dans toute la Seconde. Les seules occurrences de « parité » concernent les ENTIERS pairs et impairs (arithmetique-2nde : ecriture-litterale-parite, regle-parite-operations ; logique-et-raisonnement-2nde), qui n'ont aucun rapport. Cette leçon-ci n'a de toute façon pas à porter la parité : son teachingScope.exclude renvoie explicitement les fonctions de référence à leur leçon dédiée, et f(−x) = f(x) n'y est jamais évoqué. Le manque réel est dans fonctions-de-reference-2nde, où la symétrie EST enseignée sans être nommée ; voir le jugement de cette leçon. Aucune action ici."
+      },
+      {
+        "scopeItem": "Résoudre graphiquement f(x) > k et f(x) ≤ k (référentiel externe, chapitre « Généralités sur les fonctions »)",
+        "taughtAnyway": false,
+        "evidence": [
+          { "module": 5, "moduleSlug": "quatre-registres", "step": 3, "mechanism": "question:M05-S3-Q4" }
+        ],
+        "recommendation": "append-lp-or-defer",
+        "notes": "VÉRIFIÉ dans le code. Les DEUX modules qui manipulent une sonde horizontale — le module 2 (V = 400) et le module 6 (n = 50) — résolvent uniquement l'ÉQUATION f(x) = k, en comptant les points d'intersection avec la droite y = k. Le mode « y » de FunctionProbe est structurellement une machine à antécédents : il appelle antecedentsOf et n'affiche que des points d'intersection ; il n'a aucune notion de « au-dessus » ou « en dessous », et aucun highlightIntervals n'est passé. La seule trace d'inégalité contre un k général dans toute la leçon est une ligne de QCM, M05-S3-Q4 r4 : « Voir d'un coup d'œil où f dépasse 100 → la courbe » — mais on ne demande pas de RÉSOUDRE, seulement de choisir le registre le plus rapide ; aucun ensemble de solutions n'est jamais produit. Aucun des 12 LPs ne mentionne l'inéquation, et le teachingScope.exclude de la leçon renvoie « signe d'une fonction » à signe-fonctions-2nde. La résolution de f(x) > 0 y est bien traitée, mais contre ZÉRO, pas contre un k quelconque : la translation « f(x) > k ⟺ la courbe est au-dessus de la droite y = k » n'est enseignée dans AUCUNE leçon de 2de. C'est un trou de niveau, pas seulement de leçon — à combler ici (l'instrument existe : il suffirait d'un highlightIntervals sur les x où f(x) > k dans le mode « y » de FunctionProbe) ou dans signe-fonctions-2nde."
+      }
+    ],
+    "pedagogicalProblems": [
+      "GEL DE MANIPULATION au module 1, les trois étapes (Module01LaBoite.jsx:74, 94, 119). BoxLab reçoit `disabled: done1`, puis `done2 || !done1`, puis `done3 || !done2`. Le second terme de chaque expression est un verrou d'ANTÉRIORITÉ légitime, mais le premier est un gel : dès que trois boîtes sont enregistrées, la glissière et le bouton « Enregistrer » de l'étape 1 disparaissent (BoxLab.jsx:110, `{!disabled && (...)}` masque tout le bloc de commande). L'élève perd l'instrument exactement au moment où la brique fonction-dependance vient de lui dire ce qu'il signifie, et ne peut plus éprouver « et si je remets x = 3 ? ». C'est la classe de bug frozen-manipulation documentée en 6e, et elle est ici d'autant plus visible que les modules 2, 4 et 6 de la MÊME leçon ont été explicitement corrigés (leurs en-têtes portent tous la mention « MANIPULATION JAMAIS GELÉE ») : le module 1, le déclencheur, est le seul oublié.",
+      "Le module 7 (practice_lab) déclare enseigner SEPT learning points (P10, P4, P5, P7, P9, P11, P12) en trois étapes et une seule brique nouvelle. C'est un excès d'attribution : l'atelier consolide, il n'établit rien pour six de ces sept LPs. Un audit automatique qui compte les modules enseignants surestimera donc la couverture de P11 et P12 en particulier.",
+      "Le module 5 étape 1 (reconnaître une courbe parmi trois) est devinable de la seule allure : une parabole et deux droites, dont l'une passe par l'origine. Le retour enseigne la bonne méthode (calculer f(0), f(1), f(−1)) mais la question ne l'exige pas. C'est la seule demande de la leçon qui soit franchement en dessous du niveau des autres.",
+      "P11 « Utiliser une fonction définie sur un intervalle » n'est jamais éprouvé isolément : il n'a qu'une épreuve au boss (fo-e10), partagée avec P12 et P4, et cette épreuve porte en réalité sur une fonction par morceaux. Voir le jugement de P11."
+    ],
+    "technicalProblems": [
+      "DÉFAUT NUMÉRIQUE dans la carte des connaissances : knowledge.jsx, brique `image-antecedent` (ligne 105 environ), affirme « 400 a deux antécédents (x ≈ 1,3 et x ≈ 6,1) ». VÉRIFIÉ : V(6,1) = 371,1, pas 400. Le second antécédent est ≈ 5,87 (V(5,87) = 400,5). La MiniGraph de la même brique place pourtant correctement son point à x = 5,88 : le texte contredit sa propre figure, et contredit aussi le readout runtime du module 2 (dérivé d'antecedentsOf, donc juste : « x ≈ 5,9 »). Correctif : remplacer 6,1 par 5,9 dans knowledge.jsx.",
+      "Gel de manipulation, Module01LaBoite.jsx:74 (`disabled: done1`), :94 (`disabled: done2 || ...`), :119 (`disabled: done3 || ...`) — voir pedagogicalProblems. Correctif : ne garder que les verrous d'antériorité (`!done1`, `!done2`), retirer `done1`, `done2 ||`, `done3 ||`.",
+      "Module01LaBoite.jsx:44-46 : `record` lit `done1`/`done2`/`done3` capturés dans la closure du rendu (`const wasDone1 = done1;`) alors que la même fonction vient de calculer l'état suivant à partir de `next`. La logique est correcte parce que `wasDone*` est justement l'état AVANT insertion, mais la variable `bigCount` (ligne 39) et les `done*` du corps sont recalculés à chaque rendu tandis que `record` fait son propre calcul en parallèle : deux sources de vérité pour le même prédicat. Un `useMemo` sur `records` supprimerait la duplication. Aucun bug observable.",
+      "Aucun autre défaut mathématique. Vérifications numériques effectuées : V(2) = 512, V(3) = 588, V(5) = 500, bestBoxOnGrid(0,5) = {3,5 ; 591,5}, antécédents de 400 = {1,33 ; 5,87} ; g(2) = 7, g(−1) = −2 ; f(x) = x² − 3 : f(1,5) = −0,75, f(6) = 33, f(3) = 6, f(2,5) = 3,25, f(0) = −3, antécédents de 1 = {−2 ; 2}, aucun antécédent de −5 ; P(x) = 24 → x = 7 ; 2x + 3 = 11 → x = 4 ; 3x − 4 = 11 → x = 5 ; V₃₀(5) = 2 000 ; forfait f(5) = 22 €, antécédent de 18 € = 4 Go ; h(x) = −x² + 4 : h(0) = 4, h(3) = −5, h(1) = 3, antécédents de 0 = {−2 ; 2} ; T(12) + T(16) = 3 + 5 = 8 ; H_TABLE = x² + 1 sur {−2…3}, deux antécédents de 2 en −1 et 1. Toutes exactes.",
+      "Aucun composant mort : BoxLab, FunctionProbe et PlotTable sont chacun rendus par au moins un module, et les composants partagés (CoordPlane, ValueTable, ParamSlider) sont importés là où ils servent."
+    ],
+    "duplicates": [
+      "Aucun doublon d'enseignement avec les leçons sœurs de 2de. Le découpage est explicite et respecté : teachingScope.exclude renvoie les variations et extremums à variations-extremums-2nde, le signe à signe-fonctions-2nde, les fonctions de référence à fonctions-de-reference-2nde et la fonction affine à fonction-affine-2nde. Le mot « minimum » n'apparaît qu'une fois, dans la correction d'une ligne du module 5 (« une parabole, minimum −2 en x = 0 »), et knowledgeAudit.ignore le documente comme emploi au sens courant.",
+      "Recouvrement VOULU et bien traité avec ensembles-et-intervalles-2nde : intervalle, crochets, ℝ et ∈ sont déclarés en priorKnowledge, diagnostiqués par fo-d7 et fo-d8, et REPOSÉS au point d'emploi par une brique `variant=\"rappel\"` (rappel-intervalle, module 2 étape 3) — jamais réenseignés comme neufs. C'est le traitement correct.",
+      "Recouvrement RÉEL et non déclaré avec fonctions-de-reference-2nde sur la lecture graphique des antécédents : le module 2 de cette leçon (sonde horizontale, compter les points d'intersection avec y = k) et le module 5 de fonctions-de-reference (x² = 4, 1/x = 2, |x| = 3) enseignent le même geste avec deux composants différents (FunctionProbe est d'ailleurs COPIÉ d'une leçon à l'autre, conformément à la règle « on copie, on n'importe pas »). Ce n'est pas un doublon fautif — la seconde leçon spécialise sur les trois références — mais l'ordre de parcours n'est garanti par rien : un élève qui ferait fonctions-de-reference avant fonctions rencontrerait la lecture d'antécédents sans que la dissymétrie image/antécédent ait été établie."
+    ],
+    "recommendations": [
+      "Retirer le gel du module 1 : dans Module01LaBoite.jsx, remplacer `{ disabled: done1 }` par `{ disabled: false }`, `{ ... disabled: done2 || !done1 }` par `{ ... disabled: !done1 }` et `{ ... disabled: done3 || !done2 }` par `{ ... disabled: !done2 }`. C'est le correctif le plus urgent, et il aligne le déclencheur sur les modules 2, 4 et 6 déjà corrigés.",
+      "Corriger « x ≈ 6,1 » en « x ≈ 5,9 » dans la brique image-antecedent de knowledge.jsx : le texte contredit sa propre figure et le runtime.",
+      "Ajouter au module 2 (ou au module 6) une étape d'inéquation graphique : le mode « y » de FunctionProbe pourrait recevoir un highlightIntervals calculé sur {x : f(x) > k}, ce qui donnerait le geste manquant pour « résoudre graphiquement f(x) > k » — actuellement absent de TOUTE la Seconde. À défaut, l'ajouter explicitement à signe-fonctions-2nde en généralisant de 0 à k.",
+      "Donner à P11 une épreuve propre au boss, sur une fonction définie sur UN intervalle avec une borne ouverte (« f est définie sur ]0 ; 5] : f(0) existe-t-il ? f(5) ? »), pour que le LP cesse d'être mesuré uniquement à travers une question par morceaux.",
+      "Réduire teachesLearningPointIds du module 7 à P10 (et éventuellement P9) : les six autres sont consolidés, pas enseignés, et l'attribution actuelle fausse tout comptage automatique de couverture.",
+      "Durcir M05-S1-Q1 : remplacer les trois courbes par trois paraboles voisines (x² − 2, x² + 1, −x² + 2), de sorte que reconnaître exige réellement de calculer f(0) et f(1)."
+    ],
+    "verticalPositioning": {
+      "revised": "Tout le socle de 3e est repris et diagnostiqué au module 0 : la notion de fonction, image, antécédent, notation f(x), tableau de valeurs et représentation graphique (fonctions-3e, dont les pointsToLearn couvrent déjà « Comprendre la notion de fonction », « Utiliser la notation f(x) », « Calculer l'image », « Déterminer un antécédent », « Construire et compléter un tableau de valeurs », « Représenter une fonction dans un repère »). S'y ajoutent le repérage de 6e, l'aire et le périmètre de 6e, le calcul littéral et la distributivité de 4e/3e, l'équation du premier degré de 4e. La lecture d'images et d'antécédents sur une courbe vient de lecture-graphique-3e, et le passage tableau → graphique de representation-graphique-3e.",
+      "extended": "La fonction cesse d'être une « machine » (le mot du module 1 de fonctions-3e, « La machine mystérieuse ») pour devenir une DÉPENDANCE entre deux grandeurs d'une situation : l'objet porté est une feuille qu'on plie, pas une boîte noire à nourrir. La lecture graphique de 3e, qui portait sur des courbes données, s'étend à une courbe que l'élève a fait naître de ses propres points (PlotTable). Le tableau de valeurs, en 3e un objet à compléter, devient ici un INSTRUMENT de départage entre trois formules candidates — et un objet dont on apprend les silences (« le tableau ne le dit pas »).",
+      "new": "Trois choses n'existaient nulle part au collège. (1) L'ENSEMBLE DE DÉFINITION comme objet : le fait qu'une valeur puisse n'avoir aucune image, que ce ne soit pas « zéro », et que la capacité d'une formule à calculer ne crée pas d'image (V(12) « se calcule » mais aucune boîte n'existe). (2) La RÉUNION D'INTERVALLES et le symbole ∪ comme ensemble de définition, avec la fonction définie par morceaux. (3) L'équivalence M(x ; y) ∈ C_f ⟺ y = f(x) énoncée comme critère opératoire, qui permet de tester un point SANS le placer — le module 4 en fait le cœur de deux étapes.",
+      "formalized": "Ce qui était en 3e une pratique devient ici un système à quatre registres NOMMÉS (situation, tableau, courbe, expression), avec la question explicite de savoir lequel répond le plus vite — c'est la formalisation la plus originale de la leçon (M05-S3-Q4). Se formalise également la dissymétrie image / antécédents, jusque dans les types du modèle mathématique (imageOf renvoie un nombre ou null ; antecedentsOf renvoie une liste) ; et l'idée qu'une fonction est définie par ses images, non par l'écriture de sa règle (2x + 10 et 2(x + 5) sont la même fonction).",
+      "tool": "Cette leçon est le SOCLE du chapitre « Fonctions » de 2de : les trois leçons sœurs la présupposent sans la réenseigner. fonctions-de-reference-2nde y prend image, antécédent et courbe représentative pour étudier x², 1/x et |x| ; variations-extremums-2nde y prend f(x), l'antécédent et l'intervalle pour définir croissante et décroissante ; signe-fonctions-2nde y prend la lecture graphique pour résoudre f(x) > 0 ; fonction-affine-2nde y prend la modélisation. Elle fournit aussi, en aval, la notion d'ensemble de définition dont vivra toute l'analyse de Première."
+    }
+  }
+}

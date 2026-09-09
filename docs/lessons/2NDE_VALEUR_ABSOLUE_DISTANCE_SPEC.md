@@ -4,7 +4,7 @@
 
 ## 1. Identity & curriculum contract
 
-- Key `seconde_valeur_absolue_et_distance` · id `valeur-absolue-distance-2nde` (kept from the provisional catalogue; MySQL rows carry this code) · 📏 · Difficile · free · 65 min.
+- Key `seconde_valeur_absolue_et_distance` · id `valeur-absolue-distance-2nde` (kept from the provisional catalogue; MySQL rows carry this code) · 📏 · Difficile · free · 59 min.
 - LPs: P1 |x| = distance à 0 · P2 calculer |x| · P3 distance entre deux réels · P4 situations · P5 distance ↔ valeur absolue ↔ intervalles.
 - Prerequisites: Nombres réels, Ensembles et intervalles (the two 2nde lessons named by the curriculum data).
 
@@ -28,7 +28,7 @@ Controlled variable: the boat's position x (handle + stepper, keyboard). State: 
 
 The beam lab (M4) reuses the same line with a centre, a radius, a strict toggle and a test boat coloured green/red by `satisfies`.
 
-## 4. Module architecture (8 · 65 min)
+## 4. Module architecture (8 · 59 min)
 
 | # | Slug | Stage | LPs | min | Responsibility | Interaction |
 |---|---|---|---|---|---|---|

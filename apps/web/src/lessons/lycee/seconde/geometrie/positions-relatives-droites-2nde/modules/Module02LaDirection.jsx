@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentModule, NumericQuestion, BatchChoiceQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, BatchChoiceQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import MathText from '../../../../../common/components/MathText';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
@@ -7,7 +7,6 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TwoLinesPlane, { TONES } from '../components/TwoLinesPlane';
 import HandlePad from '../components/HandlePad';
 import LineReadouts from '../components/LineReadouts';
-import PredictionChips from '../components/PredictionChips';
 import { moveHandle } from './Module01LeLaboratoireDesDeuxDroites';
 import { lineFromPointVector, det, coupleText, slopeOf, fracText, formatDec, parseDec } from '../components/droitesUtils';
 

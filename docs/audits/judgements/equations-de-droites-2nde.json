@@ -1,0 +1,248 @@
+{
+  "lesson": "equations-de-droites-2nde",
+  "auditedAt": "2026-09-09",
+  "auditor": "2de-geometrie-batch",
+  "learningPoints": {
+    "seconde_equations-de-droites-2nde_P1": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-laboratoire-des-droites", "step": 1, "mechanism": "manipulation:LineLab" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-droites", "step": 1, "mechanism": "feedback" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-droites", "step": 1, "mechanism": "brick:droite-vecteur-directeur" },
+        { "module": 1, "moduleSlug": "le-laboratoire-des-droites", "step": 4, "mechanism": "question:M01-S4" }
+      ],
+      "manipulation": "LineLab — l'élève double la flèche (u → 2u) puis la renverse (u → −u) et la droite NE BOUGE PAS ; la droite précédente reste en pointillé, ce qui rend le non-changement visible",
+      "assessmentQuestionIds": ["eq-e1"],
+      "knowledgeItems": ["droite-vecteur-directeur", "droite-vocabulaire-directeur", "droite-point-direction", "mem-droite-point-direction"],
+      "notes": "Le dispositif signature de la leçon, et il est excellent : la garde exige les DEUX gestes (double ET renverse), la prédiction précède sans verdict, et le fantôme en pointillé transforme une absence d'effet en observation positive. Briques gardées par done1, question à l'étape 4, eq-e1 mesure exactement la même idée sur d'autres nombres (u(2 ; −3), −2u et 0,5u).",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P2": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 1, "moduleSlug": "le-laboratoire-des-droites", "step": 1, "mechanism": "brick:droite-vecteur-directeur" },
+        { "module": 6, "moduleSlug": "a-retenir", "step": 2, "mechanism": "brick:droite-lire-cartesienne" },
+        { "module": 6, "moduleSlug": "a-retenir", "step": 2, "mechanism": "question:M06-S2" },
+        { "module": 7, "moduleSlug": "atelier-construire-et-resoudre", "step": 4, "mechanism": "question:M07-S4" }
+      ],
+      "manipulation": "Aucune manipulation propre pour la LECTURE du vecteur directeur sur une cartésienne : c'est un savoir de calcul, établi par la brique droite-lire-cartesienne (M6 étape 2) puis appliqué",
+      "assessmentQuestionIds": ["eq-e2"],
+      "knowledgeItems": ["droite-lire-cartesienne", "droite-equation-cartesienne"],
+      "notes": "Le fait crucial — le vecteur directeur de a·x + b·y + c = 0 est (−b ; a) et NON (a ; b) — est bien établi avant d'être demandé : la brique droite-lire-cartesienne précède la TapQuestion de M6 étape 2, dont l'énoncé (« laquelle de ces lectures est FAUSSE ? ») force à trancher entre (3 ; −2) et (2 ; 3), et l'explain donne la vérification par les incréments. Rejoué en M7 étape 4 (ligne l1) puis mesuré par eq-e2. La méprise (a ; b) est traitée trois fois. Le lien avec l'origine du couple (a ; b) = (u_y ; −u_x) est posé dès M3 étape 2.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P3": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "des-points-sur-la-droite", "step": 1, "mechanism": "manipulation:LineWalker" },
+        { "module": 2, "moduleSlug": "des-points-sur-la-droite", "step": 1, "mechanism": "feedback" },
+        { "module": 2, "moduleSlug": "des-points-sur-la-droite", "step": 1, "mechanism": "brick:droite-pente" },
+        { "module": 2, "moduleSlug": "des-points-sur-la-droite", "step": 2, "mechanism": "question:M02-S2" },
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 1, "mechanism": "manipulation:CoefficientLab" }
+      ],
+      "manipulation": "LineWalker — l'élève marche sur la droite (t de −2 à 3, garde imposant t = 2, 3 puis −2) et voit l'escalier se répéter à l'identique à chaque pas, y compris en marche arrière ; puis CoefficientLab M4 étape 1, où faire varier m fait PIVOTER la droite autour de (0 ; p)",
+      "assessmentQuestionIds": ["eq-e3"],
+      "knowledgeItems": ["droite-points-parametres", "droite-pente", "droite-pente-vers-directeur", "droite-role-m-p"],
+      "notes": "Deux dispositifs complémentaires et tous deux gestuels : la pente comme rapport constant (M2, l'escalier qui se répète) puis la pente comme effet d'un bouton (M4, le pivot). La garde de M2 impose un t négatif, donc le retrait de u_x et u_y. Briques gardées, questions ensuite. Le chemin inverse (pente → vecteur directeur) est ajouté en M2 étape 4 avec sa propre brique avant sa question.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "consolidation",
+        "detail": "`coefficient-directeur` figure dans le priorKnowledge de la leçon et est diagnostiqué par le module 0 : la pente d'une fonction affine est un acquis de 3e. Ce qui est neuf ici est son identification à u_y/u_x, c'est-à-dire à la DIRECTION d'un objet géométrique, et le fait qu'une droite verticale n'en ait pas."
+      },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P4": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 2, "moduleSlug": "des-points-sur-la-droite", "step": 3, "mechanism": "brick:droite-calculer-pente" },
+        { "module": 2, "moduleSlug": "des-points-sur-la-droite", "step": 3, "mechanism": "question:M02-S3" },
+        { "module": 7, "moduleSlug": "atelier-construire-et-resoudre", "step": 1, "mechanism": "question:M07-S1a" }
+      ],
+      "manipulation": "L'escalier de LineWalker (M2 étape 1) est le support ; l'étape 3 retire la figure et donne deux points nus",
+      "assessmentQuestionIds": ["eq-e3"],
+      "knowledgeItems": ["droite-calculer-pente", "droite-pente"],
+      "notes": "Ordre correct : la brique droite-calculer-pente (« ici, pas de flèche donnée : seulement deux points ») est posée AVANT la NumericQuestion de M2 étape 3, qui demande la pente de (PQ) avec une valeur négative non entière (−1,5) et trois explainFor ciblés (quotient inversé −2/3, signe oublié, montée seule). Rejoué sans figure en M7 étape 1. eq-e3 mesure le même calcul avec les mêmes distracteurs.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "consolidation",
+        "detail": "Le calcul du coefficient directeur entre deux points est un acquis de 3e diagnostiqué par le module 0 (question sur la lecture de m et p) ; la 2de le réinvestit sur un objet géométrique."
+      },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P5": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 6, "moduleSlug": "a-retenir", "step": 3, "mechanism": "brick:droite-methode-deux-points" },
+        { "module": 6, "moduleSlug": "a-retenir", "step": 3, "mechanism": "question:M06-S3" },
+        { "module": 7, "moduleSlug": "atelier-construire-et-resoudre", "step": 1, "mechanism": "question:M07-S1a" },
+        { "module": 7, "moduleSlug": "atelier-construire-et-resoudre", "step": 1, "mechanism": "question:M07-S1b" }
+      ],
+      "manipulation": "Aucune. La méthode « deux points → pente → p » est établie par la brique droite-methode-deux-points, puis pratiquée",
+      "assessmentQuestionIds": ["eq-e4"],
+      "knowledgeItems": ["droite-methode-deux-points", "droite-equation-reduite", "droite-calculer-pente"],
+      "notes": "COVERED, mais entièrement par le versant « méthode » : la brique précède bien la BatchChoiceQuestion de M6 étape 3, et M7 étape 1 décompose la tâche en deux NumericQuestion enchaînées (la pente, puis p) sur une figure, avec des explainFor qui visent la confusion p / y_P. Chaque ingrédient (la pente en M2, l'équation réduite en M3) a été établi par un geste plus tôt ; l'assemblage, lui, ne l'est pas — ce qui est acceptable pour une méthode, mais explique que P5 ne soit jamais rencontré avant le module 6, alors que le module 3 étape 4 fait déjà le travail analogue pour P6.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P6": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 4, "mechanism": "brick:droite-methode-point-vecteur" },
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 4, "mechanism": "question:M03-S4" },
+        { "module": 7, "moduleSlug": "atelier-construire-et-resoudre", "step": 2, "mechanism": "question:M07-S2" }
+      ],
+      "manipulation": "DetTester (M3 étape 1) sert de socle : l'élève annule det(AM, u) trois fois et voit que le nombre s'annule exactement sur la droite ; l'étape 4 rejoue la construction sur une AUTRE droite (B, v)",
+      "assessmentQuestionIds": ["eq-e5"],
+      "knowledgeItems": ["droite-methode-point-vecteur", "droite-equation-cartesienne"],
+      "notes": "Le mieux enseigné des trois chemins vers une équation, parce que c'est le seul dont la genèse est un geste : det(AM, u) = 0 est annulé à la main avant d'être développé. La brique droite-methode-point-vecteur précède la NumericQuestion de l'étape 4 (« x − 3y + c = 0, que vaut c ? »), dont l'explainFor par défaut recalcule pour toute valeur saisie. Rejoué en M7 étape 2 et mesuré par eq-e5.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P7": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 6, "moduleSlug": "a-retenir", "step": 3, "mechanism": "brick:droite-methode-point-pente" },
+        { "module": 6, "moduleSlug": "a-retenir", "step": 3, "mechanism": "question:M06-S3" },
+        { "module": 7, "moduleSlug": "atelier-construire-et-resoudre", "step": 3, "mechanism": "question:M07-S3" }
+      ],
+      "manipulation": "Aucune",
+      "assessmentQuestionIds": ["eq-e6"],
+      "knowledgeItems": ["droite-methode-point-pente"],
+      "notes": "COVERED au sens de la rubrique : la brique droite-methode-point-pente est posée AVANT la BatchChoiceQuestion de M6 étape 3 (ligne c3), puis la NumericQuestion de M7 étape 3 la demande sans figure, avec des explainFor sur les deux erreurs (p = y_B, et le signe de −3 × (−1)). C'est le chemin le plus mince des trois : ni geste ni révélation conditionnée, deux applications seulement, et le savoir mobilisé (m et p) vient de M4. La difficulté propre — p ne vaut y du point que si x = 0 — est bien ciblée par les distracteurs de eq-e6.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P8": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 3, "mechanism": "brick:droite-equation-reduite" },
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 3, "mechanism": "question:M03-S3" },
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 1, "mechanism": "manipulation:CoefficientLab" },
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 2, "mechanism": "feedback" },
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 2, "mechanism": "brick:droite-ordonnee-origine" },
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 5, "mechanism": "question:M04-S5" }
+      ],
+      "manipulation": "CoefficientLab — deux boutons isolés : la garde de l'étape 1 impose de passer par m = 2 PUIS par un m négatif (sans toucher p), celle de l'étape 2 par p = 3 puis p = −2 (sans toucher m) ; le fantôme en pointillé montre le pivot puis le glissement",
+      "assessmentQuestionIds": ["eq-e7", "eq-e8"],
+      "knowledgeItems": ["droite-equation-reduite", "droite-role-m-p", "droite-ordonnee-origine", "droite-lire-equation", "mem-droite-m-p"],
+      "notes": "Modèle du genre : une variable à la fois, gardes qui imposent les régimes intéressants, révélations conditionnées qui nomment l'effet observé, briques gardées, question de lecture en étape 5 avec sa propre brique avant elle. La confusion m ↔ p (méprise n°7 du spec) est attaquée par la séparation des deux étapes et mesurée par eq-e7. eq-e8 y ajoute le fait que la verticale n'a PAS d'équation réduite.",
+      "crossGrade": {
+        "overlapsWith": ["3e:fonctions-affines-3e"],
+        "kind": "consolidation",
+        "detail": "y = mx + p et les rôles de m et p relèvent de la fonction affine de 3e (`coefficient-directeur` et `fonction-affine` sont dans priorKnowledge et diagnostiqués). Neuf en 2de : que cette écriture décrive une DROITE comme objet géométrique, et qu'elle ne les décrive pas toutes."
+      },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P9": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 1, "mechanism": "manipulation:DetTester" },
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 1, "mechanism": "feedback" },
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 1, "mechanism": "brick:droite-equation-idee" },
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 2, "mechanism": "brick:droite-equation-cartesienne" },
+        { "module": 3, "moduleSlug": "de-la-droite-a-l-equation", "step": 2, "mechanism": "question:M03-S2" },
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 3, "mechanism": "manipulation:CoefficientLab" },
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 3, "mechanism": "brick:droite-verticale" }
+      ],
+      "manipulation": "DetTester — l'élève déplace M et le nombre det(AM, u) se recalcule ; il doit l'annuler TROIS fois, et constate que M est alors sur la droite à chaque fois. Puis CoefficientLab en mode cartésien : amener b à 0 produit la verticale que y = mx + p ne sait pas écrire",
+      "assessmentQuestionIds": ["eq-e2", "eq-e8"],
+      "knowledgeItems": ["droite-equation-idee", "droite-equation-cartesienne", "droite-verticale", "droite-formules-equations", "mem-droite-deux-ecritures"],
+      "notes": "Le cœur de la leçon, et il est remarquable : l'équation n'est pas posée comme une formule, elle NAÎT du test géométrique de la leçon précédente (det = 0), que l'élève annule de ses mains avant qu'on le développe. La brique droite-equation-idee est gardée par done1 (trois points trouvés) ; droite-equation-cartesienne précède la TapQuestion de l'étape 2. Le complément décisif — la cartésienne écrit TOUTES les droites, y compris la verticale — est également gestuel (M4 étape 3, garde b = 0 avec a ≠ 0), avec sa brique gardée. Deux épreuves du boss.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P10": {
+      "status": "PARTIALLY_COVERED",
+      "evidence": [
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 4, "mechanism": "manipulation:LineBuilder" },
+        { "module": 4, "moduleSlug": "le-laboratoire-des-coefficients", "step": 4, "mechanism": "brick:droite-tracer" },
+        { "module": 7, "moduleSlug": "atelier-construire-et-resoudre", "step": 5, "mechanism": "manipulation:LineBuilder" }
+      ],
+      "manipulation": "LineBuilder — aucune cible n'est dessinée : l'élève place P puis Q et, pour chacun, le résidu a·x + b·y + c est affiché en direct avec un ✓ quand il vaut 0 ; la réussite exige que les DEUX points vérifient l'équation et soient distincts. Rejoué en M7 étape 5 sur une cartésienne (3x − 2y + 6 = 0), sans équation réduite affichée",
+      "assessmentQuestionIds": ["eq-e9"],
+      "knowledgeItems": ["droite-tracer"],
+      "notes": "PARTIEL, pour une raison d'ordre et une de mesure. (a) La manipulation est bonne — le résidu affiché par point est un vrai enseignant, et l'absence de cible dessinée force à passer par l'équation — mais elle n'est accompagnée d'AUCUNE question et d'aucune révélation conditionnée : le seul texte est la brique droite-tracer, posée avant, et le Feedback de succès interne au composant. Le module 4 étape 4 est la seule étape de la leçon sans question. (b) La seule épreuve, eq-e9, ne demande pas de TRACER : elle demande quels points on POURRAIT placer, ce qui est un test d'appartenance déguisé (P11). Le geste de construction n'est donc jamais mesuré. (c) LineBuilder gèle sa manipulation à la réussite (`frozen = solved || success` retire poignées et steppers) — voir technicalProblems.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P11": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "ce-point-est-il-sur-la-droite", "step": 1, "mechanism": "manipulation:MembershipLab" },
+        { "module": 5, "moduleSlug": "ce-point-est-il-sur-la-droite", "step": 1, "mechanism": "feedback" },
+        { "module": 5, "moduleSlug": "ce-point-est-il-sur-la-droite", "step": 1, "mechanism": "brick:droite-appartenance" },
+        { "module": 5, "moduleSlug": "ce-point-est-il-sur-la-droite", "step": 2, "mechanism": "brick:droite-methode-tester-point" },
+        { "module": 5, "moduleSlug": "ce-point-est-il-sur-la-droite", "step": 2, "mechanism": "question:M05-S2" }
+      ],
+      "manipulation": "MembershipLab — cinq points suspects sur y = 0,5x + 1, dont L (3 ; 2,4) et N (−4 ; −0,9) à 0,1 unité de la droite, indiscernables à l'écran. L'élève PRÉDIT (sans verdict) puis teste chaque point ; la révélation finale compte combien de fois son œil s'est trompé",
+      "assessmentQuestionIds": ["eq-e10"],
+      "knowledgeItems": ["droite-appartenance", "droite-methode-tester-point", "mem-droite-appartenance", "droite-modeliser"],
+      "notes": "Le meilleur dispositif épistémique des quatre leçons du chapitre : la leçon FABRIQUE l'échec de l'œil au lieu de le décréter, et le compte personnalisé (wrongEye) rend le constat irréfutable pour cet élève-là. Vérifié numériquement : K, M, R sont exactement sur la droite, L et N à 0,1 près, et isOnLine utilise EPS = 1e-6 — la tolérance est très inférieure à l'écart, donc le piège fonctionne comme annoncé. Briques gardées, question en étape 2 avec un distracteur qui inverse x et y. Réinvesti en contexte réel en M7 étape 6 (la rampe), avec sa brique droite-modeliser avant la question.",
+      "crossGrade": { "overlapsWith": [], "kind": "none" },
+      "confidence": "high"
+    },
+    "seconde_equations-de-droites-2nde_P12": {
+      "status": "COVERED",
+      "evidence": [
+        { "module": 5, "moduleSlug": "ce-point-est-il-sur-la-droite", "step": 3, "mechanism": "brick:droite-alignement-equation" },
+        { "module": 5, "moduleSlug": "ce-point-est-il-sur-la-droite", "step": 3, "mechanism": "question:M05-S3" }
+      ],
+      "manipulation": "Aucune : figure statique (LineScene `frozen`) montrant la droite (AB) et le point C",
+      "assessmentQuestionIds": ["eq-e10"],
+      "knowledgeItems": ["droite-alignement-equation", "droite-methode-tester-point", "mem-droite-appartenance"],
+      "notes": "COVERED : la brique droite-alignement-equation est posée AVANT la TapQuestion, et l'idée est solide — l'alignement devient le test d'appartenance appliqué au troisième point, explicitement relié au det(AB, AC) = 0 de la leçon précédente dans l'explain. Mais c'est un savoir purement discursif ici (aucun geste, une seule question, un seul cas), et son unique épreuve eq-e10 est partagée avec P11, dont elle est presque indiscernable : la question demande de tester C dans l'équation de (AB), c'est-à-dire exactement la tâche de P11. Réserve de densité de preuve, pas de couverture.",
+      "crossGrade": {
+        "overlapsWith": [],
+        "kind": "none",
+        "detail": "Recoupe la leçon 2de colinearite-alignement-2nde (P6 « Déterminer si trois points sont alignés », test par déterminant) : deux méthodes différentes pour la même conclusion, et l'explain d'ici le dit. Chevauchement assumé plutôt que doublon."
+      },
+      "confidence": "high"
+    }
+  },
+  "lessonLevel": {
+    "pedagogicalProblems": [
+      "LA CARTE DES CONNAISSANCES N'EST JAMAIS MONTRÉE À L'ÉLÈVE EN COURS DE LEÇON — et le diagnostic exact diffère de l'hypothèse de départ. Constat vérifié : lesson.config.js NE DÉCLARE PAS knowledgeMap: true (le champ est absent ; docs/audits/2de-lp-matrix.json le confirme, knowledgeMap = false), alors que les trois autres leçons de géométrie 2de le déclarent. La leçon est donc à mi-chemin : le provider partagé EST monté (routes.jsx enveloppe chaque page dans <LessonKnowledgeProvider>, donc le tiroir « Ma carte » existe et se remplit), les 30 briques alimentent bien la carte, mais AUCUN des modules 1, 2, 3, 4, 5 et 6 ne se termine sur un <KnowledgeSnapshot> — tous ont un footer={<Feedback>} de transition —, seul le module 7 en pose un, et le boss remplace la carte complète par un composant <Synthese> écrit à la main (Module08MissionFinale.jsx:171-191, trois encarts en dur). Conséquence pour l'élève : il ne voit jamais l'état de son savoir en fin de module ; il doit ouvrir le tiroir de lui-même. C'est le seul des quatre lessons du chapitre dans ce cas (vecteurs : 8 snapshots ; colinéarité : 6 ; positions relatives : 6, toutes trois avec la carte complète en synthèse du boss).",
+      "MODULE 6 « À retenir » — verdict : ce n'est PAS une seconde source de vérité interdite, mais c'est un module hybride mal résolu. Il porte bien quatre KnowledgeBrick (droite-lire-cartesienne, droite-methode-deux-points, droite-methode-point-pente, mem-droite-trois-chemins), toutes déclarées dans knowledge.jsx module 6, donc il alimente la carte comme les autres. En revanche son étape 1 ouvre sur une grille CARDS de six encarts (Module06ARetenir.jsx:7-14) écrite en dur dans le module, qui résume la leçon entière — vecteur directeur, pente, cartésienne, réduite, appartenance, trouver l'équation. C'est un résumé de leçon écrit hors de knowledge.jsx, exactement ce que la carte des connaissances est censée remplacer, et la BatchChoiceQuestion qui suit s'appuie dessus (`requires` cite cinq briques posées ailleurs, aucune de ces cartes). De plus le module est le SEUL porteur de P5 et P7 : la leçon fait donc reposer deux Learning Points sur un module que l'architecture cible destine à disparaître.",
+      "P10 « Tracer une droite à partir de son équation » n'est jamais mesuré comme un tracé : eq-e9 demande « quels points peut-on placer », c'est-à-dire un test d'appartenance. Et l'étape 4 du module 4, qui porte la manipulation LineBuilder, est la seule étape de toute la leçon sans aucune question.",
+      "P12 (alignement) ne dispose que d'une seule question dans toute la leçon (M5 étape 3) et d'une seule épreuve, partagée avec P11 et de contenu quasi identique. Le savoir est établi correctement mais sa preuve est très mince.",
+      "P7 (point + pente) est le seul des trois chemins vers une équation à n'avoir ni geste ni révélation conditionnée : deux applications, l'une dans le module de formalisation, l'autre dans l'atelier."
+    ],
+    "technicalProblems": [
+      "SHIMS DE RÉEXPORT — RÉSOLU PENDANT L'AUDIT. Au début de cette session, components/ contenait bien quatre shims du paquet partagé (KnowledgeMap.jsx, KnowledgeProvider.jsx, KnowledgeSnapshot.jsx, knowledgeState.js, plus knowledgeState.test.js). Ils ont été supprimés en cours d'audit par une autre session (git status : 5 fichiers ` D`), et le seul module qui en importait — Module07AtelierConstruireEtResoudre.jsx, ligne 5 — a été rebasculé sur `import { KnowledgeSnapshot } from '../../../../../common/knowledge'`. Le commentaire d'en-tête de knowledge.jsx a été mis à jour dans le même mouvement. RÉPONSE À LA QUESTION POSÉE : le seul importateur des shims était Module07AtelierConstruireEtResoudre.jsx (KnowledgeSnapshot) ; KnowledgeProvider.jsx était importé par routes.jsx, qui utilise désormais le provider partagé ; KnowledgeMap.jsx et knowledgeState.js n'étaient plus importés que par les shims eux-mêmes et par knowledgeState.test.js. Ce qui RESTE à faire après cette suppression : ajouter knowledgeMap: true à lesson.config.js, poser un KnowledgeSnapshot en pied des modules 1 à 6, et remplacer le <Synthese> manuel du boss par <KnowledgeSnapshot variant=\"complete\" complete />.",
+      "MANIPULATION GELÉE APRÈS VALIDATION : components/LineBuilder.jsx:64 calcule `const frozen = solved || success` et s'en sert pour retirer les boutons « Placer P / Placer Q » (ligne 71), annuler `draggableId` (ligne 79) et masquer les deux Stepper (ligne 81). Dès que les deux points vérifient l'équation, le laboratoire devient une image. Utilisé deux fois (module 4 étape 4, module 7 étape 5). Même classe de bug : components/MembershipLab.jsx:46,47,49 désactive les chips de prédiction et le bouton « Tester » sur `disabled || done`, et Module05CePointEstIlSurLaDroite.jsx:60 passe `disabled={done1}` au MembershipLab entier — une fois les cinq points testés, l'élève ne peut plus rejouer une prédiction.",
+      "AUTRES GELS APRÈS VALIDATION (`disabled={doneN}`) : Module01LaboratoireDesDroites.jsx:88,117,131 (PredictionChips — comportement voulu), Module02DesPointsSurLaDroite.jsx:59 (LineWalker — GEL RÉEL : l'élève ne peut plus remarcher sur la droite après avoir visité t = 2, 3, −2, alors que la révélation qui vient de s'afficher parle de ce qu'il a fait), Module03DeLaDroiteALEquation.jsx:64 (PredictionChips) et :65 (DetTester — GEL RÉEL : impossible de continuer à promener M après avoir trouvé trois points), Module04LaboratoireDesCoefficients.jsx:71,112 (PredictionChips) et :72,92,113 (CoefficientLab — GEL RÉEL sur les trois étapes : les curseurs m, p, puis a/b/c se figent au moment précis où la règle générale vient d'être énoncée).",
+      "Mathématiques justes, tolérance saine : lineUtils.js utilise EPS = 1e-6 pour isOnLine et areAligned, alors que les points de MembershipLab sont à 0,1 unité de la droite — la tolérance est 100 000 fois plus fine que l'écart, donc le piège pédagogique est fiable. Vérification numérique indépendante : sur y = 0,5x + 1, K(2 ; 2), M(−2 ; 0) et R(4 ; 3) sont exactement dessus, L(3 ; 2,4) est à 0,1 de 2,5 et N(−4 ; −0,9) à 0,1 de −1 — conforme à ce que le module annonce. LineBuilder impose des coordonnées entières (Stepper step = 1, `move` refuse les nœuds partagés) et sa réussite est une égalité exacte : aucune tolérance trop lâche. Les droites verticales sont traitées en objets de première classe (reducedOf retourne { vertical: true, x0 }), ce que lineUtils.test.js verrouille.",
+      "DÉRIVE DE DÉCLARATION : lesson.config.js omet `knowledgeMap: true` alors que la leçon a 30 briques, un provider monté et une knowledge.jsx complète (sept modules déclarants, 1 à 7). C'est cette omission qui explique que l'architecture attende encore de cette leçon un module « formalization » (le module 6) : le validateur ne peut pas signaler l'incohérence tant que le drapeau est absent.",
+      "DÉRIVE SPEC/CODE : docs/lessons/2NDE_EQUATIONS_DROITES_SPEC.md ne mentionne nulle part la carte des connaissances (contrairement au spec de vecteurs-2nde, qui a une section « Knowledge Map » décrivant la migration) et décrit le module 6 comme un `formalization` légitime. Le spec documente donc l'état d'avant migration.",
+      "Code mort : components/labelLayout.js est présent mais aucun module ni composant de la leçon ne l'importe (LineScene passe par CoordPlane, dont le placement d'étiquettes est interne) ; il n'a d'ailleurs pas de fichier de test dans ce dossier, contrairement aux trois autres leçons du chapitre. components/PredictionChips.jsx duplique le composant partagé exporté par common/kit."
+    ],
+    "duplicates": [
+      "AVEC colinearite-alignement-2nde : le module 3 s'appuie explicitement sur det(AM, u) = 0 (« leçon précédente », dit le brief) et `colineaire` est déclaré dans priorKnowledge puis diagnostiqué par le module 0 — le partage est donc correctement organisé dans ce sens. En revanche P12 « Établir l'alignement de trois points » recouvre le P6 de colinearite-alignement-2nde (« Déterminer si trois points sont alignés ») : deux leçons portent un LP d'alignement, avec deux méthodes différentes (déterminant là-bas, appartenance à l'équation ici). L'explain de M5 étape 3 relie honnêtement les deux (« c'est la version équation du test det(AB, AC) = 0 »), ce qui en fait un chevauchement assumé plutôt qu'un doublon fautif — mais deux LPs de niveau portent bien la même compétence.",
+      "AVEC positions-relatives-droites-2nde (leçon aval) : celle-ci pose avec variant=\"new\" une brique methode-ramener-meme-ecriture (« une équation cartésienne avec b ≠ 0 se ramène à la réduite en isolant y : 2x − 4y + 8 = 0 ⟺ y = 0,5x + 2 »), qui restitue le contenu des briques droite-lire-cartesienne et mem-droite-deux-ecritures d'ici ; et son module 3 étapes 1-2 refait manipuler le pivot par m et le glissement par p, c'est-à-dire la manipulation CoefficientLab de M4 étapes 1-2 (brique droite-role-m-p). Le teachingScope de positions-relatives exclut pourtant « la construction des équations de droites ». La frontière tient au niveau des LPs, pas au niveau des briques.",
+      "AVEC la 3e (fonctions-affines-3e) : y = mx + p, le coefficient directeur et l'ordonnée à l'origine sont des acquis de 3e, correctement déclarés en priorKnowledge (`fonction-affine`, `coefficient-directeur`) et diagnostiqués par le module 0. La leçon ne les réenseigne pas comme neufs : elle les relie à un objet géométrique. Positionnement vertical sain.",
+      "AVEC vecteurs-2nde : `vecteur` est en priorKnowledge et diagnostiqué ; le vecteur DIRECTEUR est une notion propre à cette leçon. Aucun doublon."
+    ],
+    "verticalPositioning": {
+      "revised": "L'écriture y = mx + p et les rôles de m et p, acquis de la fonction affine de 3e — mais revus sous un angle neuf (une droite du plan, pas le graphe d'une fonction) et par une manipulation qui isole chaque coefficient. Le calcul d'un coefficient directeur entre deux points.",
+      "extended": "Le vecteur et la colinéarité des deux leçons 2de amont deviennent la DIRECTION d'une droite : tout vecteur non nul colinéaire à u dirige la même droite. Le déterminant, outil de test en colinearite-alignement-2nde, devient ici générateur : det(AM, u) = 0 n'est plus un verdict, c'est une équation.",
+      "new": "Le vecteur directeur ; la paramétrisation M = A + t·u ; l'équation cartésienne a·x + b·y + c = 0 et la lecture (−b ; a) ; le fait qu'elle écrive TOUTES les droites, y compris les verticales, alors que y = mx + p n'y parvient pas ; le tracé d'une droite à partir de son équation ; le test d'appartenance comme seul critère fiable, contre l'œil.",
+      "formalized": "Les quatre lectures d'une même droite (vecteur directeur, pente, cartésienne, réduite) et les trois chemins vers une équation (deux points, point + vecteur, point + pente), portés par les briques du module 6 et rassemblés dans mem-droite-trois-chemins. La formalisation vit encore dans un module « À retenir » dédié, alors que les trois leçons sœurs l'ont déportée dans la carte des connaissances.",
+      "tool": "L'équation de droite devient l'outil de positions-relatives-droites-2nde (comparer deux équations, résoudre le système) et le pont vers la modélisation (M7 étape 6, la rampe d'accès), puis vers la géométrie analytique de Première."
+    },
+    "officialScopeNotCovered": [
+      "Les douze items de teachingScope.include de l'objet officiel seconde/geometrie/equations_de_droites correspondent un pour un aux douze LPs, et chacun a au moins une évidence d'enseignement et une épreuve. Aucun item officiel n'est sans LP.",
+      "Réserve sur « Tracer une droite à partir de son équation » : l'item est bien enseigné (LineBuilder, deux fois) mais son épreuve (eq-e9) ne mesure pas le tracé — voir le LP P10, jugé PARTIALLY_COVERED.",
+      "Le teachingScope.exclude est respecté : ni intersection ni système (renvoyés à positions-relatives-droites-2nde), ni vecteur normal, ni la fonction affine comme objet."
+    ],
+    "recommendations": [
+      "Terminer la migration vers la carte des connaissances, maintenant que les shims sont supprimés : ajouter `knowledgeMap: true` à lesson.config.js, remplacer les footer={<Feedback>} des modules 1 à 6 par des <KnowledgeSnapshot moduleNumber={n}> (le texte de transition existant peut devenir l'enfant du snapshot, comme le fait déjà le module 7), et remplacer le <Synthese> manuel du boss par <KnowledgeSnapshot variant=\"complete\" complete />.",
+      "Résoudre le module 6 : supprimer la grille CARDS écrite en dur (Module06ARetenir.jsx:7-14), qui est un résumé de leçon concurrent de la carte. Puis, soit dissoudre le module en déplaçant P5 et P7 vers l'atelier (module 7), soit l'assumer comme un module de pratique et le renommer — mais il ne peut pas rester `stage: 'formalization'` une fois la carte active.",
+      "Donner une question à l'étape 4 du module 4 et faire mesurer P10 comme un tracé : par exemple demander deux points d'une droite verticale, que LineBuilder sait construire mais qu'aucune question n'aborde.",
+      "Dégeler les laboratoires : LineBuilder.jsx:64 (`frozen = solved || success`), MembershipLab.jsx:46-49 + Module05:60, LineWalker (Module02:59), DetTester (Module03:65) et CoefficientLab (Module04:72,92,113). Dans les trois derniers cas, le gel intervient exactement au moment où la révélation conditionnée commente le geste — l'élève ne peut plus vérifier ce qu'il lit.",
+      "Ajouter une épreuve qui isole P12 de P11 : eq-e10 mesure aujourd'hui la même chose pour les deux (tester un point dans une équation).",
+      "Ajouter components/labelLayout.test.js ou supprimer components/labelLayout.js, qui n'est importé par rien ; remplacer le PredictionChips local par celui de common/kit ; mettre à jour docs/lessons/2NDE_EQUATIONS_DROITES_SPEC.md, qui décrit l'état d'avant la carte des connaissances."
+    ]
+  }
+}
