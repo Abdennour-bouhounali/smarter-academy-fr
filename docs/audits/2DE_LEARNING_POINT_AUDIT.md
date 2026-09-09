@@ -76,11 +76,12 @@ pédagogiques, qui ouvrent la Session 2 (§12).
 <!-- BEGIN GENERATED: status-counts -->
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 219 | 88.0 % |
-| `PARTIALLY_COVERED` | 26 | 10.4 % |
+| `COVERED` | 220 | 82.7 % |
+| `PARTIALLY_COVERED` | 25 | 9.4 % |
 | `ASSESSMENT_ONLY` | 1 | 0.4 % |
-| `DUPLICATED` | 3 | 1.2 % |
-| **Total** | **249** | 100 % |
+| `DUPLICATED` | 3 | 1.1 % |
+| `UNJUDGED` | 17 | 6.4 % |
+| **Total** | **266** | 100 % |
 <!-- END GENERATED: status-counts -->
 
 ---
@@ -308,16 +309,16 @@ ils appartiennent à des leçons existantes et relèvent d'un LP à ajouter, pas
 | `signe-fonctions-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 12 | 17 | 98 | 7 | ✅ | ✅ | ✅ | — |
 | `variations-extremums-2nde` | fonctions | available | 85 / 85 / 85 | 8 | 12 | 15 | 151 | 7 | ✅ | ✅ | ✅ | — |
 | `colinearite-alignement-2nde` | geometrie | available | 64 / 64 / 64 | 7 | 9 | 24 | 58 | 6 | ✅ | ✅ | ✅ | — |
-| `equations-de-droites-2nde` | geometrie | available | 85 / 85 / 85 | 9 | 12 | 30 | 76 | 1 | ✅ | ✅ | ✅ | — |
+| `equations-de-droites-2nde` | geometrie | available | 85 / 85 / 85 | 9 | 12 | 30 | 76 | 8 | ✅ | ✅ | ✅ | — |
 | `positions-relatives-droites-2nde` | geometrie | available | 70 / 70 / 70 | 7 | 8 | 21 | 77 | 6 | ✅ | ✅ | ✅ | — |
 | `vecteurs-2nde` | geometrie | available | 84 / 84 / 84 | 9 | 14 | 29 | 66 | 8 | ✅ | ✅ | ✅ | — |
 | `arithmetique-2nde` | nombres_calculs | available | 68 / 68 / 68 | 7 | 5 | 16 | 32 | 6 | ✅ | ✅ | ✅ | — |
-| `calcul-litteral-2nde` | nombres_calculs | available | 80 / 80 / 80 | 8 | 6 | 19 | 73 | 7 | ✅ | ✅ | ✅ | — |
-| `ensembles-et-intervalles-2nde` | nombres_calculs | available | 70 / 70 / 70 | 8 | 5 | 23 | 52 | 7 | ✅ | ✅ | ✅ | — |
-| `equations-et-inequations-2nde` | nombres_calculs | available | 85 / 85 / 85 | 8 | 7 | 21 | 105 | 7 | ✅ | ✅ | ✅ | MISSING_KIT_IMPORT |
-| `logique-et-raisonnement-2nde` | nombres_calculs | available | 67 / 67 / 67 | 7 | 6 | 18 | 61 | 6 | ✅ | ✅ | ✅ | — |
-| `nombres-reels-2nde` | nombres_calculs | available | 67 / 67 / 67 | 7 | 5 | 17 | 47 | 6 | ✅ | ✅ | ✅ | — |
-| `valeur-absolue-distance-2nde` | nombres_calculs | available | 59 / 59 / 59 | 7 | 5 | 14 | 59 | 6 | ✅ | ✅ | ✅ | — |
+| `calcul-litteral-2nde` | nombres_calculs | available | 80 / 80 / 80 | 8 | 10 | 19 | 73 | 7 | ✅ | ✅ | ✅ | — |
+| `ensembles-et-intervalles-2nde` | nombres_calculs | available | 70 / 70 / 70 | 8 | 7 | 23 | 52 | 7 | ✅ | ✅ | ✅ | — |
+| `equations-et-inequations-2nde` | nombres_calculs | available | 85 / 85 / 85 | 8 | 10 | 22 | 105 | 7 | ✅ | ✅ | ✅ | — |
+| `logique-et-raisonnement-2nde` | nombres_calculs | available | 67 / 67 / 67 | 7 | 11 | 18 | 61 | 6 | ✅ | ✅ | ✅ | — |
+| `nombres-reels-2nde` | nombres_calculs | available | 67 / 67 / 67 | 7 | 6 | 17 | 47 | 6 | ✅ | ✅ | ✅ | — |
+| `valeur-absolue-distance-2nde` | nombres_calculs | available | 59 / 59 / 59 | 7 | 7 | 14 | 61 | 6 | ✅ | ✅ | ✅ | — |
 | `arbres-probabilites-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 10 | 9 | 85 | 6 | ✅ | ✅ | ✅ | MAPPED_STEPS, NO_LEARNING_POINTS_MIRROR |
 | `boites-a-moustaches-2nde` | statistiques_probabilites | available | 65 / 65 / 65 | 7 | 9 | 9 | 85 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `evolutions-successives-reciproques-2nde` | statistiques_probabilites | available | 70 / 70 / 70 | 8 | 8 | 13 | 112 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
@@ -326,7 +327,7 @@ ils appartiennent à des leçons existantes et relèvent d'un LP à ajouter, pas
 | `probabilites-conditionnelles-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 9 | 7 | 86 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
 | `proportions-pourcentages-2nde` | statistiques_probabilites | available | 70 / 70 / 70 | 8 | 11 | 15 | 138 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `series-regroupees-classes-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 8 | 10 | 12 | 86 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
-| `statistiques-une-variable-2nde` | statistiques_probabilites | available | 86 / 86 / 86 | 8 | 12 | 12 | 95 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
+| `statistiques-une-variable-2nde` | statistiques_probabilites | available | 86 / 86 / 86 | 8 | 12 | 12 | 94 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `tableaux-croises-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 10 | 8 | 58 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `tests-diagnostiques-probabilites-2nde` | statistiques_probabilites | available | 81 / 81 / 81 | 7 | 11 | 9 | 85 | 6 | ✅ | ✅ | ✅ | MAPPED_STEPS, NO_LEARNING_POINTS_MIRROR |
 
@@ -457,34 +458,51 @@ ils appartiennent à des leçons existantes et relèvent d'un LP à ajouter, pas
 | `P4` Factoriser une expression. | nombres_calculs | `calcul-litteral-2nde` | M4, M5 | PARTIALLY_COVERED | M4.1 manipulation:FactorFinder · M4.1 brick:factoriser · M4.2 manipul… | FactorFinder — quatre tâches, qua… | `cl2-e6` `cl2-e7` `cl2-e10` | `factoriser` `methode-facteur-commun` `methode-identite-inverse` | M4, M5 |
 | `P5` Choisir une forme développée ou factorisée se… | nombres_calculs | `calcul-litteral-2nde` | M5, M6 | PARTIALLY_COVERED | M5.1 question:M05-S1-Q1 · M5.2 question:M05-S2-Q2 · M5.3 question:M05… | AUCUNE. Le module 5 n'a pas de co… | `cl2-e8` | `regle-choisir-la-forme` `regle-carre-positif` `methode-prouver-egalite-formes` | M5, M6 |
 | `P6` Utiliser le calcul littéral pour démontrer ou… | nombres_calculs | `calcul-litteral-2nde` | M1, M6 | COVERED | M1.1 manipulation:MagicTrick · M1.1 brick:regle-tester-ne-prouve-pas … | ProofOrder — les cinq lignes de l… | `cl2-e9` `cl2-e10` | `methode-demontrer-litteral` `methode-modeliser-aire` `regle-simplifier-facteurs` | M1, M6 |
+| `P7` Utiliser les identités remarquables (a+b)², (… | nombres_calculs | `calcul-litteral-2nde` | M3 | UNJUDGED | — | IdentityGrid | `cl2-e11` | `developper` `identites-remarquables` `mem-carre-somme` | M3 |
+| `P8` Factoriser une expression de la forme ax² + b… | nombres_calculs | `calcul-litteral-2nde` | M4 | UNJUDGED | — | FactorFinder | `cl2-e12` | `factoriser` `methode-facteur-commun` `methode-identite-inverse` | M4 |
+| `P9` Effectuer des calculs avec des expressions fr… | nombres_calculs | `calcul-litteral-2nde` | M6 | UNJUDGED | — | ProofOrder | `cl2-e13` | `methode-demontrer-litteral` `methode-modeliser-aire` `regle-simplifier-facteurs` | M6 |
+| `P10` Vérifier une identité algébrique. | nombres_calculs | `calcul-litteral-2nde` | M6 | UNJUDGED | — | ProofOrder | `cl2-e14` | `methode-demontrer-litteral` `methode-modeliser-aire` `regle-simplifier-facteurs` | M6 |
 | `P1` Utiliser le langage des ensembles. | nombres_calculs | `ensembles-et-intervalles-2nde` | M2, M5 | PARTIALLY_COVERED | M2.1 manipulation:SetBoxes · M2.1 brick:ensemble · M2.1 brick:vocab-a… | SetBoxes — trois boîtes emboîtées… | `ei-e1` `ei-e2` | `ensemble` `vocab-appartenance` `vocab-inclusion` | M2, M5 |
 | `P2` Lire et représenter des intervalles. | nombres_calculs | `ensembles-et-intervalles-2nde` | M1, M3 | COVERED | M1.1 manipulation:IntervalFilter · M1.1 feedback · M1.1 brick:borne-i… | IntervalFilter — le panneau du ma… | `ei-e3` `ei-e4` | `borne-incluse-exclue` `plage-infinite` `mem-borne` | M1, M3 |
 | `P3` Décrire un ensemble de nombres à l’aide d’un … | nombres_calculs | `ensembles-et-intervalles-2nde` | M4, M6 | COVERED | M4.1 manipulation:IntervalBuilder · M4.1 brick:regle-signe-crochet · … | IntervalBuilder dans les deux sen… | `ei-e5` `ei-e6` `ei-e9` | `regle-signe-crochet` `regle-sens-inegalite` `methode-traduire` | M4, M6 |
 | `P4` Interpréter les bornes et les différents type… | nombres_calculs | `ensembles-et-intervalles-2nde` | M1, M3, M4, M5 | COVERED | M1.1 manipulation:IntervalFilter · M1.1 brick:borne-incluse-exclue · … | IntervalBuilder avec allowInfinit… | `ei-e3` `ei-e4` `ei-e7` `ei-e8` | `borne-incluse-exclue` `plage-infinite` `types-intervalles` | M1, M3, M4, M5 |
 | `P5` Utiliser les intervalles pour résoudre des si… | nombres_calculs | `ensembles-et-intervalles-2nde` | M5, M6 | COVERED | M5.2 manipulation:IntervalBuilder · M5.2 brick:intersection-intervall… | IntervalBuilder par-dessus deux b… | `ei-e7` `ei-e8` `ei-e9` `ei-e10` | `intersection-intervalles` `reunion-intervalles` `mem-inter-union` | M5, M6 |
+| `P6` Comprendre l’appartenance à un ensemble et ut… | nombres_calculs | `ensembles-et-intervalles-2nde` | M2 | UNJUDGED | — | SetBoxes, VennSorter | `ei-e11` | `ensemble` `vocab-appartenance` `vocab-inclusion` | M2 |
+| `P7` Déterminer une réunion et une intersection d’… | nombres_calculs | `ensembles-et-intervalles-2nde` | M2 | UNJUDGED | — | SetBoxes, VennSorter | `ei-e12` | `ensemble` `vocab-appartenance` `vocab-inclusion` | M2 |
 | `P1` Comprendre une équation comme une égalité à r… | nombres_calculs | `equations-et-inequations-2nde` | M1 | COVERED | M1.1 manipulation:SolutionScanner · M1.1 feedback · M1.1 brick:equati… | SolutionScanner — deux forfaits A… | `eq-e1` `eq-e2` | `equation-solution` `inequation-infinite` `regle-nombre-de-solutions` | M1 |
 | `P2` Résoudre une équation du premier degré. | nombres_calculs | `equations-et-inequations-2nde` | M2, M5, M6 | COVERED | M2.1 manipulation:EquationSteps · M2.1 feedback · M2.1 brick:regle-de… | EquationSteps — l'élève choisit d… | `eq-e3` `eq-e4` | `regle-deux-membres` `methode-premier-degre` `regle-solution-exacte` | M2, M5, M6 |
 | `P3` Comprendre et résoudre une inéquation du prem… | nombres_calculs | `equations-et-inequations-2nde` | M3, M6 | COVERED | M3.1 manipulation:SignFlipLine · M3.1 question:M03-S1-Q1 · M3.1 brick… | SignFlipLine — 2 et 5 posés sur u… | `eq-e1` `eq-e5` `eq-e6` `eq-e10` | `regle-signe-retourne` `methode-resoudre-inequation` `mem-signe-negatif` | M3, M6 |
 | `P4` Représenter l’ensemble des solutions sur une … | nombres_calculs | `equations-et-inequations-2nde` | M1, M3 | PARTIALLY_COVERED | M1.2 manipulation:SolutionScanner · M1.2 question:M01-S2-Q1 · M1.2 br… | Aucune manipulation propre. Solut… | `eq-e6` | `inequation-infinite` | M1, M3 |
 | `P5` Résoudre des équations produit. | nombres_calculs | `equations-et-inequations-2nde` | M4, M5 | COVERED | M4.1 manipulation:ProductScanner · M4.1 feedback · M4.2 brick:vocab-f… | ProductScanner — trois barres (fa… | `eq-e7` `eq-e8` | `vocab-facteur` `produit-nul` `methode-equation-produit` | M4, M5 |
-| `P6` Résoudre des équations quotient avec les rest… | nombres_calculs | `equations-et-inequations-2nde` | M5 | PARTIALLY_COVERED | M5.1 manipulation:ProductScanner · M5.1 feedback · M5.1 brick:valeur-… | ProductScanner en mode 'quotient'… | `eq-e9` | `valeur-interdite` `quotient-nul` `methode-choisir-methode` | M5 |
+| `P6` Résoudre des équations quotient avec les rest… | nombres_calculs | `equations-et-inequations-2nde` | M5 | COVERED | M5.1 manipulation:ProductScanner · M5.1 feedback · M5.1 brick:valeur-… | ProductScanner en mode 'quotient'… | `eq-e9` | `valeur-interdite` `quotient-nul` `methode-choisir-methode` | M5 |
 | `P7` Interpréter et vérifier les solutions. | nombres_calculs | `equations-et-inequations-2nde` | M1, M2, M4, M5, M6 | COVERED | M1.4 question:M01-S4-Q3 · M1.4 brick:methode-verifier-solution · M2.3… | Aucune. Le module 6 est le seul m… | `eq-e2` `eq-e8` `eq-e10` | `methode-verifier-solution` `regle-solution-exacte` `methode-traduire-vitesse` | M1, M2, M4, M5, M6 |
+| `P8` Prendre en compte l’ensemble de définition d’… | nombres_calculs | `equations-et-inequations-2nde` | M5 | UNJUDGED | — | ProductScanner | `eq-e11` | `valeur-interdite` `quotient-nul` `methode-choisir-methode` | M5 |
+| `P9` Modéliser un problème par une équation ou une… | nombres_calculs | `equations-et-inequations-2nde` | M6 | UNJUDGED | — | — | `eq-e12` | `methode-modeliser` `regle-interpreter-solution` `methode-traduire-vitesse` | M6 |
+| `P10` Vérifier une solution. | nombres_calculs | `equations-et-inequations-2nde` | M1 | UNJUDGED | — | SolutionScanner | `eq-e13` | `equation-solution` `regle-nombre-de-solutions` `methode-verifier-solution` | M1 |
 | `P1` Construire et analyser une proposition mathém… | nombres_calculs | `logique-et-raisonnement-2nde` | M1, M2 | COVERED | M1.1 manipulation:ConjectureLab · M1.1 question:M01-S1-Q1 · M1.1 bric… | ConjectureLab — tester n² + n + 4… | `lg-e1` `lg-e2` | `proposition` `contre-exemple` `regle-refuter-prouver` | M1, M2 |
 | `P2` Utiliser les connecteurs logiques. | nombres_calculs | `logique-et-raisonnement-2nde` | M2 | COVERED | M2.1 manipulation:FilterLab · M2.1 brick:connecteurs · M2.1 question:… | FilterLab — deux propriétés fixes… | `lg-e3` `lg-e4` | `connecteurs` `regle-ou-inclusif` `methode-negation` | M2 |
 | `P3` Comprendre et utiliser l’implication. | nombres_calculs | `logique-et-raisonnement-2nde` | M3, M4 | COVERED | M3.1 manipulation:ImplicationLab · M3.1 brick:implication · M3.1 bric… | ImplicationLab — un domaine se ré… | `lg-e5` `lg-e6` | `implication` `reciproque` `contraposee` | M3, M4 |
 | `P4` Comprendre et utiliser l’équivalence. | nombres_calculs | `logique-et-raisonnement-2nde` | M4 | COVERED | M4.1 manipulation:ImplicationLab · M4.1 question:M04-S1-Q1 · M4.1 bri… | ImplicationLab sur le domaine {−3… | `lg-e7` `lg-e8` | `equivalence` `regle-equivalence-carre` `methode-choisir-symbole` | M4 |
 | `P5` Utiliser un contre-exemple pour réfuter une a… | nombres_calculs | `logique-et-raisonnement-2nde` | M1, M3, M5 | COVERED | M1.1 manipulation:ConjectureLab · M1.1 brick:contre-exemple · M1.3 br… | Le contre-exemple est produit par… | `lg-e2` `lg-e9` | `contre-exemple` `regle-refuter-prouver` `mem-contre-exemple` | M1, M3, M5 |
 | `P6` Raisonner par contradiction. | nombres_calculs | `logique-et-raisonnement-2nde` | M5 | COVERED | M5.1 manipulation:PigeonLab · M5.1 brick:raisonnement-absurde · M5.1 … | PigeonLab — ajouter des élèves un… | `lg-e10` | `raisonnement-absurde` `vocab-quatre-outils` | M5 |
+| `P7` Utiliser des variables dans une proposition. | nombres_calculs | `logique-et-raisonnement-2nde` | M1 | UNJUDGED | — | ConjectureLab | `lg-e11` | `proposition` `contre-exemple` `regle-refuter-prouver` | M1 |
+| `P8` Formuler la réciproque d’une implication. | nombres_calculs | `logique-et-raisonnement-2nde` | M3 | UNJUDGED | — | ImplicationLab | `lg-e12` | `implication` `reciproque` `contraposee` | M3 |
+| `P9` Utiliser une contraposée. | nombres_calculs | `logique-et-raisonnement-2nde` | M3 | UNJUDGED | — | ImplicationLab | `lg-e13` | `implication` `reciproque` `contraposee` | M3 |
+| `P10` Comprendre les quantifications universelle et… | nombres_calculs | `logique-et-raisonnement-2nde` | M1 | UNJUDGED | — | ConjectureLab | `lg-e14` | `proposition` `contre-exemple` `regle-refuter-prouver` | M1 |
+| `P11` Raisonner par disjonction des cas. | nombres_calculs | `logique-et-raisonnement-2nde` | M5 | UNJUDGED | — | PigeonLab, ProofOrder | `lg-e15` | `raisonnement-absurde` `disjonction-cas` `vocab-quatre-outils` | M5 |
 | `P1` Comprendre l’ensemble des nombres réels. | nombres_calculs | `nombres-reels-2nde` | M1, M2 | COVERED | M1.1 manipulation:ZoomLine · M1.2 feedback · M1.1 brick:droite-reelle… | ZoomLine — zoom ×10 successif sur… | `nr-e1` `nr-e2` | `droite-reelle` `trois-comportements` `familles-emboitees` | M1, M2 |
 | `P2` Représenter des nombres réels sur une droite … | nombres_calculs | `nombres-reels-2nde` | M1, M5 | COVERED | M1.1 manipulation:ZoomLine · M1.3 brick:methode-encadrer-decimales · … | ZoomLine (placement/lecture d'un … | `nr-e3` `nr-e10` | `droite-reelle` `methode-encadrer-decimales` `methode-comparer-reels` | M1, M5 |
 | `P3` Distinguer nombres décimaux, rationnels et ir… | nombres_calculs | `nombres-reels-2nde` | M2, M3 | COVERED | M2.1 manipulation:FamilySorter · M2.1 brick:decimal · M2.1 brick:rati… | FractionExpander — la division po… | `nr-e2` `nr-e4` `nr-e5` | `decimal` `rationnel` `irrationnel` | M2, M3 |
 | `P4` Reconnaître et utiliser les écritures exactes… | nombres_calculs | `nombres-reels-2nde` | M3, M4 | COVERED | M3.4 brick:exact-approche · M3.4 question:M03-S4-Q2 · M4.1 manipulati… | RoundingLab — pousser la précisio… | `nr-e6` `nr-e7` | `exact-approche` `mem-exact-approche` `arrondi-troncature` | M3, M4 |
 | `P5` Comparer et encadrer des nombres réels. | nombres_calculs | `nombres-reels-2nde` | M1, M4, M5 | COVERED | M5.1 manipulation:SquareBracketer · M5.2 manipulation:SquareBracketer… | SquareBracketer — toucher des can… | `nr-e3` `nr-e8` `nr-e9` `nr-e10` | `methode-encadrer-racine` `methode-comparer-reels` `regle-sens-arrondi` | M1, M4, M5 |
+| `P6` Choisir un arrondi adapté à une situation. | nombres_calculs | `nombres-reels-2nde` | M5 | UNJUDGED | — | OrderingGame, SquareBracketer | `nr-e11` | `methode-encadrer-racine` `methode-comparer-reels` `regle-sens-arrondi` | M5 |
 | `P1` Interpréter la valeur absolue comme une dista… | nombres_calculs | `valeur-absolue-distance-2nde` | M1, M2 | COVERED | M1.1 manipulation:DistanceLine · M1.1 feedback · M1.1 brick:valeur-ab… | DistanceLine — un phare en 0, un … | `va-e1` `va-e2` | `valeur-absolue-distance-zero` `regle-opposes-meme-distance` `mem-valeur-absolue-positive` | M1, M2 |
 | `P2` Calculer la valeur absolue d’un nombre réel. | nombres_calculs | `valeur-absolue-distance-2nde` | M2 | COVERED | M2.1 manipulation:AbsMachine · M2.1 brick:regle-calcul-valeur-absolue… | AbsMachine — entrer des nombres (… | `va-e2` `va-e3` | `regle-calcul-valeur-absolue` `methode-calculer-expression-absolue` | M2 |
 | `P3` Interpréter la distance entre deux nombres ré… | nombres_calculs | `valeur-absolue-distance-2nde` | M3 | COVERED | M3.1 manipulation:DistanceLine · M3.1 brick:distance-deux-nombres · M… | DistanceLine à deux poignées (A e… | `va-e4` `va-e5` | `distance-deux-nombres` `regle-distance-invariante` `mem-distance` | M3 |
 | `P4` Résoudre des situations utilisant des distanc… | nombres_calculs | `valeur-absolue-distance-2nde` | M4, M5 | COVERED | M4.3 manipulation:BeamLine · M4.3 brick:equation-distance-egale · M5.… | BeamLine avec bascule ≤ / < (modu… | `va-e8` `va-e9` `va-e10` | `methode-tolerance` `regle-deux-positions` `equation-distance-egale` | M4, M5 |
 | `P5` Relier distance, valeur absolue et intervalle… | nombres_calculs | `valeur-absolue-distance-2nde` | M4, M5 | COVERED | M4.1 manipulation:BeamLine · M4.1 brick:faisceau-intervalle · M4.1 qu… | BeamLine — un centre a (Stepper),… | `va-e6` `va-e7` `va-e8` | `faisceau-intervalle` `methode-centre-rayon` `mem-faisceau` | M4, M5 |
+| `P6` Résoudre une inéquation de la forme \|x − a\| ≤… | nombres_calculs | `valeur-absolue-distance-2nde` | M4 | UNJUDGED | — | BeamLine, BuildCheck | `va-e11` | `faisceau-intervalle` `equation-distance-egale` `methode-centre-rayon` | M4 |
+| `P7` Représenter graphiquement l’ensemble des solu… | nombres_calculs | `valeur-absolue-distance-2nde` | M4 | UNJUDGED | — | BeamLine, BuildCheck | `va-e11` | `faisceau-intervalle` `equation-distance-egale` `methode-centre-rayon` | M4 |
 | `P1` Construire un arbre de probabilités | statistiques_probabilites | `arbres-probabilites-2nde` | M1 | COVERED | M1.1 manipulation:TreeBuilder · M1.1 brick:arbre-structure · M1.2 que… | TreeBuilder — l'élève pose lui-mê… | `ar-e1` | `arbre-structure` | M1 |
 | `P2` Lire un arbre pondéré | statistiques_probabilites | `arbres-probabilites-2nde` | M2 | COVERED | M2.1 brick:poids-conditionnels · M2.2 brick:somme-branches · M2.2 que… | Aucune manipulation propre : lect… | `ar-e4` | `poids-conditionnels` `somme-branches` | M2 |
 | `P3` Interpréter la pondération d'une branche | statistiques_probabilites | `arbres-probabilites-2nde` | M2 | COVERED | M2.1 brick:poids-conditionnels · M2.1 question:M02-S1-Q1 | — | `ar-e3` | `poids-conditionnels` | M2 |
@@ -648,7 +666,6 @@ fonctionnels ci-dessus.
 <!-- BEGIN GENERATED: technical-flags -->
 | Leçon | Signalement | Détail |
 | --- | --- | --- |
-| `equations-et-inequations-2nde` | MISSING_KIT_IMPORT | M5: KnowledgeBrick |
 | `arbres-probabilites-2nde` | MAPPED_STEPS | M5 |
 | `arbres-probabilites-2nde` | NO_LEARNING_POINTS_MIRROR |  |
 | `boites-a-moustaches-2nde` | NO_E2E | aucune suite apps/web/e2e/lesson-kit/ |
@@ -826,11 +843,17 @@ fonctionnels ci-dessus.
 | `seconde_calcul-litteral-2nde_P4` | `calcul-litteral-2nde` | `calcul_litteral` | Factoriser une expression. |
 | `seconde_calcul-litteral-2nde_P5` | `calcul-litteral-2nde` | `calcul_litteral` | Choisir une forme développée ou factorisée selon le problème. |
 | `seconde_calcul-litteral-2nde_P6` | `calcul-litteral-2nde` | `calcul_litteral` | Utiliser le calcul littéral pour démontrer ou résoudre. |
+| `seconde_calcul-litteral-2nde_P7` | `calcul-litteral-2nde` | `calcul_litteral` | Utiliser les identités remarquables (a+b)², (a−b)² et (a+b)(a−b). |
+| `seconde_calcul-litteral-2nde_P8` | `calcul-litteral-2nde` | `calcul_litteral` | Factoriser une expression de la forme ax² + bx. |
+| `seconde_calcul-litteral-2nde_P9` | `calcul-litteral-2nde` | `calcul_litteral` | Effectuer des calculs avec des expressions fractionnaires simples. |
+| `seconde_calcul-litteral-2nde_P10` | `calcul-litteral-2nde` | `calcul_litteral` | Vérifier une identité algébrique. |
 | `seconde_ensembles-et-intervalles-2nde_P1` | `ensembles-et-intervalles-2nde` | `ensembles_et_intervalles` | Utiliser le langage des ensembles. |
 | `seconde_ensembles-et-intervalles-2nde_P2` | `ensembles-et-intervalles-2nde` | `ensembles_et_intervalles` | Lire et représenter des intervalles. |
 | `seconde_ensembles-et-intervalles-2nde_P3` | `ensembles-et-intervalles-2nde` | `ensembles_et_intervalles` | Décrire un ensemble de nombres à l’aide d’un intervalle. |
 | `seconde_ensembles-et-intervalles-2nde_P4` | `ensembles-et-intervalles-2nde` | `ensembles_et_intervalles` | Interpréter les bornes et les différents types d’intervalles. |
 | `seconde_ensembles-et-intervalles-2nde_P5` | `ensembles-et-intervalles-2nde` | `ensembles_et_intervalles` | Utiliser les intervalles pour résoudre des situations mathématiques. |
+| `seconde_ensembles-et-intervalles-2nde_P6` | `ensembles-et-intervalles-2nde` | `ensembles_et_intervalles` | Comprendre l’appartenance à un ensemble et utiliser l’ensemble vide. |
+| `seconde_ensembles-et-intervalles-2nde_P7` | `ensembles-et-intervalles-2nde` | `ensembles_et_intervalles` | Déterminer une réunion et une intersection d’ensembles. |
 | `seconde_equations-et-inequations-2nde_P1` | `equations-et-inequations-2nde` | `equations_et_inequations` | Comprendre une équation comme une égalité à résoudre. |
 | `seconde_equations-et-inequations-2nde_P2` | `equations-et-inequations-2nde` | `equations_et_inequations` | Résoudre une équation du premier degré. |
 | `seconde_equations-et-inequations-2nde_P3` | `equations-et-inequations-2nde` | `equations_et_inequations` | Comprendre et résoudre une inéquation du premier degré. |
@@ -838,22 +861,33 @@ fonctionnels ci-dessus.
 | `seconde_equations-et-inequations-2nde_P5` | `equations-et-inequations-2nde` | `equations_et_inequations` | Résoudre des équations produit. |
 | `seconde_equations-et-inequations-2nde_P6` | `equations-et-inequations-2nde` | `equations_et_inequations` | Résoudre des équations quotient avec les restrictions nécessaires. |
 | `seconde_equations-et-inequations-2nde_P7` | `equations-et-inequations-2nde` | `equations_et_inequations` | Interpréter et vérifier les solutions. |
+| `seconde_equations-et-inequations-2nde_P8` | `equations-et-inequations-2nde` | `equations_et_inequations` | Prendre en compte l’ensemble de définition d’une équation quotient. |
+| `seconde_equations-et-inequations-2nde_P9` | `equations-et-inequations-2nde` | `equations_et_inequations` | Modéliser un problème par une équation ou une inéquation. |
+| `seconde_equations-et-inequations-2nde_P10` | `equations-et-inequations-2nde` | `equations_et_inequations` | Vérifier une solution. |
 | `seconde_logique-et-raisonnement-2nde_P1` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Construire et analyser une proposition mathématique. |
 | `seconde_logique-et-raisonnement-2nde_P2` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Utiliser les connecteurs logiques. |
 | `seconde_logique-et-raisonnement-2nde_P3` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Comprendre et utiliser l’implication. |
 | `seconde_logique-et-raisonnement-2nde_P4` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Comprendre et utiliser l’équivalence. |
 | `seconde_logique-et-raisonnement-2nde_P5` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Utiliser un contre-exemple pour réfuter une affirmation. |
 | `seconde_logique-et-raisonnement-2nde_P6` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Raisonner par contradiction. |
+| `seconde_logique-et-raisonnement-2nde_P7` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Utiliser des variables dans une proposition. |
+| `seconde_logique-et-raisonnement-2nde_P8` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Formuler la réciproque d’une implication. |
+| `seconde_logique-et-raisonnement-2nde_P9` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Utiliser une contraposée. |
+| `seconde_logique-et-raisonnement-2nde_P10` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Comprendre les quantifications universelle et existentielle. |
+| `seconde_logique-et-raisonnement-2nde_P11` | `logique-et-raisonnement-2nde` | `logique_et_raisonnement` | Raisonner par disjonction des cas. |
 | `seconde_nombres-reels-2nde_P1` | `nombres-reels-2nde` | `nombres_reels` | Comprendre l’ensemble des nombres réels. |
 | `seconde_nombres-reels-2nde_P2` | `nombres-reels-2nde` | `nombres_reels` | Représenter des nombres réels sur une droite graduée. |
 | `seconde_nombres-reels-2nde_P3` | `nombres-reels-2nde` | `nombres_reels` | Distinguer nombres décimaux, rationnels et irrationnels. |
 | `seconde_nombres-reels-2nde_P4` | `nombres-reels-2nde` | `nombres_reels` | Reconnaître et utiliser les écritures exactes et approchées. |
 | `seconde_nombres-reels-2nde_P5` | `nombres-reels-2nde` | `nombres_reels` | Comparer et encadrer des nombres réels. |
+| `seconde_nombres-reels-2nde_P6` | `nombres-reels-2nde` | `nombres_reels` | Choisir un arrondi adapté à une situation. |
 | `seconde_valeur-absolue-distance-2nde_P1` | `valeur-absolue-distance-2nde` | `valeur_absolue_et_distance` | Interpréter la valeur absolue comme une distance à zéro. |
 | `seconde_valeur-absolue-distance-2nde_P2` | `valeur-absolue-distance-2nde` | `valeur_absolue_et_distance` | Calculer la valeur absolue d’un nombre réel. |
 | `seconde_valeur-absolue-distance-2nde_P3` | `valeur-absolue-distance-2nde` | `valeur_absolue_et_distance` | Interpréter la distance entre deux nombres réels. |
 | `seconde_valeur-absolue-distance-2nde_P4` | `valeur-absolue-distance-2nde` | `valeur_absolue_et_distance` | Résoudre des situations utilisant des distances. |
 | `seconde_valeur-absolue-distance-2nde_P5` | `valeur-absolue-distance-2nde` | `valeur_absolue_et_distance` | Relier distance, valeur absolue et intervalles. |
+| `seconde_valeur-absolue-distance-2nde_P6` | `valeur-absolue-distance-2nde` | `valeur_absolue_et_distance` | Résoudre une inéquation de la forme \|x − a\| ≤ r. |
+| `seconde_valeur-absolue-distance-2nde_P7` | `valeur-absolue-distance-2nde` | `valeur_absolue_et_distance` | Représenter graphiquement l’ensemble des solutions sur une droite. |
 | `seconde_arbres-probabilites-2nde_P1` | `arbres-probabilites-2nde` | `arbres_de_probabilites` | Construire un arbre de probabilités |
 | `seconde_arbres-probabilites-2nde_P2` | `arbres-probabilites-2nde` | `arbres_de_probabilites` | Lire un arbre pondéré |
 | `seconde_arbres-probabilites-2nde_P3` | `arbres-probabilites-2nde` | `arbres_de_probabilites` | Interpréter la pondération d'une branche |
@@ -1124,6 +1158,27 @@ gelés. Ils ouvrent la Session 2.
 <!-- END SECTION: fixes -->
 
 ---
+
+## 11bis. Correctifs appliqués en Session 2 (2026-09-09)
+
+| Correctif | Fichiers | Vérifié comment |
+| --- | --- | --- |
+| `id="app-header"` restauré sur les deux coquilles — il n'avait JAMAIS été commité, alors que `KNOWLEDGE_MAP.md` le décrit comme l'ancre du viewport ; le tiroir s'ouvrait sous la barre fixe, bouton « Fermer » recouvert | `components/navigation/Navbar.jsx`, `components/student/StudentNavbar.jsx` | mesuré au navigateur : tiroir à y = 0 avant, y = 64 après ; `2nde-vecteurs-carte` 64/64 |
+| 29 suites e2e réalignées sur `chromeTop()` (le calcul de `useLessonViewport`) au lieu de supposer un header | `apps/web/e2e/lesson-kit/*` | les 29 suites s'exécutent et passent |
+| Module 5 d'équations : `KnowledgeBrick` rendu sans import → `ReferenceError` à chaque validation d'étape ; les 3 briques du quotient ne pouvaient jamais être posées | `Module05QuotientEtValeurInterdite.jsx` | carte 20 → 21 items, contrat 0E, suites 52/52 et 58/58 |
+| `IntervalBuilder` : réponse juste refusée (1.4000000000000001 ≠ 1,4) | `components/IntervalBuilder.jsx`, `intervalUtils.test.js` | 4 tests verrouillent le scénario exact de l'élève |
+| 24 laboratoires dégelés (`disabled={doneN}` sur une manipulation) | 13 modules, 12 composants | 0 gel restant ; 5 suites vertes |
+| « Revoir le module » renvoyait au test final lui-même (7 cas en 2nde, 1 en 6e `fractions`) | 6 boss de 2nde + `Module10BossFinal.jsx` | garde ajoutée à `validate-lessons` : un `SKILLS[*].module` d'étape `evaluation` est une erreur |
+| 3 défauts du composant de dessin PARTAGÉ : étiquette hors cadre, noms de courbes superposés, collision à l'origine | `common/knowledge/knowledgeVisuals.jsx` | audit de collisions vert sur fonctions, fonctions-reference, signe-fonctions |
+| 5 questions qui ne mesuraient rien (distracteur = bonne réponse, un seul dessin pour « quel dessin ? », valeur citée mais absente, option qui se réfute) | 5 modules de boss | recalculées ; `evolutions` reçoit son premier fichier de tests |
+| Règle annoncée avant d'être découverte (linéarité de la moyenne) ; prérequis `mode-stat` jamais enseigné nulle part | `statistiques-une-variable-2nde` | contrat 0E |
+| **17 learning points appendus** pour des compétences enseignées et jamais mesurées, chacun rattaché à son module et éprouvé par une question écrite pour lui | `coursesData.js` + 6 lesson.config + 6 boss | `validate:lessons --strict` passe ; `check:lessons` bascule EN STRICT ; base « No drift » |
+| Carte des connaissances morte d'`equations-de-droites` (30 briques, aucun snapshot rendu) | 8 modules + config | 45 → 59/59 |
+
+**Ce que la Session 2 n'a pas fait, et pourquoi :** les enrichissements
+pédagogiques (Tier B — ~25 manipulations à créer) et les réparations collège en
+amont (Tier C — quartiles de 3e, coordonnées de vecteurs, mode statistique)
+restent ouverts. Ce sont des changements de contenu, pas des réparations.
 
 ## 12. Session suivante
 

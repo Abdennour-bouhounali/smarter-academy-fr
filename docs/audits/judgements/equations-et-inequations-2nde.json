@@ -1,221 +1,563 @@
 {
-  "lesson": "equations-et-inequations-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-nombres-calculs-batch",
-  "learningPoints": {
-    "seconde_equations-et-inequations-2nde_P1": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 1, "mechanism": "manipulation:SolutionScanner" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 1, "mechanism": "feedback" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 1, "mechanism": "brick:equation-solution" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 2, "mechanism": "question:M01-S2-Q1" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 3, "mechanism": "manipulation:SolutionScanner" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 3, "mechanism": "question:M01-S3-Q2" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 3, "mechanism": "brick:regle-nombre-de-solutions" }
-      ],
-      "manipulation": "SolutionScanner — deux forfaits A = 2x + 5 et B = 13 dessinés en barres ; l'élève balaie x et lit la relation (<, =, >) à chaque instant. L'étape 1 n'est validée que si l'élève a RENCONTRÉ les trois relations (scanDone = seen.has('=') && seen.has('<') && seen.has('>')) : impossible de la franchir en s'arrêtant sur la solution. L'étape 3 rejoue le scanner sur deux droites parallèles (A′ = 2x + 3, B′ = 2x + 5) dont l'écart reste 2 € pour tout x, et la validation exige quatre valeurs balayées.",
-      "assessmentQuestionIds": ["eq-e1", "eq-e2"],
-      "knowledgeItems": ["equation-solution", "inequation-infinite", "regle-nombre-de-solutions", "methode-verifier-solution"],
-      "notes": "Le mot « équation » et le mot « solution » ne sont prononcés qu'APRÈS que le geste les a produits : la brique equation-solution est posée sur `scanDone`, donc après le balayage. La question M01-S3-Q2 (« Combien de solutions a 2x + 3 = 2x + 5 ? ») est le meilleur moment de la leçon : le scanner rend l'absence de solution VISIBLE (les barres ne se rejoignent jamais) au lieu de l'énoncer. L'étape 4 sépare proprement VÉRIFIER de RÉSOUDRE — la NumericQuestion demande de calculer 2 × 4 + 5 et la brique methode-verifier-solution dit explicitement « tu n'as pas résolu : tu as remplacé x par 4 et comparé ». C'est la distinction que le programme officiel appelle « Vérifier une solution » et elle est ici authentiquement enseignée.",
-      "crossGrade": { "overlapsWith": ["4e:equations-4e", "3e:equations-produit"], "kind": "consolidation" },
-      "confidence": "high"
+ "lesson": "equations-et-inequations-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-nombres-calculs-batch",
+ "learningPoints": {
+  "seconde_equations-et-inequations-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 1,
+     "mechanism": "manipulation:SolutionScanner"
     },
-    "seconde_equations-et-inequations-2nde_P2": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 1, "mechanism": "manipulation:EquationSteps" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 1, "mechanism": "feedback" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 1, "mechanism": "brick:regle-deux-membres" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 2, "mechanism": "manipulation:EquationSteps" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 2, "mechanism": "brick:methode-premier-degre" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 3, "mechanism": "manipulation:EquationSteps" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 3, "mechanism": "question:M02-S3-Q1" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 3, "mechanism": "brick:regle-solution-exacte" }
-      ],
-      "manipulation": "EquationSteps — l'élève choisit des opérations dans une liste et l'équation se réécrit ligne par ligne. Le dispositif décisif : la liste contient DES PIÈGES délibérés (« − 5 à gauche seulement », « + 4 à droite seulement ») et l'étape 1 n'est validée que si l'élève les a essayés (done = t1.solved && trapSeen). La ligne devient ROUGE quand les solutions changent — le verdict est calculé, pas scripté (eqUtils.sameSolutions). C'est la meilleure manipulation des trois leçons auditées : la règle « aux deux membres » n'est pas énoncée puis illustrée, elle est TRANSGRESSÉE puis constatée.",
-      "assessmentQuestionIds": ["eq-e3", "eq-e4"],
-      "knowledgeItems": ["regle-deux-membres", "methode-premier-degre", "regle-solution-exacte"],
-      "notes": "Trois équations de difficulté croissante : 2x + 5 = 13 (x d'un seul côté), 3x − 4 = x + 6 (x des deux côtés, il faut le rassembler), 7x + 2 = 4x + 9 (solution NON entière). Ce troisième cas porte un enseignement propre — la solution exacte 7/3 contre l'approximation 2,33 — et l'argument donné à l'élève est vérifiable : 7 × 2,33 + 2 = 18,31 et 4 × 2,33 + 9 = 18,32, ce qui est numériquement exact (contrôlé : 18,310000000000002 et 18,32). Toutes les briques suivent le geste. Un bémol mineur : le bouton « Je ne trouve pas — montre-moi » apparaît après 5 opérations (Escape) et joue le chemin correct, ce qui permet de franchir l'étape sans l'avoir trouvée ; mais contrairement au module 4 de calcul-litteral-2nde, la question de l'étape 3 reste à répondre.",
-      "crossGrade": { "overlapsWith": ["4e:equations-4e", "3e:equations-produit"], "kind": "consolidation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 1,
+     "mechanism": "feedback"
     },
-    "seconde_equations-et-inequations-2nde_P3": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 1, "mechanism": "manipulation:SignFlipLine" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 1, "mechanism": "question:M03-S1-Q1" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 1, "mechanism": "brick:regle-signe-retourne" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 2, "mechanism": "manipulation:EquationSteps" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 2, "mechanism": "feedback" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 2, "mechanism": "brick:methode-resoudre-inequation" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 2, "mechanism": "brick:mem-signe-negatif" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 4, "mechanism": "question:M03-S4-Q3" }
-      ],
-      "manipulation": "SignFlipLine — 2 et 5 posés sur une droite graduée ; l'élève touche un multiplicateur (−1, 2, −2, 3) et les DEUX points se déplacent, en miroir pour k < 0. Un bandeau d'état écrit « 2 < 5 → × k → ka rel kb » avec la mention « l'ordre se retourne » ou « l'ordre est conservé ». L'étape n'est validée que si l'élève a essayé × (−1) ET × 2 (tried.has(−1) && tried.has(2) && flipDone) : il doit voir le cas où l'ordre tient autant que celui où il se retourne. Puis EquationSteps reprend la résolution complète de −3x + 4 ≤ 10 avec le retournement au moment du ÷ (−3).",
-      "assessmentQuestionIds": ["eq-e1", "eq-e5", "eq-e6", "eq-e10"],
-      "knowledgeItems": ["regle-signe-retourne", "methode-resoudre-inequation", "mem-signe-negatif"],
-      "notes": "Le LP le mieux enseigné de la leçon : la règle qui distingue une inéquation d'une équation est isolée sur son propre geste (SignFlipLine), constatée sur des nombres avant d'être appliquée à une inconnue, puis rejouée dans la résolution complète. Le drill de l'étape 4 couvre les quatre cas utiles : divisions par un positif (2x > 6), par un négatif implicite (−x ≤ 5), un retournement après transformation (4 − x < 1) et — remarquable — une inéquation SANS solution (5x ≥ 5x + 1, dont la correction dit « 0 ≥ 1 est faux : aucune solution »). Les quatre corrections sont mathématiquement exactes. Le Feedback conclusif nomme explicitement le fait qu'une inéquation peut n'avoir aucune solution ou toutes.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 1,
+     "mechanism": "brick:equation-solution"
     },
-    "seconde_equations-et-inequations-2nde_P4": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 2, "mechanism": "manipulation:SolutionScanner" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 2, "mechanism": "question:M01-S2-Q1" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 2, "mechanism": "brick:inequation-infinite" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 3, "mechanism": "question:M03-S3-Q2" },
-        { "module": 3, "moduleSlug": "le-signe-qui-se-retourne", "step": 4, "mechanism": "question:M03-S4-Q3" }
-      ],
-      "manipulation": "Aucune manipulation propre. SolutionScanner en mode showRegion=\"<\" ALLUME la zone où A < B (module 1, étape 2) : c'est le seul endroit où l'ensemble des solutions apparaît comme une région continue produite par un geste. Ensuite, la droite réelle n'est plus qu'un DESSIN affiché : au module 3 étape 3, le RealLine est rendu par la prop `above={(revealed) => revealed && ...}` — il n'apparaît qu'APRÈS la révélation de la réponse, donc il illustre la correction, il ne sert pas à répondre.",
-      "assessmentQuestionIds": ["eq-e6"],
-      "knowledgeItems": ["inequation-infinite"],
-      "notes": "PARTIELLEMENT COUVERT : l'intitulé dit « REPRÉSENTER l'ensemble des solutions sur une droite », or l'élève ne représente jamais rien. Il n'existe aucun composant de tracé dans components/ (SolutionScanner, EquationSteps, ProductScanner, SignFlipLine, BuildCheck, Stepper) : toutes les droites sont des RealLine en lecture seule, calculés par le module. Les trois demandes du LP sont des QCM où il faut CHOISIR une notation d'intervalle ([−2 ; +∞[ contre ]−∞ ; −2] etc.), c'est-à-dire un exercice de traduction inégalité → intervalle, qui est le LP P3 de la leçon ensembles-et-intervalles-2nde. L'unique épreuve du boss, eq-e6, est de plus mal construite (voir technicalProblems) : elle affiche UN SEUL dessin et propose comme options « le dessin A », « le contraire », « le dessin A mais avec 2 exclu », « [6 ; +∞[ » — les trois autres dessins ne sont pas dessinés, donc rien n'est comparé visuellement. Le geste manquant, et il serait facile à ajouter, est : faire poser à l'élève le crochet et son sens sur une droite.",
-      "crossGrade": { "overlapsWith": ["2de:ensembles-et-intervalles-2nde"], "kind": "repetition" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 2,
+     "mechanism": "question:M01-S2-Q1"
     },
-    "seconde_equations-et-inequations-2nde_P5": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "produit-nul", "step": 1, "mechanism": "manipulation:ProductScanner" },
-        { "module": 4, "moduleSlug": "produit-nul", "step": 1, "mechanism": "feedback" },
-        { "module": 4, "moduleSlug": "produit-nul", "step": 2, "mechanism": "brick:vocab-facteur" },
-        { "module": 4, "moduleSlug": "produit-nul", "step": 2, "mechanism": "question:M04-S2-Q1" },
-        { "module": 4, "moduleSlug": "produit-nul", "step": 2, "mechanism": "brick:produit-nul" },
-        { "module": 4, "moduleSlug": "produit-nul", "step": 3, "mechanism": "question:M04-S3-Q2" },
-        { "module": 4, "moduleSlug": "produit-nul", "step": 3, "mechanism": "brick:methode-equation-produit" },
-        { "module": 4, "moduleSlug": "produit-nul", "step": 4, "mechanism": "question:M04-S4-Q3" },
-        { "module": 4, "moduleSlug": "produit-nul", "step": 4, "mechanism": "brick:regle-piege-produit-non-nul" }
-      ],
-      "manipulation": "ProductScanner — trois barres (facteur 1, facteur 2, produit) qui suivent x. L'élève balaie et voit la barre « produit » se vider EXACTEMENT quand l'une des deux barres de facteur se vide. L'étape 1 exige d'avoir trouvé LES DEUX zéros (scanDone = zeros.has(2) && zeros.has(−3)) et le Feedback intermédiaire pousse vers le second (« Une solution trouvée. Regarde l'autre facteur : lui aussi peut s'annuler ») : la méprise « une équation a une solution » est traitée par le dispositif, pas par un texte.",
-      "assessmentQuestionIds": ["eq-e7", "eq-e8"],
-      "knowledgeItems": ["vocab-facteur", "produit-nul", "methode-equation-produit", "regle-piege-produit-non-nul", "mem-produit-nul"],
-      "notes": "Chaîne exemplaire : geste (le scanner) → mot (vocab-facteur, posé AVANT la question qui l'emploie, l. 190 puis 197) → règle constatée (produit-nul, après la réponse) → méthode appliquée en deux branches (étape 3) → contre-cas (étape 4, « (x + 1)(x − 1) = 3 »), qui est le vrai test de compréhension : l'explainWrong y fait remarquer que x = 2 EST solution alors qu'aucun facteur ne vaut 3. L'étape 5 (x² = 9) élargit à un cas qui ne se présente pas d'emblée comme un produit. Réserve sur cette étape 5 : la résolution passe par la factorisation x² − 9 = (x − 3)(x + 3), qui n'est enseignée nulle part dans CETTE leçon — elle vient de calcul-litteral-2nde (module 4, tâche t3, x² − 25) et de la 3e. La leçon l'utilise comme un acquis sans que priorKnowledge ne le déclare (priorKnowledge liste 'calcul-litteral' et 'developper', pas la factorisation ni les identités).",
-      "crossGrade": { "overlapsWith": ["3e:equations-produit"], "kind": "repetition" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 3,
+     "mechanism": "manipulation:SolutionScanner"
     },
-    "seconde_equations-et-inequations-2nde_P6": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "quotient-et-valeur-interdite", "step": 1, "mechanism": "manipulation:ProductScanner" },
-        { "module": 5, "moduleSlug": "quotient-et-valeur-interdite", "step": 1, "mechanism": "feedback" },
-        { "module": 5, "moduleSlug": "quotient-et-valeur-interdite", "step": 1, "mechanism": "brick:valeur-interdite" },
-        { "module": 5, "moduleSlug": "quotient-et-valeur-interdite", "step": 2, "mechanism": "question:M05-S2-Q1" },
-        { "module": 5, "moduleSlug": "quotient-et-valeur-interdite", "step": 2, "mechanism": "brick:quotient-nul" },
-        { "module": 5, "moduleSlug": "quotient-et-valeur-interdite", "step": 3, "mechanism": "question:M05-S3-Q2" }
-      ],
-      "manipulation": "ProductScanner en mode 'quotient' — l'élève balaie (x − 3)/(x + 1) et rencontre DEUX événements distincts qu'il doit tous deux trouver pour valider (scanDone = seen.has('hole') && seen.has('zero')) : en x = −1 l'affichage annonce « division par 0 — valeur interdite », en x = 3 il annonce « quotient nul ». La valeur interdite est donc découverte comme un TROU dans le calcul, pas définie comme une contrainte à retenir.",
-      "assessmentQuestionIds": ["eq-e9"],
-      "knowledgeItems": ["valeur-interdite", "quotient-nul", "methode-choisir-methode"],
-      "notes": "DÉCLASSÉ DE COVERED À PARTIALLY_COVERED POUR UNE RAISON D'EXÉCUTION, pas de conception. La conception est excellente — le geste découvre le trou, le cas limite du double zéro est traité à l'étape 3 ((2x + 4)/(x + 2) = 0, S = ∅, le seul endroit où l'élève voit une valeur interdite « manger » l'unique candidat, exactement ce que le programme officiel appelle « prendre en compte l'ensemble de définition ») — MAIS les trois briques de ce module ne peuvent jamais être posées : Module05QuotientEtValeurInterdite.jsx utilise <KnowledgeBrick> aux lignes 43, 62 et 81 sans l'importer (l. 2 n'importe que ContentModule, TapQuestion, BatchChoiceQuestion). Vérifié : KnowledgeBrick est bien exporté par common/kit/index.js l. 33, et ce module est le SEUL des vingt-quatre modules des trois leçons auditées à présenter cette omission. Conséquence pour le jugement : valeur-interdite, quotient-nul et methode-choisir-methode ne sont jamais NOMMÉES pour l'élève. Le geste établit, la question éprouve, mais l'étape « puis le nom » de la chaîne geste → nom → demande est structurellement absente — et la carte des connaissances ne reçoit rien de ce module. Réserve de conception qui subsiste indépendamment : un seul item de boss (eq-e9) mesure ce LP, et il ne teste que le cas facile ; le double zéro de l'étape 3, qui est le vrai apprentissage, n'est mesuré nulle part.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 3,
+     "mechanism": "question:M01-S3-Q2"
     },
-    "seconde_equations-et-inequations-2nde_P7": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 4, "mechanism": "question:M01-S4-Q3" },
-        { "module": 1, "moduleSlug": "le-scanner-de-solutions", "step": 4, "mechanism": "brick:methode-verifier-solution" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 3, "mechanism": "question:M02-S3-Q1" },
-        { "module": 2, "moduleSlug": "isoler-x-sans-casser-legalite", "step": 3, "mechanism": "brick:regle-solution-exacte" },
-        { "module": 6, "moduleSlug": "modeliser", "step": 1, "mechanism": "question:M06-S1-Q2" },
-        { "module": 6, "moduleSlug": "modeliser", "step": 1, "mechanism": "brick:methode-modeliser" },
-        { "module": 6, "moduleSlug": "modeliser", "step": 4, "mechanism": "question:M06-S4-Q6" },
-        { "module": 6, "moduleSlug": "modeliser", "step": 4, "mechanism": "brick:regle-interpreter-solution" }
-      ],
-      "manipulation": "Aucune. Le module 6 est le seul module d'enseignement de la leçon sans composant de manipulation (matrix : manipulations: []) — six questions enchaînées. Le volet VÉRIFIER s'appuie sur des gestes antérieurs (le scanner du module 1 étape 4, les lignes rouges d'EquationSteps au module 2) ; le volet INTERPRÉTER repose entièrement sur une seule question de conclusion.",
-      "assessmentQuestionIds": ["eq-e2", "eq-e8", "eq-e10"],
-      "knowledgeItems": ["methode-verifier-solution", "regle-solution-exacte", "methode-traduire-vitesse", "methode-modeliser", "regle-interpreter-solution"],
-      "notes": "COUVERT malgré l'absence de manipulation, parce que le volet le plus difficile — interpréter une solution mathématiquement correcte mais inacceptable — est éprouvé par une question dont la réponse N'EST PAS devinable à partir de l'énoncé : « Léo résout correctement son équation et trouve x = −2. Que doit-il conclure ? » avec le distracteur très attirant « son calcul est forcément faux ». La brique regle-interpreter-solution est posée après. Le module traite trois situations distinctes (périmètre, budget avec inéquation ET contrainte implicite h ≥ 0, poursuite avec décalage temporel), ce qui est une vraie variété de modélisation. Réserve : la brique methode-traduire-vitesse est posée à l'ÉTAPE 1 alors que son corps (knowledge.jsx) contient déjà l'équation 60t = 90(t − 1), c'est-à-dire la réponse exacte de la question M06-S3-Q4 posée à l'étape 3 ; un élève qui ouvre sa carte des connaissances y lit la réponse avant de la chercher.",
-      "crossGrade": { "overlapsWith": ["4e:equations-4e", "3e:resolution-problemes-3e"], "kind": "consolidation" },
-      "confidence": "medium"
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 3,
+     "mechanism": "brick:regle-nombre-de-solutions"
     }
+   ],
+   "manipulation": "SolutionScanner — deux forfaits A = 2x + 5 et B = 13 dessinés en barres ; l'élève balaie x et lit la relation (<, =, >) à chaque instant. L'étape 1 n'est validée que si l'élève a RENCONTRÉ les trois relations (scanDone = seen.has('=') && seen.has('<') && seen.has('>')) : impossible de la franchir en s'arrêtant sur la solution. L'étape 3 rejoue le scanner sur deux droites parallèles (A′ = 2x + 3, B′ = 2x + 5) dont l'écart reste 2 € pour tout x, et la validation exige quatre valeurs balayées.",
+   "assessmentQuestionIds": [
+    "eq-e1",
+    "eq-e2"
+   ],
+   "knowledgeItems": [
+    "equation-solution",
+    "inequation-infinite",
+    "regle-nombre-de-solutions",
+    "methode-verifier-solution"
+   ],
+   "notes": "Le mot « équation » et le mot « solution » ne sont prononcés qu'APRÈS que le geste les a produits : la brique equation-solution est posée sur `scanDone`, donc après le balayage. La question M01-S3-Q2 (« Combien de solutions a 2x + 3 = 2x + 5 ? ») est le meilleur moment de la leçon : le scanner rend l'absence de solution VISIBLE (les barres ne se rejoignent jamais) au lieu de l'énoncer. L'étape 4 sépare proprement VÉRIFIER de RÉSOUDRE — la NumericQuestion demande de calculer 2 × 4 + 5 et la brique methode-verifier-solution dit explicitement « tu n'as pas résolu : tu as remplacé x par 4 et comparé ». C'est la distinction que le programme officiel appelle « Vérifier une solution » et elle est ici authentiquement enseignée.",
+   "crossGrade": {
+    "overlapsWith": [
+     "4e:equations-4e",
+     "3e:equations-produit"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "pedagogicalProblems": [
-      "P4 « Représenter l'ensemble des solutions sur une droite » n'est jamais REPRÉSENTÉ par l'élève. Aucun composant de tracé n'existe dans components/ (SolutionScanner, EquationSteps, ProductScanner, SignFlipLine, BuildCheck, Stepper) ; toutes les droites de la leçon sont des RealLine en lecture seule calculés par le module. Pire, au module 3 étape 3 (Module03SigneQuiSeRetourne.jsx l. 103) le RealLine est passé dans `above={(revealed) => revealed && ...}` : il n'apparaît qu'APRÈS la révélation de la bonne réponse, donc il illustre la correction et ne peut pas servir à répondre. Les trois demandes rattachées au LP sont des QCM de choix de notation d'intervalle — c'est-à-dire l'exercice de ensembles-et-intervalles-2nde_P3, pas une représentation.",
-      "P7 est le seul LP dont le module dédié (module 6) n'a aucune manipulation : six questions à la file. Le volet « interpréter » repose sur UNE seule question (M06-S4-Q6). C'est peu pour un LP qui porte deux verbes et qui est déclaré enseigné par cinq modules.",
-      "L'étape 5 du module 4 (x² = 9) et l'épreuve eq-e8 du boss ((x − 1)(x + 2) = 4) exigent toutes deux de FACTORISER (x² − 9 = (x − 3)(x + 3) ; x² + x − 6 = (x − 2)(x + 3)). Or la factorisation n'est enseignée nulle part dans cette leçon et n'est pas déclarée dans priorKnowledge, qui ne liste que 'calcul-litteral' et 'developper' (lesson.config.js). L'élève doit avoir fait calcul-litteral-2nde — dépendance réelle, non déclarée, et non diagnostiquée par le module 0 (dont les cinq questions portent sur réduire, développer, tester, l'ordre et les intervalles, jamais sur la factorisation).",
-      "P6 n'est mesuré que par une seule épreuve (eq-e9), et elle ne teste que le cas facile où numérateur et dénominateur s'annulent en des points différents. Le vrai apprentissage du module 5 — le double zéro (2x + 4)/(x + 2) = 0 qui donne S = ∅, étape 3 — n'est mesuré nulle part au boss.",
-      "Les boutons d'échappement « Je ne trouve pas — montre-moi » (module 2, composant Escape l. 65 ; module 3 l. 79) rejouent le chemin correct et rendent l'étape `solved`. Au module 3 étape 2, la seule épreuve de l'étape est la résolution elle-même : un élève peut donc valider l'étape centrale de l'inéquation sans avoir jamais choisi une opération correcte."
-    ],
-    "technicalProblems": [
-      "CRASH À L'EXÉCUTION — Module05QuotientEtValeurInterdite.jsx : le composant <KnowledgeBrick> est utilisé aux lignes 43, 62 et 81 mais n'est PAS importé ; la ligne 2 n'importe que { ContentModule, TapQuestion, BatchChoiceQuestion }. KnowledgeBrick est pourtant bien exporté par apps/web/src/lessons/common/kit/index.js l. 33 : c'est une omission d'import, pas un composant manquant. Chaque révélation conditionnée {scanDone && <KnowledgeBrick…>}, {solDone && …}, {trapDone && …} lève donc une ReferenceError au moment précis où l'élève valide l'étape 1, 2 ou 3. Les trois briques du module — valeur-interdite, quotient-nul, methode-choisir-methode — ne peuvent jamais être établies, et tous les `requires` qui les invoquent en aval (M05 étapes 2, 3 et 4, plus l'épreuve eq-e9 du boss) pointent vers des connaissances structurellement absentes de la carte. Vérifié par balayage des vingt-quatre modules des trois leçons auditées : ce module est le seul dans ce cas.",
-      "Module07MissionFinale.jsx l. 29 : `const P = 'seconde_equations-et-inequations-2nde_P';` est une constante MORTE — les dix épreuves écrivent leurs learningPointIds en toutes lettres et P n'est jamais lu.",
-      "Module07MissionFinale.jsx, épreuve eq-e6 : la question demande « Quel dessin représente les solutions de 3x − 1 ≥ 5 ? » et n'affiche qu'UN SEUL dessin dans `extra` (un RealLine de 2 à +∞ étiqueté « dessin A »). Les options sont « Le dessin A : [2 ; +∞[ », « Le contraire : ]−∞ ; 2] », « Le dessin A mais avec 2 exclu », « [6 ; +∞[ » — trois options décrivent des dessins qui ne sont pas dessinés. La question ne mesure donc pas une lecture de représentation mais une résolution d'inéquation suivie d'une comparaison de notations ; or c'est l'UNIQUE épreuve du boss rattachée à P4.",
-      "Module06Modeliser.jsx : la brique `methode-traduire-vitesse` est posée à l'étape 1, sur le RECTANGLE (un périmètre). Le corps de l'item dans knowledge.jsx contient l'encadré « partie 1 h plus tard, la voiture B a roulé (t − 1) heures, d'où 60t = 90(t − 1) » — c'est mot pour mot la bonne option de la question M06-S3-Q4, posée deux étapes plus loin. La carte des connaissances est consultable à tout moment : la réponse est disponible avant la demande. L'id de la brique est par ailleurs trompeur (title = « Traduire des grandeurs en expressions », summary = « Périmètre, coût, distance »), c'est un nom resté d'une version antérieure.",
-      "Le programme officiel 2026 nomme « Prendre en compte l'ensemble de définition » ; la leçon enseigne exactement cela mais ne prononce jamais l'expression, elle dit « valeur interdite » (module 5, brique valeur-interdite, knowledge.jsx l. 342). Ce n'est pas une erreur pédagogique — le mot d'entrée est meilleur — mais aucune brique ne fait le pont vers le terme officiel que l'élève rencontrera ailleurs.",
-      "Vérifications numériques : toutes les affirmations chiffrées de la leçon sont exactes. Module 2 étape 3, l'explainWrong affirme « 7 × 2,33 + 2 = 18,31 et 4 × 2,33 + 9 = 18,32 » — contrôlé, 18,310000000000002 et 18,32, l'argument tient. eq-e3 : 5x − 3 = 2x + 9 → x = 4 (17 = 17). eq-e5 : −2x + 6 > 2 → x < 2. eq-e7 : (2x − 8)(x + 5) = 0 → 4 et −5. eq-e9 : (x + 4)/(x − 2) = 0 → S = {−4}, valeur interdite 2. eq-e10 : 12 + 1,5n ≤ 30 → n ≤ 12 (12 + 18 = 30 exactement). Module 4 étape 3 : (3x − 6)(x + 1) = 0 → {2 ; −1}. Aucun distracteur du boss n'est numériquement égal ou à distance d'arrondi de la bonne réponse.",
-      "components/eqUtils.test.js est le test de modèle le plus sérieux des trois leçons auditées : il verrouille la typographie française des formes linéaires, la RÉDUCTION EXACTE des solutions fractionnaires (niceFraction(2,333333333) = 7/3, et niceFraction(√2) = null), les trois natures d'ensemble de solutions ('one' / 'none' / 'all'), le retournement du signe (opAfter('≤', −2) = '≥', opAfter('<', 3) = '<'), les notations d'intervalle produites (']−∞ ; 4[', '[−2 ; +∞[', 'ℝ', '∅'), et surtout l'INVARIANT pédagogique du module 2 : applyBothSides conserve les solutions (sameSolutions true) tandis qu'applyOneSide les casse (sameSolutions false). Le verdict rouge que voit l'élève est donc un calcul testé, pas un script.",
-      "Aucun laboratoire gelé par un `disabled={...done}` sur une manipulation — contrairement à ensembles-et-intervalles-2nde, qui en compte huit. Les seuls `disabled` sont ceux des PredictionChips (module 1 l. 57, verrouillées après le balayage, comportement voulu) et le bouton ↺ ×1 de SignFlipLine quand k vaut déjà 1. Forme atténuée du même défaut cependant : EquationSteps masque toute la palette d'opérations dès que l'étape est résolue (rendu conditionné à `!disabled && !solved`), et les boutons Annuler/Recommencer disparaissent avec elle : l'élève ne peut plus ré-explorer après avoir réussi. L'historique reste visible, ce qui limite la perte.",
-      "Le module 5 étape 4 recopie à la main, en JSX, un encadré « quatre types, quatre méthodes » qui redit mot pour mot le corps de la brique methode-choisir-methode (knowledge.jsx). L'en-tête de knowledge.jsx affirme pourtant « Aucun module n'écrit son propre résumé ». Le principe de source unique est violé exactement là où le fichier le proclame — et, du fait du crash ci-dessus, cet encadré recopié est actuellement le SEUL endroit où l'élève peut lire ce contenu.",
-      "ProductScanner.jsx : les valeurs interdites sont tracées inconditionnellement (l. 47, hors de la garde `showRoots`), alors que les racines ne le sont qu'une fois `showRoots` vrai. Au module 5 étape 1, dont le sous-titre promet « une valeur fait planter le calcul, une autre l'annule — trouve les deux », la moitié de la chasse (le trou, marqué en rose et étiqueté « interdit ») est donc donnée avant que l'élève n'ait balayé.",
-      "Module00Diagnostic.jsx, question q1-reduire : le `requires` déclare 'aire' et 'perimetre' sur une question de pure réduction (« Réduis 3x + 5 − x ») qui ne touche ni l'une ni l'autre. C'est une déclaration de prérequis sans diagnostic réel : rien dans le module 0 ne vérifie que l'élève sait ce qu'est un périmètre, alors que l'étape 1 du module 6 en dépend entièrement.",
-      "Trois questions font fuiter leur réponse par la LONGUEUR de l'option : la bonne est la seule à porter sa propre justification, les autres sont des réponses nues. Module 5 étape 3 (« ∅ : x = −2 annule le numérateur mais est interdit » contre « {−2} », « {2} », « ℝ ») ; module 6 étape 2 (« h ∈ [0 ; 5] : 15 + 2h ≤ 25 » contre trois intervalles nus) ; module 6 étape 4 (l'option correcte fait deux lignes, les trois autres une demi-ligne). Un élève rompu aux QCM les trouve sans raisonner.",
-      "components/BuildCheck.jsx n'est importé par aucun module de cette leçon : code mort (le composant est en revanche utilisé dans ensembles-et-intervalles-2nde). SignFlipLine.jsx l. 40 écrit par ailleurs le membre de gauche en dur (« 2 < 5 ») au lieu de le dériver des props a et b : sans effet aujourd'hui puisque le module ne passe jamais d'autres valeurs, mais le bandeau énoncerait une fausseté si a > b.",
-      "Incohérence cosmétique, module 4 étape 3 : l'option r3 écrit l'ensemble des solutions « {2 ; −1} » tandis que le feedback de la même question écrit « S = {−1 ; 2} ». Deux ordres pour le même ensemble dans un module qui enseigne précisément la notation ensembliste."
-    ],
-    "duplicates": [
-      "P3 « Comprendre et résoudre une inéquation du premier degré » est enseigné comme neuf ici ET revendiqué par fonction-affine-2nde_P11 « Résoudre une inéquation avec une fonction affine ». La même résolution ax + b ≤ 0 est donc posée deux fois comme un apprentissage nouveau dans le niveau.",
-      "P3 et P4 recouvrent signe-fonctions-2nde_P8/P10/P11 (« Utiliser un tableau de signes pour résoudre une inéquation », « Résoudre f(x) > 0 », « Résoudre f(x) < 0 »). Le partage est ici DÉLIBÉRÉ et propre : le teachingScope.exclude de cette leçon renvoie explicitement « Les tableaux de signes de produits (leçon « Signe des fonctions ») ». La frontière est tenue.",
-      "P4 « Représenter l'ensemble des solutions sur une droite » chevauche ensembles-et-intervalles-2nde_P2 « Lire et représenter des intervalles » et P3 « Décrire un ensemble de nombres à l'aide d'un intervalle ». Comme cette leçon-ci ne fournit aucun geste de représentation, ce qu'elle éprouve sous P4 est strictement la traduction inégalité ↔ intervalle, c'est-à-dire le LP de l'autre leçon. C'est le doublon le plus net de la paire.",
-      "P5 « Résoudre des équations produit » reprend l'objet entier de la leçon de 3e equations-produit (clé catalogue 3e_equations_inequations), dont les pointsToLearn incluent « Comprendre la propriété du produit nul » et « Résoudre une équation produit nul ». La reprise est justifiée (la 3e ne traitait QUE ce cas), mais le module 4 l'enseigne comme entièrement neuf, sans jamais s'appuyer sur l'acquis de 3e ni le déclarer en priorKnowledge."
-    ],
-    "recommendations": [
-      "URGENT — ajouter KnowledgeBrick à la ligne d'import de Module05QuotientEtValeurInterdite.jsx (l. 2). En l'état, le module 5 plante à chaque validation d'étape et les trois briques du quotient ne sont jamais posées. C'est un correctif d'un mot.",
-      "Donner à P4 un geste : un composant où l'élève POSE le crochet (ouvert/fermé) et choisit le sens du coloriage sur une droite, avec vérification. C'est le seul LP de la leçon sans manipulation propre et son unique épreuve de boss est mal construite.",
-      "Refaire eq-e6 : dessiner les quatre RealLine (ou au moins trois) et demander lequel correspond, au lieu d'afficher un seul dessin et de décrire les autres en toutes lettres.",
-      "Ajouter au boss une épreuve sur le cas du double zéro d'un quotient ((2x + 4)/(x + 2) = 0, S = ∅) : c'est le vrai contenu du module 5 et il n'est pas mesuré.",
-      "Déclarer la factorisation dans priorKnowledge et l'ajouter au diagnostic du module 0 : x² = 9 (module 4 étape 5) et eq-e8 en dépendent sans filet.",
-      "Déplacer la brique methode-traduire-vitesse à l'étape 3 du module 6, ou retirer de son corps l'équation 60t = 90(t − 1) qui donne la réponse de M06-S3-Q4 ; et renommer l'id, qui ne correspond plus au contenu.",
-      "Supprimer la constante morte P dans Module07MissionFinale.jsx (l. 29).",
-      "Faire prononcer une fois « ensemble de définition » à côté de « valeur interdite », pour raccrocher le vocabulaire officiel."
-    ],
-    "officialScopeNotCovered": [
-      {
-        "scopeItem": "Prendre en compte l'ensemble de définition",
-        "taughtAnyway": true,
-        "evidence": "Module 5 entier : ProductScanner en mode quotient fait découvrir le TROU en x = −1 (« division par 0 — valeur interdite », ProductScanner.jsx l. 57), brique valeur-interdite, puis question M05-S2-Q1 dont le distracteur {3 ; −1} est précisément l'erreur consistant à ignorer l'ensemble de définition, puis l'étape 3 (double zéro, S = ∅). Enseigné et éprouvé solidement, sous le nom « valeur interdite » et non sous le terme officiel ; aucun LP du catalogue ne l'isole, il est absorbé dans P6.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Utiliser un tableau de signes simple",
-        "taughtAnyway": false,
-        "evidence": "Recherche `grep -rn 'tableau de signes'` dans tout le répertoire de la leçon : une seule occurrence, dans lesson.config.js, et c'est une ligne d'EXCLUSION — teachingScope.exclude contient « Les tableaux de signes de produits (leçon « Signe des fonctions ») ». Aucun module, aucune brique, aucune question ne construit ni ne lit un tableau de signes. L'item est délégué à signe-fonctions-2nde, dont les LP P4 et P8 le portent.",
-        "recommendation": "absent"
-      },
-      {
-        "scopeItem": "Modéliser un problème par une équation",
-        "taughtAnyway": true,
-        "evidence": "Module 6, étapes 1 et 3 : M06-S1-Q1 fait choisir l'équation qui traduit un périmètre (2x + 2(x + 3) = 26, avec les distracteurs « moitié du tour » et « aire »), puis M06-S1-Q2 la résout ; M06-S3-Q4 fait traduire une poursuite (60t = 90(t − 1), distracteur clé : le décalage porté sur la vitesse au lieu du temps), puis M06-S3-Q5 la résout. Briques methode-traduire-vitesse et methode-modeliser. Mesuré au boss uniquement de biais, par eq-e10 qui est rattachée à P7 et P3. Aucun LP du catalogue ne nomme la modélisation : elle est absorbée dans P7 « Interpréter et vérifier les solutions », dont ce n'est pas l'intitulé.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Modéliser un problème par une inéquation",
-        "taughtAnyway": true,
-        "evidence": "Module 6, étape 2 : M06-S2-Q3 (« Location d'un vélo : 15 € plus 2 € par heure. Budget maximal : 25 € ») dont la bonne option est « h ∈ [0 ; 5] : 15 + 2h ≤ 25 » — elle exige à la fois de reconnaître qu'un maximum donne une INÉQUATION (distracteur « h = 5 exactement ») et d'ajouter la contrainte implicite h ≥ 0 (distracteur « ]−∞ ; 5] »). C'est le seul endroit de la leçon où une contrainte implicite du contexte entre dans l'ensemble de solutions, et la brique regle-contrainte-implicite ne lui est même pas associée (elle n'existe que dans ensembles-et-intervalles-2nde). Mesuré au boss par eq-e10. Comme ci-dessus, aucun LP propre.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Résoudre une équation quotient simple",
-        "taughtAnyway": true,
-        "evidence": "Module 5 en entier, et c'est le LP P6 du catalogue : l'item officiel est bien couvert par un LP. Signalé ici seulement parce que sa mesure au boss se réduit à une épreuve (eq-e9) portant sur le cas facile.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Vérifier une solution",
-        "taughtAnyway": true,
-        "evidence": "Module 1 étape 4 : NumericQuestion M01-S4-Q3 qui fait CALCULER 2 × 4 + 5 pour vérifier, avec explainFor traitant deux erreurs typiques (29 = « 2 collé à x », 11 = oubli de la multiplication), puis brique methode-verifier-solution qui dit « tu n'as pas résolu : tu as remplacé x par 4 et comparé ». Repris au module 2 étape 3 pour distinguer solution exacte et solution approchée. Mesuré au boss par eq-e2. Absorbé dans P7 avec « interpréter », alors que ce sont deux gestes différents.",
-        "recommendation": "append-lp"
-      }
-    ],
-    "verticalPositioning": {
-      "revised": "La résolution de ax + b = c est acquise en 4e (equations-4e : « Conserver l'équilibre en agissant sur les deux membres », « Résoudre une équation du premier degré ax + b = c », « Modéliser un problème par une équation ») et l'équation produit nul en 3e (equations-produit : « Comprendre la propriété du produit nul », « Résoudre une équation produit nul », modules « Le scanner de produit », « La balance »). Le module 2 et le module 4 rejouent donc intégralement des acquis du collège — mais avec un dispositif nouveau : la balance de 4e devient une liste d'opérations dont certaines sont des pièges, et le verdict « les solutions ont changé » est calculé (eqUtils.sameSolutions) au lieu d'être raconté.",
-      "extended": "Trois extensions réelles au-delà du collège. (1) L'équation ax + b = cx + d avec x DES DEUX CÔTÉS (module 2 étape 2), que la 4e ne traitait pas (son intitulé s'arrête à ax + b = c). (2) La solution NON entière gardée exacte sous forme de fraction (module 2 étape 3, 7/3 contre 2,33) — la 4e restait sur des solutions entières. (3) L'équation quotient et sa valeur interdite (module 5), entièrement absente du collège.",
-      "new": "L'INÉQUATION est le contenu franchement neuf, et c'est le point capital de positionnement : la clé de catalogue de 3e s'appelle 3e_equations_inequations mais la leçon construite (equations-produit) ne couvre QUE l'équation produit nul — ses modules sont « Zéro ou pas zéro ? », « Une égalité à trou », « La balance », « Le scanner de produit », « Vérifier et interpréter », « Carré contre rectangle ». Aucune inéquation n'y est résolue. L'élève de 2de rencontre donc pour la première fois ici : l'inégalité qu'on transforme, le retournement du signe par un facteur négatif (module 3, SignFlipLine), et l'ensemble de solutions comme intervalle infini. Le module 3 est en conséquence le module le plus légitimement neuf de la leçon — et il est bien construit.",
-      "formalized": "Le nombre de solutions devient un objet de discours : une, aucune (∅), toutes (ℝ), une infinité. La brique regle-nombre-de-solutions le formalise dès le module 1 après que le scanner a montré deux forfaits parallèles, et le drill du module 3 (ligne r4 : 5x ≥ 5x + 1 → ∅) l'applique aux inéquations. La notation ensembliste S = {…}, ∅, ℝ et les intervalles deviennent le langage standard des réponses — ce que le collège écrivait « x = 4 » s'écrit désormais « S = {4} ». La carte des quatre types × quatre méthodes (module 5 étape 4) formalise le CHOIX de méthode d'après la forme, ce que le collège n'avait pas à faire puisqu'il n'avait qu'une forme à la fois.",
-      "tool": "La leçon consomme deux outils venus d'ailleurs en 2de et le déclare à moitié. (1) Les intervalles et leurs crochets : ils sont dans priorKnowledge ('intervalle', 'intervalle-crochets', 'ensemble-reels', 'appartient') et ce sont eux qui servent à écrire tout ensemble de solutions d'inéquation — la leçon ensembles-et-intervalles-2nde en est le prérequis explicite dans coursesData (prerequisites : « Calcul littéral », « Ensembles et intervalles »). (2) La FACTORISATION, elle, est consommée sans être déclarée : x² = 9 (module 4 étape 5) et eq-e8 en dépendent, et priorKnowledge ne mentionne ni 'factoriser' ni les identités remarquables. Dans l'autre sens, la leçon est elle-même l'outil de signe-fonctions-2nde (résoudre f(x) = 0, f(x) > 0) et de fonction-affine-2nde (P10, P11), auxquelles elle délègue explicitement le tableau de signes."
+  "seconde_equations-et-inequations-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 1,
+     "mechanism": "manipulation:EquationSteps"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 1,
+     "mechanism": "brick:regle-deux-membres"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 2,
+     "mechanism": "manipulation:EquationSteps"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 2,
+     "mechanism": "brick:methode-premier-degre"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 3,
+     "mechanism": "manipulation:EquationSteps"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q1"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 3,
+     "mechanism": "brick:regle-solution-exacte"
     }
+   ],
+   "manipulation": "EquationSteps — l'élève choisit des opérations dans une liste et l'équation se réécrit ligne par ligne. Le dispositif décisif : la liste contient DES PIÈGES délibérés (« − 5 à gauche seulement », « + 4 à droite seulement ») et l'étape 1 n'est validée que si l'élève les a essayés (done = t1.solved && trapSeen). La ligne devient ROUGE quand les solutions changent — le verdict est calculé, pas scripté (eqUtils.sameSolutions). C'est la meilleure manipulation des trois leçons auditées : la règle « aux deux membres » n'est pas énoncée puis illustrée, elle est TRANSGRESSÉE puis constatée.",
+   "assessmentQuestionIds": [
+    "eq-e3",
+    "eq-e4"
+   ],
+   "knowledgeItems": [
+    "regle-deux-membres",
+    "methode-premier-degre",
+    "regle-solution-exacte"
+   ],
+   "notes": "Trois équations de difficulté croissante : 2x + 5 = 13 (x d'un seul côté), 3x − 4 = x + 6 (x des deux côtés, il faut le rassembler), 7x + 2 = 4x + 9 (solution NON entière). Ce troisième cas porte un enseignement propre — la solution exacte 7/3 contre l'approximation 2,33 — et l'argument donné à l'élève est vérifiable : 7 × 2,33 + 2 = 18,31 et 4 × 2,33 + 9 = 18,32, ce qui est numériquement exact (contrôlé : 18,310000000000002 et 18,32). Toutes les briques suivent le geste. Un bémol mineur : le bouton « Je ne trouve pas — montre-moi » apparaît après 5 opérations (Escape) et joue le chemin correct, ce qui permet de franchir l'étape sans l'avoir trouvée ; mais contrairement au module 4 de calcul-litteral-2nde, la question de l'étape 3 reste à répondre.",
+   "crossGrade": {
+    "overlapsWith": [
+     "4e:equations-4e",
+     "3e:equations-produit"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_equations-et-inequations-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 1,
+     "mechanism": "manipulation:SignFlipLine"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 1,
+     "mechanism": "question:M03-S1-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 1,
+     "mechanism": "brick:regle-signe-retourne"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 2,
+     "mechanism": "manipulation:EquationSteps"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 2,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 2,
+     "mechanism": "brick:methode-resoudre-inequation"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 2,
+     "mechanism": "brick:mem-signe-negatif"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 4,
+     "mechanism": "question:M03-S4-Q3"
+    }
+   ],
+   "manipulation": "SignFlipLine — 2 et 5 posés sur une droite graduée ; l'élève touche un multiplicateur (−1, 2, −2, 3) et les DEUX points se déplacent, en miroir pour k < 0. Un bandeau d'état écrit « 2 < 5 → × k → ka rel kb » avec la mention « l'ordre se retourne » ou « l'ordre est conservé ». L'étape n'est validée que si l'élève a essayé × (−1) ET × 2 (tried.has(−1) && tried.has(2) && flipDone) : il doit voir le cas où l'ordre tient autant que celui où il se retourne. Puis EquationSteps reprend la résolution complète de −3x + 4 ≤ 10 avec le retournement au moment du ÷ (−3).",
+   "assessmentQuestionIds": [
+    "eq-e1",
+    "eq-e5",
+    "eq-e6",
+    "eq-e10"
+   ],
+   "knowledgeItems": [
+    "regle-signe-retourne",
+    "methode-resoudre-inequation",
+    "mem-signe-negatif"
+   ],
+   "notes": "Le LP le mieux enseigné de la leçon : la règle qui distingue une inéquation d'une équation est isolée sur son propre geste (SignFlipLine), constatée sur des nombres avant d'être appliquée à une inconnue, puis rejouée dans la résolution complète. Le drill de l'étape 4 couvre les quatre cas utiles : divisions par un positif (2x > 6), par un négatif implicite (−x ≤ 5), un retournement après transformation (4 − x < 1) et — remarquable — une inéquation SANS solution (5x ≥ 5x + 1, dont la correction dit « 0 ≥ 1 est faux : aucune solution »). Les quatre corrections sont mathématiquement exactes. Le Feedback conclusif nomme explicitement le fait qu'une inéquation peut n'avoir aucune solution ou toutes.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_equations-et-inequations-2nde_P4": {
+   "status": "PARTIALLY_COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 2,
+     "mechanism": "manipulation:SolutionScanner"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 2,
+     "mechanism": "question:M01-S2-Q1"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 2,
+     "mechanism": "brick:inequation-infinite"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 3,
+     "mechanism": "question:M03-S3-Q2"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-signe-qui-se-retourne",
+     "step": 4,
+     "mechanism": "question:M03-S4-Q3"
+    }
+   ],
+   "manipulation": "Aucune manipulation propre. SolutionScanner en mode showRegion=\"<\" ALLUME la zone où A < B (module 1, étape 2) : c'est le seul endroit où l'ensemble des solutions apparaît comme une région continue produite par un geste. Ensuite, la droite réelle n'est plus qu'un DESSIN affiché : au module 3 étape 3, le RealLine est rendu par la prop `above={(revealed) => revealed && ...}` — il n'apparaît qu'APRÈS la révélation de la réponse, donc il illustre la correction, il ne sert pas à répondre.",
+   "assessmentQuestionIds": [
+    "eq-e6"
+   ],
+   "knowledgeItems": [
+    "inequation-infinite"
+   ],
+   "notes": "PARTIELLEMENT COUVERT : l'intitulé dit « REPRÉSENTER l'ensemble des solutions sur une droite », or l'élève ne représente jamais rien. Il n'existe aucun composant de tracé dans components/ (SolutionScanner, EquationSteps, ProductScanner, SignFlipLine, BuildCheck, Stepper) : toutes les droites sont des RealLine en lecture seule, calculés par le module. Les trois demandes du LP sont des QCM où il faut CHOISIR une notation d'intervalle ([−2 ; +∞[ contre ]−∞ ; −2] etc.), c'est-à-dire un exercice de traduction inégalité → intervalle, qui est le LP P3 de la leçon ensembles-et-intervalles-2nde. L'unique épreuve du boss, eq-e6, est de plus mal construite (voir technicalProblems) : elle affiche UN SEUL dessin et propose comme options « le dessin A », « le contraire », « le dessin A mais avec 2 exclu », « [6 ; +∞[ » — les trois autres dessins ne sont pas dessinés, donc rien n'est comparé visuellement. Le geste manquant, et il serait facile à ajouter, est : faire poser à l'élève le crochet et son sens sur une droite.",
+   "crossGrade": {
+    "overlapsWith": [
+     "2de:ensembles-et-intervalles-2nde"
+    ],
+    "kind": "repetition"
+   },
+   "confidence": "high"
+  },
+  "seconde_equations-et-inequations-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 1,
+     "mechanism": "manipulation:ProductScanner"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 2,
+     "mechanism": "brick:vocab-facteur"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 2,
+     "mechanism": "question:M04-S2-Q1"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 2,
+     "mechanism": "brick:produit-nul"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 3,
+     "mechanism": "question:M04-S3-Q2"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 3,
+     "mechanism": "brick:methode-equation-produit"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 4,
+     "mechanism": "question:M04-S4-Q3"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "produit-nul",
+     "step": 4,
+     "mechanism": "brick:regle-piege-produit-non-nul"
+    }
+   ],
+   "manipulation": "ProductScanner — trois barres (facteur 1, facteur 2, produit) qui suivent x. L'élève balaie et voit la barre « produit » se vider EXACTEMENT quand l'une des deux barres de facteur se vide. L'étape 1 exige d'avoir trouvé LES DEUX zéros (scanDone = zeros.has(2) && zeros.has(−3)) et le Feedback intermédiaire pousse vers le second (« Une solution trouvée. Regarde l'autre facteur : lui aussi peut s'annuler ») : la méprise « une équation a une solution » est traitée par le dispositif, pas par un texte.",
+   "assessmentQuestionIds": [
+    "eq-e7",
+    "eq-e8"
+   ],
+   "knowledgeItems": [
+    "vocab-facteur",
+    "produit-nul",
+    "methode-equation-produit",
+    "regle-piege-produit-non-nul",
+    "mem-produit-nul"
+   ],
+   "notes": "Chaîne exemplaire : geste (le scanner) → mot (vocab-facteur, posé AVANT la question qui l'emploie, l. 190 puis 197) → règle constatée (produit-nul, après la réponse) → méthode appliquée en deux branches (étape 3) → contre-cas (étape 4, « (x + 1)(x − 1) = 3 »), qui est le vrai test de compréhension : l'explainWrong y fait remarquer que x = 2 EST solution alors qu'aucun facteur ne vaut 3. L'étape 5 (x² = 9) élargit à un cas qui ne se présente pas d'emblée comme un produit. Réserve sur cette étape 5 : la résolution passe par la factorisation x² − 9 = (x − 3)(x + 3), qui n'est enseignée nulle part dans CETTE leçon — elle vient de calcul-litteral-2nde (module 4, tâche t3, x² − 25) et de la 3e. La leçon l'utilise comme un acquis sans que priorKnowledge ne le déclare (priorKnowledge liste 'calcul-litteral' et 'developper', pas la factorisation ni les identités).",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:equations-produit"
+    ],
+    "kind": "repetition"
+   },
+   "confidence": "high"
+  },
+  "seconde_equations-et-inequations-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 1,
+     "mechanism": "manipulation:ProductScanner"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 1,
+     "mechanism": "brick:valeur-interdite"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 2,
+     "mechanism": "question:M05-S2-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 2,
+     "mechanism": "brick:quotient-nul"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 3,
+     "mechanism": "question:M05-S3-Q2"
+    }
+   ],
+   "manipulation": "ProductScanner en mode 'quotient' — l'élève balaie (x − 3)/(x + 1) et rencontre DEUX événements distincts qu'il doit tous deux trouver pour valider (scanDone = seen.has('hole') && seen.has('zero')) : en x = −1 l'affichage annonce « division par 0 — valeur interdite », en x = 3 il annonce « quotient nul ». La valeur interdite est donc découverte comme un TROU dans le calcul, pas définie comme une contrainte à retenir.",
+   "assessmentQuestionIds": [
+    "eq-e9"
+   ],
+   "knowledgeItems": [
+    "valeur-interdite",
+    "quotient-nul",
+    "methode-choisir-methode"
+   ],
+   "notes": "RÉÉVALUÉ le 2026-09-09 : le défaut d'exécution qui motivait le déclassement (KnowledgeBrick rendu sans import, module 5) est corrigé — les trois briques du quotient se posent, et l'épreuve eq-e9 qui les `requires` s'appuie enfin sur une connaissance réellement établie. DÉCLASSÉ DE COVERED À PARTIALLY_COVERED POUR UNE RAISON D'EXÉCUTION, pas de conception. La conception est excellente — le geste découvre le trou, le cas limite du double zéro est traité à l'étape 3 ((2x + 4)/(x + 2) = 0, S = ∅, le seul endroit où l'élève voit une valeur interdite « manger » l'unique candidat, exactement ce que le programme officiel appelle « prendre en compte l'ensemble de définition ») — MAIS les trois briques de ce module ne peuvent jamais être posées : Module05QuotientEtValeurInterdite.jsx utilise <KnowledgeBrick> aux lignes 43, 62 et 81 sans l'importer (l. 2 n'importe que ContentModule, TapQuestion, BatchChoiceQuestion). Vérifié : KnowledgeBrick est bien exporté par common/kit/index.js l. 33, et ce module est le SEUL des vingt-quatre modules des trois leçons auditées à présenter cette omission. Conséquence pour le jugement : valeur-interdite, quotient-nul et methode-choisir-methode ne sont jamais NOMMÉES pour l'élève. Le geste établit, la question éprouve, mais l'étape « puis le nom » de la chaîne geste → nom → demande est structurellement absente — et la carte des connaissances ne reçoit rien de ce module. Réserve de conception qui subsiste indépendamment : un seul item de boss (eq-e9) mesure ce LP, et il ne teste que le cas facile ; le double zéro de l'étape 3, qui est le vrai apprentissage, n'est mesuré nulle part.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_equations-et-inequations-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 4,
+     "mechanism": "question:M01-S4-Q3"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 4,
+     "mechanism": "brick:methode-verifier-solution"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q1"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "isoler-x-sans-casser-legalite",
+     "step": 3,
+     "mechanism": "brick:regle-solution-exacte"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "modeliser",
+     "step": 1,
+     "mechanism": "question:M06-S1-Q2"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "modeliser",
+     "step": 1,
+     "mechanism": "brick:methode-modeliser"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "modeliser",
+     "step": 4,
+     "mechanism": "question:M06-S4-Q6"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "modeliser",
+     "step": 4,
+     "mechanism": "brick:regle-interpreter-solution"
+    }
+   ],
+   "manipulation": "Aucune. Le module 6 est le seul module d'enseignement de la leçon sans composant de manipulation (matrix : manipulations: []) — six questions enchaînées. Le volet VÉRIFIER s'appuie sur des gestes antérieurs (le scanner du module 1 étape 4, les lignes rouges d'EquationSteps au module 2) ; le volet INTERPRÉTER repose entièrement sur une seule question de conclusion.",
+   "assessmentQuestionIds": [
+    "eq-e2",
+    "eq-e8",
+    "eq-e10"
+   ],
+   "knowledgeItems": [
+    "methode-verifier-solution",
+    "regle-solution-exacte",
+    "methode-traduire-vitesse",
+    "methode-modeliser",
+    "regle-interpreter-solution"
+   ],
+   "notes": "COUVERT malgré l'absence de manipulation, parce que le volet le plus difficile — interpréter une solution mathématiquement correcte mais inacceptable — est éprouvé par une question dont la réponse N'EST PAS devinable à partir de l'énoncé : « Léo résout correctement son équation et trouve x = −2. Que doit-il conclure ? » avec le distracteur très attirant « son calcul est forcément faux ». La brique regle-interpreter-solution est posée après. Le module traite trois situations distinctes (périmètre, budget avec inéquation ET contrainte implicite h ≥ 0, poursuite avec décalage temporel), ce qui est une vraie variété de modélisation. Réserve : la brique methode-traduire-vitesse est posée à l'ÉTAPE 1 alors que son corps (knowledge.jsx) contient déjà l'équation 60t = 90(t − 1), c'est-à-dire la réponse exacte de la question M06-S3-Q4 posée à l'étape 3 ; un élève qui ouvre sa carte des connaissances y lit la réponse avant de la chercher.",
+   "crossGrade": {
+    "overlapsWith": [
+     "4e:equations-4e",
+     "3e:resolution-problemes-3e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "medium"
   }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "P4 « Représenter l'ensemble des solutions sur une droite » n'est jamais REPRÉSENTÉ par l'élève. Aucun composant de tracé n'existe dans components/ (SolutionScanner, EquationSteps, ProductScanner, SignFlipLine, BuildCheck, Stepper) ; toutes les droites de la leçon sont des RealLine en lecture seule calculés par le module. Pire, au module 3 étape 3 (Module03SigneQuiSeRetourne.jsx l. 103) le RealLine est passé dans `above={(revealed) => revealed && ...}` : il n'apparaît qu'APRÈS la révélation de la bonne réponse, donc il illustre la correction et ne peut pas servir à répondre. Les trois demandes rattachées au LP sont des QCM de choix de notation d'intervalle — c'est-à-dire l'exercice de ensembles-et-intervalles-2nde_P3, pas une représentation.",
+   "P7 est le seul LP dont le module dédié (module 6) n'a aucune manipulation : six questions à la file. Le volet « interpréter » repose sur UNE seule question (M06-S4-Q6). C'est peu pour un LP qui porte deux verbes et qui est déclaré enseigné par cinq modules.",
+   "L'étape 5 du module 4 (x² = 9) et l'épreuve eq-e8 du boss ((x − 1)(x + 2) = 4) exigent toutes deux de FACTORISER (x² − 9 = (x − 3)(x + 3) ; x² + x − 6 = (x − 2)(x + 3)). Or la factorisation n'est enseignée nulle part dans cette leçon et n'est pas déclarée dans priorKnowledge, qui ne liste que 'calcul-litteral' et 'developper' (lesson.config.js). L'élève doit avoir fait calcul-litteral-2nde — dépendance réelle, non déclarée, et non diagnostiquée par le module 0 (dont les cinq questions portent sur réduire, développer, tester, l'ordre et les intervalles, jamais sur la factorisation).",
+   "P6 n'est mesuré que par une seule épreuve (eq-e9), et elle ne teste que le cas facile où numérateur et dénominateur s'annulent en des points différents. Le vrai apprentissage du module 5 — le double zéro (2x + 4)/(x + 2) = 0 qui donne S = ∅, étape 3 — n'est mesuré nulle part au boss.",
+   "Les boutons d'échappement « Je ne trouve pas — montre-moi » (module 2, composant Escape l. 65 ; module 3 l. 79) rejouent le chemin correct et rendent l'étape `solved`. Au module 3 étape 2, la seule épreuve de l'étape est la résolution elle-même : un élève peut donc valider l'étape centrale de l'inéquation sans avoir jamais choisi une opération correcte."
+  ],
+  "technicalProblems": [
+   "CRASH À L'EXÉCUTION — Module05QuotientEtValeurInterdite.jsx : le composant <KnowledgeBrick> est utilisé aux lignes 43, 62 et 81 mais n'est PAS importé ; la ligne 2 n'importe que { ContentModule, TapQuestion, BatchChoiceQuestion }. KnowledgeBrick est pourtant bien exporté par apps/web/src/lessons/common/kit/index.js l. 33 : c'est une omission d'import, pas un composant manquant. Chaque révélation conditionnée {scanDone && <KnowledgeBrick…>}, {solDone && …}, {trapDone && …} lève donc une ReferenceError au moment précis où l'élève valide l'étape 1, 2 ou 3. Les trois briques du module — valeur-interdite, quotient-nul, methode-choisir-methode — ne peuvent jamais être établies, et tous les `requires` qui les invoquent en aval (M05 étapes 2, 3 et 4, plus l'épreuve eq-e9 du boss) pointent vers des connaissances structurellement absentes de la carte. Vérifié par balayage des vingt-quatre modules des trois leçons auditées : ce module est le seul dans ce cas.",
+   "Module07MissionFinale.jsx l. 29 : `const P = 'seconde_equations-et-inequations-2nde_P';` est une constante MORTE — les dix épreuves écrivent leurs learningPointIds en toutes lettres et P n'est jamais lu.",
+   "Module07MissionFinale.jsx, épreuve eq-e6 : la question demande « Quel dessin représente les solutions de 3x − 1 ≥ 5 ? » et n'affiche qu'UN SEUL dessin dans `extra` (un RealLine de 2 à +∞ étiqueté « dessin A »). Les options sont « Le dessin A : [2 ; +∞[ », « Le contraire : ]−∞ ; 2] », « Le dessin A mais avec 2 exclu », « [6 ; +∞[ » — trois options décrivent des dessins qui ne sont pas dessinés. La question ne mesure donc pas une lecture de représentation mais une résolution d'inéquation suivie d'une comparaison de notations ; or c'est l'UNIQUE épreuve du boss rattachée à P4.",
+   "Module06Modeliser.jsx : la brique `methode-traduire-vitesse` est posée à l'étape 1, sur le RECTANGLE (un périmètre). Le corps de l'item dans knowledge.jsx contient l'encadré « partie 1 h plus tard, la voiture B a roulé (t − 1) heures, d'où 60t = 90(t − 1) » — c'est mot pour mot la bonne option de la question M06-S3-Q4, posée deux étapes plus loin. La carte des connaissances est consultable à tout moment : la réponse est disponible avant la demande. L'id de la brique est par ailleurs trompeur (title = « Traduire des grandeurs en expressions », summary = « Périmètre, coût, distance »), c'est un nom resté d'une version antérieure.",
+   "Le programme officiel 2026 nomme « Prendre en compte l'ensemble de définition » ; la leçon enseigne exactement cela mais ne prononce jamais l'expression, elle dit « valeur interdite » (module 5, brique valeur-interdite, knowledge.jsx l. 342). Ce n'est pas une erreur pédagogique — le mot d'entrée est meilleur — mais aucune brique ne fait le pont vers le terme officiel que l'élève rencontrera ailleurs.",
+   "Vérifications numériques : toutes les affirmations chiffrées de la leçon sont exactes. Module 2 étape 3, l'explainWrong affirme « 7 × 2,33 + 2 = 18,31 et 4 × 2,33 + 9 = 18,32 » — contrôlé, 18,310000000000002 et 18,32, l'argument tient. eq-e3 : 5x − 3 = 2x + 9 → x = 4 (17 = 17). eq-e5 : −2x + 6 > 2 → x < 2. eq-e7 : (2x − 8)(x + 5) = 0 → 4 et −5. eq-e9 : (x + 4)/(x − 2) = 0 → S = {−4}, valeur interdite 2. eq-e10 : 12 + 1,5n ≤ 30 → n ≤ 12 (12 + 18 = 30 exactement). Module 4 étape 3 : (3x − 6)(x + 1) = 0 → {2 ; −1}. Aucun distracteur du boss n'est numériquement égal ou à distance d'arrondi de la bonne réponse.",
+   "components/eqUtils.test.js est le test de modèle le plus sérieux des trois leçons auditées : il verrouille la typographie française des formes linéaires, la RÉDUCTION EXACTE des solutions fractionnaires (niceFraction(2,333333333) = 7/3, et niceFraction(√2) = null), les trois natures d'ensemble de solutions ('one' / 'none' / 'all'), le retournement du signe (opAfter('≤', −2) = '≥', opAfter('<', 3) = '<'), les notations d'intervalle produites (']−∞ ; 4[', '[−2 ; +∞[', 'ℝ', '∅'), et surtout l'INVARIANT pédagogique du module 2 : applyBothSides conserve les solutions (sameSolutions true) tandis qu'applyOneSide les casse (sameSolutions false). Le verdict rouge que voit l'élève est donc un calcul testé, pas un script.",
+   "Aucun laboratoire gelé par un `disabled={...done}` sur une manipulation — contrairement à ensembles-et-intervalles-2nde, qui en compte huit. Les seuls `disabled` sont ceux des PredictionChips (module 1 l. 57, verrouillées après le balayage, comportement voulu) et le bouton ↺ ×1 de SignFlipLine quand k vaut déjà 1. Forme atténuée du même défaut cependant : EquationSteps masque toute la palette d'opérations dès que l'étape est résolue (rendu conditionné à `!disabled && !solved`), et les boutons Annuler/Recommencer disparaissent avec elle : l'élève ne peut plus ré-explorer après avoir réussi. L'historique reste visible, ce qui limite la perte.",
+   "Le module 5 étape 4 recopie à la main, en JSX, un encadré « quatre types, quatre méthodes » qui redit mot pour mot le corps de la brique methode-choisir-methode (knowledge.jsx). L'en-tête de knowledge.jsx affirme pourtant « Aucun module n'écrit son propre résumé ». Le principe de source unique est violé exactement là où le fichier le proclame — et, du fait du crash ci-dessus, cet encadré recopié est actuellement le SEUL endroit où l'élève peut lire ce contenu.",
+   "ProductScanner.jsx : les valeurs interdites sont tracées inconditionnellement (l. 47, hors de la garde `showRoots`), alors que les racines ne le sont qu'une fois `showRoots` vrai. Au module 5 étape 1, dont le sous-titre promet « une valeur fait planter le calcul, une autre l'annule — trouve les deux », la moitié de la chasse (le trou, marqué en rose et étiqueté « interdit ») est donc donnée avant que l'élève n'ait balayé.",
+   "Module00Diagnostic.jsx, question q1-reduire : le `requires` déclare 'aire' et 'perimetre' sur une question de pure réduction (« Réduis 3x + 5 − x ») qui ne touche ni l'une ni l'autre. C'est une déclaration de prérequis sans diagnostic réel : rien dans le module 0 ne vérifie que l'élève sait ce qu'est un périmètre, alors que l'étape 1 du module 6 en dépend entièrement.",
+   "Trois questions font fuiter leur réponse par la LONGUEUR de l'option : la bonne est la seule à porter sa propre justification, les autres sont des réponses nues. Module 5 étape 3 (« ∅ : x = −2 annule le numérateur mais est interdit » contre « {−2} », « {2} », « ℝ ») ; module 6 étape 2 (« h ∈ [0 ; 5] : 15 + 2h ≤ 25 » contre trois intervalles nus) ; module 6 étape 4 (l'option correcte fait deux lignes, les trois autres une demi-ligne). Un élève rompu aux QCM les trouve sans raisonner.",
+   "components/BuildCheck.jsx n'est importé par aucun module de cette leçon : code mort (le composant est en revanche utilisé dans ensembles-et-intervalles-2nde). SignFlipLine.jsx l. 40 écrit par ailleurs le membre de gauche en dur (« 2 < 5 ») au lieu de le dériver des props a et b : sans effet aujourd'hui puisque le module ne passe jamais d'autres valeurs, mais le bandeau énoncerait une fausseté si a > b.",
+   "Incohérence cosmétique, module 4 étape 3 : l'option r3 écrit l'ensemble des solutions « {2 ; −1} » tandis que le feedback de la même question écrit « S = {−1 ; 2} ». Deux ordres pour le même ensemble dans un module qui enseigne précisément la notation ensembliste."
+  ],
+  "duplicates": [
+   "P3 « Comprendre et résoudre une inéquation du premier degré » est enseigné comme neuf ici ET revendiqué par fonction-affine-2nde_P11 « Résoudre une inéquation avec une fonction affine ». La même résolution ax + b ≤ 0 est donc posée deux fois comme un apprentissage nouveau dans le niveau.",
+   "P3 et P4 recouvrent signe-fonctions-2nde_P8/P10/P11 (« Utiliser un tableau de signes pour résoudre une inéquation », « Résoudre f(x) > 0 », « Résoudre f(x) < 0 »). Le partage est ici DÉLIBÉRÉ et propre : le teachingScope.exclude de cette leçon renvoie explicitement « Les tableaux de signes de produits (leçon « Signe des fonctions ») ». La frontière est tenue.",
+   "P4 « Représenter l'ensemble des solutions sur une droite » chevauche ensembles-et-intervalles-2nde_P2 « Lire et représenter des intervalles » et P3 « Décrire un ensemble de nombres à l'aide d'un intervalle ». Comme cette leçon-ci ne fournit aucun geste de représentation, ce qu'elle éprouve sous P4 est strictement la traduction inégalité ↔ intervalle, c'est-à-dire le LP de l'autre leçon. C'est le doublon le plus net de la paire.",
+   "P5 « Résoudre des équations produit » reprend l'objet entier de la leçon de 3e equations-produit (clé catalogue 3e_equations_inequations), dont les pointsToLearn incluent « Comprendre la propriété du produit nul » et « Résoudre une équation produit nul ». La reprise est justifiée (la 3e ne traitait QUE ce cas), mais le module 4 l'enseigne comme entièrement neuf, sans jamais s'appuyer sur l'acquis de 3e ni le déclarer en priorKnowledge."
+  ],
+  "recommendations": [
+   "URGENT — ajouter KnowledgeBrick à la ligne d'import de Module05QuotientEtValeurInterdite.jsx (l. 2). En l'état, le module 5 plante à chaque validation d'étape et les trois briques du quotient ne sont jamais posées. C'est un correctif d'un mot.",
+   "Donner à P4 un geste : un composant où l'élève POSE le crochet (ouvert/fermé) et choisit le sens du coloriage sur une droite, avec vérification. C'est le seul LP de la leçon sans manipulation propre et son unique épreuve de boss est mal construite.",
+   "Refaire eq-e6 : dessiner les quatre RealLine (ou au moins trois) et demander lequel correspond, au lieu d'afficher un seul dessin et de décrire les autres en toutes lettres.",
+   "Ajouter au boss une épreuve sur le cas du double zéro d'un quotient ((2x + 4)/(x + 2) = 0, S = ∅) : c'est le vrai contenu du module 5 et il n'est pas mesuré.",
+   "Déclarer la factorisation dans priorKnowledge et l'ajouter au diagnostic du module 0 : x² = 9 (module 4 étape 5) et eq-e8 en dépendent sans filet.",
+   "Déplacer la brique methode-traduire-vitesse à l'étape 3 du module 6, ou retirer de son corps l'équation 60t = 90(t − 1) qui donne la réponse de M06-S3-Q4 ; et renommer l'id, qui ne correspond plus au contenu.",
+   "Supprimer la constante morte P dans Module07MissionFinale.jsx (l. 29).",
+   "Faire prononcer une fois « ensemble de définition » à côté de « valeur interdite », pour raccrocher le vocabulaire officiel."
+  ],
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Prendre en compte l'ensemble de définition",
+    "taughtAnyway": true,
+    "evidence": "Module 5 entier : ProductScanner en mode quotient fait découvrir le TROU en x = −1 (« division par 0 — valeur interdite », ProductScanner.jsx l. 57), brique valeur-interdite, puis question M05-S2-Q1 dont le distracteur {3 ; −1} est précisément l'erreur consistant à ignorer l'ensemble de définition, puis l'étape 3 (double zéro, S = ∅). Enseigné et éprouvé solidement, sous le nom « valeur interdite » et non sous le terme officiel ; aucun LP du catalogue ne l'isole, il est absorbé dans P6.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Utiliser un tableau de signes simple",
+    "taughtAnyway": false,
+    "evidence": "Recherche `grep -rn 'tableau de signes'` dans tout le répertoire de la leçon : une seule occurrence, dans lesson.config.js, et c'est une ligne d'EXCLUSION — teachingScope.exclude contient « Les tableaux de signes de produits (leçon « Signe des fonctions ») ». Aucun module, aucune brique, aucune question ne construit ni ne lit un tableau de signes. L'item est délégué à signe-fonctions-2nde, dont les LP P4 et P8 le portent.",
+    "recommendation": "absent"
+   },
+   {
+    "scopeItem": "Modéliser un problème par une équation",
+    "taughtAnyway": true,
+    "evidence": "Module 6, étapes 1 et 3 : M06-S1-Q1 fait choisir l'équation qui traduit un périmètre (2x + 2(x + 3) = 26, avec les distracteurs « moitié du tour » et « aire »), puis M06-S1-Q2 la résout ; M06-S3-Q4 fait traduire une poursuite (60t = 90(t − 1), distracteur clé : le décalage porté sur la vitesse au lieu du temps), puis M06-S3-Q5 la résout. Briques methode-traduire-vitesse et methode-modeliser. Mesuré au boss uniquement de biais, par eq-e10 qui est rattachée à P7 et P3. Aucun LP du catalogue ne nomme la modélisation : elle est absorbée dans P7 « Interpréter et vérifier les solutions », dont ce n'est pas l'intitulé.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Modéliser un problème par une inéquation",
+    "taughtAnyway": true,
+    "evidence": "Module 6, étape 2 : M06-S2-Q3 (« Location d'un vélo : 15 € plus 2 € par heure. Budget maximal : 25 € ») dont la bonne option est « h ∈ [0 ; 5] : 15 + 2h ≤ 25 » — elle exige à la fois de reconnaître qu'un maximum donne une INÉQUATION (distracteur « h = 5 exactement ») et d'ajouter la contrainte implicite h ≥ 0 (distracteur « ]−∞ ; 5] »). C'est le seul endroit de la leçon où une contrainte implicite du contexte entre dans l'ensemble de solutions, et la brique regle-contrainte-implicite ne lui est même pas associée (elle n'existe que dans ensembles-et-intervalles-2nde). Mesuré au boss par eq-e10. Comme ci-dessus, aucun LP propre.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Résoudre une équation quotient simple",
+    "taughtAnyway": true,
+    "evidence": "Module 5 en entier, et c'est le LP P6 du catalogue : l'item officiel est bien couvert par un LP. Signalé ici seulement parce que sa mesure au boss se réduit à une épreuve (eq-e9) portant sur le cas facile.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Vérifier une solution",
+    "taughtAnyway": true,
+    "evidence": "Module 1 étape 4 : NumericQuestion M01-S4-Q3 qui fait CALCULER 2 × 4 + 5 pour vérifier, avec explainFor traitant deux erreurs typiques (29 = « 2 collé à x », 11 = oubli de la multiplication), puis brique methode-verifier-solution qui dit « tu n'as pas résolu : tu as remplacé x par 4 et comparé ». Repris au module 2 étape 3 pour distinguer solution exacte et solution approchée. Mesuré au boss par eq-e2. Absorbé dans P7 avec « interpréter », alors que ce sont deux gestes différents.",
+    "recommendation": "append-lp"
+   }
+  ],
+  "verticalPositioning": {
+   "revised": "La résolution de ax + b = c est acquise en 4e (equations-4e : « Conserver l'équilibre en agissant sur les deux membres », « Résoudre une équation du premier degré ax + b = c », « Modéliser un problème par une équation ») et l'équation produit nul en 3e (equations-produit : « Comprendre la propriété du produit nul », « Résoudre une équation produit nul », modules « Le scanner de produit », « La balance »). Le module 2 et le module 4 rejouent donc intégralement des acquis du collège — mais avec un dispositif nouveau : la balance de 4e devient une liste d'opérations dont certaines sont des pièges, et le verdict « les solutions ont changé » est calculé (eqUtils.sameSolutions) au lieu d'être raconté.",
+   "extended": "Trois extensions réelles au-delà du collège. (1) L'équation ax + b = cx + d avec x DES DEUX CÔTÉS (module 2 étape 2), que la 4e ne traitait pas (son intitulé s'arrête à ax + b = c). (2) La solution NON entière gardée exacte sous forme de fraction (module 2 étape 3, 7/3 contre 2,33) — la 4e restait sur des solutions entières. (3) L'équation quotient et sa valeur interdite (module 5), entièrement absente du collège.",
+   "new": "L'INÉQUATION est le contenu franchement neuf, et c'est le point capital de positionnement : la clé de catalogue de 3e s'appelle 3e_equations_inequations mais la leçon construite (equations-produit) ne couvre QUE l'équation produit nul — ses modules sont « Zéro ou pas zéro ? », « Une égalité à trou », « La balance », « Le scanner de produit », « Vérifier et interpréter », « Carré contre rectangle ». Aucune inéquation n'y est résolue. L'élève de 2de rencontre donc pour la première fois ici : l'inégalité qu'on transforme, le retournement du signe par un facteur négatif (module 3, SignFlipLine), et l'ensemble de solutions comme intervalle infini. Le module 3 est en conséquence le module le plus légitimement neuf de la leçon — et il est bien construit.",
+   "formalized": "Le nombre de solutions devient un objet de discours : une, aucune (∅), toutes (ℝ), une infinité. La brique regle-nombre-de-solutions le formalise dès le module 1 après que le scanner a montré deux forfaits parallèles, et le drill du module 3 (ligne r4 : 5x ≥ 5x + 1 → ∅) l'applique aux inéquations. La notation ensembliste S = {…}, ∅, ℝ et les intervalles deviennent le langage standard des réponses — ce que le collège écrivait « x = 4 » s'écrit désormais « S = {4} ». La carte des quatre types × quatre méthodes (module 5 étape 4) formalise le CHOIX de méthode d'après la forme, ce que le collège n'avait pas à faire puisqu'il n'avait qu'une forme à la fois.",
+   "tool": "La leçon consomme deux outils venus d'ailleurs en 2de et le déclare à moitié. (1) Les intervalles et leurs crochets : ils sont dans priorKnowledge ('intervalle', 'intervalle-crochets', 'ensemble-reels', 'appartient') et ce sont eux qui servent à écrire tout ensemble de solutions d'inéquation — la leçon ensembles-et-intervalles-2nde en est le prérequis explicite dans coursesData (prerequisites : « Calcul littéral », « Ensembles et intervalles »). (2) La FACTORISATION, elle, est consommée sans être déclarée : x² = 9 (module 4 étape 5) et eq-e8 en dépendent, et priorKnowledge ne mentionne ni 'factoriser' ni les identités remarquables. Dans l'autre sens, la leçon est elle-même l'outil de signe-fonctions-2nde (résoudre f(x) = 0, f(x) > 0) et de fonction-affine-2nde (P10, P11), auxquelles elle délègue explicitement le tableau de signes."
+  }
+ }
 }
