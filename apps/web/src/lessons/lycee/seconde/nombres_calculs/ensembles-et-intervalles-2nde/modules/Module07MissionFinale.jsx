@@ -26,6 +26,8 @@ const REGISTRE = [
   { id: 'boites', emoji: '📦', label: 'Boîtes', value: 'ℕ ⊂ ℤ ⊂ ℝ' },
   { id: 'inter', emoji: '∩', label: 'Intersection', value: ']2 ; 4]' },
   { id: 'infini', emoji: '∞', label: 'Infini', value: 'toujours [' },
+  { id: 'ei-e11', skill: 'ensembles', requires: ['vocab-appartenance', 'vocab-inclusion', 'ensemble-vide'], title: 'Épreuve 11', prompt: 'Soit D l’ensemble des diviseurs de 12. Quelle affirmation est VRAIE ?', options: ['4 ∈ D et l’ensemble des diviseurs de 12 supérieurs à 12 est vide', '4 ⊂ D', '{4} ∈ D', 'D est vide car 12 n’est pas premier'], cols: 1, correct: 0, explain: '4 divise 12, donc 4 APPARTIENT à D (∈, entre un élément et un ensemble). {4} ⊂ D serait juste, mais « 4 ⊂ D » et « {4} ∈ D » confondent les deux symboles. Et aucun diviseur de 12 ne dépasse 12 : cet ensemble-là est bien l’ensemble vide ∅.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P6'] } },
+  { id: 'ei-e12', skill: 'croiser', requires: ['vocab-intersection-reunion', 'intersection-intervalles', 'reunion-intervalles'], title: 'Épreuve 12', prompt: 'Soit I = [−1 ; 4] et J = ]2 ; 7[. Que valent I ∩ J et I ∪ J ?', options: [']2 ; 4] et [−1 ; 7[', '[−1 ; 7[ et ]2 ; 4]', ']2 ; 4[ et [−1 ; 7]', '[2 ; 4] et [−1 ; 7['], cols: 2, correct: 0, explain: 'L’INTERSECTION ne garde que la zone commune : de 2 (exclu, car J l’exclut) à 4 (inclus, car I l’inclut), donc ]2 ; 4]. La RÉUNION couvre tout : de −1 (inclus) à 7 (exclu), donc [−1 ; 7[. Pour chaque borne, c’est l’intervalle qui s’arrête là qui décide du crochet.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_ensembles-et-intervalles-2nde_P7'] } },
 ];
 
 const SKILLS = {

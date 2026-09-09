@@ -138,7 +138,7 @@ export const LESSON_CONFIG = {
       id: '05', number: 5, slug: 'encadrer-et-comparer', path: `${LESSON_BASE_PATH}/encadrer-et-comparer`,
       title: 'Encadrer et comparer', desc: 'Encadre √10 par des carrés, range √2 parmi ses approximations, puis clôture un champ dont la diagonale n’est pas décimale.',
       stage: 'practice_lab',
-      teachesLearningPointIds: ['seconde_nombres-reels-2nde_P5', 'seconde_nombres-reels-2nde_P2'],
+      teachesLearningPointIds: ['seconde_nombres-reels-2nde_P5', 'seconde_nombres-reels-2nde_P2', 'seconde_nombres-reels-2nde_P6'],
       color: 'rose', style: 'featured', estimatedMin: 11, difficulty: 4, actionText: 'Encadrer',
     },
     {

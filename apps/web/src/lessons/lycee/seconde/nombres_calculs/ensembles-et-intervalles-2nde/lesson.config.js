@@ -95,7 +95,7 @@ export const LESSON_CONFIG = {
       id: '02', number: 2, slug: 'le-langage-des-ensembles', path: `${LESSON_BASE_PATH}/le-langage-des-ensembles`,
       title: 'Le langage des ensembles', desc: 'Des boîtes emboîtées, deux cercles qui se croisent : ∈, ⊂, ∩, ∪ et ∅ en rangeant des nombres.',
       stage: 'discovery',
-      teachesLearningPointIds: ['seconde_ensembles-et-intervalles-2nde_P1'],
+      teachesLearningPointIds: ['seconde_ensembles-et-intervalles-2nde_P1', 'seconde_ensembles-et-intervalles-2nde_P6', 'seconde_ensembles-et-intervalles-2nde_P7'],
       color: 'sky', style: 'featured', estimatedMin: 7, difficulty: 2, actionText: 'Ranger les nombres',
     },
     {

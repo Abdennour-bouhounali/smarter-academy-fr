@@ -24,6 +24,7 @@ const REGISTRE = [
   { id: 'familles', emoji: '📦', label: 'Familles', value: 'ℕ⊂ℤ⊂𝔻⊂ℚ⊂ℝ' },
   { id: 'restes', emoji: '➗', label: 'Restes', value: '0 ou boucle' },
   { id: 'exact', emoji: '=', label: 'Exact', value: '√2, 1/3, 6π' },
+  { id: 'nr-e11', skill: 'encadrer', requires: ['regle-sens-arrondi', 'exact-approche'], title: 'Épreuve 11', prompt: 'Une étagère de 29 m se monte avec des planches de 2,4 m. Combien de planches faut-il acheter ?', options: ['13', '12', '12,1', '12,08'], cols: 4, correct: 0, explain: '29 ÷ 2,4 = 12,083… Une planche ne se coupe pas en morceau achetable : il en faut 13. Ici l’arrondi se fait vers le HAUT, quel que soit le chiffre après la virgule — c’est la situation qui décide du sens de l’arrondi, pas la règle habituelle.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_nombres-reels-2nde_P6'] } },
 ];
 
 const SKILLS = {

@@ -119,7 +119,7 @@ for (const n of [1, 2, 3, 4, 5]) {
   const groups = page.locator('main div[role="group"]'); const n = await groups.count();
   for (let i = 0; i < n; i += 1) { const opts = groups.nth(i).locator('button[aria-pressed]'); if (await opts.count()) await opts.first().click({ force: true }).catch(() => {}); }
   await settle(page);
-  await page.locator('button:has-text("Valider mes 10 réponses")').click(); await settle(page);
+  await page.locator('button:has-text("Valider mes")').click(); await settle(page);
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page, 800);
   const cards = await attrs(page, '[data-knowledge-snapshot="complete"] [data-km-completeview] [data-km-item]', 'data-km-item');

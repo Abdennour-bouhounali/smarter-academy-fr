@@ -208,8 +208,8 @@ const browser = await launch();
   const { ctx, page } = await o(browser, M.boss, null, { tag: 'boss' });
   check('boss: reachable and silent', /Sens contraire/.test(await body(page)) && !/Bonne réponse/.test(await body(page)));
   await runBoss(page);
-  await page.locator('button:has-text("Valider mes 10 réponses")').click(); await settle(page);
-  check('boss: score', /\/ 10/.test(await body(page)));
+  await page.locator('button:has-text("Valider mes")').click(); await settle(page);
+  check('boss: score', /\/ \d+/.test(await body(page)));
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page);
   // La synthèse est désormais la carte des connaissances complète (cf. 2nde-colinearite-carte.mjs).
