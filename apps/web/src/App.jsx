@@ -61,6 +61,7 @@ import parallelogrammesTranslations4eRoutes from './lessons/college/4e/espace_ge
 import triangles4eRoutes from './lessons/college/4e/espace_geometrie/triangles-4e/routes';
 import transformations4eRoutes from './lessons/college/4e/espace_geometrie/transformations-4e/routes';
 import representationsEspace4eRoutes from './lessons/college/4e/espace_geometrie/representations-espace-4e/routes';
+import reperage4eRoutes from './lessons/college/4e/espace_geometrie/reperage-4e/routes';
 import statistiques4eRoutes from './lessons/college/4e/donnees_probabilites/statistiques-4e/routes';
 import racinesCarrees3eRoutes from './lessons/college/3e/nombres_calculs/racines-carrees/routes';
 import reperageDroitePlan3eRoutes from './lessons/college/3e/espace_geometrie/reperage-droite-plan-3e/routes';
@@ -219,6 +220,7 @@ export default function App() {
             {triangles4eRoutes()}
             {transformations4eRoutes()}
             {representationsEspace4eRoutes()}
+            {reperage4eRoutes()}
             {statistiques4eRoutes()}
             {algorithmique4eRoutes()}
             {racinesCarrees3eRoutes()}

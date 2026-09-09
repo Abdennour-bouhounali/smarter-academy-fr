@@ -1584,7 +1584,7 @@ const smaMetadata = {
     ],
     durationMinutes: 50,
     difficulty: 'Moyen',
-    status: 'coming_soon',
+    status: 'available',
     icon: '📍',
     tier: 'free',
   },
