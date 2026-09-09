@@ -2478,7 +2478,7 @@ const smaMetadata = {
       ],
       durationMinutes: 80,
       difficulty: 'Difficile',
-      status: 'coming_soon',
+      status: 'available',
       icon: "📐",
       tier: 'free',
     },
@@ -2517,7 +2517,7 @@ const smaMetadata = {
       ],
       durationMinutes: 80,
       difficulty: 'Difficile',
-      status: 'coming_soon',
+      status: 'available',
       icon: "🔢",
       tier: 'free',
     },
@@ -2689,7 +2689,7 @@ const smaMetadata = {
       ],
       durationMinutes: 75,
       difficulty: 'Difficile',
-      status: 'coming_soon',
+      status: 'available',
       icon: "⊥",
       tier: 'free',
     },
@@ -2768,7 +2768,7 @@ const smaMetadata = {
       ],
       durationMinutes: 80,
       difficulty: 'Difficile',
-      status: 'coming_soon',
+      status: 'available',
       icon: "🎲",
       tier: 'free',
     },
@@ -2830,6 +2830,55 @@ const smaMetadata = {
       tier: 'free',
     },
   ],
+  // ---- SECONDE — EXTENSION HORS PROGRAMME : trigonométrie ----
+  // Objet `trigonometrie_cercle`, déclaré en `extension_objects` (et NON en
+  // official_objects) : le référentiel 2026 ne met pas de trigonométrie en
+  // Seconde. Ajout Smarter Academy assumé, badgé « hors programme » côté élève.
+  // Treize items de périmètre → DEUX leçons (partIndex 1 et 2) : la première
+  // construit le cercle et y lit les coordonnées, la seconde s'en sert pour
+  // calculer et résoudre. La seconde suppose la première.
+  'seconde_trigonometrie_cercle': [
+    {
+      id: "trigonometrie-cercle-2nde",
+      titleSma: "Le cercle trigonométrique",
+      description: "Enrouler la droite des réels sur un cercle de rayon 1, mesurer l'angle par la longueur parcourue, et découvrir que cosinus et sinus sont les deux coordonnées du point d'arrivée.",
+      prerequisites: ["Trigonométrie du triangle rectangle (3e)", "Repérage dans le plan", "Proportionnalité"],
+      pointsToLearn: [
+        "Comprendre le cercle trigonométrique",
+        "Comprendre le radian comme mesure d'un angle par la longueur d'arc",
+        "Convertir entre degrés et radians",
+        "Associer un réel t à un point du cercle trigonométrique",
+        "Déterminer les coordonnées d'un point du cercle trigonométrique",
+        "Reconnaître le cosinus comme abscisse et le sinus comme ordonnée",
+        "Connaître les valeurs remarquables du cosinus",
+        "Connaître les valeurs remarquables du sinus",
+        "Utiliser les valeurs remarquables pour placer un point",
+      ],
+      durationMinutes: 80,
+      difficulty: "Difficile",
+      status: 'coming_soon',
+      icon: "🔵",
+      tier: 'free',
+    },
+    {
+      id: "trigonometrie-equations-2nde",
+      titleSma: "Trigonométrie : identités et équations",
+      description: "Utiliser cos²t + sin²t = 1 comme un Pythagore déguisé, additionner deux angles, et résoudre cos t = a ou sin t = b en lisant les solutions sur le cercle.",
+      prerequisites: ["Le cercle trigonométrique", "Théorème de Pythagore", "Équations"],
+      pointsToLearn: [
+        "Utiliser la relation cos²t + sin²t = 1",
+        "Utiliser les formules d'addition du cosinus et du sinus",
+        "Résoudre une équation cos t = a sur un intervalle donné",
+        "Résoudre une équation sin t = b sur un intervalle donné",
+      ],
+      durationMinutes: 75,
+      difficulty: "Difficile",
+      status: 'coming_soon',
+      icon: "🧭",
+      tier: 'free',
+    },
+  ],
+
 };
 
 const slugify = (value) =>
@@ -2840,7 +2889,7 @@ const slugify = (value) =>
  * entry. `partIndex`/`partTotal` are 1/1 for unsplit lessons; split parts get
  * 1..partTotal in the metadata array's order.
  */
-function buildLesson({ gradeId, levelId, domainId, obj, meta, partIndex, partTotal }) {
+function buildLesson({ gradeId, levelId, domainId, obj, meta, partIndex, partTotal, origin = 'official' }) {
   // Lesson codes must be GLOBALLY unique (bare-code API lookups — see the
   // catalogue invariants test). Authored ids take care of it themselves;
   // auto-generated stubs get a grade suffix because the same official object
@@ -2850,7 +2899,15 @@ function buildLesson({ gradeId, levelId, domainId, obj, meta, partIndex, partTot
   const durationMinutes = meta.durationMinutes ?? null;
 
   return {
-    officialObject: obj.id,
+    // `origin` distingue les objets du RÉFÉRENTIEL OFFICIEL 2026 des ajouts
+    // Smarter Academy (`extension_objects`) : une leçon d'extension n'est pas
+    // au programme du niveau, l'interface doit le dire, et rien ne doit la
+    // présenter comme officielle. `officialObject` reste null dans ce cas —
+    // c'est ce que les tests d'invariants du catalogue vérifient.
+    origin,
+    officialObject: origin === 'official' ? obj.id : null,
+    extensionObject: origin === 'extension' ? obj.id : null,
+    relatedOfficialObjects: obj.relatedOfficialObjects || [],
     title: meta.titleSma || obj.title,
     id: lessonId,
     description: meta.description || obj.description || 'En préparation...',
@@ -2905,7 +2962,13 @@ function buildChaptersForGrade(gradeId, levelId) {
       // One official object can map to several lessons if a future entry in
       // smaMetadata is authored as an array (the retired "Partie 1 / Partie
       // 2" split); every current entry is a single lesson-meta object.
-      lessons: (domain.official_objects || []).flatMap(obj => {
+      // Les objets OFFICIELS d'abord, puis les EXTENSIONS Smarter Academy —
+      // hors référentiel, marquées comme telles, jamais mélangées aux premiers
+      // dans l'ordre d'affichage.
+      lessons: [
+        ...(domain.official_objects || []).map((obj) => [obj, 'official']),
+        ...(domain.extension_objects || []).map((obj) => [obj, 'extension']),
+      ].flatMap(([obj, origin]) => {
         const raw = smaMetadata[`${gradeId}_${obj.id}`] || smaMetadata[obj.id] || {};
         const metas = Array.isArray(raw) ? raw : [raw];
         return metas.map((meta, i) =>
@@ -2915,6 +2978,7 @@ function buildChaptersForGrade(gradeId, levelId) {
             domainId: domain.id,
             obj,
             meta,
+            origin,
             partIndex: i + 1,
             partTotal: metas.length,
           })

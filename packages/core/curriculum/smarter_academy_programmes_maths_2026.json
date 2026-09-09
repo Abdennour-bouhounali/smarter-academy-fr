@@ -2104,6 +2104,50 @@
                 "exclude": []
               }
             }
+          ],
+          "extension_objects": [
+            {
+              "id": "trigonometrie_cercle",
+              "title": "Trigonométrie : le cercle et le radian",
+              "description": "Enrouler la droite des réels sur le cercle trigonométrique, y lire cosinus et sinus comme les coordonnées d'un point, et résoudre les premières équations trigonométriques.",
+              "origin": "extension",
+              "source": "smarter_academy",
+              "status": "planned",
+              "rationale": "HORS RÉFÉRENTIEL 2026 en Seconde : le programme officiel de ce niveau ne contient pas de trigonométrie, et l'objet 3e « trigonometrie » exclut explicitement le cercle trigonométrique. Ajout Smarter Academy, à la demande de l'auteur, pour préparer les fonctions trigonométriques de Première — il doit être présenté comme tel à l'élève.",
+              "relatedOfficialObjects": [
+                "vecteurs"
+              ],
+              "prerequisites": [
+                "Trigonométrie du triangle rectangle (3e)",
+                "Repérage dans le plan",
+                "Cercle et rayon",
+                "Proportionnalité"
+              ],
+              "level_specificity": "Le rapport de longueurs du triangle rectangle de 3e devient la COORDONNÉE d'un point qui tourne : cosinus et sinus cessent d'être réservés aux angles aigus, le radian mesure l'angle par la longueur parcourue, et cos²t + sin²t = 1 n'est que le théorème de Pythagore sur un rayon de 1.",
+              "teachingScope": {
+                "include": [
+                  "Comprendre le cercle trigonométrique",
+                  "Comprendre le radian comme mesure d'un angle par la longueur d'arc",
+                  "Convertir entre degrés et radians",
+                  "Associer un réel t à un point du cercle trigonométrique",
+                  "Déterminer les coordonnées d'un point du cercle trigonométrique",
+                  "Reconnaître le cosinus comme abscisse et le sinus comme ordonnée",
+                  "Connaître les valeurs remarquables du cosinus",
+                  "Connaître les valeurs remarquables du sinus",
+                  "Utiliser les valeurs remarquables pour placer un point",
+                  "Utiliser la relation cos²t + sin²t = 1",
+                  "Utiliser les formules d'addition du cosinus et du sinus",
+                  "Résoudre une équation cos t = a sur un intervalle donné",
+                  "Résoudre une équation sin t = b sur un intervalle donné"
+                ],
+                "exclude": [
+                  "Fonctions sinus et cosinus comme fonctions d'une variable réelle (Première)",
+                  "Périodicité et parité des fonctions trigonométriques (Première)",
+                  "Dérivation des fonctions trigonométriques (Première)",
+                  "Formules de duplication et de linéarisation (Première)"
+                ]
+              }
+            }
           ]
         },
         {

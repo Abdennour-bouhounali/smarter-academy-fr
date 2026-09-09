@@ -55,7 +55,11 @@ describe('lesson catalogue invariants', () => {
   it('keeps split-lesson parts coherent', () => {
     const byOfficialObject = new Map();
     for (const { gradeId, chapterId, lesson } of allLessons) {
-      const key = `${gradeId}/${chapterId}/${lesson.officialObject}`;
+      // Une leçon d'EXTENSION a `officialObject === null` : c'est son
+      // `extensionObject` qui identifie l'objet dont elle dérive. Sans cela
+      // toutes les extensions d'un même chapitre tomberaient dans le même
+      // seau `null` et le test des parties les croirait morcelées.
+      const key = `${gradeId}/${chapterId}/${lesson.officialObject ?? lesson.extensionObject}`;
       if (!byOfficialObject.has(key)) byOfficialObject.set(key, []);
       byOfficialObject.get(key).push(lesson);
     }
@@ -86,6 +90,22 @@ describe('lesson catalogue invariants', () => {
   it('builds paths under the owning level, not hardcoded college', () => {
     for (const { levelId, gradeId, lesson } of allLessons) {
       expect(lesson.path.startsWith(`/courses/${levelId}/${gradeId}/`), lesson.path).toBe(true);
+    }
+  });
+
+  it('every lesson declares a valid origin, and extensions are not official', () => {
+    for (const { gradeId, lesson } of allLessons) {
+      const where = `${gradeId}/${lesson.id}`;
+      expect(['official', 'extension'], where).toContain(lesson.origin);
+      if (lesson.origin === 'official') {
+        expect(lesson.officialObject, where).toBeTruthy();
+        expect(lesson.extensionObject, where).toBeNull();
+      } else {
+        // Une leçon hors référentiel ne doit JAMAIS pouvoir être prise pour une
+        // leçon officielle : c'est ce que l'interface lit pour la badger.
+        expect(lesson.officialObject, where).toBeNull();
+        expect(lesson.extensionObject, where).toBeTruthy();
+      }
     }
   });
 });

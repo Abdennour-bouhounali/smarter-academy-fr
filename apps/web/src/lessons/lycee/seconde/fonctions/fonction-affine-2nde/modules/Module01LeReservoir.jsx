@@ -4,10 +4,6 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import TankLab from '../components/TankLab';
-// PILOTE JSXGraph (docs/experiments/JSXGRAPH_PILOT.md) — développement
-// seulement, et seulement avec ?viz=jsxgraph. L'élève voit TankLab.
-import AffineLineLabJSXGraph from '../components/AffineLineLabJSXGraph';
-import { useJSXGraph } from '../../../../../common/math-visualization/pilotSwitch';
 import { affine, imageOf, formatDec } from '../components/affineUtils';
 
 /**
@@ -39,7 +35,6 @@ import { affine, imageOf, formatDec } from '../components/affineUtils';
  * réussite de l'étape.
  */
 export default function Module01LeReservoir() {
-  const pilot = useJSXGraph();
   const [s, setS] = useState({ a: 3, b: 10, t: 0 });
   const [visitedT, setVisitedT] = useState([0]);
   const [pred1, setPred1] = useState(null);
@@ -95,12 +90,7 @@ export default function Module01LeReservoir() {
       num: 3, title: 'Change le débit', subtitle: 'b est verrouillé. Règle a : rends-le négatif, puis nul.', done: done3,
       content: (kit) => (
         <div className="space-y-3">
-          {pilot
-            ? <AffineLineLabJSXGraph a={s.a} b={s.b}
-                onChange={(n) => change3({ ...s, ...n, t: s.t }, kit.react)}
-                lockB disabled={!done2}
-                ariaLabel="Droite du volume : tire la poignée a pour faire pivoter la droite" />
-            : <TankLab a={s.a} b={s.b} t={s.t} onChange={(n) => change3(n, kit.react)} lockB lockT disabled={!done2} showStaircase />}
+          <TankLab a={s.a} b={s.b} t={s.t} onChange={(n) => change3(n, kit.react)} lockB lockT disabled={!done2} showStaircase />
           {done3 ? (
             <>
               <Feedback tone="ok">a &lt; 0 : le réservoir <strong>se vide</strong>, la droite descend. a = 0 : rien ne bouge, la droite est horizontale. a &gt; 0 : ça monte. La droite <strong>pivote</strong> autour de (0 ; b) : a règle la pente, pas le départ.</Feedback>

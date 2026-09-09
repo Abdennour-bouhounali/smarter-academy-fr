@@ -76,6 +76,17 @@ const LessonCard = forwardRef(function LessonCard({ lesson, onClick }, ref) {
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono-jetbrains text-[10px] font-bold">NOUVEAU</span>
               ) : null}
             </div>
+            {/* Une leçon d'EXTENSION n'est pas au programme officiel du niveau
+                (elle vient d'`extension_objects`, pas d'`official_objects`) :
+                l'élève doit le savoir avant de la commencer, et rien ne doit la
+                présenter comme officielle. */}
+            <div className="flex items-start justify-between gap-3">
+              {lesson.origin === 'extension' && (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 mb-3 rounded-full bg-violet-50 border border-violet-200 text-violet-700 font-mono-jetbrains text-[10px] font-bold" title="Chapitre ajouté par Smarter Academy — il ne figure pas au programme officiel de ce niveau">
+                  HORS PROGRAMME
+                </span>
+              )}
+            </div>
             <div className="flex items-center gap-2 mb-2">
               <h4 className="font-space font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">{lesson.title}</h4>
               <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500" title="Gratuit" />
