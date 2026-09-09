@@ -9,10 +9,14 @@ import {
 const BASE = process.env.KIT_BASE || 'http://localhost:5233';
 const LESSON = `${BASE}/courses/lycee/seconde/geometrie/equations-de-droites-2nde`;
 const KEY = 'u_anon_smarter_lesson_equations-de-droites-2nde';
+// La leçon garde SEPT modules de contenu : le module 6 « À retenir » n'est pas
+// un résumé en double, il ENSEIGNE (quatre items de knowledge.jsx, cinq briques
+// : deux points, point + pente, lire une cartésienne). Seule sa grille de cartes
+// écrite à la main a été supprimée, au profit de la carte cumulative.
 const SLUG = {
   1: 'le-laboratoire-des-droites', 2: 'des-points-sur-la-droite', 3: 'de-la-droite-a-l-equation',
   4: 'le-laboratoire-des-coefficients', 5: 'ce-point-est-il-sur-la-droite',
-  6: 'atelier-construire-et-resoudre', boss: 'mission-finale-la-droite',
+  6: 'a-retenir', 7: 'atelier-construire-et-resoudre', boss: 'mission-finale-la-droite',
 };
 const o = (browser, url, seed, extra = {}) => open(browser, url, { key: KEY, completedModules: seed, ...extra });
 const seedThrough = (n) => Array.from({ length: n + 1 }, (_, i) => String(i));
@@ -24,7 +28,8 @@ const CONTRIB = {
   3: ['droite-equation-idee', 'droite-equation-cartesienne', 'droite-equation-reduite', 'droite-methode-point-vecteur', 'droite-formules-equations', 'mem-droite-deux-ecritures'],
   4: ['droite-role-m-p', 'droite-ordonnee-origine', 'droite-verticale', 'droite-lire-equation', 'droite-tracer', 'mem-droite-m-p'],
   5: ['droite-appartenance', 'droite-methode-tester-point', 'droite-alignement-equation', 'mem-droite-appartenance'],
-  6: ['droite-methode-deux-points', 'droite-methode-point-pente', 'droite-lire-cartesienne', 'droite-modeliser', 'mem-droite-trois-chemins'],
+  6: ['droite-methode-deux-points', 'droite-methode-point-pente', 'droite-lire-cartesienne', 'mem-droite-trois-chemins'],
+  7: ['droite-modeliser'],
 };
 const TOTAL = Object.values(CONTRIB).flat().length;
 const expectedAfter = (n) => Object.entries(CONTRIB).filter(([m]) => Number(m) <= n).flatMap(([, ids]) => ids).sort();
@@ -46,7 +51,8 @@ const browser = await launch();
 {
   const { ctx, page } = await o(browser, LESSON, null, { tag: 'index' });
   check('index: trigger « Ma carte » mounted by the provider', (await page.locator('button[data-km-trigger]').count()) === 1);
-  check('index: no « À retenir » module left in the lesson plan', !/À retenir/.test(await body(page)));
+  check('index: the « À retenir » module teaches, it no longer duplicates the map',
+    /À retenir/.test(await body(page)));
   await openDrawer(page);
   check('index: map empty before module 1 (empty state, 0 items)', (await page.locator('#km-root [data-km-empty]').count()) === 1 && (await drawerIds(page)).length === 0);
   const top = await chromeTop(page);
@@ -68,7 +74,7 @@ const browser = await launch();
 }
 
 /* ── M1 → M5 : état cumulé (seed) — snapshot == tiroir == attendu ────────── */
-for (const n of [1, 2, 3, 4, 5, 6]) {
+for (const n of [1, 2, 3, 4, 5, 6, 7]) {
   const { ctx, page } = await o(browser, `${LESSON}/${SLUG[n]}`, seedThrough(n), { tag: `m${n}` });
   await settle(page, 600);
   const snap = await snapshotIds(page);
@@ -108,8 +114,8 @@ for (const n of [1, 2, 3, 4, 5, 6]) {
     await page.screenshot({ path: `${SHOT_DIR}eqdroites-carte-m4-print.png`, fullPage: true });
     await page.emulateMedia({ media: 'screen' });
   }
-  if (n === 6) {
-    check(`M6: last content module → map = complete lesson knowledge (${TOTAL} items)`, snap.length === TOTAL && dr.length === TOTAL);
+  if (n === 7) {
+    check(`M7: last content module → map = complete lesson knowledge (${TOTAL} items)`, snap.length === TOTAL && dr.length === TOTAL);
     await page.locator('#km-root').screenshot({ path: `${SHOT_DIR}eqdroites-carte-drawer-complete.png` });
   }
   await ctx.close();
@@ -129,7 +135,7 @@ for (const n of [1, 2, 3, 4, 5, 6]) {
   await page.locator('button:has-text("Voir mon profil")').click(); await settle(page);
   await page.locator('button:has-text("Passer à la synthèse")').click(); await settle(page, 800);
   const cards = await attrs(page, '[data-knowledge-snapshot="complete"] [data-km-completeview] [data-km-item]', 'data-km-item');
-  check(`boss synthèse: complete map rendered inline — all ${TOTAL} cards`, sameSet(cards, expectedAfter(6)), `${cards.length}`);
+  check(`boss synthèse: complete map rendered inline — all ${TOTAL} cards`, sameSet(cards, expectedAfter(7)), `${cards.length}`);
   check('boss synthèse: cards carry KaTeX and visuals (not a title list)', (await page.locator('[data-knowledge-snapshot="complete"] .katex').count()) > 3 && (await page.locator('[data-knowledge-snapshot="complete"] svg').count()) > 2);
   check('boss synthèse: no inline print button (print lives in the drawer)', (await page.locator('[data-knowledge-snapshot="complete"]').getByRole('button', { name: 'Imprimer ma carte', exact: true }).count()) === 0 && (await page.locator('[data-knowledge-snapshot="complete"]').getByRole('button', { name: 'Ouvrir et imprimer ma carte' }).count()) === 1);
   await openDrawer(page);

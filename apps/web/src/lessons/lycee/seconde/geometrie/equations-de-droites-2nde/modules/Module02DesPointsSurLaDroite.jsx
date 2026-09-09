@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LineWalker from '../components/LineWalker';
 import { pointAt, slopeFromPoints, formatPoint, formatVec, formatSlope } from '../components/lineUtils';
@@ -138,7 +139,11 @@ export default function Module02DesPointsSurLaDroite() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Tous les points de la droite s’écrivent A + t·u. Mais la question de départ reste : comment savoir si un point donné (x ; y) est sur la droite, sans marcher ? Il faut une relation entre x et y — module suivant.</Feedback>}
+      footer={
+        <KnowledgeSnapshot moduleNumber={2}>
+          Tous les points de la droite s’écrivent A + t·u. Mais la question de départ reste : comment savoir si un point donné (x ; y) est sur la droite, sans marcher ? Il faut une relation entre x et y — module suivant.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

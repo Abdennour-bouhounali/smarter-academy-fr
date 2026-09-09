@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, NumericQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import DetTester from '../components/DetTester';
 import { FIGURES, detTest, cartesianOf, reducedOf, formatCartesian, formatReduced, formatPoint, formatVec } from '../components/lineUtils';
@@ -151,7 +152,11 @@ export default function Module03DeLaDroiteALEquation() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Une droite, deux écritures : cartésienne a·x + b·y + c = 0 (vecteur directeur (−b ; a)) et réduite y = m·x + p. Que font m et p quand on les change ? Module suivant.</Feedback>}
+      footer={
+        <KnowledgeSnapshot moduleNumber={3}>
+          Une droite, deux écritures : cartésienne a·x + b·y + c = 0 (vecteur directeur (−b ; a)) et réduite y = m·x + p. Que font m et p quand on les change ? Module suivant.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

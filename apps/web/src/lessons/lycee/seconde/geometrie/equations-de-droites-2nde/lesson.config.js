@@ -48,6 +48,11 @@ export const LESSON_CONFIG = {
   chapterTitle: 'Géométrie',
   passingScore: 6,
   masteryThreshold: 0.8,
+  // La formalisation de cette leçon EST la carte cumulative : le module 6
+  // pose ses quatre briques, le tiroir et l'« À retenir » de fin de module les
+  // rendent. Sans ce drapeau, validate-lessons attend un module `formalization`
+  // séparé — et la carte reste invisible (docs/architecture/KNOWLEDGE_MAP.md).
+  knowledgeMap: true,
   emoji: '📈',
   estimatedDurationMin: 85,
   skills: [

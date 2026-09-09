@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import MembershipLab from '../components/MembershipLab';
 import LineScene from '../components/LineScene';
@@ -125,7 +126,11 @@ export default function Module05CePointEstIlSurLaDroite() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Vecteur directeur, pente, équation cartésienne, équation réduite, test d’appartenance : tout est en place. La carte au module suivant, puis l’atelier.</Feedback>}
+      footer={
+        <KnowledgeSnapshot moduleNumber={5}>
+          Vecteur directeur, pente, équation cartésienne, équation réduite, test d’appartenance : tout est en place. La carte au module suivant, puis l’atelier.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

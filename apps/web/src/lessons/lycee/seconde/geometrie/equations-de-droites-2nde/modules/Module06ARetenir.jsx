@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import { ContentModule, BatchChoiceQuestion, TapQuestion, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 
 /** Module 6 — FORMALISATION : « À retenir » — quatre lectures d'une droite, trois chemins vers son équation. */
-const CARDS = [
-  { t: 'vecteur directeur', f: 'u ≠ 0, et tout k·u', s: 'la direction de la droite ; A + t·u parcourt tous ses points' },
-  { t: 'pente', f: 'm = u_y / u_x', s: 'montée ÷ avancée entre deux points ; aucune pente si la droite est verticale' },
-  { t: 'équation cartésienne', f: 'a·x + b·y + c = 0', s: 'vecteur directeur (−b ; a) ; écrit TOUTES les droites (b = 0 : verticale)' },
-  { t: 'équation réduite', f: 'y = m·x + p', s: 'm pente, p ordonnée à l’origine (point (0 ; p)) ; pas de verticale' },
-  { t: 'appartenance', f: 'M ∈ d ⇔ ses coordonnées vérifient l’équation', s: 'remplacer x par x_M, comparer à y_M' },
-  { t: 'trouver l’équation', f: 'deux points · point + u · point + pente', s: 'la pente d’abord (ou u), puis p avec le point' },
-];
 
 export default function Module06ARetenir() {
   const [b1, setB1] = useState(false);
@@ -30,17 +23,10 @@ export default function Module06ARetenir() {
           num: 1, title: 'La carte', done: b1,
           content: (
             <div className="space-y-3">
-              <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-4 text-sm text-indigo-900">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {CARDS.map((c) => (
-                    <div key={c.t} className="rounded-xl bg-white border border-indigo-200 p-3">
-                      <div className="text-[11px] font-bold uppercase text-indigo-500">{c.t}</div>
-                      <div className="font-extrabold font-mono">{c.f}</div>
-                      <div className="text-xs">{c.s}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              {/* Aucun résumé écrit ici : les six cases recopiées à la main ont été
+                  supprimées (knowledge.jsx les déclare déjà), et la carte
+                  cumulative est rendue UNE fois, en pied de module. Deux
+                  <KnowledgeSnapshot> dans le même module compteraient double. */}
               <BatchChoiceQuestion
                 intro={<p className="text-sm text-slate-600">Vrai ou faux ?</p>}
                 rows={[
@@ -112,7 +98,11 @@ export default function Module06ARetenir() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Les quatre lectures sont en place. Reste à construire, lire, tracer et résoudre sans filet : l’atelier.</Feedback>}
+      footer={
+        <KnowledgeSnapshot moduleNumber={6}>
+          Les quatre lectures sont en place. Reste à construire, lire, tracer et résoudre sans filet : l’atelier.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

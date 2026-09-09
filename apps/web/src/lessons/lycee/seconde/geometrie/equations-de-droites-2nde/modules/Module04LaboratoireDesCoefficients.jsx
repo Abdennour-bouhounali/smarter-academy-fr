@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoefficientLab from '../components/CoefficientLab';
 import LineBuilder from '../components/LineBuilder';
@@ -168,7 +169,11 @@ export default function Module04LaboratoireDesCoefficients() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">m tourne, p glisse, b = 0 dresse la droite. Reste le test le plus utile : ce point est-il sur la droite ? Module suivant.</Feedback>}
+      footer={
+        <KnowledgeSnapshot moduleNumber={4}>
+          m tourne, p glisse, b = 0 dresse la droite. Reste le test le plus utile : ce point est-il sur la droite ? Module suivant.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

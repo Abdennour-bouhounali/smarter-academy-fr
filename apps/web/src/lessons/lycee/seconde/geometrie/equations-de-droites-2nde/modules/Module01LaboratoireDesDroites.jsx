@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import LineLab from '../components/LineLab';
 import { det, scaleVec, formatVec, formatPoint } from '../components/lineUtils';
@@ -165,7 +166,11 @@ export default function Module01LaboratoireDesDroites() {
           ),
         },
       ]}
-      footer={<Feedback tone="ok">Un point, une direction : une droite. Mais une droite a une infinité de points — comment les décrire <strong>tous</strong> avec des nombres ? Module suivant : on marche dessus.</Feedback>}
+      footer={
+        <KnowledgeSnapshot moduleNumber={1}>
+          Un point, une direction : une droite. Mais une droite a une infinité de points — comment les décrire <strong>tous</strong> avec des nombres ? Module suivant : on marche dessus.
+        </KnowledgeSnapshot>
+      }
     />
   );
 }

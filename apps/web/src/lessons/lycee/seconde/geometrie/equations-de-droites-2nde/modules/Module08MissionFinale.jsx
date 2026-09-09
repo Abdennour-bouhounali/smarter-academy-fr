@@ -1,5 +1,6 @@
 import React from 'react';
 import { BossFinal } from '../../../../../common/kit';
+import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { LESSON_CONFIG } from '../lesson.config';
 import LineScene from '../components/LineScene';
@@ -167,29 +168,6 @@ const BADGES = [
   { id: 'b-parfait', emoji: '💎', label: 'Maître des droites', test: (m) => Object.keys(m).length === 0 },
 ];
 
-/** La synthèse : la droite fil rouge, sa flèche, ses points A + t·u, ses deux équations. */
-function Synthese() {
-  const line = FIGURES.fil;
-  const pts = [-3, -2, -1, 2].map((t) => ({ id: `t${t}`, ...pointAt(line.A, line.u, t), color: '#059669' }));
-  return (
-    <div className="space-y-4">
-      <LineScene line={line} showArrow frozen points={pts} ariaLabel={`La droite fil rouge ${formatReduced(reducedOf(line))}, sa flèche u et des points A + t·u`} />
-      <div className="grid sm:grid-cols-3 gap-2 text-sm">
-        {[
-          { t: 'Un point, une direction', d: 'A (1 ; 3), u (1 ; 2) — et tout k·u. Points A + t·u.' },
-          { t: 'Une relation', d: `det(AM, u) = 0 ⇔ ${formatCartesian(cartesianOf(line))} ⇔ ${formatReduced(reducedOf(line))}.` },
-          { t: 'Un test', d: 'M est sur la droite ⇔ ses coordonnées vérifient l’équation.' },
-        ].map(({ t, d }) => (
-          <div key={t} className="rounded-xl border-2 border-slate-200 bg-white p-3">
-            <p className="font-semibold text-slate-800">{t}</p>
-            <p className="text-xs text-slate-600">{d}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function Module08MissionFinale() {
   return (
     <BossFinal
@@ -223,7 +201,7 @@ export default function Module08MissionFinale() {
       skills={SKILLS}
       epreuves={EPREUVES}
       badges={BADGES}
-      synthese={<Synthese />}
+      synthese={<KnowledgeSnapshot variant="complete" complete />}
       completion={{
         masterTitle: 'Maître des droites !',
         title: 'Mission accomplie',
