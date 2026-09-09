@@ -101,7 +101,7 @@ export const LESSON_KNOWLEDGE = {
             </div>
             <div className="bg-white rounded-xl border border-blue-100 p-3 text-sm text-slate-700 space-y-1">
               <div className="text-slate-400 text-xs">Exemple (la boîte)</div>
-              <div>V(2) = 512 : 512 est l’image de 2. 400 a deux antécédents (x ≈ 1,3 et x ≈ 6,1). 600 n’en a aucun.</div>
+              <div>V(2) = 512 : 512 est l’image de 2. 400 a deux antécédents (x ≈ 1,3 et x ≈ 5,9). 600 n’en a aucun.</div>
             </div>
             <div className="text-xs text-slate-400 italic">📍 Souvenir : la sonde verticale touche la courbe une fois ; la sonde horizontale, deux fois.</div>
           </div>

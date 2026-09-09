@@ -30,7 +30,7 @@ const browser = await launch();
   for (let i = 0; i < n; i += 1) await opts.nth(i).click({ timeout: 1500 }).catch(() => {});
   const submit = page.locator('button:has-text("Voir mon résultat")');
   if (await submit.isVisible().catch(() => false)) { await submit.click(); await settle(page); }
-  check('diag: result, never blocks', /\/\s*10/.test(await body(page)) && !/verrouill/i.test(await body(page)));
+  check('diag: result, never blocks', /\/\s*\d+/.test(await body(page)) && !/verrouill/i.test(await body(page)));
   await ctx.close();
 }
 

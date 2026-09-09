@@ -90,6 +90,13 @@ export const layoutAudit = (page) => page.evaluate(() => {
 export const aspectAudit = (page) => page.evaluate(() => {
   const out = [];
   for (const svg of document.querySelectorAll('svg')) {
+    // KaTeX dessine ses délimiteurs extensibles (grande parenthèse, barre de
+    // valeur absolue, radical) en SVG très haut et très étroit — un viewBox
+    // « 333 × 2400 » y est NORMAL, c'est un glyphe, pas une figure. Ils vivent
+    // tous dans un `.vlist`, ce qui les distingue sans ambiguïté d'un repère de
+    // leçon. Sans ce filtre, toute leçon affichant une fraction en KaTeX
+    // déclenchait « viewBox 333×2400 ».
+    if (svg.closest('.katex, .vlist, .vlist-r')) continue;
     const vb = svg.viewBox?.baseVal;
     if (vb && vb.width > 100 && vb.height / vb.width > 3) out.push(`viewBox ${vb.width}×${vb.height}`);
   }

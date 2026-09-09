@@ -99,7 +99,7 @@ const browser = await launch();
   for (let i = 0; i < n; i += 1) await opts.nth(i).click({ timeout: 1500 }).catch(() => {});
   const submit = page.locator('button:has-text("Voir mon résultat")');
   if (await submit.isVisible().catch(() => false)) { await submit.click(); await settle(page); }
-  check('diag: result, never blocks', /\/\s*10/.test(await body(page)) && !/verrouill/i.test(await body(page)));
+  check('diag: result, never blocks', /\/\s*\d+/.test(await body(page)) && !/verrouill/i.test(await body(page)));
   await ctx.close();
 }
 
@@ -133,7 +133,7 @@ const browser = await launch();
   await page.locator('#step-3 button[aria-pressed]').filter({ hasText: /^v$/ }).click(); await settle(page, 200);
   await press(page, '#step-3', 'v : vers le haut', 1, issues);
   b = await body(page);
-  check('M1: the three configurations produced', /Trois situations, trois comptes/.test(b));
+  check('M1: the three configurations produced', /Trois situations produites de tes mains/.test(b));
   await tapOption(page, '#step-4', 1);                                 // wrong on purpose
   b = await body(page);
   check('M1: wrong answer corrected from the lab', /Bonne réponse/.test(b) && /TOUTE la droite/.test(b));

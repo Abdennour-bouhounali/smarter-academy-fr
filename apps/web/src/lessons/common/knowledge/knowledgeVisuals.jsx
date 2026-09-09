@@ -291,7 +291,11 @@ export function MiniGraph({
   showGrid = true,
   className = '',
 }) {
-  const pad = { left: 26, right: 12, top: 12, bottom: 22 };
+  // 30 et non 26 : une étiquette d'ordonnée à trois chiffres (« 400 », « 500 »)
+  // mesure ~22,5 px et se pose à 4 px de l'axe, soit 26,5 px — elle dépassait
+  // donc du cadre d'un demi-pixel, ce que l'audit de collisions signale à juste
+  // titre (« hors cadre "400" » dans la carte de fonctions-2nde).
+  const pad = { left: 30, right: 12, top: 12, bottom: 22 };
   const W = width - pad.left - pad.right;
   const H = height - pad.top - pad.bottom;
   const rX = xMax - xMin;
@@ -403,11 +407,20 @@ export function MiniGraph({
             textAnchor="middle" fontSize={S.LABEL} fill="#94a3b8"
             paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">{fmt(x)}</text>
         ))}
-        {gys.filter((y) => y !== 0).map((y) => (
-          <text key={`ly${y}`} x={(xMin <= 0 && xMax >= 0 ? toX(0) : 0) - 4} y={toY(y) + 3.5}
-            textAnchor="end" fontSize={S.LABEL} fill="#94a3b8"
-            paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">{fmt(y)}</text>
-        ))}
+        {gys.filter((y) => y !== 0).map((y) => {
+          // Les étiquettes de l'axe des ORDONNÉES se posent à gauche de cet axe,
+          // celles de l'axe des ABSCISSES 12 px sous lui : près de l'origine les
+          // deux zones se rencontrent, et « −1 » (ordonnée) chevauchait « −2 »
+          // (abscisse). On saute donc l'ordonnée dont la ligne croise la bande
+          // des étiquettes d'abscisse — l'axe reste gradué partout ailleurs.
+          const xAxisY = yMin <= 0 && yMax >= 0 ? toY(0) : H;
+          if (Math.abs(toY(y) - (xAxisY + 12)) < S.LABEL) return null;
+          return (
+            <text key={`ly${y}`} x={(xMin <= 0 && xMax >= 0 ? toX(0) : 0) - 4} y={toY(y) + 3.5}
+              textAnchor="end" fontSize={S.LABEL} fill="#94a3b8"
+              paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO} strokeLinejoin="round">{fmt(y)}</text>
+          );
+        })}
         {guides.map((g, i) => (g.x != null
           ? <line key={`gu${i}`} x1={toX(g.x)} y1={0} x2={toX(g.x)} y2={H} stroke={g.color ?? '#0284c7'} strokeWidth={S.MARK} strokeDasharray="4 3" />
           : <line key={`gu${i}`} x1={0} y1={toY(g.y)} x2={W} y2={toY(g.y)} stroke={g.color ?? '#059669'} strokeWidth={S.MARK} strokeDasharray="4 3" />))}
@@ -418,7 +431,10 @@ export function MiniGraph({
           )))}
         </g>
         {functions.filter((f) => f.label).map((f, i) => (
-          <text key={`fl${i}`} x={W - 2} y={10 + i * 12} textAnchor="end" fontSize={S.LABEL} fontWeight="700" fill={f.color ?? '#4f46e5'}
+          // Interligne 15 et non 12 : à 12 px de pas pour une police de 12 px il
+          // ne reste AUCUN blanc entre deux étiquettes, et trois courbes nommées
+          // (x², 1/x, |x|) se chevauchaient deux à deux.
+          <text key={`fl${i}`} x={W - 2} y={10 + i * 15} textAnchor="end" fontSize={S.LABEL} fontWeight="700" fill={f.color ?? '#4f46e5'}
             paintOrder="stroke" stroke="#fff" strokeWidth={S.HALO}>{f.label}</text>
         ))}
         {points.map((p, i) => {
