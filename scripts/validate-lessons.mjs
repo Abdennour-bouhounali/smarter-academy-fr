@@ -214,6 +214,36 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
     }
   }
 
+  // ── Le renvoi « Revoir le module N » du test final ─────────────────────────
+  // BossFinal lit `skills[k].module` pour construire le lien proposé à l'élève
+  // qui a raté une compétence. Après la suppression d'un module « À retenir »,
+  // sept de ces renvois pointaient encore un cran trop loin — donc sur le test
+  // final LUI-MÊME : l'élève en difficulté était renvoyé à l'épreuve qu'il
+  // venait d'échouer. Rien ne le voyait, le lien étant valide.
+  for (const file of listSourceFiles(lessonDir)) {
+    if (!/Module\d+.*\.jsx$/.test(file) || !readFileSync(file, 'utf-8').includes('skills=')) continue;
+    const owner = moduleOfFile(lessonDir, modules, file);
+    if (owner?.stage !== 'evaluation') continue;
+    const ast = parseFile(file);
+    traverse(ast, {
+      VariableDeclarator(path) {
+        if (path.node.id.name !== 'SKILLS' || path.node.init?.type !== 'ObjectExpression') return;
+        for (const prop of path.node.init.properties) {
+          if (prop.type !== 'ObjectProperty' || prop.value.type !== 'ObjectExpression') continue;
+          const target = literalValue(propOf(prop.value, 'module'));
+          if (typeof target !== 'number') continue;
+          const targetModule = modules?.find((m) => m.number === target);
+          const where = `${relative(repoRoot, file)}:${prop.loc?.start.line}`;
+          if (!targetModule) {
+            errors.push(`${where}: skill '${prop.key.name}' points at module ${target}, which does not exist in this lesson`);
+          } else if (targetModule.stage === 'evaluation') {
+            errors.push(`${where}: skill '${prop.key.name}' sends the student back to module ${target} — the evaluation itself. Point at the module that TEACHES it.`);
+          }
+        }
+      },
+    });
+  }
+
   // ── Question-level assessment metadata ────────────────────────────────────
   const questions = listSourceFiles(lessonDir).flatMap(extractQuestions);
   if (questions.length === 0) continue; // not migrated yet — not an error in default mode

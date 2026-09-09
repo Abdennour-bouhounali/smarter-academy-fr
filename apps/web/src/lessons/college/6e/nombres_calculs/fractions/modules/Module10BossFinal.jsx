@@ -34,7 +34,7 @@ const SKILLS = {
   droite: { label: 'Droite graduée', module: 8 },
   equivalence: { label: 'Fractions équivalentes', module: 4 },
   decimales: { label: 'Fractions décimales', module: 9 },
-  problemes: { label: 'Problèmes', module: 10 },
+  problemes: { label: 'Problèmes', module: 7 },
 };
 
 /* ═══ REGISTRE — les 4 terrains explorés dans la Factory ══════════ */

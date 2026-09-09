@@ -27,7 +27,7 @@ const SKILLS = {
   connecteurs: { label: 'Connecteurs et négation', module: 2 },
   implication: { label: 'Implication, réciproque, contraposée', module: 3 },
   equivalence: { label: 'Équivalence', module: 4 },
-  raisonnement: { label: 'Raisonner (absurde, cas)', module: 6 },
+  raisonnement: { label: 'Raisonner (absurde, cas)', module: 5 },
 };
 const EPREUVES = [
   { id: 'lg-e1', skill: 'proposition', requires: ['proposition'], title: 'Épreuve 1', prompt: 'Laquelle de ces phrases est une proposition mathématique ?', options: ['« 12 est un multiple de 5 »', '« Les fractions sont difficiles »', '« 2x + 1 »', '« Calcule 5 × 7 »'], cols: 1, correct: 0, explain: 'Une proposition est vraie ou fausse : « 12 est multiple de 5 » est fausse, mais c’est bien une proposition. Un avis, une expression et un ordre n’en sont pas.', assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_logique-et-raisonnement-2nde_P1'] } },

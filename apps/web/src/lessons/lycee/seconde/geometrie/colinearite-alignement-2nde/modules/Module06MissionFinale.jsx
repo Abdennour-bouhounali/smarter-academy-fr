@@ -173,8 +173,8 @@ const SKILLS = {
   alignes: { label: 'Trois points alignés', module: 2 },
   proportion: { label: 'Coordonnées proportionnelles', module: 3 },
   det: { label: 'Déterminant', module: 4 },
-  paralleles: { label: 'Droites parallèles', module: 6 },
-  problemes: { label: 'Résoudre', module: 6 },
+  paralleles: { label: 'Droites parallèles', module: 5 },
+  problemes: { label: 'Résoudre', module: 5 },
 };
 
 const BADGES = [

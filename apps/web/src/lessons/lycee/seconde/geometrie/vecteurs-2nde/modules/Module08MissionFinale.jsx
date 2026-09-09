@@ -150,7 +150,7 @@ const SKILLS = {
   somme: { label: 'Somme', module: 4 },
   produit: { label: 'Produit par un réel, colinéarité', module: 5 },
   norme: { label: 'Norme, distance, milieu', module: 6 },
-  probleme: { label: 'Résoudre', module: 8 },
+  probleme: { label: 'Résoudre', module: 7 },
 };
 
 const BADGES = [

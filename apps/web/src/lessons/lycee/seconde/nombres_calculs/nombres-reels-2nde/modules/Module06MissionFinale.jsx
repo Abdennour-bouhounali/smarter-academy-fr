@@ -31,7 +31,7 @@ const SKILLS = {
   familles: { label: 'Familles de nombres', module: 2 },
   division: { label: 'Décimal ou périodique', module: 3 },
   approche: { label: 'Exact et approché', module: 4 },
-  encadrer: { label: 'Encadrer et comparer', module: 6 },
+  encadrer: { label: 'Encadrer et comparer', module: 5 },
 };
 
 const tex = (o) => <MathText>{o}</MathText>;

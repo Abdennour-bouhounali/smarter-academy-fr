@@ -26,7 +26,7 @@ const SKILLS = {
   criteres: { label: 'Critères de divisibilité', module: 3 },
   parite: { label: 'Raisonner sur les entiers', module: 2 },
   problemes: { label: 'Problèmes (PGCD, PPCM)', module: 4 },
-  demontrer: { label: 'Démontrer', module: 6 },
+  demontrer: { label: 'Démontrer', module: 5 },
 };
 const tex = (o) => <MathText>{o}</MathText>;
 const EPREUVES = [

@@ -24,7 +24,7 @@ const SKILLS = {
   calcul: { label: 'Calculer |x|', module: 2 },
   ecart: { label: 'Distance entre deux nombres', module: 3 },
   faisceau: { label: 'Faisceau et intervalle', module: 4 },
-  situations: { label: 'Situations', module: 6 },
+  situations: { label: 'Situations', module: 5 },
 };
 const line = (props) => <div className="rounded-2xl border border-slate-200 bg-white p-1"><RealLine {...props} /></div>;
 const EPREUVES = [
