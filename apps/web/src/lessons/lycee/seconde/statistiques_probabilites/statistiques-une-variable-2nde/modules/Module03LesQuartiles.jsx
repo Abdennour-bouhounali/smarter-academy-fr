@@ -5,7 +5,7 @@ import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SeriesLab from '../components/SeriesLab';
-import { TRAJETS_A } from '../data';
+import { TRAJETS_A, TRAJETS_B } from '../data';
 
 /**
  * Module 3 — DÉCOUVERTE : les quartiles et l'écart interquartile.
@@ -24,6 +24,8 @@ export default function Module03LesQuartiles() {
   const [q2, setQ2] = useState(false);
   const [q3, setQ3] = useState(false);
   const [q4, setQ4] = useState(false);
+  const [qb, setQb] = useState(false);
+  const [q3b, setQ3b] = useState(false);
 
   const steps = [
     {
@@ -121,6 +123,51 @@ export default function Module03LesQuartiles() {
     },
     {
       num: 4,
+      title: 'À toi de déterminer Q1 et Q3',
+      subtitle: 'La 2de B, 20 valeurs rangées. Aucun repère n’est tracé : c’est toi qui les trouves, par le rang.',
+      done: qb && q3b,
+      content: (
+        <div className="space-y-3">
+          {/* La série est affichée SANS repère de quartile : l'élève doit
+              compter les rangs lui-même. C'est la seule étape du module où il
+              DÉTERMINE un quartile au lieu d'en lire un déjà tracé. */}
+          <SeriesLab values={TRAJETS_B} min={0} max={60} unit="min"
+            label="2de B — série rangée, sans repère" show={{}} />
+          <NumericQuestion
+            prompt="Quel est Q1 de cette série de 20 valeurs (en min) ?"
+            expected={17} suffix="min"
+            requires={['quartiles', 'mediane-stat', 'effectif']}
+            explain="Rang de Q1 = ⌈20/4⌉ = 5 : on prend la 5ᵉ valeur de la série rangée, soit 17 min. Le rang se calcule sur l’EFFECTIF, jamais sur les valeurs."
+            explainFor={(v) => (v === 5 ? 'Tu as donné le RANG (5), pas la valeur qui s’y trouve. La 5ᵉ valeur de la série est 17 min.'
+              : v === 16 ? 'C’est la 4ᵉ valeur. Le rang de Q1 est ⌈20/4⌉ = 5, donc la 5ᵉ : 17 min.'
+              : v === 15 ? 'Q1 n’est pas le quart de la valeur maximale : c’est un seuil de POSITION dans l’effectif. Rang ⌈20/4⌉ = 5 → 17 min.'
+              : 'Compte les rangs : ⌈20/4⌉ = 5, donc Q1 est la 5ᵉ valeur de la série rangée — 17 min.')}
+            solved={qb} onAnswered={() => setQb(true)}
+          />
+          {qb && (
+            <NumericQuestion
+              prompt="Et Q3 (en min) ?"
+              expected={21} suffix="min"
+              requires={['quartiles', 'mediane-stat', 'effectif']}
+              explain="Rang de Q3 = ⌈3 × 20/4⌉ = 15 : la 15ᵉ valeur, soit 21 min. L’écart interquartile de la 2de B vaut donc 21 − 17 = 4 min, contre 25 − 12 = 13 min pour la 2de A : la 2de B est bien plus resserrée."
+              explainFor={(v) => (v === 15 ? 'Tu as donné le RANG (15), pas la valeur : la 15ᵉ valeur est 21 min.'
+                : v === 22 ? 'C’est la 16ᵉ valeur. Le rang de Q3 est ⌈3 × 20/4⌉ = 15, donc la 15ᵉ : 21 min.'
+                : 'Rang de Q3 = ⌈3 × 20/4⌉ = 15 → la 15ᵉ valeur de la série rangée, soit 21 min.')}
+              solved={q3b} onAnswered={() => setQ3b(true)}
+            />
+          )}
+          {qb && q3b && (
+            <Feedback tone="ok">
+              Q1 = 17, Q3 = 21 : l’écart interquartile de la 2de B vaut <strong>4 min</strong>, contre
+              <strong> 13 min</strong> pour la 2de A. Deux classes de même effectif, deux étalements
+              qui n’ont rien à voir — et tu les as déterminés toi-même, par le rang.
+            </Feedback>
+          )}
+        </div>
+      ),
+    },
+    {
+      num: 5,
       title: 'Étendue ou écart interquartile ?',
       done: q4,
       content: (

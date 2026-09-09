@@ -1,260 +1,695 @@
 {
-  "lesson": "statistiques-une-variable-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-stats-proba-batch-A",
-  "learningPoints": {
-    "seconde_statistiques-une-variable-2nde_P1": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 1, "mechanism": "manipulation:SeriesLab" },
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 1, "mechanism": "feedback" },
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 1, "mechanism": "brick:serie-statistique" },
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 2, "mechanism": "question:M01-S2 (résumer par un seul nombre)" },
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 3, "mechanism": "brick:vocab-effectif-frequence" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 1, "mechanism": "manipulation:SeriesLab" }
-      ],
-      "manipulation": "SeriesLab — vingt pastilles sur un axe, une par élève, empilées quand une valeur se répète. L'élève SAISIT une pastille et la fait glisser (pointer capture, plus navigation clavier avec role=slider) ; les repères se déplacent pendant le glissement, sans clic de validation. L'étape 1 exige un VA-ET-VIENT : emmener une valeur au-delà de 55 min PUIS la ramener sous 45. La série cesse ainsi d'être une liste et devient un objet qu'on déforme.",
-      "assessmentQuestionIds": ["st-e1"],
-      "knowledgeItems": ["serie-statistique", "vocab-effectif-frequence"],
-      "notes": "La brique serie-statistique est posée à la fin de l'étape 1, conditionnée au va-et-vient, donc AVANT la première question. La lecture est éprouvée sur la forme la plus exigeante — le nuage de points, où « lire » signifie voir où les pastilles s'accumulent — et non sur un tableau. L'épreuve st-e1 change de registre (un tableau d'effectifs : 4 + 6 + 2 = 12, vérifié) avec le distracteur 3 qui est le nombre de valeurs DISTINCTES : la confusion effectif / nombre de modalités est encodée.",
-      "crossGrade": { "overlapsWith": ["3e:statistiques-3e", "5e:statistiques-5e"], "kind": "consolidation" },
-      "confidence": "high"
+ "lesson": "statistiques-une-variable-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-stats-proba-batch-A",
+ "learningPoints": {
+  "seconde_statistiques-une-variable-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab"
     },
-    "seconde_statistiques-une-variable-2nde_P2": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 1, "mechanism": "manipulation:SeriesLab" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 1, "mechanism": "brick:moyenne" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 1, "mechanism": "question:M02-S1 (100 ÷ 5)" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 2, "mechanism": "question:M02-S2 (moyenne pondérée, 220 ÷ 10)" },
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 3, "mechanism": "question:M05-S3 (52 ÷ 4)" }
-      ],
-      "manipulation": "SeriesLab, repère orange : la moyenne se déplace pendant le glissement d'une pastille. Le module 1 ne la nomme pas et ne donne pas la formule — c'est « le repère orange » —, et la brique moyenne du module 2 s'y adosse explicitement (« le repère orange du module 1, celui qui suivait l'élève déménagé : voici comment il se calcule »).",
-      "assessmentQuestionIds": ["st-e2"],
-      "knowledgeItems": ["moyenne"],
-      "notes": "La brique moyenne déclare `establishes={['moyenne', 'moyenne-ponderee']}` et est posée avant les deux questions qui les exigent : ordre source correct. Les deux formes sont éprouvées séparément — simple (étape 1) puis pondérée (étape 2) — et la question de l'étape 1 porte une remarque pédagogique juste : « quatre élèves sur cinq sont EN DESSOUS de cette moyenne », qui prépare le module 5. L'explainFor de l'étape 2 branche sur 25, exactement la moyenne des valeurs distinctes sans pondération (vérifié : (10+20+45)/3 = 25). Le boss st-e2 rejoue cette faute (bonne réponse 19,17 ; distracteur 21,67 = (10+20+35)/3 ; les deux vérifiés). RÉSERVE : la moyenne est SUPPOSÉE acquise (priorKnowledge 'moyenne', diagnostiquée par st-d1 et st-d2) — cette leçon la reprend pour l'articuler, ce que le lesson.config assume.",
-      "crossGrade": { "overlapsWith": ["3e:statistiques-3e", "4e:statistiques-4e", "5e:statistiques-5e"], "kind": "repetition" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 1,
+     "mechanism": "feedback"
     },
-    "seconde_statistiques-une-variable-2nde_P3": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 2, "mechanism": "question:M05-S2 (BatchChoiceQuestion, 4 lignes)" },
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 2, "mechanism": "brick:linearite-moyenne" },
-        { "module": 7, "moduleSlug": "mission-finale-resumer-une-serie", "step": null, "mechanism": "question:st-e9" }
-      ],
-      "manipulation": "AUCUNE pour ce LP. La formule x̄+b = x̄ + b et ax = a·x̄ est affichée en MathText au-dessus de la BatchChoiceQuestion, et les quatre lignes demandent d'appliquer la règle plutôt que de la découvrir. SeriesLab est bien présent au module 5 étape 1 et il est manipulable, mais il sert la robustesse (P10), pas la linéarité : aucun bouton « retirer 5 min à tout le monde » n'existe.",
-      "assessmentQuestionIds": ["st-e9"],
-      "knowledgeItems": ["linearite-moyenne"],
-      "notes": "PARTIELLEMENT couvert, pour trois raisons cumulées. (1) La règle est ASSÉNÉE puis appliquée : la formule est posée dans l'`intro` de la question, avant toute observation ; il n'y a ni geste ni révélation conditionnée qui la fasse découvrir. (2) La brique linearite-moyenne est posée APRÈS la question (conditionnée à q2), donc elle ne peut rien établir POUR elle — elle ne fait que résumer, ce qui viole l'ordre source du contrat de connaissances. (3) Seule la translation (x + b) est réellement travaillée : les quatre lignes portent toutes sur « retirer 5 min à chacun ». Le facteur multiplicatif (ax) apparaît dans la formule MathText et dans une incise de l'explication du boss (« multiplier chaque valeur par 3, en revanche, triplerait les deux ») mais n'est éprouvé NULLE PART. La moitié de l'intitulé officiel — la linéarité, pas seulement la translation — reste donc non mesurée. Ce que la leçon fait bien : distinguer position (qui suit) et dispersion (qui ne bouge pas), et le boss st-e9 le mesure correctement. Vérifié : 19,15 − 5 = 14,15 ; médiane 18 − 5 = 13 ; écart type et écart interquartile inchangés (data.test.js le teste explicitement, y compris le doublement).",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 1,
+     "mechanism": "brick:serie-statistique"
     },
-    "seconde_statistiques-une-variable-2nde_P4": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 1, "mechanism": "manipulation:SeriesLab" },
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 1, "mechanism": "feedback" },
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 3, "mechanism": "manipulation:SeriesLab" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 3, "mechanism": "brick:mediane" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 3, "mechanism": "question:M02-S3 (effectif pair)" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 4, "mechanism": "brick:choisir-position" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 4, "mechanism": "question:M02-S4 (salaires)" }
-      ],
-      "manipulation": "SeriesLab, repère vert : le point pédagogique est CONTRASTIF et il ne peut pas être obtenu autrement qu'en tirant une pastille — l'orange suit, le vert ne bouge presque pas. Le feedback donne la RAISON juste après le geste : « le premier utilise la VALEUR de chaque durée ; le second ne compte que le NOMBRE d'élèves de chaque côté ».",
-      "assessmentQuestionIds": ["st-e3"],
-      "knowledgeItems": ["mediane", "choisir-position"],
-      "notes": "L'obstacle réel de la médiane en 2de est l'effectif PAIR, et il est traité frontalement (étape 3 : « la demi-somme des deux valeurs centrales ; la médiane n'appartient pas forcément à la série »). La brique mediane et la brique choisir-position sont toutes deux posées avant les questions qui les exigent. L'étape 4 (les salaires, trois dirigeants à 40 000 €) éprouve le CHOIX entre les deux indicateurs, et son explication reste honnête : « la moyenne reste utile pour d'autres questions — par exemple la masse salariale totale ». Le boss st-e3 mesure exactement le cas pair (série de 6 : (8 + 12)/2 = 10, vérifié) avec le distracteur 10,83 qui est la moyenne — la confusion visée. La convention est celle de statsUtils (n pair → demi-somme), cohérente.",
-      "crossGrade": { "overlapsWith": ["3e:statistiques-3e", "4e:statistiques-4e"], "kind": "repetition" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 2,
+     "mechanism": "question:M01-S2 (résumer par un seul nombre)"
     },
-    "seconde_statistiques-une-variable-2nde_P5": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "les-quartiles", "step": 1, "mechanism": "manipulation:SeriesLab (LECTURE SEULE — pas de onChange)" },
-        { "module": 3, "moduleSlug": "les-quartiles", "step": 1, "mechanism": "brick:quartiles" },
-        { "module": 3, "moduleSlug": "les-quartiles", "step": 1, "mechanism": "question:M03-S1 (que signifie Q1 = 12 ?)" },
-        { "module": 3, "moduleSlug": "les-quartiles", "step": 2, "mechanism": "question:M03-S2 (rang de Q3 pour n = 30)" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 2, "mechanism": "question:M06-S2-Q1" }
-      ],
-      "manipulation": "AUCUNE, et c'est le point central de ce jugement. Le SeriesLab du module 3 est rendu SANS prop `onChange` (Module03LesQuartiles.jsx:36) : c'est donc une figure, pas un instrument. Les pastilles ne sont pas saisissables (le composant ne pose `role=\"slider\"` et `startDrag` que si `onChange` existe). La bande violette Q1–Q3 et les deux repères sont dessinés par statsUtils et l'élève les LIT.",
-      "assessmentQuestionIds": ["st-e4", "st-e5"],
-      "knowledgeItems": ["quartiles"],
-      "notes": "PARTIELLEMENT couvert. Ce qui est fait, et bien fait : le SENS de Q1 est correctement établi (« au moins un quart des élèves à 12 min ou moins », avec trois distracteurs qui sont les contresens réels — effectif exact, quart de la valeur maximale) ; la CONVENTION du programme est explicite et exacte (rang ⌈n/4⌉, valeur de la série, jamais d'interpolation) et le module dit même qu'elle diffère de celle des tableurs ; la question de l'étape 2 fait calculer un RANG dans le cas non entier (3 × 30 ÷ 4 = 22,5 → 23, vérifié) avec des distracteurs sur l'arrondi. Ce qui manque : l'élève ne DÉTERMINE JAMAIS UN QUARTILE. Il lit Q1 = 12 sur une figure, calcule un rang abstrait sur une série qui n'est pas montrée, puis à l'étape 3 calcule Q3 − Q1 à partir de valeurs FOURNIES par l'énoncé. Aucune étape ne demande : voici une série rangée, donne Q1. Le boss ne comble pas ce trou : st-e4 redemande un rang (⌈24/4⌉ = 6, vérifié) et st-e5 une interprétation. L'intitulé officiel est « DÉTERMINER les quartiles » : la détermination est le seul geste absent. Vérification de cohérence avec l'implémentation : les valeurs affichées (Q1 = 12, Q3 = 25 sur TRAJETS_A, n = 20) correspondent exactement aux rangs ⌈20/4⌉ = 5 et ⌈60/4⌉ = 15, et data.test.js les verrouille. Aucune contradiction entre les exemples et statsUtils.",
-      "crossGrade": { "overlapsWith": ["2de:boites-a-moustaches-2nde"], "kind": "anticipation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 3,
+     "mechanism": "brick:vocab-effectif-frequence"
     },
-    "seconde_statistiques-une-variable-2nde_P6": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 4, "mechanism": "question:M01-S4 (un nombre suffit-il ?)" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 4, "mechanism": "brick:choisir-position" },
-        { "module": 2, "moduleSlug": "moyenne-et-mediane", "step": 4, "mechanism": "question:M02-S4 (salaires)" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 4, "mechanism": "brick:mem-deux-nombres" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 4, "mechanism": "question:M04-S4 (deux capteurs)" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 1, "mechanism": "question:M06-S1-Q1" }
-      ],
-      "manipulation": "Le geste porteur est celui du module 1 étape 1 : voir les DEUX repères réagir différemment au même déplacement est ce qui rend interprétable la question « lequel choisir ? ». La brique mem-deux-nombres (module 4 étape 4) formalise la doctrine de la leçon — position ET dispersion, toujours les deux — et elle est posée avant la question qui en fait usage.",
-      "assessmentQuestionIds": ["st-e5"],
-      "knowledgeItems": ["choisir-position", "mem-deux-nombres", "quartiles"],
-      "notes": "L'interprétation est traitée en trois temps, dans le bon ordre : d'abord l'insuffisance d'un seul nombre (module 1 étape 4), puis le choix entre deux indicateurs de position (module 2 étape 4, les salaires), enfin le croisement position × dispersion (module 4 étape 4 et atelier). Les contextes sont variés et réalistes (revenus, capteurs, horaire de bus, ateliers de montage). La question M02-S4 n'est pas devinable : ses distracteurs (« la moyenne, car elle utilise toutes les valeurs ») sont des arguments plausibles, et l'explication ne les rejette pas en bloc — elle dit à quelle question chacun répond. Le boss st-e5 mesure l'interprétation de Q3 avec le distracteur « exactement 75 % ont 14 », qui est l'erreur de lecture d'un quartile comme un effectif exact.",
-      "crossGrade": { "overlapsWith": ["3e:statistiques-3e"], "kind": "extension" },
-      "confidence": "high"
-    },
-    "seconde_statistiques-une-variable-2nde_P7": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 1, "mechanism": "manipulation:SeriesLab (comparaison A/B, lecture seule)" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 1, "mechanism": "feedback" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 2, "mechanism": "manipulation:SeriesLab (bande moyenne ± σ, MANIPULABLE)" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 2, "mechanism": "feedback" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 2, "mechanism": "brick:ecart-type" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 4, "mechanism": "question:M04-S4 (deux capteurs)" }
-      ],
-      "manipulation": "SeriesLab avec `show={{ mean: true, sd: true }}` : une BANDE VERTE dessine l'intervalle [moyenne − σ ; moyenne + σ] et l'élève rapproche les pastilles du repère orange pour la faire maigrir. La gate est quantitative et exigeante : l'étape n'est validée que si l'écart type descend d'au moins 2,5 min sous sa valeur de départ (8,97 → moins de 6,47), donc après un resserrement RÉEL de la série. L'étape 1 pose d'abord le problème par un contraste : 2de A et 2de B, mêmes moyennes (19,15 et 19,10) et allures opposées, dessinées sur le MÊME axe.",
-      "assessmentQuestionIds": ["st-e7", "st-e8"],
-      "knowledgeItems": ["ecart-type", "mem-deux-nombres"],
-      "notes": "La compréhension de l'écart type comme DISTANCE TYPIQUE À LA MOYENNE, exprimée dans l'unité des données, est réellement construite : d'abord le manque (deux séries indiscernables par la moyenne), puis la mesure qui les sépare, puis la bande qu'on resserre soi-même. Le feedback insiste sur le bon point (« c'est une distance, exprimée dans la même unité que les données ») plutôt que sur la formule. La question du module 4 étape 4 et le boss st-e8 mesurent l'interprétation (petit σ = fiable) avec le distracteur inversé. Vérifié : σ(A) = 8,97 et σ(B) = 2,98, et data.test.js impose σ(B) < σ(A)/2.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_statistiques-une-variable-2nde_P8": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 2, "mechanism": "manipulation:SeriesLab" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 2, "mechanism": "brick:ecart-type" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 3, "mechanism": "question:M04-S3 (série 2,4,4,4,5,5,7,9)" },
-        { "module": 7, "moduleSlug": "mission-finale-resumer-une-serie", "step": null, "mechanism": "question:st-e7" }
-      ],
-      "manipulation": "La bande de l'étape 2 précède le calcul de l'étape 3 : l'élève a d'abord vu la quantité varier avec la série, il la calcule ensuite une fois à la main sur une petite série choisie pour tomber juste.",
-      "assessmentQuestionIds": ["st-e7"],
-      "knowledgeItems": ["ecart-type"],
-      "notes": "LA FORMULE EST CONSTRUITE PAR LE GESTE, PAS ASSÉNÉE — vérification demandée, résultat positif. Le bloc `above` de la NumericQuestion déroule les quatre temps dans l'ordre du raisonnement : écarts à la moyenne (−3, −1, −1, −1, 0, 0, 2, 4), puis carrés (9, 1, 1, 1, 0, 0, 4, 16), puis somme 32 et division par n = 8 → 4, puis racine → 2. Les deux gestes qui font sens sont JUSTIFIÉS et non posés : l'explain dit « on élève au carré pour que les écarts négatifs ne compensent pas les positifs, puis on prend la racine pour revenir à l'unité de départ », et l'explainFor sur la réponse 0 rappelle que la somme des écarts non carrés vaut TOUJOURS zéro — c'est-à-dire la raison même du carré. VARIANCE EN n, PAS n−1, et c'est cohérent : la formule MathText affichée est σ = √(Σ(xᵢ − x̄)²/n), le calcul de l'exemple divise par 8 (l'effectif), et statsUtils.variance divise par values.length en documentant « diviseur n — celle du programme de 2nde, pas la variance corrigée en n − 1 ». Tous les nombres vérifiés : somme 40, moyenne 5, somme des carrés 32, variance 4, écart type 2. Le boss st-e7 mesure exactement la confusion variance/écart type (moyenne des carrés = 9 → σ = 3, vérifié) avec 9 en distracteur.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_statistiques-une-variable-2nde_P9": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "les-quartiles", "step": 3, "mechanism": "question:M03-S3 (Q3 − Q1 = 13)" },
-        { "module": 3, "moduleSlug": "les-quartiles", "step": 3, "mechanism": "feedback" },
-        { "module": 3, "moduleSlug": "les-quartiles", "step": 3, "mechanism": "brick:etendue-interquartile" },
-        { "module": 3, "moduleSlug": "les-quartiles", "step": 4, "mechanism": "question:M03-S4 (BatchChoiceQuestion, 4 affirmations)" },
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 1, "mechanism": "manipulation:SeriesLab (A vs B)" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 2, "mechanism": "question:M06-S2-Q2" }
-      ],
-      "manipulation": "Le contraste 2de A / 2de B du module 4 étape 1 (mêmes moyennes, dispersions opposées, dessinées sur le même axe) est le geste qui donne son sens au mot « dispersion ». La bande verte de l'étape 2, resserrée par l'élève, en donne la mesure.",
-      "assessmentQuestionIds": ["st-e6", "st-e8"],
-      "knowledgeItems": ["etendue-interquartile", "ecart-type", "mem-deux-nombres"],
-      "notes": "Les TROIS mesures de dispersion du programme sont installées et, mieux, comparées entre elles par leur SENSIBILITÉ : l'étendue dépend de deux valeurs seulement, l'écart interquartile ignore les extrêmes, l'écart type tient compte de tout. La BatchChoiceQuestion de l'étape 4 du module 3 est exactement cette comparaison (quatre vrai/faux dont r2, « l'écart interquartile est sensible à une valeur extrême », qui est le point). Le feedback de l'étape 3 chiffre le contraste sur la série de référence : étendue 35 contre écart interquartile 13 (les deux vérifiés). Le boss l'éprouve deux fois, dont st-e6 qui donne min, Q1, médiane, Q3, max et demande de choisir la bonne différence (23 − 11 = 12, vérifié, avec 37 = 41 − 4 en distracteur : la confusion étendue / interquartile est encodée).",
-      "crossGrade": { "overlapsWith": ["3e:statistiques-3e"], "kind": "extension" },
-      "confidence": "high"
-    },
-    "seconde_statistiques-une-variable-2nde_P10": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "les-temps-de-trajet", "step": 1, "mechanism": "manipulation:SeriesLab" },
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 1, "mechanism": "manipulation:SeriesLab + bascule 20/21 élèves" },
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 1, "mechanism": "feedback" },
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 1, "mechanism": "brick:robustesse" },
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 4, "mechanism": "question:M05-S4 (revenu médian)" }
-      ],
-      "manipulation": "Une bascule à deux états — « série d'origine (20 élèves) » / « + l'élève à 120 min (21 élèves) » — et, sous le nuage, un TABLEAU À QUATRE LIGNES qui compare avant/après pour les quatre indicateurs, avec un codage couleur automatique (rose = a bougé, vert = inchangé, seuil 0,05). L'élève voit d'un coup QUI résiste et QUI s'effondre. L'axe est étendu à 130 min pour que la valeur ajoutée soit visible hors du nuage.",
-      "assessmentQuestionIds": ["st-e9"],
-      "knowledgeItems": ["robustesse"],
-      "notes": "Le tableau comparatif est le bon instrument pour ce LP : quatre indicateurs, deux colonnes, un verdict par ligne. Vérifié sur les données réelles : moyenne 19,15 → 23,95 (+4,80), médiane 18 → 18 (inchangée), écart type 8,97 → 23,19, écart interquartile 13 → 13. data.test.js verrouille ces valeurs (Δmoyenne > 4, |Δmédiane| ≤ 1). La brique robustesse est posée après le constat, avant la question de l'étape 2. Le transfert au revenu médian (étape 4) est le contexte social réel où cette propriété est décisive, et l'explainWrong y corrige une croyance ordinaire (« la médiane n'est pas toujours plus grande — ici elle est plus PETITE que la moyenne »).",
-      "crossGrade": { "overlapsWith": ["3e:statistiques-3e"], "kind": "consolidation" },
-      "confidence": "high"
-    },
-    "seconde_statistiques-une-variable-2nde_P11": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 1, "mechanism": "manipulation:SeriesLab + bascule" },
-        { "module": 5, "moduleSlug": "ajouter-ou-retirer-une-valeur", "step": 3, "mechanism": "question:M05-S3 (retirer l'élève à 48 min)" },
-        { "module": 7, "moduleSlug": "mission-finale-resumer-une-serie", "step": null, "mechanism": "question:st-e10" }
-      ],
-      "manipulation": "La bascule du module 5 étape 1 fonctionne dans les DEUX sens (on peut revenir à « série d'origine »), donc retirer la valeur extrême est bien un geste disponible. Mais le module ne le demande jamais : la gate est `added`, c'est-à-dire l'AJOUT seul — l'étape se valide sans qu'on soit jamais revenu en arrière, et tout le texte du feedback est écrit du point de vue de l'ajout.",
-      "assessmentQuestionIds": ["st-e10"],
-      "knowledgeItems": ["robustesse"],
-      "notes": "PARTIELLEMENT couvert. La suppression est traitée, mais comme un corollaire de l'ajout plutôt que comme un LP à part entière. Ce qui existe : une NumericQuestion (étape 3) où l'on retire l'élève à 48 min d'une série de cinq (100 ÷ 5 = 20 devient 52 ÷ 4 = 13, vérifié) dont l'explainFor traite bien l'erreur de diviseur (« tu as divisé par 5 au lieu de 4 »), et une épreuve du boss (st-e10, le salarié très bien payé qui part). Ce qui manque : aucun tableau comparatif du type de l'étape 1 pour la suppression, aucune observation des QUATRE indicateurs sous retrait, et surtout la gate ne force jamais le geste inverse. L'élève peut terminer le module sans avoir jamais vu ce qui se passe quand on retire — il l'a seulement déduit par symétrie. Un LP officiel distinct mérite une observation distincte ; la faire coûterait un troisième état de la bascule (« − l'élève à 40 min »).",
-      "crossGrade": { "overlapsWith": ["3e:statistiques-3e"], "kind": "consolidation" },
-      "confidence": "medium"
-    },
-    "seconde_statistiques-une-variable-2nde_P12": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "l-ecart-type", "step": 1, "mechanism": "manipulation:SeriesLab (A et B sur le même axe)" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 1, "mechanism": "manipulation:SeriesLab + tableau d'indicateurs" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 1, "mechanism": "question:M06-S1-Q1 (le bus du proviseur)" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 1, "mechanism": "brick:methode-comparer" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 2, "mechanism": "question:M06-S2-Q1 (deux ateliers, même médiane)" },
-        { "module": 6, "moduleSlug": "atelier-comparer-deux-series", "step": 3, "mechanism": "question:M06-S3-Q1 (19,15 contre 19,10)" }
-      ],
-      "manipulation": "SeriesLab en mode `compareValues` : la seconde série est dessinée sur le MÊME axe, en dessous, avec sa propre couleur. C'est la mise en regard qui rend la comparaison possible — deux graphiques séparés ne le permettraient pas.",
-      "assessmentQuestionIds": ["st-e10"],
-      "knowledgeItems": ["methode-comparer", "mem-deux-nombres", "robustesse"],
-      "notes": "Le module 6 est le meilleur atelier des quatre leçons du lot, parce qu'il enseigne quelque chose de neuf plutôt que de réviser : la comparaison HONNÊTE. Trois situations en escalade. (1) Position identique, dispersion qui tranche (le bus). (2) Médiane identique, dispersion opposée — ATELIER_X et ATELIER_Y ont exactement la même médiane 16,5 et des écarts interquartiles de 4 et 19, vérifiés et verrouillés par data.test.js. (3) Le cas où AUCUNE conclusion n'est légitime : 19,15 contre 19,10, un écart de trois secondes sur des séries d'écarts types 8,97 et 2,98. Cette troisième étape est rare et précieuse — elle énonce le critère juste (« comparer deux indicateurs suppose que leur écart soit grand devant la dispersion des données »), qui est le seuil de signification en langage de 2de. La brique methode-comparer est posée après la première comparaison réussie, avant les deux suivantes.",
-      "crossGrade": { "overlapsWith": ["3e:statistiques-3e", "4e:statistiques-4e"], "kind": "extension" },
-      "confidence": "high"
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab"
     }
+   ],
+   "manipulation": "SeriesLab — vingt pastilles sur un axe, une par élève, empilées quand une valeur se répète. L'élève SAISIT une pastille et la fait glisser (pointer capture, plus navigation clavier avec role=slider) ; les repères se déplacent pendant le glissement, sans clic de validation. L'étape 1 exige un VA-ET-VIENT : emmener une valeur au-delà de 55 min PUIS la ramener sous 45. La série cesse ainsi d'être une liste et devient un objet qu'on déforme.",
+   "assessmentQuestionIds": [
+    "st-e1"
+   ],
+   "knowledgeItems": [
+    "serie-statistique",
+    "vocab-effectif-frequence"
+   ],
+   "notes": "La brique serie-statistique est posée à la fin de l'étape 1, conditionnée au va-et-vient, donc AVANT la première question. La lecture est éprouvée sur la forme la plus exigeante — le nuage de points, où « lire » signifie voir où les pastilles s'accumulent — et non sur un tableau. L'épreuve st-e1 change de registre (un tableau d'effectifs : 4 + 6 + 2 = 12, vérifié) avec le distracteur 3 qui est le nombre de valeurs DISTINCTES : la confusion effectif / nombre de modalités est encodée.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:statistiques-3e",
+     "5e:statistiques-5e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "officialScopeNotCovered": [],
-    "prerequisiteGaps": [
-      {
-        "term": "quartile",
-        "declaredIn": "priorKnowledge n'en fait PAS un prérequis (correct), mais le lexique partagé le porte et la matrice l'a signalé",
-        "taughtAtCollege": false,
-        "verification": "VÉRIFIÉ PAR LECTURE DES TROIS CONFIGS. college/3e/donnees_probabilites/statistiques-3e/lesson.config.js met « Quartiles et diagrammes en boîte » dans teachingScope.exclude. college/4e/donnees_probabilites/statistiques-4e/lesson.config.js exclut « Les quartiles et l'écart interquartile (3e) » — en renvoyant à la 3e, qui les exclut. college/5e/donnees_probabilites/statistiques-5e/lesson.config.js exclut « La médiane, les quartiles et l'étendue (4e et 3e) ». Les pointsToLearn de coursesData.js le confirment : 3e_statistiques va jusqu'à « Déterminer et interpréter une étendue », 4e_statistiques jusqu'à « Calculer l'étendue d'une série », 5e_statistiques jusqu'à « Calculer une moyenne simple ». Le mot « quartile » n'apparaît dans AUCUN module de collège — un grep sur apps/web/src/lessons/college ne le trouve que dans des lignes d'exclusion de configs et dans le noyau partagé stats4e.js/statistiques.js (fonctions disponibles mais non exposées à l'élève). Il y a donc une EXCLUSION CIRCULAIRE 4e → 3e, où chacune renvoie à l'autre : personne n'enseigne les quartiles au collège.",
-        "impactOnModule0": "AUCUN — et c'est le bon comportement. Le module 0 de cette leçon ne diagnostique PAS les quartiles : ses huit questions portent sur moyenne, moyenne pondérée, médiane, effectif, fréquence, indicateur/dispersion et racine carrée. Le commentaire du fichier le dit explicitement : « chaque question MESURE un prérequis déclaré dans priorKnowledge — jamais la matière de la leçon (quartiles, écart interquartile, écart type, robustesse) ». Les quartiles sont bien traités comme matière NEUVE. Aucune correction n'est requise sur ce point.",
-        "residualIssue": "L'exclusion circulaire 4e ↔ 3e reste à corriger dans les configs de collège : le libellé « Les quartiles et l'écart interquartile (3e) » de statistiques-4e désigne une leçon de 3e qui ne les enseigne pas. Ce n'est pas un défaut de cette leçon-ci, mais le commentaire induit en erreur quiconque planifie la progression."
-      },
-      {
-        "term": "mode-stat",
-        "declaredIn": "lesson.config.js:60 (priorKnowledge) et Module00Diagnostic.jsx:20 (requires de st-d7)",
-        "taughtAtCollege": false,
-        "verification": "VÉRIFIÉ. Le MODE statistique (la valeur la plus fréquente d'une série) n'est enseigné dans AUCUNE leçon, à aucun niveau. Un grep de 'mode-stat' sur tout apps/web/src ne renvoie que DEUX occurrences, toutes deux dans cette leçon : sa propre déclaration de priorKnowledge et le `requires` de sa propre question de diagnostic st-d7. Aucune brique de connaissance ne porte cet id nulle part. Les pointsToLearn des trois leçons de statistiques du collège (5e, 4e, 3e) ne mentionnent jamais le mode : la 5e s'arrête à la moyenne simple, la 4e à moyenne pondérée / médiane / étendue, la 3e ajoute la comparaison et le choix d'indicateur. Le mot « mode » dans les leçons de collège désigne partout autre chose (un mode d'affichage d'un composant, le mode d'une calculatrice). Le module 8 de statistiques-3e porte même un commentaire explicite : « Le distracteur \"sans le mode\" de l'épreuve 9 a été remplacé : le mode n'est [pas au programme de la leçon] ». Le mode est donc un prérequis FANTÔME.",
-        "impactOnModule0": "RÉEL MAIS FAIBLE. La question st-d7 déclare `requires: ['indicateur-stat', 'etendue', 'dispersion', 'mode-stat']` et présente au diagnostic une option « Le mode : 7 » sur la série 4, 7, 7, 7, 12. La bonne réponse est « L'étendue : 12 − 4 = 8 » (vérifié) et elle est atteignable sans connaître le mode : l'élève doit reconnaître ce qui mesure l'ÉTALEMENT, et l'étendue est explicitée dans l'option même. Le mot « mode » n'apparaît que dans un distracteur et dans l'explication. La question n'est donc pas bloquante et la matière de la leçon ne dépend nulle part du mode. Mais le contrat de connaissances est violé sur la lettre : un `requires` déclare acquise une notion que le curriculum n'enseigne jamais, et un élève qui rate la question se voit expliquer « le mode (la valeur la plus fréquente) » comme s'il devait le savoir.",
-        "recommendation": "Deux options. (a) Retirer 'mode-stat' de priorKnowledge et du requires de st-d7, et remplacer le distracteur « Le mode : 7 » par « La médiane : 7 » — qui est vraie sur cette série (vérifié), qui est un prérequis RÉELLEMENT enseigné (3e, 4e) et qui reste un indicateur de position, donc le contraste voulu est préservé. (b) Si l'on tient au mode, l'introduire par une brique quelque part au collège. L'option (a) est nettement préférable : le mode n'est pas au programme de 2de et il n'a aucun rôle dans cette leçon."
-      }
-    ],
-    "pedagogicalProblems": [
-      "P5 « DÉTERMINER les quartiles » : l'élève ne détermine jamais un quartile. Le SeriesLab du module 3 est rendu SANS `onChange` (Module03LesQuartiles.jsx:36) — c'est une figure, pas un instrument : les pastilles ne sont pas saisissables, la bande Q1–Q3 est calculée par statsUtils et lue. Les trois questions du module portent sur le SENS de Q1 (lecture), le RANG de Q3 pour n = 30 (calcul abstrait, sur une série jamais montrée) et l'écart interquartile à partir de Q1 et Q3 FOURNIS. C'est le module le plus passif de la leçon, sur la notion la plus neuve — et sur la seule notion du chapitre qu'aucun niveau du collège n'a jamais abordée (voir prerequisiteGaps). Le contraste avec le module 4, où la bande σ se resserre sous le doigt, est saisissant.",
-      "P3 « linéarité de la moyenne » : la règle est affichée en MathText AVANT toute observation, la brique linearite-moyenne est posée APRÈS la question qui l'exige (donc elle n'établit rien pour elle), et seule la translation x + b est éprouvée — le facteur ax n'apparaît que dans la formule et dans une incise d'explication du boss. La moitié multiplicative de l'intitulé n'est mesurée nulle part.",
-      "P11 « influence de la SUPPRESSION » : la bascule du module 5 permet techniquement de revenir en arrière, mais la gate n'exige que l'AJOUT (`done: added`) et tout le tableau comparatif est écrit dans ce sens. La suppression n'est traitée que par une NumericQuestion sur une petite série et par une épreuve du boss ; elle est donc déduite par symétrie plutôt qu'observée. Deux LPs officiels distincts (P10 et P11) reçoivent une seule observation.",
-      "Numérotation d'états incohérente au module 1 : l'étape 1 porte `done: done3` et l'étape 2 porte `done: done1`, parce que les états ont été nommés d'après un ordre d'écriture antérieur au réordonnancement des étapes (Module01LesTempsDeTrajet.jsx:57 et 106). Sans conséquence fonctionnelle, mais c'est une bombe à retardement pour la prochaine modification. Par ailleurs `done2 = true` en dur (ligne 38) : l'étape 3 est validée à l'affichage, ce qui est assumé (« observation ») mais rend la brique vocab-effectif-frequence inconditionnelle — elle n'est pas gardée par un geste."
-    ],
-    "technicalProblems": [
-      "AUCUNE ERREUR ARITHMÉTIQUE. Contrairement aux deux leçons de pourcentages du lot, celle-ci a un data.js et un data.test.js, et les DEUX ont été exécutés avec succès (29 tests passés, avec series-regroupees-classes-2nde). Toutes les valeurs citées dans les modules ont été recalculées indépendamment et concordent : TRAJETS_A (n = 20) → moyenne 19,15 ; médiane 18 ; Q1 = 12 (rang ⌈20/4⌉ = 5) ; Q3 = 25 (rang ⌈60/4⌉ = 15) ; écart interquartile 13 ; étendue 35 ; écart type 8,9681. TRAJETS_B → moyenne 19,10 ; médiane 19 ; Q1 = 17 ; Q3 = 21 ; interquartile 4 ; étendue 11 ; écart type 2,9816. Avec l'élève à 120 min → moyenne 23,95 ; médiane 18 ; écart type 23,19 ; interquartile 13. ATELIER_X → médiane 16,5 ; interquartile 4 ; étendue 9. ATELIER_Y → médiane 16,5 ; interquartile 19 ; étendue 36. Modules : 100 ÷ 5 = 20 ; 220 ÷ 10 = 22 et (10+20+45)/3 = 25 ; (18+18)/2 = 18 ; ⌈3×30/4⌉ = 23 ; 25 − 12 = 13 ; série 2,4,4,4,5,5,7,9 → somme 40, moyenne 5, carrés des écarts 9+1+1+1+0+0+4+16 = 32, variance 4, σ = 2 ; 19,15 − 5 = 14,15 et 18 − 5 = 13 ; 52 ÷ 4 = 13. Boss : 4+6+2 = 12 ; 230 ÷ 12 = 19,17 et (10+20+35)/3 = 21,67 ; (8+12)/2 = 10 ; ⌈24/4⌉ = 6 et ⌈72/4⌉ = 18 ; 23 − 11 = 12 et 41 − 4 = 37 ; √9 = 3.",
-      "CONVENTION DE QUARTILES — COHÉRENTE. Vérification demandée, résultat positif sur les deux points. (1) L'implémentation partagée (lessons/common/stats/statsUtils.js, fonction `quartile`) utilise rang = ⌈kn/4⌉ et renvoie une VALEUR de la série triée, jamais une interpolation ; elle documente cette convention comme celle du programme français, distincte de celle des tableurs. (2) Les exemples de la leçon la respectent exactement : le module 3 étape 1 affiche Q1 = 12 pour TRAJETS_A et l'explique par « le rang de Q1 est ⌈20/4⌉ = 5 : la 5ᵉ valeur » — la 5ᵉ valeur triée est bien 12 ; l'étape 2 calcule ⌈3 × 30/4⌉ = ⌈22,5⌉ = 23 ; le boss st-e4 calcule ⌈24/4⌉ = 6 et cite ⌈3×24/4⌉ = 18. Le module dit même explicitement à l'élève que les tableurs utilisent une autre convention. Aucune contradiction entre les exemples affichés et l'implémentation qui les calcule.",
-      "ÉCART TYPE — VARIANCE EN n, COHÉRENTE. Vérification demandée, résultat positif. La formule affichée est σ = √(Σ(xᵢ − x̄)²/n) ; le calcul guidé divise par 8 pour une série de 8 valeurs ; statsUtils.variance divise par `values.length` et documente « diviseur n — celle du programme de 2nde, pas la variance corrigée en n − 1 » ; SeriesLab et les tableaux de comparaison appellent la même fonction. Aucun endroit de la leçon n'emploie n − 1. La formule est de plus CONSTRUITE et non assénée : les quatre temps (écart, carré, moyenne, racine) sont déroulés et les deux gestes non évidents sont justifiés (le carré pour que les écarts ne se compensent pas — argument renforcé par l'explainFor sur la réponse 0 —, la racine pour revenir à l'unité).",
-      "PRÉREQUIS FANTÔME : 'mode-stat' figure dans priorKnowledge (lesson.config.js:60) et dans le `requires` de st-d7 (Module00Diagnostic.jsx:20) alors que le mode statistique n'est enseigné par AUCUNE leçon du projet, à aucun niveau. Voir prerequisiteGaps pour la vérification complète et le correctif proposé (remplacer le distracteur « Le mode : 7 » par « La médiane : 7 », qui est vraie sur la série 4, 7, 7, 7, 12 et qui est un prérequis réellement enseigné).",
-      "AUCUN GEL DE LABORATOIRE. Le seul `disabled` de la leçon (Module01LesTempsDeTrajet.jsx:68) porte sur les PredictionChips, ce qui est le comportement voulu. SeriesLab documente en tête de fichier « jamais figé après validation de l'étape » et le respecte : après la gate, les pastilles restent saisissables et les feedbacks invitent à continuer (« Continue à déplacer les pastilles »).",
-      "Le module 3 rend SeriesLab sans `onChange` : ce n'est pas un bug (le composant gère correctement le mode lecture seule — pas de role slider, pas de curseur grab, pas de mention « attrape une pastille ») mais un choix de conception à revoir, cf. pedagogicalProblems.",
-      "Module 1 : `done2 = true` en dur (ligne 38) et croisement des états entre étapes 1 et 2 (`done: done3` sur l'étape 1). Sans effet visible, mais fragile."
-    ],
-    "duplicates": [
-      "AVEC 3e/statistiques-3e — recouvrement RÉEL et partiellement problématique. Les LPs P2 (moyenne) et P4 (médiane) sont marqués `repetition` : la 3e enseigne déjà « Calculer et interpréter une moyenne » et « Déterminer et interpréter une médiane », et surtout son module central fait exactement le même geste — tirer une valeur vers l'extrême et voir la moyenne suivre pendant que la médiane résiste (c'est l'IDÉE CENTRALE annoncée dans son lesson.config : « la série élastique »). Le module 1 de la leçon de 2de rejoue ce geste à l'identique, sur des temps de trajet là où la 3e utilisait… des temps de trajet également. La 2de le met en priorKnowledge et le diagnostique (st-d1, st-d3), donc le contrat est formellement respecté ; mais la manipulation d'ouverture n'apporte rien de neuf à un élève qui a fait la 3e. Ce qui EST neuf commence au module 3. Recommandation : ouvrir plutôt sur le contraste 2de A / 2de B (mêmes moyennes, allures opposées, actuellement au module 4), qui pose un problème que le collège n'a jamais posé.",
-      "AVEC 4e/statistiques-4e — même remarque, plus légère : la 4e couvre « Calculer une moyenne pondérée », « Déterminer la médiane », « Interpréter la médiane comme valeur de partage », « Calculer l'étendue », « Distinguer ce que disent la moyenne et la médiane » et « Comparer deux séries statistiques ». Le module 2 (moyenne pondérée, médiane à effectif pair) et une partie du module 6 (comparaison) sont donc des reprises. La valeur ajoutée de la 2de sur ces points est le CROISEMENT position × dispersion, réellement neuf.",
-      "AVEC boites-a-moustaches-2nde — recouvrement ANNONCÉ et propre : les quartiles sont calculés et lus ici, dessinés en boîte là-bas. teachingScope.exclude le dit (« tracé et lecture d'une boîte à moustaches ») et la leçon des boîtes met médiane et quartiles en prérequis. Le risque est inverse du risque habituel : comme les quartiles sont ici seulement LUS (P5 partiel), la leçon des boîtes pourrait hériter d'un prérequis mal installé. À vérifier lors de son audit.",
-      "AVEC series-regroupees-classes-2nde — frontière nette et correctement déclarée des deux côtés : série DISCRÈTE ici (valeurs individuelles connues, indicateurs exacts), série CONTINUE regroupée là-bas (indicateurs estimés). La leçon des séries regroupées met explicitement en priorKnowledge les indicateurs de celle-ci et les diagnostique (sr-d6). Pas de duplication.",
-      "AVEC 5e/statistiques-5e — aucun recouvrement au-delà du vocabulaire (effectif, fréquence, moyenne simple), mis en priorKnowledge et diagnostiqué (st-d4, st-d5, st-d6)."
-    ],
-    "recommendations": [
-      "PRIORITÉ 1 — rendre le SeriesLab du module 3 manipulable (`onChange`) et ajouter une étape où l'élève DÉTERMINE un quartile : par exemple une série de 12 valeurs affichées rangées, avec une question « quelle est la 3ᵉ valeur, donc Q1 ? ». C'est le seul geste qui manque pour que P5 atteigne COVERED, et il porte la notion la plus neuve de la leçon — celle qu'aucun niveau du collège n'a jamais abordée.",
-      "PRIORITÉ 2 — retirer 'mode-stat' de priorKnowledge (lesson.config.js:60) et du `requires` de st-d7, et remplacer le distracteur « Le mode : 7 » par « La médiane : 7 » (vraie sur la série 4, 7, 7, 7, 12, et prérequis réellement enseigné en 3e/4e). Le mode est un prérequis fantôme qu'aucune leçon du projet n'enseigne.",
-      "P3 — déplacer la brique linearite-moyenne AVANT la BatchChoiceQuestion (elle est actuellement conditionnée à q2, donc posée après la demande qu'elle devrait établir), et ajouter une ligne ou une question sur le facteur multiplicatif (« et si chaque durée était doublée ? ») pour que la moitié `ax` de l'intitulé soit mesurée. data.test.js teste déjà ce cas — il suffit de l'exposer à l'élève.",
-      "P11 — ajouter un troisième état à la bascule du module 5 (« − l'élève à 40 min ») et faire porter la gate sur l'ajout ET le retrait, pour que la suppression soit observée sur le tableau des quatre indicateurs et non seulement déduite.",
-      "Envisager d'ouvrir la leçon sur le contraste 2de A / 2de B (actuellement module 4 étape 1) plutôt que sur le déplacement d'une pastille, qui rejoue exactement le geste central de statistiques-3e. Le problème « deux séries de même moyenne peuvent être radicalement différentes » est celui que le collège n'a jamais posé, et c'est celui que la leçon promet de résoudre.",
-      "Corriger l'exclusion circulaire des configs de collège : statistiques-4e exclut « Les quartiles et l'écart interquartile (3e) » alors que statistiques-3e les exclut aussi. Écrire « (2de) » des deux côtés.",
-      "Nettoyer la numérotation des états du module 1 (`done: done3` sur l'étape 1, `done: done1` sur l'étape 2) et remplacer `done2 = true` par une garde d'observation réelle."
-    ],
-    "verticalPositioning": {
-      "revised": "Toute la statistique descriptive du collège, dans l'ordre où elle a été construite : effectif et fréquence (5e/statistiques-5e : « Calculer un effectif », « Calculer une fréquence ») ; moyenne simple (5e) puis moyenne pondérée (4e/statistiques-4e : « Calculer une moyenne pondérée ») ; médiane et son interprétation comme valeur de partage (4e, 3e) ; étendue (4e, 3e) ; le choix d'un indicateur adapté et l'influence d'une valeur extrême (3e/statistiques-3e : « Identifier l'influence d'une valeur sur un indicateur », « Choisir un indicateur adapté »). Le module 0 les diagnostique tous en huit questions, sans jamais toucher à la matière neuve. La racine carrée (4e) est réactivée par st-d8 précisément parce que l'écart type en a besoin.",
-      "extended": "L'idée collège de DISPERSION, qui se réduisait à l'étendue, se déploie en trois mesures hiérarchisées par leur sensibilité aux extrêmes : étendue (deux valeurs), écart interquartile (le cœur), écart type (tout). L'influence d'une valeur, constatée en 3e sur la moyenne et la médiane, devient une propriété nommée — la ROBUSTESSE — et s'étend aux quatre indicateurs simultanément. La comparaison de deux séries, déjà au programme de 4e et de 3e, devient une méthode en deux temps (position, puis dispersion) assortie d'un critère de significativité.",
-      "new": "Les QUARTILES Q1 et Q3, avec la convention de rang ⌈n/4⌉ — notion que ni la 5e, ni la 4e, ni la 3e n'abordent (toutes trois l'excluent explicitement, en se renvoyant l'une à l'autre) ; l'écart interquartile ; l'ÉCART TYPE et la variance, avec la chaîne écart → carré → moyenne → racine et la justification de chaque étape ; la LINÉARITÉ de la moyenne comme règle explicite ; et la doctrine « position ET dispersion, toujours les deux », qui est le vrai apport de l'année.",
-      "formalized": "Ce que la 3e faisait constater — la moyenne se laisse tirer, la médiane résiste — reçoit ici un NOM (robustesse) et une explication mécanique (l'une utilise les valeurs, l'autre compte les individus). Le sentiment qu'« une seule moyenne ne suffit pas », implicite dans le module de comparaison de 4e, devient une méthode assortie d'un seuil : un écart entre deux indicateurs n'est concluant que s'il est grand devant la dispersion. Et la dispersion, jusque-là un mot, devient une distance mesurable dans l'unité des données.",
-      "tool": "La leçon fournit le RÉSUMÉ EN DEUX NOMBRES (un de position, un de dispersion), qui est le format de lecture de toute la statistique ultérieure. Elle installe directement les cinq nombres de boites-a-moustaches-2nde (min, Q1, médiane, Q3, max) et les indicateurs dont series-regroupees-classes-2nde montrera qu'ils deviennent estimés. En première, l'écart type installé ici est celui de la loi normale et de l'intervalle de fluctuation. Elle réutilise le noyau partagé lessons/common/stats, testé, ce qui garantit qu'une seule définition des quartiles circule dans tout le chapitre."
+  "seconde_statistiques-une-variable-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 1,
+     "mechanism": "brick:moyenne"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 1,
+     "mechanism": "question:M02-S1 (100 ÷ 5)"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 2,
+     "mechanism": "question:M02-S2 (moyenne pondérée, 220 ÷ 10)"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 3,
+     "mechanism": "question:M05-S3 (52 ÷ 4)"
     }
+   ],
+   "manipulation": "SeriesLab, repère orange : la moyenne se déplace pendant le glissement d'une pastille. Le module 1 ne la nomme pas et ne donne pas la formule — c'est « le repère orange » —, et la brique moyenne du module 2 s'y adosse explicitement (« le repère orange du module 1, celui qui suivait l'élève déménagé : voici comment il se calcule »).",
+   "assessmentQuestionIds": [
+    "st-e2"
+   ],
+   "knowledgeItems": [
+    "moyenne"
+   ],
+   "notes": "La brique moyenne déclare `establishes={['moyenne', 'moyenne-ponderee']}` et est posée avant les deux questions qui les exigent : ordre source correct. Les deux formes sont éprouvées séparément — simple (étape 1) puis pondérée (étape 2) — et la question de l'étape 1 porte une remarque pédagogique juste : « quatre élèves sur cinq sont EN DESSOUS de cette moyenne », qui prépare le module 5. L'explainFor de l'étape 2 branche sur 25, exactement la moyenne des valeurs distinctes sans pondération (vérifié : (10+20+45)/3 = 25). Le boss st-e2 rejoue cette faute (bonne réponse 19,17 ; distracteur 21,67 = (10+20+35)/3 ; les deux vérifiés). RÉSERVE : la moyenne est SUPPOSÉE acquise (priorKnowledge 'moyenne', diagnostiquée par st-d1 et st-d2) — cette leçon la reprend pour l'articuler, ce que le lesson.config assume.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:statistiques-3e",
+     "4e:statistiques-4e",
+     "5e:statistiques-5e"
+    ],
+    "kind": "repetition"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P3": {
+   "status": "PARTIALLY_COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 2,
+     "mechanism": "question:M05-S2 (BatchChoiceQuestion, 4 lignes)"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 2,
+     "mechanism": "brick:linearite-moyenne"
+    },
+    {
+     "module": 7,
+     "moduleSlug": "mission-finale-resumer-une-serie",
+     "step": null,
+     "mechanism": "question:st-e9"
+    }
+   ],
+   "manipulation": "AUCUNE pour ce LP. La formule x̄+b = x̄ + b et ax = a·x̄ est affichée en MathText au-dessus de la BatchChoiceQuestion, et les quatre lignes demandent d'appliquer la règle plutôt que de la découvrir. SeriesLab est bien présent au module 5 étape 1 et il est manipulable, mais il sert la robustesse (P10), pas la linéarité : aucun bouton « retirer 5 min à tout le monde » n'existe.",
+   "assessmentQuestionIds": [
+    "st-e9"
+   ],
+   "knowledgeItems": [
+    "linearite-moyenne"
+   ],
+   "notes": "PARTIELLEMENT couvert, pour trois raisons cumulées. (1) La règle est ASSÉNÉE puis appliquée : la formule est posée dans l'`intro` de la question, avant toute observation ; il n'y a ni geste ni révélation conditionnée qui la fasse découvrir. (2) La brique linearite-moyenne est posée APRÈS la question (conditionnée à q2), donc elle ne peut rien établir POUR elle — elle ne fait que résumer, ce qui viole l'ordre source du contrat de connaissances. (3) Seule la translation (x + b) est réellement travaillée : les quatre lignes portent toutes sur « retirer 5 min à chacun ». Le facteur multiplicatif (ax) apparaît dans la formule MathText et dans une incise de l'explication du boss (« multiplier chaque valeur par 3, en revanche, triplerait les deux ») mais n'est éprouvé NULLE PART. La moitié de l'intitulé officiel — la linéarité, pas seulement la translation — reste donc non mesurée. Ce que la leçon fait bien : distinguer position (qui suit) et dispersion (qui ne bouge pas), et le boss st-e9 le mesure correctement. Vérifié : 19,15 − 5 = 14,15 ; médiane 18 − 5 = 13 ; écart type et écart interquartile inchangés (data.test.js le teste explicitement, y compris le doublement).",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 3,
+     "mechanism": "manipulation:SeriesLab"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 3,
+     "mechanism": "brick:mediane"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 3,
+     "mechanism": "question:M02-S3 (effectif pair)"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 4,
+     "mechanism": "brick:choisir-position"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 4,
+     "mechanism": "question:M02-S4 (salaires)"
+    }
+   ],
+   "manipulation": "SeriesLab, repère vert : le point pédagogique est CONTRASTIF et il ne peut pas être obtenu autrement qu'en tirant une pastille — l'orange suit, le vert ne bouge presque pas. Le feedback donne la RAISON juste après le geste : « le premier utilise la VALEUR de chaque durée ; le second ne compte que le NOMBRE d'élèves de chaque côté ».",
+   "assessmentQuestionIds": [
+    "st-e3"
+   ],
+   "knowledgeItems": [
+    "mediane",
+    "choisir-position"
+   ],
+   "notes": "L'obstacle réel de la médiane en 2de est l'effectif PAIR, et il est traité frontalement (étape 3 : « la demi-somme des deux valeurs centrales ; la médiane n'appartient pas forcément à la série »). La brique mediane et la brique choisir-position sont toutes deux posées avant les questions qui les exigent. L'étape 4 (les salaires, trois dirigeants à 40 000 €) éprouve le CHOIX entre les deux indicateurs, et son explication reste honnête : « la moyenne reste utile pour d'autres questions — par exemple la masse salariale totale ». Le boss st-e3 mesure exactement le cas pair (série de 6 : (8 + 12)/2 = 10, vérifié) avec le distracteur 10,83 qui est la moyenne — la confusion visée. La convention est celle de statsUtils (n pair → demi-somme), cohérente.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:statistiques-3e",
+     "4e:statistiques-4e"
+    ],
+    "kind": "repetition"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab (LECTURE SEULE — pas de onChange)"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 1,
+     "mechanism": "brick:quartiles"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 1,
+     "mechanism": "question:M03-S1 (que signifie Q1 = 12 ?)"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 2,
+     "mechanism": "question:M03-S2 (rang de Q3 pour n = 30)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 2,
+     "mechanism": "question:M06-S2-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 4,
+     "mechanism": "question:M03-S4-Q1"
+    }
+   ],
+   "manipulation": "SeriesLab en lecture (M3 ét. 1, repères tracés) PUIS, à l'étape 4 ajoutée le 2026-09-10, la 2de B affichée SANS aucun repère : l'élève détermine Q1 puis Q3 lui-même par le rang.",
+   "assessmentQuestionIds": [
+    "st-e4",
+    "st-e5"
+   ],
+   "knowledgeItems": [
+    "quartiles"
+   ],
+   "notes": "RÉÉVALUÉ le 2026-09-10 : le LP dit « DÉTERMINER les quartiles » et l'élève n'en déterminait aucun — tous les repères lui étaient tracés. Une étape le fait maintenant calculer les deux rangs (⌈20/4⌉ = 5 → 17 min ; ⌈3×20/4⌉ = 15 → 21 min) sur une série sans repère, avec des explainFor qui distinguent le RANG de la VALEUR — la confusion réelle. Le contraste final (écart interquartile 4 min contre 13 min pour la 2de A) donne son sens à la mesure. PARTIELLEMENT couvert. Ce qui est fait, et bien fait : le SENS de Q1 est correctement établi (« au moins un quart des élèves à 12 min ou moins », avec trois distracteurs qui sont les contresens réels — effectif exact, quart de la valeur maximale) ; la CONVENTION du programme est explicite et exacte (rang ⌈n/4⌉, valeur de la série, jamais d'interpolation) et le module dit même qu'elle diffère de celle des tableurs ; la question de l'étape 2 fait calculer un RANG dans le cas non entier (3 × 30 ÷ 4 = 22,5 → 23, vérifié) avec des distracteurs sur l'arrondi. Ce qui manque : l'élève ne DÉTERMINE JAMAIS UN QUARTILE. Il lit Q1 = 12 sur une figure, calcule un rang abstrait sur une série qui n'est pas montrée, puis à l'étape 3 calcule Q3 − Q1 à partir de valeurs FOURNIES par l'énoncé. Aucune étape ne demande : voici une série rangée, donne Q1. Le boss ne comble pas ce trou : st-e4 redemande un rang (⌈24/4⌉ = 6, vérifié) et st-e5 une interprétation. L'intitulé officiel est « DÉTERMINER les quartiles » : la détermination est le seul geste absent. Vérification de cohérence avec l'implémentation : les valeurs affichées (Q1 = 12, Q3 = 25 sur TRAJETS_A, n = 20) correspondent exactement aux rangs ⌈20/4⌉ = 5 et ⌈60/4⌉ = 15, et data.test.js les verrouille. Aucune contradiction entre les exemples et statsUtils.",
+   "crossGrade": {
+    "overlapsWith": [
+     "2de:boites-a-moustaches-2nde"
+    ],
+    "kind": "anticipation"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 4,
+     "mechanism": "question:M01-S4 (un nombre suffit-il ?)"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 4,
+     "mechanism": "brick:choisir-position"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "moyenne-et-mediane",
+     "step": 4,
+     "mechanism": "question:M02-S4 (salaires)"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 4,
+     "mechanism": "brick:mem-deux-nombres"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 4,
+     "mechanism": "question:M04-S4 (deux capteurs)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 1,
+     "mechanism": "question:M06-S1-Q1"
+    }
+   ],
+   "manipulation": "Le geste porteur est celui du module 1 étape 1 : voir les DEUX repères réagir différemment au même déplacement est ce qui rend interprétable la question « lequel choisir ? ». La brique mem-deux-nombres (module 4 étape 4) formalise la doctrine de la leçon — position ET dispersion, toujours les deux — et elle est posée avant la question qui en fait usage.",
+   "assessmentQuestionIds": [
+    "st-e5"
+   ],
+   "knowledgeItems": [
+    "choisir-position",
+    "mem-deux-nombres",
+    "quartiles"
+   ],
+   "notes": "L'interprétation est traitée en trois temps, dans le bon ordre : d'abord l'insuffisance d'un seul nombre (module 1 étape 4), puis le choix entre deux indicateurs de position (module 2 étape 4, les salaires), enfin le croisement position × dispersion (module 4 étape 4 et atelier). Les contextes sont variés et réalistes (revenus, capteurs, horaire de bus, ateliers de montage). La question M02-S4 n'est pas devinable : ses distracteurs (« la moyenne, car elle utilise toutes les valeurs ») sont des arguments plausibles, et l'explication ne les rejette pas en bloc — elle dit à quelle question chacun répond. Le boss st-e5 mesure l'interprétation de Q3 avec le distracteur « exactement 75 % ont 14 », qui est l'erreur de lecture d'un quartile comme un effectif exact.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:statistiques-3e"
+    ],
+    "kind": "extension"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab (comparaison A/B, lecture seule)"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 2,
+     "mechanism": "manipulation:SeriesLab (bande moyenne ± σ, MANIPULABLE)"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 2,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 2,
+     "mechanism": "brick:ecart-type"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 4,
+     "mechanism": "question:M04-S4 (deux capteurs)"
+    }
+   ],
+   "manipulation": "SeriesLab avec `show={{ mean: true, sd: true }}` : une BANDE VERTE dessine l'intervalle [moyenne − σ ; moyenne + σ] et l'élève rapproche les pastilles du repère orange pour la faire maigrir. La gate est quantitative et exigeante : l'étape n'est validée que si l'écart type descend d'au moins 2,5 min sous sa valeur de départ (8,97 → moins de 6,47), donc après un resserrement RÉEL de la série. L'étape 1 pose d'abord le problème par un contraste : 2de A et 2de B, mêmes moyennes (19,15 et 19,10) et allures opposées, dessinées sur le MÊME axe.",
+   "assessmentQuestionIds": [
+    "st-e7",
+    "st-e8"
+   ],
+   "knowledgeItems": [
+    "ecart-type",
+    "mem-deux-nombres"
+   ],
+   "notes": "La compréhension de l'écart type comme DISTANCE TYPIQUE À LA MOYENNE, exprimée dans l'unité des données, est réellement construite : d'abord le manque (deux séries indiscernables par la moyenne), puis la mesure qui les sépare, puis la bande qu'on resserre soi-même. Le feedback insiste sur le bon point (« c'est une distance, exprimée dans la même unité que les données ») plutôt que sur la formule. La question du module 4 étape 4 et le boss st-e8 mesurent l'interprétation (petit σ = fiable) avec le distracteur inversé. Vérifié : σ(A) = 8,97 et σ(B) = 2,98, et data.test.js impose σ(B) < σ(A)/2.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 2,
+     "mechanism": "manipulation:SeriesLab"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 2,
+     "mechanism": "brick:ecart-type"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 3,
+     "mechanism": "question:M04-S3 (série 2,4,4,4,5,5,7,9)"
+    },
+    {
+     "module": 7,
+     "moduleSlug": "mission-finale-resumer-une-serie",
+     "step": null,
+     "mechanism": "question:st-e7"
+    }
+   ],
+   "manipulation": "La bande de l'étape 2 précède le calcul de l'étape 3 : l'élève a d'abord vu la quantité varier avec la série, il la calcule ensuite une fois à la main sur une petite série choisie pour tomber juste.",
+   "assessmentQuestionIds": [
+    "st-e7"
+   ],
+   "knowledgeItems": [
+    "ecart-type"
+   ],
+   "notes": "LA FORMULE EST CONSTRUITE PAR LE GESTE, PAS ASSÉNÉE — vérification demandée, résultat positif. Le bloc `above` de la NumericQuestion déroule les quatre temps dans l'ordre du raisonnement : écarts à la moyenne (−3, −1, −1, −1, 0, 0, 2, 4), puis carrés (9, 1, 1, 1, 0, 0, 4, 16), puis somme 32 et division par n = 8 → 4, puis racine → 2. Les deux gestes qui font sens sont JUSTIFIÉS et non posés : l'explain dit « on élève au carré pour que les écarts négatifs ne compensent pas les positifs, puis on prend la racine pour revenir à l'unité de départ », et l'explainFor sur la réponse 0 rappelle que la somme des écarts non carrés vaut TOUJOURS zéro — c'est-à-dire la raison même du carré. VARIANCE EN n, PAS n−1, et c'est cohérent : la formule MathText affichée est σ = √(Σ(xᵢ − x̄)²/n), le calcul de l'exemple divise par 8 (l'effectif), et statsUtils.variance divise par values.length en documentant « diviseur n — celle du programme de 2nde, pas la variance corrigée en n − 1 ». Tous les nombres vérifiés : somme 40, moyenne 5, somme des carrés 32, variance 4, écart type 2. Le boss st-e7 mesure exactement la confusion variance/écart type (moyenne des carrés = 9 → σ = 3, vérifié) avec 9 en distracteur.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 3,
+     "mechanism": "question:M03-S3 (Q3 − Q1 = 13)"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 3,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 3,
+     "mechanism": "brick:etendue-interquartile"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "les-quartiles",
+     "step": 4,
+     "mechanism": "question:M03-S4 (BatchChoiceQuestion, 4 affirmations)"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab (A vs B)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 2,
+     "mechanism": "question:M06-S2-Q2"
+    }
+   ],
+   "manipulation": "Le contraste 2de A / 2de B du module 4 étape 1 (mêmes moyennes, dispersions opposées, dessinées sur le même axe) est le geste qui donne son sens au mot « dispersion ». La bande verte de l'étape 2, resserrée par l'élève, en donne la mesure.",
+   "assessmentQuestionIds": [
+    "st-e6",
+    "st-e8"
+   ],
+   "knowledgeItems": [
+    "etendue-interquartile",
+    "ecart-type",
+    "mem-deux-nombres"
+   ],
+   "notes": "Les TROIS mesures de dispersion du programme sont installées et, mieux, comparées entre elles par leur SENSIBILITÉ : l'étendue dépend de deux valeurs seulement, l'écart interquartile ignore les extrêmes, l'écart type tient compte de tout. La BatchChoiceQuestion de l'étape 4 du module 3 est exactement cette comparaison (quatre vrai/faux dont r2, « l'écart interquartile est sensible à une valeur extrême », qui est le point). Le feedback de l'étape 3 chiffre le contraste sur la série de référence : étendue 35 contre écart interquartile 13 (les deux vérifiés). Le boss l'éprouve deux fois, dont st-e6 qui donne min, Q1, médiane, Q3, max et demande de choisir la bonne différence (23 − 11 = 12, vérifié, avec 37 = 41 − 4 en distracteur : la confusion étendue / interquartile est encodée).",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:statistiques-3e"
+    ],
+    "kind": "extension"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "les-temps-de-trajet",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab + bascule 20/21 élèves"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 1,
+     "mechanism": "brick:robustesse"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 4,
+     "mechanism": "question:M05-S4 (revenu médian)"
+    }
+   ],
+   "manipulation": "Une bascule à deux états — « série d'origine (20 élèves) » / « + l'élève à 120 min (21 élèves) » — et, sous le nuage, un TABLEAU À QUATRE LIGNES qui compare avant/après pour les quatre indicateurs, avec un codage couleur automatique (rose = a bougé, vert = inchangé, seuil 0,05). L'élève voit d'un coup QUI résiste et QUI s'effondre. L'axe est étendu à 130 min pour que la valeur ajoutée soit visible hors du nuage.",
+   "assessmentQuestionIds": [
+    "st-e9"
+   ],
+   "knowledgeItems": [
+    "robustesse"
+   ],
+   "notes": "Le tableau comparatif est le bon instrument pour ce LP : quatre indicateurs, deux colonnes, un verdict par ligne. Vérifié sur les données réelles : moyenne 19,15 → 23,95 (+4,80), médiane 18 → 18 (inchangée), écart type 8,97 → 23,19, écart interquartile 13 → 13. data.test.js verrouille ces valeurs (Δmoyenne > 4, |Δmédiane| ≤ 1). La brique robustesse est posée après le constat, avant la question de l'étape 2. Le transfert au revenu médian (étape 4) est le contexte social réel où cette propriété est décisive, et l'explainWrong y corrige une croyance ordinaire (« la médiane n'est pas toujours plus grande — ici elle est plus PETITE que la moyenne »).",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:statistiques-3e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_statistiques-une-variable-2nde_P11": {
+   "status": "PARTIALLY_COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab + bascule"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 3,
+     "mechanism": "question:M05-S3 (retirer l'élève à 48 min)"
+    },
+    {
+     "module": 7,
+     "moduleSlug": "mission-finale-resumer-une-serie",
+     "step": null,
+     "mechanism": "question:st-e10"
+    }
+   ],
+   "manipulation": "La bascule du module 5 étape 1 fonctionne dans les DEUX sens (on peut revenir à « série d'origine »), donc retirer la valeur extrême est bien un geste disponible. Mais le module ne le demande jamais : la gate est `added`, c'est-à-dire l'AJOUT seul — l'étape se valide sans qu'on soit jamais revenu en arrière, et tout le texte du feedback est écrit du point de vue de l'ajout.",
+   "assessmentQuestionIds": [
+    "st-e10"
+   ],
+   "knowledgeItems": [
+    "robustesse"
+   ],
+   "notes": "PARTIELLEMENT couvert. La suppression est traitée, mais comme un corollaire de l'ajout plutôt que comme un LP à part entière. Ce qui existe : une NumericQuestion (étape 3) où l'on retire l'élève à 48 min d'une série de cinq (100 ÷ 5 = 20 devient 52 ÷ 4 = 13, vérifié) dont l'explainFor traite bien l'erreur de diviseur (« tu as divisé par 5 au lieu de 4 »), et une épreuve du boss (st-e10, le salarié très bien payé qui part). Ce qui manque : aucun tableau comparatif du type de l'étape 1 pour la suppression, aucune observation des QUATRE indicateurs sous retrait, et surtout la gate ne force jamais le geste inverse. L'élève peut terminer le module sans avoir jamais vu ce qui se passe quand on retire — il l'a seulement déduit par symétrie. Un LP officiel distinct mérite une observation distincte ; la faire coûterait un troisième état de la bascule (« − l'élève à 40 min »).",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:statistiques-3e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "medium"
+  },
+  "seconde_statistiques-une-variable-2nde_P12": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "l-ecart-type",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab (A et B sur le même axe)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 1,
+     "mechanism": "manipulation:SeriesLab + tableau d'indicateurs"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 1,
+     "mechanism": "question:M06-S1-Q1 (le bus du proviseur)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 1,
+     "mechanism": "brick:methode-comparer"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 2,
+     "mechanism": "question:M06-S2-Q1 (deux ateliers, même médiane)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-comparer-deux-series",
+     "step": 3,
+     "mechanism": "question:M06-S3-Q1 (19,15 contre 19,10)"
+    }
+   ],
+   "manipulation": "SeriesLab en mode `compareValues` : la seconde série est dessinée sur le MÊME axe, en dessous, avec sa propre couleur. C'est la mise en regard qui rend la comparaison possible — deux graphiques séparés ne le permettraient pas.",
+   "assessmentQuestionIds": [
+    "st-e10"
+   ],
+   "knowledgeItems": [
+    "methode-comparer",
+    "mem-deux-nombres",
+    "robustesse"
+   ],
+   "notes": "Le module 6 est le meilleur atelier des quatre leçons du lot, parce qu'il enseigne quelque chose de neuf plutôt que de réviser : la comparaison HONNÊTE. Trois situations en escalade. (1) Position identique, dispersion qui tranche (le bus). (2) Médiane identique, dispersion opposée — ATELIER_X et ATELIER_Y ont exactement la même médiane 16,5 et des écarts interquartiles de 4 et 19, vérifiés et verrouillés par data.test.js. (3) Le cas où AUCUNE conclusion n'est légitime : 19,15 contre 19,10, un écart de trois secondes sur des séries d'écarts types 8,97 et 2,98. Cette troisième étape est rare et précieuse — elle énonce le critère juste (« comparer deux indicateurs suppose que leur écart soit grand devant la dispersion des données »), qui est le seuil de signification en langage de 2de. La brique methode-comparer est posée après la première comparaison réussie, avant les deux suivantes.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:statistiques-3e",
+     "4e:statistiques-4e"
+    ],
+    "kind": "extension"
+   },
+   "confidence": "high"
   }
+ },
+ "lessonLevel": {
+  "officialScopeNotCovered": [],
+  "prerequisiteGaps": [
+   {
+    "term": "quartile",
+    "declaredIn": "priorKnowledge n'en fait PAS un prérequis (correct), mais le lexique partagé le porte et la matrice l'a signalé",
+    "taughtAtCollege": false,
+    "verification": "VÉRIFIÉ PAR LECTURE DES TROIS CONFIGS. college/3e/donnees_probabilites/statistiques-3e/lesson.config.js met « Quartiles et diagrammes en boîte » dans teachingScope.exclude. college/4e/donnees_probabilites/statistiques-4e/lesson.config.js exclut « Les quartiles et l'écart interquartile (3e) » — en renvoyant à la 3e, qui les exclut. college/5e/donnees_probabilites/statistiques-5e/lesson.config.js exclut « La médiane, les quartiles et l'étendue (4e et 3e) ». Les pointsToLearn de coursesData.js le confirment : 3e_statistiques va jusqu'à « Déterminer et interpréter une étendue », 4e_statistiques jusqu'à « Calculer l'étendue d'une série », 5e_statistiques jusqu'à « Calculer une moyenne simple ». Le mot « quartile » n'apparaît dans AUCUN module de collège — un grep sur apps/web/src/lessons/college ne le trouve que dans des lignes d'exclusion de configs et dans le noyau partagé stats4e.js/statistiques.js (fonctions disponibles mais non exposées à l'élève). Il y a donc une EXCLUSION CIRCULAIRE 4e → 3e, où chacune renvoie à l'autre : personne n'enseigne les quartiles au collège.",
+    "impactOnModule0": "AUCUN — et c'est le bon comportement. Le module 0 de cette leçon ne diagnostique PAS les quartiles : ses huit questions portent sur moyenne, moyenne pondérée, médiane, effectif, fréquence, indicateur/dispersion et racine carrée. Le commentaire du fichier le dit explicitement : « chaque question MESURE un prérequis déclaré dans priorKnowledge — jamais la matière de la leçon (quartiles, écart interquartile, écart type, robustesse) ». Les quartiles sont bien traités comme matière NEUVE. Aucune correction n'est requise sur ce point.",
+    "residualIssue": "L'exclusion circulaire 4e ↔ 3e reste à corriger dans les configs de collège : le libellé « Les quartiles et l'écart interquartile (3e) » de statistiques-4e désigne une leçon de 3e qui ne les enseigne pas. Ce n'est pas un défaut de cette leçon-ci, mais le commentaire induit en erreur quiconque planifie la progression."
+   },
+   {
+    "term": "mode-stat",
+    "declaredIn": "lesson.config.js:60 (priorKnowledge) et Module00Diagnostic.jsx:20 (requires de st-d7)",
+    "taughtAtCollege": false,
+    "verification": "VÉRIFIÉ. Le MODE statistique (la valeur la plus fréquente d'une série) n'est enseigné dans AUCUNE leçon, à aucun niveau. Un grep de 'mode-stat' sur tout apps/web/src ne renvoie que DEUX occurrences, toutes deux dans cette leçon : sa propre déclaration de priorKnowledge et le `requires` de sa propre question de diagnostic st-d7. Aucune brique de connaissance ne porte cet id nulle part. Les pointsToLearn des trois leçons de statistiques du collège (5e, 4e, 3e) ne mentionnent jamais le mode : la 5e s'arrête à la moyenne simple, la 4e à moyenne pondérée / médiane / étendue, la 3e ajoute la comparaison et le choix d'indicateur. Le mot « mode » dans les leçons de collège désigne partout autre chose (un mode d'affichage d'un composant, le mode d'une calculatrice). Le module 8 de statistiques-3e porte même un commentaire explicite : « Le distracteur \"sans le mode\" de l'épreuve 9 a été remplacé : le mode n'est [pas au programme de la leçon] ». Le mode est donc un prérequis FANTÔME.",
+    "impactOnModule0": "RÉEL MAIS FAIBLE. La question st-d7 déclare `requires: ['indicateur-stat', 'etendue', 'dispersion', 'mode-stat']` et présente au diagnostic une option « Le mode : 7 » sur la série 4, 7, 7, 7, 12. La bonne réponse est « L'étendue : 12 − 4 = 8 » (vérifié) et elle est atteignable sans connaître le mode : l'élève doit reconnaître ce qui mesure l'ÉTALEMENT, et l'étendue est explicitée dans l'option même. Le mot « mode » n'apparaît que dans un distracteur et dans l'explication. La question n'est donc pas bloquante et la matière de la leçon ne dépend nulle part du mode. Mais le contrat de connaissances est violé sur la lettre : un `requires` déclare acquise une notion que le curriculum n'enseigne jamais, et un élève qui rate la question se voit expliquer « le mode (la valeur la plus fréquente) » comme s'il devait le savoir.",
+    "recommendation": "Deux options. (a) Retirer 'mode-stat' de priorKnowledge et du requires de st-d7, et remplacer le distracteur « Le mode : 7 » par « La médiane : 7 » — qui est vraie sur cette série (vérifié), qui est un prérequis RÉELLEMENT enseigné (3e, 4e) et qui reste un indicateur de position, donc le contraste voulu est préservé. (b) Si l'on tient au mode, l'introduire par une brique quelque part au collège. L'option (a) est nettement préférable : le mode n'est pas au programme de 2de et il n'a aucun rôle dans cette leçon."
+   }
+  ],
+  "pedagogicalProblems": [
+   "P5 « DÉTERMINER les quartiles » : l'élève ne détermine jamais un quartile. Le SeriesLab du module 3 est rendu SANS `onChange` (Module03LesQuartiles.jsx:36) — c'est une figure, pas un instrument : les pastilles ne sont pas saisissables, la bande Q1–Q3 est calculée par statsUtils et lue. Les trois questions du module portent sur le SENS de Q1 (lecture), le RANG de Q3 pour n = 30 (calcul abstrait, sur une série jamais montrée) et l'écart interquartile à partir de Q1 et Q3 FOURNIS. C'est le module le plus passif de la leçon, sur la notion la plus neuve — et sur la seule notion du chapitre qu'aucun niveau du collège n'a jamais abordée (voir prerequisiteGaps). Le contraste avec le module 4, où la bande σ se resserre sous le doigt, est saisissant.",
+   "P3 « linéarité de la moyenne » : la règle est affichée en MathText AVANT toute observation, la brique linearite-moyenne est posée APRÈS la question qui l'exige (donc elle n'établit rien pour elle), et seule la translation x + b est éprouvée — le facteur ax n'apparaît que dans la formule et dans une incise d'explication du boss. La moitié multiplicative de l'intitulé n'est mesurée nulle part.",
+   "P11 « influence de la SUPPRESSION » : la bascule du module 5 permet techniquement de revenir en arrière, mais la gate n'exige que l'AJOUT (`done: added`) et tout le tableau comparatif est écrit dans ce sens. La suppression n'est traitée que par une NumericQuestion sur une petite série et par une épreuve du boss ; elle est donc déduite par symétrie plutôt qu'observée. Deux LPs officiels distincts (P10 et P11) reçoivent une seule observation.",
+   "Numérotation d'états incohérente au module 1 : l'étape 1 porte `done: done3` et l'étape 2 porte `done: done1`, parce que les états ont été nommés d'après un ordre d'écriture antérieur au réordonnancement des étapes (Module01LesTempsDeTrajet.jsx:57 et 106). Sans conséquence fonctionnelle, mais c'est une bombe à retardement pour la prochaine modification. Par ailleurs `done2 = true` en dur (ligne 38) : l'étape 3 est validée à l'affichage, ce qui est assumé (« observation ») mais rend la brique vocab-effectif-frequence inconditionnelle — elle n'est pas gardée par un geste."
+  ],
+  "technicalProblems": [
+   "AUCUNE ERREUR ARITHMÉTIQUE. Contrairement aux deux leçons de pourcentages du lot, celle-ci a un data.js et un data.test.js, et les DEUX ont été exécutés avec succès (29 tests passés, avec series-regroupees-classes-2nde). Toutes les valeurs citées dans les modules ont été recalculées indépendamment et concordent : TRAJETS_A (n = 20) → moyenne 19,15 ; médiane 18 ; Q1 = 12 (rang ⌈20/4⌉ = 5) ; Q3 = 25 (rang ⌈60/4⌉ = 15) ; écart interquartile 13 ; étendue 35 ; écart type 8,9681. TRAJETS_B → moyenne 19,10 ; médiane 19 ; Q1 = 17 ; Q3 = 21 ; interquartile 4 ; étendue 11 ; écart type 2,9816. Avec l'élève à 120 min → moyenne 23,95 ; médiane 18 ; écart type 23,19 ; interquartile 13. ATELIER_X → médiane 16,5 ; interquartile 4 ; étendue 9. ATELIER_Y → médiane 16,5 ; interquartile 19 ; étendue 36. Modules : 100 ÷ 5 = 20 ; 220 ÷ 10 = 22 et (10+20+45)/3 = 25 ; (18+18)/2 = 18 ; ⌈3×30/4⌉ = 23 ; 25 − 12 = 13 ; série 2,4,4,4,5,5,7,9 → somme 40, moyenne 5, carrés des écarts 9+1+1+1+0+0+4+16 = 32, variance 4, σ = 2 ; 19,15 − 5 = 14,15 et 18 − 5 = 13 ; 52 ÷ 4 = 13. Boss : 4+6+2 = 12 ; 230 ÷ 12 = 19,17 et (10+20+35)/3 = 21,67 ; (8+12)/2 = 10 ; ⌈24/4⌉ = 6 et ⌈72/4⌉ = 18 ; 23 − 11 = 12 et 41 − 4 = 37 ; √9 = 3.",
+   "CONVENTION DE QUARTILES — COHÉRENTE. Vérification demandée, résultat positif sur les deux points. (1) L'implémentation partagée (lessons/common/stats/statsUtils.js, fonction `quartile`) utilise rang = ⌈kn/4⌉ et renvoie une VALEUR de la série triée, jamais une interpolation ; elle documente cette convention comme celle du programme français, distincte de celle des tableurs. (2) Les exemples de la leçon la respectent exactement : le module 3 étape 1 affiche Q1 = 12 pour TRAJETS_A et l'explique par « le rang de Q1 est ⌈20/4⌉ = 5 : la 5ᵉ valeur » — la 5ᵉ valeur triée est bien 12 ; l'étape 2 calcule ⌈3 × 30/4⌉ = ⌈22,5⌉ = 23 ; le boss st-e4 calcule ⌈24/4⌉ = 6 et cite ⌈3×24/4⌉ = 18. Le module dit même explicitement à l'élève que les tableurs utilisent une autre convention. Aucune contradiction entre les exemples affichés et l'implémentation qui les calcule.",
+   "ÉCART TYPE — VARIANCE EN n, COHÉRENTE. Vérification demandée, résultat positif. La formule affichée est σ = √(Σ(xᵢ − x̄)²/n) ; le calcul guidé divise par 8 pour une série de 8 valeurs ; statsUtils.variance divise par `values.length` et documente « diviseur n — celle du programme de 2nde, pas la variance corrigée en n − 1 » ; SeriesLab et les tableaux de comparaison appellent la même fonction. Aucun endroit de la leçon n'emploie n − 1. La formule est de plus CONSTRUITE et non assénée : les quatre temps (écart, carré, moyenne, racine) sont déroulés et les deux gestes non évidents sont justifiés (le carré pour que les écarts ne se compensent pas — argument renforcé par l'explainFor sur la réponse 0 —, la racine pour revenir à l'unité).",
+   "PRÉREQUIS FANTÔME : 'mode-stat' figure dans priorKnowledge (lesson.config.js:60) et dans le `requires` de st-d7 (Module00Diagnostic.jsx:20) alors que le mode statistique n'est enseigné par AUCUNE leçon du projet, à aucun niveau. Voir prerequisiteGaps pour la vérification complète et le correctif proposé (remplacer le distracteur « Le mode : 7 » par « La médiane : 7 », qui est vraie sur la série 4, 7, 7, 7, 12 et qui est un prérequis réellement enseigné).",
+   "AUCUN GEL DE LABORATOIRE. Le seul `disabled` de la leçon (Module01LesTempsDeTrajet.jsx:68) porte sur les PredictionChips, ce qui est le comportement voulu. SeriesLab documente en tête de fichier « jamais figé après validation de l'étape » et le respecte : après la gate, les pastilles restent saisissables et les feedbacks invitent à continuer (« Continue à déplacer les pastilles »).",
+   "Le module 3 rend SeriesLab sans `onChange` : ce n'est pas un bug (le composant gère correctement le mode lecture seule — pas de role slider, pas de curseur grab, pas de mention « attrape une pastille ») mais un choix de conception à revoir, cf. pedagogicalProblems.",
+   "Module 1 : `done2 = true` en dur (ligne 38) et croisement des états entre étapes 1 et 2 (`done: done3` sur l'étape 1). Sans effet visible, mais fragile."
+  ],
+  "duplicates": [
+   "AVEC 3e/statistiques-3e — recouvrement RÉEL et partiellement problématique. Les LPs P2 (moyenne) et P4 (médiane) sont marqués `repetition` : la 3e enseigne déjà « Calculer et interpréter une moyenne » et « Déterminer et interpréter une médiane », et surtout son module central fait exactement le même geste — tirer une valeur vers l'extrême et voir la moyenne suivre pendant que la médiane résiste (c'est l'IDÉE CENTRALE annoncée dans son lesson.config : « la série élastique »). Le module 1 de la leçon de 2de rejoue ce geste à l'identique, sur des temps de trajet là où la 3e utilisait… des temps de trajet également. La 2de le met en priorKnowledge et le diagnostique (st-d1, st-d3), donc le contrat est formellement respecté ; mais la manipulation d'ouverture n'apporte rien de neuf à un élève qui a fait la 3e. Ce qui EST neuf commence au module 3. Recommandation : ouvrir plutôt sur le contraste 2de A / 2de B (mêmes moyennes, allures opposées, actuellement au module 4), qui pose un problème que le collège n'a jamais posé.",
+   "AVEC 4e/statistiques-4e — même remarque, plus légère : la 4e couvre « Calculer une moyenne pondérée », « Déterminer la médiane », « Interpréter la médiane comme valeur de partage », « Calculer l'étendue », « Distinguer ce que disent la moyenne et la médiane » et « Comparer deux séries statistiques ». Le module 2 (moyenne pondérée, médiane à effectif pair) et une partie du module 6 (comparaison) sont donc des reprises. La valeur ajoutée de la 2de sur ces points est le CROISEMENT position × dispersion, réellement neuf.",
+   "AVEC boites-a-moustaches-2nde — recouvrement ANNONCÉ et propre : les quartiles sont calculés et lus ici, dessinés en boîte là-bas. teachingScope.exclude le dit (« tracé et lecture d'une boîte à moustaches ») et la leçon des boîtes met médiane et quartiles en prérequis. Le risque est inverse du risque habituel : comme les quartiles sont ici seulement LUS (P5 partiel), la leçon des boîtes pourrait hériter d'un prérequis mal installé. À vérifier lors de son audit.",
+   "AVEC series-regroupees-classes-2nde — frontière nette et correctement déclarée des deux côtés : série DISCRÈTE ici (valeurs individuelles connues, indicateurs exacts), série CONTINUE regroupée là-bas (indicateurs estimés). La leçon des séries regroupées met explicitement en priorKnowledge les indicateurs de celle-ci et les diagnostique (sr-d6). Pas de duplication.",
+   "AVEC 5e/statistiques-5e — aucun recouvrement au-delà du vocabulaire (effectif, fréquence, moyenne simple), mis en priorKnowledge et diagnostiqué (st-d4, st-d5, st-d6)."
+  ],
+  "recommendations": [
+   "PRIORITÉ 1 — rendre le SeriesLab du module 3 manipulable (`onChange`) et ajouter une étape où l'élève DÉTERMINE un quartile : par exemple une série de 12 valeurs affichées rangées, avec une question « quelle est la 3ᵉ valeur, donc Q1 ? ». C'est le seul geste qui manque pour que P5 atteigne COVERED, et il porte la notion la plus neuve de la leçon — celle qu'aucun niveau du collège n'a jamais abordée.",
+   "PRIORITÉ 2 — retirer 'mode-stat' de priorKnowledge (lesson.config.js:60) et du `requires` de st-d7, et remplacer le distracteur « Le mode : 7 » par « La médiane : 7 » (vraie sur la série 4, 7, 7, 7, 12, et prérequis réellement enseigné en 3e/4e). Le mode est un prérequis fantôme qu'aucune leçon du projet n'enseigne.",
+   "P3 — déplacer la brique linearite-moyenne AVANT la BatchChoiceQuestion (elle est actuellement conditionnée à q2, donc posée après la demande qu'elle devrait établir), et ajouter une ligne ou une question sur le facteur multiplicatif (« et si chaque durée était doublée ? ») pour que la moitié `ax` de l'intitulé soit mesurée. data.test.js teste déjà ce cas — il suffit de l'exposer à l'élève.",
+   "P11 — ajouter un troisième état à la bascule du module 5 (« − l'élève à 40 min ») et faire porter la gate sur l'ajout ET le retrait, pour que la suppression soit observée sur le tableau des quatre indicateurs et non seulement déduite.",
+   "Envisager d'ouvrir la leçon sur le contraste 2de A / 2de B (actuellement module 4 étape 1) plutôt que sur le déplacement d'une pastille, qui rejoue exactement le geste central de statistiques-3e. Le problème « deux séries de même moyenne peuvent être radicalement différentes » est celui que le collège n'a jamais posé, et c'est celui que la leçon promet de résoudre.",
+   "Corriger l'exclusion circulaire des configs de collège : statistiques-4e exclut « Les quartiles et l'écart interquartile (3e) » alors que statistiques-3e les exclut aussi. Écrire « (2de) » des deux côtés.",
+   "Nettoyer la numérotation des états du module 1 (`done: done3` sur l'étape 1, `done: done1` sur l'étape 2) et remplacer `done2 = true` par une garde d'observation réelle."
+  ],
+  "verticalPositioning": {
+   "revised": "Toute la statistique descriptive du collège, dans l'ordre où elle a été construite : effectif et fréquence (5e/statistiques-5e : « Calculer un effectif », « Calculer une fréquence ») ; moyenne simple (5e) puis moyenne pondérée (4e/statistiques-4e : « Calculer une moyenne pondérée ») ; médiane et son interprétation comme valeur de partage (4e, 3e) ; étendue (4e, 3e) ; le choix d'un indicateur adapté et l'influence d'une valeur extrême (3e/statistiques-3e : « Identifier l'influence d'une valeur sur un indicateur », « Choisir un indicateur adapté »). Le module 0 les diagnostique tous en huit questions, sans jamais toucher à la matière neuve. La racine carrée (4e) est réactivée par st-d8 précisément parce que l'écart type en a besoin.",
+   "extended": "L'idée collège de DISPERSION, qui se réduisait à l'étendue, se déploie en trois mesures hiérarchisées par leur sensibilité aux extrêmes : étendue (deux valeurs), écart interquartile (le cœur), écart type (tout). L'influence d'une valeur, constatée en 3e sur la moyenne et la médiane, devient une propriété nommée — la ROBUSTESSE — et s'étend aux quatre indicateurs simultanément. La comparaison de deux séries, déjà au programme de 4e et de 3e, devient une méthode en deux temps (position, puis dispersion) assortie d'un critère de significativité.",
+   "new": "Les QUARTILES Q1 et Q3, avec la convention de rang ⌈n/4⌉ — notion que ni la 5e, ni la 4e, ni la 3e n'abordent (toutes trois l'excluent explicitement, en se renvoyant l'une à l'autre) ; l'écart interquartile ; l'ÉCART TYPE et la variance, avec la chaîne écart → carré → moyenne → racine et la justification de chaque étape ; la LINÉARITÉ de la moyenne comme règle explicite ; et la doctrine « position ET dispersion, toujours les deux », qui est le vrai apport de l'année.",
+   "formalized": "Ce que la 3e faisait constater — la moyenne se laisse tirer, la médiane résiste — reçoit ici un NOM (robustesse) et une explication mécanique (l'une utilise les valeurs, l'autre compte les individus). Le sentiment qu'« une seule moyenne ne suffit pas », implicite dans le module de comparaison de 4e, devient une méthode assortie d'un seuil : un écart entre deux indicateurs n'est concluant que s'il est grand devant la dispersion. Et la dispersion, jusque-là un mot, devient une distance mesurable dans l'unité des données.",
+   "tool": "La leçon fournit le RÉSUMÉ EN DEUX NOMBRES (un de position, un de dispersion), qui est le format de lecture de toute la statistique ultérieure. Elle installe directement les cinq nombres de boites-a-moustaches-2nde (min, Q1, médiane, Q3, max) et les indicateurs dont series-regroupees-classes-2nde montrera qu'ils deviennent estimés. En première, l'écart type installé ici est celui de la loi normale et de l'intervalle de fluctuation. Elle réutilise le noyau partagé lessons/common/stats, testé, ce qui garantit qu'une seule définition des quartiles circule dans tout le chapitre."
+  }
+ }
 }
