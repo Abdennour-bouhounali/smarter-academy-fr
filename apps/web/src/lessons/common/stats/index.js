@@ -10,6 +10,7 @@
 export * from './statsUtils';
 export * from './percentUtils';
 export * from './randomUtils';
+export * from './randomVariable';
 export { default as DraggableSplitBar } from './DraggableSplitBar';
 export { default as DotPlot } from './DotPlot';
 export { default as BoxPlot } from './BoxPlot';

@@ -136,7 +136,11 @@ import tableauxCroises2ndeRoutes from './lessons/lycee/seconde/statistiques_prob
 import testsDiagnostiques2ndeRoutes from './lessons/lycee/seconde/statistiques_probabilites/tests-diagnostiques-probabilites-2nde/routes';
 
 // ---- PREMIÈRE SPÉCIALITÉ ----
+import secondDegreResoudre1ereRoutes from './lessons/lycee/premiere_specialite/algebre/second-degre-resoudre-1ere/routes';
+import suitesDecouvrir1ereRoutes from './lessons/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/routes';
 import derivationNombreDerive1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-nombre-derive-1ere/routes';
+import produitScalaireDefinir1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-definir-1ere/routes';
+import variablesAleatoiresLoiEsperance1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/variables-aleatoires-loi-esperance-1ere/routes';
 
 // Hydrates local lesson progress from the server on login and flushes the
 // offline queue — must live inside AuthProvider, hence this null component.
@@ -299,7 +303,11 @@ export default function App() {
             {testsDiagnostiques2ndeRoutes()}
 
             {/* ---- PREMIÈRE SPÉCIALITÉ ---- */}
+            {secondDegreResoudre1ereRoutes()}
+            {suitesDecouvrir1ereRoutes()}
             {derivationNombreDerive1ereRoutes()}
+            {produitScalaireDefinir1ereRoutes()}
+            {variablesAleatoiresLoiEsperance1ereRoutes()}
           </Route>
         </Routes>
       </Router>

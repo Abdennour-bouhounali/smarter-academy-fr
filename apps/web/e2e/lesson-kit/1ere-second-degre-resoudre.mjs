@@ -122,7 +122,12 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const swept = await sweepAll(page, '#step-1', issues, 5);
   // Une étape se pilote au cliquet (boutons étiquetés) OU par saisie/choix :
   // exiger un cliquet partout serait une hypothèse de gabarit, pas une règle.
-  const saisies = await page.locator('#step-1 input[type="text"], #step-1 button[aria-pressed]').count();
+  // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
+  // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
+  // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  const saisies = await page.locator(
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+  ).count();
   check('M1 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M1 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
   // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
@@ -141,7 +146,12 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const swept = await sweepAll(page, '#step-1', issues, 5);
   // Une étape se pilote au cliquet (boutons étiquetés) OU par saisie/choix :
   // exiger un cliquet partout serait une hypothèse de gabarit, pas une règle.
-  const saisies = await page.locator('#step-1 input[type="text"], #step-1 button[aria-pressed]').count();
+  // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
+  // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
+  // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  const saisies = await page.locator(
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+  ).count();
   check('M2 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M2 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
   // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
@@ -160,7 +170,12 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const swept = await sweepAll(page, '#step-1', issues, 5);
   // Une étape se pilote au cliquet (boutons étiquetés) OU par saisie/choix :
   // exiger un cliquet partout serait une hypothèse de gabarit, pas une règle.
-  const saisies = await page.locator('#step-1 input[type="text"], #step-1 button[aria-pressed]').count();
+  // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
+  // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
+  // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  const saisies = await page.locator(
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+  ).count();
   check('M3 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M3 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
   // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
@@ -179,7 +194,12 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const swept = await sweepAll(page, '#step-1', issues, 5);
   // Une étape se pilote au cliquet (boutons étiquetés) OU par saisie/choix :
   // exiger un cliquet partout serait une hypothèse de gabarit, pas une règle.
-  const saisies = await page.locator('#step-1 input[type="text"], #step-1 button[aria-pressed]').count();
+  // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
+  // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
+  // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  const saisies = await page.locator(
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+  ).count();
   check('M4 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M4 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
   // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
@@ -198,7 +218,12 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const swept = await sweepAll(page, '#step-1', issues, 5);
   // Une étape se pilote au cliquet (boutons étiquetés) OU par saisie/choix :
   // exiger un cliquet partout serait une hypothèse de gabarit, pas une règle.
-  const saisies = await page.locator('#step-1 input[type="text"], #step-1 button[aria-pressed]').count();
+  // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
+  // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
+  // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  const saisies = await page.locator(
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+  ).count();
   check('M5 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M5 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
   // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
@@ -217,7 +242,12 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const swept = await sweepAll(page, '#step-1', issues, 5);
   // Une étape se pilote au cliquet (boutons étiquetés) OU par saisie/choix :
   // exiger un cliquet partout serait une hypothèse de gabarit, pas une règle.
-  const saisies = await page.locator('#step-1 input[type="text"], #step-1 button[aria-pressed]').count();
+  // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
+  // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
+  // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  const saisies = await page.locator(
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+  ).count();
   check('M6 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M6 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
   // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
