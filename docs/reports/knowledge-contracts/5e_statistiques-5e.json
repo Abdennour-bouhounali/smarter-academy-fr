@@ -1,0 +1,820 @@
+{
+  "lesson": "statistiques-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "lire-tableau",
+    "lire-graphique",
+    "division-partage",
+    "fraction-part"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "serie-donnees",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module01LEnqueteEnVrac.jsx",
+        "line": 125,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "frequence",
+      "type": "concepts",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module03ComparerAuTotal.jsx",
+        "line": 92,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "donnees-invariantes",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module04LeDatasetVivant.jsx",
+        "line": 192,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "choisir-representation",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module05BarresOuCamembert.jsx",
+        "line": 156,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "moyenne",
+      "type": "concepts",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module06LePartageEquitable.jsx",
+        "line": 98,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "vocab-serie",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module01LEnqueteEnVrac.jsx",
+        "line": 141,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "effectif",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module02CompterSansSeTromper.jsx",
+        "line": 91,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "tableau-effectifs",
+      "type": "methodes",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module02CompterSansSeTromper.jsx",
+        "line": 142,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "diagramme-barres",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module04LeDatasetVivant.jsx",
+        "line": 129,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "diagramme-circulaire",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module05BarresOuCamembert.jsx",
+        "line": 85,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "interpreter",
+      "type": "methodes",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module07CeQueLaMoyenneCache.jsx",
+        "line": 94,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-frequences",
+      "type": "memoriser",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module03ComparerAuTotal.jsx",
+        "line": 154,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-moyenne",
+      "type": "memoriser",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module06LePartageEquitable.jsx",
+        "line": 103,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-interpreter",
+      "type": "memoriser",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module07CeQueLaMoyenneCache.jsx",
+        "line": 204,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "stat5-d1-tableau",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module00Diagnostic.jsx",
+      "line": 23,
+      "requires": [
+        "lire-tableau"
+      ],
+      "prerequisiteStatus": {
+        "lire-tableau": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-d2-graphique",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module00Diagnostic.jsx",
+      "line": 34,
+      "requires": [
+        "lire-graphique"
+      ],
+      "prerequisiteStatus": {
+        "lire-graphique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-d3-fraction",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module00Diagnostic.jsx",
+      "line": 45,
+      "requires": [
+        "fraction-part"
+      ],
+      "prerequisiteStatus": {
+        "fraction-part": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-d4-moitie",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module00Diagnostic.jsx",
+      "line": 56,
+      "requires": [
+        "fraction-part"
+      ],
+      "prerequisiteStatus": {
+        "fraction-part": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-d5-partage",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module00Diagnostic.jsx",
+      "line": 67,
+      "requires": [
+        "division-partage"
+      ],
+      "prerequisiteStatus": {
+        "division-partage": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S1-Q1",
+      "module": 1,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module01LEnqueteEnVrac.jsx",
+      "line": 72,
+      "requires": [
+        "lire-tableau"
+      ],
+      "prerequisiteStatus": {
+        "lire-tableau": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S2-Q2",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module01LEnqueteEnVrac.jsx",
+      "line": 108,
+      "requires": [
+        "lire-tableau"
+      ],
+      "prerequisiteStatus": {
+        "lire-tableau": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q3",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module01LEnqueteEnVrac.jsx",
+      "line": 146,
+      "requires": [
+        "vocab-serie"
+      ],
+      "prerequisiteStatus": {
+        "vocab-serie": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S1-Q1",
+      "module": 2,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module02CompterSansSeTromper.jsx",
+      "line": 47,
+      "requires": [
+        "lire-tableau"
+      ],
+      "prerequisiteStatus": {
+        "lire-tableau": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S1-Q2",
+      "module": 2,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module02CompterSansSeTromper.jsx",
+      "line": 61,
+      "requires": [
+        "lire-tableau"
+      ],
+      "prerequisiteStatus": {
+        "lire-tableau": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q3",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module02CompterSansSeTromper.jsx",
+      "line": 96,
+      "requires": [
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q4",
+      "module": 2,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module02CompterSansSeTromper.jsx",
+      "line": 147,
+      "requires": [
+        "effectif",
+        "tableau-effectifs"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "established@M2",
+        "tableau-effectifs": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S1-Q1",
+      "module": 3,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module03ComparerAuTotal.jsx",
+      "line": 58,
+      "requires": [
+        "fraction-part"
+      ],
+      "prerequisiteStatus": {
+        "fraction-part": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q2",
+      "module": 3,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module03ComparerAuTotal.jsx",
+      "line": 97,
+      "requires": [
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q3",
+      "module": 3,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module03ComparerAuTotal.jsx",
+      "line": 143,
+      "requires": [
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q4",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module03ComparerAuTotal.jsx",
+      "line": 164,
+      "requires": [
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S1-Q1",
+      "module": 4,
+      "step": 1,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module04LeDatasetVivant.jsx",
+      "line": 64,
+      "requires": [
+        "effectif",
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "established@M2",
+        "frequence": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q2",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module04LeDatasetVivant.jsx",
+      "line": 134,
+      "requires": [
+        "diagramme-barres",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "diagramme-barres": "established@M4",
+        "effectif": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q3",
+      "module": 4,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module04LeDatasetVivant.jsx",
+      "line": 170,
+      "requires": [
+        "diagramme-barres"
+      ],
+      "prerequisiteStatus": {
+        "diagramme-barres": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S1-Q1",
+      "module": 5,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module05BarresOuCamembert.jsx",
+      "line": 60,
+      "requires": [
+        "frequence",
+        "fraction-part"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M3",
+        "fraction-part": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q2",
+      "module": 5,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module05BarresOuCamembert.jsx",
+      "line": 103,
+      "requires": [
+        "diagramme-barres",
+        "diagramme-circulaire"
+      ],
+      "prerequisiteStatus": {
+        "diagramme-barres": "established@M4",
+        "diagramme-circulaire": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q3",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module05BarresOuCamembert.jsx",
+      "line": 166,
+      "requires": [
+        "diagramme-circulaire",
+        "mem-frequences"
+      ],
+      "prerequisiteStatus": {
+        "diagramme-circulaire": "established@M5",
+        "mem-frequences": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S1-Q1",
+      "module": 6,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module06LePartageEquitable.jsx",
+      "line": 58,
+      "requires": [
+        "division-partage"
+      ],
+      "prerequisiteStatus": {
+        "division-partage": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q2",
+      "module": 6,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module06LePartageEquitable.jsx",
+      "line": 104,
+      "requires": [
+        "moyenne",
+        "mem-moyenne"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M6",
+        "mem-moyenne": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q3",
+      "module": 6,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module06LePartageEquitable.jsx",
+      "line": 142,
+      "requires": [
+        "moyenne"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S1-Q1",
+      "module": 7,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module07CeQueLaMoyenneCache.jsx",
+      "line": 77,
+      "requires": [
+        "moyenne",
+        "diagramme-barres"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M6",
+        "diagramme-barres": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S2-Q2",
+      "module": 7,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module07CeQueLaMoyenneCache.jsx",
+      "line": 117,
+      "requires": [
+        "moyenne",
+        "interpreter"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M6",
+        "interpreter": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S3-Q3",
+      "module": 7,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module07CeQueLaMoyenneCache.jsx",
+      "line": 150,
+      "requires": [
+        "interpreter",
+        "moyenne",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "interpreter": "established@M7",
+        "moyenne": "established@M6",
+        "effectif": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e1",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 54,
+      "requires": [
+        "serie-donnees",
+        "tableau-effectifs"
+      ],
+      "prerequisiteStatus": {
+        "serie-donnees": "established@M1",
+        "tableau-effectifs": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e2",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 70,
+      "requires": [
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e3",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 86,
+      "requires": [
+        "effectif",
+        "tableau-effectifs"
+      ],
+      "prerequisiteStatus": {
+        "effectif": "established@M2",
+        "tableau-effectifs": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e4",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 102,
+      "requires": [
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e5",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 118,
+      "requires": [
+        "frequence",
+        "mem-frequences"
+      ],
+      "prerequisiteStatus": {
+        "frequence": "established@M3",
+        "mem-frequences": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e6",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 134,
+      "requires": [
+        "diagramme-barres",
+        "effectif"
+      ],
+      "prerequisiteStatus": {
+        "diagramme-barres": "established@M4",
+        "effectif": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e7",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 150,
+      "requires": [
+        "diagramme-barres"
+      ],
+      "prerequisiteStatus": {
+        "diagramme-barres": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e8",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 166,
+      "requires": [
+        "diagramme-circulaire",
+        "frequence"
+      ],
+      "prerequisiteStatus": {
+        "diagramme-circulaire": "established@M5",
+        "frequence": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e9",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 177,
+      "requires": [
+        "moyenne",
+        "mem-moyenne"
+      ],
+      "prerequisiteStatus": {
+        "moyenne": "established@M6",
+        "mem-moyenne": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "stat5-e10",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/donnees_probabilites/statistiques-5e/modules/Module08MissionFinale.jsx",
+      "line": 188,
+      "requires": [
+        "interpreter",
+        "moyenne"
+      ],
+      "prerequisiteStatus": {
+        "interpreter": "established@M7",
+        "moyenne": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

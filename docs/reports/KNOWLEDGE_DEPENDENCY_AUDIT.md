@@ -96,15 +96,25 @@
 
 Ce niveau n'est pas encore traité. Les constats sont enregistrés ici pour mémoire.
 
-8 leçon(s) · critiques 0 · hautes 0 · moyennes 4 · basses 0
+18 leçon(s) · critiques 1 · hautes 0 · moyennes 5 · basses 0
 
 | Leçon | Carte | Bricks | requires | Contrat | C | H | M | L |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `4e:nombres-relatifs-4e` | ✅ | 7 | 27/27 | 0 | 0 | 0 | 0 | 0 |
 | `4e:racines-carrees-4e` | — | 0 | 0/0 | 0 | 0 | 0 | 0 | 0 |
-| `5e:transformations-5e` | — | 0 | 0/0 | 0 | 0 | 0 | 4 | 0 |
+| `5e:probabilites-5e` | ✅ | 9 | 35/35 | 0 | 0 | 0 | 0 | 0 |
+| `5e:statistiques-5e` | ✅ | 14 | 38/38 | 0 | 0 | 0 | 0 | 0 |
+| `5e:angles-5e` | ✅ | 8 | 27/27 | 0 | 0 | 0 | 0 | 0 |
+| `5e:parallelogrammes-5e` | ✅ | 9 | 33/33 | 0 | 0 | 0 | 0 | 0 |
+| `5e:reperage-5e` | ✅ | 13 | 25/25 | 0 | 0 | 0 | 0 | 0 |
+| `5e:representations-espace-5e` | ✅ | 13 | 27/27 | 0 | 0 | 0 | 0 | 0 |
+| `5e:transformations-5e` | ✅ | 7 | 30/30 | 0 | 0 | 0 | 0 | 0 |
+| `5e:triangles-5e` | — | 0 | 0/0 | 0 | 0 | 0 | 5 | 0 |
 | `5e:calcul-litteral-5e` | ✅ | 9 | 33/33 | 0 | 0 | 0 | 0 | 0 |
 | `5e:nombres-rationnels-5e` | ✅ | 9 | 27/27 | 0 | 0 | 0 | 0 | 0 |
 | `5e:nombres-relatifs-5e` | ✅ | 10 | 30/30 | 0 | 0 | 0 | 0 | 0 |
 | `5e:operations-5e` | ✅ | 12 | 35/35 | 0 | 0 | 0 | 0 | 0 |
 | `5e:puissances-5e` | ✅ | 7 | 33/33 | 0 | 0 | 0 | 0 | 0 |
+| `5e:algorithmique-programmation-5e` | ✅ | 5 | 13/13 | 1 | 1 | 0 | 0 | 0 |
+| `5e:fonctions-5e` | ✅ | 9 | 27/27 | 0 | 0 | 0 | 0 | 0 |
+| `5e:proportionnalite-5e` | ✅ | 11 | 34/34 | 0 | 0 | 0 | 0 | 0 |

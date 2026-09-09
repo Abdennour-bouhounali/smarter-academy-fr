@@ -1,0 +1,657 @@
+{
+  "lesson": "representations-espace-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "face-solide",
+    "arete",
+    "sommet-solide",
+    "patron-solide",
+    "perimetre",
+    "figures-planes-usuelles"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "solide-usuel",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module01TroisPhotosUnCarton.jsx",
+        "line": 151,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "perspective-cavaliere",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module02LeDessinQuiMent.jsx",
+        "line": 83,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "trois-vues",
+      "type": "concepts",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module03LireLesTroisVues.jsx",
+        "line": 98,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "patron-prisme",
+      "type": "concepts",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module04DeplierLePrisme.jsx",
+        "line": 94,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "deux-bases",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module04DeplierLePrisme.jsx",
+        "line": 99,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "patron-cylindre",
+      "type": "concepts",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module05LaBandeDuCylindre.jsx",
+        "line": 119,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "bande-perimetre",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module05LaBandeDuCylindre.jsx",
+        "line": 124,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "vue",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module01TroisPhotosUnCarton.jsx",
+        "line": 121,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "fuyante",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module02LeDessinQuiMent.jsx",
+        "line": 113,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "associer-vues",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module03LireLesTroisVues.jsx",
+        "line": 158,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "dimensions-solide",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module06LAtelierDEmballage.jsx",
+        "line": 33,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-bande",
+      "type": "memoriser",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module05LaBandeDuCylindre.jsx",
+        "line": 145,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-trois-vues",
+      "type": "memoriser",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module06LAtelierDEmballage.jsx",
+        "line": 179,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "re5-d1-solides",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module00Diagnostic.jsx",
+      "line": 26,
+      "requires": [
+        "face-solide",
+        "arete",
+        "sommet-solide"
+      ],
+      "prerequisiteStatus": {
+        "face-solide": "prior",
+        "arete": "prior",
+        "sommet-solide": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-d2-solides",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module00Diagnostic.jsx",
+      "line": 41,
+      "requires": [
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "face-solide": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-d3-patrons",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module00Diagnostic.jsx",
+      "line": 52,
+      "requires": [
+        "patron-solide"
+      ],
+      "prerequisiteStatus": {
+        "patron-solide": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-d4-perimetre",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module00Diagnostic.jsx",
+      "line": 67,
+      "requires": [
+        "perimetre",
+        "figures-planes-usuelles"
+      ],
+      "prerequisiteStatus": {
+        "perimetre": "prior",
+        "figures-planes-usuelles": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-d5-perimetre",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module00Diagnostic.jsx",
+      "line": 78,
+      "requires": [
+        "perimetre",
+        "figures-planes-usuelles"
+      ],
+      "prerequisiteStatus": {
+        "perimetre": "prior",
+        "figures-planes-usuelles": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S2-Q1",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module01TroisPhotosUnCarton.jsx",
+      "line": 126,
+      "requires": [
+        "vue"
+      ],
+      "prerequisiteStatus": {
+        "vue": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q2",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module01TroisPhotosUnCarton.jsx",
+      "line": 156,
+      "requires": [
+        "solide-usuel",
+        "face-solide"
+      ],
+      "prerequisiteStatus": {
+        "solide-usuel": "established@M1",
+        "face-solide": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q1",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module02LeDessinQuiMent.jsx",
+      "line": 88,
+      "requires": [
+        "perspective-cavaliere"
+      ],
+      "prerequisiteStatus": {
+        "perspective-cavaliere": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module02LeDessinQuiMent.jsx",
+      "line": 118,
+      "requires": [
+        "fuyante",
+        "perspective-cavaliere",
+        "arete"
+      ],
+      "prerequisiteStatus": {
+        "fuyante": "established@M2",
+        "perspective-cavaliere": "established@M2",
+        "arete": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module03LireLesTroisVues.jsx",
+      "line": 105,
+      "requires": [
+        "trois-vues",
+        "vue"
+      ],
+      "prerequisiteStatus": {
+        "trois-vues": "established@M3",
+        "vue": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module03LireLesTroisVues.jsx",
+      "line": 163,
+      "requires": [
+        "associer-vues",
+        "trois-vues",
+        "solide-usuel"
+      ],
+      "prerequisiteStatus": {
+        "associer-vues": "established@M3",
+        "trois-vues": "established@M3",
+        "solide-usuel": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module04DeplierLePrisme.jsx",
+      "line": 100,
+      "requires": [
+        "patron-prisme",
+        "deux-bases",
+        "patron-solide"
+      ],
+      "prerequisiteStatus": {
+        "patron-prisme": "established@M4",
+        "deux-bases": "established@M4",
+        "patron-solide": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module05LaBandeDuCylindre.jsx",
+      "line": 129,
+      "requires": [
+        "patron-cylindre",
+        "bande-perimetre",
+        "perimetre"
+      ],
+      "prerequisiteStatus": {
+        "patron-cylindre": "established@M5",
+        "bande-perimetre": "established@M5",
+        "perimetre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module05LaBandeDuCylindre.jsx",
+      "line": 155,
+      "requires": [
+        "bande-perimetre",
+        "perimetre"
+      ],
+      "prerequisiteStatus": {
+        "bande-perimetre": "established@M5",
+        "perimetre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S1-Q1",
+      "module": 6,
+      "step": 1,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module06LAtelierDEmballage.jsx",
+      "line": 40,
+      "requires": [
+        "patron-prisme",
+        "patron-cylindre",
+        "dimensions-solide"
+      ],
+      "prerequisiteStatus": {
+        "patron-prisme": "established@M4",
+        "patron-cylindre": "established@M5",
+        "dimensions-solide": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q2",
+      "module": 6,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module06LAtelierDEmballage.jsx",
+      "line": 100,
+      "requires": [
+        "patron-prisme",
+        "perimetre"
+      ],
+      "prerequisiteStatus": {
+        "patron-prisme": "established@M4",
+        "perimetre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q3",
+      "module": 6,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module06LAtelierDEmballage.jsx",
+      "line": 135,
+      "requires": [
+        "patron-prisme",
+        "patron-cylindre",
+        "associer-vues"
+      ],
+      "prerequisiteStatus": {
+        "patron-prisme": "established@M4",
+        "patron-cylindre": "established@M5",
+        "associer-vues": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e1",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 63,
+      "requires": [
+        "vue"
+      ],
+      "prerequisiteStatus": {
+        "vue": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e2",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 79,
+      "requires": [
+        "vue",
+        "trois-vues"
+      ],
+      "prerequisiteStatus": {
+        "vue": "established@M1",
+        "trois-vues": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e3",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 90,
+      "requires": [
+        "perspective-cavaliere"
+      ],
+      "prerequisiteStatus": {
+        "perspective-cavaliere": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e4",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 106,
+      "requires": [
+        "fuyante",
+        "perspective-cavaliere"
+      ],
+      "prerequisiteStatus": {
+        "fuyante": "established@M2",
+        "perspective-cavaliere": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e5",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 122,
+      "requires": [
+        "associer-vues",
+        "trois-vues"
+      ],
+      "prerequisiteStatus": {
+        "associer-vues": "established@M3",
+        "trois-vues": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e6",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 138,
+      "requires": [
+        "associer-vues",
+        "trois-vues",
+        "solide-usuel"
+      ],
+      "prerequisiteStatus": {
+        "associer-vues": "established@M3",
+        "trois-vues": "established@M3",
+        "solide-usuel": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e7",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 149,
+      "requires": [
+        "patron-prisme"
+      ],
+      "prerequisiteStatus": {
+        "patron-prisme": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e8",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 160,
+      "requires": [
+        "deux-bases",
+        "patron-prisme"
+      ],
+      "prerequisiteStatus": {
+        "deux-bases": "established@M4",
+        "patron-prisme": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e9",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 176,
+      "requires": [
+        "bande-perimetre",
+        "patron-cylindre"
+      ],
+      "prerequisiteStatus": {
+        "bande-perimetre": "established@M5",
+        "patron-cylindre": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "re5-e10",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/representations-espace-5e/modules/Module07MissionFinale.jsx",
+      "line": 187,
+      "requires": [
+        "dimensions-solide",
+        "patron-cylindre",
+        "bande-perimetre"
+      ],
+      "prerequisiteStatus": {
+        "dimensions-solide": "established@M6",
+        "patron-cylindre": "established@M5",
+        "bande-perimetre": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

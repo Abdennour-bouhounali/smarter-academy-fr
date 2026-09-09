@@ -1,0 +1,701 @@
+{
+  "lesson": "parallelogrammes-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "quadrilatere",
+    "droites-paralleles",
+    "diagonale",
+    "milieu-segment",
+    "notation-segment",
+    "angle-droit",
+    "losange",
+    "droites-perpendiculaires",
+    "perimetre",
+    "sommet-solide"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "cotes-opposes-egaux",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module03CeQueLesCotesPromettent.jsx",
+        "line": 102,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "angles-opposes-egaux",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module03CeQueLesCotesPromettent.jsx",
+        "line": 172,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "diagonales-milieu",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module04LePointOuToutSeCroise.jsx",
+        "line": 113,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "parallelogrammes-particuliers",
+      "type": "concepts",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module06LaFamille.jsx",
+        "line": 112,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "aire-parallelogramme",
+      "type": "formules",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module07LAireEtLaHauteur.jsx",
+        "line": 107,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "parallelogramme",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module01LePortailQuiSouvre.jsx",
+        "line": 175,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "construire-parallelogramme",
+      "type": "methodes",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module02LaQuatriemePlace.jsx",
+        "line": 164,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "caracterisations",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module05QuellePropreteConclut.jsx",
+        "line": 225,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-diagonales",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module04LePointOuToutSeCroise.jsx",
+        "line": 118,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "par5-d1-quadri",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 26,
+      "requires": [
+        "quadrilatere"
+      ],
+      "prerequisiteStatus": {
+        "quadrilatere": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d2-quadri",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 37,
+      "requires": [
+        "quadrilatere",
+        "diagonale"
+      ],
+      "prerequisiteStatus": {
+        "quadrilatere": "prior",
+        "diagonale": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d3-quadri",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 48,
+      "requires": [
+        "losange"
+      ],
+      "prerequisiteStatus": {
+        "losange": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d4-paralleles",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 59,
+      "requires": [
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d5-paralleles",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 70,
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d6-segments",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 81,
+      "requires": [
+        "milieu-segment"
+      ],
+      "prerequisiteStatus": {
+        "milieu-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d8-perpendiculaires",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 92,
+      "requires": [
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d9-sommets",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 103,
+      "requires": [
+        "sommet-solide"
+      ],
+      "prerequisiteStatus": {
+        "sommet-solide": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d10-perimetre",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 114,
+      "requires": [
+        "perimetre"
+      ],
+      "prerequisiteStatus": {
+        "perimetre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-d7-segments",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module00Diagnostic.jsx",
+      "line": 132,
+      "requires": [
+        "notation-segment"
+      ],
+      "prerequisiteStatus": {
+        "notation-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S2-Q1",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module01LePortailQuiSouvre.jsx",
+      "line": 146,
+      "requires": [
+        "droites-paralleles",
+        "quadrilatere"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "prior",
+        "quadrilatere": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q2",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module01LePortailQuiSouvre.jsx",
+      "line": 180,
+      "requires": [
+        "parallelogramme",
+        "quadrilatere",
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "parallelogramme": "established@M1",
+        "quadrilatere": "prior",
+        "angle-droit": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q1",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module02LaQuatriemePlace.jsx",
+      "line": 169,
+      "requires": [
+        "construire-parallelogramme",
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "construire-parallelogramme": "established@M2",
+        "droites-paralleles": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module02LaQuatriemePlace.jsx",
+      "line": 211,
+      "requires": [
+        "quadrilatere",
+        "notation-segment",
+        "construire-parallelogramme"
+      ],
+      "prerequisiteStatus": {
+        "quadrilatere": "prior",
+        "notation-segment": "prior",
+        "construire-parallelogramme": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module03CeQueLesCotesPromettent.jsx",
+      "line": 107,
+      "requires": [
+        "cotes-opposes-egaux",
+        "parallelogramme"
+      ],
+      "prerequisiteStatus": {
+        "cotes-opposes-egaux": "established@M3",
+        "parallelogramme": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module03CeQueLesCotesPromettent.jsx",
+      "line": 133,
+      "requires": [
+        "cotes-opposes-egaux",
+        "quadrilatere"
+      ],
+      "prerequisiteStatus": {
+        "cotes-opposes-egaux": "established@M3",
+        "quadrilatere": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q3",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module03CeQueLesCotesPromettent.jsx",
+      "line": 177,
+      "requires": [
+        "angles-opposes-egaux",
+        "parallelogramme"
+      ],
+      "prerequisiteStatus": {
+        "angles-opposes-egaux": "established@M3",
+        "parallelogramme": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module04LePointOuToutSeCroise.jsx",
+      "line": 119,
+      "requires": [
+        "diagonales-milieu",
+        "milieu-segment"
+      ],
+      "prerequisiteStatus": {
+        "diagonales-milieu": "established@M4",
+        "milieu-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module04LePointOuToutSeCroise.jsx",
+      "line": 145,
+      "requires": [
+        "diagonales-milieu",
+        "parallelogramme",
+        "diagonale"
+      ],
+      "prerequisiteStatus": {
+        "diagonales-milieu": "established@M4",
+        "parallelogramme": "established@M1",
+        "diagonale": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q1",
+      "module": 6,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module06LaFamille.jsx",
+      "line": 118,
+      "requires": [
+        "parallelogrammes-particuliers",
+        "parallelogramme",
+        "losange"
+      ],
+      "prerequisiteStatus": {
+        "parallelogrammes-particuliers": "established@M6",
+        "parallelogramme": "established@M1",
+        "losange": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q2",
+      "module": 6,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module06LaFamille.jsx",
+      "line": 179,
+      "requires": [
+        "parallelogrammes-particuliers",
+        "diagonales-milieu"
+      ],
+      "prerequisiteStatus": {
+        "parallelogrammes-particuliers": "established@M6",
+        "diagonales-milieu": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S2-Q1",
+      "module": 7,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module07LAireEtLaHauteur.jsx",
+      "line": 112,
+      "requires": [
+        "aire-parallelogramme"
+      ],
+      "prerequisiteStatus": {
+        "aire-parallelogramme": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S3-Q2",
+      "module": 7,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module07LAireEtLaHauteur.jsx",
+      "line": 140,
+      "requires": [
+        "aire-parallelogramme"
+      ],
+      "prerequisiteStatus": {
+        "aire-parallelogramme": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e1",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 58,
+      "requires": [
+        "parallelogramme"
+      ],
+      "prerequisiteStatus": {
+        "parallelogramme": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e2",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 75,
+      "requires": [
+        "parallelogramme",
+        "caracterisations"
+      ],
+      "prerequisiteStatus": {
+        "parallelogramme": "established@M1",
+        "caracterisations": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e3",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 92,
+      "requires": [
+        "construire-parallelogramme",
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "construire-parallelogramme": "established@M2",
+        "droites-paralleles": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e4",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 109,
+      "requires": [
+        "cotes-opposes-egaux",
+        "quadrilatere"
+      ],
+      "prerequisiteStatus": {
+        "cotes-opposes-egaux": "established@M3",
+        "quadrilatere": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e5",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 121,
+      "requires": [
+        "diagonales-milieu",
+        "milieu-segment"
+      ],
+      "prerequisiteStatus": {
+        "diagonales-milieu": "established@M4",
+        "milieu-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e6",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 133,
+      "requires": [
+        "diagonales-milieu",
+        "parallelogramme"
+      ],
+      "prerequisiteStatus": {
+        "diagonales-milieu": "established@M4",
+        "parallelogramme": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e7",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 150,
+      "requires": [
+        "caracterisations",
+        "cotes-opposes-egaux"
+      ],
+      "prerequisiteStatus": {
+        "caracterisations": "established@M5",
+        "cotes-opposes-egaux": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e8",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 167,
+      "requires": [
+        "parallelogrammes-particuliers"
+      ],
+      "prerequisiteStatus": {
+        "parallelogrammes-particuliers": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e9",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 184,
+      "requires": [
+        "aire-parallelogramme"
+      ],
+      "prerequisiteStatus": {
+        "aire-parallelogramme": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "par5-e10",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/parallelogrammes-5e/modules/Module08MissionFinale.jsx",
+      "line": 196,
+      "requires": [
+        "caracterisations",
+        "diagonales-milieu"
+      ],
+      "prerequisiteStatus": {
+        "caracterisations": "established@M5",
+        "diagonales-milieu": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

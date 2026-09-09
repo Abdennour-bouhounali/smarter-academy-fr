@@ -65,8 +65,18 @@ describe('lesson catalogue invariants', () => {
       expect(parts.map((p) => p.partIndex), key).toEqual(parts.map((_, i) => i + 1));
       expect(parts[0].partTotal, key).toBe(parts.length);
       if (parts.length > 1) {
+        // Each part carries its OWN authored id — not a positional `-1`/`-2`
+        // suffix. The suffix convention belonged to the retired "Partie 1 /
+        // Partie 2" split, where parts were arbitrary slices of one notion;
+        // a split is now pedagogical (4e `calcul_litteral` → « Calcul
+        // littéral » + « Équations du premier degré »), so each part gets a
+        // name that says what it teaches. What must hold is that the ids are
+        // distinct — the Learning Point namespace (`<grade>_<id>_P<n>`) and
+        // every progress key hang off them.
+        const partIds = parts.map((p) => p.id);
+        expect(new Set(partIds).size, key).toBe(partIds.length);
         parts.forEach((part) => {
-          expect(part.id, key).toMatch(new RegExp(`-${part.partIndex}$`));
+          expect(part.id, key).toBeTruthy();
           expect(part.pointsToLearn.length, `${key} part ${part.partIndex}`).toBeGreaterThanOrEqual(1);
         });
       }

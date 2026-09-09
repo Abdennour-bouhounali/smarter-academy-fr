@@ -1,0 +1,391 @@
+{
+  "lesson": "algorithmique-programmation-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "instruction-programme",
+    "boucle",
+    "angle-droit",
+    "rapporteur",
+    "calcul-numerique",
+    "tables-multiplication",
+    "perimetre"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "instruction-parametree",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module01LeStyloQuiObeit.jsx",
+        "line": 133,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "entree-programme",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module02UneEntree.jsx",
+        "line": 128,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "formule-programme",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module03LeProgrammeCalcule.jsx",
+        "line": 117,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "repeter-n-fois",
+      "type": "regles",
+      "module": 4,
+      "brick": null
+    },
+    {
+      "id": "angle-exterieur",
+      "type": "regles",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "variable-informatique",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module02UneEntree.jsx",
+        "line": 123,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "prevoir-executer",
+      "type": "methodes",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module01LeStyloQuiObeit.jsx",
+        "line": 181,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "deboguer",
+      "type": "methodes",
+      "module": 6,
+      "brick": null
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-360-sur-n",
+      "type": "memoriser",
+      "module": 5,
+      "brick": null
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "alg5-d1-sequence",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module00Diagnostic.jsx",
+      "line": 24,
+      "requires": [
+        "instruction-programme"
+      ],
+      "prerequisiteStatus": {
+        "instruction-programme": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "alg5-d2-ordre",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module00Diagnostic.jsx",
+      "line": 36,
+      "requires": [
+        "instruction-programme"
+      ],
+      "prerequisiteStatus": {
+        "instruction-programme": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "alg5-d3-boucle",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module00Diagnostic.jsx",
+      "line": 53,
+      "requires": [
+        "boucle"
+      ],
+      "prerequisiteStatus": {
+        "boucle": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "alg5-d4-angle",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module00Diagnostic.jsx",
+      "line": 64,
+      "requires": [
+        "angle-droit",
+        "rapporteur"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior",
+        "rapporteur": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "alg5-d5-calcul",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module00Diagnostic.jsx",
+      "line": 75,
+      "requires": [
+        "calcul-numerique",
+        "tables-multiplication",
+        "perimetre"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior",
+        "tables-multiplication": "prior",
+        "perimetre": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q1",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module01LeStyloQuiObeit.jsx",
+      "line": 164,
+      "requires": [
+        "instruction-parametree",
+        "prevoir-executer"
+      ],
+      "prerequisiteStatus": {
+        "instruction-parametree": "established@M1",
+        "prevoir-executer": "later@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": false
+    },
+    {
+      "questionId": "M01-S4-Q2",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module01LeStyloQuiObeit.jsx",
+      "line": 202,
+      "requires": [
+        "instruction-parametree"
+      ],
+      "prerequisiteStatus": {
+        "instruction-parametree": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S1-Q1",
+      "module": 2,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module02UneEntree.jsx",
+      "line": 78,
+      "requires": [
+        "instruction-parametree"
+      ],
+      "prerequisiteStatus": {
+        "instruction-parametree": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module02UneEntree.jsx",
+      "line": 153,
+      "requires": [
+        "variable-informatique",
+        "entree-programme"
+      ],
+      "prerequisiteStatus": {
+        "variable-informatique": "established@M2",
+        "entree-programme": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q3",
+      "module": 2,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module02UneEntree.jsx",
+      "line": 216,
+      "requires": [
+        "variable-informatique",
+        "entree-programme"
+      ],
+      "prerequisiteStatus": {
+        "variable-informatique": "established@M2",
+        "entree-programme": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S1-Q1",
+      "module": 3,
+      "step": 1,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module03LeProgrammeCalcule.jsx",
+      "line": 72,
+      "requires": [
+        "variable-informatique",
+        "entree-programme"
+      ],
+      "prerequisiteStatus": {
+        "variable-informatique": "established@M2",
+        "entree-programme": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module03LeProgrammeCalcule.jsx",
+      "line": 146,
+      "requires": [
+        "formule-programme",
+        "variable-informatique"
+      ],
+      "prerequisiteStatus": {
+        "formule-programme": "established@M3",
+        "variable-informatique": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q3",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module03LeProgrammeCalcule.jsx",
+      "line": 164,
+      "requires": [
+        "formule-programme",
+        "entree-programme"
+      ],
+      "prerequisiteStatus": {
+        "formule-programme": "established@M3",
+        "entree-programme": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "E_REQUIRES_ESTABLISHED_LATER",
+      "severity": "critical",
+      "message": "question 'M01-S3-Q1' requires 'prevoir-executer', established only later by the brick at apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module01LeStyloQuiObeit.jsx:181",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/modules/Module01LeStyloQuiObeit.jsx",
+      "line": 164,
+      "module": 1,
+      "step": 3,
+      "term": null,
+      "questionId": "M01-S3-Q1",
+      "position": 39
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'repeter-n-fois' (module 4) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/knowledge.jsx",
+      "line": 237,
+      "module": 4,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'angle-exterieur' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/knowledge.jsx",
+      "line": 288,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'mem-360-sur-n' (module 5) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/knowledge.jsx",
+      "line": 337,
+      "module": 5,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    },
+    {
+      "code": "W_ITEM_WITHOUT_BRICK",
+      "severity": "info",
+      "message": "knowledge item 'deboguer' (module 6) is never established by a brick — it only appears in the end-of-module snapshot",
+      "file": "apps/web/src/lessons/college/5e/pensee_informatique/algorithmique-programmation-5e/knowledge.jsx",
+      "line": 363,
+      "module": 6,
+      "step": null,
+      "term": null,
+      "questionId": null,
+      "position": -1
+    }
+  ]
+}

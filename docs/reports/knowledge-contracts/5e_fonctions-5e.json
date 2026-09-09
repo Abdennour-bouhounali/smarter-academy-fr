@@ -1,0 +1,576 @@
+{
+  "lesson": "fonctions-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "coordonnees",
+    "abscisse",
+    "ordonnee",
+    "lire-tableau",
+    "calcul-numerique"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "dependance",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module01LeFour.jsx",
+        "line": 156,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "meme-entree-meme-sortie",
+      "type": "regles",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module01LeFour.jsx",
+        "line": 161,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "couple-point",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module04UnCoupleUnPoint.jsx",
+        "line": 114,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "plusieurs-instants",
+      "type": "concepts",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module05LireLeGraphique.jsx",
+        "line": 205,
+        "step": 4,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "en-fonction-de",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module02QuiCommandeQui.jsx",
+        "line": 123,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "tableau-de-valeurs",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module03LeCarnetDeBord.jsx",
+        "line": 66,
+        "step": 1,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "programme-de-calcul",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module03LeCarnetDeBord.jsx",
+        "line": 152,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "lire-graphique",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module05LireLeGraphique.jsx",
+        "line": 123,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-en-fonction-de",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module02QuiCommandeQui.jsx",
+        "line": 128,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "fonc5-d1-coordonnees",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module00Diagnostic.jsx",
+      "line": 25,
+      "requires": [
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-d2-abscisse",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module00Diagnostic.jsx",
+      "line": 40,
+      "requires": [
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-d3-ordonnee",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module00Diagnostic.jsx",
+      "line": 51,
+      "requires": [
+        "ordonnee"
+      ],
+      "prerequisiteStatus": {
+        "ordonnee": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-d4-tableau",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module00Diagnostic.jsx",
+      "line": 62,
+      "requires": [
+        "lire-tableau"
+      ],
+      "prerequisiteStatus": {
+        "lire-tableau": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-d5-calcul",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module00Diagnostic.jsx",
+      "line": 74,
+      "requires": [
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q1",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module01LeFour.jsx",
+      "line": 166,
+      "requires": [
+        "dependance"
+      ],
+      "prerequisiteStatus": {
+        "dependance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q2",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module01LeFour.jsx",
+      "line": 221,
+      "requires": [
+        "dependance",
+        "meme-entree-meme-sortie"
+      ],
+      "prerequisiteStatus": {
+        "dependance": "established@M1",
+        "meme-entree-meme-sortie": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q1",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module02QuiCommandeQui.jsx",
+      "line": 129,
+      "requires": [
+        "en-fonction-de",
+        "dependance"
+      ],
+      "prerequisiteStatus": {
+        "en-fonction-de": "established@M2",
+        "dependance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module02QuiCommandeQui.jsx",
+      "line": 160,
+      "requires": [
+        "en-fonction-de",
+        "dependance"
+      ],
+      "prerequisiteStatus": {
+        "en-fonction-de": "established@M2",
+        "dependance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S1-Q1",
+      "module": 3,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module03LeCarnetDeBord.jsx",
+      "line": 97,
+      "requires": [
+        "tableau-de-valeurs"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-valeurs": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module03LeCarnetDeBord.jsx",
+      "line": 157,
+      "requires": [
+        "programme-de-calcul"
+      ],
+      "prerequisiteStatus": {
+        "programme-de-calcul": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q3",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module03LeCarnetDeBord.jsx",
+      "line": 185,
+      "requires": [
+        "tableau-de-valeurs",
+        "en-fonction-de"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-valeurs": "established@M3",
+        "en-fonction-de": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module04UnCoupleUnPoint.jsx",
+      "line": 119,
+      "requires": [
+        "couple-point"
+      ],
+      "prerequisiteStatus": {
+        "couple-point": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module04UnCoupleUnPoint.jsx",
+      "line": 162,
+      "requires": [
+        "couple-point",
+        "dependance"
+      ],
+      "prerequisiteStatus": {
+        "couple-point": "established@M4",
+        "dependance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module05LireLeGraphique.jsx",
+      "line": 128,
+      "requires": [
+        "lire-graphique",
+        "couple-point"
+      ],
+      "prerequisiteStatus": {
+        "lire-graphique": "established@M5",
+        "couple-point": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module05LireLeGraphique.jsx",
+      "line": 156,
+      "requires": [
+        "lire-graphique"
+      ],
+      "prerequisiteStatus": {
+        "lire-graphique": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q3",
+      "module": 5,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module05LireLeGraphique.jsx",
+      "line": 210,
+      "requires": [
+        "plusieurs-instants",
+        "meme-entree-meme-sortie"
+      ],
+      "prerequisiteStatus": {
+        "plusieurs-instants": "established@M5",
+        "meme-entree-meme-sortie": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e1",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 54,
+      "requires": [
+        "dependance"
+      ],
+      "prerequisiteStatus": {
+        "dependance": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e2",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 72,
+      "requires": [
+        "dependance",
+        "en-fonction-de"
+      ],
+      "prerequisiteStatus": {
+        "dependance": "established@M1",
+        "en-fonction-de": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e3",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 90,
+      "requires": [
+        "en-fonction-de"
+      ],
+      "prerequisiteStatus": {
+        "en-fonction-de": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e4",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 108,
+      "requires": [
+        "en-fonction-de"
+      ],
+      "prerequisiteStatus": {
+        "en-fonction-de": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e5",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 126,
+      "requires": [
+        "tableau-de-valeurs"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-valeurs": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e6",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 139,
+      "requires": [
+        "tableau-de-valeurs",
+        "en-fonction-de"
+      ],
+      "prerequisiteStatus": {
+        "tableau-de-valeurs": "established@M3",
+        "en-fonction-de": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e7",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 157,
+      "requires": [
+        "programme-de-calcul"
+      ],
+      "prerequisiteStatus": {
+        "programme-de-calcul": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e8",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 170,
+      "requires": [
+        "programme-de-calcul",
+        "tableau-de-valeurs"
+      ],
+      "prerequisiteStatus": {
+        "programme-de-calcul": "established@M3",
+        "tableau-de-valeurs": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e9",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 183,
+      "requires": [
+        "couple-point"
+      ],
+      "prerequisiteStatus": {
+        "couple-point": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "fonc5-e10",
+      "module": 6,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/fonctions-5e/modules/Module06MissionFinale.jsx",
+      "line": 201,
+      "requires": [
+        "plusieurs-instants",
+        "lire-graphique"
+      ],
+      "prerequisiteStatus": {
+        "plusieurs-instants": "established@M5",
+        "lire-graphique": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

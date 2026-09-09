@@ -1,0 +1,619 @@
+{
+  "lesson": "reperage-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "abscisse",
+    "lecture-quadrillage",
+    "nombres-relatifs",
+    "ordre-nombres",
+    "calcul-numerique"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "deuxieme-dimension",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module01UnSeulNombreSuffitIl.jsx",
+        "line": 168,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "repere",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module02DeuxNombresUnEndroit.jsx",
+        "line": 99,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "coordonnees",
+      "type": "concepts",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module02DeuxNombresUnEndroit.jsx",
+        "line": 131,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "ordre-du-couple",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module04PlacerSansEchanger.jsx",
+        "line": 103,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "sur-un-axe",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module05SurUnAxeOuNullePart.jsx",
+        "line": 79,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "abscisse",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module01UnSeulNombreSuffitIl.jsx",
+        "line": 113,
+        "step": 2,
+        "variant": "rappel"
+      }
+    },
+    {
+      "id": "axes-origine",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module02DeuxNombresUnEndroit.jsx",
+        "line": 104,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "quadrant",
+      "type": "vocabulaire",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module03LireUnPoint.jsx",
+        "line": 100,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "lire-un-point",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module03LireUnPoint.jsx",
+        "line": 162,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "placer-un-point",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module04PlacerSansEchanger.jsx",
+        "line": 108,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "echelle-graduation",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module06LePlanDuDomaine.jsx",
+        "line": 53,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-couple",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module04PlacerSansEchanger.jsx",
+        "line": 168,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-sur-un-axe",
+      "type": "memoriser",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module05SurUnAxeOuNullePart.jsx",
+        "line": 104,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "rep5-d1-relatifs",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module00Diagnostic.jsx",
+      "line": 23,
+      "requires": [
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "nombres-relatifs": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-d2-ordre",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module00Diagnostic.jsx",
+      "line": 34,
+      "requires": [
+        "ordre-nombres",
+        "nombres-relatifs"
+      ],
+      "prerequisiteStatus": {
+        "ordre-nombres": "prior",
+        "nombres-relatifs": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-d3-droite",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module00Diagnostic.jsx",
+      "line": 45,
+      "requires": [
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-d4-droite",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module00Diagnostic.jsx",
+      "line": 56,
+      "requires": [
+        "abscisse",
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-d5-quadrillage",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module00Diagnostic.jsx",
+      "line": 67,
+      "requires": [
+        "lecture-quadrillage"
+      ],
+      "prerequisiteStatus": {
+        "lecture-quadrillage": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S2-Q1",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module01UnSeulNombreSuffitIl.jsx",
+      "line": 118,
+      "requires": [
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q2",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module01UnSeulNombreSuffitIl.jsx",
+      "line": 150,
+      "requires": [
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S2-Q1",
+      "module": 2,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module02DeuxNombresUnEndroit.jsx",
+      "line": 106,
+      "requires": [
+        "repere",
+        "axes-origine"
+      ],
+      "prerequisiteStatus": {
+        "repere": "established@M2",
+        "axes-origine": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q2",
+      "module": 2,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module02DeuxNombresUnEndroit.jsx",
+      "line": 136,
+      "requires": [
+        "coordonnees",
+        "axes-origine"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "established@M2",
+        "axes-origine": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module03LireUnPoint.jsx",
+      "line": 107,
+      "requires": [
+        "quadrant",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "quadrant": "established@M3",
+        "coordonnees": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module03LireUnPoint.jsx",
+      "line": 167,
+      "requires": [
+        "lire-un-point",
+        "coordonnees",
+        "quadrant"
+      ],
+      "prerequisiteStatus": {
+        "lire-un-point": "established@M3",
+        "coordonnees": "established@M2",
+        "quadrant": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module04PlacerSansEchanger.jsx",
+      "line": 109,
+      "requires": [
+        "ordre-du-couple",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "ordre-du-couple": "established@M4",
+        "coordonnees": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module05SurUnAxeOuNullePart.jsx",
+      "line": 84,
+      "requires": [
+        "sur-un-axe",
+        "axes-origine",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "sur-un-axe": "established@M5",
+        "axes-origine": "established@M2",
+        "coordonnees": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S1-Q1",
+      "module": 6,
+      "step": 1,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module06LePlanDuDomaine.jsx",
+      "line": 58,
+      "requires": [
+        "abscisse",
+        "calcul-numerique"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "calcul-numerique": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q2",
+      "module": 6,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module06LePlanDuDomaine.jsx",
+      "line": 93,
+      "requires": [
+        "echelle-graduation",
+        "lire-un-point"
+      ],
+      "prerequisiteStatus": {
+        "echelle-graduation": "established@M6",
+        "lire-un-point": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e1",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 64,
+      "requires": [
+        "abscisse",
+        "deuxieme-dimension"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior",
+        "deuxieme-dimension": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e2",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 80,
+      "requires": [
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e3",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 91,
+      "requires": [
+        "repere",
+        "axes-origine"
+      ],
+      "prerequisiteStatus": {
+        "repere": "established@M2",
+        "axes-origine": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e4",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 107,
+      "requires": [
+        "coordonnees",
+        "axes-origine"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "established@M2",
+        "axes-origine": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e5",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 123,
+      "requires": [
+        "coordonnees",
+        "lire-un-point"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "established@M2",
+        "lire-un-point": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e6",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 134,
+      "requires": [
+        "quadrant",
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "quadrant": "established@M3",
+        "coordonnees": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e7",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 150,
+      "requires": [
+        "ordre-du-couple",
+        "placer-un-point"
+      ],
+      "prerequisiteStatus": {
+        "ordre-du-couple": "established@M4",
+        "placer-un-point": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e8",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 166,
+      "requires": [
+        "ordre-du-couple"
+      ],
+      "prerequisiteStatus": {
+        "ordre-du-couple": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e9",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 177,
+      "requires": [
+        "sur-un-axe",
+        "quadrant"
+      ],
+      "prerequisiteStatus": {
+        "sur-un-axe": "established@M5",
+        "quadrant": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "rep5-e10",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module07MissionFinale.jsx",
+      "line": 193,
+      "requires": [
+        "echelle-graduation",
+        "abscisse"
+      ],
+      "prerequisiteStatus": {
+        "echelle-graduation": "established@M6",
+        "abscisse": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "W_PRIOR_REESTABLISHED",
+      "severity": "info",
+      "message": "'abscisse' is declared in priorKnowledge and re-established by a brick here (fine for a « rappel »)",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/reperage-5e/modules/Module01UnSeulNombreSuffitIl.jsx",
+      "line": 113,
+      "module": 1,
+      "step": 2,
+      "term": null,
+      "questionId": null,
+      "position": 32
+    }
+  ]
+}

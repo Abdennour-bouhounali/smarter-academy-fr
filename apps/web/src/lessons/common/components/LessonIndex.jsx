@@ -106,7 +106,10 @@ export default function LessonIndex({ config, basePath }) {
       <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
 
         {/* BREADCRUMB */}
-        <nav className="flex items-center gap-2 text-xs font-mono text-slate-500">
+        {/* `flex-wrap` : sans lui, un fil d'Ariane long (un chapitre et un
+            titre de leçon étendus) force la page à défiler latéralement sur
+            un téléphone. C'est déjà ce que fait ModuleLayout. */}
+        <nav className="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
           <Link to="/courses" className="hover:text-blue-600">Accueil</Link>
           <span>/</span>
           <Link to={`/courses?level=${config.level}&grade=${config.grade}`} className="hover:text-blue-600">{config.level === 'lycee' ? 'Lycée' : 'Collège'} ({config.grade})</Link>

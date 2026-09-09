@@ -8,59 +8,590 @@
     "axe-symetrie",
     "droites-perpendiculaires"
   ],
-  "conceptsIntroduced": [],
-  "vocabularyIntroduced": [],
-  "proceduresIntroduced": [],
-  "memorisation": [],
-  "questions": [],
-  "findings": [
+  "conceptsIntroduced": [
     {
-      "code": "W_PRIOR_NOT_DIAGNOSED",
-      "severity": "medium",
-      "message": "priorKnowledge declares 'milieu-segment' but no Module 0 question diagnoses it",
-      "file": "apps/web/src/lessons/college/5e/geometrie/transformations-5e/lesson.config.js",
-      "line": 0,
-      "module": null,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
+      "id": "centre-milieu",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module02OuAtterritUnPoint.jsx",
+        "line": 144,
+        "step": 3,
+        "variant": "new"
+      }
     },
     {
-      "code": "W_PRIOR_NOT_DIAGNOSED",
-      "severity": "medium",
-      "message": "priorKnowledge declares 'notation-segment' but no Module 0 question diagnoses it",
-      "file": "apps/web/src/lessons/college/5e/geometrie/transformations-5e/lesson.config.js",
-      "line": 0,
-      "module": null,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
+      "id": "invariants-symetrie",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module04CeQuiNeChangePas.jsx",
+        "line": 98,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
-      "code": "W_PRIOR_NOT_DIAGNOSED",
-      "severity": "medium",
-      "message": "priorKnowledge declares 'axe-symetrie' but no Module 0 question diagnoses it",
-      "file": "apps/web/src/lessons/college/5e/geometrie/transformations-5e/lesson.config.js",
-      "line": 0,
-      "module": null,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
+      "id": "centre-de-symetrie",
+      "type": "concepts",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module05LeCentreDUneFigure.jsx",
+        "line": 146,
+        "step": 2,
+        "variant": "new"
+      }
     },
     {
-      "code": "W_PRIOR_NOT_DIAGNOSED",
-      "severity": "medium",
-      "message": "priorKnowledge declares 'droites-perpendiculaires' but no Module 0 question diagnoses it",
-      "file": "apps/web/src/lessons/college/5e/geometrie/transformations-5e/lesson.config.js",
-      "line": 0,
-      "module": null,
-      "step": null,
-      "term": null,
-      "questionId": null,
-      "position": -1
+      "id": "centrale-vs-axiale",
+      "type": "concepts",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module06DemiTourOuPliage.jsx",
+        "line": 90,
+        "step": 2,
+        "variant": "new"
+      }
     }
-  ]
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "symetrie-centrale",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module01LeCalqueQuiTourne.jsx",
+        "line": 155,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "construire-image",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module03ConstruireUneFigure.jsx",
+        "line": 95,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-invariants",
+      "type": "memoriser",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module04CeQuiNeChangePas.jsx",
+        "line": 103,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "tr5-d1-milieu",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module00Diagnostic.jsx",
+      "line": 23,
+      "requires": [
+        "milieu-segment"
+      ],
+      "prerequisiteStatus": {
+        "milieu-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-d2-milieu",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module00Diagnostic.jsx",
+      "line": 34,
+      "requires": [
+        "milieu-segment",
+        "notation-segment"
+      ],
+      "prerequisiteStatus": {
+        "milieu-segment": "prior",
+        "notation-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-d3-milieu",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module00Diagnostic.jsx",
+      "line": 45,
+      "requires": [
+        "milieu-segment"
+      ],
+      "prerequisiteStatus": {
+        "milieu-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-d4-symetrie",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module00Diagnostic.jsx",
+      "line": 56,
+      "requires": [
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "axe-symetrie": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-d5-symetrie",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module00Diagnostic.jsx",
+      "line": 67,
+      "requires": [
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "axe-symetrie": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-d6-figures",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module00Diagnostic.jsx",
+      "line": 78,
+      "requires": [
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-d7-figures",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module00Diagnostic.jsx",
+      "line": 89,
+      "requires": [
+        "notation-segment"
+      ],
+      "prerequisiteStatus": {
+        "notation-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q1",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module01LeCalqueQuiTourne.jsx",
+      "line": 160,
+      "requires": [
+        "symetrie-centrale"
+      ],
+      "prerequisiteStatus": {
+        "symetrie-centrale": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q2",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module01LeCalqueQuiTourne.jsx",
+      "line": 180,
+      "requires": [
+        "symetrie-centrale"
+      ],
+      "prerequisiteStatus": {
+        "symetrie-centrale": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q1",
+      "module": 2,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module02OuAtterritUnPoint.jsx",
+      "line": 149,
+      "requires": [
+        "centre-milieu",
+        "milieu-segment"
+      ],
+      "prerequisiteStatus": {
+        "centre-milieu": "established@M2",
+        "milieu-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q2",
+      "module": 2,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module02OuAtterritUnPoint.jsx",
+      "line": 173,
+      "requires": [
+        "centre-milieu"
+      ],
+      "prerequisiteStatus": {
+        "centre-milieu": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module03ConstruireUneFigure.jsx",
+      "line": 79,
+      "requires": [
+        "centre-milieu"
+      ],
+      "prerequisiteStatus": {
+        "centre-milieu": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module03ConstruireUneFigure.jsx",
+      "line": 115,
+      "requires": [
+        "construire-image",
+        "centre-milieu"
+      ],
+      "prerequisiteStatus": {
+        "construire-image": "established@M3",
+        "centre-milieu": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module04CeQuiNeChangePas.jsx",
+      "line": 80,
+      "requires": [
+        "symetrie-centrale",
+        "centre-milieu"
+      ],
+      "prerequisiteStatus": {
+        "symetrie-centrale": "established@M1",
+        "centre-milieu": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module04CeQuiNeChangePas.jsx",
+      "line": 117,
+      "requires": [
+        "invariants-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "invariants-symetrie": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module05LeCentreDUneFigure.jsx",
+      "line": 130,
+      "requires": [
+        "symetrie-centrale",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "symetrie-centrale": "established@M1",
+        "axe-symetrie": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module05LeCentreDUneFigure.jsx",
+      "line": 161,
+      "requires": [
+        "centre-de-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "centre-de-symetrie": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q1",
+      "module": 6,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module06DemiTourOuPliage.jsx",
+      "line": 74,
+      "requires": [
+        "invariants-symetrie",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "invariants-symetrie": "established@M4",
+        "axe-symetrie": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q2",
+      "module": 6,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module06DemiTourOuPliage.jsx",
+      "line": 107,
+      "requires": [
+        "centrale-vs-axiale"
+      ],
+      "prerequisiteStatus": {
+        "centrale-vs-axiale": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S4-Q3",
+      "module": 6,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module06DemiTourOuPliage.jsx",
+      "line": 175,
+      "requires": [
+        "centrale-vs-axiale",
+        "invariants-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "centrale-vs-axiale": "established@M6",
+        "invariants-symetrie": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e1",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 54,
+      "requires": [
+        "symetrie-centrale"
+      ],
+      "prerequisiteStatus": {
+        "symetrie-centrale": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e2",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 65,
+      "requires": [
+        "centre-milieu"
+      ],
+      "prerequisiteStatus": {
+        "centre-milieu": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e3",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 76,
+      "requires": [
+        "centre-milieu",
+        "milieu-segment"
+      ],
+      "prerequisiteStatus": {
+        "centre-milieu": "established@M2",
+        "milieu-segment": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e4",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 92,
+      "requires": [
+        "centre-milieu"
+      ],
+      "prerequisiteStatus": {
+        "centre-milieu": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e5",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 103,
+      "requires": [
+        "construire-image"
+      ],
+      "prerequisiteStatus": {
+        "construire-image": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e6",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 119,
+      "requires": [
+        "invariants-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "invariants-symetrie": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e7",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 130,
+      "requires": [
+        "invariants-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "invariants-symetrie": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e8",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 141,
+      "requires": [
+        "centre-de-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "centre-de-symetrie": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e9",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 152,
+      "requires": [
+        "centre-de-symetrie",
+        "axe-symetrie"
+      ],
+      "prerequisiteStatus": {
+        "centre-de-symetrie": "established@M5",
+        "axe-symetrie": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "tr5-e10",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/transformations-5e/modules/Module07MissionFinale.jsx",
+      "line": 163,
+      "requires": [
+        "centrale-vs-axiale"
+      ],
+      "prerequisiteStatus": {
+        "centrale-vs-axiale": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
 }

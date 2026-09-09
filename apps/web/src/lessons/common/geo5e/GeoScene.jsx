@@ -57,13 +57,22 @@ export default function GeoScene({
     [width, height, margin],
   );
 
+  /* L'ORDRE COMPTE. `placeLabels` sert les étiquettes dans l'ordre reçu, et
+     les premières servies obtiennent les meilleures places. On passe donc
+     d'abord celles qui doivent absolument rester collées à leur point — un
+     `priority` vrai — pour qu'une étiquette accessoire ne les repousse pas
+     au loin. C'est ce qui garde le « O » du centre à côté de sa punaise. */
+  const ordered = useMemo(() => {
+    const withDefaults = labels.map((l) => ({ size: labelSize, pad: 2, ...l }));
+    return [
+      ...withDefaults.filter((l) => l.priority),
+      ...withDefaults.filter((l) => !l.priority),
+    ];
+  }, [labels, labelSize]);
+
   const placed = useMemo(
-    () => placeLabels(
-      labels.map((l) => ({ size: labelSize, pad: 2, ...l })),
-      obstacles,
-      frame,
-    ),
-    [labels, obstacles, frame, labelSize],
+    () => placeLabels(ordered, obstacles, frame),
+    [ordered, obstacles, frame],
   );
 
   return (
@@ -102,11 +111,24 @@ export default function GeoScene({
 
 /* ── Primitives de figure ──────────────────────────────────────────────── */
 
-/** Un point manipulable : grande cible tactile, anneau de focus sur la pastille. */
-export function Handle({ p, color = '#7c3aed', r = 11, onPointerDown, label, dragging }) {
+/**
+ * Un point manipulable : grande cible tactile, anneau de focus sur la pastille.
+ *
+ * `onKeyDown` est l'alternative accessible au glisser (§27 : « le chemin
+ * clavier est une manipulation aussi »). Facultatif — les appelants
+ * antérieurs, qui ne le passent pas, sont inchangés.
+ */
+export function Handle({ p, color = '#7c3aed', r = 11, hitR, onPointerDown, onKeyDown, label, dragging }) {
+  /* La cible tactile est en unités de viewBox : sur un téléphone, le SVG est
+     réduit d'environ moitié, et un rayon de 24 unités ne fait plus que ~21 px
+     à l'écran — sous le minimum de 44 px du §17. Une leçon qui connaît la
+     largeur de son cadre peut donc agrandir la cible via `hitR` ; la valeur
+     par défaut ne change rien pour les appelants existants. */
+  const rHit = hitR ?? r + 13;
   return (
     <g
       onPointerDown={onPointerDown}
+      onKeyDown={onKeyDown}
       style={{ cursor: onPointerDown ? 'grab' : 'default' }}
       tabIndex={onPointerDown ? 0 : undefined}
       role={onPointerDown ? 'button' : undefined}
@@ -116,7 +138,7 @@ export function Handle({ p, color = '#7c3aed', r = 11, onPointerDown, label, dra
       className={onPointerDown ? 'outline-none focus-visible:[&>circle:last-of-type]:opacity-100' : ''}
     >
       {onPointerDown && (
-        <circle cx={p.x} cy={p.y} r={r + 13} fill="transparent" data-visual-role="decor" />
+        <circle cx={p.x} cy={p.y} r={rHit} fill="transparent" data-visual-role="decor" />
       )}
       <circle cx={p.x} cy={p.y} r={r} fill={color} stroke="#ffffff" strokeWidth={3} />
       {dragging && (

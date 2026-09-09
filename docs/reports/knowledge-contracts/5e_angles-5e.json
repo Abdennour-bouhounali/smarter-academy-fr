@@ -1,0 +1,572 @@
+{
+  "lesson": "angles-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "angle-aigu-obtus",
+    "angle-droit",
+    "droites-paralleles",
+    "droites-perpendiculaires"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "paralleles-angles-egaux",
+      "type": "regles",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module03QuandLesDroitesSontParalleles.jsx",
+        "line": 161,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "reciproque-parallelisme",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module05ProuverLeParallelisme.jsx",
+        "line": 97,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "secante",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module01SeCouperontElles.jsx",
+        "line": 173,
+        "step": 4,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "angles-correspondants",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module02LaSecanteEtSesHuitAngles.jsx",
+        "line": 139,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "angles-alternes-internes",
+      "type": "vocabulaire",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module02LaSecanteEtSesHuitAngles.jsx",
+        "line": 133,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "calculer-les-angles",
+      "type": "methodes",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module04CalculerSansMesurer.jsx",
+        "line": 131,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "enchainer-relations",
+      "type": "methodes",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module06LaFigureComplete.jsx",
+        "line": 37,
+        "step": 1,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-angles-paralleles",
+      "type": "memoriser",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module03QuandLesDroitesSontParalleles.jsx",
+        "line": 166,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "an5-d1-mesurer",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module00Diagnostic.jsx",
+      "line": 23,
+      "requires": [
+        "angle-droit"
+      ],
+      "prerequisiteStatus": {
+        "angle-droit": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "an5-d2-mesurer",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module00Diagnostic.jsx",
+      "line": 34,
+      "requires": [
+        "angle-aigu-obtus"
+      ],
+      "prerequisiteStatus": {
+        "angle-aigu-obtus": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "an5-d3-vocabulaire",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module00Diagnostic.jsx",
+      "line": 45,
+      "requires": [
+        "angle-aigu-obtus"
+      ],
+      "prerequisiteStatus": {
+        "angle-aigu-obtus": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "an5-d4-vocabulaire",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module00Diagnostic.jsx",
+      "line": 56,
+      "requires": [
+        "angle-aigu-obtus"
+      ],
+      "prerequisiteStatus": {
+        "angle-aigu-obtus": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "an5-d5-droites",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module00Diagnostic.jsx",
+      "line": 67,
+      "requires": [
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "an5-d6-droites",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module00Diagnostic.jsx",
+      "line": 82,
+      "requires": [
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "droites-perpendiculaires": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "an5-d7-droites",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module00Diagnostic.jsx",
+      "line": 93,
+      "requires": [
+        "droites-paralleles",
+        "droites-perpendiculaires"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "prior",
+        "droites-perpendiculaires": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S2-Q1",
+      "module": 1,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module01SeCouperontElles.jsx",
+      "line": 100,
+      "requires": [
+        "droites-paralleles"
+      ],
+      "prerequisiteStatus": {
+        "droites-paralleles": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q1",
+      "module": 2,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module02LaSecanteEtSesHuitAngles.jsx",
+      "line": 191,
+      "requires": [
+        "angles-alternes-internes"
+      ],
+      "prerequisiteStatus": {
+        "angles-alternes-internes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q1",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module03QuandLesDroitesSontParalleles.jsx",
+      "line": 167,
+      "requires": [
+        "paralleles-angles-egaux",
+        "angles-alternes-internes"
+      ],
+      "prerequisiteStatus": {
+        "paralleles-angles-egaux": "established@M3",
+        "angles-alternes-internes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q2",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module03QuandLesDroitesSontParalleles.jsx",
+      "line": 190,
+      "requires": [
+        "paralleles-angles-egaux"
+      ],
+      "prerequisiteStatus": {
+        "paralleles-angles-egaux": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module04CalculerSansMesurer.jsx",
+      "line": 138,
+      "requires": [
+        "calculer-les-angles",
+        "paralleles-angles-egaux",
+        "angles-alternes-internes",
+        "angles-correspondants"
+      ],
+      "prerequisiteStatus": {
+        "calculer-les-angles": "established@M4",
+        "paralleles-angles-egaux": "established@M3",
+        "angles-alternes-internes": "established@M2",
+        "angles-correspondants": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module04CalculerSansMesurer.jsx",
+      "line": 205,
+      "requires": [
+        "calculer-les-angles"
+      ],
+      "prerequisiteStatus": {
+        "calculer-les-angles": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q1",
+      "module": 5,
+      "step": 3,
+      "component": "BatchChoiceQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module05ProuverLeParallelisme.jsx",
+      "line": 104,
+      "requires": [
+        "reciproque-parallelisme",
+        "paralleles-angles-egaux",
+        "calculer-les-angles"
+      ],
+      "prerequisiteStatus": {
+        "reciproque-parallelisme": "established@M5",
+        "paralleles-angles-egaux": "established@M3",
+        "calculer-les-angles": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q2",
+      "module": 5,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module05ProuverLeParallelisme.jsx",
+      "line": 167,
+      "requires": [
+        "reciproque-parallelisme",
+        "secante"
+      ],
+      "prerequisiteStatus": {
+        "reciproque-parallelisme": "established@M5",
+        "secante": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q1",
+      "module": 6,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module06LaFigureComplete.jsx",
+      "line": 55,
+      "requires": [
+        "enchainer-relations",
+        "paralleles-angles-egaux",
+        "calculer-les-angles"
+      ],
+      "prerequisiteStatus": {
+        "enchainer-relations": "established@M6",
+        "paralleles-angles-egaux": "established@M3",
+        "calculer-les-angles": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q2",
+      "module": 6,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module06LaFigureComplete.jsx",
+      "line": 83,
+      "requires": [
+        "calculer-les-angles",
+        "angles-alternes-internes"
+      ],
+      "prerequisiteStatus": {
+        "calculer-les-angles": "established@M4",
+        "angles-alternes-internes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e1",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 56,
+      "requires": [
+        "angles-alternes-internes"
+      ],
+      "prerequisiteStatus": {
+        "angles-alternes-internes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e2",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 67,
+      "requires": [
+        "angles-alternes-internes",
+        "paralleles-angles-egaux"
+      ],
+      "prerequisiteStatus": {
+        "angles-alternes-internes": "established@M2",
+        "paralleles-angles-egaux": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e3",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 82,
+      "requires": [
+        "angles-correspondants"
+      ],
+      "prerequisiteStatus": {
+        "angles-correspondants": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e4",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 93,
+      "requires": [
+        "paralleles-angles-egaux",
+        "angles-alternes-internes"
+      ],
+      "prerequisiteStatus": {
+        "paralleles-angles-egaux": "established@M3",
+        "angles-alternes-internes": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e5",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 104,
+      "requires": [
+        "calculer-les-angles",
+        "paralleles-angles-egaux"
+      ],
+      "prerequisiteStatus": {
+        "calculer-les-angles": "established@M4",
+        "paralleles-angles-egaux": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e6",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 115,
+      "requires": [
+        "calculer-les-angles"
+      ],
+      "prerequisiteStatus": {
+        "calculer-les-angles": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e7",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 126,
+      "requires": [
+        "reciproque-parallelisme"
+      ],
+      "prerequisiteStatus": {
+        "reciproque-parallelisme": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e8",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 142,
+      "requires": [
+        "reciproque-parallelisme"
+      ],
+      "prerequisiteStatus": {
+        "reciproque-parallelisme": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e9",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 157,
+      "requires": [
+        "enchainer-relations",
+        "paralleles-angles-egaux"
+      ],
+      "prerequisiteStatus": {
+        "enchainer-relations": "established@M6",
+        "paralleles-angles-egaux": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "ang5-e10",
+      "module": 7,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/espace_geometrie/angles-5e/modules/Module07MissionFinale.jsx",
+      "line": 168,
+      "requires": [
+        "enchainer-relations"
+      ],
+      "prerequisiteStatus": {
+        "enchainer-relations": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}

@@ -1,0 +1,714 @@
+{
+  "lesson": "proportionnalite-5e",
+  "grade": "5e",
+  "lexiconVersion": 1,
+  "prerequisites": [
+    "tables-multiplication",
+    "quotient",
+    "lire-tableau",
+    "valeur-position",
+    "coordonnees"
+  ],
+  "conceptsIntroduced": [
+    {
+      "id": "grandeurs-liees",
+      "type": "concepts",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module01LeDoseur.jsx",
+        "line": 166,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "coefficient-proportionnalite",
+      "type": "regles",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module02LeNombreQuiNeBougePas.jsx",
+        "line": 112,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "echelle",
+      "type": "regles",
+      "module": 4,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module04LaCarteEtLeTerrain.jsx",
+        "line": 84,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "pourcentage",
+      "type": "regles",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module05LesSoldes.jsx",
+        "line": 78,
+        "step": 2,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "graphique-proportionnalite",
+      "type": "regles",
+      "module": 6,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module06LaLigneDroite.jsx",
+        "line": 171,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "vitesse-moyenne",
+      "type": "formules",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module07LaVitesseDuCar.jsx",
+        "line": 131,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "vocabularyIntroduced": [
+    {
+      "id": "proportionnalite",
+      "type": "vocabulaire",
+      "module": 1,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module01LeDoseur.jsx",
+        "line": 171,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "proceduresIntroduced": [
+    {
+      "id": "tableau-proportionnalite",
+      "type": "methodes",
+      "module": 3,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module03QuatreCases.jsx",
+        "line": 112,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "remise",
+      "type": "methodes",
+      "module": 5,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module05LesSoldes.jsx",
+        "line": 114,
+        "step": 3,
+        "variant": "new"
+      }
+    }
+  ],
+  "memorisation": [
+    {
+      "id": "mem-coefficient",
+      "type": "memoriser",
+      "module": 2,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module02LeNombreQuiNeBougePas.jsx",
+        "line": 117,
+        "step": 3,
+        "variant": "new"
+      }
+    },
+    {
+      "id": "mem-vitesse",
+      "type": "memoriser",
+      "module": 7,
+      "brick": {
+        "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module07LaVitesseDuCar.jsx",
+        "line": 136,
+        "step": 2,
+        "variant": "new"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "prop5-d1-tables",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module00Diagnostic.jsx",
+      "line": 23,
+      "requires": [
+        "tables-multiplication"
+      ],
+      "prerequisiteStatus": {
+        "tables-multiplication": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-d2-quotient",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module00Diagnostic.jsx",
+      "line": 34,
+      "requires": [
+        "quotient"
+      ],
+      "prerequisiteStatus": {
+        "quotient": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-d3-decimaux",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module00Diagnostic.jsx",
+      "line": 45,
+      "requires": [
+        "valeur-position"
+      ],
+      "prerequisiteStatus": {
+        "valeur-position": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-d4-tableau",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module00Diagnostic.jsx",
+      "line": 56,
+      "requires": [
+        "lire-tableau"
+      ],
+      "prerequisiteStatus": {
+        "lire-tableau": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-d5-coordonnees",
+      "module": 0,
+      "step": null,
+      "component": "diag",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module00Diagnostic.jsx",
+      "line": 68,
+      "requires": [
+        "coordonnees"
+      ],
+      "prerequisiteStatus": {
+        "coordonnees": "prior"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S3-Q1",
+      "module": 1,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module01LeDoseur.jsx",
+      "line": 176,
+      "requires": [
+        "proportionnalite",
+        "grandeurs-liees"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "established@M1",
+        "grandeurs-liees": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M01-S4-Q2",
+      "module": 1,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module01LeDoseur.jsx",
+      "line": 214,
+      "requires": [
+        "proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S3-Q1",
+      "module": 2,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module02LeNombreQuiNeBougePas.jsx",
+      "line": 118,
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M02-S4-Q2",
+      "module": 2,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module02LeNombreQuiNeBougePas.jsx",
+      "line": 149,
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S2-Q1",
+      "module": 3,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module03QuatreCases.jsx",
+      "line": 81,
+      "requires": [
+        "proportionnalite",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "established@M1",
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S3-Q2",
+      "module": 3,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module03QuatreCases.jsx",
+      "line": 117,
+      "requires": [
+        "tableau-proportionnalite",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "tableau-proportionnalite": "established@M3",
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M03-S4-Q3",
+      "module": 3,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module03QuatreCases.jsx",
+      "line": 155,
+      "requires": [
+        "tableau-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "tableau-proportionnalite": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S2-Q1",
+      "module": 4,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module04LaCarteEtLeTerrain.jsx",
+      "line": 89,
+      "requires": [
+        "echelle",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "echelle": "established@M4",
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S3-Q2",
+      "module": 4,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module04LaCarteEtLeTerrain.jsx",
+      "line": 115,
+      "requires": [
+        "echelle",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "echelle": "established@M4",
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M04-S4-Q3",
+      "module": 4,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module04LaCarteEtLeTerrain.jsx",
+      "line": 152,
+      "requires": [
+        "echelle"
+      ],
+      "prerequisiteStatus": {
+        "echelle": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S2-Q1",
+      "module": 5,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module05LesSoldes.jsx",
+      "line": 83,
+      "requires": [
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S3-Q2",
+      "module": 5,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module05LesSoldes.jsx",
+      "line": 119,
+      "requires": [
+        "remise",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "remise": "established@M5",
+        "pourcentage": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M05-S4-Q3",
+      "module": 5,
+      "step": 4,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module05LesSoldes.jsx",
+      "line": 144,
+      "requires": [
+        "remise",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "remise": "established@M5",
+        "pourcentage": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S2-Q1",
+      "module": 6,
+      "step": 2,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module06LaLigneDroite.jsx",
+      "line": 145,
+      "requires": [
+        "proportionnalite",
+        "grandeurs-liees"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "established@M1",
+        "grandeurs-liees": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S3-Q2",
+      "module": 6,
+      "step": 3,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module06LaLigneDroite.jsx",
+      "line": 176,
+      "requires": [
+        "graphique-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "graphique-proportionnalite": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M06-S4-Q3",
+      "module": 6,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module06LaLigneDroite.jsx",
+      "line": 218,
+      "requires": [
+        "graphique-proportionnalite",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "graphique-proportionnalite": "established@M6",
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S2-Q1",
+      "module": 7,
+      "step": 2,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module07LaVitesseDuCar.jsx",
+      "line": 137,
+      "requires": [
+        "vitesse-moyenne"
+      ],
+      "prerequisiteStatus": {
+        "vitesse-moyenne": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S3-Q2",
+      "module": 7,
+      "step": 3,
+      "component": "NumericQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module07LaVitesseDuCar.jsx",
+      "line": 166,
+      "requires": [
+        "vitesse-moyenne",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "vitesse-moyenne": "established@M7",
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "M07-S4-Q3",
+      "module": 7,
+      "step": 4,
+      "component": "TapQuestion",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module07LaVitesseDuCar.jsx",
+      "line": 195,
+      "requires": [
+        "vitesse-moyenne"
+      ],
+      "prerequisiteStatus": {
+        "vitesse-moyenne": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e1",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 54,
+      "requires": [
+        "proportionnalite",
+        "grandeurs-liees"
+      ],
+      "prerequisiteStatus": {
+        "proportionnalite": "established@M1",
+        "grandeurs-liees": "established@M1"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e2",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 72,
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e3",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 84,
+      "requires": [
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e4",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 96,
+      "requires": [
+        "tableau-proportionnalite",
+        "coefficient-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "tableau-proportionnalite": "established@M3",
+        "coefficient-proportionnalite": "established@M2"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e5",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 108,
+      "requires": [
+        "tableau-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "tableau-proportionnalite": "established@M3"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e6",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 121,
+      "requires": [
+        "echelle"
+      ],
+      "prerequisiteStatus": {
+        "echelle": "established@M4"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e7",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 134,
+      "requires": [
+        "remise",
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "remise": "established@M5",
+        "pourcentage": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e8",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 146,
+      "requires": [
+        "pourcentage"
+      ],
+      "prerequisiteStatus": {
+        "pourcentage": "established@M5"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e9",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 158,
+      "requires": [
+        "graphique-proportionnalite"
+      ],
+      "prerequisiteStatus": {
+        "graphique-proportionnalite": "established@M6"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    },
+    {
+      "questionId": "prop5-e10",
+      "module": 8,
+      "step": null,
+      "component": "boss",
+      "file": "apps/web/src/lessons/college/5e/proportionnalite_fonctions/proportionnalite-5e/modules/Module08MissionFinale.jsx",
+      "line": 176,
+      "requires": [
+        "vitesse-moyenne"
+      ],
+      "prerequisiteStatus": {
+        "vitesse-moyenne": "established@M7"
+      },
+      "lexiconHits": [],
+      "pedagogicallyValid": true
+    }
+  ],
+  "findings": []
+}
