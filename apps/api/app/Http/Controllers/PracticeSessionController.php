@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Access\ContentAccess;
 use App\Domain\Practice\ExerciseRepository;
 use App\Domain\Practice\PracticeCapability;
 use App\Domain\Practice\PracticeSessionService;
@@ -36,6 +37,7 @@ class PracticeSessionController extends Controller
 
         try {
             PracticeCapability::assertActive($lessonCode);
+            ContentAccess::assertLessonAvailable($lessonCode);
         } catch (DomainException $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
         }
