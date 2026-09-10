@@ -4,7 +4,11 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import ThreeMachines from '../components/ThreeMachines';
-import { formatDec } from '../components/referenceUtils';
+import PlotTable from '../components/PlotTable';
+import { formatDec, SQUARE, SQUARE_RANGE, imageOf } from '../components/referenceUtils';
+
+/** Les sept abscisses du tracé : toutes donnent une image entière dans la fenêtre. */
+const PLOT_XS = [-3, -2, -1, 0, 1, 2, 3];
 
 /**
  * Module 1 — DÉCLENCHEUR, et l'interaction SIGNATURE : trois machines, une
@@ -13,7 +17,12 @@ import { formatDec } from '../components/referenceUtils';
  * Step 1  nourrir : ≥ 5 entrées dont un négatif et 0 → « 1/0 refusé ».
  * Step 2  le jumeau : x et −x → même carré, même valeur absolue, inverses opposés.
  * Step 3  près de 0, loin de 0 : 0,1 et 100 (saisie libre) → 1/x et x² explosent.
- * Step 4  quelle machine refuse quoi.
+ * Step 4  TRACER : l'élève place lui-même les sept points de x² (PlotTable,
+ *         copié de fonctions-2nde), puis la courbe est tracée à travers eux.
+ *         Sans cette étape, « construire un tableau de valeurs » et
+ *         « représenter graphiquement » étaient seulement DÉCLENCHÉS : les
+ *         abscisses venaient du composant et les images étaient calculées.
+ * Step 5  quelle machine refuse quoi.
  * Les courbes apparaissent après six entrées.
  *
  * CONNAISSANCES AVANT LA DEMANDE (docs/architecture/KNOWLEDGE_DEPENDENCY.md).
@@ -39,6 +48,10 @@ export default function Module01TroisMachines() {
   const [tested, setTested] = useState([2]);
   const [pred, setPred] = useState(null);
   const [q4, setQ4] = useState(false);
+  const [placed, setPlaced] = useState({});
+  const [activeX, setActiveX] = useState(PLOT_XS[0]);
+  const [moves, setMoves] = useState({});
+  const allPlaced = PLOT_XS.every((x) => placed[x] && placed[x].x === x && placed[x].y === imageOf(SQUARE, x));
   const has = (p) => tested.some(p);
   const done1 = tested.length >= 5 && has((t) => t < 0) && tested.includes(0);
   const twin = tested.find((t) => t !== 0 && tested.includes(-t));
@@ -122,11 +135,6 @@ export default function Module01TroisMachines() {
                 variant="new"
                 lead="Le tout petit nombre et le grand nombre que tu viens de taper : voilà ce qu’ils ont montré."
               />
-              <KnowledgeBrick
-                id="methode-tableau-tracer"
-                variant="new"
-                lead="Toutes tes entrées, rangées avec leurs sorties : c’est ce tableau qui a fait apparaître les trois courbes, point par point."
-              />
             </>
           ) : (
             <Feedback tone="info">{!has((t) => t !== 0 && Math.abs(t) <= 0.25) ? 'Un petit nombre, entre 0 et 0,25. ' : ''}{!has((t) => Math.abs(t) >= 10) ? 'Puis un grand nombre, 10 ou plus.' : ''}</Feedback>
@@ -135,7 +143,46 @@ export default function Module01TroisMachines() {
       ),
     },
     {
-      num: 4, title: 'Qui refuse quoi ?', done: q4,
+      num: 4, title: 'À toi de tracer la parabole',
+      subtitle: 'Choisis une ligne du tableau, place le point à la bonne position, recommence. La courbe viendra ensuite.',
+      done: allPlaced,
+      content: (kit) => (
+        <div className="space-y-3">
+          <PlotTable
+            f={SQUARE} xs={PLOT_XS} range={SQUARE_RANGE}
+            placed={placed} active={activeX} onActive={setActiveX}
+            moves={moves}
+            onPlace={(x, pt) => {
+              setPlaced((prev) => ({ ...prev, [x]: pt }));
+              setMoves((m) => ({ ...m, [x]: (m[x] ?? 0) + 1 }));
+            }}
+            onEscape={(x) => setPlaced((prev) => ({ ...prev, [x]: { x, y: imageOf(SQUARE, x) } }))}
+            showCurve={allPlaced}
+          />
+          {allPlaced ? (
+            <>
+              <Feedback tone="ok">
+                Sept points posés à la main, et la courbe passe exactement par eux : une
+                <strong> parabole</strong>. Elle ne s’arrête pas à tes points — elle continue entre
+                eux et au-delà, parce que x² se calcule pour TOUT nombre.
+              </Feedback>
+              <KnowledgeBrick
+                id="methode-tableau-tracer"
+                variant="new"
+                lead="Tu viens de le faire à la main : voilà la méthode, dans l’ordre où tu l’as suivie."
+              />
+            </>
+          ) : (
+            <Feedback tone="info">
+              L’abscisse du point est la valeur de x de la ligne choisie ; son ordonnée est l’image,
+              c’est-à-dire x². Place les sept points.
+            </Feedback>
+          )}
+        </div>
+      ),
+    },
+    {
+      num: 5, title: 'Qui refuse quoi ?', done: q4,
       content: (
         <TapQuestion prompt="Une seule des trois machines refuse une entrée. Laquelle, et pour quelle entrée ?"
           options={['1/x refuse 0 : on ne divise pas par zéro', 'x² refuse les nombres négatifs', '|x| refuse les nombres négatifs', 'Aucune : toutes acceptent tous les nombres']}
@@ -149,7 +196,7 @@ export default function Module01TroisMachines() {
 
   return (
     <ContentModule ctx={MODULE_CTX} navLinks={getNavLinks(1)} moduleNumber={1}
-      moduleTitle="Trois machines, une sonde" moduleSubtitle="Le même nombre, trois destins" estimatedTime="10 min"
+      moduleTitle="Trois machines, une sonde" moduleSubtitle="Le même nombre, trois destins" estimatedTime="14 min"
       brief={{ tag: 'Déclencheur', title: 'x², 1/x, |x|', tone: 'indigo', body: <p>Trois machines calculent chacune leur sortie pour la même entrée x. Les sorties deviennent des points sur un même repère. Nourris-les, compare, cherche les surprises.</p> }}
       steps={steps}
       footer={

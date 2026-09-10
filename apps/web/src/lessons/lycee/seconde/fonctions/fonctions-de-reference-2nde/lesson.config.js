@@ -72,7 +72,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '📈',
-  estimatedDurationMin: 80,
+  estimatedDurationMin: 84,
   skills: [
     'Connaître les expressions x², 1/x et |x| et leurs courbes',
     'Identifier symétrie, signe, sens de variation et points caractéristiques',
@@ -96,7 +96,7 @@ export const LESSON_CONFIG = {
   },
   modules: [
     { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — sur les images, la valeur absolue, les carrés et les inverses.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
-    { id: '01', number: 1, slug: 'trois-machines', path: `${LESSON_BASE_PATH}/trois-machines`, title: 'Trois machines, une sonde', desc: 'Le même nombre entre dans trois machines : x², 1/x, |x|. Compare les sorties, essaie −x, essaie 0, essaie 0,1 et 100 — et trace.', stage: 'trigger', teachesLearningPointIds: ['seconde_fonctions-de-reference-2nde_P4', 'seconde_fonctions-de-reference-2nde_P5', 'seconde_fonctions-de-reference-2nde_P6'], color: 'indigo', style: 'featured', estimatedMin: 10, difficulty: 1, actionText: 'Nourrir les machines' },
+    { id: '01', number: 1, slug: 'trois-machines', path: `${LESSON_BASE_PATH}/trois-machines`, title: 'Trois machines, une sonde', desc: 'Le même nombre entre dans trois machines : x², 1/x, |x|. Compare les sorties, essaie −x, essaie 0, essaie 0,1 et 100 — et trace.', stage: 'trigger', teachesLearningPointIds: ['seconde_fonctions-de-reference-2nde_P4', 'seconde_fonctions-de-reference-2nde_P5', 'seconde_fonctions-de-reference-2nde_P6'], color: 'indigo', style: 'featured', estimatedMin: 14, difficulty: 1, actionText: 'Nourrir les machines' },
     { id: '02', number: 2, slug: 'la-parabole', path: `${LESSON_BASE_PATH}/la-parabole`, title: 'La parabole', desc: 'Deux sondes sur x² : le miroir en x = 0, jamais sous l’axe, et le piège des carrés de nombres négatifs.', stage: 'discovery', teachesLearningPointIds: ['seconde_fonctions-de-reference-2nde_P2', 'seconde_fonctions-de-reference-2nde_P7'], color: 'violet', style: 'featured', estimatedMin: 9, difficulty: 2, actionText: 'Sonder la parabole' },
     { id: '03', number: 3, slug: 'l-hyperbole', path: `${LESSON_BASE_PATH}/l-hyperbole`, title: 'L’hyperbole', desc: 'Deux branches, un trou en 0, un centre de symétrie, et une fonction qui descend partout — sauf que −1 < 1 et 1/(−1) < 1/1.', stage: 'discovery', teachesLearningPointIds: ['seconde_fonctions-de-reference-2nde_P3', 'seconde_fonctions-de-reference-2nde_P7'], color: 'rose', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Sonder l’hyperbole' },
     { id: '04', number: 4, slug: 'le-v', path: `${LESSON_BASE_PATH}/le-v`, title: 'Le V', desc: '|x| est la distance à 0 : deux demi-droites, un coin en O. Et entre −1 et 1, le V passe au-dessus de la parabole.', stage: 'discovery', teachesLearningPointIds: ['seconde_fonctions-de-reference-2nde_P1', 'seconde_fonctions-de-reference-2nde_P7', 'seconde_fonctions-de-reference-2nde_P8'], color: 'emerald', style: 'featured', estimatedMin: 8, difficulty: 2, actionText: 'Sonder le V' },

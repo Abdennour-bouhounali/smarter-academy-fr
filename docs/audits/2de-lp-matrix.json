@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:21:01.475Z",
+  "generatedAt": "2026-09-10T09:29:29.364Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -8260,9 +8260,9 @@
       "status": "available",
       "dir": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde",
       "duration": {
-        "catalogue": 80,
-        "config": 80,
-        "moduleSum": 80,
+        "catalogue": 84,
+        "config": 84,
+        "moduleSum": 84,
         "drift": false
       },
       "knowledgeMap": true,
@@ -8402,8 +8402,8 @@
           "slug": "trois-machines",
           "title": "Trois machines, une sonde",
           "stage": "trigger",
-          "estimatedMin": 10,
-          "estimatedTimeLabel": "10 min",
+          "estimatedMin": 14,
+          "estimatedTimeLabel": "14 min",
           "teaches": [
             "seconde_fonctions-de-reference-2nde_P4",
             "seconde_fonctions-de-reference-2nde_P5",
@@ -8424,18 +8424,19 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "questions": [
             {
-              "id": "M01-S4-Q1",
+              "id": "M01-S5-Q1",
               "component": "TapQuestion",
               "requires": [
                 "fonction",
                 "image",
                 "trois-references"
               ],
-              "step": 4,
+              "step": 5,
               "prompt": "Une seule des trois machines refuse une entrée. Laquelle, et pour quelle entrée ?"
             }
           ],
@@ -8458,28 +8459,28 @@
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 75
+              "line": 88
             },
             {
               "itemId": "regle-symetrie-entrees",
               "step": 2,
               "variant": "new",
               "itemMissing": false,
-              "line": 98
+              "line": 111
             },
             {
               "itemId": "regle-pres-loin-zero",
               "step": 3,
               "variant": "new",
               "itemMissing": false,
-              "line": 120
+              "line": 133
             },
             {
               "itemId": "methode-tableau-tracer",
-              "step": 3,
+              "step": 4,
               "variant": "new",
               "itemMissing": false,
-              "line": 125
+              "line": 169
             }
           ],
           "requires": {
@@ -8491,8 +8492,13 @@
             "count": 3,
             "invalid": 0
           },
-          "gatedReveals": 6,
+          "gatedReveals": 8,
           "manipulations": [
+            {
+              "name": "PlotTable",
+              "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/components/PlotTable.jsx",
+              "ownTest": false
+            },
             {
               "name": "ThreeMachines",
               "file": "apps/web/src/lessons/lycee/seconde/fonctions/fonctions-de-reference-2nde/components/ThreeMachines.jsx",
@@ -9811,6 +9817,7 @@
             "methode-modeliser-reference"
           ],
           "manipulationsInTeachingModules": [
+            "PlotTable",
             "ThreeMachines"
           ],
           "judgement": {
@@ -9891,21 +9898,22 @@
             "methode-modeliser-reference"
           ],
           "manipulationsInTeachingModules": [
+            "PlotTable",
             "ThreeMachines"
           ],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 1,
                 "moduleSlug": "trois-machines",
-                "step": 3,
-                "mechanism": "manipulation:ThreeMachines"
+                "step": 4,
+                "mechanism": "manipulation:PlotTable"
               },
               {
                 "module": 1,
                 "moduleSlug": "trois-machines",
-                "step": 3,
+                "step": 4,
                 "mechanism": "brick:methode-tableau-tracer"
               },
               {
@@ -9919,22 +9927,16 @@
                 "moduleSlug": "atelier-modeliser",
                 "step": 4,
                 "mechanism": "question:M06-S4-Q1"
-              },
-              {
-                "module": 7,
-                "moduleSlug": "mission-finale-les-trois-courbes",
-                "step": null,
-                "mechanism": "question:fr-e2"
               }
             ],
-            "manipulation": "Deux instruments. (1) ThreeMachines accumule les entrées testées et affiche « n entrées testées » — c'est un tableau de valeurs en acte, mais présenté comme trois cartes de sortie, pas comme un tableau à deux lignes. (2) ValueTable (composant partagé) au module 6 étape 4 : trois colonnes x², 1/x, |x| sur xs = [−2, −1, −0,5, 0,5, 1, 2], l'élève devant en tester au moins quatre avant que la question ne se débloque.",
+            "manipulation": "PlotTable au module 1 étape 4 : l'élève place lui-même les sept points de x² (abscisses −3..3), chaque ligne du tableau se coche quand le couple est juste, et la courbe n'apparaît qu'ensuite. ValueTable au module 6 complète par la lecture de trois colonnes.",
             "assessmentQuestionIds": [
               "fr-e2"
             ],
             "knowledgeItems": [
               "methode-tableau-tracer"
             ],
-            "notes": "PARTIALLY_COVERED, et la facette manquante est celle du verbe : « CONSTRUIRE un tableau de valeurs ». L'élève ne construit jamais de tableau — il DÉCLENCHE le calcul de colonnes déjà écrites. Dans ThreeMachines comme dans ValueTable, les valeurs de x sont fournies par le composant (xs en propriété) et les images sont calculées par la machine ; l'élève ne saisit aucune image, ne choisit pas les abscisses (sauf par saisie libre au module 1, qui n'alimente pas un tableau structuré), et ne complète aucune case. Comparer avec PlotTable de fonctions-2nde, où l'élève place vraiment chaque point : ici, rien d'équivalent. La brique methode-tableau-tracer est bien posée après le geste (module 1 étape 3, après avoir tapé un tout petit et un grand nombre) et elle décrit correctement la démarche, mais elle DÉCRIT une méthode que l'élève n'a pas exécutée à la main. Ce qui est réellement enseigné, et qui est de vrai contenu, c'est le CHOIX DES VALEURS : symétriques autour de 0, avec un tout petit et un grand — car c'est ce choix qui révèle les trois caractères. L'épreuve fr-e2 mesure d'ailleurs autre chose que la construction (« quelle colonne est impossible dans un tableau de x ↦ 1/x ? » → x = 0), c'est-à-dire l'ensemble de définition. Le LP est donc enseigné dans son intention et éprouvé de biais, mais son verbe n'est jamais accompli.",
+            "notes": "PARTIALLY_COVERED, et la facette manquante est celle du verbe : « CONSTRUIRE un tableau de valeurs ». L'élève ne construit jamais de tableau — il DÉCLENCHE le calcul de colonnes déjà écrites. Dans ThreeMachines comme dans ValueTable, les valeurs de x sont fournies par le composant (xs en propriété) et les images sont calculées par la machine ; l'élève ne saisit aucune image, ne choisit pas les abs\n\nRÉSOLU. Correctif du 2026-09-10 : PlotTable (copié de fonctions-2nde selon la règle du dépôt) est posé au module 1 étape 4. L'élève choisit une ligne du tableau, PLACE lui-même le point à la position (x ; x²), et ne valide la ligne que si l'abscisse ET l'ordonnée sont justes ; la courbe n'est tracée qu'une fois les sept points posés. La brique methode-tableau-tracer a été DÉPLACÉE de l'étape 3 vers l'après-geste : elle ne décrit plus une méthode que l'élève n'aurait pas exécutée. Vérifié au navigateur : 7 puces d'abscisse, cible et diagnostic abscisse/ordonnée affichés en direct, table cochée, courbe tracée à travers les points, étape suivante ouverte. Le verbe « CONSTRUIRE » est désormais exécuté : les images ne sont plus calculées par la machine, c'est l'élève qui pose chaque couple.",
             "crossGrade": {
               "overlapsWith": [
                 "3e:fonctions-3e",
@@ -9971,57 +9973,40 @@
             "methode-modeliser-reference"
           ],
           "manipulationsInTeachingModules": [
+            "PlotTable",
             "ThreeMachines",
             "CoordPlane",
             "FunctionProbe"
           ],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 1,
                 "moduleSlug": "trois-machines",
-                "step": 3,
-                "mechanism": "manipulation:ThreeMachines"
+                "step": 4,
+                "mechanism": "manipulation:PlotTable"
               },
               {
                 "module": 1,
                 "moduleSlug": "trois-machines",
-                "step": 3,
+                "step": 4,
                 "mechanism": "brick:methode-tableau-tracer"
               },
               {
-                "module": 2,
-                "moduleSlug": "la-parabole",
+                "module": 6,
+                "moduleSlug": "atelier-modeliser",
                 "step": 4,
-                "mechanism": "brick:mem-parabole"
+                "mechanism": "manipulation:ValueTable"
               },
               {
-                "module": 3,
-                "moduleSlug": "l-hyperbole",
+                "module": 6,
+                "moduleSlug": "atelier-modeliser",
                 "step": 4,
-                "mechanism": "brick:mem-hyperbole"
-              },
-              {
-                "module": 4,
-                "moduleSlug": "le-v",
-                "step": 4,
-                "mechanism": "brick:mem-le-v"
-              },
-              {
-                "module": 5,
-                "moduleSlug": "lire-sur-les-courbes",
-                "step": 4,
-                "mechanism": "question:M05-S4-Q1"
-              },
-              {
-                "module": 7,
-                "moduleSlug": "mission-finale-les-trois-courbes",
-                "step": null,
-                "mechanism": "question:fr-e7"
+                "mechanism": "question:M06-S4-Q1"
               }
             ],
-            "manipulation": "ThreeMachines : les points s'accumulent au fur et à mesure des entrées, et les COURBES apparaissent après six entrées (`showCurves={tested.length >= 6}`). La courbe est donc la récompense d'un travail point par point — l'élève voit ses propres points être rejoints par la courbe.",
+            "manipulation": "PlotTable au module 1 étape 4 : l'élève place lui-même les sept points de x² (abscisses −3..3), chaque ligne du tableau se coche quand le couple est juste, et la courbe n'apparaît qu'ensuite. ValueTable au module 6 complète par la lecture de trois colonnes.",
             "assessmentQuestionIds": [
               "fr-e7"
             ],
@@ -10031,7 +10016,7 @@
               "mem-hyperbole",
               "mem-le-v"
             ],
-            "notes": "PARTIALLY_COVERED pour la même raison que P5, et c'est le défaut structurant de la leçon. « REPRÉSENTER graphiquement une fonction de référence » suppose que l'élève produise la représentation ; ici il déclenche son apparition. Aucun composant de cette leçon ne permet de placer un point : ThreeMachines pose les points automatiquement à partir des entrées, TwoProbes et FunctionProbe déplacent des sondes sur une courbe DÉJÀ TRACÉE, et le module 6 n'a que des QCM. Il n'existe aucun équivalent du PlotTable de fonctions-2nde. Ce qui est réellement acquis — et qui a de la valeur — c'est l'IMAGE MENTALE : les trois briques mem-parabole, mem-hyperbole et mem-le-v sont des cartes de mémorisation, et le brief du boss demande explicitement « dessine la courbe dans ta tête ». Mais dessiner dans sa tête n'est pas représenter, et aucune épreuve ne demande de produire ni même de choisir une allure de courbe autrement que par sa description verbale (fr-e7 : « quelle courbe est faite de deux demi-droites ? »). Facette couverte : reconnaître et décrire l'allure. Facette manquante : tracer.",
+            "notes": "PARTIALLY_COVERED pour la même raison que P5, et c'est le défaut structurant de la leçon. « REPRÉSENTER graphiquement une fonction de référence » suppose que l'élève produise la représentation ; ici il déclenche son apparition. Aucun composant de cette leçon ne permet de placer un point : ThreeMachines pose les points automatiquement à partir des entrées, TwoProbes et FunctionProbe déplacent des s\n\nRÉSOLU. Correctif du 2026-09-10 : PlotTable (copié de fonctions-2nde selon la règle du dépôt) est posé au module 1 étape 4. L'élève choisit une ligne du tableau, PLACE lui-même le point à la position (x ; x²), et ne valide la ligne que si l'abscisse ET l'ordonnée sont justes ; la courbe n'est tracée qu'une fois les sept points posés. La brique methode-tableau-tracer a été DÉPLACÉE de l'étape 3 vers l'après-geste : elle ne décrit plus une méthode que l'élève n'aurait pas exécutée. Vérifié au navigateur : 7 puces d'abscisse, cible et diagnostic abscisse/ordonnée affichés en direct, table cochée, courbe tracée à travers les points, étape suivante ouverte. Le verbe « REPRÉSENTER » est désormais exécuté : la courbe est la conséquence des points posés, plus leur cause.",
             "crossGrade": {
               "overlapsWith": [
                 "3e:representation-graphique-3e",

@@ -8,8 +8,8 @@
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 283 | 93.4 % |
-| `PARTIALLY_COVERED` | 20 | 6.6 % |
+| `COVERED` | 285 | 94.1 % |
+| `PARTIALLY_COVERED` | 18 | 5.9 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -20,7 +20,7 @@
 | `variables-et-instructions-2nde` | algorithmique_programmation | available | 76 / 76 / 76 | 7 | 12 | 15 | 53 | 6 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `fonction-affine-2nde` | fonctions | available | 78 / 78 / 78 | 8 | 11 | 14 | 65 | 7 | ✅ | ✅ | ✅ | — |
 | `fonctions-2nde` | fonctions | available | 87 / 87 / 87 | 9 | 12 | 23 | 161 | 8 | ✅ | ✅ | ✅ | — |
-| `fonctions-de-reference-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 11 | 20 | 76 | 7 | ✅ | ✅ | ✅ | — |
+| `fonctions-de-reference-2nde` | fonctions | available | 84 / 84 / 84 | 8 | 11 | 20 | 76 | 7 | ✅ | ✅ | ✅ | — |
 | `signe-fonctions-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 12 | 17 | 98 | 7 | ✅ | ✅ | ✅ | — |
 | `variations-extremums-2nde` | fonctions | available | 85 / 85 / 85 | 8 | 12 | 15 | 151 | 7 | ✅ | ✅ | ✅ | — |
 | `colinearite-alignement-2nde` | geometrie | available | 64 / 64 / 64 | 7 | 9 | 24 | 65 | 6 | ✅ | ✅ | ✅ | — |
@@ -104,8 +104,8 @@
 | `P2` Étudier la fonction carré | fonctions | `fonctions-de-reference-2nde` | M2 | COVERED | M1.2 manipulation:ThreeMachines · M1.2 brick:regle-symetrie-entrees ·… | Deux gestes distincts, tous deux … | `fr-e3` `fr-e4` | `fonction-carre` `regle-comparer-carres` `mem-parabole` | M2 |
 | `P3` Étudier la fonction inverse | fonctions | `fonctions-de-reference-2nde` | M3 | COVERED | M1.1 manipulation:ThreeMachines · M1.3 manipulation:ThreeMachines · M… | Trois gestes en escalier. (1) Thr… | `fr-e2` `fr-e5` `fr-e6` `fr-e10` | `fonction-inverse` `regle-comparer-inverses` `mem-hyperbole` | M3 |
 | `P4` Connaître leurs expressions | fonctions | `fonctions-de-reference-2nde` | M1, M6 | COVERED | M1.1 manipulation:ThreeMachines · M1.1 brick:trois-references · M1.4 … | ThreeMachines — l'interaction sig… | `fr-e1` | `trois-references` `formule-references` `regle-symetrie-entrees` | M1, M6 |
-| `P5` Construire un tableau de valeurs | fonctions | `fonctions-de-reference-2nde` | M1, M6 | PARTIALLY_COVERED | M1.3 manipulation:ThreeMachines · M1.3 brick:methode-tableau-tracer ·… | Deux instruments. (1) ThreeMachin… | `fr-e2` | `methode-tableau-tracer` | M1, M6 |
-| `P6` Représenter graphiquement une fonction de réf… | fonctions | `fonctions-de-reference-2nde` | M1, M5, M6 | PARTIALLY_COVERED | M1.3 manipulation:ThreeMachines · M1.3 brick:methode-tableau-tracer ·… | ThreeMachines : les points s'accu… | `fr-e7` | `methode-tableau-tracer` `mem-parabole` `mem-hyperbole` | M1, M5, M6 |
+| `P5` Construire un tableau de valeurs | fonctions | `fonctions-de-reference-2nde` | M1, M6 | COVERED | M1.4 manipulation:PlotTable · M1.4 brick:methode-tableau-tracer · M6.… | PlotTable au module 1 étape 4 : l… | `fr-e2` | `methode-tableau-tracer` | M1, M6 |
+| `P6` Représenter graphiquement une fonction de réf… | fonctions | `fonctions-de-reference-2nde` | M1, M5, M6 | COVERED | M1.4 manipulation:PlotTable · M1.4 brick:methode-tableau-tracer · M6.… | PlotTable au module 1 étape 4 : l… | `fr-e7` | `methode-tableau-tracer` `mem-parabole` `mem-hyperbole` | M1, M5, M6 |
 | `P7` Identifier les caractéristiques d'une courbe | fonctions | `fonctions-de-reference-2nde` | M2, M3, M4 | COVERED | M2.1 manipulation:TwoProbes · M2.3 brick:fonction-carre · M2.4 questi… | Le MIROIR, décliné trois fois sur… | `fr-e3` `fr-e4` `fr-e5` | `fonction-carre` `fonction-inverse` `fonction-valeur-absolue` | M2, M3, M4 |
 | `P8` Comparer les courbes de fonctions de référence | fonctions | `fonctions-de-reference-2nde` | M4, M5, M6 | COVERED | M4.2 manipulation:TwoProbes · M4.2 feedback · M4.2 brick:regle-carre-… | TwoProbes au module 4 étape 2, av… | `fr-e9` | `regle-carre-vs-va` `regle-ordre-references` | M4, M5, M6 |
 | `P9` Déterminer une image graphiquement | fonctions | `fonctions-de-reference-2nde` | M5 | COVERED | M1.1 manipulation:ThreeMachines · M3.4 question:M03-S4-Q1 · M5.4 ques… | FunctionProbe en mode x (sonde VE… | `fr-e8` `fr-e9` | `methode-antecedents-reference` `regle-ordre-references` | M5 |

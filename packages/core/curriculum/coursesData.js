@@ -2078,7 +2078,7 @@ const smaMetadata = {
       "Déterminer un antécédent graphiquement",
       "Utiliser une fonction de référence pour modéliser une situation",
     ],
-    durationMinutes: 80,
+    durationMinutes: 84,
     difficulty: "Difficile",
     status: 'available',
     icon: "📈",
