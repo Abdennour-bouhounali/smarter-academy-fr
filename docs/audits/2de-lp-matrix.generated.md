@@ -8,8 +8,8 @@
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 289 | 95.4 % |
-| `PARTIALLY_COVERED` | 14 | 4.6 % |
+| `COVERED` | 290 | 95.7 % |
+| `PARTIALLY_COVERED` | 13 | 4.3 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -44,7 +44,7 @@
 | `probabilites-conditionnelles-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 9 | 7 | 86 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
 | `proportions-pourcentages-2nde` | statistiques_probabilites | available | 73 / 73 / 73 | 8 | 11 | 15 | 145 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `series-regroupees-classes-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 8 | 10 | 12 | 86 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
-| `statistiques-une-variable-2nde` | statistiques_probabilites | available | 86 / 86 / 86 | 8 | 12 | 12 | 100 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
+| `statistiques-une-variable-2nde` | statistiques_probabilites | available | 89 / 89 / 89 | 8 | 12 | 12 | 102 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `tableaux-croises-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 10 | 8 | 58 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `tests-diagnostiques-probabilites-2nde` | statistiques_probabilites | available | 81 / 81 / 81 | 7 | 11 | 9 | 85 | 6 | ✅ | ✅ | ✅ | MAPPED_STEPS, NO_LEARNING_POINTS_MIRROR |
 
@@ -325,7 +325,7 @@
 | `P10` Interpréter une série continue regroupée | statistiques_probabilites | `series-regroupees-classes-2nde` | M3, M6 | COVERED | M3.4 question:M03-S4-Q1 · M6.1 brick:lire-honnetement · M6.3 question… | — | `sr-e10` | `lire-honnetement` | M3, M6 |
 | `P1` Lire une série statistique | statistiques_probabilites | `statistiques-une-variable-2nde` | M1, M6 | COVERED | M1.1 manipulation:SeriesLab · M1.1 feedback · M1.1 brick:serie-statis… | SeriesLab — vingt pastilles sur u… | `st-e1` | `serie-statistique` `vocab-effectif-frequence` | M1, M6 |
 | `P2` Calculer une moyenne | statistiques_probabilites | `statistiques-une-variable-2nde` | M1, M2 | COVERED | M1.1 manipulation:SeriesLab · M2.1 brick:moyenne · M2.1 question:M02-… | SeriesLab, repère orange : la moy… | `st-e2` | `moyenne` | M1, M2 |
-| `P3` Utiliser la linéarité de la moyenne | statistiques_probabilites | `statistiques-une-variable-2nde` | M5 | PARTIALLY_COVERED | M5.2 question:M05-S2 (BatchChoiceQuestion, 4 lignes) · M5.2 brick:lin… | AUCUNE pour ce LP. La formule x̄+… | `st-e9` | `linearite-moyenne` | M5 |
+| `P3` Utiliser la linéarité de la moyenne | statistiques_probabilites | `statistiques-une-variable-2nde` | M5 | COVERED | M5.2 question:M05-S2 · M5.3 manipulation:SeriesLab · M5.3 question:M0… | SeriesLab à l'étape 3, en mode co… | `st-e9` | `linearite-moyenne` | M5 |
 | `P4` Calculer une médiane | statistiques_probabilites | `statistiques-une-variable-2nde` | M1, M2 | COVERED | M1.1 manipulation:SeriesLab · M1.1 feedback · M1.3 manipulation:Serie… | SeriesLab, repère vert : le point… | `st-e3` | `mediane` `choisir-position` | M1, M2 |
 | `P5` Déterminer les quartiles | statistiques_probabilites | `statistiques-une-variable-2nde` | M3 | COVERED | M3.1 manipulation:SeriesLab (LECTURE SEULE — pas de onChange) · M3.1 … | SeriesLab en lecture (M3 ét. 1, r… | `st-e4` `st-e5` | `quartiles` | M3 |
 | `P6` Interpréter les indicateurs statistiques | statistiques_probabilites | `statistiques-une-variable-2nde` | M2, M6 | COVERED | M1.4 question:M01-S4 (un nombre suffit-il ?) · M2.4 brick:choisir-pos… | Le geste porteur est celui du mod… | `st-e5` | `choisir-position` `mem-deux-nombres` `quartiles` | M2, M6 |

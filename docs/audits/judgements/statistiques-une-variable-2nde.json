@@ -114,35 +114,41 @@
    "confidence": "high"
   },
   "seconde_statistiques-une-variable-2nde_P3": {
-   "status": "PARTIALLY_COVERED",
+   "status": "COVERED",
    "evidence": [
     {
      "module": 5,
      "moduleSlug": "ajouter-ou-retirer-une-valeur",
      "step": 2,
-     "mechanism": "question:M05-S2 (BatchChoiceQuestion, 4 lignes)"
+     "mechanism": "question:M05-S2"
     },
     {
      "module": 5,
      "moduleSlug": "ajouter-ou-retirer-une-valeur",
-     "step": 2,
-     "mechanism": "brick:linearite-moyenne"
+     "step": 3,
+     "mechanism": "manipulation:SeriesLab"
     },
     {
-     "module": 7,
-     "moduleSlug": "mission-finale-resumer-une-serie",
-     "step": null,
-     "mechanism": "question:st-e9"
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 3,
+     "mechanism": "question:M05-S3-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 3,
+     "mechanism": "brick:linearite-moyenne"
     }
    ],
-   "manipulation": "AUCUNE pour ce LP. La formule x̄+b = x̄ + b et ax = a·x̄ est affichée en MathText au-dessus de la BatchChoiceQuestion, et les quatre lignes demandent d'appliquer la règle plutôt que de la découvrir. SeriesLab est bien présent au module 5 étape 1 et il est manipulable, mais il sert la robustesse (P10), pas la linéarité : aucun bouton « retirer 5 min à tout le monde » n'existe.",
+   "manipulation": "SeriesLab à l'étape 3, en mode comparaison : la série de départ et la même série multipliée par 2 sont dessinées l'une sous l'autre, avec moyenne, médiane et écart type affichés. L'élève VOIT que les points ne sont pas seulement déplacés mais écartés — moyenne 14 → 28, écart type 2,83 → 5,66 — en contraste direct avec la translation de l'étape 2, où l'écart type ne bougeait pas.",
    "assessmentQuestionIds": [
     "st-e9"
    ],
    "knowledgeItems": [
     "linearite-moyenne"
    ],
-   "notes": "PARTIELLEMENT couvert, pour trois raisons cumulées. (1) La règle est ASSÉNÉE puis appliquée : la formule est posée dans l'`intro` de la question, avant toute observation ; il n'y a ni geste ni révélation conditionnée qui la fasse découvrir. (2) La brique linearite-moyenne est posée APRÈS la question (conditionnée à q2), donc elle ne peut rien établir POUR elle — elle ne fait que résumer, ce qui viole l'ordre source du contrat de connaissances. (3) Seule la translation (x + b) est réellement travaillée : les quatre lignes portent toutes sur « retirer 5 min à chacun ». Le facteur multiplicatif (ax) apparaît dans la formule MathText et dans une incise de l'explication du boss (« multiplier chaque valeur par 3, en revanche, triplerait les deux ») mais n'est éprouvé NULLE PART. La moitié de l'intitulé officiel — la linéarité, pas seulement la translation — reste donc non mesurée. Ce que la leçon fait bien : distinguer position (qui suit) et dispersion (qui ne bouge pas), et le boss st-e9 le mesure correctement. Vérifié : 19,15 − 5 = 14,15 ; médiane 18 − 5 = 13 ; écart type et écart interquartile inchangés (data.test.js le teste explicitement, y compris le doublement).",
+   "notes": "PARTIELLEMENT couvert, pour trois raisons cumulées. (1) La règle est ASSÉNÉE puis appliquée : la formule est posée dans l'`intro` de la question, avant toute observation ; il n'y a ni geste ni révélation conditionnée qui la fasse découvrir. (2) La brique linearite-moyenne est pos\n\nRÉSOLU le 2026-09-10, sur les trois reproches. (1) La formule dans l'`intro` avait déjà été retirée en Session 2. (2) La brique linearite-moyenne ne suit plus la question qu'elle devait établir : elle est posée à l'étape 3, une fois les DEUX moitiés de la règle observées — la translation à l'étape 2, la dilatation ici. L'énoncer plus tôt aurait donné la moitié de la réponse. (3) Le facteur multiplicatif, qui n'apparaissait que dans une incise de l'explication du boss, a maintenant son observation et sa question. Vérifié au navigateur : les deux séries sont dessinées, le constat s'affiche, la brique se pose, l'étape suivante s'ouvre.",
    "crossGrade": {
     "overlapsWith": [],
     "kind": "none"

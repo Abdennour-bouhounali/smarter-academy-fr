@@ -2218,7 +2218,7 @@ const smaMetadata = {
       "Étudier l'influence de la suppression d'une valeur",
       "Comparer deux séries statistiques",
     ],
-    durationMinutes: 86,
+    durationMinutes: 89,
     difficulty: "Difficile",
     status: 'available',
     icon: "📊",

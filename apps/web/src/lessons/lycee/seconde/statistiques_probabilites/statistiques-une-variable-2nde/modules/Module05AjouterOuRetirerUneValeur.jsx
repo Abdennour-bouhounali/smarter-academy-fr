@@ -8,6 +8,10 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SeriesLab from '../components/SeriesLab';
 import { TRAJETS_A, ELEVE_LOINTAIN } from '../data';
 
+/** Série courte du contraste translation / dilatation : moyenne 14, écart type 2,83 ;
+ *  doublée, moyenne 28 et écart type 5,66 — vérifié numériquement. */
+const DILAT_BASE = [10, 12, 14, 16, 18];
+
 /**
  * Module 5 — MANIPULATION : l'effet d'un ajout, d'un retrait, et d'une
  * translation de toute la série (linéarité de la moyenne).
@@ -25,6 +29,7 @@ const WITH_OUTLIER = [...TRAJETS_A, ELEVE_LOINTAIN];
 export default function Module05AjouterOuRetirerUneValeur() {
   const [added, setAdded] = useState(false);
   const [q2, setQ2] = useState(false);
+  const [q2b, setQ2b] = useState(false);
   const [q3, setQ3] = useState(false);
   const [q4, setQ4] = useState(false);
 
@@ -140,21 +145,68 @@ export default function Module05AjouterOuRetirerUneValeur() {
           solved={q2} onAnswered={() => setQ2(true)}
         />
         {/* Le tableau vient de séparer ce qui SUIT le décalage (position) de
-            ce qui n'en bouge PAS (dispersion) : on nomme cette règle avant
-            que le retrait de valeur, à l'étape 3, ne remette la moyenne au
-            travail. */}
-        {q2 && (
-          <KnowledgeBrick
-            id="linearite-moyenne"
-            variant="new"
-            lead={<>Retirer 5 min à tout le monde a décalé moyenne et médiane, sans toucher à l’étalement. C’est une règle générale.</>}
-          />
-        )}
+            ce qui n'en bouge PAS (dispersion). La règle générale n'est nommée
+            qu'à l'étape suivante, une fois la DILATATION observée aussi :
+            l'énoncer ici reviendrait à donner la moitié de la réponse. */}
         </div>
       ),
     },
     {
+      // Le learning point dit « utiliser la linéarité de la moyenne ». Seule
+      // la TRANSLATION (x + b) était travaillée : les quatre lignes portaient
+      // toutes sur « retirer 5 min ». Le facteur multiplicatif n'apparaissait
+      // que dans une incise de l'explication du boss. L'élève l'observe ici,
+      // en contraste direct avec la translation qu'il vient d'étudier.
       num: 3,
+      title: 'Et si on DOUBLE au lieu d’ajouter ?',
+      subtitle: 'Cinq trajets à vélo. On repasse le même parcours à pied : chaque durée est multipliée par 2. Compare les deux séries.',
+      done: q2b,
+      content: (kit) => (
+        <div className="space-y-3">
+          <SeriesLab
+            values={DILAT_BASE}
+            compareValues={DILAT_BASE.map((v) => v * 2)}
+            compareLabel="× 2 (à pied)"
+            label="Série de départ (à vélo)"
+            min={0} max={60} unit="min"
+            show={{ mean: true, median: true, sd: true }}
+          />
+          <TapQuestion
+            prompt="Par rapport à la série de départ, que deviennent la moyenne et l’écart type quand on double chaque durée ?"
+            options={[
+              'Les deux sont doublés',
+              'La moyenne double, l’écart type ne bouge pas',
+              'La moyenne double, l’écart type augmente de 2',
+              'Aucun des deux ne change',
+            ]}
+            correct={0} cols={1}
+            requires={['robustesse', 'mediane-stat']}
+            explain="Multiplier chaque valeur par 2 ÉTIRE la série : la moyenne passe de 14 à 28, mais l’étalement aussi — l’écart type passe de 2,83 à 5,66. Rien à voir avec l’étape précédente : ajouter 5 min à tout le monde déplaçait la série sans la déformer, l’écart type ne bougeait pas."
+            explainWrong="Regarde les deux séries : les points ne sont pas seulement déplacés, ils sont ÉCARTÉS les uns des autres. Une translation conserve l’étalement, une multiplication le multiplie."
+            solved={q2b} onAnswered={() => setQ2b(true)}
+          />
+          {q2b && (
+            <>
+              <Feedback tone="ok">
+                Deux transformations, deux effets. <strong>Ajouter</strong> b à toutes les valeurs :
+                la position suit, la dispersion est intacte. <strong>Multiplier</strong> par a :
+                la position ET la dispersion sont multipliées.
+              </Feedback>
+              {/* Les DEUX moitiés de la règle viennent d'être observées — la
+                  translation à l'étape 2, la dilatation ici. C'est seulement
+                  maintenant qu'on peut la nommer sans en donner la réponse. */}
+              <KnowledgeBrick
+                id="linearite-moyenne"
+                variant="new"
+                lead={<>Tu as vu les deux cas : ajouter décale sans déformer, multiplier étire. La règle générale les réunit.</>}
+              />
+            </>
+          )}
+        </div>
+      ),
+    },
+    {
+      num: 4,
       title: 'Retirer une valeur',
       done: q3,
       content: (
@@ -173,7 +225,7 @@ export default function Module05AjouterOuRetirerUneValeur() {
       ),
     },
     {
-      num: 4,
+      num: 5,
       title: 'Robuste ou non ?',
       done: q4,
       content: (
@@ -198,7 +250,7 @@ export default function Module05AjouterOuRetirerUneValeur() {
   return (
     <ContentModule
       ctx={MODULE_CTX} navLinks={getNavLinks(5)} moduleNumber={5}
-      moduleTitle="Ajouter ou retirer une valeur" moduleSubtitle="Qui résiste, qui s’effondre" estimatedTime="12 min"
+      moduleTitle="Ajouter ou retirer une valeur" moduleSubtitle="Qui résiste, qui s’effondre" estimatedTime="15 min"
       brief={{
         tag: 'Manipulation', title: 'Perturber la série', tone: 'cyan',
         body: <p>Un cas exceptionnel, ou un changement qui touche tout le monde : ce ne sont pas les mêmes effets. Regarde lesquels des quatre indicateurs bougent dans chaque cas.</p>,
