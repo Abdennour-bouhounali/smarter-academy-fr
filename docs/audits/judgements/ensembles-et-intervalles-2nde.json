@@ -1,188 +1,550 @@
 {
-  "lesson": "ensembles-et-intervalles-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-nombres-calculs-batch",
-  "learningPoints": {
-    "seconde_ensembles-et-intervalles-2nde_P1": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "le-langage-des-ensembles", "step": 1, "mechanism": "manipulation:SetBoxes" },
-        { "module": 2, "moduleSlug": "le-langage-des-ensembles", "step": 1, "mechanism": "brick:ensemble" },
-        { "module": 2, "moduleSlug": "le-langage-des-ensembles", "step": 1, "mechanism": "brick:vocab-appartenance" },
-        { "module": 2, "moduleSlug": "le-langage-des-ensembles", "step": 1, "mechanism": "brick:vocab-inclusion" },
-        { "module": 2, "moduleSlug": "le-langage-des-ensembles", "step": 2, "mechanism": "manipulation:VennSorter" },
-        { "module": 2, "moduleSlug": "le-langage-des-ensembles", "step": 2, "mechanism": "brick:vocab-intersection-reunion" },
-        { "module": 2, "moduleSlug": "le-langage-des-ensembles", "step": 3, "mechanism": "brick:ensemble-vide" },
-        { "module": 2, "moduleSlug": "le-langage-des-ensembles", "step": 3, "mechanism": "question:M02-S3-Q1" },
-        { "module": 5, "moduleSlug": "croiser-deux-intervalles", "step": 4, "mechanism": "question:M05-S4-Q2" }
-      ],
-      "manipulation": "SetBoxes — trois boîtes emboîtées ℕ ⊂ ℤ ⊂ ℝ ; l'élève range chaque nombre de [7, −3, 0, 2,5, −1,25, 12] dans la PLUS PETITE boîte qui le contient. Un mauvais rangement reste visible, barré et rose, avec la raison. Puis VennSorter — deux cercles (diviseurs de 12, diviseurs de 18) et quatre régions ; l'élève place 1, 2, 3, 4, 6, 9, 12, 18 et 5. L'appartenance et l'inclusion sont donc TRIÉES avant d'être écrites : la distinction ∈ (un nombre dans un ensemble) / ⊂ (un ensemble dans un ensemble) naît du fait que le geste n'est pas le même.",
-      "assessmentQuestionIds": ["ei-e1", "ei-e2"],
-      "knowledgeItems": ["ensemble", "vocab-appartenance", "vocab-inclusion", "vocab-intersection-reunion", "ensemble-vide"],
-      "notes": "PARTIELLEMENT COUVERT au titre de l'intitulé, pas de la qualité : ce qui est enseigné l'est très bien (∈, ∉, ⊂, ∩, ∪, ∅ tous nés d'un tri, toutes les briques posées après le geste, ensemble-vide posée AVANT la question dont la ligne r4 l'exige), mais « le langage des ensembles » du programme officiel comprend deux notions que la leçon n'aborde nulle part : le COMPLÉMENTAIRE et le PRODUIT CARTÉSIEN. Vérifié par grep sur tout le répertoire : zéro occurrence de « complément », « complémentaire », « ∁ », « produit cartésien », « cartésien » ; aucune fonction correspondante dans intervalUtils.js ; aucune assertion dans intervalUtils.test.js. Ni l'une ni l'autre n'est non plus déclarée dans teachingScope.exclude, contrairement à ℚ/𝔻, à la valeur absolue et aux inéquations, qui sont explicitement délégués à des leçons voisines nommées. C'est donc un trou, pas un choix de périmètre. Réserve secondaire : ce que M02 enseigne porte sur des ensembles FINIS de nombres ; l'extension de ∩ et ∪ aux intervalles est faite au module 5 et bien faite, mais aucune épreuve du boss ne mesure ∈/⊂ sur un ensemble infini autre qu'un intervalle.",
-      "crossGrade": { "overlapsWith": ["2de:nombres-reels-2nde", "2de:logique-et-raisonnement-2nde"], "kind": "none" },
-      "confidence": "high"
+ "lesson": "ensembles-et-intervalles-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-nombres-calculs-batch",
+ "learningPoints": {
+  "seconde_ensembles-et-intervalles-2nde_P1": {
+   "status": "PARTIALLY_COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "manipulation:SetBoxes"
     },
-    "seconde_ensembles-et-intervalles-2nde_P2": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-manege", "step": 1, "mechanism": "manipulation:IntervalFilter" },
-        { "module": 1, "moduleSlug": "le-manege", "step": 1, "mechanism": "feedback" },
-        { "module": 1, "moduleSlug": "le-manege", "step": 1, "mechanism": "brick:borne-incluse-exclue" },
-        { "module": 1, "moduleSlug": "le-manege", "step": 2, "mechanism": "manipulation:IntervalFilter" },
-        { "module": 1, "moduleSlug": "le-manege", "step": 3, "mechanism": "brick:mem-borne" },
-        { "module": 1, "moduleSlug": "le-manege", "step": 3, "mechanism": "question:M01-S3-Q2" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 1, "mechanism": "brick:intervalle" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 1, "mechanism": "question:M03-S1-Q1" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 2, "mechanism": "manipulation:IntervalBuilder" }
-      ],
-      "manipulation": "IntervalFilter — le panneau du manège. L'élève teste des tailles (puces 1,20 · 1,50 · 1,89 · 1,899 · 1,90 · 2,05 ou saisie libre) contre la plage [1,20 ; 1,90[ ; chaque essai se pose sur la droite en point plein vert (accepté) ou creux rouge (refusé), et une liste de verdicts s'écrit en clair. La validation exige au moins quatre essais DONT 1,20 et 1,90 : impossible de conclure sans avoir éprouvé les deux bornes. L'étape 2 fait ensuite RETOURNER les crochets sans bouger les bornes, et les points déjà testés changent de couleur — c'est le meilleur geste des trois leçons auditées : la borne cesse d'être un nombre pour devenir une décision. Puis IntervalBuilder (module 3) fait construire l'intervalle, poignée par poignée.",
-      "assessmentQuestionIds": ["ei-e3", "ei-e4"],
-      "knowledgeItems": ["borne-incluse-exclue", "plage-infinite", "mem-borne", "intervalle", "types-intervalles"],
-      "notes": "Les deux volets de l'intitulé sont réellement couverts : LIRE (M03 étape 1, TapQuestion sur un RealLine colorié ; boss ei-e3) et REPRÉSENTER (M01 étape 2 et M03 étape 2, où l'élève pose lui-même bornes et crochets sur la droite). C'est le seul des trois LP « représenter » des trois leçons auditées qui soit tenu par un vrai geste de construction. La brique borne-incluse-exclue est posée AVANT la question M01-S1-Q1 qui l'exige ; mem-borne AVANT M01-S3-Q2 ; intervalle AVANT M03-S1-Q1. Le lead de mem-borne est de plus dérivé de l'état courant (« Ton panneau modifié s'écrit {notation(I)} »), donc il parle du panneau que l'élève vient réellement de fabriquer.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "brick:ensemble"
     },
-    "seconde_ensembles-et-intervalles-2nde_P3": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "inegalite-ou-intervalle", "step": 1, "mechanism": "manipulation:IntervalBuilder" },
-        { "module": 4, "moduleSlug": "inegalite-ou-intervalle", "step": 1, "mechanism": "brick:regle-signe-crochet" },
-        { "module": 4, "moduleSlug": "inegalite-ou-intervalle", "step": 2, "mechanism": "manipulation:InequalityComposer" },
-        { "module": 4, "moduleSlug": "inegalite-ou-intervalle", "step": 3, "mechanism": "brick:regle-sens-inegalite" },
-        { "module": 4, "moduleSlug": "inegalite-ou-intervalle", "step": 3, "mechanism": "question:M04-S3-Q1" },
-        { "module": 4, "moduleSlug": "inegalite-ou-intervalle", "step": 4, "mechanism": "manipulation:IntervalBuilder" },
-        { "module": 4, "moduleSlug": "inegalite-ou-intervalle", "step": 5, "mechanism": "brick:methode-traduire" },
-        { "module": 4, "moduleSlug": "inegalite-ou-intervalle", "step": 5, "mechanism": "question:M04-S5-Q2" },
-        { "module": 6, "moduleSlug": "situations", "step": 1, "mechanism": "brick:methode-phrase-intervalle" }
-      ],
-      "manipulation": "IntervalBuilder dans les deux sens, et c'est ce qui fait la qualité du module 4 : à l'étape 1 l'élève part d'une double inégalité (−1 < x ≤ 4) et CONSTRUIT l'intervalle sur la droite ; à l'étape 2 il part de l'intervalle [−3 ; 2[ dessiné et compose les DEUX SIGNES avec InequalityComposer (chaque bouton bascule < ↔ ≤). La traduction est donc bidirectionnelle et manipulée dans les deux sens, pas seulement lue. L'étape 4 refait le geste avec des bornes décimales (2,5 ≤ L < 4) et une variable renommée L.",
-      "assessmentQuestionIds": ["ei-e5", "ei-e6", "ei-e9"],
-      "knowledgeItems": ["regle-signe-crochet", "regle-sens-inegalite", "methode-traduire", "mem-signe-crochet", "methode-phrase-intervalle"],
-      "notes": "Bien couvert, avec une réserve d'ordre. La brique regle-signe-crochet est posée APRÈS la construction de l'étape 1 qui la fait découvrir : correct. Mais regle-sens-inegalite est posée à l'étape 3 AVANT la question M04-S3-Q1, et son corps (knowledge.jsx) nomme explicitement le piège — « Piège classique : écrire [3 ; +∞[ pour x ≤ 3 » — alors que le distracteur n° 0 de la question qui suit immédiatement est précisément [3 ; +∞[. La brique désamorce le piège qu'elle est censée préparer : la question devient un contrôle de lecture de la brique, pas une épreuve. Le boss compense en partie (ei-e5 sur x ≥ −2, dont le quatrième distracteur [−2 ; +∞] teste la fermeture illégitime de l'infini). Le module 6 étape 1 ajoute la traduction depuis une phrase française, avec la brique methode-phrase-intervalle qui tabule « à partir de » → [a, « plus de » → ]a, « moins de » → b[, « au plus » → b] : c'est ce tableau qui rend la compétence transférable.",
-      "crossGrade": { "overlapsWith": ["2de:equations-et-inequations-2nde"], "kind": "repetition" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "brick:vocab-appartenance"
     },
-    "seconde_ensembles-et-intervalles-2nde_P4": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-manege", "step": 1, "mechanism": "manipulation:IntervalFilter" },
-        { "module": 1, "moduleSlug": "le-manege", "step": 1, "mechanism": "brick:borne-incluse-exclue" },
-        { "module": 1, "moduleSlug": "le-manege", "step": 1, "mechanism": "question:M01-S1-Q1" },
-        { "module": 1, "moduleSlug": "le-manege", "step": 1, "mechanism": "brick:plage-infinite" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 1, "mechanism": "brick:types-intervalles" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 3, "mechanism": "manipulation:IntervalBuilder" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 3, "mechanism": "brick:demi-droite-infini" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 3, "mechanism": "question:M03-S3-Q2" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 4, "mechanism": "brick:methode-appartenance-intervalle" },
-        { "module": 3, "moduleSlug": "quatre-crochets", "step": 4, "mechanism": "question:M03-S4-Q3" }
-      ],
-      "manipulation": "IntervalBuilder avec allowInfinite (module 3 étape 3) : l'élève étend une borne vers +∞ et constate que le crochet REFUSE de se fermer — la contrainte est codée dans le modèle (intervalUtils.interval() force l'ouverture d'une borne infinie), donc l'impossibilité est éprouvée, pas énoncée. C'est la meilleure incarnation possible de « +∞ n'est pas un nombre ».",
-      "assessmentQuestionIds": ["ei-e3", "ei-e4", "ei-e7", "ei-e8"],
-      "knowledgeItems": ["borne-incluse-exclue", "plage-infinite", "types-intervalles", "demi-droite-infini", "methode-appartenance-intervalle"],
-      "notes": "Le LP le mieux servi de la leçon, et le mieux mesuré (quatre épreuves du boss). Trois facettes distinctes sont enseignées séparément : le sort de chaque borne (M01, par le retournement des crochets), les quatre types bornés (M03 étape 1, brique types-intervalles), et la borne infinie toujours ouverte (M03 étape 3, geste + brique + question M03-S3-Q2 dont la bonne option « +∞ n'est pas un nombre : on ne l'atteint jamais » n'est pas devinable). L'étape 4 (BatchChoice) éprouve l'appartenance sur les cas limites exacts : 3 ∈ [−2 ; 3[ (non), −2 ∈ [−2 ; 3[ (oui), 2,999 ∈ [−2 ; 3[ (oui), 5 ∈ ]−∞ ; 5] (oui). La brique methode-appartenance-intervalle précède cette question. Une facette manque à l'appel du côté de la MESURE : la distinction « une infinité de réels mais un nombre fini d'entiers », établie par la brique plage-infinite et par methode-compter-entiers, est mesurée par ei-e7 — bien — mais le distracteur « Une infinité » y est le seul à tester la confusion, et le module 6 étape 4 (entiers de [−2,5 ; 3[) est la seule autre occasion.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "brick:vocab-inclusion"
     },
-    "seconde_ensembles-et-intervalles-2nde_P5": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "croiser-deux-intervalles", "step": 2, "mechanism": "manipulation:IntervalBuilder" },
-        { "module": 5, "moduleSlug": "croiser-deux-intervalles", "step": 2, "mechanism": "brick:intersection-intervalles" },
-        { "module": 5, "moduleSlug": "croiser-deux-intervalles", "step": 3, "mechanism": "manipulation:IntervalBuilder" },
-        { "module": 5, "moduleSlug": "croiser-deux-intervalles", "step": 3, "mechanism": "brick:reunion-intervalles" },
-        { "module": 5, "moduleSlug": "croiser-deux-intervalles", "step": 4, "mechanism": "question:M05-S4-Q2" },
-        { "module": 5, "moduleSlug": "croiser-deux-intervalles", "step": 4, "mechanism": "brick:regle-intersection-vide" },
-        { "module": 6, "moduleSlug": "situations", "step": 1, "mechanism": "manipulation:IntervalBuilder" },
-        { "module": 6, "moduleSlug": "situations", "step": 2, "mechanism": "brick:methode-compter-entiers" },
-        { "module": 6, "moduleSlug": "situations", "step": 2, "mechanism": "question:M06-S2-Q1" },
-        { "module": 6, "moduleSlug": "situations", "step": 3, "mechanism": "brick:regle-contrainte-implicite" }
-      ],
-      "manipulation": "IntervalBuilder par-dessus deux bandes superposées (I = [−1 ; 4] en bleu, J = ]2 ; 7[ en ambre) : l'élève construit d'abord l'intersection, puis la réunion, sur le MÊME dessin. Les cibles sont calculées (INTER = intersect(I, J), UNION = union(I, J)) et non écrites en dur, donc la vérification est une vraie vérification. Le point subtil — la borne 2 est exclue parce que c'est J qui s'arrête là et qu'il est ouvert, la borne 4 incluse parce que c'est I — se lit sur le dessin.",
-      "assessmentQuestionIds": ["ei-e7", "ei-e8", "ei-e9", "ei-e10"],
-      "knowledgeItems": ["intersection-intervalles", "reunion-intervalles", "mem-inter-union", "regle-intersection-vide", "methode-phrase-intervalle", "methode-compter-entiers", "regle-contrainte-implicite"],
-      "notes": "Bien couvert et bien mesuré (quatre épreuves). L'étape 4 du module 5 ajoute le cas où l'intersection est VIDE (A = [−5 ; −2], B = [0 ; 3]), avec un distracteur remarquable : {−2 ; 0} en notation d'ensemble, qui teste si l'élève confond « les deux bornes » et « ce qui est entre ». Le module 6 apporte deux compétences que rien d'autre ne porte : compter les ENTIERS d'un intervalle (M06-S2-Q1 sur [2 ; 8] → 7, explainFor traitant l'oubli d'une borne ; M06-S4-Q4 sur [−2,5 ; 3[ → 5, dont l'explain dérive la liste réelle des entiers) et la CONTRAINTE IMPLICITE du contexte (M06 étape 3 : le calcul donne x ≤ 5, le bon sens ajoute x ≥ 0, d'où [0 ; 5] — brique regle-contrainte-implicite). Vérifié numériquement : entiers de [2 ; 8] = 7 ; entiers de [−2,5 ; 3[ = {−2,−1,0,1,2} = 5 ; [1,2 ; 1,9[ ∩ [1,4 ; +∞[ = [1,4 ; 1,9[ (ei-e10) ; [−1 ; 3] ∩ [2 ; 6[ = [2 ; 3] (ei-e8). Réserve : la tâche vedette de M06 étape 1 est cassée par un bug d'arrondi (voir technicalProblems) — l'élève qui construit la bonne réponse aux boutons ± s'entend dire qu'elle est fausse.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 2,
+     "mechanism": "manipulation:VennSorter"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 2,
+     "mechanism": "brick:vocab-intersection-reunion"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 3,
+     "mechanism": "brick:ensemble-vide"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "croiser-deux-intervalles",
+     "step": 4,
+     "mechanism": "question:M05-S4-Q2"
     }
+   ],
+   "manipulation": "SetBoxes — trois boîtes emboîtées ℕ ⊂ ℤ ⊂ ℝ ; l'élève range chaque nombre de [7, −3, 0, 2,5, −1,25, 12] dans la PLUS PETITE boîte qui le contient. Un mauvais rangement reste visible, barré et rose, avec la raison. Puis VennSorter — deux cercles (diviseurs de 12, diviseurs de 18) et quatre régions ; l'élève place 1, 2, 3, 4, 6, 9, 12, 18 et 5. L'appartenance et l'inclusion sont donc TRIÉES avant d'être écrites : la distinction ∈ (un nombre dans un ensemble) / ⊂ (un ensemble dans un ensemble) naît du fait que le geste n'est pas le même.",
+   "assessmentQuestionIds": [
+    "ei-e1",
+    "ei-e2"
+   ],
+   "knowledgeItems": [
+    "ensemble",
+    "vocab-appartenance",
+    "vocab-inclusion",
+    "vocab-intersection-reunion",
+    "ensemble-vide"
+   ],
+   "notes": "PARTIELLEMENT COUVERT au titre de l'intitulé, pas de la qualité : ce qui est enseigné l'est très bien (∈, ∉, ⊂, ∩, ∪, ∅ tous nés d'un tri, toutes les briques posées après le geste, ensemble-vide posée AVANT la question dont la ligne r4 l'exige), mais « le langage des ensembles » du programme officiel comprend deux notions que la leçon n'aborde nulle part : le COMPLÉMENTAIRE et le PRODUIT CARTÉSIEN. Vérifié par grep sur tout le répertoire : zéro occurrence de « complément », « complémentaire », « ∁ », « produit cartésien », « cartésien » ; aucune fonction correspondante dans intervalUtils.js ; aucune assertion dans intervalUtils.test.js. Ni l'une ni l'autre n'est non plus déclarée dans teachingScope.exclude, contrairement à ℚ/𝔻, à la valeur absolue et aux inéquations, qui sont explicitement délégués à des leçons voisines nommées. C'est donc un trou, pas un choix de périmètre. Réserve secondaire : ce que M02 enseigne porte sur des ensembles FINIS de nombres ; l'extension de ∩ et ∪ aux intervalles est faite au module 5 et bien faite, mais aucune épreuve du boss ne mesure ∈/⊂ sur un ensemble infini autre qu'un intervalle.",
+   "crossGrade": {
+    "overlapsWith": [
+     "2de:nombres-reels-2nde",
+     "2de:logique-et-raisonnement-2nde"
+    ],
+    "kind": "none"
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "pedagogicalProblems": [
-      "P1 « Utiliser le langage des ensembles » est amputé de deux notions du programme officiel 2026 : le COMPLÉMENTAIRE d'un ensemble et le PRODUIT CARTÉSIEN. Vérifié par grep sur tout le répertoire de la leçon : aucune occurrence de « complément », « complémentaire », « ∁ », « produit cartésien » ni « cartésien » ; aucune fonction correspondante dans components/intervalUtils.js ; aucune assertion dans components/intervalUtils.test.js ; aucune épreuve du boss. Et surtout, aucune des deux n'est déclarée dans teachingScope.exclude, alors que la leçon y délègue explicitement ℚ/𝔻 (« leçon Nombres réels »), la valeur absolue et la résolution d'inéquations. Ce n'est donc pas un partage de périmètre assumé : c'est un trou.",
-      "Le module 5 étape 3 pose la brique regle-intersection-vide avec un `lead` mathématiquement faux : « comme pour les diviseurs de 12 et 18 qui n'avaient rien en commun avec 5 ». La phrase se lit naturellement comme « les diviseurs de 12 et 18 n'ont rien en commun », or le module 2 vient précisément d'établir le contraire — la zone centrale du VennSorter contient 1, 2, 3 et 6 (vérifié : divisors(12) ∩ divisors(18) = {1, 2, 3, 6}). Le corps de l'item dans knowledge.jsx est correct ; c'est le lead, c'est-à-dire la phrase que l'élève lit au moment du geste, qui contredit la leçon précédente. C'est une violation de l'invariant « un schéma ne contredit jamais la leçon », appliquée au texte.",
-      "Le module 4 étape 3 pose la brique regle-sens-inegalite AVANT la question M04-S3-Q1, et le corps de cette brique nomme le piège en toutes lettres (« Piège classique : écrire [3 ; +∞[ pour x ≤ 3 ») alors que [3 ; +∞[ est exactement le distracteur n° 0 de la question qui suit. La brique désamorce l'épreuve qu'elle prépare : la question ne mesure plus la compréhension du sens, elle mesure la lecture de la brique posée trois lignes plus haut.",
-      "Le module 5 étape 1 présente un encadré « À retenir » écrit à la main en JSX (quatre cases : fermé / ouvert / semi-ouvert / demi-droite, plus la phrase sur ∩ et ∪) au lieu d'une KnowledgeBrick. Ce contenu est donc invisible à `npm run audit:knowledge` et ne contribue rien à la carte. Le contenu lui-même n'est pas perdu (types-intervalles a été posée au module 3), mais l'étape 1 du module de formalisation n'apporte aucune brique.",
-      "Le module 6 étape 2 propose une TapQuestion à DEUX options seulement, dont la mauvaise est « Oui, c'est presque 8 » pour « Le frigo affiche 8,5 °C, le vaccin est-il dans sa plage [2 ; 8] ? ». Le pouvoir discriminant est nul : aucun élève ne choisit une option qui se réfute elle-même.",
-      "Le module 5 étape 1 est le seul endroit de la leçon dont les lignes de BatchChoiceQuestion n'ont AUCUNE `correction` par ligne, et dont le `feedback` imprime la même règle générale que l'élève ait 0 ou 3 sur 3."
-    ],
-    "technicalProblems": [
-      "BUG DE VERDICT, module 6 étape 1 (la tâche vedette du module) : components/IntervalBuilder.jsx l. 58, `const v = Math.round((cur + d * s) / s) * s;` n'applique pas roundTo. Avec le pas 0,1 de cette étape (min 1, max 2,2, départ interval(1, 2.2)), quatre appuis sur « + » à gauche donnent from = 1.4000000000000001 et trois appuis sur « − » à droite donnent to = 1.9000000000000001 (vérifié numériquement). Or BuildCheck compare par sameInterval, qui teste `I.from === J.from` en strict (intervalUtils.js l. 92). L'élève qui atteint exactement la bonne réponse ]1,4 ; 1,9[ aux boutons ± s'entend donc dire « Pas encore », puis au bout de deux essais reçoit la révélation — et comme l'affichage passe par formatDec, il lit : « Ta construction : ]1,4 ; 1,9[. Il fallait : ]1,4 ; 1,9[ ». Deux écritures identiques, l'une déclarée fausse. Portée vérifiée en simulant tous les IntervalBuilder de la leçon : cette étape SEULE est touchée (M03 étapes 2 et 3, M04 étapes 1 et 4, M05 étapes 2 et 3 utilisent des pas de 1 ou 0,5, exacts en binaire). Le chemin par GLISSER est sain — les poignées passent par snapValue, qui se termine par roundTo — donc le bug ne frappe que l'élève qui utilise les boutons, et il est invisible à tout test e2e qui glisse au lieu de taper.",
-      "LABORATOIRES GELÉS APRÈS VALIDATION — huit occurrences, la classe de bug du mémo frozen_manipulation_bug_class : Module03QuatreCrochets.jsx l. 103 (disabled={done2}) et l. 124 (disabled={done3}) ; Module04InegaliteOuIntervalle.jsx l. 69 (disabled={d1}), l. 100 (InequalityComposer disabled={d2}) et l. 151 (disabled={d4}) ; Module05CroiserDeuxIntervalles.jsx l. 113 (disabled={d1}) et l. 142 (disabled={d2}) ; Module06Situations.jsx l. 71 (disabled={d1}). Une fois l'étape validée, l'élève ne peut plus rien manipuler — il ne peut notamment pas rejouer la construction après avoir vu la solution fantôme. Les modules 1 et 2, les deux modules d'exploration, laissent au contraire leurs laboratoires vivants : le gel n'est donc pas une convention de la leçon, c'est une dérive des modules 3 à 6.",
-      "components/VennSorter.jsx l. 36-39 : la fonction reason() écrit en dur « 12 » et « 18 » (`${n} divise 12 ET 18`) alors que A et B arrivent en props. Le seul appelant actuel (module 2) passe bien divisorsOf(12) et divisorsOf(18), donc rien de faux à l'écran aujourd'hui ; mais le composant est écrit comme réutilisable et son feedback mentirait pour tout autre couple.",
-      "Trois imports morts : `typeOf` dans Module03QuatreCrochets.jsx l. 9 et dans Module05CroiserDeuxIntervalles.jsx l. 9 ; `inequality` dans Module06Situations.jsx l. 8. Aucun des trois n'est référencé dans son fichier.",
-      "Module01LeManege.jsx : le `done` de l'étape 2 est `flipped`, une expression LIVE sur l'état courant (filter.openLo && !filter.openHi) et non un booléen verrouillé. Comme le laboratoire de cette étape reste — à raison — manipulable, un élève qui reretourne un crochet après avoir validé voit l'étape se dé-valider silencieusement. Le problème est la contrepartie du bon choix de ne pas geler : la solution est de latcher le done, pas de geler le lab.",
-      "Vérifications numériques : toutes les cibles et toutes les réponses sont exactes. divisors(12) ∩ divisors(18) = {1,2,3,6} et ∪ = {1,2,3,4,6,9,12,18} (conforme à knowledge.jsx) ; [−1 ; 4] ∩ ]2 ; 7[ = ]2 ; 4] et ∪ = [−1 ; 7[ (module 5, cibles calculées) ; [−5 ; −2] ∩ [0 ; 3] = ∅ (M05-S4-Q2) ; entiers de [2 ; 8] = 7 et de [−2,5 ; 3[ = 5 (module 6) ; ]1 ; 5[ contient 3 entiers (ei-e7) ; [−1 ; 3] ∩ [2 ; 6[ = [2 ; 3] (ei-e8) ; [1,2 ; 1,9[ ∩ [1,4 ; +∞[ = [1,4 ; 1,9[ (ei-e10) ; 15 + 2 × 5 = 25 (M06 étape 3). Aucun distracteur n'est numériquement égal ni à distance d'arrondi de la bonne réponse ; ei-e4 (2,001 contre la borne 2 exclue) et ei-e7 (« Une infinité ») sont au contraire des distracteurs bien visés.",
-      "components/intervalUtils.test.js verrouille exactement les pièges enseignés : le filtre du manège (1,899 accepté, 1,90 refusé) ; le retournement des crochets qui ne change QUE le sort des bornes ; interval(3, null).openTo === true et le fait que l'intervalle ne contient PAS Infinity ; les quatre notations et les deux demi-droites ; inequality avec une variable personnalisée (2,5 ≤ L < 4) ; typeOf sur les quatre types ; la commutativité de intersect ; et surtout union(A, B) === null pour deux intervalles disjoints — c'est-à-dire que le modèle sait qu'une réunion disjointe N'EST PAS un intervalle, ce que le corps de la brique reunion-intervalles énonce. Les cas de contact ([0;2[ ∪ [2;3] = [0;3] mais [0;2[ ∪ ]2;3] = null) sont testés. Le modèle est le plus propre des trois leçons ; aucun composant JSX n'a en revanche de test propre, ce qui est précisément la raison pour laquelle le bug d'arrondi de M06 a survécu."
-    ],
-    "duplicates": [
-      "P3 « Décrire un ensemble de nombres à l'aide d'un intervalle » est enseigné comme neuf ici (module 4 entier, traduction bidirectionnelle inégalité ↔ intervalle) et il est aussi ce que equations-et-inequations-2nde_P4 « Représenter l'ensemble des solutions sur une droite » éprouve en pratique : cette leçon-là ne fournissant aucun geste de représentation, ses trois demandes rattachées à P4 sont des QCM de choix de notation d'intervalle. Le doublon est net, et il est asymétrique : c'est ici qu'il est enseigné, là-bas qu'il est re-mesuré.",
-      "P4 (borne infinie toujours ouverte, types d'intervalles) recouvre partiellement nombres-reels-2nde_P2 « Représenter des nombres réels sur une droite graduée » : les deux leçons installent la droite réelle comme support. Le partage semble propre — ici c'est l'intervalle qui est l'objet, là c'est le nombre — mais aucune des deux ne le déclare.",
-      "P1 (∈, ⊂, ∩, ∪) est un prérequis déclaré de logique-et-raisonnement-2nde (dont le priorKnowledge consomme les clés établies ici) et de fonctions-2nde ; le contrat est correctement posé par les `establishes` de M02 (intervalle-crochets, ensemble-reels, appartient, inclus). Ce n'est pas un doublon mais une exportation assumée — la leçon est bien la source unique de ce vocabulaire pour le niveau."
-    ],
-    "recommendations": [
-      "Corriger IntervalBuilder.bump (components/IntervalBuilder.jsx l. 58) en passant par roundTo, ou faire comparer sameInterval à une tolérance : en l'état, la tâche vedette du module 6 refuse une réponse juste et affiche deux écritures identiques dont l'une est déclarée fausse.",
-      "Retirer les huit `disabled={…done}` des modules 3 à 6 : rien ne justifie qu'on ne puisse plus manipuler un intervalle après l'avoir construit, et les modules 1 et 2 montrent que la leçon sait faire autrement. Latcher en contrepartie le `done` de l'étape 2 du module 1.",
-      "Réécrire le lead de regle-intersection-vide (Module05CroiserDeuxIntervalles.jsx l. 194) : dire que 5 n'était dans aucun des deux cercles, et surtout pas que les diviseurs de 12 et de 18 « n'avaient rien en commun », ce que le module 2 a établi comme faux.",
-      "Déplacer la brique regle-sens-inegalite APRÈS la question M04-S3-Q1, ou retirer de son corps la mention du piège [3 ; +∞[ qui est le distracteur de cette question.",
-      "Décider du sort du complémentaire et du produit cartésien : soit les enseigner (le VennSorter du module 2 rend le complémentaire presque gratuit — la région « ni dans A ni dans B » existe déjà à l'écran), soit les inscrire dans teachingScope.exclude en nommant la leçon qui les prend en charge. Aujourd'hui ils sont simplement absents.",
-      "Convertir l'encadré « À retenir » du module 5 étape 1 en KnowledgeBrick, et donner une `correction` à chacune de ses trois lignes de BatchChoice.",
-      "Ajouter une troisième et une quatrième option à la question du module 6 étape 2 ; deux options dont l'une se réfute elle-même ne mesurent rien.",
-      "Supprimer les trois imports morts (typeOf ×2, inequality) et retirer le codage en dur de « 12 » et « 18 » dans VennSorter.reason."
-    ],
-    "officialScopeNotCovered": [
-      {
-        "scopeItem": "Déterminer le complémentaire d'un ensemble",
-        "taughtAnyway": false,
-        "evidence": "Absent de bout en bout. grep sur tout le répertoire de la leçon : zéro occurrence de « complément », « complémentaire » ou « ∁ » (le seul hit du motif est Module00Diagnostic.jsx l. 58, « Le signe > sans barre est STRICT », qui parle du glyphe). Aucune fonction dans components/intervalUtils.js, aucune assertion dans intervalUtils.test.js, aucune brique dans knowledge.jsx, aucune épreuve du boss. Non déclaré non plus dans teachingScope.exclude, contrairement à ℚ/𝔻, à la valeur absolue et aux inéquations qui sont explicitement délégués à des leçons nommées. La quatrième région du VennSorter (« ni dans A ni dans B », module 2 étape 2) est pourtant déjà à l'écran et l'élève y place le nombre 5 : le geste existe, il n'est simplement jamais nommé.",
-        "recommendation": "absent"
-      },
-      {
-        "scopeItem": "Comprendre le produit cartésien",
-        "taughtAnyway": false,
-        "evidence": "Absent de bout en bout. grep sur tout le répertoire : zéro occurrence de « produit cartésien », « cartésien », « ℝ² » ou d'une notation A × B. Aucune fonction, aucune brique, aucune question, aucune épreuve. Non déclaré dans teachingScope.exclude. Aucun autre LP de 2de du référentiel ne le porte non plus (vérifié sur les 249 LP de la matrice) : la notion n'existe nulle part dans le niveau construit.",
-        "recommendation": "absent"
-      },
-      {
-        "scopeItem": "Utiliser l'ensemble vide",
-        "taughtAnyway": true,
-        "evidence": "Module 2 étape 3 : brique ensemble-vide posée AVANT la BatchChoiceQuestion dont la ligne r4 (« L'ensemble des entiers strictement compris entre 2 et 3 est vide ») l'éprouve. Repris au module 5 étape 4 comme résultat d'une intersection disjointe (A = [−5 ; −2], B = [0 ; 3], question M05-S4-Q2 dont la bonne option est « ∅ : aucun nombre n'est dans les deux ») avec la brique regle-intersection-vide. Enseigné deux fois, sous deux angles différents — mais aucune épreuve du boss ne mesure ∅ : les dix items l'ignorent, alors que c'est le seul concept de la leçon présenté à la fois comme objet et comme résultat d'opération. Absorbé dans P1 et P5.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Déterminer une réunion d'ensembles",
-        "taughtAnyway": true,
-        "evidence": "Deux fois, sur deux natures d'objets : sur des ensembles finis au module 2 étape 2 (VennSorter, brique vocab-intersection-reunion qui donne A ∪ B = {1;2;3;4;6;9;12;18}), puis sur des intervalles au module 5 étape 3 (IntervalBuilder par-dessus deux bandes, cible UNION = union(I, J) calculée, brique reunion-intervalles dont le corps avertit explicitement que la réunion n'est un intervalle QUE si les plages se touchent — invariant verrouillé par intervalUtils.test.js, union disjointe === null). Mais aucune épreuve du boss ne porte sur ∪ : les dix items testent ∩ (ei-e2, ei-e8, ei-e10) et jamais ∪. L'écart entre ce qui est enseigné et ce qui est mesuré est ici maximal.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Déterminer une intersection d'ensembles",
-        "taughtAnyway": true,
-        "evidence": "Module 2 étape 2 (VennSorter, zone centrale) puis module 5 étape 2 (IntervalBuilder, cible INTER calculée) et étape 4 (cas vide) ; module 6 étape 1 (les deux attractions). Mesuré par ei-e2, ei-e8 et ei-e10. Bien couvert et bien mesuré — signalé ici seulement parce que l'item officiel n'a pas de LP propre : il est réparti entre P1 (ensembles finis) et P5 (intervalles), sans qu'aucun intitulé ne le nomme.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Comprendre l'appartenance à un ensemble",
-        "taughtAnyway": true,
-        "evidence": "Module 2 étape 1 : SetBoxes fait ranger chaque nombre dans la plus petite boîte qui le contient, puis brique vocab-appartenance (« Ranger 7 dans ℕ et −3 hors de ℕ, cela s'écrit d'un symbole »), qui `establishes` la clé de lexique 'appartient'. Rejoué comme méthode au module 3 étape 4 (methode-appartenance-intervalle) sur les cas limites (3 ∈ [−2 ; 3[ non, −2 oui, 2,999 oui). Mesuré par ei-e1 et ei-e4. Couvert par P1 et P4 conjointement, sans LP dédié.",
-        "recommendation": "append-lp"
-      }
-    ],
-    "verticalPositioning": {
-      "revised": "Presque rien. Le priorKnowledge se limite à quatre acquis élémentaires du collège — nombres-relatifs, ordre-nombres, lecture-inegalite, abscisse — et le module 0 les diagnostique honnêtement (comparer −3 et −5, comparer 2,05 et 2,5, lire x > 4 comme strict, lire une abscisse à −1,5, traduire « poids maximal 30 kg » en p ≤ 30). Le collège fournit donc l'ordre et la droite graduée, et rien d'autre : c'est la leçon la plus authentiquement neuve des trois auditées.",
-      "extended": "Ce qui est étendu, c'est la LECTURE d'une inégalité, acquise en 4e/3e sur des nombres isolés, et qui devient ici la description d'un ENSEMBLE de nombres. La question du module 1 étape 1 (« Combien de tailles différentes peuvent passer entre 1,20 m et 1,90 m ? » — réponse : une infinité, contre les distracteurs 70 et 700) marque exactement ce passage : au collège on comparait des nombres, ici on manipule la plage tout entière comme un objet. La brique plage-infinite le formalise.",
-      "new": "Tout le vocabulaire ensembliste est neuf : ∈, ∉, ⊂, ∩, ∪, ∅, ℕ ⊂ ℤ ⊂ ℝ, et la notation par crochets elle-même. Neuve aussi la distinction entre borne et sort de la borne — le module 1 la met en scène en faisant retourner les crochets sans bouger les nombres. Neuve enfin la borne infinie et sa règle d'ouverture, dont l'impossibilité de fermeture est codée dans le modèle (intervalUtils.interval force l'ouverture d'une borne infinie) et donc éprouvée par le geste, pas énoncée.",
-      "formalized": "La leçon formalise l'écriture des ensembles de nombres, et c'est sa fonction principale dans le niveau. Ce que l'élève de collège écrivait en français (« entre 1,20 et 1,90, 1,90 exclu ») ou en inégalité (1,20 ≤ t < 1,90) devient une notation unique et compacte, [1,20 ; 1,90[, dont la leçon établit la convention par un geste (retourner un crochet change le verdict d'un point déjà testé) avant de la nommer (brique mem-borne). La correspondance signe strict ↔ crochet ouvert / signe large ↔ crochet fermé est le contenu formalisé central, et elle est mémorisée en une brique dédiée (mem-signe-crochet).",
-      "tool": "C'est la leçon-outil du chapitre, et elle le sait : ses `establishes` exportent explicitement les clés intervalle-crochets, ensemble-reels, appartient et inclus, qui sont consommées en priorKnowledge par equations-et-inequations-2nde (tout ensemble de solutions d'inéquation s'y écrit en intervalle), par fonctions-2nde (ensemble de définition, fonction définie sur une réunion d'intervalles — le LP P12 de cette leçon-là) et par logique-et-raisonnement-2nde. La conclusion du boss le dit en toutes lettres : « La valeur absolue et les inéquations s'appuieront dessus. » Le teachingScope.exclude est cohérent avec ce rôle : la leçon refuse de résoudre des inéquations (elle fournit seulement la langue pour en écrire les solutions) et refuse la nature des nombres (ℚ, 𝔻), qu'elle laisse à nombres-reels-2nde. La frontière est la mieux tenue des trois leçons auditées."
+  "seconde_ensembles-et-intervalles-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 1,
+     "mechanism": "manipulation:IntervalFilter"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 1,
+     "mechanism": "brick:borne-incluse-exclue"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 2,
+     "mechanism": "manipulation:IntervalFilter"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 3,
+     "mechanism": "brick:mem-borne"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 3,
+     "mechanism": "question:M01-S3-Q2"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 1,
+     "mechanism": "brick:intervalle"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 1,
+     "mechanism": "question:M03-S1-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 2,
+     "mechanism": "manipulation:IntervalBuilder"
     }
+   ],
+   "manipulation": "IntervalFilter — le panneau du manège. L'élève teste des tailles (puces 1,20 · 1,50 · 1,89 · 1,899 · 1,90 · 2,05 ou saisie libre) contre la plage [1,20 ; 1,90[ ; chaque essai se pose sur la droite en point plein vert (accepté) ou creux rouge (refusé), et une liste de verdicts s'écrit en clair. La validation exige au moins quatre essais DONT 1,20 et 1,90 : impossible de conclure sans avoir éprouvé les deux bornes. L'étape 2 fait ensuite RETOURNER les crochets sans bouger les bornes, et les points déjà testés changent de couleur — c'est le meilleur geste des trois leçons auditées : la borne cesse d'être un nombre pour devenir une décision. Puis IntervalBuilder (module 3) fait construire l'intervalle, poignée par poignée.",
+   "assessmentQuestionIds": [
+    "ei-e3",
+    "ei-e4"
+   ],
+   "knowledgeItems": [
+    "borne-incluse-exclue",
+    "plage-infinite",
+    "mem-borne",
+    "intervalle",
+    "types-intervalles"
+   ],
+   "notes": "Les deux volets de l'intitulé sont réellement couverts : LIRE (M03 étape 1, TapQuestion sur un RealLine colorié ; boss ei-e3) et REPRÉSENTER (M01 étape 2 et M03 étape 2, où l'élève pose lui-même bornes et crochets sur la droite). C'est le seul des trois LP « représenter » des trois leçons auditées qui soit tenu par un vrai geste de construction. La brique borne-incluse-exclue est posée AVANT la question M01-S1-Q1 qui l'exige ; mem-borne AVANT M01-S3-Q2 ; intervalle AVANT M03-S1-Q1. Le lead de mem-borne est de plus dérivé de l'état courant (« Ton panneau modifié s'écrit {notation(I)} »), donc il parle du panneau que l'élève vient réellement de fabriquer.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_ensembles-et-intervalles-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "inegalite-ou-intervalle",
+     "step": 1,
+     "mechanism": "manipulation:IntervalBuilder"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "inegalite-ou-intervalle",
+     "step": 1,
+     "mechanism": "brick:regle-signe-crochet"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "inegalite-ou-intervalle",
+     "step": 2,
+     "mechanism": "manipulation:InequalityComposer"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "inegalite-ou-intervalle",
+     "step": 3,
+     "mechanism": "brick:regle-sens-inegalite"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "inegalite-ou-intervalle",
+     "step": 3,
+     "mechanism": "question:M04-S3-Q1"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "inegalite-ou-intervalle",
+     "step": 4,
+     "mechanism": "manipulation:IntervalBuilder"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "inegalite-ou-intervalle",
+     "step": 5,
+     "mechanism": "brick:methode-traduire"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "inegalite-ou-intervalle",
+     "step": 5,
+     "mechanism": "question:M04-S5-Q2"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "situations",
+     "step": 1,
+     "mechanism": "brick:methode-phrase-intervalle"
+    }
+   ],
+   "manipulation": "IntervalBuilder dans les deux sens, et c'est ce qui fait la qualité du module 4 : à l'étape 1 l'élève part d'une double inégalité (−1 < x ≤ 4) et CONSTRUIT l'intervalle sur la droite ; à l'étape 2 il part de l'intervalle [−3 ; 2[ dessiné et compose les DEUX SIGNES avec InequalityComposer (chaque bouton bascule < ↔ ≤). La traduction est donc bidirectionnelle et manipulée dans les deux sens, pas seulement lue. L'étape 4 refait le geste avec des bornes décimales (2,5 ≤ L < 4) et une variable renommée L.",
+   "assessmentQuestionIds": [
+    "ei-e5",
+    "ei-e6",
+    "ei-e9"
+   ],
+   "knowledgeItems": [
+    "regle-signe-crochet",
+    "regle-sens-inegalite",
+    "methode-traduire",
+    "mem-signe-crochet",
+    "methode-phrase-intervalle"
+   ],
+   "notes": "Bien couvert, avec une réserve d'ordre. La brique regle-signe-crochet est posée APRÈS la construction de l'étape 1 qui la fait découvrir : correct. Mais regle-sens-inegalite est posée à l'étape 3 AVANT la question M04-S3-Q1, et son corps (knowledge.jsx) nomme explicitement le piège — « Piège classique : écrire [3 ; +∞[ pour x ≤ 3 » — alors que le distracteur n° 0 de la question qui suit immédiatement est précisément [3 ; +∞[. La brique désamorce le piège qu'elle est censée préparer : la question devient un contrôle de lecture de la brique, pas une épreuve. Le boss compense en partie (ei-e5 sur x ≥ −2, dont le quatrième distracteur [−2 ; +∞] teste la fermeture illégitime de l'infini). Le module 6 étape 1 ajoute la traduction depuis une phrase française, avec la brique methode-phrase-intervalle qui tabule « à partir de » → [a, « plus de » → ]a, « moins de » → b[, « au plus » → b] : c'est ce tableau qui rend la compétence transférable.",
+   "crossGrade": {
+    "overlapsWith": [
+     "2de:equations-et-inequations-2nde"
+    ],
+    "kind": "repetition"
+   },
+   "confidence": "high"
+  },
+  "seconde_ensembles-et-intervalles-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 1,
+     "mechanism": "manipulation:IntervalFilter"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 1,
+     "mechanism": "brick:borne-incluse-exclue"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 1,
+     "mechanism": "question:M01-S1-Q1"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-manege",
+     "step": 1,
+     "mechanism": "brick:plage-infinite"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 1,
+     "mechanism": "brick:types-intervalles"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 3,
+     "mechanism": "manipulation:IntervalBuilder"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 3,
+     "mechanism": "brick:demi-droite-infini"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 3,
+     "mechanism": "question:M03-S3-Q2"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 4,
+     "mechanism": "brick:methode-appartenance-intervalle"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "quatre-crochets",
+     "step": 4,
+     "mechanism": "question:M03-S4-Q3"
+    }
+   ],
+   "manipulation": "IntervalBuilder avec allowInfinite (module 3 étape 3) : l'élève étend une borne vers +∞ et constate que le crochet REFUSE de se fermer — la contrainte est codée dans le modèle (intervalUtils.interval() force l'ouverture d'une borne infinie), donc l'impossibilité est éprouvée, pas énoncée. C'est la meilleure incarnation possible de « +∞ n'est pas un nombre ».",
+   "assessmentQuestionIds": [
+    "ei-e3",
+    "ei-e4",
+    "ei-e7",
+    "ei-e8"
+   ],
+   "knowledgeItems": [
+    "borne-incluse-exclue",
+    "plage-infinite",
+    "types-intervalles",
+    "demi-droite-infini",
+    "methode-appartenance-intervalle"
+   ],
+   "notes": "Le LP le mieux servi de la leçon, et le mieux mesuré (quatre épreuves du boss). Trois facettes distinctes sont enseignées séparément : le sort de chaque borne (M01, par le retournement des crochets), les quatre types bornés (M03 étape 1, brique types-intervalles), et la borne infinie toujours ouverte (M03 étape 3, geste + brique + question M03-S3-Q2 dont la bonne option « +∞ n'est pas un nombre : on ne l'atteint jamais » n'est pas devinable). L'étape 4 (BatchChoice) éprouve l'appartenance sur les cas limites exacts : 3 ∈ [−2 ; 3[ (non), −2 ∈ [−2 ; 3[ (oui), 2,999 ∈ [−2 ; 3[ (oui), 5 ∈ ]−∞ ; 5] (oui). La brique methode-appartenance-intervalle précède cette question. Une facette manque à l'appel du côté de la MESURE : la distinction « une infinité de réels mais un nombre fini d'entiers », établie par la brique plage-infinite et par methode-compter-entiers, est mesurée par ei-e7 — bien — mais le distracteur « Une infinité » y est le seul à tester la confusion, et le module 6 étape 4 (entiers de [−2,5 ; 3[) est la seule autre occasion.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_ensembles-et-intervalles-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "croiser-deux-intervalles",
+     "step": 2,
+     "mechanism": "manipulation:IntervalBuilder"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "croiser-deux-intervalles",
+     "step": 2,
+     "mechanism": "brick:intersection-intervalles"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "croiser-deux-intervalles",
+     "step": 3,
+     "mechanism": "manipulation:IntervalBuilder"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "croiser-deux-intervalles",
+     "step": 3,
+     "mechanism": "brick:reunion-intervalles"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "croiser-deux-intervalles",
+     "step": 4,
+     "mechanism": "question:M05-S4-Q2"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "croiser-deux-intervalles",
+     "step": 4,
+     "mechanism": "brick:regle-intersection-vide"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "situations",
+     "step": 1,
+     "mechanism": "manipulation:IntervalBuilder"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "situations",
+     "step": 2,
+     "mechanism": "brick:methode-compter-entiers"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "situations",
+     "step": 2,
+     "mechanism": "question:M06-S2-Q1"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "situations",
+     "step": 3,
+     "mechanism": "brick:regle-contrainte-implicite"
+    }
+   ],
+   "manipulation": "IntervalBuilder par-dessus deux bandes superposées (I = [−1 ; 4] en bleu, J = ]2 ; 7[ en ambre) : l'élève construit d'abord l'intersection, puis la réunion, sur le MÊME dessin. Les cibles sont calculées (INTER = intersect(I, J), UNION = union(I, J)) et non écrites en dur, donc la vérification est une vraie vérification. Le point subtil — la borne 2 est exclue parce que c'est J qui s'arrête là et qu'il est ouvert, la borne 4 incluse parce que c'est I — se lit sur le dessin.",
+   "assessmentQuestionIds": [
+    "ei-e7",
+    "ei-e8",
+    "ei-e9",
+    "ei-e10"
+   ],
+   "knowledgeItems": [
+    "intersection-intervalles",
+    "reunion-intervalles",
+    "mem-inter-union",
+    "regle-intersection-vide",
+    "methode-phrase-intervalle",
+    "methode-compter-entiers",
+    "regle-contrainte-implicite"
+   ],
+   "notes": "Bien couvert et bien mesuré (quatre épreuves). L'étape 4 du module 5 ajoute le cas où l'intersection est VIDE (A = [−5 ; −2], B = [0 ; 3]), avec un distracteur remarquable : {−2 ; 0} en notation d'ensemble, qui teste si l'élève confond « les deux bornes » et « ce qui est entre ». Le module 6 apporte deux compétences que rien d'autre ne porte : compter les ENTIERS d'un intervalle (M06-S2-Q1 sur [2 ; 8] → 7, explainFor traitant l'oubli d'une borne ; M06-S4-Q4 sur [−2,5 ; 3[ → 5, dont l'explain dérive la liste réelle des entiers) et la CONTRAINTE IMPLICITE du contexte (M06 étape 3 : le calcul donne x ≤ 5, le bon sens ajoute x ≥ 0, d'où [0 ; 5] — brique regle-contrainte-implicite). Vérifié numériquement : entiers de [2 ; 8] = 7 ; entiers de [−2,5 ; 3[ = {−2,−1,0,1,2} = 5 ; [1,2 ; 1,9[ ∩ [1,4 ; +∞[ = [1,4 ; 1,9[ (ei-e10) ; [−1 ; 3] ∩ [2 ; 6[ = [2 ; 3] (ei-e8). Réserve : la tâche vedette de M06 étape 1 est cassée par un bug d'arrondi (voir technicalProblems) — l'élève qui construit la bonne réponse aux boutons ± s'entend dire qu'elle est fausse.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_ensembles-et-intervalles-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "brick:vocab-appartenance"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "brick:ensemble-vide"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "manipulation:VennSorter"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "assessment:ei-e11"
+    }
+   ],
+   "note": "Appartenance et ensemble vide manipulés dans VennSorter avant d'être nommés."
+  },
+  "seconde_ensembles-et-intervalles-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "brick:vocab-intersection-reunion"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "manipulation:VennSorter"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-langage-des-ensembles",
+     "step": 1,
+     "mechanism": "assessment:ei-e12"
+    }
+   ],
+   "note": "Réunion et intersection sont les régions que l'élève remplit lui-même dans le diagramme."
   }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "P1 « Utiliser le langage des ensembles » est amputé de deux notions du programme officiel 2026 : le COMPLÉMENTAIRE d'un ensemble et le PRODUIT CARTÉSIEN. Vérifié par grep sur tout le répertoire de la leçon : aucune occurrence de « complément », « complémentaire », « ∁ », « produit cartésien » ni « cartésien » ; aucune fonction correspondante dans components/intervalUtils.js ; aucune assertion dans components/intervalUtils.test.js ; aucune épreuve du boss. Et surtout, aucune des deux n'est déclarée dans teachingScope.exclude, alors que la leçon y délègue explicitement ℚ/𝔻 (« leçon Nombres réels »), la valeur absolue et la résolution d'inéquations. Ce n'est donc pas un partage de périmètre assumé : c'est un trou.",
+   "Le module 5 étape 3 pose la brique regle-intersection-vide avec un `lead` mathématiquement faux : « comme pour les diviseurs de 12 et 18 qui n'avaient rien en commun avec 5 ». La phrase se lit naturellement comme « les diviseurs de 12 et 18 n'ont rien en commun », or le module 2 vient précisément d'établir le contraire — la zone centrale du VennSorter contient 1, 2, 3 et 6 (vérifié : divisors(12) ∩ divisors(18) = {1, 2, 3, 6}). Le corps de l'item dans knowledge.jsx est correct ; c'est le lead, c'est-à-dire la phrase que l'élève lit au moment du geste, qui contredit la leçon précédente. C'est une violation de l'invariant « un schéma ne contredit jamais la leçon », appliquée au texte.",
+   "Le module 4 étape 3 pose la brique regle-sens-inegalite AVANT la question M04-S3-Q1, et le corps de cette brique nomme le piège en toutes lettres (« Piège classique : écrire [3 ; +∞[ pour x ≤ 3 ») alors que [3 ; +∞[ est exactement le distracteur n° 0 de la question qui suit. La brique désamorce l'épreuve qu'elle prépare : la question ne mesure plus la compréhension du sens, elle mesure la lecture de la brique posée trois lignes plus haut.",
+   "Le module 5 étape 1 présente un encadré « À retenir » écrit à la main en JSX (quatre cases : fermé / ouvert / semi-ouvert / demi-droite, plus la phrase sur ∩ et ∪) au lieu d'une KnowledgeBrick. Ce contenu est donc invisible à `npm run audit:knowledge` et ne contribue rien à la carte. Le contenu lui-même n'est pas perdu (types-intervalles a été posée au module 3), mais l'étape 1 du module de formalisation n'apporte aucune brique.",
+   "Le module 6 étape 2 propose une TapQuestion à DEUX options seulement, dont la mauvaise est « Oui, c'est presque 8 » pour « Le frigo affiche 8,5 °C, le vaccin est-il dans sa plage [2 ; 8] ? ». Le pouvoir discriminant est nul : aucun élève ne choisit une option qui se réfute elle-même.",
+   "Le module 5 étape 1 est le seul endroit de la leçon dont les lignes de BatchChoiceQuestion n'ont AUCUNE `correction` par ligne, et dont le `feedback` imprime la même règle générale que l'élève ait 0 ou 3 sur 3."
+  ],
+  "technicalProblems": [
+   "BUG DE VERDICT, module 6 étape 1 (la tâche vedette du module) : components/IntervalBuilder.jsx l. 58, `const v = Math.round((cur + d * s) / s) * s;` n'applique pas roundTo. Avec le pas 0,1 de cette étape (min 1, max 2,2, départ interval(1, 2.2)), quatre appuis sur « + » à gauche donnent from = 1.4000000000000001 et trois appuis sur « − » à droite donnent to = 1.9000000000000001 (vérifié numériquement). Or BuildCheck compare par sameInterval, qui teste `I.from === J.from` en strict (intervalUtils.js l. 92). L'élève qui atteint exactement la bonne réponse ]1,4 ; 1,9[ aux boutons ± s'entend donc dire « Pas encore », puis au bout de deux essais reçoit la révélation — et comme l'affichage passe par formatDec, il lit : « Ta construction : ]1,4 ; 1,9[. Il fallait : ]1,4 ; 1,9[ ». Deux écritures identiques, l'une déclarée fausse. Portée vérifiée en simulant tous les IntervalBuilder de la leçon : cette étape SEULE est touchée (M03 étapes 2 et 3, M04 étapes 1 et 4, M05 étapes 2 et 3 utilisent des pas de 1 ou 0,5, exacts en binaire). Le chemin par GLISSER est sain — les poignées passent par snapValue, qui se termine par roundTo — donc le bug ne frappe que l'élève qui utilise les boutons, et il est invisible à tout test e2e qui glisse au lieu de taper.",
+   "LABORATOIRES GELÉS APRÈS VALIDATION — huit occurrences, la classe de bug du mémo frozen_manipulation_bug_class : Module03QuatreCrochets.jsx l. 103 (disabled={done2}) et l. 124 (disabled={done3}) ; Module04InegaliteOuIntervalle.jsx l. 69 (disabled={d1}), l. 100 (InequalityComposer disabled={d2}) et l. 151 (disabled={d4}) ; Module05CroiserDeuxIntervalles.jsx l. 113 (disabled={d1}) et l. 142 (disabled={d2}) ; Module06Situations.jsx l. 71 (disabled={d1}). Une fois l'étape validée, l'élève ne peut plus rien manipuler — il ne peut notamment pas rejouer la construction après avoir vu la solution fantôme. Les modules 1 et 2, les deux modules d'exploration, laissent au contraire leurs laboratoires vivants : le gel n'est donc pas une convention de la leçon, c'est une dérive des modules 3 à 6.",
+   "components/VennSorter.jsx l. 36-39 : la fonction reason() écrit en dur « 12 » et « 18 » (`${n} divise 12 ET 18`) alors que A et B arrivent en props. Le seul appelant actuel (module 2) passe bien divisorsOf(12) et divisorsOf(18), donc rien de faux à l'écran aujourd'hui ; mais le composant est écrit comme réutilisable et son feedback mentirait pour tout autre couple.",
+   "Trois imports morts : `typeOf` dans Module03QuatreCrochets.jsx l. 9 et dans Module05CroiserDeuxIntervalles.jsx l. 9 ; `inequality` dans Module06Situations.jsx l. 8. Aucun des trois n'est référencé dans son fichier.",
+   "Module01LeManege.jsx : le `done` de l'étape 2 est `flipped`, une expression LIVE sur l'état courant (filter.openLo && !filter.openHi) et non un booléen verrouillé. Comme le laboratoire de cette étape reste — à raison — manipulable, un élève qui reretourne un crochet après avoir validé voit l'étape se dé-valider silencieusement. Le problème est la contrepartie du bon choix de ne pas geler : la solution est de latcher le done, pas de geler le lab.",
+   "Vérifications numériques : toutes les cibles et toutes les réponses sont exactes. divisors(12) ∩ divisors(18) = {1,2,3,6} et ∪ = {1,2,3,4,6,9,12,18} (conforme à knowledge.jsx) ; [−1 ; 4] ∩ ]2 ; 7[ = ]2 ; 4] et ∪ = [−1 ; 7[ (module 5, cibles calculées) ; [−5 ; −2] ∩ [0 ; 3] = ∅ (M05-S4-Q2) ; entiers de [2 ; 8] = 7 et de [−2,5 ; 3[ = 5 (module 6) ; ]1 ; 5[ contient 3 entiers (ei-e7) ; [−1 ; 3] ∩ [2 ; 6[ = [2 ; 3] (ei-e8) ; [1,2 ; 1,9[ ∩ [1,4 ; +∞[ = [1,4 ; 1,9[ (ei-e10) ; 15 + 2 × 5 = 25 (M06 étape 3). Aucun distracteur n'est numériquement égal ni à distance d'arrondi de la bonne réponse ; ei-e4 (2,001 contre la borne 2 exclue) et ei-e7 (« Une infinité ») sont au contraire des distracteurs bien visés.",
+   "components/intervalUtils.test.js verrouille exactement les pièges enseignés : le filtre du manège (1,899 accepté, 1,90 refusé) ; le retournement des crochets qui ne change QUE le sort des bornes ; interval(3, null).openTo === true et le fait que l'intervalle ne contient PAS Infinity ; les quatre notations et les deux demi-droites ; inequality avec une variable personnalisée (2,5 ≤ L < 4) ; typeOf sur les quatre types ; la commutativité de intersect ; et surtout union(A, B) === null pour deux intervalles disjoints — c'est-à-dire que le modèle sait qu'une réunion disjointe N'EST PAS un intervalle, ce que le corps de la brique reunion-intervalles énonce. Les cas de contact ([0;2[ ∪ [2;3] = [0;3] mais [0;2[ ∪ ]2;3] = null) sont testés. Le modèle est le plus propre des trois leçons ; aucun composant JSX n'a en revanche de test propre, ce qui est précisément la raison pour laquelle le bug d'arrondi de M06 a survécu."
+  ],
+  "duplicates": [
+   "P3 « Décrire un ensemble de nombres à l'aide d'un intervalle » est enseigné comme neuf ici (module 4 entier, traduction bidirectionnelle inégalité ↔ intervalle) et il est aussi ce que equations-et-inequations-2nde_P4 « Représenter l'ensemble des solutions sur une droite » éprouve en pratique : cette leçon-là ne fournissant aucun geste de représentation, ses trois demandes rattachées à P4 sont des QCM de choix de notation d'intervalle. Le doublon est net, et il est asymétrique : c'est ici qu'il est enseigné, là-bas qu'il est re-mesuré.",
+   "P4 (borne infinie toujours ouverte, types d'intervalles) recouvre partiellement nombres-reels-2nde_P2 « Représenter des nombres réels sur une droite graduée » : les deux leçons installent la droite réelle comme support. Le partage semble propre — ici c'est l'intervalle qui est l'objet, là c'est le nombre — mais aucune des deux ne le déclare.",
+   "P1 (∈, ⊂, ∩, ∪) est un prérequis déclaré de logique-et-raisonnement-2nde (dont le priorKnowledge consomme les clés établies ici) et de fonctions-2nde ; le contrat est correctement posé par les `establishes` de M02 (intervalle-crochets, ensemble-reels, appartient, inclus). Ce n'est pas un doublon mais une exportation assumée — la leçon est bien la source unique de ce vocabulaire pour le niveau."
+  ],
+  "recommendations": [
+   "Corriger IntervalBuilder.bump (components/IntervalBuilder.jsx l. 58) en passant par roundTo, ou faire comparer sameInterval à une tolérance : en l'état, la tâche vedette du module 6 refuse une réponse juste et affiche deux écritures identiques dont l'une est déclarée fausse.",
+   "Retirer les huit `disabled={…done}` des modules 3 à 6 : rien ne justifie qu'on ne puisse plus manipuler un intervalle après l'avoir construit, et les modules 1 et 2 montrent que la leçon sait faire autrement. Latcher en contrepartie le `done` de l'étape 2 du module 1.",
+   "Réécrire le lead de regle-intersection-vide (Module05CroiserDeuxIntervalles.jsx l. 194) : dire que 5 n'était dans aucun des deux cercles, et surtout pas que les diviseurs de 12 et de 18 « n'avaient rien en commun », ce que le module 2 a établi comme faux.",
+   "Déplacer la brique regle-sens-inegalite APRÈS la question M04-S3-Q1, ou retirer de son corps la mention du piège [3 ; +∞[ qui est le distracteur de cette question.",
+   "Décider du sort du complémentaire et du produit cartésien : soit les enseigner (le VennSorter du module 2 rend le complémentaire presque gratuit — la région « ni dans A ni dans B » existe déjà à l'écran), soit les inscrire dans teachingScope.exclude en nommant la leçon qui les prend en charge. Aujourd'hui ils sont simplement absents.",
+   "Convertir l'encadré « À retenir » du module 5 étape 1 en KnowledgeBrick, et donner une `correction` à chacune de ses trois lignes de BatchChoice.",
+   "Ajouter une troisième et une quatrième option à la question du module 6 étape 2 ; deux options dont l'une se réfute elle-même ne mesurent rien.",
+   "Supprimer les trois imports morts (typeOf ×2, inequality) et retirer le codage en dur de « 12 » et « 18 » dans VennSorter.reason."
+  ],
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Déterminer le complémentaire d'un ensemble",
+    "taughtAnyway": false,
+    "evidence": "Absent de bout en bout. grep sur tout le répertoire de la leçon : zéro occurrence de « complément », « complémentaire » ou « ∁ » (le seul hit du motif est Module00Diagnostic.jsx l. 58, « Le signe > sans barre est STRICT », qui parle du glyphe). Aucune fonction dans components/intervalUtils.js, aucune assertion dans intervalUtils.test.js, aucune brique dans knowledge.jsx, aucune épreuve du boss. Non déclaré non plus dans teachingScope.exclude, contrairement à ℚ/𝔻, à la valeur absolue et aux inéquations qui sont explicitement délégués à des leçons nommées. La quatrième région du VennSorter (« ni dans A ni dans B », module 2 étape 2) est pourtant déjà à l'écran et l'élève y place le nombre 5 : le geste existe, il n'est simplement jamais nommé.",
+    "recommendation": "absent"
+   },
+   {
+    "scopeItem": "Comprendre le produit cartésien",
+    "taughtAnyway": false,
+    "evidence": "Absent de bout en bout. grep sur tout le répertoire : zéro occurrence de « produit cartésien », « cartésien », « ℝ² » ou d'une notation A × B. Aucune fonction, aucune brique, aucune question, aucune épreuve. Non déclaré dans teachingScope.exclude. Aucun autre LP de 2de du référentiel ne le porte non plus (vérifié sur les 249 LP de la matrice) : la notion n'existe nulle part dans le niveau construit.",
+    "recommendation": "absent"
+   },
+   {
+    "scopeItem": "Utiliser l'ensemble vide",
+    "taughtAnyway": true,
+    "evidence": "Module 2 étape 3 : brique ensemble-vide posée AVANT la BatchChoiceQuestion dont la ligne r4 (« L'ensemble des entiers strictement compris entre 2 et 3 est vide ») l'éprouve. Repris au module 5 étape 4 comme résultat d'une intersection disjointe (A = [−5 ; −2], B = [0 ; 3], question M05-S4-Q2 dont la bonne option est « ∅ : aucun nombre n'est dans les deux ») avec la brique regle-intersection-vide. Enseigné deux fois, sous deux angles différents — mais aucune épreuve du boss ne mesure ∅ : les dix items l'ignorent, alors que c'est le seul concept de la leçon présenté à la fois comme objet et comme résultat d'opération. Absorbé dans P1 et P5.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Déterminer une réunion d'ensembles",
+    "taughtAnyway": true,
+    "evidence": "Deux fois, sur deux natures d'objets : sur des ensembles finis au module 2 étape 2 (VennSorter, brique vocab-intersection-reunion qui donne A ∪ B = {1;2;3;4;6;9;12;18}), puis sur des intervalles au module 5 étape 3 (IntervalBuilder par-dessus deux bandes, cible UNION = union(I, J) calculée, brique reunion-intervalles dont le corps avertit explicitement que la réunion n'est un intervalle QUE si les plages se touchent — invariant verrouillé par intervalUtils.test.js, union disjointe === null). Mais aucune épreuve du boss ne porte sur ∪ : les dix items testent ∩ (ei-e2, ei-e8, ei-e10) et jamais ∪. L'écart entre ce qui est enseigné et ce qui est mesuré est ici maximal.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Déterminer une intersection d'ensembles",
+    "taughtAnyway": true,
+    "evidence": "Module 2 étape 2 (VennSorter, zone centrale) puis module 5 étape 2 (IntervalBuilder, cible INTER calculée) et étape 4 (cas vide) ; module 6 étape 1 (les deux attractions). Mesuré par ei-e2, ei-e8 et ei-e10. Bien couvert et bien mesuré — signalé ici seulement parce que l'item officiel n'a pas de LP propre : il est réparti entre P1 (ensembles finis) et P5 (intervalles), sans qu'aucun intitulé ne le nomme.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Comprendre l'appartenance à un ensemble",
+    "taughtAnyway": true,
+    "evidence": "Module 2 étape 1 : SetBoxes fait ranger chaque nombre dans la plus petite boîte qui le contient, puis brique vocab-appartenance (« Ranger 7 dans ℕ et −3 hors de ℕ, cela s'écrit d'un symbole »), qui `establishes` la clé de lexique 'appartient'. Rejoué comme méthode au module 3 étape 4 (methode-appartenance-intervalle) sur les cas limites (3 ∈ [−2 ; 3[ non, −2 oui, 2,999 oui). Mesuré par ei-e1 et ei-e4. Couvert par P1 et P4 conjointement, sans LP dédié.",
+    "recommendation": "append-lp"
+   }
+  ],
+  "verticalPositioning": {
+   "revised": "Presque rien. Le priorKnowledge se limite à quatre acquis élémentaires du collège — nombres-relatifs, ordre-nombres, lecture-inegalite, abscisse — et le module 0 les diagnostique honnêtement (comparer −3 et −5, comparer 2,05 et 2,5, lire x > 4 comme strict, lire une abscisse à −1,5, traduire « poids maximal 30 kg » en p ≤ 30). Le collège fournit donc l'ordre et la droite graduée, et rien d'autre : c'est la leçon la plus authentiquement neuve des trois auditées.",
+   "extended": "Ce qui est étendu, c'est la LECTURE d'une inégalité, acquise en 4e/3e sur des nombres isolés, et qui devient ici la description d'un ENSEMBLE de nombres. La question du module 1 étape 1 (« Combien de tailles différentes peuvent passer entre 1,20 m et 1,90 m ? » — réponse : une infinité, contre les distracteurs 70 et 700) marque exactement ce passage : au collège on comparait des nombres, ici on manipule la plage tout entière comme un objet. La brique plage-infinite le formalise.",
+   "new": "Tout le vocabulaire ensembliste est neuf : ∈, ∉, ⊂, ∩, ∪, ∅, ℕ ⊂ ℤ ⊂ ℝ, et la notation par crochets elle-même. Neuve aussi la distinction entre borne et sort de la borne — le module 1 la met en scène en faisant retourner les crochets sans bouger les nombres. Neuve enfin la borne infinie et sa règle d'ouverture, dont l'impossibilité de fermeture est codée dans le modèle (intervalUtils.interval force l'ouverture d'une borne infinie) et donc éprouvée par le geste, pas énoncée.",
+   "formalized": "La leçon formalise l'écriture des ensembles de nombres, et c'est sa fonction principale dans le niveau. Ce que l'élève de collège écrivait en français (« entre 1,20 et 1,90, 1,90 exclu ») ou en inégalité (1,20 ≤ t < 1,90) devient une notation unique et compacte, [1,20 ; 1,90[, dont la leçon établit la convention par un geste (retourner un crochet change le verdict d'un point déjà testé) avant de la nommer (brique mem-borne). La correspondance signe strict ↔ crochet ouvert / signe large ↔ crochet fermé est le contenu formalisé central, et elle est mémorisée en une brique dédiée (mem-signe-crochet).",
+   "tool": "C'est la leçon-outil du chapitre, et elle le sait : ses `establishes` exportent explicitement les clés intervalle-crochets, ensemble-reels, appartient et inclus, qui sont consommées en priorKnowledge par equations-et-inequations-2nde (tout ensemble de solutions d'inéquation s'y écrit en intervalle), par fonctions-2nde (ensemble de définition, fonction définie sur une réunion d'intervalles — le LP P12 de cette leçon-là) et par logique-et-raisonnement-2nde. La conclusion du boss le dit en toutes lettres : « La valeur absolue et les inéquations s'appuieront dessus. » Le teachingScope.exclude est cohérent avec ce rôle : la leçon refuse de résoudre des inéquations (elle fournit seulement la langue pour en écrire les solutions) et refuse la nature des nombres (ℚ, 𝔻), qu'elle laisse à nombres-reels-2nde. La frontière est la mieux tenue des trois leçons auditées."
+  }
+ },
+ "session2Addendum": "17 LP appendus en Session 2 (compétences enseignées mais non mesurées), jugés le 2026-09-10."
 }

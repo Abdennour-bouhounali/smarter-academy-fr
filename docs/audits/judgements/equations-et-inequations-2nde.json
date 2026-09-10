@@ -472,6 +472,78 @@
     "kind": "consolidation"
    },
    "confidence": "medium"
+  },
+  "seconde_equations-et-inequations-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 1,
+     "mechanism": "brick:valeur-interdite"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 1,
+     "mechanism": "brick:quotient-nul"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "quotient-et-valeur-interdite",
+     "step": 1,
+     "mechanism": "assessment:eq-e11"
+    }
+   ],
+   "note": "L'ensemble de définition est nommé à côté de la valeur interdite, après le correctif de l'import manquant (Session 2)."
+  },
+  "seconde_equations-et-inequations-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 6,
+     "moduleSlug": "modeliser",
+     "step": 1,
+     "mechanism": "brick:methode-modeliser"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "modeliser",
+     "step": 1,
+     "mechanism": "brick:regle-interpreter-solution"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "modeliser",
+     "step": 1,
+     "mechanism": "assessment:eq-e12"
+    }
+   ],
+   "note": "Six situations à traduire en équation ou inéquation au module 6."
+  },
+  "seconde_equations-et-inequations-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 1,
+     "mechanism": "brick:methode-verifier-solution"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 1,
+     "mechanism": "manipulation:SolutionScanner"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-scanner-de-solutions",
+     "step": 1,
+     "mechanism": "assessment:eq-e13"
+    }
+   ],
+   "note": "Vérifier une solution est le geste même du scanner du module 1."
   }
  },
  "lessonLevel": {
@@ -559,5 +631,6 @@
    "formalized": "Le nombre de solutions devient un objet de discours : une, aucune (∅), toutes (ℝ), une infinité. La brique regle-nombre-de-solutions le formalise dès le module 1 après que le scanner a montré deux forfaits parallèles, et le drill du module 3 (ligne r4 : 5x ≥ 5x + 1 → ∅) l'applique aux inéquations. La notation ensembliste S = {…}, ∅, ℝ et les intervalles deviennent le langage standard des réponses — ce que le collège écrivait « x = 4 » s'écrit désormais « S = {4} ». La carte des quatre types × quatre méthodes (module 5 étape 4) formalise le CHOIX de méthode d'après la forme, ce que le collège n'avait pas à faire puisqu'il n'avait qu'une forme à la fois.",
    "tool": "La leçon consomme deux outils venus d'ailleurs en 2de et le déclare à moitié. (1) Les intervalles et leurs crochets : ils sont dans priorKnowledge ('intervalle', 'intervalle-crochets', 'ensemble-reels', 'appartient') et ce sont eux qui servent à écrire tout ensemble de solutions d'inéquation — la leçon ensembles-et-intervalles-2nde en est le prérequis explicite dans coursesData (prerequisites : « Calcul littéral », « Ensembles et intervalles »). (2) La FACTORISATION, elle, est consommée sans être déclarée : x² = 9 (module 4 étape 5) et eq-e8 en dépendent, et priorKnowledge ne mentionne ni 'factoriser' ni les identités remarquables. Dans l'autre sens, la leçon est elle-même l'outil de signe-fonctions-2nde (résoudre f(x) = 0, f(x) > 0) et de fonction-affine-2nde (P10, P11), auxquelles elle délègue explicitement le tableau de signes."
   }
- }
+ },
+ "session2Addendum": "17 LP appendus en Session 2 (compétences enseignées mais non mesurées), jugés le 2026-09-10."
 }

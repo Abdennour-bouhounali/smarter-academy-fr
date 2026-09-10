@@ -1,209 +1,677 @@
 {
-  "lesson": "logique-et-raisonnement-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-nombres-calculs-batch",
-  "learningPoints": {
-    "seconde_logique-et-raisonnement-2nde_P1": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "manipulation:ConjectureLab" },
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "question:M01-S1-Q1" },
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "brick:proposition" },
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 2, "mechanism": "question:M01-S2-Q1" },
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 1, "mechanism": "manipulation:FilterLab" }
-      ],
-      "manipulation": "ConjectureLab — tester n² + n + 41 pour n choisi (bouton « suivant », sauts vers 10, 20, 39, 40, 41, saisie libre) ; la primalité et la factorisation sont dérivées (isPrime, smallestFactorization). L'élève accumule des succès, puis 1 681 = 41 × 41 tombe. Vérifié : euler(40) = 1681 = 41².",
-      "assessmentQuestionIds": ["lg-e1", "lg-e2"],
-      "knowledgeItems": ["proposition", "contre-exemple", "regle-refuter-prouver", "mem-contre-exemple"],
-      "notes": "Manipulation signature d'une qualité rare : la conviction se construit par l'action (quarante succès) puis se casse par l'action. Le mot « proposition » n'arrive qu'après, comme nom de la phrase qu'on vient de tester. L'étape 2 sépare proposition / avis / expression / question — la facette « analyser » du LP. La facette « construire » est plus faible : l'élève n'ÉCRIT jamais une proposition, il choisit parmi quatre. Je retiens COVERED parce que le FilterLab du module 2 fait construire des propositions composées par branchement de connecteurs, ce qui est la forme de construction accessible sans saisie libre.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+ "lesson": "logique-et-raisonnement-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-nombres-calculs-batch",
+ "learningPoints": {
+  "seconde_logique-et-raisonnement-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "manipulation:ConjectureLab"
     },
-    "seconde_logique-et-raisonnement-2nde_P2": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 1, "mechanism": "manipulation:FilterLab" },
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 1, "mechanism": "brick:connecteurs" },
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 1, "mechanism": "question:M02-S1-Q1" },
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 1, "mechanism": "brick:regle-ou-inclusif" },
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 2, "mechanism": "brick:methode-negation" },
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 2, "mechanism": "question:M02-S2-Q1" },
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 3, "mechanism": "question:M02-S3-Q1" },
-        { "module": 2, "moduleSlug": "et-ou-non", "step": 3, "mechanism": "brick:mem-negation-limite" }
-      ],
-      "manipulation": "FilterLab — deux propriétés fixes (n pair, n > 5) sur le domaine 1..12 et un connecteur à brancher (ET / OU / NON P / NON Q) ; chaque nombre garde ses DEUX voyants allumés, si bien qu'on voit pourquoi il passe ou non. Vérifié : sur 1..12, seuls 1, 3, 5 échouent à « P OU Q ».",
-      "assessmentQuestionIds": ["lg-e3", "lg-e4"],
-      "knowledgeItems": ["connecteurs", "regle-ou-inclusif", "methode-negation", "mem-negation-limite"],
-      "notes": "Le OU inclusif est établi par le geste : 8 passe le filtre avec ses deux voyants allumés, ce que la question M02-S1-Q1 exploite directement (« le nombre 8, pair ET plus grand que 5, passe-t-il ? »). La négation est traitée avec son vrai piège, le cas limite : négation de « n > 5 » = « n ≤ 5 », et le distracteur « n < 5 » est l'erreur exacte. Le BatchChoiceQuestion final va au-delà des connecteurs simples : négation d'un « tous » et négation d'un ET (→ OU), qui sont les deux règles de De Morgan sous forme intuitive.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "question:M01-S1-Q1"
     },
-    "seconde_logique-et-raisonnement-2nde_P3": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 1, "mechanism": "manipulation:ImplicationLab" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 1, "mechanism": "brick:implication" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 1, "mechanism": "brick:reciproque" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 1, "mechanism": "question:M03-S1-Q1" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 2, "mechanism": "manipulation:ImplicationLab" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 2, "mechanism": "question:M03-S2-Q1" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 3, "mechanism": "brick:contraposee" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 3, "mechanism": "question:M03-S3-Q1" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 3, "mechanism": "brick:mem-cas-interdit" }
-      ],
-      "manipulation": "ImplicationLab — un domaine se répartit tout seul dans les QUATRE cases (P vraie/fausse × Q vraie/fausse) et la case « P vraie, Q FAUSSE » vire au rouge dès qu'elle contient un nombre ; une bascule teste le sens direct puis la réciproque. Deux couples successifs : (multiple de 4, pair) sur 1..16, puis (premier, impair) sur 3..20 où la réciproque tombe sur 9.",
-      "assessmentQuestionIds": ["lg-e5", "lg-e6"],
-      "knowledgeItems": ["implication", "reciproque", "contraposee", "mem-cas-interdit"],
-      "notes": "Le « seul cas interdit » est rendu visible plutôt qu'énoncé — c'est le meilleur choix de la leçon pour désamorcer « P ⇒ Q ne dit rien quand P est fausse » : les cases FT et FF sont pleines et grises, l'implication tient quand même. La réciproque est manipulée (bascule) sur DEUX couples, ce qui évite la généralisation d'un cas unique. Le batch de l'étape 3 comporte deux lignes de mobilisation (« 12 est multiple de 4, que conclure ? » / « 10 est pair, que conclure ? → rien ») qui testent l'usage de l'implication, pas sa définition. RÉSERVE sur la contraposée : voir officialScopeNotCovered.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "brick:proposition"
     },
-    "seconde_logique-et-raisonnement-2nde_P4": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "equivalence", "step": 1, "mechanism": "manipulation:ImplicationLab" },
-        { "module": 4, "moduleSlug": "equivalence", "step": 1, "mechanism": "question:M04-S1-Q1" },
-        { "module": 4, "moduleSlug": "equivalence", "step": 1, "mechanism": "brick:regle-equivalence-carre" },
-        { "module": 4, "moduleSlug": "equivalence", "step": 2, "mechanism": "manipulation:ImplicationLab" },
-        { "module": 4, "moduleSlug": "equivalence", "step": 2, "mechanism": "brick:equivalence" },
-        { "module": 4, "moduleSlug": "equivalence", "step": 2, "mechanism": "question:M04-S2-Q1" },
-        { "module": 4, "moduleSlug": "equivalence", "step": 3, "mechanism": "brick:methode-choisir-symbole" },
-        { "module": 4, "moduleSlug": "equivalence", "step": 3, "mechanism": "question:M04-S3-Q1" }
-      ],
-      "manipulation": "ImplicationLab sur le domaine {−3, −1, 0, 1,5, 3, 9} : tester « x = 3 ⇒ x² = 9 » (aucun cas interdit) puis la réciproque, qui tombe sur −3. Puis RÉPARER : le même lab avec « x = 3 ou x = −3 », où les deux cases interdites sont vides — l'équivalence apparaît comme un fait constaté des deux côtés.",
-      "assessmentQuestionIds": ["lg-e7", "lg-e8"],
-      "knowledgeItems": ["equivalence", "regle-equivalence-carre", "methode-choisir-symbole"],
-      "notes": "L'équivalence est enseignée par la casse puis la réparation, ce qui est très supérieur à une définition. La brique `equivalence` est posée à l'étape 2 sur le constat « les deux cases interdites sont vides », avant la question qui l'exige. Le batch final fait choisir entre ⇒ et ⇔ sur quatre couples dont deux sont des ⇔ authentiques (n pair / multiple de 2 ; x = 2 / 3x = 6) et deux des ⇒ seulement (multiple de 6 → multiple de 3, contre-exemple 9 ; x > 2 → x² > 4, contre-exemple −3) : l'élève ne peut pas répondre par un motif. lg-e7 rejoue le piège sur x² = 25 avec quatre options qui sont quatre erreurs distinctes.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 2,
+     "mechanism": "question:M01-S2-Q1"
     },
-    "seconde_logique-et-raisonnement-2nde_P5": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "manipulation:ConjectureLab" },
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "brick:contre-exemple" },
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 3, "mechanism": "brick:regle-refuter-prouver" },
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 3, "mechanism": "question:M01-S3-Q1" },
-        { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 3, "mechanism": "brick:mem-contre-exemple" },
-        { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 1, "mechanism": "manipulation:ImplicationLab" },
-        { "module": 4, "moduleSlug": "equivalence", "step": 1, "mechanism": "manipulation:ImplicationLab" }
-      ],
-      "manipulation": "Le contre-exemple est produit par l'élève lui-même trois fois : n = 40 dans ConjectureLab (il doit sauter jusqu'à le trouver), puis lu dans ImplicationLab où la case interdite se remplit (2, 6, 10, 14 pour « pair ⇒ multiple de 4 » ; 9 pour « impair ⇒ premier » ; −3 pour « x² = 9 ⇒ x = 3 »).",
-      "assessmentQuestionIds": ["lg-e2", "lg-e9"],
-      "knowledgeItems": ["contre-exemple", "regle-refuter-prouver", "mem-contre-exemple"],
-      "notes": "Le LP le mieux tissé de la leçon : le contre-exemple est rencontré dans quatre contextes différents (conjecture universelle, réciproque, implication, équivalence) et l'asymétrie réfuter/prouver est explicitement travaillée par M01-S3-Q1 (« que faut-il pour montrer qu'une affirmation est VRAIE ? »), dont la bonne réponse est un raisonnement, pas un exemple. lg-e9 demande de CHOISIR un contre-exemple valide (n = 3 pour n² + 1 premier — vérifié : 10 = 2 × 5), pas seulement de reconnaître le principe.",
-      "crossGrade": { "overlapsWith": ["2de:arithmetique-2nde"], "kind": "consolidation" },
-      "confidence": "high"
-    },
-    "seconde_logique-et-raisonnement-2nde_P6": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "labsurde", "step": 1, "mechanism": "manipulation:PigeonLab" },
-        { "module": 5, "moduleSlug": "labsurde", "step": 1, "mechanism": "brick:raisonnement-absurde" },
-        { "module": 5, "moduleSlug": "labsurde", "step": 1, "mechanism": "question:M05-S1-Q1" },
-        { "module": 5, "moduleSlug": "labsurde", "step": 2, "mechanism": "manipulation:ProofOrder" }
-      ],
-      "manipulation": "PigeonLab — ajouter des élèves un par un dans douze mois, le placement évitant les doublons TANT QUE C'EST POSSIBLE ; au treizième, le doublon est forcé et mis en évidence. L'élève exécute donc littéralement l'hypothèse absurde (« supposons qu'aucun mois ne soit partagé ») et se cogne. Vérifié : pigeonhole(12).firstShare = null, pigeonhole(13).firstShare = 13.",
-      "assessmentQuestionIds": ["lg-e10"],
-      "knowledgeItems": ["raisonnement-absurde", "vocab-quatre-outils"],
-      "notes": "Idée forte : l'absurde n'est pas raconté, il est JOUÉ — l'élève tente activement d'éviter la conclusion et échoue, ce qui est exactement la structure du raisonnement. La question M05-S1-Q1 fait nommer ce qu'on vient de faire, et ses distracteurs (« on a testé un exemple », « on a trouvé un contre-exemple ») sont les deux confusions réelles. L'étape 2 (ProofOrder sur les cinq lignes, de la supposition à la contradiction puis à la conclusion) fait manipuler la STRUCTURE de la preuve. Faiblesse : une seule épreuve de boss (lg-e10), et elle ne demande que la première ligne — la contradiction elle-même n'est jamais évaluée.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 1,
+     "mechanism": "manipulation:FilterLab"
     }
+   ],
+   "manipulation": "ConjectureLab — tester n² + n + 41 pour n choisi (bouton « suivant », sauts vers 10, 20, 39, 40, 41, saisie libre) ; la primalité et la factorisation sont dérivées (isPrime, smallestFactorization). L'élève accumule des succès, puis 1 681 = 41 × 41 tombe. Vérifié : euler(40) = 1681 = 41².",
+   "assessmentQuestionIds": [
+    "lg-e1",
+    "lg-e2"
+   ],
+   "knowledgeItems": [
+    "proposition",
+    "contre-exemple",
+    "regle-refuter-prouver",
+    "mem-contre-exemple"
+   ],
+   "notes": "Manipulation signature d'une qualité rare : la conviction se construit par l'action (quarante succès) puis se casse par l'action. Le mot « proposition » n'arrive qu'après, comme nom de la phrase qu'on vient de tester. L'étape 2 sépare proposition / avis / expression / question — la facette « analyser » du LP. La facette « construire » est plus faible : l'élève n'ÉCRIT jamais une proposition, il choisit parmi quatre. Je retiens COVERED parce que le FilterLab du module 2 fait construire des propositions composées par branchement de connecteurs, ce qui est la forme de construction accessible sans saisie libre.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "officialScopeNotCovered": [
-      {
-        "scopeItem": "Formuler une réciproque",
-        "taughtAnyway": true,
-        "evidence": [
-          { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 1, "mechanism": "manipulation:ImplicationLab" },
-          { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 1, "mechanism": "brick:reciproque" },
-          { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 3, "mechanism": "question:M03-S3-Q1" },
-          { "module": 6, "moduleSlug": "mission-finale-le-tribunal", "step": null, "mechanism": "question:lg-e5" }
-        ],
-        "recommendation": "append-lp",
-        "notes": "Enseigné et éprouvé, mais rattaché à P3 (« Comprendre et utiliser l'implication ») dont l'intitulé ne le nomme pas. La bascule « Q ⇒ P (réciproque) » d'ImplicationLab EST le geste de formulation : l'élève voit la phrase se réécrire (« On teste : si n est pair, alors n est multiple de 4 ») et les cases se redistribuer. lg-e5 (réciproque de « multiple de 6 ⇒ multiple de 3 », fausse à cause de 9) la mesure. Un LP dédié rendrait la couverture lisible."
-      },
-      {
-        "scopeItem": "Utiliser une contraposée",
-        "taughtAnyway": true,
-        "evidence": [
-          { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 3, "mechanism": "brick:contraposee" },
-          { "module": 3, "moduleSlug": "implication-et-reciproque", "step": 3, "mechanism": "question:M03-S3-Q1" },
-          { "module": 6, "moduleSlug": "mission-finale-le-tribunal", "step": null, "mechanism": "question:lg-e6" }
-        ],
-        "recommendation": "append-lp",
-        "notes": "Enseigné, mais c'est le point FAIBLE de la leçon et le seul dont l'établissement soit purement textuel. La brique `contraposee` (module 3 étape 3) n'est conditionnée à aucun geste : elle est rendue inconditionnellement en tête de l'étape, juste avant le BatchChoiceQuestion qui l'exige. ImplicationLab ne propose que deux directions (PQ, QP) — il n'existe aucune bascule « contraposée » qui montrerait que « non Q ⇒ non P » remplit exactement les mêmes cases que « P ⇒ Q », alors que le composant en est trivialement capable (il suffirait de passer not(Q) et not(P)). L'élève apprend donc la contraposée comme une formule à retenir, dans une leçon dont tout le reste est manipulé. Elle est éprouvée deux fois (ligne r2 du batch, puis lg-e6 avec la réciproque comme distracteur principal), ce qui la place au-dessus de MENTIONED_ONLY, mais l'ITEM OFFICIEL dit « utiliser » : or l'élève ne s'en sert jamais pour prouver quoi que ce soit — aucune démonstration de la leçon ne passe par la contraposée. Recommandation : ajouter une troisième bascule à ImplicationLab, et un LP dédié."
-      },
-      {
-        "scopeItem": "Comprendre les quantifications universelle et existentielle",
-        "taughtAnyway": true,
-        "evidence": [
-          { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "manipulation:ConjectureLab" },
-          { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "question:M01-S1-Q1" },
-          { "module": 2, "moduleSlug": "et-ou-non", "step": 3, "mechanism": "question:M02-S3-Q1" },
-          { "module": 6, "moduleSlug": "mission-finale-le-tribunal", "step": null, "mechanism": "question:lg-e4" }
-        ],
-        "recommendation": "append-lp",
-        "notes": "PARTIELLEMENT enseigné, et jamais nommé. La quantification UNIVERSELLE est réellement travaillée : toute la leçon repose sur l'asymétrie entre « pour tout n » (qu'un seul cas réfute) et sa preuve, ConjectureLab la fait vivre, M01-S1-Q1 la formule (« l'affirmation pour tout n … est FAUSSE »), et la ligne r3 du batch du module 2 fait nier un « tous » (→ « au moins un… ne pas »), repris au boss par lg-e4. La quantification EXISTENTIELLE, elle, n'apparaît QUE comme résultat de la négation d'un universel — jamais comme quantification à part entière, jamais dans une proposition à évaluer (« il existe un entier n tel que… »). Et les symboles ∀ et ∃ n'apparaissent NULLE PART dans la leçon (grep : zéro occurrence dans modules/, components/, knowledge.jsx), alors que le teachingScope de lesson.config.js annonce « quantification pour tout / il existe ». Aucun LP ne porte l'item ; aucune brique du knowledge non plus. À couvrir : nommer les deux quantifications dans une brique, et ajouter une question sur une proposition existentielle."
-      },
-      {
-        "scopeItem": "Raisonner par disjonction des cas",
-        "taughtAnyway": true,
-        "evidence": [
-          { "module": 5, "moduleSlug": "labsurde", "step": 3, "mechanism": "brick:disjonction-cas" },
-          { "module": 5, "moduleSlug": "labsurde", "step": 3, "mechanism": "question:M05-S3-Q1" },
-          { "module": 5, "moduleSlug": "labsurde", "step": 3, "mechanism": "brick:vocab-quatre-outils" }
-        ],
-        "recommendation": "append-lp",
-        "notes": "Enseigné au minimum syndical, et non évalué. Une seule étape (module 5 étape 3), aucune manipulation : la brique `disjonction-cas` est rendue inconditionnellement, suivie d'une unique TapQuestion sur n(n+1). C'est le même défaut que la contraposée — un enseignement textuel dans une leçon manipulée — aggravé par l'absence totale au boss : les dix épreuves ne comportent AUCUNE question sur la disjonction des cas (lg-e10, seule épreuve de la compétence « raisonnement », porte sur l'absurde). Un élève peut donc terminer la leçon avec le badge « Raisonnements sans faute » sans avoir jamais été mesuré sur la disjonction. Aucun LP ne la nomme : P6 dit « Raisonner par contradiction », ce qui est l'absurde et pas la disjonction. LP dédié + épreuve de boss nécessaires."
-      },
-      {
-        "scopeItem": "Utiliser des variables dans une proposition",
-        "taughtAnyway": true,
-        "evidence": [
-          { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "manipulation:ConjectureLab" },
-          { "module": 2, "moduleSlug": "et-ou-non", "step": 1, "mechanism": "manipulation:FilterLab" },
-          { "module": 1, "moduleSlug": "la-formule-qui-tombe", "step": 1, "mechanism": "brick:proposition" }
-        ],
-        "recommendation": "append-lp",
-        "notes": "Enseigné implicitement et bien : toutes les propositions de la leçon dépendent de n ou de x, et la brique `proposition` dit explicitement qu'une phrase avec variable n'est vraie ou fausse qu'une fois n fixé, ou qu'une fois précisé « pour tout n ». C'est couvert par P1 (« Construire et analyser une proposition mathématique ») sans être nommé dans son intitulé — signalé pour complétude, pas comme un manque réel."
-      }
-    ],
-    "pedagogicalProblems": [
-      "DÉSÉQUILIBRE STRUCTUREL : 12 items officiels pour 6 LPs. Sept items sont portés par un LP dont l'intitulé les nomme (proposition, connecteurs, négation, contre-exemple, implication, équivalence, absurde) ; cinq sont enseignés sans LP correspondant (réciproque, contraposée, quantifications, disjonction des cas, variables dans une proposition). Le rapport de couverture par LP donne donc une image trop favorable : les quatre derniers modules paraissent complets alors que deux techniques de raisonnement (contraposée, disjonction) reposent sur une brique de texte et une seule question.",
-      "Deux briques établies par le TEXTE seul, dans une leçon dont tout le reste est manipulé : `contraposee` (Module03Implication.jsx:102, rendue inconditionnellement en tête d'étape) et `disjonction-cas` (Module05Labsurde.jsx:70, idem). Aucun geste ne les précède. ImplicationLab pourrait porter la contraposée en une ligne (passer not(Q) et not(P)) ; la disjonction pourrait s'appuyer sur un mini-lab « deux cas qui couvrent tout ».",
-      "La disjonction des cas n'a AUCUNE épreuve au boss (dix épreuves : e1-e2 proposition, e3-e4 connecteurs, e5-e6 implication, e7-e8 équivalence, e9 contre-exemple, e10 absurde). Une compétence enseignée et jamais mesurée.",
-      "Les quantificateurs ∀ et ∃ sont annoncés dans teachingScope (lesson.config.js) et n'apparaissent nulle part dans le code livré. L'existentielle n'est travaillée que comme sous-produit d'une négation. Le commentaire d'en-tête du fichier de config est honnête sur ce point (« nommés mais pas manipulés symboliquement »), mais le teachingScope, lui, promet plus que la leçon ne tient.",
-      "Le module 5 porte le tag de brief « 🚪 Mission 06 » alors qu'il est le module 5 (Module05Labsurde.jsx:37) ; le boss étiquette SKILLS.raisonnement `module: 6`, qui est le boss lui-même. Un élève qui rate lg-e10 est renvoyé vers le boss au lieu de « Par l'absurde »."
-    ],
-    "technicalProblems": [
-      "components/BuildCheck.jsx : fichier mort, aucun module ne l'importe.",
-      "components/Stepper.jsx : jamais importé par un module ni par un autre composant de la leçon (contrairement à arithmetique-2nde où PackLab l'utilise) — fichier mort lui aussi.",
-      "components/logicUtils.js n'expose aucun helper de contraposée ni de disjonction de cas, alors qu'il modélise proprement tout le reste (prop, and, or, not, caseOf, counterexample, equivalence, universalCounterexample, pigeonhole). L'absence est cohérente avec le fait que ces deux notions ne sont pas manipulées — c'est la trace technique du problème pédagogique ci-dessus. `not` existe pourtant déjà : la contraposée serait `counterexample(not(Q), not(P), domain)`.",
-      "Aucun défaut mathématique. Vérifications : euler(40) = 1681 = 41 × 41 et euler(41) = 1763 = 41 × 43 ; sur 1..12, les seuls nombres hors de « pair OU > 5 » sont 1, 3, 5 ; counterexample(pair, multiple de 4, 1..16) = 2 ; 9 est le premier impair non premier de 3..20 ; equivalence(x = 3, x² = 9, {−3,−1,0,1.5,3,9}) = {forward: null, backward: −3} ; pigeonhole(13).firstShare = 13 ; lg-e9 : 3² + 1 = 10 = 2 × 5, non premier (et 2² + 1 = 5 est premier, ce que l'explain relève avec justesse). Distracteurs : aucun n'est arbitrairement proche de la bonne réponse ; ce sont tous des positions logiques nommées (OU exclusif, réciproque prise pour contraposée, « vraie presque partout »).",
-      "Aucune manipulation gelée après validation : ConjectureLab, FilterLab, ImplicationLab et PigeonLab reçoivent `disabled = false` par défaut et aucun module ne passe `disabled={done}`. Les seuls `disabled={…}` liés à un état de progression sont ceux des PredictionChips (modules 1, 3, 4), comportement voulu. ProofOrder verrouille ses lignes une fois l'étape terminée, ce qui est correct et non bloquant (révélation après deux essais).",
-      "Le JSDoc du boss (Module06MissionFinale.jsx:11-16) cite des pièges « M6 » et une couverture par modules qui ne correspond plus à la numérotation livrée."
-    ],
-    "duplicates": [
-      "Recouvrement avec 2de/arithmetique-2nde sur « des exemples ne prouvent pas ». Les deux leçons utilisent le polynôme d'Euler n² + n + 41 : ici comme manipulation signature (ConjectureLab, module 1), là dans l'explain de la fausse preuve de Léa (arithmetique-2nde, module 5 étape 3). Les deux leçons utilisent aussi le même composant ProofOrder pour reconstituer une démonstration, et la même preuve « n(n + 1) est pair » (ici module 1 étape 3 et module 5 étape 3 ; là module 2 étape 4 et boss ar-e10). Ce n'est pas un doublon d'enseignement — chacune déclare l'autre en exclusion et le contenu logique est ici, le contenu arithmétique là — mais l'exemple n(n+1) est mobilisé QUATRE fois entre les deux leçons, ce qui est répétitif. À surveiller si les deux leçons se suivent dans la progression.",
-      "Aucune duplication avec le collège : la logique explicite est une nouveauté de la 2de."
-    ],
-    "recommendations": [
-      "Ajouter une troisième bascule « contraposée (non Q ⇒ non P) » à ImplicationLab et conditionner la brique `contraposee` à son usage : l'élève verrait que les cases se remplissent identiquement, ce qui EST la démonstration de l'équivalence contraposée/implication. `not` existe déjà dans logicUtils.",
-      "Ajouter au boss une épreuve sur la disjonction des cas, aujourd'hui enseignée sans être mesurée.",
-      "Nommer les quantifications (∀ / ∃) dans une brique et ajouter une question sur une proposition EXISTENTIELLE (« il existe un entier n tel que n² = n »), pour tenir la promesse du teachingScope.",
-      "Ajouter quatre LPs append-only (réciproque, contraposée, quantifications, disjonction des cas) : six LPs pour douze items officiels rendent la couverture illisible.",
-      "Supprimer components/BuildCheck.jsx et components/Stepper.jsx (tous deux morts).",
-      "Corriger le tag de brief du module 5 et SKILLS.raisonnement.module."
-    ],
-    "verticalPositioning": {
-      "revised": "Aucune notion logique n'est révisée : le collège n'enseigne pas la logique explicitement. Ce qui est révisé, c'est le MATÉRIAU des exemples, déclaré en priorKnowledge et diagnostiqué au module 0 : parité et multiples (3e/multiples-diviseurs), nombres premiers (idem), carré d'un nombre (3e/racines-carrees), relatifs (4e_nombres_relatifs), calcul littéral (4e_calcul_litteral) et l'appartenance héritée d'« Ensembles et intervalles ».",
-      "extended": "Le contre-exemple, pratiqué en creux au collège (« trouve un cas où ça ne marche pas »), devient un outil nommé avec son statut logique : il réfute définitivement une affirmation universelle, et il ne prouve jamais rien. Le « si… alors » du langage courant, employé partout en géométrie de collège sans être analysé, devient une implication dont on sait qu'elle n'a qu'un seul cas interdit.",
-      "new": "Tout l'appareil : proposition, connecteurs ET / OU inclusif / NON, négation avec ses cas limites, implication et sa case interdite, réciproque, contraposée, équivalence, raisonnement par l'absurde et par disjonction des cas. C'est la première leçon du cursus où la forme d'un énoncé devient elle-même un objet d'étude.",
-      "formalized": "Ce que les élèves faisaient sans le nommer devient un vocabulaire opérationnel : la différence entre « réfuter » et « prouver » (un contre-exemple contre un raisonnement général), la distinction entre une implication et sa réciproque (source de la plupart des erreurs de raisonnement au collège), et le statut du OU mathématique face au « ou » du langage courant.",
-      "tool": "La leçon est l'outillage de TOUT le reste du lycée : la contraposée et l'absurde serviront à l'irrationalité de √2 (explicitement réservée ici plutôt qu'à « Nombres réels »), l'équivalence servira à justifier chaque étape d'une résolution d'équation (« Équations et inéquations »), et le contre-exemple servira à réfuter les fausses règles de calcul. Elle partage avec « Arithmétique » le même composant ProofOrder et le même modèle de démonstration."
+  "seconde_logique-et-raisonnement-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 1,
+     "mechanism": "manipulation:FilterLab"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 1,
+     "mechanism": "brick:connecteurs"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 1,
+     "mechanism": "question:M02-S1-Q1"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 1,
+     "mechanism": "brick:regle-ou-inclusif"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 2,
+     "mechanism": "brick:methode-negation"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 2,
+     "mechanism": "question:M02-S2-Q1"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q1"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "et-ou-non",
+     "step": 3,
+     "mechanism": "brick:mem-negation-limite"
     }
+   ],
+   "manipulation": "FilterLab — deux propriétés fixes (n pair, n > 5) sur le domaine 1..12 et un connecteur à brancher (ET / OU / NON P / NON Q) ; chaque nombre garde ses DEUX voyants allumés, si bien qu'on voit pourquoi il passe ou non. Vérifié : sur 1..12, seuls 1, 3, 5 échouent à « P OU Q ».",
+   "assessmentQuestionIds": [
+    "lg-e3",
+    "lg-e4"
+   ],
+   "knowledgeItems": [
+    "connecteurs",
+    "regle-ou-inclusif",
+    "methode-negation",
+    "mem-negation-limite"
+   ],
+   "notes": "Le OU inclusif est établi par le geste : 8 passe le filtre avec ses deux voyants allumés, ce que la question M02-S1-Q1 exploite directement (« le nombre 8, pair ET plus grand que 5, passe-t-il ? »). La négation est traitée avec son vrai piège, le cas limite : négation de « n > 5 » = « n ≤ 5 », et le distracteur « n < 5 » est l'erreur exacte. Le BatchChoiceQuestion final va au-delà des connecteurs simples : négation d'un « tous » et négation d'un ET (→ OU), qui sont les deux règles de De Morgan sous forme intuitive.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_logique-et-raisonnement-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "manipulation:ImplicationLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "brick:implication"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "brick:reciproque"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "question:M03-S1-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 2,
+     "mechanism": "manipulation:ImplicationLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 2,
+     "mechanism": "question:M03-S2-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 3,
+     "mechanism": "brick:contraposee"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 3,
+     "mechanism": "question:M03-S3-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 3,
+     "mechanism": "brick:mem-cas-interdit"
+    }
+   ],
+   "manipulation": "ImplicationLab — un domaine se répartit tout seul dans les QUATRE cases (P vraie/fausse × Q vraie/fausse) et la case « P vraie, Q FAUSSE » vire au rouge dès qu'elle contient un nombre ; une bascule teste le sens direct puis la réciproque. Deux couples successifs : (multiple de 4, pair) sur 1..16, puis (premier, impair) sur 3..20 où la réciproque tombe sur 9.",
+   "assessmentQuestionIds": [
+    "lg-e5",
+    "lg-e6"
+   ],
+   "knowledgeItems": [
+    "implication",
+    "reciproque",
+    "contraposee",
+    "mem-cas-interdit"
+   ],
+   "notes": "Le « seul cas interdit » est rendu visible plutôt qu'énoncé — c'est le meilleur choix de la leçon pour désamorcer « P ⇒ Q ne dit rien quand P est fausse » : les cases FT et FF sont pleines et grises, l'implication tient quand même. La réciproque est manipulée (bascule) sur DEUX couples, ce qui évite la généralisation d'un cas unique. Le batch de l'étape 3 comporte deux lignes de mobilisation (« 12 est multiple de 4, que conclure ? » / « 10 est pair, que conclure ? → rien ») qui testent l'usage de l'implication, pas sa définition. RÉSERVE sur la contraposée : voir officialScopeNotCovered.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_logique-et-raisonnement-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 1,
+     "mechanism": "manipulation:ImplicationLab"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 1,
+     "mechanism": "question:M04-S1-Q1"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 1,
+     "mechanism": "brick:regle-equivalence-carre"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 2,
+     "mechanism": "manipulation:ImplicationLab"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 2,
+     "mechanism": "brick:equivalence"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 2,
+     "mechanism": "question:M04-S2-Q1"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 3,
+     "mechanism": "brick:methode-choisir-symbole"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 3,
+     "mechanism": "question:M04-S3-Q1"
+    }
+   ],
+   "manipulation": "ImplicationLab sur le domaine {−3, −1, 0, 1,5, 3, 9} : tester « x = 3 ⇒ x² = 9 » (aucun cas interdit) puis la réciproque, qui tombe sur −3. Puis RÉPARER : le même lab avec « x = 3 ou x = −3 », où les deux cases interdites sont vides — l'équivalence apparaît comme un fait constaté des deux côtés.",
+   "assessmentQuestionIds": [
+    "lg-e7",
+    "lg-e8"
+   ],
+   "knowledgeItems": [
+    "equivalence",
+    "regle-equivalence-carre",
+    "methode-choisir-symbole"
+   ],
+   "notes": "L'équivalence est enseignée par la casse puis la réparation, ce qui est très supérieur à une définition. La brique `equivalence` est posée à l'étape 2 sur le constat « les deux cases interdites sont vides », avant la question qui l'exige. Le batch final fait choisir entre ⇒ et ⇔ sur quatre couples dont deux sont des ⇔ authentiques (n pair / multiple de 2 ; x = 2 / 3x = 6) et deux des ⇒ seulement (multiple de 6 → multiple de 3, contre-exemple 9 ; x > 2 → x² > 4, contre-exemple −3) : l'élève ne peut pas répondre par un motif. lg-e7 rejoue le piège sur x² = 25 avec quatre options qui sont quatre erreurs distinctes.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_logique-et-raisonnement-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "manipulation:ConjectureLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "brick:contre-exemple"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 3,
+     "mechanism": "brick:regle-refuter-prouver"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 3,
+     "mechanism": "question:M01-S3-Q1"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 3,
+     "mechanism": "brick:mem-contre-exemple"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "manipulation:ImplicationLab"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "equivalence",
+     "step": 1,
+     "mechanism": "manipulation:ImplicationLab"
+    }
+   ],
+   "manipulation": "Le contre-exemple est produit par l'élève lui-même trois fois : n = 40 dans ConjectureLab (il doit sauter jusqu'à le trouver), puis lu dans ImplicationLab où la case interdite se remplit (2, 6, 10, 14 pour « pair ⇒ multiple de 4 » ; 9 pour « impair ⇒ premier » ; −3 pour « x² = 9 ⇒ x = 3 »).",
+   "assessmentQuestionIds": [
+    "lg-e2",
+    "lg-e9"
+   ],
+   "knowledgeItems": [
+    "contre-exemple",
+    "regle-refuter-prouver",
+    "mem-contre-exemple"
+   ],
+   "notes": "Le LP le mieux tissé de la leçon : le contre-exemple est rencontré dans quatre contextes différents (conjecture universelle, réciproque, implication, équivalence) et l'asymétrie réfuter/prouver est explicitement travaillée par M01-S3-Q1 (« que faut-il pour montrer qu'une affirmation est VRAIE ? »), dont la bonne réponse est un raisonnement, pas un exemple. lg-e9 demande de CHOISIR un contre-exemple valide (n = 3 pour n² + 1 premier — vérifié : 10 = 2 × 5), pas seulement de reconnaître le principe.",
+   "crossGrade": {
+    "overlapsWith": [
+     "2de:arithmetique-2nde"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_logique-et-raisonnement-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "labsurde",
+     "step": 1,
+     "mechanism": "manipulation:PigeonLab"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "labsurde",
+     "step": 1,
+     "mechanism": "brick:raisonnement-absurde"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "labsurde",
+     "step": 1,
+     "mechanism": "question:M05-S1-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "labsurde",
+     "step": 2,
+     "mechanism": "manipulation:ProofOrder"
+    }
+   ],
+   "manipulation": "PigeonLab — ajouter des élèves un par un dans douze mois, le placement évitant les doublons TANT QUE C'EST POSSIBLE ; au treizième, le doublon est forcé et mis en évidence. L'élève exécute donc littéralement l'hypothèse absurde (« supposons qu'aucun mois ne soit partagé ») et se cogne. Vérifié : pigeonhole(12).firstShare = null, pigeonhole(13).firstShare = 13.",
+   "assessmentQuestionIds": [
+    "lg-e10"
+   ],
+   "knowledgeItems": [
+    "raisonnement-absurde",
+    "vocab-quatre-outils"
+   ],
+   "notes": "Idée forte : l'absurde n'est pas raconté, il est JOUÉ — l'élève tente activement d'éviter la conclusion et échoue, ce qui est exactement la structure du raisonnement. La question M05-S1-Q1 fait nommer ce qu'on vient de faire, et ses distracteurs (« on a testé un exemple », « on a trouvé un contre-exemple ») sont les deux confusions réelles. L'étape 2 (ProofOrder sur les cinq lignes, de la supposition à la contradiction puis à la conclusion) fait manipuler la STRUCTURE de la preuve. Faiblesse : une seule épreuve de boss (lg-e10), et elle ne demande que la première ligne — la contradiction elle-même n'est jamais évaluée.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_logique-et-raisonnement-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "brick:proposition"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "brick:contre-exemple"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "assessment:lg-e11"
+    }
+   ],
+   "note": "Une proposition à variable est testée sur plusieurs valeurs jusqu'au contre-exemple."
+  },
+  "seconde_logique-et-raisonnement-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "brick:reciproque"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "manipulation:ImplicationLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "assessment:lg-e12"
+    }
+   ],
+   "note": "La bascule P⇒Q / Q⇒P du laboratoire produit la réciproque et montre qu'elle peut être fausse."
+  },
+  "seconde_logique-et-raisonnement-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "brick:contraposee"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "implication-et-reciproque",
+     "step": 1,
+     "mechanism": "assessment:lg-e13"
+    }
+   ],
+   "note": "La contraposée est établie au module 3 et éprouvée par lg-e13."
+  },
+  "seconde_logique-et-raisonnement-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "brick:regle-refuter-prouver"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "brick:mem-contre-exemple"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-formule-qui-tombe",
+     "step": 1,
+     "mechanism": "assessment:lg-e14"
+    }
+   ],
+   "note": "« pour tout » se réfute par un contre-exemple, « il existe » se prouve par un exemple : les deux gestes sont faits."
+  },
+  "seconde_logique-et-raisonnement-2nde_P11": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "labsurde",
+     "step": 1,
+     "mechanism": "brick:disjonction-cas"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "labsurde",
+     "step": 1,
+     "mechanism": "brick:vocab-quatre-outils"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "labsurde",
+     "step": 1,
+     "mechanism": "assessment:lg-e15"
+    }
+   ],
+   "note": "La disjonction des cas a désormais sa brique ET son épreuve (lg-e15), qui manquaient toutes deux."
   }
+ },
+ "lessonLevel": {
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Formuler une réciproque",
+    "taughtAnyway": true,
+    "evidence": [
+     {
+      "module": 3,
+      "moduleSlug": "implication-et-reciproque",
+      "step": 1,
+      "mechanism": "manipulation:ImplicationLab"
+     },
+     {
+      "module": 3,
+      "moduleSlug": "implication-et-reciproque",
+      "step": 1,
+      "mechanism": "brick:reciproque"
+     },
+     {
+      "module": 3,
+      "moduleSlug": "implication-et-reciproque",
+      "step": 3,
+      "mechanism": "question:M03-S3-Q1"
+     },
+     {
+      "module": 6,
+      "moduleSlug": "mission-finale-le-tribunal",
+      "step": null,
+      "mechanism": "question:lg-e5"
+     }
+    ],
+    "recommendation": "append-lp",
+    "notes": "Enseigné et éprouvé, mais rattaché à P3 (« Comprendre et utiliser l'implication ») dont l'intitulé ne le nomme pas. La bascule « Q ⇒ P (réciproque) » d'ImplicationLab EST le geste de formulation : l'élève voit la phrase se réécrire (« On teste : si n est pair, alors n est multiple de 4 ») et les cases se redistribuer. lg-e5 (réciproque de « multiple de 6 ⇒ multiple de 3 », fausse à cause de 9) la mesure. Un LP dédié rendrait la couverture lisible."
+   },
+   {
+    "scopeItem": "Utiliser une contraposée",
+    "taughtAnyway": true,
+    "evidence": [
+     {
+      "module": 3,
+      "moduleSlug": "implication-et-reciproque",
+      "step": 3,
+      "mechanism": "brick:contraposee"
+     },
+     {
+      "module": 3,
+      "moduleSlug": "implication-et-reciproque",
+      "step": 3,
+      "mechanism": "question:M03-S3-Q1"
+     },
+     {
+      "module": 6,
+      "moduleSlug": "mission-finale-le-tribunal",
+      "step": null,
+      "mechanism": "question:lg-e6"
+     }
+    ],
+    "recommendation": "append-lp",
+    "notes": "Enseigné, mais c'est le point FAIBLE de la leçon et le seul dont l'établissement soit purement textuel. La brique `contraposee` (module 3 étape 3) n'est conditionnée à aucun geste : elle est rendue inconditionnellement en tête de l'étape, juste avant le BatchChoiceQuestion qui l'exige. ImplicationLab ne propose que deux directions (PQ, QP) — il n'existe aucune bascule « contraposée » qui montrerait que « non Q ⇒ non P » remplit exactement les mêmes cases que « P ⇒ Q », alors que le composant en est trivialement capable (il suffirait de passer not(Q) et not(P)). L'élève apprend donc la contraposée comme une formule à retenir, dans une leçon dont tout le reste est manipulé. Elle est éprouvée deux fois (ligne r2 du batch, puis lg-e6 avec la réciproque comme distracteur principal), ce qui la place au-dessus de MENTIONED_ONLY, mais l'ITEM OFFICIEL dit « utiliser » : or l'élève ne s'en sert jamais pour prouver quoi que ce soit — aucune démonstration de la leçon ne passe par la contraposée. Recommandation : ajouter une troisième bascule à ImplicationLab, et un LP dédié."
+   },
+   {
+    "scopeItem": "Comprendre les quantifications universelle et existentielle",
+    "taughtAnyway": true,
+    "evidence": [
+     {
+      "module": 1,
+      "moduleSlug": "la-formule-qui-tombe",
+      "step": 1,
+      "mechanism": "manipulation:ConjectureLab"
+     },
+     {
+      "module": 1,
+      "moduleSlug": "la-formule-qui-tombe",
+      "step": 1,
+      "mechanism": "question:M01-S1-Q1"
+     },
+     {
+      "module": 2,
+      "moduleSlug": "et-ou-non",
+      "step": 3,
+      "mechanism": "question:M02-S3-Q1"
+     },
+     {
+      "module": 6,
+      "moduleSlug": "mission-finale-le-tribunal",
+      "step": null,
+      "mechanism": "question:lg-e4"
+     }
+    ],
+    "recommendation": "append-lp",
+    "notes": "PARTIELLEMENT enseigné, et jamais nommé. La quantification UNIVERSELLE est réellement travaillée : toute la leçon repose sur l'asymétrie entre « pour tout n » (qu'un seul cas réfute) et sa preuve, ConjectureLab la fait vivre, M01-S1-Q1 la formule (« l'affirmation pour tout n … est FAUSSE »), et la ligne r3 du batch du module 2 fait nier un « tous » (→ « au moins un… ne pas »), repris au boss par lg-e4. La quantification EXISTENTIELLE, elle, n'apparaît QUE comme résultat de la négation d'un universel — jamais comme quantification à part entière, jamais dans une proposition à évaluer (« il existe un entier n tel que… »). Et les symboles ∀ et ∃ n'apparaissent NULLE PART dans la leçon (grep : zéro occurrence dans modules/, components/, knowledge.jsx), alors que le teachingScope de lesson.config.js annonce « quantification pour tout / il existe ». Aucun LP ne porte l'item ; aucune brique du knowledge non plus. À couvrir : nommer les deux quantifications dans une brique, et ajouter une question sur une proposition existentielle."
+   },
+   {
+    "scopeItem": "Raisonner par disjonction des cas",
+    "taughtAnyway": true,
+    "evidence": [
+     {
+      "module": 5,
+      "moduleSlug": "labsurde",
+      "step": 3,
+      "mechanism": "brick:disjonction-cas"
+     },
+     {
+      "module": 5,
+      "moduleSlug": "labsurde",
+      "step": 3,
+      "mechanism": "question:M05-S3-Q1"
+     },
+     {
+      "module": 5,
+      "moduleSlug": "labsurde",
+      "step": 3,
+      "mechanism": "brick:vocab-quatre-outils"
+     }
+    ],
+    "recommendation": "append-lp",
+    "notes": "Enseigné au minimum syndical, et non évalué. Une seule étape (module 5 étape 3), aucune manipulation : la brique `disjonction-cas` est rendue inconditionnellement, suivie d'une unique TapQuestion sur n(n+1). C'est le même défaut que la contraposée — un enseignement textuel dans une leçon manipulée — aggravé par l'absence totale au boss : les dix épreuves ne comportent AUCUNE question sur la disjonction des cas (lg-e10, seule épreuve de la compétence « raisonnement », porte sur l'absurde). Un élève peut donc terminer la leçon avec le badge « Raisonnements sans faute » sans avoir jamais été mesuré sur la disjonction. Aucun LP ne la nomme : P6 dit « Raisonner par contradiction », ce qui est l'absurde et pas la disjonction. LP dédié + épreuve de boss nécessaires."
+   },
+   {
+    "scopeItem": "Utiliser des variables dans une proposition",
+    "taughtAnyway": true,
+    "evidence": [
+     {
+      "module": 1,
+      "moduleSlug": "la-formule-qui-tombe",
+      "step": 1,
+      "mechanism": "manipulation:ConjectureLab"
+     },
+     {
+      "module": 2,
+      "moduleSlug": "et-ou-non",
+      "step": 1,
+      "mechanism": "manipulation:FilterLab"
+     },
+     {
+      "module": 1,
+      "moduleSlug": "la-formule-qui-tombe",
+      "step": 1,
+      "mechanism": "brick:proposition"
+     }
+    ],
+    "recommendation": "append-lp",
+    "notes": "Enseigné implicitement et bien : toutes les propositions de la leçon dépendent de n ou de x, et la brique `proposition` dit explicitement qu'une phrase avec variable n'est vraie ou fausse qu'une fois n fixé, ou qu'une fois précisé « pour tout n ». C'est couvert par P1 (« Construire et analyser une proposition mathématique ») sans être nommé dans son intitulé — signalé pour complétude, pas comme un manque réel."
+   }
+  ],
+  "pedagogicalProblems": [
+   "DÉSÉQUILIBRE STRUCTUREL : 12 items officiels pour 6 LPs. Sept items sont portés par un LP dont l'intitulé les nomme (proposition, connecteurs, négation, contre-exemple, implication, équivalence, absurde) ; cinq sont enseignés sans LP correspondant (réciproque, contraposée, quantifications, disjonction des cas, variables dans une proposition). Le rapport de couverture par LP donne donc une image trop favorable : les quatre derniers modules paraissent complets alors que deux techniques de raisonnement (contraposée, disjonction) reposent sur une brique de texte et une seule question.",
+   "Deux briques établies par le TEXTE seul, dans une leçon dont tout le reste est manipulé : `contraposee` (Module03Implication.jsx:102, rendue inconditionnellement en tête d'étape) et `disjonction-cas` (Module05Labsurde.jsx:70, idem). Aucun geste ne les précède. ImplicationLab pourrait porter la contraposée en une ligne (passer not(Q) et not(P)) ; la disjonction pourrait s'appuyer sur un mini-lab « deux cas qui couvrent tout ».",
+   "La disjonction des cas n'a AUCUNE épreuve au boss (dix épreuves : e1-e2 proposition, e3-e4 connecteurs, e5-e6 implication, e7-e8 équivalence, e9 contre-exemple, e10 absurde). Une compétence enseignée et jamais mesurée.",
+   "Les quantificateurs ∀ et ∃ sont annoncés dans teachingScope (lesson.config.js) et n'apparaissent nulle part dans le code livré. L'existentielle n'est travaillée que comme sous-produit d'une négation. Le commentaire d'en-tête du fichier de config est honnête sur ce point (« nommés mais pas manipulés symboliquement »), mais le teachingScope, lui, promet plus que la leçon ne tient.",
+   "Le module 5 porte le tag de brief « 🚪 Mission 06 » alors qu'il est le module 5 (Module05Labsurde.jsx:37) ; le boss étiquette SKILLS.raisonnement `module: 6`, qui est le boss lui-même. Un élève qui rate lg-e10 est renvoyé vers le boss au lieu de « Par l'absurde »."
+  ],
+  "technicalProblems": [
+   "components/BuildCheck.jsx : fichier mort, aucun module ne l'importe.",
+   "components/Stepper.jsx : jamais importé par un module ni par un autre composant de la leçon (contrairement à arithmetique-2nde où PackLab l'utilise) — fichier mort lui aussi.",
+   "components/logicUtils.js n'expose aucun helper de contraposée ni de disjonction de cas, alors qu'il modélise proprement tout le reste (prop, and, or, not, caseOf, counterexample, equivalence, universalCounterexample, pigeonhole). L'absence est cohérente avec le fait que ces deux notions ne sont pas manipulées — c'est la trace technique du problème pédagogique ci-dessus. `not` existe pourtant déjà : la contraposée serait `counterexample(not(Q), not(P), domain)`.",
+   "Aucun défaut mathématique. Vérifications : euler(40) = 1681 = 41 × 41 et euler(41) = 1763 = 41 × 43 ; sur 1..12, les seuls nombres hors de « pair OU > 5 » sont 1, 3, 5 ; counterexample(pair, multiple de 4, 1..16) = 2 ; 9 est le premier impair non premier de 3..20 ; equivalence(x = 3, x² = 9, {−3,−1,0,1.5,3,9}) = {forward: null, backward: −3} ; pigeonhole(13).firstShare = 13 ; lg-e9 : 3² + 1 = 10 = 2 × 5, non premier (et 2² + 1 = 5 est premier, ce que l'explain relève avec justesse). Distracteurs : aucun n'est arbitrairement proche de la bonne réponse ; ce sont tous des positions logiques nommées (OU exclusif, réciproque prise pour contraposée, « vraie presque partout »).",
+   "Aucune manipulation gelée après validation : ConjectureLab, FilterLab, ImplicationLab et PigeonLab reçoivent `disabled = false` par défaut et aucun module ne passe `disabled={done}`. Les seuls `disabled={…}` liés à un état de progression sont ceux des PredictionChips (modules 1, 3, 4), comportement voulu. ProofOrder verrouille ses lignes une fois l'étape terminée, ce qui est correct et non bloquant (révélation après deux essais).",
+   "Le JSDoc du boss (Module06MissionFinale.jsx:11-16) cite des pièges « M6 » et une couverture par modules qui ne correspond plus à la numérotation livrée."
+  ],
+  "duplicates": [
+   "Recouvrement avec 2de/arithmetique-2nde sur « des exemples ne prouvent pas ». Les deux leçons utilisent le polynôme d'Euler n² + n + 41 : ici comme manipulation signature (ConjectureLab, module 1), là dans l'explain de la fausse preuve de Léa (arithmetique-2nde, module 5 étape 3). Les deux leçons utilisent aussi le même composant ProofOrder pour reconstituer une démonstration, et la même preuve « n(n + 1) est pair » (ici module 1 étape 3 et module 5 étape 3 ; là module 2 étape 4 et boss ar-e10). Ce n'est pas un doublon d'enseignement — chacune déclare l'autre en exclusion et le contenu logique est ici, le contenu arithmétique là — mais l'exemple n(n+1) est mobilisé QUATRE fois entre les deux leçons, ce qui est répétitif. À surveiller si les deux leçons se suivent dans la progression.",
+   "Aucune duplication avec le collège : la logique explicite est une nouveauté de la 2de."
+  ],
+  "recommendations": [
+   "Ajouter une troisième bascule « contraposée (non Q ⇒ non P) » à ImplicationLab et conditionner la brique `contraposee` à son usage : l'élève verrait que les cases se remplissent identiquement, ce qui EST la démonstration de l'équivalence contraposée/implication. `not` existe déjà dans logicUtils.",
+   "Ajouter au boss une épreuve sur la disjonction des cas, aujourd'hui enseignée sans être mesurée.",
+   "Nommer les quantifications (∀ / ∃) dans une brique et ajouter une question sur une proposition EXISTENTIELLE (« il existe un entier n tel que n² = n »), pour tenir la promesse du teachingScope.",
+   "Ajouter quatre LPs append-only (réciproque, contraposée, quantifications, disjonction des cas) : six LPs pour douze items officiels rendent la couverture illisible.",
+   "Supprimer components/BuildCheck.jsx et components/Stepper.jsx (tous deux morts).",
+   "Corriger le tag de brief du module 5 et SKILLS.raisonnement.module."
+  ],
+  "verticalPositioning": {
+   "revised": "Aucune notion logique n'est révisée : le collège n'enseigne pas la logique explicitement. Ce qui est révisé, c'est le MATÉRIAU des exemples, déclaré en priorKnowledge et diagnostiqué au module 0 : parité et multiples (3e/multiples-diviseurs), nombres premiers (idem), carré d'un nombre (3e/racines-carrees), relatifs (4e_nombres_relatifs), calcul littéral (4e_calcul_litteral) et l'appartenance héritée d'« Ensembles et intervalles ».",
+   "extended": "Le contre-exemple, pratiqué en creux au collège (« trouve un cas où ça ne marche pas »), devient un outil nommé avec son statut logique : il réfute définitivement une affirmation universelle, et il ne prouve jamais rien. Le « si… alors » du langage courant, employé partout en géométrie de collège sans être analysé, devient une implication dont on sait qu'elle n'a qu'un seul cas interdit.",
+   "new": "Tout l'appareil : proposition, connecteurs ET / OU inclusif / NON, négation avec ses cas limites, implication et sa case interdite, réciproque, contraposée, équivalence, raisonnement par l'absurde et par disjonction des cas. C'est la première leçon du cursus où la forme d'un énoncé devient elle-même un objet d'étude.",
+   "formalized": "Ce que les élèves faisaient sans le nommer devient un vocabulaire opérationnel : la différence entre « réfuter » et « prouver » (un contre-exemple contre un raisonnement général), la distinction entre une implication et sa réciproque (source de la plupart des erreurs de raisonnement au collège), et le statut du OU mathématique face au « ou » du langage courant.",
+   "tool": "La leçon est l'outillage de TOUT le reste du lycée : la contraposée et l'absurde serviront à l'irrationalité de √2 (explicitement réservée ici plutôt qu'à « Nombres réels »), l'équivalence servira à justifier chaque étape d'une résolution d'équation (« Équations et inéquations »), et le contre-exemple servira à réfuter les fausses règles de calcul. Elle partage avec « Arithmétique » le même composant ProofOrder et le même modèle de démonstration."
+  }
+ },
+ "session2Addendum": "17 LP appendus en Session 2 (compétences enseignées mais non mesurées), jugés le 2026-09-10."
 }

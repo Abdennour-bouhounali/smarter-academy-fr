@@ -1,159 +1,501 @@
 {
-  "lesson": "valeur-absolue-distance-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-nombres-calculs-batch",
-  "learningPoints": {
-    "seconde_valeur-absolue-distance-2nde_P1": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "deux-bateaux-une-distance", "step": 1, "mechanism": "manipulation:DistanceLine" },
-        { "module": 1, "moduleSlug": "deux-bateaux-une-distance", "step": 1, "mechanism": "feedback" },
-        { "module": 1, "moduleSlug": "deux-bateaux-une-distance", "step": 1, "mechanism": "brick:valeur-absolue-distance-zero" },
-        { "module": 1, "moduleSlug": "deux-bateaux-une-distance", "step": 1, "mechanism": "brick:mem-valeur-absolue-positive" },
-        { "module": 1, "moduleSlug": "deux-bateaux-une-distance", "step": 2, "mechanism": "manipulation:DistanceLine" },
-        { "module": 1, "moduleSlug": "deux-bateaux-une-distance", "step": 2, "mechanism": "brick:regle-opposes-meme-distance" },
-        { "module": 1, "moduleSlug": "deux-bateaux-une-distance", "step": 3, "mechanism": "question:M01-S3-Q1" }
-      ],
-      "manipulation": "DistanceLine — un phare en 0, un bateau déplaçable (poignée + Stepper 0,5 km) ; la barre verte s'étire et sa LONGUEUR s'écrit. L'étape 1 n'est validée que si l'élève est passé par km −4 ET km +4 ; l'étape 2 affiche le jumeau creux −x (showTwin) et exige de trouver les DEUX positions à 5 km.",
-      "assessmentQuestionIds": ["va-e1", "va-e2"],
-      "knowledgeItems": ["valeur-absolue-distance-zero", "regle-opposes-meme-distance", "mem-valeur-absolue-positive"],
-      "notes": "Le meilleur enchaînement de la leçon. La notation |x| n'est introduite qu'à l'étape 3, comme NOM d'une longueur déjà mesurée deux fois — c'est exactement « geste, puis nom, puis demande ». La prédiction (« B ou C est plus loin ? ») est recueillie sans verdict et la manipulation tranche. La question M01-S3-Q1 (|−7|) n'est pas devinable de son énoncé : le distracteur −7 est la faute exacte visée. Le boss va-e1 rejoue l'opposition −6/6 sur des valeurs neuves.",
-      "crossGrade": { "overlapsWith": ["5e:nombres-relatifs-5e", "6e:abscisse"], "kind": "consolidation" },
-      "confidence": "high"
+ "lesson": "valeur-absolue-distance-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-nombres-calculs-batch",
+ "learningPoints": {
+  "seconde_valeur-absolue-distance-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "deux-bateaux-une-distance",
+     "step": 1,
+     "mechanism": "manipulation:DistanceLine"
     },
-    "seconde_valeur-absolue-distance-2nde_P2": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "calculer-une-valeur-absolue", "step": 1, "mechanism": "manipulation:AbsMachine" },
-        { "module": 2, "moduleSlug": "calculer-une-valeur-absolue", "step": 1, "mechanism": "brick:regle-calcul-valeur-absolue" },
-        { "module": 2, "moduleSlug": "calculer-une-valeur-absolue", "step": 2, "mechanism": "question:M02-S2-Q1" },
-        { "module": 2, "moduleSlug": "calculer-une-valeur-absolue", "step": 3, "mechanism": "brick:methode-calculer-expression-absolue" },
-        { "module": 2, "moduleSlug": "calculer-une-valeur-absolue", "step": 3, "mechanism": "question:M02-S3-Q2" }
-      ],
-      "manipulation": "AbsMachine — entrer des nombres (puces 3, −3, −0,5, 0, −12,75, 7,2 ou saisie libre) ; la machine ALLUME la règle utilisée (x ≥ 0 → x ; x < 0 → −x) et écrit le calcul via absText, y compris la forme |−3| = −(−3) = 3. L'étape n'est validée qu'après un positif, un négatif, 0, et au moins quatre essais.",
-      "assessmentQuestionIds": ["va-e2", "va-e3"],
-      "knowledgeItems": ["regle-calcul-valeur-absolue", "methode-calculer-expression-absolue"],
-      "notes": "L'obstacle réel (« −x est forcément négatif ») est attaqué frontalement à l'étape 2 par une question dédiée, pas seulement par un explain. L'étape 3 pose la brique methode-calculer-expression-absolue conditionnée à whyDone, donc AVANT le BatchChoiceQuestion qui l'exige : ordre source correct. La série de cinq lignes couvre les vrais pièges — −|−3| (l'opposé s'applique après), |3 − 5| (l'intérieur d'abord), |−6| − |6| = 0 — et pas seulement le cas facile.",
-      "crossGrade": { "overlapsWith": ["4e:nombres-relatifs"], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "deux-bateaux-une-distance",
+     "step": 1,
+     "mechanism": "feedback"
     },
-    "seconde_valeur-absolue-distance-2nde_P3": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "la-distance-entre-deux-nombres", "step": 1, "mechanism": "manipulation:DistanceLine" },
-        { "module": 3, "moduleSlug": "la-distance-entre-deux-nombres", "step": 1, "mechanism": "brick:distance-deux-nombres" },
-        { "module": 3, "moduleSlug": "la-distance-entre-deux-nombres", "step": 1, "mechanism": "brick:regle-distance-invariante" },
-        { "module": 3, "moduleSlug": "la-distance-entre-deux-nombres", "step": 2, "mechanism": "question:M03-S2-Q1" },
-        { "module": 3, "moduleSlug": "la-distance-entre-deux-nombres", "step": 2, "mechanism": "brick:mem-distance" },
-        { "module": 3, "moduleSlug": "la-distance-entre-deux-nombres", "step": 3, "mechanism": "question:M03-S3-Q2" }
-      ],
-      "manipulation": "DistanceLine à deux poignées (A et B) plus deux boutons « les deux avancent / reculent de 2 km ». L'étape exige d'avoir bougé un bateau ET fait deux translations conjointes : la barre ne change pas, ce qui fait vivre l'invariance par translation avant de l'énoncer.",
-      "assessmentQuestionIds": ["va-e4", "va-e5"],
-      "knowledgeItems": ["distance-deux-nombres", "regle-distance-invariante", "mem-distance"],
-      "notes": "L'invariance par translation est un choix pédagogique fort : elle justifie que la distance ne dépende que de l'ÉCART, donc que |b − a| = |a − b|. La question M03-S2-Q1 a pour bonne réponse « les deux : elles valent 8 », et son distracteur « 5 − 3 = 2 » est l'erreur de signe classique. La NumericQuestion finale (distance entre −7,5 et −2 = 5,5) sort de la manipulation et traite le cas difficile (deux nombres du même côté), avec un explainFor qui distingue l'erreur 9,5 (addition) de −5,5 (signe).",
-      "crossGrade": { "overlapsWith": ["4e:nombres-relatifs"], "kind": "extension" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "deux-bateaux-une-distance",
+     "step": 1,
+     "mechanism": "brick:valeur-absolue-distance-zero"
     },
-    "seconde_valeur-absolue-distance-2nde_P4": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 3, "mechanism": "manipulation:BeamLine" },
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 3, "mechanism": "brick:equation-distance-egale" },
-        { "module": 5, "moduleSlug": "situations", "step": 1, "mechanism": "brick:methode-tolerance" },
-        { "module": 5, "moduleSlug": "situations", "step": 1, "mechanism": "question:M05-S1-Q1" },
-        { "module": 5, "moduleSlug": "situations", "step": 1, "mechanism": "question:M05-S1-Q2" },
-        { "module": 5, "moduleSlug": "situations", "step": 3, "mechanism": "brick:regle-deux-positions" },
-        { "module": 5, "moduleSlug": "situations", "step": 4, "mechanism": "question:M05-S4-Q1" }
-      ],
-      "manipulation": "BeamLine avec bascule ≤ / < (module 4 étape 3) : mettre le bateau au km 5 puis exclure le bord, et voir |5 − 3| = 2 basculer de « éclairé » à « dans le noir ». Le module 5, lui, est un practice lab volontairement sans instrument : trois situations (vis 20 ± 0,5 mm, vaccin 2–8 °C, randonneur à moins de 1,5 km de la borne 12) plus le cas de la distance exacte.",
-      "assessmentQuestionIds": ["va-e8", "va-e9", "va-e10"],
-      "knowledgeItems": ["methode-tolerance", "regle-deux-positions", "equation-distance-egale", "faisceau-intervalle"],
-      "notes": "Les situations sont réellement variées (tolérance industrielle symétrique, plage donnée par ses bornes à convertir en centre/rayon, position approximative stricte, distance exacte à deux solutions) et le module va au-delà du cas facile : la NumericQuestion « de combien la vis de 19,45 mm dépasse-t-elle » demande un DEUXIÈME calcul (0,55 puis 0,55 − 0,5 = 0,05, vérifié numériquement) et son explainFor traite explicitement le piège 0,55. Réserve : la brique methode-tolerance (module 5 étape 1) n'est pas conditionnée à un geste — elle est posée sous une RealLine statique, ce qui reste de l'illustration plus que de la manipulation. Le geste porteur est celui du module 4, ce qui suffit pour COVERED.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "deux-bateaux-une-distance",
+     "step": 1,
+     "mechanism": "brick:mem-valeur-absolue-positive"
     },
-    "seconde_valeur-absolue-distance-2nde_P5": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 1, "mechanism": "manipulation:BeamLine" },
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 1, "mechanism": "brick:faisceau-intervalle" },
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 1, "mechanism": "question:M04-S1-Q1" },
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 2, "mechanism": "manipulation:BeamLine" },
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 2, "mechanism": "manipulation:BuildCheck" },
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 2, "mechanism": "brick:methode-centre-rayon" },
-        { "module": 4, "moduleSlug": "le-faisceau", "step": 3, "mechanism": "brick:mem-faisceau" },
-        { "module": 5, "moduleSlug": "situations", "step": 2, "mechanism": "question:M05-S2-Q1" }
-      ],
-      "manipulation": "BeamLine — un centre a (Stepper), un rayon r (Stepper), un bateau-test x déplaçable, une bascule bord inclus / exclu. L'intervalle éclairé est DÉRIVÉ (absInequalitySet) et dessiné avec ses vrais crochets (RealLine `intervals` avec openFrom/openTo) ; le verdict « |x − a| = d → éclairé / dans le noir » s'écrit en clair. L'étape 1 n'est validée qu'après avoir trouvé une position éclairée, une dans le noir, ET un bord (1 ou 5). L'étape 2 inverse le sens : régler a et r pour éclairer exactement [−1 ; 7], validé par BuildCheck.",
-      "assessmentQuestionIds": ["va-e6", "va-e7", "va-e8"],
-      "knowledgeItems": ["faisceau-intervalle", "methode-centre-rayon", "mem-faisceau", "equation-distance-egale"],
-      "notes": "Les DEUX sens du lien sont manipulés : de l'inéquation vers l'intervalle (étape 1) et de l'intervalle vers l'inéquation (étape 2, BuildCheck sur centre/rayon — centerRadius(−1,7) = {a: 3, r: 4}, vérifié). La bascule strict/large est le geste qui fait la différence entre crochet fermé et ouvert, et l'étape 3 l'éprouve sur le cas limite x = 5. Le boss va-e7 demande l'inéquation de ]−7 ; −1[ (centre −4, rayon 3, strict : vérifié) — le sens inverse, sur un intervalle négatif, avec le distracteur |x − 4| < 3 qui piège le signe du centre.",
-      "crossGrade": { "overlapsWith": ["2de:ensembles-et-intervalles-2nde"], "kind": "consolidation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "deux-bateaux-une-distance",
+     "step": 2,
+     "mechanism": "manipulation:DistanceLine"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "deux-bateaux-une-distance",
+     "step": 2,
+     "mechanism": "brick:regle-opposes-meme-distance"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "deux-bateaux-une-distance",
+     "step": 3,
+     "mechanism": "question:M01-S3-Q1"
     }
+   ],
+   "manipulation": "DistanceLine — un phare en 0, un bateau déplaçable (poignée + Stepper 0,5 km) ; la barre verte s'étire et sa LONGUEUR s'écrit. L'étape 1 n'est validée que si l'élève est passé par km −4 ET km +4 ; l'étape 2 affiche le jumeau creux −x (showTwin) et exige de trouver les DEUX positions à 5 km.",
+   "assessmentQuestionIds": [
+    "va-e1",
+    "va-e2"
+   ],
+   "knowledgeItems": [
+    "valeur-absolue-distance-zero",
+    "regle-opposes-meme-distance",
+    "mem-valeur-absolue-positive"
+   ],
+   "notes": "Le meilleur enchaînement de la leçon. La notation |x| n'est introduite qu'à l'étape 3, comme NOM d'une longueur déjà mesurée deux fois — c'est exactement « geste, puis nom, puis demande ». La prédiction (« B ou C est plus loin ? ») est recueillie sans verdict et la manipulation tranche. La question M01-S3-Q1 (|−7|) n'est pas devinable de son énoncé : le distracteur −7 est la faute exacte visée. Le boss va-e1 rejoue l'opposition −6/6 sur des valeurs neuves.",
+   "crossGrade": {
+    "overlapsWith": [
+     "5e:nombres-relatifs-5e",
+     "6e:abscisse"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "officialScopeNotCovered": [
-      {
-        "scopeItem": "Résoudre une inéquation de la forme |x-a| ≤ r",
-        "taughtAnyway": true,
-        "evidence": [
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 1, "mechanism": "manipulation:BeamLine" },
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 1, "mechanism": "brick:faisceau-intervalle" },
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 1, "mechanism": "question:M04-S1-Q1" },
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 3, "mechanism": "manipulation:BeamLine" },
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 3, "mechanism": "question:M04-S3-Q1" },
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 3, "mechanism": "brick:mem-faisceau" },
-          { "module": 6, "moduleSlug": "mission-finale-le-phare", "step": null, "mechanism": "question:va-e6" }
-        ],
-        "recommendation": "append-lp",
-        "notes": "VÉRIFIÉ : Module04LeFaisceau enseigne réellement |x − a| ≤ r ⇔ x ∈ [a − r ; a + r] par le geste, et non par l'énoncé. Le bateau-test se promène le long de la côte, BeamLine calcule |x − a| et affiche « éclairé / dans le noir » ; l'étape ne se valide qu'après avoir touché les trois régimes (intérieur, extérieur, bord), c'est-à-dire après avoir découvert que la zone est SYMÉTRIQUE et bornée des deux côtés. La brique faisceau-intervalle est posée sur ce constat, puis la question M04-S1-Q1 demande l'intervalle avec des distracteurs qui sont les erreurs réelles (]−∞ ; 5] oublie le bord gauche, [3 ; 5] oublie un côté entier, [−2 ; 2] centre en 0). L'étape 3 traite le cas strict par la bascule et le cas limite x = 5. La résolution est donc GRAPHIQUE et conceptuelle (centre/rayon), jamais algébrique par double inégalité — ce qui est le traitement attendu en 2de et cohérent avec l'exclusion déclarée « résolution générale d'inéquations ». Aucun des 5 LPs ne nomme cette compétence : P5 dit « relier distance, valeur absolue et intervalles » (le lien, pas la résolution) et P4 « résoudre des situations utilisant des distances » (le contexte, pas la forme canonique). Un LP P6 « Résoudre une inéquation |x − a| ≤ r et donner l'ensemble des solutions » est justifié."
-      },
-      {
-        "scopeItem": "Représenter graphiquement l'ensemble des solutions",
-        "taughtAnyway": true,
-        "evidence": [
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 1, "mechanism": "manipulation:BeamLine" },
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 2, "mechanism": "manipulation:BeamLine" },
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 2, "mechanism": "manipulation:BuildCheck" },
-          { "module": 4, "moduleSlug": "le-faisceau", "step": 3, "mechanism": "manipulation:BeamLine" },
-          { "module": 5, "moduleSlug": "situations", "step": 1, "mechanism": "intro" }
-        ],
-        "recommendation": "append-lp",
-        "notes": "VÉRIFIÉ, avec une nuance importante. BeamLine DESSINE l'ensemble des solutions : RealLine reçoit `intervals=[{from: a−r, to: a+r, openFrom: strict, openTo: strict}]`, donc la bande éclairée apparaît avec ses crochets fermés ou ouverts selon la bascule, et la notation [1 ; 5] / ]1 ; 5[ s'écrit sous le dessin (notation(I)). L'étape 2 va plus loin : l'élève CONSTRUIT lui-même la représentation en réglant centre et rayon jusqu'à ce que la bande coïncide avec [−1 ; 7], et BuildCheck valide sa construction. C'est donc bien une représentation graphique produite par l'élève, pas seulement lue. La nuance : l'élève n'a jamais à tracer une bande sur une droite VIERGE ni à choisir entre crochet ouvert et fermé sur un schéma statique — il agit sur des paramètres (a, r, strict) et la représentation en découle. Aucune épreuve du boss ne demande de produire une représentation graphique (va-e6 fournit une RealLine avec le seul centre marqué, en support, et attend un intervalle en notation). L'item est donc enseigné et manipulé, mais non mesuré graphiquement à l'évaluation. Un LP dédié — ou son rattachement explicite à P5 — clarifierait la couverture."
-      }
-    ],
-    "pedagogicalProblems": [
-      "Le laboratoire du module 4 étape 2 est GELÉ dès que la construction est validée : `<BeamLine … disabled={d2} />` (Module04LeFaisceau.jsx:81). Une fois que l'élève a trouvé centre 3 / rayon 4 — ou après deux essais ratés, BuildCheck révélant la réponse et appelant onDone qui met d2 à true — les Steppers a et r et la poignée x deviennent inertes. L'élève ne peut plus vérifier « et si le rayon était 5 ? », c'est-à-dire qu'il perd l'instrument au moment exact où il vient de comprendre à quoi il sert. C'est la classe de bug frozen-manipulation documentée en 6e ; correctif : retirer `disabled={d2}`.",
-      "Le module 5 est un practice lab entièrement sans manipulation : quatre questions et une RealLine statique. C'est un choix assumé (« la manipulation s'efface »), mais la brique methode-tolerance y est posée SANS geste préalable, sur une figure illustrative — elle est donc établie par le texte, pas par l'action. Comme le geste équivalent existe au module 4 (centre/rayon), le LP reste couvert, mais la brique elle-même ne respecte pas « geste → brique ».",
-      "Le module 5 porte le tag de brief « 🔧 Mission 06 » alors qu'il est le module 5 (Module05Situations.jsx:144). Idem dans le boss : SKILLS.situations est étiqueté `module: 6` (Module06MissionFinale.jsx) alors que « Situations » est le module 5 — le profil de maîtrise renvoie l'élève vers le boss au lieu du module à refaire.",
-      "L'ensemble des solutions n'est jamais demandé sous forme graphique à l'évaluation : les dix épreuves sont des QCM textuels. va-e6 affiche bien une RealLine mais seulement comme décor (le centre a = 1 marqué), et la réponse attendue est une notation d'intervalle. La facette « représenter » de l'objet officiel est enseignée sans être mesurée."
-    ],
-    "technicalProblems": [
-      "GEL DE LABORATOIRE (confirmé, unique occurrence des quatre leçons auditées) : Module04LeFaisceau.jsx:81, `disabled={d2}` sur BeamLine. BeamLine propage ce `disabled` à RealLine, aux deux Steppers et vide le tableau `handles` (BeamLine.jsx:39, 45, 46) : la manipulation est totalement inerte après validation.",
-      "Le module 3 calcule `measureDone` par `const measureDone = a === -3 && b === 5 ? false : true;` (Module03DistanceEntreDeuxNombres.jsx:27). L'expression est correcte mais son intention est fragile : elle vaut true dès que l'élève ramène A et B sur n'importe quelle autre position, y compris une position moins parlante ; et si l'élève revient exactement sur (−3 ; 5) après avoir bougé, l'étape se DÉVALIDE. Un état `moved` monotone serait plus sûr.",
-      "Le boss cite en JSDoc des modules « M5 » et « M6 » (Module06MissionFinale.jsx:11-14) qui ne correspondent plus à la numérotation livrée (7 modules, 0..6) — même dérive de commentaire que dans nombres-reels-2nde.",
-      "Aucun défaut mathématique. Vérifications numériques : centerRadius(−1, 7) = {a: 3, r: 4} ; centerRadius(−7, −1) = {a: −4, r: 3} donc |x + 4| < 3 (va-e7) est exact ; |19,45 − 20| = 0,55 et le dépassement 0,55 − 0,5 = 0,05 (M05-S1-Q2) ; centre du vaccin (2 + 8)/2 = 5, rayon 3 ; randonneur ]10,5 ; 13,5[ ; |x − (−2)| = 3 → {−5 ; 1}. Les distracteurs sont tous des erreurs de méthode nommées (oubli d'un côté, centre pris pour une borne, strict/large confondus), jamais des valeurs artificiellement proches.",
-      "components/BuildCheck.jsx est ici correctement utilisé (module 4 étape 2) — contrairement aux trois autres leçons du lot où c'est un fichier mort.",
-      "Aucun import mort. Les six composants (AbsMachine, BeamLine, BuildCheck, DistanceLine, PredictionChips, Stepper) sont tous rendus par au moins un module."
-    ],
-    "duplicates": [
-      "Recouvrement voulu avec 2de/ensembles-et-intervalles-2nde, qui installe la notation en crochets et l'appartenance ; ici elle est SUPPOSÉE acquise (priorKnowledge : intervalle, intervalle-crochets, appartient, diagnostiquées par q4 et q5 du module 0) et réinvestie, jamais réenseignée. Pas de duplication.",
-      "Aucun doublon avec les autres leçons de 2de : la valeur absolue est explicitement exclue de nombres-reels-2nde (teachingScope.exclude), la fonction valeur absolue est renvoyée à fonctions-de-reference-2nde, et la résolution générale d'inéquations à equations-et-inequations-2nde. Le découpage est propre."
-    ],
-    "recommendations": [
-      "Retirer `disabled={d2}` (Module04LeFaisceau.jsx:81) : c'est le correctif le plus urgent de la leçon.",
-      "Ajouter deux LPs append-only : « Résoudre une inéquation |x − a| ≤ r » et « Représenter graphiquement l'ensemble des solutions » — l'enseignement existe et est manipulé, seule l'attribution manque.",
-      "Ajouter au boss une épreuve où l'élève choisit la BONNE REPRÉSENTATION graphique parmi quatre bandes (bords ouverts/fermés, centre décalé), pour mesurer la facette « représenter ».",
-      "Faire précéder la brique methode-tolerance (module 5 étape 1) d'un geste — par exemple un BeamLine réglé sur la vis, où l'élève trouve les deux longueurs limites acceptées.",
-      "Corriger les tags de brief (« Mission 06 » → « Mission 05 ») et SKILLS.situations.module (6 → 5)."
-    ],
-    "verticalPositioning": {
-      "revised": "Les nombres relatifs et l'opposé (5e/nombres-relatifs-5e, 4e_nombres_relatifs : « Enchaîner les quatre opérations sur des relatifs ») ; l'abscisse d'un point sur une droite graduée (6e) ; la soustraction de relatifs 5 − (−3) = 8, réactivée par le diagnostic q3 précisément parce qu'elle porte |5 − (−3)|.",
-      "extended": "L'idée collège de « distance à zéro » (implicite dans la comparaison de relatifs : plus un négatif est loin de 0, plus il est petit) devient une opération nommée et calculable, puis se généralise en distance entre deux nombres quelconques. L'écart entre deux relatifs, calculé au collège par « grand − petit », devient |b − a| valable sans se demander lequel est le plus grand.",
-      "new": "La notation |x| elle-même et sa définition par cas (x si x ≥ 0, −x sinon) ; l'idée qu'un signe « − » devant une lettre ne signifie pas « négatif » mais « opposé de » ; le faisceau |x − a| ≤ r comme description d'un intervalle par son centre et son rayon, et la lecture inverse (d'un intervalle vers son écriture en valeur absolue) ; l'équation |x − a| = r et ses deux solutions.",
-      "formalized": "Le couple centre/rayon comme deuxième lecture d'un intervalle, à côté du couple de bornes hérité d'« Ensembles et intervalles » : (−1 + 7)/2 = 3 et (7 − (−1))/2 = 4. Et la correspondance stricte entre le signe de l'inégalité et le type de crochet, matérialisée par une bascule dans le laboratoire plutôt que par une convention à retenir.",
-      "tool": "La leçon fournit l'outil de la TOLÉRANCE, réutilisé partout ensuite : une mesure « 20 mm à 0,5 près » s'écrit |d − 20| ≤ 0,5. C'est aussi le pré-requis direct de la fonction valeur absolue (fonctions-de-reference-2nde) et des voisinages en Première. Elle réutilise la droite réelle installée par nombres-reels-2nde, dont le boss annonce explicitement la suite (« La valeur absolue s'appuiera sur cette droite »)."
+  "seconde_valeur-absolue-distance-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "calculer-une-valeur-absolue",
+     "step": 1,
+     "mechanism": "manipulation:AbsMachine"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "calculer-une-valeur-absolue",
+     "step": 1,
+     "mechanism": "brick:regle-calcul-valeur-absolue"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "calculer-une-valeur-absolue",
+     "step": 2,
+     "mechanism": "question:M02-S2-Q1"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "calculer-une-valeur-absolue",
+     "step": 3,
+     "mechanism": "brick:methode-calculer-expression-absolue"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "calculer-une-valeur-absolue",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q2"
     }
+   ],
+   "manipulation": "AbsMachine — entrer des nombres (puces 3, −3, −0,5, 0, −12,75, 7,2 ou saisie libre) ; la machine ALLUME la règle utilisée (x ≥ 0 → x ; x < 0 → −x) et écrit le calcul via absText, y compris la forme |−3| = −(−3) = 3. L'étape n'est validée qu'après un positif, un négatif, 0, et au moins quatre essais.",
+   "assessmentQuestionIds": [
+    "va-e2",
+    "va-e3"
+   ],
+   "knowledgeItems": [
+    "regle-calcul-valeur-absolue",
+    "methode-calculer-expression-absolue"
+   ],
+   "notes": "L'obstacle réel (« −x est forcément négatif ») est attaqué frontalement à l'étape 2 par une question dédiée, pas seulement par un explain. L'étape 3 pose la brique methode-calculer-expression-absolue conditionnée à whyDone, donc AVANT le BatchChoiceQuestion qui l'exige : ordre source correct. La série de cinq lignes couvre les vrais pièges — −|−3| (l'opposé s'applique après), |3 − 5| (l'intérieur d'abord), |−6| − |6| = 0 — et pas seulement le cas facile.",
+   "crossGrade": {
+    "overlapsWith": [
+     "4e:nombres-relatifs"
+    ],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_valeur-absolue-distance-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "la-distance-entre-deux-nombres",
+     "step": 1,
+     "mechanism": "manipulation:DistanceLine"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "la-distance-entre-deux-nombres",
+     "step": 1,
+     "mechanism": "brick:distance-deux-nombres"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "la-distance-entre-deux-nombres",
+     "step": 1,
+     "mechanism": "brick:regle-distance-invariante"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "la-distance-entre-deux-nombres",
+     "step": 2,
+     "mechanism": "question:M03-S2-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "la-distance-entre-deux-nombres",
+     "step": 2,
+     "mechanism": "brick:mem-distance"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "la-distance-entre-deux-nombres",
+     "step": 3,
+     "mechanism": "question:M03-S3-Q2"
+    }
+   ],
+   "manipulation": "DistanceLine à deux poignées (A et B) plus deux boutons « les deux avancent / reculent de 2 km ». L'étape exige d'avoir bougé un bateau ET fait deux translations conjointes : la barre ne change pas, ce qui fait vivre l'invariance par translation avant de l'énoncer.",
+   "assessmentQuestionIds": [
+    "va-e4",
+    "va-e5"
+   ],
+   "knowledgeItems": [
+    "distance-deux-nombres",
+    "regle-distance-invariante",
+    "mem-distance"
+   ],
+   "notes": "L'invariance par translation est un choix pédagogique fort : elle justifie que la distance ne dépende que de l'ÉCART, donc que |b − a| = |a − b|. La question M03-S2-Q1 a pour bonne réponse « les deux : elles valent 8 », et son distracteur « 5 − 3 = 2 » est l'erreur de signe classique. La NumericQuestion finale (distance entre −7,5 et −2 = 5,5) sort de la manipulation et traite le cas difficile (deux nombres du même côté), avec un explainFor qui distingue l'erreur 9,5 (addition) de −5,5 (signe).",
+   "crossGrade": {
+    "overlapsWith": [
+     "4e:nombres-relatifs"
+    ],
+    "kind": "extension"
+   },
+   "confidence": "high"
+  },
+  "seconde_valeur-absolue-distance-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 3,
+     "mechanism": "manipulation:BeamLine"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 3,
+     "mechanism": "brick:equation-distance-egale"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "situations",
+     "step": 1,
+     "mechanism": "brick:methode-tolerance"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "situations",
+     "step": 1,
+     "mechanism": "question:M05-S1-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "situations",
+     "step": 1,
+     "mechanism": "question:M05-S1-Q2"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "situations",
+     "step": 3,
+     "mechanism": "brick:regle-deux-positions"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "situations",
+     "step": 4,
+     "mechanism": "question:M05-S4-Q1"
+    }
+   ],
+   "manipulation": "BeamLine avec bascule ≤ / < (module 4 étape 3) : mettre le bateau au km 5 puis exclure le bord, et voir |5 − 3| = 2 basculer de « éclairé » à « dans le noir ». Le module 5, lui, est un practice lab volontairement sans instrument : trois situations (vis 20 ± 0,5 mm, vaccin 2–8 °C, randonneur à moins de 1,5 km de la borne 12) plus le cas de la distance exacte.",
+   "assessmentQuestionIds": [
+    "va-e8",
+    "va-e9",
+    "va-e10"
+   ],
+   "knowledgeItems": [
+    "methode-tolerance",
+    "regle-deux-positions",
+    "equation-distance-egale",
+    "faisceau-intervalle"
+   ],
+   "notes": "Les situations sont réellement variées (tolérance industrielle symétrique, plage donnée par ses bornes à convertir en centre/rayon, position approximative stricte, distance exacte à deux solutions) et le module va au-delà du cas facile : la NumericQuestion « de combien la vis de 19,45 mm dépasse-t-elle » demande un DEUXIÈME calcul (0,55 puis 0,55 − 0,5 = 0,05, vérifié numériquement) et son explainFor traite explicitement le piège 0,55. Réserve : la brique methode-tolerance (module 5 étape 1) n'est pas conditionnée à un geste — elle est posée sous une RealLine statique, ce qui reste de l'illustration plus que de la manipulation. Le geste porteur est celui du module 4, ce qui suffit pour COVERED.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_valeur-absolue-distance-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "manipulation:BeamLine"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "brick:faisceau-intervalle"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "question:M04-S1-Q1"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 2,
+     "mechanism": "manipulation:BeamLine"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 2,
+     "mechanism": "manipulation:BuildCheck"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 2,
+     "mechanism": "brick:methode-centre-rayon"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 3,
+     "mechanism": "brick:mem-faisceau"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "situations",
+     "step": 2,
+     "mechanism": "question:M05-S2-Q1"
+    }
+   ],
+   "manipulation": "BeamLine — un centre a (Stepper), un rayon r (Stepper), un bateau-test x déplaçable, une bascule bord inclus / exclu. L'intervalle éclairé est DÉRIVÉ (absInequalitySet) et dessiné avec ses vrais crochets (RealLine `intervals` avec openFrom/openTo) ; le verdict « |x − a| = d → éclairé / dans le noir » s'écrit en clair. L'étape 1 n'est validée qu'après avoir trouvé une position éclairée, une dans le noir, ET un bord (1 ou 5). L'étape 2 inverse le sens : régler a et r pour éclairer exactement [−1 ; 7], validé par BuildCheck.",
+   "assessmentQuestionIds": [
+    "va-e6",
+    "va-e7",
+    "va-e8"
+   ],
+   "knowledgeItems": [
+    "faisceau-intervalle",
+    "methode-centre-rayon",
+    "mem-faisceau",
+    "equation-distance-egale"
+   ],
+   "notes": "Les DEUX sens du lien sont manipulés : de l'inéquation vers l'intervalle (étape 1) et de l'intervalle vers l'inéquation (étape 2, BuildCheck sur centre/rayon — centerRadius(−1,7) = {a: 3, r: 4}, vérifié). La bascule strict/large est le geste qui fait la différence entre crochet fermé et ouvert, et l'étape 3 l'éprouve sur le cas limite x = 5. Le boss va-e7 demande l'inéquation de ]−7 ; −1[ (centre −4, rayon 3, strict : vérifié) — le sens inverse, sur un intervalle négatif, avec le distracteur |x − 4| < 3 qui piège le signe du centre.",
+   "crossGrade": {
+    "overlapsWith": [
+     "2de:ensembles-et-intervalles-2nde"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_valeur-absolue-distance-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "brick:faisceau-intervalle"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "brick:methode-centre-rayon"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "manipulation:BeamLine"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "assessment:va-e11"
+    }
+   ],
+   "note": "|x − a| ≤ r est résolu en manipulant le faisceau (centre, rayon) avant toute écriture."
+  },
+  "seconde_valeur-absolue-distance-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "brick:faisceau-intervalle"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "manipulation:BeamLine"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "le-faisceau",
+     "step": 1,
+     "mechanism": "assessment:va-e11"
+    }
+   ],
+   "note": "va-e11 rend ses QUATRE options sous forme de droites graduées (renderOption: solSet) : choisir exige de LIRE la représentation graphique, pas seulement la notation. La compétence est donc bien mesurée, par une épreuve partagée mais légitime."
   }
+ },
+ "lessonLevel": {
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Résoudre une inéquation de la forme |x-a| ≤ r",
+    "taughtAnyway": true,
+    "evidence": [
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 1,
+      "mechanism": "manipulation:BeamLine"
+     },
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 1,
+      "mechanism": "brick:faisceau-intervalle"
+     },
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 1,
+      "mechanism": "question:M04-S1-Q1"
+     },
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 3,
+      "mechanism": "manipulation:BeamLine"
+     },
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 3,
+      "mechanism": "question:M04-S3-Q1"
+     },
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 3,
+      "mechanism": "brick:mem-faisceau"
+     },
+     {
+      "module": 6,
+      "moduleSlug": "mission-finale-le-phare",
+      "step": null,
+      "mechanism": "question:va-e6"
+     }
+    ],
+    "recommendation": "append-lp",
+    "notes": "VÉRIFIÉ : Module04LeFaisceau enseigne réellement |x − a| ≤ r ⇔ x ∈ [a − r ; a + r] par le geste, et non par l'énoncé. Le bateau-test se promène le long de la côte, BeamLine calcule |x − a| et affiche « éclairé / dans le noir » ; l'étape ne se valide qu'après avoir touché les trois régimes (intérieur, extérieur, bord), c'est-à-dire après avoir découvert que la zone est SYMÉTRIQUE et bornée des deux côtés. La brique faisceau-intervalle est posée sur ce constat, puis la question M04-S1-Q1 demande l'intervalle avec des distracteurs qui sont les erreurs réelles (]−∞ ; 5] oublie le bord gauche, [3 ; 5] oublie un côté entier, [−2 ; 2] centre en 0). L'étape 3 traite le cas strict par la bascule et le cas limite x = 5. La résolution est donc GRAPHIQUE et conceptuelle (centre/rayon), jamais algébrique par double inégalité — ce qui est le traitement attendu en 2de et cohérent avec l'exclusion déclarée « résolution générale d'inéquations ». Aucun des 5 LPs ne nomme cette compétence : P5 dit « relier distance, valeur absolue et intervalles » (le lien, pas la résolution) et P4 « résoudre des situations utilisant des distances » (le contexte, pas la forme canonique). Un LP P6 « Résoudre une inéquation |x − a| ≤ r et donner l'ensemble des solutions » est justifié."
+   },
+   {
+    "scopeItem": "Représenter graphiquement l'ensemble des solutions",
+    "taughtAnyway": true,
+    "evidence": [
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 1,
+      "mechanism": "manipulation:BeamLine"
+     },
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 2,
+      "mechanism": "manipulation:BeamLine"
+     },
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 2,
+      "mechanism": "manipulation:BuildCheck"
+     },
+     {
+      "module": 4,
+      "moduleSlug": "le-faisceau",
+      "step": 3,
+      "mechanism": "manipulation:BeamLine"
+     },
+     {
+      "module": 5,
+      "moduleSlug": "situations",
+      "step": 1,
+      "mechanism": "intro"
+     }
+    ],
+    "recommendation": "append-lp",
+    "notes": "VÉRIFIÉ, avec une nuance importante. BeamLine DESSINE l'ensemble des solutions : RealLine reçoit `intervals=[{from: a−r, to: a+r, openFrom: strict, openTo: strict}]`, donc la bande éclairée apparaît avec ses crochets fermés ou ouverts selon la bascule, et la notation [1 ; 5] / ]1 ; 5[ s'écrit sous le dessin (notation(I)). L'étape 2 va plus loin : l'élève CONSTRUIT lui-même la représentation en réglant centre et rayon jusqu'à ce que la bande coïncide avec [−1 ; 7], et BuildCheck valide sa construction. C'est donc bien une représentation graphique produite par l'élève, pas seulement lue. La nuance : l'élève n'a jamais à tracer une bande sur une droite VIERGE ni à choisir entre crochet ouvert et fermé sur un schéma statique — il agit sur des paramètres (a, r, strict) et la représentation en découle. Aucune épreuve du boss ne demande de produire une représentation graphique (va-e6 fournit une RealLine avec le seul centre marqué, en support, et attend un intervalle en notation). L'item est donc enseigné et manipulé, mais non mesuré graphiquement à l'évaluation. Un LP dédié — ou son rattachement explicite à P5 — clarifierait la couverture."
+   }
+  ],
+  "pedagogicalProblems": [
+   "Le laboratoire du module 4 étape 2 est GELÉ dès que la construction est validée : `<BeamLine … disabled={d2} />` (Module04LeFaisceau.jsx:81). Une fois que l'élève a trouvé centre 3 / rayon 4 — ou après deux essais ratés, BuildCheck révélant la réponse et appelant onDone qui met d2 à true — les Steppers a et r et la poignée x deviennent inertes. L'élève ne peut plus vérifier « et si le rayon était 5 ? », c'est-à-dire qu'il perd l'instrument au moment exact où il vient de comprendre à quoi il sert. C'est la classe de bug frozen-manipulation documentée en 6e ; correctif : retirer `disabled={d2}`.",
+   "Le module 5 est un practice lab entièrement sans manipulation : quatre questions et une RealLine statique. C'est un choix assumé (« la manipulation s'efface »), mais la brique methode-tolerance y est posée SANS geste préalable, sur une figure illustrative — elle est donc établie par le texte, pas par l'action. Comme le geste équivalent existe au module 4 (centre/rayon), le LP reste couvert, mais la brique elle-même ne respecte pas « geste → brique ».",
+   "Le module 5 porte le tag de brief « 🔧 Mission 06 » alors qu'il est le module 5 (Module05Situations.jsx:144). Idem dans le boss : SKILLS.situations est étiqueté `module: 6` (Module06MissionFinale.jsx) alors que « Situations » est le module 5 — le profil de maîtrise renvoie l'élève vers le boss au lieu du module à refaire.",
+   "L'ensemble des solutions n'est jamais demandé sous forme graphique à l'évaluation : les dix épreuves sont des QCM textuels. va-e6 affiche bien une RealLine mais seulement comme décor (le centre a = 1 marqué), et la réponse attendue est une notation d'intervalle. La facette « représenter » de l'objet officiel est enseignée sans être mesurée."
+  ],
+  "technicalProblems": [
+   "GEL DE LABORATOIRE (confirmé, unique occurrence des quatre leçons auditées) : Module04LeFaisceau.jsx:81, `disabled={d2}` sur BeamLine. BeamLine propage ce `disabled` à RealLine, aux deux Steppers et vide le tableau `handles` (BeamLine.jsx:39, 45, 46) : la manipulation est totalement inerte après validation.",
+   "Le module 3 calcule `measureDone` par `const measureDone = a === -3 && b === 5 ? false : true;` (Module03DistanceEntreDeuxNombres.jsx:27). L'expression est correcte mais son intention est fragile : elle vaut true dès que l'élève ramène A et B sur n'importe quelle autre position, y compris une position moins parlante ; et si l'élève revient exactement sur (−3 ; 5) après avoir bougé, l'étape se DÉVALIDE. Un état `moved` monotone serait plus sûr.",
+   "Le boss cite en JSDoc des modules « M5 » et « M6 » (Module06MissionFinale.jsx:11-14) qui ne correspondent plus à la numérotation livrée (7 modules, 0..6) — même dérive de commentaire que dans nombres-reels-2nde.",
+   "Aucun défaut mathématique. Vérifications numériques : centerRadius(−1, 7) = {a: 3, r: 4} ; centerRadius(−7, −1) = {a: −4, r: 3} donc |x + 4| < 3 (va-e7) est exact ; |19,45 − 20| = 0,55 et le dépassement 0,55 − 0,5 = 0,05 (M05-S1-Q2) ; centre du vaccin (2 + 8)/2 = 5, rayon 3 ; randonneur ]10,5 ; 13,5[ ; |x − (−2)| = 3 → {−5 ; 1}. Les distracteurs sont tous des erreurs de méthode nommées (oubli d'un côté, centre pris pour une borne, strict/large confondus), jamais des valeurs artificiellement proches.",
+   "components/BuildCheck.jsx est ici correctement utilisé (module 4 étape 2) — contrairement aux trois autres leçons du lot où c'est un fichier mort.",
+   "Aucun import mort. Les six composants (AbsMachine, BeamLine, BuildCheck, DistanceLine, PredictionChips, Stepper) sont tous rendus par au moins un module."
+  ],
+  "duplicates": [
+   "Recouvrement voulu avec 2de/ensembles-et-intervalles-2nde, qui installe la notation en crochets et l'appartenance ; ici elle est SUPPOSÉE acquise (priorKnowledge : intervalle, intervalle-crochets, appartient, diagnostiquées par q4 et q5 du module 0) et réinvestie, jamais réenseignée. Pas de duplication.",
+   "Aucun doublon avec les autres leçons de 2de : la valeur absolue est explicitement exclue de nombres-reels-2nde (teachingScope.exclude), la fonction valeur absolue est renvoyée à fonctions-de-reference-2nde, et la résolution générale d'inéquations à equations-et-inequations-2nde. Le découpage est propre."
+  ],
+  "recommendations": [
+   "Retirer `disabled={d2}` (Module04LeFaisceau.jsx:81) : c'est le correctif le plus urgent de la leçon.",
+   "Ajouter deux LPs append-only : « Résoudre une inéquation |x − a| ≤ r » et « Représenter graphiquement l'ensemble des solutions » — l'enseignement existe et est manipulé, seule l'attribution manque.",
+   "Ajouter au boss une épreuve où l'élève choisit la BONNE REPRÉSENTATION graphique parmi quatre bandes (bords ouverts/fermés, centre décalé), pour mesurer la facette « représenter ».",
+   "Faire précéder la brique methode-tolerance (module 5 étape 1) d'un geste — par exemple un BeamLine réglé sur la vis, où l'élève trouve les deux longueurs limites acceptées.",
+   "Corriger les tags de brief (« Mission 06 » → « Mission 05 ») et SKILLS.situations.module (6 → 5)."
+  ],
+  "verticalPositioning": {
+   "revised": "Les nombres relatifs et l'opposé (5e/nombres-relatifs-5e, 4e_nombres_relatifs : « Enchaîner les quatre opérations sur des relatifs ») ; l'abscisse d'un point sur une droite graduée (6e) ; la soustraction de relatifs 5 − (−3) = 8, réactivée par le diagnostic q3 précisément parce qu'elle porte |5 − (−3)|.",
+   "extended": "L'idée collège de « distance à zéro » (implicite dans la comparaison de relatifs : plus un négatif est loin de 0, plus il est petit) devient une opération nommée et calculable, puis se généralise en distance entre deux nombres quelconques. L'écart entre deux relatifs, calculé au collège par « grand − petit », devient |b − a| valable sans se demander lequel est le plus grand.",
+   "new": "La notation |x| elle-même et sa définition par cas (x si x ≥ 0, −x sinon) ; l'idée qu'un signe « − » devant une lettre ne signifie pas « négatif » mais « opposé de » ; le faisceau |x − a| ≤ r comme description d'un intervalle par son centre et son rayon, et la lecture inverse (d'un intervalle vers son écriture en valeur absolue) ; l'équation |x − a| = r et ses deux solutions.",
+   "formalized": "Le couple centre/rayon comme deuxième lecture d'un intervalle, à côté du couple de bornes hérité d'« Ensembles et intervalles » : (−1 + 7)/2 = 3 et (7 − (−1))/2 = 4. Et la correspondance stricte entre le signe de l'inégalité et le type de crochet, matérialisée par une bascule dans le laboratoire plutôt que par une convention à retenir.",
+   "tool": "La leçon fournit l'outil de la TOLÉRANCE, réutilisé partout ensuite : une mesure « 20 mm à 0,5 près » s'écrit |d − 20| ≤ 0,5. C'est aussi le pré-requis direct de la fonction valeur absolue (fonctions-de-reference-2nde) et des voisinages en Première. Elle réutilise la droite réelle installée par nombres-reels-2nde, dont le boss annonce explicitement la suite (« La valeur absolue s'appuiera sur cette droite »)."
+  }
+ },
+ "session2Addendum": "17 LP appendus en Session 2 (compétences enseignées mais non mesurées), jugés le 2026-09-10."
 }

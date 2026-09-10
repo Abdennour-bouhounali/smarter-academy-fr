@@ -1,0 +1,325 @@
+{
+ "lesson": "variables-et-instructions-2nde",
+ "auditedAt": "2026-09-10",
+ "auditor": "2de-algorithmique-batch",
+ "learningPoints": {
+  "seconde_variables-et-instructions-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "brick:variable-informatique"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "question:M01-S1"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "assessment:va-e1"
+    }
+   ],
+   "note": "L'élève exécute un vrai programme et voit les variables changer ; la brique nomme ce qu'il vient de manipuler."
+  },
+  "seconde_variables-et-instructions-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "brick:types-python"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "brick:mem-nom-valeur-type"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "assessment:va-e2"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "la-boite-et-son-etiquette",
+     "step": 1,
+     "mechanism": "assessment:va-e3"
+    }
+   ],
+   "note": "Les quatre types sont affichés par le programme lui-même (panneau des variables finales), pas récités."
+  },
+  "seconde_variables-et-instructions-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "affecter-n-est-pas-egaler",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "affecter-n-est-pas-egaler",
+     "step": 1,
+     "mechanism": "brick:affectation"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "affecter-n-est-pas-egaler",
+     "step": 1,
+     "mechanism": "brick:regle-ordre-affectation"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "affecter-n-est-pas-egaler",
+     "step": 1,
+     "mechanism": "assessment:va-e4"
+    }
+   ],
+   "note": "x = x + 1 est exécuté : l'élève voit 5, pas une contradiction. L'échange raté (a=b puis b=a) prouve la règle."
+  },
+  "seconde_variables-et-instructions-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "le-programme-qui-choisit",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-programme-qui-choisit",
+     "step": 1,
+     "mechanism": "brick:sequence"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-programme-qui-choisit",
+     "step": 1,
+     "mechanism": "assessment:va-e5"
+    }
+   ],
+   "note": "y = x * 3 puis x = 10 : la valeur de y ne suit pas, l'élève le constate à l'exécution."
+  },
+  "seconde_variables-et-instructions-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "le-programme-qui-choisit",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-programme-qui-choisit",
+     "step": 1,
+     "mechanism": "brick:conditionnelle"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-programme-qui-choisit",
+     "step": 1,
+     "mechanism": "brick:regle-cas-limite"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "le-programme-qui-choisit",
+     "step": 1,
+     "mechanism": "assessment:va-e6"
+    }
+   ],
+   "note": "Le cas limite : note = 10, >= puis >, la réponse bascule. Les briques n'apparaissent qu'après les deux sorties."
+  },
+  "seconde_variables-et-instructions-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "repeter-sans-recopier",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "repeter-sans-recopier",
+     "step": 1,
+     "mechanism": "brick:boucle-for"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "repeter-sans-recopier",
+     "step": 1,
+     "mechanism": "assessment:va-e7"
+    }
+   ],
+   "note": "range(5) affiche 0..4 : l'élève COMPTE les lignes avant qu'on lui donne la règle des bornes."
+  },
+  "seconde_variables-et-instructions-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "repeter-sans-recopier",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "repeter-sans-recopier",
+     "step": 1,
+     "mechanism": "brick:boucle-while"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "repeter-sans-recopier",
+     "step": 1,
+     "mechanism": "brick:regle-condition-arret"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "repeter-sans-recopier",
+     "step": 1,
+     "mechanism": "brick:mem-for-ou-while"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "repeter-sans-recopier",
+     "step": 1,
+     "mechanism": "assessment:va-e8"
+    }
+   ],
+   "note": "Le capital placé à 10 % : le nombre de tours ne peut PAS s'écrire dans un range, d'où le while."
+  },
+  "seconde_variables-et-instructions-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "affecter-n-est-pas-egaler",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "affecter-n-est-pas-egaler",
+     "step": 1,
+     "mechanism": "brick:methode-formule-variables"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "affecter-n-est-pas-egaler",
+     "step": 1,
+     "mechanism": "assessment:va-e9"
+    }
+   ],
+   "note": "L'élève écrit une formule avec des variables et l'exécute ; l'épreuve oppose périmètre et aire."
+  },
+  "seconde_variables-et-instructions-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "brick:methode-tracer"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "assessment:va-e10"
+    }
+   ],
+   "note": "L'élève PRÉDIT la sortie (question fermée) avant d'exécuter : c'est la lecture d'algorithme, mesurée."
+  },
+  "seconde_variables-et-instructions-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "assessment:va-e11"
+    }
+   ],
+   "note": "Le programme de population doublée : l'élève modifie et relance."
+  },
+  "seconde_variables-et-instructions-2nde_P11": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "assessment:va-e12"
+    }
+   ],
+   "note": "Compléter la somme des carrés : le trou est dans le corps de la boucle, le contrôle porte sur la sortie (55)."
+  },
+  "seconde_variables-et-instructions-2nde_P12": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "manipulation:PyLab"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "brick:methode-verifier"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "lire-completer-reparer",
+     "step": 1,
+     "mechanism": "assessment:va-e13"
+    }
+   ],
+   "note": "L'élève répare un programme en partant de l'ÉCART au résultat attendu (55 − 45 = 10), pas de la relecture."
+  }
+ }
+}

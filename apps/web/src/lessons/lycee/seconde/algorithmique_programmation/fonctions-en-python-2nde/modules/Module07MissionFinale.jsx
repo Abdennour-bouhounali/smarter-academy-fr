@@ -7,7 +7,7 @@ import { LESSON_CONFIG } from '../lesson.config';
 /**
  * Module 7 — mission finale.
  *
- * Treize épreuves pour douze learning points : chacun a AU MOINS une épreuve
+ * Quinze épreuves pour douze learning points : chacun a AU MOINS une épreuve
  * qui lui est propre (`check:lessons` tourne en --strict). Toutes les sorties
  * citées ont été exécutées par `pyRun` avant d'être écrites : triple(4) = 12,
  * perimetre(6, 4) = 20, et la fonction de l'épreuve 10 renvoie 7 dans les deux
@@ -151,7 +151,7 @@ const EPREUVES = [
     options: ['range(1, n + 1)', 'range(0, n)', 'return s + n', 's = 1 au départ'],
     cols: 2, correct: 0,
     explain: '55 − 45 = 10, exactement le terme manquant : la borne de droite de range est exclue, donc n lui-même n’était jamais ajouté. « return s + n » corrigerait ce cas par accident, mais fausserait la logique de la boucle.',
-    assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_fonctions-en-python-2nde_P6', 'seconde_fonctions-en-python-2nde_P7'] },
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_fonctions-en-python-2nde_P6'] },
   },
   {
     id: 'fp-e12', skill: 'hasard', requires: ['randint', 'regle-bornes-randint'], title: 'Épreuve 12',
@@ -172,7 +172,30 @@ const EPREUVES = [
     ],
     cols: 1, correct: 0,
     explain: 'Deux simulations ne donnent jamais le même compte, et c’est la marque du hasard, pas d’une erreur. Les deux valeurs encadrent la valeur théorique 166,67 — le programme est cohérent avec ce que la probabilité prévoit.',
-    assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_fonctions-en-python-2nde_P10', 'seconde_fonctions-en-python-2nde_P12'] },
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_fonctions-en-python-2nde_P12'] },
+  },
+  {
+    id: 'fp-e14', skill: 'relire', requires: ['methode-traduire-formule', 'def-return'], title: 'Épreuve 14',
+    prompt: 'Le corps de cette fonction est à compléter : elle doit renvoyer la moyenne des trois nombres. Quelle ligne écris-tu ?',
+    extra: code('def moyenne(a, b, c):\n    return ...'),
+    options: ['return (a + b + c) / 3', 'return a + b + c / 3', 'return (a + b + c) / 2', 'return a + b + c'],
+    cols: 2, correct: 0,
+    explain: 'Les parenthèses sont indispensables : sans elles, seul c serait divisé par 3 et moyenne(10, 12, 14) renverrait 26,67 au lieu de 12. On divise la somme entière par le nombre de valeurs.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_fonctions-en-python-2nde_P7'] },
+  },
+  {
+    id: 'fp-e15', skill: 'hasard', requires: ['methode-repeter-collecter'], title: 'Épreuve 15',
+    prompt: 'On veut constituer une série de 50 lancers de dé pour l’étudier ensuite. Quel programme convient ?',
+    extra: code('def de():\n    return randint(1, 6)'),
+    options: [
+      'serie = [] ; une boucle de 50 tours ; serie.append(de()) à chaque tour',
+      'serie = de() répété 50 fois sur la même ligne',
+      'serie = [] ; serie.append(de()) une seule fois',
+      'print(de()) dans une boucle de 50 tours',
+    ],
+    cols: 1, correct: 0,
+    explain: 'Une liste vide, une boucle qui appelle la fonction, un append à chaque tour : les 50 valeurs sont CONSERVÉES et peuvent ensuite être résumées. Les afficher avec print les montre mais ne les garde pas — on ne pourrait plus en calculer la moyenne.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_fonctions-en-python-2nde_P10'] },
   },
 ];
 
@@ -193,7 +216,7 @@ export default function Module07MissionFinale() {
       navLinks={getNavLinks(7)}
       moduleNumber={7}
       moduleTitle="Mission finale : la fonction"
-      moduleSubtitle="Treize épreuves : définir, appeler, portée, lire, simuler, vérifier"
+      moduleSubtitle="Quinze épreuves : définir, appeler, portée, lire, simuler, vérifier"
       estimatedTime="12 min"
       lessonConfig={LESSON_CONFIG}
       registre={REGISTRE}

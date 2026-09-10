@@ -1,32 +1,34 @@
 # 2de — matrice des Learning Points (généré)
 
 > Généré par `scripts/audit-2de-learning-points.mjs` — **Ne pas éditer à la main.**
-> 27 leçons · 266 learning points · 433 briques · 286 questions d'évaluation.
+> 31 leçons · 303 learning points · 492 briques · 335 questions d'évaluation.
 > Les statuts proviennent de `docs/audits/judgements/<leçon>.json` (jugement humain) ; ce script ne les calcule pas.
 
 ## Statuts
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 220 | 82.7 % |
-| `PARTIALLY_COVERED` | 25 | 9.4 % |
-| `ASSESSMENT_ONLY` | 1 | 0.4 % |
-| `DUPLICATED` | 3 | 1.1 % |
-| `UNJUDGED` | 17 | 6.4 % |
-| **Total** | **266** | 100 % |
+| `COVERED` | 277 | 91.4 % |
+| `PARTIALLY_COVERED` | 23 | 7.6 % |
+| `DUPLICATED` | 3 | 1.0 % |
+| **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
 
 | Leçon | Domaine | Statut | Durée cat./config/somme | Modules | LP | Briques | requires | Snapshots | Carte | Spec | e2e | Signalements |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | :-: | :-: | :-: | --- |
+| `fonctions-en-python-2nde` | algorithmique_programmation | available | 86 / 86 / 86 | 8 | 12 | 18 | 53 | 7 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
+| `variables-et-instructions-2nde` | algorithmique_programmation | available | 76 / 76 / 76 | 7 | 12 | 15 | 53 | 6 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `fonction-affine-2nde` | fonctions | available | 75 / 75 / 75 | 8 | 11 | 14 | 64 | 7 | ✅ | ✅ | ✅ | — |
 | `fonctions-2nde` | fonctions | available | 87 / 87 / 87 | 9 | 12 | 23 | 161 | 8 | ✅ | ✅ | ✅ | — |
-| `fonctions-de-reference-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 11 | 19 | 75 | 7 | ✅ | ✅ | ✅ | — |
+| `fonctions-de-reference-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 11 | 20 | 76 | 7 | ✅ | ✅ | ✅ | — |
 | `signe-fonctions-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 12 | 17 | 98 | 7 | ✅ | ✅ | ✅ | — |
 | `variations-extremums-2nde` | fonctions | available | 85 / 85 / 85 | 8 | 12 | 15 | 151 | 7 | ✅ | ✅ | ✅ | — |
-| `colinearite-alignement-2nde` | geometrie | available | 64 / 64 / 64 | 7 | 9 | 24 | 58 | 6 | ✅ | ✅ | ✅ | — |
+| `colinearite-alignement-2nde` | geometrie | available | 64 / 64 / 64 | 7 | 9 | 24 | 62 | 6 | ✅ | ✅ | ✅ | — |
 | `equations-de-droites-2nde` | geometrie | available | 85 / 85 / 85 | 9 | 12 | 30 | 76 | 8 | ✅ | ✅ | ✅ | — |
 | `positions-relatives-droites-2nde` | geometrie | available | 70 / 70 / 70 | 7 | 8 | 21 | 77 | 6 | ✅ | ✅ | ✅ | — |
+| `trigonometrie-cercle-2nde` | geometrie | available | 80 / 80 / 80 | 6 | 9 | 13 | 56 | 5 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
+| `trigonometrie-equations-2nde` | geometrie | available | 75 / 75 / 75 | 6 | 4 | 12 | 51 | 5 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `vecteurs-2nde` | geometrie | available | 84 / 84 / 84 | 9 | 14 | 29 | 66 | 8 | ✅ | ✅ | ✅ | — |
 | `arithmetique-2nde` | nombres_calculs | available | 68 / 68 / 68 | 7 | 5 | 16 | 32 | 6 | ✅ | ✅ | ✅ | — |
 | `calcul-litteral-2nde` | nombres_calculs | available | 80 / 80 / 80 | 8 | 10 | 19 | 73 | 7 | ✅ | ✅ | ✅ | — |
@@ -43,21 +45,39 @@
 | `probabilites-conditionnelles-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 9 | 7 | 86 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
 | `proportions-pourcentages-2nde` | statistiques_probabilites | available | 70 / 70 / 70 | 8 | 11 | 15 | 138 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `series-regroupees-classes-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 8 | 10 | 12 | 86 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
-| `statistiques-une-variable-2nde` | statistiques_probabilites | available | 86 / 86 / 86 | 8 | 12 | 12 | 94 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
+| `statistiques-une-variable-2nde` | statistiques_probabilites | available | 86 / 86 / 86 | 8 | 12 | 12 | 100 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `tableaux-croises-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 10 | 8 | 58 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `tests-diagnostiques-probabilites-2nde` | statistiques_probabilites | available | 81 / 81 / 81 | 7 | 11 | 9 | 85 | 6 | ✅ | ✅ | ✅ | MAPPED_STEPS, NO_LEARNING_POINTS_MIRROR |
 
-**Au catalogue, sans implémentation :**
-
-| Leçon | Domaine | Statut | LP |
-| --- | --- | --- | ---: |
-| `variables-et-instructions-2nde` | algorithmique_programmation | coming_soon | 12 |
-| `fonctions-en-python-2nde` | algorithmique_programmation | coming_soon | 12 |
 
 ## Matrice de couverture
 
 | LP | Chapter | Lesson | Module | Status | Evidence | Manipulation | Assessment | Knowledge Map | Progress |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `P1` Définir une fonction en Python | algorithmique_programmation | `fonctions-en-python-2nde` | M1 | COVERED | M1.1 manipulation:PyLab · M1.1 brick:fonction-python · M1.1 brick:def… | PyLab | `fp-e1` `fp-e2` | `fonction-python` `def-return` `appel-fonction` | M1 |
+| `P2` Utiliser une fonction avec un argument | algorithmique_programmation | `fonctions-en-python-2nde` | M2 | COVERED | M2.1 manipulation:PyLab · M2.1 brick:parametre-argument · M2.1 assess… | PyLab | `fp-e5` | `parametre-argument` `regle-ordre-arguments` `portee-locale` | M2 |
+| `P3` Utiliser une fonction avec plusieurs arguments | algorithmique_programmation | `fonctions-en-python-2nde` | M2 | COVERED | M2.1 manipulation:PyLab · M2.1 brick:regle-ordre-arguments · M2.1 bri… | PyLab | `fp-e6` `fp-e7` | `parametre-argument` `regle-ordre-arguments` `portee-locale` | M2 |
+| `P4` Appeler une fonction | algorithmique_programmation | `fonctions-en-python-2nde` | M1 | COVERED | M1.1 manipulation:PyLab · M1.1 brick:appel-fonction · M1.1 brick:mem-… | PyLab | `fp-e3` `fp-e4` | `fonction-python` `def-return` `appel-fonction` | M1 |
+| `P5` Lire une fonction existante | algorithmique_programmation | `fonctions-en-python-2nde` | M5 | COVERED | M5.1 manipulation:PyLab · M5.1 brick:methode-lire-fonction · M5.1 ass… | PyLab | `fp-e10` | `methode-lire-fonction` | M5 |
+| `P6` Modifier une fonction | algorithmique_programmation | `fonctions-en-python-2nde` | M5 | COVERED | M5.1 manipulation:PyLab · M5.1 assessment:fp-e11 | PyLab | `fp-e11` | `methode-lire-fonction` | M5 |
+| `P7` Compléter une fonction | algorithmique_programmation | `fonctions-en-python-2nde` | M5 | COVERED | M5.1 manipulation:PyLab · M5.1 assessment:fp-e14 | PyLab | `fp-e14` | `methode-lire-fonction` | M5 |
+| `P8` Écrire une fonction réalisant un calcul | algorithmique_programmation | `fonctions-en-python-2nde` | M4 | COVERED | M4.1 manipulation:PyLab · M4.1 brick:methode-traduire-formule · M4.1 … | PyLab | `fp-e8` `fp-e9` | `methode-traduire-formule` `regle-return-vs-print` | M4 |
+| `P9` Utiliser une fonction renvoyant un nombre alé… | algorithmique_programmation | `fonctions-en-python-2nde` | M3 | COVERED | M3.1 manipulation:PyLab · M3.1 brick:randint · M3.1 brick:regle-borne… | PyLab | `fp-e12` | `randint` `simulation` `regle-bornes-randint` | M3 |
+| `P10` Répéter une fonction pour produire une série … | algorithmique_programmation | `fonctions-en-python-2nde` | M6 | COVERED | M6.1 manipulation:PyLab · M6.1 brick:methode-repeter-collecter · M6.1… | PyLab | `fp-e15` | `methode-repeter-collecter` `regle-fluctuation` `methode-verifier-simulation` | M6 |
+| `P11` Simuler une expérience aléatoire | algorithmique_programmation | `fonctions-en-python-2nde` | M3 | COVERED | M3.1 manipulation:PyLab · M3.1 brick:simulation · M3.1 assessment:fp-… | PyLab | `fp-e12` | `randint` `simulation` `regle-bornes-randint` | M3 |
+| `P12` Vérifier les résultats d'un programme | algorithmique_programmation | `fonctions-en-python-2nde` | M6 | COVERED | M6.1 manipulation:PyLab · M6.1 brick:regle-fluctuation · M6.1 brick:m… | PyLab | `fp-e13` | `methode-repeter-collecter` `regle-fluctuation` `methode-verifier-simulation` | M6 |
+| `P1` Comprendre la notion de variable informatique | algorithmique_programmation | `variables-et-instructions-2nde` | M1 | COVERED | M1.1 manipulation:PyLab · M1.1 brick:variable-informatique · M1.1 que… | PyLab | `va-e1` | `variable-informatique` `types-python` `mem-nom-valeur-type` | M1 |
+| `P2` Identifier les types entier, flottant, boolée… | algorithmique_programmation | `variables-et-instructions-2nde` | M1 | COVERED | M1.1 manipulation:PyLab · M1.1 brick:types-python · M1.1 brick:mem-no… | PyLab | `va-e2` `va-e3` | `variable-informatique` `types-python` `mem-nom-valeur-type` | M1 |
+| `P3` Utiliser une affectation | algorithmique_programmation | `variables-et-instructions-2nde` | M2 | COVERED | M2.1 manipulation:PyLab · M2.1 brick:affectation · M2.1 brick:regle-o… | PyLab | `va-e4` | `affectation` `regle-ordre-affectation` `methode-formule-variables` | M2 |
+| `P4` Écrire une séquence d'instructions | algorithmique_programmation | `variables-et-instructions-2nde` | M3 | COVERED | M3.1 manipulation:PyLab · M3.1 brick:sequence · M3.1 assessment:va-e5 | PyLab | `va-e5` | `sequence` `conditionnelle` `regle-cas-limite` | M3 |
+| `P5` Utiliser une instruction conditionnelle | algorithmique_programmation | `variables-et-instructions-2nde` | M3 | COVERED | M3.1 manipulation:PyLab · M3.1 brick:conditionnelle · M3.1 brick:regl… | PyLab | `va-e6` | `sequence` `conditionnelle` `regle-cas-limite` | M3 |
+| `P6` Utiliser une boucle for | algorithmique_programmation | `variables-et-instructions-2nde` | M4 | COVERED | M4.1 manipulation:PyLab · M4.1 brick:boucle-for · M4.1 assessment:va-… | PyLab | `va-e7` | `boucle-for` `boucle-while` `regle-condition-arret` | M4 |
+| `P7` Utiliser une boucle while | algorithmique_programmation | `variables-et-instructions-2nde` | M4 | COVERED | M4.1 manipulation:PyLab · M4.1 brick:boucle-while · M4.1 brick:regle-… | PyLab | `va-e8` | `boucle-for` `boucle-while` `regle-condition-arret` | M4 |
+| `P8` Écrire une formule avec des variables | algorithmique_programmation | `variables-et-instructions-2nde` | M2 | COVERED | M2.1 manipulation:PyLab · M2.1 brick:methode-formule-variables · M2.1… | PyLab | `va-e9` | `affectation` `regle-ordre-affectation` `methode-formule-variables` | M2 |
+| `P9` Lire un algorithme | algorithmique_programmation | `variables-et-instructions-2nde` | M5 | COVERED | M5.1 manipulation:PyLab · M5.1 brick:methode-tracer · M5.1 assessment… | PyLab | `va-e10` | `methode-tracer` `methode-verifier` | M5 |
+| `P10` Modifier un algorithme | algorithmique_programmation | `variables-et-instructions-2nde` | M5 | COVERED | M5.1 manipulation:PyLab · M5.1 assessment:va-e11 | PyLab | `va-e11` | `methode-tracer` `methode-verifier` | M5 |
+| `P11` Compléter un algorithme | algorithmique_programmation | `variables-et-instructions-2nde` | M5 | COVERED | M5.1 manipulation:PyLab · M5.1 assessment:va-e12 | PyLab | `va-e12` | `methode-tracer` `methode-verifier` | M5 |
+| `P12` Vérifier le fonctionnement d'un programme | algorithmique_programmation | `variables-et-instructions-2nde` | M5 | COVERED | M5.1 manipulation:PyLab · M5.1 brick:methode-verifier · M5.1 assessme… | PyLab | `va-e13` | `methode-tracer` `methode-verifier` | M5 |
 | `P1` Reconnaître une fonction affine | fonctions | `fonction-affine-2nde` | M1, M2, M6 | COVERED | M1.1 manipulation:TankLab · M1.1 feedback · M1.1 brick:fonction-affin… | TankLab (M1 étape 1, a = 3 et b =… | `fa-e1` `fa-e4` | `fonction-affine-ab` `vocab-coefficient-ordonnee` `methode-reconnaitre-affine-table` | M1, M2, M6 |
 | `P2` Identifier le coefficient directeur | fonctions | `fonction-affine-2nde` | M1, M3 | COVERED | M1.3 manipulation:TankLab · M1.3 feedback · M1.3 brick:vocab-coeffici… | TankLab M1 étape 3, b verrouillé … | `fa-e2` | `fonction-affine-ab` `vocab-coefficient-ordonnee` `mem-a-taux-b-depart` | M1, M3 |
 | `P3` Identifier l'ordonnée à l'origine | fonctions | `fonction-affine-2nde` | M1 | COVERED | M1.2 manipulation:TankLab · M1.2 feedback · M1.3 brick:vocab-coeffici… | TankLab M1 étape 2, a verrouillé … | `fa-e2` `fa-e7` | `fonction-affine-ab` `vocab-coefficient-ordonnee` `mem-a-taux-b-depart` | M1 |
@@ -89,7 +109,7 @@
 | `P6` Représenter graphiquement une fonction de réf… | fonctions | `fonctions-de-reference-2nde` | M1, M5, M6 | PARTIALLY_COVERED | M1.3 manipulation:ThreeMachines · M1.3 brick:methode-tableau-tracer ·… | ThreeMachines : les points s'accu… | `fr-e7` | `methode-tableau-tracer` `mem-parabole` `mem-hyperbole` | M1, M5, M6 |
 | `P7` Identifier les caractéristiques d'une courbe | fonctions | `fonctions-de-reference-2nde` | M2, M3, M4 | COVERED | M2.1 manipulation:TwoProbes · M2.3 brick:fonction-carre · M2.4 questi… | Le MIROIR, décliné trois fois sur… | `fr-e3` `fr-e4` `fr-e5` | `fonction-carre` `fonction-inverse` `fonction-valeur-absolue` | M2, M3, M4 |
 | `P8` Comparer les courbes de fonctions de référence | fonctions | `fonctions-de-reference-2nde` | M4, M5, M6 | COVERED | M4.2 manipulation:TwoProbes · M4.2 feedback · M4.2 brick:regle-carre-… | TwoProbes au module 4 étape 2, av… | `fr-e9` | `regle-carre-vs-va` `regle-ordre-references` | M4, M5, M6 |
-| `P9` Déterminer une image graphiquement | fonctions | `fonctions-de-reference-2nde` | M5 | PARTIALLY_COVERED | M1.1 manipulation:ThreeMachines · M3.4 question:M03-S4-Q1 · M5.4 ques… | Aucune manipulation de lecture d'… | `fr-e8` `fr-e9` | `methode-antecedents-reference` `regle-ordre-references` | M5 |
+| `P9` Déterminer une image graphiquement | fonctions | `fonctions-de-reference-2nde` | M5 | COVERED | M1.1 manipulation:ThreeMachines · M3.4 question:M03-S4-Q1 · M5.4 ques… | FunctionProbe en mode x (sonde VE… | `fr-e8` `fr-e9` | `methode-antecedents-reference` `regle-ordre-references` | M5 |
 | `P10` Déterminer un antécédent graphiquement | fonctions | `fonctions-de-reference-2nde` | M5 | COVERED | M5.1 manipulation:FunctionProbe · M5.1 feedback · M5.2 manipulation:F… | Trois sondes HORIZONTALES success… | `fr-e8` | `methode-antecedents-reference` `fonction-valeur-absolue` | M5 |
 | `P11` Utiliser une fonction de référence pour modél… | fonctions | `fonctions-de-reference-2nde` | M6 | COVERED | M6.1 question:M06-S1-Q1 · M6.1 question:M06-S1-Q2 · M6.1 brick:method… | Aucune — le module 6 est un pract… | `fr-e10` | `methode-modeliser-reference` | M6 |
 | `P1` Déterminer le signe d'une fonction | fonctions | `signe-fonctions-2nde` | M1, M6 | COVERED | M1.1 manipulation:SignProbe · M1.1 feedback · M1.1 brick:signe-positi… | SignProbe — la sonde balaie la co… | `sg-e1` `sg-e3` | `signe-position-courbe` `mem-au-dessus-en-dessous` | M1, M6 |
@@ -124,7 +144,7 @@
 | `P6` Déterminer si trois points sont alignés | geometrie | `colinearite-alignement-2nde` | M2, M5 | DUPLICATED | M2.1 manipulation:VectorPlane · M2.1 feedback · M2.1 brick:colin-alig… | VectorPlane M2 — A et B fixes, C … | `col-e6` `col-e7` | `colin-alignement` `colin-vocabulaire-aligne` `colin-oeil-hesite` | M2, M5 |
 | `P7` Déterminer si deux droites sont parallèles | geometrie | `colinearite-alignement-2nde` | M5 | COVERED | M5.1 manipulation:VectorPlane · M5.1 feedback · M5.1 brick:colin-para… | VectorPlane M5 étape 1 — D glissa… | `col-e8` `col-e9` | `colin-parallelisme-det` `colin-vocabulaire-parallele` | M5 |
 | `P8` Résoudre un problème d'alignement | geometrie | `colinearite-alignement-2nde` | M5 | COVERED | M5.2 question:M05-S2 · M5.3 question:M05-S3 · M5.4 question:M05-S4 · … | Aucune manipulation propre : M5 é… | `col-e7` `col-e10` | `colin-methode-conclure` `colin-coordonnee-manquante-det` `mem-colin-deux-usages` | M5 |
-| `P9` Résoudre un problème de parallélisme | geometrie | `colinearite-alignement-2nde` | M5 | ASSESSMENT_ONLY | M5.1 brick:colin-parallelisme-det | Aucune : aucune étape de la leçon… | `col-e9` | `colin-parallelisme-det` `colin-methode-conclure` | M5 |
+| `P9` Résoudre un problème de parallélisme | geometrie | `colinearite-alignement-2nde` | M5 | COVERED | M5.6 question:M05-S6-Q1 · M5.6 question:M05-S6-Q2 · M5.1 manipulation… | Aucun instrument propre, mais un … | `col-e9` | `colin-parallelisme-det` `colin-methode-conclure` | M5 |
 | `P1` Comprendre un vecteur directeur | geometrie | `equations-de-droites-2nde` | M1, M2 | COVERED | M1.1 manipulation:LineLab · M1.1 feedback · M1.1 brick:droite-vecteur… | LineLab — l'élève double la flèch… | `eq-e1` | `droite-vecteur-directeur` `droite-vocabulaire-directeur` `droite-point-direction` | M1, M2 |
 | `P2` Identifier un vecteur directeur d'une droite | geometrie | `equations-de-droites-2nde` | M1, M6 | COVERED | M1.1 brick:droite-vecteur-directeur · M6.2 brick:droite-lire-cartesie… | Aucune manipulation propre pour l… | `eq-e2` | `droite-lire-cartesienne` `droite-equation-cartesienne` | M1, M6 |
 | `P3` Comprendre la pente d'une droite | geometrie | `equations-de-droites-2nde` | M2, M4 | COVERED | M2.1 manipulation:LineWalker · M2.1 feedback · M2.1 brick:droite-pent… | LineWalker — l'élève marche sur l… | `eq-e3` | `droite-points-parametres` `droite-pente` `droite-pente-vers-directeur` | M2, M4 |
@@ -145,6 +165,19 @@
 | `P6` Résoudre un système associé à deux droites | geometrie | `positions-relatives-droites-2nde` | M4, M5 | PARTIALLY_COVERED | M4.2 brick:methode-resoudre-systeme · M4.2 question:M04-S2a · M4.3 br… | Aucune : le système est un objet … | `pr-e7` `pr-e8` | `point-intersection-systeme` `methode-resoudre-systeme` `regle-nombre-solutions` | M4, M5 |
 | `P7` Interpréter graphiquement une intersection | geometrie | `positions-relatives-droites-2nde` | M4, M5 | COVERED | M4.1 manipulation:ReducedLab · M4.1 feedback · M4.1 brick:methode-int… | ReducedLab avec chips de zoom (±6… | `pr-e1` `pr-e8` | `methode-interpretation-graphique` `regle-nombre-solutions` `mem-intersection-systeme` | M4, M5 |
 | `P8` Résoudre un problème géométrique avec deux dr… | geometrie | `positions-relatives-droites-2nde` | M5 | COVERED | M5.1 brick:methode-trajectoires · M5.1 question:M05-S1a · M5.2 brick:… | Aucune : le module 5 n'a aucune m… | `pr-e9` `pr-e10` | `methode-trajectoires` `methode-parallele-par-un-point` `methode-ab-cd` | M5 |
+| `P1` Comprendre le cercle trigonométrique | geometrie | `trigonometrie-cercle-2nde` | M1 | COVERED | M1.1 manipulation:CircleLab · M1.1 brick:cercle-trigonometrique · M1.… | CircleLab | `tc-e1` `tc-e2` | `cercle-trigonometrique` `enroulement` `mem-rayon-un` | M1 |
+| `P2` Comprendre le radian comme mesure d'un angle … | geometrie | `trigonometrie-cercle-2nde` | M2 | COVERED | M2.1 manipulation:CircleLab · M2.1 brick:radian · M2.1 brick:mem-pi-1… | CircleLab | `tc-e3` | `radian` `formule-conversion` `mem-pi-180` | M2 |
+| `P3` Convertir entre degrés et radians | geometrie | `trigonometrie-cercle-2nde` | M2 | COVERED | M2.1 manipulation:CircleLab · M2.1 brick:formule-conversion · M2.1 as… | CircleLab | `tc-e4` | `radian` `formule-conversion` `mem-pi-180` | M2 |
+| `P4` Associer un réel t à un point du cercle trigo… | geometrie | `trigonometrie-cercle-2nde` | M3 | COVERED | M3.1 manipulation:CircleLab · M3.1 brick:enroulement · M3.1 assessmen… | CircleLab | `tc-e5` | `cos-sin-coordonnees` `regle-signes-quadrants` `regle-borne-un` | M3 |
+| `P5` Déterminer les coordonnées d'un point du cerc… | geometrie | `trigonometrie-cercle-2nde` | M3 | COVERED | M3.1 manipulation:CircleLab · M3.1 brick:cos-sin-coordonnees · M3.1 b… | CircleLab | `tc-e6` `tc-e8` | `cos-sin-coordonnees` `regle-signes-quadrants` `regle-borne-un` | M3 |
+| `P6` Reconnaître le cosinus comme abscisse et le s… | geometrie | `trigonometrie-cercle-2nde` | M3 | COVERED | M3.1 manipulation:CircleLab · M3.1 brick:mem-cos-abscisse · M3.1 bric… | CircleLab | `tc-e6` `tc-e7` | `cos-sin-coordonnees` `regle-signes-quadrants` `regle-borne-un` | M3 |
+| `P7` Connaître les valeurs remarquables du cosinus | geometrie | `trigonometrie-cercle-2nde` | M4 | COVERED | M4.1 manipulation:CircleLab · M4.1 brick:valeurs-remarquables · M4.1 … | CircleLab | `tc-e9` | `valeurs-remarquables` `regle-pi-quatre-egalite` `methode-placer-remarquable` | M4 |
+| `P8` Connaître les valeurs remarquables du sinus | geometrie | `trigonometrie-cercle-2nde` | M4 | COVERED | M4.1 manipulation:CircleLab · M4.1 brick:valeurs-remarquables · M4.1 … | CircleLab | `tc-e10` | `valeurs-remarquables` `regle-pi-quatre-egalite` `methode-placer-remarquable` | M4 |
+| `P9` Utiliser les valeurs remarquables pour placer… | geometrie | `trigonometrie-cercle-2nde` | M4 | COVERED | M4.1 manipulation:CircleLab · M4.1 brick:methode-placer-remarquable ·… | CircleLab | `tc-e11` | `valeurs-remarquables` `regle-pi-quatre-egalite` `methode-placer-remarquable` | M4 |
+| `P1` Utiliser la relation cos²t + sin²t = 1 | geometrie | `trigonometrie-equations-2nde` | M1 | COVERED | M1.1 manipulation:CircleLab · M1.1 assessment:te-e1 · M1.1 assessment… | CircleLab | `te-e1` `te-e2` `te-e3` | `identite-fondamentale` `methode-retrouver-coordonnee` `mem-pythagore-deguise` | M1 |
+| `P2` Utiliser les formules d'addition du cosinus e… | geometrie | `trigonometrie-equations-2nde` | M2 | COVERED | M2.1 manipulation:CircleLab · M2.1 assessment:te-e4 · M2.1 assessment… | CircleLab | `te-e4` `te-e5` `te-e6` | `formules-addition` `regle-cos-non-lineaire` `mem-signe-moins` | M2 |
+| `P3` Résoudre une équation cos t = a sur un interv… | geometrie | `trigonometrie-equations-2nde` | M3 | COVERED | M3.1 manipulation:CircleLab · M3.1 assessment:te-e7 · M3.1 assessment… | CircleLab | `te-e7` `te-e8` | `equation-deux-solutions` `methode-resoudre-cos` `regle-hors-bornes` | M3 |
+| `P4` Résoudre une équation sin t = b sur un interv… | geometrie | `trigonometrie-equations-2nde` | M4 | COVERED | M4.1 manipulation:CircleLab · M4.1 assessment:te-e9 · M4.1 assessment… | CircleLab | `te-e9` `te-e10` | `methode-resoudre-sin` `regle-deux-symetries` `mem-lire-sur-le-cercle` | M4 |
 | `P1` Comprendre l'égalité de deux vecteurs | geometrie | `vecteurs-2nde` | M2 | COVERED | M2.1 manipulation:VectorLab · M2.1 feedback · M2.1 brick:egalite-vect… | VectorLab en mode 'move' — seule … | `vec-e1` `vec-e10` | `egalite-vecteurs` `vocab-representant` `regle-egalite-coordonnees` | M2 |
 | `P2` Identifier le vecteur nul | geometrie | `vecteurs-2nde` | M2, M4 | COVERED | M2.2 manipulation:VectorLab · M2.2 feedback · M2.2 brick:vecteur-nul … | VectorLab 'build' : l'élève rédui… | `vec-e2` | `vecteur-nul` | M2, M4 |
 | `P3` Construire un représentant d'un vecteur | geometrie | `vecteurs-2nde` | M1, M2, M7 | COVERED | M1.2 manipulation:DisplacementLab · M1.5 brick:vecteur-deplacement · … | DisplacementLab M1 étape 2 — le s… | `vec-e3` | `vecteur-deplacement` `mem-deplacement` `vocab-representant` | M1, M2, M7 |
@@ -170,17 +203,17 @@
 | `P4` Factoriser une expression. | nombres_calculs | `calcul-litteral-2nde` | M4, M5 | PARTIALLY_COVERED | M4.1 manipulation:FactorFinder · M4.1 brick:factoriser · M4.2 manipul… | FactorFinder — quatre tâches, qua… | `cl2-e6` `cl2-e7` `cl2-e10` | `factoriser` `methode-facteur-commun` `methode-identite-inverse` | M4, M5 |
 | `P5` Choisir une forme développée ou factorisée se… | nombres_calculs | `calcul-litteral-2nde` | M5, M6 | PARTIALLY_COVERED | M5.1 question:M05-S1-Q1 · M5.2 question:M05-S2-Q2 · M5.3 question:M05… | AUCUNE. Le module 5 n'a pas de co… | `cl2-e8` | `regle-choisir-la-forme` `regle-carre-positif` `methode-prouver-egalite-formes` | M5, M6 |
 | `P6` Utiliser le calcul littéral pour démontrer ou… | nombres_calculs | `calcul-litteral-2nde` | M1, M6 | COVERED | M1.1 manipulation:MagicTrick · M1.1 brick:regle-tester-ne-prouve-pas … | ProofOrder — les cinq lignes de l… | `cl2-e9` `cl2-e10` | `methode-demontrer-litteral` `methode-modeliser-aire` `regle-simplifier-facteurs` | M1, M6 |
-| `P7` Utiliser les identités remarquables (a+b)², (… | nombres_calculs | `calcul-litteral-2nde` | M3 | UNJUDGED | — | IdentityGrid | `cl2-e11` | `developper` `identites-remarquables` `mem-carre-somme` | M3 |
-| `P8` Factoriser une expression de la forme ax² + b… | nombres_calculs | `calcul-litteral-2nde` | M4 | UNJUDGED | — | FactorFinder | `cl2-e12` | `factoriser` `methode-facteur-commun` `methode-identite-inverse` | M4 |
-| `P9` Effectuer des calculs avec des expressions fr… | nombres_calculs | `calcul-litteral-2nde` | M6 | UNJUDGED | — | ProofOrder | `cl2-e13` | `methode-demontrer-litteral` `methode-modeliser-aire` `regle-simplifier-facteurs` | M6 |
-| `P10` Vérifier une identité algébrique. | nombres_calculs | `calcul-litteral-2nde` | M6 | UNJUDGED | — | ProofOrder | `cl2-e14` | `methode-demontrer-litteral` `methode-modeliser-aire` `regle-simplifier-facteurs` | M6 |
+| `P7` Utiliser les identités remarquables (a+b)², (… | nombres_calculs | `calcul-litteral-2nde` | M3 | COVERED | M3.1 brick:identites-remarquables · M3.1 brick:mem-carre-somme · M3.1… | IdentityGrid | `cl2-e11` | `developper` `identites-remarquables` `mem-carre-somme` | M3 |
+| `P8` Factoriser une expression de la forme ax² + b… | nombres_calculs | `calcul-litteral-2nde` | M4 | COVERED | M4.1 brick:factoriser · M4.1 brick:methode-facteur-commun · M4.1 asse… | FactorFinder | `cl2-e12` | `factoriser` `methode-facteur-commun` `methode-identite-inverse` | M4 |
+| `P9` Effectuer des calculs avec des expressions fr… | nombres_calculs | `calcul-litteral-2nde` | M6 | COVERED | M6.1 brick:regle-simplifier-facteurs · M6.1 assessment:cl2-e13 | ProofOrder | `cl2-e13` | `methode-demontrer-litteral` `methode-modeliser-aire` `regle-simplifier-facteurs` | M6 |
+| `P10` Vérifier une identité algébrique. | nombres_calculs | `calcul-litteral-2nde` | M6 | COVERED | M6.1 brick:methode-demontrer-litteral · M6.1 assessment:cl2-e14 | ProofOrder | `cl2-e14` | `methode-demontrer-litteral` `methode-modeliser-aire` `regle-simplifier-facteurs` | M6 |
 | `P1` Utiliser le langage des ensembles. | nombres_calculs | `ensembles-et-intervalles-2nde` | M2, M5 | PARTIALLY_COVERED | M2.1 manipulation:SetBoxes · M2.1 brick:ensemble · M2.1 brick:vocab-a… | SetBoxes — trois boîtes emboîtées… | `ei-e1` `ei-e2` | `ensemble` `vocab-appartenance` `vocab-inclusion` | M2, M5 |
 | `P2` Lire et représenter des intervalles. | nombres_calculs | `ensembles-et-intervalles-2nde` | M1, M3 | COVERED | M1.1 manipulation:IntervalFilter · M1.1 feedback · M1.1 brick:borne-i… | IntervalFilter — le panneau du ma… | `ei-e3` `ei-e4` | `borne-incluse-exclue` `plage-infinite` `mem-borne` | M1, M3 |
 | `P3` Décrire un ensemble de nombres à l’aide d’un … | nombres_calculs | `ensembles-et-intervalles-2nde` | M4, M6 | COVERED | M4.1 manipulation:IntervalBuilder · M4.1 brick:regle-signe-crochet · … | IntervalBuilder dans les deux sen… | `ei-e5` `ei-e6` `ei-e9` | `regle-signe-crochet` `regle-sens-inegalite` `methode-traduire` | M4, M6 |
 | `P4` Interpréter les bornes et les différents type… | nombres_calculs | `ensembles-et-intervalles-2nde` | M1, M3, M4, M5 | COVERED | M1.1 manipulation:IntervalFilter · M1.1 brick:borne-incluse-exclue · … | IntervalBuilder avec allowInfinit… | `ei-e3` `ei-e4` `ei-e7` `ei-e8` | `borne-incluse-exclue` `plage-infinite` `types-intervalles` | M1, M3, M4, M5 |
 | `P5` Utiliser les intervalles pour résoudre des si… | nombres_calculs | `ensembles-et-intervalles-2nde` | M5, M6 | COVERED | M5.2 manipulation:IntervalBuilder · M5.2 brick:intersection-intervall… | IntervalBuilder par-dessus deux b… | `ei-e7` `ei-e8` `ei-e9` `ei-e10` | `intersection-intervalles` `reunion-intervalles` `mem-inter-union` | M5, M6 |
-| `P6` Comprendre l’appartenance à un ensemble et ut… | nombres_calculs | `ensembles-et-intervalles-2nde` | M2 | UNJUDGED | — | SetBoxes, VennSorter | `ei-e11` | `ensemble` `vocab-appartenance` `vocab-inclusion` | M2 |
-| `P7` Déterminer une réunion et une intersection d’… | nombres_calculs | `ensembles-et-intervalles-2nde` | M2 | UNJUDGED | — | SetBoxes, VennSorter | `ei-e12` | `ensemble` `vocab-appartenance` `vocab-inclusion` | M2 |
+| `P6` Comprendre l’appartenance à un ensemble et ut… | nombres_calculs | `ensembles-et-intervalles-2nde` | M2 | COVERED | M2.1 brick:vocab-appartenance · M2.1 brick:ensemble-vide · M2.1 manip… | SetBoxes, VennSorter | `ei-e11` | `ensemble` `vocab-appartenance` `vocab-inclusion` | M2 |
+| `P7` Déterminer une réunion et une intersection d’… | nombres_calculs | `ensembles-et-intervalles-2nde` | M2 | COVERED | M2.1 brick:vocab-intersection-reunion · M2.1 manipulation:VennSorter … | SetBoxes, VennSorter | `ei-e12` | `ensemble` `vocab-appartenance` `vocab-inclusion` | M2 |
 | `P1` Comprendre une équation comme une égalité à r… | nombres_calculs | `equations-et-inequations-2nde` | M1 | COVERED | M1.1 manipulation:SolutionScanner · M1.1 feedback · M1.1 brick:equati… | SolutionScanner — deux forfaits A… | `eq-e1` `eq-e2` | `equation-solution` `inequation-infinite` `regle-nombre-de-solutions` | M1 |
 | `P2` Résoudre une équation du premier degré. | nombres_calculs | `equations-et-inequations-2nde` | M2, M5, M6 | COVERED | M2.1 manipulation:EquationSteps · M2.1 feedback · M2.1 brick:regle-de… | EquationSteps — l'élève choisit d… | `eq-e3` `eq-e4` | `regle-deux-membres` `methode-premier-degre` `regle-solution-exacte` | M2, M5, M6 |
 | `P3` Comprendre et résoudre une inéquation du prem… | nombres_calculs | `equations-et-inequations-2nde` | M3, M6 | COVERED | M3.1 manipulation:SignFlipLine · M3.1 question:M03-S1-Q1 · M3.1 brick… | SignFlipLine — 2 et 5 posés sur u… | `eq-e1` `eq-e5` `eq-e6` `eq-e10` | `regle-signe-retourne` `methode-resoudre-inequation` `mem-signe-negatif` | M3, M6 |
@@ -188,33 +221,33 @@
 | `P5` Résoudre des équations produit. | nombres_calculs | `equations-et-inequations-2nde` | M4, M5 | COVERED | M4.1 manipulation:ProductScanner · M4.1 feedback · M4.2 brick:vocab-f… | ProductScanner — trois barres (fa… | `eq-e7` `eq-e8` | `vocab-facteur` `produit-nul` `methode-equation-produit` | M4, M5 |
 | `P6` Résoudre des équations quotient avec les rest… | nombres_calculs | `equations-et-inequations-2nde` | M5 | COVERED | M5.1 manipulation:ProductScanner · M5.1 feedback · M5.1 brick:valeur-… | ProductScanner en mode 'quotient'… | `eq-e9` | `valeur-interdite` `quotient-nul` `methode-choisir-methode` | M5 |
 | `P7` Interpréter et vérifier les solutions. | nombres_calculs | `equations-et-inequations-2nde` | M1, M2, M4, M5, M6 | COVERED | M1.4 question:M01-S4-Q3 · M1.4 brick:methode-verifier-solution · M2.3… | Aucune. Le module 6 est le seul m… | `eq-e2` `eq-e8` `eq-e10` | `methode-verifier-solution` `regle-solution-exacte` `methode-traduire-vitesse` | M1, M2, M4, M5, M6 |
-| `P8` Prendre en compte l’ensemble de définition d’… | nombres_calculs | `equations-et-inequations-2nde` | M5 | UNJUDGED | — | ProductScanner | `eq-e11` | `valeur-interdite` `quotient-nul` `methode-choisir-methode` | M5 |
-| `P9` Modéliser un problème par une équation ou une… | nombres_calculs | `equations-et-inequations-2nde` | M6 | UNJUDGED | — | — | `eq-e12` | `methode-modeliser` `regle-interpreter-solution` `methode-traduire-vitesse` | M6 |
-| `P10` Vérifier une solution. | nombres_calculs | `equations-et-inequations-2nde` | M1 | UNJUDGED | — | SolutionScanner | `eq-e13` | `equation-solution` `regle-nombre-de-solutions` `methode-verifier-solution` | M1 |
+| `P8` Prendre en compte l’ensemble de définition d’… | nombres_calculs | `equations-et-inequations-2nde` | M5 | COVERED | M5.1 brick:valeur-interdite · M5.1 brick:quotient-nul · M5.1 assessme… | ProductScanner | `eq-e11` | `valeur-interdite` `quotient-nul` `methode-choisir-methode` | M5 |
+| `P9` Modéliser un problème par une équation ou une… | nombres_calculs | `equations-et-inequations-2nde` | M6 | COVERED | M6.1 brick:methode-modeliser · M6.1 brick:regle-interpreter-solution … | — | `eq-e12` | `methode-modeliser` `regle-interpreter-solution` `methode-traduire-vitesse` | M6 |
+| `P10` Vérifier une solution. | nombres_calculs | `equations-et-inequations-2nde` | M1 | COVERED | M1.1 brick:methode-verifier-solution · M1.1 manipulation:SolutionScan… | SolutionScanner | `eq-e13` | `equation-solution` `regle-nombre-de-solutions` `methode-verifier-solution` | M1 |
 | `P1` Construire et analyser une proposition mathém… | nombres_calculs | `logique-et-raisonnement-2nde` | M1, M2 | COVERED | M1.1 manipulation:ConjectureLab · M1.1 question:M01-S1-Q1 · M1.1 bric… | ConjectureLab — tester n² + n + 4… | `lg-e1` `lg-e2` | `proposition` `contre-exemple` `regle-refuter-prouver` | M1, M2 |
 | `P2` Utiliser les connecteurs logiques. | nombres_calculs | `logique-et-raisonnement-2nde` | M2 | COVERED | M2.1 manipulation:FilterLab · M2.1 brick:connecteurs · M2.1 question:… | FilterLab — deux propriétés fixes… | `lg-e3` `lg-e4` | `connecteurs` `regle-ou-inclusif` `methode-negation` | M2 |
 | `P3` Comprendre et utiliser l’implication. | nombres_calculs | `logique-et-raisonnement-2nde` | M3, M4 | COVERED | M3.1 manipulation:ImplicationLab · M3.1 brick:implication · M3.1 bric… | ImplicationLab — un domaine se ré… | `lg-e5` `lg-e6` | `implication` `reciproque` `contraposee` | M3, M4 |
 | `P4` Comprendre et utiliser l’équivalence. | nombres_calculs | `logique-et-raisonnement-2nde` | M4 | COVERED | M4.1 manipulation:ImplicationLab · M4.1 question:M04-S1-Q1 · M4.1 bri… | ImplicationLab sur le domaine {−3… | `lg-e7` `lg-e8` | `equivalence` `regle-equivalence-carre` `methode-choisir-symbole` | M4 |
 | `P5` Utiliser un contre-exemple pour réfuter une a… | nombres_calculs | `logique-et-raisonnement-2nde` | M1, M3, M5 | COVERED | M1.1 manipulation:ConjectureLab · M1.1 brick:contre-exemple · M1.3 br… | Le contre-exemple est produit par… | `lg-e2` `lg-e9` | `contre-exemple` `regle-refuter-prouver` `mem-contre-exemple` | M1, M3, M5 |
 | `P6` Raisonner par contradiction. | nombres_calculs | `logique-et-raisonnement-2nde` | M5 | COVERED | M5.1 manipulation:PigeonLab · M5.1 brick:raisonnement-absurde · M5.1 … | PigeonLab — ajouter des élèves un… | `lg-e10` | `raisonnement-absurde` `vocab-quatre-outils` | M5 |
-| `P7` Utiliser des variables dans une proposition. | nombres_calculs | `logique-et-raisonnement-2nde` | M1 | UNJUDGED | — | ConjectureLab | `lg-e11` | `proposition` `contre-exemple` `regle-refuter-prouver` | M1 |
-| `P8` Formuler la réciproque d’une implication. | nombres_calculs | `logique-et-raisonnement-2nde` | M3 | UNJUDGED | — | ImplicationLab | `lg-e12` | `implication` `reciproque` `contraposee` | M3 |
-| `P9` Utiliser une contraposée. | nombres_calculs | `logique-et-raisonnement-2nde` | M3 | UNJUDGED | — | ImplicationLab | `lg-e13` | `implication` `reciproque` `contraposee` | M3 |
-| `P10` Comprendre les quantifications universelle et… | nombres_calculs | `logique-et-raisonnement-2nde` | M1 | UNJUDGED | — | ConjectureLab | `lg-e14` | `proposition` `contre-exemple` `regle-refuter-prouver` | M1 |
-| `P11` Raisonner par disjonction des cas. | nombres_calculs | `logique-et-raisonnement-2nde` | M5 | UNJUDGED | — | PigeonLab, ProofOrder | `lg-e15` | `raisonnement-absurde` `disjonction-cas` `vocab-quatre-outils` | M5 |
+| `P7` Utiliser des variables dans une proposition. | nombres_calculs | `logique-et-raisonnement-2nde` | M1 | COVERED | M1.1 brick:proposition · M1.1 brick:contre-exemple · M1.1 assessment:… | ConjectureLab | `lg-e11` | `proposition` `contre-exemple` `regle-refuter-prouver` | M1 |
+| `P8` Formuler la réciproque d’une implication. | nombres_calculs | `logique-et-raisonnement-2nde` | M3 | COVERED | M3.1 brick:reciproque · M3.1 manipulation:ImplicationLab · M3.1 asses… | ImplicationLab | `lg-e12` | `implication` `reciproque` `contraposee` | M3 |
+| `P9` Utiliser une contraposée. | nombres_calculs | `logique-et-raisonnement-2nde` | M3 | COVERED | M3.1 brick:contraposee · M3.1 assessment:lg-e13 | ImplicationLab | `lg-e13` | `implication` `reciproque` `contraposee` | M3 |
+| `P10` Comprendre les quantifications universelle et… | nombres_calculs | `logique-et-raisonnement-2nde` | M1 | COVERED | M1.1 brick:regle-refuter-prouver · M1.1 brick:mem-contre-exemple · M1… | ConjectureLab | `lg-e14` | `proposition` `contre-exemple` `regle-refuter-prouver` | M1 |
+| `P11` Raisonner par disjonction des cas. | nombres_calculs | `logique-et-raisonnement-2nde` | M5 | COVERED | M5.1 brick:disjonction-cas · M5.1 brick:vocab-quatre-outils · M5.1 as… | PigeonLab, ProofOrder | `lg-e15` | `raisonnement-absurde` `disjonction-cas` `vocab-quatre-outils` | M5 |
 | `P1` Comprendre l’ensemble des nombres réels. | nombres_calculs | `nombres-reels-2nde` | M1, M2 | COVERED | M1.1 manipulation:ZoomLine · M1.2 feedback · M1.1 brick:droite-reelle… | ZoomLine — zoom ×10 successif sur… | `nr-e1` `nr-e2` | `droite-reelle` `trois-comportements` `familles-emboitees` | M1, M2 |
 | `P2` Représenter des nombres réels sur une droite … | nombres_calculs | `nombres-reels-2nde` | M1, M5 | COVERED | M1.1 manipulation:ZoomLine · M1.3 brick:methode-encadrer-decimales · … | ZoomLine (placement/lecture d'un … | `nr-e3` `nr-e10` | `droite-reelle` `methode-encadrer-decimales` `methode-comparer-reels` | M1, M5 |
 | `P3` Distinguer nombres décimaux, rationnels et ir… | nombres_calculs | `nombres-reels-2nde` | M2, M3 | COVERED | M2.1 manipulation:FamilySorter · M2.1 brick:decimal · M2.1 brick:rati… | FractionExpander — la division po… | `nr-e2` `nr-e4` `nr-e5` | `decimal` `rationnel` `irrationnel` | M2, M3 |
 | `P4` Reconnaître et utiliser les écritures exactes… | nombres_calculs | `nombres-reels-2nde` | M3, M4 | COVERED | M3.4 brick:exact-approche · M3.4 question:M03-S4-Q2 · M4.1 manipulati… | RoundingLab — pousser la précisio… | `nr-e6` `nr-e7` | `exact-approche` `mem-exact-approche` `arrondi-troncature` | M3, M4 |
 | `P5` Comparer et encadrer des nombres réels. | nombres_calculs | `nombres-reels-2nde` | M1, M4, M5 | COVERED | M5.1 manipulation:SquareBracketer · M5.2 manipulation:SquareBracketer… | SquareBracketer — toucher des can… | `nr-e3` `nr-e8` `nr-e9` `nr-e10` | `methode-encadrer-racine` `methode-comparer-reels` `regle-sens-arrondi` | M1, M4, M5 |
-| `P6` Choisir un arrondi adapté à une situation. | nombres_calculs | `nombres-reels-2nde` | M5 | UNJUDGED | — | OrderingGame, SquareBracketer | `nr-e11` | `methode-encadrer-racine` `methode-comparer-reels` `regle-sens-arrondi` | M5 |
+| `P6` Choisir un arrondi adapté à une situation. | nombres_calculs | `nombres-reels-2nde` | M5 | COVERED | M5.1 brick:regle-sens-arrondi · M5.1 assessment:nr-e11 | OrderingGame, SquareBracketer | `nr-e11` | `methode-encadrer-racine` `methode-comparer-reels` `regle-sens-arrondi` | M5 |
 | `P1` Interpréter la valeur absolue comme une dista… | nombres_calculs | `valeur-absolue-distance-2nde` | M1, M2 | COVERED | M1.1 manipulation:DistanceLine · M1.1 feedback · M1.1 brick:valeur-ab… | DistanceLine — un phare en 0, un … | `va-e1` `va-e2` | `valeur-absolue-distance-zero` `regle-opposes-meme-distance` `mem-valeur-absolue-positive` | M1, M2 |
 | `P2` Calculer la valeur absolue d’un nombre réel. | nombres_calculs | `valeur-absolue-distance-2nde` | M2 | COVERED | M2.1 manipulation:AbsMachine · M2.1 brick:regle-calcul-valeur-absolue… | AbsMachine — entrer des nombres (… | `va-e2` `va-e3` | `regle-calcul-valeur-absolue` `methode-calculer-expression-absolue` | M2 |
 | `P3` Interpréter la distance entre deux nombres ré… | nombres_calculs | `valeur-absolue-distance-2nde` | M3 | COVERED | M3.1 manipulation:DistanceLine · M3.1 brick:distance-deux-nombres · M… | DistanceLine à deux poignées (A e… | `va-e4` `va-e5` | `distance-deux-nombres` `regle-distance-invariante` `mem-distance` | M3 |
 | `P4` Résoudre des situations utilisant des distanc… | nombres_calculs | `valeur-absolue-distance-2nde` | M4, M5 | COVERED | M4.3 manipulation:BeamLine · M4.3 brick:equation-distance-egale · M5.… | BeamLine avec bascule ≤ / < (modu… | `va-e8` `va-e9` `va-e10` | `methode-tolerance` `regle-deux-positions` `equation-distance-egale` | M4, M5 |
 | `P5` Relier distance, valeur absolue et intervalle… | nombres_calculs | `valeur-absolue-distance-2nde` | M4, M5 | COVERED | M4.1 manipulation:BeamLine · M4.1 brick:faisceau-intervalle · M4.1 qu… | BeamLine — un centre a (Stepper),… | `va-e6` `va-e7` `va-e8` | `faisceau-intervalle` `methode-centre-rayon` `mem-faisceau` | M4, M5 |
-| `P6` Résoudre une inéquation de la forme \|x − a\| ≤… | nombres_calculs | `valeur-absolue-distance-2nde` | M4 | UNJUDGED | — | BeamLine, BuildCheck | `va-e11` | `faisceau-intervalle` `equation-distance-egale` `methode-centre-rayon` | M4 |
-| `P7` Représenter graphiquement l’ensemble des solu… | nombres_calculs | `valeur-absolue-distance-2nde` | M4 | UNJUDGED | — | BeamLine, BuildCheck | `va-e11` | `faisceau-intervalle` `equation-distance-egale` `methode-centre-rayon` | M4 |
+| `P6` Résoudre une inéquation de la forme \|x − a\| ≤… | nombres_calculs | `valeur-absolue-distance-2nde` | M4 | COVERED | M4.1 brick:faisceau-intervalle · M4.1 brick:methode-centre-rayon · M4… | BeamLine, BuildCheck | `va-e11` | `faisceau-intervalle` `equation-distance-egale` `methode-centre-rayon` | M4 |
+| `P7` Représenter graphiquement l’ensemble des solu… | nombres_calculs | `valeur-absolue-distance-2nde` | M4 | COVERED | M4.1 brick:faisceau-intervalle · M4.1 manipulation:BeamLine · M4.1 as… | BeamLine, BuildCheck | `va-e11` | `faisceau-intervalle` `equation-distance-egale` `methode-centre-rayon` | M4 |
 | `P1` Construire un arbre de probabilités | statistiques_probabilites | `arbres-probabilites-2nde` | M1 | COVERED | M1.1 manipulation:TreeBuilder · M1.1 brick:arbre-structure · M1.2 que… | TreeBuilder — l'élève pose lui-mê… | `ar-e1` | `arbre-structure` | M1 |
 | `P2` Lire un arbre pondéré | statistiques_probabilites | `arbres-probabilites-2nde` | M2 | COVERED | M2.1 brick:poids-conditionnels · M2.2 brick:somme-branches · M2.2 que… | Aucune manipulation propre : lect… | `ar-e4` | `poids-conditionnels` `somme-branches` | M2 |
 | `P3` Interpréter la pondération d'une branche | statistiques_probabilites | `arbres-probabilites-2nde` | M2 | COVERED | M2.1 brick:poids-conditionnels · M2.1 question:M02-S1-Q1 | — | `ar-e3` | `poids-conditionnels` | M2 |
@@ -295,7 +328,7 @@
 | `P2` Calculer une moyenne | statistiques_probabilites | `statistiques-une-variable-2nde` | M1, M2 | COVERED | M1.1 manipulation:SeriesLab · M2.1 brick:moyenne · M2.1 question:M02-… | SeriesLab, repère orange : la moy… | `st-e2` | `moyenne` | M1, M2 |
 | `P3` Utiliser la linéarité de la moyenne | statistiques_probabilites | `statistiques-une-variable-2nde` | M5 | PARTIALLY_COVERED | M5.2 question:M05-S2 (BatchChoiceQuestion, 4 lignes) · M5.2 brick:lin… | AUCUNE pour ce LP. La formule x̄+… | `st-e9` | `linearite-moyenne` | M5 |
 | `P4` Calculer une médiane | statistiques_probabilites | `statistiques-une-variable-2nde` | M1, M2 | COVERED | M1.1 manipulation:SeriesLab · M1.1 feedback · M1.3 manipulation:Serie… | SeriesLab, repère vert : le point… | `st-e3` | `mediane` `choisir-position` | M1, M2 |
-| `P5` Déterminer les quartiles | statistiques_probabilites | `statistiques-une-variable-2nde` | M3 | PARTIALLY_COVERED | M3.1 manipulation:SeriesLab (LECTURE SEULE — pas de onChange) · M3.1 … | AUCUNE, et c'est le point central… | `st-e4` `st-e5` | `quartiles` | M3 |
+| `P5` Déterminer les quartiles | statistiques_probabilites | `statistiques-une-variable-2nde` | M3 | COVERED | M3.1 manipulation:SeriesLab (LECTURE SEULE — pas de onChange) · M3.1 … | SeriesLab en lecture (M3 ét. 1, r… | `st-e4` `st-e5` | `quartiles` | M3 |
 | `P6` Interpréter les indicateurs statistiques | statistiques_probabilites | `statistiques-une-variable-2nde` | M2, M6 | COVERED | M1.4 question:M01-S4 (un nombre suffit-il ?) · M2.4 brick:choisir-pos… | Le geste porteur est celui du mod… | `st-e5` | `choisir-position` `mem-deux-nombres` `quartiles` | M2, M6 |
 | `P7` Comprendre l'écart type | statistiques_probabilites | `statistiques-une-variable-2nde` | M4 | COVERED | M4.1 manipulation:SeriesLab (comparaison A/B, lecture seule) · M4.1 f… | SeriesLab avec `show={{ mean: tru… | `st-e7` `st-e8` | `ecart-type` `mem-deux-nombres` | M4 |
 | `P8` Calculer ou utiliser un écart type | statistiques_probabilites | `statistiques-une-variable-2nde` | M4 | COVERED | M4.2 manipulation:SeriesLab · M4.2 brick:ecart-type · M4.3 question:M… | La bande de l'étape 2 précède le … | `st-e7` | `ecart-type` | M4 |
@@ -329,6 +362,18 @@
 
 | Leçon | Signalement | Détail |
 | --- | --- | --- |
+| `fonctions-en-python-2nde` | NO_SPEC | aucun docs/lessons/*_SPEC.md |
+| `fonctions-en-python-2nde` | NO_E2E | aucune suite apps/web/e2e/lesson-kit/ |
+| `fonctions-en-python-2nde` | NO_LEARNING_POINTS_MIRROR |  |
+| `variables-et-instructions-2nde` | NO_SPEC | aucun docs/lessons/*_SPEC.md |
+| `variables-et-instructions-2nde` | NO_E2E | aucune suite apps/web/e2e/lesson-kit/ |
+| `variables-et-instructions-2nde` | NO_LEARNING_POINTS_MIRROR |  |
+| `trigonometrie-cercle-2nde` | NO_SPEC | aucun docs/lessons/*_SPEC.md |
+| `trigonometrie-cercle-2nde` | NO_E2E | aucune suite apps/web/e2e/lesson-kit/ |
+| `trigonometrie-cercle-2nde` | NO_LEARNING_POINTS_MIRROR |  |
+| `trigonometrie-equations-2nde` | NO_SPEC | aucun docs/lessons/*_SPEC.md |
+| `trigonometrie-equations-2nde` | NO_E2E | aucune suite apps/web/e2e/lesson-kit/ |
+| `trigonometrie-equations-2nde` | NO_LEARNING_POINTS_MIRROR |  |
 | `arbres-probabilites-2nde` | MAPPED_STEPS | M5 |
 | `arbres-probabilites-2nde` | NO_LEARNING_POINTS_MIRROR |  |
 | `boites-a-moustaches-2nde` | NO_E2E | aucune suite apps/web/e2e/lesson-kit/ |
@@ -352,35 +397,7 @@
 
 ## Fumée navigateur
 
-| Leçon | Pages ouvertes | Échecs |
-| --- | ---: | --- |
-| `fonction-affine-2nde` | 18 | — |
-| `fonctions-2nde` | 20 | — |
-| `fonctions-de-reference-2nde` | 18 | — |
-| `signe-fonctions-2nde` | 18 | — |
-| `variations-extremums-2nde` | 18 | — |
-| `colinearite-alignement-2nde` | 16 | — |
-| `equations-de-droites-2nde` | 20 | — |
-| `positions-relatives-droites-2nde` | 16 | — |
-| `vecteurs-2nde` | 20 | — |
-| `arithmetique-2nde` | 16 | — |
-| `calcul-litteral-2nde` | 18 | — |
-| `ensembles-et-intervalles-2nde` | 18 | — |
-| `equations-et-inequations-2nde` | 18 | — |
-| `logique-et-raisonnement-2nde` | 16 | — |
-| `nombres-reels-2nde` | 16 | — |
-| `valeur-absolue-distance-2nde` | 16 | — |
-| `arbres-probabilites-2nde` | 16 | — |
-| `boites-a-moustaches-2nde` | 16 | — |
-| `evolutions-successives-reciproques-2nde` | 18 | — |
-| `frequences-conditionnelles-2nde` | 16 | — |
-| `loi-grands-nombres-2nde` | 16 | — |
-| `probabilites-conditionnelles-2nde` | 16 | — |
-| `proportions-pourcentages-2nde` | 18 | — |
-| `series-regroupees-classes-2nde` | 18 | — |
-| `statistiques-une-variable-2nde` | 18 | — |
-| `tableaux-croises-2nde` | 16 | — |
-| `tests-diagnostiques-probabilites-2nde` | 16 | — |
+_Fumée navigateur non exécutée pour ce rendu._
 
 ## Réconciliation curriculaire
 
@@ -550,6 +567,30 @@
 
 | LP | Leçon | Objet officiel | Intitulé |
 | --- | --- | --- | --- |
+| `seconde_fonctions-en-python-2nde_P1` | `fonctions-en-python-2nde` | `fonctions_en_python` | Définir une fonction en Python |
+| `seconde_fonctions-en-python-2nde_P2` | `fonctions-en-python-2nde` | `fonctions_en_python` | Utiliser une fonction avec un argument |
+| `seconde_fonctions-en-python-2nde_P3` | `fonctions-en-python-2nde` | `fonctions_en_python` | Utiliser une fonction avec plusieurs arguments |
+| `seconde_fonctions-en-python-2nde_P4` | `fonctions-en-python-2nde` | `fonctions_en_python` | Appeler une fonction |
+| `seconde_fonctions-en-python-2nde_P5` | `fonctions-en-python-2nde` | `fonctions_en_python` | Lire une fonction existante |
+| `seconde_fonctions-en-python-2nde_P6` | `fonctions-en-python-2nde` | `fonctions_en_python` | Modifier une fonction |
+| `seconde_fonctions-en-python-2nde_P7` | `fonctions-en-python-2nde` | `fonctions_en_python` | Compléter une fonction |
+| `seconde_fonctions-en-python-2nde_P8` | `fonctions-en-python-2nde` | `fonctions_en_python` | Écrire une fonction réalisant un calcul |
+| `seconde_fonctions-en-python-2nde_P9` | `fonctions-en-python-2nde` | `fonctions_en_python` | Utiliser une fonction renvoyant un nombre aléatoire |
+| `seconde_fonctions-en-python-2nde_P10` | `fonctions-en-python-2nde` | `fonctions_en_python` | Répéter une fonction pour produire une série statistique |
+| `seconde_fonctions-en-python-2nde_P11` | `fonctions-en-python-2nde` | `fonctions_en_python` | Simuler une expérience aléatoire |
+| `seconde_fonctions-en-python-2nde_P12` | `fonctions-en-python-2nde` | `fonctions_en_python` | Vérifier les résultats d'un programme |
+| `seconde_variables-et-instructions-2nde_P1` | `variables-et-instructions-2nde` | `variables_et_instructions` | Comprendre la notion de variable informatique |
+| `seconde_variables-et-instructions-2nde_P2` | `variables-et-instructions-2nde` | `variables_et_instructions` | Identifier les types entier, flottant, booléen et chaîne |
+| `seconde_variables-et-instructions-2nde_P3` | `variables-et-instructions-2nde` | `variables_et_instructions` | Utiliser une affectation |
+| `seconde_variables-et-instructions-2nde_P4` | `variables-et-instructions-2nde` | `variables_et_instructions` | Écrire une séquence d'instructions |
+| `seconde_variables-et-instructions-2nde_P5` | `variables-et-instructions-2nde` | `variables_et_instructions` | Utiliser une instruction conditionnelle |
+| `seconde_variables-et-instructions-2nde_P6` | `variables-et-instructions-2nde` | `variables_et_instructions` | Utiliser une boucle for |
+| `seconde_variables-et-instructions-2nde_P7` | `variables-et-instructions-2nde` | `variables_et_instructions` | Utiliser une boucle while |
+| `seconde_variables-et-instructions-2nde_P8` | `variables-et-instructions-2nde` | `variables_et_instructions` | Écrire une formule avec des variables |
+| `seconde_variables-et-instructions-2nde_P9` | `variables-et-instructions-2nde` | `variables_et_instructions` | Lire un algorithme |
+| `seconde_variables-et-instructions-2nde_P10` | `variables-et-instructions-2nde` | `variables_et_instructions` | Modifier un algorithme |
+| `seconde_variables-et-instructions-2nde_P11` | `variables-et-instructions-2nde` | `variables_et_instructions` | Compléter un algorithme |
+| `seconde_variables-et-instructions-2nde_P12` | `variables-et-instructions-2nde` | `variables_et_instructions` | Vérifier le fonctionnement d'un programme |
 | `seconde_fonction-affine-2nde_P1` | `fonction-affine-2nde` | `fonction_affine` | Reconnaître une fonction affine |
 | `seconde_fonction-affine-2nde_P2` | `fonction-affine-2nde` | `fonction_affine` | Identifier le coefficient directeur |
 | `seconde_fonction-affine-2nde_P3` | `fonction-affine-2nde` | `fonction_affine` | Identifier l'ordonnée à l'origine |
@@ -637,6 +678,19 @@
 | `seconde_positions-relatives-droites-2nde_P6` | `positions-relatives-droites-2nde` | `positions_relatives_droites` | Résoudre un système associé à deux droites |
 | `seconde_positions-relatives-droites-2nde_P7` | `positions-relatives-droites-2nde` | `positions_relatives_droites` | Interpréter graphiquement une intersection |
 | `seconde_positions-relatives-droites-2nde_P8` | `positions-relatives-droites-2nde` | `positions_relatives_droites` | Résoudre un problème géométrique avec deux droites |
+| `seconde_trigonometrie-cercle-2nde_P1` | `trigonometrie-cercle-2nde` | `null` | Comprendre le cercle trigonométrique |
+| `seconde_trigonometrie-cercle-2nde_P2` | `trigonometrie-cercle-2nde` | `null` | Comprendre le radian comme mesure d'un angle par la longueur d'arc |
+| `seconde_trigonometrie-cercle-2nde_P3` | `trigonometrie-cercle-2nde` | `null` | Convertir entre degrés et radians |
+| `seconde_trigonometrie-cercle-2nde_P4` | `trigonometrie-cercle-2nde` | `null` | Associer un réel t à un point du cercle trigonométrique |
+| `seconde_trigonometrie-cercle-2nde_P5` | `trigonometrie-cercle-2nde` | `null` | Déterminer les coordonnées d'un point du cercle trigonométrique |
+| `seconde_trigonometrie-cercle-2nde_P6` | `trigonometrie-cercle-2nde` | `null` | Reconnaître le cosinus comme abscisse et le sinus comme ordonnée |
+| `seconde_trigonometrie-cercle-2nde_P7` | `trigonometrie-cercle-2nde` | `null` | Connaître les valeurs remarquables du cosinus |
+| `seconde_trigonometrie-cercle-2nde_P8` | `trigonometrie-cercle-2nde` | `null` | Connaître les valeurs remarquables du sinus |
+| `seconde_trigonometrie-cercle-2nde_P9` | `trigonometrie-cercle-2nde` | `null` | Utiliser les valeurs remarquables pour placer un point |
+| `seconde_trigonometrie-equations-2nde_P1` | `trigonometrie-equations-2nde` | `null` | Utiliser la relation cos²t + sin²t = 1 |
+| `seconde_trigonometrie-equations-2nde_P2` | `trigonometrie-equations-2nde` | `null` | Utiliser les formules d'addition du cosinus et du sinus |
+| `seconde_trigonometrie-equations-2nde_P3` | `trigonometrie-equations-2nde` | `null` | Résoudre une équation cos t = a sur un intervalle donné |
+| `seconde_trigonometrie-equations-2nde_P4` | `trigonometrie-equations-2nde` | `null` | Résoudre une équation sin t = b sur un intervalle donné |
 | `seconde_vecteurs-2nde_P1` | `vecteurs-2nde` | `vecteurs` | Comprendre l'égalité de deux vecteurs |
 | `seconde_vecteurs-2nde_P2` | `vecteurs-2nde` | `vecteurs` | Identifier le vecteur nul |
 | `seconde_vecteurs-2nde_P3` | `vecteurs-2nde` | `vecteurs` | Construire un représentant d'un vecteur |

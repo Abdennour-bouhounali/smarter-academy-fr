@@ -1,202 +1,596 @@
 {
-  "lesson": "calcul-litteral-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-nombres-calculs-batch",
-  "learningPoints": {
-    "seconde_calcul-litteral-2nde_P1": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 1, "mechanism": "manipulation:MagicTrick" },
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 1, "mechanism": "feedback" },
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 1, "mechanism": "brick:regle-tester-ne-prouve-pas" },
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 2, "mechanism": "brick:expression-litterale" },
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 2, "mechanism": "question:M01-S2-Q2" },
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 3, "mechanism": "brick:egalite-pour-tout-x" },
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 3, "mechanism": "question:M01-S3-Q3" }
-      ],
-      "manipulation": "MagicTrick — l'élève entre ses propres nombres (chips 5, 12, −7, 2,5 + saisie libre), la chaîne se remplit carte par carte ; le bouton « Suivre avec x » superpose la chaîne symbolique (x → 3x → 3x+9 → x+3 → 3). L'étape 1 exige au moins trois essais DONT un négatif ou un décimal (step1Done = trials.length >= 3 && (hasNeg || hasDec) && showX && whyDone), ce qui empêche l'élève de conclure sur trois entiers positifs.",
-      "assessmentQuestionIds": ["cl2-e1", "cl2-e2"],
-      "knowledgeItems": ["expression-litterale", "egalite-pour-tout-x", "regle-tester-ne-prouve-pas"],
-      "notes": "Chaîne complète et dans le bon ordre : geste (les essais) → révélation conditionnée (le Feedback « trois essais ne prouvent rien pour les milliards d'autres nombres ») → geste 2 (bascule x) → question M01-S1-Q1 → brique. La brique regle-tester-ne-prouve-pas est posée APRÈS whyDone, donc après la question qu'elle sert : mais la révélation conditionnée qui la précède (le Feedback trials>=3 && !showX) l'établit déjà, et la question M01-S1-Q1 n'est pas devinable puisque ses trois options sont toutes des phrases plausibles. expression-litterale est nommée AVANT la question M01-S2-Q2 qui l'exige (lignes 87 puis 94 du module), egalite-pour-tout-x AVANT M01-S3-Q3 (lignes 112 puis 118) : l'ordre du timeline est correct. Le second tour T2 ((x+1)² − x²) est un vrai test de transfert : le résultat DÉPEND de x, ce qui casse l'idée « une expression littérale rend toujours le même nombre ».",
-      "crossGrade": { "overlapsWith": ["4e:raisonnement-problemes-4e", "3e:calcul-litteral-algebrique"], "kind": "consolidation" },
-      "confidence": "high"
+ "lesson": "calcul-litteral-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-nombres-calculs-batch",
+ "learningPoints": {
+  "seconde_calcul-litteral-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 1,
+     "mechanism": "manipulation:MagicTrick"
     },
-    "seconde_calcul-litteral-2nde_P2": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "reduire", "step": 1, "mechanism": "manipulation:TermMerger" },
-        { "module": 2, "moduleSlug": "reduire", "step": 1, "mechanism": "feedback" },
-        { "module": 2, "moduleSlug": "reduire", "step": 1, "mechanism": "brick:vocab-terme-coefficient" },
-        { "module": 2, "moduleSlug": "reduire", "step": 1, "mechanism": "brick:methode-reduire" },
-        { "module": 2, "moduleSlug": "reduire", "step": 2, "mechanism": "manipulation:TermMerger" },
-        { "module": 2, "moduleSlug": "reduire", "step": 3, "mechanism": "brick:regle-exposants-pas-additionnes" },
-        { "module": 2, "moduleSlug": "reduire", "step": 3, "mechanism": "question:M02-S3-Q1" }
-      ],
-      "manipulation": "TermMerger — l'élève touche deux cartes de termes ; si elles ont le même degré elles fusionnent (coefficients additionnés), sinon un Feedback rouge nomme les deux formes et refuse (« 3 pommes et 2 poires ne font pas 5 pommes »). Deux compteurs affichés en permanence — valeur de départ en x = 2 et valeur courante en x = 2 — montrent que réduire ne change pas la valeur. Le refus EST l'enseignement : la contrainte « seuls les semblables s'empilent » est vécue, pas énoncée.",
-      "assessmentQuestionIds": ["cl2-e3"],
-      "knowledgeItems": ["vocab-terme-coefficient", "methode-reduire", "regle-exposants-pas-additionnes", "mem-reduire"],
-      "notes": "Étape 2 (4x − 3 + x − 2x² + 0,5) ajoute deux cas que l'étape 1 ne couvrait pas : un terme qui reste SEUL (−2x², aucun autre x²) et des coefficients décimaux (−3 + 0,5 = −2,5). L'étape 3 attaque de front la méprise 3x² + 2x = 5x³ par un tableau de valeurs qui donne une ligne VERTE en x = 1 (5 = 5) puis rouge en x = 2 (16 contre 40) : c'est le seul endroit de la 2de où l'élève voit qu'un accord isolé ne prouve rien, et la brique regle-exposants-pas-additionnes est posée AVANT la question M02-S3-Q1 qui l'exige (lignes 94 puis 101). Vérifié numériquement : 3·1²+2·1 = 5 = 5·1³ ; 3·4+4 = 16 ≠ 40.",
-      "crossGrade": { "overlapsWith": ["4e:calcul-litteral-4e", "3e:calcul-litteral-algebrique"], "kind": "repetition" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 1,
+     "mechanism": "feedback"
     },
-    "seconde_calcul-litteral-2nde_P3": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "developper-laire-qui-se-decoupe", "step": 1, "mechanism": "manipulation:IdentityGrid" },
-        { "module": 3, "moduleSlug": "developper-laire-qui-se-decoupe", "step": 1, "mechanism": "brick:developper" },
-        { "module": 3, "moduleSlug": "developper-laire-qui-se-decoupe", "step": 1, "mechanism": "question:M03-S1-Q1" },
-        { "module": 3, "moduleSlug": "developper-laire-qui-se-decoupe", "step": 2, "mechanism": "manipulation:IdentityGrid" },
-        { "module": 3, "moduleSlug": "developper-laire-qui-se-decoupe", "step": 3, "mechanism": "manipulation:IdentityGrid" },
-        { "module": 3, "moduleSlug": "developper-laire-qui-se-decoupe", "step": 3, "mechanism": "brick:identites-remarquables" },
-        { "module": 3, "moduleSlug": "developper-laire-qui-se-decoupe", "step": 4, "mechanism": "question:M03-S4-Q4" }
-      ],
-      "manipulation": "IdentityGrid — un carré SVG de côté a + b (mode plus), a − b (mode minus) ou l'équerre (mode diff), avec a et b réglés par steppers. Le découpage se redessine et la légende recalcule chaque aire numériquement, plus une ligne « trap » qui affiche a² + b² = N ≠ (a+b)² pour les valeurs courantes. L'étape 1 exige seen.size >= 2 : l'élève DOIT changer a ou b deux fois, donc voir l'identité tenir sur plusieurs jeux de valeurs, pas sur une image figée.",
-      "assessmentQuestionIds": ["cl2-e4", "cl2-e5"],
-      "knowledgeItems": ["developper", "identites-remarquables", "mem-carre-somme"],
-      "notes": "Les trois identités sont chacune découvertes par un découpage distinct : (a+b)² par les quatre morceaux, (a−b)² par « le coin retiré deux fois donc remis une fois » (le coin rose est visuellement dans les DEUX bandes), (a+b)(a−b) par l'équerre coupée en a(a−b) + b(a−b). La brique developper est posée avant la question M03-S1-Q1 (lignes 51 puis 58), identites-remarquables avant le drill de l'étape 4 (ligne 103, étape 3). La double distributivité générale n'est PAS découverte par un geste : elle n'apparaît qu'en ligne r4 du drill de l'étape 4 ((x+2)(3x−1)) et dans le Feedback qui la nomme après coup (« quatre produits pour deux binômes ») — c'est la seule facette du LP qui repose sur une correction plutôt que sur une manipulation. Le tableau de valeurs de l'étape 1 compare TROIS colonnes ((x+3)², x²+9, x²+6x+9) : le distracteur x²+9 s'accorde en x = 0 seulement, ce qui redouble la leçon « un accord isolé ne prouve rien ».",
-      "crossGrade": { "overlapsWith": ["3e:calcul-litteral-algebrique"], "kind": "repetition" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 1,
+     "mechanism": "brick:regle-tester-ne-prouve-pas"
     },
-    "seconde_calcul-litteral-2nde_P4": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "factoriser-le-facteur-commun", "step": 1, "mechanism": "manipulation:FactorFinder" },
-        { "module": 4, "moduleSlug": "factoriser-le-facteur-commun", "step": 1, "mechanism": "brick:factoriser" },
-        { "module": 4, "moduleSlug": "factoriser-le-facteur-commun", "step": 2, "mechanism": "manipulation:FactorFinder" },
-        { "module": 4, "moduleSlug": "factoriser-le-facteur-commun", "step": 2, "mechanism": "brick:methode-facteur-commun" },
-        { "module": 4, "moduleSlug": "factoriser-le-facteur-commun", "step": 3, "mechanism": "manipulation:FactorFinder" },
-        { "module": 4, "moduleSlug": "factoriser-le-facteur-commun", "step": 4, "mechanism": "manipulation:FactorFinder" },
-        { "module": 4, "moduleSlug": "factoriser-le-facteur-commun", "step": 4, "mechanism": "brick:methode-identite-inverse" },
-        { "module": 4, "moduleSlug": "factoriser-le-facteur-commun", "step": 5, "mechanism": "manipulation:ValueTable" }
-      ],
-      "manipulation": "FactorFinder — quatre tâches, quatre facteurs communs à toucher parmi des candidats plausibles. Chaque mauvais choix explique POURQUOI il est mauvais (« 4 est bien commun, mais on peut sortir plus » ; « x n'est pas un facteur de (x+1), dans x+1 il y a un + ») ; au bon choix l'écriture factorisée s'écrit en deux temps (factoredRaw puis factored). L'étape 5 fait vérifier la factorisation au tableau de valeurs sur au moins trois nombres.",
-      "assessmentQuestionIds": ["cl2-e6", "cl2-e7", "cl2-e10"],
-      "knowledgeItems": ["factoriser", "methode-facteur-commun", "methode-identite-inverse"],
-      "notes": "PARTIELLEMENT COUVERT pour une raison précise : le module 4 ne contient AUCUNE question du flux d'exposition (questionCounts.stream est vide) — la seule épreuve du LP hors du boss est l'acte de toucher la bonne puce, avec au plus 3 essais avant révélation automatique (FactorFinder.jsx l. 35 : `if (n >= 3) { setState('revealed'); onDone?.(false); }`). Un élève qui se trompe trois fois franchit l'étape sans jamais avoir produit une factorisation. Surtout, le cas ax² + bx — nommé explicitement dans le programme officiel 2026 — n'est présent qu'une fois, en tâche t1 (4x² + 12x), et le boss e6 (6x² + 9x) le reprend ; mais l'élève n'y factorise jamais lui-même : il CHOISIT le facteur (4x) dans une liste où le bon candidat est déjà écrit. La forme ax + bx (deuxième item officiel) n'apparaît nulle part. Le geste « écrire ce qui reste dans la parenthèse » — le vrai point de difficulté, notamment le signe en e7 où (x+5) − (2x−1) = 6 − x — n'est jamais manipulé, seulement affiché.",
-      "crossGrade": { "overlapsWith": ["3e:calcul-litteral-algebrique", "4e:calcul-litteral-4e"], "kind": "consolidation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 2,
+     "mechanism": "brick:expression-litterale"
     },
-    "seconde_calcul-litteral-2nde_P5": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "trois-formes-trois-usages", "step": 1, "mechanism": "question:M05-S1-Q1" },
-        { "module": 5, "moduleSlug": "trois-formes-trois-usages", "step": 2, "mechanism": "question:M05-S2-Q2" },
-        { "module": 5, "moduleSlug": "trois-formes-trois-usages", "step": 3, "mechanism": "question:M05-S3-Q3" },
-        { "module": 5, "moduleSlug": "trois-formes-trois-usages", "step": 3, "mechanism": "brick:regle-carre-positif" },
-        { "module": 5, "moduleSlug": "trois-formes-trois-usages", "step": 4, "mechanism": "brick:regle-choisir-la-forme" },
-        { "module": 5, "moduleSlug": "trois-formes-trois-usages", "step": 4, "mechanism": "brick:methode-prouver-egalite-formes" },
-        { "module": 5, "moduleSlug": "trois-formes-trois-usages", "step": 4, "mechanism": "question:M05-S4-Q4" }
-      ],
-      "manipulation": "AUCUNE. Le module 5 n'a pas de composant de manipulation (matrix : manipulations: []). Les trois « gestes » sont trois TapQuestion dont les options sont les trois mêmes formes affichées côte à côte : le geste est un choix parmi trois, pas une transformation.",
-      "assessmentQuestionIds": ["cl2-e8"],
-      "knowledgeItems": ["regle-choisir-la-forme", "regle-carre-positif", "methode-prouver-egalite-formes"],
-      "notes": "Le LP est bien éprouvé (quatre demandes + le boss e8) et bien nommé, mais il est établi PAR LA CORRECTION, pas par un geste : l'élève choisit une forme, puis l'explain lui dit pourquoi c'était la bonne. Contrairement aux modules 1 à 4, aucune conséquence visuelle ne rend la réponse évidente avant l'explication — un élève qui n'a jamais vu ces trois usages doit deviner trois fois, et découvrir par le feedback. Deux conséquences pratiques : (a) M05-S1-Q1 est DEVINABLE à partir de son énoncé seul (« quelle forme donne A(0) SANS AUCUN CALCUL » — la forme développée est la seule où l'on voit une constante isolée) ; (b) les trois formes sont DONNÉES d'emblée dans le brief (A(x) = x² + 2x − 3 = (x − 1)(x + 3) = (x + 1)² − 4), aucune n'est produite par l'élève, en particulier la forme canonique (x + 1)² − 4 qui n'est ni construite ni justifiée nulle part dans la leçon. Vérifié numériquement : les trois écritures coïncident bien (x = 2 → 5, 5, 5).",
-      "crossGrade": { "overlapsWith": ["3e:calcul-litteral-algebrique", "2de:variations-extremums-2nde"], "kind": "anticipation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 2,
+     "mechanism": "question:M01-S2-Q2"
     },
-    "seconde_calcul-litteral-2nde_P6": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 1, "mechanism": "manipulation:MagicTrick" },
-        { "module": 1, "moduleSlug": "le-tour-de-magie", "step": 1, "mechanism": "brick:regle-tester-ne-prouve-pas" },
-        { "module": 6, "moduleSlug": "demontrer-et-resoudre", "step": 1, "mechanism": "manipulation:ProofOrder" },
-        { "module": 6, "moduleSlug": "demontrer-et-resoudre", "step": 1, "mechanism": "brick:methode-demontrer-litteral" },
-        { "module": 6, "moduleSlug": "demontrer-et-resoudre", "step": 2, "mechanism": "question:M06-S2-Q1" },
-        { "module": 6, "moduleSlug": "demontrer-et-resoudre", "step": 3, "mechanism": "brick:methode-modeliser-aire" },
-        { "module": 6, "moduleSlug": "demontrer-et-resoudre", "step": 3, "mechanism": "question:M06-S3-Q2" },
-        { "module": 6, "moduleSlug": "demontrer-et-resoudre", "step": 4, "mechanism": "brick:regle-simplifier-facteurs" },
-        { "module": 6, "moduleSlug": "demontrer-et-resoudre", "step": 4, "mechanism": "question:M06-S4-Q3" }
-      ],
-      "manipulation": "ProofOrder — les cinq lignes de la démonstration du tour de magie sont présentées dans un ordre mélangé (ORDER = ['l3','l1','l5','l2','l4']) ; l'élève les touche dans l'ordre logique, la vérification désigne la PREMIÈRE ligne mal placée, deux essais puis révélation. Le geste est bien « construire une chaîne d'implications », pas « reconnaître un mot ».",
-      "assessmentQuestionIds": ["cl2-e9", "cl2-e10"],
-      "knowledgeItems": ["methode-demontrer-litteral", "methode-modeliser-aire", "regle-simplifier-facteurs"],
-      "notes": "La boucle est bouclée avec le module 1 : le tour de magie qu'on ne savait que CONSTATER est ici DÉMONTRÉ. L'étape 2 (n(n+2)+1 = (n+1)²) reprend le même piège avec un tableau vert partout — cinq lignes vertes — et demande ce qui PROUVE : c'est la question la moins devinable de la leçon, parce que l'option « les cinq lignes vertes » est très attirante. Toutes les briques précèdent leur question dans le timeline (methode-modeliser-aire l. 78 avant M06-S3-Q2 l. 84 ; regle-simplifier-facteurs l. 99 avant M06-S4-Q3 l. 105). Vérifié numériquement : (L+4)(l+4) − Ll = 4L + 4l + 16 (L=5, l=3 → 48 = 48) ; (n+1)² − (n−1)² = 4n (n=3 → 12 = 12).",
-      "crossGrade": { "overlapsWith": ["4e:raisonnement-problemes-4e", "2de:arithmetique-2nde", "2de:logique-et-raisonnement-2nde"], "kind": "consolidation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 3,
+     "mechanism": "brick:egalite-pour-tout-x"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 3,
+     "mechanism": "question:M01-S3-Q3"
     }
+   ],
+   "manipulation": "MagicTrick — l'élève entre ses propres nombres (chips 5, 12, −7, 2,5 + saisie libre), la chaîne se remplit carte par carte ; le bouton « Suivre avec x » superpose la chaîne symbolique (x → 3x → 3x+9 → x+3 → 3). L'étape 1 exige au moins trois essais DONT un négatif ou un décimal (step1Done = trials.length >= 3 && (hasNeg || hasDec) && showX && whyDone), ce qui empêche l'élève de conclure sur trois entiers positifs.",
+   "assessmentQuestionIds": [
+    "cl2-e1",
+    "cl2-e2"
+   ],
+   "knowledgeItems": [
+    "expression-litterale",
+    "egalite-pour-tout-x",
+    "regle-tester-ne-prouve-pas"
+   ],
+   "notes": "Chaîne complète et dans le bon ordre : geste (les essais) → révélation conditionnée (le Feedback « trois essais ne prouvent rien pour les milliards d'autres nombres ») → geste 2 (bascule x) → question M01-S1-Q1 → brique. La brique regle-tester-ne-prouve-pas est posée APRÈS whyDone, donc après la question qu'elle sert : mais la révélation conditionnée qui la précède (le Feedback trials>=3 && !showX) l'établit déjà, et la question M01-S1-Q1 n'est pas devinable puisque ses trois options sont toutes des phrases plausibles. expression-litterale est nommée AVANT la question M01-S2-Q2 qui l'exige (lignes 87 puis 94 du module), egalite-pour-tout-x AVANT M01-S3-Q3 (lignes 112 puis 118) : l'ordre du timeline est correct. Le second tour T2 ((x+1)² − x²) est un vrai test de transfert : le résultat DÉPEND de x, ce qui casse l'idée « une expression littérale rend toujours le même nombre ».",
+   "crossGrade": {
+    "overlapsWith": [
+     "4e:raisonnement-problemes-4e",
+     "3e:calcul-litteral-algebrique"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "pedagogicalProblems": [
-      "P4 « Factoriser » est le seul LP dont le module d'enseignement (module 4, Module04Factoriser.jsx) ne contient AUCUNE question du flux d'exposition : la matrice donne questionCounts.stream = {} et questions: []. Le LP repose entièrement sur quatre FactorFinder à choix de puce plus les trois épreuves du boss. L'élève ne produit jamais une factorisation, il en reconnaît une.",
-      "P4 : la factorisation d'une expression de la forme ax² + bx — item explicitement nommé au programme officiel 2026 — n'est éprouvée QUE sur un facteur commun visible et déjà écrit dans une liste de candidats (Module04Factoriser.jsx l. 21-27, TASKS[0] = 4x² + 12x avec le candidat « 4x » proposé) puis au boss e6 (6x² + 9x, QCM). La forme ax + bx (second item officiel) n'apparaît nulle part dans la leçon. Le geste réellement difficile — écrire ce qui reste DANS la parenthèse, avec son signe — n'est jamais demandé ; en e7, (x+5) − (2x−1) = 6 − x est le piège de signe le plus dur de la leçon et il est posé pour la première fois au boss, sans aucune préparation gestuelle.",
-      "P5 « Choisir la forme » est le seul LP enseigné sans aucune manipulation (Module05TroisFormes.jsx : matrix manipulations: []). Les trois formes A(x) = x² + 2x − 3 = (x − 1)(x + 3) = (x + 1)² − 4 sont DONNÉES d'emblée dans le `brief` ; l'élève ne les produit pas, ne les vérifie pas (aucun ValueTable dans ce module, alors que la leçon en fait son outil de contrôle partout ailleurs), et la forme canonique (x + 1)² − 4 n'est construite nulle part dans la leçon. La question M05-S1-Q1 est de plus devinable à partir de son seul énoncé (« quelle forme donne A(0) sans aucun calcul »).",
-      "FactorFinder révèle la réponse au bout de trois essais et appelle onDone?.(false) (components/FactorFinder.jsx l. 35) : l'étape se marque `done` même quand l'élève n'a rien trouvé. Sur un module sans aucune question de flux, cela signifie qu'un élève peut traverser tout l'enseignement de P4 sans avoir produit une seule bonne réponse.",
-      "La double distributivité générale (a + b)(c + d) — le socle de P3 hors identités — n'est établie par aucun geste : IdentityGrid ne dessine que les trois identités remarquables. Elle n'apparaît qu'en ligne r4 du drill de l'étape 4 ((x + 2)(3x − 1)) et n'est expliquée qu'APRÈS coup, par le `feedback` du BatchChoiceQuestion (« quatre produits pour deux binômes ») et par la `correction` de la ligne. Or c'est elle que le boss e5 mesure.",
-      "La brique regle-carre-positif (Module05TroisFormes.jsx l. 52-56) introduit dans son `lead` trois notions de vocabulaire que rien dans la leçon n'établit et que rien n'éprouve : MINIMUM, MAXIMUM et EXTREMUM. C'est le vocabulaire de la leçon variations-extremums-2nde, posé ici en passant, dans un texte, sans geste ni question."
-    ],
-    "technicalProblems": [
-      "Module07MissionFinale.jsx l. 7 : `import { numericChain, symbolicChain, formatPoly } from '../components/litteralUtils';` — les trois imports sont MORTS : aucun n'est utilisé dans le corps du fichier (les dix épreuves sont des littéraux). La constante `T1` déclarée l. 17 est également morte (elle n'apparaît nulle part ailleurs dans le fichier).",
-      "Module02Reduire.jsx : `useMerger.merge` (l. 26-31) reconstruit le tableau de termes en calculant `terms.indexOf(a)` APRÈS avoir déjà filtré `rest`, puis découpe `rest` avec cet index calculé sur le tableau non filtré. L'index est donc décalé dès que le terme fusionné n'est pas en tête, et le terme fusionné n'atterrit pas à sa position d'origine. La conséquence est cosmétique (l'ordre d'affichage des cartes), pas mathématique — la valeur affichée est recalculée depuis les coefficients — mais c'est un bug réel et il rend l'ordre des cartes imprévisible pendant la manipulation signature du module.",
-      "IdentityGrid.jsx l. 48 : le `max` du stepper b est `Math.min(bRange[1], mode === 'plus' ? bRange[1] : a - 1)`. En mode 'minus'/'diff', si l'élève baisse a jusqu'à la borne basse de aRange (3) alors que b vaut déjà 3, la contrainte b ≤ a − 1 n'est appliquée qu'au MAX du stepper, pas à la valeur courante : b reste à 3 avec a = 3, et le morceau (a − b)² est dessiné avec une largeur de 0. Les modules 3 passent aRange=[3,6] bRange=[1,3] : le cas a=3, b=3 est atteignable en descendant a après avoir monté b.",
-      "Module05TroisFormes.jsx étape 4, ligne r1 du BatchChoiceQuestion : l'intitulé « résoudre B(x) = 0 » emploie le verbe RÉSOUDRE alors que la résolution d'équations est explicitement hors périmètre de la leçon (teachingScope.exclude : « La résolution d'équations et d'inéquations (leçon dédiée) »). Le lesson.config.js le sait et le neutralise avec un `knowledgeAudit.ignore` (l. 48-56) plutôt qu'en reformulant la ligne : la garde automatique est éteinte, la formulation ambiguë reste devant l'élève.",
-      "Aucun problème de laboratoire gelé : les seuls `disabled={done}` sont sur les boutons de réponse de FactorFinder (l. 46) et de ProofOrder (l. 47), qui sont des widgets de question, pas des manipulations à explorer. Les `disabled` des PredictionChips (modules 1, 2, 3) verrouillent la prédiction une fois les essais faits, ce qui est le comportement voulu.",
-      "Toutes les affirmations mathématiques de la leçon et du boss ont été vérifiées numériquement et sont exactes : 2·(−2)² − 3·(−2) = 14 (e2) ; (x−2)(x+5) − (x−2)(2x−1) = (x−2)(6−x), contrôlé en x = 0 (−12 = −12) (e7) ; (n+1)² − (n−1)² = 4n, contrôlé en n = 3 (12 = 12) (e9) ; (L+4)(l+4) − Ll = 4L + 4l + 16, contrôlé en L = 5, l = 3 (48 = 48) (M06-S3-Q2) ; x² + 2x − 3 = (x−1)(x+3) = (x+1)² − 4 en x = 2 (5 = 5 = 5) (module 5) ; 3x² + 2x vaut 5 en x = 1 comme 5x³, et 16 contre 40 en x = 2 (module 2, étape 3). Aucun distracteur du boss n'est numériquement égal ou proche de la bonne réponse : les quatre options de chaque épreuve sont des polynômes distincts.",
-      "components/litteralUtils.test.js couvre le modèle : il verrouille formatPoly (typographie française, moins U+2212), la chaîne du tour de magie (résultat 3 pour 0, 2,5, −7, 1000 ; étapes intermédiaires 3x + 9 puis x + 3), (x+1)² − x² = 2x + 1 et sa valeur 21 en x = 10, commonMonomial(4x² + 12x) = 4x, asDifferenceOfSquares et asPerfectSquare avec leurs cas de refus (x² + 25 → null, x² + 9 → null). Le modèle mathématique est donc testé ; aucun composant de manipulation n'a de test propre (matrix : ownTest false pour MagicTrick, TermMerger, IdentityGrid, FactorFinder, ProofOrder)."
-    ],
-    "duplicates": [
-      "P1 (volet « tester ne prouve pas, la lettre prouve ») est enseigné comme NEUF ici (module 1, brique regle-tester-ne-prouve-pas) et il est aussi le cœur annoncé de la leçon de 4e raisonnement-problemes-4e, dont la description de catalogue est : « essayer un programme de calcul avec ses propres nombres sans jamais réussir à le mettre en défaut, découvrir que des essais ne prouvent rien et qu'un seul contre-exemple réfute, puis se servir du calcul littéral pour démontrer d'un coup ». Le geste (un programme de calcul essayé puis suivi avec une lettre) est le même geste, pas seulement le même thème.",
-      "P6 recouvre logique-et-raisonnement-2nde_P5 « Utiliser un contre-exemple pour réfuter une affirmation » : le corps de la brique regle-tester-ne-prouve-pas de cette leçon énonce explicitement « un seul contre-exemple suffit à réfuter une égalité supposée » (knowledge.jsx, item regle-tester-ne-prouve-pas). Deux leçons de 2de posent donc la même règle comme neuve.",
-      "P6 recouvre aussi arithmetique-2nde_P5 « Utiliser les propriétés arithmétiques pour construire une démonstration » : les deux leçons font remettre une démonstration en ordre (ProofOrder existe dans les deux répertoires de composants, apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/components/ProofOrder.jsx et .../calcul-litteral-2nde/components/ProofOrder.jsx) et l'exemple du module 6 étape 2 (n(n+2)+1 est un carré, pour tout ENTIER n) est un énoncé d'arithmétique."
-    ],
-    "recommendations": [
-      "Ajouter au module 4 au moins une question de flux qui fasse ÉCRIRE ce qui reste dans la parenthèse (NumericQuestion ou TapQuestion sur le second facteur), en particulier sur un cas avec un signe − devant la seconde parenthèse — le piège du boss e7 n'est préparé nulle part.",
-      "Ajouter une tâche FactorFinder de la forme ax + bx (par exemple 6x + 15x, ou 3ax + 5ax) : l'item officiel « Factoriser une expression de la forme ax+bx » n'a aucune trace dans la leçon.",
-      "Donner au module 5 une vraie manipulation : faire PRODUIRE la forme factorisée et la forme canonique à partir de la forme développée (ou au minimum les faire vérifier au ValueTable, l'outil de contrôle de toute la leçon, absent de ce seul module).",
-      "Déplacer le vocabulaire minimum/maximum/extremum hors du `lead` de regle-carre-positif, ou l'assortir d'une demande : posé ainsi, il n'est ni établi ni mesuré et il empiète sur variations-extremums-2nde.",
-      "Supprimer les imports morts et la constante T1 de Module07MissionFinale.jsx (l. 7 et l. 17).",
-      "Corriger l'index de réinsertion dans useMerger (Module02Reduire.jsx l. 26-31) et borner la VALEUR de b, pas seulement le max du stepper, dans IdentityGrid (l. 48).",
-      "Reformuler la ligne r1 du module 5 (« résoudre B(x) = 0 » → « trouver les x qui annulent B ») et retirer le knowledgeAudit.ignore correspondant, plutôt que d'éteindre la garde."
-    ],
-    "officialScopeNotCovered": [
-      {
-        "scopeItem": "Utiliser (a+b)²",
-        "taughtAnyway": true,
-        "evidence": "Module 3, étape 1 : IdentityGrid mode 'plus' avec a et b réglables (seen.size >= 2 impose deux réglages), ValueTable à trois colonnes ((x+3)², x²+9, x²+6x+9), brique developper puis question M03-S1-Q1, brique mem-carre-somme. Mesuré au boss par cl2-e4 ((x − 4)²), rattaché à P3.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Utiliser (a-b)²",
-        "taughtAnyway": true,
-        "evidence": "Module 3, étape 2 : IdentityGrid mode 'minus' (le coin b² visiblement retiré deux fois puis remis une fois) + question M03-S2-Q2 « Que vaut (a − b)² ? ». Aucun LP du catalogue ne nomme cette identité ; elle est absorbée dans P3 « Développer une expression ». Mesurée au boss par cl2-e4 seulement.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Utiliser (a+b)(a-b)",
-        "taughtAnyway": true,
-        "evidence": "Module 3, étape 3 : IdentityGrid mode 'diff' (l'équerre découpée en a(a−b) + b(a−b)) + question M03-S3-Q3, puis brique identites-remarquables. Réemployée au module 4 tâche t3 (x² − 25) et au boss cl2-e10 ((x² − 9)/(x − 3)). Enseignée solidement, mais rattachée à P3 et à P4 sans LP propre.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Factoriser une expression de la forme ax²+bx",
-        "taughtAnyway": true,
-        "evidence": "Module 4, étape 1 : FactorFinder sur 4x² + 12x, où le bon facteur (4x) est l'un des quatre candidats proposés — l'élève le CHOISIT, il ne l'écrit pas. Mesuré au boss par cl2-e6 (6x² + 9x, QCM à quatre options). Aucun LP du catalogue ne l'isole : c'est le cas générique de P4.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Factoriser une expression de la forme ax+bx",
-        "taughtAnyway": false,
-        "evidence": "Recherche dans les quatre TASKS du module 4 (4x² + 12x ; (x+1)(2x−3) + (x+1)(x+4) ; x² − 25 ; 4x² + 12x + 9) et dans les dix épreuves du boss : aucune expression de la forme ax + bx. Le cas le plus simple de la factorisation — un facteur commun de degré 1 sur deux termes de degré 1 — est absent de la leçon.",
-        "recommendation": "absent"
-      },
-      {
-        "scopeItem": "Effectuer des calculs avec des expressions fractionnaires",
-        "taughtAnyway": true,
-        "evidence": "Module 6, étape 4 : brique regle-simplifier-facteurs puis TapQuestion M06-S4-Q3 sur (2x + 4)/(x + 2) avec la restriction x ≠ −2 ; mesuré au boss par cl2-e10 ((x² − 9)/(x − 3), x ≠ 3). C'est une SIMPLIFICATION seulement — le teachingScope.exclude de la leçon dit d'ailleurs « Les fractions rationnelles au-delà d'une simplification ». Aucune somme ni aucun produit de deux expressions fractionnaires n'est jamais calculé, alors que l'item officiel dit « effectuer des calculs ». Le rattachement se fait à P6, qui parle de démontrer et résoudre, pas de fractions.",
-        "recommendation": "append-lp"
-      },
-      {
-        "scopeItem": "Vérifier une identité algébrique",
-        "taughtAnyway": true,
-        "evidence": "C'est le fil rouge le mieux tenu de la leçon et il n'a aucun LP : ValueTable au module 2 étape 3 (3x² + 2x contre 5x³), au module 3 étape 1 (trois colonnes), au module 4 étape 5 (tested.size >= 3 sur la factorisation), au module 6 étape 2 (n(n+2)+1 contre (n+1)²) ; brique methode-prouver-egalite-formes (module 5, étape 4) ; ligne r4 du drill du module 5 (« vérifier que deux écritures sont égales » → « développer les deux », le distracteur « les tester en x = 1 » étant le piège) ; brique regle-tester-ne-prouve-pas (module 1). Enseigné, nommé, éprouvé — mais jamais mesuré en propre au boss, et absorbé tantôt dans P1, tantôt dans P5.",
-        "recommendation": "append-lp"
-      }
-    ],
-    "verticalPositioning": {
-      "revised": "Réduire des termes semblables et développer par distributivité simple : acquis de 4e (calcul-litteral-4e, pointsToLearn « Réduire une expression littérale », « Développer avec la distributivité simple », « Développer avec la double distributivité ») et de 3e (calcul-litteral-algebrique, modules « Termes et facteurs », « Réduire sans se tromper »). Ils sont explicitement déclarés en priorKnowledge (calcul-litteral, distributivite, developper, termes-semblables, reduire-expression, terme-algebrique, facteur, carre-nombre) et diagnostiqués par le module 0 (cinq questions, jamais bloquantes). Le module 2 les REJOUE néanmoins entièrement, avec deux ajouts réels : les coefficients décimaux (−3 + 0,5) et le terme qui reste seul.",
-      "extended": "Les identités remarquables : la 3e en voyait déjà une (module « Le carré de côté a + b » de calcul-litteral-algebrique, et pointsToLearn « Utiliser les identités remarquables »). La 2de les traite toutes les trois, chacune sur son propre découpage d'aire, avec a et b RÉGLABLES — c'est là l'extension : l'identité n'est plus une figure, c'est une famille de figures. La factorisation s'étend du facteur numérique/monôme de 3e au BINÔME entier (x + 1) comme facteur commun (module 4, tâche t2) et à l'identité lue à l'envers (t3, t4).",
-      "new": "Trois choses sont neuves. (1) L'égalité d'expressions vraie POUR TOUT x, distinguée d'une équation à résoudre : c'est le contenu de la brique egalite-pour-tout-x et de la question M01-S3-Q3, dont le distracteur « que x vaut 3 » est précisément la confusion visée. (2) Le choix de forme comme démarche : la 3e avait un module « Choisir la bonne forme », mais la 2de y ajoute la forme canonique (x + 1)² − 4 et l'usage « minimum », qui n'existent pas au collège — encore que la leçon la DONNE sans jamais la construire. (3) La simplification d'une expression fractionnaire avec sa restriction (x ≠ −2), absente du collège.",
-      "formalized": "Le tableau de valeurs devient un instrument de PREUVE NÉGATIVE explicite et nommé : la brique regle-exposants-pas-additionnes et le corps de knowledge.jsx en font le « détecteur d'erreur de toute la leçon », et le module 2 étape 3 met en scène le cas limite (accord en x = 1, désaccord en x = 2). Au collège le tableau servait à vérifier ; ici il sert à réfuter, et la leçon formalise que vérifier ne prouve pas. La démonstration littérale elle-même est formalisée par ProofOrder (module 6 étape 1) : hypothèse, transformations, conclusion — un objet que la 3e n'ordonnait pas.",
-      "tool": "Le calcul littéral est ici explicitement instrumentalisé, ce qui est la vraie rupture de niveau : il sert à PROUVER (le tour de magie, n(n+2)+1 = (n+1)², (n+1)² − (n−1)² = 4n) et à MODÉLISER (l'aire du cadre, formule valable pour toute photo). La leçon se déclare aussi explicitement outil pour la suite : son teachingScope.exclude renvoie la résolution d'équations à equations-et-inequations-2nde en disant « elle prépare les formes qui les rendent résolubles », et la forme factorisée présentée au module 5 étape 2 comme celle qui « répond aux questions = 0 » est exactement le prérequis de l'équation produit nul. De même, la forme « carré + constante » du module 5 étape 3 est un outil emprunté d'avance à variations-extremums-2nde."
+  "seconde_calcul-litteral-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "reduire",
+     "step": 1,
+     "mechanism": "manipulation:TermMerger"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "reduire",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "reduire",
+     "step": 1,
+     "mechanism": "brick:vocab-terme-coefficient"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "reduire",
+     "step": 1,
+     "mechanism": "brick:methode-reduire"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "reduire",
+     "step": 2,
+     "mechanism": "manipulation:TermMerger"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "reduire",
+     "step": 3,
+     "mechanism": "brick:regle-exposants-pas-additionnes"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "reduire",
+     "step": 3,
+     "mechanism": "question:M02-S3-Q1"
     }
+   ],
+   "manipulation": "TermMerger — l'élève touche deux cartes de termes ; si elles ont le même degré elles fusionnent (coefficients additionnés), sinon un Feedback rouge nomme les deux formes et refuse (« 3 pommes et 2 poires ne font pas 5 pommes »). Deux compteurs affichés en permanence — valeur de départ en x = 2 et valeur courante en x = 2 — montrent que réduire ne change pas la valeur. Le refus EST l'enseignement : la contrainte « seuls les semblables s'empilent » est vécue, pas énoncée.",
+   "assessmentQuestionIds": [
+    "cl2-e3"
+   ],
+   "knowledgeItems": [
+    "vocab-terme-coefficient",
+    "methode-reduire",
+    "regle-exposants-pas-additionnes",
+    "mem-reduire"
+   ],
+   "notes": "Étape 2 (4x − 3 + x − 2x² + 0,5) ajoute deux cas que l'étape 1 ne couvrait pas : un terme qui reste SEUL (−2x², aucun autre x²) et des coefficients décimaux (−3 + 0,5 = −2,5). L'étape 3 attaque de front la méprise 3x² + 2x = 5x³ par un tableau de valeurs qui donne une ligne VERTE en x = 1 (5 = 5) puis rouge en x = 2 (16 contre 40) : c'est le seul endroit de la 2de où l'élève voit qu'un accord isolé ne prouve rien, et la brique regle-exposants-pas-additionnes est posée AVANT la question M02-S3-Q1 qui l'exige (lignes 94 puis 101). Vérifié numériquement : 3·1²+2·1 = 5 = 5·1³ ; 3·4+4 = 16 ≠ 40.",
+   "crossGrade": {
+    "overlapsWith": [
+     "4e:calcul-litteral-4e",
+     "3e:calcul-litteral-algebrique"
+    ],
+    "kind": "repetition"
+   },
+   "confidence": "high"
+  },
+  "seconde_calcul-litteral-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 1,
+     "mechanism": "manipulation:IdentityGrid"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 1,
+     "mechanism": "brick:developper"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 1,
+     "mechanism": "question:M03-S1-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 2,
+     "mechanism": "manipulation:IdentityGrid"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 3,
+     "mechanism": "manipulation:IdentityGrid"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 3,
+     "mechanism": "brick:identites-remarquables"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 4,
+     "mechanism": "question:M03-S4-Q4"
+    }
+   ],
+   "manipulation": "IdentityGrid — un carré SVG de côté a + b (mode plus), a − b (mode minus) ou l'équerre (mode diff), avec a et b réglés par steppers. Le découpage se redessine et la légende recalcule chaque aire numériquement, plus une ligne « trap » qui affiche a² + b² = N ≠ (a+b)² pour les valeurs courantes. L'étape 1 exige seen.size >= 2 : l'élève DOIT changer a ou b deux fois, donc voir l'identité tenir sur plusieurs jeux de valeurs, pas sur une image figée.",
+   "assessmentQuestionIds": [
+    "cl2-e4",
+    "cl2-e5"
+   ],
+   "knowledgeItems": [
+    "developper",
+    "identites-remarquables",
+    "mem-carre-somme"
+   ],
+   "notes": "Les trois identités sont chacune découvertes par un découpage distinct : (a+b)² par les quatre morceaux, (a−b)² par « le coin retiré deux fois donc remis une fois » (le coin rose est visuellement dans les DEUX bandes), (a+b)(a−b) par l'équerre coupée en a(a−b) + b(a−b). La brique developper est posée avant la question M03-S1-Q1 (lignes 51 puis 58), identites-remarquables avant le drill de l'étape 4 (ligne 103, étape 3). La double distributivité générale n'est PAS découverte par un geste : elle n'apparaît qu'en ligne r4 du drill de l'étape 4 ((x+2)(3x−1)) et dans le Feedback qui la nomme après coup (« quatre produits pour deux binômes ») — c'est la seule facette du LP qui repose sur une correction plutôt que sur une manipulation. Le tableau de valeurs de l'étape 1 compare TROIS colonnes ((x+3)², x²+9, x²+6x+9) : le distracteur x²+9 s'accorde en x = 0 seulement, ce qui redouble la leçon « un accord isolé ne prouve rien ».",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:calcul-litteral-algebrique"
+    ],
+    "kind": "repetition"
+   },
+   "confidence": "high"
+  },
+  "seconde_calcul-litteral-2nde_P4": {
+   "status": "PARTIALLY_COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 1,
+     "mechanism": "manipulation:FactorFinder"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 1,
+     "mechanism": "brick:factoriser"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 2,
+     "mechanism": "manipulation:FactorFinder"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 2,
+     "mechanism": "brick:methode-facteur-commun"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 3,
+     "mechanism": "manipulation:FactorFinder"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 4,
+     "mechanism": "manipulation:FactorFinder"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 4,
+     "mechanism": "brick:methode-identite-inverse"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 5,
+     "mechanism": "manipulation:ValueTable"
+    }
+   ],
+   "manipulation": "FactorFinder — quatre tâches, quatre facteurs communs à toucher parmi des candidats plausibles. Chaque mauvais choix explique POURQUOI il est mauvais (« 4 est bien commun, mais on peut sortir plus » ; « x n'est pas un facteur de (x+1), dans x+1 il y a un + ») ; au bon choix l'écriture factorisée s'écrit en deux temps (factoredRaw puis factored). L'étape 5 fait vérifier la factorisation au tableau de valeurs sur au moins trois nombres.",
+   "assessmentQuestionIds": [
+    "cl2-e6",
+    "cl2-e7",
+    "cl2-e10"
+   ],
+   "knowledgeItems": [
+    "factoriser",
+    "methode-facteur-commun",
+    "methode-identite-inverse"
+   ],
+   "notes": "PARTIELLEMENT COUVERT pour une raison précise : le module 4 ne contient AUCUNE question du flux d'exposition (questionCounts.stream est vide) — la seule épreuve du LP hors du boss est l'acte de toucher la bonne puce, avec au plus 3 essais avant révélation automatique (FactorFinder.jsx l. 35 : `if (n >= 3) { setState('revealed'); onDone?.(false); }`). Un élève qui se trompe trois fois franchit l'étape sans jamais avoir produit une factorisation. Surtout, le cas ax² + bx — nommé explicitement dans le programme officiel 2026 — n'est présent qu'une fois, en tâche t1 (4x² + 12x), et le boss e6 (6x² + 9x) le reprend ; mais l'élève n'y factorise jamais lui-même : il CHOISIT le facteur (4x) dans une liste où le bon candidat est déjà écrit. La forme ax + bx (deuxième item officiel) n'apparaît nulle part. Le geste « écrire ce qui reste dans la parenthèse » — le vrai point de difficulté, notamment le signe en e7 où (x+5) − (2x−1) = 6 − x — n'est jamais manipulé, seulement affiché.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:calcul-litteral-algebrique",
+     "4e:calcul-litteral-4e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_calcul-litteral-2nde_P5": {
+   "status": "PARTIALLY_COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "trois-formes-trois-usages",
+     "step": 1,
+     "mechanism": "question:M05-S1-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "trois-formes-trois-usages",
+     "step": 2,
+     "mechanism": "question:M05-S2-Q2"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "trois-formes-trois-usages",
+     "step": 3,
+     "mechanism": "question:M05-S3-Q3"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "trois-formes-trois-usages",
+     "step": 3,
+     "mechanism": "brick:regle-carre-positif"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "trois-formes-trois-usages",
+     "step": 4,
+     "mechanism": "brick:regle-choisir-la-forme"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "trois-formes-trois-usages",
+     "step": 4,
+     "mechanism": "brick:methode-prouver-egalite-formes"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "trois-formes-trois-usages",
+     "step": 4,
+     "mechanism": "question:M05-S4-Q4"
+    }
+   ],
+   "manipulation": "AUCUNE. Le module 5 n'a pas de composant de manipulation (matrix : manipulations: []). Les trois « gestes » sont trois TapQuestion dont les options sont les trois mêmes formes affichées côte à côte : le geste est un choix parmi trois, pas une transformation.",
+   "assessmentQuestionIds": [
+    "cl2-e8"
+   ],
+   "knowledgeItems": [
+    "regle-choisir-la-forme",
+    "regle-carre-positif",
+    "methode-prouver-egalite-formes"
+   ],
+   "notes": "Le LP est bien éprouvé (quatre demandes + le boss e8) et bien nommé, mais il est établi PAR LA CORRECTION, pas par un geste : l'élève choisit une forme, puis l'explain lui dit pourquoi c'était la bonne. Contrairement aux modules 1 à 4, aucune conséquence visuelle ne rend la réponse évidente avant l'explication — un élève qui n'a jamais vu ces trois usages doit deviner trois fois, et découvrir par le feedback. Deux conséquences pratiques : (a) M05-S1-Q1 est DEVINABLE à partir de son énoncé seul (« quelle forme donne A(0) SANS AUCUN CALCUL » — la forme développée est la seule où l'on voit une constante isolée) ; (b) les trois formes sont DONNÉES d'emblée dans le brief (A(x) = x² + 2x − 3 = (x − 1)(x + 3) = (x + 1)² − 4), aucune n'est produite par l'élève, en particulier la forme canonique (x + 1)² − 4 qui n'est ni construite ni justifiée nulle part dans la leçon. Vérifié numériquement : les trois écritures coïncident bien (x = 2 → 5, 5, 5).",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:calcul-litteral-algebrique",
+     "2de:variations-extremums-2nde"
+    ],
+    "kind": "anticipation"
+   },
+   "confidence": "high"
+  },
+  "seconde_calcul-litteral-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 1,
+     "mechanism": "manipulation:MagicTrick"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-tour-de-magie",
+     "step": 1,
+     "mechanism": "brick:regle-tester-ne-prouve-pas"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 1,
+     "mechanism": "manipulation:ProofOrder"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 1,
+     "mechanism": "brick:methode-demontrer-litteral"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 2,
+     "mechanism": "question:M06-S2-Q1"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 3,
+     "mechanism": "brick:methode-modeliser-aire"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 3,
+     "mechanism": "question:M06-S3-Q2"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 4,
+     "mechanism": "brick:regle-simplifier-facteurs"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 4,
+     "mechanism": "question:M06-S4-Q3"
+    }
+   ],
+   "manipulation": "ProofOrder — les cinq lignes de la démonstration du tour de magie sont présentées dans un ordre mélangé (ORDER = ['l3','l1','l5','l2','l4']) ; l'élève les touche dans l'ordre logique, la vérification désigne la PREMIÈRE ligne mal placée, deux essais puis révélation. Le geste est bien « construire une chaîne d'implications », pas « reconnaître un mot ».",
+   "assessmentQuestionIds": [
+    "cl2-e9",
+    "cl2-e10"
+   ],
+   "knowledgeItems": [
+    "methode-demontrer-litteral",
+    "methode-modeliser-aire",
+    "regle-simplifier-facteurs"
+   ],
+   "notes": "La boucle est bouclée avec le module 1 : le tour de magie qu'on ne savait que CONSTATER est ici DÉMONTRÉ. L'étape 2 (n(n+2)+1 = (n+1)²) reprend le même piège avec un tableau vert partout — cinq lignes vertes — et demande ce qui PROUVE : c'est la question la moins devinable de la leçon, parce que l'option « les cinq lignes vertes » est très attirante. Toutes les briques précèdent leur question dans le timeline (methode-modeliser-aire l. 78 avant M06-S3-Q2 l. 84 ; regle-simplifier-facteurs l. 99 avant M06-S4-Q3 l. 105). Vérifié numériquement : (L+4)(l+4) − Ll = 4L + 4l + 16 (L=5, l=3 → 48 = 48) ; (n+1)² − (n−1)² = 4n (n=3 → 12 = 12).",
+   "crossGrade": {
+    "overlapsWith": [
+     "4e:raisonnement-problemes-4e",
+     "2de:arithmetique-2nde",
+     "2de:logique-et-raisonnement-2nde"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_calcul-litteral-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 1,
+     "mechanism": "brick:identites-remarquables"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 1,
+     "mechanism": "brick:mem-carre-somme"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 1,
+     "mechanism": "manipulation:IdentityGrid"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "developper-laire-qui-se-decoupe",
+     "step": 1,
+     "mechanism": "assessment:cl2-e11"
+    }
+   ],
+   "note": "Les trois identités sont produites par le découpage d'aire (IdentityGrid, trois modes), pas récitées."
+  },
+  "seconde_calcul-litteral-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 1,
+     "mechanism": "brick:factoriser"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 1,
+     "mechanism": "brick:methode-facteur-commun"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "factoriser-le-facteur-commun",
+     "step": 1,
+     "mechanism": "assessment:cl2-e12"
+    }
+   ],
+   "note": "ax² + bx est factorisé au module 4 ; épreuve propre cl2-e12."
+  },
+  "seconde_calcul-litteral-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 1,
+     "mechanism": "brick:regle-simplifier-facteurs"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 1,
+     "mechanism": "assessment:cl2-e13"
+    }
+   ],
+   "note": "Simplification d'une expression fractionnaire simple au module 6, avec la règle « on simplifie des FACTEURS »."
+  },
+  "seconde_calcul-litteral-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 1,
+     "mechanism": "brick:methode-demontrer-litteral"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "demontrer-et-resoudre",
+     "step": 1,
+     "mechanism": "assessment:cl2-e14"
+    }
+   ],
+   "note": "Vérifier une identité : le module 6 oppose vérifier sur un exemple et démontrer pour tout x."
   }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "P4 « Factoriser » est le seul LP dont le module d'enseignement (module 4, Module04Factoriser.jsx) ne contient AUCUNE question du flux d'exposition : la matrice donne questionCounts.stream = {} et questions: []. Le LP repose entièrement sur quatre FactorFinder à choix de puce plus les trois épreuves du boss. L'élève ne produit jamais une factorisation, il en reconnaît une.",
+   "P4 : la factorisation d'une expression de la forme ax² + bx — item explicitement nommé au programme officiel 2026 — n'est éprouvée QUE sur un facteur commun visible et déjà écrit dans une liste de candidats (Module04Factoriser.jsx l. 21-27, TASKS[0] = 4x² + 12x avec le candidat « 4x » proposé) puis au boss e6 (6x² + 9x, QCM). La forme ax + bx (second item officiel) n'apparaît nulle part dans la leçon. Le geste réellement difficile — écrire ce qui reste DANS la parenthèse, avec son signe — n'est jamais demandé ; en e7, (x+5) − (2x−1) = 6 − x est le piège de signe le plus dur de la leçon et il est posé pour la première fois au boss, sans aucune préparation gestuelle.",
+   "P5 « Choisir la forme » est le seul LP enseigné sans aucune manipulation (Module05TroisFormes.jsx : matrix manipulations: []). Les trois formes A(x) = x² + 2x − 3 = (x − 1)(x + 3) = (x + 1)² − 4 sont DONNÉES d'emblée dans le `brief` ; l'élève ne les produit pas, ne les vérifie pas (aucun ValueTable dans ce module, alors que la leçon en fait son outil de contrôle partout ailleurs), et la forme canonique (x + 1)² − 4 n'est construite nulle part dans la leçon. La question M05-S1-Q1 est de plus devinable à partir de son seul énoncé (« quelle forme donne A(0) sans aucun calcul »).",
+   "FactorFinder révèle la réponse au bout de trois essais et appelle onDone?.(false) (components/FactorFinder.jsx l. 35) : l'étape se marque `done` même quand l'élève n'a rien trouvé. Sur un module sans aucune question de flux, cela signifie qu'un élève peut traverser tout l'enseignement de P4 sans avoir produit une seule bonne réponse.",
+   "La double distributivité générale (a + b)(c + d) — le socle de P3 hors identités — n'est établie par aucun geste : IdentityGrid ne dessine que les trois identités remarquables. Elle n'apparaît qu'en ligne r4 du drill de l'étape 4 ((x + 2)(3x − 1)) et n'est expliquée qu'APRÈS coup, par le `feedback` du BatchChoiceQuestion (« quatre produits pour deux binômes ») et par la `correction` de la ligne. Or c'est elle que le boss e5 mesure.",
+   "La brique regle-carre-positif (Module05TroisFormes.jsx l. 52-56) introduit dans son `lead` trois notions de vocabulaire que rien dans la leçon n'établit et que rien n'éprouve : MINIMUM, MAXIMUM et EXTREMUM. C'est le vocabulaire de la leçon variations-extremums-2nde, posé ici en passant, dans un texte, sans geste ni question."
+  ],
+  "technicalProblems": [
+   "Module07MissionFinale.jsx l. 7 : `import { numericChain, symbolicChain, formatPoly } from '../components/litteralUtils';` — les trois imports sont MORTS : aucun n'est utilisé dans le corps du fichier (les dix épreuves sont des littéraux). La constante `T1` déclarée l. 17 est également morte (elle n'apparaît nulle part ailleurs dans le fichier).",
+   "Module02Reduire.jsx : `useMerger.merge` (l. 26-31) reconstruit le tableau de termes en calculant `terms.indexOf(a)` APRÈS avoir déjà filtré `rest`, puis découpe `rest` avec cet index calculé sur le tableau non filtré. L'index est donc décalé dès que le terme fusionné n'est pas en tête, et le terme fusionné n'atterrit pas à sa position d'origine. La conséquence est cosmétique (l'ordre d'affichage des cartes), pas mathématique — la valeur affichée est recalculée depuis les coefficients — mais c'est un bug réel et il rend l'ordre des cartes imprévisible pendant la manipulation signature du module.",
+   "IdentityGrid.jsx l. 48 : le `max` du stepper b est `Math.min(bRange[1], mode === 'plus' ? bRange[1] : a - 1)`. En mode 'minus'/'diff', si l'élève baisse a jusqu'à la borne basse de aRange (3) alors que b vaut déjà 3, la contrainte b ≤ a − 1 n'est appliquée qu'au MAX du stepper, pas à la valeur courante : b reste à 3 avec a = 3, et le morceau (a − b)² est dessiné avec une largeur de 0. Les modules 3 passent aRange=[3,6] bRange=[1,3] : le cas a=3, b=3 est atteignable en descendant a après avoir monté b.",
+   "Module05TroisFormes.jsx étape 4, ligne r1 du BatchChoiceQuestion : l'intitulé « résoudre B(x) = 0 » emploie le verbe RÉSOUDRE alors que la résolution d'équations est explicitement hors périmètre de la leçon (teachingScope.exclude : « La résolution d'équations et d'inéquations (leçon dédiée) »). Le lesson.config.js le sait et le neutralise avec un `knowledgeAudit.ignore` (l. 48-56) plutôt qu'en reformulant la ligne : la garde automatique est éteinte, la formulation ambiguë reste devant l'élève.",
+   "Aucun problème de laboratoire gelé : les seuls `disabled={done}` sont sur les boutons de réponse de FactorFinder (l. 46) et de ProofOrder (l. 47), qui sont des widgets de question, pas des manipulations à explorer. Les `disabled` des PredictionChips (modules 1, 2, 3) verrouillent la prédiction une fois les essais faits, ce qui est le comportement voulu.",
+   "Toutes les affirmations mathématiques de la leçon et du boss ont été vérifiées numériquement et sont exactes : 2·(−2)² − 3·(−2) = 14 (e2) ; (x−2)(x+5) − (x−2)(2x−1) = (x−2)(6−x), contrôlé en x = 0 (−12 = −12) (e7) ; (n+1)² − (n−1)² = 4n, contrôlé en n = 3 (12 = 12) (e9) ; (L+4)(l+4) − Ll = 4L + 4l + 16, contrôlé en L = 5, l = 3 (48 = 48) (M06-S3-Q2) ; x² + 2x − 3 = (x−1)(x+3) = (x+1)² − 4 en x = 2 (5 = 5 = 5) (module 5) ; 3x² + 2x vaut 5 en x = 1 comme 5x³, et 16 contre 40 en x = 2 (module 2, étape 3). Aucun distracteur du boss n'est numériquement égal ou proche de la bonne réponse : les quatre options de chaque épreuve sont des polynômes distincts.",
+   "components/litteralUtils.test.js couvre le modèle : il verrouille formatPoly (typographie française, moins U+2212), la chaîne du tour de magie (résultat 3 pour 0, 2,5, −7, 1000 ; étapes intermédiaires 3x + 9 puis x + 3), (x+1)² − x² = 2x + 1 et sa valeur 21 en x = 10, commonMonomial(4x² + 12x) = 4x, asDifferenceOfSquares et asPerfectSquare avec leurs cas de refus (x² + 25 → null, x² + 9 → null). Le modèle mathématique est donc testé ; aucun composant de manipulation n'a de test propre (matrix : ownTest false pour MagicTrick, TermMerger, IdentityGrid, FactorFinder, ProofOrder)."
+  ],
+  "duplicates": [
+   "P1 (volet « tester ne prouve pas, la lettre prouve ») est enseigné comme NEUF ici (module 1, brique regle-tester-ne-prouve-pas) et il est aussi le cœur annoncé de la leçon de 4e raisonnement-problemes-4e, dont la description de catalogue est : « essayer un programme de calcul avec ses propres nombres sans jamais réussir à le mettre en défaut, découvrir que des essais ne prouvent rien et qu'un seul contre-exemple réfute, puis se servir du calcul littéral pour démontrer d'un coup ». Le geste (un programme de calcul essayé puis suivi avec une lettre) est le même geste, pas seulement le même thème.",
+   "P6 recouvre logique-et-raisonnement-2nde_P5 « Utiliser un contre-exemple pour réfuter une affirmation » : le corps de la brique regle-tester-ne-prouve-pas de cette leçon énonce explicitement « un seul contre-exemple suffit à réfuter une égalité supposée » (knowledge.jsx, item regle-tester-ne-prouve-pas). Deux leçons de 2de posent donc la même règle comme neuve.",
+   "P6 recouvre aussi arithmetique-2nde_P5 « Utiliser les propriétés arithmétiques pour construire une démonstration » : les deux leçons font remettre une démonstration en ordre (ProofOrder existe dans les deux répertoires de composants, apps/web/src/lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/components/ProofOrder.jsx et .../calcul-litteral-2nde/components/ProofOrder.jsx) et l'exemple du module 6 étape 2 (n(n+2)+1 est un carré, pour tout ENTIER n) est un énoncé d'arithmétique."
+  ],
+  "recommendations": [
+   "Ajouter au module 4 au moins une question de flux qui fasse ÉCRIRE ce qui reste dans la parenthèse (NumericQuestion ou TapQuestion sur le second facteur), en particulier sur un cas avec un signe − devant la seconde parenthèse — le piège du boss e7 n'est préparé nulle part.",
+   "Ajouter une tâche FactorFinder de la forme ax + bx (par exemple 6x + 15x, ou 3ax + 5ax) : l'item officiel « Factoriser une expression de la forme ax+bx » n'a aucune trace dans la leçon.",
+   "Donner au module 5 une vraie manipulation : faire PRODUIRE la forme factorisée et la forme canonique à partir de la forme développée (ou au minimum les faire vérifier au ValueTable, l'outil de contrôle de toute la leçon, absent de ce seul module).",
+   "Déplacer le vocabulaire minimum/maximum/extremum hors du `lead` de regle-carre-positif, ou l'assortir d'une demande : posé ainsi, il n'est ni établi ni mesuré et il empiète sur variations-extremums-2nde.",
+   "Supprimer les imports morts et la constante T1 de Module07MissionFinale.jsx (l. 7 et l. 17).",
+   "Corriger l'index de réinsertion dans useMerger (Module02Reduire.jsx l. 26-31) et borner la VALEUR de b, pas seulement le max du stepper, dans IdentityGrid (l. 48).",
+   "Reformuler la ligne r1 du module 5 (« résoudre B(x) = 0 » → « trouver les x qui annulent B ») et retirer le knowledgeAudit.ignore correspondant, plutôt que d'éteindre la garde."
+  ],
+  "officialScopeNotCovered": [
+   {
+    "scopeItem": "Utiliser (a+b)²",
+    "taughtAnyway": true,
+    "evidence": "Module 3, étape 1 : IdentityGrid mode 'plus' avec a et b réglables (seen.size >= 2 impose deux réglages), ValueTable à trois colonnes ((x+3)², x²+9, x²+6x+9), brique developper puis question M03-S1-Q1, brique mem-carre-somme. Mesuré au boss par cl2-e4 ((x − 4)²), rattaché à P3.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Utiliser (a-b)²",
+    "taughtAnyway": true,
+    "evidence": "Module 3, étape 2 : IdentityGrid mode 'minus' (le coin b² visiblement retiré deux fois puis remis une fois) + question M03-S2-Q2 « Que vaut (a − b)² ? ». Aucun LP du catalogue ne nomme cette identité ; elle est absorbée dans P3 « Développer une expression ». Mesurée au boss par cl2-e4 seulement.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Utiliser (a+b)(a-b)",
+    "taughtAnyway": true,
+    "evidence": "Module 3, étape 3 : IdentityGrid mode 'diff' (l'équerre découpée en a(a−b) + b(a−b)) + question M03-S3-Q3, puis brique identites-remarquables. Réemployée au module 4 tâche t3 (x² − 25) et au boss cl2-e10 ((x² − 9)/(x − 3)). Enseignée solidement, mais rattachée à P3 et à P4 sans LP propre.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Factoriser une expression de la forme ax²+bx",
+    "taughtAnyway": true,
+    "evidence": "Module 4, étape 1 : FactorFinder sur 4x² + 12x, où le bon facteur (4x) est l'un des quatre candidats proposés — l'élève le CHOISIT, il ne l'écrit pas. Mesuré au boss par cl2-e6 (6x² + 9x, QCM à quatre options). Aucun LP du catalogue ne l'isole : c'est le cas générique de P4.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Factoriser une expression de la forme ax+bx",
+    "taughtAnyway": false,
+    "evidence": "Recherche dans les quatre TASKS du module 4 (4x² + 12x ; (x+1)(2x−3) + (x+1)(x+4) ; x² − 25 ; 4x² + 12x + 9) et dans les dix épreuves du boss : aucune expression de la forme ax + bx. Le cas le plus simple de la factorisation — un facteur commun de degré 1 sur deux termes de degré 1 — est absent de la leçon.",
+    "recommendation": "absent"
+   },
+   {
+    "scopeItem": "Effectuer des calculs avec des expressions fractionnaires",
+    "taughtAnyway": true,
+    "evidence": "Module 6, étape 4 : brique regle-simplifier-facteurs puis TapQuestion M06-S4-Q3 sur (2x + 4)/(x + 2) avec la restriction x ≠ −2 ; mesuré au boss par cl2-e10 ((x² − 9)/(x − 3), x ≠ 3). C'est une SIMPLIFICATION seulement — le teachingScope.exclude de la leçon dit d'ailleurs « Les fractions rationnelles au-delà d'une simplification ». Aucune somme ni aucun produit de deux expressions fractionnaires n'est jamais calculé, alors que l'item officiel dit « effectuer des calculs ». Le rattachement se fait à P6, qui parle de démontrer et résoudre, pas de fractions.",
+    "recommendation": "append-lp"
+   },
+   {
+    "scopeItem": "Vérifier une identité algébrique",
+    "taughtAnyway": true,
+    "evidence": "C'est le fil rouge le mieux tenu de la leçon et il n'a aucun LP : ValueTable au module 2 étape 3 (3x² + 2x contre 5x³), au module 3 étape 1 (trois colonnes), au module 4 étape 5 (tested.size >= 3 sur la factorisation), au module 6 étape 2 (n(n+2)+1 contre (n+1)²) ; brique methode-prouver-egalite-formes (module 5, étape 4) ; ligne r4 du drill du module 5 (« vérifier que deux écritures sont égales » → « développer les deux », le distracteur « les tester en x = 1 » étant le piège) ; brique regle-tester-ne-prouve-pas (module 1). Enseigné, nommé, éprouvé — mais jamais mesuré en propre au boss, et absorbé tantôt dans P1, tantôt dans P5.",
+    "recommendation": "append-lp"
+   }
+  ],
+  "verticalPositioning": {
+   "revised": "Réduire des termes semblables et développer par distributivité simple : acquis de 4e (calcul-litteral-4e, pointsToLearn « Réduire une expression littérale », « Développer avec la distributivité simple », « Développer avec la double distributivité ») et de 3e (calcul-litteral-algebrique, modules « Termes et facteurs », « Réduire sans se tromper »). Ils sont explicitement déclarés en priorKnowledge (calcul-litteral, distributivite, developper, termes-semblables, reduire-expression, terme-algebrique, facteur, carre-nombre) et diagnostiqués par le module 0 (cinq questions, jamais bloquantes). Le module 2 les REJOUE néanmoins entièrement, avec deux ajouts réels : les coefficients décimaux (−3 + 0,5) et le terme qui reste seul.",
+   "extended": "Les identités remarquables : la 3e en voyait déjà une (module « Le carré de côté a + b » de calcul-litteral-algebrique, et pointsToLearn « Utiliser les identités remarquables »). La 2de les traite toutes les trois, chacune sur son propre découpage d'aire, avec a et b RÉGLABLES — c'est là l'extension : l'identité n'est plus une figure, c'est une famille de figures. La factorisation s'étend du facteur numérique/monôme de 3e au BINÔME entier (x + 1) comme facteur commun (module 4, tâche t2) et à l'identité lue à l'envers (t3, t4).",
+   "new": "Trois choses sont neuves. (1) L'égalité d'expressions vraie POUR TOUT x, distinguée d'une équation à résoudre : c'est le contenu de la brique egalite-pour-tout-x et de la question M01-S3-Q3, dont le distracteur « que x vaut 3 » est précisément la confusion visée. (2) Le choix de forme comme démarche : la 3e avait un module « Choisir la bonne forme », mais la 2de y ajoute la forme canonique (x + 1)² − 4 et l'usage « minimum », qui n'existent pas au collège — encore que la leçon la DONNE sans jamais la construire. (3) La simplification d'une expression fractionnaire avec sa restriction (x ≠ −2), absente du collège.",
+   "formalized": "Le tableau de valeurs devient un instrument de PREUVE NÉGATIVE explicite et nommé : la brique regle-exposants-pas-additionnes et le corps de knowledge.jsx en font le « détecteur d'erreur de toute la leçon », et le module 2 étape 3 met en scène le cas limite (accord en x = 1, désaccord en x = 2). Au collège le tableau servait à vérifier ; ici il sert à réfuter, et la leçon formalise que vérifier ne prouve pas. La démonstration littérale elle-même est formalisée par ProofOrder (module 6 étape 1) : hypothèse, transformations, conclusion — un objet que la 3e n'ordonnait pas.",
+   "tool": "Le calcul littéral est ici explicitement instrumentalisé, ce qui est la vraie rupture de niveau : il sert à PROUVER (le tour de magie, n(n+2)+1 = (n+1)², (n+1)² − (n−1)² = 4n) et à MODÉLISER (l'aire du cadre, formule valable pour toute photo). La leçon se déclare aussi explicitement outil pour la suite : son teachingScope.exclude renvoie la résolution d'équations à equations-et-inequations-2nde en disant « elle prépare les formes qui les rendent résolubles », et la forme factorisée présentée au module 5 étape 2 comme celle qui « répond aux questions = 0 » est exactement le prérequis de l'équation produit nul. De même, la forme « carré + constante » du module 5 étape 3 est un outil emprunté d'avance à variations-extremums-2nde."
+  }
+ },
+ "session2Addendum": "17 LP appendus en Session 2 (compétences enseignées mais non mesurées), jugés le 2026-09-10."
 }
