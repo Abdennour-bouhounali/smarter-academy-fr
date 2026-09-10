@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:14:11.717Z",
+  "generatedAt": "2026-09-10T09:21:01.475Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -8,7 +8,7 @@
     "learningPoints": 303,
     "judged": 303,
     "bricks": 492,
-    "assessmentQuestions": 335,
+    "assessmentQuestions": 336,
     "externalLearningPoints": 159,
     "reconciled": 159
   },
@@ -17010,7 +17010,7 @@
       },
       "snapshotCount": 8,
       "brickCount": 30,
-      "requiresCount": 76,
+      "requiresCount": 78,
       "specDocs": [
         "docs/lessons/2NDE_EQUATIONS_DROITES_SPEC.md"
       ],
@@ -17525,7 +17525,16 @@
           ],
           "questions": [
             {
-              "id": "M04-S5-Q1",
+              "id": "M04-S4-Q1",
+              "component": "NumericQuestion",
+              "requires": [
+                "droite-tracer"
+              ],
+              "step": 4,
+              "prompt": "Tu viens de placer deux points. Si tu choisis maintenant l’abscisse x = 4 sur cette même droite y = −2x + 3 , quelle ordonnée doit avoir ton point ?"
+            },
+            {
+              "id": "M04-S5-Q2",
               "component": "TapQuestion",
               "requires": [
                 "droite-lire-equation",
@@ -17538,12 +17547,13 @@
           ],
           "questionCounts": {
             "stream": {
+              "NumericQuestion": 1,
               "TapQuestion": 1
             },
             "jsxStatic": {
               "TapQuestion": 1,
               "BatchChoiceQuestion": 0,
-              "NumericQuestion": 0,
+              "NumericQuestion": 1,
               "PredictionChips": 2,
               "KnowledgeBrick": 6,
               "KnowledgeSnapshot": 1
@@ -17555,51 +17565,52 @@
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 79
+              "line": 82
             },
             {
               "itemId": "droite-ordonnee-origine",
               "step": 2,
               "variant": "new",
               "itemMissing": false,
-              "line": 99
+              "line": 102
             },
             {
               "itemId": "droite-verticale",
               "step": 3,
               "variant": "new",
               "itemMissing": false,
-              "line": 120
+              "line": 123
             },
             {
               "itemId": "droite-tracer",
               "step": 4,
               "variant": "new",
               "itemMissing": false,
-              "line": 133
+              "line": 136
             },
             {
               "itemId": "droite-lire-equation",
               "step": 5,
               "variant": "new",
               "itemMissing": false,
-              "line": 147
+              "line": 160
             },
             {
               "itemId": "mem-droite-m-p",
               "step": 5,
               "variant": "new",
               "itemMissing": false,
-              "line": 161
+              "line": 174
             }
           ],
           "requires": {
             "ids": [
               "droite-lire-equation",
               "droite-ordonnee-origine",
-              "droite-role-m-p"
+              "droite-role-m-p",
+              "droite-tracer"
             ],
-            "count": 3,
+            "count": 4,
             "invalid": 0
           },
           "gatedReveals": 6,
@@ -17612,7 +17623,7 @@
             {
               "name": "LineBuilder",
               "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/components/LineBuilder.jsx",
-              "ownTest": false
+              "ownTest": true
             }
           ],
           "missingKitImports": []
@@ -18005,7 +18016,7 @@
             {
               "name": "LineBuilder",
               "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/components/LineBuilder.jsx",
-              "ownTest": false
+              "ownTest": true
             },
             {
               "name": "LineScene",
@@ -18123,6 +18134,15 @@
               "prompt": "Pour tracer la droite y = −x + 2, quels points peut-on placer ?"
             },
             {
+              "id": "eq-e11",
+              "component": "boss",
+              "requires": [
+                "droite-tracer"
+              ],
+              "step": null,
+              "prompt": "Tu traces la droite y = −2x + 5. Tu choisis l’abscisse x = 3 : quelle ordonnée dois-tu donner à ton point ?"
+            },
+            {
               "id": "eq-e10",
               "component": "boss",
               "requires": [
@@ -18135,7 +18155,7 @@
           ],
           "questionCounts": {
             "stream": {
-              "boss": 10
+              "boss": 11
             },
             "jsxStatic": {
               "TapQuestion": 0,
@@ -18168,7 +18188,7 @@
               "droite-vecteur-directeur",
               "droite-verticale"
             ],
-            "count": 21,
+            "count": 22,
             "invalid": 0
           },
           "gatedReveals": 0,
@@ -18357,6 +18377,24 @@
           {
             "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
             "line": 134,
+            "id": "eq-e11",
+            "enabled": true,
+            "type": "assessment",
+            "learningPointIds": [
+              "seconde_equations-de-droites-2nde_P10"
+            ],
+            "prompt": "Tu traces la droite y = −2x + 5. Tu choisis l’abscisse x = 3 : quelle ordonnée dois-tu donner à ton point ?",
+            "skill": "coefficients",
+            "requires": [
+              "droite-tracer"
+            ],
+            "optionCount": 4,
+            "correct": null,
+            "module": 8
+          },
+          {
+            "file": "apps/web/src/lessons/lycee/seconde/geometrie/equations-de-droites-2nde/modules/Module08MissionFinale.jsx",
+            "line": 148,
             "id": "eq-e10",
             "enabled": true,
             "type": "assessment",
@@ -19090,7 +19128,8 @@
           "recommendedModule": 4,
           "recommendedNotInTeaches": false,
           "assessmentQuestionIds": [
-            "eq-e9"
+            "eq-e9",
+            "eq-e11"
           ],
           "knowledgeItemsInTeachingModules": [
             "droite-role-m-p",
@@ -19107,8 +19146,14 @@
             "LineScene"
           ],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
+              {
+                "module": 4,
+                "moduleSlug": "le-laboratoire-des-coefficients",
+                "step": 4,
+                "mechanism": "brick:droite-tracer"
+              },
               {
                 "module": 4,
                 "moduleSlug": "le-laboratoire-des-coefficients",
@@ -19119,7 +19164,7 @@
                 "module": 4,
                 "moduleSlug": "le-laboratoire-des-coefficients",
                 "step": 4,
-                "mechanism": "brick:droite-tracer"
+                "mechanism": "question:M04-S4-Q1"
               },
               {
                 "module": 7,
@@ -19130,12 +19175,13 @@
             ],
             "manipulation": "LineBuilder — aucune cible n'est dessinée : l'élève place P puis Q et, pour chacun, le résidu a·x + b·y + c est affiché en direct avec un ✓ quand il vaut 0 ; la réussite exige que les DEUX points vérifient l'équation et soient distincts. Rejoué en M7 étape 5 sur une cartésienne (3x − 2y + 6 = 0), sans équation réduite affichée",
             "assessmentQuestionIds": [
-              "eq-e9"
+              "eq-e9",
+              "eq-e11"
             ],
             "knowledgeItems": [
               "droite-tracer"
             ],
-            "notes": "PARTIEL, pour une raison d'ordre et une de mesure. (a) La manipulation est bonne — le résidu affiché par point est un vrai enseignant, et l'absence de cible dessinée force à passer par l'équation — mais elle n'est accompagnée d'AUCUNE question et d'aucune révélation conditionnée : le seul texte est la brique droite-tracer, posée avant, et le Feedback de succès interne au composant. Le module 4 étape 4 est la seule étape de la leçon sans question. (b) La seule épreuve, eq-e9, ne demande pas de TRACER : elle demande quels points on POURRAIT placer, ce qui est un test d'appartenance déguisé (P11). Le geste de construction n'est donc jamais mesuré. (c) LineBuilder gèle sa manipulation à la réussite (`frozen = solved || success` retire poignées et steppers) — voir technicalProblems.",
+            "notes": "Les trois reproches de l'audit sont levés. (a) L'étape 4 du module 4 était la seule de la leçon sans question : elle en a une, conditionnée à la réussite du tracé, qui demande de PRODUIRE l'ordonnée d'un troisième point (x = 4 sur y = −2x + 3 → −5). (b) eq-e9 demandait quels points on POURRAIT placer — un test d'appartenance déguisé ; l'épreuve eq-e11 demande maintenant de calculer l'ordonnée à partir de l'abscisse choisie, et ses trois distracteurs encodent des fautes réelles (signe de la pente oublié → 11, pente prise pour une ordonnée → −2, question inversée → 1). (c) LineBuilder gelait tout à la réussite (`frozen = solved || success`, et `move()` refusait les déplacements) : il est dégelé, et LineBuilder.test.jsx interdit le retour du drapeau. L'élève peut donc continuer à chercher un AUTRE couple de points valides — ce qui est le fait à comprendre.",
             "crossGrade": {
               "overlapsWith": [],
               "kind": "none"

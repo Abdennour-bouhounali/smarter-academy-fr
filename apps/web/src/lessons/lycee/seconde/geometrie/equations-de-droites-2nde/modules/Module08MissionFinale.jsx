@@ -132,6 +132,20 @@ const EPREUVES = [
     assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_equations-de-droites-2nde_P10'] },
   },
   {
+    // eq-e9 demande quels points on POURRAIT placer : c'est un test
+    // d'appartenance. Celle-ci demande de PRODUIRE un point à partir de
+    // l'équation — le geste même du tracé.
+    id: 'eq-e11',
+    requires: ['droite-tracer'],
+    skill: 'coefficients',
+    title: 'Placer un point',
+    prompt: 'Tu traces la droite y = −2x + 5. Tu choisis l’abscisse x = 3 : quelle ordonnée dois-tu donner à ton point ?',
+    options: ['−1', '11', '−2', '1'],
+    cols: 4,
+    explain: 'On remplace x par 3 dans l’équation : y = −2 × 3 + 5 = −6 + 5 = −1. Le point est (3 ; −1). Obtenir 11, c’est avoir oublié le signe de la pente ; −2 est la pente elle-même, pas une ordonnée ; 1 serait l’abscisse du point d’ORDONNÉE 3, la question inverse.',
+    assessment: { enabled: true, type: 'assessment', learningPointIds: ['seconde_equations-de-droites-2nde_P10'] },
+  },
+  {
     id: 'eq-e10',
     requires: ['droite-alignement-equation', 'droite-methode-tester-point'],
     skill: 'appartenance',

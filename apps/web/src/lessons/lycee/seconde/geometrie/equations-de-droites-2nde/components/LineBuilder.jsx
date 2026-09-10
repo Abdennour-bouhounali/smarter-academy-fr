@@ -47,7 +47,8 @@ export default function LineBuilder({ target, initial = { P: { x: -4, y: -4 }, Q
   }, [success, shown, onSolved, react]);
 
   const move = (which, p) => {
-    if (solved || success) return;
+    // Aucun verrou sur `solved`/`success` : l'élève peut continuer à déplacer P
+    // et Q après avoir réussi, et découvrir qu'un AUTRE couple convient aussi.
     const other = which === 'P' ? Q : P;
     if (p.x === other.x && p.y === other.y) return; // deux points ne partagent jamais un nœud
     (which === 'P' ? setP : setQ)(p);
@@ -61,14 +62,16 @@ export default function LineBuilder({ target, initial = { P: { x: -4, y: -4 }, Q
   };
   const cur = active === 'P' ? P : Q;
   const chip = (on) => `min-h-[44px] px-4 rounded-xl border-2 text-sm font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${on ? 'bg-indigo-600 border-indigo-700 text-white' : 'bg-white border-slate-300 text-slate-700 hover:border-indigo-400'}`;
-  const frozen = solved || success;
+  // Jamais gelé : réussir ne retire pas l'instrument des mains de l'élève — il
+  // peut chercher un AUTRE couple de points valides, ce qui est justement le
+  // point (une droite se trace par deux points quelconques qui la vérifient).
 
   return (
     <div className="space-y-3">
       <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
         <span className="font-semibold">Trace la droite :</span> <span className="font-mono font-bold">{showReduced && !red.vertical ? formatReduced(red) : formatCartesian(car)}</span>
       </div>
-      {!frozen && (
+      {(
         <div className="flex flex-wrap gap-2" role="group" aria-label="Point à placer">
           <button type="button" className={chip(active === 'P')} aria-pressed={active === 'P'} onClick={() => setActive('P')}>Placer P</button>
           <button type="button" className={chip(active === 'Q')} aria-pressed={active === 'Q'} onClick={() => setActive('Q')}>Placer Q</button>
@@ -76,9 +79,9 @@ export default function LineBuilder({ target, initial = { P: { x: -4, y: -4 }, Q
       )}
       <LineScene range={range} line={built} nameA={null} lineTone={success ? 'emerald' : 'sky'}
         points={[{ id: 'P', name: 'P', ...P, color: pOk ? '#059669' : '#0284c7' }, { id: 'Q', name: 'Q', ...Q, color: qOk ? '#059669' : '#0284c7' }]}
-        draggableId={frozen ? null : active} onPointChange={(p) => move(active, p)}
+        draggableId={active} onPointChange={(p) => move(active, p)}
         ariaLabel={`Repère — place ${active} ; P ${formatPoint(P)}, Q ${formatPoint(Q)}`} />
-      {!frozen && (
+      {(
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <Stepper label={`x_${active}`} value={cur.x} onChange={(v) => move(active, { x: v, y: cur.y })} min={range.xMin} max={range.xMax} step={1} tone="indigo" />
           <Stepper label={`y_${active}`} value={cur.y} onChange={(v) => move(active, { x: cur.x, y: v })} min={range.yMin} max={range.yMax} step={1} tone="indigo" />

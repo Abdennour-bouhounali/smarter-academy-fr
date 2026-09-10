@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { ContentModule, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
+import { ContentModule, NumericQuestion, TapQuestion, PredictionChips, KnowledgeBrick } from '../../../../../common/kit';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import CoefficientLab from '../components/CoefficientLab';
 import LineBuilder from '../components/LineBuilder';
 import { lineFromReduced, lineFromCartesian } from '../components/lineUtils';
-import { formatDec } from '@smarter-academy/core';
+import { formatDec, parseDec } from '@smarter-academy/core';
+
+// parseDec refuse le vrai moins U+2212 que produit le clavier mathématique.
+const parseSigned = (v) => parseDec(String(v ?? '').replace('−', '-'));
 
 /**
  * Module 4 — MANIPULATION : « Le laboratoire des coefficients ».
@@ -31,7 +34,7 @@ export default function Module04LaboratoireDesCoefficients() {
   const [car, setCar] = useState({ a: 1, b: 1, c: 0 });
   const [carGhost, setCarGhost] = useState(null);
   const [vertical, setVertical] = useState(false);
-  const [b4, setB4] = useState(false);
+  const [b4, setB4] = useState(false); const [q4b, setQ4b] = useState(false);
   const [q5, setQ5] = useState(false);
 
   const done1 = ms.has(2) && [...ms].some((m) => m < 0);
@@ -127,7 +130,7 @@ export default function Module04LaboratoireDesCoefficients() {
           ),
         },
         {
-          num: 4, title: 'Tracer une droite à partir de son équation', subtitle: 'Place P et Q pour que la droite (PQ) soit y = −2x + 3. Aucune cible n’est dessinée : c’est l’équation qui guide.', done: b4,
+          num: 4, title: 'Tracer une droite à partir de son équation', subtitle: 'Place P et Q pour que la droite (PQ) soit y = −2x + 3. Aucune cible n’est dessinée : c’est l’équation qui guide.', done: b4 && q4b,
           content: (kit) => (
             <div className="space-y-3">
               <KnowledgeBrick
@@ -137,6 +140,16 @@ export default function Module04LaboratoireDesCoefficients() {
                 lead="Sans cible dessinée, c’est l’équation qui dit où poser les points."
               />
               <LineBuilder target={TARGET4} solved={b4} onSolved={() => setB4(true)} react={kit.react} />
+              {b4 && (
+                <NumericQuestion
+                  prompt={<span>Tu viens de placer deux points. Si tu choisis maintenant l’abscisse <strong>x = 4</strong> sur cette même droite <span className="font-mono">y = −2x + 3</span>, quelle ordonnée doit avoir ton point ?</span>}
+                  expected={-5} parse={parseSigned} display="−5" width="w-24"
+                  requires={['droite-tracer']}
+                  explain="On remplace x par 4 : y = −2 × 4 + 3 = −8 + 3 = −5. Le point (4 ; −5) est sur la droite — vérifie-le en déplaçant P ou Q, le résidu affichera 0."
+                  explainWrong="Remplace x par 4 dans l’équation et calcule : −2 × 4 = −8, puis −8 + 3. Attention au signe de la pente."
+                  solved={q4b} onAnswered={() => setQ4b(true)}
+                />
+              )}
             </div>
           ),
         },

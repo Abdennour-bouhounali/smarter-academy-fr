@@ -1,15 +1,15 @@
 # 2de — matrice des Learning Points (généré)
 
 > Généré par `scripts/audit-2de-learning-points.mjs` — **Ne pas éditer à la main.**
-> 31 leçons · 303 learning points · 492 briques · 335 questions d'évaluation.
+> 31 leçons · 303 learning points · 492 briques · 336 questions d'évaluation.
 > Les statuts proviennent de `docs/audits/judgements/<leçon>.json` (jugement humain) ; ce script ne les calcule pas.
 
 ## Statuts
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 282 | 93.1 % |
-| `PARTIALLY_COVERED` | 21 | 6.9 % |
+| `COVERED` | 283 | 93.4 % |
+| `PARTIALLY_COVERED` | 20 | 6.6 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -24,7 +24,7 @@
 | `signe-fonctions-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 12 | 17 | 98 | 7 | ✅ | ✅ | ✅ | — |
 | `variations-extremums-2nde` | fonctions | available | 85 / 85 / 85 | 8 | 12 | 15 | 151 | 7 | ✅ | ✅ | ✅ | — |
 | `colinearite-alignement-2nde` | geometrie | available | 64 / 64 / 64 | 7 | 9 | 24 | 65 | 6 | ✅ | ✅ | ✅ | — |
-| `equations-de-droites-2nde` | geometrie | available | 85 / 85 / 85 | 9 | 12 | 30 | 76 | 8 | ✅ | ✅ | ✅ | — |
+| `equations-de-droites-2nde` | geometrie | available | 85 / 85 / 85 | 9 | 12 | 30 | 78 | 8 | ✅ | ✅ | ✅ | — |
 | `positions-relatives-droites-2nde` | geometrie | available | 70 / 70 / 70 | 7 | 8 | 21 | 77 | 6 | ✅ | ✅ | ✅ | — |
 | `trigonometrie-cercle-2nde` | geometrie | available | 80 / 80 / 80 | 6 | 9 | 13 | 56 | 5 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `trigonometrie-equations-2nde` | geometrie | available | 75 / 75 / 75 | 6 | 4 | 12 | 51 | 5 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
@@ -153,7 +153,7 @@
 | `P7` Déterminer une équation de droite à partir d'… | geometrie | `equations-de-droites-2nde` | M6, M7 | COVERED | M6.3 brick:droite-methode-point-pente · M6.3 question:M06-S3 · M7.3 q… | Aucune | `eq-e6` | `droite-methode-point-pente` | M6, M7 |
 | `P8` Comprendre l'équation réduite | geometrie | `equations-de-droites-2nde` | M3, M4, M6 | COVERED | M3.3 brick:droite-equation-reduite · M3.3 question:M03-S3 · M4.1 mani… | CoefficientLab — deux boutons iso… | `eq-e7` `eq-e8` | `droite-equation-reduite` `droite-role-m-p` `droite-ordonnee-origine` | M3, M4, M6 |
 | `P9` Comprendre l'équation cartésienne | geometrie | `equations-de-droites-2nde` | M3, M4, M6 | COVERED | M3.1 manipulation:DetTester · M3.1 feedback · M3.1 brick:droite-equat… | DetTester — l'élève déplace M et … | `eq-e2` `eq-e8` | `droite-equation-idee` `droite-equation-cartesienne` `droite-verticale` | M3, M4, M6 |
-| `P10` Tracer une droite à partir de son équation | geometrie | `equations-de-droites-2nde` | M4, M7 | PARTIALLY_COVERED | M4.4 manipulation:LineBuilder · M4.4 brick:droite-tracer · M7.5 manip… | LineBuilder — aucune cible n'est … | `eq-e9` | `droite-tracer` | M4, M7 |
+| `P10` Tracer une droite à partir de son équation | geometrie | `equations-de-droites-2nde` | M4, M7 | COVERED | M4.4 brick:droite-tracer · M4.4 manipulation:LineBuilder · M4.4 quest… | LineBuilder — aucune cible n'est … | `eq-e9` `eq-e11` | `droite-tracer` | M4, M7 |
 | `P11` Déterminer si un point appartient à une droite | geometrie | `equations-de-droites-2nde` | M5, M7 | COVERED | M5.1 manipulation:MembershipLab · M5.1 feedback · M5.1 brick:droite-a… | MembershipLab — cinq points suspe… | `eq-e10` | `droite-appartenance` `droite-methode-tester-point` `mem-droite-appartenance` | M5, M7 |
 | `P12` Établir l'alignement de trois points | geometrie | `equations-de-droites-2nde` | M5, M7 | COVERED | M5.3 brick:droite-alignement-equation · M5.3 question:M05-S3 | Aucune : figure statique (LineSce… | `eq-e10` | `droite-alignement-equation` `droite-methode-tester-point` `mem-droite-appartenance` | M5, M7 |
 | `P1` Reconnaître deux droites parallèles | geometrie | `positions-relatives-droites-2nde` | M1, M2, M3 | COVERED | M1.1 manipulation:TwoLinesPlane · M1.1 feedback · M1.1 brick:vocab-se… | TwoLinesPlane — l'élève tire la p… | `pr-e2` `pr-e3` `pr-e5` `pr-e10` | `positions-trois-cas` `vocab-secantes-paralleles-confondues` `regle-direction-position` | M1, M2, M3 |
