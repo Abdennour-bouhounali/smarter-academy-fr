@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:42:49.890Z",
+  "generatedAt": "2026-09-10T09:46:24.517Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -44299,9 +44299,9 @@
       "status": "available",
       "dir": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde",
       "duration": {
-        "catalogue": 75,
-        "config": 75,
-        "moduleSum": 75,
+        "catalogue": 78,
+        "config": 78,
+        "moduleSum": 78,
         "drift": false
       },
       "knowledgeMap": true,
@@ -44731,8 +44731,8 @@
           "slug": "des-frequences-aux-effectifs",
           "title": "Des fréquences aux effectifs",
           "stage": "manipulation",
-          "estimatedMin": 13,
-          "estimatedTimeLabel": "13 min",
+          "estimatedMin": 16,
+          "estimatedTimeLabel": "16 min",
           "teaches": [
             "seconde_frequences-conditionnelles-2nde_P5",
             "seconde_frequences-conditionnelles-2nde_P9"
@@ -44750,7 +44750,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "questions": [
             {
@@ -44790,7 +44791,7 @@
               "prompt": "Combien d’externes font partie d’une association ?"
             },
             {
-              "id": "M04-S4-Q4",
+              "id": "M04-S5-Q4",
               "component": "TapQuestion",
               "requires": [
                 "methode-completer-tableau",
@@ -44798,7 +44799,7 @@
                 "somme-conditionnelles",
                 "quotient"
               ],
-              "step": 4,
+              "step": 5,
               "prompt": "Au total, quelle proportion des 500 élèves fait partie d’une association ?"
             }
           ],
@@ -44822,14 +44823,14 @@
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 52
+              "line": 55
             },
             {
               "itemId": "methode-completer-tableau",
               "step": 4,
               "variant": "new",
               "itemMissing": false,
-              "line": 117
+              "line": 123
             }
           ],
           "requires": {
@@ -44846,7 +44847,13 @@
             "invalid": 0
           },
           "gatedReveals": 1,
-          "manipulations": [],
+          "manipulations": [
+            {
+              "name": "TableFiller",
+              "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/frequences-conditionnelles-2nde/components/TableFiller.jsx",
+              "ownTest": false
+            }
+          ],
           "missingKitImports": []
         },
         {
@@ -45598,33 +45605,35 @@
             "frequences-vers-effectifs",
             "methode-completer-tableau"
           ],
-          "manipulationsInTeachingModules": [],
+          "manipulationsInTeachingModules": [
+            "TableFiller"
+          ],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 4,
                 "moduleSlug": "des-frequences-aux-effectifs",
                 "step": 1,
-                "mechanism": "brick:frequences-vers-effectifs"
-              },
-              {
-                "module": 4,
-                "moduleSlug": "des-frequences-aux-effectifs",
-                "step": 1,
-                "mechanism": "question:NumericQuestion (0,60 × 500 = 300)"
+                "mechanism": "question:M04-S1-Q1"
               },
               {
                 "module": 4,
                 "moduleSlug": "des-frequences-aux-effectifs",
                 "step": 2,
-                "mechanism": "question:NumericQuestion (0,25 × 300 = 75)"
+                "mechanism": "question:M04-S2-Q1"
               },
               {
                 "module": 4,
                 "moduleSlug": "des-frequences-aux-effectifs",
                 "step": 3,
-                "mechanism": "question:NumericQuestion (0,40 × 200 = 80)"
+                "mechanism": "question:M04-S3-Q1"
+              },
+              {
+                "module": 4,
+                "moduleSlug": "des-frequences-aux-effectifs",
+                "step": 4,
+                "mechanism": "manipulation:TableFiller"
               },
               {
                 "module": 4,
@@ -45635,23 +45644,11 @@
               {
                 "module": 4,
                 "moduleSlug": "des-frequences-aux-effectifs",
-                "step": 4,
-                "mechanism": "feedback"
-              },
-              {
-                "module": 6,
-                "moduleSlug": "mission-finale-le-denominateur",
-                "step": null,
-                "mechanism": "question:fc-e9"
-              },
-              {
-                "module": 6,
-                "moduleSlug": "mission-finale-le-denominateur",
-                "step": null,
-                "mechanism": "question:fc-e10"
+                "step": 5,
+                "mechanism": "question:M04-S5-Q1"
               }
             ],
-            "manipulation": "AUCUNE. Le module 4 est étiqueté stage 'manipulation' dans lesson.config.js et n'en contient pas une seule : quatre questions (trois NumericQuestion, une TapQuestion), un encadré d'énoncé, une formule en MathText et deux briques. Il n'importe ni ReferenceLab ni CrossTableView. Aucun tableau n'est affiché, à aucun moment.",
+            "manipulation": "TableFiller à l'étape 4 : l'élève saisit les quatre cases intérieures du tableau croisé. Les marges et le total sont calculés sur CE QU'IL A SAISI, pas sur la solution — une erreur compensée (100/200 au lieu de 75/225) laisse le total général juste mais fait échouer la marge de ligne, et le message le dit. Les champs restent modifiables après réussite.",
             "assessmentQuestionIds": [
               "fc-e9",
               "fc-e10"
@@ -45660,7 +45657,7 @@
               "frequences-vers-effectifs",
               "methode-completer-tableau"
             ],
-            "notes": "PARTIALLY_COVERED, et le décalage porte sur le mot COMPLÉTER. L'intitulé officiel est « Compléter un tableau croisé ». Ce que le module 4 fait réellement, c'est calculer QUATRE EFFECTIFS ISOLÉS à partir de pourcentages (300 demi-pensionnaires, 75 en association parmi eux, 80 externes en association, puis 31 % au total — tous vérifiés). Le tableau n'est jamais dessiné : il n'apparaît que dans le Feedback final, sous forme de PHRASE (« 75 et 225 chez les demi-pensionnaires, 80 et 120 chez les externes »). L'élève ne remplit donc aucune case, ne complète aucune ligne par différence, et ne vérifie jamais que les marges tombent juste — alors que la brique methode-completer-tableau énonce précisément ces quatre étapes (« Poser l'effectif total / Calculer les marges / Calculer chaque case / Compléter le reste par différences, puis vérifier que les marges tombent juste »). Deux des quatre étapes de la méthode enseignée ne sont ni manipulées ni éprouvées. Les deux épreuves du boss confirment le glissement : fc-e9 demande un effectif isolé (75), fc-e10 une fréquence conditionnelle (96/180 ≈ 53 %) sous le titre trompeur « Compléter un tableau ». Le calcul est solide, la compétence « compléter » ne l'est pas.",
+            "notes": "PARTIALLY_COVERED, et le décalage porte sur le mot COMPLÉTER. L'intitulé officiel est « Compléter un tableau croisé ». Ce que le module 4 fait réellement, c'est calculer QUATRE EFFECTIFS ISOLÉS à partir de pourcentages (300 demi-pensionnaires, 75 en association parmi eux, 80 exte\n\nRÉSOLU le 2026-09-10. Le module était étiqueté stage 'manipulation' et n'en contenait aucune : quatre questions calculaient des effectifs ISOLÉS, et le tableau n'existait que sous forme de PHRASE dans le Feedback final. Les quatre étapes que la brique methode-completer-tableau énonce (poser le total, calculer les marges, calculer chaque case, compléter par différences PUIS vérifier que les marges tombent juste) sont désormais toutes exécutées. La brique est déplacée à l'étape du tableau, juste avant le geste qu'elle décrit. Vérifié au navigateur : l'erreur compensée est dénoncée par la marge de ligne, la réussite s'affiche, les champs restent éditables, l'étape suivante s'ouvre.",
             "crossGrade": {
               "overlapsWith": [
                 "2de:tableaux-croises-2nde"
@@ -45912,7 +45909,9 @@
             "frequences-vers-effectifs",
             "methode-completer-tableau"
           ],
-          "manipulationsInTeachingModules": [],
+          "manipulationsInTeachingModules": [
+            "TableFiller"
+          ],
           "judgement": {
             "status": "COVERED",
             "evidence": [

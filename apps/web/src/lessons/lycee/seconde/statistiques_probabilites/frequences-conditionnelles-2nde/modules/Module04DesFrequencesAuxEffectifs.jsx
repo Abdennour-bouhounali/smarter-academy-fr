@@ -4,6 +4,7 @@ import { Feedback } from '../../../../../common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import MathText from '../../../../../common/components/MathText';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
+import TableFiller from '../components/TableFiller';
 
 /**
  * Module 4 — MANIPULATION : reconstruire un tableau d'effectifs à partir de
@@ -23,6 +24,8 @@ export default function Module04DesFrequencesAuxEffectifs() {
   const [q2, setQ2] = useState(false);
   const [q3, setQ3] = useState(false);
   const [q4, setQ4] = useState(false);
+  const [cells, setCells] = useState({ dp_asso: null, dp_non: null, ext_asso: null, ext_non: null });
+  const [tableOk, setTableOk] = useState(false);
 
   const Enonce = () => (
     <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4 space-y-1.5 text-sm text-emerald-900">
@@ -106,20 +109,51 @@ export default function Module04DesFrequencesAuxEffectifs() {
       ),
     },
     {
+      // L'intitulé du learning point dit « COMPLÉTER un tableau croisé ». Les
+      // trois étapes précédentes calculent des effectifs ISOLÉS ; le tableau
+      // n'existait que dans une phrase du Feedback final. L'élève le remplit
+      // maintenant case par case, et ce sont SES marges — calculées sur ce
+      // qu'il a saisi — qui dénoncent l'erreur.
       num: 4,
-      title: 'Retour à une marginale',
-      done: q4,
-      content: (
+      title: 'Le tableau, case par case',
+      subtitle: 'Reporte les effectifs que tu viens de calculer, puis complète le reste par différence. Surveille les totaux.',
+      done: tableOk,
+      content: (kit) => (
         <div className="space-y-3">
-          {/* Les trois cases précédentes viennent d'être reconstruites une à
-              une : c'est l'instant pour nommer la méthode d'ensemble, avant
-              la question de synthèse qui la mobilise. */}
           <KnowledgeBrick
             id="methode-completer-tableau"
             variant="new"
             compact
-            lead={<>Tu viens de reconstruire trois cases l’une après l’autre, chacune avec sa propre référence. C’est la méthode complète.</>}
+            lead={<>Tu viens de reconstruire trois cases l’une après l’autre, chacune avec sa propre référence. Voici la méthode d’ensemble — applique-la sur le tableau.</>}
           />
+          <TableFiller
+            rows={[
+              { id: 'dp', label: 'Demi-pensionnaires', total: 300 },
+              { id: 'ext', label: 'Externes', total: 200 },
+            ]}
+            cols={[
+              { id: 'asso', label: 'En association' },
+              { id: 'non', label: 'Hors association' },
+            ]}
+            target={{ dp_asso: 75, dp_non: 225, ext_asso: 80, ext_non: 120 }}
+            values={cells}
+            grandTotal={500}
+            rowsTitle="Régime" colsTitle="Association"
+            onChange={(next) => {
+              setCells(next);
+              const ok = next.dp_asso === 75 && next.dp_non === 225 && next.ext_asso === 80 && next.ext_non === 120;
+              if (ok && !tableOk) { setTableOk(true); kit.react?.(true); }
+            }}
+          />
+        </div>
+      ),
+    },
+    {
+      num: 5,
+      title: 'Retour à une marginale',
+      done: q4,
+      content: (
+        <div className="space-y-3">
           <TapQuestion
             prompt="Au total, quelle proportion des 500 élèves fait partie d’une association ?"
             options={[
@@ -136,9 +170,9 @@ export default function Module04DesFrequencesAuxEffectifs() {
           />
           {q4 && (
             <Feedback tone="ok">
-              Le tableau est maintenant complet : 75 et 225 chez les demi-pensionnaires, 80 et 120 chez les
-              externes, soit 155 élèves en association sur 500. Toute la reconstruction repose sur une seule
-              règle : <strong>identifier la référence de chaque pourcentage</strong> avant de multiplier.
+              155 élèves en association sur 500, soit les deux cases de gauche du tableau que tu viens de
+              remplir. Toute la reconstruction repose sur une seule règle :
+              <strong> identifier la référence de chaque pourcentage</strong> avant de multiplier.
             </Feedback>
           )}
         </div>
@@ -149,7 +183,7 @@ export default function Module04DesFrequencesAuxEffectifs() {
   return (
     <ContentModule
       ctx={MODULE_CTX} navLinks={getNavLinks(4)} moduleNumber={4}
-      moduleTitle="Des fréquences aux effectifs" moduleSubtitle="Reconstruire le tableau" estimatedTime="13 min"
+      moduleTitle="Des fréquences aux effectifs" moduleSubtitle="Reconstruire le tableau" estimatedTime="16 min"
       brief={{
         tag: 'Manipulation', title: 'Effectif = fréquence × référence', tone: 'emerald',
         body: <p>Un article ne donne jamais un tableau complet : quelques pourcentages et un effectif total. Reconstruire le tableau demande d’identifier, pour chaque pourcentage, le groupe auquel il se rapporte.</p>,

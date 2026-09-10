@@ -2305,7 +2305,7 @@ const smaMetadata = {
       "Passer des fréquences aux effectifs",
       "Interpréter des données réelles",
     ],
-    durationMinutes: 75,
+    durationMinutes: 78,
     difficulty: "Difficile",
     status: 'available',
     icon: "📊",

@@ -8,8 +8,8 @@
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 288 | 95.0 % |
-| `PARTIALLY_COVERED` | 15 | 5.0 % |
+| `COVERED` | 289 | 95.4 % |
+| `PARTIALLY_COVERED` | 14 | 4.6 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -39,7 +39,7 @@
 | `arbres-probabilites-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 10 | 9 | 85 | 6 | ✅ | ✅ | ✅ | MAPPED_STEPS, NO_LEARNING_POINTS_MIRROR |
 | `boites-a-moustaches-2nde` | statistiques_probabilites | available | 65 / 65 / 65 | 7 | 9 | 9 | 85 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `evolutions-successives-reciproques-2nde` | statistiques_probabilites | available | 70 / 70 / 70 | 8 | 8 | 13 | 112 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
-| `frequences-conditionnelles-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 10 | 9 | 87 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
+| `frequences-conditionnelles-2nde` | statistiques_probabilites | available | 78 / 78 / 78 | 7 | 10 | 9 | 87 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `loi-grands-nombres-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 9 | 9 | 79 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
 | `probabilites-conditionnelles-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 9 | 7 | 86 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
 | `proportions-pourcentages-2nde` | statistiques_probabilites | available | 73 / 73 / 73 | 8 | 11 | 15 | 145 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
@@ -278,7 +278,7 @@
 | `P2` Calculer une fréquence conditionnelle | statistiques_probabilites | `frequences-conditionnelles-2nde` | M2 | COVERED | M1.1 manipulation:ReferenceLab · M2.1 brick:trois-frequences · M3.3 q… | ReferenceLab affiche le quotient … | `fc-e2` | `trois-frequences` `population-reference` | M2 |
 | `P3` Comprendre une fréquence marginale | statistiques_probabilites | `frequences-conditionnelles-2nde` | M1 | COVERED | M1.1 manipulation:ReferenceLab (référence « Tout le monde ») · M2.1 b… | Indirecte : la troisième référenc… | `fc-e3` | `trois-frequences` | M1 |
 | `P4` Calculer une fréquence marginale | statistiques_probabilites | `frequences-conditionnelles-2nde` | M2 | COVERED | M2.1 brick:trois-frequences · M2.2 manipulation:bascule effectifs / f… | Module 2 étape 2 : deux boutons «… | `fc-e3` | `trois-frequences` `population-reference` | M2 |
-| `P5` Compléter un tableau croisé | statistiques_probabilites | `frequences-conditionnelles-2nde` | M4 | PARTIALLY_COVERED | M4.1 brick:frequences-vers-effectifs · M4.1 question:NumericQuestion … | AUCUNE. Le module 4 est étiqueté … | `fc-e9` `fc-e10` | `frequences-vers-effectifs` `methode-completer-tableau` | M4 |
+| `P5` Compléter un tableau croisé | statistiques_probabilites | `frequences-conditionnelles-2nde` | M4 | COVERED | M4.1 question:M04-S1-Q1 · M4.2 question:M04-S2-Q1 · M4.3 question:M04… | TableFiller à l'étape 4 : l'élève… | `fc-e9` `fc-e10` | `frequences-vers-effectifs` `methode-completer-tableau` | M4 |
 | `P6` Interpréter une fréquence conditionnelle | statistiques_probabilites | `frequences-conditionnelles-2nde` | M3, M5 | COVERED | M3.1 manipulation:bascule de condition (CrossTableView highlight lign… | Deux boutons « Parmi les élèves d… | `fc-e5` `fc-e6` | `inversion-condition` `mem-parmi` | M3, M5 |
 | `P7` Comparer des sous-populations | statistiques_probabilites | `frequences-conditionnelles-2nde` | M3, M5 | COVERED | M3.3 brick:comparer-sous-populations · M3.3 question:NumericQuestion … | Aucune manipulation dédiée. Le se… | `fc-e7` | `comparer-sous-populations` `population-reference` | M3, M5 |
 | `P8` Passer des effectifs aux fréquences | statistiques_probabilites | `frequences-conditionnelles-2nde` | M2 | COVERED | M2.2 manipulation:bascule effectifs / fréquences conjointes (CrossTab… | La bascule effectifs → fréquences… | `fc-e4` | `somme-conditionnelles` `trois-frequences` | M2 |
