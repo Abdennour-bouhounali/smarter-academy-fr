@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Access\ContentAccess;
 use App\Models\Lesson;
 use App\Models\LessonFinalTestAttempt;
+use DomainException;
 use Illuminate\Http\Request;
 
 /**
@@ -43,6 +45,16 @@ class LessonFinalTestAttemptController extends Controller
         $lesson = Lesson::where('code', $lessonCode)->first();
         if ($lesson === null) {
             abort(404);
+        }
+
+        // Le test final d'une leçon retirée ne s'enregistre plus. `show` et
+        // `destroy` restent ouverts : relire ou effacer SA PROPRE copie n'est
+        // pas accéder au contenu, et la lui cacher reviendrait à lui mentir
+        // sur ce qu'il a déjà fait.
+        try {
+            ContentAccess::assertLessonAvailable($lessonCode);
+        } catch (DomainException $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
         }
 
         $validated = $request->validate([

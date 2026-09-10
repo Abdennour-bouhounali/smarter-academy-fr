@@ -24,6 +24,7 @@ import { ContentAnalytics, LearningPointAnalytics } from './pages/admin/analytic
 import { AdminSubscriptions, AdminPayments } from './pages/admin/subscriptions/Subscriptions';
 import { AdminProfile, AdminSecurity } from './pages/admin/account/Account';
 import AdminActivityLog from './pages/admin/system/ActivityLog';
+import AdminRegistryHealth from './pages/admin/system/RegistryHealth';
 import AdminContactMessages from './pages/admin/system/ContactMessages';
 import StudentHome from './pages/student/StudentHome';
 import MesCours from './pages/student/MesCours';
@@ -43,6 +44,7 @@ import PracticeSummary from './pages/student/practice/PracticeSummary';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import { WorkspaceLayoutProvider } from './context/WorkspaceLayoutContext';
+import { ContentAvailabilityProvider } from './context/ContentAvailabilityContext';
 import { useLessonProgressSync } from './hooks/useLessonProgressSync';
 import fractionsRoutes from './lessons/college/6e/nombres_calculs/fractions/routes';
 import quatreOperationsRoutes from './lessons/college/6e/nombres_calculs/quatre-operations/routes';
@@ -195,6 +197,7 @@ export default function App() {
   return (
     <AuthProvider>
       <LessonProgressSync />
+      <ContentAvailabilityProvider>
       <WorkspaceLayoutProvider>
       <Router>
         <Routes>
@@ -229,6 +232,7 @@ export default function App() {
               <Route path="compte/securite" element={<AdminSecurity />} />
 
               <Route path="systeme/journal" element={<AdminActivityLog />} />
+              <Route path="systeme/coherence" element={<AdminRegistryHealth />} />
               <Route path="systeme/messages" element={<AdminContactMessages />} />
             </Route>
           </Route>
@@ -404,6 +408,7 @@ export default function App() {
         </Routes>
       </Router>
       </WorkspaceLayoutProvider>
+      </ContentAvailabilityProvider>
     </AuthProvider>
   );
 }

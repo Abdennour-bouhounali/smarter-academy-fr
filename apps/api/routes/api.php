@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContentAvailabilityController;
 use App\Http\Controllers\DiagnosticController;
 use App\Http\Controllers\LearningEvidenceController;
 use App\Http\Controllers\LearningProfileController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\Admin\AdminAccountController;
 use App\Http\Controllers\Admin\AdminActivityLogController;
 use App\Http\Controllers\Admin\AdminContentController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminHealthController;
 use App\Http\Controllers\Admin\AdminReportController;
 use App\Http\Controllers\Admin\AdminStudentController;
 use App\Http\Controllers\Admin\AdminSubscriptionController;
@@ -69,6 +71,12 @@ Route::prefix('v1')->group(function () {
         Route::post('/reports', [StudentReportController::class, 'store'])
             ->middleware('throttle:20,1');
 
+        // L'autorité de publication, servie au frontend : le catalogue vit
+        // dans le bundle, donc sans ces deux appels l'élève continuerait
+        // d'afficher une leçon masquée jusqu'à buter dessus.
+        Route::get('/content/availability', [ContentAvailabilityController::class, 'index']);
+        Route::get('/lessons/{lessonCode}/exercises', [ContentAvailabilityController::class, 'exercises']);
+
         Route::get('/students/me/learning-profile', [LearningProfileController::class, 'show']);
         Route::get('/students/me/lesson-progress', [LessonProgressController::class, 'index']);
     });
@@ -112,6 +120,9 @@ Route::prefix('v1')->group(function () {
             Route::patch('/account/password', [AdminAccountController::class, 'updatePassword']);
 
             Route::get('/activity-log', [AdminActivityLogController::class, 'index']);
+
+            // Diagnostic de cohérence source ↔ registre. Admin uniquement.
+            Route::get('/health', [AdminHealthController::class, 'index']);
         });
     });
 });

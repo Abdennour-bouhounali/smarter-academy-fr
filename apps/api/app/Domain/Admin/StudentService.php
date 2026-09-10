@@ -196,25 +196,28 @@ class StudentService
         $student = $this->find($studentId);
         $before = $student->account_status;
 
-        $student->account_status = $status;
-        $student->suspended_at = $status === User::STATUS_ACTIVE ? null : now();
-        $student->save();
+        // Changement, révocation et trace dans une seule transaction.
+        DB::transaction(function () use ($admin, $student, $status, $before) {
+            $student->account_status = $status;
+            $student->suspended_at = $status === User::STATUS_ACTIVE ? null : now();
+            $student->save();
 
-        // Un compte fermé ne garde pas de jeton valide en poche. Le compte
-        // suspendu les garde : la suspension est temporaire, et la lever ne
-        // doit pas obliger l'élève à se reconnecter partout.
-        if ($status === User::STATUS_DISABLED) {
-            $student->tokens()->delete();
-        }
+            // Un compte fermé ne garde pas de jeton valide en poche. Le compte
+            // suspendu les garde : la suspension est temporaire, et la lever ne
+            // doit pas obliger l'élève à se reconnecter partout.
+            if ($status === User::STATUS_DISABLED) {
+                $student->tokens()->delete();
+            }
 
-        $this->log->log(
-            $admin,
-            ActivityLogger::STUDENT_STATUS,
-            'student',
-            $student->id,
-            ['account_status' => $before],
-            ['account_status' => $status],
-        );
+            $this->log->log(
+                $admin,
+                ActivityLogger::STUDENT_STATUS,
+                'student',
+                $student->id,
+                ['account_status' => $before],
+                ['account_status' => $status],
+            );
+        });
 
         return $student;
     }

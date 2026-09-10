@@ -25,6 +25,16 @@ use Illuminate\Support\Facades\DB;
  * administrateur venait de masquer parce qu'il était cassé — et personne ne
  * s'en apercevrait avant le prochain signalement d'élève.
  *
+ * POLITIQUE DE PUBLICATION À LA DÉCOUVERTE : un contenu NOUVELLEMENT
+ * découvert naît en `draft`, jamais publié. Le contenu déjà en base garde
+ * l'état qu'il a — cette règle ne rétroagit pas.
+ *
+ * Pourquoi : sans elle, écrire une leçon et lancer la synchro la met en ligne
+ * devant les élèves sans que personne ne l'ait relue. Publier doit rester un
+ * GESTE, pas un effet de bord du déploiement. L'inverse (naître publié) ne se
+ * remarque jamais — c'est exactement le genre d'accident qu'on ne découvre
+ * qu'en lisant un signalement d'élève.
+ *
  * ET ON NE SUPPRIME PAS : un code disparu du contenu est marqué `retired_at`.
  * Même raison que pour les learning points — student_lesson_progress
  * .completed_modules référence ces codes sous forme de chaînes, et effacer la
@@ -106,8 +116,9 @@ class ContentRegistryImporter
                     LessonModule::create($identity + [
                         'lesson_id' => $lesson->id,
                         'code' => $code,
-                        // Seule la CRÉATION pose un état de publication.
-                        'publication_status' => LessonModule::PUB_PUBLISHED,
+                        // Brouillon : un module découvert n'est pas un module
+                        // relu (voir la politique en tête de classe).
+                        'publication_status' => LessonModule::PUB_DRAFT,
                     ]);
                     $summary['modules']['created'][] = $label;
 
@@ -177,7 +188,7 @@ class ContentRegistryImporter
                 PracticeExercise::create($identity + [
                     'lesson_id' => $lesson->id,
                     'exercise_code' => $code,
-                    'publication_status' => PracticeExercise::PUB_PUBLISHED,
+                    'publication_status' => PracticeExercise::PUB_DRAFT,
                 ]);
                 $summary['exercises']['created'][] = $label;
 

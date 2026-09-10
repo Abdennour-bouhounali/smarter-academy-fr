@@ -261,16 +261,19 @@ class ReportService
             $report->duplicate_of_id = $target;
         }
 
-        $report->save();
+        // Même règle qu'ailleurs : la décision et sa trace sont indivisibles.
+        DB::transaction(function () use ($admin, $report, $before) {
+            $report->save();
 
-        $this->log->log(
-            $admin,
-            ActivityLogger::REPORT_UPDATED,
-            'report',
-            $report->id,
-            $before,
-            $report->only(['status', 'priority', 'assigned_to', 'duplicate_of_id']),
-        );
+            $this->log->log(
+                $admin,
+                ActivityLogger::REPORT_UPDATED,
+                'report',
+                $report->id,
+                $before,
+                $report->only(['status', 'priority', 'assigned_to', 'duplicate_of_id']),
+            );
+        });
 
         return $report->fresh(['student', 'lesson', 'module', 'assignee', 'resolver', 'notes.author']);
     }
@@ -280,13 +283,20 @@ class ReportService
     {
         $report = $this->find($reportId);
 
-        $note = ReportNote::create([
-            'student_report_id' => $report->id,
-            'user_id' => $admin->id,
-            'body' => $body,
-        ]);
+        $note = DB::transaction(function () use ($admin, $report, $body) {
+            $created = ReportNote::create([
+                'student_report_id' => $report->id,
+                'user_id' => $admin->id,
+                'body' => $body,
+            ]);
 
-        $this->log->log($admin, ActivityLogger::REPORT_NOTE_ADDED, 'report', $report->id);
+            // Le journal retient QU'UNE note a été ajoutée, jamais son
+            // contenu : une note interne peut citer un élève, et un journal
+            // d'audit n'est pas l'endroit pour en garder une seconde copie.
+            $this->log->log($admin, ActivityLogger::REPORT_NOTE_ADDED, 'report', $report->id);
+
+            return $created;
+        });
 
         return $note->load('author');
     }

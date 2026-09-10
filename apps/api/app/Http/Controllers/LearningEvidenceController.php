@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Access\ContentAccess;
 use App\Domain\Progress\ProgressEngine;
+use App\Domain\Progress\StudentActivity;
 use App\Models\Lesson;
 use DomainException;
 use Illuminate\Http\Request;
@@ -26,6 +28,15 @@ class LearningEvidenceController extends Controller
             abort(404);
         }
 
+        // Une leçon retirée n'enregistre plus de preuve : sinon un onglet
+        // resté ouvert continuerait d'alimenter la maîtrise à partir d'un
+        // contenu que l'administration a justement jugé faux.
+        try {
+            ContentAccess::assertLessonAvailable($lessonCode);
+        } catch (DomainException $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
+        }
+
         $validated = $request->validate([
             'questionCode' => 'required|string|max:255',
             'attemptId' => 'required|string|max:64',
@@ -37,6 +48,8 @@ class LearningEvidenceController extends Controller
         ], [
             'learningPointCodes.required' => 'Au moins un point d\'apprentissage est requis.',
         ]);
+
+        StudentActivity::touch($request->user());
 
         try {
             $result = $this->engine->recordEvidence($request->user(), $lessonCode, [

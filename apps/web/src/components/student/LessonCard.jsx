@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, Lock, Crown } from 'lucide-react';
 import { isLessonUnlocked } from '@smarter-academy/core';
+import { useContentAvailability } from '../../context/ContentAvailabilityContext';
 import { getLessonProgress } from '../../lessons/common/utils/progress/getLessonProgress';
 import { getTotalModules } from '../../lessons/registry';
 
@@ -22,7 +23,12 @@ import { getTotalModules } from '../../lessons/registry';
  * a plain function component can't accept that ref.
  */
 const LessonCard = forwardRef(function LessonCard({ lesson, onClick }, ref) {
-  const isAvailable = lesson.status === 'available';
+  // Le catalogue vient du bundle ; la PUBLICATION vient du serveur. Une leçon
+  // retirée par l'administration retombe donc dans l'état « bientôt
+  // disponible » déjà géré plus bas — l'élève voit un message qu'il connaît,
+  // pas une carte cliquable qui le mènera à un refus.
+  const { isLessonClosed } = useContentAvailability();
+  const isAvailable = lesson.status === 'available' && !isLessonClosed(lesson.id);
   // No subscription/entitlement system exists yet — every student is
   // `isPremiumUser: false` until one is built (see lessonAccess.js).
   const isUnlocked = isLessonUnlocked(lesson, { isPremiumUser: false });

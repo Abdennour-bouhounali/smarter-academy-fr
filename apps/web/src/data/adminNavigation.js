@@ -78,6 +78,7 @@ export const adminNavSections = [
     icon: ScrollText,
     links: [
       { label: 'Journal d’activité', path: '/admin/systeme/journal', icon: ScrollText },
+      { label: 'Cohérence du registre', path: '/admin/systeme/coherence', icon: ScrollText },
       { label: 'Messages de contact', path: '/admin/systeme/messages', icon: ScrollText },
     ],
   },

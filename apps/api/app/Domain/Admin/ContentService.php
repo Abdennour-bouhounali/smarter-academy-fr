@@ -2,6 +2,7 @@
 
 namespace App\Domain\Admin;
 
+use App\Models\LearningPoint;
 use App\Models\Lesson;
 use App\Models\LessonModule;
 use App\Models\PracticeExercise;
@@ -127,7 +128,17 @@ class ContentService
             return ['model' => $model, 'changed' => false];
         }
 
-        DB::transaction(function () use ($model, $status, $type) {
+        // On ne publie que ce qui tient debout. Retirer reste toujours
+        // possible : refuser de MASQUER un contenu cassé serait exactement
+        // l'inverse de ce qu'on veut.
+        if ($status === Lesson::PUB_PUBLISHED) {
+            $this->assertPublishable($type, $model);
+        }
+
+        // Le changement ET sa trace dans la MÊME transaction : un journal
+        // qui affirme une publication qui n'a pas eu lieu est pire que pas de
+        // journal du tout — c'est un audit qui ment.
+        DB::transaction(function () use ($admin, $model, $status, $type, $before) {
             $model->publication_status = $status;
 
             // Les horodatages n'existent que sur la leçon : c'est le seul
@@ -143,21 +154,89 @@ class ContentService
             }
 
             $model->save();
+
+            $this->log->log(
+                $admin,
+                match ($type) {
+                    'lesson' => ActivityLogger::PUBLISH_LESSON,
+                    'module' => ActivityLogger::PUBLISH_MODULE,
+                    'exercise' => ActivityLogger::PUBLISH_EXERCISE,
+                },
+                $type,
+                $model->id,
+                ['publication_status' => $before],
+                ['publication_status' => $status],
+            );
         });
 
-        $this->log->log(
-            $admin,
-            match ($type) {
-                'lesson' => ActivityLogger::PUBLISH_LESSON,
-                'module' => ActivityLogger::PUBLISH_MODULE,
-                'exercise' => ActivityLogger::PUBLISH_EXERCISE,
-            },
-            $type,
-            $model->id,
-            ['publication_status' => $before],
-            ['publication_status' => $status],
-        );
-
         return ['model' => $model, 'changed' => true];
+    }
+
+    /**
+     * Le contenu est-il publiable ?
+     *
+     * Contrôles STRUCTURELS seulement — l'existence et la cohérence des
+     * liens. Rien sur la pédagogie : ce panneau n'est pas un correcteur de
+     * leçon, et prétendre juger la qualité d'un contenu depuis la base serait
+     * une promesse qu'on ne peut pas tenir.
+     */
+    private function assertPublishable(string $type, $model): void
+    {
+        if ($type === 'module' || $type === 'exercise') {
+            // Un contenu retiré du registre n'a plus de source : le publier
+            // rendrait visible une page qui n'existe pas.
+            if ($model->retired_at !== null) {
+                throw new DomainException(
+                    'Ce contenu a été retiré du registre : sa source n\'existe plus. '
+                    .'Relancez la synchronisation avant de le publier.'
+                );
+            }
+
+            if ($model->lesson === null) {
+                throw new DomainException('Ce contenu n\'est rattaché à aucune leçon.');
+            }
+        }
+
+        if ($type === 'module') {
+            // Un point d'apprentissage retiré signale un module qui enseigne
+            // quelque chose qui n'est plus au programme.
+            foreach ($model->teaches_learning_point_codes ?? [] as $code) {
+                $point = LearningPoint::where('code', $code)->first();
+
+                if ($point === null) {
+                    throw new DomainException(
+                        "Ce module référence un point d'apprentissage inconnu ({$code})."
+                    );
+                }
+
+                if ($point->retired_at !== null) {
+                    throw new DomainException(
+                        "Ce module enseigne un point d'apprentissage retiré du programme ({$code})."
+                    );
+                }
+            }
+        }
+
+        if ($type === 'lesson') {
+            // Une leçon sans aucun module publiable s'ouvre sur du vide.
+            // Avertissement volontairement limité au cas où la leçon a des
+            // modules EN REGISTRE : une leçon « à venir » n'en a aucun, et
+            // la bloquer n'aurait pas de sens.
+            $registered = $model->modules()->whereNull('retired_at')->count();
+
+            if ($registered > 0) {
+                $publishable = $model->modules()
+                    ->whereNull('retired_at')
+                    ->where('publication_status', Lesson::PUB_PUBLISHED)
+                    ->count();
+
+                if ($publishable === 0) {
+                    throw new DomainException(
+                        'Aucun module de cette leçon n\'est publié : l\'élève ouvrirait une leçon vide. '
+                        .'Publiez au moins un module d\'abord.'
+                    );
+                }
+            }
+        }
     }
 }

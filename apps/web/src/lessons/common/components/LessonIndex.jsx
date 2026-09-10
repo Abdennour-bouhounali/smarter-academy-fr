@@ -10,6 +10,7 @@ import { calculateCompletionPercentage } from '@smarter-academy/core';
 import { isPracticeActive } from '../../../features/practice/practiceCapability';
 import PracticeEntryCard from '../../../features/practice/PracticeEntryCard';
 import ReportButton from '../../../features/reports/ReportButton';
+import { useContentAvailability } from '../../../context/ContentAvailabilityContext';
 
 /**
  * Static color map — replaces dynamic `bg-${color}-100` patterns.
@@ -95,6 +96,7 @@ function getColor(color, variant) {
  */
 export default function LessonIndex({ config, basePath }) {
   const { completedModules, isModuleCompleted, currentModule } = useProgress(config.id);
+  const { isModuleClosed } = useContentAvailability();
 
   const totalModules = config.modules.length;
   const completedCount = completedModules.length;
@@ -196,12 +198,20 @@ export default function LessonIndex({ config, basePath }) {
               const isDone = isModuleCompleted(module.id) || isModuleCompleted(module.number?.toString());
               const modulePath = `${basePath}/${module.slug}`;
 
-              const status = config.sequentialUnlock
-                // Passing `module` makes evaluation-stage modules always
-                // accessible (the "Je pense déjà maîtriser" path) and applies
-                // any requiresLearningPointIds mastery gate.
-                ? getModuleStatus({ isModuleCompleted, moduleNumber: module.number, currentModule, module })
-                : isDone ? 'mastered' : 'unlocked';
+              // Un module retiré par l'administration est traité comme
+              // verrouillé : il reste VISIBLE dans le parcours (l'élève ne
+              // doit pas voir son plan de leçon changer de forme sous ses
+              // yeux) mais devient non cliquable. Le serveur refuse de toute
+              // façon d'enregistrer sa progression — ceci ne fait qu'aligner
+              // l'affichage sur ce refus, au lieu d'y mener l'élève.
+              const status = isModuleClosed(config.id, module.number)
+                ? 'locked'
+                : config.sequentialUnlock
+                  // Passing `module` makes evaluation-stage modules always
+                  // accessible (the "Je pense déjà maîtriser" path) and applies
+                  // any requiresLearningPointIds mastery gate.
+                  ? getModuleStatus({ isModuleCompleted, moduleNumber: module.number, currentModule, module })
+                  : isDone ? 'mastered' : 'unlocked';
 
               // Un module verrouillé reste VISIBLE (l'élève voit tout le
               // parcours) mais n'est ni cliquable ni navigable : même rendu

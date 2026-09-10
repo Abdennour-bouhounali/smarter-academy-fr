@@ -41,6 +41,19 @@ class AnalyticsService
     }
 
     /**
+     * Une valeur réelle, mais dont la MÉTHODE est approximative.
+     *
+     * Distincte de `value()` et de `unavailable()` : la donnée existe, elle
+     * n'est simplement pas datable au module près. Mentir par omission — la
+     * présenter comme un compte exact — serait aussi faux qu'inventer un
+     * zéro.
+     */
+    private function approximate(mixed $value, string $reason = 'no_per_module_timestamp'): array
+    {
+        return ['available' => true, 'value' => $value, 'approximate' => true, 'reason' => $reason];
+    }
+
+    /**
      * @return array{from: CarbonImmutable, to: CarbonImmutable}
      */
     public function range(?string $from, ?string $to): array
@@ -65,9 +78,12 @@ class AnalyticsService
                 'registrations' => $this->value((clone $students)->whereBetween('created_at', [$start, $end])->count()),
                 'totalStudents' => $this->value((clone $students)->count()),
 
-                // Actifs = dernière activité connue. `last_activity_at` est
-                // posé à la connexion ; c'est donc une mesure de connexion,
-                // honnête mais plus grossière qu'une vraie session.
+                // Actifs = dernière activité connue. Voir
+                // App\Domain\Progress\StudentActivity pour la définition
+                // exacte : connexion, progression enregistrée, preuve
+                // soumise, ou réponse à une question. Autrement dit un geste
+                // D'APPRENTISSAGE, pas une page ouverte — c'est une mesure
+                // plus stricte que la fréquentation, et volontairement.
                 'activeToday' => $this->value((clone $students)->where('last_activity_at', '>=', $now->startOfDay())->count()),
                 'dau' => $this->value((clone $students)->where('last_activity_at', '>=', $now->subDay())->count()),
                 'wau' => $this->value((clone $students)->where('last_activity_at', '>=', $now->subDays(7))->count()),
@@ -78,7 +94,10 @@ class AnalyticsService
                     StudentLessonProgress::where('status', StudentLessonProgress::STATUS_COMPLETED)
                         ->whereBetween('completed_at', [$start, $end])->count()
                 ),
-                'moduleCompletions' => $this->value($this->countCompletedModules($start, $end)),
+                // Approximation ASSUMÉE, signalée à l'appelant : voir
+                // countCompletedModules(). L'interface doit l'afficher comme
+                // approximative, jamais comme un compte exact.
+                'moduleCompletions' => $this->approximate($this->countCompletedModules($start, $end)),
 
                 'practiceSessions' => $this->value(
                     DB::table('practice_sessions')->whereBetween('started_at', [$start, $end])->count()
@@ -142,7 +161,7 @@ class AnalyticsService
                     StudentLessonProgress::where('status', StudentLessonProgress::STATUS_COMPLETED)
                         ->whereBetween('completed_at', [$start, $end])->count()
                 ),
-                'modulesCompleted' => $this->value($this->countCompletedModules($start, $end)),
+                'modulesCompleted' => $this->approximate($this->countCompletedModules($start, $end)),
                 'exercisesStarted' => $this->value(DB::table('exercise_attempts')->whereBetween('started_at', [$start, $end])->count()),
                 'exercisesCompleted' => $this->value(
                     DB::table('exercise_attempts')->where('status', 'completed')->whereBetween('completed_at', [$start, $end])->count()
@@ -285,10 +304,17 @@ class AnalyticsService
     /**
      * Modules terminés sur une période.
      *
-     * completed_modules est un tableau JSON, pas une table de faits : on ne
-     * peut pas dater chaque module individuellement. On compte donc la taille
-     * du tableau des progressions ACTIVES sur la période — c'est une
-     * approximation, et elle est signalée comme telle à l'appelant.
+     * completed_modules est un tableau JSON, pas une table de faits : AUCUNE
+     * date n'existe par module. On compte donc la taille du tableau des
+     * progressions actives sur la période — ce qui répond à « combien de
+     * modules ont été terminés par les élèves actifs sur cette période », et
+     * NON à « combien de modules ont été terminés pendant cette période ».
+     *
+     * La différence est réelle : un élève actif hier voit tous ses modules
+     * comptés, y compris ceux terminés le mois dernier. D'où le marqueur
+     * `approximate` renvoyé à l'interface — la seule alternative honnête
+     * serait de ne rien afficher, et le nombre reste utile en ordre de
+     * grandeur.
      */
     private function countCompletedModules(CarbonImmutable $start, CarbonImmutable $end): int
     {

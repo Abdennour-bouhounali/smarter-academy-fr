@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Domain\Practice\HintService;
 use App\Domain\Practice\PracticeEvidenceRecorder;
 use App\Domain\Practice\PracticeSessionService;
+use App\Domain\Progress\StudentActivity;
 use App\Models\ExerciseAttempt;
 use App\Models\QuestionAttempt;
 use DomainException;
@@ -100,6 +101,10 @@ class PracticeAnswerController extends Controller
         if ($attempt === null || $attempt->user_id !== $request->user()->id) {
             abort(404);
         }
+
+        // Répondre à une question est le geste d'apprentissage le plus
+        // fréquent : c'est ce qui rend la mesure d'activité représentative.
+        StudentActivity::touch($request->user());
 
         try {
             $result = $this->recorder->record(

@@ -1127,3 +1127,158 @@ The Admin Panel is complete when:
 - no security-sensitive control exists only in the frontend
 - existing student functionality remains intact
 - existing exercise/progress architecture remains intact
+
+---
+
+# ANNEXE — État d'implémentation après durcissement (2026-09-13)
+
+Cette annexe décrit ce qui EST, par opposition au corps du document qui décrit
+ce qui était visé. En cas de désaccord, c'est le code — et les tests qui le
+verrouillent — qui font foi.
+
+## A1. L'autorité de publication
+
+`lessons.publication_status`, `lesson_modules.publication_status` et
+`practice_exercises.publication_status` sont les **trois seules** autorités.
+
+`lessons.status` (`available` / `coming_soon`) reste **informatif** : il
+alimente l'affichage du catalogue côté frontend et n'ouvre ni ne ferme aucun
+accès. Les deux colonnes ne se contredisent pas — elles ne parlent pas de la
+même chose.
+
+**Liste blanche** : seul `published` ouvre. Un état inconnu ajouté plus tard
+sera fermé par défaut, jamais ouvert par oubli.
+
+**Pas de cascade** : publier une leçon ne publie aucun module. Une leçon
+publiée dont un module est en brouillon garde ce module fermé. C'est ce qui
+permet de retirer *un* module cassé sans fermer la leçon, et ce qui évite
+qu'une publication ouvre par surprise du contenu jamais relu.
+
+**L'inconnu reste ouvert** : une leçon, un module ou un exercice absent du
+registre est accessible. La base MIROITE le contenu, elle n'en est pas
+l'autorité — refuser l'inconnu fermerait la plateforme au premier oubli de
+synchronisation.
+
+**Homonymes** : un code de leçon se répète d'une classe à l'autre
+(`resolution-problemes` existe en 6e et en 3e). Un code n'est fermé que si
+AUCUNE des leçons qui le portent n'est publiée.
+
+### Où c'est appliqué
+
+`App\Domain\Access\ContentAccess` est le point unique. Il est appelé sur
+**tous les chemins d'écriture** :
+
+| Chemin | Contrôle |
+|---|---|
+| `PUT /lessons/{code}/progress` | leçon + chaque module **nouvellement** déclaré terminé |
+| `POST /lessons/{code}/evidence` | leçon |
+| `PUT /lessons/{code}/final-test-attempt` | leçon |
+| `POST /lessons/{code}/practice/sessions` | leçon |
+| `GET /lessons/{code}/practice/overview` | leçon |
+| `POST /practice/sessions/{id}/questions` | exercice |
+| `GET /lessons/{code}/exercises` | leçon + exercice (listage) |
+
+**Lecture vs écriture** : la progression et le test final déjà enregistrés se
+LISENT toujours, même sur une leçon retirée. Ce que l'élève a fait lui
+appartient ; le lui masquer serait lui mentir sur son parcours. Seule
+l'écriture est fermée.
+
+**Le piège de l'union monotone** : `completedModules` est renvoyé en ENTIER à
+chaque sauvegarde. Contrôler toute la liste ferait qu'un module masqué
+aujourd'hui empêcherait l'élève d'enregistrer quoi que ce soit demain. Seuls
+les modules **nouvellement ajoutés** sont contrôlés.
+
+## A2. L'inventaire côté élève
+
+Deux points d'entrée alignent l'affichage sur la décision serveur :
+
+- `GET /content/availability` — la liste des **fermetures** (jamais des
+  ouvertures : envoyer « voici les 132 leçons ouvertes » ferait de la base une
+  seconde définition du catalogue, qui dériverait).
+- `GET /lessons/{code}/exercises` — l'inventaire des exercices, servi par le
+  **registre**. Corrige le trou connu : un exercice masqué n'est plus listé,
+  et pas seulement refusé à l'ouverture.
+
+Côté React, `ContentAvailabilityContext` porte cette information.
+**Politique d'ouverture** : tant que la réponse n'est pas arrivée — ou si elle
+échoue — RIEN n'est fermé. Le serveur refuse de toute façon toute écriture ;
+verrouiller l'interface sur une requête en vol enfermerait l'élève hors de son
+parcours pour une raison purement technique.
+
+### Ce que le client ne garantit PAS
+
+Le contenu pédagogique des exercices est **embarqué dans le bundle**. Masquer
+un exercice l'empêche d'être **listé, ouvert, commencé, tenté et corrigé** —
+ce sont les cinq gestes qui comptent. Cela ne rend pas son texte secret pour
+qui inspecte le bundle. Le registre contrôle la DISPONIBILITÉ ; les fichiers
+portent le CONTENU. Ne pas confondre les deux.
+
+## A3. Le registre
+
+**Deux propriétaires, une table** : la synchro
+(`smarter:import-content-registry`) possède l'IDENTITÉ (code, titre, étape,
+points enseignés) ; l'administration possède l'ÉTAT (`publication_status`).
+Une resynchro ne touche jamais l'état d'une ligne existante.
+
+**Politique du brouillon** : un contenu **nouvellement découvert** naît en
+`draft`. Publier doit rester un geste, pas un effet de bord du déploiement.
+La règle ne rétroagit pas — le contenu déjà en base garde son état.
+
+**On ne supprime pas** : un code disparu prend `retired_at` ;
+`student_lesson_progress.completed_modules` référence ces codes en clair.
+
+**Diagnostic** : `smarter:registry-health` et `GET /admin/health`
+(admin uniquement) — orphelins des deux côtés, doublons de code, leçons
+publiées sans module publié, points d'apprentissage inconnus ou retirés
+encore référencés.
+
+## A4. Sémantique de « actif »
+
+`users.last_activity_at`, écrit par `App\Domain\Progress\StudentActivity`, aux
+**gestes d'apprentissage déjà enregistrés** : connexion, écriture de
+progression, soumission de preuve, réponse à une question d'exercice.
+
+Ce n'est **pas** « il a ouvert une page » : rien n'enregistre les vues, et
+construire un pipeline d'événements pour une seule colonne serait
+disproportionné. DAU/WAU/MAU mesurent donc l'**engagement réel**, pas la
+fréquentation — une mesure plus stricte, et volontairement.
+
+Écriture amortie à une par tranche de 5 minutes.
+
+## A5. Honnêteté des statistiques
+
+Trois formes de réponse, jamais confondues :
+
+- `{available: true, value: N}` — mesuré.
+- `{available: true, value: N, approximate: true, reason: …}` — la donnée
+  existe, la méthode est approximative. C'est le cas des **modules terminés** :
+  `completed_modules` est un tableau JSON sans date par module, donc le compte
+  répond à « combien de modules ont été terminés par les élèves actifs sur
+  cette période » et NON à « combien ont été terminés pendant cette période ».
+- `{available: false, reason: 'no_tracking'}` — rien ne le mesure. Vues,
+  sessions, temps passé, abandon, questions passées.
+
+Un zéro se lit « ça ne marche pas » ; ces trois formes disent la vérité.
+
+## A6. La couture des droits d'accès (entitlement)
+
+**Aucun droit d'accès n'est appliqué aujourd'hui.** Les tables
+`subscriptions` et `payments` existent et sont lues par l'administration ;
+**rien ne les écrit**, et un abonnement ne donne aucun accès.
+
+La chaîne visée est :
+
+```text
+authentification → statut de compte → DROIT D'ACCÈS → publication leçon
+  → publication module → publication exercice → règles de progression
+```
+
+Le maillon manquant s'introduira à **deux endroits, et deux seulement** :
+
+1. `App\Domain\Access\ContentAccess` — un contrôle de droit avant les
+   contrôles de publication, côté serveur.
+2. `packages/core/lessonAccess.js::isLessonUnlocked(lesson, {isPremiumUser})`
+   — le paramètre existe déjà et vaut toujours `false` ; c'est le point
+   d'affichage.
+
+Ne pas disperser de vérification d'abonnement ailleurs.

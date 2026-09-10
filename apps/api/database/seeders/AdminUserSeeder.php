@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use RuntimeException;
 
 /**
  * Garantit l'existence de l'administrateur initial.
@@ -27,10 +28,32 @@ use Illuminate\Support\Facades\Hash;
  */
 class AdminUserSeeder extends Seeder
 {
+    /**
+     * Le mot de passe de repli n'existe QU'EN DÉVELOPPEMENT.
+     *
+     * En production, un identifiant écrit dans le dépôt est un identifiant
+     * public : n'importe qui ayant lu le code connaît le compte
+     * d'administration. La production exige donc ADMIN_PASSWORD, et échoue
+     * bruyamment s'il manque — un amorçage qui refuse de s'exécuter se
+     * remarque, un admin au mot de passe connu ne se remarque pas.
+     */
+    private const DEV_FALLBACK_PASSWORD = 'Admin@2026';
+
     public function run(): void
     {
         $email = (string) env('ADMIN_EMAIL', 'admin@gmail.com');
-        $password = (string) env('ADMIN_PASSWORD', 'Admin@2026');
+        $password = (string) env('ADMIN_PASSWORD', '');
+
+        if ($password === '') {
+            if (app()->environment('production')) {
+                throw new RuntimeException(
+                    'ADMIN_PASSWORD est obligatoire en production. '
+                    .'Définissez-le dans l\'environnement avant de lancer AdminUserSeeder.'
+                );
+            }
+
+            $password = self::DEV_FALLBACK_PASSWORD;
+        }
 
         $existing = User::where('email', $email)->first();
 
@@ -55,5 +78,11 @@ class AdminUserSeeder extends Seeder
                 ? "Administrateur déjà présent : {$email} (mot de passe inchangé)"
                 : "Administrateur créé : {$email}"
         );
+
+        if (! $existing && ! app()->environment('production') && env('ADMIN_PASSWORD', '') === '') {
+            $this->command?->warn(
+                'Mot de passe de développement utilisé. Définissez ADMIN_PASSWORD avant tout déploiement.'
+            );
+        }
     }
 }
