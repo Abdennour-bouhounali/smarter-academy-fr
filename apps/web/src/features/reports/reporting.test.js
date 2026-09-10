@@ -2,7 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { REPORT_CATEGORIES, REPORT_SOURCES } from '../../services/reportService';
+import { REPORT_CATEGORIES, REPORT_SOURCES, isRetryableFailure } from '../../services/reportService';
+import { ApiError } from '@smarter-academy/core';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const webRoot = resolve(here, '../../..');
@@ -78,6 +79,97 @@ describe('le parcours en deux temps', () => {
   it('n’envoie jamais d’identifiant de base, seulement des codes', () => {
     expect(service).not.toMatch(/lesson_id|module_id|lessonId:/);
     expect(service).toContain('lessonCode');
+  });
+});
+
+describe('un signal qui échoue ne fait pas perdre le signalement', () => {
+  const button = read('src/features/reports/ReportButton.jsx');
+
+  it('ne réessaie que ce qui vaut la peine de l’être', () => {
+    // Passager : la même requête peut aboutir plus tard.
+    expect(isRetryableFailure(new ApiError('coupé', 'NETWORK_ERROR'))).toBe(true);
+    expect(isRetryableFailure(new ApiError('502', 'SERVER_ERROR', 502))).toBe(true);
+
+    // Refus : la même requête produira la même réponse. Rejouer masquerait
+    // la vraie cause derrière un second échec.
+    expect(isRetryableFailure(new ApiError('interdit', 'AUTHORIZATION_ERROR', 403))).toBe(false);
+    expect(isRetryableFailure(new ApiError('invalide', 'VALIDATION_ERROR', 422))).toBe(false);
+    expect(isRetryableFailure(new ApiError('non connecté', 'AUTHENTICATION_ERROR', 401))).toBe(false);
+  });
+
+  it('traite une erreur non typée comme passagère', () => {
+    // Perdre le signalement d'un élève est pire que retenter une fois pour rien.
+    expect(isRetryableFailure(new Error('inconnue'))).toBe(true);
+    expect(isRetryableFailure(undefined)).toBe(true);
+  });
+
+  it('retient l’échec sans alarmer l’élève à l’ouverture', () => {
+    const openDialog = button.slice(button.indexOf('const openDialog'), button.indexOf('const submit'));
+    // Aucune erreur affichée : l'élève n'a encore rien demandé.
+    expect(openDialog).not.toMatch(/setError\((?!null)/);
+    expect(openDialog).toContain('setSignalPending(isRetryableFailure(caught))');
+  });
+
+  it('repose le signal à l’envoi quand l’échec était passager', () => {
+    const submit = button.slice(button.indexOf('const submit'), button.indexOf('const close'));
+    expect(submit).toContain('if (!signalPending)');
+    expect(submit).toContain('await initiateReport');
+  });
+
+  it('n’insiste pas quand le refus est définitif', () => {
+    const submit = button.slice(button.indexOf('const submit'), button.indexOf('const close'));
+    // Sans `signalPending`, on lève au lieu de rejouer une requête que le
+    // serveur a déjà refusée.
+    const guard = submit.indexOf('if (!signalPending)');
+    const retry = submit.indexOf('await initiateReport');
+    expect(guard).toBeGreaterThan(-1);
+    expect(guard).toBeLessThan(retry);
+  });
+
+  it('garde la saisie de l’élève à l’écran en cas d’échec', () => {
+    const submit = button.slice(button.indexOf('const submit'), button.indexOf('const close'));
+    // `setSubmitted(true)` ne doit pas être atteint dans la branche d'erreur :
+    // l'élève doit pouvoir réessayer sans retaper.
+    expect(submit).toContain('setError(caught.message)');
+    const dialog = read('src/features/reports/ReportDialog.jsx');
+    expect(dialog).toContain('role="alert"');
+  });
+
+  it('ne conserve rien de sensible localement', () => {
+    // Le seul état gardé est un identifiant numérique et un drapeau. Pas de
+    // stockage persistant, pas de jeton recopié.
+    expect(button).not.toContain('localStorage');
+    expect(button).not.toContain('sessionStorage');
+  });
+
+  it('n’introduit ni sondage ni minuterie de relance', () => {
+    expect(button).not.toContain('setInterval');
+    expect(button).not.toContain('setTimeout');
+  });
+});
+
+describe('la cible tactile de l’icône', () => {
+  const button = read('src/features/reports/ReportButton.jsx');
+  const iconVariant = button.slice(button.indexOf("variant === 'icon'"), button.indexOf("variant === 'link'"));
+
+  it('offre 44px au doigt tout en gardant une pastille de 36px', () => {
+    // h-11 w-11 = 44px de cible ; le <span> intérieur porte le visuel.
+    expect(iconVariant).toContain('h-11 w-11');
+    expect(iconVariant).toContain('h-9 w-9');
+  });
+
+  it('garde l’anneau de focus sur la pastille visible, pas sur la cible', () => {
+    // Sinon l'anneau ferait 44px et déborderait visuellement de l'icône.
+    expect(iconVariant).toContain('group-focus-visible:ring-2');
+  });
+
+  it('garde son étiquette accessible', () => {
+    expect(iconVariant).toContain('aria-label={label}');
+    expect(iconVariant).toContain('aria-haspopup="dialog"');
+  });
+
+  it('ne rétrécit pas dans une barre d’outils serrée', () => {
+    expect(iconVariant).toContain('shrink-0');
   });
 });
 

@@ -88,6 +88,11 @@ export default function AdminReportDetail() {
                   )}
               </Field>
               <Field label="Origine">{SOURCE_LABELS[report.source] ?? report.source}</Field>
+              <Field label="Complétude">
+                {report.detailsCompleted
+                  ? <StatusBadge status="resolved" label="Décrit par l’élève" />
+                  : <StatusBadge status="draft" label="Signal seul" />}
+              </Field>
               <Field label="Message">
                 {report.note
                   ? <p className="whitespace-pre-wrap rounded-lg bg-slate-50 p-3 text-slate-700">{report.note}</p>

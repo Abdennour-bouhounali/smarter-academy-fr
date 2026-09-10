@@ -264,12 +264,22 @@ class ReportService
                 ->orWhere('exercise_code', 'like', "%{$search}%"));
         }
 
-        // Les signaux SANS détails sont exclus par défaut : ils sont
-        // nombreux, peu actionnables seuls, et noieraient les signalements
-        // réellement décrits. `includeIncomplete=1` les fait revenir — c'est
-        // ce qui permet de voir « 12 élèves ont ouvert la fenêtre sur ce
-        // module sans rien écrire », un signal en soi.
-        if (! ($filters['includeIncomplete'] ?? false)) {
+        // Les signaux SANS description sont VISIBLES par défaut.
+        //
+        // Ils étaient masqués au départ, par crainte qu'ils noient les
+        // signalements décrits. Mais un signal caché derrière une case à
+        // cocher est un signal que personne ne regarde — et « douze élèves ont
+        // ouvert la fenêtre sur ce module sans rien écrire » est justement ce
+        // qu'on veut voir. Ils sont donc listés, et clairement étiquetés comme
+        // incomplets plutôt que confondus avec un signalement abouti.
+        //
+        // `completion=incomplete` isole les signaux non décrits,
+        // `completion=complete` les signalements aboutis.
+        $completion = $filters['completion'] ?? null;
+
+        if ($completion === 'incomplete') {
+            $query->whereNull('details_completed_at');
+        } elseif ($completion === 'complete') {
             $query->whereNotNull('details_completed_at');
         }
 

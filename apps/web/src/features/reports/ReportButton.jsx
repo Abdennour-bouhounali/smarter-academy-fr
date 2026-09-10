@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from 'react';
 import { Flag } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
-import { initiateReport, completeReport } from '../../services/reportService';
+import { initiateReport, completeReport, isRetryableFailure } from '../../services/reportService';
 import ReportDialog from './ReportDialog';
 
 /**
@@ -32,6 +32,12 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
   const [busy, setBusy] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
+  // Le signal a-t-il échoué pour une raison qu'une nouvelle tentative peut
+  // lever (réseau coupé, serveur momentanément indisponible) ? Un refus
+  // d'autorisation ou une validation, eux, se reproduiront à l'identique :
+  // les rejouer à l'envoi ne ferait que masquer la vraie cause derrière un
+  // second échec.
+  const [signalPending, setSignalPending] = useState(false);
   // Garde anti double-clic : deux clics rapides ne doivent pas lancer deux
   // requêtes. Une ref plutôt qu'un état — il ne faut pas attendre un rendu.
   const opening = useRef(false);
@@ -48,6 +54,8 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
 
     setError(null);
     setSubmitted(false);
+    setSignalPending(false);
+    setReportId(null);
     // La fenêtre s'ouvre TOUT DE SUITE : l'élève ne doit pas attendre le
     // réseau pour voir qu'il s'est passé quelque chose.
     setOpen(true);
@@ -55,11 +63,16 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
     try {
       const report = await initiateReport(token, { source, ...context });
       setReportId(report.id);
-    } catch {
-      // Le signal a échoué, mais on ne le dit pas ici : l'élève n'a encore
-      // rien demandé. La tentative sera refaite à l'envoi, où l'échec est
-      // pertinent et affichable.
-      setReportId(null);
+    } catch (caught) {
+      // Silencieux, et c'est délibéré : l'élève n'a encore rien demandé, et
+      // lui annoncer une panne au moment où il ouvre la fenêtre serait du
+      // bruit pour un problème qui se résoudra peut-être tout seul.
+      //
+      // On retient seulement s'il vaut la peine de réessayer. Une panne
+      // réseau, oui. Un 403 ou un 422, non : la même requête produira la
+      // même réponse, et l'élève verra alors une erreur claire à l'envoi
+      // plutôt qu'un second échec inexpliqué.
+      setSignalPending(isRetryableFailure(caught));
     } finally {
       opening.current = false;
     }
@@ -70,13 +83,31 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
     setError(null);
 
     try {
-      // Le signal a pu échouer à l'ouverture (réseau coupé, puis revenu) :
-      // on le repose avant de compléter, plutôt que de perdre la saisie.
-      const id = reportId ?? (await initiateReport(token, { source, ...context })).id;
+      let id = reportId;
+
+      if (id === null) {
+        // Le signal manque. On ne le repose QUE s'il avait échoué pour une
+        // raison passagère : sinon on laisse remonter l'erreur d'origine,
+        // qui dit quelque chose, au lieu d'en fabriquer une seconde.
+        //
+        // Aucun doublon possible : le serveur déduplique sur
+        // (élève, empreinte, signal encore incomplet), donc si le premier
+        // POST avait en réalité abouti — réponse perdue en route — cette
+        // seconde tentative retrouve la MÊME ligne.
+        if (!signalPending) {
+          throw new Error('Impossible d’envoyer le signalement pour le moment.');
+        }
+
+        id = (await initiateReport(token, { source, ...context })).id;
+      }
+
       await completeReport(token, id, { category, note });
       setSubmitted(true);
       setReportId(null);
+      setSignalPending(false);
     } catch (caught) {
+      // La saisie de l'élève reste à l'écran : il peut réessayer sans avoir
+      // à tout retaper.
       setError(caught.message);
     } finally {
       setBusy(false);
@@ -90,6 +121,11 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
     // l'écran de confirmation disparaîtrait pendant l'animation de fermeture.
   };
 
+  // Variante icône : la CIBLE fait 44px (h-11 w-11), la PASTILLE visible en
+  // fait 36 (h-9 w-9). Le bouton est dimensionné pour le doigt, et l'anneau
+  // survol/focus est porté par le <span> intérieur pour qu'il garde la taille
+  // qu'on voit. Grossir la pastille encombrerait une barre d'outils déjà
+  // dense ; laisser la cible à 36px la rendrait difficile à toucher.
   const trigger = variant === 'icon' ? (
     <button
       type="button"
@@ -97,9 +133,11 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
       title={label}
       aria-label={label}
       aria-haspopup="dialog"
-      className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 focus-visible:ring-2 focus-visible:ring-blue-400 focus:outline-none ${className}`}
+      className={`group inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full focus:outline-none ${className}`}
     >
-      <Flag size={15} aria-hidden="true" />
+      <span className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors group-hover:bg-slate-100 group-hover:text-slate-700 group-focus-visible:ring-2 group-focus-visible:ring-blue-400">
+        <Flag size={15} aria-hidden="true" />
+      </span>
     </button>
   ) : variant === 'link' ? (
     <button

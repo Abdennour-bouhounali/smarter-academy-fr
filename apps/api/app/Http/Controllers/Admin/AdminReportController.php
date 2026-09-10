@@ -15,9 +15,7 @@ class AdminReportController extends Controller
 
     public function index(Request $request)
     {
-        $reports = $this->reports->list(
-            $request->query() + ['includeIncomplete' => $request->boolean('includeIncomplete')]
-        );
+        $reports = $this->reports->list($request->query());
 
         return response()->json([
             'success' => true,

@@ -302,6 +302,42 @@ class LessonModuleReportingTest extends TestCase
         $this->assertSame(2, StudentReport::count());
     }
 
+    /**
+     * Le cas que le durcissement vise : le POST initial échoue (réseau), le
+     * client repose le signal à l'envoi, et il ne doit en résulter QU'UN
+     * signalement.
+     *
+     * C'est déjà garanti par la déduplication : reposer le même contexte
+     * pendant que le signal est encore incomplet retrouve la même ligne. Ce
+     * test l'énonce depuis le point de vue du client qui réessaie, parce que
+     * c'est ce chemin-là qui doit rester vrai.
+     */
+    public function test_reposer_le_signal_apres_un_echec_ne_cree_pas_de_doublon(): void
+    {
+        // Premier POST : supposons sa réponse perdue en route. La ligne
+        // existe pourtant bien côté serveur.
+        $first = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
+        $first->assertStatus(201);
+
+        // Le client, qui se croit sans identifiant, repose le signal à l'envoi.
+        $retry = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
+        $retry->assertStatus(201);
+
+        $this->assertSame(
+            $first->json('report.id'),
+            $retry->json('report.id'),
+            'la nouvelle tentative doit retrouver le MÊME signalement'
+        );
+        $this->assertSame(1, StudentReport::count());
+
+        // Et la complétion aboutit sur cette unique ligne.
+        $this->complete($retry->json('report.id'), ['category' => 'math_error', 'note' => 'Rejoué.'])
+            ->assertStatus(200);
+
+        $this->assertSame(1, StudentReport::count());
+        $this->assertSame('math_error', StudentReport::first()->category);
+    }
+
     // ---------------------------------------------------------------- ADMIN
 
     public function test_l_admin_voit_l_origine_et_le_contexte_exact(): void
@@ -329,21 +365,76 @@ class LessonModuleReportingTest extends TestCase
             ->assertJsonPath('report.context.moduleTitle', 'Comparer des fractions');
     }
 
-    /** Les signaux sans description ne noient pas la liste par défaut. */
-    public function test_les_signaux_incomplets_sont_masques_par_defaut_et_visibles_sur_demande(): void
+    /**
+     * Les signaux sans description sont VISIBLES par défaut — mais étiquetés.
+     *
+     * Ils étaient masqués au départ. Un signal caché derrière une case à
+     * cocher est un signal que personne ne regarde, alors que « douze élèves
+     * ont ouvert la fenêtre ici sans rien écrire » est justement ce qu'on
+     * veut voir. Ce qui compte, c'est de ne pas les confondre avec un
+     * signalement abouti : d'où `detailsCompleted`.
+     */
+    public function test_les_signaux_incomplets_sont_listes_et_distingues(): void
     {
         $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
         $complete = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
         $this->complete($complete, ['category' => 'typo']);
 
-        $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports')
+        $response = $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports')
             ->assertStatus(200)
-            ->assertJsonCount(1, 'reports.data')
+            ->assertJsonCount(2, 'reports.data')
             ->assertJsonPath('counts.incomplete', 1);
 
-        $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports?includeIncomplete=1')
+        $flags = collect($response->json('reports.data'))->pluck('detailsCompleted')->sort()->values();
+        $this->assertEquals([false, true], $flags->all(), 'les deux états doivent être distinguables');
+    }
+
+    public function test_l_admin_isole_les_signaux_seuls_ou_les_signalements_decrits(): void
+    {
+        $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
+        $complete = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
+        $this->complete($complete, ['category' => 'typo']);
+
+        $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports?completion=incomplete')
             ->assertStatus(200)
-            ->assertJsonCount(2, 'reports.data');
+            ->assertJsonCount(1, 'reports.data')
+            ->assertJsonPath('reports.data.0.detailsCompleted', false);
+
+        $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports?completion=complete')
+            ->assertStatus(200)
+            ->assertJsonCount(1, 'reports.data')
+            ->assertJsonPath('reports.data.0.detailsCompleted', true);
+    }
+
+    /**
+     * Le filtre de complétude ne doit pas annuler les autres : un
+     * administrateur combine « signaux seuls » et « sur ce module ».
+     */
+    public function test_le_filtre_de_completude_se_combine_aux_autres(): void
+    {
+        $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
+        $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions']);
+
+        $this->actingAs($this->admin, 'sanctum')
+            ->getJson('/api/v1/admin/reports?completion=incomplete&source=module')
+            ->assertStatus(200)
+            ->assertJsonCount(1, 'reports.data')
+            ->assertJsonPath('reports.data.0.source', 'module');
+    }
+
+    /**
+     * Une source inventée ne franchit pas la validation, quelle qu'elle soit.
+     * La liste est fermée côté serveur : le client ne peut pas se déclarer
+     * dans un contexte interne.
+     */
+    public function test_aucune_source_hors_liste_n_est_acceptee(): void
+    {
+        foreach (['admin', 'arbitrary', 'another_internal_context', '', 'LESSON'] as $forged) {
+            $this->signal(['source' => $forged, 'lessonCode' => 'fractions'])
+                ->assertStatus(422);
+        }
+
+        $this->assertSame(0, StudentReport::count(), 'aucune ligne ne doit être créée');
     }
 
     public function test_l_admin_filtre_par_origine(): void

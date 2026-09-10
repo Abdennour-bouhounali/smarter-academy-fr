@@ -27,16 +27,15 @@ export default function AdminReportList() {
   const [priority, setPriority] = useState();
   const [category, setCategory] = useState();
   const [source, setSource] = useState();
-  const [includeIncomplete, setIncludeIncomplete] = useState(false);
+  const [completion, setCompletion] = useState();
   const [page, setPage] = useState(1);
   const debouncedSearch = useDebounced(search, 300);
 
   const loader = useCallback(
     (token) => fetchReports(token, {
-      search: debouncedSearch, status, priority, category, source, page,
-      includeIncomplete: includeIncomplete ? 1 : undefined,
+      search: debouncedSearch, status, priority, category, source, completion, page,
     }),
-    [debouncedSearch, status, priority, category, source, includeIncomplete, page],
+    [debouncedSearch, status, priority, category, source, completion, page],
   );
   const { data, loading, error, reload } = useAdminResource(loader, [loader]);
 
@@ -102,15 +101,14 @@ export default function AdminReportList() {
             onChange={(v) => { setSource(v); setPage(1); }}
             options={Object.entries(SOURCE_LABELS).map(([value, label]) => ({ value, label }))}
           />
-          <label className="flex min-h-[44px] items-center gap-2 font-inter text-xs text-slate-600">
-            <input
-              type="checkbox"
-              checked={includeIncomplete}
-              onChange={(event) => { setIncludeIncomplete(event.target.checked); setPage(1); }}
-              className="h-4 w-4 accent-blue-600"
-            />
-            Inclure les signaux sans description
-          </label>
+          <SelectFilter
+            label="Complétude" allLabel="Tout" value={completion}
+            onChange={(v) => { setCompletion(v); setPage(1); }}
+            options={[
+              { value: 'complete', label: 'Décrits seulement' },
+              { value: 'incomplete', label: 'Signaux seuls' },
+            ]}
+          />
         </FilterBar>
 
         <DataTable
@@ -119,10 +117,13 @@ export default function AdminReportList() {
             {
               key: 'content',
               label: 'Contenu',
+              // Sans largeur minimale, un titre long s'empile sur quatre
+              // lignes et quadruple la hauteur de chaque rangée.
+              cellClassName: 'min-w-[220px]',
               render: (r) => (
                 <Link to={`/admin/signalements/${r.id}`} className="block hover:underline">
                   <span className="font-semibold text-slate-900">{r.lessonTitle ?? r.lessonCode ?? '—'}</span>
-                  <span className="block text-xs text-slate-500">
+                  <span className="block truncate text-xs text-slate-500">
                     {r.moduleTitle ?? (r.moduleNumber != null ? `Module ${r.moduleNumber}` : null)}
                     {r.exerciseCode ? ` · ${r.exerciseCode}` : ''}
                     {r.questionId ? ` · ${r.questionId}` : ''}
@@ -144,7 +145,17 @@ export default function AdminReportList() {
                 ? categoryLabel(r.category)
                 // Un signal ouvert sans description : dire ce que c'est plutôt
                 // que d'afficher un vide qu'on lirait comme un bug.
-                : <span className="italic text-slate-400">Sans description</span>),
+                : <span className="italic text-slate-400">—</span>),
+            },
+            {
+              key: 'detailsCompleted',
+              label: 'Complétude',
+              render: (r) => (r.detailsCompleted
+                ? <StatusBadge status="resolved" label="Décrit" />
+                // Étiqueté, pas masqué : « douze élèves ont ouvert la fenêtre
+                // ici sans rien écrire » est une information, à condition de
+                // ne pas la confondre avec un signalement abouti.
+                : <StatusBadge status="draft" label="Signal seul" />),
             },
             { key: 'note', label: 'Message', render: (r) => <span className="line-clamp-2 max-w-xs text-slate-600">{r.note || <span className="text-slate-400">Sans message</span>}</span> },
             { key: 'studentEmail', label: 'Élève', render: (r) => <Link to={`/admin/eleves/${r.studentId}`} className="hover:underline">{r.studentEmail}</Link> },

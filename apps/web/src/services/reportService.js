@@ -47,6 +47,30 @@ export async function initiateReport(token, context) {
 }
 
 /**
+ * Cet échec vaut-il la peine d'être rejoué ?
+ *
+ * OUI pour ce qui est passager : réseau coupé, serveur momentanément
+ * indisponible. La même requête, plus tard, peut aboutir.
+ *
+ * NON pour ce qui est un refus : une autorisation manquante ou une validation
+ * refusée se reproduiront à l'identique. Les rejouer masquerait la vraie
+ * cause derrière un second échec, et ferait boucler un client sur une requête
+ * que le serveur ne veut pas — d'où la règle explicite plutôt qu'un
+ * `catch` qui réessaie tout.
+ *
+ * @param {unknown} error
+ * @returns {boolean}
+ */
+export function isRetryableFailure(error) {
+  // Une erreur qui n'est pas typée ne dit rien de sa cause : on la traite
+  // comme passagère, quitte à retenter une fois. Perdre le signalement d'un
+  // élève serait pire que de réessayer pour rien.
+  if (!error || typeof error.type !== 'string') return true;
+
+  return error.type === 'NETWORK_ERROR' || error.type === 'SERVER_ERROR';
+}
+
+/**
  * LA COMPLÉTION — la catégorie et, si l'élève le veut, ses mots.
  *
  * La note reste facultative pour TOUTES les catégories, « Autre » comprise :
