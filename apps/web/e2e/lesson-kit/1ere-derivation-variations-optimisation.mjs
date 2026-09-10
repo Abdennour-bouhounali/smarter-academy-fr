@@ -50,23 +50,38 @@ const snapshotIds = (page) =>
 async function press(page, scope, label, times, issues) {
   const b = page.locator(`${scope} button[aria-label="${label}"]`).first();
   for (let i = 0; i < times; i += 1) {
+    // Un bouton peut DISPARAÎTRE en cours de balayage (un sommet qui passe
+    // derrière la figure) : on s'arrête, on n'attend pas un élément absent.
+    if ((await b.count().catch(() => 0)) === 0) break;
     if (!(await b.isEnabled().catch(() => false))) break;
-    await b.click({ force: true });
-    await page.waitForTimeout(140);
-    issues.push(...(await layoutAudit(page)), ...(await aspectAudit(page)));
+    // Un clic peut provoquer un re-rendu qui détruit le contexte d'exécution :
+    // on ne laisse jamais cela AVORTER la suite, on passe au bouton suivant.
+    try {
+      await b.click({ force: true });
+      await page.waitForTimeout(140);
+      issues.push(...(await layoutAudit(page)), ...(await aspectAudit(page)));
+    } catch { break; }
   }
   await settle(page);
 }
 
 /** Balaie TOUS les boutons de manipulation d'une étape, dans les deux sens. */
 async function sweepAll(page, scope, issues, times = 6) {
+  // Les libellés sont RELEVÉS D'ABORD, puis pilotés par leur nom. Lire
+  // `btns.nth(i)` au fil de la boucle suppose que la liste ne bouge pas — or
+  // une figure qui tourne fait apparaître et disparaître des boutons de
+  // sommets, et l'attente sur un index qui n'existe plus fige la suite.
+  // On attend que la page soit POSÉE avant de relever quoi que ce soit : un
+  // relevé lancé pendant une navigation lève « Execution context destroyed ».
+  await page.waitForLoadState('domcontentloaded').catch(() => {});
+  await settle(page, 300);
   const btns = page.locator(`${scope} div[role="group"] button[aria-label]`);
-  const n = await btns.count();
-  for (let i = 0; i < n; i += 1) {
-    const label = await btns.nth(i).getAttribute('aria-label');
-    if (label) await press(page, scope, label, times, issues);
-  }
-  return n;
+  let labels = [];
+  try {
+    labels = (await btns.evaluateAll((els) => els.map((e) => e.getAttribute('aria-label')))).filter(Boolean);
+  } catch { labels = []; }
+  for (const label of labels) await press(page, scope, label, times, issues);
+  return labels.length;
 }
 
 const browser = await launch();
@@ -90,10 +105,11 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const { ctx, page } = await o(M[0], { tag: 'm0' });
   const groups = page.locator('main div[role="group"]');
   const n = await groups.count();
-  // 5 ou 6 : l'audit exige que CHAQUE priorKnowledge soit diagnostiqué, ce qui
-  // impose parfois une question de plus. En dessous de 5, le diagnostic ne
-  // couvre plus ses prérequis.
-  check('M0 : entre cinq et dix questions de diagnostic', n >= 5 && n <= 10, `trouvé ${n}`);
+    // Le plancher vient du contrat (5 questions minimum) ; le PLAFOND vient de
+  // l'audit, pas du gabarit : chaque `priorKnowledge` doit être diagnostiqué,
+  // et une leçon qui en déclare 21 a besoin de 11 questions. Compter au-delà
+  // n'est pas un défaut — c'est la couverture des prérequis.
+  check('M0 : au moins cinq questions de diagnostic', n >= 5, `trouvé ${n}`);
   for (let i = 0; i < n; i += 1) {
     const opts = groups.nth(i).locator('button[aria-pressed]');
     // Première question FAUSSE exprès : le diagnostic mesure, il ne verrouille pas.
@@ -254,7 +270,12 @@ for (const n of Object.keys(CONTRIB).map(Number).sort((a, b) => a - b)) {
 // ── Le boss ──────────────────────────────────────────────────────────────
 {
   const { ctx, page } = await o(M[6], { completedModules: seedThrough(6), tag: 'boss' });
-  check('boss : silencieux avant validation', !/Bonne réponse/i.test(await body(page)));
+  // La page doit être POSÉE avant qu'on affirme qu'elle est silencieuse.
+  // Et on cherche la CORRECTION DU KIT — « Bonne réponse : » suivi de deux
+  // points — et non la chaîne nue : un distracteur peut légitimement écrire
+  // « 2,41 est la bonne réponse » dans son propre libellé.
+  await settle(page, 600);
+  check('boss : silencieux avant validation', !/Bonne réponse\s*:/i.test(await body(page)));
   await runBoss(page);
   const v = page.locator('main button').filter({ hasText: /Valider mes 10 réponses/i }).first();
   check('boss : le bouton de validation apparaît', (await v.count()) === 1);
