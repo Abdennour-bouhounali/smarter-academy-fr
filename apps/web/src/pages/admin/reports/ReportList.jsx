@@ -11,6 +11,7 @@ import { fetchReports } from '../../../services/admin/reportService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { useDebounced } from '../../../hooks/useDebounced';
 import { REPORT_CATEGORIES } from '../../../services/reportService';
+import { SOURCE_LABELS, categoryLabel } from './reportLabels';
 
 const dateFormat = new Intl.DateTimeFormat('fr-FR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
 
@@ -25,12 +26,17 @@ export default function AdminReportList() {
   const [search, setSearch] = useState('');
   const [priority, setPriority] = useState();
   const [category, setCategory] = useState();
+  const [source, setSource] = useState();
+  const [includeIncomplete, setIncludeIncomplete] = useState(false);
   const [page, setPage] = useState(1);
   const debouncedSearch = useDebounced(search, 300);
 
   const loader = useCallback(
-    (token) => fetchReports(token, { search: debouncedSearch, status, priority, category, page }),
-    [debouncedSearch, status, priority, category, page],
+    (token) => fetchReports(token, {
+      search: debouncedSearch, status, priority, category, source, page,
+      includeIncomplete: includeIncomplete ? 1 : undefined,
+    }),
+    [debouncedSearch, status, priority, category, source, includeIncomplete, page],
   );
   const { data, loading, error, reload } = useAdminResource(loader, [loader]);
 
@@ -91,6 +97,20 @@ export default function AdminReportList() {
             onChange={(v) => { setCategory(v); setPage(1); }}
             options={REPORT_CATEGORIES.map((c) => ({ value: c.id, label: c.label }))}
           />
+          <SelectFilter
+            label="Origine" allLabel="Toutes origines" value={source}
+            onChange={(v) => { setSource(v); setPage(1); }}
+            options={Object.entries(SOURCE_LABELS).map(([value, label]) => ({ value, label }))}
+          />
+          <label className="flex min-h-[44px] items-center gap-2 font-inter text-xs text-slate-600">
+            <input
+              type="checkbox"
+              checked={includeIncomplete}
+              onChange={(event) => { setIncludeIncomplete(event.target.checked); setPage(1); }}
+              className="h-4 w-4 accent-blue-600"
+            />
+            Inclure les signaux sans description
+          </label>
         </FilterBar>
 
         <DataTable
@@ -111,9 +131,20 @@ export default function AdminReportList() {
               ),
             },
             {
+              key: 'source',
+              label: 'Origine',
+              render: (r) => (
+                <span className="whitespace-nowrap">{SOURCE_LABELS[r.source] ?? r.source}</span>
+              ),
+            },
+            {
               key: 'category',
               label: 'Type',
-              render: (r) => REPORT_CATEGORIES.find((c) => c.id === r.category)?.label ?? r.category,
+              render: (r) => (r.detailsCompleted
+                ? categoryLabel(r.category)
+                // Un signal ouvert sans description : dire ce que c'est plutôt
+                // que d'afficher un vide qu'on lirait comme un bug.
+                : <span className="italic text-slate-400">Sans description</span>),
             },
             { key: 'note', label: 'Message', render: (r) => <span className="line-clamp-2 max-w-xs text-slate-600">{r.note || <span className="text-slate-400">Sans message</span>}</span> },
             { key: 'studentEmail', label: 'Élève', render: (r) => <Link to={`/admin/eleves/${r.studentId}`} className="hover:underline">{r.studentEmail}</Link> },

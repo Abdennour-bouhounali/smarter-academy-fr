@@ -7,7 +7,7 @@ import { LoadingState, ErrorState } from '../../../components/admin/ui/states';
 import { AuthContext } from '../../../context/AuthContext';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchReport, updateReport, addReportNote } from '../../../services/admin/reportService';
-import { REPORT_CATEGORIES } from '../../../services/reportService';
+import { SOURCE_LABELS, categoryLabel } from './reportLabels';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 
 const dateFormat = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium', timeStyle: 'short' });
@@ -75,8 +75,19 @@ export default function AdminReportDetail() {
           <div className="space-y-5 lg:col-span-2">
             <Card title="Ce que l’élève a signalé">
               <Field label="Type">
-                {REPORT_CATEGORIES.find((c) => c.id === report.category)?.label ?? report.category}
+                {report.detailsCompleted
+                  ? categoryLabel(report.category)
+                  : (
+                    <span className="text-slate-500">
+                      <span className="italic">Sans description</span>
+                      <span className="mt-0.5 block font-inter text-xs text-slate-400">
+                        L’élève a ouvert le signalement sans le compléter. Le signal reste
+                        exploitable : quelqu’un a bien buté ici.
+                      </span>
+                    </span>
+                  )}
               </Field>
+              <Field label="Origine">{SOURCE_LABELS[report.source] ?? report.source}</Field>
               <Field label="Message">
                 {report.note
                   ? <p className="whitespace-pre-wrap rounded-lg bg-slate-50 p-3 text-slate-700">{report.note}</p>
@@ -94,7 +105,12 @@ export default function AdminReportDetail() {
                 ) : '—'}
               </Field>
               <Field label="Module">
-                {report.context.moduleTitle ?? (report.context.moduleNumber != null ? `Module ${report.context.moduleNumber}` : '—')}
+                {report.context.isLessonLevel
+                  // Signalement parti du SOMMAIRE : il n'y a pas de module, et
+                  // le dire vaut mieux qu'un tiret qu'on lirait comme perdu.
+                  ? <span className="text-slate-500">Signalement au niveau de la leçon</span>
+                  : report.context.moduleTitle
+                    ?? (report.context.moduleNumber != null ? `Module ${report.context.moduleNumber}` : '—')}
               </Field>
               {report.context.step && <Field label="Étape">{report.context.step}</Field>}
               {report.context.exerciseCode && <Field label="Exercice"><code className="font-mono-jetbrains text-xs">{report.context.exerciseCode}</code></Field>}

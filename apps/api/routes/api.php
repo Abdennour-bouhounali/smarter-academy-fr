@@ -68,8 +68,13 @@ Route::prefix('v1')->group(function () {
 
         // « Signaler un problème ». Limité en débit : un signalement est un
         // geste rare, et cette limite empêche qu'un script en produise mille.
+        // Deux temps : le clic pose le signal, l'envoi le complète. La
+        // limite couvre les deux — un signalement est un geste rare.
         Route::post('/reports', [StudentReportController::class, 'store'])
-            ->middleware('throttle:20,1');
+            ->middleware('throttle:30,1');
+        Route::patch('/reports/{id}', [StudentReportController::class, 'update'])
+            ->whereNumber('id')
+            ->middleware('throttle:30,1');
 
         // L'autorité de publication, servie au frontend : le catalogue vit
         // dans le bundle, donc sans ces deux appels l'élève continuerait

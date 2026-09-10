@@ -415,6 +415,7 @@ export default function LessonIndex({ config, basePath }) {
             appartient au déclencheur « Ma carte ». */}
         <div className="flex justify-start pt-2">
           <ReportButton
+            source="lesson"
             variant="link"
             context={{ lessonCode: config.id, grade: config.grade, step: 'sommaire' }}
           />

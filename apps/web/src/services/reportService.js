@@ -16,18 +16,55 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
  *   exerciseCode?: string, questionId?: string, sessionId?: string, attemptUuid?: string,
  * }} report
  */
-export async function createReport(token, report) {
+/**
+ * LE SIGNAL — appelé au clic, avant toute saisie.
+ *
+ * « Un élève a buté ici » est déjà une information exploitable, même s'il
+ * referme la fenêtre sans rien écrire. Attendre l'envoi du formulaire ferait
+ * perdre exactement ce qu'on cherche à mesurer.
+ *
+ * Le serveur déduplique : ouvrir et refermer la fenêtre plusieurs fois sur le
+ * même contexte renvoie le même signalement, il n'en fabrique pas cinq.
+ *
+ * @param {string} token
+ * @param {{ source: 'lesson'|'module'|'exercise'|'question'|'diagnostic',
+ *   lessonCode?: string, grade?: string, moduleNumber?: number, step?: string,
+ *   exerciseCode?: string, questionId?: string, sessionId?: string, attemptUuid?: string }} context
+ * @returns {Promise<{id: number, source: string, submitted: boolean}>}
+ */
+export async function initiateReport(token, context) {
   const { ok, status, data } = await apiRequest('/reports', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ ...report, ...collectDiagnostics() }),
+    body: JSON.stringify({ ...context, ...collectDiagnostics() }),
+  });
+
+  if (!ok) {
+    throw new ApiError(data?.message || 'Impossible d’ouvrir le signalement.', classifyStatus(status), status);
+  }
+
+  return data.report;
+}
+
+/**
+ * LA COMPLÉTION — la catégorie et, si l'élève le veut, ses mots.
+ *
+ * La note reste facultative pour TOUTES les catégories, « Autre » comprise :
+ * exiger une explication écrite ferait taire la moitié des élèves, et un
+ * signalement sans mot reste un signalement.
+ */
+export async function completeReport(token, reportId, { category, note }) {
+  const { ok, status, data } = await apiRequest(`/reports/${encodeURIComponent(reportId)}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ category, note: note || undefined }),
   });
 
   if (!ok) {
     throw new ApiError(data?.message || 'Impossible d’envoyer le signalement.', classifyStatus(status), status);
   }
 
-  return data.report;
+  return data;
 }
 
 /**
@@ -68,14 +105,30 @@ function detectOs() {
   return 'Autre';
 }
 
-/** Les catégories proposées à l'élève, dans un ordre qui va du plus fréquent au moins. */
+/**
+ * Ce que l'élève peut signaler.
+ *
+ * Formulées comme des CONSTATS, jamais comme des diagnostics : « la
+ * manipulation ne fonctionne pas » est ce que l'élève voit ; « bug
+ * JavaScript » serait lui demander de poser un diagnostic à notre place.
+ *
+ * L'ordre suit ce qu'un élève rencontre le plus souvent, pas l'alphabet.
+ */
 export const REPORT_CATEGORIES = [
-  { id: 'wrong_answer', label: 'La réponse attendue est fausse' },
-  { id: 'content_error', label: 'Erreur dans le contenu' },
-  { id: 'unclear_question', label: 'Énoncé pas clair' },
-  { id: 'display_problem', label: 'Problème d’affichage' },
-  { id: 'interaction_problem', label: 'Ça ne réagit pas comme prévu' },
-  { id: 'technical_problem', label: 'Problème technique' },
-  { id: 'typo', label: 'Faute de frappe' },
-  { id: 'other', label: 'Autre' },
+  { id: 'math_error', label: 'Erreur mathématique', hint: 'Un calcul, une formule, un graphique ou un raisonnement semble faux.' },
+  { id: 'manipulation_not_working', label: 'La manipulation ne fonctionne pas', hint: 'Un élément à déplacer, à cliquer ou à régler ne réagit pas correctement.' },
+  { id: 'unclear_question', label: 'Question peu claire', hint: 'L’énoncé ou la consigne est difficile à comprendre.' },
+  { id: 'answer_correction_problem', label: 'Problème dans la réponse ou la correction', hint: 'La réponse attendue, la correction ou l’explication semble incorrecte.' },
+  { id: 'display_problem', label: 'Problème d’affichage', hint: 'Quelque chose est mal placé, illisible, superposé ou manquant.' },
+  { id: 'typo', label: 'Faute de texte', hint: 'Orthographe, notation ou formulation.' },
+  { id: 'other', label: 'Autre', hint: 'Autre chose — dis-nous quoi ci-dessous.' },
 ];
+
+/** Les sources de signalement, telles que le serveur les nomme. */
+export const REPORT_SOURCES = {
+  LESSON: 'lesson',
+  MODULE: 'module',
+  EXERCISE: 'exercise',
+  QUESTION: 'question',
+  DIAGNOSTIC: 'diagnostic',
+};

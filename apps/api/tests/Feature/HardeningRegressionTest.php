@@ -282,8 +282,8 @@ class HardeningRegressionTest extends TestCase
         ]);
         $student = User::factory()->create(['role' => User::ROLE_STUDENT]);
 
-        $this->actingAs($student, 'sanctum')->postJson('/api/v1/reports', [
-            'category' => 'typo',
+        $signal = $this->actingAs($student, 'sanctum')->postJson('/api/v1/reports', [
+            'source' => 'lesson',
             'lessonCode' => 'fractions',
             'lesson_id' => $autre->id,
             'lesson_module_id' => 999,
@@ -291,6 +291,10 @@ class HardeningRegressionTest extends TestCase
             'fingerprint' => 'forge',
             'user_id' => $this->admin->id,
         ])->assertStatus(201);
+
+        $this->actingAs($student, 'sanctum')
+            ->patchJson('/api/v1/reports/'.$signal->json('report.id'), ['category' => 'typo'])
+            ->assertStatus(200);
 
         $report = StudentReport::first();
         $this->assertSame($this->lesson->id, $report->lesson_id);

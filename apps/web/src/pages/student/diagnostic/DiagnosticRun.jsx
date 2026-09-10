@@ -167,7 +167,7 @@ export default function DiagnosticRun() {
               leçon ici — le diagnostic n'en dépend pas — d'où le contexte
               réduit à l'étape. */}
           <div className="flex justify-end pt-4">
-            <ReportButton variant="link" context={{ step: 'diagnostic' }} />
+            <ReportButton source="diagnostic" variant="link" context={{ step: 'diagnostic' }} />
           </div>
         </div>
       </main>

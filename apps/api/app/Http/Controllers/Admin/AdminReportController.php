@@ -15,7 +15,9 @@ class AdminReportController extends Controller
 
     public function index(Request $request)
     {
-        $reports = $this->reports->list($request->query());
+        $reports = $this->reports->list(
+            $request->query() + ['includeIncomplete' => $request->boolean('includeIncomplete')]
+        );
 
         return response()->json([
             'success' => true,
@@ -54,7 +56,14 @@ class AdminReportController extends Controller
                     'grade' => $report->student?->grade,
                     'accountStatus' => $report->student?->account_status,
                 ],
+                'source' => $report->source,
+                'detailsCompleted' => $report->hasDetails(),
                 'context' => [
+                    'source' => $report->source,
+                    // Un signalement parti du sommaire n'a PAS de module :
+                    // le dire explicitement évite que l'administrateur lise
+                    // un blanc comme un contexte perdu.
+                    'isLessonLevel' => $report->source === StudentReport::SOURCE_LESSON,
                     'lessonCode' => $report->lesson_code,
                     'lessonTitle' => $report->lesson?->title,
                     'grade' => $report->lesson?->chapter?->grade?->code,
@@ -158,6 +167,9 @@ class AdminReportController extends Controller
 
         return [
             'all' => (int) $byStatus->sum(),
+            // Les signaux ouverts sans jamais être décrits. Un nombre qui
+            // monte sur un même module dit quelque chose, même sans un mot.
+            'incomplete' => StudentReport::whereNull('details_completed_at')->count(),
             'new' => (int) ($byStatus[StudentReport::STATUS_NEW] ?? 0),
             'inReview' => (int) ($byStatus[StudentReport::STATUS_IN_REVIEW] ?? 0),
             'resolved' => (int) ($byStatus[StudentReport::STATUS_RESOLVED] ?? 0),
@@ -172,6 +184,11 @@ class AdminReportController extends Controller
             'id' => $r->id,
             'category' => $r->category,
             'note' => $r->note,
+            'source' => $r->source,
+            // Distingue « l'élève a cliqué » de « l'élève a décrit » : sans
+            // ça, un signal sans catégorie ressemble à une donnée manquante.
+            'detailsCompleted' => $r->hasDetails(),
+            'detailsCompletedAt' => $r->details_completed_at,
             'status' => $r->status,
             'priority' => $r->priority,
             'lessonCode' => $r->lesson_code,

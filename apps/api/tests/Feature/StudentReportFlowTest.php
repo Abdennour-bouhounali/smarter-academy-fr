@@ -9,6 +9,7 @@ use App\Models\LessonModule;
 use App\Models\StudentReport;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
 /**
@@ -71,21 +72,50 @@ class StudentReportFlowTest extends TestCase
     }
 
     /**
+     * Le parcours réel, en deux temps : le clic pose le signal, l'envoi le
+     * complète. Les tests passent par là plutôt que d'écrire deux appels à
+     * chaque fois — c'est ce que fait le bouton.
+     *
+     * @return array{0: TestResponse, 1: int|null}
+     */
+    private function report(array $context, ?array $details = null, ?User $as = null): array
+    {
+        $actor = $as ?? $this->student;
+
+        $signal = $this->actingAs($actor, 'sanctum')->postJson('/api/v1/reports', $context);
+
+        if ($signal->status() !== 201 || $details === null) {
+            return [$signal, $signal->json('report.id')];
+        }
+
+        $id = $signal->json('report.id');
+
+        return [
+            $this->actingAs($actor, 'sanctum')->patchJson("/api/v1/reports/{$id}", $details),
+            $id,
+        ];
+    }
+
+    /**
      * L'élève n'envoie que des CODES. Le serveur retrouve seul la leçon et le
      * module, et c'est ce qui garantit qu'un signalement pointe vers le bon
      * contenu même si l'élève n'a rien identifié.
      */
     public function test_le_serveur_reconstruit_le_contexte_a_partir_des_codes(): void
     {
-        $this->asStudent()->postJson('/api/v1/reports', [
-            'category' => 'wrong_answer',
-            'note' => 'La correction dit 3/4 mais je trouve 2/4.',
+        [$response] = $this->report([
+            'source' => 'module',
             'lessonCode' => 'fractions',
             'grade' => '6e',
             'moduleNumber' => 3,
             'step' => 'etape-2',
             'route' => '/courses/college/6e/nombres_calculs/fractions/comparer',
-        ])->assertStatus(201)->assertJsonPath('success', true);
+        ], [
+            'category' => 'answer_correction_problem',
+            'note' => 'La correction dit 3/4 mais je trouve 2/4.',
+        ]);
+
+        $response->assertStatus(200)->assertJsonPath('success', true);
 
         $report = StudentReport::first();
 
@@ -100,21 +130,23 @@ class StudentReportFlowTest extends TestCase
     /** La note est facultative : exiger un texte ferait taire les élèves. */
     public function test_un_signalement_sans_note_est_accepte(): void
     {
-        $this->asStudent()->postJson('/api/v1/reports', [
-            'category' => 'display_problem',
-            'lessonCode' => 'fractions',
-            'moduleNumber' => 3,
-        ])->assertStatus(201);
+        [$response] = $this->report(
+            ['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3],
+            ['category' => 'display_problem'],
+        );
 
+        $response->assertStatus(200);
         $this->assertNull(StudentReport::first()->note);
     }
 
     public function test_une_categorie_inconnue_est_refusee(): void
     {
-        $this->asStudent()->postJson('/api/v1/reports', [
-            'category' => 'je_fais_ce_que_je_veux',
-            'lessonCode' => 'fractions',
-        ])->assertStatus(422)->assertJsonValidationErrors('category');
+        [$response] = $this->report(
+            ['source' => 'lesson', 'lessonCode' => 'fractions'],
+            ['category' => 'je_fais_ce_que_je_veux'],
+        );
+
+        $response->assertStatus(422)->assertJsonValidationErrors('category');
     }
 
     /**
@@ -128,14 +160,16 @@ class StudentReportFlowTest extends TestCase
             'title' => 'Autre', 'status' => 'available', 'order' => 1,
         ]);
 
-        $this->asStudent()->postJson('/api/v1/reports', [
-            'category' => 'typo',
+        [$response] = $this->report([
+            'source' => 'lesson',
             'lessonCode' => 'fractions',
             'lesson_id' => $autre->id,
             'user_id' => $this->admin->id,
             'status' => StudentReport::STATUS_RESOLVED,
             'priority' => 'critical',
-        ])->assertStatus(201);
+        ], ['category' => 'typo']);
+
+        $response->assertStatus(200);
 
         $report = StudentReport::first();
         $this->assertSame($this->lesson->id, $report->lesson_id);
@@ -148,16 +182,17 @@ class StudentReportFlowTest extends TestCase
     public function test_le_contexte_technique_n_est_garde_que_pour_un_probleme_technique(): void
     {
         $payload = [
+            'source' => 'module',
             'lessonCode' => 'fractions',
             'browser' => 'Firefox 130',
             'os' => 'Linux',
             'screen' => '1920x1080',
         ];
 
-        $this->asStudent()->postJson('/api/v1/reports', $payload + ['category' => 'technical_problem'])->assertStatus(201);
-        $this->asStudent()->postJson('/api/v1/reports', $payload + ['category' => 'typo'])->assertStatus(201);
+        $this->report($payload + ['moduleNumber' => 1], ['category' => 'manipulation_not_working']);
+        $this->report($payload + ['moduleNumber' => 2], ['category' => 'typo']);
 
-        $technical = StudentReport::where('category', 'technical_problem')->first();
+        $technical = StudentReport::where('category', 'manipulation_not_working')->first();
         $typo = StudentReport::where('category', 'typo')->first();
 
         $this->assertSame('Firefox 130', $technical->browser);
@@ -172,27 +207,26 @@ class StudentReportFlowTest extends TestCase
     {
         foreach (range(1, 5) as $i) {
             $peer = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '6e']);
-            $this->withHeader('Authorization', 'Bearer '.$peer->createToken('s')->plainTextToken)
-                ->postJson('/api/v1/reports', [
-                    'category' => 'wrong_answer',
-                    'lessonCode' => 'fractions',
-                    'moduleNumber' => 3,
-                    'questionId' => 'q4',
-                    'note' => "Message différent numéro {$i}",
-                ])->assertStatus(201);
+            $this->report([
+                'source' => 'module',
+                'lessonCode' => 'fractions',
+                'moduleNumber' => 3,
+                'questionId' => 'q4',
+            ], [
+                'category' => 'math_error',
+                'note' => "Message différent numéro {$i}",
+            ], $peer)[0]->assertStatus(200);
         }
 
         // Un problème différent sur la même leçon ne doit PAS rejoindre le groupe.
-        $this->asStudent()->postJson('/api/v1/reports', [
-            'category' => 'typo',
-            'lessonCode' => 'fractions',
-            'moduleNumber' => 3,
-            'questionId' => 'q4',
-        ])->assertStatus(201);
+        $this->report([
+            'source' => 'module', 'lessonCode' => 'fractions',
+            'moduleNumber' => 3, 'questionId' => 'q4',
+        ], ['category' => 'typo'])[0]->assertStatus(200);
 
-        $this->assertSame(1, StudentReport::distinct('fingerprint')->where('category', 'wrong_answer')->count('fingerprint'));
+        $this->assertSame(1, StudentReport::distinct('fingerprint')->where('category', 'math_error')->count('fingerprint'));
 
-        $first = StudentReport::where('category', 'wrong_answer')->first();
+        $first = StudentReport::where('category', 'math_error')->first();
         $detail = $this->asAdmin()->getJson("/api/v1/admin/reports/{$first->id}")->assertStatus(200);
         $detail->assertJsonPath('report.related.total', 5);
     }
@@ -203,14 +237,15 @@ class StudentReportFlowTest extends TestCase
      */
     public function test_l_admin_voit_ouvre_annote_et_resout(): void
     {
-        $this->asStudent()->postJson('/api/v1/reports', [
-            'category' => 'content_error',
-            'note' => 'Le schéma ne correspond pas à l\'énoncé.',
+        [$response, $id] = $this->report([
+            'source' => 'module',
             'lessonCode' => 'fractions',
             'moduleNumber' => 3,
-        ])->assertStatus(201);
-
-        $id = StudentReport::first()->id;
+        ], [
+            'category' => 'math_error',
+            'note' => 'Le schéma ne correspond pas à l\'énoncé.',
+        ]);
+        $response->assertStatus(200);
 
         $this->asAdmin()->getJson('/api/v1/admin/reports')
             ->assertStatus(200)
@@ -245,11 +280,10 @@ class StudentReportFlowTest extends TestCase
     /** Les notes internes ne sortent d'aucun point d'entrée élève. */
     public function test_un_eleve_ne_voit_jamais_les_notes_internes(): void
     {
-        $this->asStudent()->postJson('/api/v1/reports', [
-            'category' => 'other', 'lessonCode' => 'fractions',
-        ])->assertStatus(201);
-
-        $id = StudentReport::first()->id;
+        [, $id] = $this->report(
+            ['source' => 'lesson', 'lessonCode' => 'fractions'],
+            ['category' => 'other'],
+        );
         $this->asAdmin()->postJson("/api/v1/admin/reports/{$id}/notes", ['body' => 'Note interne confidentielle'])
             ->assertStatus(201);
 

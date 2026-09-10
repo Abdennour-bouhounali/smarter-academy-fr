@@ -281,6 +281,7 @@ export default function PracticeSession() {
                 accepte (le champ est facultatif). */}
             <ReportButton
               key={`report-${question.id}`}
+              source="question"
               variant="icon"
               context={{
                 lessonCode,

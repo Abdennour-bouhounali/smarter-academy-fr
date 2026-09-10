@@ -39,19 +39,81 @@ class StudentReport extends Model
     public const PRIORITIES = ['low', 'medium', 'high', 'critical'];
 
     /**
-     * Les huit catégories de la spec (§12). Une liste fermée : c'est ce qui
-     * rend l'agrégation par empreinte fiable, et ce qui permet de compter
-     * « 25 signalements sur cette question » sans interprétation.
+     * D'où part le signalement.
+     *
+     * Déduire la source du contexte (« pas de module_number donc c'est la
+     * leçon ») confondrait « signalement au niveau leçon » avec « contexte
+     * incomplet ». Elle est donc dite explicitement.
      */
-    public const CATEGORIES = [
+    public const SOURCE_LESSON = 'lesson';
+
+    public const SOURCE_MODULE = 'module';
+
+    public const SOURCE_EXERCISE = 'exercise';
+
+    public const SOURCE_QUESTION = 'question';
+
+    public const SOURCE_DIAGNOSTIC = 'diagnostic';
+
+    public const SOURCES = [
+        self::SOURCE_LESSON,
+        self::SOURCE_MODULE,
+        self::SOURCE_EXERCISE,
+        self::SOURCE_QUESTION,
+        self::SOURCE_DIAGNOSTIC,
+    ];
+
+    /**
+     * Les catégories PROPOSÉES à l'élève aujourd'hui.
+     *
+     * Elles décrivent ce que l'élève CONSTATE, jamais ce qu'il faut corriger :
+     * « la manipulation ne marche pas » est une observation, « bug JS » serait
+     * un diagnostic qu'on lui demanderait de poser à notre place.
+     */
+    public const CATEGORY_MATH_ERROR = 'math_error';
+
+    public const CATEGORY_MANIPULATION = 'manipulation_not_working';
+
+    public const CATEGORY_UNCLEAR = 'unclear_question';
+
+    public const CATEGORY_ANSWER = 'answer_correction_problem';
+
+    public const CATEGORY_DISPLAY = 'display_problem';
+
+    public const CATEGORY_TYPO = 'typo';
+
+    public const CATEGORY_OTHER = 'other';
+
+    public const OFFERED_CATEGORIES = [
+        self::CATEGORY_MATH_ERROR,
+        self::CATEGORY_MANIPULATION,
+        self::CATEGORY_UNCLEAR,
+        self::CATEGORY_ANSWER,
+        self::CATEGORY_DISPLAY,
+        self::CATEGORY_TYPO,
+        self::CATEGORY_OTHER,
+    ];
+
+    /**
+     * Catégories d'un vocabulaire antérieur. Toujours ACCEPTÉES en entrée et
+     * toujours affichées côté administration — elles ne sont simplement plus
+     * proposées.
+     *
+     * Les supprimer casserait tout signalement déjà en base et tout client
+     * pas encore rechargé. Une liste fermée peut s'étendre ; elle ne se
+     * réécrit pas sous les pieds de ce qui l'utilise.
+     */
+    public const LEGACY_CATEGORIES = [
         'content_error',
         'wrong_answer',
-        'unclear_question',
         'technical_problem',
-        'display_problem',
         'interaction_problem',
-        'typo',
-        'other',
+    ];
+
+    /** Tout ce que la validation accepte : proposé + hérité. */
+    public const CATEGORIES = [
+        ...self::OFFERED_CATEGORIES,
+        ...self::LEGACY_CATEGORIES,
     ];
 
     /**
@@ -59,8 +121,11 @@ class StudentReport extends Model
      * seules celles-ci justifient de conserver navigateur/OS/écran.
      */
     public const TECHNICAL_CATEGORIES = [
+        self::CATEGORY_MANIPULATION,
+        self::CATEGORY_DISPLAY,
+        // Vocabulaire antérieur, conservé : d'anciens signalements techniques
+        // doivent garder leur contexte machine à l'affichage.
         'technical_problem',
-        'display_problem',
         'interaction_problem',
     ];
 
@@ -77,6 +142,8 @@ class StudentReport extends Model
         'question_attempt_id',
         'category',
         'note',
+        'source',
+        'details_completed_at',
         'status',
         'priority',
         'assigned_to',
@@ -97,6 +164,7 @@ class StudentReport extends Model
         return [
             'module_number' => 'integer',
             'resolved_at' => 'datetime',
+            'details_completed_at' => 'datetime',
         ];
     }
 
@@ -117,6 +185,12 @@ class StudentReport extends Model
         ]);
 
         return hash('sha256', $canonical);
+    }
+
+    /** L'élève a-t-il rempli le formulaire, ou seulement cliqué ? */
+    public function hasDetails(): bool
+    {
+        return $this->details_completed_at !== null;
     }
 
     public function isTechnical(): bool

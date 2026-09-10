@@ -143,6 +143,7 @@ export default function ModuleLayout({
                 dans une seule disparaîtrait sans bruit dans l'autre. */}
             <div className="pt-2">
               <ReportButton
+                source="module"
                 variant="link"
                 context={{
                   lessonCode: lessonId,
@@ -246,6 +247,7 @@ export default function ModuleLayout({
             un panneau ouvert dans ce coin passait dessous. */}
         <div className="flex justify-start pt-2">
           <ReportButton
+            source="module"
             variant="link"
             context={{
               lessonCode: lessonId,

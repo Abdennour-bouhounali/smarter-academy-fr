@@ -1,49 +1,81 @@
-import React, { useContext, useState } from 'react';
-import { Flag, Check, X } from 'lucide-react';
+import React, { useContext, useRef, useState } from 'react';
+import { Flag } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
-import { createReport, REPORT_CATEGORIES } from '../../services/reportService';
+import { initiateReport, completeReport } from '../../services/reportService';
+import ReportDialog from './ReportDialog';
 
 /**
- * « Signaler un problème ».
+ * « Signaler un problème » — un seul composant, piloté par son CONTEXTE.
  *
- * Bâti sur le patron de NotebookButton — déclencheur discret, panneau en
- * ligne, confirmation — et NON sur une boîte modale : l'élève signale un
- * problème SUR ce qu'il a sous les yeux, et lui masquer l'écran serait
- * exactement le mauvais geste.
+ * Il n'existe pas de bouton « signaler une leçon » et de bouton « signaler un
+ * module » : c'est le même, et `source` dit d'où il parle. C'est ce qui permet
+ * de le poser une fois dans chaque shell partagé (LessonIndex, ModuleLayout,
+ * PracticeSession, DiagnosticRun) plutôt que 132 fois à la main.
  *
- * L'élève ne désigne jamais le contenu : `context` est fourni par le composant
- * hôte à partir de ce qu'il a déjà en portée, et le serveur le re-résout
- * (voir services/reportService.js et App\Domain\Admin\ReportService).
+ * DEUX TEMPS, et c'est délibéré :
  *
- * @param {object} context  { lessonCode, grade, moduleNumber, step, exerciseCode, questionId, sessionId, attemptUuid }
- * @param {'chip'|'link'|'icon'} [variant]  l'habillage du déclencheur
+ *   clic  → POST /reports  → le signal existe déjà en base
+ *   envoi → PATCH /reports/{id} → la catégorie et les mots le complètent
+ *
+ * Un élève qui ouvre puis referme laisse donc une trace : « quelqu'un a buté
+ * ici » est l'information qu'un formulaire abandonné fait perdre. Le serveur
+ * déduplique les ouvertures répétées sur un même contexte.
+ *
+ * @param {'lesson'|'module'|'exercise'|'question'|'diagnostic'} source
+ * @param {object} context  codes de contenu — jamais d'identifiant de base
+ * @param {'chip'|'link'|'icon'} [variant]
  */
-export default function ReportButton({ context = {}, variant = 'chip', className = '' }) {
+export default function ReportButton({ source, context = {}, variant = 'chip', className = '' }) {
   const { token } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const [category, setCategory] = useState(null);
-  const [note, setNote] = useState('');
+  const [reportId, setReportId] = useState(null);
   const [busy, setBusy] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
+  // Garde anti double-clic : deux clics rapides ne doivent pas lancer deux
+  // requêtes. Une ref plutôt qu'un état — il ne faut pas attendre un rendu.
+  const opening = useRef(false);
 
-  // Sans session, il n'y a personne à qui rattacher le signalement — et
-  // ouvrir un formulaire qui échouera à l'envoi serait pire que ne rien
-  // proposer. Les visiteurs anonymes ne voient donc pas le bouton.
+  // Sans session, personne à qui rattacher le signalement. Ouvrir un
+  // formulaire qui échouera à l'envoi serait pire que ne rien proposer.
   if (!token) return null;
 
-  const submit = async (event) => {
-    event.preventDefault();
-    if (!category) return;
+  const label = 'Signaler un problème';
 
+  const openDialog = async () => {
+    if (opening.current) return;
+    opening.current = true;
+
+    setError(null);
+    setSubmitted(false);
+    // La fenêtre s'ouvre TOUT DE SUITE : l'élève ne doit pas attendre le
+    // réseau pour voir qu'il s'est passé quelque chose.
+    setOpen(true);
+
+    try {
+      const report = await initiateReport(token, { source, ...context });
+      setReportId(report.id);
+    } catch {
+      // Le signal a échoué, mais on ne le dit pas ici : l'élève n'a encore
+      // rien demandé. La tentative sera refaite à l'envoi, où l'échec est
+      // pertinent et affichable.
+      setReportId(null);
+    } finally {
+      opening.current = false;
+    }
+  };
+
+  const submit = async ({ category, note }) => {
     setBusy(true);
     setError(null);
+
     try {
-      await createReport(token, { ...context, category, note: note.trim() || undefined });
-      setSent(true);
-      setOpen(false);
-      setCategory(null);
-      setNote('');
+      // Le signal a pu échouer à l'ouverture (réseau coupé, puis revenu) :
+      // on le repose avant de compléter, plutôt que de perdre la saisie.
+      const id = reportId ?? (await initiateReport(token, { source, ...context })).id;
+      await completeReport(token, id, { category, note });
+      setSubmitted(true);
+      setReportId(null);
     } catch (caught) {
       setError(caught.message);
     } finally {
@@ -51,131 +83,55 @@ export default function ReportButton({ context = {}, variant = 'chip', className
     }
   };
 
-  if (sent) {
-    return (
-      <span className={`inline-flex items-center gap-1.5 font-inter text-xs font-semibold text-emerald-700 ${className}`}>
-        <Check size={14} aria-hidden="true" /> Merci, c’est signalé
-      </span>
-    );
-  }
+  const close = () => {
+    setOpen(false);
+    setError(null);
+    // `submitted` est remis à zéro à la prochaine ouverture, pas ici : sinon
+    // l'écran de confirmation disparaîtrait pendant l'animation de fermeture.
+  };
 
-  if (!open) {
-    const label = 'Signaler un problème';
-
-    if (variant === 'icon') {
-      return (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          title={label}
-          aria-label={label}
-          className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 ${className}`}
-        >
-          <Flag size={15} />
-        </button>
-      );
-    }
-
-    if (variant === 'link') {
-      return (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className={`inline-flex items-center gap-1.5 font-inter text-xs font-semibold text-slate-500 underline-offset-2 hover:text-slate-800 hover:underline ${className}`}
-        >
-          <Flag size={13} aria-hidden="true" /> {label}
-        </button>
-      );
-    }
-
-    return (
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 font-inter text-xs font-semibold text-slate-500 transition-colors hover:border-slate-300 hover:text-slate-800 ${className}`}
-      >
-        <Flag size={13} aria-hidden="true" /> {label}
-      </button>
-    );
-  }
+  const trigger = variant === 'icon' ? (
+    <button
+      type="button"
+      onClick={openDialog}
+      title={label}
+      aria-label={label}
+      aria-haspopup="dialog"
+      className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 focus-visible:ring-2 focus-visible:ring-blue-400 focus:outline-none ${className}`}
+    >
+      <Flag size={15} aria-hidden="true" />
+    </button>
+  ) : variant === 'link' ? (
+    <button
+      type="button"
+      onClick={openDialog}
+      aria-haspopup="dialog"
+      className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-lg px-2 font-inter text-xs font-semibold text-slate-500 underline-offset-2 hover:text-slate-800 hover:underline focus-visible:ring-2 focus-visible:ring-blue-400 focus:outline-none ${className}`}
+    >
+      <Flag size={13} aria-hidden="true" /> {label}
+    </button>
+  ) : (
+    <button
+      type="button"
+      onClick={openDialog}
+      aria-haspopup="dialog"
+      className={`inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 font-inter text-xs font-semibold text-slate-500 transition-colors hover:border-slate-300 hover:text-slate-800 focus-visible:ring-2 focus-visible:ring-blue-400 focus:outline-none ${className}`}
+    >
+      <Flag size={13} aria-hidden="true" /> {label}
+    </button>
+  );
 
   return (
-    <form
-      onSubmit={submit}
-      className={`w-full max-w-md rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm ${className}`}
-    >
-      <div className="mb-3 flex items-start justify-between gap-3">
-        <div>
-          <p className="font-space text-sm font-bold text-slate-900">Signaler un problème</p>
-          <p className="font-inter text-xs text-slate-500">
-            Pas besoin de dire où : on sait déjà sur quoi tu travailles.
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={() => { setOpen(false); setError(null); }}
-          aria-label="Fermer"
-          className="rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
-        >
-          <X size={16} />
-        </button>
-      </div>
-
-      <fieldset className="mb-3">
-        <legend className="mb-1.5 font-inter text-xs font-semibold text-slate-600">
-          Qu’est-ce qui ne va pas ?
-        </legend>
-        <div className="flex flex-wrap gap-1.5">
-          {REPORT_CATEGORIES.map((option) => (
-            <button
-              key={option.id}
-              type="button"
-              onClick={() => setCategory(option.id)}
-              aria-pressed={category === option.id}
-              className={`rounded-full border px-2.5 py-1 font-inter text-xs transition-colors ${
-                category === option.id
-                  ? 'border-blue-300 bg-blue-50 font-semibold text-blue-700'
-                  : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300'
-              }`}
-            >
-              {option.label}
-            </button>
-          ))}
-        </div>
-      </fieldset>
-
-      <label className="block">
-        <span className="font-inter text-xs font-semibold text-slate-600">
-          Tu veux préciser ? <span className="font-normal text-slate-400">(facultatif)</span>
-        </span>
-        <textarea
-          value={note}
-          onChange={(event) => setNote(event.target.value)}
-          rows={2}
-          maxLength={2000}
-          placeholder="Ce que tu as vu, ce que tu attendais…"
-          className="mt-1 w-full rounded-lg border border-slate-300 p-2 font-inter text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-        />
-      </label>
-
-      {error && <p className="mt-2 rounded-lg bg-rose-50 p-2 font-inter text-xs text-rose-700">{error}</p>}
-
-      <div className="mt-3 flex items-center gap-2">
-        <button
-          type="submit"
-          disabled={busy || !category}
-          className="rounded-lg bg-slate-900 px-4 py-2 font-inter text-xs font-semibold text-white disabled:opacity-40"
-        >
-          {busy ? 'Envoi…' : 'Envoyer'}
-        </button>
-        <button
-          type="button"
-          onClick={() => { setOpen(false); setError(null); }}
-          className="font-inter text-xs font-semibold text-slate-500 hover:text-slate-800"
-        >
-          Annuler
-        </button>
-      </div>
-    </form>
+    <>
+      {trigger}
+      <ReportDialog
+        open={open}
+        onClose={close}
+        onSubmit={submit}
+        busy={busy}
+        error={error}
+        submitted={submitted}
+      />
+    </>
   );
 }

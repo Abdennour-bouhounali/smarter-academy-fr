@@ -29,14 +29,19 @@ describe('construction des filtres', () => {
 });
 
 describe('signalement côté élève', () => {
-  it('propose exactement les huit catégories du contrat serveur', () => {
-    // La liste est fermée côté serveur (StudentReport::CATEGORIES) : c'est
-    // ce qui rend l'agrégation par empreinte fiable. Un libellé en trop ici
-    // produirait un 422 à l'envoi.
-    expect(REPORT_CATEGORIES).toHaveLength(8);
+  it('propose exactement les sept catégories du contrat serveur', () => {
+    // La liste est fermée côté serveur (StudentReport::OFFERED_CATEGORIES) :
+    // c'est ce qui rend l'agrégation par empreinte fiable. Un libellé en trop
+    // ici produirait un 422 à l'envoi.
+    //
+    // Le serveur en ACCEPTE onze : les quatre du vocabulaire antérieur
+    // restent valides pour ne pas casser les signalements déjà en base
+    // (voir StudentReport::LEGACY_CATEGORIES). Elles ne sont simplement plus
+    // proposées à l'élève.
+    expect(REPORT_CATEGORIES).toHaveLength(7);
     expect(REPORT_CATEGORIES.map((c) => c.id).sort()).toEqual([
-      'content_error', 'display_problem', 'interaction_problem', 'other',
-      'technical_problem', 'typo', 'unclear_question', 'wrong_answer',
+      'answer_correction_problem', 'display_problem', 'manipulation_not_working',
+      'math_error', 'other', 'typo', 'unclear_question',
     ]);
   });
 
@@ -46,6 +51,7 @@ describe('signalement côté élève', () => {
     // même pas validé. Le service ne doit donc pas prétendre en fournir.
     expect(source).not.toMatch(/lesson_id|lessonId\s*[:,]/);
     expect(source).toContain('lessonCode');
+    expect(source).toContain('initiateReport');
   });
 
   it('ne collecte aucune donnée personnelle dans le contexte technique', () => {
