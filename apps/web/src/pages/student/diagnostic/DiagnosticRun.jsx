@@ -7,6 +7,7 @@ import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import QuestionRenderer from '../../../components/diagnostic/QuestionRenderer';
 import DiagnosticProgress from '../../../components/diagnostic/DiagnosticProgress';
 import { ValidateButton } from '../../../lessons/common/components/LessonUI';
+import ReportButton from '../../../features/reports/ReportButton';
 
 // Neutral, non-evaluative acknowledgements — no "Correct !"/"Faux !" banner,
 // no red/green here. The diagnostic isn't the moment for correction; that
@@ -160,6 +161,14 @@ export default function DiagnosticRun() {
               </div>
             </motion.div>
           </AnimatePresence>
+
+          {/* Le diagnostic pose de VRAIES questions, corrigées côté serveur :
+              une question fausse s'y signale comme ailleurs. Pas de code de
+              leçon ici — le diagnostic n'en dépend pas — d'où le contexte
+              réduit à l'étape. */}
+          <div className="flex justify-end pt-4">
+            <ReportButton variant="link" context={{ step: 'diagnostic' }} />
+          </div>
         </div>
       </main>
     </div>

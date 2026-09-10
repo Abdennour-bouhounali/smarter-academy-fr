@@ -11,7 +11,20 @@ import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import AdminDashboard from './pages/AdminDashboard';
+import AdminLayout from './components/layout/AdminLayout';
+import AdminDashboard from './pages/admin/Dashboard';
+import AdminLessons from './pages/admin/content/Lessons';
+import AdminLessonDetail from './pages/admin/content/LessonDetail';
+import AdminReportList from './pages/admin/reports/ReportList';
+import AdminReportDetail from './pages/admin/reports/ReportDetail';
+import AdminStudentList from './pages/admin/students/StudentList';
+import AdminStudentDetail from './pages/admin/students/StudentDetail';
+import { PlatformAnalytics, LearningAnalytics } from './pages/admin/analytics/Platform';
+import { ContentAnalytics, LearningPointAnalytics } from './pages/admin/analytics/ContentAnalytics';
+import { AdminSubscriptions, AdminPayments } from './pages/admin/subscriptions/Subscriptions';
+import { AdminProfile, AdminSecurity } from './pages/admin/account/Account';
+import AdminActivityLog from './pages/admin/system/ActivityLog';
+import AdminContactMessages from './pages/admin/system/ContactMessages';
 import StudentHome from './pages/student/StudentHome';
 import MesCours from './pages/student/MesCours';
 import Explorer from './pages/student/Explorer';
@@ -187,8 +200,37 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/admin" element={<ProtectedRoute />}>
-            <Route index element={<AdminDashboard />} />
+          {/* Le panneau d'administration. `allowedRoles` est explicite ici :
+              c'était le défaut de ProtectedRoute, mais l'écrire rend la porte
+              lisible sur place. La vraie protection reste serveur — chaque
+              /api/v1/admin/* est derrière can:admin (voir AdminAuthorizationTest). */}
+          <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin']} />}>
+            <Route element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+
+              <Route path="analytics/plateforme" element={<PlatformAnalytics />} />
+              <Route path="analytics/apprentissage" element={<LearningAnalytics />} />
+              <Route path="analytics/contenu" element={<ContentAnalytics />} />
+              <Route path="analytics/points" element={<LearningPointAnalytics />} />
+
+              <Route path="contenu/lecons" element={<AdminLessons />} />
+              <Route path="contenu/lecons/:code" element={<AdminLessonDetail />} />
+
+              <Route path="signalements" element={<AdminReportList />} />
+              <Route path="signalements/:id" element={<AdminReportDetail />} />
+
+              <Route path="eleves" element={<AdminStudentList />} />
+              <Route path="eleves/:id" element={<AdminStudentDetail />} />
+
+              <Route path="abonnements" element={<AdminSubscriptions />} />
+              <Route path="abonnements/paiements" element={<AdminPayments />} />
+
+              <Route path="compte" element={<AdminProfile />} />
+              <Route path="compte/securite" element={<AdminSecurity />} />
+
+              <Route path="systeme/journal" element={<AdminActivityLog />} />
+              <Route path="systeme/messages" element={<AdminContactMessages />} />
+            </Route>
           </Route>
 
           <Route path="/espace" element={<ProtectedRoute allowedRoles={['student']} />}>

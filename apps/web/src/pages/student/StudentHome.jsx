@@ -9,20 +9,8 @@ import { getStudentActivity } from '../../lessons/common/utils/progress/getStude
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { getDisplayName } from '../../utils/userDisplay';
 import DiagnosticInviteBanner from '../../components/diagnostic/DiagnosticInviteBanner';
+import StatTile from '../../components/common/StatTile';
 
-function StatTile({ icon: Icon, value, label, accent }) {
-  return (
-    <div className="glass-card p-4 sm:p-5 flex items-center gap-3">
-      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${accent}`}>
-        <Icon size={18} />
-      </div>
-      <div className="min-w-0">
-        <p className="font-space font-black text-xl text-slate-900 leading-none tabular-nums">{value}</p>
-        <p className="font-inter text-slate-500 text-xs mt-1 leading-tight">{label}</p>
-      </div>
-    </div>
-  );
-}
 
 export default function StudentHome() {
   useDocumentMeta('Mon espace', 'Ton tableau de bord Smarter Academy — reprends ta leçon, suis ta progression.');

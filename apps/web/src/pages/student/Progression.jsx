@@ -13,6 +13,7 @@ import {
   LearningPointCard, resolveMasteryState, findLessonMasteryRows, MASTERY_STATES,
 } from '../../lessons/common/components/LearningPointMastery';
 import NotebookBrowser from '../../features/practice/NotebookBrowser';
+import StatTile from '../../components/common/StatTile';
 
 /** Looks up a lesson's display title/path and its chapter's title from the
  * catalogue — the learning-profile API only returns codes (grade/lesson/
@@ -231,19 +232,6 @@ function LessonRow({ item, currentMastery, profileReady }) {
   );
 }
 
-function StatTile({ icon: Icon, value, label, accent }) {
-  return (
-    <div className="glass-card p-4 sm:p-5 flex items-center gap-3">
-      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${accent}`}>
-        <Icon size={18} />
-      </div>
-      <div className="min-w-0">
-        <p className="font-space font-black text-xl text-slate-900 leading-none tabular-nums">{value}</p>
-        <p className="font-inter text-slate-500 text-xs mt-1 leading-tight">{label}</p>
-      </div>
-    </div>
-  );
-}
 
 export default function Progression() {
   useDocumentMeta('Ma progression', 'Suis ta progression et tes acquis, leçon par leçon.');

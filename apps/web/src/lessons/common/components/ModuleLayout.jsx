@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Home, CheckCircle, Lock, ListChecks } from 'luci
 import { motion, AnimatePresence } from 'framer-motion';
 import { useProgress } from '../hooks/useProgress';
 import { isModuleUnlocked, lockedReason } from '@smarter-academy/core';
+import ReportButton from '../../../features/reports/ReportButton';
 import { scrollToStep } from '../utils/scrollToStep';
 import { LessonChromeContext, useLessonChromeLayout } from '../hooks/useLessonChrome';
 
@@ -135,6 +136,22 @@ export default function ModuleLayout({
             >
               <ArrowLeft size={16} aria-hidden="true" /> Retour au parcours
             </Link>
+
+            {/* Le signalement existe AUSSI ici : « ce module ne devrait pas
+                être verrouillé » est précisément le genre de problème qu'on
+                veut apprendre. Ce composant a deux sorties — un bouton posé
+                dans une seule disparaîtrait sans bruit dans l'autre. */}
+            <div className="pt-2">
+              <ReportButton
+                variant="link"
+                context={{
+                  lessonCode: lessonId,
+                  grade: gradeId,
+                  moduleNumber,
+                  step: 'module-verrouille',
+                }}
+              />
+            </div>
           </div>
         </main>
         <footer className="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500 mt-12">
@@ -218,6 +235,22 @@ export default function ModuleLayout({
         {/* Module Content */}
         <div className="space-y-8">
           {children}
+        </div>
+
+        {/* « Signaler un problème » — présent sur CHAQUE module, parce qu'il
+            est ici, dans le shell partagé, et non recopié dans 1082 modules.
+            Le contexte est pris de ce que ModuleLayout a déjà en portée :
+            l'élève n'a rien à désigner. */}
+        <div className="flex justify-end pt-2">
+          <ReportButton
+            variant="link"
+            context={{
+              lessonCode: lessonId,
+              grade: gradeId,
+              moduleNumber,
+              step: moduleTitle,
+            }}
+          />
         </div>
 
         {/* Bottom Navigation */}

@@ -9,6 +9,7 @@ import { calculateCompletionPercentage } from '@smarter-academy/core';
 // renvoie false et cette carte ne rend rien du tout.
 import { isPracticeActive } from '../../../features/practice/practiceCapability';
 import PracticeEntryCard from '../../../features/practice/PracticeEntryCard';
+import ReportButton from '../../../features/reports/ReportButton';
 
 /**
  * Static color map — replaces dynamic `bg-${color}-100` patterns.
@@ -396,6 +397,16 @@ export default function LessonIndex({ config, basePath }) {
             })}
           </div>
         </section>
+
+        {/* Le sommaire de la leçon n'utilise pas ModuleLayout : sans cette
+            entrée, ce serait la seule page de leçon d'où l'on ne pourrait
+            rien signaler. */}
+        <div className="flex justify-end pt-2">
+          <ReportButton
+            variant="link"
+            context={{ lessonCode: config.id, grade: config.grade, step: 'sommaire' }}
+          />
+        </div>
 
       </main>
 

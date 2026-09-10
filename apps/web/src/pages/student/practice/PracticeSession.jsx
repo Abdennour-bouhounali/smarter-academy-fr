@@ -14,6 +14,7 @@ import HintPanel from '../../../features/practice/HintPanel';
 import FeedbackPanel from '../../../features/practice/FeedbackPanel';
 import SessionProgress from '../../../features/practice/SessionProgress';
 import NotebookButton from '../../../features/practice/NotebookButton';
+import ReportButton from '../../../features/reports/ReportButton';
 import RichText from '../../../features/practice/RichText';
 import { ValidateButton } from '../../../lessons/common/components/LessonUI';
 import MISCONCEPTIONS from '../../../../../../content/practice/misconceptions.json';
@@ -273,6 +274,22 @@ export default function PracticeSession() {
               </ValidateButton>
             )}
             {!answered && <NotebookButton key={`note-${question.id}`} onSave={saveNote} compact />}
+            {/* Même barre d'outils que le carnet : ce sont les deux gestes
+                « à propos de cette question ». `key` par question pour que le
+                panneau se referme en changeant de question — et attemptUuid
+                peut être null au tout premier rendu, ce que le serveur
+                accepte (le champ est facultatif). */}
+            <ReportButton
+              key={`report-${question.id}`}
+              variant="icon"
+              context={{
+                lessonCode,
+                sessionId,
+                exerciseCode: exercise?.id,
+                questionId: question?.id,
+                attemptUuid,
+              }}
+            />
           </div>
 
           <HintPanel
