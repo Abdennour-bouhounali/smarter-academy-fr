@@ -1,0 +1,84 @@
+{
+  "_comment": "Registre partagé des erreurs de raisonnement (cible §25 : des entités réutilisables, pas du texte libre dupliqué). Un identifiant partagé permet de COMPTER : « cet élève retombe trois fois sur MISC-AFF-A-B-ECHANGES » est une information que du texte libre ne donnera jamais. Précédent : App\\Domain\\Diagnostic\\Grades\\SixiemeDiagnosticProvider::QUESTIONS mappe déjà distracteur → id de misconception côté serveur. `relatedLearningPoints` cite des codes de LP canoniques, vérifiés par scripts/validate-exercises.mjs.",
+
+  "MISC-AFF-FORME-VS-COMPORTEMENT": {
+    "label": "Reconnaît une fonction affine à sa forme, pas à son comportement",
+    "explanation": "« Il y a un $x$ et un nombre » ne suffit pas. Une fonction est affine quand elle gagne (ou perd) **toujours la même quantité** à chaque pas : $3/x + 2$ contient bien un $x$ et un nombre, mais son gain change à chaque pas. C'est le comportement qui décide, pas l'allure de l'écriture.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P1"]
+  },
+  "MISC-AFF-A-B-ECHANGES": {
+    "label": "Échange le coefficient directeur et l'ordonnée à l'origine",
+    "explanation": "$a$ est ce qu'on gagne **par unité** (par minute, par heure, par euro) ; $b$ est ce qu'on a **au départ**, à $x = 0$. Un déblocage à 4 € puis 0,30 € par minute donne $a = 0{,}30$ et $b = 4$, pas l'inverse : au bout de zéro minute on a payé le déblocage, pas 30 centimes.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P2", "seconde_fonction-affine-2nde_P3"]
+  },
+  "MISC-AFF-B-LU-AU-BORD": {
+    "label": "Lit b au bord du graphique au lieu de x = 0",
+    "explanation": "L'ordonnée à l'origine, c'est la valeur en $x = 0$ — pas la valeur du point le plus à gauche qui a été dessiné. Quand le cadre commence à $x = 2$, il faut prolonger la droite jusqu'à l'axe vertical.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P8"]
+  },
+  "MISC-AFF-DIFF-SEULE": {
+    "label": "Donne la différence des images au lieu du quotient",
+    "explanation": "Le taux d'accroissement est un **quotient** : $\\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$. La différence des images seule répond à « de combien ça a changé », pas à « de combien ça change par unité ». Il reste à diviser par l'écart des abscisses.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P4"]
+  },
+  "MISC-AFF-TAUX-INVERSE": {
+    "label": "Divise l'écart des abscisses par l'écart des images",
+    "explanation": "Le quotient se lit « variation de $y$ **pour** une variation de $x$ » : les images sont en haut, les abscisses en bas. Inversé, on obtient l'inverse du coefficient directeur.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P4"]
+  },
+  "MISC-AFF-B-DECIDE-VARIATION": {
+    "label": "Croit que le signe de b décide du sens de variation",
+    "explanation": "Seul le signe de $a$ décide. $b$ ne fait que placer la droite plus haut ou plus bas — il ne l'incline jamais. Une fonction peut partir de 1200 et décroître : $M(t) = 1200 - 45t$ perd 45 à chaque pas, donc elle décroît, quel que soit son point de départ.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P5"]
+  },
+  "MISC-AFF-PENTE-VISUELLE": {
+    "label": "Lit la pente à l'œil sans tenir compte des échelles",
+    "explanation": "L'inclinaison **apparente** dépend des unités choisies sur les deux axes. Pour lire $a$, il faut compter : on avance de 1 sur l'axe des abscisses, on lit de combien on monte **en graduations de l'axe vertical**.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P7"]
+  },
+  "MISC-AFF-B-EST-F1": {
+    "label": "Prend b = f(première valeur donnée) au lieu de f(0)",
+    "explanation": "$b$, c'est $f(0)$ — la valeur en zéro, pas la première valeur de l'énoncé. Une fois $a$ trouvé, il faut **remonter** à $x = 0$ : de $f(1) = 4$ avec $a = 3$, on obtient $b = 4 - 3 \\times 1 = 1$.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P6", "seconde_fonction-affine-2nde_P3"]
+  },
+  "MISC-AFF-B-DEVINE": {
+    "label": "Devine b à l'œil entre deux graduations",
+    "explanation": "Quand la droite ne coupe pas l'axe sur une graduation, $b$ ne se lit pas : il se **calcule**. On prend deux points exacts du quadrillage, on en tire $a$, puis on remonte à $x = 0$.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P6", "seconde_fonction-affine-2nde_P8"]
+  },
+  "MISC-AFF-SIGNE-COTE-INVERSE": {
+    "label": "Place le signe de a du mauvais côté du zéro",
+    "explanation": "Après son zéro, une fonction affine prend le signe de $a$ ; avant, le signe contraire. Avec $a < 0$, la fonction est donc **positive avant** le zéro et négative après — c'est l'inverse du réflexe pris avec les fonctions croissantes.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P9"]
+  },
+  "MISC-AFF-ZERO-EST-B": {
+    "label": "Confond le zéro de la fonction avec l'ordonnée à l'origine",
+    "explanation": "$b$ est la valeur **en** $x = 0$ ; le zéro est l'abscisse **où** la fonction vaut 0. Ce sont deux points différents : $(0\\,;\\,b)$ sur l'axe vertical, et $(-b/a\\,;\\,0)$ sur l'axe horizontal.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P9", "seconde_fonction-affine-2nde_P8"]
+  },
+  "MISC-AFF-EQ-OUBLI-K": {
+    "label": "Résout f(x) = 0 au lieu de f(x) = k",
+    "explanation": "La question ne demande pas quand la quantité s'annule, mais quand elle atteint une valeur précise $k$. L'équation à résoudre est $ax + b = k$, pas $ax + b = 0$.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P10"]
+  },
+  "MISC-AFF-INEQ-SENS-NON-INVERSE": {
+    "label": "N'inverse pas le sens en divisant par un nombre négatif",
+    "explanation": "Multiplier ou diviser les deux membres d'une inégalité par un nombre **négatif** renverse le sens. De $-2x > -6$ on tire $x < 3$, et non $x > 3$. Vérification en une ligne : $x = 0$ donne $6 > 0$, vrai — donc 0 est bien dans les solutions.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P11"]
+  },
+  "MISC-AFF-BORNE-UNIQUE": {
+    "label": "Donne un intervalle d'un seul côté alors que deux conditions s'appliquent",
+    "explanation": "Quand deux exigences pèsent en même temps (être moins cher **et** rester sous le budget), l'ensemble des solutions est l'**intersection** des deux : il est borné des deux côtés.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P11", "seconde_fonction-affine-2nde_P9"]
+  },
+  "MISC-AFF-MODELE-SIGNE": {
+    "label": "Modélise une diminution avec un coefficient directeur positif",
+    "explanation": "Une quantité qui **diminue** a un coefficient directeur négatif. Un réservoir qui se vide de 4 L par minute se modélise par $V(t) = -4t + b$ : le signe porte l'information « ça descend ».",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P6", "seconde_fonction-affine-2nde_P5"]
+  },
+  "MISC-AFF-CONFIANCE-GRAPHIQUE": {
+    "label": "Croit le point dessiné plutôt que le calcul",
+    "explanation": "Un point mal placé sur un graphique reste un point mal placé. Quand une table et un graphique se contredisent, c'est le calcul du taux d'accroissement qui tranche : trois points alignés sur quatre désignent l'intrus.",
+    "relatedLearningPoints": ["seconde_fonction-affine-2nde_P1", "seconde_fonction-affine-2nde_P7"]
+  }
+}

@@ -22,3 +22,9 @@ export * from './api/errors.js';
 export * from './curriculum/coursesData.js';
 export * from './curriculum/lessonStages.js';
 export * from './curriculum/moduleRecommendations.js';
+
+// Moteur d'exercices (pratique) — arithmétique exacte et évaluation des
+// réponses. Exporté sous un espace de noms : `Rational.parse` et
+// `parseDec` (numberFormat) ne font PAS la même chose, et la confusion
+// coûterait cher. Voir packages/core/practice/rational.js.
+export * as practice from './practice/index.js';

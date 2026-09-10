@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smarter-academy.fr/schemas/practice/exercise.schema.json",
+  "title": "Practice Exercise",
+  "description": "Un exercice de pratique : un problème scolaire complet, composé d'une ou plusieurs questions indépendamment évaluables. Voir docs/architecture/EXERCISE_ENGINE_ARCHITECTURE.md §8-§10 et §24. Le contrat est validé par scripts/validate-exercises.mjs, qui vérifie AUSSI ce que ce schéma ne peut pas exprimer (appartenance des Learning Points à la leçon, analysabilité des réponses attendues, fuite de réponse dans les indices).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "lessonCode", "level", "metadata", "statement", "questions"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": {
+      "description": "Identifiant global, stable et unique. Le segment l{N} doit valoir `level`, et le fichier doit vivre dans level-{N}/.",
+      "type": "string",
+      "pattern": "^ex-[a-z0-9]+(-[a-z0-9]+)*-l[1-5]-[0-9]{3}$"
+    },
+    "lessonCode": {
+      "description": "LESSON_CONFIG.id == lessons.code. Jamais la clé du catalogue (qui porte des soulignés).",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "level": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "estimatedMinutes"],
+      "properties": {
+        "title": { "type": "string", "minLength": 3 },
+        "estimatedMinutes": { "type": "integer", "minimum": 1, "maximum": 30 },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "statement": {
+      "description": "L'énoncé commun aux questions. Peut être vide si chaque question se suffit.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content"],
+      "properties": {
+        "content": { "type": "string" },
+        "visual": { "$ref": "#/$defs/visual" },
+        "support": { "$ref": "#/$defs/support" }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/question" }
+    }
+  },
+
+  "$defs": {
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "statement", "learningPoints", "answerType", "hints", "feedback"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^q[0-9]+$" },
+        "statement": { "type": "string", "minLength": 3 },
+        "learningPoints": {
+          "description": "Exactement un role 'primary' (vérifié par le validateur).",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["code", "role"],
+            "properties": {
+              "code": { "type": "string", "minLength": 3 },
+              "role": { "enum": ["primary", "secondary"] }
+            }
+          }
+        },
+        "answerType": { "enum": ["choice", "multiChoice", "rational", "affine", "interval", "point"] },
+        "answerFormat": {
+          "description": "Visible par l'élève : COMMENT saisir. Ne doit jamais révéler la réponse (invariant 8).",
+          "type": "string"
+        },
+        "expectedAnswer": {
+          "description": "Jamais montré. Forme dépendante de answerType — voir le validateur."
+        },
+        "evaluationPolicy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "acceptEquivalent": { "type": "boolean" },
+            "tolerance": { "type": ["string", "null"] },
+            "requiredForm": { "enum": ["irreducible", null] }
+          }
+        },
+        "choices": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "content", "isCorrect"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^[A-F]$" },
+              "content": { "type": "string", "minLength": 1 },
+              "isCorrect": { "type": "boolean" },
+              "misconceptionId": { "type": "string" }
+            }
+          }
+        },
+        "misconceptionSignatures": {
+          "description": "Réponses fausses reconnaissables : une valeur (même forme que expectedAnswer) → un id de misconception.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["value", "id"],
+            "properties": { "value": {}, "id": { "type": "string" } }
+          }
+        },
+        "hints": {
+          "description": "0 à 3 indices, dans l'ordre look → direction → strategy. Ne révèlent jamais la réponse (invariant 10).",
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "type", "content"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^h[1-3]$" },
+              "type": { "enum": ["look", "direction", "strategy"] },
+              "content": { "type": "string", "minLength": 5 }
+            }
+          }
+        },
+        "feedback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["correct", "incorrect"],
+          "properties": {
+            "correct": { "type": "string", "minLength": 3 },
+            "incorrect": { "type": "string", "minLength": 3 },
+            "partial": { "type": "string" }
+          }
+        },
+        "visual": { "$ref": "#/$defs/visual" },
+        "support": { "$ref": "#/$defs/support" }
+      }
+    },
+
+    "visual": {
+      "description": "Sac de props DÉCLARATIF passé tel quel à CoordPlane (apps/web/src/lessons/common/components/CoordPlane.jsx). Les clés sont vérifiées contre les vraies props par le validateur.",
+      "type": "object"
+    },
+
+    "support": {
+      "description": "Laboratoire interactif optionnel (cible §21). `lab` appartient à un registre FERMÉ de composants existants — jamais du code.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lab"],
+      "properties": {
+        "lab": { "enum": ["TankLab", "RateProbes"] },
+        "props": { "type": "object" }
+      }
+    }
+  }
+}
