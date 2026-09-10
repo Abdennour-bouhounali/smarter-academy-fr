@@ -145,6 +145,8 @@ import suitesDecouvrir1ereRoutes from './lessons/lycee/premiere_specialite/algeb
 import suitesCalculerModeliser1ereRoutes from './lessons/lycee/premiere_specialite/algebre/suites-calculer-modeliser-1ere/routes';
 import derivationNombreDerive1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-nombre-derive-1ere/routes';
 import derivationCalculer1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-calculer-1ere/routes';
+import derivationVariationsOptimisation1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-variations-optimisation-1ere/routes';
+import trigonometrieCercleFonctions1ereRoutes from './lessons/lycee/premiere_specialite/analyse/trigonometrie-cercle-fonctions-1ere/routes';
 import produitScalaireDefinir1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-definir-1ere/routes';
 import produitScalaireMesurerDemontrer1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/routes';
 import variablesAleatoiresLoiEsperance1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/variables-aleatoires-loi-esperance-1ere/routes';
@@ -320,6 +322,8 @@ export default function App() {
             {suitesCalculerModeliser1ereRoutes()}
             {derivationNombreDerive1ereRoutes()}
             {derivationCalculer1ereRoutes()}
+            {derivationVariationsOptimisation1ereRoutes()}
+            {trigonometrieCercleFonctions1ereRoutes()}
             {produitScalaireDefinir1ereRoutes()}
             {produitScalaireMesurerDemontrer1ereRoutes()}
             {variablesAleatoiresLoiEsperance1ereRoutes()}
