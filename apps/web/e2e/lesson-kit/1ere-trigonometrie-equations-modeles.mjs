@@ -1,9 +1,9 @@
 /**
- * 1ère spé — « Suites : générer et reconnaître ».
+ * 1ère spé — « Trigonométrie : équations et modèles ».
  *
  * Vite détaché depuis apps/web/ :
- *   cd apps/web && (setsid nohup npx vite --port 5282 --strictPort > e2e/lesson-kit/shots/vite-5282.log 2>&1 </dev/null &)
- *   node apps/web/e2e/lesson-kit/1ere-suites-decouvrir.mjs
+ *   cd apps/web && (setsid nohup npx vite --port 5296 --strictPort > e2e/lesson-kit/shots/vite-5296.log 2>&1 </dev/null &)
+ *   node apps/web/e2e/lesson-kit/1ere-trigonometrie-equations-modeles.mjs
  *
  * La table CONTRIB et la carte des modules sont DÉRIVÉES de knowledge.jsx et
  * lesson.config.js : la suite teste la leçon réellement écrite.
@@ -14,29 +14,28 @@ import {
   readCompleted, nextEnabled, runBoss,
 } from './_2nde-helpers.mjs';
 
-const BASE = process.env.KIT_BASE || 'http://localhost:5282';
-const LESSON = '/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere';
-const KEY = 'u_anon_smarter_lesson_suites-decouvrir-1ere';
+const BASE = process.env.KIT_BASE || 'http://localhost:5296';
+const LESSON = '/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere';
+const KEY = 'u_anon_smarter_lesson_trigonometrie-equations-modeles-1ere';
 
 const M = {
-  0: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/mission-de-depart`,
-  1: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/la-machine-a-deux-boutons`,
-  2: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/deux-facons-de-fabriquer`,
-  3: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/arithmetique-ou-geometrique`,
-  4: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/le-demontrer`,
-  5: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/monte-ou-descend`,
-  6: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/atelier-modeliser`,
-  7: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/mission-finale-deux-familles`,
+  0: `${BASE}/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/mission-de-depart`,
+  1: `${BASE}/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/la-barre-qui-coupe-partout`,
+  2: `${BASE}/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/une-infinite-de-solutions`,
+  3: `${BASE}/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/le-sinus-et-son-autre-symetrie`,
+  4: `${BASE}/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/quand-la-solution-est-un-arc`,
+  5: `${BASE}/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/poser-b-egale-a`,
+  6: `${BASE}/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/ce-qui-se-repete-dans-la-vraie-vie`,
+  7: `${BASE}/courses/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/mission-finale-equations-et-modeles`,
 };
 
 /** Apports de chaque module à la carte — miroir de knowledge.jsx. */
 const CONTRIB = {
-  1: ['suite-rang-terme', 'deux-facons-de-fabriquer'],
-  2: ['definition-explicite', 'definition-recurrence', 'methode-generer-termes'],
-  3: ['suite-arithmetique', 'suite-geometrique', 'methode-trouver-la-raison', 'cas-suite-constante'],
-  4: ['preuve-vs-constat', 'methode-demontrer-arithmetique', 'methode-demontrer-geometrique', 'mem-ecart-ou-rapport'],
-  5: ['sens-variation-suite', 'regle-variation-geometrique', 'mem-sens-de-variation'],
-  6: ['modeliser-par-une-suite'],
+  2: ['solutions-sur-r', 'methode-cos-sur-r', 'mem-plus-deux-k-pi'],
+  3: ['methode-sin-sur-r', 'regle-deux-familles-differentes', 'mem-cos-moins-a-sin-pi-moins-a'],
+  4: ['inequation-arc', 'methode-inequation-trigo', 'regle-arc-se-repete'],
+  5: ['formules-duplication', 'methode-poser-b-egale-a', 'regle-cos-2a-nest-pas-2cos-a', 'mem-poser-b-egale-a'],
+  6: ['modele-periodique', 'methode-lire-amplitude-periode', 'regle-amplitude-et-periode-independantes'],
 };
 const seedThrough = (n) => Array.from({ length: n + 1 }, (_, i) => String(i));
 const expectedAfter = (n) => {
@@ -99,7 +98,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   check('index : aucun NaN', !/NaN/.test(txt));
   check('index : la carte des connaissances est montée', (await page.locator('button[data-km-trigger]').count()) === 1);
   check('index : la carte est VIDE au départ', (await page.locator('#km-root [data-km-item]').count()) === 0);
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-index.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-index.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -174,7 +173,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     ).count();
     check('M1 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m1.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-m1.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -212,7 +211,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     ).count();
     check('M2 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m2.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-m2.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -250,7 +249,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     ).count();
     check('M3 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m3.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-m3.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -288,7 +287,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     ).count();
     check('M4 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m4.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-m4.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -326,7 +325,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     ).count();
     check('M5 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m5.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-m5.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -364,7 +363,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     ).count();
     check('M6 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m6.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-m6.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -409,7 +408,7 @@ for (const n of Object.keys(CONTRIB).map(Number).sort((a, b) => a - b)) {
   await page.reload();
   await settle(page, 1200);
   check('boss : après rechargement, la correction est restituée', /\/\s*10/.test(await body(page)));
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-boss.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-boss.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -424,7 +423,7 @@ for (const n of [1, 7]) {
   check(`mobile M${n} : cibles ≥ 40 px (hors commutateur du kit)`, small.length <= kitSwitch, small.slice(0, 4).join(', '));
   const issues = [...(await layoutAudit(page)), ...(await aspectAudit(page)), ...(await domOverflow(page))];
   check(`mobile M${n} : mise en page saine à 375 px`, issues.length === 0, issues.slice(0, 3).join(' | '));
-  if (n === 1) await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m1-mobile.png`, fullPage: true });
+  if (n === 1) await page.screenshot({ path: `${SHOT_DIR}trigonometrie-equations-modeles-1ere-m1-mobile.png`, fullPage: true });
   await ctx.close();
 }
 

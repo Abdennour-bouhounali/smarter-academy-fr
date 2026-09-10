@@ -159,9 +159,17 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   ).count();
   check('M1 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M1 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
-  // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
+  // JAMAIS GELÉ : après usage, l'étape reste PILOTABLE. Un bouton de cliquet
+  // peut être légitimement éteint en BUTÉE (« descendre » au cran le plus bas) :
+  // c'est une borne, pas un gel. Et depuis la règle « le glisser d'abord », la
+  // commande survivante peut n'être AUCUN bouton — juste la poignée qu'on saisit.
+  // On exige donc qu'il reste au moins UN moyen d'agir, bouton OU préhension.
   if (swept > 0) {
-    const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
+    const encore = await page.locator(
+      '#step-1 div[role="group"] button[aria-label]:not([disabled]),'
+      + ' #step-1 svg[tabindex="0"], #step-1 [role="slider"]:not([aria-disabled="true"]),'
+      + ' #step-1 svg[role="group"], #step-1 svg[role="application"]'
+    ).count();
     check('M1 : la manipulation reste utilisable après usage', encore > 0);
   }
   await page.screenshot({ path: `${SHOT_DIR}probabilites-independance-1ere-m1.png`, fullPage: true });
@@ -189,9 +197,17 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   ).count();
   check('M2 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M2 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
-  // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
+  // JAMAIS GELÉ : après usage, l'étape reste PILOTABLE. Un bouton de cliquet
+  // peut être légitimement éteint en BUTÉE (« descendre » au cran le plus bas) :
+  // c'est une borne, pas un gel. Et depuis la règle « le glisser d'abord », la
+  // commande survivante peut n'être AUCUN bouton — juste la poignée qu'on saisit.
+  // On exige donc qu'il reste au moins UN moyen d'agir, bouton OU préhension.
   if (swept > 0) {
-    const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
+    const encore = await page.locator(
+      '#step-1 div[role="group"] button[aria-label]:not([disabled]),'
+      + ' #step-1 svg[tabindex="0"], #step-1 [role="slider"]:not([aria-disabled="true"]),'
+      + ' #step-1 svg[role="group"], #step-1 svg[role="application"]'
+    ).count();
     check('M2 : la manipulation reste utilisable après usage', encore > 0);
   }
   await page.screenshot({ path: `${SHOT_DIR}probabilites-independance-1ere-m2.png`, fullPage: true });
@@ -219,9 +235,17 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   ).count();
   check('M3 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M3 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
-  // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
+  // JAMAIS GELÉ : après usage, l'étape reste PILOTABLE. Un bouton de cliquet
+  // peut être légitimement éteint en BUTÉE (« descendre » au cran le plus bas) :
+  // c'est une borne, pas un gel. Et depuis la règle « le glisser d'abord », la
+  // commande survivante peut n'être AUCUN bouton — juste la poignée qu'on saisit.
+  // On exige donc qu'il reste au moins UN moyen d'agir, bouton OU préhension.
   if (swept > 0) {
-    const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
+    const encore = await page.locator(
+      '#step-1 div[role="group"] button[aria-label]:not([disabled]),'
+      + ' #step-1 svg[tabindex="0"], #step-1 [role="slider"]:not([aria-disabled="true"]),'
+      + ' #step-1 svg[role="group"], #step-1 svg[role="application"]'
+    ).count();
     check('M3 : la manipulation reste utilisable après usage', encore > 0);
   }
   await page.screenshot({ path: `${SHOT_DIR}probabilites-independance-1ere-m3.png`, fullPage: true });
@@ -249,9 +273,17 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   ).count();
   check('M4 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M4 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
-  // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
+  // JAMAIS GELÉ : après usage, l'étape reste PILOTABLE. Un bouton de cliquet
+  // peut être légitimement éteint en BUTÉE (« descendre » au cran le plus bas) :
+  // c'est une borne, pas un gel. Et depuis la règle « le glisser d'abord », la
+  // commande survivante peut n'être AUCUN bouton — juste la poignée qu'on saisit.
+  // On exige donc qu'il reste au moins UN moyen d'agir, bouton OU préhension.
   if (swept > 0) {
-    const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
+    const encore = await page.locator(
+      '#step-1 div[role="group"] button[aria-label]:not([disabled]),'
+      + ' #step-1 svg[tabindex="0"], #step-1 [role="slider"]:not([aria-disabled="true"]),'
+      + ' #step-1 svg[role="group"], #step-1 svg[role="application"]'
+    ).count();
     check('M4 : la manipulation reste utilisable après usage', encore > 0);
   }
   await page.screenshot({ path: `${SHOT_DIR}probabilites-independance-1ere-m4.png`, fullPage: true });
@@ -279,9 +311,17 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   ).count();
   check('M5 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M5 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
-  // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
+  // JAMAIS GELÉ : après usage, l'étape reste PILOTABLE. Un bouton de cliquet
+  // peut être légitimement éteint en BUTÉE (« descendre » au cran le plus bas) :
+  // c'est une borne, pas un gel. Et depuis la règle « le glisser d'abord », la
+  // commande survivante peut n'être AUCUN bouton — juste la poignée qu'on saisit.
+  // On exige donc qu'il reste au moins UN moyen d'agir, bouton OU préhension.
   if (swept > 0) {
-    const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
+    const encore = await page.locator(
+      '#step-1 div[role="group"] button[aria-label]:not([disabled]),'
+      + ' #step-1 svg[tabindex="0"], #step-1 [role="slider"]:not([aria-disabled="true"]),'
+      + ' #step-1 svg[role="group"], #step-1 svg[role="application"]'
+    ).count();
     check('M5 : la manipulation reste utilisable après usage', encore > 0);
   }
   await page.screenshot({ path: `${SHOT_DIR}probabilites-independance-1ere-m5.png`, fullPage: true });
