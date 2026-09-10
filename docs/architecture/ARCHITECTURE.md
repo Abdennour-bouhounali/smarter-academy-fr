@@ -141,7 +141,11 @@ PATCH /auth/grade      (auth:sanctum) → the only way to set/change it; scoped 
 
 **Why switching grades can't lose progress:** progress is keyed by lesson ID (`localStorage['smarter_lesson_{lessonId}']`), never by grade, and every lesson ID across all populated grades is already unique (verified: e.g. 3e's `racines-carrees` vs 4e's `racines-carrees-4e`) — changing `user.grade` only changes which grade's catalogue is the *default view*; no key involving grade is ever written or read, so there is nothing for a grade change to delete.
 
-**Not built:** grade-scoped mastery/recommendations, parent/family accounts, an admin-facing grade-management UI. `getResumeLesson` (the "continue learning" pick) still searches recency across *all* grades, unchanged — a deliberate choice, not an oversight: it already satisfies "no hard restriction," and scoping it to only the current grade would be a new restriction the brief explicitly warns against.
+**Dashboard scope vs. content restriction — two different things.** `getResumeLesson` (the "continue learning" pick) still searches recency across *all* grades, unchanged — a deliberate choice, not an oversight: it already satisfies "no hard restriction," and scoping what we *propose* to only the current grade would be a new restriction the brief warns against.
+
+What a dashboard *displays* is a separate question. **`Ma progression` (`Progression.jsx`) shows only `user.grade`**, matching `StudentHome.jsx`, which already passed `{ gradeId }` to `getStudentActivity` — the two screens previously told two different stories about the same journey. The mastery rollup is filtered to the same grade so the "compétences maîtrisées" tile can't count acquis that are invisible on the page, and the heading names the grade ("Ta classe de Seconde") so a student who worked elsewhere doesn't think that work was lost. It isn't: progress is keyed by lesson ID, so switching grades changes only the view — the other grade's lessons reappear on return. A student with `grade === null` still sees everything, rather than an empty frame. Locked by `progressionGradeScope.test.js`. The student's notebook is deliberately *not* grade-scoped: notes are the student's own writing and stay visible across grades.
+
+**Not built:** parent/family accounts, an admin-facing grade-management UI.
 
 ## 11. Future account types (not built)
 

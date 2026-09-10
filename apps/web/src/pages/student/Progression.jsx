@@ -1,11 +1,12 @@
-import { useMemo, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   TrendingUp, CircleCheckBig, Flame, Zap, ArrowRight, Target, ChevronDown, Trophy,
 } from 'lucide-react';
-import { courseLevels } from '@smarter-academy/core';
+import { courseLevels, getAllGrades } from '@smarter-academy/core';
 import { getStudentActivity } from '../../lessons/common/utils/progress/getStudentActivity';
+import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { useLearningProfile } from '../../lessons/common/hooks/useLearningProfile';
 import {
@@ -247,12 +248,36 @@ function StatTile({ icon: Icon, value, label, accent }) {
 export default function Progression() {
   useDocumentMeta('Ma progression', 'Suis ta progression et tes acquis, leçon par leçon.');
 
-  // Progress spans every grade a student has touched, not just their
-  // current one — matches getResumeLesson's documented, considered
-  // decision (ARCHITECTURE.md §10): progress is never grade-locked.
-  const activity = useMemo(() => getStudentActivity(courseLevels), []);
+  const { user } = useContext(AuthContext);
+  const gradeId = user?.grade || null;
+
+  // Cette page ne montre QUE la classe courante de l'élève — le même cadrage
+  // que l'accueil de l'espace, qui appelle déjà `getStudentActivity` avec
+  // `gradeId`. Les deux écrans racontaient jusqu'ici deux histoires
+  // différentes du même parcours.
+  //
+  // Ce n'est PAS la restriction contre laquelle met en garde ARCHITECTURE.md
+  // §10 : la mise en garde vise `getResumeLesson` — ce qu'on PROPOSE à
+  // l'élève de faire —, pas ce qu'un tableau de bord AFFICHE. La progression
+  // reste indexée par leçon, jamais par classe : changer de classe ne
+  // supprime rien, et le travail fait ailleurs réapparaît dès qu'on y
+  // revient. Un élève sans classe (compte neuf) voit tout, faute de cadre.
+  const activity = useMemo(
+    () => getStudentActivity(courseLevels, gradeId ? { gradeId } : undefined),
+    [gradeId],
+  );
+  const gradeLabel = useMemo(
+    () => getAllGrades().find((g) => g.id === gradeId)?.name || null,
+    [gradeId],
+  );
   const { profile, status, reload } = useLearningProfile();
-  const currentMastery = profile?.currentMastery || [];
+  // La maîtrise vient de l'API groupée par classe : on ne garde que la
+  // sienne, sinon le compteur « compétences maîtrisées » continuerait de
+  // compter des acquis invisibles sur cette page.
+  const currentMastery = useMemo(() => {
+    const all = profile?.currentMastery || [];
+    return gradeId ? all.filter((g) => g.grade === gradeId) : all;
+  }, [profile, gradeId]);
   const profileReady = status === 'ready';
 
   const byGrade = useMemo(() => {
@@ -262,11 +287,14 @@ export default function Progression() {
       if (!map.has(key)) map.set(key, { label: key, lessons: [] });
       map.get(key).lessons.push(item);
     });
+    // Un seul groupe quand une classe est fixée ; le regroupement reste utile
+    // pour l'élève sans classe, qui voit tout.
     return Array.from(map.values()).filter((g) => g.lessons.some((l) => l.lastVisitedAt > 0));
   }, [activity]);
 
-  // Compétences maîtrisées, tous parcours confondus — un chiffre qui vient
+  // Compétences maîtrisées sur la classe affichée — un chiffre qui vient
   // uniquement des bilans réels, jamais d'une moyenne de complétion.
+  // `currentMastery` est déjà filtré plus haut : la somme suit le cadrage.
   const masteredTotal = useMemo(
     () =>
       currentMastery.reduce(
@@ -301,20 +329,22 @@ export default function Progression() {
         </p>
         <h1 className="font-space font-bold text-2xl sm:text-3xl text-slate-900">Ce que tu as accompli</h1>
         <p className="font-inter text-slate-500 text-sm mt-1 max-w-xl">
-          Tes leçons et, pour chacune, les compétences que tu maîtrises vraiment. Clique sur{' '}
-          <strong>« Mes acquis »</strong> sous une leçon pour voir le détail, compétence par compétence.
+          {/* Le cadre est annoncé : sans cela, un élève qui a travaillé dans
+              une autre classe croirait ce travail perdu. */}
+          {gradeLabel ? <>Ta classe de <strong>{gradeLabel}</strong> — tes leçons et, pour chacune, les compétences que tu maîtrises vraiment.</> : <>Tes leçons et, pour chacune, les compétences que tu maîtrises vraiment.</>}
+          {' '}Clique sur <strong>« Mes acquis »</strong> sous une leçon pour voir le détail, compétence par compétence.
         </p>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10">
         <StatTile icon={CircleCheckBig} value={activity.completedCount} label="Leçons terminées" accent="bg-emerald-50 text-emerald-600" />
         <StatTile icon={Flame} value={activity.inProgressCount} label="Leçons en cours" accent="bg-amber-50 text-amber-600" />
-        {/* Total TOUTES LEÇONS confondues — d'où le libellé explicite : le
-            détail par leçon vit dans le panneau « Mes acquis » ci-dessous. */}
+        {/* Total sur les leçons de la classe affichée — le détail par leçon
+            vit dans le panneau « Mes acquis » ci-dessous. */}
         <StatTile
           icon={Target}
           value={profileReady ? `${masteredTotal} / ${assessedTotal}` : '—'}
-          label="Compétences maîtrisées (toutes leçons)"
+          label={gradeLabel ? `Compétences maîtrisées (${gradeLabel})` : 'Compétences maîtrisées'}
           accent="bg-blue-50 text-blue-600"
         />
         <StatTile icon={Zap} value={activity.totalXp} label="XP total" accent="bg-purple-50 text-purple-600" />
@@ -340,7 +370,11 @@ export default function Progression() {
 
       {byGrade.length === 0 ? (
         <div className="glass-card p-10 text-center">
-          <p className="font-inter text-slate-500 text-sm mb-5">Tu n'as pas encore commencé de leçon.</p>
+          <p className="font-inter text-slate-500 text-sm mb-5">
+            {gradeLabel
+              ? `Tu n'as pas encore commencé de leçon en ${gradeLabel}.`
+              : "Tu n'as pas encore commencé de leçon."}
+          </p>
           <Link to="/espace/cours" className="btn-primary text-sm inline-flex">Commencer une leçon</Link>
         </div>
       ) : (
