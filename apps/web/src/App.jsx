@@ -148,7 +148,9 @@ import derivationNombreDerive1ereRoutes from './lessons/lycee/premiere_specialit
 import derivationCalculer1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-calculer-1ere/routes';
 import derivationVariationsOptimisation1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-variations-optimisation-1ere/routes';
 import trigonometrieCercleFonctions1ereRoutes from './lessons/lycee/premiere_specialite/analyse/trigonometrie-cercle-fonctions-1ere/routes';
+import trigonometrieEquationsModeles1ereRoutes from './lessons/lycee/premiere_specialite/analyse/trigonometrie-equations-modeles-1ere/routes';
 import exponentielleDecouvrir1ereRoutes from './lessons/lycee/premiere_specialite/analyse/exponentielle-decouvrir-1ere/routes';
+import exponentielleCalculerModeliser1ereRoutes from './lessons/lycee/premiere_specialite/analyse/exponentielle-calculer-modeliser-1ere/routes';
 import produitScalaireDefinir1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-definir-1ere/routes';
 import produitScalaireMesurerDemontrer1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/routes';
 import espaceVecteursCoordonnees1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/espace-vecteurs-coordonnees-1ere/routes';
@@ -330,7 +332,9 @@ export default function App() {
             {derivationCalculer1ereRoutes()}
             {derivationVariationsOptimisation1ereRoutes()}
             {trigonometrieCercleFonctions1ereRoutes()}
+            {trigonometrieEquationsModeles1ereRoutes()}
             {exponentielleDecouvrir1ereRoutes()}
+            {exponentielleCalculerModeliser1ereRoutes()}
             {produitScalaireDefinir1ereRoutes()}
             {produitScalaireMesurerDemontrer1ereRoutes()}
             {espaceVecteursCoordonnees1ereRoutes()}

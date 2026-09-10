@@ -2629,7 +2629,7 @@ const smaMetadata = {
       ],
       durationMinutes: 80,
       difficulty: 'Difficile',
-      status: 'coming_soon',
+      status: 'available',
       icon: "📉",
       tier: 'free',
     },
