@@ -1,0 +1,57 @@
+{
+  "id": "ex-2de-fonction-affine-l3-003",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 3,
+  "metadata": { "title": "Les rinçages successifs", "estimatedMinutes": 7, "tags": ["equation", "contexte"] },
+  "statement": {
+    "content": "En chimie, une solution contient au départ **40 g/L** de sel. Chaque rinçage en retire **2,5 g/L**.\n\nOn note $C(n)$ la concentration, en g/L, après $n$ rinçages. Le protocole exige de descendre à **15 g/L**."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Combien de rinçages faut-il pour atteindre exactement 15 g/L ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P10", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P6", "role": "secondary" }
+      ],
+      "answerType": "rational",
+      "answerFormat": "… rinçages",
+      "expectedAnswer": "10",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "16", "id": "MISC-AFF-EQ-OUBLI-K" },
+        { "value": "6", "id": "MISC-AFF-EQ-OUBLI-K" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Écris d'abord $C(n)$ : quelle est la concentration de départ, et que retire chaque rinçage ?" },
+        { "id": "h2", "type": "direction", "content": "La question ne demande pas quand la solution est pure, mais quand elle atteint une valeur précise." },
+        { "id": "h3", "type": "strategy", "content": "Résous l'équation $C(n) = 15$, et non $C(n) = 0$." }
+      ],
+      "feedback": {
+        "correct": "Oui : il faut faire descendre la concentration de 25 g/L, à raison de 2,5 g/L par rinçage.",
+        "incorrect": "Attention à la cible : le protocole demande 15 g/L, pas 0. Écris l'équation $-2{,}5\\,n + 40 = 15$."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "Quelle est la concentration après 4 rinçages, en g/L ?",
+      "learningPoints": [{ "code": "seconde_fonction-affine-2nde_P6", "role": "primary" }],
+      "answerType": "rational",
+      "answerFormat": "… g/L",
+      "expectedAnswer": "30",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "10", "id": "MISC-AFF-B-EST-F1" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Quatre rinçages retirent combien de g/L au total ?" },
+        { "id": "h2", "type": "direction", "content": "Ce total se retranche de la concentration de départ." },
+        { "id": "h3", "type": "strategy", "content": "Remplace $n$ par 4 dans $C(n) = -2{,}5\\,n + 40$." }
+      ],
+      "feedback": {
+        "correct": "Oui : 10 g/L retirés sur les 40 g/L de départ.",
+        "incorrect": "Tu as peut-être calculé la quantité retirée. La question porte sur ce qui **reste** dans la solution."
+      }
+    }
+  ]
+}

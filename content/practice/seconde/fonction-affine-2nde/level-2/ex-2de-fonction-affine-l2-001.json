@@ -1,0 +1,59 @@
+{
+  "id": "ex-2de-fonction-affine-l2-001",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 2,
+  "metadata": { "title": "La bougie qui fond", "estimatedMinutes": 6, "tags": ["taux", "contexte"] },
+  "statement": {
+    "content": "Une bougie fond régulièrement. On mesure sa hauteur à deux instants :\n\n- au bout de **2 heures**, elle mesure **21 cm** ;\n- au bout de **6 heures**, elle mesure **13 cm**."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Quel est le coefficient directeur de la fonction hauteur, en centimètres par heure ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P4", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P2", "role": "secondary" }
+      ],
+      "answerType": "rational",
+      "answerFormat": "… cm/h",
+      "expectedAnswer": "-2",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "-8", "id": "MISC-AFF-DIFF-SEULE" },
+        { "value": "8", "id": "MISC-AFF-DIFF-SEULE" },
+        { "value": "-0,5", "id": "MISC-AFF-TAUX-INVERSE" },
+        { "value": "2", "id": "MISC-AFF-MODELE-SIGNE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Entre les deux mesures, de combien de centimètres la bougie a-t-elle diminué ? Et combien d'heures se sont écoulées ?" },
+        { "id": "h2", "type": "direction", "content": "Le coefficient directeur répond à « combien par heure », pas à « combien en tout »." },
+        { "id": "h3", "type": "strategy", "content": "Applique $\\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$ : la variation des hauteurs divisée par la variation des temps. Et pense au signe : la bougie diminue." }
+      ],
+      "feedback": {
+        "correct": "Oui : 8 cm perdus en 4 heures, soit 2 cm par heure — et le signe est négatif puisque la bougie raccourcit.",
+        "incorrect": "Tu as peut-être trouvé la variation totale de hauteur. Il reste à la diviser par la durée écoulée pour obtenir une variation **par heure**."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "Quelle était la hauteur de la bougie au tout début, à $t = 0$, en centimètres ?",
+      "learningPoints": [{ "code": "seconde_fonction-affine-2nde_P3", "role": "primary" }],
+      "answerType": "rational",
+      "answerFormat": "… cm",
+      "expectedAnswer": "25",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "21", "id": "MISC-AFF-B-EST-F1" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Tu connais la hauteur à 2 heures et la perte par heure. Que se passe-t-il si tu remontes le temps ?" },
+        { "id": "h2", "type": "direction", "content": "Remonter de 2 heures avant la première mesure, c'est **ajouter** ce qui avait déjà fondu." },
+        { "id": "h3", "type": "strategy", "content": "L'ordonnée à l'origine est $f(0)$, pas la première valeur donnée dans l'énoncé." }
+      ],
+      "feedback": {
+        "correct": "Oui : en deux heures la bougie avait déjà perdu 4 cm, donc elle mesurait 25 cm au départ.",
+        "incorrect": "21 cm est la hauteur à $t = 2$, pas à $t = 0$. Remonte de deux heures en ajoutant ce qui avait fondu."
+      }
+    }
+  ]
+}

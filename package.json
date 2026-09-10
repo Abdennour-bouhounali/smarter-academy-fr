@@ -23,7 +23,7 @@
     "check:non-blocking": "node scripts/check-non-blocking.mjs",
     "audit:collisions": "node scripts/audit-svg-collisions.mjs",
     "audit:2de": "node scripts/audit-2de-learning-points.mjs --md --inject docs/audits/2DE_LEARNING_POINT_AUDIT.md",
-    "check:lessons": "npm run validate:lessons -- --strict && npm run validate:exercises && npm run audit:knowledge:gate && npm run check:katex && npm run check:routes && npm run check:level-leak && npm run check:non-blocking",
+    "check:lessons": "npm run validate:lessons -- --strict && npm run validate:exercises -- --strict && npm run audit:knowledge:gate && npm run check:katex && npm run check:routes && npm run check:level-leak && npm run check:non-blocking",
     "test:scripts": "vitest run --dir scripts"
   },
   "devDependencies": {

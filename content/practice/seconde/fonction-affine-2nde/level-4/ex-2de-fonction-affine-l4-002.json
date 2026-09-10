@@ -1,0 +1,50 @@
+{
+  "id": "ex-2de-fonction-affine-l4-002",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 4,
+  "metadata": { "title": "Une droite qui ne se laisse pas lire", "estimatedMinutes": 9, "tags": ["graphique", "obstacle"] },
+  "statement": {
+    "content": "La droite ci-dessous représente une fonction affine $f$. Elle passe par les points de coordonnées entières $(2\\,;-1)$ et $(6\\,;5)$.\n\n**L'intersection avec l'axe vertical ne tombe sur aucune graduation** : elle ne peut donc pas se lire, seulement se calculer.",
+    "visual": {
+      "range": { "xMin": -1, "xMax": 8, "yMin": -6, "yMax": 8 },
+      "functions": [{ "a": 1.5, "b": -4, "tone": "violet", "label": "f" }],
+      "points": [
+        { "id": "A", "x": 2, "y": -1, "label": "A" },
+        { "id": "B", "x": 6, "y": 5, "label": "B" }
+      ],
+      "xStep": 1,
+      "yStep": 2,
+      "frozen": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Détermine $f$ : donne son coefficient directeur $a$ et son ordonnée à l'origine $b$.",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P6", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P7", "role": "secondary" },
+        { "code": "seconde_fonction-affine-2nde_P8", "role": "secondary" }
+      ],
+      "answerType": "affine",
+      "answerFormat": "a = …   et   b = …",
+      "expectedAnswer": { "a": "1,5", "b": "-4" },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "a": "1,5", "b": "-3" }, "id": "MISC-AFF-B-DEVINE" },
+        { "value": { "a": "1,5", "b": "-1" }, "id": "MISC-AFF-B-EST-F1" },
+        { "value": { "a": "6", "b": "-4" }, "id": "MISC-AFF-DIFF-SEULE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Entre les deux points marqués, de combien avance-t-on horizontalement, et de combien monte-t-on ?" },
+        { "id": "h2", "type": "direction", "content": "Une fois le coefficient directeur connu, redescends du point $(2\\,;-1)$ jusqu'à l'abscisse zéro." },
+        { "id": "h3", "type": "strategy", "content": "Reculer de 2 en abscisse, c'est retirer deux fois le coefficient directeur à l'ordonnée. L'ordonnée à l'origine se calcule ; ici, elle ne se lit pas." }
+      ],
+      "feedback": {
+        "correct": "Oui : 6 de montée pour 4 d'avancée donne 1,5 ; puis en reculant de 2 depuis $(2\\,;-1)$, on retire 3 et on obtient l'ordonnée à l'origine.",
+        "incorrect": "Le coefficient directeur se calcule avec les deux points marqués. Ensuite, ne devine pas l'ordonnée à l'origine entre deux graduations : redescends par le calcul jusqu'à l'abscisse zéro.",
+        "partial": "Un des deux coefficients est bon. Si c'est $a$, redescends depuis un point connu jusqu'à l'abscisse zéro — sans lire à l'œil."
+      }
+    }
+  ]
+}

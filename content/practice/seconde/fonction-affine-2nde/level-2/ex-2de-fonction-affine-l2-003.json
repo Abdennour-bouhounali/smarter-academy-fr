@@ -1,0 +1,45 @@
+{
+  "id": "ex-2de-fonction-affine-l2-003",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 2,
+  "metadata": { "title": "Le tarif du parking", "estimatedMinutes": 7, "tags": ["graphique", "echelles"] },
+  "statement": {
+    "content": "Le graphique donne le tarif $T(t)$ d'un parking, en euros, pour $t$ heures de stationnement.\n\n**Observe bien les graduations des deux axes : elles n'ont pas le même pas.**",
+    "visual": {
+      "range": { "xMin": 0, "xMax": 8, "yMin": 0, "yMax": 24 },
+      "functions": [{ "a": 2.5, "b": 2, "tone": "emerald", "label": "T" }],
+      "xStep": 1,
+      "yStep": 4,
+      "staircase": { "from": { "x": 2, "y": 7 }, "a": 2.5, "run": 1 },
+      "axisLabels": { "x": "t (h)", "y": "T (€)" },
+      "frozen": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Quel est le coefficient directeur de $T$, en euros par heure ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P7", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P4", "role": "secondary" }
+      ],
+      "answerType": "rational",
+      "answerFormat": "… €/h",
+      "expectedAnswer": "2,5",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "1", "id": "MISC-AFF-PENTE-VISUELLE" },
+        { "value": "10", "id": "MISC-AFF-PENTE-VISUELLE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Quel écart sépare deux graduations sur l'axe vertical ? Et sur l'axe horizontal ?" },
+        { "id": "h2", "type": "direction", "content": "L'escalier tracé avance de 1 heure. De combien monte-t-il, mesuré en euros et non en carreaux ?" },
+        { "id": "h3", "type": "strategy", "content": "Le coefficient directeur se lit toujours en unités des axes, jamais en carreaux : l'inclinaison apparente dépend des échelles choisies." }
+      ],
+      "feedback": {
+        "correct": "Oui : une heure de plus coûte 2,50 € — lu sur l'axe vertical, où une graduation vaut 4 €.",
+        "incorrect": "Attention aux échelles : un carreau vertical ne vaut pas un euro ici. Compte l'écart réel en euros pour une heure de plus."
+      }
+    }
+  ]
+}

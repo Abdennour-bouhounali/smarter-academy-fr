@@ -1,0 +1,38 @@
+{
+  "id": "ex-2de-fonction-affine-l4-003",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 4,
+  "metadata": { "title": "La descente du téléphérique — vrai ou faux", "estimatedMinutes": 9, "tags": ["signe", "synthese"] },
+  "statement": {
+    "content": "Un téléphérique descend selon $h(t) = -150\\,t + 1800$, où $h(t)$ est l'altitude en mètres après $t$ minutes.\n\nPlusieurs affirmations sont proposées. **Coche toutes celles qui sont vraies.**"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Quelles affirmations sont vraies ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P9", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P5", "role": "secondary" },
+        { "code": "seconde_fonction-affine-2nde_P10", "role": "secondary" }
+      ],
+      "answerType": "multiChoice",
+      "choices": [
+        { "id": "A", "content": "La cabine atteint l'altitude 0 au bout de 12 minutes", "isCorrect": true },
+        { "id": "B", "content": "$h$ est décroissante sur $\\mathbb{R}$", "isCorrect": true },
+        { "id": "C", "content": "$h(t) > 0$ pour tout $t$ compris entre 0 et 12 minutes", "isCorrect": true },
+        { "id": "D", "content": "La cabine atteint l'altitude 0 au bout de 1800 minutes", "isCorrect": false, "misconceptionId": "MISC-AFF-ZERO-EST-B" },
+        { "id": "E", "content": "$h(t) > 0$ pour tout $t$ supérieur à 12 minutes", "isCorrect": false, "misconceptionId": "MISC-AFF-SIGNE-COTE-INVERSE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Commence par distinguer deux choses : l'altitude de départ, et l'instant où l'altitude s'annule." },
+        { "id": "h2", "type": "direction", "content": "Résous $h(t) = 0$, puis demande-toi de quel côté de cette valeur l'altitude est positive." },
+        { "id": "h3", "type": "strategy", "content": "Comme le coefficient directeur est négatif, la fonction est positive **avant** son zéro et négative après. Teste $h(0)$ et $h(20)$ pour t'en convaincre." }
+      ],
+      "feedback": {
+        "correct": "Oui, les trois : le zéro vaut 12, la fonction décroît, et elle reste positive tant qu'on n'a pas atteint ce zéro.",
+        "incorrect": "Sépare bien les deux nombres : 1800 est l'altitude de départ, 12 est l'instant où la cabine touche le sol. Et vérifie de quel côté du zéro l'altitude reste positive.",
+        "partial": "Tes choix sont justes, mais il en manque au moins un. Reprends chaque affirmation une par une."
+      }
+    }
+  ]
+}

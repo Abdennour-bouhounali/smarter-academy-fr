@@ -1,0 +1,58 @@
+{
+  "id": "ex-2de-fonction-affine-l5-003",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 5,
+  "metadata": { "title": "Le parking sous contrainte de budget", "estimatedMinutes": 12, "tags": ["challenge", "double-contrainte", "inequation"] },
+  "statement": {
+    "content": "Deux parkings voisins :\n\n- **Parking A** : 3 € d'entrée, puis 1,20 € par heure\n- **Parking B** : pas d'entrée, 2 € par heure\n\nUn automobiliste veut à la fois **payer moins cher au parking A qu'au parking B**, et **ne pas dépasser 15 €** au total."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "À partir de combien d'heures le parking A devient-il strictement moins cher que le B ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P11", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P4", "role": "secondary" }
+      ],
+      "answerType": "rational",
+      "answerFormat": "… h",
+      "expectedAnswer": "3,75",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Écris le tarif de chaque parking en fonction du nombre d'heures $t$." },
+        { "id": "h2", "type": "direction", "content": "Cherche d'abord la durée où les deux tarifs sont égaux : c'est la frontière." },
+        { "id": "h3", "type": "strategy", "content": "Résous $1{,}20\\,t + 3 = 2\\,t$, puis vérifie de quel côté A est moins cher en testant une valeur." }
+      ],
+      "feedback": {
+        "correct": "Oui : au-delà de 3,75 h, l'écart de 0,80 € par heure a compensé les 3 € d'entrée.",
+        "incorrect": "Trouve la durée d'égalité des deux tarifs, puis teste une durée plus longue pour savoir de quel côté A l'emporte."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "En tenant compte des DEUX contraintes, quel est l'intervalle des durées possibles, en heures ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P9", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P11", "role": "secondary" },
+        { "code": "seconde_fonction-affine-2nde_P6", "role": "secondary" }
+      ],
+      "answerType": "interval",
+      "answerFormat": "…… ; ……   (précise les crochets ; une borne vide signifie l'infini)",
+      "expectedAnswer": { "lo": "3,75", "loOpen": true, "hi": "10", "hiOpen": false },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "lo": "3,75", "loOpen": true, "hi": null, "hiOpen": true }, "id": "MISC-AFF-BORNE-UNIQUE" },
+        { "value": { "lo": null, "loOpen": true, "hi": "10", "hiOpen": false }, "id": "MISC-AFF-BORNE-UNIQUE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Il y a deux exigences à satisfaire en même temps, pas une seule." },
+        { "id": "h2", "type": "direction", "content": "La seconde s'écrit $1{,}20\\,t + 3 \\leqslant 15$. Résous-la séparément." },
+        { "id": "h3", "type": "strategy", "content": "L'ensemble cherché est l'intersection des deux ensembles de solutions : il est donc borné des deux côtés. Attention au crochet — « ne pas dépasser » autorise l'égalité." }
+      ],
+      "feedback": {
+        "correct": "Oui : au-delà de 3,75 h le parking A devient plus avantageux, et jusqu'à 10 h inclus le budget tient. L'intersection est bornée des deux côtés.",
+        "incorrect": "Tu as sans doute traité une seule des deux contraintes. Résous-les séparément, puis garde les durées qui satisfont les deux à la fois — et regarde si le budget autorise l'égalité."
+      }
+    }
+  ]
+}

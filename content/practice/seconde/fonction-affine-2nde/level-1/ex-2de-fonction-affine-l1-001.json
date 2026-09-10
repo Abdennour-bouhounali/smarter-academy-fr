@@ -1,0 +1,35 @@
+{
+  "id": "ex-2de-fonction-affine-l1-001",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 1,
+  "metadata": { "title": "Quatre tarifs sur une affiche", "estimatedMinutes": 5, "tags": ["reconnaissance", "contexte"] },
+  "statement": {
+    "content": "Dans le hall du lycée, quatre distributeurs affichent chacun leur règle de tarification. Une seule de ces règles définit une **fonction affine** du nombre d'articles achetés."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Quelle règle définit une fonction affine du nombre $n$ d'articles ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P1", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P2", "role": "secondary" }
+      ],
+      "answerType": "choice",
+      "choices": [
+        { "id": "A", "content": "1,50 € par article, plus 2 € de frais de service fixes", "isCorrect": true },
+        { "id": "B", "content": "Le carré du nombre d'articles, en euros", "isCorrect": false, "misconceptionId": "MISC-AFF-FORME-VS-COMPORTEMENT" },
+        { "id": "C", "content": "12 € divisés par le nombre d'articles", "isCorrect": false, "misconceptionId": "MISC-AFF-FORME-VS-COMPORTEMENT" },
+        { "id": "D", "content": "1 € pour le premier article, puis le prix double à chaque article suivant", "isCorrect": false, "misconceptionId": "MISC-AFF-FORME-VS-COMPORTEMENT" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Pour chaque règle, calcule le prix de 1, 2 puis 3 articles. Note ce que tu ajoutes à chaque fois." },
+        { "id": "h2", "type": "direction", "content": "Une seule des quatre listes de prix progresse en ajoutant toujours le **même** montant d'un article au suivant." },
+        { "id": "h3", "type": "strategy", "content": "Une fonction est affine quand son taux d'accroissement est constant : le gain par article ne change pas, quel que soit l'endroit où on le mesure." }
+      ],
+      "feedback": {
+        "correct": "Oui : chaque article ajoute toujours 1,50 €, et les 2 € de départ ne bougent pas. Gain constant par unité — c'est exactement une fonction affine.",
+        "incorrect": "Calcule le prix pour 1, 2 puis 3 articles et regarde ce que tu ajoutes à chaque étape. Si ce montant change, la règle n'est pas affine."
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "ex-2de-fonction-affine-l2-002",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 2,
+  "metadata": { "title": "Le compte épargne", "estimatedMinutes": 5, "tags": ["variations"] },
+  "statement": {
+    "content": "Un compte est modélisé par $M(t) = 1200 - 45\\,t$, où $M(t)$ est le solde en euros après $t$ mois."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Comment varie la fonction $M$ sur $\\mathbb{R}$ ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P5", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P2", "role": "secondary" }
+      ],
+      "answerType": "choice",
+      "choices": [
+        { "id": "A", "content": "Décroissante, car son coefficient directeur est négatif", "isCorrect": true },
+        { "id": "B", "content": "Croissante, car 1200 est un grand nombre positif", "isCorrect": false, "misconceptionId": "MISC-AFF-B-DECIDE-VARIATION" },
+        { "id": "C", "content": "Croissante d'abord, puis décroissante quand le solde devient négatif", "isCorrect": false, "misconceptionId": "MISC-AFF-B-DECIDE-VARIATION" },
+        { "id": "D", "content": "Constante, car on retire toujours la même somme", "isCorrect": false, "misconceptionId": "MISC-AFF-FORME-VS-COMPORTEMENT" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Calcule $M(0)$, $M(1)$ puis $M(2)$. Le solde monte-t-il ou descend-il ?" },
+        { "id": "h2", "type": "direction", "content": "Lequel des deux nombres, 1200 ou −45, décide du sens ? Change mentalement 1200 en 50 : le sens change-t-il ?" },
+        { "id": "h3", "type": "strategy", "content": "Pour une fonction affine, seul le signe du coefficient directeur décide du sens de variation. L'ordonnée à l'origine ne fait que déplacer la droite vers le haut ou vers le bas." }
+      ],
+      "feedback": {
+        "correct": "Oui : on retire 45 € chaque mois, donc le solde descend — quel que soit son point de départ.",
+        "incorrect": "Le montant de départ ne dit rien du sens de variation : une grosse somme peut très bien diminuer. Regarde uniquement le signe du coefficient devant $t$."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "Une somme constante retirée chaque mois : cela reste-t-il une fonction affine ?",
+      "learningPoints": [{ "code": "seconde_fonction-affine-2nde_P1", "role": "primary" }],
+      "answerType": "choice",
+      "choices": [
+        { "id": "A", "content": "Oui : le solde varie de la même quantité à chaque mois", "isCorrect": true },
+        { "id": "B", "content": "Non : une fonction affine doit être croissante", "isCorrect": false, "misconceptionId": "MISC-AFF-B-DECIDE-VARIATION" },
+        { "id": "C", "content": "Non : le solde finit par devenir négatif", "isCorrect": false, "misconceptionId": "MISC-AFF-FORME-VS-COMPORTEMENT" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Reprends la définition : que faut-il pour qu'une fonction soit affine ?" },
+        { "id": "h2", "type": "direction", "content": "Une variation constante suffit — elle peut être positive ou négative." },
+        { "id": "h3", "type": "strategy", "content": "Une fonction affine s'écrit $ax + b$ ; rien n'y impose que $a$ soit positif." }
+      ],
+      "feedback": {
+        "correct": "Oui : c'est la constance de la variation qui fait l'affinité, pas son sens.",
+        "incorrect": "Une fonction affine peut parfaitement décroître, et prendre des valeurs négatives. Ce qui compte, c'est que la variation par unité ne change jamais."
+      }
+    }
+  ]
+}

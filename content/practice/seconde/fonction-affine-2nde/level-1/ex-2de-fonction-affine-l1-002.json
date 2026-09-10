@@ -1,0 +1,57 @@
+{
+  "id": "ex-2de-fonction-affine-l1-002",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 1,
+  "metadata": { "title": "La trottinette en libre-service", "estimatedMinutes": 6, "tags": ["modelisation", "contexte"] },
+  "statement": {
+    "content": "Une trottinette en libre-service coûte **4 € de déblocage**, puis **0,30 € par minute** de trajet.\n\nOn note $P(t)$ le prix payé, en euros, pour un trajet de $t$ minutes."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Écris la fonction $P$ sous la forme $P(t) = a\\,t + b$ en donnant $a$ et $b$.",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P3", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P2", "role": "secondary" }
+      ],
+      "answerType": "affine",
+      "answerFormat": "a = …   et   b = …",
+      "expectedAnswer": { "a": "0,30", "b": "4" },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "a": "4", "b": "0,30" }, "id": "MISC-AFF-A-B-ECHANGES" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Combien paie-t-on pour un trajet de zéro minute — c'est-à-dire si on débloque la trottinette puis qu'on renonce ?" },
+        { "id": "h2", "type": "direction", "content": "Ce montant payé au départ, avant la moindre minute, est l'ordonnée à l'origine." },
+        { "id": "h3", "type": "strategy", "content": "Le coefficient directeur est ce qu'on ajoute **par unité** de temps : ici, ce que coûte une minute de plus." }
+      ],
+      "feedback": {
+        "correct": "Exactement : le déblocage se paie une fois, au départ, et chaque minute ajoute toujours la même somme.",
+        "incorrect": "Demande-toi ce que tu paies avant même de rouler une minute : c'est la valeur en $t = 0$. L'autre nombre est ce que coûte chaque minute supplémentaire.",
+        "partial": "Un des deux coefficients est juste. Vérifie l'autre en te demandant : que vaut $P(0)$ ?"
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "Quel est le prix d'un trajet de 20 minutes, en euros ?",
+      "learningPoints": [{ "code": "seconde_fonction-affine-2nde_P2", "role": "primary" }],
+      "answerType": "rational",
+      "answerFormat": "… €",
+      "expectedAnswer": "10",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "6", "id": "MISC-AFF-A-B-ECHANGES" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Vingt minutes à 0,30 € la minute : combien cela fait-il, avant d'ajouter quoi que ce soit ?" },
+        { "id": "h2", "type": "direction", "content": "N'oublie pas que le déblocage se paie en plus du temps de trajet." },
+        { "id": "h3", "type": "strategy", "content": "Remplace $t$ par 20 dans l'expression $P(t) = a\\,t + b$ que tu viens d'établir." }
+      ],
+      "feedback": {
+        "correct": "Oui : 6 € de trajet et 4 € de déblocage.",
+        "incorrect": "Calcule d'abord le coût des 20 minutes seules, puis ajoute le déblocage — il se paie quel que soit le temps."
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "ex-2de-fonction-affine-l3-002",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 3,
+  "metadata": { "title": "Quand le réservoir contient-il encore de l'eau ?", "estimatedMinutes": 8, "tags": ["signe", "intervalle"] },
+  "statement": {
+    "content": "Un réservoir se vide. Son volume, en litres, après $t$ minutes, est $V(t) = -4\\,t + 30$.\n\nOn cherche pour quelles durées le réservoir contient encore de l'eau, c'est-à-dire quand $V(t) > 0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "À quel instant le réservoir est-il exactement vide, en minutes ?",
+      "learningPoints": [{ "code": "seconde_fonction-affine-2nde_P10", "role": "primary" }],
+      "answerType": "rational",
+      "answerFormat": "… min",
+      "expectedAnswer": "7,5",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "30", "id": "MISC-AFF-ZERO-EST-B" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "« Vide » veut dire que le volume vaut zéro. Quelle équation cela donne-t-il ?" },
+        { "id": "h2", "type": "direction", "content": "Résous $-4\\,t + 30 = 0$." },
+        { "id": "h3", "type": "strategy", "content": "Le zéro d'une fonction affine vaut $-\\dfrac{b}{a}$. Il n'a aucune raison d'être un nombre entier." }
+      ],
+      "feedback": {
+        "correct": "Oui : il faut 7,5 minutes pour évacuer 30 litres à 4 litres par minute.",
+        "incorrect": "Le volume de départ n'est pas l'instant où le réservoir se vide : ce sont deux grandeurs différentes. Résous $V(t) = 0$."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "Pour quelles valeurs de $t$ a-t-on $V(t) > 0$ ? Donne l'intervalle des solutions.",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P9", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P5", "role": "secondary" }
+      ],
+      "answerType": "interval",
+      "answerFormat": "]… ; …[   (une borne vide signifie l'infini)",
+      "expectedAnswer": { "lo": null, "loOpen": true, "hi": "7,5", "hiOpen": true },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "lo": "7,5", "loOpen": true, "hi": null, "hiOpen": true }, "id": "MISC-AFF-SIGNE-COTE-INVERSE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Le réservoir se vide : y a-t-il de l'eau plutôt avant, ou plutôt après l'instant où il s'annule ?" },
+        { "id": "h2", "type": "direction", "content": "Teste une valeur : que vaut $V(0)$ ? Et $V(10)$ ? Laquelle des deux est positive ?" },
+        { "id": "h3", "type": "strategy", "content": "Après son zéro, une fonction affine prend le signe de son coefficient directeur. Ici $a$ est négatif : la fonction est donc positive **avant** le zéro." }
+      ],
+      "feedback": {
+        "correct": "Oui : tant qu'on n'a pas atteint 7,5 minutes, il reste de l'eau. Comme $a < 0$, le signe positif est du côté gauche du zéro.",
+        "incorrect": "Vérifie avec une valeur simple : $V(0) = 30$, donc $t = 0$ fait partie des solutions. Ton intervalle le contient-il ?"
+      }
+    }
+  ]
+}

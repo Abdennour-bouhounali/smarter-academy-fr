@@ -1,0 +1,54 @@
+{
+  "id": "ex-2de-fonction-affine-l4-001",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 4,
+  "metadata": { "title": "Quel loueur choisir ?", "estimatedMinutes": 10, "tags": ["inequation", "multi-etapes", "comparaison"] },
+  "statement": {
+    "content": "Deux loueurs de trottinettes se font concurrence :\n\n- **Alpha** : 3 € de déblocage, puis 0,30 € la minute\n- **Bêta** : pas de déblocage, 0,50 € la minute\n\nOn cherche à partir de quelle durée **Alpha devient plus avantageux que Bêta**."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Pour quelles durées $t$ (en minutes) Alpha coûte-t-il strictement moins cher que Bêta ? Donne l'intervalle.",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P11", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P9", "role": "secondary" },
+        { "code": "seconde_fonction-affine-2nde_P6", "role": "secondary" }
+      ],
+      "answerType": "interval",
+      "answerFormat": "]… ; …[   (une borne vide signifie l'infini)",
+      "expectedAnswer": { "lo": "15", "loOpen": true, "hi": null, "hiOpen": true },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "lo": null, "loOpen": true, "hi": "15", "hiOpen": true }, "id": "MISC-AFF-INEQ-SENS-NON-INVERSE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Écris le prix de chaque loueur en fonction de $t$, puis pose l'inéquation « Alpha est plus petit que Bêta »." },
+        { "id": "h2", "type": "direction", "content": "En regroupant tous les termes du même côté, tu obtiens une inéquation affine. Quel est le signe du coefficient devant $t$ ?" },
+        { "id": "h3", "type": "strategy", "content": "Si tu divises les deux membres par un nombre négatif, le sens de l'inégalité s'inverse. Vérifie ensuite avec une valeur : à 60 minutes, quel loueur est le moins cher ?" }
+      ],
+      "feedback": {
+        "correct": "Oui : le déblocage d'Alpha se rentabilise à partir d'un quart d'heure, parce que sa minute est moins chère de 0,20 €.",
+        "incorrect": "Vérifie avec deux valeurs. À 5 minutes : Alpha 4,50 € contre Bêta 2,50 € — Bêta gagne. À 60 minutes : Alpha 21 € contre Bêta 30 € — Alpha gagne. Ton intervalle décrit-il bien cela ?"
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "À quelle durée les deux loueurs coûtent-ils exactement pareil, en minutes ?",
+      "learningPoints": [{ "code": "seconde_fonction-affine-2nde_P10", "role": "primary" }],
+      "answerType": "rational",
+      "answerFormat": "… min",
+      "expectedAnswer": "15",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "hints": [
+        { "id": "h1", "type": "look", "content": "« Coûter pareil », c'est une égalité entre les deux prix." },
+        { "id": "h2", "type": "direction", "content": "Pose $0{,}30\\,t + 3 = 0{,}50\\,t$." },
+        { "id": "h3", "type": "strategy", "content": "Regroupe les termes en $t$ d'un côté, les constantes de l'autre." }
+      ],
+      "feedback": {
+        "correct": "Oui : c'est la durée qui sépare les deux zones de l'inéquation précédente.",
+        "incorrect": "Égalise les deux expressions de prix, puis isole $t$."
+      }
+    }
+  ]
+}

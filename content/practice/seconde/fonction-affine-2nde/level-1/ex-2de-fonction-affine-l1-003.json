@@ -1,0 +1,43 @@
+{
+  "id": "ex-2de-fonction-affine-l1-003",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 1,
+  "metadata": { "title": "L'altitude du téléphérique", "estimatedMinutes": 6, "tags": ["graphique", "lecture"] },
+  "statement": {
+    "content": "Un téléphérique descend à vitesse constante. Le graphique donne son altitude $h(t)$, en mètres, après $t$ minutes de descente.\n\n**Attention** : le graphique ne commence pas à $t = 0$.",
+    "visual": {
+      "range": { "xMin": 2, "xMax": 10, "yMin": 0, "yMax": 1800 },
+      "functions": [{ "a": -150, "b": 1800, "tone": "indigo", "label": "h" }],
+      "xStep": 1,
+      "yStep": 300,
+      "axisLabels": { "x": "t (min)", "y": "h (m)" },
+      "frozen": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Quelle est l'ordonnée à l'origine de $h$, en mètres ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P8", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P7", "role": "secondary" }
+      ],
+      "answerType": "rational",
+      "answerFormat": "… m",
+      "expectedAnswer": "1800",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "1500", "id": "MISC-AFF-B-LU-AU-BORD" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "L'ordonnée à l'origine se lit en $t = 0$. Ce point est-il dessiné sur le graphique ?" },
+        { "id": "h2", "type": "direction", "content": "Le cadre commence à $t = 2$. Il faut donc prolonger la droite vers la gauche, jusqu'à l'axe vertical." },
+        { "id": "h3", "type": "strategy", "content": "Lis deux points du graphique pour trouver la perte d'altitude par minute, puis remonte de $t = 2$ jusqu'à $t = 0$." }
+      ],
+      "feedback": {
+        "correct": "Oui : la cabine perd 150 m par minute, donc en remontant de deux minutes avant le début du cadre, on retrouve son altitude de départ.",
+        "incorrect": "Le premier point tracé n'est pas l'ordonnée à l'origine : le graphique démarre à $t = 2$, pas à $t = 0$. Prolonge la droite jusqu'à l'axe vertical."
+      }
+    }
+  ]
+}

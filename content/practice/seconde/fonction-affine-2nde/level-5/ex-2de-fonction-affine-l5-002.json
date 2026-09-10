@@ -1,0 +1,75 @@
+{
+  "id": "ex-2de-fonction-affine-l5-002",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 5,
+  "metadata": { "title": "Le tableau et le graphique se contredisent", "estimatedMinutes": 12, "tags": ["challenge", "representations", "esprit-critique"] },
+  "statement": {
+    "content": "Un capteur relève la concentration $C$ d'un produit, en g/L, toutes les 5 minutes :\n\n| $t$ (min) | 0 | 5 | 10 | 15 |\n|---|---|---|---|---|\n| $C$ (g/L) | 12 | 27 | 40 | 57 |\n\nLe technicien affirme que l'évolution est affine, et qu'**un seul relevé a été mal recopié**.",
+    "visual": {
+      "range": { "xMin": 0, "xMax": 16, "yMin": 0, "yMax": 60 },
+      "functions": [{ "a": 3, "b": 12, "tone": "amber", "label": "C" }],
+      "points": [
+        { "id": "P0", "x": 0, "y": 12, "label": "" },
+        { "id": "P1", "x": 5, "y": 27, "label": "" },
+        { "id": "P2", "x": 10, "y": 40, "label": "?" },
+        { "id": "P3", "x": 15, "y": 57, "label": "" }
+      ],
+      "xStep": 5,
+      "yStep": 10,
+      "frozen": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Quel relevé est erroné ? Donne l'instant $t$ correspondant, en minutes.",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P1", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P4", "role": "secondary" }
+      ],
+      "answerType": "rational",
+      "answerFormat": "t = … min",
+      "expectedAnswer": "10",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "15", "id": "MISC-AFF-CONFIANCE-GRAPHIQUE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Calcule le taux d'accroissement entre chaque paire de relevés consécutifs. Combien en trouves-tu de différents ?" },
+        { "id": "h2", "type": "direction", "content": "Trois relevés donnent le même taux entre eux ; c'est le quatrième qui rompt la régularité." },
+        { "id": "h3", "type": "strategy", "content": "Une fonction affine a un taux d'accroissement constant. Le relevé fautif est celui qu'il faut écarter pour que tous les autres s'alignent." }
+      ],
+      "feedback": {
+        "correct": "Oui : les relevés à 0, 5 et 15 minutes donnent tous 3 g/L par minute ; seul celui de 10 minutes s'en écarte — il devrait valoir 42.",
+        "incorrect": "Ne te fie pas au point dessiné : c'est le calcul qui tranche. Compare les taux d'accroissement de chaque paire consécutive et cherche l'intrus."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "En écartant le relevé erroné, détermine la fonction affine $C$ : donne $a$ et $b$.",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P6", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P7", "role": "secondary" },
+        { "code": "seconde_fonction-affine-2nde_P2", "role": "secondary" }
+      ],
+      "answerType": "affine",
+      "answerFormat": "a = …   et   b = …",
+      "expectedAnswer": { "a": "3", "b": "12" },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "a": "2,8", "b": "12" }, "id": "MISC-AFF-CONFIANCE-GRAPHIQUE" },
+        { "value": { "a": "15", "b": "12" }, "id": "MISC-AFF-DIFF-SEULE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Utilise deux relevés sûrs, par exemple ceux de 0 et 5 minutes." },
+        { "id": "h2", "type": "direction", "content": "Le relevé à $t = 0$ te donne directement l'ordonnée à l'origine." },
+        { "id": "h3", "type": "strategy", "content": "Le coefficient directeur est la variation de concentration divisée par la variation de temps, calculée sur deux relevés fiables." }
+      ],
+      "feedback": {
+        "correct": "Oui : 15 g/L gagnés en 5 minutes, soit 3 g/L par minute, et la concentration valait 12 g/L au départ.",
+        "incorrect": "Choisis deux relevés qui ne sont pas celui que tu viens d'écarter. Le relevé à $t = 0$ donne l'ordonnée à l'origine sans calcul.",
+        "partial": "Un des deux coefficients est bon. As-tu bien écarté le relevé fautif de ton calcul ?"
+      }
+    }
+  ]
+}

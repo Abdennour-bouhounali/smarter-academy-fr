@@ -1,0 +1,82 @@
+{
+  "id": "ex-2de-fonction-affine-l5-001",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 5,
+  "metadata": { "title": "Deux cuves, un croisement", "estimatedMinutes": 12, "tags": ["modelisation", "challenge", "multi-etapes"] },
+  "statement": {
+    "content": "Deux cuves fonctionnent en même temps.\n\n- La **cuve A** contient 45 L et se vide de 3 L par minute.\n- La **cuve B** contient 10 L et se remplit de 2 L par minute.\n\nUn technicien doit intervenir à l'instant où les deux cuves contiennent le même volume."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Modélise la cuve A : donne $a$ et $b$ pour $V_A(t) = a\\,t + b$, en litres.",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P6", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P5", "role": "secondary" }
+      ],
+      "answerType": "affine",
+      "answerFormat": "a = …   et   b = …",
+      "expectedAnswer": { "a": "-3", "b": "45" },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "a": "3", "b": "45" }, "id": "MISC-AFF-MODELE-SIGNE" },
+        { "value": { "a": "45", "b": "-3" }, "id": "MISC-AFF-A-B-ECHANGES" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "La cuve A se vide : son volume augmente-t-il ou diminue-t-il au fil des minutes ?" },
+        { "id": "h2", "type": "direction", "content": "Un volume qui diminue se modélise avec un coefficient directeur négatif." },
+        { "id": "h3", "type": "strategy", "content": "Le signe porte l'information « ça descend ». La valeur de départ, elle, se lit à $t = 0$." }
+      ],
+      "feedback": {
+        "correct": "Oui : le signe négatif dit que la cuve se vide, et 45 L est bien le contenu au départ.",
+        "incorrect": "Le nombre de litres perdus par minute doit apparaître avec un signe négatif : c'est ce qui distingue une cuve qui se vide d'une cuve qui se remplit.",
+        "partial": "Un des deux coefficients est bon. Vérifie le signe de l'autre en te demandant si le volume monte ou descend."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "À quel instant les deux cuves contiennent-elles le même volume, en minutes ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P10", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P4", "role": "secondary" }
+      ],
+      "answerType": "rational",
+      "answerFormat": "… min",
+      "expectedAnswer": "7",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Écris aussi le volume de la cuve B en fonction du temps." },
+        { "id": "h2", "type": "direction", "content": "« Le même volume » se traduit par une égalité entre les deux expressions." },
+        { "id": "h3", "type": "strategy", "content": "Regroupe les termes en $t$ d'un côté et les constantes de l'autre, puis isole $t$." }
+      ],
+      "feedback": {
+        "correct": "Oui : l'écart de 35 L se résorbe de 5 L par minute, puisque l'une perd 3 L pendant que l'autre en gagne 2.",
+        "incorrect": "Pose l'égalité entre les deux volumes. Attention aux signes en regroupant les termes en $t$."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "Sur quel intervalle de temps la cuve A contient-elle encore de l'eau ?",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P9", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P11", "role": "secondary" }
+      ],
+      "answerType": "interval",
+      "answerFormat": "]… ; …[   (une borne vide signifie l'infini)",
+      "expectedAnswer": { "lo": null, "loOpen": true, "hi": "15", "hiOpen": true },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "lo": "15", "loOpen": true, "hi": null, "hiOpen": true }, "id": "MISC-AFF-SIGNE-COTE-INVERSE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Cherche d'abord l'instant où la cuve A est vide." },
+        { "id": "h2", "type": "direction", "content": "Comme A se vide, elle contient de l'eau avant cet instant, pas après." },
+        { "id": "h3", "type": "strategy", "content": "Le coefficient directeur de $V_A$ est négatif : la fonction est donc positive du côté gauche de son zéro." }
+      ],
+      "feedback": {
+        "correct": "Oui : 45 L à 3 L par minute font 15 minutes, et l'eau est présente avant cet instant.",
+        "incorrect": "Trouve le zéro de $V_A$, puis teste $t = 0$ : la cuve contient bien 45 L au départ, donc 0 doit appartenir à ton intervalle."
+      }
+    }
+  ]
+}

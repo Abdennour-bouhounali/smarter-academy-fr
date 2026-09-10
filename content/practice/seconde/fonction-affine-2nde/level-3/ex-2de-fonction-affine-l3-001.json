@@ -1,0 +1,59 @@
+{
+  "id": "ex-2de-fonction-affine-l3-001",
+  "lessonCode": "fonction-affine-2nde",
+  "level": 3,
+  "metadata": { "title": "Deux factures de forfait", "estimatedMinutes": 8, "tags": ["determination", "standard"] },
+  "statement": {
+    "content": "Un forfait téléphonique facture un abonnement fixe, plus un prix par minute hors forfait. Deux factures sont disponibles :\n\n- **40 minutes** hors forfait : **32 €**\n- **100 minutes** hors forfait : **47 €**\n\nOn note $P(m)$ le montant de la facture, en euros, pour $m$ minutes hors forfait."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Détermine la fonction affine $P$ : donne son coefficient directeur $a$ et son ordonnée à l'origine $b$.",
+      "learningPoints": [
+        { "code": "seconde_fonction-affine-2nde_P6", "role": "primary" },
+        { "code": "seconde_fonction-affine-2nde_P4", "role": "secondary" },
+        { "code": "seconde_fonction-affine-2nde_P3", "role": "secondary" }
+      ],
+      "answerType": "affine",
+      "answerFormat": "a = …   et   b = …",
+      "expectedAnswer": { "a": "0,25", "b": "22" },
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": { "a": "0,25", "b": "32" }, "id": "MISC-AFF-B-EST-F1" },
+        { "value": { "a": "15", "b": "22" }, "id": "MISC-AFF-DIFF-SEULE" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Entre les deux factures, combien de minutes en plus, et combien d'euros en plus ?" },
+        { "id": "h2", "type": "direction", "content": "Le prix par minute s'obtient en divisant la hausse du montant par la hausse du nombre de minutes." },
+        { "id": "h3", "type": "strategy", "content": "Une fois $a$ connu, redescends jusqu'à $m = 0$ : à partir de la facture de 40 minutes, retire ce que coûtent ces 40 minutes." }
+      ],
+      "feedback": {
+        "correct": "Oui : 15 € pour 60 minutes de plus, soit 0,25 € la minute ; en retirant les 10 € des 40 premières minutes, il reste 22 € d'abonnement.",
+        "incorrect": "Commence par le prix d'une minute, puis remonte à $m = 0$. Attention : l'abonnement n'est pas le montant de la première facture.",
+        "partial": "Un des deux coefficients est bon. Si c'est $a$, il reste à retirer le coût des minutes pour isoler l'abonnement."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "Quel serait le montant d'une facture avec 200 minutes hors forfait, en euros ?",
+      "learningPoints": [{ "code": "seconde_fonction-affine-2nde_P10", "role": "primary" }],
+      "answerType": "rational",
+      "answerFormat": "… €",
+      "expectedAnswer": "72",
+      "evaluationPolicy": { "acceptEquivalent": true, "tolerance": null },
+      "misconceptionSignatures": [
+        { "value": "50", "id": "MISC-AFF-B-EST-F1" }
+      ],
+      "hints": [
+        { "id": "h1", "type": "look", "content": "Tu disposes maintenant de l'expression complète de $P$." },
+        { "id": "h2", "type": "direction", "content": "Remplace $m$ par 200 dans cette expression." },
+        { "id": "h3", "type": "strategy", "content": "N'oublie pas l'abonnement : il s'ajoute au coût des minutes, quel que soit leur nombre." }
+      ],
+      "feedback": {
+        "correct": "Oui : 50 € de minutes plus 22 € d'abonnement.",
+        "incorrect": "Tu as peut-être calculé le coût des minutes seules. L'abonnement fixe s'y ajoute."
+      }
+    }
+  ]
+}
