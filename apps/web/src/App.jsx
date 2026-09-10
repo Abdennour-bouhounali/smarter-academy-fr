@@ -148,12 +148,14 @@ import derivationNombreDerive1ereRoutes from './lessons/lycee/premiere_specialit
 import derivationCalculer1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-calculer-1ere/routes';
 import derivationVariationsOptimisation1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-variations-optimisation-1ere/routes';
 import trigonometrieCercleFonctions1ereRoutes from './lessons/lycee/premiere_specialite/analyse/trigonometrie-cercle-fonctions-1ere/routes';
+import exponentielleDecouvrir1ereRoutes from './lessons/lycee/premiere_specialite/analyse/exponentielle-decouvrir-1ere/routes';
 import produitScalaireDefinir1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-definir-1ere/routes';
 import produitScalaireMesurerDemontrer1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/routes';
 import espaceVecteursCoordonnees1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/espace-vecteurs-coordonnees-1ere/routes';
 import variablesAleatoiresLoiEsperance1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/variables-aleatoires-loi-esperance-1ere/routes';
 import variablesAleatoiresDispersionBinomiale1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/variables-aleatoires-dispersion-binomiale-1ere/routes';
 import probabilitesConditionnellesArbres1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/probabilites-conditionnelles-arbres-1ere/routes';
+import probabilitesIndependance1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/probabilites-independance-1ere/routes';
 
 // Hydrates local lesson progress from the server on login and flushes the
 // offline queue — must live inside AuthProvider, hence this null component.
@@ -328,12 +330,14 @@ export default function App() {
             {derivationCalculer1ereRoutes()}
             {derivationVariationsOptimisation1ereRoutes()}
             {trigonometrieCercleFonctions1ereRoutes()}
+            {exponentielleDecouvrir1ereRoutes()}
             {produitScalaireDefinir1ereRoutes()}
             {produitScalaireMesurerDemontrer1ereRoutes()}
             {espaceVecteursCoordonnees1ereRoutes()}
             {variablesAleatoiresLoiEsperance1ereRoutes()}
             {variablesAleatoiresDispersionBinomiale1ereRoutes()}
             {probabilitesConditionnellesArbres1ereRoutes()}
+            {probabilitesIndependance1ereRoutes()}
           </Route>
         </Routes>
       </Router>

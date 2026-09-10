@@ -128,7 +128,11 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   if (await v.count()) await v.click({ force: true });
   await settle(page, 1200);
   const txt = await body(page);
-  check('M0 : un résultat chiffré est affiché après soumission', /\d+\s*\/\s*1[02]|sur 1[02]|point/i.test(txt), txt.slice(-260));
+  // Le DÉNOMINATEUR n'est pas fixe : il vaut le nombre de questions, lui-même
+  // dicté par le nombre de prérequis à diagnostiquer. Le figer à 10 ou 12
+  // faisait échouer une leçon qui en pose 8, alors qu'elle affiche bien son
+  // score. On exige un score chiffré, pas un score sur un total imposé.
+  check('M0 : un résultat chiffré est affiché après soumission', /\d+\s*\/\s*\d+|sur \d+|point/i.test(txt), txt.slice(-260));
   check('M0 : rien n’est verrouillé malgré une erreur', !/verrouill/i.test(txt));
   check('M0 : la suite reste accessible', await nextEnabled(page));
   await ctx.close();
@@ -146,8 +150,14 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
   // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
   // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  // Une étape se pilote au cliquet, à la saisie, au choix, par un bouton dont le
+  // TEXTE porte le sens — ou PAR LE GLISSER SEUL. Depuis la règle « le glisser
+  // d'abord », un laboratoire peut n'avoir AUCUN bouton : la surface de
+  // préhension est un SVG focusable portant role et aria-label. L'ignorer
+  // ferait échouer les leçons les plus conformes à la règle.
   const saisies = await page.locator(
-    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled]),'
+    + ' #step-1 svg[tabindex]:not([tabindex="-1"]), #step-1 [role="slider"], #step-1 svg[role="group"], #step-1 svg[role="application"]'
   ).count();
   check('M1 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M1 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
@@ -170,8 +180,14 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
   // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
   // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  // Une étape se pilote au cliquet, à la saisie, au choix, par un bouton dont le
+  // TEXTE porte le sens — ou PAR LE GLISSER SEUL. Depuis la règle « le glisser
+  // d'abord », un laboratoire peut n'avoir AUCUN bouton : la surface de
+  // préhension est un SVG focusable portant role et aria-label. L'ignorer
+  // ferait échouer les leçons les plus conformes à la règle.
   const saisies = await page.locator(
-    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled]),'
+    + ' #step-1 svg[tabindex]:not([tabindex="-1"]), #step-1 [role="slider"], #step-1 svg[role="group"], #step-1 svg[role="application"]'
   ).count();
   check('M2 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M2 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
@@ -194,8 +210,14 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
   // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
   // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  // Une étape se pilote au cliquet, à la saisie, au choix, par un bouton dont le
+  // TEXTE porte le sens — ou PAR LE GLISSER SEUL. Depuis la règle « le glisser
+  // d'abord », un laboratoire peut n'avoir AUCUN bouton : la surface de
+  // préhension est un SVG focusable portant role et aria-label. L'ignorer
+  // ferait échouer les leçons les plus conformes à la règle.
   const saisies = await page.locator(
-    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled]),'
+    + ' #step-1 svg[tabindex]:not([tabindex="-1"]), #step-1 [role="slider"], #step-1 svg[role="group"], #step-1 svg[role="application"]'
   ).count();
   check('M3 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M3 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
@@ -218,8 +240,14 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
   // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
   // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  // Une étape se pilote au cliquet, à la saisie, au choix, par un bouton dont le
+  // TEXTE porte le sens — ou PAR LE GLISSER SEUL. Depuis la règle « le glisser
+  // d'abord », un laboratoire peut n'avoir AUCUN bouton : la surface de
+  // préhension est un SVG focusable portant role et aria-label. L'ignorer
+  // ferait échouer les leçons les plus conformes à la règle.
   const saisies = await page.locator(
-    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled]),'
+    + ' #step-1 svg[tabindex]:not([tabindex="-1"]), #step-1 [role="slider"], #step-1 svg[role="group"], #step-1 svg[role="application"]'
   ).count();
   check('M4 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M4 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
@@ -242,8 +270,14 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
   // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
   // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  // Une étape se pilote au cliquet, à la saisie, au choix, par un bouton dont le
+  // TEXTE porte le sens — ou PAR LE GLISSER SEUL. Depuis la règle « le glisser
+  // d'abord », un laboratoire peut n'avoir AUCUN bouton : la surface de
+  // préhension est un SVG focusable portant role et aria-label. L'ignorer
+  // ferait échouer les leçons les plus conformes à la règle.
   const saisies = await page.locator(
-    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled]),'
+    + ' #step-1 svg[tabindex]:not([tabindex="-1"]), #step-1 [role="slider"], #step-1 svg[role="group"], #step-1 svg[role="application"]'
   ).count();
   check('M5 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M5 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
@@ -266,8 +300,14 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
   // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
   // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
+  // Une étape se pilote au cliquet, à la saisie, au choix, par un bouton dont le
+  // TEXTE porte le sens — ou PAR LE GLISSER SEUL. Depuis la règle « le glisser
+  // d'abord », un laboratoire peut n'avoir AUCUN bouton : la surface de
+  // préhension est un SVG focusable portant role et aria-label. L'ignorer
+  // ferait échouer les leçons les plus conformes à la règle.
   const saisies = await page.locator(
-    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
+    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled]),'
+    + ' #step-1 svg[tabindex]:not([tabindex="-1"]), #step-1 [role="slider"], #step-1 svg[role="group"], #step-1 svg[role="application"]'
   ).count();
   check('M6 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
   check('M6 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));

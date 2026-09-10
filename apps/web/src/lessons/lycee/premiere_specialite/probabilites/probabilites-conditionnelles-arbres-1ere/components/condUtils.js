@@ -57,10 +57,19 @@ export const ratSum = (list) => list.reduce(ratAdd, rat(0, 1));
 
 /* ══ Formatage ═══════════════════════════════════════════════════════════ */
 
-/** Décimal à la française : 0.075 → « 0,075 ». */
+/**
+ * Décimal à la française : 0.075 → « 0,075 ».
+ *
+ * DÉFAUT CORRIGÉ. La version précédente retirait les zéros de fin SANS
+ * vérifier qu'il y a une partie décimale : `toFixed(0)` rend « 40 », et
+ * `/0+$/` en faisait « 4 ». Tout pourcentage rond affiché sans décimale était
+ * donc faux — 40 % s'écrivait « 4 % », 100 % s'écrivait « 1 % ».
+ * Ici le rognage ne s'applique QU'À la partie décimale.
+ */
 export const fr = (v, dp = 3) => {
-  const s = v.toFixed(dp).replace(/0+$/, '').replace(/\.$/, '');
-  return s.replace('.', ',');
+  const s = v.toFixed(dp);
+  const net = s.includes('.') ? s.replace(/0+$/, '').replace(/\.$/, '') : s;
+  return net.replace('.', ',');
 };
 
 /** Pourcentage à la française : 1/3 → « 33,3 % ». */

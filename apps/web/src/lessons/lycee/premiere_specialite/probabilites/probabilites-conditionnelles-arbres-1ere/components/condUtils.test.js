@@ -625,3 +625,20 @@ describe('boss : les distracteurs sont calculés, distincts et plausibles', () =
     expect(ratEq(BOSS_NUMBERS.e8.traps[0], c1)).toBe(true);
   });
 });
+
+describe('fr — le rognage ne touche QUE la partie décimale', () => {
+  // DÉFAUT RÉEL, corrigé : `toFixed(0)` rend « 40 », et un `/0+$/` sans garde
+  // en faisait « 4 ». Tout pourcentage rond affiché sans décimale était faux.
+  // La leçon n'affichait que 99 % — le défaut était donc LATENT, prêt à mentir
+  // dès qu'une donnée aurait fini par un zéro.
+  it('garde les zéros d’un entier', () => {
+    expect(fr(40, 0)).toBe('40');
+    expect(fr(100, 0)).toBe('100');
+    expect(fr(50, 0)).toBe('50');
+  });
+  it('rogne toujours les zéros décimaux', () => {
+    expect(fr(2.5, 2)).toBe('2,5');
+    expect(fr(0.075)).toBe('0,075');
+    expect(fr(33.333, 1)).toBe('33,3');
+  });
+});
