@@ -262,11 +262,18 @@ export default function PracticeSession() {
 
           <QuestionRenderer question={question} value={answer} onChange={setAnswer} disabled={answered} />
 
-          {!answered && (
-            <ValidateButton onClick={validate} disabled={answer == null || busy} tone="indigo">
-              Vérifier ma réponse
-            </ValidateButton>
-          )}
+          {/* Valider et noter cohabitent : la remarque vient souvent PENDANT
+              la recherche, pas seulement après le verdict. Le carnet reste
+              donc atteignable tant que la question est ouverte — et il l'est
+              encore après, dans le bloc de correction ci-dessous. */}
+          <div className="flex items-center gap-3 flex-wrap">
+            {!answered && (
+              <ValidateButton onClick={validate} disabled={answer == null || busy} tone="indigo">
+                Vérifier ma réponse
+              </ValidateButton>
+            )}
+            {!answered && <NotebookButton key={`note-${question.id}`} onSave={saveNote} compact />}
+          </div>
 
           <HintPanel
             hints={hints}
@@ -283,7 +290,7 @@ export default function PracticeSession() {
                 message={feedbackFor(question, evaluation, MISCONCEPTIONS)}
               />
 
-              <NotebookButton onSave={saveNote} />
+              <NotebookButton key={`note-answered-${question.id}`} onSave={saveNote} />
 
               <div className="flex gap-3 flex-wrap">
                 {/* Réessayer est PROPOSÉ, jamais imposé : une réponse fausse

@@ -13,11 +13,20 @@ const MISTAKE_TYPES = [
  * « Noter dans mon carnet » — une note durable, rattachée à l'exercice, à la
  * question et au point d'apprentissage travaillé.
  *
+ * Disponible À TOUT MOMENT, et pas seulement après une réponse fausse : une
+ * remarque vient souvent PENDANT la recherche (« ici je dois penser à… »),
+ * et l'élève qui a juste peut avoir autant à noter que celui qui s'est
+ * trompé. Le type d'erreur reste donc facultatif, et le libellé ne présume
+ * pas d'une faute.
+ *
  * Volontairement minimal : un champ, un type d'erreur optionnel. Le modèle
- * de données, lui, porte déjà de quoi construire « Mes erreurs par chapitre »
- * ou « par Learning Point » — sans que ces écrans existent encore.
+ * de données porte déjà de quoi construire « Mes erreurs par chapitre » ou
+ * « par Learning Point ».
+ *
+ * @param {boolean} [compact] Rend le déclencheur sous forme d'icône seule,
+ *   pour la barre d'outils d'une question en cours.
  */
-export default function NotebookButton({ onSave, defaultType = null }) {
+export default function NotebookButton({ onSave, defaultType = null, compact = false }) {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState('');
   const [mistakeType, setMistakeType] = useState(defaultType);
@@ -25,10 +34,21 @@ export default function NotebookButton({ onSave, defaultType = null }) {
   const [busy, setBusy] = useState(false);
 
   if (saved) {
+    // On ne fige pas l'état : une question peut mériter deux remarques, et
+    // l'élève doit pouvoir en rouvrir une sans changer d'écran.
     return (
-      <p className="inline-flex items-center gap-2 text-sm text-emerald-700 font-bold">
-        <Check className="w-4 h-4" aria-hidden="true" /> Noté dans ton carnet
-      </p>
+      <div className="inline-flex items-center gap-3 flex-wrap">
+        <p className="inline-flex items-center gap-2 text-sm text-emerald-700 font-bold">
+          <Check className="w-4 h-4" aria-hidden="true" /> Noté dans ton carnet
+        </p>
+        <button
+          type="button"
+          onClick={() => { setSaved(false); setContent(''); setMistakeType(defaultType); setOpen(true); }}
+          className="text-sm font-bold text-slate-500 hover:text-slate-800 underline underline-offset-2 min-h-[44px]"
+        >
+          Ajouter une autre note
+        </button>
+      </div>
     );
   }
 
@@ -37,9 +57,15 @@ export default function NotebookButton({ onSave, defaultType = null }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-slate-900 min-h-[44px]"
+        title={compact ? 'Noter dans mon carnet' : undefined}
+        className={
+          compact
+            ? 'inline-flex items-center gap-2 px-3 py-2 min-h-[44px] rounded-xl border-2 border-slate-200 text-slate-600 hover:border-slate-400 hover:text-slate-900 text-sm font-bold'
+            : 'inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-slate-900 min-h-[44px]'
+        }
       >
-        <NotebookPen className="w-4 h-4" aria-hidden="true" /> Noter dans mon carnet
+        <NotebookPen className="w-4 h-4" aria-hidden="true" />
+        {compact ? <span className="sr-only sm:not-sr-only">Noter</span> : 'Noter dans mon carnet'}
       </button>
     );
   }
@@ -63,12 +89,13 @@ export default function NotebookButton({ onSave, defaultType = null }) {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={3}
-          placeholder="Ce que je dois retenir de cette question…"
+          placeholder="Ce que je veux retenir…"
           className="w-full border-2 border-slate-300 rounded-xl px-3 py-2 text-sm text-slate-800 focus:outline-none focus:border-blue-500"
         />
       </label>
 
       <div className="flex flex-wrap gap-2">
+        {/* Facultatif : une note n'est pas forcément une erreur. */}
         {MISTAKE_TYPES.map((t) => (
           <button
             key={t.id}

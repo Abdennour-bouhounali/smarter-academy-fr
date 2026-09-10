@@ -23,6 +23,9 @@ class NotebookService
             ->where('user_id', $user->id)
             ->when($lessonCode, fn ($q) => $q->whereHas('lesson', fn ($l) => $l->where('code', $lessonCode)))
             ->with(['lesson:id,code,title', 'learningPoint:id,code,title'])
+            // Les notes à revoir remontent : le carnet sert d'abord à traiter
+            // ce qui reste en suspens. À état égal, la plus récente d'abord.
+            ->orderByRaw('completed_at IS NOT NULL')
             ->orderByDesc('created_at')
             ->get();
     }
@@ -58,6 +61,12 @@ class NotebookService
         }
         if (array_key_exists('mistakeType', $data)) {
             $payload['mistake_type'] = $data['mistakeType'];
+        }
+        // « Traitée » se pose et se retire : l'élève qui rouvre une note pour
+        // la retravailler doit pouvoir la remettre à revoir. On stocke la date
+        // du geste, pas un simple drapeau.
+        if (array_key_exists('completed', $data)) {
+            $payload['completed_at'] = $data['completed'] ? now() : null;
         }
         $note->update($payload);
 

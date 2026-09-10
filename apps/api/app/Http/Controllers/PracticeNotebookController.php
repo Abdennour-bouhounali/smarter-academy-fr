@@ -46,6 +46,7 @@ class PracticeNotebookController extends Controller
         $validated = $request->validate([
             'content' => 'sometimes|string|max:4000',
             'mistakeType' => 'sometimes|nullable|string|max:40',
+            'completed' => 'sometimes|boolean',
         ]);
 
         try {
@@ -76,6 +77,10 @@ class PracticeNotebookController extends Controller
             'id' => $note->id,
             'content' => $note->content,
             'mistakeType' => $note->mistake_type,
+            // La DATE est la donnée ; `isCompleted` n'en est que la lecture
+            // commode pour l'interface.
+            'completedAt' => $note->completed_at?->toIso8601String(),
+            'isCompleted' => $note->completed_at !== null,
             'lessonCode' => $note->lesson?->code,
             'learningPointCode' => $note->learningPoint?->code,
             'exerciseId' => $note->exercise_id,

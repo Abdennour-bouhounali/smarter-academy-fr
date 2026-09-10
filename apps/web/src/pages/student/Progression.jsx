@@ -11,6 +11,7 @@ import { useLearningProfile } from '../../lessons/common/hooks/useLearningProfil
 import {
   LearningPointCard, resolveMasteryState, findLessonMasteryRows, MASTERY_STATES,
 } from '../../lessons/common/components/LearningPointMastery';
+import NotebookBrowser from '../../features/practice/NotebookBrowser';
 
 /** Looks up a lesson's display title/path and its chapter's title from the
  * catalogue — the learning-profile API only returns codes (grade/lesson/
@@ -364,6 +365,12 @@ export default function Progression() {
           ))}
         </div>
       )}
+
+      {/* Le carnet vit ici, et non dans la pratique : c'est l'écran où l'élève
+          fait le point. Il s'ouvre par leçon, comme le reste de la page. */}
+      <div className="mt-10 pt-8 border-t border-slate-200">
+        <NotebookBrowser />
+      </div>
 
       <p className="mt-8 text-xs text-slate-400 font-inter max-w-xl">
         Chaque compétence est évaluée à partir de tes vraies réponses aux bilans de fin de leçon — jamais d'une

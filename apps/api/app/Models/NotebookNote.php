@@ -19,6 +19,11 @@ class NotebookNote extends Model
         'question_id',
         'content',
         'mistake_type',
+        'completed_at',
+    ];
+
+    protected $casts = [
+        'completed_at' => 'datetime',
     ];
 
     public function user(): BelongsTo

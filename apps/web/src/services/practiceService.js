@@ -101,3 +101,49 @@ export function completeSession(token, sessionId) {
 export function createNote(token, note) {
   return call('/practice/notes', auth(token, note), 'Impossible d’enregistrer ta note.');
 }
+
+/**
+ * Les notes du carnet, éventuellement filtrées sur une leçon.
+ *
+ * Le serveur remonte les notes « à revoir » d'abord — c'est la lecture par
+ * défaut du carnet, qui sert à traiter ce qui reste en suspens.
+ */
+export function fetchNotes(token, lessonCode = null) {
+  const query = lessonCode ? `?lessonCode=${encodeURIComponent(lessonCode)}` : '';
+
+  return call(
+    `/practice/notes${query}`,
+    { headers: { Authorization: `Bearer ${token}` } },
+    'Impossible de charger ton carnet.',
+  );
+}
+
+/**
+ * Modifie une note : son texte, son type d'erreur, ou son état « traitée ».
+ *
+ * `completed` se pose ET se retire — une note remise à revoir est un geste
+ * légitime, pas une correction d'erreur. Le serveur en conserve la date.
+ */
+export function updateNote(token, id, patch) {
+  return call(
+    `/practice/notes/${encodeURIComponent(id)}`,
+    {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      body: JSON.stringify(patch),
+    },
+    'Impossible de modifier ta note.',
+  );
+}
+
+/** Supprime définitivement une note du carnet. */
+export function deleteNote(token, id) {
+  return call(
+    `/practice/notes/${encodeURIComponent(id)}`,
+    {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${token}` },
+    },
+    'Impossible de supprimer ta note.',
+  );
+}
