@@ -81,7 +81,7 @@ export default function Module01EnroulerLeFil() {
       num: 2,
       title: 'Un réel, un point',
       done: q2,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="enroulement"
@@ -129,7 +129,7 @@ export default function Module01EnroulerLeFil() {
       num: 4,
       title: 'Le compte du fil',
       done: q4,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="mem-rayon-un"
@@ -144,7 +144,7 @@ export default function Module01EnroulerLeFil() {
               <MathText key="c">{'$90$'}</MathText>,
               <MathText key="d">{'$\\dfrac{1}{4}$'}</MathText>,
             ]}
-            optionLabel={(i) => ['π/2', 'π/4', '90', '1/4'][i]}
+            correctionLabel="π/2"
             correct={0} cols={2}
             requires={['enroulement', 'mem-rayon-un']}
             explain="Le tour complet vaut 2π, donc le quart vaut 2π ÷ 4 = π/2 ≈ 1,57."

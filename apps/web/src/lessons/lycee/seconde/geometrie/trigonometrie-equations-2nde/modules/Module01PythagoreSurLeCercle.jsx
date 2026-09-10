@@ -80,7 +80,7 @@ export default function Module01PythagoreSurLeCercle() {
       num: 2,
       title: 'D’où vient cette identité ?',
       done: q2,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <TapQuestion
             prompt={<span>Pourquoi <MathText>{'$\\cos^2 t + \\sin^2 t = 1$'}</MathText> est-il vrai pour tout t ?</span>}
@@ -110,7 +110,7 @@ export default function Module01PythagoreSurLeCercle() {
       num: 3,
       title: 'Retrouver une coordonnée',
       done: q3,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="methode-retrouver-coordonnee"
@@ -136,7 +136,7 @@ export default function Module01PythagoreSurLeCercle() {
       num: 4,
       title: 'Pourquoi « au-dessus » compte',
       done: q4,
-      content: (
+      content: () => (
         <TapQuestion
           prompt={<span>Si on sait seulement que <MathText>{'$\\cos t = 0{,}6$'}</MathText>, combien de valeurs sin t peut-il prendre ?</span>}
           options={[

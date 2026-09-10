@@ -79,7 +79,7 @@ export default function Module02AdditionnerDeuxAngles() {
       num: 2,
       title: 'La vraie formule',
       done: q2,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="formules-addition"
@@ -107,7 +107,7 @@ export default function Module02AdditionnerDeuxAngles() {
       num: 3,
       title: 'Les deux formules, sans les confondre',
       done: q3,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <BatchChoiceQuestion
             intro={<p className="text-sm text-slate-600">Pour chaque expression, la bonne écriture :</p>}

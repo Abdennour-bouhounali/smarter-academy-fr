@@ -72,7 +72,7 @@ export default function Module03DeuxCoordonnees() {
       num: 2,
       title: 'Qui est qui ?',
       done: q2,
-      content: (
+      content: () => (
         <TapQuestion
           prompt={<span>Sur le cercle, le point associé au réel t a pour coordonnées…</span>}
           options={[
@@ -81,7 +81,7 @@ export default function Module03DeuxCoordonnees() {
             <MathText key="c">{'$(t\\ ;\\ \\cos t)$'}</MathText>,
             <MathText key="d">{'$(\\cos t\\ ;\\ t)$'}</MathText>,
           ]}
-          optionLabel={(i) => ['(cos t ; sin t)', '(sin t ; cos t)', '(t ; cos t)', '(cos t ; t)'][i]}
+          correctionLabel="(cos t ; sin t)"
           correct={0} cols={2}
           requires={['cos-sin-coordonnees']}
           explain="Le cosinus se lit à l’HORIZONTALE (abscisse), le sinus à la VERTICALE (ordonnée) : le point est (cos t ; sin t). Le réel t, lui, est la longueur d’arc — il n’apparaît pas dans les coordonnées."
@@ -94,7 +94,7 @@ export default function Module03DeuxCoordonnees() {
       num: 3,
       title: 'Les signes, quart par quart',
       done: q3,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <BatchChoiceQuestion
             intro={<p className="text-sm text-slate-600">Pour un point dans chacun de ces quarts, quels sont les signes de (cos t ; sin t) ?</p>}
@@ -128,7 +128,7 @@ export default function Module03DeuxCoordonnees() {
       num: 4,
       title: 'Jusqu’où peuvent-ils aller ?',
       done: q4,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="regle-borne-un"

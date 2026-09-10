@@ -78,7 +78,7 @@ export default function Module04LesValeursRemarquables() {
       num: 2,
       title: 'Le repère qui empêche de confondre',
       done: q2,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <TapQuestion
             prompt={<span>Pour quel angle du premier quart de tour a-t-on <MathText>{'$\\cos t = \\sin t$'}</MathText> ?</span>}
@@ -88,7 +88,7 @@ export default function Module04LesValeursRemarquables() {
               <MathText key="c">{'$\\dfrac{\\pi}{3}$'}</MathText>,
               <MathText key="d">{'$\\dfrac{\\pi}{2}$'}</MathText>,
             ]}
-            optionLabel={(i) => ['π/4', 'π/6', 'π/3', 'π/2'][i]}
+            correctionLabel="π/4"
             correct={0} cols={2}
             requires={['valeurs-remarquables']}
             explain="π/4 est la moitié du quart de tour : le point est sur la bissectrice, donc son abscisse égale son ordonnée — toutes deux valent √2/2 ≈ 0,71."
@@ -109,7 +109,7 @@ export default function Module04LesValeursRemarquables() {
       num: 3,
       title: 'La table exacte',
       done: q3,
-      content: (
+      content: () => (
         <BatchChoiceQuestion
           intro={(
             <div className="space-y-2">
@@ -141,7 +141,7 @@ export default function Module04LesValeursRemarquables() {
       num: 4,
       title: 'Placer un angle de mémoire',
       done: q4,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="methode-placer-remarquable"
@@ -156,7 +156,7 @@ export default function Module04LesValeursRemarquables() {
               <MathText key="c">{'$\\left(-\\dfrac{\\sqrt{3}}{2}\\ ;\\ \\dfrac{1}{2}\\right)$'}</MathText>,
               <MathText key="d">{'$\\left(-\\dfrac{1}{2}\\ ;\\ -\\dfrac{\\sqrt{3}}{2}\\right)$'}</MathText>,
             ]}
-            optionLabel={(i) => ['(−1/2 ; √3/2)', '(1/2 ; √3/2)', '(−√3/2 ; 1/2)', '(−1/2 ; −√3/2)'][i]}
+            correctionLabel="(−1/2 ; √3/2)"
             correct={0} cols={2}
             requires={['methode-placer-remarquable', 'valeurs-remarquables', 'regle-signes-quadrants']}
             explain="2π/3 dépasse π/2 : le point est en haut à GAUCHE, donc abscisse négative et ordonnée positive. Il est le symétrique de π/3 par rapport à l’axe vertical, d’où (−1/2 ; √3/2)."

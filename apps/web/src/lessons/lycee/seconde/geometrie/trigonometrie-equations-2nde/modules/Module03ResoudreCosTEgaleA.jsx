@@ -77,7 +77,7 @@ export default function Module03ResoudreCosTEgaleA() {
       num: 2,
       title: 'La méthode',
       done: q2,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="methode-resoudre-cos"
@@ -92,7 +92,7 @@ export default function Module03ResoudreCosTEgaleA() {
               <MathText key="c">{'$t = \\dfrac{\\pi}{4} \\ \\text{ou} \\ t = \\dfrac{3\\pi}{4}$'}</MathText>,
               <MathText key="d">{'$t = \\dfrac{\\pi}{2}$'}</MathText>,
             ]}
-            optionLabel={(i) => ['π/4 ou 7π/4', 'π/4 seulement', 'π/4 ou 3π/4', 'π/2'][i]}
+            correctionLabel="π/4 ou 7π/4"
             correct={0} cols={2}
             requires={['methode-resoudre-cos', 'equation-deux-solutions', 'valeurs-remarquables']}
             explain="√2/2 est le cosinus de π/4. La seconde solution est 2π − π/4 = 7π/4 : le point symétrique par rapport à l’axe horizontal. Donner π/4 seul, c’est oublier la moitié des solutions."
@@ -106,7 +106,7 @@ export default function Module03ResoudreCosTEgaleA() {
       num: 3,
       title: 'Quand il n’y a pas de solution',
       done: q3,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="regle-hors-bornes"

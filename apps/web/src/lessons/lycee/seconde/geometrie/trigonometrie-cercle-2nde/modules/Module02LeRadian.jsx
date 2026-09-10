@@ -66,7 +66,7 @@ export default function Module02LeRadian() {
       num: 2,
       title: 'Le pivot de toutes les conversions',
       done: q2,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <TapQuestion
             prompt={<span>Quelle égalité permet de convertir entre degrés et radians ?</span>}
@@ -76,7 +76,7 @@ export default function Module02LeRadian() {
               <MathText key="c">{'$1 \\text{ rad} = 1°$'}</MathText>,
               <MathText key="d">{'$2\\pi \\text{ rad} = 180°$'}</MathText>,
             ]}
-            optionLabel={(i) => ['π rad = 180°', 'π rad = 360°', '1 rad = 1°', '2π rad = 180°'][i]}
+            correctionLabel="π rad = 180°"
             correct={0} cols={2}
             requires={['radian', 'enroulement']}
             explain="Le demi-tour, c’est 180° d’un côté et une longueur d’arc π de l’autre : π rad = 180°. Le tour complet donne 2π rad = 360°, qui en est le double."
@@ -97,7 +97,7 @@ export default function Module02LeRadian() {
       num: 3,
       title: 'Convertir dans les deux sens',
       done: q3,
-      content: (
+      content: () => (
         <BatchChoiceQuestion
           intro={<p className="text-sm text-slate-600">Chaque angle, dans l’autre unité :</p>}
           rows={[
@@ -122,7 +122,7 @@ export default function Module02LeRadian() {
       num: 4,
       title: 'Un radian, ça ressemble à quoi ?',
       done: q4,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="mem-pi-180"

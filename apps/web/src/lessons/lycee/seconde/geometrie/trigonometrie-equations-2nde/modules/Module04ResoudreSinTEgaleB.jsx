@@ -76,7 +76,7 @@ export default function Module04ResoudreSinTEgaleB() {
       num: 2,
       title: 'Ne pas confondre les deux',
       done: q2,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="regle-deux-symetries"
@@ -108,7 +108,7 @@ export default function Module04ResoudreSinTEgaleB() {
       num: 3,
       title: 'Sur un intervalle imposé',
       done: q3,
-      content: (
+      content: () => (
         <div className="space-y-3">
           <KnowledgeBrick
             id="mem-lire-sur-le-cercle"
@@ -123,7 +123,7 @@ export default function Module04ResoudreSinTEgaleB() {
               <MathText key="c">{'$t = \\dfrac{\\pi}{6} \\ \\text{ou} \\ t = \\dfrac{11\\pi}{6}$'}</MathText>,
               <MathText key="d">{'$t = \\dfrac{\\pi}{3} \\ \\text{ou} \\ t = \\dfrac{2\\pi}{3}$'}</MathText>,
             ]}
-            optionLabel={(i) => ['π/6 ou 5π/6', 'π/6 seulement', 'π/6 ou 11π/6', 'π/3 ou 2π/3'][i]}
+            correctionLabel="π/6 ou 5π/6"
             correct={0} cols={2}
             requires={['methode-resoudre-sin', 'mem-lire-sur-le-cercle']}
             explain="Les deux solutions du tour sont π/6 et 5π/6, et TOUTES DEUX appartiennent à [0 ; π] : on les garde. L’intervalle ne sert pas à en éliminer une par principe, il faut vérifier."
