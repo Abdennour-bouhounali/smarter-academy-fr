@@ -63,6 +63,16 @@ class DashboardService
     /**
      * Les anomalies qui méritent un regard. Chacune porte de quoi agir : un
      * intitulé, une gravité, et le lien vers ce qu'il faut ouvrir.
+     *
+     * ATTENTION — ces `link` sont des chemins de l'interface React, produits
+     * ici, côté serveur. C'est le seul endroit du backend qui en fabrique, et
+     * rien ne les vérifie à la compilation : un chemin faux ne casse pas, il
+     * retombe sur la route attrape-tout et affiche la page d'accueil. Les
+     * routes d'administration sont EN FRANÇAIS (/admin/signalements,
+     * /admin/contenu/exercices) — voir apps/web/src/App.jsx.
+     *
+     * Le test AdminAlertLinksTest compare ces chemins aux routes réellement
+     * déclarées.
      */
     private function alerts(): array
     {
@@ -77,7 +87,7 @@ class DashboardService
                 'kind' => 'high_priority_reports',
                 'severity' => 'critical',
                 'label' => "{$critical} signalement(s) prioritaire(s) non traité(s)",
-                'link' => '/admin/reports?priority=high&status=new',
+                'link' => '/admin/signalements?priority=high&status=new',
             ];
         }
 
@@ -95,7 +105,7 @@ class DashboardService
                 'kind' => 'repeated_reports',
                 'severity' => 'warning',
                 'label' => "{$cluster->reports_count} signalements identiques — {$cluster->lesson_code}, {$where}",
-                'link' => '/admin/reports?search='.urlencode((string) $cluster->lesson_code),
+                'link' => '/admin/signalements?search='.urlencode((string) $cluster->lesson_code),
             ];
         }
 
@@ -121,7 +131,7 @@ class DashboardService
                 'kind' => 'low_success_exercise',
                 'severity' => 'warning',
                 'label' => "Exercice {$row->exercise_id} : {$rate}% de réussite sur {$row->total} réponses",
-                'link' => '/admin/content/exercises?search='.urlencode((string) $row->exercise_id),
+                'link' => '/admin/contenu/exercices?search='.urlencode((string) $row->exercise_id),
             ];
         }
 

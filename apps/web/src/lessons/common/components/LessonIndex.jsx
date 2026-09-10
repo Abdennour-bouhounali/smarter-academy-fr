@@ -117,15 +117,31 @@ export default function LessonIndex({ config, basePath }) {
         {/* `flex-wrap` : sans lui, un fil d'Ariane long (un chapitre et un
             titre de leçon étendus) force la page à défiler latéralement sur
             un téléphone. C'est déjà ce que fait ModuleLayout. */}
-        <nav className="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
-          <Link to="/courses" className="hover:text-blue-600">Accueil</Link>
-          <span>/</span>
-          <Link to={`/courses?level=${config.level}&grade=${config.grade}`} className="hover:text-blue-600">{config.level === 'lycee' ? 'Lycée' : 'Collège'} ({config.grade})</Link>
-          <span>/</span>
-          <Link to={`/courses?level=${config.level}&grade=${config.grade}&chapter=${config.chapter}`} className="hover:text-blue-600">{config.chapterTitle || config.chapter}</Link>
-          <span>/</span>
-          <span className="text-slate-900 font-semibold">{config.title}</span>
-        </nav>
+        {/* Le fil d'Ariane à gauche, le signalement à droite : c'est la
+            rangée de chrome de la page, et l'élève y trouve le bouton sans
+            avoir à dérouler jusqu'en bas. `gap-3` + `flex-wrap` pour qu'il
+            passe sous le fil sur un téléphone plutôt que de le comprimer. */}
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          {/* `flex-1` : le fil d'Ariane prend la place restante, ce qui
+              maintient le bouton collé à droite MÊME quand la rangée passe à
+              la ligne — sans lui, un fil long le renvoyait à gauche sur sa
+              propre ligne. */}
+          <nav className="flex flex-1 flex-wrap items-center gap-2 text-xs font-mono text-slate-500">
+            <Link to="/courses" className="hover:text-blue-600">Accueil</Link>
+            <span>/</span>
+            <Link to={`/courses?level=${config.level}&grade=${config.grade}`} className="hover:text-blue-600">{config.level === 'lycee' ? 'Lycée' : 'Collège'} ({config.grade})</Link>
+            <span>/</span>
+            <Link to={`/courses?level=${config.level}&grade=${config.grade}&chapter=${config.chapter}`} className="hover:text-blue-600">{config.chapterTitle || config.chapter}</Link>
+            <span>/</span>
+            <span className="text-slate-900 font-semibold">{config.title}</span>
+          </nav>
+
+          <ReportButton
+            source="lesson"
+            variant="icon"
+            context={{ lessonCode: config.id, grade: config.grade, step: 'sommaire' }}
+          />
+        </div>
 
         {/* HERO CARD */}
         <section className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
@@ -411,16 +427,6 @@ export default function LessonIndex({ config, basePath }) {
         {/* Le sommaire de la leçon n'utilise pas ModuleLayout : sans cette
             entrée, ce serait la seule page de leçon d'où l'on ne pourrait
             rien signaler. */}
-        {/* À gauche : même raison que dans ModuleLayout — le coin bas-droit
-            appartient au déclencheur « Ma carte ». */}
-        <div className="flex justify-start pt-2">
-          <ReportButton
-            source="lesson"
-            variant="link"
-            context={{ lessonCode: config.id, grade: config.grade, step: 'sommaire' }}
-          />
-        </div>
-
       </main>
 
       <footer className="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500 mt-12">

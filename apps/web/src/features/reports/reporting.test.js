@@ -152,10 +152,26 @@ describe('la cible tactile de l’icône', () => {
   const button = read('src/features/reports/ReportButton.jsx');
   const iconVariant = button.slice(button.indexOf("variant === 'icon'"), button.indexOf("variant === 'link'"));
 
-  it('offre 44px au doigt tout en gardant une pastille de 36px', () => {
-    // h-11 w-11 = 44px de cible ; le <span> intérieur porte le visuel.
-    expect(iconVariant).toContain('h-11 w-11');
-    expect(iconVariant).toContain('h-9 w-9');
+  it('offre 44px de hauteur au doigt, la pastille visible en faisant 36', () => {
+    // h-11 = 44px de cible. La LARGEUR est libre : la pastille porte
+    // maintenant le mot « Signaler » à partir de `sm`, et mesure 118px au
+    // navigateur — bien au-delà des 44 requis. Contraindre `w-11` ici
+    // rendrait le test faux dès qu'on ajoute une étiquette.
+    expect(iconVariant).toContain('h-11');
+    expect(iconVariant).toContain('h-9');
+  });
+
+  it('reste lisible : une pastille bordée, pas une icône nue', () => {
+    // Une icône seule au milieu du bandeau se lit comme un ornement. La
+    // bordure et le fond la rangent avec les autres repères du module.
+    expect(iconVariant).toContain('border');
+    expect(iconVariant).toContain('Signaler');
+  });
+
+  it('masque le mot sur téléphone, où la barre du haut n’a pas la place', () => {
+    expect(iconVariant).toContain('hidden sm:inline');
+    // L'étiquette accessible porte alors seule le sens.
+    expect(iconVariant).toContain('aria-label={label}');
   });
 
   it('garde l’anneau de focus sur la pastille visible, pas sur la cible', () => {

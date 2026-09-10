@@ -133,10 +133,15 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
       title={label}
       aria-label={label}
       aria-haspopup="dialog"
-      className={`group inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full focus:outline-none ${className}`}
+      className={`group inline-flex h-11 shrink-0 items-center justify-center rounded-full focus:outline-none ${className}`}
     >
-      <span className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors group-hover:bg-slate-100 group-hover:text-slate-700 group-focus-visible:ring-2 group-focus-visible:ring-blue-400">
-        <Flag size={15} aria-hidden="true" />
+      {/* Une pastille bordée, comme celle des XP juste à côté : l'icône seule
+          se lisait comme un ornement. Le mot « Signaler » apparaît à partir de
+          `sm` — sur un téléphone, la barre du haut n'a pas la place, et
+          l'étiquette accessible porte alors seule le sens. */}
+      <span className="flex h-9 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-2.5 font-mono text-xs font-bold text-slate-500 shadow-sm transition-colors group-hover:border-slate-300 group-hover:bg-slate-50 group-hover:text-slate-800 group-focus-visible:ring-2 group-focus-visible:ring-blue-400 sm:px-3">
+        <Flag size={14} aria-hidden="true" />
+        <span className="hidden sm:inline">Signaler</span>
       </span>
     </button>
   ) : variant === 'link' ? (

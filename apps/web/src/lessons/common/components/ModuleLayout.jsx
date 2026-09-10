@@ -218,6 +218,24 @@ export default function ModuleLayout({
               <span id="xpCount">{xp || 0}</span>
               <span aria-label="points d'expérience">XP</span>
             </div>
+
+            {/* En haut à droite, avec les autres repères du module.
+                Il était en bas de page : accessible, mais il fallait dérouler
+                toute la leçon pour le trouver — donc trouvé surtout par ceux
+                qui n'en avaient plus besoin. Ici, il est visible au moment où
+                l'élève bute. La variante `icon` garde une pastille discrète
+                (44px de cible, 36px de visuel) : signaler ne doit pas
+                concurrencer « Module suivant ». */}
+            <ReportButton
+              source="module"
+              variant="icon"
+              context={{
+                lessonCode: lessonId,
+                grade: gradeId,
+                moduleNumber,
+                step: moduleTitle,
+              }}
+            />
           </div>
         </div>
 
@@ -242,22 +260,6 @@ export default function ModuleLayout({
             est ici, dans le shell partagé, et non recopié dans 1082 modules.
             Le contexte est pris de ce que ModuleLayout a déjà en portée :
             l'élève n'a rien à désigner. */}
-        {/* Aligné à GAUCHE, et non à droite : le déclencheur « Ma carte »
-            flotte en bas à droite (KnowledgeMap, fixed bottom-20 right-6), et
-            un panneau ouvert dans ce coin passait dessous. */}
-        <div className="flex justify-start pt-2">
-          <ReportButton
-            source="module"
-            variant="link"
-            context={{
-              lessonCode: lessonId,
-              grade: gradeId,
-              moduleNumber,
-              step: moduleTitle,
-            }}
-          />
-        </div>
-
         {/* Bottom Navigation */}
         <div className="flex justify-between items-center pt-8 pb-4">
           {prevLink ? (
