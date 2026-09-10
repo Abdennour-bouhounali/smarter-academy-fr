@@ -71,7 +71,13 @@ export const LESSON_CONFIG = {
   // vecteur lui-même, k·u, l'opposé, l'égalité de deux vecteurs. La
   // colinéarité elle-même ('colineaire') est le contenu propre de cette
   // leçon : elle n'est jamais un prérequis.
-  priorKnowledge: ['abscisse', 'ordonnee', 'coordonnees', 'composante', 'vecteur'],
+  // RECOUVREMENT ASSUMÉ avec vecteurs-2nde : le référentiel officiel 2026 place
+  // « Reconnaître deux vecteurs colinéaires » dans LES DEUX objets (`vecteurs`
+  // et `colinearite_et_alignement`). vecteurs-2nde M5 établit v = k·u en
+  // étirant un vecteur ; cette leçon la REPREND — briques `colin-direction` et
+  // `colin-multiple` en variant="rappel" — pour en tirer ce qui lui est propre :
+  // la proportionnalité des coordonnées, le déterminant, l'alignement.
+  priorKnowledge: ['abscisse', 'ordonnee', 'coordonnees', 'composante', 'vecteur', 'colineaire'],
   knowledgeAudit: {
     ignore: [
       // « sécantes » (module 6, épreuve 9) nomme ce que sont (AD) et (BC)

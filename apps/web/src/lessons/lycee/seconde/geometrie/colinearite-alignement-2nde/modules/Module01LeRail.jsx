@@ -143,9 +143,9 @@ export default function Module01LeRail() {
               <p className="text-sm text-slate-600">Deux vecteurs non nuls qui ont la même direction — le même rail, quels que soient leur longueur et leur sens — sont dits <span className="font-bold text-slate-900">colinéaires</span>. Tu as fabriqué {[...seen].length} façons d’être ou de ne pas l’être : plus long, à l’envers, hors du rail.</p>
               <KnowledgeBrick
                 id="colin-direction"
-                variant="new"
+                variant="rappel"
                 compact
-                lead={<>Tu viens de poser v plus long, à l’envers, puis hors du rail de u : la propriété qu’ils partagent sur le rail porte un nom.</>}
+                lead={<>Le mot a déjà été posé dans « Les vecteurs » (module 5, quand tu étirais v) : ici tu le REPRENDS par la direction, le rail que tu viens de manipuler.</>}
               />
               <KnowledgeBrick
                 id="colin-vocabulaire-direction-sens"

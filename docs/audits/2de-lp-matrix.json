@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:03:47.690Z",
+  "generatedAt": "2026-09-10T09:08:18.148Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -15096,7 +15096,8 @@
         "ordonnee",
         "coordonnees",
         "composante",
-        "vecteur"
+        "vecteur",
+        "colineaire"
       ],
       "routes": {
         "file": "apps/web/src/lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/routes.jsx",
@@ -15113,7 +15114,7 @@
       },
       "snapshotCount": 6,
       "brickCount": 24,
-      "requiresCount": 62,
+      "requiresCount": 65,
       "specDocs": [
         "docs/lessons/2NDE_COLINEARITE_ALIGNEMENT_SPEC.md"
       ],
@@ -15172,6 +15173,17 @@
               "prompt": "u (2 ; −3). Coordonnées de 3·u ?"
             },
             {
+              "id": "col-d6-colineaire",
+              "component": "diag",
+              "requires": [
+                "vecteur",
+                "composante",
+                "colineaire"
+              ],
+              "step": null,
+              "prompt": "Dans « Les vecteurs », tu as vu que v = k·u signifie que v est un multiple de u. Comment appelle-t-on alors ces deux vecteurs ?"
+            },
+            {
               "id": "col-d4-oppose",
               "component": "diag",
               "requires": [
@@ -15194,7 +15206,7 @@
           ],
           "questionCounts": {
             "stream": {
-              "diag": 5
+              "diag": 6
             },
             "jsxStatic": {
               "TapQuestion": 0,
@@ -15209,12 +15221,13 @@
           "requires": {
             "ids": [
               "abscisse",
+              "colineaire",
               "composante",
               "coordonnees",
               "ordonnee",
               "vecteur"
             ],
-            "count": 13,
+            "count": 16,
             "invalid": 0
           },
           "gatedReveals": 0,
@@ -15279,7 +15292,7 @@
             {
               "itemId": "colin-direction",
               "step": 4,
-              "variant": "new",
+              "variant": "rappel",
               "itemMissing": false,
               "line": 144
             },
@@ -15515,7 +15528,7 @@
             {
               "itemId": "colin-multiple",
               "step": 1,
-              "variant": "new",
+              "variant": "rappel",
               "itemMissing": false,
               "line": 94
             },
@@ -16291,7 +16304,7 @@
             "VectorPlane"
           ],
           "judgement": {
-            "status": "DUPLICATED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 1,
@@ -16333,7 +16346,8 @@
               "overlapsWith": [],
               "kind": "none"
             },
-            "confidence": "high"
+            "confidence": "high",
+            "note": "M1 « Le rail » fait manipuler la direction (VectorPlane) puis nomme la colinéarité. La brique `colin-direction` est en RAPPEL : le mot a déjà été posé par vecteurs-2nde M5. Le référentiel officiel 2026 place « Reconnaître deux vecteurs colinéaires » dans LES DEUX objets (`vecteurs` et `colinearite_et_alignement`) : le recouvrement est curriculaire, pas un défaut de construction. Traité côté 2de le 2026-09-10 comme le recouvrement 3e/2de : les briques qui redisent ce que vecteurs-2nde M5 a établi passent en variant=\"rappel\" et nomment la leçon source ; `colineaire` entre en priorKnowledge et une question du module 0 le diagnostique."
           }
         },
         {
@@ -16366,7 +16380,7 @@
             "VectorPlane"
           ],
           "judgement": {
-            "status": "DUPLICATED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 1,
@@ -16413,7 +16427,8 @@
               "overlapsWith": [],
               "kind": "none"
             },
-            "confidence": "high"
+            "confidence": "high",
+            "note": "M3 fait varier k et vérifier que v = k·u reste sur le rail, ce qui OUVRE la lecture par les coordonnées proportionnelles — l'apport propre de cette leçon. La brique `colin-multiple` est en RAPPEL puisque vecteurs-2nde l'a énoncée. Le référentiel officiel 2026 place « Reconnaître deux vecteurs colinéaires » dans LES DEUX objets (`vecteurs` et `colinearite_et_alignement`) : le recouvrement est curriculaire, pas un défaut de construction. Traité côté 2de le 2026-09-10 comme le recouvrement 3e/2de : les briques qui redisent ce que vecteurs-2nde M5 a établi passent en variant=\"rappel\" et nomment la leçon source ; `colineaire` entre en priorKnowledge et une question du module 0 le diagnostique."
           }
         },
         {
@@ -16671,7 +16686,7 @@
             "VectorPlane"
           ],
           "judgement": {
-            "status": "DUPLICATED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 2,
@@ -16720,7 +16735,8 @@
               "overlapsWith": [],
               "kind": "none"
             },
-            "confidence": "high"
+            "confidence": "high",
+            "note": "M2 « Trois points, une droite » fait déplacer C jusqu'à l'alignement (VectorPlane, feedback live), M5 y revient par le déterminant. Aucun recouvrement avec vecteurs-2nde ici : l'alignement de trois points est propre à cette leçon — le verdict DUPLICATED portait sur la colinéarité sous-jacente, désormais explicitement rappelée."
           }
         },
         {

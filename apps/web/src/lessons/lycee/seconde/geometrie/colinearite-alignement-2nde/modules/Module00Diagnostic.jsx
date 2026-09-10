@@ -51,6 +51,21 @@ const QUESTIONS = [
     explain: 'On multiplie LES DEUX coordonnées par 3 : (3 × 2 ; 3 × (−3)) = (6 ; −9).',
   },
   {
+    // « Les vecteurs » (module 5) a déjà énoncé v = k·u : cette leçon le REPREND
+    // pour en tirer la lecture par les coordonnées, le déterminant et
+    // l'alignement. On vérifie donc le mot AVANT de le réutiliser — le
+    // référentiel 2026 place cet item dans les deux objets officiels.
+    id: 'col-d6-colineaire',
+    skill: 'produit',
+    points: 2,
+    requires: ['vecteur', 'composante', 'colineaire'],
+    prompt: 'Dans « Les vecteurs », tu as vu que v = k·u signifie que v est un multiple de u. Comment appelle-t-on alors ces deux vecteurs ?',
+    options: ['Colinéaires', 'Égaux', 'Opposés'],
+    cols: 3,
+    correct: 0,
+    explain: 'v = k·u : v est un multiple de u, les deux flèches gardent la même direction. On dit qu’ils sont COLINÉAIRES. Ils ne sont égaux que si k = 1, et opposés que si k = −1.',
+  },
+  {
     id: 'col-d4-oppose',
     skill: 'produit',
     points: 2,

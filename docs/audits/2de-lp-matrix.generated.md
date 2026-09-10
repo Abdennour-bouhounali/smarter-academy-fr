@@ -8,9 +8,8 @@
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 278 | 91.7 % |
+| `COVERED` | 281 | 92.7 % |
 | `PARTIALLY_COVERED` | 22 | 7.3 % |
-| `DUPLICATED` | 3 | 1.0 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -24,7 +23,7 @@
 | `fonctions-de-reference-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 11 | 20 | 76 | 7 | ✅ | ✅ | ✅ | — |
 | `signe-fonctions-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 12 | 17 | 98 | 7 | ✅ | ✅ | ✅ | — |
 | `variations-extremums-2nde` | fonctions | available | 85 / 85 / 85 | 8 | 12 | 15 | 151 | 7 | ✅ | ✅ | ✅ | — |
-| `colinearite-alignement-2nde` | geometrie | available | 64 / 64 / 64 | 7 | 9 | 24 | 62 | 6 | ✅ | ✅ | ✅ | — |
+| `colinearite-alignement-2nde` | geometrie | available | 64 / 64 / 64 | 7 | 9 | 24 | 65 | 6 | ✅ | ✅ | ✅ | — |
 | `equations-de-droites-2nde` | geometrie | available | 85 / 85 / 85 | 9 | 12 | 30 | 76 | 8 | ✅ | ✅ | ✅ | — |
 | `positions-relatives-droites-2nde` | geometrie | available | 70 / 70 / 70 | 7 | 8 | 21 | 77 | 6 | ✅ | ✅ | ✅ | — |
 | `trigonometrie-cercle-2nde` | geometrie | available | 80 / 80 / 80 | 6 | 9 | 13 | 56 | 5 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
@@ -136,12 +135,12 @@
 | `P10` Relier graphique et tableau de variations | fonctions | `variations-extremums-2nde` | M3, M6 | COVERED | M3.1 manipulation:VariationTable · M3.1 manipulation:TrailLab · M3.1 … | Les DEUX SENS du lien sont travai… | `va-e4` `va-e6` | `tableau-de-variations` `methode-construire-tableau-variations` `methode-lire-tableau-variations` | M3, M6 |
 | `P11` Comparer f(a) et f(b) | fonctions | `variations-extremums-2nde` | M2, M5 | COVERED | M2.1 manipulation:TwoProbes · M2.2 manipulation:TwoProbes · M2.3 mani… | TwoProbes affiche en permanence, … | `va-e1` `va-e2` | `methode-comparer-images-tableau` `methode-encadrer-images` `definition-croissante-decroissante` | M2, M5 |
 | `P12` Résoudre un problème d'optimisation | fonctions | `variations-extremums-2nde` | M6 | COVERED | M6.1 brick:methode-optimiser · M6.1 question:M06-S1-Q1 · M6.2 questio… | Aucune — le module 6 est un pract… | `va-e10` | `methode-optimiser` `maximum-minimum` `methode-extremum-tableau` | M6 |
-| `P1` Comprendre la colinéarité | geometrie | `colinearite-alignement-2nde` | M1, M2 | DUPLICATED | M1.1 manipulation:VectorPlane · M1.2 feedback · M1.4 brick:colin-dire… | VectorPlane — v est glissable, un… | `col-e1` | `colin-direction` `colin-vocabulaire-direction-sens` `colin-vecteur-nul` | M1, M2 |
-| `P2` Reconnaître deux vecteurs colinéaires | geometrie | `colinearite-alignement-2nde` | M1, M3 | DUPLICATED | M1.4 question:M01-S4 · M3.1 manipulation:Stepper · M3.1 brick:colin-m… | M3 étape 1 : un curseur k de −3 à… | `col-e2` | `colin-multiple` `colin-produits-croix` `mem-colin-multiple` | M1, M3 |
+| `P1` Comprendre la colinéarité | geometrie | `colinearite-alignement-2nde` | M1, M2 | COVERED | M1.1 manipulation:VectorPlane · M1.2 feedback · M1.4 brick:colin-dire… | VectorPlane — v est glissable, un… | `col-e1` | `colin-direction` `colin-vocabulaire-direction-sens` `colin-vecteur-nul` | M1, M2 |
+| `P2` Reconnaître deux vecteurs colinéaires | geometrie | `colinearite-alignement-2nde` | M1, M3 | COVERED | M1.4 question:M01-S4 · M3.1 manipulation:Stepper · M3.1 brick:colin-m… | M3 étape 1 : un curseur k de −3 à… | `col-e2` | `colin-multiple` `colin-produits-croix` `mem-colin-multiple` | M1, M3 |
 | `P3` Utiliser la proportionnalité des coordonnées | geometrie | `colinearite-alignement-2nde` | M3 | COVERED | M3.1 manipulation:Stepper · M3.1 feedback · M3.2 brick:colin-produits… | Curseur k + ProportionTable : l'é… | `col-e3` `col-e10` | `colin-produits-croix` `colin-coordonnee-manquante-prop` `mem-colin-multiple` | M3 |
 | `P4` Calculer un déterminant | geometrie | `colinearite-alignement-2nde` | M4 | COVERED | M4.1 manipulation:VectorPlane · M4.1 feedback · M4.1 brick:colin-dete… | VectorPlane avec u ET v glissable… | `col-e4` `col-e5` | `colin-determinant` `colin-calculer-det` `colin-formule-det` | M4 |
 | `P5` Utiliser le déterminant pour tester la coliné… | geometrie | `colinearite-alignement-2nde` | M4 | COVERED | M4.1 manipulation:VectorPlane · M4.1 brick:colin-critere-det · M4.2 f… | La même que P4 ; l'étape 2 fait v… | `col-e5` | `colin-critere-det` `mem-colin-det-zero` | M4 |
-| `P6` Déterminer si trois points sont alignés | geometrie | `colinearite-alignement-2nde` | M2, M5 | DUPLICATED | M2.1 manipulation:VectorPlane · M2.1 feedback · M2.1 brick:colin-alig… | VectorPlane M2 — A et B fixes, C … | `col-e6` `col-e7` | `colin-alignement` `colin-vocabulaire-aligne` `colin-oeil-hesite` | M2, M5 |
+| `P6` Déterminer si trois points sont alignés | geometrie | `colinearite-alignement-2nde` | M2, M5 | COVERED | M2.1 manipulation:VectorPlane · M2.1 feedback · M2.1 brick:colin-alig… | VectorPlane M2 — A et B fixes, C … | `col-e6` `col-e7` | `colin-alignement` `colin-vocabulaire-aligne` `colin-oeil-hesite` | M2, M5 |
 | `P7` Déterminer si deux droites sont parallèles | geometrie | `colinearite-alignement-2nde` | M5 | COVERED | M5.1 manipulation:VectorPlane · M5.1 feedback · M5.1 brick:colin-para… | VectorPlane M5 étape 1 — D glissa… | `col-e8` `col-e9` | `colin-parallelisme-det` `colin-vocabulaire-parallele` | M5 |
 | `P8` Résoudre un problème d'alignement | geometrie | `colinearite-alignement-2nde` | M5 | COVERED | M5.2 question:M05-S2 · M5.3 question:M05-S3 · M5.4 question:M05-S4 · … | Aucune manipulation propre : M5 é… | `col-e7` `col-e10` | `colin-methode-conclure` `colin-coordonnee-manquante-det` `mem-colin-deux-usages` | M5 |
 | `P9` Résoudre un problème de parallélisme | geometrie | `colinearite-alignement-2nde` | M5 | COVERED | M5.6 question:M05-S6-Q1 · M5.6 question:M05-S6-Q2 · M5.1 manipulation… | Aucun instrument propre, mais un … | `col-e9` | `colin-parallelisme-det` `colin-methode-conclure` | M5 |

@@ -4,7 +4,7 @@
  "auditor": "2de-geometrie-batch",
  "learningPoints": {
   "seconde_colinearite-alignement-2nde_P1": {
-   "status": "DUPLICATED",
+   "status": "COVERED",
    "evidence": [
     {
      "module": 1,
@@ -46,10 +46,11 @@
     "overlapsWith": [],
     "kind": "none"
    },
-   "confidence": "high"
+   "confidence": "high",
+   "note": "M1 « Le rail » fait manipuler la direction (VectorPlane) puis nomme la colinéarité. La brique `colin-direction` est en RAPPEL : le mot a déjà été posé par vecteurs-2nde M5. Le référentiel officiel 2026 place « Reconnaître deux vecteurs colinéaires » dans LES DEUX objets (`vecteurs` et `colinearite_et_alignement`) : le recouvrement est curriculaire, pas un défaut de construction. Traité côté 2de le 2026-09-10 comme le recouvrement 3e/2de : les briques qui redisent ce que vecteurs-2nde M5 a établi passent en variant=\"rappel\" et nomment la leçon source ; `colineaire` entre en priorKnowledge et une question du module 0 le diagnostique."
   },
   "seconde_colinearite-alignement-2nde_P2": {
-   "status": "DUPLICATED",
+   "status": "COVERED",
    "evidence": [
     {
      "module": 1,
@@ -96,7 +97,8 @@
     "overlapsWith": [],
     "kind": "none"
    },
-   "confidence": "high"
+   "confidence": "high",
+   "note": "M3 fait varier k et vérifier que v = k·u reste sur le rail, ce qui OUVRE la lecture par les coordonnées proportionnelles — l'apport propre de cette leçon. La brique `colin-multiple` est en RAPPEL puisque vecteurs-2nde l'a énoncée. Le référentiel officiel 2026 place « Reconnaître deux vecteurs colinéaires » dans LES DEUX objets (`vecteurs` et `colinearite_et_alignement`) : le recouvrement est curriculaire, pas un défaut de construction. Traité côté 2de le 2026-09-10 comme le recouvrement 3e/2de : les briques qui redisent ce que vecteurs-2nde M5 a établi passent en variant=\"rappel\" et nomment la leçon source ; `colineaire` entre en priorKnowledge et une question du module 0 le diagnostique."
   },
   "seconde_colinearite-alignement-2nde_P3": {
    "status": "COVERED",
@@ -246,7 +248,7 @@
    "confidence": "high"
   },
   "seconde_colinearite-alignement-2nde_P6": {
-   "status": "DUPLICATED",
+   "status": "COVERED",
    "evidence": [
     {
      "module": 2,
@@ -295,7 +297,8 @@
     "overlapsWith": [],
     "kind": "none"
    },
-   "confidence": "high"
+   "confidence": "high",
+   "note": "M2 « Trois points, une droite » fait déplacer C jusqu'à l'alignement (VectorPlane, feedback live), M5 y revient par le déterminant. Aucun recouvrement avec vecteurs-2nde ici : l'alignement de trois points est propre à cette leçon — le verdict DUPLICATED portait sur la colinéarité sous-jacente, désormais explicitement rappelée."
   },
   "seconde_colinearite-alignement-2nde_P7": {
    "status": "COVERED",

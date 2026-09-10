@@ -93,9 +93,9 @@ export default function Module03Proportionnelles() {
                   <Feedback tone="ok">Quel que soit k, v reste sur le rail : <strong>colinéaire à u ⇔ v = k·u</strong>. Les coordonnées de v sont celles de u multipliées par le même k — elles sont <strong>proportionnelles</strong>. k &lt; 0 retourne le sens{visited.has(0) ? ' ; k = 0 donne le vecteur nul, colinéaire à tout vecteur' : ''}.</Feedback>
                   <KnowledgeBrick
                     id="colin-multiple"
-                    variant="new"
+                    variant="rappel"
                     compact
-                    lead={<>Tu viens de régler k et de voir v = k·u rester sur le rail à chaque valeur.</>}
+                    lead={<>« Les vecteurs » avait déjà énoncé v = k·u au module 5 ; tu viens de le VÉRIFIER pour chaque k, et c’est ce qui ouvre la lecture par les coordonnées.</>}
                   />
                   <KnowledgeBrick
                     id="colin-nul-colineaire-tout"
