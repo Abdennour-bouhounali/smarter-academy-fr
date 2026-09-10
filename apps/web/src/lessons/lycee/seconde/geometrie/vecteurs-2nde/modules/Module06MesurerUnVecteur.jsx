@@ -6,6 +6,7 @@ import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import VectorLab from '../components/VectorLab';
 import MidpointLab from '../components/MidpointLab';
 import { VecName } from '../components/VectorScene';
+import { sub, norm } from '../components/vecteurUtils';
 import { SCENES, RANGE, equal, normText, formatVec, formatNum, midpoint, vec, dist, parseDecSigned } from '../components/vecteurUtils';
 
 /**
@@ -49,6 +50,9 @@ export default function Module06MesurerUnVecteur() {
   const done1 = seen.has('a') && seen.has('b');
 
   const [q2, setQ2] = useState(false);
+  const [bPoint, setBPoint] = useState({ x: 2, y: 3 });
+  const [probeSeen, setProbeSeen] = useState(() => new Set());
+  const [probed, setProbed] = useState(false);
 
   const [I, setI] = useState({ x: 1, y: -3 });
   const done3 = equal(vec(A3, I), vec(I, B3));
@@ -119,9 +123,70 @@ export default function Module06MesurerUnVecteur() {
       ),
     },
     {
+      // Le pas « la distance AB EST la norme du vecteur AB » était ANNONCÉ par
+      // ce sous-titre, puis éprouvé par la question qui suivait : l'élève
+      // vérifiait une identification qu'on venait de lui donner. Il la
+      // CONSTATE désormais — il déplace B, et les deux nombres (la distance
+      // mesurée, la norme calculée) restent égaux quoi qu'il fasse.
       num: 2,
+      title: 'Deux nombres qui ne se séparent jamais',
+      subtitle: 'Déplace B où tu veux. À gauche : la distance de A à B. À droite : la longueur de la flèche AB. Compare.',
+      done: probed,
+      content: (kit) => (
+        <div className="space-y-3">
+          <VectorLab
+            origin={A2}
+            vector={sub(bPoint, A2)}
+            onVectorChange={(nv) => {
+              const nb = { x: A2.x + nv.x, y: A2.y + nv.y };
+              setBPoint(nb);
+              const seenNext = new Set(probeSeen);
+              seenNext.add(`${nb.x},${nb.y}`);
+              setProbeSeen(seenNext);
+              if (seenNext.size >= 3 && !probed) { setProbed(true); kit.react(true); }
+            }}
+            mode="build"
+            range={RANGE}
+            names={{ origin: 'A', tip: 'B', vector: 'AB' }}
+            escalier
+            showWords={false}
+            ariaLabel={`Point B en ${formatVec(bPoint)}, flèche AB depuis A`}
+          />
+          <p className="text-sm flex flex-wrap items-center gap-2 font-mono tabular-nums" aria-live="polite">
+            <span className="px-3 py-1 rounded-lg bg-violet-100 text-violet-900 font-bold" data-distance={dist(A2, bPoint)}>
+              distance AB = {formatNum(dist(A2, bPoint))}
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-cyan-600 text-white font-bold" data-norme={norm(sub(bPoint, A2))}>
+              ‖<VecName>AB</VecName>‖ = {formatNum(norm(sub(bPoint, A2)))}
+            </span>
+          </p>
+          {probed ? (
+            <>
+              <Feedback tone="ok">
+                Trois positions de B, et les deux nombres n’ont jamais différé. Ce n’est pas une
+                coïncidence : la flèche <VecName>AB</VecName> a justement pour longueur l’écart entre
+                A et B. <strong>Mesurer une distance et calculer une norme sont le même geste</strong> —
+                et c’est pourquoi la formule de la norme donne aussi la distance.
+              </Feedback>
+              <KnowledgeBrick
+                id="vocab-norme"
+                variant="rappel"
+                compact
+                lead={<>Tu viens de le vérifier trois fois : AB = ‖<VecName>AB</VecName>‖.</>}
+              />
+            </>
+          ) : (
+            <Feedback tone="info">
+              Déplace B encore {3 - probeSeen.size} fois et surveille les deux étiquettes.
+            </Feedback>
+          )}
+        </div>
+      ),
+    },
+    {
+      num: 3,
       title: 'La distance entre deux points',
-      subtitle: `A ${formatVec(A2)} et B ${formatVec(B2)}. La distance AB est la longueur du vecteur AB.`,
+      subtitle: `A ${formatVec(A2)} et B ${formatVec(B2)}. À toi de la calculer, sans la lire.`,
       done: q2,
       content: (
         <NumericQuestion
@@ -142,7 +207,7 @@ export default function Module06MesurerUnVecteur() {
       ),
     },
     {
-      num: 3,
+      num: 4,
       title: 'Place le milieu',
       subtitle: `A ${formatVec(A3)}, B ${formatVec(B3)}. Déplace I jusqu’à ce que AI et IB soient le même vecteur.`,
       done: done3,
@@ -180,7 +245,7 @@ export default function Module06MesurerUnVecteur() {
       ),
     },
     {
-      num: 4,
+      num: 5,
       title: 'Sans la figure',
       done: q4,
       content: (
@@ -206,7 +271,7 @@ export default function Module06MesurerUnVecteur() {
       moduleNumber={6}
       moduleTitle="Mesurer un vecteur"
       moduleSubtitle="Norme, distance, milieu"
-      estimatedTime="9 min"
+      estimatedTime="12 min"
       brief={{
         tag: 'Manipulation',
         title: 'Combien mesure la flèche ?',

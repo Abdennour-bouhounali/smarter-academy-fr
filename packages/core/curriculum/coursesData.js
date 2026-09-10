@@ -1964,7 +1964,7 @@ const smaMetadata = {
       "Calculer les coordonnées du milieu d'un segment",
       "Utiliser les vecteurs pour résoudre un problème",
     ],
-    durationMinutes: 84,
+    durationMinutes: 87,
     difficulty: "Difficile",
     status: 'available',
     icon: "➡️",

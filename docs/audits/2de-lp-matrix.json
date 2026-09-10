@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:37:47.698Z",
+  "generatedAt": "2026-09-10T09:42:49.890Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -7,7 +7,7 @@
     "unbuiltCatalogueLessons": 0,
     "learningPoints": 303,
     "judged": 303,
-    "bricks": 492,
+    "bricks": 493,
     "assessmentQuestions": 336,
     "externalLearningPoints": 159,
     "reconciled": 159
@@ -23845,9 +23845,9 @@
       "status": "available",
       "dir": "apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde",
       "duration": {
-        "catalogue": 84,
-        "config": 84,
-        "moduleSum": 84,
+        "catalogue": 87,
+        "config": 87,
+        "moduleSum": 87,
         "drift": false
       },
       "knowledgeMap": true,
@@ -23876,7 +23876,7 @@
         "problems": []
       },
       "snapshotCount": 8,
-      "brickCount": 29,
+      "brickCount": 30,
       "requiresCount": 66,
       "specDocs": [
         "docs/lessons/2NDE_VECTEURS_SPEC.md"
@@ -24589,8 +24589,8 @@
           "slug": "mesurer-un-vecteur",
           "title": "Mesurer un vecteur",
           "stage": "manipulation",
-          "estimatedMin": 9,
-          "estimatedTimeLabel": "9 min",
+          "estimatedMin": 12,
+          "estimatedTimeLabel": "12 min",
           "teaches": [
             "seconde_vecteurs-2nde_P10",
             "seconde_vecteurs-2nde_P12",
@@ -24613,28 +24613,29 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "questions": [
             {
-              "id": "M06-S2-Q1",
+              "id": "M06-S3-Q1",
               "component": "NumericQuestion",
               "requires": [
                 "methode-calcul-norme",
                 "vocab-norme",
                 "regle-coordonnees"
               ],
-              "step": 2,
+              "step": 3,
               "prompt": "Combien vaut AB ?"
             },
             {
-              "id": "M06-S4-Q2",
+              "id": "M06-S5-Q2",
               "component": "TapQuestion",
               "requires": [
                 "methode-milieu",
                 "formule-milieu"
               ],
-              "step": 4,
+              "step": 5,
               "prompt": "Quel est le milieu de [CD], avec C ‹› et D ‹› ?"
             }
           ],
@@ -24648,7 +24649,7 @@
               "BatchChoiceQuestion": 0,
               "NumericQuestion": 1,
               "PredictionChips": 0,
-              "KnowledgeBrick": 5,
+              "KnowledgeBrick": 6,
               "KnowledgeSnapshot": 1
             }
           },
@@ -24658,35 +24659,42 @@
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 93
+              "line": 97
             },
             {
               "itemId": "vocab-norme",
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 100
+              "line": 104
             },
             {
               "itemId": "formule-norme",
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 108
+              "line": 112
+            },
+            {
+              "itemId": "vocab-norme",
+              "step": 2,
+              "variant": "rappel",
+              "itemMissing": false,
+              "line": 171
             },
             {
               "itemId": "methode-milieu",
-              "step": 3,
+              "step": 4,
               "variant": "new",
               "itemMissing": false,
-              "line": 162
+              "line": 227
             },
             {
               "itemId": "formule-milieu",
-              "step": 3,
+              "step": 4,
               "variant": "new",
               "itemMissing": false,
-              "line": 169
+              "line": 234
             }
           ],
           "requires": {
@@ -24700,7 +24708,7 @@
             "count": 5,
             "invalid": 0
           },
-          "gatedReveals": 4,
+          "gatedReveals": 6,
           "manipulations": [
             {
               "name": "MidpointLab",
@@ -26082,28 +26090,40 @@
             "VectorLab"
           ],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 6,
                 "moduleSlug": "mesurer-un-vecteur",
-                "step": 2,
-                "mechanism": "question:M06-S2-Q1"
-              },
-              {
-                "module": 6,
-                "moduleSlug": "mesurer-un-vecteur",
                 "step": 1,
-                "mechanism": "brick:methode-calcul-norme"
+                "mechanism": "manipulation:VectorLab"
               },
               {
                 "module": 6,
                 "moduleSlug": "mesurer-un-vecteur",
                 "step": 1,
                 "mechanism": "brick:formule-norme"
+              },
+              {
+                "module": 6,
+                "moduleSlug": "mesurer-un-vecteur",
+                "step": 2,
+                "mechanism": "manipulation:VectorLab"
+              },
+              {
+                "module": 6,
+                "moduleSlug": "mesurer-un-vecteur",
+                "step": 2,
+                "mechanism": "brick:vocab-norme"
+              },
+              {
+                "module": 6,
+                "moduleSlug": "mesurer-un-vecteur",
+                "step": 3,
+                "mechanism": "question:M06-S3-Q1"
               }
             ],
-            "manipulation": "Aucune manipulation propre : la distance réutilise l'escalier de l'étape 1, mais elle n'est jamais mesurée sur une figure que l'élève manipule",
+            "manipulation": "Étape 2 du module 6 : l'élève déplace B et surveille DEUX étiquettes côte à côte — la distance de A à B, et la norme du vecteur AB. Elles ne se séparent jamais, quelle que soit la position de B ; il faut trois positions distinctes pour valider l'étape. L'identification n'est plus annoncée, elle est constatée.",
             "assessmentQuestionIds": [
               "vec-e9"
             ],
@@ -26111,7 +26131,7 @@
               "formule-norme",
               "vocab-norme"
             ],
-            "notes": "PARTIEL. Le pas conceptuel « la distance AB EST la norme du vecteur AB » n'a pas de geste : il est annoncé dans le sous-titre de l'étape 2 (« La distance AB est la longueur du vecteur AB ») et affirmé dans la brique vocab-norme (AB = ‖AB‖) ; le seul dispositif est la NumericQuestion M06-S2-Q1, qui vient donc éprouver une identification établie par un sous-titre. Chaîne AB → coordonnées → norme entièrement demandée d'un coup, sans étape intermédiaire visible. La formule complète AB = √((xB−xA)² + (yB−yA)²) n'apparaît que dans le corps de la brique formule-norme, jamais dérivée devant l'élève. vec-e9 (CD = 10) l'éprouve correctement mais est partagée avec P13.",
+            "notes": "PARTIEL. Le pas conceptuel « la distance AB EST la norme du vecteur AB » n'a pas de geste : il est annoncé dans le sous-titre de l'étape 2 (« La distance AB est la longueur du vecteur AB ») et affirmé dans la brique vocab-norme (AB = ‖AB‖) ; le seul dispositif est la NumericQuestion M06-S2-Q1, qui v\n\nRÉSOLU le 2026-09-10. Le pas conceptuel « la distance AB EST la norme du vecteur AB » était annoncé par le SOUS-TITRE de l'étape puis éprouvé par la question qui suivait : l'élève vérifiait une identification qu'on venait de lui donner, et la chaîne AB → coordonnées → norme était demandée d'un seul coup. Une étape de constat est insérée avant : deux lecteurs (distance mesurée, norme calculée) restent égaux pendant que l'élève déplace B. La brique vocab-norme y est posée en RAPPEL — elle a déjà servi à l'étape 1 pour la norme seule. Le calcul complet n'est demandé qu'ensuite, sur des points fixes. Vérifié au navigateur : trois positions, dist = norme à chaque fois (4,1231 / 5,0990 / 6,0828), constat affiché, étape suivante ouverte.",
             "crossGrade": {
               "overlapsWith": [
                 "3e:reperage-droite-plan-3e"

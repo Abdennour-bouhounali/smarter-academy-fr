@@ -1,311 +1,740 @@
 {
-  "lesson": "vecteurs-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-geometrie-batch",
-  "learningPoints": {
-    "seconde_vecteurs-2nde_P1": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 1, "mechanism": "manipulation:VectorLab" },
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 1, "mechanism": "feedback" },
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 1, "mechanism": "brick:egalite-vecteurs" },
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 4, "mechanism": "question:M02-S4-Q1" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 4, "mechanism": "brick:regle-egalite-coordonnees" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 4, "mechanism": "question:M03-S4-Q3" }
-      ],
-      "manipulation": "VectorLab en mode 'move' — seule l'origine bouge, les composantes sont figées ; l'élève pose trois représentants (garde TROP_PRES = 2 pour qu'ils restent lisibles) et voit que le déplacement ne change jamais",
-      "assessmentQuestionIds": ["vec-e1", "vec-e10"],
-      "knowledgeItems": ["egalite-vecteurs", "vocab-representant", "regle-egalite-coordonnees"],
-      "notes": "Chaîne complète et dans le bon ordre : geste (3 flèches posées) → révélation conditionnée {done1 ? <Feedback>} qui nomme l'égalité → briques egalite-vecteurs et vocab-representant, toutes deux gardées par done1 → question M02-S4-Q1 à l'étape 4. Le critère de CALCUL (mêmes coordonnées) est ajouté en M3 étape 4, brique AVANT la BatchChoiceQuestion. vec-e1 mesure exactement cela (deux flèches, mêmes coordonnées, positions différentes) et n'est pas devinable sans calcul.",
-      "crossGrade": {
-        "overlapsWith": ["3e:translations-vecteurs-3e"],
-        "kind": "repetition",
-        "detail": "translations-vecteurs-3e M4 « La flèche vagabonde » exécute EXACTEMENT la même manipulation (VectorLab mode move, composantes figées, TROP_PRES = 2, trois flèches à poser) et pose la brique vecteurs-egaux ; sa question d'étape 3 (« Une flèche va de (−4 ; 1) à (−1 ; 3). Une autre va de (2 ; −2) à (5 ; 0) ») est mot pour mot l'épreuve vec-e1 du boss de 2de. Le geste, la garde et l'exemple sont identiques : ce n'est pas une consolidation, c'est une répétition."
-      },
-      "confidence": "high"
+ "lesson": "vecteurs-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-geometrie-batch",
+ "learningPoints": {
+  "seconde_vecteurs-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 1,
+     "mechanism": "manipulation:VectorLab"
     },
-    "seconde_vecteurs-2nde_P2": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 2, "mechanism": "manipulation:VectorLab" },
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 2, "mechanism": "feedback" },
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 2, "mechanism": "brick:vecteur-nul" },
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 2, "mechanism": "manipulation:SumLab" }
-      ],
-      "manipulation": "VectorLab 'build' : l'élève réduit le déplacement jusqu'à ce que A′ revienne sur A et que la flèche devienne un anneau ; puis SumLab M4 étape 2 où u + (−u) fait retomber C sur A",
-      "assessmentQuestionIds": ["vec-e2"],
-      "knowledgeItems": ["vecteur-nul"],
-      "notes": "Le vecteur nul est OBTENU par le geste (isZero(v2) est la condition de réussite), pas annoncé. La brique vecteur-nul est gardée par done2. Deuxième rencontre en M4 étape 2 (u + (−u) = 0), également par manipulation. Réserve d'évidence : vec-e2 est partagé avec P4 et son énoncé porte sur des sommes formelles (AB + BA, AB − BA, AB + BC) plutôt que sur la reconnaissance directe du vecteur nul — voir lessonLevel.pedagogicalProblems.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 1,
+     "mechanism": "feedback"
     },
-    "seconde_vecteurs-2nde_P3": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-robot-du-depot", "step": 2, "mechanism": "manipulation:DisplacementLab" },
-        { "module": 1, "moduleSlug": "le-robot-du-depot", "step": 5, "mechanism": "brick:vecteur-deplacement" },
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 1, "mechanism": "brick:vocab-representant" },
-        { "module": 2, "moduleSlug": "le-meme-vecteur", "step": 4, "mechanism": "question:M02-S4-Q1" }
-      ],
-      "manipulation": "DisplacementLab M1 étape 2 — le second robot doit reproduire la recette du premier depuis une autre case ; `diagnose` nomme l'attribut fautif (direction / sens / longueur) au lieu d'un « faux » sec",
-      "assessmentQuestionIds": ["vec-e3"],
-      "knowledgeItems": ["vecteur-deplacement", "mem-deplacement", "vocab-representant"],
-      "notes": "L'élève CONSTRUIT un représentant avant qu'on lui donne le mot : M1 étape 2 exige de reproduire le déplacement depuis un autre départ, M2 étape 1 lui fait poser trois flèches. La brique vocab-representant est gardée par done1 et la question M02-S4-Q1 (« combien de flèches peuvent le représenter ? ») vient après. vec-e3 demande le point d'arrivée du représentant de u partant de C : c'est bien la construction, pas la reconnaissance.",
-      "crossGrade": {
-        "overlapsWith": ["3e:translations-vecteurs-3e"],
-        "kind": "repetition",
-        "detail": "translations-vecteurs-3e M1 « Le même trajet » fait déjà reproduire un déplacement modèle depuis un autre point, avec le même VectorLab et le même diagnostic par attribut ; M4 fait déjà poser trois représentants. Le robot du dépôt rejoue la chorégraphie des drones."
-      },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 1,
+     "mechanism": "brick:egalite-vecteurs"
     },
-    "seconde_vecteurs-2nde_P4": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 1, "mechanism": "manipulation:SumLab" },
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 1, "mechanism": "feedback" },
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 1, "mechanism": "brick:regle-somme" },
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 3, "mechanism": "brick:vocab-relation-chasles" },
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 3, "mechanism": "question:M04-S3-Q1" },
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 4, "mechanism": "question:M04-S4-Q2" }
-      ],
-      "manipulation": "SumLab — l'élève règle v et le pose au bout de u ; la flèche ambre « trajet direct » apparaît et le tableau écrit 3 + (−1) et 1 + 3 ; l'étape 4 montre le parallélogramme (v puis u = u puis v)",
-      "assessmentQuestionIds": ["vec-e2", "vec-e4"],
-      "knowledgeItems": ["regle-somme", "formule-somme", "vocab-relation-chasles", "mem-chasles", "formule-chasles"],
-      "notes": "Exemplaire : la somme est VUE (flèche ambre) avant d'être écrite, la brique regle-somme est gardée par done1, Chasles arrive en étape 3 avec la figure au-dessus de la brique et la question après. La commutativité est établie par la figure du parallélogramme (étape 4) puis éprouvée par la ligne s3 du BatchChoice. vec-e4 est un calcul avec signes non devinable.",
-      "crossGrade": {
-        "overlapsWith": ["3e:translations-vecteurs-3e"],
-        "kind": "anticipation",
-        "detail": "La relation de Chasles est explicitement HORS PÉRIMÈTRE en 3e (lesson.config.js et knowledge.jsx de translations-vecteurs-3e le disent). Le 3e n'enchaîne que par addition de composantes, sans notation. La somme formelle est donc bien neuve en 2de."
-      },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 4,
+     "mechanism": "question:M02-S4-Q1"
     },
-    "seconde_vecteurs-2nde_P5": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 1, "mechanism": "manipulation:ScaleLab" },
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 1, "mechanism": "feedback" },
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 1, "mechanism": "brick:regle-produit-reel" },
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 2, "mechanism": "question:M05-S2-Q1" }
-      ],
-      "manipulation": "ScaleLab — l'élève doit VISITER k = 2, k = −1 et k = 0 (done1 = GOALS.every(visited.has)) et regarder la flèche s'allonger, se retourner, disparaître",
-      "assessmentQuestionIds": ["vec-e5"],
-      "knowledgeItems": ["regle-produit-reel"],
-      "notes": "La garde force les trois cas qualitatifs, y compris k = 0 et k négatif — c'est ce qui casse la confusion « k < 0 change la direction », reprise dans le distracteur 2 de vec-e5. Brique gardée par done1, BatchChoiceQuestion en étape 2 (dont 0,5·u, un k non entier jamais manipulé mais déductible de la règle).",
-      "crossGrade": {
-        "overlapsWith": [],
-        "kind": "none",
-        "detail": "Le produit par un réel n'apparaît nulle part en 3e (ni dans translations-vecteurs-3e ni dans reperage-droite-plan-3e). Notion authentiquement neuve."
-      },
-      "confidence": "high"
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 4,
+     "mechanism": "brick:regle-egalite-coordonnees"
     },
-    "seconde_vecteurs-2nde_P6": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 3, "mechanism": "manipulation:VectorLab" },
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 3, "mechanism": "feedback" },
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 3, "mechanism": "brick:regle-colineaire" },
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 4, "mechanism": "question:M05-S4-Q2" },
-        { "module": 7, "moduleSlug": "problemes-de-geometrie", "step": 3, "mechanism": "question:M07-S3-Q3" }
-      ],
-      "manipulation": "VectorLab étape 3 — l'élève règle v jusqu'à ce que colinearFactor(u, v) existe et ne vaille ni 0 ni 1 ; le lecteur en dessous affiche en direct « v = k·u » ou « pas un multiple »",
-      "assessmentQuestionIds": ["vec-e6"],
-      "knowledgeItems": ["regle-colineaire"],
-      "notes": "La colinéarité est PRODUITE par l'élève (il doit fabriquer un multiple, l'exclusion k = 1 l'empêche de recopier u) avant d'être nommée. Le lecteur en direct est le vrai enseignant : il dit « pas un multiple » tant que la condition n'est pas remplie. Attention : la leçon suivante « Colinéarité et alignement » reprend cette même notion — voir lessonLevel.duplicates.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_vecteurs-2nde_P7": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 1, "mechanism": "manipulation:VectorLab" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 1, "mechanism": "feedback" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 1, "mechanism": "brick:vocab-base-orthonormee" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 1, "mechanism": "feedback" }
-      ],
-      "manipulation": "VectorLab 'build' avec `escalier` et deux petites flèches extraArrows i (1 ; 0) et j (0 ; 1) tracées depuis l'origine ; l'élève amène B sur l'anneau et lit u = 3·i + 2·j sous le plan",
-      "assessmentQuestionIds": ["vec-e7"],
-      "knowledgeItems": ["vocab-base-orthonormee"],
-      "notes": "PARTIEL. Le côté « lire u = x·i + y·j » est bien établi : i et j sont dessinés, la ligne DOM affiche la combinaison en direct, la brique est gardée par done1, et vec-e7 (2i − 3j → (2 ; −3)) l'éprouve. Mais l'intitulé dit UTILISER une base orthonormée, et le caractère ORTHONORMÉ n'est jamais manipulé ni éprouvé : i et j sont posés perpendiculaires et de longueur 1, l'élève ne peut pas les changer, et rien ne lui fait voir ce qui casserait si la base ne l'était pas. La seule trace du « pourquoi » est une phrase du Feedback de M6 étape 1 (« Cette formule marche parce que la base est orthonormée ») — une affirmation, pas une expérience, et aucune épreuve du boss ne la mesure. Un élève peut réussir vec-e7 en lisant les coefficients, sans jamais savoir ce que « orthonormée » ajoute.",
-      "crossGrade": {
-        "overlapsWith": [],
-        "kind": "none",
-        "detail": "La base orthonormée et la notation x·i + y·j n'existent pas au collège."
-      },
-      "confidence": "high"
-    },
-    "seconde_vecteurs-2nde_P8": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 1, "mechanism": "manipulation:VectorLab" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 1, "mechanism": "feedback" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 1, "mechanism": "brick:coordonnees-vecteur" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 4, "mechanism": "question:M03-S4-Q3" }
-      ],
-      "manipulation": "VectorLab avec escalier — les deux marches de l'escalier SONT les deux coordonnées, relues à chaque réglage",
-      "assessmentQuestionIds": ["vec-e7"],
-      "knowledgeItems": ["coordonnees-vecteur"],
-      "notes": "Le geste précède le nom (brique gardée par done1). Réserve : la seule épreuve du boss qui porte cet LP est vec-e7, partagée avec P7, et elle demande une CONVERSION d'écriture (2i − 3j) plutôt qu'une LECTURE sur figure — la lecture graphique elle-même n'est jamais mesurée au boss.",
-      "crossGrade": {
-        "overlapsWith": ["3e:translations-vecteurs-3e"],
-        "kind": "repetition",
-        "detail": "translations-vecteurs-3e M5 « Deux nombres suffisent » (même titre) enseigne déjà la lecture des composantes sur le quadrillage — voir lessonLevel.duplicates."
-      },
-      "confidence": "high"
-    },
-    "seconde_vecteurs-2nde_P9": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 1, "mechanism": "manipulation:SumLab" },
-        { "module": 4, "moduleSlug": "enchainer-les-deplacements", "step": 4, "mechanism": "question:M04-S4-Q2" },
-        { "module": 5, "moduleSlug": "etirer-inverser", "step": 2, "mechanism": "question:M05-S2-Q1" }
-      ],
-      "manipulation": "SumLab (tableau des coordonnées où l'addition s'écrit) et ScaleLab (k·(x ; y) affiché)",
-      "assessmentQuestionIds": ["vec-e4", "vec-e5"],
-      "knowledgeItems": ["regle-somme", "formule-somme", "regle-produit-reel"],
-      "notes": "LP « fourre-tout » : il ne porte pas de notion propre, il recouvre le calcul de coordonnées d'un vecteur obtenu par somme ou par produit. Chaque facette est établie par la manipulation de son module (M4, M5) et éprouvée par une question de batch. Ses deux épreuves du boss (vec-e4, vec-e5) sont toutes deux partagées avec l'LP de l'opération correspondante : aucune épreuve n'isole ce LP.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "medium"
-    },
-    "seconde_vecteurs-2nde_P10": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 1, "mechanism": "manipulation:VectorLab" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 1, "mechanism": "feedback" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 1, "mechanism": "brick:methode-calcul-norme" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 2, "mechanism": "question:M06-S2-Q1" }
-      ],
-      "manipulation": "VectorLab + `escalier` + NormReadout — l'élève doit visiter (3 ; 4) PUIS (6 ; 8) ; le calcul ‖u‖² = x² + y² puis ‖u‖ = exact (√13 ≈ 3,61, 2√5 ≈ 4,47 via normText/simplifySqrt) se réécrit à chaque réglage, y compris quand la racine ne tombe pas juste",
-      "assessmentQuestionIds": ["vec-e8"],
-      "knowledgeItems": ["methode-calcul-norme", "vocab-norme", "formule-norme"],
-      "notes": "Très bien construit : la garde impose les DEUX vecteurs (3;4) et (6;8), ce qui fait apparaître par l'expérience que doubler double la longueur (et non ×4) — la méprise n°7 du spec. Le readout affiche la forme exacte simplifiée, donc les cas non entiers ne sont pas cachés. La brique est gardée par done1, la question d'application vient à l'étape 2 avec trois explainFor ciblés (25 = AB², 7 = x + y, 1 = x − y).",
-      "crossGrade": {
-        "overlapsWith": ["3e:reperage-droite-plan-3e"],
-        "kind": "anticipation",
-        "detail": "reperage-droite-plan-3e n'enseigne QUE la longueur d'un segment axial (brique longueur-axe, |xB − xA|) et exclut explicitement la distance quelconque dans son teachingScope, avec une brique memoriser `limite-oblique` qui renvoie à Pythagore « une autre leçon ». La norme est donc bien la suite promise, pas une redite."
-      },
-      "confidence": "high"
-    },
-    "seconde_vecteurs-2nde_P11": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 2, "mechanism": "manipulation:VectorLab" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 2, "mechanism": "feedback" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 2, "mechanism": "brick:regle-coordonnees" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 2, "mechanism": "brick:mem-arrivee-moins-depart" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 3, "mechanism": "question:M03-S3-Q1" },
-        { "module": 3, "moduleSlug": "deux-nombres-suffisent", "step": 3, "mechanism": "question:M03-S3-Q2" }
-      ],
-      "manipulation": "VectorLab mode 'points' — l'élève déplace A OU B et un tableau à deux lignes recalcule et RÉÉCRIT « xB − (xA) = … » à chaque mouvement ; la cible AB = (−2 ; 4) impose d'atteindre un vecteur donné",
-      "assessmentQuestionIds": ["vec-e8"],
-      "knowledgeItems": ["regle-coordonnees", "mem-arrivee-moins-depart", "methode-calcul-coordonnees", "formule-coordonnees", "mem-oppose"],
-      "notes": "La règle « arrivée − départ » est vue se répéter (le tableau réécrit la soustraction à chaque geste, en bougeant tantôt A tantôt B) avant les cinq briques, toutes gardées par done2, et avant les deux NumericQuestion de l'étape 3 qui la demandent sans figure avec parseDecSigned (les négatifs passent) et des explainFor sur le signe inversé et les coordonnées échangées.",
-      "crossGrade": {
-        "overlapsWith": ["3e:translations-vecteurs-3e", "3e:reperage-droite-plan-3e"],
-        "kind": "repetition",
-        "detail": "C'EST LE CAS LE PLUS NET. translations-vecteurs-3e M5 pose la brique `coordonnees-vecteur` (type formules, (xB − xA ; yB − yA)) et la brique `mem-arrivee-moins-depart` — MÊMES IDENTIFIANTS que les briques M3 de la 2de — sur le MÊME exemple numérique C (5 ; −3) et D (1 ; 2), avec le même explainFor sur le signe inversé. Or l'objet officiel 3e translations_vecteurs porte teachingScope.exclude = [\"Coordonnées de vecteurs\", …]. La 2de M3 réenseigne donc comme neuf ce que la 3e enseigne déjà hors de son propre périmètre. Voir lessonLevel.duplicates."
-      },
-      "confidence": "high"
-    },
-    "seconde_vecteurs-2nde_P12": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 2, "mechanism": "question:M06-S2-Q1" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 1, "mechanism": "brick:methode-calcul-norme" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 1, "mechanism": "brick:formule-norme" }
-      ],
-      "manipulation": "Aucune manipulation propre : la distance réutilise l'escalier de l'étape 1, mais elle n'est jamais mesurée sur une figure que l'élève manipule",
-      "assessmentQuestionIds": ["vec-e9"],
-      "knowledgeItems": ["formule-norme", "vocab-norme"],
-      "notes": "PARTIEL. Le pas conceptuel « la distance AB EST la norme du vecteur AB » n'a pas de geste : il est annoncé dans le sous-titre de l'étape 2 (« La distance AB est la longueur du vecteur AB ») et affirmé dans la brique vocab-norme (AB = ‖AB‖) ; le seul dispositif est la NumericQuestion M06-S2-Q1, qui vient donc éprouver une identification établie par un sous-titre. Chaîne AB → coordonnées → norme entièrement demandée d'un coup, sans étape intermédiaire visible. La formule complète AB = √((xB−xA)² + (yB−yA)²) n'apparaît que dans le corps de la brique formule-norme, jamais dérivée devant l'élève. vec-e9 (CD = 10) l'éprouve correctement mais est partagée avec P13.",
-      "crossGrade": {
-        "overlapsWith": ["3e:reperage-droite-plan-3e"],
-        "kind": "anticipation",
-        "detail": "La 3e ne traite que les segments axiaux et diffère explicitement le cas oblique (brique limite-oblique). C'est bien la 2de qui doit livrer la distance quelconque — d'où la gravité du fait qu'elle ne la fasse pas manipuler."
-      },
-      "confidence": "high"
-    },
-    "seconde_vecteurs-2nde_P13": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 3, "mechanism": "manipulation:MidpointLab" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 3, "mechanism": "feedback" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 3, "mechanism": "brick:methode-milieu" },
-        { "module": 6, "moduleSlug": "mesurer-un-vecteur", "step": 4, "mechanism": "question:M06-S4-Q2" }
-      ],
-      "manipulation": "MidpointLab — l'élève déplace I (au demi-carreau) jusqu'à ce que les deux flèches AI et IB deviennent LE MÊME vecteur (equal(vec(A,I), vec(I,B))) ; le milieu est donc défini par l'égalité vectorielle avant d'être une moyenne",
-      "assessmentQuestionIds": ["vec-e9"],
-      "knowledgeItems": ["methode-milieu", "formule-milieu"],
-      "notes": "Excellente séquence : la CARACTÉRISATION (AI = IB) est ce que l'élève fabrique, la FORMULE (moyennes) n'arrive qu'ensuite dans la révélation conditionnée, avec le calcul écrit sur les valeurs de la scène. La brique est gardée par done3 et la question sans figure vient à l'étape 4, avec un explainWrong qui vise exactement la méprise « milieu = CD/2 ».",
-      "crossGrade": {
-        "overlapsWith": ["3e:reperage-droite-plan-3e"],
-        "kind": "consolidation",
-        "detail": "reperage-droite-plan-3e M5 possède la brique milieu-moyenne (type formules, xI = (xA+xB)/2) — mais elle y est AFFICHÉE sans garde, avant la question, sans manipulation (`moyenne` est d'ailleurs dans son priorKnowledge). La 2de est le premier endroit où le milieu est CONSTRUIT par un geste et caractérisé vectoriellement : consolidation légitime, pas répétition."
-      },
-      "confidence": "high"
-    },
-    "seconde_vecteurs-2nde_P14": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 7, "moduleSlug": "problemes-de-geometrie", "step": 1, "mechanism": "manipulation:VectorScene" },
-        { "module": 7, "moduleSlug": "problemes-de-geometrie", "step": 1, "mechanism": "feedback" },
-        { "module": 7, "moduleSlug": "problemes-de-geometrie", "step": 1, "mechanism": "brick:methode-parallelogramme" },
-        { "module": 7, "moduleSlug": "problemes-de-geometrie", "step": 2, "mechanism": "question:M07-S2-Q1" },
-        { "module": 7, "moduleSlug": "problemes-de-geometrie", "step": 3, "mechanism": "question:M07-S3-Q3" }
-      ],
-      "manipulation": "VectorScene avec D draggable + steppers — l'élève place D jusqu'à ce que la flèche DC devienne exactement AB (isParallelogram teste AB = DC, l'ordre du contour est donc dans le modèle) ; le lecteur affiche en direct AB et DC et le Feedback d'échec chiffre CE QUI MANQUE",
-      "assessmentQuestionIds": ["vec-e10"],
-      "knowledgeItems": ["methode-parallelogramme", "methode-deplacement-manquant", "methode-alignement"],
-      "notes": "Les trois problèmes sont bien différenciés et le premier est un vrai geste. Réserves : (a) aux étapes 2 et 3, les briques methode-deplacement-manquant et methode-alignement sont posées AVANT la question mais sans geste préalable — c'est la figure affichée qui sert de support, pas une manipulation ; le lead de la brique dit d'ailleurs « Regarde la figure », pas « tu viens de… » ; (b) vec-e10 ne mesure que le parallélogramme, et il est partagé avec P1. Les deux autres méthodes (déplacement manquant, alignement) ne sont mesurées par AUCUNE épreuve du boss.",
-      "crossGrade": {
-        "overlapsWith": ["3e:translations-vecteurs-3e"],
-        "kind": "repetition",
-        "detail": "translations-vecteurs-3e M7 fait déjà placer le quatrième point d'un parallélogramme (brique construire-quatrieme-point, fourthPoint(A,B,C), gate = D à la cible) et son épreuve tv-e9 est la même tâche ; sa brique parallelogramme-vecteurs (M6) énonce déjà AB = CD ⇒ parallélogramme. Ce qui est neuf en 2de est l'ordre des sommets (ABCD ⇔ AB = DC) et la preuve d'alignement par colinéarité."
-      },
-      "confidence": "high"
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 4,
+     "mechanism": "question:M03-S4-Q3"
     }
+   ],
+   "manipulation": "VectorLab en mode 'move' — seule l'origine bouge, les composantes sont figées ; l'élève pose trois représentants (garde TROP_PRES = 2 pour qu'ils restent lisibles) et voit que le déplacement ne change jamais",
+   "assessmentQuestionIds": [
+    "vec-e1",
+    "vec-e10"
+   ],
+   "knowledgeItems": [
+    "egalite-vecteurs",
+    "vocab-representant",
+    "regle-egalite-coordonnees"
+   ],
+   "notes": "Chaîne complète et dans le bon ordre : geste (3 flèches posées) → révélation conditionnée {done1 ? <Feedback>} qui nomme l'égalité → briques egalite-vecteurs et vocab-representant, toutes deux gardées par done1 → question M02-S4-Q1 à l'étape 4. Le critère de CALCUL (mêmes coordonnées) est ajouté en M3 étape 4, brique AVANT la BatchChoiceQuestion. vec-e1 mesure exactement cela (deux flèches, mêmes coordonnées, positions différentes) et n'est pas devinable sans calcul.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:translations-vecteurs-3e"
+    ],
+    "kind": "repetition",
+    "detail": "translations-vecteurs-3e M4 « La flèche vagabonde » exécute EXACTEMENT la même manipulation (VectorLab mode move, composantes figées, TROP_PRES = 2, trois flèches à poser) et pose la brique vecteurs-egaux ; sa question d'étape 3 (« Une flèche va de (−4 ; 1) à (−1 ; 3). Une autre va de (2 ; −2) à (5 ; 0) ») est mot pour mot l'épreuve vec-e1 du boss de 2de. Le geste, la garde et l'exemple sont identiques : ce n'est pas une consolidation, c'est une répétition."
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "pedagogicalProblems": [
-      "DENSITÉ DE PREUVE AU BOSS : 14 LPs pour 10 épreuves. Sept épreuves sur dix portent deux LPs (vec-e2 → P2+P4, vec-e4 → P4+P9, vec-e5 → P5+P9, vec-e7 → P7+P8, vec-e8 → P11+P10, vec-e9 → P12+P13, vec-e10 → P14+P1). Deux appariements ne mesurent PAS les deux LPs : (1) vec-e2 « Lequel de ces vecteurs est le vecteur nul ? » avec les options AB+BA / AB+AB / AB−BA / AB+BC est comptée pour P4 « Additionner deux vecteurs » alors qu'aucune addition de coordonnées n'y est faite — c'est une question de reconnaissance formelle, et P4 n'est réellement mesuré que par vec-e4 ; (2) vec-e7 « le vecteur 2i − 3j a pour coordonnées… » est comptée pour P8 « Lire les coordonnées d'un vecteur » alors qu'aucune figure n'est lue — c'est une conversion d'écriture. Les autres appariements sont légitimes : vec-e8 et vec-e9 demandent explicitement les deux résultats dans la même option (« AB (4 ; −3), ‖AB‖ = 5 » ; « CD = 10, milieu (0 ; 0) »), donc un élève ne peut pas répondre juste en ne maîtrisant qu'une moitié. Fichier : modules/Module08MissionFinale.jsx, littéraux `assessment.learningPointIds`.",
-      "P7 « Utiliser une base orthonormée » : l'orthonormalité est affirmée, jamais manipulée ni mesurée. i et j sont dessinés fixes (Module03DeuxNombresSuffisent.jsx, `extraArrows`), l'élève ne peut pas les modifier, et la seule justification (« Cette formule marche parce que la base est orthonormée », Module06MesurerUnVecteur.jsx étape 1) est une phrase de Feedback. Aucune épreuve ne demande pourquoi la norme exige une base orthonormée.",
-      "P12 « Calculer une distance entre deux points » n'a aucune manipulation propre : le pas « AB = ‖AB‖ » est posé par un sous-titre d'étape (Module06MesurerUnVecteur.jsx, step 2 `subtitle`) et par le corps de la brique vocab-norme, puis immédiatement DEMANDÉ par M06-S2-Q1. C'est le seul endroit de la leçon où une notion est éprouvée sans qu'un geste ou une révélation conditionnée l'ait établie.",
-      "Module 7, étapes 2 et 3 : les briques methode-deplacement-manquant et methode-alignement sont posées sur une figure statique (VectorScene sans `draggableId`, sans `onPointChange`), avec un lead « Regarde la figure » au lieu de « tu viens de ». Contrairement au reste de la leçon, la méthode est donc annoncée puis appliquée, sans geste — et aucune épreuve du boss ne les mesure.",
-      "Le vecteur nul est établi (M2 étape 2) mais son statut d'exception n'est jamais interrogé : `colinearFactor` retourne 0 pour le vecteur nul (« colinéaire à tout »), le texte de M5 étape 3 le dit en passant (« v est nul : colinéaire à tout, mais ce n'est pas ce qu'on cherche ici »), et aucune question ne fait travailler ce cas."
-    ],
-    "technicalProblems": [
-      "MANIPULATIONS GELÉES APRÈS VALIDATION (classe de bug `frozen_manipulation_bug_class`) — 20 occurrences, toute la leçon est concernée : Module01LeRobotDuDepot.jsx:81,112,127,172,213,221 (DisplacementLab et PredictionChips, quatre étapes) ; Module02LeMemeVecteur.jsx:72,83,148,190 ; Module03DeuxNombresSuffisent.jsx:72,127 ; Module04EnchainerLesDeplacements.jsx:61,70,119,129 ; Module05EtirerInverser.jsx:73,75 ; Module06MesurerUnVecteur.jsx:79,152 ; Module07ProblemesDeGeometrie.jsx:85,89,90. Dès que la condition de réussite est atteinte, `disabled={doneN}` coupe le laboratoire : l'élève ne peut plus explorer autour de la solution qu'il vient de trouver, ni revenir vérifier une intuition pendant qu'il lit la révélation qui parle de ce qu'il a fait. Le cas le plus coûteux est ScaleLab (M5:75) : l'élève visite k = 2, −1, 0 et le curseur k se fige au moment exact où la règle générale k·(x ; y) = (kx ; ky) vient d'être énoncée, donc il ne peut pas la tester sur une quatrième valeur.",
-      "Dérive de durée (flag DURATION_DRIFT de la matrice) : lesson.config.js déclare estimatedDurationMin = 90 et le catalogue 90, mais la somme des `estimatedMin` des neuf modules vaut 84. Le spec docs/lessons/2NDE_VECTEURS_SPEC.md dit d'ailleurs « 84 min (90 before the « À retenir » module was folded into the Knowledge Map) » : c'est la valeur 90 qui n'a pas été mise à jour.",
-      "Dérive spec/code : docs/lessons/2NDE_VECTEURS_SPEC.md §3 et §4 annoncent un composant `NormLab` pour le module 6. Il n'existe pas ; M6 utilise VectorLab (avec `escalier`) plus MidpointLab. Aucune conséquence pour l'élève, mais le spec ne décrit plus le code.",
-      "Code mort : `components/vecteurUtils.js` exporte `ZERO`, `clampToRange`, `sameSense`, `sameLength`, `areColinear`, `signed`, `comboText`, `dot`, `norm` — aucun de ces symboles n'est importé par un module ou un composant de la leçon (`sub` n'est utilisé qu'une fois, dans Module07 pour calculer V2 ; `attributesOf` n'est utilisé qu'à travers `diagnose`). `comboText` est particulièrement révélateur : M3 réécrit la combinaison x·i + y·j à la main au lieu de l'appeler.",
-      "AUCUN problème de tolérance : toutes les conditions de réussite passent par `equal` (eps = 1e-9) sur une grille au pas 1 (ou au demi-carreau pour MidpointLab), donc la tolérance est très inférieure à ce que l'élève distingue — jamais l'inverse. Les mathématiques sont justes : `isParallelogram` teste bien AB = DC dans l'ordre du contour et exclut les cas dégénérés, `colinearFactor` traite correctement le vecteur nul, `normText`/`simplifySqrt` affichent la forme exacte simplifiée (2√5 et non 4,47 seulement), et `vecteurUtils.test.js` + `labelLayout.test.js` verrouillent ces invariants."
-    ],
-    "duplicates": [
-      "AVEC LA 3e — coordonnées d'un vecteur (constat vérifié dans les deux fichiers) : vecteurs-2nde M3 « Deux nombres suffisent » et college/3e/espace_geometrie/translations-vecteurs-3e M5 « Deux nombres suffisent » portent le MÊME TITRE, posent les MÊMES IDENTIFIANTS de brique (`coordonnees-vecteur`, `mem-arrivee-moins-depart`), utilisent le MÊME exemple numérique (C (5 ; −3), D (1 ; 2), réponse 5 sur les ordonnées), le même piège explainFor (signe inversé = départ − arrivée) et deux lignes identiques de BatchChoiceQuestion (« De (0 ; 0) à (3 ; 1), et de (−4 ; 2) à (−1 ; 3) » et « De (1 ; 1) à (4 ; 2), et de (4 ; 2) à (1 ; 1) »). Or l'objet officiel packages/core/curriculum/smarter_academy_programmes_maths_2026.json → levels.3e → domain espace_geometrie → object translations_vecteurs porte teachingScope.exclude = [\"Coordonnées de vecteurs\", \"Colinéoarité\", \"Produit scalaire\"], et l'entrée catalogue 3e_translations_vecteurs (packages/core/curriculum/coursesData.js:677) liste malgré cela quatre pointsToLearn liés aux coordonnées : « Représenter un déplacement à l'aide d'un vecteur », « Comprendre qu'un même vecteur peut représenter un même déplacement en différents endroits », « Utiliser les coordonnées pour représenter un vecteur », « Déterminer les coordonnées d'un vecteur à partir de deux points ». CONSÉQUENCE POUR M3 : ce module est un DOUBLON de niveau, pas une découverte. Le déclencheur (« deux nombres suffisent ») ne peut pas fonctionner sur un élève qui a fait la 3e du même produit : il a déjà eu l'aha. La 2de devrait s'ouvrir sur ce qui est réellement neuf — la BASE (i, j) et l'écriture x·i + y·j, qui n'existent nulle part en 3e. Le défaut est en amont : c'est le catalogue 3e qui outrepasse le périmètre officiel de son propre objet.",
-      "AVEC LA 3e — égalité et représentants (M2) : translations-vecteurs-3e M4 « La flèche vagabonde » exécute la manipulation identique (VectorLab mode move, composantes figées, garde TROP_PRES = 2, trois flèches à poser) et sa question d'étape 3 est mot pour mot l'épreuve vec-e1. Répétition du geste ET de l'item d'évaluation.",
-      "AVEC LA 3e — quatrième sommet du parallélogramme (M7 étape 1) : translations-vecteurs-3e M7 pose déjà la brique construire-quatrieme-point sur la même tâche, éprouvée par tv-e9. Ce qui reste neuf en 2de est l'ordre des sommets (ABCD ⇔ AB = DC, jamais AB = CD).",
-      "EN 2de — colinéarité (M5 étapes 3–4, brique regle-colineaire, épreuve vec-e6) : la leçon suivante colinearite-alignement-2nde reprend le même objet (ses LP P1 « Comprendre la colinéarité » et P2 « Reconnaître deux vecteurs colinéaires »). Le partage est explicitement organisé (lesson.config.js de vecteurs exclut le déterminant, celui de colinéarité l'apporte) et la 2de définit ici la colinéarité comme « l'un est un multiple de l'autre », la leçon suivante comme det = 0 : ce n'est donc pas un doublon fautif, mais la frontière repose entièrement sur une convention documentaire, rien dans le code n'empêche la redite.",
-      "PAS de doublon avec reperage-droite-plan-3e pour M6 : la 3e n'enseigne que |xB − xA| sur un segment axial et exclut la distance quelconque ; seul le milieu se recoupe, et de façon superficielle (formule affichée, sans geste)."
-    ],
-    "verticalPositioning": {
-      "revised": "Le vecteur comme déplacement indépendant du point de départ, la direction / le sens / la longueur, l'égalité de deux vecteurs, les représentants, le vecteur opposé, et — indûment, hors du périmètre officiel de la 3e — les coordonnées d'un vecteur par arrivée − départ. Tout cela est déjà établi par translations-vecteurs-3e avec les mêmes gestes.",
-      "extended": "Le milieu, passé d'une formule affichée en 3e (reperage-droite-plan-3e, brique milieu-moyenne) à une caractérisation vectorielle construite (AI = IB, MidpointLab). La longueur, passée du seul segment axial de la 3e à la norme d'un vecteur quelconque.",
-      "new": "La base orthonormée (i, j) et l'écriture u = x·i + y·j ; la somme formelle et la relation de Chasles (explicitement exclues du programme de 3e) ; le produit par un réel k et l'effet de son signe ; la colinéarité comme « multiple de » ; la norme √(x² + y²) et donc la distance entre deux points quelconques.",
-      "formalized": "Les notations : u→, AB→, 0→, −u→, ‖u‖, k·u, la relation AB→ + BC→ = AC→. Les briques `formules` (formule-coordonnees, formule-somme, formule-chasles, formule-norme, formule-milieu) portent ces écritures, et les briques `memoriser` (mem-deplacement, mem-arrivee-moins-depart, mem-oppose, mem-chasles) les phrases-clés. La leçon est la référence de l'architecture Knowledge Map : aucun module « À retenir », huit KnowledgeSnapshot en pied de module et la carte complète en synthèse du boss.",
-      "tool": "Le vecteur devient l'outil de trois problèmes de géométrie (quatrième sommet, déplacement manquant, alignement) et le socle des trois leçons suivantes du chapitre : colinéarité et alignement (déterminant), équations de droites (vecteur directeur), positions relatives."
+  "seconde_vecteurs-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 2,
+     "mechanism": "manipulation:VectorLab"
     },
-    "officialScopeNotCovered": [
-      "SOUSTRACTION DE VECTEURS (u − v) — l'objet officiel seconde/geometrie/vecteurs ne la liste pas dans teachingScope.include (ses 14 entrées sont exactement les 14 LPs de la leçon), mais le référentiel externe docs/audits/2de-external-lps.json la porte : LP105, chapitre 8 « Vecteurs », « Soustraire des vecteurs ». VERDICT : la soustraction n'est NI enseignée NI demandée comme opération. Ce qui existe : (a) le vecteur OPPOSÉ est bien enseigné (M2 étape 3, manipulation VectorLab + brique regle-vecteur-oppose, et brique mem-oppose en M3) ; (b) M4 étape 2 fait construire v = −u pour revenir au départ, ce qui est u + (−u) = 0, écrit comme une somme ; (c) knowledge.jsx M7, brique methode-deplacement-manquant, écrit la seule soustraction de la leçon : v = total − u, et M07-S2-Q1/Q2 la fait CALCULER coordonnée par coordonnée — mais sans jamais nommer l'opération, sans règle générale u − v = u + (−v), et sans que le mot « soustraire » apparaisse ; (d) le distracteur 3 de l'épreuve vec-e2 affiche « AB − BA » et son explain affirme « AB − BA = 2·AB » — un élève rencontre donc l'écriture pour la première fois DANS l'évaluation, avec une valeur qu'aucune règle de la leçon ne lui permet de retrouver. `sub()` existe dans components/vecteurUtils.js et n'est utilisé que pour préparer la constante V2 de M7. Aucun LP de la leçon ne porte cette compétence, donc l'audit interne la déclarera couverte ; l'écart est vis-à-vis du référentiel externe.",
-      "CARACTÉRISATION PAR DIRECTION / SENS / NORME (référentiel externe LP101, LP102, LP103) — VERDICT : c'est de la RÉVISION de collège, pas un enseignement de 2de. Les trois attributs sont énoncés dans la brique vecteur-deplacement (knowledge.jsx M1, une liste à trois puces) et dans mem-deplacement, et la question M01-S5-Q1 les demande. Mais rien ne les fait DISCRIMINER : le modèle les distingue bien (`attributesOf`, `sameDirection` fondé sur une clé canonique où deux vecteurs opposés partagent la même direction, `diagnose` + DIAGNOSIS_TEXT), et ce diagnostic ne sert qu'en message d'échec — l'élève ne voit le mot « direction » qu'en se trompant. Le contraste crucial « sens contraire ≠ autre direction » n'est jamais isolé par une manipulation ni éprouvé par une question ; il est seulement asséné dans le Feedback de M2 étape 3 et dans l'explain de vec-e5. Or translations-vecteurs-3e M2 « Direction, sens, longueur » fait exactement ce travail, avec trois lampes indépendantes et une garde qui EXIGE de produire les trois cas (opposé, autre longueur, autre direction) plus une brique dédiée `direction-nest-pas-sens`. Le dispositif de 3e est strictement plus fort que celui de 2de sur ce point : en 2de, la caractérisation est supposée acquise. Seule la NORME (LP103) est véritablement enseignée en 2de, par M6 — et elle a son LP (P10).",
-      "Aucun autre item de teachingScope.include de l'objet officiel n'est sans LP : les cinq entrées se répartissent sur P1–P14 sans reste."
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 2,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 2,
+     "mechanism": "brick:vecteur-nul"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 2,
+     "mechanism": "manipulation:SumLab"
+    }
+   ],
+   "manipulation": "VectorLab 'build' : l'élève réduit le déplacement jusqu'à ce que A′ revienne sur A et que la flèche devienne un anneau ; puis SumLab M4 étape 2 où u + (−u) fait retomber C sur A",
+   "assessmentQuestionIds": [
+    "vec-e2"
+   ],
+   "knowledgeItems": [
+    "vecteur-nul"
+   ],
+   "notes": "Le vecteur nul est OBTENU par le geste (isZero(v2) est la condition de réussite), pas annoncé. La brique vecteur-nul est gardée par done2. Deuxième rencontre en M4 étape 2 (u + (−u) = 0), également par manipulation. Réserve d'évidence : vec-e2 est partagé avec P4 et son énoncé porte sur des sommes formelles (AB + BA, AB − BA, AB + BC) plutôt que sur la reconnaissance directe du vecteur nul — voir lessonLevel.pedagogicalProblems.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-robot-du-depot",
+     "step": 2,
+     "mechanism": "manipulation:DisplacementLab"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-robot-du-depot",
+     "step": 5,
+     "mechanism": "brick:vecteur-deplacement"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 1,
+     "mechanism": "brick:vocab-representant"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "le-meme-vecteur",
+     "step": 4,
+     "mechanism": "question:M02-S4-Q1"
+    }
+   ],
+   "manipulation": "DisplacementLab M1 étape 2 — le second robot doit reproduire la recette du premier depuis une autre case ; `diagnose` nomme l'attribut fautif (direction / sens / longueur) au lieu d'un « faux » sec",
+   "assessmentQuestionIds": [
+    "vec-e3"
+   ],
+   "knowledgeItems": [
+    "vecteur-deplacement",
+    "mem-deplacement",
+    "vocab-representant"
+   ],
+   "notes": "L'élève CONSTRUIT un représentant avant qu'on lui donne le mot : M1 étape 2 exige de reproduire le déplacement depuis un autre départ, M2 étape 1 lui fait poser trois flèches. La brique vocab-representant est gardée par done1 et la question M02-S4-Q1 (« combien de flèches peuvent le représenter ? ») vient après. vec-e3 demande le point d'arrivée du représentant de u partant de C : c'est bien la construction, pas la reconnaissance.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:translations-vecteurs-3e"
     ],
-    "recommendations": [
-      "Retirer les `disabled={doneN}` des vingt laboratoires : un laboratoire validé doit rester manipulable (règle `manipulation_interaction_rules`). Priorité à ScaleLab (M5 étape 1) et VectorLab de M3 étape 2, où l'exploration après réussite est le cœur de la généralisation.",
-      "Donner un geste à P12 : une étape où l'élève déplace B et voit la distance AB se recalculer, avant la NumericQuestion — ou faire naître AB = ‖AB‖ d'une révélation conditionnée plutôt que d'un sous-titre.",
-      "Donner à P7 une expérience de l'orthonormalité (par exemple une base déformée où l'escalier ment sur la longueur), ou requalifier le LP en « lire un vecteur dans la base (i, j) », qui est ce que la leçon enseigne réellement.",
-      "Répartir la charge du boss : ajouter deux épreuves pour que P4 ne repose plus sur vec-e2 (reconnaissance formelle) et que P8 soit mesuré par une vraie LECTURE graphique ; ajouter une épreuve sur le déplacement manquant ou l'alignement, aujourd'hui enseignés (M7) et jamais mesurés.",
-      "Traiter le doublon 3e/2de en amont : corriger le catalogue 3e_translations_vecteurs (coursesData.js:677) pour qu'il respecte le teachingScope.exclude « Coordonnées de vecteurs » de son objet officiel, OU assumer l'anticipation et réécrire vecteurs-2nde M3 autour de ce qui est neuf (la base (i, j), l'écriture x·i + y·j) plutôt qu'autour de la découverte des deux nombres.",
-      "Introduire explicitement u − v = u + (−v) (LP105 externe) : la leçon en a déjà tous les ingrédients (l'opposé en M2, la somme en M4, v = total − u en M7) ; il manque une étape qui les relie et une règle nommée — sans quoi le distracteur « AB − BA » de vec-e2 demande à l'élève une écriture qu'il n'a jamais rencontrée.",
-      "Aligner estimatedDurationMin (90) sur la somme réelle des modules (84), ou l'inverse ; supprimer les exports morts de vecteurUtils.js ; mettre le spec à jour (NormLab n'existe pas)."
-    ]
+    "kind": "repetition",
+    "detail": "translations-vecteurs-3e M1 « Le même trajet » fait déjà reproduire un déplacement modèle depuis un autre point, avec le même VectorLab et le même diagnostic par attribut ; M4 fait déjà poser trois représentants. Le robot du dépôt rejoue la chorégraphie des drones."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 1,
+     "mechanism": "manipulation:SumLab"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 1,
+     "mechanism": "brick:regle-somme"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 3,
+     "mechanism": "brick:vocab-relation-chasles"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 3,
+     "mechanism": "question:M04-S3-Q1"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 4,
+     "mechanism": "question:M04-S4-Q2"
+    }
+   ],
+   "manipulation": "SumLab — l'élève règle v et le pose au bout de u ; la flèche ambre « trajet direct » apparaît et le tableau écrit 3 + (−1) et 1 + 3 ; l'étape 4 montre le parallélogramme (v puis u = u puis v)",
+   "assessmentQuestionIds": [
+    "vec-e2",
+    "vec-e4"
+   ],
+   "knowledgeItems": [
+    "regle-somme",
+    "formule-somme",
+    "vocab-relation-chasles",
+    "mem-chasles",
+    "formule-chasles"
+   ],
+   "notes": "Exemplaire : la somme est VUE (flèche ambre) avant d'être écrite, la brique regle-somme est gardée par done1, Chasles arrive en étape 3 avec la figure au-dessus de la brique et la question après. La commutativité est établie par la figure du parallélogramme (étape 4) puis éprouvée par la ligne s3 du BatchChoice. vec-e4 est un calcul avec signes non devinable.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:translations-vecteurs-3e"
+    ],
+    "kind": "anticipation",
+    "detail": "La relation de Chasles est explicitement HORS PÉRIMÈTRE en 3e (lesson.config.js et knowledge.jsx de translations-vecteurs-3e le disent). Le 3e n'enchaîne que par addition de composantes, sans notation. La somme formelle est donc bien neuve en 2de."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 1,
+     "mechanism": "manipulation:ScaleLab"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 1,
+     "mechanism": "brick:regle-produit-reel"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 2,
+     "mechanism": "question:M05-S2-Q1"
+    }
+   ],
+   "manipulation": "ScaleLab — l'élève doit VISITER k = 2, k = −1 et k = 0 (done1 = GOALS.every(visited.has)) et regarder la flèche s'allonger, se retourner, disparaître",
+   "assessmentQuestionIds": [
+    "vec-e5"
+   ],
+   "knowledgeItems": [
+    "regle-produit-reel"
+   ],
+   "notes": "La garde force les trois cas qualitatifs, y compris k = 0 et k négatif — c'est ce qui casse la confusion « k < 0 change la direction », reprise dans le distracteur 2 de vec-e5. Brique gardée par done1, BatchChoiceQuestion en étape 2 (dont 0,5·u, un k non entier jamais manipulé mais déductible de la règle).",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none",
+    "detail": "Le produit par un réel n'apparaît nulle part en 3e (ni dans translations-vecteurs-3e ni dans reperage-droite-plan-3e). Notion authentiquement neuve."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 3,
+     "mechanism": "manipulation:VectorLab"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 3,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 3,
+     "mechanism": "brick:regle-colineaire"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 4,
+     "mechanism": "question:M05-S4-Q2"
+    },
+    {
+     "module": 7,
+     "moduleSlug": "problemes-de-geometrie",
+     "step": 3,
+     "mechanism": "question:M07-S3-Q3"
+    }
+   ],
+   "manipulation": "VectorLab étape 3 — l'élève règle v jusqu'à ce que colinearFactor(u, v) existe et ne vaille ni 0 ni 1 ; le lecteur en dessous affiche en direct « v = k·u » ou « pas un multiple »",
+   "assessmentQuestionIds": [
+    "vec-e6"
+   ],
+   "knowledgeItems": [
+    "regle-colineaire"
+   ],
+   "notes": "La colinéarité est PRODUITE par l'élève (il doit fabriquer un multiple, l'exclusion k = 1 l'empêche de recopier u) avant d'être nommée. Le lecteur en direct est le vrai enseignant : il dit « pas un multiple » tant que la condition n'est pas remplie. Attention : la leçon suivante « Colinéarité et alignement » reprend cette même notion — voir lessonLevel.duplicates.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P7": {
+   "status": "PARTIALLY_COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 1,
+     "mechanism": "manipulation:VectorLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 1,
+     "mechanism": "brick:vocab-base-orthonormee"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 1,
+     "mechanism": "feedback"
+    }
+   ],
+   "manipulation": "VectorLab 'build' avec `escalier` et deux petites flèches extraArrows i (1 ; 0) et j (0 ; 1) tracées depuis l'origine ; l'élève amène B sur l'anneau et lit u = 3·i + 2·j sous le plan",
+   "assessmentQuestionIds": [
+    "vec-e7"
+   ],
+   "knowledgeItems": [
+    "vocab-base-orthonormee"
+   ],
+   "notes": "PARTIEL. Le côté « lire u = x·i + y·j » est bien établi : i et j sont dessinés, la ligne DOM affiche la combinaison en direct, la brique est gardée par done1, et vec-e7 (2i − 3j → (2 ; −3)) l'éprouve. Mais l'intitulé dit UTILISER une base orthonormée, et le caractère ORTHONORMÉ n'est jamais manipulé ni éprouvé : i et j sont posés perpendiculaires et de longueur 1, l'élève ne peut pas les changer, et rien ne lui fait voir ce qui casserait si la base ne l'était pas. La seule trace du « pourquoi » est une phrase du Feedback de M6 étape 1 (« Cette formule marche parce que la base est orthonormée ») — une affirmation, pas une expérience, et aucune épreuve du boss ne la mesure. Un élève peut réussir vec-e7 en lisant les coefficients, sans jamais savoir ce que « orthonormée » ajoute.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none",
+    "detail": "La base orthonormée et la notation x·i + y·j n'existent pas au collège."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 1,
+     "mechanism": "manipulation:VectorLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 1,
+     "mechanism": "brick:coordonnees-vecteur"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 4,
+     "mechanism": "question:M03-S4-Q3"
+    }
+   ],
+   "manipulation": "VectorLab avec escalier — les deux marches de l'escalier SONT les deux coordonnées, relues à chaque réglage",
+   "assessmentQuestionIds": [
+    "vec-e7"
+   ],
+   "knowledgeItems": [
+    "coordonnees-vecteur"
+   ],
+   "notes": "Le geste précède le nom (brique gardée par done1). Réserve : la seule épreuve du boss qui porte cet LP est vec-e7, partagée avec P7, et elle demande une CONVERSION d'écriture (2i − 3j) plutôt qu'une LECTURE sur figure — la lecture graphique elle-même n'est jamais mesurée au boss.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:translations-vecteurs-3e"
+    ],
+    "kind": "repetition",
+    "detail": "translations-vecteurs-3e M5 « Deux nombres suffisent » (même titre) enseigne déjà la lecture des composantes sur le quadrillage — voir lessonLevel.duplicates."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 1,
+     "mechanism": "manipulation:SumLab"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "enchainer-les-deplacements",
+     "step": 4,
+     "mechanism": "question:M04-S4-Q2"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "etirer-inverser",
+     "step": 2,
+     "mechanism": "question:M05-S2-Q1"
+    }
+   ],
+   "manipulation": "SumLab (tableau des coordonnées où l'addition s'écrit) et ScaleLab (k·(x ; y) affiché)",
+   "assessmentQuestionIds": [
+    "vec-e4",
+    "vec-e5"
+   ],
+   "knowledgeItems": [
+    "regle-somme",
+    "formule-somme",
+    "regle-produit-reel"
+   ],
+   "notes": "LP « fourre-tout » : il ne porte pas de notion propre, il recouvre le calcul de coordonnées d'un vecteur obtenu par somme ou par produit. Chaque facette est établie par la manipulation de son module (M4, M5) et éprouvée par une question de batch. Ses deux épreuves du boss (vec-e4, vec-e5) sont toutes deux partagées avec l'LP de l'opération correspondante : aucune épreuve n'isole ce LP.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "medium"
+  },
+  "seconde_vecteurs-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 1,
+     "mechanism": "manipulation:VectorLab"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 1,
+     "mechanism": "brick:methode-calcul-norme"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 2,
+     "mechanism": "question:M06-S2-Q1"
+    }
+   ],
+   "manipulation": "VectorLab + `escalier` + NormReadout — l'élève doit visiter (3 ; 4) PUIS (6 ; 8) ; le calcul ‖u‖² = x² + y² puis ‖u‖ = exact (√13 ≈ 3,61, 2√5 ≈ 4,47 via normText/simplifySqrt) se réécrit à chaque réglage, y compris quand la racine ne tombe pas juste",
+   "assessmentQuestionIds": [
+    "vec-e8"
+   ],
+   "knowledgeItems": [
+    "methode-calcul-norme",
+    "vocab-norme",
+    "formule-norme"
+   ],
+   "notes": "Très bien construit : la garde impose les DEUX vecteurs (3;4) et (6;8), ce qui fait apparaître par l'expérience que doubler double la longueur (et non ×4) — la méprise n°7 du spec. Le readout affiche la forme exacte simplifiée, donc les cas non entiers ne sont pas cachés. La brique est gardée par done1, la question d'application vient à l'étape 2 avec trois explainFor ciblés (25 = AB², 7 = x + y, 1 = x − y).",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:reperage-droite-plan-3e"
+    ],
+    "kind": "anticipation",
+    "detail": "reperage-droite-plan-3e n'enseigne QUE la longueur d'un segment axial (brique longueur-axe, |xB − xA|) et exclut explicitement la distance quelconque dans son teachingScope, avec une brique memoriser `limite-oblique` qui renvoie à Pythagore « une autre leçon ». La norme est donc bien la suite promise, pas une redite."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P11": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 2,
+     "mechanism": "manipulation:VectorLab"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 2,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 2,
+     "mechanism": "brick:regle-coordonnees"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 2,
+     "mechanism": "brick:mem-arrivee-moins-depart"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 3,
+     "mechanism": "question:M03-S3-Q1"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "deux-nombres-suffisent",
+     "step": 3,
+     "mechanism": "question:M03-S3-Q2"
+    }
+   ],
+   "manipulation": "VectorLab mode 'points' — l'élève déplace A OU B et un tableau à deux lignes recalcule et RÉÉCRIT « xB − (xA) = … » à chaque mouvement ; la cible AB = (−2 ; 4) impose d'atteindre un vecteur donné",
+   "assessmentQuestionIds": [
+    "vec-e8"
+   ],
+   "knowledgeItems": [
+    "regle-coordonnees",
+    "mem-arrivee-moins-depart",
+    "methode-calcul-coordonnees",
+    "formule-coordonnees",
+    "mem-oppose"
+   ],
+   "notes": "La règle « arrivée − départ » est vue se répéter (le tableau réécrit la soustraction à chaque geste, en bougeant tantôt A tantôt B) avant les cinq briques, toutes gardées par done2, et avant les deux NumericQuestion de l'étape 3 qui la demandent sans figure avec parseDecSigned (les négatifs passent) et des explainFor sur le signe inversé et les coordonnées échangées.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:translations-vecteurs-3e",
+     "3e:reperage-droite-plan-3e"
+    ],
+    "kind": "repetition",
+    "detail": "C'EST LE CAS LE PLUS NET. translations-vecteurs-3e M5 pose la brique `coordonnees-vecteur` (type formules, (xB − xA ; yB − yA)) et la brique `mem-arrivee-moins-depart` — MÊMES IDENTIFIANTS que les briques M3 de la 2de — sur le MÊME exemple numérique C (5 ; −3) et D (1 ; 2), avec le même explainFor sur le signe inversé. Or l'objet officiel 3e translations_vecteurs porte teachingScope.exclude = [\"Coordonnées de vecteurs\", …]. La 2de M3 réenseigne donc comme neuf ce que la 3e enseigne déjà hors de son propre périmètre. Voir lessonLevel.duplicates."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P12": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 1,
+     "mechanism": "manipulation:VectorLab"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 1,
+     "mechanism": "brick:formule-norme"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 2,
+     "mechanism": "manipulation:VectorLab"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 2,
+     "mechanism": "brick:vocab-norme"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 3,
+     "mechanism": "question:M06-S3-Q1"
+    }
+   ],
+   "manipulation": "Étape 2 du module 6 : l'élève déplace B et surveille DEUX étiquettes côte à côte — la distance de A à B, et la norme du vecteur AB. Elles ne se séparent jamais, quelle que soit la position de B ; il faut trois positions distinctes pour valider l'étape. L'identification n'est plus annoncée, elle est constatée.",
+   "assessmentQuestionIds": [
+    "vec-e9"
+   ],
+   "knowledgeItems": [
+    "formule-norme",
+    "vocab-norme"
+   ],
+   "notes": "PARTIEL. Le pas conceptuel « la distance AB EST la norme du vecteur AB » n'a pas de geste : il est annoncé dans le sous-titre de l'étape 2 (« La distance AB est la longueur du vecteur AB ») et affirmé dans la brique vocab-norme (AB = ‖AB‖) ; le seul dispositif est la NumericQuestion M06-S2-Q1, qui v\n\nRÉSOLU le 2026-09-10. Le pas conceptuel « la distance AB EST la norme du vecteur AB » était annoncé par le SOUS-TITRE de l'étape puis éprouvé par la question qui suivait : l'élève vérifiait une identification qu'on venait de lui donner, et la chaîne AB → coordonnées → norme était demandée d'un seul coup. Une étape de constat est insérée avant : deux lecteurs (distance mesurée, norme calculée) restent égaux pendant que l'élève déplace B. La brique vocab-norme y est posée en RAPPEL — elle a déjà servi à l'étape 1 pour la norme seule. Le calcul complet n'est demandé qu'ensuite, sur des points fixes. Vérifié au navigateur : trois positions, dist = norme à chaque fois (4,1231 / 5,0990 / 6,0828), constat affiché, étape suivante ouverte.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:reperage-droite-plan-3e"
+    ],
+    "kind": "anticipation",
+    "detail": "La 3e ne traite que les segments axiaux et diffère explicitement le cas oblique (brique limite-oblique). C'est bien la 2de qui doit livrer la distance quelconque — d'où la gravité du fait qu'elle ne la fasse pas manipuler."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P13": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 3,
+     "mechanism": "manipulation:MidpointLab"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 3,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 3,
+     "mechanism": "brick:methode-milieu"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "mesurer-un-vecteur",
+     "step": 4,
+     "mechanism": "question:M06-S4-Q2"
+    }
+   ],
+   "manipulation": "MidpointLab — l'élève déplace I (au demi-carreau) jusqu'à ce que les deux flèches AI et IB deviennent LE MÊME vecteur (equal(vec(A,I), vec(I,B))) ; le milieu est donc défini par l'égalité vectorielle avant d'être une moyenne",
+   "assessmentQuestionIds": [
+    "vec-e9"
+   ],
+   "knowledgeItems": [
+    "methode-milieu",
+    "formule-milieu"
+   ],
+   "notes": "Excellente séquence : la CARACTÉRISATION (AI = IB) est ce que l'élève fabrique, la FORMULE (moyennes) n'arrive qu'ensuite dans la révélation conditionnée, avec le calcul écrit sur les valeurs de la scène. La brique est gardée par done3 et la question sans figure vient à l'étape 4, avec un explainWrong qui vise exactement la méprise « milieu = CD/2 ».",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:reperage-droite-plan-3e"
+    ],
+    "kind": "consolidation",
+    "detail": "reperage-droite-plan-3e M5 possède la brique milieu-moyenne (type formules, xI = (xA+xB)/2) — mais elle y est AFFICHÉE sans garde, avant la question, sans manipulation (`moyenne` est d'ailleurs dans son priorKnowledge). La 2de est le premier endroit où le milieu est CONSTRUIT par un geste et caractérisé vectoriellement : consolidation légitime, pas répétition."
+   },
+   "confidence": "high"
+  },
+  "seconde_vecteurs-2nde_P14": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 7,
+     "moduleSlug": "problemes-de-geometrie",
+     "step": 1,
+     "mechanism": "manipulation:VectorScene"
+    },
+    {
+     "module": 7,
+     "moduleSlug": "problemes-de-geometrie",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 7,
+     "moduleSlug": "problemes-de-geometrie",
+     "step": 1,
+     "mechanism": "brick:methode-parallelogramme"
+    },
+    {
+     "module": 7,
+     "moduleSlug": "problemes-de-geometrie",
+     "step": 2,
+     "mechanism": "question:M07-S2-Q1"
+    },
+    {
+     "module": 7,
+     "moduleSlug": "problemes-de-geometrie",
+     "step": 3,
+     "mechanism": "question:M07-S3-Q3"
+    }
+   ],
+   "manipulation": "VectorScene avec D draggable + steppers — l'élève place D jusqu'à ce que la flèche DC devienne exactement AB (isParallelogram teste AB = DC, l'ordre du contour est donc dans le modèle) ; le lecteur affiche en direct AB et DC et le Feedback d'échec chiffre CE QUI MANQUE",
+   "assessmentQuestionIds": [
+    "vec-e10"
+   ],
+   "knowledgeItems": [
+    "methode-parallelogramme",
+    "methode-deplacement-manquant",
+    "methode-alignement"
+   ],
+   "notes": "Les trois problèmes sont bien différenciés et le premier est un vrai geste. Réserves : (a) aux étapes 2 et 3, les briques methode-deplacement-manquant et methode-alignement sont posées AVANT la question mais sans geste préalable — c'est la figure affichée qui sert de support, pas une manipulation ; le lead de la brique dit d'ailleurs « Regarde la figure », pas « tu viens de… » ; (b) vec-e10 ne mesure que le parallélogramme, et il est partagé avec P1. Les deux autres méthodes (déplacement manquant, alignement) ne sont mesurées par AUCUNE épreuve du boss.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:translations-vecteurs-3e"
+    ],
+    "kind": "repetition",
+    "detail": "translations-vecteurs-3e M7 fait déjà placer le quatrième point d'un parallélogramme (brique construire-quatrieme-point, fourthPoint(A,B,C), gate = D à la cible) et son épreuve tv-e9 est la même tâche ; sa brique parallelogramme-vecteurs (M6) énonce déjà AB = CD ⇒ parallélogramme. Ce qui est neuf en 2de est l'ordre des sommets (ABCD ⇔ AB = DC) et la preuve d'alignement par colinéarité."
+   },
+   "confidence": "high"
   }
+ },
+ "lessonLevel": {
+  "pedagogicalProblems": [
+   "DENSITÉ DE PREUVE AU BOSS : 14 LPs pour 10 épreuves. Sept épreuves sur dix portent deux LPs (vec-e2 → P2+P4, vec-e4 → P4+P9, vec-e5 → P5+P9, vec-e7 → P7+P8, vec-e8 → P11+P10, vec-e9 → P12+P13, vec-e10 → P14+P1). Deux appariements ne mesurent PAS les deux LPs : (1) vec-e2 « Lequel de ces vecteurs est le vecteur nul ? » avec les options AB+BA / AB+AB / AB−BA / AB+BC est comptée pour P4 « Additionner deux vecteurs » alors qu'aucune addition de coordonnées n'y est faite — c'est une question de reconnaissance formelle, et P4 n'est réellement mesuré que par vec-e4 ; (2) vec-e7 « le vecteur 2i − 3j a pour coordonnées… » est comptée pour P8 « Lire les coordonnées d'un vecteur » alors qu'aucune figure n'est lue — c'est une conversion d'écriture. Les autres appariements sont légitimes : vec-e8 et vec-e9 demandent explicitement les deux résultats dans la même option (« AB (4 ; −3), ‖AB‖ = 5 » ; « CD = 10, milieu (0 ; 0) »), donc un élève ne peut pas répondre juste en ne maîtrisant qu'une moitié. Fichier : modules/Module08MissionFinale.jsx, littéraux `assessment.learningPointIds`.",
+   "P7 « Utiliser une base orthonormée » : l'orthonormalité est affirmée, jamais manipulée ni mesurée. i et j sont dessinés fixes (Module03DeuxNombresSuffisent.jsx, `extraArrows`), l'élève ne peut pas les modifier, et la seule justification (« Cette formule marche parce que la base est orthonormée », Module06MesurerUnVecteur.jsx étape 1) est une phrase de Feedback. Aucune épreuve ne demande pourquoi la norme exige une base orthonormée.",
+   "P12 « Calculer une distance entre deux points » n'a aucune manipulation propre : le pas « AB = ‖AB‖ » est posé par un sous-titre d'étape (Module06MesurerUnVecteur.jsx, step 2 `subtitle`) et par le corps de la brique vocab-norme, puis immédiatement DEMANDÉ par M06-S2-Q1. C'est le seul endroit de la leçon où une notion est éprouvée sans qu'un geste ou une révélation conditionnée l'ait établie.",
+   "Module 7, étapes 2 et 3 : les briques methode-deplacement-manquant et methode-alignement sont posées sur une figure statique (VectorScene sans `draggableId`, sans `onPointChange`), avec un lead « Regarde la figure » au lieu de « tu viens de ». Contrairement au reste de la leçon, la méthode est donc annoncée puis appliquée, sans geste — et aucune épreuve du boss ne les mesure.",
+   "Le vecteur nul est établi (M2 étape 2) mais son statut d'exception n'est jamais interrogé : `colinearFactor` retourne 0 pour le vecteur nul (« colinéaire à tout »), le texte de M5 étape 3 le dit en passant (« v est nul : colinéaire à tout, mais ce n'est pas ce qu'on cherche ici »), et aucune question ne fait travailler ce cas."
+  ],
+  "technicalProblems": [
+   "MANIPULATIONS GELÉES APRÈS VALIDATION (classe de bug `frozen_manipulation_bug_class`) — 20 occurrences, toute la leçon est concernée : Module01LeRobotDuDepot.jsx:81,112,127,172,213,221 (DisplacementLab et PredictionChips, quatre étapes) ; Module02LeMemeVecteur.jsx:72,83,148,190 ; Module03DeuxNombresSuffisent.jsx:72,127 ; Module04EnchainerLesDeplacements.jsx:61,70,119,129 ; Module05EtirerInverser.jsx:73,75 ; Module06MesurerUnVecteur.jsx:79,152 ; Module07ProblemesDeGeometrie.jsx:85,89,90. Dès que la condition de réussite est atteinte, `disabled={doneN}` coupe le laboratoire : l'élève ne peut plus explorer autour de la solution qu'il vient de trouver, ni revenir vérifier une intuition pendant qu'il lit la révélation qui parle de ce qu'il a fait. Le cas le plus coûteux est ScaleLab (M5:75) : l'élève visite k = 2, −1, 0 et le curseur k se fige au moment exact où la règle générale k·(x ; y) = (kx ; ky) vient d'être énoncée, donc il ne peut pas la tester sur une quatrième valeur.",
+   "Dérive de durée (flag DURATION_DRIFT de la matrice) : lesson.config.js déclare estimatedDurationMin = 90 et le catalogue 90, mais la somme des `estimatedMin` des neuf modules vaut 84. Le spec docs/lessons/2NDE_VECTEURS_SPEC.md dit d'ailleurs « 84 min (90 before the « À retenir » module was folded into the Knowledge Map) » : c'est la valeur 90 qui n'a pas été mise à jour.",
+   "Dérive spec/code : docs/lessons/2NDE_VECTEURS_SPEC.md §3 et §4 annoncent un composant `NormLab` pour le module 6. Il n'existe pas ; M6 utilise VectorLab (avec `escalier`) plus MidpointLab. Aucune conséquence pour l'élève, mais le spec ne décrit plus le code.",
+   "Code mort : `components/vecteurUtils.js` exporte `ZERO`, `clampToRange`, `sameSense`, `sameLength`, `areColinear`, `signed`, `comboText`, `dot`, `norm` — aucun de ces symboles n'est importé par un module ou un composant de la leçon (`sub` n'est utilisé qu'une fois, dans Module07 pour calculer V2 ; `attributesOf` n'est utilisé qu'à travers `diagnose`). `comboText` est particulièrement révélateur : M3 réécrit la combinaison x·i + y·j à la main au lieu de l'appeler.",
+   "AUCUN problème de tolérance : toutes les conditions de réussite passent par `equal` (eps = 1e-9) sur une grille au pas 1 (ou au demi-carreau pour MidpointLab), donc la tolérance est très inférieure à ce que l'élève distingue — jamais l'inverse. Les mathématiques sont justes : `isParallelogram` teste bien AB = DC dans l'ordre du contour et exclut les cas dégénérés, `colinearFactor` traite correctement le vecteur nul, `normText`/`simplifySqrt` affichent la forme exacte simplifiée (2√5 et non 4,47 seulement), et `vecteurUtils.test.js` + `labelLayout.test.js` verrouillent ces invariants."
+  ],
+  "duplicates": [
+   "AVEC LA 3e — coordonnées d'un vecteur (constat vérifié dans les deux fichiers) : vecteurs-2nde M3 « Deux nombres suffisent » et college/3e/espace_geometrie/translations-vecteurs-3e M5 « Deux nombres suffisent » portent le MÊME TITRE, posent les MÊMES IDENTIFIANTS de brique (`coordonnees-vecteur`, `mem-arrivee-moins-depart`), utilisent le MÊME exemple numérique (C (5 ; −3), D (1 ; 2), réponse 5 sur les ordonnées), le même piège explainFor (signe inversé = départ − arrivée) et deux lignes identiques de BatchChoiceQuestion (« De (0 ; 0) à (3 ; 1), et de (−4 ; 2) à (−1 ; 3) » et « De (1 ; 1) à (4 ; 2), et de (4 ; 2) à (1 ; 1) »). Or l'objet officiel packages/core/curriculum/smarter_academy_programmes_maths_2026.json → levels.3e → domain espace_geometrie → object translations_vecteurs porte teachingScope.exclude = [\"Coordonnées de vecteurs\", \"Colinéoarité\", \"Produit scalaire\"], et l'entrée catalogue 3e_translations_vecteurs (packages/core/curriculum/coursesData.js:677) liste malgré cela quatre pointsToLearn liés aux coordonnées : « Représenter un déplacement à l'aide d'un vecteur », « Comprendre qu'un même vecteur peut représenter un même déplacement en différents endroits », « Utiliser les coordonnées pour représenter un vecteur », « Déterminer les coordonnées d'un vecteur à partir de deux points ». CONSÉQUENCE POUR M3 : ce module est un DOUBLON de niveau, pas une découverte. Le déclencheur (« deux nombres suffisent ») ne peut pas fonctionner sur un élève qui a fait la 3e du même produit : il a déjà eu l'aha. La 2de devrait s'ouvrir sur ce qui est réellement neuf — la BASE (i, j) et l'écriture x·i + y·j, qui n'existent nulle part en 3e. Le défaut est en amont : c'est le catalogue 3e qui outrepasse le périmètre officiel de son propre objet.",
+   "AVEC LA 3e — égalité et représentants (M2) : translations-vecteurs-3e M4 « La flèche vagabonde » exécute la manipulation identique (VectorLab mode move, composantes figées, garde TROP_PRES = 2, trois flèches à poser) et sa question d'étape 3 est mot pour mot l'épreuve vec-e1. Répétition du geste ET de l'item d'évaluation.",
+   "AVEC LA 3e — quatrième sommet du parallélogramme (M7 étape 1) : translations-vecteurs-3e M7 pose déjà la brique construire-quatrieme-point sur la même tâche, éprouvée par tv-e9. Ce qui reste neuf en 2de est l'ordre des sommets (ABCD ⇔ AB = DC, jamais AB = CD).",
+   "EN 2de — colinéarité (M5 étapes 3–4, brique regle-colineaire, épreuve vec-e6) : la leçon suivante colinearite-alignement-2nde reprend le même objet (ses LP P1 « Comprendre la colinéarité » et P2 « Reconnaître deux vecteurs colinéaires »). Le partage est explicitement organisé (lesson.config.js de vecteurs exclut le déterminant, celui de colinéarité l'apporte) et la 2de définit ici la colinéarité comme « l'un est un multiple de l'autre », la leçon suivante comme det = 0 : ce n'est donc pas un doublon fautif, mais la frontière repose entièrement sur une convention documentaire, rien dans le code n'empêche la redite.",
+   "PAS de doublon avec reperage-droite-plan-3e pour M6 : la 3e n'enseigne que |xB − xA| sur un segment axial et exclut la distance quelconque ; seul le milieu se recoupe, et de façon superficielle (formule affichée, sans geste)."
+  ],
+  "verticalPositioning": {
+   "revised": "Le vecteur comme déplacement indépendant du point de départ, la direction / le sens / la longueur, l'égalité de deux vecteurs, les représentants, le vecteur opposé, et — indûment, hors du périmètre officiel de la 3e — les coordonnées d'un vecteur par arrivée − départ. Tout cela est déjà établi par translations-vecteurs-3e avec les mêmes gestes.",
+   "extended": "Le milieu, passé d'une formule affichée en 3e (reperage-droite-plan-3e, brique milieu-moyenne) à une caractérisation vectorielle construite (AI = IB, MidpointLab). La longueur, passée du seul segment axial de la 3e à la norme d'un vecteur quelconque.",
+   "new": "La base orthonormée (i, j) et l'écriture u = x·i + y·j ; la somme formelle et la relation de Chasles (explicitement exclues du programme de 3e) ; le produit par un réel k et l'effet de son signe ; la colinéarité comme « multiple de » ; la norme √(x² + y²) et donc la distance entre deux points quelconques.",
+   "formalized": "Les notations : u→, AB→, 0→, −u→, ‖u‖, k·u, la relation AB→ + BC→ = AC→. Les briques `formules` (formule-coordonnees, formule-somme, formule-chasles, formule-norme, formule-milieu) portent ces écritures, et les briques `memoriser` (mem-deplacement, mem-arrivee-moins-depart, mem-oppose, mem-chasles) les phrases-clés. La leçon est la référence de l'architecture Knowledge Map : aucun module « À retenir », huit KnowledgeSnapshot en pied de module et la carte complète en synthèse du boss.",
+   "tool": "Le vecteur devient l'outil de trois problèmes de géométrie (quatrième sommet, déplacement manquant, alignement) et le socle des trois leçons suivantes du chapitre : colinéarité et alignement (déterminant), équations de droites (vecteur directeur), positions relatives."
+  },
+  "officialScopeNotCovered": [
+   "SOUSTRACTION DE VECTEURS (u − v) — l'objet officiel seconde/geometrie/vecteurs ne la liste pas dans teachingScope.include (ses 14 entrées sont exactement les 14 LPs de la leçon), mais le référentiel externe docs/audits/2de-external-lps.json la porte : LP105, chapitre 8 « Vecteurs », « Soustraire des vecteurs ». VERDICT : la soustraction n'est NI enseignée NI demandée comme opération. Ce qui existe : (a) le vecteur OPPOSÉ est bien enseigné (M2 étape 3, manipulation VectorLab + brique regle-vecteur-oppose, et brique mem-oppose en M3) ; (b) M4 étape 2 fait construire v = −u pour revenir au départ, ce qui est u + (−u) = 0, écrit comme une somme ; (c) knowledge.jsx M7, brique methode-deplacement-manquant, écrit la seule soustraction de la leçon : v = total − u, et M07-S2-Q1/Q2 la fait CALCULER coordonnée par coordonnée — mais sans jamais nommer l'opération, sans règle générale u − v = u + (−v), et sans que le mot « soustraire » apparaisse ; (d) le distracteur 3 de l'épreuve vec-e2 affiche « AB − BA » et son explain affirme « AB − BA = 2·AB » — un élève rencontre donc l'écriture pour la première fois DANS l'évaluation, avec une valeur qu'aucune règle de la leçon ne lui permet de retrouver. `sub()` existe dans components/vecteurUtils.js et n'est utilisé que pour préparer la constante V2 de M7. Aucun LP de la leçon ne porte cette compétence, donc l'audit interne la déclarera couverte ; l'écart est vis-à-vis du référentiel externe.",
+   "CARACTÉRISATION PAR DIRECTION / SENS / NORME (référentiel externe LP101, LP102, LP103) — VERDICT : c'est de la RÉVISION de collège, pas un enseignement de 2de. Les trois attributs sont énoncés dans la brique vecteur-deplacement (knowledge.jsx M1, une liste à trois puces) et dans mem-deplacement, et la question M01-S5-Q1 les demande. Mais rien ne les fait DISCRIMINER : le modèle les distingue bien (`attributesOf`, `sameDirection` fondé sur une clé canonique où deux vecteurs opposés partagent la même direction, `diagnose` + DIAGNOSIS_TEXT), et ce diagnostic ne sert qu'en message d'échec — l'élève ne voit le mot « direction » qu'en se trompant. Le contraste crucial « sens contraire ≠ autre direction » n'est jamais isolé par une manipulation ni éprouvé par une question ; il est seulement asséné dans le Feedback de M2 étape 3 et dans l'explain de vec-e5. Or translations-vecteurs-3e M2 « Direction, sens, longueur » fait exactement ce travail, avec trois lampes indépendantes et une garde qui EXIGE de produire les trois cas (opposé, autre longueur, autre direction) plus une brique dédiée `direction-nest-pas-sens`. Le dispositif de 3e est strictement plus fort que celui de 2de sur ce point : en 2de, la caractérisation est supposée acquise. Seule la NORME (LP103) est véritablement enseignée en 2de, par M6 — et elle a son LP (P10).",
+   "Aucun autre item de teachingScope.include de l'objet officiel n'est sans LP : les cinq entrées se répartissent sur P1–P14 sans reste."
+  ],
+  "recommendations": [
+   "Retirer les `disabled={doneN}` des vingt laboratoires : un laboratoire validé doit rester manipulable (règle `manipulation_interaction_rules`). Priorité à ScaleLab (M5 étape 1) et VectorLab de M3 étape 2, où l'exploration après réussite est le cœur de la généralisation.",
+   "Donner un geste à P12 : une étape où l'élève déplace B et voit la distance AB se recalculer, avant la NumericQuestion — ou faire naître AB = ‖AB‖ d'une révélation conditionnée plutôt que d'un sous-titre.",
+   "Donner à P7 une expérience de l'orthonormalité (par exemple une base déformée où l'escalier ment sur la longueur), ou requalifier le LP en « lire un vecteur dans la base (i, j) », qui est ce que la leçon enseigne réellement.",
+   "Répartir la charge du boss : ajouter deux épreuves pour que P4 ne repose plus sur vec-e2 (reconnaissance formelle) et que P8 soit mesuré par une vraie LECTURE graphique ; ajouter une épreuve sur le déplacement manquant ou l'alignement, aujourd'hui enseignés (M7) et jamais mesurés.",
+   "Traiter le doublon 3e/2de en amont : corriger le catalogue 3e_translations_vecteurs (coursesData.js:677) pour qu'il respecte le teachingScope.exclude « Coordonnées de vecteurs » de son objet officiel, OU assumer l'anticipation et réécrire vecteurs-2nde M3 autour de ce qui est neuf (la base (i, j), l'écriture x·i + y·j) plutôt qu'autour de la découverte des deux nombres.",
+   "Introduire explicitement u − v = u + (−v) (LP105 externe) : la leçon en a déjà tous les ingrédients (l'opposé en M2, la somme en M4, v = total − u en M7) ; il manque une étape qui les relie et une règle nommée — sans quoi le distracteur « AB − BA » de vec-e2 demande à l'élève une écriture qu'il n'a jamais rencontrée.",
+   "Aligner estimatedDurationMin (90) sur la somme réelle des modules (84), ou l'inverse ; supprimer les exports morts de vecteurUtils.js ; mettre le spec à jour (NormLab n'existe pas)."
+  ]
+ }
 }

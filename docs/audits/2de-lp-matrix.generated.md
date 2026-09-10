@@ -1,15 +1,15 @@
 # 2de — matrice des Learning Points (généré)
 
 > Généré par `scripts/audit-2de-learning-points.mjs` — **Ne pas éditer à la main.**
-> 31 leçons · 303 learning points · 492 briques · 336 questions d'évaluation.
+> 31 leçons · 303 learning points · 493 briques · 336 questions d'évaluation.
 > Les statuts proviennent de `docs/audits/judgements/<leçon>.json` (jugement humain) ; ce script ne les calcule pas.
 
 ## Statuts
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 287 | 94.7 % |
-| `PARTIALLY_COVERED` | 16 | 5.3 % |
+| `COVERED` | 288 | 95.0 % |
+| `PARTIALLY_COVERED` | 15 | 5.0 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -28,7 +28,7 @@
 | `positions-relatives-droites-2nde` | geometrie | available | 70 / 70 / 70 | 7 | 8 | 21 | 77 | 6 | ✅ | ✅ | ✅ | — |
 | `trigonometrie-cercle-2nde` | geometrie | available | 80 / 80 / 80 | 6 | 9 | 13 | 56 | 5 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `trigonometrie-equations-2nde` | geometrie | available | 75 / 75 / 75 | 6 | 4 | 12 | 51 | 5 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
-| `vecteurs-2nde` | geometrie | available | 84 / 84 / 84 | 9 | 14 | 29 | 66 | 8 | ✅ | ✅ | ✅ | — |
+| `vecteurs-2nde` | geometrie | available | 87 / 87 / 87 | 9 | 14 | 30 | 66 | 8 | ✅ | ✅ | ✅ | — |
 | `arithmetique-2nde` | nombres_calculs | available | 68 / 68 / 68 | 7 | 5 | 16 | 32 | 6 | ✅ | ✅ | ✅ | — |
 | `calcul-litteral-2nde` | nombres_calculs | available | 80 / 80 / 80 | 8 | 10 | 19 | 73 | 7 | ✅ | ✅ | ✅ | — |
 | `ensembles-et-intervalles-2nde` | nombres_calculs | available | 70 / 70 / 70 | 8 | 7 | 23 | 52 | 7 | ✅ | ✅ | ✅ | — |
@@ -188,7 +188,7 @@
 | `P9` Calculer les coordonnées d'un vecteur | geometrie | `vecteurs-2nde` | M4, M5 | COVERED | M4.1 manipulation:SumLab · M4.4 question:M04-S4-Q2 · M5.2 question:M0… | SumLab (tableau des coordonnées o… | `vec-e4` `vec-e5` | `regle-somme` `formule-somme` `regle-produit-reel` | M4, M5 |
 | `P10` Calculer la norme d'un vecteur | geometrie | `vecteurs-2nde` | M6 | COVERED | M6.1 manipulation:VectorLab · M6.1 feedback · M6.1 brick:methode-calc… | VectorLab + `escalier` + NormRead… | `vec-e8` | `methode-calcul-norme` `vocab-norme` `formule-norme` | M6 |
 | `P11` Calculer les coordonnées du vecteur AB | geometrie | `vecteurs-2nde` | M3, M7 | COVERED | M3.2 manipulation:VectorLab · M3.2 feedback · M3.2 brick:regle-coordo… | VectorLab mode 'points' — l'élève… | `vec-e8` | `regle-coordonnees` `mem-arrivee-moins-depart` `methode-calcul-coordonnees` | M3, M7 |
-| `P12` Calculer une distance entre deux points | geometrie | `vecteurs-2nde` | M6 | PARTIALLY_COVERED | M6.2 question:M06-S2-Q1 · M6.1 brick:methode-calcul-norme · M6.1 bric… | Aucune manipulation propre : la d… | `vec-e9` | `formule-norme` `vocab-norme` | M6 |
+| `P12` Calculer une distance entre deux points | geometrie | `vecteurs-2nde` | M6 | COVERED | M6.1 manipulation:VectorLab · M6.1 brick:formule-norme · M6.2 manipul… | Étape 2 du module 6 : l'élève dép… | `vec-e9` | `formule-norme` `vocab-norme` | M6 |
 | `P13` Calculer les coordonnées du milieu d'un segme… | geometrie | `vecteurs-2nde` | M6, M7 | COVERED | M6.3 manipulation:MidpointLab · M6.3 feedback · M6.3 brick:methode-mi… | MidpointLab — l'élève déplace I (… | `vec-e9` | `methode-milieu` `formule-milieu` | M6, M7 |
 | `P14` Utiliser les vecteurs pour résoudre un problè… | geometrie | `vecteurs-2nde` | M7 | COVERED | M7.1 manipulation:VectorScene · M7.1 feedback · M7.1 brick:methode-pa… | VectorScene avec D draggable + st… | `vec-e10` | `methode-parallelogramme` `methode-deplacement-manquant` `methode-alignement` | M7 |
 | `P1` Reconnaître et utiliser les multiples et divi… | nombres_calculs | `arithmetique-2nde` | M1, M4 | COVERED | M1.1 manipulation:PackLab · M1.1 brick:regle-reste-decide · M1.3 bric… | PackLab — deux tas de jetons (a, … | `ar-e1` `ar-e2` | `division-euclidienne` `multiple-diviseur` `regle-reste-decide` | M1, M4 |

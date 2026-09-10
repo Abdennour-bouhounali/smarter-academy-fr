@@ -51,7 +51,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '➡️',
-  estimatedDurationMin: 84,
+  estimatedDurationMin: 87,
   skills: [
     "Comprendre l'égalité de deux vecteurs",
     'Identifier le vecteur nul',
@@ -170,7 +170,7 @@ export const LESSON_CONFIG = {
       title: 'Mesurer un vecteur', desc: 'La longueur de la flèche sort de l’escalier : norme, distance entre deux points, milieu.',
       stage: 'manipulation',
       teachesLearningPointIds: ['seconde_vecteurs-2nde_P10', 'seconde_vecteurs-2nde_P12', 'seconde_vecteurs-2nde_P13', 'seconde_vecteurs-2nde_P7'],
-      color: 'cyan', style: 'featured', estimatedMin: 9, difficulty: 3, actionText: 'Mesurer',
+      color: 'cyan', style: 'featured', estimatedMin: 12, difficulty: 3, actionText: 'Mesurer',
     },
     {
       id: '07', number: 7, slug: 'problemes-de-geometrie', path: `${LESSON_BASE_PATH}/problemes-de-geometrie`,
