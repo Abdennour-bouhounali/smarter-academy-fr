@@ -21,6 +21,14 @@ class LearningEvidence extends Model
         'assessment_type',
         'answer',
         'submitted_at',
+        // Contexte apporté par le moteur de pratique. Restent NULL pour le
+        // test final, qui n'a ni niveau ni indices — c'est ce qui rend
+        // l'extension invisible pour les 193 preuves déjà enregistrées.
+        'outcome',
+        'level',
+        'hints_used',
+        'misconception_id',
+        'source_id',
     ];
 
     protected function casts(): array
@@ -29,6 +37,8 @@ class LearningEvidence extends Model
             'is_correct' => 'boolean',
             'answer' => 'array',
             'submitted_at' => 'datetime',
+            'level' => 'integer',
+            'hints_used' => 'integer',
         ];
     }
 
@@ -44,6 +54,11 @@ class LearningEvidence extends Model
 
     public function learningPoints(): BelongsToMany
     {
-        return $this->belongsToMany(LearningPoint::class, 'learning_evidence_learning_point');
+        // `role` ('primary' | 'secondary') pondère la preuve : une question
+        // qui mesure surtout un point ne doit pas créditer autant celui
+        // qu'elle ne fait qu'effleurer. Par défaut 'primary', donc les 230
+        // lignes antérieures gardent exactement leur sens.
+        return $this->belongsToMany(LearningPoint::class, 'learning_evidence_learning_point')
+            ->withPivot('role');
     }
 }
