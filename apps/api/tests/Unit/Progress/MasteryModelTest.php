@@ -64,4 +64,80 @@ class MasteryModelTest extends TestCase
 
         $this->assertSame('gap', MasteryModel::statusFor($confidence));
     }
+
+    /**
+     * LE critère d'acceptation de l'extension : un appel à trois arguments —
+     * celui du test final — doit produire EXACTEMENT le nombre que produisait
+     * la formule d'avant le moteur de pratique. La formule historique est
+     * réécrite ici en toutes lettres, pour que le test échoue si le socle
+     * bouge, et pas seulement si les nouveaux facteurs bougent.
+     */
+    public function test_legacy_defaults_reproduce_the_historical_formula(): void
+    {
+        foreach ([0.0, 0.2, 0.5, 0.699, 0.7, 0.95, 1.0] as $confidence) {
+            foreach ([true, false] as $isCorrect) {
+                foreach ([1, 2, 3, 4] as $difficulty) {
+                    $weight = max(1, min(4, $difficulty)) / 4;
+                    $delta = $isCorrect
+                        ? MasteryModel::LEARNING_RATE * (0.3 + 0.7 * $weight)
+                        : -MasteryModel::LEARNING_RATE * (0.3 + 0.7 * (1 - $weight));
+                    $legacy = round(max(0.0, min(1.0, $confidence + $delta)), 3);
+
+                    $this->assertSame(
+                        $legacy,
+                        MasteryModel::updateConfidence($confidence, $isCorrect, $difficulty),
+                        "c={$confidence} correct=".($isCorrect ? '1' : '0')." d={$difficulty}"
+                    );
+                }
+            }
+        }
+    }
+
+    public function test_a_hint_never_turns_a_success_into_a_loss(): void
+    {
+        // Cible §12 : « using a hint is not itself a failure ». Réussir après
+        // trois indices reste une progression — modeste, jamais négative.
+        foreach ([1, 2, 3] as $hints) {
+            $after = MasteryModel::updateConfidence(0.5, true, 3, $hints, MasteryModel::SOURCE_PRACTICE);
+            $this->assertGreaterThan(0.5, $after, "réussite avec {$hints} indice(s)");
+        }
+    }
+
+    public function test_hints_never_make_a_failure_worse(): void
+    {
+        // La décote d'indice ne s'applique qu'aux réussites : avoir demandé de
+        // l'aide ne doit pas alourdir la sanction d'un échec.
+        $withoutHints = MasteryModel::updateConfidence(0.5, false, 3, 0, MasteryModel::SOURCE_PRACTICE);
+        $withHints = MasteryModel::updateConfidence(0.5, false, 3, 3, MasteryModel::SOURCE_PRACTICE);
+
+        $this->assertSame($withoutHints, $withHints);
+    }
+
+    public function test_a_secondary_learning_point_moves_less_than_a_primary_one(): void
+    {
+        $primary = MasteryModel::updateConfidence(0.5, true, 3, 0, MasteryModel::SOURCE_PRACTICE, 'primary');
+        $secondary = MasteryModel::updateConfidence(0.5, true, 3, 0, MasteryModel::SOURCE_PRACTICE, 'secondary');
+
+        $this->assertGreaterThan(0.5, $secondary);
+        $this->assertLessThan($primary, $secondary);
+    }
+
+    public function test_a_partial_answer_counts_for_less_than_a_full_one(): void
+    {
+        $full = MasteryModel::updateConfidence(0.5, true, 3, 0, MasteryModel::SOURCE_PRACTICE, 'primary', 'correct');
+        $partial = MasteryModel::updateConfidence(0.5, true, 3, 0, MasteryModel::SOURCE_PRACTICE, 'primary', 'partially_correct');
+
+        $this->assertGreaterThan(0.5, $partial);
+        $this->assertLessThan($full, $partial);
+    }
+
+    public function test_a_harder_success_is_worth_more_than_an_easier_one(): void
+    {
+        // La difficulté doit compter : quinze exercices faciles ne valent pas
+        // une réussite de niveau 5.
+        $easy = MasteryModel::updateConfidence(0.5, true, 1);
+        $hard = MasteryModel::updateConfidence(0.5, true, 4);
+
+        $this->assertLessThan($hard, $easy);
+    }
 }

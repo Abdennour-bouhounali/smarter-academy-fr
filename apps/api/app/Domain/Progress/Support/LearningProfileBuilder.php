@@ -19,8 +19,8 @@ class LearningProfileBuilder
 {
     /**
      * @param  array<int, array{grade: string, completedAt: ?string, profile: array}>  $diagnosticBaselines
-     *         One entry per grade with a completed diagnostic — the session's
-     *         persisted profile_summary, verbatim.
+     *                                                                                                       One entry per grade with a completed diagnostic — the session's
+     *                                                                                                       persisted profile_summary, verbatim.
      * @param  array<int, array{learningPointCode: string, learningPointTitle: string, lessonCode: string, lessonTitle: string, chapterCode: string, gradeCode: string, status: string, confidence: float, attempts: int, correctCount: int, lastEvidenceAt: ?string, diagnosticSkillId: ?string}>  $masteryRows
      * @return array{initialKnowledge: array, currentMastery: array}
      */
