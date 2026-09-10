@@ -154,3 +154,13 @@ describe('les commentaires ne changent rien', () => {
     expect(out('x = 2  # le prix\nprint(x)  # affichage')).toEqual(['2']);
   });
 });
+
+describe('les lignes d’import', () => {
+  it('accepte « from random import randint » sans rien faire', () => {
+    expect(out('from random import randint\nx = 3\nprint(x)')).toEqual(['3']);
+  });
+
+  it('accepte « import random »', () => {
+    expect(out('import random\nprint(1)')).toEqual(['1']);
+  });
+});

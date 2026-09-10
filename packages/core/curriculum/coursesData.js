@@ -2326,7 +2326,7 @@ const smaMetadata = {
       "Comprendre qu'une équiprobabilité est une hypothèse du modèle",
       "Utiliser une simulation Python ou tableur",
     ],
-    durationMinutes: 72,
+    durationMinutes: 75,
     difficulty: "Difficile",
     status: 'available',
     icon: "🎲",

@@ -261,6 +261,10 @@ export function pyRun(source, { rng = Math.random, maxSteps = 20000 } = {}) {
           output.push(parts.map((p) => pyStr(evalExpr(p.trim(), node.no))).join(' '));
           continue;
         }
+        // `from random import randint` / `import random` : Python l'exige, notre
+        // interpréteur fournit randint d'office. On ACCEPTE la ligne sans rien
+        // faire, pour que le script affiché soit du vrai Python exécutable.
+        if (/^(import\s+\w+|from\s+\w+\s+import\s+[\w,\s]+)$/.test(t)) continue;
         const m = t.match(/^([A-Za-z_]\w*)\s*(\+=|-=|\*=|=)\s*(.+)$/);
         if (!m) throw new PyError(`instruction non reconnue : « ${t} »`, node.no);
         const [, name, op, rhs] = m;

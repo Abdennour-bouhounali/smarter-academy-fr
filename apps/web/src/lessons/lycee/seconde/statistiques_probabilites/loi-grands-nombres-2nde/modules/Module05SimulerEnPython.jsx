@@ -1,25 +1,34 @@
 import React, { useState } from 'react';
 import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../common/kit';
+import { Feedback } from '../../../../../common/components/LessonUI';
 import { parseDec } from '@smarter-academy/core';
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import { PYTHON_SCRIPT, SPREADSHEET_FORMULA } from '../data';
+import PyLab from '../components/PyLab';
 
 /**
- * Module 5 — ATELIER : lire un programme de simulation (LP9).
+ * Module 5 — ATELIER : lire PUIS exécuter un programme de simulation (LP9).
  *
- * Le programme n'est pas exécuté : l'objectif est de RECONNAÎTRE dans le
- * code les objets de la leçon (la répétition, le succès, la fréquence) et
- * de prévoir son affichage. C'est aussi l'occasion du dernier piège utile :
- * `succes / n` est une fréquence, `succes` un effectif.
+ * L'élève reconnaît d'abord dans le code les objets de la leçon (la
+ * répétition, le succès, la fréquence), puis il l'EXÉCUTE réellement : le
+ * learning point dit « utiliser une simulation », pas « la lire ».
  *
- * Le script est affiché tel quel dans un <pre> — pas de coloration
- * syntaxique à charger : la lisibilité vient de la brièveté du code.
+ * L'exécution est faite par un interpréteur Python maison (components/pyRun.js,
+ * copié depuis fonctions-en-python-2nde selon la règle du dépôt), et le script
+ * exécuté est celui-là même qui est affiché — ligne d'import comprise. Les
+ * 10 000 tours consomment ~32 000 pas, d'où maxSteps relevé.
+ *
+ * Deux exécutions ne donnent JAMAIS le même nombre : c'est la fluctuation
+ * d'échantillonnage de la leçon, produite et non racontée.
  */
 export default function Module05SimulerEnPython() {
   const [q1, setQ1] = useState(false);
+  const [runs, setRuns] = useState([]);
   const [q2, setQ2] = useState(false);
   const [q3, setQ3] = useState(false);
+
+  const ranTwice = runs.length >= 2;
 
   const steps = [
     {
@@ -61,6 +70,52 @@ export default function Module05SimulerEnPython() {
     },
     {
       num: 2,
+      title: 'Exécute-le, deux fois',
+      subtitle: 'Le même script, sans rien changer. Note le premier nombre, puis relance.',
+      done: ranTwice,
+      content: (kit) => (
+        <div className="space-y-3">
+          <PyLab
+            initial={PYTHON_SCRIPT}
+            label="Simulation de 10 000 lancers"
+            maxSteps={200000}
+            showEnv={false}
+            onRun={({ output }) => {
+              const v = Number(output[0]);
+              if (!Number.isFinite(v)) return;
+              // kit.react() déclenche un effet du kit : il ne doit JAMAIS être
+              // appelé depuis un updater de setState (React le ré-exécute
+              // pendant le rendu → « Cannot update a component while rendering »).
+              if (runs.length === 1) kit.react?.(true);
+              setRuns((r) => [...r, v]);
+            }}
+          />
+          {runs.length === 0 && (
+            <Feedback tone="info">
+              Dix mille lancers vont être joués pour de bon. Clique sur « Exécuter ».
+            </Feedback>
+          )}
+          {runs.length === 1 && (
+            <Feedback tone="info">
+              <strong>{runs[0].toFixed(4).replace('.', ',')}</strong>. Relance sans rien modifier :
+              tu n’obtiendras pas le même nombre.
+            </Feedback>
+          )}
+          {ranTwice && (
+            <Feedback tone="ok">
+              <strong>{runs.slice(-2).map((v) => v.toFixed(4).replace('.', ',')).join(' puis ')}</strong> —
+              deux nombres différents, tous deux voisins de <strong>0,167</strong>. Le script n’a pas
+              changé d’une lettre : c’est la <strong>fluctuation d’échantillonnage</strong> que tu
+              observes depuis le module 2, cette fois produite par 10 000 lancers en une seconde.
+              Change <code>n</code> pour 100, relance deux fois : l’écart entre les deux devient
+              beaucoup plus grand.
+            </Feedback>
+          )}
+        </div>
+      ),
+    },
+    {
+      num: 3,
       title: 'Qu’affiche la dernière ligne ?',
       done: q2,
       content: (
@@ -76,7 +131,7 @@ export default function Module05SimulerEnPython() {
       ),
     },
     {
-      num: 3,
+      num: 4,
       title: 'Le même calcul au tableur',
       done: q3,
       content: (
@@ -108,10 +163,10 @@ export default function Module05SimulerEnPython() {
   return (
     <ContentModule
       ctx={MODULE_CTX} navLinks={getNavLinks(5)} moduleNumber={5}
-      moduleTitle="Simuler avec un programme" moduleSubtitle="Lire un script, prévoir son affichage" estimatedTime="8 min"
+      moduleTitle="Simuler avec un programme" moduleSubtitle="Lire un script, l’exécuter, prévoir son affichage" estimatedTime="11 min"
       brief={{
         tag: 'Atelier', title: 'Dix mille lancers en une seconde', tone: 'rose',
-        body: <p>Personne ne lance un dé 10 000 fois à la main. Un programme de six lignes le fait — encore faut-il savoir ce qu’il compte.</p>,
+        body: <p>Personne ne lance un dé 10 000 fois à la main. Un programme de six lignes le fait sous tes yeux — encore faut-il savoir ce qu’il compte.</p>,
       }}
       steps={steps}
       footer={(

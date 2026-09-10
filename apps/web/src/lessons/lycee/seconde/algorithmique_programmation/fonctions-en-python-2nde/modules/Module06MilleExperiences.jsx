@@ -54,13 +54,10 @@ export default function Module06MilleExperiences() {
             label="Compter les 6 sur 1 000 lancers"
             onRun={({ output }) => {
               const n = Number(output[0]);
-              if (Number.isFinite(n)) {
-                setCounts((c) => {
-                  const next = [...c, n];
-                  if (next.length === 2) kit.react?.(true);
-                  return next;
-                });
-              }
+              if (!Number.isFinite(n)) return;
+              // Voir Module03 : kit.react() hors de tout updater de setState.
+              if (counts.length === 1) kit.react?.(true);
+              setCounts((c) => [...c, n]);
             }}
           />
           {counts.length === 0 && (

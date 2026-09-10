@@ -8,8 +8,8 @@
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 277 | 91.4 % |
-| `PARTIALLY_COVERED` | 23 | 7.6 % |
+| `COVERED` | 278 | 91.7 % |
+| `PARTIALLY_COVERED` | 22 | 7.3 % |
 | `DUPLICATED` | 3 | 1.0 % |
 | **Total** | **303** | 100 % |
 
@@ -41,7 +41,7 @@
 | `boites-a-moustaches-2nde` | statistiques_probabilites | available | 65 / 65 / 65 | 7 | 9 | 9 | 85 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `evolutions-successives-reciproques-2nde` | statistiques_probabilites | available | 70 / 70 / 70 | 8 | 8 | 13 | 112 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `frequences-conditionnelles-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 10 | 9 | 87 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
-| `loi-grands-nombres-2nde` | statistiques_probabilites | available | 72 / 72 / 72 | 7 | 9 | 9 | 79 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
+| `loi-grands-nombres-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 9 | 9 | 79 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
 | `probabilites-conditionnelles-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 9 | 7 | 86 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
 | `proportions-pourcentages-2nde` | statistiques_probabilites | available | 70 / 70 / 70 | 8 | 11 | 15 | 138 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `series-regroupees-classes-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 8 | 10 | 12 | 86 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
@@ -293,7 +293,7 @@
 | `P6` Comprendre le lien entre fréquence et probabi… | statistiques_probabilites | `loi-grands-nombres-2nde` | M3 | COVERED | M3.1 manipulation:GapExplorer · M3.3 brick:loi-grands-nombres · M3.2 … | — | `lgn-e2` | `loi-grands-nombres` | M3 |
 | `P7` Distinguer modèle probabiliste et situation r… | statistiques_probabilites | `loi-grands-nombres-2nde` | M4 | COVERED | M4.1 manipulation:DiceDetector · M4.1 brick:modele-realite · M4.2 bri… | DiceDetector — décider si un dé o… | `lgn-e7` `lgn-e8` `lgn-e10` | `modele-realite` `methode-tester-modele` | M4 |
 | `P8` Comprendre qu'une équiprobabilité est une hyp… | statistiques_probabilites | `loi-grands-nombres-2nde` | M4 | COVERED | M4.1 manipulation:DiceDetector · M4.1 brick:modele-realite · M4.2 que… | — | `lgn-e8` `lgn-e10` | `modele-realite` | M4 |
-| `P9` Utiliser une simulation Python ou tableur | statistiques_probabilites | `loi-grands-nombres-2nde` | M5 | PARTIALLY_COVERED | M5.1 brick:lire-simulation · M5.2 question:M05-S2-Q1 · M5.3 question:… | Aucune : le script Python est aff… | `lgn-e9` | `lire-simulation` | M5 |
+| `P9` Utiliser une simulation Python ou tableur | statistiques_probabilites | `loi-grands-nombres-2nde` | M5 | COVERED | M5.1 brick:lire-simulation · M5.2 manipulation:PyLab · M5.3 question:… | PyLab | `lgn-e9` | `lire-simulation` | M5 |
 | `P1` Comprendre une probabilité conditionnelle | statistiques_probabilites | `probabilites-conditionnelles-2nde` | M1 | COVERED | M1.1 manipulation:UniverseLab · M1.1 brick:univers-restreint · M1.2 q… | UniverseLab — appliquer une condi… | `pc-e1` | `univers-restreint` | M1 |
 | `P2` Interpréter 'sachant que' | statistiques_probabilites | `probabilites-conditionnelles-2nde` | M1 | COVERED | M1.1 manipulation:UniverseLab · M2.1 brick:notation-sachant · M2.1 qu… | — | `pc-e2` | `univers-restreint` `notation-sachant` | M1 |
 | `P3` Calculer P_A(B) | statistiques_probabilites | `probabilites-conditionnelles-2nde` | M2 | COVERED | M2.1 brick:notation-sachant · M2.2 question:M02-S2-Q1 · M2.3 question… | Aucune manipulation propre au mod… | `pc-e3` | `notation-sachant` | M2 |

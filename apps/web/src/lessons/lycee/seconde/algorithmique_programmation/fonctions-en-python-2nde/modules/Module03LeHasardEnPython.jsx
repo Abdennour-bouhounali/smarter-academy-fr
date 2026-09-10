@@ -49,12 +49,13 @@ export default function Module05LeHasardEnPython() {
             label="Trois lancers de dé"
             onRun={({ output }) => {
               const joined = output.join(',');
+              // Jamais kit.react() dans un updater : React ré-exécute l'updater
+              // pendant le rendu et l'effet du kit déclencherait un setState
+              // d'un autre composant.
+              const next = [...outs, joined];
+              if (next.length >= 2 && new Set(next).size >= 2) kit.react?.(true);
               setRuns((r) => r + 1);
-              setOuts((o) => {
-                const next = [...o, joined];
-                if (next.length >= 2 && new Set(next).size >= 2) kit.react?.(true);
-                return next;
-              });
+              setOuts(next);
             }}
           />
           {runs === 0 && (

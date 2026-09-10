@@ -313,7 +313,7 @@
    "confidence": "high"
   },
   "seconde_loi-grands-nombres-2nde_P9": {
-   "status": "PARTIALLY_COVERED",
+   "status": "COVERED",
    "evidence": [
     {
      "module": 5,
@@ -325,28 +325,22 @@
      "module": 5,
      "moduleSlug": "simuler-en-python",
      "step": 2,
-     "mechanism": "question:M05-S2-Q1"
+     "mechanism": "manipulation:PyLab"
     },
     {
      "module": 5,
      "moduleSlug": "simuler-en-python",
      "step": 3,
+     "mechanism": "question:M05-S2-Q1"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "simuler-en-python",
+     "step": 4,
      "mechanism": "question:M05-S3-Q1"
     }
    ],
-   "manipulation": "Aucune : le script Python est affiché tel quel dans un <pre>, il n'est ni exécuté ni modifiable",
-   "assessmentQuestionIds": [
-    "lgn-e9"
-   ],
-   "knowledgeItems": [
-    "lire-simulation"
-   ],
-   "notes": "L'intitulé du LP est « UTILISER une simulation Python ou tableur ». Le module fait LIRE un script (la brique s'appelle d'ailleurs lire-simulation) et pose des questions sur ce qu'il produirait ; il ne fait ni exécuter, ni compléter, ni modifier. La compétence réellement enseignée est la lecture d'algorithme, pas l'usage d'une simulation. Le LP n'est donc pas couvert au sens de son intitulé — mais il n'est pas absent non plus : la simulation, elle, est bien vécue en M1 avec SimulationLab.",
-   "crossGrade": {
-    "overlapsWith": [],
-    "kind": "none"
-   },
-   "confidence": "high"
+   "note": "Le learning point dit « UTILISER une simulation » : le module se contentait de la faire LIRE (« lis-le sans l'exécuter »). L'étape 2 exécute désormais le script affiché — le vrai, ligne d'import comprise — par l'interpréteur pyRun copié de fonctions-en-python-2nde. Vérifié au navigateur : trois exécutions de 10 000 lancers donnent 0,1682 / 0,1578 / 0,1642, toutes voisines de 1/6 et toutes différentes — la fluctuation d'échantillonnage de la leçon, produite et non racontée."
   }
  },
  "lessonLevel": {

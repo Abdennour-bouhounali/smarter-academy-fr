@@ -81,7 +81,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '🎲',
-  estimatedDurationMin: 72,
+  estimatedDurationMin: 75,
   skills: [
     'Simuler une expérience aléatoire et la répéter un grand nombre de fois',
     'Calculer une fréquence observée et la comparer à la probabilité du modèle',
@@ -110,7 +110,7 @@ export const LESSON_CONFIG = {
     { id: '02', number: 2, slug: 'deux-series-jamais-pareilles', path: `${LESSON_BASE_PATH}/deux-series-jamais-pareilles`, title: 'Deux séries jamais pareilles', desc: 'Même réglage, même nombre de lancers, résultats différents : la fluctuation d’échantillonnage.', stage: 'discovery', teachesLearningPointIds: ['seconde_loi-grands-nombres-2nde_P2', 'seconde_loi-grands-nombres-2nde_P4'], color: 'violet', style: 'featured', estimatedMin: 12, difficulty: 2, actionText: 'Comparer les séries' },
     { id: '03', number: 3, slug: 'ce-que-la-loi-dit-vraiment', path: `${LESSON_BASE_PATH}/ce-que-la-loi-dit-vraiment`, title: 'Ce que la loi dit vraiment', desc: 'La fréquence se resserre — mais l’écart en nombre de lancers, lui, grandit. Et le dé n’a pas de mémoire.', stage: 'formalization', teachesLearningPointIds: ['seconde_loi-grands-nombres-2nde_P5', 'seconde_loi-grands-nombres-2nde_P6'], color: 'sky', style: 'featured', estimatedMin: 13, difficulty: 3, actionText: 'Mettre à l’épreuve' },
     { id: '04', number: 4, slug: 'le-modele-est-il-bon', path: `${LESSON_BASE_PATH}/le-modele-est-il-bon`, title: 'Le modèle est-il bon ?', desc: 'Un dé pipé se cache parmi des dés équilibrés. Seules les grandes séries le trahissent.', stage: 'practice_lab', teachesLearningPointIds: ['seconde_loi-grands-nombres-2nde_P7', 'seconde_loi-grands-nombres-2nde_P8'], color: 'emerald', style: 'featured', estimatedMin: 12, difficulty: 3, actionText: 'Démasquer le dé' },
-    { id: '05', number: 5, slug: 'simuler-en-python', path: `${LESSON_BASE_PATH}/simuler-en-python`, title: 'Simuler avec un programme', desc: 'Lire un script de simulation et prévoir ce qu’il affiche — sans l’exécuter.', stage: 'practice_lab', teachesLearningPointIds: ['seconde_loi-grands-nombres-2nde_P9', 'seconde_loi-grands-nombres-2nde_P1'], color: 'rose', style: 'featured', estimatedMin: 8, difficulty: 3, actionText: 'Lire le script' },
+    { id: '05', number: 5, slug: 'simuler-en-python', path: `${LESSON_BASE_PATH}/simuler-en-python`, title: 'Simuler avec un programme', desc: 'Lire un script de simulation, l’exécuter pour de bon, et prévoir ce qu’il affiche.', stage: 'practice_lab', teachesLearningPointIds: ['seconde_loi-grands-nombres-2nde_P9', 'seconde_loi-grands-nombres-2nde_P1'], color: 'rose', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Exécuter le script' },
     { id: '06', number: 6, slug: 'mission-finale-le-grand-nombre', path: `${LESSON_BASE_PATH}/mission-finale-le-grand-nombre`, title: '🏆 Mission finale : le grand nombre', desc: 'Dix épreuves pour prouver que tu ne confonds plus hasard et régularité.', stage: 'evaluation', color: 'amber', style: 'assessment', estimatedMin: 10, difficulty: 4, actionText: 'Relever le défi' },
   ],
 };
