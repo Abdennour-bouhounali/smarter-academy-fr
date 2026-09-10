@@ -15,6 +15,8 @@ import AdminLayout from './components/layout/AdminLayout';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminLessons from './pages/admin/content/Lessons';
 import AdminLessonDetail from './pages/admin/content/LessonDetail';
+import AdminModules from './pages/admin/content/Modules';
+import AdminExercises from './pages/admin/content/Exercises';
 import AdminReportList from './pages/admin/reports/ReportList';
 import AdminReportDetail from './pages/admin/reports/ReportDetail';
 import AdminStudentList from './pages/admin/students/StudentList';
@@ -218,6 +220,8 @@ export default function App() {
 
               <Route path="contenu/lecons" element={<AdminLessons />} />
               <Route path="contenu/lecons/:code" element={<AdminLessonDetail />} />
+              <Route path="contenu/modules" element={<AdminModules />} />
+              <Route path="contenu/exercices" element={<AdminExercises />} />
 
               <Route path="signalements" element={<AdminReportList />} />
               <Route path="signalements/:id" element={<AdminReportDetail />} />

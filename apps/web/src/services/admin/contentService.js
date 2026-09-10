@@ -13,6 +13,18 @@ export function fetchLesson(token, code) {
   ).then((data) => data.lesson);
 }
 
+/** Tous les modules, toutes leçons confondues. */
+export function fetchModules(token, filters = {}) {
+  return call(`/admin/content/modules${query(filters)}`, get(token), 'Impossible de charger les modules.')
+    .then((data) => data.modules);
+}
+
+/** Tous les exercices, toutes leçons confondues. */
+export function fetchExercises(token, filters = {}) {
+  return call(`/admin/content/exercises${query(filters)}`, get(token), 'Impossible de charger les exercices.')
+    .then((data) => data.exercises);
+}
+
 /**
  * Publier / masquer / archiver.
  * @param {'lesson'|'module'|'exercise'} type

@@ -95,6 +95,10 @@ Route::prefix('v1')->group(function () {
 
             Route::get('/content/lessons', [AdminContentController::class, 'lessons']);
             Route::get('/content/lessons/{code}', [AdminContentController::class, 'lesson']);
+            // Vues transversales : la vue par leçon oblige à savoir OÙ
+            // chercher, ce que « tous les modules masqués » n'a pas.
+            Route::get('/content/modules', [AdminContentController::class, 'modules']);
+            Route::get('/content/exercises', [AdminContentController::class, 'exercises']);
             // Un seul point d'entrée pour les trois niveaux de contenu :
             // {type} vaut lesson | module | exercise.
             Route::patch('/content/{type}/{id}/status', [AdminContentController::class, 'changeStatus'])

@@ -96,6 +96,111 @@ class ContentService
     }
 
     /**
+     * TOUS les modules, toutes leçons confondues.
+     *
+     * La vue par leçon existait déjà (voir lesson()), mais elle oblige à
+     * savoir OÙ chercher. Un administrateur qui veut « tous les modules
+     * masqués » ou « toutes les manipulations de 5e » n'a pas ce point de
+     * départ — d'où cette liste transversale, filtrable par étape et par
+     * état.
+     */
+    public function modules(array $filters = []): LengthAwarePaginator
+    {
+        // Colonnes QUALIFIÉES partout : le tri par leçon joint `lessons`, qui
+        // porte exactement les mêmes noms (publication_status, title, code).
+        // Sans préfixe, MySQL refuse la requête pour ambiguïté — et seulement
+        // quand un filtre est posé, ce qui en fait un défaut discret.
+        $query = LessonModule::query()
+            ->with(['lesson:id,code,title,chapter_id', 'lesson.chapter:id,code,title,grade_id', 'lesson.chapter.grade:id,code'])
+            ->whereNull('lesson_modules.retired_at');
+
+        if ($search = ($filters['search'] ?? null)) {
+            $query->where(fn ($q) => $q
+                ->where('lesson_modules.title', 'like', "%{$search}%")
+                ->orWhere('lesson_modules.code', 'like', "%{$search}%")
+                ->orWhereHas('lesson', fn ($l) => $l
+                    ->where('code', 'like', "%{$search}%")
+                    ->orWhere('title', 'like', "%{$search}%")));
+        }
+
+        if ($grade = ($filters['grade'] ?? null)) {
+            $query->whereHas('lesson.chapter.grade', fn ($q) => $q->where('code', $grade));
+        }
+
+        if ($lesson = ($filters['lesson'] ?? null)) {
+            $query->whereHas('lesson', fn ($q) => $q->where('code', $lesson));
+        }
+
+        if ($stage = ($filters['stage'] ?? null)) {
+            $query->where('lesson_modules.stage', $stage);
+        }
+
+        if ($status = ($filters['status'] ?? null)) {
+            $query->where('lesson_modules.publication_status', $status);
+        }
+
+        $sort = $filters['sort'] ?? 'lesson';
+        $direction = ($filters['direction'] ?? 'asc') === 'desc' ? 'desc' : 'asc';
+
+        // Trier par leçon demande une jointure : l'ordre naturel d'une liste
+        // de modules est « leçon, puis numéro », pas « id ».
+        if ($sort === 'lesson') {
+            $query->join('lessons', 'lessons.id', '=', 'lesson_modules.lesson_id')
+                ->orderBy('lessons.code', $direction)
+                ->orderBy('lesson_modules.number')
+                ->select('lesson_modules.*');
+        } else {
+            $sortable = ['number', 'title', 'stage', 'publication_status', 'updated_at'];
+            $column = in_array($sort, $sortable, true) ? $sort : 'number';
+            $query->orderBy("lesson_modules.{$column}", $direction);
+        }
+
+        return $query->paginate(min((int) ($filters['perPage'] ?? 50), 100));
+    }
+
+    /** Tous les exercices, toutes leçons confondues. Jumeau de modules(). */
+    public function exercises(array $filters = []): LengthAwarePaginator
+    {
+        $query = PracticeExercise::query()
+            ->with(['lesson:id,code,title,chapter_id', 'lesson.chapter:id,code,title,grade_id', 'lesson.chapter.grade:id,code'])
+            ->whereNull('practice_exercises.retired_at');
+
+        if ($search = ($filters['search'] ?? null)) {
+            $query->where(fn ($q) => $q
+                ->where('practice_exercises.exercise_code', 'like', "%{$search}%")
+                ->orWhere('practice_exercises.title', 'like', "%{$search}%")
+                ->orWhereHas('lesson', fn ($l) => $l
+                    ->where('code', 'like', "%{$search}%")
+                    ->orWhere('title', 'like', "%{$search}%")));
+        }
+
+        if ($grade = ($filters['grade'] ?? null)) {
+            $query->whereHas('lesson.chapter.grade', fn ($q) => $q->where('code', $grade));
+        }
+
+        if ($lesson = ($filters['lesson'] ?? null)) {
+            $query->whereHas('lesson', fn ($q) => $q->where('code', $lesson));
+        }
+
+        if (($level = ($filters['level'] ?? null)) !== null && $level !== '') {
+            $query->where('practice_exercises.level', (int) $level);
+        }
+
+        if ($status = ($filters['status'] ?? null)) {
+            $query->where('practice_exercises.publication_status', $status);
+        }
+
+        $direction = ($filters['direction'] ?? 'asc') === 'desc' ? 'desc' : 'asc';
+        $query->join('lessons', 'lessons.id', '=', 'practice_exercises.lesson_id')
+            ->orderBy('lessons.code', $direction)
+            ->orderBy('practice_exercises.level')
+            ->orderBy('practice_exercises.exercise_code')
+            ->select('practice_exercises.*');
+
+        return $query->paginate(min((int) ($filters['perPage'] ?? 50), 100));
+    }
+
+    /**
      * Change l'état de publication d'une leçon, d'un module ou d'un exercice.
      *
      * Un seul chemin pour les trois : c'est ce qui garantit qu'aucun d'eux ne

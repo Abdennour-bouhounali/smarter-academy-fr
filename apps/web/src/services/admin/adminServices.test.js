@@ -87,6 +87,38 @@ describe('navigation d’administration', () => {
   });
 });
 
+/**
+ * LA garde qui manquait.
+ *
+ * `/admin/contenu/modules` et `/admin/contenu/exercices` figuraient dans la
+ * barre latérale sans exister dans App.jsx : le routeur retombait sur la
+ * route attrape-tout `*` et affichait la page d'ACCUEIL. Aucune erreur, aucun
+ * test rouge — exactement le défaut que `check:routes` attrape déjà côté
+ * élève, mais que rien ne surveillait côté administration.
+ */
+describe('chaque lien de la barre latérale mène quelque part', () => {
+  const app = read('src/App.jsx');
+
+  // Les chemins déclarés SOUS <Route path="/admin">, donc relatifs.
+  const declared = new Set(
+    [...app.matchAll(/<Route\s+path="([^"]+)"/g)]
+      .map((m) => m[1])
+      .filter((p) => !p.startsWith('/'))
+      .map((p) => `/admin/${p}`),
+  );
+  declared.add('/admin');
+
+  it.each(adminNavLinks.map((l) => [l.path]))('%s est routé', (path) => {
+    // La query n'est qu'un filtre : c'est le chemin qui doit exister.
+    const bare = path.split('?')[0];
+    expect(
+      declared.has(bare),
+      `${bare} figure dans la navigation mais n'a aucune <Route> : `
+      + `le routeur retombera sur "*" et affichera la page d'accueil`,
+    ).toBe(true);
+  });
+});
+
 describe('la porte du panneau d’administration', () => {
   it('protège /admin par un rôle explicite', () => {
     const app = read('src/App.jsx');

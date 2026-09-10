@@ -65,6 +65,52 @@ class AdminContentController extends Controller
         ]);
     }
 
+    /** Tous les modules, toutes leçons confondues. */
+    public function modules(Request $request)
+    {
+        $modules = $this->content->modules($request->query());
+
+        return response()->json([
+            'success' => true,
+            'modules' => $modules->through(fn ($module) => [
+                'id' => $module->id,
+                'code' => $module->code,
+                'number' => $module->number,
+                'title' => $module->title,
+                'stage' => $module->stage,
+                'estimatedMin' => $module->estimated_min,
+                'difficulty' => $module->difficulty,
+                'learningPointCount' => count($module->teaches_learning_point_codes ?? []),
+                'publicationStatus' => $module->publication_status,
+                'lessonCode' => $module->lesson?->code,
+                'lessonTitle' => $module->lesson?->title,
+                'grade' => $module->lesson?->chapter?->grade?->code,
+                'chapterTitle' => $module->lesson?->chapter?->title,
+            ]),
+        ]);
+    }
+
+    /** Tous les exercices, toutes leçons confondues. */
+    public function exercises(Request $request)
+    {
+        $exercises = $this->content->exercises($request->query());
+
+        return response()->json([
+            'success' => true,
+            'exercises' => $exercises->through(fn ($exercise) => [
+                'id' => $exercise->id,
+                'exerciseCode' => $exercise->exercise_code,
+                'level' => $exercise->level,
+                'title' => $exercise->title,
+                'questionCount' => $exercise->question_count,
+                'publicationStatus' => $exercise->publication_status,
+                'lessonCode' => $exercise->lesson?->code,
+                'lessonTitle' => $exercise->lesson?->title,
+                'grade' => $exercise->lesson?->chapter?->grade?->code,
+            ]),
+        ]);
+    }
+
     /**
      * Publier / masquer / archiver. Un seul point d'entrée pour les trois
      * niveaux de contenu, donc une seule validation et un seul journal.
