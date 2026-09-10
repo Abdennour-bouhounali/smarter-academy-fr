@@ -111,3 +111,51 @@ export function stepRun(fn, a, pente, fa) {
   }
   return 0.25;
 }
+
+/**
+ * LE GLISSER DU POINT B — l'aimantation sur le cran de h le plus proche.
+ *
+ * L'élève tire B ; ce qui compte n'est pas où son doigt s'arrête, mais le cran
+ * de `H_STEPS` qui en est le plus proche. La comparaison se fait sur l'ÉCART
+ * BRUT (et non en échelle logarithmique) parce que c'est la distance À L'ÉCRAN
+ * qui décide de ce que l'élève croit viser.
+ *
+ * L'ÉCART EST SIGNÉ, ET SERRÉ À ZÉRO — et non pris en valeur absolue. B vit à
+ * droite de A dans tout le module ; un doigt qui DÉPASSE A vers la gauche doit
+ * rendre le plus PETIT cran (il rapprochait, il a été trop loin), et non le
+ * cran symétrique. Avec une valeur absolue, un doigt lâché en a − 1 aurait
+ * rendu h = 1, c'est-à-dire un ÉLOIGNEMENT — la sécante aurait sauté en
+ * arrière au milieu d'un geste de rapprochement. Le test le vérifie.
+ *
+ * CIBLE ATTEIGNABLE : la valeur rendue est TOUJOURS un élément de `H_STEPS`,
+ * jamais une valeur intermédiaire — c'est ce qui garantit que chaque pente
+ * affichée reste exactement lisible. Verrouillé par un test.
+ */
+export function hAimante(xB, a, crans = H_STEPS) {
+  const brut = Math.max(0, xB - a);
+  let best = crans[0];
+  let dist = Math.abs(brut - best);
+  for (const c of crans) {
+    const d = Math.abs(brut - c);
+    if (d < dist) { dist = d; best = c; }
+  }
+  return best;
+}
+
+/**
+ * La CELLULE DE PRÉHENSION d'un cran de h, en pixels : sa part de l'axe, de
+ * mi-chemin du cran précédent à mi-chemin du suivant, multipliée par l'unité.
+ *
+ * Elle sert à DÉMONTRER, et non à supposer, jusqu'où le glisser reste
+ * praticable : les crans se resserrant vers 0, la cellule du dernier ne vaut
+ * qu'un pixel, et c'est pourquoi les boutons restent indispensables sur la
+ * queue de convergence. Balayée par un test.
+ */
+export function cellulePrehension(i, unit, crans = H_STEPS) {
+  const h = crans[i];
+  const prev = i > 0 ? crans[i - 1] : null;
+  const next = i < crans.length - 1 ? crans[i + 1] : null;
+  const versLesPetits = next !== null ? (h - next) / 2 : h / 2;
+  const versLesGrands = prev !== null ? (prev - h) / 2 : h / 2;
+  return (versLesPetits + versLesGrands) * unit;
+}

@@ -496,3 +496,58 @@ export const naturesDesTriangles = () =>
     angles: angles(t),
     cotes: cotes(t),
   }));
+
+/**
+ * LE GLISSER D'UN SOMMET — poser un sommet à une position ABSOLUE.
+ *
+ * `deplacer` répond à un cliquet : « d'un cran vers la droite ». Le glisser
+ * pose au contraire le sommet LÀ OÙ EST LE DOIGT, sans passer par les
+ * positions intermédiaires. Il lui faut donc sa propre porte, avec EXACTEMENT
+ * les mêmes gardes :
+ *   - coordonnées ENTIÈRES — c'est ce qui rend l'angle droit EXACT, et non
+ *     « à peu près droit » : le produit scalaire de deux vecteurs entiers est
+ *     un entier, et il vaut 0 au bit près ou ne le vaut pas ;
+ *   - sommet DANS LE CADRE ;
+ *   - triangle NON APLATI — un doigt peut traverser la droite portée par les
+ *     deux autres sommets, là où un cliquet n'y passait qu'en s'y arrêtant.
+ *
+ * Comme `deplacer`, la fonction est PURE et rend le MÊME objet quand la pose
+ * est refusée : la figure ne change jamais en silence, et un doigt qui passe
+ * sur une position interdite laisse le triangle où il était.
+ */
+export function poser(t, sommet, x, y) {
+  if (!SOMMETS.includes(sommet)) return t;
+  const p = { x: Math.round(x), y: Math.round(y) };
+  if (!dansLeCadre(p)) return t;
+  // POSE SANS EFFET : le sommet est déjà là. On rend le MÊME objet, et non un
+  // clone identique. Ce n'est pas une micro-optimisation : `onPointChange` est
+  // appelé à CHAQUE événement de pointeur, et un doigt qui bouge de trois
+  // pixels sans changer de case émettrait sinon un nouvel état à chaque
+  // image — donc un rendu complet de l'instrument, et un `onChange` que le
+  // module enregistrerait comme un vrai déplacement.
+  if (t[sommet].x === p.x && t[sommet].y === p.y) return t;
+  const suivant = { A: { ...t.A }, B: { ...t.B }, C: { ...t.C }, [sommet]: p };
+  if (!estUnTriangle(suivant)) return t;
+  return suivant;
+}
+
+/**
+ * Le sommet le plus proche d'un point — celui que le doigt entend saisir.
+ *
+ * Sert à la PRISE : l'élève attrape le sommet qu'il vise, au lieu de le
+ * désigner d'abord par un bouton puis de le pousser aux flèches (c'est
+ * précisément le patron que la règle du glisser proscrit). En cas d'égalité
+ * parfaite, l'ordre de `SOMMETS` tranche, de sorte que le résultat est
+ * déterministe et testable.
+ */
+export function sommetLePlusProche(t, x, y) {
+  let best = SOMMETS[0];
+  let d2 = Infinity;
+  for (const s of SOMMETS) {
+    const dx = t[s].x - x;
+    const dy = t[s].y - y;
+    const d = dx * dx + dy * dy;
+    if (d < d2) { d2 = d; best = s; }
+  }
+  return best;
+}

@@ -154,6 +154,7 @@ import exponentielleCalculerModeliser1ereRoutes from './lessons/lycee/premiere_s
 import produitScalaireDefinir1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-definir-1ere/routes';
 import produitScalaireMesurerDemontrer1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/routes';
 import espaceVecteursCoordonnees1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/espace-vecteurs-coordonnees-1ere/routes';
+import espaceDroitesPlans1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/espace-droites-plans-1ere/routes';
 import variablesAleatoiresLoiEsperance1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/variables-aleatoires-loi-esperance-1ere/routes';
 import variablesAleatoiresDispersionBinomiale1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/variables-aleatoires-dispersion-binomiale-1ere/routes';
 import probabilitesConditionnellesArbres1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/probabilites-conditionnelles-arbres-1ere/routes';
@@ -338,6 +339,7 @@ export default function App() {
             {produitScalaireDefinir1ereRoutes()}
             {produitScalaireMesurerDemontrer1ereRoutes()}
             {espaceVecteursCoordonnees1ereRoutes()}
+            {espaceDroitesPlans1ereRoutes()}
             {variablesAleatoiresLoiEsperance1ereRoutes()}
             {variablesAleatoiresDispersionBinomiale1ereRoutes()}
             {probabilitesConditionnellesArbres1ereRoutes()}

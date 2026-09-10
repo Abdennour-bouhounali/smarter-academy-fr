@@ -20,8 +20,9 @@ import {
   sontOrthogonaux, symetrie, homogeneite, additivite,
   normalDe, equationCartesienne, estSurLaDroite, directeurDeEquation,
   equationTexte, verdictsOrthogonalite,
-  fr, frVec, parseSigned, norm, dot, add, scale, dist,
+  fr, frVec, parseSigned, norm, dot, add, scale, dist, kAimante,
 } from './scalaireUtils';
+import { prehensionPx, PLANCHER_PX } from '../../../prehension';
 
 const TOUS_LES_CRANS = Array.from({ length: CRANS }, (_, k) => k);
 
@@ -560,5 +561,78 @@ describe('écriture française et lecture des réponses', () => {
     expect(parseSigned(' 0 ')).toBe(0);
     expect(parseSigned('abc')).toBeNaN();
     expect(parseSigned('')).toBeNaN();
+  });
+});
+
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────
+ * LE GLISSER (règle utilisateur du 2026-09-10)
+ *
+ * L'extrémité de v se SAISIT et tourne autour de l'origine. L'enjeu propre à
+ * ce laboratoire : le glisser ne doit PAS détruire l'exactitude au bit près du
+ * produit scalaire à l'angle droit, qui est sa promesse centrale.
+ * ─────────────────────────────────────────────────────────────────────────
+ */
+describe('le glisser — faire tourner v par son extrémité', () => {
+  it('kAimante rend TOUJOURS un cran entier de [0 ; CRANS[', () => {
+    for (let a = -720; a <= 720; a += 3) {
+      const t = (a * Math.PI) / 180;
+      const k = kAimante(Math.cos(t) * R_LAB, Math.sin(t) * R_LAB);
+      expect(Number.isInteger(k)).toBe(true);
+      expect(k).toBeGreaterThanOrEqual(0);
+      expect(k).toBeLessThan(CRANS);
+    }
+  });
+
+  it('chaque cran est ATTEIGNABLE : un doigt posé sur le bout de v rend son cran', () => {
+    for (let k = 0; k < CRANS; k += 1) {
+      const v = vAuCran(k);
+      expect(kAimante(v.x, v.y, k)).toBe(k);
+    }
+  });
+
+  it('L’ANGLE DROIT RESTE EXACT AU BIT PRÈS après un glisser', () => {
+    // LA PROMESSE CENTRALE DU LABORATOIRE. Le doigt ne tombe jamais pile sur
+    // le cran : on le pose donc À CÔTÉ (± 6°, moins d'un demi-cran) et l'on
+    // exige que le produit scalaire vaille 0 EXACTEMENT, et non « à peu près ».
+    // C'est ce que garantit le fait de rendre un CRAN et non des coordonnées.
+    for (const kDroit of CRANS_DROITS) {
+      const vDroit = vAuCran(kDroit);
+      for (const derive of [-6, -3, 0, 3, 6]) {
+        const t = (derive * Math.PI) / 180;
+        // On fait dériver le doigt autour du bout exact.
+        const x = vDroit.x * Math.cos(t) - vDroit.y * Math.sin(t);
+        const y = vDroit.x * Math.sin(t) + vDroit.y * Math.cos(t);
+        const k = kAimante(x, y, kDroit);
+        expect(k).toBe(kDroit);
+        // 0 au bit près : `toBe`, pas `toBeCloseTo`.
+        expect(produitCoordonnees(U_LAB, vAuCran(k))).toBe(0);
+        expect(angleAuCran(k)).toBe(90);
+      }
+    }
+  });
+
+  it('un doigt lâché sur l’origine GARDE le cran courant, au lieu de sauter', () => {
+    // À l'origine la direction n'est pas définie : sauter au cran 0 ferait
+    // bondir la flèche sans que l'élève l'ait demandé.
+    for (const k of [0, 5, 6, 17]) expect(kAimante(0, 0, k)).toBe(k);
+  });
+
+  it('l’aimantation est STABLE : réaimanter un cran ne le déplace pas', () => {
+    for (let k = 0; k < CRANS; k += 1) {
+      const v = vAuCran(kAimante(vAuCran(k).x, vAuCran(k).y, k));
+      expect(kAimante(v.x, v.y, k)).toBe(k);
+    }
+  });
+
+  it('la ZONE DE PRÉHENSION angulaire tient LARGEMENT le plancher de 14 px', () => {
+    // Ici le cran n'est pas une largeur mais un ARC : deux crans voisins
+    // écartent le bout de v de la corde d'un angle de 15° sur un rayon de 5.
+    const repere = { range: RANGE, unit: 28, xStep: 1, yStep: 1, labelEvery: 2 };
+    const corde = 2 * R_LAB * Math.sin((PAS_DEG * Math.PI) / 360);
+    const px = prehensionPx(repere, corde, 'x');
+    expect(px).toBeGreaterThanOrEqual(PLANCHER_PX);
+    expect(px).toBeCloseTo(32.3, 1);
   });
 });

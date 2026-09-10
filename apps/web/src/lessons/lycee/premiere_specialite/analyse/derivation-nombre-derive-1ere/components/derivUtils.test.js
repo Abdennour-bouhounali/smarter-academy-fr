@@ -17,7 +17,9 @@ import { readFileSync } from 'node:fs';
 import {
   CARRE, CUBE, H_STEPS, tauxDetail, secante, tangente,
   aVuLaStabilisation, ecartAuNombreDerive, stepRun, eq, fr,
+  hAimante, cellulePrehension,
 } from './derivUtils';
+import { prehensionPx, PLANCHER_PX } from '../../../prehension';
 
 describe('les dérivées sont exactes', () => {
   it('f(x) = x² a pour dérivée 2x, vérifié contre la définition sur des h fins', () => {
@@ -357,5 +359,123 @@ describe('mission finale — les distracteurs sont NUMÉRIQUEMENT distincts', ()
       const seule = listes.some((l) => l.length === 1 && l[0] === `${prefixe}${n}`);
       expect(seule, `P${n} doit avoir une épreuve dédiée`).toBe(true);
     }
+  });
+});
+
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────
+ * LE GLISSER (règle utilisateur du 2026-09-10)
+ *
+ * Les trois laboratoires de cette leçon se pilotaient au seul bouton fléché.
+ * Ils se GLISSENT désormais. Ce qui suit verrouille les deux propriétés que
+ * le glisser met en jeu et que le bouton masquait :
+ *   1. l'AIMANTATION pose la cible EXACTEMENT sur un cran — un doigt ne vise
+ *      pas au pixel, là où un bouton atteignait le cran par construction ;
+ *   2. la ZONE DE PRÉHENSION est assez large pour un doigt.
+ * ─────────────────────────────────────────────────────────────────────────
+ */
+describe('le glisser — l’aimantation ne rend QUE des crans existants', () => {
+  it('hAimante ne rend jamais autre chose qu’un cran de H_STEPS, sur tout le balayage', () => {
+    // BALAYÉ, pas échantillonné : tout lâcher possible du doigt entre A et
+    // au-delà du plus grand cran doit retomber sur une valeur lisible.
+    const a = 1;
+    for (let x = a - 1; x <= a + 3; x += 0.001) {
+      const h = hAimante(Math.round(x * 1000) / 1000, a);
+      expect(H_STEPS).toContain(h);
+    }
+  });
+
+  it('chaque cran est ATTEIGNABLE : un doigt posé dessus rend ce cran', () => {
+    // C'est l'invariant d'atteignabilité, transposé au glisser. Sans lui, un
+    // cran pourrait n'être joignable qu'au bouton, et la manipulation
+    // mentirait sur ce qu'elle promet.
+    const a = 1;
+    for (const h of H_STEPS) expect(hAimante(a + h, a)).toBe(h);
+  });
+
+  it('un doigt qui DÉPASSE A rend le plus PETIT cran, jamais un ÉLOIGNEMENT', () => {
+    // DÉFAUT ATTRAPÉ PAR CE TEST. La première écriture prenait |xB − a| : un
+    // doigt lâché en a − 1, au bout d'un geste de rapprochement, rendait donc
+    // h = 1 — la sécante SAUTAIT EN ARRIÈRE au cran le plus large. L'écart est
+    // désormais signé et serré à zéro, et dépasser A rend le plus petit cran.
+    const a = 1;
+    for (const x of [a, a - 0.2, a - 1, a - 3]) {
+      expect(hAimante(x, a)).toBe(Math.min(...H_STEPS));
+    }
+  });
+
+  it('l’aimantation est STABLE : réaimanter un cran ne le déplace pas', () => {
+    const a = 1;
+    for (const h of H_STEPS) expect(hAimante(a + hAimante(a + h, a), a)).toBe(h);
+  });
+});
+
+describe('le glisser — la ZONE DE PRÉHENSION, mesurée en pixels', () => {
+  /**
+   * Le repère de SecantLab sur f : c'est sa largeur qui décide de l'échelle,
+   * donc de la préhension réelle sur un écran de 375 px.
+   */
+  const REPERE_CARRE = { range: CARRE.range, unit: CARRE.unit, unitY: CARRE.unitY, xStep: 1, yStep: 2 };
+  const REPERE_CUBE = { range: CUBE.range, unit: CUBE.unit, unitY: CUBE.unitY, xStep: 1, yStep: 1 };
+
+  it('TangentReader : le point de contact tient LARGEMENT le plancher, sur les deux fonctions', () => {
+    // Le pas du point de contact est 0,5 : c'est lui qui se glisse.
+    expect(prehensionPx({ ...REPERE_CARRE, yStep: 1 }, 0.5, 'x')).toBeGreaterThanOrEqual(PLANCHER_PX);
+    expect(prehensionPx(REPERE_CUBE, 0.5, 'x')).toBeGreaterThanOrEqual(PLANCHER_PX);
+    // Les valeurs, pour que le rapport ne soit pas une affirmation en l'air.
+    expect(prehensionPx({ ...REPERE_CARRE, yStep: 1 }, 0.5, 'x')).toBeCloseTo(23, 0);
+    expect(prehensionPx(REPERE_CUBE, 0.5, 'x')).toBeCloseTo(26, 0);
+  });
+
+  it('SecantLab : les crans GROSSIERS se glissent, la QUEUE ne le peut pas — et c’est mathématique', () => {
+    // Les crans de h se resserrent géométriquement : c'est le SUJET du module,
+    // pas un défaut de réglage. On mesure donc où le glisser cesse d'être
+    // praticable, au lieu de prétendre qu'il l'est partout.
+    const cellules = H_STEPS.map((_, i) => cellulePrehension(i, CARRE.unit));
+    // Les trois premiers crans sont confortables.
+    expect(cellules[0]).toBeCloseTo(69, 0);
+    expect(cellules[1]).toBeCloseTo(34.5, 1);
+    expect(cellules[2]).toBeCloseTo(17.25, 2);
+    expect(cellules.slice(0, 3).every((c) => c >= PLANCHER_PX)).toBe(true);
+    // Et la queue ne l'est PAS : l'assertion l'affirme au lieu de la cacher.
+    expect(cellules[4]).toBeLessThan(PLANCHER_PX);   // h = 0,1  → 4,60 px
+    expect(cellules[6]).toBeLessThan(2);             // h = 0,01 → 1,15 px
+    // C'est pourquoi les deux boutons restent au premier plan dans le rendu.
+  });
+
+  it('les cellules de préhension DÉCROISSENT, comme les crans qu’elles portent', () => {
+    const cellules = H_STEPS.map((_, i) => cellulePrehension(i, CARRE.unit));
+    for (let i = 0; i + 1 < cellules.length; i += 1) {
+      expect(cellules[i + 1]).toBeLessThan(cellules[i]);
+    }
+  });
+
+  it('TangentBuilder : AUCUNE poignée de pente ne tiendrait le plancher — la mesure qui justifie le cliquet', () => {
+    // C'est la justification EXÉCUTABLE du choix de laisser la pente au
+    // bouton. Trois géométries de poignée ont été mesurées ; on verrouille
+    // ici celle qui semblait la plus prometteuse — un bras fixe de 2 unités —
+    // pour qu'on ne la « répare » pas à tort plus tard.
+    const pentesDeG = [];
+    for (let a = CUBE.contactRange.lo; a <= CUBE.contactRange.hi + 1e-9; a += 0.5) {
+      pentesDeG.push(CUBE.fPrime(Math.round(a * 100) / 100));
+    }
+    const bras = 2;
+    // Une poignée à bras fixe donnerait bien 15 px de préhension sur g…
+    expect(CUBE.pasPente * bras * CUBE.unitY).toBeCloseTo(15, 0);
+    // … mais elle SORT DU CADRE, ce qui la disqualifie (§16, sécurité de mise
+    // en page). Le contre-exemple est explicite, pas une moyenne.
+    const a = 1.5;
+    const mMax = Math.max(...pentesDeG);
+    const sommet = CUBE.f(a) + mMax * bras;
+    expect(sommet).toBeGreaterThan(CUBE.range.yMax);
+
+    // Un bras RÉDUIT pour rester dans le cadre retombe sous le plancher :
+    // c'est l'autre branche de l'alternative, et elle est fermée aussi.
+    const brasQuiTient = [2, 1.5, 1, 0.75, 0.5].find((d) => {
+      const s = CUBE.f(a) + mMax * d;
+      return a + d <= CUBE.range.xMax && s >= CUBE.range.yMin && s <= CUBE.range.yMax;
+    });
+    expect(CUBE.pasPente * brasQuiTient * CUBE.unitY).toBeLessThan(PLANCHER_PX);
   });
 });

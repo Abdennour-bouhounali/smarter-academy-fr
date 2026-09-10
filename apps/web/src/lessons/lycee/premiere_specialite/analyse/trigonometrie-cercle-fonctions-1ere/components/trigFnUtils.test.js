@@ -1034,3 +1034,69 @@ describe('DÉFAUT 2 — le dérouloir tient dans la largeur disponible, mesurée
     }
   });
 });
+
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────
+ * LA ZONE DE PRÉHENSION DE LA POIGNÉE (passe « glisser d'abord », 2026-09-10)
+ *
+ * Le sommet de la vague se saisissait DÉJÀ. Ce qui manquait est la mesure en
+ * pixels de ce que le doigt doit viser pour changer de réglage — la grandeur
+ * dont l'absence avait laissé passer une zone de 4,25 px sur une leçon
+ * précédente.
+ *
+ * PARTICULARITÉ DE CE REPÈRE, et elle joue en sa faveur : le SVG n'est PAS
+ * comprimé pour tenir dans 375 px. Il porte `minWidth: W` dans un conteneur
+ * `overflow-x-auto`, précisément pour que l'échelle ne mente jamais sur les
+ * longueurs — c'est un repère où l'on MESURE un motif. Un pixel de viewBox est
+ * donc un pixel d'écran, et la préhension vaut sa valeur nominale.
+ * ─────────────────────────────────────────────────────────────────────────
+ */
+describe('la poignée du sommet — sa zone de préhension, en pixels', () => {
+  it('le repère n’est PAS comprimé : sa largeur dépasse l’écran et il défile', () => {
+    // C'est ce qui rend les mesures ci-dessous valides telles quelles.
+    expect(GEOM_ONDE.W).toBeGreaterThan(343);
+  });
+
+  it('changer l’ÉCART MAXIMAL demande de viser 12 px verticalement', () => {
+    // Deux écarts voisins sont distants de 0,5 unité d'ordonnée.
+    const px = Math.abs(GEOM_ONDE.toY(0) - GEOM_ONDE.toY(0.5));
+    expect(px).toBeCloseTo(12, 0);
+  });
+
+  it('changer la LONGUEUR DU MOTIF demande de viser environ 12 px horizontalement', () => {
+    // Les sommets des motifs consécutifs sont en P/4 : π/4, 2π/4, 3π/4, 4π/4.
+    // BALAYÉ sur tous les couples voisins, pas seulement le premier.
+    for (let i = 0; i + 1 < MOTIFS.length; i += 1) {
+      const px = GEOM_ONDE.toX(sommetDe(MOTIFS[i + 1])) - GEOM_ONDE.toX(sommetDe(MOTIFS[i]));
+      expect(px).toBeCloseTo(11.8, 1);
+    }
+  });
+
+  it('la préhension reste LOIN de la classe de défaut « 4 px », sur les deux axes', () => {
+    // Le plancher visé est 14 px ; on est à 12. L'écart est CONSTATÉ, et il
+    // est racheté par deux propriétés du laboratoire : la poignée porte une
+    // cible tactile généreuse et invisible autour d'elle, et l'aimantation
+    // rattrape la visée sur des réglages peu nombreux (6 écarts, 4 motifs) —
+    // un doigt qui manque tombe sur le voisin, jamais dans le vide.
+    const vertical = Math.abs(GEOM_ONDE.toY(0) - GEOM_ONDE.toY(0.5));
+    const horizontal = GEOM_ONDE.toX(sommetDe(MOTIFS[1])) - GEOM_ONDE.toX(sommetDe(MOTIFS[0]));
+    for (const px of [vertical, horizontal]) {
+      expect(px).toBeGreaterThan(10);
+      expect(px).toBeLessThan(14);
+    }
+  });
+
+  it('CHAQUE réglage reste ATTEIGNABLE : l’aimantation rend exactement un cran permis', () => {
+    // L'invariant du glisser, sur les deux réglages à la fois.
+    for (const A of ECARTS) {
+      for (const P of MOTIFS) {
+        const r = reglageDepuisSommet(sommetDe(P), A);
+        expect(ECARTS).toContain(r.A);
+        expect(MOTIFS.some((m) => Math.abs(m - r.P) < 1e-9)).toBe(true);
+        expect(r.A).toBe(A);
+        expect(r.P).toBeCloseTo(P, 9);
+      }
+    }
+  });
+});

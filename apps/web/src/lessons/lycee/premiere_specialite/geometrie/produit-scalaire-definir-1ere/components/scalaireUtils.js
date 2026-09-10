@@ -352,3 +352,32 @@ export const verdictsOrthogonalite = () =>
     produit: dot(c.u, c.v),
     orthogonaux: sontOrthogonaux(c.u, c.v),
   }));
+
+/**
+ * LE GLISSER DU BOUT DE v — l'aimantation sur le CRAN d'angle le plus proche.
+ *
+ * L'élève attrape l'extrémité de v et la fait tourner autour de l'origine. Ce
+ * qui est rendu est le CRAN k, un ENTIER — jamais des coordonnées.
+ *
+ * C'EST ESSENTIEL, ET NON UN DÉTAIL D'IMPLÉMENTATION. `vAuCran` reconstruit v
+ * à partir de k par une décomposition en quarts de tour ENTIERS, ce qui rend
+ * les crans droits exacts AU BIT PRÈS : au cran 6, v vaut exactement (−3 ; 4)
+ * et le produit scalaire vaut 0, pas 1,78 × 10⁻¹⁵. Si le glisser rendait les
+ * coordonnées sous le doigt, cette exactitude serait perdue et la promesse
+ * centrale du laboratoire — « les deux afficheurs tombent à zéro pile à
+ * l'angle droit » — deviendrait fausse. Le doigt choisit donc un cran ; c'est
+ * le modèle qui fabrique le vecteur. Verrouillé par un test.
+ *
+ * L'angle est mesuré depuis u, dans le sens direct, et ramené au cran le plus
+ * proche modulo un tour. Un doigt lâché sur l'origine (où l'angle n'est pas
+ * défini) garde le cran courant, faute de direction à lire.
+ */
+export function kAimante(x, y, kCourant = 0, u = U_LAB) {
+  if (x === 0 && y === 0) return ((kCourant % CRANS) + CRANS) % CRANS;
+  // L'angle du doigt et celui de u, tous deux depuis l'axe des abscisses.
+  const angleDoigt = Math.atan2(y, x);
+  const angleU = Math.atan2(u.y, u.x);
+  const ecartDeg = ((angleDoigt - angleU) * 180) / Math.PI;
+  const k = Math.round(ecartDeg / PAS_DEG);
+  return ((k % CRANS) + CRANS) % CRANS;
+}

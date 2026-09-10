@@ -162,3 +162,28 @@ export function solutionsText(a, b, c) {
   if (rs.length === 0) return '∅';
   return `{ ${rs.map((r) => fr(r, { maxDecimals: 3 })).join(' ; ')} }`;
 }
+
+/**
+ * LE GLISSER DE LA PARABOLE — l'aimantation sur le cran de c le plus proche.
+ *
+ * L'élève attrape la courbe et la tire VERTICALEMENT. Ce qui se règle est sa
+ * hauteur c ; l'ordonnée sous le doigt est donc convertie en c par la valeur
+ * du trinôme au SOMMET, seul point dont la hauteur ne dépende que de c :
+ *
+ *     y_sommet = c − b²/(4a)   ⇒   c = y_sommet + b²/(4a)
+ *
+ * Le résultat est aimanté sur `C_STEPS`, puis SERRÉ à la plage. La valeur
+ * rendue est donc toujours un cran existant — en particulier `cFusion = 4`,
+ * l'état où les deux racines se confondent, reste EXACTEMENT atteignable au
+ * doigt comme il l'était au bouton. Verrouillé par un test.
+ */
+export function cAimante(ySommet, crans = C_STEPS) {
+  const brut = ySommet + (LAB.b * LAB.b) / (4 * LAB.a);
+  let best = crans[0];
+  let dist = Math.abs(brut - best);
+  for (const c of crans) {
+    const d = Math.abs(brut - c);
+    if (d < dist) { dist = d; best = c; }
+  }
+  return best;
+}

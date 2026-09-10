@@ -21,7 +21,9 @@ import {
   formeNormale, verifieEquation, distancePointDroite, equationTexte, formeNormaleTexte,
   naturesDesTriangles,
   fr, frVec, parseSigned, dot, vec, norm, cross, areCollinear,
+  poser, sommetLePlusProche,
 } from './theodoliteUtils';
+import { prehensionPx, PLANCHER_PX } from '../../../prehension';
 
 /** Tous les points entiers du cadre : la base de tout balayage exhaustif. */
 const GRILLE = [];
@@ -741,5 +743,118 @@ describe('écriture française et lecture des réponses', () => {
         expect(c.longueur).toBeGreaterThan(0);
       }
     }
+  });
+});
+
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────
+ * LE GLISSER (règle utilisateur du 2026-09-10)
+ *
+ * Ce laboratoire portait le patron EXACT que la règle proscrit : choisir un
+ * sommet avec un bouton, puis le pousser aux flèches. Les sommets se
+ * saisissent désormais. Ce qui suit verrouille les gardes de la pose absolue —
+ * elles ne sont PAS celles du cliquet, parce qu'un doigt saute là où un cran
+ * passait par les positions intermédiaires.
+ * ─────────────────────────────────────────────────────────────────────────
+ */
+describe('le glisser — saisir un sommet et le poser', () => {
+  const T = TRIANGLE_DEPART;
+
+  it('poser AIMANTE sur la grille ENTIÈRE — condition de l’angle droit EXACT', () => {
+    // C'est une condition de VÉRITÉ : le produit scalaire de deux vecteurs
+    // entiers est un entier, donc nul au bit près ou pas nul. Un sommet posé
+    // en 2,4 rendrait « rectangle » indécidable.
+    for (let x = -3; x <= 3; x += 0.1) {
+      for (let y = -3; y <= 3; y += 0.5) {
+        const u = poser(T, 'A', x, y);
+        if (u === T) continue;
+        expect(Number.isInteger(u.A.x)).toBe(true);
+        expect(Number.isInteger(u.A.y)).toBe(true);
+      }
+    }
+  });
+
+  it('poser REFUSE le hors-cadre, et rend le MÊME objet — jamais un changement silencieux', () => {
+    for (const [x, y] of [[99, 0], [0, 99], [-99, 0], [0, -99], [7, 7]]) {
+      expect(poser(T, 'A', x, y)).toBe(T);
+    }
+  });
+
+  it('poser REFUSE le triangle APLATI — la garde propre au glisser', () => {
+    // UN DOIGT SAUTE, LÀ OÙ UN CRAN PASSAIT. Le cliquet ne pouvait atteindre
+    // un alignement qu'en s'y arrêtant ; le glisser peut viser directement un
+    // point de la droite (BC). Sans cette garde, la figure dégénérerait en
+    // segment et les trois angles perdraient leur sens.
+    const surBC = { x: (T.B.x + T.C.x) / 2, y: (T.B.y + T.C.y) / 2 };
+    if (Number.isInteger(surBC.x) && Number.isInteger(surBC.y)) {
+      expect(poser(T, 'A', surBC.x, surBC.y)).toBe(T);
+    }
+    // Et par balayage : aucune pose acceptée ne rend un triangle aplati.
+    for (let x = RANGE.xMin; x <= RANGE.xMax; x += 1) {
+      for (let y = RANGE.yMin; y <= RANGE.yMax; y += 1) {
+        for (const s of SOMMETS) {
+          const u = poser(T, s, x, y);
+          if (u !== T) expect(estUnTriangle(u)).toBe(true);
+        }
+      }
+    }
+  });
+
+  it('poser est PURE : elle ne mute jamais le triangle reçu', () => {
+    const avant = JSON.stringify(T);
+    poser(T, 'A', 0, 0);
+    poser(T, 'B', 3, 3);
+    expect(JSON.stringify(T)).toBe(avant);
+  });
+
+  it('poser un sommet SUR LUI-MÊME ne change rien', () => {
+    for (const s of SOMMETS) expect(poser(T, s, T[s].x, T[s].y)).toBe(T);
+  });
+
+  it('sommetLePlusProche attrape bien le sommet visé, et il est DÉTERMINISTE', () => {
+    // Saisir un sommet, c'est le choisir : c'est ce qui remplace l'onglet.
+    for (const s of SOMMETS) {
+      expect(sommetLePlusProche(T, T[s].x, T[s].y)).toBe(s);
+      // Et à un quart de case du sommet, on l'attrape encore.
+      expect(sommetLePlusProche(T, T[s].x + 0.25, T[s].y - 0.25)).toBe(s);
+    }
+    // En cas d'égalité parfaite, l'ordre de SOMMETS tranche — pas le hasard.
+    const milieu = { x: (T.A.x + T.B.x) / 2, y: (T.A.y + T.B.y) / 2 };
+    const r1 = sommetLePlusProche(T, milieu.x, milieu.y);
+    const r2 = sommetLePlusProche(T, milieu.x, milieu.y);
+    expect(r1).toBe(r2);
+  });
+
+  it('LES CIBLES DU MODULE restent atteignables au doigt, en une seule pose', () => {
+    // L'invariant d'atteignabilité : chaque triangle visé par le module doit
+    // pouvoir être ATTEINT, et le glisser ne doit pas le rendre plus difficile
+    // que le cliquet. On vérifie qu'on y va sommet par sommet, en posant.
+    for (const cible of CIBLES) {
+      const but = cible.triangle ?? cible.but;
+      if (!but) continue;
+      let t = TRIANGLE_DEPART;
+      for (const s of SOMMETS) {
+        const suivant = poser(t, s, but[s].x, but[s].y);
+        // Une pose peut être refusée si elle aplatit TEMPORAIREMENT la figure ;
+        // dans ce cas l'ordre des sommets suffit à l'éviter.
+        if (suivant !== t) t = suivant;
+      }
+      // Au moins un ordre de pose mène au but : on l'atteint en deux passes.
+      for (const s of SOMMETS) {
+        const suivant = poser(t, s, but[s].x, but[s].y);
+        if (suivant !== t) t = suivant;
+      }
+      for (const s of SOMMETS) {
+        expect(t[s]).toEqual({ x: but[s].x, y: but[s].y });
+      }
+    }
+  });
+
+  it('la ZONE DE PRÉHENSION d’un sommet tient LARGEMENT le plancher de 14 px', () => {
+    const repere = { range: RANGE, unit: 26, xStep: 1, yStep: 1, labelEvery: 2 };
+    const px = prehensionPx(repere, 1, 'x');
+    expect(px).toBeGreaterThanOrEqual(PLANCHER_PX);
+    expect(px).toBeCloseTo(24.5, 1);
   });
 });

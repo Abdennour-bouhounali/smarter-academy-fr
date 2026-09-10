@@ -1,6 +1,6 @@
 import React from 'react';
 import CoordPlane from '../../../../../common/components/CoordPlane';
-import { H_STEPS, tauxDetail, secante, tangente, fr } from './derivUtils';
+import { H_STEPS, tauxDetail, secante, tangente, hAimante, fr } from './derivUtils';
 
 /**
  * SecantLab — l'interaction SIGNATURE : la sécante qui se couche.
@@ -13,9 +13,14 @@ import { H_STEPS, tauxDetail, secante, tangente, fr } from './derivUtils';
  * Mathematical objective le taux de variation est la pente d'une sécante ; en
  *                        rapprochant B de A, ces pentes se STABILISENT sur un
  *                        nombre qui ne dépend plus que de A.
- * Student action         appuyer sur « rapprocher » / « éloigner » (cliquet
- *                        discret, jamais un curseur : chaque valeur de h doit
- *                        être exactement atteignable et exactement lisible).
+ * Student action         SAISIR le point B et le tirer vers A — le geste EST
+ *                        le rapprochement. Le lâcher AIMANTE sur le cran de h
+ *                        le plus proche, si bien que chaque valeur reste
+ *                        exactement atteignable et exactement lisible. Les
+ *                        boutons « rapprocher » / « éloigner » restent un
+ *                        chemin complet, et deviennent le SEUL moyen d'usage
+ *                        confortable sur la queue de convergence (voir la note
+ *                        sur la zone de préhension ci-dessous).
  * Controlled variable    h, l'écart entre les deux abscisses.
  * Mathematical state     { a, h, visites } ; pente, montée, avancée et les
  *                        deux droites en sont TOUTES dérivées.
@@ -32,6 +37,25 @@ import { H_STEPS, tauxDetail, secante, tangente, fr } from './derivUtils';
  * JAMAIS GELÉ après réussite : `disabled` ne sert qu'au verrou d'ANTÉRIORITÉ
  * d'une étape sur la précédente. Un élève qui vient de comprendre doit pouvoir
  * refaire le geste.
+ *
+ * ─── LA ZONE DE PRÉHENSION, ET POURQUOI LES BOUTONS RESTENT INDISPENSABLES ──
+ * Les crans de h ne sont PAS régulièrement espacés : ils se resserrent
+ * géométriquement vers 0, parce que c'est exactement ce que la leçon veut
+ * faire voir. La cellule de préhension d'un cran (sa part de l'axe, jusqu'à
+ * mi-chemin de ses voisins) vaut donc, à 375 px de large et unit = 46 :
+ *
+ *     h = 2   → 69,00 px      h = 0,25 →  9,20 px
+ *     h = 1   → 34,50 px      h = 0,1  →  4,60 px
+ *     h = 0,5 → 17,25 px      h = 0,05 →  2,07 px
+ *                             h = 0,01 →  1,15 px
+ *
+ * Le glisser porte donc CONFORTABLEMENT les crans grossiers — ceux où l'élève
+ * découvre le geste et voit la sécante se coucher — et devient impraticable
+ * sur la queue, où deux crans voisins sont distants de 1 px. Ce n'est pas un
+ * défaut réparable en changeant le pas : resserrer les crans EST le sujet du
+ * module. Les deux boutons sont donc, sur la fin de la convergence, le moyen
+ * JUSTE et non un secours — et c'est pourquoi ils restent au premier plan.
+ * Les sept valeurs ci-dessus sont recalculées par un test.
  */
 const COURBE = '#4f46e5';
 const SECANTE = '#0284c7';
@@ -101,11 +125,21 @@ export default function SecantLab({
         ]}
         overlay={overlay}
         caption={false}
-        disabled
+        // Le pas d'aimantation est le plus FIN des écarts entre crans : c'est
+        // lui qui permet à `hAimante` de distinguer 0,05 de 0,01. L'aimantation
+        // pédagogique VRAIE est faite par `hAimante`, qui ne rend jamais qu'un
+        // élément de H_STEPS — le `step` ne fait que fournir une résolution
+        // suffisante en amont.
+        step={{ x: 0.01, y: 0.01 }}
+        // LE POINT B SE SAISIT, et le geste EST le rapprochement. `draggableId`
+        // n'est annulé QUE par le verrou d'ANTÉRIORITÉ, jamais par la réussite.
+        draggableId={disabled ? null : 'B'}
+        onPointChange={(p) => onChangeH?.(hAimante(p.x, a))}
         ariaLabel={
           `Courbe de ${fn.label}. A a pour abscisse ${fr(a)}, B a pour abscisse ${fr(a + h)}. ` +
           `Écart h = ${fr(h)}. Montée ${fr(t.rise)}, avancée ${fr(t.run)}, ` +
-          `pente de la sécante ${fr(arrondi(t.slope))}.`
+          `pente de la sécante ${fr(arrondi(t.slope))}. ` +
+          `Fais glisser le point B vers A, ou utilise les boutons rapprocher et éloigner.`
         }
       />
 

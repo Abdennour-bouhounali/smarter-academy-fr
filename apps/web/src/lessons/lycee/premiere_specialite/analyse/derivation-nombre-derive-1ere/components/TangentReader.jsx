@@ -6,12 +6,16 @@ import { tangente, stepRun, fr } from './derivUtils';
  * TangentReader — lire la pente d'une tangente sur un escalier.
  *
  * Activity               une tangente est déjà tracée au point d'abscisse a ;
- *                        l'élève déplace a et lit la pente sur l'ESCALIER
- *                        « +1 horizontalement, puis ? verticalement ».
+ *                        l'élève ATTRAPE le point de contact et le fait
+ *                        COURIR le long de la courbe, puis lit la pente sur
+ *                        l'ESCALIER « +1 horizontalement, puis ? verticalement ».
  * Mathematical objective f′(a) EST le coefficient directeur de la tangente ;
  *                        son SIGNE dit si la tangente monte ou descend, et ne
  *                        dit rien de la position de la courbe.
- * Student action         déplacer le point de contact (± un demi-cran).
+ * Student action         SAISIR le point de contact et le tirer (règle
+ *                        utilisateur « le glisser d'abord »). Les boutons ±
+ *                        et le clavier restent des chemins complets, en
+ *                        affordance secondaire.
  * Controlled variable    a.
  * Mathematical state     { a } ; tangente, pente et escalier sont DÉRIVÉS.
  * Visual consequence     la tangente bascule ; la marche verticale change de
@@ -66,6 +70,21 @@ export default function TangentReader({ fn, a, onChangeA, pas = 0.5, disabled = 
     const v = Math.round((a + d * pas) * 100) / 100;
     if (v >= bornes.lo && v <= bornes.hi) onChangeA?.(v);
   };
+
+  /**
+   * LE GLISSER. `CoordPlane` rend un point librement déplaçable dans le PLAN ;
+   * ici l'abscisse est aimantée au pas puis BORNÉE à `contactRange`, et
+   * l'ordonnée est REPROJETÉE sur la courbe. Le point ne quitte donc jamais le
+   * tracé, et le geste reste « je fais courir le point le long de la courbe ».
+   *
+   * Le bornage se fait par SERRAGE et non par refus : un doigt qui sort du
+   * domaine laisse le point sur la dernière abscisse permise, au lieu de le
+   * figer sur place — c'est ce qui rend le glisser fluide au bord.
+   */
+  const glisser = (p) => {
+    const v = Math.min(bornes.hi, Math.max(bornes.lo, Math.round(p.x / pas) * pas));
+    onChangeA?.(Math.round(v * 100) / 100);
+  };
   const btn =
     'min-w-[44px] h-11 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-40 ' +
     'text-sm font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
@@ -86,10 +105,18 @@ export default function TangentReader({ fn, a, onChangeA, pas = 0.5, disabled = 
         points={[{ id: 'A', x: a, y: fa, color: POINT, name: 'A' }]}
         overlay={overlay}
         caption={false}
-        disabled
+        step={{ x: pas, y: 0.01 }}
+        // LE POINT SE SAISIT. `draggableId` n'est annulé QUE par le verrou
+        // d'ANTÉRIORITÉ (`disabled`), jamais par la réussite de l'étape : la
+        // forme `draggableId={done ? null : …}` est proscrite au même titre
+        // que `disabled={done}` — un élève qui vient de comprendre doit
+        // pouvoir refaire le geste.
+        draggableId={disabled ? null : 'A'}
+        onPointChange={glisser}
         ariaLabel={
           `Tangente à la courbe au point d’abscisse ${fr(a)}. La courbe y est ${position}, ` +
-          `d’ordonnée ${fr(arrondi(fa))}. La tangente ${sens} : sa pente vaut ${fr(arrondi(pente))}.`
+          `d’ordonnée ${fr(arrondi(fa))}. La tangente ${sens} : sa pente vaut ${fr(arrondi(pente))}. ` +
+          `Fais glisser le point de contact, ou utilise les flèches gauche et droite.`
         }
       />
 

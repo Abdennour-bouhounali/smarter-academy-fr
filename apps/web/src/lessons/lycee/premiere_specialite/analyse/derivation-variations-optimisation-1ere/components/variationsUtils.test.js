@@ -666,3 +666,74 @@ describe('les gardes de forme du PATRON', () => {
     expect(src).not.toMatch(/dérivée seconde|convexité|point d’inflexion|inflexion/i);
   });
 });
+
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────
+ * LA ZONE DE PRÉHENSION RÉELLE (passe « glisser d'abord », 2026-09-10)
+ *
+ * La sonde de ce laboratoire se glissait DÉJÀ. Ce qui manquait est la mesure
+ * honnête de sa zone de saisie : `largeurCran` rend `pas × fUnit`, c'est-à-dire
+ * la largeur d'un cran DANS LE VIEWBOX — et non à l'écran.
+ *
+ * Or le panneau est mis à l'échelle pour tenir dans la largeur utile d'un
+ * <main> de 375 px. Sur les domaines LARGES, ce facteur n'est pas négligeable :
+ * le panneau de BOITE fait 400 px de large et se retrouve comprimé à 0,858.
+ * Un cran y mesure donc 12,0 px à l'écran, et non les 14 px que le commentaire
+ * du modèle annonce.
+ *
+ * On mesure ici la grandeur VRAIE, pour que l'écart soit constaté et non
+ * découvert au doigt. Aucune valeur du modèle n'est modifiée : le pas de BOITE
+ * est contraint par l'atteignabilité de son optimum, et l'élargir casserait
+ * une cible pédagogique. Le constat est donc verrouillé, pas maquillé.
+ * ─────────────────────────────────────────────────────────────────────────
+ */
+describe('la zone de préhension de la sonde, mesurée À L’ÉCRAN', () => {
+  // La géométrie du panneau, reprise de DeuxPanneaux.jsx.
+  const PAD = { left: 46, right: 18 };
+  const LARGEUR_UTILE = 343;
+  const prehension = (fn) => {
+    const trace = (fn.domain.xMax - fn.domain.xMin) * fn.fUnit;
+    const W = PAD.left + trace + PAD.right;
+    const echelle = Math.min(1, LARGEUR_UTILE / W);
+    return pasDe(fn) * fn.fUnit * echelle;
+  };
+
+  it('largeurCran mesure le VIEWBOX, pas l’écran — l’écart est réel et vaut jusqu’à 14 %', () => {
+    // Ce n'est pas un reproche au modèle : c'est la grandeur qu'il déclare
+    // mesurer. On établit seulement qu'elle ne suffit PAS à juger le glisser.
+    expect(largeurCran(BOITE)).toBeCloseTo(14, 0);
+    expect(prehension(BOITE)).toBeCloseTo(12.0, 1);
+    expect(prehension(BOITE)).toBeLessThan(largeurCran(BOITE));
+  });
+
+  it('BALAYÉ sur les sept fonctions : la préhension réelle reste utilisable au doigt', () => {
+    // Le plancher visé est 14 px. Deux fonctions à domaine large passent
+    // légèrement dessous une fois l'échelle prise en compte ; on l'ÉNONCE au
+    // lieu de le taire, avec le minimum atteint.
+    const mesures = FONCTIONS.map((fn) => ({ id: fn.id ?? fn.label, px: prehension(fn) }));
+    for (const m of mesures) expect(m.px).toBeGreaterThan(0);
+    const mini = Math.min(...mesures.map((m) => m.px));
+    // Aucune fonction ne descend dans la classe de défaut « 4 px ».
+    expect(mini).toBeGreaterThan(10);
+    expect(mini).toBeCloseTo(12.0, 1);
+  });
+
+  it('les fonctions à domaine ÉTROIT tiennent le plancher de 14 px sans réserve', () => {
+    for (const fn of [CUBE, CUBE_SIMPLE, PARABOLE, CUBE_MAXMIN, TOUJOURS_CROISSANTE]) {
+      expect(prehension(fn)).toBeGreaterThanOrEqual(14);
+    }
+  });
+
+  it('LE PAS N’EST PAS ÉLARGISSABLE : chaque zéro de f′ doit rester un cran exact', () => {
+    // C'est la raison pour laquelle on ne « répare » pas les 12 px de BOITE en
+    // doublant son pas : l'atteignabilité prime, et elle est déjà verrouillée.
+    for (const fn of FONCTIONS) {
+      const crans = cransSonde(fn);
+      for (const z of fn.zeros ?? []) {
+        if (z < fn.domain.xMin || z > fn.domain.xMax) continue;
+        expect(crans.some((c) => Math.abs(c - z) < 1e-9)).toBe(true);
+      }
+    }
+  });
+});

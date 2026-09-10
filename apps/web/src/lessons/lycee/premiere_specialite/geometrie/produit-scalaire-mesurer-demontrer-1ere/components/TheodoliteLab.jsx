@@ -1,7 +1,8 @@
 import React from 'react';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import {
-  RANGE, SOMMETS, PAS, deplacer, angles, cotes, nature, natureTexte, fr, frVec,
+  RANGE, SOMMETS, PAS, deplacer, poser, sommetLePlusProche,
+  angles, cotes, nature, natureTexte, fr, frVec,
 } from './theodoliteUtils';
 
 /**
@@ -15,9 +16,14 @@ import {
  * Mathematical objective une seule opération mesure les angles ET les
  *                        longueurs — le produit scalaire remplace le rapporteur
  *                        et la règle d'un coup.
- * Student action         choisir un sommet, puis appuyer sur ←↑↓→ (cliquet
- *                        entier, jamais un curseur : l'angle droit doit être
- *                        EXACT, et il ne l'est qu'à coordonnées entières).
+ * Student action         SAISIR UN SOMMET et le poser où l'on veut (règle
+ *                        utilisateur « le glisser d'abord » : on attrape la
+ *                        figure, on ne la désigne pas au bouton pour la
+ *                        pousser ensuite aux flèches). Le lâcher AIMANTE sur
+ *                        la grille ENTIÈRE — l'angle droit doit être EXACT,
+ *                        et il ne l'est qu'à coordonnées entières. Les
+ *                        onglets de sommet, les quatre flèches et le clavier
+ *                        restent des chemins complets.
  * Controlled variable    les trois sommets. Tout le reste — angles, longueurs,
  *                        nature — en est DÉRIVÉ, jamais stocké.
  * Mathematical state     { A, B, C } à coordonnées entières.
@@ -32,8 +38,9 @@ import {
  * ─── DISTINCTION AVEC LA LEÇON AMONT ──────────────────────────────────
  * `produit-scalaire-definir-1ere` fait TOURNER une flèche autour d'un point
  * fixe et lire UN nombre. Ici l'élève DÉFORME une figure et lit une
- * CLASSIFICATION. Un cliquet angulaire d'un côté, un déplacement sur la grille
- * de l'autre : les deux mécanismes ne se ressemblent pas, et c'est voulu.
+ * CLASSIFICATION. Une rotation aimantée à l'angle d'un côté, une pose sur la
+ * grille entière de l'autre : les deux gestes ne se ressemblent pas, et c'est
+ * voulu.
  *
  * ─── ÉTIQUETTES EN LÉGENDE DOM, JAMAIS EN <text> SVG ──────────────────
  * Deux sommets peuvent être à UNE case l'un de l'autre — et l'un peut passer
@@ -89,6 +96,50 @@ export default function TheodoliteLab({
 
   const bouger = (dx, dy) => {
     const suivant = deplacer(t, sommetActif, dx, dy);
+    if (suivant !== t) onChange?.(suivant);
+  };
+
+  /**
+   * LE GLISSER — et comment SAISIR N'IMPORTE LEQUEL des trois sommets.
+   *
+   * `CoordPlane` ne déplace qu'UN point à la fois, celui que désigne
+   * `draggableId`. Pris tel quel, il aurait donc reconduit le patron même que
+   * la règle du glisser proscrit : désigner le sommet au bouton, puis le
+   * bouger. On l'évite SANS toucher au composant partagé, en se servant de ce
+   * que `onPointChange` est appelé DÈS LE POSER DU DOIGT :
+   *
+   *   - au PREMIER événement d'un geste, la position reçue est celle où
+   *     l'élève a POSÉ le doigt : on en déduit le sommet le plus proche, et
+   *     c'est lui qu'on rend actif — saisir un sommet, c'est le choisir ;
+   *   - aux événements SUIVANTS, le geste est en cours : on déplace le sommet
+   *     ainsi saisi.
+   *
+   * La fin du geste ne nous est pas notifiée par `CoordPlane`. On la déduit de
+   * la DISTANCE : un événement qui arrive loin du sommet piloté ne peut pas
+   * être la suite d'un glisser (le point suit le doigt, il est donc toujours
+   * sous lui), c'est forcément une nouvelle prise. Le seuil vaut 1,5 case,
+   * soit plus d'un cran et moins de l'écart minimal entre deux sommets d'un
+   * triangle non aplati.
+   *
+   * La pose passe par `poser`, qui arrondit à la grille ENTIÈRE et refuse le
+   * hors-cadre comme le triangle aplati. Un doigt qui traverse la droite des
+   * deux autres sommets laisse donc la figure où elle était, au lieu de la
+   * dégénérer en segment.
+   */
+  const SEUIL_PRISE = 1.5;
+  const glisser = (q) => {
+    const d = Math.hypot(t[sommetActif].x - q.x, t[sommetActif].y - q.y);
+    if (d > SEUIL_PRISE) {
+      // Une nouvelle PRISE : l'élève attrape un autre sommet.
+      const s = sommetLePlusProche(t, q.x, q.y);
+      if (s !== sommetActif) {
+        onSommetActif?.(s);
+        const suivant = poser(t, s, q.x, q.y);
+        if (suivant !== t) onChange?.(suivant);
+        return;
+      }
+    }
+    const suivant = poser(t, sommetActif, q.x, q.y);
     if (suivant !== t) onChange?.(suivant);
   };
 
@@ -154,12 +205,21 @@ export default function TheodoliteLab({
         points={SOMMETS.map((s) => ({ id: s, x: t[s].x, y: t[s].y, color: TONS[s] }))}
         overlay={overlay}
         caption={false}
-        disabled
+        // LA GRILLE EST ENTIÈRE, et c'est une condition de VÉRITÉ, pas de
+        // confort : le produit scalaire de deux vecteurs à coordonnées
+        // entières est un entier, donc nul AU BIT PRÈS ou pas nul du tout.
+        // Un pas fractionnaire rendrait « rectangle » indécidable.
+        step={{ x: 1, y: 1 }}
+        // LE SOMMET SE SAISIT. `draggableId` n'est annulé QUE par le verrou
+        // d'ANTÉRIORITÉ, jamais par la réussite de l'étape.
+        draggableId={disabled ? null : sommetActif}
+        onPointChange={glisser}
         ariaLabel={
           `Un triangle de sommets A ${frVec(t.A)}, B ${frVec(t.B)} et C ${frVec(t.C)}. `
           + `Ses angles mesurent ${mesAngles.map((a) => `${a.id} : ${fr(a.deg)} degrés`).join(', ')}. `
           + `Ses côtés mesurent ${mesCotes.map((c) => `${c.id} : ${fr(c.longueur)}`).join(', ')}. `
-          + `Ce triangle est ${natureTexte(t)}. Le sommet piloté est ${sommetActif}.`
+          + `Ce triangle est ${natureTexte(t)}. Le sommet piloté est ${sommetActif}. `
+          + 'Fais glisser un sommet, ou utilise les flèches.'
         }
       />
 

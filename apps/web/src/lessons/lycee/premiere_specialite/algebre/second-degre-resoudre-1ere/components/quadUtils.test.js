@@ -17,8 +17,9 @@ import { readFileSync } from 'node:fs';
 import {
   LAB, C_STEPS, labState, regimes, aVuLesTroisRegimes, TRINOMES, cadreDe,
   trinomeText, factoriseeText, solutionsText, fr, parseSigned,
-  discriminant, roots, vertex, evalTrinome, rootCount,
+  discriminant, roots, vertex, evalTrinome, rootCount, cAimante,
 } from './quadUtils';
+import { prehensionPx, PLANCHER_PX } from '../../../prehension';
 
 describe('module 1 — le laboratoire « la parabole qui remonte »', () => {
   it('les crans de c sont croissants, régulierement espacés, et couvrent la plage', () => {
@@ -408,5 +409,58 @@ describe('les modules ne peuvent citer que des valeurs que le modèle produit', 
     // Le contrat du noyau partagé, vérifié DEPUIS la leçon : c'est ce qui
     // empêche un trinôme mal saisi de produire une figure silencieusement fausse.
     expect(() => discriminant(0, 1, 2)).toThrow();
+  });
+});
+
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────
+ * LE GLISSER (règle utilisateur du 2026-09-10)
+ *
+ * La parabole se TIRE par son sommet. Ce qui suit verrouille l'atteignabilité
+ * sous l'aimantation — plus critique au doigt qu'au bouton — et la zone de
+ * préhension.
+ * ─────────────────────────────────────────────────────────────────────────
+ */
+describe('le glisser — tirer la parabole par son sommet', () => {
+  it('cAimante ne rend QUE des crans existants, sur tout le balayage du cadre', () => {
+    // BALAYÉ : toute ordonnée que le doigt peut atteindre dans le repère.
+    for (let y = LAB.range.yMin; y <= LAB.range.yMax; y += 0.01) {
+      expect(C_STEPS).toContain(cAimante(Math.round(y * 100) / 100));
+    }
+  });
+
+  it('LE CRAN DE LA FUSION reste EXACTEMENT atteignable au doigt', () => {
+    // C'est l'invariant d'atteignabilité, et c'est le cœur du module : c = 4
+    // est l'état où les deux racines se confondent et où Δ s'annule. Un doigt
+    // posé sur le sommet correspondant doit rendre 4 au bit près.
+    const ySommetFusion = vertex(LAB.a, LAB.b, LAB.cFusion).y;
+    expect(cAimante(ySommetFusion)).toBe(LAB.cFusion);
+    expect(discriminant(LAB.a, LAB.b, cAimante(ySommetFusion))).toBe(0);
+  });
+
+  it('chaque cran de c est atteignable en posant le doigt sur SON sommet', () => {
+    for (const c of C_STEPS) expect(cAimante(vertex(LAB.a, LAB.b, c).y)).toBe(c);
+  });
+
+  it('l’aimantation est STABLE : réaimanter un cran ne le déplace pas', () => {
+    for (const c of C_STEPS) {
+      const y = vertex(LAB.a, LAB.b, cAimante(vertex(LAB.a, LAB.b, c).y)).y;
+      expect(cAimante(y)).toBe(c);
+    }
+  });
+
+  it('un doigt hors de la plage est SERRÉ sur le cran extrême, jamais au-delà', () => {
+    expect(cAimante(-999)).toBe(Math.min(...C_STEPS));
+    expect(cAimante(999)).toBe(Math.max(...C_STEPS));
+  });
+
+  it('la ZONE DE PRÉHENSION du sommet tient le plancher de 14 px à 375 px de large', () => {
+    // Le sommet se tire VERTICALEMENT : c'est donc unitY et le pas de c qui
+    // décident, et l'échelle d'écran qu'il ne faut pas oublier.
+    const repere = { range: LAB.range, unit: LAB.unit, unitY: LAB.unitY, xStep: 1, yStep: 1 };
+    const px = prehensionPx(repere, LAB.cStep, 'y');
+    expect(px).toBeGreaterThanOrEqual(PLANCHER_PX);
+    expect(px).toBeCloseTo(15, 0);
   });
 });

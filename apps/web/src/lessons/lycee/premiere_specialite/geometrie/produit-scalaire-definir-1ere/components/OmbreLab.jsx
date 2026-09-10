@@ -2,7 +2,7 @@ import React from 'react';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import {
   U_LAB, R_LAB, PAS_DEG, CRANS, ORIGINE, RANGE,
-  vAuCran, angleAuCran, ombreSignee, piedOmbre,
+  vAuCran, angleAuCran, ombreSignee, piedOmbre, kAimante,
   produitParOmbre, produitCoordonnees, norm, fr, frVec,
 } from './scalaireUtils';
 
@@ -18,9 +18,13 @@ import {
  * Mathematical objective de deux flèches naît un nombre, calculable de deux
  *                        façons sans rapport l'une avec l'autre — et ce nombre
  *                        s'annule exactement à l'angle droit.
- * Student action         appuyer sur « tourner » (cliquet discret de 15°,
- *                        jamais un curseur : l'angle droit doit être
- *                        EXACTEMENT atteignable, et il l'est en 6 crans).
+ * Student action         SAISIR L'EXTRÉMITÉ DE v et la faire tourner autour
+ *                        de l'origine (règle utilisateur « le glisser
+ *                        d'abord »). Le lâcher AIMANTE sur le cran de 15° le
+ *                        plus proche : l'angle droit reste donc EXACTEMENT
+ *                        atteignable, et il l'est en 6 crans. Les boutons
+ *                        « tourner » et le clavier restent des chemins
+ *                        complets.
  * Controlled variable    k, le cran d'angle. v en est dérivé, jamais stocké.
  * Mathematical state     { k } ; ombre, pied, angle et les DEUX afficheurs en
  *                        sont tous dérivés.
@@ -124,15 +128,30 @@ export default function OmbreLab({
           { id: 'u', from: ORIGINE, to: { x: u.x, y: u.y }, color: C_U, width: 3.5 },
           { id: 'v', from: ORIGINE, to: bout, color: C_V, width: 3.5 },
         ]}
-        points={[{ id: 'O', x: ORIGINE.x, y: ORIGINE.y, color: '#0f172a' }]}
+        // LE BOUT DE v EST LA POIGNÉE : c'est la flèche elle-même qu'on
+        // attrape, pas un bouton qui la pilote. L'origine reste un point de
+        // décor, non déplaçable — les deux flèches en partent.
+        points={[
+          { id: 'O', x: ORIGINE.x, y: ORIGINE.y, color: '#0f172a' },
+          { id: 'boutV', x: bout.x, y: bout.y, color: C_V },
+        ]}
         overlay={overlay}
         caption={false}
-        disabled
+        // Le pas fin ne sert qu'à donner de la résolution : l'aimantation
+        // pédagogique vraie est faite par `kAimante`, qui rend un CRAN ENTIER.
+        step={{ x: 0.1, y: 0.1 }}
+        // `draggableId` n'est annulé QUE par le verrou d'ANTÉRIORITÉ, jamais
+        // par la réussite de l'étape.
+        draggableId={disabled ? null : 'boutV'}
+        // On rend un CRAN, jamais des coordonnées : c'est ce qui garde le
+        // produit scalaire EXACTEMENT nul à l'angle droit (voir `kAimante`).
+        onPointChange={(q) => onChangeK?.(kAimante(q.x - ORIGINE.x, q.y - ORIGINE.y, k))}
         ariaLabel={
           `Deux flèches partant de l’origine. La première, u, a pour coordonnées ${frVec(u)} ` +
           `et pour longueur ${fr(norm(u))}. La seconde, v, a pour coordonnées ${frVec(v)}. ` +
           `L’angle entre les deux vaut ${fr(angle)} degrés. L’ombre de v sur la direction de u ` +
-          `mesure ${fr(ombre)}, ${sensOmbre}. Les deux calculs donnent ${fr(parCoord)}.`
+          `mesure ${fr(ombre)}, ${sensOmbre}. Les deux calculs donnent ${fr(parCoord)}. ` +
+          `Fais tourner v en glissant son extrémité, ou utilise les flèches.`
         }
       />
 

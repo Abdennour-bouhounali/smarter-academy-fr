@@ -1,7 +1,7 @@
 import React from 'react';
 import CoordPlane from '../../../../../common/components/CoordPlane';
 import {
-  PONT, H_STEPS, L_STEPS, pStepsDe, arche, labState, fr,
+  PONT, H_STEPS, L_STEPS, pStepsDe, pAimante, arche, labState, fr,
 } from './signeProblemesUtils';
 
 /**
@@ -14,11 +14,16 @@ import {
  *                        positions qui passent forment donc UNE SEULE bande,
  *                        jamais un patchwork, et cette bande est ENTRE les
  *                        racines pour une courbe tournée vers le bas.
- * Student action         régler L, régler H, déplacer la péniche cran par
- *                        cran (0,25 m). Cliquets discrets, jamais des
- *                        curseurs : les bandes remarquables ]−3 ; 3[,
- *                        ]−2 ; 2[ et ]−1 ; 1[ doivent être exactement
- *                        atteignables (§17, verrouillé par un test).
+ * Student action         SAISIR LA PÉNICHE et la faire coulisser sous l'arche
+ *                        — c'est l'objet lui-même qu'on déplace (règle
+ *                        utilisateur « le glisser d'abord »). Le lâcher
+ *                        AIMANTE sur le cran de 0,25 m le plus proche, si
+ *                        bien que les bandes remarquables ]−3 ; 3[, ]−2 ; 2[
+ *                        et ]−1 ; 1[ restent exactement atteignables au doigt
+ *                        (§17, verrouillé par un test). La largeur et la
+ *                        hauteur restent au cliquet : ce sont des RÉGLAGES de
+ *                        forme, pas des déplacements. Les boutons de position
+ *                        et le clavier restent des chemins complets.
  * Controlled variables   L, H, p — rien d'autre. L'arche ne bouge JAMAIS.
  * Mathematical state     le triplet (p, L, H) ; les coins, leur couleur, la
  *                        bande et la liste des positions gagnantes en sont
@@ -116,6 +121,12 @@ export default function PontLab({
   const points = s.coins.map((coin, i) => ({
     id: `coin${i}`, x: coin.x, y: H, color: coin.ok ? OK : KO,
   }));
+  // LA POIGNÉE DE LA PÉNICHE : un point posé au MILIEU de son pont, donc sur
+  // l'objet lui-même. C'est lui que `CoordPlane` déplace, et l'élève voit la
+  // péniche entière suivre — un polygone n'étant pas déplaçable directement.
+  // Il est peint de la couleur du verdict, comme les coins : la poignée fait
+  // partie de la figure, elle n'est pas un bouton posé dessus.
+  points.push({ id: 'poignee', x: p, y: H, color: s.passe ? OK : KO });
 
   const bandes = showBande && s.bande
     ? [{ from: s.bande.from, to: s.bande.to, tone: 'emerald' }]
@@ -141,13 +152,22 @@ export default function PontLab({
         // ci-dessous, lisible quel que soit l'écart — règle §6bis.4.
         points={points}
         caption={false}
-        disabled
+        // LE PAS D'AIMANTATION EST CELUI DE LA POSITION. `pAimante` fait
+        // ensuite l'aimantation pédagogique vraie, en cherchant dans la grille
+        // qui correspond à la LARGEUR COURANTE.
+        step={{ x: PONT.pStep, y: 1 }}
+        // LA PÉNICHE SE SAISIT, par la poignée posée au milieu de son pont.
+        // `draggableId` n'est annulé QUE par le verrou d'ANTÉRIORITÉ, jamais
+        // par la réussite de l'étape.
+        draggableId={disabled ? null : 'poignee'}
+        onPointChange={(q) => onChangeP?.(pAimante(q.x, L))}
         ariaLabel={
           `Arche de pont d'équation y = ${fr(PONT.a)}x² + ${fr(PONT.k)}, fixe, ` +
           `haute de ${fr(PONT.k)} mètres au milieu et large de 6 mètres à la base. ` +
           `Une péniche large de ${fr(L)} mètres et haute de ${fr(H)} mètres est centrée en ${fr(p)}. ` +
           `Son coin gauche est en ${fr(arrondi(s.coins[0].x))}, son coin droit en ${fr(arrondi(s.coins[1].x))}. ` +
-          (s.passe ? 'Les deux coins sont sous l’arche : elle passe.' : 'Au moins un coin touche l’arche : elle ne passe pas.')
+          (s.passe ? 'Les deux coins sont sous l’arche : elle passe.' : 'Au moins un coin touche l’arche : elle ne passe pas.') +
+          ' Fais glisser la péniche sous l’arche, ou utilise les flèches gauche et droite.'
         }
       />
 

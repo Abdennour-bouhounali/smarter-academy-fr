@@ -8,8 +8,9 @@
  * vérifie que `roots` est juste, pas qu'un module dit vrai en la citant.
  */
 import { describe, it, expect } from 'vitest';
+import { prehensionPx, PLANCHER_PX } from '../../../prehension';
 import {
-  PONT, H_STEPS, L_STEPS, P_STEPS, pStepsDe, pMaxDe, arche, coinPasse, penichePasse, coinsDe,
+  PONT, H_STEPS, L_STEPS, P_STEPS, pStepsDe, pMaxDe, pAimante, arche, coinPasse, penichePasse, coinsDe,
   trinomeDegagement, bandeDegagement, bandePositions, positionDansLaBande,
   bandeCoherente, positionsGagnantes, nombreDeBlocs, labState,
   trinomeText, intervalleText, ensembleText, REL_TEXT,
@@ -794,5 +795,94 @@ describe('les cadres CALCULÉS de toutes les figures dessinées', () => {
       expect(k.yMin).toBeLessThanOrEqual(0);
       expect(k.yMax).toBeGreaterThanOrEqual(0);
     }
+  });
+});
+
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────
+ * LE GLISSER (règle utilisateur du 2026-09-10)
+ *
+ * La péniche se SAISIT et coulisse sous l'arche. Ce qui suit verrouille
+ * l'atteignabilité des bandes remarquables sous l'aimantation, le respect du
+ * chenal, et MESURE la zone de préhension — y compris là où elle est courte.
+ * ─────────────────────────────────────────────────────────────────────────
+ */
+describe('le glisser — faire coulisser la péniche', () => {
+  it('pAimante ne rend QUE des positions légales, pour CHAQUE largeur', () => {
+    // BALAYÉ sur les 9 largeurs et tout le cadre : aucun lâcher ne peut poser
+    // la péniche sur une position hors grille.
+    for (const L of L_STEPS) {
+      const crans = pStepsDe(L);
+      for (let x = PONT.range.xMin - 2; x <= PONT.range.xMax + 2; x += 0.05) {
+        expect(crans).toContain(pAimante(Math.round(x * 100) / 100, L));
+      }
+    }
+  });
+
+  it('LE CHENAL EST RESPECTÉ : un doigt qui pousse trop loin s’arrête au dernier cran légal', () => {
+    // Sans ce serrage, le glisser ferait sortir un coin du cadre — exactement
+    // ce que `pMaxDe` existe pour empêcher, et que le bouton empêchait par
+    // construction.
+    for (const L of L_STEPS) {
+      const m = pMaxDe(L);
+      expect(pAimante(999, L)).toBe(m);
+      expect(pAimante(-999, L)).toBe(-m);
+      // Et les coins restent DANS le cadre aux deux extrêmes. `coinsDe` rend
+      // deux ABSCISSES nues, pas des points : c'est sur elles qu'on mesure.
+      for (const p of [pAimante(999, L), pAimante(-999, L)]) {
+        for (const x of coinsDe(p, L)) {
+          expect(Math.abs(x)).toBeLessThanOrEqual(PONT.range.xMax + 1e-9);
+        }
+      }
+    }
+  });
+
+  it('chaque cran est ATTEIGNABLE : un doigt posé dessus rend ce cran', () => {
+    for (const L of L_STEPS) {
+      for (const p of pStepsDe(L)) expect(pAimante(p, L)).toBe(p);
+    }
+  });
+
+  it('LES BANDES REMARQUABLES restent exactement atteignables au doigt', () => {
+    // C'est l'invariant d'atteignabilité du module : les bornes ±3, ±2 et ±1
+    // doivent tomber sur des crans, sans quoi la lecture de l'intervalle
+    // serait approximative — et le glisser ne doit rien y changer.
+    // `toBe` distinguerait 0 de −0 : on compare donc numériquement.
+    for (const borne of [3, 2, 1, 0]) {
+      expect(pAimante(borne, PONT.lMin)).toBeCloseTo(borne, 10);
+      expect(pAimante(-borne, PONT.lMin)).toBeCloseTo(-borne, 10);
+    }
+  });
+
+  it('l’aimantation est STABLE : réaimanter une position ne la déplace pas', () => {
+    for (const L of L_STEPS) {
+      for (const p of pStepsDe(L)) expect(pAimante(pAimante(p, L), L)).toBe(p);
+    }
+  });
+
+  it('LA ZONE DE PRÉHENSION, mesurée — et pourquoi les boutons restent au premier plan', () => {
+    // MESURE HONNÊTE. Le repère du pont fait 388 px de large : il est donc
+    // COMPRIMÉ à 0,884 dans un <main> de 375 px, et le cran de 0,25 m ne
+    // couvre que 9,3 px — SOUS le plancher de 14 px.
+    const repere = { range: PONT.range, unit: PONT.unit, unitY: PONT.unitY, xStep: 1, yStep: 1 };
+    const px = prehensionPx(repere, PONT.pStep, 'x');
+    expect(px).toBeCloseTo(9.3, 1);
+    expect(px).toBeLessThan(PLANCHER_PX);
+
+    // Le pas N'EST PAS élargissable : c'est lui qui met ±3, ±2 et ±1 sur des
+    // crans. Un pas de 0,5 tiendrait le plancher (18,6 px) mais garderait les
+    // bornes entières… au prix de la moitié des positions, et le module
+    // affirme que les positions gagnantes « se suivent toutes » sur une grille
+    // fine. On CONSTATE donc la contrainte au lieu de la contourner.
+    expect(prehensionPx(repere, 0.5, 'x')).toBeGreaterThanOrEqual(PLANCHER_PX);
+
+    // Ce qui rachète la préhension courte : ce n'est pas un point isolé qu'on
+    // vise, mais une PÉNICHE, large d'au moins 1 m — soit 37 px à l'écran,
+    // très au-dessus du plancher. Le doigt attrape la figure, et seule la
+    // POSE finale est aimantée au quart de mètre.
+    const largeurPeniche = prehensionPx(repere, PONT.lMin, 'x');
+    expect(largeurPeniche).toBeGreaterThanOrEqual(PLANCHER_PX);
+    expect(largeurPeniche).toBeCloseTo(37.1, 1);
   });
 });

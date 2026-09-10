@@ -1,6 +1,6 @@
 import React from 'react';
 import CoordPlane from '../../../../../common/components/CoordPlane';
-import { LAB, C_STEPS, labState, fr, evalTrinome } from './quadUtils';
+import { LAB, C_STEPS, labState, cAimante, fr, evalTrinome } from './quadUtils';
 
 /**
  * ParabolaLab — l'interaction SIGNATURE : la parabole qui remonte.
@@ -13,10 +13,14 @@ import { LAB, C_STEPS, labState, fr, evalTrinome } from './quadUtils';
  * Mathematical objective le NOMBRE de solutions de x² − 4x + c = 0 se décide
  *                        avant toute résolution, par un seul nombre — ici
  *                        b² − 4ac — qui change de signe pile à la fusion.
- * Student action         appuyer sur « monter » / « descendre » (cliquet
- *                        discret, jamais un curseur : le cran de la fusion
- *                        doit être exactement atteignable, cf. la règle de
- *                        cible atteignable — c = 4 est le huitième cran).
+ * Student action         SAISIR la parabole par son sommet et la TIRER
+ *                        verticalement — c'est la courbe elle-même qu'on
+ *                        déplace (règle utilisateur « le glisser d'abord »).
+ *                        Le lâcher AIMANTE sur le cran de c le plus proche,
+ *                        si bien que le cran de la fusion reste exactement
+ *                        atteignable au doigt comme au bouton (c = 4 est le
+ *                        huitième cran). Les boutons « monter » / « descendre »
+ *                        et le clavier restent des chemins complets.
  * Controlled variable    c, la hauteur de la courbe.
  * Mathematical state     c seul ; racines, sommet, b² − 4ac et le compteur en
  *                        sont TOUS dérivés.
@@ -60,7 +64,18 @@ export default function ParabolaLab({
   const points = s.racines.map((r, i) => ({
     id: `r${i}`, x: r, y: 0, color: RACINE,
   }));
-  if (showSommet) points.push({ id: 'S', x: s.sommet.x, y: s.sommet.y, color: SOMMET });
+  // LE SOMMET EST TOUJOURS PRÉSENT — c'est la POIGNÉE de la courbe, et une
+  // poignée absente rendrait le laboratoire impilotable au doigt. `showSommet`
+  // ne décide donc que de sa COULEUR : mis en avant quand le module parle du
+  // sommet, discret quand il n'en parle pas encore. Le faire disparaître
+  // reviendrait à supprimer le glisser à l'étape 1, c'est-à-dire exactement à
+  // l'endroit où l'élève découvre le geste.
+  points.push({
+    id: 'S',
+    x: s.sommet.x,
+    y: s.sommet.y,
+    color: showSommet ? SOMMET : COURBE,
+  });
 
   const btn =
     'min-w-[44px] h-11 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-40 ' +
@@ -92,12 +107,24 @@ export default function ParabolaLab({
         // produire un affichage illisible.
         points={points}
         caption={false}
-        disabled
+        // LE SOMMET EST LA POIGNÉE DE LA COURBE. Il ne se déplace que
+        // VERTICALEMENT : son abscisse est fixée par a et b (elle vaut
+        // −b/2a = 2), seule sa hauteur dépend de c. Tirer le sommet, c'est
+        // donc bien faire monter ou descendre la PARABOLE ENTIÈRE.
+        //
+        // Le pas vertical de 0,5 donne une préhension de 15 px à 375 px de
+        // large — au-dessus du plancher de 14 px (mesuré par un test).
+        step={{ x: 1, y: LAB.cStep }}
+        // `draggableId` n'est annulé QUE par le verrou d'ANTÉRIORITÉ, jamais
+        // par la réussite de l'étape.
+        draggableId={disabled ? null : 'S'}
+        onPointChange={(p) => onChangeC?.(cAimante(p.y))}
         ariaLabel={
           `Parabole d'équation y = x² − 4x + ${fr(c)}. ` +
           `Elle coupe l'axe des abscisses en ${s.nombre} point${s.nombre > 1 ? 's' : ''}` +
           (s.racines.length ? ` : ${s.racines.map((r) => fr(arrondi(r))).join(' et ')}.` : '.') +
-          ` Le nombre ${nomDuNombre} vaut ${fr(s.delta)}, il est ${signe}.`
+          ` Le nombre ${nomDuNombre} vaut ${fr(s.delta)}, il est ${signe}.` +
+          ' Fais glisser la parabole par son sommet, vers le haut ou vers le bas, ou utilise les flèches.'
         }
       />
 

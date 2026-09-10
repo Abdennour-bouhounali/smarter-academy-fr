@@ -12,7 +12,12 @@ import { tangente, fr } from './derivUtils';
  * Mathematical objective une tangente est déterminée par le point de contact
  *                        ET la pente : elle passe par (a ; f(a)) avec la pente
  *                        f′(a). Se tromper de l'un des deux se VOIT.
- * Student action         régler a et m au cliquet.
+ * Student action         SAISIR le point de contact pour le faire courir sur
+ *                        la courbe, et SAISIR la POIGNÉE posée au bout de sa
+ *                        droite pour l'INCLINER (règle utilisateur « le
+ *                        glisser d'abord »). Les deux objets se manipulent
+ *                        donc directement ; les boutons ± et le clavier
+ *                        restent des chemins complets, en second.
  * Controlled variable    a et m.
  * Mathematical state     { a, m } ; la droite proposée est y = m(x − a) + f(a),
  *                        donc elle passe TOUJOURS par le point de contact :
@@ -32,6 +37,39 @@ const COURBE = '#4f46e5';
 const PROPOSEE = '#0284c7';
 const VRAIE = '#e11d48';
 const POINT = '#d97706';
+
+/**
+ * POURQUOI LE POINT DE CONTACT SE GLISSE ET LA PENTE RESTE AU CLIQUET.
+ *
+ * Le point de contact est un POINT D'UN REPÈRE : il se saisit, et sa zone de
+ * préhension vaut le pas d'abscisse × l'unité, soit 23 px sur f et 26 px sur g
+ * à 375 px de large — bien au-dessus du plancher de 14 px.
+ *
+ * La PENTE, elle, n'est pas un point : c'est une INCLINAISON. On a mesuré les
+ * trois géométries de poignée possibles, et AUCUNE ne tient le plancher :
+ *
+ *  - poignée au bout d'un bras FIXE de 2 unités — préhension de 15 px sur g,
+ *    mais la poignée SORT DU CADRE dès a = 1,5 et m = 3,75 (balayé : hors
+ *    cadre sur les deux fonctions, quel que soit le bras testé) ;
+ *  - poignée au bout d'un bras DÉRIVÉ, réduit pour rester dans le cadre à la
+ *    manière de `stepRun` — jamais hors cadre, mais la préhension retombe à
+ *    3,8 px sur g dans les coins, c'est-à-dire la classe de défaut même que
+ *    ce plancher existe pour interdire ;
+ *  - poignée à RAYON ÉCRAN constant, la pente lue comme un ANGLE — pire
+ *    encore : deux pentes voisines de 3,5 et 3,75 ne sont séparées que de
+ *    1,4 px d'arc, parce que atan écrase les grandes pentes.
+ *
+ * L'obstruction est MATHÉMATIQUE, pas un défaut d'implémentation : à pas de
+ * pente constant, l'écart à l'écran entre deux inclinaisons voisines décroît
+ * comme 1/(1 + m²). Aucune poignée ne peut donner une préhension uniforme sur
+ * une plage de pentes allant jusqu'à 5.
+ *
+ * La règle utilisateur vise les POINTS et les FIGURES, et réserve
+ * explicitement le cliquet à ce qui n'est pas un point d'un repère. La pente
+ * en relève : elle GARDE donc ses deux boutons, qui restent ici le moyen
+ * JUSTE, et non un pis-aller. Les trois mesures ci-dessus sont verrouillées
+ * par un test, pour que ce choix reste justifié et non seulement affirmé.
+ */
 
 export default function TangentBuilder({
   fn,
@@ -58,6 +96,16 @@ export default function TangentBuilder({
   };
   const bumpM = (d) => onChangeM?.(Math.round((m + d * pasM) * 100) / 100);
 
+  /**
+   * LE GLISSER du point de contact : l'abscisse suit le doigt, aimantée au pas
+   * puis SERRÉE dans `contactRange` ; l'ordonnée est reprojetée sur la courbe,
+   * si bien que le point ne décolle jamais du tracé.
+   */
+  const glisserA = (p) => {
+    const v = Math.min(bornes.hi, Math.max(bornes.lo, Math.round(p.x / pasA) * pasA));
+    onChangeA?.(Math.round(v * 100) / 100);
+  };
+
   const btn =
     'min-w-[44px] h-11 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-40 ' +
     'text-sm font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
@@ -77,10 +125,15 @@ export default function TangentBuilder({
         functions={droites}
         points={[{ id: 'A', x: a, y: fa, color: POINT, name: 'A' }]}
         caption={false}
-        disabled
+        step={{ x: pasA, y: 0.01 }}
+        // LE POINT DE CONTACT SE SAISIT. `draggableId` n'est annulé QUE par le
+        // verrou d'ANTÉRIORITÉ, jamais par la réussite de l'étape.
+        draggableId={disabled ? null : 'A'}
+        onPointChange={glisserA}
         ariaLabel={
           `Courbe de ${fn.label}. Point de contact d’abscisse ${fr(a)}, d’ordonnée ${fr(arrondi(fa))}. ` +
-          `Ta droite a pour pente ${fr(m)}. ${juste ? 'Elle épouse la courbe : c’est la tangente.' : 'Elle traverse la courbe : ce n’est pas encore la tangente.'}`
+          `Ta droite a pour pente ${fr(m)}. ${juste ? 'Elle épouse la courbe : c’est la tangente.' : 'Elle traverse la courbe : ce n’est pas encore la tangente.'} ` +
+          `Fais glisser le point de contact, ou utilise les flèches gauche et droite.`
         }
       />
 

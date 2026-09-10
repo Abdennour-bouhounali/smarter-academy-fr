@@ -431,3 +431,28 @@ export function cadreDe({ a, b, c }, xMin, xMax, marge = 1) {
     yMax: Math.ceil(Math.max(...ys, 0) + marge),
   };
 }
+
+/**
+ * LE GLISSER DE LA PÉNICHE — l'aimantation sur le cran de position le plus
+ * proche, POUR LA LARGEUR COURANTE.
+ *
+ * L'élève attrape la péniche et la fait coulisser sous l'arche. Le cran rendu
+ * est cherché dans `pStepsDe(L)` et non dans une grille fixe : la plage de
+ * position se rétrécit quand la péniche s'élargit (un chenal borne un bateau),
+ * et un doigt qui pousse au-delà doit s'arrêter au dernier cran LÉGAL, sans
+ * jamais faire sortir un coin du cadre.
+ *
+ * CIBLE ATTEIGNABLE : la valeur rendue est toujours un élément de la grille
+ * courante, si bien que les bandes remarquables ]−3 ; 3[, ]−2 ; 2[ et
+ * ]−1 ; 1[ restent exactement atteignables au doigt. Verrouillé par un test.
+ */
+export function pAimante(x, L) {
+  const crans = pStepsDe(L);
+  let best = crans[0];
+  let dist = Math.abs(x - best);
+  for (const c of crans) {
+    const d = Math.abs(x - c);
+    if (d < dist) { dist = d; best = c; }
+  }
+  return best;
+}
