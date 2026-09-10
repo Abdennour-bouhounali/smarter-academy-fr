@@ -57,6 +57,14 @@ export const LESSON_CONFIG = {
   ],
   knowledgeAudit: {
     ignore: [
+      // « fraction irréductible » (5e) et « facteur commun » (3e) : la leçon
+      // demande de SIMPLIFIER une fraction au module 2, geste acquis au
+      // collège, mais elle n'enseigne ni la définition ni la recherche du
+      // PGCD — c'est arithmetique-2nde qui les porte. Les deux mots
+      // n'apparaissent que dans une correction, pour nommer ce que l'élève
+      // vient de faire.
+      { term: 'irreductible', reason: 'geste de 5e réactivé dans une correction ; la leçon ne l’enseigne pas' },
+      { term: 'facteur-commun', reason: 'mot de 3e employé pour nommer le diviseur choisi, hors périmètre de la leçon' },
       // « attention au chiffre des centièmes » (module 5, correction de la
       // ligne c5) sert à faire RELIRE 1,035 contre 1,35 : c'est du français
       // courant pour désigner un rang de l'écriture décimale, pas la
@@ -81,7 +89,7 @@ export const LESSON_CONFIG = {
   passingScore: 6,
   masteryThreshold: 0.8,
   emoji: '%',
-  estimatedDurationMin: 70,
+  estimatedDurationMin: 73,
   skills: [
     'Calculer une proportion et la lire en décimal, en fraction et en pourcentage',
     'Appliquer un pourcentage à une quantité et retrouver le tout',
@@ -106,7 +114,7 @@ export const LESSON_CONFIG = {
   modules: [
     { id: '00', number: 0, slug: 'mission-de-depart', path: `${LESSON_BASE_PATH}/mission-de-depart`, title: 'Mission de départ', desc: 'Un petit diagnostic — jamais bloquant — sur les fractions, les pourcentages du collège et la proportionnalité.', stage: 'prerequisite_check', color: 'teal', style: 'diagnostic', estimatedMin: 4, difficulty: 1, actionText: 'Vérifier mes bases' },
     { id: '01', number: 1, slug: 'le-lycee-de-800-eleves', path: `${LESSON_BASE_PATH}/le-lycee-de-800-eleves`, title: 'Le lycée de 800 élèves', desc: 'Découpe la population, regarde la part changer. Puis découpe une part de la part : « 30 % » de quoi, au juste ?', stage: 'trigger', teachesLearningPointIds: ['seconde_proportions-pourcentages-2nde_P1', 'seconde_proportions-pourcentages-2nde_P2', 'seconde_proportions-pourcentages-2nde_P4'], color: 'indigo', style: 'featured', estimatedMin: 11, difficulty: 1, actionText: 'Découper la population' },
-    { id: '02', number: 2, slug: 'trois-ecritures-une-proportion', path: `${LESSON_BASE_PATH}/trois-ecritures-une-proportion`, title: 'Trois écritures, une proportion', desc: 'Décimale, fraction, pourcentage : le même nombre habillé trois fois. Et le tout qu’on retrouve quand on connaît la part.', stage: 'discovery', teachesLearningPointIds: ['seconde_proportions-pourcentages-2nde_P2', 'seconde_proportions-pourcentages-2nde_P3', 'seconde_proportions-pourcentages-2nde_P4', 'seconde_proportions-pourcentages-2nde_P1'], color: 'violet', style: 'featured', estimatedMin: 10, difficulty: 2, actionText: 'Changer d’écriture' },
+    { id: '02', number: 2, slug: 'trois-ecritures-une-proportion', path: `${LESSON_BASE_PATH}/trois-ecritures-une-proportion`, title: 'Trois écritures, une proportion', desc: 'Décimale, fraction, pourcentage : le même nombre habillé trois fois. Et le tout qu’on retrouve quand on connaît la part.', stage: 'discovery', teachesLearningPointIds: ['seconde_proportions-pourcentages-2nde_P2', 'seconde_proportions-pourcentages-2nde_P3', 'seconde_proportions-pourcentages-2nde_P4', 'seconde_proportions-pourcentages-2nde_P1'], color: 'violet', style: 'featured', estimatedMin: 13, difficulty: 2, actionText: 'Changer d’écriture' },
     { id: '03', number: 3, slug: 'un-pourcentage-de-pourcentage', path: `${LESSON_BASE_PATH}/un-pourcentage-de-pourcentage`, title: 'Un pourcentage de pourcentage', desc: 'Les parts s’emboîtent : 60 % puis 25 % de ceux-là. Ça ne fait ni 85 %, ni 35 % — et le résultat se rapporte au lycée entier.', stage: 'discovery', teachesLearningPointIds: ['seconde_proportions-pourcentages-2nde_P5', 'seconde_proportions-pourcentages-2nde_P6'], color: 'sky', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Emboîter les parts' },
     { id: '04', number: 4, slug: 'etat-ou-variation', path: `${LESSON_BASE_PATH}/etat-ou-variation`, title: 'État ou variation ?', desc: 'Deux phrases, deux « % » qui ne parlent pas de la même chose. Passer de 20 % à 25 %, c’est +5 points — et +25 %.', stage: 'manipulation', teachesLearningPointIds: ['seconde_proportions-pourcentages-2nde_P7', 'seconde_proportions-pourcentages-2nde_P8', 'seconde_proportions-pourcentages-2nde_P9'], color: 'emerald', style: 'featured', estimatedMin: 11, difficulty: 3, actionText: 'Trier les phrases' },
     { id: '05', number: 5, slug: 'le-coefficient-multiplicateur', path: `${LESSON_BASE_PATH}/le-coefficient-multiplicateur`, title: 'Le coefficient multiplicateur', desc: 'Une hausse de 12 %, c’est ×1,12. Une baisse de 12 %, ×0,88. Un seul nombre pour faire — et défaire — une évolution.', stage: 'manipulation', teachesLearningPointIds: ['seconde_proportions-pourcentages-2nde_P10', 'seconde_proportions-pourcentages-2nde_P11'], color: 'cyan', style: 'featured', estimatedMin: 10, difficulty: 3, actionText: 'Régler le coefficient' },

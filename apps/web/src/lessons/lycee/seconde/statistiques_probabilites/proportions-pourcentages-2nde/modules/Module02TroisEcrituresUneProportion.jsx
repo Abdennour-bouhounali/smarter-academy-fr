@@ -20,6 +20,8 @@ export default function Module02TroisEcrituresUneProportion() {
   const [tested, setTested] = useState(() => new Set());
   const [q2, setQ2] = useState(false);
   const [q3, setQ3] = useState(false);
+  const [q3b, setQ3b] = useState(false);
+  const [q3c, setQ3c] = useState(false);
   const [q4, setQ4] = useState(false);
 
   const done1 = tested.size >= 3;
@@ -130,7 +132,55 @@ export default function Module02TroisEcrituresUneProportion() {
       ),
     },
     {
+      // La fraction était toujours LUE (3/8 → 37,5 %), jamais PRODUITE : la
+      // simplification était faite par le gcd du composant. Ici l'élève écrit
+      // lui-même le numérateur et le dénominateur de la forme irréductible.
       num: 4,
+      title: 'À toi d’écrire la fraction',
+      subtitle: '18 élèves sur 24 sont externes. Écris cette proportion en fraction, simplifiée autant que tu peux.',
+      done: q3b && q3c,
+      content: (
+        <div className="space-y-3">
+          <NumericQuestion
+            prompt="Numérateur de la fraction simplifiée :"
+            expected={3} suffix=""
+            requires={['trois-ecritures', 'numerateur', 'denominateur', 'quotient']}
+            explain="18/24 : on divise les deux nombres par 6, le plus grand nombre qui divise à la fois 18 et 24. Cela donne 3/4 — la fraction irréductible. Le numérateur est 3."
+            explainFor={(n) => (n === 18
+              ? '18/24 est bien la proportion, mais elle se simplifie encore : 6 divise à la fois 18 et 24.'
+              : n === 6
+                ? 'Tu as divisé par 3 seulement : 6/8 se simplifie encore par 2. Va jusqu’à 3/4.'
+                : n === 4
+                  ? 'Attention au sens : la part (18) est au NUMÉRATEUR, le tout (24) au dénominateur.'
+                  : 'Cherche par quel nombre diviser 18 ET 24 : c’est 6, et 18 ÷ 6 = 3.')}
+            solved={q3b} onAnswered={() => setQ3b(true)}
+          />
+          {q3b && (
+            <NumericQuestion
+              prompt="Dénominateur de la fraction simplifiée :"
+              expected={4} suffix=""
+              requires={['trois-ecritures', 'numerateur', 'denominateur']}
+              explain="24 ÷ 6 = 4. La proportion s’écrit donc 3/4, soit 0,75, soit 75 % — trois écritures du même nombre."
+              explainFor={(n) => (n === 24
+                ? 'Le dénominateur doit être divisé par 6 lui aussi : 24 ÷ 6 = 4.'
+                : n === 8
+                  ? 'Tu as divisé par 3 : 6/8 se simplifie encore par 2, ce qui donne 3/4.'
+                  : 'On divise le tout par le même nombre que la part : 24 ÷ 6 = 4.')}
+              solved={q3c} onAnswered={() => setQ3c(true)}
+            />
+          )}
+          {q3b && q3c && (
+            <Feedback tone="ok">
+              <span className="font-mono font-bold">18/24 = 3/4 = 0,75 = 75 %</span>. Tu n’as pas
+              choisi cette fraction dans une liste : tu l’as <strong>écrite</strong>, en cherchant
+              toi-même par quoi diviser. C’est le même nombre sous quatre habits.
+            </Feedback>
+          )}
+        </div>
+      ),
+    },
+    {
+      num: 5,
       title: 'Trois écritures à relier',
       done: q4,
       content: (
@@ -158,7 +208,7 @@ export default function Module02TroisEcrituresUneProportion() {
   return (
     <ContentModule
       ctx={MODULE_CTX} navLinks={getNavLinks(2)} moduleNumber={2}
-      moduleTitle="Trois écritures, une proportion" moduleSubtitle="Décimale, fraction, pourcentage" estimatedTime="10 min"
+      moduleTitle="Trois écritures, une proportion" moduleSubtitle="Décimale, fraction, pourcentage" estimatedTime="13 min"
       brief={{
         tag: 'Découverte', title: 'p = partie / tout', tone: 'violet',
         body: <p>Une proportion est un quotient : la part divisée par le tout. Ce nombre s’écrit de trois façons, et se lit dans les deux sens — pour trouver la part, ou pour remonter au tout.</p>,

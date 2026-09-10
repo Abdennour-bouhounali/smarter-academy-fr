@@ -2174,7 +2174,7 @@ const smaMetadata = {
       "Utiliser un coefficient multiplicateur",
       "Passer d'un taux d'évolution à un coefficient multiplicateur",
     ],
-    durationMinutes: 70,
+    durationMinutes: 73,
     difficulty: "Difficile",
     status: 'available',
     icon: "%",

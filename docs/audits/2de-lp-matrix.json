@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:34:00.397Z",
+  "generatedAt": "2026-09-10T09:37:47.698Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -49093,9 +49093,9 @@
       "status": "available",
       "dir": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/proportions-pourcentages-2nde",
       "duration": {
-        "catalogue": 70,
-        "config": 70,
-        "moduleSum": 70,
+        "catalogue": 73,
+        "config": 73,
+        "moduleSum": 73,
         "drift": false
       },
       "knowledgeMap": true,
@@ -49124,7 +49124,7 @@
       },
       "snapshotCount": 7,
       "brickCount": 15,
-      "requiresCount": 138,
+      "requiresCount": 145,
       "specDocs": [
         "docs/lessons/2NDE_PROPORTIONS_POURCENTAGES_SPEC.md"
       ],
@@ -49348,8 +49348,8 @@
           "slug": "trois-ecritures-une-proportion",
           "title": "Trois écritures, une proportion",
           "stage": "discovery",
-          "estimatedMin": 10,
-          "estimatedTimeLabel": "10 min",
+          "estimatedMin": 13,
+          "estimatedTimeLabel": "13 min",
           "teaches": [
             "seconde_proportions-pourcentages-2nde_P2",
             "seconde_proportions-pourcentages-2nde_P3",
@@ -49370,7 +49370,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "questions": [
             {
@@ -49401,6 +49402,29 @@
             },
             {
               "id": "M02-S4-Q3",
+              "component": "NumericQuestion",
+              "requires": [
+                "trois-ecritures",
+                "numerateur",
+                "denominateur",
+                "quotient"
+              ],
+              "step": 4,
+              "prompt": "Numérateur de la fraction simplifiée :"
+            },
+            {
+              "id": "M02-S4-Q4",
+              "component": "NumericQuestion",
+              "requires": [
+                "trois-ecritures",
+                "numerateur",
+                "denominateur"
+              ],
+              "step": 4,
+              "prompt": "Dénominateur de la fraction simplifiée :"
+            },
+            {
+              "id": "M02-S5-Q5",
               "component": "BatchChoiceQuestion",
               "requires": [
                 "trois-ecritures",
@@ -49410,19 +49434,19 @@
                 "denominateur",
                 "quotient"
               ],
-              "step": 4,
+              "step": 5,
               "prompt": ""
             }
           ],
           "questionCounts": {
             "stream": {
-              "NumericQuestion": 2,
+              "NumericQuestion": 4,
               "BatchChoiceQuestion": 1
             },
             "jsxStatic": {
               "TapQuestion": 0,
               "BatchChoiceQuestion": 1,
-              "NumericQuestion": 2,
+              "NumericQuestion": 4,
               "PredictionChips": 0,
               "KnowledgeBrick": 3,
               "KnowledgeSnapshot": 1
@@ -49434,21 +49458,21 @@
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 57
+              "line": 59
             },
             {
               "itemId": "vocab-pourcentage",
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 64
+              "line": 66
             },
             {
               "itemId": "formule-proportion",
               "step": 2,
               "variant": "new",
               "itemMissing": false,
-              "line": 86
+              "line": 88
             }
           ],
           "requires": {
@@ -49465,10 +49489,10 @@
               "vocab-part-tout",
               "vocab-pourcentage"
             ],
-            "count": 16,
+            "count": 23,
             "invalid": 0
           },
-          "gatedReveals": 2,
+          "gatedReveals": 3,
           "manipulations": [
             {
               "name": "ThreeWritings",
@@ -50594,7 +50618,7 @@
             "ThreeWritings"
           ],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 2,
@@ -50612,13 +50636,19 @@
                 "module": 2,
                 "moduleSlug": "trois-ecritures-une-proportion",
                 "step": 4,
-                "mechanism": "question:M02-S4 lignes r2 et r4"
+                "mechanism": "question:M02-S4-Q1"
               },
               {
-                "module": 6,
-                "moduleSlug": "atelier-lire-les-pourcentages",
-                "step": null,
-                "mechanism": "intro"
+                "module": 2,
+                "moduleSlug": "trois-ecritures-une-proportion",
+                "step": 4,
+                "mechanism": "question:M02-S4-Q2"
+              },
+              {
+                "module": 2,
+                "moduleSlug": "trois-ecritures-une-proportion",
+                "step": 5,
+                "mechanism": "question:M02-S5"
               }
             ],
             "manipulation": "ThreeWritings affiche la colonne « Fraction » (480/800) ET la colonne « Fraction simplifiée » (3/5, calculée par gcd), côte à côte : le point pédagogique est justement que 480/800 et 3/5 cessent d'être deux objets différents.",
@@ -50629,7 +50659,7 @@
               "trois-ecritures",
               "vocab-pourcentage"
             ],
-            "notes": "PARTIELLEMENT couvert, pour une raison précise : la fraction est toujours LUE, jamais PRODUITE. Les lignes r2 (3/8 → 37,5 %) et r4 (7/20 → 35 %) demandent d'aller de la fraction VERS le pourcentage ; l'épreuve pp-e3 demande d'aller du pourcentage vers « 0,06 = 6/100 », mais c'est un QCM où la fraction est déjà écrite dans l'option. Nulle part l'élève n'a à écrire ni à simplifier une fraction lui-même — la simplification est faite par le gcd du composant. La distinction P2/P3 est d'ailleurs artificielle dans le découpage officiel (les deux facettes vivent dans la même colonne du même tableau) : c'est le référentiel qui sépare, pas la leçon. Une NumericQuestion « écris la proportion de 18 sur 24 sous forme de fraction irréductible » comblerait exactement ce trou.",
+            "notes": "PARTIELLEMENT couvert, pour une raison précise : la fraction est toujours LUE, jamais PRODUITE. Les lignes r2 (3/8 → 37,5 %) et r4 (7/20 → 35 %) demandent d'aller de la fraction VERS le pourcentage ; l'épreuve pp-e3 demande d'aller du pourcentage vers « 0,06 =\n\nRÉSOLU le 2026-09-10 par le geste que l'audit décrivait lui-même. Le module 2 a une étape où l'élève ÉCRIT la fraction : 18 élèves sur 24, numérateur puis dénominateur de la forme simplifiée, en deux NumericQuestion. La simplification n'est plus faite par le gcd du composant — c'est l'élève qui cherche par quoi diviser, et chaque distracteur encode une faute réelle (18 = non simplifiée, 6 = simplifiée à moitié, 4 = part et tout inversés). Le constat final relie les quatre écritures : 18/24 = 3/4 = 0,75 = 75 %. « fraction irréductible » (5e) et « facteur commun » (3e) sont déclarés en knowledgeAudit.ignore : la leçon les emploie pour nommer un geste de collège, elle ne les enseigne pas. Vérifié au navigateur.",
             "crossGrade": {
               "overlapsWith": [
                 "6e:fractions",

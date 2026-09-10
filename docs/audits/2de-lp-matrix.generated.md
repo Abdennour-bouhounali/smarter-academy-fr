@@ -8,8 +8,8 @@
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 286 | 94.4 % |
-| `PARTIALLY_COVERED` | 17 | 5.6 % |
+| `COVERED` | 287 | 94.7 % |
+| `PARTIALLY_COVERED` | 16 | 5.3 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -42,7 +42,7 @@
 | `frequences-conditionnelles-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 10 | 9 | 87 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `loi-grands-nombres-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 9 | 9 | 79 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
 | `probabilites-conditionnelles-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 9 | 7 | 86 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
-| `proportions-pourcentages-2nde` | statistiques_probabilites | available | 70 / 70 / 70 | 8 | 11 | 15 | 138 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
+| `proportions-pourcentages-2nde` | statistiques_probabilites | available | 73 / 73 / 73 | 8 | 11 | 15 | 145 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `series-regroupees-classes-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 8 | 10 | 12 | 86 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `statistiques-une-variable-2nde` | statistiques_probabilites | available | 86 / 86 / 86 | 8 | 12 | 12 | 100 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `tableaux-croises-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 10 | 8 | 58 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
@@ -304,7 +304,7 @@
 | `P9` Relier probabilité conditionnelle et fréquenc… | statistiques_probabilites | `probabilites-conditionnelles-2nde` | M4 | COVERED | M4.1 brick:frequence-probabilite · M4.1 question:M04-S1-Q1 · M4.3 bri… | — | `pc-e10` | `frequence-probabilite` `probabilites-composees` | M4 |
 | `P1` Calculer une proportion | statistiques_probabilites | `proportions-pourcentages-2nde` | M1, M2, M6 | COVERED | M1.1 manipulation:PopulationSplitter · M1.1 feedback · M1.1 brick:voc… | PopulationSplitter — 800 élèves, … | `pp-e1` `pp-e2` | `vocab-part-tout` `proportion-reference` `formule-proportion` | M1, M2, M6 |
 | `P2` Exprimer une proportion sous forme décimale | statistiques_probabilites | `proportions-pourcentages-2nde` | M1, M2 | COVERED | M2.1 manipulation:ThreeWritings · M2.1 feedback · M2.1 brick:trois-ec… | ThreeWritings — l'élève choisit u… | `pp-e3` | `trois-ecritures` `vocab-pourcentage` | M1, M2 |
-| `P3` Exprimer une proportion sous forme fractionna… | statistiques_probabilites | `proportions-pourcentages-2nde` | M2, M6 | PARTIALLY_COVERED | M2.1 manipulation:ThreeWritings · M2.1 brick:trois-ecritures · M2.4 q… | ThreeWritings affiche la colonne … | `pp-e3` | `trois-ecritures` `vocab-pourcentage` | M2, M6 |
+| `P3` Exprimer une proportion sous forme fractionna… | statistiques_probabilites | `proportions-pourcentages-2nde` | M2, M6 | COVERED | M2.1 manipulation:ThreeWritings · M2.1 brick:trois-ecritures · M2.4 q… | ThreeWritings affiche la colonne … | `pp-e3` | `trois-ecritures` `vocab-pourcentage` | M2, M6 |
 | `P4` Exprimer une proportion en pourcentage | statistiques_probabilites | `proportions-pourcentages-2nde` | M1, M2 | COVERED | M1.1 manipulation:PopulationSplitter · M1.3 manipulation:PopulationSp… | PopulationSplitter : le pourcenta… | `pp-e1` | `vocab-pourcentage` `trois-ecritures` `vocab-part-tout` | M1, M2 |
 | `P5` Calculer une proportion de proportion | statistiques_probabilites | `proportions-pourcentages-2nde` | M3, M6 | COVERED | M1.3 manipulation:PopulationSplitter · M1.3 brick:proportion-referenc… | NestedShares — deux curseurs (p₁ … | `pp-e4` `pp-e5` | `proportion-de-proportion` `methode-remises-successives` `proportion-reference` | M3, M6 |
 | `P6` Interpréter un pourcentage de pourcentage | statistiques_probabilites | `proportions-pourcentages-2nde` | M3 | COVERED | M1.3 manipulation:PopulationSplitter · M1.3 brick:proportion-referenc… | PopulationSplitter avec DEUX barr… | `pp-e5` | `proportion-reference` `mem-de-quoi` `proportion-de-proportion` | M3 |

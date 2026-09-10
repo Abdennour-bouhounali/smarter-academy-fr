@@ -1,227 +1,652 @@
 {
-  "lesson": "proportions-pourcentages-2nde",
-  "auditedAt": "2026-09-09",
-  "auditor": "2de-stats-proba-batch-A",
-  "learningPoints": {
-    "seconde_proportions-pourcentages-2nde_P1": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 1, "mechanism": "manipulation:PopulationSplitter" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 1, "mechanism": "feedback" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 1, "mechanism": "brick:vocab-part-tout" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 2, "mechanism": "question:M01-S2 (200 sur 800 vs 200 sur 400)" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 2, "mechanism": "brick:formule-proportion" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 2, "mechanism": "question:M02-S2 (36 % de 1 250)" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 3, "mechanism": "question:M02-S3 (189 = 42 % de ?)" },
-        { "module": 6, "moduleSlug": "atelier-lire-les-pourcentages", "step": 1, "mechanism": "question:M06-S1-Q2" }
-      ],
-      "manipulation": "PopulationSplitter — 800 élèves, une DraggableSplitBar au pas de 1 élève. L'élève pousse des ÉLÈVES et le pourcentage se recalcule tout seul pendant le glissement. L'étape 1 n'est validée qu'après trois découpages séparés d'au moins 80 élèves (SPREAD = 10 points de pourcentage), donc après une vraie exploration de la barre — pas après le premier micro-mouvement.",
-      "assessmentQuestionIds": ["pp-e1", "pp-e2"],
-      "knowledgeItems": ["vocab-part-tout", "proportion-reference", "formule-proportion"],
-      "notes": "Enchaînement exemplaire : le geste précède le mot, et le mot précède la demande. Le point pédagogique fort est l'étape 2 du module 1 — 200 élèves dans deux lycées de tailles différentes, mêmes barres côte à côte — qui rend impossible de lire un effectif comme une part. La brique vocab-part-tout est posée en fin d'étape 1, conditionnée à done1, donc AVANT la première question (étape 2) qui l'exige : ordre source correct. Les DEUX sens sont éprouvés : partie = p × tout (M02 étape 2, 0,36 × 1 250 = 450, vérifié) et tout = partie ÷ p (M02 étape 3, 189 ÷ 0,42 = 450, vérifié) — le second est explicitement annoncé comme « le sens qu'on oublie » et son explainFor distingue l'erreur 79,38 (multiplication) de 231 (lecture en évolution). Le boss pp-e2 rejoue ce sens inverse sur des valeurs neuves (84 ÷ 0,24 = 350, vérifié) avec le distracteur 20 qui est exactement 84 × 0,24 arrondi.",
-      "crossGrade": { "overlapsWith": ["3e:proportionnalite-3e", "5e:proportionnalite-5e"], "kind": "consolidation" },
-      "confidence": "high"
+ "lesson": "proportions-pourcentages-2nde",
+ "auditedAt": "2026-09-09",
+ "auditor": "2de-stats-proba-batch-A",
+ "learningPoints": {
+  "seconde_proportions-pourcentages-2nde_P1": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 1,
+     "mechanism": "manipulation:PopulationSplitter"
     },
-    "seconde_proportions-pourcentages-2nde_P2": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 1, "mechanism": "manipulation:ThreeWritings" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 1, "mechanism": "feedback" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 1, "mechanism": "brick:trois-ecritures" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 4, "mechanism": "question:M02-S4 (BatchChoiceQuestion, 4 lignes)" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 1, "mechanism": "manipulation:PopulationSplitter" }
-      ],
-      "manipulation": "ThreeWritings — l'élève choisit une part parmi 200/240/400/480/600 sur 800 et le tableau affiche SIMULTANÉMENT la fraction brute, la fraction simplifiée (gcd), l'écriture décimale à 4 décimales et le pourcentage. Il ne convertit rien : il constate que les colonnes bougent d'un bloc. L'étape exige trois parts. PopulationSplitter fait déjà la même chose en direct (num/den = décimal = pourcentage sous la barre).",
-      "assessmentQuestionIds": ["pp-e3"],
-      "knowledgeItems": ["trois-ecritures", "vocab-pourcentage"],
-      "notes": "La facette « décimale » est établie par la manipulation puis éprouvée par les lignes r1 (0,08 → 8 %, le piège de la virgule) et r3 (1,25 → 125 %, la proportion qui dépasse 100 %) de la BatchChoiceQuestion. Les quatre lignes sont vérifiées : 0,08 = 8 % ; 3/8 = 0,375 = 37,5 % ; 1,25 = 125 % ; 7/20 = 0,35 = 35 %. Le distracteur « 0,8 % » de r1 est exactement l'erreur de rang de la virgule, nommée dans le feedback. RÉSERVE TECHNIQUE, pas pédagogique : la manipulation est GELÉE après validation (`disabled={done1}`, Module02TroisEcrituresUneProportion.jsx:45) — voir technicalProblems.",
-      "crossGrade": { "overlapsWith": ["6e:fraction-decimale", "5e:proportionnalite-5e"], "kind": "consolidation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 1,
+     "mechanism": "feedback"
     },
-    "seconde_proportions-pourcentages-2nde_P3": {
-      "status": "PARTIALLY_COVERED",
-      "evidence": [
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 1, "mechanism": "manipulation:ThreeWritings" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 1, "mechanism": "brick:trois-ecritures" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 4, "mechanism": "question:M02-S4 lignes r2 et r4" },
-        { "module": 6, "moduleSlug": "atelier-lire-les-pourcentages", "step": null, "mechanism": "intro" }
-      ],
-      "manipulation": "ThreeWritings affiche la colonne « Fraction » (480/800) ET la colonne « Fraction simplifiée » (3/5, calculée par gcd), côte à côte : le point pédagogique est justement que 480/800 et 3/5 cessent d'être deux objets différents.",
-      "assessmentQuestionIds": ["pp-e3"],
-      "knowledgeItems": ["trois-ecritures", "vocab-pourcentage"],
-      "notes": "PARTIELLEMENT couvert, pour une raison précise : la fraction est toujours LUE, jamais PRODUITE. Les lignes r2 (3/8 → 37,5 %) et r4 (7/20 → 35 %) demandent d'aller de la fraction VERS le pourcentage ; l'épreuve pp-e3 demande d'aller du pourcentage vers « 0,06 = 6/100 », mais c'est un QCM où la fraction est déjà écrite dans l'option. Nulle part l'élève n'a à écrire ni à simplifier une fraction lui-même — la simplification est faite par le gcd du composant. La distinction P2/P3 est d'ailleurs artificielle dans le découpage officiel (les deux facettes vivent dans la même colonne du même tableau) : c'est le référentiel qui sépare, pas la leçon. Une NumericQuestion « écris la proportion de 18 sur 24 sous forme de fraction irréductible » comblerait exactement ce trou.",
-      "crossGrade": { "overlapsWith": ["6e:fractions", "5e:fractions-5e"], "kind": "consolidation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 1,
+     "mechanism": "brick:vocab-part-tout"
     },
-    "seconde_proportions-pourcentages-2nde_P4": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 1, "mechanism": "manipulation:PopulationSplitter" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 3, "mechanism": "manipulation:PopulationSplitter" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 1, "mechanism": "brick:vocab-pourcentage" },
-        { "module": 2, "moduleSlug": "trois-ecritures-une-proportion", "step": 4, "mechanism": "question:M02-S4" },
-        { "module": 6, "moduleSlug": "atelier-lire-les-pourcentages", "step": 1, "mechanism": "question:M06-S1-Q1" }
-      ],
-      "manipulation": "PopulationSplitter : le pourcentage n'est jamais réglé, il est CALCULÉ pendant le glissement (formatPercent(part/total)). La brique vocab-pourcentage arrive ensuite pour dire que le mot lui-même porte l'opération : « pour cent » = « sur cent ».",
-      "assessmentQuestionIds": ["pp-e1"],
-      "knowledgeItems": ["vocab-pourcentage", "trois-ecritures", "vocab-part-tout"],
-      "notes": "Le passage décimal → pourcentage est établi par le geste (les trois cases bougent ensemble) et éprouvé quatre fois par la BatchChoiceQuestion, dont le cas > 100 % (1,25 = 125 %) qui est le seul vrai obstacle conceptuel de ce LP — une « part » plus grande que sa référence. L'épreuve pp-e1 (12/32 = 37,5 %, vérifié) porte une valeur non ronde, donc non devinable par estimation. Le distracteur 2,67 % est exactement 32/12 mal lu.",
-      "crossGrade": { "overlapsWith": ["5e:proportionnalite-5e"], "kind": "consolidation" },
-      "confidence": "high"
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 2,
+     "mechanism": "question:M01-S2 (200 sur 800 vs 200 sur 400)"
     },
-    "seconde_proportions-pourcentages-2nde_P5": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 3, "mechanism": "manipulation:PopulationSplitter" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 3, "mechanism": "brick:proportion-reference" },
-        { "module": 3, "moduleSlug": "un-pourcentage-de-pourcentage", "step": 1, "mechanism": "manipulation:NestedShares" },
-        { "module": 3, "moduleSlug": "un-pourcentage-de-pourcentage", "step": 1, "mechanism": "feedback" },
-        { "module": 3, "moduleSlug": "un-pourcentage-de-pourcentage", "step": 1, "mechanism": "brick:proportion-de-proportion" },
-        { "module": 3, "moduleSlug": "un-pourcentage-de-pourcentage", "step": 3, "mechanism": "brick:methode-remises-successives" },
-        { "module": 3, "moduleSlug": "un-pourcentage-de-pourcentage", "step": 3, "mechanism": "question:M03-S3 (200 × 0,70 × 0,80)" },
-        { "module": 6, "moduleSlug": "atelier-lire-les-pourcentages", "step": 2, "mechanism": "question:M06-S2-Q2" }
-      ],
-      "manipulation": "NestedShares — deux curseurs (p₁ = part du lycée, p₂ = part DE cette part) et une barre bleue dessinée À L'ÉCHELLE DE LA BARRE DU HAUT. Le point pédagogique est visuel et non verbal : en balayant p₂ de 0 à 100 %, la barre bleue ne dépasse JAMAIS la barre violette, ce qui rend l'addition 60 + 25 = 85 absurde à l'œil avant tout calcul. Le composant affiche en permanence le produit (0,60 × 0,25 = 15 %) et, en dessous, la somme (85 %) avec la mention « un nombre qui ne correspond à aucun groupe de la barre ». L'étape exige trois réglages.",
-      "assessmentQuestionIds": ["pp-e4", "pp-e5"],
-      "knowledgeItems": ["proportion-de-proportion", "methode-remises-successives", "proportion-reference"],
-      "notes": "Le meilleur module de la leçon. La PredictionChips propose explicitement les deux fautes (85 % et 35 %) et laisse la barre trancher — aucun verdict n'est rendu sur la prédiction. Le transfert aux remises successives (étape 3) est le vrai test : la brique methode-remises-successives est posée AVANT la NumericQuestion, et l'explainFor traite séparément les deux erreurs 100 € (−50 % supposé) et 140 € (une seule remise). Vérifié : 200 × 0,70 × 0,80 = 112 et la remise totale vaut 44 %, pas 50 %. Le boss pp-e5 rejoue sur 80 € (0,75 × 0,80 = 0,60 → 48 €, vérifié) avec le distracteur 44 € qui est exactement 80 × 0,55, l'erreur d'addition des remises.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 2,
+     "mechanism": "brick:formule-proportion"
     },
-    "seconde_proportions-pourcentages-2nde_P6": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 3, "mechanism": "manipulation:PopulationSplitter" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 3, "mechanism": "brick:proportion-reference" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 4, "mechanism": "question:M01-S4 (« 30 % » — de quoi ?)" },
-        { "module": 1, "moduleSlug": "le-lycee-de-800-eleves", "step": 4, "mechanism": "brick:mem-de-quoi" },
-        { "module": 3, "moduleSlug": "un-pourcentage-de-pourcentage", "step": 2, "mechanism": "question:M03-S2 (à quel tout se rapportent les 6 % ?)" },
-        { "module": 6, "moduleSlug": "atelier-lire-les-pourcentages", "step": 2, "mechanism": "question:M06-S2-Q1" }
-      ],
-      "manipulation": "PopulationSplitter avec DEUX barres et une bascule de lecture : les mêmes 120 internes affichent 25 % (parmi les 480 demi-pensionnaires) ou 15 % (parmi les 800 élèves) selon le bouton pressé. L'étape 3 n'est validée qu'après avoir bougé le sous-groupe ET touché les deux lectures — le double affichage est donc VÉCU, pas raconté. Vérifié : 120/480 = 25 %, 120/800 = 15 %.",
-      "assessmentQuestionIds": ["pp-e5"],
-      "knowledgeItems": ["proportion-reference", "mem-de-quoi", "proportion-de-proportion"],
-      "notes": "L'interprétation est traitée AVANT le calcul, ce qui est le bon ordre : la question du module 1 étape 4 (« que manque-t-il pour que la phrase soit vérifiable ? ») porte tout le reste de la leçon, et la brique mem-de-quoi en fait un réflexe réutilisé par l'atelier. La question M03-S2 est la mesure exacte de ce LP : elle demande à QUEL TOUT se rapportent les 6 % obtenus, avec le distracteur « parmi les élèves de seconde » qui est le contresens visé. L'atelier réinvestit sur le mot « d'entre eux » d'un sondage, ce qui est le déclencheur linguistique réel du piège.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 2,
+     "mechanism": "question:M02-S2 (36 % de 1 250)"
     },
-    "seconde_proportions-pourcentages-2nde_P7": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 1, "mechanism": "manipulation:StateVsChange" },
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 1, "mechanism": "feedback" },
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 1, "mechanism": "brick:etat-vs-variation" },
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 3, "mechanism": "question:M04-S3 (BatchChoiceQuestion, 5 phrases)" },
-        { "module": 6, "moduleSlug": "atelier-lire-les-pourcentages", "step": 3, "mechanism": "question:M06-S3-Q1" }
-      ],
-      "manipulation": "StateVsChange — deux barres verticales (année 1, année 2) réglées par deux curseurs, et SOUS elles deux encadrés qui calculent en permanence les DEUX lectures de la même paire : la différence en POINTS (après − avant) et le taux d'ÉVOLUTION ((après − avant)/avant). Les deux nombres sont vrais et divergent presque toujours ; le composant signale même les deux seuls cas de coïncidence (avant = 100 %, ou avant = après). L'étape exige trois réglages.",
-      "assessmentQuestionIds": ["pp-e6", "pp-e7"],
-      "knowledgeItems": ["etat-vs-variation", "point-vs-pourcent", "formule-taux-evolution"],
-      "notes": "Le geste installe la distinction que ni un texte ni une définition ne peuvent installer : voir les deux cases diverger sur des réglages qu'on choisit soi-même. La BatchChoiceQuestion de l'étape 3 est une vraie épreuve de tri (cinq phrases médiatiques réalistes, dont p5 « la part des boursiers est passée de 18 % à 21 % » qui est le cas mixte — deux états comparés, donc une variation) et son feedback donne le TEST opérationnel : « de quoi ce pourcentage est-il une part ? ». Vérifié : (21 − 18)/18 = 16,7 %, la correction de p5 est exacte. Le boss l'éprouve deux fois, en lecture (pp-e6) et en calcul (pp-e7).",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 3,
+     "mechanism": "question:M02-S3 (189 = 42 % de ?)"
     },
-    "seconde_proportions-pourcentages-2nde_P8": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 1, "mechanism": "manipulation:StateVsChange" },
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 1, "mechanism": "brick:point-vs-pourcent" },
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 2, "mechanism": "question:M04-S2 (8 % → 6 %, « baisse de 25 % »)" },
-        { "module": 6, "moduleSlug": "atelier-lire-les-pourcentages", "step": 3, "mechanism": "question:M06-S3-Q1" }
-      ],
-      "manipulation": "L'encadré ambre de StateVsChange est exactement ce LP : « après − avant, on soustrait deux états », affiché en POINTS et jamais en pour cent. La brique point-vs-pourcent est posée à la fin de l'étape 1, conditionnée à done1, donc avant la question de l'étape 2.",
-      "assessmentQuestionIds": ["pp-e6"],
-      "knowledgeItems": ["point-vs-pourcent", "etat-vs-variation"],
-      "notes": "La question M04-S2 est remarquable : elle porte sur un titre de journal (« le chômage passe de 8 % à 6 %, il baisse de 25 % ») et la bonne réponse est OUI — le journal a raison, à condition de dire « de 25 % » et non « de 25 points ». C'est bien plus honnête que la version scolaire habituelle qui fait de la formulation médiatique une faute. La variation additive (2 points) et la variation multiplicative (25 %) sont posées comme deux descriptions justes du même passage, ce qui est mathématiquement exact et rare. Vérifié : (6 − 8)/8 = −0,25. Le boss pp-e6 le rejoue (15 % → 18 % : +3 points, +20 %, vérifié) avec le distracteur « +3 %, soit +3 points » qui confond les deux.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_proportions-pourcentages-2nde_P9": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 1, "mechanism": "manipulation:StateVsChange" },
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 1, "mechanism": "brick:etat-vs-variation" },
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 4, "mechanism": "brick:formule-taux-evolution" },
-        { "module": 4, "moduleSlug": "etat-ou-variation", "step": 4, "mechanism": "question:M04-S4 (240 → 288)" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 1, "mechanism": "manipulation:CoefficientDial" }
-      ],
-      "manipulation": "L'encadré rose de StateVsChange calcule le taux relatif en direct, avec son dénominateur écrit en clair (« ÷ avant : on rapporte au départ »). Puis CoefficientDial, dont le curseur est le TAUX et dont l'axe montre le coefficient : la variation multiplicative devient un point sur un axe pivoté en 1.",
-      "assessmentQuestionIds": ["pp-e7"],
-      "knowledgeItems": ["formule-taux-evolution", "etat-vs-variation", "coefficient-multiplicateur"],
-      "notes": "La brique formule-taux-evolution est posée à l'étape 4 juste avant la NumericQuestion qui l'exige — l'étape 1 avait fait AFFICHER le taux, l'étape 4 demande de le PRODUIRE, ce qui est la bonne progression. L'erreur ciblée (diviser par la valeur d'arrivée) est traitée par un branchement explicite de l'explainFor sur 16,67. Vérifié : (288 − 240)/240 = 20 % et 48/288 = 16,67 %. Le boss pp-e7 la rejoue sur une BAISSE (500 → 425 = −15 %, vérifié) avec le distracteur −17,6 % qui est exactement −75/425 : l'erreur de dénominateur est encodée, pas approchée.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
-    },
-    "seconde_proportions-pourcentages-2nde_P10": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 1, "mechanism": "manipulation:CoefficientDial" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 1, "mechanism": "feedback" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 1, "mechanism": "brick:coefficient-multiplicateur" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 1, "mechanism": "brick:mem-k-1-plus-t" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 4, "mechanism": "question:M05-S4 (640 × 1,035)" },
-        { "module": 6, "moduleSlug": "atelier-lire-les-pourcentages", "step": 3, "mechanism": "question:M06-S3-Q2" }
-      ],
-      "manipulation": "CoefficientDial — l'élève glisse un TAUX (de −60 % à +100 %, pas de 5) et voit le COEFFICIENT se déplacer sur un axe où 1 est au centre. L'étape n'est validée qu'après avoir vu une hausse, une baisse ET 0 % : c'est le PASSAGE PAR 1 qui est le point pédagogique, et il est structurellement obligatoire. Le composant écrit en permanence k = 1 ± t et applique le coefficient à 200 € pour montrer l'effet.",
-      "assessmentQuestionIds": ["pp-e9", "pp-e10"],
-      "knowledgeItems": ["coefficient-multiplicateur", "mem-k-1-plus-t", "methode-coefficient-taux"],
-      "notes": "L'argument du module est géométrique et il est juste : les erreurs visées (−20 % → ×0,2 ou ×(−0,2)) deviennent visiblement impossibles parce qu'elles enverraient le curseur du mauvais côté ou hors de l'axe. La gate (hausse + baisse + zéro) garantit que l'élève a traversé le pivot, ce qui est exactement le geste qui porte le sens. L'application est éprouvée sur un taux non rond (640 × 1,035 = 662,40 €, vérifié) dont l'explainFor distingue 22,40 (l'augmentation seule) et 864 (k = 1,35, l'erreur de rang décimal). Le boss pp-e10 rejoue sur 240 × 1,075 = 258 € (vérifié) avec le distracteur 408 € — bien que l'explain cite 420 € pour k = 1,75, ce qui est correct mais ne correspond à aucune option : voir technicalProblems.",
-      "crossGrade": { "overlapsWith": ["3e:proportionnalite-3e"], "kind": "extension" },
-      "confidence": "high"
-    },
-    "seconde_proportions-pourcentages-2nde_P11": {
-      "status": "COVERED",
-      "evidence": [
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 1, "mechanism": "manipulation:CoefficientDial" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 1, "mechanism": "brick:mem-k-1-plus-t" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 2, "mechanism": "question:M05-S2 (BatchChoiceQuestion, 5 lignes)" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 3, "mechanism": "brick:methode-coefficient-taux" },
-        { "module": 5, "moduleSlug": "le-coefficient-multiplicateur", "step": 3, "mechanism": "question:M05-S3 (×0,94 → ?)" }
-      ],
-      "manipulation": "Le même CoefficientDial se lit dans les deux sens : le curseur du taux déplace le point du coefficient (sens direct, étape 2) et l'axe gradué 0,5 / 0,75 / 1 / 1,25 / 1,5 / 2 permet de remonter d'un coefficient à son taux (sens inverse, étape 3).",
-      "assessmentQuestionIds": ["pp-e8", "pp-e9"],
-      "knowledgeItems": ["mem-k-1-plus-t", "methode-coefficient-taux", "coefficient-multiplicateur"],
-      "notes": "Les DEUX sens sont enseignés et éprouvés séparément, avec une brique dédiée pour le sens retour (methode-coefficient-taux, posée à l'étape 3 avant la question). La série de cinq lignes de l'étape 2 couvre les vrais pièges et pas seulement le cas facile : +100 % → ×2 (le doublement), −100 % → ×0 (il ne reste rien), et surtout +3,5 % → ×1,035 dont le distracteur ×1,35 est l'erreur de rang décimal la plus fréquente. Vérifié pour les cinq lignes. Le boss l'éprouve dans les deux sens : pp-e8 (−15 % → 0,85) et pp-e9 (×1,06 → +6 %). RÉSERVE : la ligne c4 « baisse de 100 % → ×0 » n'est PAS atteignable par le geste (le curseur de CoefficientDial est borné à −60 %), donc ce cas limite est enseigné par la question seule, sans support manipulé.",
-      "crossGrade": { "overlapsWith": [], "kind": "none" },
-      "confidence": "high"
+    {
+     "module": 6,
+     "moduleSlug": "atelier-lire-les-pourcentages",
+     "step": 1,
+     "mechanism": "question:M06-S1-Q2"
     }
+   ],
+   "manipulation": "PopulationSplitter — 800 élèves, une DraggableSplitBar au pas de 1 élève. L'élève pousse des ÉLÈVES et le pourcentage se recalcule tout seul pendant le glissement. L'étape 1 n'est validée qu'après trois découpages séparés d'au moins 80 élèves (SPREAD = 10 points de pourcentage), donc après une vraie exploration de la barre — pas après le premier micro-mouvement.",
+   "assessmentQuestionIds": [
+    "pp-e1",
+    "pp-e2"
+   ],
+   "knowledgeItems": [
+    "vocab-part-tout",
+    "proportion-reference",
+    "formule-proportion"
+   ],
+   "notes": "Enchaînement exemplaire : le geste précède le mot, et le mot précède la demande. Le point pédagogique fort est l'étape 2 du module 1 — 200 élèves dans deux lycées de tailles différentes, mêmes barres côte à côte — qui rend impossible de lire un effectif comme une part. La brique vocab-part-tout est posée en fin d'étape 1, conditionnée à done1, donc AVANT la première question (étape 2) qui l'exige : ordre source correct. Les DEUX sens sont éprouvés : partie = p × tout (M02 étape 2, 0,36 × 1 250 = 450, vérifié) et tout = partie ÷ p (M02 étape 3, 189 ÷ 0,42 = 450, vérifié) — le second est explicitement annoncé comme « le sens qu'on oublie » et son explainFor distingue l'erreur 79,38 (multiplication) de 231 (lecture en évolution). Le boss pp-e2 rejoue ce sens inverse sur des valeurs neuves (84 ÷ 0,24 = 350, vérifié) avec le distracteur 20 qui est exactement 84 × 0,24 arrondi.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:proportionnalite-3e",
+     "5e:proportionnalite-5e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
   },
-  "lessonLevel": {
-    "officialScopeNotCovered": [],
-    "pedagogicalProblems": [
-      "P3 (« Exprimer une proportion sous forme fractionnaire ») n'est jamais PRODUIT par l'élève : la fraction est toujours lue dans une colonne calculée par le composant (gcd de ThreeWritings) ou déjà écrite dans une option de QCM. Aucune question ne demande d'écrire ni de simplifier une fraction. C'est la seule facette de l'intitulé officiel qui reste en lecture pure.",
-      "Le module 5 étape 2, ligne c4 (« Baisse de 100 % → ×0 »), sort du domaine atteignable par la manipulation : le curseur de CoefficientDial est borné à −60 % (CoefficientDial.jsx:419, min={-60}). Le cas limite le plus parlant de l'axe — le coefficient nul — ne peut donc pas être VU sur l'instrument, seulement affirmé par une correction. Étendre la borne à −100 % rendrait l'axe complet et le cas manipulable.",
-      "Le module 6 (atelier) pose la brique methode-lire-enonce SANS geste préalable : elle est introduite en tête de la première situation, sur du texte, et non conditionnée à une action. C'est un choix assumé de practice_lab (la manipulation s'efface), et les gestes porteurs existent aux modules 1, 3, 4 et 5 — le LP reste couvert — mais la brique elle-même ne respecte pas « geste → brique ».",
-      "Le module 1 étape 2 affiche deux PopulationSplitter avec `lockPart` et un `onPartChange={setSmallPart}` PARTAGÉ entre les deux lycées : les deux barres sont pilotées par le même état. La figure est correcte (200 dans les deux cas, c'est le point de la question) mais l'élève ne peut rien y régler, alors que le composant a l'air interactif. Une figure verrouillée qui ressemble à un instrument est une promesse non tenue."
-    ],
-    "technicalProblems": [
-      "AUCUNE ERREUR ARITHMÉTIQUE. Cette leçon n'a ni data.js ni fichier de test : les 40+ nombres de ses modules et de son boss sont écrits à la main. Tous ont été recalculés un par un et tous sont exacts. Détail des vérifications : M02 0,36 × 1 250 = 450 ; 189 ÷ 0,42 = 450 et 189 × 0,42 = 79,38 (distracteur) ; 3/8 = 37,5 % ; 7/20 = 35 % ; 0,08 = 8 % ; 1,25 = 125 %. M03 0,60 × 0,25 = 0,15 ; 200 × 0,70 × 0,80 = 112 et 1 − 0,56 = 44 % de remise totale ; 0,40 × 0,15 = 6 %. M04 (6 − 8)/8 = −25 % ; (21 − 18)/18 = +16,7 % (ligne p5) ; (288 − 240)/240 = 20 % et 48/288 = 16,67 % (distracteur). M05 1,12 ; 0,88 ; 2 ; 0 ; 1,035 ; 0,94 − 1 = −6 % ; 640 × 1,035 = 662,40 et 640 × 0,035 = 22,40 (distracteur). M06 60 × 0,60 = 36 et 60 + 36 = 96, remise 24 € = 20 % de 120 ; 800 × 0,55 = 440 puis × 0,60 = 264, et 0,55 × 0,60 = 33 % ; 750 × 1,04 = 780 et (31 − 30)/30 = +3,3 %. BOSS 12/32 = 37,5 % ; 84 ÷ 0,24 = 350 et 84 × 0,24 ≈ 20 ; 6 % = 0,06 = 6/100 ; 0,45 × 0,20 = 9 % ; 80 × 0,75 × 0,80 = 48 et 80 × 0,55 = 44 (distracteur) ; (18 − 15)/15 = +20 % ; (425 − 500)/500 = −15 % et /425 = −17,6 % ; 1 − 0,15 = 0,85 ; 1,06 − 1 = +6 % ; 240 × 1,075 = 258 et 240 × 0,075 = 18.",
-      "GEL DE LABORATOIRE : Module02TroisEcrituresUneProportion.jsx:45, `disabled={done1}` sur ThreeWritings. Une fois trois parts testées, ThreeWritings passe `disabled || on` à chacun de ses boutons (ThreeWritings.jsx:150) : les deux parts restantes (sur cinq) deviennent inaccessibles. L'élève ne peut plus demander « et 240 sur 800, ça donne quoi ? » au moment même où il vient de comprendre que les trois écritures bougent ensemble. C'est la classe de bug frozen-manipulation ; correctif : retirer `disabled={done1}` — le composant gère déjà l'état « déjà testé » par `on`. C'est la SEULE occurrence de la leçon : PopulationSplitter, NestedShares, StateVsChange et CoefficientDial documentent tous explicitement en tête de fichier la règle « jamais figé après validation » et la respectent.",
-      "Boss pp-e10, incohérence entre explain et options : l'explication écrit « utiliser k = 1,75 (soit +75 %) donnerait 420 € », or 420 € n'est PAS proposé — le quatrième distracteur est 408 €, dont aucune faute connue ne rend compte (240 × 1,7 = 408, qui correspondrait à k = 1,70, non mentionné). Soit remplacer 408 € par 420 € pour que le distracteur encode l'erreur nommée, soit corriger l'explain. Vérifié : 240 × 1,75 = 420 et 240 × 1,70 = 408.",
-      "Module 5 étape 2, ligne c5 : la correction dit « attention au chiffre des centièmes » à propos de 1,035. Le 5 de 1,035 est au rang des MILLIÈMES ; le 3 est aux centièmes. La formulation est ambiguë sans être franchement fausse (elle vise « lire jusqu'au bon rang »), mais sur une ligne dont le sujet EST le rang décimal, elle peut renforcer la confusion qu'elle prétend lever. Le lesson.config déclare d'ailleurs cet emploi en `knowledgeAudit.ignore` comme « français courant », ce qui est un aveu de flottement.",
-      "Le module 1 étape 3 rend un PopulationSplitter dont la prop `part` est le littéral 480 avec `onPartChange={() => {}}` et `lockPart` : le state `part` réglé à l'étape 1 est ignoré. C'est volontaire (la situation « 480 demi-pensionnaires » est celle de l'énoncé) mais la continuité narrative est rompue — un élève qui a laissé la barre à 200 à l'étape 1 la retrouve à 480 sans explication.",
-      "Aucun composant mort : PopulationSplitter, ThreeWritings, NestedShares, StateVsChange et CoefficientDial sont tous rendus par au moins un module. Aucun import inutilisé sauf `TapQuestion` importé mais non employé dans Module02TroisEcrituresUneProportion.jsx:2 et `formatNumber`/`globalCoefficient` inutilisés dans Module04EtatOuVariation.jsx (formatNumber l'est en réalité, ligne 79 ; seul l'import de `evolutionRate`/`percentagePointDifference` sert bien)."
-    ],
-    "duplicates": [
-      "AVEC evolutions-successives-reciproques-2nde — recouvrement VOULU et proprement borné. Cette leçon installe le coefficient d'UNE évolution (k = 1 + t) ; l'autre en fait le PRODUIT. La frontière est déclarée des deux côtés (teachingScope.exclude ici : « évolutions successives, coefficient global, évolution réciproque » ; là-bas : « coefficient d'une seule évolution ») et le pied du module 5 annonce explicitement la suite. La leçon suivante reprend k = 1 + t en priorKnowledge et le diagnostique (ev-d1, ev-d2, ev-d3) au lieu de le réenseigner. Pas de duplication.",
-      "AVEC statistiques-une-variable-2nde et series-regroupees-classes-2nde — aucun recouvrement : la proportion est ici un rapport partie/tout, là-bas une fréquence d'effectif. Les deux notions se touchent (une fréquence EST une proportion) mais aucune des deux leçons ne réenseigne l'autre ; les leçons de statistiques mettent `frequence` en priorKnowledge et le diagnostiquent.",
-      "AVEC frequences-conditionnelles-2nde — risque RÉEL de duplication non résolue : « 60 % des demi-pensionnaires dont 25 % sont internes » (module 3 ici) est structurellement la même chose qu'une fréquence conditionnelle (f(internes sachant demi-pensionnaires) = 0,25) et le produit 0,60 × 0,25 = 0,15 est la formule des probabilités composées. La leçon l'exclut nommément (« fréquences conditionnelles dans un tableau croisé »), donc la frontière est tracée par le SUPPORT (barre emboîtée vs tableau croisé) et non par la notion. À vérifier lors de l'audit de frequences-conditionnelles-2nde : si cette leçon-là réenseigne le produit comme neuf, le doublon devient effectif.",
-      "AVEC 3e/proportionnalite-3e — la proportionnalité, le coefficient de proportionnalité et les pourcentages du collège sont SUPPOSÉS et diagnostiqués (pp-d3, pp-d5), jamais réenseignés. Le module 0 mesure exactement ce que le collège a livré."
-    ],
-    "recommendations": [
-      "Retirer `disabled={done1}` sur ThreeWritings (Module02TroisEcrituresUneProportion.jsx:45) : c'est le seul correctif urgent de la leçon.",
-      "Ajouter au module 2 une NumericQuestion (ou une saisie de fraction) où l'élève ÉCRIT une proportion sous forme fractionnaire irréductible — par exemple « 18 élèves sur 24 : quelle fraction irréductible ? ». C'est le seul geste qui manque pour faire passer P3 de PARTIALLY_COVERED à COVERED.",
-      "Étendre la borne inférieure de CoefficientDial de −60 % à −100 % (CoefficientDial.jsx:419) : le cas k = 0 devient alors manipulable et la ligne c5 du module 5 cesse d'être hors de portée du geste.",
-      "Corriger le distracteur pp-e10 : remplacer 408 € par 420 €, pour qu'il encode l'erreur k = 1,75 nommée dans l'explication.",
-      "Reformuler la correction de la ligne c5 du module 5 : « 3,5 % s'écrit 0,035 — le 5 est au rang des millièmes » plutôt que « attention au chiffre des centièmes ».",
-      "Faire précéder la brique methode-lire-enonce (module 6) d'un geste minimal — par exemple un PopulationSplitter réglé sur les deux articles à 60 €, où l'élève voit la remise de 40 % s'appliquer à un seul des deux."
-    ],
-    "verticalPositioning": {
-      "revised": "Le pourcentage du collège (5e/proportionnalite-5e : « résoudre des problèmes de pourcentage » ; 3e/proportionnalite-3e : « Résoudre des problèmes de pourcentages », « Déterminer un coefficient de proportionnalité »), diagnostiqué par pp-d3 (25 % de 60) et pp-d5 (hausse de 10 % → ×1,1). Les trois écritures d'un nombre — fraction, décimal, fraction décimale — viennent de 6e/5e et sont diagnostiquées par pp-d1 et pp-d2. L'effectif d'un groupe vient de 3e/statistiques-3e (« Identifier les effectifs et les valeurs d'une série »).",
-      "extended": "Le pourcentage cesse d'être une OPÉRATION qu'on applique (« prends 25 % de 60 ») pour devenir un NOMBRE qui rapporte une part à un tout, et donc quelque chose qu'on calcule à partir de deux effectifs — le mouvement inverse de celui du collège. La proportionnalité de 6e/5e, qui rapportait deux grandeurs, se spécialise en un rapport partie/tout borné par [0 ; 1] — sauf que la leçon montre justement (ligne r3 du module 2) qu'il peut le dépasser.",
-      "new": "Le TOUT DE RÉFÉRENCE comme objet nommé et interrogeable (« 30 % de quoi ? ») ; la proportion de proportion et son produit ; la distinction état / variation, qui n'existe nulle part au collège ; le POINT DE POURCENTAGE, mot que le collège n'emploie jamais ; le taux d'évolution t = (V_f − V_i)/V_i avec son dénominateur explicite ; et le coefficient multiplicateur k = 1 + t comme nombre unique qui rend l'évolution multiplicative.",
-      "formalized": "Ce que le collège faisait au coup par coup (« augmente de 10 %, donc ×1,1 », appris comme recette en 3e) devient une identité k = 1 + t lisible dans les deux sens, avec un axe où 1 est le pivot. Le coefficient de proportionnalité de 6e reçoit ici son cas particulier le plus utile : le coefficient d'une évolution. Et la question « de quel tout parle-t-on ? », implicite dans tous les problèmes de pourcentage du collège, devient une procédure explicite (brique methode-lire-enonce).",
-      "tool": "La leçon fournit l'OUTIL COEFFICIENT, dont toute la suite du chapitre dépend : évolutions-successives-reciproques-2nde en fait le produit et l'inverse, et le pied de son module 5 annonce cette suite mot pour mot. Le réflexe « de quel tout ? » sert ensuite aux fréquences conditionnelles et aux tableaux croisés, où toute la difficulté est de savoir sur quelle marge on divise. Elle réutilise la proportionnalité du collège et prépare les indices, les taux d'intérêt et les probabilités composées."
+  "seconde_proportions-pourcentages-2nde_P2": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 1,
+     "mechanism": "manipulation:ThreeWritings"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 1,
+     "mechanism": "brick:trois-ecritures"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 4,
+     "mechanism": "question:M02-S4 (BatchChoiceQuestion, 4 lignes)"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 1,
+     "mechanism": "manipulation:PopulationSplitter"
     }
+   ],
+   "manipulation": "ThreeWritings — l'élève choisit une part parmi 200/240/400/480/600 sur 800 et le tableau affiche SIMULTANÉMENT la fraction brute, la fraction simplifiée (gcd), l'écriture décimale à 4 décimales et le pourcentage. Il ne convertit rien : il constate que les colonnes bougent d'un bloc. L'étape exige trois parts. PopulationSplitter fait déjà la même chose en direct (num/den = décimal = pourcentage sous la barre).",
+   "assessmentQuestionIds": [
+    "pp-e3"
+   ],
+   "knowledgeItems": [
+    "trois-ecritures",
+    "vocab-pourcentage"
+   ],
+   "notes": "La facette « décimale » est établie par la manipulation puis éprouvée par les lignes r1 (0,08 → 8 %, le piège de la virgule) et r3 (1,25 → 125 %, la proportion qui dépasse 100 %) de la BatchChoiceQuestion. Les quatre lignes sont vérifiées : 0,08 = 8 % ; 3/8 = 0,375 = 37,5 % ; 1,25 = 125 % ; 7/20 = 0,35 = 35 %. Le distracteur « 0,8 % » de r1 est exactement l'erreur de rang de la virgule, nommée dans le feedback. RÉSERVE TECHNIQUE, pas pédagogique : la manipulation est GELÉE après validation (`disabled={done1}`, Module02TroisEcrituresUneProportion.jsx:45) — voir technicalProblems.",
+   "crossGrade": {
+    "overlapsWith": [
+     "6e:fraction-decimale",
+     "5e:proportionnalite-5e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P3": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 1,
+     "mechanism": "manipulation:ThreeWritings"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 1,
+     "mechanism": "brick:trois-ecritures"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 4,
+     "mechanism": "question:M02-S4-Q1"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 4,
+     "mechanism": "question:M02-S4-Q2"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 5,
+     "mechanism": "question:M02-S5"
+    }
+   ],
+   "manipulation": "ThreeWritings affiche la colonne « Fraction » (480/800) ET la colonne « Fraction simplifiée » (3/5, calculée par gcd), côte à côte : le point pédagogique est justement que 480/800 et 3/5 cessent d'être deux objets différents.",
+   "assessmentQuestionIds": [
+    "pp-e3"
+   ],
+   "knowledgeItems": [
+    "trois-ecritures",
+    "vocab-pourcentage"
+   ],
+   "notes": "PARTIELLEMENT couvert, pour une raison précise : la fraction est toujours LUE, jamais PRODUITE. Les lignes r2 (3/8 → 37,5 %) et r4 (7/20 → 35 %) demandent d'aller de la fraction VERS le pourcentage ; l'épreuve pp-e3 demande d'aller du pourcentage vers « 0,06 =\n\nRÉSOLU le 2026-09-10 par le geste que l'audit décrivait lui-même. Le module 2 a une étape où l'élève ÉCRIT la fraction : 18 élèves sur 24, numérateur puis dénominateur de la forme simplifiée, en deux NumericQuestion. La simplification n'est plus faite par le gcd du composant — c'est l'élève qui cherche par quoi diviser, et chaque distracteur encode une faute réelle (18 = non simplifiée, 6 = simplifiée à moitié, 4 = part et tout inversés). Le constat final relie les quatre écritures : 18/24 = 3/4 = 0,75 = 75 %. « fraction irréductible » (5e) et « facteur commun » (3e) sont déclarés en knowledgeAudit.ignore : la leçon les emploie pour nommer un geste de collège, elle ne les enseigne pas. Vérifié au navigateur.",
+   "crossGrade": {
+    "overlapsWith": [
+     "6e:fractions",
+     "5e:fractions-5e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P4": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 1,
+     "mechanism": "manipulation:PopulationSplitter"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 3,
+     "mechanism": "manipulation:PopulationSplitter"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 1,
+     "mechanism": "brick:vocab-pourcentage"
+    },
+    {
+     "module": 2,
+     "moduleSlug": "trois-ecritures-une-proportion",
+     "step": 4,
+     "mechanism": "question:M02-S4"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-lire-les-pourcentages",
+     "step": 1,
+     "mechanism": "question:M06-S1-Q1"
+    }
+   ],
+   "manipulation": "PopulationSplitter : le pourcentage n'est jamais réglé, il est CALCULÉ pendant le glissement (formatPercent(part/total)). La brique vocab-pourcentage arrive ensuite pour dire que le mot lui-même porte l'opération : « pour cent » = « sur cent ».",
+   "assessmentQuestionIds": [
+    "pp-e1"
+   ],
+   "knowledgeItems": [
+    "vocab-pourcentage",
+    "trois-ecritures",
+    "vocab-part-tout"
+   ],
+   "notes": "Le passage décimal → pourcentage est établi par le geste (les trois cases bougent ensemble) et éprouvé quatre fois par la BatchChoiceQuestion, dont le cas > 100 % (1,25 = 125 %) qui est le seul vrai obstacle conceptuel de ce LP — une « part » plus grande que sa référence. L'épreuve pp-e1 (12/32 = 37,5 %, vérifié) porte une valeur non ronde, donc non devinable par estimation. Le distracteur 2,67 % est exactement 32/12 mal lu.",
+   "crossGrade": {
+    "overlapsWith": [
+     "5e:proportionnalite-5e"
+    ],
+    "kind": "consolidation"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P5": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 3,
+     "mechanism": "manipulation:PopulationSplitter"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 3,
+     "mechanism": "brick:proportion-reference"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "un-pourcentage-de-pourcentage",
+     "step": 1,
+     "mechanism": "manipulation:NestedShares"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "un-pourcentage-de-pourcentage",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "un-pourcentage-de-pourcentage",
+     "step": 1,
+     "mechanism": "brick:proportion-de-proportion"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "un-pourcentage-de-pourcentage",
+     "step": 3,
+     "mechanism": "brick:methode-remises-successives"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "un-pourcentage-de-pourcentage",
+     "step": 3,
+     "mechanism": "question:M03-S3 (200 × 0,70 × 0,80)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-lire-les-pourcentages",
+     "step": 2,
+     "mechanism": "question:M06-S2-Q2"
+    }
+   ],
+   "manipulation": "NestedShares — deux curseurs (p₁ = part du lycée, p₂ = part DE cette part) et une barre bleue dessinée À L'ÉCHELLE DE LA BARRE DU HAUT. Le point pédagogique est visuel et non verbal : en balayant p₂ de 0 à 100 %, la barre bleue ne dépasse JAMAIS la barre violette, ce qui rend l'addition 60 + 25 = 85 absurde à l'œil avant tout calcul. Le composant affiche en permanence le produit (0,60 × 0,25 = 15 %) et, en dessous, la somme (85 %) avec la mention « un nombre qui ne correspond à aucun groupe de la barre ». L'étape exige trois réglages.",
+   "assessmentQuestionIds": [
+    "pp-e4",
+    "pp-e5"
+   ],
+   "knowledgeItems": [
+    "proportion-de-proportion",
+    "methode-remises-successives",
+    "proportion-reference"
+   ],
+   "notes": "Le meilleur module de la leçon. La PredictionChips propose explicitement les deux fautes (85 % et 35 %) et laisse la barre trancher — aucun verdict n'est rendu sur la prédiction. Le transfert aux remises successives (étape 3) est le vrai test : la brique methode-remises-successives est posée AVANT la NumericQuestion, et l'explainFor traite séparément les deux erreurs 100 € (−50 % supposé) et 140 € (une seule remise). Vérifié : 200 × 0,70 × 0,80 = 112 et la remise totale vaut 44 %, pas 50 %. Le boss pp-e5 rejoue sur 80 € (0,75 × 0,80 = 0,60 → 48 €, vérifié) avec le distracteur 44 € qui est exactement 80 × 0,55, l'erreur d'addition des remises.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P6": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 3,
+     "mechanism": "manipulation:PopulationSplitter"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 3,
+     "mechanism": "brick:proportion-reference"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 4,
+     "mechanism": "question:M01-S4 (« 30 % » — de quoi ?)"
+    },
+    {
+     "module": 1,
+     "moduleSlug": "le-lycee-de-800-eleves",
+     "step": 4,
+     "mechanism": "brick:mem-de-quoi"
+    },
+    {
+     "module": 3,
+     "moduleSlug": "un-pourcentage-de-pourcentage",
+     "step": 2,
+     "mechanism": "question:M03-S2 (à quel tout se rapportent les 6 % ?)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-lire-les-pourcentages",
+     "step": 2,
+     "mechanism": "question:M06-S2-Q1"
+    }
+   ],
+   "manipulation": "PopulationSplitter avec DEUX barres et une bascule de lecture : les mêmes 120 internes affichent 25 % (parmi les 480 demi-pensionnaires) ou 15 % (parmi les 800 élèves) selon le bouton pressé. L'étape 3 n'est validée qu'après avoir bougé le sous-groupe ET touché les deux lectures — le double affichage est donc VÉCU, pas raconté. Vérifié : 120/480 = 25 %, 120/800 = 15 %.",
+   "assessmentQuestionIds": [
+    "pp-e5"
+   ],
+   "knowledgeItems": [
+    "proportion-reference",
+    "mem-de-quoi",
+    "proportion-de-proportion"
+   ],
+   "notes": "L'interprétation est traitée AVANT le calcul, ce qui est le bon ordre : la question du module 1 étape 4 (« que manque-t-il pour que la phrase soit vérifiable ? ») porte tout le reste de la leçon, et la brique mem-de-quoi en fait un réflexe réutilisé par l'atelier. La question M03-S2 est la mesure exacte de ce LP : elle demande à QUEL TOUT se rapportent les 6 % obtenus, avec le distracteur « parmi les élèves de seconde » qui est le contresens visé. L'atelier réinvestit sur le mot « d'entre eux » d'un sondage, ce qui est le déclencheur linguistique réel du piège.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P7": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 1,
+     "mechanism": "manipulation:StateVsChange"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 1,
+     "mechanism": "brick:etat-vs-variation"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 3,
+     "mechanism": "question:M04-S3 (BatchChoiceQuestion, 5 phrases)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-lire-les-pourcentages",
+     "step": 3,
+     "mechanism": "question:M06-S3-Q1"
+    }
+   ],
+   "manipulation": "StateVsChange — deux barres verticales (année 1, année 2) réglées par deux curseurs, et SOUS elles deux encadrés qui calculent en permanence les DEUX lectures de la même paire : la différence en POINTS (après − avant) et le taux d'ÉVOLUTION ((après − avant)/avant). Les deux nombres sont vrais et divergent presque toujours ; le composant signale même les deux seuls cas de coïncidence (avant = 100 %, ou avant = après). L'étape exige trois réglages.",
+   "assessmentQuestionIds": [
+    "pp-e6",
+    "pp-e7"
+   ],
+   "knowledgeItems": [
+    "etat-vs-variation",
+    "point-vs-pourcent",
+    "formule-taux-evolution"
+   ],
+   "notes": "Le geste installe la distinction que ni un texte ni une définition ne peuvent installer : voir les deux cases diverger sur des réglages qu'on choisit soi-même. La BatchChoiceQuestion de l'étape 3 est une vraie épreuve de tri (cinq phrases médiatiques réalistes, dont p5 « la part des boursiers est passée de 18 % à 21 % » qui est le cas mixte — deux états comparés, donc une variation) et son feedback donne le TEST opérationnel : « de quoi ce pourcentage est-il une part ? ». Vérifié : (21 − 18)/18 = 16,7 %, la correction de p5 est exacte. Le boss l'éprouve deux fois, en lecture (pp-e6) et en calcul (pp-e7).",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P8": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 1,
+     "mechanism": "manipulation:StateVsChange"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 1,
+     "mechanism": "brick:point-vs-pourcent"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 2,
+     "mechanism": "question:M04-S2 (8 % → 6 %, « baisse de 25 % »)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-lire-les-pourcentages",
+     "step": 3,
+     "mechanism": "question:M06-S3-Q1"
+    }
+   ],
+   "manipulation": "L'encadré ambre de StateVsChange est exactement ce LP : « après − avant, on soustrait deux états », affiché en POINTS et jamais en pour cent. La brique point-vs-pourcent est posée à la fin de l'étape 1, conditionnée à done1, donc avant la question de l'étape 2.",
+   "assessmentQuestionIds": [
+    "pp-e6"
+   ],
+   "knowledgeItems": [
+    "point-vs-pourcent",
+    "etat-vs-variation"
+   ],
+   "notes": "La question M04-S2 est remarquable : elle porte sur un titre de journal (« le chômage passe de 8 % à 6 %, il baisse de 25 % ») et la bonne réponse est OUI — le journal a raison, à condition de dire « de 25 % » et non « de 25 points ». C'est bien plus honnête que la version scolaire habituelle qui fait de la formulation médiatique une faute. La variation additive (2 points) et la variation multiplicative (25 %) sont posées comme deux descriptions justes du même passage, ce qui est mathématiquement exact et rare. Vérifié : (6 − 8)/8 = −0,25. Le boss pp-e6 le rejoue (15 % → 18 % : +3 points, +20 %, vérifié) avec le distracteur « +3 %, soit +3 points » qui confond les deux.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P9": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 1,
+     "mechanism": "manipulation:StateVsChange"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 1,
+     "mechanism": "brick:etat-vs-variation"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 4,
+     "mechanism": "brick:formule-taux-evolution"
+    },
+    {
+     "module": 4,
+     "moduleSlug": "etat-ou-variation",
+     "step": 4,
+     "mechanism": "question:M04-S4 (240 → 288)"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 1,
+     "mechanism": "manipulation:CoefficientDial"
+    }
+   ],
+   "manipulation": "L'encadré rose de StateVsChange calcule le taux relatif en direct, avec son dénominateur écrit en clair (« ÷ avant : on rapporte au départ »). Puis CoefficientDial, dont le curseur est le TAUX et dont l'axe montre le coefficient : la variation multiplicative devient un point sur un axe pivoté en 1.",
+   "assessmentQuestionIds": [
+    "pp-e7"
+   ],
+   "knowledgeItems": [
+    "formule-taux-evolution",
+    "etat-vs-variation",
+    "coefficient-multiplicateur"
+   ],
+   "notes": "La brique formule-taux-evolution est posée à l'étape 4 juste avant la NumericQuestion qui l'exige — l'étape 1 avait fait AFFICHER le taux, l'étape 4 demande de le PRODUIRE, ce qui est la bonne progression. L'erreur ciblée (diviser par la valeur d'arrivée) est traitée par un branchement explicite de l'explainFor sur 16,67. Vérifié : (288 − 240)/240 = 20 % et 48/288 = 16,67 %. Le boss pp-e7 la rejoue sur une BAISSE (500 → 425 = −15 %, vérifié) avec le distracteur −17,6 % qui est exactement −75/425 : l'erreur de dénominateur est encodée, pas approchée.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P10": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 1,
+     "mechanism": "manipulation:CoefficientDial"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 1,
+     "mechanism": "feedback"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 1,
+     "mechanism": "brick:coefficient-multiplicateur"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 1,
+     "mechanism": "brick:mem-k-1-plus-t"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 4,
+     "mechanism": "question:M05-S4 (640 × 1,035)"
+    },
+    {
+     "module": 6,
+     "moduleSlug": "atelier-lire-les-pourcentages",
+     "step": 3,
+     "mechanism": "question:M06-S3-Q2"
+    }
+   ],
+   "manipulation": "CoefficientDial — l'élève glisse un TAUX (de −60 % à +100 %, pas de 5) et voit le COEFFICIENT se déplacer sur un axe où 1 est au centre. L'étape n'est validée qu'après avoir vu une hausse, une baisse ET 0 % : c'est le PASSAGE PAR 1 qui est le point pédagogique, et il est structurellement obligatoire. Le composant écrit en permanence k = 1 ± t et applique le coefficient à 200 € pour montrer l'effet.",
+   "assessmentQuestionIds": [
+    "pp-e9",
+    "pp-e10"
+   ],
+   "knowledgeItems": [
+    "coefficient-multiplicateur",
+    "mem-k-1-plus-t",
+    "methode-coefficient-taux"
+   ],
+   "notes": "L'argument du module est géométrique et il est juste : les erreurs visées (−20 % → ×0,2 ou ×(−0,2)) deviennent visiblement impossibles parce qu'elles enverraient le curseur du mauvais côté ou hors de l'axe. La gate (hausse + baisse + zéro) garantit que l'élève a traversé le pivot, ce qui est exactement le geste qui porte le sens. L'application est éprouvée sur un taux non rond (640 × 1,035 = 662,40 €, vérifié) dont l'explainFor distingue 22,40 (l'augmentation seule) et 864 (k = 1,35, l'erreur de rang décimal). Le boss pp-e10 rejoue sur 240 × 1,075 = 258 € (vérifié) avec le distracteur 408 € — bien que l'explain cite 420 € pour k = 1,75, ce qui est correct mais ne correspond à aucune option : voir technicalProblems.",
+   "crossGrade": {
+    "overlapsWith": [
+     "3e:proportionnalite-3e"
+    ],
+    "kind": "extension"
+   },
+   "confidence": "high"
+  },
+  "seconde_proportions-pourcentages-2nde_P11": {
+   "status": "COVERED",
+   "evidence": [
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 1,
+     "mechanism": "manipulation:CoefficientDial"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 1,
+     "mechanism": "brick:mem-k-1-plus-t"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 2,
+     "mechanism": "question:M05-S2 (BatchChoiceQuestion, 5 lignes)"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 3,
+     "mechanism": "brick:methode-coefficient-taux"
+    },
+    {
+     "module": 5,
+     "moduleSlug": "le-coefficient-multiplicateur",
+     "step": 3,
+     "mechanism": "question:M05-S3 (×0,94 → ?)"
+    }
+   ],
+   "manipulation": "Le même CoefficientDial se lit dans les deux sens : le curseur du taux déplace le point du coefficient (sens direct, étape 2) et l'axe gradué 0,5 / 0,75 / 1 / 1,25 / 1,5 / 2 permet de remonter d'un coefficient à son taux (sens inverse, étape 3).",
+   "assessmentQuestionIds": [
+    "pp-e8",
+    "pp-e9"
+   ],
+   "knowledgeItems": [
+    "mem-k-1-plus-t",
+    "methode-coefficient-taux",
+    "coefficient-multiplicateur"
+   ],
+   "notes": "Les DEUX sens sont enseignés et éprouvés séparément, avec une brique dédiée pour le sens retour (methode-coefficient-taux, posée à l'étape 3 avant la question). La série de cinq lignes de l'étape 2 couvre les vrais pièges et pas seulement le cas facile : +100 % → ×2 (le doublement), −100 % → ×0 (il ne reste rien), et surtout +3,5 % → ×1,035 dont le distracteur ×1,35 est l'erreur de rang décimal la plus fréquente. Vérifié pour les cinq lignes. Le boss l'éprouve dans les deux sens : pp-e8 (−15 % → 0,85) et pp-e9 (×1,06 → +6 %). RÉSERVE : la ligne c4 « baisse de 100 % → ×0 » n'est PAS atteignable par le geste (le curseur de CoefficientDial est borné à −60 %), donc ce cas limite est enseigné par la question seule, sans support manipulé.",
+   "crossGrade": {
+    "overlapsWith": [],
+    "kind": "none"
+   },
+   "confidence": "high"
   }
+ },
+ "lessonLevel": {
+  "officialScopeNotCovered": [],
+  "pedagogicalProblems": [
+   "P3 (« Exprimer une proportion sous forme fractionnaire ») n'est jamais PRODUIT par l'élève : la fraction est toujours lue dans une colonne calculée par le composant (gcd de ThreeWritings) ou déjà écrite dans une option de QCM. Aucune question ne demande d'écrire ni de simplifier une fraction. C'est la seule facette de l'intitulé officiel qui reste en lecture pure.",
+   "Le module 5 étape 2, ligne c4 (« Baisse de 100 % → ×0 »), sort du domaine atteignable par la manipulation : le curseur de CoefficientDial est borné à −60 % (CoefficientDial.jsx:419, min={-60}). Le cas limite le plus parlant de l'axe — le coefficient nul — ne peut donc pas être VU sur l'instrument, seulement affirmé par une correction. Étendre la borne à −100 % rendrait l'axe complet et le cas manipulable.",
+   "Le module 6 (atelier) pose la brique methode-lire-enonce SANS geste préalable : elle est introduite en tête de la première situation, sur du texte, et non conditionnée à une action. C'est un choix assumé de practice_lab (la manipulation s'efface), et les gestes porteurs existent aux modules 1, 3, 4 et 5 — le LP reste couvert — mais la brique elle-même ne respecte pas « geste → brique ».",
+   "Le module 1 étape 2 affiche deux PopulationSplitter avec `lockPart` et un `onPartChange={setSmallPart}` PARTAGÉ entre les deux lycées : les deux barres sont pilotées par le même état. La figure est correcte (200 dans les deux cas, c'est le point de la question) mais l'élève ne peut rien y régler, alors que le composant a l'air interactif. Une figure verrouillée qui ressemble à un instrument est une promesse non tenue."
+  ],
+  "technicalProblems": [
+   "AUCUNE ERREUR ARITHMÉTIQUE. Cette leçon n'a ni data.js ni fichier de test : les 40+ nombres de ses modules et de son boss sont écrits à la main. Tous ont été recalculés un par un et tous sont exacts. Détail des vérifications : M02 0,36 × 1 250 = 450 ; 189 ÷ 0,42 = 450 et 189 × 0,42 = 79,38 (distracteur) ; 3/8 = 37,5 % ; 7/20 = 35 % ; 0,08 = 8 % ; 1,25 = 125 %. M03 0,60 × 0,25 = 0,15 ; 200 × 0,70 × 0,80 = 112 et 1 − 0,56 = 44 % de remise totale ; 0,40 × 0,15 = 6 %. M04 (6 − 8)/8 = −25 % ; (21 − 18)/18 = +16,7 % (ligne p5) ; (288 − 240)/240 = 20 % et 48/288 = 16,67 % (distracteur). M05 1,12 ; 0,88 ; 2 ; 0 ; 1,035 ; 0,94 − 1 = −6 % ; 640 × 1,035 = 662,40 et 640 × 0,035 = 22,40 (distracteur). M06 60 × 0,60 = 36 et 60 + 36 = 96, remise 24 € = 20 % de 120 ; 800 × 0,55 = 440 puis × 0,60 = 264, et 0,55 × 0,60 = 33 % ; 750 × 1,04 = 780 et (31 − 30)/30 = +3,3 %. BOSS 12/32 = 37,5 % ; 84 ÷ 0,24 = 350 et 84 × 0,24 ≈ 20 ; 6 % = 0,06 = 6/100 ; 0,45 × 0,20 = 9 % ; 80 × 0,75 × 0,80 = 48 et 80 × 0,55 = 44 (distracteur) ; (18 − 15)/15 = +20 % ; (425 − 500)/500 = −15 % et /425 = −17,6 % ; 1 − 0,15 = 0,85 ; 1,06 − 1 = +6 % ; 240 × 1,075 = 258 et 240 × 0,075 = 18.",
+   "GEL DE LABORATOIRE : Module02TroisEcrituresUneProportion.jsx:45, `disabled={done1}` sur ThreeWritings. Une fois trois parts testées, ThreeWritings passe `disabled || on` à chacun de ses boutons (ThreeWritings.jsx:150) : les deux parts restantes (sur cinq) deviennent inaccessibles. L'élève ne peut plus demander « et 240 sur 800, ça donne quoi ? » au moment même où il vient de comprendre que les trois écritures bougent ensemble. C'est la classe de bug frozen-manipulation ; correctif : retirer `disabled={done1}` — le composant gère déjà l'état « déjà testé » par `on`. C'est la SEULE occurrence de la leçon : PopulationSplitter, NestedShares, StateVsChange et CoefficientDial documentent tous explicitement en tête de fichier la règle « jamais figé après validation » et la respectent.",
+   "Boss pp-e10, incohérence entre explain et options : l'explication écrit « utiliser k = 1,75 (soit +75 %) donnerait 420 € », or 420 € n'est PAS proposé — le quatrième distracteur est 408 €, dont aucune faute connue ne rend compte (240 × 1,7 = 408, qui correspondrait à k = 1,70, non mentionné). Soit remplacer 408 € par 420 € pour que le distracteur encode l'erreur nommée, soit corriger l'explain. Vérifié : 240 × 1,75 = 420 et 240 × 1,70 = 408.",
+   "Module 5 étape 2, ligne c5 : la correction dit « attention au chiffre des centièmes » à propos de 1,035. Le 5 de 1,035 est au rang des MILLIÈMES ; le 3 est aux centièmes. La formulation est ambiguë sans être franchement fausse (elle vise « lire jusqu'au bon rang »), mais sur une ligne dont le sujet EST le rang décimal, elle peut renforcer la confusion qu'elle prétend lever. Le lesson.config déclare d'ailleurs cet emploi en `knowledgeAudit.ignore` comme « français courant », ce qui est un aveu de flottement.",
+   "Le module 1 étape 3 rend un PopulationSplitter dont la prop `part` est le littéral 480 avec `onPartChange={() => {}}` et `lockPart` : le state `part` réglé à l'étape 1 est ignoré. C'est volontaire (la situation « 480 demi-pensionnaires » est celle de l'énoncé) mais la continuité narrative est rompue — un élève qui a laissé la barre à 200 à l'étape 1 la retrouve à 480 sans explication.",
+   "Aucun composant mort : PopulationSplitter, ThreeWritings, NestedShares, StateVsChange et CoefficientDial sont tous rendus par au moins un module. Aucun import inutilisé sauf `TapQuestion` importé mais non employé dans Module02TroisEcrituresUneProportion.jsx:2 et `formatNumber`/`globalCoefficient` inutilisés dans Module04EtatOuVariation.jsx (formatNumber l'est en réalité, ligne 79 ; seul l'import de `evolutionRate`/`percentagePointDifference` sert bien)."
+  ],
+  "duplicates": [
+   "AVEC evolutions-successives-reciproques-2nde — recouvrement VOULU et proprement borné. Cette leçon installe le coefficient d'UNE évolution (k = 1 + t) ; l'autre en fait le PRODUIT. La frontière est déclarée des deux côtés (teachingScope.exclude ici : « évolutions successives, coefficient global, évolution réciproque » ; là-bas : « coefficient d'une seule évolution ») et le pied du module 5 annonce explicitement la suite. La leçon suivante reprend k = 1 + t en priorKnowledge et le diagnostique (ev-d1, ev-d2, ev-d3) au lieu de le réenseigner. Pas de duplication.",
+   "AVEC statistiques-une-variable-2nde et series-regroupees-classes-2nde — aucun recouvrement : la proportion est ici un rapport partie/tout, là-bas une fréquence d'effectif. Les deux notions se touchent (une fréquence EST une proportion) mais aucune des deux leçons ne réenseigne l'autre ; les leçons de statistiques mettent `frequence` en priorKnowledge et le diagnostiquent.",
+   "AVEC frequences-conditionnelles-2nde — risque RÉEL de duplication non résolue : « 60 % des demi-pensionnaires dont 25 % sont internes » (module 3 ici) est structurellement la même chose qu'une fréquence conditionnelle (f(internes sachant demi-pensionnaires) = 0,25) et le produit 0,60 × 0,25 = 0,15 est la formule des probabilités composées. La leçon l'exclut nommément (« fréquences conditionnelles dans un tableau croisé »), donc la frontière est tracée par le SUPPORT (barre emboîtée vs tableau croisé) et non par la notion. À vérifier lors de l'audit de frequences-conditionnelles-2nde : si cette leçon-là réenseigne le produit comme neuf, le doublon devient effectif.",
+   "AVEC 3e/proportionnalite-3e — la proportionnalité, le coefficient de proportionnalité et les pourcentages du collège sont SUPPOSÉS et diagnostiqués (pp-d3, pp-d5), jamais réenseignés. Le module 0 mesure exactement ce que le collège a livré."
+  ],
+  "recommendations": [
+   "Retirer `disabled={done1}` sur ThreeWritings (Module02TroisEcrituresUneProportion.jsx:45) : c'est le seul correctif urgent de la leçon.",
+   "Ajouter au module 2 une NumericQuestion (ou une saisie de fraction) où l'élève ÉCRIT une proportion sous forme fractionnaire irréductible — par exemple « 18 élèves sur 24 : quelle fraction irréductible ? ». C'est le seul geste qui manque pour faire passer P3 de PARTIALLY_COVERED à COVERED.",
+   "Étendre la borne inférieure de CoefficientDial de −60 % à −100 % (CoefficientDial.jsx:419) : le cas k = 0 devient alors manipulable et la ligne c5 du module 5 cesse d'être hors de portée du geste.",
+   "Corriger le distracteur pp-e10 : remplacer 408 € par 420 €, pour qu'il encode l'erreur k = 1,75 nommée dans l'explication.",
+   "Reformuler la correction de la ligne c5 du module 5 : « 3,5 % s'écrit 0,035 — le 5 est au rang des millièmes » plutôt que « attention au chiffre des centièmes ».",
+   "Faire précéder la brique methode-lire-enonce (module 6) d'un geste minimal — par exemple un PopulationSplitter réglé sur les deux articles à 60 €, où l'élève voit la remise de 40 % s'appliquer à un seul des deux."
+  ],
+  "verticalPositioning": {
+   "revised": "Le pourcentage du collège (5e/proportionnalite-5e : « résoudre des problèmes de pourcentage » ; 3e/proportionnalite-3e : « Résoudre des problèmes de pourcentages », « Déterminer un coefficient de proportionnalité »), diagnostiqué par pp-d3 (25 % de 60) et pp-d5 (hausse de 10 % → ×1,1). Les trois écritures d'un nombre — fraction, décimal, fraction décimale — viennent de 6e/5e et sont diagnostiquées par pp-d1 et pp-d2. L'effectif d'un groupe vient de 3e/statistiques-3e (« Identifier les effectifs et les valeurs d'une série »).",
+   "extended": "Le pourcentage cesse d'être une OPÉRATION qu'on applique (« prends 25 % de 60 ») pour devenir un NOMBRE qui rapporte une part à un tout, et donc quelque chose qu'on calcule à partir de deux effectifs — le mouvement inverse de celui du collège. La proportionnalité de 6e/5e, qui rapportait deux grandeurs, se spécialise en un rapport partie/tout borné par [0 ; 1] — sauf que la leçon montre justement (ligne r3 du module 2) qu'il peut le dépasser.",
+   "new": "Le TOUT DE RÉFÉRENCE comme objet nommé et interrogeable (« 30 % de quoi ? ») ; la proportion de proportion et son produit ; la distinction état / variation, qui n'existe nulle part au collège ; le POINT DE POURCENTAGE, mot que le collège n'emploie jamais ; le taux d'évolution t = (V_f − V_i)/V_i avec son dénominateur explicite ; et le coefficient multiplicateur k = 1 + t comme nombre unique qui rend l'évolution multiplicative.",
+   "formalized": "Ce que le collège faisait au coup par coup (« augmente de 10 %, donc ×1,1 », appris comme recette en 3e) devient une identité k = 1 + t lisible dans les deux sens, avec un axe où 1 est le pivot. Le coefficient de proportionnalité de 6e reçoit ici son cas particulier le plus utile : le coefficient d'une évolution. Et la question « de quel tout parle-t-on ? », implicite dans tous les problèmes de pourcentage du collège, devient une procédure explicite (brique methode-lire-enonce).",
+   "tool": "La leçon fournit l'OUTIL COEFFICIENT, dont toute la suite du chapitre dépend : évolutions-successives-reciproques-2nde en fait le produit et l'inverse, et le pied de son module 5 annonce cette suite mot pour mot. Le réflexe « de quel tout ? » sert ensuite aux fréquences conditionnelles et aux tableaux croisés, où toute la difficulté est de savoir sur quelle marge on divise. Elle réutilise la proportionnalité du collège et prépare les indices, les taux d'intérêt et les probabilités composées."
+  }
+ }
 }
