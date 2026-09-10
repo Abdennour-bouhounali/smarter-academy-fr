@@ -51,7 +51,7 @@ export default function StudentHome() {
   const firstLesson = gradeActivity.lessons[0];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-8 py-8 sm:py-10">
+    <div className="sa-page py-8 sm:py-10">
       {/* Greeting */}
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
         <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2">
@@ -71,7 +71,7 @@ export default function StudentHome() {
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="mb-8">
         {continueCourse ? (
           <Link
-            to={`${continueCourse.course.path}/${continueCourse.resumeModule}`}
+            to={continueCourse.resumePath}
             className="group block glass-card p-6 sm:p-7 relative overflow-hidden hover:border-blue-300 transition-all"
           >
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500" />

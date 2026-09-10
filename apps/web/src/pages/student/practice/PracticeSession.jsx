@@ -198,7 +198,7 @@ export default function PracticeSession() {
 
   if (error) {
     return (
-      <div className="w-full px-5 py-8 sm:py-10 space-y-6">
+      <div className="sa-page py-8 sm:py-10 space-y-6">
         <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error}</p>
         <Link to={`/espace/pratique/${lessonCode}`} className="text-sm font-bold text-slate-600 hover:text-slate-900">
           ← Retour à la pratique
@@ -208,14 +208,14 @@ export default function PracticeSession() {
   }
 
   if (!exercise || !question) {
-    return <div className="w-full px-5 py-8 sm:py-10 space-y-6"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
+    return <div className="sa-page py-8 sm:py-10 space-y-6"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
   }
 
   const answered = evaluation !== null;
   const totalQuestions = exercise.questions.length;
 
   return (
-    <div className="w-full px-5 py-8 sm:py-10 space-y-6">
+    <div className="sa-page py-8 sm:py-10 space-y-6">
       {/* La sortie de séance. Sans elle, l'élève engagé dans un niveau n'a
           aucun chemin de retour : ni bandeau, ni fil d'Ariane sur cette page.
           Le travail déjà validé est enregistré côté serveur à chaque réponse,

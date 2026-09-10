@@ -50,7 +50,7 @@ export default function StudentHomeBanner() {
           </div>
 
           <Link
-            to={continueCourse ? `${continueCourse.course.path}/${continueCourse.resumeModule}` : gradeCatalogueLink}
+            to={continueCourse ? continueCourse.resumePath : gradeCatalogueLink}
             className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-space font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap"
           >
             {continueCourse ? <Play size={16} /> : null}

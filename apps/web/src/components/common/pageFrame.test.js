@@ -27,10 +27,23 @@ describe('cadre de page partagé', () => {
     ['Lesson Module',  'src/lessons/common/components/ModuleLayout.jsx'],
     ['Exercise',       'src/pages/student/practice/PracticeSession.jsx'],
     ['Exercise Space', 'src/pages/student/practice/PracticeHub.jsx'],
+    ['Ma progression', 'src/pages/student/Progression.jsx'],
+    ['Espace',         'src/pages/student/StudentHome.jsx'],
+    ['Profil',         'src/pages/student/Profil.jsx'],
   ];
 
-  it.each(PAGES)('%s utilise le cadre pleine largeur (w-full px-5)', (_name, file) => {
-    expect(read(file)).toMatch(/className=[{"`][^"`}]*\bw-full px-5\b/);
+  it.each(PAGES)('%s utilise le cadre partagé (.sa-page)', (_name, file) => {
+    expect(read(file)).toMatch(/className=[{"`][^"`}]*\bsa-page\b/);
+  });
+
+  it('la gouttière du cadre est définie une seule fois, et responsive', () => {
+    const css = read('src/index.css');
+    // 20 / 40 / 60 : imposer 60px à 360px mangerait un tiers de l'écran.
+    expect(css).toMatch(/\.sa-page\s*\{[^}]*padding-left:\s*20px/);
+    expect(css).toMatch(/min-width:\s*640px\)\s*\{\s*\.sa-page\s*\{[^}]*padding-left:\s*40px/);
+    expect(css).toMatch(/min-width:\s*1024px\)\s*\{\s*\.sa-page\s*\{[^}]*padding-left:\s*60px/);
+    // Une largeur maximale ici re-briserait l'égalité entre les pages.
+    expect(css).not.toMatch(/\.sa-page\s*\{[^}]*max-width/);
   });
 
   it.each(PAGES)("%s ne borne plus son cadre principal par un max-w-*xl", (_name, file) => {

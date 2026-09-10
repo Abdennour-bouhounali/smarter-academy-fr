@@ -120,7 +120,7 @@ export default function ModuleLayout({
     return (
       <LessonChromeContext.Provider value={chrome}>
       <div className={`min-h-screen flex flex-col justify-between ${chrome.contentOffsetClass} bg-slate-50`}>
-        <main className="w-full px-5 py-8 flex-1 flex items-center justify-center">
+        <main className="sa-page py-8 flex-1 flex items-center justify-center">
           <div className="max-w-md w-full bg-white border-2 border-slate-200 rounded-3xl p-8 text-center space-y-4 shadow-sm">
             <div className="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
               <Lock className="w-7 h-7" aria-hidden="true" />
@@ -148,7 +148,7 @@ export default function ModuleLayout({
   return (
     <LessonChromeContext.Provider value={chrome}>
     <div className={`min-h-screen flex flex-col justify-between ${chrome.contentOffsetClass} bg-slate-50`}>
-      <main className="w-full px-5 py-8 flex-1 space-y-8">
+      <main className="sa-page py-8 flex-1 space-y-8">
 
         {/* Navigation Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">

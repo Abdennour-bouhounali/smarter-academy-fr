@@ -316,7 +316,7 @@ export default function BossFinal({
       nextLink={navLinks.nextLink}
       isCompleted={bossDone}
     >
-      <div className="w-full px-5 py-8 flex-1 space-y-8">
+      <div className="sa-page py-8 flex-1 space-y-8">
         <div className="grid grid-cols-3 gap-2">
           {PHASES.map(({ key, label, Icon }) => {
             const unlocked = phaseUnlocked(key);

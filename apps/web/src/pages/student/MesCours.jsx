@@ -33,7 +33,7 @@ export default function MesCours() {
 
   if (!grade || !gradeData) {
     return (
-      <div className="max-w-3xl mx-auto px-4 sm:px-8 py-10 text-center">
+      <div className="sa-page py-10 text-center">
         <div className="glass-card p-10">
           <BookOpen size={32} className="mx-auto mb-4 text-slate-300" />
           <h1 className="font-space font-bold text-xl text-slate-800 mb-2">Aucune classe sélectionnée</h1>
@@ -45,7 +45,7 @@ export default function MesCours() {
   }
 
   return (
-    <div className="w-full px-5 py-8 sm:py-10">
+    <div className="sa-page py-8 sm:py-10">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
           <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2">

@@ -1,6 +1,28 @@
 import { getLessonProgress } from './getLessonProgress';
 import { getNextIncompleteModule, getFlatAvailableLessons } from '@smarter-academy/core';
-import { getTotalModules } from '../../../registry';
+import { getTotalModules, getModulePath } from '../../../registry';
+
+/**
+ * Le chemin de reprise d'une leçon : celui du module visé, ou à défaut
+ * l'index de la leçon. Jamais une URL fabriquée à partir d'un numéro.
+ */
+function resumeShape(entry, resumeModule) {
+  const lesson = entry.item.lesson;
+  return {
+    course: lesson,
+    level: entry.item.level,
+    grade: entry.item.grade,
+    chapter: entry.item.chapter,
+    progress: entry.progressPercent,
+    resumeModule,
+    totalModules: entry.totalCount,
+    // Le module d'abord ; l'index de la leçon si ce module n'est pas routé.
+    // L'index existe toujours pour une leçon construite, donc ce chemin ne
+    // peut pas être nul — l'élève atterrit au pire sur le sommaire, jamais
+    // sur la page d'accueil.
+    resumePath: getModulePath(lesson.id, resumeModule) || lesson.path,
+  };
+}
 
 /**
  * Determines the single best lesson for the student to resume.
@@ -14,6 +36,11 @@ import { getTotalModules } from '../../../registry';
  *    visited incomplete lesson from the past (if any).
  * 5. Returns null if all lessons are 100% or no lessons are started.
  * 
+ * Every returned shape carries `resumePath`: the URL to actually navigate to.
+ * Callers must use it instead of joining `course.path` with `resumeModule` —
+ * module routes are declared by SLUG, so a numeric segment matches no route
+ * and silently falls through to the marketing landing page.
+ *
  * @param {Array} courseLevels - The full curriculum hierarchy from coursesData.js
  * @returns {Object|null} The lesson to resume, enriched with progress data.
  */
@@ -52,15 +79,10 @@ export function getResumeLesson(courseLevels) {
 
   // 4. If the most recent is incomplete, resume it
   if (mostRecent.progressPercent < 100) {
-    return {
-      course: mostRecent.item.lesson,
-      level: mostRecent.item.level,
-      grade: mostRecent.item.grade,
-      chapter: mostRecent.item.chapter,
-      progress: mostRecent.progressPercent,
-      resumeModule: getNextIncompleteModule(mostRecent.uniqueModules, mostRecent.totalCount),
-      totalModules: mostRecent.totalCount
-    };
+    return resumeShape(
+      mostRecent,
+      getNextIncompleteModule(mostRecent.uniqueModules, mostRecent.totalCount),
+    );
   }
 
   // 5. Most recent is 100%. Find the next incomplete lesson chronologically
@@ -72,15 +94,10 @@ export function getResumeLesson(courseLevels) {
       const nextProgress = lessonProgressMap.get(nextItem.lesson.id);
 
       if (nextProgress && nextProgress.progressPercent < 100) {
-        return {
-          course: nextItem.lesson,
-          level: nextItem.level,
-          grade: nextItem.grade,
-          chapter: nextItem.chapter,
-          progress: nextProgress.progressPercent,
-          resumeModule: getNextIncompleteModule(nextProgress.uniqueModules, nextProgress.totalCount),
-          totalModules: nextProgress.totalCount
-        };
+        return resumeShape(
+          nextProgress,
+          getNextIncompleteModule(nextProgress.uniqueModules, nextProgress.totalCount),
+        );
       }
     }
   }
@@ -89,15 +106,10 @@ export function getResumeLesson(courseLevels) {
   // Is there ANY incomplete lesson in the past that they started?
   const anyIncomplete = startedLessons.find(p => p.progressPercent < 100);
   if (anyIncomplete) {
-    return {
-      course: anyIncomplete.item.lesson,
-      level: anyIncomplete.item.level,
-      grade: anyIncomplete.item.grade,
-      chapter: anyIncomplete.item.chapter,
-      progress: anyIncomplete.progressPercent,
-      resumeModule: getNextIncompleteModule(anyIncomplete.uniqueModules, anyIncomplete.totalCount),
-      totalModules: anyIncomplete.totalCount
-    };
+    return resumeShape(
+      anyIncomplete,
+      getNextIncompleteModule(anyIncomplete.uniqueModules, anyIncomplete.totalCount),
+    );
   }
 
   // 7. Everything is 100% completed

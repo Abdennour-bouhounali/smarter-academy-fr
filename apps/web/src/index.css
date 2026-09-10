@@ -331,3 +331,47 @@ html[data-sa-resizing] .sa-workspace-main {
   .text-\[10px\] { font-size: 12px !important; }
   .text-\[11px\] { font-size: 13px !important; }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LE CADRE DE PAGE PARTAGÉ — `.sa-page`
+   ─────────────────────────────────────────────────────────────────────────
+   Huit pages élève (Cours, sommaire et module de leçon, exercice, espace de
+   pratique, progression, espace, profil) partageaient jusqu'ici SEPT largeurs
+   différentes — max-w-7xl, 6xl, 5xl, 4xl, 2xl… L'élève changeait de cadre à
+   chaque pas de son parcours.
+
+   Une seule règle ici, et un seul endroit où la changer. La gouttière est
+   responsive : 60 px n'a de sens que là où il y a la place, et l'imposer à
+   360 px mangerait un tiers de l'écran.
+
+     mobile  (< 640px)  : 20px
+     tablette(≥ 640px)  : 40px
+     bureau  (≥ 1024px) : 60px
+
+   `width: 100%` et non `100vw` : la mesure se fait dans le PARENT. Sur le
+   bureau élève, <main> réserve déjà la barre latérale (`.sa-workspace-main`),
+   donc les 60 px se comptent à l'intérieur de la zone de contenu — jamais
+   depuis le bord de l'écran, ce qui doublerait l'espace contre la barre.
+
+   Pas de `max-width` : une page qui a besoin d'une colonne de lecture étroite
+   la borne SUR SON CONTENU, à l'intérieur de ce cadre.
+   ───────────────────────────────────────────────────────────────────────── */
+.sa-page {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 640px) {
+  .sa-page {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sa-page {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}

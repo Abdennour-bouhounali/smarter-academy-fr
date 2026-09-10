@@ -293,7 +293,7 @@ export default function Progression() {
   );
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-8 py-8 sm:py-10">
+    <div className="sa-page py-8 sm:py-10">
       <div className="mb-8">
         <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2 flex items-center gap-1.5">
           <TrendingUp size={13} /> Ma progression

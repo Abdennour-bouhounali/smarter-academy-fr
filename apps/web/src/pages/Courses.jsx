@@ -184,7 +184,7 @@ export default function CoursesPage() {
           </div>
         </section>
       ) : (
-        <div className="w-full px-5 mb-6">
+        <div className="sa-page mb-6">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
             <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2">
               Catalogue
@@ -196,7 +196,7 @@ export default function CoursesPage() {
         </div>
       )}
 
-      <div className={`w-full px-5 space-y-8 ${user ? '' : 'mt-8'}`}>
+      <div className={`sa-page space-y-8 ${user ? '' : 'mt-8'}`}>
         
         {/* LEVEL SELECTOR */}
         <section>
@@ -320,7 +320,7 @@ export default function CoursesPage() {
               <Play size={14} /> Reprendre
             </h3>
             <Link
-              to={`${continueCourse.course.path}/${continueCourse.resumeModule}`}
+              to={continueCourse.resumePath}
               className="group block bg-white rounded-2xl border-2 border-blue-200 p-5 shadow-sm hover:shadow-md hover:border-blue-400 transition-all max-w-2xl"
             >
               <div className="flex items-start gap-4">
