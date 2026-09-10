@@ -47,7 +47,7 @@ export default function PracticeSummary() {
 
   if (error) {
     return (
-      <div className="sa-page py-8 sm:py-10 space-y-8">
+      <div className="sa-surface-plain sa-page py-8 sm:py-10 space-y-8">
         <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error}</p>
         <Link to={`/espace/pratique/${lessonCode}`} className="text-sm font-bold text-slate-600 hover:text-slate-900">
           ← Retour à la pratique
@@ -57,14 +57,14 @@ export default function PracticeSummary() {
   }
 
   if (!data || !overview) {
-    return <div className="sa-page py-8 sm:py-10 space-y-8"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
+    return <div className="sa-surface-plain sa-page py-8 sm:py-10 space-y-8"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
   }
 
   const s = data.summary ?? {};
   const misconceptions = Object.entries(s.misconceptions ?? {});
 
   return (
-    <div className="sa-page py-8 sm:py-10 space-y-8">
+    <div className="sa-surface-plain sa-page py-8 sm:py-10 space-y-8">
       <header className="space-y-2">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-semibold">
           <Target className="w-3.5 h-3.5" aria-hidden="true" /> Séance terminée

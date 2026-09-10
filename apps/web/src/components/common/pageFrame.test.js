@@ -87,3 +87,38 @@ describe('échelle typographique (+25% sur le corps du texte)', () => {
     expect(css).not.toMatch(/@media print[\s\S]{0,200}text-\\\[10px\\\]/);
   });
 });
+
+describe('fond uni du système d’exercices', () => {
+  const EXERCISE_PAGES = [
+    ['Exercise Space', 'src/pages/student/practice/PracticeHub.jsx'],
+    ['Exercise',       'src/pages/student/practice/PracticeSession.jsx'],
+    ['Bilan',          'src/pages/student/practice/PracticeSummary.jsx'],
+  ];
+
+  // `StudentLayout` monte `<BackgroundLayer />` — grille de points et trois
+  // halos animés — derrière toutes les pages de l'espace. Sous un énoncé, un
+  // graphique ou une saisie mathématique, un décor qui pulse en boucle
+  // concurrence ce qu'on demande à l'élève de regarder.
+  it.each(EXERCISE_PAGES)('%s pose un aplat opaque', (_name, file) => {
+    const src = read(file);
+    expect(src).toMatch(/\bsa-surface-plain\b/);
+    // TOUS les états, pas seulement le nominal : chargement et erreur sont des
+    // écrans à part entière, et l'un d'eux oublié laisserait le décor
+    // réapparaître le temps d'une requête.
+    const frames = src.match(/className="[^"]*\bsa-page\b[^"]*"/g) || [];
+    expect(frames.length).toBeGreaterThan(0);
+    for (const f of frames) expect(f).toMatch(/sa-surface-plain/);
+  });
+
+  it('l’aplat reprend la couleur du sommaire de leçon, et couvre la fenêtre', () => {
+    // Les commentaires CITENT `min-height: 100%` pour expliquer pourquoi il ne
+    // convient pas ; on lit donc les DÉCLARATIONS seules.
+    const css = read('src/index.css').replace(/\/\*[\s\S]*?\*\//g, '');
+    // slate-50 : exactement le `bg-slate-50` de LessonIndex/ModuleLayout.
+    expect(css).toMatch(/\.sa-surface-plain\s*\{[^}]*background-color:\s*#f8fafc/i);
+    // `min-height: 100%` ne suffit pas — le <main> parent n'a pas de hauteur
+    // définie, et l'aplat s'arrêterait où finit le contenu.
+    expect(css).toMatch(/\.sa-surface-plain\s*\{[^}]*min-height:\s*calc\(100dvh/);
+    expect(css).not.toMatch(/\.sa-surface-plain\s*\{[^}]*min-height:\s*100%/);
+  });
+});

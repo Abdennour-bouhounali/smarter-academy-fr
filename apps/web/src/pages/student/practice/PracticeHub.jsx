@@ -60,7 +60,7 @@ export default function PracticeHub() {
 
   if (error && !overview) {
     return (
-      <div className="sa-page py-8 sm:py-10 space-y-8">
+      <div className="sa-surface-plain sa-page py-8 sm:py-10 space-y-8">
         <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error}</p>
         <Link to="/espace/cours" className="text-sm font-bold text-slate-600 hover:text-slate-900">
           ← Retour à mes cours
@@ -70,7 +70,7 @@ export default function PracticeHub() {
   }
 
   if (!overview) {
-    return <div className="sa-page py-8 sm:py-10 space-y-8"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
+    return <div className="sa-surface-plain sa-page py-8 sm:py-10 space-y-8"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
   }
 
   const { lesson, levels, recommendedLevel, learningPoints, openSession } = overview;
@@ -79,7 +79,7 @@ export default function PracticeHub() {
   const lessonPath = getLessonPath(lessonCode);
 
   return (
-    <div className="sa-page py-8 sm:py-10 space-y-8">
+    <div className="sa-surface-plain sa-page py-8 sm:py-10 space-y-8">
       <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-mono text-slate-500" aria-label="Fil d'Ariane">
         <Link to="/espace/cours" className="hover:text-blue-600 inline-flex items-center gap-1 whitespace-nowrap">
           <ArrowLeft className="w-3 h-3" aria-hidden="true" /> Mes cours
