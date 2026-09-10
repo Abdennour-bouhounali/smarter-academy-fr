@@ -31,6 +31,12 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            // Explicite, et non laissé au défaut SQL : un modèle tout juste
+            // créé porterait sinon account_status = NULL en mémoire (le
+            // défaut de la colonne ne s'applique qu'à la relecture), et
+            // toute vérification faite sur cette instance-là le lirait comme
+            // « pas actif ».
+            'account_status' => User::STATUS_ACTIVE,
         ];
     }
 

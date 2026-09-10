@@ -21,8 +21,11 @@ Route::prefix('v1')->group(function () {
         Route::post('/auth/login', [AuthController::class, 'login']);
     });
 
-    // Protected routes — any authenticated user (admin or student)
-    Route::middleware('auth:sanctum')->group(function () {
+    // Protected routes — any authenticated user (admin or student).
+    // `account.active` fait respecter users.account_status côté serveur :
+    // un compte suspendu ou désactivé n'appelle plus rien, même avec un
+    // jeton encore en main (voir EnsureAccountIsActive).
+    Route::middleware(['auth:sanctum', 'account.active'])->group(function () {
         Route::get('/auth/me', [AuthController::class, 'me']);
         Route::post('/auth/logout', [AuthController::class, 'logout']);
         Route::patch('/auth/grade', [AuthController::class, 'updateGrade']);
@@ -58,7 +61,7 @@ Route::prefix('v1')->group(function () {
     });
 
     // Protected routes — admin only
-    Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
+    Route::middleware(['auth:sanctum', 'account.active', 'can:admin'])->group(function () {
         Route::get('/contact', [ContactController::class, 'index']);
     });
 });

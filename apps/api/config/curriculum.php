@@ -13,4 +13,17 @@ return [
         'CURRICULUM_EXPORT_OUTPUT',
         base_path('../../packages/core/curriculum/.generated/curriculum-export.json')
     ),
+
+    // Second export, même poignée de main : le REGISTRE DE CONTENU (modules
+    // de leçon + exercices de pratique). Séparé du catalogue parce que la
+    // source est différente — les lesson.config.js et content/practice, pas
+    // coursesData.js.
+    'registry_export_script_path' => env(
+        'CONTENT_REGISTRY_EXPORT_SCRIPT',
+        base_path('../../packages/core/curriculum/exportContentRegistry.mjs')
+    ),
+    'registry_export_output_path' => env(
+        'CONTENT_REGISTRY_EXPORT_OUTPUT',
+        base_path('../../packages/core/curriculum/.generated/content-registry-export.json')
+    ),
 ];

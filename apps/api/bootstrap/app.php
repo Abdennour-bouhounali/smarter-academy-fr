@@ -22,6 +22,12 @@ return Application::configure(basePath: dirname(__DIR__))
         // doesn't explicitly send Accept: application/json (which is exactly what a
         // plain frontend fetch() call does).
         $middleware->redirectGuestsTo(null);
+
+        // Le statut de compte se fait respecter par le serveur, sur chaque
+        // route authentifiée (voir le groupe auth:sanctum dans routes/api.php).
+        $middleware->alias([
+            'account.active' => \App\Http\Middleware\EnsureAccountIsActive::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

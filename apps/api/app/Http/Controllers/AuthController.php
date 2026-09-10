@@ -53,6 +53,22 @@ class AuthController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             $user = Auth::user();
 
+            // Un compte suspendu ou désactivé n'obtient pas de jeton du tout :
+            // le middleware account.active refuserait chaque appel ensuite, mais
+            // délivrer un jeton utilisable nulle part n'aurait aucun sens.
+            if (! $user->hasActiveAccount()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $user->account_status === User::STATUS_SUSPENDED
+                        ? 'Votre compte est temporairement suspendu.'
+                        : 'Votre compte a été désactivé.',
+                ], 403);
+            }
+
+            // Trace d'activité, utilisée par les indicateurs d'activité
+            // (actifs du jour, DAU/WAU/MAU) côté administration.
+            $user->forceFill(['last_activity_at' => now()])->save();
+
             $token = $user->createToken($user->role.'-token')->plainTextToken;
 
             return response()->json([
@@ -117,6 +133,7 @@ class AuthController extends Controller
             'email' => $user->email,
             'role' => $user->role,
             'grade' => $user->grade,
+            'accountStatus' => $user->account_status,
         ];
     }
 }

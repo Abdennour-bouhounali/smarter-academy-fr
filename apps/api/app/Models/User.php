@@ -29,6 +29,20 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    /**
+     * Valeurs par défaut au niveau du MODÈLE, et pas seulement de la colonne.
+     *
+     * Le défaut SQL ne s'applique qu'à la relecture : une instance tout juste
+     * créée (inscription, usine de test) porterait sinon account_status =
+     * NULL en mémoire, et hasActiveAccount() — écrit en liste blanche — la
+     * lirait comme inactive. Le défaut appartient donc ici.
+     *
+     * @var array<string, mixed>
+     */
+    protected $attributes = [
+        'account_status' => self::STATUS_ACTIVE,
+    ];
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -36,6 +50,9 @@ class User extends Authenticatable
         'password',
         'role',
         'grade',
+        'account_status',
+        'suspended_at',
+        'last_activity_at',
     ];
 
     /**
@@ -48,7 +65,78 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'suspended_at' => 'datetime',
+            'last_activity_at' => 'datetime',
         ];
+    }
+
+    public const ROLE_ADMIN = 'admin';
+
+    public const ROLE_STUDENT = 'student';
+
+    /**
+     * Statut de COMPTE — distinct du statut d'abonnement, qui vit dans
+     * subscriptions. « Compte actif, abonnement expiré » est valide.
+     *
+     * active    : accès normal.
+     * suspended : accès refusé, temporairement. Les données restent.
+     * disabled  : accès refusé, et les jetons sont révoqués. Les données
+     *             restent AUSSI — désactiver un compte n'efface jamais un
+     *             historique d'apprentissage (spec §2.4).
+     */
+    public const STATUS_ACTIVE = 'active';
+
+    public const STATUS_SUSPENDED = 'suspended';
+
+    public const STATUS_DISABLED = 'disabled';
+
+    public const ACCOUNT_STATUSES = [
+        self::STATUS_ACTIVE,
+        self::STATUS_SUSPENDED,
+        self::STATUS_DISABLED,
+    ];
+
+    public function isAdmin(): bool
+    {
+        return $this->role === self::ROLE_ADMIN;
+    }
+
+    /**
+     * Liste blanche, comme pour la publication : un statut inconnu ferme
+     * l'accès, il ne l'ouvre pas.
+     */
+    public function hasActiveAccount(): bool
+    {
+        return $this->account_status === self::STATUS_ACTIVE;
+    }
+
+    public function subscriptions(): HasMany
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    /**
+     * L'abonnement qui fait foi : le plus récemment commencé. Il n'y a pas
+     * de contrainte d'unicité en base — un renouvellement crée une ligne —
+     * donc « l'abonnement de l'élève » se choisit, il ne se suppose pas.
+     */
+    public function currentSubscription(): ?Subscription
+    {
+        return $this->subscriptions()
+            ->orderByRaw('started_at IS NULL')
+            ->orderByDesc('started_at')
+            ->orderByDesc('id')
+            ->first();
+    }
+
+    public function reports(): HasMany
+    {
+        return $this->hasMany(StudentReport::class);
+    }
+
+    public function lessonProgress(): HasMany
+    {
+        return $this->hasMany(StudentLessonProgress::class);
     }
 
     public function diagnosticSessions(): HasMany
