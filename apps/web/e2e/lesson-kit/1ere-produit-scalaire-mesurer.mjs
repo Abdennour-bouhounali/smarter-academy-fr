@@ -1,9 +1,9 @@
 /**
- * 1ère spé — « Suites : générer et reconnaître ».
+ * 1ère spé — « Produit scalaire : mesurer et démontrer ».
  *
  * Vite détaché depuis apps/web/ :
- *   cd apps/web && (setsid nohup npx vite --port 5282 --strictPort > e2e/lesson-kit/shots/vite-5282.log 2>&1 </dev/null &)
- *   node apps/web/e2e/lesson-kit/1ere-suites-decouvrir.mjs
+ *   cd apps/web && (setsid nohup npx vite --port 5288 --strictPort > e2e/lesson-kit/shots/vite-5288.log 2>&1 </dev/null &)
+ *   node apps/web/e2e/lesson-kit/1ere-produit-scalaire-mesurer.mjs
  *
  * La table CONTRIB et la carte des modules sont DÉRIVÉES de knowledge.jsx et
  * lesson.config.js : la suite teste la leçon réellement écrite.
@@ -14,29 +14,27 @@ import {
   readCompleted, nextEnabled, runBoss,
 } from './_2nde-helpers.mjs';
 
-const BASE = process.env.KIT_BASE || 'http://localhost:5282';
-const LESSON = '/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere';
-const KEY = 'u_anon_smarter_lesson_suites-decouvrir-1ere';
+const BASE = process.env.KIT_BASE || 'http://localhost:5288';
+const LESSON = '/courses/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere';
+const KEY = 'u_anon_smarter_lesson_produit-scalaire-mesurer-demontrer-1ere';
 
 const M = {
-  0: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/mission-de-depart`,
-  1: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/la-machine-a-deux-boutons`,
-  2: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/deux-facons-de-fabriquer`,
-  3: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/arithmetique-ou-geometrique`,
-  4: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/le-demontrer`,
-  5: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/monte-ou-descend`,
-  6: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/atelier-modeliser`,
-  7: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/mission-finale-deux-familles`,
+  0: `${BASE}/courses/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/mission-de-depart`,
+  1: `${BASE}/courses/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/le-theodolite`,
+  2: `${BASE}/courses/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/l-angle-sans-rapporteur`,
+  3: `${BASE}/courses/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/la-longueur-sans-regle`,
+  4: `${BASE}/courses/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/la-droite-par-son-normal`,
+  5: `${BASE}/courses/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/le-tribunal-des-figures`,
+  6: `${BASE}/courses/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/mission-finale-l-instrument`,
 };
 
 /** Apports de chaque module à la carte — miroir de knowledge.jsx. */
 const CONTRIB = {
-  1: ['suite-rang-terme', 'deux-facons-de-fabriquer'],
-  2: ['definition-explicite', 'definition-recurrence', 'methode-generer-termes'],
-  3: ['suite-arithmetique', 'suite-geometrique', 'methode-trouver-la-raison', 'cas-suite-constante'],
-  4: ['preuve-vs-constat', 'methode-demontrer-arithmetique', 'methode-demontrer-geometrique', 'mem-ecart-ou-rapport'],
-  5: ['sens-variation-suite', 'regle-variation-geometrique', 'mem-sens-de-variation'],
-  6: ['modeliser-par-une-suite'],
+  1: ['instrument-unique', 'zero-exact-vs-presque'],
+  2: ['formule-cosinus-angle', 'regle-signe-cosinus', 'methode-calculer-un-angle', 'mem-cosinus-angle'],
+  3: ['formule-carre-scalaire-longueur', 'regle-carres-entiers', 'regle-al-kashi', 'mem-carre-scalaire'],
+  4: ['regle-forme-normale', 'formule-distance-point-droite', 'methode-ecrire-forme-normale', 'mem-forme-normale'],
+  5: ['regle-deux-criteres', 'methode-nature-triangle', 'methode-demontrer-perpendiculaire', 'mem-le-calcul-tranche'],
 };
 const seedThrough = (n) => Array.from({ length: n + 1 }, (_, i) => String(i));
 const expectedAfter = (n) => {
@@ -80,11 +78,11 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const { ctx, page } = await o(`${BASE}${LESSON}`, { tag: 'index' });
   const txt = await body(page);
   check('index : la page de la leçon se rend', txt.length > 200 && !/Chargement/.test(txt));
-  check('index : la durée du catalogue est affichée', /80\s*min/.test(txt), txt.slice(0, 160));
+  check('index : la durée du catalogue est affichée', /75\s*min/.test(txt), txt.slice(0, 160));
   check('index : aucun NaN', !/NaN/.test(txt));
   check('index : la carte des connaissances est montée', (await page.locator('button[data-km-trigger]').count()) === 1);
   check('index : la carte est VIDE au départ', (await page.locator('#km-root [data-km-item]').count()) === 0);
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-index.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}produit-scalaire-mesurer-demontrer-1ere-index.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -140,7 +138,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M1 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m1.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}produit-scalaire-mesurer-demontrer-1ere-m1.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -164,7 +162,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M2 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m2.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}produit-scalaire-mesurer-demontrer-1ere-m2.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -188,7 +186,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M3 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m3.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}produit-scalaire-mesurer-demontrer-1ere-m3.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -212,7 +210,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M4 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m4.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}produit-scalaire-mesurer-demontrer-1ere-m4.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -236,31 +234,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M5 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m5.png`, fullPage: true });
-  await ctx.close();
-}
-{
-  const { ctx, page } = await o(M[6], { completedModules: seedThrough(5), tag: 'm6' });
-  const issues = [];
-  const avant = await body(page);
-  check('M6 : la page se rend sans NaN ni erreur de rendu', !/NaN|undefined/.test(avant));
-  const swept = await sweepAll(page, '#step-1', issues, 5);
-  // Une étape se pilote au cliquet (boutons étiquetés) OU par saisie/choix :
-  // exiger un cliquet partout serait une hypothèse de gabarit, pas une règle.
-  // Un bouton de bascule dont le TEXTE porte le sens (« ⇄ échanger les deux
-  // flèches ») est une manipulation légitime : on ne peut pas exiger partout un
-  // aria-label. On compte donc tout bouton d'action de l'étape, hors chrome.
-  const saisies = await page.locator(
-    '#step-1 input[type="text"], #step-1 button[aria-pressed], #step-1 button:not([aria-label]):not([disabled])'
-  ).count();
-  check('M6 : l’étape 1 est réellement interactive', swept > 0 || saisies > 0, `${swept} cliquet(s), ${saisies} saisie(s)`);
-  check('M6 : mise en page saine sur tout le balayage', issues.length === 0, issues.slice(0, 3).join(' | '));
-  // JAMAIS GELÉ : après usage, les commandes de l'étape restent utilisables.
-  if (swept > 0) {
-    const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
-    check('M6 : la manipulation reste utilisable après usage', encore > 0);
-  }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m6.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}produit-scalaire-mesurer-demontrer-1ere-m5.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -279,7 +253,7 @@ for (const n of Object.keys(CONTRIB).map(Number).sort((a, b) => a - b)) {
 
 // ── Le boss ──────────────────────────────────────────────────────────────
 {
-  const { ctx, page } = await o(M[7], { completedModules: seedThrough(6), tag: 'boss' });
+  const { ctx, page } = await o(M[6], { completedModules: seedThrough(5), tag: 'boss' });
   check('boss : silencieux avant validation', !/Bonne réponse/i.test(await body(page)));
   await runBoss(page);
   const v = page.locator('main button').filter({ hasText: /Valider mes 10 réponses/i }).first();
@@ -296,16 +270,16 @@ for (const n of Object.keys(CONTRIB).map(Number).sort((a, b) => a - b)) {
     (await page.locator('[data-knowledge-snapshot="complete"]').count()) === 1);
 
   const done = await readCompleted(page, KEY);
-  check('boss : le module d’évaluation est enregistré', Array.isArray(done) && done.includes('7'), JSON.stringify(done));
+  check('boss : le module d’évaluation est enregistré', Array.isArray(done) && done.includes('6'), JSON.stringify(done));
   await page.reload();
   await settle(page, 1200);
   check('boss : après rechargement, la correction est restituée', /\/\s*10/.test(await body(page)));
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-boss.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}produit-scalaire-mesurer-demontrer-1ere-boss.png`, fullPage: true });
   await ctx.close();
 }
 
 // ── Mobile 375 px ────────────────────────────────────────────────────────
-for (const n of [1, 7]) {
+for (const n of [1, 6]) {
   const { ctx, page } = await o(M[n], { completedModules: seedThrough(Math.max(0, n - 1)), mobile: true, tag: `mob${n}` });
   check(`mobile M${n} : aucun défilement horizontal`, await noHScroll(page));
   // Le commutateur de chronomètre du kit partagé fait 28 px dans TOUTES les
@@ -315,7 +289,7 @@ for (const n of [1, 7]) {
   check(`mobile M${n} : cibles ≥ 40 px (hors commutateur du kit)`, small.length <= kitSwitch, small.slice(0, 4).join(', '));
   const issues = [...(await layoutAudit(page)), ...(await aspectAudit(page)), ...(await domOverflow(page))];
   check(`mobile M${n} : mise en page saine à 375 px`, issues.length === 0, issues.slice(0, 3).join(' | '));
-  if (n === 1) await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m1-mobile.png`, fullPage: true });
+  if (n === 1) await page.screenshot({ path: `${SHOT_DIR}produit-scalaire-mesurer-demontrer-1ere-m1-mobile.png`, fullPage: true });
   await ctx.close();
 }
 

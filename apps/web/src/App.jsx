@@ -139,10 +139,15 @@ import testsDiagnostiques2ndeRoutes from './lessons/lycee/seconde/statistiques_p
 
 // ---- PREMIÈRE SPÉCIALITÉ ----
 import secondDegreResoudre1ereRoutes from './lessons/lycee/premiere_specialite/algebre/second-degre-resoudre-1ere/routes';
+import secondDegreSigneProblemes1ereRoutes from './lessons/lycee/premiere_specialite/algebre/second-degre-signe-problemes-1ere/routes';
 import suitesDecouvrir1ereRoutes from './lessons/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/routes';
+import suitesCalculerModeliser1ereRoutes from './lessons/lycee/premiere_specialite/algebre/suites-calculer-modeliser-1ere/routes';
 import derivationNombreDerive1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-nombre-derive-1ere/routes';
+import derivationCalculer1ereRoutes from './lessons/lycee/premiere_specialite/analyse/derivation-calculer-1ere/routes';
 import produitScalaireDefinir1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-definir-1ere/routes';
+import produitScalaireMesurerDemontrer1ereRoutes from './lessons/lycee/premiere_specialite/geometrie/produit-scalaire-mesurer-demontrer-1ere/routes';
 import variablesAleatoiresLoiEsperance1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/variables-aleatoires-loi-esperance-1ere/routes';
+import variablesAleatoiresDispersionBinomiale1ereRoutes from './lessons/lycee/premiere_specialite/probabilites/variables-aleatoires-dispersion-binomiale-1ere/routes';
 
 // Hydrates local lesson progress from the server on login and flushes the
 // offline queue — must live inside AuthProvider, hence this null component.
@@ -308,10 +313,15 @@ export default function App() {
 
             {/* ---- PREMIÈRE SPÉCIALITÉ ---- */}
             {secondDegreResoudre1ereRoutes()}
+            {secondDegreSigneProblemes1ereRoutes()}
             {suitesDecouvrir1ereRoutes()}
+            {suitesCalculerModeliser1ereRoutes()}
             {derivationNombreDerive1ereRoutes()}
+            {derivationCalculer1ereRoutes()}
             {produitScalaireDefinir1ereRoutes()}
+            {produitScalaireMesurerDemontrer1ereRoutes()}
             {variablesAleatoiresLoiEsperance1ereRoutes()}
+            {variablesAleatoiresDispersionBinomiale1ereRoutes()}
           </Route>
         </Routes>
       </Router>

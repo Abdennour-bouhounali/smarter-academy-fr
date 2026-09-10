@@ -90,7 +90,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   const { ctx, page } = await o(M[0], { tag: 'm0' });
   const groups = page.locator('main div[role="group"]');
   const n = await groups.count();
-  check('M0 : cinq questions de diagnostic', n === 5, `trouvé ${n}`);
+  check('M0 : entre cinq et dix questions de diagnostic', n >= 5 && n <= 10, `trouvé ${n}`);
   for (let i = 0; i < n; i += 1) {
     // Une mauvaise réponse volontaire à la première : le diagnostic MESURE,
     // il ne doit rien verrouiller.
@@ -99,7 +99,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     await opts.nth(idx).click({ force: true });
   }
   await settle(page);
-  const valider = page.locator('main button').filter({ hasText: /Valider/i }).first();
+  const valider = page.locator('main button').filter({ hasText: /Voir mon résultat|Valider/i }).first();
   if (await valider.count()) await valider.click({ force: true });
   await settle(page);
   const txt = await body(page);

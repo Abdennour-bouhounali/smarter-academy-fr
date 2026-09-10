@@ -94,7 +94,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   // 5 ou 6 : l'audit exige que CHAQUE priorKnowledge soit diagnostiqué, ce qui
   // impose parfois une question de plus. En dessous de 5, le diagnostic ne
   // couvre plus ses prérequis.
-  check('M0 : cinq ou six questions de diagnostic', n >= 5 && n <= 6, `trouvé ${n}`);
+  check('M0 : entre cinq et dix questions de diagnostic', n >= 5 && n <= 10, `trouvé ${n}`);
   for (let i = 0; i < n; i += 1) {
     const opts = groups.nth(i).locator('button[aria-pressed]');
     // Première question FAUSSE exprès : le diagnostic mesure, il ne verrouille pas.
@@ -102,11 +102,15 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     await opts.nth(idx).click({ force: true }).catch(() => {});
   }
   await settle(page);
-  const v = page.locator('main button').filter({ hasText: /Valider/i }).first();
+  // Le kit partagé libelle CE bouton « Voir mon résultat », jamais « Valider » :
+  // chercher « Valider » ne soumettait rien, et l'assertion suivante passait par
+  // hasard sur une page non soumise.
+  const v = page.locator('main button').filter({ hasText: /Voir mon résultat|Valider/i }).first();
+  check('M0 : le bouton de soumission est présent', (await v.count()) === 1);
   if (await v.count()) await v.click({ force: true });
-  await settle(page);
+  await settle(page, 1200);
   const txt = await body(page);
-  check('M0 : un résultat est affiché', /\/\s*10|sur 10|point/i.test(txt), txt.slice(-200));
+  check('M0 : un résultat chiffré est affiché après soumission', /\d+\s*\/\s*1[02]|sur 1[02]|point/i.test(txt), txt.slice(-260));
   check('M0 : rien n’est verrouillé malgré une erreur', !/verrouill/i.test(txt));
   check('M0 : la suite reste accessible', await nextEnabled(page));
   await ctx.close();

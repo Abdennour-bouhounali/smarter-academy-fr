@@ -1,9 +1,9 @@
 /**
- * 1ère spé — « Suites : générer et reconnaître ».
+ * 1ère spé — « Dérivation : les règles de calcul ».
  *
  * Vite détaché depuis apps/web/ :
- *   cd apps/web && (setsid nohup npx vite --port 5282 --strictPort > e2e/lesson-kit/shots/vite-5282.log 2>&1 </dev/null &)
- *   node apps/web/e2e/lesson-kit/1ere-suites-decouvrir.mjs
+ *   cd apps/web && (setsid nohup npx vite --port 5285 --strictPort > e2e/lesson-kit/shots/vite-5285.log 2>&1 </dev/null &)
+ *   node apps/web/e2e/lesson-kit/1ere-derivation-calculer.mjs
  *
  * La table CONTRIB et la carte des modules sont DÉRIVÉES de knowledge.jsx et
  * lesson.config.js : la suite teste la leçon réellement écrite.
@@ -14,29 +14,29 @@ import {
   readCompleted, nextEnabled, runBoss,
 } from './_2nde-helpers.mjs';
 
-const BASE = process.env.KIT_BASE || 'http://localhost:5282';
-const LESSON = '/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere';
-const KEY = 'u_anon_smarter_lesson_suites-decouvrir-1ere';
+const BASE = process.env.KIT_BASE || 'http://localhost:5285';
+const LESSON = '/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere';
+const KEY = 'u_anon_smarter_lesson_derivation-calculer-1ere';
 
 const M = {
-  0: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/mission-de-depart`,
-  1: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/la-machine-a-deux-boutons`,
-  2: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/deux-facons-de-fabriquer`,
-  3: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/arithmetique-ou-geometrique`,
-  4: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/le-demontrer`,
-  5: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/monte-ou-descend`,
-  6: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/atelier-modeliser`,
-  7: `${BASE}/courses/lycee/premiere_specialite/algebre/suites-decouvrir-1ere/mission-finale-deux-familles`,
+  0: `${BASE}/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere/mission-de-depart`,
+  1: `${BASE}/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere/l-usine-a-derivees`,
+  2: `${BASE}/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere/les-cartes-de-base`,
+  3: `${BASE}/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere/somme-et-produit`,
+  4: `${BASE}/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere/le-quotient`,
+  5: `${BASE}/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere/la-composee-simple`,
+  6: `${BASE}/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere/atelier-mixte`,
+  7: `${BASE}/courses/lycee/premiere_specialite/analyse/derivation-calculer-1ere/mission-finale-l-usine`,
 };
 
 /** Apports de chaque module à la carte — miroir de knowledge.jsx. */
 const CONTRIB = {
-  1: ['suite-rang-terme', 'deux-facons-de-fabriquer'],
-  2: ['definition-explicite', 'definition-recurrence', 'methode-generer-termes'],
-  3: ['suite-arithmetique', 'suite-geometrique', 'methode-trouver-la-raison', 'cas-suite-constante'],
-  4: ['preuve-vs-constat', 'methode-demontrer-arithmetique', 'methode-demontrer-geometrique', 'mem-ecart-ou-rapport'],
-  5: ['sens-variation-suite', 'regle-variation-geometrique', 'mem-sens-de-variation'],
-  6: ['modeliser-par-une-suite'],
+  1: ['derivation-ne-se-distribue-pas'],
+  2: ['derivees-usuelles', 'mem-x-puissance-n'],
+  3: ['regle-somme-et-reel', 'regle-produit', 'mem-produit'],
+  4: ['regle-quotient', 'mem-quotient'],
+  5: ['regle-composee-simple', 'mem-composee'],
+  6: ['methode-choisir-la-regle'],
 };
 const seedThrough = (n) => Array.from({ length: n + 1 }, (_, i) => String(i));
 const expectedAfter = (n) => {
@@ -84,7 +84,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
   check('index : aucun NaN', !/NaN/.test(txt));
   check('index : la carte des connaissances est montée', (await page.locator('button[data-km-trigger]').count()) === 1);
   check('index : la carte est VIDE au départ', (await page.locator('#km-root [data-km-item]').count()) === 0);
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-index.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-index.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -140,7 +140,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M1 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m1.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-m1.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -164,7 +164,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M2 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m2.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-m2.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -188,7 +188,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M3 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m3.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-m3.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -212,7 +212,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M4 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m4.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-m4.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -236,7 +236,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M5 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m5.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-m5.png`, fullPage: true });
   await ctx.close();
 }
 {
@@ -260,7 +260,7 @@ const o = async (url, opts = {}) => open(browser, url, { key: KEY, ...opts });
     const encore = await page.locator('#step-1 div[role="group"] button[aria-label]:not([disabled])').count();
     check('M6 : la manipulation reste utilisable après usage', encore > 0);
   }
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m6.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-m6.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -300,7 +300,7 @@ for (const n of Object.keys(CONTRIB).map(Number).sort((a, b) => a - b)) {
   await page.reload();
   await settle(page, 1200);
   check('boss : après rechargement, la correction est restituée', /\/\s*10/.test(await body(page)));
-  await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-boss.png`, fullPage: true });
+  await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-boss.png`, fullPage: true });
   await ctx.close();
 }
 
@@ -315,7 +315,7 @@ for (const n of [1, 7]) {
   check(`mobile M${n} : cibles ≥ 40 px (hors commutateur du kit)`, small.length <= kitSwitch, small.slice(0, 4).join(', '));
   const issues = [...(await layoutAudit(page)), ...(await aspectAudit(page)), ...(await domOverflow(page))];
   check(`mobile M${n} : mise en page saine à 375 px`, issues.length === 0, issues.slice(0, 3).join(' | '));
-  if (n === 1) await page.screenshot({ path: `${SHOT_DIR}suites-decouvrir-1ere-m1-mobile.png`, fullPage: true });
+  if (n === 1) await page.screenshot({ path: `${SHOT_DIR}derivation-calculer-1ere-m1-mobile.png`, fullPage: true });
   await ctx.close();
 }
 
