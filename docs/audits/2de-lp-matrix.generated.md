@@ -1,15 +1,15 @@
 # 2de — matrice des Learning Points (généré)
 
 > Généré par `scripts/audit-2de-learning-points.mjs` — **Ne pas éditer à la main.**
-> 31 leçons · 303 learning points · 493 briques · 336 questions d'évaluation.
+> 31 leçons · 303 learning points · 494 briques · 336 questions d'évaluation.
 > Les statuts proviennent de `docs/audits/judgements/<leçon>.json` (jugement humain) ; ce script ne les calcule pas.
 
 ## Statuts
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 291 | 96.0 % |
-| `PARTIALLY_COVERED` | 12 | 4.0 % |
+| `COVERED` | 292 | 96.4 % |
+| `PARTIALLY_COVERED` | 11 | 3.6 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -37,7 +37,7 @@
 | `nombres-reels-2nde` | nombres_calculs | available | 67 / 67 / 67 | 7 | 6 | 17 | 47 | 6 | ✅ | ✅ | ✅ | — |
 | `valeur-absolue-distance-2nde` | nombres_calculs | available | 59 / 59 / 59 | 7 | 7 | 14 | 61 | 6 | ✅ | ✅ | ✅ | — |
 | `arbres-probabilites-2nde` | statistiques_probabilites | available | 80 / 80 / 80 | 7 | 10 | 9 | 85 | 6 | ✅ | ✅ | ✅ | MAPPED_STEPS, NO_LEARNING_POINTS_MIRROR |
-| `boites-a-moustaches-2nde` | statistiques_probabilites | available | 65 / 65 / 65 | 7 | 9 | 9 | 85 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
+| `boites-a-moustaches-2nde` | statistiques_probabilites | available | 65 / 65 / 65 | 7 | 9 | 10 | 84 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `evolutions-successives-reciproques-2nde` | statistiques_probabilites | available | 70 / 70 / 70 | 8 | 8 | 13 | 112 | 7 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `frequences-conditionnelles-2nde` | statistiques_probabilites | available | 78 / 78 / 78 | 7 | 10 | 9 | 87 | 6 | ✅ | ✅ | ❌ | NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `loi-grands-nombres-2nde` | statistiques_probabilites | available | 75 / 75 / 75 | 7 | 9 | 9 | 79 | 6 | ✅ | ✅ | ✅ | NO_LEARNING_POINTS_MIRROR |
@@ -258,7 +258,7 @@
 | `P9` Passer d'une situation réelle à un arbre | statistiques_probabilites | `arbres-probabilites-2nde` | M1, M5 | COVERED | M1.1 manipulation:TreeBuilder · M5.1 brick:methode-situation-arbre · … | TreeBuilder en M1 ; l'atelier M5 … | `ar-e2` `ar-e9` | `methode-situation-arbre` | M1, M5 |
 | `P10` Passer d'un arbre à une situation en langage … | statistiques_probabilites | `arbres-probabilites-2nde` | M5 | COVERED | M5.2 brick:methode-situation-arbre · M5.3 question:M05-S3-Q1 | — | `ar-e10` | `methode-situation-arbre` | M5 |
 | `P1` Lire une boîte à moustaches | statistiques_probabilites | `boites-a-moustaches-2nde` | M1, M5 | COVERED | M1.1 manipulation:BoxPlot(reveal) · M1.1 feedback · M1.1 brick:resume… | La SEULE vraie fabrication de la … | `bm-e1` | `resume-cinq-nombres` `construire-boite` | M1, M5 |
-| `P2` Identifier médiane et quartiles | statistiques_probabilites | `boites-a-moustaches-2nde` | M1 | PARTIALLY_COVERED | M1.1 manipulation:BoxPlot(reveal) · M1.1 brick:construire-boite · M1.… | La révélation progressive du modu… | `bm-e2` | `construire-boite` `resume-cinq-nombres` | M1 |
+| `P2` Identifier médiane et quartiles | statistiques_probabilites | `boites-a-moustaches-2nde` | M1 | COVERED | M1.1 brick:quartile-rang · M1.1 manipulation:BoxPlot(reveal) · M1.1 b… | La révélation progressive du modu… | `bm-e2` | `construire-boite` `resume-cinq-nombres` | M1 |
 | `P3` Identifier l'étendue | statistiques_probabilites | `boites-a-moustaches-2nde` | M2 | COVERED | M2.2 brick:lire-dispersion · M2.2 question:NumericQuestion (écart int… | AUCUNE manipulation propre. La br… | `bm-e3` `bm-e5` | `lire-dispersion` | M2 |
 | `P4` Comprendre la dispersion | statistiques_probabilites | `boites-a-moustaches-2nde` | M2 | COVERED | M2.1 manipulation:PredictionChips + DotPlot(showQuartiles) · M2.1 bri… | Pas de manipulation au sens fort … | `bm-e4` `bm-e5` | `zones-quart` `mem-boite` `lire-dispersion` | M2 |
 | `P5` Comparer deux distributions | statistiques_probabilites | `boites-a-moustaches-2nde` | M3, M5 | COVERED | M3.1 manipulation:bascule axe commun / échelles séparées (BoxPlot) · … | La deuxième vraie manipulation de… | `bm-e7` `bm-e8` | `axe-commun` `mediane-ne-dit-pas-tout` `interpreter-contexte` | M3, M5 |

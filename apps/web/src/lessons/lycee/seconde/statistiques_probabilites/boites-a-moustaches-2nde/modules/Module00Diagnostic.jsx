@@ -15,10 +15,18 @@ const SKILLS = {
 };
 const QUESTIONS = [
   { id: 'bm-d1', skill: 'position', points: 2, requires: ['mediane-stat', 'serie-statistique', 'effectif'], prompt: 'La médiane d’une série partage l’effectif en…', options: ['deux moitiés', 'quatre quarts', 'trois tiers'], cols: 3, correct: 0, explain: 'La médiane coupe l’effectif ordonné en deux parties égales.' },
-  { id: 'bm-d2', skill: 'position', points: 2, requires: ['quartile', 'effectif', 'ordre-nombres'], prompt: 'Q1 est un seuil tel qu’au moins… de l’effectif lui est inférieur ou égal', options: ['25 %', '50 %', '75 %'], cols: 3, correct: 0, explain: 'Le premier quartile correspond au quart inférieur.' },
+  // Cette question demandait la définition de Q1 — or AUCUNE leçon de collège
+  // ne l'enseigne (le programme de 3e l'inclut, statistiques-3e s'en exclut) :
+  // on diagnostiquait comme acquis ce que personne n'avait posé. Elle porte
+  // désormais sur la MÉDIANE, vrai prérequis de 3e, et la définition du
+  // quartile est établie au module 1 par la brique `quartile-rang`.
+  { id: 'bm-d2', skill: 'position', points: 2, requires: ['mediane-stat', 'effectif', 'ordre-nombres'], prompt: 'La médiane est un seuil tel qu’au moins… de l’effectif lui est inférieur ou égal', options: ['50 %', '25 %', '75 %'], cols: 3, correct: 0, explain: 'La médiane partage la série ordonnée en deux moitiés : au moins la moitié des valeurs lui sont inférieures ou égales.' },
   { id: 'bm-d3', skill: 'position', points: 2, requires: ['mediane-stat', 'serie-statistique', 'ordre-nombres'], prompt: 'Série : 3, 5, 8, 9, 12. Quelle est la médiane ?', options: ['8', '5', '9'], cols: 3, correct: 0, explain: 'n = 5, impair : la 3ᵉ valeur, soit 8.' },
   { id: 'bm-d4', skill: 'dispersion', points: 2, requires: ['etendue', 'dispersion', 'indicateur-stat'], prompt: 'L’étendue d’une série vaut…', options: ['max − min', 'Q3 − Q1', 'la médiane'], cols: 3, correct: 0, explain: 'L’étendue est la différence entre la plus grande et la plus petite valeur.' },
-  { id: 'bm-d5', skill: 'dispersion', points: 2, requires: ['quartile', 'etendue', 'dispersion'], prompt: 'Q1 = 12 et Q3 = 25. L’écart interquartile vaut…', options: ['13', '37', '18,5'], cols: 3, correct: 0, explain: 'Q3 − Q1 = 25 − 12 = 13.' },
+  // Le calcul Q3 − Q1 ne demande PAS de savoir ce qu'est un quartile : c'est
+  // une soustraction sur deux nombres donnés. On retire donc `quartile` du
+  // requires — la notion n'est pas exigée ici, seulement les deux valeurs.
+  { id: 'bm-d5', skill: 'dispersion', points: 2, requires: ['etendue', 'dispersion'], prompt: 'Q1 = 12 et Q3 = 25. L’écart interquartile vaut…', options: ['13', '37', '18,5'], cols: 3, correct: 0, explain: 'Q3 − Q1 = 25 − 12 = 13.' },
   { id: 'bm-d6', skill: 'resume', points: 2, requires: ['moyenne', 'serie-statistique', 'indicateur-stat'], prompt: 'Série : 4, 6, 6, 8. Quelle est sa moyenne ?', options: ['6', '7', '5'], cols: 3, correct: 0, explain: '(4 + 6 + 6 + 8) ÷ 4 = 24 ÷ 4 = 6. La moyenne se calcule, la médiane se repère par le rang : ce ne sont pas les mêmes nombres.' },
 ];
 export default function Module00Diagnostic() {

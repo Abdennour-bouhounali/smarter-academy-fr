@@ -52,7 +52,12 @@ export const LESSON_CONFIG = {
   // l'écart interquartile SUR la figure, l'axe commun et le choix d'indicateur.
   priorKnowledge: [
     'serie-statistique', 'effectif', 'ordre-nombres',
-    'mediane-stat', 'quartile',
+    // `quartile` a QUITTÉ priorKnowledge : aucune leçon de collège ne
+    // l'enseigne (le programme officiel de 3e l'inclut, mais statistiques-3e
+    // s'en exclut — trou vertical noté au Tier C de l'audit). La 2de le pose
+    // donc elle-même, brique `quartile-rang` au module 1, en variant="rappel"
+    // pour rester honnête sur son statut : c'est un dû du collège.
+    'mediane-stat',
     'etendue', 'dispersion', 'indicateur-stat',
     'moyenne',
   ],

@@ -36,6 +36,35 @@ export const LESSON_KNOWLEDGE = {
   modules: {
     1: [
       {
+        // TROU VERTICAL : `quartile` est déclaré en priorKnowledge et
+        // diagnostiqué au module 0, mais AUCUNE leçon de collège ne l'enseigne
+        // (le programme de 3e l'inclut, statistiques-3e s'en exclut). Sans
+        // cette brique, l'élève sort en sachant OÙ est Q1 sur une figure sans
+        // savoir CE QU'IL EST. Elle est en « rappel » : la 2de ne fait que
+        // réactiver ce que le collège aurait dû poser — la réparation côté 3e
+        // reste à faire (Tier C de l'audit).
+        id: 'quartile-rang',
+        type: 'regles',
+        title: 'Ce que Q1 et Q3 veulent dire',
+        summary: 'Q1 est la plus petite valeur telle qu’au moins 25 % de la série lui soit inférieure ou égale ; Q3, celle qui atteint 75 %. Ce sont des seuils de RANG, pas des moyennes.',
+        body: (
+          <div className="space-y-2 text-sm text-slate-700">
+            <p>
+              On range les valeurs par ordre croissant, puis on compte : le quartile est la valeur
+              qui occupe le rang <strong>⌈n/4⌉</strong> pour Q1, <strong>⌈3n/4⌉</strong> pour Q3.
+            </p>
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs">
+              Brest, <strong>30</strong> relevés : 30 ÷ 4 = 7,5, donc Q1 est la <strong>8ᵉ</strong> valeur
+              — la première qui atteint le quart. Q3 est la <strong>23ᵉ</strong> (3 × 30 ÷ 4 = 22,5).
+            </div>
+            <p className="text-xs text-slate-500">
+              C’est pourquoi un quartile est toujours une valeur de la série, et pourquoi il ne bouge
+              pas quand une valeur extrême change : il compte des effectifs, pas des grandeurs.
+            </p>
+          </div>
+        ),
+      },
+      {
         id: 'resume-cinq-nombres',
         type: 'concepts',
         title: 'Le résumé des cinq nombres',

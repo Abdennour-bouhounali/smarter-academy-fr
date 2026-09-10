@@ -92,6 +92,12 @@ export default function Module01CinqNombresSuffisent() {
           {done1 && (
             <>
               <KnowledgeBrick
+                id="quartile-rang"
+                variant="rappel"
+                establishes={['quartile']}
+                lead={<>Avant de nommer les cinq nombres : deux d’entre eux, Q1 et Q3, méritent qu’on redise ce qu’ils sont exactement.</>}
+              />
+              <KnowledgeBrick
                 id="resume-cinq-nombres"
                 variant="new"
                 lead={<>Tu n’as dévoilé que <strong>cinq</strong> des trente relevés, et la série a déjà une silhouette.</>}

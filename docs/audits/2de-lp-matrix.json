@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:52:52.826Z",
+  "generatedAt": "2026-09-10T09:58:09.582Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -7,7 +7,7 @@
     "unbuiltCatalogueLessons": 0,
     "learningPoints": 303,
     "judged": 303,
-    "bricks": 493,
+    "bricks": 494,
     "assessmentQuestions": 336,
     "externalLearningPoints": 159,
     "reconciled": 159
@@ -40731,7 +40731,6 @@
         "effectif",
         "ordre-nombres",
         "mediane-stat",
-        "quartile",
         "etendue",
         "dispersion",
         "indicateur-stat",
@@ -40747,12 +40746,12 @@
       "mirror": false,
       "knowledge": {
         "file": "apps/web/src/lessons/lycee/seconde/statistiques_probabilites/boites-a-moustaches-2nde/knowledge.jsx",
-        "items": 9,
+        "items": 10,
         "problems": []
       },
       "snapshotCount": 6,
-      "brickCount": 9,
-      "requiresCount": 85,
+      "brickCount": 10,
+      "requiresCount": 84,
       "specDocs": [
         "docs/lessons/2NDE_BOITES_A_MOUSTACHES_SPEC.md"
       ],
@@ -40789,12 +40788,12 @@
               "id": "bm-d2",
               "component": "diag",
               "requires": [
-                "quartile",
+                "mediane-stat",
                 "effectif",
                 "ordre-nombres"
               ],
               "step": null,
-              "prompt": "Q1 est un seuil tel qu’au moins… de l’effectif lui est inférieur ou égal"
+              "prompt": "La médiane est un seuil tel qu’au moins… de l’effectif lui est inférieur ou égal"
             },
             {
               "id": "bm-d3",
@@ -40822,7 +40821,6 @@
               "id": "bm-d5",
               "component": "diag",
               "requires": [
-                "quartile",
                 "etendue",
                 "dispersion"
               ],
@@ -40864,10 +40862,9 @@
               "mediane-stat",
               "moyenne",
               "ordre-nombres",
-              "quartile",
               "serie-statistique"
             ],
-            "count": 18,
+            "count": 17,
             "invalid": 0
           },
           "gatedReveals": 0,
@@ -40887,6 +40884,7 @@
           ],
           "requiresLearningPointIds": [],
           "knowledgeItems": [
+            "quartile-rang",
             "resume-cinq-nombres",
             "construire-boite"
           ],
@@ -40921,24 +40919,31 @@
               "BatchChoiceQuestion": 0,
               "NumericQuestion": 0,
               "PredictionChips": 1,
-              "KnowledgeBrick": 2,
+              "KnowledgeBrick": 3,
               "KnowledgeSnapshot": 1
             }
           },
           "bricks": [
             {
+              "itemId": "quartile-rang",
+              "step": 1,
+              "variant": "rappel",
+              "itemMissing": false,
+              "line": 94
+            },
+            {
               "itemId": "resume-cinq-nombres",
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 94
+              "line": 100
             },
             {
               "itemId": "construire-boite",
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 99
+              "line": 105
             }
           ],
           "requires": {
@@ -41737,6 +41742,7 @@
             "bm-e1"
           ],
           "knowledgeItemsInTeachingModules": [
+            "quartile-rang",
             "resume-cinq-nombres",
             "construire-boite",
             "interpreter-contexte"
@@ -41820,13 +41826,20 @@
             "bm-e2"
           ],
           "knowledgeItemsInTeachingModules": [
+            "quartile-rang",
             "resume-cinq-nombres",
             "construire-boite"
           ],
           "manipulationsInTeachingModules": [],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
+              {
+                "module": 1,
+                "moduleSlug": "cinq-nombres-suffisent",
+                "step": 1,
+                "mechanism": "brick:quartile-rang"
+              },
               {
                 "module": 1,
                 "moduleSlug": "cinq-nombres-suffisent",
@@ -41866,7 +41879,7 @@
               "construire-boite",
               "resume-cinq-nombres"
             ],
-            "notes": "PARTIALLY_COVERED, et c'est le point le plus discutable de la leçon. L'intitulé est « identifier médiane ET quartiles ». Sur la figure, l'élève identifie parfaitement les DEUX bords du rectangle et le trait vert — c'est enseigné et éprouvé (bm-e2). Mais ce que Q1 SIGNIFIE (un seuil de rang, « au moins 25 % de l'effectif lui est inférieur ou égal ») n'est jamais établi ici : la leçon le déclare acquis (priorKnowledge « quartile ») et le module 0 le DIAGNOSTIQUE comme prérequis (bm-d2, bm-d5). Or aucune leçon de collège ne l'enseigne (voir lessonLevel.prerequisiteGaps). Un élève qui n'a jamais rencontré la notion sort de la leçon en sachant OÙ est Q1 sur une figure, sans savoir CE QU'IL EST — ce qui suffit pour lire une boîte mais pas pour en construire une à partir d'une série brute, alors que la brique construire-boite le lui demande à l'étape 1 (« ranger la série, calculer les cinq nombres »). Cette étape-là de la méthode n'est ni manipulée ni éprouvée.",
+            "notes": "PARTIALLY_COVERED, et c'est le point le plus discutable de la leçon. L'intitulé est « identifier médiane ET quartiles ». Sur la figure, l'élève identifie parfaitement les DEUX bords du rectangle et le trait vert — c'est enseigné et éprouvé (bm-e2). Mais ce que Q1 SIGNIFIE (un seuil de rang, « au moi\n\nRÉSOLU côté 2de le 2026-09-10. L'élève savait OÙ est Q1 sur la figure sans savoir CE QU'IL EST : la définition par le rang était déclarée acquise (`quartile` en priorKnowledge) et DIAGNOSTIQUÉE au module 0, alors qu'aucune leçon de collège ne l'enseigne. Trois corrections. (1) La brique `quartile-rang` est posée au module 1, en variant=\"rappel\" et avec establishes=['quartile'] : Q1 est la plus petite valeur telle qu'au moins 25 % de la série lui soit inférieure ou égale, rang ⌈n/4⌉ — pour les 30 relevés de Brest, la 8ᵉ valeur, et Q3 la 23ᵉ. (2) `quartile` quitte priorKnowledge : la 2de le pose elle-même. (3) La question bm-d2 du diagnostic, qui demandait la définition de Q1 comme prérequis, porte désormais sur la MÉDIANE — vrai acquis de 3e ; bm-d5 ne requiert plus `quartile` puisque Q3 − Q1 est une soustraction sur deux nombres donnés. Le variant \"rappel\" reste honnête : c'est un dû du collège, et la réparation côté 3e reste au Tier C de l'audit. Vérifié au navigateur.",
             "crossGrade": {
               "overlapsWith": [
                 "2de:statistiques-une-variable-2nde"
