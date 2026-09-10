@@ -3,6 +3,7 @@ import { ContentModule, TapQuestion, BatchChoiceQuestion, KnowledgeBrick } from 
 import { KnowledgeSnapshot } from '../../../../../common/knowledge';
 import { Feedback } from '../../../../../common/components/LessonUI';
 import RealLine from '../../../../../common/components/RealLine';
+import SolutionBuilder from '../components/SolutionBuilder';
 import { MODULE_CTX, getNavLinks } from '../moduleContext';
 import SignFlipLine from '../components/SignFlipLine';
 import EquationSteps from '../components/EquationSteps';
@@ -34,6 +35,8 @@ export default function Module03SigneQuiSeRetourne() {
   const [history, setHistory] = useState([START]);
   const [count, setCount] = useState(0);
   const [lineDone, setLineDone] = useState(false);
+  const [sol, setSol] = useState({ bound: 2, closed: false, toRight: false });
+  const [builtOk, setBuiltOk] = useState(false);
   const [batchDone, setBatchDone] = useState(false);
   const last = history[history.length - 1];
   const solved = isSolvedForm(last) && history.every((h) => !h.op || h.both);
@@ -97,15 +100,35 @@ export default function Module03SigneQuiSeRetourne() {
           ),
         },
         {
-          num: 3, title: 'Représente les solutions', done: lineDone,
-          content: (
-            <TapQuestion prompt="L’ensemble des solutions de −3x + 4 ≤ 10 est :"
-              above={(revealed) => revealed && <div className="rounded-2xl border-2 border-slate-200 bg-white p-2"><RealLine min={-6} max={6} step={1} intervals={[{ id: 'S', from: -2, to: Infinity, tone: 'emerald', label: '[−2 ; +∞[' }]} ariaLabel="Solutions : de −2 inclus vers plus l’infini" /></div>}
-              options={['[−2 ; +∞[', ']−∞ ; −2]', ']−2 ; +∞[', '[2 ; +∞[']} cols={2} correct={0}
-              explain="x ≥ −2 : −2 inclus (crochet fermé) et tout ce qui est plus grand, vers +∞. Sur la droite, on colorie à partir de −2 vers la droite."
-              explainWrong="x ≥ −2 se lit « x plus grand ou égal à −2 » : on colorie vers +∞ à partir de −2, et −2 est inclus (≥, crochet fermé) : [−2 ; +∞[."
-              requires={['methode-resoudre-inequation', 'inequation-infinite', 'intervalle', 'intervalle-crochets']}
-              solved={lineDone} onAnswered={() => setLineDone(true)} />
+          // L'intitulé du learning point dit « REPRÉSENTER l'ensemble des
+          // solutions sur une droite ». C'était un QCM de notation, avec le
+          // dessin révélé APRÈS la réponse : l'élève ne représentait rien.
+          // Il pose maintenant les trois décisions lui-même — la borne, le
+          // crochet, le sens — et la notation ne vient qu'ensuite.
+          num: 3, title: 'Représente les solutions',
+          subtitle: 'Pose la borne sur la droite, choisis le crochet, puis le côté. Tu viens de trouver x ≥ −2.',
+          done: builtOk,
+          content: (kit) => (
+            <div className="space-y-3">
+              <SolutionBuilder
+                target={{ bound: -2, closed: true, toRight: true }}
+                value={sol}
+                onChange={(next) => {
+                  setSol(next);
+                  const ok = next.bound === -2 && next.closed === true && next.toRight === true;
+                  if (ok && !builtOk) { setBuiltOk(true); kit.react?.(true); }
+                }}
+                min={-6} max={6} step={1}
+              />
+              {builtOk && (
+                <TapQuestion prompt="Comment écrit-on l’ensemble que tu viens de dessiner ?"
+                  options={['[−2 ; +∞[', ']−∞ ; −2]', ']−2 ; +∞[', '[2 ; +∞[']} cols={2} correct={0}
+                  explain="Le crochet tourné vers l’intérieur en −2 dit « borne incluse » ; la bande file vers +∞, où le crochet est toujours ouvert. C’est le dessin que tu viens de poser."
+                  explainWrong="Regarde ton dessin : la bande part de −2 INCLUS (crochet fermé) et va vers +∞. Du côté de l’infini, le crochet reste toujours ouvert."
+                  requires={['methode-resoudre-inequation', 'inequation-infinite', 'intervalle', 'intervalle-crochets']}
+                  solved={lineDone} onAnswered={() => setLineDone(true)} />
+              )}
+            </div>
           ),
         },
         {

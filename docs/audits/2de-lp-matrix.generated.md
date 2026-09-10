@@ -8,8 +8,8 @@
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 285 | 94.1 % |
-| `PARTIALLY_COVERED` | 18 | 5.9 % |
+| `COVERED` | 286 | 94.4 % |
+| `PARTIALLY_COVERED` | 17 | 5.6 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -216,7 +216,7 @@
 | `P1` Comprendre une équation comme une égalité à r… | nombres_calculs | `equations-et-inequations-2nde` | M1 | COVERED | M1.1 manipulation:SolutionScanner · M1.1 feedback · M1.1 brick:equati… | SolutionScanner — deux forfaits A… | `eq-e1` `eq-e2` | `equation-solution` `inequation-infinite` `regle-nombre-de-solutions` | M1 |
 | `P2` Résoudre une équation du premier degré. | nombres_calculs | `equations-et-inequations-2nde` | M2, M5, M6 | COVERED | M2.1 manipulation:EquationSteps · M2.1 feedback · M2.1 brick:regle-de… | EquationSteps — l'élève choisit d… | `eq-e3` `eq-e4` | `regle-deux-membres` `methode-premier-degre` `regle-solution-exacte` | M2, M5, M6 |
 | `P3` Comprendre et résoudre une inéquation du prem… | nombres_calculs | `equations-et-inequations-2nde` | M3, M6 | COVERED | M3.1 manipulation:SignFlipLine · M3.1 question:M03-S1-Q1 · M3.1 brick… | SignFlipLine — 2 et 5 posés sur u… | `eq-e1` `eq-e5` `eq-e6` `eq-e10` | `regle-signe-retourne` `methode-resoudre-inequation` `mem-signe-negatif` | M3, M6 |
-| `P4` Représenter l’ensemble des solutions sur une … | nombres_calculs | `equations-et-inequations-2nde` | M1, M3 | PARTIALLY_COVERED | M1.2 manipulation:SolutionScanner · M1.2 question:M01-S2-Q1 · M1.2 br… | Aucune manipulation propre. Solut… | `eq-e6` | `inequation-infinite` | M1, M3 |
+| `P4` Représenter l’ensemble des solutions sur une … | nombres_calculs | `equations-et-inequations-2nde` | M1, M3 | COVERED | M1.2 manipulation:SolutionScanner · M3.3 manipulation:SolutionBuilder… | SolutionBuilder au module 3 étape… | `eq-e6` | `inequation-infinite` | M1, M3 |
 | `P5` Résoudre des équations produit. | nombres_calculs | `equations-et-inequations-2nde` | M4, M5 | COVERED | M4.1 manipulation:ProductScanner · M4.1 feedback · M4.2 brick:vocab-f… | ProductScanner — trois barres (fa… | `eq-e7` `eq-e8` | `vocab-facteur` `produit-nul` `methode-equation-produit` | M4, M5 |
 | `P6` Résoudre des équations quotient avec les rest… | nombres_calculs | `equations-et-inequations-2nde` | M5 | COVERED | M5.1 manipulation:ProductScanner · M5.1 feedback · M5.1 brick:valeur-… | ProductScanner en mode 'quotient'… | `eq-e9` | `valeur-interdite` `quotient-nul` `methode-choisir-methode` | M5 |
 | `P7` Interpréter et vérifier les solutions. | nombres_calculs | `equations-et-inequations-2nde` | M1, M2, M4, M5, M6 | COVERED | M1.4 question:M01-S4-Q3 · M1.4 brick:methode-verifier-solution · M2.3… | Aucune. Le module 6 est le seul m… | `eq-e2` `eq-e8` `eq-e10` | `methode-verifier-solution` `regle-solution-exacte` `methode-traduire-vitesse` | M1, M2, M4, M5, M6 |

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:29:29.364Z",
+  "generatedAt": "2026-09-10T09:34:00.397Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -32207,7 +32207,7 @@
                 "intervalle-crochets"
               ],
               "step": 3,
-              "prompt": "L’ensemble des solutions de −3x + 4 ≤ 10 est :"
+              "prompt": "Comment écrit-on l’ensemble que tu viens de dessiner ?"
             },
             {
               "id": "M03-S4-Q3",
@@ -32244,21 +32244,21 @@
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 65
+              "line": 68
             },
             {
               "itemId": "methode-resoudre-inequation",
               "step": 2,
               "variant": "new",
               "itemMissing": false,
-              "line": 83
+              "line": 86
             },
             {
               "itemId": "mem-signe-negatif",
               "step": 2,
               "variant": "new",
               "itemMissing": false,
-              "line": 88
+              "line": 91
             }
           ],
           "requires": {
@@ -32284,13 +32284,13 @@
               "ownTest": false
             },
             {
-              "name": "RealLine",
-              "file": "apps/web/src/lessons/common/components/RealLine.jsx",
+              "name": "SignFlipLine",
+              "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/components/SignFlipLine.jsx",
               "ownTest": false
             },
             {
-              "name": "SignFlipLine",
-              "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/components/SignFlipLine.jsx",
+              "name": "SolutionBuilder",
+              "file": "apps/web/src/lessons/lycee/seconde/nombres_calculs/equations-et-inequations-2nde/components/SolutionBuilder.jsx",
               "ownTest": false
             }
           ],
@@ -33381,8 +33381,8 @@
           ],
           "manipulationsInTeachingModules": [
             "EquationSteps",
-            "RealLine",
-            "SignFlipLine"
+            "SignFlipLine",
+            "SolutionBuilder"
           ],
           "judgement": {
             "status": "COVERED",
@@ -33481,11 +33481,11 @@
           "manipulationsInTeachingModules": [
             "SolutionScanner",
             "EquationSteps",
-            "RealLine",
-            "SignFlipLine"
+            "SignFlipLine",
+            "SolutionBuilder"
           ],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 1,
@@ -33494,38 +33494,32 @@
                 "mechanism": "manipulation:SolutionScanner"
               },
               {
-                "module": 1,
-                "moduleSlug": "le-scanner-de-solutions",
-                "step": 2,
-                "mechanism": "question:M01-S2-Q1"
-              },
-              {
-                "module": 1,
-                "moduleSlug": "le-scanner-de-solutions",
-                "step": 2,
-                "mechanism": "brick:inequation-infinite"
+                "module": 3,
+                "moduleSlug": "le-signe-qui-se-retourne",
+                "step": 3,
+                "mechanism": "manipulation:SolutionBuilder"
               },
               {
                 "module": 3,
                 "moduleSlug": "le-signe-qui-se-retourne",
                 "step": 3,
-                "mechanism": "question:M03-S3-Q2"
+                "mechanism": "question:M03-S3-Q1"
               },
               {
                 "module": 3,
                 "moduleSlug": "le-signe-qui-se-retourne",
                 "step": 4,
-                "mechanism": "question:M03-S4-Q3"
+                "mechanism": "question:M03-S4"
               }
             ],
-            "manipulation": "Aucune manipulation propre. SolutionScanner en mode showRegion=\"<\" ALLUME la zone où A < B (module 1, étape 2) : c'est le seul endroit où l'ensemble des solutions apparaît comme une région continue produite par un geste. Ensuite, la droite réelle n'est plus qu'un DESSIN affiché : au module 3 étape 3, le RealLine est rendu par la prop `above={(revealed) => revealed && ...}` — il n'apparaît qu'APRÈS la révélation de la réponse, donc il illustre la correction, il ne sert pas à répondre.",
+            "manipulation": "SolutionBuilder au module 3 étape 3 : l'élève POSE lui-même l'ensemble des solutions — il déplace la borne sur la droite graduée, choisit le crochet (incluse / exclue) et le sens (vers −∞ / vers +∞). Les trois verdicts sont séparés, donc il sait laquelle des trois décisions est encore fausse. L'état de départ diffère de la cible sur les TROIS décisions. Jamais gelé après réussite. La notation en intervalle n'est demandée qu'ensuite, sur le dessin qu'il vient de produire.",
             "assessmentQuestionIds": [
               "eq-e6"
             ],
             "knowledgeItems": [
               "inequation-infinite"
             ],
-            "notes": "PARTIELLEMENT COUVERT : l'intitulé dit « REPRÉSENTER l'ensemble des solutions sur une droite », or l'élève ne représente jamais rien. Il n'existe aucun composant de tracé dans components/ (SolutionScanner, EquationSteps, ProductScanner, SignFlipLine, BuildCheck, Stepper) : toutes les droites sont des RealLine en lecture seule, calculés par le module. Les trois demandes du LP sont des QCM où il faut CHOISIR une notation d'intervalle ([−2 ; +∞[ contre ]−∞ ; −2] etc.), c'est-à-dire un exercice de traduction inégalité → intervalle, qui est le LP P3 de la leçon ensembles-et-intervalles-2nde. L'unique épreuve du boss, eq-e6, est de plus mal construite (voir technicalProblems) : elle affiche UN SEUL dessin et propose comme options « le dessin A », « le contraire », « le dessin A mais avec 2 exclu », « [6 ; +∞[ » — les trois autres dessins ne sont pas dessinés, donc rien n'est comparé visuellement. Le geste manquant, et il serait facile à ajouter, est : faire poser à l'élève le crochet et son sens sur une droite.",
+            "notes": "PARTIELLEMENT COUVERT : l'intitulé dit « REPRÉSENTER l'ensemble des solutions sur une droite », or l'élève ne représente jamais rien. Il n'existe aucun composant de tracé dans components/ (SolutionScanner, EquationSteps, ProductScanner, SignFlipLine, BuildCheck, Stepper) : toutes les droites sont de\n\nRÉSOLU le 2026-09-10. Le geste manquant que l'audit décrivait — « faire poser à l'élève le crochet et son sens sur une droite » — est écrit : components/SolutionBuilder.jsx, posé au module 3 étape 3 à la place du QCM de notation (dont le dessin n'était révélé qu'APRÈS la réponse). L'ordre est inversé : on représente d'abord, on nomme ensuite. Le reproche sur eq-e6 (un seul dessin affiché) avait déjà été levé en Session 2 : les quatre options sont rendues par `solutionLine`. Vérifié au navigateur : S passe de ]−∞ ; 2[ à [−2 ; +∞[ au fil des trois décisions, la réussite s'annonce, la question de notation s'ouvre, et les boutons restent actifs après validation.",
             "crossGrade": {
               "overlapsWith": [
                 "2de:ensembles-et-intervalles-2nde"
