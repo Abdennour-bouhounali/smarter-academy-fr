@@ -25,17 +25,31 @@ const DILAT_BASE = [10, 12, 14, 16, 18];
  * module, avec le même instrument, permet de les opposer.
  */
 const WITH_OUTLIER = [...TRAJETS_A, ELEVE_LOINTAIN];
+/** La série privée de son plus long trajet (40 min) : moyenne 19,15 → 18,05 et
+ *  écart type 8,97 → 7,78, tandis que médiane et écart interquartile ne bougent
+ *  pas. Vérifié numériquement avant écriture. */
+const LONGEST = Math.max(...TRAJETS_A);
+const WITHOUT_LONGEST = TRAJETS_A.filter((v, i) => i !== TRAJETS_A.indexOf(LONGEST));
 
 export default function Module05AjouterOuRetirerUneValeur() {
-  const [added, setAdded] = useState(false);
+  // Trois états : la série d'origine, l'ajout d'un individu extrême, et le
+  // RETRAIT du plus long trajet. Le learning point « étudier l'influence de la
+  // suppression d'une valeur » est officiellement distinct de celui de l'ajout :
+  // il mérite sa propre observation, pas une déduction par symétrie.
+  const [mode, setMode] = useState('base');
+  const [seenModes, setSeenModes] = useState(() => new Set(['base']));
   const [q2, setQ2] = useState(false);
   const [q2b, setQ2b] = useState(false);
   const [q3, setQ3] = useState(false);
   const [q4, setQ4] = useState(false);
 
-  const base = { m: mean(TRAJETS_A), med: median(TRAJETS_A), sd: standardDeviation(TRAJETS_A), iq: interquartileRange(TRAJETS_A) };
-  const out = { m: mean(WITH_OUTLIER), med: median(WITH_OUTLIER), sd: standardDeviation(WITH_OUTLIER), iq: interquartileRange(WITH_OUTLIER) };
-  const shown = added ? WITH_OUTLIER : TRAJETS_A;
+  const stats = (a) => ({ m: mean(a), med: median(a), sd: standardDeviation(a), iq: interquartileRange(a) });
+  const base = stats(TRAJETS_A);
+  const shown = mode === 'added' ? WITH_OUTLIER : mode === 'removed' ? WITHOUT_LONGEST : TRAJETS_A;
+  const out = stats(shown);
+  const added = mode === 'added';
+  const changed = mode !== 'base';
+  const colTitle = mode === 'added' ? '21 élèves' : mode === 'removed' ? '19 élèves' : '20 élèves';
 
   const Row = ({ label, before, after, unit = 'min', digits = 2 }) => {
     const moved = Math.abs(after - before) > 0.05;
@@ -58,18 +72,26 @@ export default function Module05AjouterOuRetirerUneValeur() {
       num: 1,
       title: 'Un élève déménage à 120 min',
       subtitle: 'Ajoute-le à la série et regarde le tableau : lesquels des quatre indicateurs bougent ?',
-      done: added,
+      done: seenModes.has('added') && seenModes.has('removed'),
       content: (kit) => (
         <div className="space-y-3">
           <SeriesLab values={shown} min={0} max={130} unit="min"
-            label={added ? '2de A + 1 élève très éloigné' : '2de A'}
+            label={mode === 'added' ? '2de A + 1 élève très éloigné' : mode === 'removed' ? `2de A − le trajet de ${LONGEST} min` : '2de A'}
             show={{ mean: true, median: true }} highlightIndex={added ? shown.length - 1 : null} />
           <div className="flex flex-wrap gap-2" role="group" aria-label="Ajouter ou retirer l’élève">
-            {[{ id: false, label: 'Série d’origine (20 élèves)' }, { id: true, label: '+ l’élève à 120 min (21 élèves)' }].map((o) => (
-              <button key={String(o.id)} type="button" aria-pressed={added === o.id}
-                onClick={() => { setAdded(o.id); if (o.id) kit.react?.(true); }}
+            {[
+              { id: 'base', label: 'Série d’origine (20 élèves)' },
+              { id: 'added', label: '+ l’élève à 120 min (21 élèves)' },
+              { id: 'removed', label: `− le trajet de ${LONGEST} min (19 élèves)` },
+            ].map((o) => (
+              <button key={o.id} type="button" aria-pressed={mode === o.id}
+                onClick={() => {
+                  setMode(o.id);
+                  const next = new Set(seenModes); next.add(o.id); setSeenModes(next);
+                  if (next.has('added') && next.has('removed')) kit.react?.(true);
+                }}
                 className={`min-h-[44px] px-4 rounded-xl border-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
-                  added === o.id ? 'bg-cyan-600 border-cyan-700 text-white' : 'bg-white border-slate-300 text-slate-700 hover:border-cyan-400'
+                  mode === o.id ? 'bg-cyan-600 border-cyan-700 text-white' : 'bg-white border-slate-300 text-slate-700 hover:border-cyan-400'
                 }`}>
                 {o.label}
               </button>
@@ -79,7 +101,7 @@ export default function Module05AjouterOuRetirerUneValeur() {
             <table className="min-w-full border-collapse text-sm">
               <thead>
                 <tr>
-                  {['Indicateur', '20 élèves', '21 élèves', 'Effet'].map((h) => (
+                  {['Indicateur', '20 élèves', colTitle, 'Effet'].map((h) => (
                     <th key={h} scope="col" className="border border-slate-200 bg-slate-100 px-3 py-2 text-xs font-bold text-slate-600">{h}</th>
                   ))}
                 </tr>
@@ -92,18 +114,28 @@ export default function Module05AjouterOuRetirerUneValeur() {
               </tbody>
             </table>
           </div>
-          {added ? (
+          {changed ? (
             <Feedback tone="ok">
-              La <strong>moyenne bondit de {formatNumber(out.m - base.m, 2)} min</strong> et l’écart type explose,
-              alors que la <strong>médiane ne bouge pas</strong> et que l’écart interquartile reste stable.
+              {mode === 'added' ? (
+                <>La <strong>moyenne bondit de {formatNumber(out.m - base.m, 2)} min</strong> et l’écart type explose,</>
+              ) : (
+                <>Retirer le plus long trajet fait <strong>chuter la moyenne de {formatNumber(base.m - out.m, 2)} min</strong> et resserre l’écart type,</>
+              )}
+              {' '}alors que la <strong>médiane ne bouge pas</strong> et que l’écart interquartile reste stable.
               On dit que la médiane et l’écart interquartile sont <strong>robustes</strong> : un individu
-              exceptionnel ne les déplace pas, parce qu’ils comptent des effectifs, pas des valeurs.
+              exceptionnel ne les déplace pas, qu’il ARRIVE ou qu’il PARTE, parce qu’ils comptent des
+              effectifs, pas des valeurs.
             </Feedback>
-          ) : null}
+          ) : (
+            <Feedback tone="info">
+              Essaie les deux perturbations : ajouter un élève très éloigné, puis retirer le trajet le
+              plus long. Regarde à chaque fois lesquels des quatre indicateurs bougent.
+            </Feedback>
+          )}
           {/* Le tableau vient de montrer QUI bouge et QUI résiste à l'élève
               exceptionnel : on nomme cette propriété ici, avant qu'elle ne
               soit exigée par la question de l'étape 2. */}
-          {added && (
+          {seenModes.has('added') && seenModes.has('removed') && (
             <KnowledgeBrick
               id="robustesse"
               variant="new"

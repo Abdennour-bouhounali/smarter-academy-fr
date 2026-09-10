@@ -542,35 +542,35 @@
    "confidence": "high"
   },
   "seconde_statistiques-une-variable-2nde_P11": {
-   "status": "PARTIALLY_COVERED",
+   "status": "COVERED",
    "evidence": [
     {
      "module": 5,
      "moduleSlug": "ajouter-ou-retirer-une-valeur",
      "step": 1,
-     "mechanism": "manipulation:SeriesLab + bascule"
+     "mechanism": "manipulation:SeriesLab"
     },
     {
      "module": 5,
      "moduleSlug": "ajouter-ou-retirer-une-valeur",
-     "step": 3,
-     "mechanism": "question:M05-S3 (retirer l'élève à 48 min)"
+     "step": 1,
+     "mechanism": "brick:robustesse"
     },
     {
-     "module": 7,
-     "moduleSlug": "mission-finale-resumer-une-serie",
-     "step": null,
-     "mechanism": "question:st-e10"
+     "module": 5,
+     "moduleSlug": "ajouter-ou-retirer-une-valeur",
+     "step": 4,
+     "mechanism": "question:M05-S4-Q1"
     }
    ],
-   "manipulation": "La bascule du module 5 étape 1 fonctionne dans les DEUX sens (on peut revenir à « série d'origine »), donc retirer la valeur extrême est bien un geste disponible. Mais le module ne le demande jamais : la gate est `added`, c'est-à-dire l'AJOUT seul — l'étape se valide sans qu'on soit jamais revenu en arrière, et tout le texte du feedback est écrit du point de vue de l'ajout.",
+   "manipulation": "Bascule à TROIS états à l'étape 1 : série d'origine, ajout d'un individu extrême, et RETRAIT du plus long trajet (40 min). Le même tableau comparatif affiche les quatre indicateurs dans les trois cas. L'étape ne se valide qu'une fois les DEUX perturbations essayées — l'élève ne peut plus terminer le module en ayant seulement déduit la suppression par symétrie.",
    "assessmentQuestionIds": [
     "st-e10"
    ],
    "knowledgeItems": [
     "robustesse"
    ],
-   "notes": "PARTIELLEMENT couvert. La suppression est traitée, mais comme un corollaire de l'ajout plutôt que comme un LP à part entière. Ce qui existe : une NumericQuestion (étape 3) où l'on retire l'élève à 48 min d'une série de cinq (100 ÷ 5 = 20 devient 52 ÷ 4 = 13, vérifié) dont l'explainFor traite bien l'erreur de diviseur (« tu as divisé par 5 au lieu de 4 »), et une épreuve du boss (st-e10, le salarié très bien payé qui part). Ce qui manque : aucun tableau comparatif du type de l'étape 1 pour la suppression, aucune observation des QUATRE indicateurs sous retrait, et surtout la gate ne force jamais le geste inverse. L'élève peut terminer le module sans avoir jamais vu ce qui se passe quand on retire — il l'a seulement déduit par symétrie. Un LP officiel distinct mérite une observation distincte ; la faire coûterait un troisième état de la bascule (« − l'élève à 40 min »).",
+   "notes": "PARTIELLEMENT couvert. La suppression est traitée, mais comme un corollaire de l'ajout plutôt que comme un LP à part entière. Ce qui existe : une NumericQuestion (étape 3) où l'on retire l'élève à 48 min d'une série de cinq (100 ÷ 5 = 20 devient 52 ÷ 4 = 13, vérifié) dont l'expla\n\nRÉSOLU le 2026-09-10. La suppression était traitée comme un corollaire de l'ajout : une NumericQuestion et une épreuve du boss, mais aucun tableau comparatif et aucune gate ne forçant le geste inverse. La bascule de l'étape 1 passe à trois états et la porte exige les deux. Valeurs vérifiées avant écriture puis au navigateur : retirer le trajet de 40 min fait passer la moyenne de 19,15 à 18,05 et l'écart type de 8,97 à 7,78, tandis que médiane (18) et écart interquartile (13) ne bougent pas — la robustesse se montre donc dans les DEUX sens, qu'un individu exceptionnel arrive ou qu'il parte.",
    "crossGrade": {
     "overlapsWith": [
      "3e:statistiques-3e"

@@ -8,8 +8,8 @@
 
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 290 | 95.7 % |
-| `PARTIALLY_COVERED` | 13 | 4.3 % |
+| `COVERED` | 291 | 96.0 % |
+| `PARTIALLY_COVERED` | 12 | 4.0 % |
 | **Total** | **303** | 100 % |
 
 ## Inventaire des leçons
@@ -333,7 +333,7 @@
 | `P8` Calculer ou utiliser un écart type | statistiques_probabilites | `statistiques-une-variable-2nde` | M4 | COVERED | M4.2 manipulation:SeriesLab · M4.2 brick:ecart-type · M4.3 question:M… | La bande de l'étape 2 précède le … | `st-e7` | `ecart-type` | M4 |
 | `P9` Interpréter la dispersion d'une série | statistiques_probabilites | `statistiques-une-variable-2nde` | M3, M6 | COVERED | M3.3 question:M03-S3 (Q3 − Q1 = 13) · M3.3 feedback · M3.3 brick:eten… | Le contraste 2de A / 2de B du mod… | `st-e6` `st-e8` | `etendue-interquartile` `ecart-type` `mem-deux-nombres` | M3, M6 |
 | `P10` Étudier l'influence de l'ajout d'une valeur | statistiques_probabilites | `statistiques-une-variable-2nde` | M5 | COVERED | M1.1 manipulation:SeriesLab · M5.1 manipulation:SeriesLab + bascule 2… | Une bascule à deux états — « séri… | `st-e9` | `robustesse` | M5 |
-| `P11` Étudier l'influence de la suppression d'une v… | statistiques_probabilites | `statistiques-une-variable-2nde` | M5 | PARTIALLY_COVERED | M5.1 manipulation:SeriesLab + bascule · M5.3 question:M05-S3 (retirer… | La bascule du module 5 étape 1 fo… | `st-e10` | `robustesse` | M5 |
+| `P11` Étudier l'influence de la suppression d'une v… | statistiques_probabilites | `statistiques-une-variable-2nde` | M5 | COVERED | M5.1 manipulation:SeriesLab · M5.1 brick:robustesse · M5.4 question:M… | Bascule à TROIS états à l'étape 1… | `st-e10` | `robustesse` | M5 |
 | `P12` Comparer deux séries statistiques | statistiques_probabilites | `statistiques-une-variable-2nde` | M6 | COVERED | M4.1 manipulation:SeriesLab (A et B sur le même axe) · M6.1 manipulat… | SeriesLab en mode `compareValues`… | `st-e10` | `methode-comparer` `mem-deux-nombres` `robustesse` | M6 |
 | `P1` Identifier deux variables qualitatives | statistiques_probabilites | `tableaux-croises-2nde` | M2 | PARTIALLY_COVERED | M2.1 brick:combien-modalites · M2.1 question:TapQuestion (classe × ac… | Aucune manipulation ne porte ce L… | `tc-e1` | `combien-modalites` `qualitative-nominale-ordinale` | M2 |
 | `P2` Identifier une variable nominale | statistiques_probabilites | `tableaux-croises-2nde` | M2 | COVERED | M2.2 manipulation:bascule ordre quelconque / ordre naturel (CrossTabl… | Deux boutons « Ordre quelconque »… | `tc-e2` | `qualitative-nominale-ordinale` | M2 |
