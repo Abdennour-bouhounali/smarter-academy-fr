@@ -30,6 +30,7 @@ import { affine, solveEq, solveIneq, intervalText, parseDec, formatDec } from '.
 const V = affine(-4, 30);
 export default function Module05SigneEquationsInequations() {
   const [q1, setQ1] = useState(false); const [q2, setQ2] = useState(false); const [q3, setQ3] = useState(false); const [q4, setQ4] = useState(false);
+  const [probe, setProbe] = useState(0); const [found, setFound] = useState(false);
   const steps = [
     {
       num: 1, title: 'Quand le réservoir est-il vide ?', subtitle: 'V(t) = −4t + 30 : on vide à 4 L/min à partir de 30 L.', done: q1,
@@ -73,10 +74,40 @@ export default function Module05SigneEquationsInequations() {
       ),
     },
     {
-      num: 4, title: 'Une inéquation', done: q4,
+      // Le renversement du sens n'est PAS annoncé : l'élève avance la sonde,
+      // relève lui-même où le volume passe sous 10 L, et constate que la
+      // réponse est « au DÉBUT » — donc t < 5 — alors que l'inéquation qu'il
+      // vient d'écrire se lit −4t > −20. La brique ne vient qu'après ce constat.
+      num: 4, title: 'Jusqu’à quand reste-t-il plus de 10 L ?',
+      subtitle: 'Avance la sonde minute par minute et regarde le volume. À partir de quand passe-t-il sous 10 L ?',
+      done: found,
+      content: (kit) => (
+        <div className="space-y-3">
+          <TankLab a={-4} b={30} t={probe} lockA lockB onChange={({ t }) => setProbe(t)} />
+          <NumericQuestion
+            prompt="À quelle minute le réservoir contient-il exactement 10 L ?"
+            expected={5} parse={parseDec} display="5"
+            explain={<span>V(5) = −4 × 5 + 30 = <strong>10</strong> L. Avant cet instant il en reste plus, après il en reste moins : la sonde te l’a montré.</span>}
+            explainWrong="Avance la sonde : V(4) = 14, V(5) = 10, V(6) = 6. C’est à la minute 5 que le volume vaut exactement 10 L."
+            requires={['fonction-affine-ab']}
+            solved={found} onAnswered={() => setFound(true)} />
+          {found && (
+            <Feedback tone="ok">
+              Plus de 10 L <strong>de 0 à 5 minutes</strong> : c’est au DÉBUT, donc <MathText>{'$t < 5$'}</MathText>.
+              Or l’inéquation s’écrit <MathText>{'$-4t + 30 > 10$'}</MathText>, c’est-à-dire <MathText>{'$-4t > -20$'}</MathText> —
+              avec un <MathText>{'$>$'}</MathText>. En divisant par −4 on obtient pourtant <MathText>{'$t < 5$'}</MathText>,
+              avec un <MathText>{'$<$'}</MathText> : <strong>le sens s’est retourné</strong>. Le réservoir vient de te
+              l’imposer ; la règle ne fait que l’écrire.
+            </Feedback>
+          )}
+        </div>
+      ),
+    },
+    {
+      num: 5, title: 'Une inéquation', done: q4,
       content: (
         <div className="space-y-3">
-          <KnowledgeBrick id="methode-inequation-affine" variant="new" lead={<>« Exactement 20 L » se résout ; « plus de 10 L » aussi — avec un piège de plus, que voici avant d’essayer.</>} />
+          <KnowledgeBrick id="methode-inequation-affine" variant="new" lead={<>Tu viens de constater le retournement sur le réservoir : voici comment on l’écrit.</>} />
           <TapQuestion prompt={<span>Pendant combien de temps reste-t-il <strong>plus de 10 L</strong> ? (résous <MathText>{'$-4t + 30 > 10$'}</MathText>)</span>}
             options={['t < 5 : de 0 à 5 min', 't > 5', 't < −5', 't > −5']}
             correct={0} cols={2}
@@ -90,7 +121,7 @@ export default function Module05SigneEquationsInequations() {
   ];
   return (
     <ContentModule ctx={MODULE_CTX} navLinks={getNavLinks(5)} moduleNumber={5}
-      moduleTitle="Signe, équations, inéquations" moduleSubtitle="Vide ? À moitié ? Plus de 10 L ? Résoudre avec ax + b" estimatedTime="10 min"
+      moduleTitle="Signe, équations, inéquations" moduleSubtitle="Vide ? À moitié ? Plus de 10 L ? Résoudre avec ax + b" estimatedTime="13 min"
       brief={{ tag: 'Manipulation', title: 'Le réservoir se vide', tone: 'cyan', body: <p>V(t) = −4t + 30. Quand est-il vide ? Quand reste-t-il 20 L ? Pendant combien de temps plus de 10 L ? Le zéro, le signe, une équation, une inéquation.</p> }}
       steps={steps}
       footer={<KnowledgeSnapshot moduleNumber={5}>Module suivant : un abonnement, un téléphérique, une bougie — reconnaître a et b dans la vraie vie.</KnowledgeSnapshot>} />

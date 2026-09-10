@@ -82,8 +82,8 @@ pédagogiques, qui ouvrent la Session 2 (§12).
 <!-- BEGIN GENERATED: status-counts -->
 | Statut | LP | Part |
 | --- | ---: | ---: |
-| `COVERED` | 281 | 92.7 % |
-| `PARTIALLY_COVERED` | 22 | 7.3 % |
+| `COVERED` | 282 | 93.1 % |
+| `PARTIALLY_COVERED` | 21 | 6.9 % |
 | **Total** | **303** | 100 % |
 <!-- END GENERATED: status-counts -->
 
@@ -308,7 +308,7 @@ ils appartiennent à des leçons existantes et relèvent d'un LP à ajouter, pas
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | :-: | :-: | :-: | --- |
 | `fonctions-en-python-2nde` | algorithmique_programmation | available | 86 / 86 / 86 | 8 | 12 | 18 | 53 | 7 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
 | `variables-et-instructions-2nde` | algorithmique_programmation | available | 76 / 76 / 76 | 7 | 12 | 15 | 53 | 6 | ✅ | ❌ | ❌ | NO_SPEC, NO_E2E, NO_LEARNING_POINTS_MIRROR |
-| `fonction-affine-2nde` | fonctions | available | 75 / 75 / 75 | 8 | 11 | 14 | 64 | 7 | ✅ | ✅ | ✅ | — |
+| `fonction-affine-2nde` | fonctions | available | 78 / 78 / 78 | 8 | 11 | 14 | 65 | 7 | ✅ | ✅ | ✅ | — |
 | `fonctions-2nde` | fonctions | available | 87 / 87 / 87 | 9 | 12 | 23 | 161 | 8 | ✅ | ✅ | ✅ | — |
 | `fonctions-de-reference-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 11 | 20 | 76 | 7 | ✅ | ✅ | ✅ | — |
 | `signe-fonctions-2nde` | fonctions | available | 80 / 80 / 80 | 8 | 12 | 17 | 98 | 7 | ✅ | ✅ | ✅ | — |
@@ -381,7 +381,7 @@ ils appartiennent à des leçons existantes et relèvent d'un LP à ajouter, pas
 | `P8` Lire l'ordonnée à l'origine | fonctions | `fonction-affine-2nde` | M3, M4 | COVERED | M1.2 manipulation:TankLab · M3.3 brick:methode-lire-a-b-graphique · M… | TankLab avec `intercept={{ y: b, … | `fa-e6` | `methode-lire-a-b-graphique` `regle-signe-a-variations` `methode-determiner-affine` | M3, M4 |
 | `P9` Étudier le signe d'une fonction affine | fonctions | `fonction-affine-2nde` | M5, M6 | PARTIALLY_COVERED | M5.2 brick:regle-signe-affine-zero · M5.2 question:M05-S2-r1 · M5.2 q… | AUCUNE. C'est le constat central … | `fa-e8` `fa-e10` | `regle-signe-affine-zero` `methode-equation-affine` `methode-inequation-affine` | M5, M6 |
 | `P10` Résoudre une équation avec une fonction affine | fonctions | `fonction-affine-2nde` | M5, M6 | COVERED | M5.1 brick:methode-equation-affine · M5.1 question:M05-S1-Q1 · M5.3 q… | AUCUNE (TankLab frozen à l'étape … | `fa-e9` | `methode-equation-affine` `regle-signe-affine-zero` `methode-modeliser-affine` | M5, M6 |
-| `P11` Résoudre une inéquation avec une fonction aff… | fonctions | `fonction-affine-2nde` | M5, M6 | PARTIALLY_COVERED | M5.4 brick:methode-inequation-affine · M5.4 question:M05-S4-Q1 · M6.1… | AUCUNE, et c'est ici que cela coû… | `fa-e10` | `methode-inequation-affine` `methode-equation-affine` `methode-modeliser-affine` | M5, M6 |
+| `P11` Résoudre une inéquation avec une fonction aff… | fonctions | `fonction-affine-2nde` | M5, M6 | COVERED | M5.4 manipulation:TankLab · M5.4 question:M05-S4-Q1 · M5.5 brick:meth… | AUCUNE, et c'est ici que cela coû… | `fa-e10` | `methode-inequation-affine` `methode-equation-affine` `methode-modeliser-affine` | M5, M6 |
 | `P1` Comprendre une fonction comme une relation de… | fonctions | `fonctions-2nde` | M1 | COVERED | M1.1 manipulation:BoxLab · M1.1 brick:fonction-dependance · M1.2 mani… | BoxLab — une feuille carrée de 20… | `fo-e1` | `fonction-dependance` `vocab-variable` `mem-un-x-une-valeur` | M1 |
 | `P2` Identifier la variable | fonctions | `fonctions-2nde` | M1 | COVERED | M1.3 manipulation:BoxLab · M1.3 brick:vocab-variable · M1.4 question:… | BoxLab avec showGraph : chaque bo… | `fo-e1` `fo-e8` | `vocab-variable` `fonction-dependance` `methode-modeliser` | M1 |
 | `P3` Déterminer l'ensemble de définition | fonctions | `fonctions-2nde` | M2, M6 | COVERED | M1.1 manipulation:BoxLab · M1.4 question:M01-S4-Q1 · M2.3 brick:rappe… | Deux gestes portent la notion, et… | `fo-e2` `fo-e9` | `ensemble-definition` `rappel-intervalle` `reunion-intervalles` | M2, M6 |

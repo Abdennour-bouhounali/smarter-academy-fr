@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:08:18.148Z",
+  "generatedAt": "2026-09-10T09:14:11.717Z",
   "generator": "scripts/audit-2de-learning-points.mjs",
   "grade": "seconde",
   "counts": {
@@ -3543,9 +3543,9 @@
       "status": "available",
       "dir": "apps/web/src/lessons/lycee/seconde/fonctions/fonction-affine-2nde",
       "duration": {
-        "catalogue": 75,
-        "config": 75,
-        "moduleSum": 75,
+        "catalogue": 78,
+        "config": 78,
+        "moduleSum": 78,
         "drift": false
       },
       "knowledgeMap": true,
@@ -3574,7 +3574,7 @@
       },
       "snapshotCount": 7,
       "brickCount": 14,
-      "requiresCount": 64,
+      "requiresCount": 65,
       "specDocs": [
         "docs/lessons/2NDE_FONCTION_AFFINE_SPEC.md"
       ],
@@ -4107,8 +4107,8 @@
           "slug": "signe-equations-inequations",
           "title": "Signe, équations, inéquations",
           "stage": "manipulation",
-          "estimatedMin": 10,
-          "estimatedTimeLabel": "10 min",
+          "estimatedMin": 13,
+          "estimatedTimeLabel": "13 min",
           "teaches": [
             "seconde_fonction-affine-2nde_P9",
             "seconde_fonction-affine-2nde_P10",
@@ -4128,7 +4128,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "questions": [
             {
@@ -4161,25 +4162,34 @@
             },
             {
               "id": "M05-S4-Q4",
+              "component": "NumericQuestion",
+              "requires": [
+                "fonction-affine-ab"
+              ],
+              "step": 4,
+              "prompt": "À quelle minute le réservoir contient-il exactement 10 L ?"
+            },
+            {
+              "id": "M05-S5-Q5",
               "component": "TapQuestion",
               "requires": [
                 "methode-inequation-affine",
                 "methode-equation-affine"
               ],
-              "step": 4,
+              "step": 5,
               "prompt": "Pendant combien de temps reste-t-il plus de 10 L ? (résous )"
             }
           ],
           "questionCounts": {
             "stream": {
-              "NumericQuestion": 2,
+              "NumericQuestion": 3,
               "BatchChoiceQuestion": 1,
               "TapQuestion": 1
             },
             "jsxStatic": {
               "TapQuestion": 1,
               "BatchChoiceQuestion": 1,
-              "NumericQuestion": 2,
+              "NumericQuestion": 3,
               "PredictionChips": 0,
               "KnowledgeBrick": 3,
               "KnowledgeSnapshot": 1
@@ -4191,21 +4201,21 @@
               "step": 1,
               "variant": "new",
               "itemMissing": false,
-              "line": 38
+              "line": 39
             },
             {
               "itemId": "regle-signe-affine-zero",
               "step": 2,
               "variant": "new",
               "itemMissing": false,
-              "line": 51
+              "line": 52
             },
             {
               "itemId": "methode-inequation-affine",
-              "step": 4,
+              "step": 5,
               "variant": "new",
               "itemMissing": false,
-              "line": 79
+              "line": 110
             }
           ],
           "requires": {
@@ -4215,10 +4225,10 @@
               "methode-inequation-affine",
               "regle-signe-affine-zero"
             ],
-            "count": 6,
+            "count": 7,
             "invalid": 0
           },
-          "gatedReveals": 0,
+          "gatedReveals": 1,
           "manipulations": [
             {
               "name": "TankLab",
@@ -5502,13 +5512,13 @@
             "TankLab"
           ],
           "judgement": {
-            "status": "PARTIALLY_COVERED",
+            "status": "COVERED",
             "evidence": [
               {
                 "module": 5,
                 "moduleSlug": "signe-equations-inequations",
                 "step": 4,
-                "mechanism": "brick:methode-inequation-affine"
+                "mechanism": "manipulation:TankLab"
               },
               {
                 "module": 5,
@@ -5517,10 +5527,16 @@
                 "mechanism": "question:M05-S4-Q1"
               },
               {
-                "module": 6,
-                "moduleSlug": "atelier-modeliser",
-                "step": 1,
-                "mechanism": "question:M06-S1-r4"
+                "module": 5,
+                "moduleSlug": "signe-equations-inequations",
+                "step": 5,
+                "mechanism": "brick:methode-inequation-affine"
+              },
+              {
+                "module": 5,
+                "moduleSlug": "signe-equations-inequations",
+                "step": 5,
+                "mechanism": "question:M05-S5-Q1"
               },
               {
                 "module": 6,
@@ -5544,7 +5560,8 @@
               "kind": "none",
               "detail": "Les inéquations sont exclues à TOUS les niveaux du collège : fonctions-affines-3e exclut « Inéquations et étude de signe », 3e/equations-produit exclut « Inéquations (aucun point du catalogue ne les demande) », et 4e/calcul-litteral-4e, 4e/equations-4e, 4e/raisonnement-problemes-4e les excluent également. Notion strictement neuve en 2de — d'où l'importance de la confronter par l'expérience plutôt que par la règle."
             },
-            "confidence": "high"
+            "confidence": "high",
+            "note": "Le renversement du sens quand on divise par a < 0 était ANNONCÉ par la brique posée en tête de l'étape, avant l'unique question qui l'éprouvait — dont le lead prévenait même du piège. La question ne mesurait donc rien. Une étape de découverte a été insérée AVANT la brique : l'élève avance la sonde du TankLab (a et b verrouillés, t mobile), relève que le volume vaut 10 L à t = 5, et constate que « plus de 10 L » se produit au DÉBUT — donc t < 5 — alors que l'inéquation qu'il vient d'écrire porte un « > ». Le retournement est imposé par le réservoir avant d'être écrit. Vérifié au navigateur : volumes 30 → 26 → 22 → 18 → 14 → 10 → 6 pour t = 0..6, constat affiché après la bonne réponse, et la sonde reste manipulable après validation."
           }
         }
       ],

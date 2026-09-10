@@ -2149,7 +2149,7 @@ const smaMetadata = {
       "Résoudre une équation avec une fonction affine",
       "Résoudre une inéquation avec une fonction affine",
     ],
-    durationMinutes: 75,
+    durationMinutes: 78,
     difficulty: "Difficile",
     status: 'available',
     icon: "📈",
