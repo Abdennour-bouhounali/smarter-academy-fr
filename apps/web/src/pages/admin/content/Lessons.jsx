@@ -50,15 +50,18 @@ export default function AdminLessons() {
       key: 'title',
       label: 'Leçon',
       sortKey: 'title',
+      // `min-w` sur la cellule : sans elle, une colonne étroite empile un
+      // titre long sur trois lignes et fait tripler la hauteur de la rangée.
+      cellClassName: 'min-w-[240px]',
       render: (row) => (
         <Link to={`/admin/contenu/lecons/${encodeURIComponent(row.code)}`} className="block hover:underline">
           <span className="font-semibold text-slate-900">{row.title}</span>
-          <span className="block font-mono-jetbrains text-xs text-slate-400">{row.code}</span>
+          <span className="block truncate font-mono-jetbrains text-xs text-slate-400">{row.code}</span>
         </Link>
       ),
     },
     { key: 'grade', label: 'Classe', sortKey: 'code', render: (row) => row.grade ?? '—' },
-    { key: 'chapter', label: 'Chapitre', render: (row) => row.chapterTitle ?? '—' },
+    { key: 'chapter', label: 'Chapitre', cellClassName: 'min-w-[160px]', render: (row) => row.chapterTitle ?? '—' },
     { key: 'modulesCount', label: 'Modules', sortKey: 'modules_count', render: (row) => row.modulesCount },
     { key: 'exercisesCount', label: 'Exercices', sortKey: 'exercises_count', render: (row) => row.exercisesCount },
     { key: 'studentsCount', label: 'Élèves', render: (row) => row.studentsCount },

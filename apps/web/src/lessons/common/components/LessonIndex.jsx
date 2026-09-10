@@ -401,7 +401,9 @@ export default function LessonIndex({ config, basePath }) {
         {/* Le sommaire de la leçon n'utilise pas ModuleLayout : sans cette
             entrée, ce serait la seule page de leçon d'où l'on ne pourrait
             rien signaler. */}
-        <div className="flex justify-end pt-2">
+        {/* À gauche : même raison que dans ModuleLayout — le coin bas-droit
+            appartient au déclencheur « Ma carte ». */}
+        <div className="flex justify-start pt-2">
           <ReportButton
             variant="link"
             context={{ lessonCode: config.id, grade: config.grade, step: 'sommaire' }}

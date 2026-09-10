@@ -43,19 +43,26 @@ export default function DataTable({
 
   return (
     <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-      <table className="w-full min-w-[640px] border-collapse">
+      {/* min-w généreux : un tableau d'administration porte 8 à 10 colonnes,
+          et la dernière — souvent l'action — ne doit jamais être celle qu'on
+          ne voit pas. Le conteneur défile horizontalement au besoin. */}
+      <table className="w-full min-w-[900px] border-collapse">
         <thead>
           <tr className="border-b border-slate-200 bg-slate-50">
             {columns.map((column) => {
               const sortable = Boolean(column.sortKey && onSortChange);
-              const active = sort?.key === column.sortKey;
+              // `column.sortKey` doit être comparé SEULEMENT s'il existe :
+              // sans le test, une colonne non triable dans un tableau sans
+              // tri donne `undefined === undefined`, donc « active », et la
+              // ligne qui lit `sort.direction` plus bas explose.
+              const active = Boolean(column.sortKey) && sort?.key === column.sortKey;
 
               return (
                 <th
                   key={column.key}
                   scope="col"
                   className={`px-3 py-2.5 text-left font-inter text-xs font-semibold uppercase tracking-wide text-slate-500 ${column.className ?? ''}`}
-                  aria-sort={active ? (sort.direction === 'asc' ? 'ascending' : 'descending') : undefined}
+                  aria-sort={active ? (sort?.direction === 'asc' ? 'ascending' : 'descending') : undefined}
                 >
                   {sortable ? (
                     <button
@@ -64,7 +71,7 @@ export default function DataTable({
                       className="inline-flex items-center gap-1 hover:text-slate-800"
                     >
                       {column.label}
-                      {active && (sort.direction === 'asc'
+                      {active && (sort?.direction === 'asc'
                         ? <ChevronUp size={13} />
                         : <ChevronDown size={13} />)}
                     </button>

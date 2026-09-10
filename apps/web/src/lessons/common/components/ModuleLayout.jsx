@@ -241,7 +241,10 @@ export default function ModuleLayout({
             est ici, dans le shell partagé, et non recopié dans 1082 modules.
             Le contexte est pris de ce que ModuleLayout a déjà en portée :
             l'élève n'a rien à désigner. */}
-        <div className="flex justify-end pt-2">
+        {/* Aligné à GAUCHE, et non à droite : le déclencheur « Ma carte »
+            flotte en bas à droite (KnowledgeMap, fixed bottom-20 right-6), et
+            un panneau ouvert dans ce coin passait dessous. */}
+        <div className="flex justify-start pt-2">
           <ReportButton
             variant="link"
             context={{
