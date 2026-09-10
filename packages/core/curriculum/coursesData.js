@@ -3041,3 +3041,59 @@ export function getAllGrades() {
     }))
   );
 }
+
+/**
+ * Index des leçons par `id`, construit une seule fois au chargement.
+ *
+ * Le catalogue est un arbre (niveau → classe → chapitre → leçon) : retrouver
+ * une leçon par son code demandait jusqu'ici de le parcourir entièrement à
+ * chaque appel. La pratique en a besoin à chaque rendu — elle ne connaît de
+ * la leçon que son `lessonCode` (l'API n'en renvoie pas le chemin) et doit
+ * pouvoir ramener l'élève à son cours.
+ */
+const LESSONS_BY_ID = (() => {
+  const index = new Map();
+  for (const level of courseLevels) {
+    for (const grade of level.grades) {
+      for (const chapter of grade.chapters || []) {
+        for (const lesson of chapter.lessons || []) {
+          // Le premier gagne : deux leçons ne partagent pas d'`id` (invariant
+          // vérifié par coursesData.test.js), la garde est là pour que cette
+          // fonction reste totale si l'invariant venait à céder.
+          if (!index.has(lesson.id)) {
+            index.set(lesson.id, {
+              ...lesson,
+              gradeId: grade.id,
+              gradeName: grade.name,
+              levelId: level.id,
+              chapterId: chapter.id,
+              chapterTitle: chapter.title,
+            });
+          }
+        }
+      }
+    }
+  }
+  return index;
+})();
+
+/**
+ * La leçon portant cet `id`, chapitre et classe compris — ou `null`.
+ *
+ * @param {string} lessonId L'identifiant de leçon (« fonction-affine-2nde »),
+ *   celui-là même que l'API de pratique nomme `lessonCode`.
+ */
+export function getLessonById(lessonId) {
+  if (!lessonId) return null;
+  return LESSONS_BY_ID.get(lessonId) || null;
+}
+
+/**
+ * Le chemin de la page d'accueil d'une leçon, ou `null` si elle est inconnue
+ * du catalogue. Les appelants DOIVENT traiter le `null` : une leçon peut être
+ * active côté pratique avant d'être routée côté cours, et un lien mort vaut
+ * moins que pas de lien du tout.
+ */
+export function getLessonPath(lessonId) {
+  return getLessonById(lessonId)?.path || null;
+}

@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState, useCallback, useMemo } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import { practice } from '@smarter-academy/core';
 import { AuthContext } from '../../../context/AuthContext';
 import {
@@ -197,7 +198,7 @@ export default function PracticeSession() {
 
   if (error) {
     return (
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-6">
+      <div className="w-full px-5 py-8 sm:py-10 space-y-6">
         <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error}</p>
         <Link to={`/espace/pratique/${lessonCode}`} className="text-sm font-bold text-slate-600 hover:text-slate-900">
           ← Retour à la pratique
@@ -207,14 +208,28 @@ export default function PracticeSession() {
   }
 
   if (!exercise || !question) {
-    return <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-6"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
+    return <div className="w-full px-5 py-8 sm:py-10 space-y-6"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
   }
 
   const answered = evaluation !== null;
   const totalQuestions = exercise.questions.length;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-6">
+    <div className="w-full px-5 py-8 sm:py-10 space-y-6">
+      {/* La sortie de séance. Sans elle, l'élève engagé dans un niveau n'a
+          aucun chemin de retour : ni bandeau, ni fil d'Ariane sur cette page.
+          Le travail déjà validé est enregistré côté serveur à chaque réponse,
+          donc quitter ne perd rien — et la séance reste ouverte, le Hub
+          propose de la « Reprendre ». */}
+      <nav className="flex items-center" aria-label="Fil d'Ariane">
+        <Link
+          to={`/espace/pratique/${lessonCode}`}
+          className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 hover:text-indigo-600 whitespace-nowrap"
+        >
+          <ArrowLeft className="w-3 h-3" aria-hidden="true" /> Retour aux niveaux
+        </Link>
+      </nav>
+
       <SessionProgress index={index} total={exerciseIds.length} correctCount={correctCount} />
 
       <header className="space-y-1">

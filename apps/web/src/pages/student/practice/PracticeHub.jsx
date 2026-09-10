@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState, useCallback } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Dumbbell } from 'lucide-react';
+import { ArrowLeft, BookOpen, Dumbbell } from 'lucide-react';
 import { AuthContext } from '../../../context/AuthContext';
 import { fetchPracticeOverview, startPracticeSession } from '../../../services/practiceService';
 import LevelSelector from '../../../features/practice/LevelSelector';
 import { MASTERY_STATES, resolveMasteryState } from '../../../lessons/common/components/LearningPointMastery';
+import { getLessonPath } from '@smarter-academy/core';
 
 // Les tons de MASTERY_STATES sont des NOMS de couleur, pas des classes :
 // la table de correspondance est privée à LearningPointMastery, on la refait
@@ -59,7 +60,7 @@ export default function PracticeHub() {
 
   if (error && !overview) {
     return (
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-8">
+      <div className="w-full px-5 py-8 sm:py-10 space-y-8">
         <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error}</p>
         <Link to="/espace/cours" className="text-sm font-bold text-slate-600 hover:text-slate-900">
           ← Retour à mes cours
@@ -69,17 +70,28 @@ export default function PracticeHub() {
   }
 
   if (!overview) {
-    return <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-8"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
+    return <div className="w-full px-5 py-8 sm:py-10 space-y-8"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
   }
 
   const { lesson, levels, recommendedLevel, learningPoints, openSession } = overview;
+  // L'API de pratique ne renvoie que le code de la leçon ; le chemin de son
+  // cours vient du catalogue, seule source de vérité des URLs de leçon.
+  const lessonPath = getLessonPath(lessonCode);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-8">
-      <nav className="flex items-center gap-2 text-xs font-mono text-slate-500">
-        <Link to="/espace/cours" className="hover:text-blue-600 inline-flex items-center gap-1">
+    <div className="w-full px-5 py-8 sm:py-10 space-y-8">
+      <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-mono text-slate-500" aria-label="Fil d'Ariane">
+        <Link to="/espace/cours" className="hover:text-blue-600 inline-flex items-center gap-1 whitespace-nowrap">
           <ArrowLeft className="w-3 h-3" aria-hidden="true" /> Mes cours
         </Link>
+        {lessonPath && (
+          <>
+            <span aria-hidden="true">/</span>
+            <Link to={lessonPath} className="hover:text-blue-600 whitespace-nowrap">
+              {lesson.title}
+            </Link>
+          </>
+        )}
       </nav>
 
       <header className="space-y-2">
@@ -90,6 +102,20 @@ export default function PracticeHub() {
         <p className="text-sm text-slate-600">
           Choisis un niveau. Tu peux revenir sur un niveau déjà terminé autant de fois que tu veux.
         </p>
+        {/* Le retour au cours. La pratique n'est pas une impasse : l'élève qui
+            butte sur un niveau doit pouvoir relire la leçon en un geste, sans
+            repasser par « Mes cours ». `lessonPath` est nul quand la leçon
+            n'est pas (encore) au catalogue — on n'affiche alors aucun lien
+            plutôt qu'un lien mort. */}
+        {lessonPath && (
+          <Link
+            to={lessonPath}
+            className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl border-2 border-slate-300 bg-white text-slate-700 font-bold text-sm hover:bg-slate-50 hover:border-slate-400 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-400 focus:outline-none"
+          >
+            <BookOpen className="w-4 h-4" aria-hidden="true" />
+            Revoir la leçon
+          </Link>
+        )}
       </header>
 
       {error && <p className="text-sm text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-3">{error}</p>}

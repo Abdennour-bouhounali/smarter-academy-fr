@@ -67,7 +67,7 @@ export default function ContentModule({
         isCompleted={allDone}
         incompleteSteps={incompleteSteps}
       >
-        <div className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+        <div className="w-full px-5 py-8 flex-1 space-y-8">
           {!allDone && <StepProgressBar doneCount={doneCount} total={steps.length} />}
 
           <div className="flex items-center justify-between gap-3 flex-wrap">

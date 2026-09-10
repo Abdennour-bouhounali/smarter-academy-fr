@@ -211,7 +211,7 @@ export default function PrerequisiteDiagnostic({
       isCompleted={submitted}
       stage="prerequisite_check"
     >
-      <div className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+      <div className="w-full px-5 py-8 flex-1 space-y-8">
         <AnimatePresence mode="wait">
       {!submitted && (
         <motion.div key="quiz" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">

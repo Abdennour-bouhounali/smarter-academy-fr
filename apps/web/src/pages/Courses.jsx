@@ -184,7 +184,7 @@ export default function CoursesPage() {
           </div>
         </section>
       ) : (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+        <div className="w-full px-5 mb-6">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
             <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2">
               Catalogue
@@ -196,7 +196,7 @@ export default function CoursesPage() {
         </div>
       )}
 
-      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 ${user ? '' : 'mt-8'}`}>
+      <div className={`w-full px-5 space-y-8 ${user ? '' : 'mt-8'}`}>
         
         {/* LEVEL SELECTOR */}
         <section>

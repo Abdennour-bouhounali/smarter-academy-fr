@@ -108,7 +108,7 @@ export default function LessonIndex({ config, basePath }) {
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
-      <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+      <main className="w-full px-5 py-8 flex-1 space-y-8">
 
         {/* BREADCRUMB */}
         {/* `flex-wrap` : sans lui, un fil d'Ariane long (un chapitre et un

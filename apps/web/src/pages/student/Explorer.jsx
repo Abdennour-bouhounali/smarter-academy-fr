@@ -42,7 +42,7 @@ export default function Explorer() {
   }, [gradeData, activeChapter]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-10">
+    <div className="w-full px-5 py-8 sm:py-10">
       <div className="mb-8">
         <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2 flex items-center gap-1.5">
           <Compass size={13} /> Explorer

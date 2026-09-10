@@ -309,3 +309,25 @@ html[data-sa-resizing] .sa-workspace-main {
 .sa-workspace-sidebar {
   transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PLANCHER DES TAILLES FIXES EN PIXELS
+   ─────────────────────────────────────────────────────────────────────────
+   L'échelle de `tailwind.config.js` (+25%) atteint `text-xs`/`text-sm`, mais
+   PAS les tailles écrites en dur : `text-[10px]` vaut 10px quelle que soit
+   l'échelle. Elles subsistent dans 274 fichiers de leçons (étiquettes de
+   figures, pastilles, légendes) et se retrouveraient aujourd'hui plus
+   petites que tout ce qui les entoure — exactement le défaut que §19 demande
+   de corriger.
+
+   On les relève ici À L'ÉCRAN seulement. L'impression (« Ma carte ») dimensionne
+   en `pt` et n'est pas concernée ; la relever y casserait la pagination.
+
+   Pour les NOUVELLES leçons la règle reste : `text-xs` est la plus petite
+   taille légitime, jamais `text-[10px]`.
+   ───────────────────────────────────────────────────────────────────────── */
+@media screen {
+  .text-\[9px\]  { font-size: 11px !important; }
+  .text-\[10px\] { font-size: 12px !important; }
+  .text-\[11px\] { font-size: 13px !important; }
+}
