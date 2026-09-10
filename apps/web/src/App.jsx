@@ -115,6 +115,7 @@ import calculLitteral2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/ca
 import arithmetique2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/arithmetique-2nde/routes';
 import logique2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/routes';
 import vecteurs2ndeRoutes from './lessons/lycee/seconde/geometrie/vecteurs-2nde/routes';
+import trigonometrieCercle2ndeRoutes from './lessons/lycee/seconde/geometrie/trigonometrie-cercle-2nde/routes';
 import colinearite2ndeRoutes from './lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/routes';
 import equationsDroites2ndeRoutes from './lessons/lycee/seconde/geometrie/equations-de-droites-2nde/routes';
 import fonctionAffine2ndeRoutes from './lessons/lycee/seconde/fonctions/fonction-affine-2nde/routes';
@@ -282,6 +283,7 @@ export default function App() {
             {arithmetique2ndeRoutes()}
             {logique2ndeRoutes()}
             {vecteurs2ndeRoutes()}
+            {trigonometrieCercle2ndeRoutes()}
             {colinearite2ndeRoutes()}
             {equationsDroites2ndeRoutes()}
             {fonctionAffine2ndeRoutes()}
