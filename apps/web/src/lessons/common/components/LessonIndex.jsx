@@ -4,6 +4,11 @@ import { Lock, Compass } from 'lucide-react';
 import { useProgress } from '../hooks/useProgress';
 import { getModuleStatus, lockedReason } from '@smarter-academy/core';
 import { calculateCompletionPercentage } from '@smarter-academy/core';
+// Le moteur d'exercices n'est activé que pour les leçons listées dans
+// content/practice/active.json : pour toutes les autres, isPracticeActive
+// renvoie false et cette carte ne rend rien du tout.
+import { isPracticeActive } from '../../../features/practice/practiceCapability';
+import PracticeEntryCard from '../../../features/practice/PracticeEntryCard';
 
 /**
  * Static color map — replaces dynamic `bg-${color}-100` patterns.
@@ -178,6 +183,8 @@ export default function LessonIndex({ config, basePath }) {
             </div>
           </div>
         </section>
+
+        {isPracticeActive(config.id) && <PracticeEntryCard lessonId={config.id} />}
 
         {/* MODULES ROADMAP */}
         <section className="space-y-4">

@@ -21,6 +21,12 @@ import ChooseGrade from './pages/student/ChooseGrade';
 import DiagnosticIntro from './pages/student/diagnostic/DiagnosticIntro';
 import DiagnosticRun from './pages/student/diagnostic/DiagnosticRun';
 import DiagnosticResult from './pages/student/diagnostic/DiagnosticResult';
+// Moteur d'exercices. Trois routes paramétrées, pas une par leçon : la
+// pratique est indépendante de l'arbre des leçons, et `lessonCode` suffit
+// puisque les codes de leçon sont globalement uniques.
+import PracticeHub from './pages/student/practice/PracticeHub';
+import PracticeSession from './pages/student/practice/PracticeSession';
+import PracticeSummary from './pages/student/practice/PracticeSummary';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import { WorkspaceLayoutProvider } from './context/WorkspaceLayoutContext';
@@ -196,6 +202,14 @@ export default function App() {
               <Route path="explorer" element={<Explorer />} />
               <Route path="progression" element={<Progression />} />
               <Route path="profil" element={<Profil />} />
+              {/* La pratique vit DANS l'espace élève, avec la même barre
+                  latérale que les leçons : les routes de leçon passent par
+                  CourseLayout, qui rend StudentLayout dès qu'on est connecté.
+                  La pratique exige un compte, donc elle s'y branche
+                  directement. */}
+              <Route path="pratique/:lessonCode" element={<PracticeHub />} />
+              <Route path="pratique/:lessonCode/session/:sessionId" element={<PracticeSession />} />
+              <Route path="pratique/:lessonCode/bilan/:sessionId" element={<PracticeSummary />} />
             </Route>
           </Route>
 

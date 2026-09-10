@@ -109,6 +109,29 @@ class PracticeSessionController extends Controller
         ], $result['resumed'] ? 200 : 201);
     }
 
+    /**
+     * Une séance par son identifiant — ouverte ou close.
+     *
+     * Le lecteur en a besoin pour connaître son niveau au chargement. Passer
+     * par l'aperçu ne suffisait pas : celui-ci ne renvoie que la séance
+     * OUVERTE, si bien que rouvrir l'URL d'une séance terminée se lisait
+     * comme une erreur au lieu d'une relecture.
+     */
+    public function show(Request $request, string $sessionId)
+    {
+        try {
+            $session = $this->sessions->ownedBy($request->user(), $sessionId);
+        } catch (DomainException) {
+            abort(404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'session' => $this->serialize($session),
+            'summary' => $session->status === 'completed' ? $this->summarize($session) : null,
+        ]);
+    }
+
     public function complete(Request $request, string $sessionId)
     {
         try {

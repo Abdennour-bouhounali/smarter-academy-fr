@@ -59,23 +59,23 @@ export default function PracticeHub() {
 
   if (error && !overview) {
     return (
-      <main className="max-w-4xl mx-auto px-4 py-10 space-y-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-8">
         <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error}</p>
         <Link to="/espace/cours" className="text-sm font-bold text-slate-600 hover:text-slate-900">
           ← Retour à mes cours
         </Link>
-      </main>
+      </div>
     );
   }
 
   if (!overview) {
-    return <main className="max-w-4xl mx-auto px-4 py-10"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></main>;
+    return <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-8"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
   }
 
   const { lesson, levels, recommendedLevel, learningPoints, openSession } = overview;
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+    <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-8">
       <nav className="flex items-center gap-2 text-xs font-mono text-slate-500">
         <Link to="/espace/cours" className="hover:text-blue-600 inline-flex items-center gap-1">
           <ArrowLeft className="w-3 h-3" aria-hidden="true" /> Mes cours
@@ -137,6 +137,6 @@ export default function PracticeHub() {
           </ul>
         </section>
       )}
-    </main>
+    </div>
   );
 }

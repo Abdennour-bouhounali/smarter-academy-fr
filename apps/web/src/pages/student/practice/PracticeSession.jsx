@@ -197,24 +197,24 @@ export default function PracticeSession() {
 
   if (error) {
     return (
-      <main className="max-w-3xl mx-auto px-4 py-10 space-y-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-6">
         <p className="text-rose-700 bg-rose-50 border-2 border-rose-200 rounded-xl p-4">{error}</p>
         <Link to={`/espace/pratique/${lessonCode}`} className="text-sm font-bold text-slate-600 hover:text-slate-900">
           ← Retour à la pratique
         </Link>
-      </main>
+      </div>
     );
   }
 
   if (!exercise || !question) {
-    return <main className="max-w-3xl mx-auto px-4 py-10"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></main>;
+    return <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-6"><div className="h-64 rounded-2xl bg-slate-100 animate-pulse" /></div>;
   }
 
   const answered = evaluation !== null;
   const totalQuestions = exercise.questions.length;
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">
+    <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-10 space-y-6">
       <SessionProgress index={index} total={exerciseIds.length} correctCount={correctCount} />
 
       <header className="space-y-1">
@@ -297,6 +297,6 @@ export default function PracticeSession() {
           )}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

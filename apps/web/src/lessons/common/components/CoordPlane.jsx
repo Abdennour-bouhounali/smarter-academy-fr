@@ -418,9 +418,12 @@ export default function CoordPlane({
   const curveSamples = (c) =>
     (typeof c.fn === 'function' ? sampleFunction(c.fn, range, 240) : c.points ?? []);
 
-  const O = toSvg(0, 0);
-  const xEnd = toSvg(range.xMax, 0);
-  const yEnd = toSvg(0, range.yMax);
+  const xAxisYVal = Math.max(range.yMin, Math.min(0, range.yMax));
+  const yAxisXVal = Math.max(range.xMin, Math.min(0, range.xMax));
+  
+  const O = toSvg(yAxisXVal, xAxisYVal);
+  const xEnd = toSvg(range.xMax, xAxisYVal);
+  const yEnd = toSvg(yAxisXVal, range.yMax);
 
   // La lecture vocale décrit CE QUI EST PILOTÉ : un point, une sonde, un guide.
   let label = 'aucun élément mobile';
@@ -486,9 +489,9 @@ export default function CoordPlane({
           {gridLines}
 
           {/* Axes, avec flèches et noms */}
-          <line x1={toSvg(range.xMin, 0).x} y1={O.y} x2={xEnd.x} y2={O.y}
+          <line x1={toSvg(range.xMin, xAxisYVal).x} y1={O.y} x2={xEnd.x} y2={O.y}
             stroke="#0f172a" strokeWidth="2" markerEnd="url(#cp-arrow)" opacity="0.85" />
-          <line x1={O.x} y1={toSvg(0, range.yMin).y} x2={yEnd.x} y2={yEnd.y}
+          <line x1={O.x} y1={toSvg(yAxisXVal, range.yMin).y} x2={yEnd.x} y2={yEnd.y}
             stroke="#0f172a" strokeWidth="2" markerEnd="url(#cp-arrow)" opacity="0.85" />
           {/* Les noms d'axes vivent dans la marge : posés près de la flèche,
               ils chevauchaient la pointe ET la dernière graduation (défaut vu
@@ -504,7 +507,7 @@ export default function CoordPlane({
               (−1 ; −1)). La zone masquante couvre l'empreinte réelle de
               l'étiquette, en bas à gauche de l'origine. Le repère reste
               lisible sans ce « O » — les graduations portent l'information. */}
-          {!points.some((p) => p.x >= -1.6 && p.x <= 0.6 && p.y >= -1.6 && p.y <= 0.6) && (
+          {!points.some((p) => p.x >= -1.6 && p.x <= 0.6 && p.y >= -1.6 && p.y <= 0.6) && range.xMin <= 0 && range.xMax >= 0 && range.yMin <= 0 && range.yMax >= 0 && (
             <text x={O.x - 8} y={O.y + 16} textAnchor="end" fontSize="12"
               className="font-mono" fill="#64748b">O</text>
           )}
@@ -513,7 +516,7 @@ export default function CoordPlane({
           {gridXs.map((x, i) => {
             if (x === 0) return null;
             const every = everyX;
-            const p = toSvg(x, 0);
+            const p = toSvg(x, xAxisYVal);
             return (
               <g key={`tx${x}`}>
                 <line x1={p.x} y1={p.y - 4} x2={p.x} y2={p.y + 4} stroke="#0f172a" strokeWidth="1.5" />
@@ -529,7 +532,7 @@ export default function CoordPlane({
           {gridYs.map((y, i) => {
             if (y === 0) return null;
             const every = everyY;
-            const p = toSvg(0, y);
+            const p = toSvg(yAxisXVal, y);
             return (
               <g key={`ty${y}`}>
                 <line x1={p.x - 4} y1={p.y} x2={p.x + 4} y2={p.y} stroke="#0f172a" strokeWidth="1.5" />
@@ -694,7 +697,7 @@ export default function CoordPlane({
                     stroke="#059669" strokeWidth="2.5" strokeDasharray="6 4" />
                   {xs.map((x, i) => {
                     const hit = toSvg(x, readGuides.value);
-                    const foot = toSvg(x, 0);
+                    const foot = toSvg(x, xAxisYVal);
                     return (
                       <g key={`an${i}`}>
                         <line x1={hit.x} y1={hit.y} x2={foot.x} y2={foot.y}
@@ -715,7 +718,7 @@ export default function CoordPlane({
                   stroke="#0284c7" strokeWidth="2.5" strokeDasharray="6 4" />
                 {y !== null && y >= range.yMin && y <= range.yMax && (() => {
                   const hit = toSvg(readGuides.value, y);
-                  const foot = toSvg(0, y);
+                  const foot = toSvg(yAxisXVal, y);
                   return (
                     <g>
                       <line x1={hit.x} y1={hit.y} x2={foot.x} y2={foot.y}
@@ -793,8 +796,8 @@ export default function CoordPlane({
           {/* Guides de lecture — les deux projections d'un point */}
           {guides && (() => {
             const p = toSvg(guides.x, guides.y);
-            const ax = toSvg(guides.x, 0);
-            const ay = toSvg(0, guides.y);
+            const ax = toSvg(guides.x, xAxisYVal);
+            const ay = toSvg(yAxisXVal, guides.y);
             return (
               <g>
                 <line x1={p.x} y1={p.y} x2={ax.x} y2={ax.y}

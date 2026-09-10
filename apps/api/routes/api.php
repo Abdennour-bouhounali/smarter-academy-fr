@@ -42,6 +42,7 @@ Route::prefix('v1')->group(function () {
         // créent quelque chose — le reste exige une séance, donc en hérite.
         Route::get('/lessons/{lessonCode}/practice/overview', [PracticeSessionController::class, 'overview']);
         Route::post('/lessons/{lessonCode}/practice/sessions', [PracticeSessionController::class, 'store']);
+        Route::get('/practice/sessions/{sessionId}', [PracticeSessionController::class, 'show']);
         Route::post('/practice/sessions/{sessionId}/questions', [PracticeAnswerController::class, 'openQuestion']);
         Route::post('/practice/sessions/{sessionId}/answers', [PracticeAnswerController::class, 'store']);
         Route::post('/practice/sessions/{sessionId}/exercise-completions', [PracticeAnswerController::class, 'completeExercise']);

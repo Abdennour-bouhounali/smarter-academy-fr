@@ -159,6 +159,43 @@ function signatureParses(answerType, value) {
   }
 }
 
+/* ── Taille rendue d'une figure ──────────────────────────────────────── */
+
+/** CoordPlane multiplie l'amplitude par les pixels-par-unité : ses défauts. */
+const DEFAULT_UNIT = 34;
+/** Au-delà, la figure pousse la question sous la ligne de flottaison. */
+const MAX_PLOT_PX = 460;
+
+/**
+ * CoordPlane dimensionne son SVG en PIXELS PAR UNITÉ, pas en pixels totaux :
+ * `height = (yMax − yMin) × unitY`. Une amplitude de 1800 avec l'unitY par
+ * défaut donne donc un tracé de plus de 61 000 px de haut — c'est arrivé, et
+ * seule l'ouverture de la page l'a montré.
+ *
+ * La convention maison (Module01Recette, Module06LaboSciences…) est de
+ * calculer `unitY` pour viser ~200 px. Ce contrôle ne l'impose pas ; il
+ * refuse seulement les figures qui déborderaient.
+ */
+function checkVisualSize(visual, where) {
+  const range = visual?.range;
+  if (!range) return;
+
+  const unit = visual.unit ?? DEFAULT_UNIT;
+  const unitY = visual.unitY ?? unit;
+  const height = (range.yMax - range.yMin) * unitY;
+  const width = (range.xMax - range.xMin) * unit;
+
+  if (height > MAX_PLOT_PX) {
+    err(where, `figure haute de ${Math.round(height)} px (max ${MAX_PLOT_PX}) — `
+      + `l'amplitude en y est ${range.yMax - range.yMin} et unitY vaut ${unitY}. `
+      + `Posez unitY: ${(200 / (range.yMax - range.yMin)).toFixed(4)} pour viser 200 px.`);
+  }
+  if (width > MAX_PLOT_PX) {
+    err(where, `figure large de ${Math.round(width)} px (max ${MAX_PLOT_PX}) — `
+      + `posez unit: ${(320 / (range.xMax - range.xMin)).toFixed(2)}.`);
+  }
+}
+
 /* ── Validation d'un exercice ────────────────────────────────────────── */
 
 function validateExercise(file, data, ctx) {
@@ -295,6 +332,7 @@ function validateExercise(file, data, ctx) {
     for (const key of Object.keys(q.visual ?? {})) {
       if (!COORDPLANE_PROPS.has(key)) err(qw, `visual.${key} n'est pas une prop de CoordPlane`);
     }
+    checkVisualSize(q.visual, qw);
     if (q.support && !SUPPORT_LABS.has(q.support.lab)) {
       err(qw, `support.lab « ${q.support.lab} » hors du registre fermé (${[...SUPPORT_LABS].join(', ')})`);
     }
@@ -308,6 +346,7 @@ function validateExercise(file, data, ctx) {
   for (const key of Object.keys(data.statement?.visual ?? {})) {
     if (!COORDPLANE_PROPS.has(key)) err(where, `statement.visual.${key} n'est pas une prop de CoordPlane`);
   }
+  checkVisualSize(data.statement?.visual, where);
   if (data.statement?.support && !SUPPORT_LABS.has(data.statement.support.lab)) {
     err(where, `statement.support.lab « ${data.statement.support.lab} » hors du registre fermé`);
   }
