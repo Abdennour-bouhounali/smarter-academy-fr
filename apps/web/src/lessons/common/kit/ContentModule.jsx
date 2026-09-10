@@ -1,4 +1,8 @@
-import React, { createContext, useContext } from 'react';
+import React from 'react';
+import { KitContext, useKit } from './kitContext';
+
+// Ré-export : les modules qui importaient useKit depuis ici continuent de marcher.
+export { useKit };
 import ModuleLayout from '../components/ModuleLayout';
 import { useProgress } from '../hooks/useProgress';
 import { useModuleEffects } from '../hooks/useModuleEffects';
@@ -26,16 +30,6 @@ import { isStepLocked } from '../utils/stepUnlock';
  * composants question du kit (TapQuestion…) récupèrent le même objet via
  * le contexte (`useKit()`), sans fil à tirer.
  */
-const KitContext = createContext(null);
-
-export function useKit() {
-  const kit = useContext(KitContext);
-  if (!kit) {
-    throw new Error('useKit() doit être appelé sous <ContentModule> (lesson kit).');
-  }
-  return kit;
-}
-
 export default function ContentModule({
   ctx,            // MODULE_CTX de la leçon (spread dans ModuleLayout)
   navLinks,       // getNavLinks(moduleNumber)

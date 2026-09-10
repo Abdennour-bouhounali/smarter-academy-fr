@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { formatFr, parseFr } from '@smarter-academy/core';
 import { Feedback, ChoiceGrid, ValidateButton, NumberField, XPBurst } from '../components/LessonUI';
-import { useKit } from './ContentModule';
+import { useKit } from './kitContext';
 
 /**
  * Lesson kit — les trois formes de question formative.
