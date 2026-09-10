@@ -116,6 +116,7 @@ import arithmetique2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/arit
 import logique2ndeRoutes from './lessons/lycee/seconde/nombres_calculs/logique-et-raisonnement-2nde/routes';
 import vecteurs2ndeRoutes from './lessons/lycee/seconde/geometrie/vecteurs-2nde/routes';
 import trigonometrieCercle2ndeRoutes from './lessons/lycee/seconde/geometrie/trigonometrie-cercle-2nde/routes';
+import variablesEtInstructions2ndeRoutes from './lessons/lycee/seconde/algorithmique_programmation/variables-et-instructions-2nde/routes';
 import trigonometrieEquations2ndeRoutes from './lessons/lycee/seconde/geometrie/trigonometrie-equations-2nde/routes';
 import colinearite2ndeRoutes from './lessons/lycee/seconde/geometrie/colinearite-alignement-2nde/routes';
 import equationsDroites2ndeRoutes from './lessons/lycee/seconde/geometrie/equations-de-droites-2nde/routes';
@@ -290,6 +291,7 @@ export default function App() {
             {logique2ndeRoutes()}
             {vecteurs2ndeRoutes()}
             {trigonometrieCercle2ndeRoutes()}
+            {variablesEtInstructions2ndeRoutes()}
             {trigonometrieEquations2ndeRoutes()}
             {colinearite2ndeRoutes()}
             {equationsDroites2ndeRoutes()}
