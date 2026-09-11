@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Une ligne du REGISTRE des exercices. Jumeau de LessonModule : le contenu
- * reste dans content/practice/**, cette table ne porte que l'identité et
- * l'état de publication.
+ * reste dans content/practice/**, cette table ne porte que l'identité, l'état
+ * de publication et le palier commercial.
+ *
+ * `tier` vaut null par défaut = « hérite de la leçon ». Une valeur explicite
+ * est une exception posée par un administrateur. Voir AccessTier::effective().
  */
 class PracticeExercise extends Model
 {
@@ -20,6 +23,7 @@ class PracticeExercise extends Model
         'level',
         'title',
         'question_count',
+        'tier',
         'publication_status',
         'retired_at',
     ];

@@ -96,7 +96,7 @@ function getColor(color, variant) {
  */
 export default function LessonIndex({ config, basePath }) {
   const { completedModules, isModuleCompleted, currentModule } = useProgress(config.id);
-  const { isModuleClosed } = useContentAvailability();
+  const { isModuleClosed, isLessonLocked } = useContentAvailability();
 
   const totalModules = config.modules.length;
   const completedCount = completedModules.length;
@@ -108,6 +108,43 @@ export default function LessonIndex({ config, basePath }) {
   const isMastered = config.sequentialUnlock
     ? totalModules > 0 && completedCount === totalModules
     : pct >= Math.round(config.masteryThreshold * 100);
+
+  // Leçon PUBLIÉE mais hors du droit d'accès de cet élève : arrivé ici par
+  // l'URL, il voit ce qui lui manque plutôt que le sommaire.
+  //
+  // C'est de l'AFFICHAGE, pas de l'autorisation : le serveur refuse déjà
+  // toute écriture sur cette leçon (ContentAccess). Retirer ce bloc dans le
+  // navigateur ne rendrait donc rien d'autre qu'un sommaire inerte — aucun
+  // module ne s'enregistrerait, aucun exercice ne se listerait.
+  //
+  // Aucun détail du contenu n'est rendu : ni titre de module, ni progression.
+  if (isLessonLocked(config.id)) {
+    return (
+      <div className="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">
+        <main className="sa-page py-8 flex-1">
+          <nav className="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500 mb-8">
+            <Link to="/courses" className="hover:text-blue-600">Accueil</Link>
+            <span>/</span>
+            <span className="text-slate-900 font-semibold">{config.title}</span>
+          </nav>
+
+          <div className="mx-auto max-w-lg rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50/60 to-white p-8 text-center shadow-xs">
+            <Lock size={28} className="mx-auto mb-4 text-amber-600" />
+            <h1 className="font-space text-xl font-bold text-slate-800 mb-2">{config.title}</h1>
+            <p className="font-inter text-sm leading-relaxed text-slate-600 mb-6">
+              Cette leçon nécessite un accès premium.
+            </p>
+            <Link
+              to="/tarifs"
+              className="inline-flex items-center gap-1 rounded-xl bg-amber-500 px-5 py-2.5 font-inter text-sm font-bold text-white transition-colors hover:bg-amber-600"
+            >
+              Voir les tarifs →
+            </Link>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-16 bg-slate-50">

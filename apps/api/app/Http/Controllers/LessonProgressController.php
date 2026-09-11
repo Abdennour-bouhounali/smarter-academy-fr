@@ -57,7 +57,7 @@ class LessonProgressController extends Controller
         // LIT toujours (voir index) : ce que l'élève a déjà fait lui
         // appartient, et le lui masquer serait lui mentir sur son parcours.
         try {
-            ContentAccess::assertLessonAvailable($lessonCode);
+            ContentAccess::assertLessonAvailable($lessonCode, $request->user());
 
             // Seuls les modules NOUVELLEMENT déclarés terminés sont
             // contrôlés, pas toute la liste.
@@ -74,7 +74,7 @@ class LessonProgressController extends Controller
                 ->value('completed_modules') ?? [];
 
             foreach (array_diff($validated['completedModules'], $already) as $moduleRef) {
-                ContentAccess::assertModuleAvailable($lessonCode, $moduleRef);
+                ContentAccess::assertModuleAvailable($lessonCode, $moduleRef, $request->user());
             }
         } catch (DomainException $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()], 422);

@@ -804,6 +804,11 @@ Do not scatter subscription checks throughout frontend components.
 
 Centralize authorization/access decisions.
 
+> **Implémenté — voir §A6** pour la chaîne réelle, les trois types de droit et
+> l'invariant « un droit n'est jamais un passe-droit vers du contenu non
+> publié ». L'autorité est `App\Domain\Access\EntitlementService`, composée
+> avec la publication dans `ContentAccess`, et dans aucun autre endroit.
+
 ---
 
 # 25. Admin account
@@ -1260,25 +1265,285 @@ Trois formes de réponse, jamais confondues :
 
 Un zéro se lit « ça ne marche pas » ; ces trois formes disent la vérité.
 
-## A6. La couture des droits d'accès (entitlement)
+## A6. Les droits d'accès (entitlement)
 
-**Aucun droit d'accès n'est appliqué aujourd'hui.** Les tables
-`subscriptions` et `payments` existent et sont lues par l'administration ;
-**rien ne les écrit**, et un abonnement ne donne aucun accès.
+**Implémenté.** Cette section décrivait une couture à venir ; elle décrit
+maintenant ce qui tourne. Les deux points d'accroche annoncés sont ceux qui
+ont été utilisés, et aucun autre.
 
-La chaîne visée est :
+### La chaîne d'accès
 
 ```text
-authentification → statut de compte → DROIT D'ACCÈS → publication leçon
-  → publication module → publication exercice → règles de progression
+authentification            middleware auth:sanctum
+      ↓
+statut de compte            middleware account.active  (users.account_status)
+      ↓
+DROIT D'ACCÈS               EntitlementService         (entitlements + palier)
+      ↓
+publication leçon           ContentAccess              (lessons.publication_status)
+      ↓
+publication module          ContentAccess              (lesson_modules)
+      ↓
+publication exercice        ContentAccess              (practice_exercises)
+      ↓
+règles de progression       lessonAccess.js            (déverrouillage séquentiel)
 ```
 
-Le maillon manquant s'introduira à **deux endroits, et deux seulement** :
+Chaque maillon a UNE autorité, et `ContentAccess` est le seul endroit qui les
+compose.
 
-1. `App\Domain\Access\ContentAccess` — un contrôle de droit avant les
-   contrôles de publication, côté serveur.
-2. `packages/core/lessonAccess.js::isLessonUnlocked(lesson, {isPremiumUser})`
-   — le paramètre existe déjà et vaut toujours `false` ; c'est le point
-   d'affichage.
+### Les trois types de droit
 
-Ne pas disperser de vérification d'abonnement ailleurs.
+```text
+free             règle, pas une ligne : tout compte actif le satisfait
+subscription     écrit plus tard par une synchronisation de paiement
+admin_override   dérogation accordée par un administrateur
+```
+
+Le vocabulaire est clos à ces trois valeurs. `book_access`, `school_access`,
+`partner_access` ne sont pas implémentés — la colonne `type` est une chaîne
+libre pour qu'ils restent additifs, mais rien ne les connaît aujourd'hui.
+
+### L'invariant central : droit ≠ publication
+
+```text
+droit valide  +  leçon masquée    =  REFUS
+leçon publiée +  aucun droit      =  REFUS
+```
+
+Une dérogation d'administration **ne donne pas accès au contenu non publié**.
+Elle répond « cet élève a la permission commerciale », jamais « ce contenu peut
+être servi ». Un contenu masqué l'est parce qu'il est faux ou en relecture : le
+montrer à quelqu'un qui a payé serait pire, pas mieux. Verrouillé par
+`EntitlementAccessMatrixTest`.
+
+### Le gratuit ne crée aucune ligne
+
+Aucun élève n'a de ligne `entitlements` pour accéder au contenu gratuit : la
+règle suffit. Une ligne par élève produirait des millions d'enregistrements qui
+ne portent aucune information — leur absence dit déjà la même chose — et
+créerait un risque d'élève enfermé dehors parce qu'une migration a oublié de
+lui fabriquer son droit.
+
+### Le palier du contenu, et son défaut
+
+`lessons.tier` vaut `free` ou `premium`. **Le défaut est `free`**, à trois
+niveaux : la colonne, `CurriculumImporter` et `AccessTier::normalize()`, qui
+traite tout ce qui n'est pas exactement `premium` (NULL, chaîne vide, faute de
+frappe) comme gratuit.
+
+Ce sens est délibéré et c'est la protection principale de tout le dispositif :
+un palier oublié laisse une leçon OUVERTE. Le contenu payant se déclare ; il ne
+s'obtient pas par distraction. C'est l'inverse de la liste blanche de
+publication (où l'inconnu ferme) parce que l'inconnu n'y signifie pas la même
+chose : un état de publication inconnu est un bug, un palier absent veut dire
+« personne n'a décidé de le vendre ».
+
+À ce jour les 133 leçons sont `free` : **aucun contenu n'est verrouillé**.
+
+### Validité temporelle
+
+Heure du serveur, jamais celle du client.
+
+```text
+starts_at  NULL ou <= maintenant   → commencé   (borne INCLUSE)
+expires_at NULL                    → sans terme
+expires_at >  maintenant           → valide     (borne EXCLUE)
+expires_at <= maintenant           → expiré
+```
+
+Les bornes sont écrites deux fois — `Entitlement::isValid()` pour l'autorité,
+le scope `validNow()` pour que la question reste une requête indexée — et
+`EntitlementServiceTest::test_sql_scope_and_php_agree` les tient ensemble.
+
+Les droits **se cumulent** : il suffit qu'un seul ouvre. Un abonnement expiré
+doublé d'une dérogation valide donne l'accès.
+
+### Révocation
+
+`status = revoked`, jamais de suppression. « Cet élève a eu accès du 3 au 12 »
+est précisément ce qu'un audit vient chercher.
+
+Perdre un droit **ne touche à aucun apprentissage** : progression, maîtrise,
+preuves et tentatives restent intactes, et redeviennent accessibles si le droit
+revient. L'accès change, l'histoire reste.
+
+### Ce qui est exposé
+
+| Point d'entrée | Qui | Quoi |
+| --- | --- | --- |
+| `GET /content/availability` | élève | `closed.lessons` (retiré), `closed.locked` (verrouillé), `access` (résumé) |
+| `GET /me/access` | élève | le résumé seul |
+| `GET /admin/students/{id}/entitlements` | admin | état + historique complet |
+| `POST /admin/students/{id}/entitlements/override` | admin | accorder |
+| `DELETE /admin/students/{id}/entitlements/override` | admin | retirer |
+
+`closed.lessons` et `closed.locked` sont **deux listes distinctes** : une leçon
+retirée n'existe pas pour l'élève, une leçon verrouillée existe et lui dit ce
+qui lui manque. Les confondre afficherait « indisponible » là où il fallait
+expliquer qu'un accès premium est requis.
+
+Aucun point d'entrée ne laisse un élève modifier un droit, et le résumé
+n'expose ni référence externe, ni identité de l'administrateur.
+
+Un administrateur ne peut accorder qu'une **dérogation**. Un abonnement ne se
+crée pas au clavier : ce serait un abonnement que personne n'a payé, invisible
+dans toute réconciliation comptable. Les deux mutations sont journalisées
+(`entitlement.granted`, `entitlement.revoked`) dans la même transaction que
+l'écriture.
+
+### Le frontend n'autorise rien
+
+`ContentAvailabilityContext` porte la décision du serveur et la donne à
+`isLessonUnlocked(lesson, {isPremiumUser})`. La carte de cours consulte aussi
+`closed.locked`, parce que le bundle peut être en retard sur la base — une
+leçon rendue payante côté serveur reste `free` dans le catalogue embarqué
+jusqu'au prochain déploiement, et la carte afficherait sinon « Commencer » sur
+une leçon qui refusera de s'ouvrir.
+
+Un élève qui forcerait cet état dans son navigateur verrait une carte
+cliquable et rien de plus : chaque écriture repasse par `ContentAccess`, qui ne
+lit jamais l'état du client.
+
+Politique d'ouverture, comme partout ailleurs : tant que la réponse n'est pas
+arrivée, rien n'est verrouillé.
+
+### La synchronisation des abonnements
+
+**Implémentée.** `App\Domain\Access\SubscriptionEntitlementSynchronizer`
+traduit un état d'abonnement faisant autorité en lignes `entitlements` de type
+`subscription`.
+
+```text
+fournisseur de paiement      ← PAS ENCORE (phase suivante)
+      ↓
+subscriptions                 l'état qui FAIT AUTORITÉ
+      ↓
+SubscriptionEntitlementSynchronizer
+      ↓
+entitlements (type=subscription)
+      ↓
+EntitlementService
+      ↓
+ContentAccess
+```
+
+Le service ne fait QUE cette traduction : il n'autorise rien, ne regarde
+aucune publication, ne sait pas ce qu'est une leçon payante, ne crée aucune
+dérogation et ne traite aucun paiement. Cette étroitesse est le but — c'est
+elle qui permettra de brancher un fournisseur sans toucher à la couche
+d'accès.
+
+#### La règle, explicitement
+
+Le vocabulaire vient de `Subscription::STATUSES`, tel qu'il existait déjà :
+
+| statut | droit | pourquoi |
+| --- | --- | --- |
+| `active` | ACTIF, de `started_at` à `ends_at` | — |
+| `cancelled` | ACTIF jusqu'à `ends_at` | résilier n'est pas se faire rembourser : la période déjà payée reste due |
+| `cancelled` sans `ends_at` | aucun | rien à honorer |
+| `expired` | RÉVOQUÉ | — |
+| `pending` | aucun | ouvrir sur « en attente » donnerait l'accès avant le paiement |
+| `free` | aucune ligne | le gratuit est une règle, pas une donnée |
+
+#### Les paiements ne sont jamais lus
+
+`payments` n'apparaît pas dans le synchroniseur, et ne doit jamais y
+apparaître. « Un paiement existe » et « l'accès est ouvert » sont deux faits
+distincts qu'un remboursement sépare : un paiement réussi dont l'abonnement a
+expiré n'ouvre rien. Verrouillé par
+`SubscriptionSynchronizationTest::test_a_successful_payment_never_grants_access_by_itself`.
+
+#### Idempotence
+
+La ligne de droit est retrouvée par sa `reference`, `subscription:<id>` —
+construite depuis l'identifiant INTERNE, donc stable : elle ne dépend ni de la
+date d'exécution, ni du statut, ni des dates. Dix exécutions produisent une
+seule ligne, et un renouvellement MET À JOUR au lieu d'empiler. Sans cela, une
+tâche horaire aurait fabriqué un droit par heure.
+
+L'identifiant interne plutôt que `external_reference` : ce dernier est
+nullable et appartient à un fournisseur qui n'existe pas encore.
+
+#### Le temps reste la barrière, pas la synchronisation
+
+Les dates sont COPIÉES dans le droit, si bien qu'un droit expire tout seul
+même si le synchroniseur n'a pas tourné depuis des semaines. **Ne pas lancer la
+commande ne donne l'accès à personne.** La synchronisation entretient l'état ;
+elle n'est pas le rempart.
+
+Conséquence observée en vérification : modifier `subscriptions.ends_at`
+directement en base ne ferme pas l'accès tant que la synchronisation n'a pas
+propagé la nouvelle date — le droit garde la sienne. C'est la séparation qui
+fonctionne, pas un défaut.
+
+#### Où elle tourne
+
+```text
+php artisan smarter:sync-entitlements [--subscription=ID] [--dry-run]
+POST /v1/admin/students/{id}/entitlements/sync
+```
+
+Aucun webhook : aucun fournisseur n'est branché. Les deux points d'entrée
+existent pour rattraper un état modifié hors de l'application (import,
+correction en base) et, le jour venu, un webhook manqué.
+
+La route d'administration n'est NI un encaissement NI une création
+d'abonnement : sans abonnement, elle ne produit rien. Un administrateur ne
+peut donc pas fabriquer un accès payant par ce chemin — la dérogation reste le
+seul mécanisme d'exception manuelle, et elle porte son nom.
+
+### Le palier des exercices
+
+`practice_exercises.tier` est **nullable**, et `null` veut dire « hérite de la
+leçon ». La distinction avec `'free'` est toute la règle :
+
+```text
+exercice null      → suit sa leçon              (le défaut)
+exercice premium   → payant, même leçon gratuite
+exercice free      → gratuit, MÊME leçon payante (exception explicite)
+```
+
+Sans le `null`, rendre une leçon payante laisserait ses exercices ouverts et le
+contenu vendu fuirait par sa pratique. Le troisième cas existe pour ouvrir une
+démonstration sous une leçon vendue ; il ne s'obtient que si un administrateur
+l'a posé, et **repasser la leçon en gratuit ne l'efface pas** — l'intention
+survit. Règle dans `AccessTier::effective()`, table de vérité dans
+`ContentTierControlTest`.
+
+Les modules n'ont pas de palier : un module suit sa leçon. Lui en donner un
+permettrait de vendre le module 7 d'une leçon gratuite, ce qui découperait un
+parcours pédagogique en péage.
+
+### Le contrôle du palier par l'administration
+
+```text
+PATCH /v1/admin/content/{lesson|exercise}/{id}/tier
+```
+
+Route DISTINCTE de `/status`, parce que publication et palier sont deux
+dimensions indépendantes : sans cela on ne pourrait plus vendre une leçon sans
+la republier, ni la retirer sans la rendre gratuite. Les quatre combinaisons
+ont un sens. Journalisé (`lesson.tier_changed`, `exercise.tier_changed`), et
+ne touche à aucune donnée d'apprentissage.
+
+### Le badge suit le contenu, le verrou suit l'élève
+
+`/content/availability` renvoie DEUX listes :
+
+```text
+closed.premium  ce qui est payant          (indépendant du lecteur)
+closed.locked   ce qui lui est fermé       (vide s'il a accès)
+```
+
+Une seule ne suffisait pas : `locked` se vide dès que l'élève a accès, si bien
+qu'une leçon payante qu'il peut ouvrir n'apparaissait plus nulle part comme
+payante. Le contenu vendu se déguisait en gratuit, et sa disparition à
+l'échéance serait devenue incompréhensible. Défaut trouvé au navigateur, pas
+aux tests.
+
+### Ce qui reste hors périmètre
+
+Stripe, encaissement, tunnel d'achat, webhooks de fournisseur, facturation,
+remboursements, page de tarifs marchande, accès livre, accès établissement.

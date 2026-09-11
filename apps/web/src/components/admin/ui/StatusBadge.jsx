@@ -23,6 +23,11 @@ const TONES = {
   disabled: 'bg-rose-50 text-rose-700 border-rose-200',
   expired: 'bg-rose-50 text-rose-700 border-rose-200',
   new: 'bg-blue-50 text-blue-700 border-blue-200',
+  // Le palier commercial. `premium` manquait : il retombait sur le gris du
+  // défaut, exactement la même pastille que « Gratuit » — deux états
+  // opposés devenus indiscernables d'un coup d'œil.
+  premium: 'bg-amber-100 text-amber-800 border-amber-300',
+  inherited: 'bg-slate-50 text-slate-500 border-slate-200',
   duplicate: 'bg-violet-50 text-violet-700 border-violet-200',
   critical: 'bg-rose-100 text-rose-800 border-rose-300',
   high: 'bg-rose-50 text-rose-700 border-rose-200',
@@ -44,6 +49,8 @@ export const STATUS_LABELS = {
   dismissed: 'Rejeté',
   duplicate: 'Doublon',
   free: 'Gratuit',
+  premium: 'Premium',
+  inherited: 'Hérité',
   expired: 'Expiré',
   cancelled: 'Annulé',
   pending: 'En attente',

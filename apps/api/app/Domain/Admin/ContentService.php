@@ -2,6 +2,7 @@
 
 namespace App\Domain\Admin;
 
+use App\Domain\Access\AccessTier;
 use App\Models\LearningPoint;
 use App\Models\Lesson;
 use App\Models\LessonModule;
@@ -162,7 +163,10 @@ class ContentService
     public function exercises(array $filters = []): LengthAwarePaginator
     {
         $query = PracticeExercise::query()
-            ->with(['lesson:id,code,title,chapter_id', 'lesson.chapter:id,code,title,grade_id', 'lesson.chapter.grade:id,code'])
+            // `tier` fait partie de la sélection : sans lui, le palier
+            // effectif d'un exercice se calculerait contre un null et
+            // afficherait « gratuit » sous une leçon payante.
+            ->with(['lesson:id,code,title,chapter_id,tier', 'lesson.chapter:id,code,title,grade_id', 'lesson.chapter.grade:id,code'])
             ->whereNull('practice_exercises.retired_at');
 
         if ($search = ($filters['search'] ?? null)) {
@@ -271,6 +275,69 @@ class ContentService
                 $model->id,
                 ['publication_status' => $before],
                 ['publication_status' => $status],
+            );
+        });
+
+        return ['model' => $model, 'changed' => true];
+    }
+
+    /**
+     * Changer le PALIER COMMERCIAL d'une leçon ou d'un exercice.
+     *
+     * Délibérément SÉPARÉ de changeStatus(), parce que publication et palier
+     * sont deux dimensions indépendantes : « publié » dit que le contenu a le
+     * droit d'être servi, « payant » dit à qui. Les quatre combinaisons ont un
+     * sens, et les mêler dans un seul point d'entrée ferait qu'on ne pourrait
+     * plus vendre une leçon sans la republier, ni la retirer sans la rendre
+     * gratuite.
+     *
+     * Les modules n'en ont pas : un module suit sa leçon. Lui donner un palier
+     * propre permettrait de vendre le module 7 d'une leçon gratuite, ce qui
+     * découperait un parcours pédagogique en péage — ce n'est pas le produit.
+     *
+     * Ne touche à AUCUNE donnée d'apprentissage : rendre une leçon payante
+     * n'efface la progression de personne (§AD).
+     */
+    public function changeTier(User $admin, string $type, int $id, ?string $tier): array
+    {
+        $model = match ($type) {
+            'lesson' => Lesson::find($id),
+            'exercise' => PracticeExercise::find($id),
+            default => throw new DomainException('Le palier ne s\'applique qu\'aux leçons et aux exercices.'),
+        };
+
+        if (! $model) {
+            throw new DomainException('Contenu introuvable.');
+        }
+
+        // `null` n'est accepté que pour un exercice, où il veut dire « hérite
+        // de la leçon ». Une leçon n'a rien dont hériter : son palier est la
+        // racine de la règle, il doit être explicite.
+        if ($tier === null) {
+            if ($type !== 'exercise') {
+                throw new DomainException('Une leçon doit porter un palier explicite.');
+            }
+        } elseif (! in_array($tier, AccessTier::TIERS, true)) {
+            throw new DomainException('Palier inconnu.');
+        }
+
+        $before = $model->tier;
+
+        if ($before === $tier) {
+            return ['model' => $model, 'changed' => false];
+        }
+
+        DB::transaction(function () use ($admin, $model, $tier, $type, $before) {
+            $model->tier = $tier;
+            $model->save();
+
+            $this->log->log(
+                $admin,
+                $type === 'lesson' ? ActivityLogger::TIER_LESSON : ActivityLogger::TIER_EXERCISE,
+                $type,
+                $model->id,
+                ['tier' => $before],
+                ['tier' => $tier],
             );
         });
 

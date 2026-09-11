@@ -52,7 +52,7 @@ class LessonFinalTestAttemptController extends Controller
         // pas accéder au contenu, et la lui cacher reviendrait à lui mentir
         // sur ce qu'il a déjà fait.
         try {
-            ContentAccess::assertLessonAvailable($lessonCode);
+            ContentAccess::assertLessonAvailable($lessonCode, $request->user());
         } catch (DomainException $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
         }

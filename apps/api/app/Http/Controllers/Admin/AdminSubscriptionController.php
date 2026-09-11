@@ -33,6 +33,14 @@ class AdminSubscriptionController extends Controller
                 'endsAt' => $s->ends_at,
                 'provider' => $s->provider,
                 'reference' => $s->external_reference,
+                // L'état du FOURNISSEUR, à côté du nôtre — jamais à sa place.
+                // C'est ce qui répond à « pourquoi l'écart ? » sans changer
+                // d'écran ni ouvrir un client SQL.
+                'providerStatus' => $s->provider_status,
+                'providerCustomerId' => $s->provider_customer_id,
+                'currentPeriodEnd' => $s->current_period_end,
+                'cancelAtPeriodEnd' => (bool) $s->cancel_at_period_end,
+                'providerSyncedAt' => $s->provider_synced_at,
             ]),
             'summary' => $this->subscriptions->summary(),
         ]);
@@ -53,6 +61,9 @@ class AdminSubscriptionController extends Controller
                 'status' => $p->status,
                 'provider' => $p->provider,
                 'reference' => $p->external_reference,
+                'invoiceId' => $p->provider_invoice_id,
+                // Un CODE, jamais un message de fournisseur.
+                'failureCode' => $p->failure_code,
                 'paidAt' => $p->paid_at,
                 'plan' => $p->subscription?->plan,
             ]),

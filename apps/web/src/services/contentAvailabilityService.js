@@ -21,7 +21,10 @@ export async function fetchClosedContent(token) {
     throw new ApiError(data?.message || 'Impossible de vérifier la disponibilité.', classifyStatus(status), status);
   }
 
-  return data.closed;
+  // `closed` ET `access` : le premier dit ce qui est retiré, le second à quoi
+  // l'élève a droit. Deux notions distinctes servies par un seul appel — voir
+  // ContentAvailabilityContext pour pourquoi elles ne sont pas fusionnées.
+  return { ...data.closed, access: data.access ?? null };
 }
 
 /**

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { BookOpen } from 'lucide-react';
 import AdminPage from '../../../components/admin/AdminPage';
 import DataTable from '../../../components/admin/ui/DataTable';
-import StatusBadge from '../../../components/admin/ui/StatusBadge';
 import { FilterBar, SearchInput, SelectFilter, Pagination } from '../../../components/admin/ui/FilterBar';
 import { EmptyState } from '../../../components/admin/ui/states';
 import PublicationControl from '../../../components/admin/PublicationControl';
+import TierControl from '../../../components/admin/TierControl';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchLessons } from '../../../services/admin/contentService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
@@ -38,10 +38,10 @@ export default function AdminLessons() {
   const { data, loading, error, reload, setData } = useAdminResource(loader, [loader]);
 
   /** Met à jour une ligne sur place, sans recharger toute la liste. */
-  const patchRow = (id, publicationStatus) => {
+  const patchRow = (id, patch) => {
     setData((current) => current && ({
       ...current,
-      data: current.data.map((row) => (row.id === id ? { ...row, publicationStatus } : row)),
+      data: current.data.map((row) => (row.id === id ? { ...row, ...patch } : row)),
     }));
   };
 
@@ -56,15 +56,34 @@ export default function AdminLessons() {
       render: (row) => (
         <Link to={`/admin/contenu/lecons/${encodeURIComponent(row.code)}`} className="block hover:underline">
           <span className="font-semibold text-slate-900">{row.title}</span>
+          {/* Le chapitre sous le titre plutôt qu'en colonne propre : c'est du
+              repère, pas une donnée qu'on trie ou compare, et la colonne
+              qu'il occupait (la plus large du tableau) poussait les deux
+              menus d'action hors de l'écran. Un contrôle qu'il faut deviner
+              en faisant défiler n'existe pas vraiment. */}
           <span className="block truncate font-mono-jetbrains text-xs text-slate-400">{row.code}</span>
+          <span className="block truncate font-inter text-xs text-slate-400">{row.chapterTitle ?? '—'}</span>
         </Link>
       ),
     },
     { key: 'grade', label: 'Classe', sortKey: 'code', render: (row) => row.grade ?? '—' },
-    { key: 'chapter', label: 'Chapitre', cellClassName: 'min-w-[160px]', render: (row) => row.chapterTitle ?? '—' },
-    { key: 'modulesCount', label: 'Modules', sortKey: 'modules_count', render: (row) => row.modulesCount },
-    { key: 'exercisesCount', label: 'Exercices', sortKey: 'exercises_count', render: (row) => row.exercisesCount },
-    { key: 'studentsCount', label: 'Élèves', render: (row) => row.studentsCount },
+    // Modules / exercices / élèves : trois compteurs étroits, regroupés en
+    // une colonne. Séparés, ils coûtaient trois en-têtes larges pour trois
+    // chiffres à un caractère.
+    {
+      key: 'counts',
+      label: 'Mod · Ex · Él',
+      // `whitespace-nowrap` ET une largeur minimale : sans elles, l'en-tête
+      // se casse sur trois lignes, la colonne se réduit à la largeur d'un
+      // caractère et chaque rangée triple de hauteur.
+      className: 'whitespace-nowrap',
+      cellClassName: 'whitespace-nowrap min-w-[110px]',
+      render: (row) => (
+        <span className="font-mono-jetbrains text-xs text-slate-500" title="Modules · Exercices · Élèves">
+          {row.modulesCount} · {row.exercisesCount} · {row.studentsCount}
+        </span>
+      ),
+    },
     {
       key: 'openReportsCount',
       label: 'Signalements',
@@ -73,7 +92,20 @@ export default function AdminLessons() {
         ? <span className="font-semibold text-amber-700">{row.openReportsCount}</span>
         : <span className="text-slate-400">0</span>),
     },
-    { key: 'tier', label: 'Accès', render: (row) => <StatusBadge status={row.tier} label={row.tier === 'free' ? 'Gratuit' : 'Premium'} /> },
+    {
+      key: 'tier',
+      label: 'Accès',
+      cellClassName: 'min-w-[190px]',
+      render: (row) => (
+        <TierControl
+          type="lesson"
+          id={row.id}
+          tier={row.tier}
+          onChanged={(next) => patchRow(row.id, { tier: next })}
+          compact
+        />
+      ),
+    },
     {
       key: 'publicationStatus',
       label: 'Publication',
@@ -83,7 +115,7 @@ export default function AdminLessons() {
           type="lesson"
           id={row.id}
           status={row.publicationStatus}
-          onChanged={(next) => patchRow(row.id, next)}
+          onChanged={(next) => patchRow(row.id, { publicationStatus: next })}
           compact
         />
       ),

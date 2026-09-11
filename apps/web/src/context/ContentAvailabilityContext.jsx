@@ -19,12 +19,16 @@ import { fetchClosedContent } from '../services/contentAvailabilityService';
 export const ContentAvailabilityContext = createContext({
   isLessonClosed: () => false,
   isModuleClosed: () => false,
+  isLessonLocked: () => false,
+  isLessonPremium: () => false,
+  access: null,
   loaded: false,
 });
 
 export function ContentAvailabilityProvider({ children }) {
   const { token } = useContext(AuthContext);
-  const [closed, setClosed] = useState({ lessons: [], modules: {} });
+  const [closed, setClosed] = useState({ lessons: [], modules: {}, locked: [], premium: [] });
+  const [access, setAccess] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -34,7 +38,8 @@ export function ContentAvailabilityProvider({ children }) {
       // Visiteur anonyme : rien à masquer côté client. Le serveur refuse
       // déjà toute écriture, et le contenu non publié n'est de toute façon
       // pas atteignable en écriture sans compte.
-      setClosed({ lessons: [], modules: {} });
+      setClosed({ lessons: [], modules: {}, locked: [], premium: [] });
+      setAccess(null);
       setLoaded(false);
       return () => { cancelled = true; };
     }
@@ -42,7 +47,13 @@ export function ContentAvailabilityProvider({ children }) {
     fetchClosedContent(token)
       .then((result) => {
         if (cancelled) return;
-        setClosed({ lessons: result.lessons ?? [], modules: result.modules ?? {} });
+        setClosed({
+          lessons: result.lessons ?? [],
+          modules: result.modules ?? {},
+          locked: result.locked ?? [],
+          premium: result.premium ?? [],
+        });
+        setAccess(result.access ?? null);
         setLoaded(true);
       })
       .catch(() => {
@@ -55,17 +66,40 @@ export function ContentAvailabilityProvider({ children }) {
 
   const value = useMemo(() => {
     const lessonSet = new Set(closed.lessons);
+    const lockedSet = new Set(closed.locked ?? []);
+    const premiumSet = new Set(closed.premium ?? []);
 
     return {
       loaded,
+      access,
       isLessonClosed: (lessonCode) => lessonSet.has(lessonCode),
+      /**
+       * Publiée, mais hors du droit d'accès de cet élève.
+       *
+       * Distinct de `isLessonClosed` parce que les deux appellent des
+       * interfaces différentes : une leçon fermée n'existe pas pour l'élève,
+       * une leçon verrouillée existe et lui dit ce qui lui manque. Les
+       * confondre afficherait « indisponible » là où il fallait expliquer
+       * qu'un accès premium est requis.
+       */
+      isLessonLocked: (lessonCode) => lockedSet.has(lessonCode),
+      /**
+       * Le contenu est-il PAYANT ? Question distincte de « l'élève y a-t-il
+       * accès » : un abonné doit continuer de voir le badge sur ce qu'il a
+       * payé, sinon le contenu vendu se déguise en gratuit et sa disparition
+       * à l'échéance devient incompréhensible.
+       *
+       * Sert aussi de source à jour du palier : le catalogue embarqué peut
+       * être en retard sur la base jusqu'au prochain déploiement.
+       */
+      isLessonPremium: (lessonCode) => premiumSet.has(lessonCode),
       isModuleClosed: (lessonCode, moduleNumber) => {
         const numbers = closed.modules?.[lessonCode];
         if (!numbers) return false;
         return numbers.includes(Number(moduleNumber));
       },
     };
-  }, [closed, loaded]);
+  }, [closed, access, loaded]);
 
   return (
     <ContentAvailabilityContext.Provider value={value}>

@@ -37,7 +37,7 @@ class PracticeSessionController extends Controller
 
         try {
             PracticeCapability::assertActive($lessonCode);
-            ContentAccess::assertLessonAvailable($lessonCode);
+            ContentAccess::assertLessonAvailable($lessonCode, $request->user());
         } catch (DomainException $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
         }

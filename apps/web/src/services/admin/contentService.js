@@ -36,3 +36,24 @@ export function changeContentStatus(token, type, id, status) {
     'Impossible de changer l’état de publication.',
   );
 }
+
+/**
+ * Changer le PALIER commercial — gratuit / premium.
+ *
+ * Route distincte de la publication, parce que les deux dimensions sont
+ * indépendantes : on doit pouvoir vendre une leçon sans la republier, et la
+ * retirer sans la rendre gratuite.
+ *
+ * `tier: null` n'est valable que pour un exercice, où il signifie « hérite du
+ * palier de sa leçon ».
+ *
+ * @param {'lesson'|'exercise'} type
+ * @param {'free'|'premium'|null} tier
+ */
+export function changeContentTier(token, type, id, tier) {
+  return call(
+    `/admin/content/${encodeURIComponent(type)}/${encodeURIComponent(id)}/tier`,
+    send('PATCH', token, { tier }),
+    'Impossible de changer le palier d’accès.',
+  );
+}

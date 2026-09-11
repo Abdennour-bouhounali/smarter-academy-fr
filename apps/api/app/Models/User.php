@@ -116,6 +116,21 @@ class User extends Authenticatable
     }
 
     /**
+     * Les droits d'accès — distincts des abonnements.
+     *
+     * subscriptions retrace ce qui a été VENDU (et le sera un jour par un
+     * fournisseur de paiement) ; entitlements dit ce qui est OUVERT
+     * aujourd'hui. Les deux se ressemblent assez pour qu'on soit tenté de les
+     * fusionner, et diffèrent sur le cas qui compte : une dérogation
+     * d'administration ouvre l'accès sans qu'aucun abonnement n'existe, et un
+     * remboursement ferme l'accès sans effacer l'abonnement.
+     */
+    public function entitlements(): HasMany
+    {
+        return $this->hasMany(Entitlement::class);
+    }
+
+    /**
      * L'abonnement qui fait foi : le plus récemment commencé. Il n'y a pas
      * de contrainte d'unicité en base — un renouvellement crée une ligne —
      * donc « l'abonnement de l'élève » se choisit, il ne se suppose pas.

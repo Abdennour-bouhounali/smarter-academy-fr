@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Access\AccessDecision;
+use App\Domain\Access\AccessTier;
 use App\Domain\Access\ContentAccess;
+use App\Domain\Access\EntitlementService;
 use App\Domain\Practice\ExerciseRepository;
 use App\Domain\Practice\PracticeCapability;
 use App\Models\Lesson;
 use App\Models\PracticeExercise;
+use DomainException;
 use Illuminate\Http\Request;
 
 /**
@@ -24,17 +28,29 @@ use Illuminate\Http\Request;
  */
 class ContentAvailabilityController extends Controller
 {
-    public function __construct(private ExerciseRepository $exercises) {}
+    public function __construct(
+        private ExerciseRepository $exercises,
+        private EntitlementService $entitlements,
+    ) {}
 
     /**
      * L'inventaire des FERMETURES. Court par construction : il n'y a
      * normalement qu'une poignée de contenus non publiés.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $user = $request->user();
+
         return response()->json([
             'success' => true,
-            'closed' => ContentAccess::closedInventory(),
+            // `closed.lessons` = non publié (n'existe pas pour l'élève).
+            // `closed.locked` = publié mais hors de son droit d'accès.
+            // Deux listes et non une : voir ContentAccess::lockedLessonCodes.
+            'closed' => ContentAccess::closedInventory($user),
+            // L'état d'accès, pour l'affichage UNIQUEMENT. Le serveur reste
+            // l'autorité : un client qui mentirait sur ce bloc ne gagnerait
+            // rien, chaque écriture repasse par ContentAccess (spec §12).
+            'access' => $this->entitlements->summarize($user),
         ]);
     }
 
@@ -68,10 +84,39 @@ class ContentAvailabilityController extends Controller
             ]);
         }
 
+        // Verrouillée par le palier : même silence que pour une leçon fermée.
+        // Le motif diffère (l'élève peut y remédier, donc on le lui dit), mais
+        // l'inventaire reste vide — le titre d'un exercice et son nombre de
+        // questions font partie du contenu payant (spec §46).
+        try {
+            ContentAccess::assertLessonAvailable($lessonCode, $request->user());
+        } catch (DomainException) {
+            return response()->json([
+                'success' => true,
+                'available' => false,
+                'reason' => AccessDecision::PREMIUM_REQUIRED,
+                'exercises' => [],
+                'countsByLevel' => [],
+            ]);
+        }
+
         $registered = PracticeExercise::whereHas('lesson', fn ($q) => $q->where('code', $lessonCode))
             ->whereNull('retired_at')
             ->get()
             ->keyBy('exercise_code');
+
+        // Le palier de la leçon, pour que les exercices qui n'en déclarent
+        // pas en héritent. Lu UNE fois, pas une fois par exercice.
+        $lessonTier = Lesson::where('code', $lessonCode)->value('tier');
+
+        // Le droit d'accès, évalué UNE seule fois pour toute la liste — et
+        // seulement si au moins un exercice est payant. Le calculer par
+        // exercice ferait une quinzaine de requêtes là où une suffit, à
+        // chaque ouverture du Hub.
+        $anyPremium = $registered->contains(
+            fn (PracticeExercise $e) => AccessTier::isPremium(AccessTier::effective($e->tier, $lessonTier))
+        );
+        $entitled = ! $anyPremium || $this->entitlements->satisfies($request->user(), AccessTier::PREMIUM);
 
         $exercises = [];
         $countsByLevel = [];
@@ -87,13 +132,29 @@ class ContentAvailabilityController extends Controller
                     continue;
                 }
 
+                $tier = AccessTier::effective($row?->tier, $lessonTier);
+                $locked = AccessTier::isPremium($tier) && ! $entitled;
+
+                // Un exercice payant verrouillé RESTE listé, avec son titre —
+                // c'est ce qui permet à l'élève de voir ce qu'il obtiendrait
+                // (spec §G). Mais son nombre de questions est tu : c'est une
+                // information sur le contenu, pas sur l'offre.
+                //
+                // Il ne compte pas dans countsByLevel non plus : ce compteur
+                // pilote la sélection d'une séance, et y inclure un exercice
+                // que le serveur refusera d'ouvrir proposerait un niveau vide.
                 $exercises[] = [
                     'exerciseCode' => $code,
                     'level' => (int) $level,
                     'title' => $row?->title,
-                    'questionCount' => $row?->question_count,
+                    'questionCount' => $locked ? null : $row?->question_count,
+                    'tier' => $tier,
+                    'locked' => $locked,
                 ];
-                $countsByLevel[(int) $level] = ($countsByLevel[(int) $level] ?? 0) + 1;
+
+                if (! $locked) {
+                    $countsByLevel[(int) $level] = ($countsByLevel[(int) $level] ?? 0) + 1;
+                }
             }
         }
 

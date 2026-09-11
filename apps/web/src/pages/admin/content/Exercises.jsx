@@ -6,6 +6,7 @@ import DataTable from '../../../components/admin/ui/DataTable';
 import { FilterBar, SearchInput, SelectFilter, Pagination } from '../../../components/admin/ui/FilterBar';
 import { EmptyState } from '../../../components/admin/ui/states';
 import PublicationControl from '../../../components/admin/PublicationControl';
+import TierControl from '../../../components/admin/TierControl';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchExercises } from '../../../services/admin/contentService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
@@ -29,10 +30,10 @@ export default function AdminExercises() {
   );
   const { data, loading, error, reload, setData } = useAdminResource(loader, [loader]);
 
-  const patchRow = (id, publicationStatus) => {
+  const patchRow = (id, changes) => {
     setData((current) => current && ({
       ...current,
-      data: current.data.map((row) => (row.id === id ? { ...row, publicationStatus } : row)),
+      data: current.data.map((row) => (row.id === id ? { ...row, ...changes } : row)),
     }));
   };
 
@@ -103,6 +104,21 @@ export default function AdminExercises() {
             { key: 'level', label: 'Niveau', render: (row) => row.level },
             { key: 'questionCount', label: 'Questions', render: (row) => row.questionCount ?? '—' },
             {
+              key: 'tier',
+              label: 'Accès',
+              cellClassName: 'min-w-[210px]',
+              render: (row) => (
+                <TierControl
+                  type="exercise"
+                  id={row.id}
+                  tier={row.tier}
+                  lessonTier={row.lessonTier}
+                  onChanged={(next) => patchRow(row.id, { tier: next })}
+                  compact
+                />
+              ),
+            },
+            {
               key: 'publicationStatus',
               label: 'Publication',
               render: (row) => (
@@ -110,7 +126,7 @@ export default function AdminExercises() {
                   type="exercise"
                   id={row.id}
                   status={row.publicationStatus}
-                  onChanged={(next) => patchRow(row.id, next)}
+                  onChanged={(next) => patchRow(row.id, { publicationStatus: next })}
                   compact
                 />
               ),

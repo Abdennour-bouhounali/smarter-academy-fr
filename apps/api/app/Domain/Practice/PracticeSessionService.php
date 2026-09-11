@@ -25,10 +25,13 @@ class PracticeSessionService
     public function startOrResume(User $user, string $lessonCode, string $sessionId, int $level): array
     {
         PracticeCapability::assertActive($lessonCode);
-        // L'état de publication décidé par l'administration s'applique ici,
-        // avant qu'une séance n'existe : tout le reste du moteur exige une
-        // séance, donc en hérite (même raisonnement que PracticeCapability).
-        ContentAccess::assertLessonAvailable($lessonCode);
+        // Le droit d'accès ET l'état de publication s'appliquent ici, avant
+        // qu'une séance n'existe : tout le reste du moteur exige une séance,
+        // donc en hérite (même raisonnement que PracticeCapability). C'est ce
+        // qui empêche d'ouvrir une séance sur une leçon payante sans droit —
+        // et donc de répondre à des questions, d'accumuler des preuves et de
+        // faire bouger une maîtrise sans y avoir accès.
+        ContentAccess::assertLessonAvailable($lessonCode, $user);
 
         $existing = PracticeSession::where('session_id', $sessionId)->first();
         if ($existing) {
@@ -100,12 +103,17 @@ class PracticeSessionService
             throw new DomainException('Question inconnue.');
         }
 
-        // Un exercice retiré par l'administration ne s'ouvre plus, même dans
-        // une séance déjà commencée. Le contrôle est ici parce que c'est le
-        // point par lequel passe CHAQUE question ouverte : le contenu des
-        // exercices est servi au client depuis les fichiers du bundle, donc
-        // c'est le premier endroit où le serveur a son mot à dire.
-        if (! ContentAccess::isExerciseAvailable($lessonCode, $exerciseId)) {
+        // Un exercice retiré par l'administration — ou payant sans droit
+        // d'accès — ne s'ouvre plus, même dans une séance déjà commencée. Le
+        // contrôle est ici parce que c'est le point par lequel passe CHAQUE
+        // question ouverte : le contenu des exercices est servi au client
+        // depuis les fichiers du bundle, donc c'est le premier endroit où le
+        // serveur a son mot à dire.
+        //
+        // « Même dans une séance déjà commencée » est la partie qui compte :
+        // une séance ouverte alors que l'élève était encore abonné ne doit
+        // pas rester une porte ouverte après l'expiration.
+        if (! ContentAccess::isExerciseAvailable($lessonCode, $exerciseId, $user)) {
             throw new DomainException('Cet exercice n\'est plus disponible.');
         }
 

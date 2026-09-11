@@ -27,11 +27,27 @@ const LessonCard = forwardRef(function LessonCard({ lesson, onClick }, ref) {
   // retirée par l'administration retombe donc dans l'état « bientôt
   // disponible » déjà géré plus bas — l'élève voit un message qu'il connaît,
   // pas une carte cliquable qui le mènera à un refus.
-  const { isLessonClosed } = useContentAvailability();
+  const { isLessonClosed, isLessonLocked, isLessonPremium, access } = useContentAvailability();
   const isAvailable = lesson.status === 'available' && !isLessonClosed(lesson.id);
-  // No subscription/entitlement system exists yet — every student is
-  // `isPremiumUser: false` until one is built (see lessonAccess.js).
-  const isUnlocked = isLessonUnlocked(lesson, { isPremiumUser: false });
+  // Le droit d'accès vient du SERVEUR, jamais d'un état local : la carte ne
+  // fait qu'afficher une décision déjà prise (GET /content/availability).
+  //
+  // Deux sources de palier, et c'est VOULU : le catalogue embarqué
+  // (`lesson.tier`) et la liste `locked` du serveur. Le bundle peut être en
+  // retard sur la base — une leçon rendue payante côté serveur reste `free`
+  // dans le bundle jusqu'au prochain déploiement — et c'est justement le cas
+  // où la carte mentirait à l'élève en affichant « Commencer » sur une leçon
+  // qui refusera de s'ouvrir. Le serveur tranche donc en dernier.
+  //
+  // Tant que la réponse n'est pas arrivée, `locked` est vide et `access` nul :
+  // la carte retombe sur le palier du bundle, politique d'ouverture identique
+  // au reste du contexte.
+  const hasPremium = access?.premiumAccess === true;
+  // Le contenu est-il payant ? Question distincte de « l'élève y a-t-il
+  // accès ». Le serveur tranche en dernier, comme pour le verrou.
+  const isPremiumLesson = lesson.tier === 'premium' || isLessonPremium(lesson.id);
+  const isUnlocked = isLessonUnlocked(lesson, { isPremiumUser: hasPremium })
+    && !isLessonLocked(lesson.id);
   const { progressPercent } = isAvailable
     ? getLessonProgress(lesson.id, getTotalModules(lesson.id))
     : { progressPercent: 0 };
@@ -74,7 +90,18 @@ const LessonCard = forwardRef(function LessonCard({ lesson, onClick }, ref) {
           <div>
             <div className="flex items-start justify-between gap-3 mb-4">
               <span className="text-3xl group-hover:scale-110 transition-transform origin-bottom-left">{lesson.icon}</span>
-              {progressPercent > 0 ? (
+              {/* Le palier reste affiché quand l'élève A l'accès : « c'est du
+                  contenu premium, et mon compte y a droit » est une
+                  information utile, et masquer le badge dès que l'accès est
+                  ouvert ferait passer du payant pour du gratuit le jour où
+                  l'abonnement s'arrête. La progression, quand elle existe,
+                  prend la place — le badge passe alors sous le titre. */}
+              {isPremiumLesson && progressPercent === 0 ? (
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 font-mono-jetbrains text-[10px] font-bold" title="Contenu premium — votre compte y a accès">
+                  <Crown size={10} />
+                  Premium
+                </span>
+              ) : progressPercent > 0 ? (
                 <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono-jetbrains text-[10px] font-bold ${progressPercent >= 100 ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}`}>
                   {progressPercent >= 100 ? '✓ ' : ''}{progressPercent}%
                 </span>

@@ -28,6 +28,31 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    /*
+     * Le fournisseur de paiement.
+     *
+     * Les secrets viennent de l'ENVIRONNEMENT, et n'en sortent jamais : ni en
+     * base, ni dans une réponse d'API, ni dans un journal. Absents, la
+     * vérification de signature échoue et TOUS les webhooks sont refusés —
+     * c'est le sens sûr : une configuration manquante doit fermer, pas ouvrir.
+     */
+    'stripe' => [
+        /*
+         * La clé d'API.
+         *
+         * `STRIPE_SECRET` est le nom historique du dépôt et reste celui que la
+         * configuration lit en premier. `STRIPE_SECRET_KEY` — le nom employé
+         * par la documentation de Stripe — est accepté en REPLI, parce que
+         * c'est celui qu'un environnement déjà déployé peut porter. Aucun nom
+         * n'est renommé : les deux sont lus, un seul suffit.
+         */
+        'secret' => env('STRIPE_SECRET', env('STRIPE_SECRET_KEY')),
+        'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
+        // Tolérance d'horodatage d'une signature, en secondes. Borne le rejeu
+        // d'un corps signé intercepté.
+        'webhook_tolerance' => (int) env('STRIPE_WEBHOOK_TOLERANCE', 300),
+    ],
+
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),

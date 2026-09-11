@@ -11,7 +11,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Payment extends Model
 {
-    public const STATUSES = ['pending', 'succeeded', 'failed', 'refunded'];
+    public const STATUS_PENDING = 'pending';
+
+    public const STATUS_SUCCEEDED = 'succeeded';
+
+    public const STATUS_FAILED = 'failed';
+
+    public const STATUS_REFUNDED = 'refunded';
+
+    public const STATUSES = [
+        self::STATUS_PENDING,
+        self::STATUS_SUCCEEDED,
+        self::STATUS_FAILED,
+        self::STATUS_REFUNDED,
+    ];
 
     protected $fillable = [
         'user_id',
@@ -21,6 +34,8 @@ class Payment extends Model
         'status',
         'provider',
         'external_reference',
+        'provider_invoice_id',
+        'failure_code',
         'paid_at',
     ];
 

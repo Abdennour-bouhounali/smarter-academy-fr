@@ -1,6 +1,18 @@
 <?php
 
+use App\Http\Controllers\AccessController;
+use App\Http\Controllers\Admin\AdminAccountController;
+use App\Http\Controllers\Admin\AdminActivityLogController;
+use App\Http\Controllers\Admin\AdminContentController;
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminEntitlementController;
+use App\Http\Controllers\Admin\AdminHealthController;
+use App\Http\Controllers\Admin\AdminProviderEventController;
+use App\Http\Controllers\Admin\AdminReportController;
+use App\Http\Controllers\Admin\AdminStudentController;
+use App\Http\Controllers\Admin\AdminSubscriptionController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BillingCheckoutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentAvailabilityController;
 use App\Http\Controllers\DiagnosticController;
@@ -11,20 +23,35 @@ use App\Http\Controllers\LessonProgressController;
 use App\Http\Controllers\PracticeAnswerController;
 use App\Http\Controllers\PracticeNotebookController;
 use App\Http\Controllers\PracticeSessionController;
+use App\Http\Controllers\ProviderWebhookController;
 use App\Http\Controllers\StudentReportController;
-use App\Http\Controllers\Admin\AdminAccountController;
-use App\Http\Controllers\Admin\AdminActivityLogController;
-use App\Http\Controllers\Admin\AdminContentController;
-use App\Http\Controllers\Admin\AdminDashboardController;
-use App\Http\Controllers\Admin\AdminHealthController;
-use App\Http\Controllers\Admin\AdminReportController;
-use App\Http\Controllers\Admin\AdminStudentController;
-use App\Http\Controllers\Admin\AdminSubscriptionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     // Public routes
     Route::post('/contact', [ContactController::class, 'store']);
+
+    // ── Webhooks de fournisseur de paiement ─────────────────────────────
+    // La SEULE route publique en écriture, et la seule authentifiée
+    // autrement que par un jeton : un fournisseur de paiement n'a ni
+    // session, ni compte, ni jeton CSRF. Sa signature est son identité.
+    //
+    // Les intergiciels de session sont retirés EXPLICITEMENT : `statefulApi()`
+    // (bootstrap/app.php) les applique à tout /api, et une livraison serait
+    // sinon rejetée avant d'atteindre la vérification de signature.
+    //
+    // La limite de débit protège la table d'évènements d'un flot de corps
+    // non signés — qui ne laissent aucune trace, mais coûtent un calcul de
+    // signature chacun.
+    Route::post('/webhooks/{provider}', [ProviderWebhookController::class, 'handle'])
+        ->withoutMiddleware([
+            \Laravel\Sanctum\Http\Middleware\AuthenticateSession::class,
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
+        ])
+        ->middleware('throttle:120,1')
+        ->where('provider', '[a-z_]+');
 
     Route::middleware('throttle:6,1')->group(function () {
         Route::post('/auth/register', [AuthController::class, 'register']);
@@ -82,6 +109,22 @@ Route::prefix('v1')->group(function () {
         Route::get('/content/availability', [ContentAvailabilityController::class, 'index']);
         Route::get('/lessons/{lessonCode}/exercises', [ContentAvailabilityController::class, 'exercises']);
 
+        // « À quoi ai-je droit ? » — lecture seule. Aucun point d'entrée ne
+        // permet à un élève de modifier ses droits d'accès.
+        Route::get('/me/access', [AccessController::class, 'show']);
+
+        // ── Entrée en paiement ───────────────────────────────────────────
+        // N'accorde AUCUN accès : rend une URL vers la page de paiement du
+        // fournisseur. L'accès s'ouvrira au webhook signé, pas ici.
+        //
+        // Le client n'envoie qu'une clé d'offre ; le tarif, le montant, la
+        // devise et l'identité de l'élève viennent tous du serveur.
+        Route::get('/billing/plans', [BillingCheckoutController::class, 'plans']);
+        // Limité en débit : ouvrir une session appelle le fournisseur, donc
+        // c'est le seul point d'entrée élève qui coûte un appel sortant.
+        Route::post('/billing/checkout', [BillingCheckoutController::class, 'start'])
+            ->middleware('throttle:10,1');
+
         Route::get('/students/me/learning-profile', [LearningProfileController::class, 'show']);
         Route::get('/students/me/lesson-progress', [LessonProgressController::class, 'index']);
     });
@@ -109,6 +152,12 @@ Route::prefix('v1')->group(function () {
             Route::patch('/content/{type}/{id}/status', [AdminContentController::class, 'changeStatus'])
                 ->whereIn('type', ['lesson', 'module', 'exercise'])
                 ->whereNumber('id');
+            // Le PALIER commercial, sur une route distincte de la
+            // publication : deux dimensions indépendantes. Pas de module —
+            // un module suit le palier de sa leçon.
+            Route::patch('/content/{type}/{id}/tier', [AdminContentController::class, 'changeTier'])
+                ->whereIn('type', ['lesson', 'exercise'])
+                ->whereNumber('id');
 
             Route::get('/reports', [AdminReportController::class, 'index']);
             Route::get('/reports/clusters', [AdminReportController::class, 'clusters']);
@@ -120,8 +169,26 @@ Route::prefix('v1')->group(function () {
             Route::get('/students/{id}', [AdminStudentController::class, 'show'])->whereNumber('id');
             Route::patch('/students/{id}/status', [AdminStudentController::class, 'changeStatus'])->whereNumber('id');
 
+            // Droits d'accès : consulter, accorder une dérogation, la retirer.
+            // Strictement admin_override — un abonnement ne se crée pas à la
+            // main (voir EntitlementAdminService).
+            Route::get('/students/{id}/entitlements', [AdminEntitlementController::class, 'show'])->whereNumber('id');
+            Route::post('/students/{id}/entitlements/override', [AdminEntitlementController::class, 'grant'])->whereNumber('id');
+            Route::delete('/students/{id}/entitlements/override', [AdminEntitlementController::class, 'revoke'])->whereNumber('id');
+            // Réconcilier abonnements → droits. Ni encaissement, ni création
+            // d'abonnement : sans abonnement, cette route ne produit rien.
+            Route::post('/students/{id}/entitlements/sync', [AdminEntitlementController::class, 'syncSubscriptions'])->whereNumber('id');
+
             Route::get('/subscriptions', [AdminSubscriptionController::class, 'index']);
             Route::get('/payments', [AdminSubscriptionController::class, 'payments']);
+
+            // Les évènements de fournisseur : le journal qui répond à
+            // « l'élève dit avoir payé, que s'est-il passé ? ».
+            // En lecture, plus un seul geste — rejouer, qui repasse par la
+            // chaîne normale et ne fabrique aucun abonnement.
+            Route::get('/provider-events', [AdminProviderEventController::class, 'index']);
+            Route::get('/provider-events/{id}', [AdminProviderEventController::class, 'show'])->whereNumber('id');
+            Route::post('/provider-events/{id}/replay', [AdminProviderEventController::class, 'replay'])->whereNumber('id');
 
             Route::get('/account', [AdminAccountController::class, 'show']);
             Route::patch('/account/profile', [AdminAccountController::class, 'updateProfile']);

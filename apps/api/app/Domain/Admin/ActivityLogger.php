@@ -31,6 +31,24 @@ class ActivityLogger
 
     public const ADMIN_PASSWORD_CHANGED = 'admin.password_changed';
 
+    /** Palier commercial changé — distinct de la publication. */
+    public const TIER_LESSON = 'lesson.tier_changed';
+
+    public const TIER_EXERCISE = 'exercise.tier_changed';
+
+    /** Dérogation d'accès accordée / retirée. Voir EntitlementAdminService. */
+    public const ENTITLEMENT_GRANTED = 'entitlement.granted';
+
+    public const ENTITLEMENT_REVOKED = 'entitlement.revoked';
+
+    /**
+     * Le rejeu d'un évènement de fournisseur par un administrateur.
+     *
+     * Tracé parce qu'il peut ouvrir ou fermer un accès : tout geste humain qui
+     * touche à l'accès doit laisser le nom de qui l'a fait.
+     */
+    public const PROVIDER_EVENT_REPLAYED = 'provider_event.replayed';
+
     /**
      * Clés dont la valeur n'est jamais journalisée, quelle que soit la façon
      * dont l'appelant les nomme. Défense en profondeur : l'appelant est déjà

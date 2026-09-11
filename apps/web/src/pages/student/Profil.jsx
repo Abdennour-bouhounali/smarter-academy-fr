@@ -4,12 +4,30 @@ import { motion } from 'framer-motion';
 import { UserCircle, Mail, GraduationCap, Sparkles, LogOut, Crown, ChevronDown } from 'lucide-react';
 import { getAllGrades } from '@smarter-academy/core';
 import { AuthContext } from '../../context/AuthContext';
+import { useContentAvailability } from '../../context/ContentAvailabilityContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { getDisplayName, getInitials } from '../../utils/userDisplay';
+
+/**
+ * Une date d'échéance, en français et sans heure : l'élève a besoin du jour,
+ * pas de la minute.
+ */
+function formatDate(iso) {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return '';
+  return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
 
 export default function Profil() {
   useDocumentMeta('Mon profil', 'Gère ta classe et ton compte Smarter Academy.');
   const { user, updateGrade, logout } = useContext(AuthContext);
+  // L'état d'accès vient du SERVEUR (GET /content/availability), jamais d'un
+  // état local : cette carte AFFICHE une décision déjà prise, elle ne la prend
+  // pas. Tant que la réponse n'est pas arrivée, `access` est nul et la carte
+  // retombe sur « compte gratuit » — la même politique d'ouverture que le
+  // reste du contexte, et le pire qu'elle produise est une invitation à
+  // s'abonner montrée une seconde de trop à un abonné.
+  const { access } = useContentAvailability();
   const navigate = useNavigate();
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -37,6 +55,44 @@ export default function Profil() {
     await logout();
     navigate('/');
   };
+
+  // Ce que dit la carte de plan, dérivé de l'état d'accès du serveur.
+  //
+  // Les trois états ne se confondent pas : un accès offert par
+  // l'administration n'est PAS un abonnement, et l'annoncer comme tel ferait
+  // attendre à l'élève un renouvellement qui n'arrivera jamais. Rien n'est
+  // dit de l'interne au-delà de ça — ni référence, ni motif, ni qui l'a
+  // accordé.
+  const plan = (() => {
+    if (access?.subscriptionActive) {
+      return {
+        premium: true,
+        title: 'Abonnement actif',
+        detail: access.expiresAt
+          ? `Accès à tout le programme jusqu'au ${formatDate(access.expiresAt)}`
+          : 'Accès à tout le programme',
+        iconClass: 'bg-amber-100 text-amber-600',
+      };
+    }
+
+    if (access?.premiumAccess) {
+      return {
+        premium: true,
+        title: 'Accès offert',
+        detail: access.expiresAt
+          ? `Accès à tout le programme jusqu'au ${formatDate(access.expiresAt)}`
+          : 'Accès à tout le programme',
+        iconClass: 'bg-indigo-100 text-indigo-600',
+      };
+    }
+
+    return {
+      premium: false,
+      title: 'Compte gratuit',
+      detail: "Accès aux leçons gratuites du programme",
+      iconClass: 'bg-slate-100 text-slate-500',
+    };
+  })();
 
   const initials = getInitials(user);
 
@@ -94,18 +150,21 @@ export default function Profil() {
       {/* Plan card */}
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="glass-card p-6 sm:p-7 mb-5 flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center flex-shrink-0">
-            <Sparkles size={17} />
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${plan.iconClass}`}>
+            {plan.premium ? <Crown size={17} /> : <Sparkles size={17} />}
           </div>
           <div>
-            <p className="font-space font-bold text-slate-800 text-sm">Compte gratuit</p>
-            <p className="font-inter text-slate-500 text-xs mt-0.5">Accès à l'expérience 6e sélectionnée</p>
+            <p className="font-space font-bold text-slate-800 text-sm">{plan.title}</p>
+            <p className="font-inter text-slate-500 text-xs mt-0.5">{plan.detail}</p>
           </div>
         </div>
-        <Link to="/tarifs" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-space font-bold text-xs text-white transition-all hover:-translate-y-0.5" style={{ background: 'linear-gradient(135deg, #F59E0B, #F97316)' }}>
-          <Crown size={14} />
-          Passer Premium
-        </Link>
+        {/* Un abonné ne se voit plus proposer ce qu'il possède déjà. */}
+        {!plan.premium && (
+          <Link to="/tarifs" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-space font-bold text-xs text-white transition-all hover:-translate-y-0.5" style={{ background: 'linear-gradient(135deg, #F59E0B, #F97316)' }}>
+            <Crown size={14} />
+            Passer Premium
+          </Link>
+        )}
       </motion.div>
 
       {/* Logout */}

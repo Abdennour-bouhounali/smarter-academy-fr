@@ -83,7 +83,16 @@ class CurriculumImportTest extends TestCase
         ]);
     }
 
-    public function test_missing_catalogue_fields_fall_back_to_null_duration_and_premium(): void
+    /**
+     * Un palier absent du catalogue donne une leçon GRATUITE.
+     *
+     * Ce test affirmait l'inverse tant que le palier ne bloquait rien : la
+     * valeur du défaut n'avait alors aucune conséquence. Depuis que
+     * EntitlementService le lit, un défaut « premium » fermerait au premier
+     * oubli une leçon aux élèves — et l'oubli ne se verrait qu'en production.
+     * Le contenu payant se DÉCLARE ; il ne s'obtient pas par distraction.
+     */
+    public function test_missing_catalogue_fields_fall_back_to_null_duration_and_free_tier(): void
     {
         $export = $this->sampleExport();
         unset(
@@ -95,7 +104,7 @@ class CurriculumImportTest extends TestCase
         $this->assertDatabaseHas('lessons', [
             'code' => 'resolution-problemes',
             'duration_minutes' => null,
-            'tier' => 'premium',
+            'tier' => 'free',
         ]);
     }
 

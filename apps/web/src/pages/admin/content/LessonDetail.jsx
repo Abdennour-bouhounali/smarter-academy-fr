@@ -6,6 +6,7 @@ import DataTable from '../../../components/admin/ui/DataTable';
 import StatusBadge from '../../../components/admin/ui/StatusBadge';
 import { LoadingState, ErrorState, EmptyState } from '../../../components/admin/ui/states';
 import PublicationControl from '../../../components/admin/PublicationControl';
+import TierControl from '../../../components/admin/TierControl';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchLesson } from '../../../services/admin/contentService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
@@ -27,10 +28,10 @@ export default function AdminLessonDetail() {
   const loader = useCallback((token) => fetchLesson(token, code), [code]);
   const { data: lesson, loading, error, reload, setData } = useAdminResource(loader, [loader]);
 
-  const patch = (collection, id, publicationStatus) => {
+  const patch = (collection, id, changes) => {
     setData((current) => current && ({
       ...current,
-      [collection]: current[collection].map((row) => (row.id === id ? { ...row, publicationStatus } : row)),
+      [collection]: current[collection].map((row) => (row.id === id ? { ...row, ...changes } : row)),
     }));
   };
 
@@ -60,16 +61,32 @@ export default function AdminLessonDetail() {
                 <p className="font-inter text-sm text-slate-600">{lesson.description}</p>
                 <p className="font-inter text-xs text-slate-500">
                   {lesson.modulesCount ?? lesson.modules?.length} module(s) ·{' '}
-                  {lesson.exercisesCount ?? lesson.exercises?.length} exercice(s) ·{' '}
-                  <StatusBadge status={lesson.tier} label={lesson.tier === 'free' ? 'Gratuit' : 'Premium'} />
+                  {lesson.exercisesCount ?? lesson.exercises?.length} exercice(s)
                 </p>
               </div>
-              <PublicationControl
-                type="lesson"
-                id={lesson.id}
-                status={lesson.publicationStatus}
-                onChanged={(next) => setData((current) => ({ ...current, publicationStatus: next }))}
-              />
+              {/* Les deux dimensions côte à côte, et étiquetées : sans
+                  étiquette, deux menus « Changer… » voisins ne disent pas
+                  lequel vend et lequel publie. */}
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="space-y-1">
+                  <p className="font-inter text-[11px] font-semibold uppercase tracking-wide text-slate-400">Accès</p>
+                  <TierControl
+                    type="lesson"
+                    id={lesson.id}
+                    tier={lesson.tier}
+                    onChanged={(next) => setData((current) => ({ ...current, tier: next }))}
+                  />
+                </div>
+                <div className="space-y-1">
+                  <p className="font-inter text-[11px] font-semibold uppercase tracking-wide text-slate-400">Publication</p>
+                  <PublicationControl
+                    type="lesson"
+                    id={lesson.id}
+                    status={lesson.publicationStatus}
+                    onChanged={(next) => setData((current) => ({ ...current, publicationStatus: next }))}
+                  />
+                </div>
+              </div>
             </div>
           </section>
 
@@ -98,7 +115,7 @@ export default function AdminLessonDetail() {
                   render: (m) => (
                     <PublicationControl
                       type="module" id={m.id} status={m.publicationStatus}
-                      onChanged={(next) => patch('modules', m.id, next)} compact
+                      onChanged={(next) => patch('modules', m.id, { publicationStatus: next })} compact
                     />
                   ),
                 },
@@ -125,12 +142,27 @@ export default function AdminLessonDetail() {
                 { key: 'title', label: 'Titre', render: (e) => e.title ?? '—' },
                 { key: 'questionCount', label: 'Questions', render: (e) => e.questionCount },
                 {
+                  key: 'tier',
+                  label: 'Accès',
+                  cellClassName: 'min-w-[210px]',
+                  render: (e) => (
+                    <TierControl
+                      type="exercise"
+                      id={e.id}
+                      tier={e.tier}
+                      lessonTier={lesson.tier}
+                      onChanged={(next) => patch('exercises', e.id, { tier: next })}
+                      compact
+                    />
+                  ),
+                },
+                {
                   key: 'publicationStatus',
                   label: 'Publication',
                   render: (e) => (
                     <PublicationControl
                       type="exercise" id={e.id} status={e.publicationStatus}
-                      onChanged={(next) => patch('exercises', e.id, next)} compact
+                      onChanged={(next) => patch('exercises', e.id, { publicationStatus: next })} compact
                     />
                   ),
                 },

@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Chapter;
 use App\Models\Grade;
 use App\Models\Lesson;
+use App\Models\StudentLessonProgress;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -24,7 +25,13 @@ class LessonProgressFlowTest extends TestCase
         $this->lesson = Lesson::create([
             'chapter_id' => $chapter->id, 'code' => 'fractions-1',
             'title' => 'Fractions — Partie 1', 'status' => 'available',
-            'duration_minutes' => 45, 'tier' => 'premium', 'order' => 0,
+            // Gratuite : ce fichier teste la MÉCANIQUE de la progression
+            // (union, idempotence, non-régression du statut), pas le droit
+            // d'accès. La laisser payante ferait échouer toute la suite sur
+            // un refus d'accès, ce qui masquerait ce qu'elle vérifie
+            // réellement. Le palier a ses propres tests
+            // (EntitlementAccessMatrixTest).
+            'duration_minutes' => 45, 'tier' => 'free', 'order' => 0,
         ]);
     }
 
@@ -165,8 +172,8 @@ class LessonProgressFlowTest extends TestCase
 
         $this->assertDatabaseCount('student_lesson_progress', 1);
         $row = $user->fresh();
-        $this->assertSame(1, \App\Models\StudentLessonProgress::where('user_id', $row->id)->count());
-        $this->assertSame(['1'], \App\Models\StudentLessonProgress::where('user_id', $row->id)->first()->completed_modules);
+        $this->assertSame(1, StudentLessonProgress::where('user_id', $row->id)->count());
+        $this->assertSame(['1'], StudentLessonProgress::where('user_id', $row->id)->first()->completed_modules);
     }
 
     public function test_index_returns_only_the_authenticated_users_rows_keyed_by_lesson_code(): void

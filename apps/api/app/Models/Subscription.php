@@ -45,6 +45,15 @@ class Subscription extends Model
         'cancelled_at',
         'provider',
         'external_reference',
+        // Les champs du fournisseur. Ils DÉCRIVENT ce que le fournisseur
+        // raconte ; ils ne décident rien. L'autorité sur l'accès reste
+        // `status` + `ends_at`, recopiés ensuite dans le droit.
+        'provider_customer_id',
+        'provider_status',
+        'provider_price_id',
+        'current_period_end',
+        'cancel_at_period_end',
+        'provider_synced_at',
     ];
 
     protected function casts(): array
@@ -53,6 +62,9 @@ class Subscription extends Model
             'started_at' => 'datetime',
             'ends_at' => 'datetime',
             'cancelled_at' => 'datetime',
+            'current_period_end' => 'datetime',
+            'provider_synced_at' => 'datetime',
+            'cancel_at_period_end' => 'boolean',
         ];
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Domain\Access\AccessTier;
 use App\Domain\Admin\ContentService;
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
@@ -53,6 +54,8 @@ class AdminContentController extends Controller
                     'title' => $e->title,
                     'questionCount' => $e->question_count,
                     'publicationStatus' => $e->publication_status,
+                    'tier' => $e->tier,
+                    'effectiveTier' => AccessTier::effective($e->tier, $e->lesson?->tier),
                     'retiredAt' => $e->retired_at,
                 ]),
                 'learningPoints' => $lesson->learningPoints->map(fn ($lp) => [
@@ -104,6 +107,13 @@ class AdminContentController extends Controller
                 'title' => $exercise->title,
                 'questionCount' => $exercise->question_count,
                 'publicationStatus' => $exercise->publication_status,
+                'tier' => $exercise->tier,
+                'effectiveTier' => AccessTier::effective($exercise->tier, $exercise->lesson?->tier),
+                // Le palier de la LEÇON, pour que la vue transversale sache
+                // de quoi un exercice hérite. Sans lui, « Hérité » ne dirait
+                // pas hérité de quoi, et l'administrateur devrait ouvrir la
+                // leçon pour le savoir.
+                'lessonTier' => $exercise->lesson?->tier,
                 'lessonCode' => $exercise->lesson?->code,
                 'lessonTitle' => $exercise->lesson?->title,
                 'grade' => $exercise->lesson?->chapter?->grade?->code,
@@ -133,6 +143,39 @@ class AdminContentController extends Controller
             'success' => true,
             'changed' => $result['changed'],
             'id' => $result['model']->id,
+            'publicationStatus' => $result['model']->publication_status,
+        ]);
+    }
+
+    /**
+     * Changer le PALIER commercial — gratuit / payant.
+     *
+     * Point d'entrée distinct de changeStatus : publication et palier sont
+     * deux dimensions indépendantes (voir ContentService::changeTier).
+     * `tier: null` n'est valable que pour un exercice, où il signifie
+     * « hérite de sa leçon ».
+     */
+    public function changeTier(Request $request, string $type, int $id)
+    {
+        $validated = $request->validate([
+            'tier' => ['present', 'nullable', Rule::in(AccessTier::TIERS)],
+        ], [
+            'tier.in' => 'Palier inconnu.',
+        ]);
+
+        try {
+            $result = $this->content->changeTier($request->user(), $type, $id, $validated['tier']);
+        } catch (DomainException $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
+        }
+
+        return response()->json([
+            'success' => true,
+            'changed' => $result['changed'],
+            'id' => $result['model']->id,
+            'tier' => $result['model']->tier,
+            // La publication est renvoyée telle quelle, pour rendre visible
+            // qu'elle n'a PAS bougé.
             'publicationStatus' => $result['model']->publication_status,
         ]);
     }

@@ -7,6 +7,7 @@ import Methode from './pages/Methode';
 import About from './pages/About';
 import Courses from './pages/Courses';
 import Tarifs from './pages/Tarifs';
+import AbonnementRetour from './pages/AbonnementRetour';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
@@ -267,6 +268,11 @@ export default function App() {
             <Route path="/methode"  element={<Methode />} />
             <Route path="/about"    element={<About />} />
             <Route path="/tarifs"   element={<Tarifs />} />
+            {/* Le retour depuis la page de paiement. Publique : l'élève
+                revient d'un domaine tiers, et une redirection vers la
+                connexion lui ferait perdre le fil. La page n'accorde rien —
+                elle interroge le serveur et affiche sa réponse. */}
+            <Route path="/abonnement/retour" element={<AbonnementRetour />} />
             <Route path="/faq"      element={<FAQ />} />
             <Route path="*" element={<Home />} />
           </Route>

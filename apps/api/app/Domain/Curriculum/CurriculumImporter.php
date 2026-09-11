@@ -2,6 +2,7 @@
 
 namespace App\Domain\Curriculum;
 
+use App\Domain\Access\AccessTier;
 use App\Domain\Curriculum\Support\CurriculumDiffer;
 use App\Models\Chapter;
 use App\Models\Grade;
@@ -22,7 +23,7 @@ class CurriculumImporter
     /**
      * @param  array{grades: array<int, array<string, mixed>>}  $export
      * @return array{grades: array, chapters: array, lessons: array, learningPoints: array}
-     *         Each entry: {created: string[], updated: string[], retired: string[], unchanged: string[]}
+     *                                                                                      Each entry: {created: string[], updated: string[], retired: string[], unchanged: string[]}
      */
     public function import(array $export, bool $dryRun = false): array
     {
@@ -93,7 +94,12 @@ class CurriculumImporter
                         'description' => $lessonData['description'],
                         'status' => $lessonData['status'],
                         'duration_minutes' => $lessonData['durationMinutes'] ?? null,
-                        'tier' => $lessonData['tier'] ?? 'premium',
+                        // Défaut GRATUIT, et non payant : depuis que le palier
+                        // est appliqué (EntitlementService), un `tier` oublié
+                        // dans le catalogue fermerait la leçon aux élèves. Le
+                        // contenu payant se déclare ; il ne s'obtient pas par
+                        // omission. Voir AccessTier::normalize().
+                        'tier' => $lessonData['tier'] ?? AccessTier::FREE,
                         'order' => $lessonData['order'],
                     ];
                     $existingLesson = Lesson::where('chapter_id', $chapter->id)->where('code', $lessonData['code'])->first();

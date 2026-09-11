@@ -32,7 +32,7 @@ class LearningEvidenceController extends Controller
         // resté ouvert continuerait d'alimenter la maîtrise à partir d'un
         // contenu que l'administration a justement jugé faux.
         try {
-            ContentAccess::assertLessonAvailable($lessonCode);
+            ContentAccess::assertLessonAvailable($lessonCode, $request->user());
         } catch (DomainException $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
         }

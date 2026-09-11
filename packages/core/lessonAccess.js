@@ -109,13 +109,18 @@ export function lockedReason(moduleNumber) {
 }
 
 /**
- * Content-tier gate — distinct from the sequential module-unlock above.
- * A lesson tagged `tier: 'free'` in coursesData.js is open to anyone
- * (visitor or free account). A `tier: 'premium'` lesson is not, today,
- * because there is no subscription/entitlement system yet — `isPremiumUser`
- * always resolves false until one exists. The parameter is kept so callers
- * don't need to change once real entitlements are added; only this function
- * does.
+ * Porte de PALIER — distincte du déverrouillage séquentiel ci-dessus.
+ *
+ * Une leçon `tier: 'free'` est ouverte à tous ; une leçon `tier: 'premium'`
+ * exige un droit d'accès, que le SERVEUR évalue (EntitlementService) et que
+ * l'appelant transmet ici via `isPremiumUser`. Le catalogue vivant dans le
+ * bundle, le palier est connu côté client — mais la décision, elle, ne l'est
+ * pas : elle arrive avec `GET /content/availability`.
+ *
+ * Cette fonction ne fait donc qu'AFFICHER une décision déjà prise ailleurs.
+ * Un élève qui forcerait `isPremiumUser` à vrai dans son navigateur verrait
+ * une carte cliquable et rien de plus : chaque écriture repasse par
+ * ContentAccess côté serveur, qui ne lit jamais l'état du client.
  *
  * @param {{ tier?: 'free' | 'premium' }} lesson
  * @param {{ isPremiumUser?: boolean }} [ctx]

@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
 import { Tag, CreditCard, ShieldCheck, HelpCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useCallback, useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import PricingCard from '../components/pricing/PricingCard';
+import { AuthContext } from '../context/AuthContext';
+import { useContentAvailability } from '../context/ContentAvailabilityContext';
+import { fetchPlans, startCheckout } from '../services/billingService';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 const reassurances = [
@@ -10,7 +14,70 @@ const reassurances = [
   { icon: Tag, text: 'Un seul tarif, aucune option cachée' },
 ];
 
+/** 3500 centimes → « 35€ ». Le serveur fait autorité sur le prix. */
+function formatPrice(cents, currency = 'EUR') {
+  if (typeof cents !== 'number') return null;
+  const amount = cents / 100;
+  const symbol = currency === 'EUR' ? '€' : ` ${currency}`;
+  return Number.isInteger(amount) ? `${amount}${symbol}` : `${amount.toFixed(2)}${symbol}`;
+}
+
 export default function Tarifs() {
+  const { user, token } = useContext(AuthContext);
+  const { access } = useContentAvailability();
+  const navigate = useNavigate();
+  const hasAccount = Boolean(user);
+  const isPremium = access?.premiumAccess === true;
+
+  // Les offres viennent du SERVEUR : le bundle peut être en retard sur un
+  // changement de tarif, et deux définitions du prix finiraient par diverger.
+  const [catalog, setCatalog] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!token) return undefined;
+    let cancelled = false;
+
+    fetchPlans(token)
+      .then((result) => { if (!cancelled) setCatalog(result); })
+      // Échec silencieux : la carte retombe sur le prix du bundle plutôt que
+      // de laisser la page vide. Le serveur refusera de toute façon un achat
+      // qu'il ne reconnaît pas.
+      .catch(() => {});
+
+    return () => { cancelled = true; };
+  }, [token]);
+
+  const annual = catalog?.plans?.find((p) => p.key === 'annual') ?? null;
+
+  const handleSubscribe = useCallback(async () => {
+    // Sans compte, il n'y a rien à facturer : on envoie vers l'inscription.
+    if (!token) {
+      navigate('/register');
+      return;
+    }
+
+    // La garde du double clic. La clé d'idempotence côté serveur est la
+    // seconde barrière ; celle-ci évite d'y arriver.
+    if (busy) return;
+
+    setBusy(true);
+    setError(null);
+
+    try {
+      const { checkoutUrl } = await startCheckout(token, 'annual');
+      // Redirection vers la page HÉBERGÉE par le prestataire : aucun numéro
+      // de carte n'atteint jamais ce domaine.
+      window.location.assign(checkoutUrl);
+    } catch (e) {
+      // Le message du serveur est fait pour être lu par l'élève
+      // (« Vous êtes déjà abonné »). On le montre tel quel.
+      setError(e?.message || "Le paiement n'a pas pu être ouvert.");
+      setBusy(false);
+    }
+  }, [busy, navigate, token]);
+
   useDocumentMeta(
     'Tarifs',
     "Tarifs Smarter Academy : un compte gratuit sans carte bancaire, et un abonnement Premium à 35€/an avec un mois offert."
@@ -39,8 +106,21 @@ export default function Tarifs() {
       {/* Pricing cards */}
       <section className="px-4 pb-8">
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-stretch">
-          <PricingCard plan="free" />
-          <PricingCard plan="premium" />
+          {/* `owned` vient du SERVEUR : la page affiche une décision déjà
+              prise, elle n'en prend aucune. Un visiteur anonyme n'a pas
+              d'état d'accès, et voit donc les deux offres normalement. */}
+          <PricingCard plan="free" owned={hasAccount && !isPremium} />
+          <PricingCard
+            plan="premium"
+            owned={isPremium}
+            // Le bouton d'achat n'apparaît que pour un élève qui peut acheter.
+            // Un abonné voit son état ; un visiteur garde le lien d'origine.
+            onSubscribe={isPremium ? undefined : handleSubscribe}
+            busy={busy}
+            unavailable={annual !== null && annual.purchasable === false}
+            priceLabel={annual ? formatPrice(annual.amountCents, annual.currency) : undefined}
+            error={error}
+          />
         </div>
       </section>
 
