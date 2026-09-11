@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdminStudentController;
 use App\Http\Controllers\Admin\AdminSubscriptionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BillingCheckoutController;
+use App\Http\Controllers\BillingSubscriptionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentAvailabilityController;
 use App\Http\Controllers\DiagnosticController;
@@ -123,6 +124,23 @@ Route::prefix('v1')->group(function () {
         // Limité en débit : ouvrir une session appelle le fournisseur, donc
         // c'est le seul point d'entrée élève qui coûte un appel sortant.
         Route::post('/billing/checkout', [BillingCheckoutController::class, 'start'])
+            ->middleware('throttle:10,1');
+
+        // ── Gestion de l'abonnement (phase 7) ────────────────────────────
+        // Aucun de ces points d'entrée ne lit d'identifiant dans la requête :
+        // l'abonnement est retrouvé depuis l'élève AUTHENTIFIÉ. Il n'y a donc
+        // aucun contrôle d'appartenance à oublier — rien à faire correspondre.
+        //
+        // Aucun n'accorde ni ne retire un accès : résilier exprime une
+        // intention chez le fournisseur, et seul le webhook signé fait foi.
+        Route::get('/billing/subscription', [BillingSubscriptionController::class, 'show']);
+        // Les trois mutations appellent le fournisseur : limitées en débit,
+        // comme l'ouverture d'une session de paiement.
+        Route::post('/billing/portal', [BillingSubscriptionController::class, 'portal'])
+            ->middleware('throttle:10,1');
+        Route::post('/billing/subscription/cancel', [BillingSubscriptionController::class, 'cancel'])
+            ->middleware('throttle:10,1');
+        Route::post('/billing/subscription/resume', [BillingSubscriptionController::class, 'resume'])
             ->middleware('throttle:10,1');
 
         Route::get('/students/me/learning-profile', [LearningProfileController::class, 'show']);

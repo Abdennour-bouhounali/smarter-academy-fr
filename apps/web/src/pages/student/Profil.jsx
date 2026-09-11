@@ -158,8 +158,14 @@ export default function Profil() {
             <p className="font-inter text-slate-500 text-xs mt-0.5">{plan.detail}</p>
           </div>
         </div>
-        {/* Un abonné ne se voit plus proposer ce qu'il possède déjà. */}
-        {!plan.premium && (
+        {/* Un abonné ne se voit plus proposer ce qu'il possède déjà — on lui
+            propose de le GÉRER. La page d'abonnement, elle, est la seule
+            autorité sur ce qu'il peut y faire : ce lien ne fait qu'y mener. */}
+        {plan.premium ? (
+          <Link to="/abonnement" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-space font-bold text-xs text-slate-700 border border-slate-300 transition-all hover:bg-slate-50">
+            Gérer mon abonnement
+          </Link>
+        ) : (
           <Link to="/tarifs" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-space font-bold text-xs text-white transition-all hover:-translate-y-0.5" style={{ background: 'linear-gradient(135deg, #F59E0B, #F97316)' }}>
             <Crown size={14} />
             Passer Premium

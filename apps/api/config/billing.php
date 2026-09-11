@@ -50,6 +50,10 @@ return [
     'return_urls' => [
         'success' => env('BILLING_SUCCESS_URL', env('FRONTEND_URL', 'http://localhost:5173').'/abonnement/retour?statut=succes'),
         'cancel' => env('BILLING_CANCEL_URL', env('FRONTEND_URL', 'http://localhost:5173').'/abonnement/retour?statut=annule'),
+        // Où le portail client ramène l'élève. Même règle : imposée par le
+        // serveur, et ce retour ne prouve rien non plus — ce que l'élève a
+        // fait dans le portail revient par webhook signé.
+        'portal' => env('BILLING_PORTAL_RETURN_URL', env('FRONTEND_URL', 'http://localhost:5173').'/abonnement'),
     ],
 
     /*

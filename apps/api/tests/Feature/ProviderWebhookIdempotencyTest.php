@@ -7,6 +7,7 @@ use App\Domain\Access\EntitlementService;
 use App\Domain\Billing\CheckoutFailedException;
 use App\Domain\Billing\CheckoutSession;
 use App\Domain\Billing\PaymentProvider;
+use App\Domain\Billing\PortalSession;
 use App\Domain\Billing\PaymentProviderRegistry;
 use App\Domain\Billing\ProviderEventFormatException;
 use App\Domain\Billing\ProviderPaymentState;
@@ -514,5 +515,24 @@ class FakePaymentProvider implements PaymentProvider
         ?string $idempotencyKey = null,
     ): CheckoutSession {
         throw new CheckoutFailedException('Ce fournisseur d\'essai n\'encaisse pas.');
+    }
+
+    // Phase 7 : ce fournisseur n'éprouve que les webhooks. Refuser est le
+    // comportement honnête — rendre un état fabriqué laisserait croire qu'une
+    // opération a eu lieu chez un fournisseur qui n'existe pas.
+
+    public function createPortalSession(string $customerId, string $returnUrl): PortalSession
+    {
+        throw new CheckoutFailedException('Ce fournisseur d\'essai n\'a pas de portail.');
+    }
+
+    public function cancelAtPeriodEnd(string $providerSubscriptionId): ProviderSubscriptionState
+    {
+        throw new CheckoutFailedException('Ce fournisseur d\'essai ne gère aucun abonnement.');
+    }
+
+    public function resumeSubscription(string $providerSubscriptionId): ProviderSubscriptionState
+    {
+        throw new CheckoutFailedException('Ce fournisseur d\'essai ne gère aucun abonnement.');
     }
 }

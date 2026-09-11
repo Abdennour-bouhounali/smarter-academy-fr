@@ -5,15 +5,17 @@ namespace App\Domain\Billing;
 /**
  * Le contrat d'un fournisseur de paiement — volontairement MINUSCULE.
  *
- * Trois capacités : authentifier un webhook, le traduire, et ouvrir une
- * session de paiement. Tout le reste — portail client, remboursement,
- * changement d'offre — n'est pas déclaré ici tant que rien ne l'appelle.
+ * Six capacités : authentifier un webhook, le traduire, ouvrir une session de
+ * paiement, ouvrir le portail client, résilier en fin de période, et annuler
+ * cette résiliation. Le reste — remboursement, changement d'offre, avoirs —
+ * n'est pas déclaré ici tant que rien ne l'appelle.
  *
  * C'est un choix, pas un oubli. Une interface qui déclare des méthodes que
  * personne n'implémente vraiment produit soit des `throw new
  * NotImplemented`, soit des implémentations factices qu'on finit par croire
- * réelles. Le contrat a grandi d'une méthode en phase 6, quand
- * l'encaissement est arrivé — et d'une seule.
+ * réelles. Le contrat a grandi d'une méthode en phase 6 (l'encaissement),
+ * puis de trois en phase 7 (le cycle de vie après l'achat) — à chaque fois
+ * parce qu'un parcours réel les appelait, jamais par anticipation.
  *
  * ── Ce que cette interface ne renvoie JAMAIS ─────────────────────────────
  * Aucun type de SDK. Les valeurs de retour sont des objets de ce namespace
@@ -83,4 +85,49 @@ interface PaymentProvider
         ?string $customerEmail = null,
         ?string $idempotencyKey = null,
     ): CheckoutSession;
+
+    /**
+     * Ouvre le PORTAIL CLIENT hébergé par le fournisseur.
+     *
+     * C'est la réponse de la phase 7 à « je veux gérer mon abonnement » :
+     * moyens de paiement, factures, historique. Tout cela vit déjà chez le
+     * fournisseur, et le recopier chez nous dupliquerait une source de vérité
+     * — avec la dérive que cela finit toujours par produire.
+     *
+     * `$customerId` vient de l'abonnement LOCAL de l'élève authentifié, jamais
+     * d'une requête cliente : c'est ce qui empêche d'ouvrir le portail de
+     * quelqu'un d'autre. `$returnUrl` est imposée par le serveur.
+     *
+     * N'ACCORDE AUCUN DROIT. Ce que l'élève fait dans le portail revient par
+     * webhook signé, comme le reste.
+     *
+     * @throws \App\Domain\Billing\CheckoutFailedException si le fournisseur refuse.
+     */
+    public function createPortalSession(string $customerId, string $returnUrl): PortalSession;
+
+    /**
+     * Programme la résiliation à la FIN DE LA PÉRIODE PAYÉE.
+     *
+     * Pas une résiliation immédiate : l'élève a payé jusqu'à une date, il
+     * garde son accès jusque-là. Le fournisseur reste l'autorité — cet appel
+     * exprime une intention, et c'est le webhook qui la rend vraie localement.
+     *
+     * Renvoie l'état du fournisseur APRÈS l'opération, pour que l'appelant
+     * puisse refléter l'intention sans attendre le webhook. Cet état ne
+     * décide jamais d'un accès : il ne touche que des champs descriptifs.
+     *
+     * @throws \App\Domain\Billing\CheckoutFailedException si le fournisseur refuse.
+     */
+    public function cancelAtPeriodEnd(string $providerSubscriptionId): ProviderSubscriptionState;
+
+    /**
+     * Annule une résiliation programmée — « je continue, finalement ».
+     *
+     * N'a de sens que sur un abonnement encore actif dont la résiliation est
+     * programmée. Sur un abonnement déjà terminé chez le fournisseur, l'appel
+     * échoue : on ne ressuscite pas un abonnement mort, on en reprend un.
+     *
+     * @throws \App\Domain\Billing\CheckoutFailedException si le fournisseur refuse.
+     */
+    public function resumeSubscription(string $providerSubscriptionId): ProviderSubscriptionState;
 }

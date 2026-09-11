@@ -8,6 +8,7 @@ use App\Domain\Billing\CheckoutFailedException;
 use App\Domain\Billing\CheckoutSession;
 use App\Domain\Billing\PaymentProvider;
 use App\Domain\Billing\PaymentProviderRegistry;
+use App\Domain\Billing\PortalSession;
 use App\Domain\Billing\ProviderEventFormatException;
 use App\Domain\Billing\ProviderSubscriptionAdapter;
 use App\Domain\Billing\ProviderSubscriptionState;
@@ -618,5 +619,60 @@ class FakeCheckoutProvider implements PaymentProvider
         }
 
         return new CheckoutSession(id: 'cs_test_123', url: $this->url, customerId: $customerId);
+    }
+
+    // ── Phase 7 : le cycle de vie après l'achat ─────────────────────────
+    //
+    // Enregistrés comme le reste : ce qu'on veut pouvoir affirmer, c'est
+    // QUEL identifiant est parti au fournisseur — c'est là que se joue
+    // l'appartenance.
+
+    public function createPortalSession(string $customerId, string $returnUrl): PortalSession
+    {
+        $this->lastCall = compact('customerId', 'returnUrl');
+
+        if ($this->failure !== null) {
+            throw new CheckoutFailedException($this->failure);
+        }
+
+        return new PortalSession(url: 'https://portail.exemple.test/session/xyz');
+    }
+
+    public function cancelAtPeriodEnd(string $providerSubscriptionId): ProviderSubscriptionState
+    {
+        $this->lastCall = compact('providerSubscriptionId') + ['operation' => 'cancel'];
+
+        if ($this->failure !== null) {
+            throw new CheckoutFailedException($this->failure);
+        }
+
+        return $this->stateFor($providerSubscriptionId, cancelAtPeriodEnd: true);
+    }
+
+    public function resumeSubscription(string $providerSubscriptionId): ProviderSubscriptionState
+    {
+        $this->lastCall = compact('providerSubscriptionId') + ['operation' => 'resume'];
+
+        if ($this->failure !== null) {
+            throw new CheckoutFailedException($this->failure);
+        }
+
+        return $this->stateFor($providerSubscriptionId, cancelAtPeriodEnd: false);
+    }
+
+    private function stateFor(string $id, bool $cancelAtPeriodEnd): ProviderSubscriptionState
+    {
+        return new ProviderSubscriptionState(
+            provider: $this->name(),
+            providerSubscriptionId: $id,
+            providerCustomerId: null,
+            providerStatus: 'active',
+            providerPriceId: null,
+            currentPeriodStart: null,
+            currentPeriodEnd: null,
+            cancelAtPeriodEnd: $cancelAtPeriodEnd,
+            occurredAt: null,
+            deleted: false,
+        );
     }
 }

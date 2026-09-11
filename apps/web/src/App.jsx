@@ -8,6 +8,7 @@ import About from './pages/About';
 import Courses from './pages/Courses';
 import Tarifs from './pages/Tarifs';
 import AbonnementRetour from './pages/AbonnementRetour';
+import Abonnement from './pages/Abonnement';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
@@ -239,6 +240,17 @@ export default function App() {
               <Route path="systeme/journal" element={<AdminActivityLog />} />
               <Route path="systeme/coherence" element={<AdminRegistryHealth />} />
               <Route path="systeme/messages" element={<AdminContactMessages />} />
+            </Route>
+          </Route>
+
+          {/* La gestion de l'abonnement (phase 7). AUTHENTIFIÉE : elle parle
+              d'argent et d'un compte précis, contrairement à /tarifs et à la
+              page de retour. Hors de /espace parce que le serveur y renvoie
+              l'élève depuis le portail du fournisseur, et qu'une URL de retour
+              se doit d'être courte et stable. */}
+          <Route element={<ProtectedRoute allowedRoles={['student']} />}>
+            <Route element={<StudentLayout />}>
+              <Route path="/abonnement" element={<Abonnement />} />
             </Route>
           </Route>
 

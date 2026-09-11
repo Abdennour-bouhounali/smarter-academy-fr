@@ -80,3 +80,83 @@ export async function startCheckout(token, planKey) {
 
   return { checkoutUrl: data.checkoutUrl, plan: data.plan };
 }
+
+/**
+ * L'état de facturation de l'élève — phase 7.
+ *
+ * Tout vient du SERVEUR, y compris « l'accès est-il actif ». Le navigateur ne
+ * compare aucune date et ne déduit aucun droit : il peint ce qu'on lui dit.
+ * Une horloge de poste mal réglée ne doit pas pouvoir ouvrir ni fermer une
+ * page d'abonnement.
+ */
+export async function fetchSubscription(token) {
+  const { ok, status, data } = await apiRequest('/billing/subscription', {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!ok) {
+    throw new ApiError(
+      data?.message || "Impossible de charger votre abonnement.",
+      classifyStatus(status),
+      status,
+    );
+  }
+
+  return data.billing ?? null;
+}
+
+/**
+ * Ouvre le portail client hébergé et rend l'URL de redirection.
+ *
+ * Aucun identifiant n'est envoyé : le serveur retrouve le client du
+ * fournisseur à partir de l'élève authentifié. C'est ce qui rend impossible
+ * d'ouvrir le portail de quelqu'un d'autre — il n'y a rien à falsifier.
+ */
+export async function openBillingPortal(token) {
+  const { ok, status, data } = await apiRequest('/billing/portal', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!ok) {
+    throw new ApiError(
+      data?.message || "Le portail de facturation n'a pas pu être ouvert.",
+      classifyStatus(status),
+      status,
+    );
+  }
+
+  if (!data?.portalUrl) {
+    throw new ApiError("Le service de facturation n'a pas répondu correctement.", 'SERVER_ERROR', 502);
+  }
+
+  return data.portalUrl;
+}
+
+/**
+ * Résilie à la fin de la période payée.
+ *
+ * Ne retire AUCUN accès : l'élève garde ses jours déjà payés. La réponse rend
+ * l'état de facturation à jour, pour que la page n'ait pas à le redemander.
+ */
+export async function cancelSubscription(token) {
+  return mutateSubscription(token, '/billing/subscription/cancel', "La résiliation n'a pas pu être enregistrée.");
+}
+
+/** Annule une résiliation programmée — « je continue, finalement ». */
+export async function resumeSubscription(token) {
+  return mutateSubscription(token, '/billing/subscription/resume', "La reprise n'a pas pu être enregistrée.");
+}
+
+async function mutateSubscription(token, path, fallbackMessage) {
+  const { ok, status, data } = await apiRequest(path, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!ok) {
+    throw new ApiError(data?.message || fallbackMessage, classifyStatus(status), status);
+  }
+
+  return data.billing ?? null;
+}

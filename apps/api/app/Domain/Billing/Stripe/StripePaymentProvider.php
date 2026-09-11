@@ -5,6 +5,8 @@ namespace App\Domain\Billing\Stripe;
 use App\Domain\Billing\CheckoutFailedException;
 use App\Domain\Billing\CheckoutSession;
 use App\Domain\Billing\PaymentProvider;
+use App\Domain\Billing\PortalSession;
+use App\Domain\Billing\ProviderSubscriptionState;
 use App\Domain\Billing\TranslatedEvent;
 use Illuminate\Support\Facades\Log;
 use Stripe\Exception\ApiErrorException;
@@ -171,5 +173,79 @@ class StripePaymentProvider implements PaymentProvider
     private function client(): StripeClient
     {
         return new StripeClient($this->apiKey);
+    }
+
+    /**
+     * Le portail client hébergé — phase 7.
+     *
+     * Un seul appel sortant, sur clic explicite. `$customerId` a été résolu
+     * depuis l'abonnement local de l'élève authentifié : aucune valeur venue
+     * du navigateur n'atteint jamais ce paramètre.
+     */
+    public function createPortalSession(string $customerId, string $returnUrl): PortalSession
+    {
+        if ($this->apiKey === null || $this->apiKey === '') {
+            throw new CheckoutFailedException('Aucune clé d\'API Stripe configurée.');
+        }
+
+        try {
+            $session = $this->client()->billingPortal->sessions->create([
+                'customer' => $customerId,
+                'return_url' => $returnUrl,
+            ]);
+        } catch (ApiErrorException $e) {
+            throw new CheckoutFailedException($e->getMessage(), previous: $e);
+        }
+
+        if (! is_string($session->url) || $session->url === '') {
+            throw new CheckoutFailedException('Session de portail sans URL de redirection.');
+        }
+
+        return new PortalSession(url: $session->url);
+    }
+
+    /**
+     * Programme la résiliation à la fin de la période payée.
+     *
+     * `cancel_at_period_end = true` chez Stripe : l'abonnement reste ACTIF,
+     * et c'est précisément ce qu'on veut — l'élève a payé jusqu'à une date.
+     * Une résiliation immédiate (`cancel()`) lui retirerait des jours dus.
+     */
+    public function cancelAtPeriodEnd(string $providerSubscriptionId): ProviderSubscriptionState
+    {
+        return $this->updateSubscription($providerSubscriptionId, ['cancel_at_period_end' => true]);
+    }
+
+    /** Annule la résiliation programmée — l'abonnement reprend son cours. */
+    public function resumeSubscription(string $providerSubscriptionId): ProviderSubscriptionState
+    {
+        return $this->updateSubscription($providerSubscriptionId, ['cancel_at_period_end' => false]);
+    }
+
+    /**
+     * @param  array<string, mixed>  $params
+     */
+    private function updateSubscription(string $providerSubscriptionId, array $params): ProviderSubscriptionState
+    {
+        if ($this->apiKey === null || $this->apiKey === '') {
+            throw new CheckoutFailedException('Aucune clé d\'API Stripe configurée.');
+        }
+
+        try {
+            $subscription = $this->client()->subscriptions->update($providerSubscriptionId, $params);
+        } catch (ApiErrorException $e) {
+            throw new CheckoutFailedException($e->getMessage(), previous: $e);
+        }
+
+        // La MÊME traduction que celle d'un webhook : une réponse d'API et un
+        // évènement décrivent le même objet, et les lire différemment est la
+        // façon dont le défaut D1 avait échappé aux tests.
+        $state = $this->translator->fromApiSubscription($subscription->toArray());
+
+        if ($state === null) {
+            throw new CheckoutFailedException('Réponse d\'abonnement inexploitable.');
+        }
+
+        return $state;
     }
 }

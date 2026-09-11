@@ -267,5 +267,6 @@ PASS WITH NON-BLOCKING LIMITATIONS
 **À faire avant la production :** resynchroniser l'horloge (NTP), puis remettre
 `STRIPE_WEBHOOK_TOLERANCE=300`.
 
-**Phase 7 non commencée** : portail client, annulation, factures, remboursements,
-changement d'offre, paiements en production.
+**Phase 7** : livrée depuis — portail client, annulation, reprise et page de
+gestion. Voir `BILLING_LIFECYCLE_PHASE7_REPORT.md`. Restent hors périmètre :
+remboursements, changement d'offre, paiements en production.

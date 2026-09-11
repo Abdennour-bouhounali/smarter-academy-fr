@@ -72,4 +72,33 @@ class SandboxPaymentProvider implements PaymentProvider
             customerId: $customerId,
         );
     }
+
+    /**
+     * Le portail du bac à sable : une URL qui ramène simplement l'élève.
+     *
+     * Il n'y a rien à gérer ici — aucun moyen de paiement, aucune facture.
+     * Rendre l'URL de retour permet d'éprouver la redirection du parcours
+     * sans prétendre offrir un portail.
+     */
+    public function createPortalSession(string $customerId, string $returnUrl): PortalSession
+    {
+        return new PortalSession(url: $returnUrl);
+    }
+
+    /**
+     * Le bac à sable ne tient aucun abonnement.
+     *
+     * Refuser est le comportement SÛR : rendre un état fabriqué laisserait
+     * croire qu'une résiliation a eu lieu chez un fournisseur, et l'état local
+     * refléterait une intention que personne n'honorera jamais.
+     */
+    public function cancelAtPeriodEnd(string $providerSubscriptionId): ProviderSubscriptionState
+    {
+        throw new CheckoutFailedException('Le bac à sable ne gère aucun abonnement.');
+    }
+
+    public function resumeSubscription(string $providerSubscriptionId): ProviderSubscriptionState
+    {
+        throw new CheckoutFailedException('Le bac à sable ne gère aucun abonnement.');
+    }
 }

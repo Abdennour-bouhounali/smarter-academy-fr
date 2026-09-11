@@ -95,6 +95,23 @@ class StripeEventTranslator
         return null;
     }
 
+    /**
+     * Traduit un objet d'abonnement RENVOYÉ PAR UN APPEL d'API.
+     *
+     * Même traduction que pour un webhook, volontairement : une réponse
+     * d'API et un évènement décrivent le même objet, et deux lectures
+     * différentes du même corps finiraient par diverger — c'est exactement
+     * ainsi que le défaut D1 (la période déplacée sur les lignes) avait
+     * survécu à toute une suite de tests.
+     *
+     * L'appelant reste responsable de ne rien en déduire sur l'accès : le
+     * webhook signé demeure l'autorité.
+     */
+    public function fromApiSubscription(array $object, ?Carbon $occurredAt = null): ?ProviderSubscriptionState
+    {
+        return $this->fromSubscriptionObject('customer.subscription.updated', $object, $occurredAt);
+    }
+
     private function fromSubscriptionObject(string $type, array $object, ?Carbon $occurredAt): ?ProviderSubscriptionState
     {
         $id = $object['id'] ?? null;
