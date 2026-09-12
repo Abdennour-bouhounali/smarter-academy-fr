@@ -2,7 +2,15 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import { useProgress } from '../hooks/useProgress';
 import { useWorkspaceLayout } from '../../../context/WorkspaceLayoutContext';
 import { cumulativeKnowledge, findKnowledgeItem, knowledgeModuleNumbers, toModuleSet } from './knowledgeState';
-import { KnowledgeMapTrigger } from './KnowledgeMap';
+import { lazy, Suspense } from 'react';
+// `KnowledgeMap` tire framer-motion et les visuels de concept. C'est un
+// TIROIR : il ne s'ouvre que sur clic, et son déclencheur flotte au-dessus de
+// la page. Le charger avec le provider plaçait framer-motion dans le lot
+// d'entrée de l'application. On le charge donc à part ; le repli est `null`,
+// ce qui est exactement ce que la page montre déjà avant l'ouverture.
+const KnowledgeMapTrigger = lazy(() =>
+  import('./KnowledgeMap').then((m) => ({ default: m.KnowledgeMapTrigger })),
+);
 
 /**
  * LessonKnowledgeProvider — l'ÉTAT CUMULATIF de la carte des connaissances,
@@ -103,6 +111,7 @@ export function LessonKnowledgeProvider({ lessonId, knowledge, printTitle, print
   return (
     <KnowledgeContext.Provider value={value}>
       {children}
+      <Suspense fallback={null}>
       <KnowledgeMapTrigger
         items={value.items}
         open={open}
@@ -110,6 +119,7 @@ export function LessonKnowledgeProvider({ lessonId, knowledge, printTitle, print
         printTitle={printTitle}
         printSubject={printSubject}
       />
+      </Suspense>
     </KnowledgeContext.Provider>
   );
 }

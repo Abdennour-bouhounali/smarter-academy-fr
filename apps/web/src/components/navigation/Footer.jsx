@@ -87,6 +87,28 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-slate-800 pt-6">
+          {/* Les pages légales, dans le pied de page PARTAGÉ — donc présentes
+              sur toutes les pages visiteur d'un coup, plutôt que recopiées
+              page par page. C'est aussi là qu'on va les chercher. */}
+          <nav aria-label="Informations légales" className="mb-5">
+            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 sm:justify-start">
+              {[
+                { to: '/mentions-legales', label: 'Mentions légales' },
+                { to: '/confidentialite', label: 'Politique de confidentialité' },
+                { to: '/cgu', label: "Conditions Générales d'Utilisation" },
+              ].map((item) => (
+                <li key={item.to}>
+                  <Link
+                    to={item.to}
+                    className="font-inter text-slate-400 hover:text-white text-sm transition-colors duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
             <p className="font-inter text-slate-500 text-sm text-center">
               © {new Date().getFullYear()} Smarter Academy — Tous droits réservés

@@ -1,8 +1,13 @@
 import { lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { LESSON_CONFIG, LESSON_BASE_PATH } from './lesson.config';
-import { LESSON_KNOWLEDGE } from './knowledge';
-import { LessonKnowledgeProvider } from '../../../../common/knowledge';
+import { LazyLessonKnowledgeProvider } from '../../../../common/knowledge/LazyKnowledgeProvider';
+
+// La carte des connaissances de cette leçon est chargée À LA DEMANDE :
+// elle n'est pas nécessaire pour APPARIER l'URL (les chemins viennent de
+// lesson.config.js), seulement pour rendre la page. Voir
+// common/knowledge/LazyKnowledgeProvider.jsx.
+const loadKnowledge = () => import('./knowledge');
 
 const LessonHome = lazy(() => import('./index.jsx'));
 
@@ -20,14 +25,14 @@ const MODULE_COMPONENTS = Object.entries(MODULE_FILES).reduce((acc, [path, loade
 function withSuspense(Component) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
-      <LessonKnowledgeProvider
+      <LazyLessonKnowledgeProvider
+        load={loadKnowledge}
         lessonId={LESSON_CONFIG.id}
-        knowledge={LESSON_KNOWLEDGE}
         printTitle="ÉQUATIONS ET INÉQUATIONS"
         printSubject="Mathématiques · 2nde"
       >
         <Component />
-      </LessonKnowledgeProvider>
+      </LazyLessonKnowledgeProvider>
     </Suspense>
   );
 }

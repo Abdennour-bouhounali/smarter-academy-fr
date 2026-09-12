@@ -20,6 +20,11 @@ test-results/
 .vite/
 *.tsbuildinfo
 
+# Archives de déploiement assemblées à la main à la racine des apps.
+# Même nature que build/deploy : reconstruites à la demande, jamais versionnées.
+apps/api.zip
+apps/web/dist.zip
+
 # ── Brouillons de session ────────────────────────────────────────────────
 # Sondes Playwright jetables écrites à la racine pendant une mise au point
 # (capture d'écran, vérification d'un parcours), et pages web enregistrées

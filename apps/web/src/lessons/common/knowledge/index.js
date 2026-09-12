@@ -12,6 +12,7 @@
  */
 export { default as KnowledgeMap, KnowledgeMapTrigger, CompleteView, CATEGORIES, CAT_THEME } from './KnowledgeMap';
 export { LessonKnowledgeProvider, useLessonKnowledge } from './KnowledgeProvider';
+export { LazyLessonKnowledgeProvider, makeLazyKnowledgeProvider } from './LazyKnowledgeProvider';
 export { default as KnowledgeSnapshot } from './KnowledgeSnapshot';
 export * from './knowledgeState';
 export * from './knowledgeVisuals';

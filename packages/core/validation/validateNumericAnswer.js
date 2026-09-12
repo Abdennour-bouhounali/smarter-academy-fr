@@ -4,6 +4,14 @@ import { compareMathExpressions } from '../mathComparison';
 /**
  * Validates a student's numeric/algebraic answer against an expected value.
  *
+ * ── Démarrage ────────────────────────────────────────────────────────────
+ * Cette fonction reste SYNCHRONE et tire le moteur symbolique (~2,6 Mo) avec
+ * elle : c'est son contrat, et le différer ferait silencieusement échouer la
+ * première comparaison algébrique. Elle n'est donc PAS réexportée par le
+ * baril `@smarter-academy/core` (voir index.js) : seules les pages qui
+ * valident réellement des réponses l'importent, par son chemin, et le moteur
+ * reste dans leur lot.
+ *
  * Formalizes the pattern already duplicated inline across many exercise
  * modules: try algebraic equivalence first (so "1/2" matches "0.5", or a
  * differently-ordered but equal expression matches), then fall back to a

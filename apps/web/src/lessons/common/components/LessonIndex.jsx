@@ -128,15 +128,15 @@ export default function LessonIndex({ config, basePath }) {
             <span className="text-slate-900 font-semibold">{config.title}</span>
           </nav>
 
-          <div className="mx-auto max-w-lg rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50/60 to-white p-8 text-center shadow-xs">
-            <Lock size={28} className="mx-auto mb-4 text-amber-600" />
+          <div className="sa-premium-card-locked mx-auto max-w-lg rounded-2xl border p-8 text-center shadow-xs">
+            <Lock size={28} className="mx-auto mb-4 text-violet-600" />
             <h1 className="font-space text-xl font-bold text-slate-800 mb-2">{config.title}</h1>
             <p className="font-inter text-sm leading-relaxed text-slate-600 mb-6">
               Cette leçon nécessite un accès premium.
             </p>
             <Link
               to="/tarifs"
-              className="inline-flex items-center gap-1 rounded-xl bg-amber-500 px-5 py-2.5 font-inter text-sm font-bold text-white transition-colors hover:bg-amber-600"
+              className="inline-flex items-center gap-1 rounded-xl bg-violet-600 px-5 py-2.5 font-inter text-sm font-bold text-white transition-colors hover:bg-violet-700"
             >
               Voir les tarifs →
             </Link>

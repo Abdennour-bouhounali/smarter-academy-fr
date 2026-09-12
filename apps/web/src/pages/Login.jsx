@@ -4,10 +4,22 @@ import { AuthContext } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff } from 'lucide-react';
 import { login as loginRequest } from '../services/authService';
+import GoogleButton from '../components/auth/GoogleButton';
 
+/**
+ * Où va un utilisateur qui vient de s'authentifier.
+ *
+ * L'élève dont l'adresse n'est pas prouvée part vers l'écran de vérification :
+ * le serveur ferme l'espace d'apprentissage tant qu'elle ne l'est pas, et
+ * l'envoyer à /espace lui montrerait une suite de refus sans explication.
+ * La décision reste au serveur — ceci ne fait que conduire l'élève là où il
+ * peut agir.
+ */
 function postLoginPath(user) {
   if (user.role === 'admin') return '/admin';
-  if (user.role === 'student') return '/espace';
+  if (user.role === 'student') {
+    return user.emailVerified === false ? '/verification-email' : '/espace';
+  }
   return '/';
 }
 
@@ -45,7 +57,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-slate-50 flex flex-col justify-center px-4 pt-24 pb-12 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-teal-400/20 blur-3xl pointer-events-none" />
@@ -70,6 +82,14 @@ export default function Login() {
         className="mt-8 sm:mx-auto sm:w-full sm:max-w-md z-10"
       >
         <div className="bg-white/70 backdrop-blur-xl py-8 px-4 shadow-xl shadow-slate-200/50 sm:rounded-2xl sm:px-10 border border-white/50">
+          <GoogleButton label="Continuer avec Google" />
+
+          <div className="my-6 flex items-center gap-4">
+            <span className="h-px flex-1 bg-slate-200" />
+            <span className="text-xs font-medium uppercase tracking-wider text-slate-400">ou</span>
+            <span className="h-px flex-1 bg-slate-200" />
+          </div>
+
           <form className="space-y-6" onSubmit={handleSubmit}>
             {errorMsg && (
               <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">

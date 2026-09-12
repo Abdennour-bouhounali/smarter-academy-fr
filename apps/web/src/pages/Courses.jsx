@@ -175,7 +175,7 @@ export default function CoursesPage() {
                 <span className="w-2 h-2 rounded-full bg-emerald-500" /> Gratuit
               </span>
               <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
-                <Crown size={12} className="text-amber-500" /> Premium
+                <Crown size={12} className="text-violet-500" /> Premium
               </span>
               <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
                 <Lock size={12} className="text-slate-400" /> Bientôt disponible

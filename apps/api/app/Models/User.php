@@ -53,6 +53,9 @@ class User extends Authenticatable
         'account_status',
         'suspended_at',
         'last_activity_at',
+        'terms_accepted_version',
+        'privacy_policy_accepted_version',
+        'legal_consent_at',
     ];
 
     /**
@@ -67,6 +70,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'suspended_at' => 'datetime',
             'last_activity_at' => 'datetime',
+            'legal_consent_at' => 'datetime',
         ];
     }
 
@@ -108,6 +112,62 @@ class User extends Authenticatable
     public function hasActiveAccount(): bool
     {
         return $this->account_status === self::STATUS_ACTIVE;
+    }
+
+    /**
+     * Les identités externes (Google) rattachées à ce compte.
+     *
+     * Une relation, et non une colonne `google_id` : voir la migration
+     * create_user_identities_table.
+     */
+    public function identities(): HasMany
+    {
+        return $this->hasMany(UserIdentity::class);
+    }
+
+    /**
+     * L'adresse est-elle prouvée ?
+     *
+     * Nommée comme le contrat MustVerifyEmail de Laravel (que ce modèle
+     * n'implémente pas : il n'y a pas de route web à qui renvoyer un
+     * visiteur, cette API ne rend que du JSON), afin que le vocabulaire
+     * reste celui que tout le monde connaît.
+     */
+    public function hasVerifiedEmail(): bool
+    {
+        return $this->email_verified_at !== null;
+    }
+
+    public function getEmailForVerification(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * Marque l'adresse comme prouvée. IDEMPOTENT : vérifier deux fois n'est
+     * pas une erreur, et la date du PREMIER passage est celle qui compte —
+     * la réécrire effacerait l'information utile.
+     */
+    public function markEmailAsVerified(): bool
+    {
+        if ($this->hasVerifiedEmail()) {
+            return false;
+        }
+
+        $this->forceFill(['email_verified_at' => now()])->save();
+
+        return true;
+    }
+
+    /**
+     * Ce compte peut-il se connecter par mot de passe ?
+     *
+     * Faux pour un compte créé par Google, qui n'en a pas (NULL, et non un
+     * secret aléatoire — voir la migration qui rend la colonne facultative).
+     */
+    public function hasPassword(): bool
+    {
+        return $this->password !== null && $this->password !== '';
     }
 
     public function subscriptions(): HasMany

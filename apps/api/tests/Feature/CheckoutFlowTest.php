@@ -660,6 +660,12 @@ class FakeCheckoutProvider implements PaymentProvider
         return $this->stateFor($providerSubscriptionId, cancelAtPeriodEnd: false);
     }
 
+    /** Ce double ne relit rien : les corps de test portent déjà tout. */
+    public function fetchSubscription(string $providerSubscriptionId): ?ProviderSubscriptionState
+    {
+        return null;
+    }
+
     private function stateFor(string $id, bool $cancelAtPeriodEnd): ProviderSubscriptionState
     {
         return new ProviderSubscriptionState(

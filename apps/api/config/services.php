@@ -60,4 +60,27 @@ return [
         ],
     ],
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Google — « Continuer avec Google »
+    |--------------------------------------------------------------------------
+    |
+    | Les trois valeurs sont STRICTEMENT côté serveur. Le secret ne doit
+    | jamais atteindre le navigateur : il n'existe donc aucune variable
+    | VITE_GOOGLE_* correspondante, et il ne faut pas en créer. Le frontend
+    | n'a rien à savoir d'autre que l'adresse de la route de départ.
+    |
+    | `redirect` doit correspondre EXACTEMENT à l'URI de redirection
+    | autorisée dans la console Google — au caractère près, schéma et port
+    | compris, sinon Google refuse l'échange.
+    |
+    */
+
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
+    ],
+
 ];

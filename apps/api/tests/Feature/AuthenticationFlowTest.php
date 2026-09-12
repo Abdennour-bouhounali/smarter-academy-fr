@@ -15,6 +15,7 @@ class AuthenticationFlowTest extends TestCase
         $response = $this->postJson('/api/v1/auth/register', [
             'email' => 'alice@example.com',
             'password' => 'password123',
+            'accept_legal' => true,
         ]);
 
         $response->assertStatus(201)
@@ -38,6 +39,7 @@ class AuthenticationFlowTest extends TestCase
         $response = $this->postJson('/api/v1/auth/register', [
             'email' => 'noconfirm@example.com',
             'password' => 'password123',
+            'accept_legal' => true,
         ]);
 
         $response->assertStatus(201);
@@ -49,6 +51,7 @@ class AuthenticationFlowTest extends TestCase
             'email' => 'eve@example.com',
             'password' => 'password123',
             'role' => 'admin',
+            'accept_legal' => true,
         ]);
 
         $response->assertStatus(201)->assertJsonPath('user.role', 'student');
@@ -65,6 +68,7 @@ class AuthenticationFlowTest extends TestCase
             'email' => 'grady@example.com',
             'password' => 'password123',
             'grade' => '6e',
+            'accept_legal' => true,
         ]);
 
         // Grade is only ever set via PATCH /auth/grade after account creation —
@@ -171,14 +175,45 @@ class AuthenticationFlowTest extends TestCase
         $this->assertDatabaseHas('users', ['id' => $user->id, 'grade' => '5e']);
     }
 
+    /**
+     * L'accueil d'un nouvel élève, tel qu'il se déroule VRAIMENT depuis que
+     * l'adresse doit être vérifiée : on s'inscrit, on prouve son adresse,
+     * ET ENSUITE on choisit sa classe.
+     *
+     * L'étape de vérification est au milieu, et non un détail de mise en
+     * scène : sans elle, PATCH /auth/grade répond 403. Le test l'exécute donc
+     * pour de bon, au lieu de forcer la colonne en base — c'est le parcours
+     * de l'élève qui est vérifié ici, pas un état de table.
+     */
     public function test_a_newly_registered_student_can_set_their_grade_via_onboarding(): void
     {
         $register = $this->postJson('/api/v1/auth/register', [
             'email' => 'onboarding@example.com',
             'password' => 'password123',
+            'accept_legal' => true,
         ]);
         $register->assertJsonPath('user.grade', null);
+        $register->assertJsonPath('user.emailVerified', false);
         $token = $register->json('token');
+
+        // Tant que l'adresse n'est pas prouvée, l'espace reste fermé.
+        $this->withHeader('Authorization', "Bearer {$token}")
+            ->patchJson('/api/v1/auth/grade', ['grade' => '6e'])
+            ->assertStatus(403)
+            ->assertJsonPath('emailVerified', false);
+
+        $user = User::where('email', 'onboarding@example.com')->firstOrFail();
+        $this->get(\App\Domain\Identity\EmailVerificationLink::for($user))
+            ->assertRedirect(config('app.frontend_url').'/verification-email?statut=succes');
+
+        // Le garde d'authentification mémorise l'utilisateur qu'il a résolu,
+        // pour ne pas le relire à chaque appel dans une même requête. Ici,
+        // trois requêtes se suivent DANS LE MÊME processus : sans cet oubli,
+        // la troisième reverrait l'instance chargée par la première, encore
+        // non vérifiée. En production le problème n'existe pas — chaque
+        // requête HTTP repart d'une application neuve — c'est une précaution
+        // propre au harnais de test.
+        $this->app['auth']->forgetGuards();
 
         $response = $this->withHeader('Authorization', "Bearer {$token}")
             ->patchJson('/api/v1/auth/grade', ['grade' => '6e']);

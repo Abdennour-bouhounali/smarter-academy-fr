@@ -27,6 +27,10 @@ return Application::configure(basePath: dirname(__DIR__))
         // route authentifiée (voir le groupe auth:sanctum dans routes/api.php).
         $middleware->alias([
             'account.active' => \App\Http\Middleware\EnsureAccountIsActive::class,
+            // La vérification d'adresse, elle aussi faite respecter par le
+            // serveur : un écran « vérifiez votre e-mail » se contourne en
+            // tapant une URL, pas ce middleware.
+            'email.verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

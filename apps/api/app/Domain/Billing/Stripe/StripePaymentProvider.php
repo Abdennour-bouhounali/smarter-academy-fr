@@ -223,6 +223,34 @@ class StripePaymentProvider implements PaymentProvider
     }
 
     /**
+     * Relit l'abonnement chez Stripe. Lecture seule, aucun paramètre envoyé.
+     *
+     * Passe par `fromApiSubscription`, donc par EXACTEMENT la même traduction
+     * qu'un webhook : la forme 2025 (période sur `items.data[0]`) est ainsi
+     * gérée par le même code, et ne peut pas régresser d'un côté seulement.
+     */
+    public function fetchSubscription(string $providerSubscriptionId): ?ProviderSubscriptionState
+    {
+        if ($this->apiKey === null || $this->apiKey === '') {
+            throw new CheckoutFailedException('Aucune clé d\'API Stripe configurée.');
+        }
+
+        try {
+            $subscription = $this->client()->subscriptions->retrieve($providerSubscriptionId);
+        } catch (ApiErrorException $e) {
+            // Introuvable : ce n'est pas une panne. On le distingue d'une
+            // indisponibilité, qui doit rester rejouable.
+            if ($e->getHttpStatus() === 404) {
+                return null;
+            }
+
+            throw new CheckoutFailedException($e->getMessage(), previous: $e);
+        }
+
+        return $this->translator->fromApiSubscription($subscription->toArray());
+    }
+
+    /**
      * @param  array<string, mixed>  $params
      */
     private function updateSubscription(string $providerSubscriptionId, array $params): ProviderSubscriptionState

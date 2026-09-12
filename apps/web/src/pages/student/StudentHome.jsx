@@ -10,11 +10,13 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { getDisplayName } from '../../utils/userDisplay';
 import DiagnosticInviteBanner from '../../components/diagnostic/DiagnosticInviteBanner';
 import StatTile from '../../components/common/StatTile';
+import { usePremiumStatus } from '../../hooks/usePremiumStatus';
 
 
 export default function StudentHome() {
   useDocumentMeta('Mon espace', 'Ton tableau de bord Smarter Academy — reprends ta leçon, suis ta progression.');
   const { user } = useContext(AuthContext);
+  const { isPremium, canSeeUpgrade } = usePremiumStatus();
 
   const [lastFocus, setLastFocus] = useState(Date.now());
   useEffect(() => {
@@ -184,7 +186,26 @@ export default function StudentHome() {
             <ArrowRight size={16} className="text-slate-300 group-hover:text-purple-500 group-hover:translate-x-1 transition-all flex-shrink-0" />
           </Link>
 
-          {premiumCount > 0 && (
+          {/* MÊME COMPTE, DEUX LECTURES.
+              « 3 leçons Premium » est une bonne nouvelle pour l'abonné (du
+              contenu qui l'attend) et une invitation pour qui ne l'est pas.
+              La carte disait « Débloque avec l'abonnement — 35€/an » aux
+              deux : elle redemandait 35€ à quelqu'un qui les avait payés. Le
+              chiffre reste, la destination et la phrase changent. */}
+          {premiumCount > 0 && isPremium && (
+            <Link to="/espace/cours" className="group glass-card p-5 flex items-center gap-4 border-violet-200 hover:border-violet-300 transition-colors block">
+              <div className="w-11 h-11 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center flex-shrink-0">
+                <Crown size={19} />
+              </div>
+              <div className="flex-1">
+                <p className="font-space font-bold text-slate-800 text-sm">{premiumCount} leçon{premiumCount > 1 ? 's' : ''} Premium {premiumCount > 1 ? 'ouvertes' : 'ouverte'}</p>
+                <p className="font-inter text-slate-500 text-xs mt-0.5">Incluses dans ton accès — à toi de jouer</p>
+              </div>
+              <ArrowRight size={16} className="text-slate-300 group-hover:text-violet-500 group-hover:translate-x-1 transition-all flex-shrink-0" />
+            </Link>
+          )}
+
+          {premiumCount > 0 && canSeeUpgrade && (
             <Link to="/tarifs" className="group glass-card p-5 flex items-center gap-4 border-amber-200 hover:border-amber-300 transition-colors block bg-gradient-to-br from-amber-50/50 to-white">
               <div className="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0">
                 <Crown size={19} />

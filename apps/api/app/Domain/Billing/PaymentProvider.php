@@ -130,4 +130,27 @@ interface PaymentProvider
      * @throws \App\Domain\Billing\CheckoutFailedException si le fournisseur refuse.
      */
     public function resumeSubscription(string $providerSubscriptionId): ProviderSubscriptionState;
+
+    /**
+     * LIT l'etat d'un abonnement chez le fournisseur, sans rien y modifier.
+     *
+     * Pourquoi cette lecture existe : Stripe emet
+     * `customer.subscription.created` AVANT `checkout.session.completed`
+     * (forme réelle, phase 6.5). Le premier porte le tarif et la période
+     * mais aucun élève identifiable ; la seconde porte l'élève mais NI tarif
+     * NI période. Les évènements ne conservant qu'une empreinte de leur
+     * corps (choix delibere : un corps de webhook porte des donnees
+     * personnelles), l'etat du premier n'est plus relisible localement.
+     *
+     * Relire chez le fournisseur est donc la seule source de verite
+     * disponible — et c'est la MEME que celle du webhook, pas une seconde
+     * autorite : le resultat repasse par le traducteur habituel puis par
+     * l'adaptateur, jamais directement dans `entitlements`.
+     *
+     * Renvoie null si l'abonnement est introuvable chez le fournisseur : ce
+     * n'est pas une panne, et cela ne doit ouvrir aucun acces.
+     *
+     * @throws \App\Domain\Billing\CheckoutFailedException si le fournisseur est indisponible.
+     */
+    public function fetchSubscription(string $providerSubscriptionId): ?ProviderSubscriptionState;
 }

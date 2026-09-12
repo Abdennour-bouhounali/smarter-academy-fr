@@ -101,4 +101,14 @@ class SandboxPaymentProvider implements PaymentProvider
     {
         throw new CheckoutFailedException('Le bac à sable ne gère aucun abonnement.');
     }
+
+    /**
+     * Le bac à sable ne connaît aucun abonnement distant : il n'y a rien à
+     * relire. `null` — surtout pas une exception, qui rendrait l'évènement
+     * indéfiniment rejouable pour une cause qui ne se résoudra jamais.
+     */
+    public function fetchSubscription(string $providerSubscriptionId): ?ProviderSubscriptionState
+    {
+        return null;
+    }
 }

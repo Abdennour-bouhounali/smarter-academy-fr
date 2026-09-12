@@ -10,6 +10,7 @@ const PLANS = {
     price: '0€',
     period: '',
     tagline: 'Pour découvrir et apprendre, sans limite de temps',
+    ownedTagline: 'Pour découvrir et apprendre, sans limite de temps',
     features: [
       'Compte gratuit — aucune carte bancaire',
       '2 leçons complètes par niveau',
@@ -28,14 +29,20 @@ const PLANS = {
     price: '35€',
     period: '/ an',
     tagline: "Débloque le programme complet, tous niveaux confondus",
+    // Ce que l'offre EST, une fois qu'on l'a — au présent, pas au futur.
+    ownedTagline: 'Le programme complet, tous niveaux confondus',
     features: [
       'Tout ce qui est inclus dans le compte gratuit',
       "L'intégralité du programme — 6e à Terminale",
       'Toutes les leçons, tous les chapitres',
       'Accès prioritaire aux nouveautés',
     ],
-    ctaLabel: 'Être informé·e du lancement',
-    ctaTo: '/contact',
+    // Le lien par défaut, quand la page appelante ne monte pas la logique
+    // d'achat (l'accueil, par exemple). Il menait vers « être informé du
+    // lancement » — l'abonnement EST lancé ; il mène désormais vers la page
+    // qui sait quoi proposer à chaque public.
+    ctaLabel: "Voir l'abonnement",
+    ctaTo: '/tarifs',
     accent: true,
   },
 };
@@ -46,6 +53,11 @@ const PLANS = {
  * @param {boolean} [props.owned]  l'élève possède DÉJÀ ce plan. Le bouton
  *        d'appel devient alors un état : proposer de souscrire ce qu'on a
  *        déjà payé est le genre de détail qui fait douter d'avoir payé.
+ * @param {string} [props.ownedLabel]  comment NOMMER ce que l'élève possède
+ *        (« Abonnement actif », « Accès premium actif »…). L'appelant le sait,
+ *        la carte ne le devine pas : un accès offert par l'administration
+ *        n'est pas un abonnement, et le dire ferait attendre un
+ *        renouvellement qui n'arrivera jamais.
  * @param {() => void} [props.onSubscribe]  déclenche l'ouverture du paiement.
  *        Absent, la carte garde son lien d'origine — c'est ce qui permet à la
  *        page d'accueil de l'afficher sans monter toute la logique d'achat.
@@ -59,6 +71,7 @@ export default function PricingCard({
   plan,
   compact = false,
   owned = false,
+  ownedLabel,
   onSubscribe,
   busy = false,
   unavailable = false,
@@ -81,7 +94,9 @@ export default function PricingCard({
           : 'glass-card text-slate-900'
       }`}
     >
-      {data.badge && (
+      {/* « 1 mois offert » est une accroche de lancement : la montrer à qui a
+          déjà souscrit annonce un cadeau qui ne le concerne plus. */}
+      {data.badge && !owned && (
         <span className="absolute -top-3 right-6 text-[11px] font-bold font-mono-jetbrains tracking-wider text-white px-3 py-1.5 rounded-full shadow-lg" style={{ background: 'linear-gradient(135deg, #F59E0B, #F97316)' }}>
           {data.badge}
         </span>
@@ -92,7 +107,9 @@ export default function PricingCard({
       </div>
 
       <h3 className={`font-space font-bold text-xl mb-1 ${data.accent ? 'text-white' : 'text-slate-900'}`}>{data.name}</h3>
-      <p className={`font-inter text-sm mb-5 ${data.accent ? 'text-slate-300' : 'text-slate-500'}`}>{data.tagline}</p>
+      <p className={`font-inter text-sm mb-5 ${data.accent ? 'text-slate-300' : 'text-slate-500'}`}>
+        {owned && data.ownedTagline ? data.ownedTagline : data.tagline}
+      </p>
 
       <div className="flex items-baseline gap-1.5 mb-6">
         <span className={`font-space font-black text-4xl ${data.accent ? 'text-white' : 'text-slate-900'}`}>{priceLabel || data.price}</span>
@@ -119,7 +136,7 @@ export default function PricingCard({
           }`}
         >
           <CheckCircle2 size={16} />
-          Ton offre actuelle
+          {ownedLabel || 'Ton offre actuelle'}
         </div>
       ) : unavailable ? (
         // Offre proposée mais non configurée côté serveur : un état, pas un

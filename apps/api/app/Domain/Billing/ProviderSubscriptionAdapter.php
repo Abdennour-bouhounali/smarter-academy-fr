@@ -37,6 +37,7 @@ class ProviderSubscriptionAdapter
     public function __construct(
         private SubscriptionEntitlementSynchronizer $synchronizer,
         private PlanCatalog $plans,
+        private PaymentProviderRegistry $providers,
     ) {}
 
     /**
@@ -103,7 +104,11 @@ class ProviderSubscriptionAdapter
             return ['subscription' => null, 'action' => 'unresolved', 'reason' => 'unknown_customer'];
         }
 
-        $attributes = $this->localAttributesFor($state, $user);
+        // La session rattache l'élève mais ne porte ni tarif ni période : on
+        // relit l'état complet chez le fournisseur avant d'écrire.
+        $state = $this->completeFromProvider($state, $existing);
+
+        $attributes = $this->localAttributesFor($state, $user, $existing);
 
         $subscription = DB::transaction(function () use ($existing, $attributes, $state, $user) {
             if ($existing !== null) {
@@ -268,12 +273,114 @@ class ProviderSubscriptionAdapter
     }
 
     /**
+     * Complète un état PARTIEL en relisant le fournisseur.
+     *
+     * ── Le défaut que ceci corrige ───────────────────────────────────────
+     * Stripe émet, dans cet ordre réel (phase 6.5, confirmé en production) :
+     *
+     *     invoice.paid
+     *     customer.subscription.created   ← tarif + période, AUCUN élève
+     *     checkout.session.completed      ← l'élève, NI tarif NI période
+     *
+     * Au premier, `resolveUser` échoue (le client n'est rattaché à personne)
+     * et l'évènement repart en `unresolved` sans rien écrire. À la seconde,
+     * l'élève est enfin connu — mais la session ne transporte pas le tarif,
+     * et `provider_events` ne conserve qu'une EMPREINTE du corps (choix
+     * délibéré : un corps de webhook porte des données personnelles). L'état
+     * du premier évènement n'est donc plus relisible localement.
+     *
+     * Résultat avant correctif : l'abonnement naissait `plan = free`,
+     * `ends_at = null` — un droit premium SANS TERME, qui ne se réparait que
+     * si un `customer.subscription.updated` passait par hasard plus tard.
+     *
+     * ── Pourquoi relire plutôt que stocker le corps ──────────────────────
+     * Stocker les corps de webhook annulerait une décision de confidentialité
+     * déjà prise et testée. Relire chez le fournisseur ne crée AUCUNE seconde
+     * autorité : le résultat repasse par le même traducteur puis par le même
+     * adaptateur. C'est la lecture qui est déplacée, pas la décision.
+     *
+     * ── Ce que cette méthode ne fait jamais ──────────────────────────────
+     * Elle ne s'exécute que si l'état reçu est réellement incomplet, et elle
+     * ne remplace QUE les champs absents. Un état complet n'appelle rien (pas
+     * d'appel réseau sur le chemin normal). Une panne du fournisseur laisse
+     * l'état tel quel : l'évènement s'écrira partiellement puis restera
+     * corrigible, plutôt que d'échouer et de tout perdre.
+     *
+     * Une SUPPRESSION n'est jamais complétée : elle est terminale, et relire
+     * un abonnement supprimé ramènerait sa période d'origine — donc un accès
+     * rouvert après la disparition de l'abonnement.
+     */
+    private function completeFromProvider(
+        ProviderSubscriptionState $state,
+        ?Subscription $existing,
+    ): ProviderSubscriptionState {
+        if ($state->deleted) {
+            return $state;
+        }
+
+        $missingPrice = $state->providerPriceId === null && $existing?->provider_price_id === null;
+        $missingPeriod = $state->currentPeriodEnd === null && $existing?->current_period_end === null;
+
+        if (! $missingPrice && ! $missingPeriod) {
+            return $state;
+        }
+
+        if (! $this->providers->has($state->provider)) {
+            return $state;
+        }
+
+        try {
+            $fresh = $this->providers->get($state->provider)->fetchSubscription($state->providerSubscriptionId);
+        } catch (CheckoutFailedException) {
+            // Fournisseur indisponible : on n'échoue pas l'évènement pour
+            // autant. L'abonnement s'écrit avec ce qu'on sait, et un
+            // évènement ultérieur (ou une resynchronisation) le complètera.
+            return $state;
+        }
+
+        if ($fresh === null || $fresh->providerSubscriptionId !== $state->providerSubscriptionId) {
+            return $state;
+        }
+
+        // Le client relu doit désigner le MÊME client : sans cela, une
+        // réponse portant un autre client pourrait déplacer le rattachement.
+        if (
+            $state->providerCustomerId !== null
+            && $fresh->providerCustomerId !== null
+            && $fresh->providerCustomerId !== $state->providerCustomerId
+        ) {
+            return $state;
+        }
+
+        // On ne prend du fournisseur QUE ce qui manque. Le statut, la date de
+        // l'évènement et le `client_reference_id` restent ceux de l'évènement
+        // reçu : c'est lui qui fait foi sur « quand » et « qui », et la
+        // protection anti-péremption (`occurredAt`) doit rester intacte.
+        return new ProviderSubscriptionState(
+            provider: $state->provider,
+            providerSubscriptionId: $state->providerSubscriptionId,
+            providerCustomerId: $state->providerCustomerId ?? $fresh->providerCustomerId,
+            providerStatus: $state->providerStatus,
+            providerPriceId: $state->providerPriceId ?? $fresh->providerPriceId,
+            currentPeriodStart: $state->currentPeriodStart ?? $fresh->currentPeriodStart,
+            currentPeriodEnd: $state->currentPeriodEnd ?? $fresh->currentPeriodEnd,
+            cancelAtPeriodEnd: $state->cancelAtPeriodEnd,
+            occurredAt: $state->occurredAt,
+            deleted: $state->deleted,
+            clientReferenceId: $state->clientReferenceId,
+        );
+    }
+
+    /**
      * L'état local, dérivé de l'état du fournisseur.
      *
      * @return array<string, mixed>
      */
-    private function localAttributesFor(ProviderSubscriptionState $state, User $user): array
-    {
+    private function localAttributesFor(
+        ProviderSubscriptionState $state,
+        User $user,
+        ?Subscription $existing = null,
+    ): array {
         $status = $this->localStatusFor($state);
         $endsAt = $this->endsAtFor($state, $status);
 
@@ -300,6 +407,41 @@ class ProviderSubscriptionAdapter
             'cancel_at_period_end' => $state->cancelAtPeriodEnd,
             'provider_synced_at' => $state->occurredAt ?? Carbon::now(),
         ];
+
+        // ── Une ABSENCE n'est pas une donnée ─────────────────────────────
+        //
+        // `checkout.session.completed` ne transporte NI tarif NI période :
+        // le traducteur y met `null` à dessein, parce que la session ne les
+        // connaît pas. Mais Stripe émet `customer.subscription.created`
+        // AVANT la session (forme réelle, phase 6.5) : quand cet évènement
+        // arrive, le client n'est pas encore rattaché, donc il ne crée rien.
+        //
+        // Écrire les `null` de la session par-dessus revenait donc à effacer
+        // la seule lecture fiable du tarif et de la période. L'abonnement
+        // restait `plan = free`, `ends_at = null` — un droit premium SANS
+        // TERME, exactement la barrière temporelle que la phase 6.5 avait
+        // rétablie. Constaté en production sur 6 évènements.
+        //
+        // Même règle que `plan` juste en dessous : on n'écrase une valeur
+        // connue que par une autre valeur connue. Un champ absent laisse
+        // l'existant intact plutôt que de le détruire.
+        foreach (['provider_price_id', 'current_period_end'] as $field) {
+            if ($attributes[$field] === null && $existing?->{$field} !== null) {
+                unset($attributes[$field]);
+            }
+        }
+
+        // `ends_at` dérive de la période : s'il n'y a plus de période à
+        // écrire, il ne faut pas non plus effacer le terme déjà connu. Un
+        // statut terminal (expiré/résilié) garde en revanche la main, sinon
+        // une suppression ne fermerait jamais l'accès.
+        if (
+            $endsAt === null
+            && $existing?->ends_at !== null
+            && ! in_array($status, [Subscription::STATUS_EXPIRED, Subscription::STATUS_CANCELLED], true)
+        ) {
+            unset($attributes['ends_at']);
+        }
 
         // `plan` n'est écrit QUE si le tarif est reconnu. Un tarif inconnu —
         // une offre retirée du catalogue, un abonnement hérité — laisse la

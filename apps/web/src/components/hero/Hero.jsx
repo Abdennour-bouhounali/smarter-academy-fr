@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowDown, ArrowRight, Calculator, PenTool, BrainCircuit, Sparkles, Lightbulb } from 'lucide-react';
-import MafsGraph from './MafsGraph';
+// Le graphe interactif de la page d'accueil tire `mafs` (~520 Ko, avec sa
+// propre copie de KaTeX). Il est SOUS la ligne de flottaison du premier
+// rendu et l'en-tête affiche déjà un fond d'attente (`isGraphLoaded`) : on
+// le charge donc à part, pour que le premier écran n'attende pas une
+// bibliothèque de tracé.
+const MafsGraph = lazy(() => import('./MafsGraph'));
 
 const floatingIcons = [
   { Icon: Calculator, color: 'text-blue-500', bg: 'bg-blue-50', position: 'top-[15%] left-[10%]', delay: 0 },
@@ -170,7 +175,9 @@ export default function Hero() {
                 {!isGraphLoaded && (
                   <div className="absolute inset-0 bg-slate-50 z-0"></div>
                 )}
-                <MafsGraph a={a} b={b} onLoad={() => setIsGraphLoaded(true)} />
+                <Suspense fallback={null}>
+                  <MafsGraph a={a} b={b} onLoad={() => setIsGraphLoaded(true)} />
+                </Suspense>
               </div>
 
               {/* Controls */}

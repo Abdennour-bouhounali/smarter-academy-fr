@@ -74,12 +74,38 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  /**
+   * Relit le compte depuis le serveur.
+   *
+   * Nécessaire dès qu'un état du compte change AILLEURS que dans cet onglet —
+   * le cas concret étant la vérification d'adresse : l'élève clique le lien
+   * reçu par courriel, le serveur enregistre la preuve, et cet onglet-ci
+   * l'ignore encore. On redemande au serveur plutôt que de supposer localement
+   * que c'est fait.
+   *
+   * N'efface PAS la session en cas d'échec, contrairement au chargement
+   * initial : un réseau capricieux ne doit pas déconnecter quelqu'un qui
+   * était correctement authentifié.
+   */
+  const refreshUser = async () => {
+    if (!token) return null;
+
+    try {
+      const currentUser = await fetchCurrentUser(token);
+      applyUser(currentUser);
+      return currentUser;
+    } catch (error) {
+      console.error('Error refreshing user:', error);
+      return null;
+    }
+  };
+
   useEffect(() => {
     fetchUser();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <AuthContext.Provider value={{ user, token, login, logout, loading, updateGrade }}>
+    <AuthContext.Provider value={{ user, token, login, logout, loading, updateGrade, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );

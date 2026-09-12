@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, LogOut, ShieldCheck, LayoutDashboard } from 'lucide-react';
-import GradeSwitcher from '../auth/GradeSwitcher';
 import { AuthContext } from '../../context/AuthContext';
 import { navLinks } from '../../data/navigation';
 
@@ -24,7 +23,7 @@ function AuthCluster({ compact = false, onNavigate }) {
           onClick={onNavigate}
           className={compact
             ? 'flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-inter text-sm font-semibold text-slate-700 border border-slate-200 hover:bg-slate-50'
-            : 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-inter text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors'}
+            : 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-inter text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 whitespace-nowrap transition-colors'}
         >
           <ShieldCheck size={15} />
           Espace admin
@@ -33,7 +32,7 @@ function AuthCluster({ compact = false, onNavigate }) {
           onClick={handleLogout}
           className={compact
             ? 'flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-inter text-sm font-medium text-slate-500 hover:bg-slate-50'
-            : 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-inter text-xs font-medium text-slate-400 hover:text-slate-700 transition-colors'}
+            : 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-inter text-xs font-medium text-slate-400 hover:text-slate-700 whitespace-nowrap transition-colors'}
         >
           <LogOut size={13} />
           Déconnexion
@@ -50,18 +49,17 @@ function AuthCluster({ compact = false, onNavigate }) {
           onClick={onNavigate}
           className={compact
             ? 'flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white'
-            : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5'}
+            : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5'}
           style={{ background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', boxShadow: '0 4px 14px rgba(59,130,246,0.3)' }}
         >
           <LayoutDashboard size={14} />
           Mon espace
         </Link>
-        <GradeSwitcher />
         <button
           onClick={handleLogout}
           className={compact
             ? 'flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-inter text-sm font-medium text-slate-500 hover:bg-slate-50'
-            : 'inline-flex items-center gap-1.5 px-2 py-1.5 rounded-lg font-inter text-xs font-medium text-slate-400 hover:text-slate-700 transition-colors'}
+            : 'inline-flex items-center gap-1.5 px-2 py-1.5 rounded-lg font-inter text-xs font-medium text-slate-400 hover:text-slate-700 whitespace-nowrap transition-colors'}
         >
           <LogOut size={13} />
           {compact ? 'Déconnexion' : ''}
@@ -77,7 +75,7 @@ function AuthCluster({ compact = false, onNavigate }) {
         onClick={onNavigate}
         className={compact
           ? 'flex items-center justify-center px-4 py-3 rounded-xl font-inter text-sm font-semibold text-slate-700 border border-slate-200 hover:bg-slate-50'
-          : 'hidden sm:inline-flex px-3 py-1.5 rounded-lg font-inter text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors'}
+          : 'hidden sm:inline-flex px-3 py-1.5 rounded-lg font-inter text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 whitespace-nowrap transition-colors'}
       >
         Se connecter
       </Link>
@@ -86,7 +84,7 @@ function AuthCluster({ compact = false, onNavigate }) {
         onClick={onNavigate}
         className={compact
           ? 'flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white'
-          : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5'}
+          : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5'}
         style={{ background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', boxShadow: '0 4px 14px rgba(59,130,246,0.3)' }}
       >
         Commencer gratuitement
@@ -134,29 +132,41 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+          {/* `h-16` FIXE, `flex-nowrap` : la hauteur de cette barre est mesurée
+              par useLessonViewport pour poser le tiroir « Ma carte ». Un
+              retour à la ligne d'un lien la ferait grandir, et le tiroir
+              s'ouvrirait au mauvais endroit. Les trois grappes se partagent
+              donc la largeur en se comprimant, jamais en se repliant. */}
+          <div className="flex flex-nowrap items-center justify-between h-16 gap-3">
+            {/* Logo — `min-w-0` + `shrink` : c'est LUI qui cède la place en
+                premier quand la largeur manque (le nom disparaît déjà sous
+                `sm`), pas la navigation. */}
             <Link
               to="/"
-              className="flex items-center gap-2.5 group"
+              className="flex items-center gap-2.5 group flex-shrink-0 min-w-0"
             >
-              <img src="/smarter-academy-logo.webp" alt="Smarter Academy" className="h-10 w-auto rounded-lg object-contain" />
-              <div className="hidden sm:flex flex-col">
-                <span className="font-space font-bold text-slate-900 text-sm leading-none">
+              <img src="/smarter-academy-logo.webp" alt="Smarter Academy" className="h-10 w-auto rounded-lg object-contain flex-shrink-0" />
+              <div className="hidden sm:flex flex-col min-w-0">
+                <span className="font-space font-bold text-slate-900 text-sm leading-none whitespace-nowrap">
                   Smarter Academy
                 </span>
               </div>
             </Link>
 
-            {/* Desktop Links */}
-            <div className="hidden lg:flex items-center gap-1">
+            {/* Desktop Links — `flex-nowrap` sur la rangée ET `whitespace-nowrap`
+                sur chaque libellé : le premier empêche les liens de passer à la
+                ligne les uns sous les autres, le second empêche « Notre méthode »
+                de se casser en deux à l'intérieur de sa propre pastille. Sous
+                `lg`, cette rangée n'existe pas — c'est le tiroir mobile qui
+                prend le relais, et lui a la place de s'empiler. */}
+            <div className="hidden lg:flex flex-nowrap items-center gap-1 flex-shrink">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
                   to={link.path}
                   end={link.path === '/'}
                   className={({ isActive }) =>
-                    `px-3 py-1.5 rounded-lg font-inter text-xs sm:text-sm font-medium transition-all duration-200 ${
+                    `px-3 py-1.5 rounded-lg font-inter text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-200 ${
                       isActive
                         ? 'text-blue-600 bg-blue-50 font-semibold'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
@@ -169,7 +179,7 @@ export default function Navbar() {
             </div>
 
             {/* Auth cluster + Mobile Toggle */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex flex-nowrap items-center gap-2 sm:gap-3 flex-shrink-0">
               <div className="hidden sm:flex items-center">
                 <AuthCluster />
               </div>

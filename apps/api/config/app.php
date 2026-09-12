@@ -56,6 +56,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Frontend URL
+    |--------------------------------------------------------------------------
+    |
+    | Où vit le navigateur de l'élève — distinct de APP_URL, qui est l'API.
+    | Toute redirection vers le frontend part d'ICI, et jamais d'une URL
+    | fournie dans une requête : une URL de retour choisie par le client
+    | ferait de chacune de ces routes une redirection ouverte.
+    |
+    | Lu par config() et non par env() directement, pour rester correct une
+    | fois la configuration mise en cache (`config:cache`), où env() rend null.
+    |
+    */
+
+    'frontend_url' => env('FRONTEND_URL', 'http://localhost:5173'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |

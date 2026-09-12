@@ -535,4 +535,10 @@ class FakePaymentProvider implements PaymentProvider
     {
         throw new CheckoutFailedException('Ce fournisseur d\'essai ne gère aucun abonnement.');
     }
+
+    /** Ce double ne relit rien : les corps de test portent déjà tout. */
+    public function fetchSubscription(string $providerSubscriptionId): ?ProviderSubscriptionState
+    {
+        return null;
+    }
 }

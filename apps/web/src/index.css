@@ -111,6 +111,71 @@
   .section-wrapper {
     @apply relative z-10 py-12 sm:py-16 lg:py-24 px-4;
   }
+
+  /* ─────────────────────────────────────────────────────────────────────
+     L'ACCENT PREMIUM — un seul endroit, deux états
+
+     Une leçon payante doit se RECONNAÎTRE dans une grille de cartes, sans
+     pour autant se déguiser en publicité. D'où le violet du système
+     (#8B5CF6, la seconde moitié du dégradé de marque) plutôt qu'un or de
+     « VIP » : le premium est une famille de contenu, pas une récompense.
+
+     Deux états, et la distinction est TOUTE la question :
+
+       .sa-premium-card         — payant ET ouvert à cet élève. Une bordure
+                                  violette sur fond blanc : la carte reste
+                                  une carte normale, elle est juste marquée.
+       .sa-premium-card-locked  — payant et FERMÉ. Le même violet, en teinte
+                                  de fond : c'est la seule différence, parce
+                                  qu'il ne s'agit pas d'un autre contenu mais
+                                  du même, vu d'ailleurs.
+
+     Le verrouillé n'est PAS grisé : une leçon fermée reste désirable, et la
+     griser la ferait passer pour « en préparation » — l'état voisin, qui a
+     déjà son propre gris et signifie tout autre chose.
+
+     Les jetons sont des variables pour que le survol et l'anneau de focus
+     se déduisent de la même couleur au lieu d'être re-choisis à la main.
+     ───────────────────────────────────────────────────────────────────── */
+  .sa-premium-card,
+  .sa-premium-card-locked {
+    --sa-premium: #8B5CF6;
+    --sa-premium-strong: #7C3AED;
+    --sa-premium-soft: #EDE9FE;
+  }
+
+  .sa-premium-card {
+    border-color: #C4B5FD;
+  }
+
+  .sa-premium-card:hover {
+    border-color: var(--sa-premium);
+  }
+
+  .sa-premium-card-locked {
+    border-color: #C4B5FD;
+    background-image: linear-gradient(to bottom right, rgba(237, 233, 254, 0.55), #ffffff);
+  }
+
+  .sa-premium-card-locked:hover {
+    border-color: var(--sa-premium);
+  }
+
+  /* Le badge « Premium ». Contraste violet-700 sur violet-100 : 7,4:1,
+     au-dessus du seuil AA même à cette taille de texte. */
+  .sa-premium-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-mono-jetbrains text-[10px] font-bold;
+    background-color: #EDE9FE;
+    color: #6D28D9;
+  }
+
+  /* Focus clavier : l'anneau suit l'accent de la carte, pas le bleu
+     générique — sinon le premium perd son identité dès qu'on tabule. */
+  .sa-premium-card:focus-visible,
+  .sa-premium-card-locked:focus-visible {
+    outline: 2px solid var(--sa-premium-strong);
+    outline-offset: 2px;
+  }
 }
 
 @layer utilities {

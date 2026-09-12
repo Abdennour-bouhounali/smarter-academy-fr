@@ -1,18 +1,25 @@
 import { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { LogOut, Crown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { LogOut, Crown, ChevronLeft, ChevronRight, ShieldCheck } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
 import { studentNavLinks } from '../../data/studentNavigation';
 import { getAllGrades } from '@smarter-academy/core';
 import { getDisplayName, getInitials } from '../../utils/userDisplay';
 import { useWorkspaceLayout } from '../../context/WorkspaceLayoutContext';
+import { usePremiumStatus } from '../../hooks/usePremiumStatus';
 
 /**
  * The student workspace's own navigation shell — a left sidebar on desktop,
  * a bottom tab bar on mobile. Deliberately NOT the visitor's top nav +
  * hamburger-drawer pattern: this is a workspace to live in, not a page to
- * scroll through. No subscription system exists yet, so the "Premium" tag
- * here is a static upsell link to /tarifs, not an entitlement check.
+ * scroll through.
+ *
+ * L'ENCART DU BAS suit le DROIT D'ACCÈS, il ne le suppose plus. Il fut un
+ * temps un lien d'achat inconditionnel vers /tarifs — un abonné se voyait donc
+ * proposer, à chaque page de son espace, d'acheter ce qu'il venait de payer.
+ * Il a maintenant deux formes, choisies par `usePremiumStatus` (donc par le
+ * serveur) : un ÉTAT pour qui a déjà accès, une INVITATION pour qui ne l'a
+ * pas. Et rien du tout tant que la réponse n'est pas arrivée.
  *
  * BARRE COMPRIMÉE (w-64 → w-20) — l'élève doit continuer à voir OÙ est la
  * navigation : les icônes restent, à leur taille et avec leur zone de clic ;
@@ -34,6 +41,7 @@ export default function StudentNavbar() {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
   const { sidebarCollapsed, sidebarToggleLocked, toggleSidebar } = useWorkspaceLayout();
+  const { isPremium, hasSubscription, canSeeUpgrade } = usePremiumStatus();
 
   const grade = user?.grade ? getAllGrades().find((g) => g.id === user.grade) : null;
 
@@ -87,11 +95,14 @@ export default function StudentNavbar() {
             : <ChevronLeft className="w-3.5 h-3.5" aria-hidden="true" />}
         </button>
 
-        <Link
-          to="/"
-          className={`flex items-center h-16 border-b border-slate-100 flex-shrink-0 ${sidebarCollapsed ? 'justify-center px-0' : 'gap-2.5 px-6'}`}
-          title="Smarter Academy — accueil"
-        >
+        {/* L'EN-TÊTE EST UNE MARQUE, PAS UNE PORTE.
+            C'était un lien vers « / », c'est-à-dire vers le site vitrine :
+            l'élève qui cliquait sur le logo de son espace de travail en
+            sortait sans l'avoir demandé. Un espace de travail ne se quitte
+            pas par son propre titre — la navigation, elle, est juste en
+            dessous, et « Accueil » y mène à /espace, qui est l'accueil que
+            cet élève attend. */}
+        <div className={`flex items-center h-16 border-b border-slate-100 flex-shrink-0 ${sidebarCollapsed ? 'justify-center px-0' : 'gap-2.5 px-6'}`}>
           <img src="/smarter-academy-logo.webp" alt="Smarter Academy" className="h-9 w-auto rounded-lg object-contain flex-shrink-0" />
           {!sidebarCollapsed && (
             <div className="flex flex-col leading-none">
@@ -99,7 +110,7 @@ export default function StudentNavbar() {
               <span className="font-mono-jetbrains text-[10px] text-blue-500 font-semibold tracking-wider uppercase mt-0.5">Espace élève</span>
             </div>
           )}
-        </Link>
+        </div>
 
         <nav className="flex-1 px-3 py-5 space-y-1 overflow-y-auto">
           {studentNavLinks.map((link) => (
@@ -128,24 +139,72 @@ export default function StudentNavbar() {
           ))}
         </nav>
 
-        <div className="px-3 pb-3">
-          <Link
-            to="/tarifs"
-            title="Passer Premium — débloque tout le programme"
-            aria-label="Passer Premium"
-            className={`flex items-center rounded-xl bg-gradient-to-br from-amber-50 to-white border border-amber-200 mb-3 hover:border-amber-300 transition-colors min-h-[44px] ${
-              sidebarCollapsed ? 'justify-center px-0 py-3' : 'gap-2.5 px-3.5 py-3'
-            }`}
-          >
-            <Crown size={16} className="text-amber-500 flex-shrink-0" />
-            {!sidebarCollapsed && (
-              <div className="min-w-0">
-                <p className="font-space font-bold text-slate-800 text-xs">Passer Premium</p>
-                <p className="font-inter text-slate-500 text-[11px] leading-tight">Débloque tout le programme</p>
-              </div>
+        {/* Trois sorties, et le silence en fait partie : tant que le serveur
+            n'a pas répondu, ni état ni invitation — on ne vend rien dans le
+            doute, et on n'annonce pas un abonnement qu'on n'a pas vérifié. */}
+        {(isPremium || canSeeUpgrade) && (
+          <div className="px-3 pb-3">
+            {isPremium ? (
+              // UN ÉTAT, PAS UN BOUTON. L'élève a payé : il n'y a rien à
+              // obtenir ici. Le lien mène à la GESTION de son abonnement,
+              // jamais à une seconde souscription. Un accès accordé par
+              // l'administration n'est pas un abonnement — il le voit dit
+              // autrement, et n'a pas de portail à ouvrir.
+              hasSubscription ? (
+                <Link
+                  to="/abonnement"
+                  title="Abonnement actif — gérer mon abonnement"
+                  aria-label="Abonnement actif — gérer mon abonnement"
+                  className={`flex items-center rounded-xl bg-violet-50 border border-violet-200 mb-3 hover:border-violet-300 transition-colors min-h-[44px] ${
+                    sidebarCollapsed ? 'justify-center px-0 py-3' : 'gap-2.5 px-3.5 py-3'
+                  }`}
+                >
+                  <ShieldCheck size={16} className="text-violet-600 flex-shrink-0" />
+                  {!sidebarCollapsed && (
+                    <div className="min-w-0">
+                      <p className="font-space font-bold text-slate-800 text-xs">Abonnement actif</p>
+                      <p className="font-inter text-slate-500 text-[11px] leading-tight">Gérer mon abonnement</p>
+                    </div>
+                  )}
+                </Link>
+              ) : (
+                <div
+                  title="Accès premium actif"
+                  className={`flex items-center rounded-xl bg-violet-50 border border-violet-200 mb-3 min-h-[44px] ${
+                    sidebarCollapsed ? 'justify-center px-0 py-3' : 'gap-2.5 px-3.5 py-3'
+                  }`}
+                >
+                  <ShieldCheck size={16} className="text-violet-600 flex-shrink-0" />
+                  {!sidebarCollapsed && (
+                    <div className="min-w-0">
+                      <p className="font-space font-bold text-slate-800 text-xs">Premium actif</p>
+                      <p className="font-inter text-slate-500 text-[11px] leading-tight">Tout le programme</p>
+                    </div>
+                  )}
+                </div>
+              )
+            ) : (
+              // L'INVITATION — intacte pour qui n'a pas encore accès : lui
+              // retirer l'offre lui retirerait le moyen de la découvrir.
+              <Link
+                to="/tarifs"
+                title="Passer Premium — débloque tout le programme"
+                aria-label="Passer Premium"
+                className={`flex items-center rounded-xl bg-gradient-to-br from-amber-50 to-white border border-amber-200 mb-3 hover:border-amber-300 transition-colors min-h-[44px] ${
+                  sidebarCollapsed ? 'justify-center px-0 py-3' : 'gap-2.5 px-3.5 py-3'
+                }`}
+              >
+                <Crown size={16} className="text-amber-500 flex-shrink-0" />
+                {!sidebarCollapsed && (
+                  <div className="min-w-0">
+                    <p className="font-space font-bold text-slate-800 text-xs">Passer Premium</p>
+                    <p className="font-inter text-slate-500 text-[11px] leading-tight">Débloque tout le programme</p>
+                  </div>
+                )}
+              </Link>
             )}
-          </Link>
-        </div>
+          </div>
+        )}
 
         <div className={`py-4 border-t border-slate-100 flex flex-shrink-0 ${
           sidebarCollapsed ? 'px-0 flex-col items-center gap-2' : 'px-4 items-center gap-3'
@@ -176,10 +235,11 @@ export default function StudentNavbar() {
 
       {/* Mobile top bar */}
       <header id="app-header" className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-white border-b border-slate-200 z-40 flex items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/smarter-academy-logo.webp" alt="Smarter Academy" className="h-8 w-auto rounded-md object-contain" />
-          <span className="font-mono-jetbrains text-[10px] text-blue-500 font-semibold tracking-wider uppercase">Espace élève</span>
-        </Link>
+        {/* Même règle que la barre latérale : marque, pas lien. */}
+        <div className="flex items-center gap-2 min-w-0">
+          <img src="/smarter-academy-logo.webp" alt="Smarter Academy" className="h-8 w-auto rounded-md object-contain flex-shrink-0" />
+          <span className="font-mono-jetbrains text-[10px] text-blue-500 font-semibold tracking-wider uppercase whitespace-nowrap">Espace élève</span>
+        </div>
         <div className="flex items-center gap-2">
           {grade && (
             <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 font-space font-bold text-[11px]">{grade.name}</span>

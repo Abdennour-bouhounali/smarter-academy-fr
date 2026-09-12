@@ -93,6 +93,7 @@ class AdminAuthorizationTest extends TestCase
             'email' => 'malin@example.com',
             'password' => 'motdepasse123',
             'role' => 'admin',
+            'accept_legal' => true,
         ]);
 
         $response->assertStatus(201);

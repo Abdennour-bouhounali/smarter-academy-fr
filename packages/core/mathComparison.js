@@ -1,6 +1,22 @@
 import { ComputeEngine } from '@cortex-js/compute-engine';
 
-const ce = new ComputeEngine();
+/**
+ * Le moteur symbolique pèse ~2,6 Mo et coûte une instanciation non triviale.
+ * Il était construit au CHARGEMENT de ce module, donc au démarrage de
+ * l'application — alors que la très grande majorité des pages (accueil,
+ * tarifs, mentions légales, sommaire d'une leçon) ne compare jamais deux
+ * expressions. On le construit désormais à la première comparaison réelle.
+ *
+ * Le singleton est conservé : reconstruire le moteur à chaque appel
+ * annulerait le bénéfice sur une page d'exercices qui en fait des dizaines.
+ *
+ * L'API reste SYNCHRONE. `validateNumericAnswer` juge une réponse d'élève
+ * dans le fil de l'événement ; la rendre asynchrone changerait le contrat de
+ * validation partout, ce qui n'est pas le sujet d'une optimisation de
+ * démarrage.
+ */
+let ce = null;
+const engine = () => (ce ??= new ComputeEngine());
 
 /**
  * Compare two LaTeX mathematical expressions.
@@ -13,8 +29,8 @@ export function compareMathExpressions(expr1, expr2) {
   
   try {
     // Parse the LaTeX strings into MathJSON expressions
-    const e1 = ce.parse(expr1);
-    const e2 = ce.parse(expr2);
+    const e1 = engine().parse(expr1);
+    const e2 = engine().parse(expr2);
     
     // 1. Check exact structural equality (fastest)
     if (e1.isEqual(e2)) return true;
@@ -42,7 +58,7 @@ export function compareMathExpressions(expr1, expr2) {
 export function normalizeMathAnswer(expr) {
   if (!expr) return "";
   try {
-    const e = ce.parse(expr);
+    const e = engine().parse(expr);
     return e.latex; // Returns canonical latex
   } catch (err) {
     return expr;
