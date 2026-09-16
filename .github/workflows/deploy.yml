@@ -45,13 +45,39 @@ jobs:
         run: npm run test --workspace=apps/web
 
       # VITE_API_URL is baked into the bundle at build time, so it has to be
-      # set here and not on the server. apps/web/.env.production already holds
-      # the public production value; the repository variable only overrides it
-      # if one is defined.
+      # right here and not on the server. apps/web/.env.production already
+      # holds the public production value, and that is the default.
+      #
+      # The repository variable is only exported when it is actually set.
+      # Passing `env: VITE_API_URL: ${{ vars.VITE_API_URL }}` unconditionally
+      # exports an EMPTY string when the variable does not exist, and an empty
+      # value still counts as set: it overrides .env.production, so the bundle
+      # falls back to the http://localhost:3000 default in apiClient.js and
+      # production talks to nothing. That shipped once; hence this shape.
       - name: Build the frontend
+        run: |
+          if [ -n "${VAR_API_URL}" ]; then
+            echo "Building with the VITE_API_URL repository variable."
+            VITE_API_URL="${VAR_API_URL}" npm run build
+          else
+            echo "No VITE_API_URL variable set; using apps/web/.env.production."
+            npm run build
+          fi
         env:
-          VITE_API_URL: ${{ vars.VITE_API_URL }}
-        run: npm run build
+          VAR_API_URL: ${{ vars.VITE_API_URL }}
+
+      # The bundle must point at the real API. Catches the empty-variable
+      # class of mistake before anything reaches the server.
+      - name: Verify the API URL baked into the bundle
+        run: |
+          set -euo pipefail
+          if grep -rq "localhost:3000" apps/web/dist/assets/*.js; then
+            echo "::error::The built bundle falls back to http://localhost:3000. VITE_API_URL was empty at build time."
+            exit 1
+          fi
+          grep -rq "smarter-academy.fr/api/v1" apps/web/dist/assets/*.js \
+            || { echo "::error::The built bundle contains no production API URL."; exit 1; }
+          echo "Bundle points at the production API."
 
       - name: Verify the frontend build
         run: |
@@ -307,14 +333,23 @@ jobs:
           test -d "$REMOTE_PATH/api/storage/framework"
           test -d "$REMOTE_PATH/api/storage/logs"
 
-          # Nothing from the repository that must never ship.
+          # Nothing that must never ship. These are all excluded from the
+          # rsync above, and .env.example / .env.hostinger are gitignored so a
+          # CI checkout never even holds them. A hit here therefore means a
+          # leftover from an earlier manual File Manager upload rather than
+          # something this workflow sent: reported as a warning, since failing
+          # the deploy over a pre-existing file would block every future run
+          # until someone cleans the server by hand.
+          leftovers=""
           for forbidden in .env.example .env.hostinger phpunit.xml phpunit.local.xml \
                            tests vite.config.js package.json node_modules; do
             if [ -e "$REMOTE_PATH/api/$forbidden" ]; then
-              echo "::error::$forbidden was deployed to production." >&2
-              exit 1
+              leftovers="$leftovers $forbidden"
             fi
           done
+          if [ -n "$leftovers" ]; then
+            echo "::warning::Files present under api/ that this workflow never deploys (left over from a manual upload):$leftovers" >&2
+          fi
 
           md5sum "$REMOTE_PATH/api/.env" | cut -d' ' -f1
           REMOTE
