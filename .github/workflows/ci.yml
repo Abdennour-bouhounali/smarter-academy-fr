@@ -14,8 +14,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build the frontend
+  frontend:
+    name: Frontend
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Unit tests only. The `test:scripts` / `check:lessons` targets audit the
+      # Unit tests only. The `check:lessons` / `test:scripts` targets audit the
       # curriculum content and are deliberately left out of the deployment
       # gate: they guard editorial quality, not whether the site can be built.
       - name: Test the shared core
@@ -52,3 +52,79 @@ jobs:
           test -d apps/web/dist
           test -f apps/web/dist/index.html
           test -f apps/web/dist/.htaccess
+
+  backend:
+    name: Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 8.4 is what production actually serves (x-powered-by: PHP/8.4.19);
+      # composer.json only requires ^8.3, so CI pins the production version
+      # rather than drifting to whatever is newest.
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          # sqlite backs the in-memory test database configured in phpunit.xml.
+          extensions: mbstring, pdo_sqlite, sqlite3, bcmath, intl, zip
+          coverage: none
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: apps/api/vendor
+          key: composer-${{ runner.os }}-php8.4-${{ hashFiles('apps/api/composer.lock') }}
+          restore-keys: composer-${{ runner.os }}-php8.4-
+
+      # Dev dependencies are needed here: PHPUnit lives in require-dev. The
+      # deployment workflow installs separately with --no-dev.
+      - name: Install Composer dependencies
+        working-directory: apps/api
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      # A throwaway .env written from scratch. The repository's .env.example is
+      # gitignored (the root .gitignore ignores .env*), so it is NOT available
+      # in a fresh checkout and cannot be copied here. Nothing below is secret:
+      # phpunit.xml pins the database to sqlite :memory:, so CI can never reach
+      # the production database, and this key exists only for this run.
+      - name: Prepare a disposable test environment
+        working-directory: apps/api
+        run: |
+          cat > .env <<'ENVFILE'
+          APP_NAME=SmarterAcademyCI
+          APP_ENV=testing
+          # Left empty on purpose: `key:generate` below rewrites this line, and
+          # it only rewrites a key that is already declared.
+          APP_KEY=
+          APP_DEBUG=true
+          APP_URL=http://localhost
+          FRONTEND_URL=http://localhost
+          DB_CONNECTION=sqlite
+          DB_DATABASE=:memory:
+          CACHE_STORE=array
+          SESSION_DRIVER=array
+          QUEUE_CONNECTION=sync
+          MAIL_MAILER=array
+          ENVFILE
+          php artisan key:generate
+
+      - name: Verify Laravel boots
+        working-directory: apps/api
+        run: php artisan --version
+
+      # Catches a route file that references a missing controller or a
+      # malformed binding - the kind of error that would otherwise only
+      # surface as a 500 in production.
+      - name: Verify routes resolve
+        working-directory: apps/api
+        run: php artisan route:list --path=api/v1 > /dev/null
+
+      # phpunit.xml (not phpunit.local.xml, which is a developer's MySQL
+      # override and is gitignored) pins sqlite :memory:, array mail, array
+      # cache and sync queue. Safe on every pull request.
+      - name: Run the Laravel test suite
+        working-directory: apps/api
+        run: php artisan test --configuration=phpunit.xml

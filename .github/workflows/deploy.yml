@@ -1,7 +1,8 @@
 name: Deploy to production
 
 # Production deploys only ever come from `main`. A merge of `dev` into `main`
-# produces a push to `main`, which is what triggers this workflow.
+# produces a push to `main`, which is what triggers this workflow. Pull
+# requests never reach production.
 on:
   push:
     branches:
@@ -9,16 +10,14 @@ on:
   # Lets a failed deploy be retried from the Actions tab without an empty commit.
   workflow_dispatch:
 
-# Never let two deploys write to the server at the same time. A cancelled
-# deploy is safe here: rsync is the last step and each file is written
-# atomically, so a cancellation leaves either the old or the new file.
+# Never let two deploys write to the server at the same time.
 concurrency:
   group: production-deployment
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
-    name: Build and deploy the frontend
+    name: Build and deploy
     runs-on: ubuntu-latest
     environment: production
 
@@ -26,32 +25,72 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # ─────────────────────────── Build the frontend ────────────────────────
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
-      - name: Install dependencies
+      - name: Install Node dependencies
         run: npm ci
 
       # VITE_API_URL is baked into the bundle at build time, so it has to be
       # set here and not on the server. apps/web/.env.production already holds
       # the public production value; the repository variable only overrides it
-      # if one is defined, which keeps the domain changeable without a commit.
-      - name: Build
+      # if one is defined.
+      - name: Build the frontend
         env:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
         run: npm run build
 
-      - name: Verify build output
+      - name: Verify the frontend build
         run: |
           test -d apps/web/dist
           test -f apps/web/dist/index.html
           # The SPA fallback ships inside the bundle. Without it every deep
           # link (/cours/..., /progression) would 404 in production.
           test -f apps/web/dist/.htaccess
+          test -d apps/web/dist/assets
 
+      # ─────────────────────────── Build the backend ─────────────────────────
+      # 8.4 is what production serves (x-powered-by: PHP/8.4.19). vendor/ is
+      # built here rather than on the server: Hostinger shared hosting has no
+      # dependable Composer, and docs/deployment/HOSTINGER_FILE_MANAGER_DEPLOYMENT.md
+      # §7.2 already established building it against composer.lock for PHP 8.4.
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, bcmath, intl, zip
+          coverage: none
+
+      # --no-dev is what keeps laravel/pail and laravel/pao out of vendor/.
+      # Shipping a vendor/ that contains them is harmless; shipping a
+      # bootstrap/cache that REFERENCES them is what breaks the site (see the
+      # exclusion list below).
+      - name: Install PHP dependencies for production
+        working-directory: apps/api
+        run: |
+          composer install \
+            --no-interaction --prefer-dist --no-progress \
+            --no-dev --optimize-autoloader
+
+      - name: Verify the backend build
+        working-directory: apps/api
+        run: |
+          test -f vendor/autoload.php
+          test -f artisan
+          # Assert no dev package slipped into the production vendor tree.
+          for forbidden in laravel/pail laravel/pao phpunit/phpunit mockery/mockery; do
+            if [ -d "vendor/$forbidden" ]; then
+              echo "::error::Dev dependency $forbidden present in a --no-dev vendor/."
+              exit 1
+            fi
+          done
+          echo "Production vendor/ verified."
+
+      # ──────────────────────────────── SSH ──────────────────────────────────
       - name: Prepare SSH
         env:
           SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
@@ -61,28 +100,23 @@ jobs:
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
           # Written through an env var, never interpolated into the script
-          # body, so the key cannot surface in the command trace.
+          # body, so the key cannot surface in a command trace.
           printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           # Host key is pinned by scan rather than disabling verification.
           ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
           test -s ~/.ssh/known_hosts
 
-      # ---------------------------------------------------------------------
-      # SAFETY GATE
-      #
-      # On this server the Laravel API lives INSIDE the frontend web root:
+      # ─────────────────────────── Safety gate ───────────────────────────────
+      # On this server Laravel lives INSIDE the frontend web root:
       #
       #   public_html/          <- HOSTINGER_PATH, the React bundle
       #   └── api/              <- the complete Laravel application
       #
-      # That is why this workflow never uses `rsync --delete`: it would erase
-      # api/, taking the production .env, vendor/ and storage/ with it.
-      #
-      # This step refuses to deploy if HOSTINGER_PATH points at the Laravel
-      # application itself rather than at the directory that contains it.
-      # ---------------------------------------------------------------------
-      - name: Guard against deploying onto the Laravel application
+      # This step refuses to deploy unless the target really is the web root
+      # that CONTAINS the API, and captures a fingerprint of the files that
+      # must survive the deploy so the final check can prove they did.
+      - name: Verify the deployment target
         env:
           SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
           SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
@@ -91,37 +125,50 @@ jobs:
         run: |
           set -euo pipefail
           ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
-            "REMOTE_PATH='$REMOTE_PATH' bash -s" <<'REMOTE'
+            "REMOTE_PATH='$REMOTE_PATH' bash -s" > env_fingerprint.txt <<'REMOTE'
           set -euo pipefail
 
           if [ ! -d "$REMOTE_PATH" ]; then
-            echo "::error::Deployment target does not exist: $REMOTE_PATH"
+            echo "::error::Deployment target does not exist: $REMOTE_PATH" >&2
             exit 1
           fi
 
-          # Markers of a Laravel root. If HOSTINGER_PATH is the API directory,
-          # the frontend would be dumped on top of the backend.
+          # If HOSTINGER_PATH were the Laravel directory itself, the frontend
+          # would be dumped on top of the backend.
           for marker in artisan composer.json app/Http bootstrap/app.php; do
             if [ -e "$REMOTE_PATH/$marker" ]; then
-              echo "::error::Refusing to deploy: '$REMOTE_PATH' looks like the Laravel application (found $marker). HOSTINGER_PATH must be the frontend web root (public_html), not the API directory."
+              echo "::error::Refusing to deploy: '$REMOTE_PATH' looks like the Laravel application (found $marker). HOSTINGER_PATH must be the frontend web root, not the API directory." >&2
               exit 1
             fi
           done
 
-          echo "Target verified as a frontend web root."
-          if [ -d "$REMOTE_PATH/api" ]; then
-            echo "Laravel API detected at \$REMOTE_PATH/api - it will be left untouched."
+          if [ ! -f "$REMOTE_PATH/api/artisan" ]; then
+            echo "::error::No Laravel application found at \$REMOTE_PATH/api. Refusing to deploy a backend into an unexpected layout." >&2
+            exit 1
           fi
-          REMOTE
 
+          # The production .env must already exist on the server: this workflow
+          # never creates or ships one, so a missing .env means a broken site.
+          if [ ! -f "$REMOTE_PATH/api/.env" ]; then
+            echo "::error::No .env at \$REMOTE_PATH/api/.env. It is server-managed and must be present before deploying." >&2
+            exit 1
+          fi
+
+          echo "Target verified." >&2
+          # Fingerprint (not contents) of the files that must survive.
+          md5sum "$REMOTE_PATH/api/.env" | cut -d' ' -f1
+          REMOTE
+          echo "Captured a checksum of the production .env to verify it is untouched."
+
+      # ──────────────────────── Deploy the frontend ──────────────────────────
       # No --delete. Files are added and overwritten, nothing is removed, so
       # api/ and anything else already on the server survives untouched.
       #
       # Vite fingerprints asset filenames (index-DLZP9aTQ.js), so a new build
       # never overwrites a file the currently-served page still needs, and
-      # stale assets simply accumulate. --exclude=/api is belt-and-braces:
-      # the build output has no api/ entry to begin with.
-      - name: Deploy frontend
+      # stale assets simply accumulate harmlessly. --exclude=/api is
+      # belt-and-braces: the build output has no api/ entry to begin with.
+      - name: Deploy the frontend
         env:
           SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
           SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
@@ -136,7 +183,21 @@ jobs:
             apps/web/dist/ \
             "$SSH_USER@$SSH_HOST:$REMOTE_PATH/"
 
-      - name: Verify deployed files
+      # ──────────────────────── Deploy the backend ───────────────────────────
+      # Also no --delete, and with an exclusion list that is the heart of the
+      # backend's safety:
+      #
+      #   .env*              production secrets live only on the server
+      #   storage/           sessions, caches, logs, user uploads
+      #   bootstrap/cache/   a locally built packages.php lists dev packages
+      #                      (laravel/pail, laravel/pao) that a --no-dev
+      #                      vendor/ does not contain -> instant 500.
+      #                      Laravel regenerates these itself. (docs §7.1)
+      #   tests/, phpunit*   not production code
+      #
+      # --omit-dir-times avoids pointless permission churn on directories that
+      # the server owns.
+      - name: Deploy the backend
         env:
           SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
           SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
@@ -144,52 +205,199 @@ jobs:
           REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
         run: |
           set -euo pipefail
-          # Confirms the bundle landed AND that the API survived the deploy.
+          rsync -rlptz --human-readable --omit-dir-times \
+            --exclude '.env' \
+            --exclude '.env.*' \
+            --exclude '/storage/***' \
+            --exclude '/bootstrap/cache/***' \
+            --exclude '/tests/***' \
+            --exclude 'phpunit.xml' \
+            --exclude 'phpunit.local.xml' \
+            --exclude '.phpunit.result.cache' \
+            --exclude '/node_modules/***' \
+            --exclude '/public/storage' \
+            --exclude '.git*' \
+            --exclude '.editorconfig' \
+            --exclude 'README.md' \
+            --exclude '/vite.config.js' \
+            --exclude '/package.json' \
+            --exclude '/package-lock.json' \
+            --exclude '/.npmrc' \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            apps/api/ \
+            "$SSH_USER@$SSH_HOST:$REMOTE_PATH/api/"
+
+      # ───────────────────── Laravel post-deployment ─────────────────────────
+      # Deliberately NOT running migrations. This project applies schema
+      # changes as reviewed SQL through phpMyAdmin
+      # (docs/deployment/HOSTINGER_AUTH_MIGRATION.sql); making them automatic
+      # here would be a new and much riskier policy.
+      #
+      # Only caches are cleared, never warmed: `config:cache` would write
+      # bootstrap/cache/config.php, which then overrides .env. Per docs §7,
+      # that file deliberately does not exist on this server so that .env
+      # stays editable from the File Manager.
+      - name: Clear Laravel caches
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
           ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
             "REMOTE_PATH='$REMOTE_PATH' bash -s" <<'REMOTE'
           set -euo pipefail
+          cd "$REMOTE_PATH/api"
+
+          # Stale compiled views/config from the previous release. Removing the
+          # files directly rather than via artisan, so that a cache left in a
+          # state that itself breaks booting cannot block its own cleanup.
+          rm -f bootstrap/cache/config.php bootstrap/cache/routes-v7.php \
+                bootstrap/cache/events.php
+          rm -f bootstrap/cache/packages.php bootstrap/cache/services.php
+          rm -rf storage/framework/views/*.php
+
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan route:clear
+          php artisan view:clear
+          echo "Caches cleared. Laravel will regenerate what it needs."
+          REMOTE
+
+      # ────────────────────────── Verification ───────────────────────────────
+      - name: Verify the deployed files
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          before="$(cat env_fingerprint.txt)"
+          after="$(ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "REMOTE_PATH='$REMOTE_PATH' bash -s" <<'REMOTE'
+          set -euo pipefail
+
+          # Frontend landed.
           test -f "$REMOTE_PATH/index.html"
           test -f "$REMOTE_PATH/.htaccess"
           test -d "$REMOTE_PATH/assets"
-          echo "Frontend files present."
 
-          if [ -d "$REMOTE_PATH/api" ]; then
-            test -f "$REMOTE_PATH/api/artisan" \
-              || { echo "::error::The Laravel application at \$REMOTE_PATH/api looks damaged."; exit 1; }
-            echo "Laravel API still intact."
-          fi
+          # Backend landed and is complete.
+          test -f "$REMOTE_PATH/api/artisan"
+          test -f "$REMOTE_PATH/api/vendor/autoload.php"
+          test -f "$REMOTE_PATH/api/routes/api.php"
+          test -f "$REMOTE_PATH/api/public/index.php"
+
+          # The .htaccess that hides Laravel's internals behind public/.
+          test -f "$REMOTE_PATH/api/.htaccess"
+
+          # Server-managed state survived.
+          test -f "$REMOTE_PATH/api/.env"
+          test -d "$REMOTE_PATH/api/storage/framework"
+          test -d "$REMOTE_PATH/api/storage/logs"
+
+          # Nothing from the repository that must never ship.
+          for forbidden in .env.example .env.hostinger phpunit.xml phpunit.local.xml \
+                           tests vite.config.js package.json node_modules; do
+            if [ -e "$REMOTE_PATH/api/$forbidden" ]; then
+              echo "::error::$forbidden was deployed to production." >&2
+              exit 1
+            fi
+          done
+
+          md5sum "$REMOTE_PATH/api/.env" | cut -d' ' -f1
           REMOTE
+          )"
 
-      - name: Remove SSH key
+          if [ "$before" != "$after" ]; then
+            echo "::error::The production .env CHANGED during deployment. It must never be written by this workflow."
+            exit 1
+          fi
+          echo "Files verified. The production .env is byte-for-byte unchanged."
+
+      - name: Remove the SSH key
         if: always()
         run: rm -f ~/.ssh/deploy_key
 
       # Runs only when the PRODUCTION_URL repository variable is set. A
       # variable is used rather than a secret because `if:` cannot test a
       # secret's value, and the site URL is public anyway.
-      - name: Verify production is reachable
+      - name: Verify the frontend responds
         if: ${{ vars.PRODUCTION_URL != '' }}
         run: |
           set -euo pipefail
-          curl --fail --silent --show-error --location \
-            --max-time 30 \
-            --retry 3 --retry-delay 5 --retry-connrefused \
-            --output /dev/null \
-            "${{ vars.PRODUCTION_URL }}"
-          echo "Production responded successfully."
+          body="$(curl --fail --silent --show-error --location \
+            --max-time 30 --retry 3 --retry-delay 5 --retry-connrefused \
+            "${{ vars.PRODUCTION_URL }}/")"
 
-      # The API is a separate deployment, but a frontend release that leaves
-      # the site unable to reach its backend should not be reported as green.
-      - name: Verify the API still answers
+          # A 200 alone would also be returned by an error page, so check the
+          # SPA mount point and the script tag are actually present.
+          grep -q '<div id="root"' <<<"$body" \
+            || { echo "::error::The homepage does not contain the SPA root element."; exit 1; }
+          grep -qE '<script[^>]+src="/assets/' <<<"$body" \
+            || { echo "::error::The homepage references no /assets/ bundle."; exit 1; }
+          echo "Frontend responded and serves the SPA."
+
+      - name: Verify the assets and SPA routing
         if: ${{ vars.PRODUCTION_URL != '' }}
         run: |
           set -euo pipefail
-          status=$(curl --silent --output /dev/null --location \
-            --max-time 30 --write-out '%{http_code}' \
-            "${{ vars.PRODUCTION_URL }}/api/v1/legal/versions")
-          # 2xx means Laravel answered. Anything else (notably 5xx, or the 404
-          # that a deleted api/ directory would produce) fails the deploy.
-          case "$status" in
-            2??) echo "API responded with $status." ;;
-            *)   echo "::error::API check failed with HTTP $status."; exit 1 ;;
+          base="${{ vars.PRODUCTION_URL }}"
+
+          # Follow the entry bundle the deployed index.html actually names, so
+          # this checks the new release rather than a hard-coded filename.
+          asset="$(curl --fail --silent --max-time 30 "$base/" \
+            | grep -oE 'src="/assets/index-[A-Za-z0-9_-]+\.js"' \
+            | head -1 | sed 's/src="//; s/"//')"
+          test -n "$asset" || { echo "::error::Could not find the entry bundle."; exit 1; }
+
+          # A wrong MIME type here is the classic white-screen cause: browsers
+          # refuse to execute a module served as text/html.
+          ctype="$(curl --fail --silent --max-time 30 -o /dev/null \
+            -w '%{content_type}' "$base$asset")"
+          case "$ctype" in
+            *javascript*) echo "Entry bundle $asset served as $ctype." ;;
+            *) echo "::error::$asset served with wrong MIME type: $ctype"; exit 1 ;;
           esac
+
+          # Deep link: React Router owns this path, so the server must fall
+          # back to index.html instead of returning 404.
+          code="$(curl --silent --max-time 30 -o /dev/null -w '%{http_code}' \
+            "$base/progression")"
+          [ "$code" = "200" ] \
+            || { echo "::error::SPA fallback broken: /progression returned $code"; exit 1; }
+          echo "SPA deep-link routing works."
+
+      # Proves Laravel is executing, not merely that a file was uploaded.
+      # /api/v1/legal/versions is public, read-only, touches no database and
+      # reads its answer from config - exactly what a health check should be.
+      - name: Verify the API responds
+        if: ${{ vars.PRODUCTION_URL != '' }}
+        run: |
+          set -euo pipefail
+          response="$(curl --silent --max-time 30 --location \
+            --retry 3 --retry-delay 5 \
+            -w '\n%{http_code}' \
+            "${{ vars.PRODUCTION_URL }}/api/v1/legal/versions")"
+          status="$(tail -n1 <<<"$response")"
+          body="$(sed '$d' <<<"$response")"
+
+          if [ "$status" != "200" ]; then
+            echo "::error::API health check failed with HTTP $status."
+            exit 1
+          fi
+          # Laravel really rendered this, rather than the SPA fallback serving
+          # index.html with a 200.
+          grep -q '"success":true' <<<"$body" \
+            || { echo "::error::Unexpected API payload: $body"; exit 1; }
+          echo "API responded 200 with the expected JSON."
+
+      - name: Report a failed deployment
+        if: failure()
+        run: |
+          echo "::error::Deployment failed. Production may be in a partial state."
+          echo "The frontend and backend are copied additively and no file is"
+          echo "ever deleted, so the previous release's files are still present."
+          echo "Check which step failed above before re-running."
