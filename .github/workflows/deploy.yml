@@ -29,11 +29,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - name: Install Node dependencies
         run: npm ci
+
+      # ci.yml runs on the same commit, but nothing makes this workflow wait
+      # for it, so the tests run here too. Without them a red build could still
+      # reach production whenever branch protection is not (yet) enforced.
+      - name: Test the shared core
+        run: npm run test --workspace=packages/core
+
+      - name: Test the web app
+        run: npm run test --workspace=apps/web
 
       # VITE_API_URL is baked into the bundle at build time, so it has to be
       # set here and not on the server. apps/web/.env.production already holds
