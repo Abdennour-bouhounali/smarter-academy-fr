@@ -59,12 +59,13 @@ jobs:
 
     # The suite runs on MySQL, not on the sqlite that phpunit.xml declares.
     # Migration 2026_09_14_000001 makes a column nullable with raw
-    # `ALTER TABLE ... MODIFY` (Blueprint would need doctrine/dbal, which this
-    # project does not carry), and MODIFY is MySQL-only syntax. 43 of the 47
-    # test files use RefreshDatabase, so on sqlite every one of them fails
-    # while migrating. Testing on the engine production actually runs also
-    # makes the suite mean more. This mirrors the developer's own
-    # phpunit.local.xml, which is gitignored and so unavailable here.
+    # `ALTER TABLE ... MODIFY` (the Blueprint route would need doctrine/dbal,
+    # which this project does not carry), and MODIFY is MySQL-only syntax.
+    # 43 of the 47 test files use RefreshDatabase and so run every migration.
+    # Running on the engine production actually serves also makes the suite
+    # mean more: a statement MySQL accepts and sqlite rejects, or the reverse,
+    # proves nothing. This mirrors the developer's own phpunit.local.xml,
+    # which is gitignored and therefore unavailable here.
     services:
       mysql:
         image: mysql:8.0
@@ -187,8 +188,9 @@ jobs:
           DB_DATABASE: smart_academy_test
           DB_USERNAME: root
           DB_PASSWORD: root
-        # The whole suite passes locally against MySQL 8.0 on both a populated
-        # and a freshly created empty database, so a failure here is specific
-        # to the runner. `testdox` names each failing test in the step output,
-        # which is what the run page shows without needing the log archive.
-        run: php artisan test --configuration=phpunit.xml --testdox
+        # No --configuration flag: `artisan test` already passes one through to
+        # PHPUnit, and a second copy makes it stop with
+        # "Option --configuration cannot be used more than once" - which exits
+        # non-zero even though every test passed. phpunit.xml is the default
+        # anyway, so naming it bought nothing.
+        run: php artisan test --testdox
