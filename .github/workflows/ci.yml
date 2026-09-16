@@ -146,6 +146,22 @@ jobs:
           done
           echo "::error::MySQL never became ready."; exit 1
 
+      # The suite passes locally on MySQL 8.0 but has failed on the runner, so
+      # print what actually differs about this database before running it.
+      - name: Report the database environment
+        working-directory: apps/api
+        env:
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: smart_academy_test
+          DB_USERNAME: root
+          DB_PASSWORD: root
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -uroot -proot -e \
+            "SELECT VERSION() AS version, @@sql_mode AS sql_mode, @@default_storage_engine AS engine\G"
+          php -v | head -1
+
       - name: Verify Laravel boots
         working-directory: apps/api
         run: php artisan --version
@@ -171,4 +187,8 @@ jobs:
           DB_DATABASE: smart_academy_test
           DB_USERNAME: root
           DB_PASSWORD: root
-        run: php artisan test --configuration=phpunit.xml
+        # The whole suite passes locally against MySQL 8.0 on both a populated
+        # and a freshly created empty database, so a failure here is specific
+        # to the runner. `testdox` names each failing test in the step output,
+        # which is what the run page shows without needing the log archive.
+        run: php artisan test --configuration=phpunit.xml --testdox
