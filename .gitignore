@@ -24,6 +24,16 @@ test-results/
 # Même nature que build/deploy : reconstruites à la demande, jamais versionnées.
 apps/api.zip
 apps/web/dist.zip
+# Toute archive de déploiement, où qu'elle soit : celles-ci embarquent un
+# api/.env de production (clés Stripe, APP_KEY, mot de passe de la base).
+# hostinger-deploy.zip avait été versionné par erreur — voir le rapport de
+# déploiement pour les clés à faire tourner.
+*.zip
+
+# Clés de déploiement : la clé privée SSH ne vit que dans les secrets GitHub.
+*.pem
+id_rsa*
+id_ed25519*
 
 # ── Brouillons de session ────────────────────────────────────────────────
 # Sondes Playwright jetables écrites à la racine pendant une mise au point

@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build the frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # `npm ci` installs the whole workspace (apps/web + packages/core) from
+      # the single root package-lock.json.
+      - name: Install dependencies
+        run: npm ci
+
+      # Unit tests only. The `test:scripts` / `check:lessons` targets audit the
+      # curriculum content and are deliberately left out of the deployment
+      # gate: they guard editorial quality, not whether the site can be built.
+      - name: Test the shared core
+        run: npm run test --workspace=packages/core
+
+      - name: Test the web app
+        run: npm run test --workspace=apps/web
+
+      # Same command the deployment workflow runs, so a build that breaks
+      # production is caught on the pull request instead.
+      - name: Build
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          test -d apps/web/dist
+          test -f apps/web/dist/index.html
+          test -f apps/web/dist/.htaccess

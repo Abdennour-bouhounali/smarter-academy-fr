@@ -1,0 +1,195 @@
+name: Deploy to production
+
+# Production deploys only ever come from `main`. A merge of `dev` into `main`
+# produces a push to `main`, which is what triggers this workflow.
+on:
+  push:
+    branches:
+      - main
+  # Lets a failed deploy be retried from the Actions tab without an empty commit.
+  workflow_dispatch:
+
+# Never let two deploys write to the server at the same time. A cancelled
+# deploy is safe here: rsync is the last step and each file is written
+# atomically, so a cancellation leaves either the old or the new file.
+concurrency:
+  group: production-deployment
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and deploy the frontend
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # VITE_API_URL is baked into the bundle at build time, so it has to be
+      # set here and not on the server. apps/web/.env.production already holds
+      # the public production value; the repository variable only overrides it
+      # if one is defined, which keeps the domain changeable without a commit.
+      - name: Build
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          test -d apps/web/dist
+          test -f apps/web/dist/index.html
+          # The SPA fallback ships inside the bundle. Without it every deep
+          # link (/cours/..., /progression) would 404 in production.
+          test -f apps/web/dist/.htaccess
+
+      - name: Prepare SSH
+        env:
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          # Written through an env var, never interpolated into the script
+          # body, so the key cannot surface in the command trace.
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          # Host key is pinned by scan rather than disabling verification.
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          test -s ~/.ssh/known_hosts
+
+      # ---------------------------------------------------------------------
+      # SAFETY GATE
+      #
+      # On this server the Laravel API lives INSIDE the frontend web root:
+      #
+      #   public_html/          <- HOSTINGER_PATH, the React bundle
+      #   └── api/              <- the complete Laravel application
+      #
+      # That is why this workflow never uses `rsync --delete`: it would erase
+      # api/, taking the production .env, vendor/ and storage/ with it.
+      #
+      # This step refuses to deploy if HOSTINGER_PATH points at the Laravel
+      # application itself rather than at the directory that contains it.
+      # ---------------------------------------------------------------------
+      - name: Guard against deploying onto the Laravel application
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "REMOTE_PATH='$REMOTE_PATH' bash -s" <<'REMOTE'
+          set -euo pipefail
+
+          if [ ! -d "$REMOTE_PATH" ]; then
+            echo "::error::Deployment target does not exist: $REMOTE_PATH"
+            exit 1
+          fi
+
+          # Markers of a Laravel root. If HOSTINGER_PATH is the API directory,
+          # the frontend would be dumped on top of the backend.
+          for marker in artisan composer.json app/Http bootstrap/app.php; do
+            if [ -e "$REMOTE_PATH/$marker" ]; then
+              echo "::error::Refusing to deploy: '$REMOTE_PATH' looks like the Laravel application (found $marker). HOSTINGER_PATH must be the frontend web root (public_html), not the API directory."
+              exit 1
+            fi
+          done
+
+          echo "Target verified as a frontend web root."
+          if [ -d "$REMOTE_PATH/api" ]; then
+            echo "Laravel API detected at \$REMOTE_PATH/api - it will be left untouched."
+          fi
+          REMOTE
+
+      # No --delete. Files are added and overwritten, nothing is removed, so
+      # api/ and anything else already on the server survives untouched.
+      #
+      # Vite fingerprints asset filenames (index-DLZP9aTQ.js), so a new build
+      # never overwrites a file the currently-served page still needs, and
+      # stale assets simply accumulate. --exclude=/api is belt-and-braces:
+      # the build output has no api/ entry to begin with.
+      - name: Deploy frontend
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          rsync -rlptz --human-readable \
+            --exclude '/api' \
+            --exclude '/api/***' \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            apps/web/dist/ \
+            "$SSH_USER@$SSH_HOST:$REMOTE_PATH/"
+
+      - name: Verify deployed files
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          # Confirms the bundle landed AND that the API survived the deploy.
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "REMOTE_PATH='$REMOTE_PATH' bash -s" <<'REMOTE'
+          set -euo pipefail
+          test -f "$REMOTE_PATH/index.html"
+          test -f "$REMOTE_PATH/.htaccess"
+          test -d "$REMOTE_PATH/assets"
+          echo "Frontend files present."
+
+          if [ -d "$REMOTE_PATH/api" ]; then
+            test -f "$REMOTE_PATH/api/artisan" \
+              || { echo "::error::The Laravel application at \$REMOTE_PATH/api looks damaged."; exit 1; }
+            echo "Laravel API still intact."
+          fi
+          REMOTE
+
+      - name: Remove SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+      # Runs only when the PRODUCTION_URL repository variable is set. A
+      # variable is used rather than a secret because `if:` cannot test a
+      # secret's value, and the site URL is public anyway.
+      - name: Verify production is reachable
+        if: ${{ vars.PRODUCTION_URL != '' }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            --max-time 30 \
+            --retry 3 --retry-delay 5 --retry-connrefused \
+            --output /dev/null \
+            "${{ vars.PRODUCTION_URL }}"
+          echo "Production responded successfully."
+
+      # The API is a separate deployment, but a frontend release that leaves
+      # the site unable to reach its backend should not be reported as green.
+      - name: Verify the API still answers
+        if: ${{ vars.PRODUCTION_URL != '' }}
+        run: |
+          set -euo pipefail
+          status=$(curl --silent --output /dev/null --location \
+            --max-time 30 --write-out '%{http_code}' \
+            "${{ vars.PRODUCTION_URL }}/api/v1/legal/versions")
+          # 2xx means Laravel answered. Anything else (notably 5xx, or the 404
+          # that a deleted api/ directory would produce) fails the deploy.
+          case "$status" in
+            2??) echo "API responded with $status." ;;
+            *)   echo "::error::API check failed with HTTP $status."; exit 1 ;;
+          esac
