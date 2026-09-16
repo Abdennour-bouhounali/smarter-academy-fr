@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen } from 'lucide-react';
 import AdminPage from '../../../components/admin/AdminPage';
@@ -7,7 +7,12 @@ import { FilterBar, SearchInput, SelectFilter, Pagination } from '../../../compo
 import { EmptyState } from '../../../components/admin/ui/states';
 import PublicationControl from '../../../components/admin/PublicationControl';
 import TierControl from '../../../components/admin/TierControl';
+import BulkActionBar from '../../../components/admin/BulkActionBar';
+import { buildContentBulkActions } from '../../../components/admin/bulkContentActions';
+import { CONTENT_NOUNS } from '../../../components/admin/contentNouns';
 import { useAdminResource } from '../../../hooks/useAdminResource';
+import { useBulkSelection } from '../../../hooks/useBulkSelection';
+import { AuthContext } from '../../../context/AuthContext';
 import { fetchLessons } from '../../../services/admin/contentService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { useDebounced } from '../../../hooks/useDebounced';
@@ -16,6 +21,8 @@ const GRADES = ['6e', '5e', '4e', '3e', 'seconde', 'premiere_specialite', 'termi
 
 export default function AdminLessons() {
   useDocumentMeta('Leçons — Administration');
+
+  const { token } = useContext(AuthContext);
 
   const [search, setSearch] = useState('');
   const [grade, setGrade] = useState();
@@ -37,11 +44,41 @@ export default function AdminLessons() {
 
   const { data, loading, error, reload, setData } = useAdminResource(loader, [loader]);
 
+  const rows = data?.data ?? [];
+  // La sélection se vide d'elle-même de tout ce qui quitte l'écran — filtre,
+  // page, recherche, tri, rechargement. Voir useBulkSelection.
+  const selection = useBulkSelection(rows);
+
   /** Met à jour une ligne sur place, sans recharger toute la liste. */
   const patchRow = (id, patch) => {
     setData((current) => current && ({
       ...current,
       data: current.data.map((row) => (row.id === id ? { ...row, ...patch } : row)),
+    }));
+  };
+
+  /** Les mêmes deux gestes qu'en colonne, appliqués à la sélection. */
+  const bulkActions = useMemo(
+    () => buildContentBulkActions({
+      type: 'lesson',
+      token,
+      titleOf: (row) => row.title,
+      withTier: true,
+    }),
+    [token],
+  );
+
+  /**
+   * Réconcilier après un lot : seules les lignes RÉELLEMENT changées prennent
+   * le nouvel état. Repeindre toute la sélection ferait afficher « Publié »
+   * sur une leçon que le serveur vient de refuser — l'interface mentirait sur
+   * la base.
+   */
+  const applyBulkOutcome = (outcome) => {
+    const touched = new Set(outcome.applied);
+    setData((current) => current && ({
+      ...current,
+      data: current.data.map((row) => (touched.has(row.id) ? { ...row, ...outcome.patch } : row)),
     }));
   };
 
@@ -153,9 +190,23 @@ export default function AdminLessons() {
           />
         </FilterBar>
 
+        <BulkActionBar
+          count={selection.count}
+          noun={CONTENT_NOUNS.lesson}
+          actions={bulkActions}
+          selectedRows={selection.selectedRows}
+          onClear={selection.clear}
+          onSelectAllVisible={selection.toggleAll}
+          allSelected={selection.allSelected}
+          visibleCount={selection.visibleCount}
+          onDone={applyBulkOutcome}
+        />
+
         <DataTable
           columns={columns}
-          rows={data?.data ?? []}
+          rows={rows}
+          selection={selection}
+          selectionLabel={(row) => `Sélectionner la leçon ${row.title}`}
           loading={loading}
           error={error}
           onRetry={reload}

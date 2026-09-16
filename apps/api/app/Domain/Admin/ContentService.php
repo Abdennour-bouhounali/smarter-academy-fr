@@ -345,6 +345,93 @@ class ContentService
     }
 
     /**
+     * LE MÊME geste, sur plusieurs contenus.
+     *
+     * Ce n'est délibérément PAS une deuxième implémentation de la
+     * publication : la boucle rappelle changeStatus() contenu par contenu.
+     * Tout ce qui garde la publication honnête — la validation du vocabulaire,
+     * les contrôles structurels d'assertPublishable(), la transaction, la
+     * ligne de journal — reste écrit une seule fois, et un traitement en lot
+     * ne peut donc pas s'en affranchir. Ajouter ici un `update()` de masse
+     * serait deux fois plus rapide et contournerait les quatre.
+     *
+     * Chaque contenu est traité INDÉPENDAMMENT : une leçon qui refuse d'être
+     * publiée (parce qu'aucun de ses modules ne l'est) n'empêche pas les 24
+     * autres de l'être. Refuser le lot entier pour un élément invalide
+     * obligerait l'administrateur à désélectionner à l'aveugle jusqu'à
+     * trouver le coupable.
+     *
+     * @param  int[]  $ids
+     * @return array{applied: int[], unchanged: int[], failed: array<int, array{id: int, message: string}>}
+     */
+    public function bulkChangeStatus(User $admin, string $type, array $ids, string $status): array
+    {
+        return $this->bulk(
+            $ids,
+            fn (int $id) => $this->changeStatus($admin, $type, $id, $status),
+        );
+    }
+
+    /**
+     * Le palier, sur plusieurs contenus. Jumeau de bulkChangeStatus(), et
+     * passant par le même changeTier() que le geste unitaire — donc soumis à
+     * la même règle « une leçon doit porter un palier explicite ».
+     *
+     * @param  int[]  $ids
+     * @return array{applied: int[], unchanged: int[], failed: array<int, array{id: int, message: string}>}
+     */
+    public function bulkChangeTier(User $admin, string $type, array $ids, ?string $tier): array
+    {
+        return $this->bulk(
+            $ids,
+            fn (int $id) => $this->changeTier($admin, $type, $id, $tier),
+        );
+    }
+
+    /**
+     * La boucle partagée par les deux gestes en lot.
+     *
+     * Trois issues distinguées, pas deux : APPLIQUÉ, DÉJÀ DANS CET ÉTAT, et
+     * REFUSÉ. Fondre les deux premières ferait annoncer « 25 leçons publiées »
+     * alors que 20 l'étaient déjà ; fondre « déjà dans cet état » avec un
+     * échec ferait passer pour un problème ce qui est exactement le résultat
+     * demandé.
+     *
+     * Seule une DomainException est rattrapée : c'est la classe que le service
+     * lève pour dire « ce contenu-là ne peut pas ». Une panne de base ou un
+     * bogue remonte, parce qu'un lot qui continue vaillamment à travers une
+     * base cassée produirait un rapport qui mentirait sur 24 lignes.
+     *
+     * @param  int[]  $ids
+     * @param  callable(int): array{model: mixed, changed: bool}  $apply
+     * @return array{applied: int[], unchanged: int[], failed: array<int, array{id: int, message: string}>}
+     */
+    private function bulk(array $ids, callable $apply): array
+    {
+        $applied = [];
+        $unchanged = [];
+        $failed = [];
+
+        // Dédoublonné : deux fois le même identifiant compterait deux fois
+        // dans le rapport, pour un seul contenu touché.
+        foreach (array_values(array_unique(array_map('intval', $ids))) as $id) {
+            try {
+                $result = $apply($id);
+
+                if ($result['changed']) {
+                    $applied[] = $id;
+                } else {
+                    $unchanged[] = $id;
+                }
+            } catch (DomainException $e) {
+                $failed[] = ['id' => $id, 'message' => $e->getMessage()];
+            }
+        }
+
+        return ['applied' => $applied, 'unchanged' => $unchanged, 'failed' => $failed];
+    }
+
+    /**
      * Le contenu est-il publiable ?
      *
      * Contrôles STRUCTURELS seulement — l'existence et la cohérence des

@@ -180,6 +180,65 @@ class AdminContentController extends Controller
         ]);
     }
 
+    /**
+     * Publier / masquer / archiver PLUSIEURS contenus du même type.
+     *
+     * Même vocabulaire d'états, même service, même journal que changeStatus() :
+     * ce point d'entrée ne fait que lui passer une liste. La seule chose qu'il
+     * ajoute est la validation de la LISTE elle-même — un plafond, et des
+     * entiers.
+     *
+     * Répond 200 même quand des contenus ont été refusés : le lot a bien été
+     * traité, et le détail par contenu est dans `failed`. Un 422 global
+     * effacerait l'information « 23 sur 25 ont marché ».
+     */
+    public function bulkChangeStatus(Request $request, string $type)
+    {
+        $validated = $request->validate([
+            'ids' => ['required', 'array', 'min:1', 'max:200'],
+            'ids.*' => ['required', 'integer', 'min:1'],
+            'status' => ['required', Rule::in(Lesson::PUBLICATION_STATUSES)],
+        ], [
+            'status.in' => 'État de publication inconnu.',
+            'ids.max' => 'Un lot ne peut pas dépasser 200 contenus.',
+        ]);
+
+        $result = $this->content->bulkChangeStatus(
+            $request->user(),
+            $type,
+            $validated['ids'],
+            $validated['status'],
+        );
+
+        return response()->json(['success' => true] + $result);
+    }
+
+    /**
+     * Le PALIER de plusieurs contenus. Jumeau de bulkChangeStatus().
+     *
+     * Pas de module ici — la route ne l'accepte pas, exactement comme pour le
+     * geste unitaire : un module suit le palier de sa leçon.
+     */
+    public function bulkChangeTier(Request $request, string $type)
+    {
+        $validated = $request->validate([
+            'ids' => ['required', 'array', 'min:1', 'max:200'],
+            'ids.*' => ['required', 'integer', 'min:1'],
+            'tier' => ['present', 'nullable', Rule::in(AccessTier::TIERS)],
+        ], [
+            'tier.in' => 'Palier inconnu.',
+            'ids.max' => 'Un lot ne peut pas dépasser 200 contenus.',
+        ]);
+
+        $result = $this->content->bulkChangeTier(
+            $request->user(),
+            $type,
+            $validated['ids'],
+            $validated['tier'],
+        );
+
+        return response()->json(['success' => true] + $result);
+    }
     private function serializeLesson(Lesson $lesson): array
     {
         return [

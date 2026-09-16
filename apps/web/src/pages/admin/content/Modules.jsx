@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layers } from 'lucide-react';
 import AdminPage from '../../../components/admin/AdminPage';
@@ -6,7 +6,12 @@ import DataTable from '../../../components/admin/ui/DataTable';
 import { FilterBar, SearchInput, SelectFilter, Pagination } from '../../../components/admin/ui/FilterBar';
 import { EmptyState } from '../../../components/admin/ui/states';
 import PublicationControl from '../../../components/admin/PublicationControl';
+import BulkActionBar from '../../../components/admin/BulkActionBar';
+import { buildContentBulkActions } from '../../../components/admin/bulkContentActions';
+import { CONTENT_NOUNS } from '../../../components/admin/contentNouns';
 import { useAdminResource } from '../../../hooks/useAdminResource';
+import { useBulkSelection } from '../../../hooks/useBulkSelection';
+import { AuthContext } from '../../../context/AuthContext';
 import { fetchModules } from '../../../services/admin/contentService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { useDebounced } from '../../../hooks/useDebounced';
@@ -31,6 +36,8 @@ export const STAGE_LABELS = {
 export default function AdminModules() {
   useDocumentMeta('Modules — Administration');
 
+  const { token } = useContext(AuthContext);
+
   const [search, setSearch] = useState('');
   const [grade, setGrade] = useState();
   const [stage, setStage] = useState();
@@ -43,6 +50,32 @@ export default function AdminModules() {
     [debouncedSearch, grade, stage, status, page],
   );
   const { data, loading, error, reload, setData } = useAdminResource(loader, [loader]);
+
+  const rows = data?.data ?? [];
+  const selection = useBulkSelection(rows);
+
+  /**
+   * Pas de palier ici : un module suit celui de sa leçon. `withTier: false`
+   * est la MÊME frontière qu'à l'unité, où la colonne « Accès » n'existe pas
+   * dans ce tableau et où la route serveur refuse le type `module`.
+   */
+  const bulkActions = useMemo(
+    () => buildContentBulkActions({
+      type: 'module',
+      token,
+      titleOf: (row) => `${row.title} — ${row.lessonTitle ?? row.lessonCode}`,
+      withTier: false,
+    }),
+    [token],
+  );
+
+  const applyBulkOutcome = (outcome) => {
+    const touched = new Set(outcome.applied);
+    setData((current) => current && ({
+      ...current,
+      data: current.data.map((row) => (touched.has(row.id) ? { ...row, ...outcome.patch } : row)),
+    }));
+  };
 
   const patchRow = (id, publicationStatus) => {
     setData((current) => current && ({
@@ -88,7 +121,21 @@ export default function AdminModules() {
           />
         </FilterBar>
 
+        <BulkActionBar
+          count={selection.count}
+          noun={CONTENT_NOUNS.module}
+          actions={bulkActions}
+          selectedRows={selection.selectedRows}
+          onClear={selection.clear}
+          onSelectAllVisible={selection.toggleAll}
+          allSelected={selection.allSelected}
+          visibleCount={selection.visibleCount}
+          onDone={applyBulkOutcome}
+        />
+
         <DataTable
+          selection={selection}
+          selectionLabel={(row) => `Sélectionner le module ${row.title} de ${row.lessonTitle ?? row.lessonCode}`}
           columns={[
             {
               key: 'title',
@@ -146,7 +193,7 @@ export default function AdminModules() {
               ),
             },
           ]}
-          rows={data?.data ?? []}
+          rows={rows}
           loading={loading}
           error={error}
           onRetry={reload}

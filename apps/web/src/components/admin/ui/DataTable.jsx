@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { LoadingState, ErrorState, EmptyState } from './states';
+import SelectionCheckbox from './SelectionCheckbox';
 
 /**
  * Le tableau de l'administration.
@@ -16,6 +17,12 @@ import { LoadingState, ErrorState, EmptyState } from './states';
  *  — la densité est explicite (`text-sm` vaut 17 px dans ce projet — l'échelle
  *    Tailwind est majorée de 25 %), donc les cellules descendent en `text-xs`
  *    = 15 px, qui est la vraie taille « dense » ici.
+ *
+ * La sélection multiple est OPTIONNELLE : sans la prop `selection`, ce tableau
+ * rend exactement ce qu'il rendait avant, sans colonne en plus. Les listes qui
+ * n'ont pas d'action groupée (élèves, signalements, abonnements) n'ont donc
+ * rien à changer, et ne gagnent pas une case à cocher qui ne mènerait nulle
+ * part.
  */
 export default function DataTable({
   columns,
@@ -28,6 +35,8 @@ export default function DataTable({
   sort,
   onSortChange,
   onRowClick,
+  selection,
+  selectionLabel = (row) => `Sélectionner ${row.title ?? row.id}`,
 }) {
   if (loading) return <LoadingState rows={6} />;
   if (error) return <ErrorState message={error} onRetry={onRetry} />;
@@ -49,6 +58,22 @@ export default function DataTable({
       <table className="w-full min-w-[900px] border-collapse">
         <thead>
           <tr className="border-b border-slate-200 bg-slate-50">
+            {selection && (
+              // `w-10` + `px-3` : la colonne ne prend que la case, sinon elle
+              // vole la largeur de la colonne du titre.
+              <th scope="col" className="w-10 px-3 py-2.5">
+                <SelectionCheckbox
+                  checked={selection.allSelected}
+                  indeterminate={selection.someSelected}
+                  onChange={selection.toggleAll}
+                  label={
+                    selection.allSelected
+                      ? 'Tout désélectionner sur cette page'
+                      : `Tout sélectionner sur cette page (${selection.visibleCount})`
+                  }
+                />
+              </th>
+            )}
             {columns.map((column) => {
               const sortable = Boolean(column.sortKey && onSortChange);
               // `column.sortKey` doit être comparé SEULEMENT s'il existe :
@@ -82,21 +107,36 @@ export default function DataTable({
           </tr>
         </thead>
         <tbody>
-          {rows.map((row) => (
+          {rows.map((row) => {
+            const selected = selection ? selection.isSelected(row.id) : false;
+
+            return (
             <tr
               key={rowKey(row)}
               onClick={onRowClick ? () => onRowClick(row) : undefined}
+              // La ligne cochée se voit : sans fond, 25 cases perdues au
+              // milieu de 50 lignes ne se relisent pas.
               className={`border-b border-slate-100 last:border-0 ${
-                onRowClick ? 'cursor-pointer hover:bg-slate-50' : ''
-              }`}
+                selected ? 'bg-blue-50/60' : ''
+              } ${onRowClick ? 'cursor-pointer hover:bg-slate-50' : ''}`}
             >
+              {selection && (
+                <td className="w-10 px-3 py-2.5 align-middle">
+                  <SelectionCheckbox
+                    checked={selected}
+                    onChange={() => selection.toggle(row.id)}
+                    label={selectionLabel(row)}
+                  />
+                </td>
+              )}
               {columns.map((column) => (
                 <td key={column.key} className={`px-3 py-2.5 font-inter text-xs text-slate-700 align-middle ${column.cellClassName ?? ''}`}>
                   {column.render ? column.render(row) : row[column.key]}
                 </td>
               ))}
             </tr>
-          ))}
+            );
+          })}
         </tbody>
       </table>
     </div>

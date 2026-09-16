@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Dumbbell } from 'lucide-react';
 import AdminPage from '../../../components/admin/AdminPage';
@@ -7,7 +7,12 @@ import { FilterBar, SearchInput, SelectFilter, Pagination } from '../../../compo
 import { EmptyState } from '../../../components/admin/ui/states';
 import PublicationControl from '../../../components/admin/PublicationControl';
 import TierControl from '../../../components/admin/TierControl';
+import BulkActionBar from '../../../components/admin/BulkActionBar';
+import { buildContentBulkActions } from '../../../components/admin/bulkContentActions';
+import { CONTENT_NOUNS } from '../../../components/admin/contentNouns';
 import { useAdminResource } from '../../../hooks/useAdminResource';
+import { useBulkSelection } from '../../../hooks/useBulkSelection';
+import { AuthContext } from '../../../context/AuthContext';
 import { fetchExercises } from '../../../services/admin/contentService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { useDebounced } from '../../../hooks/useDebounced';
@@ -16,6 +21,8 @@ const GRADES = ['6e', '5e', '4e', '3e', 'seconde'];
 
 export default function AdminExercises() {
   useDocumentMeta('Exercices — Administration');
+
+  const { token } = useContext(AuthContext);
 
   const [search, setSearch] = useState('');
   const [grade, setGrade] = useState();
@@ -29,6 +36,33 @@ export default function AdminExercises() {
     [debouncedSearch, grade, level, status, page],
   );
   const { data, loading, error, reload, setData } = useAdminResource(loader, [loader]);
+
+  const rows = data?.data ?? [];
+  const selection = useBulkSelection(rows);
+
+  /**
+   * Un exercice a un palier PROPRE, et en plus « hérite de sa leçon » —
+   * exactement les trois choix du menu unitaire (voir TierControl), ni un de
+   * plus.
+   */
+  const bulkActions = useMemo(
+    () => buildContentBulkActions({
+      type: 'exercise',
+      token,
+      titleOf: (row) => row.title ?? row.exerciseCode,
+      withTier: true,
+      withTierInherit: true,
+    }),
+    [token],
+  );
+
+  const applyBulkOutcome = (outcome) => {
+    const touched = new Set(outcome.applied);
+    setData((current) => current && ({
+      ...current,
+      data: current.data.map((row) => (touched.has(row.id) ? { ...row, ...outcome.patch } : row)),
+    }));
+  };
 
   const patchRow = (id, changes) => {
     setData((current) => current && ({
@@ -74,7 +108,21 @@ export default function AdminExercises() {
           />
         </FilterBar>
 
+        <BulkActionBar
+          count={selection.count}
+          noun={CONTENT_NOUNS.exercise}
+          actions={bulkActions}
+          selectedRows={selection.selectedRows}
+          onClear={selection.clear}
+          onSelectAllVisible={selection.toggleAll}
+          allSelected={selection.allSelected}
+          visibleCount={selection.visibleCount}
+          onDone={applyBulkOutcome}
+        />
+
         <DataTable
+          selection={selection}
+          selectionLabel={(row) => `Sélectionner l’exercice ${row.title ?? row.exerciseCode}`}
           columns={[
             {
               key: 'exerciseCode',
@@ -132,7 +180,7 @@ export default function AdminExercises() {
               ),
             },
           ]}
-          rows={data?.data ?? []}
+          rows={rows}
           loading={loading}
           error={error}
           onRetry={reload}

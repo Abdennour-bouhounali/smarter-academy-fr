@@ -236,6 +236,14 @@ Route::prefix('v1')->group(function () {
                 ->whereIn('type', ['lesson', 'exercise'])
                 ->whereNumber('id');
 
+            // Les MÊMES deux gestes, sur une liste. Les contraintes de type
+            // sont recopiées à l'identique : ce qui est interdit à l'unité
+            // (le palier d'un module) reste interdit en lot.
+            Route::post('/content/{type}/bulk-status', [AdminContentController::class, 'bulkChangeStatus'])
+                ->whereIn('type', ['lesson', 'module', 'exercise']);
+            Route::post('/content/{type}/bulk-tier', [AdminContentController::class, 'bulkChangeTier'])
+                ->whereIn('type', ['lesson', 'exercise']);
+
             Route::get('/reports', [AdminReportController::class, 'index']);
             Route::get('/reports/clusters', [AdminReportController::class, 'clusters']);
             Route::get('/reports/{id}', [AdminReportController::class, 'show'])->whereNumber('id');
