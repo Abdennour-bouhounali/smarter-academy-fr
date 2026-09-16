@@ -45,39 +45,41 @@ jobs:
         run: npm run test --workspace=apps/web
 
       # VITE_API_URL is baked into the bundle at build time, so it has to be
-      # right here and not on the server. apps/web/.env.production already
-      # holds the public production value, and that is the default.
+      # right here and not on the server.
       #
-      # The repository variable is only exported when it is actually set.
-      # Passing `env: VITE_API_URL: ${{ vars.VITE_API_URL }}` unconditionally
-      # exports an EMPTY string when the variable does not exist, and an empty
-      # value still counts as set: it overrides .env.production, so the bundle
-      # falls back to the http://localhost:3000 default in apiClient.js and
-      # production talks to nothing. That shipped once; hence this shape.
+      # It MUST come from the repository variable. apps/web/.env.production
+      # holds the same value but is gitignored, so it exists only on a
+      # developer's machine and a CI checkout never sees it. Without the
+      # variable, Vite finds nothing and apiClient.js falls back to its
+      # http://localhost:3000 development default - which shipped once and
+      # broke every API call in production. Hence the explicit check rather
+      # than a silent build.
       - name: Build the frontend
-        run: |
-          if [ -n "${VAR_API_URL}" ]; then
-            echo "Building with the VITE_API_URL repository variable."
-            VITE_API_URL="${VAR_API_URL}" npm run build
-          else
-            echo "No VITE_API_URL variable set; using apps/web/.env.production."
-            npm run build
-          fi
         env:
-          VAR_API_URL: ${{ vars.VITE_API_URL }}
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+        run: |
+          if [ -z "${VITE_API_URL}" ]; then
+            echo "::error::The VITE_API_URL repository variable is not set. Define it under Settings > Secrets and variables > Actions > Variables (for example https://smarter-academy.fr/api/v1). apps/web/.env.production cannot supply it: it is gitignored and absent from this checkout."
+            exit 1
+          fi
+          echo "Building against ${VITE_API_URL}"
+          npm run build
 
-      # The bundle must point at the real API. Catches the empty-variable
-      # class of mistake before anything reaches the server.
+      # The bundle must carry the configured API URL, not a development
+      # fallback. Checked against the variable rather than a hard-coded
+      # domain, so this keeps working if the API ever moves.
       - name: Verify the API URL baked into the bundle
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
         run: |
           set -euo pipefail
           if grep -rq "localhost:3000" apps/web/dist/assets/*.js; then
-            echo "::error::The built bundle falls back to http://localhost:3000. VITE_API_URL was empty at build time."
+            echo "::error::The built bundle falls back to http://localhost:3000, so VITE_API_URL did not reach the build."
             exit 1
           fi
-          grep -rq "smarter-academy.fr/api/v1" apps/web/dist/assets/*.js \
-            || { echo "::error::The built bundle contains no production API URL."; exit 1; }
-          echo "Bundle points at the production API."
+          grep -rqF "${VITE_API_URL}" apps/web/dist/assets/*.js \
+            || { echo "::error::The built bundle does not contain ${VITE_API_URL}."; exit 1; }
+          echo "Bundle points at ${VITE_API_URL}."
 
       - name: Verify the frontend build
         run: |
