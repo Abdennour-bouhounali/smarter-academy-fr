@@ -1,5 +1,13 @@
 # robots.txt for Smarter Academy
+#
+# Pas de ligne vide entre « User-agent » et les « Disallow » : une ligne vide
+# termine le groupe pour les analyseurs stricts, qui perdraient les refus.
+# Ces refus concernent l'EXPLORATION, pas l'accès : les espaces privés
+# restent fermés côté serveur.
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /espace
+Disallow: /auth/
 
 Sitemap: https://smarter-academy.fr/sitemap.xml
