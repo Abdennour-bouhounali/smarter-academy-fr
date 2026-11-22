@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
-  MANIPULATION_LEVEL_IDS, DEFAULT_MANIPULATION_LEVEL, EXPERIENCE_TYPES, ADAPTATION_REASONS,
-  VISUAL_THEME_IDS, manipulationExperience, checkExperience, checkLevelPair, resolveLevelId,
+  MANIPULATION_LEVEL_IDS, EXPERIENCE_TYPES, ADAPTATION_REASONS,
+  VISUAL_THEME_IDS, manipulationExperience, checkExperience, checkLevelPair,
 } from './manipulationLevels.js';
 
 /**
@@ -11,15 +11,8 @@ import {
  */
 
 describe('les deux niveaux', () => {
-  it('sont exactement deux, et le défaut est le débutant', () => {
+  it('sont exactement deux', () => {
     expect(MANIPULATION_LEVEL_IDS).toEqual(['beginner', 'advanced']);
-    expect(DEFAULT_MANIPULATION_LEVEL).toBe('beginner');
-  });
-
-  it('un identifiant inconnu retombe sur le débutant, jamais sur rien', () => {
-    expect(resolveLevelId('expert')).toBe('beginner');
-    expect(resolveLevelId(undefined)).toBe('beginner');
-    expect(resolveLevelId('advanced')).toBe('advanced');
   });
 });
 

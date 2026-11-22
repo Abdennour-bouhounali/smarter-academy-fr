@@ -88,23 +88,6 @@ export function parseDec(str) {
 }
 
 /**
- * Lit une saisie ENTIÈRE ("4 582" → 4582, "٨١٠" → 810, "3,5" → NaN).
- *
- * Le point n'est accepté que comme séparateur de MILLIERS bien formé
- * ("4.582", "1.250.000") : l'ancien code le supprimait partout, si bien que
- * « 81.0 » était lu 810 (une réponse fausse acceptée) et « 810.0 » lu 8100
- * (une réponse juste refusée). Audit des leçons du 2026-09-29.
- */
-export function parseFr(str) {
-  if (typeof str === 'number') return Math.trunc(str);
-  if (typeof str !== 'string') return NaN;
-  const cleaned = toLatinDigits(str).replace(/[\s\u202F\u00A0]/g, '');
-  if (/^\d{1,3}(\.\d{3})+$/.test(cleaned)) return parseInt(cleaned.replace(/\./g, ''), 10);
-  if (!/^\d+$/.test(cleaned)) return NaN;
-  return parseInt(cleaned, 10);
-}
-
-/**
  * Ramène les chiffres arabo-indiens (٠–٩, U+0660) et persans (۰–۹, U+06F0)
  * aux chiffres latins. L'interface est en arabe : un clavier arabe tape
  * « ١٢ », et le refuser serait traiter une écriture comme une erreur

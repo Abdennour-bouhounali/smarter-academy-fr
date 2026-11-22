@@ -70,12 +70,6 @@ export function kidGeometry({ cx, top, foot }) {
   };
 }
 
-/** La boîte englobante du dessin (cheveux longs et ombre comprises) : pour placer des pilules sans chevauchement. */
-export function kidBox({ cx, top, foot }) {
-  const g = kidGeometry({ cx, top, foot });
-  return { x0: cx - g.halfWidth, x1: cx + g.halfWidth, y0: top, y1: foot, width: 2 * g.halfWidth, height: foot - top };
-}
-
 /** Un choix déterministe d'apparence pour l'enfant n° `index` (deux élèves voient la même scène, un test aussi). */
 export function kidLook(index = 0) {
   const skins = Object.keys(SKINS);

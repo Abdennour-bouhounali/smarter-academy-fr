@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import KidFigure from './KidFigure';
-import { kidGeometry, kidBox, kidLook, SKINS, HAIRS, OUTFITS, HAIR_STYLES, SCARVES } from './kidFigure.js';
+import { kidGeometry, kidLook, SKINS, HAIRS, OUTFITS, HAIR_STYLES, SCARVES } from './kidFigure.js';
 
 /** The platform's ONE character (CLAUDE.md « People »): the drawing of a child never cheats on his height. */
 const svg = (el) => renderToStaticMarkup(<svg>{el}</svg>);
@@ -40,12 +40,7 @@ describe('KidFigure — the drawing is the measure', () => {
     }
   });
 
-  it('kidBox spans the drawing; kidLook is deterministic and uses known palettes', () => {
-    const b = kidBox({ cx: 80, top: 20, foot: 320 });
-    expect(b.y0).toBe(20);
-    expect(b.y1).toBe(320);
-    expect(b.x0).toBeLessThan(80);
-    expect(b.x1).toBeGreaterThan(80);
+  it('kidLook is deterministic and uses known palettes', () => {
     expect(kidLook(3)).toEqual(kidLook(3));
     for (let i = 0; i < 12; i += 1) {
       const l = kidLook(i);

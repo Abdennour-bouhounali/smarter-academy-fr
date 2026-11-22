@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { findPageTour, findDeclaredTour, isTourClosed, shouldAutoStart, playableSteps, nextPlayableIndex, placeCard } from './tourModel';
+import { findPageTour, isTourClosed, shouldAutoStart, playableSteps, nextPlayableIndex, placeCard } from './tourModel';
 import { PAGE_TOURS } from './tourRegistry';
 
 const tours = [
@@ -18,22 +18,6 @@ describe('findPageTour', () => {
   });
 });
 
-describe('findDeclaredTour', () => {
-  const declared = [
-    { key: 'student.lesson', role: 'student', page: 'lesson-module', steps: [] },
-    { key: 'teacher.lesson', role: 'teacher', page: 'lesson-module', steps: [] },
-  ];
-  it('resolves the page a component declared, for the caller role only', () => {
-    expect(findDeclaredTour(declared, 'student', 'lesson-module')?.key).toBe('student.lesson');
-    expect(findDeclaredTour(declared, 'teacher', 'lesson-module')?.key).toBe('teacher.lesson');
-    expect(findDeclaredTour(declared, 'admin', 'lesson-module')).toBeNull();
-    expect(findDeclaredTour(declared, 'student', null)).toBeNull();
-  });
-  it('is never matched by a URL', () => {
-    expect(findPageTour(declared, 'student', '/courses/moyen/4am/x/units/y')).toBeNull();
-  });
-});
-
 describe('auto start', () => {
   const tour = tours[0];
   it('waits for the server answer, then opens only an unclosed tour', () => {
@@ -42,8 +26,6 @@ describe('auto start', () => {
     expect(shouldAutoStart({ tour, closed: { 'student.home': { status: 'skipped' } }, eligible: true })).toBe(false);
     expect(shouldAutoStart({ tour, closed: {}, eligible: false })).toBe(false);
     expect(shouldAutoStart({ tour: null, closed: {}, eligible: true })).toBe(false);
-    // Déclarée pour le bouton seulement (module de leçon autre que le premier).
-    expect(shouldAutoStart({ tour, closed: {}, eligible: true, autoStart: false })).toBe(false);
   });
   it('treats skipped and completed alike', () => {
     expect(isTourClosed({ a: { status: 'completed' } }, 'a')).toBe(true);

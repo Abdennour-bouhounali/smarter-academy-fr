@@ -10,7 +10,7 @@ import { fetchClosedContent } from '../services/contentAvailabilityService';
  * posent tous la même question, et trois requêtes pour la même réponse
  * seraient trois occasions de diverger.
  *
- * POLITIQUE D'OUVERTURE, comme les portes de maîtrise (lessonAccess.js) :
+ * POLITIQUE D'OUVERTURE :
  * tant que la réponse n'est pas arrivée — ou si elle échoue — RIEN n'est
  * fermé. Le serveur reste l'autorité et refusera de toute façon toute
  * écriture ; verrouiller l'interface sur une requête en vol enfermerait

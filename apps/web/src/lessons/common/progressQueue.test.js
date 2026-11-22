@@ -1,7 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-// Même couture de stockage que evidenceQueue.test.js : la file est ce qui est
-// testé, pas le navigateur.
+// Un stockage en mémoire : la file est ce qui est testé, pas le navigateur.
 const memory = new Map();
 const fakeStorage = {
   getItem: (key) => (memory.has(key) ? memory.get(key) : null),

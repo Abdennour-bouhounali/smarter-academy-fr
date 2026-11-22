@@ -45,8 +45,7 @@ const ORIENTATION_LOCK_MAX_WIDTH = 1024;
  *   • l'ajustement au viewport (usePresentationFit) : zone offerte et échelle
  *     effective publiées en variables CSS et par le contexte ;
  *   • la barre d'outils (portée, titre, échelle, sortie) et la navigation
- *     السابق / التالي — fournies par les props OU déclarées par la page
- *     présentée (useClassroomStage) ;
+ *     السابق / التالي — fournies par les props ;
  *   • la sortie propre au démontage et au changement de route ; en session
  *     LEÇON, `routeScope` garde la présentation tant qu'on reste dans la leçon ;
  *   • le verrou d'orientation paysage sur petit écran, tenté et jamais exigé.
@@ -134,8 +133,6 @@ function ClassroomSession({
   // une même coquille sert le sommaire de leçon ET ses modules.
   const [session, setSession] = useState(null);
   const [userScale, setUserScale] = useState(() => clampScale(parseFloat(storage.getItem(SCALE_KEY)) || DEFAULT_SCALE));
-  // Les déclarations des pages présentées (useClassroomStage), par priorité.
-  const [stages, setStages] = useState({});
   // Le pointeur de classe (« المؤشّر ») : éteint à chaque séance, taille
   // gardée par appareil (comme l'échelle). Voir ClassroomPointer.jsx.
   const [pointerOn, setPointerOn] = useState(false);
@@ -309,24 +306,6 @@ function ClassroomSession({
     });
   }, []);
 
-  // ── Déclarations des pages présentées ────────────────────────────────────
-  const registerStage = useCallback((id, spec) => {
-    setStages((prev) => {
-      if (!spec) {
-        if (!(id in prev)) return prev;
-        const next = { ...prev };
-        delete next[id];
-        return next;
-      }
-      return { ...prev, [id]: spec };
-    });
-  }, []);
-  const stage = useMemo(() => {
-    let best = null;
-    for (const spec of Object.values(stages)) if (!best || (spec.priority ?? 1) >= (best.priority ?? 1)) best = spec;
-    return best;
-  }, [stages]);
-
   const takeArrival = useCallback(() => { const a = arrival.current; arrival.current = null; return a; }, []);
   // Les gestes vers les modules voisins (session leçon), avec le bout par
   // lequel entrer dans la page suivante.
@@ -344,26 +323,16 @@ function ClassroomSession({
   }, [session, lessonNavigation]);
 
   // ── Contexte publié au contenu ───────────────────────────────────────────
-  const [portalTarget, setPortalTarget] = useState(null);
-  useEffect(() => { setPortalTarget(active ? rootRef.current : null); }, [active]);
-
   const scope = session?.scope ?? scopeProp;
-  const title = stage?.title ?? session?.title ?? titleProp;
-  const effPrevious = stage ? stage.onPrevious : onPrevious;
-  const effNext = stage ? stage.onNext : onNext;
-  const effSlot = stage?.slot ?? toolbarSlot;
+  const title = session?.title ?? titleProp;
   // 🧪 المختبر DANS la barre d'outils de la présentation : au tableau,
   // devant la classe, c'est là que la main de l'enseignant se trouve, et un
   // instrument doit être atteignable sans sortir de la séance. Le calque
   // (z-index 80) couvre la racine de présentation (70) et se portalise
   // dedans, donc il s'affiche aussi en plein écran natif.
-  //
-  // Il ne remplace pas `effSlot` : une page présentée peut y avoir mis ses
-  // propres commandes (useClassroomStage), on les garde et on ajoute la
-  // nôtre à côté.
   const toolbarSlotContent = (
     <>
-      {effSlot}
+      {toolbarSlot}
       <MathLabEntryButton />
     </>
   );
@@ -387,12 +356,10 @@ function ClassroomSession({
     enterClassroomMode,
     exitClassroomMode,
     toggleClassroomMode,
-    registerStage,
     lessonNavigation: lessonNav,
     takeArrival,
     refit,
-    portalTarget,
-  }), [active, isNative, canPresent, retired, scope, title, scale, userScale, area, enterClassroomMode, exitClassroomMode, toggleClassroomMode, registerStage, lessonNav, takeArrival, refit, portalTarget]);
+  }), [active, isNative, canPresent, retired, scope, title, scale, userScale, area, enterClassroomMode, exitClassroomMode, toggleClassroomMode, lessonNav, takeArrival, refit]);
 
   const inRouter = useInRouterContext();
 
@@ -448,8 +415,8 @@ function ClassroomSession({
         {active && (
           <ClassroomNav
             ref={navRef}
-            onPrevious={effPrevious}
-            onNext={effNext}
+            onPrevious={onPrevious}
+            onNext={onNext}
             previousLabel={previousLabel}
             nextLabel={nextLabel}
             onPreviousModule={effPreviousModule}

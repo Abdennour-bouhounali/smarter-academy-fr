@@ -2,14 +2,13 @@ import { useContext, useEffect } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { fetchAllLessonProgress } from '../services/lessonProgressService';
 import { mergeServerRowIntoStorage, flushProgressQueue } from '../lessons/common/progressQueue';
-import { flushEvidenceQueue } from '../lessons/common/evidenceQueue';
 import { useLearningViewer } from '../features/learning/learningViewer';
 
 /**
  * Mounted once inside the authenticated shell (see App.jsx). On login/app
  * start it hydrates local storage from the server's lesson-progress rows —
- * then flushes whatever an offline session left parked (lesson progress AND
- * final-test evidence). Also re-flushes whenever connectivity returns.
+ * then flushes the lesson progress an offline session left parked. Also
+ * re-flushes whenever connectivity returns.
  *
  * The hydration is asynchronous: a lesson page opened before it lands reads
  * the local cache first, then re-reads storage when LESSON_PROGRESS_SYNCED_EVENT
@@ -54,13 +53,9 @@ export function useLessonProgressSync() {
         // Offline or server hiccup — the local cache stands.
       }
       flushProgressQueue(token);
-      // Les réponses d'un défi final parquées hors ligne repartent AUSSI ici,
-      // pas seulement quand un défi final est rouvert (useEvidenceSubmission) :
-      // sinon elles attendaient qu'un module « إختبار أولي » soit remonté.
-      flushEvidenceQueue(token);
     })();
 
-    const onOnline = () => { flushProgressQueue(token); flushEvidenceQueue(token); };
+    const onOnline = () => { flushProgressQueue(token); };
     window.addEventListener('online', onOnline);
 
     return () => {

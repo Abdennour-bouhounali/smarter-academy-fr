@@ -22,7 +22,7 @@
  */
 
 /** Les exercices, quel que soit le nom d'export (EXERCISES, EXERCISES_1, …). */
-export function collectExercises(content) {
+function collectExercises(content) {
   const out = [];
   for (const [name, value] of Object.entries(content ?? {})) {
     if (!/^EXERCISES(_\d+)?$/.test(name) || !Array.isArray(value)) continue;
@@ -32,7 +32,7 @@ export function collectExercises(content) {
 }
 
 /** L'activité de départ du manuel : ACTIVITY, sinon ACTIVITY_A, sinon SITUATION. */
-export function pickStartActivity(content) {
+function pickStartActivity(content) {
   const raw = content?.ACTIVITY ?? content?.ACTIVITY_A ?? content?.SITUATION ?? null;
   if (!raw || typeof raw !== 'object') return null;
   const situation = raw.situation ?? raw.text ?? null;
@@ -50,7 +50,7 @@ export function pickStartActivity(content) {
 }
 
 /** Les briques de savoir, dans l'ordre des محاور, avec leur محور. */
-export function collectBricks(knowledge) {
+function collectBricks(knowledge) {
   const modules = knowledge?.modules ?? {};
   return Object.keys(modules)
     .map(Number)

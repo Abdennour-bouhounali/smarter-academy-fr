@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { buildLessonMemo } from './buildLessonMemo';
-import { lessonMemoPath, wantsClassroomStart, CLASSROOM_START_STATE } from './memoRoutes';
+import { lessonMemoPath } from './memoRoutes';
 
 describe('buildLessonMemo — données manquantes', () => {
   it('une leçon sans contenu chargé donne des sections vides, jamais inventées', () => {
@@ -38,10 +38,5 @@ describe('buildLessonMemo — données manquantes', () => {
 describe('memoRoutes', () => {
   it('la route de la مذكرة est sous l’espace enseignant', () => {
     expect(lessonMemoPath('tayin-pgcd')).toBe('/enseignant/cours/tayin-pgcd/memoire');
-  });
-  it('seul l’état explicite ouvre وضع القسم à l’arrivée', () => {
-    expect(wantsClassroomStart(CLASSROOM_START_STATE)).toBe(true);
-    expect(wantsClassroomStart(null)).toBe(false);
-    expect(wantsClassroomStart({ from: '/x' })).toBe(false);
   });
 });

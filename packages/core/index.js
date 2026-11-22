@@ -17,7 +17,6 @@ export * from './numberFormat.js';
 export * from './geometry.js';
 export * from './algebra.js';
 export * from './random.js';
-export * from './lessonAccess.js';
 export * from './errorClassifiers.js';
 export * from './auth.js';
 export * from './validation/validateChoiceAnswer.js';
@@ -37,7 +36,6 @@ export * from './exercise/adaptiveExerciseState.js';
 export * from './api/errors.js';
 export * from './curriculum/coursesData.js';
 export * from './curriculum/lessonStages.js';
-export * from './curriculum/moduleRecommendations.js';
 export * from './curriculum/activeGrades.js';
 
 // ── HORS du baril, importés PAR LEUR CHEMIN (2026-10-14) ─────────────────
@@ -51,13 +49,10 @@ export * from './curriculum/activeGrades.js';
 // les lots de ces pages (docs/architecture/BUNDLE_BOUNDARIES.md §4, règle 9).
 //
 //   Les registres des manipulations :
-//     import { MANIPULATION_TYPES } from '@smarter-academy/core/curriculum/manipulationTypes.js';
-//     import { resolveLevelId } from '@smarter-academy/core/curriculum/manipulationLevels.js';
+//     import { MANIPULATION_TYPE_IDS } from '@smarter-academy/core/curriculum/manipulationTypes.js';
+//     import { MANIPULATION_LEVEL_IDS } from '@smarter-academy/core/curriculum/manipulationLevels.js';
 //   Les mathématiques exactes de chaque unité (un espace de noms par module) :
-//     import * as divisibility from '@smarter-academy/core/arithmetic/divisibility.js';  // unité 1
-//     … equalGrouping, squareRoots (2), polynomials (3), linear (4), linearSystem (5),
-//     proportional (6), affine (7), statistics (8), thales (9), trigonometry (10),
-//     vectors (11–12), rotation (13), space (14) — arithmetic/<nom>.js
+//     import * as divisibility from '@smarter-academy/core/arithmetic/divisibility.js';
 //   Le moteur d'exercices (pratique) — un espace de noms : `Rational.parse` et
 //   `parseDec` (numberFormat) ne font PAS la même chose :
 //     import * as practice from '@smarter-academy/core/practice/index.js';

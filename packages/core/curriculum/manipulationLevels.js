@@ -23,8 +23,6 @@
 /** Les deux niveaux, dans l'ordre. `beginner` est TOUJOURS le niveau par défaut. */
 export const MANIPULATION_LEVEL_IDS = Object.freeze(['beginner', 'advanced']);
 
-export const DEFAULT_MANIPULATION_LEVEL = 'beginner';
-
 /**
  * Les natures d'expérience :
  *   textbook             la situation du manuel, gardée telle quelle
@@ -518,9 +516,4 @@ export function checkLevelPair(pair, { where = 'levels' } = {}) {
     problems.push(`${where}.advanced: must declare its 'autonomy' — what scaffolding it removes or what it demands more of. 'Beginner with bigger numbers' is not an advanced level.`);
   }
   return problems;
-}
-
-/** Le niveau demandé, borné — un id inconnu retombe sur `beginner`, jamais sur rien. */
-export function resolveLevelId(id) {
-  return MANIPULATION_LEVEL_IDS.includes(id) ? id : DEFAULT_MANIPULATION_LEVEL;
 }

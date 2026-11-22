@@ -15,17 +15,6 @@ export function findPageTour(tours, role, pathname) {
   return tours.find((tour) => tour.role === role && tour.path && matchPath({ path: tour.path, end: true }, pathname)) ?? null;
 }
 
-/**
- * Une visite DÉCLARÉE par la page elle-même (`useDeclarePageTour(page)`),
- * pour les pages dont l'URL ne suffit pas à les reconnaître — le premier
- * module d'une leçon, quelle que soit la leçon. `page` est le nom commun aux
- * rôles ; la clé reste préfixée par le rôle.
- */
-export function findDeclaredTour(tours, role, page) {
-  if (!role || !page) return null;
-  return tours.find((tour) => tour.role === role && tour.page === page) ?? null;
-}
-
 /** Une visite close (terminée ou passée) ne s'ouvre plus d'elle-même — jamais. */
 export function isTourClosed(closed, key) {
   return Boolean(closed && Object.prototype.hasOwnProperty.call(closed, key));
@@ -35,12 +24,10 @@ export function isTourClosed(closed, key) {
  * S'ouvre d'elle-même : une visite existe pour la page, le compte y a droit
  * (`eligible`, config serveur `tours.eligible_since`), elle n'est pas close.
  * Tant que la réponse du serveur n'est pas arrivée (`closed === null`), rien :
- * on n'ouvre pas une visite peut-être déjà vue. `autoStart: false` : la page
- * déclare sa visite pour le bouton « جولة في الصفحة » seulement (un module de
- * leçon autre que le premier).
+ * on n'ouvre pas une visite peut-être déjà vue.
  */
-export function shouldAutoStart({ tour, closed, eligible, autoStart = true }) {
-  if (!tour || !autoStart || closed == null || eligible === false) return false;
+export function shouldAutoStart({ tour, closed, eligible }) {
+  if (!tour || closed == null || eligible === false) return false;
   return !isTourClosed(closed, tour.key);
 }
 

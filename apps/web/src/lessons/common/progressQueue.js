@@ -4,8 +4,8 @@ import { putLessonProgress } from '../../services/lessonProgressService';
 import { getTotalModules } from '../registry';
 
 /**
- * Offline-safe sync layer for lesson progression, modeled on evidenceQueue.js
- * but with one structural difference: progress is LAST-SNAPSHOT-WINS per
+ * Offline-safe sync layer for lesson progression: progress is
+ * LAST-SNAPSHOT-WINS per
  * lesson (a map keyed by lessonId holding the latest full snapshot, not an
  * append log). Replays are safe because the server merge is a union of
  * completed modules with latest-wins position — a stale snapshot can add

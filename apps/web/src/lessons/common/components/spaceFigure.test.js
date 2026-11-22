@@ -3,7 +3,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { createElement } from 'react';
 import SpaceFigure from './SpaceFigure';
 import {
-  validateSpaceFigure, layoutSpaceFigure, spaceFigureQuality, camera, cuboidPoints, cuboidFaces, circle3,
+  validateSpaceFigure, layoutSpaceFigure, camera, circle3,
 } from './spaceFigure';
 
 const SPHERE = {
@@ -17,8 +17,11 @@ const SPHERE = {
 };
 const BOX = {
   kind: 'space',
-  points: cuboidPoints('ABCDEFGH', { length: 5, width: 4, height: 3 }),
-  solids: [{ type: 'polyhedron', faces: cuboidFaces('ABCDEFGH') }],
+  points: {
+    A: [0, 0, 3], B: [5, 0, 3], C: [5, 4, 3], D: [0, 4, 3],
+    E: [0, 0, 0], F: [5, 0, 0], G: [5, 4, 0], H: [0, 4, 0],
+  },
+  solids: [{ type: 'polyhedron', faces: [['A', 'B', 'C', 'D'], ['E', 'F', 'G', 'H'], ['A', 'B', 'F', 'E'], ['B', 'C', 'G', 'F'], ['C', 'D', 'H', 'G'], ['D', 'A', 'E', 'H']] }],
   ariaLabel: 'متوازي مستطيلات ABCDEFGH',
 };
 
@@ -96,11 +99,7 @@ describe('spaceFigure — la cote éloignée de son trait (labelOffset)', () => 
   });
 });
 
-describe('spaceFigure — qualité et rendu', () => {
-  it('les figures exemples sont lisibles', () => {
-    expect(spaceFigureQuality(SPHERE)).toEqual([]);
-    expect(spaceFigureQuality(BOX)).toEqual([]);
-  });
+describe('spaceFigure — rendu', () => {
   it('rend un SVG avec des traits vus et cachés et des noms LTR', () => {
     const html = renderToStaticMarkup(createElement(SpaceFigure, SPHERE));
     expect(html).toContain('data-space-figure');

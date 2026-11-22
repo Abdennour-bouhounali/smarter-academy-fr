@@ -2,8 +2,8 @@
  * Moteur d'exercices — logique pure, partagée, sans React ni DOM.
  *
  * Exporté en espace de noms (`practice.Rational`) plutôt qu'à plat : le dépôt
- * a déjà `parseDec` / `parseFr` (numberFormat.js) et `compareMathExpressions`
- * (mathComparison.js). Trois façons de lire un nombre à plat dans le même
+ * a déjà `parseDec` (numberFormat.js) et `compareMathExpressions`
+ * (mathComparison.js). Plusieurs façons de lire un nombre à plat dans le même
  * barillet inviterait à prendre la mauvaise ; ici l'espace de noms dit
  * laquelle appartient au moteur d'exercices.
  */

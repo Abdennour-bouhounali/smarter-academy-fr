@@ -9,8 +9,7 @@ Pure functions and static data: `input → output`, no side effects, no framewor
 | Module | What it does |
 |---|---|
 | `mathComparison.js` | Algebraic-equivalence checking (`compareMathExpressions`), via `@cortex-js/compute-engine` |
-| `numberFormat.js` | French number formatting/parsing (`formatFr`, `parseFr`, decimal comparison) |
-| `lessonAccess.js` | Module unlock/mastery rules — operates on completion data passed in, never reads storage itself |
+| `numberFormat.js` | French number formatting/parsing (`formatFr`, `parseDec`, decimal comparison) |
 | `errorClassifiers.js` | Detects common student error patterns (sign errors, missing square root, ...) |
 | `auth.js` | `hasRequiredRole(user, allowedRoles)` — the authorization predicate behind route guards |
 | `geometry.js` | Pythagorean formulas (`computeHypotenuse`, `computePythagoreanLeg`) |

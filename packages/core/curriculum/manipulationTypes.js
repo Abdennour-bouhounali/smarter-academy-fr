@@ -22,9 +22,7 @@
 //   unlock: 'first-gesture' seulement après un premier exemple fait À LA MAIN
 // Le composant fournit la mécanique (`controller.autoComplete`) ; sans cette
 // déclaration, le bouton n'est jamais rendu.
-export const AUTO_COMPLETE_UNLOCKS = Object.freeze(['config', 'first-gesture']);
-
-export const MANIPULATION_TYPES = Object.freeze({
+const MANIPULATION_TYPES = Object.freeze({
   'divisor-explorer': {
     shows: 'b قاسم لـ a ⇔ باقي القسمة الإقليدية معدوم ⇔ a = b × q',
     controls: { reset: true, nextStep: false, toggleExplanation: true, changeNumbers: { a: [2, 9999], b: [1, 999] }, autoComplete: { unlock: 'config' } },

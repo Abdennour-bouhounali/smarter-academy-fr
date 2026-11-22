@@ -17,7 +17,7 @@
  *
  * rompt ce contrat : l'étape ne se valide jamais après une erreur, le module
  * ne se termine pas, `nextLink` reste `undefined` (ContentModule) et le
- * module suivant reste verrouillé (packages/core/lessonAccess.js). Comme le
+ * module suivant reste verrouillé. Comme le
  * QCM a déjà révélé la réponse et ne se laisse pas re-répondre, l'élève est
  * enfermé sans issue : il doit recharger la page. C'est le défaut que cet
  * audit rend impossible à réintroduire.

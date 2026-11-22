@@ -35,8 +35,3 @@ export function classDoor(lessonId, lessonPath) {
 
 /** Un محور se « présente » seul seulement là où « وضع القسم » existe encore. */
 export const canPresentPath = (path) => Boolean(path) && !boardLessonOfPath(path);
-
-/** @param {unknown} state  `location.state` */
-export function wantsClassroomStart(state) {
-  return !!state && typeof state === 'object' && state.startClassroom === 'lesson';
-}

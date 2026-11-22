@@ -10,9 +10,6 @@
  *   role     'student' | 'teacher'
  *   path     motif react-router de la page (correspondance exacte, sans la
  *            requête : /espace/atelier couvre aussi ?lab=…)
- *   page     À LA PLACE de `path` : la page déclare elle-même sa visite
- *            (`useDeclarePageTour(page, enabled)`), quand l'URL ne suffit pas
- *            — le premier module d'une leçon.
  *   steps    dans l'ordre de lecture. `target` = sélecteur CSS ; le premier
  *            élément VISIBLE l'emporte. Sans `target` : carte centrale.
  *            Une étape dont la cible manque (état vide, autre largeur

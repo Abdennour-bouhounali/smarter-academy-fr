@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { euclidSteps, differenceSteps, gcdByDefinition } from '@smarter-academy/core/arithmetic/divisibility.js';
+import { euclidSteps, differenceSteps, gcd } from '@smarter-academy/core/arithmetic/divisibility.js';
 import * as D from './differences.js';
 
 describe('PGCD بالفوارق المتتالية', () => {
@@ -44,9 +44,9 @@ describe('PGCD بالفوارق المتتالية', () => {
     }
   });
 
-  it('coïncide avec la définition du PGCD', () => {
+  it('coïncide avec le PGCD d’Euclide (une autre méthode)', () => {
     for (const [a, b] of [[84, 36], [117, 91], [252, 140], [936, 845]]) {
-      expect(D.differencesRun(a, b).gcd).toBe(gcdByDefinition(a, b));
+      expect(D.differencesRun(a, b).gcd).toBe(gcd(a, b));
     }
   });
 
@@ -105,7 +105,7 @@ describe('les exemples', () => {
       const count = D.differenceCount(a, b);
       expect(count).toBeGreaterThanOrEqual(4);
       expect(count).toBeLessThanOrEqual(14);
-      expect(gcdByDefinition(a, b)).toBeGreaterThan(1);
+      expect(gcd(a, b)).toBeGreaterThan(1);
     }
   });
 });

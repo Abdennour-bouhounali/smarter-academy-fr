@@ -11,6 +11,4 @@
 export { default as ClassroomPresentation } from './ClassroomPresentation';
 export { default as ClassroomEntryButton } from './ClassroomEntryButton';
 export { default as ClassroomFrame, ClassroomHidden } from './ClassroomFrame';
-export { default as ClassroomPaged } from './ClassroomPaged';
-export { useClassroomStage } from './useClassroomStage';
 export { useClassroomMode } from './ClassroomContext';

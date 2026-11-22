@@ -2,33 +2,9 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
 import { apiMessage } from './apiMessage';
 
 /**
- * Thin transport for learning-evidence submission and the learning profile —
- * same shape as diagnosticService.js. Mastery V2 : the SERVER is the judge of
- * correctness, learning points and difficulty (it reads them from the item
- * registry) — the client only reports what the student picked. The server
- * is idempotent by attemptId (safe to retry).
+ * Thin transport for the learning profile — same shape as
+ * diagnosticService.js. Mastery V2 : the SERVER is the judge of mastery.
  */
-
-/**
- * @param {string} token
- * @param {string} lessonCode - the lesson's coursesData.js id, e.g. 'resolution-problemes-1'
- * @param {{questionCode: string, attemptId: string, answer: {picked: number|null}}} evidence
- * @returns {Promise<{success: boolean, duplicate: boolean, evidenceId: number, outcome: 'correct'|'incorrect'|'abandoned'}>}
- * @throws {ApiError}
- */
-export async function submitLearningEvidence(token, lessonCode, evidence) {
-  const { ok, status, data } = await apiRequest(`/lessons/${encodeURIComponent(lessonCode)}/evidence`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify(evidence),
-  });
-
-  if (!ok) {
-    throw new ApiError(apiMessage('evidenceSave', data, status), classifyStatus(status), status);
-  }
-
-  return data;
-}
 
 /**
  * The student's learning profile: initialKnowledge (diagnostic baselines,
@@ -82,30 +58,4 @@ export async function fetchLearningPointExplanation(token, code) {
   }
 
   return data.explanation;
-}
-
-/**
- * « ما التالي؟ » — the server's next-step recommendations for ONE lesson
- * (Mastery V2, phase 8a), most urgent first. Never blocking: the UI shows
- * them as suggestions only.
- *
- * @param {string} token
- * @param {string} lessonCode - the lesson's coursesData.js id
- * @returns {Promise<Array<{learningPoint: {code: string, title: string}, status: string,
- *   statusReason: string|null, freshness: string|null,
- *   kind: 'prerequisite'|'reteach'|'practice'|'assessment'|'refresh'|'start',
- *   modules: Array<{number: number, title: string}>, prerequisites: Array<{code: string, title: string}>,
- *   priority: number}>>}
- * @throws {ApiError}
- */
-export async function fetchLessonRecommendations(token, lessonCode) {
-  const { ok, status, data } = await apiRequest(`/students/me/lessons/${encodeURIComponent(lessonCode)}/recommendations`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-
-  if (!ok) {
-    throw new ApiError(apiMessage('profileLoad', data, status), classifyStatus(status), status);
-  }
-
-  return Array.isArray(data?.recommendations) ? data.recommendations : [];
 }

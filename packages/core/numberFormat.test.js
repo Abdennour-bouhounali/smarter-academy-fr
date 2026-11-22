@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { roundTo, formatFr, texFr, formatDec, texDec, parseDec, parseFr, toLatinDigits, decEquals, decimalPlaces, THIN } from './numberFormat';
+import { roundTo, formatFr, texFr, formatDec, texDec, parseDec, toLatinDigits, decEquals, decimalPlaces, THIN } from './numberFormat';
 
 describe('roundTo', () => {
   it('neutralizes floating-point artifacts', () => {
@@ -74,32 +74,6 @@ describe('parseDec', () => {
   });
   it('passes finite numbers through unchanged', () => {
     expect(parseDec(3.5)).toBe(3.5);
-  });
-});
-
-describe('parseFr', () => {
-  it('reads a French-grouped integer', () => {
-    expect(parseFr('4 582')).toBe(4582);
-  });
-  it('rejects decimal input (integer-only parser)', () => {
-    expect(parseFr('3,5')).toBeNaN();
-  });
-  it('reads Arabic-Indic and Persian digits', () => {
-    expect(parseFr('٨١٠')).toBe(810);
-    expect(parseFr('۸۱۰')).toBe(810);
-    expect(parseFr(' ١٢ ')).toBe(12);
-  });
-  it('accepts a dot only as a well-formed thousands separator', () => {
-    expect(parseFr('4.582')).toBe(4582);
-    expect(parseFr('1.250.000')).toBe(1250000);
-    expect(parseFr('81.0')).toBeNaN();
-    expect(parseFr('810.0')).toBeNaN();
-    expect(parseFr('1.2')).toBeNaN();
-  });
-  it('rejects other number syntaxes', () => {
-    expect(parseFr('0x12')).toBeNaN();
-    expect(parseFr('5e1')).toBeNaN();
-    expect(parseFr('')).toBeNaN();
   });
 });
 

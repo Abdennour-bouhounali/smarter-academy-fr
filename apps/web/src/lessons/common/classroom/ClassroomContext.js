@@ -22,17 +22,12 @@ import { createContext, useContext } from 'react';
  *   area                { width, height } offerts au contenu, en px
  *   enterClassroomMode({ scope?, title? })  entrer, en disant ce qu'on présente
  *   exitClassroomMode   / toggleClassroomMode
- *   registerStage(id, spec|null)  une page présentée publie titre, gestes
- *                       السابق/التالي et commandes (voir useClassroomStage)
  *   lessonNavigation    en session LEÇON : { previous, next, position, total }
  *                       — les gestes vers les modules voisins ; null sinon
  *   takeArrival()       'first' | 'last' | null — par quel bout entrer dans
  *                       la page qui vient de s'ouvrir en session leçon
  *   refit()             le contenu vient de changer de nature (autre unité) :
  *                       le moteur repart de l'échelle demandée
- *   portalTarget        l'élément où porter un portail (fantôme de glisser,
- *                       infobulle…) : en plein écran natif, un portail vers
- *                       <body> serait INVISIBLE
  *
  * Hors provider (page sans présentation, test unitaire) : le repli
  * INACTIVE — jamais d'exception, jamais de commande visible.
@@ -55,24 +50,12 @@ const CLASSROOM_INACTIVE = Object.freeze({
   enterClassroomMode: noop,
   exitClassroomMode: noop,
   toggleClassroomMode: noop,
-  registerStage: noop,
   lessonNavigation: null,
   takeArrival: () => null,
   refit: noop,
-  portalTarget: null,
 });
 
 /** L'état du mode classe pour le contenu enveloppé. */
 export function useClassroomMode() {
   return useContext(ClassroomContext) ?? CLASSROOM_INACTIVE;
-}
-
-/**
- * Où porter un portail : la racine de la présentation quand elle est active,
- * sinon <body>. `null` hors navigateur.
- */
-export function useClassroomPortalTarget() {
-  const ctx = useContext(ClassroomContext);
-  if (ctx?.isClassroomMode && ctx.portalTarget) return ctx.portalTarget;
-  return typeof document === 'undefined' ? null : document.body;
 }
