@@ -84,7 +84,7 @@ const mods = [...initial].flatMap((n) => Object.entries(chunks[n].modules));
 const area = (id) => {
   const m = short(id);
   if (m.includes('node_modules/')) { const p = m.split('node_modules/').pop().split('/'); return `npm:${p[0].startsWith('@') ? `${p[0]}/${p[1]}` : p[0]}`; }
-  if (m.includes('/lessons/moyen/')) return `${m.split('/lessons/moyen/')[0]}/lessons/moyen/** (${m.split('/').pop()})`;
+  if (m.includes('/lessons/college/')) return `${m.split('/lessons/college/')[0]}/lessons/college/** (${m.split('/').pop()})`;
   return m.split('/').slice(0, 5).join('/');
 };
 const by = new Map();

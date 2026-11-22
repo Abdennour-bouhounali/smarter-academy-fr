@@ -35,8 +35,8 @@ export const TOUCH = process.env.E2E_TOUCH === '1';
 /** A phone held sideways: touch, and at most 500 px high (engine/phoneScreen.js › SHORT_SCREEN). */
 export const PHONE = TOUCH && SIZE[1] <= 500;
 export const SIZE_NAME = `${SIZE[0]}x${SIZE[1]}${TOUCH ? '-touch' : ''}`;
-/** A lesson's page: `grade` is the year of the lesson (4am by default; a 1AM or 2AM lesson passes its own). */
-export const lessonUrl = (unit, id, grade = '4am') => `${BASE}/courses/moyen/${grade}/${unit}/${id}`;
+/** A lesson's page: `grade` is the year of the lesson (3e by default; a lesson of another grade passes its own). */
+export const lessonUrl = (unit, id, grade = '3e') => `${BASE}/courses/college/${grade}/${unit}/${id}`;
 const PILOT = 'qasim-adad-tabii';
 
 /**
@@ -48,14 +48,6 @@ const PILOT = 'qasim-adad-tabii';
  */
 export const FOREIGN = foreignToAll(WORLD_LESSONS.filter((id) => id !== PILOT));
 export const FOREIGN_NUMBERS = [756, 1850];
-/**
- * The words that the walks of lesson 3 `khawass-qawasim` AND of the pilot both check (the pilot's `gameworld-sitting`
- * imports it too): every name of the other lessons that neither of the two writes (lib/lessonWords.mjs). Extra, by hand:
- * « جداء عاملين », lesson 2's knowledge card (its tablet's name is longer: « جداء عاملين: قاسمان معًا »).
- * Its numbers stay lesson 2's: the stone's 252, the store's 96 books, 1400 and 11200 دج.
- */
-export const QAWASIM_WORDS = foreignToAll(['khawass-qawasim', PILOT], ['جداء عاملين']);
-export const QAWASIM_NUMBERS = [252, 96, 1400, 11200];
 
 /** The 12 px floor, less the 0.05 px of rounding a CSS zoom leaves (GAME_WORLD.md « 12 px floor »). */
 export const FLOOR_PX = 11.95;
@@ -154,9 +146,9 @@ export function createWalk(name, { foreign = [], foreignNumbers = [], fontFloor 
    * A student session on a lesson page. `seed` = localStorage entries (already prefixed) written before the app starts;
    * every `/api/` call is answered by a mock (`auth/me` → the student) and RECORDED in `window.__api`; the bodies posted to
    * `/game-evidence` are kept in `window.__posts`. « عُدّة الانطلاق » of `lessonId` is seeded as played.
-   * `grade`: the student's year (4am by default; a walk of a 1AM or 2AM lesson passes its own).
+   * `grade`: the student's year (3e by default; a walk of a lesson of another grade passes its own).
    */
-  async function student({ uid, lessonId, url, seed = {}, grade = '4am' }) {
+  async function student({ uid, lessonId, url, seed = {}, grade = '3e' }) {
     if (!browser) await launch();
     const ctx = await browser.newContext({
       viewport: { width: SIZE[0], height: SIZE[1] },

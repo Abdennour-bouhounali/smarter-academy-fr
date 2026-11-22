@@ -49,9 +49,8 @@ const LOCALES = 'apps/web/src/i18n/locales/ar';
 const KEY_SOURCES_PHP = 'apps/api/app';
 const BASELINE = abs('scripts/check-unused.baseline.json');
 /**
- * Files that the tools load by a path they BUILD (`import(pathToFileURL(`${dir}/lesson.config.js`))`, and
- * `check-textbook-coverage.mjs` reads every export of a lesson's `content/*.js`): the check cannot follow that,
- * so every export of these files counts as used.
+ * Files that the tools load by a path they BUILD (`import(pathToFileURL(`${dir}/lesson.config.js`))`, and a
+ * lesson's `content/*.js`): the check cannot follow that, so every export of these files counts as used.
  */
 const READ_BY_PATH = /\/lessons\/.*\/(lesson\.config\.js|content\/[^/]+\.js)$/;
 const isStringTable = (file) => /(^|\/)(strings|text)\.js$/.test(file);

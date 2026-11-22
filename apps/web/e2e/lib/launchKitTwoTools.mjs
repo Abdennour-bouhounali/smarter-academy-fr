@@ -32,7 +32,7 @@
 // (the run still fails): no raw formula, no word of another lesson, no text under 12 px (`lib/walk.mjs › tinyText`, the same
 // floor as every walk), the launch's ✕ reachable. The lab opened from a capsule gets the same floor and its own ✕.
 import { FAMILIES, makeQuestion } from '../../src/lessons/common/launchkit/families.js';
-import { homeLessonOf } from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
+import { homeLessonOf } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import { chromium } from 'playwright';
 import { GL_ARGS } from './gpu.mjs';
 import { eq as exactEq, mul as exactMul, q as exactQ } from './lessonWalk/worlds/exact.mjs';
@@ -62,6 +62,8 @@ export const B = '2am.m1.r04';
  * card and measures it: the run meets the longest card every time, not only when the random draw deals it.
  */
 export const LONGEST_LIST = (() => {
+  // The list family exists only once the net has that item: with none (the empty catalogue) there is no card to measure.
+  if (!FAMILIES['4am.m1.r02']) return '';
   let seed = 20261119;
   const rand = () => {
     seed = (seed * 16807) % 2147483647;
@@ -89,7 +91,7 @@ const texOf = (s) => norm(s).replace(/^\\displaystyle\s*/, '');
  * world). A word of another lesson that is part of one of those names is the launch's own here, not a leak.
  */
 const ownToolsAside = (alien, items) => {
-  const shown = items.flatMap((i) => [FAMILIES[i]?.name, homeLessonOf(i)?.titleAr]).filter(Boolean);
+  const shown = items.flatMap((i) => [FAMILIES[i]?.name, homeLessonOf(i)?.title]).filter(Boolean);
   return alien.filter((w) => !shown.some((s) => s.includes(w)));
 };
 

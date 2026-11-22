@@ -13,17 +13,17 @@ import { join, dirname, resolve, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from '@babel/parser';
 import traverseModule from '@babel/traverse';
-// Cet outillage valide l'arbre de leçons SUR LE DISQUE contre le catalogue
-// algérien (`dzCourseLevels`) : les leçons écrites sous lessons/moyen/4am/.
-// Le catalogue français et ses 132 dossiers ont été supprimés le 2026-09-25 ;
-// un dossier de leçon absent du catalogue DZ est désormais une erreur.
-//
-// ATTENTION : indexer une leçon ne l'ACTIVE pas. Ce qu'un élève peut ouvrir
-// est décidé par ACTIVE_GRADE_IDS et le registre de l'application, que
-// check-dormant-isolation.mjs vérifie séparément.
-import { dzCourseLevels } from '../../packages/core/curriculum/coursesData.js';
+// The tooling validates the lesson tree ON DISK against the whole catalogue
+// (`allCourseLevels`, active or not): a lesson folder the catalogue does not
+// know is an error. Indexing a lesson does not ACTIVATE it — ACTIVE_GRADE_IDS
+// and the app's registry decide that (check-dormant-isolation.mjs).
+import { allCourseLevels, buildCourseLevels } from '../../packages/core/curriculum/coursesData.js';
 
-const courseLevels = dzCourseLevels;
+// SMARTER_CATALOGUE_FIXTURE: a JSON file `{ gradeSources: [{ programme, lessons, units }] }` built with the core's own
+// builder, so a test of a validator can name a lesson while the shipped catalogue is empty. Never set in CI.
+const courseLevels = process.env.SMARTER_CATALOGUE_FIXTURE
+  ? buildCourseLevels(JSON.parse(readFileSync(process.env.SMARTER_CATALOGUE_FIXTURE, 'utf-8')).gradeSources)
+  : allCourseLevels;
 
 export const traverse = traverseModule.default || traverseModule;
 export const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');

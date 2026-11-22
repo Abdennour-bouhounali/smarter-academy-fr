@@ -40,7 +40,7 @@
 // mount) as on the original one (a missing mount).
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, dirname, basename } from 'node:path';
-import { dzCourseLevels } from '../packages/core/curriculum/coursesData.js';
+import { allCourseLevels } from '../packages/core/curriculum/coursesData.js';
 import { ACTIVE_GRADE_IDS } from '../packages/core/curriculum/activeGrades.js';
 
 const ROOT = new URL('../', import.meta.url).pathname;
@@ -61,13 +61,9 @@ const walk = (dir, out = []) => {
 const app = readFileSync(APP, 'utf8');
 const problems = [];
 
-// Les niveaux ALGÉRIENS (`moyen`, `thanawi`) autant que les français hérités.
-// Sans eux, une leçon de 4AM (apps/web/src/lessons/moyen/4am/...) serait vue
-// comme SANS CLASSE : `gradeIdFromPath` rendrait null, la leçon passerait pour
-// dormante, et son entrée dans l'index ferait échouer ce contrôle en
-// annonçant une « fuite de contenu dormant ». Le piège est documenté dans
-// docs/ALGERIA_4AM_CURRICULUM.md §8.
-const LESSON_PATH_RE = /lessons\/(?:college|lycee|moyen|thanawi)\/([^/]+)\//;
+// The level folder of a lesson is `college` (apps/web/src/lessons/college/<grade>/...). A lesson under any other level
+// folder has no grade here, is seen as dormant, and fails below if it is indexed or globbed.
+const LESSON_PATH_RE = /lessons\/college\/([^/]+)\//;
 
 const gradeIdFromPath = (rel) => rel.match(LESSON_PATH_RE)?.[1] ?? null;
 
@@ -116,10 +112,9 @@ for (const id of indexed.keys()) {
 }
 
 // ── Contrôle 2 : le chemin déclaré est-il celui du lien de la carte ? ──────
-// Contre le catalogue DZ : les leçons algériennes écrites sous
-// lessons/moyen/4am/ (le catalogue français a été supprimé le 2026-09-25).
+// Against the whole catalogue (allCourseLevels): the lessons written under lessons/college/<grade>/.
 const catalogue = new Map();
-for (const niveau of dzCourseLevels) {
+for (const niveau of allCourseLevels) {
   for (const grade of niveau.grades) {
     for (const chapitre of grade.chapters) {
       for (const lecon of chapitre.lessons) catalogue.set(`${grade.id}:${lecon.id}`, lecon.path);
@@ -155,11 +150,11 @@ for (const file of walkConfigs(LESSONS)) {
 }
 
 // ── Contrôle 3 : la page d'UNITÉ (الوحدة) est-elle montée ? ────────────────
-// Le catalogue DZ construit un chemin `/courses/<niveau>/<classe>/<chapitre>/units/<unité>`
-// pour chaque unité du manuel (coursesData.js, buildDzUnitPath). App.jsx doit
+// Le catalogue construit un chemin `/courses/<niveau>/<classe>/<chapitre>/units/<unité>`
+// pour chaque unité (coursesData.js, buildUnitPath). App.jsx doit
 // monter une route qui l'attrape, sinon la carte d'unité mène à l'accueil —
 // exactement le silence que ce script existe pour rompre.
-const hasUnits = dzCourseLevels.some((l) => l.grades.some((g) => g.chapters.some((c) => (c.units ?? []).length > 0)));
+const hasUnits = allCourseLevels.some((l) => l.grades.some((g) => g.chapters.some((c) => (c.units ?? []).length > 0)));
 if (hasUnits && !/path=\{?["'`]\/courses\/:levelId\/:gradeId\/:chapterId\/units\/:unitId["'`]\}?/.test(app)) {
   problems.push({ rel: 'apps/web/src/App.jsx', why: "le catalogue déclare des unités du manuel mais aucune route `/courses/:levelId/:gradeId/:chapterId/units/:unitId` n'est montée — la page d'unité retombera sur l'accueil" });
 }
@@ -171,7 +166,11 @@ if (problems.length) {
   for (const p of problems) console.error(`  ✗ ${p.rel}\n      ${p.why}`);
   console.error('\nUne leçon active non montée ne renvoie pas une 404 :');
   console.error("l'utilisateur atterrit sur la page d'accueil, et aucun autre contrôle ne le voit.");
-  console.error("Une leçon dormante branchée par erreur fuit du contenu français désactivé (activeGrades.js).\n");
+  console.error("Une leçon dormante branchée par erreur fuit du contenu désactivé (activeGrades.js).\n");
   process.exit(1);
+}
+if (total === 0) {
+  console.log('✅ Aucune leçon sur le disque : seule la frontière de routes (App.jsx) est vérifiée, et elle est montée.');
+  process.exit(0);
 }
 console.log(`✅ Les ${totalActive} leçon(s) active(s) sur ${total} sont montées par la frontière de routes (index + globs, et seulement elles), et leur chemin est celui du catalogue.`);

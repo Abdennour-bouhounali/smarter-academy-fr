@@ -1,4 +1,5 @@
-// L'ORACLE des réponses du « مختبر التفكير » — copie du principe de practice-answer-oracle.test.mjs.
+// L'ORACLE des réponses du laboratoire de réflexion — copie du principe de practice-answer-oracle.test.mjs.
+// La banque livrée est vide : le moteur tourne aussi sur un défi témoin (scripts/__fixtures__/thinking-lab/).
 //
 // Le validateur prouve que la réponse configurée est LISIBLE et cohérente avec les erreurs
 // déclarées. Ce test prouve autre chose : qu'elle est MATHÉMATIQUEMENT juste. Chaque réponse
@@ -14,15 +15,19 @@ import { readChallenges } from './build-thinking-lab-index.mjs';
 import { checkAnswer, mistakeExpression, expressionOptions, exactValue } from '../packages/core/thinkingLab/checkAnswer.js';
 import { evaluateExpression, samplePoints, closeEnough } from '../packages/core/thinkingLab/expression.js';
 import { allTuples, fillChallenge } from '../packages/core/thinkingLab/params.js';
-import { ORACLE as SEED } from './thinking-lab-oracle/seed.mjs';
-import { ORACLE as PRIMARY } from './thinking-lab-oracle/primary.mjs';
-import { ORACLE as MIDDLE } from './thinking-lab-oracle/middle.mjs';
-import { ORACLE as SECONDARY } from './thinking-lab-oracle/secondary.mjs';
-import { ORACLE as UNIVERSITY } from './thinking-lab-oracle/university.mjs';
+import { existsSync, readdirSync } from 'node:fs';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { ORACLE as FIXTURE_ORACLE } from './__fixtures__/thinking-lab/four-arcs-area.oracle.mjs';
 
-// Un lot par tranche (écrits en parallèle, jamais deux auteurs sur le même fichier).
-const ORACLE = { ...SEED, ...PRIMARY, ...MIDDLE, ...SECONDARY, ...UNIVERSITY };
-const challenges = readChallenges().map((e) => e.data).filter((c) => c?.status === 'published');
+// One oracle module per batch in scripts/thinking-lab-oracle/ (none while the bank is empty), merged here.
+const ORACLE_DIR = fileURLToPath(new URL('./thinking-lab-oracle/', import.meta.url));
+const ORACLE = {};
+for (const f of existsSync(ORACLE_DIR) ? readdirSync(ORACLE_DIR).filter((n) => n.endsWith('.mjs')) : []) {
+  Object.assign(ORACLE, (await import(pathToFileURL(`${ORACLE_DIR}${f}`).href)).ORACLE);
+}
+const published = (entries) => entries.map((e) => e.data).filter((c) => c?.status === 'published');
+const challenges = published(readChallenges());
+const fixtures = published(readChallenges(fileURLToPath(new URL('./__fixtures__/thinking-lab/challenges', import.meta.url))));
 
 function expectMatchesOracle(spec, compute, values, tolerance, label) {
   if (spec.check === 'expression') {
@@ -41,12 +46,13 @@ function expectMatchesOracle(spec, compute, values, tolerance, label) {
   }
 }
 
-describe('oracle du « مختبر التفكير »', () => {
-  it('lit au moins un défi publié', () => {
-    expect(challenges.length).toBeGreaterThan(0);
+function oracleSuite(title, list, ORACLE) {
+describe(title, () => {
+  it(`chaque défi publié (${list.length}) a un oracle indépendant`, () => {
+    expect(list.filter((c) => !ORACLE[c.id]).map((c) => c.id)).toEqual([]);
   });
 
-  for (const c of challenges) {
+  for (const c of list) {
     describe(`#${c.number} ${c.id}`, () => {
       const oracle = ORACLE[c.id];
 
@@ -81,9 +87,19 @@ describe('oracle du « مختبر التفكير »', () => {
     });
   }
 });
+}
 
-describe('acceptation de la phase 0 — #318 lu dans le contenu', () => {
-  const c = challenges.find((x) => x.number === 318);
+oracleSuite('oracle du laboratoire de réflexion — la banque', challenges, ORACLE);
+oracleSuite('oracle du laboratoire de réflexion — le défi témoin', fixtures, FIXTURE_ORACLE);
+
+describe('le défi témoin est lu', () => {
+  it('lit exactement un défi publié dans le dossier témoin', () => {
+    expect(fixtures.map((c) => c.id)).toEqual(['four-arcs-area']);
+  });
+});
+
+describe('acceptation du juge — #318 lu dans le défi témoin', () => {
+  const c = fixtures.find((x) => x.number === 318);
 
   it('existe, publié, sous l\'id stable four-arcs-area', () => {
     expect(c?.id).toBe('four-arcs-area');
@@ -93,7 +109,7 @@ describe('acceptation de la phase 0 — #318 lu dans le contenu', () => {
     expect(checkAnswer(c.answer, raw, { mistakes: c.mistakes }).correct).toBe(true);
   });
 
-  it('refuse ses 3 erreurs déclarées, chacune avec sa réponse « ليس بعد »', () => {
+  it('refuse ses 3 erreurs déclarées, chacune avec sa réponse « pas encore »', () => {
     expect(c.mistakes).toHaveLength(3);
     c.mistakes.forEach((m, i) => {
       expect(checkAnswer(c.answer, mistakeExpression(m), { mistakes: c.mistakes })).toMatchObject({ correct: false, mistakeIndex: i });

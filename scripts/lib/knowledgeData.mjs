@@ -79,7 +79,7 @@ export function readKnowledge(lessonDir) {
           .filter(Boolean).join(' '),
         notation: [...bodyText.notation, ...visualText.notation],
         hasVisual: propOf(el, 'visual') !== undefined,
-        // « أتوقّع القاعدة » (KNOWLEDGE_DEPENDENCY.md) — lus par audit-predict-prompts.mjs.
+        // « أتوقّع القاعدة » (KNOWLEDGE_DEPENDENCY.md).
         predictPrompt: typeof literalValue(propOf(el, 'predictPrompt')) === 'string' ? literalValue(propOf(el, 'predictPrompt')) : '',
         predict: literalValue(propOf(el, 'predict')),
       };

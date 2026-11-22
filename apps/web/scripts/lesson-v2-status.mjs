@@ -47,16 +47,16 @@ const walks = fs
   .map((f) => ({ file: f, text: fs.readFileSync(path.join(WEB, 'e2e', f), 'utf8') }));
 const catalogue = new Map();
 for (const f of fs
-  .readdirSync(path.join(ROOT, 'packages/core/curriculum/dz'))
+  .readdirSync(path.join(ROOT, 'packages/core/curriculum/fr'))
   .filter((n) => /^lessons_.*\.json$/.test(n))) {
-  const data = json(path.join(ROOT, 'packages/core/curriculum/dz', f));
+  const data = json(path.join(ROOT, 'packages/core/curriculum/fr', f));
   for (const l of Array.isArray(data) ? data : (data.lessons ?? [])) catalogue.set(l.code ?? l.id, l);
 }
 
 /** The core tools of the launch kit for a lesson (the learning net), or null when the net cannot be read from here. */
 async function coreTools(lessonId) {
   try {
-    const net = await import(pathToFileURL(path.join(ROOT, 'packages/core/curriculum/dz/net/learningNet.js')).href);
+    const net = await import(pathToFileURL(path.join(ROOT, 'packages/core/curriculum/fr/net/learningNet.js')).href);
     return net.toolsForLesson(lessonId).filter((t) => t.weight !== 'support');
   } catch {
     return null;
@@ -249,15 +249,16 @@ const ledger = [
   ['still on the mission player only (no world)', count((c) => c.mission && !c.entry.pack?.world)],
   ['still on the older lesson page (no mission, no world)', count((c) => !c.mission && !c.entry.pack?.world)],
   [
-    'still open with an « أستعدّ » module',
+    'still open with a « prepare » (astaidd) module',
     count((c) => !c.retired && c.entry.modules.some(([, slug]) => slug === 'astaidd')),
   ],
   ['v2 whose old version is deleted (module pages, mission player)', count((c) => c.retired)],
-  ['still without a board (old « وضع القسم », derived memo)', count((c) => !c.entry.pack?.board)],
+  ['still without a board (old classroom mode, derived memo)', count((c) => !c.entry.pack?.board)],
 ];
 if (args.includes('--json')) console.log(JSON.stringify({ packed, ledger: Object.fromEntries(ledger) }, null, 2));
 else {
   console.log('\nLesson v2 — the lessons that have a pack\n');
+  if (!packed.length) console.log('  (none yet: no lesson of the catalogue has a pack)');
   for (const s of packed)
     console.log(
       `  ${s.done ? '✅' : '❌'} ${s.id.padEnd(34)} ${s.grade}  ${s.done ? '' : `${s.failed} part(s) missing${s.unknown ? `, ${s.unknown} not checked` : ''}`}`,

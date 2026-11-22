@@ -160,6 +160,8 @@ export function foreignWordsFor(lessonId, extra = []) {
 
 /** The words foreign to EVERY lesson of `lessonIds`: the list for an export that walks of several lessons share. */
 export function foreignToAll(lessonIds, extra = []) {
+  // No lesson of the world yet (the empty catalogue): nothing is foreign.
+  if (!lessonIds.length) return [];
   const [first, ...rest] = lessonIds.map((id) => foreignWordsFor(id, extra));
   return first.filter((w) => rest.every((l) => l.includes(w)));
 }

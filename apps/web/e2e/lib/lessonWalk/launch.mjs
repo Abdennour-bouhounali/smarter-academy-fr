@@ -1,7 +1,7 @@
 // « عُدّة الانطلاق » and « الامتحان الأبيض » of a lesson: thin wrappers over the shared walks that already exist
 // (lib/launchKitTwoTools.mjs, lib/sittingWalk.mjs). What the lessons' own copies added — the words the launch writes on
 // purpose (its tools' families, their home lessons, the mistakes) taken out of the foreign words — is computed here.
-import { homeLessonOf } from '@smarter-academy/core/curriculum/dz/net/learningNet.js';
+import { homeLessonOf } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
 import { FAMILIES, MISTAKES } from '../../../src/lessons/common/launchkit/families.js';
 import { walkLaunch, walkLaunchLists, walkLaunchOne, walkLaunchPair, A, B, LISTS } from '../launchKitTwoTools.mjs';
 import { sittingWalk } from '../sittingWalk.mjs';
@@ -29,7 +29,7 @@ export async function launchWalk(L, D, opts) {
         : spec.scenario === 'pair'
           ? spec.tools.map((t) => t.item)
           : [spec.tool.item];
-  const homes = items.map((i) => homeLessonOf(i)?.titleAr).filter(Boolean);
+  const homes = items.map((i) => homeLessonOf(i)?.title).filter(Boolean);
   const own = [...items.flatMap((i) => strings(FAMILIES[i])), ...strings(MISTAKES)].join('\n');
   const alien = (opts.foreign ?? []).filter((x) => !homes.some((h) => h.includes(x)) && !own.includes(x));
   const base = (D.uid ?? 9900) + 80;

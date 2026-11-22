@@ -1,0 +1,45 @@
+{
+  "_comment": "Neutral test catalogue (one 3e lesson, two learning points) for the tooling tests — never real curriculum content. Loaded through SMARTER_CATALOGUE_FIXTURE.",
+  "gradeSources": [
+    {
+      "programme": {
+        "grade": "3e",
+        "gradeLabel": "Troisième",
+        "gradeShortLabel": "3e",
+        "level": "college",
+        "levelLabel": "Collège",
+        "domains": [
+          {
+            "id": "nombres_calculs",
+            "title": "Nombres et calculs",
+            "topics": [
+              {
+                "id": "fixture_diviseurs",
+                "title": "Diviseurs communs"
+              }
+            ]
+          }
+        ]
+      },
+      "lessons": {
+        "lessons": [
+          {
+            "code": "fixture-diviseurs",
+            "chapterId": "nombres_calculs",
+            "sourceTopicId": "fixture_diviseurs",
+            "order": 1,
+            "status": "coming_soon",
+            "durationMinutes": 45,
+            "pointsToLearn": [
+              "Lister les diviseurs d'un entier",
+              "Trouver le plus grand diviseur commun"
+            ]
+          }
+        ]
+      },
+      "units": {
+        "units": []
+      }
+    }
+  ]
+}

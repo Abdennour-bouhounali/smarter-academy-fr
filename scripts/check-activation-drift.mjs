@@ -47,53 +47,16 @@ import { spawnSync } from 'node:child_process';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { dzCourseLevels } from '../packages/core/curriculum/coursesData.js';
+import { allCourseLevels } from '../packages/core/curriculum/coursesData.js';
 import { isGradeActive } from '../packages/core/curriculum/activeGrades.js';
+import { projectFromCatalogue, projectFromExport, exportDrift } from './lib/activationDrift.mjs';
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const exportPath = resolve(repoRoot, 'packages/core/curriculum/.generated/curriculum-export.json');
 
 const problems = [];
 
-/**
- * Le même extrait que celui qu'écrit exportCurriculum.mjs, réduit à ce que
- * cette garde surveille : l'activation par classe et la présence des leçons.
- *
- * Volontairement une PROJECTION et non l'export complet : comparer titres et
- * descriptions ferait échouer la garde sur une correction de faute de frappe,
- * ce qui apprendrait surtout à la contourner.
- */
-function projectFromSource() {
-  const grades = {};
-  for (const level of dzCourseLevels) {
-    for (const grade of level.grades) {
-      const lessons = {};
-      for (const chapter of grade.chapters) {
-        for (const lesson of chapter.lessons) {
-          lessons[lesson.id] = true;
-        }
-      }
-      grades[grade.id] = { active: isGradeActive(grade.id), lessons };
-    }
-  }
-  return grades;
-}
-
-function projectFromExport(exported) {
-  const grades = {};
-  for (const grade of exported.grades ?? []) {
-    const lessons = {};
-    for (const chapter of grade.chapters ?? []) {
-      for (const lesson of chapter.lessons ?? []) {
-        lessons[lesson.code] = true;
-      }
-    }
-    grades[grade.code] = { active: Boolean(grade.active), lessons };
-  }
-  return grades;
-}
-
-// ── 1. L'export est-il à jour ? ────────────────────────────────────────
+// ── 1. L'export est-il à jour ? (scripts/lib/activationDrift.mjs) ─────
 let exported = null;
 try {
   exported = JSON.parse(await readFile(exportPath, 'utf8'));
@@ -105,41 +68,7 @@ try {
 }
 
 if (exported) {
-  const source = projectFromSource();
-  const onDisk = projectFromExport(exported);
-
-  for (const [gradeId, expected] of Object.entries(source)) {
-    const actual = onDisk[gradeId];
-
-    if (!actual) {
-      problems.push(`Classe « ${gradeId} » présente dans coursesData.js mais absente de l'export — l'export est périmé.`);
-      continue;
-    }
-
-    if (actual.active !== expected.active) {
-      problems.push(
-        `Classe « ${gradeId} » : activeGrades.js dit ${expected.active ? 'ACTIVE' : 'inactive'}, ` +
-          `l'export dit ${actual.active ? 'ACTIVE' : 'inactive'} — l'export est périmé.`,
-      );
-    }
-
-    for (const lessonId of Object.keys(expected.lessons)) {
-      if (!actual.lessons[lessonId]) {
-        problems.push(`Leçon « ${lessonId} » (${gradeId}) absente de l'export — l'export est périmé.`);
-      }
-    }
-    for (const lessonId of Object.keys(actual.lessons)) {
-      if (!expected.lessons[lessonId]) {
-        problems.push(`Leçon « ${lessonId} » (${gradeId}) dans l'export mais absente du catalogue — l'export est périmé.`);
-      }
-    }
-  }
-
-  for (const gradeId of Object.keys(onDisk)) {
-    if (!source[gradeId]) {
-      problems.push(`Classe « ${gradeId} » dans l'export mais absente de coursesData.js — l'export est périmé.`);
-    }
-  }
+  problems.push(...exportDrift(projectFromCatalogue(allCourseLevels, isGradeActive), projectFromExport(exported)));
 }
 
 if (problems.length) {
@@ -176,7 +105,12 @@ if (problems.length) {
   report();
 }
 
-console.log('✅ Aucune dérive : le catalogue, son export et la base s\'accordent sur l\'activation et les leçons.');
+// A skipped database check must not read as a full pass.
+console.log(
+  process.env.SKIP_DB_DRIFT_CHECK === '1'
+    ? '✅ Aucune dérive entre le catalogue et son export (activation et leçons) — la base n\'a PAS été vérifiée.'
+    : '✅ Aucune dérive : le catalogue, son export et la base s\'accordent sur l\'activation et les leçons.',
+);
 
 function report() {
   console.error(`\n${problems.length} problème(s) de cohérence activation / leçons :\n`);

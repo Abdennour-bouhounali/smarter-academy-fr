@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * generate-compass-index — la banque de questions de « بوصلتي » (P1), lue dans
- * la banque de pratique et le réseau des الكفاءات.
+ * generate-compass-index — la banque de questions de la boussole de l'année (P1), lue dans
+ * la banque de pratique et le réseau des compétences.
  *
  *   node scripts/generate-compass-index.mjs           # écrit content/compass/index.generated.json
  *   node scripts/generate-compass-index.mjs --check   # échoue si le fichier écrit n'est plus à jour
@@ -12,7 +12,7 @@
  *  - c'est la 1re question de l'exercice, ou une sous-question qui ne renvoie pas
  *    à une réponse précédente (« استنتج », « السابق », « السؤال »…) ;
  *  - sa leçon déclare EXACTEMENT un item du programme (`programmeItems`) : sinon
- *    on ne sait pas quelle كفاءة elle mesure (compté dans `gaps.multiItemLessons`).
+ *    on ne sait pas quelle compétence elle mesure (compté dans `gaps.multiItemLessons`).
  *
  * Le fichier est lu par le SERVEUR seulement (Domain/Compass/CompassBank) : il ne
  * contient que des références, aucune réponse, et n'entre jamais dans le bundle.
@@ -21,12 +21,13 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LESSONS, ITEMS } from '../packages/core/curriculum/dz/net/learningNet.js';
+import { LESSONS, ITEMS, GRADES } from '../packages/core/curriculum/fr/net/learningNet.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PRACTICE = join(ROOT, 'content/practice');
 const OUT = join(ROOT, 'content/compass/index.generated.json');
 const TYPES = new Set(['choice', 'rational']);
+// TODO(stage 1C): these two patterns read the Arabic wording of the deleted bank; the French bank needs its own.
 const DEPENDS = /استنتج|السابق|السابقة|من السؤال|من الجواب|باستعمال النتيجة|بالاستعانة|أعلاه|ما سبق|السؤال/;
 
 const NEEDS_VISUAL = /المقابل|الشكل|المخطط|الجدول|البيان/;
@@ -93,7 +94,7 @@ export function buildIndex() {
   }
   const sorted = Object.fromEntries(Object.keys(items).sort().map((k) => [k, items[k]]));
   const coverage = {};
-  for (const g of ['1am', '2am', '3am', '4am']) {
+  for (const { id: g } of GRADES) {
     const all = ITEMS.filter((it) => it.grade === g).length;
     const both = Object.values(sorted).filter((v) => v.grade === g && v[1].length && v[2].length).length;
     coverage[g] = { items: all, withBothLevels: both };

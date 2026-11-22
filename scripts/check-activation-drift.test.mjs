@@ -3,6 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { projectFromCatalogue, projectFromExport, exportDrift } from './lib/activationDrift.mjs';
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const script = resolve(repoRoot, 'scripts/check-activation-drift.mjs');
@@ -58,29 +59,13 @@ describe('check-activation-drift', () => {
     }
   });
 
-  // Le PALIER n'est plus une affaire de catalogue : il appartient à la base
-  // (lessons.tier, décidé par l'administrateur). L'export ne doit donc en
-  // porter aucun, et la garde ne doit pas en comparer — sinon chaque
-  // décision d'administration redeviendrait une « dérive ».
-  it('l’export ne porte aucun palier de leçon', () => {
-    regenerate();
-    const exported = JSON.parse(readFileSync(exportPath, 'utf8'));
-    const lessons = exported.grades.flatMap((g) => g.chapters ?? []).flatMap((c) => c.lessons ?? []);
-    expect(lessons.length).toBeGreaterThan(0);
-    for (const lesson of lessons) {
-      expect(lesson, lesson.code).not.toHaveProperty('tier');
-    }
-  });
-
   it('échoue quand l’export porte une leçon inconnue du catalogue', () => {
     regenerate();
     const exported = JSON.parse(readFileSync(exportPath, 'utf8'));
     const original = JSON.stringify(exported, null, 2);
 
-    const chapter = exported.grades
-      .flatMap((g) => g.chapters ?? [])
-      .find((c) => (c.lessons ?? []).length > 0);
-    chapter.lessons.push({ ...chapter.lessons[0], code: '__lecon-fantome__' });
+    // The shipped catalogue has no lesson yet: the ghost comes in its own chapter.
+    exported.grades[0].chapters.push({ code: '__chapitre__', lessons: [{ code: '__lecon-fantome__' }] });
     writeFileSync(exportPath, JSON.stringify(exported, null, 2));
 
     try {
@@ -91,24 +76,36 @@ describe('check-activation-drift', () => {
       writeFileSync(exportPath, original);
     }
   });
+});
+
+// The same rules on a neutral catalogue of two lessons (the shipped one is empty): what the subprocess cannot show.
+describe('exportDrift — catalogue fixture', () => {
+  const catalogue = [{ id: 'college', grades: [{ id: '3e', chapters: [{ id: 'nombres_calculs', lessons: [{ id: 'fixture-a' }, { id: 'fixture-b' }] }] }] }];
+  const source = () => projectFromCatalogue(catalogue, (id) => id === '3e');
+  const exportOf = (lessons, extra = {}) => ({ grades: [{ code: '3e', active: true, chapters: [{ code: 'nombres_calculs', lessons }], ...extra }] });
+
+  it('passes when the export carries the same lessons', () => {
+    expect(exportDrift(source(), projectFromExport(exportOf([{ code: 'fixture-a' }, { code: 'fixture-b' }])))).toEqual([]);
+  });
 
   it('échoue quand une leçon manque à l’export', () => {
-    regenerate();
-    const exported = JSON.parse(readFileSync(exportPath, 'utf8'));
-    const original = JSON.stringify(exported, null, 2);
+    expect(exportDrift(source(), projectFromExport(exportOf([{ code: 'fixture-b' }]))).join()).toContain('« fixture-a » (3e) absente de l\'export');
+  });
 
-    const chapter = exported.grades
-      .flatMap((g) => g.chapters ?? [])
-      .find((c) => (c.lessons ?? []).length > 0);
-    const removed = chapter.lessons.shift();
-    writeFileSync(exportPath, JSON.stringify(exported, null, 2));
+  it('échoue quand l’export porte une leçon inconnue du catalogue', () => {
+    const lessons = [{ code: 'fixture-a' }, { code: 'fixture-b' }, { code: 'fixture-ghost' }];
+    expect(exportDrift(source(), projectFromExport(exportOf(lessons))).join()).toContain('« fixture-ghost » (3e) dans l\'export mais absente du catalogue');
+  });
 
-    try {
-      const result = run();
-      expect(result.status).toBe(1);
-      expect(result.stderr).toContain(removed.code);
-    } finally {
-      writeFileSync(exportPath, original);
-    }
+  // The tier belongs to the database (lessons.tier, decided by the administrator): a tier in the export is never a drift.
+  it('ne compare aucun palier de leçon', () => {
+    const lessons = [{ code: 'fixture-a', tier: 'premium' }, { code: 'fixture-b', tier: 'free' }];
+    expect(exportDrift(source(), projectFromExport(exportOf(lessons)))).toEqual([]);
+  });
+
+  it('échoue quand une classe manque à l’export ou n’existe pas au catalogue', () => {
+    expect(exportDrift(source(), {}).join()).toContain('« 3e » présente dans coursesData.js mais absente de l\'export');
+    const extra = { ...projectFromExport(exportOf([{ code: 'fixture-a' }, { code: 'fixture-b' }])), '2nde': { active: false, lessons: {} } };
+    expect(exportDrift(source(), extra).join()).toContain('« 2nde » dans l\'export mais absente de coursesData.js');
   });
 });

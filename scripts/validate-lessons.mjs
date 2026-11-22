@@ -23,8 +23,6 @@
 
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { relative, join } from 'node:path';
-import { pathToFileURL } from 'node:url';
-import { validateProblem } from '../apps/web/src/lessons/common/problems/guidedProblem.js';
 import {
   LESSON_STAGES,
   STAGE_ORDER,
@@ -343,37 +341,13 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
       }
     }
 
-    // Le contenu des « مسائل » : content/problems.js, un problème par module
-    // « problem », dans l'ordre, chacun conforme au contrat GuidedProblem.
-    // A v2 lesson (`retiredModules: true` in its routes.jsx, LESSON_V2.md §2) has no module page: its « مسائل » modules are
-    // DATA (progress is stored by their numbers), and their content/problems.js is deleted with the pages.
+    // The module-page player of « problem » modules (GuidedProblem, content/problems.js) is deleted (plan §4bis): a
+    // 'problem' module is now DATA of a v2 lesson (`retiredModules: true` in its routes.jsx, LESSON_V2.md §2) — progress
+    // is stored by its number — and a lesson that would still need its page fails here.
     const retiredPages = existsSync(join(lessonDir, 'routes.jsx')) && /retiredModules:\s*true/.test(readFileSync(join(lessonDir, 'routes.jsx'), 'utf-8'));
     const problemModules = retiredPages ? [] : modules.filter((m) => m.track === 'problem');
     if (problemModules.length > 0) {
-      const problemsFile = join(lessonDir, 'content', 'problems.js');
-      if (!existsSync(problemsFile)) {
-        errors.push(`${configPath}: ${problemModules.length} 'problem' module(s) but no content/problems.js`);
-      } else {
-        try {
-          const { PROBLEMS } = await import(pathToFileURL(problemsFile).href);
-          if (!Array.isArray(PROBLEMS) || PROBLEMS.length !== problemModules.length) {
-            errors.push(`${rel}/content/problems.js: PROBLEMS must list exactly ${problemModules.length} problem(s), one per 'problem' module`);
-          }
-          for (const p of PROBLEMS ?? []) {
-            for (const e of validateProblem(p)) errors.push(`${rel}/content/problems.js: ${e}`);
-          }
-          // La carte « مسألة الدرس » montre l'énoncé de la مسألة 1 : si celle-ci a un support
-          // (figure / repère / tableau), la carte doit le porter aussi — même donnée, une seule source.
-          const { LESSON_CONFIG } = await import(pathToFileURL(join(lessonDir, 'lesson.config.js')).href);
-          const lp = LESSON_CONFIG?.lessonProblem;
-          const first = PROBLEMS?.[0];
-          if (lp && first) for (const k of ['figure', 'visual', 'table']) {
-            if (first[k] && lp[k] !== first[k]) errors.push(`${configPath}: lessonProblem.${k} must be the مسألة 1 ${k} (problems.js: \`${k}: LESSON_CONFIG.lessonProblem.${k}\`) — the lesson card shows the statement, so it must show its support`);
-          }
-        } catch (err) {
-          errors.push(`${rel}/content/problems.js: cannot be loaded (${err.message})`);
-        }
-      }
+      errors.push(`${configPath}: ${problemModules.length} 'problem' module(s) with pages, but the GuidedProblem player is deleted — a 'problem' module lives only in a v2 lesson (retiredModules: true)`);
     }
 
     // ── Learning-point wiring: what each module teaches / gates on ────────
@@ -622,13 +596,13 @@ for (const code of coverageTargets) {
 
 // ── Answer-key integrity (2026-09-24) ─────────────────────────────────────
 // Every multiple-choice key a student can be judged against in a LIVE lesson
-// (the Algerian tree, apps/web/src/lessons/moyen/) must point to an option
+// (the collège tree, apps/web/src/lessons/college/) must point to an option
 // that exists, and a question that shows options must declare its key:
 // TapQuestion compares `pick === correct` with no default (a missing key makes
 // the question unanswerable), and BossFinal would silently fall back to 0.
 // Found necessary by the content-integrity audit; the dormant tree is not
 // mounted and is not checked here.
-const liveRoot = join(lessonsRoot, 'moyen');
+const liveRoot = join(lessonsRoot, 'college');
 const optionCount = (node) => {
   if (!node) return null;
   if (node.type === 'JSXExpressionContainer') return optionCount(node.expression);

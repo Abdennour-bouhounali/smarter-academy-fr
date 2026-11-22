@@ -1,0 +1,213 @@
+{
+  "$schema": "../../../../content/thinking-lab/_schema/challenge.schema.json",
+  "id": "four-arcs-area",
+  "number": 318,
+  "title": "L'aire entre les quatre arcs",
+  "status": "published",
+  "family": "geometry",
+  "band": "secondary",
+  "summit": false,
+  "licence": "TYPE",
+  "source": "neutral test fixture of scripts/validate-thinking-lab.test.mjs and scripts/thinking-lab-oracle.test.mjs (shaded-area type)",
+  "examTag": null,
+  "rating": 1600,
+  "statement": "Un carré a pour côté x. De chaque sommet, on trace dans le carré un quart de cercle de rayon x. Calcule, en fonction de x, l'aire de la région commune aux quatre arcs (au centre du carré).",
+  "figure": null,
+  "params": null,
+  "answer": {
+    "check": "expression",
+    "value": "x^2*(1+pi/3-sqrt(3))",
+    "vars": [
+      "x"
+    ],
+    "samples": 6,
+    "relTol": 1e-06,
+    "domain": {
+      "x": {
+        "min": 0.5,
+        "max": 10
+      }
+    }
+  },
+  "parts": null,
+  "mistakes": [
+    {
+      "value": "1-pi/4",
+      "scaleWith": "x^2",
+      "reply": "C'est l'aire d'un coin hors du quart de cercle, pas la région du centre."
+    },
+    {
+      "value": "pi/2-1",
+      "scaleWith": "x^2",
+      "reply": "C'est l'aire commune à deux arcs seulement (une lentille) ; la région cherchée est dans les quatre arcs à la fois."
+    },
+    {
+      "value": "x^2",
+      "outside": [
+        0,
+        1
+      ],
+      "at": {
+        "x": 1
+      },
+      "reply": "La région est dans un carré d'aire x² : son aire est positive et plus petite."
+    }
+  ],
+  "keys": [
+    {
+      "phase": "S",
+      "text": "Connais-tu une formule directe pour l'aire de cette forme ? Sinon, en quelles formes connues peut-on la découper ?"
+    },
+    {
+      "phase": "O",
+      "text": "Relie un point d'intersection de deux arcs aux deux sommets qui sont leurs centres. Que remarques-tu sur les côtés de ce triangle ?"
+    },
+    {
+      "phase": "R",
+      "text": "Les quatre points d'intersection sont les sommets d'un petit carré, et autour de chaque côté il y a un segment circulaire. Sous quel angle le centre de l'arc voit-il les extrémités de chaque segment ?"
+    }
+  ],
+  "example": null,
+  "replay": [
+    {
+      "phase": "S",
+      "think": "Je lis la figure : quatre quarts de cercle égaux, la région cherchée au centre. La figure est symétrique : ce que je trouve dans un quart du carré se répète dans les quatre.",
+      "layers": [
+        "square",
+        "arcs",
+        "region"
+      ]
+    },
+    {
+      "phase": "B",
+      "think": "Première idée : l'aire du carré moins ce qui entoure la région. Mais ce sont des morceaux courbes qui se chevauchent, le calcul se complique vite. Impasse : je reviens en arrière.",
+      "layers": [
+        "square",
+        "arcs",
+        "outside"
+      ]
+    },
+    {
+      "phase": "A",
+      "think": "Je change de but : au lieu de calculer la courbe directement, je cherche à découper la région en formes dont je connais l'aire : polygones et segments circulaires.",
+      "layers": [
+        "square",
+        "arcs",
+        "region"
+      ]
+    },
+    {
+      "phase": "O",
+      "think": "Je remarque : le point d'intersection des arcs tracés de A et B est à la distance x de A et de B, puisqu'il est sur les deux arcs. Et AB = x. Le triangle est équilatéral !",
+      "layers": [
+        "square",
+        "arcs",
+        "tri",
+        "pts"
+      ]
+    },
+    {
+      "phase": "M",
+      "think": "Je traduis en calcul : la hauteur d'un triangle équilatéral de côté x vaut (√3/2)x. Je connais ainsi la distance du point du haut au côté du bas.",
+      "layers": [
+        "square",
+        "tri",
+        "height"
+      ],
+      "math": [
+        "h = (√3/2)x"
+      ]
+    },
+    {
+      "phase": "R",
+      "think": "Je relie : les quatre points d'intersection (haut, bas, droite, gauche) sont les sommets d'un carré incliné au centre. La région = ce carré + 4 segments circulaires sur ses côtés.",
+      "layers": [
+        "region",
+        "innerSquare",
+        "segments"
+      ]
+    },
+    {
+      "phase": "R",
+      "think": "La diagonale du carré incliné est la distance entre le point du haut et le point du bas, et l'aire d'un carré vaut la moitié du carré de sa diagonale.",
+      "layers": [
+        "innerSquare",
+        "diagonal"
+      ],
+      "math": [
+        "d = (√3/2)x − (1 − √3/2)x = (√3 − 1)x",
+        "aire du carré = d²/2 = (2 − √3)x²"
+      ]
+    },
+    {
+      "phase": "O",
+      "think": "Chaque segment est bordé par un arc dont le centre est le sommet opposé. De ce sommet, je vois les extrémités de la corde sous des angles de 60° et 30° avec le côté : le segment intercepte un angle de 30° = π/6.",
+      "layers": [
+        "segments",
+        "angle30"
+      ],
+      "math": [
+        "segment = secteur − triangle = ½x²(π/6 − ½)"
+      ],
+      "ask": {
+        "q": "Explique-toi : pourquoi le centre voit-il la corde sous un angle de 30° ?",
+        "options": [
+          "Parce qu'une extrémité est un sommet d'un triangle équilatéral (60°), l'autre son symétrique par rapport à la diagonale (30°), et la différence vaut 30°",
+          "Parce que la corde coupe l'angle droit en deux (45°)",
+          "Parce que l'arc est un quart de cercle (90°)"
+        ],
+        "correct": 0,
+        "why": "La première extrémité fait 60° avec le côté car c'est un sommet d'un triangle équilatéral, la seconde 30° par symétrie autour de la diagonale : 60° − 30° = 30°."
+      }
+    },
+    {
+      "phase": "R",
+      "think": "J'additionne : le carré incliné et quatre segments égaux.",
+      "layers": [
+        "region",
+        "innerSquare",
+        "segments"
+      ],
+      "math": [
+        "S = (2 − √3)x² + 4 × ½x²(π/6 − ½)",
+        "S = x²(1 + π/3 − √3)"
+      ]
+    },
+    {
+      "phase": "T",
+      "think": "Je vérifie : pour x = 1 je trouve environ 0,315, moins d'un tiers du carré. Plausible : la région est plus petite qu'une lentille de deux arcs (environ 0,571) et positive.",
+      "layers": [
+        "region"
+      ],
+      "math": [
+        "x = 1 : S ≈ 0,315"
+      ]
+    }
+  ],
+  "keyMoves": [
+    "Des cercles dont le rayon vaut la distance entre leurs centres : cherche un triangle équilatéral.",
+    "Une courbe = polygone + segments circulaires.",
+    "Le segment = secteur − triangle, et l'angle vient du triangle équilatéral."
+  ],
+  "move": {
+    "id": "hidden-equilateral",
+    "title": "Cherche un triangle équilatéral"
+  },
+  "twin": "lens-area",
+  "ceiling": {
+    "statement": "Un triangle équilatéral a pour côté x. De chaque sommet, on trace un arc de rayon x qui joint les deux autres sommets. Calcule, en fonction de x, l'aire de la région bordée par les trois arcs.",
+    "answer": {
+      "check": "expression",
+      "value": "x^2*(pi-sqrt(3))/2",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      }
+    }
+  }
+}

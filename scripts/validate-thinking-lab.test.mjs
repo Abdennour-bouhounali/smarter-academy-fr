@@ -1,15 +1,18 @@
 // Le validateur du « مختبر التفكير » attrape-t-il vraiment ce qu'il prétend attraper ?
-// Chaque cas part du défi #318 (valide) et casse UNE règle.
+// Chaque cas part d'un défi témoin valide (#318, en français, scripts/__fixtures__/thinking-lab/ — la banque livrée est
+// vide) et casse UNE règle.
 import { describe, it, expect } from 'vitest';
+import { fileURLToPath } from 'node:url';
 import { readChallenges } from './build-thinking-lab-index.mjs';
 import { validateThinkingLab, forbiddenIn, leaksAnswer, bandOf } from './validate-thinking-lab.mjs';
 
-const base = readChallenges().find((e) => e.file === '0318-four-arcs-area.json');
+const FIXTURES = fileURLToPath(new URL('./__fixtures__/thinking-lab/challenges', import.meta.url));
+const base = readChallenges(FIXTURES).find((e) => e.file === '0318-four-arcs-area.json');
 const clone = () => JSON.parse(JSON.stringify(base.data));
 const run = (data, file = base.file) => validateThinkingLab([{ file, data }]).errors;
 
 describe('validate-thinking-lab', () => {
-  it('le défi #318 passe', () => {
+  it('le défi témoin #318 passe', () => {
     expect(run(clone())).toEqual([]);
   });
 
@@ -27,13 +30,14 @@ describe('validate-thinking-lab', () => {
 
   it('refuse une erreur déclarée qui est en fait juste', () => {
     const c = clone();
-    c.mistakes[0] = { value: '1+pi/3-sqrt(3)', scaleWith: 'x^2', reply: 'ليس بعد' };
+    c.mistakes[0] = { value: '1+pi/3-sqrt(3)', scaleWith: 'x^2', reply: 'Pas encore.' };
     expect(run(c).join('\n')).toMatch(/ACCEPTÉE/);
   });
 
   it('refuse une clé qui divulgue la réponse (valeur équivalente, autre écriture)', () => {
     const c = clone();
-    c.keys[2].text = 'الجواب هو x²(1 + π/3 − √3) طبعًا';
+    // Latin letters count as math for the detector: in French prose the formula stands after a colon.
+    c.keys[2].text = 'Réponse : x²(1 + π/3 − √3)';
     expect(run(c).join('\n')).toMatch(/keys\[2\].*divulgue/);
   });
 
@@ -69,17 +73,17 @@ describe('validate-thinking-lab', () => {
 
   it('refuse un mot interdit', () => {
     const c = clone();
-    c.statement = 'لعبة بالنرد: ما احتمال أن يظهر 6 مرّتين؟';
+    c.statement = 'A betting game: what is the chance of rolling 6 twice?';
     expect(run(c).join('\n')).toMatch(/mot interdit/);
   });
 
   it('vérifie chaque tuple de params', () => {
     const c = clone();
     c.params = { vars: { a: [2, 3] } };
-    c.statement = 'مربّع طول ضلعه {a}x، احسب المساحة المشتركة بين الأقواس الأربعة.';
+    c.statement = 'Un carré a pour côté {a}x. Calcule l\'aire commune aux quatre arcs.';
     c.mistakes = c.mistakes.slice(0, 2);
     expect(run(c)).toEqual([]);
-    c.keys[0].text = 'هل تعرف قانونًا لمساحة {b}؟';
+    c.keys[0].text = 'Connais-tu une formule pour l\'aire de {b} ?';
     expect(run(c).join('\n')).toMatch(/non rempli/);
   });
 });

@@ -1,0 +1,55 @@
+{
+  "id": "ex-3e-fixture-diviseurs-l1-001",
+  "lessonCode": "fixture-diviseurs",
+  "level": 1,
+  "metadata": {
+    "title": "Exercice 1",
+    "estimatedMinutes": 3
+  },
+  "statement": {
+    "content": "Deux nombres : 84 et 126."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "Quel est le PGCD de 84 et 126 ?",
+      "answerType": "rational",
+      "answerFormat": "un entier naturel",
+      "expectedAnswer": "42",
+      "learningPoints": [
+        {
+          "code": "3e_fixture-diviseurs_P1",
+          "role": "primary"
+        }
+      ],
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Revois la définition."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "Donne la liste des diviseurs de 12.",
+      "answerType": "integerSet",
+      "answerFormat": "des entiers séparés par des virgules",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "learningPoints": [
+        {
+          "code": "3e_fixture-diviseurs_P1",
+          "role": "primary"
+        }
+      ],
+      "feedback": {
+        "correct": "Exact.",
+        "incorrect": "Revois la définition."
+      }
+    }
+  ]
+}

@@ -6,11 +6,11 @@ import { getTotalModules } from '../../lessons/registry';
 import { useLessonConfig } from '../../lessons/useLessonConfig';
 import { useContentAvailability } from '../../context/ContentAvailabilityContext';
 import { scopedStorage } from '../../utils/storage';
-import { readStars, totalStars } from '../../lessons/common/manipulations/rounds/roundsModel';
+import { readStars, totalStars } from './unitStars';
 import MathLabel from '../../lessons/common/components/MathLabel';
-import MissionDialog from '../../lessons/common/mission/MissionDialog';
+import MissionDialog from './MissionDialog';
 import PrerequisiteLessonChips from '../../lessons/common/components/PrerequisiteLessonChips';
-import ReviseFirst from '../../lessons/common/mission/ReviseFirst';
+import ReviseFirst from './ReviseFirst';
 import { unitState, unmetPrerequisites } from './unitMissions';
 
 /**

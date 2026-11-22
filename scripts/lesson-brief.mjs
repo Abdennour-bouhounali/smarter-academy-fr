@@ -7,7 +7,7 @@
  *   node scripts/lesson-brief.mjs <lesson-code> [<lesson-code> …]
  *   npm run lesson:brief -- qasim-mushtarak-akbar
  *
- * It prints: where the lesson sits (grade, unit, term and week), WHAT IT MUST TEACH (the programme items — the الكفاءات —
+ * It prints: where the lesson sits (grade, unit, term and week), WHAT IT MUST TEACH (the programme items — the competences —
  * and the learning points whose ids `{grade}_{code}_P{n}` stay), what it stands on (core / support prerequisites, with the
  * lesson that teaches each and whether it is already v2), what it must NOT rebuild, where what it teaches is used later,
  * the unit's lessons around it, what already exists beside it (the exercise bank — used AS IT IS, owner 2026-11-18 —, the
@@ -23,15 +23,19 @@ import {
   toolsForLesson,
   noRebuildForLesson,
   forwardLinksForLesson,
-} from '../packages/core/curriculum/dz/net/learningNet.js';
+} from '../packages/core/curriculum/fr/net/learningNet.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const DATA = path.join(ROOT, 'packages/core/curriculum/dz');
+const DATA = path.join(ROOT, 'packages/core/curriculum/fr');
 const json = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 const index = json(path.join(ROOT, 'apps/web/src/lessons/lessonIndex.generated.json')).lessons;
 const isV2 = (code) => Boolean(index.find((l) => l.id === code)?.pack);
 
 const codes = process.argv.slice(2).filter((a) => !a.startsWith('-'));
+if (!codes.length && LESSONS.length === 0) {
+  console.log('lesson-brief: the catalogue holds no lesson yet — no brief to print.');
+  process.exit(0);
+}
 if (!codes.length) {
   console.error('usage: node scripts/lesson-brief.mjs <lesson-code> [<lesson-code> …]');
   process.exit(1);
@@ -50,7 +54,7 @@ function lessonDir(grade, code) {
     }
     return null;
   };
-  return walk(path.join(ROOT, 'apps/web/src/lessons/moyen', grade), 0);
+  return walk(path.join(ROOT, 'apps/web/src/lessons/college', grade), 0);
 }
 
 /** Term and week of the lesson in the school year (the calendar is renewed every year: YEAR_COMPASS.md). */
@@ -91,7 +95,7 @@ const clip = (text, n) => {
 const tag = (lesson) =>
   !lesson
     ? '—'
-    : `\`${lesson.code}\` ${lesson.titleAr} (${lesson.grade.toUpperCase()}) — ${
+    : `\`${lesson.code}\` ${lesson.title} (${lesson.grade.toUpperCase()}) — ${
         isV2(lesson.code) ? '**v2 ✅**' : lesson.status === 'available' ? 'old lesson' : 'not built'
       }`;
 
@@ -107,7 +111,7 @@ for (const code of codes) {
   const where = placeInYear(lesson.grade, code);
   const unit = LESSONS.filter((l) => l.unit === lesson.unit && l.grade === lesson.grade);
 
-  say(`# Brief — \`${code}\` — ${lesson.titleAr}`);
+  say(`# Brief — \`${code}\` — ${lesson.title}`);
   say();
   say(
     `${lesson.grade.toUpperCase()} · unit \`${lesson.unit}\` · lesson ${unit.findIndex((l) => l.code === code) + 1} of ${unit.length}` +
@@ -116,8 +120,8 @@ for (const code of codes) {
   );
   say();
 
-  say('## What it must teach (the الكفاءات — the only content that binds)');
-  for (const id of lesson.programmeItems) say(`- \`${id}\` — ${getItem(id)?.textAr ?? '?'}`);
+  say('## What it must teach (the competences — the only content that binds)');
+  for (const id of lesson.programmeItems) say(`- \`${id}\` — ${getItem(id)?.text ?? '?'}`);
   let skillCount = 0;
   const dir = lessonDir(lesson.grade, code);
   if (dir) {
@@ -140,7 +144,7 @@ for (const code of codes) {
   say('## What it stands on');
   const tools = toolsForLesson(code, { max: 99 });
   if (!tools.length) say('- nothing earlier in the net.');
-  for (const t of tools) say(`- **${t.weight ?? 'unclassified'}** \`${t.id}\` — ${t.textAr}  ⇐ ${tag(t.lesson)}`);
+  for (const t of tools) say(`- **${t.weight ?? 'unclassified'}** \`${t.id}\` — ${t.text}  ⇐ ${tag(t.lesson)}`);
   say();
 
   say("## What it must NOT rebuild (the net's anti-duplication rule)");
@@ -148,7 +152,7 @@ for (const code of codes) {
   if (!noRebuild.length) say('- nothing: no item of the lesson extends or repeats an earlier one.');
   for (const n of noRebuild)
     say(
-      `- \`${n.item.id}\` ${n.type} \`${n.base.id}\` (${tag(n.baseLesson)})${n.addedValueAr ? ` — added value: ${n.addedValueAr}` : ''}`,
+      `- \`${n.item.id}\` ${n.type} \`${n.base.id}\` (${tag(n.baseLesson)})${n.addedValue ? ` — added value: ${n.addedValue}` : ''}`,
     );
   say();
 
@@ -161,7 +165,7 @@ for (const code of codes) {
   say('## Around it in the unit');
   unit.forEach((l, i) =>
     say(
-      `${i + 1}. ${l.code === code ? '**' : ''}\`${l.code}\` ${l.titleAr}${l.code === code ? '**' : ''} — ${isV2(l.code) ? 'v2 ✅' : l.status}`,
+      `${i + 1}. ${l.code === code ? '**' : ''}\`${l.code}\` ${l.title}${l.code === code ? '**' : ''} — ${isV2(l.code) ? 'v2 ✅' : l.status}`,
     ),
   );
   say();
@@ -232,7 +236,7 @@ for (const code of codes) {
 
   say('## Work order (waves in parallel — LESSON_V2_MASTER_PLAN.md §9)');
   say(
-    '1. design (the keys; one experiment of its own nature per key — GAME_WORLD.md « استكشف ») → 2. world content ∥ kit kinds ∥ board → 3. forges ∥ satellites ∥ walks → 4. pack + generators + checks → 5. walks at 1366×768, 1024×768, 1840×900 → 6. trace + delete the old version → commit.',
+    '1. design (the keys; one experiment of its own nature per key — GAME_WORLD.md, the inquiry forge) → 2. world content ∥ kit kinds ∥ board → 3. forges ∥ satellites ∥ walks → 4. pack + generators + checks → 5. walks at 1366×768 → 6. trace + delete the old version → commit.',
   );
   console.log(out.join('\n'));
   if (codes.length > 1) console.log('\n---\n');

@@ -72,7 +72,7 @@ export default [
   {
     // Tests and answer oracles write the arithmetic of a statement on purpose (`expect(3 * 5 > 12 && …)`):
     // a constant expression there is the check itself.
-    files: ['**/*.test.{js,jsx,mjs}', 'scripts/practice-oracle/**'],
+    files: ['**/*.test.{js,jsx,mjs}', 'scripts/practice-oracle/**', 'scripts/__fixtures__/**/*.oracle.mjs'],
     rules: { 'no-constant-binary-expression': 'off', 'no-constant-condition': 'off' },
   },
   {

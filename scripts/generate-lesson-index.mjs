@@ -99,7 +99,9 @@ for (const l of lessons) { if (ids.has(l.id)) { console.error(`✗ id en double 
 
 // Une leçon par ligne : un diff lisible quand une leçon est publiée.
 const body = lessons.map((l) => `    ${JSON.stringify(l)}`).join(',\n');
-const text = `{\n  "$generated": "scripts/generate-lesson-index.mjs — do not edit; npm run check:lessons checks it",\n  "modulesFormat": "[number, slug]",\n  "lessons": [\n${body}\n  ]\n}\n`;
+// No lesson yet (the empty catalogue): `"lessons": []`, not an array holding a blank line.
+const list = lessons.length ? `[\n${body}\n  ]` : '[]';
+const text = `{\n  "$generated": "scripts/generate-lesson-index.mjs — do not edit; npm run check:lessons checks it",\n  "modulesFormat": "[number, slug]",\n  "lessons": ${list}\n}\n`;
 
 if (check) {
   const current = existsSync(OUT) ? readFileSync(OUT, 'utf8') : '';
