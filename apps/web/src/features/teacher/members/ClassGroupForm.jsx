@@ -6,13 +6,13 @@ import { createClassGroup } from '../../../services/teacher/classGroupService';
 import { btnPrimary, btnSecondary, input } from '../../../pages/teacher/teacherUi';
 
 /**
- * Le formulaire de création d'un قسم — un nom, une classe scolaire du
+ * Le formulaire de création d'une classe — un nom, une classe scolaire du
  * catalogue actif, et c'est tout.
  *
  * Il ne décide pas de ce qui arrive après : `onCreated(classroom)` le dit
  * au parent. Le même composant sert donc à la boîte de dialogue ouverte
- * depuis « أقسامي » (qui reste sur la page et recharge la liste) et à la
- * page `/enseignant/classes/nouveau` (qui navigue vers le nouveau قسم).
+ * depuis « Mes classes » (qui reste sur la page et recharge la liste) et à la
+ * page `/enseignant/classes/nouveau` (qui navigue vers la nouvelle classe).
  */
 export default function ClassGroupForm({ onCreated, onCancel, autoFocus = false }) {
   const { t } = useTranslation('teacher');
@@ -21,7 +21,7 @@ export default function ClassGroupForm({ onCreated, onCancel, autoFocus = false 
 
   const [name, setName] = useState('');
   // Par défaut, la première classe qui a des leçons PUBLIÉES (1AM–3AM n'ont encore
-  // que des cartes « قيد الإعداد », 2026-10-14) ; toutes restent sélectionnables.
+  // que des cartes « En préparation », 2026-10-14) ; toutes restent sélectionnables.
   const [grade, setGrade] = useState((grades.find((g) => g.lessonCount > 0) ?? grades[0])?.id ?? '');
   const [description, setDescription] = useState('');
   const [academicYear, setAcademicYear] = useState('');

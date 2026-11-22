@@ -11,14 +11,14 @@ import QrCode from '../../family/QrCode';
 import './parentCards.css';
 
 /**
- * « بطاقات الأولياء » (docs/architecture/PARENT_SPACE.md §2bis) — l'enseignant
- * choisit des élèves ; le serveur rend le « رابط الوليّ » de chacun (le lien
+ * « Cartes pour les parents » (docs/architecture/PARENT_SPACE.md §2bis) — l'enseignant
+ * choisit des élèves ; le serveur rend le « lien parent » de chacun (le lien
  * EXISTANT s'il y en a un : imprimer ne casse jamais un lien déjà envoyé) ; les
  * cartes s'impriment avec un QR que le parent scanne à la réunion des parents.
  *
  * Paresseux (MembersTab le charge à l'ouverture, sous son <Suspense>) : il tire
  * qrcode-generator et le namespace `family`. Impression : un portail
- * `[data-parent-cards-print]`, comme les « بطاقات الدخول ».
+ * `[data-parent-cards-print]`, comme les « Cartes de connexion ».
  */
 export default function ParentCardsDialog({ open, onClose, classGroup, students }) {
   const { t } = useTranslation('family');
@@ -105,7 +105,7 @@ export default function ParentCardsDialog({ open, onClose, classGroup, students 
           <p role="status" className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-emerald-900">{t('cards.count', { count: cards.length })}</p>
           <ParentCards cards={cards} classGroup={classGroup} unnamed={tTeacher('common.unnamedStudent')} />
           {createPortal(
-            <div data-parent-cards-print dir="rtl">
+            <div data-parent-cards-print>
               <ParentCards cards={cards} classGroup={classGroup} unnamed={tTeacher('common.unnamedStudent')} />
             </div>,
             document.body,

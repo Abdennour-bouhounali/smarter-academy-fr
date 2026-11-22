@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-// Les mêmes couleurs que « التقدّم بالتفصيل » (features/family/ProgressDetail.jsx).
+// Les mêmes couleurs que « La progression en détail » (features/family/ProgressDetail.jsx).
 export const STATES = [
   ['mastered', 'bg-emerald-500'],
   ['reinforce', 'bg-amber-400'],
@@ -9,14 +9,14 @@ export const STATES = [
 ];
 
 /**
- * UNE distribution d'élèves (متحكَّم فيها · تعزيز · ثغرة · لم تُقيَّم) : une barre
+ * UNE distribution d'élèves (maîtrisé · à consolider · lacune · non évalué) : une barre
  * et les quatre nombres dessous — jamais un pourcentage moyen. Partagée par
- * la carte « الكفاءات » et les rapports (écran, impression, projection).
+ * la carte « Savoir-faire » et les rapports (écran, impression, projection).
  */
 export default function Distribution({ counts, size = 'md' }) {
   const { t } = useTranslation('idara');
   const total = STATES.reduce((sum, [k]) => sum + (counts?.[k] ?? 0), 0);
-  // `lg` : le projecteur (« وضع الاجتماع »), lu à plusieurs mètres.
+  // `lg` : le projecteur (« Mode réunion »), lu à plusieurs mètres.
   const bar = size === 'lg' ? 'h-6' : 'h-3';
   const numbers = size === 'lg' ? 'text-lg' : 'text-[11px]';
   if (!total) return <span className={`font-inter ${size === 'lg' ? 'text-lg' : 'text-xs'} text-slate-400`}>{t('common.dash')}</span>;

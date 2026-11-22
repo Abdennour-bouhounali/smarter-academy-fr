@@ -13,13 +13,13 @@ const AUTOSAVE_MS = 900;
 const draftKey = (lessonId) => `smarter_memo_draft_${lessonId}`;
 
 /**
- * « كرّاسي » DANS la مذكرة الدرس — le cahier de l'enseignant, pas un second
+ * « Mon cahier » DANS la fiche du professeur — le cahier de l'enseignant, pas un second
  * système de notes.
  *
  * Mêmes données (`notebook_notes`), même API (`/practice/notes`), mêmes
  * règles : le serveur ne sert et ne modifie que les notes du compte
  * authentifié (PracticeNotebookController → `ownedBy()`), une note créée ici
- * porte le contexte `lessonCode` et réapparaît dans « كرّاسي »
+ * porte le contexte `lessonCode` et réapparaît dans « Mon cahier »
  * (/enseignant/cahier) avec les notes prises dans la leçon elle-même. La
  * liste est `GET /practice/notes?lessonCode=…` : toutes les notes non
  * archivées de CE compte sur CETTE leçon.
@@ -27,10 +27,10 @@ const draftKey = (lessonId) => `smarter_memo_draft_${lessonId}`;
  * Enregistrement automatique : la note naît au premier arrêt de frappe
  * (POST), les suivants la modifient (PATCH) — jamais de doublon. Un
  * brouillon local (localStorage) garde le texte d'une note pas encore née
- * si la page se ferme ou si le serveur refuse (quota « الوصول والحدود »).
+ * si la page se ferme ou si le serveur refuse (quota « Accès et limites »).
  *
  * Une note RICHE (HTML de l'éditeur du cahier, écrite dans la leçon) est
- * affichée en texte, et se modifie dans « كرّاسي » : un textarea la
+ * affichée en texte, et se modifie dans « Mon cahier » : un textarea la
  * réduirait à son balisage.
  */
 export default function MemoNotes({ lessonId }) {
@@ -104,7 +104,7 @@ function SaveStatus({ status }) {
 
 /**
  * La note en cours d'écriture. Au premier enregistrement elle devient une
- * note du cahier (POST) ; « ملاحظة جديدة » la range dans la liste et rouvre
+ * note du cahier (POST) ; « Nouvelle note » la range dans la liste et rouvre
  * une page blanche.
  */
 function NoteComposer({ lessonId, token, onCreated, onActive }) {

@@ -122,8 +122,8 @@ function GradeReport({ p, t }) {
 function SchoolTermReport({ p, t }) {
   return (
     <>
-      <p className="font-inter text-sm text-slate-600" dir="rtl">
-        {t('home.classes')}: {p.counts.classes} · {t('home.teachers')}: {p.counts.teachers} · {t('home.students')}: {p.counts.students}
+      <p className="font-inter text-sm text-slate-600">
+        {t('home.classes')}{'\u00A0: '}{p.counts.classes} · {t('home.teachers')}{'\u00A0: '}{p.counts.teachers} · {t('home.students')}{'\u00A0: '}{p.counts.students}
       </p>
       <Section title={t('reports.section.grades')}>
         <Legend />
@@ -154,7 +154,7 @@ function TeachersReport({ p, t }) {
 
 /**
  * Le CORPS d'un rapport figé, par type (SCHOOL_ADMIN_SPACE.md, phase 5) — le
- * même à l'écran, sur papier et en « وضع الاجتماع ». Un type inconnu (version
+ * même à l'écran, sur papier et en « Mode réunion ». Un type inconnu (version
  * de schéma plus récente) ne se dessine pas plutôt que mal.
  */
 export default function ReportView({ report }) {

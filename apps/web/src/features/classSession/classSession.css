@@ -1,4 +1,4 @@
-/* « حصّة القسم » — the teacher's class session. A calm, LIGHT screen (a projector washes out dark themes), readable from the
+/* « séance en classe » — the teacher's class session. A calm, LIGHT screen (a projector washes out dark themes), readable from the
    last row. Designed at 1280 × 720, zoomed to the window: nothing scrolls on the board. Prefix cs-. */
 .cs-root {
   position: fixed;
@@ -7,7 +7,7 @@
   overflow: hidden;
   background: #f4f6fb;
   color: #0f172a;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: inherit;
 }
 /* the 12 px floor at every size (GAME_WORLD.md « 12 px floor »): a <small> with no size of its own never goes under it */
 :where(.cs-root) small {
@@ -1066,7 +1066,6 @@
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
-  direction: rtl;
 }
 .cs-bigscore b {
   font-size: 3.4rem;
@@ -1153,7 +1152,7 @@
   width: 100%;
   min-height: 0;
   direction: ltr;
-  font-family: 'Cairo', sans-serif;
+  font-family: inherit;
 }
 .cs-podium__block.is-1 {
   fill: #fbbf24;
@@ -1835,7 +1834,7 @@
   width: 100%;
   height: 100%;
   direction: ltr;
-  font-family: 'Cairo', sans-serif;
+  font-family: inherit;
 }
 .bb-water {
   fill: #7dd3fc;
@@ -2843,7 +2842,7 @@
   z-index: 1400;
   cursor: crosshair;
   touch-action: none;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: inherit;
 }
 .cs-inklayer.is-page {
   background: #fffef7;
@@ -2907,7 +2906,7 @@
   border: 0;
   background: #0f172a;
   color: #e2e8f0;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: inherit;
   cursor: pointer;
 }
 .cs-curtain strong {
@@ -3064,7 +3063,7 @@
   padding: 0.6rem 0.8rem 0.7rem;
 }
 
-/* ══ « أدوات الأستاذ » — the dock: every tool of the teacher in one place, the same on every board screen. Three groups
+/* ══ « Outils du professeur » — the dock: every tool of the teacher in one place, the same on every board screen. Three groups
    (who speaks · the board · the hour); a tool is an icon over one word ══ */
 .cs-dock {
   display: inline-flex;
@@ -3299,7 +3298,7 @@
   line-height: 1.6;
 }
 
-/* ══ « متابعة القسم » (ClassTracking.jsx): the class on this lesson, student by student. Facts, calm colours ══ */
+/* ══ « suivi de la classe » (ClassTracking.jsx): the class on this lesson, student by student. Facts, calm colours ══ */
 .cs-track {
   flex: 1;
   display: flex;
@@ -3487,7 +3486,7 @@
   text-overflow: ellipsis;
 }
 
-/* ══ « بطاقة المعارف » on the board (KnowledgeBoard.jsx): one piece of knowledge per screen, for a quick revision ══ */
+/* ══ « fiche de connaissances » on the board (KnowledgeBoard.jsx): one piece of knowledge per screen, for a quick revision ══ */
 .cs-kcard {
   gap: 0.7rem;
   justify-content: stretch;
@@ -3607,7 +3606,7 @@
   font-size: 1.2rem;
 }
 
-/* « متابعة القسم »: the opened line — two blocks one under the other (a long الكفاءة never runs into the exercises), and
+/* « suivi de la classe »: the opened line — two blocks one under the other (a long savoir-faire never runs into the exercises), and
    the window of one exercise of one student */
 .cs-track__detail {
   display: grid;
@@ -3806,7 +3805,7 @@
   font-weight: 800;
 }
 
-/* ── a court of « قصر الساحات » on the board (LessonBoard › CourtStation): the world's own drawing (rootCourts/
+/* ── a court of the `rootCourts` world on the board (LessonBoard › CourtStation): the world's own drawing (rootCourts/
    courtParts.jsx), its tokens turned for this LIGHT board — brand-blue shapes, amber = a band, violet = what sticks out,
    green = it rides; never black, never the red of an error. The cards are rods (or courts), one column beside it. ── */
 .cs-courtstep {

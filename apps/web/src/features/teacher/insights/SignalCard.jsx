@@ -22,7 +22,7 @@ const TONE = {
 };
 
 /**
- * UN signal de « تستحقّ نظرة » — QUOI (le titre), POURQUOI (les nombres du
+ * UN signal de « À regarder » — QUOI (le titre), POURQUOI (les nombres du
  * serveur), QUI (les élèves, chacun vers son dossier), QUAND (le dernier
  * indice), une PISTE (les prérequis faibles), et QUE FAIRE (ouvrir le
  * point, intervenir).
@@ -80,7 +80,7 @@ export default function SignalCard({ signal, classGroupId, onOpenPoint, onAct, c
             <p className="text-[11px] text-slate-600" data-signal-prerequisites>
               {t('attention.prerequisites')}{' '}
               {signal.prerequisites.map((p, i) => (
-                <span key={p.code}>{i > 0 && '، '}<span className="font-semibold">{t('attention.prerequisiteInGap', { title: p.title, count: p.studentsInGap })}</span></span>
+                <span key={p.code}>{i > 0 && ', '}<span className="font-semibold">{t('attention.prerequisiteInGap', { title: p.title, count: p.studentsInGap })}</span></span>
               ))}
             </p>
           )}

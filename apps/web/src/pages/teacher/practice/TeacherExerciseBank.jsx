@@ -1,9 +1,9 @@
 /**
- * « بنك تمارين الدرس » — the practice space of the TEACHER (owner, 2026-11-18: « updated completely »; CLASS_SESSION.md
+ * « La banque d’exercices de la leçon » — the practice space of the TEACHER (owner, 2026-11-18: « updated completely »; CLASS_SESSION.md
  * §5quater). The student's hub asks him to « start a level »; a teacher does three other things, and this page is built
  * for them:
  *   he READS    every exercise of a level on one page — the statement, the questions and, when he asks, the key;
- *   he SHOWS    one exercise on the board of his class (« على السبّورة » opens it in « حصّة القسم »);
+ *   he SHOWS    one exercise on the board of his class (« Au tableau » opens it in « Séance en classe »);
  *   he PRINTS   a sheet for the class: he ticks exercises of any level, sees how much work it is, and prints it, with or
  *               without the key.
  * Nothing is tracked or recorded. Same calm palette as the teacher's card: white, dark ink, one dark tone for what is pressed.
@@ -32,27 +32,35 @@ import {
 import { LessonToolPage } from '../../../features/classSession/LessonToolsBar';
 import './teacherBank.css';
 
+// The page's own sentences (interface text of this tool, kept beside it like the board's script).
 const L = {
-  title: 'بنك تمارين الدرس',
-  back: 'الدرس',
-  lead: 'اقرأ التمارين بحلولها، اعرض واحدًا على سبّورة قسمك، أو كوّن ورقة تطبعها. لا شيء يُسجَّل.',
-  levels: 'مستويات',
-  level: (n) => `المستوى ${n}`,
-  minutes: (n) => `${n} د`,
-  showAll: 'أظهر الحلول',
-  hideAll: 'أخفِ الحلول',
-  board: 'على السبّورة',
-  add: 'أضف إلى الورقة',
-  added: 'في الورقة',
-  answer: 'الجواب',
-  loading: 'جارٍ التحميل…',
-  sheet: 'ورقة القسم',
-  sheetEmpty: 'اختر تمارين من أيّ مستوى لتكوّن ورقة تطبعها لقسمك.',
-  about: (m) => `حوالي ${m} دقيقة`,
-  withKey: 'مع التصحيح',
-  print: 'اطبع الورقة',
-  clear: 'أفرغ الورقة',
-  paper: { name: 'الاسم واللقب:', klass: 'القسم:', date: 'التاريخ:', exercise: (n) => `التمرين ${n}`, key: 'التصحيح' },
+  title: 'La banque d’exercices de la leçon',
+  back: 'La leçon',
+  lead: 'Lisez les exercices avec leur corrigé, projetez-en un au tableau de votre classe ou composez une feuille à imprimer. Rien n’est enregistré.',
+  levels: 'niveaux',
+  level: (n) => `Niveau ${n}`,
+  minutes: (n) => `${n} min`,
+  showAll: 'Afficher les corrigés',
+  hideAll: 'Masquer les corrigés',
+  board: 'Au tableau',
+  add: 'Ajouter à la feuille',
+  added: 'Dans la feuille',
+  answer: 'Réponse',
+  loading: 'Chargement…',
+  sheet: 'La feuille de la classe',
+  sheetEmpty:
+    'Choisissez des exercices de n’importe quel niveau pour composer une feuille à imprimer pour votre classe.',
+  about: (m) => `environ ${m} min`,
+  withKey: 'Avec le corrigé',
+  print: 'Imprimer la feuille',
+  clear: 'Vider la feuille',
+  paper: {
+    name: 'Nom et prénom :',
+    klass: 'Classe :',
+    date: 'Date :',
+    exercise: (n) => `Exercice ${n}`,
+    key: 'Corrigé',
+  },
 };
 
 /** An exercise as it is read: the statement, the questions with their choices and — when asked — the key of each. */
@@ -91,7 +99,7 @@ export function ExerciseBody({ ex, withKey }) {
                       <p>
                         <strong>
                           {L.answer}
-                          {key.answer ? ': ' : ''}
+                          {key.answer ? '\u00a0: ' : ''}
                         </strong>
                         {key.answer && <RichText>{key.answer}</RichText>}
                       </p>
@@ -159,7 +167,7 @@ export default function TeacherExerciseBank({ lessonCode }) {
   const total = Object.values(counts).reduce((s, n) => s + n, 0);
   return (
     <LessonToolPage lessonId={lessonCode} active="bank">
-      <div className="tb-page w-full space-y-5 text-start" dir="rtl" data-teacher-bank={lessonCode}>
+      <div className="tb-page w-full space-y-5 text-start" data-teacher-bank={lessonCode}>
         <div className="tb-screen space-y-5">
           <header className="space-y-2">
             <div className="flex flex-wrap items-end justify-between gap-3">

@@ -23,9 +23,9 @@ const OUTCOME_TONE = {
 };
 
 /**
- * « لماذا ؟ » — la PREUVE d'un point pour un élève : le statut et son motif,
+ * « Pourquoi ? » — la PREUVE d'un point pour un élève : le statut et son motif,
  * les faits que le moteur a comptés, les derniers indices, le CHEMIN de son
- * état dans le temps, ce que l'élève a écrit dans son كرّاس sur ce point, et
+ * état dans le temps, ce que l'élève a écrit dans son cahier sur ce point, et
  * les interventions de l'enseignant sur ce point. Rien n'est recalculé ici :
  * l'écran montre ce que le serveur a décidé, pour que l'enseignant puisse le
  * contester en connaissance — puis agir depuis le même endroit.
@@ -33,7 +33,7 @@ const OUTCOME_TONE = {
  * Le cahier reste l'écrit de l'élève : il est MONTRÉ, jamais compté ni mêlé
  * à la maîtrise (NOTEBOOK.md).
  *
- * Boîte de dialogue du kit (rôle `dialog`, Échap, focus rendu), X arabe via
+ * Boîte de dialogue du kit (rôle `dialog`, Échap, focus rendu), « Fermer » via
  * `closeLabel` — le motif documenté au §8 du contrat enseignant.
  */
 const FACT_KEYS = [

@@ -1,10 +1,15 @@
 /**
- * « متابعة القسم » — the class on ONE lesson, student by student (owner, 2026-11-18; CLASS_SESSION.md §2bis). Pure logic
+ * « le suivi de la classe » — the class on ONE lesson, student by student (owner, 2026-11-18; CLASS_SESSION.md §2bis). Pure logic
  * over what the server gives (`GET /teacher/classrooms/{id}/lesson-tracking/{lesson}`): each active student, his state on
- * every الكفاءة of the lesson, and what he did on each exercise. Facts only: no average, no rank, nobody shown as last.
+ * every savoir-faire of the lesson, and what he did on each exercise. Facts only: no average, no rank, nobody shown as last.
  */
 export const STATES = ['gap', 'reinforce', 'unassessed', 'mastered'];
-export const STATE_LABEL = { mastered: 'متمكّن', reinforce: 'يحتاج دعمًا', gap: 'ثغرة', unassessed: 'لم يُقيَّم بعد' };
+export const STATE_LABEL = {
+  mastered: 'Maîtrisé',
+  reinforce: 'À consolider',
+  gap: 'Lacune',
+  unassessed: 'Pas encore évalué',
+};
 
 /** « ex-4am-…-l3-002 » → { level: 3, number: 2 }: what the teacher reads instead of an identifier. */
 export function exerciseRef(id) {
@@ -13,10 +18,10 @@ export function exerciseRef(id) {
 }
 export const exerciseLabel = (id) => {
   const r = exerciseRef(id);
-  return r.level ? `المستوى ${r.level} · التمرين ${r.number}` : id;
+  return r.level ? `Niveau ${r.level} · exercice ${r.number}` : id;
 };
 
-/** One student in numbers: his الكفاءات by state, his exercises, his questions (answered, right, right at the first try). */
+/** One student in numbers: his savoir-faire by state, his exercises, his questions (answered, right, right at the first try). */
 export function studentFacts(student, points) {
   const states = points.map((p) => student.points?.[p.code] ?? 'unassessed');
   const ex = student.exercises ?? [];
@@ -56,7 +61,7 @@ export function orderStudents(students, points) {
     );
 }
 
-/** The class in facts: per الكفاءة how many students in each state, and how many have not started the lesson. */
+/** The class in facts: per savoir-faire how many students in each state, and how many have not started the lesson. */
 export function classFacts(students, points) {
   const perPoint = points.map((p) => {
     const c = { mastered: 0, reinforce: 0, gap: 0, unassessed: 0 };

@@ -7,7 +7,11 @@
  */
 import { openingFacts } from './lessonMemos';
 import { approx } from '../../lessons/common/gameworld/rootCourts/logic';
-import { tiles } from '../../lessons/common/gameworld/rootCourts/strings';
+import { tiles, tileWord } from '../../lessons/common/gameworld/rootCourts/strings';
+import { cellsOf } from './lessonScripts';
+
+/** A count bound to its noun (U+00A0); French plural: 0 and 1 take the singular. */
+const counted = (n, one, many) => `${n}\u00a0${n <= 1 ? one : many}`;
 
 const INK = '#0f172a';
 const LINE = '#94a3b8';
@@ -17,16 +21,7 @@ const LEFT = '#fbbf24';
 const W = 420;
 const H = 190;
 const Cap = ({ x, y, children, tone = INK, size = 17, anchor = 'middle' }) => (
-  <text
-    x={x}
-    y={y}
-    textAnchor={anchor}
-    fontSize={size}
-    fontWeight="800"
-    fill={tone}
-    direction="rtl"
-    style={{ fontFamily: 'Cairo, sans-serif' }}
-  >
+  <text x={x} y={y} textAnchor={anchor} fontSize={size} fontWeight="800" fill={tone}>
     {children}
   </text>
 );
@@ -36,7 +31,7 @@ const Svg = ({ children, label, id }) => (
   </svg>
 );
 
-/** A gap of `a` cells, planks of `b` laid from the right; the cells nothing covers stay open. */
+/** A gap of `a` cells, planks of `b` laid from the left; the cells nothing covers stay open at the right end. */
 function Bridge({ o }) {
   const { a, first: f } = openingFacts(o);
   const cell = 300 / a;
@@ -55,15 +50,15 @@ function Bridge({ o }) {
           width={cell - 1.4}
           height="20"
           rx="3"
-          fill={i < f.r ? LEFT : '#fff'}
-          stroke={i < f.r ? '#d97706' : LINE}
-          strokeDasharray={i < f.r ? '0' : '3 2'}
+          fill={i >= a - f.r ? LEFT : '#fff'}
+          stroke={i >= a - f.r ? '#d97706' : LINE}
+          strokeDasharray={i >= a - f.r ? '0' : '3 2'}
         />
       ))}
       {Array.from({ length: f.q }, (_, k) => (
         <rect
           key={k}
-          x={xR - (k + 1) * f.b * cell + 1.5}
+          x={x0 + k * f.b * cell + 1.5}
           y="89"
           width={f.b * cell - 3}
           height="26"
@@ -74,10 +69,11 @@ function Bridge({ o }) {
         />
       ))}
       <Cap x={W / 2} y="34">
-        {a} خانة · ألواح طولها {f.b}
+        {cellsOf(a)} · planches de {f.b}
       </Cap>
       <Cap x={W / 2} y="64" tone={f.exact ? '#047857' : '#b45309'}>
-        {f.q} ألواح{f.exact ? ' — يثبت' : ` — تبقى ${f.r} خانات`}
+        {counted(f.q, 'planche', 'planches')}
+        {f.exact ? ' — le pont tient' : ` — il reste ${cellsOf(f.r)}`}
       </Cap>
     </Svg>
   );
@@ -107,10 +103,10 @@ function Teams({ o }) {
         <circle key={k} cx={W / 2 + (k - (f.r - 1) / 2) * 22} cy="166" r="7" fill={LEFT} stroke="#d97706" />
       ))}
       <Cap x={W / 2} y="20">
-        {o.a} لاعبًا · {f.b} فِرق
+        {counted(o.a, 'joueur', 'joueurs')} · {counted(f.b, 'équipe', 'équipes')}
       </Cap>
       <Cap x={W / 2} y="44" tone={f.exact ? '#047857' : '#b45309'}>
-        {f.q} في كلّ فريق{f.exact ? '' : ` — يبقى ${f.r} خارج الفرق`}
+        {f.q} par équipe{f.exact ? '' : ` — ${f.r} hors des équipes`}
       </Cap>
     </Svg>
   );
@@ -143,10 +139,12 @@ function Shelves({ o }) {
             ),
         )}
         <Cap x="76" y={y + 20} size={14}>
-          رفوف تسع {fit.b}
+          Étagères de {fit.b}
         </Cap>
         <Cap x="76" y={y + 40} size={13} tone={fit.exact ? '#047857' : '#b45309'}>
-          {fit.exact ? `${fit.q} رفًّا مملوءًا` : `${fit.q} رفًّا، ويبقى ${fit.r}`}
+          {fit.exact
+            ? counted(fit.q, 'étagère pleine', 'étagères pleines')
+            : `${counted(fit.q, 'étagère', 'étagères')}, reste ${fit.r}`}
         </Cap>
       </g>
     );
@@ -154,7 +152,7 @@ function Shelves({ o }) {
   return (
     <Svg id="shelves" label={o.title}>
       <Cap x={W / 2} y="22">
-        {a} كتابًا
+        {counted(a, 'livre', 'livres')}
       </Cap>
       <Row y={38} fit={s} />
       <Row y={112} fit={f} />
@@ -186,17 +184,17 @@ function Tiles({ o }) {
         <rect x={x0 + fit.q * fit.b * k + 1} y={y + 1} width={fit.r * k - 2} height="38" fill={LEFT} stroke="#d97706" />
       )}
       <Cap x="40" y={y + 18} size={15}>
-        {fit.b} cm
+        {fit.b} cm
       </Cap>
       <Cap x="40" y={y + 36} size={13} tone={fit.exact ? '#047857' : '#b45309'}>
-        {fit.exact ? `${fit.q} بلاطات` : `فراغ ${fit.r} cm`}
+        {fit.exact ? counted(fit.q, 'carreau', 'carreaux') : `vide de ${fit.r}\u00a0cm`}
       </Cap>
     </g>
   );
   return (
     <Svg id="tiles" label={o.title}>
       <Cap x={W / 2} y="24">
-        شريط طوله {a} cm
+        Bande de {a} cm
       </Cap>
       <Row y={44} fit={f} />
       <Row y={112} fit={s} />
@@ -205,7 +203,7 @@ function Tiles({ o }) {
 }
 
 /**
- * A square court of « قصر الساحات » (area `a`) and two rods tried on it (`b`, `alt`): in each panel the court's walls, and
+ * A square court of « Le palais des dalles » (area `a`) and two rods tried on it (`b`, `alt`): in each panel the court's walls, and
  * the square platform built on the rod from the corner post — the BAND it leaves in amber, what STICKS OUT in violet, or
  * green when it rides. Every size comes from the exact numbers (`openingFacts`); a sliver too thin to see is drawn 2 px.
  */
@@ -214,9 +212,10 @@ const KIND_TONE = { ride: '#047857', band: '#b45309', jam: '#6d28d9' };
 const isFrac = (x) => String(x).includes('/');
 /**
  * A caption that holds ONE number after its words (`lead`): plain text — or, when the number is a fraction (« 88/49 »,
- * lesson 2 of « قصر الساحات »), the words, the fraction drawn with a REAL bar, then its noun « بلاطة » (`noun`) — a
- * fraction is never written with a slash. The fraction sits at `x`, moved by half the difference of the two texts' widths
- * (estimated) so the caption stays about centred.
+ * lesson 2 of « Le palais des dalles »), the words, the fraction drawn with a REAL bar, then its noun « de dalle »
+ * (`noun`, the world's `tileWord`) — a fraction is never written with a slash. Left to right: the words, the fraction,
+ * the noun. The fraction sits at `x`, moved by half the difference of the two texts' widths (estimated) so the caption
+ * stays about centred.
  */
 function NumCap({ x, y, lead, num, noun = 'tiles', tone = INK, size = 17 }) {
   const s = String(num);
@@ -229,15 +228,15 @@ function NumCap({ x, y, lead, num, noun = 'tiles', tone = INK, size = 17 }) {
   const [n, d] = s.split('/');
   const g = Math.round(size * 0.8);
   const w = Math.max(n.length, d.length) * g * 0.62 + 6;
-  const after = noun === 'tiles' ? 'بلاطة' : '';
-  const fx = x - (lead.length - after.length) * size * 0.22;
+  const after = noun === 'tiles' ? tileWord(s) : '';
+  const fx = x + (lead.length - after.length) * size * 0.22;
   const mid = y - size * 0.34;
   return (
     <g data-memo-frac={s}>
-      <Cap x={fx + w / 2 + 5} y={y} tone={tone} size={size} anchor="end">
+      <Cap x={fx - w / 2 - 5} y={y} tone={tone} size={size} anchor="end">
         {lead}
       </Cap>
-      <g direction="ltr" fill={tone} fontWeight="800" fontSize={g} style={{ fontFamily: 'Cairo, sans-serif' }}>
+      <g fill={tone} fontWeight="800" fontSize={g}>
         <text x={fx} y={mid - 3} textAnchor="middle">
           {n}
         </text>
@@ -247,7 +246,7 @@ function NumCap({ x, y, lead, num, noun = 'tiles', tone = INK, size = 17 }) {
         </text>
       </g>
       {after && (
-        <Cap x={fx - w / 2 - 5} y={y} tone={tone} size={size} anchor="start">
+        <Cap x={fx + w / 2 + 5} y={y} tone={tone} size={size} anchor="start">
           {after}
         </Cap>
       )}
@@ -264,7 +263,7 @@ function CourtPanel({ cx, area, fit, tall }) {
   const side = L * u;
   // a band or an overhang thinner than 2 px is still drawn 2 px: the figure says « a band », the caption says how much
   const p = fit.kind === 'band' ? Math.min(l * u, side - 2) : fit.kind === 'jam' ? Math.max(l * u, side + 2) : side;
-  const lead = fit.kind === 'band' ? 'شريط مساحته' : 'تعلق: تزيد';
+  const lead = fit.kind === 'band' ? 'Une bande de' : 'Elle coince\u00a0: elle dépasse de';
   return (
     <g data-memo-court={fit.kind}>
       {fit.kind === 'jam' && (
@@ -289,10 +288,10 @@ function CourtPanel({ cx, area, fit, tall }) {
         strokeWidth="1.5"
       />
       <rect x={post.x - 4} y={post.y - 4} width="8" height="8" rx="2" fill="#fff" stroke={BLUE} strokeWidth="2" />
-      <NumCap x={cx} y={tall ? 56 : 48} size={15} lead="المقياس" num={fit.b} noun={null} />
+      <NumCap x={cx} y={tall ? 56 : 48} size={15} lead="Toise" num={fit.b} noun={null} />
       {fit.kind === 'ride' ? (
         <Cap x={cx} y={tall ? 84 : 68} size={14} tone={KIND_TONE.ride}>
-          تركب المصعد
+          Elle monte
         </Cap>
       ) : (
         <NumCap x={cx} y={tall ? 84 : 68} size={14} tone={KIND_TONE[fit.kind]} lead={lead} num={fit.diff} />
@@ -305,9 +304,9 @@ function CourtFig({ o }) {
   const tall = [a, first.b, first.diff, second?.b, second?.diff].some((x) => x != null && isFrac(x));
   return (
     <Svg id="court" label={o.title}>
-      <NumCap x={W / 2} y={tall ? 28 : 22} lead="ساحة مربّعة مساحتها" num={a} />
-      <CourtPanel cx={second ? 315 : W / 2} area={a} fit={first} tall={tall} />
-      {second && <CourtPanel cx={105} area={a} fit={second} tall={tall} />}
+      <NumCap x={W / 2} y={tall ? 28 : 22} lead="Une salle carrée de" num={a} />
+      <CourtPanel cx={second ? 105 : W / 2} area={a} fit={first} tall={tall} />
+      {second && <CourtPanel cx={315} area={a} fit={second} tall={tall} />}
     </Svg>
   );
 }

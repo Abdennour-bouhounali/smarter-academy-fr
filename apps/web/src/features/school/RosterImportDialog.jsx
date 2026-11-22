@@ -16,7 +16,7 @@ const STATUS_TONE = {
 };
 
 /**
- * « استيراد قائمة قسم » (SCHOOL_ADMIN_SPACE.md §7). Trois temps dans la même
+ * « Importer la liste d’une classe » (SCHOOL_ADMIN_SPACE.md §7). Trois temps dans la même
  * fenêtre : la liste (collée ou CSV), l'APERÇU du serveur — rien n'est créé —,
  * puis les cartes à imprimer, seule fois où les mots de passe existent.
  */

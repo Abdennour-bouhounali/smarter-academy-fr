@@ -36,7 +36,7 @@ describe('buildLessonMemo — données manquantes', () => {
 });
 
 describe('memoRoutes', () => {
-  it('la route de la مذكرة est sous l’espace enseignant', () => {
+  it('la route de la fiche du professeur est sous l’espace enseignant', () => {
     expect(lessonMemoPath('tayin-pgcd')).toBe('/enseignant/cours/tayin-pgcd/memoire');
   });
 });

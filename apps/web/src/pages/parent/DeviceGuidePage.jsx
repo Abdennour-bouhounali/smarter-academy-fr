@@ -6,10 +6,10 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import DeviceGuide from '../../features/family/DeviceGuide';
 
 /**
- * « اجعل الجهاز للدراسة فقط » — servi à deux adresses (PARENT_SPACE.md §6) :
+ * « Réserver l’appareil aux devoirs » — servi à deux adresses (PARENT_SPACE.md §6) :
  * /himaya, PUBLIC (pied de page — un parent doit pouvoir le lire avant de
- * créer un compte), et /wali/himaya dans فضاء الوليّ. Le visiteur voit en plus
- * comment obtenir le « رابط الوليّ » — aucun compte à créer.
+ * créer un compte), et /wali/himaya dans l’espace parent. Le visiteur voit en plus
+ * comment obtenir le « lien parent » — aucun compte à créer.
  */
 export default function DeviceGuidePage() {
   const { t } = useTranslation('family');

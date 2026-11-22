@@ -10,8 +10,9 @@ import { dirname, join, resolve } from 'node:path';
  *   - AUCUN paiement en ligne : ni le service de facturation dormant, ni un
  *     mot de « checkout » / « Stripe » n'entre dans l'espace enseignant,
  *     l'espace élève ou les écrans commerciaux de l'administration ;
- *   - aucun libellé FRANÇAIS par défaut ne fuit dans un écran arabe : les
- *     défauts français du kit d'administration sont surchargés.
+ *   - l'espace est FRANÇAIS : aucune lettre arabe dans ses arbres (la liste
+ *     STILL_TO_TRANSLATE dit lesquels attendent encore leur agent) ; le kit
+ *     d'administration laisse toujours surcharger ses libellés.
  */
 const here = dirname(fileURLToPath(import.meta.url));
 const src = resolve(here, '..');
@@ -29,7 +30,7 @@ function walk(dir) {
 const NO_PAYMENT_DIRS = ['pages/teacher', 'features/teacher', 'pages/student', 'services/teacher', 'pages/admin/plans', 'pages/admin/requests', 'pages/admin/teachers', 'components/admin/commercial', 'context'];
 const FORBIDDEN = [/billingService/, /\/billing\//, /checkout/i, /stripe/i, /card-?number/i, /pay\s?now/i];
 
-describe('aucun paiement en ligne sur le produit algérien', () => {
+describe('aucun paiement en ligne depuis l’espace professeur', () => {
   for (const rel of NO_PAYMENT_DIRS) {
     it(`${rel} n’importe ni facturation, ni tunnel de paiement`, () => {
       for (const file of walk(resolve(src, rel))) {
@@ -42,22 +43,73 @@ describe('aucun paiement en ligne sur le produit algérien', () => {
   }
 });
 
-describe('l’espace enseignant est arabe, sans défaut français', () => {
-  const FRENCH = [/Réessayer/, /Chargement…/, /Annuler/, /Précédent/, /Suivant/, /Aucun résultat/, /Confirmer/, /Sélectionner /];
-  // Les surfaces PARTAGÉES par l'élève et l'enseignant en font partie : le
-  // même moteur de leçon, le même cahier, le même مختبر (§8b du contrat).
-  for (const rel of ['pages/teacher', 'features/teacher', 'features/learning', 'components/teacher', 'pages/student/Qism.jsx', 'pages/JoinClassLink.jsx', 'features/mathlab', 'features/practice/notebook']) {
-    it(`${rel} ne rend aucun libellé français`, () => {
-      const target = resolve(src, rel);
-      const files = statSync(target).isDirectory() ? walk(target) : [target];
+describe('l’espace enseignant est français, sans aucune lettre arabe', () => {
+  const ARABIC = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFC]/; // FEFF (the BOM of a CSV) is not Arabic
+
+  // Les arbres de l'agent « Teacher, school, family » (FRANCE_REBUILD_PLAN.md §4quater) : FRANÇAIS, et aucune
+  // lettre arabe dans la source, commentaires et tests compris (règle 8 de la campagne).
+  const FRENCH_TREES = [
+    'pages/teacher', 'features/teacher', 'components/teacher', 'features/classSession',
+    'pages/school', 'features/school', 'pages/parent', 'features/family',
+    'features/classJoin', 'features/studyTime', 'features/notifications', 'features/tours',
+  ];
+  // Les surfaces PARTAGÉES par l'élève et le professeur (le même moteur de leçon, le même cahier, le même atelier —
+  // §8b du contrat) appartiennent à d'autres agents. Elles restent SCANNÉES ici. Tant que leur ligne est dans
+  // cette liste, le test vérifie seulement que l'arbre existe et qu'il est lu ; l'agent propriétaire, quand son
+  // arbre ne contient plus aucune lettre arabe, DÉPLACE sa ligne de STILL_TO_TRANSLATE vers FRENCH_TREES (rien
+  // d'autre à changer) : à partir de là, l'arbre refuse l'arabe comme les nôtres. La liste ne fait que rétrécir ;
+  // à la fin de l'étape 1D elle est vide et la main session la supprime.
+  const STILL_TO_TRANSLATE = [
+    'features/learning', // agent « Student and public »
+    'pages/student/Qism.jsx', // agent « Student and public »
+    'pages/JoinClassLink.jsx', // agent « Student and public »
+    'features/practice/notebook', // agent « Student and public »
+    'features/mathlab', // agent « Math lab »
+  ];
+
+  function filesOf(rel, { withTests = false } = {}) {
+    const target = resolve(src, rel);
+    if (!statSync(target).isDirectory()) return [target];
+    const all = [];
+    const visit = (dir) => {
+      for (const name of readdirSync(dir)) {
+        const full = join(dir, name);
+        if (statSync(full).isDirectory()) visit(full);
+        else if (/\.(jsx?|mjs|css)$/.test(name) && (withTests || !/\.test\./.test(name))) all.push(full);
+      }
+    };
+    visit(target);
+    return all;
+  }
+
+  for (const rel of FRENCH_TREES) {
+    it(`${rel} ne contient aucune lettre arabe (source, commentaires, tests)`, () => {
+      const files = filesOf(rel, { withTests: true });
+      expect(files.length, `${rel} est lu`).toBeGreaterThan(0);
       for (const file of files) {
-        const code = readFileSync(file, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
-        for (const pattern of FRENCH) {
-          expect(code, `${file} rend ${pattern}`).not.toMatch(pattern);
-        }
+        const lines = readFileSync(file, 'utf8').split('\n');
+        const hit = lines.findIndex((line) => ARABIC.test(line));
+        expect(hit, `${file}:${hit + 1} contient une lettre arabe`).toBe(-1);
       }
     });
   }
+
+  for (const rel of STILL_TO_TRANSLATE) {
+    it(`${rel} est scanné (en attente de son agent, voir STILL_TO_TRANSLATE)`, () => {
+      expect(filesOf(rel).length, `${rel} est lu`).toBeGreaterThan(0);
+      expect(FRENCH_TREES, `${rel} est dans les deux listes`).not.toContain(rel);
+    });
+  }
+
+  it('les textes des espaces professeur, établissement et famille sont français', () => {
+    for (const ns of ['teacher', 'memo', 'idara', 'family', 'tour']) {
+      const raw = readFileSync(resolve(src, `i18n/locales/ar/${ns}.json`), 'utf8');
+      expect(raw, `${ns}.json contient une lettre arabe`).not.toMatch(ARABIC);
+    }
+    // Les libellés communs que l'ancien test interdisait sont maintenant ceux de l'espace.
+    const common = JSON.parse(readFileSync(resolve(src, 'i18n/locales/ar/teacher.json'), 'utf8')).common;
+    expect(common).toMatchObject({ retry: 'Réessayer', cancel: 'Annuler', previous: 'Précédent', next: 'Suivant', confirm: 'Confirmer' });
+  });
 
   it('le kit d’administration laisse surcharger ses libellés', () => {
     expect(readFileSync(resolve(src, 'components/admin/ui/DataTable.jsx'), 'utf8')).toMatch(/labels = \{\}/);
@@ -66,7 +118,7 @@ describe('l’espace enseignant est arabe, sans défaut français', () => {
     expect(readFileSync(resolve(src, 'components/admin/ui/FilterBar.jsx'), 'utf8')).toMatch(/labels = \{\}/);
   });
 
-  it('l’enseignant apprend dans son espace : leçons, مختبر et cahier montés sous /enseignant', () => {
+  it('l’enseignant apprend dans son espace : leçons, atelier et cahier montés sous /enseignant', () => {
     const app = readFileSync(resolve(src, 'App.jsx'), 'utf8');
     for (const path of ['path="cours" element={<Explorer />}', 'path="atelier" element={<MathLabHome />}', 'path="cahier" element={<Notebook />}']) {
       expect(app, `App.jsx monte ${path} pour l’enseignant`).toContain(path);
@@ -119,7 +171,7 @@ describe('la carte de leçon lit le troisième axe', () => {
  * élèves entrent par le lien ou le code de la classe.)
  */
 describe('aucun écran enseignant ne lit le courriel d’un élève', () => {
-  // CredentialsDialog : « بطاقات الدخول » (propriétaire, 2026-10-22) — la
+  // CredentialsDialog : « les cartes de connexion » (propriétaire, 2026-10-22) — la
   // carte imprimée porte le courriel, rendu UNE fois par le geste qui émet un
   // nouveau mot de passe (StudentCredentials), jamais par une lecture.
   const ALLOWED = [/TeacherProfile\.jsx$/, /members\/CredentialsDialog\.jsx$/];
@@ -139,7 +191,7 @@ describe('aucun écran enseignant ne lit le courriel d’un élève', () => {
     expect(linkAt).toBeGreaterThan(-1);
     expect(codeAt).toBeGreaterThan(linkAt);
     const page = readFileSync(resolve(src, 'pages/teacher/ClassGroupDetail.jsx'), 'utf8');
-    // The card is shown on demand (« دعوة التلاميذ »), by itself while the class is empty, and in « الإعدادات » — always above the tabs.
+    // The card is shown on demand (« Inviter les élèves »), by itself while the class is empty, and in « Paramètres » — always above the tabs.
     expect(page).toMatch(/<JoinAccessCard\s/);
     expect(page.indexOf('<JoinAccessCard')).toBeLessThan(page.indexOf('role="tablist"'));
   });

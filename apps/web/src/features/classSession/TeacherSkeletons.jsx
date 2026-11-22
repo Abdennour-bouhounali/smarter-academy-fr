@@ -2,17 +2,17 @@
  * The loading states of the teacher's class material (BUNDLE_BOUNDARIES.md rule 12: « a page's loading state is a
  * skeleton of its final shape »): never an empty gap while a lesson's board script, its class or its lab arrives.
  *
- *   TeacherPanelSkeleton   the card « للأستاذ » of a lesson page (the fallback of its lazy boundary): same outer box;
- *   ClassSessionSkeleton   the page « حصّة القسم » while the lesson's pack parts load (needs `classSession.css`, which
+ *   TeacherPanelSkeleton   the card « Pour le professeur » of a lesson page (the fallback of its lazy boundary): same outer box;
+ *   ClassSessionSkeleton   the page « séance en classe » while the lesson's pack parts load (needs `classSession.css`, which
  *                          the page imports): header, then the set-up screen;
  *   ClassWorkSkeleton      the set-up screen alone, while the class's four requests are pending (inside the real header);
- *   LabOpeningSkeleton     the lesson's lab layer, between the click on « مختبر الدرس » and its chunk.
+ *   LabOpeningSkeleton     the lesson's lab layer, between the click on « Le labo de la leçon » and its chunk.
  *
  * Calm: grey bars of the final shape, a soft pulse cut under prefers-reduced-motion. Each is ONE `role="status"`
  * announced once; the bars inside are `aria-hidden`.
  */
 
-const LABEL = 'جارٍ التحضير…';
+const LABEL = 'Préparation…';
 const bar = 'block rounded-lg bg-nav-line animate-pulse motion-reduce:animate-none';
 
 /**
@@ -48,14 +48,13 @@ const BlockSkeleton = ({ doors }) => (
 );
 
 /**
- * « للأستاذ » while its chunk loads. `board`: the lesson has its class board — the strong panel « حصّة القسم » and its
+ * « Pour le professeur » while its chunk loads. `board`: the lesson has its class board — the strong panel « séance en classe » and its
  * four moments come first (the same shape as TeacherLessonPanel).
  */
 export function TeacherPanelSkeleton({ board = true }) {
   return (
     <section
       className="w-full space-y-5 text-start"
-      dir="rtl"
       role="status"
       aria-label={LABEL}
       aria-busy="true"
@@ -146,12 +145,12 @@ export function ClassWorkSkeleton() {
   );
 }
 
-/** « حصّة القسم » before its lesson's pack parts arrive: the page's frame, header and set-up screen, at its fit. */
+/** « séance en classe » before its lesson's pack parts arrive: the page's frame, header and set-up screen, at its fit. */
 export function ClassSessionSkeleton() {
   const { narrow, zoom } =
     typeof window === 'undefined' ? boardFit(1280, 720) : boardFit(window.innerWidth, window.innerHeight);
   return (
-    <div className={`cs-root ${narrow ? 'cs-root--narrow' : ''}`} dir="rtl" data-class-session-skeleton>
+    <div className={`cs-root ${narrow ? 'cs-root--narrow' : ''}`} data-class-session-skeleton>
       <div className="cs-fit" style={{ zoom }}>
         <div className="cs-setup">
           <header className="cs-head" aria-hidden="true">
@@ -176,7 +175,6 @@ export function LabOpeningSkeleton() {
   return (
     <div
       className="fixed inset-0 z-[1300] grid place-items-center bg-nav-ink"
-      dir="rtl"
       role="status"
       aria-label={LABEL}
       aria-busy="true"

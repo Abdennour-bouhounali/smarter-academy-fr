@@ -21,7 +21,7 @@ import { TeacherPage, Loading, ErrorBox, btnPrimary, btnSecondary, formatDate } 
 
 /**
  * Le dossier d'UN élève, cadré sur la classe — du plus utile au plus détaillé :
- * l'aperçu (« لمحة »), ce qui mérite un regard à son sujet et ce qu'on a déjà
+ * l'aperçu (« Aperçu »), ce qui mérite un regard à son sujet et ce qu'on a déjà
  * fait pour lui, puis l'achèvement, la maîtrise point par point et la frise.
  * Le cahier a son propre écran, en lecture seule. Aucun courriel : le
  * serveur ne l'envoie pas à l'enseignant.
@@ -61,7 +61,7 @@ export default function StudentProgressPage() {
               était sous la frise d'activité, ce qui obligeait à dérouler tout
               le dossier pour l'atteindre. Ici, il est visible à l'ouverture.
               En `btnPrimary` parce que c'est l'action de la page — « revenir
-              au قسم » n'est qu'une sortie. */}
+              à la classe » n'est qu'une sortie. */}
           <Link to={`/enseignant/classes/${id}/eleves/${studentId}/cahier`} className={btnPrimary}>
             <NotebookPen size={14} /> {t('notebook.open')}
           </Link>

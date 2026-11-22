@@ -1,16 +1,16 @@
 /**
- * « وضع الاجتماع » — le découpage d'un rapport FIGÉ en diapositives
+ * « Mode réunion » — le découpage d'un rapport FIGÉ en diapositives
  * (SCHOOL_ADMIN_SPACE.md, phase 6). Fonctions PURES : la page ne fait que
  * dessiner la diapositive courante.
  *
- * Une diapositive tient sur un écran de projecteur : une leçon (ses كفاءات en
- * effectifs), les élèves à suivre, les كفاءات les plus difficiles, un niveau,
+ * Une diapositive tient sur un écran de projecteur : une leçon (ses savoir-faire en
+ * effectifs), les élèves à suivre, les savoir-faire les plus difficiles, un niveau,
  * les enseignants. Jamais une moyenne.
  */
 
 /**
  * Une leçon mérite une diapositive si au moins un élève y a un état
- * (متحكَّم فيها, تعزيز ou ثغرة) : l'année entière, encore vierge, ferait
+ * (maîtrisé, à consolider ou lacune) : l'année entière, encore vierge, ferait
  * soixante-dix diapositives vides. Le rapport imprimé, lui, reste complet.
  */
 function hasEvidence(lesson) {
@@ -56,7 +56,7 @@ export function buildSlides(report) {
 }
 
 /**
- * Le nom à projeter : le vrai, ou « تلميذ n » (n = rang dans la liste, stable
+ * Le nom à projeter : le vrai, ou « Élève n » (n = rang dans la liste, stable
  * d'une diapositive à l'autre) quand les noms sont masqués.
  */
 export function displayName(person, index, hidden, placeholder) {
@@ -65,11 +65,11 @@ export function displayName(person, index, hidden, placeholder) {
 }
 
 /**
- * La touche → le déplacement. En RTL, « ← » avance. Les télécommandes de
+ * La touche → le déplacement. De gauche à droite, « → » avance. Les télécommandes de
  * présentation envoient PageDown / PageUp.
  */
 export function stepForKey(key) {
-  if (['ArrowLeft', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(key)) return 1;
-  if (['ArrowRight', 'ArrowUp', 'PageUp', 'Backspace'].includes(key)) return -1;
+  if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(key)) return 1;
+  if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(key)) return -1;
   return 0;
 }

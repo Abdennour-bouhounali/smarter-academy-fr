@@ -3,6 +3,7 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, MotionConfig, motion } from 'framer-motion';
 import { Maximize2, X } from 'lucide-react';
+import { LOCALE } from '../../locale.js';
 import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { fetchClassChallengeDisplay } from '../../services/teacher/dailyChallengeService';
@@ -63,7 +64,7 @@ function ChallengeDisplay() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <main dir="rtl" className="relative min-h-screen overflow-hidden bg-slate-50 px-5 py-6 text-slate-900 sm:px-10" data-challenge-display data-view={current}>
+      <main className="relative min-h-screen overflow-hidden bg-slate-50 px-5 py-6 text-slate-900 sm:px-10" data-challenge-display data-view={current}>
         <div aria-hidden="true" className="pointer-events-none absolute -top-40 start-1/2 h-[28rem] w-[60rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-400/15 via-violet-400/15 to-cyan-300/15 blur-3xl" />
 
         <header className="relative flex flex-wrap items-center gap-3">
@@ -118,7 +119,7 @@ function ResultsView({ data }) {
           className="mx-auto mt-6 max-w-md rounded-[32px] bg-gradient-to-b from-amber-100 to-white p-8 shadow-xl shadow-amber-100 ring-1 ring-amber-300" data-podium-first>
           <p className="text-6xl" aria-label={t('leaderboard.rank', { rank: 1 })}>🥇</p>
           <p className="mt-2 font-space text-4xl font-black sm:text-6xl"><bdi>{first.displayName}</bdi></p>
-          <p className="mt-2 font-space text-3xl font-black text-amber-700" dir="ltr">{first.score.toLocaleString('fr-FR')}</p>
+          <p className="mt-2 font-space text-3xl font-black text-amber-700" dir="ltr">{first.score.toLocaleString(LOCALE)}</p>
         </motion.div>
       )}
       {rest.slice(0, 2).length > 0 && (
@@ -149,7 +150,7 @@ function LeaderboardView({ data }) {
               className={`flex items-center gap-4 rounded-2xl px-5 py-3 ${r.rank <= 3 ? 'bg-white shadow-sm ring-1 ring-slate-200' : 'bg-white/70 ring-1 ring-slate-100'}`}>
               <span className="w-12 text-center font-space text-2xl font-black" dir="ltr">{MEDALS[r.rank - 1] ?? r.rank}</span>
               <span className="min-w-0 flex-1 truncate font-space text-2xl font-bold"><bdi>{r.displayName}</bdi></span>
-              <span className="font-space text-2xl font-black text-amber-700" dir="ltr">{r.score.toLocaleString('fr-FR')}</span>
+              <span className="font-space text-2xl font-black text-amber-700" dir="ltr">{r.score.toLocaleString(LOCALE)}</span>
             </motion.li>
           ))}
         </ol>

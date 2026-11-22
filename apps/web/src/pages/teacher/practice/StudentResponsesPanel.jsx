@@ -19,7 +19,7 @@ import ReviewStatus from '../../../features/practice/exam/images/ReviewStatus';
 const fullName = (s) => [s.firstName, s.lastName].filter(Boolean).join(' ') || `#${s.id}`;
 
 /**
- * « إجابات تلاميذي » — dans la colonne latérale du lecteur enseignant.
+ * « Les réponses de mes élèves » — dans la colonne latérale du lecteur enseignant.
  *
  * Combien de SES élèves (membres actifs de ses classes) ont fait cet
  * exercice ; un clic sur l'un d'eux déplie ses réponses, question par
@@ -113,7 +113,7 @@ export default function StudentResponsesPanel({ lessonCode, exerciseId, question
                     <span className="block truncate text-sm font-semibold text-slate-900">{fullName(s)}</span>
                     {s.classrooms?.length > 0 && (
                       <span className="block truncate text-[11px] text-slate-500">
-                        {s.classrooms.map((c) => c.name).join(' ، ')}
+                        {s.classrooms.map((c) => c.name).join(', ')}
                       </span>
                     )}
                   </span>
@@ -163,8 +163,8 @@ export default function StudentResponsesPanel({ lessonCode, exerciseId, question
                                     </span>
                                     <span className="min-w-0 flex-1 space-y-1 break-words text-slate-800">
                                       {/* Tout ce que l'élève a ÉCRIT (enregistré en base, 2026-10-06) :
-                                        la réponse (formule), la démonstration « بيّن أن » ligne par
-                                        ligne et sa note, les « مراحل الحساب », le temps mis. */}
+                                        la réponse (formule), la démonstration « Montrer que » ligne par
+                                        ligne et sa note, les « étapes du calcul », le temps mis. */}
                                       {typeof a.answer?.text === 'string' && a.answer.text.trim() ? (
                                         <RedactionText text={a.answer.text} className="text-sm" />
                                       ) : (
@@ -223,7 +223,7 @@ export default function StudentResponsesPanel({ lessonCode, exerciseId, question
                                           })()}
                                         </span>
                                       )}
-                                      {/* Photos de la copie et correction (« تصحيح الأستاذ », 2026-10-06). */}
+                                      {/* Photos de la copie et correction (« Correction par le professeur », 2026-10-06). */}
                                       {a.images?.length > 0 && (
                                         <AnswerImageGallery images={a.images} loader={imageLoader} size="sm" />
                                       )}

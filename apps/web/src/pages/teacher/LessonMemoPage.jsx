@@ -23,12 +23,12 @@ import '../../features/teacher/lessonMemo/memo.css';
 import MathLabel from '../../lessons/common/components/MathLabel';
 
 /**
- * « مذكرة الدرس » — /enseignant/cours/:lessonId/memoire.
+ * « la fiche du professeur » — /enseignant/cours/:lessonId/memoire.
  *
  * Le document d'ORCHESTRATION d'une séance : une seule page continue, qu'on
  * garde ouverte pendant toute la classe. Rien n'y est écrit à la main : le
  * modèle est construit par buildLessonMemo à partir du catalogue, de
- * lesson.config.js et du contenu de la leçon ; seules les notes (« كرّاسي »)
+ * lesson.config.js et du contenu de la leçon ; seules les notes (« Mon cahier »)
  * appartiennent à l'enseignant, et elles vivent dans son cahier.
  *
  * Portes : la route est sous ProtectedRoute(teacher) — un élève, un visiteur
@@ -49,13 +49,13 @@ export default function LessonMemoPage() {
 const BoardMemo = lazy(() => import('../../features/classSession/BoardMemo'));
 
 /** The parts of the memo in the order of a teacher's hour: before it, during it, after it — then his own notes. */
+/** A group's name is `memo › rail.<id>`. */
 const MEMO_GROUPS = [
-  { id: 'before', label: 'قبل الحصّة', keys: ['overview', 'objectives', 'start'] },
-  { id: 'during', label: 'أثناء الحصّة', keys: ['timeline', 'examples', 'errors', 'differentiation'] },
-  { id: 'after', label: 'بعد الحصّة', keys: ['trace', 'evaluation', 'next'] },
-  { id: 'mine', label: 'لي', keys: ['notes'] },
+  { id: 'before', keys: ['overview', 'objectives', 'start'] },
+  { id: 'during', keys: ['timeline', 'examples', 'errors', 'differentiation'] },
+  { id: 'after', keys: ['trace', 'evaluation', 'next'] },
+  { id: 'mine', keys: ['notes'] },
 ];
-const MEMO_L = { all: 'المذكّرة كاملة', allPhases: 'كلّ المراحل', prev: 'السابق', next: 'التالي' };
 
 /** Les ancres de la barre : seulement les sections que la leçon remplit. */
 function sectionsOf(memo) {
@@ -113,7 +113,7 @@ function LessonMemo() {
     return buildLessonMemo({ lesson, config, unit, ...sources, lessonById: getLessonById, unitLessons });
   }, [available, sources, lessonId, lesson, config]);
 
-  // « رجوع » ramène au contexte d'où l'on vient (la page d'unité, le
+  // « Retour » ramène au contexte d'où l'on vient (la page d'unité, le
   // catalogue…) ; sans historique dans l'application, au catalogue.
   const goBack = () => {
     const from = location.state?.from;
@@ -187,16 +187,16 @@ function LessonMemo() {
                 where each thing is, in the order of a teacher's hour; the page shows only what he asked for. */}
             <nav className="sa-memo-rail sa-memo-no-print" aria-label={t('nav.label')} data-memo-rail>
               {MEMO_GROUPS.map((g) => { const mine = g.keys.filter((k) => keys.includes(k)); return mine.length === 0 ? null : (
-                <div key={g.id}><p>{g.label}</p>{mine.map((k) => <button key={k} type="button" className={view === k ? 'is-on' : ''} onClick={() => go(k)} aria-current={view === k ? 'page' : undefined} data-memo-go={k}>{t(`nav.${k}`)}</button>)}</div>
+                <div key={g.id}><p>{t(`rail.${g.id}`)}</p>{mine.map((k) => <button key={k} type="button" className={view === k ? 'is-on' : ''} onClick={() => go(k)} aria-current={view === k ? 'page' : undefined} data-memo-go={k}>{t(`nav.${k}`)}</button>)}</div>
               ); })}
-              <button type="button" className={`sa-memo-rail__all ${all ? 'is-on' : ''}`} onClick={() => go('all')} data-memo-go="all">{MEMO_L.all}</button>
+              <button type="button" className={`sa-memo-rail__all ${all ? 'is-on' : ''}`} onClick={() => go('all')} data-memo-go="all">{t('rail.all')}</button>
             </nav>
             <div className="sa-memo-stage space-y-5">
               {/* the hour, one phase at a time: the frieze of the timeline is its own tab bar */}
               {!all && view === 'timeline' && memo.phases.length > 1 && (
                 <div className="sa-memo-phases sa-memo-no-print" data-memo-phase-tabs>
                   {memo.phases.map((p) => <button key={p.number} type="button" className={phase === p.number ? 'is-on' : ''} onClick={() => setPhase(p.number)} data-memo-phase-tab={p.number}><b>{p.index}</b>{p.minutes != null ? ` · ${p.minutes}′` : ''}</button>)}
-                  <button type="button" className={phase === null ? 'is-on' : ''} onClick={() => setPhase(null)} data-memo-phase-tab="all">{MEMO_L.allPhases}</button>
+                  <button type="button" className={phase === null ? 'is-on' : ''} onClick={() => setPhase(null)} data-memo-phase-tab="all">{t('rail.allPhases')}</button>
                   {phase !== null && <style>{`@media screen { [data-memo-timeline] > li:not([data-memo-phase="${phase}"]) { display: none; } }`}</style>}
                 </div>
               )}
@@ -213,9 +213,9 @@ function LessonMemo() {
               <div {...pane('notes')}><MemoNotes lessonId={lessonId} /></div>
               {!all && (
                 <div className="sa-memo-step sa-memo-no-print">
-                  <button type="button" onClick={() => go(keys[at - 1])} disabled={at <= 0} data-memo-prev>{MEMO_L.prev}{at > 0 ? `: ${t(`nav.${keys[at - 1]}`)}` : ''}</button>
+                  <button type="button" onClick={() => go(keys[at - 1])} disabled={at <= 0} data-memo-prev>{t('rail.prev')}{at > 0 ? `\u00a0: ${t(`nav.${keys[at - 1]}`)}` : ''}</button>
                   <span>{at + 1}{'\u00a0/\u00a0'}{keys.length}</span>
-                  <button type="button" className="is-main" onClick={() => go(keys[at + 1])} disabled={at < 0 || at >= keys.length - 1} data-memo-next>{at < keys.length - 1 ? `${MEMO_L.next}: ${t(`nav.${keys[at + 1]}`)}` : MEMO_L.next}</button>
+                  <button type="button" className="is-main" onClick={() => go(keys[at + 1])} disabled={at < 0 || at >= keys.length - 1} data-memo-next>{at < keys.length - 1 ? `${t('rail.next')}\u00a0: ${t(`nav.${keys[at + 1]}`)}` : t('rail.next')}</button>
                 </div>
               )}
               <p className="px-2 pb-6 text-center text-xs text-slate-400">{t('derivedNote')}</p>

@@ -3,15 +3,16 @@ import { useTranslation } from 'react-i18next';
 import { ChevronDown, Search, Check } from 'lucide-react';
 import { mathToPlain } from '../../../utils/mathPlain';
 
-/** Arabic is searched without its marks: « القاسم » finds « القَاسِم ». */
+/** A title is searched without its accents: « equation » finds « Équations ». */
 const plain = (text) =>
   mathToPlain(text ?? '')
-    .replace(/[\u064B-\u0652\u0640]/g, '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
 
 /**
- * The lesson menu of « الكفاءات », with a SEARCH box inside it: a class sees more than seventy lessons, and a native
- * menu of seventy lines is read line by line. Type a word of the title, pick; « كل الدروس » stays the first choice.
+ * The lesson menu of « Savoir-faire », with a SEARCH box inside it: a class sees more than seventy lessons, and a native
+ * menu of seventy lines is read line by line. Type a word of the title, pick; « Toutes les leçons » stays the first choice.
  * Keyboard: Escape closes, Enter picks the first match.
  */
 export default function LessonPicker({ value, lessons, allValue, allLabel, onPick }) {

@@ -4,13 +4,13 @@ import { confidencePercent } from './lpBar';
 /**
  * Le VOCABULAIRE visuel de la maîtrise, écrit une fois : la pastille de
  * statut (quatre couleurs), la puce de motif, la marque de fraîcheur et la
- * fine barre de confiance. L'onglet « الكفاءات », le détail d'un point et
+ * fine barre de confiance. L'onglet « Savoir-faire », le détail d'un point et
  * le dossier de l'élève lisent tous ces quatre composants — deux écrans qui
- * coloreraient « صعوبة » différemment mentiraient à l'enseignant.
+ * coloreraient « En difficulté » différemment mentiraient à l'enseignant.
  *
  * Les libellés viennent du catalogue `teacher` (`students.masteryStatus.*`,
  * `students.masteryReason.*`, `students.freshness.*`), résolus au rendu ; une
- * valeur inconnue du serveur retombe sur le code brut (ARABIC_RTL_CONTRACT §2).
+ * valeur inconnue du serveur retombe sur le code brut (FRENCH_LANGUAGE_CONTRACT.md §3).
  */
 const PILL = {
   mastered: 'bg-emerald-50 text-emerald-700 ring-emerald-200',

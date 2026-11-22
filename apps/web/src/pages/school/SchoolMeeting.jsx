@@ -1,7 +1,8 @@
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight, EyeOff, Maximize, X } from 'lucide-react';
+import { EyeOff, Maximize, X } from 'lucide-react';
+import { ChevronBack, ChevronForward } from '../../components/common/DirectionalIcons';
 import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import MathLabel from '../../lessons/common/components/MathLabel';
@@ -10,6 +11,7 @@ import Distribution from '../../features/school/Distribution';
 import TeacherFacts from '../../features/school/TeacherFacts';
 import { buildSlides, displayName, HIDE_NAMES_BY_DEFAULT, stepForKey } from '../../features/school/reports/meetingSlides';
 import { fetchReport } from '../../services/schoolService';
+import { LOCALE } from '../../locale.js';
 
 function Slide({ slide, report, hidden, t }) {
   const placeholder = (n) => t('meeting.placeholder', { n });
@@ -24,7 +26,7 @@ function Slide({ slide, report, hidden, t }) {
           </p>
           <p className="font-inter text-xl text-slate-500">
             {report.term ? `${t('reports.termLabel', { term: report.term.term, year: report.term.academicYear })} · ` : ''}
-            {t('reports.frozenAt', { date: new Date(report.generatedAt).toLocaleDateString('ar-DZ', { dateStyle: 'long', numberingSystem: 'latn' }) })}
+            {t('reports.frozenAt', { date: new Date(report.generatedAt).toLocaleDateString(LOCALE, { dateStyle: 'long', numberingSystem: 'latn' }) })}
           </p>
         </div>
       );
@@ -128,10 +130,10 @@ function Slide({ slide, report, hidden, t }) {
 }
 
 /**
- * « وضع الاجتماع » (SCHOOL_ADMIN_SPACE.md §6, phase 6) — un rapport FIGÉ projeté
+ * « Mode réunion » (SCHOOL_ADMIN_SPACE.md §6, phase 6) — un rapport FIGÉ projeté
  * en conseil, une diapositive par écran, hors de la coquille (comme l'affichage
  * du défi du jour). Clavier et télécommande (stepForKey), plein écran, et
- * « إخفاء الأسماء » (activé d'office pour les conseils élargis).
+ * « Masquer les noms » (activé d'office pour les conseils élargis).
  */
 export default function SchoolMeeting() {
   const { t } = useTranslation('idara');
@@ -174,7 +176,7 @@ export default function SchoolMeeting() {
   }, [go, close]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-white" dir="rtl" data-school-meeting>
+    <div className="flex min-h-screen flex-col bg-white" data-school-meeting>
       <div className="flex items-center gap-2 border-b border-slate-200 px-6 py-3">
         <button type="button" onClick={close} className="flex min-h-[44px] items-center gap-2 rounded-xl px-3 font-inter text-sm text-slate-600 hover:bg-slate-100" aria-label={t('meeting.close')}>
           <X size={18} aria-hidden="true" />{t('meeting.close')}
@@ -197,11 +199,11 @@ export default function SchoolMeeting() {
       {report && (
         <nav className="flex items-center justify-center gap-6 border-t border-slate-200 py-3 font-inter" aria-label={t('meeting.nav')}>
           <button type="button" onClick={() => go(-1)} disabled={index === 0} className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 disabled:opacity-30" aria-label={t('meeting.previous')}>
-            <ChevronRight size={22} aria-hidden="true" />
+            <ChevronBack size={22} aria-hidden="true" />
           </button>
           <span className="text-lg text-slate-600" dir="ltr" data-meeting-position>{index + 1}{'\u00A0/\u00A0'}{slides.length}</span>
           <button type="button" onClick={() => go(1)} disabled={index >= slides.length - 1} className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 disabled:opacity-30" aria-label={t('meeting.next')}>
-            <ChevronLeft size={22} aria-hidden="true" />
+            <ChevronForward size={22} aria-hidden="true" />
           </button>
         </nav>
       )}

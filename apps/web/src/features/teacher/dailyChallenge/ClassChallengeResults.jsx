@@ -7,6 +7,7 @@ import { studentName } from '../insights/insights';
 import { formatSeconds, percent } from '../../dailyChallenge/challengeModel';
 import { btnSecondary } from '../../../pages/teacher/teacherUi';
 import MathLabel from '../../../lessons/common/components/MathLabel';
+import { LOCALE } from '../../../locale.js';
 
 function Tile({ label, value, hint, testId }) {
   return (
@@ -96,7 +97,7 @@ export default function ClassChallengeResults({ classGroupId, data, onOpenPoint,
                   <p className="font-inter text-sm text-amber-900">⚠ {t('teacher.results.struggling', { count: p.strugglingStudentIds.length })}</p>
                   <p className="mt-1 font-space text-base font-bold text-slate-900"><MathLabel>{p.title}</MathLabel></p>
                   <p className="font-inter text-xs text-slate-600"><MathLabel>{p.lessonTitle}</MathLabel> · {t('teacher.results.correctRate', { rate: percent(p.correctRate) })}</p>
-                  <p className="mt-1 font-inter text-xs text-slate-500">{p.strugglingStudentIds.map((id) => studentName(byId.get(id))).join('، ')}</p>
+                  <p className="mt-1 font-inter text-xs text-slate-500">{p.strugglingStudentIds.map((id) => studentName(byId.get(id))).join(', ')}</p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     <button type="button" onClick={() => onOpenPoint(p.code)} className={btnSecondary}><Crosshair size={14} aria-hidden="true" /> {t('teacher.results.openPoint')}</button>
                     <button type="button" onClick={() => setIntervene(p)} className={btnSecondary} data-assign-practice>{t('teacher.results.assignPractice')}</button>
@@ -121,7 +122,7 @@ export default function ClassChallengeResults({ classGroupId, data, onOpenPoint,
                   <span className="w-8 font-mono-jetbrains text-sm font-bold text-slate-500" dir="ltr">{r.rank}</span>
                   <Link to={`/enseignant/classes/${classGroupId}/eleves/${r.userId}`} className="min-w-0 flex-1 truncate font-inter text-sm font-semibold text-slate-900 hover:text-nav-accent">{studentName(r.student, t('teacher.title'))}</Link>
                   <span className="font-mono-jetbrains text-xs text-slate-500" dir="ltr">{r.totalCorrect} ✓</span>
-                  <span className="w-20 text-end font-space font-black text-slate-900" dir="ltr">{r.score.toLocaleString('fr-FR')}</span>
+                  <span className="w-20 text-end font-space font-black text-slate-900" dir="ltr">{r.score.toLocaleString(LOCALE)}</span>
                 </li>
               ))}
             </ol>

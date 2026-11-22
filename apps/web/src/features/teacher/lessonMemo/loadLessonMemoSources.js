@@ -1,5 +1,5 @@
 /**
- * Les SOURCES d'une مذكرة الدرس — le contenu de la leçon elle-même, jamais
+ * Les SOURCES d'une fiche du professeur — le contenu de la leçon elle-même, jamais
  * une copie.
  *
  *   knowledge.jsx      LESSON_KNOWLEDGE : les briques (titre, résumé, type)

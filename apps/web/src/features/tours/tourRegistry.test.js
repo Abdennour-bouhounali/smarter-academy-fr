@@ -5,10 +5,11 @@ import { fileURLToPath } from 'node:url';
 import { PAGE_TOURS } from './tourRegistry';
 import tourText from '../../i18n/locales/ar/tour.json';
 import nav from '../../i18n/locales/ar/nav.json';
+import { features } from '../../config/features';
 
 /**
- * Le CONTRAT du registre des « جولة تعريفية » : chaque étape a ses textes
- * arabes, et chaque crochet `data-*` qu'une étape vise est posé quelque part
+ * Le CONTRAT du registre des « Visite de la page » : chaque étape a ses textes
+ * français (aucune lettre arabe), et chaque crochet `data-*` qu'une étape vise est posé quelque part
  * dans le code. Renommer un crochet sans mettre la visite à jour ferait
  * disparaître l'étape en silence — ce test le dit avant.
  */
@@ -35,15 +36,36 @@ function hooks(selector) {
 const lookup = (path) => path.split('.').reduce((node, part) => node?.[part], tourText);
 
 describe('tour registry contract', () => {
-  it('every step has a non-empty Arabic title and body', () => {
+  it('every step has a non-empty French title and body, with no Arabic letter', () => {
     for (const tour of PAGE_TOURS) {
       for (const step of tour.steps) {
         for (const field of ['title', 'body']) {
           const text = lookup(`${tour.key}.${step.id}.${field}`);
-          expect(text, `${tour.key}.${step.id}.${field}`).toMatch(/[؀-ۿ]/);
+          expect(text, `${tour.key}.${step.id}.${field}`).toMatch(/[A-Za-zÀ-ÿ]{2}/);
+          expect(text, `${tour.key}.${step.id}.${field}`).not.toMatch(/[\u0600-\u06FF]/);
         }
       }
     }
+  });
+
+  it('a student tour says « tu », a teacher tour says « vous »', () => {
+    for (const tour of PAGE_TOURS) {
+      const text = tour.steps.map((s) => lookup(`${tour.key}.${s.id}.body`)).join(' ');
+      if (tour.role === 'teacher') expect(text, tour.key).not.toMatch(/\b(tu|ton|ta|tes|toi)\b/i);
+      else expect(text, tour.key).not.toMatch(/\b(vous|votre|vos)\b/i);
+    }
+  });
+
+  it('a gate names a real feature, and the surfaces that are off are gated', () => {
+    for (const tour of PAGE_TOURS) {
+      for (const item of [tour, ...tour.steps]) {
+        if (item.feature) expect(Object.keys(features), `${tour.key}: ${item.feature}`).toContain(item.feature);
+      }
+    }
+    const byKey = Object.fromEntries(PAGE_TOURS.map((tour) => [tour.key, tour]));
+    expect(byKey['student.challenge'].feature).toBe('dailyChallenge');
+    expect(byKey['student.home'].steps.find((s) => s.id === 'challenge').feature).toBe('dailyChallenge');
+    expect(byKey['teacher.plan'].commercial).toBe(true);
   });
 
   it('every hook a step targets is set somewhere in the code', () => {
@@ -65,8 +87,9 @@ describe('tour registry contract', () => {
     for (const key of ['label', 'progress', 'next', 'previous', 'skip', 'finish', 'close']) {
       expect(tourText.ui[key]).toBeTruthy();
     }
-    // « N من M » : pas de barre oblique, qui s'inverse en RTL.
+    // « N sur M » : un mot, pas une barre oblique.
     expect(tourText.ui.progress).not.toContain('/');
-    expect(nav.tourReplay).toMatch(/[؀-ۿ]/);
+    expect(nav.tourReplay).toBeTruthy();
+    expect(nav.tourReplay).not.toMatch(/[\u0600-\u06FF]/);
   });
 });

@@ -8,7 +8,7 @@ export function splitDuration(seconds) {
   return { h: Math.floor(minutes / 60), m: minutes % 60 };
 }
 
-/** « 1 سا 25 د », « 25 د », « 0 د » — avec le `t` du namespace `family`. */
+/** « 1 h 25 min », « 25 min », « 0 min » — avec le `t` du namespace `family`. */
 export function formatDuration(t, seconds) {
   const { h, m } = splitDuration(seconds);
   if (h > 0) return t('duration.hm', { h, m });

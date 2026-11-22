@@ -1,34 +1,35 @@
 /**
- * « حصّة القسم » — the RULES REVISED before the new lesson (owner, 2026-11-18; CLASS_SESSION.md §5bis). After the start
+ * « séance en classe » — the RULES REVISED before the new lesson (owner, 2026-11-18; CLASS_SESSION.md §5bis). After the start
  * test, the rules the lesson will USE come back one per screen, in very large text. The TEACHER decides who reads: he
  * taps a desk of his class (the platform proposes nobody), or he reads it himself. The example stays hidden until he asks
  * for it, so that the class can try to give one first. Quick: no question is graded, nothing is saved.
  */
 import { useEffect, useState } from 'react';
-import { ArrowLeft, ArrowRight, BookOpenCheck, Lightbulb, UserRound, Users, X } from 'lucide-react';
+import { BookOpenCheck, Lightbulb, UserRound, Users, X } from 'lucide-react';
+import { ArrowBack, ArrowForward } from '../../components/common/DirectionalIcons';
 import { getAllGrades } from '@smarter-academy/core';
 import MathText from '../../lessons/common/components/MathText';
 import { ClassWindow, Speaker, BoardTools, BoardLayers, useBoardTools, BL } from './board';
 import { callName, teamsOf, teamOfStudent } from './session';
 
 const L = {
-  title: 'مراجعة القواعد',
-  sub: 'قبل الدرس الجديد: القواعد التي سنحتاجها.',
-  of: (i, n) => `القاعدة ${i} من ${n}`,
-  from: 'من درس',
-  score: 'في اختبار البداية',
-  example: 'مثال',
-  showExample: 'أظهر المثال',
-  pick: 'أختار قارئًا',
-  me: 'أقرأها أنا',
-  reads: 'يقرأ',
-  who: 'من يقرأ القاعدة؟',
-  prev: 'السابقة',
-  next: 'القاعدة التالية',
-  lesson: 'نبدأ الدرس الجديد',
-  exit: 'خروج',
-  core: 'أساسية للدرس',
-  pickTitle: 'من يقرأ القاعدة؟ اضغط طاولته.',
+  title: 'On révise les règles',
+  sub: 'Avant la nouvelle leçon\u00a0: les règles dont nous aurons besoin.',
+  of: (i, n) => `Règle ${i} sur ${n}`,
+  from: 'Leçon',
+  score: 'Au test de début',
+  example: 'Exemple',
+  showExample: 'Montrer l’exemple',
+  pick: 'Choisir un lecteur',
+  me: 'Je la lis moi-même',
+  reads: 'Lecture par',
+  who: 'Qui lit la règle\u202f?',
+  prev: 'Précédente',
+  next: 'Règle suivante',
+  lesson: 'On commence la nouvelle leçon',
+  exit: 'Quitter',
+  core: 'Essentielle pour la leçon',
+  pickTitle: 'Qui lit la règle\u202f? Cliquez sur sa table.',
 };
 /** A grade's name as the catalogue writes it — never a local table. */
 const GRADE_NAMES = Object.fromEntries(getAllGrades().map((g) => [g.id, g.name]));
@@ -62,11 +63,11 @@ export default function RulesReview({ cards, students, seating, readers, onReade
         return;
       }
       if (tools.busy) return;
-      if (e.key === 'ArrowLeft' || e.key === 'PageDown') {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
         e.preventDefault();
         go(1);
       }
-      if (e.key === 'ArrowRight' || e.key === 'PageUp') {
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
         e.preventDefault();
         go(-1);
       }
@@ -92,7 +93,7 @@ export default function RulesReview({ cards, students, seating, readers, onReade
             <small>{L.sub}</small>
           </div>
         </div>
-        <span className="cs-dots cs-dots--rail" dir="rtl" aria-label={L.of(i + 1, cards.length)}>
+        <span className="cs-dots cs-dots--rail" aria-label={L.of(i + 1, cards.length)}>
           {cards.map((c, k) => (
             <button
               key={c.id}
@@ -125,12 +126,12 @@ export default function RulesReview({ cards, students, seating, readers, onReade
             <i>{card.icon}</i> {card.family}
           </span>
           <span className="cs-chip">
-            {L.from}: {card.lesson} · {GRADE_NAMES[card.grade] ?? ''}
+            {L.from} : {card.lesson} · {GRADE_NAMES[card.grade] ?? ''}
           </span>
           {card.weight === 'core' && <span className="cs-chip cs-chip--core">{L.core}</span>}
           {card.score && (
             <span className="cs-chip cs-chip--score" data-cs-rule-score={`${card.score.right}/${card.score.total}`}>
-              {L.score}:{' '}
+              {L.score} :{' '}
               <b dir="ltr">
                 {card.score.right}
                 {' / '}
@@ -162,7 +163,7 @@ export default function RulesReview({ cards, students, seating, readers, onReade
 
       <footer className="cs-lesson__foot">
         <button type="button" className="cs-btn" onClick={() => go(-1)} disabled={i === 0} data-cs-revise-prev>
-          <ArrowRight size={18} /> {L.prev}
+          <ArrowBack size={18} /> {L.prev}
         </button>
         <span className="cs-lesson__mid">
           <button type="button" className="cs-btn cs-btn--big" onClick={() => setClassOpen(true)} data-cs-pick-reader>
@@ -183,7 +184,7 @@ export default function RulesReview({ cards, students, seating, readers, onReade
           onClick={() => go(1)}
           data-cs-revise-next={last ? 'lesson' : 'next'}
         >
-          {last ? L.lesson : L.next} <ArrowLeft size={20} />
+          {last ? L.lesson : L.next} <ArrowForward size={20} />
         </button>
       </footer>
       {classOpen && (

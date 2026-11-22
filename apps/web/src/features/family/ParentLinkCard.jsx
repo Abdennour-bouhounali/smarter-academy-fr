@@ -10,16 +10,16 @@ import QrCode from './QrCode';
 const day = (iso) => new Date(iso).toLocaleDateString(LOCALE, { day: 'numeric', month: 'long', numberingSystem: 'latn' });
 
 /**
- * « وليّ الأمر » dans le profil de l'élève — le « رابط الوليّ », SANS compte
+ * « Parent » dans le profil de l'élève — le « lien parent », SANS compte
  * parent (owner, 2026-10-23 ; PARENT_SPACE.md §2) :
  *
- *  - le TEXTE de ce que le وليّ verra (et ne verra jamais), lu avant le bouton :
- *    « أوافق وأنشئ رابط وليّي » est le geste de consentement ;
- *  - le lien : « مشاركة » (feuille de partage du système — aucun lien sortant
- *    dans l'espace élève, jardin clos §7), « نسخ », et le QR à scanner depuis
+ *  - le TEXTE de ce que le parent verra (et ne verra jamais), lu avant le bouton :
+ *    « J’accepte et je crée mon lien parent » est le geste de consentement ;
+ *  - le lien : « Partager » (feuille de partage du système — aucun lien sortant
+ *    dans l'espace élève, jardin clos §7), « Copier », et le QR à scanner depuis
  *    l'écran avec le téléphone du parent ;
  *  - combien de fois il a été ouvert, s'il est protégé par un code, qui l'a
- *    créé (l'élève ou son enseignant) ; « رابط جديد » et « إلغاء ».
+ *    créé (l'élève ou son enseignant) ; « Nouveau lien » et « Supprimer le lien ».
  */
 export default function ParentLinkCard() {
   const { t } = useTranslation('family');

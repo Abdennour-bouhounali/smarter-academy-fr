@@ -5,7 +5,7 @@ import { LP_STATUS_BAR } from '../learningPoints/lpBar';
 /**
  * Le CHEMIN d'un statut dans le temps : une pastille par changement, dans
  * l'ordre, aux couleurs de la carte. Pas de courbe de pourcentage : ce qui
- * compte pour l'enseignant, c'est « ثغرة → تدعيم → متقن », pas 0,41 → 0,58.
+ * compte pour l'enseignant, c'est « En difficulté → À consolider → Maîtrisé », pas 0,41 → 0,58.
  *
  * Un changement dû à un RECALCUL (nouvelle version du moteur) ou reconstruit
  * après coup est marqué comme tel : ce n'est pas un apprentissage observé.

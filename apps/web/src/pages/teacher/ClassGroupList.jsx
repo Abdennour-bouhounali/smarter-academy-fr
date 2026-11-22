@@ -18,7 +18,7 @@ export default function ClassGroupList() {
   const loader = useCallback((token) => fetchClassGroups(token), []);
   const { data, loading, error, reload } = useAdminResource(loader, [loader]);
   const canCreate = data?.entitlements?.classes?.canCreate ?? true;
-  // Le قسم se crée SUR cette page : la liste reste derrière la boîte, et
+  // La classe se crée SUR cette page : la liste reste derrière la boîte, et
   // fermer ramène exactement là où l'enseignant était.
   const [creating, setCreating] = useState(false);
 

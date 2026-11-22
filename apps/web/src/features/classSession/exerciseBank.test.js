@@ -15,7 +15,7 @@ import {
 
 const LESSON = 'lecon-a';
 
-describe('بنك التمارين — the bank as a teacher uses it', () => {
+describe('banque d’exercices — the bank as a teacher uses it', () => {
   it('names an exercise by its level and its id, and opens it on the board of the class', () => {
     expect(refOf(3, 'ex-3e-lecon-a-l3-002')).toBe('3:ex-3e-lecon-a-l3-002');
     expect(parseRef('3:ex-3e-lecon-a-l3-002')).toEqual({ level: 3, id: 'ex-3e-lecon-a-l3-002' });
@@ -56,8 +56,8 @@ describe('بنك التمارين — the bank as a teacher uses it', () => {
       official: false,
     });
     expect(choicesOf(exercise.questions[0])).toEqual([
-      { letter: 'أ', content: 'oui', right: true },
-      { letter: 'ب', content: 'non', right: false },
+      { letter: 'A', content: 'oui', right: true },
+      { letter: 'B', content: 'non', right: false },
     ]);
   });
 
@@ -66,12 +66,12 @@ describe('بنك التمارين — the bank as a teacher uses it', () => {
       keyOf({
         answerType: 'choice',
         choices: [
-          { content: 'نعم', isCorrect: false },
-          { content: 'لا', isCorrect: true },
+          { content: 'oui', isCorrect: false },
+          { content: 'non', isCorrect: true },
         ],
         solution: { lines: ['$137 = 5 \\times 27 + 2$'] },
       }),
-    ).toEqual({ answer: 'ب) لا', lines: ['$137 = 5 \\times 27 + 2$'], result: null });
+    ).toEqual({ answer: 'B) non', lines: ['$137 = 5 \\times 27 + 2$'], result: null });
     expect(
       keyOf({
         answerType: 'rational',
@@ -90,7 +90,17 @@ describe('بنك التمارين — the bank as a teacher uses it', () => {
     expect(sheetTotals([])).toEqual({ exercises: 0, questions: 0, minutes: 0 });
     expect(toggleRef(['1:a'], '2:b')).toEqual(['1:a', '2:b']);
     expect(toggleRef(['1:a', '2:b'], '1:a')).toEqual(['2:b']);
-    expect([1, 2, 3, 11].map(exercisesWord)).toEqual(['تمرين واحد', 'تمرينان', '3 تمارين', '11 تمرينًا']);
-    expect([1, 2, 5, 12].map(questionsWord)).toEqual(['سؤال واحد', 'سؤالان', '5 أسئلة', '12 سؤالًا']);
+    expect([0, 1, 2, 11].map(exercisesWord)).toEqual([
+      '0\u00a0exercice',
+      '1\u00a0exercice',
+      '2\u00a0exercices',
+      '11\u00a0exercices',
+    ]);
+    expect([1, 2, 5, 12].map(questionsWord)).toEqual([
+      '1\u00a0question',
+      '2\u00a0questions',
+      '5\u00a0questions',
+      '12\u00a0questions',
+    ]);
   });
 });

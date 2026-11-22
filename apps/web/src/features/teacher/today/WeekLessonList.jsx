@@ -43,7 +43,7 @@ function WeekLesson({ code, first }) {
 
 /**
  * The lessons the school calendar gives a grade THIS week (the next teaching week on a day off) — the same reading on
- * the teacher's home « اليوم » and at the top of a class page, so the two never disagree.
+ * the teacher's home « Aujourd'hui » and at the top of a class page, so the two never disagree.
  */
 export default function WeekLessons({ grade, today }) {
   const { t } = useTranslation('teacher');

@@ -8,7 +8,7 @@ import ClassChallengeResults from './ClassChallengeResults';
 import ClassChallengeSettings from './ClassChallengeSettings';
 
 /**
- * L'onglet « التحدّي اليومي » d'un قسم : les résultats du jour (ou d'un jour
+ * L'onglet « Défi du jour » d'une classe : les résultats du jour (ou d'un jour
  * choisi) et les réglages de la classe. Chargé à la demande, avec le
  * catalogue `challenge`, sous le <Suspense> de ClassGroupDetail.
  */

@@ -10,13 +10,13 @@ import { studentName } from '../insights/insights';
 import './credentials.css';
 
 /**
- * « بطاقات الدخول » — l'enseignant choisit des élèves, le serveur leur émet
+ * « Cartes de connexion » — l'enseignant choisit des élèves, le serveur leur émet
  * un NOUVEAU mot de passe (StudentCredentials côté API), et la réponse est
  * imprimée en cartes à découper : courriel + mot de passe + adresse du site.
  *
  * Les mots de passe ne vivent que dans l'état de ce composant : fermer la
  * boîte les efface, et ils ne se relisent jamais (le serveur ne garde que le
- * hachage). D'où l'avertissement « اطبعها الآن ».
+ * hachage). D'où l'avertissement « Imprimez-les maintenant ».
  *
  * L'impression : une copie des cartes est rendue dans un portail
  * `[data-credentials-print]`, invisible à l'écran ; credentials.css masque
@@ -112,7 +112,7 @@ export default function CredentialsDialog({ open, onClose, classGroup, students 
           <p role="status" className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-emerald-900">{t('students.credentials.ready')}</p>
           <CredentialCards cards={cards} classGroup={classGroup} loginUrl={loginUrl} />
           {createPortal(
-            <div data-credentials-print dir="rtl">
+            <div data-credentials-print>
               <CredentialCards cards={cards} classGroup={classGroup} loginUrl={loginUrl} />
             </div>,
             document.body,

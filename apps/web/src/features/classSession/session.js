@@ -1,31 +1,35 @@
 /**
- * « حصّة القسم » — the CLASS SESSION of a teacher (owner's design, 2026-11-18). PURE logic; contract
+ * « séance en classe » — the CLASS SESSION of a teacher (owner's design, 2026-11-18). PURE logic; contract
  * docs/architecture/CLASS_SESSION.md.
  *
  * The lesson in class is ONE shared event: one screen, one mouse. A short test opens the hour (and another may close it);
  * the mouse goes from student to student, each called BY NAME, each answer met by a sentence that respects him — right or
- * not. At the end: what the class holds, the الكفاءات to revise, and a podium of the best TEAMS.
- *   - the seating map says who sits where; the turn follows it; a team is a « صفّ » (a vertical line of desks) by default, and the teacher may make as many
+ * not. At the end: what the class holds, the savoir-faire to revise, and a podium of the best TEAMS.
+ *   - the seating map says who sits where; the turn follows it; a team is a « rangée » (a vertical line of desks) by default, and the teacher may make as many
  *     teams as he wants (owner: « not necessarily 3 teams »), each under the name of a mathematician;
  *   - who answers next: by place (`order`), chosen by the teacher (`teacher`), or picked fairly by the platform (`fair`:
  *     among those who have spoken least) — the teacher switches at any moment;
  *   - NOTHING here is learning evidence: a class test never changes a student's progress.
  */
 
-/** Team names: scholars of mathematics. The list is long enough for any class; a teacher may rename a team. */
+/**
+ * Team names: mathematicians, women and men, from many times and places — the names a French classroom meets in its
+ * lessons (Thalès, Pythagore) and others worth meeting. The list is long enough for any class; a teacher may rename a
+ * team. (The Algerian platform used scholars of the Arab world; the French list is a proposal, not the owner's choice.)
+ */
 export const SCHOLARS = [
-  'الخوارزمي',
-  'ابن الهيثم',
-  'الكاشي',
-  'عمر الخيّام',
-  'البيروني',
-  'ثابت بن قرّة',
-  'أبو الوفاء',
-  'الكرجي',
-  'ابن البنّاء',
-  'السموأل',
-  'القلصادي',
-  'ابن حمزة',
+  'Thalès',
+  'Hypatie',
+  'Euclide',
+  'Sophie Germain',
+  'Al-Khwârizmî',
+  'Emmy Noether',
+  'Pythagore',
+  'Ada Lovelace',
+  'Descartes',
+  'Maryam Mirzakhani',
+  'Fermat',
+  'Émilie du Châtelet',
 ];
 export const TEAM_COLORS = [
   '#0ea5e9',
@@ -63,7 +67,7 @@ export function turnOrder(seating, students) {
 }
 
 /**
- * The teams. By default ONE TEAM PER « صفّ » — the VERTICAL line of desks that runs from the board to the back of the room
+ * The teams. By default ONE TEAM PER « rangée » — the VERTICAL line of desks that runs from the board to the back of the room
  * (owner, 2026-11-18: « pick the vertical one »): as many teams as there are such lines, i.e. `cols`. Seven students on four
  * lines make four teams of 2, 2, 2 and 1. A teacher who wants other teams gives `seating.teams = [{ id, name }]` and a `team`
  * on each seat; any number of teams is allowed.
@@ -115,27 +119,28 @@ export function gradeAnswer(question, answer) {
 }
 
 /**
- * The sentence that meets an answer — the owner's own words first. It always carries the student's NAME, never the word
- * « خطأ », and a miss is answered by the idea that a mistake is where one starts to learn. `gender` ('f' | 'm' | null)
- * chooses the form of the verbs; without it the sentence is one that fits everyone.
+ * The sentence that meets an answer, said to the student in front of the class (« tu »). It always carries the student's
+ * NAME, never « faux » as a verdict, and a miss is answered by the idea that a mistake is where one starts to learn —
+ * plain, warm, secular words a French teacher says. `gender` ('f' | 'm' | null) agrees the adjective; without it the
+ * sentence is one that fits everyone.
  */
 const RIGHT = [
-  (n) => `أحسنت يا ${n}، بارك الله فيك!`,
-  (n) => `ممتاز يا ${n}، إجابة في محلّها!`,
-  (n) => `بارك الله فيك يا ${n}، هكذا يكون العمل!`,
+  (n) => `Bien vu, ${n}.`,
+  (n) => `Belle démonstration, ${n}.`,
+  (n) => `Exactement, ${n} : c’est bien raisonné.`,
 ];
 const MISS = {
   m: [
-    (n) => `لا تقلق يا ${n}، الكلّ يرتكب الأخطاء، لكنّ قليلًا فقط من يستدركون خطأهم.`,
-    (n) => `لا بأس يا ${n}: من الخطأ نتعلّم. ستستدركه قبل نهاية الحصّة.`,
+    (n) => `Ne sois pas déçu, ${n} : tout le monde se trompe, et c’est en reprenant son erreur qu’on progresse.`,
+    (n) => `Pas grave, ${n} : on apprend de ses erreurs. Tu seras prêt avant la fin de la séance.`,
   ],
   f: [
-    (n) => `لا تقلقي يا ${n}، الكلّ يرتكب الأخطاء، لكنّ قليلًا فقط من يستدركون خطأهم.`,
-    (n) => `لا بأس يا ${n}: من الخطأ نتعلّم. ستستدركينه قبل نهاية الحصّة.`,
+    (n) => `Ne sois pas déçue, ${n} : tout le monde se trompe, et c’est en reprenant son erreur qu’on progresse.`,
+    (n) => `Pas grave, ${n} : on apprend de ses erreurs. Tu seras prête avant la fin de la séance.`,
   ],
   any: [
-    (n) => `لا بأس يا ${n}: الكلّ يرتكب الأخطاء، لكنّ قليلًا فقط من يستدركون خطأهم.`,
-    (n) => `لا بأس يا ${n}: من الخطأ نتعلّم.`,
+    (n) => `Pas grave, ${n} : tout le monde se trompe, et c’est en reprenant son erreur qu’on progresse.`,
+    (n) => `Pas grave, ${n} : on apprend de ses erreurs.`,
   ],
 };
 export function praise(correct, name, { gender = null, n = 0 } = {}) {
@@ -143,7 +148,7 @@ export function praise(correct, name, { gender = null, n = 0 } = {}) {
   return list[n % list.length](name);
 }
 
-/** The first name a class hears: « عمر », not « عمر بن علي ». */
+/** The first name a class hears: « Léa », not « Léa Martin ». */
 export const callName = (student) =>
   (
     student?.firstName ||
@@ -156,7 +161,7 @@ export const callName = (student) =>
 /**
  * The result of a session.
  *   right / total / percent — of the class;
- *   items   per الكفاءة: right, total, and `revise` when less than half was right (worst first in `revise`);
+ *   items   per savoir-faire: right, total, and `revise` when less than half was right (worst first in `revise`);
  *   teams   each team: right, total, rate; ranked by rate, then by number of right answers;
  *   stars   the students who answered right, in the order they did.
  */
@@ -303,7 +308,7 @@ export function customTeams(seating, students, n) {
     seats: seatsOf(seating).map((s) => ({ ...s, team: teams[order.indexOf(s.student) % count].id })),
   };
 }
-/** Back to one team per « صفّ » (vertical line of desks). */
+/** Back to one team per « rangée » (vertical line of desks). */
 export const lineTeams = (seating) => ({
   ...seating,
   teams: null,

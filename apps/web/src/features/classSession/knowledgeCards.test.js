@@ -11,7 +11,7 @@ vi.mock('@smarter-academy/core/curriculum/fr/net/learningNet.js', async (importO
   (await import('../compass/test/compassFixture.js')).mockLearningNet(importOriginal),
 );
 
-describe('بطاقة المعارف — the knowledge card of a lesson on the board', () => {
+describe('fiche de connaissances — the knowledge card of a lesson on the board', () => {
   it('exists for every lesson of keys that has its board; a unit’s last lesson has no knowledge of its own', async () => {
     for (const id of BOARD_LESSONS)
       expect(hasKnowledgeCards(id), id).toBe(lessonPackFlags(id).world !== 'mission-isle');
@@ -52,11 +52,11 @@ describe('بطاقة المعارف — the knowledge card of a lesson on the bo
     expect(cardsOf(null)).toEqual([]);
   });
 
-  it('gives the teacher the earlier lessons the new الكفاءة is connected with, core first, each with its link', () => {
+  it('gives the teacher the earlier lessons the new savoir-faire is connected with, core first, each with its link', () => {
     const links = earlierLessons('l2');
     expect(links.map((l) => [l.code, l.core, l.via]).sort()).toEqual([
-      ['a6', true, 'يحتاج إلى'],
-      ['l1', true, 'يحتاج إلى'],
+      ['a6', true, 'S’appuie sur'],
+      ['l1', true, 'S’appuie sur'],
     ]);
     expect(links.find((l) => l.code === 'a6')).toMatchObject({ title: 'Leçon a6', grade: 'Sixième', path: null });
     expect(earlierLessons('no-such-lesson')).toEqual([]);

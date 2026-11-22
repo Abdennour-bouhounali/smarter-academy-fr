@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
+import { LOCALE } from '../../locale.js';
 
 /**
  * Les FAITS d'un enseignant (décision D4, SCHOOL_ADMIN_SPACE.md) — le même
- * composant pour le directeur (« الأساتذة ») et pour l'enseignant (« مؤسستي ») :
+ * composant pour le directeur (« Professeurs ») et pour l'enseignant (« Mon établissement ») :
  * ce que l'un lit, l'autre le lit aussi, au mot près. Jamais une note.
  */
 export default function TeacherFacts({ facts }) {
@@ -28,7 +29,7 @@ export default function TeacherFacts({ facts }) {
         <dt className="font-inter text-xs text-slate-500">{t('facts.lastSignIn')}</dt>
         <dd className="mt-1 font-inter text-sm font-semibold text-slate-900">
           {facts.lastSignInAt
-            ? new Date(facts.lastSignInAt).toLocaleDateString('ar-DZ', { dateStyle: 'medium', numberingSystem: 'latn' })
+            ? new Date(facts.lastSignInAt).toLocaleDateString(LOCALE, { dateStyle: 'medium', numberingSystem: 'latn' })
             : t('common.never')}
         </dd>
       </div>

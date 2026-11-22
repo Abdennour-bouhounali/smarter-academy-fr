@@ -2,7 +2,7 @@ import { getSchoolYear, schoolYearOf } from '@smarter-academy/core/curriculum/fr
 
 /**
  * The lessons of THIS week for a grade, read from the school calendar and the grade's progression — what the teacher's
- * home « اليوم » shows on each class card. During holidays (no teaching week holds the date) it is the NEXT teaching
+ * home « Aujourd'hui » shows on each class card. During holidays (no teaching week holds the date) it is the NEXT teaching
  * week. Guessed from the date: a class that is late or ahead is not known here (NAVIGATION_REBUILD_PLAN.md, N6).
  *
  * @returns {{ weekNumber: number, term: number, lessons: string[], upcoming: boolean } | null} `null` when the school

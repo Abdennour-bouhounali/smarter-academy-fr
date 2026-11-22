@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { ArrowRight, Armchair, ListChecks, Play, X } from 'lucide-react';
+import { Armchair, ListChecks, Play, X } from 'lucide-react';
+import { ArrowBack } from '../../components/common/DirectionalIcons';
 import { getLessonById, getLessonPath } from '@smarter-academy/core';
 import {
   getItem,
@@ -40,42 +41,44 @@ import { usePackPart } from '../../lessons/lessonPack';
 import { boardFit, ClassSessionSkeleton, ClassWorkSkeleton } from '../../features/classSession/TeacherSkeletons';
 import '../../features/classSession/classSession.css';
 
+/** A count bound to its noun (U+00A0); French plural: 0 and 1 take the singular. */
+const counted = (n, one, many) => `${n} ${n <= 1 ? one : many}`;
 const L = {
-  title: 'حصّة القسم',
-  pickClass: 'مع أيّ قسم تعمل؟',
-  noClass: 'لا قسم نشط بعد: أنشئ قسمًا من «أقسامي».',
-  students: (n) => `${n} تلميذًا`,
-  seats: 'المقاعد',
-  test: 'الاختبار',
-  launch: 'ابدأ على السبّورة',
-  start: 'اختبار البداية',
-  end: 'اختبار النهاية',
-  questions: (n) => (n === 1 ? 'سؤال واحد' : n === 2 ? 'سؤالان' : n <= 10 ? `${n} أسئلة` : `${n} سؤالًا`),
-  noQuestions: 'لا سؤال',
-  noStudents: 'هذا القسم بلا تلاميذ بعد.',
-  last: 'آخر الحصص',
-  none: 'لا حصّة مسجّلة لهذا الدرس بعد.',
-  waiting: (n) => `${n} حصّة تنتظر عودة الاتّصال.`,
-  loading: 'جارٍ التحميل…',
-  close: 'إغلاق',
-  noDefault: 'لا اختبار جاهز لهذا الدرس بعد: اكتب أسئلتك.',
-  note: 'لا شيء في حصّة القسم يغيّر تقدّم أيّ تلميذ: هي لحظة للقسم كلّه.',
-  change: 'غيّر القسم',
-  backLesson: 'الدرس',
-  noExercise: 'هذا التمرين غير موجود في بنك الدرس.',
-  bank: 'بنك التمارين: تمرين على السبّورة، أو ورقة للقسم',
-  trackTitle: 'متابعة القسم',
-  cardBoard: 'بطاقة المعارف: مراجعة سريعة مع القسم',
-  hour: 'مسار الحصّة',
-  revise: 'مراجعة القواعد',
-  rules: (n) => (n === 1 ? 'قاعدة واحدة' : n === 2 ? 'قاعدتان' : n <= 10 ? `${n} قواعد` : `${n} قاعدة`),
-  noRules: 'لا قاعدة جاهزة لهذا الدرس بعد',
-  board: 'الدرس على السبّورة',
-  stations: (n) => `${n} محطّة: يجرّب، يستنتج، يسمّي`,
-  resume: (k, n) => `نواصل من المحطّة ${k} من ${n}`,
-  restart: 'من البداية',
-  toRevise: 'مراجعة القواعد',
-  toLesson: 'الدرس الجديد',
+  title: 'Séance en classe',
+  pickClass: 'Avec quelle classe travaillez-vous ?',
+  noClass: 'Aucune classe active pour l’instant : créez-en une dans « Mes classes ».',
+  students: (n) => counted(n, 'élève', 'élèves'),
+  seats: 'Les places',
+  test: 'Le test',
+  launch: 'Lancer au tableau',
+  start: 'Test de début',
+  end: 'Test de fin',
+  questions: (n) => counted(n, 'question', 'questions'),
+  noQuestions: 'Aucune question',
+  noStudents: 'Cette classe n’a pas encore d’élève.',
+  last: 'Dernières séances',
+  none: 'Aucune séance enregistrée pour cette leçon.',
+  waiting: (n) => `${counted(n, 'séance attend', 'séances attendent')} le retour de la connexion.`,
+  loading: 'Chargement…',
+  close: 'Fermer',
+  noDefault: 'Pas encore de test prêt pour cette leçon : écrivez vos questions.',
+  note: 'Rien dans la séance en classe ne change la progression d’un élève : c’est un moment pour toute la classe.',
+  change: 'Changer de classe',
+  backLesson: 'La leçon',
+  noExercise: 'Cet exercice n’est pas dans la banque de la leçon.',
+  bank: 'Banque d’exercices : un exercice au tableau, ou une feuille pour la classe',
+  trackTitle: 'Suivi de la classe',
+  cardBoard: 'Fiche de connaissances : une révision rapide avec la classe',
+  hour: 'Le fil de la séance',
+  revise: 'On révise les règles',
+  rules: (n) => counted(n, 'règle', 'règles'),
+  noRules: 'Pas encore de règle prête pour cette leçon',
+  board: 'La leçon au tableau',
+  stations: (n) => `${counted(n, 'étape', 'étapes')} : on essaie, on conclut, on nomme`,
+  resume: (k, n) => `Reprendre à l’étape ${k} sur ${n}`,
+  restart: 'Depuis le début',
+  toRevise: 'On révise les règles',
+  toLesson: 'La nouvelle leçon',
 };
 const MEMO_KEY = 'smarter_class_lesson_board';
 /** The board's memory of the hour (step, the class's bridges, its rule): kept for this browser tab only, never sent. */
@@ -102,11 +105,11 @@ const uuid = () =>
         .padEnd(32, '0')
         .replace(/^(.{8})(.{4})(.{4})(.{4})(.{12}).*$/, '$1-$2-4$3-a$4-$5')
         .slice(0, 36);
-/** The name of a الكفاءة a teacher reads: the title of the lesson that teaches it. */
+/** The name of a savoir-faire a teacher reads: the title of the lesson that teaches it. */
 const itemLabel = (item) => (item ? (homeLessonOf(item)?.title ?? getItem(item)?.text ?? item) : '');
 
 /**
- * « حصّة القسم » — the teacher's class session of ONE lesson (CLASS_SESSION.md): he chooses the class, prepares the
+ * « séance en classe » — the teacher's class session of ONE lesson (CLASS_SESSION.md): he chooses the class, prepares the
  * seating map and the test, then runs the test on the board; the result is saved without touching anyone's progress.
  * Full screen, outside the teacher shell; designed 1280 × 720 and zoomed to the window; nothing scrolls on the board.
  */
@@ -136,7 +139,7 @@ function ClassSession({ lessonId, script, rules }) {
   const [saving, setSaving] = useState(false);
   const [recent, setRecent] = useState({ sessions: [], turns: {} });
   const [tab, setTab] = useState('seats');
-  // « متابعة القسم » is its OWN screen (`?onglet=suivi`): the class on this lesson, nothing of the hour around it
+  // « suivi de la classe » is its OWN screen (`?onglet=suivi`): the class on this lesson, nothing of the hour around it
   const tracking = params.get('onglet') === 'suivi';
   const [view, setView] = useState('setup');
   const [moment, setMoment] = useState('start');
@@ -159,7 +162,7 @@ function ClassSession({ lessonId, script, rules }) {
       },
       { replace },
     );
-  // the lesson the board is about: what lets the dock open « مختبري » (only for a lesson whose lab has instruments)
+  // the lesson the board is about: what lets the dock open « Mon labo » (only for a lesson whose lab has instruments)
   const boardLesson = useMemo(
     () => (hasLab(lessonId) ? { code: lessonId, title: lesson?.title ?? '' } : null),
     [lessonId, lesson?.title],
@@ -307,14 +310,14 @@ function ClassSession({ lessonId, script, rules }) {
   const close = () => navigate(getLessonPath(lessonId) ?? '/enseignant');
   const klass = classes?.find((c) => c.id === classId) ?? null;
   const startItems = lastStart ?? recent.sessions.find((s) => s.moment === 'start')?.summary?.items ?? null;
-  // the rules the lesson will USE: those of its earlier الكفاءات (the learning net), the one the class missed most first
+  // the rules the lesson will USE: those of its earlier savoir-faire (the learning net), the one the class missed most first
   const cards = useMemo(() => reviewCards(toolsForLesson(lessonId), FAMILIES, startItems), [lessonId, startItems]);
   const afterStart = cards.length
     ? { id: 'revise', label: L.toRevise, go: () => setView('revise') }
     : script
       ? { id: 'lesson', label: L.toLesson, go: () => setView('lesson') }
       : null;
-  // `?exercice=<level>:<id>`: an exercise of the teacher's bank on the board of the class (« على السبّورة »); leaving it goes back to the bank
+  // `?exercice=<level>:<id>`: an exercise of the teacher's bank on the board of the class (« Au tableau »); leaving it goes back to the bank
   const exRef = parseRef(params.get('exercice'));
   const [exercise, setExercise] = useState(null);
   useEffect(() => {
@@ -334,7 +337,7 @@ function ClassSession({ lessonId, script, rules }) {
       off = true;
     };
   }, [exRef?.level, exRef?.id, Boolean(students), lessonId]); // eslint-disable-line react-hooks/exhaustive-deps
-  // `?carte=1`: « بطاقة المعارف » of the lesson on the board, for a quick revision with the whole class
+  // `?carte=1`: « la fiche de connaissances » of the lesson on the board, for a quick revision with the whole class
   const [kcards, setKcards] = useState(null);
   const klinks = useMemo(() => earlierLessons(lessonId), [lessonId]);
   const openCards = () => {
@@ -387,12 +390,7 @@ function ClassSession({ lessonId, script, rules }) {
   });
 
   return (
-    <div
-      className={`cs-root ${narrow ? 'cs-root--narrow' : ''}`}
-      dir="rtl"
-      data-class-session={lessonId}
-      data-cs-view={view}
-    >
+    <div className={`cs-root ${narrow ? 'cs-root--narrow' : ''}`} data-class-session={lessonId} data-cs-view={view}>
       <BoardLessonContext.Provider value={boardLesson}>
         <div className="cs-fit" style={{ zoom: z }}>
           {view === 'play' && students && (
@@ -694,7 +692,7 @@ function ClassSession({ lessonId, script, rules }) {
                       </p>
                     )}
                     <button type="button" className="cs-link" onClick={close}>
-                      <ArrowRight size={16} /> {L.backLesson}
+                      <ArrowBack size={16} /> {L.backLesson}
                     </button>
                   </aside>
                 </div>

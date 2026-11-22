@@ -8,7 +8,7 @@ import { btnPrimary, btnSecondary, input } from '../../../pages/teacher/teacherU
 import { INTERVENTION_KINDS, kindNeedsPoint, kindVisibleToStudent, studentName } from '../insights/insights';
 
 /**
- * « تدخّل » — le geste de l'enseignant, depuis un signal, un point ou un
+ * « Intervenir » — le geste de l'enseignant, depuis un signal, un point ou un
  * élève. UN formulaire, monté dans la boîte de dialogue du kit partout où il
  * sert (le motif documenté du contrat enseignant §8 : il possède ses champs
  * et son appel ; l'appelant ne décide que de la suite, `onCreated`).
@@ -16,7 +16,7 @@ import { INTERVENTION_KINDS, kindNeedsPoint, kindVisibleToStudent, studentName }
  * Le serveur valide tout (élèves membres actifs, point dans le périmètre,
  * geste qui exige un point) ; l'écran ne fait que ne pas proposer
  * l'impossible. À la création, le serveur FIGE l'état de chaque élève sur le
- * point : c'est la base de « ما حدث بعده ».
+ * point : c'est la base de « Ce qui s'est passé ensuite ».
  *
  * @param {{
  *   open: boolean, onClose: () => void, onCreated?: (intervention: object) => void,

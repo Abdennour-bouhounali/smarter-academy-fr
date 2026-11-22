@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { Loader2, AlertTriangle, ChevronDown } from 'lucide-react';
+import { LOCALE } from '../../locale.js';
 
 /**
  * Le petit chrome partagé des pages enseignant — en-tête, états, libellés
- * arabes pour le kit de tableaux. Tout vient du catalogue `teacher`.
+ * français pour le kit de tableaux. Tout vient du catalogue `teacher`.
  */
 export function TeacherPage({ eyebrow, title, subtitle, actions, children }) {
   return (
@@ -78,7 +79,7 @@ export function ErrorBox({ message, onRetry }) {
   );
 }
 
-/** Les libellés arabes du kit (DataTable, Pagination, ConfirmDialog). */
+/** Les libellés français du kit (DataTable, Pagination, ConfirmDialog). */
 export function useTableLabels() {
   const { t } = useTranslation('teacher');
   return {
@@ -112,7 +113,7 @@ export const btnDanger =
 export const input =
   'w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 font-inter text-sm text-slate-800 focus:border-nav-accent focus:outline-none focus:ring-1 focus:ring-nav-accent';
 
-export function formatDate(iso, locale = 'ar-DZ') {
+export function formatDate(iso, locale = LOCALE) {
   if (!iso) return '—';
   const d = new Date(iso);
   return Number.isNaN(d.getTime())

@@ -1,5 +1,5 @@
 /**
- * « حصّة القسم » — what the class does DURING the lesson (owner, 2026-11-18: « rebuild entirely the during-the-lesson
+ * « séance en classe » — what the class does DURING the lesson (owner, 2026-11-18: « rebuild entirely the during-the-lesson
  * classroom mode »). PURE data and logic; the board is LessonBoard.jsx; contract CLASS_SESSION.md §5bis–§5ter.
  *
  * The hour, as a script:
@@ -27,9 +27,9 @@ import {
 } from '../../lessons/common/gameworld/rootCourts/logic';
 
 /**
- * The cards of the revision: the rules of the earlier الكفاءات the lesson stands on (`family.rules`), core tools first; when
- * the start test was taken, the الكفاءة the class missed most comes FIRST, with its count.
- * `tools` = toolsForLesson(lesson), `families` = launch-kit families, `startItems` = the start test's result per الكفاءة.
+ * The cards of the revision: the rules of the earlier savoir-faire the lesson stands on (`family.rules`), core tools first;
+ * when the start test was taken, the savoir-faire the class missed most comes FIRST, with its count.
+ * `tools` = toolsForLesson(lesson), `families` = launch-kit families, `startItems` = the start test's result per savoir-faire.
  */
 export function reviewCards(tools, families, startItems = null) {
   const rate = (item) => {
@@ -81,12 +81,12 @@ export function missingEvidence(log) {
  *   forge       the class writes its rule with two tiles; the board runs it on the class's bridges, then attacks it;
  *   ask         one question with choices, PROVED by bridges the board builds (`single` or several right answers);
  *               optional `words: { card, held, fell }` — the label of a card and its two verdicts, when the choices are
- *               not planks (bouquets, boxes…); a word left out keeps the board's « لوح » / « يثبت » / « ينهار »;
+ *               not planks (bouquets, boxes…); a word left out keeps the board's « Planche » / « Tient » / « S’effondre »;
  *   statements  sentences the class judges true or false, each proved by an equality;
  *   name        the rule gets its name: the tablet of the lesson (`tablet` key of the game's strings — one wording for the
  *               student's world and for the board), read aloud by a student or by the teacher;
  *   trace       what goes in the copybook;
- *   court       a square court of « قصر الساحات » (`rootCourts/`, drawn by its own `Court`): the class looks at ONE court and
+ *   court       a square court of the `rootCourts` world (`rootCourts/`, drawn by its own `Court`): the class looks at ONE court and
  *               the board lowers the platform of the card the teacher taps — a rod over a given court (`area`, `rods`),
  *               or a given rod over candidate courts (`rod`, `areas`) — and shows what the world does: it rides, it
  *               leaves a band, it jams. `answer` = the cards that ride (a test computes it); `after` (the proof) comes
@@ -106,21 +106,21 @@ export const fills = (step, option) => step.a % option === 0;
 export const askRight = (step, picked) =>
   picked.length === step.answer.length && step.answer.every((v) => picked.includes(v));
 /** The words of an `ask` step's cards: the label of a card and its two verdicts — the step's own `words`, or the planks'. */
-const ASK_WORDS = { card: 'لوح', held: 'يثبت', fell: 'ينهار' };
+const ASK_WORDS = { card: 'Planche', held: 'Tient', fell: 'S’effondre' };
 export const askWords = (step) => ({ ...ASK_WORDS, ...step.words });
 /**
- * The words of a `court` step's cards: a card's label (« المقياس », or « الساحة » when the cards are courts) and the three
- * things a platform does — the world's own nouns, never a plank's (« لوح / يثبت / ينهار ») and never « wrong ». A step's
- * `words` overrides any of them; a card may carry its own `label` (« الحاسبة », « ضلع الساحة »).
+ * The words of a `court` step's cards: a card's label (« Toise », or « Salle » when the cards are courts — the words of `rootCourts/strings.js`) and the three
+ * things a platform does — the world's own nouns, never a plank's (« Planche / Tient / S’effondre ») and never « wrong ».
+ * A step's `words` overrides any of them; a card may carry its own `label` (« La calculatrice », « Côté de la salle »).
  */
 const COURT_WORDS = {
-  card: 'المقياس',
-  court: 'الساحة',
-  ride: 'تركب',
-  band: 'شريط',
-  jam: 'تعلق',
-  lower: 'أنزل المنصّة',
-  rod: 'المقياس',
+  card: 'Toise',
+  court: 'Salle',
+  ride: 'Elle monte',
+  band: 'Une bande',
+  jam: 'Elle coince',
+  lower: 'Abaisser la plateforme',
+  rod: 'Toise',
 };
 export const courtWords = (step) => ({ ...COURT_WORDS, ...step.words });
 /** A rod as a script writes it: « 4,2 », { q: '7,28', label }, or the wall of a court { root: '53', label }. */
@@ -154,7 +154,7 @@ export const courtShown = (step, tried) =>
 /** The rod of a step whose cards are courts, in LaTeX (« \\sqrt{61} »). */
 export const courtRodTex = (step) => rodTex(rodOf(step.rod));
 
-/** The rail of the board: one dot per step, with the chapter it belongs to (« نكتشف », « نستنتج », « نسمّي », « نكتب »). */
+/** The rail of the board: one dot per step, with the chapter it belongs to (« On découvre », « On conclut », « On nomme », « On écrit »). */
 export const railOf = (script) =>
   script.steps.map((s, i) => ({
     i,
@@ -183,41 +183,44 @@ export function groupsOf(script) {
   return out;
 }
 
-/** The CLASS's rule applied to one bridge, in the class's voice: « باقي قسمة 18 على 4 هو 2، و 2 لا يساوي 0: قاعدتنا تقول إنّ الجسر ينهار ». */
+const upFirst = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+/**
+ * The CLASS's rule applied to one bridge, in the class's voice: « Le reste de la division de 18 par 4 vaut 2, et 2 n’est
+ * pas égal à 0 : notre règle dit que le pont s’effondre. » The tiles' words are the world's (`ruleForge.js`).
+ */
 export function classExplain(rule, a, b) {
   const Q = QUANTITIES.find((x) => x.id === rule.q);
   const C = CONDITIONS.find((x) => x.id === rule.c);
   const v = Q.of(a, b);
   const yes = ruleSays(rule, a, b);
-  return `${Q.short(a, b)} هو ${v}، و ${v} ${yes ? C.yes : C.no}: قاعدتنا تقول إنّ الجسر ${yes ? 'يثبت' : 'ينهار'}.`;
+  return `${upFirst(Q.short(a, b))} vaut ${v}, et ${v} ${yes ? C.yes : C.no} : notre règle dit que le pont ${yes ? 'tient' : 's’effondre'}.`;
 }
-/** The rule of the class as one sentence: « يثبت الجسر عندما: باقي قسمة طول الهوّة على طول اللوح يساوي 0. » */
+/** The rule of the class as one sentence: « Le pont tient quand : le reste de la division … est égal à 0. » */
 export const classRuleText = (rule) =>
-  `يثبت الجسر عندما: ${QUANTITIES.find((x) => x.id === rule.q).label} ${CONDITIONS.find((x) => x.id === rule.c).label}.`;
+  `Le pont tient quand : ${QUANTITIES.find((x) => x.id === rule.q).label} ${CONDITIONS.find((x) => x.id === rule.c).label}.`;
 /** The equality the board writes under a bridge: « 42 = 4 × 10 + 2 », or « 42 = 6 × 7 » when nothing is left. */
 export const equalityOf = (c) =>
   c.r === 0 ? `${c.a} = ${c.b} \\times ${c.q}` : `${c.a} = ${c.b} \\times ${c.q} + ${c.r}`;
-/** A number of cells, agreed: « خانة واحدة », « خانتان », « 8 خانات », « 15 خانة ». */
-export const cellsOf = (n) => (n === 1 ? 'خانة واحدة' : n === 2 ? 'خانتان' : n <= 10 ? `${n} خانات` : `${n} خانة`);
-/** « بقيت خانة واحدة », « بقيت خانتان », « بقيت 3 خانات », « بقيت 11 خانة ». */
-export const leftCells = (r) =>
-  r === 1 ? 'بقيت خانة واحدة' : r === 2 ? 'بقيت خانتان' : r <= 10 ? `بقيت ${r} خانات` : `بقيت ${r} خانة`;
+/** A number of cells, agreed, the count bound to its noun: « 1 case », « 8 cases ». */
+export const cellsOf = (n) => `${n} ${n <= 1 ? 'case' : 'cases'}`;
+/** « il reste 1 case », « il reste 3 cases ». */
+export const leftCells = (r) => `il reste ${cellsOf(r)}`;
 
 /** Why a sentence about a (the bigger) and b is true or false — said with the equality or with the bridge. */
 export function proofOf(form, a, b) {
   const q = a / b;
   return {
-    b_divides_a: `$${a} = ${b} \\times ${q}$: الباقي 0.`,
-    a_divides_b: `لوح طوله ${a} لا يدخل في هوّة من ${cellsOf(b)}.`,
-    a_multiple_of_b: `$${a} = ${b} \\times ${q}$: العدد ${a} في جدول ${b}.`,
-    b_multiple_of_a: `مضاعفات ${a} هي 0، ${a}، ${2 * a}… والعدد ${b} ليس منها.`,
-    a_divisible_by_b: `$${a} \\div ${b} = ${q}$ والباقي 0.`,
+    b_divides_a: `$${a} = ${b} \\times ${q}$ : le reste est 0.`,
+    a_divides_b: `Une planche de ${a} n’entre pas dans un fossé de ${cellsOf(b)}.`,
+    a_multiple_of_b: `$${a} = ${b} \\times ${q}$ : ${a} est dans la table de ${b}.`,
+    b_multiple_of_a: `Les multiples de ${a} sont 0 ; ${a} ; ${2 * a} ; … et ${b} n’en fait pas partie.`,
+    a_divisible_by_b: `$${a} \\div ${b} = ${q}$ et le reste est 0.`,
   }[form];
 }
 
 /**
  * Is a tablet drawn DENSE on the board's naming card? Five list items, or a tablet whose words pass `DENSE_WORDS`
- * characters (its formulas counted as four): the second tablet of the first lesson of « قصر الساحات » (397) left its card at 1366×768 (the walk of
+ * characters (its formulas counted as four): the second tablet of the first lesson of the `rootCourts` world (397) left its card at 1366×768 (the walk of
  * 2026-11-21); the longest tablet of every other lesson then was 279. A fraction of two storeys (`\\dfrac`, `\\frac`) in
  * its words is taller than a line: it counts `DENSE_FRAC` more — the first tablet of lesson 2 (304 characters, three
  * fractions in its words) left its card on the board's walk of 2026-11-21.
@@ -232,7 +235,7 @@ export const denseTablet = (t) => {
 };
 
 /**
- * « من يتذكّر؟ »: a line of a rule cut into parts, the `words` to recall hidden — never inside a formula.
+ * « Qui s’en souvient ? »: a line of a rule cut into parts, the `words` to recall hidden — never inside a formula.
  * Parts: { t: 'text' | 'math' | 'blank', v }. The class says the hidden word; a tap shows it.
  */
 export function blanks(text, words = []) {

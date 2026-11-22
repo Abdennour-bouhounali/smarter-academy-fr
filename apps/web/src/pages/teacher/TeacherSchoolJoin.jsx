@@ -12,7 +12,7 @@ const SEEN_ITEMS = ['classes', 'students', 'interventions', 'lastSignIn'];
 /**
  * Rejoindre un établissement par son lien (SCHOOL_ADMIN_SPACE.md §7, D4).
  * Ouvrir le lien ne rejoint RIEN : la page dit ce que la direction verra, et
- * le bouton « أوافق وأنضمّ » est le geste — comme le lien d'une classe.
+ * le bouton « J'accepte et je rejoins » est le geste — comme le lien d'une classe.
  * Le geste rattache aussi toutes les classes actives de l'enseignant, avec
  * leurs élèves qui l'ont accepté (2026-10-28) : la page le dit d'abord.
  */

@@ -8,12 +8,13 @@ import { useContentAvailability } from '../../context/ContentAvailabilityContext
 import { fetchPlanCatalog, fetchMySubscription, requestPlan, cancelPlanRequest } from '../../services/teacher/subscriptionService';
 import { redeemActivationCode } from '../../services/activationService';
 import { deriveSubscriptionState, informationalPrice } from '../../features/teacher/subscription/subscriptionState';
-import { quoteSeats, firstRequestableSeats, maxCoveredSeats, formatDzd, tierLabel } from '../../features/teacher/subscription/seatPricing';
+import { quoteSeats, firstRequestableSeats, maxCoveredSeats, tierLabel } from '../../features/teacher/subscription/seatPricing';
+import { formatEur } from '../../utils/money.js';
 import UsageMeter from '../../features/teacher/usage/UsageMeter';
 import { TeacherPage, Loading, ErrorBox, btnPrimary, btnSecondary, input, formatDate } from './teacherUi';
 
 /**
- * « عرضي » — l'offre de l'enseignant, PAR SIÈGES.
+ * « Ma formule » — l'offre du professeur, PAR SIÈGES (montants en euros : utils/money.js › formatEur).
  *
  * AUCUN paiement en ligne. L'enseignant choisit combien d'élèves il veut
  * encadrer ; la grille (venue du serveur) donne le palier, le prix par élève
@@ -115,7 +116,7 @@ export default function SubscriptionPage() {
                 {ent.plan?.studentSeatLimit != null && state.base === 'active' && (
                   <p className="text-sm text-slate-700 mt-0.5 flex items-center gap-1" data-purchased-seats>
                     <Users size={13} /> {t('subscription.purchased', { count: ent.plan.studentSeatLimit })}
-                    {ent.plan.seatTotalCents != null && <span className="text-slate-500"> · {t('subscription.purchasedPrice', { unit: formatDzd(ent.plan.seatUnitPriceCents), total: formatDzd(ent.plan.seatTotalCents) })}</span>}
+                    {ent.plan.seatTotalCents != null && <span className="text-slate-500"> · {t('subscription.purchasedPrice', { unit: formatEur(ent.plan.seatUnitPriceCents), total: formatEur(ent.plan.seatTotalCents) })}</span>}
                   </p>
                 )}
                 {ent.plan?.endsAt && state.base === 'active' && <p className="text-sm text-slate-500 mt-0.5 flex items-center gap-1"><Clock size={13} /> {t('subscription.until', { date: formatDate(ent.plan.endsAt) })}</p>}
@@ -141,7 +142,7 @@ export default function SubscriptionPage() {
                 <p className="font-semibold text-blue-900">{t('subscription.pendingTitle')}</p>
                 <p className="text-sm text-blue-900/80 mt-0.5">
                   {pendingDetail?.requestedStudentSeats
-                    ? t('subscription.pendingSeatsBody', { count: pendingDetail.requestedStudentSeats, amount: formatDzd(pendingDetail.calculatedTotalCents), date: formatDate(state.pending.requestedAt) })
+                    ? t('subscription.pendingSeatsBody', { count: pendingDetail.requestedStudentSeats, amount: formatEur(pendingDetail.calculatedTotalCents), date: formatDate(state.pending.requestedAt) })
                     : t('subscription.pendingBody', { plan: state.pending.planName, date: formatDate(state.pending.requestedAt) })}
                 </p>
               </div>
@@ -194,7 +195,7 @@ export default function SubscriptionPage() {
                           {plan.description && <p className="text-sm text-slate-500 mt-1">{plan.description}</p>}
                         </div>
                         <p className="font-space font-black text-2xl text-slate-900" dir="ltr">
-                          {price ? <>{price.amount.toLocaleString('fr-DZ')} <span className="text-sm font-bold text-slate-500">{ta('planInformationalPrice')}</span></> : ta('planFreeBadge')}
+                          {price ? formatEur(plan.price.amountCents) : ta('planFreeBadge')}
                         </p>
                         {price && <p className="text-[11px] text-slate-400 -mt-2">{ta('planPriceHint')}</p>}
                         <ul className="text-sm text-slate-600 space-y-1">
@@ -308,7 +309,7 @@ function SeatPlanCard({ plan, freeSeats, currentStudents, seats, onSeats, canReq
               {tiers.map((tier) => (
                 <li key={tier.id ?? tierLabel(tier)} className={`flex items-center justify-between gap-3 ${quote?.tier === tier ? 'font-bold text-nav-accent' : ''}`}>
                   <span>{tier.maxStudents == null ? t('subscription.seats.tierRowOpen', { min: tier.minStudents }) : t('subscription.seats.tierRow', { min: tier.minStudents, max: tier.maxStudents })}</span>
-                  <span dir="ltr">{tier.pricePerStudentCents ? t('subscription.seats.perStudent', { amount: formatDzd(tier.pricePerStudentCents) }) : t('subscription.seats.free')}</span>
+                  <span dir="ltr">{tier.pricePerStudentCents ? t('subscription.seats.perStudent', { amount: formatEur(tier.pricePerStudentCents) }) : t('subscription.seats.free')}</span>
                 </li>
               ))}
             </ul>
@@ -318,15 +319,15 @@ function SeatPlanCard({ plan, freeSeats, currentStudents, seats, onSeats, canReq
         <div className="lg:w-72 shrink-0 rounded-2xl border border-slate-200 bg-slate-50 p-4" data-seat-quote aria-live="polite">
           {quote ? (
             <dl className="space-y-2 text-sm">
-              <div className="flex items-baseline justify-between gap-3"><dt className="text-slate-500">{t('subscription.seats.tier')}</dt><dd className="font-semibold text-slate-800" dir="ltr">{quote.free ? t('subscription.seats.free') : t('subscription.seats.perStudent', { amount: formatDzd(quote.unitPriceCents) })}</dd></div>
+              <div className="flex items-baseline justify-between gap-3"><dt className="text-slate-500">{t('subscription.seats.tier')}</dt><dd className="font-semibold text-slate-800" dir="ltr">{quote.free ? t('subscription.seats.free') : t('subscription.seats.perStudent', { amount: formatEur(quote.unitPriceCents) })}</dd></div>
               <div className="flex items-baseline justify-between gap-3"><dt className="text-slate-500">{t('subscription.seats.tierRange', { range: '' }).trim()}</dt><dd dir="ltr" className="text-slate-700">{tierLabel(quote.tier)}</dd></div>
               <div className="flex items-baseline justify-between gap-3"><dt className="text-slate-500">{t('subscription.seats.count')}</dt><dd dir="ltr" className="text-slate-700">{quote.seats}</dd></div>
-              <div className="flex items-baseline justify-between gap-3 border-t border-slate-200 pt-2"><dt className="font-semibold text-slate-800">{t('subscription.seats.total')}</dt><dd dir="ltr" className="font-space font-black text-2xl text-slate-900" data-seat-total>{quote.free ? t('subscription.seats.free') : t('subscription.seats.amount', { amount: formatDzd(quote.totalCents) })}</dd></div>
+              <div className="flex items-baseline justify-between gap-3 border-t border-slate-200 pt-2"><dt className="font-semibold text-slate-800">{t('subscription.seats.total')}</dt><dd dir="ltr" className="font-space font-black text-2xl text-slate-900" data-seat-total>{quote.free ? t('subscription.seats.free') : t('subscription.seats.amount', { amount: formatEur(quote.totalCents) })}</dd></div>
             </dl>
           ) : <p className="text-sm text-slate-500">{t('subscription.seats.outOfRange')}</p>}
           {quote && !quote.free && (
             <p className="mt-3 text-xs text-slate-600">
-              <span className="font-semibold">{t('subscription.seats.amountDue')}</span> <span dir="ltr">{t('subscription.seats.amount', { amount: formatDzd(quote.totalCents) })}</span>
+              <span className="font-semibold">{t('subscription.seats.amountDue')}</span> <span dir="ltr">{t('subscription.seats.amount', { amount: formatEur(quote.totalCents) })}</span>
               <br />{t('subscription.seats.paymentNote')}
             </p>
           )}

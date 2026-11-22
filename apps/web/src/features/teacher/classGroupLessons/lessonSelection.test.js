@@ -3,12 +3,12 @@ import { flattenCurriculum, idsNeeding, applyBulkOutcome, countByStatus } from '
 
 const curriculum = {
   chapters: [
-    { code: 'c1', title: 'أنشطة عددية', lessons: [
-      { id: 1, code: 'a', title: 'أ', classStatus: 'visible', publicationStatus: 'published', effectiveForStudents: true },
-      { id: 2, code: 'b', title: 'ب', classStatus: 'hidden', publicationStatus: 'published', effectiveForStudents: false },
+    { code: 'c1', title: 'Nombres et calculs', lessons: [
+      { id: 1, code: 'a', title: 'A', classStatus: 'visible', publicationStatus: 'published', effectiveForStudents: true },
+      { id: 2, code: 'b', title: 'B', classStatus: 'hidden', publicationStatus: 'published', effectiveForStudents: false },
     ] },
-    { code: 'c2', title: 'هندسة', lessons: [
-      { id: 3, code: 'c', title: 'ج', classStatus: 'visible', publicationStatus: 'draft', effectiveForStudents: false },
+    { code: 'c2', title: 'Espace et géométrie', lessons: [
+      { id: 3, code: 'c', title: 'C', classStatus: 'visible', publicationStatus: 'draft', effectiveForStudents: false },
     ] },
   ],
 };
@@ -17,7 +17,7 @@ describe('lessonSelection', () => {
   it('aplatit en gardant le chapitre', () => {
     const rows = flattenCurriculum(curriculum);
     expect(rows.map((r) => r.id)).toEqual([1, 2, 3]);
-    expect(rows[2].chapterTitle).toBe('هندسة');
+    expect(rows[2].chapterTitle).toBe('Espace et géométrie');
   });
   it('ne cible que les leçons dont l’état diffère', () => {
     const rows = flattenCurriculum(curriculum);

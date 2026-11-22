@@ -2,10 +2,10 @@ import { describe, it, expect } from 'vitest';
 import { applicableTier, quoteSeats, maxCoveredSeats, firstRequestableSeats, formatDzd, tierLabel } from './seatPricing';
 
 const tiers = [
-  { minStudents: 1, maxStudents: 5, pricePerStudentCents: 0, currency: 'DZD', isActive: true },
-  { minStudents: 6, maxStudents: 20, pricePerStudentCents: 100000, currency: 'DZD', isActive: true },
-  { minStudents: 21, maxStudents: 30, pricePerStudentCents: 80000, currency: 'DZD', isActive: true },
-  { minStudents: 31, maxStudents: null, pricePerStudentCents: 70000, currency: 'DZD', isActive: true },
+  { minStudents: 1, maxStudents: 5, pricePerStudentCents: 0, currency: 'EUR', isActive: true },
+  { minStudents: 6, maxStudents: 20, pricePerStudentCents: 100000, currency: 'EUR', isActive: true },
+  { minStudents: 21, maxStudents: 30, pricePerStudentCents: 80000, currency: 'EUR', isActive: true },
+  { minStudents: 31, maxStudents: null, pricePerStudentCents: 70000, currency: 'EUR', isActive: true },
 ];
 
 describe('seatPricing (aperçu client, jamais l’autorité)', () => {

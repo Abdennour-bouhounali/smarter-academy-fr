@@ -28,8 +28,8 @@ describe('deriveSubscriptionState', () => {
 });
 
 describe('informationalPrice', () => {
-  it('convertit les centimes en dinars, ou rien pour le gratuit', () => {
-    expect(informationalPrice({ amountCents: 600000, currency: 'DZD', billingInterval: 'year' })).toEqual({ amount: 6000, currency: 'DZD', interval: 'year' });
+  it('convertit les centimes en euros, ou rien pour le gratuit', () => {
+    expect(informationalPrice({ amountCents: 3500, currency: 'EUR', billingInterval: 'year' })).toEqual({ amount: 35, currency: 'EUR', interval: 'year' });
     expect(informationalPrice({ amountCents: 0 })).toBeNull();
     expect(informationalPrice(null)).toBeNull();
   });

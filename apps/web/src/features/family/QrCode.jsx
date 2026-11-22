@@ -1,7 +1,7 @@
 import qrcode from 'qrcode-generator';
 
 /**
- * Le QR du « رابط الوليّ » (PARENT_SPACE.md §2) — dessiné en SVG par React à
+ * Le QR du « lien parent » (PARENT_SPACE.md §2) — dessiné en SVG par React à
  * partir de la matrice de qrcode-generator (aucun innerHTML, aucune image).
  * Correction d'erreur « M » : il se lit encore imprimé sur une feuille froissée.
  *

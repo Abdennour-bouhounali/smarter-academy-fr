@@ -3,12 +3,12 @@ import { Apple, Heart, Monitor, Router, ShieldCheck, Smartphone } from 'lucide-r
 
 /**
  * Les adresses à autoriser quand le parent restreint le navigateur à la
- * plateforme. `smarter-academy.com` porte le site ET l'API (/api/v1) ; les
+ * plateforme. `smarter-academy.fr` porte le site ET l'API (/api/v1) ; les
  * polices viennent de Google Fonts (index.html) ; Google seulement pour la
  * connexion Google. À tenir à jour si un domaine est ajouté (PARENT_SPACE.md §6).
  */
 const ALLOWED_HOSTS = [
-  { host: 'smarter-academy.com', key: 'allowMain' },
+  { host: 'smarter-academy.fr', key: 'allowMain' },
   { host: 'fonts.googleapis.com, fonts.gstatic.com', key: 'allowFonts' },
   { host: 'accounts.google.com', key: 'allowGoogle' },
 ];
@@ -24,7 +24,7 @@ const DEVICES = [
 ];
 
 /**
- * « اجعل الجهاز للدراسة فقط » — le guide de verrouillage de l'APPAREIL
+ * « Réserver l’appareil aux devoirs » — le guide de verrouillage de l'APPAREIL
  * (PARENT_SPACE.md §6). Une page web ne peut pas empêcher un autre onglet :
  * la protection réelle se règle dans le système (Family Safety, Family Link,
  * Screen Time, DNS familial). Aucun lien sortant : les adresses sont du texte

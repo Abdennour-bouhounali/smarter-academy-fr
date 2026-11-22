@@ -11,12 +11,12 @@ import { TeacherPage, Loading, ErrorBox, btnPrimary } from './teacherUi';
 const MadarTab = lazy(() => import('../../features/teacher/madar/MadarTab'));
 
 /**
- * « فضاء الألعاب » côté ENSEIGNANT (/enseignant/jeux) : un seul endroit pour
+ * « Espace jeux » côté ENSEIGNANT (/enseignant/jeux) : un seul endroit pour
  * gérer les trois jeux de ses classes — choisir la classe, puis ouvrir ou
  * fermer chaque jeu, régler cœurs, limite, leçons et délais, suivre la
- * semaine (classement, approvisionnement, « تستحق نظرة »), donner ou retirer
+ * semaine (classement, approvisionnement, « À regarder »), donner ou retirer
  * des cœurs, afficher le classement au tableau. Le même panneau existe dans
- * l'onglet « فضاء الألعاب » de chaque classe.
+ * l'onglet « Espace jeux » de chaque classe.
  */
 export default function TeacherGamesPage() {
   const { t } = useTranslation('madar');

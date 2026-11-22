@@ -18,16 +18,16 @@ import MathLabel from '../../../lessons/common/components/MathLabel';
 const ALL = '*';
 
 /**
- * « الكفاءات » — la CARTE d'apprentissage de la classe.
+ * « Savoir-faire » — la CARTE d'apprentissage de la classe.
  *
- * Par défaut « كل الدروس » : tous les points du périmètre, groupés par leçon
+ * Par défaut « Toutes les leçons » : tous les points du périmètre, groupés par leçon
  * (une seule requête). Une leçon peut être choisie parmi les leçons VISIBLES
- * du قسم (une leçon masquée n'a pas d'élèves à mesurer). Une ligne par point :
+ * de la classe (une leçon masquée n'a pas d'élèves à mesurer). Une ligne par point :
  * la barre empilée des quatre statuts, la PORTÉE d'une difficulté (un élève,
  * un groupe, toute la classe — ce qu'une moyenne cacherait), et les trois
  * puces qui disent pourquoi un statut hésite. Cliquer descend vers les
  * élèves, dans le même onglet ; `focusCode` y descend directement (depuis
- * « نظرة عامة »).
+ * « Vue d'ensemble »).
  */
 export default function LearningPointsTab({ classGroup, focusCode = null, onFocusConsumed }) {
   const { t } = useTranslation('teacher');
@@ -197,7 +197,7 @@ export default function LearningPointsTab({ classGroup, focusCode = null, onFocu
   );
 }
 
-/** A lesson on one bar: the counts of all its الكفاءات together — enough to choose which lesson to open. */
+/** A lesson on one bar: the counts of all its savoir-faire together — enough to choose which lesson to open. */
 function LessonBar({ rows }) {
   const totals = {};
   for (const lp of rows)

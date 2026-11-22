@@ -1,40 +1,41 @@
 /**
- * « بطاقة المعارف » ON THE BOARD — the lesson's knowledge card, presented to the class (owner, 2026-11-18;
- * CLASS_SESSION.md §5quinquies). The teacher's « بطاقتي », in the design of the class session, for a QUICK REVISION with
+ * « la fiche de connaissances » ON THE BOARD — the lesson's knowledge card, presented to the class (owner, 2026-11-18;
+ * CLASS_SESSION.md §5quinquies). The teacher's knowledge card, in the design of the class session, for a QUICK REVISION with
  * the whole class: one piece of knowledge per screen —
  *   its rule, large; the sentence that makes it stick;
  *   then, each only when the teacher asks: an example, the trap, what to do in the exam;
  * It is a DISPLAY: no class to choose, no student to name (owner: « it is just used for displaying in the class… keep
  * only the tools like pencil, pointer »).
- * And for the TEACHER, on every card: the earlier lessons this الكفاءة is connected with, each one tap away.
+ * And for the TEACHER, on every card: the earlier lessons this savoir-faire is connected with, each one tap away.
  * Same shell, same dock as every board screen. Nothing is graded, nothing is recorded.
  */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AlertTriangle, ArrowLeft, ArrowRight, Brain, GraduationCap, Lightbulb, Link2, X } from 'lucide-react';
+import { AlertTriangle, Brain, GraduationCap, Lightbulb, Link2, X } from 'lucide-react';
+import { ArrowBack, ArrowForward } from '../../components/common/DirectionalIcons';
 import MathText from '../../lessons/common/components/MathText';
 import { BoardTools, BoardLayers, useBoardTools } from './board';
 import { Fit } from './ExerciseBoard';
 
 const L = {
-  title: 'بطاقة المعارف',
-  sub: 'مراجعة سريعة مع القسم كلّه.',
-  of: (i, n) => `المعرفة ${i} من ${n}`,
-  example: 'مثال',
-  trap: 'انتبه',
-  exam: 'في الامتحان',
-  prev: 'السابقة',
-  next: 'المعرفة التالية',
-  done: 'أنهينا المراجعة',
-  pick: 'أختار قارئًا',
-  me: 'أقرأها أنا',
-  reads: 'يقرأ',
-  who: 'من يقرأ؟',
-  pickTitle: 'من يقرأ؟ اضغط طاولته.',
-  exit: 'خروج',
-  linked: 'دروس سابقة مرتبطة',
-  open: 'افتح الدرس',
-  soon: 'قيد الإعداد',
+  title: 'Fiche de connaissances',
+  sub: 'Une révision rapide avec toute la classe.',
+  of: (i, n) => `Connaissance ${i} sur ${n}`,
+  example: 'Exemple',
+  trap: 'Attention',
+  exam: 'Au brevet',
+  prev: 'Précédente',
+  next: 'Connaissance suivante',
+  done: 'Révision terminée',
+  pick: 'Choisir un lecteur',
+  me: 'Je la lis moi-même',
+  reads: 'Lecture par',
+  who: 'Qui lit\u202f?',
+  pickTitle: 'Qui lit\u202f? Cliquez sur sa table.',
+  exit: 'Quitter',
+  linked: 'Leçons précédentes liées',
+  open: 'Ouvrir la leçon',
+  soon: 'en préparation',
 };
 const MORE = [
   ['example', L.example, Lightbulb],
@@ -61,11 +62,11 @@ export default function KnowledgeBoard({ cards, links, onExit, fullscreen = null
   useEffect(() => {
     const onKey = (e) => {
       if (tools.busy) return;
-      if (e.key === 'ArrowLeft' || e.key === 'PageDown') {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
         e.preventDefault();
         go(1);
       }
-      if (e.key === 'ArrowRight' || e.key === 'PageUp') {
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
         e.preventDefault();
         go(-1);
       }
@@ -86,7 +87,7 @@ export default function KnowledgeBoard({ cards, links, onExit, fullscreen = null
             <small>{L.sub}</small>
           </div>
         </div>
-        <span className="cs-dots cs-dots--rail" dir="rtl" aria-label={L.of(i + 1, cards.length)}>
+        <span className="cs-dots cs-dots--rail" aria-label={L.of(i + 1, cards.length)}>
           {cards.map((c, k) => (
             <button
               key={c.id}
@@ -152,11 +153,11 @@ export default function KnowledgeBoard({ cards, links, onExit, fullscreen = null
                 {links.map((l) =>
                   l.path ? (
                     <Link key={l.code} to={l.path} title={l.what ?? ''} data-cs-card-link={l.code}>
-                      {l.via}: <strong>{l.title}</strong> · {l.grade} <ArrowLeft size={16} />
+                      {l.via} : <strong>{l.title}</strong> · {l.grade} <ArrowForward size={16} />
                     </Link>
                   ) : (
                     <span key={l.code} data-cs-card-link={l.code}>
-                      {l.via}: <strong>{l.title}</strong> · {l.grade} · {L.soon}
+                      {l.via} : <strong>{l.title}</strong> · {l.grade} · {L.soon}
                     </span>
                   ),
                 )}
@@ -168,7 +169,7 @@ export default function KnowledgeBoard({ cards, links, onExit, fullscreen = null
 
       <footer className="cs-lesson__foot">
         <button type="button" className="cs-btn" onClick={() => go(-1)} disabled={i === 0} data-cs-card-prev>
-          <ArrowRight size={18} /> {L.prev}
+          <ArrowBack size={18} /> {L.prev}
         </button>
         <span className="cs-lesson__mid" />
         <button
@@ -177,7 +178,7 @@ export default function KnowledgeBoard({ cards, links, onExit, fullscreen = null
           onClick={() => go(1)}
           data-cs-card-next={last ? 'done' : 'next'}
         >
-          {last ? L.done : L.next} <ArrowLeft size={20} />
+          {last ? L.done : L.next} <ArrowForward size={20} />
         </button>
       </footer>
       <BoardLayers tools={tools} />

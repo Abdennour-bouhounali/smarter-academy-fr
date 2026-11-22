@@ -16,7 +16,7 @@ const BAND_TONE = {
 };
 
 /**
- * « مختبر التفكير » côté enseignant — la liste de tous les défis, avec leur tranche (cachée aux
+ * « Le labo des énigmes » côté enseignant — la liste de tous les défis, avec leur tranche (cachée aux
  * élèves) et leur famille. Lecture seule : rien n'est écrit (THINKING_LAB.md §8bis).
  */
 export default function TeacherThinkingListPage() {

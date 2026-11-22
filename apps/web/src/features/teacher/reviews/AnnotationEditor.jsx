@@ -7,9 +7,9 @@ const RED = '#dc2626';
 const WIDTHS = [3, 6, 10];
 
 /**
- * « صحّح على الصورة » — le stylo rouge de l'enseignant sur la photo de copie
+ * « Corriger sur la photo » — le stylo rouge de l'enseignant sur la photo de copie
  * (décision du propriétaire, 2026-10-06). La photo est dessinée sur un canevas
- * à sa taille réelle, les traits par-dessus ; « احفظ » compose une NOUVELLE
+ * à sa taille réelle, les traits par-dessus ; « Enregistrer » compose une NOUVELLE
  * image (JPEG) envoyée à part : l'original de l'élève ne change jamais.
  * Part de la version déjà annotée s'il y en a une.
  *

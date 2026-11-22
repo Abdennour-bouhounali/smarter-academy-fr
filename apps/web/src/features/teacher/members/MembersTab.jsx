@@ -10,12 +10,13 @@ import { useTableLabels, formatDate, btnSecondary, Loading, ErrorBox } from '../
 import CredentialsDialog from './CredentialsDialog';
 import { studentName } from '../insights/insights';
 import { usePayments } from '../../../context/PaymentsContext';
+import { LOCALE } from '../../../locale.js';
 
-// « بطاقات الأولياء » : paresseux — il tire qrcode-generator et le namespace `family` (PARENT_SPACE.md §2bis).
+// « Cartes pour les parents » : paresseux — il tire qrcode-generator et le namespace `family` (PARENT_SPACE.md §2bis).
 const ParentCardsDialog = lazy(() => import('./ParentCardsDialog'));
 
 /**
- * « التلاميذ »: who is in the class and where each one is. ONE line of filters (all · started · not started yet) answers
+ * « Élèves »: who is in the class and where each one is. ONE line of filters (all · started · not started yet) answers
  * « who has not begun? » without reading 35 rows; the row's actions are two quiet icons (the notebook, take out of the
  * class). The seats line shows only when the plan is nearly full. The login cards and the parents' cards open from the
  * top line.
@@ -76,7 +77,7 @@ export default function MembersTab({ classGroup, entitlements, onChanged, onInvi
   const all = students ?? [];
   const groups = { all, active: all.filter((st) => st.lastActivityAt), idle: all.filter((st) => !st.lastActivityAt) };
   const needle = query.trim().toLowerCase();
-  const byName = (a, b) => fullName(a).localeCompare(fullName(b), 'ar');
+  const byName = (a, b) => fullName(a).localeCompare(fullName(b), LOCALE);
   const rows = groups[filter]
     .filter((st) => !needle || fullName(st).toLowerCase().includes(needle))
     .sort(SORTS[sortBy] ?? byName);

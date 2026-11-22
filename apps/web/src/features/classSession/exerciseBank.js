@@ -1,5 +1,5 @@
 /**
- * « بنك التمارين » as a TEACHER uses it (owner, 2026-11-18: the practice space of the teacher, rebuilt; CLASS_SESSION.md
+ * « la banque d’exercices » as a TEACHER uses it (owner, 2026-11-18: the practice space of the teacher, rebuilt; CLASS_SESSION.md
  * §5quater). A teacher does not « start a level » like a student: he READS the bank (statement, questions, the key), he
  * SHOWS an exercise on the board of his class, he BUILDS a sheet to print. Pure helpers; nothing is recorded anywhere.
  */
@@ -31,7 +31,7 @@ export function summaryOf(exercise) {
   };
 }
 
-const LETTERS = ['أ', 'ب', 'ج', 'د', 'هـ', 'و'];
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 /** The choices of a question as the board writes them: a letter, the text, and whether it is the right one. */
 export const choicesOf = (question) =>
   (question.choices ?? []).map((c, i) => ({
@@ -48,7 +48,7 @@ export const choicesOf = (question) =>
 export function keyOf(question) {
   const right = choicesOf(question).filter((c) => c.right);
   const answer = right.length
-    ? right.map((c) => `${c.letter}) ${c.content}`).join(' ؛ ')
+    ? right.map((c) => `${c.letter}) ${c.content}`).join('\u202f; ')
     : expectedAnswerText(question);
   // for a choice the « result » of the solution only repeats the right choice: the answer already says it
   return {
@@ -73,8 +73,6 @@ export function sheetTotals(exercises) {
 /** Add or remove an exercise of the sheet; the order is the order the teacher chose them in. */
 export const toggleRef = (sheet, ref) => (sheet.includes(ref) ? sheet.filter((x) => x !== ref) : [...sheet, ref]);
 
-/** « تمرين واحد », « تمرينان », « 3 تمارين », « 11 تمرينًا » — and the same for questions. */
-export const exercisesWord = (n) =>
-  n === 1 ? 'تمرين واحد' : n === 2 ? 'تمرينان' : n <= 10 ? `${n} تمارين` : `${n} تمرينًا`;
-export const questionsWord = (n) =>
-  n === 1 ? 'سؤال واحد' : n === 2 ? 'سؤالان' : n <= 10 ? `${n} أسئلة` : `${n} سؤالًا`;
+/** « 1 exercice », « 3 exercices » — and the same for questions; the count never leaves its noun (U+00A0). */
+export const exercisesWord = (n) => `${n}\u00a0${n <= 1 ? 'exercice' : 'exercices'}`;
+export const questionsWord = (n) => `${n}\u00a0${n <= 1 ? 'question' : 'questions'}`;

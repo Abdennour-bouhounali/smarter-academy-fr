@@ -10,14 +10,15 @@ import WeekReport from '../../features/family/WeekReport';
 import WeekNav from '../../features/family/WeekNav';
 import ProgressDetail from '../../features/family/ProgressDetail';
 import ReportTabs, { tabFrom } from '../../features/family/ReportTabs';
+import { gradeName } from '../../features/family/gradeName';
 
 /**
  * Un enfant, côté parent (PARENT_SPACE.md §4–§4bis) : deux onglets — la
- * semaine (WeekReport, 8 semaines en arrière) et « التقدّم بالتفصيل »
+ * semaine (WeekReport, 8 semaines en arrière) et « La progression en détail »
  * (ProgressDetail, l'année leçon par leçon) — puis le courriel du dimanche et
  * la rupture du lien. Les mêmes composants que l'élève lit. Pensé d'abord pour
  * le téléphone (le parent arrive souvent du courriel). Un lien inactif →
- * 404 serveur → retour à « أبنائي ».
+ * 404 serveur → retour à « Mes enfants ».
  */
 export default function ParentChildReport() {
   const { t } = useTranslation('family');
@@ -78,7 +79,7 @@ export default function ParentChildReport() {
       <header className="space-y-4">
         <div>
           <h1 className="font-space text-xl font-bold text-slate-900 sm:text-2xl">{name || '…'}</h1>
-          {child?.grade && <p className="font-inter text-sm text-slate-500">{t(`grades.${child.grade}`)}</p>}
+          {child?.grade && <p className="font-inter text-sm text-slate-500">{gradeName(child.grade)}</p>}
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <ReportTabs tab={tab} onChange={setTab} />

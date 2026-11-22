@@ -4,9 +4,9 @@ import '../teacher/members/credentials.css';
 
 /**
  * Les cartes de connexion émises par la DIRECTION (import, réédition) — même
- * papier et même feuille d'impression que « بطاقات الدخول » de l'enseignant
+ * papier et même feuille d'impression que « Cartes de connexion » de l'enseignant
  * (credentials.css : à l'écran dans la boîte, seules sur papier). Un compte
- * d'établissement entre par son « معرّف الدخول », jamais par une adresse.
+ * d'établissement entre par son « identifiant », jamais par une adresse.
  */
 function Cards({ cards, classroomName, t }) {
   const loginUrl = `${window.location.host}/login`;
@@ -37,7 +37,7 @@ export default function SchoolCredentialCards({ cards, classroomName = null }) {
     <>
       <Cards cards={cards} classroomName={classroomName} t={t} />
       {createPortal(
-        <div data-credentials-print dir="rtl">
+        <div data-credentials-print>
           <Cards cards={cards} classroomName={classroomName} t={t} />
         </div>,
         document.body,

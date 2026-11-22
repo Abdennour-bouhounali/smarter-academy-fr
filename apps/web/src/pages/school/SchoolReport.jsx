@@ -11,14 +11,15 @@ import ReportView from '../../features/school/reports/ReportView';
 import { reportRows, toCsv } from '../../features/school/reports/reportCsv';
 import { btnPrimary, btnSecondary, errorText } from '../../features/school/ui';
 import '../../features/school/reports/reportPrint.css';
+import { LOCALE } from '../../locale.js';
 
-const dateFmt = (iso) => new Date(iso).toLocaleDateString('ar-DZ', { dateStyle: 'long', numberingSystem: 'latn' });
+const dateFmt = (iso) => new Date(iso).toLocaleDateString(LOCALE, { dateStyle: 'long', numberingSystem: 'latn' });
 
 /**
  * Un rapport FIGÉ (SCHOOL_ADMIN_SPACE.md §7, phase 5) : l'en-tête (établissement,
  * rapport, trimestre, date), le corps (ReportView), et trois sorties —
  * l'impression A4 (`[data-school-print]`, reportPrint.css), le CSV (construit ici
- * depuis la même charge utile) et « وضع الاجتماع » (projection).
+ * depuis la même charge utile) et « Mode réunion » (projection).
  */
 export default function SchoolReport() {
   const { t } = useTranslation('idara');

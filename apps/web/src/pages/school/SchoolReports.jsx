@@ -10,13 +10,14 @@ import {
   deleteReport, fetchLearningMap, fetchReports, fetchSchoolClassrooms, fetchSchoolStudents, fetchTerms, generateReport,
 } from '../../services/schoolService';
 import { btnDanger, btnPrimary, btnSecondary, card, errorText, field, fieldLabel, personName } from '../../features/school/ui';
+import { LOCALE } from '../../locale.js';
 
 const TYPES = ['class', 'grade', 'student', 'school_term', 'teachers'];
 // Le type → ce qu'il faut choisir pour le générer.
 const SCOPE_OF = { class: 'class', grade: 'grade', student: 'student' };
 
 /**
- * « التقارير » (SCHOOL_ADMIN_SPACE.md §7, phase 5) : le catalogue (type, portée,
+ * « Rapports » (SCHOOL_ADMIN_SPACE.md §7, phase 5) : le catalogue (type, portée,
  * trimestre → un rapport FIGÉ) et la liste des rapports enregistrés.
  */
 export default function SchoolReports() {
@@ -134,7 +135,7 @@ export default function SchoolReports() {
                 <p className="font-inter font-semibold text-slate-900">{t(`reports.types.${r.type}`)} — {r.title}</p>
                 <p className="font-inter text-xs text-slate-500">
                   {r.term ? `${t('reports.termLabel', { term: r.term.term, year: r.term.academicYear })} · ` : ''}
-                  {t('reports.generatedAt')} {new Date(r.generatedAt).toLocaleString('ar-DZ', { dateStyle: 'medium', timeStyle: 'short', numberingSystem: 'latn' })}
+                  {t('reports.generatedAt')} {new Date(r.generatedAt).toLocaleString(LOCALE, { dateStyle: 'medium', timeStyle: 'short', numberingSystem: 'latn' })}
                 </p>
               </div>
               <Link to={`/idara/taqarir/${r.id}`} className={btnSecondary}>{t('reports.open')}</Link>

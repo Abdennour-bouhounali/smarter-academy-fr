@@ -14,12 +14,12 @@ import {
   toRecord,
 } from './session';
 
-const kids = (n) => Array.from({ length: n }, (_, i) => ({ id: 100 + i, name: `تلميذ ${i + 1}` }));
+const kids = (n) => Array.from({ length: n }, (_, i) => ({ id: 100 + i, name: `Élève ${i + 1}` }));
 const S = kids(14);
 const seating = defaultSeating(S, 5); // three rows: 5, 5, 4
 const order = turnOrder(seating, S);
 
-describe('حصّة القسم — the seating, the turn and the teams', () => {
+describe('séance en classe — the seating, the turn and the teams', () => {
   it('seats a class nobody has placed yet, row by row, and the turn follows the seats', () => {
     expect(seating.seats).toHaveLength(14);
     expect(seating.seats[5]).toEqual({ student: 105, r: 1, c: 0 });
@@ -30,42 +30,42 @@ describe('حصّة القسم — the seating, the turn and the teams', () => {
     expect(turnOrder(null, S)).toHaveLength(14);
   });
 
-  it('makes one team per « صفّ » — the VERTICAL line of desks — under the names of scholars', () => {
+  it('makes one team per « rangée » — the VERTICAL line of desks — under the names of mathematicians', () => {
     const teams = teamsOf(seating, S); // 14 students, 5 lines: 3, 3, 3, 3, 2
     expect(teams.map((t) => [t.name, t.members.length])).toEqual([
-      ['الخوارزمي', 3],
-      ['ابن الهيثم', 3],
-      ['الكاشي', 3],
-      ['عمر الخيّام', 3],
-      ['البيروني', 2],
+      ['Thalès', 3],
+      ['Hypatie', 3],
+      ['Euclide', 3],
+      ['Sophie Germain', 3],
+      ['Al-Khwârizmî', 2],
     ]);
     expect(teams[0].members).toEqual([100, 105, 110]); // the first line, from the board to the back
     // the owner's own class: seven students on four lines make four teams of 2, 2, 2 and 1
     expect(teamsOf(defaultSeating(kids(7), 4), kids(7)).map((t) => t.members.length)).toEqual([2, 2, 2, 1]);
     expect(teamsOf(defaultSeating(kids(35), 6), kids(35))).toHaveLength(6);
     expect(new Set(teamsOf(defaultSeating(kids(48), 12), kids(48)).map((t) => t.name)).size).toBe(12);
-    expect(teamOfStudent(teams, 107).name).toBe('الكاشي');
+    expect(teamOfStudent(teams, 107).name).toBe('Euclide');
     expect(teamOfStudent(teams, 999)).toBe(null);
-    expect(teamsOf({ ...seating, teamNames: { 'line-1': 'النجوم' } }, S)[1].name).toBe('النجوم'); // a teacher may rename a team
+    expect(teamsOf({ ...seating, teamNames: { 'line-1': 'Les étoiles' } }, S)[1].name).toBe('Les étoiles'); // a teacher may rename a team
     expect(SCHOLARS.length).toBeGreaterThanOrEqual(12);
   });
 
   it('lets the teacher make any number of teams of his own', () => {
     const five = {
       ...seating,
-      teams: ['a', 'b', 'c', 'd', 'e'].map((id) => ({ id, name: `فريق ${id}` })),
+      teams: ['a', 'b', 'c', 'd', 'e'].map((id) => ({ id, name: `Équipe ${id}` })),
       seats: seating.seats.map((s, i) => ({ ...s, team: 'abcde'[i % 5] })),
     };
     const teams = teamsOf(five, S);
     expect(teams).toHaveLength(5);
     expect(teams.map((t) => t.members.length)).toEqual([3, 3, 3, 3, 2]);
-    expect(teams[0].name).toBe('فريق a');
-    const empty = { ...five, teams: [...five.teams, { id: 'z', name: 'فارغ' }] };
+    expect(teams[0].name).toBe('Équipe a');
+    const empty = { ...five, teams: [...five.teams, { id: 'z', name: 'Vide' }] };
     expect(teamsOf(empty, S)).toHaveLength(5); // a team with nobody in it does not play
   });
 });
 
-describe('حصّة القسم — who answers next', () => {
+describe('séance en classe — who answers next', () => {
   const ans = (student, correct = true) => ({ student, question: 'q', correct });
   it('by place: the next present student, and it wraps', () => {
     expect(nextStudent({ order })).toBe(100);
@@ -97,7 +97,7 @@ describe('حصّة القسم — who answers next', () => {
   });
 });
 
-describe('حصّة القسم — the answer and the sentence that meets it', () => {
+describe('séance en classe — the answer and the sentence that meets it', () => {
   it('grades the three kinds of question', () => {
     expect(gradeAnswer({ kind: 'choice', answer: 2 }, 2)).toBe(true);
     expect(gradeAnswer({ kind: 'choice', answer: 2 }, 0)).toBe(false);
@@ -107,50 +107,51 @@ describe('حصّة القسم — the answer and the sentence that meets it', ()
     expect(gradeAnswer({ kind: 'number', answer: 2.5 }, '2,5')).toBe(true);
     expect(gradeAnswer({ kind: 'number', answer: 7 }, '')).toBe(false);
   });
-  it('always says the name, never « خطأ » as a verdict, and agrees with the student', () => {
-    expect(praise(true, 'عمر')).toBe('أحسنت يا عمر، بارك الله فيك!');
-    expect(praise(false, 'عمر', { gender: 'm' })).toBe(
-      'لا تقلق يا عمر، الكلّ يرتكب الأخطاء، لكنّ قليلًا فقط من يستدركون خطأهم.',
+  it('always says the name, never « faux » as a verdict, and agrees with the student', () => {
+    expect(praise(true, 'Lucas')).toBe('Bien vu, Lucas.');
+    expect(praise(false, 'Lucas', { gender: 'm' })).toBe(
+      'Ne sois pas déçu, Lucas\u00a0: tout le monde se trompe, et c’est en reprenant son erreur qu’on progresse.',
     );
-    expect(praise(false, 'مريم', { gender: 'f' })).toContain('لا تقلقي يا مريم');
-    expect(praise(false, 'سلمى')).toContain('لا بأس يا سلمى'); // gender unknown: a sentence that fits everyone
+    expect(praise(false, 'Inès', { gender: 'f' })).toContain('Ne sois pas déçue, Inès');
+    expect(praise(false, 'Camille')).toContain('Pas grave, Camille'); // gender unknown: a sentence that fits everyone
     for (let n = 0; n < 6; n += 1)
       for (const g of ['m', 'f', null])
         for (const ok of [true, false]) {
-          const t = praise(ok, 'ياسين', { gender: g, n });
-          expect(t).toContain('ياسين');
-          expect(t).not.toMatch(/خاطئ|غلط|undefined/);
-          if (!ok) expect(t).not.toContain('خطأ!');
+          const t = praise(ok, 'Yanis', { gender: g, n });
+          expect(t).toContain('Yanis');
+          expect(t).not.toMatch(/\bfaux\b|\bnul\b|undefined/i);
+          expect(t).not.toMatch(/[\u0600-\u06FF]/); // no Arabic, and no religious formula
+          if (!ok) expect(t).not.toContain('erreur\u202f!');
         }
-    expect([callName({ name: 'عمر بن علي' }), callName({ firstName: 'مريم', name: 'x y' }), callName({})]).toEqual([
-      'عمر',
-      'مريم',
+    expect([callName({ name: 'Léa Martin' }), callName({ firstName: 'Inès', name: 'x y' }), callName({})]).toEqual([
+      'Léa',
+      'Inès',
       '',
     ]);
   });
 });
 
-describe('حصّة القسم — the result and the podium', () => {
+describe('séance en classe — the result and the podium', () => {
   const teams = teamsOf(seating, S);
   const questions = [
-    { id: 'q1', item: '1am.m3.r01', itemLabel: 'القسمة الإقليدية' },
+    { id: 'q1', item: '1am.m3.r01', itemLabel: 'La division euclidienne' },
     { id: 'q2', item: '1am.m3.r01' },
-    { id: 'q3', item: '1am.m3.r02', itemLabel: 'قواعد قابلية القسمة' },
+    { id: 'q3', item: '1am.m3.r02', itemLabel: 'Les critères de divisibilité' },
     { id: 'q4', item: '1am.m3.r02' },
     { id: 'q5', item: '1am.m3.r02' },
     { id: 'q6', item: '4am.m1.r01' },
   ];
   const answers = [
     { question: 'q1', student: 100, correct: true },
-    { question: 'q2', student: 105, correct: true }, // line 1 (الخوارزمي): 2 / 2
+    { question: 'q2', student: 105, correct: true }, // line 1 (Thalès): 2 / 2
     { question: 'q3', student: 101, correct: false },
-    { question: 'q4', student: 106, correct: true }, // line 2 (ابن الهيثم): 1 / 2
+    { question: 'q4', student: 106, correct: true }, // line 2 (Hypatie): 1 / 2
     { question: 'q5', student: 102, correct: false },
-    { question: 'q6', student: 107, correct: false }, // line 3 (الكاشي): 0 / 2
+    { question: 'q6', student: 107, correct: false }, // line 3 (Euclide): 0 / 2
   ];
   const sum = summarise({ questions, answers, teams });
 
-  it('tells what the class holds and which الكفاءات to revise, the weakest first', () => {
+  it('tells what the class holds and which savoir-faire to revise, the weakest first', () => {
     expect([sum.right, sum.total, sum.percent]).toEqual([3, 6, 50]);
     expect(sum.items.map((x) => [x.item, x.right, x.total, x.revise])).toEqual([
       ['1am.m3.r01', 2, 2, false],
@@ -164,15 +165,15 @@ describe('حصّة القسم — the result and the podium', () => {
 
   it('ranks the teams, puts the first in the middle, and never shows a team that has nothing right', () => {
     expect(sum.teams.map((t) => [t.name, t.right, t.total])).toEqual([
-      ['الخوارزمي', 2, 2],
-      ['ابن الهيثم', 1, 2],
-      ['الكاشي', 0, 2],
+      ['Thalès', 2, 2],
+      ['Hypatie', 1, 2],
+      ['Euclide', 0, 2],
     ]);
     const p = podium(sum.teams);
     expect(p.map((s) => [s.place, s.teams.map((t) => t.name)])).toEqual([
-      [2, ['ابن الهيثم']],
-      [1, ['الخوارزمي']],
-    ]); // third step empty: الكاشي got nothing right, and is simply not shown
+      [2, ['Hypatie']],
+      [1, ['Thalès']],
+    ]); // third step empty: Euclide got nothing right, and is simply not shown
     const tie = podium([
       { name: 'a', right: 2, rate: 1 },
       { name: 'b', right: 2, rate: 1 },
@@ -217,7 +218,7 @@ describe('حصّة القسم — the result and the podium', () => {
   });
 });
 
-describe('حصّة القسم — editing the seating map', () => {
+describe('séance en classe — editing the seating map', () => {
   it('moves a student to another desk: a swap, or an empty desk taken', async () => {
     const { moveSeat, reflow, rowCount } = await import('./session');
     const swapped = moveSeat(seating, 100, 1, 0); // desk of 105
@@ -245,7 +246,7 @@ describe('حصّة القسم — editing the seating map', () => {
     const moved = nextTeam(seven, 100);
     expect(teamOfStudent(teamsOf(moved, S), 100).id).toBe('t2');
     expect(teamsOf(moved, S)[0].members).toEqual([107]);
-    expect(teamsOf(renameTeam(seven, 't3', 'النسور'), S)[2].name).toBe('النسور');
+    expect(teamsOf(renameTeam(seven, 't3', 'Les aigles'), S)[2].name).toBe('Les aigles');
     expect(customTeams(seating, S, 1).teams).toHaveLength(2);
     expect(customTeams(seating, S, 99).teams).toHaveLength(12);
     const back = lineTeams(seven);
@@ -253,7 +254,7 @@ describe('حصّة القسم — editing the seating map', () => {
     expect(teamsOf(back, S)).toHaveLength(5);
     expect(back.seats.every((s) => !('team' in s))).toBe(true);
     expect(nextTeam(seating, 100)).toBe(seating); // no own teams: nothing to change
-    expect(teamsOf(renameTeam(seating, 'line-0', 'الأوائل'), S)[0].name).toBe('الأوائل');
+    expect(teamsOf(renameTeam(seating, 'line-0', 'Les premiers'), S)[0].name).toBe('Les premiers');
   });
 
   it('never guesses a gender from a name: unknown, then boy, then girl, then unknown again', async () => {
@@ -265,10 +266,10 @@ describe('حصّة القسم — editing the seating map', () => {
   });
 });
 
-describe('حصّة القسم — a saved map and a roster that changed', () => {
+describe('séance en classe — a saved map and a roster that changed', () => {
   it('keeps the desks of those who stayed, drops those who left, seats the new ones after the last row', async () => {
     const { seatEveryone } = await import('./session');
-    const now = [...S.slice(2), { id: 900, name: 'جديد' }, { id: 901, name: 'جديدة' }]; // two left, two arrived
+    const now = [...S.slice(2), { id: 900, name: 'Nouveau' }, { id: 901, name: 'Nouvelle' }]; // two left, two arrived
     const map = seatEveryone({ ...seating, genders: { 105: 'f' } }, now);
     expect(map.seats).toHaveLength(14);
     expect(map.seats.some((s) => s.student === 100)).toBe(false);

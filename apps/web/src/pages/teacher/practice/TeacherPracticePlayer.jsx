@@ -50,10 +50,10 @@ const { feedbackFor, isInertOutcome } = practice;
 // Les MÊMES boutons que le lecteur de l'élève (PracticeSession).
 const PRIMARY_BUTTON =
   'inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-nav-accent px-6 py-3 text-base font-bold text-white shadow-sm transition-colors hover:bg-[#3350c4] focus:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none motion-reduce:transition-none';
-// Tertiaire : texte + icône, sans fond — « السؤال السابق »، « التمرين السابق ».
+// Tertiaire : texte + icône, sans fond — « Question précédente », « Exercice précédent ».
 const TERTIARY_BUTTON =
   'inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-lg px-3 text-sm font-bold text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 motion-reduce:transition-none';
-// Feuille d'examen : le petit « تحقّق » discret, comme côté élève.
+// Feuille d'examen : le petit « Vérifier » discret, comme côté élève.
 const EXAM_CHECK_BUTTON =
   'inline-flex min-h-[40px] items-center justify-center gap-1.5 rounded-md border-[1.5px] border-[#1f5c4c] bg-white px-3.5 py-1.5 text-sm font-bold text-[#1f5c4c] transition-colors hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400 motion-reduce:transition-none';
 const EXAM_NAV_BUTTON =
@@ -69,14 +69,14 @@ const SECONDARY_BUTTON =
  * mêmes boutons, même mode classe), SANS AUCUN SUIVI : vérification locale
  * (teacherBank.checkLocally), indices tirés du contenu, réponse attendue
  * dévoilable. La colonne latérale, qui porte chez l'élève son point
- * d'apprentissage, porte ici « إجابات تلاميذي » : qui, parmi SES élèves, a
+ * d'apprentissage, porte ici « Les réponses de mes élèves » : qui, parmi SES élèves, a
  * fait cet exercice, et ce que chacun a répondu.
  */
 export default function TeacherPracticePlayer() {
   const { t } = useTranslation('teacher');
   const { t: ts } = useTranslation('student');
   const { lessonCode, level, exerciseId } = useParams();
-  // « إجابات تلاميذي » se replie : l'exercice prend toute la largeur.
+  // « Les réponses de mes élèves » se replie : l'exercice prend toute la largeur.
   const [sideHidden, toggleSide] = useSideColumn();
   const [exercise, setExercise] = useState(undefined);
   const [index, setIndex] = useState(0);
@@ -89,13 +89,13 @@ export default function TeacherPracticePlayer() {
   const { enabled: soundOn } = useEffectsPreference();
   const [stepStartedAt, setStepStartedAt] = useState(null);
   const [evaluation, setEvaluation] = useState(null);
-  // Corrigé type ouvert pour cette question : plus de « أعِد المحاولة » (propriétaire, 2026-10-08).
+  // Corrigé type ouvert pour cette question : plus de « Réessayer » (propriétaire, 2026-10-08).
   const [solutionSeenFor, setSolutionSeenFor] = useState(null);
   const [hintCount, setHintCount] = useState(0);
   const [showExpected, setShowExpected] = useState(false);
   // L'issue de chaque question déjà vérifiée — pour les pastilles de SessionProgress.
   const [tones, setTones] = useState([]);
-  // Feuille d'examen (BEM) : les étapes déjà faites restent affichées, avec
+  // Feuille d'examen (brevet) : les étapes déjà faites restent affichées, avec
   // la réponse essayée — le même historique que le lecteur élève.
   const [history, setHistory] = useState([]);
 
@@ -173,8 +173,8 @@ export default function TeacherPracticePlayer() {
   const tags = exercise.metadata?.tags ?? [];
   const nextClass = answered ? `${PRIMARY_BUTTON} min-w-[10rem]` : SECONDARY_BUTTON;
 
-  // Feuille d'examen (pratique BEM, 2026-10-06) : même présentation que
-  // l'élève — en-tête « التمرين …:(… ن) », étapes révélées une à une.
+  // Feuille d'examen (pratique du brevet, 2026-10-06) : même présentation que
+  // l'élève — en-tête « Exercice … (… points) », étapes révélées une à une.
   const isExam = isExamExercise(exercise);
   const isSelfCheck = question.answerType === 'selfCheck';
   const size = answerSize(question);
@@ -184,7 +184,7 @@ export default function TeacherPracticePlayer() {
     !(isSelfCheck && !answer.text) &&
     !(isExam && question.work === 'required' && workLength(work) < MIN_WORK_CHARS);
   // Une VRAIE tentative : une réponse vérifiée et lisible, ou une démonstration enregistrée.
-  // (Prototype BEM : seulement sur une feuille d'examen ; les autres leçons gardent le bouton libre.)
+  // (Prototype brevet : seulement sur une feuille d'examen ; les autres leçons gardent le bouton libre.)
   const triedForReal = !isExam || (answered && (selfPending || !isInertOutcome(evaluation.outcome)));
   const selfMark = (mark) => {
     if (!answer?.text) return;
@@ -198,7 +198,7 @@ export default function TeacherPracticePlayer() {
       return next;
     });
   };
-  // « السؤال السابق » : l'enseignant revient à l'étape précédente (rien n'est
+  // « Question précédente » : l'enseignant revient à l'étape précédente (rien n'est
   // suivi ici) — elle se rouvre vierge, les étapes suivantes se retirent.
   const goPreviousQuestion = () => {
     // Feuille d'examen : l'étape précédente reste sur la feuille, VERROUILLÉE
@@ -413,8 +413,8 @@ export default function TeacherPracticePlayer() {
       />
 
       {/* La réponse attendue, pour une question SANS corrigé type seulement : quand
-          « الحل النموذجي » existe, il porte déjà la réponse encadrée — le bouton
-          « إظهار الإجابة المنتظرة » le répétait mot pour mot (propriétaire, 2026-10-08). */}
+          « Corrigé type » existe, il porte déjà la réponse encadrée — le bouton
+          « Afficher la réponse attendue » le répétait mot pour mot (propriétaire, 2026-10-08). */}
       {expected && !question.solution?.lines?.length && (
         <ClassroomHidden>
           <div className="rounded-xl bg-slate-50 px-3.5 py-2.5 ring-1 ring-slate-200">
@@ -425,8 +425,8 @@ export default function TeacherPracticePlayer() {
             ) : (
               // La réponse attendue se MÉRITE ici aussi (propriétaire, 2026-10-06) :
               // inactive tant qu'aucune réponse n'a été saisie et vérifiée
-              // (« تحقّق من إجابتي »). Une saisie illisible ne compte pas ; une
-              // démonstration enregistrée (« بيّن أن ») compte.
+              // (« Vérifier ma réponse »). Une saisie illisible ne compte pas ; une
+              // démonstration enregistrée (« Montrer que ») compte.
               <span className="flex flex-wrap items-center gap-2">
                 <button
                   type="button"
@@ -583,7 +583,7 @@ export default function TeacherPracticePlayer() {
                         {ts('practice.meta.minutes', { count: minutes })}
                       </span>
                     ) : null}
-                    {tags.length > 0 && !isExam && <span>{tags.join(' ، ')}</span>}
+                    {tags.length > 0 && !isExam && <span>{tags.join(', ')}</span>}
                   </p>
                   <h1 className={isExam ? 'sr-only' : 'text-lg font-bold leading-snug text-slate-900 sm:text-xl'}>
                     {exerciseTitle}

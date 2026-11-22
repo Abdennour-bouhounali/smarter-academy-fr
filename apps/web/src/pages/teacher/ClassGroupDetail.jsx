@@ -23,9 +23,9 @@ import LessonsTab from '../../features/teacher/classGroupLessons/LessonsTab';
 import LearningPointsTab from '../../features/teacher/learningPoints/LearningPointsTab';
 import OverviewTab from '../../features/teacher/overview/OverviewTab';
 import InterventionsTab from '../../features/teacher/interventions/InterventionsTab';
-// « التحدّي اليومي » : lot et catalogue `challenge` chargés à l'ouverture de l'onglet.
+// « Défi du jour » : lot et catalogue `challenge` chargés à l'ouverture de l'onglet.
 const DailyChallengeTab = lazy(() => import('../../features/teacher/dailyChallenge/DailyChallengeTab'));
-// « لعبة مدار » : lot et catalogue `madar` chargés à l'ouverture de l'onglet.
+// « Espace jeux » : lot et catalogue `madar` chargés à l'ouverture de l'onglet.
 const MadarTab = lazy(() => import('../../features/teacher/madar/MadarTab'));
 import { isFeatureOn } from '../../config/features';
 import { Loading, ErrorBox, useTableLabels, btnSecondary, btnPrimary, btnDanger, input } from './teacherUi';
@@ -49,11 +49,11 @@ const sectionOf = (tab) => SECTIONS.find((section) => section.tabs.includes(tab)
 /**
  * THE PAGE OF A CLASS (owner, 2026-11-16: rebuilt « coherent, intelligent, organised, less repeated content »).
  *
- *   header   — back to « أقسامي », the class's name, ONE line of facts, « دعوة التلاميذ »;
- *   sections — five (`SECTIONS`); it opens on « نظرة عامة »: this week, what needs a look, what changed.
+ *   header   — back to « Mes classes », the class's name, ONE line of facts, « Inviter les élèves »;
+ *   sections — five (`SECTIONS`); it opens on « Vue d'ensemble »: this week, what needs a look, what changed.
  *
  * How a student gets in (the link, the code — `JoinAccessCard`) is no longer pinned above every tab: it opens from
- * « دعوة التلاميذ », by itself while the class is empty, and lives in « الإعدادات ».
+ * « Inviter les élèves », by itself while the class is empty, and lives in « Paramètres ».
  */
 export default function ClassGroupDetail() {
   const { t } = useTranslation('teacher');
@@ -342,7 +342,7 @@ export default function ClassGroupDetail() {
   );
 }
 
-/** « القسم »: how students get in, the class's name and year, and archiving — the three things set once. */
+/** « Classe »: how students get in, the class's name and year, and archiving — the three things set once. */
 function SettingsTab({ classGroup, joinCard, onSaved, onArchive }) {
   const { t } = useTranslation('teacher');
   const { token } = useContext(AuthContext);

@@ -21,14 +21,14 @@ const VISIBLE_SIGNALS = 2;
 const CARD = 'rounded-2xl border border-nav-line bg-white p-5';
 
 /**
- * « نظرة عامة » — what the teacher sees FIRST when he opens a class, on about one screen:
+ * « Vue d'ensemble » — what the teacher sees FIRST when he opens a class, on about one screen:
  *
  *   1. this week        — the lessons the calendar gives this class, and the way into each;
- *   2. the class today  — ONE bar of all its الكفاءات (counts, never an average) and what changed;
+ *   2. the class today  — ONE bar of all its savoir-faire (counts, never an average) and what changed;
  *   3. needs a look     — the two most shared signals, the rest on demand;
  *   4. engagement       — who is not active (not a proof of difficulty).
  *
- * The full map of الكفاءات is NOT repeated here: it is the section « التعلّم », one tap away. Everything comes from the
+ * The full map of savoir-faire is NOT repeated here: it is the section « Apprentissages », one tap away. Everything comes from the
  * server, already decided; the screen only lays it out.
  */
 export default function OverviewTab({ classGroup, onOpenPoint, onOpenTab }) {
@@ -156,7 +156,7 @@ export default function OverviewTab({ classGroup, onOpenPoint, onOpenTab }) {
   );
 }
 
-/** « ما الذي تغيّر؟ »: three numbers on one line; which الكفاءات and which students are one tap away. */
+/** « Qu'est-ce qui a changé ? »: three numbers on one line; which savoir-faire and which students are one tap away. */
 function RecentChanges({ changes, classGroupId, onOpenPoint }) {
   const { t } = useTranslation('teacher');
   if (!changes) return null;
@@ -244,7 +244,7 @@ function RecentChanges({ changes, classGroupId, onOpenPoint }) {
   );
 }
 
-/** The class on ALL its الكفاءات as ONE bar of counts (never an average). The map itself is the section « التعلّم ». */
+/** The class on ALL its savoir-faire as ONE bar of counts (never an average). The map itself is the section « Apprentissages ». */
 function LearningMapSummary({ map, onOpenTab }) {
   const { t } = useTranslation('teacher');
   const totals = {};

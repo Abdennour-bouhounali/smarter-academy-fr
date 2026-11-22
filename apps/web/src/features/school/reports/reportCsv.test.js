@@ -9,27 +9,27 @@ describe('reportRows', () => {
     const rows = reportRows({
       type: 'class',
       payload: {
-        lessons: [{ title: 'القاسم', learningPoints: [{ title: 'ك1', counts: { mastered: 3, reinforce: 1, gap: 2, unassessed: 4 } }] }],
-        studentsToWatch: [{ firstName: 'أمين', lastName: 'بوعلام', gap: 2, reinforce: 1, mastered: 0 }],
+        lessons: [{ title: 'Diviseurs', learningPoints: [{ title: 'SF1', counts: { mastered: 3, reinforce: 1, gap: 2, unassessed: 4 } }] }],
+        studentsToWatch: [{ firstName: 'Inès', lastName: 'Martin', gap: 2, reinforce: 1, mastered: 0 }],
       },
     }, label, stateLabel);
     expect(rows[0]).toEqual(['[lesson]', '[learningPoint]', '[mastered]', '[reinforce]', '[gap]', '[unassessed]']);
-    expect(rows[1]).toEqual(['القاسم', 'ك1', 3, 1, 2, 4]);
-    expect(rows.at(-1)).toEqual(['أمين بوعلام', 2, 1, 0]);
+    expect(rows[1]).toEqual(['Diviseurs', 'SF1', 3, 1, 2, 4]);
+    expect(rows.at(-1)).toEqual(['Inès Martin', 2, 1, 0]);
   });
 
   it('gives one row per learning point AND class in a grade report', () => {
     const rows = reportRows({
       type: 'grade',
-      payload: { map: { classes: [{ id: 7, name: '4م1' }, { id: 8, name: '4م2' }], lessons: [{ title: 'ل', learningPoints: [{ title: 'ك', byClass: { 7: { mastered: 1, reinforce: 0, gap: 0, unassessed: 0 } } }] }] } },
+      payload: { map: { classes: [{ id: 7, name: '3e A' }, { id: 8, name: '3e B' }], lessons: [{ title: 'L', learningPoints: [{ title: 'SF', byClass: { 7: { mastered: 1, reinforce: 0, gap: 0, unassessed: 0 } } }] }] } },
     }, label, stateLabel);
     expect(rows).toHaveLength(3);
-    expect(rows[2]).toEqual(['ل', 'ك', '4م2', 0, 0, 0, 0]);
+    expect(rows[2]).toEqual(['L', 'SF', '3e B', 0, 0, 0, 0]);
   });
 
   it('labels each state of a student report and never invents an average', () => {
-    const rows = reportRows({ type: 'student', payload: { progress: { lessons: [{ title: 'ل', learningPoints: [{ title: 'ك', status: 'gap' }] }] } } }, label, stateLabel);
-    expect(rows[1]).toEqual(['ل', 'ك', '<gap>']);
+    const rows = reportRows({ type: 'student', payload: { progress: { lessons: [{ title: 'L', learningPoints: [{ title: 'SF', status: 'gap' }] }] } } }, label, stateLabel);
+    expect(rows[1]).toEqual(['L', 'SF', '<gap>']);
     expect(JSON.stringify(rows)).not.toMatch(/average|moyenne/i);
   });
 

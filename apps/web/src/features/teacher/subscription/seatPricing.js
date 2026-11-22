@@ -22,7 +22,7 @@ export function quoteSeats(tiers = [], seats) {
   if (!tier) return null;
   const n = Number(seats);
   const unit = Number(tier.pricePerStudentCents ?? 0);
-  return { seats: n, tier, unitPriceCents: unit, totalCents: unit * n, currency: tier.currency || 'DZD', free: unit === 0 };
+  return { seats: n, tier, unitPriceCents: unit, totalCents: unit * n, currency: tier.currency || 'EUR', free: unit === 0 };
 }
 
 /** Le plus grand nombre que la grille couvre (null = sans borne). */

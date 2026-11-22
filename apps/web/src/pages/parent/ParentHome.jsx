@@ -7,6 +7,8 @@ import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { fetchChildren, linkChild } from '../../services/familyService';
 import { formatDuration } from '../../features/family/format';
+import { LOCALE } from '../../locale.js';
+import { gradeName } from '../../features/family/gradeName';
 
 function ChildCard({ child, t }) {
   const name = [child.firstName, child.lastName].filter(Boolean).join(' ');
@@ -18,11 +20,11 @@ function ChildCard({ child, t }) {
     >
       <div className="flex items-center gap-3">
         <div className="flex h-11 w-11 items-center justify-center rounded-full bg-nav-accent font-space text-sm font-bold text-white">
-          {(child.firstName || '؟').charAt(0)}
+          {(child.firstName || '?').charAt(0)}
         </div>
         <div className="min-w-0 flex-1">
           <p className="truncate font-space font-bold text-slate-900">{name}</p>
-          <p className="font-inter text-xs text-slate-500">{child.grade ? t(`grades.${child.grade}`) : ''}</p>
+          <p className="font-inter text-xs text-slate-500">{gradeName(child.grade)}</p>
         </div>
         <ChevronForward size={18} className="text-slate-400 group-hover:text-nav-accent" aria-hidden="true" />
       </div>
@@ -37,16 +39,16 @@ function ChildCard({ child, t }) {
         </div>
       </div>
       <p className="mt-3 font-inter text-xs text-slate-500">
-        {t('home.lastSeen')}: {child.lastSeenAt ? new Date(child.lastSeenAt).toLocaleString('ar-DZ', { dateStyle: 'medium', timeStyle: 'short', numberingSystem: 'latn' }) : t('home.never')}
+        {t('home.lastSeen')}{'\u00A0: '}{child.lastSeenAt ? new Date(child.lastSeenAt).toLocaleString(LOCALE, { dateStyle: 'medium', timeStyle: 'short', numberingSystem: 'latn' }) : t('home.never')}
       </p>
     </Link>
   );
 }
 
 /**
- * « أبنائي » — l'accueil de فضاء الوليّ (PARENT_SPACE.md §4) : les enfants liés
+ * « Mes enfants » — l'accueil de l’espace parent (PARENT_SPACE.md §4) : les enfants liés
  * (temps d'étude réel aujourd'hui et cette semaine), la saisie d'un code de
- * liaison, et l'accès au guide « حماية الجهاز ».
+ * liaison, et l'accès au guide « Protéger l’appareil ».
  */
 export default function ParentHome() {
   const { t } = useTranslation('family');

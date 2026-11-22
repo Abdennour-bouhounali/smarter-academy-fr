@@ -13,13 +13,13 @@ import {
 } from './tracking';
 
 const POINTS = [
-  { code: 'P1', title: 'القاسم بالباقي' },
-  { code: 'P2', title: 'القاسم بالجداء' },
+  { code: 'P1', title: 'Le diviseur par le reste' },
+  { code: 'P2', title: 'Le diviseur par le produit' },
 ];
 const amine = {
   id: 1,
-  firstName: 'أمين',
-  lastName: 'س',
+  firstName: 'Amine',
+  lastName: 'S.',
   points: { P1: 'mastered', P2: 'reinforce' },
   exercises: [
     { exerciseId: 'ex-4am-x-l3-002', answered: 4, correct: 3, firstTry: 2 },
@@ -29,26 +29,26 @@ const amine = {
 };
 const badr = {
   id: 2,
-  firstName: 'بدر',
-  lastName: 'ع',
+  firstName: 'Bastien',
+  lastName: 'A.',
   points: { P1: 'gap' },
   exercises: [{ exerciseId: 'ex-4am-x-l1-001', answered: 2, correct: 0, firstTry: 0 }],
   lastActivityAt: '2026-11-17 10:00:00',
 };
-const chahd = { id: 3, firstName: 'شهد', lastName: 'م', points: [], exercises: [], lastActivityAt: null };
+const chahd = { id: 3, firstName: 'Chloé', lastName: 'M.', points: [], exercises: [], lastActivityAt: null };
 const dounia = {
   id: 4,
-  firstName: 'دنيا',
-  lastName: 'ب',
+  firstName: 'Denise',
+  lastName: 'B.',
   points: { P1: 'mastered', P2: 'mastered' },
   exercises: [],
   lastActivityAt: null,
 };
 
-describe('متابعة القسم — the class on one lesson', () => {
+describe('suivi de la classe — the class on one lesson', () => {
   it('reads an exercise as a teacher names it', () => {
     expect(exerciseRef('ex-4am-qasim-adad-tabii-l3-002')).toEqual({ level: 3, number: 2 });
-    expect(exerciseLabel('ex-4am-qasim-adad-tabii-l3-002')).toBe('المستوى 3 · التمرين 2');
+    expect(exerciseLabel('ex-4am-qasim-adad-tabii-l3-002')).toBe('Niveau 3 · exercice 2');
     expect(exerciseRef('weird')).toEqual({ level: null, number: null });
     expect(exerciseLabel('weird')).toBe('weird');
     expect(STATES.every((s) => STATE_LABEL[s])).toBe(true);
@@ -81,7 +81,7 @@ describe('متابعة القسم — the class on one lesson', () => {
     expect(orderStudents([dounia, chahd, amine, badr], POINTS).map((s) => s.id)).toEqual([2, 1, 3, 4]); // a gap, « needs support », not started, the others
   });
 
-  it('counts the class per الكفاءة and those who have not started', () => {
+  it('counts the class per savoir-faire and those who have not started', () => {
     const c = classFacts([amine, badr, chahd, dounia], POINTS);
     expect(c).toMatchObject({ students: 4, notStarted: 1, practising: 2 });
     expect(c.perPoint[0].counts).toEqual({ mastered: 2, reinforce: 0, gap: 1, unassessed: 1 });

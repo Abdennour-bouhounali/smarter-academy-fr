@@ -5,12 +5,12 @@ import { AuthContext } from '../../../context/AuthContext';
 import { fetchClassStudentSettings, updateClassStudentSettings } from '../../../services/teacher/classGroupService';
 
 /**
- * « إعدادات التلميذ » — ce que l'enseignant règle pour CET élève (propriétaire,
+ * « Réglages de l'élève » — ce que l'enseignant règle pour CET élève (propriétaire,
  * 2026-10-06). Un élève de classe ne change pas ces réglages lui-même ; il les
- * voit sur sa page « الإعدادات ». Réglages : les cinq niveaux de l'espace
- * d'exercices ouverts d'emblée ; « طريقة التصحيح » — « تصحيح الأستاذ » (ses
- * photos de copie et démonstrations attendent l'enseignant, page « تصحيح
- * الإجابات ») ou « مستقل » (il se corrige seul), 2026-10-06.
+ * voit sur sa page « Paramètres ». Réglages : les cinq niveaux de l'espace
+ * d'exercices ouverts d'emblée ; « Mode de correction » — « Correction par le professeur » (ses
+ * photos de copie et démonstrations attendent l'enseignant, page « Réponses
+ * à corriger ») ou « Autocorrection » (il se corrige seul), 2026-10-06.
  */
 const VALIDATIONS = ['teacher', 'self'];
 export default function StudentSettingsCard({ classroomId, studentId }) {

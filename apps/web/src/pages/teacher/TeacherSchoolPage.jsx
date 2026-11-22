@@ -10,7 +10,7 @@ import TeacherFacts from '../../features/school/TeacherFacts';
 import { btnDanger, btnSecondary, card, errorText } from '../../features/school/ui';
 
 /**
- * « مؤسستي » — l'établissement vu par l'ENSEIGNANT (SCHOOL_ADMIN_SPACE.md §7,
+ * « Mon établissement » — l'établissement vu par l'ENSEIGNANT (SCHOOL_ADMIN_SPACE.md §7,
  * décision D4) : ce que la direction voit de lui (le même composant que chez
  * le directeur), ses classes rattachées ou non, et la porte de sortie.
  */

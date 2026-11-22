@@ -6,7 +6,7 @@ import { LP_STATUSES } from '../learningPoints/lpBar';
 import { DIRECTION_TONE, TREND_TONE } from '../insights/insights';
 
 /**
- * « لمحة » — l'aperçu d'UN élève, en une lecture, tel que le serveur l'a
+ * « Aperçu » — l'aperçu d'UN élève, en une lecture, tel que le serveur l'a
  * composé (App\Domain\Classroom\Insights\StudentSnapshot).
  *
  * Trois colonnes pour trois choses qu'on ne confond pas :

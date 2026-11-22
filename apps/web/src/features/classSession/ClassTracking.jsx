@@ -1,9 +1,9 @@
 /**
- * « متابعة القسم » — the class on THIS lesson, student by student (owner, 2026-11-18; CLASS_SESSION.md §2bis). A tab of
- * the set-up screen of « حصّة القسم », where the class is already chosen. What a teacher reads here, top to bottom:
- *   the class in facts — per الكفاءة, how many are « متمكّن », « يحتاج دعمًا », « ثغرة », not assessed yet;
- *   each student on one line — his state on every الكفاءة (one square each) and his exercises (how many, how many right);
- *   a line opens on the detail — each الكفاءة in words, each exercise with what he got right, and right at the first try.
+ * « le suivi de la classe » — the class on THIS lesson, student by student (owner, 2026-11-18; CLASS_SESSION.md §2bis).
+ * Its own screen (`/enseignant/mutabaa/:lessonId`). What a teacher reads here, top to bottom:
+ *   the class in facts — per savoir-faire, how many are « Maîtrisé », « À consolider », « Lacune », not assessed yet;
+ *   each student on one line — his state on every savoir-faire (one square each) and his exercises (how many, how many right);
+ *   a line opens on the detail — each savoir-faire in words, each exercise with what he got right, and right at the first try.
  * The order is « who needs me first », never a ranking. Read-only; nothing here is written anywhere.
  */
 import { useEffect, useMemo, useState } from 'react';
@@ -29,33 +29,33 @@ import {
 
 const NB = ' / ';
 const L = {
-  loading: 'جارٍ التحميل…',
-  refresh: 'حدّث',
-  students: (n) => `${n} تلميذًا`,
-  notStarted: (n) => `لم يبدأ بعد: ${n}`,
-  practising: (n) => `يتدرّب على التمارين: ${n}`,
-  points: 'كفاءات الدرس',
-  name: 'التلميذ',
-  exercises: 'التمارين',
-  none: 'لم يبدأ بعد',
-  noExercise: 'لا تمرين بعد',
-  did: (n) => (n === 1 ? 'تمرين واحد' : n === 2 ? 'تمرينان' : n <= 10 ? `${n} تمارين` : `${n} تمرينًا`),
-  right: 'أصاب',
-  first: 'من أوّل محاولة',
-  of: 'من',
-  left: (n) => (n === 1 ? 'سؤال واحد يُعاد' : n === 2 ? 'سؤالان يُعادان' : `${n} أسئلة تُعاد`),
-  see: 'شاهد إجاباته',
-  close: 'إغلاق',
-  work: (name) => `ما كتبه ${name}`,
-  notAnswered: 'لم يُجب عن هذا السؤال.',
-  wrote: 'كتب',
-  try: (n) => `المحاولة ${n}`,
-  expected: 'الجواب',
-  rightWord: 'صحيح',
-  retryWord: 'يُعاد',
-  statement: 'نصّ التمرين',
-  empty: 'لا تلميذ في هذا القسم بعد.',
-  note: 'ترتيب القائمة: من يحتاجك أوّلًا. لا معدّل ولا ترتيب بين التلاميذ.',
+  loading: 'Chargement…',
+  refresh: 'Actualiser',
+  students: (n) => `${n} ${n <= 1 ? 'élève' : 'élèves'}`,
+  notStarted: (n) => `Pas encore commencé : ${n}`,
+  practising: (n) => `S’entraîne sur les exercices : ${n}`,
+  points: 'Les savoir-faire de la leçon',
+  name: 'Élève',
+  exercises: 'Exercices',
+  none: 'Pas encore commencé',
+  noExercise: 'Aucun exercice pour l’instant',
+  did: (n) => `${n} ${n <= 1 ? 'exercice' : 'exercices'}`,
+  right: 'Réussi',
+  first: 'du premier coup',
+  of: 'sur',
+  left: (n) => (n <= 1 ? `${n} question à reprendre` : `${n} questions à reprendre`),
+  see: 'Voir ses réponses',
+  close: 'Fermer',
+  work: (name) => `Ce qu’a écrit ${name}`,
+  notAnswered: 'Pas de réponse à cette question.',
+  wrote: 'A écrit',
+  try: (n) => `Essai ${n}`,
+  expected: 'La réponse',
+  rightWord: 'Juste',
+  retryWord: 'À reprendre',
+  statement: 'L’énoncé',
+  empty: 'Aucun élève dans cette classe pour l’instant.',
+  note: 'Ordre de la liste : ceux qui ont besoin de vous d’abord. Ni moyenne ni classement entre les élèves.',
 };
 
 /**
@@ -184,7 +184,7 @@ function StudentWork({ token, lessonId, student, exerciseId, level, onClose }) {
                       )}
                       {key.answer && (
                         <p className="cs-workwin__key">
-                          <span>{L.expected}:</span> <RichText>{key.answer}</RichText>
+                          <span>{L.expected} :</span> <RichText>{key.answer}</RichText>
                         </p>
                       )}
                     </div>
@@ -241,7 +241,7 @@ export default function ClassTracking({ token, classId, lessonId }) {
           <RefreshCw size={16} /> {L.refresh}
         </button>
       </header>
-      {/* the class per الكفاءة: a bar of four counts, never a percentage */}
+      {/* the class per savoir-faire: a bar of four counts, never a percentage */}
       <ul className="cs-track__points" data-cs-track-points={points.length}>
         {facts.perPoint.map((p, k) => (
           <li key={p.code}>
@@ -259,7 +259,7 @@ export default function ClassTracking({ token, classId, lessonId }) {
             </span>
             <small>
               {STATES.filter((s) => p.counts[s] > 0)
-                .map((s) => `${STATE_LABEL[s]}: ${p.counts[s]}`)
+                .map((s) => `${STATE_LABEL[s]}\u00a0: ${p.counts[s]}`)
                 .join(' · ')}
             </small>
           </li>
@@ -282,7 +282,11 @@ export default function ClassTracking({ token, classId, lessonId }) {
                 </strong>
                 <span className="cs-track__dots" aria-label={L.points}>
                   {f.states.map((st, k) => (
-                    <i key={points[k].code} className={`is-${st}`} title={`${points[k].title}: ${STATE_LABEL[st]}`}>
+                    <i
+                      key={points[k].code}
+                      className={`is-${st}`}
+                      title={`${points[k].title}\u00a0: ${STATE_LABEL[st]}`}
+                    >
                       {k + 1}
                     </i>
                   ))}

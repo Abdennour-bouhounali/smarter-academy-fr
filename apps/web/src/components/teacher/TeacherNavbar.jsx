@@ -8,7 +8,7 @@ import { getDisplayName, getInitials } from '../../utils/userDisplay';
 
 /**
  * The teacher's menu: the four doors of `data/teacherNavigation.js` in the shared `WorkspaceNav`, in ink. The count of
- * answers waiting for his correction shows on « أقسامي »; his account, plan and school are under his picture.
+ * answers waiting for his correction shows on « Mes classes »; his account, plan and school are under his picture.
  */
 export default function TeacherNavbar({ reviews = 0 }) {
   const { t } = useTranslation('nav');

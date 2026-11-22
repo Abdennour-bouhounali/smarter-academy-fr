@@ -1,5 +1,5 @@
 /**
- * LA مذكرة الدرس — construite, jamais écrite.
+ * LA fiche du professeur — construite, jamais écrite.
  *
  * Une fonction PURE qui transforme ce que la leçon contient déjà en document
  * d'ORCHESTRATION pour l'enseignant. Aucune mathématique, aucun exemple,
@@ -7,7 +7,7 @@
  *
  *   catalogue (packages/core)  titre, durée, points d'apprentissage,
  *                              prérequis, pages du manuel, unité
- *   lesson.config.js           محاور (stage, durée, description),
+ *   lesson.config.js           étapes (stage, durée, description),
  *                              compétences (skills), périmètre, manipulations
  *   knowledge.jsx              briques de savoir (titre + résumé)
  *   content/*.js               activité du manuel (situation, questions,
@@ -15,10 +15,10 @@
  *                              difficulté, erreur fréquente)
  *
  * Ce qui relève du GESTE pédagogique — ce que fait l'enseignant, ce que font
- * les élèves, l'intention d'une phase — vient du `stage` du محور et est
+ * les élèves, l'intention d'une phase — vient du `stage` de l'étape et est
  * rédigé une fois, par stage, dans le catalogue i18n `memo`. Un contenu
  * absent donne une section vide (`[]` / `null`) que la page n'affiche pas :
- * la مذكرة reste digne de confiance.
+ * la fiche reste digne de confiance.
  */
 
 /** Les exercices, quel que soit le nom d'export (EXERCISES, EXERCISES_1, …). */
@@ -49,7 +49,7 @@ function pickStartActivity(content) {
   };
 }
 
-/** Les briques de savoir, dans l'ordre des محاور, avec leur محور. */
+/** Les briques de savoir, dans l'ordre des étapes, avec leur étape. */
 function collectBricks(knowledge) {
   const modules = knowledge?.modules ?? {};
   return Object.keys(modules)
@@ -80,7 +80,7 @@ function exerciseView(ex, lpTitles, brickFor) {
     source: ex.source?.type === 'textbook'
       ? { page: ex.source.page ?? null, section: ex.source.section ?? null, number: ex.source.number ?? null }
       : null,
-    // Le coup de pouce : la brique de savoir du محور qui enseigne ce point.
+    // Le coup de pouce : la brique de savoir de l'étape qui enseigne ce point.
     hint: brick ? { title: brick.title, summary: brick.summary } : null,
   };
 }
@@ -104,7 +104,7 @@ export function buildLessonMemo({ lesson, config, unit = null, knowledge = null,
   const resources = config?.resources ?? [];
   const activity = pickStartActivity(content);
 
-  // Le محور qui enseigne un point → sa première brique : le coup de pouce.
+  // L'étape qui enseigne un point → sa première brique : le coup de pouce.
   const moduleOfLp = new Map();
   for (const m of modules) for (const id of m.teachesLearningPointIds ?? []) if (!moduleOfLp.has(id)) moduleOfLp.set(id, m.number);
   const brickFor = (lpId) => {
@@ -115,7 +115,7 @@ export function buildLessonMemo({ lesson, config, unit = null, knowledge = null,
   const exercises = collectExercises(content).map((ex) => exerciseView(ex, lpTitles, brickFor));
   const errors = exercises.filter((ex) => ex.commonError);
 
-  // ── La ligne du temps : un محور = une phase ────────────────────────────
+  // ── La ligne du temps : une étape = une phase ────────────────────────────
   let clock = 0;
   const phases = modules.map((m, i) => {
     const teaches = new Set(m.teachesLearningPointIds ?? []);

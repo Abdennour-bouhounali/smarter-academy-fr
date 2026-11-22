@@ -9,7 +9,7 @@ import { createSchoolClassroom, fetchSchoolClassrooms, fetchSchoolTeachers, reas
 import { btnPrimary, btnSecondary, card, errorText, field, fieldLabel, personName } from '../../features/school/ui';
 
 /**
- * « الأقسام » de l'établissement (SCHOOL_ADMIN_SPACE.md §6–§7). Deux comptes par
+ * « Classes » de l'établissement (SCHOOL_ADMIN_SPACE.md §6–§7). Deux comptes par
  * classe, jamais confondus : ses membres, et ceux que l'établissement lit.
  */
 export default function SchoolClassrooms() {

@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import { ChevronBack, ChevronForward } from '../../components/common/DirectionalIcons';
+import { IS_RTL } from '../../locale';
 import { nextPlayableIndex, placeCard, playableSteps } from './tourModel';
 
 /**
- * La CARTE et le PROJECTEUR d'une « جولة تعريفية » — lot paresseux, chargé
+ * La CARTE et le PROJECTEUR d'une « Visite de la page » — lot paresseux, chargé
  * par PageTourProvider quand une visite s'ouvre, avec le namespace `tour`
  * (à la demande : ce composant est sous une frontière <Suspense>).
  *
@@ -71,7 +73,6 @@ export default function TourOverlay({ tour, onFinish, onSkip, onAbandon }) {
   // ils ne relancent ni l'attente ni le suivi de la cible.
   const callbacks = useRef({ onFinish, onSkip, onAbandon });
   callbacks.current = { onFinish, onSkip, onAbandon };
-  const rtl = (document.documentElement.getAttribute('dir') || document.dir) === 'rtl';
 
   // 1. Attendre que la page ait posé ses cibles, puis garder les étapes jouables.
   useEffect(() => {
@@ -169,8 +170,9 @@ export default function TourOverlay({ tour, onFinish, onSkip, onAbandon }) {
 
   const skip = useCallback(() => callbacks.current.onSkip(index), [index]);
 
-  // Échap = تخطّي ; flèches = étape suivante / précédente, dans le sens de
-  // lecture (en RTL, « التالي » est à gauche). Jamais pendant une saisie.
+  // Échap = « Passer » ; flèches = étape suivante / précédente, dans le sens
+  // de lecture de la plateforme (locale.js : → est « Suivant » de gauche à
+  // droite). Jamais pendant une saisie.
   useEffect(() => {
     if (!step) return undefined;
     const onKey = (event) => {
@@ -179,14 +181,14 @@ export default function TourOverlay({ tour, onFinish, onSkip, onAbandon }) {
         event.preventDefault();
         skip();
       } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-        const forward = (event.key === 'ArrowLeft') === rtl;
+        const forward = (event.key === 'ArrowLeft') === IS_RTL;
         event.preventDefault();
         go(forward ? 1 : -1);
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [step, skip, go, rtl]);
+  }, [step, skip, go]);
 
   if (!steps || !step) return null;
 
@@ -202,8 +204,6 @@ export default function TourOverlay({ tour, onFinish, onSkip, onAbandon }) {
   const isFirst = index === 0;
   const isLast = nextPlayableIndex(steps, index, 1, hasTarget) < 0;
   const motion = prefersReducedMotion() ? '' : 'transition-all duration-200 ease-out';
-  const NextIcon = rtl ? ChevronLeft : ChevronRight;
-  const PrevIcon = rtl ? ChevronRight : ChevronLeft;
   const base = `${tour.key}.${step.id}`;
   const titleId = `sa-tour-title-${step.id}`;
   const bodyId = `sa-tour-body-${step.id}`;
@@ -279,7 +279,7 @@ export default function TourOverlay({ tour, onFinish, onSkip, onAbandon }) {
                 className="inline-flex items-center gap-1 rounded-lg border border-slate-200 px-2.5 py-1.5 font-inter text-xs font-semibold text-slate-700 hover:bg-slate-50"
                 data-tour-prev
               >
-                <PrevIcon size={14} aria-hidden="true" />
+                <ChevronBack size={14} aria-hidden="true" />
                 {t('ui.previous')}
               </button>
             )}
@@ -291,7 +291,7 @@ export default function TourOverlay({ tour, onFinish, onSkip, onAbandon }) {
               data-tour-next={isLast ? 'finish' : 'next'}
             >
               {isLast ? t('ui.finish') : t('ui.next')}
-              {!isLast && <NextIcon size={14} aria-hidden="true" />}
+              {!isLast && <ChevronForward size={14} aria-hidden="true" />}
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { matchPath } from 'react-router-dom';
 
 /**
- * « جولة تعريفية » — la logique PURE des visites guidées : quelle visite
+ * « Visite de la page » — la logique PURE des visites guidées : quelle visite
  * appartient à quelle page, quand elle s'ouvre d'elle-même, quelles étapes
  * restent quand une cible manque, où poser la carte. Aucun DOM ici (testé par
  * tourModel.test.js) ; le rendu vit dans TourOverlay.jsx.
@@ -32,6 +32,25 @@ export function shouldAutoStart({ tour, closed, eligible }) {
 }
 
 /**
+ * La visite telle que CE produit peut la montrer, ou null. Une visite ou une
+ * étape marquée `feature: '<nom>'` n'existe que si cette fonction est allumée
+ * (`config/features.js`) ; marquée `commercial: true`, que si les paiements
+ * sont ouverts (`context/PaymentsContext.jsx`, fermés par défaut). C'est
+ * déclaratif, en plus du saut d'une cible absente (playableSteps) : une
+ * étape qui parle d'une surface éteinte ne s'affiche jamais, même si un
+ * élément portant son crochet restait à l'écran. Une visite dont il ne reste
+ * aucune étape ciblée n'existe pas (pas de bouton « Visite de la page »).
+ */
+export function availableTour(tour, { isFeatureOn, paymentsOpen }) {
+  if (!tour) return null;
+  const shown = (item) => (!item.feature || isFeatureOn(item.feature)) && (!item.commercial || paymentsOpen === true);
+  if (!shown(tour)) return null;
+  const steps = tour.steps.filter(shown);
+  if (steps.length === tour.steps.length) return tour;
+  return steps.some((step) => step.target) ? { ...tour, steps } : null;
+}
+
+/**
  * Les étapes jouables : une étape SANS cible (carte centrale) reste toujours ;
  * une étape dont la cible n'est pas à l'écran (état vide, élément propre au
  * grand écran…) disparaît. Une visite qui ne garde aucune étape CIBLÉE ne se
@@ -59,7 +78,7 @@ export function nextPlayableIndex(steps, from, dir, hasTarget) {
  * cible si la place suffit, sinon au-dessus, sinon contre le bas de l'écran ;
  * centrée horizontalement sur la cible puis gardée dans l'écran. Sans cible :
  * au centre. Les rectangles sont PHYSIQUES (getBoundingClientRect) : le sens
- * RTL ne change rien au calcul.
+ * de lecture ne change rien au calcul.
  */
 export function placeCard({ target, card, viewport, gap = 14, margin = 12 }) {
   const clamp = (v, min, max) => Math.max(min, Math.min(v, Math.max(min, max)));

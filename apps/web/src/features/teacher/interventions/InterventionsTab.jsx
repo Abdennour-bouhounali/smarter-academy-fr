@@ -12,7 +12,7 @@ import { studentName } from '../insights/insights';
 const FILTERS = ['open', 'closed', 'all'];
 
 /**
- * « التدخّلات » — ce que l'enseignant a fait, et ce qui a suivi. Les
+ * « Interventions » — ce que l'enseignant a fait, et ce qui a suivi. Les
  * interventions ouvertes d'abord. Une carte résume la mesure ; la déplier
  * charge le détail (le chemin de chaque élève depuis le geste).
  */

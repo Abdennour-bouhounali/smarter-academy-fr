@@ -18,7 +18,7 @@ export const LP_STATUS_BAR = Object.freeze({
 /**
  * Les segments de la barre, en pourcentages ENTIERS dont la somme fait
  * exactement 100 (méthode du plus fort reste) — sinon une barre de 33/33/33
- * laisse un vide d'un pixel à droite… c'est-à-dire à gauche, en RTL.
+ * laisse un vide d'un pixel au bout de la barre.
  *
  * @returns {Array<{key: string, count: number, percent: number}>}
  */

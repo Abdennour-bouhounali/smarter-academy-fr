@@ -35,9 +35,9 @@ describe('buildSlides', () => {
 
 describe('displayName', () => {
   it('replaces names by a stable rank when hidden', () => {
-    const placeholder = (n) => `تلميذ ${n}`;
-    expect(displayName({ firstName: 'أمين', lastName: 'بوعلام' }, 0, false, placeholder)).toBe('أمين بوعلام');
-    expect(displayName({ firstName: 'أمين' }, 2, true, placeholder)).toBe('تلميذ 3');
+    const placeholder = (n) => `Élève ${n}`;
+    expect(displayName({ firstName: 'Inès', lastName: 'Martin' }, 0, false, placeholder)).toBe('Inès Martin');
+    expect(displayName({ firstName: 'Inès' }, 2, true, placeholder)).toBe('Élève 3');
   });
 
   it('hides names by default for the wide meetings only', () => {
@@ -47,10 +47,10 @@ describe('displayName', () => {
 });
 
 describe('stepForKey', () => {
-  it('moves forward with the left arrow (RTL) and the clicker, back with the right arrow', () => {
-    expect(stepForKey('ArrowLeft')).toBe(1);
+  it('moves forward with the right arrow (left to right) and the clicker, back with the left arrow', () => {
+    expect(stepForKey('ArrowRight')).toBe(1);
     expect(stepForKey('PageDown')).toBe(1);
-    expect(stepForKey('ArrowRight')).toBe(-1);
+    expect(stepForKey('ArrowLeft')).toBe(-1);
     expect(stepForKey('PageUp')).toBe(-1);
     expect(stepForKey('a')).toBe(0);
   });

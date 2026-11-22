@@ -1,10 +1,10 @@
 /**
- * The lessons whose class has ITS OWN BOARD — « حصّة القسم » with a script of the lesson (CLASS_SESSION.md §5ter).
+ * The lessons whose class has ITS OWN BOARD — « la séance en classe » with a script of the lesson (CLASS_SESSION.md §5ter).
  *
- * Owner, 2026-11-18: for such a lesson « no need for the older version » — the old « وضع القسم » (Classroom Mode of the
- * lesson page) no longer exists there: no entry button on the lesson page nor on its modules, no « عرض » of a lab or a
- * test inside it, and every door that used to open it (the teacher's catalogue card, the مذكرة) opens « حصّة القسم ».
- * The other lessons keep « وضع القسم » until each gets its script. A lesson has its board the day its script and its
+ * Owner, 2026-11-18: for such a lesson « no need for the older version » — the old « mode classe » (Classroom Mode of the
+ * lesson page) no longer exists there: no entry button on the lesson page nor on its modules, no « Présenter » of a lab or a
+ * test inside it, and every door that used to open it (the teacher's catalogue card, the teacher's memo) opens « la séance en classe ».
+ * The other lessons keep « mode classe » until each gets its script. A lesson has its board the day its script and its
  * memo are written and named in ITS pack (`lesson.pack.js › board`, LESSON_V2.md): this list is read from the generated
  * lesson index, never typed here.
  *
@@ -30,14 +30,14 @@ export const hasTeacherBank = (lessonId) => hasClassBoard(lessonId) || hasWorld(
 /**
  * Which tools of the common header have CONTENT for this lesson (owner, 2026-11-20: « display only the buttons that
  * has the content »). A v2 lesson without its board has no script, no memo, no lesson file and no knowledge card
- * yet: its header is the lesson, its bank and « متابعة القسم » — the tracking reads what the students did on the bank,
+ * yet: its header is the lesson, its bank and « le suivi de la classe » — the tracking reads what the students did on the bank,
  * which every lesson has (owner, the same day: « the teacher must track the work of his student »). Every other lesson
  * keeps every tool.
  */
 const KNOWLEDGE_LESSONS = Object.freeze(lessonsWithPack('knowledge'));
 export const toolHasContent = (lessonId, toolId) => {
   if (!hasWorld(lessonId)) return true;
-  // « بطاقة المعارف » reads the lesson's own knowledge: a unit's last lesson has none (the unit's rules are its recap)
+  // « la fiche de connaissances » reads the lesson's own knowledge: a unit's last lesson has none (the unit's rules are its recap)
   if (toolId === 'card') return hasClassBoard(lessonId) && KNOWLEDGE_LESSONS.includes(lessonId);
   return hasClassBoard(lessonId) || ['lesson', 'bank', 'track'].includes(toolId);
 };
@@ -49,10 +49,10 @@ export const MOMENTS = Object.freeze(['start', 'revise', 'lesson', 'end']);
 export const classSessionPath = (lessonId, moment = null) =>
   `/enseignant/hissa/${encodeURIComponent(lessonId)}${moment && MOMENTS.includes(moment) ? `?moment=${moment}` : ''}`;
 
-/** « متابعة القسم »: the class on this lesson, student by student — a tab of the set-up screen of the class session. */
+/** « le suivi de la classe »: the class on this lesson, student by student — a tab of the set-up screen of the class session. */
 export const classTrackingPath = (lessonId) => `/enseignant/mutabaa/${encodeURIComponent(lessonId)}`;
 
-/** « بطاقة المعارف » of the lesson on the board of the class: a quick revision with the whole class. */
+/** « la fiche de connaissances » of the lesson on the board of the class: a quick revision with the whole class. */
 export const classCardPath = (lessonId) => `/enseignant/bitaqa/${encodeURIComponent(lessonId)}`;
 
 /** Is this lesson path (the lesson page or one of its modules) the path of a lesson that has its board? */

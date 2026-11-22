@@ -1,18 +1,20 @@
 /**
- * « مذكّرة الدرس » of a lesson that has its board — the WRITTEN memo (`lessonMemos.js`), on its own page (owner,
+ * « la fiche du professeur » of a lesson that has its board — the WRITTEN memo (`lessonMemos.js`), on its own page (owner,
  * 2026-11-18: « the content must be updated », « the UI/UX also, specially the top », « show me your limit »;
  * CLASS_SESSION.md §2quater). What a good lesson plan gives a teacher, one part at a time:
  *   before   the hour on ONE page · the goal and what success looks like · several opening situations, each drawn;
- *   during   the hour as « حصّة القسم » runs it · what students will likely say, with the question for each · what goes
+ *   during   the hour as « la séance en classe » runs it · what students will likely say, with the question for each · what goes
  *            on the board and in what order;
  *   after    what is written · a three-question exit ticket · support and extension;
- * His own notes are not here: they are in « ملفّ الدرس », one tap away in the top bar.
+ * His own notes are not here: they are in « le dossier de la leçon », one tap away in the top bar.
  * The top bar is one calm line: where he is, and the three things he does from here (the class session, his lesson
  * file, print). Same palette as his card: white, dark ink, one dark tone for what is pressed.
  */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Check, Clock, Eye, HelpCircle, MessageCircle, Printer, TriangleAlert } from 'lucide-react';
+import { Check, Clock, Eye, HelpCircle, MessageCircle, Printer, TriangleAlert } from 'lucide-react';
+import { ArrowForward } from '../../components/common/DirectionalIcons';
+import { getUnitOfLesson } from '@smarter-academy/core';
 import MathText from '../../lessons/common/components/MathText';
 import '../teacher/lessonMemo/memo.css';
 import { MEMO_PARTS, partKeys, openingFacts } from './lessonMemos';
@@ -21,46 +23,50 @@ import MemoFigure from './MemoFigures';
 import { LessonToolPage } from './LessonToolsBar';
 
 const L = {
-  kicker: 'مذكّرة الدرس',
-  back: 'الدرس',
-  session: 'حصّة القسم',
-  file: 'ملفّ الدرس',
-  print: 'اطبع',
-  all: 'المذكّرة كاملة',
-  prev: 'السابق',
-  next: 'التالي',
-  min: (n) => `${n} د`,
-  total: (n) => `${n} دقيقة`,
-  goal: 'الهدف',
-  idea: 'الفكرة في جملة',
-  trap: 'الفخّ',
-  hour: 'الحصّة',
-  three: 'ثلاثة أسئلة لا تُنسى',
-  can: 'يستطيع التلميذ أن',
-  see: 'ما أراه أو أسمعه',
-  stands: 'ما يقوم عليه الدرس',
-  onBoard: 'وضعية «حصّة القسم»',
-  ask: 'السؤال',
-  why: 'لماذا هذه؟',
-  expect: 'ما سيحدث',
-  choose: 'اختر واحدة بحسب قسمك: الفكرة واحدة، والسياق يتغيّر.',
-  teacher: 'الأستاذ',
-  klass: 'القسم',
-  watch: 'أنتبه إلى',
-  open: 'افتح',
-  right: 'جواب منتظر',
-  miss: 'تصوّر خاطئ منتظر',
-  assess: 'لأعرف أين هو',
-  advance: 'لأدفعه إلى الأمام',
-  order: 'الترتيب',
-  connect: 'الربط',
-  written: 'يُكتب على الكرّاس',
-  exit: 'ثلاثة أسئلة في آخر الحصّة، على ورقة صغيرة',
-  show: 'أظهر الأجوبة',
-  hide: 'أخفِ الأجوبة',
-  support: 'دعم',
-  extend: 'تعميق',
-  nextLesson: 'ما بعد الحصّة',
+  kicker: 'Fiche du professeur',
+  back: 'La leçon',
+  session: 'Séance en classe',
+  file: 'Dossier de la leçon',
+  print: 'Imprimer',
+  all: 'Toute la fiche',
+  prev: 'Précédent',
+  next: 'Suivant',
+  min: (n) => `${n} min`,
+  total: (n) => `${n} min`,
+  goal: 'L’objectif',
+  idea: 'L’idée en une phrase',
+  trap: 'Le piège',
+  hour: 'La séance',
+  three: 'Trois questions à ne pas oublier',
+  can: 'L’élève est capable de',
+  see: 'Ce que je vois ou j’entends',
+  stands: 'Sur quoi repose la leçon',
+  onBoard: 'Situation de la « séance en classe »',
+  ask: 'La question',
+  why: 'Pourquoi celle-ci ?',
+  expect: 'Ce qui va se passer',
+  choose: 'Choisissez-en une selon votre classe : l’idée est la même, le contexte change.',
+  teacher: 'Le professeur',
+  klass: 'La classe',
+  watch: 'Je suis attentif à',
+  open: 'Ouvrir',
+  right: 'Réponse attendue',
+  miss: 'Conception erronée attendue',
+  assess: 'Pour savoir où il en est',
+  advance: 'Pour le faire avancer',
+  order: 'L’ordre',
+  connect: 'Les liens',
+  written: 'À écrire dans le cahier',
+  exit: 'Trois questions en fin de séance, sur une petite feuille',
+  show: 'Montrer les réponses',
+  hide: 'Cacher les réponses',
+  support: 'Soutien',
+  extend: 'Approfondissement',
+  nextLesson: 'Après la séance',
+  chapter: 'Chapitre',
+  lesson: 'Leçon',
+  klassBlank: 'Classe : ………………',
+  dateBlank: 'Date : ………………',
 };
 const Card = ({ title, icon: Icon, children, tone = '' }) => (
   <section className={`rounded-2xl border border-slate-200 bg-white p-4 ${tone}`}>
@@ -129,6 +135,7 @@ export default function BoardMemo({ lessonId, memo }) {
   const label = (k) => MEMO_PARTS.flatMap((g) => g.keys).find(([x]) => x === k)?.[1] ?? '';
   const pane = (k) => ({ hidden: !all && view !== k, 'data-memo-pane': k });
   const g = memo.glance;
+  const unit = getUnitOfLesson(lessonId);
   const total = g.minutes.reduce((s, m) => s + m.min, 0);
   const Head = ({ k, lead }) => (
     <header className="mb-3">
@@ -138,12 +145,17 @@ export default function BoardMemo({ lessonId, memo }) {
   );
   return (
     <LessonToolPage lessonId={lessonId} active="memo">
-      <div className="sa-memo" dir="rtl" data-lesson-memo={lessonId} data-board-memo>
+      <div className="sa-memo" data-lesson-memo={lessonId} data-board-memo>
         {/* the top: the header common to every tool of the lesson; printing is this tool's own action */}
 
         {/* on paper the tabs are gone: the memo carries its own title */}
-        <h1 className="sa-memo-printtitle">
-          {L.kicker} — <MathText>{memo.title}</MathText> · {L.total(total)}
+        {/* the printed header: plain, as a French teacher's sheet — the class and the date are written by hand */}
+        <h1 className="sa-memo-printtitle" data-memo-printtitle>
+          {L.kicker} — {unit ? `${L.chapter}\u00a0: ${unit.title} · ` : ''}
+          {L.lesson} : <MathText>{memo.title}</MathText> · {L.total(total)}
+          <small className="sa-memo-printtitle__blanks">
+            {L.klassBlank} · {L.dateBlank}
+          </small>
         </h1>
         <div className="sa-memo-work" data-memo-view={view}>
           <nav className="sa-memo-rail sa-memo-no-print" data-memo-rail>
@@ -290,7 +302,7 @@ export default function BoardMemo({ lessonId, memo }) {
                       </div>
                       <p className="text-[15px] font-semibold leading-7 text-slate-800">{o.story}</p>
                       <p className="rounded-xl bg-slate-900 px-3 py-2 text-[15px] font-extrabold leading-7 text-white">
-                        <span className="text-slate-300">{L.ask}: </span>
+                        <span className="text-slate-300">{L.ask} : </span>
                         {o.ask}
                       </p>
                       <p className="text-[13px] font-semibold leading-6 text-slate-600">
@@ -328,7 +340,7 @@ export default function BoardMemo({ lessonId, memo }) {
                         to={classSessionPath(lessonId, p.moment)}
                         className="ms-auto inline-flex min-h-[36px] items-center gap-1 rounded-xl border border-slate-200 px-3 text-sm font-extrabold text-slate-800 hover:border-slate-900"
                       >
-                        {L.open} <ArrowLeft size={15} aria-hidden="true" />
+                        {L.open} <ArrowForward size={15} aria-hidden="true" />
                       </Link>
                     </header>
                     <div className="mt-2 grid gap-2 md:grid-cols-3">
@@ -372,7 +384,7 @@ export default function BoardMemo({ lessonId, memo }) {
                     <div className="mt-2 grid gap-2 md:grid-cols-2">
                       {[
                         [L.assess, a.assess, Eye],
-                        [L.advance, a.advance, ArrowLeft],
+                        [L.advance, a.advance, ArrowForward],
                       ].map(([t, v, Icon]) => (
                         <p
                           key={t}
@@ -478,7 +490,7 @@ export default function BoardMemo({ lessonId, memo }) {
               <div className="sa-memo-step sa-memo-no-print">
                 <button type="button" onClick={() => go(keys[at - 1])} disabled={at <= 0} data-memo-prev>
                   {L.prev}
-                  {at > 0 && <i>{`: ${label(keys[at - 1])}`}</i>}
+                  {at > 0 && <i>{`\u00a0: ${label(keys[at - 1])}`}</i>}
                 </button>
                 <span>
                   {at + 1}
@@ -493,7 +505,7 @@ export default function BoardMemo({ lessonId, memo }) {
                   data-memo-next
                 >
                   {L.next}
-                  {at < keys.length - 1 && <i>{`: ${label(keys[at + 1])}`}</i>}
+                  {at < keys.length - 1 && <i>{`\u00a0: ${label(keys[at + 1])}`}</i>}
                 </button>
               </div>
             )}

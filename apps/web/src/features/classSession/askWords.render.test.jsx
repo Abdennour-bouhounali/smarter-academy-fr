@@ -9,12 +9,21 @@ globalThis.document ??= { body: null };
 
 /** An `ask` step draws its cards with its own `words` when it has them, with the planks' words otherwise. */
 const noop = () => {};
-const plain = { id: 'p', kind: 'ask', chapter: 'نكتشف', title: 'ت', text: 'ن', question: 'س', a: 12, options: [3, 5] };
-const own = { ...plain, id: 'o', words: { card: 'عدد العلب', held: 'تمتلئ كلّها', fell: 'يبقى شيء' } };
+const plain = {
+  id: 'p',
+  kind: 'ask',
+  chapter: 'On découvre',
+  title: 'T',
+  text: 'Texte',
+  question: 'Question',
+  a: 12,
+  options: [3, 5],
+};
+const own = { ...plain, id: 'o', words: { card: 'Nombre de boîtes', held: 'Toutes pleines', fell: 'Il en reste' } };
 const board = (step) =>
   renderToString(
     <LessonBoard
-      script={{ title: 'درس', steps: [{ ...step, answer: [3], cue: 'س' }] }}
+      script={{ title: 'Leçon', steps: [{ ...step, answer: [3], cue: 'Q' }] }}
       rules={{}}
       students={[]}
       seating={{}}
@@ -25,21 +34,21 @@ const board = (step) =>
     />,
   );
 
-describe('حصّة القسم — the words of an « ask » card', () => {
+describe('séance en classe — the words of an « ask » card', () => {
   it('keeps the planks’ words for a step without its own', () => {
-    expect(askWords(plain)).toEqual({ card: 'لوح', held: 'يثبت', fell: 'ينهار' });
-    expect(board(plain)).toContain('<small>لوح</small>');
+    expect(askWords(plain)).toEqual({ card: 'Planche', held: 'Tient', fell: 'S’effondre' });
+    expect(board(plain)).toContain('<small>Planche</small>');
   });
 
   it('labels the cards with the step’s own words, and a word left out keeps the default', () => {
     expect(askWords(own)).toEqual(own.words);
-    expect(askWords({ ...plain, words: { card: 'عدد الباقات' } })).toEqual({
-      card: 'عدد الباقات',
-      held: 'يثبت',
-      fell: 'ينهار',
+    expect(askWords({ ...plain, words: { card: 'Nombre de bouquets' } })).toEqual({
+      card: 'Nombre de bouquets',
+      held: 'Tient',
+      fell: 'S’effondre',
     });
     const html = board(own);
-    expect(html).toContain('<small>عدد العلب</small>');
-    expect(html).not.toContain('<small>لوح</small>');
+    expect(html).toContain('<small>Nombre de boîtes</small>');
+    expect(html).not.toContain('<small>Planche</small>');
   });
 });

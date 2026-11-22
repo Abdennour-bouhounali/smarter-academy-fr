@@ -22,7 +22,7 @@ function pageFocused() {
  * changement de visibilité / focus / page, et envoie les secondes au serveur
  * toutes les minutes et quand la page se cache (`keepalive` : le battement
  * survit à la fermeture de l'onglet). Un envoi raté est remis dans l'horloge.
- * Ce que l'élève voit dans « ما يراه وليّك » est ce que ces battements ont écrit.
+ * Ce que l'élève voit dans « Ce que voit ton parent » est ce que ces battements ont écrit.
  */
 export default function StudyTimeTracker() {
   const { user, token } = useContext(AuthContext);

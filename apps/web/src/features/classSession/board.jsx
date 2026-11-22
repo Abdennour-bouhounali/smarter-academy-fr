@@ -1,12 +1,12 @@
 /**
- * « حصّة القسم » — the TOOLS of the board, shared by every screen the class looks at (CLASS_SESSION.md §5ter):
+ * « séance en classe » — the TOOLS of the board, shared by every screen the class looks at (CLASS_SESSION.md §5ter):
  *   ClassWindow  the classroom in a window opened on demand: a tap on a desk names a student;
  *   Speaker      the name of the student who answers or reads, across the top;
  *   Whiteboard   ink over anything on the board (or on a blank page): three pens, undo, clear;
  *   Curtain      the board goes dark so that the class looks at the teacher;
  *   BoardTimer   a calm countdown for a task (1, 2 or 5 minutes);
  *   the red pointer (`ClassroomPointer`), so that the back of a big room sees the mouse;
- *   « مختبري »   the lesson's own lab opened over the board.
+ *   « Mon labo »  the lesson's own lab opened over the board.
  * They sit in ONE dock (`BoardTools`), the same on every board screen. An adult's tools: each does one thing, none has to be learnt.
  */
 import { createContext, lazy, Suspense, useContext, useEffect, useRef, useState } from 'react';
@@ -34,28 +34,30 @@ import { callName } from './session';
 const LessonLab = lazy(() => import('../../lessons/common/lessonlab/LessonLab'));
 
 export const BL = {
-  dock: 'أدوات الأستاذ',
-  lab: 'مختبري',
-  pickOne: 'اختر تلميذًا من القسم',
-  absentHint: 'اضغط طاولة كلّ غائب.',
-  absent: 'غياب',
-  close: 'إغلاق',
-  board: 'السبّورة',
-  klass: 'القسم',
-  pointer: 'المؤشّر',
-  ink: 'قلم',
-  curtain: 'ستار',
-  timer: 'مؤقّت',
-  curtainText: 'انظروا إليّ',
-  curtainHint: 'اضغط في أيّ مكان لترفع الستار',
-  undo: 'تراجع',
-  clear: 'امسح',
-  page: 'صفحة بيضاء',
-  closeInk: 'أغلق القلم',
-  turn: 'دور',
-  reads: 'يقرأ',
-  teacher: 'الأستاذ',
-  timeUp: 'انتهى الوقت',
+  dock: 'Outils du professeur',
+  lab: 'Mon labo',
+  pickOne: 'Choisissez un élève de la classe',
+  absentHint: 'Cliquez sur la table de chaque absent.',
+  absent: 'Absents',
+  close: 'Fermer',
+  board: 'Le tableau',
+  klass: 'La classe',
+  pointer: 'Pointeur',
+  ink: 'Stylo',
+  curtain: 'Rideau',
+  timer: 'Minuteur',
+  curtainText: 'Regardez-moi',
+  curtainHint: 'Cliquez n’importe où pour lever le rideau',
+  undo: 'Annuler',
+  clear: 'Effacer',
+  page: 'Page blanche',
+  closeInk: 'Fermer le stylo',
+  turn: 'C’est au tour de',
+  reads: 'Lecture par',
+  teacher: 'Le professeur',
+  timeUp: 'Temps écoulé',
+  fullscreen: 'Plein écran',
+  exitFullscreen: 'Quitter',
 };
 
 /** The classroom in a window: whose turn it is, who has spoken, who is away. A tap on a desk gives him the turn. */
@@ -123,7 +125,7 @@ export function ClassWindow({
   );
 }
 
-/** The name across the top of the board. `label`: « دور » for an answer, « يقرأ » for a reading. */
+/** The name across the top of the board. `label`: « C’est au tour de » for an answer, « Lecture par » for a reading. */
 export function Speaker({ name, team = null, label = BL.turn, wait = null, onClear = null, slim = false }) {
   return (
     <div
@@ -150,7 +152,7 @@ export function Speaker({ name, team = null, label = BL.turn, wait = null, onCle
 }
 
 const PENS = ['#dc2626', '#1d4ed8', '#0f172a'];
-/** Ink over the board. While it is open the pen takes every touch; « أغلق القلم » gives the board back. */
+/** Ink over the board. While it is open the pen takes every touch; « Fermer le stylo » gives the board back. */
 function Whiteboard({ onClose }) {
   const [strokes, setStrokes] = useState([]);
   const [color, setColor] = useState(PENS[0]);
@@ -199,7 +201,7 @@ function Whiteboard({ onClose }) {
           ),
         )}
       </svg>
-      <div className="cs-inkbar" dir="rtl">
+      <div className="cs-inkbar">
         {PENS.map((c) => (
           <button
             key={c}
@@ -279,7 +281,7 @@ function BoardTimer() {
       data-cs-timer={left ?? ''}
     >
       <Timer size={20} />
-      <span dir={left === null || left <= 0 ? 'rtl' : 'ltr'}>{text}</span>
+      <span>{text}</span>
     </button>
   );
 }
@@ -288,11 +290,11 @@ function BoardTimer() {
 export const BoardLessonContext = createContext(null);
 
 /**
- * « أدوات الأستاذ » — THE DOCK: every tool of the teacher in ONE place, the same place and the same order on every board
- * screen (the test, the rules, the lesson). Three groups, read from the right:
- *   who speaks   « القسم »;
- *   the board    « قلم », « المؤشّر », « ستار »;
- *   the hour     « مؤقّت », and « مختبري » — the instruments of this lesson and of the lessons before it, to explain with.
+ * « Outils du professeur » — THE DOCK: every tool of the teacher in ONE place, the same place and the same order on every
+ * board screen (the test, the rules, the lesson). Three groups, read from the left:
+ *   who speaks   « La classe »;
+ *   the board    « Stylo », « Pointeur », « Rideau »;
+ *   the hour     « Minuteur », and « Mon labo » — the instruments of this lesson and of the lessons before it, to explain with.
  * A tool is an icon over one word. `tools` comes from useBoardTools.
  */
 /** `fullscreen` ({ on, toggle }): a screen shown inside the teacher's space offers the computer's REAL full screen, in the dock beside the other tools. */
@@ -355,7 +357,7 @@ export function BoardTools({ tools, onClass = null, classDisabled = false, fulls
             {...(fullscreen.on ? { 'data-card-full-exit': '' } : { 'data-card-full': '' })}
           >
             {fullscreen.on ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
-            <span>{fullscreen.on ? 'خروج' : 'ملء الشاشة'}</span>
+            <span>{fullscreen.on ? BL.exitFullscreen : BL.fullscreen}</span>
           </button>
         )}
       </span>
@@ -378,7 +380,7 @@ export function BoardLayers({ tools }) {
   return (
     <>
       {tools.ink && <Whiteboard onClose={() => tools.setInk(false)} />}
-      {/* « مختبري » over the board: the lesson's own lab, the one the students open — nothing of it is recorded */}
+      {/* « Mon labo » over the board: the lesson's own lab, the one the students open — nothing of it is recorded */}
       {tools.lab && tools.lesson && (
         <Suspense fallback={null}>
           <LessonLab

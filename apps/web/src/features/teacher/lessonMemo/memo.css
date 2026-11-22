@@ -1,9 +1,9 @@
 /* ─────────────────────────────────────────────────────────────────────────
-   « مذكرة الدرس » — pages/teacher/LessonMemoPage.jsx.
+   « la fiche du professeur » — pages/teacher/LessonMemoPage.jsx.
    Tailwind porte la mise en page ; ici : le papier du cahier et l'impression.
    ───────────────────────────────────────────────────────────────────────── */
 
-/* Le cahier : un papier crème à lignes, comme « كرّاسي ». */
+/* Le cahier : un papier crème à lignes, comme « Mon cahier ». */
 .sa-memo-notebook {
   background: linear-gradient(180deg, #FFFBEB 0%, #FEF3C7 100%);
 }
@@ -78,7 +78,7 @@
 @media print { .sa-memo-top a, .sa-memo-top button, .sa-memo-top__fact { display: none !important; } .sa-memo-top { position: static; border: 0; } [data-board-memo] [data-memo-pane] { break-inside: avoid-page; } }
 
 /* The written memo is READ, often from a step back: its text is one size up everywhere (owner: « the font size is small in
-   the entire مذكرة »). The stage is drawn 16 % larger as a whole, so that every part keeps its proportions. */
+   the entire memo »). The stage is drawn 16 % larger as a whole, so that every part keeps its proportions. */
 @media screen { [data-board-memo] .sa-memo-stage { zoom: 1.16; } [data-board-memo] .sa-memo-work { grid-template-columns: 14.5rem minmax(0, 1fr); } [data-board-memo] .sa-memo-rail button { min-height: 2.7rem; font-size: 1.02rem; } [data-board-memo] .sa-memo-rail p { font-size: .8rem; } [data-board-memo] .sa-memo-top__title strong { font-size: 1.3rem; } [data-board-memo] .sa-memo-top a, [data-board-memo] .sa-memo-top button { font-size: 1rem; } }
 
 /* The written memo on PAPER: two A4 pages at most (owner, 2026-11-18). Everything is drawn smaller and denser: the four
@@ -100,6 +100,7 @@
 }
 
 .sa-memo-printtitle { display: none; }
+.sa-memo-printtitle__blanks { display: block; margin-top: 1mm; font-size: 10pt; font-weight: 700; }
 
 [data-board-memo] .sa-memo-rail { top: 6.5rem; } .sa-memo-rail button[data-memo-print] { display: inline-flex; align-items: center; gap: .35rem; color: #64748b; }
 @media print { .ltp { padding: 0 !important; } }
@@ -124,7 +125,7 @@
   /* the step bar stays at the thumb, above the teacher space's tabs; the names of the neighbours are in the sliding line */
   [data-board-memo] .sa-memo-step { position: sticky; bottom: 5.4rem; z-index: 5; padding: .45rem; border-radius: 1rem; border: 1px solid #e2e8f0; background: rgba(255,255,255,.97); box-shadow: 0 6px 18px rgba(15,23,42,.08); }
   [data-board-memo] .sa-memo-step button { flex: 1; min-height: 2.9rem; } [data-board-memo] .sa-memo-step button i { display: none; }
-  /* « حصّة القسم » does not open on a phone: its mark on an opening is a label there, not a link */
+  /* « séance en classe » does not open on a phone: its mark on an opening is a label there, not a link */
   [data-board-memo] [data-memo-opening-board] { pointer-events: none; }
   [data-board-memo] .mf { max-height: 11rem; }
 }

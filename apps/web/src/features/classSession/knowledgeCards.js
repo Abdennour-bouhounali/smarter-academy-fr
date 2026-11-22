@@ -1,8 +1,9 @@
 /**
- * « بطاقة المعارف » ON THE BOARD (owner, 2026-11-18: « بطاقتي must be able to be presented in the classroom… used for a quick
- * revision with all the class… provide the direct link for the teacher to the previous lesson connected with the new
- * الكفاءة »; CLASS_SESSION.md §5quinquies). The cards are the lesson's OWN knowledge (`LESSON_KNOWLEDGE` of the lesson,
- * the single source the student's « بطاقتي » reads) — imported, never retyped. Pure helpers.
+ * « la fiche de connaissances » ON THE BOARD (owner, 2026-11-18: « the student's card must be able to be presented in
+ * the classroom… used for a quick revision with all the class… provide the direct link for the teacher to the previous
+ * lesson connected with the new savoir-faire »; CLASS_SESSION.md §5quinquies). The cards are the lesson's OWN knowledge
+ * (`LESSON_KNOWLEDGE` of the lesson, the single source the student's knowledge card reads) — imported, never retyped.
+ * Pure helpers.
  */
 import { getAllGrades, getLessonPath } from '@smarter-academy/core';
 import { reviewLinksForLesson } from '@smarter-academy/core/curriculum/fr/net/learningNet.js';
@@ -39,11 +40,11 @@ export function cardsOf(knowledge) {
     );
 }
 
-const VIA = { requires: 'يحتاج إلى', extends: 'يوسّع', consolidates: 'يثبّت' };
+const VIA = { requires: 'S’appuie sur', extends: 'Prolonge', consolidates: 'Consolide' };
 /** A grade's name as the catalogue writes it — never a local table. */
 const GRADE = Object.fromEntries(getAllGrades().map((g) => [g.id, g.name]));
 /**
- * The earlier lessons the new الكفاءة is connected with (the learning net), core links first — each with its direct
+ * The earlier lessons the new savoir-faire is connected with (the learning net), core links first — each with its direct
  * link when the lesson is published. For the teacher: one tap to go and look at what the class learnt before.
  */
 export function earlierLessons(lessonCode) {

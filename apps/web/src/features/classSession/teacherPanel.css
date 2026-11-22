@@ -1,6 +1,6 @@
 /* The teacher's place on a lesson page (TeacherLessonPanel.jsx). */
 
-/* a lesson that has its board: « بطاقتي » and « كرّاسي » are doors of the teacher's card, not floating buttons */
+/* a lesson that has its board: « the knowledge card » and « Mon cahier » are doors of the teacher's card, not floating buttons */
 body:has([data-teacher-lesson-panel][data-teacher-board='true']) [data-km-trigger],
 body:has([data-teacher-lesson-panel][data-teacher-board='true']) [data-nb-trigger='lesson'] {
   display: none !important;
@@ -20,7 +20,7 @@ body:has([data-teacher-lesson-panel][data-teacher-board='true']) [data-nb-trigge
   background: rgba(250, 250, 250, 0.97);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid #e2e8f0;
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-family: inherit;
 }
 .ltb__title {
   display: grid;

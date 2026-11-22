@@ -1,16 +1,18 @@
 import { Suspense, createContext, lazy, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import { usePayments } from '../../context/PaymentsContext';
+import { isFeatureOn } from '../../config/features';
 import { scopedStorage } from '../../utils/storage';
 import { fetchPageTours, closePageTour } from '../../services/tourService';
 import { PAGE_TOURS } from './tourRegistry';
-import { findPageTour, shouldAutoStart, TOUR_STATUS } from './tourModel';
+import { availableTour, findPageTour, shouldAutoStart, TOUR_STATUS } from './tourModel';
 
 /**
- * « جولة تعريفية » (2026-10-07) — la visite guidée de la PREMIÈRE visite
+ * « Visite de la page » (2026-10-07) — la visite guidée de la PREMIÈRE visite
  * d'une page, par rôle (élève, enseignant). Monté par StudentLayout et
  * TeacherLayout autour de la coquille : la barre latérale y lit
- * `usePageTour()` pour son bouton « جولة في الصفحة ».
+ * `usePageTour()` pour son bouton « Visite de la page ».
  *
  * Ce fichier est dans le lot d'entrée (StudentLayout est eager) : il ne
  * contient que le registre (des clés), la logique pure et deux appels
@@ -18,7 +20,7 @@ import { findPageTour, shouldAutoStart, TOUR_STATUS } from './tourModel';
  * demande) arrivent avec TourOverlay, paresseux, seulement quand une visite
  * s'ouvre. Voir docs/architecture/PAGE_TOURS.md.
  *
- * Fermer une visite (« إنهاء » ou « تخطّي ») la CLÔT : le serveur l'écrit et
+ * Fermer une visite (« Terminer » ou « Passer ») la CLÔT : le serveur l'écrit et
  * elle ne revient jamais d'elle-même. Quitter la page en pleine visite ne
  * la clôt pas : elle reprendra à la prochaine visite. Une clôture que le
  * réseau a perdue reste dans le navigateur (`tours.pending`) et repart au
@@ -58,7 +60,13 @@ export default function PageTourProvider({ children }) {
   // La visite EN COURS : { key, mode: 'auto' | 'replay' }.
   const [active, setActive] = useState(null);
 
-  const tour = useMemo(() => findPageTour(PAGE_TOURS, role, pathname), [role, pathname]);
+  const { paymentsOpen } = usePayments();
+  // Une visite (ou une étape) d'une fonction éteinte ou d'une surface commerciale
+  // fermée n'existe pas : ni ouverture, ni bouton de relecture (availableTour).
+  const tour = useMemo(
+    () => availableTour(findPageTour(PAGE_TOURS, role, pathname), { isFeatureOn, paymentsOpen }),
+    [role, pathname, paymentsOpen],
+  );
 
   useEffect(() => {
     if (!token || (role !== 'student' && role !== 'teacher')) return undefined;

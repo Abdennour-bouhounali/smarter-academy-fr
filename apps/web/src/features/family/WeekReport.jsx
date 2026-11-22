@@ -30,8 +30,8 @@ function Section({ icon: Icon, title, children }) {
 
 /**
  * Le RAPPORT DE LA SEMAINE (docs/architecture/PARENT_SPACE.md §4) — un seul
- * composant pour le parent (/wali/abnaa/:id) et pour l'élève (« ما يراه وليّك »,
- * /espace/profil/wali) : ce que l'élève voit est exactement ce que voit son وليّ.
+ * composant pour le parent (/wali/abnaa/:id) et pour l'élève (« Ce que voit ton parent »,
+ * /espace/profil/wali) : ce que l'élève voit est exactement ce que voit son parent.
  *
  * `report` est la forme de ParentReportService::week(). `audience` ne change
  * que la phrase d'encouragement d'une semaine vide, adressée au parent.
@@ -69,7 +69,7 @@ export default function WeekReport({ report, audience = 'parent' }) {
         <div className="flex items-end gap-1 sm:gap-2" style={{ height: 150 }} role="list">
           {time.days.map((d) => (
             <div key={d.date} className="flex h-full flex-1 flex-col items-center justify-end gap-1" role="listitem"
-              aria-label={`${days[weekdayOf(d.date)]}: ${formatDuration(t, d.studySeconds)}`}>
+              aria-label={`${days[weekdayOf(d.date)]}\u00A0: ${formatDuration(t, d.studySeconds)}`}>
               {/* La durée au-dessus de la barre : à partir de `sm` seulement — à
                   390 px une colonne fait ~44 px ; l'aria-label la porte toujours. */}
               <span className="hidden font-inter text-[11px] font-semibold text-slate-600 sm:inline">

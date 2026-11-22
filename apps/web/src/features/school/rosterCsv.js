@@ -3,14 +3,16 @@
  * fonction PURE : le serveur reste juge de chaque ligne (aperçu), ce module ne
  * fait que la découper.
  *
- * Trois colonnes, dans l'ordre des listes scolaires : اللقب، الاسم، تاريخ الميلاد.
+ * Trois colonnes, dans l'ordre des listes scolaires : nom, prénom, date de naissance.
  * Séparateur : virgule, point-virgule ou tabulation (copier-coller d'un tableur).
  * Une première ligne d'en-tête est reconnue et sautée. Une date « 14/03/2012 »
  * devient « 2012-03-14 » ; toute autre forme est rendue telle quelle (le
- * serveur dira « تاريخ غير صالح »).
+ * serveur dira `birthDate_invalid`).
  */
 
-const HEADER_WORDS = ['اللقب', 'الاسم', 'تاريخ', 'nom', 'prénom', 'prenom', 'date', 'lastname', 'firstname', 'birth'];
+// Une cellule d'en-tête est un de ces mots ENTIER (casse ignorée) : un nom de
+// famille qui contient « nom » (« Bonomo ») n'est pas pris pour un en-tête.
+const HEADER_CELL = /^(nom|nom de famille|pr[ée]nom|date|date de naissance|naissance|last ?name|first ?name|birth ?date)$/i;
 
 function splitLine(line) {
   const separator = line.includes('\t') ? '\t' : line.includes(';') ? ';' : ',';
@@ -29,8 +31,7 @@ export function normalizeDate(raw) {
 }
 
 function isHeader(cells) {
-  const joined = cells.join(' ').toLowerCase();
-  return HEADER_WORDS.some((w) => joined.includes(w));
+  return cells.some((cell) => HEADER_CELL.test(cell));
 }
 
 /**

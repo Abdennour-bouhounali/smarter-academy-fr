@@ -15,7 +15,7 @@ import { usePayments } from '../../context/PaymentsContext';
 
 const CARD = 'rounded-2xl border border-nav-line bg-white p-5';
 
-/** A class on « اليوم »: who, the lessons of its week, the way to the class. */
+/** A class on « Aujourd'hui »: who, the lessons of its week, the way to the class. */
 function ClassToday({ classGroup, today }) {
   const { t } = useTranslation('teacher');
   return (
@@ -35,8 +35,8 @@ function ClassToday({ classGroup, today }) {
 }
 
 /**
- * « اليوم », the teacher's home: his week, class by class — the lessons the school calendar gives each class this week,
- * and what waits for him. The seats and the plan live in « عرضي » (under his picture); the home keeps one line about
+ * « Aujourd'hui », the teacher's home: his week, class by class — the lessons the school calendar gives each class this week,
+ * and what waits for him. The seats and the plan live in « Ma formule » (under his picture); the home keeps one line about
  * them only when a limit is reached or a request is pending.
  */
 export default function TeacherHome() {

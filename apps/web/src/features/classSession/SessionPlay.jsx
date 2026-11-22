@@ -1,11 +1,12 @@
 /**
- * « حصّة القسم » — the test ON THE BOARD, and its result (CLASS_SESSION.md). One screen, one mouse: the name of the student
+ * « séance en classe » — the test ON THE BOARD, and its result (CLASS_SESSION.md). One screen, one mouse: the name of the student
  * whose turn it is stands on top; he answers; a sentence meets his answer — right or not — with his name; then the next.
- * At the end: what the class holds, the الكفاءات to revise, and the podium of the teams (the first in the middle).
+ * At the end: what the class holds, the savoir-faire to revise, and the podium of the teams (the first in the middle).
  * Readable from the last row; nothing scrolls; never « wrong » as a verdict; nobody is shown as last.
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, Check, Delete, Eye, X } from 'lucide-react';
+import { Check, Delete, Eye, X } from 'lucide-react';
+import { ArrowForward } from '../../components/common/DirectionalIcons';
 import MathText from '../../lessons/common/components/MathText';
 import KidFigure from '../../lessons/common/components/KidFigure';
 import { kidLook } from '../../lessons/common/components/kidFigure';
@@ -24,44 +25,44 @@ import {
 } from './session';
 
 const L = {
-  turn: 'دور',
-  pickOne: 'اختر تلميذًا من القسم',
-  klass: 'القسم',
-  pointer: 'المؤشّر',
-  close: 'إغلاق',
-  board: 'السبّورة',
-  q: (i, n) => `السؤال ${i} من ${n}`,
-  mode: { order: 'بالترتيب', teacher: 'أختار أنا', fair: 'اختر لي' },
-  true: 'صحيح',
-  false: 'خطأ',
-  confirm: 'تأكيد',
-  reveal: 'أظهر الجواب',
-  answer: 'الجواب',
-  next: 'السؤال التالي',
-  toResult: 'النتيجة',
-  absent: 'غياب',
-  absentHint: 'اضغط طاولة كلّ غائب.',
-  exit: 'خروج',
-  exitAsk: 'تخرج من الاختبار؟ لن تُحفظ هذه الحصّة.',
-  yes: 'نعم، أخرج',
-  stay: 'أواصل',
-  result: { start: 'نتيجة اختبار البداية', end: 'نتيجة اختبار النهاية' },
-  of: 'من',
-  revise: 'كفاءات تحتاج مراجعة',
-  allGood: 'القسم يتحكّم في كلّ الكفاءات المختبَرة.',
-  podium: 'منصّة التتويج',
-  stars: 'أصابوا اليوم',
-  before: 'في بداية الحصّة',
-  now: 'الآن',
-  newLesson: 'الدرس الجديد',
-  saved: 'حُفظت الحصّة.',
-  queued: 'لا اتّصال الآن: تُرسَل الحصّة تلقائيًّا عند عودة الاتّصال.',
-  noProgress: 'هذا الاختبار لا يغيّر تقدّم أيّ تلميذ.',
-  back: 'عودة إلى التحضير',
-  place: ['', 'الأوّل', 'الثاني', 'الثالث'],
-  sound: 'الصوت',
+  turn: 'C’est au tour de',
+  pickOne: 'Choisissez un élève de la classe',
+  klass: 'La classe',
+  pointer: 'Pointeur',
+  close: 'Fermer',
+  board: 'Le tableau',
+  q: (i, n) => `Question ${i} sur ${n}`,
+  mode: { order: 'Dans l’ordre', teacher: 'Je choisis', fair: 'Équitable' },
+  true: 'Vrai',
+  false: 'Faux',
+  confirm: 'Valider',
+  reveal: 'Montrer la réponse',
+  answer: 'La réponse',
+  next: 'Question suivante',
+  toResult: 'Le résultat',
+  absent: 'Absents',
+  absentHint: 'Cliquez sur la table de chaque absent.',
+  exit: 'Quitter',
+  exitAsk: 'Quitter le test ? Cette séance ne sera pas enregistrée.',
+  yes: 'Oui, quitter',
+  stay: 'Continuer',
+  result: { start: 'Résultat du test de début', end: 'Résultat du test de fin' },
+  of: 'sur',
+  revise: 'Savoir-faire à revoir',
+  allGood: 'La classe maîtrise tous les savoir-faire testés.',
+  podium: 'Le podium',
+  stars: 'Ont trouvé aujourd’hui',
+  before: 'En début de séance',
+  now: 'Maintenant',
+  newLesson: 'La nouvelle leçon',
+  saved: 'Séance enregistrée.',
+  queued: 'Pas de connexion pour l’instant : la séance sera envoyée dès le retour de la connexion.',
+  noProgress: 'Ce test ne change la progression d’aucun élève.',
+  back: 'Retour à la préparation',
+  place: ['', '1er', '2e', '3e'],
+  sound: 'Le son',
 };
-const LETTERS = ['أ', 'ب', 'ج', 'د', 'هـ', 'و'];
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 export function Player({ students, seating, questions, moment, turns, onFinish, onExit }) {
   const order = useMemo(() => turnOrder(seating, students), [seating, students]);
@@ -91,7 +92,7 @@ export function Player({ students, seating, questions, moment, turns, onFinish, 
     setTyped('');
     setShown(false);
   }, [i]);
-  // « أختار أنا »: the class opens by itself at each question, until the teacher has tapped a desk
+  // « Je choisis »: the class opens by itself at each question, until the teacher has tapped a desk
   useEffect(() => {
     if (mode === 'teacher' && pick == null && !said) setClassOpen(true);
   }, [mode, pick, said, i]);
@@ -144,7 +145,7 @@ export function Player({ students, seating, questions, moment, turns, onFinish, 
   useEffect(() => {
     const onKey = (e) => {
       if (tools.busy) return;
-      if ((e.key === 'Enter' || e.key === 'ArrowLeft') && said) {
+      if ((e.key === 'Enter' || e.key === 'ArrowRight') && said) {
         e.preventDefault();
         next();
       }
@@ -168,9 +169,7 @@ export function Player({ students, seating, questions, moment, turns, onFinish, 
     <div className="cs-play" data-cs-play={said ? 'said' : 'ask'} data-cs-moment-on={moment}>
       <header className="cs-play__top">
         <div className="cs-play__mid">
-          <span className="cs-count" dir="rtl">
-            {L.q(i + 1, questions.length)}
-          </span>
+          <span className="cs-count">{L.q(i + 1, questions.length)}</span>
           <span className="cs-dots" dir="ltr" aria-hidden="true">
             {questions.map((x, k) => (
               <i
@@ -316,7 +315,7 @@ export function Player({ students, seating, questions, moment, turns, onFinish, 
                   </button>
                 )}
                 <button type="button" className="cs-btn cs-btn--main" onClick={next} autoFocus data-cs-next>
-                  {i + 1 >= questions.length ? L.toResult : L.next} <ArrowLeft size={18} />
+                  {i + 1 >= questions.length ? L.toResult : L.next} <ArrowForward size={18} />
                 </button>
               </span>
             </div>
@@ -399,7 +398,7 @@ function Podium({ steps, students, seating }) {
             <text x={cx} y={top + 40} textAnchor="middle" className="cs-podium__place">
               {step.place}
             </text>
-            <text x={cx} y={BASE - 14} textAnchor="middle" className="cs-podium__team" direction="rtl">
+            <text x={cx} y={BASE - 14} textAnchor="middle" className="cs-podium__team">
               {step.teams.map((t) => t.name).join(' · ')}
             </text>
             {kids.map((k, n) => {
@@ -425,13 +424,7 @@ function Podium({ steps, students, seating }) {
                       </text>
                     </g>
                   )}
-                  <text
-                    x={x}
-                    y={top - (gender ? KID + 10 : 86)}
-                    textAnchor="middle"
-                    className="cs-podium__name"
-                    direction="rtl"
-                  >
+                  <text x={x} y={top - (gender ? KID + 10 : 86)} textAnchor="middle" className="cs-podium__name">
                     {callName(byId[k.id])}
                   </text>
                 </g>
@@ -462,7 +455,7 @@ export function Result({
   const sum = useMemo(() => summarise({ questions, answers, teams }), [questions, answers, teams]);
   const steps = podiumOf(sum.teams);
   const byId = Object.fromEntries(students.map((s) => [s.id, s]));
-  // « before / after »: the questions of the NEW lesson asked at the start of the hour, against the same الكفاءة now
+  // « before / after »: the questions of the NEW lesson asked at the start of the hour, against the same savoir-faire now
   const count = (list) =>
     (list ?? [])
       .filter((x) => lessonItems.includes(x.item))
@@ -488,7 +481,7 @@ export function Result({
           <div className="cs-gain" data-cs-gain={`${before.right}/${before.total}>${after.right}/${after.total}`}>
             <small>{L.newLesson}</small>
             <p>
-              {L.before}:{' '}
+              {L.before} :{' '}
               <b dir="ltr">
                 {before.right}
                 {'\u00a0/\u00a0'}
@@ -496,7 +489,7 @@ export function Result({
               </b>
             </p>
             <p>
-              {L.now}:{' '}
+              {L.now} :{' '}
               <b dir="ltr">
                 {after.right}
                 {'\u00a0/\u00a0'}
@@ -532,7 +525,7 @@ export function Result({
                 {[...new Set(sum.stars)]
                   .map((id) => callName(byId[id]))
                   .filter(Boolean)
-                  .join('، ')}
+                  .join(', ')}
               </p>
             </>
           )}
@@ -562,7 +555,7 @@ export function Result({
               autoFocus
               data-cs-continue={next.id}
             >
-              {next.label} <ArrowLeft size={20} />
+              {next.label} <ArrowForward size={20} />
             </button>
           )}
         </span>

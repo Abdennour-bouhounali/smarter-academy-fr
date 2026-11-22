@@ -2,10 +2,11 @@
  * THE COMMON HEADER of a teacher's tools of ONE lesson (owner, 2026-11-18: « make the top header common between the
  * tools… easy for the teacher to navigate through all the tools of the lesson »; CLASS_SESSION.md §2). The same bar on
  * the lesson page, the memo, the lesson file and the exercise bank: the lesson's title, then one tab per tool. The tools
- * that are shown to the class (« حصّة القسم », « متابعة القسم », « بطاقة المعارف ») open full screen; the others stay
+ * that are shown to the class (« Séance en classe », « Suivi de la classe », « Fiche de connaissances ») open full screen; the others stay
  * inside the teacher's space, with its navigation — hidden only when a tool itself goes full screen.
  */
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useIsPhoneScreen } from '../../components/auth/RequireLargeScreen';
 import { PHONE_TOOL_IDS } from '../../components/auth/phoneLessons';
 import { Brain, ClipboardList, FileText, Home, NotebookPen, Presentation, Users } from 'lucide-react';
@@ -16,17 +17,20 @@ import { classCardPath, classSessionPath, classTrackingPath, toolHasContent } fr
 import { lessonFilePagePath } from './lessonFileDoc';
 import './teacherPanel.css';
 
-/** The tools of a lesson, in the order of the teacher's card — only those that have content for it (`toolHasContent`). */
+/**
+ * The tools of a lesson, in the order of the teacher's card — only those that have content for it (`toolHasContent`).
+ * A tool's name is `memo › tools.<id>`.
+ */
 export const lessonTools = (lessonId) => ALL_TOOLS(lessonId).filter((tool) => toolHasContent(lessonId, tool.id));
 
 const ALL_TOOLS = (lessonId) => [
-  { id: 'lesson', label: 'الدرس', icon: Home, to: getLessonPath(lessonId) ?? '/enseignant/cours' },
-  { id: 'session', label: 'حصّة القسم', icon: Presentation, to: classSessionPath(lessonId), main: true },
-  { id: 'memo', label: 'المذكّرة', icon: FileText, to: `/enseignant/cours/${encodeURIComponent(lessonId)}/memoire` },
-  { id: 'file', label: 'ملفّ الدرس', icon: NotebookPen, to: lessonFilePagePath(lessonId) },
-  { id: 'bank', label: 'بنك التمارين', icon: ClipboardList, to: teacherBankPath(lessonId) },
-  { id: 'track', label: 'متابعة القسم', icon: Users, to: classTrackingPath(lessonId) },
-  { id: 'card', label: 'بطاقة المعارف', icon: Brain, to: classCardPath(lessonId) },
+  { id: 'lesson', icon: Home, to: getLessonPath(lessonId) ?? '/enseignant/cours' },
+  { id: 'session', icon: Presentation, to: classSessionPath(lessonId), main: true },
+  { id: 'memo', icon: FileText, to: `/enseignant/cours/${encodeURIComponent(lessonId)}/memoire` },
+  { id: 'file', icon: NotebookPen, to: lessonFilePagePath(lessonId) },
+  { id: 'bank', icon: ClipboardList, to: teacherBankPath(lessonId) },
+  { id: 'track', icon: Users, to: classTrackingPath(lessonId) },
+  { id: 'card', icon: Brain, to: classCardPath(lessonId) },
 ];
 
 /**
@@ -46,20 +50,21 @@ export function LessonToolPage({ lessonId, active, children, ...rest }) {
 export default function LessonToolsBar({ lessonId, active }) {
   const lesson = getLessonById(lessonId);
   const phone = useIsPhoneScreen();
+  const { t } = useTranslation('memo');
   return (
-    <header className="ltb" dir="rtl" data-lesson-tools={lessonId} data-lesson-tools-active={active}>
+    <header className="ltb" data-lesson-tools={lessonId} data-lesson-tools-active={active}>
       <p className="ltb__title">
-        <small>أدوات الدرس</small>
+        <small>{t('tools.label')}</small>
         <strong>
           <MathLabel>{lesson?.title ?? lessonId}</MathLabel>
         </strong>
       </p>
-      <nav className="ltb__tabs" aria-label="أدوات الدرس">
-        {lessonTools(lessonId).map(({ id, label, icon: Icon, to, main }) =>
+      <nav className="ltb__tabs" aria-label={t('tools.label')}>
+        {lessonTools(lessonId).map(({ id, icon: Icon, to, main }) =>
           // on a phone, a tool designed for a larger screen is shown but opens nothing (components/auth/phoneLessons.js)
           phone && !PHONE_TOOL_IDS.includes(id) ? (
-            <span key={id} className="is-off" aria-disabled="true" title="على الحاسوب" data-lesson-tool-off={id}>
-              <Icon size={17} aria-hidden="true" /> {label}
+            <span key={id} className="is-off" aria-disabled="true" title={t('tools.laptop')} data-lesson-tool-off={id}>
+              <Icon size={17} aria-hidden="true" /> {t(`tools.${id}`)}
             </span>
           ) : (
             <Link
@@ -69,7 +74,7 @@ export default function LessonToolsBar({ lessonId, active }) {
               aria-current={active === id ? 'page' : undefined}
               data-lesson-tool={id}
             >
-              <Icon size={17} aria-hidden="true" /> {label}
+              <Icon size={17} aria-hidden="true" /> {t(`tools.${id}`)}
             </Link>
           ),
         )}

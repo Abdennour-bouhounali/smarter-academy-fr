@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { findPageTour, isTourClosed, shouldAutoStart, playableSteps, nextPlayableIndex, placeCard } from './tourModel';
+import { availableTour, findPageTour, isTourClosed, shouldAutoStart, playableSteps, nextPlayableIndex, placeCard } from './tourModel';
 import { PAGE_TOURS } from './tourRegistry';
 
 const tours = [
@@ -96,5 +96,35 @@ describe('PAGE_TOURS registry', () => {
       expect(seen.has(k)).toBe(false);
       seen.add(k);
     }
+  });
+});
+
+describe('availableTour', () => {
+  const on = (names) => (name) => names.includes(name);
+  const tour = {
+    key: 'student.home',
+    steps: [{ id: 'welcome' }, { id: 'next', target: 'x.a' }, { id: 'challenge', target: 'x.b', feature: 'dailyChallenge' }],
+  };
+  it('drops a step of a feature that is off, keeps it when on', () => {
+    expect(availableTour(tour, { isFeatureOn: on([]), paymentsOpen: false }).steps.map((s) => s.id)).toEqual(['welcome', 'next']);
+    expect(availableTour(tour, { isFeatureOn: on(['dailyChallenge']), paymentsOpen: false })).toBe(tour);
+  });
+  it('a whole tour of a feature that is off, or of a commercial page while payments are closed, does not exist', () => {
+    expect(availableTour({ ...tour, feature: 'dailyChallenge' }, { isFeatureOn: on([]), paymentsOpen: true })).toBeNull();
+    const plan = { key: 'teacher.plan', commercial: true, steps: [{ id: 'current', target: 'x.a' }] };
+    expect(availableTour(plan, { isFeatureOn: on([]), paymentsOpen: false })).toBeNull();
+    expect(availableTour(plan, { isFeatureOn: on([]), paymentsOpen: true })).toBe(plan);
+  });
+  it('a tour left with no targeted step does not exist', () => {
+    const only = { key: 'k', steps: [{ id: 'welcome' }, { id: 'c', target: 'x', commercial: true }] };
+    expect(availableTour(only, { isFeatureOn: on([]), paymentsOpen: false })).toBeNull();
+    expect(availableTour(null, { isFeatureOn: on([]), paymentsOpen: false })).toBeNull();
+  });
+  it('the real registry: no daily-challenge step and no plan tour while they are off', () => {
+    const closed = { isFeatureOn: on([]), paymentsOpen: false };
+    const home = availableTour(PAGE_TOURS.find((t) => t.key === 'student.home'), closed);
+    expect(home.steps.map((s) => s.id)).not.toContain('challenge');
+    expect(availableTour(PAGE_TOURS.find((t) => t.key === 'teacher.plan'), closed)).toBeNull();
+    expect(availableTour(PAGE_TOURS.find((t) => t.key === 'student.challenge'), closed)).toBeNull();
   });
 });

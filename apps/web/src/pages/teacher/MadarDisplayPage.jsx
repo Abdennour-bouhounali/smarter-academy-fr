@@ -16,7 +16,7 @@ const PODIUM = [
 ];
 
 /**
- * « سباق مدار » au tableau : le podium de la semaine et la suite du
+ * « La course de l'Espace jeux » au tableau : le podium de la semaine et la suite du
  * classement, lisibles à cinq mètres. Prénom + initiale, vaisseau, score —
  * rien d'autre (le serveur ne sert que cela). Plein écran, hors de la
  * coquille enseignant ; rafraîchi toutes les 15 s ; Échap revient à la classe.

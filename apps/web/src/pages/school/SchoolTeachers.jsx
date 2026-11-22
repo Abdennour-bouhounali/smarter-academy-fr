@@ -7,11 +7,12 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { detachTeacher, fetchSchoolTeachers, rotateTeacherLink } from '../../services/schoolService';
 import TeacherFacts from '../../features/school/TeacherFacts';
 import { btnDanger, btnSecondary, card, errorText, personName } from '../../features/school/ui';
+import { LOCALE } from '../../locale.js';
 
 /**
- * « الأساتذة » (SCHOOL_ADMIN_SPACE.md §7, décision D4) : le lien d'adhésion des
+ * « Professeurs » (SCHOOL_ADMIN_SPACE.md §7, décision D4) : le lien d'adhésion des
  * enseignants, et chaque enseignant avec ses FAITS — ceux qu'il lit lui-même
- * dans « مؤسستي ».
+ * dans « Mon établissement ».
  */
 export default function SchoolTeachers() {
   const { t } = useTranslation('idara');
@@ -87,7 +88,7 @@ export default function SchoolTeachers() {
                 <div>
                   <p className="font-space font-bold text-slate-900">{personName(tch, t('common.unnamed'))}</p>
                   <p className="font-inter text-xs text-slate-500">
-                    {t('teachers.joinedAt')}: {tch.joinedAt ? new Date(tch.joinedAt).toLocaleDateString('ar-DZ', { dateStyle: 'medium', numberingSystem: 'latn' }) : t('common.dash')}
+                    {t('teachers.joinedAt')} {tch.joinedAt ? new Date(tch.joinedAt).toLocaleDateString(LOCALE, { dateStyle: 'medium', numberingSystem: 'latn' }) : t('common.dash')}
                   </p>
                 </div>
                 <button type="button" className={btnDanger} onClick={() => setDetaching(tch)}>{t('teachers.detach')}</button>

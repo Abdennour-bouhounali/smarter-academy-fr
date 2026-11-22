@@ -15,7 +15,7 @@ vi.mock('../../lessons/lessonIndex.generated.json', async () => ({
   default: (await import('./test/lessonIndexFixture.js')).LESSON_INDEX,
 }));
 
-describe('حصّة القسم — the lessons that have their own board (and no « وضع القسم » any more)', () => {
+describe('séance en classe — the lessons that have their own board (and no « mode classe » any more)', () => {
   it('is exactly the list of the lessons whose pack has a board: a lesson joins the day its script is written', () => {
     expect(BOARD_LESSONS).toEqual(['lecon-cles', 'lecon-synthese']);
     for (const id of BOARD_LESSONS) expect(lessonPackFlags(id).board, id).toBe(true);
@@ -31,7 +31,7 @@ describe('حصّة القسم — the lessons that have their own board (and no 
     expect(classSessionPath('lecon-cles', 'anything')).toBe('/enseignant/hissa/lecon-cles'); // an unknown moment is not passed on
   });
 
-  it('turns every old door of such a lesson into « حصّة القسم », and leaves the other lessons their « وضع القسم »', () => {
+  it('turns every old door of such a lesson into « la séance en classe », and leaves the other lessons their « mode classe »', () => {
     const base = '/courses/college/3e/nombres_calculs';
     expect(classDoor('lecon-cles', `${base}/lecon-cles`)).toEqual({
       to: '/enseignant/hissa/lecon-cles',

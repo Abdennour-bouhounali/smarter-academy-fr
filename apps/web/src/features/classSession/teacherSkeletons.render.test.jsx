@@ -12,19 +12,19 @@ import {
 const statuses = (html) => (html.match(/role="status"/g) ?? []).length;
 
 describe('the teacher’s loading skeletons', () => {
-  it('« للأستاذ »: one status, with the class panel only on a lesson that has its board', () => {
+  it('« Pour le professeur »: one status, with the class panel only on a lesson that has its board', () => {
     const withBoard = renderToString(<TeacherPanelSkeleton />);
     const without = renderToString(<TeacherPanelSkeleton board={false} />);
     for (const html of [withBoard, without]) {
       expect(statuses(html)).toBe(1);
-      expect(html).toContain('aria-label="جارٍ التحضير…"');
+      expect(html).toContain('aria-label="Préparation…"');
       expect(html).toContain('motion-reduce:animate-none');
     }
     expect(withBoard).toContain('rounded-3xl');
     expect(without).not.toContain('rounded-3xl');
   });
 
-  it('« حصّة القسم »: the page frame and its set-up screen, one status', () => {
+  it('« séance en classe »: the page frame and its set-up screen, one status', () => {
     const html = renderToString(<ClassSessionSkeleton />);
     expect(html).toContain('cs-root');
     expect(html).toContain('cs-work');
@@ -35,7 +35,7 @@ describe('the teacher’s loading skeletons', () => {
   it('the lab layer says it is opening', () => {
     const html = renderToString(<LabOpeningSkeleton />);
     expect(statuses(html)).toBe(1);
-    expect(html).toContain('جارٍ التحضير…');
+    expect(html).toContain('Préparation…');
   });
 
   it('fits the board like the page: wide at 1366 × 768, 4:3 below a ratio of 1.55', () => {

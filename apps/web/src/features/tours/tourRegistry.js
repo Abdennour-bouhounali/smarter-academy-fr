@@ -1,5 +1,5 @@
 /**
- * Le REGISTRE des « جولة تعريفية » — une visite par page et par rôle.
+ * Le REGISTRE des « Visite de la page » — une visite par page et par rôle.
  * Des DONNÉES seulement (ce fichier est dans le lot d'entrée) : les textes
  * vivent dans `i18n/locales/ar/tour.json` (namespace à la demande), sous
  * `<key>.<step.id>.title|body`, plus `ui.*` pour les boutons.
@@ -15,6 +15,10 @@
  *            Une étape dont la cible manque (état vide, autre largeur
  *            d'écran) est sautée ; une visite sans aucune cible à l'écran
  *            n'est pas jouée et n'est pas close.
+ *   feature  (visite ou étape, facultatif) nom d'une fonction de
+ *            `config/features.js` : absente tant qu'elle est éteinte.
+ *   commercial (visite ou étape, facultatif) `true` : absente tant que les
+ *            paiements sont fermés. Voir tourModel › availableTour.
  *
  * Cibles : réutiliser d'abord un crochet `data-*` existant de la page
  * (`[data-home-hero]`) ; sinon poser `data-tour="<page>.<élément>"` sur
@@ -49,7 +53,7 @@ const NOTEBOOK = {
   filters: '[data-tour="notebook.filters"]',
 };
 
-// La page d'une وحدة : trouvée par son chemin.
+// La page d'un chapitre (une unité dans le code) : trouvée par son chemin.
 const UNIT_PATH = '/courses/:levelId/:gradeId/:chapterId/units/:unitId';
 // La page de l'élève d'une unité convertie (UnitMissionView, 2026-11-09) a d'autres éléments : chaque cible élève vise les DEUX pages.
 const UNIT = {
@@ -70,7 +74,7 @@ export const PAGE_TOURS = [
     steps: [
       { id: 'welcome' },
       { id: 'next', target: '[data-home-hero]' },
-      { id: 'challenge', target: '[data-daily-challenge-card]' },
+      { id: 'challenge', target: '[data-daily-challenge-card]', feature: 'dailyChallenge' },
       { id: 'stats', target: '[data-home-stats]' },
       { id: 'where', target: '[data-home-where]' },
       { id: 'nav', target: NAV },
@@ -92,6 +96,7 @@ export const PAGE_TOURS = [
     key: 'student.challenge',
     role: 'student',
     path: '/espace/defi',
+    feature: 'dailyChallenge',
     steps: [
       { id: 'mission', target: '[data-tour="challenge.mission"]' },
       { id: 'start', target: '[data-challenge-intro] [data-start]' },
@@ -249,6 +254,7 @@ export const PAGE_TOURS = [
     key: 'teacher.plan',
     role: 'teacher',
     path: '/enseignant/offre',
+    commercial: true,
     steps: [
       { id: 'current', target: '[data-current-plan]' },
       { id: 'howto', target: '[data-tour="plan.howto"]' },

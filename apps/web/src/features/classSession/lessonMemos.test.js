@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { hasBoardMemo, MEMO_PARTS, partKeys, openingFacts } from './lessonMemos';
 import { BOARD_LESSONS } from './boardLessons';
 
-describe('مذكّرة الدرس — the written memo of a lesson that has its board', () => {
+describe('fiche du professeur — the written memo of a lesson that has its board', () => {
   it('exists for the lessons that have a board, with every part a good lesson plan has', () => {
     for (const id of BOARD_LESSONS) expect(hasBoardMemo(id), id).toBe(true); // the memo is written with the script: one flag of the pack
     expect(hasBoardMemo('other')).toBe(false);
@@ -16,7 +16,7 @@ describe('مذكّرة الدرس — the written memo of a lesson that has its 
       'written',
       'exit',
       'tiers',
-    ]); // no notes part: his notes are « ملفّ الدرس »
+    ]); // no notes part: his notes are « le dossier de la leçon »
     expect(MEMO_PARTS.map((g) => g.id)).toEqual(['before', 'during', 'after']);
   });
 

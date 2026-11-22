@@ -5,7 +5,7 @@ import StatusTrail from '../insights/StatusTrail';
 import { DIRECTION_TONE, outcomeLine, studentName } from '../insights/insights';
 
 /**
- * « ما حدث بعده » — la MESURE d'une intervention, élève par élève : l'état
+ * « Ce qui s'est passé ensuite » — la MESURE d'une intervention, élève par élève : l'état
  * figé au moment du geste, l'état d'aujourd'hui, la preuve arrivée depuis.
  *
  * Des faits, et un avertissement qui ne se cache pas : ce qui a suivi n'est

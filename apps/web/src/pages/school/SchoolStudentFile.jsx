@@ -9,10 +9,10 @@ import { fetchStudentFile } from '../../services/schoolService';
 import { btnSecondary, errorText, personName } from '../../features/school/ui';
 
 /**
- * « ملف التلميذ » (SCHOOL_ADMIN_SPACE.md §7, phase 4) : le MÊME « التقدّم
- * بالتفصيل » que lisent l'élève et son وليّ (PARENT_SPACE.md §4bis) — un seul
+ * « Fiche de l’élève » (SCHOOL_ADMIN_SPACE.md §7, phase 4) : le MÊME « La progression
+ * en détail » que lisent l'élève et son parent (PARENT_SPACE.md §4bis) — un seul
  * service, un seul composant. Pas de temps d'étude : l'élève a accepté que
- * l'établissement lise son avancement et ses كفاءات, pas ses heures.
+ * l'établissement lise son avancement et ses savoir-faire, pas ses heures.
  */
 export default function SchoolStudentFile() {
   const { t } = useTranslation('idara');

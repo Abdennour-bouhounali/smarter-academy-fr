@@ -1,5 +1,5 @@
 /**
- * L'état de « عرضي », dérivé PUREMENT de ce que le serveur rend — aucune
+ * L'état de « Ma formule », dérivé PUREMENT de ce que le serveur rend — aucune
  * règle commerciale ici. Cinq états d'affichage :
  *
  *   free       — l'offre par défaut, sans abonnement
@@ -32,8 +32,8 @@ export function deriveSubscriptionState({ entitlements, requests = [], subscript
   };
 }
 
-/** Le prix informatif en dinars, ou null si l'offre est gratuite. */
+/** Le prix informatif en euros (le montant entier ; l'affichage passe par utils/money.js › formatEur), ou null si l'offre est gratuite. */
 export function informationalPrice(price) {
   if (!price || !price.amountCents) return null;
-  return { amount: Math.round(price.amountCents / 100), currency: price.currency || 'DZD', interval: price.billingInterval };
+  return { amount: Math.round(price.amountCents / 100), currency: price.currency || 'EUR', interval: price.billingInterval };
 }

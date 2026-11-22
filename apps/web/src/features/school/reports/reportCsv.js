@@ -71,7 +71,7 @@ function cell(value) {
   return /[",\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
 }
 
-/** Des lignes → un CSV UTF-8 avec BOM (Excel lit alors l'arabe correctement). */
+/** Des lignes → un CSV UTF-8 avec BOM (Excel lit alors les accents correctement). */
 export function toCsv(rows) {
   return `﻿${rows.map((r) => r.map(cell).join(',')).join('\r\n')}\r\n`;
 }

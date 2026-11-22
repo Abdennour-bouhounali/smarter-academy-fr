@@ -12,7 +12,7 @@ import MathLabel from '../../../lessons/common/components/MathLabel';
 import { mathToPlain } from '../../../utils/mathPlain';
 
 /**
- * Les SECTIONS de la مذكرة الدرس. Chacune reçoit sa part du modèle
+ * Les SECTIONS de la fiche du professeur. Chacune reçoit sa part du modèle
  * (buildLessonMemo) et ne rend RIEN quand la leçon n'a rien à y mettre :
  * aucune section vide « pour la forme », aucun texte inventé.
  *
@@ -302,7 +302,7 @@ export function MemoTimeline({ phases }) {
                   <RoleBlock icon={Wrench} label={t('timeline.support')} className="bg-nav-accent-soft text-indigo-900">
                     {p.manipulations.length > 0 || p.otherResources.length > 0 ? (
                       <ul className="space-y-1">
-                        {p.manipulations.map((m) => <li key={bidi(m.title)}>🧪 {m.level ? <b>{t(`timeline.level.${m.level}`)}: </b> : null}<M>{bidi(m.title)}</M></li>)}
+                        {p.manipulations.map((m) => <li key={bidi(m.title)}>🧪 {m.level ? <b>{t(`timeline.level.${m.level}`)} : </b> : null}<M>{bidi(m.title)}</M></li>)}
                         {p.otherResources.map((r) => <li key={bidi(r.title)}>📄 <M>{bidi(r.title)}</M></li>)}
                       </ul>
                     ) : (stageKey && t(`${stageKey}.support`))}

@@ -16,7 +16,7 @@ export default function TeacherProfile() {
   return (
     <TeacherPage eyebrow={t('space')} title={t('profile.title')} subtitle={t('profile.subtitle')}>
       <div className="rounded-2xl border border-nav-line bg-white p-5 max-w-xl space-y-4" data-tour="teacher-profile.name">
-        {/* « الاسم و اللقب » — ce que les élèves lisent de leur أستاذ. */}
+        {/* « Prénom et nom » — ce que les élèves lisent de leur professeur. */}
         <NameEditor tone="teal" />
         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
           <div><dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">{t('profile.email')}</dt><dd className="mt-0.5 text-slate-800" dir="ltr">{user?.email}</dd></div>

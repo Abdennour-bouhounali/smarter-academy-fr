@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { qrMatrix, qrPath } from './QrCode';
 
-const URL = 'https://smarter-academy.com/w/AbCdEfGhIjKlMnOpQrStUvWxYz012345';
+const URL = 'https://smarter-academy.fr/w/AbCdEfGhIjKlMnOpQrStUvWxYz012345';
 
-describe('QR du رابط الوليّ', () => {
+describe('QR du lien parent', () => {
   it('encodes a parent link into a square matrix with the three finder patterns', () => {
     const m = qrMatrix(URL);
     const n = m.length;

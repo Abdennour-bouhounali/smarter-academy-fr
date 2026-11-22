@@ -335,7 +335,7 @@ function Items({ classGroupId, range }) {
 }
 
 /**
- * L'onglet « لعبة مدار » d'un قسم : la semaine de la classe (qui joue, qui
+ * L'onglet « Espace jeux » d'une classe : la semaine de la classe (qui joue, qui
  * fait le plein, avec quelle justesse, ce qui « mérite un regard »), les
  * cœurs donnés / retirés, les questions et leur délai, les réglages, et
  * l'écran du tableau. Chargé à la demande avec le catalogue `madar`.
@@ -409,7 +409,7 @@ export default function MadarTab({ classGroup }) {
         </div>
       </div>
 
-      {/* « نافس أستاذك » : l'enseignant joue avec CETTE classe ; sa place dans le classement de la semaine. */}
+      {/* « Défie ton professeur » : l'enseignant joue avec CETTE classe ; sa place dans le classement de la semaine. */}
       <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-nav-line bg-white p-4" data-teacher-play-card>
         <Swords size={20} className="text-nav-accent" aria-hidden="true" />
         <p className="min-w-0 flex-1 font-inter text-sm font-semibold text-slate-800" data-teacher-standing>
@@ -423,7 +423,7 @@ export default function MadarTab({ classGroup }) {
       </div>
 
       {/* Les réglages passent SOUS le tableau jusqu'à 1536 px : à 1366 px, une colonne latérale
-          repoussait « تستحق نظرة » et « القلوب » hors de l'écran. */}
+          repoussait « À regarder » et « les cœurs » hors de l'écran. */}
       <div className="space-y-4">
         <div className="min-w-0 space-y-4">
           <dl className="grid grid-cols-2 gap-x-6 gap-y-3 rounded-2xl border border-nav-line bg-white p-4 sm:grid-cols-4">

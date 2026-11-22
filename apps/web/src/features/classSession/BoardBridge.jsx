@@ -1,8 +1,8 @@
 /**
- * « حصّة القسم » — the BRIDGE of the board (CLASS_SESSION.md §5ter). The same idea as the student's world, drawn for a
- * projector: light, large, read from the last desk. A gap of `a` cells between two banks; planks of length `b` laid one
- * after the other from the right bank (the class reads from the right). Nothing is left: the bridge holds and the child
- * crosses. Cells are left: they blink, the planks drop into the water — the verdict is what the class SEES, never a word.
+ * « séance en classe » — the BRIDGE of the board (CLASS_SESSION.md §5ter). The same idea as the student's world, drawn for
+ * a projector: light, large, read from the last desk. A gap of `a` cells between two banks; planks of length `b` laid one
+ * after the other from the LEFT bank (the class reads from left to right), so the cells left open are at the right end.
+ * Nothing is left: the bridge holds and the child crosses, from left to right. Cells are left: they blink, the planks drop into the water — the verdict is what the class SEES, never a word.
  * The drawing is the argument: `q` planks are drawn, `r` cells stay open — both computed, never typed.
  *   stage 'ask'    the gap, and one plank shown above it;
  *   stage 'build'  the planks are being laid (`buildMs` says how long);
@@ -67,39 +67,33 @@ export default function BoardBridge({ c, stage = 'ask', kid = 0 }) {
           width={Math.max(0.6, cell - 1.6)}
           height="26"
           rx={Math.min(4, cell / 4)}
-          className={`bb-slot ${built && i < c.r ? 'is-left' : ''}`}
+          className={`bb-slot ${built && i >= c.a - c.r ? 'is-left' : ''}`}
         />
       ))}
       <line x1={x0} x2={xR} y1={DECK + 44} y2={DECK + 44} className="bb-dim" />
       <line x1={x0} x2={x0} y1={DECK + 36} y2={DECK + 52} className="bb-dim" />
       <line x1={xR} x2={xR} y1={DECK + 36} y2={DECK + 52} className="bb-dim" />
-      <text x={W / 2} y={DECK + 78} textAnchor="middle" className="bb-cap" direction="rtl">
+      <text x={W / 2} y={DECK + 78} textAnchor="middle" className="bb-cap">
         {cellsOf(c.a)}
       </text>
       {!built && (
         <g className="bb-sample">
           <rect
-            x={xR - cell * c.b + 1.5}
+            x={x0 + 1.5}
             y={DECK - 66}
             width={Math.max(2, cell * c.b - 3)}
             height="28"
             rx="7"
             className="bb-plank bb-plank--still"
           />
-          <text
-            x={xR - (cell * c.b) / 2}
-            y={DECK - 76}
-            textAnchor="middle"
-            className="bb-cap bb-cap--plank"
-            direction="rtl"
-          >
-            لوح {c.b}
+          <text x={x0 + (cell * c.b) / 2} y={DECK - 76} textAnchor="middle" className="bb-cap bb-cap--plank">
+            planche de {c.b}
           </text>
         </g>
       )}
       {built &&
         Array.from({ length: c.q }, (_, k) => {
-          const x = xR - (k + 1) * c.b * cell;
+          const x = x0 + k * c.b * cell;
           return (
             <g key={k} className="bb-plankg" style={{ animationDelay: `${Math.round(k * per)}ms` }}>
               <rect
@@ -120,24 +114,23 @@ export default function BoardBridge({ c, stage = 'ask', kid = 0 }) {
         })}
       {done && c.r > 0 && (
         <text
-          x={x0 + (c.r * cell) / 2}
+          x={xR - (c.r * cell) / 2}
           y={DECK - 16}
           textAnchor="middle"
           className="bb-cap bb-cap--left"
-          direction="rtl"
           data-bb-left-cap
         >
-          بقي {c.r}
+          reste {c.r}
         </text>
       )}
-      {/* the child waits on the right bank and crosses only a bridge that holds */}
+      {/* the child waits on the left bank and crosses only a bridge that holds */}
       <g
         className="bb-kid"
-        style={{ transform: crossed ? `translateX(${-(total + 100)}px)` : 'none' }}
+        style={{ transform: crossed ? `translateX(${total + 100}px)` : 'none' }}
         data-bb-kid={crossed ? 'crossed' : 'waiting'}
       >
         <KidFigure
-          cx={xR + 50}
+          cx={x0 - 50}
           top={DECK - 9 - 112}
           foot={DECK - 7}
           {...look}
@@ -148,7 +141,7 @@ export default function BoardBridge({ c, stage = 'ask', kid = 0 }) {
   );
 }
 
-/** A bridge in one line, for a log or a choice: the planks from the right, the cells left open in amber. */
+/** A bridge in one line, for a log or a choice: the planks from the left, the cells left open at the right end, in amber. */
 export function BridgeBar({ c }) {
   const BW = 300;
   const cell = BW / c.a;
@@ -162,7 +155,7 @@ export function BridgeBar({ c }) {
       {Array.from({ length: c.q }, (_, k) => (
         <rect
           key={k}
-          x={BW - (k + 1) * c.b * cell + 0.6}
+          x={k * c.b * cell + 0.6}
           y="2"
           width={Math.max(0.6, cell * c.b - 1.2)}
           height="16"
@@ -170,7 +163,16 @@ export function BridgeBar({ c }) {
           className="bbar-plank"
         />
       ))}
-      {c.r > 0 && <rect x="0.6" y="2" width={Math.max(1, cell * c.r - 1.2)} height="16" rx="3" className="bbar-left" />}
+      {c.r > 0 && (
+        <rect
+          x={BW - cell * c.r + 0.6}
+          y="2"
+          width={Math.max(1, cell * c.r - 1.2)}
+          height="16"
+          rx="3"
+          className="bbar-left"
+        />
+      )}
     </svg>
   );
 }

@@ -10,9 +10,9 @@ import { card, errorText, field } from '../../features/school/ui';
 import Distribution, { STATES } from '../../features/school/Distribution';
 
 /**
- * « الكفاءات » (SCHOOL_ADMIN_SPACE.md §7, phase 4) : chaque كفاءة d'un niveau,
- * classe par classe, en EFFECTIFS (متحكَّم فيها · تعزيز · ثغرة · لم تُقيَّم).
- * Pas de moyenne : une classe « à 70 % » cacherait cinq élèves en ثغرة.
+ * « Savoir-faire » (SCHOOL_ADMIN_SPACE.md §7, phase 4) : chaque savoir-faire d'un niveau,
+ * classe par classe, en EFFECTIFS (maîtrisé · à consolider · lacune · non évalué).
+ * Pas de moyenne : une classe « à 70 % » cacherait cinq élèves en lacune.
  */
 export default function SchoolLearningMap() {
   const { t } = useTranslation('idara');

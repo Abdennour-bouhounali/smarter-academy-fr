@@ -1,5 +1,5 @@
 /**
- * « حصّة القسم » — the LESSON ON THE BOARD (owner, 2026-11-18: the during-the-lesson classroom mode, rebuilt from zero;
+ * « séance en classe » — the LESSON ON THE BOARD (owner, 2026-11-18: the during-the-lesson classroom mode, rebuilt from zero;
  * CLASS_SESSION.md §5ter). One board, one mouse, a whole class — and the platform's method, moved to the board:
  *   the class ACTS first (it chooses a gap and a plank, predicts, the board builds), it CONCLUDES itself (it writes its rule
  *   with two tiles; the board runs it on the class's own bridges, then attacks it with a new gap), and only a rule that
@@ -10,8 +10,6 @@
  */
 import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  ArrowLeft,
-  ArrowRight,
   Brain,
   Check,
   FlaskConical,
@@ -28,6 +26,7 @@ import {
   X,
 } from 'lucide-react';
 import MathText from '../../lessons/common/components/MathText';
+import { ArrowBack, ArrowForward } from '../../components/common/DirectionalIcons';
 
 // the lesson's game world (three.js): its own chunk, loaded only when a mission is opened on the board
 const LessonGameWorld = lazy(() => import('../../lessons/common/gameworld/LessonGameWorld'));
@@ -69,79 +68,81 @@ import {
 } from './lessonScripts';
 
 const LL = {
-  openMission: 'افتح المهمّة على السبّورة',
-  exit: 'خروج',
-  prev: 'السابق',
-  next: 'التالي',
-  toForge: 'نستنتج',
-  toName: 'نعطيها اسمها',
-  toEnd: 'اختبار النهاية',
-  cue: 'سؤال شفهي',
-  key: (k, n) => `المفتاح ${k} من ${n}`,
-  turn: 'على السبّورة',
-  reads: 'يقرأ',
-  tryPlank: (b) => `نجرّب اللوح ${b}`,
-  held: 'ثبت الجسر!',
-  fell: 'انهار الجسر',
-  again: 'أعد',
-  gap: 'طول الهوّة',
-  plank: 'طول اللوح',
-  suggest: 'اقتراحات',
-  predict: 'توقّع القسم:',
-  holds: 'يثبت',
-  falls: 'ينهار',
-  noPredict: 'نبني دون توقّع',
-  building: 'نبني…',
-  predRight: 'توقّع القسم في محلّه',
-  predOff: 'ليس ما توقّعناه: لماذا؟',
-  another: 'جسر آخر',
-  log: 'جسور القسم',
-  logEmpty: 'كلّ جسر يبنيه القسم يُكتب هنا.',
+  openMission: 'Ouvrir la mission au tableau',
+  exit: 'Quitter',
+  prev: 'Précédent',
+  next: 'Suivant',
+  toForge: 'On conclut',
+  toName: 'On lui donne son nom',
+  toEnd: 'Test de fin',
+  cue: 'Question à l’oral',
+  key: (k, n) => `Clé ${k} sur ${n}`,
+  turn: 'Au tableau',
+  reads: 'Lecture par',
+  tryPlank: (b) => `On essaie la planche de ${b}`,
+  held: 'Le pont tient !',
+  fell: 'Le pont s’effondre',
+  again: 'Recommencer',
+  gap: 'Longueur du fossé',
+  plank: 'Longueur de la planche',
+  suggest: 'Suggestions',
+  predict: 'La classe prévoit :',
+  holds: 'Il tient',
+  falls: 'Il s’effondre',
+  noPredict: 'Construire sans prévoir',
+  building: 'On construit…',
+  predRight: 'La classe avait bien prévu',
+  predOff: 'Ce n’est pas ce que nous avions prévu : pourquoi ?',
+  another: 'Un autre pont',
+  log: 'Les ponts de la classe',
+  logEmpty: 'Chaque pont que la classe construit s’inscrit ici.',
   miss: {
-    held: 'نحتاج جسرًا يثبت.',
-    fell: 'نحتاج جسرًا ينهار.',
-    more: 'جسر أو جسران آخران، ثمّ نستنتج.',
-    ready: 'عندنا ما يكفي لنستنتج.',
+    held: 'Il nous faut un pont qui tient.',
+    fell: 'Il nous faut un pont qui s’effondre.',
+    more: 'Encore un ou deux ponts, puis on conclut.',
+    ready: 'Nous en avons assez pour conclure.',
   },
-  cols: ['الهوّة', 'اللوح', 'عدد الألواح', 'خانات باقية', 'الجسر', 'قاعدتنا'],
-  heldShort: 'ثبت',
-  fellShort: 'انهار',
-  noLog: 'لا جسر بعد: القسم يجرّب أوّلًا.',
-  backToLab: 'نعود إلى التجربة',
-  few: 'جسور القسم قليلة: جسر يثبت وجسر ينهار على الأقلّ.',
-  write: 'القسم يكتب قاعدته',
-  when: 'يثبت الجسر عندما:',
+  cols: ['Fossé', 'Planche', 'Planches posées', 'Cases restantes', 'Le pont', 'Notre règle'],
+  heldShort: 'Tient',
+  fellShort: 'S’effondre',
+  noLog: 'Aucun pont pour l’instant : la classe essaie d’abord.',
+  backToLab: 'Retour à l’expérience',
+  few: 'La classe a peu de ponts : il en faut au moins un qui tient et un qui s’effondre.',
+  write: 'La classe écrit sa règle',
+  when: 'Le pont tient quand :',
   hole: '……',
-  test: 'نختبر قاعدتنا',
+  test: 'On teste notre règle',
   clash: (m) =>
-    `قاعدتنا تقول إنّ الجسر (هوّة ${m.a}، لوح ${m.b}) ${m.says ? 'يثبت' : 'ينهار'}، لكنّه ${m.held ? 'ثبت' : 'انهار'}. نعدّل قاعدتنا.`,
-  broke: (c) => `لم تصمد قاعدتنا أمام هوّة من ${cellsOf(c.a)} ولوح طوله ${c.b}: أضفنا هذا الجسر إلى جسور القسم.`,
-  noAttack: 'قاعدتنا توافق جسورنا، لكنّها ليست أبسط قاعدة: نجرّب جسورًا أخرى ثمّ نعيد.',
-  agree: 'قاعدتنا توافق كلّ جسور القسم.',
-  attack: (c) => `السبّورة تتحدّى قاعدتنا: هوّة من ${cellsOf(c.a)}، ولوح طوله ${c.b}.`,
-  attackBuild: 'نبني لنرى',
-  survived: 'صمدت قاعدتنا!',
-  broken: 'لم تصمد قاعدتنا هنا.',
-  nextAttack: 'تحدٍّ آخر',
-  fix: 'نعدّل قاعدتنا',
-  seal: 'نثبّت قاعدتنا',
-  sealed: 'قاعدة القسم صمدت',
+    `Notre règle dit que le pont (fossé de ${m.a}, planche de ${m.b}) ${m.says ? 'tient' : 's’effondre'}, mais il ${m.held ? 'a tenu' : 's’est effondré'}. On corrige notre règle.`,
+  broke: (c) =>
+    `Notre règle n’a pas résisté à un fossé de ${cellsOf(c.a)} et une planche de ${c.b} : ce pont rejoint les ponts de la classe.`,
+  noAttack:
+    'Notre règle s’accorde avec nos ponts, mais ce n’est pas la plus simple : on essaie d’autres ponts, puis on recommence.',
+  agree: 'Notre règle s’accorde avec tous les ponts de la classe.',
+  attack: (c) => `Le tableau met notre règle à l’épreuve : un fossé de ${cellsOf(c.a)} et une planche de ${c.b}.`,
+  attackBuild: 'On construit pour voir',
+  survived: 'Notre règle a tenu !',
+  broken: 'Ici, notre règle n’a pas tenu.',
+  nextAttack: 'Une autre épreuve',
+  fix: 'On corrige notre règle',
+  seal: 'On valide notre règle',
+  sealed: 'La règle de la classe a tenu',
   sealedSub: (n, k) =>
-    `وافقت ${n === 1 ? 'جسرًا واحدًا' : n === 2 ? 'جسرين' : n <= 10 ? `${n} جسور` : `${n} جسرًا`} للقسم، وصمدت أمام ${k === 1 ? 'تحدٍّ' : 'تحدّيين'} من السبّورة.`,
-  rewrite: 'نعيد كتابتها',
-  ours: 'قاعدة القسم التي صمدت',
-  theirs: 'واسمها في الرياضيات:',
-  pick: 'أختار قارئًا',
-  pickTitle: 'من يقرأ؟ اضغط طاولته.',
-  pickBoard: 'من يأتي إلى السبّورة؟ اضغط طاولته.',
-  me: 'أقرأها أنا',
-  recall: 'من يتذكّر؟',
-  check: 'نتحقّق بالجسور',
-  askRight: 'أصاب القسم.',
-  askLook: 'لننظر إلى الجسور.',
-  true: 'صحيح',
-  false: 'خطأ',
-  copy: 'ننقل على الكرّاس',
+    `Elle s’accorde avec ${n} ${n <= 1 ? 'pont' : 'ponts'} de la classe et a résisté à ${k <= 1 ? 'une épreuve' : `${k} épreuves`} du tableau.`,
+  rewrite: 'La réécrire',
+  ours: 'La règle de la classe, qui a tenu',
+  theirs: 'Son nom en mathématiques :',
+  pick: 'Choisir un lecteur',
+  pickTitle: 'Qui lit ? Cliquez sur sa table.',
+  pickBoard: 'Qui vient au tableau ? Cliquez sur sa table.',
+  me: 'Je la lis moi-même',
+  recall: 'Qui s’en souvient ?',
+  check: 'On vérifie avec les ponts',
+  askRight: 'La classe a trouvé.',
+  askLook: 'Regardons les ponts.',
+  true: 'Vrai',
+  false: 'Faux',
+  copy: 'On recopie dans le cahier',
   teacher: BL.teacher,
 };
 const sfx = (name) => playSfx(name, { enabled: true });
@@ -171,7 +172,7 @@ export const EMPTY_MEMO = { step: 0, log: [], stars: 0, preds: 0, rule: null, se
 function MissionStation({ step }) {
   const [open, setOpen] = useState(false);
   const board = useMemo(() => ({ mission: step.mission, onLeave: () => setOpen(false) }), [step.mission]);
-  // the world's own « ✕ » and « خروج من المعاينة » lead to `#board`: the hash closes the world, then is cleared
+  // the world's own « ✕ » and « Quitter l’aperçu » lead to `#board`: the hash closes the world, then is cleared
   useEffect(() => {
     if (!open) return undefined;
     const close = () => {
@@ -243,7 +244,7 @@ function Situation({ step }) {
         )}
         {stage === 'done' && (
           <p className={`cs-verdict ${c.held ? 'is-held' : 'is-fell'}`} data-cs-verdict={c.held ? 'held' : 'fell'}>
-            <b>{c.held ? LL.held : `${LL.fell}: ${leftCells(c.r)}.`}</b>
+            <b>{c.held ? LL.held : `${LL.fell} : ${leftCells(c.r)}.`}</b>
             <button type="button" className="cs-btn" onClick={() => setStage('ask')} data-cs-sit-again>
               <RotateCcw size={18} /> {LL.again}
             </button>
@@ -332,7 +333,7 @@ function Bridges({ step, memo, patch }) {
           {stage === 'build' && <strong className="cs-quest cs-building">{LL.building}</strong>}
           {stage === 'done' && (
             <p className={`cs-verdict ${c.held ? 'is-held' : 'is-fell'}`} data-cs-verdict={c.held ? 'held' : 'fell'}>
-              <b>{c.held ? LL.held : `${LL.fell}: ${leftCells(c.r)}.`}</b>
+              <b>{c.held ? LL.held : `${LL.fell} : ${leftCells(c.r)}.`}</b>
               <span dir="ltr" data-cs-equality>
                 <MathText>{`$${equalityOf(c)}$`}</MathText>
               </span>
@@ -540,7 +541,7 @@ function Forge({ memo, patch, goBack }) {
                   </span>
                   <button type="button" className="cs-btn cs-btn--main" onClick={afterAttack} data-cs-attack-next>
                     {says !== c.held ? LL.fix : atk.k + 1 < atk.list.length ? LL.nextAttack : LL.seal}{' '}
-                    <ArrowLeft size={18} />
+                    <ArrowForward size={18} />
                   </button>
                 </p>
               )}
@@ -550,7 +551,7 @@ function Forge({ memo, patch, goBack }) {
           <div className="cs-empty">
             <p>{LL.noLog}</p>
             <button type="button" className="cs-btn cs-btn--main cs-btn--big" onClick={goBack} data-cs-back-lab>
-              <ArrowRight size={20} /> {LL.backToLab}
+              <ArrowBack size={20} /> {LL.backToLab}
             </button>
           </div>
         ) : (
@@ -676,7 +677,7 @@ function Forge({ memo, patch, goBack }) {
   );
 }
 
-/** The rule gets its NAME: the tablet of the lesson, read aloud. « من يتذكّر؟ » hides its key words: the class says them. */
+/** The rule gets its NAME: the tablet of the lesson, read aloud. « Qui s’en souvient ? » hides its key words: the class says them. */
 /** A chain of equalities (« 60 = 1 × 60 = 2 × 30 = … »): too wide for half a card, so it takes a row — counted in `=`, never in characters (colour macros inflate those). */
 const isChain = (m) => (m.match(/=/g) ?? []).length >= 4;
 
@@ -699,7 +700,7 @@ function Name({ step, memo, onPick, onMe, rules }) {
           onClick={() => setOpen((o) => (seen ? o : [...o, key]))}
           data-cs-blank={seen ? 'open' : 'hidden'}
         >
-          {seen ? p.v : '؟'}
+          {seen ? p.v : '?'}
         </button>
       );
     });
@@ -779,7 +780,7 @@ function Name({ step, memo, onPick, onMe, rules }) {
 /**
  * One question, answered by the class and PROVED by bridges: every plank chosen or not is built in one line. A step whose
  * choices are not planks (bouquets, boxes…) names them with its own `words` ({ card, held, fell }); a missing word keeps
- * the board's default (« لوح », « يثبت », « ينهار »).
+ * the board's default (« Planche », « Tient », « S’effondre »).
  */
 function Ask({ step }) {
   const words = askWords(step);
@@ -877,9 +878,9 @@ function Ask({ step }) {
 const COURT_MS = 1150;
 
 /**
- * A COURT of « قصر الساحات » on the board: ONE court drawn by the world's own `Court` (rootCourts/courtParts.jsx), and its
+ * A COURT of the `rootCourts` world on the board: ONE court drawn by the world's own `Court` (rootCourts/courtParts.jsx), and its
  * cards — rods over a court whose area is given, or courts under a rod that is given. A tap on a card holds its platform
- * over the court, dashed (the class predicts aloud); « أنزل المنصّة » lowers it and the WORLD answers: it rides, it leaves
+ * over the court, dashed (the class predicts aloud); « Abaisser la plateforme » lowers it and the WORLD answers: it rides, it leaves
  * a band (amber), it jams (violet), the exact difference written beside the court — a fact, never « wrong ». Each card
  * lowered keeps its verdict; the proof (`after`) comes once the cards that ride were lowered (every card, when none does).
  */
@@ -1102,11 +1103,11 @@ export default function LessonBoard({ script, rules, students, seating, memo, se
         return;
       }
       if (tools.busy) return;
-      if (e.key === 'ArrowLeft' || e.key === 'PageDown') {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
         e.preventDefault();
         go(i + 1);
       }
-      if (e.key === 'ArrowRight' || e.key === 'PageUp') {
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
         e.preventDefault();
         go(i - 1);
       }
@@ -1139,7 +1140,7 @@ export default function LessonBoard({ script, rules, students, seating, memo, se
   return (
     <div className="cs-lesson" data-cs-lesson-step={step.id} data-cs-lesson-kind={step.kind} data-cs-lesson-index={i}>
       <header className="cs-lesson__top">
-        <nav className="cs-rail" dir="rtl" aria-label={script.title}>
+        <nav className="cs-rail" aria-label={script.title}>
           {groups.map((g, n) => (
             <span
               key={g.steps[0]}
@@ -1222,7 +1223,7 @@ export default function LessonBoard({ script, rules, students, seating, memo, se
           disabled={i === 0}
           data-cs-lesson-prev
         >
-          <ArrowRight size={20} /> {LL.prev}
+          <ArrowBack size={20} /> {LL.prev}
         </button>
         <p className="cs-cue" data-cs-cue>
           <b>{LL.cue}</b>
@@ -1234,7 +1235,7 @@ export default function LessonBoard({ script, rules, students, seating, memo, se
           onClick={() => go(i + 1)}
           data-cs-lesson-next={i + 1 >= steps.length ? 'end' : 'next'}
         >
-          {nextLabel} <ArrowLeft size={20} />
+          {nextLabel} <ArrowForward size={20} />
         </button>
       </footer>
       {classOpen && (

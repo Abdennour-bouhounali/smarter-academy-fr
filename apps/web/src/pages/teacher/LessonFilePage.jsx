@@ -1,5 +1,5 @@
 /**
- * « ملفّ الدرس » — the teacher's work file of ONE lesson, on its own full-screen page (owner, 2026-11-18: « the whiteboard
+ * « le dossier de la leçon » — the teacher's work file of ONE lesson, on its own full-screen page (owner, 2026-11-18: « the whiteboard
  * must be separated completely from the lab… create for each lesson a work file that the teacher edits, and when he exits
  * he returns to the lesson's page, not the lab; adapt the colours to the design », then « it must be displayed without
  * hiding the right nav and the top header… hidden only if the full screen gets activated »; CLASS_SESSION.md §2ter).
@@ -30,12 +30,12 @@ import './lessonFile.css';
 
 const Whiteboard = lazy(whiteboardTool.load);
 const L = {
-  turn: 'أدِر هاتفك',
-  turnSay: 'ملفّ الدرس سبّورة: تُفتح والهاتف بالعرض.',
-  title: 'ملفّ الدرس',
-  loading: 'جارٍ فتح ملفّ الدرس…',
-  failed: 'تعذّر فتح ملفّ الدرس. تحقّق من الاتّصال ثمّ أعد المحاولة.',
-  back: 'عودة إلى الدرس',
+  turn: 'Tournez votre téléphone',
+  turnSay: 'Le dossier de la leçon est un tableau\u00a0: il s’ouvre avec le téléphone à l’horizontale.',
+  title: 'Dossier de la leçon',
+  loading: 'Ouverture du dossier de la leçon…',
+  failed: 'Impossible d’ouvrir le dossier de la leçon. Vérifiez la connexion, puis réessayez.',
+  back: 'Retour à la leçon',
 };
 
 function FileBoard({ documentId, lessonPath, title }) {
@@ -134,7 +134,7 @@ export default function LessonFilePage() {
   }, [token, lessonId]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <LessonToolPage lessonId={lessonId} active="file">
-      <div className="lf-stage" dir="rtl" data-lesson-file={lessonId} data-lf-document={documentId ?? ''}>
+      <div className="lf-stage" data-lesson-file={lessonId} data-lf-document={documentId ?? ''}>
         {upright ? (
           <TurnPhone cover={false} title={L.turn} body={L.turnSay} data-lf-turn />
         ) : failed ? (

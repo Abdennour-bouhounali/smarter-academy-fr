@@ -6,7 +6,7 @@ import { TeacherPage } from './teacherUi';
 
 /**
  * Créer une classe en pleine page. Le geste habituel passe désormais par la
- * boîte de dialogue de « أقسامي » ; cette route reste pour les liens directs
+ * boîte de dialogue de « Mes classes » ; cette route reste pour les liens directs
  * et les favoris, et partage exactement le même formulaire.
  */
 export default function ClassGroupCreate() {

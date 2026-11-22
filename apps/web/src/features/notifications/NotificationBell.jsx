@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Bell, CheckCircle2, XCircle } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
 import { fetchNotifications, markAllNotificationsRead, markNotificationRead } from '../../services/notificationService';
+import { LOCALE } from '../../locale.js';
 
 /**
  * Plusieurs cloches peuvent être montées (barre latérale + en-tête mobile) :
@@ -41,7 +42,7 @@ function notificationTarget(notification) {
 /**
  * LA CLOCHE de l'élève (2026-10-06) — notifications DANS L'APPLICATION
  * seulement (aucun courriel, décision du propriétaire). Premier usage :
- * « صحّح أستاذك إجابتك » ; un appui ouvre EXACTEMENT l'exercice et l'étape
+ * « ton professeur a corrigé ta réponse » ; un appui ouvre EXACTEMENT l'exercice et l'étape
  * corrigés, en lecture seule (/espace/tashih/:reviewId).
  *
  * Relue à l'ouverture de la coquille, toutes les 2 minutes et au retour sur
@@ -154,7 +155,7 @@ export default function NotificationBell({ className = '', align = 'start', dire
                       {t(`notifications.answerReviewed.${correct ? 'correct' : 'incorrect'}`)}
                       {n.createdAt && (
                         <span className="block text-[11px] font-normal text-slate-500">
-                          {new Date(n.createdAt).toLocaleString('ar-DZ', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                          {new Date(n.createdAt).toLocaleString(LOCALE, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
                         </span>
                       )}
                     </span>

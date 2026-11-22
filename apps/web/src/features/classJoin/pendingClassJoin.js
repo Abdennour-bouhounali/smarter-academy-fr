@@ -2,7 +2,7 @@
  * Le LIEN DE CLASSE, côté navigateur — `/rejoindre/classe/{jeton}`.
  *
  * Un élève ouvre le lien sans session, lit ce que son enseignant verra, et
- * appuie sur « أوافق وأنشئ حسابي » ou « أوافق وأسجّل دخولي ». Ce geste EST le
+ * appuie sur le bouton d’accord de la page d’inscription ou de connexion. Ce geste EST le
  * consentement ; il doit survivre à l'inscription, à la connexion (mot de
  * passe ou Google, qui quitte la page) et à la vérification d'adresse. On le
  * garde ici, dans localStorage, avec une durée de vie bornée :
@@ -56,7 +56,7 @@ function storageOrNull(storage) {
 
 /**
  * L'élève a consenti sur la page du lien. `classroomName` ne sert qu'à
- * l'affichage (« ستنضمّ إلى القسم … ») ; le serveur ne le lit jamais.
+ * l'affichage (« tu vas rejoindre la classe … ») ; le serveur ne le lit jamais.
  */
 export function savePendingClassJoin({ token, classroomName = '' }, storage = null, now = Date.now()) {
   if (!isJoinLinkToken(token)) return false;

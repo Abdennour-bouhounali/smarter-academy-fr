@@ -5,20 +5,20 @@ import { btnPrimary, btnSecondary } from '../../../pages/teacher/teacherUi';
 import { joinLinkUrl } from '../../classJoin/pendingClassJoin';
 
 /**
- * Comment un élève entre dans le قسم — en haut de la page de la classe.
+ * Comment un élève entre dans la classe — en haut de la page de la classe.
  *
- *   1. le LIEN (رابط الانضمام)  — la voie recommandée : partagé sur WhatsApp,
+ *   1. le LIEN (lien de la classe)  — la voie recommandée : envoyé par la messagerie de l'ENT ou par e-mail,
  *      il ouvre /rejoindre/classe/{jeton} et l'élève rejoint sans rien taper
- *   2. le CODE (رمز الانضمام)   — le repli manuel : écrit au tableau, saisi
- *      dans « قسمي »
+ *   2. le CODE (code de la classe) — le repli manuel : écrit au tableau, saisi
+ *      dans « Ma classe »
  *
  * Les deux mènent à la MÊME adhésion côté serveur, et un seul interrupteur
- * (`joinCodeEnabled`, « الانضمام مفتوح », dans الإعدادات) les ferme ensemble.
+ * (`joinCodeEnabled`, « Autoriser les inscriptions », dans les paramètres) les ferme ensemble.
  *
  * L'URL est composée sur l'origine où se trouve l'enseignant : c'est celle
  * que ses élèves ouvriront. Le champ est en lecture seule et `dir="ltr"` : une
- * URL longue défile dans son champ au lieu d'élargir la page, en RTL comme
- * sur un téléphone.
+ * URL longue défile dans son champ au lieu d'élargir la page, sur un écran
+ * comme sur un téléphone.
  *
  * Extension prévue (Planned) : un QR code du lien. `JoinLinkBlock` reçoit
  * déjà l'URL complète ; un QR s'y ajoute à côté du champ sans toucher au reste.

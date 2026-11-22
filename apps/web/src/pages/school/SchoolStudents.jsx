@@ -11,9 +11,9 @@ import SchoolCredentialCards from '../../features/school/SchoolCredentialCards';
 import { btnPrimary, btnSecondary, card, errorText, field, personName } from '../../features/school/ui';
 
 /**
- * « التلاميذ » (SCHOOL_ADMIN_SPACE.md §7) : ceux que l'établissement lit, par
+ * « Élèves » (SCHOOL_ADMIN_SPACE.md §7) : ceux que l'établissement lit, par
  * classe ; l'import d'une liste ; le changement de classe ; les cartes de
- * connexion des comptes CRÉÉS par l'établissement (معرّف الدخول).
+ * connexion des comptes CRÉÉS par l'établissement (l’identifiant).
  */
 export default function SchoolStudents() {
   const { t } = useTranslation('idara');

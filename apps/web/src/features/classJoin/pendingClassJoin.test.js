@@ -43,8 +43,8 @@ describe('le jeton du lien de classe', () => {
 describe('l’adhésion en attente survit à l’authentification', () => {
   it('sauvée au clic, relue ensuite', () => {
     const s = memoryStorage();
-    expect(savePendingClassJoin({ token: TOKEN, classroomName: 'رياضيات 4م2' }, s, NOW)).toBe(true);
-    expect(readPendingClassJoin(s, NOW + 1000)).toEqual({ token: TOKEN, classroomName: 'رياضيات 4م2', consented: true, savedAt: NOW });
+    expect(savePendingClassJoin({ token: TOKEN, classroomName: 'Mathématiques 3e B' }, s, NOW)).toBe(true);
+    expect(readPendingClassJoin(s, NOW + 1000)).toEqual({ token: TOKEN, classroomName: 'Mathématiques 3e B', consented: true, savedAt: NOW });
   });
 
   it('un jeton mal formé n’est jamais sauvé', () => {

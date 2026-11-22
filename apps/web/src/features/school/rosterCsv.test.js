@@ -2,23 +2,27 @@ import { describe, expect, it } from 'vitest';
 import { normalizeDate, parseRoster } from './rosterCsv';
 
 describe('parseRoster', () => {
-  it('reads last name, first name, birth date and skips an Arabic header', () => {
-    const text = 'اللقب,الاسم,تاريخ الميلاد\nبوعلام,أمين,2012-03-14\nحداد,ليلى,02/11/2012\n';
+  it('reads last name, first name, birth date and skips a French header', () => {
+    const text = 'Nom,Prénom,Date de naissance\nMartin,Inès,2012-03-14\nLefèvre,Noé,02/11/2012\n';
     expect(parseRoster(text)).toEqual([
-      { lastName: 'بوعلام', firstName: 'أمين', birthDate: '2012-03-14' },
-      { lastName: 'حداد', firstName: 'ليلى', birthDate: '2012-11-02' },
+      { lastName: 'Martin', firstName: 'Inès', birthDate: '2012-03-14' },
+      { lastName: 'Lefèvre', firstName: 'Noé', birthDate: '2012-11-02' },
     ]);
   });
 
   it('accepts semicolons, tabs (spreadsheet paste), quotes, a BOM and blank lines', () => {
-    expect(parseRoster('﻿بوعلام;أمين;14/03/2012\n\n"حداد"\t"ليلى"\t2.11.2012')).toEqual([
-      { lastName: 'بوعلام', firstName: 'أمين', birthDate: '2012-03-14' },
-      { lastName: 'حداد', firstName: 'ليلى', birthDate: '2012-11-02' },
+    expect(parseRoster('﻿Martin;Inès;14/03/2012\n\n"Lefèvre"\t"Noé"\t2.11.2012')).toEqual([
+      { lastName: 'Martin', firstName: 'Inès', birthDate: '2012-03-14' },
+      { lastName: 'Lefèvre', firstName: 'Noé', birthDate: '2012-11-02' },
     ]);
   });
 
   it('keeps an incomplete row so the server can name the problem', () => {
-    expect(parseRoster('بوعلام')).toEqual([{ lastName: 'بوعلام', firstName: '', birthDate: '' }]);
+    expect(parseRoster('Martin')).toEqual([{ lastName: 'Martin', firstName: '', birthDate: '' }]);
+  });
+
+  it('does not take a first row whose name merely contains a header word for a header', () => {
+    expect(parseRoster('Bonomo;Léa;2012-05-01')).toEqual([{ lastName: 'Bonomo', firstName: 'Léa', birthDate: '2012-05-01' }]);
   });
 
   it('returns nothing for empty input', () => {

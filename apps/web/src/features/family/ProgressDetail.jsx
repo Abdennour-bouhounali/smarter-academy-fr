@@ -56,12 +56,12 @@ function eventText(t, e) {
 }
 
 /**
- * « التقدّم بالتفصيل » (docs/architecture/PARENT_SPACE.md §4bis) — l'année
+ * « La progression en détail » (docs/architecture/PARENT_SPACE.md §4bis) — l'année
  * entière, pour le parent ET pour l'élève (même forme serveur,
  * ParentProgressService). Conçu d'abord pour le TÉLÉPHONE : une colonne, des
  * cartes repliables par leçon, puis deux colonnes à partir de `md`.
  *
- * Les états de الكفاءات portent les libellés UNIQUES `student:mastery.*`
+ * Les états des savoir-faire portent les libellés UNIQUES `student:mastery.*`
  * (ARABIC_RTL_CONTRACT.md « Mastery and completion never share words »).
  */
 export default function ProgressDetail({ progress, audience = 'parent' }) {
@@ -78,7 +78,7 @@ export default function ProgressDetail({ progress, audience = 'parent' }) {
           <>
             <div className="flex items-baseline justify-between gap-3">
               <p className="font-inter text-sm text-slate-700">{t('progress.yearValue', { done: s.gradeLessonsCompleted, total: s.gradeLessons })}</p>
-              <p className="font-space text-2xl font-bold text-nav-accent">{s.progressPercent}٪</p>
+              <p className="font-space text-2xl font-bold text-nav-accent">{s.progressPercent}{'\u00A0%'}</p>
             </div>
             <div className="mt-2 h-3 overflow-hidden rounded-full bg-slate-100">
               <div className="h-full rounded-full bg-indigo-500" style={{ width: `${barPercent(s.gradeLessonsCompleted, s.gradeLessons)}%` }} />
@@ -98,7 +98,7 @@ export default function ProgressDetail({ progress, audience = 'parent' }) {
           <p className="font-inter text-xs text-slate-500">{t('progress.successRate')}</p>
           <p className="mt-1 font-space text-xl font-bold text-slate-900">
             {/* OutcomeStats::rate — déjà en pourcentage (0–100). */}
-            {s.successRate == null ? t('progress.successRateNone') : `${Math.round(s.successRate)}٪`}
+            {s.successRate == null ? t('progress.successRateNone') : `${Math.round(s.successRate)}\u00A0%`}
           </p>
           {s.questionsAnswered > 0 && (
             <p className="font-inter text-xs text-slate-500">{t('progress.answersHint', { correct: s.correctAnswers, answered: s.questionsAnswered })}</p>
@@ -114,7 +114,7 @@ export default function ProgressDetail({ progress, audience = 'parent' }) {
       {assessed > 0 && (
         <Card icon={Target} title={t('progress.distributionTitle')}>
           <div className="flex h-3 overflow-hidden rounded-full bg-slate-100" role="img"
-            aria-label={MASTERY_STATE_KEYS.map((k) => `${stateLabel(k, tStudent)}: ${counts[k] ?? 0}`).join('، ')}>
+            aria-label={MASTERY_STATE_KEYS.map((k) => `${stateLabel(k, tStudent)}\u00A0: ${counts[k] ?? 0}`).join(' · ')}>
             {['mastered', 'reinforce', 'gap', 'unassessed'].map((k) => (
               <div key={k} className={STATE_TONE[k].bar} style={{ width: `${((counts[k] ?? 0) / assessed) * 100}%` }} />
             ))}

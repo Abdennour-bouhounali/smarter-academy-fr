@@ -1,14 +1,15 @@
 /**
- * « حصّة القسم » — an EXERCISE on the board of the class (owner, 2026-11-18: the teacher's practice space, rebuilt;
- * CLASS_SESSION.md §5quater). Opened from the teacher's bank (« على السبّورة »). One screen, one mouse:
+ * « séance en classe » — an EXERCISE on the board of the class (owner, 2026-11-18: the teacher's practice space, rebuilt;
+ * CLASS_SESSION.md §5quater). Opened from the teacher's bank (« Au tableau »). One screen, one mouse:
  *   the statement stays on the board the whole time (the class never goes back to read it);
- *   the questions come one at a time; the teacher calls a student by his desk (« على السبّورة: نور »);
+ *   the questions come one at a time; the teacher calls a student by his desk (« Au tableau : Noé »);
  *   a hint only when he asks, one at a time; the answer and its solution only when he asks.
  * Nothing is graded and nothing is recorded: it is the class working together. The text fits the board by itself (a long
  * statement is drawn smaller, never cut, never scrolled). Same shell and same dock as every other board screen.
  */
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Eye, EyeOff, Lightbulb, NotebookPen, X } from 'lucide-react';
+import { Eye, EyeOff, Lightbulb, NotebookPen, X } from 'lucide-react';
+import { ArrowBack, ArrowForward } from '../../components/common/DirectionalIcons';
 import ExerciseStatement from '../practice/ExerciseStatement';
 import RichText from '../practice/RichText';
 import MathText from '../../lessons/common/components/MathText';
@@ -17,20 +18,20 @@ import { callName, teamsOf, teamOfStudent } from './session';
 import { choicesOf, keyOf, summaryOf } from './exerciseBank';
 
 const L = {
-  exit: 'عودة إلى بنك التمارين',
-  statement: 'نصّ التمرين',
-  q: (i, n) => `السؤال ${i} من ${n}`,
-  hint: 'تلميح',
-  hintN: (k, n) => `تلميح ${k} من ${n}`,
-  show: 'أظهر الجواب',
-  hide: 'أخفِ الجواب',
-  answer: 'الجواب',
-  prev: 'السؤال السابق',
-  next: 'السؤال التالي',
-  done: 'أنهينا التمرين',
-  turn: 'على السبّورة',
-  pickBoard: 'من يأتي إلى السبّورة؟ اضغط طاولته.',
-  time: (s) => `الوقت المقترح: ${Math.floor(s / 60)} د${s % 60 ? ` ${s % 60} ث` : ''}`,
+  exit: 'Retour à la banque d’exercices',
+  statement: 'L’énoncé',
+  q: (i, n) => `Question ${i} sur ${n}`,
+  hint: 'Indice',
+  hintN: (k, n) => `Indice ${k} sur ${n}`,
+  show: 'Montrer la réponse',
+  hide: 'Cacher la réponse',
+  answer: 'La réponse',
+  prev: 'Question précédente',
+  next: 'Question suivante',
+  done: 'Exercice terminé',
+  turn: 'Au tableau',
+  pickBoard: 'Qui vient au tableau\u202f? Cliquez sur sa table.',
+  time: (s) => `Durée proposée\u00a0: ${Math.floor(s / 60)}\u00a0min${s % 60 ? ` ${s % 60}\u00a0s` : ''}`,
 };
 
 /** Draws its content smaller when it is taller than its box — never cut, never scrolled. The box keeps its size. */
@@ -107,11 +108,11 @@ export default function ExerciseBoard({ exercise, students, seating, readers, on
         return;
       }
       if (tools.busy) return;
-      if (e.key === 'ArrowLeft' || e.key === 'PageDown') {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
         e.preventDefault();
         go(1);
       }
-      if (e.key === 'ArrowRight' || e.key === 'PageUp') {
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
         e.preventDefault();
         go(-1);
       }
@@ -139,7 +140,7 @@ export default function ExerciseBoard({ exercise, students, seating, readers, on
             <small>{s.badge ?? ''}</small>
           </div>
         </div>
-        <span className="cs-dots cs-dots--rail" dir="rtl" aria-label={L.q(i + 1, qs.length)}>
+        <span className="cs-dots cs-dots--rail" aria-label={L.q(i + 1, qs.length)}>
           {qs.map((x, k) => (
             <button
               key={x.id}
@@ -262,7 +263,7 @@ export default function ExerciseBoard({ exercise, students, seating, readers, on
 
       <footer className="cs-lesson__foot">
         <button type="button" className="cs-btn cs-btn--big" onClick={() => go(-1)} disabled={i === 0} data-cs-exo-prev>
-          <ArrowRight size={20} /> {L.prev}
+          <ArrowBack size={20} /> {L.prev}
         </button>
         <span className="cs-lesson__mid" />
         <button
@@ -271,7 +272,7 @@ export default function ExerciseBoard({ exercise, students, seating, readers, on
           onClick={() => go(1)}
           data-cs-exo-next={last ? 'done' : 'next'}
         >
-          {last ? L.done : L.next} <ArrowLeft size={20} />
+          {last ? L.done : L.next} <ArrowForward size={20} />
         </button>
       </footer>
       {classOpen && (

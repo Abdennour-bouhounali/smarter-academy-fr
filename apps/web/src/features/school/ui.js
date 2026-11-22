@@ -1,6 +1,6 @@
 /**
- * Les classes de base de « فضاء الإدارة » — une seule source pour ses boutons et
- * ses champs (SchoolLayout, pages/school/*, pages enseignant « مؤسستي »).
+ * Les classes de base de « espace établissement » — une seule source pour ses boutons et
+ * ses champs (SchoolLayout, pages/school/*, pages enseignant « Mon établissement »).
  */
 const BTN = 'inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-4 font-inter text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50';
 

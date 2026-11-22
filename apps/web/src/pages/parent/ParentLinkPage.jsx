@@ -9,6 +9,7 @@ import WeekReport from '../../features/family/WeekReport';
 import WeekNav from '../../features/family/WeekNav';
 import ProgressDetail from '../../features/family/ProgressDetail';
 import ReportTabs, { tabFrom } from '../../features/family/ReportTabs';
+import { gradeName } from '../../features/family/gradeName';
 
 /** Le laissez-passer du code, gardé dans CE navigateur (par lien). Le stockage peut manquer : rien ne casse. */
 const passKey = (token) => `sa.parent-pass.${token.slice(0, 12)}`;
@@ -45,12 +46,12 @@ function PinForm({ onSubmit, submitLabel, busy, error }) {
 }
 
 /**
- * « رابط الوليّ » — /w/:token, la page du PARENT, SANS compte
+ * « lien parent » — /w/:token, la page du PARENT, SANS compte
  * (docs/architecture/PARENT_SPACE.md §2). Ouverte depuis WhatsApp ou en
- * scannant la « بطاقة الوليّ » : TÉLÉPHONE D'ABORD.
+ * scannant la « carte parent » : TÉLÉPHONE D'ABORD.
  *
- * Elle montre le même rapport que l'élève lit dans « ما يراه وليّك » (semaine
- * + « التقدّم بالتفصيل »). Si le parent a posé un code, elle le demande ; sinon
+ * Elle montre le même rapport que l'élève lit dans « Ce que voit ton parent » (semaine
+ * + « La progression en détail »). Si le parent a posé un code, elle le demande ; sinon
  * elle lui propose d'en poser un. Lien annulé → 410, lien faux → 404 : une
  * phrase qui dit quoi faire, jamais une erreur brute.
  */
@@ -114,7 +115,7 @@ export default function ParentLinkPage() {
   const loading = <div className="h-64 animate-pulse rounded-2xl bg-slate-100" />;
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA]" dir="rtl">
+    <div className="min-h-screen bg-[#FAFAFA]">
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-5xl items-center gap-2 px-4 sm:px-6">
           <img src="/brand/mark-color.svg" width="200" height="200" decoding="async" alt="Smarter Academy" className="h-8 w-8" />
@@ -150,7 +151,7 @@ export default function ParentLinkPage() {
             <header className="space-y-4">
               <div>
                 <h1 className="font-space text-xl font-bold text-slate-900 sm:text-2xl">{name}</h1>
-                {child?.grade && <p className="font-inter text-sm text-slate-500">{t(`grades.${child.grade}`, { defaultValue: '' })}</p>}
+                {child?.grade && <p className="font-inter text-sm text-slate-500">{gradeName(child.grade)}</p>}
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <ReportTabs tab={tab} onChange={(next) => setSearchParams(next === 'week' ? {} : { tab: next }, { replace: true })} />

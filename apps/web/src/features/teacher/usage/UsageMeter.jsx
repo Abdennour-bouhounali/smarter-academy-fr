@@ -2,7 +2,7 @@ import { describeMeter } from '../entitlementSummary';
 
 /**
  * Une jauge d'usage « 3 / 5 » : le nombre en LTR (chiffres et barre), le
- * libellé en arabe, et la couleur qui ne fait que répéter l'état (au-delà
+ * libellé en français, et la couleur qui ne fait que répéter l'état (au-delà
  * de la limite = ambre, texte explicite fourni par l'appelant).
  */
 export default function UsageMeter({ label, meter, hint }) {

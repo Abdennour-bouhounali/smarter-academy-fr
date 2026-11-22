@@ -2,11 +2,11 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../context/AuthContext';
 import { fetchReviewCount } from '../../../services/teacher/answerReviewService';
 
-/** L'événement que la page « تصحيح الإجابات » émet après une correction. */
+/** L'événement que la page « Réponses à corriger » émet après une correction. */
 export const REVIEWS_CHANGED = 'sa:reviews-changed';
 
 /**
- * Le compteur « تصحيح الإجابات » du menu enseignant : relu à l'ouverture,
+ * Le compteur « Réponses à corriger » du menu enseignant : relu à l'ouverture,
  * toutes les 2 minutes, au retour sur l'onglet, et après chaque correction.
  * Une panne garde le dernier nombre (un compteur, jamais un blocage).
  */

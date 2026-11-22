@@ -5,6 +5,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { fetchSchoolOverview } from '../../services/schoolService';
 import { usePayments } from '../../context/PaymentsContext';
+import { LOCALE } from '../../locale.js';
 
 function Figure({ icon: Icon, label, value, hint }) {
   return (
@@ -20,7 +21,7 @@ function Figure({ icon: Icon, label, value, hint }) {
 }
 
 /**
- * « لوحة المؤسسة » — l'accueil du directeur (SCHOOL_ADMIN_SPACE.md §6).
+ * « Tableau de bord » — l'accueil du directeur (SCHOOL_ADMIN_SPACE.md §6).
  *
  * Des COMPTES, jamais une moyenne. Les élèves comptés sont ceux qui ont
  * consenti à la lecture de l'établissement — le texte le dit sous le chiffre.
@@ -84,7 +85,7 @@ export default function SchoolHome() {
             <p className="mt-2 font-space text-3xl font-bold text-slate-900" dir="ltr">{data.licence.current}{'\u00A0/\u00A0'}{data.licence.seats}</p>
             <p className="mt-1 font-inter text-xs text-slate-500">
               {t('home.licenceHint')}
-              {data.licence.endsAt && ` ${t('home.licenceEnds', { date: new Date(data.licence.endsAt).toLocaleDateString('ar-DZ', { dateStyle: 'medium', numberingSystem: 'latn' }) })}`}
+              {data.licence.endsAt && ` ${t('home.licenceEnds', { date: new Date(data.licence.endsAt).toLocaleDateString(LOCALE, { dateStyle: 'medium', numberingSystem: 'latn' }) })}`}
             </p>
           </>
         ) : (

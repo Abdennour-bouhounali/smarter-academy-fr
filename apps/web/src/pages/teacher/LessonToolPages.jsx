@@ -2,8 +2,8 @@
  * Two tools of a lesson shown INSIDE the teacher's space, under the header common to all of them (owner, 2026-11-18:
  * « the top header must have the same width, style and position of buttons in all these tools, unless the full-screen
  * mode is activated »; CLASS_SESSION.md §2):
- *   LessonTrackingPage   « متابعة القسم » — the class on this lesson, student by student;
- *   LessonCardPage       « بطاقة المعارف » — the lesson's knowledge, one piece per screen; « ملء الشاشة » is the computer's real
+ *   LessonTrackingPage   « Suivi de la classe » — the class on this lesson, student by student;
+ *   LessonCardPage       « Fiche de connaissances » — the lesson's knowledge, one piece per screen; « Plein écran » is the computer's real
  *                        full screen (browser tabs and bars hidden); Esc or ✕ comes back under the header.
  */
 import { useContext, useEffect, useMemo, useState } from 'react';
@@ -21,12 +21,12 @@ import { loadKnowledgeCards, earlierLessons } from '../../features/classSession/
 import '../../features/classSession/classSession.css';
 
 const L = {
-  track: 'متابعة القسم',
-  pick: 'مع أيّ قسم؟',
-  none: 'لا قسم نشط بعد: أنشئ قسمًا من «أقسامي».',
-  loading: 'جارٍ التحميل…',
-  card: 'بطاقة المعارف',
-  noCard: 'لا بطاقة معارف لهذا الدرس بعد.',
+  track: 'Suivi de la classe',
+  pick: 'Quelle classe\u202f?',
+  none: 'Aucune classe active pour l’instant\u00a0: créez-en une dans « Mes classes ».',
+  loading: 'Chargement…',
+  card: 'Fiche de connaissances',
+  noCard: 'Pas encore de fiche de connaissances pour cette leçon.',
 };
 
 export function LessonTrackingPage() {
@@ -73,7 +73,7 @@ export function LessonTrackingPage() {
         <p className="text-sm font-bold text-slate-500">{L.none}</p>
       ) : (
         classId && (
-          <div className="cs-root cs-embed cs-embed--track" dir="rtl" data-cs-track-screen>
+          <div className="cs-root cs-embed cs-embed--track" data-cs-track-screen>
             <ClassTracking key={classId} token={token} classId={classId} lessonId={lessonId} />
           </div>
         )
@@ -93,7 +93,7 @@ export function LessonCardPage() {
   );
   const [cards, setCards] = useState(null);
   const links = useMemo(() => earlierLessons(lessonId), [lessonId]);
-  // « ملء الشاشة » is the REAL full screen of the computer (owner, 2026-11-18): the browser's tabs and bars go too. The whole
+  // « Plein écran » is the REAL full screen of the computer (owner, 2026-11-18): the browser's tabs and bars go too. The whole
   // document is put full screen (not the card alone) so what the board opens beside it — the lab — stays visible.
   const [full, setFull] = useState(false);
   const goFull = () => {
@@ -128,7 +128,6 @@ export function LessonCardPage() {
       ) : (
         <div
           className={`cs-root cs-embed cs-embed--board ${full ? 'is-full' : ''}`}
-          dir="rtl"
           data-card-stage={full ? 'full' : 'page'}
         >
           <BoardLessonContext.Provider value={boardLesson}>

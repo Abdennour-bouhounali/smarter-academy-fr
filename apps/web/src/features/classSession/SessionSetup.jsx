@@ -1,5 +1,5 @@
 /**
- * « حصّة القسم » — what the teacher prepares before the hour (CLASS_SESSION.md): the SEATING MAP of the class (who sits
+ * « séance en classe » — what the teacher prepares before the hour (CLASS_SESSION.md): the SEATING MAP of the class (who sits
  * where, the teams) and the TEST of the lesson (the platform's default, his own copy, his own questions).
  * An adult's screen: calm, nothing to learn before using it, every action undoable.
  */
@@ -21,45 +21,47 @@ import {
 } from './session';
 
 export const L = {
-  board: 'السبّورة',
+  board: 'Le tableau',
   seatHint:
-    'اضغط تلميذًا، ثمّ المكان الذي ينتقل إليه. الدور في الاختبار يتبع المقاعد ابتداءً من السبّورة. كلّ صفّ (من السبّورة إلى آخر القسم) فريق.',
-  perRow: 'عدد الصفوف',
-  teams: 'الأفرقة',
-  byRows: 'فريق لكلّ صفّ',
-  own: 'الفرق',
-  teamCount: 'عدد الأفرقة',
-  gender: { m: 'ولد', f: 'بنت', none: '؟' },
-  genderHint: 'ولد / بنت: لصياغة الجملة («لا تقلق» أو «لا تقلقي») ولشخصية منصّة التتويج. لا شيء يُخمَّن من الاسم.',
-  teamHint: 'اضغط لون الفريق لتنقل التلميذ إلى الفريق التالي.',
-  start: 'اختبار البداية',
-  end: 'اختبار النهاية',
-  fromPlatform: 'المنصّة',
-  mine: 'سؤال الأستاذ',
-  add: 'أضف من الأسئلة الجاهزة',
-  write: 'أكتب سؤالي',
-  save: 'احفظ اختباري',
-  reset: 'استرجع الاختبار الأصلي',
-  resetAsk: 'تسترجع اختبار المنصّة الأصلي؟ نسختك تُحذف.',
-  yes: 'نعم',
-  no: 'إلغاء',
-  saved: 'محفوظ',
-  edited: 'تعديلات غير محفوظة',
-  usingMine: 'هذه نسختك',
-  usingDefault: 'هذا اختبار المنصّة',
-  noPool: 'كلّ الأسئلة الجاهزة مستعملة.',
-  kind: { choice: 'اختيار', truefalse: 'صحيح / خطأ', number: 'عدد' },
-  text: 'نصّ السؤال',
-  option: 'اختيار',
-  right: 'الجواب الصحيح',
-  true: 'صحيح',
-  false: 'خطأ',
-  responsibility: 'أنت المسؤول عن صحّة هذا السؤال: المنصّة لا تتحقّق من الأسئلة التي تكتبها.',
-  ok: 'أضف السؤال',
-  update: 'عدّل السؤال',
-  cancel: 'إلغاء',
-  empty: 'لا سؤال بعد. أضف من الأسئلة الجاهزة أو اكتب سؤالك.',
-  mathTip: 'للكتابة الرياضية ضع العبارة بين علامتي $ — مثال: $48 = 6 \\times 8$',
+    'Cliquez sur un élève, puis sur la place où il va. Au test, le tour suit les places en partant du tableau. Chaque rangée (du tableau au fond de la salle) forme une équipe.',
+  perRow: 'Nombre de rangées',
+  teams: 'Les équipes',
+  byRows: 'Une équipe par rangée',
+  own: 'Mes équipes',
+  teamCount: 'Nombre d’équipes',
+  gender: { m: 'G', f: 'F', none: '?' },
+  genderHint:
+    'G / F (garçon / fille) : pour accorder la phrase (« déçu » ou « déçue ») et pour le personnage du podium. Rien n’est deviné à partir du prénom.',
+  teamHint: 'Cliquez sur la couleur de l’équipe pour faire passer l’élève dans l’équipe suivante.',
+  start: 'Test de début',
+  end: 'Test de fin',
+  fromPlatform: 'La plateforme',
+  mine: 'Question du professeur',
+  add: 'Ajouter une question prête',
+  write: 'Écrire ma question',
+  save: 'Enregistrer mon test',
+  reset: 'Revenir au test d’origine',
+  resetAsk: 'Revenir au test d’origine de la plateforme ? Votre version sera supprimée.',
+  yes: 'Oui',
+  no: 'Annuler',
+  saved: 'Enregistré',
+  edited: 'Modifications non enregistrées',
+  usingMine: 'C’est votre version',
+  usingDefault: 'C’est le test de la plateforme',
+  noPool: 'Toutes les questions prêtes sont déjà utilisées.',
+  kind: { choice: 'Choix', truefalse: 'Vrai / faux', number: 'Nombre' },
+  text: 'Texte de la question',
+  option: 'Choix',
+  right: 'La bonne réponse',
+  true: 'Vrai',
+  false: 'Faux',
+  responsibility:
+    'Vous êtes responsable de l’exactitude de cette question : la plateforme ne vérifie pas les questions que vous écrivez.',
+  ok: 'Ajouter la question',
+  update: 'Modifier la question',
+  cancel: 'Annuler',
+  empty: 'Aucune question pour l’instant. Ajoutez une question prête ou écrivez la vôtre.',
+  mathTip: 'Pour écrire des mathématiques, placez l’expression entre deux signes $ — exemple : $48 = 6 \\times 8$',
 };
 
 const shortName = (s) => `${callName(s)}${s.lastName ? ` ${String(s.lastName).trim()[0]}.` : ''}`;
@@ -360,7 +362,7 @@ function QuestionForm({ initial, onDone, onCancel }) {
   );
 }
 
-/** The test of the lesson: its two moments, question by question. The default stays on the server: « استرجع » brings it back. */
+/** The test of the lesson: its two moments, question by question. The default stays on the server: « Revenir au test d’origine » brings it back. */
 export function TestEditor({ payload, working, dirty, onChange, onSave, onReset, itemLabel, saving }) {
   const [moment, setMoment] = useState('start');
   const [adding, setAdding] = useState(null);

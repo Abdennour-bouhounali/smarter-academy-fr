@@ -6,9 +6,9 @@ import { lessonPackFlags } from '../../lessons/registry';
 import { lessonMemoPath, classDoor } from '../../features/teacher/lessonMemo/memoRoutes';
 
 /**
- * Les محاور d'une leçon, dans l'ordre de lesson.config.js — jamais
+ * Les étapes d'une leçon, dans l'ordre de lesson.config.js — jamais
  * inventés : une leçon non construite n'en montre aucun. Compact (une puce
- * par محور, titre tronqué, titre complet au survol) pour que la carte ne
+ * par étape, titre tronqué, titre complet au survol) pour que la carte ne
  * s'allonge pas.
  *
  * A lesson whose pack has a WORLD (a v2 lesson, LESSON_V2.md §2) shows none: its module pages are deleted (their
@@ -16,7 +16,7 @@ import { lessonMemoPath, classDoor } from '../../features/teacher/lessonMemo/mem
  */
 export function LessonModuleChips({ lessonId }) {
   const { t } = useTranslation('teacher');
-  // La config complète (titres des محاور) se charge avec la page d'unité.
+  // La config complète (titres des étapes) se charge avec la page d'unité.
   const modules = useLessonConfig(lessonId)?.modules ?? [];
   if (modules.length === 0 || lessonPackFlags(lessonId).world) return null;
   return (
@@ -42,13 +42,13 @@ export function LessonModuleChips({ lessonId }) {
 /**
  * Les deux gestes de l'enseignant sur une leçon, côte à côte et distincts :
  *
- *   [📋 مذكرة الدرس]  préparer / tenir la séance (route ProtectedRoute(teacher))
- *   [🎓 وضع القسم]    projeter tout de suite : la leçon s'ouvre avec
+ *   [📋 La fiche du professeur]  préparer / tenir la séance (route ProtectedRoute(teacher))
+ *   [🎓 Mode classe]    projeter tout de suite : la leçon s'ouvre avec
  *                     CLASSROOM_START_STATE et LessonClassroomShell démarre
  *                     la séance à l'arrivée.
  *
  * Le parent ne les rend que pour le lecteur enseignant
- * (`useLearningViewer().isTeacher`) ; la vraie porte de la مذكرة reste la
+ * (`useLearningViewer().isTeacher`) ; la vraie porte de la fiche reste la
  * route.
  */
 export function TeacherLessonActions({ lesson }) {
@@ -67,7 +67,7 @@ export function TeacherLessonActions({ lesson }) {
       >
         <ClipboardList className="h-5 w-5" aria-hidden="true" /> {t('lessonCard.memo')}
       </Link>
-      {/* « حصّة القسم » pour une leçon qui a son tableau, « وضع القسم » pour les autres (memoRoutes › classDoor) */}
+      {/* « Séance en classe » pour une leçon qui a son tableau, « Mode classe » pour les autres (memoRoutes › classDoor) */}
       <Link
         to={door.to}
         state={door.state}

@@ -23,13 +23,13 @@ import { TeacherPage, Loading, ErrorBox, btnPrimary, formatDate } from './teache
 const fullName = (s) => [s?.firstName, s?.lastName].filter(Boolean).join(' ') || `#${s?.id}`;
 
 /**
- * « تصحيح الإجابات » (propriétaire, 2026-10-06) — les copies des élèves que
- * l'enseignant a mis en « تصحيح الأستاذ » : photos de copie, démonstrations
- * « بيّن أن », étapes à rédaction exigée. Les plus anciennes d'abord, filtrables
+ * « Réponses à corriger » (propriétaire, 2026-10-06) — les copies des élèves que
+ * l'enseignant a mis en « Correction par le professeur » : photos de copie, démonstrations
+ * « Montrer que », étapes à rédaction exigée. Les plus anciennes d'abord, filtrables
  * par classe.
  *
  * Pour chaque copie : l'énoncé de l'étape (lu dans le contenu, comme le
- * lecteur), ce que l'élève a écrit, ses photos (agrandir, « صحّح على الصورة »
+ * lecteur), ce que l'élève a écrit, ses photos (agrandir, « Corriger sur la photo »
  * au stylo rouge), le corrigé type replié, puis le verdict et un commentaire.
  * Le serveur enregistre (AnswerReviewService) et notifie l'élève.
  */
@@ -72,7 +72,7 @@ export default function TeacherReviewsPage() {
     window.dispatchEvent(new Event(REVIEWS_CHANGED));
   };
 
-  // L'annotation enregistrée : la vignette passe à « مصحّحة » dans la file.
+  // L'annotation enregistrée : la vignette passe à « corrigée » dans la file.
   const saveAnnotation = async (blob) => {
     const target = annotating;
     const res = await uploadAnnotation(token, target.id, blob);
@@ -184,7 +184,7 @@ function ReviewCard({ item, exercise, imageLoader, onAnnotate, onDecided }) {
         <div className="min-w-0">
           <p className="font-bold text-slate-900">{fullName(item.student)}</p>
           <p className="text-xs text-slate-500">
-            {item.student?.classrooms?.map((c) => c.name).join(' ، ')}
+            {item.student?.classrooms?.map((c) => c.name).join(', ')}
             {item.submittedAt && <> · {t('reviews.submittedAt')} {formatDate(item.submittedAt)}</>}
           </p>
         </div>

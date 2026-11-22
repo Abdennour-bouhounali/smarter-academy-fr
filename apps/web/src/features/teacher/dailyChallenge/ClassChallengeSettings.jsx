@@ -7,7 +7,7 @@ import MathLabel from '../../../lessons/common/components/MathLabel';
 
 /**
  * Un interrupteur accessible (role="switch") : l'état se lit sans la couleur
- * (« ON / OFF »). Partagé avec les réglages de « مدار » (features/teacher/madar).
+ * (« ON / OFF »). Partagé avec les réglages de l'« Espace jeux » (features/teacher/madar).
  */
 export function Toggle({ checked, onChange, label, hint, disabled, name }) {
   return (
@@ -33,8 +33,8 @@ export function Toggle({ checked, onChange, label, hint, disabled, name }) {
 }
 
 /**
- * Les réglages du défi pour CETTE classe. « منافسة القسم » et « الثلاثة
- * الأوائل » sont INDÉPENDANTS : compétition active et Top 3 masqué = le
+ * Les réglages du défi pour CETTE classe. « la compétition de la classe » et « le
+ * top 3 » sont INDÉPENDANTS : compétition active et Top 3 masqué = le
  * classement pour l'enseignant seul.
  */
 export default function ClassChallengeSettings({ classGroupId, initial, options, onSaved }) {

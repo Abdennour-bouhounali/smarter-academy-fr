@@ -3,8 +3,8 @@ import { interventionDefaults, kindNeedsPoint, kindVisibleToStudent, outcomeLine
 
 describe('studentName', () => {
   it('never falls back on an email', () => {
-    expect(studentName({ firstName: 'أمين', lastName: 'ب', email: 'x@y.dz' })).toBe('أمين ب');
-    expect(studentName({ email: 'x@y.dz' }, 'تلميذ')).toBe('تلميذ');
+    expect(studentName({ firstName: 'Inès', lastName: 'B.', email: 'x@y.fr' })).toBe('Inès B.');
+    expect(studentName({ email: 'x@y.fr' }, 'Élève')).toBe('Élève');
   });
 });
 

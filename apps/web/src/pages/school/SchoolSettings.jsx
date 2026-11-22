@@ -8,7 +8,7 @@ import { btnPrimary, card, errorText, field, fieldLabel } from '../../features/s
 
 const EMPTY = [1, 2, 3].map((term) => ({ term, startsOn: '', endsOn: '' }));
 
-/** « الإعدادات » : les trois trimestres de l'année (SCHOOL_ADMIN_SPACE.md §7). */
+/** « Réglages » : les trois trimestres de l'année (SCHOOL_ADMIN_SPACE.md §7). */
 export default function SchoolSettings() {
   const { t } = useTranslation('idara');
   useDocumentMeta(t('meta.settings'));

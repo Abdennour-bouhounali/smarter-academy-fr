@@ -1,5 +1,5 @@
 /**
- * « ملفّ الدرس » — the teacher's work file of a lesson (owner, 2026-11-18; CLASS_SESSION.md §2ter). ONE per (teacher,
+ * « le dossier de la leçon » — the teacher's work file of a lesson (owner, 2026-11-18; CLASS_SESSION.md §2ter). ONE per (teacher,
  * lesson). It is drawn with the Math Lab's whiteboard — the same instrument, nothing rebuilt — but it is NOT in the lab:
  * it has its own full-screen page (`/enseignant/milaff/:lessonId`), and leaving it returns to the lesson.
  * The server keeps the link lesson → document (`/teacher/lesson-files/{lesson}`).
@@ -10,7 +10,7 @@ import { newMathLabDocument } from '../mathlab/mathLabDocument';
 import { whiteboardTool } from '../mathlab/tools/whiteboard/index.js';
 
 export const lessonFilePagePath = (lessonId) => `/enseignant/milaff/${encodeURIComponent(lessonId)}`;
-export const lessonFileTitle = (lessonTitle) => `ملفّ الدرس — ${lessonTitle}`.slice(0, 120);
+export const lessonFileTitle = (lessonTitle) => `Dossier de la leçon — ${lessonTitle}`.slice(0, 120);
 
 /**
  * The document of the lesson's file: the one already attached when it still exists, a new empty whiteboard otherwise

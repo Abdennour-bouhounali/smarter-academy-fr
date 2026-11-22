@@ -24,7 +24,7 @@ const PER_PAGE = 50;
  * Ce que l'enseignant vient y chercher n'est pas un score : c'est ce que
  * l'élève a écrit AVEC SES MOTS — « je confonds toujours le signe », « je
  * n'ai pas compris pourquoi on divise ». Un pourcentage de réussite dit
- * qu'il se trompe ; le cahier dit où il se perd. La vue « الأخطاء » est
+ * qu'il se trompe ; le cahier dit où il se perd. La vue « Erreurs » est
  * donc offerte d'emblée : c'est celle qui sert.
  *
  * ── Lecture seule, et la page le DIT ─────────────────────────────────────
@@ -34,7 +34,7 @@ const PER_PAGE = 50;
  * de laisser l'enseignant le découvrir : il lit le carnet de quelqu'un.
  *
  * ── Le périmètre est décidé par le SERVEUR ───────────────────────────────
- * Les notes rendues sont celles des leçons effectives du قسم. Cette page ne
+ * Les notes rendues sont celles des leçons effectives de la classe. Cette page ne
  * filtre rien elle-même : elle ne saurait pas le faire honnêtement, et un
  * filtre côté client ne serait pas une sécurité.
  *
@@ -120,7 +120,7 @@ export default function StudentNotebookPage() {
 
 /**
  * UNE note, telle que l'élève l'a écrite. Le contexte d'abord (quelle leçon,
- * quel محور, quel exercice) : sans lui, « je me trompe ici » ne dit rien.
+ * quelle étape, quel exercice) : sans lui, « je me trompe ici » ne dit rien.
  */
 function NoteCard({ note }) {
   const { t } = useTranslation('teacher');

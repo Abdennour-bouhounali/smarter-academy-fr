@@ -8,7 +8,7 @@ import { fetchTeacherChallenge } from '../../../services/teacher/thinkingLabTeac
 import TeacherChallengeView from '../../../features/thinkingLab/teacher/TeacherChallengeView';
 import { Loading, ErrorBox } from '../teacherUi';
 
-/** « مختبر التفكير » — un défi en « معاينة الأستاذ » : tout ouvert, rien d'écrit (THINKING_LAB.md §8bis). */
+/** « Le labo des énigmes » — un défi en « aperçu du professeur » : tout ouvert, rien d'écrit (THINKING_LAB.md §8bis). */
 export default function TeacherThinkingChallengePage() {
   const { t } = useTranslation('thinking');
   const { challengeId } = useParams();

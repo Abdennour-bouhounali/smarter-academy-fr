@@ -6,8 +6,8 @@ import { shortDate } from './format';
 const MAX_WEEKS_BACK = 8;
 
 /**
- * Le choix de la semaine du rapport. « الأسبوع السابق » recule dans le temps
- * (ChevronBack, en premier — à droite en RTL), « الأسبوع التالي » avance.
+ * Le choix de la semaine du rapport. « Semaine précédente » recule dans le temps
+ * (ChevronBack, en premier — à gauche), « Semaine suivante » avance.
  */
 export default function WeekNav({ weeksBack, onChange, report }) {
   const { t } = useTranslation('family');

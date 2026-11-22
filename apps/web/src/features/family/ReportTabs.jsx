@@ -12,7 +12,7 @@ export function tabFrom(searchParams) {
 }
 
 /**
- * « الأسبوع » / « التقدّم بالتفصيل » — deux boutons pleine largeur au
+ * « La semaine » / « La progression en détail » — deux boutons pleine largeur au
  * téléphone, compacts au portable (PARENT_SPACE.md §4bis).
  */
 export default function ReportTabs({ tab, onChange }) {
