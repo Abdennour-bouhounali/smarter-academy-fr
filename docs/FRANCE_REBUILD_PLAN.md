@@ -201,6 +201,68 @@ class daily challenge still draws free questions only; real Stripe was never con
 from the configuration alone. **The web side is built too** (2026-11-22): `context/PaymentsContext.jsx` reads
 `/billing/status` once and fails closed; the admin's panel « Paiement en ligne » sits beside the registration switch.
 
+### 4quater. Steps 1C–1D in detail — the web in French (the brief shared by every agent of the campaign)
+
+Measured on 2026-11-22: 10,936 strings in the 18 namespaces of `apps/web/src/i18n/locales/ar/`; about 2,560 lines of
+Arabic written in 224 source files; 211 test files that assert Arabic. After the campaign the web holds NO Arabic.
+
+**The authority is `docs/architecture/FRENCH_LANGUAGE_CONTRACT.md`** — read it whole before writing a word: who is
+spoken to (« tu » to a student, « vous » to adults), the vocabulary table (ONE French word per thing — use its words
+and no other), typography, numbers, money, dates, plurals, mathematical writing, direction, content rules.
+
+**Rules of the campaign**
+1. **Rewrite, never translate word for word.** A string is rewritten from what it must do on its screen; read the
+   component that renders it when the Arabic alone does not say. A mathematical term is the French programme's. A
+   context that is Algerian is replaced by its French counterpart or removed.
+2. **Keys never change.** A JSON keeps its file name, its keys, their order and its interpolation variables
+   (`{{count}}`, `<1>…</1>`) exactly. The folder stays `locales/ar/` during the campaign: the main session renames
+   it to `locales/fr/` at the end. Do NOT touch another agent's namespace.
+3. **Plurals.** The six Arabic forms and the dual families collapse to French `_one` (0 and 1) and `_other`: write
+   those two, DELETE `_zero`, `_two`, `_few`, `_many`, and any separate dual key family once its reader is changed to
+   the plain plural. Where « 0 » reads badly, the component shows a separate empty-state sentence.
+4. **Text written in source files** moves into the area's namespace when it is interface text; a table of sentences
+   that belongs to a module (the kit's `text.js`, a world's `strings.js`, a board's script) stays where it is and is
+   rewritten in place.
+5. **Direction.** Remove from your files every `dir="rtl"`, every CSS `direction: rtl`, every `text-align: right`
+   that only served Arabic, every unconditional mirror (`-scale-x-100`, `scaleX(-1)`) of an icon that pointed the
+   Arabic way, every layout « placed from the right » (hand-computed SVG coordinates included: a sentence, a list of
+   chips, a table of steps now reads left to right); physical `left`/`right` utilities become logical ones when they
+   meant start/end. `dir="ltr"` islands around a formula may stay. Icons that depend on direction go through
+   `components/common/DirectionalIcons.jsx`.
+6. **Formats.** No literal `'ar-DZ'`, `'fr-DZ'`, `'en-US'` for something a user reads: `LOCALE` from `locale.js`.
+   Money in euros through the shared helper the foundation agent provides (`utils/money.js › formatEur`); « دج »
+   disappears. The Arabic font stacks (Cairo, Tajawal, Amiri, Noto Naskh) leave your CSS.
+7. **Tests follow the text.** A test that asserted an Arabic sentence asserts the French one — same element, same
+   strength. A test that asserted « this is Arabic » (a regex on Arabic letters, « no Latin word ») is inverted: it
+   asserts French and refuses Arabic. Never weaken, never skip, never delete a test whose subject still exists.
+8. **No Arabic character is left in your files — comments included** (a comment that quoted an Arabic term names the
+   French one). Exempt until the books exist: `features/books/**` (the store is off).
+9. **Not yours**: the mathematics of an engine, an API call, a key name, another agent's file. If you need a change
+   in a file you do not own, say it in your report instead of making it.
+10. **Machine**: 13 GB, several agents at once. Run ONLY your folders' tests, `npx vitest run <paths> --maxWorkers=1`,
+    never the whole suite, never a build, never lint on the whole tree (`npx eslint <your files>` is fine),
+    `npx prettier --check <your files>` for the formatted paths. The main session runs the whole suite and the checks
+    when everyone has finished.
+11. **Report** (fixed shape): what changed with counts (strings rewritten per namespace, source files, tests);
+    every term you were unsure of, with the alternative you rejected; every place where the French is longer than the
+    screen probably allows (you cannot see the screen: say where to look); changes you need in files you do not own;
+    Arabic left and why; what you ran, with its numbers; what you did not verify.
+
+**Who owns what** (under `apps/web/src/` unless said otherwise)
+
+| Agent | Source | Namespaces |
+|---|---|---|
+| Foundation | `locale.js`, `i18n/index.js` and `i18n/*.test.js`, `utils/**`, `hooks/**`, `context/**`, `services/**` except `services/admin`, `components/common/**`, `components/layout/**`, `components/navigation/**`, `data/**`, `App.jsx`, `main.jsx`, `index.css`, `test/**`, `apps/web/index.html`, `apps/web/public/**`, `apps/web/tailwind.config.js`, `apps/web/vite*.js` | `common`, `nav` |
+| Engine | `lessons/**` | `lesson` |
+| Admin | `pages/admin/**`, `components/admin/**`, `services/admin/**`, `features/admin/**`, `pages/adminContract.test.js` | `admin` |
+| Teacher, school, family | `pages/teacher/**`, `pages/school/**`, `pages/parent/**`, `components/teacher/**`, `features/classSession/**`, `features/teacher/**`, `features/school/**`, `features/family/**`, `features/classJoin/**`, `features/studyTime/**`, `features/notifications/**`, `features/tours/**`, `pages/teacherContract.test.js` | `teacher`, `memo`, `idara`, `family`, `tour` |
+| Student and public | the page files directly under `pages/` (and their tests there, except the two contract tests above and `legalConsentContract.test.js`), `pages/student/**`, `pages/unit/**`, `pages/onboarding/**`, `components/{about,access,account,auth,contact,content,diagnostic,faq,hero,home,student}/**`, `features/{access,home,learning,practice,progression,settings,reports}/**` | `student`, `auth`, `access`, `marketing` |
+| Math lab | `features/mathlab/**` | `mathlab` |
+| Games and challenges | `features/{madar,dailyChallenge,thinkingLab,compass}/**` | `madar`, `challenge`, `thinking`, `compass` |
+
+`pages/legal/**` and `legalConsentContract.test.js` are nobody's: the legal pages are the old site's, restored word
+for word at the owner's word (`docs/reports/LEGAL_PAGES_REVIEW_2026-11-22.md`).
+
 Culture rules for French content replace DZ's (owner to confirm, §7): neutral secular everyday French contexts, euros,
 French first names, characters in ordinary clothes; the independence from the textbook, « discover, don't be told »,
 drawn-in-code and the one screen size 1366×768 are kept as they are.
