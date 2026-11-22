@@ -78,9 +78,11 @@ of `rootCourts`, `oasis-world.html`).
 - **Official French sources**: [`curriculum/officiel/`](./curriculum/officiel/) — its `README.md` says which text
   applies to which grade and year, with the quotes that prove it. Lessons and learning points are defined from these
   texts and from nothing else.
-- **Draft of the 3e net**: [`curriculum/draft-3e/`](./curriculum/draft-3e/) (`REVIEW.md` first) — a draft for the
-  owner's review, NOT wired: nothing in the code reads it; the shipped net in `packages/core/curriculum/fr/` is empty.
-  `Planned`: wiring it into `curriculum/fr/` (59 lessons, all `coming_soon`).
+- **The 3e net**: live in `packages/core/curriculum/fr/` since 2026-11-22 (59 lessons, all `coming_soon`; 6e, 5e, 4e
+  still empty). [`curriculum/net-3e/`](./curriculum/net-3e/) holds `REVIEW.md` — the sheet the owner validates: the
+  units, lessons and learning points with the official page of each, and what the 2028 programme changes — and
+  `fr_dz_table.json`, which Algerian lesson teaches the same learning point. State and rules:
+  [`architecture/LEARNING_NET.md`](./architecture/LEARNING_NET.md).
 - **Generated from the shipped net** (never edit by hand): `curriculum/LEARNING_NET_MAP.md`, `learning-net-map.html`,
   `LEARNING_NET_WEIGHTS.md` (`npm run generate:learning-net`), `GENERATION_QUEUE.md`, `generation-queue.json`
   (`scripts/learning-net-queue.mjs`). Empty while the net is empty.

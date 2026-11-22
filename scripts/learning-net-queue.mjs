@@ -23,7 +23,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  LESSONS, LINKS, UNITS, GRADES, getItem, homeLessonOf, itemRank,
+  LESSONS, LINKS, UNITS, GRADES, getItem, homeLessonOf, itemRank, isStub,
 } from '../packages/core/curriculum/fr/net/learningNet.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -96,12 +96,15 @@ const pos = new Map(LESSONS.map((l, k) => [l.code, k]));
 const anchorUnits = UNITS.filter((u) => u.grade === ANCHOR).sort((a, b) => a.number - b.number);
 for (const u of anchorUnits) {
   const start = queue.length;
+  // Direct earlier-grade prerequisites that are stubs: their grade has no lesson yet, so nothing to generate for them.
+  const stubGrades = new Set();
   for (const anchor of LESSONS.filter((l) => l.grade === ANCHOR && l.unit === u.code && l.kind !== 'synthesis')) {
     const needed = new Map();
     for (const it of anchor.programmeItems) {
       for (const from of into.get(it) ?? []) {
         if (GRADE_N[gradeOfItem(from)] >= GRADE_N[ANCHOR]) continue;
         const id = newestVersion(from);
+        if (isStub(id)) stubGrades.add(gradeOfItem(id));
         const home = homeLessonOf(id);
         if (home) needed.set(home.code, { lesson: home, via: [...(needed.get(home.code)?.via ?? []), id] });
       }
@@ -110,7 +113,7 @@ for (const u of anchorUnits) {
       .sort((a, b) => GRADE_N[a.lesson.grade] - GRADE_N[b.lesson.grade] || pos.get(a.lesson.code) - pos.get(b.lesson.code))
       .forEach((n) => push(n.lesson, anchor.code, n.via));
   }
-  phases.push({ grade: 'now', unit: u, from: start, to: queue.length });
+  phases.push({ grade: 'now', unit: u, from: start, to: queue.length, stubGrades: [...stubGrades].sort((a, b) => GRADE_N[b] - GRADE_N[a]) });
 }
 for (const g of GRADES.map((x) => x.id).reverse()) {
   const start = queue.length;
@@ -137,7 +140,7 @@ const lines = [
   `> **Phase A d’abord** : ce dont l’élève de la classe d’ancrage (${ANCHOR ? gradeLabel.get(ANCHOR) : '—'}) a besoin MAINTENANT — ses unités dans`,
   '> l’ordre du catalogue ; pour chaque leçon, ses prérequis DIRECTS des classes antérieures, pris dans la classe la plus récente.',
   '> Ensuite : les chaînes complètes des leçons, de la classe d’ancrage à la première ; les leçons isolées en dernier ; chaque',
-  '> synthèse juste après la dernière leçon de son unité. Contrat : `docs/architecture/LEARNING_NET.md` §4bis.',
+  '> synthèse juste après la dernière leçon de son unité. Contrat : `docs/architecture/LEARNING_NET.md` §4.',
   '',
 ];
 if (LESSONS.length === 0) {
@@ -162,7 +165,12 @@ lines.push(`## Phase A — ce dont la classe d’ancrage a besoin maintenant, un
 for (const p of phases) {
   const head = p.grade === 'now' ? `### Unité ${p.unit.number} — ${p.unit.title}` : `## ${PHASE_TITLE[p.grade]}`;
   if (p.to === p.from) {
-    if (p.grade === 'now') lines.push(`${head} (0) — rien à générer : ses prérequis directs sont publiés ou déjà dans la file.`, '');
+    if (p.grade === 'now') {
+      const why = p.stubGrades.length
+        ? `ses prérequis directs des classes antérieures n’ont pas encore de leçon (items « stub » de ${p.stubGrades.map((g) => gradeLabel.get(g)).join(', ')}) : ils seront générés avec leur classe.`
+        : 'ses prérequis directs sont publiés ou déjà dans la file.';
+      lines.push(`${head} (0) — rien à générer : ${why}`, '');
+    }
     continue;
   }
   lines.push(`${head} (${p.to - p.from})`, '');

@@ -47,7 +47,7 @@ const grades = allCourseLevels.flatMap((level) =>
       // ces intitulés viennent de programme_<g>_2026_2027.json et n'ont été
       // retapés nulle part.
       topics: chapter.topics ?? [],
-      // Les UNITÉS du manuel (phase 8) — absentes (tableau vide) pour un
+      // Les UNITÉS — absentes (tableau vide) pour un
       // chapitre encore découpé « un sujet = une leçon ».
       units: (chapter.units ?? []).map((unit) => ({
         code: unit.id,
@@ -56,7 +56,6 @@ const grades = allCourseLevels.flatMap((level) =>
         number: unit.number ?? null,
         objectives: unit.objectives ?? [],
         sourceTopicCodes: unit.sourceTopicIds ?? [],
-        textbook: unit.textbook ?? null,
         order: unit.order,
       })),
       lessons: chapter.lessons.map((lesson, lessonIndex) => ({
@@ -70,12 +69,11 @@ const grades = allCourseLevels.flatMap((level) =>
         // by the catalogue. The importer creates a new lesson `free` and
         // never rewrites the tier of an existing one.
         order: lessonIndex,
-        // Phase 8 : rattachement à l'unité, nature (leçon / synthèse),
-        // référence au manuel et prérequis pédagogiques inter-leçons.
+        // Rattachement à l'unité, nature (leçon / synthèse) et prérequis
+        // pédagogiques inter-leçons. No textbook reference: there is no textbook layer.
         unitCode: lesson.unitId ?? null,
         kind: lesson.kind ?? 'lesson',
-        titleSource: lesson.titleSource ?? 'official_topic',
-        textbookRef: lesson.textbookRef ?? null,
+        titleSource: lesson.titleSource ?? 'editorial',
         prerequisiteLessonCodes: lesson.prerequisiteLessonCodes ?? [],
         learningPoints: lesson.learningPoints.map((lp) => ({
           code: lp.id,

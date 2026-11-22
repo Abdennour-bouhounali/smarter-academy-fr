@@ -35,6 +35,7 @@
     "check:activation-drift": "node scripts/check-activation-drift.mjs",
     "check:learning-net": "node scripts/generate-learning-net-map.mjs --check && node scripts/learning-net-queue.mjs --check",
     "generate:learning-net": "node scripts/generate-learning-net-map.mjs && node scripts/learning-net-queue.mjs",
+    "generate:lp-lock": "node scripts/generate-lp-lock.mjs",
     "check:year-calendar": "node scripts/check-year-calendar.mjs",
     "generate:compass-index": "node scripts/generate-compass-index.mjs",
     "check:compass-index": "node scripts/generate-compass-index.mjs --check",

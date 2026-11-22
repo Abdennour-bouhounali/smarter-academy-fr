@@ -1,7 +1,11 @@
 # France rebuild plan — the French platform rebuilt on the DZ core
 
-**Status: Stage 0 done; step 1A (baseline) partly done — unit suites run, the checks and the MySQL run of the API suite
-are still owed (2026-11-22). Nothing is committed and nothing is deployed. The progress log is §9.**
+**Status (2026-11-22, end of the first day): Stage 0 and step 1B done — the tree is the lesson engine and the shell
+around a French catalogue; the 3e net is live with 59 lessons announced and none built; the server side of the
+payment switch is built. NEXT: the web side of the payment switch and the hiding of what has no French content
+(1F), then the engine's language boundary and one French lesson rendered left to right (1C), then the shell in French
+(1D–1E). The interface still speaks Arabic. Everything is committed and pushed on `rebuild/dz-core`; nothing is
+deployed. Owed from 1A: the API suite on MySQL, a local database, one browser walk. The progress log is §9.**
 
 This folder is the French platform being rebuilt from the Algerian one. It is the mirror image of
 `docs/ALGERIA_PLATFORM_MASTER_SPEC.md` (how DZ was made from FR in September 2026), and that spec's rule still binds:
@@ -280,7 +284,11 @@ Working rule learned on 2026-11-22: while agents share this folder, **every comm
 | Date | Step | What happened |
 |---|---|---|
 | 2026-11-22 | 1B | **The empty French house.** The owner: no real user exists, no lesson is kept, DZ is never touched, commits and pushes are allowed here. Deleted: 140 DZ lessons, their banks, class tests and textbook sources (10,483 files). `packages/core`: the curriculum is an empty French skeleton, 6e–3e (74 test files, 1,581 tests pass). `apps/api`: French grade ladder, tests on neutral fixtures under `apps/api/tests/Fixtures/content` (1,506 tests, 1,497 pass, the same 8 MySQL-only tests as the baseline do not; no migration touched). Tooling: every check and generator runs on the empty catalogue, `check-dormant-isolation` inverted, 139 per-lesson oracles / 46 Arabic challenges / 193 lesson walks deleted (scripts tests: 97 pass). Web: in progress. Known and left for later: `check:activation-drift` cannot run without a local database; the thinking-lab leak detector is weaker on French prose (a formula is caught only after a colon or `=`); the exporter's « no tier » invariant has no lesson to be tested on |
+| 2026-11-22 | 1B (end) | Web: the app on the empty catalogue, the legacy lesson systems deleted (1,283 files reached from `main.jsx`, 4,938 before). Then everything the deletions left unused: 337 strings, 548 exports, 39 arithmetic modules of core; the unused baseline shrank from 399 to 233 lines. Lint, `check:unused`, `check:unreached`, `check:format`, the entry budget (192 KB gzip) pass. NOT seen in a browser |
+| 2026-11-22 | 1I (first pass) | Documentation: 181 documents of things that are gone deleted, ~65 contracts corrected with a status block, `CLAUDE.md` and `docs/README.md` rewritten for this product; §8bis lists the debts found |
+| 2026-11-22 | 1F (server) | The payment switch, closed by default (§4ter): `PaymentGate`, 22 tests. API suite: 1,528 tests, 1,519 pass, the same 8 MySQL-only ones do not. The web side is not built |
 | 2026-11-22 | 2A | Official sources fetched and filed: `docs/curriculum/officiel/` |
+| 2026-11-22 | 2C (3e) | **The 3e net is live** in `packages/core/curriculum/fr/`, from the official texts, NOT yet validated by the owner (`docs/curriculum/net-3e/REVIEW.md`): 55 items of 3e + 53 stubs of earlier grades, 112 weighted links, 17 threads, 13 units, 59 lessons all `coming_soon`, 161 learning points with locked ids (`generate:lp-lock`); the 19 items the 2026 programme adds in 2028 wait in `net/horizon_2028.json`. A lesson shows its own title; stubs have no home lesson. `lesson:brief` prints a French lesson's brief. A 3e student sees his 13 chapters announced, never a dead link; 6e–4e say « no lesson yet ». Core 36 files / 958 tests, scripts 12 / 104, web 347 / 5,231: all pass, with every check (`check:lessons` with `SKIP_DB_DRIFT_CHECK=1` — no local database yet). Still to do in Stage 2: the owner's validation; 2D the school calendar and the progression by week; 4e, 5e, 6e; 2G the exercise bank's contract for the brevet |
 | 2026-11-22 | 1D (prep) | `docs/architecture/FRENCH_LANGUAGE_CONTRACT.md` written before any translation |
 | 2026-11-22 | survey | five read-only surveys (RTL coupling, backend diff, curriculum model, engine portability, FR inventory), two councils |
 | 2026-11-22 | 0 | branch, import of DZ `7f4cef1c`, workflows locked; nothing committed |

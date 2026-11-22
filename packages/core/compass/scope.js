@@ -65,7 +65,10 @@ export function buildScope({
   return { targets, taughtItems, upcomingItems, ruleA, ruleB, taughtLessons: taught, upcomingLessons: upcoming };
 }
 
-/** Ce que le rapport affiche d'un item : texte, année, leçon où le réviser. */
+/**
+ * Ce que le rapport affiche d'un item : texte, année, leçon où le réviser. A stub has no lesson to revise in:
+ * `homeLesson: null`, `noLessonInGrade` names its grade.
+ */
 export function itemInfo(itemId, net = deliveredNet) {
   const it = net.getItem(itemId);
   if (!it) return null;
@@ -75,5 +78,6 @@ export function itemInfo(itemId, net = deliveredNet) {
     text: it.text,
     grade: it.grade,
     homeLesson: home ? { code: home.code, grade: home.grade, title: home.title, status: home.status } : null,
+    noLessonInGrade: it.stub === true ? it.grade : null,
   };
 }

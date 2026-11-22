@@ -95,7 +95,10 @@ export default function Progression() {
 
   const hasStarted = activity.lessons.some((l) => l.lastVisitedAt > 0);
   // His grade has no published lesson yet: an honest « no lesson yet », not an invitation to start one.
-  const noLessonYet = Boolean(gradeId) && getAllGrades().find((g) => g.id === gradeId)?.lessonCount === 0;
+  const gradeEntry = gradeId ? getAllGrades().find((g) => g.id === gradeId) : null;
+  const noLessonYet = gradeEntry?.lessonCount === 0;
+  // Its lessons are announced (coming soon) though none is published: the programme below shows them unit by unit.
+  const lessonsAnnounced = noLessonYet && gradeEntry.catalogueLessonCount > 0;
   const multiGrade = tree.grades.length > 1;
 
   // Le ميدان ouvert par défaut : celui du dernier travail, sinon le premier
@@ -184,7 +187,7 @@ export default function Progression() {
           </>
         ) : noLessonYet ? (
           <div className="mb-10">
-            <NoLessonYet />
+            <NoLessonYet announced={lessonsAnnounced} />
           </div>
         ) : (
           <ProgressionEmptyState />

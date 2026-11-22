@@ -1,19 +1,22 @@
-# 3e mathematics — draft net for review (2026-11-22)
+# 3e mathematics — the reviewed net (2026-11-22)
 
-**Status:** DRAFT, nothing here is wired into the platform. The files sit beside the real skeleton
-(`packages/core/curriculum/fr/`), in the same shapes, so that copying them in is a later, explicit step.
+**Status:** LIVE since 2026-11-22. This document is the review of the 3e net; the data itself lives in
+`packages/core/curriculum/fr/` (one source of truth) and every lesson is `coming_soon` until it is built.
 **Sources:** only the official texts in `docs/curriculum/officiel/` (their `README.md` says which applies when). No
 textbook, no website, no memory of a textbook's chapters.
-**Check:** `node docs/curriculum/draft-3e/validate.mjs` — passes (output at the end of this file).
+**Check:** the tests of `packages/core` (`cd packages/core && npx vitest run curriculum compass`) and
+`scripts/fr-dz-table.test.mjs` — they replace the draft's `validate.mjs`.
 
 | File | What it holds |
 |---|---|
-| `official_programme_college.json` | the programme items: 55 items taught in 3e in 2026-2027, 19 « horizon 2028 » items (what the 2026 programme adds to 3e), 53 « stub » items of 4e / 5e / 6e that a 3e item needs |
-| `learning_net_college.json` | 17 threads and 133 links (`requires` / `extends` / `consolidates`), every one weighted `core` or `support` |
-| `units_3e_2026_2027.json` | 13 teaching units, in the platform's year order |
-| `lessons_3e_2026_2027.json` | 59 lessons: 46 lessons of discovery + 13 « Vers le brevet » syntheses |
-| `fr_dz_table.json` | 55 rows pairing a 3e lesson with an Algerian 4AM / 3AM lesson |
-| `validate.mjs` | the check (no dependency) |
+| `packages/core/curriculum/fr/net/official_programme_college.json` | the programme items: 55 items taught in 3e in 2026-2027 and 53 « stub » items of 4e / 5e / 6e that a 3e item needs (a stub has no lesson until its grade is written) |
+| `packages/core/curriculum/fr/net/horizon_2028.json` | the 19 « horizon 2028 » items (what the 2026 programme adds to 3e), with their 21 links and their `attachesTo` — NOT loaded by the resolver |
+| `packages/core/curriculum/fr/net/learning_net_college.json` | 17 threads and 112 live links (`requires` / `extends` / `consolidates`), every one weighted `core` or `support` |
+| `packages/core/curriculum/fr/units_3e_2026_2027.json` | 13 teaching units, in the platform's year order |
+| `packages/core/curriculum/fr/lessons_3e_2026_2027.json` | 59 lessons: 46 lessons of discovery + 13 « Vers le brevet » syntheses |
+| `packages/core/curriculum/fr/programme_3e_2026_2027.json` | one official topic per thème (the segments `3e.m1`…`3e.m5`), what each lesson's `sourceTopicId` names |
+| `packages/core/curriculum/fr/learning_points.lock.json` | the learning points of every lesson, in order (append-only once a lesson is built; `npm run generate:lp-lock`) |
+| `fr_dz_table.json` (this folder) | 55 rows pairing a 3e lesson with an Algerian 4AM / 3AM lesson |
 
 How to read an item: `3e.m2.r14` = grade 3e, thème 2 (B, données et fonctions), item 14. `text` is the official
 sentence, cut where needed (`[…]`), never reworded; `origin` and `page` say where it is (PDF page); `alsoIn` gives the
@@ -250,47 +253,18 @@ two-stage probability, the multiplier coefficient and quotient quantities.
 - The translation defined point by point, vectors, sum of vectors and Chasles (`3e.m4.x1`, `x2`, `x3`, `x5` — a new unit of about three lessons, in place of rotations and homotheties).
 - Thales in the nested configuration and the cosine, for the new cohort (no new item: they are 3e items of the 2026 text, `3e.m4.r05` / `r06` « kept » with a note).
 
-## Known limits of this draft (for the main session)
+## The draft's known limits — how they were solved (2026-11-22)
 
-1. **The shipped test would not pass on these files as they are.** `learningNet.test.js` requires every item to have a
-   home lesson; the 53 stubs and the 19 horizon items have none (4e–6e lessons do not exist yet; horizon items are not
-   taught in 2026-2027). Its « ordre des classes » test reads `homeLessonOf(k.from).grade` and would throw on a stub.
-   `validate.mjs` runs every other invariant of that test on the draft, with these two exemptions printed.
-2. **`coursesData.buildLesson` shows the thème title, not the lesson title, for `titleSource: "editorial"`** (it keeps
-   the lesson's own title only for `"textbook"`). All 59 lessons would display « Thème A – Nombres et calculs » etc.
-   A one-line change in `coursesData.js` is needed; `packages/core` was not touched.
+1. **Stubs and horizon items had no home lesson.** Horizon items left the live net for `net/horizon_2028.json`.
+   Stubs stay in the live net and the model says what they are: a stub has no home lesson (`homeLessonOf` → `null`),
+   every result of the resolver shows it as the item itself with `noLessonInGrade`, its grade has no lesson at all
+   (tested: the day 4e gets lessons, its stubs must become full items), and no link ends on a stub.
+2. **`coursesData.buildLesson` showed the thème title.** A lesson now always shows its own title
+   (`titleSource: "editorial"`); `officialTopicTitle` keeps what the official text calls its topic.
 3. Stub ids (`4e.m1.r01` …) are numbered 1..n by the needs of 3e. Once written they keep their meaning, so when 4e is
    transcribed in full its other items must be appended after them — and 4e follows the 2026 text from 2027-2028, so
-   the 4e stubs describe the 2025-2026 4e of the current cohort, not the future 4e.
-4. The programme items of 3e are not yet exposed as `topics` of `programme_3e_2026_2027.json` (the validator builds
-   them in memory from the segments to feed `buildCourseLevels`).
+   the 4e stubs describe the 2025-2026 4e of the current cohort, not the future 4e. **Still open.**
+4. The programme items of 3e are exposed as one topic per thème in `programme_3e_2026_2027.json` (the segments).
 
-## Validator output (2026-11-22)
-
-```
-— programme items
-127 items: 55 3e (2026-2027), 19 horizon 2028, 53 stubs (4e 43, 5e 9, 6e 1)
-
-— links
-133 links: 91 requires, 33 extends, 9 consolidates; into 3e 133 (core 95, support 38)
-
-— threads
-17 threads
-
-— lessons and units
-13 units, 59 lessons (46 + 13 syntheses), 161 learning points (148 in lessons + 13 integrating)
-43 lesson pairs checked against the net
-
-— catalogue (buildCourseLevels)
-5 chapters, 13 units, 59 lessons, 161 learning points built
-
-— FR ↔ DZ table
-55 rows, 36 FR lessons with a counterpart, 4 same, 2 same-maths-other-method, 49 partial, 3 with a v2 DZ lesson
-
-— known limits (not errors of the draft)
-- 53 stub items and 19 horizon items have no home lesson: the shipped test « donne à CHAQUE item officiel une leçon d’accueil » fails on them until 4e/5e/6e lessons exist and horizon items get a lesson or leave the file; its « ordre des classes » test reads homeLessonOf(...).grade and would throw on them.
-- WARNING: coursesData.buildLesson shows the TOPIC title for titleSource « editorial » (it keeps the lesson title only for « textbook »): 59 of 59 lessons would display a thème title, e.g. decomposer-en-facteurs-premiers → « Thème A – Nombres et calculs ». Needs a one-line change in coursesData.js (not done: packages/core is frozen for this task).
-
-— result
-✓ all checks pass
-```
+The counts of section (b) are those of the draft: the 133 links are now 112 live links + 21 links into horizon items
+(`horizon_2028.json`).

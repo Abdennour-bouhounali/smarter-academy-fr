@@ -8,13 +8,15 @@ import programme6e from './fr/programme_6e_2026_2027.json';
 import programme5e from './fr/programme_5e_2026_2027.json';
 import programme4e from './fr/programme_4e_2026_2027.json';
 import programme3e from './fr/programme_3e_2026_2027.json';
+import lessons3e from './fr/lessons_3e_2026_2027.json';
+import units3e from './fr/units_3e_2026_2027.json';
 
-// The delivered catalogue is EMPTY on purpose (FRANCE_REBUILD_PLAN.md §4bis): the builder's rules are checked on this
-// small neutral trio of its own, never on real curriculum content.
+// The builder's rules are checked on this small neutral trio of its own; the delivered catalogue (3e: 59 lessons, all
+// `coming_soon`; 6e–4e empty) is checked below on its own facts.
 const lesson = (code, extra) => ({
-  code, order: 0, kind: 'lesson', description: `Description ${code}`, prerequisites: [], prerequisiteLessonCodes: [],
-  pointsToLearn: [`Point 1 de ${code}`], durationMinutes: 45, difficulty: 1, status: 'coming_soon', icon: null,
-  decompositionType: 'textbook_lesson', decisionStatus: 'draft', ...extra,
+  code, order: 0, kind: 'lesson', titleSource: 'editorial', title: `Leçon ${code}`, description: `Description ${code}`,
+  prerequisites: [], prerequisiteLessonCodes: [], pointsToLearn: [`Point 1 de ${code}`], durationMinutes: 45, difficulty: 1,
+  status: 'coming_soon', icon: null, decompositionType: 'editorial_lesson', decisionStatus: 'draft', ...extra,
 });
 const FIXTURE = [
   {
@@ -30,7 +32,7 @@ const FIXTURE = [
       grade: '5e',
       lessons: [
         lesson('lecon-b', {
-          chapterId: 'd1', unitId: 'u1', sourceTopicId: 't2', order: 1, titleSource: 'textbook', title: 'Leçon B', status: 'available',
+          chapterId: 'd1', unitId: 'u1', sourceTopicId: 't2', order: 1, title: 'Leçon B', status: 'available',
           prerequisiteLessonCodes: ['lecon-a'],
         }),
         lesson('lecon-a', { chapterId: 'd1', unitId: 'u1', sourceTopicId: 't1', order: 0, status: 'available' }),
@@ -87,13 +89,17 @@ describe('getAllGrades', () => {
     }
   });
 
+  it('counts the announced lessons apart: 3e has its year announced, 6e–4e nothing', () => {
+    expect(grades.map((g) => [g.id, g.catalogueLessonCount])).toEqual([['6e', 0], ['5e', 0], ['4e', 0], ['3e', 59]]);
+  });
+
   it('has no duplicate grade ids', () => {
     const ids = grades.map((g) => g.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
 });
 
-describe('the delivered catalogue (empty skeleton)', () => {
+describe('the delivered catalogue', () => {
   it('holds exactly the active grades, every one with its short label', () => {
     const all = allCourseLevels.flatMap((l) => l.grades);
     expect(all.map((g) => g.id)).toEqual([...ACTIVE_GRADE_IDS]);
@@ -122,6 +128,51 @@ describe('the delivered catalogue (empty skeleton)', () => {
     expect(getUnitById('nimporte')).toBeNull();
     expect(getUnitOfLesson('nimporte')).toBeNull();
     expect(getLessonById(null)).toBeNull();
+  });
+
+  it('gives 6e, 5e and 4e no chapter (no lesson yet), and 3e its five thèmes in the order A…E', () => {
+    const grades = allCourseLevels.flatMap((l) => l.grades);
+    for (const id of ['6e', '5e', '4e']) expect(grades.find((g) => g.id === id).chapters, id).toEqual([]);
+    const g3 = grades.find((g) => g.id === '3e');
+    expect(g3.chapters.map((c) => c.id)).toEqual([
+      'nombres_calculs', 'organisation_gestion_donnees_fonctions', 'grandeurs_mesures', 'espace_geometrie',
+      'algorithmique_programmation',
+    ]);
+    // Each thème carries one official topic: the 3e segment of the same thème.
+    expect(g3.chapters.map((c) => c.topics.map((t) => t.id))).toEqual([['3e.m1'], ['3e.m2'], ['3e.m3'], ['3e.m4'], ['3e.m5']]);
+  });
+
+  it('builds every 3e lesson and unit of the files, each unit under its thème, its synthesis apart', () => {
+    const g3 = allCourseLevels.flatMap((l) => l.grades).find((g) => g.id === '3e');
+    const built = g3.chapters.flatMap((c) => c.lessons);
+    const units = g3.chapters.flatMap((c) => c.units);
+    expect(built).toHaveLength(lessons3e.lessons.length);
+    expect(units.map((u) => u.id).sort()).toEqual(units3e.units.map((u) => u.code).sort());
+    for (const chapter of g3.chapters) {
+      for (const u of chapter.units) {
+        const ofUnit = lessons3e.lessons.filter((l) => l.unitId === u.id);
+        expect(ofUnit.every((l) => l.chapterId === chapter.id), u.id).toBe(true);
+        expect(u.synthesis?.kind, u.id).toBe('synthesis');
+        expect(u.lessons.length + 1, u.id).toBe(ofUnit.length);
+      }
+    }
+    const lpIds = built.flatMap((l) => l.learningPoints.map((p) => p.id));
+    expect(lpIds).toHaveLength(lessons3e.lessons.reduce((n, l) => n + l.pointsToLearn.length, 0));
+    for (const l of built) for (const p of l.learningPoints) for (const q of p.prerequisites) expect(lpIds, `${p.id} ← ${q.id}`).toContain(q.id);
+  });
+
+  it('shows each 3e lesson under its OWN title, keeps the official topic title beside it, and links none (coming soon)', () => {
+    const byCode = new Map(lessons3e.lessons.map((l) => [l.code, l]));
+    const topicTitle = new Map(programme3e.domains.flatMap((d) => d.topics.map((t) => [t.id, t.title])));
+    for (const { lesson: l } of lessonsOf(allCourseLevels)) {
+      expect(l.title, l.id).toBe(byCode.get(l.id).title);
+      expect(l.titleSource, l.id).toBe('editorial');
+      expect(l.officialTopicTitle, l.id).toBe(topicTitle.get(byCode.get(l.id).sourceTopicId) ?? null);
+      expect(l.status, l.id).toBe('coming_soon');
+      expect(getLessonById(l.id)).toMatchObject({ id: l.id, gradeId: '3e' });
+      expect(getLessonPath(l.id), l.id).toBeNull();
+      expect(getUnitOfLesson(l.id)?.id, l.id).toBe(byCode.get(l.id).unitId);
+    }
   });
 });
 
@@ -199,11 +250,11 @@ describe('buildCourseLevels — the rules of the builder (fixture)', () => {
     expect(d1.topics).toEqual([{ id: 't1', title: 'Sujet 1' }, { id: 't2', title: 'Sujet 2', namedMethods: ['Méthode M'] }]);
   });
 
-  it('sorts lessons by `order`, titles a lesson by its topic unless it comes from the textbook', () => {
+  it('sorts lessons by `order`, titles a lesson by its own title, keeps the official topic title beside it', () => {
     const d1 = grade5e.chapters.find((c) => c.id === 'd1');
     expect(d1.lessons.map((l) => l.id)).toEqual(['lecon-a', 'lecon-b', 'synthese-u1']);
     expect(d1.lessons.map((l) => [l.title, l.officialTopicTitle, l.titleSource])).toEqual([
-      ['Sujet 1', 'Sujet 1', 'official_topic'], ['Leçon B', 'Sujet 2', 'textbook'], ['Sujet 1', 'Sujet 1', 'official_topic'],
+      ['Leçon lecon-a', 'Sujet 1', 'editorial'], ['Leçon B', 'Sujet 2', 'editorial'], ['Leçon synthese-u1', 'Sujet 1', 'editorial'],
     ]);
   });
 

@@ -19,9 +19,12 @@ export default function Explorer() {
   const myGrade = allGrades.find((g) => g.id === user?.grade) || null;
   const otherGrades = allGrades.filter((g) => g.id !== user?.grade);
 
-  // Sans classe (enseignant) : la première classe qui a des leçons publiées — 1AM–3AM
-  // n'ont encore que des cartes « قيد الإعداد » (2026-10-14).
-  const [selectedGradeId, setSelectedGradeId] = useState(user?.grade || (allGrades.find((g) => g.lessonCount > 0) ?? allGrades[0])?.id);
+  // Sans classe (enseignant) : la première classe qui a des leçons publiées, sinon la première dont les leçons sont
+  // annoncées (3e, toutes « coming soon » depuis le 2026-11-22), sinon la première.
+  const [selectedGradeId, setSelectedGradeId] = useState(
+    user?.grade
+      || (allGrades.find((g) => g.lessonCount > 0) ?? allGrades.find((g) => g.catalogueLessonCount > 0) ?? allGrades[0])?.id,
+  );
   const [activeChapter, setActiveChapter] = useState('all');
 
   const selectedGrade = allGrades.find((g) => g.id === selectedGradeId);

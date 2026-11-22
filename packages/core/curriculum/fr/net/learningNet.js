@@ -26,12 +26,18 @@ import units3e from '../units_3e_2026_2027.json' with { type: 'json' };
  * Une leçon générée garde son code et ses items, et passe `available` : aucun
  * lien n'est à réécrire.
  *
+ * STUB items (`stub: true`): real prerequisites of a later grade, in a grade that has NO lesson yet. A stub has no home
+ * lesson (`homeLessonOf` → null) and every result that names a home lesson names, for a stub, the item itself with
+ * `noLessonInGrade: <its grade>` instead. Tested: a stub's grade has no lesson at all, and no link ends on a stub.
+ *
+ * What the 2026 programme adds to 3e from 2028 lives in `horizon_2028.json`, which this module does NOT load.
+ *
  * Ce module n'entre PAS dans le barrel `@smarter-academy/core` (bundle
  * d'entrée) : on l'importe par son chemin, depuis le runtime de leçon.
  *
  * `createLearningNet` construit le résolveur sur des données données : les tests
- * vérifient ainsi les règles du réseau sur un petit jeu à eux tant que le
- * programme est vide. Les exports nommés sont le résolveur du programme livré.
+ * vérifient ainsi les règles du réseau sur un petit jeu à eux, en plus du réseau
+ * livré. Les exports nommés sont le résolveur du programme livré (3e, 2026-11-22).
  */
 
 /** Les deux poids d'un lien (voir plus bas, « LE POIDS D'UN LIEN »). */
@@ -109,12 +115,18 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
     return lessonByCode.get(code) ?? null;
   }
 
+  /** A stub item: a prerequisite whose grade has no lesson yet. */
+  function isStub(itemId) {
+    return itemById.get(itemId)?.stub === true;
+  }
+
   /**
    * La leçon d'ACCUEIL d'un item : la première leçon (ordre du cursus) qui le
    * déclare. C'est là qu'on renvoie un élève qui bute sur cet item. Les leçons
-   * de synthèse ne sont jamais l'accueil d'un item.
+   * de synthèse ne sont jamais l'accueil d'un item. `null` for a stub (its grade has no lesson) and for an unknown id.
    */
   function homeLessonOf(itemId) {
+    if (isStub(itemId)) return null;
     return LESSONS.find((l) => l.kind !== 'synthesis' && l.programmeItems.includes(itemId)) ?? null;
   }
 
@@ -135,7 +147,7 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
 
   const describeItem = (id) => {
     const item = itemById.get(id);
-    return { id, grade: item.grade, segment: item.segment, text: item.text };
+    return { id, grade: item.grade, segment: item.segment, text: item.text, stub: item.stub === true };
   };
 
   const describeLesson = (lesson) =>
@@ -154,8 +166,11 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
    * Chaque item porte le POIDS du lien (`weight` : 'core' | 'support' | null si le lien
    * n'est pas encore classé — voir WEIGHTED_GRADES).
    *
-   * @returns {Array<{ lesson: {code, grade, title, status} | null,
-   *                   items: Array<{id, grade, segment, text, via, weight}> }>}
+   * Stub prerequisites are grouped by their grade: `{ lesson: null, noLessonInGrade: '4e', items }` — the items
+   * themselves (text, grade), since no lesson teaches them yet.
+   *
+   * @returns {Array<{ lesson: {code, grade, title, status} | null, noLessonInGrade?: string,
+   *                   items: Array<{id, grade, segment, text, stub, via, weight}> }>}
    */
   function reviewLinksForLesson(code) {
     const lesson = lessonByCode.get(code);
@@ -174,8 +189,12 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
     }
     const groups = new Map();
     for (const entry of [...found.values()].sort((a, b) => itemRank(a.id) - itemRank(b.id))) {
-      const key = entry.home?.code ?? `__none__${entry.id}`;
-      if (!groups.has(key)) groups.set(key, { lesson: describeLesson(entry.home), items: [] });
+      const key = entry.home?.code ?? (entry.stub ? `__stub__${entry.grade}` : `__none__${entry.id}`);
+      if (!groups.has(key)) {
+        groups.set(key, entry.stub
+          ? { lesson: null, noLessonInGrade: entry.grade, items: [] }
+          : { lesson: describeLesson(entry.home), items: [] });
+      }
       const { home: _home, ...item } = entry;
       groups.get(key).items.push(item);
     }
@@ -213,14 +232,18 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
    * `2am.m1.r06` « requires » `2am.m1.r05` (le lien va de r05 à r06), un item dont la leçon d'accueil est la leçon 6 ; sans
    * cette règle, la leçon 5 mesurait un outil de la leçon 6.
    *
-   * @returns {Array<{ id, grade, segment, text, via, weight, lesson: {code, grade, title, status} | null }>}
+   * A stub prerequisite is a tool (it is earlier by construction: an earlier grade) with `lesson: null` and
+   * `noLessonInGrade` set.
+   *
+   * @returns {Array<{ id, grade, segment, text, stub, via, weight, lesson: {code, grade, title, status} | null,
+   *                   noLessonInGrade: string | null }>}
    */
   function toolsForLesson(code, { max = 4 } = {}) {
     const at = LESSONS.indexOf(lessonByCode.get(code));
     const earlier = (lesson) => !lesson || LESSONS.indexOf(lessonByCode.get(lesson.code)) < at;
     const flat = reviewLinksForLesson(code)
       .filter((group) => earlier(group.lesson))
-      .flatMap((group) => group.items.map((item) => ({ ...item, lesson: group.lesson })));
+      .flatMap((group) => group.items.map((item) => ({ ...item, lesson: group.lesson, noLessonInGrade: group.noLessonInGrade ?? null })));
     const heavy = (t) => (t.weight === 'support' ? 1 : 0);
     return flat.sort((a, b) => heavy(a) - heavy(b) || itemRankGrade(b.id) - itemRankGrade(a.id) || itemRank(a.id) - itemRank(b.id)).slice(0, max);
   }
@@ -228,7 +251,8 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
 
   /**
    * Où ce que la leçon enseigne SERT plus tard (liens sortants vers d'autres
-   * leçons), groupé par leçon d'accueil de l'item cible.
+   * leçons), groupé par leçon d'accueil de l'item cible. A link never ends on a stub (tested), so every target has
+   * a home lesson or is skipped.
    */
   function forwardLinksForLesson(code) {
     const lesson = lessonByCode.get(code);
@@ -254,7 +278,7 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
    * Ce qu'une leçon ne doit PAS reconstruire : pour chacun de ses items qui
    * prolonge (`extends`) ou répète (`consolidates`) un item antérieur, la base et
    * la valeur ajoutée attendue. C'est la règle anti-doublon du réseau, lue par
-   * le générateur de leçons.
+   * le générateur de leçons. A stub base has `baseLesson: null` and `baseNoLessonInGrade: <its grade>`.
    */
   function noRebuildForLesson(code) {
     const lesson = lessonByCode.get(code);
@@ -264,6 +288,7 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
         item: describeItem(itemId),
         base: describeItem(link.from),
         baseLesson: describeLesson(homeLessonOf(link.from)),
+        baseNoLessonInGrade: isStub(link.from) ? itemById.get(link.from).grade : null,
         type: link.type,
         addedValue: link.addedValue ?? null,
         note: link.note ?? null,
@@ -283,9 +308,11 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
    * de sa الكفاءة principale — sinon de la leçon — et on renvoie les liens « راجع » de
    * sa leçon qui viennent d'une année ANTÉRIEURE : `reviewLinksForLesson` réduit au
    * pas qui change d'année. Rien n'est écrit à la main dans les exercices : le lien
-   * se dérive du réseau (LEARNING_NET.md §3).
+   * se dérive du réseau (LEARNING_NET.md §3). A stub keeps its group `{ lesson: null, noLessonInGrade }`: the item
+   * is shown, no link is offered.
    *
-   * @returns {Array<{ lesson: {code, grade, title, status} | null, items: Array<{id, grade, segment, text, via}> }>}
+   * @returns {Array<{ lesson: {code, grade, title, status} | null, noLessonInGrade?: string,
+   *                   items: Array<{id, grade, segment, text, stub, via}> }>}
    */
   function earlierYearReviewFor({ learningPointCode = null, lessonCode = null } = {}) {
     const code = lessonCodeOfLearningPoint(learningPointCode) ?? (lessonByCode.has(lessonCode) ? lessonCode : null);
@@ -298,24 +325,24 @@ export function createLearningNet({ programme, net, lessonFiles, unitFiles, weig
 
   return {
     GRADES, ITEMS, SEGMENTS, THREADS, LINKS, UNITS, LESSONS, WEIGHTED_GRADES,
-    itemRank, getItem, getSegment, getThreadOf, getLesson, homeLessonOf, lessonsOf, linksInto, linksFrom,
+    itemRank, getItem, getSegment, getThreadOf, getLesson, isStub, homeLessonOf, lessonsOf, linksInto, linksFrom,
     reviewLinksForLesson, corePrerequisitesOf, coreDependentsOf, toolsForLesson, forwardLinksForLesson,
     noRebuildForLesson, lessonCodeOfLearningPoint, earlierYearReviewFor,
   };
 }
 
-// No grade is classified yet: the French net has no link (plan §4bis).
+// 3e is the only weighted grade: every link into a 3e item carries core / support.
 const delivered = createLearningNet({
   programme,
   net,
   lessonFiles: [lessons6e, lessons5e, lessons4e, lessons3e],
   unitFiles: [units6e, units5e, units4e, units3e],
-  weightedGrades: [],
+  weightedGrades: ['3e'],
 });
 
 export const {
   GRADES, ITEMS, SEGMENTS, THREADS, LINKS, UNITS, LESSONS, WEIGHTED_GRADES,
-  itemRank, getItem, getSegment, getThreadOf, getLesson, homeLessonOf, lessonsOf, linksInto, linksFrom,
+  itemRank, getItem, getSegment, getThreadOf, getLesson, isStub, homeLessonOf, lessonsOf, linksInto, linksFrom,
   reviewLinksForLesson, corePrerequisitesOf, coreDependentsOf, toolsForLesson, forwardLinksForLesson,
   noRebuildForLesson, lessonCodeOfLearningPoint, earlierYearReviewFor,
 } = delivered;

@@ -23,11 +23,15 @@ import { createLearningNet, WEIGHTS, weightOf } from './learningNet.js';
  *  - la règle anti-doublon est lisible : un item qui prolonge ou répète un
  *    item antérieur le DIT, avec sa valeur ajoutée.
  *
- * The delivered net is EMPTY (FRANCE_REBUILD_PLAN.md §4bis): every invariant runs on it AND on the small neutral net
- * below, so that each rule is seen to hold — and to bite — on real links.
+ * The delivered net is the 3e net (55 items taught in 3e, 53 stubs of 4e / 5e / 6e, every lesson `coming_soon`): every
+ * invariant runs on it AND on the small neutral net below, so that each rule is seen to hold — and to bite.
+ *
+ * STUBS: an item `stub: true` is a real prerequisite whose grade has no lesson yet. It has no home lesson; its grade
+ * has no lesson at all (the day 4e gets lessons, its stubs must become full items — the test fails until then); a
+ * link may start from a stub, never end on one.
  */
 
-// ── A neutral fixture: two grades, two segments, seven items ────────────────
+// ── A neutral fixture: three grades (the first one, CM2, made of stubs only), nine items ────
 const item = (id, extra = {}) => {
   const [grade, seg, rank] = id.split('.');
   return {
@@ -36,16 +40,21 @@ const item = (id, extra = {}) => {
   };
 };
 const FIXTURE_PROGRAMME = {
-  grades: [{ id: '6e', label: 'Sixième', shortLabel: '6e' }, { id: '5e', label: 'Cinquième', shortLabel: '5e' }],
+  grades: [
+    { id: 'cm2', label: 'CM2', shortLabel: 'CM2' }, { id: '6e', label: 'Sixième', shortLabel: '6e' },
+    { id: '5e', label: 'Cinquième', shortLabel: '5e' },
+  ],
   domains: [{ id: 'nombres_calculs', title: 'Nombres et calculs' }],
   segments: [
+    { id: 'cm2.m1', grade: 'cm2', number: 1, title: 'Segment CM2-1', domain: 'nombres_calculs' },
     { id: '6e.m1', grade: '6e', number: 1, title: 'Segment 6e-1', domain: 'nombres_calculs' },
     { id: '6e.m2', grade: '6e', number: 2, title: 'Segment 6e-2', domain: 'nombres_calculs' },
     { id: '5e.m1', grade: '5e', number: 1, title: 'Segment 5e-1', domain: 'nombres_calculs' },
   ],
   items: [
+    item('cm2.m1.r01', { stub: true }),
     item('6e.m1.r01'), item('6e.m1.r02'), item('6e.m2.r01'), item('6e.m2.r02'),
-    item('5e.m1.r01'), item('5e.m1.r02'), item('5e.m1.x1'),
+    item('5e.m1.r01'), item('5e.m1.r02'), item('5e.m1.r03'), item('5e.m1.x1'),
   ],
 };
 const SUPPORT_NOTE = 'aide à comprendre, mais la tâche se réussit sans lui';
@@ -54,6 +63,7 @@ const FIXTURE_NET = {
   linkTypes: net.linkTypes,
   threads: [
     { id: 'fil-a', title: 'Fil A', domain: 'nombres_calculs', items: ['6e.m1.r01', '6e.m1.r02', '5e.m1.r01', '5e.m1.r02', '5e.m1.x1'] },
+    { id: 'fil-c', title: 'Fil C', domain: 'nombres_calculs', items: ['cm2.m1.r01', '5e.m1.r03'] },
     { id: 'fil-b', title: 'Fil B', domain: 'nombres_calculs', items: ['6e.m2.r01', '6e.m2.r02'] },
   ],
   links: [
@@ -66,6 +76,8 @@ const FIXTURE_NET = {
     { from: '6e.m1.r01', to: '5e.m1.r02', type: 'consolidates', weight: 'core', note: 'rappelé dans un nouveau contexte' },
     { from: '5e.m1.r01', to: '5e.m1.r02', type: 'requires', weight: 'core' },
     { from: '5e.m1.r02', to: '5e.m1.x1', type: 'requires', weight: 'core' },
+    // A stub (CM2 has no lesson) is the base of a 5e item: c5's review, tools and « do not rebuild » show it lessonless.
+    { from: 'cm2.m1.r01', to: '5e.m1.r03', type: 'extends', weight: 'core', addedValue: 'la même notion, en plus grand' },
   ],
 };
 const lesson = (code, order, programmeItems, extra = {}) => ({
@@ -87,6 +99,7 @@ const FIXTURE_LESSONS = [
     lessons: [
       lesson('a5', 0, ['5e.m1.r01', '5e.m1.r02'], { status: 'available', pointPrerequisites: { P1: ['6e_b6_P1'] } }),
       lesson('b5', 1, ['5e.m1.x1'], { status: 'available', prerequisiteLessonCodes: ['a5'] }),
+      lesson('c5', 2, ['5e.m1.r03']),
     ],
   },
 ];
@@ -94,6 +107,18 @@ const FIXTURE_UNITS = [
   { grade: '6e', units: [{ code: 'u6', chapterId: 'nombres_calculs', order: 0, number: 1, title: 'Unité 6e', synthesisLessonCode: 's6' }] },
   { grade: '5e', units: [] },
 ];
+/** The stub rules, as a list of violations (so a test can show they bite on a broken net). */
+function stubViolations(N) {
+  const out = [];
+  const gradesWithLessons = new Set(N.LESSONS.map((l) => l.grade));
+  for (const i of N.ITEMS.filter((x) => x.stub)) {
+    if (gradesWithLessons.has(i.grade)) out.push(`${i.id}: stub in ${i.grade}, which has lessons — make it a full item`);
+    if (!N.linksFrom(i.id).some((k) => !N.getItem(k.to)?.stub)) out.push(`${i.id}: stub serves no item`);
+  }
+  for (const k of N.LINKS) if (N.getItem(k.to)?.stub) out.push(`${k.from} → ${k.to}: a link ends on a stub`);
+  return out;
+}
+
 const fixtureData = { programme: FIXTURE_PROGRAMME, net: FIXTURE_NET, lessonFiles: FIXTURE_LESSONS, unitFiles: FIXTURE_UNITS };
 const fixture = createLearningNet({ ...fixtureData, weightedGrades: ['5e'] });
 
@@ -182,8 +207,13 @@ describe.each([
   });
 
   describe('leçons — existantes et prévues', () => {
-    it('donne à CHAQUE item officiel une leçon d’accueil (existante ou prévue)', () => {
-      expect(N.ITEMS.filter((i) => !N.homeLessonOf(i.id)).map((i) => i.id)).toEqual([]);
+    it('donne à CHAQUE item officiel non-stub une leçon d’accueil (existante ou prévue), et aucune à un stub', () => {
+      expect(N.ITEMS.filter((i) => !i.stub && !N.homeLessonOf(i.id)).map((i) => i.id)).toEqual([]);
+      for (const i of N.ITEMS.filter((x) => x.stub)) expect(N.homeLessonOf(i.id), i.id).toBeNull();
+    });
+
+    it('n’admet un stub que dans une classe SANS aucune leçon, jamais au bout d’un lien, et toujours au service d’un item', () => {
+      expect(stubViolations(N)).toEqual([]);
     });
 
     it('a des codes de leçon uniques, prévues comprises', () => {
@@ -209,9 +239,12 @@ describe.each([
 
     it('respecte l’ordre des classes : la leçon d’accueil d’un prérequis n’est jamais d’une classe postérieure', () => {
       for (const k of N.LINKS) {
+        // A stub has no lesson: its own grade stands for the grade of the lesson that will teach it.
         const a = N.homeLessonOf(k.from);
         const b = N.homeLessonOf(k.to);
-        expect(GRADES.indexOf(a.grade), `${k.from} (${a.code}) → ${k.to} (${b.code})`).toBeLessThanOrEqual(GRADES.indexOf(b.grade));
+        const gradeA = a?.grade ?? gradeOf(k.from);
+        expect(b, `${k.to} has no home lesson`).not.toBeNull();
+        expect(GRADES.indexOf(gradeA), `${k.from} (${a?.code ?? 'stub'}) → ${k.to} (${b.code})`).toBeLessThanOrEqual(GRADES.indexOf(b.grade));
       }
     });
 
@@ -220,7 +253,8 @@ describe.each([
       for (const k of N.LINKS) {
         const a = N.homeLessonOf(k.from);
         const b = N.homeLessonOf(k.to);
-        if (a.grade !== b.grade || a.status !== 'available' || b.status !== 'available') continue;
+        // A stub source has no lesson, so no published lesson to refer forward to.
+        if (!a || a.grade !== b.grade || a.status !== 'available' || b.status !== 'available') continue;
         expect(pos.get(a.code), `${k.from} (${a.code}) → ${k.to} (${b.code})`).toBeLessThanOrEqual(pos.get(b.code));
       }
     });
@@ -313,19 +347,30 @@ describe.each([
   });
 });
 
-describe('the delivered net (empty skeleton)', () => {
-  it('keeps the structure readers expect, with no item, link, thread or lesson', () => {
-    expect(net).toMatchObject({ version: 1, threads: [], links: [] });
+describe('the delivered net (3e)', () => {
+  it('holds the 3e net: 55 items taught in 3e, 53 stubs of the earlier grades, 59 planned lessons in 13 units', () => {
+    expect(net).toMatchObject({ version: 1 });
     expect(typeof net.builtOn).toBe('string');
     expect(Object.keys(net.linkTypes)).toEqual(['requires', 'extends', 'consolidates']);
-    expect(programme).toMatchObject({ level: 'college', verified: false, segments: [], items: [] });
+    expect(programme).toMatchObject({ level: 'college', verified: false });
     expect(delivered.GRADES.map((g) => g.id)).toEqual(['6e', '5e', '4e', '3e']);
-    expect(delivered.LESSONS).toEqual([]);
-    expect(delivered.UNITS).toEqual([]);
-    expect(delivered.WEIGHTED_GRADES).toEqual([]);
+    const count = (f) => delivered.ITEMS.filter(f).length;
+    expect(count((i) => i.grade === '3e' && !i.stub)).toBe(55);
+    expect(count((i) => i.stub)).toBe(53);
+    expect(delivered.ITEMS).toHaveLength(108);
+    expect(delivered.THREADS).toHaveLength(17);
+    expect(delivered.LINKS).toHaveLength(112);
+    expect(delivered.UNITS).toHaveLength(13);
+    expect(delivered.LESSONS).toHaveLength(59);
+    expect(delivered.LESSONS.every((l) => l.grade === '3e' && l.status === 'planned')).toBe(true);
+    expect(delivered.WEIGHTED_GRADES).toEqual(['3e']);
   });
 
-  it('answers every question with an empty result, never a crash', () => {
+  it('never loads a horizon-2028 item', () => {
+    expect(delivered.ITEMS.filter((i) => i.horizon || /\.x\d+$/.test(i.id)).map((i) => i.id)).toEqual([]);
+  });
+
+  it('answers an unknown id with an empty result, never a crash', () => {
     expect(delivered.getItem('6e.m1.r01')).toBeNull();
     expect(delivered.getLesson('nimporte')).toBeNull();
     expect(delivered.homeLessonOf('6e.m1.r01')).toBeNull();
@@ -335,6 +380,83 @@ describe('the delivered net (empty skeleton)', () => {
     expect(delivered.noRebuildForLesson('nimporte')).toEqual([]);
     expect(delivered.earlierYearReviewFor({ learningPointCode: '6e_nimporte_P1' })).toEqual([]);
     expect(delivered.itemRank('6e.m1.r01')).toBe(Infinity);
+  });
+
+  it('answers a stub with the item itself and « no lesson yet in its grade », in every function', () => {
+    const stub = '4e.m1.r01';
+    expect(delivered.isStub(stub)).toBe(true);
+    expect(delivered.homeLessonOf(stub)).toBeNull();
+    expect(delivered.lessonsOf(stub)).toEqual([]);
+    // 3e.m1.r01 (calculer-avec-des-fractions) consolidates 4e.m1.r01.
+    const groups = delivered.reviewLinksForLesson('calculer-avec-des-fractions');
+    const stubGroup = groups.find((g) => g.items.some((i) => i.id === stub));
+    expect(stubGroup).toMatchObject({ lesson: null, noLessonInGrade: '4e' });
+    expect(stubGroup.items.find((i) => i.id === stub)).toMatchObject({ grade: '4e', stub: true, via: 'consolidates' });
+    const tool = delivered.toolsForLesson('calculer-avec-des-fractions', { max: 99 }).find((t) => t.id === stub);
+    expect(tool).toMatchObject({ lesson: null, noLessonInGrade: '4e', stub: true });
+    expect(tool.text.length).toBeGreaterThan(5);
+    const noRebuild = delivered.noRebuildForLesson('calculer-avec-des-fractions').find((r) => r.base.id === stub);
+    expect(noRebuild).toMatchObject({ baseLesson: null, baseNoLessonInGrade: '4e', type: 'consolidates' });
+    const earlier = delivered.earlierYearReviewFor({ learningPointCode: '3e_calculer-avec-des-fractions_P1' });
+    expect(earlier.some((g) => g.noLessonInGrade === '4e' && g.lesson === null)).toBe(true);
+    // A stub is never the end of a link, so no forward link ever names it.
+    for (const l of delivered.LESSONS) {
+      for (const g of delivered.forwardLinksForLesson(l.code)) for (const i of g.items) expect(i.stub, `${l.code} → ${i.id}`).toBe(false);
+    }
+  });
+
+  it('groups the stubs of one grade together, never one group per item', () => {
+    for (const l of delivered.LESSONS) {
+      const grades = delivered.reviewLinksForLesson(l.code).filter((g) => g.noLessonInGrade).map((g) => g.noLessonInGrade);
+      expect(new Set(grades).size, l.code).toBe(grades.length);
+    }
+  });
+
+  it('keeps every 3e lesson in the year order: no prerequisite whose home lesson comes later in 3e', () => {
+    // Stricter than the general rule (which only forbids it between PUBLISHED lessons): the 3e catalogue was cut so.
+    const pos = new Map(delivered.LESSONS.map((l, k) => [l.code, k]));
+    const forward = delivered.LINKS.map((k) => [k, delivered.homeLessonOf(k.from), delivered.homeLessonOf(k.to)])
+      .filter(([, a, b]) => a && b && a.grade === b.grade && pos.get(a.code) > pos.get(b.code))
+      .map(([k, a, b]) => `${k.from} (${a.code}) → ${k.to} (${b.code})`);
+    expect(forward).toEqual([]);
+  });
+});
+
+describe('the official items — sources (delivered)', () => {
+  const ORIGINS = ['programme-2020', 'reperes-2019', 'attendus-2019', 'reperes-c3-2019', 'programme-2026'];
+  it('names the document and the PDF page of every item, still unverified', () => {
+    for (const i of delivered.ITEMS) {
+      expect(ORIGINS, i.id).toContain(i.origin);
+      expect(Object.keys(programme.sources), i.id).toContain(i.origin);
+      expect(Number.isInteger(i.page), i.id).toBe(true);
+      expect(i.verified, i.id).toBe(false);
+    }
+  });
+  it('says, for each 3e item, how the 2026 programme treats it', () => {
+    for (const i of delivered.ITEMS.filter((x) => x.grade === '3e')) {
+      expect(['kept', 'absent', 'changed'], i.id).toContain(i.in2026);
+      expect(i.in2026Note?.length, i.id).toBeGreaterThan(10);
+    }
+  });
+  it('has the five 3e segments, one per thème', () => {
+    for (let m = 1; m <= 5; m += 1) expect(delivered.getSegment(`3e.m${m}`), `3e.m${m}`).not.toBeNull();
+  });
+});
+
+describe('the stub rules bite', () => {
+  it('flags a stub in a grade that has a lesson, a link ending on a stub, and a stub that serves nothing', () => {
+    const broken = createLearningNet({
+      ...fixtureData,
+      programme: { ...FIXTURE_PROGRAMME, items: FIXTURE_PROGRAMME.items.map((i) => (i.id === '6e.m2.r02' || i.id === '5e.m1.x1' ? { ...i, stub: true } : i)) },
+    });
+    expect(stubViolations(broken)).toEqual([
+      '6e.m2.r02: stub in 6e, which has lessons — make it a full item',
+      '6e.m2.r02: stub serves no item',
+      '5e.m1.x1: stub in 5e, which has lessons — make it a full item',
+      '5e.m1.x1: stub serves no item',
+      '6e.m2.r01 → 6e.m2.r02: a link ends on a stub',
+      '5e.m1.r02 → 5e.m1.x1: a link ends on a stub',
+    ]);
   });
 });
 
@@ -404,5 +526,47 @@ describe('poids des liens — outils d’une leçon (fixture)', () => {
     const unclassified = FIXTURE_NET.links.find((k) => k.from === '6e.m2.r01' && k.to === '6e.m2.r02');
     expect(weightOf(unclassified)).toBeNull();
     expect(fixture.reviewLinksForLesson('c6')[0].items[0].weight).toBeNull();
+  });
+});
+
+describe('stubs — what the resolver gives (fixture)', () => {
+  it('has no home lesson for a stub, and shows it as the item itself, grouped by its grade with no lesson', () => {
+    expect(fixture.homeLessonOf('cm2.m1.r01')).toBeNull();
+    expect(fixture.reviewLinksForLesson('c5')).toEqual([
+      {
+        lesson: null,
+        noLessonInGrade: 'cm2',
+        items: [{ id: 'cm2.m1.r01', grade: 'cm2', segment: 'cm2.m1', text: 'Compétence cm2.m1.r01', stub: true, via: 'extends', weight: 'core' }],
+      },
+    ]);
+  });
+
+  it('makes a stub a tool of the lesson (an earlier grade), with no lesson to send the student to', () => {
+    expect(fixture.toolsForLesson('c5').map((t) => [t.id, t.weight, t.lesson, t.noLessonInGrade])).toEqual([['cm2.m1.r01', 'core', null, 'cm2']]);
+  });
+
+  it('tells the lesson not to rebuild a stub base, naming its grade', () => {
+    expect(fixture.noRebuildForLesson('c5')).toEqual([
+      {
+        item: { id: '5e.m1.r03', grade: '5e', segment: '5e.m1', text: 'Compétence 5e.m1.r03', stub: false },
+        base: { id: 'cm2.m1.r01', grade: 'cm2', segment: 'cm2.m1', text: 'Compétence cm2.m1.r01', stub: true },
+        baseLesson: null,
+        baseNoLessonInGrade: 'cm2',
+        type: 'extends',
+        addedValue: 'la même notion, en plus grand',
+        note: null,
+      },
+    ]);
+  });
+
+  it('« revoir » keeps the stub (an earlier grade) and offers no lesson', () => {
+    expect(fixture.earlierYearReviewFor({ lessonCode: 'c5' }).map((g) => [g.lesson, g.noLessonInGrade, g.items.map((i) => i.id)])).toEqual([
+      [null, 'cm2', ['cm2.m1.r01']],
+    ]);
+  });
+
+  it('never names a stub as a later use', () => {
+    expect(fixture.forwardLinksForLesson('c5')).toEqual([]);
+    expect(fixture.coreDependentsOf('cm2.m1.r01')).toEqual(['5e.m1.r03']);
   });
 });

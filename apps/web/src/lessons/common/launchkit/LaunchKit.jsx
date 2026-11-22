@@ -460,7 +460,7 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
   };
 
   const openLesson = (t) => {
-    const path = t.lesson.status === 'available' ? getLessonPath(t.lesson.code) : null;
+    const path = t.lesson?.status === 'available' ? getLessonPath(t.lesson.code) : null;
     if (!path) return;
     setReturnTo(typeof window !== 'undefined' ? window.sessionStorage : null, {
       path: window.location.pathname,
@@ -850,7 +850,7 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
               {shown && (
                 <div className="lk-revise" data-lk-revise={shown.item}>
                   <p>
-                    <b>{shown.item === pr.first?.item ? L.reviseFirst : L.also}:</b> {shown.lesson.title}{' '}
+                    <b>{shown.item === pr.first?.item ? L.reviseFirst : L.also}:</b> {shown.lesson?.title ?? shown.text}{' '}
                     <span>({L.from(shown.grade).replace('من ', '')})</span>
                   </p>
                   <div>
@@ -881,11 +881,11 @@ export default function LaunchKit({ lessonCode, lessonTitle, onDone, onClose, in
                     <button type="button" className="lk-btn" onClick={() => recheck(shown.item)} data-lk-recheck>
                       <RotateCcw size={17} /> {L.recheck}
                     </button>
-                    {phone && !PHONE_LESSONS.includes(shown.lesson.code) ? (
+                    {phone && shown.lesson && !PHONE_LESSONS.includes(shown.lesson.code) ? (
                       <span className="lk-soon" data-lk-lesson-computer>
                         {L.onComputer}
                       </span>
-                    ) : shown.lesson.status === 'available' && getLessonPath(shown.lesson.code) ? (
+                    ) : shown.lesson?.status === 'available' && getLessonPath(shown.lesson.code) ? (
                       <button type="button" className="lk-btn" onClick={() => openLesson(shown)} data-lk-lesson>
                         <BookOpen size={17} /> {L.lesson}
                       </button>

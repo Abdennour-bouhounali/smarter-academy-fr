@@ -9,7 +9,7 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
 | `packages/core` | pure logic: the curriculum (`curriculum/fr/`: catalogue, programme, learning net, school calendar), number formats, progress, the practice evaluator |
 | `apps/api` | the Laravel API. Tests: `cd apps/api && php8.4 artisan test` (in-memory SQLite) |
 | `content/` | exercise banks, class tests, thinking-lab challenges — all EMPTY today |
-| `docs/` | `FRANCE_REBUILD_PLAN.md`, the contracts (`docs/architecture/`), the official French texts (`docs/curriculum/officiel/`), the draft of the 3e net (`docs/curriculum/draft-3e/`) |
+| `docs/` | `FRANCE_REBUILD_PLAN.md`, the contracts (`docs/architecture/`), the official French texts (`docs/curriculum/officiel/`), the review sheet of the 3e net and the FR↔DZ table (`docs/curriculum/net-3e/`) |
 
 ## Where this repository comes from, and what is true today (2026-11-22)
 
@@ -18,8 +18,11 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
   started turning it into the French product. Commit `049380e` holds that import whole: `git show 049380e:<path>`
   reads any Algerian file that was since deleted.
 - **Done**: every Algerian lesson, exercise bank, class test, textbook source and the three legacy lesson systems are
-  deleted; the curriculum is an EMPTY French skeleton (four grades, five thèmes each, no lesson); the tree is the
-  lesson ENGINE and the SHELL around it; the official French texts are filed; a first draft of the 3e net exists.
+  deleted; the tree is the lesson ENGINE and the SHELL around it; the official French texts are filed; **the 3e net
+  is live** (`packages/core/curriculum/fr/`: 13 units, 59 lessons all `coming_soon`, 161 learning points with locked
+  ids, 55 programme items + 53 stubs of earlier grades — not yet validated by the owner; 6e, 5e, 4e are empty
+  skeletons); `npm run lesson:brief -- <code>` prints what a lesson must teach; the server side of the payment switch
+  is built (plan §4ter) — payments are CLOSED by default.
 - **NOT done yet — do not be surprised**: the interface still speaks ARABIC and reads right to left
   (`i18n/locales/ar/`, `locale.js`, `dir="rtl"`, the kit's and the worlds' sentences); person names must still be in
   Arabic letters; e-mails are Arabic; money is the dinar; the time zone is Algiers; the books store is on. Each has
@@ -123,7 +126,8 @@ A v2 lesson is **content plus, at most once per unit, one world mechanic**:
 | `npm run check:lessons` | the validators, the generated indexes, the net, the calendar (which passes while saying the French year is not written), the entry budget (212 KB gzip) |
 | `node apps/web/e2e/<walk>.mjs` | walks at 1366×768 — the shell's walks still assert Arabic; no lesson walk exists |
 
-Generators: `generate:lesson-index`, `generate:lab-order`, `generate:learning-net`, `generate:compass-index`.
+Generators: `generate:lesson-index`, `generate:lab-order`, `generate:learning-net`, `generate:compass-index`,
+`generate:lp-lock` (after APPENDING a learning point; it refuses a reorder on a built lesson).
 `check:activation-drift` needs a local database; this folder has none yet.
 
 ## Documentation — part of every task

@@ -50,14 +50,16 @@ export function earlierLessons(lessonCode) {
   return reviewLinksForLesson(lessonCode)
     .map((g) => {
       const item = g.items[0] ?? {};
+      // A stub prerequisite (its grade has no lesson yet): the competence itself, no lesson, no link.
+      const grade = g.lesson?.grade ?? g.noLessonInGrade ?? item.grade;
       return {
-        code: g.lesson.code,
-        title: g.lesson.title,
-        grade: GRADE[g.lesson.grade] ?? g.lesson.grade,
+        code: g.lesson?.code ?? null,
+        title: g.lesson?.title ?? item.text ?? null,
+        grade: GRADE[grade] ?? grade,
         via: VIA[item.via] ?? VIA.requires,
         core: item.weight !== 'support',
         what: item.text ?? null,
-        path: g.lesson.status === 'available' ? (getLessonPath(g.lesson.code) ?? null) : null,
+        path: g.lesson?.status === 'available' ? (getLessonPath(g.lesson.code) ?? null) : null,
       };
     })
     .sort((a, b) => Number(b.core) - Number(a.core));

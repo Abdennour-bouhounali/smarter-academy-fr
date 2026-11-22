@@ -5,25 +5,29 @@
  * SCRATCH (owner), so the old version is never read. Printed in a few seconds instead of reading folders and contracts.
  *
  *   node scripts/lesson-brief.mjs <lesson-code> [<lesson-code> …]
- *   npm run lesson:brief -- qasim-mushtarak-akbar
+ *   npm run lesson:brief -- racine-carree-en-probleme
  *
- * It prints: where the lesson sits (grade, unit, term and week), WHAT IT MUST TEACH (the programme items — the competences —
- * and the learning points whose ids `{grade}_{code}_P{n}` stay), what it stands on (core / support prerequisites, with the
- * lesson that teaches each and whether it is already v2), what it must NOT rebuild, where what it teaches is used later,
- * the unit's lessons around it, what already exists beside it (the exercise bank — used AS IT IS, owner 2026-11-18 —, the
- * class test, the pack), and the order of work. Plan: docs/reports/LESSON_V2_MASTER_PLAN.md §9.
+ * It prints: where the lesson sits (grade, unit, term and week once the calendar is written), WHAT IT MUST TEACH (the
+ * programme items with their official text, and the learning points of the catalogue with their ids
+ * `{grade}_{code}_P{n}`, which stay), what it stands on (core / support prerequisites, with the lesson that teaches each —
+ * or « no lesson yet » for a stub of a grade that has none), what it must NOT rebuild, where what it teaches is used
+ * later, the unit's lessons around it, what already exists beside it (the exercise bank — used AS IT IS —, the class
+ * test, the pack), and the order of work (FRANCE_REBUILD_PLAN.md §8).
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import {
   LESSONS,
+  UNITS,
   getLesson,
+  homeLessonOf,
   getItem,
   toolsForLesson,
   noRebuildForLesson,
   forwardLinksForLesson,
 } from '../packages/core/curriculum/fr/net/learningNet.js';
+import { getLessonById } from '../packages/core/curriculum/coursesData.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'packages/core/curriculum/fr');
@@ -41,14 +45,14 @@ if (!codes.length) {
   process.exit(1);
 }
 
-/** The folder of a lesson under apps/web/src/lessons (its config is read as DATA, never its pages). */
+/** The folder of a lesson under apps/web/src/lessons/college/<grade>/<theme>/<unit>/<lesson>/, or null. */
 function lessonDir(grade, code) {
   const walk = (dir, depth) => {
     if (depth > 3 || !fs.existsSync(dir)) return null;
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
       if (!e.isDirectory()) continue;
       const p = path.join(dir, e.name);
-      if (e.name === code && fs.existsSync(path.join(p, 'lesson.config.js'))) return p;
+      if (e.name === code) return p;
       const hit = walk(p, depth + 1);
       if (hit) return hit;
     }
@@ -57,7 +61,7 @@ function lessonDir(grade, code) {
   return walk(path.join(ROOT, 'apps/web/src/lessons/college', grade), 0);
 }
 
-/** Term and week of the lesson in the school year (the calendar is renewed every year: YEAR_COMPASS.md). */
+/** Term and week of the lesson in the school year, or null while the calendar is not written (YEAR_COMPASS.md). */
 function placeInYear(grade, code) {
   const file = path.join(DATA, `calendar/progression_${grade}_2026_2027.json`);
   if (!fs.existsSync(file)) return null;
@@ -67,6 +71,14 @@ function placeInYear(grade, code) {
   const week = json(file).weeks.find((w) => w.lessons.includes(code));
   return week ? { week: week.week, term: term[week.week] } : null;
 }
+
+/** Where an earlier competence is taught: its lesson, or — for a stub — the plain fact that its grade has no lesson. */
+const taughtIn = (lesson, noLessonInGrade) =>
+  lesson ? tag(lesson) : noLessonInGrade ? `no lesson yet in ${noLessonInGrade}` : '—';
+const official = (id) => {
+  const item = getItem(id);
+  return item ? `${item.text} _(${item.origin}, p. ${item.page})_` : '?';
+};
 
 /** Every exercise of a lesson's bank, as data (the bank is used AS IT IS: it is read, never rewritten or regenerated). */
 function readBank(grade, code) {
@@ -92,12 +104,15 @@ const clip = (text, n) => {
   return t.length > n ? `${t.slice(0, n)}…` : t;
 };
 
-const tag = (lesson) =>
-  !lesson
-    ? '—'
-    : `\`${lesson.code}\` ${lesson.title} (${lesson.grade.toUpperCase()}) — ${
-        isV2(lesson.code) ? '**v2 ✅**' : lesson.status === 'available' ? 'old lesson' : 'not built'
-      }`;
+function tag(lesson) {
+  if (!lesson) return '—';
+  const state = isV2(lesson.code)
+    ? '**v2 ✅**'
+    : lesson.status === 'available'
+      ? 'published'
+      : 'coming soon, not built';
+  return `\`${lesson.code}\` ${lesson.title} (${lesson.grade}) — ${state}`;
+}
 
 for (const code of codes) {
   const lesson = getLesson(code);
@@ -110,41 +125,49 @@ for (const code of codes) {
   const say = (s = '') => out.push(s);
   const where = placeInYear(lesson.grade, code);
   const unit = LESSONS.filter((l) => l.unit === lesson.unit && l.grade === lesson.grade);
+  const unitInfo = UNITS.find((u) => u.code === lesson.unit && u.grade === lesson.grade);
+  const entry = getLessonById(code);
+  const dir = lessonDir(lesson.grade, code);
 
   say(`# Brief — \`${code}\` — ${lesson.title}`);
   say();
   say(
-    `${lesson.grade.toUpperCase()} · unit \`${lesson.unit}\` · lesson ${unit.findIndex((l) => l.code === code) + 1} of ${unit.length}` +
-      (where ? ` · term ${where.term}, week ${where.week}` : '') +
-      ` · ${isV2(code) ? 'ALREADY v2' : 'to build: from scratch, the old lesson is never read'}`,
+    `${lesson.grade} · unit ${unitInfo?.number ?? '?'} « ${unitInfo?.title ?? lesson.unit} » (\`${lesson.unit}\`) · lesson ${unit.findIndex((l) => l.code === code) + 1} of ${unit.length}` +
+      (lesson.kind === 'synthesis' ? ' (the unit’s synthesis)' : '') +
+      (where
+        ? ` · term ${where.term}, week ${where.week}`
+        : ' · not placed in the year yet (the calendar is not written)') +
+      ` · ${isV2(code) ? 'ALREADY v2' : dir ? `folder exists: ${path.relative(ROOT, dir)}` : `${entry?.status ?? lesson.status}: to build from scratch`}`,
   );
   say();
 
-  say('## What it must teach (the competences — the only content that binds)');
-  for (const id of lesson.programmeItems) say(`- \`${id}\` — ${getItem(id)?.text ?? '?'}`);
-  let skillCount = 0;
-  const dir = lessonDir(lesson.grade, code);
-  if (dir) {
-    try {
-      const { LESSON_CONFIG } = await import(pathToFileURL(path.join(dir, 'lesson.config.js')).href);
-      if (LESSON_CONFIG?.skills?.length) {
-        say();
-        say(
-          'Learning points as the platform already counts them (the ids STAY: progress and reports read them; the wording is data):',
-        );
-        skillCount = LESSON_CONFIG.skills.length;
-        LESSON_CONFIG.skills.forEach((s, i) => say(`- \`${lesson.grade}_${code}_P${i + 1}\` — ${s}`));
-      }
-    } catch {
-      say('(the config could not be read as data: derive the learning points from the items above)');
-    }
+  say('## What it must teach (the programme items — the only content that binds)');
+  if (!lesson.programmeItems.length) say('- no programme item: a synthesis mobilises the capabilities of its unit.');
+  for (const id of lesson.programmeItems) say(`- \`${id}\` — ${official(id)}`);
+  say();
+  say('Learning points (the ids STAY — append-only, learning_points.lock.json):');
+  for (const lp of entry?.learningPoints ?? []) {
+    const pre = lp.prerequisites.map((p) => `\`${p.id}\``).join(', ');
+    say(`- \`${lp.id}\` — ${lp.title}${pre ? `  ⇐ ${pre}` : ''}`);
   }
   say();
 
-  say('## What it stands on');
+  say('## What it stands on (one step back in the net, in the order a launch measures it)');
   const tools = toolsForLesson(code, { max: 99 });
   if (!tools.length) say('- nothing earlier in the net.');
-  for (const t of tools) say(`- **${t.weight ?? 'unclassified'}** \`${t.id}\` — ${t.text}  ⇐ ${tag(t.lesson)}`);
+  for (const t of tools)
+    say(
+      `- **${t.weight ?? 'unclassified'}** \`${t.id}\` (${t.grade}) — ${official(t.id)}  ⇐ ${taughtIn(t.lesson, t.noLessonInGrade)}`,
+    );
+  // An item the lesson shares with an EARLIER lesson is taught there first: this lesson takes it further.
+  for (const id of lesson.programmeItems) {
+    const home = homeLessonOf(id);
+    if (home && home.code !== code) say(`- shares \`${id}\` with ${tag(home)}, where it is first taught`);
+  }
+  const before = entry?.prerequisiteLessonCodes ?? [];
+  say(
+    `- earlier lessons it declares (catalogue): ${before.length ? before.map((c) => `\`${c}\``).join(', ') : 'none'}`,
+  );
   say();
 
   say("## What it must NOT rebuild (the net's anti-duplication rule)");
@@ -152,27 +175,29 @@ for (const code of codes) {
   if (!noRebuild.length) say('- nothing: no item of the lesson extends or repeats an earlier one.');
   for (const n of noRebuild)
     say(
-      `- \`${n.item.id}\` ${n.type} \`${n.base.id}\` (${tag(n.baseLesson)})${n.addedValue ? ` — added value: ${n.addedValue}` : ''}`,
+      `- \`${n.item.id}\` ${n.type} \`${n.base.id}\` — ${n.base.text} (${taughtIn(n.baseLesson, n.baseNoLessonInGrade)})${n.addedValue ? ` — added value: ${n.addedValue}` : ''}${n.note ? ` — ${n.note}` : ''}`,
     );
   say();
 
   say('## Where what it teaches is used later');
   const forward = forwardLinksForLesson(code);
   if (!forward.length) say('- no later lesson depends on it.');
-  for (const f of forward.slice(0, 8)) say(`- ${tag(f.lesson)} — via ${f.items.map((i) => i.via).join(', ')}`);
+  for (const f of forward.slice(0, 8))
+    say(`- ${tag(f.lesson)} — via ${f.items.map((i) => `${i.via} \`${i.id}\``).join(', ')}`);
+  if (forward.length > 8) say(`- … and ${forward.length - 8} more.`);
   say();
 
   say('## Around it in the unit');
   unit.forEach((l, i) =>
     say(
-      `${i + 1}. ${l.code === code ? '**' : ''}\`${l.code}\` ${l.title}${l.code === code ? '**' : ''} — ${isV2(l.code) ? 'v2 ✅' : l.status}`,
+      `${i + 1}. ${l.code === code ? '**' : ''}\`${l.code}\` ${l.title}${l.code === code ? '**' : ''} — ${isV2(l.code) ? 'v2 ✅' : l.status === 'planned' ? 'coming soon' : l.status}`,
     ),
   );
   say();
 
   say('## What the exercises ask (the bank, used AS IT IS — the best statement of what a student must be able to DO)');
   const bank = readBank(lesson.grade, code);
-  if (!bank.length) say(`- no bank in \`content/practice/${lesson.grade}/${code}/\`.`);
+  if (!bank.length) say(`- no exercise bank yet (\`content/practice/${lesson.grade}/${code}/\` does not exist).`);
   else {
     const questions = bank.flatMap((e) => e.questions.map((q) => ({ ...q, level: e.level })));
     const levels = [...new Set(bank.map((e) => e.level))];
@@ -194,7 +219,7 @@ for (const code of codes) {
     say();
     say('Per learning point — how the exercises test it (questions as primary / secondary, then by level):');
     const tested = questions.flatMap((q) => q.learningPoints.map((l) => l.code));
-    const declared = Array.from({ length: skillCount }, (_, i) => `${lesson.grade}_${code}_P${i + 1}`);
+    const declared = (entry?.learningPoints ?? []).map((lp) => lp.id);
     for (const lp of [...new Set([...declared, ...tested])].sort()) {
       const hit = questions.filter((q) => q.learningPoints.some((l) => l.code === lp));
       if (!hit.length) {
@@ -234,9 +259,9 @@ for (const code of codes) {
   say(`- pack: ${isV2(code) ? 'yes' : 'none'}`);
   say();
 
-  say('## Work order (waves in parallel — LESSON_V2_MASTER_PLAN.md §9)');
+  say('## Work order (waves in parallel — FRANCE_REBUILD_PLAN.md §8, the lesson-v2 skill)');
   say(
-    '1. design (the keys; one experiment of its own nature per key — GAME_WORLD.md, the inquiry forge) → 2. world content ∥ kit kinds ∥ board → 3. forges ∥ satellites ∥ walks → 4. pack + generators + checks → 5. walks at 1366×768 → 6. trace + delete the old version → commit.',
+    '1. design (the keys; one experiment of its own nature per key — GAME_WORLD.md, the inquiry forge) → 2. world content ∥ kit kinds ∥ board → 3. forges ∥ satellites ∥ walks → 4. pack + generators + checks → 5. walks at 1366×768 → 6. trace → `npm run generate:lesson-index`, the status `available` → commit.',
   );
   console.log(out.join('\n'));
   if (codes.length > 1) console.log('\n---\n');

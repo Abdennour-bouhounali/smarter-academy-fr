@@ -1,5 +1,5 @@
 {
-  "_comment": "Réseau des compétences du collège : fils conceptuels et liens entre items de official_programme_college.json. Vide : aucun item encore. Contrat : docs/architecture/LEARNING_NET.md.",
+  "_comment": "Réseau des compétences du collège : fils conceptuels et liens entre items de official_programme_college.json (contrat : docs/architecture/LEARNING_NET.md). Every link into a 3e item has a weight (core / support); a support says why (weightNote, English). A link may start from a stub item, never end on one. The links into horizon-2028 items live in horizon_2028.json.",
   "version": 1,
   "builtOn": "2026-11-22",
   "linkTypes": {
@@ -7,6 +7,980 @@
     "extends": "Même notion, plus loin dans la spirale : « to » REPART de « from » et n’enseigne que addedValue.",
     "consolidates": "Le programme répète « from » : « to » le rappelle et le consolide, sans le reconstruire."
   },
-  "threads": [],
-  "links": []
+  "threads": [
+    {
+      "id": "divisibilite",
+      "title": "Divisibilité, nombres premiers",
+      "domain": "nombres_calculs",
+      "items": [
+        "4e.m1.r06",
+        "4e.m1.r07",
+        "4e.m1.r08",
+        "3e.m1.r05",
+        "3e.m1.r06",
+        "3e.m1.r07"
+      ]
+    },
+    {
+      "id": "fractions-rationnels",
+      "title": "Fractions, nombres rationnels",
+      "domain": "nombres_calculs",
+      "items": [
+        "4e.m1.r01",
+        "3e.m1.r01"
+      ]
+    },
+    {
+      "id": "puissances",
+      "title": "Puissances, notation scientifique",
+      "domain": "nombres_calculs",
+      "items": [
+        "4e.m1.r02",
+        "4e.m1.r03",
+        "4e.m1.r04",
+        "3e.m1.r02",
+        "3e.m1.r03"
+      ]
+    },
+    {
+      "id": "racine-carree",
+      "title": "Racine carrée",
+      "domain": "nombres_calculs",
+      "items": [
+        "4e.m1.r05",
+        "3e.m1.r04"
+      ]
+    },
+    {
+      "id": "calcul-litteral",
+      "title": "Calcul littéral",
+      "domain": "nombres_calculs",
+      "items": [
+        "5e.m1.r01",
+        "4e.m1.r09",
+        "4e.m1.r10",
+        "4e.m1.r11",
+        "3e.m1.r08",
+        "3e.m1.r09",
+        "3e.m1.r10",
+        "3e.m1.r11",
+        "3e.m1.r12"
+      ]
+    },
+    {
+      "id": "equations",
+      "title": "Équations",
+      "domain": "nombres_calculs",
+      "items": [
+        "4e.m1.r12",
+        "4e.m1.r13",
+        "3e.m1.r13",
+        "3e.m1.r14",
+        "3e.m1.r15"
+      ]
+    },
+    {
+      "id": "statistiques",
+      "title": "Statistiques",
+      "domain": "organisation_gestion_donnees_fonctions",
+      "items": [
+        "5e.m2.r01",
+        "5e.m2.r02",
+        "5e.m2.r03",
+        "4e.m2.r01",
+        "4e.m2.r02",
+        "3e.m2.r01",
+        "3e.m2.r02",
+        "3e.m2.r03"
+      ]
+    },
+    {
+      "id": "probabilites",
+      "title": "Probabilités",
+      "domain": "organisation_gestion_donnees_fonctions",
+      "items": [
+        "4e.m2.r03",
+        "4e.m2.r04",
+        "4e.m2.r05",
+        "3e.m2.r04",
+        "3e.m2.r05",
+        "3e.m2.r06"
+      ]
+    },
+    {
+      "id": "proportionnalite",
+      "title": "Proportionnalité",
+      "domain": "organisation_gestion_donnees_fonctions",
+      "items": [
+        "5e.m2.r04",
+        "4e.m2.r06",
+        "4e.m2.r07",
+        "4e.m2.r08",
+        "4e.m2.r09",
+        "3e.m2.r07",
+        "3e.m2.r08",
+        "3e.m2.r09"
+      ]
+    },
+    {
+      "id": "fonctions",
+      "title": "Fonctions",
+      "domain": "organisation_gestion_donnees_fonctions",
+      "items": [
+        "4e.m2.r10",
+        "4e.m2.r11",
+        "4e.m2.r12",
+        "3e.m2.r10",
+        "3e.m2.r12",
+        "3e.m2.r11",
+        "3e.m2.r13",
+        "3e.m2.r14",
+        "3e.m2.r15",
+        "3e.m2.r16",
+        "3e.m2.r17",
+        "3e.m2.r18",
+        "3e.m2.r19"
+      ]
+    },
+    {
+      "id": "grandeurs-volumes",
+      "title": "Grandeurs composées, volumes",
+      "domain": "grandeurs_mesures",
+      "items": [
+        "5e.m3.r01",
+        "4e.m3.r01",
+        "4e.m3.r02",
+        "4e.m3.r03",
+        "4e.m3.r04",
+        "3e.m3.r01",
+        "3e.m3.r02",
+        "3e.m3.r03",
+        "3e.m3.r04",
+        "3e.m3.r05"
+      ]
+    },
+    {
+      "id": "thales-similitude",
+      "title": "Thalès, agrandissement, triangles semblables",
+      "domain": "espace_geometrie",
+      "items": [
+        "4e.m3.r05",
+        "4e.m4.r03",
+        "4e.m4.r04",
+        "3e.m3.r07",
+        "3e.m4.r04",
+        "3e.m4.r05"
+      ]
+    },
+    {
+      "id": "trigonometrie",
+      "title": "Pythagore et trigonométrie",
+      "domain": "espace_geometrie",
+      "items": [
+        "4e.m4.r05",
+        "4e.m4.r06",
+        "3e.m4.r06"
+      ]
+    },
+    {
+      "id": "transformations",
+      "title": "Transformations",
+      "domain": "espace_geometrie",
+      "items": [
+        "5e.m4.r03",
+        "4e.m3.r06",
+        "4e.m4.r07",
+        "4e.m4.r08",
+        "3e.m3.r06",
+        "3e.m4.r07",
+        "3e.m4.r08",
+        "3e.m4.r09"
+      ]
+    },
+    {
+      "id": "geometrie-raisonnement",
+      "title": "Angles, figures et démonstration",
+      "domain": "espace_geometrie",
+      "items": [
+        "6e.m3.r01",
+        "5e.m4.r02",
+        "4e.m4.r09",
+        "3e.m4.r10"
+      ]
+    },
+    {
+      "id": "espace",
+      "title": "Repérage et représentation de l’espace",
+      "domain": "espace_geometrie",
+      "items": [
+        "5e.m4.r01",
+        "4e.m4.r01",
+        "4e.m4.r02",
+        "3e.m4.r01",
+        "3e.m4.r02",
+        "3e.m4.r03"
+      ]
+    },
+    {
+      "id": "algorithmique",
+      "title": "Algorithmique et programmation",
+      "domain": "algorithmique_programmation",
+      "items": [
+        "4e.m5.r01",
+        "4e.m5.r02",
+        "4e.m5.r03",
+        "3e.m5.r01",
+        "3e.m5.r02",
+        "3e.m5.r03",
+        "3e.m5.r04"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "from": "4e.m1.r01",
+      "to": "3e.m1.r01",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "Les quatre opérations sur les rationnels, apprises en 4e, sont rappelées et réinvesties dans des problèmes, sans être reconstruites."
+    },
+    {
+      "from": "3e.m1.r06",
+      "to": "3e.m1.r01",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The result is expected in irreducible form, but the computation itself can be right without simplifying."
+    },
+    {
+      "from": "4e.m1.r04",
+      "to": "3e.m1.r02",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Les exposants négatifs d’une base quelconque : a⁻ⁿ comme inverse de aⁿ, pour simplifier des quotients."
+    },
+    {
+      "from": "4e.m1.r02",
+      "to": "3e.m1.r02",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Negative powers of ten are the familiar model of a negative exponent, but a⁻ⁿ can be built from the quotient itself without them."
+    },
+    {
+      "from": "4e.m1.r03",
+      "to": "3e.m1.r03",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "La notation scientifique, définie en 4e, est réinvestie dans des problèmes (ordres de grandeur, autres disciplines)."
+    },
+    {
+      "from": "3e.m1.r02",
+      "to": "3e.m1.r03",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Problems in scientific notation use powers of ten, known since 4e; negative exponents of any other base are rarely needed there."
+    },
+    {
+      "from": "4e.m1.r05",
+      "to": "3e.m1.r04",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La racine carrée devient un outil de résolution de problèmes : valeur exacte, valeur approchée à la précision demandée."
+    },
+    {
+      "from": "4e.m4.r05",
+      "to": "3e.m1.r04",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Pythagoras is the usual situation that calls for a root, but the side of a square of given area needs no theorem."
+    },
+    {
+      "from": "4e.m1.r06",
+      "to": "3e.m1.r05",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La décomposition s’étend aux grands nombres à l’aide d’un tableur, d’une calculatrice ou d’un logiciel de programmation."
+    },
+    {
+      "from": "3e.m1.r05",
+      "to": "3e.m1.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m1.r07",
+      "to": "3e.m1.r06",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La fraction irréductible : simplifier jusqu’à ce que numérateur et dénominateur n’aient plus de facteur premier commun."
+    },
+    {
+      "from": "3e.m1.r05",
+      "to": "3e.m1.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m1.r08",
+      "to": "3e.m1.r07",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Engrenages et conjonction de phénomènes : chercher un multiple commun (et un diviseur commun) à l’aide des décompositions."
+    },
+    {
+      "from": "4e.m1.r11",
+      "to": "3e.m1.r08",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "Prouver l’équivalence de programmes de calcul est rappelé ; la 3e y fait entrer la double distributivité et la réfutation par contre-exemple."
+    },
+    {
+      "from": "3e.m1.r10",
+      "to": "3e.m1.r08",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Some 3e proofs need a double expansion, many need only the simple one."
+    },
+    {
+      "from": "4e.m1.r10",
+      "to": "3e.m1.r09",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m1.r10",
+      "to": "3e.m1.r10",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La double distributivité (a + b)(c + d), démontrée en appliquant deux fois la simple."
+    },
+    {
+      "from": "4e.m1.r10",
+      "to": "3e.m1.r11",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "Développer, factoriser et réduire avec la distributivité simple est rappelé, pas reconstruit ; la 3e y ajoute la double."
+    },
+    {
+      "from": "3e.m1.r10",
+      "to": "3e.m1.r11",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m1.r09",
+      "to": "3e.m1.r11",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Many expansions carry a minus before a bracket, but simple expansions and factorings succeed without it."
+    },
+    {
+      "from": "4e.m1.r09",
+      "to": "3e.m1.r11",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Seeing whether an expression is a sum or a product guides the choice to factor, but each expansion can be done without naming it."
+    },
+    {
+      "from": "3e.m1.r10",
+      "to": "3e.m1.r12",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m1.r12",
+      "to": "3e.m1.r13",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m1.r13",
+      "to": "3e.m1.r13",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "La résolution algébrique d’une équation du premier degré, apprise en 4e, est consolidée dans des problèmes plus variés."
+    },
+    {
+      "from": "3e.m1.r11",
+      "to": "3e.m1.r13",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Equations with brackets need an expansion first, but many first-degree equations have none."
+    },
+    {
+      "from": "3e.m1.r13",
+      "to": "3e.m1.r14",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m1.r11",
+      "to": "3e.m1.r14",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Factoring by a common factor turns some equations into products; equations already given as products need no factoring."
+    },
+    {
+      "from": "3e.m1.r12",
+      "to": "3e.m1.r14",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Factoring a² − b² turns some equations into products; equations already given as products need no factoring."
+    },
+    {
+      "from": "4e.m1.r05",
+      "to": "3e.m1.r15",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m1.r14",
+      "to": "3e.m1.r15",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "x² = a can be solved through (x − √a)(x + √a) = 0, but the definition of the square root alone gives both solutions."
+    },
+    {
+      "from": "5e.m2.r02",
+      "to": "3e.m2.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r01",
+      "to": "3e.m2.r01",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The range may be read from a pie chart, but most series come raw, in a table or in a bar chart."
+    },
+    {
+      "from": "5e.m2.r03",
+      "to": "3e.m2.r02",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Un nouveau diagramme : l’histogramme, pour des classes de même amplitude."
+    },
+    {
+      "from": "4e.m2.r02",
+      "to": "3e.m2.r03",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "Effectifs, fréquences, moyenne et médiane sont recalculés et interprétés, pas reconstruits."
+    },
+    {
+      "from": "5e.m2.r01",
+      "to": "3e.m2.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r05",
+      "to": "3e.m2.r04",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Les probabilités sont calculées à partir d’un dénombrement des issues."
+    },
+    {
+      "from": "4e.m2.r03",
+      "to": "3e.m2.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m2.r04",
+      "to": "3e.m2.r05",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r04",
+      "to": "3e.m2.r05",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The complementary event shortens « at least one » questions, but every two-stage question can be counted directly in the table."
+    },
+    {
+      "from": "3e.m2.r04",
+      "to": "3e.m2.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m2.r03",
+      "to": "3e.m2.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "5e.m2.r04",
+      "to": "3e.m2.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r07",
+      "to": "3e.m2.r07",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "A fourth proportional explains the percentage, but the multiplier 1 ± t/100 is applied without one."
+    },
+    {
+      "from": "4e.m2.r08",
+      "to": "3e.m2.r08",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La formule de proportionnalité devient une fonction linéaire x ↦ ax."
+    },
+    {
+      "from": "3e.m2.r15",
+      "to": "3e.m2.r08",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r09",
+      "to": "3e.m2.r09",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Le champ s’élargit aux configurations de Thalès en papillon, aux triangles semblables et aux homothéties."
+    },
+    {
+      "from": "4e.m2.r10",
+      "to": "3e.m2.r10",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Le vocabulaire (fonction, variable, image, antécédent) et les notations f(x), x ↦ f(x) sont formalisés."
+    },
+    {
+      "from": "5e.m1.r01",
+      "to": "3e.m2.r10",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Computing f(a) is substituting a value, but the vocabulary and the notations can be learned on tables and graphs."
+    },
+    {
+      "from": "3e.m2.r10",
+      "to": "3e.m2.r12",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r11",
+      "to": "3e.m2.r12",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "5e.m4.r01",
+      "to": "3e.m2.r12",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Placing points is needed to draw a graph, but a table and an expression can be matched without drawing."
+    },
+    {
+      "from": "3e.m2.r10",
+      "to": "3e.m2.r11",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "5e.m1.r01",
+      "to": "3e.m2.r11",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r12",
+      "to": "3e.m2.r13",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La lecture d’un graphique est nommée avec le vocabulaire fonctionnel : antécédents d’un nombre par une fonction."
+    },
+    {
+      "from": "3e.m2.r10",
+      "to": "3e.m2.r13",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m1.r13",
+      "to": "3e.m2.r14",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m2.r10",
+      "to": "3e.m2.r14",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m1.r14",
+      "to": "3e.m2.r14",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Only the antecedents of 0 by a function given as a product need the zero-product rule."
+    },
+    {
+      "from": "3e.m2.r10",
+      "to": "3e.m2.r15",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "5e.m4.r01",
+      "to": "3e.m2.r15",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r06",
+      "to": "3e.m2.r15",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Seeing proportionality as points aligned with the origin prepares the line of a linear function, but the line can be drawn from two points alone."
+    },
+    {
+      "from": "3e.m2.r15",
+      "to": "3e.m2.r16",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "L’ordonnée à l’origine b : la droite ne passe plus forcément par l’origine."
+    },
+    {
+      "from": "3e.m2.r16",
+      "to": "3e.m2.r17",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m2.r12",
+      "to": "3e.m2.r18",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m2.r10",
+      "to": "3e.m2.r18",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Writing a formula for a dependence is the 4e step, but in 3e the model may come from a table or a graph."
+    },
+    {
+      "from": "3e.m2.r11",
+      "to": "3e.m2.r19",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m2.r13",
+      "to": "3e.m2.r19",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m2.r14",
+      "to": "3e.m2.r19",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "An antecedent can also be read graphically, so the algebraic route is one way among others."
+    },
+    {
+      "from": "3e.m2.r16",
+      "to": "3e.m2.r19",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Many problems are modelled by affine functions, but some use other functions given by a graph or a table."
+    },
+    {
+      "from": "4e.m3.r01",
+      "to": "3e.m3.r01",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Le volume de la boule, (4/3)πr³, s’ajoute au répertoire des formules de volume."
+    },
+    {
+      "from": "4e.m1.r04",
+      "to": "3e.m3.r01",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "r³ is a power, but it can be computed as r × r × r without the notation."
+    },
+    {
+      "from": "3e.m3.r01",
+      "to": "3e.m3.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m3.r01",
+      "to": "3e.m3.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "5e.m3.r01",
+      "to": "3e.m3.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m3.r02",
+      "to": "3e.m3.r03",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "Vitesse, débit, masse volumique, introduits en 4e, sont réinvestis dans des problèmes plus variés."
+    },
+    {
+      "from": "4e.m3.r03",
+      "to": "3e.m3.r04",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "Les conversions de grandeurs composées sont reprises ; les puissances de 10 peuvent y être réinvesties."
+    },
+    {
+      "from": "4e.m1.r02",
+      "to": "3e.m3.r04",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Powers of ten shorten conversions of areas and volumes, but every conversion can be done with ordinary multiplications."
+    },
+    {
+      "from": "4e.m3.r04",
+      "to": "3e.m3.r05",
+      "type": "consolidates",
+      "weight": "core",
+      "note": "Le contrôle des unités, amorcé en 4e, devient un réflexe pour toute grandeur simple ou composée."
+    },
+    {
+      "from": "4e.m3.r06",
+      "to": "3e.m3.r06",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Rotations et homothéties s’ajoutent aux symétries et aux translations pour calculer longueurs, angles, aires et volumes."
+    },
+    {
+      "from": "4e.m3.r05",
+      "to": "3e.m3.r07",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "L’homothétie et les triangles semblables s’ajoutent à l’agrandissement-réduction."
+    },
+    {
+      "from": "3e.m2.r09",
+      "to": "3e.m3.r07",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Computing lengths by proportionality in geometry helps, but areas and volumes are scaled by k² and k³ without it."
+    },
+    {
+      "from": "4e.m4.r01",
+      "to": "3e.m4.r01",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Le repérage s’étend à la sphère : latitude et longitude."
+    },
+    {
+      "from": "4e.m4.r02",
+      "to": "3e.m4.r02",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Les vues de face, de dessus, en coupe s’ajoutent, pour tous les solides du cycle."
+    },
+    {
+      "from": "3e.m4.r02",
+      "to": "3e.m4.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m3.r05",
+      "to": "3e.m4.r03",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "A section parallel to the base of a pyramid or a cone is a reduction, but naming the shape of a section needs no ratio."
+    },
+    {
+      "from": "4e.m2.r07",
+      "to": "3e.m4.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m4.r03",
+      "to": "3e.m4.r04",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The equality cases serve the proof of the angular characterisation, which the student may use without proving it."
+    },
+    {
+      "from": "5e.m4.r02",
+      "to": "3e.m4.r04",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Angles and parallels serve the same proof; recognising similar triangles by their sides needs neither."
+    },
+    {
+      "from": "4e.m4.r04",
+      "to": "3e.m4.r05",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La configuration du papillon, ramenée aux triangles emboîtés par une symétrie centrale."
+    },
+    {
+      "from": "5e.m4.r03",
+      "to": "3e.m4.r05",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Point symmetry carries the proof of the butterfly case, but the theorem is used without proving it."
+    },
+    {
+      "from": "4e.m4.r06",
+      "to": "3e.m4.r06",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Le sinus et la tangente s’ajoutent au cosinus ; les trois servent à calculer des longueurs et des angles."
+    },
+    {
+      "from": "4e.m4.r05",
+      "to": "3e.m4.r06",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Pythagoras is combined with trigonometry in many problems, but each ratio is used alone without it."
+    },
+    {
+      "from": "4e.m4.r07",
+      "to": "3e.m4.r07",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La rotation (centre, angle, sens) : une nouvelle transformation, qui conserve longueurs, angles et aires."
+    },
+    {
+      "from": "6e.m3.r01",
+      "to": "3e.m4.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m3.r05",
+      "to": "3e.m4.r08",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "5e.m4.r03",
+      "to": "3e.m4.r08",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "A negative ratio puts the image on the other side of the centre, like a half-turn, but positive ratios need no symmetry."
+    },
+    {
+      "from": "3e.m4.r05",
+      "to": "3e.m4.r08",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The link with Thales explains why lengths are multiplied by k, but an image can be built without the theorem."
+    },
+    {
+      "from": "4e.m4.r08",
+      "to": "3e.m4.r09",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Rotations et homothéties s’ajoutent aux translations et symétries dans les frises, pavages et rosaces."
+    },
+    {
+      "from": "3e.m4.r07",
+      "to": "3e.m4.r09",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m4.r08",
+      "to": "3e.m4.r09",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Rosaces and most friezes use rotations and symmetries; homotheties appear in few of them."
+    },
+    {
+      "from": "4e.m4.r09",
+      "to": "3e.m4.r10",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Les raisonnements mobilisent aussi la rotation, l’homothétie, Thalès en papillon et les triangles semblables."
+    },
+    {
+      "from": "3e.m4.r05",
+      "to": "3e.m4.r10",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Thales is one configuration among those a 3e proof may use; a proof can rest on others."
+    },
+    {
+      "from": "3e.m4.r04",
+      "to": "3e.m4.r10",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Similar triangles are one configuration among those a 3e proof may use; a proof can rest on others."
+    },
+    {
+      "from": "3e.m4.r07",
+      "to": "3e.m4.r10",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Rotation is one transformation among those a 3e proof may use; a proof can rest on others."
+    },
+    {
+      "from": "3e.m4.r08",
+      "to": "3e.m4.r10",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Homothety is one transformation among those a 3e proof may use; a proof can rest on others."
+    },
+    {
+      "from": "4e.m5.r02",
+      "to": "3e.m5.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4e.m5.r02",
+      "to": "3e.m5.r02",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Un motif créé une fois puis reproduit par une boucle."
+    },
+    {
+      "from": "3e.m5.r01",
+      "to": "3e.m5.r02",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "A custom block makes the repeated motif clearer, but a loop can repeat it without one."
+    },
+    {
+      "from": "4e.m5.r02",
+      "to": "3e.m5.r03",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "La boucle « répéter jusqu’à … », combinée avec « répéter … fois » et les instructions conditionnelles."
+    },
+    {
+      "from": "4e.m5.r03",
+      "to": "3e.m5.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3e.m2.r06",
+      "to": "3e.m5.r03",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Simulating a random experiment is one use of the loops, not a condition for writing them."
+    },
+    {
+      "from": "4e.m5.r01",
+      "to": "3e.m5.r04",
+      "type": "extends",
+      "weight": "core",
+      "addedValue": "Plusieurs scripts en parallèle qui interagissent, jusqu’à un jeu."
+    }
+  ]
 }

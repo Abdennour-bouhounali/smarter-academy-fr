@@ -319,7 +319,7 @@ function renderItem(id) {
     <div><span class="mono">${id}</span></div>
     <p class="official">${esc(it.t)}</p>
     ${it.p ? `<ul class="parts">${it.p.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
-    <div class="group"><h3>Leçon d’accueil</h3>${lessonLine(it.h)}${others.length ? `<p class="hint">Repris aussi dans : ${others.map((c) => `<button type="button" class="linkbtn" data-lesson="${c}">${esc(DATA.lessons[c].t)}</button>`).join(', ')}</p>` : ''}</div>
+    <div class="group"><h3>Leçon d’accueil</h3>${it.sb ? `<p class="empty">Pas encore de leçon en ${esc(G[it.g])} (prérequis d’une classe sans leçon).</p>` : lessonLine(it.h)}${others.length ? `<p class="hint">Repris aussi dans : ${others.map((c) => `<button type="button" class="linkbtn" data-lesson="${c}">${esc(DATA.lessons[c].t)}</button>`).join(', ')}</p>` : ''}</div>
     <div class="group"><h3>Part de (${pre.length})</h3>${pre.length ? `<ul class="rel">${pre.map((k) => itemRow(k.id, k.t, k.t === 'r' ? '' : k.v)).join('')}</ul>` : '<p class="empty">Rien dans le programme : un acquis antérieur ou le début d’un fil.</p>'}</div>
     <div class="group"><h3>Mène à (${post.length})</h3>${post.length ? `<ul class="rel">${post.map((k) => itemRow(k.id, k.t, k.t === 'r' ? '' : k.v)).join('')}</ul>` : '<p class="empty">Fin du fil au collège.</p>'}</div>`;
 }

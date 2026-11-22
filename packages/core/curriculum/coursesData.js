@@ -35,7 +35,7 @@ import { filterActiveCourseLevels } from './activeGrades.js';
 // de fr/units_<g>_2026_2027.json ; seuls les domaines qui portent au
 // moins une leçon sont montrés (voir buildGrade).
 /**
- * Une leçon, construite depuis le découpage fourni par le propriétaire.
+ * Une leçon, construite depuis le découpage de lessons_<g>_2026_2027.json.
  *
  * La leçon a pour provenance un SUJET du programme, et la déclare telle quelle.
  */
@@ -43,18 +43,15 @@ function buildLesson(lesson, { levelId, gradeId, topicTitle }) {
   const pointPrerequisites = lesson.pointPrerequisites ?? {};
   return {
     id: lesson.code,
-    // Le TITRE de la leçon : l'intitulé du sujet officiel, au mot près, quand
-    // la leçon EST un sujet (règle phase 7) ; la rubrique du MANUEL, au mot
-    // près, quand la leçon vient d'une unité du manuel (titleSource
-    // 'textbook'). Dans les deux cas rien n'est réécrit par le projet.
-    title: lesson.titleSource === 'textbook' ? lesson.title : topicTitle,
-    officialTopicTitle: topicTitle,
-    titleSource: lesson.titleSource ?? 'official_topic',
+    // A lesson's title is always the platform's own (`titleSource: 'editorial'`); what the official text calls the
+    // topic it comes from stays beside it, word for word (null for a synthesis, which has no topic).
+    title: lesson.title,
+    officialTopicTitle: topicTitle ?? null,
+    titleSource: lesson.titleSource ?? 'editorial',
     // 'lesson' (un درس) ou 'synthesis' (« أدمج تعلّماتي » : la synthèse
     // d'unité, jamais comptée parmi les leçons de l'unité).
     kind: lesson.kind ?? 'lesson',
     unitId: lesson.unitId ?? null,
-    textbookRef: lesson.textbookRef ?? null,
     description: lesson.description,
     prerequisites: lesson.prerequisites,
     // Les leçons du catalogue dont celle-ci suppose les acquis — un prérequis
@@ -95,14 +92,14 @@ function buildLesson(lesson, { levelId, gradeId, topicTitle }) {
   };
 }
 
-/** Le chemin de la page d'une unité du manuel. Le segment `units` est réservé : aucune leçon ne peut porter ce code. */
+/** Le chemin de la page d'une unité. Le segment `units` est réservé : aucune leçon ne peut porter ce code. */
 export const UNIT_PATH_SEGMENT = 'units';
 export function buildUnitPath({ levelId, gradeId, chapterId, unitCode }) {
   return `/courses/${levelId}/${gradeId}/${chapterId}/${UNIT_PATH_SEGMENT}/${unitCode}`;
 }
 
 /**
- * Une unité (وحدة) du manuel : le niveau entre le ميدان et le درس. Elle porte
+ * Une unité (séquence) : le niveau entre le thème et la leçon. Elle porte
  * ses leçons DANS L'ORDRE et, à part, sa synthèse. Les intitulés viennent
  * de fr/units_<g>_2026_2027.json.
  */
@@ -116,7 +113,6 @@ function buildUnit(unit, lessonsOfUnit, { levelId, gradeId }) {
     subtitle: unit.subtitle ?? null,
     objectives: unit.objectives ?? [],
     sourceTopicIds: unit.sourceTopicIds ?? [],
-    textbook: unit.textbook ?? null,
     challenge: unit.challenge ?? null,
     aside: unit.aside ?? null,
     order: unit.order,
@@ -181,9 +177,8 @@ function buildGrade({ programme, lessons, units }) {
       ...(topic.namedMethods ? { namedMethods: topic.namedMethods } : {}),
       ...(topic.namedParts ? { namedParts: topic.namedParts } : {}),
     })),
-    // Les leçons du chapitre, À PLAT, dans l'ordre du catalogue : celles des
-    // unités du manuel d'abord (phase 8), puis celles restées « un sujet =
-    // une leçon » (phase 7). C'est cette liste que lisent la carte des cours,
+    // Les leçons du chapitre, À PLAT, dans l'ordre du catalogue (`order`).
+    // C'est cette liste que lisent la carte des cours,
     // la progression et l'export ; `units` ci-dessous la regroupe sans la
     // remplacer.
     lessons: (lessonsByChapter.get(domain.id) ?? [])
@@ -202,7 +197,7 @@ function buildGrade({ programme, lessons, units }) {
     // programme ; un ميدان non listé garde sa place relative, après les listés.
     .sort((a, b) => displayRank(a.id) - displayRank(b.id));
 
-  // Les UNITÉS du manuel, greffées sur leur chapitre. Une unité ne possède
+  // Les UNITÉS, greffées sur leur chapitre. Une unité ne possède
   // pas ses leçons : elle les référence (mêmes objets que `chapter.lessons`).
   for (const chapter of chapters) {
     chapter.units = units.units
@@ -284,6 +279,9 @@ export function getAllGrades() {
       // pas une, 1AM–3AM 2026-10-14), et si le programme n'est pas encore fourni.
       curriculumStatus: grade.curriculumStatus ?? null,
       lessonCount: (grade.chapters || []).reduce((n, c) => n + (c.lessons || []).filter((l) => l.status === 'available').length, 0),
+      // Every lesson of the catalogue, published or announced (`coming_soon`): a grade can have 0 published lessons
+      // and a whole year announced (3e, 2026-11-22) — which is not the same as having no lesson at all.
+      catalogueLessonCount: (grade.chapters || []).reduce((n, c) => n + (c.lessons || []).length, 0),
     }))
   );
 }
@@ -370,7 +368,7 @@ const UNITS_BY_ID = /* @__PURE__ */ (() => {
   return index;
 })();
 
-/** L'unité du manuel portant ce code, chapitre et classe compris — ou `null`. */
+/** L'unité portant ce code, chapitre et classe compris — ou `null`. */
 export function getUnitById(unitId) {
   if (!unitId) return null;
   return UNITS_BY_ID.get(unitId) || null;

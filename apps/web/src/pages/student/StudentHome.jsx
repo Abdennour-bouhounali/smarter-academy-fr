@@ -136,10 +136,11 @@ export default function StudentHome() {
           <HomeGreeting name={getDisplayName(user)} gradeName={grade?.name || null} />
         </motion.div>
 
-        {/* His grade has no published lesson yet: say it first, above everything that would otherwise sit empty. */}
+        {/* His grade has no published lesson yet: say it first, above everything that would otherwise sit empty —
+            « announced » when its lessons are in the catalogue as coming soon, « no lesson yet » when it has none. */}
         {grade && grade.lessonCount === 0 && (
           <motion.div {...enter(0.03)} className="mb-6">
-            <NoLessonYet />
+            <NoLessonYet announced={grade.catalogueLessonCount > 0} />
           </motion.div>
         )}
 

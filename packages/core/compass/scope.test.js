@@ -75,6 +75,13 @@ describe('buildScope', () => {
     const s = buildScope({ progression: progressions['6e'], pointer: null });
     expect(s.targets).toEqual([]);
   });
+  it('on the delivered 3e net, rule B reaches stub prerequisites, and each one answers itemInfo without a lesson', () => {
+    const s = buildScope({ progression: { weeks: [{ week: 'w01', lessons: ['calculer-avec-des-fractions'] }] }, pointer: null });
+    expect(s.ruleB.length).toBeGreaterThan(0);
+    const stubs = s.ruleB.filter((id) => itemInfo(id).noLessonInGrade);
+    expect(stubs.length).toBeGreaterThan(0);
+    for (const id of stubs) expect(itemInfo(id).homeLesson).toBeNull();
+  });
 });
 
 describe('itemInfo', () => {
@@ -82,7 +89,12 @@ describe('itemInfo', () => {
     expect(itemInfo('5e.m1.r01', net)).toEqual({
       id: '5e.m1.r01', text: 'Compétence 5e.m1.r01', grade: '5e',
       homeLesson: { code: 'l1', grade: '5e', title: 'Leçon l1', status: 'available' },
+      noLessonInGrade: null,
     });
+  });
+  it('a stub of the delivered net: its text and grade, no lesson, « no lesson yet in its grade »', () => {
+    expect(itemInfo('4e.m1.r01')).toMatchObject({ id: '4e.m1.r01', grade: '4e', homeLesson: null, noLessonInGrade: '4e' });
+    expect(itemInfo('4e.m1.r01').text.length).toBeGreaterThan(5);
   });
   it('null pour un item inconnu', () => {
     expect(itemInfo('nope', net)).toBeNull();

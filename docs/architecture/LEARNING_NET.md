@@ -2,10 +2,24 @@
 
 > **Status (2026-11-22).** Covers the data model of the official programme, the links between its items, the resolver
 > and what reads it. Imported from the Algerian platform (DZ dev 7f4cef1c) on 2026-11-22 and corrected. True here: the
-> MODEL, the resolver, its tests (on neutral fixtures) and the generators. Not true here: there is NO item, NO link, NO
-> thread, NO unit and NO lesson yet — the French net is written in Stage 2C (plan §5) from `docs/curriculum/officiel/`;
-> a first draft for 3e sits in `docs/curriculum/draft-3e/`, not wired. `Planned`: wiring it into `curriculum/fr/`
-> (59 lessons, all `coming_soon`).
+> MODEL, the resolver, its tests and the generators.
+>
+> **The 3e net is LIVE since 2026-11-22** (`packages/core/curriculum/fr/`), written from `docs/curriculum/officiel/`
+> and NOT yet validated by the owner (`verified: false`; the sheet to validate is `docs/curriculum/net-3e/REVIEW.md`):
+> 108 programme items — 55 taught in 3e and 53 **stubs** of 4e / 5e / 6e — 112 links (74 core, 38 support), 17 threads,
+> 13 units, 59 lessons (46 + 13 « Vers le brevet » syntheses), 161 learning points, every lesson `coming_soon`.
+> 6e, 5e and 4e are still empty skeletons. What the sections below do not say yet:
+> - a **stub** (`stub: true`) is a real prerequisite whose own grade has no lesson: it has NO home lesson
+>   (`homeLessonOf` → `null`, `isStub(id)`), and every resolver result names it with `lesson: null` and
+>   `noLessonInGrade: '<grade>'`. Invariants: every non-stub item has a home lesson; a stub's grade has no lesson at
+>   all; no link ends on a stub. The day 4e gets lessons, its stubs become full items;
+> - what the 2026 programme ADDS to 3e from 2028-2029 is kept apart in `fr/net/horizon_2028.json` (19 items with
+>   their `attachesTo`), which the resolver does not load;
+> - `WEIGHTED_GRADES` is `['3e']`;
+> - a lesson's title is the platform's own (`titleSource: "editorial"`); there is no textbook reference anywhere;
+> - **learning-point ids are locked**: `fr/learning_points.lock.json` + `learningPointsLock.test.js`. A point is
+>   appended, then `npm run generate:lp-lock`; a reorder is refused once a lesson has a folder or is `available`;
+> - the FR↔DZ table (which Algerian lesson teaches the same point) is `docs/curriculum/net-3e/fr_dz_table.json`.
 
 **Authoritative for:** the official programme of the four grades as data, the links between its items, the lessons
 still to generate (`coming_soon` in the catalogue), cross-year review links, and what the database and Mastery V2 do

@@ -1,7 +1,7 @@
 {
   "_comment": [
     "Le programme de mathématiques de 3e — la source unique des intitulés du catalogue (coursesData.js).",
-    "Squelette : les thèmes seuls, sans sujet. Contrat : docs/architecture/LEARNING_NET.md."
+    "Un sujet par thème : les séquences 3e.m1…3e.m5 de net/official_programme_college.json (même id, même titre). Contrat : docs/architecture/LEARNING_NET.md."
   ],
   "grade": "3e",
   "gradeLabel": "Troisième",
@@ -10,39 +10,64 @@
   "levelLabel": "Collège",
   "subject": "mathematiques",
   "schoolYear": "2026/2027",
-  "source": null,
+  "source": "packages/core/curriculum/fr/net/official_programme_college.json",
   "verified": false,
-  "verificationNote": "Squelette vide (plan FRANCE_REBUILD_PLAN.md §4bis, 2026-11-22) : les thèmes du cycle 4, posés sans texte officiel. La 6e relève du cycle 3 : l’étape 2 corrige depuis les textes officiels.",
+  "verificationNote": "Les thèmes A–E du cycle 4 ; chaque thème porte un sujet, la séquence du programme officiel du même id. Les items eux-mêmes sont dans net/official_programme_college.json (verified: false).",
   "domains": [
     {
       "id": "nombres_calculs",
       "title": "Nombres et calculs",
       "verified": false,
-      "topics": []
+      "topics": [
+        {
+          "id": "3e.m1",
+          "title": "Thème A – Nombres et calculs"
+        }
+      ]
     },
     {
       "id": "organisation_gestion_donnees_fonctions",
       "title": "Organisation et gestion de données, fonctions",
       "verified": false,
-      "topics": []
+      "topics": [
+        {
+          "id": "3e.m2",
+          "title": "Thème B – Organisation et gestion de données, fonctions"
+        }
+      ]
     },
     {
       "id": "grandeurs_mesures",
       "title": "Grandeurs et mesures",
       "verified": false,
-      "topics": []
+      "topics": [
+        {
+          "id": "3e.m3",
+          "title": "Thème C – Grandeurs et mesures"
+        }
+      ]
     },
     {
       "id": "espace_geometrie",
       "title": "Espace et géométrie",
       "verified": false,
-      "topics": []
+      "topics": [
+        {
+          "id": "3e.m4",
+          "title": "Thème D - Espace et géométrie"
+        }
+      ]
     },
     {
       "id": "algorithmique_programmation",
       "title": "Algorithmique et programmation",
       "verified": false,
-      "topics": []
+      "topics": [
+        {
+          "id": "3e.m5",
+          "title": "Thème E – Algorithmique et programmation"
+        }
+      ]
     }
   ]
 }
