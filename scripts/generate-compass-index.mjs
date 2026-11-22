@@ -10,7 +10,7 @@
  *  - son exercice est au niveau 1 (→ niveau 1 de la jauge) ou 2 (→ niveau 2) ;
  *  - son type de réponse est `choice` ou `rational` (corrigés par AnswerEvaluator) ;
  *  - c'est la 1re question de l'exercice, ou une sous-question qui ne renvoie pas
- *    à une réponse précédente (« استنتج », « السابق », « السؤال »…) ;
+ *    à une réponse précédente (« Déduis-en », « précédente », « à la question »…) ;
  *  - sa leçon déclare EXACTEMENT un item du programme (`programmeItems`) : sinon
  *    on ne sait pas quelle compétence elle mesure (compté dans `gaps.multiItemLessons`).
  *
@@ -27,15 +27,16 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PRACTICE = join(ROOT, 'content/practice');
 const OUT = join(ROOT, 'content/compass/index.generated.json');
 const TYPES = new Set(['choice', 'rational']);
-// TODO(stage 1C): these two patterns read the Arabic wording of the deleted bank; the French bank needs its own.
-const DEPENDS = /استنتج|السابق|السابقة|من السؤال|من الجواب|باستعمال النتيجة|بالاستعانة|أعلاه|ما سبق|السؤال/;
+// The French wording of the two Algerian patterns (« deduce », « previous », « the question », « above »… and « the
+// figure / the diagram / the table / the graph opposite »). Case- and elision-insensitive.
+const DEPENDS = /d[ée]dui(?:s|re)|pr[ée]c[ée]dente?s?|ci-dessus|(?:à|de|d[’']après) la question|(?:du|le|ce) résultat|en utilisant|à l[’']aide (?:de|du) (?:la|le) (?:question|résultat|réponse)/iu;
 
-const NEEDS_VISUAL = /المقابل|الشكل|المخطط|الجدول|البيان/;
+const NEEDS_VISUAL = /ci-contre|la figure|le schéma|le graphique|le diagramme|le tableau|la représentation graphique/iu;
 const LETTER = /\$\s*([A-Z])\s*\$/g;
 
 /**
  * Une question ne quitte jamais le serveur sans ses DONNÉES (propriétaire, 2026-11-09 :
- * « A يساوي ماذا؟ »). Refusée quand :
+ * « A vaut combien ? » — sans dire ce qu'est A). Refusée quand :
  *  - l'énoncé renvoie à une figure / un schéma / un tableau qu'il ne porte pas ;
  *  - elle nomme une lettre ($A$, $C$…) que rien ne définit : ni une formule de l'énoncé
  *    (`A = …`), ni le texte (« A = … »), ni une figure (où les lettres sont des points).

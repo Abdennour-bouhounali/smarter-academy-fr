@@ -22,7 +22,7 @@ function exercise(i, { templateId, lp = '3e_fixture-diviseurs_P1', difficulty, c
   const id = `ex-3e-${lesson}-l2-${String(i).padStart(3, '0')}`;
   const question = {
     id: 'q1',
-    statement: 'Quel est le plus grand diviseur commun ?',
+    statement: 'Quel est le plus grand diviseur commun\u202f?',
     learningPoints: [{ code: lp, role: 'primary' }],
     answerType,
     hints: [{ id: 'h1', type: 'look', content: 'Écris les diviseurs de chaque nombre.' }],
@@ -40,7 +40,10 @@ function exercise(i, { templateId, lp = '3e_fixture-diviseurs_P1', difficulty, c
     id, lessonCode: lesson, level: 2,
     ...(templateId ? { templateId, generator: { tool: 'test', version: '1', seed: i } } : {}),
     metadata: { title: `Exercice ${i}`, estimatedMinutes: 3 },
-    statement: { content: 'Deux nombres : 12 et 18.' },
+    statement: { content: 'Deux nombres\u00a0: 12 et 18.' },
+    // Les deux étiquettes du brevet, obligatoires en 3e (validate-lib.mjs › brevetTagErrors).
+    brevet: 1,
+    calculator: false,
     questions: [question],
   };
 }
@@ -71,6 +74,7 @@ describe('validate-exercises — contrat Mastery V2 des banques générées', ()
       exercise(2, { templateId: 'tpl-3e-pgcd-test', difficulty: 3, cognitiveDemand: 'transfer' }),
     ]);
     expect(r.out).not.toMatch(/templateId|difficulty doit|cognitiveDemand/);
+    expect(r.ok, r.out).toBe(true);
   });
 
   it('refuse deux variantes d’un gabarit qui visent des learning points principaux différents', () => {

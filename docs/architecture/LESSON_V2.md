@@ -190,11 +190,14 @@ the lesson's problem for the last bridge, the evaluation — never an activity o
 page shows no module chips for a lesson whose pack has a world (`LessonModuleChips`), and « continue » / the progression
 tree open its home (`getResumeLesson.js › getResumeModulePath`).
 
-**How the checks know a v2 lesson** — a contradiction left open: `scripts/validate-lessons.mjs`,
-`scripts/audit-knowledge-dependencies.mjs` and `apps/web/scripts/lesson-v2-status.mjs` still recognise a v2 lesson by
-the text `retiredModules: true` in its `routes.jsx`, but `buildLessonRoutes` no longer takes that option (every lesson
-is v2 here). Until the scripts are changed, a lesson's `routes.jsx` must carry that text for them to judge it as v2
-`[NOT CHECKED 2026-11-22]`.
+**How the checks know a v2 lesson** — by what it IS: a lesson folder with a `lesson.pack.js` that exports
+`LESSON_PACK` (§1). `scripts/validate-lessons.mjs` reads it so since 2026-11-23 (`scripts/validate-lib.mjs ›
+isV2Lesson`, `packWorldId`, `packKnowledgePath`; tests `scripts/validate-lib.test.mjs`): the world `mission-isle` marks
+a unit's last lesson, the pack's `knowledge` names the file that must export `KNOWLEDGE_GRAPH`, and the text
+`retiredModules: true` in a `routes.jsx` proves nothing. Still on the old marker — a contradiction left open (plan
+§8bis): `scripts/audit-knowledge-dependencies.mjs` (line 84) and `apps/web/scripts/lesson-v2-status.mjs` (lines 203,
+242) still look for `retiredModules: true` in `routes.jsx`; until they read the pack (they may import
+`scripts/validate-lib.mjs › isV2Lesson`), a lesson's `routes.jsx` must still carry that text for THEM.
 
 ## 3. Is a lesson done? — the status script and the definition of done
 
@@ -230,7 +233,7 @@ that have content for the lesson; the memo door comes back with the board.
 | the phone | **PAUSED**: `pack.phone` stays `false`; not part of « done » |
 | a walk | a walk of `apps/web/e2e/` that names the lesson and plays its world |
 | published | status `available` in the catalogue |
-| no module page | no `modules/`, `retiredModules: true` in `routes.jsx` (see §2) |
+| no module page | no `modules/`, `retiredModules: true` in `routes.jsx` (the script's old marker — see §2) |
 
 **A lesson is done when**:
 

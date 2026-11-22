@@ -57,6 +57,8 @@ import {
   buildLessonIndex,
   parseLessonConfig,
 } from './lib/lessonAst.mjs';
+// What a v2 lesson IS — its lesson.pack.js (plan §8bis; tested in validate-lib.test.mjs).
+import { isV2Lesson, packKnowledgePath, packWorldId } from './validate-lib.mjs';
 
 const strict = process.argv.includes('--strict');
 
@@ -160,14 +162,11 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
   // LazyKnowledgeProvider la reçoit). Les invariants du graphe lui-même —
   // validité, items portés, aides, disposition — sont vérifiés par
   // apps/web/src/lessons/common/knowledge/progressive/lessonGraphs.test.js.
-  // A v2 lesson (`retiredModules: true`, LESSON_V2.md §2) has ONE knowledge source, the file its pack names
-  // (`lesson.pack.js › knowledge: () => import('./…')`): that file must export the graph (the world's « خريطة المعارف »).
-  // It needs no root knowledge.jsx / knowledgeGraph.js — they were the deleted lesson's map.
-  const v2Lesson = existsSync(join(lessonDir, 'routes.jsx')) && /retiredModules:\s*true/.test(readFileSync(join(lessonDir, 'routes.jsx'), 'utf-8'));
-  const packFile = join(lessonDir, 'lesson.pack.js');
-  const packKnowledge = v2Lesson && existsSync(packFile)
-    ? readFileSync(packFile, 'utf-8').match(/knowledge:\s*\(\)\s*=>\s*import\('\.\/([^']+)'\)/)?.[1] ?? null
-    : null;
+  // A v2 lesson (a lesson with a `lesson.pack.js`, LESSON_V2.md §1) has ONE knowledge source, the file its pack names
+  // (`lesson.pack.js › knowledge: () => import('./…')`): that file must export the graph (the world's « carte des
+  // connaissances »). It needs no root knowledge.jsx / knowledgeGraph.js — they were the module lessons' map.
+  const v2Lesson = isV2Lesson(lessonDir);
+  const packKnowledge = v2Lesson ? packKnowledgePath(lessonDir) : null;
   if (knowledgeMap && v2Lesson) {
     if (knowledgeMapMode !== 'progressive') {
       errors.push(`${configPath}: knowledgeMap: true requires knowledgeMapMode: 'progressive' (got ${JSON.stringify(knowledgeMapMode)}) — docs/architecture/KNOWLEDGE_MAP.md A.13`);
@@ -272,8 +271,8 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
 
     // ── Un module à niveaux en a DEUX, pas un ────────────────────────────
     // Dès qu'un module déclare un niveau, il doit déclarer les deux : un
-    // « مبتدئ » seul laisse l'élève avancé sans marche à monter, un
-    // « متقدم » seul laisse le débutant devant un mur (brief §3).
+    // « débutant » seul laisse l'élève avancé sans marche à monter, un
+    // « avancé » seul laisse le débutant devant un mur (brief §3).
     const levelledByModule = new Map();
     for (const r of resources) {
       if (r.kind !== 'manipulation' || r.level === undefined) continue;
@@ -305,7 +304,7 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
     errors.push(`${configPath}: LESSON_CONFIG.modules must be a non-empty array of module objects`);
   } else {
     let totalMin = 0;
-    // Les « مسائل » (track: 'problem') sont un AJOUT de la plateforme : elles
+    // Les « problèmes » (track: 'problem') sont un AJOUT de la plateforme : elles
     // comptent dans le plafond de 90 min, pas dans la comparaison avec la
     // durée que le propriétaire a déclarée au catalogue.
     let problemMin = 0;
@@ -342,12 +341,11 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
     }
 
     // The module-page player of « problem » modules (GuidedProblem, content/problems.js) is deleted (plan §4bis): a
-    // 'problem' module is now DATA of a v2 lesson (`retiredModules: true` in its routes.jsx, LESSON_V2.md §2) — progress
-    // is stored by its number — and a lesson that would still need its page fails here.
-    const retiredPages = existsSync(join(lessonDir, 'routes.jsx')) && /retiredModules:\s*true/.test(readFileSync(join(lessonDir, 'routes.jsx'), 'utf-8'));
-    const problemModules = retiredPages ? [] : modules.filter((m) => m.track === 'problem');
+    // 'problem' module is now DATA of a v2 lesson (a lesson with a `lesson.pack.js`, LESSON_V2.md §1) — progress is
+    // stored by its number — and a lesson that would still need its page fails here.
+    const problemModules = isV2Lesson(lessonDir) ? [] : modules.filter((m) => m.track === 'problem');
     if (problemModules.length > 0) {
-      errors.push(`${configPath}: ${problemModules.length} 'problem' module(s) with pages, but the GuidedProblem player is deleted — a 'problem' module lives only in a v2 lesson (retiredModules: true)`);
+      errors.push(`${configPath}: ${problemModules.length} 'problem' module(s) with pages, but the GuidedProblem player is deleted — a 'problem' module lives only in a v2 lesson (one with a lesson.pack.js)`);
     }
 
     // ── Learning-point wiring: what each module teaches / gates on ────────
@@ -404,7 +402,7 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
       errors.push(`${configPath}: modules total ${totalMin} min — the cap is ${MAX_LESSON_MINUTES} min per lesson; split the lesson instead`);
     }
     if (catalogEntry.durationMinutes != null && Math.abs(totalMin - problemMin - catalogEntry.durationMinutes) > 10) {
-      warnings.push(`${configPath}: modules total ${totalMin - problemMin} min (without مسائل) but the catalogue declares ${catalogEntry.durationMinutes} min — realign coursesData.js`);
+      warnings.push(`${configPath}: modules total ${totalMin - problemMin} min (without problems) but the catalogue declares ${catalogEntry.durationMinutes} min — realign coursesData.js`);
     }
     if (strict || catalogEntry.status === 'available') {
       for (const required of (REQUIRED_STAGES_BY_KIND[kind] ?? REQUIRED_STAGES)) {
@@ -449,16 +447,16 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
   }
 
   // ── A v2 lesson: its assessment evidence is the world's ─────────────────────
-  // Its module pages (and the final test « إختبار أولي » with them) are deleted (`retiredModules: true`, LESSON_V2.md §2).
-  // What proves a الكفاءة is an exam-format answer of the game world, sent as a claim the SERVER re-computes (§1bis):
-  // `world/evidence.js` names, for each key, the الكفاءة it proves (`const POINTS = { <key>: 'P<n>' }`). A الكفاءة that no
-  // key proves stays uncovered below — the same error as a lesson whose final test forgets it.
-  if (existsSync(join(lessonDir, 'routes.jsx')) && /retiredModules:\s*true/.test(readFileSync(join(lessonDir, 'routes.jsx'), 'utf-8'))) {
+  // It has no module page (and no final test of modules): it is a lesson with a `lesson.pack.js` (LESSON_V2.md §1).
+  // What proves a learning point (« savoir-faire ») is an exam-format answer of the game world, sent as a claim the SERVER
+  // re-computes (§1bis): `world/evidence.js` names, for each key, the learning point it proves
+  // (`const POINTS = { <key>: 'P<n>' }`). A learning point that no key proves stays uncovered below — the same error as
+  // a lesson whose final test forgets it.
+  if (isV2Lesson(lessonDir)) {
     // A UNIT'S LAST LESSON (world « mission-isle », docs/reports/INTEGRATION_LESSON_PLAN.md §5) forges no key: what proves
-    // its الكفاءة is its BANK in exam form (the sitting, mission 3 with it) — the server re-computes each answer from the
+    // its learning point is its BANK in exam form (the sitting, mission 3 with it) — the server re-computes each answer from the
     // sheet. Its coverage is read from the bank: the learning points the questions of `content/practice/` carry.
-    const packFile = join(lessonDir, 'lesson.pack.js');
-    if (existsSync(packFile) && /world:\s*\{\s*id:\s*'mission-isle'/.test(readFileSync(packFile, 'utf-8'))) {
+    if (packWorldId(lessonDir) === 'mission-isle') {
       const bank = join(repoRoot, 'content', 'practice', gradeId, code);
       const codes = new Set();
       if (existsSync(bank))

@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 /**
- * Porte de validation du contenu du « مختبر التفكير » (سُلَّم التحدّيات).
+ * Porte de validation du contenu du « labo des énigmes » (l'échelle des défis).
  * Copie du principe de validate-exercises.mjs : un contrat est un script qui échoue.
  *
  * Ce que le schéma ne peut pas dire et qui se vérifie ici :
  *   — la réponse est lisible par le vrai juge (checkAnswer) et s'accepte elle-même,
  *     pour CHAQUE tuple de `params` ;
  *   — chaque erreur déclarée est REFUSÉE et reconnue comme elle-même ;
- *   — rien de ce que l'élève voit AVANT la porte (clés, réponses « ليس بعد », exemple)
+ *   — rien de ce que l'élève voit AVANT la porte (clés, réponses « Pas encore », exemple)
  *     ne contient la réponse, ni comme texte ni comme valeur ;
  *   — la tranche cachée suit le numéro, les sommets sont les multiples de 25 ;
- *   — une relecture de ≥ 6 pas a une pause « اشرح لنفسك » ;
+ *   — une relecture de ≥ 6 pas a une pause « Explique-toi » ;
  *   — numéros et ids uniques, nom de fichier = NNNN-id.json ;
- *   — mots interdits (règle culturelle et religieuse du dépôt) ;
+ *   — mots interdits (règles de contenu de la France, FRENCH_LANGUAGE_CONTRACT.md §9) ;
  *   — en --strict : aucun défi `draft`, index généré à jour, ≥ 1 défi sur 5 montre une impasse.
  *
  *   node scripts/validate-thinking-lab.mjs [--strict] [--json]
@@ -38,28 +38,38 @@ export const BANDS = [
 ];
 export const bandOf = (number) => BANDS.find((b) => number >= b.from && number <= b.to)?.band;
 
-/* Règle culturelle et religieuse (LESSON_DEVELOPMENT_GUIDE.md § « Cultural and religious respect »).
-   Mots entiers ; seul l'article est permis comme préfixe (ال، وال، بال، فال) — une lettre seule ferait
-   lire « بيرة » dans « كبيرة » et « رهان » dans « برهان ». Harakat retirées avant la recherche.
-   « عيد الميلاد » seul n'est PAS interdit : c'est aussi l'anniversaire (défi #460). */
-const FORBIDDEN_AR = [
-  'خنزير', 'خنازير', 'خمر', 'خمور', 'كحول', 'نبيذ', 'بيرة', 'جعة', 'قمار', 'مقامرة', 'رهان', 'مراهنة',
-  'يانصيب', 'كازينو', 'ربا', 'نرد', 'كوتشينة', 'الكريسماس', 'كريسماس', 'نويل', 'هالوين',
+/* Règles de contenu de la France (FRENCH_LANGUAGE_CONTRACT.md §9, plan §7bis) — portage de la règle culturelle
+   algérienne : jamais d'alcool, de tabac, de pari, de casino, de jeu d'argent ni de cartes à jouer ; aucune religion
+   ni fête religieuse. Un DÉ, une pièce, une urne, une roue sont le matériel du brevet : permis comme EXPÉRIENCE
+   (le dé était interdit en Algérie, il ne l'est plus). Les intérêts d'un prêt sont un contexte de pourcentages en
+   France : retirés de la liste. Le porc reste interdit (« un contexte qui n'exclut personne » ❓ — à confirmer par le
+   propriétaire, plan §7 ligne 7).
+   Mots entiers, insensibles à la casse et aux élisions (« l'alcool », « d'alcool ») ; « Paris » (la ville) n'est pas
+   « paris » (des paris) : seules les formes du verbe et « paris sportifs » sont cherchées. */
+const FORBIDDEN_FR = [
+  'alcool', 'alcools', 'alcoolisé', 'alcoolisée', 'alcoolisés', 'alcoolisées', 'vin', 'vins', 'bière', 'bières',
+  'apéritif', 'apéritifs', 'champagne', 'whisky', 'vodka', 'rhum', 'cidre',
+  'tabac', 'cigarette', 'cigarettes', 'cigare', 'cigares', 'vapoteuse',
+  'pari', 'parier', 'parie', 'parient', 'pariez', 'parions', 'parieur', 'parieurs', 'casino', 'casinos', 'loto',
+  'loterie', 'loteries', 'tombola', 'tiercé', 'poker', 'roulette', 'belote', 'tarot', 'blackjack',
+  'porc', 'porcs', 'jambon', 'lardons', 'saucisson',
+  'noël', 'pâques', 'halloween', 'ramadan', 'aïd', 'hanoucca', 'église', 'mosquée', 'synagogue', 'prière', 'bible', 'coran',
 ];
-const FORBIDDEN_PHRASES_AR = ['فائدة بنكية', 'فوائد بنكية', 'قرض بفائدة', 'ورق اللعب', 'أوراق اللعب', 'عيد الميلاد المجيد', 'شجرة الميلاد'];
-const FORBIDDEN_EN = /\b(pigs?|pork|wine|beer|alcohol|casino|lottery|gambl\w*|betting|poker|usury)\b/i;
-const FORBIDDEN_EMOJI = /[🐷🐖🐗🍷🍺🍻🥂🍸🍹🥓🌭🎰🃏🎲🎄🎅⛪✝🕍🔯]/u;
-const stripHarakat = (s) => s.replace(/[ً-ْـ]/g, '');
-const wordPattern = (w) => new RegExp(`(?<!\\p{L})(?:[وفب]?ال)?${w.replace(/^ال/, '')}(?!\\p{L})`, 'u');
-const FORBIDDEN_WORD_PATTERNS = FORBIDDEN_AR.map((w) => [w, wordPattern(w)]);
+const FORBIDDEN_PHRASES_FR = ['paris sportifs', 'jeu d’argent', 'jeux d’argent', 'jeu de cartes', 'jeux de cartes', 'cartes à jouer', 'carte à jouer', 'jeu de 32 cartes', 'jeu de 52 cartes', 'machine à sous', 'ticket à gratter'];
+const FORBIDDEN_EN = /\b(pigs?|pork|wine|beer|alcohol|casino|lottery|gambl\w*|betting|poker|usury|playing cards?)\b/i;
+// 🎲 a die is allowed (an experiment); 🃏 a playing card is not; 🚬 tobacco.
+const FORBIDDEN_EMOJI = /[🐷🐖🐗🍷🍺🍻🥂🍸🍹🥓🌭🎰🃏🚬🎄🎅⛪✝🕍🔯🕌]/u;
+const normalize = (s) => String(s).toLowerCase().replace(/['’]/g, '’');
+const wordPattern = (w) => new RegExp(`(?<!\\p{L})${w}(?!\\p{L})`, 'u');
+const FORBIDDEN_WORD_PATTERNS = FORBIDDEN_FR.map((w) => [w, wordPattern(w)]);
 
 export function forbiddenIn(text) {
-  const s = stripHarakat(String(text));
+  const s = normalize(text);
   for (const [w, re] of FORBIDDEN_WORD_PATTERNS) if (re.test(s)) return w;
-  for (const p of FORBIDDEN_PHRASES_AR) if (s.includes(p)) return p;
+  for (const p of FORBIDDEN_PHRASES_FR) if (s.includes(p)) return p;
   const en = FORBIDDEN_EN.exec(s);
   if (en) return en[0];
-  const emoji = FORBIDDEN_EMOJI.exec(s);
+  const emoji = FORBIDDEN_EMOJI.exec(String(text));
   return emoji ? emoji[0] : null;
 }
 
@@ -69,14 +79,43 @@ function* strings(node, path = '') {
   else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) yield* strings(v, path ? `${path}.${k}` : k);
 }
 
-/** Les morceaux « mathématiques » d'un texte arabe : suites de chiffres, lettres latines et opérateurs. */
+/** Les noms de fonctions et de constantes qu'une formule écrit en lettres latines. */
+const MATH_WORDS = new Set(['sqrt', 'pi', 'sin', 'cos', 'tan', 'ln', 'log', 'exp', 'abs']);
+
+/**
+ * Les morceaux « mathématiques » d'un texte FRANÇAIS : suites de chiffres, de lettres isolées (les variables),
+ * de noms de fonctions et d'opérateurs. Un mot de prose (deux lettres ou plus, ou une lettre accentuée) coupe la
+ * suite — en arabe, toute lettre latine était des mathématiques ; en français, « Réponse » n'en est pas (plan §8bis).
+ * Chaque suite est aussi proposée sans ses lettres isolées de bord (« a 0,3 » → « 0,3 » : « a » est le verbe).
+ */
 export function mathCandidates(text) {
   const out = new Set();
-  for (const run of String(text).match(/[0-9A-Za-zπ√²³⁴+\-−*/×·÷^().,|٫ ]+/g) ?? []) {
-    for (const piece of run.split(/[=:]/)) {
-      const c = piece.trim().replace(/[.,:]+$/, '').replace(/^[.,]+/, '').trim();
-      if (/[0-9A-Za-zπ√]/.test(c)) out.add(c);
-    }
+  const add = (piece) => {
+    const c = piece.trim().replace(/[.,:;]+$/, '').replace(/^[.,]+/, '').trim();
+    if (/[0-9A-Za-zπ√]/.test(c)) out.add(c);
+  };
+  const tokens = String(text).match(/\p{L}+|\d+(?:[.,]\d+)*|\s+|./gsu) ?? [];
+  const isLetter = (t) => /^[A-Za-zπ]$/.test(t);
+  const mathy = (t) =>
+    /^\d/.test(t) || /^\s+$/.test(t) || /^[π√²³⁴+\-−*/×·÷^().,|=:;<>⩽⩾≤≥]$/u.test(t) || isLetter(t) || MATH_WORDS.has(t.toLowerCase());
+  const runs = [[]];
+  for (const t of tokens) {
+    if (mathy(t)) runs.at(-1).push(t);
+    else runs.push([]);
+  }
+  for (const run of runs) {
+    for (const piece of run.join('').split(/[=:;]/)) add(piece);
+    // The same run without an isolated letter at either end, standing apart (the French « a », « y » next to a number).
+    const t = [...run];
+    const trimSpaces = () => {
+      while (t.length && /^\s+$/.test(t[0])) t.shift();
+      while (t.length && /^\s+$/.test(t.at(-1))) t.pop();
+    };
+    trimSpaces();
+    let cut = false;
+    while (t.length > 2 && isLetter(t[0]) && /^\s+$/.test(t[1])) { t.splice(0, 2); cut = true; trimSpaces(); }
+    while (t.length > 2 && isLetter(t.at(-1)) && /^\s+$/.test(t.at(-2))) { t.splice(-2, 2); cut = true; trimSpaces(); }
+    if (cut) for (const piece of t.join('').split(/[=:;]/)) add(piece);
   }
   return [...out];
 }
@@ -172,7 +211,7 @@ export function validateThinkingLab(entries, { strict = false } = {}) {
     if (c.status === 'published' && c.keys.length !== 3) err('keys', `un défi publié a 3 clés (S → 👁 → R), il en a ${c.keys.length}`);
     if (strict && c.status !== 'published') err('status', 'rien de généré ne reste `draft` (règle du propriétaire)');
 
-    if (c.replay.length >= 6 && !c.replay.some((s) => s.ask)) err('replay', 'une relecture de ≥ 6 pas a une pause « اشرح لنفسك » (ask)');
+    if (c.replay.length >= 6 && !c.replay.some((s) => s.ask)) err('replay', 'une relecture de ≥ 6 pas a une pause « Explique-toi » (ask)');
     c.replay.forEach((s, i) => {
       if (s.ask && s.ask.correct >= s.ask.options.length) err(`replay[${i}].ask.correct`, 'indice hors des options');
     });
@@ -184,7 +223,7 @@ export function validateThinkingLab(entries, { strict = false } = {}) {
 
     for (const [path, text] of strings(c)) {
       const bad = forbiddenIn(text);
-      if (bad) err(path, `mot interdit « ${bad} » (règle culturelle et religieuse)`);
+      if (bad) err(path, `mot interdit « ${bad} » (règles de contenu, FRENCH_LANGUAGE_CONTRACT.md §9)`);
     }
 
     for (const values of allTuples(c.params)) {

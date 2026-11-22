@@ -30,10 +30,11 @@ import { parseInterval } from '../packages/core/practice/intervalCompare.js';
 import { SUPPORTED_ANSWER_TYPES, parseIntegerSet, evaluateAnswer, isSuccessOutcome } from '../packages/core/practice/answerEvaluator.js';
 import { validateStatementFigure } from '../apps/web/src/lessons/common/components/statementFigure.js';
 import { figureQuality } from '../apps/web/src/lessons/common/components/geoFigure.js';
+import { EXAM_SUBS, brevetTagErrors, examProvenanceErrors, exerciseTypographyErrors } from './validate-lib.mjs';
 
 const argv = process.argv.slice(2);
 const STRICT = argv.includes('--strict');
-/** Feuilles par niveau d'une leçon au format examen (norme du déploiement BEM, 2026-10-06). */
+/** Feuilles par niveau d'une leçon au format examen (norme du déploiement des feuilles d'examen, 2026-10-06). */
 const EXAM_PER_LEVEL = 10;
 const AS_JSON = argv.includes('--json');
 
@@ -91,40 +92,26 @@ const HINT_ORDER = ['look', 'direction', 'strategy'];
 const COGNITIVE_DEMANDS = new Set(['recall', 'apply', 'transfer', 'reason']);
 const TEMPLATE_ID_PATTERN = /^tpl-[a-z0-9]+(-[a-z0-9]+)*$/;
 
-/* ── Présentation « ورقة امتحان » (BEM, 2026-10-06) ─────────────────────
-   Un exercice qui porte `metadata.exam` est rendu comme une feuille de
-   شهادة التعليم المتوسط (ExamSheet.jsx). Contrat : EXERCISE_CONTRACT.md § BEM. */
+/* ── Présentation « sujet de brevet » (2026-10-06) ──────────────────────
+   Un exercice qui porte `metadata.exam` est rendu comme un sujet du brevet
+   (ExamSheet.jsx). Contrat : EXERCISE_CONTRACT.md § « The exam sheet ». La
+   provenance (brevet en 3e, contrôle en 6e–4e) et les étiquettes `brevet` /
+   `calculator` : scripts/validate-lib.mjs. */
 const EXAM_KINDS = new Set(['official', 'excerpt', 'modelled', 'adapted']);
-const EXAM_POINTS = /^\d{2}(,\d{1,2})?$/; // « 03 »، « 02,5 »، « 08 » — l'écriture du sujet
+const EXAM_POINTS = /^\d{2}(,\d{1,2})?$/; // « 03 », « 02,5 », « 08 » — la donnée ; affiché « 2,5 points » (examPoints)
 const EXAM_STEP = /^0[1-6]$/;
-const EXAM_SUBS = new Set(['ا', 'ب', 'ج', 'د']);
-const BEM_YEARS = [2007, 2025];
 
 function validateExamPresentation(data, where) {
   const exam = data.metadata?.exam;
-  const source = data.metadata?.source;
-  if (source?.type === 'bem') {
-    if (!Number.isInteger(source.year) || source.year < BEM_YEARS[0] || source.year > BEM_YEARS[1]) {
-      err(where, `metadata.source.year doit être une session du BEM ${BEM_YEARS.join('–')} (reçu ${JSON.stringify(source.year)})`);
-    }
-    if (![1, 2].includes(source.part)) err(where, 'metadata.source.part vaut 1 (الجزء الأول) ou 2 (الجزء الثاني)');
-  }
-  // The DZ exam corpus (docs/sources/moyen/exams) is deleted, so a term-exam citation cannot be checked: refuse it.
-  // The French brevet provenance is written with the bank's contract (plan stage 2G).
-  if (source?.type === 'term_exam') err(where, 'metadata.source.type « term_exam » cite le corpus algérien supprimé — aucune source vérifiable');
+  for (const e of examProvenanceErrors(data)) err(where, e);
   if (exam === undefined) return;
   if (!exam || typeof exam !== 'object') { err(where, 'metadata.exam doit être un objet'); return; }
   // La feuille d'examen (ExamSheet) ne dessine PAS `statement.visual` (CoordPlane des cartes classiques) :
   // un repère ou une figure d'énoncé passe par `statement.figure` (GeoFigure), sinon il disparaît.
   if (data.statement?.visual) err(where, 'statement.visual n\'est pas affiché sur une feuille d\'examen — utiliser statement.figure (GeoFigure)');
   if (!EXAM_KINDS.has(exam.kind)) err(where, `metadata.exam.kind « ${exam.kind} » inconnu (attendus : ${[...EXAM_KINDS].join(', ')})`);
-  if (typeof exam.heading !== 'string' || !exam.heading.trim()) err(where, 'metadata.exam.heading est obligatoire (« التمرين الأول »، « الوضعية الإدماجية »…)');
-  if (typeof exam.points !== 'string' || !EXAM_POINTS.test(exam.points)) err(where, `metadata.exam.points s'écrit comme sur le sujet : « 03 »، « 02,5 » (reçu ${JSON.stringify(exam.points)})`);
-  if (exam.kind === 'official' || exam.kind === 'excerpt') {
-    if (source?.type !== 'bem') err(where, `un exercice « ${exam.kind} » cite sa session : metadata.source.type = "bem"`);
-    else if (exam.badge !== `BEM ${source.year}`) err(where, `metadata.exam.badge doit valoir « BEM ${source.year} » (reçu ${JSON.stringify(exam.badge)})`);
-  }
-  if (exam.kind === 'adapted' && exam.badge != null) err(where, 'un exercice « adapted » ne porte pas de badge BEM : il ne vient pas d\'un sujet');
+  if (typeof exam.heading !== 'string' || !exam.heading.trim()) err(where, 'metadata.exam.heading est obligatoire (« Exercice 1 », « Automatismes »…)');
+  if (typeof exam.points !== 'string' || !EXAM_POINTS.test(exam.points)) err(where, `metadata.exam.points s'écrit sur deux chiffres : « 03 », « 02,5 » (reçu ${JSON.stringify(exam.points)})`);
 
   const formulas = data.statement?.formulas;
   if (formulas !== undefined && (!Array.isArray(formulas) || formulas.some((f) => typeof f !== 'string' || !f.trim()))) {
@@ -136,7 +123,7 @@ function validateExamPresentation(data, where) {
     else for (const [i, r] of table.rows.entries()) {
       if (!Array.isArray(r) || r.length !== table.head.length) err(where, `statement.table.rows[${i}] doit avoir ${table.head.length} cellules`);
     }
-    // Une grille de tableur (`sheet: true`) : ['', 'A', 'B', …] puis des numéros de ligne consécutifs — « الخلية C3 » doit se lire.
+    // Une grille de tableur (`sheet: true`) : ['', 'A', 'B', …] puis des numéros de ligne consécutifs — « la cellule C3 » doit se lire.
     if (table.sheet && Array.isArray(table.head) && Array.isArray(table.rows)) {
       const letters = table.head.slice(1).every((h, i) => h === String.fromCharCode(65 + i));
       if (table.head[0] !== '' || !letters) err(where, 'statement.table.sheet : head = [\'\', \'A\', \'B\', …]');
@@ -148,18 +135,27 @@ function validateExamPresentation(data, where) {
   }
 
   let lastStep = '00';
+  let lastSub = null;
   for (const q of data.questions ?? []) {
     const qw = `${where} · ${q.id}`;
     if (!EXAM_STEP.test(q.step ?? '')) err(qw, `step « ${q.step} » : une étape de sujet s'écrit 01 … 06`);
     else if (q.step < lastStep) err(qw, `step « ${q.step} » recule après « ${lastStep} »`);
-    else lastStep = q.step;
-    if (q.sub !== undefined && !EXAM_SUBS.has(q.sub)) err(qw, `sub « ${q.sub} » : (ا) (ب) (ج) (د) seulement`);
+    else {
+      if (q.step !== lastStep) lastSub = null;
+      lastStep = q.step;
+    }
+    // Les sous-questions d'une étape : « a) », « b) », « c) »… dans l'ordre (la feuille écrit la parenthèse).
+    if (q.sub !== undefined && !EXAM_SUBS.includes(q.sub)) err(qw, `sub « ${q.sub} » : une lettre minuscule ${EXAM_SUBS.join(', ')} (affichée « a) », « b) »…)`);
+    else if (q.sub !== undefined) {
+      if (lastSub !== null && q.sub < lastSub) err(qw, `sub « ${q.sub} » recule après « ${lastSub} » dans l'étape ${q.step}`);
+      lastSub = q.sub;
+    }
     if (q.lead !== undefined && (typeof q.lead !== 'string' || !q.lead.trim())) err(qw, 'lead est un texte non vide');
     // Le chrono de l'étape (propriétaire, 2026-10-06) : un temps en secondes, de 30 s à 1 h.
     if (q.timeSeconds !== undefined && !(Number.isInteger(q.timeSeconds) && q.timeSeconds >= 30 && q.timeSeconds <= 3600)) {
       err(qw, `timeSeconds doit être un entier de 30 à 3600 (reçu ${JSON.stringify(q.timeSeconds)})`);
     }
-    // « مراحل الحساب » : une zone de brouillon réglée au-dessus du champ (requise ou facultative).
+    // « Étapes du calcul » : une zone de brouillon réglée au-dessus du champ (requise ou facultative).
     if (q.work !== undefined && !['required', 'optional'].includes(q.work)) err(qw, `work « ${q.work} » : "required" ou "optional"`);
     if (q.work !== undefined && ['selfCheck', 'choice', 'multiChoice'].includes(q.answerType)) err(qw, 'work n\'a de sens que pour une réponse construite');
     const sol = q.solution;
@@ -399,6 +395,12 @@ function validateExercise(file, data, ctx) {
   if (!lessonKey.startsWith(`${gradeSegment}:`)) {
     err(where, `le dossier annonce le niveau « ${gradeSegment} » mais la leçon appartient à « ${lessonKey.split(':')[0]} »`);
   }
+
+  /* Les deux étiquettes du brevet (conseil du propriétaire, plan §7bis) : obligatoires en 3e. */
+  for (const e of brevetTagErrors(data, gradeSegment)) err(where, e);
+
+  /* Typographie française et écriture mathématique de tout texte lu (FRENCH_LANGUAGE_CONTRACT.md §4, §5, §7). */
+  for (const e of exerciseTypographyErrors(data)) err(where, `${e.path} : typographie « ${e.kind} » (« ${e.at} »)`);
 
   /* Mastery V2 — gabarit et provenance (exercices générés, §20 du plan) */
   if (data.templateId !== undefined) {
@@ -659,7 +661,7 @@ function main() {
     }
   }
 
-  /* Feuille d'examen BEM (content/practice/exam-style.json) : la bascule d'une
+  /* Feuille d'examen (sujet de brevet) (content/practice/exam-style.json) : la bascule d'une
      leçon vers la page des niveaux « examen ». Une leçon listée est activée et
      TOUS ses exercices portent `metadata.exam` (sinon la page des niveaux
      examen ouvrirait un exercice classique) ; en strict, 10 par niveau, la

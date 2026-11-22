@@ -8,9 +8,10 @@
 > (`active.json` and `exam-style.json` are `[]`, `policy.json` has no lesson); the in-lesson exercises of the deleted
 > module lessons are gone. Since 2026-11-22 the practice screens and the exam sheet are French and read left to right
 > (`apps/web/src/i18n/locales/fr/student.json › practice.*`, `teacher.json`; `FRENCH_LANGUAGE_CONTRACT.md`): the sheet
-> is drawn as a brevet paper (« Diplôme national du brevet »), but its DATA format is still the Algerian banks' (`bem`
-> sources, « BEM <year> » badges, Arabic sub-item letters in the validator — §« The exam sheet »); the French bank
-> format is plan §5 step 2G. A practice difficulty step is a « palier » (« Palier 1 »…« Palier 5 »).
+> is drawn as a brevet paper (« Diplôme national du brevet »). Since 2026-11-23 the VALIDATOR is French
+> (`scripts/validate-lib.mjs`): sub-items « a) », « b) »…, the brevet provenance (`brevet` sources, « Brevet <year> »
+> badges), the two brevet tags `brevet` / `calculator` (§« The brevet tags »), French typography of every visible text
+> (§« French typography of the bank »). A practice difficulty step is a « palier » (« Palier 1 »…« Palier 5 »).
 
 ---
 
@@ -247,6 +248,56 @@ write, profile, class × LP, replay) issues the same number of queries
 (`tests/Feature/Scale/MasteryScaleTest.php`). `SMARTER_PRACTICE_ROOT` lets both
 scripts read a synthetic bank.
 
+## The brevet tags — `brevet` and `calculator` (owner's council, 2026-11-22, plan §7bis)
+
+Two fields at the EXERCISE level, beside `templateId`. The five paliers (`level` 1–5) stay: they are the progression;
+the tags say what part of the brevet the exercise trains and whether a calculator is allowed. From the 2027 session
+the brevet's mathematics paper is part 1, automatisms WITHOUT calculator (6 points, 20 min), and part 2, problems
+(14 points) (plan §5, 2A).
+
+| Field | Values | Meaning |
+|---|---|---|
+| `brevet` | `1` · `2` · `null` | `1`: an automatism of part 1 (no calculator); `2`: a problem of part 2; `null`: an exercise of the bank that is neither (a step of the lesson's progression) |
+| `calculator` | `true` · `false` | whether the student may use a calculator on it |
+
+Rules (`scripts/validate-lib.mjs › brevetTagErrors`, run by `validate-exercises.mjs`, tests
+`scripts/validate-lib.test.mjs`, `scripts/validate-exercises.french.test.mjs`):
+- **REQUIRED on every exercise of a 3e bank** (the grade is the bank's folder, `content/practice/3e/…`); optional in
+  6e–4e, where a present value is checked the same way;
+- `brevet` ∈ {1, 2, null}; `calculator` is a boolean;
+- `brevet: 1` ⇒ `calculator: false`;
+- a brevet excerpt (`metadata.source.type: "brevet"`) trains the part it was taken from: `brevet` = `source.part`.
+
+Who reads them: nobody yet but the validator. The readers of the bank ignore unknown fields (checked read-only on
+2026-11-23: `packages/core/practice/answerEvaluator.js` and `content.test.js` read question fields and have no list of
+allowed keys; `ExerciseRepository.php` decodes the whole file;
+`ContentRegistryImporter.php` reads named keys). `content/practice/_schema/exercise.schema.json` (not enforced, its
+`additionalProperties: false`) does not list them yet `[NOT CHECKED 2026-11-23: the schema belongs to content/]`. A
+filter by part or by calculator in the practice space or the sittings is `Planned`.
+
+## French typography of the bank (2026-11-23)
+
+`validate-exercises.mjs` refuses an exercise whose VISIBLE text breaks French writing (`FRENCH_LANGUAGE_CONTRACT.md`
+§4, §5, §7) — `scripts/validate-lib.mjs › exerciseTypographyErrors`. Visible = `metadata.title`, `tags`,
+`exam.heading`, `statement.content`, `formulas`, the table's cells, each question's `lead`, `statement`, `prompt`,
+`answerFormat`, choices, hints, feedback, `solution.lines` and `solution.result`; the answer key is data and is not
+read. The error names the path and the kind:
+
+| Kind | In prose (formulas `$…$` set aside) | Write instead |
+|---|---|---|
+| `espace` | « Calcule: », « Calcule : » with a plain space | U+00A0 before « : », U+202F before « ; ! ? » |
+| `guillemets`, `guillemets-anglais` | «oui», "oui", “oui” | « oui » with no-break spaces |
+| `apostrophe` | l'élève | l’élève |
+| `ordinal`, `double` | 3ème, 1ère, « !! » | 3e, 1re |
+| `point-décimal` | 3.5 | 3,5 |
+| `unité`, `monnaie`, `devise` | 35€, 35 € (plain space), 20 %, €35, EUR, 450 DA, dinars | 35 €, 20 % with a no-break space |
+| `arabe`, `bidi` | an Arabic letter or comma, a bidi control | — |
+| `point-virgule` | PGCD(12, 18) (prose or formula) | PGCD(12 ; 18) |
+
+Inside every formula: `produit` (`\cdot`, `*` → `\times`), `virgule` (`2,5` → `2{,}5`), `point-décimal` (`2.5`),
+`inégalité` (`\le`, `\geq` → `\leqslant`, `\geqslant`).
+Not checked: the narrow no-break space of thousands, a count and its noun on one line, the register.
+
 ## Answer-key integrity (2026-09-24 answer audit) — permanent checks
 
 An answer key is content, and content can be wrong. Three gates, none of which
@@ -351,10 +402,10 @@ caches `active.json` and the exercise index (`practice.cache_ttl`, 1 h): the dep
 
 **Status.** Since 2026-11-22 the sheet is drawn as a French brevet paper, in French and left to right
 (`features/practice/exam/`, strings `student.json › practice.exam.*`): « Diplôme national du brevet », « Brevet <year> »,
-« Sur le modèle du brevet <year> ». Its DATA format is still the one of the Algerian banks — `metadata.source.type:
-"bem"`, `exam.badge` « BEM <year> », `exam.points` « 02,5 », `exam.heading` — and the sheet READS it and says it in
-French (`examSheet.js › examBadge`, `examSession`); the French data format is the bank's contract (plan §5, 2G), not
-written yet. What follows is the engine as it runs.
+« Sur le modèle du brevet <year> ». Since 2026-11-23 the validator wants the FRENCH data format below (`brevet`
+sources, « Brevet <year> » badges, sub-items « a) »…); the sheet reads only the badge's YEAR, `kind`,
+`source.year` and `source.part` (`examSheet.js › examBadge`, `examSession`, `examPart`), so it needed no change.
+`exam.points` keeps its two-digit data form « 02,5 » (shown « 2,5 points »). What follows is the engine as it runs.
 
 **Switching a lesson on.** A lesson's levels page is the exam page when the lesson is listed in
 `content/practice/exam-style.json` (read by `exam/examSheet.js` → `isExamLesson`). It is the
@@ -375,20 +426,21 @@ The JSON schema file is not enforced; `scripts/validate-exercises.mjs` (`validat
 | Field | Values | Meaning |
 |---|---|---|
 | `metadata.exam.kind` | `official`, `excerpt`, `modelled`, `adapted` | `official`: an annal exercise, word for word. `excerpt`: the same, with steps outside the unit removed. `modelled`: the same wording with new numbers (shown « Sur le modèle du brevet <year> »). `adapted`: an existing bank exercise rewritten in the exam register. |
-| `metadata.exam.badge` | `BEM <year>` (official, excerpt, modelled) · `null` (adapted) | The validator still wants this Algerian text; only its YEAR is read, and the sheet writes « Brevet <year> » / « Sur le modèle du brevet <year> » (`practice.exam.badgeOfficial`, `badgeModelled`). |
-| `metadata.exam.heading` | text (« Exercice 1 »…) | Rendered in the grey band, « <heading> » on one side and « (<points> points) » on the other. The validator's error message still quotes Algerian headings `[NOT CHECKED 2026-11-22: which headings the French banks will use]`. |
-| `metadata.exam.points` | « 03 », « 02,5 », « 08 » | Written in the data as on the Algerian paper; shown « 2,5 points » (`examPoints`). |
-| `metadata.source` | `{type:"bem", year, part:1\|2, exercise}` | For official / excerpt exercises (the data name is kept); `part 2` is shown « Partie 2 ». |
-| | `{type:"platform_addition", reason:"bem_modelled", modelledOn}` | For modelled exercises. |
-| | `{type:"term_exam", …}` | REFUSED since 2026-11-22 (the Algerian term-exam corpus is deleted). |
+| `metadata.exam.badge` | 3e: `Brevet <year>` (official, excerpt) · `Sur le modèle du brevet <year>` (modelled) — 6e–4e: `Sur le modèle d’un contrôle` (modelled) — `null` (adapted) | The sheet reads only the YEAR and writes « Brevet <year> » / « Sur le modèle du brevet <year> »; a badge with no year is a class test (`practice.exam.badgeTerm`). |
+| `metadata.exam.heading` | text (« Exercice 1 », « Automatismes »…) | Rendered in the grey band, « <heading> » on one side and « (<points> points) » on the other. Checked: non-empty, French typography. |
+| `metadata.exam.points` | « 03 », « 02,5 », « 08 » | Two digits in the data; shown « 2,5 points » (`examPoints`). |
+| `metadata.source` | `{type:"brevet", year, part:1\|2, exercise}` | 3e only, for official / excerpt exercises: `year` a session of `BREVET_YEARS` (2017–2027 `[À VÉRIFIER DANS LE PROGRAMME OFFICIEL]`), `exercise` ≥ 1; `part 2` is shown « Partie 2 »; the exercise's `brevet` tag equals `part`. |
+| | `{type:"platform_addition", reason:"brevet_modelled", modelledOn}` | 3e modelled exercises (`modelledOn` free text, e.g. « Brevet 2023 II-1 »). |
+| | `{type:"platform_addition", reason:"control_modelled", modelledOn:"<grade>"}` | 6e–4e modelled exercises — no official paper exists below 3e; `modelledOn` is the exercise's own grade. |
+| | `{type:"bem"}`, `{type:"term_exam"}` | REFUSED: the Algerian exam and the deleted Algerian term-exam corpus. |
 | | the original source + `adaptedFrom` | For adapted exercises. |
 | `statement.formulas[]` | LaTeX strings | Centred on one line under the setup sentence. |
 | `statement.table` | `{head, rows}` | Same shape as a problem's table (`ProblemTable`). |
 | | | **Every screen that shows a statement passes `formulas` and `table`** to `features/practice/ExerciseStatement.jsx`, which renders them like the exam sheet (since 2026-11-09: the practice session, its review, the teacher's player, the daily challenge and its review, the games space's refuel and the year compass had shown `content` alone). A statement whose data lives in `formulas` is unanswerable without them. |
 | `questions[].step` | « 01 »…« 06 » | Required, non-decreasing; shown « 1 », « 2 »… |
-| `questions[].sub` | a sub-item letter | Optional; shown « a) », « b) » (`ExamSheet.jsx` writes `sub` followed by « ) »). **The validator still accepts only the four Arabic letters alif, ba, jim, dal** (`validate-exercises.mjs › EXAM_SUBS`) — not converted. |
+| `questions[].sub` | `a` … `h` | Optional; shown « a) », « b) » (`ExamSheet.jsx` writes `sub` followed by « ) »). Lower-case letters only (`validate-lib.mjs › EXAM_SUBS`), never going back inside a step (`b` then `a` is refused; a new `step` starts again at `a`). |
 | `questions[].lead` | text | Optional. The step text that precedes its sub-items. |
-| `questions[].solution` | `{lines[], result?}` | Required: the model answer in the solutions booklet's style. `result` is LaTeX shown in a box `[NOT CHECKED 2026-11-22: the former plain-text fallback for a result holding Arabic]`. |
+| `questions[].solution` | `{lines[], result?}` | Required: the model answer in the solutions booklet's style. `result` is LaTeX shown in a box (checked as a formula: `\times`, `{,}`, « ; » in a pair); a result written in words is shown as text (`examSheet.js › resultIsWords`). |
 | `questions[].counted: false` | boolean | The step is judged but is never mastery evidence. Used for a step that belongs to another lesson, e.g. an irreducible fraction in a PGCD exercise. Such a step still carries one of the lesson's own learning points as its label (validator rule). |
 
 **`answerType: "selfCheck"`** is for « Montrer que », « Justifier » steps: proofs that cannot be
@@ -400,10 +452,13 @@ for mastery (`countsForMastery`, in both JS and PHP).
 | 1 | Writes the proof in a text box, clicks « Enregistrer ma réponse » | `{text}` | `abandoned`, `normalized: "self:pending"` | Records the attempt. The text is locked from now on. |
 | 2 | The model answer opens under the locked text; the student answers « Oui, elle correspond » / « Non, elle ne correspond pas » | `{text, selfMark}` with the same text | `correct` / `incorrect` | `PracticeEvidenceRecorder::recordSelfMark` accepts one mark, refuses (422) any different text, and replays the stored verdict afterwards. Text is capped at 5000 characters. |
 
-The provenance rules (`source`, `kind`, `badge`) live in `scripts/validate-exercises.mjs › validateExamPresentation`:
-`official` / `excerpt` cite `{type:"bem", year, part}` with the badge « BEM <year> » (years of the Algerian sessions,
-`BEM_YEARS`); `adapted` has no badge; `term_exam` is REFUSED. The French brevet provenance is written with the bank's
-contract (plan §5, 2G).
+The provenance rules (`source`, `kind`, `badge`) live in `scripts/validate-lib.mjs › examProvenanceErrors` (the
+French port of the Algerian `examProvenance.mjs`: the BEM for 4AM, the term exam for 1AM–3AM), run by
+`validate-exercises.mjs › validateExamPresentation`: in **3e**, `official` / `excerpt` cite `{type:"brevet", year,
+part, exercise}` with the badge « Brevet <year> » and `modelled` carries « Sur le modèle du brevet <year> »; in
+**6e–4e** an exercise is never `official` nor `excerpt` and never cites the brevet, and `modelled` carries « Sur le
+modèle d’un contrôle » with `platform_addition / control_modelled`; `adapted` has no badge; `bem` and `term_exam` are
+REFUSED. The grade is read in the exercise id (`ex-<grade>-…`). Tests: `scripts/validate-lib.test.mjs`.
 
 ### Screen (`features/practice/exam/`)
 

@@ -1,10 +1,10 @@
-// Le validateur du « مختبر التفكير » attrape-t-il vraiment ce qu'il prétend attraper ?
+// Le validateur du « labo des énigmes » attrape-t-il vraiment ce qu'il prétend attraper ?
 // Chaque cas part d'un défi témoin valide (#318, en français, scripts/__fixtures__/thinking-lab/ — la banque livrée est
 // vide) et casse UNE règle.
 import { describe, it, expect } from 'vitest';
 import { fileURLToPath } from 'node:url';
 import { readChallenges } from './build-thinking-lab-index.mjs';
-import { validateThinkingLab, forbiddenIn, leaksAnswer, bandOf } from './validate-thinking-lab.mjs';
+import { validateThinkingLab, forbiddenIn, leaksAnswer, bandOf, mathCandidates } from './validate-thinking-lab.mjs';
 
 const FIXTURES = fileURLToPath(new URL('./__fixtures__/thinking-lab/challenges', import.meta.url));
 const base = readChallenges(FIXTURES).find((e) => e.file === '0318-four-arcs-area.json');
@@ -36,8 +36,13 @@ describe('validate-thinking-lab', () => {
 
   it('refuse une clé qui divulgue la réponse (valeur équivalente, autre écriture)', () => {
     const c = clone();
-    // Latin letters count as math for the detector: in French prose the formula stands after a colon.
     c.keys[2].text = 'Réponse : x²(1 + π/3 − √3)';
+    expect(run(c).join('\n')).toMatch(/keys\[2\].*divulgue/);
+  });
+
+  it('refuse une clé qui divulgue la réponse au milieu d’une phrase française, sans deux-points (plan §8bis)', () => {
+    const c = clone();
+    c.keys[2].text = 'Tu devrais trouver x²(1 + π/3 − √3) pour cette aire.';
     expect(run(c).join('\n')).toMatch(/keys\[2\].*divulgue/);
   });
 
@@ -50,7 +55,7 @@ describe('validate-thinking-lab', () => {
     expect(errors).toMatch(/summit/);
   });
 
-  it('refuse une longue relecture sans « اشرح لنفسك »', () => {
+  it('refuse une longue relecture sans pause « Explique-toi »', () => {
     const c = clone();
     c.replay.forEach((s) => delete s.ask);
     expect(run(c).join('\n')).toMatch(/ask/);
@@ -89,18 +94,45 @@ describe('validate-thinking-lab', () => {
 });
 
 describe('aides', () => {
-  it('mots interdits : mots entiers, l\'article seul comme préfixe', () => {
-    expect(forbiddenIn('شجرة كبيرة')).toBeNull();
-    expect(forbiddenIn('برهان المبرهنة')).toBeNull();
-    expect(forbiddenIn('عيد الميلاد المشترك')).toBeNull();
-    expect(forbiddenIn('رمي النرد')).toBe('نرد');
-    expect(forbiddenIn('قرض بفائدة')).toBe('قرض بفائدة');
+  it('mots interdits : mots entiers, élisions et majuscules comprises', () => {
+    // Des mots qui en CONTIENNENT un interdit, ou qui lui ressemblent, passent.
+    expect(forbiddenIn('Il y a vingt élèves.')).toBeNull();
+    expect(forbiddenIn('Le train part de Paris à 8 h.')).toBeNull();
+    expect(forbiddenIn('Une comparaison de deux porcelaines.')).toBeNull();
+    expect(forbiddenIn('Le noeud du problème.')).toBeNull();
+    // Élision, majuscule, pluriel.
+    expect(forbiddenIn('Un litre d’alcool.')).toBe('alcool');
+    expect(forbiddenIn("Le prix de l'Alcool.")).toBe('alcool');
+    expect(forbiddenIn('Les cadeaux de Noël.')).toBe('noël');
+    expect(forbiddenIn('Il veut parier 5 €.')).toBe('parier');
+    expect(forbiddenIn('Les paris sportifs du week-end.')).toBe('paris sportifs');
+    expect(forbiddenIn('On tire une carte d’un jeu de 32 cartes.')).toBe('jeu de 32 cartes');
     expect(forbiddenIn('🐷')).toBe('🐷');
+    expect(forbiddenIn('🃏')).toBe('🃏');
   });
 
-  it('fuite par valeur pour un nombre', () => {
-    expect(leaksAnswer('اضرب 3/5 في 2/4', { check: 'rational', value: '3/10' })).toBeNull();
-    expect(leaksAnswer('النتيجة 0,3', { check: 'rational', value: '3/10' })).toBe('0,3');
+  it('un dé, une pièce, une urne, une roue sont des EXPÉRIENCES permises (plan §7bis)', () => {
+    expect(forbiddenIn('On lance un dé équilibré à six faces.')).toBeNull();
+    expect(forbiddenIn('On lance deux fois une pièce de monnaie.')).toBeNull();
+    expect(forbiddenIn('Une urne contient 3 boules rouges.')).toBeNull();
+    expect(forbiddenIn('On fait tourner une roue partagée en 8 secteurs.')).toBeNull();
+    expect(forbiddenIn('🎲')).toBeNull();
+    // Un taux d'intérêt est un contexte de pourcentages en France.
+    expect(forbiddenIn('Un prêt à un taux d’intérêt de 2 %.')).toBeNull();
+  });
+
+  it('fuite par valeur pour un nombre, dans une phrase française', () => {
+    expect(leaksAnswer('Multiplie 3/5 par 2/4.', { check: 'rational', value: '3/10' })).toBeNull();
+    expect(leaksAnswer('Le résultat est 0,3.', { check: 'rational', value: '3/10' })).toBe('0,3');
+    // « a » est ici le verbe : la valeur qui le suit est quand même lue.
+    expect(leaksAnswer('Chaque part a 0,3 de l’aire.', { check: 'rational', value: '3/10' })).toBe('0,3');
+  });
+
+  it('les mots de prose ne sont pas des formules ; les variables isolées et les fonctions le sont', () => {
+    const c = mathCandidates('Réponse : x²(1 + π/3 − √3)');
+    expect(c).toContain('x²(1 + π/3 − √3)');
+    expect(c.some((x) => /Réponse|ponse/.test(x))).toBe(false);
+    expect(mathCandidates('Écris sqrt(2) puis compare.')).toContain('sqrt(2)');
   });
 
   it('tranches cachées', () => {

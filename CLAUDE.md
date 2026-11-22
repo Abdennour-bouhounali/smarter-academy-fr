@@ -38,9 +38,9 @@ rebuild: read `docs/FRANCE_REBUILD_PLAN.md` FIRST — it is the programme, the d
   card « Comptes créés… » on the dashboard; `hooks/useManagedAccounts.js` hides the roster import and the credential
   buttons of the teacher's and the school's spaces while closed, and fails closed).
 - **NOT done yet — do not be surprised**: nothing has been SEEN in a browser and no walk has been run since the
-  translation; the API has never run on MySQL; root `scripts/` validators (`validate-exercises.mjs`,
-  `validate-thinking-lab.mjs`, `generate-compass-index.mjs`) still carry Algerian rules and wait for the first
-  French bank; a few comments in `apps/api` and `packages/core` still cite Arabic.
+  translation; the API has never run on MySQL; the French rules of the validators (brevet provenance, the
+  `brevet` / `calculator` tags, French typography — `scripts/validate-lib.mjs`) have not met a real French bank yet;
+  the math lab's walks still open the hidden lycée side; a few comments in `apps/api` and `packages/core` still cite Arabic.
 - **The two products are 100% separated** (owner): two repositories, two databases, two deployments, no shared runtime,
   no shared package, no country switch, no locale parameter. This repository holds ONE language.
 
@@ -123,8 +123,9 @@ A v2 lesson is **content plus, at most once per unit, one world mechanic**:
   no lesson tag), the class session (`features/classSession/`), the practice engine and the exam sheet.
 - Contracts: `LESSON_V2.md`, `GAME_WORLD.md`, `LAUNCH_KIT.md`, `LESSON_LAB.md`, `CLASS_SESSION.md`,
   `EXERCISE_CONTRACT.md`, `LEARNING_NET.md` — imported from the Algerian platform and corrected for this tree.
-- `.claude/skills/lesson-v2/` is still the ALGERIAN skill (its pipeline, briefs and ledger of defects are valid; its
-  examples, its language rules and its bank format are not). It is adapted before the first French lesson (plan §8).
+- `.claude/skills/lesson-v2/` is the FRENCH skill (2026-11-23): its first stage is « Port before you build » — what
+  the Algerian platform already has for the same learning points is ported and adapted, only the rest is built. Its
+  table of trusted screens is empty: the first French lesson walks every screen.
 
 ## Checks
 
