@@ -1,0 +1,2063 @@
+{
+  "_comment": [
+    "DRAFT (2026-11-22) — the lessons of 3e, for review. Same shape as packages/core/curriculum/fr/lessons_3e_2026_2027.json.",
+    "A lesson = one sitting of about 45 minutes on a game world; 2 to 5 learning points (`pointsToLearn`), ids `3e_<code>_P<n>` in that order — APPEND-ONLY from now on.",
+    "A synthesis (`kind: \"synthesis\"`) declares no programme item and one integrating point that adds no capability beyond its unit (DZ practice, e.g. 3AM unit 1).",
+    "`prerequisiteLessonCodes`: 3e lessons only — the home lessons of the net links into the lesson’s items that come earlier, plus the lessons named by its point prerequisites."
+  ],
+  "grade": "3e",
+  "schoolYear": "2026/2027",
+  "source": "docs/curriculum/draft-3e/official_programme_college.json",
+  "verified": false,
+  "lessons": [
+    {
+      "code": "decomposer-en-facteurs-premiers",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "nombres-premiers-et-fractions",
+      "order": 0,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Décomposer un nombre en facteurs premiers",
+      "description": "L’élève casse un nombre en morceaux qu’on ne peut plus casser, puis confie les grands nombres à un outil.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Décomposer un nombre entier en produit de facteurs premiers en essayant les divisions par 2, 3, 5, 7… dans l’ordre",
+        "Écrire une décomposition en facteurs premiers avec des puissances, par exemple 60 = 2² × 3 × 5",
+        "Décomposer un grand nombre à l’aide d’un tableur, d’une calculatrice ou d’un programme qui teste les diviseurs"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_decomposer-en-facteurs-premiers_P1"
+        ],
+        "P3": [
+          "3e_decomposer-en-facteurs-premiers_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r05"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "fraction-irreductible",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "nombres-premiers-et-fractions",
+      "order": 1,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Rendre une fraction irréductible",
+      "description": "L’élève découvre quand une fraction ne peut plus être simplifiée et comment y arriver en une fois.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "decomposer-en-facteurs-premiers"
+      ],
+      "pointsToLearn": [
+        "Reconnaître qu’une fraction est irréductible quand son numérateur et son dénominateur n’ont aucun facteur premier commun",
+        "Rendre une fraction irréductible en divisant numérateur et dénominateur par leurs facteurs premiers communs",
+        "Donner le résultat d’un calcul de fractions sous forme irréductible"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_decomposer-en-facteurs-premiers_P1"
+        ],
+        "P2": [
+          "3e_fraction-irreductible_P1",
+          "3e_decomposer-en-facteurs-premiers_P2"
+        ],
+        "P3": [
+          "3e_fraction-irreductible_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r06"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "multiples-et-diviseurs-communs",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "nombres-premiers-et-fractions",
+      "order": 2,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Engrenages et rendez-vous : multiples et diviseurs communs",
+      "description": "L’élève découvre quand deux roues ou deux signaux se retrouvent dans leur position de départ.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "decomposer-en-facteurs-premiers"
+      ],
+      "pointsToLearn": [
+        "Reconnaître qu’un problème de répétitions simultanées (engrenages, signaux lumineux) revient à chercher un multiple commun",
+        "Trouver le plus petit multiple commun non nul de deux entiers à partir de leurs décompositions en facteurs premiers",
+        "Reconnaître qu’un problème de partage en lots identiques revient à chercher un diviseur commun, et trouver le plus grand à partir des décompositions"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_multiples-et-diviseurs-communs_P1",
+          "3e_decomposer-en-facteurs-premiers_P2"
+        ],
+        "P3": [
+          "3e_decomposer-en-facteurs-premiers_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r07"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "calculer-avec-des-fractions",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "nombres-premiers-et-fractions",
+      "order": 3,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Résoudre des problèmes avec des fractions",
+      "description": "L’élève traduit des énoncés en calculs de fractions et choisit l’opération juste.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "fraction-irreductible"
+      ],
+      "pointsToLearn": [
+        "Choisir l’opération sur les fractions (somme, différence, produit, quotient) qui traduit un énoncé",
+        "Calculer une fraction d’une quantité puis une fraction de ce qui reste, en enchaînant les calculs",
+        "Mener un calcul avec des nombres relatifs et des fractions en respectant les priorités, et donner le résultat sous forme irréductible"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_calculer-avec-des-fractions_P1"
+        ],
+        "P3": [
+          "3e_fraction-irreductible_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r01"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-nombres-premiers-et-fractions",
+      "sourceTopicId": null,
+      "chapterId": "nombres_calculs",
+      "unitId": "nombres-premiers-et-fractions",
+      "order": 4,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Nombres premiers et fractions",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "decomposer-en-facteurs-premiers",
+        "fraction-irreductible",
+        "multiples-et-diviseurs-communs",
+        "calculer-avec-des-fractions"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Nombres premiers et fractions »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_decomposer-en-facteurs-premiers_P3",
+          "3e_fraction-irreductible_P3",
+          "3e_multiples-et-diviseurs-communs_P3",
+          "3e_calculer-avec-des-fractions_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "oppose-d-une-expression",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "developper-et-factoriser",
+      "order": 5,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "L’opposé d’une expression et les parenthèses",
+      "description": "L’élève découvre ce que fait un signe moins devant une parenthèse.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Écrire l’opposé d’une expression littérale en changeant le signe de chacun de ses termes",
+        "Supprimer des parenthèses précédées d’un signe moins, puis réduire l’expression obtenue",
+        "Développer et réduire un produit k(a + b) quand le facteur k est négatif"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_oppose-d-une-expression_P1"
+        ],
+        "P3": [
+          "3e_oppose-d-une-expression_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r09"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "double-distributivite",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "developper-et-factoriser",
+      "order": 6,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Développer un produit de deux sommes",
+      "description": "L’élève découvre comment chaque terme d’une parenthèse rencontre chaque terme de l’autre.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "oppose-d-une-expression"
+      ],
+      "pointsToLearn": [
+        "Développer un produit (a + b)(c + d) en multipliant chaque terme du premier facteur par chaque terme du second",
+        "Démontrer l’égalité (a + b)(c + d) = ac + ad + bc + bd en appliquant deux fois la distributivité simple",
+        "Développer et réduire une expression qui mêle produits de sommes, signes moins et termes isolés",
+        "Contrôler un développement en remplaçant la lettre par une valeur"
+      ],
+      "pointPrerequisites": {
+        "P3": [
+          "3e_double-distributivite_P1",
+          "3e_oppose-d-une-expression_P2"
+        ],
+        "P4": [
+          "3e_double-distributivite_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r10",
+        "3e.m1.r11"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "difference-de-deux-carres",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "developper-et-factoriser",
+      "order": 7,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Factoriser une différence de deux carrés",
+      "description": "L’élève remarque un produit dont le développement perd ses termes du milieu, puis l’utilise à l’envers.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "double-distributivite"
+      ],
+      "pointsToLearn": [
+        "Développer un produit (a + b)(a − b) et reconnaître le résultat a² − b²",
+        "Reconnaître une expression de la forme a² − b² et identifier a et b",
+        "Factoriser une expression de la forme a² − b², par exemple x² − 64 ou 4x² − 49"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_double-distributivite_P1"
+        ],
+        "P3": [
+          "3e_difference-de-deux-carres_P1",
+          "3e_difference-de-deux-carres_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r12"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "prouver-avec-le-calcul-litteral",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "developper-et-factoriser",
+      "order": 8,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Prouver avec des lettres : programmes de calcul",
+      "description": "L’élève passe d’essais sur quelques nombres à une preuve qui vaut pour tous les nombres.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "double-distributivite"
+      ],
+      "pointsToLearn": [
+        "Traduire un programme de calcul par une expression littérale",
+        "Prouver que deux programmes de calcul donnent toujours le même résultat en développant et en réduisant",
+        "Réfuter une affirmation générale par un contre-exemple numérique",
+        "Prouver une propriété générale des nombres entiers, par exemple sur la somme d’entiers consécutifs, en les écrivant avec une lettre"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_prouver-avec-le-calcul-litteral_P1",
+          "3e_double-distributivite_P3"
+        ],
+        "P4": [
+          "3e_prouver-avec-le-calcul-litteral_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r08"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-developper-et-factoriser",
+      "sourceTopicId": null,
+      "chapterId": "nombres_calculs",
+      "unitId": "developper-et-factoriser",
+      "order": 9,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Développer et factoriser",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "oppose-d-une-expression",
+        "double-distributivite",
+        "difference-de-deux-carres",
+        "prouver-avec-le-calcul-litteral"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Développer et factoriser »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_oppose-d-une-expression_P3",
+          "3e_double-distributivite_P4",
+          "3e_difference-de-deux-carres_P3",
+          "3e_prouver-avec-le-calcul-litteral_P4"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "triangles-semblables",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "thales-et-triangles-semblables",
+      "order": 10,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Reconnaître des triangles semblables",
+      "description": "L’élève découvre que deux triangles de même forme ont des côtés proportionnels et des angles égaux.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Reconnaître deux triangles semblables par la proportionnalité des longueurs de leurs côtés",
+        "Reconnaître deux triangles semblables par l’égalité de leurs angles",
+        "Associer les sommets et les côtés homologues de deux triangles semblables",
+        "Calculer une longueur inconnue à l’aide du rapport entre deux triangles semblables"
+      ],
+      "pointPrerequisites": {
+        "P3": [
+          "3e_triangles-semblables_P1",
+          "3e_triangles-semblables_P2"
+        ],
+        "P4": [
+          "3e_triangles-semblables_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r04",
+        "3e.m2.r09"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "thales-configuration-papillon",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "thales-et-triangles-semblables",
+      "order": 11,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Thalès dans le papillon",
+      "description": "L’élève découvre que l’égalité des rapports de Thalès tient aussi quand les triangles sont tête-bêche.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Reconnaître une configuration de Thalès en papillon et écrire l’égalité des trois rapports",
+        "Choisir l’ordre des longueurs dans les rapports selon la configuration, emboîtée ou en papillon",
+        "Calculer une longueur dans une configuration de Thalès en papillon"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_thales-configuration-papillon_P1"
+        ],
+        "P3": [
+          "3e_thales-configuration-papillon_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r05",
+        "3e.m2.r09"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "reciproque-de-thales",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "thales-et-triangles-semblables",
+      "order": 12,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Prouver que deux droites sont parallèles",
+      "description": "L’élève découvre quand l’égalité de deux rapports suffit à garantir que deux droites sont parallèles.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "thales-configuration-papillon"
+      ],
+      "pointsToLearn": [
+        "Vérifier que les points sont alignés dans le même ordre sur les deux droites sécantes",
+        "Comparer deux rapports de longueurs pour démontrer que deux droites sont parallèles",
+        "Rédiger une démonstration de parallélisme qui cite la réciproque du théorème de Thalès"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_reciproque-de-thales_P1",
+          "3e_thales-configuration-papillon_P1"
+        ],
+        "P3": [
+          "3e_reciproque-de-thales_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r05"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-thales-et-triangles-semblables",
+      "sourceTopicId": null,
+      "chapterId": "espace_geometrie",
+      "unitId": "thales-et-triangles-semblables",
+      "order": 13,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Thalès et triangles semblables",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "triangles-semblables",
+        "thales-configuration-papillon",
+        "reciproque-de-thales"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Thalès et triangles semblables »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_triangles-semblables_P4",
+          "3e_thales-configuration-papillon_P3",
+          "3e_reciproque-de-thales_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "mettre-un-probleme-en-equation",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "resoudre-des-equations",
+      "order": 14,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Mettre un problème en équation",
+      "description": "L’élève choisit son inconnue, écrit l’équation et vérifie que la réponse a du sens.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "oppose-d-une-expression",
+        "double-distributivite"
+      ],
+      "pointsToLearn": [
+        "Choisir une inconnue et traduire un énoncé par une équation",
+        "Résoudre une équation du premier degré qui a l’inconnue dans les deux membres, y compris avec des parenthèses à développer",
+        "Vérifier une solution et répondre à la question posée dans le contexte du problème"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_oppose-d-une-expression_P2"
+        ],
+        "P3": [
+          "3e_mettre-un-probleme-en-equation_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r13"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "equation-produit-nul",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "resoudre-des-equations",
+      "order": 15,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Résoudre une équation produit nul",
+      "description": "L’élève découvre quand un produit peut valoir zéro.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "double-distributivite",
+        "difference-de-deux-carres",
+        "mettre-un-probleme-en-equation"
+      ],
+      "pointsToLearn": [
+        "Utiliser le fait qu’un produit est nul si et seulement si l’un au moins de ses facteurs est nul",
+        "Résoudre une équation de la forme (ax + b)(cx + d) = 0",
+        "Se ramener à une équation produit nul en factorisant, par un facteur commun ou par a² − b², avant de résoudre"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_equation-produit-nul_P1",
+          "3e_mettre-un-probleme-en-equation_P2"
+        ],
+        "P3": [
+          "3e_equation-produit-nul_P2",
+          "3e_difference-de-deux-carres_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r14"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "equation-x-carre-egal-a",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "resoudre-des-equations",
+      "order": 16,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Résoudre l’équation x² = a",
+      "description": "L’élève découvre combien de nombres ont un carré donné.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "equation-produit-nul"
+      ],
+      "pointsToLearn": [
+        "Déterminer le nombre de solutions de l’équation x² = a selon le signe de a",
+        "Résoudre l’équation x² = a pour a positif en donnant les deux solutions √a et −√a",
+        "Résoudre une équation qui se ramène à la forme x² = a"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_equation-x-carre-egal-a_P1"
+        ],
+        "P3": [
+          "3e_equation-x-carre-egal-a_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r15"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-resoudre-des-equations",
+      "sourceTopicId": null,
+      "chapterId": "nombres_calculs",
+      "unitId": "resoudre-des-equations",
+      "order": 17,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Résoudre des équations",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "mettre-un-probleme-en-equation",
+        "equation-produit-nul",
+        "equation-x-carre-egal-a"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Résoudre des équations »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_mettre-un-probleme-en-equation_P3",
+          "3e_equation-produit-nul_P3",
+          "3e_equation-x-carre-egal-a_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "notion-de-fonction",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "la-notion-de-fonction",
+      "order": 18,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Qu’est-ce qu’une fonction ? Image et antécédent",
+      "description": "L’élève fait fonctionner une machine qui transforme chaque nombre en un seul autre, puis lui donne un nom.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Utiliser les notations f(x) et x ↦ f(x) pour dire qu’une fonction associe à chaque nombre un seul nombre",
+        "Calculer l’image d’un nombre à partir de l’expression d’une fonction ou d’un programme de calcul",
+        "Traduire une égalité comme g(3) = 15 avec les mots image et antécédent"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_notion-de-fonction_P1"
+        ],
+        "P3": [
+          "3e_notion-de-fonction_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r10",
+        "3e.m2.r11"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "lire-une-fonction",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "la-notion-de-fonction",
+      "order": 19,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Lire une fonction dans un tableau ou sur une courbe",
+      "description": "L’élève passe du calcul au tableau et du tableau à la courbe, et lit dans les deux sens.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "notion-de-fonction"
+      ],
+      "pointsToLearn": [
+        "Construire un tableau de valeurs à partir de l’expression d’une fonction, puis placer les points correspondants",
+        "Lire l’image d’un nombre sur une courbe ou dans un tableau de valeurs",
+        "Lire un ou plusieurs antécédents d’un nombre sur une courbe ou dans un tableau de valeurs",
+        "Interpréter une lecture graphique dans le contexte du problème, avec ses unités"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_notion-de-fonction_P2"
+        ],
+        "P2": [
+          "3e_notion-de-fonction_P3"
+        ],
+        "P3": [
+          "3e_notion-de-fonction_P3"
+        ],
+        "P4": [
+          "3e_lire-une-fonction_P2",
+          "3e_lire-une-fonction_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r12",
+        "3e.m2.r11",
+        "3e.m2.r13"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "antecedent-par-le-calcul",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "la-notion-de-fonction",
+      "order": 20,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Trouver un antécédent par le calcul",
+      "description": "L’élève remonte d’une image à son antécédent en résolvant une équation.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "mettre-un-probleme-en-equation",
+        "equation-produit-nul",
+        "notion-de-fonction"
+      ],
+      "pointsToLearn": [
+        "Déterminer l’antécédent d’un nombre par une fonction affine en résolvant une équation du premier degré",
+        "Déterminer les antécédents de 0 par une fonction donnée sous forme de produit",
+        "Vérifier par le calcul un antécédent lu sur un graphique"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_mettre-un-probleme-en-equation_P2",
+          "3e_notion-de-fonction_P3"
+        ],
+        "P2": [
+          "3e_equation-produit-nul_P2"
+        ],
+        "P3": [
+          "3e_antecedent-par-le-calcul_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r14"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-la-notion-de-fonction",
+      "sourceTopicId": null,
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "la-notion-de-fonction",
+      "order": 21,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — La notion de fonction",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "notion-de-fonction",
+        "lire-une-fonction",
+        "antecedent-par-le-calcul"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « La notion de fonction »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_notion-de-fonction_P3",
+          "3e_lire-une-fonction_P4",
+          "3e_antecedent-par-le-calcul_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "puissances-d-exposant-negatif",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "puissances-et-racines",
+      "order": 22,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Les puissances d’exposant négatif",
+      "description": "L’élève simplifie des quotients de facteurs identiques et découvre ce que veut dire un exposant négatif.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Simplifier un quotient de produits d’un même facteur en comptant les facteurs qui restent au numérateur ou au dénominateur",
+        "Interpréter a⁻ⁿ comme l’inverse de aⁿ",
+        "Écrire un produit ou un quotient de puissances d’un même nombre sous la forme d’une seule puissance en revenant à la définition"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_puissances-d-exposant-negatif_P1"
+        ],
+        "P3": [
+          "3e_puissances-d-exposant-negatif_P1",
+          "3e_puissances-d-exposant-negatif_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r02"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "notation-scientifique-en-probleme",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "puissances-et-racines",
+      "order": 23,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Très grand, très petit : la notation scientifique",
+      "description": "L’élève compare et calcule des quantités astronomiques ou microscopiques.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "puissances-d-exposant-negatif"
+      ],
+      "pointsToLearn": [
+        "Écrire un nombre en notation scientifique à partir de son écriture décimale ou d’un résultat de calcul",
+        "Calculer un produit ou un quotient de nombres en notation scientifique",
+        "Résoudre un problème sur de très grandes ou de très petites quantités en donnant un ordre de grandeur du résultat"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_notation-scientifique-en-probleme_P1",
+          "3e_puissances-d-exposant-negatif_P3"
+        ],
+        "P3": [
+          "3e_notation-scientifique-en-probleme_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r03"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "racine-carree-en-probleme",
+      "sourceTopicId": "3e.m1",
+      "chapterId": "nombres_calculs",
+      "unitId": "puissances-et-racines",
+      "order": 24,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Utiliser la racine carrée pour calculer une longueur",
+      "description": "L’élève cherche une longueur dont il connaît le carré et décide quelle valeur donner.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Donner la valeur exacte √a puis une valeur approchée de la longueur du côté d’un carré d’aire a",
+        "Calculer une longueur avec le théorème de Pythagore et la racine carrée",
+        "Choisir entre valeur exacte et valeur approchée, et arrondir à la précision demandée"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_racine-carree-en-probleme_P1"
+        ],
+        "P3": [
+          "3e_racine-carree-en-probleme_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m1.r04"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-puissances-et-racines",
+      "sourceTopicId": null,
+      "chapterId": "nombres_calculs",
+      "unitId": "puissances-et-racines",
+      "order": 25,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Puissances et racine carrée",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "puissances-d-exposant-negatif",
+        "notation-scientifique-en-probleme",
+        "racine-carree-en-probleme"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Puissances et racine carrée »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_puissances-d-exposant-negatif_P3",
+          "3e_notation-scientifique-en-probleme_P3",
+          "3e_racine-carree-en-probleme_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "cosinus-sinus-tangente",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "trigonometrie",
+      "order": 26,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Cosinus, sinus et tangente d’un angle",
+      "description": "L’élève découvre que, pour un même angle, certains rapports de longueurs ne changent pas avec la taille du triangle.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Nommer, pour un angle aigu d’un triangle rectangle, l’hypoténuse, le côté adjacent et le côté opposé",
+        "Écrire le cosinus, le sinus et la tangente d’un angle aigu comme des rapports de longueurs",
+        "Choisir la ligne trigonométrique qui relie l’angle connu, la longueur connue et la longueur cherchée",
+        "Calculer une longueur dans un triangle rectangle avec le cosinus, le sinus ou la tangente"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_cosinus-sinus-tangente_P1"
+        ],
+        "P3": [
+          "3e_cosinus-sinus-tangente_P2"
+        ],
+        "P4": [
+          "3e_cosinus-sinus-tangente_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r06"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "calculer-un-angle",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "trigonometrie",
+      "order": 27,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Calculer un angle dans un triangle rectangle",
+      "description": "L’élève remonte d’un rapport de longueurs à la mesure de l’angle.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "cosinus-sinus-tangente"
+      ],
+      "pointsToLearn": [
+        "Calculer la mesure d’un angle aigu à la calculatrice à partir de son cosinus, de son sinus ou de sa tangente",
+        "Choisir la ligne trigonométrique à utiliser selon les deux longueurs connues",
+        "Arrondir une mesure d’angle à la précision demandée"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_cosinus-sinus-tangente_P2"
+        ],
+        "P2": [
+          "3e_cosinus-sinus-tangente_P3"
+        ],
+        "P3": [
+          "3e_calculer-un-angle_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r06"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "resoudre-un-triangle-rectangle",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "trigonometrie",
+      "order": 28,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Résoudre un triangle rectangle",
+      "description": "L’élève choisit l’outil — Pythagore, cosinus, sinus ou tangente — pour trouver ce qui manque.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "cosinus-sinus-tangente",
+        "calculer-un-angle"
+      ],
+      "pointsToLearn": [
+        "Choisir entre le théorème de Pythagore, le cosinus, le sinus et la tangente selon les données et l’inconnue",
+        "Calculer toutes les longueurs et tous les angles d’un triangle rectangle à partir de deux données",
+        "Résoudre un problème qui fait intervenir deux triangles rectangles accolés, par exemple une hauteur inaccessible"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_cosinus-sinus-tangente_P3",
+          "3e_calculer-un-angle_P2"
+        ],
+        "P2": [
+          "3e_resoudre-un-triangle-rectangle_P1"
+        ],
+        "P3": [
+          "3e_resoudre-un-triangle-rectangle_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r06"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-trigonometrie",
+      "sourceTopicId": null,
+      "chapterId": "espace_geometrie",
+      "unitId": "trigonometrie",
+      "order": 29,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Trigonométrie",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "cosinus-sinus-tangente",
+        "calculer-un-angle",
+        "resoudre-un-triangle-rectangle"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Trigonométrie »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_cosinus-sinus-tangente_P4",
+          "3e_calculer-un-angle_P3",
+          "3e_resoudre-un-triangle-rectangle_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "fonction-lineaire",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "fonctions-lineaires-et-affines",
+      "order": 30,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Fonction linéaire et proportionnalité",
+      "description": "L’élève découvre que la proportionnalité s’écrit x ↦ ax et se dessine par une droite qui passe par l’origine.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "notion-de-fonction"
+      ],
+      "pointsToLearn": [
+        "Reconnaître une fonction linéaire à son expression f(x) = ax",
+        "Représenter graphiquement une fonction linéaire par une droite passant par l’origine du repère",
+        "Modéliser une situation de proportionnalité par une fonction linéaire",
+        "Déterminer le coefficient d’une fonction linéaire à partir d’un nombre et de son image"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_notion-de-fonction_P1"
+        ],
+        "P2": [
+          "3e_fonction-lineaire_P1"
+        ],
+        "P3": [
+          "3e_fonction-lineaire_P1"
+        ],
+        "P4": [
+          "3e_fonction-lineaire_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r15",
+        "3e.m2.r08"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "fonction-affine",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "fonctions-lineaires-et-affines",
+      "order": 31,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Fonction affine et sa droite",
+      "description": "L’élève découvre ce que change le nombre b dans f(x) = ax + b.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "fonction-lineaire"
+      ],
+      "pointsToLearn": [
+        "Reconnaître une fonction affine à son expression f(x) = ax + b",
+        "Représenter graphiquement une fonction affine par une droite tracée à partir de deux points",
+        "Déterminer le signe du coefficient directeur et de l’ordonnée à l’origine à partir de l’allure de la droite"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_fonction-lineaire_P1"
+        ],
+        "P2": [
+          "3e_fonction-affine_P1",
+          "3e_fonction-lineaire_P2"
+        ],
+        "P3": [
+          "3e_fonction-affine_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r16",
+        "3e.m2.r17"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "pourcentage-d-evolution",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "fonctions-lineaires-et-affines",
+      "order": 32,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Augmenter ou baisser d’un pourcentage",
+      "description": "L’élève découvre qu’une hausse ou une baisse en pourcentage revient à une seule multiplication.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Traduire une augmentation de t % par une multiplication par 1 + t/100",
+        "Traduire une diminution de t % par une multiplication par 1 − t/100",
+        "Retrouver le pourcentage d’évolution à partir d’un coefficient multiplicateur"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_pourcentage-d-evolution_P1"
+        ],
+        "P3": [
+          "3e_pourcentage-d-evolution_P1",
+          "3e_pourcentage-d-evolution_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r07"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "modeliser-avec-une-fonction",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "fonctions-lineaires-et-affines",
+      "order": 33,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Choisir une fonction pour résoudre un problème",
+      "description": "L’élève traduit une situation par une fonction et choisit la représentation qui répond le mieux.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "notion-de-fonction",
+        "lire-une-fonction",
+        "antecedent-par-le-calcul",
+        "fonction-affine"
+      ],
+      "pointsToLearn": [
+        "Exprimer une grandeur en fonction d’une autre par une formule, par exemple l’aire d’un rectangle de périmètre fixé",
+        "Comparer deux situations modélisées par des fonctions affines, à l’aide d’un graphique ou d’une équation",
+        "Résoudre un problème modélisé par une fonction en choisissant entre tableau de valeurs, graphique et calcul"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_fonction-affine_P2",
+          "3e_antecedent-par-le-calcul_P1"
+        ],
+        "P3": [
+          "3e_modeliser-avec-une-fonction_P1",
+          "3e_lire-une-fonction_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r18",
+        "3e.m2.r19"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-fonctions-lineaires-et-affines",
+      "sourceTopicId": null,
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "fonctions-lineaires-et-affines",
+      "order": 34,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Fonctions linéaires et affines",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "fonction-lineaire",
+        "fonction-affine",
+        "pourcentage-d-evolution",
+        "modeliser-avec-une-fonction"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Fonctions linéaires et affines »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_fonction-lineaire_P4",
+          "3e_fonction-affine_P3",
+          "3e_pourcentage-d-evolution_P3",
+          "3e_modeliser-avec-une-fonction_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "etendue-d-une-serie",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "statistiques-et-probabilites",
+      "order": 35,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Comparer des séries : moyenne, médiane, étendue",
+      "description": "L’élève découvre que deux séries de même moyenne peuvent être très différentes.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Calculer l’étendue d’une série donnée par des données brutes, un tableau ou un diagramme",
+        "Calculer la moyenne et la médiane d’une série et les interpréter",
+        "Comparer deux séries à l’aide d’un indicateur de position et de l’étendue"
+      ],
+      "pointPrerequisites": {
+        "P3": [
+          "3e_etendue-d-une-serie_P1",
+          "3e_etendue-d-une-serie_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r01",
+        "3e.m2.r03"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "histogramme",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "statistiques-et-probabilites",
+      "order": 36,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Lire et tracer un histogramme",
+      "description": "L’élève regroupe des valeurs en classes et découvre un diagramme où l’on lit des tranches.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Lire et interpréter un histogramme dont les classes ont la même amplitude",
+        "Représenter par un histogramme une série regroupée en classes de même amplitude",
+        "Calculer, à partir d’un diagramme, l’effectif ou la fréquence d’un groupe de valeurs (au moins, au plus, entre deux valeurs)"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_histogramme_P1"
+        ],
+        "P3": [
+          "3e_histogramme_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r02",
+        "3e.m2.r03"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "probabilite-une-epreuve",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "statistiques-et-probabilites",
+      "order": 37,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Calculer une probabilité en comptant les issues",
+      "description": "L’élève compte les issues favorables et possibles et découvre quand ce comptage donne une probabilité.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Lister les issues d’une expérience aléatoire à une épreuve et repérer si elles sont équiprobables",
+        "Calculer la probabilité d’un événement en comptant les issues favorables parmi les issues équiprobables",
+        "Calculer la probabilité d’un événement à partir de celle de son événement contraire"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_probabilite-une-epreuve_P1"
+        ],
+        "P3": [
+          "3e_probabilite-une-epreuve_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r04"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "probabilite-deux-epreuves",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "statistiques-et-probabilites",
+      "order": 38,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Deux tirages : le tableau à double entrée",
+      "description": "L’élève organise toutes les issues de deux épreuves dans un tableau et y compte les cases.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "probabilite-une-epreuve"
+      ],
+      "pointsToLearn": [
+        "Dresser le tableau à double entrée de toutes les issues d’une expérience à deux épreuves",
+        "Calculer la probabilité d’un événement en comptant les cases favorables du tableau",
+        "Utiliser l’événement contraire pour calculer la probabilité d’obtenir au moins une fois une issue"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_probabilite-deux-epreuves_P1",
+          "3e_probabilite-une-epreuve_P2"
+        ],
+        "P3": [
+          "3e_probabilite-deux-epreuves_P2",
+          "3e_probabilite-une-epreuve_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r05"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "frequence-et-probabilite",
+      "sourceTopicId": "3e.m2",
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "statistiques-et-probabilites",
+      "order": 39,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Simuler le hasard : fréquences et probabilité",
+      "description": "L’élève lance des milliers d’expériences simulées et voit la fréquence se stabiliser.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "etendue-d-une-serie",
+        "probabilite-une-epreuve"
+      ],
+      "pointsToLearn": [
+        "Simuler une expérience aléatoire avec un tableur ou un logiciel de programmation",
+        "Observer que la fréquence d’une issue se stabilise quand le nombre d’essais augmente",
+        "Comparer des fréquences observées aux probabilités théoriques pour juger un modèle, par exemple un dé équilibré"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_frequence-et-probabilite_P1"
+        ],
+        "P3": [
+          "3e_frequence-et-probabilite_P2",
+          "3e_probabilite-une-epreuve_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m2.r06"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-statistiques-et-probabilites",
+      "sourceTopicId": null,
+      "chapterId": "organisation_gestion_donnees_fonctions",
+      "unitId": "statistiques-et-probabilites",
+      "order": 40,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Statistiques et probabilités",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "etendue-d-une-serie",
+        "histogramme",
+        "probabilite-une-epreuve",
+        "probabilite-deux-epreuves",
+        "frequence-et-probabilite"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Statistiques et probabilités »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_etendue-d-une-serie_P3",
+          "3e_histogramme_P3",
+          "3e_probabilite-une-epreuve_P3",
+          "3e_probabilite-deux-epreuves_P3",
+          "3e_frequence-et-probabilite_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "programmer-des-blocs-personnalises",
+      "sourceTopicId": "3e.m5",
+      "chapterId": "algorithmique_programmation",
+      "unitId": "programmer-avec-des-blocs",
+      "order": 41,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Découper un programme en blocs",
+      "description": "L’élève découpe une tâche en sous-tâches et fabrique ses propres blocs pour les répéter.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Décomposer un problème en sous-problèmes",
+        "Créer un bloc personnalisé qui traduit un sous-problème",
+        "Construire une figure ou une frise en reproduisant un motif à l’aide d’une boucle"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_programmer-des-blocs-personnalises_P1"
+        ],
+        "P3": [
+          "3e_programmer-des-blocs-personnalises_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m5.r01",
+        "3e.m5.r02"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "boucles-et-conditions",
+      "sourceTopicId": "3e.m5",
+      "chapterId": "algorithmique_programmation",
+      "unitId": "programmer-avec-des-blocs",
+      "order": 42,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Boucles « jusqu’à » et conditions",
+      "description": "L’élève découvre une boucle qui s’arrête toute seule quand une condition devient vraie.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "frequence-et-probabilite"
+      ],
+      "pointsToLearn": [
+        "Utiliser une boucle « répéter jusqu’à … » qui s’arrête quand une condition est remplie",
+        "Combiner les boucles « répéter … fois », « répéter jusqu’à … » et des instructions conditionnelles dans un programme de calcul ou de déplacement",
+        "Programmer la simulation d’une expérience aléatoire qui compte ses issues",
+        "Tester un programme et corriger l’instruction qui produit un résultat faux"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_boucles-et-conditions_P1"
+        ],
+        "P3": [
+          "3e_boucles-et-conditions_P2",
+          "3e_frequence-et-probabilite_P1"
+        ],
+        "P4": [
+          "3e_boucles-et-conditions_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m5.r03"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "scripts-en-parallele",
+      "sourceTopicId": "3e.m5",
+      "chapterId": "algorithmique_programmation",
+      "unitId": "programmer-avec-des-blocs",
+      "order": 43,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Faire interagir des lutins",
+      "description": "L’élève fait vivre deux lutins en même temps et les fait réagir l’un à l’autre.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Écrire plusieurs scripts qui s’exécutent en parallèle",
+        "Gérer une interaction entre deux lutins, par exemple quand l’un touche l’autre",
+        "Programmer un petit jeu qui utilise au moins deux lutins avec des scripts en parallèle"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_scripts-en-parallele_P1"
+        ],
+        "P3": [
+          "3e_scripts-en-parallele_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m5.r04"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-programmer-avec-des-blocs",
+      "sourceTopicId": null,
+      "chapterId": "algorithmique_programmation",
+      "unitId": "programmer-avec-des-blocs",
+      "order": 44,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Programmer : blocs, boucles et scripts",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "programmer-des-blocs-personnalises",
+        "boucles-et-conditions",
+        "scripts-en-parallele"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Programmer : blocs, boucles et scripts »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_programmer-des-blocs-personnalises_P3",
+          "3e_boucles-et-conditions_P4",
+          "3e_scripts-en-parallele_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "rotation",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "rotations-et-homotheties",
+      "order": 45,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Faire tourner une figure : la rotation",
+      "description": "L’élève fait tourner une figure autour d’un point et découvre ce qui ne change pas.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Construire l’image d’un point par une rotation de centre, d’angle et de sens donnés",
+        "Construire l’image d’une figure par une rotation",
+        "Utiliser la conservation des longueurs, des angles et des aires par une rotation pour calculer une grandeur"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_rotation_P1"
+        ],
+        "P3": [
+          "3e_rotation_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r07",
+        "3e.m3.r06"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "homothetie",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "rotations-et-homotheties",
+      "order": 46,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Agrandir depuis un point : l’homothétie",
+      "description": "L’élève agrandit ou réduit une figure à partir d’un centre, y compris de l’autre côté du centre.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "thales-configuration-papillon"
+      ],
+      "pointsToLearn": [
+        "Construire l’image d’une figure par une homothétie de centre donné et de rapport positif",
+        "Construire l’image d’une figure par une homothétie de rapport négatif, de l’autre côté du centre",
+        "Retrouver le rapport d’une homothétie à partir de longueurs, en lien avec la configuration de Thalès"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_homothetie_P1"
+        ],
+        "P3": [
+          "3e_homothetie_P1",
+          "3e_thales-configuration-papillon_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r08"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "effet-d-une-homothetie",
+      "sourceTopicId": "3e.m3",
+      "chapterId": "espace_geometrie",
+      "unitId": "rotations-et-homotheties",
+      "order": 47,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Longueurs, aires et volumes après une homothétie",
+      "description": "L’élève découvre que les aires et les volumes ne sont pas multipliés par le même nombre que les longueurs.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "triangles-semblables",
+        "thales-configuration-papillon",
+        "homothetie"
+      ],
+      "pointsToLearn": [
+        "Calculer les longueurs de l’image d’une figure par une homothétie ou un agrandissement de rapport donné",
+        "Calculer l’aire de l’image d’une figure en multipliant l’aire initiale par le carré du rapport",
+        "Calculer le volume d’un solide agrandi ou réduit en multipliant le volume initial par le cube du rapport",
+        "Justifier la nature d’une figure image par la conservation des angles et du parallélisme par une homothétie"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_homothetie_P1"
+        ],
+        "P2": [
+          "3e_effet-d-une-homothetie_P1"
+        ],
+        "P3": [
+          "3e_effet-d-une-homothetie_P1"
+        ],
+        "P4": [
+          "3e_homothetie_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m3.r07",
+        "3e.m4.r08"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "frises-pavages-rosaces",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "rotations-et-homotheties",
+      "order": 48,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Frises, pavages et rosaces",
+      "description": "L’élève retrouve les transformations cachées dans un motif répété.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "rotation",
+        "homothetie"
+      ],
+      "pointsToLearn": [
+        "Identifier la transformation (symétrie, translation, rotation, homothétie) qui fait passer d’un motif à un autre dans une frise, un pavage ou une rosace",
+        "Décrire les transformations qui permettent de construire une rosace",
+        "Construire une rosace en enchaînant des rotations à partir d’un motif"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_rotation_P2",
+          "3e_homothetie_P1"
+        ],
+        "P2": [
+          "3e_frises-pavages-rosaces_P1"
+        ],
+        "P3": [
+          "3e_frises-pavages-rosaces_P2",
+          "3e_rotation_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r09"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "demontrer-en-geometrie",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "rotations-et-homotheties",
+      "order": 49,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Rédiger une démonstration en géométrie",
+      "description": "L’élève enchaîne des propriétés pour passer des données à la conclusion, et l’écrit.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "triangles-semblables",
+        "thales-configuration-papillon",
+        "rotation",
+        "homothetie"
+      ],
+      "pointsToLearn": [
+        "Repérer les données utiles d’une figure et choisir la propriété qui permet d’avancer vers la conclusion",
+        "Rédiger une démonstration en enchaînant des étapes « on sait que … ; or … ; donc … »",
+        "Déterminer une grandeur géométrique en combinant plusieurs propriétés de figures, de configurations ou de transformations"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_demontrer-en-geometrie_P1"
+        ],
+        "P3": [
+          "3e_demontrer-en-geometrie_P1",
+          "3e_triangles-semblables_P4",
+          "3e_rotation_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r10"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-rotations-et-homotheties",
+      "sourceTopicId": null,
+      "chapterId": "espace_geometrie",
+      "unitId": "rotations-et-homotheties",
+      "order": 50,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Rotations et homothéties",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "rotation",
+        "homothetie",
+        "effet-d-une-homothetie",
+        "frises-pavages-rosaces",
+        "demontrer-en-geometrie"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Rotations et homothéties »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_rotation_P3",
+          "3e_homothetie_P3",
+          "3e_effet-d-une-homothetie_P4",
+          "3e_frises-pavages-rosaces_P3",
+          "3e_demontrer-en-geometrie_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "volume-boule-et-assemblages",
+      "sourceTopicId": "3e.m3",
+      "chapterId": "grandeurs_mesures",
+      "unitId": "grandeurs-et-volumes",
+      "order": 51,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Volume d’une boule et de solides assemblés",
+      "description": "L’élève compare des boules et des cylindres, puis calcule des solides fabriqués à partir d’autres.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Calculer le volume d’une boule de rayon donné avec la formule (4/3)πr³",
+        "Exprimer un volume en valeur exacte en fonction de π, puis en donner une valeur approchée",
+        "Décomposer un solide en solides connus (prisme, cylindre, pyramide, cône, boule, demi-boule)",
+        "Calculer le volume d’un assemblage ou d’un solide évidé par sommes et différences de volumes"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_volume-boule-et-assemblages_P1"
+        ],
+        "P4": [
+          "3e_volume-boule-et-assemblages_P1",
+          "3e_volume-boule-et-assemblages_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m3.r01",
+        "3e.m3.r02"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "grandeurs-composees",
+      "sourceTopicId": "3e.m3",
+      "chapterId": "grandeurs_mesures",
+      "unitId": "grandeurs-et-volumes",
+      "order": 52,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vitesse, débit, masse volumique",
+      "description": "L’élève compare des vitesses et des débits et découvre que l’unité dit déjà le calcul.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Calculer une vitesse, un débit ou une masse volumique et l’exprimer dans une unité composée adaptée",
+        "Calculer une distance, une durée ou un volume à partir d’une grandeur composée",
+        "Vérifier la cohérence d’un résultat en contrôlant ses unités"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_grandeurs-composees_P1"
+        ],
+        "P3": [
+          "3e_grandeurs-composees_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m3.r03",
+        "3e.m3.r05"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "conversions-grandeurs-composees",
+      "sourceTopicId": "3e.m3",
+      "chapterId": "grandeurs_mesures",
+      "unitId": "grandeurs-et-volumes",
+      "order": 53,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Convertir des vitesses, des débits et des volumes",
+      "description": "L’élève passe des km/h aux m/s et des m³ aux litres, et découvre pourquoi les puissances de 10 aident.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "grandeurs-composees"
+      ],
+      "pointsToLearn": [
+        "Convertir une vitesse entre kilomètres par heure et mètres par seconde",
+        "Convertir un débit, par exemple des mètres cubes par seconde en litres par minute",
+        "Convertir des unités d’aire et de volume à l’aide des puissances de 10, par exemple 1 m³ = 10⁶ cm³"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_grandeurs-composees_P1"
+        ],
+        "P2": [
+          "3e_conversions-grandeurs-composees_P1"
+        ]
+      },
+      "programmeItems": [
+        "3e.m3.r04",
+        "3e.m3.r05"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-grandeurs-et-volumes",
+      "sourceTopicId": null,
+      "chapterId": "grandeurs_mesures",
+      "unitId": "grandeurs-et-volumes",
+      "order": 54,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Vitesses, débits et volumes",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "volume-boule-et-assemblages",
+        "grandeurs-composees",
+        "conversions-grandeurs-composees"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Vitesses, débits et volumes »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_volume-boule-et-assemblages_P4",
+          "3e_grandeurs-composees_P3",
+          "3e_conversions-grandeurs-composees_P3"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    },
+    {
+      "code": "se-reperer-sur-une-sphere",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "representer-l-espace",
+      "order": 55,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Se repérer sur une sphère : latitude et longitude",
+      "description": "L’élève découvre que deux nombres suffisent pour placer un point sur un globe.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Reconnaître un grand cercle d’une sphère",
+        "Repérer un point d’une sphère par sa latitude et sa longitude",
+        "Placer sur une sphère un point de latitude et de longitude données"
+      ],
+      "pointPrerequisites": {
+        "P2": [
+          "3e_se-reperer-sur-une-sphere_P1"
+        ],
+        "P3": [
+          "3e_se-reperer-sur-une-sphere_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r01"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "representations-des-solides",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "representer-l-espace",
+      "order": 56,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Patrons, perspective et vues d’un solide",
+      "description": "L’élève tourne un solide et associe ce qu’il voit de face, de dessus, en coupe et à plat.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [],
+      "pointsToLearn": [
+        "Associer un solide à ses vues de face, de dessus et en coupe",
+        "Associer la représentation en perspective cavalière d’un solide étudié et son patron",
+        "Représenter un solide en perspective cavalière"
+      ],
+      "pointPrerequisites": {
+        "P3": [
+          "3e_representations-des-solides_P2"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r02"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "sections-planes",
+      "sourceTopicId": "3e.m4",
+      "chapterId": "espace_geometrie",
+      "unitId": "representer-l-espace",
+      "order": 57,
+      "kind": "lesson",
+      "decompositionType": "editorial_lesson",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Couper un solide : les sections planes",
+      "description": "L’élève coupe des solides par un plan et prévoit la forme de la coupe.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "representations-des-solides"
+      ],
+      "pointsToLearn": [
+        "Déterminer la nature de la section d’un pavé droit ou d’un cylindre par un plan parallèle à une face, à une arête ou à l’axe",
+        "Déterminer la nature de la section d’une sphère ou d’une boule par un plan",
+        "Reconnaître que la section d’une pyramide ou d’un cône par un plan parallèle à la base est une réduction de la base",
+        "Représenter une section plane sur un solide dessiné en perspective cavalière"
+      ],
+      "pointPrerequisites": {
+        "P4": [
+          "3e_sections-planes_P1",
+          "3e_representations-des-solides_P3"
+        ]
+      },
+      "programmeItems": [
+        "3e.m4.r03"
+      ],
+      "status": "coming_soon"
+    },
+    {
+      "code": "vers-le-brevet-representer-l-espace",
+      "sourceTopicId": null,
+      "chapterId": "espace_geometrie",
+      "unitId": "representer-l-espace",
+      "order": 58,
+      "kind": "synthesis",
+      "decompositionType": "editorial_synthesis",
+      "decisionStatus": "draft",
+      "titleSource": "editorial",
+      "title": "Vers le brevet — Représenter l’espace",
+      "description": "Problèmes au format du brevet : questions d’automatismes sans calculatrice, puis exercices de raisonnement à justifier, qui mobilisent ce que l’unité a appris.",
+      "prerequisites": [],
+      "prerequisiteLessonCodes": [
+        "se-reperer-sur-une-sphere",
+        "representations-des-solides",
+        "sections-planes"
+      ],
+      "pointsToLearn": [
+        "Résoudre un problème au format du brevet qui mobilise les capacités de l’unité « Représenter l’espace »"
+      ],
+      "pointPrerequisites": {
+        "P1": [
+          "3e_se-reperer-sur-une-sphere_P3",
+          "3e_representations-des-solides_P3",
+          "3e_sections-planes_P4"
+        ]
+      },
+      "programmeItems": [],
+      "status": "coming_soon"
+    }
+  ]
+}

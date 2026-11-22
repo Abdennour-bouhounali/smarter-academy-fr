@@ -1,0 +1,2369 @@
+{
+  "_comment": "DRAFT (2026-11-22) — 3e programme items for review; NOT the delivered file. Same shape as packages/core/curriculum/fr/net/official_programme_college.json. 3e items: every unit of official content the repères / attendus place in 3e (2020 text, in force in 3e in 2026-2027 and 2027-2028). Horizon items (`horizon: \"2028\"`, ids .x<n>): what the 2026 programme adds to 3e from 2028-2029 — not taught now. Stub items (`stub: true`): the 4e / 5e / 6e items a 3e item requires, extends or consolidates — their grade is defined later. Every `text` is an official quotation, shortened only by cutting ([…]).",
+  "level": "college",
+  "subject": "mathematiques",
+  "sources": {
+    "programme-2020": {
+      "title": "Programme d’enseignement du cycle 4 (consolidation 2020), volet 3 — Mathématiques, p. 127–137",
+      "reference": "Arrêté du 9-11-2015 modifié ; « D’après le BOEN n° 31 du 30 juillet 2020 » (pied de page)",
+      "path": "docs/curriculum/officiel/01_programme_cycle4_2020/programme-d-enseignement-du-cycle-4-67722.pdf",
+      "text": "docs/curriculum/officiel/_txt/programme_c4_2020.txt",
+      "appliesTo": "3e in 2026-2027 and 2027-2028; 4e in 2026-2027"
+    },
+    "reperes-2019": {
+      "title": "Mathématiques — Repères annuels de progression pour le cycle 4 (Annexe 26), 13 p.",
+      "reference": "Eduscol, 2019 [the BO reference is not established — README « Not established »]",
+      "path": "docs/curriculum/officiel/06_reperes_annuels_progression_maths_c4/26-maths-c4-reperes-eduscol-74694.pdf",
+      "text": "docs/curriculum/officiel/_txt/reperes_c4.txt"
+    },
+    "attendus-2019": {
+      "title": "Mathématiques — Attendus de fin d’année (3e, 4e, 5e)",
+      "reference": "Eduscol, 2019; the grade of the document is the grade of the item",
+      "paths": {
+        "3e": "docs/curriculum/officiel/20_attendus_maths_3e/18-maths-3e-attendus-eduscol-74688.pdf",
+        "4e": "docs/curriculum/officiel/19_attendus_maths_4e/16-maths-4e-attendus-eduscol-74682.pdf",
+        "5e": "docs/curriculum/officiel/13_attendus_maths_5e/14-maths-5e-attendus-eduscol-74676.pdf"
+      },
+      "texts": {
+        "3e": "docs/curriculum/officiel/_txt/attendus_3e.txt",
+        "4e": "docs/curriculum/officiel/_txt/attendus_4e.txt",
+        "5e": "docs/curriculum/officiel/_txt/attendus_5e.txt"
+      }
+    },
+    "reperes-c3-2019": {
+      "title": "Mathématiques — Repères annuels de progression pour le cycle 3 (former cycle 3 programme)",
+      "reference": "Eduscol, 2019",
+      "path": "docs/curriculum/officiel/14_reperes_annuels_progression_maths_c3/23-maths-c3-reperes-eduscol-74667.pdf",
+      "text": "docs/curriculum/officiel/_txt/reperes_c3.txt",
+      "appliesTo": "the 6e year (2023-2024) of the 2026-2027 3e cohort"
+    },
+    "programme-2026": {
+      "title": "Annexe 2 – Programme de mathématiques pour le cycle 4, 20 p.",
+      "reference": "Arrêté du 18-2-2026, NOR MENE2602912A, JORF du 4-3-2026, BO n° 10 du 5 mars 2026",
+      "path": "docs/curriculum/officiel/02_programme_maths_cycle4_2026_annexe2/annexe2-programme-mathematiques-cycle4-480716.pdf",
+      "text": "docs/curriculum/officiel/_txt/programme_maths_c4_2026.txt",
+      "appliesTo": "3e from 2028-2029 (article 3 of the arrêté)"
+    },
+    "dnb-2027": {
+      "title": "BO spécial n° 4 du 17 septembre 2026 — épreuves du DNB à compter de la session 2027 (mathématiques p. 18–19)",
+      "reference": "Note de service du 11-9-2026, NOR MENE2623228N",
+      "path": "docs/curriculum/officiel/05_bo_special4_2026-09-17_dnb/20260917boenjsspe4-520753.pdf",
+      "text": "docs/curriculum/officiel/_txt/bo_special4_2026.txt"
+    },
+    "dnb-sujets-reference": {
+      "title": "DNB — sujets de référence, mathématiques, série générale, n° 1 et n° 2",
+      "reference": "Ministère, 2026",
+      "paths": [
+        "docs/curriculum/officiel/07_dnb_sujet_reference_maths_generale_01/dnb-sujet-de-reference-mathematiques-serie-generale-n01-129658.pdf",
+        "docs/curriculum/officiel/16_dnb_sujet_reference_maths_generale_02/dnb-sujet-de-reference-mathematiques-serie-generale-n02-129661.pdf"
+      ]
+    },
+    "automatismes-dnb": {
+      "title": "DNB 2026 : liste indicative d’automatismes (octobre 2025)",
+      "reference": "Eduscol",
+      "path": "docs/curriculum/officiel/22_liste_automatismes_475708/liste-automatismes-475708.pdf",
+      "text": "docs/curriculum/officiel/_txt/automatismes_475708.txt"
+    }
+  },
+  "transcribedOn": "2026-11-22",
+  "verified": false,
+  "verificationNote": "Transcribed from the pdftotext extractions, checked against the PDF text layer for pages 131–137 of the 2020 programme and pages 10–20 of the 2026 annexe. Not re-read by a second reader. `page` = PDF page of the document named in `origin`.",
+  "grades": [
+    {
+      "id": "6e",
+      "label": "Sixième",
+      "shortLabel": "6e"
+    },
+    {
+      "id": "5e",
+      "label": "Cinquième",
+      "shortLabel": "5e"
+    },
+    {
+      "id": "4e",
+      "label": "Quatrième",
+      "shortLabel": "4e"
+    },
+    {
+      "id": "3e",
+      "label": "Troisième",
+      "shortLabel": "3e"
+    }
+  ],
+  "domains": [
+    {
+      "id": "nombres_calculs",
+      "title": "Nombres et calculs",
+      "verified": false
+    },
+    {
+      "id": "organisation_gestion_donnees_fonctions",
+      "title": "Organisation et gestion de données, fonctions",
+      "verified": false
+    },
+    {
+      "id": "grandeurs_mesures",
+      "title": "Grandeurs et mesures",
+      "verified": false
+    },
+    {
+      "id": "espace_geometrie",
+      "title": "Espace et géométrie",
+      "verified": false
+    },
+    {
+      "id": "algorithmique_programmation",
+      "title": "Algorithmique et programmation",
+      "verified": false
+    }
+  ],
+  "segments": [
+    {
+      "id": "6e.m3",
+      "grade": "6e",
+      "number": 3,
+      "title": "Grandeurs et mesures",
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "source": "Stub segment from reperes-c3-2019 (former cycle 3 programme). [À VÉRIFIER DANS LE PROGRAMME OFFICIEL : the repères extraction carries no thème heading; « Les angles » sits among longueurs, durées, aires, volumes (p. 6–7), read here as Grandeurs et mesures.]"
+    },
+    {
+      "id": "5e.m1",
+      "grade": "5e",
+      "number": 1,
+      "title": "Thème A – Nombres et calculs",
+      "domain": "nombres_calculs",
+      "verified": false,
+      "source": "Stub segment: 5e items that a 3e item needs, from the 5e column of reperes-2019 (attendus 5e where the column is silent)."
+    },
+    {
+      "id": "5e.m2",
+      "grade": "5e",
+      "number": 2,
+      "title": "Thème B – Organisation et gestion de données, fonctions",
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "source": "Stub segment: 5e items that a 3e item needs, from the 5e column of reperes-2019 (attendus 5e where the column is silent)."
+    },
+    {
+      "id": "5e.m3",
+      "grade": "5e",
+      "number": 3,
+      "title": "Thème C – Grandeurs et mesures",
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "source": "Stub segment: 5e items that a 3e item needs, from the 5e column of reperes-2019 (attendus 5e where the column is silent)."
+    },
+    {
+      "id": "5e.m4",
+      "grade": "5e",
+      "number": 4,
+      "title": "Thème D - Espace et géométrie",
+      "domain": "espace_geometrie",
+      "verified": false,
+      "source": "Stub segment: 5e items that a 3e item needs, from the 5e column of reperes-2019 (attendus 5e where the column is silent)."
+    },
+    {
+      "id": "4e.m1",
+      "grade": "4e",
+      "number": 1,
+      "title": "Thème A – Nombres et calculs",
+      "domain": "nombres_calculs",
+      "verified": false,
+      "source": "Stub segment: 4e items that a 3e item needs, from the 4e column of reperes-2019 and attendus-2019 (4e)."
+    },
+    {
+      "id": "4e.m2",
+      "grade": "4e",
+      "number": 2,
+      "title": "Thème B – Organisation et gestion de données, fonctions",
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "source": "Stub segment: 4e items that a 3e item needs, from the 4e column of reperes-2019 and attendus-2019 (4e)."
+    },
+    {
+      "id": "4e.m3",
+      "grade": "4e",
+      "number": 3,
+      "title": "Thème C – Grandeurs et mesures",
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "source": "Stub segment: 4e items that a 3e item needs, from the 4e column of reperes-2019 and attendus-2019 (4e)."
+    },
+    {
+      "id": "4e.m4",
+      "grade": "4e",
+      "number": 4,
+      "title": "Thème D - Espace et géométrie",
+      "domain": "espace_geometrie",
+      "verified": false,
+      "source": "Stub segment: 4e items that a 3e item needs, from the 4e column of reperes-2019 and attendus-2019 (4e)."
+    },
+    {
+      "id": "4e.m5",
+      "grade": "4e",
+      "number": 5,
+      "title": "Thème E – Algorithmique et programmation",
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "source": "Stub segment: 4e items that a 3e item needs, from the 4e column of reperes-2019 and attendus-2019 (4e)."
+    },
+    {
+      "id": "3e.m1",
+      "grade": "3e",
+      "number": 1,
+      "title": "Thème A – Nombres et calculs",
+      "domain": "nombres_calculs",
+      "verified": false,
+      "source": "programme-2020, p. 131–137 (thème titles); content placed in 3e by reperes-2019 and attendus-2019 (3e)."
+    },
+    {
+      "id": "3e.m2",
+      "grade": "3e",
+      "number": 2,
+      "title": "Thème B – Organisation et gestion de données, fonctions",
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "source": "programme-2020, p. 131–137 (thème titles); content placed in 3e by reperes-2019 and attendus-2019 (3e)."
+    },
+    {
+      "id": "3e.m3",
+      "grade": "3e",
+      "number": 3,
+      "title": "Thème C – Grandeurs et mesures",
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "source": "programme-2020, p. 131–137 (thème titles); content placed in 3e by reperes-2019 and attendus-2019 (3e)."
+    },
+    {
+      "id": "3e.m4",
+      "grade": "3e",
+      "number": 4,
+      "title": "Thème D - Espace et géométrie",
+      "domain": "espace_geometrie",
+      "verified": false,
+      "source": "programme-2020, p. 131–137 (thème titles); content placed in 3e by reperes-2019 and attendus-2019 (3e)."
+    },
+    {
+      "id": "3e.m5",
+      "grade": "3e",
+      "number": 5,
+      "title": "Thème E – Algorithmique et programmation",
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "source": "programme-2020, p. 131–137 (thème titles); content placed in 3e by reperes-2019 and attendus-2019 (3e)."
+    }
+  ],
+  "items": [
+    {
+      "id": "6e.m3.r01",
+      "segment": "6e.m3",
+      "grade": "6e",
+      "number": 1,
+      "text": "Les élèves apprennent à utiliser un rapporteur pour mesurer un angle en degrés ou construire un angle de mesure donnée en degrés.",
+      "origin": "reperes-c3-2019",
+      "page": 7,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 6e in 2023-2024 to the 2026-2027 3e cohort, under the former cycle 3 programme (repères cycle 3, 2019). Background only: 6e now follows the 2025 cycle 3 text."
+    },
+    {
+      "id": "5e.m1.r01",
+      "segment": "5e.m1",
+      "grade": "5e",
+      "number": 1,
+      "text": "Les élèves substituent une valeur numérique à une lettre pour calculer la valeur d’une expression littérale.",
+      "origin": "reperes-2019",
+      "page": 5,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text."
+    },
+    {
+      "id": "5e.m2.r01",
+      "segment": "5e.m2",
+      "grade": "5e",
+      "number": 1,
+      "text": "Le traitement de données statistiques se prête à des calculs d’effectifs, de fréquences et de moyennes.",
+      "origin": "reperes-2019",
+      "page": 7,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text."
+    },
+    {
+      "id": "5e.m2.r02",
+      "segment": "5e.m2",
+      "grade": "5e",
+      "number": 2,
+      "text": "Il lit et interprète des données brutes ou présentées sous forme de tableaux, de diagrammes et de graphiques.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text.",
+      "originNote": "attendus de fin d’année de 5e (2019): the repères 5e column has no reading bullet."
+    },
+    {
+      "id": "5e.m2.r03",
+      "segment": "5e.m2",
+      "grade": "5e",
+      "number": 3,
+      "text": "Selon les situations, la représentation de données statistiques sous forme de tableaux, de diagrammes ou de graphiques est réalisée à la main ou à l’aide d’un tableur-grapheur.",
+      "origin": "reperes-2019",
+      "page": 7,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text."
+    },
+    {
+      "id": "5e.m2.r04",
+      "segment": "5e.m2",
+      "grade": "5e",
+      "number": 4,
+      "text": "Il résout des problèmes de proportionnalité dans diverses situations pouvant faire intervenir des pourcentages ou des échelles.",
+      "origin": "attendus-2019",
+      "page": 6,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text.",
+      "originNote": "attendus de fin d’année de 5e (2019): the repères 5e column (p. 8) names no percentage."
+    },
+    {
+      "id": "5e.m3.r01",
+      "segment": "5e.m3",
+      "grade": "5e",
+      "number": 1,
+      "text": "La connaissance des formules donnant les aires du rectangle, du triangle et du disque, ainsi que le volume du pavé droit est entretenue à travers la résolution de problèmes. Elle est enrichie par celles de l’aire du parallélogramme, du volume du prisme et du cylindre.",
+      "origin": "reperes-2019",
+      "page": 9,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text."
+    },
+    {
+      "id": "5e.m4.r01",
+      "segment": "5e.m4",
+      "grade": "5e",
+      "number": 1,
+      "text": "Le repérage se fait sur une droite graduée ou dans le plan muni d’un repère orthogonal.",
+      "origin": "reperes-2019",
+      "page": 10,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text."
+    },
+    {
+      "id": "5e.m4.r02",
+      "segment": "5e.m4",
+      "grade": "5e",
+      "number": 2,
+      "text": "La caractérisation angulaire du parallélisme (angles alternes-internes et angles correspondants) est énoncée.",
+      "origin": "reperes-2019",
+      "page": 11,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text."
+    },
+    {
+      "id": "5e.m4.r03",
+      "segment": "5e.m4",
+      "grade": "5e",
+      "number": 3,
+      "text": "Les élèves transforment (à la main ou à l’aide d’un logiciel) une figure par symétrie centrale.",
+      "origin": "reperes-2019",
+      "page": 12,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 5e in 2024-2025 to the 2026-2027 3e cohort, under the 2020 text (5e column of the repères, or attendus 5e). Background only: 5e now follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r01",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 1,
+      "text": "Il calcule avec les nombres rationnels : addition, soustraction, multiplication, division.",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r02",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 2,
+      "text": "Il utilise les puissances de 10 d’exposants positifs ou négatifs.",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r03",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 3,
+      "text": "Il associe, dans le cas des nombres décimaux, écriture décimale, écriture fractionnaire et notation scientifique.",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r04",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 4,
+      "text": "Il utilise les puissances d’exposants strictement positifs d’un nombre pour simplifier l’écriture des produits.",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r05",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 5,
+      "text": "Il connaît la définition de la racine carrée d’un nombre positif.",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text.",
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 2,
+          "text": "Il utilise les carrés parfaits de 1 à 144."
+        }
+      ]
+    },
+    {
+      "id": "4e.m1.r06",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 6,
+      "text": "Il décompose un nombre entier en produit de facteurs premiers.",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r07",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 7,
+      "text": "Il utilise les nombres premiers inférieurs à 100 pour : reconnaître et produire des fractions égales ; simplifier des fractions.",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text.",
+      "parts": [
+        "reconnaître et produire des fractions égales",
+        "simplifier des fractions"
+      ]
+    },
+    {
+      "id": "4e.m1.r08",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 8,
+      "text": "Il modélise et résout des problèmes simples mettant en jeu les notions de divisibilité et de nombre premier.",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r09",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 9,
+      "text": "Il identifie la structure d’une expression littérale (somme, produit).",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r10",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 10,
+      "text": "Il utilise la propriété de distributivité simple pour développer un produit, factoriser une somme ou réduire une expression littérale.",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r11",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 11,
+      "text": "Il démontre l’équivalence de deux programmes de calcul.",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r12",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 12,
+      "text": "Il introduit une lettre pour désigner une valeur inconnue et met un problème en équation.",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m1.r13",
+      "segment": "4e.m1",
+      "grade": "4e",
+      "number": 13,
+      "text": "Il résout algébriquement une équation du premier degré.",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r01",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 1,
+      "text": "Il lit, interprète et représente des données sous forme de diagrammes circulaires.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r02",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 2,
+      "text": "Il calcule et interprète la médiane d’une série de données de petit effectif total.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r03",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 3,
+      "text": "Il utilise le vocabulaire des probabilités : expérience aléatoire, issues, événement, probabilité, événement certain, événement impossible, événement contraire.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r04",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 4,
+      "text": "Il reconnaît des événements contraires et s’en sert pour calculer des probabilités.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r05",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 5,
+      "text": "Il calcule des probabilités.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r06",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 6,
+      "text": "Il reconnaît sur un graphique une situation de proportionnalité ou de non proportionnalité.",
+      "origin": "attendus-2019",
+      "page": 6,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r07",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 7,
+      "text": "Il calcule une quatrième proportionnelle par la procédure de son choix.",
+      "origin": "attendus-2019",
+      "page": 6,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r08",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 8,
+      "text": "Il utilise une formule liant deux grandeurs dans une situation de proportionnalité.",
+      "origin": "attendus-2019",
+      "page": 6,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r09",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 9,
+      "text": "Il résout des problèmes en utilisant la proportionnalité dans le cadre de la géométrie.",
+      "origin": "attendus-2019",
+      "page": 6,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r10",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 10,
+      "text": "Il produit une formule littérale représentant la dépendance de deux grandeurs.",
+      "origin": "attendus-2019",
+      "page": 6,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r11",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 11,
+      "text": "Il représente la dépendance de deux grandeurs par un graphique.",
+      "origin": "attendus-2019",
+      "page": 6,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m2.r12",
+      "segment": "4e.m2",
+      "grade": "4e",
+      "number": 12,
+      "text": "Il utilise un graphique représentant la dépendance de deux grandeurs pour lire et interpréter différentes valeurs sur l’axe des abscisses ou l’axe des ordonnées.",
+      "origin": "attendus-2019",
+      "page": 6,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m3.r01",
+      "segment": "4e.m3",
+      "grade": "4e",
+      "number": 1,
+      "text": "Il calcule le volume d’une pyramide, d’un cône.",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m3.r02",
+      "segment": "4e.m3",
+      "grade": "4e",
+      "number": 2,
+      "text": "Des grandeurs produits (par exemple trafic, énergie) et des grandeurs quotients (par exemple vitesse, débit, concentration, masse volumique) sont introduites à travers la résolution de problèmes.",
+      "origin": "reperes-2019",
+      "page": 9,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m3.r03",
+      "segment": "4e.m3",
+      "grade": "4e",
+      "number": 3,
+      "text": "Il effectue des conversions d’unités sur des grandeurs composées.",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m3.r04",
+      "segment": "4e.m3",
+      "grade": "4e",
+      "number": 4,
+      "text": "Les élèves sont sensibilisés au contrôle de la cohérence des résultats du point de vue des unités des grandeurs composées.",
+      "origin": "reperes-2019",
+      "page": 9,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m3.r05",
+      "segment": "4e.m3",
+      "grade": "4e",
+      "number": 5,
+      "text": "Il utilise un rapport d’agrandissement ou de réduction pour calculer, des longueurs, des aires, des volumes.",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m3.r06",
+      "segment": "4e.m3",
+      "grade": "4e",
+      "number": 6,
+      "text": "Il comprend l’effet d’une translation : conservation du parallélisme, des longueurs, des aires et des angles.",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r01",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 1,
+      "text": "Il se repère dans un pavé droit.",
+      "origin": "attendus-2019",
+      "page": 9,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r02",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 2,
+      "text": "Il construit et met en relation une représentation en perspective cavalière et un patron d’une pyramide, d’un cône de révolution.",
+      "origin": "attendus-2019",
+      "page": 9,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r03",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 3,
+      "text": "Les cas d’égalité des triangles sont présentés et utilisés pour résoudre des problèmes.",
+      "origin": "reperes-2019",
+      "page": 11,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r04",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 4,
+      "text": "Le théorème de Thalès et sa réciproque dans la configuration des triangles emboîtés sont énoncés et utilisés",
+      "origin": "reperes-2019",
+      "page": 11,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r05",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 5,
+      "text": "le théorème de Pythagore (plusieurs démonstrations possibles) et sa réciproque.",
+      "origin": "reperes-2019",
+      "page": 11,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r06",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 6,
+      "text": "La définition du cosinus d’un angle d’un triangle rectangle découle, grâce au théorème de Thalès, de l’indépendance du rapport des longueurs le définissant.",
+      "origin": "reperes-2019",
+      "page": 11,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r07",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 7,
+      "text": "Il transforme une figure par translation.",
+      "origin": "attendus-2019",
+      "page": 9,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r08",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 8,
+      "text": "Il identifie des translations dans des frises et des pavages.",
+      "origin": "attendus-2019",
+      "page": 9,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m4.r09",
+      "segment": "4e.m4",
+      "grade": "4e",
+      "number": 9,
+      "text": "Il mène des raisonnements en utilisant des propriétés des figures, des configurations et de la translation.",
+      "origin": "attendus-2019",
+      "page": 10,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m5.r01",
+      "segment": "4e.m5",
+      "grade": "4e",
+      "number": 1,
+      "text": "Il gère le déclenchement d’un script en réponse à un événement.",
+      "origin": "attendus-2019",
+      "page": 11,
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m5.r02",
+      "segment": "4e.m5",
+      "grade": "4e",
+      "number": 2,
+      "text": "Il écrit une séquence d’instructions (condition « si … alors » et boucle « répéter … fois »).",
+      "origin": "attendus-2019",
+      "page": 11,
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "4e.m5.r03",
+      "segment": "4e.m5",
+      "grade": "4e",
+      "number": 3,
+      "text": "Il intègre une variable dans un programme de déplacement, de construction géométrique ou de calcul.",
+      "origin": "attendus-2019",
+      "page": 11,
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "stub": true,
+      "cohortNote": "Taught in 4e in 2025-2026 to the 2026-2027 3e cohort, under the 2020 text (attendus/repères 4e). 4e itself is defined later; from 2027-2028 4e follows the 2026 text."
+    },
+    {
+      "id": "3e.m1.r01",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 1,
+      "text": "Il calcule avec les nombres rationnels, notamment dans le cadre de résolution de problèmes.",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 2,
+          "text": "Le travail est consolidé notamment lors des résolutions de problèmes."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Calculer avec des nombres relatifs, des fractions, des nombres décimaux."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 10) : automatisme « Additionner, soustraire, multiplier et diviser des fractions » et objectif « Résoudre des problèmes faisant appel à des fractions »."
+    },
+    {
+      "id": "3e.m1.r02",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 2,
+      "text": "Les puissances de base quelconque d’exposants négatifs sont introduites et utilisées pour simplifier des quotients.",
+      "origin": "reperes-2019",
+      "page": 4,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 4,
+          "text": "La connaissance des formules générales sur les produits ou quotients de puissances n’est pas un attendu du programme : la mise en œuvre des calculs sur les puissances découle de leur définition."
+        },
+        {
+          "origin": "attendus-2019",
+          "page": 2,
+          "text": "Il utilise les puissances d’exposants positifs ou négatifs pour simplifier l’écriture des produits."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 131,
+          "text": "Puissance d’un nombre (exposants entiers, positifs ou négatifs)."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 10) : « Définir les puissances d’exposant négatif d’un nombre » est gardé, mais « Multiplier et diviser des puissances » devient un objectif (item horizon 3e.m1.x4) : la règle « pas de formule générale » de 2020 tombe."
+    },
+    {
+      "id": "3e.m1.r03",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 3,
+      "text": "Il résout des problèmes avec des puissances, notamment en utilisant la notation scientifique.",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Effectuer des calculs numériques simples impliquant des puissances, notamment en utilisant la notation scientifique."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 10-11) : « Déterminer la notation scientifique d’un nombre. Résoudre des problèmes notamment en utilisant la notation scientifique. »"
+    },
+    {
+      "id": "3e.m1.r04",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 4,
+      "text": "Il résout des problèmes mettant en jeu des racines carrées.",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 4,
+          "text": "La racine carrée est utilisée dans le cadre de la résolution de problèmes. Aucune connaissance n’est attendue sur les propriétés algébriques des racines carrées."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Utiliser la racine carrée pour résoudre des problèmes, notamment géométriques."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 11) : « Résoudre des problèmes utilisant la racine carrée. » En 2026 la définition de la racine carrée est un objectif de 4e (p. 10)."
+    },
+    {
+      "id": "3e.m1.r05",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 5,
+      "text": "Il décompose un nombre entier en produit de facteurs premiers (à la main, à l’aide d’un tableur ou d’un logiciel de programmation).",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 4,
+          "text": "L’utilisation d’un tableur, d’un logiciel de programmation ou d’une calculatrice permet d’étendre la procédure de décomposition en facteurs premiers."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Décomposer un nombre entier en produit de facteurs premiers (à la main ou à l’aide d’un logiciel)."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 11) : seulement l’automatisme « Factoriser un nombre entier positif : 60 = 2² × 3 × 5 » ; aucun objectif d’apprentissage sous « Multiples et diviseurs »."
+    },
+    {
+      "id": "3e.m1.r06",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 6,
+      "text": "Il simplifie une fraction pour la rendre irréductible.",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 4,
+          "text": "La notion de fraction irréductible est introduite."
+        },
+        {
+          "origin": "reperes-2019",
+          "page": 2,
+          "text": "La notion de fraction irréductible est abordée, en lien avec celles de multiple et de diviseur qui sont travaillées tout au long du cycle."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Fractions irréductibles. / Simplifier une fraction pour la rendre irréductible."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 10) : « Mettre une fraction sous forme irréductible. Rendre irréductible une fraction. »"
+    },
+    {
+      "id": "3e.m1.r07",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 7,
+      "text": "Il modélise et résout des problèmes mettant en jeu la divisibilité (engrenages, conjonction de phénomènes…).",
+      "origin": "attendus-2019",
+      "page": 2,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Modéliser et résoudre des problèmes mettant en jeu la divisibilité (engrenages, conjonction de phénomènes, etc.)."
+        },
+        {
+          "origin": "reperes-2019",
+          "page": 4,
+          "text": "Tout au long du cycle, les élèves sont amenés à modéliser et résoudre des problèmes mettant en jeu la divisibilité et les nombres premiers."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "La section 3e 2026 (p. 11) ne liste que des automatismes sous « Multiples et diviseurs » ; aucun problème de divisibilité n’y est nommé.",
+      "note": "The 2020 text names no PGCD / PPCM. The lesson asks for the smallest common multiple (the attendu example: two lamps blinking every 153 s and 187 s) and the largest common divisor (the 4e example of identical bouquets, att. 4e p. 4) through prime decompositions. [À VÉRIFIER DANS LE PROGRAMME OFFICIEL : whether « le plus grand diviseur commun » may be named as such in 3e.]"
+    },
+    {
+      "id": "3e.m1.r08",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 8,
+      "text": "Le travail sur les expressions littérales est consolidé avec des transformations d’expressions, des programmes de calcul, des mises en équations, des fonctions…",
+      "origin": "reperes-2019",
+      "page": 5,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Utiliser le calcul littéral pour traduire une propriété générale (par exemple la distributivité simple), pour démontrer un résultat général (par exemple que la somme de trois entiers consécutifs est un multiple de trois), pour valider ou réfuter une conjecture, pour modéliser une situation."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 11) : automatisme « Donner l’expression générique d’un nombre pair, d’un nombre impair » ; « Utiliser le calcul algébrique pour produire des démonstrations » est un objectif de 4e (p. 10) ; la 3e ajoute « Pratiquer un raisonnement par analyse-synthèse » (horizon 3e.m1.x3)."
+    },
+    {
+      "id": "3e.m1.r09",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 9,
+      "text": "Il détermine l’opposé d’une expression littérale.",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 11), automatisme : « Prendre l’opposé d’une expression : savoir que – (5 – 4x) = –5 + 4x. »"
+    },
+    {
+      "id": "3e.m1.r10",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 10,
+      "text": "La double distributivité est abordée. Le lien est fait avec la simple distributivité.",
+      "origin": "reperes-2019",
+      "page": 5,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 5,
+          "text": "Il est possible de démontrer l’identité (a + b)(c + d) = ac + ad + bc + bd en posant k = a + b et en utilisant la simple distributivité."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Propriétés de distributivité (simple et double)."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 11) : « Utiliser la double distributivité pour développer et factoriser des expressions dont le facteur est apparent. » (factoriser s’ajoute)."
+    },
+    {
+      "id": "3e.m1.r11",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 11,
+      "text": "Il développe (par simple et double distributivités), factorise, réduit des expressions algébriques simples.",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Développer, factoriser, réduire des expressions algébriques dans des cas très simples."
+        },
+        {
+          "origin": "reperes-2019",
+          "page": 6,
+          "text": "Aucune virtuosité calculatoire n’est attendue dans les développements et les factorisations."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 11), automatismes : « Simplifier des expressions littérales », « Développer et factoriser une expression simple »."
+    },
+    {
+      "id": "3e.m1.r12",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 12,
+      "text": "Il factorise une expression du type a² - b² et développe des expression du type (a + b)(a - b).",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Factorisation de a² - b²."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 11) : « Manipuler les trois identités remarquables pour développer et factoriser » — a² – b² est gardée, (a + b)² et (a – b)² s’ajoutent (horizon 3e.m1.x1)."
+    },
+    {
+      "id": "3e.m1.r13",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 13,
+      "text": "Il résout algébriquement différents types d’équations : équation du premier degré.",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 3,
+          "text": "Il résout des problèmes s’y ramenant, qui peuvent être internes aux mathématiques ou en lien avec d’autres disciplines."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Mettre un problème en équation en vue de sa résolution."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 11), automatisme « Résoudre des équations du type ax = c, x + b = c, ax + b = c » ; la mise en équation (ax + b = cx + d) est un objectif de 4e (p. 10)."
+    },
+    {
+      "id": "3e.m1.r14",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 14,
+      "text": "Annulation d’un produit (démonstration possible par disjonction de cas).",
+      "origin": "programme-2020",
+      "page": 132,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 3,
+          "text": "Il résout algébriquement différents types d’équations : […] équation s’y ramenant (équations produits)"
+        },
+        {
+          "origin": "reperes-2019",
+          "page": 6,
+          "text": "La factorisation d’une expression du type a² - b² permet de résoudre des équations produits se ramenant au premier degré"
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 11) : « Résoudre une équation produit nul. »"
+    },
+    {
+      "id": "3e.m1.r15",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "number": 15,
+      "text": "Il résout algébriquement différents types d’équations : équations de la forme x² = a sur des exemples simples.",
+      "origin": "attendus-2019",
+      "page": 3,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 132,
+          "text": "Résoudre algébriquement des équations du premier degré ou s’y ramenant (équations produits), en particulier des équations du type x² = a."
+        },
+        {
+          "origin": "reperes-2019",
+          "page": 6,
+          "text": "(notamment des équations du type x² = a en lien avec la racine carrée)"
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 11) : « Résoudre analytiquement et graphiquement des équations de la forme x² = a » — la résolution graphique s’ajoute (horizon 3e.m1.x6)."
+    },
+    {
+      "id": "3e.m2.r01",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 1,
+      "text": "Il calcule et interprète l’étendue d’une série présentée sous forme de données brutes, d’un tableau, d’un diagramme en bâtons, d’un diagramme circulaire ou d’un histogramme.",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 7,
+          "text": "Un indicateur de dispersion est introduit : l’étendue."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 133,
+          "text": "Indicateur de dispersion : étendue."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "En 2026 l’étendue est un objectif de 4e (p. 17) et un automatisme de 3e (« Calculer l’étendue d’une série », p. 17)."
+    },
+    {
+      "id": "3e.m2.r02",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 2,
+      "text": "Il lit, interprète et représente des données sous forme d’histogrammes pour des classes de même amplitude.",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 7,
+          "text": "Un nouveau type de diagramme est introduit : les histogrammes pour des classes de même amplitude."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "Le mot « histogramme » n’apparaît nulle part dans l’annexe 2 de 2026 (recherche sur les 20 pages extraites)."
+    },
+    {
+      "id": "3e.m2.r03",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 3,
+      "text": "Le travail sur les représentations graphiques, le calcul, en particulier celui des effectifs et des fréquences, et l’interprétation des indicateurs de position est consolidé.",
+      "origin": "reperes-2019",
+      "page": 7,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 4,
+          "text": "Il calcule des effectifs et des fréquences."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 17) : automatismes « Calculer une moyenne », « Donner une médiane… » ; objectifs nouveaux : effectifs cumulés, quartiles, boîtes à moustaches (horizon 3e.m2.x1–x3)."
+    },
+    {
+      "id": "3e.m2.r04",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 4,
+      "text": "À partir de dénombrements, il calcule des probabilités pour des expériences aléatoires simples à une ou deux épreuves.",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 7,
+          "text": "Les calculs de probabilités, à partir de dénombrements, s’appliquent à des contextes simples faisant prioritairement intervenir une seule épreuve."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "En 2026 « Calculer la probabilité d’un évènement et de l’évènement contraire » est un objectif de 4e (p. 17) ; la 3e 2026 (p. 18) a la relation P(A ∪ B) (horizon 3e.m2.x4)."
+    },
+    {
+      "id": "3e.m2.r05",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 5,
+      "text": "Dans des cas très simples, il est cependant possible d’introduire des expériences à deux épreuves. Les dénombrements s’appuient alors uniquement sur des tableaux à double entrée, la notion d’arbre ne figurant pas au programme.",
+      "origin": "reperes-2019",
+      "page": 7,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 4,
+          "text": "… pour des expériences aléatoires simples à une ou deux épreuves."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "En 2026 les « Exemples simples d’expériences aléatoires à deux épreuves » sont un objectif de 4e (p. 17) ; « double entrée » n’apparaît pas dans l’annexe 2."
+    },
+    {
+      "id": "3e.m2.r06",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 6,
+      "text": "Il fait le lien entre stabilisation des fréquences et probabilités.",
+      "origin": "attendus-2019",
+      "page": 4,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 7,
+          "text": "Le constat de la stabilisation des fréquences s’appuie sur la simulation d’expériences aléatoires à une épreuve à l’aide d’un tableur ou d’un logiciel de programmation. […] Les élèves simulent une expérience aléatoire à l’aide d’un tableur ou d’un logiciel de programmation."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 133,
+          "text": "Faire le lien entre fréquence et probabilité."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 18) : « Observer la stabilisation des fréquences lorsqu’on augmente le nombre de répétitions de l’expérience aléatoire, faire le lien entre fréquence et probabilité selon le nombre de répétitions. »"
+    },
+    {
+      "id": "3e.m2.r07",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 7,
+      "text": "Il utilise le lien entre pourcentage d’évolution et coefficient multiplicateur.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 8,
+          "text": "Le lien est fait entre taux d’évolution et coefficient multiplicateur"
+        },
+        {
+          "origin": "programme-2020",
+          "page": 134,
+          "text": "Taux d’évolution, coefficient multiplicateur."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "En 2026 le coefficient multiplicateur est défini en 4e (p. 19) ; la 3e garde « Traduire une augmentation ou une diminution en pourcentages » et l’automatisme correspondant (p. 19)."
+    },
+    {
+      "id": "3e.m2.r08",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 8,
+      "text": "Il modélise une situation de proportionnalité à l’aide d’une fonction linéaire.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 8,
+          "text": "ainsi qu’entre la proportionnalité et les fonctions linéaires."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 134,
+          "text": "Modéliser une situation de proportionnalité à l’aide d’une fonction linéaire."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 19-20) : « Connaitre et utiliser les fonctions linéaires », « Relier fonctions linéaires et proportionnalité »."
+    },
+    {
+      "id": "3e.m2.r09",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 9,
+      "text": "Il résout des problèmes en utilisant la proportionnalité dans le cadre de la géométrie.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 8,
+          "text": "Le champ des problèmes de géométrie relevant de la proportionnalité est élargi (homothéties, triangles semblables, configurations de Thalès)."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 19) : « Relier la représentation graphique d’une situation de proportionnalité avec le théorème de Thalès » ; homothéties et triangles semblables n’apparaissent plus."
+    },
+    {
+      "id": "3e.m2.r10",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 10,
+      "text": "Il utilise les notations et le vocabulaire fonctionnels.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 134,
+          "text": "Vocabulaire : variable, fonction, antécédent, image. / Notations f(x) et x ↦ f(x)."
+        },
+        {
+          "origin": "reperes-2019",
+          "page": 8,
+          "text": "Les notions de variable, de fonction, d’antécédent, d’image sont formalisées et les notations fonctionnelles sont utilisées."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 19) : « Définir et connaitre le vocabulaire : image, antécédents » ; le cadre (p. 18) précise « Des exemples de fonctions sont étudiés en troisième, sans étude générale de la notion de fonction »."
+    },
+    {
+      "id": "3e.m2.r11",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 11,
+      "text": "Il détermine, à partir de tous les modes de représentation, l’image d’un nombre.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 19) : vocabulaire « image » ; en 4e 2026 (p. 19) : appliquer un programme de calcul à une variable."
+    },
+    {
+      "id": "3e.m2.r12",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 12,
+      "text": "Il passe d’un mode de représentation d’une fonction à un autre.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 134,
+          "text": "Différents modes de représentation d’une fonction (expression symbolique, tableau de valeurs, représentation graphique, programme de calcul)."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 19) : « Utiliser les différentes représentations d’une fonction. »"
+    },
+    {
+      "id": "3e.m2.r13",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 13,
+      "text": "Il détermine un antécédent à partir d’une représentation graphique ou d’un tableau de valeurs d’une fonction.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 19) : « Définir et connaitre le vocabulaire : image, antécédents. »"
+    },
+    {
+      "id": "3e.m2.r14",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 14,
+      "text": "Il détermine de manière algébrique l’antécédent par une fonction, dans des cas se ramenant à la résolution d’une équation du premier degré.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "in2026": "changed",
+      "in2026Note": "Le calcul algébrique d’un antécédent n’est pas nommé dans la section 3e 2026 ; elle demande « Résoudre graphiquement des équations et des inéquations linéaires » (p. 20, horizon 3e.m2.x7)."
+    },
+    {
+      "id": "3e.m2.r15",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 15,
+      "text": "Il représente graphiquement une fonction linéaire […].",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 8,
+          "text": "Les fonctions affines et linéaires sont présentées par leurs expressions algébriques et leurs représentations graphiques."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 134,
+          "text": "Fonction linéaire, fonction affine. / Représenter graphiquement une fonction linéaire, une fonction affine."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 20) : « Définir et utiliser les fonctions linéaires. »",
+      "textNote": "The attendu « Il représente graphiquement une fonction linéaire, une fonction affine. » is cut in two: the linear part here, the affine part in r16."
+    },
+    {
+      "id": "3e.m2.r16",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 16,
+      "text": "Il représente graphiquement […] une fonction affine.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 20) : « Définir et utiliser les fonctions affines. »",
+      "textNote": "Second half of the attendu cut with r15."
+    },
+    {
+      "id": "3e.m2.r17",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 17,
+      "text": "Il interprète les paramètres d’une fonction affine suivant l’allure de sa courbe représentative.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 20) : « Déterminer graphiquement les coefficients d’une fonction affine » (les valeurs, plus seulement le signe)."
+    },
+    {
+      "id": "3e.m2.r18",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 18,
+      "text": "Il modélise un phénomène continu par une fonction.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 134,
+          "text": "Modéliser un phénomène continu par une fonction."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "Non nommé dans la section 3e 2026 (p. 19-20) ; « sans étude générale de la notion de fonction » (p. 18)."
+    },
+    {
+      "id": "3e.m2.r19",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "number": 19,
+      "text": "Il résout des problèmes modélisés par des fonctions en utilisant un ou plusieurs modes de représentation.",
+      "origin": "attendus-2019",
+      "page": 5,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 134,
+          "text": "Résoudre des problèmes modélisés par des fonctions."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 19) : « Utiliser les différentes représentations d’une fonction » ; la résolution de problèmes par fonctions n’est pas nommée telle quelle."
+    },
+    {
+      "id": "3e.m3.r01",
+      "segment": "3e.m3",
+      "grade": "3e",
+      "number": 1,
+      "text": "Il calcule le volume d’une boule.",
+      "origin": "attendus-2019",
+      "page": 7,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 9,
+          "text": "La formule donnant le volume d’une boule est utilisée."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 135,
+          "text": "Volume d’un prisme, d’une pyramide, d’un cylindre, d’un cône, d’une boule."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026, Espace et géométrie (p. 15) : « Connaitre et utiliser la formule du volume d’une boule de rayon donné. »"
+    },
+    {
+      "id": "3e.m3.r02",
+      "segment": "3e.m3",
+      "grade": "3e",
+      "number": 2,
+      "text": "Il calcule les volumes d’assemblages de solides étudiés au cours du cycle.",
+      "origin": "attendus-2019",
+      "page": 7,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "in2026": "absent",
+      "in2026Note": "Le mot « assemblage » n’apparaît pas dans l’annexe 2 de 2026 ; la 3e 2026 a l’automatisme « Connaitre et utiliser les formules du volume d’une pyramide ou d’un cône » (p. 15)."
+    },
+    {
+      "id": "3e.m3.r03",
+      "segment": "3e.m3",
+      "grade": "3e",
+      "number": 3,
+      "text": "Il mène des calculs sur des grandeurs mesurables, notamment des grandeurs composées, et exprime les résultats dans les unités adaptées.",
+      "origin": "attendus-2019",
+      "page": 7,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 9,
+          "text": "Le travail sur les grandeurs mesurables et les unités est poursuivi."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 135,
+          "text": "Mener des calculs impliquant des grandeurs mesurables, notamment des grandeurs composées, exprimer les résultats dans les unités adaptées."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "En 2026 « Utiliser des grandeurs quotients, avec ou sans unités » est un objectif de 4e (p. 19) ; rien dans la section 3e."
+    },
+    {
+      "id": "3e.m3.r04",
+      "segment": "3e.m3",
+      "grade": "3e",
+      "number": 4,
+      "text": "Il résout des problèmes utilisant les conversions d’unités sur des grandeurs composées.",
+      "origin": "attendus-2019",
+      "page": 7,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 9,
+          "text": "Il est possible de réinvestir le calcul avec les puissances de 10 pour les conversions d’unités."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "Aucune conversion de grandeur composée dans la section 3e 2026."
+    },
+    {
+      "id": "3e.m3.r05",
+      "segment": "3e.m3",
+      "grade": "3e",
+      "number": 5,
+      "text": "Il vérifie la cohérence des résultats du point de vue des unités pour les calculs de grandeurs simples ou composées.",
+      "origin": "attendus-2019",
+      "page": 7,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 135,
+          "text": "Vérifier la cohérence des résultats du point de vue des unités."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "Non nommé dans la section 3e 2026. [À VÉRIFIER DANS LE PROGRAMME OFFICIEL : le préambule 2026 (p. 1-6) n’a pas été relu pour une règle transversale sur les unités.]"
+    },
+    {
+      "id": "3e.m3.r06",
+      "segment": "3e.m3",
+      "grade": "3e",
+      "number": 6,
+      "text": "Il calcule des grandeurs géométriques (longueurs, aires et volumes) en utilisant les transformations (symétries, rotations, translations, homothétie).",
+      "origin": "attendus-2019",
+      "page": 7,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 9,
+          "text": "Les élèves connaissent et utilisent l’effet des transformations au programme (symétries, translations, rotations, homothéties) sur les longueurs, les angles, les aires et les volumes."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "Rotation et homothétie n’apparaissent pas dans l’annexe 2 de 2026 ; la conservation par translation est un objectif de 4e (p. 14) ; la 3e garde l’automatisme « Mobiliser les connaissances sur la symétrie axiale, le demi-tour, la translation » (p. 15)."
+    },
+    {
+      "id": "3e.m3.r07",
+      "segment": "3e.m3",
+      "grade": "3e",
+      "number": 7,
+      "text": "Il résout des problèmes en utilisant la proportionnalité en géométrie dans le cadre de certaines configurations ou transformations (agrandissement, réduction, triangles semblables, homothéties).",
+      "origin": "attendus-2019",
+      "page": 7,
+      "domain": "grandeurs_mesures",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 135,
+          "text": "Faire le lien entre la proportionnalité et certaines configurations ou transformations géométriques (agrandissement réduction, triangles semblables, homothéties)."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "« agrandissement », « homothétie », « semblable » : 0 occurrence dans l’annexe 2 de 2026."
+    },
+    {
+      "id": "3e.m4.r01",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 1,
+      "text": "Il se repère sur une sphère (latitude, longitude).",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 10,
+          "text": "Le repérage s’étend à la sphère (latitude, longitude)."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 136,
+          "text": "Latitude, longitude."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "« latitude » : 0 occurrence en 2026 ; la 3e 2026 (p. 15) a « Définir la boule et la sphère. Définir les grands cercles, le diamètre. »"
+    },
+    {
+      "id": "3e.m4.r02",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 2,
+      "text": "Il construit et met en relation différentes représentations des solides étudiés au cours du cycle (représentations en perspective cavalière, vues de face, de dessus, en coupe, patrons) et leurs sections planes.",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "textNote": "The sections planes of this attendu are carried by 3e.m4.r03 (repères wording).",
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 15) : automatismes sur les pyramides (face, patrons) ; vues de face, de dessus, en coupe non nommées."
+    },
+    {
+      "id": "3e.m4.r03",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 3,
+      "text": "Un logiciel de géométrie est utilisé pour visualiser des solides et leurs sections planes.",
+      "origin": "reperes-2019",
+      "page": 10,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 8,
+          "text": "Il trace des solides en perspective cavalière et fait apparaître des sections."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 15) : « Visualiser et réaliser des sections de pavé parallèlement à une face, de cylindre parallèlement ou perpendiculairement à son axe, d’une boule. » (liste fermée de solides)"
+    },
+    {
+      "id": "3e.m4.r04",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 4,
+      "text": "Les triangles semblables : une définition et une propriété caractéristique.",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 11,
+          "text": "Une définition et une caractérisation des triangles semblables sont données. […] Deux triangles semblables peuvent être définis par la proportionnalité des mesures de leurs côtés. Une caractérisation angulaire de cette définition peut être donnée et démontrée à partir d’un cas d’égalité des triangles et d’une caractérisation angulaire du parallélisme."
+        },
+        {
+          "origin": "programme-2020",
+          "page": 136,
+          "text": "triangles semblables (une définition et une propriété caractéristique)."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "« semblable » : 0 occurrence dans l’annexe 2 de 2026."
+    },
+    {
+      "id": "3e.m4.r05",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 5,
+      "text": "Le théorème de Thalès et sa réciproque dans la configuration du papillon sont énoncés et utilisés (démonstration possible, utilisant une symétrie centrale pour se ramener à la configuration étudiée en quatrième).",
+      "origin": "reperes-2019",
+      "page": 11,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 8,
+          "text": "le théorème de Thalès et sa réciproque dans la configuration papillon"
+        },
+        {
+          "origin": "attendus-2019",
+          "page": 9,
+          "text": "En appliquant le théorème de Thalès, il effectue des calculs de longueurs."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 15) : « Connaitre et appliquer le théorème de Thalès, sa réciproque, sa contraposée (configurations des triangles emboités et configuration dite du papillon). » En 2026 Thalès n’est PAS en 4e : en 2028 la 3e devra enseigner aussi les triangles emboîtés."
+    },
+    {
+      "id": "3e.m4.r06",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 6,
+      "text": "Il utilise les lignes trigonométriques dans un triangle rectangle pour calculer des longueurs ou des mesures d’angles.",
+      "origin": "attendus-2019",
+      "page": 9,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 11,
+          "text": "Les lignes trigonométriques (cosinus, sinus, tangente) dans le triangle rectangle sont utilisées pour calculer des longueurs ou des angles."
+        }
+      ],
+      "in2026": "kept",
+      "in2026Note": "3e 2026 (p. 15) : « Connaitre et utiliser les lignes trigonométriques dans le triangle rectangle : cosinus, sinus, tangente. » En 2026 le cosinus n’est pas en 4e : en 2028 la 3e devra l’introduire."
+    },
+    {
+      "id": "3e.m4.r07",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 7,
+      "text": "Les élèves transforment (à la main ou à l’aide d’un logiciel) une figure par rotation […]. Le lien est fait entre angle et rotation",
+      "origin": "reperes-2019",
+      "page": 12,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 8,
+          "text": "il transforme une figure par rotation et par homothétie et il comprend l’effet d’une rotation et d’une homothétie."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "« rotation » : 0 occurrence dans l’annexe 2 de 2026."
+    },
+    {
+      "id": "3e.m4.r08",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 8,
+      "text": "Les élèves transforment (à la main ou à l’aide d’un logiciel) une figure par […] homothétie (de rapport positif ou négatif). Le lien est fait […] entre le théorème de Thalès et les homothéties.",
+      "origin": "reperes-2019",
+      "page": 12,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 8,
+          "text": "il transforme une figure par rotation et par homothétie et il comprend l’effet d’une rotation et d’une homothétie."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "« homothétie » : 0 occurrence dans l’annexe 2 de 2026."
+    },
+    {
+      "id": "3e.m4.r09",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 9,
+      "text": "Il identifie des rotations et des homothéties dans des frises, des pavages et des rosaces.",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 12,
+          "text": "Les élèves identifient des transformations dans des frises, des pavages, des rosaces."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "« frise » : 0 occurrence en 2026 ; « rosace » n’apparaît qu’en 5e (p. 13)."
+    },
+    {
+      "id": "3e.m4.r10",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "number": 10,
+      "text": "Il mobilise les connaissances des figures, des configurations, de la rotation et de l’homothétie pour déterminer des grandeurs géométriques.",
+      "origin": "attendus-2019",
+      "page": 8,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "attendus-2019",
+          "page": 8,
+          "text": "Il mène des raisonnements en utilisant des propriétés des figures, des configurations, de la rotation et de l’homothétie."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "Le raisonnement reste l’objectif majeur de la géométrie (préambule Espace et géométrie, p. 11), mais sans rotation ni homothétie."
+    },
+    {
+      "id": "3e.m5.r01",
+      "segment": "3e.m5",
+      "grade": "3e",
+      "number": 1,
+      "text": "Il décompose un problème en sous-problèmes et traduit un sous-problème en créant un « bloc-personnalisé ».",
+      "origin": "attendus-2019",
+      "page": 10,
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 13,
+          "text": "La décomposition d’un problème en sous-problèmes et la traduction d’un sous-problème par la création d’un bloc-utilisateur contribuent au développement des compétences visées."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 20) : « Structurer des programmes. »"
+    },
+    {
+      "id": "3e.m5.r02",
+      "segment": "3e.m5",
+      "grade": "3e",
+      "number": 2,
+      "text": "Il construit une figure en créant un motif et en le reproduisant à l’aide d’une boucle.",
+      "origin": "attendus-2019",
+      "page": 10,
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "in2026": "absent",
+      "in2026Note": "Non nommé dans la section 3e 2026 (p. 20) ; la boucle inconditionnelle est un objectif de 5e 2026."
+    },
+    {
+      "id": "3e.m5.r03",
+      "segment": "3e.m5",
+      "grade": "3e",
+      "number": 3,
+      "text": "Il utilise simultanément les boucles « Répéter … fois » et « Répéter jusqu’à … » ainsi que les instructions conditionnelles pour réaliser des figures, des programmes de calculs, des déplacements, des simulations d’expérience aléatoire.",
+      "origin": "attendus-2019",
+      "page": 10,
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "programme-2020",
+          "page": 137,
+          "text": "Séquences d’instructions, boucles, instructions conditionnelles."
+        }
+      ],
+      "in2026": "changed",
+      "in2026Note": "3e 2026 (p. 20) : « Utiliser une boucle conditionnelle », « Utiliser des conditions composées » (horizon 3e.m5.x1)."
+    },
+    {
+      "id": "3e.m5.r04",
+      "segment": "3e.m5",
+      "grade": "3e",
+      "number": 4,
+      "text": "Il écrit plusieurs scripts fonctionnant en parallèle pour gérer des interactions et créer des jeux.",
+      "origin": "attendus-2019",
+      "page": 10,
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "alsoIn": [
+        {
+          "origin": "reperes-2019",
+          "page": 13,
+          "text": "L’écriture de plusieurs scripts fonctionnant en parallèle permet de gérer les interactions et de créer des jeux."
+        }
+      ],
+      "in2026": "absent",
+      "in2026Note": "Scripts en parallèle et événements non nommés dans la section 3e 2026 (p. 20)."
+    },
+    {
+      "id": "3e.m1.x1",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "text": "Manipuler les trois identités remarquables pour développer et factoriser : a² + 2ab + b² = (a + b)² ; a² – 2ab + b² = (a – b)² ; a² – b² = (a – b) (a + b)",
+      "origin": "programme-2026",
+      "page": 11,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "difference-de-deux-carres",
+      "horizonNote": "Extends the a² – b² lesson."
+    },
+    {
+      "id": "3e.m1.x2",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "text": "Résoudre analytiquement et graphiquement une inéquation du premier degré du type ax ⩾ b.",
+      "origin": "programme-2026",
+      "page": 11,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "mettre-un-probleme-en-equation",
+      "horizonNote": "A new lesson after the first-degree equations."
+    },
+    {
+      "id": "3e.m1.x3",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "text": "Pratiquer un raisonnement par analyse-synthèse dans le cadre d’une résolution d’équation.",
+      "origin": "programme-2026",
+      "page": 11,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "mettre-un-probleme-en-equation",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m1.x4",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "text": "Multiplier et diviser des puissances.",
+      "origin": "programme-2026",
+      "page": 10,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "puissances-d-exposant-negatif",
+      "horizonNote": "The 2020 text excludes general formulas; 2026 makes them an objective."
+    },
+    {
+      "id": "3e.m1.x5",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "text": "Simplifier des expressions produits ou des rapports comportant des facteurs communs.",
+      "origin": "programme-2026",
+      "page": 11,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "oppose-d-une-expression",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m1.x6",
+      "segment": "3e.m1",
+      "grade": "3e",
+      "text": "Résoudre […] graphiquement des équations de la forme x² = a.",
+      "origin": "programme-2026",
+      "page": 11,
+      "domain": "nombres_calculs",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "equation-x-carre-egal-a",
+      "horizonNote": "Needs the square function (3e.m2.x6); no link can go from m2 to m1 (segment order)."
+    },
+    {
+      "id": "3e.m2.x1",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "text": "Calculer des effectifs cumulés croissants.",
+      "origin": "programme-2026",
+      "page": 17,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "histogramme",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m2.x2",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "text": "Donner les quartiles et la médiane d’une série donnée sous forme de tableau d’effectifs ou de diagramme en barres.",
+      "origin": "programme-2026",
+      "page": 17,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "etendue-d-une-serie",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m2.x3",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "text": "Construire et utiliser des boites à moustache pour représenter les valeurs de position d’une série statistique.",
+      "origin": "programme-2026",
+      "page": 17,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "etendue-d-une-serie",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m2.x4",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "text": "Connaitre et savoir appliquer la relation P(A ∪ B) + P(A ∩ B) = P(A) + P(B).",
+      "origin": "programme-2026",
+      "page": 18,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "probabilite-une-epreuve",
+      "horizonNote": "Needs the set vocabulary (union, intersection) that 2026 places in 4e (p. 17)."
+    },
+    {
+      "id": "3e.m2.x5",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "text": "Simuler des expériences aléatoires indépendantes.",
+      "origin": "programme-2026",
+      "page": 18,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "frequence-et-probabilite",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m2.x6",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "text": "Représenter la fonction carré.",
+      "origin": "programme-2026",
+      "page": 20,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "lire-une-fonction",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m2.x7",
+      "segment": "3e.m2",
+      "grade": "3e",
+      "text": "Résoudre graphiquement des équations et des inéquations linéaires.",
+      "origin": "programme-2026",
+      "page": 20,
+      "domain": "organisation_gestion_donnees_fonctions",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "fonction-lineaire",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m4.x1",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "text": "Définir et utiliser la translation : définition ponctuelle avec parallélogramme.",
+      "origin": "programme-2026",
+      "page": 15,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "rotation",
+      "horizonNote": "Replaces, in 2028, the transformations unit whose rotation and homothety leave 3e."
+    },
+    {
+      "id": "3e.m4.x2",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "text": "Définir et utiliser les notions de vecteur, de vecteurs égaux, de vecteur nul, d’opposé d’un vecteur.",
+      "origin": "programme-2026",
+      "page": 15,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "rotation",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m4.x3",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "text": "Définir et utiliser la somme de deux vecteurs par enchainement de deux translations.",
+      "origin": "programme-2026",
+      "page": 15,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "rotation",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m4.x4",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "text": "Connaitre et appliquer le théorème de Thalès, sa réciproque, sa contraposée",
+      "origin": "programme-2026",
+      "page": 15,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "reciproque-de-thales",
+      "horizonNote": "Only the contraposée is new."
+    },
+    {
+      "id": "3e.m5.x1",
+      "segment": "3e.m5",
+      "grade": "3e",
+      "text": "Utiliser des conditions composées.",
+      "origin": "programme-2026",
+      "page": 20,
+      "domain": "algorithmique_programmation",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "boucles-et-conditions",
+      "horizonNote": ""
+    },
+    {
+      "id": "3e.m4.x5",
+      "segment": "3e.m4",
+      "grade": "3e",
+      "text": "Découvrir et utiliser la relation de Chasles.",
+      "origin": "programme-2026",
+      "page": 16,
+      "domain": "espace_geometrie",
+      "verified": false,
+      "horizon": "2028",
+      "attachesTo": "rotation",
+      "horizonNote": ""
+    }
+  ]
+}

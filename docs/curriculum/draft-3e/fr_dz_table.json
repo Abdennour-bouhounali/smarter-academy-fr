@@ -1,0 +1,959 @@
+{
+  "_comment": [
+    "DRAFT (2026-11-22) — FR 3e ↔ DZ (4AM, 3AM) lesson table. One row per pair. type: same = every FR point of the lesson has a DZ point of the same capability; same-maths-other-method = same capabilities reached by another method; partial = only some points match.",
+    "dzIsV2 = the DZ lesson has a lesson.pack.js under smarter-academy-dz/apps/web/src/lessons/moyen/** (checked 2026-11-22)."
+  ],
+  "builtOn": "2026-11-22",
+  "rows": [
+    {
+      "fr": "fraction-irreductible",
+      "dz": "ikhtizal-kasr",
+      "dzGrade": "4am",
+      "type": "same-maths-other-method",
+      "points": [
+        {
+          "fr": "3e_fraction-irreductible_P1",
+          "dz": "4am_ikhtizal-kasr_P2"
+        },
+        {
+          "fr": "3e_fraction-irreductible_P2",
+          "dz": "4am_ikhtizal-kasr_P1"
+        },
+        {
+          "fr": "3e_fraction-irreductible_P3",
+          "dz": "4am_ikhtizal-kasr_P4"
+        }
+      ],
+      "dzIsV2": true,
+      "note": "Same capabilities. DZ reaches « irreducible » through coprimality and the PGCD (its P2, P3); the 2020 French text has no PGCD and works with common prime factors."
+    },
+    {
+      "fr": "multiples-et-diviseurs-communs",
+      "dz": "qasim-mushtarak-akbar",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_multiples-et-diviseurs-communs_P3",
+          "dz": "4am_qasim-mushtarak-akbar_P3"
+        }
+      ],
+      "dzIsV2": true,
+      "note": "Only the sharing-into-identical-bundles point. DZ finds the greatest divisor by listing divisors or Euclid; FR by prime decompositions. DZ has no common-multiple lesson (FR P1, P2)."
+    },
+    {
+      "fr": "calculer-avec-des-fractions",
+      "dz": "amaliyat-natiqa",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_calculer-avec-des-fractions_P3",
+          "dz": "3am_amaliyat-natiqa_P4"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Chained computation with rationals and priorities; FR P1, P2 (translating word problems) have no DZ point."
+    },
+    {
+      "fr": "puissances-d-exposant-negatif",
+      "dz": "quwat-adad-nisbi",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_puissances-d-exposant-negatif_P2",
+          "dz": "3am_quwat-adad-nisbi_P2"
+        },
+        {
+          "fr": "3e_puissances-d-exposant-negatif_P3",
+          "dz": "3am_quwat-adad-nisbi_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Other method for P3: DZ states the power rules as formulas; the 2020 French text excludes the general formulas (calculations follow from the definition)."
+    },
+    {
+      "fr": "notation-scientifique-en-probleme",
+      "dz": "kitaba-ilmiya-rutba",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_notation-scientifique-en-probleme_P1",
+          "dz": "3am_kitaba-ilmiya-rutba_P1"
+        },
+        {
+          "fr": "3e_notation-scientifique-en-probleme_P3",
+          "dz": "3am_kitaba-ilmiya-rutba_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "notation-scientifique-en-probleme",
+      "dz": "qawaid-quwa-ashara",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_notation-scientifique-en-probleme_P2",
+          "dz": "3am_qawaid-quwa-ashara_P4"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ computes with the rules of powers of ten."
+    },
+    {
+      "fr": "racine-carree-en-probleme",
+      "dz": "khassiyat-fitaghuras",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_racine-carree-en-probleme_P2",
+          "dz": "3am_khassiyat-fitaghuras_P2"
+        },
+        {
+          "fr": "3e_racine-carree-en-probleme_P1",
+          "dz": "3am_khassiyat-fitaghuras_P3"
+        },
+        {
+          "fr": "3e_racine-carree-en-probleme_P3",
+          "dz": "3am_khassiyat-fitaghuras_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ teaches Pythagoras itself (FR 4e); only its use of √ for a length matches."
+    },
+    {
+      "fr": "oppose-d-une-expression",
+      "dz": "tabsit-hadhf-aqwas",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_oppose-d-une-expression_P2",
+          "dz": "3am_tabsit-hadhf-aqwas_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "oppose-d-une-expression",
+      "dz": "nashr-jabri-3am",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_oppose-d-une-expression_P3",
+          "dz": "3am_nashr-jabri-3am_P1"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "double-distributivite",
+      "dz": "nashr-jabri-3am",
+      "dzGrade": "3am",
+      "type": "same-maths-other-method",
+      "points": [
+        {
+          "fr": "3e_double-distributivite_P1",
+          "dz": "3am_nashr-jabri-3am_P2"
+        },
+        {
+          "fr": "3e_double-distributivite_P2",
+          "dz": "3am_nashr-jabri-3am_P3"
+        },
+        {
+          "fr": "3e_double-distributivite_P3",
+          "dz": "3am_nashr-jabri-3am_P4"
+        },
+        {
+          "fr": "3e_double-distributivite_P4",
+          "dz": "3am_nashr-jabri-3am_P4"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "P2: DZ justifies the rule by the area of a rectangle; the French repères suggest applying the simple distributivity twice (k = a + b)."
+    },
+    {
+      "fr": "double-distributivite",
+      "dz": "nashr-tabsit",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_double-distributivite_P1",
+          "dz": "4am_nashr-tabsit_P3"
+        },
+        {
+          "fr": "3e_double-distributivite_P3",
+          "dz": "4am_nashr-tabsit_P4"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "difference-de-deux-carres",
+      "dz": "mutatabiqat-shahira",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_difference-de-deux-carres_P1",
+          "dz": "4am_mutatabiqat-shahira_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ also teaches (a ± b)², which France adds to 3e only in 2028 (horizon 3e.m1.x1)."
+    },
+    {
+      "fr": "difference-de-deux-carres",
+      "dz": "tahlil-ibara",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_difference-de-deux-carres_P2",
+          "dz": "4am_tahlil-ibara_P3"
+        },
+        {
+          "fr": "3e_difference-de-deux-carres_P3",
+          "dz": "4am_tahlil-ibara_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ factors with the three identities."
+    },
+    {
+      "fr": "prouver-avec-le-calcul-litteral",
+      "dz": "qawaid-niqash-mithal-mudad",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_prouver-avec-le-calcul-litteral_P3",
+          "dz": "3am_qawaid-niqash-mithal-mudad_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "prouver-avec-le-calcul-litteral",
+      "dz": "qimat-ibara-harfiya",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_prouver-avec-le-calcul-litteral_P3",
+          "dz": "3am_qimat-ibara-harfiya_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "prouver-avec-le-calcul-litteral",
+      "dz": "khawass-qawasim",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_prouver-avec-le-calcul-litteral_P4",
+          "dz": "4am_khawass-qawasim_P4"
+        }
+      ],
+      "dzIsV2": true,
+      "note": "Same act (write m = d × k), in a divisibility context."
+    },
+    {
+      "fr": "mettre-un-probleme-en-equation",
+      "dz": "muadalat-darajat-ula",
+      "dzGrade": "3am",
+      "type": "same",
+      "points": [
+        {
+          "fr": "3e_mettre-un-probleme-en-equation_P1",
+          "dz": "3am_muadalat-darajat-ula_P4"
+        },
+        {
+          "fr": "3e_mettre-un-probleme-en-equation_P2",
+          "dz": "3am_muadalat-darajat-ula_P3"
+        },
+        {
+          "fr": "3e_mettre-un-probleme-en-equation_P3",
+          "dz": "3am_muadalat-darajat-ula_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "mettre-un-probleme-en-equation",
+      "dz": "tarrid-mushkila",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_mettre-un-probleme-en-equation_P1",
+          "dz": "4am_tarrid-mushkila_P1"
+        },
+        {
+          "fr": "3e_mettre-un-probleme-en-equation_P3",
+          "dz": "4am_tarrid-mushkila_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ also models with inequalities (France: 2028, horizon 3e.m1.x2)."
+    },
+    {
+      "fr": "equation-produit-nul",
+      "dz": "jidaa-maadum",
+      "dzGrade": "4am",
+      "type": "same",
+      "points": [
+        {
+          "fr": "3e_equation-produit-nul_P1",
+          "dz": "4am_jidaa-maadum_P2"
+        },
+        {
+          "fr": "3e_equation-produit-nul_P2",
+          "dz": "4am_jidaa-maadum_P2"
+        },
+        {
+          "fr": "3e_equation-produit-nul_P3",
+          "dz": "4am_jidaa-maadum_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "equation-x-carre-egal-a",
+      "dz": "muadalat-x-murabba",
+      "dzGrade": "4am",
+      "type": "same",
+      "points": [
+        {
+          "fr": "3e_equation-x-carre-egal-a_P1",
+          "dz": "4am_muadalat-x-murabba_P1"
+        },
+        {
+          "fr": "3e_equation-x-carre-egal-a_P2",
+          "dz": "4am_muadalat-x-murabba_P1"
+        },
+        {
+          "fr": "3e_equation-x-carre-egal-a_P3",
+          "dz": "4am_muadalat-x-murabba_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "notion-de-fonction",
+      "dz": "dala-khattiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_notion-de-fonction_P1",
+          "dz": "4am_dala-khattiya_P1"
+        },
+        {
+          "fr": "3e_notion-de-fonction_P2",
+          "dz": "4am_dala-khattiya_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ introduces the notation on linear functions only; France formalises « fonction » in general."
+    },
+    {
+      "fr": "lire-une-fonction",
+      "dz": "tamthil-bayani-taalufi",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_lire-une-fonction_P2",
+          "dz": "4am_tamthil-bayani-taalufi_P3"
+        },
+        {
+          "fr": "3e_lire-une-fonction_P3",
+          "dz": "4am_tamthil-bayani-taalufi_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Graphical reading on an affine line only."
+    },
+    {
+      "fr": "lire-une-fonction",
+      "dz": "tamthil-bayani-khatti",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_lire-une-fonction_P2",
+          "dz": "4am_tamthil-bayani-khatti_P2"
+        },
+        {
+          "fr": "3e_lire-une-fonction_P3",
+          "dz": "4am_tamthil-bayani-khatti_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Graphical reading on a linear line only."
+    },
+    {
+      "fr": "antecedent-par-le-calcul",
+      "dz": "mafhum-taalufiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_antecedent-par-le-calcul_P1",
+          "dz": "4am_mafhum-taalufiya_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "fonction-lineaire",
+      "dz": "dala-khattiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_fonction-lineaire_P1",
+          "dz": "4am_dala-khattiya_P1"
+        },
+        {
+          "fr": "3e_fonction-lineaire_P4",
+          "dz": "4am_dala-khattiya_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "fonction-lineaire",
+      "dz": "tamthil-bayani-khatti",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_fonction-lineaire_P2",
+          "dz": "4am_tamthil-bayani-khatti_P1"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "fonction-lineaire",
+      "dz": "tarrid-khatti",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_fonction-lineaire_P3",
+          "dz": "4am_tarrid-khatti_P1"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "fonction-affine",
+      "dz": "mafhum-taalufiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_fonction-affine_P1",
+          "dz": "4am_mafhum-taalufiya_P1"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "fonction-affine",
+      "dz": "tamthil-bayani-taalufi",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_fonction-affine_P2",
+          "dz": "4am_tamthil-bayani-taalufi_P1"
+        },
+        {
+          "fr": "3e_fonction-affine_P3",
+          "dz": "4am_tamthil-bayani-taalufi_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ P2 reads the values of a and b; FR 2020 asks only their signs (the 2026 text asks the values)."
+    },
+    {
+      "fr": "pourcentage-d-evolution",
+      "dz": "nisba-miawiya-3am",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_pourcentage-d-evolution_P1",
+          "dz": "3am_nisba-miawiya-3am_P3"
+        },
+        {
+          "fr": "3e_pourcentage-d-evolution_P2",
+          "dz": "3am_nisba-miawiya-3am_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "pourcentage-d-evolution",
+      "dz": "tatbiqat-tanasub",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_pourcentage-d-evolution_P1",
+          "dz": "4am_tatbiqat-tanasub_P1"
+        },
+        {
+          "fr": "3e_pourcentage-d-evolution_P2",
+          "dz": "4am_tatbiqat-tanasub_P1"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ writes the change as the linear function x ↦ (1 ± t/100)x."
+    },
+    {
+      "fr": "modeliser-avec-une-fonction",
+      "dz": "tarrid-taalufi",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_modeliser-avec-une-fonction_P2",
+          "dz": "4am_tarrid-taalufi_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "modeliser-avec-une-fonction",
+      "dz": "tarrid-khatti",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_modeliser-avec-une-fonction_P3",
+          "dz": "4am_tarrid-khatti_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "etendue-d-une-serie",
+      "dz": "mada-wasit-mutawassit",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_etendue-d-une-serie_P1",
+          "dz": "4am_mada-wasit-mutawassit_P1"
+        },
+        {
+          "fr": "3e_etendue-d-une-serie_P2",
+          "dz": "4am_mada-wasit-mutawassit_P2"
+        },
+        {
+          "fr": "3e_etendue-d-une-serie_P2",
+          "dz": "4am_mada-wasit-mutawassit_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ also uses class midpoints and median classes."
+    },
+    {
+      "fr": "etendue-d-une-serie",
+      "dz": "qiraat-wadiyat-ihsaiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_etendue-d-une-serie_P3",
+          "dz": "4am_qiraat-wadiyat-ihsaiya_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "histogramme",
+      "dz": "tamthil-silsila-ihsaiya",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_histogramme_P1",
+          "dz": "3am_tamthil-silsila-ihsaiya_P4"
+        },
+        {
+          "fr": "3e_histogramme_P2",
+          "dz": "3am_tamthil-silsila-ihsaiya_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "thales-configuration-papillon",
+      "dz": "talis-hisab-atwal",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_thales-configuration-papillon_P1",
+          "dz": "4am_talis-hisab-atwal_P1"
+        },
+        {
+          "fr": "3e_thales-configuration-papillon_P3",
+          "dz": "4am_talis-hisab-atwal_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ’s points do not say whether its Thales lesson covers the butterfly case — check the DZ lesson before reuse."
+    },
+    {
+      "fr": "reciproque-de-thales",
+      "dz": "aksiya-talis",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_reciproque-de-thales_P1",
+          "dz": "4am_aksiya-talis_P2"
+        },
+        {
+          "fr": "3e_reciproque-de-thales_P2",
+          "dz": "4am_aksiya-talis_P1"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "FR P3 (writing the proof) has no DZ point."
+    },
+    {
+      "fr": "cosinus-sinus-tangente",
+      "dz": "nisab-muthallathiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_cosinus-sinus-tangente_P2",
+          "dz": "4am_nisab-muthallathiya_P1"
+        },
+        {
+          "fr": "3e_cosinus-sinus-tangente_P4",
+          "dz": "4am_nisab-muthallathiya_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "cosinus-sinus-tangente",
+      "dz": "jayb-tamam-zawiya",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_cosinus-sinus-tangente_P1",
+          "dz": "3am_jayb-tamam-zawiya_P1"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Cosine only (FR 4e content in DZ 3AM)."
+    },
+    {
+      "fr": "cosinus-sinus-tangente",
+      "dz": "tarrid-muthallathiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_cosinus-sinus-tangente_P3",
+          "dz": "4am_tarrid-muthallathiya_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "calculer-un-angle",
+      "dz": "hasiba-muthallathiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_calculer-un-angle_P1",
+          "dz": "4am_hasiba-muthallathiya_P2"
+        },
+        {
+          "fr": "3e_calculer-un-angle_P3",
+          "dz": "4am_hasiba-muthallathiya_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "resoudre-un-triangle-rectangle",
+      "dz": "tarrid-muthallathiya",
+      "dzGrade": "4am",
+      "type": "same",
+      "points": [
+        {
+          "fr": "3e_resoudre-un-triangle-rectangle_P1",
+          "dz": "4am_tarrid-muthallathiya_P2"
+        },
+        {
+          "fr": "3e_resoudre-un-triangle-rectangle_P2",
+          "dz": "4am_tarrid-muthallathiya_P3"
+        },
+        {
+          "fr": "3e_resoudre-un-triangle-rectangle_P3",
+          "dz": "4am_tarrid-muthallathiya_P1"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "rotation",
+      "dz": "mafhum-dawaran",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_rotation_P1",
+          "dz": "4am_mafhum-dawaran_P2"
+        },
+        {
+          "fr": "3e_rotation_P2",
+          "dz": "4am_mafhum-dawaran_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ names the rotation by centre, angle and sense — same construction."
+    },
+    {
+      "fr": "rotation",
+      "dz": "khawas-dawaran",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_rotation_P3",
+          "dz": "4am_khawas-dawaran_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "effet-d-une-homothetie",
+      "dz": "takbir-tasghir",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_effet-d-une-homothetie_P2",
+          "dz": "4am_takbir-tasghir_P1"
+        },
+        {
+          "fr": "3e_effet-d-une-homothetie_P3",
+          "dz": "4am_takbir-tasghir_P1"
+        },
+        {
+          "fr": "3e_effet-d-une-homothetie_P3",
+          "dz": "4am_takbir-tasghir_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ works on enlargements of solids, without homothety."
+    },
+    {
+      "fr": "demontrer-en-geometrie",
+      "dz": "burhan-handasi",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_demontrer-en-geometrie_P1",
+          "dz": "3am_burhan-handasi_P2"
+        },
+        {
+          "fr": "3e_demontrer-en-geometrie_P2",
+          "dz": "3am_burhan-handasi_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "volume-boule-et-assemblages",
+      "dz": "misaha-hajm-kura",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_volume-boule-et-assemblages_P1",
+          "dz": "4am_misaha-hajm-kura_P2"
+        },
+        {
+          "fr": "3e_volume-boule-et-assemblages_P2",
+          "dz": "4am_misaha-hajm-kura_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "DZ also teaches the area of the sphere (not in the French 2020 text)."
+    },
+    {
+      "fr": "grandeurs-composees",
+      "dz": "haraka-muntazama-sura",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_grandeurs-composees_P1",
+          "dz": "3am_haraka-muntazama-sura_P2"
+        },
+        {
+          "fr": "3e_grandeurs-composees_P2",
+          "dz": "3am_haraka-muntazama-sura_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Speed only."
+    },
+    {
+      "fr": "grandeurs-composees",
+      "dz": "tatbiqat-tanasub",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_grandeurs-composees_P1",
+          "dz": "4am_tatbiqat-tanasub_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "conversions-grandeurs-composees",
+      "dz": "haraka-muntazama-sura",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_conversions-grandeurs-composees_P1",
+          "dz": "3am_haraka-muntazama-sura_P4"
+        }
+      ],
+      "dzIsV2": false,
+      "note": ""
+    },
+    {
+      "fr": "se-reperer-sur-une-sphere",
+      "dz": "kura-julla",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_se-reperer-sur-une-sphere_P1",
+          "dz": "4am_kura-julla_P2"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Great circles only; DZ has no latitude / longitude."
+    },
+    {
+      "fr": "representations-des-solides",
+      "dz": "wasf-tamthil-haram",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_representations-des-solides_P2",
+          "dz": "3am_wasf-tamthil-haram_P4"
+        },
+        {
+          "fr": "3e_representations-des-solides_P3",
+          "dz": "3am_wasf-tamthil-haram_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Pyramids only. [Unsure] « المنظور متساوي القياس » is read here as the perspective the DZ book uses for solids; check it is cavalière before reuse."
+    },
+    {
+      "fr": "representations-des-solides",
+      "dz": "wasf-tamthil-makhrut",
+      "dzGrade": "3am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_representations-des-solides_P2",
+          "dz": "3am_wasf-tamthil-makhrut_P4"
+        },
+        {
+          "fr": "3e_representations-des-solides_P3",
+          "dz": "3am_wasf-tamthil-makhrut_P3"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "Cones only; same caveat on the perspective."
+    },
+    {
+      "fr": "sections-planes",
+      "dz": "maqati-mustawiya",
+      "dzGrade": "4am",
+      "type": "partial",
+      "points": [
+        {
+          "fr": "3e_sections-planes_P1",
+          "dz": "4am_maqati-mustawiya_P2"
+        },
+        {
+          "fr": "3e_sections-planes_P1",
+          "dz": "4am_maqati-mustawiya_P3"
+        },
+        {
+          "fr": "3e_sections-planes_P2",
+          "dz": "4am_maqati-mustawiya_P1"
+        },
+        {
+          "fr": "3e_sections-planes_P3",
+          "dz": "4am_maqati-mustawiya_P4"
+        }
+      ],
+      "dzIsV2": false,
+      "note": "FR P4 (drawing the section) has no DZ point."
+    }
+  ]
+}
